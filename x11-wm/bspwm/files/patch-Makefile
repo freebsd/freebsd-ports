@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-12-15 20:58:41 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ LDFLAGS += -L$(PREFIX)/lib
+ 
+ PREFIX   ?= /usr/local
+ BINPREFIX = $(PREFIX)/bin
+-MANPREFIX = $(PREFIX)/share/man
++MANPREFIX = $(PREFIX)/man
+ BASHCPL = $(PREFIX)/share/bash-completion/completions
+ ZSHCPL = $(PREFIX)/share/zsh/site-functions
+ 

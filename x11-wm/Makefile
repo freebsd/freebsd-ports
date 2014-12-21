@@ -14,6 +14,7 @@
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
+    SUBDIR += bspwm
     SUBDIR += ccsm
     SUBDIR += clementine
     SUBDIR += compiz
