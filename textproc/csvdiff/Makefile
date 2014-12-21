@@ -3,6 +3,7 @@
 
 PORTNAME=	csvdiff
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 #DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,-,g}
@@ -12,7 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare/diff two (comma) separated files with each other
 
 NO_BUILD=	yes
-USES=		perl5 tar:tgz
+USES=		perl5 shebangfix tar:tgz
+SHEBANG_FILES=	csvdiff.pl
 PLIST_FILES=	bin/csvdiff
 WRKSRC=		${WRKDIR}
 PORTDOCS=	CHANGES README TODO
