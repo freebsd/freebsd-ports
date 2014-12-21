@@ -1,5 +1,14 @@
 --- phasestyle.cpp.orig	2007-05-03 08:48:44.000000000 +0400
-+++ phasestyle.cpp	2010-11-26 05:07:37.000000000 +0300
++++ phasestyle.cpp	2014-12-15 02:02:43.000000000 +0300
+@@ -2028,7 +2028,7 @@
+           qreal cx = rect.center().x();
+           qreal cy = rect.center().y();
+           qreal radius = (qMin(w, h) / 2.0) - 2.0;
+-          qreal tick = qMax(radius / 6, 4.0);
++          qreal tick = qMax(radius / 6, (qreal)4.0);
+ 
+           if (dial->subControls & SC_DialGroove) {
+               QRectF groove = QRectF(cx-radius+tick, cy-radius+tick,
 @@ -2367,6 +2367,8 @@
            return 2;
  
