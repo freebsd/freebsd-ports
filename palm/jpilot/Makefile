@@ -5,6 +5,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -18,7 +19,6 @@ LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
 
 USE_GCC=	any
 USES=		pkgconfig gmake libtool
-USE_GNOME=	gnomehier
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
