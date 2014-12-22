@@ -11,7 +11,7 @@ COMMENT=	The plugins for PEAR_PackageFileManager
 BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=	pear
 

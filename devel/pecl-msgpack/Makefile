@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Provides API for communicating with MessagePack serialization
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_PHP=	session
 USE_PHPEXT=	yes

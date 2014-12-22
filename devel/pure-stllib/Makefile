@@ -11,7 +11,7 @@ DIST_SUBDIR=	pure
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure interface to C++ STL map and vectors
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		pure pkgconfig
 

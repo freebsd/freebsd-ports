@@ -11,7 +11,7 @@ DISTNAME=	ppw-${DISTVERSION}
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP Project Wizard
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \

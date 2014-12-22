@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Convenient utility for executing external commands in various ways
 
-LICENSE=	BSD GPLv1
+LICENSE=	BSD2CLAUSE GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5

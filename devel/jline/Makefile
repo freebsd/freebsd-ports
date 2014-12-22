@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Java library for handling console input
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		zip

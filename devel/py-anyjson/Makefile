@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mail@derzinn.de
 COMMENT=	JSON library wrapper for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist

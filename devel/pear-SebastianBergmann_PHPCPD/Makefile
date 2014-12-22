@@ -11,7 +11,7 @@ DISTNAME=	phpcpd-${PORTVERSION}
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
 		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \

@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/philip
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Abstract user interface protocol library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura
 

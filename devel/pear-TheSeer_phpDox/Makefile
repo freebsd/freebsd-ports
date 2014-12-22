@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-TheSeer_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP Documentation generation framework and tool
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear-TheSeer_DirectoryScanner>=1.1.0:${PORTSDIR}/devel/pear-TheSeer_DirectoryScanner \
 		pear-TheSeer_fDOMDocument>=1.2.3:${PORTSDIR}/devel/pear-TheSeer_fDOMDocument \

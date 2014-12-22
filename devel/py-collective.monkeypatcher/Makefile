@@ -11,7 +11,7 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Applying monkey patches on startup using ZCML configuration
 
-LICENSE=	BSD
+LICENSE=	ZPL21
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

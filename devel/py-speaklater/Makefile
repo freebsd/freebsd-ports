@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Lazy string Python module for translations
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=	python
 USE_PYTHON=	distutils autoplist

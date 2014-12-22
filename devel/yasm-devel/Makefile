@@ -12,7 +12,8 @@ PKGNAMESUFFIX=		-devel
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Complete rewrite of the NASM assembler (Development Snapshot)
 
-LICENSE=	BSD
+LICENSE=	ART10 BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DEBUG NLS
 

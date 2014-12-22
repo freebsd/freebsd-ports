@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}-src
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Small, portable, and easy to use command line library
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Component of a larger caching solution
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist

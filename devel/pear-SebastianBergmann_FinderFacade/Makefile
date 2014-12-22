@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-SebastianBergmann_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Convenience wrapper for Symfony's Finder component
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear-TheSeer_fDOMDocument>=1.3.1:${PORTSDIR}/devel/pear-TheSeer_fDOMDocument \
 		pear-Symfony_Component_Finder>=2.2.0:${PORTSDIR}/devel/pear-Symfony_Component_Finder \

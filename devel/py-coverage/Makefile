@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Code coverage measurement for Python
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist

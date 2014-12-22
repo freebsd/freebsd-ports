@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python filesystem abstraction
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 USES=		python
 USE_PYTHON=	distutils autoplist

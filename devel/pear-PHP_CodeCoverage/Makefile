@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Library that provides PHP code coverage information
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
 		pear-PHP_TokenStream>=1.1.3:${PORTSDIR}/devel/pear-PHP_TokenStream \
