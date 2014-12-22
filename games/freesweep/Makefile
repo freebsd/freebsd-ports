@@ -23,6 +23,7 @@ ALL_TARGET=	${PORTNAME}
 PORTDOCS=	CHANGES README
 PLIST_FILES=	"@(,games,2555) bin/${PORTNAME}" man/man6/${PORTNAME}.6.gz \
 		%%DATADIR%%/sweeprc "@(,games,0664) %%DATADIR%%/sweeptimes"
+PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

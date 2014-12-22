@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
 
 PLIST_FILES=	bin/mars-nomercy \
 		libexec/mars
+PLIST_DIRS=	%%DATADIR%%/img/units/mercenaries
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DEBUG OPENGL

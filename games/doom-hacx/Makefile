@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${DMDIR}/${PORTNAME}
 
 PLIST_FILES=	%%DATADIR%%/${DISTNAME}
+PLIST_DIRS=	%%DATADIR%%
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 

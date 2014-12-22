@@ -17,6 +17,7 @@ USES=		gmake
 PLIST_FILES=	bin/wmshuffle \
 		%%DATADIR%%/skin-feiticeira.xpm \
 		%%DATADIR%%/skin-lucyenne.xpm
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \

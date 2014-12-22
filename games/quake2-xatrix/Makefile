@@ -16,6 +16,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	%%Q2DIR%%/${PORTNAME}/game.so
+PLIST_DIRS=	%%Q2DIR%%/${PORTNAME}
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

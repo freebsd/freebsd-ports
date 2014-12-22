@@ -31,6 +31,7 @@ PLIST_FILES=	bin/phalanx \
 		%%DATADIR%%/eco.phalanx \
 		%%DATADIR%%/pbook.phalanx \
 		%%DATADIR%%/sbook.phalanx
+PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

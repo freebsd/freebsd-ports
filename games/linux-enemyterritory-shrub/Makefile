@@ -24,6 +24,7 @@ DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 PLIST_FILES=	bin/et-${PORTNAME} \
 		bin/etded-${PORTNAME} \
 		%%DATADIR%%/qagame.mp.i386.so
+PLIST_DIRS=	%%DATADIR%%
 
 do-build:
 .for f in et etded

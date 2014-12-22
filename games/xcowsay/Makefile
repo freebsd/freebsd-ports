@@ -27,6 +27,7 @@ PLIST_FILES=	bin/xcowdream \
 		%%DATADIR%%/cow_large.png \
 		%%DATADIR%%/cow_med.png \
 		%%DATADIR%%/cow_small.png
+PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -54,6 +54,7 @@ DISTFILES+=	${PORTNAME}-ttf-${${l:tu}_DISTNAME}${EXTRACT_SUFX}:${l:tu}
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}.ttf
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs/COPYING.txt
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs/README.txt
+PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:tu}_CODE}_docs
 .	endif
 .endfor
 
