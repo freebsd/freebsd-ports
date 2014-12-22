@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeui
 PORTVERSION=	2.24.4
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
-USE_GNOME=	gnomeprefix gnomehier libbonoboui referencehack gvfs
+USE_GNOME=	gnomeprefix libbonoboui referencehack gvfs
 USE_XORG=	sm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
