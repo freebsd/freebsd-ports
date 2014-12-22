@@ -205,6 +205,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/perserver/default/charcreation.xml
 %%DATADIR%%/data/perserver/default/chatcommands.txt
 %%DATADIR%%/data/perserver/default/deadmessages.xml
+%%DATADIR%%/data/perserver/default/defaultcommands.xml
 %%DATADIR%%/data/perserver/default/features.xml
 %%DATADIR%%/data/perserver/default/gmcommands.txt
 %%DATADIR%%/data/perserver/default/weapons.xml
