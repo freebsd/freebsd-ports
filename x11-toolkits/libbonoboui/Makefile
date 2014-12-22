@@ -4,7 +4,7 @@
 
 PORTNAME=	libbonoboui
 PORTVERSION=	2.24.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,7 +18,7 @@ USES+=		tar:bzip2
 
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehier intlhack \
+USE_GNOME=	gnomeprefix intlhack \
 		libgnomecanvas libgnome referencehack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
