@@ -3,6 +3,7 @@
 
 PORTNAME=	gpgdir
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	https://www.cipherdyne.org/~cipherdy/gpgdir/download/ \
 		http://www.cipherdyne.org/gpgdir/download/
@@ -17,8 +18,9 @@ RUN_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
+USES=		perl5 shebangfix
 USE_PERL5=	run
-USES=		perl5
+SHEBANG_FILES=	gpgdir
 
 PLIST_FILES=	bin/gpgdir man/man1/gpgdir.1.gz
 
