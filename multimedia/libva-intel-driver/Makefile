@@ -30,16 +30,6 @@ PLIST_FILES=	lib/va/i965_drv_video.so
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NEW_XORG)
-pre-configure:
-.if !exists(${LOCALBASE}/lib/libkms.so)
-	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the KMS option enabled."
-	@${FALSE}
-.endif
-.else
-IGNORE=		this port needs libdrm version that is available when WITH_NEW_XORG is set
-.endif
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
 		${WRKSRC}/src/Makefile.am

@@ -7,6 +7,14 @@
 WARNING+=	"WITHOUT_NLS is deprecated use OPTIONS_UNSET=NLS instead"
 .endif
 
+.if defined(WITH_NEW_XORG) || defined(WITHOUT_NEW_XORG)
+WARNING+=	"WITH_NEW_XORG and WITHOUT_NEW_XORG knobs were removed and have no effect"
+.endif
+
+.if defined(WITH_KMS) || defined(WITHOUT_KMS)
+WARNING+=	"WITH_KMS was removed and has no effect"
+.endif
+
 #.if defined(PKGORIGIN)
 #.for _c in ${CATEGORIES}
 #_CAT?=	${_c}

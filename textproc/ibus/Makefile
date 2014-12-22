@@ -107,11 +107,6 @@ PLIST_SUB+=	COMPDIR=""
 PLIST_SUB+=	COMPDIR="@comment "
 .endif
 
-# Workaround XIGrabKeycode/XIUngrabKeycode bug: XIAllMasterDevice does not work
-.if !defined(WITH_NEW_XORG)
-EXTRA_PATCHES+=	${FILESDIR}/extra-xigrabkeycode
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c
 
