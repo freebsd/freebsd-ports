@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -47,10 +47,6 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
-
-.if ${PORT_OPTIONS:MMX4200}
-BROKEN=		Fails to compile when MX4200 is enabled.
-.endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
 
