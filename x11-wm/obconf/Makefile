@@ -3,6 +3,7 @@
 
 PORTNAME=	obconf
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/obconf/
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libobrender.so:${PORTSDIR}/x11-wm/openbox
 
 USES=		pkgconfig desktop-file-utils shared-mime-info
-USE_GNOME=	gnomehier libglade2
+USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \
 		OPENBOX_LIBS="`pkg-config --libs obrender-3.5 obt-3.5`"
