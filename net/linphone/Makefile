@@ -2,7 +2,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/3.7.x/sources
@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig readline:port
-USE_GNOME=	gnomehier gtk20 intltool libxml2
+USE_GNOME=	 gtk20 intltool libxml2
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	IPV6 NLS NOTIFY UPNP VIDEO
