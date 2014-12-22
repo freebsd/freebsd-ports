@@ -4,7 +4,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
@@ -14,7 +14,7 @@ COMMENT=	Framework for controlling access to system-wide components
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
-USE_GNOME=	glib20 intlhack gnomehier introspection
+USE_GNOME=	glib20 intlhack introspection
 USES=		gettext gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

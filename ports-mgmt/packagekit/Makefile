@@ -4,7 +4,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USES=		execinfo gettext gmake iconv libtool pathfix pkgconfig \
 		python:build shared-mime-info
-USE_GNOME=	glib20 intltool gnomehier introspection
+USE_GNOME=	glib20 intltool introspection
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
