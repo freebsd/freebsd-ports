@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libhtp
-PORTVERSION=	0.5.15
+PORTVERSION=	0.5.16
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -11,14 +11,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ironbee
-GH_COMMIT=	440da09
+GH_ACCOUNT=	OISF
+GH_COMMIT=	4cb1b99
 
-USES=		libtool pkgconfig pathfix iconv
-USE_AUTOTOOLS=	libtoolize automake aclocal autoheader
+USES=		autoreconf libtool pkgconfig pathfix iconv
 USE_LDCONFIG=	yes
 
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 MAKE_ARGS=	LIBS="-lz ${ICONV_LIB}"
 
