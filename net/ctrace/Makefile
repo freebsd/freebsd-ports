@@ -3,6 +3,7 @@
 
 PORTNAME=	ctrace
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
 
@@ -14,7 +15,8 @@ RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	ctrace
 
 PLIST_FILES=	sbin/ctrace man/man1/ctrace.1.gz
 
