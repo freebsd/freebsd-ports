@@ -1,6 +1,6 @@
-The Intel(R) Data Plane Development Kit (DPDK)
+The Data Plane Development Kit (DPDK)
 
-The Intel DPDK is a set of software libraries to enable packet processing. It
+The DPDK is a set of software libraries to enable packet processing. It
 consists of a set of polling mode drivers (PMD) which can be used to pull
 network packets directly from a Network Interface Card (NIC), as well as
 other libraries to assist in the processing of those packets. The additional
@@ -10,6 +10,6 @@ libraries include ones for:
 * software rings or FIFOs to allow packet transfer between cores
 amongst others.
 
-Applications written using the DPDK run in userspace. The devices used by an
-Intel DPDK application are removed from kernel control and are instead managed
+Applications written using the DPDK run in userspace. The devices used by a
+DPDK application are removed from kernel control and are instead managed
 directly by that application.
