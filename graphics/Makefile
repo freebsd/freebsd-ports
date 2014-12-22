@@ -635,6 +635,7 @@
     SUBDIR += p5-Captcha-reCAPTCHA-Mailhide
     SUBDIR += p5-Chart
     SUBDIR += p5-Chart-Clicker
+    SUBDIR += p5-Chart-Gnuplot
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-Color-Calc
