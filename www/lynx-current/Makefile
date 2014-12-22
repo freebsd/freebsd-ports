@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.8p5
-PORTREVISION=	1
+PORTVERSION=	2.8.9d2
 PKGNAMESUFFIX=	-current
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Non-graphical, text-based World-Wide Web client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
+CONFLICTS_INSTALL=	lynx-2.8.[0-8].* ja-lynx-[0-9]*
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/p.*//}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/[pd].*//}
 USES=		iconv shebangfix tar:bzip2
 USE_OPENSSL=	yes
 SHEBANG_FILES=	samples/mailto-form.pl
