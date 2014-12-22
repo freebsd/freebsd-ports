@@ -83,7 +83,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
 	-Dsiteman3dir=${SITE_MAN3} \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
-	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
+	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none
 # When upgrading to 5.22+ remove this.
 CONFIGURE_ARGS+= \
