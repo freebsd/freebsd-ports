@@ -21,12 +21,10 @@ GH_TAGNAME=	${GH_COMMIT}
 
 PLIST_FILES=	sbin/ntimed-client
 
-.include <bsd.port.pre.mk>
-
 do-configure:
 	cd ${WRKSRC} && ${SH} configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ntimed-client ${STAGEDIR}/${LOCALBASE}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ntimed-client ${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
