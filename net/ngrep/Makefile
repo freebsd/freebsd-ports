@@ -3,45 +3,45 @@
 
 PORTNAME=	ngrep
 PORTVERSION=	1.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	logan@elandsys.com
 COMMENT=	Network grep
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		gmake tar:bzip2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
+
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	PCRE PORTS_PCAP IPV6 DOCS
-OPTIONS_DEFAULT=	PCRE IPV6
+OPTIONS_DEFINE=		CAPSICUM DOCS IPV6 PCRE PORTS_PCAP
+OPTIONS_DEFAULT=	CAPSICUM IPV6 PCRE
+
 PCRE_DESC=		Use PCRE instead of GNU regex
 PORTS_PCAP_DESC=	Use ports PCAP instead of system PCAP
+CAPSICUM_DESC=		Build with capsicum if kernel supports it
 
 PLIST_FILES=	bin/ngrep man/man8/ngrep.8.gz
 
 PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
 		README.txt REGEX.txt
 
+CAPSICUM_CONFIGURE_ON=	--enable-capsicum
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+PCRE_CONFIGURE_ENABLE=	pcre
+
+PORTS_PCAP_CONFIGURE_ON=	--with-pcap-includes=${LOCALBASE}/include
+PORTS_PCAP_CONFIGURE_OFF=	--with-pcap-includes=/usr/include
+PORTS_PCAP_BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--enable-pcre
-.endif
-
-.if ${PORT_OPTIONS:MPORTS_PCAP}
-CONFIGURE_ARGS+=	--with-pcap-includes=${LOCALBASE}/include
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.else
-CONFIGURE_ARGS+=	--with-pcap-includes=/usr/include
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
 
 post-patch:
 .if ${PORT_OPTIONS:MPORTS_PCAP}
