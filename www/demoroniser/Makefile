@@ -3,6 +3,7 @@
 
 PORTNAME=	demoroniser
 PORTVERSION=	1.0.20030916
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
 		${MASTER_SITE_LOCAL}
@@ -12,12 +13,14 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
 
-USES=		zip shebangfix
+USES=		perl5 shebangfix zip
+USE_PERL5=	run
+perl_OLD_CMD=	/bin/perl
+SHEBANG_FILES=	demoroniser.pl
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/demoroniser man/man1/demoroniser.1.gz
-SHEBANG_FILES=	demoroniser.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl \
