@@ -1,0 +1,18 @@
+--- src/movix/Makefile.in.orig	2005-06-23 20:23:47 UTC
++++ src/movix/Makefile.in
+@@ -148,7 +148,6 @@ EXTRA_DIST = movix.pl \
+ 		movixrc
+ 
+ 
+-bin_SCRIPTS = movix-files
+ 
+ movixdir = $(pkgdatadir)/movix
+ movix_DATA = ${EXTRA_DIST}
+@@ -484,6 +483,7 @@ install-exec-local:
+ 	echo "#!/bin/sh"                 >  $(DESTDIR)$(bindir)/movix-files
+ 	echo "# MoviX v${MOVIX_VERSION}" >> $(DESTDIR)$(bindir)/movix-files
+ 	for i in ${EXTRA_DIST}; do echo "echo $$i" >> $(DESTDIR)$(bindir)/movix-files; done
++	chmod 555 $(DESTDIR)$(bindir)/movix-files
+ #	echo "echo \"${EXTRA_DIST}\""    >> $(DESTDIR)$(bindir)/movix-files
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
