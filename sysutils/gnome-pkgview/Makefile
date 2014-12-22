@@ -4,14 +4,14 @@
 
 PORTNAME=	gnome-pkgview
 PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.mikegtn.net/packages/gnome-pkgview/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Displays the version of GNOME components installed
 
-USE_GNOME=	gnomeprefix gnomehier libgnomeui intlhack
+USE_GNOME=	gnomeprefix libgnomeui intlhack
 USES=		gettext gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
