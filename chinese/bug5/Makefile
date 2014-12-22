@@ -9,7 +9,8 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Big5/GBK <-> UTF-8 translating layer in terminal
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 

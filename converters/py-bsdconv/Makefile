@@ -10,7 +10,7 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Python wrapper for bsdconv
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 
