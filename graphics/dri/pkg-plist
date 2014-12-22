@@ -43,6 +43,10 @@ include/GL/internal/dri_interface.h
 @comment lib/libglapi.so
 @comment lib/libglapi.so.0
 @comment lib/libglapi.so.0.0.0
+%%VDPAU%%lib/vdpau/libvdpau_r300.so
+%%VDPAU%%lib/vdpau/libvdpau_r300.so.1
+%%VDPAU%%lib/vdpau/libvdpau_r300.so.1.0
+%%VDPAU%%lib/vdpau/libvdpau_r300.so.1.0.0
 %%VDPAU%%lib/vdpau/libvdpau_r600.so
 %%VDPAU%%lib/vdpau/libvdpau_r600.so.1
 %%VDPAU%%lib/vdpau/libvdpau_r600.so.1.0

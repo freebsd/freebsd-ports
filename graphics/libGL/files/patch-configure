@@ -1,6 +1,6 @@
---- configure.orig	2014-08-29 13:42:21.635540273 +0200
-+++ configure	2014-08-29 13:42:55.401537200 +0200
-@@ -858,6 +858,8 @@
+--- configure.orig	2014-11-21 12:54:55.273970976 +0100
++++ configure	2014-11-21 12:55:25.070967392 +0100
+@@ -853,6 +853,8 @@
  GLPROTO_CFLAGS
  XLIBGL_LIBS
  XLIBGL_CFLAGS
@@ -9,7 +9,7 @@
  LIBUDEV_LIBS
  LIBUDEV_CFLAGS
  LIBDRM_LIBS
-@@ -1146,6 +1148,8 @@
+@@ -1143,6 +1145,8 @@
  LIBDRM_LIBS
  LIBUDEV_CFLAGS
  LIBUDEV_LIBS
@@ -18,7 +18,7 @@
  XLIBGL_CFLAGS
  XLIBGL_LIBS
  GLPROTO_CFLAGS
-@@ -1945,6 +1949,10 @@
+@@ -1942,6 +1946,10 @@
                C compiler flags for LIBUDEV, overriding pkg-config
    LIBUDEV_LIBS
                linker flags for LIBUDEV, overriding pkg-config
@@ -29,7 +29,7 @@
    XLIBGL_CFLAGS
                C compiler flags for XLIBGL, overriding pkg-config
    XLIBGL_LIBS linker flags for XLIBGL, overriding pkg-config
-@@ -5086,6 +5094,7 @@
+@@ -5085,6 +5093,7 @@
  DRI3PROTO_REQUIRED=1.0
  PRESENTPROTO_REQUIRED=1.0
  LIBUDEV_REQUIRED=151
@@ -37,25 +37,16 @@
  GLPROTO_REQUIRED=1.4.14
  LIBOMXIL_BELLAGIO_REQUIRED=0.0
  VDPAU_REQUIRED=0.4.1
-@@ -6519,7 +6528,7 @@
-   test -n "$MAKE" && break
- done
+@@ -6503,7 +6512,7 @@
+         fi
+ 
  
 -for ac_prog in python2 python
 +for ac_prog in python2.7 python2 python
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -17891,7 +17900,7 @@
- DEFINES="-DUSE_EXTERNAL_DXTN_LIB=1"
- 
- case "$host_os" in
--linux*|*-gnu*|gnu*)
-+linux*|*-gnu*|gnu*|freebsd*)
-     DEFINES="$DEFINES -D_GNU_SOURCE -DHAVE_PTHREAD"
-     ;;
- solaris*)
-@@ -19147,7 +19156,7 @@
+@@ -20025,7 +20034,7 @@
  
  
  case "$host_os" in
@@ -64,7 +55,7 @@
      dri3_default=yes
      ;;
  *)
-@@ -19669,6 +19678,78 @@
+@@ -20543,6 +20552,78 @@
  	have_libudev=yes
  fi
  
@@ -143,7 +134,7 @@
  # Check whether --enable-sysfs was given.
  if test "${enable_sysfs+set}" = set; then :
    enableval=$enable_sysfs; have_sysfs="$enableval"
-@@ -20373,6 +20454,10 @@
+@@ -21258,6 +21339,10 @@
      DEFINES="$DEFINES -DHAVE_LIBUDEV"
      have_pci_id=yes
  fi
@@ -154,9 +145,9 @@
  
  if test "$have_sysfs" = yes; then
      DEFINES="$DEFINES -DHAVE_SYSFS"
-@@ -20498,6 +20583,22 @@
-     *freebsd* | dragonfly* | *netbsd* | openbsd*)
-         DEFINES="$DEFINES -DHAVE_PTHREAD"
+@@ -21385,6 +21470,22 @@
+         ;;
+     gnu*)
          DEFINES="$DEFINES -DHAVE_ALIAS"
 +        if test "x$enable_dri3" = xyes; then
 +            DEFINES="$DEFINES -DHAVE_DRI3"
@@ -175,9 +166,9 @@
 +            ;;
 +        esac
          ;;
-     gnu*)
-         DEFINES="$DEFINES -DHAVE_ALIAS"
-@@ -21226,6 +21327,8 @@
+     cygwin*)
+         if test "x$with_dri_drivers" = "xyes"; then
+@@ -22205,6 +22306,8 @@
  
  if test "x$need_pci_id$have_libudev" = xyesyes; then
      GBM_PC_REQ_PRIV="libudev >= $LIBUDEV_REQUIRED"
@@ -186,7 +177,7 @@
  else
      GBM_PC_REQ_PRIV=""
  fi
-@@ -22541,9 +22644,6 @@
+@@ -23628,9 +23731,6 @@
                  CLANG_LIBDIR=${LLVM_LIBDIR}
              fi
              CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
