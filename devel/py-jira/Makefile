@@ -14,6 +14,8 @@ COMMENT=	Library to ease use of the JIRA 5 REST APIs
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Depends on conflicting py-requests1 and py-requests (via py-requests-oauthlib)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=1.0.0:${PORTSDIR}/www/py-requests1 \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.3.0:${PORTSDIR}/www/py-requests-oauthlib \
 		${PYTHON_PKGNAMEPREFIX}ipython>=0:${PORTSDIR}/devel/ipython \
