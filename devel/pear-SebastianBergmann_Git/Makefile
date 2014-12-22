@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-SebastianBergmann_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Simple wrapper for Git
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit

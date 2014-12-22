@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 USES=		ncurses gmake tar:tgz
 GNU_CONFIGURE=	yes

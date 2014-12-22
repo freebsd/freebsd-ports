@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for monitoring directories for changes
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -11,7 +11,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Pure Python Implementation of a Finite State Machine
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.0:${PORTSDIR}/graphics/py-graphviz
 

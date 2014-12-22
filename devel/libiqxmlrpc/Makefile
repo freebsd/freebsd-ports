@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
+LICENSE=	BSD2CLAUSE
+
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS
@@ -17,8 +19,6 @@ OPTIONS_DEFAULT=
 
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOCS_CMAKE_ARGS_OFF=	-Dbuild_docs=off
-
-LICENSE=	BSD
 
 USE_GNOME=	libxml2
 USES=		cmake tar:bzip2

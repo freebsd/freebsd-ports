@@ -9,7 +9,10 @@ MASTER_SITES=	GH
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	hash table for C structures
 
-LICENSE=	BSD
+LICENSE=	BSD1CLAUSE
+LICENSE_NAME=	BSD 1-Clause License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	DOCS
 

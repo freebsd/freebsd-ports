@@ -11,7 +11,7 @@ DISTNAME=	php-webdav-${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	The PHP WebDAV extension
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 

@@ -12,7 +12,8 @@ DISTNAME=	Traits-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Explicitly Typed Attributes for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE PSFL
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}EnthoughtBase>=3.0.1:${PORTSDIR}/devel/py-EnthoughtBase \
 		${PYNUMPY}

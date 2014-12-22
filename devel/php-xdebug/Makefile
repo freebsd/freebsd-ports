@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	php-
 MAINTAINER=	freebsd-ports-maintainers@intermedix.com
 COMMENT=	Xdebug extension for PHP
 
-LICENSE=	BSD
+LICENSE=	PHP30
 
 CONFIGURE_ARGS=	--enable-xdebug
 USE_PHP=	yes

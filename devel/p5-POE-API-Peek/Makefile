@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Peek into the internals of a running POE environment
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \

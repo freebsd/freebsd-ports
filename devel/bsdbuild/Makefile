@@ -13,7 +13,7 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl mk/*.pl
 GNU_CONFIGURE=	yes
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 CONFIGURE_ARGS=	--with-catman=no
 

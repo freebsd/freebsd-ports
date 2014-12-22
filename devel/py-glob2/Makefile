@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	loader@freebsdmall.com
 COMMENT=	Glob that captures patterns and supports recursive wildcards
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
