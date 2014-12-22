@@ -3,7 +3,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
 
 USES=		gettext gmake pathfix pkgconfig python
 USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
-USE_GNOME=	intlhack gconf2 gnomehier gtkmm24
+USE_GNOME=	intlhack gconf2 gtkmm24
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-gconf --disable-gnome3 \
 		--disable-indicator
