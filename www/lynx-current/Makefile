@@ -3,9 +3,10 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.9d2
-PKGNAMESUFFIX=	-current
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
+PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -52,5 +53,9 @@ NLS_CONFIGURE_ENABLE=	nls
 
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 IDN_CONFIGURE_ENABLE=	idna
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/etc/; mv lynx.cfg.default lynx.cfg.sample; \
+		mv lynx.lss.default lynx.lss.sample
 
 .include <bsd.port.mk>
