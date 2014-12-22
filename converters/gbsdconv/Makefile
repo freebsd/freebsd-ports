@@ -9,7 +9,7 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	GUI for bsdconv
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdconv>=8.0:${PORTSDIR}/converters/py-bsdconv
