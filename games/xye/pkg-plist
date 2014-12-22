@@ -86,6 +86,3 @@ share/pixmaps/xye.png
 %%SKINS%%%%DATADIR%%/res/xmaskye.xml
 %%DATADIR%%/res/xye.png
 %%DATADIR%%/res/xye_luminosity.png
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%
