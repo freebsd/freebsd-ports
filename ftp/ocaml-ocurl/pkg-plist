@@ -3,4 +3,6 @@
 %%OCAML_SITELIBDIR%%/curl/curl.cma
 %%OCAML_SITELIBDIR%%/curl/curl.cmi
 %%OCAML_SITELIBDIR%%/curl/curl.cmxa
+%%OCAML_SITELIBDIR%%/curl/curl.mli
+%%OCAML_SITELIBDIR%%/curl/dllcurl-helper.so
 %%OCAML_SITELIBDIR%%/curl/libcurl-helper.a

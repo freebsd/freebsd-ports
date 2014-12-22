@@ -3,4 +3,4 @@ programming language Ocaml to the networking library
 libcurl. Currently Ocurl requires libcurl 7.9.8 or newer (using older
 versions may yield compilation errors).
 
-WWW: http://sourceforge.net/projects/ocurl
+WWW: http://ocurl.forge.ocamlcore.org/
