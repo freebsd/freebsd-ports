@@ -1,5 +1,5 @@
---- fcgiwrap.c.orig	2014-09-22 12:36:32.000000000 +0200
-+++ fcgiwrap.c	2014-09-22 12:41:59.000000000 +0200
+--- fcgiwrap.c.orig	2013-02-03 14:25:17.000000000 +0100
++++ fcgiwrap.c	2014-12-22 13:25:23.000000000 +0100
 @@ -43,6 +43,7 @@
  #include <ctype.h>
  
@@ -47,8 +47,59 @@
  			last_slash = strrchr(filename, '/');
  			if (!last_slash)
  				cgi_error("403 Forbidden", "Script name must be a fully qualified path", filename);
-@@ -760,7 +779,7 @@
+@@ -587,14 +606,29 @@
+ 	FCGI_puts("System error");
+ }
+ 
++static volatile sig_atomic_t sigint_received;
++static void sigint_handler(int __attribute__((__unused__))dummy)
++{
++	sigint_received = 1;
++	FCGX_ShutdownPending(); // Or we could send SIGUSR1
++}
++
+ static void fcgiwrap_main(void)
+ {
++	struct sigaction a;
+ 	signal(SIGCHLD, SIG_IGN);
+ 	signal(SIGPIPE, SIG_IGN);
+ 
++	// Use sigaction for SIGINT so we can avoid SA_RESTART and actually react
++	a.sa_handler = sigint_handler;
++	a.sa_flags = 0;
++	sigemptyset(&a.sa_mask);
++	sigaction(SIGINT, &a, NULL);
++	sigaction(SIGTERM, &a, NULL);
++
+ 	inherited_environ = environ;
+ 
+-	while (FCGI_Accept() >= 0) {
++	while (FCGI_Accept() >= 0 && !sigint_received) {
+ 		handle_fcgi_request();
+ 	}
+ }
+@@ -671,7 +705,7 @@
+ 	return 0;
+ }
+ 
+-static int setup_socket(char *url) {
++static int setup_socket(char *url, int *fd_out) {
+ 	char *p = url;
+ 	char *q;
+ 	int fd;
+@@ -751,6 +785,7 @@
+ 		return -1;
+ 	}
+ 
++	*fd_out = fd;
+ 	return listen_on_fd(fd);
+ }
+ 
+@@ -758,9 +793,10 @@
+ {
+ 	int nchildren = 1;
  	char *socket_url = NULL;
++	int fd = 0;
  	int c;
  
 -	while ((c = getopt(argc, argv, "c:hfs:")) != -1) {
@@ -56,7 +107,7 @@
  		switch (c) {
  			case 'f':
  				stderr_to_fastcgi++;
-@@ -773,6 +792,7 @@
+@@ -773,6 +809,7 @@
  					"  -c <number>\t\tNumber of processes to prefork\n"
  					"  -s <socket_url>\tSocket to bind to (say -s help for help)\n"
  					"  -h\t\t\tShow this help message and exit\n"
@@ -64,7 +115,7 @@
  					"\nReport bugs to Grzegorz Nosek <"PACKAGE_BUGREPORT">.\n"
  					PACKAGE_NAME" home page: <http://nginx.localdomain.pl/wiki/FcgiWrap>\n",
  					argv[0]
-@@ -784,8 +804,14 @@
+@@ -784,8 +821,14 @@
  			case 's':
  				socket_url = strdup(optarg);
  				break;
@@ -80,3 +131,30 @@
  					fprintf(stderr, "Option -%c requires an argument.\n", optopt);
  				else if (isprint(optopt))
  					fprintf(stderr, "Unknown option `-%c'.\n", optopt);
+@@ -808,13 +851,24 @@
+ 	} else
+ #endif
+ 	if (socket_url) {
+-		if (setup_socket(socket_url) < 0) {
++		if (setup_socket(socket_url, &fd) < 0) {
+ 			return 1;
+ 		}
+-		free(socket_url);
+ 	}
+ 
+ 	prefork(nchildren);
+ 	fcgiwrap_main();
++	if(fd) {
++		const char *p = socket_url;
++		close(fd);
++	
++		if(socket_url) {
++			if (!strncmp(p, "unix:", sizeof("unix:") - 1)) {
++				p += sizeof("unix:") - 1;
++				unlink(p);
++			}
++			free(socket_url);
++		}
++	}
+ 	return 0;
+ }
