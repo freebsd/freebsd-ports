@@ -107,10 +107,6 @@ WALLPAPERS_RUN_DEPENDS=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:$
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITH_NEW_XORG)
-IGNORE=		requires modern libGL. Please, set WITH_NEW_XORG and update your ports
-.endif
-
 .if !exists(/usr/lib/libutempter.so)
 LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
 .endif

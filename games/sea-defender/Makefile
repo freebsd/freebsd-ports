@@ -47,10 +47,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NEW_XORG)
-EXTRA_PATCHES+=	${FILESDIR}/extra-snoutlib_gldefs.h
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sea ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

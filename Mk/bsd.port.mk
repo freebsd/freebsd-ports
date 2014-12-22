@@ -1225,14 +1225,6 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
 
-# Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
-# WITHOUT_NEW_XORG is set.
-.if !defined(WITHOUT_NEW_XORG)
-WITH_NEW_XORG?=	yes
-.else
-.undef WITH_NEW_XORG
-.endif
-
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
