@@ -30,6 +30,7 @@ CFLAGS+=	-ffast-math
 WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
 
 PLIST_FILES=	bin/edge %%DMDIR%%/edge.wad
+PLIST_DIRSTRY=	%%DMDIR%%
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

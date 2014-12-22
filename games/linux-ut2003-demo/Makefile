@@ -29,6 +29,7 @@ SUB_LIST=	UTDIR="${UTDIR}"
 
 PLIST_FILES=	bin/ut2003-demo \
 		%%DATADIR%%/UT2003Logo.bmp %%DATADIR%%/Unreal.xpm
+PLIST_DIRS=	${UTDIR_REL} %%DATADIR%%
 PORTDOCS=	*
 
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \

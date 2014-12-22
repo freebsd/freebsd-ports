@@ -21,6 +21,7 @@ USE_ANT=	yes
 ALL_TARGET=	simple_linux
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar
+PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME}
 
 post-patch:
 	@${LN} -sf ${JAVALIBDIR}/jutils/jutils.jar ${WRKSRC}/lib/

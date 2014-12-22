@@ -21,6 +21,7 @@ USES=		imake:noman
 USE_XORG=	xpm
 
 PLIST_FILES=	bin/xpuzzletama lib/X11/xpuzzletama/tama_score
+PLIST_DIRS=	lib/X11/xpuzzletama
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xpuzzletama

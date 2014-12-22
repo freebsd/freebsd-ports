@@ -19,6 +19,7 @@ NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 PLIST_FILES=	share/${PKGNAMEPREFIX:S/-//}/${PORTNAME:S/^/n/}-${PORTVERSION}
+PLIST_DIRS=	share/${PKGNAMEPREFIX:S/-//}
 
 do-extract:
 	@@${MKDIR} ${WRKSRC}

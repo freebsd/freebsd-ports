@@ -30,6 +30,8 @@ USE_SDL=	sdl mixer image net ttf gfx
 
 PLIST_FILES=	bin/widelands
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/maps/Desert\ Tournament.wmf/scripting \
+		%%DATADIR%%/maps/Swamp\ Monks.wmf/scripting
 
 DESKTOP_ENTRIES="Widelands" \
 		"" \

@@ -19,6 +19,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/voices \
+		%%DATADIR%%/vehicles/sub/sub \
+		%%DATADIR%%/save \
+		%%DATADIR%%/mve
 
 DESKTOP_ENTRIES="M.A.X.R." \
 		"Mechanized Assault and Exploration Reloaded" \

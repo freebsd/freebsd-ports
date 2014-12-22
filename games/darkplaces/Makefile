@@ -30,6 +30,7 @@ DEDICATED_DESC=	Build dedicated server
 SDL_DESC=	Build SDL client
 
 PLIST_FILES=	%%DATADIR%%/dummy
+PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	darkplaces.txt
 
 .include "${.CURDIR}/../quake-data/Makefile.include"

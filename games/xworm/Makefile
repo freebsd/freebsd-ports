@@ -20,6 +20,7 @@ MAKE_ARGS=	CC="${CC}" INCDIR="-I${LOCALBASE}/include" \
 
 DATA=		font grid raw
 PLIST_FILES=	bin/xworm ${DATA:S/^/%%DATADIR%%\/xworm./}
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xworm ${STAGEDIR}${PREFIX}/bin

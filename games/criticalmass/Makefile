@@ -39,6 +39,7 @@ PLIST_FILES=	bin/Packer \
 		man/man6/critter.6.gz \
 		share/Critical_Mass/lg-criti.xm \
 		share/Critical_Mass/resource.dat
+PLIST_DIRS=	share/Critical_Mass
 
 DESKTOP_ENTRIES="CriticallMass" "" "" "critter" "" ""
 
