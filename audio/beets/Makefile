@@ -6,7 +6,7 @@ PORTVERSION=	1.3.9
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	stiginge@pvv.org
 COMMENT=	Media library management system for obsessive-compulsive music geeks
 
 LICENSE=	MIT
