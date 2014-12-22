@@ -1,0 +1,4 @@
+Reads a gps track in GPX format and writes out an Google Map or OpenStreetMaps
+mash-up containing the route and additional information.
+
+WWW: https://github.com/sd2k9/gpx2map
