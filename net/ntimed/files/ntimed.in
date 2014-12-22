@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ntimed
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable ntimed:
+# ntimed_enable="YES"
+# ntimed_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=ntimed
+rcvar=ntimed_enable
+
+load_rc_config $name
+
+: ${ntimed_enable:=NO}
+: ${ntimed_flags:="0.freebsd.pool.ntp.org"}
+
+start_precmd=ntimed_prestart
+pidfile=/var/run/ntimed.pid
+procname="/usr/local/sbin/ntimed-client"
+command=/usr/sbin/daemon
+command_args=" -p ${pidfile} ${procname} ${ntimed_flags}"
+
+ntimed_prestart()
+{
+	# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+run_rc_command "$1"
