@@ -2,14 +2,15 @@
 
 PORTNAME=	Chart-Gnuplot
 PORTVERSION=	0.21
-CATEGORIES=	graphics
+CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Perl module to plot graphs using GNUPLOT on the fly
 
-LICENSE=	GPLv2
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
