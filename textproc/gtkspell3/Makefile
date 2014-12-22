@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkspell3
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	SF/gtkspell/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	GTK+ 3 spell checking component
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
-USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

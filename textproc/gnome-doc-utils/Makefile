@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-doc-utils
 PORTVERSION=	0.20.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml
 
 USES=		gettext-tools:build,run gmake pathfix pkgconfig python:2 tar:xz
-USE_GNOME=	gnomehier libxslt intlhack
+USE_GNOME=	libxslt intlhack
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
