@@ -1,14 +1,17 @@
-# Created by: brg@dgate.org
+# Created by: Brian Gaeke <brg@dgate.org>
 # $FreeBSD$
 
 PORTNAME=	vmips
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	emulators
 MASTER_SITES=	SF \
 		http://www.dgate.org/vmips/releases/${DISTNAME}/
 
 MAINTAINER=	brg@dgate.org
 COMMENT=	MIPS R3000 simulator
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
