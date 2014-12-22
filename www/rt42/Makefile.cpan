@@ -206,7 +206,7 @@ DEVELOPER_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract				\
 		p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod                                     \
 		p5-Test-WWW-Mechanize-PSGI>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI	\
 		p5-Test-WWW-Mechanize>=1.30:${PORTSDIR}/devel/p5-Test-WWW-Mechanize		\
-		p5-Test-Warn>0:${PORTSDIR}devel/p5-Test-Warn					\
+		p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn					\
 		p5-WWW-Mechanize>=1.52:${PORTSDIR}/www/p5-WWW-Mechanize				\
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 
