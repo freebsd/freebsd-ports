@@ -3742,6 +3742,7 @@
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-fusefs
+    SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-game
     SUBDIR += py-gamin
