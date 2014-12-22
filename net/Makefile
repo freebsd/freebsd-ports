@@ -420,6 +420,7 @@
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
     SUBDIR += nstxd
+    SUBDIR += ntimed
     SUBDIR += ntlmaps
     SUBDIR += ntop
     SUBDIR += ntopng
