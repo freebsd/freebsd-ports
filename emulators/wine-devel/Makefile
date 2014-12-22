@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.7.32
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -37,7 +38,7 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison compiler:c11 gmake shebangfix tar:bzip2
+USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:bzip2
 SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message
@@ -73,7 +74,7 @@ LDAP_USE=		OPENLDAP=yes
 LIBXSLT_CONFIGURE_WITH=	xslt
 LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
 
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.2.msi:${PORTSDIR}/emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.4.msi:${PORTSDIR}/emulators/wine-mono-devel
 
 MPG123_CONFIGURE_WITH=	mpg123
 MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
@@ -86,7 +87,7 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype
+X11_CONFIGURE_WITH=	x cms fontconfig glu jpeg opengl png xinput2 xrandr freetype
 X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
