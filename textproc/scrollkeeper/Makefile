@@ -4,7 +4,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
@@ -25,7 +25,7 @@ DOCBOOK_VERSION=4.2
 CONFLICTS_INSTALL=	rarian-[0-9]*
 
 USES=		bison pathfix gettext gmake tar:bzip2 libtool
-USE_GNOME=	gnomehier libxslt intlhack
+USE_GNOME=	libxslt intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e   \
@@ -42,5 +43,8 @@ post-patch:
 		${WRKSRC}/libs/scrollkeeper.h.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/extract/dtds/Makefile.in
+
+post-install:
+	@${RM} ${STAGEDIR}/var/log/scrollkeeper.log
 
 .include <bsd.port.mk>

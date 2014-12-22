@@ -3,6 +3,7 @@
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -12,15 +13,13 @@ COMMENT=	GNOME tool to find strings in a set of files
 LICENSE=	GPLv2 # (or later)
 
 USES=		pathfix pkgconfig gettext gmake
-USE_GNOME=	gnomehier libgnomeui
+USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE= DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -30,11 +29,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/util.h
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS INSTALL NEWS README THANKS TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
