@@ -54,8 +54,8 @@ NLS_CONFIGURE_ENABLE=	nls
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 IDN_CONFIGURE_ENABLE=	idna
 
-post-install:
-	cd ${STAGEDIR}${PREFIX}/etc/; mv lynx.cfg.default lynx.cfg.sample; \
-		mv lynx.lss.default lynx.lss.sample
+post-patch:
+	${REINPLACE_CMD} -Ee 's/lynx\.(cfg|lss)\.default/lynx.\1.sample/g' \
+		-e '/SYSCONFDIR)\/lynx\.(cfg|lss)$$/d' ${WRKSRC}/makefile.in
 
 .include <bsd.port.mk>
