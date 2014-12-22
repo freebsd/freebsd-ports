@@ -34,6 +34,7 @@ MESABASEVERSION=	10.4.0
 MESASUBVERSION=
 
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
+PLIST_SUB+=	OLD="@comment " NEW=""
 
 # work around libarchive bug?
 EXTRACT_CMD=		${LOCALBASE}/bin/gtar
