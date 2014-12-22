@@ -2,7 +2,6 @@ The qDecoder Project
 ====================
 
 qDecoder is a C/C++ language library including CGI supports.
-Distributed under 2-clause BSD-like license since 9 release.
 
   CGI Interfaces
     o Request Parser, Response Generator, Session, Cookies
@@ -16,4 +15,4 @@ Distributed under 2-clause BSD-like license since 9 release.
     o String libraries, File libraries, Hashes & En/decoders
   And more... 
 
-WWW: http://www.qDecoder.org/
+WWW: http://wolkykim.github.io/qdecoder/

@@ -2,18 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	qdecoder
-PORTVERSION=	12.0.4
+PORTVERSION=	12.0.5
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	qDecoder-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C/C++ language library including CGI supports
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	wolkykim
+GH_TAGNAME=	r${PORTVERSION}
+GH_COMMIT=	192943d
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	exec_prefix="${PREFIX}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PORTEXAMPLES=	*
+
+PLIST_FILES=	include/qdecoder.h lib/libqdecoder.a \
+		lib/libqdecoder.so lib/libqdecoder.so.12
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ENABLE=	debug
