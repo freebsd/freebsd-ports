@@ -58,7 +58,3 @@ man/man1/slrnpull.1.gz
 %%DATADIR%%/slang/util.sl
 %%DATADIR%%/slang/varset.sl
 %%DATADIR%%/slang/xcomment.sl
-@dirrm %%DATADIR%%/slang
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/slrnpull
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
