@@ -2,7 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -97,6 +97,7 @@ SNMP_CONFIGURE_ENABLE=		snmp
 SSL_CONFIGURE_ENABLE=		ssl
 SSL_CRTD_CONFIGURE_ENABLE=	ssl-crtd
 STACKTRACES_CONFIGURE_ENABLE=	stacktraces
+STACKTRACES_LIB_DEPENDS=	libunwind.so:${PORTSDIR}/devel/libunwind
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
 TP_PF_CONFIGURE_ENABLE=		pf-transparent
@@ -300,7 +301,9 @@ LDFLAGS+=		-L${OPENSSLLIB}
 
 .if ${PORT_OPTIONS:MSTACKTRACES}
 CFLAGS+=	-g
+LDFLAGS+=	-lunwind -L${LOCALBASE}/lib
 STRIP=
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gen-stacktrace
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
