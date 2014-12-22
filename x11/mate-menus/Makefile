@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-menus
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -14,7 +15,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig \
 		python tar:xz
-USE_GNOME=	glib20 gnomehier intlhack introspection:build
+USE_GNOME=	glib20 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

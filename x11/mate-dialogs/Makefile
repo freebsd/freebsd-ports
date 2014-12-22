@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-dialogs
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pkgconfig tar:xz
-USE_GNOME=	gnomehier gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0
 CPPFLAGS+=	-I${LOCALBASE}/include
