@@ -3,7 +3,7 @@
 
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
 		http://www.egr.msu.edu/~mcdouga9/
@@ -18,7 +18,7 @@ RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen \
 
 USES=		gettext perl5
 USE_PERL5=	build
-USE_GNOME=	gtk12 gnomehier
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include

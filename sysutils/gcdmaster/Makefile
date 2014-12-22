@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcdmaster
-PORTREVISION=	6
+PORTREVISION=	7
 
 COMMENT=	GNOME frontend for cdrdao
 
