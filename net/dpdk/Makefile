@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dpdk.org/browse/dpdk/snapshot/
 
 MAINTAINER=	bruce.richardson@intel.com
-COMMENT=	Intel(R) DPDK: Software libraries for packet processing
+COMMENT=	DPDK: Software libraries for packet processing
 
 LICENSE=	BSD3CLAUSE
 
@@ -33,7 +33,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/${RTE_TARGET}/app \
 	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/lib \
-	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/arch \
+	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/generic \
 	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/exec-env
 	cd ${WRKSRC} && ${COPYTREE_SHARE} mk ${STAGEDIR}${DATADIR} \
 	   && ${COPYTREE_SHARE} examples ${STAGEDIR}${DATADIR}
@@ -47,8 +47,8 @@ do-install:
 	for f in ${WRKBUILD}/include/*.h ; do \
 		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include ; \
 	done
-	for f in ${WRKBUILD}/include/arch/*.h ; do \
-		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/arch ; \
+	for f in ${WRKBUILD}/include/generic/*.h ; do \
+		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/generic ; \
 	done
 	for f in ${WRKBUILD}/include/exec-env/*.h ; do \
 		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/exec-env ; \
