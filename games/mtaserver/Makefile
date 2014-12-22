@@ -14,6 +14,11 @@ DIST_SUBDIR=	mta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi Theft Auto: Vice City and GTA3 dedicated server
 
+LICENSE=	MTA
+LICENSE_NAME=	MTA v0.5 LICENSE AGREEMENT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror
+
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
