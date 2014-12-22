@@ -224,6 +224,7 @@
     SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
     SUBDIR += goose
+    SUBDIR += gpx2map
     SUBDIR += grafana
     SUBDIR += grails
     SUBDIR += gregarius
