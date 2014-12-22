@@ -7,8 +7,6 @@ COMMENT=	Gstreamer opencv real time computer vision plugin
 
 GST_PLUGIN=	opencv
 DIST=		bad
-MAKE_ARGS=	V=1
-
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
