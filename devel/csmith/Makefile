@@ -2,7 +2,7 @@
 
 PORTNAME=	csmith
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
@@ -16,7 +16,9 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
+USES=		gmake libtool perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	scripts/compiler_test.pl scripts/launchn.pl scripts/test_csmith.pl
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
