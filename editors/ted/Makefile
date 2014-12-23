@@ -15,7 +15,7 @@ COMMENT=	X11 based RTF editor
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpaper.so:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	gsfonts>0:${PORTSDIR}/print/gsfonts
@@ -29,7 +29,6 @@ USE_XORG=	xext xft
 USES=		iconv
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\"" \
