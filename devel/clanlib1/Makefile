@@ -15,7 +15,7 @@ COMMENT=	Cross-platform game SDK
 LICENSE=	ZLIB
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
