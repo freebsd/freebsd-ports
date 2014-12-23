@@ -1,6 +1,6 @@
---- Output/esd/mixer.c.orig	Thu Sep 29 09:48:56 2005
-+++ Output/esd/mixer.c	Thu Sep 29 09:49:25 2005
-@@ -146,7 +146,8 @@
+--- Output/esd/mixer.c.orig	2006-07-16 13:40:04 UTC
++++ Output/esd/mixer.c
+@@ -164,7 +164,8 @@ void esdout_set_volume(int l, int r)
  
  static void esdout_get_oss_volume(int *l, int *r)
  {
@@ -10,7 +10,7 @@
  
  	if (esd_cfg.use_remote)
  		return;
-@@ -173,7 +174,8 @@
+@@ -191,7 +192,8 @@ static void esdout_get_oss_volume(int *l
  
  static void esdout_set_oss_volume(int l, int r)
  {
