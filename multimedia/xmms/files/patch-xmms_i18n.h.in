@@ -1,4 +1,4 @@
---- xmms/i18n.h.in.orig
+--- xmms/i18n.h.in.orig	2007-11-16 21:56:53 UTC
 +++ xmms/i18n.h.in
 @@ -1,7 +1,8 @@
  #undef ENABLE_NLS

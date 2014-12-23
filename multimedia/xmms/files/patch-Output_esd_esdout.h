@@ -1,6 +1,6 @@
---- Output/esd/esdout.h.orig	2007-11-29 20:12:28.743052713 +0100
-+++ Output/esd/esdout.h	2007-11-29 20:12:42.453407104 +0100
-@@ -68,6 +68,7 @@
+--- Output/esd/esdout.h.orig	2004-07-18 20:03:46 UTC
++++ Output/esd/esdout.h
+@@ -68,6 +68,7 @@ void esdout_fetch_volume(int *l, int *r)
  void esdout_set_volume(int l, int r);
  void esdout_mixer_init(void);
  void esdout_mixer_init_vol(int l, int r);
