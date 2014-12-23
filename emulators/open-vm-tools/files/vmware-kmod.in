@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: vmware-kmod
-# REQUIRE: FILESYSTEMS
+# REQUIRE: FILESYSTEMS ldconfig
 # BEFORE: netif
 
 . /etc/rc.subr
