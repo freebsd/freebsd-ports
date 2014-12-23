@@ -4,7 +4,7 @@
 PORTNAME=	pytsk
 PORTVERSION=	20141220
 CATEGORIES=	sysutils security devel python
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
+MASTER_SITES=	https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
