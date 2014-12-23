@@ -24,9 +24,4 @@ bin/etded-etpro
 %%DATADIR%%/maps/railgun_lms.script
 %%DATADIR%%/qagame.mp.i386.so
 %%DATADIR%%/qagame_mp_x86.dll
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/etpromapscripts
-@dirrm %%DATADIR%%/configs
-@dirrm %%DATADIR%%/animations/scripts
-@dirrm %%DATADIR%%/animations
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/configs
