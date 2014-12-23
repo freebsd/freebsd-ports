@@ -15,15 +15,11 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	varnish-2.*
 
+USES=		autoreconf gmake libtool readline pkgconfig python:build
 GNU_CONFIGURE=	yes
-USES=		gmake libtool readline pkgconfig
-USE_PYTHON_BUILD=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests
 CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal libtoolize automake autoconf
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
 INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	varnishd varnishlog varnishncsa

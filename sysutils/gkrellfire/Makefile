@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/${PORTNAME}.so
-PLIST_DIRSTRY=	libexec/gkrellm2/plugins libexec/gkrellm2
 
 USES=		gmake pkgconfig tar:tgz
 MAKE_ARGS=	CC="${CC}"

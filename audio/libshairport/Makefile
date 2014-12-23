@@ -11,11 +11,10 @@ DISTNAME=	libshairport-${PORTVERSION}_lib
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Airport Extreme Emulator
 
-USES=		gmake libtool
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf gmake libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

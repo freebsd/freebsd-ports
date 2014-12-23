@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-cli
 PORTVERSION=	0.1.0.2014120201
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -22,7 +22,7 @@ GH_PROJECT=	syncthing-cli
 GH_COMMIT=	66a2027ae9537b2967082a3070ee84f918bef32c
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.11
+SYNCTHING_VER=	0.10.12
 
 WRKSRC=		${WRKDIR}/syncthing-cli-${GH_COMMIT}
 

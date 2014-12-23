@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION?=	4.2.6p5
-PORTREVISION=	4
+PORTVERSION=	4.2.8
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -14,18 +14,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-USES=		libtool shebangfix
-SHEBANG_FILES=	${WRKSRC}/scripts/ntptrace.in ${WRKSRC}/scripts/ntp-wait.in
-perl_OLD_CMD=	@PATH_PERL@
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
+USES=		pathfix shebangfix libtool
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+
+NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
 
 .include "Makefile.inc"
 
-NTPSNMPD_PLIST_FILES=	bin/ntpsnmpd
-NTPSNMPD_BUILD_DEPENDS=	${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-NTPSNMPD_RUN_DEPENDS=	${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
+PERL_UTILS_USES=	perl5
 
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_OFF=	--without-crypto
@@ -34,7 +32,10 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
 
-.include <bsd.port.options.mk>
+NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
@@ -47,6 +48,13 @@ CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
+
+# XXX Temporary hack. Remember to remove this next commit.
+post-extract:
+	@/usr/bin/touch ${WRKSRC}/scripts/build/checkHtmlFileDates
+	@${CHMOD} +x ${WRKSRC}/scripts/build/checkHtmlFileDates
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
@@ -54,5 +62,7 @@ post-install:
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
+	@cd ${STAGEDIR}${PREFIX}; \
+		${ECHO_CMD} ${NTP_SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

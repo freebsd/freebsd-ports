@@ -43,6 +43,7 @@ llvm-devel/bin/llvm-config
 llvm-devel/bin/llvm-cov
 llvm-devel/bin/llvm-diff
 llvm-devel/bin/llvm-dis
+llvm-devel/bin/llvm-dsymutil
 llvm-devel/bin/llvm-dwarfdump
 llvm-devel/bin/llvm-extract
 llvm-devel/bin/llvm-link
@@ -164,7 +165,6 @@ llvm-devel/include/llvm/Analysis/DependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
 llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
-llvm-devel/include/llvm/Analysis/FindUsedTypes.h
 llvm-devel/include/llvm/Analysis/FunctionTargetTransformInfo.h
 llvm-devel/include/llvm/Analysis/IVUsers.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
@@ -316,9 +316,7 @@ llvm-devel/include/llvm/ExecutionEngine/Interpreter.h
 llvm-devel/include/llvm/ExecutionEngine/JITEventListener.h
 llvm-devel/include/llvm/ExecutionEngine/MCJIT.h
 llvm-devel/include/llvm/ExecutionEngine/OProfileWrapper.h
-llvm-devel/include/llvm/ExecutionEngine/ObjectBuffer.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectCache.h
-llvm-devel/include/llvm/ExecutionEngine/ObjectImage.h
 llvm-devel/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
@@ -380,7 +378,9 @@ llvm-devel/include/llvm/IR/LegacyPassManagers.h
 llvm-devel/include/llvm/IR/LegacyPassNameParser.h
 llvm-devel/include/llvm/IR/MDBuilder.h
 llvm-devel/include/llvm/IR/Mangler.h
+llvm-devel/include/llvm/IR/Metadata.def
 llvm-devel/include/llvm/IR/Metadata.h
+llvm-devel/include/llvm/IR/MetadataTracking.h
 llvm-devel/include/llvm/IR/Module.h
 llvm-devel/include/llvm/IR/NoFolder.h
 llvm-devel/include/llvm/IR/OperandTraits.h
@@ -388,7 +388,9 @@ llvm-devel/include/llvm/IR/Operator.h
 llvm-devel/include/llvm/IR/PassManager.h
 llvm-devel/include/llvm/IR/PatternMatch.h
 llvm-devel/include/llvm/IR/PredIteratorCache.h
+llvm-devel/include/llvm/IR/Statepoint.h
 llvm-devel/include/llvm/IR/SymbolTableListTraits.h
+llvm-devel/include/llvm/IR/TrackingMDRef.h
 llvm-devel/include/llvm/IR/Type.h
 llvm-devel/include/llvm/IR/TypeBuilder.h
 llvm-devel/include/llvm/IR/TypeFinder.h
@@ -539,6 +541,16 @@ llvm-devel/include/llvm/Support/Debug.h
 llvm-devel/include/llvm/Support/Dwarf.h
 llvm-devel/include/llvm/Support/DynamicLibrary.h
 llvm-devel/include/llvm/Support/ELF.h
+llvm-devel/include/llvm/Support/ELFRelocs/AArch64.def
+llvm-devel/include/llvm/Support/ELFRelocs/ARM.def
+llvm-devel/include/llvm/Support/ELFRelocs/Hexagon.def
+llvm-devel/include/llvm/Support/ELFRelocs/Mips.def
+llvm-devel/include/llvm/Support/ELFRelocs/PowerPC.def
+llvm-devel/include/llvm/Support/ELFRelocs/PowerPC64.def
+llvm-devel/include/llvm/Support/ELFRelocs/Sparc.def
+llvm-devel/include/llvm/Support/ELFRelocs/SystemZ.def
+llvm-devel/include/llvm/Support/ELFRelocs/i386.def
+llvm-devel/include/llvm/Support/ELFRelocs/x86_64.def
 llvm-devel/include/llvm/Support/Endian.h
 llvm-devel/include/llvm/Support/EndianStream.h
 llvm-devel/include/llvm/Support/Errc.h
@@ -701,7 +713,6 @@ llvm-devel/lib/libLLVMCppBackendCodeGen.a
 llvm-devel/lib/libLLVMCppBackendInfo.a
 llvm-devel/lib/libLLVMDebugInfo.a
 llvm-devel/lib/libLLVMExecutionEngine.a
-llvm-devel/lib/libLLVMHexagonAsmPrinter.a
 llvm-devel/lib/libLLVMHexagonCodeGen.a
 llvm-devel/lib/libLLVMHexagonDesc.a
 llvm-devel/lib/libLLVMHexagonDisassembler.a
@@ -784,9 +795,11 @@ llvm-devel/lib/libLTO.a
 llvm-devel/lib/libLTO.so
 llvm-devel/share/llvm/cmake/AddLLVM.cmake
 llvm-devel/share/llvm/cmake/AddLLVMDefinitions.cmake
+llvm-devel/share/llvm/cmake/AddOCaml.cmake
 llvm-devel/share/llvm/cmake/AddSphinxTarget.cmake
 llvm-devel/share/llvm/cmake/ChooseMSVCCRT.cmake
 llvm-devel/share/llvm/cmake/CrossCompile.cmake
+llvm-devel/share/llvm/cmake/FindOCaml.cmake
 llvm-devel/share/llvm/cmake/FindSphinx.cmake
 llvm-devel/share/llvm/cmake/GetSVN.cmake
 llvm-devel/share/llvm/cmake/HandleLLVMOptions.cmake
@@ -909,6 +922,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl7.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl8.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/LangImpl9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LangImpl9.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LangIntro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangIntro.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LangRef.html
@@ -929,6 +944,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/MakefileGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/MarkedUpDisassembly.html
 %%PORTDOCS%%%%DOCSDIR%%/html/MarkedUpDisassembly.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/MergeFunctions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/MergeFunctions.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/NVPTXUsage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NVPTXUsage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/OCamlLangImpl1.html
@@ -971,6 +988,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/SphinxQuickstartTemplate.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/StackMaps.html
 %%PORTDOCS%%%%DOCSDIR%%/html/StackMaps.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/Statepoints.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Statepoints.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/SystemLibrary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SystemLibrary.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/TableGenFundamentals.html

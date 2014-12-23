@@ -25,6 +25,5 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
 		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
-PLIST_DIRS=	lib/yajltcl${PORTVERSION}
 
 .include <bsd.port.mk>

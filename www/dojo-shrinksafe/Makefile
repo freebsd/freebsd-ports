@@ -18,7 +18,6 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME} %%DATADIR%%/shrinksafe.jar \
 		%%DATADIR%%/js.jar
-PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>

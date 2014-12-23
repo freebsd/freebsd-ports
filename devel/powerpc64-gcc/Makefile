@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.1
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
@@ -41,7 +41,7 @@ EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
+CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
 		--with-gmp=${LOCALBASE} \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \
@@ -51,8 +51,8 @@ CONFIGURE_ARGS=	--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 
 CONFIGURE_SCRIPT=	../${PORTNAME}-${PORTVERSION}/configure
 
-ALL_TARGET=	all-gcc
-INSTALL_TARGET=	install-gcc
+ALL_TARGET?=	all-gcc
+INSTALL_TARGET?=	install-gcc
 
 .include <bsd.port.options.mk>
 

@@ -23,7 +23,6 @@ USE_PYTHON=	distutils autoplist
 PLIST_FILES=	man/man1/coccigrep.1.gz \
 		${DATADIR_REL}/cocci-grep.el \
 		${DATADIR_REL}/cocci-grep.vim
-PLIST_DIRS=	${DATADIR_REL}
 PORTDOCS=	ChangeLog README.rst
 
 OPTIONS_DEFINE=	DOCS

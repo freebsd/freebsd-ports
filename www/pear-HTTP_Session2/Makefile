@@ -8,7 +8,7 @@ CATEGORIES=	www devel pear
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	PHP5 Session Handler
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		dos2unix pear
 

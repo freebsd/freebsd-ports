@@ -25,12 +25,10 @@ PLIST_FILES=	sbin/portmaster \
 
 .if ${PORT_OPTIONS:MBASH}
 PLIST_FILES+=	etc/bash_completion.d/portmaster.sh
-PLIST_DIRSTRY+=	etc/bash_completion.d
 .endif
 
 .if ${PORT_OPTIONS:MZSH}
 PLIST_FILES+=	share/zsh/site-functions/_portmaster
-PLIST_DIRSTRY+=	share/zsh/site-functions share/zsh
 .endif
 
 verify: checksum

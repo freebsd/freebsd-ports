@@ -1,24 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-joystick
-PORTVERSION=	${JOYVER}
-PORTREVISION=	${JOYREVISION}
+PORTVERSION=	1.6.2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org joystick input driver
 
 XORG_CAT=	driver
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_NEW_XORG)
-JOYVER=		1.6.2
-JOYREVISION=	2
-.else
-JOYVER=		1.5.0
-JOYREVISION=	3
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \

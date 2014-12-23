@@ -2,7 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=   http://llvm.org/releases/3.5.0/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -84,6 +84,9 @@ RELTYPE=		Release
 .endif
 
 .include <bsd.port.pre.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MASSERTS}
 pre-fetch:

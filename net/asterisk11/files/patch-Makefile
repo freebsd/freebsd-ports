@@ -129,7 +129,7 @@
 +		-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
 +		-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
 +		-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
-+		"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
++		"$(DESTDIR)$(ASTCONFPATH).sample" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
 +	$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH).sample" ; \
 +	rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX"

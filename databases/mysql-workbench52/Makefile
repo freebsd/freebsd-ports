@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql-workbench-gpl
 PORTVERSION=	5.2.47
-PORTREVISION=	6
+PORTREVISION=	7
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQLGUITools
@@ -48,7 +48,7 @@ SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		plugins/wb.query.analysis/*.py \
 		po/*.py
 USE_GL=		gl
-USE_GNOME=	gnomehier gtk20 libxml2
+USE_GNOME=	gtk20 libxml2
 USE_MYSQL=	client
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf

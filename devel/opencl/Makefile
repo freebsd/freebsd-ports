@@ -22,7 +22,6 @@ CONFLICTS=	opencl-1.[0-1]
 
 NO_BUILD=	yes
 
-PLIST_DIRS+=	include/CL
 .for f in ${DISTFILES}
 PLIST_FILES+=include/CL/$f
 .endfor

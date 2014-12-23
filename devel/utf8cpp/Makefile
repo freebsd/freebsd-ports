@@ -20,7 +20,6 @@ PLIST_FILES=	include/utf8.h \
 		include/utf8/checked.h \
 		include/utf8/core.h \
 		include/utf8/unchecked.h
-PLIST_DIRS=	include/utf8
 
 do-install:
 	(cd ${WRKSRC}/source; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include)

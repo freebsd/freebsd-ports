@@ -19,8 +19,7 @@ QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 USE_GITHUB=	yes
 GH_ACCOUNT=	kypeli
 GH_PROJECT=	kQOAuth
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-677339c
+GH_COMMIT=	677339c
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|$${target.path}/pkgconfig|$${INSTALL_PREFIX}/libdata/pkgconfig|g' \

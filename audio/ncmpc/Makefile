@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
 MAINTAINER=	henrik@affekt.org
 COMMENT=	Ncurses client for the musicpd
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
@@ -28,7 +31,6 @@ PLIST_FILES=	bin/ncmpc \
 		%%EXAMPLESDIR%%/config \
 		%%EXAMPLESDIR%%/keys \
 		%%EXAMPLESDIR%%/ncmpc.lirc
-PLIST_DIRS=%%EXAMPLESDIR%%
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -44,8 +46,6 @@ CONFIGURE_ARGS+=--disable-nls
 CONFIGURE_ARGS+=--enable-lyrics-screen
 PLIST_FILES+=	lib/ncmpc/lyrics/10-hd.sh \
 		lib/ncmpc/lyrics/20-lyricwiki.rb
-PLIST_DIRS+=	lib/ncmpc/lyrics \
-		lib/ncmpc
 .else
 CONFIGURE_ARGS+=--disable-lyrics-screen
 .endif
@@ -64,9 +64,11 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
 .endif
+.if ${PORT_OPTIONS:MLYRICS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics
 	(cd ${WRKSRC}/lyrics && ${INSTALL_SCRIPT} \
 		10-hd.sh 20-lyricwiki.rb \
 		${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics)
+.endif
 
 .include <bsd.port.mk>

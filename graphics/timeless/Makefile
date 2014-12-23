@@ -15,7 +15,6 @@ USE_SDL=	sdl mixer
 LDFLAGS+=	-lm
 
 PLIST_FILES=	bin/timeless %%DATADIR%%/time.s3m
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

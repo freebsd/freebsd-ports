@@ -28,9 +28,6 @@ SRCFILE?=	waeiji52.txt
 
 PLIST_FILES=	share/dict/waeijiro-fpw/waeijiro/data/honmon \
 		share/dict/waeijiro-fpw/catalogs
-PLIST_DIRS=	share/dict/waeijiro-fpw/waeijiro/data \
-		share/dict/waeijiro-fpw/waeijiro \
-		share/dict/waeijiro-fpw
 
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)

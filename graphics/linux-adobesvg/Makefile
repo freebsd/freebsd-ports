@@ -25,7 +25,6 @@ SHLIBS=		ACE AGM BIB CoolType NPSVG3 SVGCore
 SHLIB_FILES=	${SHLIBS:S|^|lib|:S|$|.so|}
 
 PLIST_FILES=	${SHLIB_FILES:S|^|lib/linux-adobesvg/|}
-PLIST_DIRS=	${LIBDIR:S|^${PREFIX}/||}
 PORTDOCS=	LICENSE.txt ReadMe.html SVGHelp.html
 
 OPTIONS_DEFINE=	DOCS

@@ -54,10 +54,6 @@ PLIST_FILES+=	%%JAR_DIR%%/${jar}
 PLIST_FILES+=	%%DATADIR%%/${file}
 .endfor
 
-PLIST_DIRS+=	\
-		%%JAR_DIR%% \
-		%%DATADIR%%
-
 DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 			"${JAVASHAREDIR}/${PORTNAME}/jtc.ico" \
 			"frost" "P2P;Network;Java;" \

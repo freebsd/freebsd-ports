@@ -2119,7 +2119,6 @@ sbin/purge
 sbin/squid
 sbin/squidclient
 @dir /var/log/squid
-@dir /var/run/squid
 @dir /var/squid/cache
 @dir /var/squid/logs
 @dir /var/squid

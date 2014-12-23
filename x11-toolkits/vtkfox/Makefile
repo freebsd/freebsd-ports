@@ -45,7 +45,6 @@ PLIST_FILES=	include/vtkfox/FXVTKCanvas.h \
 		lib/libvtkfox.so \
 		lib/libvtkfox.so.1 \
 		libdata/pkgconfig/vtkfox.pc
-PLIST_DIRS=	include/vtkfox
 
 SAMPLE_FILES=	imgsurf double cone quad xyplot simple
 PORTEXAMPLES=	*

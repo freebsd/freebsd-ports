@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Browser based on Qt 5
 
-USE_QT5=	concurrent core gui network printsupport script sql webkit \
-		widgets buildtools_build
+USE_QT5=	concurrent core gui network printsupport qmake_build script \
+		sql webkit widgets buildtools_build
 USES=		cmake:outsource desktop-file-utils
 
 USE_GITHUB=	yes

@@ -9,7 +9,7 @@ DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=
 DIST_SUBDIR=	exaile
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Full featured python-based music player for GTK+
 
 LICENSE=	GPLv2

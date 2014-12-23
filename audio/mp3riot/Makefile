@@ -3,6 +3,7 @@
 
 PORTNAME=	mp3riot
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxsecure.de/f2html/
 
@@ -11,7 +12,8 @@ COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 
-USES=		perl5 zip
+USES=		perl5 shebangfix zip
+SHEBANG_FILES=	mp3riot
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -98,7 +98,6 @@ CONFLICTS_INSTALL=	xmms-skins-huge-*
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/xmms
 PLIST_FILES=	${DISTFILES:S,^,${DATADIR_REL}/Skins/,}
-PLIST_DIRSTRY=	${DATADIR_REL}/Skins ${DATADIR_REL}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/Skins

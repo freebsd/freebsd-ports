@@ -24,7 +24,6 @@ CPPFLAGS+=	`pkg-config --cflags libgnomeui-2.0`
 PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
 		lib/libgai.so.0 lib/libgai.so libdata/pkgconfig/gai.pc \
 		share/locale/de/LC_MESSAGES/gai.mo
-PLIST_DIRS=	include/gai
 PORTDOCS=	*
 USE_LDCONFIG=	yes
 

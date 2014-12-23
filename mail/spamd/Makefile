@@ -20,7 +20,6 @@ GROUPS=		_spamd
 
 PORTDOCS=	ipfw-spamd.txt spamdb.txt
 
-PLIST_DIRSTRY=	%%ETCDIR%%
 PLIST_FILES=	%%ETCDIR%%/spamd.conf.sample \
 		libexec/spamlogd \
 		sbin/spamd-setup \

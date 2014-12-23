@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Base package that all ezc components packages rely on
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
 RUN_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc

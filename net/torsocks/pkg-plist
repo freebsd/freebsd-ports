@@ -3,6 +3,7 @@ bin/usewithtor
 etc/torsocks.conf.sample
 lib/libtorsocks.a
 lib/libtorsocks.so
+lib/libtorsocks.so.1
 lib/libtorsocks.so.1.0.0
 man/man1/torsocks.1.gz
 man/man1/usewithtor.1.gz

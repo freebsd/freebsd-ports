@@ -8,8 +8,8 @@ include/osmocom/abis/e1_input.h
 include/osmocom/abis/lapd.h
 include/osmocom/abis/lapd_pcap.h
 include/osmocom/trau/osmo_ortp.h
-lib/libosmoabis.so.3.0.0
-lib/libosmoabis.so.3
+lib/libosmoabis.so.4.0.0
+lib/libosmoabis.so.4
 lib/libosmoabis.so
 lib/libosmotrau.so.0.0.0
 lib/libosmotrau.so.0

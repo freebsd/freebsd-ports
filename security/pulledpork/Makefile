@@ -19,8 +19,6 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-PLIST_DIRS=	%%ETCDIR%% %%DATADIR%%
-
 PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/disablesid.conf.sample \
 		%%ETCDIR%%/dropsid.conf.sample \

@@ -91,8 +91,8 @@ PLIST_FILES+=	libdata/pkgconfig/python-3.2%%ABI%%.pc
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-# See http://bugs.freebsd.org/115940
-.if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS) # the world with NO_NIS
+# See http://bugs.freebsd.org/115940 and http://bugs.freebsd.org/193650
+.if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 PLIST_SUB+=	NO_NIS="@comment "
 .else
 PLIST_SUB+=	NO_NIS=""

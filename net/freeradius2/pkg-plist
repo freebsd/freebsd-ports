@@ -211,9 +211,6 @@ include/freeradius/vqp.h
 %%EXPM%%%%LIBDIR%%/rlm_sim_files-%%PORTVERSION%%.so
 %%EXPM%%%%LIBDIR%%/rlm_sim_files.a
 %%EXPM%%%%LIBDIR%%/rlm_sim_files.so
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb-%%PORTVERSION%%.so
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.a
-%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.so
 %%EXPM%%%%LIBDIR%%/rlm_smsotp-%%PORTVERSION%%.so
 %%EXPM%%%%LIBDIR%%/rlm_smsotp.a
 %%EXPM%%%%LIBDIR%%/rlm_smsotp.so

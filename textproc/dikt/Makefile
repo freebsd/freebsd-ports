@@ -24,6 +24,5 @@ PLIST_FILES=	bin/dikt \
 		share/apps/dikt/format.conf \
 		share/icons/hicolor/128x128/apps/dikt.png \
 		share/kde4/services/dict.protocol
-PLIST_DIRS=	share/apps/dikt
 
 .include <bsd.port.mk>

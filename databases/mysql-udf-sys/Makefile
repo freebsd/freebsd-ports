@@ -16,7 +16,6 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	lib/mysql/plugin/lib_mysqludf_sys.so
-PLIST_DIRS=	lib/mysql/plugin
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|; s|%%LOCALBASE%%|${LOCALBASE}|' \

@@ -1,0 +1,12 @@
+--- source/Makefile.orig	Sat Apr 20 15:18:16 2002
++++ source/Makefile	Sat Apr 20 15:21:27 2002
+@@ -33,7 +33,9 @@
+ install: all
+ 	$(INSTALL) -s lgrind $(BINDIR)/lgrind
+ 	$(INSTALL) -m 644 $(MANPAGES1) $(MANDIR)/man1
++	gzip $(MANDIR)/man1/$(MANPAGES1)
+ 	$(INSTALL) -m 644 $(MANPAGES5) $(MANDIR)/man5
++	gzip $(MANDIR)/man5/$(MANPAGES5)
+ 
+ clean:
+ 	rm -f $(OBJS) lgrind retest v2lg

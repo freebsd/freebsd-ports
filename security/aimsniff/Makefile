@@ -3,6 +3,7 @@
 
 PORTNAME=	aimsniff
 PORTVERSION=	0.9d
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
 
@@ -22,7 +23,8 @@ SUID_ROOT_DESC=	Install aimsniff with set-uid bit
 
 PORTDOCS=	README table.struct rc.aimsniff
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	aimSniff.pl
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/aimsniff

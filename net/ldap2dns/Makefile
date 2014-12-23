@@ -36,7 +36,6 @@ PLIST_FILES=	bin/ldap2dns \
 		%%DATADIR%%/data2ldif.pl \
 		%%DATADIR%%/ldap2dns.schema \
 		%%DATADIR%%/ldap2tinydns-conf
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=		DOCS
 

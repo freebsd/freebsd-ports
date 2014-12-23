@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.10.2
-PORTREVISION=	1
+PORTVERSION=	4.11.0
 CATEGORIES=	security
 MASTER_SITES=	GH
 
@@ -20,7 +19,7 @@ RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
 		rubygem-metasploit-concern>=0.3.0:${PORTSDIR}/security/rubygem-metasploit-concern \
 		rubygem-metasploit-model>=0.28.0:${PORTSDIR}/security/rubygem-metasploit-model \
-		rubygem-meterpreter_bins>=0.0.11:${PORTSDIR}/security/rubygem-meterpreter_bins \
+		rubygem-meterpreter_bins>=0.0.12:${PORTSDIR}/security/rubygem-meterpreter_bins \
 		rubygem-msgpack>=0:${PORTSDIR}/devel/rubygem-msgpack \
 		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-network_interface>=0.0.1:${PORTSDIR}/net/rubygem-network_interface \
@@ -39,7 +38,7 @@ SCRIPTS=	msfbinscan msfcli msfconsole msfd msfelfscan msfencode \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
-GH_COMMIT=	286827c
+GH_COMMIT=	4c994d8
 
 USES=		ncurses:port tar:bzip2
 USE_RUBY=	yes
@@ -50,7 +49,7 @@ OPTIONS_DEFAULT=DB
 DB_DESC=	Database support
 
 DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-metasploit-credential>=0.13.3:${PORTSDIR}/security/rubygem-metasploit-credential \
+		rubygem-metasploit-credential>=0.13.8:${PORTSDIR}/security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0.21.1:${PORTSDIR}/security/rubygem-metasploit_data_models \
 		rubygem-pg>=0.11:${PORTSDIR}/databases/rubygem-pg
 

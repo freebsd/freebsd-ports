@@ -52,6 +52,8 @@ HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 .if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
 IGNORE=		nghttp2 requires OpenSSL 1.0.1+
+.elif defined(WITH_OPENSSL_PORT)
+BROKEN=		Does not build
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000

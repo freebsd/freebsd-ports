@@ -32,7 +32,6 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-system-sqlite
 
 THREADS_CONFIGURE_ENABLE=	threads
 
-PLIST_DIRS+=		lib/${PORTNAME}
 PLIST_FILES+=		lib/${PORTNAME}/libsqlite${PORTVERSION}.so lib/${PORTNAME}/pkgIndex.tcl
 PORTEXAMPLES=		*
 

@@ -19,7 +19,6 @@ CONFLICTS=	hping-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_DIRS+=	lib/hping
 PLIST_FILES=	sbin/hping lib/hping/hpingstdlib.htcl man/man8/hping.8.gz
 PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
 		MORE-FUN-WITH-IPID SPOOFED_SCAN.txt APD.txt \

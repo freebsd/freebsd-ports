@@ -22,8 +22,6 @@ KMFL_ICONS_DIR=	share/kmfl/icons
 
 PLIST_FILES=	${KMFL_DIR}/khmer.kmn \
 		${KMFL_ICONS_DIR}/khmer.bmp
-PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
-		${KMFL_DIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}

@@ -20,7 +20,6 @@ NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine
 PLIST_FILES=	%%DATADIR%%/gecko/wine_gecko-%%GECKO_VERSION%%-x86.msi
-PLIST_DIRSTRY=	%%DATADIR%%/gecko %%DATADIR%%
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gecko

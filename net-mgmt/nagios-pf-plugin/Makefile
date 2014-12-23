@@ -17,7 +17,6 @@ GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	2aba423
 
 PLIST_FILES=	libexec/nagios/check_pf
-PLIST_DIRS=	libexec/nagios
 SUB_FILES=	pkg-message
 
 pre-install:

@@ -18,7 +18,6 @@ XAE_DESC=	Build X11 version 'xae'
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/aee bin/rae man/man1/aee.1.gz %%DATADIR%%/help.ae
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.options.mk>
 

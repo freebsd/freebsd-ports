@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Fast implementation of the standard Ruby debugger
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 RUN_DEPENDS=	rubygem-columnize>=0.3.1:${PORTSDIR}/devel/rubygem-columnize \

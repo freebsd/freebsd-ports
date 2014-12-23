@@ -32,10 +32,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}/X11/Xaw3d
-	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
+	@${MKDIR} ${WRKSRC}/X11/Xaw3d
+	@cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
 .if ! ${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/LINTLIBS =/s/=.*/=/' \
+	@${REINPLACE_CMD} -e '/LINTLIBS =/s/=.*/=/' \
 		-e '/#ifdef XawI18nDefines/s//#if 0/' \
 		${WRKSRC}/Imakefile
 .endif

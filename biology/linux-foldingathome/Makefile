@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=
 PLIST_FILES=	share/${PORTNAME}/${DISTNAME}${EXTRACT_SUFX} \
 		bin/FoldingAtHome
-PLIST_DIRS=	share/${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKSRC}

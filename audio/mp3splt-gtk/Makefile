@@ -11,6 +11,8 @@ COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libogg.so:${PORTSDIR}/audio/libogg \

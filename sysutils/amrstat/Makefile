@@ -12,8 +12,6 @@ COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
 
 LICENSE=	BSD2CLAUSE
 
-PLIST_DIRSTRY=	etc/periodic/daily \
-		etc/periodic
 PLIST_FILES=	etc/periodic/daily/407.status-amr-raid \
 		sbin/amrstat
 

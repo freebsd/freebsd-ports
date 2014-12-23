@@ -105,6 +105,8 @@ PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL}
 
+QA_ENV+=	SITE_ARCH_REL=${SITE_ARCH_REL} LIBPERL=libperl.so.${PERL_VER}
+
 # Define the want perl first if defined
 .if ${USE_PERL5:M5*}
 want_perl_sign=		${USE_PERL5:M5*:C|^[0-9.]+||}
@@ -168,13 +170,13 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 _MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
 .endif
 .endfor
-MANDIRS+=	${SITE_PERL}/man
+MANDIRS+=	${PREFIX}/${SITE_PERL_REL}/man
 
 .if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
-CONFIGURE_ARGS+=--install_path lib="${SITE_PERL}" \
-		--install_path arch="${SITE_ARCH}" \
+CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
+		--install_path arch="${PREFIX}/${SITE_ARCH_REL}" \
 		--install_path script="${PREFIX}/bin" \
 		--install_path bin="${PREFIX}/bin" \
 		--install_path libdoc="${MAN3PREFIX}/man/man3" \
@@ -230,21 +232,21 @@ RUN_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${SITE_PERL}
+MAN3PREFIX?=		${PREFIX}/${SITE_PERL_REL}
 .undef HAS_CONFIGURE
 
 .if !target(do-configure)
 do-configure:
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
-	    cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-	    ${SCRIPTDIR}/configure; \
+		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+		${SCRIPTDIR}/configure; \
 	fi
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} \
-	    ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${SETENV} ${CONFIGURE_ENV} \
+		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .if !${_USE_PERL5:Mmodbuild*}
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif # ! modbuild
 .endif # !target(do-configure)
 .endif # configure

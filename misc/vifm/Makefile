@@ -28,6 +28,5 @@ PLIST_FILES=	bin/vifm \
 		man/man1/vifm-pause.1.gz \
 		man/man1/vifm.1.gz \
 		man/man1/vifmrc-converter.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>

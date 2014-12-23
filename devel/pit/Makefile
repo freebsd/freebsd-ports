@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line project manager that integrates with Git
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes

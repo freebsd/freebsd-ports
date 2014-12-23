@@ -20,6 +20,5 @@ USE_MYSQL=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/mysql/plugin/lib_mysqludf_xql.so
-PLIST_DIRSTRY=	lib/mysql/plugin
 
 .include <bsd.port.mk>

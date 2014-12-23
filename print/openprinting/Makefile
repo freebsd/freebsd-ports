@@ -53,9 +53,6 @@ CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 CONFIGURE_ARGS+=--without-cups
 .endif
 
-
-PLIST_DIRS+=	man/mani
-
 PLIST_FILES+=\
 	include/papi.h \
 	include/ipp.h \

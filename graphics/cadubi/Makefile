@@ -3,7 +3,7 @@
 
 PORTNAME=	cadubi
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics editors
 MASTER_SITES=	http://langworth.com/pub/
 
@@ -14,13 +14,13 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	cadubi
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/help.txt \
 		%%DATADIR%%/logo.txt
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	*
 

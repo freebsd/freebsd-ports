@@ -56,7 +56,6 @@ PLIST_SUB+=	ICONS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomehier
 USES+=		desktop-file-utils
 PLIST_SUB+=	GNOME=""
 .else

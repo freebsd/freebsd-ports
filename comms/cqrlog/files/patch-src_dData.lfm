@@ -1,0 +1,11 @@
+--- src/dData.lfm.orig	2014-12-20 19:39:40.000000000 -0800
++++ src/dData.lfm	2014-12-20 19:40:02.000000000 -0800
+@@ -113,7 +113,7 @@
+       '            cont VARCHAR(6) NOT NULL,'
+       '            utc VARCHAR(12)NOT NULL,'
+       '            lat VARCHAR(10) NOT NULL,'
+-      '            longit VARCHAR(10) NOT NULL,'
++      '            longit VARCHAR(12) NOT NULL,'
+       '            itu VARCHAR(20) NOT NULL,'
+       '            waz VARCHAR(20) NOT NULL,'
+       '            adif SMALLINT NOT NULL DEFAULT 0,'

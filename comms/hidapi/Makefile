@@ -2,7 +2,7 @@
 
 PORTNAME=	hidapi
 DISTVERSION=	0.8.0-rc1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -16,10 +16,10 @@ GH_ACCOUNT=	signal11
 GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 GH_COMMIT=	40cf516
 
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-AUTOMAKE_ARGS=	--add-missing --copy
-
-USES=		iconv:wchar_t libtool
+USES=		autoreconf iconv:wchar_t libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
 .include <bsd.port.mk>

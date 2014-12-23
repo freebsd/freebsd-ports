@@ -4,7 +4,7 @@
 
 PORTNAME=	syndigator
 PORTVERSION=	0.15.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Syndigator/${PORTVERSION}
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	syndigator
-USE_GNOME=	gnomehier
 NO_BUILD=	yes
 
 GNOMEDIR=	${PREFIX}/share

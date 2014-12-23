@@ -32,7 +32,6 @@ PLIST_FILES=	bin/gri bin/gri_merge bin/gri_unpage \
 		%%DATADIR%%/logo.dat \
 		%%DATADIR%%/rgb.txt \
 		%%DATADIR%%/startup.msg
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -206,7 +206,56 @@ libtool() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool"
+libperl() {
+	local has_some_libperl_so files found
+	if [ -n "${SITE_ARCH_REL}" -a -d "${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}" ]; then
+		has_some_libperl_so=0
+		files=0
+		while read f; do
+			# No results presents a blank line from heredoc.
+			[ -z "${f}" ] && continue
+			files=$((files+1))
+			found=`readelf -d $f | awk "BEGIN {libperl=1; rpath=10; runpath=100}
+				/NEEDED.*${LIBPERL}/  { libperl = 0 }
+				/RPATH.*perl.*CORE/   { rpath   = 0 }
+				/RUNPATH.*perl.*CORE/ { runpath = 0 }
+				END {print libperl+rpath+runpath}
+				"`
+			# FIXME When 8.4 goes out of commission, replace the ;;
+			# with ;& in the case below.  Also, change the logic on
+			# detecting if there was a file with libperl.so
+			if [ "$found" -ne "0" ]; then
+				case "$found" in
+					*1)
+						warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
+						;; #;&
+					*1?)
+						has_some_libperl_so=1
+						warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
+						;; #;&
+					1??)
+						has_some_libperl_so=1
+						warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
+						;; #;&
+				esac
+			else
+				has_some_libperl_so=1
+			fi
+		# Use heredoc to avoid losing rc from find|while subshell
+		done <<-EOT
+		$(find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} -name '*.so')
+		EOT
+
+		if [ $files -gt 0 -a $has_some_libperl_so -eq 0 ]; then
+			err "None of the .so in ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} are linked with ${LIBPERL}, see above for the full list."
+			return 1
+		else
+			return 0
+		fi
+	fi
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl"
 
 ret=0
 cd ${STAGEDIR}

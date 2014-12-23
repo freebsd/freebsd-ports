@@ -2,8 +2,9 @@
 # $FreeBSD$
 #   $MCom: ports/branches/GNOME_3_12/ports-mgmt/packagekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
-PORTNAME=	packagekit
-PORTVERSION=	0.8.9
+PORTNAME=	PackageKit
+PORTVERSION=	0.6.11
+PORTREVISION?=	7
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.freedesktop.org/software/PackageKit/releases/
 DISTNAME=	PackageKit-${PORTVERSION}
@@ -15,9 +16,10 @@ BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		execinfo gettext gmake iconv libtool pathfix \
-		pkgconfig python:2 shared-mime-info tar:xz
+USES=		execinfo gettext gmake iconv libtool pathfix pkgconfig \
+		python:build shared-mime-info
 USE_GNOME=	glib20 intltool introspection
+USE_SQLITE=	3
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes

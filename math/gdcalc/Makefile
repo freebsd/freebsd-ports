@@ -3,7 +3,7 @@
 
 PORTNAME=	gdcalc
 PORTVERSION=	2.15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://bhepple.freeshell.org/dcalc/unix/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units
 
 USES=		pkgconfig
-USE_GNOME=	gnomehier libgnomeui
+USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lm

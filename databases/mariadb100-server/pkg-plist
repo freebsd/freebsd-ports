@@ -29,7 +29,7 @@ bin/mysqldumpslow
 bin/mysqlhotcopy
 bin/mysqltest
 bin/mysqltest_embedded
-bin/mytop
+@comment bin/mytop
 bin/perror
 bin/replace
 bin/resolve_stack_dump
@@ -52,7 +52,8 @@ lib/mysql/plugin/ha_blackhole.so
 lib/mysql/plugin/ha_connect.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
-lib/mysql/plugin/ha_innodb.so
+%%INNODB%%lib/mysql/plugin/ha_innodb.so
+%%MROONGA%%lib/mysql/plugin/ha_mroonga.so
 %%OQGRAPH%%lib/mysql/plugin/ha_oqgraph.so
 lib/mysql/plugin/ha_sequence.so
 lib/mysql/plugin/ha_sphinx.so
@@ -148,6 +149,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
+%%MROONGA%%%%DATADIR%%/mroonga/install.sql
+%%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf
 %%DATADIR%%/my-innodb-heavy-4G.cnf
 %%DATADIR%%/my-large.cnf

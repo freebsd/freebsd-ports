@@ -82,12 +82,6 @@ OPTIONS_GROUP_VIDEO+=	PYGLET
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
-.if !defined(WITH_NEW_XORG)
-BROKEN=		Does not compile with old libGL on i386: Undefined symbol glBlendEquationSeparate
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MPDF}
 .if empty(PORT_OPTIONS:MDOCS)
 IGNORE=		option PDF requires DOCS

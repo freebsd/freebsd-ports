@@ -1,0 +1,12 @@
+bin/libxo-config
+bin/xo
+bin/xolint
+include/libxo/xo.h
+lib/libxo.a
+lib/libxo.so
+lib/libxo.so.0
+lib/libxo.so.0.0.0
+lib/pkgconfig/libxo.pc
+man/man1/xo.1.gz
+man/man1/xolint.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/Copyright

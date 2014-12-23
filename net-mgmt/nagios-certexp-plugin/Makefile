@@ -21,7 +21,6 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	check_certexp.pl
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_certexp.pl
-PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 

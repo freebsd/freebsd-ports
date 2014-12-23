@@ -32,7 +32,6 @@ PLIST_FILES=	bin/html2ps \
 		man/man5/html2psrc.5.gz \
 		%%DATADIR%%/html2ps.html \
 		%%DATADIR%%/hyphen.tex
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -43,7 +43,6 @@ X11_DESC=	With GUI (depends on X)
 .if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	%%DOCSDIR%%/TrueCrypt\ User\ Guide.pdf
 PLIST_FILES+=	%%DOCSDIR%%/License.txt
-PLIST_DIRS=	%%DOCSDIR%%
 .endif
 
 .if ${PORT_OPTIONS:MX11}

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.061
-PORTREVISION=	1
+PORTVERSION=	2.064
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -37,17 +36,13 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:${PORTSDIR}/devel/p5-Config-Model-Tester \
-		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
-		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-USES=		perl5 shebangfix
+USES=		perl5
 USE_PERL5=	modbuild
-
-SHEBANG_FILES=	lib/Config/Model/extensions/cme-gen-class-pod
 
 .include <bsd.port.mk>

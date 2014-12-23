@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/cciss_vol_status etc/periodic/daily/cciss_vol_status man/man8/cciss_vol_status.8.gz
-PLIST_DIRS=	etc/periodic/daily etc/periodic
 SUB_FILES=	cciss_vol_status
 
 .if !exists(${SRC_BASE}/sys/dev/ciss/cissio.h)

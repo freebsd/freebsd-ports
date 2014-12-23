@@ -18,7 +18,6 @@ FONTS=	c64 c64d
 FONTDIR=	lib/X11/fonts/${PORTNAME}
 FILES=	${FONTS:S,$,.bdf,} fonts.dir
 PLIST_FILES=	${FILES:S,^,${FONTDIR}/,}
-PLIST_DIRS=	${FONTDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}

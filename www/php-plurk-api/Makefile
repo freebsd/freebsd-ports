@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Plurk API Implementation with PHP
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes
 USE_PHP=	json curl

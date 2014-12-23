@@ -28,20 +28,14 @@ do-install:
 
 # maintainer section:
 
-#MS_DIRRMTRY=	# empty
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
 	${ECHO} "@owner www" > ${MS_PLIST}
 	${ECHO} "@group www" >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dirrm %%WWWDIR%%/|' >> ${MS_PLIST}
-	${ECHO} '@dirrmtry %%WWWDIR%%' >> ${MS_PLIST}
 	${ECHO} "@owner" >> ${MS_PLIST}
 	${ECHO} "@group" >> ${MS_PLIST}
-#.for dir in ${MS_DIRRMTRY}
-#	${REINPLACE_CMD} '/^@dirrm %%WWWDIR%%\/${dir:C/\//\\\//g}$$/ s|@dirrm|&try|' ${MS_PLIST}
-#.endfor
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>

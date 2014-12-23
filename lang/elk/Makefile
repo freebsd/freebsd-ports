@@ -16,6 +16,7 @@ LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 USES=		libtool motif tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
@@ -35,7 +36,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREMODE}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 	@${FIND} ${STAGEDIR}${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 .include <bsd.port.post.mk>

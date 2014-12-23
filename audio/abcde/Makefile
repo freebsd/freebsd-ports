@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	abcde
-PORTVERSION=	2.5.4
-PORTREVISION=	4
+PORTVERSION=	2.6
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://abcde.einval.com/download/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
@@ -14,66 +13,40 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
-		${PYTHON_PKGNAMEPREFIX}eyed3-06>0:${PORTSDIR}/audio/py-eyed3-06 \
-		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		lame:${PORTSDIR}/audio/lame \
+		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:${PORTSDIR}/audio/py-eyed3 \
 		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-
-OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT FLAC MPP NORMALIZE REPLAYGAIN SPEEX
-
-EJECT_DESC?=	Enable auto-eject support
-NORMALIZE_DESC?=	Enable normalize support
-REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
-
 USES=		python:run shebangfix
 SHEBANG_FILES=	${PORTNAME} cddb-tool
 
-.include <bsd.port.options.mk>
+OPTIONS_GROUP=		CODEC RIPPER
+OPTIONS_GROUP_CODEC=	AAC FLAC MPP OPUS SPEEX
+OPTIONS_GROUP_RIPPER=	CDDA2WAV DAGRAB
+OPTIONS_DEFINE=		NORMALIZE REPLAYGAIN
 
-.if ${PORT_OPTIONS:MCDDA2WAV}
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-.endif
+NORMALIZE_DESC?=	Enable normalize support
+REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 
-.if ${PORT_OPTIONS:MDAGRAB}
-RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
-.endif
+AAC_RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+FLAC_RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
+MPP_RUN_DEPENDS+=	mpcenc:${PORTSDIR}/audio/musepack
+OPUS_RUN_DEPENDS+=	opusenc:${PORTSDIR}/audio/opus-tools
+SPEEX_RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
+CDDA2WAV_RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+DAGRAB_RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
+NORMALIZE_RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
+REPLAYGAIN_RUN_DEPENDS+=mp3gain:${PORTSDIR}/audio/mp3gain \
+			vorbisgain:${PORTSDIR}/audio/vorbisgain
 
-.if ${PORT_OPTIONS:MEJECT}
-RUN_DEPENDS+=	eject:${PORTSDIR}/sysutils/eject
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-
-.if ${PORT_OPTIONS:MNORMALIZE}
-RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
-.endif
-
-.if ${PORT_OPTIONS:MAAC}
-RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
-.endif
-
-.if ${PORT_OPTIONS:MMPP}
-RUN_DEPENDS+=	mpcenc:${PORTSDIR}/audio/musepack
-.endif
-
-.if ${PORT_OPTIONS:MREPLAYGAIN}
-RUN_DEPENDS+=	mp3gain:${PORTSDIR}/audio/mp3gain \
-		vorbisgain:${PORTSDIR}/audio/vorbisgain
-.endif
+PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf.sample \
+		man/man1/abcde.1.gz man/man1/cddb-tool.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
-		${WRKSRC}/abcde.1
-	${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
-		${WRKSRC}/abcde
+		${WRKSRC}/abcde ${WRKSRC}/abcde.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${STAGEDIR}${PREFIX}/bin

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenJUMP
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics java geography
 MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
 DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
@@ -46,7 +46,7 @@ USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
-PLUS_REV=	4004
+PLUS_REV=	4164
 
 do-install:
 	@${ECHO_CMD} "--->  Installing JAR files"
@@ -66,17 +66,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${TARGET_DIR}/bin/
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "--->  Installing documentation"
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${STAGEDIR}${DOCSDIR}
-.else
-	@${ECHO_MSG} "--->  Skipping documentation"
-.endif
 
 .include <bsd.port.mk>

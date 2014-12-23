@@ -15,6 +15,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+#MANUAL_PACKAGE_BUILD=	huge (930M)
+
 USES=		zip
 WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile
@@ -85,10 +87,10 @@ do-install:
 	${FIND} ${STAGEDIR}${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
 .endif
-.if ${PORT_OPTIONS:MENCRYPTION}
-	${INSTALL_DATA} ${WRKDIR}/Xonotic/key_0.d0pk ${STAGEDIR}${PREFIX}/share/${PORTNAME}
-.endif
 	${MKDIR} ${STAGEDIR}${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Xonotic/data/*.pk3 ${STAGEDIR}${DATADIR}/data/
+.if ${PORT_OPTIONS:MENCRYPTION}
+	${INSTALL_DATA} ${WRKDIR}/Xonotic/key_0.d0pk ${STAGEDIR}${DATADIR}/
+.endif
 
 .include <bsd.port.mk>

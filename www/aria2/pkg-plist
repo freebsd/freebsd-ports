@@ -50,16 +50,3 @@ man/ru/man1/aria2c.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/aria2.mo
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/fil/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fil
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/pt/man1
-@dirrmtry man/pt
-@dirrmtry include/aria2

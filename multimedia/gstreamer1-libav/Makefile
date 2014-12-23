@@ -1,10 +1,8 @@
 # Created by: Koop Mast <kwm@rainbow-runner.nl>
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer1-libav/Makefile,v 1.4 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -13,17 +11,22 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		orc>=0.4.16:${PORTSDIR}/devel/orc
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
-USES=		compiler gmake libtool pkgconfig tar:xz
+USES=		compiler:features gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
+LIBAV_CONFIG=	--cc=${CC} \
+		--enable-runtime-cpudetect \
+		--enable-pic
+LDFLAGS+=	-Wl,-Bsymbolic
+
 INSTALL_TARGET=	install-strip
-PLIST_FILES=	lib/gstreamer-1.0/libgstlibav.so
 
 .include <bsd.port.pre.mk>
 

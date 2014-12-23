@@ -21,7 +21,6 @@ MAKE_ENV=	LANG=C
 USE_LDCONFIG=	yes
 USES=		gmake
 
-PLIST_DIRS=	include/pci
 PLIST_FILES=	${LIBPCI_FILES} \
 		lib/libpci.so
 

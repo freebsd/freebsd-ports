@@ -24,7 +24,6 @@ PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/sec man/man8/sec.8.gz
 PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
 PLIST_FILES+=	${PORTCONTRIB:S|^|%%DATADIR%%/|}
-PLIST_DIRS+=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

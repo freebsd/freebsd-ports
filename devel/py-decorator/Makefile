@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Better living through Python with decorators
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-SebastianBergmann_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Managing the version number of Git-hosted PHP projects
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit

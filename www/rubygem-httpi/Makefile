@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for common HTTP client API
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.4.5:${PORTSDIR}/www/rubygem-rack
 

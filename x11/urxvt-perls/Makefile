@@ -21,7 +21,6 @@ PORTDOCS=	README
 INSTDIR_REL=	lib/urxvt/perl
 SCRIPTS=	clipboard keyboard-select url-select
 PLIST_FILES+=	${SCRIPTS:C/^/${INSTDIR_REL}\//}
-PLIST_DIRSTRY+=	${INSTDIR_REL} lib/urxvt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR_REL}

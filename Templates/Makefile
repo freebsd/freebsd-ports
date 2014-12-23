@@ -9,4 +9,3 @@ MAINTAINER=
 COMMENT=
 
 .include <bsd.port.mk>
-

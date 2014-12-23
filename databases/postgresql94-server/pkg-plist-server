@@ -55,7 +55,6 @@ lib/libpgcommon.a
 %%DATADIR%%/extension/plpgsql--unpackaged--1.0.sql
 %%DATADIR%%/extension/plpgsql.control
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_basebackup-9.4.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata-9.4.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_ctl-9.4.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.4.mo
@@ -89,7 +88,6 @@ lib/libpgcommon.a
 %%GETTEXT%%share/locale/it/LC_MESSAGES/plpgsql-9.4.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/postgres-9.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_basebackup-9.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_controldata-9.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_ctl-9.4.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_resetxlog-9.4.mo
@@ -117,8 +115,10 @@ lib/libpgcommon.a
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.4.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/plpgsql-9.4.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres-9.4.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb-9.4.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata-9.4.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl-9.4.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-9.4.mo
@@ -126,9 +126,7 @@ lib/libpgcommon.a
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/plpgsql-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_ctl-9.4.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres-9.4.mo
 %%DATADIR%%/postgres.shdescription
 %%DATADIR%%/snowball_create.sql
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Abidjan

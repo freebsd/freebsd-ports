@@ -27,8 +27,6 @@ PLIST_FILES=	bin/dclock \
 		man/man1/${PORTNAME}.1.gz \
 		%%DATADIR%%/sounds/bell.wav \
 		%%DATADIR%%/sounds/digital.wav
-PLIST_DIRS=	%%DATADIR%%/sounds \
-		%%DATADIR%%
 
 .include <bsd.port.options.mk>
 

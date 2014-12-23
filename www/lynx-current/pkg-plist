@@ -1,12 +1,7 @@
 bin/lynx
 man/man1/lynx.1.gz
-@unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
-etc/lynx.cfg.default
-@exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
-etc/lynx.lss.default
-@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
-@exec mkdir -p %D/share/lynx_help
+@sample etc/lynx.cfg.sample
+@sample etc/lynx.lss.sample
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER.asc
@@ -71,16 +66,19 @@ etc/lynx.lss.default
 %%PORTDOCS%%%%DOCSDIR%%/test/ISO_LATIN1_test.html
 %%PORTDOCS%%%%DOCSDIR%%/test/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/test/TestComment.html
+%%PORTDOCS%%%%DOCSDIR%%/test/X
 %%PORTDOCS%%%%DOCSDIR%%/test/bad-html.html
 %%PORTDOCS%%%%DOCSDIR%%/test/c1.html
 %%PORTDOCS%%%%DOCSDIR%%/test/circle.html
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252.html
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252a.html
+%%PORTDOCS%%%%DOCSDIR%%/test/image.jpg
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/koi8-r.html
+%%PORTDOCS%%%%DOCSDIR%%/test/nobody
 %%PORTDOCS%%%%DOCSDIR%%/test/quickbrown.html
 %%PORTDOCS%%%%DOCSDIR%%/test/raw8bit.html
 %%PORTDOCS%%%%DOCSDIR%%/test/sgml.html
@@ -142,13 +140,3 @@ share/lynx_help/keystrokes/xterm_help.html.gz
 share/lynx_help/lynx-dev.html.gz
 share/lynx_help/lynx_help_main.html.gz
 share/lynx_help/lynx_url_support.html.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/lynx_help/keystrokes
-@dirrm share/lynx_help
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eo

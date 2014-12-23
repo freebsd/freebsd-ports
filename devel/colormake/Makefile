@@ -2,6 +2,7 @@
 
 PORTNAME=	colormake
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bre.klaki.net/programs/colormake/
 
@@ -12,8 +13,9 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	colormake.pl
 PLIST_FILES=	bin/colormake bin/colormake.pl bin/colormake-short bin/clmake \
 		bin/clmake-short
 

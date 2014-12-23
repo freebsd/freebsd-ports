@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141217:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  Perl now links libperl.so with all .so it builds.  The stage-qa checks have
+  been extended to check that libperl.so is in fact linked with .so in
+  SITE_ARCH and errors out if none of the .so build by a port are linked with
+  it.  It also checks that the rpath and runpath elf attributes are present.
+
 20141130:
 AUTHOR: tijl@FreeBSD.org
 

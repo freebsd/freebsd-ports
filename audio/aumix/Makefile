@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_DIRS=	share/aumix
 PLIST_FILES=	bin/aumix bin/mute bin/xaumix \
 		man/man1/aumix.1.gz \
 		man/man1/xaumix.1.gz \

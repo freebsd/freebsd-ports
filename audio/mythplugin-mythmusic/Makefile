@@ -22,8 +22,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	e9545c0
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-e9545c0/mythplugins
+WRKSRC_SUBDIR=	mythplugins
 
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes

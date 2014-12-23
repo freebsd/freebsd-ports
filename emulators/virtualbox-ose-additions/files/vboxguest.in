@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: head/emulators/virtualbox-ose-additions/files/vboxguest.in 318265 2013-05-15 21:22:21Z decke $
+# $FreeBSD$
 #
 
 # PROVIDE:	vboxguest
@@ -32,6 +32,7 @@ vboxguest_start()
 			return 1
 		fi
 	fi
+	test -f "%%KMODDIR%%/vboxvideo.ko" || return 0
 	if ! kldstat -q -m vgapci/vboxvideo;
 	then
 		if ! kldload vboxvideo > /dev/null 2>&1;

@@ -2,7 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -12,19 +12,20 @@ COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LICENSE=	MPL
 
+# see Bugzilla/Install/Requirements.pm
 RUN_DEPENDS=	\
 		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
 		p5-DBI>=1.54:${PORTSDIR}/databases/p5-DBI \
-		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-TimeZone>=1.64:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime>=0.75:${PORTSDIR}/devel/p5-DateTime \
 		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-Send>=2.04:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
-		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-List-MoreUtils>=0.32:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Math-Random-ISAAC>=1.001:${PORTSDIR}/math/p5-Math-Random-ISAAC \
 		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
-		p5-URI>=1.37:${PORTSDIR}/net/p5-URI
+		p5-TimeDate>=2.23:${PORTSDIR}/devel/p5-TimeDate \
+		p5-URI>=1.55:${PORTSDIR}/net/p5-URI
 
 USES=		perl5 cpe
 USE_PERL5=	patch build run
@@ -44,9 +45,11 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} >= 501800
-# XXX silence Module::Pluggable deprecated warnings (PR 194782)
+# PR 194782: silence Module::Pluggable deprecated warnings
 BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
+# PR 196060,196100: explicitly depend on textproc/p5-Text-Tabv
+RUN_DEPENDS+=	p5-Text-Tabs+Wrap>=2013.0523:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
 .endif
 
 .if ${PORT_OPTIONS:MMODPERL}
@@ -60,7 +63,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
-RUN_DEPENDS+=	p5-DBD-Pg>=2.19.3:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=3.4.2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -77,7 +80,7 @@ RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 .endif
 
 .if ${PORT_OPTIONS:MCHARTING_MODULES}
-RUN_DEPENDS+=	p5-Chart>=2.1.0:${PORTSDIR}/graphics/p5-Chart
+RUN_DEPENDS+=	p5-Chart>=2.4.1:${PORTSDIR}/graphics/p5-Chart
 .endif
 
 .if ${PORT_OPTIONS:MPATCH_VIEWER}
@@ -97,12 +100,14 @@ RUN_DEPENDS+=	p5-Email-MIME-Attachment-Stripper>=0:${PORTSDIR}/mail/p5-Email-MIM
 .endif
 
 .if ${PORT_OPTIONS:MMAIL_QUEUEING}
-RUN_DEPENDS+=	p5-TheSchwartz>=0:${PORTSDIR}/devel/p5-TheSchwartz \
-		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic
+# p5-File-Slurp will be a default dependency in the next release
+RUN_DEPENDS+=	p5-TheSchwartz>=1.10:${PORTSDIR}/devel/p5-TheSchwartz \
+		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic \
+		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp
 .endif
 
 .if ${PORT_OPTIONS:MMOVE_BUGZ}
-RUN_DEPENDS+=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+RUN_DEPENDS+=	p5-MIME-Tools>=5.406:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
@@ -111,14 +116,18 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if ${PORT_OPTIONS:MXMLRPC} || ${PORT_OPTIONS:MJSONRPC}
-RUN_DEPENDS+=	p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
+RUN_DEPENDS+=	p5-Test-Taint>=1.06:${PORTSDIR}/devel/p5-Test-Taint
 .endif
 
 .if ${PORT_OPTIONS:MXMLRPC}
+RUN_DEPENDS+=	p5-XMLRPC-Lite>=0.712:${PORTSDIR}/net/p5-XMLRPC-Lite
+# XXX SOAP::Lite can be removed if upstream officially depends on
+# XMLRPC::Lite>=0.717, see Bugzilla/Install/Requirements.pm
 RUN_DEPENDS+=	p5-SOAP-Lite>=0.712:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
 .if ${PORT_OPTIONS:MJSONRPC}
+# p5-JSON-XS will be a default dependency in the next release
 RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
 .endif

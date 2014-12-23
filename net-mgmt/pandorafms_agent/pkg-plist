@@ -5,11 +5,7 @@ bin/pandora_revent
 %%TENTACLE_SERVER%%bin/tentacle_server
 bin/tentacle_client
 etc/rc.d/pandora_agent
-@mode 400
-@owner pandora
-@sample %%ETCDIR%%/pandora_agent.conf.sample
-@owner
-@mode
+@sample(pandora,,400) %%ETCDIR%%/pandora_agent.conf.sample
 man/man1/tentacle_client.1.gz
 man/man1/pandora_agent.1.gz
 @mode 555
@@ -25,13 +21,7 @@ man/man1/pandora_agent.1.gz
 %%DATADIR%%/plugins/pandora_update
 %%DATADIR%%/plugins/top.sh
 %%DATADIR%%/plugins/who.sh
-@owner pandora
-@mode 700
-@dirrmtry %%DATADIR%%/collections
-@dirrmtry %%DATADIR%%/plugins
-@owner
-@mode
-@dirrmtry %%DATADIR%%
+@dir(pandora,,700) %%DATADIR%%/collections
+@dir(pandora,,700) %%DATADIR%%/plugins
 %%ETCDIR%%/plugins
 %%ETCDIR%%/collections
-@dirrmtry %%ETCDIR%%

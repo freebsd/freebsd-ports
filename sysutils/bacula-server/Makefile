@@ -3,13 +3,13 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.0.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
 USES+=		libtool
@@ -173,9 +173,6 @@ post-patch:
 		${WRKSRC}/src/tools/Makefile.in
 .endif
 
-
-pre-install:
-	${MKDIR} ${STAGEDIR}${BACULA_DIR}
 
 .if !target(post-install)
 post-install:

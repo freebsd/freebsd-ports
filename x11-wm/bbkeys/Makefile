@@ -25,7 +25,6 @@ PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 
 PLIST_FILES=	bin/bbkeys %%DATADIR%%/bbkeysrc %%DATADIR%%/defaultStyle \
 		man/man1/bbkeys.1.gz man/man5/bbkeysrc.5.gz
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

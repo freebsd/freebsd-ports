@@ -3,7 +3,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	GNU
 
@@ -52,14 +52,7 @@ PLIST_FILES=	bin/gcl \
 		${FILES_LSP:S|^|lib/${DISTNAME}/lsp/|} \
 		${PCL_FILES:S|^|lib/${DISTNAME}/pcl/|} \
 		${FILES_UNIXPORT:S|^|lib/${DISTNAME}/unixport/|}
-PLIST_DIRS=	lib/${DISTNAME}/unixport \
-		lib/${DISTNAME}/pcl \
-		lib/${DISTNAME}/lsp \
-		lib/${DISTNAME}/h \
-		lib/${DISTNAME}/info \
-		lib/${DISTNAME}/cmpnew \
-		lib/${DISTNAME}/clcs \
-		lib/${DISTNAME}
+PLIST_DIRS=	lib/${DISTNAME}/pcl
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -69,7 +62,6 @@ OPTIONS_DEFAULT=	EMACS X11
 EMACS_DESC=		Install Emacs syntax files
 EMACS_USE=		emacs=yes
 EMACS_PLIST_FILES=	${FILES_ELISP:S|^|%%EMACS_SITE_LISPDIR%%/gcl/|}
-EMACS_PLIST_DIRS=	%%EMACS_SITE_LISPDIR%%/gcl
 X11_USES=		tk
 X11_USE=		xorg=x11
 X11_CONFIGURE_ON=	--enable-tclconfig=${TCL_LIBDIR} \
@@ -80,9 +72,6 @@ X11_LDFLAGS=		-lX11
 X11_PLIST_FILES=	${FILES_GCLTK:S|^|lib/gcl-${PORTVERSION}/gcl-tk/|} \
 			${FILES_GCLTK_DEMOS:S|^|lib/gcl-${PORTVERSION}/gcl-tk/demos/|} \
 			${FILES_XGCL2:S|^|lib/gcl-${PORTVERSION}/xgcl-2/|}
-X11_PLIST_DIRS=		lib/${DISTNAME}/xgcl-2 \
-			lib/${DISTNAME}/gcl-tk/demos \
-			lib/${DISTNAME}/gcl-tk
 
 FILES_CLCS=	sys-proclaim.lisp
 FILES_CMPNEW=	gcl_cmpmain.lsp gcl_cmpopt.lsp gcl_collectfn.lsp \

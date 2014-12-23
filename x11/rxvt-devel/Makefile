@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low memory usage xterm replacement that supports color
 
+DEPRECATED=	No longer developed nor maintained and deprecated by x11/xvt and x11/rxvt-unicode
+EXPIRATION_DATE=2015-01-13
+
 USES=		libtool perl5
 USE_LDCONFIG=	yes
 USE_PERL5=	build patch

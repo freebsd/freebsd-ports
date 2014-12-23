@@ -22,7 +22,6 @@ USE_QT4=	corelib gui svg rcc_build uic_build moc_build
 WRKSRC=		${WRKDIR}/QuantumStyle
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libquantumstyle.so
-PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/

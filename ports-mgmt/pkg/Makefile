@@ -1,7 +1,7 @@
 # $FreeBSD: head/ports-mgmt/pkg/Makefile 366286 2014-08-26 23:12:10Z bdrewery $
 
 PORTNAME=	pkg
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
@@ -13,8 +13,6 @@ MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
-
-USES=		tar:xz uidfix
 
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all

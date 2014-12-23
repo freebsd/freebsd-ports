@@ -3,11 +3,11 @@
 
 PORTNAME=	rsnapshot
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
-MAINTAINER=	remko@FreeBSD.org
+MAINTAINER=	ralfvd@gmail.com
 COMMENT=	Filesystem snapshot utility based on rsync(1)
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
@@ -27,10 +27,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_VER} >= 5.18
-BROKEN=		Does not build with Perl 5.18 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

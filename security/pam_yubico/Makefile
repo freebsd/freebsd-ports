@@ -19,7 +19,6 @@ USES=		libtool pkgconfig
 
 PLIST_FILES=	lib/security/pam_yubico.so \
 		man/man8/pam_yubico.8.gz
-PLIST_DIRS=	lib/security
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 

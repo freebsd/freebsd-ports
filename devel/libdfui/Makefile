@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/philip
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Abstract user interface protocol library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura
 
@@ -29,7 +29,6 @@ PLIST_FILES=	lib/${SONAME} \
 		include/dfui4/encoding.h \
 		include/dfui4/lang.h \
 		include/dfui4/system.h
-PLIST_DIRS=	include/dfui4
 PORTDOCS=	README
 
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}

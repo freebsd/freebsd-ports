@@ -27,8 +27,6 @@ PLIST_FILES=	bin/hpscat bin/hpscat.bin
 .for i in ${FONTFILES} ${README_FILES}
 PLIST_FILES+=	${FONTDIR_REL}/${i}
 .endfor
-PLIST_DIRS=	${FONTDIR_REL}
-PLIST_DIRSTRY=	share/fonts
 SUB_FILES=	hpscat.sh pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 USES=		perl5

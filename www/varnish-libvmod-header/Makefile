@@ -13,19 +13,18 @@ PKGNAMEPREFIX=	varnish-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
-USES=		gmake libtool pkgconfig
-USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
+USES=		autoreconf gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 PLIST_FILES=	man/man3/vmod_header.3.gz lib/varnish/vmods/libvmod_header.so
 WRKSRC=		${WRKDIR}/${PORTNAME}-master
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

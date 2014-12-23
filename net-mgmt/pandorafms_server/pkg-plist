@@ -43,6 +43,8 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/esx_trap_manager.pl
 %%DATADIR%%/util/gis.README
 %%DATADIR%%/util/gpx2pandora_agent_data.pl
+%%DATADIR%%/util/integria_rticket.pl
+%%DATADIR%%/util/integrity_check
 %%DATADIR%%/util/n2p.README
 %%DATADIR%%/util/n2p.pl
 %%DATADIR%%/util/pandora2ast/GPL
@@ -95,6 +97,7 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/plugin/multicast.pl
 %%DATADIR%%/util/plugin/mysql_plugin.sh
 %%DATADIR%%/util/plugin/openvpn_pandoraplugin.pl
+%%DATADIR%%/util/plugin/packet_loss.sh
 %%DATADIR%%/util/plugin/pandora_inventory_change.README
 %%DATADIR%%/util/plugin/pandora_inventory_change.pl
 %%DATADIR%%/util/plugin/pandora_loadgen.pl
@@ -107,15 +110,8 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/recon_scripts/ipmi-recon.pl
 %%DATADIR%%/util/recon_scripts/snmp-recon.pl
 %%DATADIR%%/util/recon_scripts/wmi-recon.pl
+%%DATADIR%%/util/snmptrap_gen.sh
 %%DATADIR%%/util/tentacle_serverd
 %%DATADIR%%/util/trap_rate.sh
 %%DATADIR%%/util/udp_client.pl
 %%DATADIR%%/util/windows.README
-@dirrm %%DATADIR%%/util/plugin/babel_plugin
-@dirrm %%DATADIR%%/util/plugin/integria_plugin
-@dirrm %%DATADIR%%/util/pandora2ast
-@dirrmtry %%DATADIR%%/util/plugin
-@dirrmtry %%DATADIR%%/util/recon_scripts
-@dirrmtry %%DATADIR%%/util
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%

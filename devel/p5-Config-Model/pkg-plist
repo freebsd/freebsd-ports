@@ -1,5 +1,4 @@
-bin/cme
-bin/config-edit
+bin/cme-old
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
@@ -35,13 +34,13 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
 %%SITE_PERL%%/Config/Model/TreeSearcher.pm
+%%SITE_PERL%%/Config/Model/Utils/GenClassPod.pm
 %%SITE_PERL%%/Config/Model/Value.pm
 %%SITE_PERL%%/Config/Model/Value/LayeredInclude.pm
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/Warper.pm
 %%SITE_PERL%%/Config/Model/application.d/multistrap
-%%SITE_PERL%%/Config/Model/extensions/cme-gen-class-pod
 %%SITE_PERL%%/Config/Model/models/Fstab.pl
 %%SITE_PERL%%/Config/Model/models/Fstab.pod
 %%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
@@ -97,6 +96,7 @@ bin/config-edit
 %%PERL5_MAN3%%/Config::Model::SimpleUI.3.gz
 %%PERL5_MAN3%%/Config::Model::TermUI.3.gz
 %%PERL5_MAN3%%/Config::Model::TreeSearcher.3.gz
+%%PERL5_MAN3%%/Config::Model::Utils::GenClassPod.3.gz
 %%PERL5_MAN3%%/Config::Model::Value.3.gz
 %%PERL5_MAN3%%/Config::Model::Value::LayeredInclude.3.gz
 %%PERL5_MAN3%%/Config::Model::ValueComputer.3.gz
@@ -107,5 +107,4 @@ bin/config-edit
 %%PERL5_MAN3%%/Config::Model::models::Multistrap.3.gz
 %%PERL5_MAN3%%/Config::Model::models::Multistrap::Section.3.gz
 %%PERL5_MAN3%%/Config::Model::models::PopCon.3.gz
-man/man1/cme.1.gz
-man/man1/config-edit.1.gz
+man/man1/cme-old.1.gz

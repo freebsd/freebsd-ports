@@ -3,7 +3,7 @@
 
 PORTNAME=	torsocks
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
@@ -18,6 +18,7 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 USES=		gmake libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 

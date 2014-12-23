@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: head/emulators/virtualbox-ose/files/vboxwatchdog.in 336107 2013-12-10 20:42:40Z decke $
+# $FreeBSD$
 #
 # PROVIDE: vboxwatchdog
 # REQUIRE: LOGIN
@@ -48,6 +48,6 @@ load_rc_config $name
 
 : ${vboxwatchdog_enable="NO"}
 : ${vboxwatchdog_user="%%VBOXUSER%%"}
-: ${vboxwatchdog_flags="-b"}
+: ${vboxwatchdog_flags=""}
 
 run_rc_command "$1"

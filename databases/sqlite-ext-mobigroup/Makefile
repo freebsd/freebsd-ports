@@ -25,7 +25,6 @@ ENV_DESC=	implements the getenv
 INET_DESC=	provide the ipv4 functions in SQL queries
 MD5_DESC=	implements the MD5 message-digest algorithm
 
-PLIST_DIRS=	libexec/${DIST_SUBDIR}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 

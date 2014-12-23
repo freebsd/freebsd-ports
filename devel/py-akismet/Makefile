@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	Python interface to the Akismet API
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		python zip
 USE_PYTHON=	distutils

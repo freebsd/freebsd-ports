@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-credential
-PORTVERSION=	0.13.3
+PORTVERSION=	0.13.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

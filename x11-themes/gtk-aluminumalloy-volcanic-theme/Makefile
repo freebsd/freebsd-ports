@@ -3,7 +3,7 @@
 
 PORTNAME=	aluminumalloy
 PORTVERSION?=	2004.01.04
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
@@ -29,7 +29,6 @@ USE_GNOME=	gtk20
 .else	# metacity
 THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="@comment " METACITY=""
-USE_GNOME=	gnomehier
 .endif
 
 do-install:

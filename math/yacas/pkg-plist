@@ -56,9 +56,9 @@ include/yacas/yacas_version.h
 include/yacas/yacasbase.h
 include/yacas/yacasprivate.h
 lib/libyacas.a
-lib/libyacas.la
 lib/libyacas.so
 lib/libyacas.so.1
+lib/libyacas.so.1.0.0
 %%DATADIR%%/documentation/hints
 %%DATADIR%%/manmake/book2TeX.sh
 %%DATADIR%%/manmake/book2TeX.ys

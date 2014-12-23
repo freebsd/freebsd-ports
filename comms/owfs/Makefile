@@ -3,7 +3,7 @@
 
 PORTNAME=	owfs
 PORTVERSION=	2.9p8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	SF/owfs/owfs/${PORTVERSION}
 
@@ -12,12 +12,9 @@ COMMENT=	OWFS -- 1-Wire file system
 
 LICENSE=	GPLv2
 
-USES=		libtool
-ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
+USES=		autoreconf libtool gmake:lite
 
-USE_AUTOTOOLS=	libtoolize aclocal autoheader autoconf automake
-AUTOMAKE_ARGS=	--add-missing
-GNU_CONFIGURE=	On
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

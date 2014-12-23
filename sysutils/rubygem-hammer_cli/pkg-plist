@@ -1,4 +1,3 @@
 bin/hammer
 @sample etc/hammer/cli_config.yml.sample
-@dirrmtry etc/hammer/cli.modules.d
-@dirrmtry etc/hammer
+@dir etc/hammer/cli.modules.d

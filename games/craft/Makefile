@@ -16,19 +16,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daniloegea
 GH_PROJECT=	Craft
 GH_TAGNAME=	v1.0fbsd
+GH_COMMIT=	fdf801f
 
 OPTIONS_DEFINE=		SERVER
 SERVER_DESC=		Install the craft server
 OPTIONS_DEFAULT=	SERVER
 OPTIONS_SUB=		yes
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-fdf801f
-
 USES=		cmake compiler:c11
 USE_XORG=	x11 xi xrandr
 USE_GL=		gl glu
 
-SERVER_USE=		PYTHON=yes
+SERVER_USES=		python
 SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2:${PORTSDIR}/www/py-requests \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 SERVER_CMAKE_ON=	-DSERVER:BOOL=ON

@@ -21,7 +21,6 @@ USE_QT4=	corelib gui moc_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libphasestyle.so
-PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/

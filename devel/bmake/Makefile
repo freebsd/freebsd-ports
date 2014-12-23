@@ -13,7 +13,7 @@ DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-${PORTVERSION}.tar.gz
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 PORTSCOUT=	skipv:200910007
 

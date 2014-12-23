@@ -24,7 +24,6 @@ PLIST_FILES=	bin/unrtf \
 		%%DATADIR%%/troff_mm.conf \
 		%%DATADIR%%/vt.conf \
 		man/man1/unrtf.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -20,9 +20,7 @@ RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig tar:xz
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf gmake libtool pkgconfig tar:xz
 WRKSRC=		${WRKDIR}/${DISTNAME}/client
 
 CPPFLAGS+=	-I${LOCALBASE}/include/boinc -I${LOCALBASE}/include

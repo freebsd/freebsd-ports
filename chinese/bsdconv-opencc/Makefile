@@ -10,7 +10,7 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	OpenCC conversion module for bsdconv
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bsdconv-mktable:${PORTSDIR}/converters/bsdconv
 LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv \

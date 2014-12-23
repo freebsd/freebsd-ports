@@ -18,7 +18,6 @@ LDFLAGS+=	-lm
 
 PORTDOCS=	README
 PLIST_FILES=	bin/kanjipad bin/kpengine %%DATADIR%%/jdata.dat
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

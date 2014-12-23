@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/PBIMaker
 
 PLIST_FILES=	bin/pbimaker \
 		share/pbimaker/defaulticon.png
-PLIST_DIRS=	share/pbimaker
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC?=gcc|' \

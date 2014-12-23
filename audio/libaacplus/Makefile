@@ -26,9 +26,8 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 CONFLICTS=	aacplusenc-0*
 
 USE_CSTD=	gnu89
-USES=		pathfix pkgconfig libtool
+USES=		autoreconf pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

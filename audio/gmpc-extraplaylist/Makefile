@@ -20,6 +20,5 @@ USES=		libtool pkgconfig
 USE_GNOME=	glib20 gtk20 libglade2 libxml2
 
 PLIST_FILES=	lib/gmpc/plugins/libextraplaylist.so
-PLIST_DIRSTRY=	lib/gmpc/plugins lib/gmpc
 
 .include <bsd.port.mk>

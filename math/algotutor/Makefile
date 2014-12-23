@@ -26,7 +26,7 @@ USES=		shebangfix perl5 tar:tgz
 SHEBANG_FILES=	algotutor gen_at_graph
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${SITE_PERL},' \
+	@${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${PREFIX}/${SITE_PERL_REL},' \
 		-e 's|!!PREFIX!!|${PREFIX}|g' \
 			${WRKSRC}/algotutor
 

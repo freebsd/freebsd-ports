@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.cqrlog.com/files/cqrlog_1.7.4/ \
+MASTER_SITES=	http://www.cqrlog.com/files/cqrlog_${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	shurd
 DISTNAME=	${PORTNAME}_${PORTVERSION}.src

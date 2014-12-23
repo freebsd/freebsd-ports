@@ -3,6 +3,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de

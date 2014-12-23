@@ -1,0 +1,10 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2014-09-18 22:18:11.602040183 +0400
++++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile	2014-09-18 22:18:29.900039743 +0400
+@@ -72,6 +72,7 @@
+ 	handletable.c \
+ 	handletablectx.c \
+ 	once.c \
++	term.c \
+ 	thread.c
+ 
+ .PATH:	${.CURDIR}/common/string

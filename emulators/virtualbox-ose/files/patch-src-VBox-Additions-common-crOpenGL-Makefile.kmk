@@ -1,0 +1,72 @@
+--- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2014-11-21 10:16:35.000000000 -0500
++++ src/VBox/Additions/common/crOpenGL/Makefile.kmk	2014-12-19 16:55:22.000000000 -0500
+@@ -172,7 +172,7 @@
+   VBoxOGL_SOURCES.solaris += \
+   	$(VBOX_PATH_CROGL_GENFILES)/solaris_exports.c
+   VBoxOGL_SOURCES.freebsd += \
+-  	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c
++  	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm
+  endif
+ endif
+ 
+@@ -190,10 +190,12 @@
+ 	$(VBOX_PATH_CROGL_GENFILES)/linux_exports.asm
+ VBoxOGL_CLEAN.solaris        += \
+ 	$(VBOX_PATH_CROGL_GENFILES)/solaris_exports.c
++VBoxOGL_CLEAN.freebsd  += \
++	$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm
+ VBoxOGL_CLEAN.win      = \
+ 	$(VBOX_PATH_CROGL_GENFILES)/windows_exports.asm \
+ 	$(VBOX_PATH_CROGL_GENFILES)/cropengl.def
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), linux solaris freebsd)
+  ifdef VBoxOGL_DRI
+   VBoxOGL_CLEAN   += \
+  	$(VBOX_PATH_CROGL_GENFILES)/cr_gl.h \
+@@ -206,6 +208,8 @@
+  	$(VBOX_PATH_CROGL_GENFILES)/linux_glxapi_exports.asm
+   VBoxOGL_CLEAN.solaris   += \
+  	$(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm
++  VBoxOGL_CLEAN.freebsd += \
++ 	$(VBOX_PATH_CROGL_GENFILES)/freebsd_glxapi_exports.asm
+  endif
+ endif
+ VBoxOGL_LIBS = \
+@@ -235,7 +239,7 @@
+ ifdef VBOX_WITH_WDDM
+ VBoxOGL_DEFS.win   += VBOX_WITH_WDDM
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), linux freebsd)
+ VBoxOGL_LDFLAGS += -Wl,-z,nodelete
+ endif
+ ifdef VBOX_WITH_WDDM
+@@ -317,8 +321,8 @@
+ 	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $< $(VBOX_PATH_CROGL_GLAPI)
+ 
+   else ifeq ($(KBUILD_TARGET),freebsd)
+-$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c: \
+-		$(PATH_SUB_CURRENT)/FreeBSD_exports.py \
++$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.asm: \
++		$(PATH_SUB_CURRENT)/FreeBSD_i386_exports.py \
+ 		$(VBOX_CROGL_API_FILES) $(PATH_SUB_CURRENT)/entrypoints.py \
+ 		| $$(dir $$@)
+ 	$(call MSG_GENERATE,python,$@,$<)
+@@ -387,7 +391,16 @@
+ $(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm: $(PATH_SUB_CURRENT)/SunOS_i386_glxapi_exports.py | $$(dir $$@)
+ 	$(call MSG_GENERATE,python,$@,$<)
+ 	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $<
+-
++   else ifeq ($(KBUILD_TARGET),freebsd)
++$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports_dri.asm: \
++		$(PATH_SUB_CURRENT)/FreeBSD_i386_exports_dri.py \
++		$(VBOX_CROGL_API_FILES) $(PATH_SUB_CURRENT)/entrypoints.py \
++		| $$(dir $$@)
++	$(call MSG_GENERATE,python,$@,$<)
++	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $< $(VBOX_PATH_CROGL_GLAPI)
++$(VBOX_PATH_CROGL_GENFILES)/freebsd_glxapi_exports.asm: $(PATH_SUB_CURRENT)/FreeBSD_i386_glxapi_exports.py | $$(dir $$@)
++	$(call MSG_GENERATE,python,$@,$<)
++	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $<
+    else
+ $(VBOX_PATH_CROGL_GENFILES)/linux_exports_dri.asm: \
+ 		$(PATH_SUB_CURRENT)/Linux_i386_exports_dri.py \

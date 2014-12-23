@@ -112,8 +112,6 @@ post-install:
 		@${ECHO_CMD} "@fc lib/X11/fonts/${_fontdir}" >> ${TMPPLIST}
 .    elif ${NEED_MKFONTFOO} == yes
 		@${ECHO_CMD} "@fontsdir lib/X11/fonts/${_fontdir}" >> ${TMPPLIST}
-.    else
-		@${ECHO_CMD} "@dirrmtry lib/X11/fonts/${_fontdir}" >> ${TMPPLIST}
 .    endif
 .  endfor
 .endif
@@ -140,10 +138,6 @@ USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto fontutil:build
 
 .endif
 
-.endif
-
-.if exists(${LOCALBASE}/bin/X)
-XSERVER_VER!=	${LOCALBASE}/bin/X -version 2>&1 | sed -n 's;^X\.Org X Server \([^ ]*\).*;\1;p'
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(Xorg_Post_Include)

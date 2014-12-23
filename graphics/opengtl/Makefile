@@ -12,8 +12,9 @@ COMMENT=	Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
-		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
+BROKEN=		Depends on deleted devel/llvm32
+#LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+#		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
 
 USES=		cmake perl5 tar:bzip2
 USE_LDCONFIG=	yes

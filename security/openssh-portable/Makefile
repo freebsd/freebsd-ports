@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.7p1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -36,22 +36,22 @@ MAKE_ENV+=	SUDO="${SUDO}"
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			OVERWRITE_BASE SCTP AES_THREADED LDNS NONECIPHER
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN LDNS NONECIPHER
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
 BSM_DESC=		OpenBSM Auditing
-KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI) [BROKEN]
-HPN_DESC=		HPN-SSH patch [BROKEN]
+KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI)
+HPN_DESC=		HPN-SSH patch
 LDNS_DESC=		SSHFP/LDNS support
-X509_DESC=		x509 certificate patch [BROKEN]
+X509_DESC=		x509 certificate patch
 SCTP_DESC=		SCTP support
 OVERWRITE_BASE_DESC=	OpenSSH overwrite base
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
-AES_THREADED_DESC=	Threaded AES-CTR [BROKEN]
-NONECIPHER_DESC=	NONE Cipher support [BROKEN]
+AES_THREADED_DESC=	Threaded AES-CTR
+NONECIPHER_DESC=	NONE Cipher support
 
 OPTIONS_SUB=		yes
 PLIST_SUB+=		MANPREFIX=${MANPREFIX}
@@ -71,18 +71,19 @@ NONECIPHER_CONFIGURE_WITH=	nonecipher
 AES_THREADED_CONFIGURE_WITH=	aes-threaded
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		7.9
+X509_VERSION=		8.2
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	${PORTNAME}-6.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-6.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
 SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 
-# 6.6 patch taken from http://www.stacken.kth.se/~haba/ which was originally
-# based on 5.7 patch at http://www.sxw.org.uk/computing/patches/
-KERB_GSSAPI_PATCHFILES=	openssh-6.6p1-gsskex-all-20140318.patch.gz:-p1:gsskex
-#KERB_GSSAPI_PATCH_SITES=http://www.stacken.kth.se/~haba/:gsskex
+# 6.7 patch taken from
+# http://sources.debian.net/data/main/o/openssh/1:6.7p1-3/debian/patches/gssapi.patch
+# which was originally based on 5.7 patch from
+# http://www.sxw.org.uk/computing/patches/
+KERB_GSSAPI_PATCHFILES=	openssh-6.7p1-gsskex-all-20141021-284f364.patch.gz:-p1:gsskex
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
@@ -97,13 +98,18 @@ BSM_CONFIGURE_ON=	--with-audit=bsm
 
 PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
+# X509 patch includes TCP Wrapper support already
+.if ${PORT_OPTIONS:MX509}
+EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
+.endif
+
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
-HPN_VERSION=		14v2
-HPN_DISTVERSION=	6.6.1p1
-PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
-PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
+HPN_VERSION=		14v5
+HPN_DISTVERSION=	6.7p1
+#PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
+#PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-build-options
 # Remove HPN if only AES requested
@@ -121,16 +127,6 @@ CONFIGURE_LIBS+=	-lutil
 CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 .else
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
-.endif
-
-.if ${PORT_OPTIONS:MX509}
-BROKEN=		X509 does not apply yet. Use security/openssh-portable66
-.endif
-.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
-BROKEN=		HPN does not apply yet. Use security/openssh-portable66
-.endif
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=		KERB_GSSAPI does not apply yet. Use security/openssh-portable66
 .endif
 
 .if ${PORT_OPTIONS:MX509}

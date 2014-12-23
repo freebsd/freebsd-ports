@@ -25,7 +25,6 @@ USE_GNOME=	glib20
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	lib/irssi/modules/lib/${DISTNAME}.so
-PLIST_DIRS=	lib/irssi/modules/lib
 
 CFLAGS+=	-shared -fPIC -I${LOCALBASE}/include/irssi -I${LOCALBASE}/include/irssi/src -I${LOCALBASE}/include/irssi/src/core -I${LOCALBASE}/include/irssi/src/irc/core -I${LOCALBASE}/include/irssi/src/irc/dcc `pkg-config --cflags glib-2.0`
 

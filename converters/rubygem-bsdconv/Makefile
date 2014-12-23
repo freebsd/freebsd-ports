@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Ruby wrapper for bsdconv
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 

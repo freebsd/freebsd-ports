@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.smbolton.com/linux/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical DSSI host with JACK MIDI support
 
-LICENSE=	GPLv2 BSD
-LICENSE_COMB=	multi
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
 		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \

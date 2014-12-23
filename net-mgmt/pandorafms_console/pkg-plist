@@ -4,6 +4,11 @@
 @group www
 @mode
 %%WWWDIR%%/ajax.php
+%%WWWDIR%%/attachment/index.html
+%%WWWDIR%%/attachment/mibs/index.html
+%%WWWDIR%%/attachment/plugin/index.html
+@dir %%WWWDIR%%/attachment/collections
+@dir %%WWWDIR%%/attachment/downloads
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/extensions/agents_alerts.php
 %%WWWDIR%%/extensions/agents_modules.php
@@ -95,6 +100,7 @@
 %%WWWDIR%%/godmode/agentes/module_manager_editor_prediction.php
 %%WWWDIR%%/godmode/agentes/module_manager_editor_wmi.php
 %%WWWDIR%%/godmode/agentes/planned_downtime.editor.php
+%%WWWDIR%%/godmode/agentes/planned_downtime.export_csv.php
 %%WWWDIR%%/godmode/agentes/planned_downtime.list.php
 %%WWWDIR%%/godmode/alerts/alert_actions.php
 %%WWWDIR%%/godmode/alerts/alert_commands.php
@@ -117,7 +123,6 @@
 %%WWWDIR%%/godmode/db/db_main.php
 %%WWWDIR%%/godmode/db/db_purge.php
 %%WWWDIR%%/godmode/db/db_refine.php
-%%WWWDIR%%/godmode/db/db_sanity.php
 %%WWWDIR%%/godmode/events/custom_events.php
 %%WWWDIR%%/godmode/events/event_edit_filter.php
 %%WWWDIR%%/godmode/events/event_filter.php
@@ -307,8 +312,16 @@
 %%WWWDIR%%/images/chart_curve_threshold.png
 %%WWWDIR%%/images/check-cross.png
 %%WWWDIR%%/images/clean.png
+%%WWWDIR%%/images/clippy/clippy.png
+%%WWWDIR%%/images/clippy/easter_egg_00.png
+%%WWWDIR%%/images/clippy/easter_egg_01.png
+%%WWWDIR%%/images/clippy/easter_egg_02.png
+%%WWWDIR%%/images/clippy/easter_egg_03.png
+%%WWWDIR%%/images/clippy/easter_egg_04.png
+%%WWWDIR%%/images/clippy_icon.png
 %%WWWDIR%%/images/clock.png
 %%WWWDIR%%/images/clock2.png
+%%WWWDIR%%/images/close_button_dialog.png
 %%WWWDIR%%/images/cog.png
 %%WWWDIR%%/images/cog_db.png
 %%WWWDIR%%/images/cog_del.png
@@ -1114,6 +1127,7 @@
 %%WWWDIR%%/images/printer.png
 %%WWWDIR%%/images/profiles.png
 %%WWWDIR%%/images/qrcode_icon.jpg
+%%WWWDIR%%/images/radial_dynamic_network_icon.png
 %%WWWDIR%%/images/recon.png
 %%WWWDIR%%/images/recon_icon.png
 %%WWWDIR%%/images/refresh.png
@@ -1357,6 +1371,7 @@
 %%WWWDIR%%/images/wand.png
 %%WWWDIR%%/images/wand_agent.png
 %%WWWDIR%%/images/wand_interfaces.png
+%%WWWDIR%%/images/wand_services.png
 %%WWWDIR%%/images/wand_sla.png
 %%WWWDIR%%/images/wand_snmp.png
 %%WWWDIR%%/images/wand_wmi.png
@@ -1378,6 +1393,7 @@
 %%WWWDIR%%/include/ajax/agent.php
 %%WWWDIR%%/include/ajax/alert_list.ajax.php
 %%WWWDIR%%/include/ajax/events.php
+%%WWWDIR%%/include/ajax/graph.ajax.php
 %%WWWDIR%%/include/ajax/menu.ajax.php
 %%WWWDIR%%/include/ajax/module.php
 %%WWWDIR%%/include/ajax/networkmap.ajax.php
@@ -1439,6 +1455,7 @@
 %%WWWDIR%%/include/functions_network_profiles.php
 %%WWWDIR%%/include/functions_networkmap.php
 %%WWWDIR%%/include/functions_os.php
+%%WWWDIR%%/include/functions_planned_downtimes.php
 %%WWWDIR%%/include/functions_profile.php
 %%WWWDIR%%/include/functions_reporting.php
 %%WWWDIR%%/include/functions_reports.php
@@ -1510,10 +1527,18 @@
 %%WWWDIR%%/include/graphs/pChart/palettes/spring.color
 %%WWWDIR%%/include/graphs/pChart/palettes/summer.color
 %%WWWDIR%%/include/graphs/pandora.d3.js
+%%WWWDIR%%/include/help/clippy/agent_out_of_limits.php
+%%WWWDIR%%/include/help/clippy/extension_cron_send_email.php
 %%WWWDIR%%/include/help/clippy/godmode_agentes_configurar_agente.php
 %%WWWDIR%%/include/help/clippy/godmode_agentes_modificar_agente.php
+%%WWWDIR%%/include/help/clippy/godmode_alerts_alert_actions.php
+%%WWWDIR%%/include/help/clippy/godmode_alerts_configure_alert_action.php
 %%WWWDIR%%/include/help/clippy/homepage.php
 %%WWWDIR%%/include/help/clippy/module_unknow.php
+%%WWWDIR%%/include/help/clippy/modules_not_init.php
+%%WWWDIR%%/include/help/clippy/modules_not_learning_mode.php
+%%WWWDIR%%/include/help/clippy/operation_agentes_status_monitor.php
+%%WWWDIR%%/include/help/clippy/operation_agentes_ver_agente.php
 %%WWWDIR%%/include/help/en/help_action_threshold.php
 %%WWWDIR%%/include/help/en/help_agent_access.php
 %%WWWDIR%%/include/help/en/help_agent_server.php
@@ -1542,6 +1567,7 @@
 %%WWWDIR%%/include/help/en/help_conf_alert_template.php
 %%WWWDIR%%/include/help/en/help_configure_gis_map.php
 %%WWWDIR%%/include/help/en/help_context_module_unknow.php
+%%WWWDIR%%/include/help/en/help_context_pandora_server_email.php
 %%WWWDIR%%/include/help/en/help_create_agent.php
 %%WWWDIR%%/include/help/en/help_critical_status.php
 %%WWWDIR%%/include/help/en/help_custom_logo.php
@@ -1590,6 +1616,7 @@
 %%WWWDIR%%/include/help/en/help_pcap_filter.php
 %%WWWDIR%%/include/help/en/help_performance.php
 %%WWWDIR%%/include/help/en/help_planned_downtime.php
+%%WWWDIR%%/include/help/en/help_planned_downtime_time.php
 %%WWWDIR%%/include/help/en/help_plugin_definition.php
 %%WWWDIR%%/include/help/en/help_plugin_macros.php
 %%WWWDIR%%/include/help/en/help_plugin_parameters.php
@@ -1601,6 +1628,7 @@
 %%WWWDIR%%/include/help/en/help_prediction_source_module.php
 %%WWWDIR%%/include/help/en/help_profile.php
 %%WWWDIR%%/include/help/en/help_projection_graph.php
+%%WWWDIR%%/include/help/en/help_propagate_acl.php
 %%WWWDIR%%/include/help/en/help_reconscript_definition.php
 %%WWWDIR%%/include/help/en/help_recontask.php
 %%WWWDIR%%/include/help/en/help_reporting_advanced_tab.php
@@ -1722,6 +1750,7 @@
 %%WWWDIR%%/include/help/es/help_pcap_filter.php
 %%WWWDIR%%/include/help/es/help_performance.php
 %%WWWDIR%%/include/help/es/help_planned_downtime.php
+%%WWWDIR%%/include/help/es/help_planned_downtime_time.php
 %%WWWDIR%%/include/help/es/help_plugin_definition.php
 %%WWWDIR%%/include/help/es/help_plugin_macros.php
 %%WWWDIR%%/include/help/es/help_plugin_parameters.php
@@ -1733,6 +1762,7 @@
 %%WWWDIR%%/include/help/es/help_prediction_source_module.php
 %%WWWDIR%%/include/help/es/help_profile.php
 %%WWWDIR%%/include/help/es/help_projection_graph.php
+%%WWWDIR%%/include/help/es/help_propagate_acl.php
 %%WWWDIR%%/include/help/es/help_reconscript_definition.php
 %%WWWDIR%%/include/help/es/help_recontask.php
 %%WWWDIR%%/include/help/es/help_reporting_advanced_tab.php
@@ -1805,6 +1835,7 @@
 %%WWWDIR%%/include/help/ja/help_component_groups.php
 %%WWWDIR%%/include/help/ja/help_conf_alert_template.php
 %%WWWDIR%%/include/help/ja/help_configure_gis_map.php
+%%WWWDIR%%/include/help/ja/help_context_pandora_server_email.php
 %%WWWDIR%%/include/help/ja/help_create_agent.php
 %%WWWDIR%%/include/help/ja/help_critical_status.php
 %%WWWDIR%%/include/help/ja/help_custom_logo.php
@@ -1863,6 +1894,7 @@
 %%WWWDIR%%/include/help/ja/help_prediction_source_module.php
 %%WWWDIR%%/include/help/ja/help_profile.php
 %%WWWDIR%%/include/help/ja/help_projection_graph.php
+%%WWWDIR%%/include/help/ja/help_propagate_acl.php
 %%WWWDIR%%/include/help/ja/help_reconscript_definition.php
 %%WWWDIR%%/include/help/ja/help_recontask.php
 %%WWWDIR%%/include/help/ja/help_reporting_advanced_tab.php
@@ -2514,6 +2546,8 @@
 %%WWWDIR%%/include/languages/util-update-po
 %%WWWDIR%%/include/languages/zh_CN.mo
 %%WWWDIR%%/include/languages/zh_CN.po
+%%WWWDIR%%/include/languages/zh_TW.mo
+%%WWWDIR%%/include/languages/zh_TW.po
 %%WWWDIR%%/include/php_to_js_values.php
 %%WWWDIR%%/include/sounds/Door_Alarm.wav
 %%WWWDIR%%/include/sounds/EAS_beep.wav
@@ -2798,6 +2832,7 @@
 %%WWWDIR%%/operation/agentes/gis_view.php
 %%WWWDIR%%/operation/agentes/graphs.php
 %%WWWDIR%%/operation/agentes/group_view.php
+%%WWWDIR%%/operation/agentes/interface_traffic_graph_win.php
 %%WWWDIR%%/operation/agentes/networkmap.dinamic.php
 %%WWWDIR%%/operation/agentes/networkmap.groups.php
 %%WWWDIR%%/operation/agentes/networkmap.php
@@ -2834,7 +2869,6 @@
 %%WWWDIR%%/operation/integria_incidents/incident.php
 %%WWWDIR%%/operation/integria_incidents/incident.tracking.php
 %%WWWDIR%%/operation/integria_incidents/incident.workunits.php
-%%WWWDIR%%/operation/integria_incidents/incident_detail.php
 %%WWWDIR%%/operation/integria_incidents/incident_statistics.php
 %%WWWDIR%%/operation/menu.php
 %%WWWDIR%%/operation/messages/message_edit.php
@@ -2850,6 +2884,8 @@
 %%WWWDIR%%/operation/search_alerts.php
 %%WWWDIR%%/operation/search_graphs.getdata.php
 %%WWWDIR%%/operation/search_graphs.php
+%%WWWDIR%%/operation/search_helps.getdata.php
+%%WWWDIR%%/operation/search_helps.php
 %%WWWDIR%%/operation/search_main.php
 %%WWWDIR%%/operation/search_maps.getdata.php
 %%WWWDIR%%/operation/search_maps.php
@@ -2863,6 +2899,7 @@
 %%WWWDIR%%/operation/servers/recon_view.php
 %%WWWDIR%%/operation/snmpconsole/snmp_browser.php
 %%WWWDIR%%/operation/snmpconsole/snmp_mib_uploader.php
+%%WWWDIR%%/operation/snmpconsole/snmp_statistics.php
 %%WWWDIR%%/operation/snmpconsole/snmp_view.php
 %%WWWDIR%%/operation/system_alert.php
 %%WWWDIR%%/operation/tree.php
@@ -2890,247 +2927,3 @@
 %%WWWDIR%%/pandoradb.postgreSQL.sql
 %%WWWDIR%%/pandoradb.sql
 %%WWWDIR%%/pandoradb_data.sql
-@dirrm %%WWWDIR%%/operation/visual_console
-@dirrm %%WWWDIR%%/operation/users
-@dirrm %%WWWDIR%%/operation/tree
-@dirrm %%WWWDIR%%/operation/snmpconsole
-@dirrm %%WWWDIR%%/operation/servers
-@dirrm %%WWWDIR%%/operation/reporting
-@dirrm %%WWWDIR%%/operation/netflow
-@dirrm %%WWWDIR%%/operation/messages
-@dirrm %%WWWDIR%%/operation/integria_incidents
-@dirrm %%WWWDIR%%/operation/incidents
-@dirrm %%WWWDIR%%/operation/gis_maps
-@dirrm %%WWWDIR%%/operation/events
-@dirrm %%WWWDIR%%/operation/agentes
-@dirrm %%WWWDIR%%/operation
-@dirrm %%WWWDIR%%/mobile/operation
-@dirrm %%WWWDIR%%/mobile/include/style/images
-@dirrm %%WWWDIR%%/mobile/include/style
-@dirrm %%WWWDIR%%/mobile/include/javascript
-@dirrm %%WWWDIR%%/mobile/include
-@dirrm %%WWWDIR%%/mobile/images
-@dirrm %%WWWDIR%%/mobile
-@dirrm %%WWWDIR%%/include/swiftmailer/dependency_maps
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Transport/Esmtp/Auth
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Transport/Esmtp
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Transport
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/StreamFilters
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Plugins/Reporters
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Plugins/Pop
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Plugins/Loggers
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Plugins/Decorator
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Plugins
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Mime/Headers
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Mime/HeaderEncoder
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Mime/ContentEncoder
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Mime
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Mailer
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/KeyCache
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Events
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/Encoder
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/CharacterStream
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/CharacterReaderFactory
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/CharacterReader
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift/ByteStream
-@dirrm %%WWWDIR%%/include/swiftmailer/classes/Swift
-@dirrm %%WWWDIR%%/include/swiftmailer/classes
-@dirrm %%WWWDIR%%/include/swiftmailer
-@dirrm %%WWWDIR%%/include/styles/images
-@dirrm %%WWWDIR%%/include/styles
-@dirrm %%WWWDIR%%/include/sounds
-@dirrm %%WWWDIR%%/include/languages/datepicker
-@dirrm %%WWWDIR%%/include/languages
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/utils
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/default
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/highcontrast
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/wordcount
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/visualchars
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/visualblocks/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/visualblocks
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/tabfocus
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/includes
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/classes/utils
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/classes
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/save
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/print
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview/jscripts
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/pagebreak
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/noneditable
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/nonbreaking
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/lists
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/legacyoutput
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/layer
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/insertdatetime
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/iespell
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullscreen
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example_dependency
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/directionality
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/contextmenu
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autosave
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autoresize
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autolink
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlist
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce
-@dirrm %%WWWDIR%%/include/javascript/mergely
-@dirrm %%WWWDIR%%/include/javascript/i18n
-@dirrm %%WWWDIR%%/include/javascript/OpenLayers/theme/default/img
-@dirrm %%WWWDIR%%/include/javascript/OpenLayers/theme/default
-@dirrm %%WWWDIR%%/include/javascript/OpenLayers/theme
-@dirrm %%WWWDIR%%/include/javascript/OpenLayers/img
-@dirrm %%WWWDIR%%/include/javascript/OpenLayers
-@dirrm %%WWWDIR%%/include/javascript
-@dirrm %%WWWDIR%%/include/help/ja
-@dirrm %%WWWDIR%%/include/help/es
-@dirrm %%WWWDIR%%/include/help/en
-@dirrm %%WWWDIR%%/include/help/clippy
-@dirrm %%WWWDIR%%/include/help
-@dirrm %%WWWDIR%%/include/graphs/pChart/palettes
-@dirrm %%WWWDIR%%/include/graphs/pChart/fonts
-@dirrm %%WWWDIR%%/include/graphs/pChart/data
-@dirrm %%WWWDIR%%/include/graphs/pChart/cache
-@dirrm %%WWWDIR%%/include/graphs/pChart
-@dirrm %%WWWDIR%%/include/graphs/images_graphs
-@dirrm %%WWWDIR%%/include/graphs/flot
-@dirrm %%WWWDIR%%/include/graphs
-@dirrm %%WWWDIR%%/include/fonts
-@dirrm %%WWWDIR%%/include/db
-@dirrm %%WWWDIR%%/include/auth
-@dirrm %%WWWDIR%%/include/ajax
-@dirrm %%WWWDIR%%/include/Image
-@dirrmtry %%WWWDIR%%/include
-@dirrmtry %%WWWDIR%%/images/status_sets/faces
-@dirrmtry %%WWWDIR%%/images/status_sets/default
-@dirrmtry %%WWWDIR%%/images/status_sets/color_text
-@dirrmtry %%WWWDIR%%/images/status_sets
-@dirrmtry %%WWWDIR%%/images/os_icons
-@dirrmtry %%WWWDIR%%/images/networkmap
-@dirrmtry %%WWWDIR%%/images/mimetypes
-@dirrmtry %%WWWDIR%%/images/help
-@dirrmtry %%WWWDIR%%/images/groups_small
-@dirrmtry %%WWWDIR%%/images/gis_map/icons
-@dirrmtry %%WWWDIR%%/images/gis_map
-@dirrmtry %%WWWDIR%%/images/custom_logo
-@dirrmtry %%WWWDIR%%/images/console/icons/old_icons
-@dirrmtry %%WWWDIR%%/images/console/icons
-@dirrmtry %%WWWDIR%%/images/console/background
-@dirrmtry %%WWWDIR%%/images/console
-@dirrmtry %%WWWDIR%%/images/backgrounds
-@dirrmtry %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/godmode/users
-@dirrm %%WWWDIR%%/godmode/update_manager
-@dirrm %%WWWDIR%%/godmode/tag
-@dirrm %%WWWDIR%%/godmode/snmpconsole
-@dirrm %%WWWDIR%%/godmode/setup
-@dirrm %%WWWDIR%%/godmode/servers
-@dirrm %%WWWDIR%%/godmode/reporting
-@dirrm %%WWWDIR%%/godmode/netflow
-@dirrm %%WWWDIR%%/godmode/modules
-@dirrm %%WWWDIR%%/godmode/massive
-@dirrm %%WWWDIR%%/godmode/groups
-@dirrm %%WWWDIR%%/godmode/gis_maps
-@dirrm %%WWWDIR%%/godmode/events
-@dirrm %%WWWDIR%%/godmode/db
-@dirrm %%WWWDIR%%/godmode/category
-@dirrm %%WWWDIR%%/godmode/alerts
-@dirrm %%WWWDIR%%/godmode/agentes
-@dirrm %%WWWDIR%%/godmode
-@dirrm %%WWWDIR%%/general/ui
-@dirrm %%WWWDIR%%/general/license
-@dirrm %%WWWDIR%%/general
-@dirrmtry %%WWWDIR%%/fonts
-@dirrm %%WWWDIR%%/extras
-@dirrm %%WWWDIR%%/extensions/users
-@dirrm %%WWWDIR%%/extensions/ssh_gateway
-@dirrm %%WWWDIR%%/extensions/realtime_graphs
-@dirrm %%WWWDIR%%/extensions/net_tools
-@dirrm %%WWWDIR%%/extensions/module_groups
-@dirrm %%WWWDIR%%/extensions/matrix_events
-@dirrm %%WWWDIR%%/extensions/files_repo/sql
-@dirrm %%WWWDIR%%/extensions/files_repo
-@dirrm %%WWWDIR%%/extensions/dbmanager
-@dirrm %%WWWDIR%%/extensions/agents_modules
-@dirrmtry %%WWWDIR%%/extensions
-@dirrmtry %%WWWDIR%%/attachment/plugin
-@dirrmtry %%WWWDIR%%/attachment/mibs
-@dirrmtry %%WWWDIR%%/attachment
-@dirrmtry %%WWWDIR%%

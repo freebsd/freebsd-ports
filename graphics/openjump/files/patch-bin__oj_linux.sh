@@ -1,18 +1,18 @@
---- bin/oj_linux.sh.orig	2014-03-16 17:15:30.000000000 +0100
-+++ bin/oj_linux.sh	2014-09-07 13:27:15.000000000 +0200
-@@ -4,9 +4,10 @@
+--- bin/oj_linux.sh.orig	2014-11-26 00:15:22.000000000 +0100
++++ bin/oj_linux.sh	2014-12-21 22:31:45.000000000 +0100
+@@ -4,9 +4,11 @@
  ## if unset defaults to
  ##   JUMP_HOME (oj app folder) if writable or $HOME/.openjump (user home)
  #JUMP_SETTINGS="/tmp/foobar"
 +JUMP_SETTINGS="$HOME/.openjump"
  
  ## uncomment and put the path to your jre here
--#JAVA_HOME="/home/ed/jre1.6.0_21"
+ #JAVA_HOME="/home/ed/jre1.6.0_21"
 +JAVA_HOME=${JAVA_HOME}
  
  ## uncomment and change your memory configuration here 
  ## Xms is initial size, Xmx is maximum size
-@@ -43,6 +44,7 @@
+@@ -48,6 +50,7 @@
    # extract zipped files in native dir (our way to ship symlinks to desktops)
    for filepath in $(find "$1/" -name '*.tgz' -o -name '*.tar.gz')
    do
@@ -20,7 +20,7 @@
      file=$(basename "$filepath")
      folder=$(dirname "$filepath")
      done=".$file.unzipped"
-@@ -66,6 +68,7 @@
+@@ -71,6 +74,7 @@
  
  macinstall(){
    # create app package
@@ -28,7 +28,7 @@
    cp -R -a "$1"/bin/OpenJUMP.app/Contents "$1" &&\
    awk '{sub(/..\/oj_/,"bin/oj_",$0)}1' "$1"/bin/OpenJUMP.app/Contents/Resources/script > "$1"/Contents/Resources/script &&\
    echo patched oj.app
-@@ -74,12 +77,14 @@
+@@ -79,12 +83,14 @@
  }
  
  ## detect home folder
@@ -43,7 +43,7 @@
  
  ## run postinstalls only, if requested
  case "$1" in
-@@ -95,13 +100,20 @@
+@@ -100,13 +106,19 @@
  
  ## cd into jump home
  OLD_DIR=`pwd`
@@ -51,7 +51,6 @@
  cd "$JUMP_HOME"
 +PWD_DIR=`pwd`
 +echo "#####  cd '$JUMP_HOME', pwd = '$PWD_DIR'"
-+
  
  ## determine where to place settings, if no path given
 +echo "#####  ===== JUMP_SETTINGS = '$JUMP_SETTINGS'"
@@ -64,7 +63,7 @@
      # try users home dir
      JUMP_SETTINGS="$HOME/.openjump"
      # create if missing
-@@ -118,14 +130,19 @@
+@@ -123,14 +135,19 @@
  # 1. first in oj_home/jre
  # 2. in configured java_home
  # 3. in path
@@ -84,7 +83,7 @@
  fi
  
  # java available
-@@ -134,20 +151,26 @@
+@@ -139,20 +156,26 @@
  add the location of java to your PATH environment variable." && ERROR=1 && end
  
  # resolve recursive links to java binary
@@ -115,51 +114,18 @@
 +JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'"' '/^java version/ || /^openjdk version/{print $2}' | awk -F'.' '{print $1"."$2}')
 +echo "#####  JAVA_VERSION = '$JAVA_VERSION'"
  JAVA_ARCH=$(echo $JAVA_VERSIONSTRING | grep -q -i 64-bit && echo x64 || echo x86)
- JAVA_NEEDED="1.5"
- if ! awk "BEGIN{if($JAVA_VERSION < $JAVA_NEEDED)exit 1}"; then
-@@ -157,7 +180,11 @@
- fi
- 
- # use previously set or detect RAM size in bytes
--RAM_SIZE=${RAM_SIZE-$(expr "$(awk '/MemTotal/{print $2}' /proc/meminfo)" \* 1024)}
-+#RAM_SIZE=${RAM_SIZE-$(expr "$(awk '/MemTotal/{print $2}' /proc/meminfo)" \* 1024)}
-+RAM_SIZE=${RAM_SIZE-$(expr "$(sysctl hw.realmem | awk '/hw.realmem:/{print $2}')" / 1024)}
-+echo "#####  -----------------------------------------------------------"
-+echo "#####  RAM_SIZE = '$RAM_SIZE'"
-+
- if [ -n "$JAVA_MAXMEM" ]; then
-   echo "max. memory limit defined via JAVA_MAXMEM=$JAVA_MAXMEM"
- elif ! is_number "$RAM_SIZE"; then
-@@ -175,14 +202,18 @@
-   else
-     MEM_MAX="$MEM_MINUS1GB"
-   fi
-+  echo "#####  MEM_MAX = '$MEM_MAX'"
- 
-   # limit 32bit jre to 3GiB = 3221225472 bytes
-+  echo "#####  JAVA_ARCH = '$JAVA_ARCH'"
-   if [ "$JAVA_ARCH" != "x64" ] && [ "$MEM_MAX" -gt "3221225472" ]; then
-     MEM_MAX=3221225472
-   fi
- 
--  MEM_MAX_MB=`expr $MEM_MAX / 1024 / 1024`
-+  MEM_MAX_MB=`expr $MEM_MAX / 1024`
-   JAVA_MAXMEM="-Xmx${MEM_MAX_MB}M"
-+  echo "#####  JAVA_MAXMEM = '$JAVA_MAXMEM'"
-+
-   # output info
-   echo limit max. memory to $MEM_MAX_MB MiB
- fi
-@@ -190,7 +221,7 @@
- # always print java infos
- echo "Running -> '${JAVA}'; " $("$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}')
+ JAVA_NEEDED="1.6"
+ if ! is_decimal "$JAVA_VERSION" || ! awk "BEGIN{if($JAVA_VERSION < $JAVA_NEEDED)exit 1}"; then
+@@ -166,7 +189,7 @@
+ echo "Using '$(basename "${JAVA}")' found in '$(dirname "${JAVA}")"
+ echo $("$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}')
  
 -JUMP_PROFILE=~/.jump/openjump.profile
 +JUMP_PROFILE="$HOME/.openjump/openjump.profile"
  if [ -f "$JUMP_PROFILE" ]; then
    source $JUMP_PROFILE
  fi
-@@ -199,8 +230,13 @@
+@@ -175,8 +198,13 @@
  if [ -z "$JUMP_LIB" ]; then
    JUMP_LIB="./lib"
  fi
@@ -173,15 +139,15 @@
  
  JUMP_PLUGINS=./bin/default-plugins.xml
  if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ]; then
-@@ -209,6 +245,7 @@
+@@ -185,6 +213,7 @@
      JUMP_PLUGINS="./scripts/default-plugins.xml"
    fi
  fi
 +echo "#####  JUMP_PLUGINS = '$JUMP_PLUGINS'"
  
  # include every jar/zip in lib and native dir
- for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/"*.jar
-@@ -217,29 +254,39 @@
+ for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/$JAVA_ARCH/"*.jar "$JUMP_NATIVE_DIR/"*.jar
+@@ -193,29 +222,39 @@
  done
  CLASSPATH=.:./bin:./conf:$CLASSPATH
  export CLASSPATH;
@@ -221,8 +187,41 @@
 +#extract_libs "$JUMP_NATIVE_DIR"
  
  # allow jre to find native libraries in native dir, lib/ext (backwards compatibility)
- # NOTE: mac osx DYLD_LIBRARY_PATH is set in oj_macosx.command only
-@@ -265,4 +312,4 @@
+ NATIVE_PATH="$JUMP_NATIVE_DIR/$JAVA_ARCH:$JUMP_NATIVE_DIR:$JUMP_PLUGIN_DIR"
+@@ -251,7 +290,11 @@
+ 
+ echo ---Detect maximum memory limit---
+ # use previously set or detect RAM size in bytes
+-RAM_SIZE=${RAM_SIZE-$(expr "$(awk '/MemTotal/{print $2}' /proc/meminfo)" \* 1024)}
++#RAM_SIZE=${RAM_SIZE-$(expr "$(awk '/MemTotal/{print $2}' /proc/meminfo)" \* 1024)}
++RAM_SIZE=${RAM_SIZE-$(expr "$(sysctl hw.realmem | awk '/hw.realmem:/{print $2}')" / 1024)}
++echo "#####  -----------------------------------------------------------"
++echo "#####  RAM_SIZE = '$RAM_SIZE'"
++
+ if [ -n "$JAVA_MAXMEM" ]; then
+   echo "max. memory limit defined via JAVA_MAXMEM=$JAVA_MAXMEM"
+ elif ! is_number "$RAM_SIZE"; then
+@@ -269,14 +312,18 @@
+   else
+     MEM_MAX="$MEM_MINUS1GB"
+   fi
++  echo "#####  MEM_MAX = '$MEM_MAX'"
+ 
+   # limit 32bit jre to 2GiB = 2147483648 bytes
++  echo "#####  JAVA_ARCH = '$JAVA_ARCH'"
+   if [ "$JAVA_ARCH" != "x64" ] && [ "$MEM_MAX" -gt "2147483648" ]; then
+     MEM_MAX=2147483648
+   fi
+ 
+-  MEM_MAX_MB=`expr $MEM_MAX / 1024 / 1024`
++  MEM_MAX_MB=`expr $MEM_MAX / 1024`
+   JAVA_MAXMEM="-Xmx${MEM_MAX_MB}M"
++  echo "#####  JAVA_MAXMEM = '$JAVA_MAXMEM'"
++
+   # output info
+   echo set max. memory limit to $MEM_MAX_MB MiB
+ fi
+@@ -294,4 +341,4 @@
  cd "$OLD_DIR"
  
  ## run end function

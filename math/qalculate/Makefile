@@ -3,7 +3,7 @@
 
 PORTNAME=	qalculate
 PORTVERSION=	0.9.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-gtk/${PORTNAME}-gtk-${PORTVERSION}
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
 USES=		gettext gmake
-USE_GNOME=	gnomehier libglade2 libgnome
+USE_GNOME=	libglade2 libgnome
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

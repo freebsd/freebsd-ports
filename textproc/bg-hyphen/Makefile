@@ -19,7 +19,6 @@ USES=		zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_bg_BG.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

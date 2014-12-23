@@ -59,13 +59,4 @@ do-configure:
 regression-test test: build
 	cd ${WRKSRC} && ${MAKE} test
 
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
-	| ${SED} -E \
-		's,.*share/nls/.+$$,,g \
-		;s,${PARROT_DOCS}(/.+)?$$,%%PARROT_DOCS%%\1,g \
-		;s,${PARROT_SHARE_DIR}(/.+)?$$,%%DOCSDIR%%\1,g \
-		;s,${PORTVERSION}(/.+)?$$,%%PARROT_VER%%\1,g \
-		' | ${TR} -s '\n') > temp-pkg-plist
-
 .include <bsd.port.post.mk>

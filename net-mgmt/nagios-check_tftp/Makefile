@@ -15,7 +15,6 @@ COMMENT=	Nagios plugin to check tftp servers
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/tftp:${PORTSDIR}/ftp/tftp-hpa
 
-PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_tftp
 
 NO_BUILD=	yes

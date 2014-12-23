@@ -3,6 +3,7 @@
 
 PORTNAME=	when
 PORTVERSION=	1.1.31
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/culot
 
@@ -15,7 +16,7 @@ LICENSE_COMB=	dual
 USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
-SHEBANGFILES=	when
+SHEBANG_FILES=	when
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_dist
 

@@ -35,7 +35,6 @@ OPTIONS_DEFINE=	DOCS NLS
 .for lang in fr it pl ro sv tr
 PLIST_FILES+=	%%DATADIR%%/locale/darknock_${lang}.qm
 .endfor
-PLIST_DIRS+=	%%DATADIR%%/locale %%DATADIR%%
 .endif
 
 post-patch:

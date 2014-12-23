@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.20
-PORTREVISION=	1
+PORTVERSION=	6.1.23
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Sympa is an electronic mailing list manager
 
 LICENSE=	GPLv2
@@ -35,7 +34,8 @@ RUN_DEPENDS+=	\
 	p5-HTML-StripScripts-Parser>=0:${PORTSDIR}/www/p5-HTML-StripScripts-Parser \
 	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree		\
 	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit	\
-	p5-MIME-Lite-HTML>=0:${PORTSDIR}/mail/p5-MIME-Lite-HTML
+	p5-MIME-Lite-HTML>=0:${PORTSDIR}/mail/p5-MIME-Lite-HTML	\
+	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
@@ -132,6 +132,7 @@ post-patch:
 	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+			  -e 's|data_structure.version|data_structure.version.sample|g' \
 			  -e 's|/bin/true$$|:|'				\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's#\$$(DESTDIR)\$$(sampledir)#${STAGEDIR}\$$(sampledir)#g' \
@@ -141,14 +142,13 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
+	${ECHO_CMD} "@owner ${USERS}" >> ${TMPPLIST}
+	${ECHO_CMD} "@group ${GROUPS}" >> ${TMPPLIST}
 	for dir in $$(sort ${WRKSRC}/createddirs | ${SED} 's,^${STAGEDIR},,'); do \
 		${MKDIR} -m755 ${STAGEDIR}$$dir; \
-		${TOUCH} ${STAGEDIR}$$dir/.keep; \
-		${ECHO_CMD} "@exec ${CHOWN} ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
-		${ECHO_CMD} "$${dir#${PREFIX}/}/.keep" >> ${TMPPLIST}; \
 	done; \
 	for dir in $$(sort -r ${WRKSRC}/createddirs); do \
-		${ECHO_CMD} "@unexec rmdir $${dir#${STAGEDIR}} || : 2>/dev/null" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec ${RMDIR} $${dir#${STAGEDIR}} || : 2>/dev/null" >> ${TMPPLIST}; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/etc_README ${STAGEDIR}/${ETCDIR}
 

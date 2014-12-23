@@ -20,7 +20,6 @@ SHEBANG_FILES=	colorgcc
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/examples/${PORTNAME}/${PORTNAME}rc
-PLIST_DIRS=	share/examples/${PORTNAME}
 SUB_FILES=	pkg-message
 
 NO_BUILD=yes

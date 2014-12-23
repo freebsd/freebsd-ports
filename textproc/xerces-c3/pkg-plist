@@ -14,11 +14,6 @@ bin/SCMPrint
 bin/SEnumVal
 bin/StdInParse
 bin/XInclude
-libdata/pkgconfig/xerces-c.pc
-lib/libxerces-c-3.1.so
-lib/libxerces-c.so.3
-lib/libxerces-c.so
-lib/libxerces-c.a
 include/xercesc/dom/DOM.hpp
 include/xercesc/dom/DOMAttr.hpp
 include/xercesc/dom/DOMCDATASection.hpp
@@ -487,3 +482,8 @@ include/xercesc/validators/schema/identity/XercesXPath.hpp
 include/xercesc/xinclude/XIncludeDOMDocumentProcessor.hpp
 include/xercesc/xinclude/XIncludeLocation.hpp
 include/xercesc/xinclude/XIncludeUtils.hpp
+lib/libxerces-c-%%MAJOR_VER%%.so
+lib/libxerces-c.a
+lib/libxerces-c.so
+lib/libxerces-c.so.3
+libdata/pkgconfig/xerces-c.pc

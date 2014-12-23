@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	ale
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java solution for real time and embedded systems
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes

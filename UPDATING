@@ -5,6 +5,94 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141219:
+  AFFECTS: users of x11/xorg and all xorg ports
+  AUTHOR: dumbbell@FreeBSD.org
+
+  The X.Org server (x11-servers/xorg-server) is updated to 1.14. All
+  ports which provide X.Org drivers must be updated simultaneously, i.e.
+  x11-drivers/xf86-*, emulators/virtualbox-ose-additions, net/tigervnc,
+  etc.
+
+  The input device autodetection backend is switched from HAL to devd.
+  If you configure your keyboard layout through HAL .fdi files, you need
+  to migrate this configuration to plain X.Org configuration files.
+
+  Up-to-date instructions and a description of the changes brought by
+  this update are detailed in a blog post:
+
+  http://blogs.freebsdish.org/graphics/2014/11/19/xserver-1-14-update-ready/
+
+20141219:
+  AFFECTS: users of net-mgmt/xymon-server
+  AUTHOR: feld@FreeBSD.org
+
+  Xymon has been updated to 4.3.18. A major change is the replacement of
+  the individual cgi shell scripts with symlinks to a cgi program written
+  in C. This is to mitigate shellshock on Linux systems where the
+  /bin/sh -> /bin/bash. FreeBSD users were not exposed except in the
+  most unusual and unsupported circumstances. However, this is an
+  important update for security. This change could break your
+  configuration as Henrik describes here:
+
+  > NOTE: Replacing the shell script wrappers means that the cgioptions.cfg
+  > file is no longer processed as a shell script. The new wrapper works
+  > fine with the default version of cgioptions.cfg, but it you have
+  > modified it in a way that it relies on being processed by a shell, then
+  > it will break.
+
+20141219:
+  AFFECTS: users of audio/abcde
+  AUTHOR: gblach@FreeBSD.org
+
+  In audio/abcde dependency has been changed from audio/py-eyed3-06
+  to audio/py-eyed3. Before updating audio/abcde to 2.6 you must manually
+  deinstall audio/py-eyed-06.
+
+  # pkg delete -f py\*-eyed3-06
+
+20141218:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH 6.7 disables some insecure ciphers by default, such as arcfour
+  and blowfish. You may have clients using these over LAN where security is
+  considered less important for the connection. For these cases you may need
+  to update your Ciphers entry in your sshd_config to enable them again.
+
+  See http://mgalgs.github.io/2014/10/22/enable-arcfour-and-other-fast-ciphers-on-recent-versions-of-openssh.html
+
+20141217:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  Perl now links all .so it builds with libperl.so, it makes upgrading from one
+  Perl major version to another way easier.  For binary package users, it means
+  pkg upgrade will detect the libperl.so.x.yy change, and reinstall the
+  affected packages.  For users using ports, it will save rebuild time as it's
+  easier to detect what ports really need to be rebuilt.
+
+  Ports users are encouraged to rebuild ports that install files in SITE_ARCH.
+  If using Perl 5.18, run:
+
+  With portupgrade:
+
+    portupgrade -f `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+
+  With portmaster:
+
+    portmaster `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+
+20141216:
+  AFFECTS: users of security/openssh-portable, security/openssh-portable66
+  AUTHOR: bdrewery@FreeBSD.org
+
+  All patches have been fixed for version 6.7. It is no longer required to use
+  the security/openssh-portable66 port.
+
+  The LPK option was removed from security/openssh-portable as it has been
+  deprecated since May 2013. Use AuthorizedKeysCommand as a replacement.
+
 20141215:
   AFFECTS: users of comms/spandsp-devel
   AUTHOR: pawel@FreeBSD.org

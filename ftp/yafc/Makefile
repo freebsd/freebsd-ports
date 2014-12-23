@@ -43,7 +43,6 @@ SSH_CONFIGURE_OFF=	--without-ssh
 
 BASH_CONFIGURE_ON=	--with-bash-completion=yes
 BASH_PLIST_FILES=	etc/bash_completion.d/yafc
-BASH_PLIST_DIRSTRY=	etc/bash_completion.d
 BASH_CONFIGURE_OFF=	--with-bash-completion=no
 
 post-install:

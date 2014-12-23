@@ -21,7 +21,6 @@ NO_BUILD=	yes
 PLIST_FILES=	${DATADIR_REL}/xhtml1-frameset.xsd \
 		${DATADIR_REL}/xhtml1-strict.xsd \
 		${DATADIR_REL}/xhtml1-transitional.xsd
-PLIST_DIRS=	${DATADIR_REL}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

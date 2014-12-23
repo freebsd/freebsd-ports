@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library for working with S-expressions
 
-LICENSE=	BSD
+LICENSE=	APACHE20 BSD3CLAUSE
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	ocaml-type-conv>0:${PORTSDIR}/devel/ocaml-typeconv
 RUN_DEPENDS=	ocaml-type-conv>0:${PORTSDIR}/devel/ocaml-typeconv

@@ -17,7 +17,6 @@ LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
 
 USES=		gmake
 USE_SDL=	mixer net sdl
-NEED_ROOT=	yes
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

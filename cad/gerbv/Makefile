@@ -14,13 +14,13 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig
+USES=		autoreconf desktop-file-utils gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_aux_dir="."
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

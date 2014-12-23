@@ -30,8 +30,6 @@ PLIST_FILES=	bin/perlconsole \
 		${SITE_PERL_REL}/PerlConsole/Preferences.pm \
 		${SITE_PERL_REL}/PerlConsole.pm
 
-PLIST_DIRS=	${SITE_PERL_REL}/PerlConsole
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

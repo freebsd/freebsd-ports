@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}_
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	staticReflection package for PHP
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:${PORTSDIR}/devel/pear-channel-pdepend
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.pdepend.org.reg:${PORTSDIR}/devel/pear-channel-pdepend

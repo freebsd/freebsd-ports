@@ -28,16 +28,14 @@ MEMTRACE_DESC=	Internal memory tracking
 TEST_DESC=	Internal test program
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix tar:bzip2
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_LDCONFIG=	yes
+USES=		autoreconf gmake libtool pathfix tar:bzip2
 
 DATADIR=	${PREFIX}/share/CUnit
 DOCSDIR=	${PREFIX}/share/doc/CUnit
 PORTDATA=	*
 PORTDOCS=	*
 
-AUTOMAKE_ARGS=	--add-missing
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 AUTOMATED_CONFIGURE_ENABLE=	automated

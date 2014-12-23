@@ -25,8 +25,6 @@ THEMESDIR_REL=	share/irssi/themes
 PLIST_FILES+=	${THEMESDIR_REL}/${f}
 .endfor
 
-PLIST_DIRSTRY=	share/irssi/themes share/irssi
-
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}

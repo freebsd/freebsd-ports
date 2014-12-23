@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: head/emulators/virtualbox-ose/files/vboxheadless.in 349868 2014-04-01 17:52:14Z jkim $
+# $FreeBSD$
 #
 # PROVIDE: vboxheadless
 # REQUIRE: LOGIN vboxnet

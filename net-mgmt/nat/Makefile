@@ -21,7 +21,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/nat %%DATADIR%%/passlist.txt %%DATADIR%%/userlist.txt man/man1/nat.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nat ${STAGEDIR}${PREFIX}/bin

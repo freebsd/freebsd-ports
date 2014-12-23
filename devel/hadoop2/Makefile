@@ -1,12 +1,16 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
 
+# Please do not submit untested updates.  Be sure to start hadoop in
+# distributed mode and run few map/reduce.  Be sure there are no exception
+# in any of it's log files.  This version is tested under the load and
+# no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
 PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
-		LOCAL/demon/:maven \
+		LOCAL/demon/ \
 		http://people.freebsd.org/~demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty

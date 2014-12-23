@@ -1,9 +1,8 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer1/Makefile,v 1.5 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -12,12 +11,13 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Media applications framework
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier introspection:build
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
@@ -27,12 +27,15 @@ CONFIGURE_ARGS=	--disable-tests \
 CONFIGURE_ENV=	ac_cv_func_register_printf_function="no"
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.204.0
+		SOVERSION=0.405.0
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	LIBCHECK
 LIBCHECK_DESC=	Unit tests support
+LIBCHECK_CONFIGURE_ENABLE=	check
+LIBCHECK_LIB_DEPENDS=	libcheck.so:${PORTSDIR}/devel/libcheck
 
 .include <bsd.port.options.mk>
 
@@ -45,15 +48,6 @@ USE_GCC=	any
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
-.endif
-
-.if ${PORT_OPTIONS:MLIBCHECK}
-LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
-CONFIGURE_ARGS+=--enable-check
-PLIST_SUB+=	CHECK=""
-.else
-CONFIGURE_ARGS+=--disable-check
-PLIST_SUB+=	CHECK="@comment "
 .endif
 
 post-patch:

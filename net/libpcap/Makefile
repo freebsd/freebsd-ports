@@ -96,7 +96,6 @@ PLIST_FILES+=	bin/pcap-config \
 		man/man7/pcap-filter.7.gz \
 		man/man7/pcap-linktype.7.gz \
 		man/man7/pcap-tstamp.7.gz
-PLIST_DIRS+=	include/pcap
 
 OPTIONS_DEFINE=	DAG IPV6
 

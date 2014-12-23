@@ -1,4 +1,2 @@
 %%DATADIR%%/mtaserver
 @sample %%ETCDIR%%/mtaserver.conf.sample
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%

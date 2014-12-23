@@ -23,7 +23,6 @@ MAKE_ENV=	XROOT="${LOCALBASE}" SYSCONFDIR="${ETCDIR}"
 PORTDOCS=	CHANGELOG README
 PLIST_FILES=	bin/windowlab %%ETCDIR%%/menurc \
 		man/man1/windowlab.1x.gz
-PLIST_DIRS=	%%ETCDIR%%
 
 XFT_USE=	XORG=xft
 XFT_USES=	pkgconfig

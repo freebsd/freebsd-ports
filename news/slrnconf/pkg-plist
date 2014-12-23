@@ -172,7 +172,3 @@ share/slrnconf/help/warn_followup_to
 share/slrnconf/help/wrap_flags
 share/slrnconf/help/wrap_method
 share/slrnconf/help/write_newsrc_flags
-@dirrm share/slrnconf/help
-@dirrm share/slrnconf/data
-@dirrm share/slrnconf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

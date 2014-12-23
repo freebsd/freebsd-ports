@@ -33,6 +33,7 @@ BAD_GST_ALL_PLUGINS+= \
 		openal \
 		opencv \
 		openjpeg \
+		opengl \
 		opus \
 		resindvd \
 		rtmp \
@@ -45,11 +46,9 @@ BAD_GST_ALL_PLUGINS+= \
 # plugins not yet ported to the 1.0 API, or not portable
 BAD_GST_ALL_PLUGINS+= \
 		apexsink \
-		cdaudio \
 		chromaprint \
 		decklink \
 		directfb \
-		eglgles \
 		ladspa \
 		linsys \
 		lv2 \
@@ -73,11 +72,18 @@ BAD_GST_ALL_PLUGINS+= \
 		wayland \
 		xvid
 
+# --with-egl-window-system=none --disable-opengl --disable-gles2 --disable-egl --disable-glx \
+
 BAD_GST_NON_PLUGINS= \
+		--disable-gles2 \
+		--disable-egl \
+		--disable-glx \
+		--disable-wayland \
 		--enable-bz2 \
 		--enable-dvb \
 		--enable-shm \
 		--enable-quicktime \
+		--disable-wgl \
 		--disable-gsettings \
 		--disable-acm \
 		--disable-android_media \
@@ -185,7 +191,7 @@ GST_INC_DIR=		include/gstreamer-${VERSION}
 GST_LIB_DIR=		lib/gstreamer-${VERSION}
 
 # Auto create PLIST
-PLIST=		${NONEXISTENT}
+PLIST?=		${NONEXISTENT}
 
 # ------- plugins ---------
 
@@ -194,22 +200,17 @@ gst_a52dec_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
 
 # aalib
 gst_aalib_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
-gst_aalib_PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.la \
-			${GST_LIB_DIR}/libgstaasink.so
+gst_aalib_PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.so
 
 # amrnb
 gst_amrnb_LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
-gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.la \
-			${GST_LIB_DIR}/libgstamrnb.so \
+gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.so \
 			share/gstreamer-${VERSION}/presets/GstAmrnbEnc.prs
-gst_amrnb_PLIST_DIRSTRY=share/gstreamer-${VERSION}/presets \
-			share/gstreamer-${VERSION}
 
 # amrwb
 gst_amrwb_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
 gst_amrwb_GST_PLUGIN_DIR=	ext/amrwbdec
-gst_amrwb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrwbdec.la \
-			${GST_LIB_DIR}/libgstamrwbdec.so
+gst_amrwb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrwbdec.so
 
 # assrender
 gst_assrender_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
@@ -228,14 +229,12 @@ gst_curl_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 # dts
 gst_dts_LIB_DEPENDS=	libdca.so:${PORTSDIR}/multimedia/libdca
-gst_dts_PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.la \
-			${GST_LIB_DIR}/libgstdtsdec.so
+gst_dts_PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.so
 
 # libdv
 gst_libdv_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
 gst_libdv_GST_PLUGIN_DIR=	ext/dv
-gst_libdv_PLIST_FILES=		${GST_LIB_DIR}/libgstdv.la \
-				${GST_LIB_DIR}/libgstdv.so
+gst_libdv_PLIST_FILES=		${GST_LIB_DIR}/libgstdv.so
 
 # dvdread
 gst_dvdread_LIB_DEPENDS=libdvdread.so:${PORTSDIR}/multimedia/libdvdread
@@ -254,8 +253,13 @@ gst_flite_LIB_DEPENDS=	libflite.so:${PORTSDIR}/audio/flite
 
 # gdk_pixbuf
 gst_gdk_pixbuf_USE_GNOME=	gdkpixbuf2
-gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.la \
-				${GST_LIB_DIR}/libgstgdkpixbuf.so
+gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.so
+
+# gl
+gst_gl_USE_GL=	gl glu glesv2 egl
+gst_gl_CONFIGURE_ARGS=	--enable-gl --enable-glx \
+			--enable-egl --enable-gles2
+gst_gl_PLIST_FILES=		#
 
 # gme
 gst_gme_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
@@ -277,18 +281,15 @@ gst_lame_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 
 # libcaca
 gst_libcaca_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
-gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.la \
-				${GST_LIB_DIR}/libgstcacasink.so
+gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so
 
 # libmms
 gst_libmms_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
-gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so \
-			${GST_LIB_DIR}/libgstmms.la
+gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # png
 gst_libpng_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
-gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.la \
-			${GST_LIB_DIR}/libgstpng.so
+gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so
 
 # libvisual
 gst_libvisual_LIB_DEPENDS=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
@@ -307,21 +308,16 @@ gst_mpeg2dec_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 
 # neon
 gst_neon_LIB_DEPENDS+=  libneon.so:${PORTSDIR}/www/neon29
-gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.la \
-			${GST_LIB_DIR}/libgstneonhttpsrc.so
+gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
 
 # ogg
 gst_ogg_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 # opencv
 gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv
-gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.la \
-			${GST_LIB_DIR}/libgstopencv.so \
+gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.so \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/fist.xml \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/palm.xml
-gst_opencv_PLIST_DIRSTRY=	share/gst-plugins-bad/${VERSION}/opencv_haarcascades \
-				share/gst-plugins-bad/${VERSION} \
-				share/gst-plugins-bad
 
 # openjpeg
 gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
@@ -347,8 +343,7 @@ gst_shout2_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 
 # sidplay
 gst_sidplay_LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay
-gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so \
-				${GST_LIB_DIR}/libgstsid.la
+gst_sidplay_PLIST_FILES=	${GST_LIB_DIR}/libgstsid.so
 
 # soundtouch
 gst_soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
@@ -356,8 +351,7 @@ gst_soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 # souphttpsrc
 gst_soup_LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 gst_soup_GST_PLUGIN_DIR=ext/soup
-gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.la \
-			${GST_LIB_DIR}/libgstsouphttpsrc.so
+gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.so
 
 # spandsp
 gst_spandsp_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
@@ -382,8 +376,7 @@ gst_twolame_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
 gst_gst_v4l2_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 gst_gst_v4l2_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 gst_gst_v4l2_RUN_DEPENDS=	webcamd:${PORTSDIR}/multimedia/webcamd
-gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.la \
-				${GST_LIB_DIR}/libgstvideo4linux2.so
+gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.so
 gst_gst_v4l2_GST_PLUGIN_DIR=	sys/v4l2
 
 # vorbis
@@ -392,11 +385,8 @@ gst_vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 # vpx
 gst_vpx_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
-gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.la \
-			${GST_LIB_DIR}/libgstvpx.so \
+gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.so \
 			share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
-gst_vpx_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
-			share/gstreamer-${VERSION}
 
 # webp
 gst_webp_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
@@ -406,9 +396,7 @@ gst_webp_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 gst_x_USE_XORG=		x11 xv xext
 gst_x_CONFIGURE_ARGS=	--enable-xvideo --enable-xshm
 gst_x_GST_PLUGIN_DIR=	sys/ximage sys/xvimage
-gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesink.la \
-			${GST_LIB_DIR}/libgstximagesink.so \
-			${GST_LIB_DIR}/libgstxvimagesink.la \
+gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesink.so \
 			${GST_LIB_DIR}/libgstxvimagesink.so
 .endif
 
@@ -417,17 +405,13 @@ gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesink.la \
 gst_x_USE_XORG=		x11 xfixes xdamage xext
 gst_x_CONFIGURE_ARGS=	--enable-x
 gst_x_GST_PLUGIN_DIR=	sys/ximage
-gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesrc.la \
-			${GST_LIB_DIR}/libgstximagesrc.so
+gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesrc.so
 .endif
 
 # x264
 gst_x264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
-gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
-			${GST_LIB_DIR}/libgstx264.so \
+gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.so \
 			share/gstreamer-${VERSION}/presets/GstX264Enc.prs
-gst_x264_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
-			share/gstreamer-${VERSION}
 
 # xvid
 gst_xvid_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
@@ -446,7 +430,6 @@ gst_${GST_PLUGIN}_LIB_DEPENDS?=
 gst_${GST_PLUGIN}_RUN_DEPENDS?=
 gst_${GST_PLUGIN}_USE_XORG?=
 gst_${GST_PLUGIN}_PLIST_FILES?= \
-		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.la \
 		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.so
 gst_${GST_PLUGIN}_EXTRA_LIBS?=
 gst_${GST_PLUGIN}_PREBUILD_DIR?=
@@ -463,12 +446,11 @@ BUILD_DEPENDS+=	${gst_${GST_PLUGIN}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
 RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
 PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
-PLIST_DIRS=	${gst_${GST_PLUGIN}_PLIST_DIRS}
-PLIST_DIRSTRY=	${gst_${GST_PLUGIN}_PLIST_DIRSTRY}
 EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
 USE_XORG+=	${gst_${GST_PLUGIN}_USE_XORG}
 USE_GNOME+=	${gst_${GST_PLUGIN}_USE_GNOME}
 CONFIGURE_ENV+=	${gst_${GST_PLUGIN}_CONFIGURE_ENV}
+USE_GL+=	${gst_${GST_PLUGIN}_USE_GL}
 
 .if ${gst_${GST_PLUGIN}_GLIB_SCHEMAS}!=""
 GLIB_SCHEMAS=	${gst_${GST_PLUGIN}_GLIB_SCHEMAS}

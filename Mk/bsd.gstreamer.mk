@@ -6,7 +6,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/Mk/bsd.gstreamer.mk 19418 2014-03-31 08:17:36Z kwm $
+#    $MCom: ports/Mk/bsd.gstreamer.mk,v 1.56 2013/01/15 21:43:45 kwm Exp $
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gstreamer_Pre_Include)
 
@@ -55,13 +55,14 @@ GST_SHLIB_VERSION=	1
 
 GSTREAMER1_PORT=	${PORTSDIR}/multimedia/gstreamer1-plugins
 _GST1_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST1_VERSION}
-GST1_VERSION=		1.2
+GST1_VERSION=		1.4
 GST1_MINOR_VERSION=	.0
 GST1_SHLIB_VERSION=	0
 GST1_MINIMAL_VERSION=	.0
 
 #
 # missing base: alsa ivorbisdec
+# missing good: -
 # missing ugly: -
 # missing bad: openal
 
@@ -70,7 +71,7 @@ GST1_MINIMAL_VERSION=	.0
 _GSTREAMER_PLUGINS= \
 		a52dec aalib amrnb amrwbdec cairo cdio \
 		cdparanoia dts dv faac faad flac flite \
-		gdkpixbuf gme gsm jack jpeg lame libcaca \
+		gdkpixbuf gl gme gnonlin gsm jack jpeg lame libcaca \
 		libmms libvisual mad mpeg2dec mpeg2enc neon ogg \
 		opencv opus pango pulse resindvd schroedinger \
 		shout2 sidplay soundtouch soup speex taglib \
@@ -80,7 +81,7 @@ _GSTREAMER_PLUGINS= \
 .if defined(USE_GSTREAMER)
 _GSTREAMER_PLUGINS+= \
 		annodex bz2 cdaudio dvd esound ffmpeg fluendo-mp3 \
-		fluendo-mpegdemux gconf gio gl gnomevfs gnonlin hal \
+		fluendo-mpegdemux gconf gio gnomevfs hal \
 		ladspa libpng mm mp3 musepack nas python qt4 \
 		sdl sndfile spc vdpau vp8 xvid
 .endif
@@ -88,7 +89,8 @@ _GSTREAMER_PLUGINS+= \
 # plugins only in 1.0
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
-		assrender curl dvdread kate libav modplug openjpeg png rtmp \
+		assrender curl dvdread editing-services kate libav \
+		modplug openjpeg png rtmp \
 		spandsp vpx webp x ximagesrc zbar
 # vaapi?
 .endif
@@ -255,6 +257,11 @@ bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
 
 dvdread_DEPENDS=	multimedia/gstreamer-plugins-dvdread
+
+editing-services_DEPENDS=	multimedia/gstreamer-editing-services
+editing-services_GST_PREFIX=	gstreamer1-
+editing-services_GST_SUFX=	# empty
+editing-services_GST_VERSION=	1.0.0
 
 ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
 ffmpeg_GST_PREFIX=	gstreamer-

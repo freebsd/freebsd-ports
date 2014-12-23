@@ -10,7 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Ultra fast JSON encoder and decoder for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE TclTk
+LICENSE_COMB=	multi
+LICENSE_NAME_TclTk=	Tcl/Tk License
+LICENSE_TEXT_TclTk=	http://www.tcl.tk/software/tcltk/license.html
+LICENSE_PERMS_TclTk=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

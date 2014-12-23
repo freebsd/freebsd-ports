@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/rpaulo/am335x_pru_package/archive/
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	TI PRU Assembler
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/pru_sw/utils/LICENCE.txt
 
 WRKSRC=		${WRKDIR}/am335x_pru_package-${PORTNAME}-${PORTVERSION}

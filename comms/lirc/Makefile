@@ -15,13 +15,12 @@ COMMENT=	Linux Infrared Remote Control
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 INSTALL_TARGET=	install-strip
-USES=		alias gmake libtool python tar:bzip2
-USE_AUTOTOOLS=	libtoolize automake autoheader aclocal autoconf
-AUTOMAKE_ARGS=	-a -c -f
+USES=		alias autoreconf gmake libtool python tar:bzip2
 USE_XORG=	sm x11
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sandboxed --with-devdir=/var/run/lirc \
 		--sysconfdir=${PREFIX}/etc
 CPPFLAGS+=	-I${LOCALBASE}/include

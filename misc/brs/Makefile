@@ -19,5 +19,6 @@ CFLAGS+=	-Wno-error=return-type
 post-patch:
 	${REINPLACE_CMD} 's=%%PREFIX%%=${PREFIX}=g' \
 		${WRKSRC}/brl.c ${WRKSRC}/bible.1
+	${REINPLACE_CMD} '/chown.*/d' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

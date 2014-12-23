@@ -35,7 +35,6 @@ WNN6_CONF=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
 WNN6_PLIST_FILES=	${WNN_PLIST_FILES}
-WNN6_PLIST_DIRS=	${WNN_PLIST_DIRS}
 
 WNN7_DESC=		Wnn7 support
 WNN7_LIB_DEPENDS=	libwnn7.so:${PORTSDIR}/japanese/Wnn7-lib
@@ -44,7 +43,6 @@ WNN7_CONF=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn7 -lcrypt"
 WNN7_PLIST_FILES=	${WNN_PLIST_FILES}
-WNN7_PLIST_DIRS=	${WNN_PLIST_DIRS}
 
 FREEWNN_DESC=		FreeWnn support
 FREEWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
@@ -52,7 +50,6 @@ FREEWNN_CONF=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
 FREEWNN_PLIST_FILES=	${WNN_PLIST_FILES}
-FREEWNN_PLIST_DIRS=	${WNN_PLIST_DIRS}
 
 SJ3_DESC=		SJ3 support
 SJ3_LIB_DEPENDS=	libsj3lib.so:${PORTSDIR}/japanese/sj3-lib
@@ -79,7 +76,6 @@ WNN_PLIST_FILES=	lib/X11/ccdef/ccdef.kinput2 \
 			lib/X11/ccdef/rule.hiragana.egg \
 			lib/X11/ccdef/rule.katakana.egg \
 			lib/X11/ccdef/rule.kigou.egg
-WNN_PLIST_DIRS=		lib/X11/ccdef
 
 .include <bsd.port.options.mk>
 

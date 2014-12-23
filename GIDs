@@ -302,5 +302,6 @@ puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
 mediabrowser:*:989:
+ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: head/emulators/virtualbox-ose-kmod/files/vboxnet.in 340840 2014-01-23 17:18:42Z decke $
+# $FreeBSD$
 #
 
 # PROVIDE:	vboxnet

@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 
 USES=		pkgconfig
 
-PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_varnish
 
 do-install:

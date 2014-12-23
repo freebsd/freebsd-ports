@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p484
+PORTVERSION=	4.2.7p486
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION}-RC
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
+
+FORBIDDEN=	http://www.kb.cert.org/vuls/id/852879
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes

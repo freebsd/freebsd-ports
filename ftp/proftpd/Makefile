@@ -85,7 +85,6 @@ PLIST=		${WRKDIR}/PLIST
 PLIST_FILES+=	libexec/proftpd/${m}.a \
 		libexec/proftpd/${m}.so
 .endfor
-PLIST_DIRSTRY+=	libexec/proftpd
 .else
 OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
 OPTIONS_DEFAULT=	IPV6 NLS PCRE

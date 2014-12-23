@@ -149,5 +149,3 @@ share/pixmaps/rockdodger.png
 %%DATADIR%%/shield0.png
 %%DATADIR%%/shield1.png
 %%DATADIR%%/speedup.wav
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

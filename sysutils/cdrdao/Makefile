@@ -32,8 +32,8 @@ TOC2MP3_DESC=		Build with toc2mp3 (requires audio/lame)
 .endif
 
 .if ${PORTNAME} == "gcdmaster"
-USES+=			pkgconfig
-USE_GNOME=		gnomehier
+USES+=			pkgconfig shared-mime-info
+WANT_GNOME=		yes
 GCONF_SCHEMAS=		gcdmaster.schemas
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
 			libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
@@ -116,18 +116,22 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
 		${STAGEDIR}${PREFIX}/man/man1/gcdmaster.1
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/application-registry
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
 		${STAGEDIR}${LOCALBASE}/share/application-registry
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
 		${STAGEDIR}${LOCALBASE}/share/applications
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
 		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime/packages

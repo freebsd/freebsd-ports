@@ -10,7 +10,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python client for the tvrage.com XML API
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ckreutzer

@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 PLIST_FILES=	lib/dbus/libdbus20.so.1 \
 		lib/dbus/pkgIndex.tcl \
 		man/mann/dbus.n.gz
-PLIST_DIRS=	lib/dbus
 
 .include <bsd.port.options.mk>
 

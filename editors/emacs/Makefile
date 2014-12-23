@@ -110,21 +110,6 @@ SVG_CONFIGURE_WITH=	rsvg
 X11_CONFIGURE_WITH=	x
 X11_USE=		XORG=x11
 X11_USES=		desktop-file-utils
-X11_PLIST_DIRSTRY_OFF=	share/icons/hicolor/scalable/mimetypes \
-			share/icons/hicolor/scalable/apps \
-			share/icons/hicolor/scalable \
-			share/icons/hicolor/48x48/apps \
-			share/icons/hicolor/48x48 \
-			share/icons/hicolor/32x32/apps \
-			share/icons/hicolor/32x32 \
-			share/icons/hicolor/24x24/apps \
-			share/icons/hicolor/24x24 \
-			share/icons/hicolor/16x16/apps \
-			share/icons/hicolor/16x16 \
-			share/icons/hicolor/128x128/apps \
-			share/icons/hicolor/128x128 \
-			share/icons/hicolor \
-			share/icons
 
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2

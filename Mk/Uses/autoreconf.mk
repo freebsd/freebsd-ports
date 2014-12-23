@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 		aclocal-1.14:${PORTSDIR}/devel/automake \
 		automake-1.14:${PORTSDIR}/devel/automake
 
-.if ${USES:Mlibtool} && empty(libtool_ARGS:Mbuild)
+.if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool
 .endif
 

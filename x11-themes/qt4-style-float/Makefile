@@ -21,7 +21,6 @@ USE_QT4=	corelib gui moc_build rcc_build
 WRKSRC=		${WRKDIR}/floatstyle-${PORTVERSION}
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libfloatstyle.so
-PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/

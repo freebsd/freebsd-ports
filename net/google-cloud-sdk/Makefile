@@ -3,6 +3,7 @@
 
 PORTNAME=	google-cloud-sdk
 PORTVERSION=	0.9.25
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/release/
 DISTNAME=	google-cloud-sdk-coretools-linux-x86_64
@@ -19,7 +20,7 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 do-install:
 	${FIND} ${WRKSRC}/help -type f -name '*.1' -exec ${GZIP_CMD} {} +
 	( cd ${WRKSRC}/help ; ${COPYTREE_SHARE} man ${STAGEDIR}${PREFIX} )
-	${RM} -r ${WRKSRC}/help/man
+	${RM} -r ${WRKSRC}/help/man ${WRKSRC}/.install/.download
 	( cd ${WRKSRC} ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/google-cloud-sdk )
 .for x in bq gcloud gcutil git-credential-gcloud.sh gsutil
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x}

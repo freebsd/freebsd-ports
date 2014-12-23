@@ -27,23 +27,23 @@ RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.2.4
+BASE_PORTVERSION=	1.4.5
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.2.4
+BAD_PORTVERSION=	1.4.5
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.2.4
+GOOD_PORTVERSION=	1.4.5
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.2.4
+UGLY_PORTVERSION=	1.4.5
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES=		tar:xz gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 WANT_GSTREAMER=	yes
-USE_GNOME+=	glib20 gnomehier introspection:build libxml2
+USE_GNOME+=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 GST_PLUGIN?=	base
@@ -61,8 +61,9 @@ IGNORE=		DIST not specified
 .endif
 
 VERSION=	1.0
+SOVERSION=	0.405.0
 PLIST_SUB+=	VERSION="${VERSION}" \
-		SOVERSION=0.204.0
+		SOVERSION="${SOVERSION}"
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +72,7 @@ DIST=	base
 NO_GSTREAMER_COMMON=	yes
 .else
 BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
-RUN_DEPEDNS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
+RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
 .endif
 
 .if ${DIST} == base || ${DIST} == ugly
@@ -125,34 +126,40 @@ DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
 post-patch:
-.if ${DIST}=="bad"
+.if ${DIST} == bad
 # custom rule to fix opencv detection in configure
-	@${REINPLACE_CMD} -e 's|opencv <= 2.4.8|opencv <= 2.4.9|g' \
-		${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's|opencv <= 2.4.8|opencv <= 2.4.9|g' \
+#		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \
 		${WRKSRC}/ext/resindvd/resindvdsrc.c
 .endif
-.if ${DIST}!="ugly"
+.if ${DIST} != ugly
 	@${FIND} ${WRKSRC}/ext ${WRKSRC}/sys -name Makefile.in | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
-	's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgsttag-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstaudio-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstpbutils-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstriff-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstsignalprocessor-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstbasevideo-$$(GST_API_VERSION).la|; \
-	s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstvideo-$$(GST_API_VERSION).la|'
+	'/la_DEPENDENCIES/,/am__DEPENDENCIES/s,$$(top_builddir)/gst-libs/.*.la,,' -e \
+	's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_API_VERSION@.la|-lgsttag-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_API_VERSION@.la|-lgstaudio-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-@GST_API_VERSION@.la|-lgstpbutils-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_API_VERSION@.la|-lgstriff-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_API_VERSION@.la|-lgstsignalprocessor-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-@GST_API_VERSION@.la|-lgstbasevideo-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_API_VERSION@.la|-lgstvideo-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/base/libgstbadbase-@GST_API_VERSION@.la|-lgstbadbase-${VERSION}|; \
+	s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-@GST_API_VERSION@.la|-lgstbadvideo-${VERSION}|'
 
 	 @${FIND} ${WRKSRC}/ext ${WRKSRC}/sys -name Makefile.in | \
 	 ${XARGS} -n 10 ${REINPLACE_CMD} -e \
-	 's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgsttag-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstaudio-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstpbutils-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstriff-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstsignalprocessor-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstbasevideo-$$(GST_API_VERSION).la|; \
-	  s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstvideo-$$(GST_API_VERSION).la|'
+	'/la_DEPENDENCIES/,/am__DEPENDENCIES/s,$$(top_builddir)/gst-libs/.*.la,,' -e \
+	 's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-$$(GST_API_VERSION).la|-lgsttag-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-$$(GST_API_VERSION).la|-lgstaudio-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-$$(GST_API_VERSION).la|-lgstpbutils-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-$$(GST_API_VERSION).la|-lgstriff-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-$$(GST_API_VERSION).la|-lgstsignalprocessor-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-$$(GST_API_VERSION).la|-lgstbasevideo-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-$$(GST_API_VERSION).la|-lgstvideo-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/base/libgstbadbase-$$(GST_API_VERSION).la|-lgstbadbase-${VERSION}|; \
+	  s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-$$(GST_API_VERSION).la|-lgstbadvideo-${VERSION}|'
 .endif
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840

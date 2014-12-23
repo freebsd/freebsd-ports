@@ -56,7 +56,7 @@ LIB_DEPENDS+=	libpoppler.so:${PORTSDIR}/graphics/poppler
 
 .if ${SLAVEPORT}==glib
 CONFIGURE_ARGS+=--enable-poppler-glib --enable-introspection=yes
-USE_GNOME+=	cairo gnomehier glib20 introspection:build
+USE_GNOME+=	cairo glib20 introspection:build
 BUILD_WRKSRC=	${WRKSRC}/glib
 INSTALL_WRKSRC=	${WRKSRC}/glib
 .else

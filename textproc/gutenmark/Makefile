@@ -20,7 +20,6 @@ ALL_TARGET=	default
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \
 		%%DATADIR%%/convert.jpg %%DATADIR%%/logo.jpg
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g ; \

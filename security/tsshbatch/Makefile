@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	tsshbatch
-PORTVERSION=	1.177
+PORTVERSION=	1.212
 CATEGORIES=	security python
 MASTER_SITES=	http://www.tundraware.com/Software/tsshbatch/
 
 MAINTAINER=	tsshbatch@tundraware.com
-COMMENT=	Batch ssh Operations
+COMMENT=	Batch SSH operations
 
 LICENSE=	tsshbatch
 LICENSE_NAME=	tsshbatch
 LICENSE_FILE=	${WRKSRC}/tsshbatch-license.txt
 LICENSE_PERMS=	auto-accept
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko
 
 USES=		python:run
 
@@ -32,8 +32,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tsshbatch.py ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tsshbatch.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	cd ${WRKSRC} && ${INSTALL_DATA} $i ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

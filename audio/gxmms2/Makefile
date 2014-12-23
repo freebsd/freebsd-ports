@@ -24,7 +24,6 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/gxmms2 \
 		%%DATADIR%%/gxmms2_mini.xpm
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

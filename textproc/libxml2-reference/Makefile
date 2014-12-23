@@ -14,7 +14,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLES=	testHTML.c testSAX.c testXPath.c xmllint.c
 EXAMPLES_PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
-EXAMPLES_PLIST_DIRS=	%%EXAMPLESDIR%%
 
 do-install:
 .for d in . doc doc/examples

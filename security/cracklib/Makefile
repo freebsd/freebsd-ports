@@ -36,18 +36,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_cracklib.a \
 		%%PYTHON_SITELIBDIR%%/test_cracklib.pyo
 .else
 CONFIGURE_ARGS+=--without-python
-PLIST_DIRS=	libdata/cracklib \
-		share/cracklib \
-		share/locale/as/LC_MESSAGES \
-		share/locale/as \
-		share/locale/bn_IN/LC_MESSAGES \
-		share/locale/bn_IN \
-		share/locale/mr/LC_MESSAGES \
-		share/locale/mr \
-		share/locale/sl_SI/LC_MESSAGES \
-		share/locale/sl_SI \
-		share/locale/te/LC_MESSAGES \
-		share/locale/te
 
 PLIST_FILES=	include/crack.h \
 		include/packer.h \

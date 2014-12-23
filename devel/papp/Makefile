@@ -10,6 +10,6 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Assembly Preprocessor
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 .include <bsd.port.mk>

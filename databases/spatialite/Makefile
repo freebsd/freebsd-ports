@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	spatialite
-PORTVERSION=	4.1.1
-PORTREVISION=	6
+PORTVERSION=	4.2.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Spatial Extensions for SQLite
+
+LICENSE=	MPL LGPL20 GPLv2
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
 		libproj.so:${PORTSDIR}/graphics/proj \

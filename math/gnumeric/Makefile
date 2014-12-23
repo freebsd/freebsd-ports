@@ -4,7 +4,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.12.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +22,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 shebangfix tar:xz
-USE_GNOME=	gnomehier gnomeprefix intlhack libgsf pygobject3
+USE_GNOME=	gnomeprefix intlhack libgsf pygobject3
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

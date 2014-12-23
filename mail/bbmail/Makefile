@@ -18,6 +18,5 @@ USE_XORG=	xext
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/bbmail man/man1/bbmail.1.gz share/bbtools/bbmail.rc
-PLIST_DIRSTRY=	share/bbtools
 
 .include <bsd.port.mk>

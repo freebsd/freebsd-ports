@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qooxdoo
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
@@ -39,17 +39,19 @@ do-install:
 
 # build plist
 # make the python files executable
-	@${ECHO_CMD} '@mode ${BINMODE}' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.py' | ${SORT} | \
+	${ECHO_CMD} '@mode ${BINMODE}' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.py' | ${SORT} | \
 		${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
 
-	@${ECHO_CMD} '@mode 644' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR} -type f \! -name '*.py' | ${SORT} | \
+	${ECHO_CMD} '@mode 644' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR} -type f \! -name '*.py' | ${SORT} | \
 		${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
 
-	@${ECHO_CMD} '@mode' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR}/* -type d | ${SORT} -r | \
-		${SED} -e 's|^${STAGEDIR}${PREFIX}/|@dirrmtry |' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrmtry ${DATADIR_REL}' >> ${TMPPLIST}
+	${ECHO_CMD} '@mode' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR}/* -type d | ${SORT} -r | \
+		${SED} -e 's|^${STAGEDIR}${PREFIX}/|@dir |' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${EXAMPLESDIR}/* -type d | ${SORT} -r | \
+		${SED} -e 's|^${STAGEDIR}${PREFIX}/|@dir |' >> ${TMPPLIST}
+	${ECHO_CMD} '@dir ${DATADIR_REL}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
