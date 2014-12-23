@@ -49,7 +49,7 @@ you update your ports collection, before attempting any port upgrades.
   to audio/py-eyed3. Before updating audio/abcde to 2.6 you must manually
   deinstall audio/py-eyed-06.
 
-  # pkg delete -f pyXX-eyed3-06
+  # pkg delete -f py\*-eyed3-06
 
 20141218:
   AFFECTS: users of security/openssh-portable
