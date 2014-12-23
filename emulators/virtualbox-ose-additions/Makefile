@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -113,6 +113,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefil
 .endif
 .endif
 
+SUB_LIST+=	KMODDIR=${KMODDIR}
+
 pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32/libc.so)
@@ -159,8 +161,11 @@ do-install:
 .if ${PORT_OPTIONS:MDEBUG}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${STAGEDIR}${KMODDIR}
 .endif
-.if ${PORT_OPTIONS:MX11}
+.if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko ${STAGEDIR}${KMODDIR}
+.if ${PORT_OPTIONS:MDEBUG}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko.symbols ${STAGEDIR}${KMODDIR}
+.endif
 .endif
 
 	${INSTALL_PROGRAM} ${VBOX_SBINS:S|^|${VBOX_BIN}/|} \

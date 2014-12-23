@@ -119,3 +119,11 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_HOST),solaris)
  TEMPLATE_VBoxBldProg_TOOL                = GXX3PLAIN
+@@ -5427,6 +5407,7 @@
+ 	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
+ 	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
+ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
++TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.freebsd  = -Wl,--no-as-needed
+ TEMPLATE_VBOXCROGLR3HOSTDLL_BLDDIRS          = $(VBOX_PATH_CROGL_GENFILES)/
+ 
+ #

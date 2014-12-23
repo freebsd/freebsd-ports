@@ -1,0 +1,20 @@
+--- src/VBox/GuestHost/OpenGL/Makefile.kmk.orig	2014-11-21 10:22:21.000000000 -0500
++++ src/VBox/GuestHost/OpenGL/Makefile.kmk	2014-12-22 17:20:31.000000000 -0500
+@@ -116,7 +116,7 @@
+ endif
+ VBoxOGLcrutil_CLEAN = \
+ 	$(VBOX_PATH_CROGL_GENFILES)/debug_opcodes.c
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), linux freebsd)
+ VBoxOGLcrutil_LDFLAGS += -Wl,-z,nodelete
+ endif
+ 
+@@ -160,7 +160,7 @@
+ if defined(VBOX_SIGNING_MODE) && defined(VBOX_WITH_WDDM)
+  VBoxOGLhostcrutil_INSTTYPE.win = both
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), linux freebsd)
+ VBoxOGLhostcrutil_LDFLAGS = $(NO_SUCH_VARIABLE)
+ endif
+ VBoxOGLhostcrutil_LDFLAGS.darwin = $(VBoxOGLcrutil_LDFLAGS.darwin) \
