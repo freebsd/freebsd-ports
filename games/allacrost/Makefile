@@ -26,7 +26,7 @@ USE_GL=		yes
 USE_GCC=	any # problems in luabind
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
