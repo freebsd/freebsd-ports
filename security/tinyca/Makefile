@@ -33,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${LIB2_FILES:S|^|${WRKSRC}/lib/GUI/|} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/GUI
 	${INSTALL_DATA} ${WRKSRC}/templates/openssl.cnf ${STAGEDIR}${PREFIX}/etc/tinyca.cnf.sample
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
-		-e "s:%%SITE_PERL%%:${SITE_PERL}:g" \
+		-e "s:%%SITE_PERL%%:${PREFIX}/${SITE_PERL_REL}:g" \
 		-e "s:%%OPENSSLBASE%%:${OPENSSLBASE}:g" \
 		${WRKSRC}/tinyca2 >${WRKSRC}/tinyca.new
 	${INSTALL_SCRIPT} ${WRKSRC}/tinyca.new ${STAGEDIR}${PREFIX}/bin/tinyca

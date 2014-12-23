@@ -20,7 +20,7 @@ USE_APACHE_RUN=	22+
 USES=		perl5
 MAKE_ENV+=	PERL=${PERL}
 SUB_FILES=	pkg-message
-SUB_LIST=	SITE_PERL=${PREFIX}/${SITE_PERL}
+SUB_LIST=	SITE_PERL=${PREFIX}/${SITE_PERL_REL}
 
 BIN_FILES=	monthly oldlog2new splitlog wwwerrs wwwstat
 SPERL_FILES=	domains.pl splitlog.rc wwwstat.rc

@@ -76,7 +76,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 DESKTOP_ENTRIES="Padre" \
 		"The Perl IDE" \
-		"${SITE_PERL}/auto/share/dist/Padre/icons/padre/64x64/logo.png" \
+		"${PREFIX}/${SITE_PERL_REL}/auto/share/dist/Padre/icons/padre/64x64/logo.png" \
 		"padre" \
 		"Development;Perl;IDE;" \
 		""
