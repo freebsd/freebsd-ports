@@ -103,5 +103,7 @@ share/locale/zh_HK/LC_MESSAGES/dconf.mo
 share/locale/zh_TW/LC_MESSAGES/dconf.mo
 share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
+@dir etc/dconf/db
+@dir etc/dconf/profile
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
