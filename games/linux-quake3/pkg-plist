@@ -73,11 +73,3 @@ bin/linux-q3ded
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbag.so
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbcl.so
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbsv.so
-@dirrm %%LIBDIR%%
-%%PUNKBUSTER%%@dirrm %%DATADIR%%/pb/htm
-%%PUNKBUSTER%%@dirrm %%DATADIR%%/pb
-%%PUNKBUSTER%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/PunkBuster/players
-%%PUNKBUSTER%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/PunkBuster/admins
-%%PUNKBUSTER%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/PunkBuster
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/LinuxFAQ
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
