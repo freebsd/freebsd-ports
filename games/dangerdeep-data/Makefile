@@ -4,7 +4,7 @@
 PORTNAME=	dangerdeep-data
 PORTVERSION=	0.3.0
 CATEGORIES=	games
-MASTER_SITES=	SF/dangerdeep/danger_from_the_deep-${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/dangerdeep/danger_from_the_deep-data/${PORTVERSION}
 DIST_SUBDIR=	dangerdeep
 
 MAINTAINER=	ports@FreeBSD.org
