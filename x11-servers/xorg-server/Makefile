@@ -3,7 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION=	1.14.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG
@@ -25,7 +25,7 @@ SLAVE_PORT?=	no
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SUID
 OPTIONS_RADIO=	CONF
-OPTIONS_RADIO_CONF= HAL DEVD
+OPTIONS_RADIO_CONF=	HAL DEVD
 SUID_DESC=	Install the Xorg server with setuid bit set
 HAL_DESC=	Compile with HAL config support
 DEVD_DESC=	Use devd for autoconfiguration of input devices
