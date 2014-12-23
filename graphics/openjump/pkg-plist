@@ -2,7 +2,7 @@ OpenJUMP/bin/default-plugins.xml
 OpenJUMP/bin/log4j.xml
 OpenJUMP/bin/openjump
 OpenJUMP/bin/readme.txt
-OpenJUMP/lib/OpenJUMP-1.7.1-r4004-nosrc.jar
+OpenJUMP/lib/OpenJUMP-1.8.0-r4164-nosrc.jar
 OpenJUMP/lib/batik-awt-util-1.6.jar
 OpenJUMP/lib/batik-bridge-1.6.jar
 OpenJUMP/lib/batik-css-1.6.jar
@@ -41,6 +41,8 @@ OpenJUMP/lib/ext/BeanTools/9-Display_WMS_URL.bsh
 OpenJUMP/lib/ext/BeanTools/RefreshScriptsMenu.bsh
 OpenJUMP/lib/ext/BeanTools/SaveViewAsBeanTool.bsh
 OpenJUMP/lib/ext/ColorChooser-0.6.jar
+OpenJUMP/lib/ext/ConcaveHull-0.2.jar
+OpenJUMP/lib/ext/ConcaveHull-Readme.txt
 OpenJUMP/lib/ext/FillPatterns/40S-TWEED_C1_064_A_RGB.JPG
 OpenJUMP/lib/ext/FillPatterns/40S-TWEED_C1_064_B_RGB.JPG
 OpenJUMP/lib/ext/FillPatterns/ALLOY-TEARS_C3_064_A_RGB.JPG
@@ -198,7 +200,7 @@ OpenJUMP/lib/ext/JumpChart.jar
 OpenJUMP/lib/ext/JumpFillPattern.jar
 OpenJUMP/lib/ext/JumpPrinter.jar
 OpenJUMP/lib/ext/PirolCsv.jar
-OpenJUMP/lib/ext/SkyPrinterPlugIn-1.0.0.jar
+OpenJUMP/lib/ext/SkyPrinterPlugIn-1.0.1.jar
 OpenJUMP/lib/ext/TableLayout-bin-jdk1.5-2007-04-21.jar
 OpenJUMP/lib/ext/VertexImages/bore_01.wkt
 OpenJUMP/lib/ext/VertexImages/bore_02.wkt
@@ -268,22 +270,25 @@ OpenJUMP/lib/ext/VertexImages/vector_20.wkt
 OpenJUMP/lib/ext/VertexSymbols.jar
 OpenJUMP/lib/ext/aggregation-0.2.8.jar
 OpenJUMP/lib/ext/bsheditor4jump-0.2.4.jar
-OpenJUMP/lib/ext/csv-driver-0.9.0.jar
+OpenJUMP/lib/ext/csv-driver-0.9.2.jar
 OpenJUMP/lib/ext/dbquery.properties
 OpenJUMP/lib/ext/driver-dxf-0.8.0.jar
-OpenJUMP/lib/ext/graph-toolbox-0.1.4.jar
+OpenJUMP/lib/ext/graph-toolbox-0.2.0.jar
 OpenJUMP/lib/ext/itext-2.1.7.jar
 OpenJUMP/lib/ext/jgrapht-jdk1.5.jar
 OpenJUMP/lib/ext/jump-jgrapht-0.5.jar
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/CONTRIBUTORS.txt
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/COPYING
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/NOTICE.txt
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/README_jumpdbquery.txt
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/README_releases.txt
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/gt2-oracle-spatial-2.3.2.jar
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/jsyntaxpane-1.0.0.jar
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/mysql-connector-java-5.1.27.jar
-OpenJUMP/lib/ext/jumpdbquery-1.0.0/sqlite-jdbc-3.7.2.jar
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/CONTRIBUTORS.txt
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/COPYING
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/LICENSE.txt
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/NOTICE.txt
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/README_jumpdbquery.txt
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/README_releases.txt
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/dbquery.properties
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/gt2-oracle-spatial-2.3.2.jar
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/jgrapht-jdk1.6.jar
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/jsyntaxpane-1.0.0.jar
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/mysql-connector-java-5.1.27.jar
+OpenJUMP/lib/ext/jumpdbquery-1.1.0/sqlite-jdbc-3.8.6.jar
 OpenJUMP/lib/ext/jumpdbquery.jar
 OpenJUMP/lib/ext/jython/AlignSelected.py
 OpenJUMP/lib/ext/jython/ArcTool.py
@@ -314,7 +319,7 @@ OpenJUMP/lib/ext/jython/images/shape_center_vertical.png
 OpenJUMP/lib/ext/jython/images/shape_distribute_horizontal.png
 OpenJUMP/lib/ext/jython/images/shape_distribute_vertical.png
 OpenJUMP/lib/ext/jython/startup.py
-OpenJUMP/lib/ext/kml-driver-0.1.jar
+OpenJUMP/lib/ext/kml-driver-0.2.jar
 OpenJUMP/lib/ext/kml/ProjectStringsList.pjl
 OpenJUMP/lib/ext/oj_osm_reader_v1-0-4.jar
 OpenJUMP/lib/ext/ojsextante_binding_apr2013.jar
@@ -929,297 +934,10 @@ OpenJUMP/lib/native/jecw-0.0.7.jar
 OpenJUMP/lib/nitf-bindings-2.7-dev-r1130.jar
 OpenJUMP/lib/postgresql-9.3-1101-jdbc4.jar
 OpenJUMP/lib/turbojpeg-wrapper-1.2.1.1.jar
-OpenJUMP/lib/xercesImpl-2.8.1.jar
-OpenJUMP/lib/xml-apis-1.3.03.jar
+OpenJUMP/lib/xercesImpl-2.11.0.jar
+OpenJUMP/lib/xml-apis-1.4.01.jar
 OpenJUMP/lib/xmlParserAPIs-2.0.2.jar
 OpenJUMP/lib/xz-1.3.jar
 bin/openjump
-%%PORTDOCS%%%%DOCSDIR%%/Changes.txt
-@dir OpenJUMP/bin
-@dir OpenJUMP/lib/ext/BeanTools
-@dir OpenJUMP/lib/ext/FillPatterns
-@dir OpenJUMP/lib/ext/VertexImages
-@dir OpenJUMP/lib/ext/jumpdbquery-1.0.0
-@dir OpenJUMP/lib/ext/jython/images
-@dir OpenJUMP/lib/ext/jython
-@dir OpenJUMP/lib/ext/kml
-@dir OpenJUMP/lib/ext/sextante
-@dir OpenJUMP/lib/ext/sextante_help/en/de.ifgi.sextante.simulationTools.channels
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.accCost
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.accCostAnisotropic
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.accCostCombined
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.ahp
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.cluster
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.costInRoutes
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.costInRoutesAnisotropic
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.cva
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.fuzzify
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.owa
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.polarToRect
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.predictiveModels
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.rectToPolar
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.roc
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.sumOfCostFromAllPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.supervisedClassification
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridAnalysis.supervisedClassificationB
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.constantGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.generateRandomBernoulli
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.generateRandomNormal
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.generateRandomUniform
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.generateTerrain
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.gridCalculator
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.gridFromFunction
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.kernelFilter
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.normalize
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.volume
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCalculus.volumeBetweenGrids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.aggregationIndex
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.classStatistics
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.combineGrids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.crossClassification
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.filterClumps
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.fragstatsArea
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.fragstatsDiversity
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.lacunarity
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.reclassify
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.reclassifyConsecutive
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.reclassifyDisjoint
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.reclassifyEqualAmplitude
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridCategorical.reclassifyEqualArea
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridCountGreaterThan
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridCountLowerThan
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridKurtosis
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMajority
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMaxValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMaxValueGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMeanValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMedian
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMinValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMinValueGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridMinority
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridRange
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridSkewness
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridVariance
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.multiGridcountEqualTo
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodCountEqualTo
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodCountGreaterThan
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodCountLowerThan
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodDiversity
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodDominance
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodFragmentation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodKurtosis
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMajority
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMaxValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMeanValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMedian
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMinValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodMinority
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodNumberOfClasses
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodRange
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodSkewness
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodVariance
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.neighborhoodVarianceRadius
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridStatistics.semivariances
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.aggregate
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.bboxGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.changeDataType
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.clipBBoxGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.clipGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.closeGaps
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.closeGapsNN
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.correlation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.cropToValidData
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.density
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.gradientLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.gridBasicStats
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.gridCompletion
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.gridOrientation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.gridsFromTableAndGrid
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.histogram
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.invertNoData
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.kernelDensity
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.locateExtremeValues
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.mergeGrids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.rasterBuffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.sortRaster
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gridTools.thresholdBuffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.gvsigspecific.reproject
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.accFlow
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.burnStreams
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.cFactorFromNDVI
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.cellBalance
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.channelNetwork
+%%DOCSDIR%%/Changes.txt
 @dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.createHyetogram
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.distToChannelNetwork
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.edgeContamination
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.fillSinks
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.heightOverChannelNetwork
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.isocrones
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.maxValueUphill
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.meanValueUphill
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.slopeLength
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.strahlerOrder
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.topographicIndices
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.upslopeAreaFromArea
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.upslopeAreaFromPoint
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.usped
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.watersheds
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.watershedsBySize
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.calibrate
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.calibrateRegression
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.contrastStretching
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.equalize
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.erosionDilation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.his2rgb
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.rgb2his
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.texture.features
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.texture.quantization
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.thinning
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.imageAnalysis.vectorizeTrees
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.hillshade
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.horizonBlockage
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.los
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.solarRadiation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.visibility
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.lighting.visualExposure
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.locate.locateAllocate
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.anisotropicCoefficientOfVariation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.aspect
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.convergence
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.curvatures
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.elevationReliefIndex
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.fillElevationValues
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.hypsometry
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.protectionIndex
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.realArea
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.slope
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.morphometry.surfaceSpecificPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.nearestNeighbour
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.nonSpatial.calculator
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.distanceMatrix
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.meanCenter
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.medianCenter
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.nearestNeighbour
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.quadrat
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.ripleysK
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.pointAnalysis.spatialCorrelation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.profiles.crossSections
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.profiles.flowLineProfile
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.profiles.leastCostPath
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.profiles.profile
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.directionToClosestPoint
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.euclideanDistance
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.idw
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.kriging
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.linearDecrease
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.nearestNeighbour
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.rasterizeVectorLayer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.rasterize.universalKriging
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.covarianceMatrix
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.multipleRegression
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pca
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pdfBinomial
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pdfChiSquared
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pdfExponential
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pdfNormal
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.pdfStudent
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.statisticalMethods.regression
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.createEquivalentNumericalClass
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.filterVector
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.normalityTest
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.tableBasicStats
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.tableFieldCorrelation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.vectorBasicStats
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.vectorFieldCalculator
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.vectorFieldCorrelation
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.tables.vectorHistogram
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.topology.checkLineDirectionCoherence
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.topology.joinAdjacentLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.topology.nodeLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.InPolygonSpatialJoin
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.addEventTheme
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.autoincrementValue
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.boundingbox
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.buffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.centroids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.changeLineDirection
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.cleanPointsLayer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.cleanVectorLayer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.clip
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.clipByRectangle
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.constrainedDelaunay
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.countPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.delaunay
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.difference
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.dissolve
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.dissolveMultiple
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.distanceTableBuffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.exportVector
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.extendLinesLayerWithGrids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.extendPointsLayerWithGrids
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.fitNPointsInPolygon
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.fixedDistanceBuffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.generateRoutes
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.geometricProperties
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.geometricPropertiesLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.geometriesToPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.graticuleBuilder
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.gridStatisticsInPolygons
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.intersection
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.linesToEquispacedPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.medialAxis
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.merge
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.minimumEnclosingPolygon
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.perturbatePointsLayer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.placePointsOnLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.pointCoordinates
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.pointsToLine
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.polygonStatisticsFromPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.polygonsToPolylines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.polylinesToPolygons
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.polylinesToSingleSegments
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.randomVector
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.removeHoles
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.removeRepeatedGeometries
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.resolvePolygonHoles
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.saveToWKT
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.simplifyLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.simplifyPolygons
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.sinuosity
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.smoothLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.snapPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.splitLinesWithPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.splitMultipart
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.splitPolylinesAtNodes
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.transform
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.variableDistanceBuffer
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.vectorCluster
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.vectorMean
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.vectorSpatialCluster
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorTools.voronoi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorize.contourLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorize.rasterToPoints
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorize.vectorize
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vectorize.vectorizeLines
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.ctvi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.ndvi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.nrvi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.pviPerry
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.pviQi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.pviRichardson
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.pviWalther
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.ttvi
-@dir OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.vegetationIndices.tvi
-@dir OpenJUMP/lib/ext/sextante_help/en/general
-@dir OpenJUMP/lib/ext/sextante_help/en/it.falciano.sextante.polygonize
-@dir OpenJUMP/lib/ext/sextante_help/en/it.falciano.sextante.vectorAddField
-@dir OpenJUMP/lib/ext/sextante_help/en/it.falciano.sextante.vectorDeleteField
-@dir OpenJUMP/lib/ext/sextante_help/en/it.falciano.sextante.vectorRenameField
-@dir OpenJUMP/lib/ext/sextante_help/en
-@dir OpenJUMP/lib/ext/sextante_help
-@dir OpenJUMP/lib/ext
-@dir OpenJUMP/lib/icons
-@dir OpenJUMP/lib/native
-@dir OpenJUMP/lib
-@dir OpenJUMP
-%%PORTDOCS%%@dir %%DOCSDIR%%
