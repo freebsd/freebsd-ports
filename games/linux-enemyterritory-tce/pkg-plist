@@ -11,4 +11,3 @@ lib/enemyterritory/tcetest/pak3.pk3
 lib/enemyterritory/tcetest/qagame.mp.i386.so
 lib/enemyterritory/tcetest/tce_icon_pc.ico
 lib/enemyterritory/tcetest/ui.mp.i386.so
-@dirrm lib/enemyterritory/tcetest
