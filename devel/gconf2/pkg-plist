@@ -148,5 +148,8 @@ share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/polkit-1/actions/org.gnome.gconf.defaults.policy
 share/sgml/gconf/gconf-1.0.dtd
+@dir etc/gconf/gconf.xml.defaults
+@dir etc/gconf/gconf.xml.mandatory
+@dir etc/gconf/gconf.xml.system
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
