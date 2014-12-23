@@ -18,9 +18,9 @@
 -FILTER_CP932	= ${PROGRAM_ENCODEFILTER} -s
 -FILTER_EUCJP	= ${PROGRAM_ENCODEFILTER} -e
 -FILTER_UTF8	= iconv -t utf-8 -f cp932
-+FILTER_CP932	= %%LOCALBASE%%/bin/iconv -t cp932 -f euc-jp
-+FILTER_EUCJP	= %%LOCALBASE%%/bin/iconv -t euc-jp -f cp932
-+FILTER_UTF8	= %%LOCALBASE%%/bin/iconv -t utf-8 -f cp932
++ICONV_EUCJP_TO_CP932	= %%LOCALBASE%%/bin/nkf --ic=eucJP-ms --oc=CP932
++ICONV_CP932_TO_EUCJP	= %%LOCALBASE%%/bin/nkf --ic=CP932 --oc=eucJP-ms
++ICONV_CP932_TO_UTF8	= %%LOCALBASE%%/bin/nkf --ic=CP932 --oc=UTF-8
  INSTALL		= ${PROGRAM_INSTALL} -c
  INSTALL_PROGRAM	= $(INSTALL) -m 755
  INSTALL_DATA	= $(INSTALL) -m 644

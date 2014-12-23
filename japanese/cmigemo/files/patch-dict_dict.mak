@@ -1,6 +1,15 @@
---- dict/dict.mak.orig	2011-02-27 19:45:40.000000000 +0900
-+++ dict/dict.mak	2011-08-17 01:04:58.000000000 +0900
-@@ -32,10 +32,10 @@
+--- dict/dict.mak.orig	2014-12-20 13:39:02.000000000 +0900
++++ dict/dict.mak	2014-12-21 22:31:28.000000000 +0900
+@@ -15,7 +15,7 @@
+ # Dictionary
+ #
+ $(DICT): $(DICT_BASE)
+-	$(FILTER_CP932) < $(DICT_BASE) > $@
++	$(ICONV_EUCJP_TO_CP932) < $(DICT_BASE) > $@
+ $(DICT_BASE): $(SKKDIC_FILE) ../tools/skk2migemo.pl ../tools/optimize-dict.pl
+ 	$(PERL) ../tools/skk2migemo.pl < $(SKKDIC_FILE) > dict.tmp
+ 	$(PERL) ../tools/optimize-dict.pl < dict.tmp > $@
+@@ -32,42 +32,42 @@
  ##############################################################################
  # Dictionary in euc-jp
  #
@@ -15,7 +24,21 @@
  $(EUCJP_DIR):
  	$(MKDIR) $(EUCJP_DIR)
  $(EUCJP_DIR)/migemo-dict: migemo-dict
-@@ -52,10 +52,10 @@
+-	$(FILTER_EUCJP) < migemo-dict > $@
++	$(ICONV_CP932_TO_EUCJP) < migemo-dict > $@
+ $(EUCJP_DIR)/zen2han.dat: zen2han.dat
+-	$(FILTER_EUCJP) < zen2han.dat > $@
++	$(ICONV_CP932_TO_EUCJP) < zen2han.dat > $@
+ $(EUCJP_DIR)/han2zen.dat: han2zen.dat
+-	$(FILTER_EUCJP) < han2zen.dat > $@
++	$(ICONV_CP932_TO_EUCJP) < han2zen.dat > $@
+ $(EUCJP_DIR)/hira2kata.dat: hira2kata.dat
+-	$(FILTER_EUCJP) < hira2kata.dat > $@
++	$(ICONV_CP932_TO_EUCJP) < hira2kata.dat > $@
+ $(EUCJP_DIR)/roma2hira.dat: roma2hira.dat
+-	$(FILTER_EUCJP) < roma2hira.dat > $@
++	$(ICONV_CP932_TO_EUCJP) < roma2hira.dat > $@
+ 
  ##############################################################################
  # Dictionary in utf-8
  #
@@ -30,11 +53,28 @@
  $(UTF8_DIR):
  	$(MKDIR) $(UTF8_DIR)
  $(UTF8_DIR)/migemo-dict: migemo-dict
-@@ -87,7 +87,8 @@
+-	$(FILTER_UTF8) < migemo-dict > $@
++	$(ICONV_CP932_TO_UTF8) < migemo-dict > $@
+ $(UTF8_DIR)/zen2han.dat: zen2han.dat
+-	$(FILTER_UTF8) < zen2han.dat > $@
++	$(ICONV_CP932_TO_UTF8) < zen2han.dat > $@
+ $(UTF8_DIR)/han2zen.dat: han2zen.dat
+-	$(FILTER_UTF8) < han2zen.dat > $@
++	$(ICONV_CP932_TO_UTF8) < han2zen.dat > $@
+ $(UTF8_DIR)/hira2kata.dat: hira2kata.dat
+-	$(FILTER_UTF8) < hira2kata.dat > $@
++	$(ICONV_CP932_TO_UTF8) < hira2kata.dat > $@
+ $(UTF8_DIR)/roma2hira.dat: roma2hira.dat
+-	$(FILTER_UTF8) < roma2hira.dat > $@
++	$(ICONV_CP932_TO_UTF8) < roma2hira.dat > $@
+ 
+ ##############################################################################
+ # for Microsoft Visual C
+@@ -92,7 +92,8 @@
  ##############################################################################
  # for GNU/gcc(Linux‘¼)
  #
--gcc:		euc-jp
+-gcc:		euc-jp utf-8
 +gcc-dict:		euc-jp-dict utf-8-dict
 +gcc-dat:		euc-jp-dat utf-8-dat
  
