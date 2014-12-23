@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	1.5.20
+PORTVERSION=	1.5.21
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -13,7 +13,8 @@ COMMENT=	Library for manipulating PNG images
 
 PORTSCOUT=	limit:^1\.5\.
 
-USES=		tar:xz cmake
+USES=		cmake cpe tar:xz
+CPE_PRODUCT=	libpng
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
