@@ -35,7 +35,3 @@ share/icons/hicolor/32x32/apps/bomns.png
 share/icons/hicolor/48x48/apps/bomns.png
 share/icons/hicolor/64x64/apps/bomns.png
 share/pixmaps/bomns.png
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%
