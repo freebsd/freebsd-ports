@@ -119,7 +119,7 @@ Notes:
 	    be executed. ntp-keygen prior to version 4.2.7p230
 	    also uses a non-cryptographic random number generator
 	    when generating symmetric keys.</p>
-          <p>The buffer overflow vulnerabilities in ntpd may
+	  <p>The buffer overflow vulnerabilities in ntpd may
 	    allow a remote unauthenticated attacker to execute
 	    arbitrary malicious code with the privilege level
 	    of the ntpd process. The weak default key and
