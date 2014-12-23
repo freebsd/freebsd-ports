@@ -13,16 +13,14 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Frets on Fire data files
 
 NO_BUILD=	yes
-DATADIR=	share/${PKGNAMEPREFIX:S/-//}
+NO_ARCH=	yes
+DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 RESTRICTED=	Only Unreal Voodoo site is allowed to distribute the music
 WRKSRC=		${WRKDIR}/Frets\ on\ Fire-${PORTVERSION}
 
 EXTRACT_AFTER_ARGS=	--exclude 'win32' "Frets on Fire-${PORTVERSION}/${PORTNAME}"
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \;
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
