@@ -243,14 +243,3 @@
 %%DATADIR%%/testi.dae
 %%DATADIR%%/theme.ini
 %%DATADIR%%/title.ttf
-@dirrm %%DATADIR%%/translations/old
-@dirrm %%DATADIR%%/songs/twibmpg
-@dirrm %%DATADIR%%/songs/tutorial
-@dirrm %%DATADIR%%/songs/defy
-@dirrm %%DATADIR%%/songs/bangbang
-@dirrm %%DATADIR%%/mods/Chilly
-@dirrm %%DATADIR%%/mods/LightGraphics
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/songs
-@dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%
