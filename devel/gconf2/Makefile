@@ -4,7 +4,7 @@
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -48,6 +48,9 @@ PLIST_SUB+=	LDAP=""
 CONFIGURE_ARGS+=--without-openldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gconf/gconf.xml.system
 
 .include <bsd.port.mk>
 

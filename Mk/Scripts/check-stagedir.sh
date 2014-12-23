@@ -303,6 +303,7 @@ check_orphans_from_plist() {
 		share/mime/treemagic) ;;
 		share/mime/types) ;;
 		share/mime/version) ;;
+		'@dir etc/gconf/gconf.xml.defaults');;
 		*)
 			# An orphan was found, return non-zero status
 			ret=1
