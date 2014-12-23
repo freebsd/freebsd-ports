@@ -16,6 +16,7 @@ MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
