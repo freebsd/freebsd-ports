@@ -21,7 +21,7 @@ USE_XORG=	x11 xscrnsaver
 USES=		perl5
 USE_PERL5=	configure patch
 
-MANPREFIX=	${SITE_PERL}
+MANPREFIX=	${PREFIX}/${SITE_PERL_REL}
 
 post-patch:
 .for i in IdleTime.pm

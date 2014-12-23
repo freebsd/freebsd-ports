@@ -92,7 +92,7 @@ post-patch:
 		-e 's#%%NETDISCO_GROUP%%#${GROUPS}#g'		\
 		-e 's#%%NETDISCO_DBDIR%%#${NETDISCO_DBDIR}#g'	\
 		-e 's#%%ETCDIR%%#${ETCDIR}#g'		\
-		-e 's#%%SITE_PERL%%#${SITE_PERL}#g'	\
+		-e 's#%%SITE_PERL%%#${PREFIX}/${SITE_PERL_REL}#g'	\
 		-e 's#%%APACHEMODDIR%%#${APACHEMODDIR}#g'	\
 		-e 's#%%APACHEETCDIR%%#${APACHEETCDIR}#g'	\
 		-e 's#%%MIBINCLUDES%%#${MIBINCLUDES}#g'	\

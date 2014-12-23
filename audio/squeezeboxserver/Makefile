@@ -134,7 +134,7 @@ SUB_FILES=	Custom.pm \
 		custom-convert.conf
 SUB_LIST=	PERL=${PERL} \
 		PORTNAME=${PORTNAME} \
-		SITE_PERL=${SITE_PERL} \
+		SITE_PERL=${PREFIX}/${SITE_PERL_REL} \
 		SLIMDIR=${SLIMDIR} \
 		SLIMDBDIR=${SLIMDBDIR} \
 		SLIMUSER=${SLIMUSER} \
@@ -159,7 +159,7 @@ post-patch:
 	    -e 's|%%DISTDIR%%|${_DISTDIR}|g' \
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    -e 's|%%SITE_PERL%%|${SITE_PERL}|g' \
+	    -e 's|%%SITE_PERL%%|${PREFIX}/${SITE_PERL_REL}|g' \
 	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|g' \
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|g' \
 		${WRKSRC}/scanner.pl \

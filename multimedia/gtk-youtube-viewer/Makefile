@@ -64,10 +64,10 @@ GTK2_CONFIGURE_ON=	--gtk-youtube-viewer
 post-install:
 .if ${PORT_OPTIONS:MGTK2}
 	${LN} -sf \
-	${SITE_PERL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop \
+	${PREFIX}/${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${LN} -sf \
-	${SITE_PERL}/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png \
+	${PREFIX}/${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 

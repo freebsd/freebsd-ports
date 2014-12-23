@@ -13,7 +13,7 @@ COMMENT=	Helper programs for debian/rules
 
 LICENSE=	GPLv2
 
-MAKE_ARGS=	PREFIX=${PREFIX} SITE_PERL=${SITE_PERL}
+MAKE_ARGS=	PREFIX=${PREFIX} SITE_PERL=${PREFIX}/${SITE_PERL_REL}
 NO_BUILD=	yes
 USES=		gmake perl5 shebangfix
 WRKSRC=		${WRKDIR}/${PORTNAME}

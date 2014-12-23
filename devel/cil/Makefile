@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'35 s|make|gmake|g' ${WRKSRC}/myocamlbuild.ml
 	@${REINPLACE_CMD} -e \
-		's|@CILHOME@/lib|${SITE_PERL}/CIL|g ; \
+		's|@CILHOME@/lib|${PREFIX}/${SITE_PERL_REL}/CIL|g ; \
 		s|\@CILHOME\@|${PREFIX}|g' \
 		${WRKSRC}/lib/App/Cilly/CilConfig.pm.in
 	@${REINPLACE_CMD} -e \
