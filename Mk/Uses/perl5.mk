@@ -175,8 +175,8 @@ MANDIRS+=	${PREFIX}/${SITE_PERL_REL}/man
 .if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
-CONFIGURE_ARGS+=--install_path lib="${SITE_PERL}" \
-		--install_path arch="${SITE_ARCH}" \
+CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
+		--install_path arch="${PREFIX}/${SITE_ARCH_REL}" \
 		--install_path script="${PREFIX}/bin" \
 		--install_path bin="${PREFIX}/bin" \
 		--install_path libdoc="${MAN3PREFIX}/man/man3" \
@@ -232,7 +232,7 @@ RUN_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${SITE_PERL}
+MAN3PREFIX?=		${PREFIX}/${SITE_PERL_REL}
 .undef HAS_CONFIGURE
 
 .if !target(do-configure)
