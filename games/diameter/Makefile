@@ -29,7 +29,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d; \
-		/PKG_CONFIG/ s|libpng|libpng15|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
