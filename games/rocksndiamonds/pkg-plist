@@ -72,10 +72,3 @@ share/pixmaps/rocksndiamonds.png
 %%DATADIR%%/sounds/snd_classic/zisch.wav
 %%DATADIR%%/sounds/snd_classic/zonkdown.wav
 %%DATADIR%%/sounds/snd_classic/zonkpush.wav
-@dirrm %%DATADIR%%/sounds/snd_classic
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music/mus_classic
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/graphics/gfx_classic
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%
