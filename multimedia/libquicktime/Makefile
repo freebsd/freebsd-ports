@@ -22,6 +22,7 @@ USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
+INSTALL_TARGET=	install-strip
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
