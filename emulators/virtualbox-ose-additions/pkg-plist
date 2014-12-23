@@ -16,4 +16,5 @@ sbin/VBoxService
 %%X11%%share/autostart/vboxclient.desktop
 /%%KMODDIR%%/vboxguest.ko
 %%DEBUG%%/%%KMODDIR%%/vboxguest.ko.symbols
-%%X11%%/%%KMODDIR%%/vboxvideo.ko
+%%OPENGL%%/%%KMODDIR%%/vboxvideo.ko
+%%DEBUG%%%%OPENGL%%/%%KMODDIR%%/vboxvideo.ko.symbols

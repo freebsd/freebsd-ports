@@ -32,6 +32,7 @@ vboxguest_start()
 			return 1
 		fi
 	fi
+	test -f "%%KMODDIR%%/vboxvideo.ko" || return 0
 	if ! kldstat -q -m vgapci/vboxvideo;
 	then
 		if ! kldload vboxvideo > /dev/null 2>&1;
