@@ -208,7 +208,7 @@ libtool() {
 
 libperl() {
 	local has_some_libperl_so files found
-	if [ -n "${SITE_ARCH_REL}" ]; then
+	if [ -n "${SITE_ARCH_REL}" -a -d "${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}" ]; then
 		has_some_libperl_so=0
 		files=0
 		while read f; do
