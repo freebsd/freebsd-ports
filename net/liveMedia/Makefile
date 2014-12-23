@@ -42,7 +42,7 @@ BROKEN=		Does not compile
 post-extract:
 	${CP} ${FILESDIR}/config.fixed-freebsd ${WRKSRC}
 
-.if "${PREFIX}" != "/usr/local"
+.if ${PREFIX} != "/usr/local"
 post-configure:
 	${REINPLACE_CMD} -e 's,^PREFIX = /usr/local,PREFIX = "${PREFIX}",' \
 		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
