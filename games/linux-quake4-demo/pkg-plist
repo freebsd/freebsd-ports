@@ -10,5 +10,3 @@ bin/linux-quake4-demo
 %%Q4DIR%%/q4base/zpak_french.pk4
 %%Q4DIR%%/q4base/zpak_italian.pk4
 %%Q4DIR%%/q4base/zpak_spanish.pk4
-@dirrm %%Q4DIR%%/q4base
-@dirrm %%Q4DIR%%
