@@ -41,7 +41,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spellathon ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/spellathon-cl ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib/libspellathon.so
 	${LN} -sf libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib/libspellathon.so.0
 	@${MKDIR} ${STAGEDIR}${DATADIR}
