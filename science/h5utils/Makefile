@@ -16,11 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	YES
 CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/libpng15 ${PTHREAD_LIBS}
+		${PTHREAD_LIBS}
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libmatheval.so:${PORTSDIR}/devel/libmatheval
 
 .include <bsd.port.mk>
