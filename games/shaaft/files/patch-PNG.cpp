@@ -1,14 +1,15 @@
---- utilssdl/PNG.cpp.orig	2003-03-03 03:32:18.000000000 +0100
-+++ utilssdl/PNG.cpp	2012-05-09 12:16:57.000000000 +0200
-@@ -13,6 +13,7 @@
- // FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
- //
- #include <PNG.hpp>
-+#include <pngpriv.h>
+--- utilssdl/PNG.cpp.orig	2003-03-03 02:32:18 UTC
++++ utilssdl/PNG.cpp
+@@ -45,7 +45,7 @@ void PNG::writeData( png_structp png, pn
+ {
+     png_uint_32 check;
  
- //Save SDL surface as png
- bool PNG::Save( SDL_Surface *img, const string &filename)
-@@ -72,7 +73,7 @@
+-    check = fwrite( data, 1, length, (FILE *)(png->io_ptr));
++    check = fwrite( data, 1, length, (FILE *)(png_get_io_ptr(png)));
+     if( check != length)
+     {
+ 	png_error( png, "Write Error");
+@@ -72,7 +72,7 @@ bool PNG::init( FILE *fp, int width, int
  	return false;
      }
  
