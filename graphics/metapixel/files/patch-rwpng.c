@@ -1,14 +1,14 @@
---- rwimg/rwpng.c.orig	2006-12-10 18:59:54.000000000 +0100
-+++ rwimg/rwpng.c	2012-05-04 13:02:08.000000000 +0200
-@@ -26,6 +26,7 @@
- #include <stdlib.h>
+--- rwimg/rwpng.c.orig	2006-12-10 17:59:54 UTC
++++ rwimg/rwpng.c
+@@ -42,6 +42,7 @@ void*
+ open_png_file_reading (const char *filename, int *width, int *height)
+ {
+     png_data_t *data = (png_data_t*)malloc(sizeof(png_data_t));
++    int _bit_depth,_color_type,_interlace_type,_compression,_filter;
  
- #include <png.h>
-+#include <pngpriv.h>
+     assert(data != 0);
  
- #include "rwpng.h"
- 
-@@ -57,7 +58,7 @@
+@@ -57,19 +58,20 @@ open_png_file_reading (const char *filen
      data->end_info = png_create_info_struct(data->png_ptr);
      assert(data->end_info != 0);
  
@@ -17,16 +17,68 @@
  	assert(0);
  
      png_init_io(data->png_ptr, data->file);
-@@ -84,7 +85,7 @@
+ 
+     png_read_info(data->png_ptr, data->info_ptr);
+ 
+-    *width = data->info_ptr->width;
+-    *height = data->info_ptr->height;
++    png_get_IHDR(data->png_ptr,data->info_ptr,
++        (png_uint_32 *)width,(png_uint_32 *)height,
++        &_bit_depth,&_color_type,&_interlace_type,&_compression,&_filter);
+ 
+-    assert(data->info_ptr->bit_depth == 8 || data->info_ptr->bit_depth == 16);
+-    assert(data->info_ptr->color_type == PNG_COLOR_TYPE_RGB || data->info_ptr->color_type == PNG_COLOR_TYPE_RGB_ALPHA);
+-    assert(data->info_ptr->interlace_type == PNG_INTERLACE_NONE);
++    assert(_bit_depth == 8 || _bit_depth == 16);
++    assert(_color_type == PNG_COLOR_TYPE_RGB || _color_type == PNG_COLOR_TYPE_RGB_ALPHA);
++    assert(_interlace_type == PNG_INTERLACE_NONE);
+ 
+     data->have_read = 0;
+ 
+@@ -83,30 +85,36 @@ png_read_lines (void *_data, unsigned ch
+     int i;
      int bps, spp;
      unsigned char *row;
++    png_uint_32 _width,_height;
++    int _bit_depth,_color_type,_interlace_type,_compression,_filter;
  
 -    if (setjmp(data->png_ptr->jmpbuf))
 +    if (setjmp(png_jmpbuf(data->png_ptr)))
  	assert(0);
  
-     if (data->info_ptr->color_type == PNG_COLOR_TYPE_RGB)
-@@ -119,7 +120,7 @@
+-    if (data->info_ptr->color_type == PNG_COLOR_TYPE_RGB)
++    png_get_IHDR(data->png_ptr,data->info_ptr,
++        &_width,&_height,&_bit_depth,&_color_type,&_interlace_type,
++        &_compression,&_filter);
++
++    if (_color_type == PNG_COLOR_TYPE_RGB)
+ 	spp = 3;
+     else
+ 	spp = 4;
+ 
+-    if (data->info_ptr->bit_depth == 16)
++    if (_bit_depth == 16)
+ 	bps = 2;
+     else
+ 	bps = 1;
+ 
+-    row = (unsigned char*)malloc(data->info_ptr->width * spp * bps);
++    row = (unsigned char*)malloc(_width * spp * bps);
+ 
+     for (i = 0; i < num_lines; ++i)
+     {
+ 	int j, channel;
+ 
+ 	png_read_row(data->png_ptr, (png_bytep)row, 0);
+-	for (j = 0; j < data->info_ptr->width; ++j)
++	for (j = 0; j < _width; ++j)
+ 	    for (channel = 0; channel < 3; ++channel)
+-		lines[i * data->info_ptr->width * 3 + j * 3 + channel] = row[j * spp * bps + channel * bps];
++		lines[i * _width * 3 + j * 3 + channel] = row[j * spp * bps + channel * bps];
+     }
+ 
+     free(row);
+@@ -119,7 +127,7 @@ png_free_reader_data (void *_data)
  {
      png_data_t *data = (png_data_t*)_data;
  
@@ -35,7 +87,7 @@
  	assert(0);
  
      if (data->have_read)
-@@ -148,7 +149,7 @@
+@@ -148,7 +156,7 @@ open_png_file_writing (const char *filen
      data->info_ptr = png_create_info_struct(data->png_ptr);
      assert(data->info_ptr != 0);
  
@@ -44,7 +96,31 @@
  	assert(0);
  
      if (pixel_stride == 4)
-@@ -182,7 +183,7 @@
+@@ -156,18 +164,14 @@ open_png_file_writing (const char *filen
+ 
+     png_init_io(data->png_ptr, data->file);
+ 
+-    data->info_ptr->width = width;
+-    data->info_ptr->height = height;
+-    data->info_ptr->valid = 0;
++    png_set_IHDR(data->png_ptr,data->info_ptr,width,height,
++        8,PNG_COLOR_TYPE_RGB,PNG_INTERLACE_NONE,
++        PNG_COMPRESSION_TYPE_DEFAULT,PNG_FILTER_TYPE_DEFAULT);
++    /* setting these to 0 so just skipping ...
+     data->info_ptr->rowbytes = width * 3;
+     data->info_ptr->palette = 0;
+     data->info_ptr->num_palette = 0;
+-    data->info_ptr->num_trans = 0;
+-    data->info_ptr->bit_depth = 8;
+-    data->info_ptr->color_type = PNG_COLOR_TYPE_RGB;
+-    data->info_ptr->compression_type = PNG_COMPRESSION_TYPE_DEFAULT;
+-    data->info_ptr->filter_type = PNG_FILTER_TYPE_DEFAULT;
+-    data->info_ptr->interlace_type = PNG_INTERLACE_NONE;
++    data->info_ptr->num_trans = 0; */
+ 
+     png_write_info(data->png_ptr, data->info_ptr);
+ 
+@@ -182,7 +186,7 @@ png_write_lines (void *_data, unsigned c
      png_data_t *data = (png_data_t*)_data;
      int i;
  
@@ -53,7 +129,7 @@
  	assert(0);
  
      for (i = 0; i < num_lines; ++i)
-@@ -194,7 +195,7 @@
+@@ -194,7 +198,7 @@ png_free_writer_data (void *_data)
  {
      png_data_t *data = (png_data_t*)_data;
  
