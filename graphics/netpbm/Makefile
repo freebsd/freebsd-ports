@@ -13,7 +13,7 @@ COMMENT=	Toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
