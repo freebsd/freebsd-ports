@@ -725,6 +725,7 @@
     SUBDIR += pinentry-curses
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
+    SUBDIR += pinentry-tty
     SUBDIR += pkcrack
     SUBDIR += pkcs11-dump
     SUBDIR += pkcs11-gateway
