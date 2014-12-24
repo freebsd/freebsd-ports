@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTREVISION=	1
+PORTREVISION=	0
 
-COMMENT=	Qt 4 version of the GnuPG password dialog
+COMMENT=	Console version of the GnuPG password dialog
 
-PINENTRY_GUI=	qt4
+PINENTRY_GUI=	tty
 
 MASTERDIR=	${.CURDIR}/../pinentry
 

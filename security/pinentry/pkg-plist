@@ -1,4 +1,0 @@
-bin/pinentry
-%%WITH_NCURSES%%bin/pinentry-curses
-%%WITH_GTK2%%bin/pinentry-gtk-2
-%%WITH_QT4%%bin/pinentry-qt4
