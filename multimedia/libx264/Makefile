@@ -42,8 +42,8 @@ GCC_DESC=	Use current GCC
 HI10P_DESC=	Enable High 10 Profile 10-bit encoding
 
 ASM_CONFIGURE_OFF=	--disable-asm
-DEBUG_CONFIGURE_ON=     --enable-debug
-GCC_USE=                GCC=yes
+DEBUG_CONFIGURE_ON=	--enable-debug
+GCC_USE=		GCC=yes
 HI10P_CONFIGURE_ON=	--bit-depth=10
 PGO_USE=		GCC=yes
 
