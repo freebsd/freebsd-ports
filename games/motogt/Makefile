@@ -25,7 +25,6 @@ USE_GL=		gl
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 SUB_FILES=	motogt
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
