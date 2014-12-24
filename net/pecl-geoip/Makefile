@@ -7,18 +7,20 @@ PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Map IP address to geographic places
+
+LICENSE=	PHP301
 
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USES=		tar:tgz
 
 post-patch:
-	${REINPLACE_CMD} -e 's/-ldl//g' ${WRKSRC}/config.m4
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
