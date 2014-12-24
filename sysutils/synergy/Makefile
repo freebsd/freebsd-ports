@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.5.1
-DISTVERSIONSUFFIX=	-Source
+PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://synergy-project.org/files/packages/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-r2398${DISTVERSIONSUFFIX}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
+DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
@@ -23,7 +22,7 @@ MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-PLIST_FILES=    bin/synergyc bin/synergyd bin/synergys bin/syntool \
+PLIST_FILES=    bin/synergyc bin/synergyd bin/synergys \
 		man/man1/synergyc.1.gz man/man1/synergys.1.gz
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
@@ -36,7 +35,7 @@ post-extract:
 	(cd ${WRKSRC}/ext/cryptopp562 && ${TAR} xfz ${WRKSRC}/ext/cryptopp562.zip)
 
 do-install:
-.for f in synergyc synergyd synergys syntool
+.for f in synergyc synergyd synergys
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/synergyc.man \
