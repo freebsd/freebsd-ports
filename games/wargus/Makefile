@@ -15,7 +15,7 @@ COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
 NOT_FOR_ARCHS=	sparc64
@@ -24,7 +24,7 @@ USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	${PORTNAME} pkg-message
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
