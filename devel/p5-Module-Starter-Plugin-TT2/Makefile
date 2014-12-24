@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	TT2 templates for Module::Starter::Template
 
 LICENSE=	ART10 GPLv1

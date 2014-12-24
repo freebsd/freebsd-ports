@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	GraphViz/TEEJAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Directed graph alternative to GraphViz
 
 BUILD_DEPENDS=	p5-GD>=1:${PORTSDIR}/graphics/p5-GD

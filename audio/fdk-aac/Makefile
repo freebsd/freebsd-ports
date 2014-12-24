@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Port of the Fraunhofer FDK AAC Codec Library
 
 LICENSE=	FRAUNHOFER_FDK_AAC

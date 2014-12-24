@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C++ class library for writing CGI applications
 
 LICENSE=	LGPL3 # (or later)

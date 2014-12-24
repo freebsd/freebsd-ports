@@ -10,7 +10,7 @@ MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \
 		ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk

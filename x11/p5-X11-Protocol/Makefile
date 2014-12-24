@@ -8,7 +8,7 @@ CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that provides an interface roughly equivalent to Xlib
 
 LICENSE=	ART10 GPLv1

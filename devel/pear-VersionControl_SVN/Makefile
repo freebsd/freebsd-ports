@@ -5,7 +5,7 @@ PORTNAME=	VersionControl_SVN
 PORTVERSION=	0.5.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Wrapper interface for the Subversion command-line client
 
 LICENSE=	BSD2CLAUSE

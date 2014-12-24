@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	1
 DISTFILES=	reportlab-${PORTVERSION}.tar.gz \
 		rl_accel-3004.tgz:accel
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
 
 CONFLICTS=	py*-reportlab[^1]-[^1].* \

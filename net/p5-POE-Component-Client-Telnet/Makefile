@@ -8,7 +8,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	POE component that provides non-blocking access to Net::Telnet
 
 LICENSE=	ART10 GPLv1

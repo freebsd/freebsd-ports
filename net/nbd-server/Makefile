@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Server for the Linux network block device (nbd)
 
 LICENSE=	GPLv2

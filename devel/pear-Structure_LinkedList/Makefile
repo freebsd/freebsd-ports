@@ -5,7 +5,7 @@ PORTNAME=	Structures_LinkedList
 PORTVERSION=	0.2.2
 CATEGORIES=	devel pear
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Implements singly and doubly-linked lists
 
 USES=	pear

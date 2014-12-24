@@ -8,7 +8,7 @@ CATEGORIES=	lang www perl5
 MASTER_SITES=	OSSP/tool/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 LICENSE=	ART10 GPLv2

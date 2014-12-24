@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/ \
 		http://www.netxms.org/download/archive/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network monitoring system
 
 LICENSE=	GPLv2 LGPL21

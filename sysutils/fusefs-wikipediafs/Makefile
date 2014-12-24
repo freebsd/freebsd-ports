@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mount mediawikis
 
 LICENSE=	GPLv2

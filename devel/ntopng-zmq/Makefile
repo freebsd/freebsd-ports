@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.zeromq.org/
 PKGNAMEPREFIX=	ntopng-
 DISTNAME=	zeromq-${DISTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	NTOPNG specific ZMQ library
 
 LICENSE=	LGPL3

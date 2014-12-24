@@ -10,7 +10,7 @@ MASTER_SITES=	GNU
 #MASTER_SITE_SUBDIR=	guile
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21

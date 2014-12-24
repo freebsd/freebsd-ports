@@ -6,7 +6,7 @@ PORTVERSION=	2.17
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
 LICENSE=	BSD3CLAUSE

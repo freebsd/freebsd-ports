@@ -6,7 +6,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Small utility used to generate code from a Dia diagram
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
 LICENSE=	GPLv2

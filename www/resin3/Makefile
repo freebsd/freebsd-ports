@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java-based Application Server, 3.x branch
 
 LICENSE=	GPLv2

@@ -9,7 +9,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 
 LICENSE=	GPLv2

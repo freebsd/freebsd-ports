@@ -8,7 +8,7 @@ CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://udmsearch.real-time.com/Download/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 LICENSE=	GPLv2

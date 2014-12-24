@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cleans up HTML code for web browsers, not humans
 
 LICENSE=	ART10 GPLv1

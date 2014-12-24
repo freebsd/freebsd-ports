@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.baschny.de/spf/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
 
 LICENSE=	ART10 GPLv1

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}.orig
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	LALR(1) parser generator that generates C++ classes
 
 LICENSE=	GPLv3

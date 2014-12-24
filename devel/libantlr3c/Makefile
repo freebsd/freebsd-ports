@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.antlr3.org/download/C/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition (C runtime)
 
 LICENSE=	BSD3CLAUSE

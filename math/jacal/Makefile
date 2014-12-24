@@ -6,7 +6,7 @@ PORTVERSION=	1c3
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symbolic mathematics program written in Scheme
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	4.28
 CATEGORIES=	print audio
 MASTER_SITES=	http://www.quercite.com/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High quality music typesetting program
 
 LICENSE=	GPLv2
