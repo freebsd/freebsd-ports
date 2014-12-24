@@ -12,7 +12,7 @@ COMMENT=	Converts TIFF-sampled images to PNM image
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 PROJECTHOST=	sam2p
@@ -31,8 +31,8 @@ do-build:
 	cd ${WRKSRC} \
 		&& ${CC} ${CFLAGS} -DNDEBUG -I${LOCALBASE}/include \
 		${TIF22PNM_SRCS} -o tif22pnm -L${LOCALBASE}/lib -ltiff \
-		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng15 --cflags` \
-		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng15 --libs` -lm
+		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng --cflags` \
+		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng --libs` -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png22pnm ${STAGEDIR}${PREFIX}/bin
