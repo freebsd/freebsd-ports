@@ -6,8 +6,10 @@ PORTVERSION=	4.8.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-faraday>=0.8:${PORTSDIR}/www/rubygem-faraday \
 		rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json \
