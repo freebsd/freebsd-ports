@@ -6,8 +6,10 @@ PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/REST API client library in Ruby
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-multipart-post>=1.2:${PORTSDIR}/www/rubygem-multipart-post
 
