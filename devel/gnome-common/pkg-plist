@@ -1,5 +1,7 @@
 bin/gnome-autogen.sh
 bin/gnome-doc-common
+share/aclocal/ax_check_enable_debug.m4
+share/aclocal/ax_code_coverage.m4
 share/aclocal/gnome-code-coverage.m4
 share/aclocal/gnome-common.m4
 share/aclocal/gnome-compiler-flags.m4
