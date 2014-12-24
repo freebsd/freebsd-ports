@@ -4,40 +4,28 @@ bin/wmk
 bin/wml
 bin/wmu
 lib/wml/data/logos/logo-apache.gif
-lib/wml/data/logos/logo-apache.info
 lib/wml/data/logos/logo-apache.png
 lib/wml/data/logos/logo-freebsd.gif
-lib/wml/data/logos/logo-freebsd.info
 lib/wml/data/logos/logo-freebsd.png
 lib/wml/data/logos/logo-gimp.gif
-lib/wml/data/logos/logo-gimp.info
 lib/wml/data/logos/logo-gimp.png
 lib/wml/data/logos/logo-htdig.gif
-lib/wml/data/logos/logo-htdig.info
 lib/wml/data/logos/logo-htdig.png
 lib/wml/data/logos/logo-linux.gif
-lib/wml/data/logos/logo-linux.info
 lib/wml/data/logos/logo-linux.png
 lib/wml/data/logos/logo-netbsd.gif
-lib/wml/data/logos/logo-netbsd.info
 lib/wml/data/logos/logo-netbsd.png
 lib/wml/data/logos/logo-openbsd.gif
-lib/wml/data/logos/logo-openbsd.info
 lib/wml/data/logos/logo-openbsd.png
 lib/wml/data/logos/logo-php.gif
-lib/wml/data/logos/logo-php.info
 lib/wml/data/logos/logo-php.png
 lib/wml/data/logos/logo-php3.gif
-lib/wml/data/logos/logo-php3.info
 lib/wml/data/logos/logo-php3.png
 lib/wml/data/logos/logo-vim.gif
-lib/wml/data/logos/logo-vim.info
 lib/wml/data/logos/logo-vim.png
 lib/wml/data/logos/logo-wml.gif
-lib/wml/data/logos/logo-wml.info
 lib/wml/data/logos/logo-wml.png
 lib/wml/data/logos/logo-xemacs.gif
-lib/wml/data/logos/logo-xemacs.info
 lib/wml/data/logos/logo-xemacs.png
 lib/wml/data/txt2html.dict
 lib/wml/data/weblintrc
@@ -189,16 +177,3 @@ man/man7/wml_std_wai10.7.gz
 man/man7/wml_std_xhtml10.7.gz
 man/man7/wml_tags.7.gz
 man/man7/wml_tutorial.7.gz
-@dirrm lib/wml/perl
-@dirrm lib/wml/include/sys
-@dirrm lib/wml/include/sup
-@dirrm lib/wml/include/std
-@dirrm lib/wml/include/mod
-@dirrm lib/wml/include/imp
-@dirrm lib/wml/include/fmt
-@dirrm lib/wml/include/des
-@dirrm lib/wml/include
-@dirrm lib/wml/exec
-@dirrm lib/wml/data/logos
-@dirrm lib/wml/data
-@dirrm lib/wml

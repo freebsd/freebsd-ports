@@ -1,0 +1,10 @@
+--- wml_include/des/typography.src.orig	2014-12-21 22:43:30.378078039 +0000
++++ wml_include/des/typography.src	2014-12-21 22:43:44.554064021 +0000
+@@ -5,6 +5,7 @@
+ 
+ #  The <preserve>/<restore> tags with multiple arguments require WML 2.0.3
+ #use wml::mod::version
++=encoding Latin1
+ <require 2.0.3 />
+ 
+ #use wml::std::tags
