@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.centreon.com/centreon-clib/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Common library of all Centreon projects written in C or C++
 
 LICENSE=	AGPLv3

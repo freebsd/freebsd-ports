@@ -13,7 +13,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz:source1 \
 		junit-4.8.2.jar:source2
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java library of self-contained mathematics and statistics components
 
 LICENSE=	APACHE20

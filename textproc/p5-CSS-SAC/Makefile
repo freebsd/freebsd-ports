@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SAC CSS (Simple API for CSS) parser
 
 LICENSE=	ART10 GPLv1

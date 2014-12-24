@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/ntop/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LICENSE=	GPLv3

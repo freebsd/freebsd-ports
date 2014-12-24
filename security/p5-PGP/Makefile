@@ -8,7 +8,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 module to work with PGP messages
 
 RUN_DEPENDS=	pgpin:${PORTSDIR}/security/pgpin

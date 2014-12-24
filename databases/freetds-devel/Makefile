@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/current/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LICENSE=	LGPL20

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Gnutella client
 
 PORTSCOUT=	skipv:0.05	# older than current one

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN/Gnome2 \
 		SF/gtk2-perl/Gnome2_Canvas/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Allows a perl developer to use the GnomeCanvas widget with Gtk2-Perl
 
 LICENSE=	GPLv2

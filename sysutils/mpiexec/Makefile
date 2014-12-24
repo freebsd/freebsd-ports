@@ -6,7 +6,7 @@ PORTVERSION=	0.84
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	https://www.osc.edu/~djohnson/mpiexec/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to run a parallel job from within a PBS environment
 
 LICENSE=	GPLv2

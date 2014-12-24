@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
 
 PORTSCOUT=	skipv:0.411

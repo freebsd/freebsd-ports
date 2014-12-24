@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	libCoin.so:${PORTSDIR}/graphics/Coin

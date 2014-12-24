@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iphawk/iphawk/Hawk%20${PORTVERSION}/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Track uptime and DNS status for machines on your networks
 
 LICENSE=	GPLv2

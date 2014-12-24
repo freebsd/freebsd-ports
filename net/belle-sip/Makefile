@@ -10,7 +10,7 @@ DISTFILES=	belle-sip-1.3.0.tar.gz:source1 \
 		antlr-3.4-complete.jar:source2
 EXTRACT_ONLY=	belle-sip-1.3.0.tar.gz
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C
 
 LICENSE=	GPLv2

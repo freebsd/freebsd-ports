@@ -8,7 +8,7 @@ CATEGORIES=	security perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Manage Unix crypt-style password file
 
 LICENSE=	ART10 GPLv1

@@ -5,7 +5,7 @@ PORTNAME=	Image_Barcode2
 PORTVERSION=	0.2.3
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
 
 USE_PHP=	gd

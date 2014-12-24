@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
 
 LICENSE=	BSD2CLAUSE
