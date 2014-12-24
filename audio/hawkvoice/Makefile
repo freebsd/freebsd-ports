@@ -33,6 +33,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' "{}" \;
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libHVDI.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in api.txt HVDIchanges.txt readme.txt cryptapi.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
