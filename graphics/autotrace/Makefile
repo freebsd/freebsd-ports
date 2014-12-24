@@ -13,7 +13,7 @@ COMMENT=	Convert bitmap to vector graphics
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
