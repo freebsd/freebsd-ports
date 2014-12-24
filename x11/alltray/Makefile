@@ -10,12 +10,16 @@ MASTER_SITES=	SF
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Dock any application with no native tray icon
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	KDE
 KDE_DESC=	Support only KDE desktop
