@@ -32,9 +32,3 @@ lib/etqw-demo-server/pb/pbsv.so
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyrights.txt
 %%PORTDOCS%%%%DOCSDIR%%/etqwtv.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/etqw-demo-server/pb/htm
-@dirrm lib/etqw-demo-server/pb
-@dirrm lib/etqw-demo-server/base/bots
-@dirrm lib/etqw-demo-server/base
-@dirrm lib/etqw-demo-server
