@@ -3,27 +3,25 @@
 
 PORTNAME=	ntopng
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/ntop/${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LICENSE=	GPLv3
 
-BROKEN=		Fails to link
-
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libndpi.so:${PORTSDIR}/net/ndpi \
-		libzmq.so:${PORTSDIR}/net/libzmq4
+		libzmq.so:${PORTSDIR}/net/libzmq3
 
 USE_AUTOTOOLS=	autoheader aclocal libtoolize
 USE_SQLITE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=	 	gmake libtool pathfix pkgconfig
+USES=	 	gmake libtool pathfix pkgconfig tar:tgz
 SUB_FILES=	ntopng-geoipupdate.sh
 
 OPTIONS_DEFINE=	GEOIP NLS
