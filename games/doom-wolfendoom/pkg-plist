@@ -19,5 +19,3 @@
 %%DATADIR%%/rhein2.wad
 %%DATADIR%%/sod.wad
 %%DATADIR%%/toten.wad
-@dirrm %%DATADIR%%/arctic
-@dirrm %%DATADIR%%
