@@ -3,7 +3,7 @@
 
 PORTNAME=	owncloud-csync
 PORTVERSION=	0.91.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 DISTNAME=	ocsync-${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser \
 		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient \
 		libssh.so.4:${PORTSDIR}/security/libssh \
-		libneon.so:${PORTSDIR}/www/neon29
+		libneon.so:${PORTSDIR}/www/neon
 
 USES=		cmake:outsource iconv pkgconfig tar:bzip2
 USE_SQLITE=	yes

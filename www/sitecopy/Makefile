@@ -3,7 +3,7 @@
 
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 		${MASTER_SITE_GENTOO}
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	sitecopy@oldach.net
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

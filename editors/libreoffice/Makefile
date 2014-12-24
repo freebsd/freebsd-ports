@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Full integrated office productivity suite
 
@@ -279,7 +279,7 @@ SYSTRAY_CONFIGURE_ENABLE=	systray
 
 TEST_CONFIGURE_ENABLE=	cve-tests
 
-WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 WEBDAV_CONFIGURE_ENABLE=	neon
 
 .include <bsd.port.options.mk>

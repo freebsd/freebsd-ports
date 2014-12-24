@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES+=	devel
 PKGNAMESUFFIX=	16
 MASTER_SITES=	http://subversion.tigris.org/downloads/
@@ -60,7 +60,7 @@ MOD_DAV_SVN_USE=		APACHE=22+
 
 NEON_CONFIGURE_OFF=		--without-neon
 NEON_CONFIGURE_ON=		--with-neon=${LOCALBASE}
-NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon29
+NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon
 
 NLS_CONFIGURE_OFF=		--disable-nls
 NLS_USES=			gettext

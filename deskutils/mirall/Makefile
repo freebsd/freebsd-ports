@@ -3,6 +3,7 @@
 
 PORTNAME=	mirall
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqtkeychain.so:${PORTSDIR}/security/qtkeychain \
-		libneon.so:${PORTSDIR}/www/neon29
+		libneon.so:${PORTSDIR}/www/neon
 
 USES=		cmake:outsource compiler:c++11-lang gmake pkgconfig tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib webkit xml \

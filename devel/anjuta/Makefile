@@ -4,7 +4,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -72,7 +72,7 @@ DEVHELP_DESC=	Devhelp support
 .if ${PORT_OPTIONS:MSVN}
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else

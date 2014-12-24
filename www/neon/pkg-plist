@@ -26,7 +26,7 @@ include/neon/ne_xmlreq.h
 lib/libneon.a
 lib/libneon.so
 lib/libneon.so.27
-lib/libneon.so.27.2.6
+lib/libneon.so.27.3.1
 libdata/pkgconfig/neon.pc
 man/man1/neon-config.1.gz
 man/man3/ne_add_request_header.3.gz
@@ -79,13 +79,15 @@ man/man3/ne_response_header_iterate.3.gz
 man/man3/ne_session_create.3.gz
 man/man3/ne_session_destroy.3.gz
 man/man3/ne_session_proxy.3.gz
+man/man3/ne_session_socks_proxy.3.gz
+man/man3/ne_session_system_proxy.3.gz
+man/man3/ne_set_addrlist.3.gz
 man/man3/ne_set_connect_timeout.3.gz
 man/man3/ne_set_error.3.gz
 man/man3/ne_set_proxy_auth.3.gz
 man/man3/ne_set_read_timeout.3.gz
 man/man3/ne_set_request_body_buffer.3.gz
 man/man3/ne_set_request_body_fd.3.gz
-man/man3/ne_set_request_body_fd64.3.gz
 man/man3/ne_set_request_flag.3.gz
 man/man3/ne_set_server_auth.3.gz
 man/man3/ne_set_session_flag.3.gz
@@ -147,6 +149,7 @@ man/man3/neon.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/refiaddr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refneon.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refopts.html
+%%PORTDOCS%%%%DOCSDIR%%/html/refproxy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqbody.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqflags.html

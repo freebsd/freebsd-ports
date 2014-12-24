@@ -1,12 +1,10 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
 
-PORTNAME=	neon29
-PORTVERSION=	0.29.6
-PORTREVISION=	7
+PORTNAME=	neon
+PORTVERSION=	0.30.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
-DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	HTTP and WebDAV client library for Unix systems
