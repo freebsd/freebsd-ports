@@ -13,7 +13,7 @@ COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		gmake pkgconfig dos2unix desktop-file-utils tar:bzip2
@@ -28,7 +28,7 @@ OPTIONS_DEFINE= DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
-		-e 's|libpng12|libpng15|g' ${WRKSRC}/configure
+		-e 's|libpng12|libpng|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|RacingMode::||' ${WRKSRC}/src/racingmode.h
 	@${REINPLACE_CMD} -e 's|int SQHash|long SQHash|' \
 		${WRKSRC}/src/squirrel/squirrel.h
