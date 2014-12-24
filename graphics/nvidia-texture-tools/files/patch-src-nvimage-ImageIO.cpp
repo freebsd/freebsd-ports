@@ -1,11 +1,11 @@
---- src/nvimage/ImageIO.cpp.orig	2010-05-14 19:59:28.000000000 +0200
-+++ src/nvimage/ImageIO.cpp	2012-05-06 20:50:40.000000000 +0200
-@@ -599,6 +599,8 @@
- 
- #if defined(HAVE_PNG)
- 
-+#include "pngpriv.h"
-+
- static void user_read_data(png_structp png_ptr, png_bytep data, png_size_t length)
+--- src/nvimage/ImageIO.cpp.orig	2010-05-14 17:59:28 UTC
++++ src/nvimage/ImageIO.cpp
+@@ -603,7 +603,7 @@ static void user_read_data(png_structp p
  {
  	nvDebugCheck(png_ptr != NULL);
+ 	
+-	Stream * s = (Stream *)png_ptr->io_ptr;
++	Stream * s = (Stream *)png_get_io_ptr(png_ptr);
+ 	s->serialize(data, (int)length);
+ 	
+ 	if (s->isError()) {
