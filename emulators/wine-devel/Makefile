@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.32
-PORTREVISION=	1
+DISTVERSION=	1.7.33
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -29,8 +28,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
+		--without-gettextpo \
 		--without-gphoto --without-gsm --without-gstreamer \
-		--without-opencl --with-oss --without-sane --without-tiff \
+		--without-opencl \
+		--without-osmesa \
+		--with-oss \
+		--without-sane \
+		--without-tiff \
 		--with-xcomposite --without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
@@ -39,7 +43,8 @@ USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
 USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:bzip2
-SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
+SHEBANG_FILES=	tools/make_requests tools/winemaker \
+		tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -88,7 +93,7 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x cms fontconfig glu jpeg opengl png xinput2 xrandr freetype
-X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -103,9 +108,12 @@ PORTDATA=	l_intl.nls wine.inf
 MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
-USE_AUTOTOOLS=	autoconf
+
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git
+
+CONFIGURE_ARGS+=--without-pulse
+USE_AUTOTOOLS=	autoconf
 
 pre-configure:
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
