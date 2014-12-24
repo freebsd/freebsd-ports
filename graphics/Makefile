@@ -792,7 +792,6 @@
     SUBDIR += poppler-qt4
     SUBDIR += poppler-qt5
     SUBDIR += poppler-utils
-    SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += povray-meta
     SUBDIR += povray36
