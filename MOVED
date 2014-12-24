@@ -139,7 +139,6 @@ x11-wm/yawm||2008-04-30|Has expired: project no longer exists
 x11-wm/uwm||2008-04-30|Has expired: Version branch long since retired
 arabic/katoob||2008-04-30|Removed on maintainers request due to inactivity of project
 security/drupal4-ldap_integration||2008-04-30|Removed due to being broken and clearly not used
-www/neon|www/neon26|2008-05-05|Moved to be able to integrate www/neon26
 ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current infrastructure
 devel/swigruby||2008-05-11|Has expired: use devel/swig13 instead, last release was 8 years ago
 japanese/epson-ttfonts||2008-05-12|Removed because of extremely restrictive license
@@ -7223,7 +7222,6 @@ deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
-sysutils/firstboot-growfs||2014-11-23|Part of the base system
 graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
 net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
