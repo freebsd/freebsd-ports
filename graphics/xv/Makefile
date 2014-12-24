@@ -20,7 +20,7 @@ COMMENT?=	X11 program that displays images of various formats
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjasper.so:${PORTSDIR}/graphics/jasper
 
 USES=		imake
