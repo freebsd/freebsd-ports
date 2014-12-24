@@ -19,8 +19,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 USES=		alias cmake
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
-CXXFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
