@@ -13,7 +13,7 @@ COMMENT=	Shufflepuck Cafe Clone
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
