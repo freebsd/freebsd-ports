@@ -29,6 +29,7 @@ USES=		gmake libtool ncurses pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
+EXTRA_PATCHES=	${FILESDIR}/extra-libpng15:-p1
 
 DIRECTFB_SHLIB=	5.0.8	# LT_BINARY.LT_AGE.LT_REVISION
 DIRECTFB_BIN=	5	# LT_BINARY
