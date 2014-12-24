@@ -63,4 +63,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--without-libintl-prefix
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's,27 28 29,& 30,' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
