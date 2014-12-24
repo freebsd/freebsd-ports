@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	0.9.25
-PORTREVISION=	2
+PORTVERSION=	0.9.41
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://dl.google.com/dl/cloudsdk/release/
-DISTNAME=	google-cloud-sdk-coretools-linux-x86_64
+MASTER_SITES=	https://dl.google.com/dl/cloudsdk/release/packages/
+DISTNAME=	google-cloud-sdk-coretools-linux-static-20141219112406
+
+# new releases listed in https://dl.google.com/dl/cloudsdk/release/sha1.txt
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google Cloud SDK for Google Cloud Platform
@@ -16,6 +18,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+post-extract:
+	-@${RM} ${WRKSRC}/platform/gcutil/lib/iso8601/iso8601/.*
 
 do-install:
 	${FIND} ${WRKSRC}/help -type f -name '*.1' -exec ${GZIP_CMD} {} +
