@@ -2,24 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	gif2png
-PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTVERSION=	2.5.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Converts GIF images to a PNG format
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		python:run
 GNU_CONFIGURE=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 PLIST_FILES=	bin/${PORTNAME} bin/web2png \
 		man/man1/gif2png.1.gz \
 		man/man1/web2png.1.gz
-
-CPPFLAGS+=	`libpng-config --I_opts`
-LDFLAGS+=	`libpng-config --L_opts`
 
 .include <bsd.port.mk>
