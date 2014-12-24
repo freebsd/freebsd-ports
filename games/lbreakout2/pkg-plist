@@ -324,13 +324,3 @@ share/applications/lbreakout2.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/lbreakout2.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lbreakout2.mo
 share/pixmaps/lbreakout48.gif
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/gui_theme
-@dirrm %%DATADIR%%/gfx/Oz
-@dirrm %%DATADIR%%/gfx/Moiree
-@dirrm %%DATADIR%%/gfx/Classic
-@dirrm %%DATADIR%%/gfx/AbsoluteB
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
