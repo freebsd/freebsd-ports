@@ -12,11 +12,10 @@ COMMENT=	Application launcher for Blackbox-like window manager
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 PORTDOCS=	README
 
 PLIST_FILES=	bin/bbdock
