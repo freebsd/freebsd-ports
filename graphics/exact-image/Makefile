@@ -16,7 +16,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:
-CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include
 USES=		gmake perl5 pkgconfig python tar:bzip2
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
