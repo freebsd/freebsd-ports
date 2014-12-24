@@ -1,0 +1,16 @@
+--- wml_aux/freetable/freetable.src.orig	2005-12-01 18:22:53.000000000 +0000
++++ wml_aux/freetable/freetable.src	2014-12-21 18:34:46.356094513 +0000
+@@ -219,6 +219,7 @@
+ 
+ ##EOF##
+ 
++=encoding Latin-1
+ =head1 NAME
+ 
+ freetable - tool for making HTML tables generation easier
+@@ -386,5 +387,4 @@
+ =head1 AUTHOR
+ 
+ Tomasz Wêgrzanowski <maniek@beer.com>
+-
+ =cut
