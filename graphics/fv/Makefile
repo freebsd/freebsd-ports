@@ -13,15 +13,15 @@ COMMENT=	Viewer of hdr/pfm images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake pkgconfig zip
 USE_GL=		glut
 ALL_TARGET=	${PORTNAME}
 
-CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
+CXXFLAGS+=	$$(pkg-config --cflags libpng) \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	$$(pkg-config --libs libpng15) \
+LDFLAGS+=	$$(pkg-config --libs libpng) \
 		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm -lz -llzma \
 		${PTHREAD_LIBS}
 
