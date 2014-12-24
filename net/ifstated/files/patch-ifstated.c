@@ -1,5 +1,5 @@
---- ifstated.c.orig	2011-07-03 23:34:14.000000000 -0500
-+++ ifstated.c	2012-03-23 14:32:56.412119431 -0500
+--- ifstated.c.orig	2011-07-04 12:34:14.000000000 +0800
++++ ifstated.c	2014-12-05 15:10:34.000000000 +0800
 @@ -26,9 +26,11 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
@@ -104,7 +104,16 @@
  	event_set(&rt_msg_ev, rt_fd, EV_READ|EV_PERSIST, rt_msg_handler, NULL);
  	event_add(&rt_msg_ev, NULL);
  
-@@ -403,6 +424,7 @@
+@@ -396,13 +417,15 @@
+ 					waitpid(external->pid, &s, 0);
+ 					external->pid = 0;
+ 				}
+-				evtimer_del(&external->ev);
++				if (event_initialized(&external->ev))
++					evtimer_del(&external->ev);
+ 			}
+ 			break;
+ 		}
  	}
  }
  
@@ -112,7 +121,17 @@
  #define	LINK_STATE_IS_DOWN(_s)		(!LINK_STATE_IS_UP((_s)))
  
  int
-@@ -580,6 +602,44 @@
+@@ -534,7 +557,8 @@
+ 	if (conf->nextstate != NULL && conf->curstate != conf->nextstate) {
+ 		log_info("changing state to %s", conf->nextstate->name);
+ 		if (conf->curstate != NULL) {
+-			evtimer_del(&conf->curstate->ev);
++			if (event_initialized (&conf->curstate->ev))
++				evtimer_del(&conf->curstate->ev);
+ 			external_evtimer_setup(conf->curstate,
+ 			    IFSD_EVTIMER_DEL);
+ 		}
+@@ -580,6 +604,44 @@
  	}
  }
  
@@ -157,7 +176,7 @@
  /*
   * Fetch the current link states.
   */
-@@ -589,26 +649,31 @@
+@@ -589,26 +651,31 @@
  	struct ifaddrs *ifap, *ifa;
  	char *oname = NULL;
  	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -197,7 +216,7 @@
  	}
  	freeifaddrs(ifap);
  	close(sock);
-@@ -703,3 +768,13 @@
+@@ -703,3 +770,13 @@
  	}
  	free(expression);
  }
