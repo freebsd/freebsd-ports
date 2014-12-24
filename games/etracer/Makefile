@@ -11,7 +11,7 @@ DISTNAME=		extremetuxracer-${PORTVERSION}
 MAINTAINER=		peter_dunning@dsl.pipex.com
 COMMENT=		The latest and greatest fork of the classic Tux Racer
 
-LIB_DEPENDS=		libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=		libpng.so:${PORTSDIR}/graphics/png \
 			libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_SDL=		mixer sdl
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=		--with-tcl="${TCL_LIBDIR}" \
 			--with-gl-inc="${LOCALBASE}/include"
 
 post-patch:
-	${REINPLACE_CMD} -e 's|libpng12|libpng15|g' \
+	${REINPLACE_CMD} -e 's|libpng12|libpng|g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|int_p_NULL|NULL|g' \
 		-e 's|png_infopp_NULL|NULL|g' \
