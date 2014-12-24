@@ -12,7 +12,7 @@ MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 MAINTAINER=	kbrandt@sdf-eu.org
 COMMENT=	Tetris like game with multiplayer support
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tar:bzip2
 USE_SDL=	sdl
@@ -20,7 +20,7 @@ USE_XORG=	x11 xau xdmcp
 USE_AUTOTOOLS=	autoconf autoheader
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} \
