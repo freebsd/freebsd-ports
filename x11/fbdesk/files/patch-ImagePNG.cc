@@ -1,23 +1,27 @@
---- src/FbTk/ImagePNG.cc.orig	2004-09-20 16:04:11.000000000 +0200
-+++ src/FbTk/ImagePNG.cc	2012-05-06 09:59:07.000000000 +0200
+$NetBSD: patch-ac,v 1.2 2013/02/26 10:19:28 joerg Exp $
+
+Fix build with png-1.5.
+
+--- src/FbTk/ImagePNG.cc.orig	2004-09-20 14:04:11.000000000 +0000
++++ src/FbTk/ImagePNG.cc
 @@ -28,6 +28,7 @@
  #include "PixmapWithMask.hh"
  
  #include <png.h>
-+#include <pngpriv.h>
++#include <cstring>
  #include <cstdio>
  #include <iostream>
  using namespace std;
-@@ -88,7 +89,7 @@
-     // check header
-     unsigned char tag[4];
-     fread(tag, 1, 4, fp);
--    if (!png_check_sig(tag, 4)) {
-+    if (png_sig_cmp(tag, 0, 4)) {
-         fclose(fp);
+@@ -76,6 +77,8 @@ ImagePNG::~ImagePNG() {
+ }
+ 
+ PixmapWithMask *ImagePNG::load(const std::string &filename, int screen_num) const {
++    int pixel_depth;
++    int rowbytes;
+     if (filename.empty())
          return 0;
-     }
-@@ -102,7 +103,7 @@
+ #ifdef DEBUG
+@@ -102,7 +105,7 @@ PixmapWithMask *ImagePNG::load(const std
          return 0;
      }
  
@@ -26,3 +30,124 @@
          fclose(fp);
          return 0;
      }
+@@ -115,12 +118,14 @@ PixmapWithMask *ImagePNG::load(const std
+     png_get_IHDR(png.png(), png.info(), &w, &h,
+                  &bit_depth, &color_type,
+                  &interlace_type, 0, 0);
++    pixel_depth = bit_depth * png_get_channels(png.png(), png.info());
++    rowbytes = png_get_rowbytes(png.png(), png.info());
+ #ifdef DEBUG    
+-    cerr<<png.info()->width<<", "<<png.info()->height<<endl;
+-    cerr<<"bit_depth = "<<(int)png.info()->bit_depth<<endl;
+-    cerr<<"bytes per pixel = "<<((int)png.info()->bit_depth>>3)<<endl;
+-    cerr<<"pixel depth = "<<(int)png.info()->pixel_depth<<endl;
+-    cerr<<"rowbytes = "<<png.info()->rowbytes<<endl;
++    cerr<<png_get_image_width(png.png(), png.info())<<", "<<png_get_image_height(png.png(), png.info())<<endl;
++    cerr<<"bit_depth = "<<(int)png_get_bit_depth(png.png(),png.info())<<endl;
++    cerr<<"bytes per pixel = "<<((int)png_get_bit_depth(png.png(), png.info())>>3)<<endl;
++    cerr<<"pixel depth = "<<pixel_depth<<endl;
++    cerr<<"rowbytes = "<<rowbytes<<endl;
+     cerr<<"Color type = ";
+     switch (color_type) {
+     case PNG_COLOR_TYPE_GRAY:
+@@ -146,7 +151,7 @@ PixmapWithMask *ImagePNG::load(const std
+     // convert to rgb
+     if (color_type == PNG_COLOR_TYPE_PALETTE && bit_depth <= 8) {
+         png_set_expand(png.png());
+-        png.info()->pixel_depth = 8;
++        pixel_depth = 8;
+     }
+     // convert to rgb
+     if (color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8) {
+@@ -158,7 +163,7 @@ PixmapWithMask *ImagePNG::load(const std
+     if (color_type == PNG_COLOR_TYPE_GRAY ||
+         color_type == PNG_COLOR_TYPE_GRAY_ALPHA) {
+         png_set_gray_to_rgb(png.png());
+-        png.info()->pixel_depth = 8;
++        pixel_depth = 8;
+         color_type = PNG_COLOR_TYPE_RGB;
+     }
+ 
+@@ -170,23 +175,23 @@ PixmapWithMask *ImagePNG::load(const std
+     // expand to 4 bytes
+     if (bit_depth == 8 && color_type == PNG_COLOR_TYPE_RGB) {
+         png_set_filler(png.png(), 0, PNG_FILLER_AFTER);
+-        png.info()->rowbytes = png.info()->width * 4;
+-        png.info()->pixel_depth = 32;
++        rowbytes = png_get_image_width(png.png(), png.info()) * 4;
++        pixel_depth = 32;
+     }
+     
+-    if (png.info()->pixel_depth == 4 ||
+-        png.info()->pixel_depth == 8)
++    if (pixel_depth == 4 ||
++        pixel_depth == 8)
+         return 0;
+ 
+     // create memory to hold rows
+-    png_bytep *row_pointers = new (nothrow) png_bytep[png.info()->height];
++    png_bytep *row_pointers = new (nothrow) png_bytep[png_get_image_height(png.png(), png.info())];
+     if (row_pointers == 0) {
+         fclose(fp);
+         return 0;
+     }
+ 
+-    for (unsigned int row = 0; row < png.info()->height; ++row) {
+-        row_pointers[row] = new png_byte[png.info()->rowbytes];
++    for (unsigned int row = 0; row < png_get_image_height(png.png(), png.info()); ++row) {
++        row_pointers[row] = new png_byte[rowbytes];
+     }
+ 
+     // get transparent pixel
+@@ -214,31 +219,31 @@ PixmapWithMask *ImagePNG::load(const std
+     fclose(fp);
+ 
+     // clear linear memory
+-    char *data = new char[png.info()->rowbytes * png.info()->height];
+-    for (int offset=0, y = 0; y < png.info()->height; y++) {
+-        for (int x = 0; x < png.info()->rowbytes; x++, offset++) {
++    char *data = new char[rowbytes * png_get_image_height(png.png(), png.info())];
++    for (int offset=0, y = 0; y < png_get_image_height(png.png(), png.info()); y++) {
++        for (int x = 0; x < rowbytes; x++, offset++) {
+             data[offset] = row_pointers[y][x];
+         }
+     }
+ 
+-    FbTk::Surface *srf = new (nothrow) FbTk::Surface(png.info()->width, png.info()->height,
+-                                                     png.info()->pixel_depth);
++    FbTk::Surface *srf = new (nothrow) FbTk::Surface(png_get_image_width(png.png(), png.info()), png_get_image_height(png.png(), png.info()),
++                                                     pixel_depth);
+ 
+     if (srf == 0)
+         return 0;
+ 
+ 
+     // finaly copy data to surface
+-    switch (png.info()->pixel_depth) {
++    switch (pixel_depth) {
+     case 16:
+         convert16to32(data, *srf);
+         break;
+     case 24:
+     case 32:
+-        memcpy(srf->data(), data, png.info()->height * png.info()->rowbytes);
++        memcpy(srf->data(), data, png_get_image_height(png.png(), png.info()) * rowbytes);
+         break;
+     default:
+-        cerr<<"ImagePNG: Can't convert from "<<(int)png.info()->pixel_depth<<" to 32bpp."<<endl;
++        cerr<<"ImagePNG: Can't convert from "<<pixel_depth<<" to 32bpp."<<endl;
+         break;
+     }
+     
+@@ -264,9 +269,9 @@ PixmapWithMask *ImagePNG::load(const std
+         long i = 0x44332211;
+         unsigned char* a = (unsigned char*) &i;
+         bool big_endian = (*a != 0x11);
+-        int alphacolor = ((png.info()->channels != 4) ? 0xFF000000 : 0);
++        int alphacolor = ((png_get_channels(png.png(), png.info()) != 4) ? 0xFF000000 : 0);
+         if (big_endian) {
+-            int shift = ((png.info()->channels == 4) ? 0 : 8);
++            int shift = ((png_get_channels(png.png(), png.info()) == 4) ? 0 : 8);
+             alphacolor = (0xFF >> shift);    
+         }
+         screen_surf.setColorKey(alphacolor, true);
