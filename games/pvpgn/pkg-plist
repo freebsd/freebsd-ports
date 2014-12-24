@@ -115,3 +115,16 @@ sbin/bntrackd
 %%DATADIR%%/files/tos_RUS.txt
 %%DATADIR%%/files/tos_SIN.txt
 %%DATADIR%%/files/tos_USA.txt
+@dir %%DATADIR%%/userscdb
+@dir %%DATADIR%%/users
+@dir %%DATADIR%%/teams
+@dir %%DATADIR%%/status
+@dir %%DATADIR%%/reports
+@dir %%DATADIR%%/ladders
+@dir %%DATADIR%%/clans
+@dir %%DATADIR%%/charsave
+@dir %%DATADIR%%/charinfo
+@dir %%DATADIR%%/chanlogs
+@dir %%DATADIR%%/bnmail
+@dir %%DATADIR%%/bak/charsave
+@dir %%DATADIR%%/bak/charinfo
