@@ -2,7 +2,7 @@
 
 PORTNAME=	libmusicbrainz
 PORTVERSION=	3.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		http://ftp.osuosl.org/pub/musicbrainz/
@@ -14,7 +14,7 @@ COMMENT=	MusicBrainz client library for audio metadata lookup
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
-		libneon.so:${PORTSDIR}/www/neon29
+		libneon.so:${PORTSDIR}/www/neon
 
 USES=		cmake
 USE_LDCONFIG=	yes

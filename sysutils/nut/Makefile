@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -105,7 +105,7 @@ PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon
 CONFIGURE_ARGS+=	--with-neonxml
 PLIST_SUB+=	NUT_NEON=""
 .else

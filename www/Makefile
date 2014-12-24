@@ -527,7 +527,7 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
-    SUBDIR += neon29
+    SUBDIR += neon
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff

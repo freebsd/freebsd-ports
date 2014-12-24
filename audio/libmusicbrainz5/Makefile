@@ -2,6 +2,7 @@
 
 PORTNAME=	libmusicbrainz
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
 PKGNAMESUFFIX=	5
@@ -11,7 +12,7 @@ COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 USES=		cmake
 USE_LDCONFIG=	yes
