@@ -16,6 +16,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no
+INSTALL_TARGET=	install-strip
 
 INFO=		commoncpp2
 
