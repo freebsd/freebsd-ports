@@ -157,6 +157,7 @@
     SUBDIR += gogoc
     SUBDIR += google-cloud-sdk
     SUBDIR += google-daemon
+    SUBDIR += google-startup-scripts
     SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
