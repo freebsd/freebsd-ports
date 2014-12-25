@@ -3,7 +3,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.103
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 

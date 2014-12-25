@@ -287,6 +287,10 @@ USES+=		pgsql
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
+.if ${PHP_MODNAME} == "pear"
+CONFIGURE_ARGS+=--with-pear
+.endif
+
 .if ${PHP_MODNAME} == "phar"
 CONFIGURE_ARGS+=--enable-phar \
 		--with-pcre-dir=${LOCALBASE}

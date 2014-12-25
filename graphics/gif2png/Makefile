@@ -3,6 +3,7 @@
 
 PORTNAME=	gif2png
 PORTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 

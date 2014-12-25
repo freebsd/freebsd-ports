@@ -3,7 +3,7 @@
 
 PORTNAME=	flam3
 PORTVERSION=	2.7.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://flam3.com/ \
 		http://interwebfun.org/distfiles/

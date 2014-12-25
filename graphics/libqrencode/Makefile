@@ -3,6 +3,7 @@
 
 PORTNAME=	libqrencode
 PORTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://fukuchi.org/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}

@@ -2,6 +2,7 @@
 
 PORTNAME=	web2c
 PORTVERSION=	20140525
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-

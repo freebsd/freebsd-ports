@@ -3,7 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20140317
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-

@@ -3,7 +3,7 @@
 
 PORTNAME=	xglk
 PORTVERSION=	411
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/glk/implementations/
 DISTNAME=	${PORTNAME}-0${PORTVERSION}
