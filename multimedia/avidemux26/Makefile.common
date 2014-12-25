@@ -97,7 +97,7 @@ USE_GNOME+=	libxslt
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gnomeprefix gnomehack gtk30
+USE_GNOME+=	gnomeprefix gtk30
 PLIST_SUB+=	GTK=""
 .else
 CMAKE_ARGS+=	-DGTK:BOOL=OFF
