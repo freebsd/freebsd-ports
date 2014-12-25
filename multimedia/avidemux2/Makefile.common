@@ -82,7 +82,7 @@ USE_GNOME+=	libxslt desktopfileutils
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gnomeprefix gnomehack gtk20
+USE_GNOME+=	gnomeprefix gtk20
 PLIST_SUB+=	GTK=""
 .else
 CMAKE_ARGS+=	-DGTK:BOOL=OFF
