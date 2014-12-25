@@ -1064,6 +1064,7 @@
     SUBDIR += rubygem-rye
     SUBDIR += rubygem-simple_oauth
     SUBDIR += rubygem-stompserver
+    SUBDIR += rubygem-t
     SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
