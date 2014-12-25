@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
 USE_RC_SUBR=	google-startup
-WRKSRC_SUBDIR=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/${PORTNAME}
 
 SHEBANG_FILES= usr/share/google/fetch_script \
 		usr/share/google/first-boot \
