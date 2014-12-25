@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 USES=		gettext gmake pkgconfig python tar:bzip2
 USE_XORG=	xscrnsaver
-USE_GNOME=	gnomeprefix intlhack gnomehack pygnomedesktop \
+USE_GNOME=	gnomeprefix intlhack pygnomedesktop \
 		gnomecontrolcenter2 gnomedocutils
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
