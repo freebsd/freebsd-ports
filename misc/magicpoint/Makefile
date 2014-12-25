@@ -42,7 +42,7 @@ EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 
-OPTIONS_DEFINE=	FREETYPE XFT GIF IMLIB DOCS
+OPTIONS_DEFINE=	FREETYPE XFT GIF DOCS
 OPTIONS_DEFAULT=FREETYPE XFT GIF
 NO_OPTIONS_SORT=yes
 
@@ -55,8 +55,6 @@ XFT_CONFIGURE_ON=	--enable-freetype-charset16
 GIF_CONFIGURE_ENABLE=	gif
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CPPFLAGS=		-I${LOCALBASE}/include
-IMLIB_USE=	GNOME=imlib
-IMLIB_CONFIGURE_ENABLE=	imlib
 
 .include <bsd.port.options.mk>
 
