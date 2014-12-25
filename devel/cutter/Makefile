@@ -17,7 +17,7 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	intltool glib20 gtk20
+USE_GNOME=	intlhack glib20 gtk20
 USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes
 INSTALL_TARGET=	install-strip
