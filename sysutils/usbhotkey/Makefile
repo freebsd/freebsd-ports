@@ -3,7 +3,7 @@
 
 PORTNAME=	usbhotkey
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -25,11 +25,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lX11
 
-OPTIONS_DEFINE=	GUI
-OPTIONS_DEFAULT=	GUI
-GUI_DESC=	Enable GUI bits (via Imlib)
-
-GUI_LIB_DEPENDS=	libImlib.so:${PORTSDIR}/graphics/imlib
-GUI_CONFIGURE_OFF=	--without-Imlib
+CONFIGURE_ARGS=	--without-Imlib
 
 .include <bsd.port.mk>
