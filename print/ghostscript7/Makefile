@@ -21,6 +21,8 @@ COMMENT=	Ghostscript 7.x PostScript interpreter
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not support modern png
+
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
@@ -46,8 +48,7 @@ MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}"
 CPPFLAGS+=	-fPIC -DUPD_SIGNAL=0 -I. -I${WRKSRC}/gimp-print		\
-		-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include	\
-		-I${LOCALBASE}/include/libpng15
+		-I${LOCALBASE}/include
 LDFLAGS+=	${XLDFLAGS}
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	-L${LOCALBASE}/lib -L${WRKSRC}/gimp-print ${PTHREAD_LIBS}
