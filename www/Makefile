@@ -2139,6 +2139,7 @@
     SUBDIR += webkit-qt4
     SUBDIR += webkit-qt5
     SUBDIR += webkit-sharp
+    SUBDIR += webkit2-gtk3
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webmachine
