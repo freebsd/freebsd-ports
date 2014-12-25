@@ -1,6 +1,96 @@
---- configure.orig	2011-02-22 23:46:15.000000000 +0100
-+++ configure	2011-04-11 01:48:37.781008487 +0200
-@@ -21458,8 +21458,8 @@
+--- configure.orig	2013-05-22 23:45:35 UTC
++++ configure
+@@ -5171,7 +5171,7 @@ fi
+ 
+ # Either a space-separated list of allowable Neon versions, or "any" to
+ # mean allow anything.
+-NEON_ALLOWED_LIST="0\.25 0\.26 0\.27\.2 0\.28 0\.29"
++NEON_ALLOWED_LIST="0\.25 0\.26 0\.27\.2 0\.28 0\.29 0\.30"
+ NEON_RECOMMENDED_VER="0.29.0"
+ NEON_URL="http://www.webdav.org/neon/neon-${NEON_RECOMMENDED_VER}.tar.gz"
+ # Check whether --enable-neon-version-check was given.
+@@ -5219,7 +5219,7 @@ $as_echo_n "checking neon library versio
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $NEON_VERSION" >&5
+ $as_echo "$NEON_VERSION" >&6; }
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[6-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_26 1
+@@ -5227,7 +5227,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[7-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_27 1
+@@ -5235,7 +5235,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[8-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_28 1
+@@ -5376,7 +5376,7 @@ $as_echo_n "checking neon library versio
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $NEON_VERSION" >&5
+ $as_echo "$NEON_VERSION" >&6; }
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[6-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_26 1
+@@ -5384,7 +5384,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[7-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_27 1
+@@ -5392,7 +5392,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[8-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_28 1
+@@ -5645,7 +5645,7 @@ $as_echo_n "checking neon library versio
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $NEON_VERSION" >&5
+ $as_echo "$NEON_VERSION" >&6; }
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[6-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_26 1
+@@ -5653,7 +5653,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[7-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_27 1
+@@ -5661,7 +5661,7 @@ _ACEOF
+ 
+       fi
+ 
+-      if test -n "`echo "$NEON_VERSION" | grep '^0\.2[8-9]\.'`" ; then
++      if test -n "`echo "$NEON_VERSION" | $EGREP '^0\.(2[6-9]|3[0-9])\.'`" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define SVN_NEON_0_28 1
+@@ -21453,8 +21453,8 @@ if test "${with_berkeley_db+set}" = set;
        fi
  
        if test "$withval" = "yes"; then
@@ -11,7 +101,7 @@
                          while the fs component is required.  Reinstall
                          APR-UTIL with the appropiate options." "$LINENO" 5
          fi
-@@ -21467,7 +21467,7 @@
+@@ -21462,7 +21462,7 @@ if test "${with_berkeley_db+set}" = set;
          status=required
  
        elif test "$apu_found" != "reconfig"; then
@@ -20,7 +110,7 @@
            as_fn_error "APR-UTIL was installed independently, it won't be
                          possible to use the specified Berkeley DB: $withval" "$LINENO" 5
          fi
-@@ -21513,7 +21513,7 @@
+@@ -21508,7 +21508,7 @@ $as_echo "$as_me: WARNING: Detected olde
                     whether apr-util is linked against Berkeley DB
                     $db_version" >&2;}
        status=try-link
@@ -29,7 +119,7 @@
        status=skip
      else
        status=try-link
-@@ -22490,10 +22490,10 @@
+@@ -22485,10 +22485,10 @@ $as_echo_n "checking for KWallet... " >&
                    SVN_KWALLET_INCLUDES="$DBUS_CPPFLAGS $qt_include_dirs -I$kde_dir/include"
                    qt_libs_other_options="`$PKG_CONFIG --libs-only-other QtCore QtDBus QtGui`"
                    SVN_KWALLET_LIBS="$DBUS_LIBS -lQtCore -lQtDBus -lQtGui -lkdecore -lkdeui $qt_libs_other_options"
