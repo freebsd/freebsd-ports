@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 CONFLICTS=	fvwm-1.* fvwm-2.*
 
 LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
@@ -41,7 +41,7 @@ WANT_GNOME=	yes
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MMX GLX ATSPI STROKE RPLAY FRIBIDI GLIB GTK2 GCONF \
