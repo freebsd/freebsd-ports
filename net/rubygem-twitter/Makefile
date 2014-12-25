@@ -2,18 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	twitter
-PORTVERSION=	4.8.1
+PORTVERSION=	5.13.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Command line twits and an API wrapper
+COMMENT=	Ruby interface to the Twitter API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-faraday>=0.8:${PORTSDIR}/www/rubygem-faraday \
-		rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-simple_oauth>=0.2:${PORTSDIR}/net/rubygem-simple_oauth
+RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-buftok>=0.2.0:${PORTSDIR}/devel/rubygem-buftok \
+		rubygem-equalizer>=0.0.9:${PORTSDIR}/devel/rubygem-equalizer \
+		rubygem-faraday>=0.9.0:${PORTSDIR}/www/rubygem-faraday \
+		rubygem-http>=0.6.0:${PORTSDIR}/www/rubygem-http \
+		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb \
+		rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json \
+		rubygem-memoizable>=0.4.0:${PORTSDIR}/devel/rubygem-memoizable \
+		rubygem-naught>=1.0:${PORTSDIR}/devel/rubygem-naught \
+		rubygem-simple_oauth>=0.3.0:${PORTSDIR}/net/rubygem-simple_oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
