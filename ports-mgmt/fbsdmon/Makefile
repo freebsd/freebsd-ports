@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fbsdmon
-PORTVERSION=	1.00
-PORTREVISION=	4
+PORTVERSION=	1.01
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	LOCAL/gblach/
 
