@@ -336,15 +336,4 @@ BUILD_DEPENDS+=			${${_module}_BUILD_DEPENDS}
 RUN_DEPENDS+=			${LIB_PC_DEPENDS}
 BUILD_DEPENDS+=			${LIB_PC_DEPENDS}
 
-.if !target(check-latest)
-check-latest:
-	@AVAIL_VER=`fetch -qo - http://xorg.freedesktop.org/releases/individual/${XORG_CAT}/ | sed -ne 's/.*${PORTNAME}-\(.*\).tar.bz2\".*/\1/p'` && \
-		${ECHO_CMD} "Available versions for ${PORTNAME} are: $${AVAIL_VER}." && \
-		for ver in $${AVAIL_VER}; do \
-			if [ `pkg_version -t $$ver ${PORTVERSION}` = ">" ]; then \
-				${ECHO_CMD} "${PORTNAME} $$ver is newer than current version."; \
-			fi; \
-		done
-.endif
-
 .endif
