@@ -3,7 +3,7 @@
 
 PORTNAME=	doomsday
 PORTVERSION=	1.14.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
@@ -13,8 +13,7 @@ COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GL=		gl glu
@@ -24,7 +23,6 @@ USE_XORG=	x11
 USES=		pkgconfig python:build qmake:outsource
 USE_QT4=	corelib network opengl moc_build
 QMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 QMAKE_ARGS+=	QMAKE_LFLAGS+="-Wl,--export-dynamic" \
 		CONFIG+="deng_notools deng_nosnowberry" \
 		SCRIPT_PYTHON=${PYTHON_CMD}
