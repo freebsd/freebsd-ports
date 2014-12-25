@@ -4,7 +4,7 @@
  #ifdef USE_PNG
  READPNGS=readpng.c
  READPNGO=readpng.o
-+DEPEND_DEFINES=-I${LOCALBASE}/include/libpng DependDefines
++DEPEND_DEFINES=-I${LOCALBASE}/include DependDefines
  #endif
  
  #ifdef USE_XPM
