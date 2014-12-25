@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoip
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	net www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
