@@ -7335,3 +7335,4 @@ graphics/libpano12|graphics/libpano13|2014-12-25|No proper support for modern pn
 games/hex||2014-12-25|Abandonware, no support for moden graphics libraries
 graphics/bbrb||2014-12-25|Abandonware, depends on imlib
 graphics/gtkgraph||2014-12-25|Abandonware, depends on imlib
+graphics/imagesort||2014-12-25|Abandonware, depends on imlib

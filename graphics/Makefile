@@ -352,7 +352,6 @@
     SUBDIR += iiview
     SUBDIR += ilmbase
     SUBDIR += imageindex
-    SUBDIR += imagesort
     SUBDIR += imageviewer
     SUBDIR += imageworsener
     SUBDIR += imc
