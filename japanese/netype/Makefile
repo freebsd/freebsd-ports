@@ -16,6 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	Network Type Trainer client program
 
+BROKEN=		depends on imlib
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

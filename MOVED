@@ -7343,3 +7343,4 @@ japanese/xjtext||2014-12-25|Abandonware, depends on imlib
 x11/peeper||2014-12-25|Abandonware, depends on imlib
 x11-toolkits/fpc-gnome1||2014-12-25|Depends on imlib
 graphics/fpc-imlib||2014-12-25|Depends on imlib
+graphics/imlib||2014-12-25|Does not handle modern graphics libraries

@@ -356,7 +356,6 @@
     SUBDIR += imc
     SUBDIR += imgtops
     SUBDIR += imgv
-    SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
     SUBDIR += import-pictures
