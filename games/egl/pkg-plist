@@ -3,5 +3,3 @@
 %%LIBDIR%%/baseq2/egl.pkz
 %%CLIENT%%%%LIBDIR%%/baseq2/eglcgame.so
 %%LIBDIR%%/baseq2/game.so
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%
