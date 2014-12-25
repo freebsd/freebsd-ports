@@ -7330,3 +7330,4 @@ www/drupal7-vulnscan||2014-12-20|Removed per author's request; unmaintained
 www/neon29|www/neon|2014-12-24|Rename to reflect upstream
 graphics/pornview||2014-12-24|No more upstream, no more public distfile, no proper support for modern png
 misc/gnomehier||2014-12-25|Not needed anymore
+graphics/corona||2014-12-25|Abandonware, no proper support for modern png
