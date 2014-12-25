@@ -8,8 +8,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 RUN_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 
-USES+=		cmake gmake pkgconfig
-USE_GNOME=	atk desktopfileutils gdkpixbuf2 glib20 gtk20 pango
+USES+=		cmake gmake pkgconfig desktop-file-utils
+USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
