@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		tar:bzip2 gmake cpe
+USES=		tar:bzip2 gmake cpe compiler
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
@@ -54,8 +54,10 @@ CONFIGURE_ARGS+=--without-localdirs \
 		--with-liblua=included \
 		--without-nmap-update
 
+.include <bsd.port.pre.mk>
+
 # fix for gcc from ports
-.if ${CC} != "cc" && ${CC} !="clang" && !${CC:M*ccache/cc}
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 GCCLIBDIR_CMDS=	${CC} -print-file-name=libstdc++.so | ${SED} -e 's/libstdc++.so//'
 CONFIGURE_ARGS+=LDFLAGS="-L$$(${GCCLIBDIR_CMDS})"
 NOT_BASE_CC=	true
@@ -81,4 +83,4 @@ post-install:
 	@${ECHO_MSG} do not forget to adjust libnmap.conf
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
