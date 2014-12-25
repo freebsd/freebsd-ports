@@ -3,8 +3,7 @@
 
 PORTNAME=	pioneers
 PORTVERSION=	15.1
-#PORTREVISION=	0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source/
 
@@ -16,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 USES=		gettext gmake
-USE_GNOME=	gnomehack gnomeprefix gtk20 libgnome librsvg2
+USE_GNOME=	gnomeprefix gtk20 libgnome librsvg2
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes

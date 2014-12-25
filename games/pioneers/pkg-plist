@@ -174,6 +174,7 @@ share/pixmaps/pioneers/grain.png
 share/pixmaps/pioneers/lumber.png
 share/pixmaps/pioneers/ore.png
 share/pixmaps/pioneers/pioneers.ico
+share/pixmaps/pioneers/pioneers.rc
 share/pixmaps/pioneers/road.svg
 share/pixmaps/pioneers/settlement.svg
 share/pixmaps/pioneers/ship.svg
@@ -191,6 +192,7 @@ share/pixmaps/pioneers/style-human.png
 share/pixmaps/pioneers/trade.svg
 share/pixmaps/pioneers/wool.png
 share/locale/af/LC_MESSAGES/pioneers.mo
+share/locale/ca/LC_MESSAGES/pioneers.mo
 share/locale/cs/LC_MESSAGES/pioneers.mo
 share/locale/da/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
@@ -204,17 +206,3 @@ share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
-@dirrm share/games/pioneers/themes/Classic
-@dirrm share/games/pioneers/themes/FreeCIV-like
-@dirrm share/games/pioneers/themes/Iceland
-@dirrm share/games/pioneers/themes/Tiny
-@dirrm share/games/pioneers/themes/Wesnoth-like
-@dirrm share/games/pioneers/themes/ccFlickr
-@dirrm share/games/pioneers/themes
-@dirrm share/games/pioneers
-@dirrmtry share/games
-@dirrm share/gnome/help/pioneers/C/images
-@dirrm share/gnome/help/pioneers/C
-@dirrm share/gnome/help/pioneers
-@dirrm share/omf/pioneers
-@dirrm share/pixmaps/pioneers
