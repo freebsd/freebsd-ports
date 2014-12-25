@@ -17,7 +17,7 @@ COMMENT=	Automatic 3D finite element mesh generator
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		liblapack.so:${PORTSDIR}/math/lapack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

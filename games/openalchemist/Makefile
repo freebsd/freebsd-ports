@@ -20,7 +20,7 @@ LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	libclanCore.so:${PORTSDIR}/devel/clanlib1 \
 	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-	libpng15.so:${PORTSDIR}/graphics/png
+	libpng.so:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	aclocal automake autoconf
 # Necessary to find pkg.m4 (PKG_CHECK_MODULES)

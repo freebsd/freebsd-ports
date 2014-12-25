@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"

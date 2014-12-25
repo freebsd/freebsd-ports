@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

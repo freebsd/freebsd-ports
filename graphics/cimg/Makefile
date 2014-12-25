@@ -44,7 +44,7 @@ REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
 
 . if !defined(WITH_DEBUG)
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png		\
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png		\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR	\

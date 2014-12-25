@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
 
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libunicode.so:${PORTSDIR}/devel/libunicode
 
 USES=		gettext libtool pathfix pkgconfig tar:bzip2

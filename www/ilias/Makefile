@@ -19,7 +19,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${LOCALBASE}/share/pear/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
 		${LOCALBASE}/share/pear/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 NO_BUILD=		yes
 PLIST=			${WRKDIR}/plist

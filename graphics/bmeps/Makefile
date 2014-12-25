@@ -13,7 +13,7 @@ COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes

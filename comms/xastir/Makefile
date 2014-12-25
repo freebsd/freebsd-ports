@@ -14,7 +14,7 @@ BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake motif

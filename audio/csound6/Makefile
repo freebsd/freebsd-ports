@@ -83,7 +83,7 @@ OSC_DESC=		Build OSC opcodes
 OSC_LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
 OSC_CMAKE_OFF=		-DBUILD_OSC_OPCODES:BOOL=OFF
 PNG_DESC=		Build Image opcodes
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CMAKE_OFF=		-DBUILD_IMAGE_OPCODES:BOOL=OFF
 PORTAUDIO_DESC=		Build PortAudio I/O module
 PORTAUDIO_BUILD_DEPENDS=portaudio2>0:${PORTSDIR}/audio/portaudio2

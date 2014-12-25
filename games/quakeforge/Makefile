@@ -16,7 +16,7 @@ COMMENT=	Cleaned up copy of the GPL'ed Quake 1 source code
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

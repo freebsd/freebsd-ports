@@ -15,7 +15,7 @@ COMMENT=	KDE4 digital photo management application
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		liblensfun.so:${PORTSDIR}/graphics/lensfun \
 		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1 \

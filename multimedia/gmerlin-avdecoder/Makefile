@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=--disable-libpng
 .endif

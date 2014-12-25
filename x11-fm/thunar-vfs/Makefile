@@ -15,7 +15,7 @@ COMMENT=	The virtual filesystem for Thunar
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgamin-1.so:${PORTSDIR}/devel/gamin

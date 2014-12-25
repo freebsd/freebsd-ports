@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 

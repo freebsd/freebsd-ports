@@ -20,7 +20,7 @@ COMMENT=	Interactive, integrated, graphical Scheme programming environment
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi	\
 		libcairo.so:${PORTSDIR}/graphics/cairo	\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg	\
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=yes
 

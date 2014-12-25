@@ -14,7 +14,7 @@ COMMENT=	Window Maker raster graphics library
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp \

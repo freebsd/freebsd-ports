@@ -11,7 +11,7 @@ COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15

@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=--disable-png
 .endif

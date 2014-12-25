@@ -43,7 +43,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libplist.so:${PORTSDIR}/devel/libplist \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		librtmp.so:${PORTSDIR}/multimedia/librtmp \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libshairport.so:${PORTSDIR}/audio/libshairport \

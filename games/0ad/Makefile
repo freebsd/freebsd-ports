@@ -15,7 +15,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libcurl.so:${PORTSDIR}/ftp/curl \

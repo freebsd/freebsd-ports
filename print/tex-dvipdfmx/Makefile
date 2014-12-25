@@ -18,7 +18,7 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libpaper.so:${PORTSDIR}/print/libpaper \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps

@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

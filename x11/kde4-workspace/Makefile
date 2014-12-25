@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdbusmenu-qt.so:${PORTSDIR}/devel/libdbusmenu-qt \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil \
 		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \

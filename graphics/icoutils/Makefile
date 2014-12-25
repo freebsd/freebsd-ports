@@ -11,7 +11,7 @@ COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	extresso/*.in

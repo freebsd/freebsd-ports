@@ -13,7 +13,7 @@ COMMENT=	Tool for encoding data on paper
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/optar_dist

@@ -372,7 +372,7 @@ gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so \
 gst_libmms_DIST=	bad
 
 # libpng and the snapshot plugin
-gst_libpng_LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+gst_libpng_LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 gst_libpng_GST_PLUGIN_DIR=	ext/libpng
 gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
 		${GST_LIB_DIR}/libgstpng.la

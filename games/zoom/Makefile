@@ -11,7 +11,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes

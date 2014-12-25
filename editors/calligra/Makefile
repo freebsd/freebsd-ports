@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graphic art and office suite
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libqca.so:${PORTSDIR}/devel/qca \

@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Parser for SVG content in files or buffers
 
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes

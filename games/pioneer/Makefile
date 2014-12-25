@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:${PORTSDIR}/graphics/libGLU
 LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libassimp.so:${PORTSDIR}/multimedia/assimp
 
 GH_ACCOUNT=	pioneerspacesim

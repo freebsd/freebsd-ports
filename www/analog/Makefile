@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

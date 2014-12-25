@@ -13,7 +13,7 @@ COMMENT=	SlimKit surface modeling tools
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgfx.so:${PORTSDIR}/graphics/libgfx
 

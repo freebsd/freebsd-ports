@@ -19,7 +19,7 @@ LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:${PORTSDIR}/graphics/radius-engine
 LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua51 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libphysfs.so.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

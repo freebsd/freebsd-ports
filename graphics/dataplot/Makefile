@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free software system for statistical visualization
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	DOCS

@@ -12,7 +12,7 @@ COMMENT=	HPGL to vector and raster formats converter and previewer for X11
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC_SUBDIR=	sources

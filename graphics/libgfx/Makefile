@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgzstream.so:${PORTSDIR}/devel/gzstream \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 

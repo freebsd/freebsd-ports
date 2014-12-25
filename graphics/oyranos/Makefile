@@ -14,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:${PORTSDIR}/graphics/
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:${PORTSDIR}/graphics/icc-profiles-basiccolor
 LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libyajl.so:${PORTSDIR}/devel/yajl \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \

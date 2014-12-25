@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	koalative@gmail.com
 COMMENT=	Cross-platform library for games and multimedia programming
 
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		cmake gmake makeinfo pkgconfig

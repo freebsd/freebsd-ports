@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=--disable-mmx \
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--without-libpng

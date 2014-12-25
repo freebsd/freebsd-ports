@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libiulib.so:${PORTSDIR}/graphics/iulib \

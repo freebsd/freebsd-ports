@@ -11,7 +11,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
 LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
 		xv:${PORTSDIR}/graphics/xv \
 		transcode:${PORTSDIR}/multimedia/transcode

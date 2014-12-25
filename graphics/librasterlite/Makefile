@@ -15,7 +15,7 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libtiff.so:${PORTSDIR}/graphics/tiff \

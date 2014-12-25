@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	log69

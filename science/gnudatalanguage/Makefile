@@ -16,7 +16,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
-		libpng15.so:${PORTSDIR}/graphics/png	\
+		libpng.so:${PORTSDIR}/graphics/png	\
 		libps.so:${PORTSDIR}/print/pslib	\
 		libgsl.so:${PORTSDIR}/math/gsl
 

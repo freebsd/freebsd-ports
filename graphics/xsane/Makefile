@@ -13,7 +13,7 @@ COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblcms.so:${PORTSDIR}/graphics/lcms

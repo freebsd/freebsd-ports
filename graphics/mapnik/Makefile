@@ -97,7 +97,7 @@ MAKE_ARGS+=	JPEG=False
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=   libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=   libpng.so:${PORTSDIR}/graphics/png
 .else
 MAKE_ARGS+=	PNG=False
 .endif

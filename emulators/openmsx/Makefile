@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \

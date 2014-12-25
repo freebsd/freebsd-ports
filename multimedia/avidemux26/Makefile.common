@@ -9,7 +9,7 @@ BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
 		libdca.so:${PORTSDIR}/multimedia/libdca \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 

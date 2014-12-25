@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}Src${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	DOCS
 

@@ -75,7 +75,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .if ! ${PORT_OPTIONS:MPNG} || ! ${PORT_OPTIONS:MBACKGROUND}
 CONFIGURE_ARGS+=	--disable-png
 .else
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if ! ${PORT_OPTIONS:MTRANSPARENCY}

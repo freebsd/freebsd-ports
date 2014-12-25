@@ -13,7 +13,7 @@ COMMENT=	Simple library to load images of various formats as SDL surfaces
 LICENSE=	ZLIB
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp
 

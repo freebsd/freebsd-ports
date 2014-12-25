@@ -13,7 +13,7 @@ COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes

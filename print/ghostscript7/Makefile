@@ -22,7 +22,7 @@ COMMENT=	Ghostscript 7.x PostScript interpreter
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL= \

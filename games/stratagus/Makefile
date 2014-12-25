@@ -13,7 +13,7 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS

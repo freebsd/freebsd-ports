@@ -12,7 +12,7 @@ COMMENT=	Free open source 2D MMORPG client for athena and evol servers
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libphysfs.so:${PORTSDIR}/devel/physfs
 

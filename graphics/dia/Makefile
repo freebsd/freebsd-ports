@@ -14,7 +14,7 @@ COMMENT=	Diagram creation program, similar to Visio
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz

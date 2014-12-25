@@ -13,7 +13,7 @@ BUILD_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
 RUN_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libijs.so:${PORTSDIR}/print/libijs \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libqpdf.so:${PORTSDIR}/print/qpdf \

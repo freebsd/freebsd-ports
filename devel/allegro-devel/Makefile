@@ -18,7 +18,7 @@ LICENSE=	ZLIB BSD3CLAUSE
 LICENSE_COMB=	dual
 
 LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libFLAC.so:${PORTSDIR}/audio/flac \

@@ -38,7 +38,7 @@ JPEG_CMAKE_ON=		-DWANT_LIBJPEG:BOOL=TRUE
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 PNG_CMAKE_ON=		-DWANT_PNG:BOOL=TRUE
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 TIFF_CMAKE_ON=		-DWANT_TIFF:BOOL=TRUE
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

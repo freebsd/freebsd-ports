@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \
 		primer3:${PORTSDIR}/biology/primer3
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
 
@@ -40,7 +40,7 @@ DOCS_CONFIGURE_ON=	--with-docroot=${DOCSDIR}
 X11_USE=	XORG=x11
 X11_USES=	motif
 X11_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 X11_CONFIGURE_OFF=	--without-x
 
 CONFIG_FILE=	${WRKSRC}/emboss/emboss.default.template

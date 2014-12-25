@@ -36,7 +36,7 @@ DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
 DV_CONFIGURE_WITH=	libdv
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_WITH=	gtk
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_WITH=	libpng
 QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
 QUICKTIME_CONFIGURE_WITH=	libquicktime

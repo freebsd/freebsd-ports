@@ -12,7 +12,7 @@ COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libproj.so:${PORTSDIR}/graphics/proj \
-			libpng15.so:${PORTSDIR}/graphics/png \
+			libpng.so:${PORTSDIR}/graphics/png \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libgif.so:${PORTSDIR}/graphics/giflib
 

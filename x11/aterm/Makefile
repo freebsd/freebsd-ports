@@ -41,7 +41,7 @@ BSDEL_CONFIGURE_OFF=	--disable-backspace-key --disable-delete-key
 BSDEL_CONFIGURE_ON=	--enable-backspace-key --enable-delete-key
 MOUSE_CONFIGURE_ENABLE=	mousewheel
 BGIMG_LIB_DEPENDS=	libAfterImage.so:${PORTSDIR}/graphics/libafterimage \
-			libpng15.so:${PORTSDIR}/graphics/png \
+			libpng.so:${PORTSDIR}/graphics/png \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg
 BGIMG_CONFIGURE_ON=	--with-afterimage-config --with-png --with-jpeg
 BGIMG_CONFIGURE_OFF=	--without-afterimage-config --with-png=no --with-jpeg=no

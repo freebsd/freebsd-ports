@@ -42,7 +42,7 @@ IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconf
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png

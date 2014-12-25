@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig

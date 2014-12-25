@@ -12,7 +12,7 @@ DISTNAME=	snes9x-1.53-src
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 sm ice xext
 USES=		gettext gmake perl5 desktop-file-utils pkgconfig tar:bzip2

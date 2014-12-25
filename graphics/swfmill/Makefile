@@ -12,7 +12,7 @@ COMMENT=	Tool to generate or decompile Adobe Flash SWF files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		dos2unix iconv gmake pkgconfig libtool

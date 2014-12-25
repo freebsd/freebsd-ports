@@ -39,7 +39,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libtag.so:${PORTSDIR}/audio/taglib \
