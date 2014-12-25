@@ -10,14 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		pkgconfig
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng` -I${LOCALBASE}/include
 
 PLIST_FILES=	include/pngwriter.h \
 		lib/libpngwriter.a \
