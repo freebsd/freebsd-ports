@@ -2,7 +2,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -22,19 +22,20 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 USES=		gettext pkgconfig python:build
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf
+USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgsf
 
 OPTIONS_DEFINE=	DOCS
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure \
-		--prefix=${STAGEDIR}${PREFIX} --destdir=${STAGEDIR}${PREFIX} \
+		--prefix=${PREFIX} --destdir=${STAGEDIR} \
 		${WAF_CONFIGURE_ARGS}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build --prefix=${PREFIX} --destdir=${STAGEDIR}
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --prefix=${PREFIX} --destdir=${STAGEDIR}
+	@${RM} ${STAGEDIR}${PREFIX}/share/icons/hicolor/icon-theme.cache
 
 .include <bsd.port.mk>
