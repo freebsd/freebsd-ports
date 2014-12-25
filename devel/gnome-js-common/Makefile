@@ -13,8 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME JavaScript common modules and tests
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intltool
-USES=		pkgconfig gettext gmake tar:bzip2
+USE_GNOME=	intltool
+USES=		pathfix pkgconfig gettext gmake tar:bzip2
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 
