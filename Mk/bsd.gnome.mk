@@ -69,7 +69,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 
 # non-version specific components
 _USE_GNOME_ALL= esound intlhack intltool introspection \
-		gnomehack referencehack gnomehier gnomemimedata \
+		gnomehack referencehack gnomemimedata \
 		gnomeprefix
 
 # GNOME 1 components
@@ -117,10 +117,6 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "${GNOME_MAKEFILEIN}*" -type f | ${
 
 referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				"s|test \"\$$\$$installfiles\" = '\$$(srcdir)/html/\*'|:|"
-
-GNOME_MTREE_FILE?=		${LOCALBASE}/etc/mtree/BSD.gnome.dist
-gnomehier_DETECT=	${GNOME_MTREE_FILE}
-gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
 GCONF_CONFIG_OPTIONS?=	merged
@@ -754,14 +750,11 @@ CONFIGURE_FAIL_MESSAGE= "Please run the gnomelogalyzer, available from \"http://
 
 
 .if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
-	|| defined(GLIB_SCHEMAS) || (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="")
+	|| defined(GLIB_SCHEMAS)
 pre-su-install: gnome-pre-su-install
 post-install: gnome-post-install
 
 gnome-pre-su-install:
-.if defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="" && !defined(NO_MTREE)
-	@${MTREE_CMD} ${MTREE_ARGS:S/${MTREE_FILE}/${GNOME_MTREE_FILE}/} ${STAGEDIR}${PREFIX}/ >/dev/null
-.endif
 .if defined(GCONF_SCHEMAS)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gconf/gconf.xml.defaults/
 .else
