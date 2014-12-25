@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --enable-gio
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		compiler:c++11-lib libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
