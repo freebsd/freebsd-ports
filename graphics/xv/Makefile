@@ -25,7 +25,6 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USES=		imake
 USE_XORG=	xext x11 xt
-USE_GCC=	any
 
 OPTIONS_DEFINE=	M17N DOCS
 M17N_DESC=	build with Multilingualization support
