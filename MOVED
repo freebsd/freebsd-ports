@@ -7336,4 +7336,5 @@ games/hex||2014-12-25|Abandonware, no support for moden graphics libraries
 graphics/bbrb||2014-12-25|Abandonware, depends on imlib
 graphics/gtkgraph||2014-12-25|Abandonware, depends on imlib
 graphics/imagesort||2014-12-25|Abandonware, depends on imlib
-grahpics/picturebook||2014-12-25|Abandonware, depends on imlib
+graphics/picturebook||2014-12-25|Abandonware, depends on imlib
+graphics/show||2014-12-25|Abandonware, depends on imlib

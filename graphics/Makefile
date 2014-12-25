@@ -956,7 +956,6 @@
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell
-    SUBDIR += show
     SUBDIR += showimage
     SUBDIR += silgraphite
     SUBDIR += simage
