@@ -1,0 +1,24 @@
+# $FreeBSD$
+
+PORTNAME=	Dancer2-Plugin-Email
+PORTVERSION=	0.0001
+CATEGORIES=	mail perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Simple email handling for Dancer2 applications
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-Dancer2>=0.156001:${PORTSDIR}/www/p5-Dancer2 \
+		p5-Email-Sender>=0:${PORTSDIR}/mail/p5-Email-Sender \
+		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>
