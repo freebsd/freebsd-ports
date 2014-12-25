@@ -11,7 +11,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The Objective-C Foundation Classes library
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
