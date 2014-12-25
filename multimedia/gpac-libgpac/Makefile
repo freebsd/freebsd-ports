@@ -45,10 +45,9 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 JPEG_CONFIGURE_ON=	--use-jpeg=local
 JPEG_CONFIGURE_OFF=	--use-jpeg=no
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ON=	--use-png=local
 PNG_CONFIGURE_OFF=	--use-png=no
-PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 
 post-patch:
 	${REINPLACE_CMD} -e 's|s/\.\*\\(\[0-9\]\\)\\+\$$/\\1/|s/^[^0-9]*//| ;\
