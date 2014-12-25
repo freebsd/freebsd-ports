@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.24
-PORTREVISION?=	1
+PORTVERSION=	2.25
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -41,10 +41,8 @@ CONFIGURE_ARGS+=	--with-system-zlib \
 			--with-mpfr=${LOCALBASE}
 INFO=		as \
 		binutils \
-		standards \
 		gprof \
 		bfd \
-		configure \
 		ld
 .endif
 
