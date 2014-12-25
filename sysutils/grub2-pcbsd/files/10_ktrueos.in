@@ -180,14 +180,21 @@ display_loaderopts()
 
 detect_beadm()
 {
-   which -s beadm
+   /usr/bin/which -s beadm >/dev/null 2>/dev/null
    if [ $? -ne 0 ] ; then return 0; fi
 
    # Check if we are running from the installer and use its beadm
    if [ -e "/root/beadm.install" ] ; then
       BEADM="/root/beadm.install"
+
+      # Check if this is valid
+      testBE=`$BEADM list`
+      if [ -z "$testBE" ] ; then
+        # No BE's, lets switch back to regular mode
+        BEADM="`/usr/bin/which beadm`"
+      fi
    else
-      BEADM="`which beadm`"
+      BEADM="`/usr/bin/which beadm`"
    fi
 
    ${BEADM} list >/dev/null 2>/dev/null
