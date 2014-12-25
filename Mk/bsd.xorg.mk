@@ -110,7 +110,7 @@ PLIST_FILES+=	"@fcfontsdir ${PREFIX}/lib/X11/fonts/${_fontdir}"
 .    elif ${INSTALLS_TTF} == yes && ${NEED_MKFONTFOO} == no
 PLIST_FILES+=	"@fc ${PREFIX}/lib/X11/fonts/${_fontdir}"
 .    elif ${NEED_MKFONTFOO} == yes
-PLIST_FILES+=	"@fontsdir ${PREFIX}lib/X11/fonts/${_fontdir}"
+PLIST_FILES+=	"@fontsdir ${PREFIX}/lib/X11/fonts/${_fontdir}"
 .    endif
 .  endfor
 .endif
