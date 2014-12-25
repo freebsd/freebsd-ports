@@ -182,7 +182,6 @@
     SUBDIR += fpc-graph
     SUBDIR += fpc-hermes
     SUBDIR += fpc-imagemagick
-    SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
     SUBDIR += fpc-libpng
     SUBDIR += fpc-ncurses
