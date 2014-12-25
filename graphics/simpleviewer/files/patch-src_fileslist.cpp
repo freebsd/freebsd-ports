@@ -1,4 +1,4 @@
---- src/fileslist.cpp.orig	2010-05-13 07:15:11.000000000 +0000
+--- src/fileslist.cpp.orig	2010-05-13 07:15:11 UTC
 +++ src/fileslist.cpp
 @@ -8,6 +8,7 @@
  #include "fileslist.h"
