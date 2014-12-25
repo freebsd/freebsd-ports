@@ -25,7 +25,7 @@ start_precmd()
 {
     mkdir -p "$mailgraph_chdir"
     chown "$mailgraph_user" "$mailgraph_chdir"
-    if ! su -m '$mailgraph_user' -c 'sh -c "[ -r '$mailgraph_maillog' ]"'; then
+    if ! su -m "$mailgraph_user" -c "sh -c \"[ -r "$mailgraph_maillog" ]\""; then
         echo "MAILGRAPH CANNOT RUN: $mailgraph_maillog not readable by $mailgraph_user"
         return 1
     fi
