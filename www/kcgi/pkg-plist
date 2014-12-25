@@ -5,6 +5,7 @@ lib/libkcgi.a
 lib/libkcgihtml.a
 lib/libkcgijson.a
 man/man3/kcgi.3.gz
+man/man3/kcgi_regress.3.gz
 man/man3/kcgihtml.3.gz
 man/man3/kcgijson.3.gz
 man/man3/khttp_body.3.gz
