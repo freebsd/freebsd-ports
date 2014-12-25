@@ -3,6 +3,7 @@
 
 PORTNAME=	vtwm
 PORTVERSION=	5.4.99.20130906
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 

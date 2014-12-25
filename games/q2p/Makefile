@@ -3,7 +3,7 @@
 
 PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://bfeared.com/library/quake/archive/quakedev/qudos/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31

@@ -3,7 +3,7 @@
 
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.winterdrache.de/freeware/png2ico/data/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}

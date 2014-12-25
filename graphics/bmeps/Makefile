@@ -3,6 +3,7 @@
 
 PORTNAME=	bmpp
 PORTVERSION=	3.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}

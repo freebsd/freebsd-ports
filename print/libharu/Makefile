@@ -3,6 +3,7 @@
 
 PORTNAME=	libharu
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	jlaffaye@FreeBSD.org

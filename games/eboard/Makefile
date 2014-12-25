@@ -3,7 +3,7 @@
 
 PORTNAME=	eboard
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/eboard-extras/pack%201%20patchlevel%202/:p1 \

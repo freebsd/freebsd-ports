@@ -3,7 +3,7 @@
 
 PORTNAME=	optar
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://ronja.twibright.com/
 DISTFILES=	optar.tgz

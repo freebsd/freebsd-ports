@@ -3,7 +3,7 @@
 
 PORTNAME=	visprint
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tastyrabbit.net/visprint/download/
 

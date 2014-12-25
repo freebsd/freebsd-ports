@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_APACHE:S@%SUBDIR%@openoffice/${PORTVERSION}/source@} \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@truckman/openoffice@}:extsrc

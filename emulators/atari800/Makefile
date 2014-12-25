@@ -3,7 +3,7 @@
 
 PORTNAME=	atari800
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/atari800/ \
 		SF/${PORTNAME}/ROM/Original%20XL%20ROM:x \

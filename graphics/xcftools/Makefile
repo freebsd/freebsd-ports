@@ -2,6 +2,7 @@
 
 PORTNAME=	xcftools
 PORTVERSION=	1.0.8.20130212
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GH \
 		http://freeheimdall.spdns.org/files/

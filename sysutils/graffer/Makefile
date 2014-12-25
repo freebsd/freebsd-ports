@@ -3,6 +3,7 @@
 
 PORTNAME=	graffer
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 		http://ns1.chaosophia.net/downloads/graffer/

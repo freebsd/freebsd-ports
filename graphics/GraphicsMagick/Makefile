@@ -3,6 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -31,6 +32,8 @@ CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-quantum-depth="${QD}" \
 		--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
 PLIST_SUB=	Q="${QD}"
 
@@ -43,7 +46,7 @@ OPTIONS_DEFAULT=	OPENMP WEBP X11
 DPS_DESC=		Display Ghostscript support (must also select X11)
 FPX_LIB_DEPENDS+=	libfpx.so.[2-9]:${PORTSDIR}/graphics/libfpx
 FPX_CONFIGURE_WITH=	fpx
-OPENMP_USES=		compiler:openmp
+OPENMP_USES=		compiler:gcc-c++11-lib
 OPENMP_CONFIGURE_ON=	--with-threads --enable-openmp --disable-openmp-slow
 OPENMP_CONFIGURE_OFF=	--without-threads --disable-openmp
 Q8BIT_DESC=		Use 8-bit pixels (speed) instead of 16 (quality)
@@ -117,6 +120,3 @@ regression-test: do-build
 		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
-# The OPENMP option may select gcc as compiler but on architectures
-# that have switched to libc++ clang should be used for C++ code.
-CXX=		c++

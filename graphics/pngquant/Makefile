@@ -3,6 +3,7 @@
 
 PORTNAME=	pngquant
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	http://pngquant.org/

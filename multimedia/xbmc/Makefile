@@ -2,7 +2,7 @@
 
 PORTNAME=	xbmc
 DISTVERSION=	13.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 

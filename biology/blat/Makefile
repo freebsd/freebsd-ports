@@ -3,6 +3,7 @@
 
 PORTNAME=	blat
 PORTVERSION=	35
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
 		http://users.soe.ucsc.edu/~kent/src/

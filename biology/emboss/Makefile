@@ -3,6 +3,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}

@@ -3,6 +3,7 @@
 
 PORTNAME=	pioneer
 PORTVERSION=	0.0.${GH_TAGNAME}
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}${EXTRACT_SUFX}?dummy=/
 

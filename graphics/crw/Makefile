@@ -3,7 +3,7 @@
 
 PORTNAME=	crw
 PORTVERSION=	1.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 

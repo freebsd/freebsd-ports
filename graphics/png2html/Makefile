@@ -3,7 +3,7 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geoffholden.com/content/projects/png2html/
 
