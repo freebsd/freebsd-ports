@@ -21,8 +21,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/dev
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tv_check:${PORTSDIR}/textproc/p5-xmltv
 
-USES=		gettext gmake python:2 tar:bzip2
-USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras pygtk2
+USES=		gettext gmake pathfix python:2 tar:bzip2
+USE_GNOME=	gnomeprefix pygnomedesktop pygnomeextras pygtk2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
