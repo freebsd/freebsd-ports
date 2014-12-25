@@ -15,7 +15,7 @@ DIST_SUBDIR=	povray36
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
@@ -45,8 +45,6 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 CONFIGURE_ARGS=	--disable-optimiz
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
-CXXFLAGS+=	-I${LOCALBASE}/include/libpng15
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
