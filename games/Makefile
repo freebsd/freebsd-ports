@@ -390,7 +390,6 @@
     SUBDIR += help_hannahs_horse
     SUBDIR += heretic
     SUBDIR += heroes
-    SUBDIR += hex
     SUBDIR += hex-a-hop
     SUBDIR += hexalate
     SUBDIR += hexglass
