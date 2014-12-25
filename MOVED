@@ -7333,3 +7333,4 @@ misc/gnomehier||2014-12-25|Not needed anymore
 graphics/corona||2014-12-25|Abandonware, no proper support for modern png
 graphics/libpano12|graphics/libpano13|2014-12-25|No proper support for modern png, newer version available as libpano13
 games/hex||2014-12-25|Abandonware, no support for moden graphics libraries
+grahpics/bbrb||2014-12-25|Abandonware, depends on imlib
