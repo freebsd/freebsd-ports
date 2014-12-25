@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-mandoc --without-gnome
 USES=		gmake perl5 pkgconfig tar:bzip2
 USE_XORG=	xcursor xft xinerama xpm xrender
 
-OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS IMLIB
+OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS
 OPTIONS_DEFAULT=ICONS ICONV SESSION_MGMT PNG
 OPTIONS_SUB=	yes
 
@@ -32,7 +32,6 @@ STROKE_DESC=		support for mouse gestures
 RPLAY_DESC=		RPlay support in FvwmEvent
 SESSION_MGMT_DESC=	Session Management support
 BIDI_DESC=		Asian bi-directional text support
-IMLIB_DESC=		imlib library (requires gtk12)
 
 PLIST_SUB=	FVWM_VERSION="${PORTVERSION}"
 
@@ -91,12 +90,6 @@ CONFIGURE_ARGS+=	--enable-bidi \
 			--with-bidi-bindir=${LOCALBASE}/bin
 .else
 CONFIGURE_ARGS+=	--disable-bidi
-.endif
-
-.if ${PORT_OPTIONS:MIMLIB}
-USE_GNOME+=	imlib
-.else
-CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
