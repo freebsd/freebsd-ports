@@ -13,7 +13,7 @@ COMMENT=	Open source 3D real-time strategy game
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
@@ -29,7 +29,7 @@ USE_SDL=	yes
 USE_WX=		3.0
 WX_UNICODE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lssl -lcrypto
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.9.0
 
