@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libexpat.so:${PORTSDIR}/textproc/expat2

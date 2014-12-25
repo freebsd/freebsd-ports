@@ -13,7 +13,7 @@ COMMENT=	Weird GNOME fractal generator
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils pathfix pkgconfig python shared-mime-info
 USE_GNOME=	gnomeprefix intlhack libgnomeui pygtk2

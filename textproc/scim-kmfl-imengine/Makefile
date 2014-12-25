@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libkmfl.so:${PORTSDIR}/textproc/libkmfl \
 		libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
 		scim:${PORTSDIR}/textproc/scim
 

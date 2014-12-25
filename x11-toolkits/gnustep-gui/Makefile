@@ -23,7 +23,7 @@ DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 
 LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao

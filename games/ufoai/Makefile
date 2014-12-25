@@ -14,7 +14,7 @@ COMMENT=	Strategy game featuring tactical combat
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libxvidcore.so:${PORTSDIR}/multimedia/xvid \

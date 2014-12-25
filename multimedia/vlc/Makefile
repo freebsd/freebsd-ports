@@ -222,7 +222,7 @@ OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 OPUS_CONFIGURE_ENABLE=	opus
 
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ENABLE=	png
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio

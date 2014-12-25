@@ -21,7 +21,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libCEGUIBase-0.so:${PORTSDIR}/graphics/cegui \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libfreeimage.so:${PORTSDIR}/graphics/freeimage \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26

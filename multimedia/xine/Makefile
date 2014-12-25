@@ -13,7 +13,7 @@ COMMENT=	X11 multimedia player
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libxine.so:${PORTSDIR}/multimedia/libxine
 
 USES=		desktop-file-utils execinfo gmake iconv pkgconfig readline \

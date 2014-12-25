@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libHermes.so:${PORTSDIR}/graphics/Hermes \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgif.so:${PORTSDIR}/graphics/giflib
 

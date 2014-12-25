@@ -23,7 +23,7 @@ LIB_DEPENDS=	libmspack.so:${PORTSDIR}/archivers/libmspack \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		librasterlite.so:${PORTSDIR}/graphics/librasterlite \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \

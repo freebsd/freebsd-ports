@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--disable-io-restrictions
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
 .else
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 .else
 CONFIGURE_ARGS+=--without-libpng

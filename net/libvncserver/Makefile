@@ -14,7 +14,7 @@ COMMENT=	Provide an easy API to a custom vnc server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		libtool pathfix
 USE_LDCONFIG=	yes

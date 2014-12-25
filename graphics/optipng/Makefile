@@ -28,7 +28,7 @@ PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 CONFIGURE_ARGS+=	--with-system-libpng
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MBUNDLED_ZLIB)

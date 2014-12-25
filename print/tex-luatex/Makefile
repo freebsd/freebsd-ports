@@ -18,7 +18,7 @@ COMMENT=	Extended version of pdfTeX using Lua
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
 		libicuio.so:${PORTSDIR}/devel/icu \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
 		libzzip.so:${PORTSDIR}/devel/zziplib

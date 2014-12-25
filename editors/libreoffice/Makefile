@@ -36,7 +36,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libgltf-0.0.so:${PORTSDIR}/graphics/libgltf \
 		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
 		libGeneratedSaxParser.so:${PORTSDIR}/graphics/opencollada \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
 		libcmis-0.4.so:${PORTSDIR}/net/libcmis \

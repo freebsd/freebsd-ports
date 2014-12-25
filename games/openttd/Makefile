@@ -15,7 +15,7 @@ COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 USES=		gmake pkgconfig tar:xz

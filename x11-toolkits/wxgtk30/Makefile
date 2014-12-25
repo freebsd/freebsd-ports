@@ -11,7 +11,7 @@ DISTNAME=	wxWidgets-${PORTVERSION}
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
 
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png\
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg\
 		libtiff.so:${PORTSDIR}/graphics/tiff\
 		libexpat.so:${PORTSDIR}/textproc/expat2\

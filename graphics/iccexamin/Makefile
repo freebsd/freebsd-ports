@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liboyranos.so:${PORTSDIR}/graphics/oyranos

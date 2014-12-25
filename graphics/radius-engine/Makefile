@@ -13,7 +13,7 @@ COMMENT=	Lua script-based 2D engine built on top of OpenGL and SDL
 LICENSE=	MIT
 
 LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua51 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libphysfs.so.1:${PORTSDIR}/devel/physfs
 
 USES=		pathfix pkgconfig

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libsox.so:${PORTSDIR}/audio/sox \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib

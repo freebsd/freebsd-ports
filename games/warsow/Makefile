@@ -58,7 +58,7 @@ DESKTOP_ENTRIES="Warsow" "${COMMENT}" \
 	"Game;Shooter;" false
 
 . if ${PORT_OPTIONS:MFTLIB} || ${PORT_OPTIONS:MREF_GL}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 . endif
 
 . if ${PORT_OPTIONS:MFTLIB}

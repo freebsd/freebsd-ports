@@ -13,7 +13,7 @@ COMMENT=	GUI widget library for MakeHuman
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libanimorph.so:${PORTSDIR}/graphics/animorph \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake libtool

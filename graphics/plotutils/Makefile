@@ -11,7 +11,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Plotting library and toolkit
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake motif libtool	# parallel builds are broken with bmake(1)
 GNU_CONFIGURE=	yes

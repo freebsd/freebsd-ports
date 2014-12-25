@@ -11,7 +11,7 @@ COMMENT=	Control X from the command line for scripts
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes

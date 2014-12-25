@@ -30,7 +30,7 @@ JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
 JPEG_CONFIGURE_WITPNGH=	libjpeg
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 PNG_CONFIGURE_WITH=	libpng
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 TIFF_CONFIGURE_WITH=	libtiff
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 

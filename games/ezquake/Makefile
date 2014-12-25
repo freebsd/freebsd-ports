@@ -19,7 +19,7 @@ EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tcl dos2unix
 DOS2UNIX_GLOB=	*.[ch] Makefile*

@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
 LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USE_TEX=	kpathsea

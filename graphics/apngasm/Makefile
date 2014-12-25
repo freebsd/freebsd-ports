@@ -25,7 +25,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 STATIC_MAKE_ENV=	STATIC=1
-STATIC_LIB_DEPENDS_OFF=	libpng15.so:${PORTSDIR}/graphics/png
+STATIC_LIB_DEPENDS_OFF=	libpng.so:${PORTSDIR}/graphics/png
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \

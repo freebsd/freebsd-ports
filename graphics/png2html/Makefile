@@ -13,7 +13,7 @@ COMMENT=	Takes a PNG image and transforms it into HTML
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libgd.so:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/png2html

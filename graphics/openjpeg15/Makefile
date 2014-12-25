@@ -13,7 +13,7 @@ COMMENT=	Open-source JPEG 2000 codec
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	DOCS

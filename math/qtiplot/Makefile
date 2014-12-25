@@ -12,7 +12,7 @@ COMMENT=	Data analysis and scientific plotting
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
 		libmuparser.so:${PORTSDIR}/math/muparser \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 # use bundled modified libraries
 # 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 # 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4

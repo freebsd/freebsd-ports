@@ -84,7 +84,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_VIGRA_FFTW)

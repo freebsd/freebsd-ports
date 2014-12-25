@@ -288,7 +288,7 @@ gst_libmms_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # png
-gst_libpng_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+gst_libpng_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so
 
 # libvisual

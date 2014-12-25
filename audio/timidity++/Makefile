@@ -37,7 +37,7 @@ EAWPLUS_RUN_DEPENDS=	eawplus>0:${PORTSDIR}/audio/eawplus
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_ON=	--enable-audio=oss,esd,vorbis
 ESOUND_CONFIGURE_OFF=	--enable-audio=oss,vorbis
-X11_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+X11_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 X11_USE=		xorg=x11,xext
 X11_CONFIGURE_ON=	--with-x --enable-spectrogram --enable-wrd \
 			--enable-dynamic

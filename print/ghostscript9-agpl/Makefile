@@ -23,7 +23,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libpaper.so:${PORTSDIR}/print/libpaper

@@ -14,7 +14,7 @@ COMMENT=	Atari ST emulator
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
 
 USES=		cmake readline tar:bzip2

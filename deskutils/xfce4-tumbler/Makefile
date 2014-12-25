@@ -16,7 +16,7 @@ COMMENT=	Thumbnail service for Xfce desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		pathfix pkgconfig gmake libtool tar:bzip2

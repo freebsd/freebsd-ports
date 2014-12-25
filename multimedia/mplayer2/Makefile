@@ -11,7 +11,7 @@ COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \

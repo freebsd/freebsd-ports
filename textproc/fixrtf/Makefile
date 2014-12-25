@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Patch making it possible to embed PNGs into RTFs
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		uidfix
 WRKSRC=		${WRKDIR}/src

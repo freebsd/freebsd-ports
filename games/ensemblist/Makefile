@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assemble given shapes from primitives
 
 LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake
 USE_XORG=	xmu

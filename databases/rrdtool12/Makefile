@@ -13,7 +13,7 @@ COMMENT=	Round Robin Database Tools v1.2
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libart_lgpl_2.so:${PORTSDIR}/graphics/libart_lgpl \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	rrdtool10-* rrdtool-1.*
 

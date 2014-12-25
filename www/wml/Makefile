@@ -14,7 +14,7 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	\
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \

@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open-source, cross-platform WYSIWYG word processor
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libwv.so:${PORTSDIR}/textproc/wv \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \

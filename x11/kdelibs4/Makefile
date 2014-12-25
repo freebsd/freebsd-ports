@@ -17,7 +17,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libavahi-core.so:${PORTSDIR}/net/avahi-app \
 		libenchant.so:${PORTSDIR}/textproc/enchant \
 		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libhal.so:${PORTSDIR}/sysutils/hal \
 		libqca.so:${PORTSDIR}/devel/qca \

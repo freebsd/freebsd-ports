@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 		libjasper.so:${PORTSDIR}/graphics/jasper	\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		liblcms2.so:${PORTSDIR}/graphics/lcms2		\
-		libpng15.so:${PORTSDIR}/graphics/png		\
+		libpng.so:${PORTSDIR}/graphics/png		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libfreetype.so:${PORTSDIR}/print/freetype2
 

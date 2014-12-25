@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-sm
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
 .else
