@@ -14,14 +14,13 @@ COMMENT=	Small and simple OpenGL image viewer with transparency support
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgif.so:${PORTSDIR}/graphics/giflib
 
 USES=		tar:bzip2
 USE_EFL=	imlib2
 USE_GL=		glut
 WRKSRC=		${WRKDIR}/sviewgl-src
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ARGS=	CC="${CXX}"
 
 PLIST_FILES=	bin/sviewgl
