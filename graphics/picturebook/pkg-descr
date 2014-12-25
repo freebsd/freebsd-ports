@@ -1,8 +1,0 @@
-Picturebook is an experimental utility for capturing from SONY VAIO camera.
-This port includes following binaries
-	capture       / capture utility for VAIO camera
-	setbrightness / LCD brightness control tool 
-	               (usage: setbrightness [0-255])
-	vaiobat       / get battery status 
-
-WWW: http://samba.org/picturebook/

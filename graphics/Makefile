@@ -760,7 +760,6 @@
     SUBDIR += php56-gd
     SUBDIR += phplot
     SUBDIR += picpuz
-    SUBDIR += picturebook
     SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pinpoint
