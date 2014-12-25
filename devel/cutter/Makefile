@@ -16,10 +16,11 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pkgconfig
-USE_GNOME=	intltool gnomehack glib20 gtk20
+USES=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	intltool glib20 gtk20
 USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GOFFICE GSTREAMER SOUP LCOV
 GOFFICE_DESC=	GOffice support
@@ -28,9 +29,6 @@ LCOV_DESC=	Force dependency on lcov
 
 regression-test: build
 	@${SETENV} LC_ALL=C ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} check
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.options.mk>
 
