@@ -73,7 +73,7 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 		gnomeprefix
 
 # GNOME 1 components
-_USE_GNOME_ALL+= gdkpixbuf glib12 gtk12 imlib
+_USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk atspi cairo gal2 \
@@ -203,13 +203,6 @@ gdkpixbuf_CONFIGURE_ENV=GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
 gdkpixbuf_MAKE_ENV=	GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
 gdkpixbuf_DETECT=	${GDK_PIXBUF_CONFIG}
 gdkpixbuf_USE_GNOME_IMPL=gtk12
-
-IMLIB_CONFIG?=		${LOCALBASE}/bin/imlib-config
-imlib_LIB_DEPENDS=	libImlib.so:${PORTSDIR}/graphics/imlib
-imlib_CONFIGURE_ENV=	IMLIB_CONFIG="${IMLIB_CONFIG}"
-imlib_MAKE_ENV=		IMLIB_CONFIG="${IMLIB_CONFIG}"
-imlib_DETECT=		${IMLIB_CONFIG}
-imlib_USE_GNOME_IMPL=	gtk12
 
 gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
