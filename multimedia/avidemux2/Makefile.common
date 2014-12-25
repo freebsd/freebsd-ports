@@ -78,7 +78,8 @@ CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
 .if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MQT4)
 CMAKE_ARGS+=	-DX11:BOOL=OFF
 .else
-USE_GNOME+=	libxslt desktopfileutils
+USES+=	desktop-file-utils
+USE_GNOME+=	libxslt
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
