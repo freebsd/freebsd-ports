@@ -29,6 +29,7 @@
     SUBDIR += conduit
     SUBDIR += conkyemail
     SUBDIR += conkyforecast
+    SUBDIR += countdown
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
