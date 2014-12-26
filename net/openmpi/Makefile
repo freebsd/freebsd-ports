@@ -4,7 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.4
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
 
