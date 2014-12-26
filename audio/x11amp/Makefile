@@ -14,6 +14,8 @@ COMMENT=	X11-based MP3 player with nice graphical interface
 LICENSE=	GPLv2
 
 BROKEN=		hangs at start with gtk and linker errors
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-01-26
 
 USES=		libtool
 USE_GNOME=	gtk12 esound

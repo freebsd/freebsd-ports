@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 BROKEN=		Fails to patch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-01-26
 
 LIB_DEPENDS=	libarc.so:${PORTSDIR}/archivers/libarc
 RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
