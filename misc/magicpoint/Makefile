@@ -3,7 +3,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -18,11 +18,13 @@ RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		imake:env pkgconfig
+USES=		imake:env perl5 pkgconfig
+USE_PERL5=	run
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale
+CONFIGURE_ENV=	mgp_cv_path_perl=${PERL}
 CPPFLAGS+=	-I..
 LATE_INSTALL_ARGS=	install.man
 
