@@ -1,0 +1,24 @@
+# $FreeBSD$
+#
+# MAINTAINER: rene@FreeBSD.org
+
+actions: []
+post-install: <<EOD
+  case "%@" in
+  /*) kmoddir="%@" ;;
+  *) kmoddir="%D/%@" ;;
+  esac
+  /usr/sbin/kldxref ${kmoddir}
+EOD
+post-deinstall: <<EOD
+  case "%@" in
+  /*) kmoddir="%@" ;;
+  *) kmoddir="%D/%@" ;;
+  esac
+  /usr/sbin/kldxref ${kmoddir}
+  case "${kmoddir}" in
+  %D/*) ;;
+  /boot/modules) ;;
+  *) rmdir -p ${kmoddir} 2>/dev/null || true ;;
+  esac
+EOD
