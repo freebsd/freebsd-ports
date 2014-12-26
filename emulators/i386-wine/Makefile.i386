@@ -4,16 +4,18 @@
 PKGNAMEPREFIX=	i386-
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 
 # Use the wine port to do most of the heavy lifting
-MASTERDIR=	${.CURDIR}/../wine
-PKGINSTALL=	${.CURDIR}/files/pkg-install
+SLAVEDIR?=	${.CURDIR}
+MASTERDIR=	${SLAVEDIR}/../wine
+PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
 RUN_DEPENDS=	dri>0:${PORTSDIR}/graphics/dri
 
-CONFLICTS_INSTALL=	i386-wine-devel-[0-9]* wine-[0-9]* wine-devel-[0-9]*
+CONFLICTS_INSTALL?=	wine-[0-9]* wine-compholio-[0-9]* wine-devel-[0-9]* \
+			i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
 
 ACTUAL-PACKAGE-DEPENDS=	${DO_NADA}
 WINELIBDIR=	${PREFIX}/lib32
@@ -33,16 +35,29 @@ post-install-script:
 	# Fix pkg-plist references
 	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
 	# Install bounce script to access the 32bit executables
-	${INSTALL_SCRIPT} ${.CURDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
+	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
 	for i in `grep ^bin ${TMPPLIST} | xargs -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
-	# Install dri libraries (internal libGL requirements)
+	# Install libGL
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri
+	${INSTALL_DATA} ${LOCALBASE}/lib/libGL.so.1 ${STAGEDIR}${PREFIX}/lib32/.libGL/	
+	echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST}
+	# Install dri libraries (internal libGL requirements)
 	for i in ${LOCALBASE}/lib/dri/*.so; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri/ ; \
 		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
+	done
+	# Find all soft dependencies (via strings(1))
+	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
+	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | xargs strings | \
+	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
+	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
+		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ]; then \
+			${INSTALL_DATA} ${LOCALBASE}/lib/$${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
+			echo lib32/$${i} >> ${TMPPLIST} ; \
+		fi ; \
 	done
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
@@ -51,22 +66,9 @@ post-install-script:
 	| sort -u | grep -v '^\(/usr\)\?/lib' | grep -v "^${STAGEDIR}${PREFIX}/lib32/libwine.so" \
 	| grep -v "^${STAGEDIR}${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
 	for i in `cat ${WRKDIR}/winelibs` ; do \
-		if [ `basename $${i}` != libGL.so.1 ]; then \
+		if [ -z "`grep $${i##*/} ${TMPPLIST}`" ]; then \
 			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
 			echo lib32/$${i##*/} >> ${TMPPLIST} ; \
-		else \
-			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/ ; \
-			echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST} ; \
-		fi ; \
-	done
-	# Find all soft dependancies (via strings(1))
-	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | xargs strings | \
-	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
-	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
-		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ] ; then \
-			${INSTALL_DATA} ${LOCALBASE}/lib/$${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
-			echo lib32/$${i} >> ${TMPPLIST} ; \
 		fi ; \
 	done
 	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
@@ -74,7 +76,7 @@ post-install-script:
 	echo '@dirrmtry lib32' >> ${TMPPLIST}; \
 	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install nvidia patching script
-	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
+	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
