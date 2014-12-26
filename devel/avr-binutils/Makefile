@@ -11,5 +11,6 @@ PLIST=	${.CURDIR}/pkg-plist
 
 MASTERDIR=	${.CURDIR}/../binutils
 PATCHDIR=	${.CURDIR}/files
+BROKEN=		Patch must be updated for binutils 2.25
 
 .include "${MASTERDIR}/Makefile"
