@@ -96,7 +96,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-			libpng15.so:${PORTSDIR}/graphics/png
+			libpng.so:${PORTSDIR}/graphics/png
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
