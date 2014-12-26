@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediabrowser
-PORTVERSION=	3.0.5445.6
+PORTVERSION=	3.0.5464.40000
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	MediaBrowser
 GH_PROJECT=	MediaBrowser
-GH_COMMIT=	5917b7c
+GH_COMMIT=	1616e34
 GH_TAGNAME=	${PORTVERSION}
 
 USES=		mono pkgconfig
