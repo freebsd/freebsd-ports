@@ -18,6 +18,8 @@ RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 BROKEN=		Does not work with audacious 3.5 or later
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-01-26
 
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20

@@ -11,6 +11,8 @@ COMMENT=	Sends and receives MIDI over the network using UDP multicast
 LICENSE=	GPLv2
 
 BROKEN=		Fails to configure
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-01-26
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
