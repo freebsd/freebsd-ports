@@ -8,7 +8,7 @@ $FreeBSD$
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
--#LDFLAGS     = -lncurses -lmytinfo -lcompat
+-#LDFLAGS     = -lncurses -lcompat
 +CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 +LDFLAGS     = -lncurses -lcompat
  
