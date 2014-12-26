@@ -20,7 +20,8 @@ CONFLICTS=	openmpi-devel-1.7.*
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		fortran gmake libtool:keepla pkgconfig tar:bzip2
+USES=		fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
+USE_PERL5=	build
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
