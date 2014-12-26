@@ -37,8 +37,6 @@ TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 post-extract:
 	@${REINPLACE_CMD} -e "s/default/default.sample/g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s/PrintGifError();/GifError();/g" \
-		${WRKSRC}/src/libimage/gif.c
 	@${MV} ${WRKSRC}/xplanet/config/default ${WRKSRC}/xplanet/config/default.sample
 
 .include <bsd.port.mk>
