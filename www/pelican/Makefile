@@ -3,7 +3,7 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.5.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -14,13 +14,14 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-markdown \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.6:${PORTSDIR}/devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}feedgenerator>=1.6:${PORTSDIR}/www/py-feedgenerator \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}blinker>0:${PORTSDIR}/devel/py-blinker \
 		${PYTHON_PKGNAMEPREFIX}unidecode>0:${PORTSDIR}/converters/py-unidecode \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>=1.4:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
@@ -30,9 +31,8 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON=		yes
+USES=python
+USE_PYTHON=autoplist distutils
 
 .if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS:=	${TEST_DEPENDS}
