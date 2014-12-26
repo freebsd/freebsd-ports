@@ -17,7 +17,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libwebp.so:${PORTSDIR}/graphics/webp \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
