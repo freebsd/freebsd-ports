@@ -16,6 +16,8 @@ COMMENT=	Map editor for FPS games, by id Software and Loki Software
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not support modern png
+
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libmhash.so:${PORTSDIR}/security/mhash \
 		libpng.so:${PORTSDIR}/graphics/png
