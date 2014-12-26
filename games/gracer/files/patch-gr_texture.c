@@ -1,6 +1,18 @@
---- common/gr_texture.c.orig	2000-03-01 05:27:18.000000000 +0100
-+++ common/gr_texture.c	2012-05-03 20:29:17.000000000 +0200
-@@ -419,7 +419,7 @@
+--- common/gr_texture.c.orig	2000-03-01 04:27:18 UTC
++++ common/gr_texture.c
+@@ -274,7 +274,11 @@ read_gif_file (GrTexture *texture, char 
+   int index;
+   int width, height;
+ 
++#if GIFLIB_MAJOR >= 5
++  file = DGifOpenFileName (filename, NULL);
++#else
+   file = DGifOpenFileName (filename);
++#endif
+   if (!file)
+     return -1;
+ 
+@@ -419,7 +423,7 @@ read_png_file (GrTexture *texture, char 
    if (fread (header, 1, PNG_BYTES_TO_CHECK, file) != PNG_BYTES_TO_CHECK) {
      goto ERROR;
    }
@@ -9,7 +21,7 @@
      goto ERROR;
    }
  
-@@ -431,7 +431,7 @@
+@@ -431,7 +435,7 @@ read_png_file (GrTexture *texture, char 
    if (!info_ptr) {
      goto ERROR;
    }
