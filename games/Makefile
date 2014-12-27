@@ -869,7 +869,6 @@
     SUBDIR += seahaven
     SUBDIR += searchandrescue
     SUBDIR += searchandrescue-data
-    SUBDIR += secretmaryochronicles
     SUBDIR += secrettower
     SUBDIR += senken
     SUBDIR += sets
