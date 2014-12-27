@@ -19,6 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -28,12 +29,13 @@ DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Tool for encoding H.264/AVC video streams
+COMMENT=	Front-end for encoding H.264/MPEG-4 AVC video
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 
 X264_BUILD=	142
@@ -42,24 +44,35 @@ X264_COMMIT=	021c0dc6c95c1bc239c9db78a80dd85fc856a4dd
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
 X264_SNAPSHOT=	20140827
 
-USES=		gmake tar:bzip2 pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		ASM DEBUG PGO GCC GPAC LAVF
+OPTIONS_DEFINE=		ASM DEBUG GCC GPAC LAVF PGO
 OPTIONS_DEFAULT=	ASM GPAC
-GCC_DESC=		Force use of modern GCC
+
+GCC_DESC=		Use current GCC
 GPAC_DESC=		MPEG-4 output support
 LAVF_DESC=		libav* format input/output support (requires FFmpeg)
+
+ASM_CONFIGURE_OFF=	--disable-asm
+DEBUG_CONFIGURE_ON=	--enable-debug
+GPAC_LIB_DEPENDS=	libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
+GPAC_CONFIGURE_OFF=	--disable-gpac
+LAVF_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+			libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+			libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
+			libswscale.so:${PORTSDIR}/multimedia/ffmpeg
+LAVF_CONFIGURE_OFF=	--disable-swscale --disable-lavf
 
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--disable-opencl \
 			--system-libx264
 
-PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 PLIST_FILES=	bin/x264
+PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
 .include <bsd.port.options.mk>
 
@@ -69,47 +82,17 @@ USE_GCC=	yes
 USE_GCC=	any
 .endif
 
-.if !${PORT_OPTIONS:MASM}
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-# Around the time GCC stack protection (aka Propolice) for userland
-# was enabled on src/share/mk/bsd.sys.mk
-# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
-.if ${OSVERSION} >= 800040
-LDFLAGS+=	-fstack-protector
-.endif
-
 .if ${PORT_OPTIONS:MPGO}
 # y4m sample video
-Y4M_VIDEO=example.y4m
-Y4M_VIDEO_DISTFILE=example.y4m.bz2
+Y4M_VIDEO=		example.y4m
+Y4M_VIDEO_DISTFILE=	example.y4m.bz2
 
 DISTFILES+=	${Y4M_VIDEO_DISTFILE}:pgo
 ALL_TARGET=	fprofiled
 MAKE_ENV+=	VIDS="${WRKDIR}/${Y4M_VIDEO}"
 
-RESTRICTED=	${Y4M_VIDEO_DISTFILE} file may not be mirrored
+RESTRICTED=		${Y4M_VIDEO_DISTFILE} file may not be mirrored
 RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
-.endif
-
-.if ${PORT_OPTIONS:MGPAC}
-LIB_DEPENDS+=		libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
-.else
-CONFIGURE_ARGS+=	--disable-gpac
-.endif
-
-.if ${PORT_OPTIONS:MLAVF}
-LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=		libavformat.so:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
-.else
-CONFIGURE_ARGS+=	--disable-swscale --disable-lavf
 .endif
 
 post-extract:
@@ -127,9 +110,9 @@ post-patch:
 		s|VER="x"|VER="${X264_REV} ${X264_GITVER}"|; \
 		s|VERSION=""|VERSION=" r${X264_REV} ${X264_GITVER}"|' \
 		${WRKSRC}/version.sh
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
-		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile
+
+pre-build:
+	@(${RM} ${WRKSRC}/x264_config.h)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/x264
