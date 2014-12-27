@@ -1,19 +1,13 @@
-@stopdaemon mailman
 @unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
 @unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
-@exec mkdir -p %D/%%MMDIR%%/archives
-%%SUB_HTDIG%%@exec mkdir -p %D/%%MMDIR%%/archives/htdig
-@exec mkdir -p %D/%%MMDIR%%/archives/private
-@exec mkdir -p %D/%%MMDIR%%/archives/public
-@exec mkdir -p %D/%%MMDIR%%/lists
-@exec mkdir -p %D/%%MMDIR%%/locks
-@exec mkdir -p %D/%%MMDIR%%/logs
-@exec mkdir -p %D/%%MMDIR%%/qfiles
-@exec mkdir -p %D/%%MMDIR%%/spam
-%%IMGDIR%%/PythonPowered.png
+%%IMGDIR%%/%%MM_USERNAME%%-large.jpg
+%%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg
+%%IMGDIR%%/mm-icon-large.ico
+%%IMGDIR%%/mm-icon.ico
 %%IMGDIR%%/mm-icon.png
 %%IMGDIR%%/powerlogo.gif
+%%IMGDIR%%/PythonPowered.png
 @group %%MM_GROUPNAME%%
 %%MMDIR%%/Mailman/Archiver/Archiver.py
 %%MMDIR%%/Mailman/Archiver/Archiver.pyc
@@ -317,6 +311,7 @@
 @exec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
 %%MMDIR%%/Mailman/versions.py
 %%MMDIR%%/Mailman/versions.pyc
+%%MMDIR%%/bin/FreeBSD-post-install
 %%MMDIR%%/bin/add_members
 %%MMDIR%%/bin/arch
 %%MMDIR%%/bin/b4b5-archfix
@@ -2259,154 +2254,154 @@
 %%MMDIR%%/tests/test_smtp.py
 %%MMDIR%%/tests/testall.py
 %%PYTHON_SITELIBDIR%%/mailman-info.txt
-@comment @dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrm %%MMDIR%%/tests/msgs
-@dirrm %%MMDIR%%/tests/bounces
-@dirrm %%MMDIR%%/tests
-%%NLS%%@dirrm %%MMDIR%%/templates/zh_TW
-%%NLS%%@dirrm %%MMDIR%%/templates/zh_CN
-%%NLS%%@dirrm %%MMDIR%%/templates/vi
-%%NLS%%@dirrm %%MMDIR%%/templates/uk
-%%NLS%%@dirrm %%MMDIR%%/templates/tr
-%%NLS%%@dirrm %%MMDIR%%/templates/sv
-%%NLS%%@dirrm %%MMDIR%%/templates/sr
-%%NLS%%@dirrm %%MMDIR%%/templates/sl
-%%NLS%%@dirrm %%MMDIR%%/templates/sk
-%%NLS%%@dirrm %%MMDIR%%/templates/ru
-%%NLS%%@dirrm %%MMDIR%%/templates/ro
-%%NLS%%@dirrm %%MMDIR%%/templates/pt_BR
-%%NLS%%@dirrm %%MMDIR%%/templates/pt
-%%NLS%%@dirrm %%MMDIR%%/templates/pl
-%%NLS%%@dirrm %%MMDIR%%/templates/no
-%%NLS%%@dirrm %%MMDIR%%/templates/nl
-%%NLS%%@dirrm %%MMDIR%%/templates/lt
-%%NLS%%@dirrm %%MMDIR%%/templates/ko
-%%NLS%%@dirrm %%MMDIR%%/templates/ja
-%%NLS%%@dirrm %%MMDIR%%/templates/it
-%%NLS%%@dirrm %%MMDIR%%/templates/ia
-%%NLS%%@dirrm %%MMDIR%%/templates/hu
-%%NLS%%@dirrm %%MMDIR%%/templates/hr
-%%NLS%%@dirrm %%MMDIR%%/templates/he
-%%NLS%%@dirrm %%MMDIR%%/templates/gl
-%%NLS%%@dirrm %%MMDIR%%/templates/fr
-%%NLS%%@dirrm %%MMDIR%%/templates/fi
-%%NLS%%@dirrm %%MMDIR%%/templates/fa
-%%NLS%%@dirrm %%MMDIR%%/templates/eu
-%%NLS%%@dirrm %%MMDIR%%/templates/et
-%%NLS%%@dirrm %%MMDIR%%/templates/es
-@dirrm %%MMDIR%%/templates/en
-%%NLS%%@dirrm %%MMDIR%%/templates/el
-%%NLS%%@dirrm %%MMDIR%%/templates/de
-%%NLS%%@dirrm %%MMDIR%%/templates/da
-%%NLS%%@dirrm %%MMDIR%%/templates/cs
-%%NLS%%@dirrm %%MMDIR%%/templates/ca
-%%NLS%%@dirrm %%MMDIR%%/templates/ast
-%%NLS%%@dirrm %%MMDIR%%/templates/ar
-@dirrm %%MMDIR%%/templates
-@dirrm %%MMDIR%%/scripts
-%%NLS%%@dirrm %%MMDIR%%/messages/ast/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ast
-%%NLS%%@dirrm %%MMDIR%%/messages/zh_TW/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/zh_TW
-%%NLS%%@dirrm %%MMDIR%%/messages/zh_CN/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/zh_CN
-%%NLS%%@dirrm %%MMDIR%%/messages/vi/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/vi
-%%NLS%%@dirrm %%MMDIR%%/messages/uk/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/uk
-%%NLS%%@dirrm %%MMDIR%%/messages/tr/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/tr
-%%NLS%%@dirrm %%MMDIR%%/messages/sv/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/sv
-%%NLS%%@dirrm %%MMDIR%%/messages/sr/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/sr
-%%NLS%%@dirrm %%MMDIR%%/messages/sl/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/sl
-%%NLS%%@dirrm %%MMDIR%%/messages/sk/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/sk
-%%NLS%%@dirrm %%MMDIR%%/messages/ru/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ru
-%%NLS%%@dirrm %%MMDIR%%/messages/ro/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ro
-%%NLS%%@dirrm %%MMDIR%%/messages/pt_BR/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/pt_BR
-%%NLS%%@dirrm %%MMDIR%%/messages/pt/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/pt
-%%NLS%%@dirrm %%MMDIR%%/messages/pl/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/pl
-%%NLS%%@dirrm %%MMDIR%%/messages/no/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/no
-%%NLS%%@dirrm %%MMDIR%%/messages/nl/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/nl
-%%NLS%%@dirrm %%MMDIR%%/messages/lt/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/lt
-%%NLS%%@dirrm %%MMDIR%%/messages/ko/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ko
-%%NLS%%@dirrm %%MMDIR%%/messages/ja/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ja
-%%NLS%%@dirrm %%MMDIR%%/messages/it/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/it
-%%NLS%%@dirrm %%MMDIR%%/messages/ia/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ia
-%%NLS%%@dirrm %%MMDIR%%/messages/hu/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/hu
-%%NLS%%@dirrm %%MMDIR%%/messages/hr/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/hr
-%%NLS%%@dirrm %%MMDIR%%/messages/he/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/he
-%%NLS%%@dirrm %%MMDIR%%/messages/gl/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/gl
-%%NLS%%@dirrm %%MMDIR%%/messages/fr/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/fr
-%%NLS%%@dirrm %%MMDIR%%/messages/fi/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/fi
-%%NLS%%@dirrm %%MMDIR%%/messages/fa/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/fa
-%%NLS%%@dirrm %%MMDIR%%/messages/eu/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/eu
-%%NLS%%@dirrm %%MMDIR%%/messages/et/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/et
-%%NLS%%@dirrm %%MMDIR%%/messages/es/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/es
-%%NLS%%@dirrm %%MMDIR%%/messages/el/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/el
-%%NLS%%@dirrm %%MMDIR%%/messages/de/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/de
-%%NLS%%@dirrm %%MMDIR%%/messages/da/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/da
-%%NLS%%@dirrm %%MMDIR%%/messages/cs/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/cs
-%%NLS%%@dirrm %%MMDIR%%/messages/ca/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ca
-%%NLS%%@dirrm %%MMDIR%%/messages/ar/LC_MESSAGES
-%%NLS%%@dirrm %%MMDIR%%/messages/ar
-%%NLS%%@dirrm %%MMDIR%%/messages
-@dirrm %%MMDIR%%/mail
-@dirrm %%MMDIR%%/icons
-@dirrm %%MMDIR%%/cron
-@dirrmtry %%MMDIR%%/pythonlib
-@dirrm %%MMDIR%%/cgi-bin
-@dirrm %%MMDIR%%/bin
-@dirrm %%MMDIR%%/Mailman/Queue
-@dirrm %%MMDIR%%/Mailman/MTA
-@dirrm %%MMDIR%%/Mailman/Logging
-@dirrm %%MMDIR%%/Mailman/Handlers
-@dirrm %%MMDIR%%/Mailman/Gui
-@dirrm %%MMDIR%%/Mailman/Commands
-@dirrm %%MMDIR%%/Mailman/Cgi
-@dirrm %%MMDIR%%/Mailman/Bouncers
-@dirrm %%MMDIR%%/Mailman/Archiver
-@dirrmtry %%IMGDIR%%
-@dirrmtry %%MMDIR%%/spam
-@dirrmtry %%MMDIR%%/qfiles
-@dirrmtry %%MMDIR%%/logs
-@dirrmtry %%MMDIR%%/locks
-@dirrmtry %%MMDIR%%/lists
-@dirrmtry %%MMDIR%%/data
-@dirrmtry %%MMDIR%%/archives/public
-@dirrmtry %%MMDIR%%/archives/private
-%%SUB_HTDIG%%@dirrmtry %%MMDIR%%/archives/htdig
-@dirrmtry %%MMDIR%%/archives
-@dirrmtry %%MMDIR%%/Mailman
-@dirrmtry %%MMDIR%%
+@comment @dir %%PYTHON_SITELIBDIR%%
+@dir %%MMDIR%%/tests/msgs
+@dir %%MMDIR%%/tests/bounces
+@dir %%MMDIR%%/tests
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/zh_TW
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/zh_CN
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/vi
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/uk
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/tr
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/sv
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/sr
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/sl
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/sk
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ru
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ro
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/pt_BR
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/pt
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/pl
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/no
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/nl
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/lt
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ko
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ja
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/it
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ia
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/hu
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/hr
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/he
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/gl
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/fr
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/fi
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/fa
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/eu
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/et
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/es
+@dir(,,02775) %%MMDIR%%/templates/en
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/el
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/de
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/da
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/cs
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ca
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ast
+%%NLS%%@dir(,,02775) %%MMDIR%%/templates/ar
+@dir %%MMDIR%%/templates
+@dir %%MMDIR%%/scripts
+%%NLS%%@dir %%MMDIR%%/messages/ast/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ast
+%%NLS%%@dir %%MMDIR%%/messages/zh_TW/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/zh_TW
+%%NLS%%@dir %%MMDIR%%/messages/zh_CN/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/zh_CN
+%%NLS%%@dir %%MMDIR%%/messages/vi/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/vi
+%%NLS%%@dir %%MMDIR%%/messages/uk/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/uk
+%%NLS%%@dir %%MMDIR%%/messages/tr/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/tr
+%%NLS%%@dir %%MMDIR%%/messages/sv/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/sv
+%%NLS%%@dir %%MMDIR%%/messages/sr/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/sr
+%%NLS%%@dir %%MMDIR%%/messages/sl/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/sl
+%%NLS%%@dir %%MMDIR%%/messages/sk/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/sk
+%%NLS%%@dir %%MMDIR%%/messages/ru/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ru
+%%NLS%%@dir %%MMDIR%%/messages/ro/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ro
+%%NLS%%@dir %%MMDIR%%/messages/pt_BR/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/pt_BR
+%%NLS%%@dir %%MMDIR%%/messages/pt/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/pt
+%%NLS%%@dir %%MMDIR%%/messages/pl/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/pl
+%%NLS%%@dir %%MMDIR%%/messages/no/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/no
+%%NLS%%@dir %%MMDIR%%/messages/nl/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/nl
+%%NLS%%@dir %%MMDIR%%/messages/lt/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/lt
+%%NLS%%@dir %%MMDIR%%/messages/ko/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ko
+%%NLS%%@dir %%MMDIR%%/messages/ja/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ja
+%%NLS%%@dir %%MMDIR%%/messages/it/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/it
+%%NLS%%@dir %%MMDIR%%/messages/ia/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ia
+%%NLS%%@dir %%MMDIR%%/messages/hu/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/hu
+%%NLS%%@dir %%MMDIR%%/messages/hr/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/hr
+%%NLS%%@dir %%MMDIR%%/messages/he/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/he
+%%NLS%%@dir %%MMDIR%%/messages/gl/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/gl
+%%NLS%%@dir %%MMDIR%%/messages/fr/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/fr
+%%NLS%%@dir %%MMDIR%%/messages/fi/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/fi
+%%NLS%%@dir %%MMDIR%%/messages/fa/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/fa
+%%NLS%%@dir %%MMDIR%%/messages/eu/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/eu
+%%NLS%%@dir %%MMDIR%%/messages/et/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/et
+%%NLS%%@dir %%MMDIR%%/messages/es/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/es
+%%NLS%%@dir %%MMDIR%%/messages/el/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/el
+%%NLS%%@dir %%MMDIR%%/messages/de/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/de
+%%NLS%%@dir %%MMDIR%%/messages/da/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/da
+%%NLS%%@dir %%MMDIR%%/messages/cs/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/cs
+%%NLS%%@dir %%MMDIR%%/messages/ca/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ca
+%%NLS%%@dir %%MMDIR%%/messages/ar/LC_MESSAGES
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages/ar
+%%NLS%%@dir(,,02775) %%MMDIR%%/messages
+@dir %%MMDIR%%/mail
+@dir %%MMDIR%%/icons
+@dir %%MMDIR%%/cron
+@dir %%MMDIR%%/pythonlib
+@dir %%MMDIR%%/cgi-bin
+@dir %%MMDIR%%/bin
+@dir %%MMDIR%%/Mailman/Queue
+@dir %%MMDIR%%/Mailman/MTA
+@dir %%MMDIR%%/Mailman/Logging
+@dir %%MMDIR%%/Mailman/Handlers
+@dir %%MMDIR%%/Mailman/Gui
+@dir %%MMDIR%%/Mailman/Commands
+@dir %%MMDIR%%/Mailman/Cgi
+@dir %%MMDIR%%/Mailman/Bouncers
+@dir %%MMDIR%%/Mailman/Archiver
+@dir %%IMGDIR%%
+@dir %%MMDIR%%/spam
+@dir %%MMDIR%%/qfiles
+@dir %%MMDIR%%/logs
+@dir %%MMDIR%%/locks
+@dir %%MMDIR%%/lists
+@dir %%MMDIR%%/data
+@dir %%MMDIR%%/archives/public
+@dir %%MMDIR%%/archives/private
+%%SUB_HTDIG%%@dir %%MMDIR%%/archives/htdig
+@dir %%MMDIR%%/archives
+@dir %%MMDIR%%/Mailman
+@dir(,,02775) %%MMDIR%%
 @group

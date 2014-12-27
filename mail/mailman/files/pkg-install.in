@@ -8,6 +8,8 @@ case $2 in
 
 POST-INSTALL)
   echo "---> Starting post-install script"
+  LC_ALL=C
+  export LC_ALL
 
   MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")" || exit 1
   trap "rm -rf \"$MYTMP\"" EXIT
@@ -41,7 +43,23 @@ POST-INSTALL)
   rm -f "$MYTMP/crontab"
 
   echo "---> Checking (and fixing) file and directory permissions"
-  "%%MAILMANDIR%%/bin/check_perms" -f >/dev/null
+  output="$("%%MAILMANDIR%%/bin/check_perms" -f 2>&1)"
+  printf '%s\n' "$output" | egrep -v '^Re-run' || :
+
+  echo "---> Running assorted other checks"
+  if egrep -q "^[ \t]*MTA.*=.*Postfix" "%%MAILMANDIR%%/Mailman/mm_cfg.py" ; then
+      # run Postfix-specific checks
+      if [ "x`${PKG_PREFIX}/sbin/postconf -h myhostname`" != "xlocalhost" ] \
+	  && ! egrep "^[ \t]*SMTPHOST.*=.*`${PKG_PREFIX}/sbin/postconf -h myhostname`" \
+	    "%%MAILMANDIR%%/Mailman/mm_cfg.py" 
+      then
+	  echo ""
+	  echo "Your Postfix hostname is non-default."
+	  echo -n "You must add \"SMTPHOST = '`${PKG_PREFIX}/sbin/postconf -h myhostname`'"
+	  echo "\" to the bottom of mm_cfg.py (without quotes)."
+	  echo ""
+      fi
+  fi
   ;;
 
 esac

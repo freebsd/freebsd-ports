@@ -1,6 +1,24 @@
 ----------------------------------------------------------------------------
 Mailman has been installed, but requires further configuration before use!
 
+==========================================
+WARNING ATTENTION DANGER ATTENTION WARNING
+==========================================
+
+mail/mailman requires proper directory permissions to run; but due to
+pkg 1.4.1 or libarchive bugs, directory permissions can not be created
+properly.
+
+If you installed mailman with pkg -I, --no-script or --no-install-scripts,
+you MUST(!) run the post-install script now, as root:
+
+env "PKG_PREFIX=%%PREFIX%%" sh \
+    %%MAILMANDIR%%/bin/FreeBSD-post-install x POST-INSTALL
+
+==========================================
+WARNING ATTENTION DANGER ATTENTION WARNING
+==========================================
+
 You will have to configure both your MTA (mail server) and web server to
 integrate with Mailman.  If the port's documentation has been installed,
 extensive post-installation instructions may be found in:
@@ -29,10 +47,10 @@ installed in %%MAILMANDIR%%/bin.
 Note (3):  As of version 2.1, Mailman's queue runner runs as a daemon and
 is started by a script in %%LOCALBASE%%/etc/rc.d
 
-In order to make private archives searchable with namazu2, you need copy
-or link %%LOCALBASE%%/libexec/namazu.cgi to
-%%MAILMANDIR%%/archives/private/<ML_name>/ and configure .namazurc
-to refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
-You can also see the Japanese document in
+In order to make private archives searchable with namazu2, you need
+to copy or link %%LOCALBASE%%/libexec/namazu.cgi to
+%%MAILMANDIR%%/archives/private/<ML_name>/ and configure .namazurc.
+Refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
+You can also see the document in Japanese language in
 <http://www.python.jp/pipermail/mailman-users-jp/2004-August/001008.html>
 ----------------------------------------------------------------------------

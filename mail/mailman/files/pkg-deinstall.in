@@ -39,14 +39,17 @@ DEINSTALL)
 POST-DEINSTALL)
   echo "---> Starting post-deinstall script"
 
-  # try to kill all empty directories - necessary on pkg_add-based systems
-  find "%%MAILMANDIR%%" -depth -type d -exec rmdir '{}' + >/dev/null 2>&1 || :
-  if [ -d "%%MAILMANDIR%%" ]; then
-    echo '---> %%MAILMANDIR%% is not empty - this installation may have active lists!'
-    ls -lRB "%%MAILMANDIR%%" | head -n200 || :
+  set -- "%%MAILMANDIR%%/lists"/*
+  if [ $# -gt 1 ] || [ "x$1" != "x%%MAILMANDIR%%/lists/*" ] ; then
+    echo '---> %%MAILMANDIR%%/lists is not empty - this installation may have active lists! Listing max. 10:'
+    find "%%MAILMANDIR%%/lists" -mindepth 1 -maxdepth 1 | head -n 10 || :
     echo "---> Restoring \"last_mailman_version\" file"
-    /bin/mkdir -p "%%MAILMANDIR%%/data"
-    /bin/mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data/"
+    if test -d "%%MAILMANDIR%%" ; then 
+	/bin/mkdir -p "%%MAILMANDIR%%/data" && \
+        /bin/mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data/"
+    else
+	/bin/rm -f /var/tmp/last_mailman_version
+    fi
   fi
 
   ;;
