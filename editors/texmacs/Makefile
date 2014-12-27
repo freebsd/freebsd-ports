@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
@@ -45,7 +45,7 @@ GHOSTSCRIPT_CONFIGURE_WITH=	gs=yes
 ICONV_USES=		iconv
 ICONV_CONFIGURE_WITH=	iconv
 
-IMLIB2_USE=		EFL=imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 IMLIB2_CONFIGURE_ON=	--with-imlib2
 IMLIB2_CONFIGURE_OFF=	--without-imlib
 

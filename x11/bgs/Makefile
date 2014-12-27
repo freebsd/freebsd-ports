@@ -3,7 +3,7 @@
 
 PORTNAME=	bgs
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://s01.de/~gottox/files/bgs/ \
 		http://laffaye.free.fr/distfiles/
@@ -11,8 +11,9 @@ MASTER_SITES=	http://s01.de/~gottox/files/bgs/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple X11 BackGround Setter using Imlib2
 
+LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+
 USE_XORG=	x11 xinerama
-USE_EFL=	imlib2
 
 PLIST_FILES=	bin/bgs \
 		man/man1/bgs.1.gz

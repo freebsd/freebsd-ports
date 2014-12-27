@@ -3,6 +3,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
@@ -13,11 +14,11 @@ COMMENT=	Image viewer that utilizes Imlib2
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USE_XORG=	x11 xt xinerama
 USES=		gmake perl5 tar:bzip2 shebangfix desktop-file-utils
-USE_EFL=	imlib2
 USE_PERL5=	run
 
 CPPFLAGS+=	-I${LOCALBASE}/include -std=c99

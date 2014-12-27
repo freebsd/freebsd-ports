@@ -3,7 +3,7 @@
 
 PORTNAME=	awesome2
 PORTVERSION=	2.3.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
@@ -17,15 +17,15 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USES=		iconv pkgconfig python:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-USE_EFL=	imlib2
 USE_GNOME=	pango
 USE_XORG=	x11 xft xext xinerama xt xrandr xproto
-LDFLAGS+=	-lX11 -lXext ${ICONV_LIB}
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXext ${ICONV_LIB}
 
 MAN1S=		awesome2.1 \
 		awesome2-client.1 \

@@ -21,7 +21,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-mpris2
 USE_GNOME=	glib20
-WANT_EFL=	yes
 WANT_SDL=	yes
 
 PORTDOCS=	AUTHORS

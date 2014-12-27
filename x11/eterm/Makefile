@@ -3,7 +3,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Eterm-${PORTVERSION}
 DISTNAME=	Eterm-${PORTVERSION}
@@ -12,7 +12,8 @@ MAINTAINER?=	olgeni@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
-LIB_DEPENDS=	libast.so:${PORTSDIR}/devel/libast
+LIB_DEPENDS=	libast.so:${PORTSDIR}/devel/libast \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
@@ -25,7 +26,6 @@ USES=		iconv libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/utils/kEsetroot.in
 perl_OLD_CMD=	@PERL@
 USE_CSTD=	gnu89
-USE_EFL=	imlib2
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xt
 

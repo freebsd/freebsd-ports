@@ -3,7 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -37,7 +37,7 @@ NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notific
 NOTIFY_CONFIGURE_OFF=	--disable-startup-notification
 
 IMLIB_CONFIGURE_ENABLE=	imlib2
-IMLIB_USE=	EFL=imlib2
+IMLIB_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 SVG_USE=	GNOME=librsvg2
 SVG_CONFIGURE_ENABLE=	librsvg
