@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	psychopy
-PORTVERSION=	1.81.02
+PORTVERSION=	1.81.03
 CATEGORIES=	science python
 MASTER_SITES=	SF/psychpy/PsychoPy
 DISTNAME=	PsychoPy-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.1.0:${PORTSDIR}/math/py-numpy \
