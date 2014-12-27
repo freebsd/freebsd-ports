@@ -3,7 +3,7 @@
 
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
@@ -13,8 +13,9 @@ COMMENT=	Utility library that includes a wrapper for imlib2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+
 USES=		pathfix pkgconfig libtool
-USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	docsdir=${DOCSDIR}

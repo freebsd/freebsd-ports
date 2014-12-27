@@ -3,7 +3,7 @@
 
 PORTNAME=	sxiv
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/muennich/sxiv/archive/
 DISTNAME=	v${PORTVERSION}

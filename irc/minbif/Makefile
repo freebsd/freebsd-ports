@@ -3,7 +3,7 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc net-im
 MASTER_SITES=	https://symlink.me/attachments/download/148/
 
@@ -64,7 +64,7 @@ CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MCACA}
-USE_EFL=	imlib2
+LIB_DEPENDS+=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO} && empty(PORT_OPTIONS:MCACA)

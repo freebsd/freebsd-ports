@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	IMLIB2
 
 USE_XORG=	xext xft xpm xrender
 USES=		pkgconfig
-WANT_EFL=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	ChangeLog INSTALL README
@@ -29,7 +28,7 @@ PLIST_FILES=	bin/fbdesk
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLIB2}
-USE_EFL+=	imlib2
+LIB_DEPENDS+=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
 .endif

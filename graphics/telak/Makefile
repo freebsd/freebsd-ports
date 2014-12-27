@@ -3,7 +3,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		CRITICAL
@@ -14,10 +14,10 @@ COMMENT=	Tool to draw pictures on your root window
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USES=		gmake
-USE_EFL=	imlib2
 
 ALL_TARGET=	${PORTNAME}
 

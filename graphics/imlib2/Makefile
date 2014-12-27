@@ -3,7 +3,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.4.6
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,11 +20,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
-USE_EFL=	libtool_hack
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig tar:bzip2
+USES=		libtool pathfix pkgconfig tar:bzip2
 
-CONFIGURE_ARGS+=	--enable-visibility-hiding
+CONFIGURE_ARGS+=	--enable-visibility-hiding --disable-static
 CONFIGURE_ENV+=	ac_cv_lib_dl_dlopen=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
