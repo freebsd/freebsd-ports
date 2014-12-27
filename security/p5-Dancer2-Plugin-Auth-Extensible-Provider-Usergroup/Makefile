@@ -3,6 +3,7 @@
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible-Provider-Usergroup
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Dancer2>=0.156001:${PORTSDIR}/www/p5-Dancer2 \
 		p5-Dancer2-Plugin-Auth-Extensible>=0:${PORTSDIR}/security/p5-Dancer2-Plugin-Auth-Extensible \
-		p5-Dancer2-Plugin-Passphrase>=0:${PORTSDIR}/security/p5-Dancer2-Plugin-Passphrase
+		p5-Dancer2-Plugin-Passphrase>=0:${PORTSDIR}/security/p5-Dancer2-Plugin-Passphrase \
+		p5-Dancer2-Plugin-DBIC>=0:${PORTSDIR}/databases/p5-Dancer2-Plugin-DBIC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
