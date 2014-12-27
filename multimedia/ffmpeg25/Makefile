@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	2.4.3
-PORTREVISION=	4
+PORTVERSION=	2.5.2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
-PKGNAMESUFFIX=	24
+PKGNAMESUFFIX=	25
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
@@ -27,7 +26,7 @@ USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
 WANT_SDL=	yes
 
-FFMPEG_SUFFIX=	24
+FFMPEG_SUFFIX=	25
 PLIST_SUB+=	FFMPEG_SUFFIX="${FFMPEG_SUFFIX}"
 CONFIGURE_ENV+=	EXESUF="${FFMPEG_SUFFIX}"
 MAKE_ARGS+=	EXESUF="${FFMPEG_SUFFIX}"
