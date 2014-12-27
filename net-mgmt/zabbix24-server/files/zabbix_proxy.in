@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # PROVIDE: zabbix_proxy
-# REQUIRE: DAEMON%%ZABBIX_REQUIRE%%
+# REQUIRE: DAEMON
+%%PGSQL%%# REQUIRE: postgresql
+%%MYSQL%%# REQUIRE: mysql-server
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
