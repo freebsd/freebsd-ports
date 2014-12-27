@@ -3,7 +3,7 @@
 
 PORTNAME=	libsidplay2
 PORTVERSION=	2.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio emulators
 MASTER_SITES=	SF/sidplay2/sidplay2/sidplay-libs-${PORTVERSION}
 DISTNAME=	sidplay-libs-${PORTVERSION}
@@ -15,8 +15,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-
-CFLAGS_amd64+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
