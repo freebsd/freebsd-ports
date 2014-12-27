@@ -412,6 +412,9 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/zh/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/zh_CN/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/zh_TW/openimg.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo_support/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo_support/Gemfile
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo_support/photo_support.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/ar/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/de/profile.po
@@ -556,6 +559,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/zh_TW/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/shortcutkey.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/shortcutkey_listview.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/skin/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/skin/skin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/ar/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/de/smartthread.po
@@ -633,6 +638,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/fav.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/followers.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/followings.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/forward.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon_alternative.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/list.png
