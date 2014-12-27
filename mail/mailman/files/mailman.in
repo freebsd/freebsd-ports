@@ -27,6 +27,7 @@ status_cmd=${name}_status
 extra_commands="reload status"
 
 mailman_start() {
+	env LC_ALL=C %%MAILMANDIR%%/bin/check_perms
 	%%MAILMANDIR%%/bin/mailmanctl -s -q start
 }
 

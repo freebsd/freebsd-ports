@@ -3,13 +3,15 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.18-1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 		https://launchpad.net/mailman/${DISTVERSION:R}/${DISTVERSION}/+download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	mailman
+
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mailing list manager with user-friendly web front-end
@@ -50,8 +52,6 @@ MAILMANDIR=	${PREFIX}/${MM_DIR}
 PLIST_SUB=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR} MM_USERNAME=${MM_USERNAME} MM_GROUPNAME=${MM_GROUPNAME}
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	MAILMANDIR=${MAILMANDIR} USER=${MM_USERNAME} GROUP=${MM_GROUPNAME}
-
-IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 
 PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 		README.CONTRIB README.NETSCAPE \
@@ -112,7 +112,6 @@ PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 PATCHFILES+=	indexing-2.1.12-0.1.patch.gz:patch1 \
 		htdig-2.1.12-0.1.patch.gz:patch2
-PATCH_DIST_STRIP=	-p1
 PKGNAMESUFFIX+=	-with-htdig
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
@@ -147,16 +146,16 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
+	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
-	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
+	${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
 .if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
 pre-configure:
-	@${ECHO} "MTA = 'Postfix'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
+	${ECHO} "MTA = 'Postfix'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
 .endif
 
 post-install:
@@ -177,34 +176,23 @@ post-install:
 	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
-	# mm_cfg.py is handled by pkg-plist:
+	@# mm_cfg.py is handled by pkg-plist:
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
-	${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
-.for imgfile in ${IMGFILES}
-	${CP} ${STAGEDIR}${MAILMANDIR}/icons/${imgfile} ${STAGEDIR}${PREFIX}/${IMGDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
+	${CP} -p ${STAGEDIR}${MAILMANDIR}/icons/* ${STAGEDIR}${PREFIX}/${IMGDIR}
 	uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
 	  ${STAGEDIR}${PREFIX}/${IMGDIR}/powerlogo.gif
 .if ${PORT_OPTIONS:MDOCS}
 	${CP} -R ${WRKSRC}/doc/* ${WRKSRC}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/FreeBSD-post-install-notes ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS:NFreeBSD-post-install-notes}
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${ECHO} "This marker file ensures that Python's upgrade-site-packages handles ${PKGNAME}." >${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mailman-info.txt
-.if ${PORT_OPTIONS:MPOSTFIX}
-	@if [ "x`${LOCALBASE}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
-		${ECHO_CMD} ""; \
-		${ECHO_CMD} "Your Postfix hostname is non-default."; \
-		${ECHO_CMD} -n "You must add \"SMTPHOST = "; \
-		${ECHO_CMD} -n `${LOCALBASE}/sbin/postconf -h myhostname`; \
-		${ECHO_CMD} "\" to the bottom of mm_cfg.py."; \
-		${ECHO_CMD} ""; \
-		fi
-.endif
+	${INSTALL_SCRIPT} ${PKGINSTALL} ${STAGEDIR}${MAILMANDIR}/bin/FreeBSD-post-install
 
 .include <bsd.port.mk>
