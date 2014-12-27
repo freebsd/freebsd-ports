@@ -1,6 +1,6 @@
---- src/xmlrpcpp/base64.h.orig	2014-04-08 23:01:00.000000000 -0700
-+++ src/xmlrpcpp/base64.h	2014-04-08 23:01:12.000000000 -0700
-@@ -10,6 +10,7 @@
+--- src/xmlrpcpp/base64.h.orig	2014-12-10 08:23:34.000000000 -0500
++++ src/xmlrpcpp/base64.h	2014-12-27 11:45:05.000000000 -0500
+@@ -28,6 +28,7 @@
  #define __BASE64_H_INCLUDED__ 1
  
  #include <iterator>
