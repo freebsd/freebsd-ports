@@ -2399,7 +2399,7 @@
 @dir %%MMDIR%%/lists
 @dir %%MMDIR%%/data
 @dir %%MMDIR%%/archives/public
-@dir %%MMDIR%%/archives/private
+@dir(,,02770) %%MMDIR%%/archives/private
 %%SUB_HTDIG%%@dir %%MMDIR%%/archives/htdig
 @dir %%MMDIR%%/archives
 @dir %%MMDIR%%/Mailman
