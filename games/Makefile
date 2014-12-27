@@ -390,7 +390,6 @@
     SUBDIR += help_hannahs_horse
     SUBDIR += heretic
     SUBDIR += heroes
-    SUBDIR += hex
     SUBDIR += hex-a-hop
     SUBDIR += hexalate
     SUBDIR += hexglass
@@ -870,8 +869,6 @@
     SUBDIR += seahaven
     SUBDIR += searchandrescue
     SUBDIR += searchandrescue-data
-    SUBDIR += secretmaryochronicles
-    SUBDIR += secretmaryochronicles-music
     SUBDIR += secrettower
     SUBDIR += senken
     SUBDIR += sets

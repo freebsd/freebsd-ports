@@ -3,7 +3,7 @@
 
 PORTNAME=	netsurf
 PORTVERSION=	3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source-full/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full-src
@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include

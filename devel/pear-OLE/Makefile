@@ -5,7 +5,7 @@ PORTNAME=	OLE
 DISTVERSION=	1.0.0RC2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for reading and writing OLE containers
 
 USES=	pear

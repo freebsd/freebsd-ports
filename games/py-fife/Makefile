@@ -3,7 +3,7 @@
 
 PORTNAME=		fife
 PORTVERSION=		0.3.5
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		games
 MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:source \
 			http://sourceforge.net/projects/${PORTNAME}/files/active/demos/:demo \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=		${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 			libguichan.so:${PORTSDIR}/devel/guichan \
 			libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-			libpng15.so:${PORTSDIR}/graphics/png
+			libpng.so:${PORTSDIR}/graphics/png
 
 USES=			openal:al pkgconfig python:2 scons
 USE_GL=			gl

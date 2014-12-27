@@ -8,7 +8,7 @@ CATEGORIES=	net perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Target object for all Net-Packet related stuff
 
 LICENSE=	ART10

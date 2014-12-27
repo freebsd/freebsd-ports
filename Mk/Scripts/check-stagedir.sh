@@ -173,11 +173,7 @@ parse_mtree() {
 		fi
 		listmtree "${PORTSDIR}/Templates/BSD.local.dist" "${LOCALBASE}"
 
-		if [ -n "${GNOME_MTREE_FILE}" ] && \
-		    [ -f "${GNOME_MTREE_FILE}" ]; then
-			listmtree "${GNOME_MTREE_FILE}" "${PREFIX}"
-		fi
-		unset MTREE_FILE GNOME_MTREE_FILE
+		unset MTREE_FILE
 
 		# Add LOCALBASE
 		a=${LOCALBASE}
@@ -303,6 +299,7 @@ check_orphans_from_plist() {
 		share/mime/treemagic) ;;
 		share/mime/types) ;;
 		share/mime/version) ;;
+		'@dir etc/gconf/gconf.xml.defaults');;
 		*)
 			# An orphan was found, return non-zero status
 			ret=1
@@ -360,7 +357,7 @@ esac
 
 # validate environment
 envfault=
-for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE GNOME_MTREE_FILE \
+for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE \
     TMPPLIST PLIST_SUB_SED SCRIPTSDIR \
     PORT_OPTIONS NO_PREFIX_RMDIR
 do

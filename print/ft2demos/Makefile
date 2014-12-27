@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Demo programs for FreeType2
 
 LICENSE=	BSD3CLAUSE GPLv2

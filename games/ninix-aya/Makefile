@@ -3,7 +3,7 @@
 
 PORTNAME=	ninix-aya
 PORTVERSION=	4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SFJP/${PORTNAME}/58500
 
@@ -13,7 +13,7 @@ COMMENT=	Desktop mascot program compatible with "Ukagaka"
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet \
 		${PYNUMPY}

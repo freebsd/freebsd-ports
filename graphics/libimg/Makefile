@@ -3,6 +3,7 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES?=	graphics tk
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
 DISTNAME=	tkimg${PORTVERSION}
@@ -11,7 +12,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
 
 BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
@@ -46,7 +47,7 @@ post-configure:
 	# Link with -l$l
 	${REINPLACE_CMD} -E \
 		-e 's,^SHLIB_LD_LIBS[[:space:]]*=[[:space:]]*(.*),SHLIB_LD_LIBS=\1 -l$l,' \
-		-e 's,-lpng$$,-lpng15,' ${WRKSRC}/$l/Makefile
+		${WRKSRC}/$l/Makefile
 .endfor
 
 post-install:

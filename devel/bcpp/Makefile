@@ -6,7 +6,7 @@ PORTVERSION=	20131209
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code
 
 LICENSE=	MIT

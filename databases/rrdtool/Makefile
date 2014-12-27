@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.4.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -78,7 +78,7 @@ EXTRA_PATCHES+=		${FILESDIR}/thirdparty-json.diff
 
 .if ${PORT_OPTIONS:MGRAPH}
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 USE_GNOME+=	cairo pango
 PLIST_SUB+=	WITH_GRAPH=""
 .else

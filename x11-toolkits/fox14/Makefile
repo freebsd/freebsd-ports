@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.4.35
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -14,7 +14,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 MAJORVER=	${PORTVERSION:R}

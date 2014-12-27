@@ -3,6 +3,7 @@
 
 PORTNAME=	bmpp
 PORTVERSION=	3.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes

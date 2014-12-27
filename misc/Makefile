@@ -147,7 +147,6 @@
     SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs
-    SUBDIR += gnomehier
     SUBDIR += gnu-watch
     SUBDIR += gnuit
     SUBDIR += gnuls

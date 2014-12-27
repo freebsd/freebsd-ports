@@ -94,6 +94,3 @@ lib/libgpac.so.2
 lib/libgpac.so.2.0.0
 lib/libgpac_static.a
 libdata/pkgconfig/gpac.pc
-@dirrm include/gpac/modules
-@dirrm include/gpac/internal
-@dirrm include/gpac

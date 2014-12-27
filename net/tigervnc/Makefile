@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -76,7 +76,7 @@ CMAKE_ARGS+=	-DENABLE_PAM=0
 
 .if ${PORT_OPTIONS:MVIEWER}
 CMAKE_ARGS+=	-DBUILD_VIEWER=1
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 # ImageMagick is required to generate icons during build process
 BUILD_DEPENDS+= ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick

@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.joedog.org/pub/siege/ \
 		http://fossies.org/linux/www/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTTP regression testing and benchmarking utility
 
 LICENSE=	GPLv2

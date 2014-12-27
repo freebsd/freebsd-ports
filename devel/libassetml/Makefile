@@ -13,14 +13,18 @@ COMMENT=	Library to share image and audio files between projects
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		gettext gmake libtool:keepla makeinfo pkgconfig
-USE_GNOME=	gnomehack gnomeprefix glib20 libxml2
+USES=		gettext gmake libtool:keepla makeinfo pathfix pkgconfig
+USE_GNOME=	gnomeprefix glib20 libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 INFO=	libassetml
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,libdir)/locale,datadir)/locale,g' ${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/assetml

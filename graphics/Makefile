@@ -56,7 +56,6 @@
     SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
-    SUBDIR += bbrb
     SUBDIR += blender
     SUBDIR += blender-doc
     SUBDIR += bmeps
@@ -96,7 +95,6 @@
     SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += converseen
-    SUBDIR += corona
     SUBDIR += cosmoplayer
     SUBDIR += crw
     SUBDIR += cthumb
@@ -184,7 +182,6 @@
     SUBDIR += fpc-graph
     SUBDIR += fpc-hermes
     SUBDIR += fpc-imagemagick
-    SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
     SUBDIR += fpc-libpng
     SUBDIR += fpc-ncurses
@@ -324,7 +321,6 @@
     SUBDIR += gtk-update-icon-cache
     SUBDIR += gtkam
     SUBDIR += gtkdps
-    SUBDIR += gtkgraph
     SUBDIR += gts
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
@@ -355,13 +351,11 @@
     SUBDIR += iiview
     SUBDIR += ilmbase
     SUBDIR += imageindex
-    SUBDIR += imagesort
     SUBDIR += imageviewer
     SUBDIR += imageworsener
     SUBDIR += imc
     SUBDIR += imgtops
     SUBDIR += imgv
-    SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
     SUBDIR += import-pictures
@@ -512,7 +506,6 @@
     SUBDIR += libmorph
     SUBDIR += libopenraw
     SUBDIR += libosmesa
-    SUBDIR += libpano12
     SUBDIR += libpano13
     SUBDIR += libpcd
     SUBDIR += libpgf
@@ -765,7 +758,6 @@
     SUBDIR += php56-gd
     SUBDIR += phplot
     SUBDIR += picpuz
-    SUBDIR += picturebook
     SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pinpoint
@@ -792,7 +784,6 @@
     SUBDIR += poppler-qt4
     SUBDIR += poppler-qt5
     SUBDIR += poppler-utils
-    SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += povray-meta
     SUBDIR += povray36
@@ -963,7 +954,6 @@
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell
-    SUBDIR += show
     SUBDIR += showimage
     SUBDIR += silgraphite
     SUBDIR += simage

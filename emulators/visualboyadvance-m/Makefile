@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	https://cooltrainer.org/freebsd-ports/visualboyadvance-m/
 
@@ -12,7 +12,7 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	NLS FFMPEG LINK LIRC DEBUGGER
 OPTIONS_MULTI=	INTERFACE

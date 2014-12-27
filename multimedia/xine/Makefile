@@ -2,7 +2,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	X11 multimedia player
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libxine.so:${PORTSDIR}/multimedia/libxine
 
 USES=		desktop-file-utils execinfo gmake iconv pkgconfig readline \

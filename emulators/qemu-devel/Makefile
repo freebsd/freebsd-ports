@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -220,7 +220,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .if empty(PORT_OPTIONS:MPNG)
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MCURL)

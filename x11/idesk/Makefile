@@ -3,16 +3,16 @@
 
 PORTNAME=	idesk
 PORTVERSION=	0.7.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
 
-LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
-USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 USES=		gmake pkgconfig tar:bzip2

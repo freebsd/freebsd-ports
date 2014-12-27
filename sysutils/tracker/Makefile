@@ -4,7 +4,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -121,7 +121,7 @@ PLIST_SUB+=	DOCUMENT_MINERS="@comment "
 .if ${PORT_OPTIONS:MGRAPHIC_MINERS}
 LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-libgif \
 			--enable-libjpeg \

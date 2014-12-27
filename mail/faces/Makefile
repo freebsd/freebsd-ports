@@ -30,7 +30,7 @@ PLIST_SUB+=	X11="@comment "
 WITH_AUDIO=	# none
 .else # with X11
 PLIST_SUB+=	X11=""
-USE_GNOME=	gnomehack gtk12
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I../compface -I${LOCALBASE}/include
 LDFLAGS+=	-L../compface -L${LOCALBASE}/lib

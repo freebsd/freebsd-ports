@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 

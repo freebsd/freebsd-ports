@@ -220,10 +220,3 @@ libexec/soulride-static
 %%DATADIR%%/data/whiteout.lua
 %%PORTDOCS%%%%DOCSDIR%%/readme-jay_peak.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme-linux.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/Recordings
-@dirrm %%DATADIR%%/data/Jay_Peak
-@dirrm %%DATADIR%%/data/figure
-@dirrm %%DATADIR%%/data/gui
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

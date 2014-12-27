@@ -8,7 +8,7 @@ MASTER_SITES=	https://downloads.egenix.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	eGenix mx-Extension Series for Python
 
 USES=		python:2

@@ -54,20 +54,23 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/tree_leaf.bmp
 %%DATADIR%%/Bitmap/tree_level.bmp
 %%DATADIR%%/Bitmap/undo32.png
+%%DATADIR%%/CorsixTH.lua
 %%DATADIR%%/Levels/Example.map
 %%DATADIR%%/Levels/avatar.level
 %%DATADIR%%/Levels/avatar.map
-%%DATADIR%%/Levels/confined_v5.map
 %%DATADIR%%/Levels/confined_v5.level
+%%DATADIR%%/Levels/confined_v5.map
 %%DATADIR%%/Levels/demo.level
 %%DATADIR%%/Levels/example.level
-%%DATADIR%%/Levels/finisham.map
 %%DATADIR%%/Levels/finisham.level
+%%DATADIR%%/Levels/finisham.map
 %%DATADIR%%/Levels/original05.level
 %%DATADIR%%/Levels/original07.level
 %%DATADIR%%/Levels/original08.level
 %%DATADIR%%/Levels/original11.level
 %%DATADIR%%/Levels/original12.level
+%%DATADIR%%/Levels/st.peter's.level
+%%DATADIR%%/Levels/st.peter's.map
 %%DATADIR%%/Lua/api_version.lua
 %%DATADIR%%/Lua/app.lua
 %%DATADIR%%/Lua/audio.lua
@@ -80,6 +83,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/commands/set_map_cell.lua
 %%DATADIR%%/Lua/commands/set_map_cell_flags.lua
 %%DATADIR%%/Lua/config_finder.lua
+%%DATADIR%%/Lua/debug_script.lua
 %%DATADIR%%/Lua/diagnosis/diag_blood_machine.lua
 %%DATADIR%%/Lua/diagnosis/diag_cardiogram.lua
 %%DATADIR%%/Lua/diagnosis/diag_general_diag.lua
@@ -175,13 +179,17 @@ bin/CorsixTH
 %%DATADIR%%/Lua/diseases/tv_personalities.lua
 %%DATADIR%%/Lua/diseases/uncommon_cold.lua
 %%DATADIR%%/Lua/diseases/unexpected_swelling.lua
+%%DATADIR%%/Lua/entities/grim_reaper.lua
 %%DATADIR%%/Lua/entities/humanoid.lua
+%%DATADIR%%/Lua/entities/inspector.lua
 %%DATADIR%%/Lua/entities/machine.lua
 %%DATADIR%%/Lua/entities/object.lua
 %%DATADIR%%/Lua/entities/patient.lua
 %%DATADIR%%/Lua/entities/staff.lua
 %%DATADIR%%/Lua/entities/vip.lua
 %%DATADIR%%/Lua/entity.lua
+%%DATADIR%%/Lua/entity_map.lua
+%%DATADIR%%/Lua/epidemic.lua
 %%DATADIR%%/Lua/filesystem.lua
 %%DATADIR%%/Lua/game_ui.lua
 %%DATADIR%%/Lua/graphics.lua
@@ -193,6 +201,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/falling.lua
 %%DATADIR%%/Lua/humanoid_actions/get_up.lua
 %%DATADIR%%/Lua/humanoid_actions/idle.lua
+%%DATADIR%%/Lua/humanoid_actions/idle_spawn.lua
 %%DATADIR%%/Lua/humanoid_actions/knock_door.lua
 %%DATADIR%%/Lua/humanoid_actions/meander.lua
 %%DATADIR%%/Lua/humanoid_actions/multi_use_object.lua
@@ -212,11 +221,12 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/use_object.lua
 %%DATADIR%%/Lua/humanoid_actions/use_screen.lua
 %%DATADIR%%/Lua/humanoid_actions/use_staffroom.lua
+%%DATADIR%%/Lua/humanoid_actions/vaccinate.lua
 %%DATADIR%%/Lua/humanoid_actions/vip_go_to_next_room.lua
 %%DATADIR%%/Lua/humanoid_actions/vomit.lua
 %%DATADIR%%/Lua/humanoid_actions/walk.lua
 %%DATADIR%%/Lua/humanoid_actions/yawn.lua
-%%DATADIR%%/Lua/key_mapping.lua
+%%DATADIR%%/Lua/key_mapping.txt
 %%DATADIR%%/Lua/languages/brazilian_portuguese.lua
 %%DATADIR%%/Lua/languages/czech.lua
 %%DATADIR%%/Lua/languages/danish.lua
@@ -261,6 +271,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/objects/doors/swing_door_right.lua
 %%DATADIR%%/Lua/objects/drinks_machine.lua
 %%DATADIR%%/Lua/objects/fire_extinguisher.lua
+%%DATADIR%%/Lua/objects/gates_to_hell.lua
 %%DATADIR%%/Lua/objects/helicopter.lua
 %%DATADIR%%/Lua/objects/lecture_chair.lua
 %%DATADIR%%/Lua/objects/litter.lua
@@ -339,24 +350,3 @@ bin/CorsixTH
 %%DATADIR%%/Lua/walls/yellow.lua
 %%DATADIR%%/Lua/window.lua
 %%DATADIR%%/Lua/world.lua
-%%DATADIR%%/CorsixTH.lua
-@dirrm %%DATADIR%%/Lua/walls
-@dirrm %%DATADIR%%/Lua/rooms
-@dirrm %%DATADIR%%/Lua/objects/machines
-@dirrm %%DATADIR%%/Lua/objects/doors
-@dirrm %%DATADIR%%/Lua/objects
-@dirrm %%DATADIR%%/Lua/languages
-@dirrm %%DATADIR%%/Lua/humanoid_actions
-@dirrm %%DATADIR%%/Lua/entities
-@dirrm %%DATADIR%%/Lua/diseases
-@dirrm %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs
-@dirrm %%DATADIR%%/Lua/dialogs/resizables/file_browsers
-@dirrm %%DATADIR%%/Lua/dialogs/resizables
-@dirrm %%DATADIR%%/Lua/dialogs/fullscreen
-@dirrm %%DATADIR%%/Lua/dialogs
-@dirrm %%DATADIR%%/Lua/diagnosis
-@dirrm %%DATADIR%%/Lua/commands
-@dirrm %%DATADIR%%/Lua
-@dirrm %%DATADIR%%/Levels
-@dirrm %%DATADIR%%/Bitmap
-@dirrm %%DATADIR%%

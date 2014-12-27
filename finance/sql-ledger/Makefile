@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.sql-ledger.com/source/ \
 		http://abacus.sql-ledger.com/source/ \
 		http://pluto.sql-ledger.com/source/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Double entry accounting system
 
 LICENSE=	GPLv2

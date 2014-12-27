@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}  \
 MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ratfor -- the Rational FORTRAN compiler
 
 NO_WRKSUBDIR=	yes

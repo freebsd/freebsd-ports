@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig

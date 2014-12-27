@@ -3,7 +3,7 @@
 
 PORTNAME=	glaxium
 PORTVERSION=	0.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	OpenGL based space-ship "shoot-em-up" game
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		dos2unix gmake
 USE_SDL=	sdl mixer

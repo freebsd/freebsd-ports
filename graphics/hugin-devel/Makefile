@@ -3,7 +3,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2013.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-2013.0
 PKGNAMESUFFIX=	-devel
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblensfun.so:${PORTSDIR}/graphics/lensfun \
 		libpano13.so:${PORTSDIR}/graphics/libpano13 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 		tclap>=1.2.1:${PORTSDIR}/devel/tclap

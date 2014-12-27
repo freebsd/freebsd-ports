@@ -10,7 +10,8 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educative games for children
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # only
+LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy \

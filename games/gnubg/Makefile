@@ -3,6 +3,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	1.04.000
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		http://files.gnubg.org/media/sources/
@@ -15,7 +16,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 RUN_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	egl
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-stable-src
@@ -34,9 +34,8 @@ GAME_DESC=	Build main game (default mod)
 
 .if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 USE_GL=		gl
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 PLIST_SUB+=	CLIENT=""
 EGL_BIN+=	egl
 .else

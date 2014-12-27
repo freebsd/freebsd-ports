@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
 		http://www.it.ca/~paul/src/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Check for open proxy servers
 
 PORTSCOUT=	skipv:0.49

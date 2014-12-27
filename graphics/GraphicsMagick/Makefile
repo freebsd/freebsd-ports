@@ -3,20 +3,21 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
 MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 		libjasper.so:${PORTSDIR}/graphics/jasper	\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		liblcms2.so:${PORTSDIR}/graphics/lcms2		\
-		libpng15.so:${PORTSDIR}/graphics/png		\
+		libpng.so:${PORTSDIR}/graphics/png		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libfreetype.so:${PORTSDIR}/print/freetype2
 

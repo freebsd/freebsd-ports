@@ -3,7 +3,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	6.0
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

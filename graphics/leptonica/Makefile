@@ -3,7 +3,7 @@
 
 PORTNAME=	leptonica
 PORTVERSION=	1.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.leptonica.com/source/
 
@@ -12,7 +12,7 @@ COMMENT=	C library for efficient image processing and image analysis operations
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp
 

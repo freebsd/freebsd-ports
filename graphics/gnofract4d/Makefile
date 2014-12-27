@@ -3,7 +3,7 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.14.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	Weird GNOME fractal generator
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils pathfix pkgconfig python shared-mime-info
 USE_GNOME=	gnomeprefix intlhack libgnomeui pygtk2

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNU/osip
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Low layer of SIP implementation
 
 LICENSE=	LGPL21

@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20141225:
+  AFFECTS: users of graphics/png
+  AUTHOR: antoine@FreeBSD.org
+
+  The PNG library has been updated to version 1.6.16.  Please rebuild all
+  ports that depend on it.
+
+  If you use portmaster:
+        portmaster -r png
+  If you use portupgrade:
+        portupgrade -fr graphics/png
+
+20141224:
+  AFFECTS: users of lang/neon29
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port www/neon29 was renamed to www/neon and updated to version 0.30.1
+
+  If you use pkg, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, rebuild ports dependding on neon
+  # portmaster -o www/neon www/neon29
+  # portmaster -R -r neon
+
 20141219:
   AFFECTS: users of x11/xorg and all xorg ports
   AUTHOR: dumbbell@FreeBSD.org

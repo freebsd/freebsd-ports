@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c3d43001-8064-11e4-801f-0022156e8794">
+    <topic>mutt -- denial of service via crafted mail message</topic>
+    <affects>
+      <package>
+	<name>mutt</name>
+	<range><ge>1.5.22</ge><lt>1.5.23_7</lt></range>
+      </package>
+      <package>
+	<name>ja-mutt</name>
+	<range><ge>1.5.22</ge><lt>1.5.23_7</lt></range>
+      </package>
+      <package>
+	<name>zh-mutt</name>
+	<range><ge>1.5.22</ge><lt>1.5.23_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9116">
+	  <p>The write_one_header function in mutt 1.5.23 does not
+	  properly handle newline characters at the beginning of a
+	  header, which allows remote attackers to cause a denial of
+	  service (crash) via a header with an empty body, which
+	  triggers a heap-based buffer overflow in the mutt_substrdup
+	  function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>71334</bid>
+      <cvename>CVE-2014-9116</cvename>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=771125</url>
+      <url>http://dev.mutt.org/trac/ticket/3716</url>
+    </references>
+    <dates>
+      <discovery>2014-11-26</discovery>
+      <entry>2014-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4033d826-87dd-11e4-9079-3c970e169bc2">
     <topic>ntp -- multiple vulnerabilities</topic>
     <affects>
@@ -78,7 +119,7 @@ Notes:
 	    be executed. ntp-keygen prior to version 4.2.7p230
 	    also uses a non-cryptographic random number generator
 	    when generating symmetric keys.</p>
-          <p>The buffer overflow vulnerabilities in ntpd may
+	  <p>The buffer overflow vulnerabilities in ntpd may
 	    allow a remote unauthenticated attacker to execute
 	    arbitrary malicious code with the privilege level
 	    of the ntpd process. The weak default key and

@@ -3,7 +3,7 @@
 
 PORTNAME=	librasterlite
 PORTVERSION=	1.1g
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libtiff.so:${PORTSDIR}/graphics/tiff \

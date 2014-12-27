@@ -3,14 +3,14 @@
 
 PORTNAME=	xaos
 PORTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real-time fractal browser
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libgsl.so:${PORTSDIR}/math/gsl
 
 USES=		gmake

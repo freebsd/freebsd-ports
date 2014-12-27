@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/exosip
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GPL library that extends the capability of the oSIP library
 
 LICENSE=	GPLv2

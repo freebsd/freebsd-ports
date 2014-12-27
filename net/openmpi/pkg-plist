@@ -182,6 +182,7 @@
 %%MPIDIR%%/include/mpif-io-constants.h
 %%MPIDIR%%/include/mpif-io-handles.h
 %%MPIDIR%%/include/mpif-sentinels.h
+%%MPIDIR%%/include/mpif-sizeof.h
 %%MPIDIR%%/include/mpif.h
 %%MPIDIR%%/include/shmem-compat.h
 %%MPIDIR%%/include/shmemx.h
@@ -239,7 +240,7 @@
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
 %%MPIDIR%%/lib/libmpi_usempi.so.1
-%%MPIDIR%%/lib/libmpi_usempi.so.1.3.2
+%%MPIDIR%%/lib/libmpi_usempi.so.1.4.0
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.0
@@ -661,6 +662,7 @@
 %%MPIDIR%%/man/man3/MPI_Ialltoall.3.gz
 %%MPIDIR%%/man/man3/MPI_Ialltoallv.3.gz
 %%MPIDIR%%/man/man3/MPI_Ialltoallw.3.gz
+%%MPIDIR%%/man/man3/MPI_Ibarrier.3.gz
 %%MPIDIR%%/man/man3/MPI_Ibcast.3.gz
 %%MPIDIR%%/man/man3/MPI_Ibsend.3.gz
 %%MPIDIR%%/man/man3/MPI_Iexscan.3.gz
@@ -855,6 +857,7 @@
 %%MPIDIR%%/man/man7/orte_snapc.7.gz
 %%MPIDIR%%/man/man7/orte_sstore.7.gz
 %%MPIDIR%%/%%DATADIR%%/amca-param-sets/example.conf
+%%MPIDIR%%/%%DATADIR%%/help-btl-vader.txt
 %%MPIDIR%%/%%DATADIR%%/help-dash-host.txt
 %%MPIDIR%%/%%DATADIR%%/help-db-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-errmgr-base.txt
@@ -869,7 +872,6 @@
 %%MPIDIR%%/%%DATADIR%%/help-mpi-btl-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-mpi-btl-sm.txt
 %%MPIDIR%%/%%DATADIR%%/help-mpi-btl-tcp.txt
-%%MPIDIR%%/%%DATADIR%%/help-mpi-btl-vader.txt
 %%MPIDIR%%/%%DATADIR%%/help-mpi-coll-ml.txt
 %%MPIDIR%%/%%DATADIR%%/help-mpi-coll-sm.txt
 %%MPIDIR%%/%%DATADIR%%/help-mpi-common-sm.txt

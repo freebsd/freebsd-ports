@@ -3,7 +3,7 @@
 
 PORTNAME=	dosbox
 PORTVERSION=	0.74
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Emulator of a PC with DOS
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net sound

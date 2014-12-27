@@ -3,6 +3,7 @@
 
 PORTNAME=	sunclock
 PORTVERSION=	3.57
+PORTREVISION=	1
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -13,7 +14,7 @@ COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

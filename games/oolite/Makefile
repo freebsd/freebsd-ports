@@ -3,7 +3,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.80
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games gnustep
 MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.80b/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
@@ -23,7 +23,7 @@ BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=		libespeak.so:${PORTSDIR}/audio/espeak \
 			libnspr4.so:${PORTSDIR}/devel/nspr \
 			libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-			libpng15.so:${PORTSDIR}/graphics/png \
+			libpng.so:${PORTSDIR}/graphics/png \
 			libminizip.so:${PORTSDIR}/archivers/minizip
 
 USES=			gmake openal:al perl5 python:build tar:bzip2

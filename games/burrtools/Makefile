@@ -3,7 +3,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	netpbm>0:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libxmlwrapp.so:${PORTSDIR}/textproc/xmlwrapp \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 

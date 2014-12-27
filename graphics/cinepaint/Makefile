@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
     		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 

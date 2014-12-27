@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpaper.so:${PORTSDIR}/print/libpaper \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
@@ -58,7 +58,6 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/jasper/src/libjasper/include \
-		-I${LOCALBASE}/include/libpng15 \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 XCFLAGS=	${PTHREAD_CFLAGS} \

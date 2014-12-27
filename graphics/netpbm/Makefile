@@ -3,6 +3,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.94
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
 		${MASTER_SITE_LOCAL:S/$/:man/}
@@ -13,7 +14,7 @@ COMMENT=	Toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
@@ -25,6 +26,7 @@ MAKEFILE=	GNUmakefile
 MAKEFILE2=	Makefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 SHEBANG_FILES=	editor/pnmflip editor/pnmquant editor/ppmfade \
 		editor/ppmquant editor/ppmshadow generator/ppmrainbow
@@ -119,16 +121,6 @@ pre-configure:
 	${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
 	cd ${WRKSRC} && buildtools/stamp-date > ${WRKSRC}/lib/compile.h
-
-# This snippet is all it takes to make the port as of 10.35.80 MAKE_JOBS_SAFE:
-pre-build:
-	(cd ${BUILD_WRKSRC}/lib/util; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE2} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
-	if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
-	    ${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-	    (${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-	    fi; \
-	${FALSE}; \
-	fi)
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${STAGEDIR}${PREFIX}/include/

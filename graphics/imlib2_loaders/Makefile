@@ -3,6 +3,7 @@
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,15 +18,17 @@ LICENSE_NAME_imlib2=	imlib2 license
 LICENSE_FILE_imlib2=	${WRKSRC}/COPYING
 LICENSE_PERMS_imlib2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig tar:bzip2
-USE_EFL=	imlib2 libtool_hack
+USES=		libtool pathfix pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	EET XCF
 OPTIONS_DEFAULT=	EET XCF
 EET_DESC=	Enable eet loader
 XCF_DESC=	Enable XCF loader
 
+CONFIGURE_ARGS=	--disable-static
 MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 
 .include <bsd.port.options.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	vultures
 PORTVERSION=	2.3.67
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.dk.debian.org/getdeb/%SUBDIR%/ \
 		http://ftp.heanet.ie/mirrors/www.getdeb.net/getdeb/%SUBDIR%/ \
@@ -21,7 +21,7 @@ LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/dat/license
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/vulture-${PORTVERSION}/nethack
 CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix

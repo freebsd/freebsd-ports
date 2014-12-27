@@ -3,7 +3,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.8.8
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		bison gmake iconv perl5 python:2
 ALL_TARGET=	all

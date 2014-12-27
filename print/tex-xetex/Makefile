@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99991
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libicuio.so:${PORTSDIR}/devel/icu \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
 		libzzip.so:${PORTSDIR}/devel/zziplib

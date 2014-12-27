@@ -3,7 +3,7 @@
 
 PORTNAME=	zint
 PORTVERSION=	2.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -12,7 +12,7 @@ COMMENT=	Zint Barcode Generator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		cmake
 USE_LDCONFIG=	yes

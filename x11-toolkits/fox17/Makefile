@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.7.49
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=--disable-png
 .endif

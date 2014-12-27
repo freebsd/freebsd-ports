@@ -4,7 +4,7 @@
 PORTNAME=	wizznic
 PORTVERSION=	0.9.9
 DISTVERSIONSUFFIX=-src
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source%20Releases/
 
@@ -13,7 +13,7 @@ COMMENT=	Implementation of the arcade classic Puzznic
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 

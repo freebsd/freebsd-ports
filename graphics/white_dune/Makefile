@@ -4,7 +4,7 @@
 PORTNAME=	white_dune
 PORTVERSION=	${DISTVERSION:S/pl/./}
 DISTVERSION=	0.30pl5
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/
@@ -13,7 +13,7 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 

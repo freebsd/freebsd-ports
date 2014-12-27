@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -16,10 +16,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20 cairo libwnck intltool intlhack
+USE_GNOME=	glib20 cairo intltool intlhack
 
-CONFIGURE_ARGS=	--enable-wnck \
-	--disable-gksu
+OPTIONS_SINGLE=	GTK
+OPTIONS_SINGLE_GTK=	GTK2 GTK3
+OPTIONS_DEFAULT=	GTK2
+
+GTK2_USE=	GNOME=gtk20 libwnck
+GTK2_CONFIGURE_ON=	--enable-wnck --disable-wnck3
+GTK3_USE=	GNOME=gtk30 libwnck3
+GTK3_CONFIGURE_ON=	--enable-gtk3 --enable-wnck3 --disable-wnck
+
+CONFIGURE_ARGS=	--disable-gksu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix)/$$(DATADIRNAME)|datadir)|' \

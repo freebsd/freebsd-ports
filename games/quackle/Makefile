@@ -2,38 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	quackle
-PORTVERSION=	0.97
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-source
+PORTVERSION=	0.98
 CATEGORIES=	games
-MASTER_SITES=	http://people.csail.mit.edu/jasonkb/quackle/downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Scrabble-like word game utilizing Qt4
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/quacker
+USE_GITHUB=	yes
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	7c118f2	
 
 USES=		gmake qmake
-USE_GCC=	any
 USE_QT4=	gui moc_build
+
+BUILD_WRKSRC=	${WRKSRC}/quacker
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 
-post-extract:
-	@${FIND} ${WRKSRC} \( -name "*.[ao]" -or -name "moc_*" \) -delete
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/debug/s|^CONFIG|#CONFIG| ; \
-		 /release/s|^#CONFIG|CONFIG|' ${BUILD_WRKSRC}/quacker.pro
-	@${REINPLACE_CMD} -e \
-		'/QFile::exists/s|("data")|("${DATADIR}")| ; \
-		 /setDataDirectory/s|("data")|("${DATADIR}")|' ${BUILD_WRKSRC}/settings.cpp
+	@${REINPLACE_CMD} '/-Wno-unused-local-typedefs/d' \
+		${BUILD_WRKSRC}/quacker.pro \
+		${WRKSRC}/quackleio/quackleio.pro
+	@${REINPLACE_CMD} 's|"data"|"${DATADIR}"|' \
+		${BUILD_WRKSRC}/settings.cpp
 
 post-configure:
 .for dir in quackleio quacker
@@ -47,8 +40,8 @@ pre-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/quacker \
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Quackle \
 		${STAGEDIR}${PREFIX}/bin/quackle
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

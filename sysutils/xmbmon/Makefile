@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MB monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
 LICENSE=	BSD2CLAUSE

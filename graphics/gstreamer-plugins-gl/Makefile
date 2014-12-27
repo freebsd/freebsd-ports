@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer-plugins-gl
 PORTVERSION=	0.10.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-gl/
 DISTNAME=	${PORTNAME:S/gstreamer/gst/}-${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/gstreamer/gst/}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer OpenGL video plugin
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2

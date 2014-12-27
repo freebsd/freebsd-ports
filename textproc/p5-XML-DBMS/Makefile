@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.rpbourret.com/xmldbms/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-${PORTNAME:tl}-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl port of Java package XML-DBMS v1.0
 
 BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \

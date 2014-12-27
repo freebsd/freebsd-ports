@@ -225,6 +225,8 @@ lib/inspircd/modules/m_userip.so
 lib/inspircd/modules/m_vhost.so
 lib/inspircd/modules/m_watch.so
 lib/inspircd/modules/m_xline_db.so
+@dir lib/inspircd/data
+@dir lib/inspircd/logs
 @unexec if cmp -s %D/%%ETCDIR%%/examples/censor.conf.example %D/%%ETCDIR%%/censor.conf; then rm -f %D/%%ETCDIR%%/censor.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/examples/filter.conf.example %D/%%ETCDIR%%/filter.conf; then rm -f %D/%%ETCDIR%%/filter.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/examples/helpop-full.conf.example %D/%%ETCDIR%%/helpop-full.conf; then rm -f %D/%%ETCDIR%%/helpop-full.conf; fi

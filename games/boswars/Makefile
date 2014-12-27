@@ -3,7 +3,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,7 +13,7 @@ COMMENT=	Futuristic real-time strategy game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 

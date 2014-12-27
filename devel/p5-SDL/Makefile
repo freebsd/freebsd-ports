@@ -3,7 +3,7 @@
 
 PORTNAME=	SDL
 PORTVERSION=	2.540
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ COMMENT=	Perl Bindings for SDL
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Alien-SDL>=1.426:${PORTSDIR}/devel/p5-Alien-SDL
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg

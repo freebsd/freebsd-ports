@@ -3,7 +3,7 @@
 
 PORTNAME=	gqmpeg
 PORTVERSION=	0.20.0
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	2
 CATEGORIES+=	audio
 MASTER_SITES=	SF
@@ -14,7 +14,7 @@ COMMENT?=	Another gtk-based MP3 frontend
 OPTIONS_DEFINE=	MPG321
 MPG321_DESC=	use mpg321 instead of mpg123
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
 		xmp:${PORTSDIR}/audio/xmp
 
@@ -26,7 +26,7 @@ USES=		gettext libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GNOME_CONFIG=no
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:

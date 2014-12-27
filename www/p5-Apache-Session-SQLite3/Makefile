@@ -8,7 +8,7 @@ CATEGORIES=	www databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Use DBD::SQLite 1.x for Apache::Session storage
 
 LICENSE=	ART10 GPLv1

@@ -3,7 +3,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -40,7 +40,7 @@ IGNORE=		cannot use SDL without X11: re-run make config
 
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libggz.so:${PORTSDIR}/games/libggz \
 		libggz-gtk.so:${PORTSDIR}/games/ggz-gtk-client \
 		libggzcore.so:${PORTSDIR}/games/ggz-client-libs \

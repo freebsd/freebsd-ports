@@ -3,7 +3,7 @@
 
 PORTNAME=	dvda-author
 PORTVERSION=	09.05
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/dvd-audio/${PORTNAME}-core/${PORTNAME}-${PORTVERSION}-core
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libsox.so:${PORTSDIR}/audio/sox \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib

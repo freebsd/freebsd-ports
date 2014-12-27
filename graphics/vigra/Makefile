@@ -3,7 +3,7 @@
 
 PORTNAME=	vigra
 DISTVERSION=	1.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src-with-docu
 
@@ -84,7 +84,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_VIGRA_FFTW)

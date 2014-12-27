@@ -3,7 +3,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -14,7 +14,7 @@ COMMENT=	Scriptable space flight simulator for X11
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gettext gmake libtool lua pkgconfig
 USE_GL=		gl

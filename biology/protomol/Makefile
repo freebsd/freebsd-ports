@@ -3,7 +3,7 @@
 
 PORTNAME=	protomol
 PORTVERSION=	2.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tar.gz
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 

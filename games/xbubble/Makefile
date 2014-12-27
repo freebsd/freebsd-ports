@@ -3,7 +3,7 @@
 
 PORTNAME=	xbubble
 PORTVERSION=	0.5.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	GENTOO/distfiles
 
@@ -13,13 +13,13 @@ COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS

@@ -115,8 +115,8 @@ do-install:
 # 	Installng fpcmake
 	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS}
 # 	Installing manpages
-	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
 
 post-install:
 	if [ -e "${STAGEDIR}${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${STAGEDIR}${PREFIX}/bin/${PPNAME}"; fi
@@ -124,6 +124,10 @@ post-install:
 	${SH} "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" "${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
 		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fpc*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mk*ins
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ppu*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/ppc*
 
 .else
 .include "${MASTERDIR}/Makefile.units"

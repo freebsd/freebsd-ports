@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -13,7 +13,7 @@ COMMENT=	Comprehensive desktop publishing program
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libcups.so:${PORTSDIR}/print/cups-client \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \

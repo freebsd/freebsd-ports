@@ -3,6 +3,7 @@
 
 PORTNAME=	synfig
 PORTVERSION=	0.64.2
+PORTREVISION=	1
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmng.so:${PORTSDIR}/graphics/libmng \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libdv.so:${PORTSDIR}/multimedia/libdv

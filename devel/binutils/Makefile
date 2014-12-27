@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.24
-PORTREVISION?=	1
+PORTVERSION=	2.25
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER?=	bapt@FreeBSD.org
 COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	NLS
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
 
-USES=		bison gmake libtool tar:bzip2
+USES=		bison gmake libtool tar:bzip2 compiler:env
 GNU_CONFIGURE=	yes
 
 .if defined(PKGNAMEPREFIX)
@@ -41,10 +41,8 @@ CONFIGURE_ARGS+=	--with-system-zlib \
 			--with-mpfr=${LOCALBASE}
 INFO=		as \
 		binutils \
-		standards \
 		gprof \
 		bfd \
-		configure \
 		ld
 .endif
 
@@ -55,10 +53,14 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ! defined(PKGNAMEPREFIX) && ${OSVERSION} < 900000
+EXTRA_PATCHES+=	${FILESDIR}/allow-missing-group-info
+.endif
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != ia64 && ${ARCH} != mips && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX)
+.if ${ARCH} != ia64 && ${ARCH} != mips && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
@@ -89,4 +91,4 @@ post-install:
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

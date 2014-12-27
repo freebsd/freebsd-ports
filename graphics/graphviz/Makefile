@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.38.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -12,7 +12,7 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \

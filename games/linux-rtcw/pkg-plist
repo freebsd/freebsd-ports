@@ -50,8 +50,3 @@ bin/wolfsp
 %%DATADIR%%/wolfsp
 share/pixmaps/WolfMP.xpm
 share/pixmaps/WolfSP.xpm
-@dirrm %%DATADIR%%/pb/htm
-@dirrm %%DATADIR%%/pb
-@dirrm %%DATADIR%%/main/scripts
-@dirrm %%DATADIR%%/main
-@dirrm %%DATADIR%%

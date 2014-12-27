@@ -6,7 +6,7 @@ PORTVERSION=	4.2.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
 LICENSE=	GPLv2

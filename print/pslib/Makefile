@@ -3,7 +3,7 @@
 
 PORTNAME=	pslib
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	C-library for generating multi page PostScript documents
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USES=		gettext gmake libtool pathfix pkgconfig

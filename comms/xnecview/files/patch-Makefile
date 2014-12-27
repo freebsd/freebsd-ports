@@ -17,8 +17,8 @@
  ifeq ($(PNG),yes)
  CFLAGS	+= -DHAVE_LIBPNG
 -LDFLAGS	+= -lpng
-+CFLAGS	+= `pkg-config --cflags ${LOCALBASE}/libdata/pkgconfig/libpng15.pc`
-+LDFLAGS    += `pkg-config --libs ${LOCALBASE}/libdata/pkgconfig/libpng15.pc`
++CFLAGS	+= `pkg-config --cflags libpng`
++LDFLAGS    += `pkg-config --libs libpng`
  endif
  
  SRCS	= xnecview.c xwin.c parse_input.c parse_output.c draw.c draw_opaque.c freqplot.c postscript.c icon.xbm

@@ -8,7 +8,7 @@ CATEGORIES?=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	24
 
-MAINTAINER?=	5u623l20@gmail.com
+MAINTAINER?=	bofh@FreeBSD.org
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 LICENSE=	LGPL21

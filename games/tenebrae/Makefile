@@ -3,7 +3,7 @@
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine with lighting similar to that in Doom III
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake dos2unix zip
 USE_GL=		glu

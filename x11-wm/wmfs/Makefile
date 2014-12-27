@@ -3,7 +3,7 @@
 
 PORTNAME=	wmfs
 DISTVERSION=	201104
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmfs.info/attachments/download/45/ \
 		http://cloud.github.com/downloads/xorg62/wmfs/
@@ -32,7 +32,7 @@ XRANDR_USE=	XORG=xrandr
 XRANDR_CONFIGURE_WITH+=	xrandr
 XINERAMA_USE=	XORG=xinerama
 XINERARAM_CONFIGURE_WITH=	xinerama
-IMLIB_USE=	EFL=imlib2
+IMLIB_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 IMLIB_CONFIGURE_WITH=	imlib2
 
 .include <bsd.port.mk>

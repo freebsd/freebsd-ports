@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF/routerproxy/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to allow everyone to access config files
 
 BUILD_DEPENDS=	p5-XML-LibXML>=2:${PORTSDIR}/textproc/p5-XML-LibXML \

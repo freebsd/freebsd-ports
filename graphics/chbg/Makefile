@@ -3,7 +3,7 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Change Background Picture with time period
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake gettext pathfix tar:tgz
 USE_GNOME=	gdkpixbuf

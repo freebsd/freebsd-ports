@@ -3,6 +3,7 @@
 
 PORTNAME=	grib_api
 PORTVERSION=	1.12.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/
 

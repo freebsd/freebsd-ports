@@ -3,6 +3,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.24
+PORTREVISION=	1
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
@@ -16,7 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libXbae.so:${PORTSDIR}/x11-toolkits/xbae
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 

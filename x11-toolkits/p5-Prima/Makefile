@@ -3,7 +3,7 @@
 
 PORTNAME=	Prima
 PORTVERSION=	1.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	GTK2 ICONV XFT

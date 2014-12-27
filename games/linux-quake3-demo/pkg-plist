@@ -229,17 +229,3 @@ bin/q3demo
 %%DATADIR%%/demoq3/pak0.pk3
 %%DATADIR%%/libGL.so
 %%DATADIR%%/q3demo
-@dirrm %%DATADIR%%/demoq3
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Support/Information
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Support/CustomerSupport
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Support
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/navart/weapons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/navart/subtitles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/navart/screens
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/navart/charart
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/navart
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/htmlpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/DocsArt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

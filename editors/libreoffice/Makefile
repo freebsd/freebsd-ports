@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	Full integrated office productivity suite
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libgltf-0.0.so:${PORTSDIR}/graphics/libgltf \
 		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
 		libGeneratedSaxParser.so:${PORTSDIR}/graphics/opencollada \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
 		libcmis-0.4.so:${PORTSDIR}/net/libcmis \
@@ -279,7 +279,7 @@ SYSTRAY_CONFIGURE_ENABLE=	systray
 
 TEST_CONFIGURE_ENABLE=	cve-tests
 
-WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 WEBDAV_CONFIGURE_ENABLE=	neon
 
 .include <bsd.port.options.mk>

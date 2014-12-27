@@ -3,7 +3,7 @@
 
 PORTNAME=	lugaru
 PORTVERSION=	269
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-rev${DISTVERSION}-src
@@ -13,7 +13,7 @@ COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg

@@ -3,7 +3,7 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
-PORTREVISION=	10
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ZSNES%20v${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9x
@@ -42,8 +42,8 @@ OPENGL_CONFIGURE_ENABLE=	opengl
 AO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 AO_CONFIGURE_ENABLE=	libao
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>

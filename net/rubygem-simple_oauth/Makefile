@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	simple_oauth
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Rubygem for Simply builds and verifies OAuth headers
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Builds and verifies OAuth headers
 
 LICENSE=	MIT
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	mogilefs
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,7 +14,7 @@ COMMENT=	PHP client library to communicate with the MogileFS storage
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 USE_PHP=	yes
 USE_PHP_BUILD=	spl

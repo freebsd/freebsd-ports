@@ -3,7 +3,7 @@
 
 PORTNAME=		spamprobe
 PORTVERSION=	1.4d
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=		mail
 MASTER_SITES=	SF
 
@@ -42,7 +42,7 @@ GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 
 # PNG support
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 # JPEG support
 JPEG_CONFIGURE_WITH=jpeg

@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.72b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -15,7 +15,7 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11 xext xmu

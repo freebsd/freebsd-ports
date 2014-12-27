@@ -3,7 +3,7 @@
 
 PORTNAME=	jwm
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/releases/
 
@@ -34,7 +34,7 @@ JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ENABLE=	png
 SVG_USE=		GNOME=librsvg2
 SVG_CONFIGURE_ENABLE=	rsvg

@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
 USES=		perl5 shebangfix

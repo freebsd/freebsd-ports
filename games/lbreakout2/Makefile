@@ -3,7 +3,7 @@
 
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION:R}
 
@@ -12,7 +12,7 @@ COMMENT=	Breakout-style arcade game
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake
 USE_SDL=	mixer net sdl

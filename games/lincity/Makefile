@@ -3,7 +3,7 @@
 
 PORTNAME=	lincity
 PORTVERSION=	1.13.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Lincity%20Development%20Source/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Rich city simulation game for X
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake
 GNU_CONFIGURE=	yes

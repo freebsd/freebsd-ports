@@ -6,7 +6,7 @@ PORTVERSION=	1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/spamguard/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
 LICENSE=	BSD3CLAUSE

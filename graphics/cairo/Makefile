@@ -4,6 +4,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.12.18
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -16,7 +17,7 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 PORTSCOUT=	skipv:5c-1.1,5c-1.2,5c-1.5

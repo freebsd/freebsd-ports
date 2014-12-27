@@ -3,7 +3,7 @@
 
 PORTNAME=	swfed
 PORTVERSION=	0.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	${PORTNAME}/60548
@@ -16,7 +16,7 @@ LICENSE=	PHP301
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 DEFAULT_PHP_VER=	5
 USE_PHP=	zlib

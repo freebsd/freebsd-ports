@@ -5,7 +5,7 @@ PORTNAME=	newtonsoft-json
 PORTVERSION=	6.0.5
 CATEGORIES=	devel
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Popular high-performance JSON framework for .NET
 
 LICENSE=	MIT

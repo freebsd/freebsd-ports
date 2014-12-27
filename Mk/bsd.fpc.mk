@@ -65,8 +65,8 @@ UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async fcl-base \
 		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-js fcl-json fcl-net fcl-passrc \
 		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpindexer \
-		fpmkunit fppkg fv gdbint gdbm gmp gnome1 graph gtk1 gtk2 hash \
-		hermes httpd22 httpd24 ibase iconvenc imagemagick imlib ldap libcurl libgd \
+		fpmkunit fppkg fv gdbint gdbm gmp graph gtk1 gtk2 hash \
+		hermes httpd22 httpd24 ibase iconvenc imagemagick ldap libcurl libgd \
 		libpng libvlc libxml2 lua mad matroska modplug mysql ncurses newt numlib \
 		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
 		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
@@ -152,12 +152,10 @@ fv_UNIT=	devel/fpc-fv
 hermes_UNIT=	graphics/fpc-hermes
 gdbm_UNIT=	databases/fpc-gdbm
 gmp_UNIT=	math/fpc-gmp
-gnome1_UNIT=	x11-toolkits/fpc-gnome1
 gtk1_UNIT=	x11-toolkits/fpc-gtk1
 gtk2_UNIT=	x11-toolkits/fpc-gtk2
 iconvenc_UNIT=	converters/fpc-iconvenc
 imagemagick_UNIT=	graphics/fpc-imagemagick
-imlib_UNIT=	graphics/fpc-imlib
 ldap_UNIT=	net/fpc-ldap
 libcurl_UNIT=	ftp/fpc-libcurl
 libgd_UNIT=	graphics/fpc-libgd

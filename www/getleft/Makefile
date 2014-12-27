@@ -8,7 +8,7 @@ CATEGORIES=	www ftp
 MASTER_SITES=	SF/${PORTNAME}down/${PORTNAME}-Stable/${PORTVERSION}
 DISTNAME=	Getleft-v${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Web site downloader
 
 RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \

@@ -13,9 +13,9 @@ COMMENT=	C++ wrapper library for the multimedia library GStreamer
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GSTREAMER=	theora vorbis cdparanoia gio pango
-USE_GNOME=	gnomeprefix gnomehack gtkmm24
+USE_GNOME=	gnomeprefix gtkmm24
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 INSTALL_TARGET=	install-strip

@@ -3,14 +3,14 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Old-school 2D classic adventure platformer game
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 

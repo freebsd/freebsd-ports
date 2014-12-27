@@ -3,7 +3,7 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/x/${PORTNAME}
@@ -12,7 +12,7 @@ DISTNAME=	xli_${PORTVERSION}+${XLI_SNAPVER:C/-//g}.orig
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Utilities to display images in X11
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS_INSTALL=	xloadimage-*

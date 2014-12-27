@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
@@ -55,8 +55,7 @@ CONFIGURE_ARGS+=	--enable-poppler-cairo=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng15 >= 1.2|g' \
-		-e 's|-ldl||g' \
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
 	    	${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MPOPPLER}
 	@${REINPLACE_CMD} -e 's|poppler|pdisable|g' \

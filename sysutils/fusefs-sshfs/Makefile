@@ -8,7 +8,7 @@ MASTER_SITES=	SF/fuse/${PORTNAME}-fuse/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-fuse-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mount remote directories over ssh
 
 LICENSE=	GPLv2

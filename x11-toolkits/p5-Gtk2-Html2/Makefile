@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	http://asofyet.org/muppet/software/gtk2-perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module for gtkhtml2 html display widget with Gtk2-Perl
 
 LICENSE=	GPLv2

@@ -3,7 +3,7 @@
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 CONFLICTS=	fvwm-1.* fvwm-2.*
 
 LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
@@ -41,11 +41,11 @@ WANT_GNOME=	yes
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MMX GLX ATSPI STROKE RPLAY FRIBIDI GLIB GTK2 GCONF \
-		GTK1 IMLIB DOCS
+		GTK1 DOCS
 OPTIONS_DEFINE_i386=	GLX_X86
 
 GLX_X86_DESC=	GLX with x86 optimizations
@@ -54,7 +54,6 @@ RPLAY_DESC=	RPlay support in FvwmEvent
 GLIB_DESC=	Use GLib 2.x for module integration
 GTK2_DESC=	Use GDK-PixBuf-2.0 for image loading
 GTK1_DESC=	Legacy GTK+ 1.2.x support
-IMLIB_DESC=	Imlib support in FvwmGtk
 
 OPTIONS_DEFAULT=	MMX GLX
 OPTIONS_DEFAULT_i386=	GLX_X86
@@ -109,11 +108,7 @@ PLIST_SUB+=	GCONF="@comment "
 USE_GNOME+=	gtk12
 .endif
 
-.if ${HAVE_GNOME:Mimlib} || ${PORT_OPTIONS:MIMLIB}
-USE_GNOME+=	imlib
-.endif
-
-_GTK=	${USE_GNOME:Mgtk12} ${USE_GNOME:Mimlib}
+_GTK=	${USE_GNOME:Mgtk12}
 .if !empty(_GTK)
 PLIST_SUB+=	GTK=""
 .else

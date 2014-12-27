@@ -3,7 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -21,7 +21,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-mpris2
 USE_GNOME=	glib20
-WANT_EFL=	yes
 WANT_SDL=	yes
 
 PORTDOCS=	AUTHORS
@@ -262,7 +261,7 @@ PLIST_SUB+=	CDAUDIOPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon
 CONFIGURE_ARGS+=--enable-neon
 PLIST_SUB+=	NEONPLUGIN=""
 .else

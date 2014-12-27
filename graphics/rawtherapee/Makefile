@@ -3,6 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libiptcdata.so:${PORTSDIR}/graphics/libiptcdata \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \

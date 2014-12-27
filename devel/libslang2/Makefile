@@ -2,7 +2,7 @@
 
 PORTNAME=	libslang2
 PORTVERSION=	2.2.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -41,7 +41,7 @@ PORTDOCS=	*
 PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 ICONV_USES=		iconv
 ONIG_CONFIGURE_WITH=	onig
 ONIG_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma4

@@ -10,7 +10,7 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 #RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY="ports@FreeBSD.org"
 
 CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include
-LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

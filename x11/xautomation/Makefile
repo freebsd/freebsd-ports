@@ -3,6 +3,7 @@
 
 PORTNAME=	xautomation
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
@@ -11,7 +12,7 @@ COMMENT=	Control X from the command line for scripts
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes

@@ -176,7 +176,7 @@ opus_MOZ_OPTIONS=	--with-system-opus
 pixman_LIB_DEPENDS=	libpixman-1.so:${PORTSDIR}/x11/pixman
 pixman_MOZ_OPTIONS=	--enable-system-pixman
 
-png_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+png_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)

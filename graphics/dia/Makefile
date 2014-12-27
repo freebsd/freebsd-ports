@@ -4,6 +4,7 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.97.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -14,7 +15,7 @@ COMMENT=	Diagram creation program, similar to Visio
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz

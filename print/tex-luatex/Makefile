@@ -2,7 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.79.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -18,7 +18,7 @@ COMMENT=	Extended version of pdfTeX using Lua
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
 		libicuio.so:${PORTSDIR}/devel/icu \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
 		libzzip.so:${PORTSDIR}/devel/zziplib

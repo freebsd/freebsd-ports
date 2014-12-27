@@ -2,7 +2,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.10.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf:${PORTSDIR}/x11-fonts/junicode
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango

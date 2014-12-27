@@ -3,7 +3,7 @@
 
 PORTNAME=	vba
 PORTVERSION=	1.7.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/VisualBoyAdvance/${PORTVERSION}
 DISTNAME=	VisualBoyAdvance-src-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Open source Gameboy Advance emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gettext gmake
 GNU_CONFIGURE=	yes

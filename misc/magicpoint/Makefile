@@ -3,7 +3,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -12,17 +12,19 @@ COMMENT=	X11-based presentation tool
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libmng.so:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		imake:env pkgconfig
+USES=		imake:env perl5 pkgconfig
+USE_PERL5=	run
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale
+CONFIGURE_ENV=	mgp_cv_path_perl=${PERL}
 CPPFLAGS+=	-I..
 LATE_INSTALL_ARGS=	install.man
 
@@ -42,7 +44,7 @@ EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 
-OPTIONS_DEFINE=	FREETYPE XFT GIF IMLIB DOCS
+OPTIONS_DEFINE=	FREETYPE XFT GIF DOCS
 OPTIONS_DEFAULT=FREETYPE XFT GIF
 NO_OPTIONS_SORT=yes
 
@@ -55,8 +57,6 @@ XFT_CONFIGURE_ON=	--enable-freetype-charset16
 GIF_CONFIGURE_ENABLE=	gif
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CPPFLAGS=		-I${LOCALBASE}/include
-IMLIB_USE=	GNOME=imlib
-IMLIB_CONFIGURE_ENABLE=	imlib
 
 .include <bsd.port.options.mk>
 

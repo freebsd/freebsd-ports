@@ -3,6 +3,7 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta19
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
@@ -32,7 +33,7 @@ FTGL_DESC=	Freetype font rendering in OpenGL
 
 X11_USE=	XORG=x11 GL=glut
 X11_CONFIGURE_OFF=	--disable-x11 --disable-gl
-IMLIB2_USE=	EFL=imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 IMLIB2_CONFIGURE_ENABLE=	imlib2
 SLANG_LIB_DEPENDS=	libslang.so.2:${PORTSDIR}/devel/libslang2
 SLANG_CONFIGURE_ENABLE=	slang

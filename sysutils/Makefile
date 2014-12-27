@@ -249,6 +249,7 @@
     SUBDIR += filewatcherd
     SUBDIR += finfo
     SUBDIR += firstboot-freebsd-update
+    SUBDIR += firstboot-growfs
     SUBDIR += firstboot-pkgs
     SUBDIR += flasher
     SUBDIR += flashrom

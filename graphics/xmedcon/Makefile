@@ -3,7 +3,7 @@
 
 PORTNAME=	xmedcon
 PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -61,7 +61,7 @@ INW_CONFIGURE_ENABLE=	inw
 GIF_CONFIGURE_OFF=	--disable-gif
 
 PNG_CONFIGURE_ENABLE=	png
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 .include <bsd.port.options.mk>
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	pngquant
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	http://pngquant.org/
@@ -13,7 +14,7 @@ COMMENT=	Converts 32-bit RGBA PNGs into 8-bit RGBA-palette PNGs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

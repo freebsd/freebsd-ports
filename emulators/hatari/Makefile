@@ -3,7 +3,7 @@
 
 PORTNAME=	hatari
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Atari ST emulator
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
 
 USES=		cmake readline tar:bzip2

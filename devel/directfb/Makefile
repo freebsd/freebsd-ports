@@ -3,7 +3,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Core/${DISTNAME:R}/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Graphic development lightweight API
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST DOCS
 UNIQUE_DESC=	Unique (WM Module)
@@ -22,13 +22,14 @@ UNIQUE_DESC=	Unique (WM Module)
 OPTIONS_DEFAULT=	FREETYPE X11 SDL
 OPTIONS_SUB=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool ncurses pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
+EXTRA_PATCHES=	${FILESDIR}/extra-libpng15:-p1
 
 DIRECTFB_SHLIB=	5.0.8	# LT_BINARY.LT_AGE.LT_REVISION
 DIRECTFB_BIN=	5	# LT_BINARY

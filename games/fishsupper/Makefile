@@ -5,7 +5,7 @@ PORTNAME=	fishsupper
 PORTVERSION=	0.1.6
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Guide a cat across a series of rivers, jumping from log to log

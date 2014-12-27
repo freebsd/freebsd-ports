@@ -3,7 +3,7 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 

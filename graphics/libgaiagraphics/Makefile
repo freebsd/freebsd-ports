@@ -3,14 +3,14 @@
 
 PORTNAME=	libgaiagraphics
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library supporting common-utility raster handling methods
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \

@@ -288,7 +288,7 @@ gst_libmms_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # png
-gst_libpng_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+gst_libpng_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 gst_libpng_PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so
 
 # libvisual
@@ -307,7 +307,7 @@ gst_mpeg2enc_LIB_DEPENDS=	libmjpegutils.so:${PORTSDIR}/multimedia/mjpegtools
 gst_mpeg2dec_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 
 # neon
-gst_neon_LIB_DEPENDS+=  libneon.so:${PORTSDIR}/www/neon29
+gst_neon_LIB_DEPENDS+=  libneon.so:${PORTSDIR}/www/neon
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
 
 # ogg

@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.7.19
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
@@ -59,7 +59,7 @@ MOD_DAV_SVN_USE=		APACHE=22+
 
 NEON_CONFIGURE_OFF=		--without-neon
 NEON_CONFIGURE_ON=		--with-neon=${LOCALBASE}
-NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon29
+NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon
 
 NLS_CONFIGURE_OFF=		--disable-nls
 NLS_USES=			gettext

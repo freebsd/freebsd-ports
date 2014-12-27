@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -97,7 +97,7 @@ MAKE_ARGS+=	JPEG=False
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=   libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=   libpng.so:${PORTSDIR}/graphics/png
 .else
 MAKE_ARGS+=	PNG=False
 .endif

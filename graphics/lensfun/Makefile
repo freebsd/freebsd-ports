@@ -3,6 +3,7 @@
 
 PORTNAME=	lensfun
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,7 @@ COMMENT=	Library for fixing lens geometry distortions
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake pkgconfig python:build tar:bzip2
 USE_GNOME=	glib20

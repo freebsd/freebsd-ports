@@ -3,7 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
@@ -15,7 +15,7 @@ COMMENT=	GNUstep-compliant NeXTstep window manager clone
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp \

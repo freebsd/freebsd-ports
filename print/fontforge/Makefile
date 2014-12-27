@@ -3,7 +3,7 @@
 
 PORTNAME=	fontforge
 DISTVERSION=	20120731-b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source \
 		SF/freetype/${PORTNAME}/${PORTVERSION}:freetype \
@@ -20,7 +20,7 @@ COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libspiro.so:${PORTSDIR}/graphics/libspiro

@@ -3,7 +3,7 @@
 
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Provide an easy API to a custom vnc server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		libtool pathfix
 USE_LDCONFIG=	yes

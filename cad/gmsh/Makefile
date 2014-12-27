@@ -3,7 +3,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -17,7 +17,7 @@ COMMENT=	Automatic 3D finite element mesh generator
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		liblapack.so:${PORTSDIR}/math/lapack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

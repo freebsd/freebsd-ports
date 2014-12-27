@@ -2,7 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libcurl.so:${PORTSDIR}/ftp/curl \

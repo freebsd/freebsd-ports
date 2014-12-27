@@ -13,8 +13,8 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce gtk theme engine
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig tar:bzip2
-USE_GNOME=	glib20 gnomehack gtk20
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	glib20 gtk20
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 
 CONFIGURE_ARGS+=--disable-glibtest \

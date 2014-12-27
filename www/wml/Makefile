@@ -3,7 +3,7 @@
 
 PORTNAME=	wml
 PORTVERSION=	2.0.12
-PORTREVISION=	4
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www lang
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -12,7 +12,9 @@ MASTER_SITE_SUBDIR=thewml
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	\
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \
@@ -24,6 +26,9 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
 		${RUN_DEPENDS}
 
+INFO=		logo-apache logo-freebsd logo-gimp logo-htdig logo-linux logo-netbsd \
+		logo-openbsd logo-php logo-php3 logo-vim logo-wml logo-xemacs
+INFO_PATH=	lib/wml/data/logos
 GNU_CONFIGURE=	yes
 USES=		gettext perl5 gmake
 USE_PERL5=	run build patch
@@ -31,10 +36,6 @@ CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_VER} >= 5.18
-BROKEN=		Does not build with Perl 5.18 or above
-.endif
 
 post-patch:
 	@${PERL5} -pi -e 's!^(\s+have_\S+)=\S+!\1=1!' \

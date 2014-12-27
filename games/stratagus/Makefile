@@ -3,7 +3,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.2.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://launchpadlibrarian.net/113005346/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -13,7 +13,7 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS

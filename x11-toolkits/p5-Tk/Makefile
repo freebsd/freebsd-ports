@@ -3,7 +3,7 @@
 
 PORTNAME=	Tk
 PORTVERSION=	804.032
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Re-port of a perl5 interface to Tk8.4
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 OPTIONS_DEFINE=	XFT

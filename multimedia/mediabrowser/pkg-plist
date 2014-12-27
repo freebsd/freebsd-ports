@@ -230,7 +230,6 @@ lib/mediabrowser/dashboard-ui/css/tileitem.css
 lib/mediabrowser/dashboard-ui/css/userimage.css
 lib/mediabrowser/dashboard-ui/dashboard.html
 lib/mediabrowser/dashboard-ui/dashboardgeneral.html
-lib/mediabrowser/dashboard-ui/dashboardsync.html
 lib/mediabrowser/dashboard-ui/device.html
 lib/mediabrowser/dashboard-ui/devices.html
 lib/mediabrowser/dashboard-ui/devicesupload.html
@@ -331,7 +330,6 @@ lib/mediabrowser/dashboard-ui/scripts/cinemamodeconfiguration.js
 lib/mediabrowser/dashboard-ui/scripts/connectlogin.js
 lib/mediabrowser/dashboard-ui/scripts/dashboardgeneral.js
 lib/mediabrowser/dashboard-ui/scripts/dashboardpage.js
-lib/mediabrowser/dashboard-ui/scripts/dashboardsync.js
 lib/mediabrowser/dashboard-ui/scripts/device.js
 lib/mediabrowser/dashboard-ui/scripts/devices.js
 lib/mediabrowser/dashboard-ui/scripts/devicesupload.js
@@ -438,6 +436,8 @@ lib/mediabrowser/dashboard-ui/scripts/songs.js
 lib/mediabrowser/dashboard-ui/scripts/supporterkeypage.js
 lib/mediabrowser/dashboard-ui/scripts/supporterpage.js
 lib/mediabrowser/dashboard-ui/scripts/sync.js
+lib/mediabrowser/dashboard-ui/scripts/syncactivity.js
+lib/mediabrowser/dashboard-ui/scripts/syncsettings.js
 lib/mediabrowser/dashboard-ui/scripts/thememediaplayer.js
 lib/mediabrowser/dashboard-ui/scripts/tvgenres.js
 lib/mediabrowser/dashboard-ui/scripts/tvlatest.js
@@ -463,6 +463,8 @@ lib/mediabrowser/dashboard-ui/songs.html
 lib/mediabrowser/dashboard-ui/support.html
 lib/mediabrowser/dashboard-ui/supporter.html
 lib/mediabrowser/dashboard-ui/supporterkey.html
+lib/mediabrowser/dashboard-ui/syncactivity.html
+lib/mediabrowser/dashboard-ui/syncsettings.html
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/connectionmanager.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/connectservice.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/credentials.js

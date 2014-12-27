@@ -3,7 +3,7 @@
 
 PORTNAME=	kyra
 PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
@@ -14,7 +14,7 @@ COMMENT=	Simple Sprite engine written in C++
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

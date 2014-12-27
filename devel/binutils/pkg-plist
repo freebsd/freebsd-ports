@@ -77,6 +77,7 @@ man/man1/windres.1.gz
 %%NLS%%share/locale/ga/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/id/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/id/LC_MESSAGES/bfd.mo
@@ -113,6 +114,7 @@ man/man1/windres.1.gz
 %%NLS%%share/locale/rw/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gprof.mo
@@ -126,6 +128,7 @@ man/man1/windres.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/opcodes.mo

@@ -3,7 +3,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.09
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -39,7 +39,7 @@ GIF_MAKE_ARGS_OFF=	HAVE_LIBUNGIF=no
 PCD_LIB_DEPENDS=	libpcd.so:${PORTSDIR}/graphics/libpcd
 PCD_MAKE_ARGS_OFF=	HAVE_LIBPCD=no
 
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_MAKE_ARGS_OFF=	HAVE_LIBPNG=no
 
 SANE_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends

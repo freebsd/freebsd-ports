@@ -3,7 +3,7 @@
 
 PORTNAME=	gle-graphics
 DISTVERSION=	4.2.4cf
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${DISTVERSION:C,.$,,1}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
 BITMAP_IMAGES_CONFIGURE_WITH=	jpeg=${LOCALBASE} tiff=${LOCALBASE} png=${LOCALBASE}
 BITMAP_IMAGES_DESC=	Support for including bitmap images
 BITMAP_IMAGES_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiffxx.so:${PORTSDIR}/graphics/tiff
 
 CONFIGURE_ARGS=	--with-extrafonts=yes

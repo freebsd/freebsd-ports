@@ -3,7 +3,7 @@
 
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.winterdrache.de/freeware/png2ico/data/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
@@ -13,7 +13,7 @@ COMMENT=	Converts PNG files to Windows icon resource files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -529,7 +529,7 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
-    SUBDIR += neon29
+    SUBDIR += neon
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff
@@ -822,6 +822,7 @@
     SUBDIR += p5-Dancer-Session-Cookie
     SUBDIR += p5-Dancer-Template-Xslate
     SUBDIR += p5-Dancer2
+    SUBDIR += p5-Dancer2-Plugin-Ajax
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-Emplacken
@@ -1047,6 +1048,7 @@
     SUBDIR += p5-Mojolicious-Plugin-Authentication
     SUBDIR += p5-Mojolicious-Plugin-Database
     SUBDIR += p5-Mojolicious-Plugin-Mongodb
+    SUBDIR += p5-Mojolicious-Plugin-TtRenderer
     SUBDIR += p5-Mojolicious-Plugin-YamlConfig
     SUBDIR += p5-Monoceros
     SUBDIR += p5-Mozilla-CA
@@ -2140,6 +2142,7 @@
     SUBDIR += webkit-qt4
     SUBDIR += webkit-qt5
     SUBDIR += webkit-sharp
+    SUBDIR += webkit2-gtk3
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webmachine

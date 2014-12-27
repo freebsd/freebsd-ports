@@ -3,7 +3,7 @@
 
 PORTNAME=	atari800
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/atari800/ \
 		SF/${PORTNAME}/ROM/Original%20XL%20ROM:x \
@@ -18,7 +18,7 @@ COMMENT=	Atari 8-bit computer emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 RESTRICTED=	xf25 contains copyright ROMs and cannot be distributed.
 

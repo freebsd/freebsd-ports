@@ -2,7 +2,7 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 
 BROKEN=		Depends on deleted devel/llvm32
-#LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+#LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 #		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
 
 USES=		cmake perl5 tar:bzip2

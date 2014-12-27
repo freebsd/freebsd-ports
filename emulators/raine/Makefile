@@ -3,7 +3,7 @@
 
 PORTNAME=	raine
 PORTVERSION=	0.51.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 MASTER_SITES=	GENTOO/distfiles
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 LICENSE=	ART10
 
 BUILD_DEPENDS=	nasm>0:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

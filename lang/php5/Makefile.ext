@@ -87,7 +87,7 @@ USE_OPENSSL=	yes
 
 .if ${PHP_MODNAME} == "gd"
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFIGURE_ARGS+=--with-gd \
@@ -285,6 +285,10 @@ USE_PHP_BUILD=	yes
 USES+=		pgsql
 
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "pear"
+CONFIGURE_ARGS+=--with-pear
 .endif
 
 .if ${PHP_MODNAME} == "phar"

@@ -48,3 +48,6 @@ lib/Img/libtkimgwindow142.so.1
 lib/Img/libtkimgxpm142.so.1
 lib/Img/pkgIndex.tcl
 lib/Img/tkimgConfig.sh
+@comment include/tkimg.h
+@comment include/tkimgDecls.h
+@comment lib/tkimgConfig.sh

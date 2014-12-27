@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 CATEGORIES=	comms
 MASTER_SITES=	http://dfu-util.gnumonks.org/releases/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Device firmware update (DFU) USB programmer
 
 LICENSE=	GPLv2

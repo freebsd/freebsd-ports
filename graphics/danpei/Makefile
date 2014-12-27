@@ -3,7 +3,7 @@
 
 PORTNAME=	danpei
 PORTVERSION=	2.9.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Image Viewer for X Window System with thumbnail preview feature
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	IMAGEMAGICK
 OPTIONS_DEFAULT=IMAGEMAGICK

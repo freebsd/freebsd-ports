@@ -12,6 +12,8 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE image viewer
 
+BROKEN=		depends on imlib
+
 USE_GNOME=	imlib
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib opengl qmake_build moc_build rcc_build uic_build

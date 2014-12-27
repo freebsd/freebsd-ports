@@ -3,7 +3,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION:R}/${PORTVERSION}/
 
@@ -14,14 +14,13 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
 USES=		alias dos2unix gmake zip
 USE_GL=		gl
 USE_XORG=	x11 xxf86vm
 USE_LDCONFIG=	yes
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	SHLIB_VER=${SHARED_LIB_VER}
 
 PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}

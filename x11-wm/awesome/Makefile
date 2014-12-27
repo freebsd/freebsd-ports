@@ -3,7 +3,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
@@ -30,11 +30,11 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libxcb-util.so:${PORTSDIR}/x11/xcb-util \
 		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm
+		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USES=		cmake execinfo iconv pkgconfig lua tar:xz
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
-USE_EFL=	imlib2
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xproto

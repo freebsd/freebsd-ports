@@ -2,7 +2,7 @@
 
 PORTNAME=	libcoverart
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
 
@@ -12,7 +12,7 @@ COMMENT=	Library for accessing the MusicBrainz cover art archive
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libneon.so:${PORTSDIR}/www/neon29
+		libneon.so:${PORTSDIR}/www/neon
 
 USES=		cmake
 USE_LDCONFIG=	yes

@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -102,7 +103,7 @@ CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 SPANDSP_CONFIGURE_WITH=	spandsp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
-EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 SRTP_CONFIGURE_WITH=	srtp
 SRTP_BUILD_DEPENDS=	libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
 LUA_CONFIGURE_WITH=	lua

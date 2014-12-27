@@ -3,7 +3,7 @@
 
 PORTNAME=	scummvm-tools
 DISTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		flac:${PORTSDIR}/audio/flac \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		gmake tar:bzip2

@@ -59,7 +59,7 @@ PORTREVISION=	2
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	1
+PORTREVISION=	2
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
@@ -94,7 +94,7 @@ DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
 LIB_DEPENDS+=	libcups.so:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client

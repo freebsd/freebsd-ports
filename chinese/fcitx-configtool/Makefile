@@ -15,32 +15,26 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 
-USE_GNOME=	intltool gnomehack
+USE_GNOME=	intltool
 USES=		cmake gettext pkgconfig tar:xz
 
-OPTIONS_DEFINE=	GTK2 GTK3
+OPTIONS_SINGLE=	UI
+UI_DESC=	Gtk version to use
+OPTIONS_SINGLE_UI=	GTK2 GTK3
 OPTIONS_DEFAULT=GTK2
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 CMAKE_ARGS+=	-DENABLE_GTK2=ON
 USE_GNOME+=	gtk20
-PLIST_SUB+=	GTK2=""
-.else
-PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30
-PLIST_SUB+=	GTK3=""
 .else
 CMAKE_ARGS+=	-DENABLE_GTK3=OFF
-PLIST_SUB+=	GTK3="@comment "
-.endif
-
-.if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
-IGNORE=		a GUI is required
 .endif
 
 .include <bsd.port.mk>

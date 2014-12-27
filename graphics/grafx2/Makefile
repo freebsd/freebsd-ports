@@ -3,7 +3,7 @@
 
 PORTNAME=	grafx2
 PORTVERSION=	2.4.2035
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,7 +12,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
 
 LIB_DEPENDS=	libX11.so:${PORTSDIR}/x11/libX11 \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake pkgconfig tar:tgz
 USE_SDL=	sdl image

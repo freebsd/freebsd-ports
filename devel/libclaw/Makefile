@@ -3,6 +3,7 @@
 
 PORTNAME=	libclaw
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -10,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Library Absolutely Wonderful
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake gettext

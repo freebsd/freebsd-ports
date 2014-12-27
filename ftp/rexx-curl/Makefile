@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External function package providing an interface to the cURL package
 
 BROKEN=		Fails to install/package with new rexx-regina
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-01-26
 
 OPTIONS_DEFINE=	DOCS
 

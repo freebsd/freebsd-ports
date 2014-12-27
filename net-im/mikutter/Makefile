@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-json_pure>=1.8.1:${PORTSDIR}/devel/rubygem-json_pure \
 		rubygem-memoize>=1.3.1:${PORTSDIR}/devel/rubygem-memoize \
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
-		${RUBY_PKGNAMEPREFIX}bsearch>=1.5:${PORTSDIR}/devel/ruby-bsearch \
 		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array \
 		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
 		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext \
@@ -33,6 +32,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+RUBY_REQUIRE=	Ruby >= 200
 RUBY_SHEBANG_FILES=	mikutter.rb \
 			core/miku/miku.rb \
 			core/lib/piapro.rb \
@@ -49,6 +49,12 @@ HTTPCLIENT_DESC=	httpclient support
 NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+.include <bsd.port.pre.mk>
+
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 2.0.0 or later
+.endif
 
 HTTPCLIENT_RUN_DEPENDS=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
@@ -72,4 +78,4 @@ x-generate-plist: stage
 	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} share/applications/mikutter.desktop >> pkg-plist.new
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

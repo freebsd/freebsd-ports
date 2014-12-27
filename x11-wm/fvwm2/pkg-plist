@@ -33,7 +33,6 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmDragWell
 libexec/fvwm/%%FVWM_VERSION%%/FvwmEvent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmForm
-%%IMLIB%%libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmGtkDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconBox
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
@@ -68,7 +67,6 @@ man/man1/FvwmDebug.1.gz
 man/man1/FvwmDragWell.1.gz
 man/man1/FvwmEvent.1.gz
 man/man1/FvwmForm.1.gz
-%%IMLIB%%man/man1/FvwmGtk.1.gz
 man/man1/FvwmGtkDebug.1.gz
 man/man1/FvwmIconBox.1.gz
 man/man1/FvwmIconMan.1.gz
@@ -492,28 +490,7 @@ man/man1/xpmroot.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fvwm.mo
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-@dirrm %%DATADIR%%/perllib/General
-@dirrm %%DATADIR%%/perllib/FVWM/Tracker
-@dirrm %%DATADIR%%/perllib/FVWM/Module
-@dirrm %%DATADIR%%/perllib/FVWM
-@dirrm %%DATADIR%%/perllib
-%%ICONS%%@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/commands
-@dirrm %%DOCSDIR%%/fvwm
-@dirrm %%DOCSDIR%%/images/svg_rendering
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/modules/images/FvwmTabs
-@dirrm %%DOCSDIR%%/modules/images
-@dirrm %%DOCSDIR%%/modules
-@dirrm %%DOCSDIR%%
-@dirrm libexec/fvwm/%%FVWM_VERSION%%
-@dirrm libexec/fvwm
+@dir %%DOCSDIR%%/commands
+@dir %%DOCSDIR%%/fvwm
+@dir %%DOCSDIR%%/images/svg_rendering
+@dir %%DOCSDIR%%/modules/images/FvwmTabs

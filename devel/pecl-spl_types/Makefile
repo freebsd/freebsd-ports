@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 DISTNAME=	SPL_Types-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PECL extension of a collection of special typehandling classes
 
 LICENSE=	PHP301

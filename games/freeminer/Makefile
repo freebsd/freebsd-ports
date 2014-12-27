@@ -3,6 +3,7 @@
 
 PORTNAME=	freeminer
 PORTVERSION=	0.4.10.4
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

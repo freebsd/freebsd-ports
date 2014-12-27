@@ -3,7 +3,7 @@
 
 PORTNAME=	png
 DISTVERSION=	0.1-7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Read and write PNG images
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=	cran:auto-plist
 

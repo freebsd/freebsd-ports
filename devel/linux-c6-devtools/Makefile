@@ -22,6 +22,8 @@ COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
 
 # LICENSE=	Various GNU
 
+RUN_DEPENDS+=	linux-c6-libgfortran>0:${PORTSDIR}/devel/linux-c6-libgfortran
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes

@@ -1,13 +1,13 @@
-# Created by: Steve Wills <swills@freebsd.org>
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	google-daemon
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/GoogleCloudPlatform/compute-image-packages/archive/${PORTVERSION}.tar.gz?dummy=/
+MASTER_SITES=	GHR
 
-MAINTAINER=	swills@freebsd.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google daemon for use with Google Cloud Compute Engine
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
@@ -15,8 +15,11 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		sudo:${PORTSDIR}/security/sudo
 
 USES=		python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	GoogleCloudPlatform
+GH_PROJECT=	compute-image-packages
 USE_RC_SUBR=	google-accounts-manager
-WRKSRC=		${WRKDIR}/compute-image-packages-${PORTVERSION}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/${PORTNAME}
 
 SHEBANG_FILES=	usr/share/google/google_daemon/accounts.py \
 		usr/share/google/google_daemon/accounts_manager.py \

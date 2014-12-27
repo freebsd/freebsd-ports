@@ -3,7 +3,7 @@
 
 PORTNAME=	leocad
 PORTVERSION=	0.80.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTFILES=	LeoCAD-Source-${PORTVERSION}.tgz
@@ -16,7 +16,7 @@ COMMENT=	CAD program that uses bricks similar to those found in many toys
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

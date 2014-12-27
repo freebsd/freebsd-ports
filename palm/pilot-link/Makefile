@@ -3,7 +3,7 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.12.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://downloads.pilot-link.org/ \
@@ -42,7 +42,7 @@ IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconf
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png

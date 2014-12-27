@@ -26,7 +26,7 @@
 +PNGLIBDIR = ${LOCALBASE}/lib
  ZLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/include/X11
-+PNGINC = -I${LOCALBASE}/include/libpng
++PNGINC = -I${LOCALBASE}/include
  #endif
  
  XCOMM ****************

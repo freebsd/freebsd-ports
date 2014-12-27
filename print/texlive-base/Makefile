@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-base
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libgd.so:${PORTSDIR}/graphics/gd \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libttf.so:${PORTSDIR}/print/freetype \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 # XXX

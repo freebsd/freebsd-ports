@@ -3,7 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.4.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -12,7 +12,7 @@ COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libproj.so:${PORTSDIR}/graphics/proj \
-			libpng15.so:${PORTSDIR}/graphics/png \
+			libpng.so:${PORTSDIR}/graphics/png \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libgif.so:${PORTSDIR}/graphics/giflib
 

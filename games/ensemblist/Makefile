@@ -3,7 +3,7 @@
 
 PORTNAME=	ensemblist
 PORTVERSION=	040126
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assemble given shapes from primitives
 
 LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake
 USE_XORG=	xmu

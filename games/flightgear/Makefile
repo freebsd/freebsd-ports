@@ -3,7 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Source/ \
@@ -18,7 +18,7 @@ COMMENT=	The FlightGear flight simulator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libosg.so:${PORTSDIR}/graphics/osg \

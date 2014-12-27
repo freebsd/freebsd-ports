@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdiskusage
-PORTVERSION=	1.48
-PORTREVISION=	8
+PORTVERSION=	1.50
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
@@ -21,7 +20,10 @@ LDFLAGS+=	`fltk-config --ldflags`
 PLIST_FILES=	bin/xdiskusage man/man1/xdiskusage.1.gz
 
 post-patch:
-	${REINPLACE_CMD} -e '22,24d' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^configure:/d; /autoconf/d' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/@CXXFLAGS@/s|$$| ${CXXFLAGS}|' \
+		${WRKSRC}/makeinclude.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${STAGEDIR}${PREFIX}/bin

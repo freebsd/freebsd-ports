@@ -3,6 +3,7 @@
 
 PORTNAME=	scale2x
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,12 +12,12 @@ COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	$$(libpng15-config --I_opts)
-LDFLAGS+=	$$(libpng15-config --L_opts)
+CPPFLAGS+=	$$(libpng-config --I_opts)
+LDFLAGS+=	$$(libpng-config --L_opts)
 
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/scalex bin/scalerx \

@@ -49,7 +49,7 @@ MAKE_ARGS+=	MAKE=${MAKE_CMD} LIBDIR=${PREFIX}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s,-pipe.*$$,${CFLAGS} -DDO_ICONV_CAST -DLIBICONV_PLUG,' \
-		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},;s,libpng ,libpng15 ,' \
+		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},' \
 		${WRKSRC}/makefiles/arch/desktop.mk
 	@${REINPLACE_CMD} -e 's,-O3,,;s,-ldl,${ICONV_LIB},' \
 		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile

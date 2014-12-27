@@ -139,7 +139,6 @@ x11-wm/yawm||2008-04-30|Has expired: project no longer exists
 x11-wm/uwm||2008-04-30|Has expired: Version branch long since retired
 arabic/katoob||2008-04-30|Removed on maintainers request due to inactivity of project
 security/drupal4-ldap_integration||2008-04-30|Removed due to being broken and clearly not used
-www/neon|www/neon26|2008-05-05|Moved to be able to integrate www/neon26
 ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current infrastructure
 devel/swigruby||2008-05-11|Has expired: use devel/swig13 instead, last release was 8 years ago
 japanese/epson-ttfonts||2008-05-12|Removed because of extremely restrictive license
@@ -7223,7 +7222,6 @@ deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
-sysutils/firstboot-growfs||2014-11-23|Part of the base system
 graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
 net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
@@ -7329,3 +7327,25 @@ x11/nvidia-driver-71||2014-12-19|Removed: Not compatible with xserver 1.14
 x11/nvidia-driver-96||2014-12-19|Removed: Not compatible with xserver 1.14
 www/drupal7-jailadmin||2014-12-20|Removed per author's request; unmaintained
 www/drupal7-vulnscan||2014-12-20|Removed per author's request; unmaintained
+www/neon29|www/neon|2014-12-24|Rename to reflect upstream
+graphics/pornview||2014-12-24|No more upstream, no more public distfile, no proper support for modern png
+misc/gnomehier||2014-12-25|Not needed anymore
+graphics/corona||2014-12-25|Abandonware, no proper support for modern png
+graphics/libpano12|graphics/libpano13|2014-12-25|No proper support for modern png, newer version available as libpano13
+games/hex||2014-12-25|Abandonware, no support for moden graphics libraries
+graphics/bbrb||2014-12-25|Abandonware, depends on imlib
+graphics/gtkgraph||2014-12-25|Abandonware, depends on imlib
+graphics/imagesort||2014-12-25|Abandonware, depends on imlib
+graphics/picturebook||2014-12-25|Abandonware, depends on imlib
+graphics/show||2014-12-25|Abandonware, depends on imlib
+japanese/ebview|japanese/ebview-gtk2|2014-12-25|Use GTK2 version
+japanese/xjtext||2014-12-25|Abandonware, depends on imlib
+x11/peeper||2014-12-25|Abandonware, depends on imlib
+x11-toolkits/fpc-gnome1||2014-12-25|Depends on imlib
+graphics/fpc-imlib||2014-12-25|Depends on imlib
+graphics/imlib||2014-12-25|Does not handle modern graphics libraries
+games/secretmaryochronicles-music||2014-12-27|Has expired: Depends on expiring games/secretmaryochronicles
+science/mpb||2014-12-27|Has expired: Broken for more than 6 months
+x11-fm/pbi-thumbnailer||2014-12-27|Has expired: Broken for more than 6 months
+games/secretmaryochronicles||2014-12-27|Has expired: does not run, cegui 0.8 support still in development
+multimedia/ffmpeg24|multimedia/ffmpeg25|2014-12-27|ffmpeg upstream now points to 2.5.x series

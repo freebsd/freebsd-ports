@@ -3,7 +3,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.46
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

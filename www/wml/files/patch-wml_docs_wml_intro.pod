@@ -1,0 +1,11 @@
+--- wml_docs/wml_intro.pod.orig	2014-12-21 22:21:41.928150726 +0000
++++ wml_docs/wml_intro.pod	2014-12-21 22:21:59.927159671 +0000
+@@ -2,7 +2,7 @@
+ ##  WML Introduction
+ ##  Copyright (c) 1997 Ralf S. Engelschall, All Rights Reserved. 
+ ##
+-
++=encoding Latin1
+ =head1 NAME
+ 
+ WML Introduction - An introduction to WML's basic concepts

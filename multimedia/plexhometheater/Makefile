@@ -2,7 +2,7 @@
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -43,7 +43,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libplist.so:${PORTSDIR}/devel/libplist \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		librtmp.so:${PORTSDIR}/multimedia/librtmp \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libshairport.so:${PORTSDIR}/audio/libshairport \

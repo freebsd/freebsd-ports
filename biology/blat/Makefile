@@ -3,6 +3,7 @@
 
 PORTNAME=	blat
 PORTVERSION=	35
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
 		http://users.soe.ucsc.edu/~kent/src/
@@ -11,7 +12,7 @@ DISTNAME=	${PORTNAME}Src${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	DOCS
 

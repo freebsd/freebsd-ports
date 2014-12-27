@@ -3,7 +3,7 @@
 
 PORTNAME=	cadaver
 PORTVERSION=	0.23.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-netrc
@@ -62,5 +62,8 @@ CONFIGURE_ARGS+=--disable-nls \
 		--without-libiconv-prefix \
 		--without-libintl-prefix
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's,27 28 29,& 30,' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ufoai
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/UFO_AI%202.x/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
@@ -14,7 +14,7 @@ COMMENT=	Strategy game featuring tactical combat
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libxvidcore.so:${PORTSDIR}/multimedia/xvid \

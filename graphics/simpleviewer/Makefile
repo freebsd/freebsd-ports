@@ -3,7 +3,7 @@
 
 PORTNAME=	simpleviewer
 PORTVERSION=	1.7.1553.8560
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OpenGL%20edition
 DISTNAME=	sviewgl-src-${PORTVERSION}
@@ -14,14 +14,13 @@ COMMENT=	Small and simple OpenGL image viewer with transparency support
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib
+		libpng.so:${PORTSDIR}/graphics/png \
+		libgif.so:${PORTSDIR}/graphics/giflib \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USES=		tar:bzip2
-USE_EFL=	imlib2
 USE_GL=		glut
 WRKSRC=		${WRKDIR}/sviewgl-src
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ARGS=	CC="${CXX}"
 
 PLIST_FILES=	bin/sviewgl

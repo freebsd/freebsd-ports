@@ -2,20 +2,20 @@
 
 PORTNAME=	tint2
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 PROJECTHOST=	tint2
 USES=		cmake pkgconfig tar:bzip2
 USE_GNOME=	pango glib20
 USE_XORG=	xinerama xrandr xdamage xcomposite
-USE_EFL=	imlib2
 
 CMAKE_ARGS=	-DENABLE_BATTERY:BOOL=ON -DMANDIR:PATH=man
 

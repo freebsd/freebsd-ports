@@ -3,12 +3,13 @@
 
 PORTNAME=	libharu
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	EXAMPLES
 

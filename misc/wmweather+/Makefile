@@ -3,7 +3,7 @@
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
 		SF/nemysisfreebsdp/misc/:icons
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libHermes.so:${PORTSDIR}/graphics/Hermes \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgif.so:${PORTSDIR}/graphics/giflib
 

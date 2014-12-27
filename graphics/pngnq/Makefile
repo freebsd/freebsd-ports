@@ -3,7 +3,7 @@
 
 PORTNAME=	pngnq
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Tool for quantizing PNG images in RGBA format
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 

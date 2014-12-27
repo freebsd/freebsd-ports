@@ -3,7 +3,7 @@
 
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://old.nklein.com/products/54321/${PORTVERSION}/ \
 		http://www.sourcefiles.org/Games/Puzzle/
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five games in four-, three-, or two-dimensions for one player
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tar:tgz
 USE_SDL=	image sdl

@@ -24,6 +24,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/nathive.desktop
 PORTDATA=	*
 PORTDOCS=	*
+PLIST_DIRS=	%%DATADIR%%/cfg/presets/select \
+		%%DATADIR%%/cfg/presets/picker \
+		%%DATADIR%%/cfg/presets/eraser \
+		%%DATADIR%%/cfg/presets/crop \
+		%%DATADIR%%/cfg/presets/brush \
+		%%DATADIR%%/cfg/console
 
 OPTIONS_DEFINE=	DOCS
 

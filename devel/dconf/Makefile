@@ -53,8 +53,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/docs/Makefile.in
 
+.if ${DCONF_SLAVE} == no
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/profile
+.endif
 
 .include <bsd.port.mk>

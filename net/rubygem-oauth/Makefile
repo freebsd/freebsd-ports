@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=		bin/oauth
+
+PLIST_FILES=	bin/oauth
 
 .include <bsd.port.mk>

@@ -86,13 +86,3 @@ man/man6/doomsday.6.gz
 %%DATADIR%%/modules/bootstrap.de
 %%DATADIR%%/modules/gui.de
 %%DATADIR%%/modules/recutil.de
-@dirrmtry lib/doomsday
-@dirrmtry %%DATADIR%%/data/fonts
-@dirrmtry %%DATADIR%%/data/graphics
-@dirrmtry %%DATADIR%%/data/jdoom
-@dirrmtry %%DATADIR%%/data/jdoom64
-@dirrmtry %%DATADIR%%/data/jheretic
-@dirrmtry %%DATADIR%%/data/jhexen
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%/modules
-@dirrmtry %%DATADIR%%

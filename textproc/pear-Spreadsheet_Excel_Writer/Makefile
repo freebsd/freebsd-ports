@@ -5,7 +5,7 @@ PORTNAME=	Spreadsheet_Excel_Writer
 PORTVERSION=	0.9.3
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for writing Microsoft Excel files
 
 LICENSE=	LGPL3

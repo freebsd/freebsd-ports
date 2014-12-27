@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Log normalizer
 
 LICENSE=	GPLv2

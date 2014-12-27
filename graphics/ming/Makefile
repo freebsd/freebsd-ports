@@ -3,7 +3,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.5
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 CONFLICTS_INSTALL=	ja-ming-[0-9]*
 

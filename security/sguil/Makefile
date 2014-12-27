@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 REVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sguil is a network security monitoring program
 
 LICENSE=	GPLv3

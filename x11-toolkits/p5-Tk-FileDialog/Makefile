@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk
 
 LICENSE=	ART10 GPLv1

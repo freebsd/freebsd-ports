@@ -3,7 +3,7 @@
 
 PORTNAME=	flam3
 PORTVERSION=	2.7.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://flam3.com/ \
 		http://interwebfun.org/distfiles/
@@ -11,14 +11,14 @@ MASTER_SITES=	http://flam3.com/ \
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	Flame Renderer
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libpng15 -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
