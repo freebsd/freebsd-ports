@@ -58,7 +58,7 @@
     SUBDIR += emovix
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
-    SUBDIR += ffmpeg24
+    SUBDIR += ffmpeg25
     SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flvmeta
