@@ -22,7 +22,6 @@
     SUBDIR += nautilus
     SUBDIR += nemo
     SUBDIR += p5-PerlFM
-    SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm
     SUBDIR += qtfm
     SUBDIR += rodent
