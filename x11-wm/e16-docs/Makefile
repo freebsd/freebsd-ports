@@ -1,7 +1,7 @@
 # Created by: vanilla
 # $FreeBSD$
 
-PORTNAME=	enlightenment-docs
+PORTNAME=	e16-docs
 PORTVERSION=	0.16.8.0.2
 PORTREVISION=	4
 CATEGORIES=	x11-wm
