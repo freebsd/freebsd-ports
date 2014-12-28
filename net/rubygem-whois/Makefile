@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	whois
-PORTVERSION=	3.5.5
+PORTVERSION=	3.5.8
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/ruby-whois
+PLIST_FILES=	bin/ruby-whois \
+		bin/whoisrb
 
 .include <bsd.port.mk>
