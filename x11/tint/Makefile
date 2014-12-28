@@ -13,7 +13,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 PROJECTHOST=	tint2
-USES=		cmake pkgconfig tar:bzip2
+USES=		alias cmake pkgconfig tar:bzip2
 USE_GNOME=	pango glib20
 USE_XORG=	xinerama xrandr xdamage xcomposite
 
