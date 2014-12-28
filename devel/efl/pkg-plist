@@ -469,7 +469,7 @@ lib/efreet/v-%%BRANCHVERSION%%/efreet_icon_cache_create
 lib/ethumb/modules/emotion/v-%%BRANCHVERSION%%/module.so
 lib/ethumb/modules/emotion/v-%%BRANCHVERSION%%/template.edj
 lib/ethumb_client/utils/v-%%BRANCHVERSION%%/ethumbd_slave
-lib/evas/modules/engines/gl_generic/v-%%BRANCHVERSION%%/module.so
+%%OPENGL%%lib/evas/modules/engines/gl_generic/v-%%BRANCHVERSION%%/module.so
 lib/evas/modules/engines/software_x11/v-%%BRANCHVERSION%%/module.so
 %%OPENGL%%lib/evas/modules/engines/gl_x11/v-%%BRANCHVERSION%%/module.so
 %%OPENGL%%%%SDL%%lib/evas/modules/engines/gl_sdl/v-%%BRANCHVERSION%%/module.so
