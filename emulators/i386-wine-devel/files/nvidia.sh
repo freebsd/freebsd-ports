@@ -65,6 +65,9 @@
 #  - add detection for i386-wine-devel
 # Version 1.13 - 2014/08/05
 #  - add detection for i386-wine-compholio
+# Version 1.14 - 2014/12/26
+#  - gracefully handle a corrupt nVidia tarball
+#  - provide checksum and size information for nVidia tarball
 
 set -e
 
@@ -163,13 +166,18 @@ echo "=> Detected nvidia-driver: ${NV}"
 NVIDIA=${NV}
 NV=`echo ${NV} | cut -f 1 -d _ | cut -f 1 -d ,`
 
-if [ ! -f NVIDIA-FreeBSD-x86-${NV}.tar.gz ]
+if [ ! -f NVIDIA-FreeBSD-x86-${NV}.tar.gz ] || !(tar -tf NVIDIA-FreeBSD-x86-${NV}.tar.gz > /dev/null 2>&1)
 then
   [ -n "$NO_FETCH" ] \
     && terminate 8 "NVIDIA-FreeBSD-x86-${NV}.tar.gz unavailable"
   echo "=> Downloading NVIDIA-FreeBSD-x86-${NV}.tar.gz from ftp://download.nvidia.com..."
+  rm -f NVIDIA-FreeBSD-x86-${NV}.tar.gz
   fetch -apRr ftp://download.nvidia.com/XFree86/FreeBSD-x86/${NV}/NVIDIA-FreeBSD-x86-${NV}.tar.gz \
     || terminate 2 "Failed to download NVIDIA-FreeBSD-x86-${NV}.tar.gz"
+  echo "=> Downloaded NVIDIA-FreeBSD-x86-${NV}.tar.gz"
+  echo "Please check the following information against /usr/ports/x11/nvidia-driver/distinfo"
+  sha256 NVIDIA-FreeBSD-x86-${NV}.tar.gz
+  echo "SIZE (NVIDIA-FreeBSD-x86-${NV}.tar.gz) = `stat -f "%z" NVIDIA-FreeBSD-x86-${NV}.tar.gz`"
 fi
 
 echo "=> Extracting NVIDIA-FreeBSD-x86-${NV}.tar.gz to $PREFIX/lib32..."
