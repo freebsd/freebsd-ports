@@ -3,7 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
@@ -24,9 +24,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 DIST_SUBDIR=	enlightenment
-USE_AUTOTOOLS=	automake aclocal autoconf
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig shared-mime-info tar:xz
+USES=		autoreconf compiler:c++11-lib gmake libtool pathfix pkgconfig shared-mime-info tar:xz
 USE_XORG=	x11 xcursor xcomposite xdamage xext xinerama xp xrandr xtst xscrnsaver
 USE_LDCONFIG=	yes
 
@@ -37,13 +36,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	BRANCHVERSION=${PORTVERSION:R} PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NVIDIA PHYSICS PULSEAUDIO SSL
-OPTIONS_GROUP=		ENGINE EMOTION INPUT LOADER
-OPTIONS_GROUP_ENGINE=	OPENGL SDL
+OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS NVIDIA PHYSICS PULSEAUDIO SSL
+OPTIONS_GROUP=		EMOTION INPUT LOADER
 OPTIONS_GROUP_EMOTION=	GSTREAMER LIBXINE V4L
 OPTIONS_GROUP_INPUT=	IBUS SCIM
 OPTIONS_GROUP_LOADER=	OPENJPEG WEBP
-OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PHYSICS SSL OPENGL GSTREAMER
+OPTIONS_RADIO=		ENGINE
+OPTIONS_RADIO_ENGINE=	OPENGL SDL
+OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PHYSICS SSL GSTREAMER OPENGL
 OPTIONS_SUB=		yes
 
 HARFBUZZ_DESC=		OpenType text shaping engine
@@ -61,16 +61,14 @@ FRIBIDI_CONFIGURE_ENABLE=	fribidi
 HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:${PORTSDIR}/print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=	harfbuzz
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+NLS_USES=			gettext
+NLS_CONFIGURE_ENABLE=		nls
 
 PHYSICS_LIB_DEPENDS=		libBulletDynamics.so:${PORTSDIR}/devel/bullet
 PHYSICS_CONFIGURE_ENABLE=	physics
 
-OPENGL_USE=			GL=gl
-
-SLD_USE=			SLD=sdl
-SLD_CONFIGURE_ENABLE=		sdl
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
 GSTREAMER_USE=			GSTREAMER1=core
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer1
@@ -92,11 +90,10 @@ OPENJPEG_CONFIGURE_ENABLE=	image-loader-jp2k
 WEBP_LIB_DEPENDS=		libwebp.so:${PORTSDIR}/graphics/webp
 WEBP_CONFIGURE_ENABLE=		image-loader-webp
 
-DOCS_BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
-DOCS_CONFIGURE_ENABLE=		doc
+OPENGL_USE=			GL=gl
 
-NLS_USES=			gettext
-NLS_CONFIGURE_ENABLE=		nls
+SDL_USE=			SDL=sdl2
+SDL_CONFIGURE_ENABLE=		sdl
 
 .include <bsd.port.options.mk>
 
@@ -104,15 +101,23 @@ NLS_CONFIGURE_ENABLE=		nls
 EXTRA_PATCHES+=			${FILESDIR}/extra-patch-src-lib-ecore_x-ecore_x_vsync_tool.c
 .endif
 
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=			yes
-WITH_OPENSSL_PORT=		yes
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+PLIST_SUB+=			AUDIO=""
 .else
-CONFIGURE_ARGS+=		--with-crypto=none
+CONFIGURE_ARGS+=		--disable-audio
+PLIST_SUB+=			AUDIO="@comment "
 .endif
 
-.if empty(PORT_OPTIONS:MOPENGL)
-CONFIGURE_ARGS+=		--with-opengl=none
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=			yes
+. if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=			${FILESDIR}/extra-patch-configure.ac
+CONFIGURE_ENV+=			ECORE_CON_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" ECORE_CON_LIBS="-lssl"
+. else
+WITH_OPENSSL_PORT=		yes
+. endif
+.else
+CONFIGURE_ARGS+=		--with-crypto=none
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER} || ${PORT_OPTIONS:MLIBXINE} || ${PORT_OPTIONS:MV4L}
@@ -127,17 +132,8 @@ CONFIGURE_ARGS+=		--with-glib=yes
 CONFIGURE_ARGS+=		--disable-ibus --with-glib=no
 .endif
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=			NLS=""
-.else
-PLIST_SUB+=			NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-PLIST_SUB+=			AUDIO=""
-.else
-CONFIGURE_ARGS+=		--disable-audio
-PLIST_SUB+=			AUDIO="@comment "
+.if empty(PORT_OPTIONS:MOPENGL)
+CONFIGURE_ARGS+=		--with-opengl=none
 .endif
 
 pre-patch:
