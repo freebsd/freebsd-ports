@@ -19,8 +19,8 @@ LICENSE=	GPLv2
 
 PATCH_WRKSRC=	${WRKSRC}/src
 
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/phyml
 
