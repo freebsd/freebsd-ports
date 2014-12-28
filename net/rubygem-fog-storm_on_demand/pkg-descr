@@ -1,0 +1,4 @@
+Fog::StormOnDemand is a module for the fog gem to support StormOnDemand.
+
+WWW: https://github.com/fog/fog-storm_on_demand
+RG:  https://rubygems.org/gems/fog-storm_on_demand

@@ -1020,6 +1020,7 @@
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
+    SUBDIR += rubygem-fog-storm_on_demand
     SUBDIR += rubygem-fog-terremark
     SUBDIR += rubygem-fog-vmfusion
     SUBDIR += rubygem-fog-voxel
