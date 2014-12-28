@@ -218,6 +218,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 
 .if ${_COMPILER_ARGS:Mgcc-c++11-lib}
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .if ${COMPILER_FEATURES:Mlibc++}
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
