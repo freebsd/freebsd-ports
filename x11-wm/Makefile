@@ -46,6 +46,7 @@
     SUBDIR += e-module-wlan
     SUBDIR += e-modules
     SUBDIR += e16
+    SUBDIR += e16-docs
     SUBDIR += e17-module-comp-scale
     SUBDIR += e17-module-eektool
     SUBDIR += e17-module-elfe
@@ -79,7 +80,6 @@
     SUBDIR += ede
     SUBDIR += emerald
     SUBDIR += enlightenment
-    SUBDIR += enlightenment-docs
     SUBDIR += epplets
     SUBDIR += evilwm
     SUBDIR += fbcmd
