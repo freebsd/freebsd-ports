@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus-sharp
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://cloud.github.com/downloads/mono/${PORTNAME}/
