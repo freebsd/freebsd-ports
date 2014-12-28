@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 
-USES=		gmake pkgconfig
+USES=		autoreconf gmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnosek
@@ -22,8 +22,6 @@ GH_COMMIT=	333ff99
 GH_TAGNAME=	${PORTVERSION}
 
 USE_RC_SUBR=	fcgiwrap
-
-USE_AUTOTOOLS=	aclocal autoconf autoheader
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
