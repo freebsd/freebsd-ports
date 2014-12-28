@@ -17,10 +17,9 @@ LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
+USES=		autoreconf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-USE_AUTOTOOLS=	aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-[0-9]*
@@ -28,9 +27,6 @@ CONFLICTS=	par2cmdline-[0-9]*
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${CHMOD} u+x ${WRKSRC}/install-sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
