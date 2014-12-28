@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/8376/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/9444/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,6 +27,7 @@ CONFIGURE_ARGS=	--disable-cgribex \
 		--program-transform-name="" \
 		--with-zlib=/usr
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix
@@ -72,9 +72,6 @@ CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcdi.so.0
 
 regression-test test: build
 .if ${PORT_OPTIONS:MNETCDF}
