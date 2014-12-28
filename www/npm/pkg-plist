@@ -1262,6 +1262,7 @@ lib/node_modules/npm/node_modules/read-installed/test/cyclic-extraneous-peer-dep
 lib/node_modules/npm/node_modules/read-installed/test/depth-0.js
 lib/node_modules/npm/node_modules/read-installed/test/depth-1.js
 lib/node_modules/npm/node_modules/read-installed/test/dev.js
+lib/node_modules/npm/node_modules/read-installed/test/empty.js
 lib/node_modules/npm/node_modules/read-installed/test/extraneous-dev.js
 lib/node_modules/npm/node_modules/read-installed/test/extraneous.js
 lib/node_modules/npm/node_modules/read-installed/test/fixtures/extraneous-detected/package.json
