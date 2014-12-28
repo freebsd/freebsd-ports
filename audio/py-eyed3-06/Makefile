@@ -27,6 +27,9 @@ PLIST_FILES+=	bin/eyeD3 man/man1/eyeD3.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+DEPRECATED=	In audio/abcde dependency has been changed to audio/py-eyed3
+EXPIRATION_DATE=2015-01-31
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
