@@ -5446,24 +5446,22 @@ do-config:
 .if empty(ALL_OPTIONS) && empty(OPTIONS_SINGLE) && empty(OPTIONS_MULTI) && empty(OPTIONS_RADIO) && empty(OPTIONS_GROUP)
 	@${ECHO_MSG} "===> No options to configure"
 .else
-.if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
-	oldoptionsdir=${OPTIONSFILE}; oldoptionsdir=$${oldoptionsdir%/*}; \
-	${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
-	(${SU_CMD} "${SH} -c \"if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then ${MV} $${oldoptionsdir} $${optionsdir}; elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then ${RM} -rf $${oldoptionsdir} ; fi ; ${MKDIR} $${optionsdir} 2> /dev/null\"") || \
-		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
-	${ECHO_MSG} "===>  Returning to user credentials"
-.else
-	@optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
-	oldoptionsdir=${OPTIONSFILE}; oldoptionsdir=$${oldoptionsdir%/*}; \
+	@optionsdir=${OPTIONS_FILE:H}; \
+	oldoptionsdir=${OPTIONSFILE:H}; \
+	if [ ${UID} != 0 -a -z "${INSTALL_AS_USER}" -a ! -w "${PORT_DBDIR}" ] ; then \
+		${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
+		(${SU_CMD} "${SH} -c \"if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then ${MV} $${oldoptionsdir} $${optionsdir}; elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then ${RM} -rf $${oldoptionsdir} ; fi ; ${MKDIR} $${optionsdir} 2> /dev/null\"") || \
+			(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
+		${ECHO_MSG} "===>  Returning to user credentials" ; \
+	else \
 	if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then \
 		${MV} $${oldoptionsdir} $${optionsdir}; \
 	elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then \
 		${RM} -rf $${oldoptionsdir} ; \
 	fi ; \
 	${MKDIR} $${optionsdir} 2> /dev/null || \
-	(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1)
-.endif
+	(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1) ; \
+	fi
 	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
 	${SETENV} ${D4P_ENV} ${SH} ${SCRIPTSDIR}/dialog4ports.sh $${TMPOPTIONSFILE} || { \
@@ -5491,7 +5489,7 @@ do-config:
 			${ECHO_CMD} "OPTIONS_FILE_UNSET+=$${i}" >> $${TMPOPTIONSFILE}; \
 		fi; \
 	done; \
-	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+	if [ ${UID} != 0 -a -z "${INSTALL_AS_USER}" -a ! -w "${OPTIONS_FILE:H}" ]; then \
 		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONS_FILE}"; \
 		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONS_FILE}"; \
 		${ECHO_MSG} "===>  Returning to user credentials"; \
@@ -5581,7 +5579,7 @@ rmconfig:
 .if exists(${OPTIONSFILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
 	optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
-	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" -a ! -w "${OPTIONSFILE}" ]; then \
 		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONSFILE} and $${optionsdir}"; \
 		${SU_CMD} "${RM} -f ${OPTIONSFILE} ; \
 			${RMDIR} $${optionsdir}"; \
@@ -5594,7 +5592,7 @@ rmconfig:
 .if exists(${OPTIONS_FILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
 	optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
-	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" -a ! -w "${OPTIONS_FILE}" ]; then \
 		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONS_FILE} and $${optionsdir}"; \
 		${SU_CMD} "${RM} -f ${OPTIONS_FILE} ; \
 			${RMDIR} $${optionsdir}"; \
