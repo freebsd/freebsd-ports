@@ -5,7 +5,7 @@ COMMENT=	32bit Wine built with the compholio patchset for 64bit FreeBSD
 
 SLAVE_PORT=	i386-wine-devel
 
-CONFLICTS=	i386-wine-[0-9]* wine-[0-9]* wine-compholio-[0-9]* i386-wine-devel-[0-9]* wine-devel-[0-9]*
+CONFLICTS_INSTALL=	i386-wine-[0-9]* wine-[0-9]* wine-compholio-[0-9]* i386-wine-devel-[0-9]* wine-devel-[0-9]*
 
 OPTIONS_SET=	COMPHOLIO LIBXSLT GNUTLS HAL X11
 
