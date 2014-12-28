@@ -18,9 +18,8 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 CONFLICTS=	play-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig libtool
+USES=		autoreconf pkgconfig libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake
 
 OPTIONS_DEFINE=	ALSA AO AMRNB AMRWB FFMPEG FLAC GSM ID3TAG LADSPA LAME \
 		MAD PNG PULSEAUDIO SNDFILE VORBIS WAVPACK
