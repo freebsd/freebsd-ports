@@ -18,14 +18,10 @@ DIST_SUBDIR=	xorg/driver
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
-USE_AUTOTOOLS=	autoconf automake
+USES=		autoreconf
 USE_XORG=	xorg-server xproto xi inputproto xf86driproto glproto \
 		resourceproto
 CONFIGURE_ENV=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
 INSTALL_TARGET=	install-strip
-
-pre-configure:
-	(cd ${WRKSRC} && /bin/sh ./autogen.sh)
 
 .include <bsd.port.mk>
