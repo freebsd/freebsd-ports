@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	REST-Client
-PORTVERSION=	249
-PORTREVISION=	1
+PORTVERSION=	272
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	michelle@sorbs.net
 COMMENT=	Simple client for interacting with RESTful http/https resources
 
 LICENSE=	ART10 GPLv1
