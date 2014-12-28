@@ -6,7 +6,6 @@ PORTVERSION=	0.16.8.0.2
 PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/e16-docs/${PORTVERSION}
-DISTNAME=	e16-docs-${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Data files of enlightenment DOX
