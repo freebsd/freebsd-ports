@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	fnord
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.fefe.de/fnord/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast webserver with CGI-capability
+
+LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
 
@@ -77,6 +78,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fnord-conf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fnord.inetd ${STAGEDIR}${PREFIX}/bin
-
 
 .include <bsd.port.mk>
