@@ -2,6 +2,7 @@ include/bezctx.h
 include/bezctx_intf.h
 include/spiro.h
 include/spiroentrypoints.h
+lib/libspiro.a
 lib/libspiro.so
 lib/libspiro.so.0
-lib/libspiro.so.0.0.1
+lib/libspiro.so.0.0.2
