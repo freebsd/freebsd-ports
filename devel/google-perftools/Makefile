@@ -1,14 +1,14 @@
-# Created by: Yuri Victorovich <yuri@tsoft.com>
+# Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
 PORTNAME=	google-perftools
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/ \
 		${MASTER_SITE_LOCAL}
 DISTNAME=	gperftools-${PORTVERSION}
 
-MAINTAINER=	yuri@tsoft.com
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 
 LICENSE=	BSD3CLAUSE
@@ -39,7 +39,7 @@ CXXFLAGS+=	-fno-builtin
 CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=	Does not build, assembly not supported, see PR-94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
+BROKEN=	Does not build, assembly not supported, see PR#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 .endif
 
 post-patch:
@@ -56,8 +56,9 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Please run 'make check'. Two testcases are known to fail."
-	@${ECHO} "Report any testcase failures to http://code.google.com/p/google-perftools/issues/list"
+	@${ECHO} "Please run 'make check' (requires bash)."
+	@${ECHO} "Two testcases are known to fail. Testsuite is known to be"
+	@${ECHO} "unreliable and give false positives and negatives (PR#661)."
 	@${ECHO}
 
 post-install:
