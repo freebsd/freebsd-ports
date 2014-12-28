@@ -7,3 +7,5 @@ sbin/zabbix_agentd
 man/man1/zabbix_get.1.gz
 man/man1/zabbix_sender.1.gz
 man/man8/zabbix_%%ZABBIX_BUILD%%d.8.gz
+@dir %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.d
+@dir %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%d.conf.d

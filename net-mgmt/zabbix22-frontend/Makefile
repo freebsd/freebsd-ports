@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PKGNAMESUFFIX=	-frontend
 CATEGORIES=	net-mgmt
+PKGNAMESUFFIX=	-frontend
 
 MASTERDIR=	${.CURDIR}/../zabbix22-server
 
@@ -40,7 +40,7 @@ USE_PHP+=	sqlite3
 
 .if ${PORT_OPTIONS:MORACLE}
 ZABBIX_REQUIRE=
-CONFIGURE_ARGS+=        --with-oracle
+CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 do-install:
