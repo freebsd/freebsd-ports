@@ -401,7 +401,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Delete the old and conflicting packages:
   # pkg delete clutter gnome-utils gnome-panel gnome-keyring vala-vapigen \
-      guile gcalctool gnome-media libgnomekbd
+      guile gcalctool gnome-media libgnomekbd gnome-themes at-spi
   # pkg delete gnome-screensaver gnome-applets bug-buddy \
       evolution-exchange evolution-webcal gnome-system-tools \
       seahorse-plugins gnome-control-center
