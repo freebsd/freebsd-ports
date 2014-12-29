@@ -274,14 +274,19 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man8/update-alternatives.8.gz
 %%NLS%%man/hu/man5/dpkg.cfg.5.gz
 %%NLS%%man/hu/man5/dselect.cfg.5.gz
+%%NLS%%man/it/man1/dpkg-architecture.1.gz
 %%NLS%%man/it/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/it/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/it/man1/dpkg-deb.1.gz
 %%NLS%%man/it/man1/dpkg-distaddfile.1.gz
+%%NLS%%man/it/man1/dpkg-gencontrol.1.gz
+%%NLS%%man/it/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%man/it/man1/dpkg-name.1.gz
 %%NLS%%man/it/man1/dpkg-parsechangelog.1.gz
+%%NLS%%man/it/man1/dpkg-query.1.gz
 %%NLS%%man/it/man1/dpkg-scanpackages.1.gz
 %%NLS%%man/it/man1/dpkg-scansources.1.gz
+%%NLS%%man/it/man1/dpkg-source.1.gz
 %%NLS%%man/it/man1/dpkg-split.1.gz
 %%NLS%%man/it/man1/dpkg-vendor.1.gz
 %%NLS%%man/it/man1/dpkg.1.gz
@@ -296,6 +301,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man5/deb-src-control.5.gz
 %%NLS%%man/it/man5/deb-substvars.5.gz
 %%NLS%%man/it/man5/deb-version.5.gz
+%%NLS%%man/it/man5/deb.5.gz
 %%NLS%%man/it/man5/dpkg.cfg.5.gz
 %%NLS%%man/it/man5/dselect.cfg.5.gz
 %%NLS%%man/it/man8/dpkg-statoverride.8.gz
