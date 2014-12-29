@@ -3,7 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.3drealms.com/share/ \
 		ftp://ftp.kiarchive.ru/pub/.1/msdos/games/play/3d/ \
@@ -27,7 +27,7 @@ NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	SHAREWARE
 SHAREWARE_DESC=	Install shareware game data version 1.3
 
-DATADIR=	${DN3DDIR}
+DATADIR=	${DN3DDIR:C/^${LOCALBASE}/${PREFIX}/}
 
 .include "Makefile.include"
 
@@ -48,6 +48,7 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${TOUCH} ${STAGEDIR}${DATADIR}/.keepme
 .if ${PORT_OPTIONS:MSHAREWARE}
 	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${STAGEDIR}${DATADIR}/duke3d.grp
 .endif

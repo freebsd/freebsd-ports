@@ -25,5 +25,5 @@ PLIST_SUB+=	DN3DDIR="${DN3DDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DN3DDIR="${DN3DDIR}"
 
 .if ${PORTNAME} != "data"
-RUN_DEPENDS+=	${DN3DDIR}:${PORTSDIR}/games/duke3d-data
+RUN_DEPENDS+=	${DN3DDIR}/.keepme:${PORTSDIR}/games/duke3d-data
 .endif
