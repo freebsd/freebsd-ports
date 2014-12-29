@@ -462,7 +462,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .  else
 .    if defined(${opt}_CONFIGURE_ENABLE)
 .      for iopt in ${${opt}_CONFIGURE_ENABLE}
-CONFIGURE_ARGS+=	--disable-${iopt}
+CONFIGURE_ARGS+=	--disable-${iopt:C/=.*//}
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
