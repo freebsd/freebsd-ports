@@ -11,7 +11,7 @@ DISTNAME=	py_${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Python implementation of an Erlang node
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20
 
 USES=			python
 USE_PYTHON=		distutils
