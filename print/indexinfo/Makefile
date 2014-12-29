@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	indexinfo
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	print ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/indexinfo/
 
