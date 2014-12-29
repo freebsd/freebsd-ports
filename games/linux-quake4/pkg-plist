@@ -414,23 +414,4 @@ bin/linux-quake4
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/PBEULA
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%Q4DIR%%/pb/htm
-@dirrm %%Q4DIR%%/pb
-@dirrmtry %%Q4DIR%%/q4base
 @unexec rmdir %D/%%Q4DIR%% 2>/dev/null || echo "Note: %D/%%Q4DIR%% not empty -- not deleted!"
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG/htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENU/htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENU/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ENU
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ESP/htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ESP/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ESP
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/FRA/htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/FRA/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/FRA
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ITA/htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ITA/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ITA
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
