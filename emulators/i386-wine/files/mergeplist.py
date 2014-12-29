@@ -73,8 +73,28 @@ class OrderedSet(collections.MutableSet):
 #</recipe>
 
 def main(plists):
+    prev = prev_short = None
+    for line in gen_list(plists):
+        if line.startswith("%%"):
+            line_short = line.split("%%", 3)[1:]
+            line_short = "%%%%%s%%%%%s" % (line_short[0].split("-", 2)[0], line_short[1])
+            if prev_short == line_short:
+                print(line_short)
+                line = line_short = None
+            elif prev is not None:
+                print(prev)
+            prev, prev_short = line, line_short
+        else:
+            if prev is not None:
+                print(prev)
+                prev = prev_short = None
+            print line
+    if prev is not None:
+        print(prev)
+
+def gen_list(plists):
     plists_len = len(plists)
-    plists.sort(key=lambda x: int(x.rsplit('.', 2)[-1]))
+    plists.sort(key=lambda x: int(x.rsplit('.', 2)[-1].split('-', 2)[0]))
     names = ["OSREL" + i.rsplit('.', 2)[-1] for i in plists]
     for i in range(plists_len):
         with open(plists[i], 'r') as file:
@@ -83,7 +103,7 @@ def main(plists):
     while empty < plists_len:
         if not empty and all(plists[1].peek() == i.peek() for i in plists[1:]):
             # Test if the top of the queues are all common
-            print(plists[1].peek())
+            yield plists[1].peek()
             for i in plists:
                 i.pop()
         else:
@@ -96,7 +116,7 @@ def main(plists):
             keys.sort()
             for k in keys:
                 for i in lines[k]:
-                    print("%%" + names[i] + "%%" + k)
+                    yield "%%" + names[i] + "%%" + k
         empty = sum(len(i) == 0 for i in plists)
 
 if __name__ == '__main__':
