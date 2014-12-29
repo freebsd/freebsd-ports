@@ -23,7 +23,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${PATCHDIR}/InitialCache.cmake"
 
-.if defined(STRIP) && ${STRIP} != ""
+.include <bsd.port.pre.mk>
+
+.if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
 INSTALL_TARGET=	install/strip
 .endif
 
@@ -62,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Auxiliary/cmake-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
