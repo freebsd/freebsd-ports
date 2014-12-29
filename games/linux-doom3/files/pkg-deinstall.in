@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	if find "%%DATADIR%%" -type f | head -1 | grep -q ''; then
+		echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %%DATADIR%%." | fmt
+	fi
+fi
