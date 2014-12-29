@@ -2,7 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -41,9 +41,21 @@ WX_COMPS=	wx:lib
 WX_UNICODE=	yes
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
+OPTIONS_DEFINE=	PORTSSM
+PORTSSM_DESC=	Use lang/spidermonkey24 instead of bundled one
+
+OPTIONS_SUB=	yes
+PORTSSM_LIB_DEPENDS=	libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24
+
 MANUAL_PACKAGE_BUILD=	huge
 
 PORTDATA=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPORTSSM}
+SMOPT=		--with-system-mozjs24
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -55,14 +67,17 @@ post-patch:
 		${WRKSRC}/build/resources/0ad.sh
 
 pre-build:
-	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --with-system-miniupnpc --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --with-system-miniupnpc ${SMOPT} --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/build/resources/0ad.sh ${STAGEDIR}${PREFIX}/bin/0ad
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libmozjs24-ps-release.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+.if ! ${PORT_OPTIONS:MPORTSSM}
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs24-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+.endif
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}
