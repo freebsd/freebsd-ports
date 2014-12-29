@@ -6,7 +6,7 @@ DISTVERSION=	1.8.11p1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
 LICENSE=	sudo
