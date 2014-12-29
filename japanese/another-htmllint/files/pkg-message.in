@@ -1,0 +1,9 @@
+To activate htmllint, use Alias directive in httd.conf or symbolic link
+from %%DATADIR%%/html/ like as:
+
+Alias	/htmllint/	%%DATADIR%%/html/
+
+<Directory %%DATADIR%%/html>
+  AddHandler cgi-script	.cgi
+  Options +ExecCGI
+</Directory>
