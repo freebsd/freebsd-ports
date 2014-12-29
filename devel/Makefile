@@ -3666,7 +3666,7 @@
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
     SUBDIR += py-characteristic
-    SUBDIR += py-checkmanifest
+    SUBDIR += py-check-manifest
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-circuits
