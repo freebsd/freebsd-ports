@@ -1154,13 +1154,14 @@ MASTER_SITE_SAMBA+= \
 # List:	http://download.savannah.gnu.org/mirmon/
 .if !defined(IGNORE_MASTER_SITE_SAVANNAH)
 MASTER_SITE_SAVANNAH+= \
+	http://download.savannah.gnu.org/releases/%SUBDIR%/ \
+	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/ \
 	http://nongnu.askapache.com/%SUBDIR%/ \
 	http://mirror.lihnidos.org/GNU/savannah/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/ \
-	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/ \
-	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
+	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/
 .endif
 
 # List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
