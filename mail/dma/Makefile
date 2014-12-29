@@ -35,9 +35,9 @@ CONFFILES+=	dma.conf auth.conf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
-EXTRA_PATCHES=	${.CURDIR:H:H}/mail/dma/files/extrapatch-8-spool.c
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-8-spool.c
 .else
-EXTRA_PATCHES=  ${.CURDIR:H:H}/mail/dma/files/extrapatch-else-spool.c
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-else-spool.c
 .endif
 
 pre-patch:
