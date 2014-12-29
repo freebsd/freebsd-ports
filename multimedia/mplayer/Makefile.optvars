@@ -23,9 +23,6 @@ CDIO_CONFIGURE_OFF=	--disable-libcdio
 CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 CDPARANOIA_CONFIGURE_OFF=	--disable-cdparanoia
 
-DIRAC_LIB_DEPENDS=	libdirac_encoder.so:${PORTSDIR}/multimedia/dirac
-DIRAC_CONFIGURE_OFF=	--disable-libdirac-lavc
-
 DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
 DV_CONFIGURE_OFF=	--disable-libdv
 
@@ -43,6 +40,9 @@ FRIBIDI_CONFIGURE_OFF=	--disable-fribidi
 
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CONFIGURE_OFF=	--disable-gif
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 
 GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 GSM_CONFIGURE_OFF=	--disable-libgsm

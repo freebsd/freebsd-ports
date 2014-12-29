@@ -48,20 +48,10 @@ DEFAULT_KERN_HZ=1024
 # Non-simplified OPTIONS handling
 # ===============================
 
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--enable-gnutls
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnutls
-.endif
-
 .if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
 .else
 CONFIGURE_ARGS+=	--disable-inet6
-.endif
-
-.if ${PORT_OPTIONS:MMEMALIGN}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-memalign
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
@@ -95,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 # =========================================
 
 # Supported architectures for clang
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "armv6"
 MPLAYER_CLANG_SUPPORTED_ARCH=	yes
 .endif
 
@@ -130,6 +120,11 @@ CC=		clang
 CXX=		clang++
 CPP=		clang-cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
+# Require 16 byte stack realignment on i386 to interface
+# properly with hand crafted assembler code in ffmpeg
+.if ${ARCH} == "i386"
+CFLAGS+=	-mstack-alignment=16 -mstackrealign
+.endif # ${ARCH} == "i386"
 .else
 .if ${PORT_OPTIONS:MOTCHAIN}
 USE_GCC?=	yes
@@ -142,39 +137,22 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_gcc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-.endif
-.endif
+.endif # ${ARCH} == "amd64"
+.endif # ${PORT_OPTIONS:MOTCHAIN}
+.endif # defined(WITH_BASE_CLANG)
 
 
-# Extra build options for debugging and profiling
-# ===============================================
+# Extra build options for debugging and optimised CFLAGS
+# ======================================================
 
-#On i386, gcc runs out of general purpose registers when
-#trying to compile a debug version with the default flags.
 .if ${PORT_OPTIONS:MDEBUG}
 WITH_DEBUG=	yes
 CONFIGURE_ARGS+=	--enable-debug=3
-.if ${ARCH} == "i386" && !defined(WITH_BASE_CLANG)
-DEBUG_FLAGS=	-g -fomit-frame-pointer
-.endif
 .else
 .if ${PORT_OPTIONS:MOCFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
-.else
-CFLAGS+=	-O -fomit-frame-pointer
 .endif #OCFLAGS
 .endif #DEBUG
-
-.if ${PORT_OPTIONS:MPROFILE}
-CONFIGURE_ARGS+=	--enable-profile
-LDFLAGS+=	-pg
-.if ${OSVERSION} >= 1100000
-#Workaround a temporary bug in 11-CURRENT where
-#using -pie does not work with -pthread
-CONFIGURE_ARGS+=	--disable-relocatable
-.endif
-.endif #PROFILE
 
 # Edge case: binary codecs on i386, mostly superseded by internal ffmpeg
 # ======================================================================
