@@ -3,6 +3,7 @@ include/SDL2pp/AudioSpec.hh
 include/SDL2pp/Config.hh
 include/SDL2pp/ContainerRWops.hh
 include/SDL2pp/Exception.hh
+include/SDL2pp/Optional.hh
 include/SDL2pp/Point.hh
 include/SDL2pp/RWops.hh
 include/SDL2pp/Rect.hh
@@ -14,6 +15,6 @@ include/SDL2pp/Texture.hh
 include/SDL2pp/Wav.hh
 include/SDL2pp/Window.hh
 lib/libSDL2pp.so
-lib/libSDL2pp.so.1
-lib/libSDL2pp.so.1.0.0
+lib/libSDL2pp.so.3
+lib/libSDL2pp.so.3.0.0
 libdata/pkgconfig/sdl2pp.pc
