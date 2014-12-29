@@ -26,35 +26,30 @@ USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
 SVNREVISION=	1923
 
-OPTIONS_DEFINE=	MIDI TIMIDITYPLUS VORBIS
-MIDI_DESC=	Original MIDI music support
-TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity
+PLIST_FILES=	bin/eduke32 bin/mapster32
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFAULT=	MIDI VORBIS
+BROKEN_sparc64=		Does not compile on sparc64
+
+OPTIONS_DEFINE=	VORBIS
+OPTIONS_RADIO=	MIDI
+OPTIONS_RADIO_MIDI=	TIMIDITY TIMIDITYPLUS
+OPTIONS_DEFAULT=TIMIDITY VORBIS
+
+MIDI_DESC=	MIDI music support
+TIMIDITY_DESC=	Use Timidity for music support
+TIMIDITY_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+TIMIDITYPLUS_DESC=	Use Timidity++ for music support
+TIMIDITYPLUS_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${PORT_OPTIONS:MMIDI}
-.if ${PORT_OPTIONS:MTIMIDITYPLUS}
-RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
-.else
-RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-patch:
