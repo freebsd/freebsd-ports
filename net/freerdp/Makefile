@@ -3,9 +3,8 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.1.0
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-beta+2013071101
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -66,7 +65,7 @@ X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 X11_CMAKE_ON=		-DWITH_X11=ON
 X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr
+X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi
 
 .include <bsd.port.options.mk>
 
