@@ -274,7 +274,7 @@
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xneur
-    SUBDIR += xpad
+    SUBDIR += xpad3
     SUBDIR += xpad-current
     SUBDIR += xpostit
     SUBDIR += xpostitPlus

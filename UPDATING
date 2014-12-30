@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141230:
+  AFFECTS: users of deskutils/xpad
+  AUTHOR: jgh@FreeBSD.org
+
+  deskutils/xpad has been moved to deskutils/xpad3, since 4.x has been around
+  for a while.
+
+  Should you wish to stick with legacy branch at this time;
+
+  # portmaster -o deskutils/xpad deskutils/xpad3
 
 20141225:
   AFFECTS: users of graphics/png
