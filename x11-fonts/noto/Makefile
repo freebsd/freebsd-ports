@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.google.com/get/noto/pkgs/
 
@@ -11,7 +11,6 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Google font family
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
