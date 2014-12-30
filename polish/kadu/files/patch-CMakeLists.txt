@@ -1,0 +1,29 @@
+Submitted upstream: https://gitorious.org/kadu/kadu/merge_requests/2121
+
+Make the call to configure_package_config_file work with CMake 3.1.0.
+
+configure_package_config_file()'s PATH_VARS option expects several
+separate variable names instead of one list with all the names. Passing
+the values in the expected format fixes the following error:
+
+CMake Error at /usr/local/share/cmake/Modules/CMakePackageConfigHelpers.cmake:231 (message):
+  Unknown keywords given to CONFIGURE_PACKAGE_CONFIG_FILE():
+  "INCLUDE_DIR;SDK_DIR"
+Call Stack (most recent call first):
+  CMakeLists.txt:226 (configure_package_config_file)
+  CMakeLists.txt:279 (kadu_configure_package_config_file)
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -221,11 +221,10 @@
+ 	elseif ("${_mode}" STREQUAL INSTALL_TREE)
+ 		set (INCLUDE_DIR "${INSTALL_INCLUDE_DIR}")
+ 		set (SDK_DIR "${INSTALL_SDK_DIR}")
+-		list (APPEND path_vars INCLUDE_DIR SDK_DIR)
+ 
+ 		configure_package_config_file ("${_in}" "${_out}"
+ 			INSTALL_DESTINATION "${INSTALL_CMAKE_DIR}"
+-			PATH_VARS ${path_vars}
++			PATH_VARS INCLUDE_DIR SDK_DIR
+ 			NO_SET_AND_CHECK_MACRO NO_CHECK_REQUIRED_COMPONENTS_MACRO
+ 		)
+ 	endif ()
