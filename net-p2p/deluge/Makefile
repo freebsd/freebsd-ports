@@ -2,10 +2,10 @@
 
 PORTNAME=	deluge
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
-EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK2, and libtorrent-rasterbar
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
 USE_RC_SUBR=	deluged deluge_web
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-USES=		gettext tar:xz python:2 twisted:run,web
+USES=		gettext tar:lzma python:2 twisted:run,web
 USE_PYTHON=	autoplist distutils
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 		xdg-utils>=1.0.2:${PORTSDIR}/devel/xdg-utils
 
-USE_GNOME+=	librsvg2 pygtk2
+USE_GNOME+=	librsvg2 pygnome2 pygtk2
 USES+=		desktop-file-utils
 INSTALLS_ICONS=	yes
 .endif
