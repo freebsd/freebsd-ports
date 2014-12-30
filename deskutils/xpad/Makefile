@@ -3,6 +3,7 @@
 
 PORTNAME=	xpad
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/4.5/+download/
 
@@ -11,7 +12,7 @@ COMMENT=	Virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	icons-tango>=0:${PORTSDIR}/x11-themes/icons-tango
+RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
