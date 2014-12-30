@@ -1,17 +1,15 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/nemo-extensions/Makefile 19704 2014-05-28 09:16:09Z gusi $
 
 PORTNAME=	nemo-extensions
-PORTVERSION=	2.2.0
-PORTREVISION=	2
-CATEGORIES=	deskutils gnome
+PORTVERSION=	2.4.0
+CATEGORIES=	x11-fm gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	File manager extensions for the Cinnamon desktop
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
+BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
 		rst2html:${PORTSDIR}/textproc/py-docutils \
 		automake>=0:${PORTSDIR}/devel/automake \
@@ -31,13 +29,13 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
 		libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
-RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 GH_PROJECT=	nemo-extensions
-GH_COMMIT=	54f4d94
+GH_COMMIT=	6c8ec3a
 GH_TAGNAME=	${GH_COMMIT}
 
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \

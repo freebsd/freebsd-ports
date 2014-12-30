@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/libsoup/Makefile 20035 2014-11-03 08:16:10Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.48.0
+PORTVERSION=	2.48.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

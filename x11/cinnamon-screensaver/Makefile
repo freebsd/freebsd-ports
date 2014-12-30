@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-screensaver
-PORTVERSION=	2.2.4
+PORTVERSION=	2.4.0
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
@@ -26,6 +25,7 @@ USE_GNOME=	gnomedesktop3 gnomeprefix intlhack intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS=		-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \
 		--without-systemd

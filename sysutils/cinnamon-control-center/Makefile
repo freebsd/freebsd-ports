@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-control-center
-PORTVERSION=	2.2.11
+PORTVERSION=	2.4.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3

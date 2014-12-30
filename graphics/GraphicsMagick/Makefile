@@ -118,6 +118,3 @@ regression-test: do-build
 		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
-# The OPENMP option may select gcc as compiler but on architectures
-# that have switched to libc++ clang should be used for C++ code.
-CXX=		c++

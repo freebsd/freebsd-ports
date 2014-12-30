@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/mail/geary/Makefile 20050 2014-11-10 09:22:41Z gusi $
 
 PORTNAME=	geary
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,8 +21,9 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libgcr-3.so:${PORTSDIR}/security/gcr
 
 USES=		cmake desktop-file-utils gettext gmake \
-		libtool pathfix pkgconfig tar:xz
+		libtool pathfix pkgconfig shebangfix tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
+SHEBANG_FILES=	desktop/geary-attach
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

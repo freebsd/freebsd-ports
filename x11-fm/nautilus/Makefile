@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-fm/nautilus/Makefile 20076 2014-11-13 08:59:08Z gusi $
 
 PORTNAME=	nautilus
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

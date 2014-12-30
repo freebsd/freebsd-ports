@@ -1,14 +1,16 @@
---- configure.ac.orig	2014-04-24 12:32:11.672097031 +0000
-+++ configure.ac	2014-04-24 12:32:19.716225256 +0000
-@@ -134,11 +134,6 @@
-                   libpulse-mainloop-glib >= $PA_REQUIRED_VERSION)
- PKG_CHECK_MODULES(UNIVERSAL_ACCESS_PANEL, $COMMON_MODULES)
+--- configure.ac.orig	2014-11-12 01:19:37.000000000 +0100
++++ configure.ac	2014-11-24 22:20:09.360210664 +0100
+@@ -138,13 +138,6 @@
+ #----------------------------------------------
+ # Network Manager Stuff
  
 -PKG_CHECK_MODULES(NETWORK_MANAGER, NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION
 -                  libnm-glib >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-glib-vpn >= $NETWORK_MANAGER_REQUIRED_VERSION
 -                  libnm-util >= $NETWORK_MANAGER_REQUIRED_VERSION
--		  libnm-gtk >= $NETWORK_MANAGER_REQUIRED_VERSION)
--
- # Check for libnm-gtk + 0.9.9.0
- PKG_CHECK_MODULES(LIBNM_GTK_COMPAT, libnm-gtk >= $LIBNM_GTK_REQUIRED_VERSION
- 		  libnm-gtk >= $LIBNM_GTK_REQUIRED_VERSION,
+-                  libnm-gtk >= $NETWORK_MANAGER_APPLET_REQUIRED_VERSION
+-                  mm-glib >= $MODEM_MANAGER_REQUIRED_VERSION,
+-                  [have_networkmanager=yes], have_networkmanager=no)
+ if test "x$have_networkmanager" = xno ; then
+         AC_MSG_WARN(*** Network panel will not be built (NetworkManager or ModemManager not found) ***)
+ else

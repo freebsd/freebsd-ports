@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/net/libgweather/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	libgweather
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 

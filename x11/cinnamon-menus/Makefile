@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	cinnamon-menus
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
