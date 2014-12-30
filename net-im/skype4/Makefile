@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skype
-PORTVERSION=	4.2.0.13
+PORTVERSION=	4.3.0.37
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 USES=		desktop-file-utils tar:bzip2
 USE_LINUX=	yes
-USE_LINUX_APPS+= fontconfig xorglibs qt47 qt47-x11 qt47-webkit libsndfile openssl-compat #pulseaudio-libs tcp_wrappers-libs flac libasyncns
+USE_LINUX_APPS+= fontconfig xorglibs qt47 qt47-x11 qt47-webkit libsndfile openssl-compat pulseaudio-libs tcp_wrappers-libs flac libasyncns
 
 RESTRICTED=	Redistribution prohibited.
 
