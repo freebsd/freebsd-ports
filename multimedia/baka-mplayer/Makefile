@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	baka-mplayer
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@vfemail.net
@@ -15,42 +15,38 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
 GH_PROJECT=	Baka-MPlayer
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	0393546
+GH_COMMIT=	a76ef8d
 
 USES=		compiler:c++11-lib pkgconfig qmake
-USE_QT5=	qmake_build buildtools_build gui network svg_run widgets x11extras
-QMAKE_ARGS=	src/${GH_PROJECT}.pro
+USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
+QMAKE_SOURCE_PATH=${WRKSRC}/src
+QMAKE_ARGS=	lupdate="${LUPDATE}" lrelease="${LRELEASE}" \
+		MEDIADIR="${PREFIX}/share/icons/hicolor/scalable/apps"
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	NOTO
+OPTIONS_DEFINE=	DOCS NLS NOTO
+OPTIONS_SUB=	yes
+
+NLS_USE=	QT5=linguisttools_build
+NLS_QMAKE_ON=	CONFIG+="install_translations"
 NOTO_DESC=	Original look with Noto Sans font
 NOTO_RUN_DEPENDS=	noto>0:${PORTSDIR}/x11-fonts/noto
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} '/^Comment/s,=.*,=${COMMENT},' \
-		${WRKSRC}/arch/${PORTNAME}.desktop
+		${WRKSRC}/etc/${PORTNAME}.desktop
+	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
+		-e 's,share/man,man,' \
+		${WRKSRC}/src/Baka-MPlayer.pro
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
+post-install:
+# XXX vendor install_man is too broken
 	${INSTALL_MAN} ${WRKSRC}/etc/doc/${PORTNAME}.man \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_DATA} ${WRKSRC}/arch/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/etc/doc/${PORTNAME}.md \
-		${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}
-.endif
-	@cd ${WRKSRC}/etc/logo && for f in *.png; do \
+	@(cd ${WRKSRC}/etc/logo && for f in *.png; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${f%.*}/apps; \
 		${INSTALL_DATA} -v $$f \
-	${STAGEDIR}${PREFIX}/share/icons/hicolor/$${f%.*}/apps/${PORTNAME}.$${f#*.}; \
-	done
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/etc/logo/${PORTNAME}-icon.svg \
-		${STAGEDIR}${PREFIX}/share/icons/scalable/apps/${PORTNAME}.svg
+			${STAGEDIR}${PREFIX}/share/icons/hicolor/$${f%.*}/apps/${PORTNAME}.$${f#*.}; \
+	done)
 
 .include <bsd.port.mk>
