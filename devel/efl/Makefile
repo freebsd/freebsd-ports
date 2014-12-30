@@ -3,7 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 DIST_SUBDIR=	enlightenment
@@ -134,6 +133,15 @@ CONFIGURE_ARGS+=		--disable-ibus --with-glib=no
 
 .if empty(PORT_OPTIONS:MOPENGL)
 CONFIGURE_ARGS+=		--with-opengl=none
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+USES+=				lua
+CONFIGURE_ARGS+=		--enable-lua-old
+PLIST_SUB+=			ELUA="@comment "
+.else
+LIB_DEPENDS+=			libluajit-5.1.so:${PORTSDIR}/lang/luajit
+PLIST_SUB+=			ELUA=""
 .endif
 
 pre-patch:
