@@ -3,6 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.12.2
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -163,6 +164,7 @@ CONFIGURE_ARGS+=--with-krb5=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g ; \
+	    	s|-DGDK_PIXBUF_DISABLE_DEPRECATED||g ; \
 		s|-Wl,--as-needed|| ' \
 		${WRKSRC}/configure
 
