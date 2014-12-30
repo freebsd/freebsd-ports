@@ -1792,6 +1792,8 @@ usr/lib/libcidn.so
 usr/lib/libcrypt.so
 usr/lib/libdl.so
 usr/lib/libg.a
+usr/lib/libgomp.so.1
+usr/lib/libgomp.so.1.0.0
 usr/lib/libiberty.a
 usr/lib/libieee.a
 usr/lib/libm.so
@@ -1881,6 +1883,7 @@ usr/share/doc/gcc-gfortran-4.4.7/ChangeLog-2008.bz2
 usr/share/doc/gcc-gfortran-4.4.7/ChangeLog.bz2
 usr/share/doc/gcc-gfortran-4.4.7/ChangeLog.libgfortran.bz2
 usr/share/doc/gcc-gfortran-4.4.7/ChangeLog.ptr.bz2
+usr/share/doc/libgomp-4.4.7/ChangeLog.bz2
 usr/share/doc/libstdc++-devel-4.4.7/ChangeLog-1998.bz2
 usr/share/doc/libstdc++-devel-4.4.7/ChangeLog-1999.bz2
 usr/share/doc/libstdc++-devel-4.4.7/ChangeLog-2000.bz2
@@ -1922,6 +1925,7 @@ usr/share/info/libc.info-7.gz
 usr/share/info/libc.info-8.gz
 usr/share/info/libc.info-9.gz
 usr/share/info/libc.info.gz
+usr/share/info/libgomp.info.gz
 usr/share/info/standards.info.gz
 usr/share/locale/be/LC_MESSAGES/cpplib.mo
 usr/share/locale/be/LC_MESSAGES/gcc.mo
