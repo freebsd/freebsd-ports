@@ -2,16 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	sdparm
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Utilities to access SCSI device parameters
 
+LICENSE=	BSD3CLAUSE
+
 USE_LDCONFIG=	yes
+USES=		shebangfix tar:tgz
 GNU_CONFIGURE=	yes
+
+SHEBANG_FILES=	scripts/sas_disk_blink
 
 PLIST_FILES=	bin/sas_disk_blink \
 		bin/sdparm \
