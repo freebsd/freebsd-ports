@@ -6,6 +6,7 @@ PORTVERSION=	3.1
 PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Virtual note-pad system for your X11 desktop
