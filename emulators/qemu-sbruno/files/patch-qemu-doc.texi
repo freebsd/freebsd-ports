@@ -1,0 +1,11 @@
+Index: qemu/qemu-doc.texi
+@@ -985,7 +985,8 @@
+ 
+ @c man begin SEEALSO
+ The HTML documentation of QEMU for more precise information and Linux
+-user mode emulator invocation.
++user mode emulator invocation, as well as the FreeBSD host notes in
++@file{pkg-message} in the relevant qemu port directory.
+ @c man end
+ 
+ @c man begin AUTHOR
