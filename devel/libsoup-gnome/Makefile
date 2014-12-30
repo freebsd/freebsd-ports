@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/trunk/devel/libsoup-gnome/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-gnome
 

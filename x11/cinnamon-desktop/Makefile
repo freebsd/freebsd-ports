@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-desktop
-PORTVERSION=	2.2.3
+PORTVERSION=	2.4.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -18,8 +17,10 @@ RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
 USE_XORG=	x11 xrandr xext
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
+		shebangfix tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
+SHEBANG_FILES=	files/usr/bin/cinnamon-desktop-migrate-mediakeys
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
@@ -36,14 +37,28 @@ GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.enums.xml \
 		org.cinnamon.desktop.input-sources.gschema.xml \
 		org.cinnamon.desktop.interface.gschema.xml \
+		org.cinnamon.desktop.keybindings.gschema.xml \
+		org.cinnamon.desktop.keybindings.media-keys.gschema.xml \
+		org.cinnamon.desktop.keybindings.wm.gschema.xml \
 		org.cinnamon.desktop.lockdown.gschema.xml \
 		org.cinnamon.desktop.media-handling.gschema.xml \
+		org.cinnamon.desktop.notifications.gschema.xml \
+		org.cinnamon.desktop.privacy.gschema.xml \
 		org.cinnamon.desktop.screensaver.gschema.xml \
 		org.cinnamon.desktop.session.gschema.xml \
 		org.cinnamon.desktop.sound.gschema.xml \
 		org.cinnamon.desktop.thumbnail-cache.gschema.xml \
 		org.cinnamon.desktop.thumbnailers.gschema.xml \
 		org.cinnamon.desktop.wm.preferences.gschema.xml
+
+post-patch:
+	@${MKDIR} ${WRKSRC}/files${PREFIX}
+.for d in bin
+	@${MV} ${WRKSRC}/files/usr/${d} ${WRKSRC}/files${PREFIX}
+.endfor
+
+	@${REINPLACE_CMD} -e 's|find -min|find . -|g' \
+		${WRKSRC}/files/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh

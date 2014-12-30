@@ -25,6 +25,7 @@ share/locale/ast/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/ast/LC_MESSAGES/cinnamon.mo
 share/locale/az/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/az/LC_MESSAGES/cinnamon-session.mo
+share/locale/az/LC_MESSAGES/cinnamon.mo
 share/locale/be/LC_MESSAGES/cinnamon-bluetooth.mo
 share/locale/be/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/be/LC_MESSAGES/cinnamon-screensaver.mo
@@ -455,6 +456,7 @@ share/locale/th/LC_MESSAGES/cinnamon-session.mo
 share/locale/th/LC_MESSAGES/cinnamon.mo
 share/locale/th/LC_MESSAGES/nemo.mo
 share/locale/tl/LC_MESSAGES/cinnamon-bluetooth.mo
+share/locale/tl/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/tl/LC_MESSAGES/cinnamon.mo
 share/locale/tlh/LC_MESSAGES/cinnamon.mo
 share/locale/tlh/LC_MESSAGES/nemo.mo
@@ -468,6 +470,7 @@ share/locale/tr/LC_MESSAGES/cinnamon.mo
 share/locale/tr/LC_MESSAGES/nemo.mo
 share/locale/ts/LC_MESSAGES/cinnamon.mo
 share/locale/ug/LC_MESSAGES/cinnamon-control-center.mo
+share/locale/ug/LC_MESSAGES/cinnamon-bluetooth.mo
 share/locale/ug/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/ug/LC_MESSAGES/cinnamon.mo
 share/locale/uk/LC_MESSAGES/cinnamon-bluetooth.mo
@@ -476,6 +479,7 @@ share/locale/uk/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/uk/LC_MESSAGES/cinnamon-session.mo
 share/locale/uk/LC_MESSAGES/cinnamon.mo
 share/locale/uk/LC_MESSAGES/nemo.mo
+share/locale/ur/LC_MESSAGES/cinnamon-bluetooth.mo
 share/locale/ur/LC_MESSAGES/cinnamon.mo
 share/locale/uz/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/uz/LC_MESSAGES/cinnamon.mo
@@ -489,6 +493,7 @@ share/locale/vi/LC_MESSAGES/nemo.mo
 share/locale/wa/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/xh/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/xh/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/xh/LC_MESSAGES/cinnamon.mo
 share/locale/yi/LC_MESSAGES/cinnamon.mo
 share/locale/zh_CN/LC_MESSAGES/cinnamon-bluetooth.mo
 share/locale/zh_CN/LC_MESSAGES/cinnamon-control-center.mo
@@ -501,6 +506,7 @@ share/locale/zh_HK/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/zh_HK/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/zh_HK/LC_MESSAGES/cinnamon-session.mo
 share/locale/zh_HK/LC_MESSAGES/cinnamon.mo
+share/locale/zh_HK/LC_MESSAGES/nemo.mo
 share/locale/zh_TW/LC_MESSAGES/cinnamon-bluetooth.mo
 share/locale/zh_TW/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/zh_TW/LC_MESSAGES/cinnamon-screensaver.mo

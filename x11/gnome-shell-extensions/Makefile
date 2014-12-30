@@ -3,7 +3,7 @@
 #    $MCom: ports/trunk/x11/gnome-shell-extensions/Makefile 20075 2014-11-13 06:53:37Z gusi $
 
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

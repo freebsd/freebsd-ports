@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/multimedia/totem/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	totem
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -52,21 +52,21 @@ GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 		org.gnome.totem.gschema.xml \
 		org.gnome.totem.plugins.opensubtitles.gschema.xml
 
-OPTIONS_DEFINE=	LIRC BROWSER_PLUGINS
-BROWSER_PLUGINS_DESC=	Web browser plugins
+OPTIONS_DEFINE=	LIRC
 
 PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
 
-OPTIONS_DEFAULT=BROWSER_PLUGINS
+OPTIONS_DEFAULT=
 
 # check configure script for allowed_plugins="..." for new plugins
-TOTEM_PLUGINS=	brasero-disc-recorder chapters dbusservice im-status grilo gromit \
-		iplayer media-player-keys ontop opensubtitles properties \
-		screensaver screenshot sidebar-test skipto youtube
+TOTEM_PLUGINS=	apple-trailers autoload-subtitles brasero-disc-recorder chapters \
+		dbusservice im-status grilo gromit iplayer media-player-keys \
+		nautilus ontop opensubtitles properties recent \
+		save-file screensaver screenshot sidebar-test skipto vimeo \
+		youtube
 
 # pythonconsole samplepython
-# vala rotation sample-vala
-# nautilus save-file
+# vala sample-vala
 # iplayer zeitgeist-dp grilo
 
 .include <bsd.port.options.mk>

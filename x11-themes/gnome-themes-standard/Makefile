@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-themes/gnome-themes-standard/Makefile 20069 2014-11-12 08:32:24Z gusi $
 
 PORTNAME=	gnome-themes-standard
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.2.3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

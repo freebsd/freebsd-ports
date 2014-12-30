@@ -1,10 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-fm/nemo/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	nemo
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -73,9 +71,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|x-gnome-saved-search|x-nemo-saved-search|g' \
 		${WRKSRC}/data/nemo.xml.in \
 		${WRKSRC}/libnemo-private/nemo-file-utilities.h
-
-#	@${REINPLACE_CMD} '/merge_action/d' \
-#		${WRKSRC}/files/Makefile.in
 
 	@${FIND} ${WRKSRC} -name \* | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
 		${XARGS} ${REINPLACE_CMD} -I "" -e "s|#!.*python.*|#!${PYTHON_CMD}|g"

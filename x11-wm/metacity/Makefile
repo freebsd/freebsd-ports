@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-wm/metacity/Makefile 20004 2014-10-20 14:11:09Z gusi $
 
 PORTNAME=	metacity
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -33,3 +33,8 @@ share/polkit-1/actions/org.freedesktop.consolekit.policy
 @exec mkdir -p %D/lib/ConsoleKit/run-seat.d
 @dir /var/run/ConsoleKit
 @dir /var/log/ConsoleKit
+@dir etc/ConsoleKit/run-seat.d
+@dir etc/ConsoleKit/run-session.d
+@dir lib/ConsoleKit/run-seat.d
+@dir lib/ConsoleKit/run-session.d
+
