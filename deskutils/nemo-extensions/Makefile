@@ -3,7 +3,7 @@
 
 PORTNAME=	nemo-extensions
 PORTVERSION=	2.4.0
-CATEGORIES=	x11-fm gnome
+CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gustau.perez@gmail.com
