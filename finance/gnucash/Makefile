@@ -96,6 +96,11 @@ GLIB_SCHEMAS+=	org.gnucash.dialogs.import.hbci.gschema.xml
 GLIB_SCHEMAS+=	org.gnucash.dialogs.import.ofx.gschema.xml
 .endif
 
+# because webkit-gtk2 needs it
+.if ${OSVERSION} < 1000000
+USES+= compiler:c++11-lib
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MPYTHON}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
