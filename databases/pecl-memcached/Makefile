@@ -9,7 +9,7 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 
 LICENSE=	PHP30
