@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -36,9 +36,6 @@ do-install:
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -not -type d) | ${SORT} | \
 		${SED} -ne 's,^,${WWWDIR_REL}/,p' >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -type d) | ${SORT} -r | \
-		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
 	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 
