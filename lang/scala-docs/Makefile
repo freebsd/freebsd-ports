@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	scala-docs
-PORTVERSION=	2.11.2
+PORTVERSION=	2.11.4
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
-EXTRACT_SUFX=	.txz
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	The documentation for the Scala standard library
+COMMENT=	Documentation for the Scala libraries & compiler
 
-USES=		tar:xz
+USES=		tar:txz
 NO_BUILD=	yes
 
 PORTDOCS=	*
@@ -26,7 +25,7 @@ IGNORE=		port only installs documentation
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/)
+	@(cd ${WRKSRC}/api && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/)
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.mk>
