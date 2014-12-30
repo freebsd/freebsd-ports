@@ -3,7 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 DISTFILES=	binutils-2.20.51.0.2-5.42.el6.i686.rpm \
 		binutils-devel-2.20.51.0.2-5.42.el6.i686.rpm \
@@ -11,6 +11,7 @@ DISTFILES=	binutils-2.20.51.0.2-5.42.el6.i686.rpm \
 		glibc-headers-2.12-1.149.el6.i686.rpm \
 		kernel-headers-2.6.32-504.el6.i686.rpm \
 		libstdc++-devel-4.4.7-11.el6.i686.rpm \
+		libgomp-4.4.7-11.el6.i686.rpm \
 		mpfr-2.4.1-6.el6.i686.rpm \
 		cpp-4.4.7-11.el6.i686.rpm \
 		gcc-4.4.7-11.el6.i686.rpm \
