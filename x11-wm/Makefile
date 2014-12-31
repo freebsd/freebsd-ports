@@ -47,7 +47,6 @@
     SUBDIR += e-modules
     SUBDIR += e16
     SUBDIR += e16-docs
-    SUBDIR += e17-module-snow
     SUBDIR += echinus
     SUBDIR += ede
     SUBDIR += emerald
