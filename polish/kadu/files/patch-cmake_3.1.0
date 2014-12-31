@@ -1,0 +1,37 @@
+Submitted upstream: https://gitorious.org/kadu/kadu/merge_requests/2122
+
+From: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date: Wed, 31 Dec 2014 01:15:28 +0200
+Subject: [PATCH] Rename INSTALL_PREFIX to KADU_INSTALL_PREFIX.
+
+In CMake 3.1.0, INSTALL_PREFIX is now an optional argument to
+configure_package_config_file(), so our call was confusing the
+function's argument parsing code.
+
+Fix it by renaming INSTALL_PREFIX to KADU_INSTALL_PREFIX.
+
+Signed-off-by: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -195,8 +195,8 @@ foreach (install_var ${install_vars})
+ 	endif ()
+ endforeach ()
+ 
+-set (INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+-set (path_vars INSTALL_PREFIX)
++set (KADU_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
++set (path_vars KADU_INSTALL_PREFIX)
+ if (UNIX AND NOT APPLE)
+ 	list (APPEND path_vars DESKTOP_FILE_DIR)
+ endif ()
+--- cmake/KaduConfig.cmake.in
++++ cmake/KaduConfig.cmake.in
+@@ -20,7 +20,7 @@ endif ()
+ set (KADU_INCLUDE_DIR "@PACKAGE_INCLUDE_DIR@")
+ set (KADU_INCLUDE_DIRS "@PACKAGE_INCLUDE_DIR@" "@PACKAGE_INCLUDE_DIR@/kadu-core")
+ set (KADU_SDK_DIR "@PACKAGE_SDK_DIR@")
+-set (KADU_INSTALL_PREFIX "@PACKAGE_INSTALL_PREFIX@")
++set (KADU_INSTALL_PREFIX "@PACKAGE_KADU_INSTALL_PREFIX@")
+ 
+ set (KADU_INSTALL_SDK "@INSTALL_SDK@")
+ 
