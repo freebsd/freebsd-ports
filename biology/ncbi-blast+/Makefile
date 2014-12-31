@@ -3,9 +3,10 @@
 
 PORTNAME=	blast+
 PORTVERSION=	2.2.30
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
-PKGNAMEPREFIX=	ncbi
+PKGNAMEPREFIX=	ncbi-
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwbacon@tds.net
