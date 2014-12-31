@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 
-USES=		alias autoreconf libtool pkgconfig tar:bzip2
+USES=		alias autoreconf gmake libtool pkgconfig tar:bzip2
 USE_XORG=	glproto pciaccess xext xfixes
 USE_GL=		gl
 GNU_CONFIGURE=	yes
