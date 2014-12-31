@@ -85,6 +85,7 @@ vpopmail/etc/vusagec.conf-dist
 %%SPAMASSASSIN%%@exec echo "Now you should add the following options to your spamd.sh startup file:"
 %%SPAMASSASSIN%%@exec echo "-v -u vpopmail"
 %%SPAMASSASSIN%%@exec echo "***********************************************************************"
+@exec /usr/sbin/chown vpopmail:vchkpw %D/vpopmail
 @exec /usr/sbin/chown -R vpopmail:vchkpw %D/vpopmail/bin %D/vpopmail/etc
 %%SUID_VCHKPW%%@exec /bin/chmod ug+s %D/vpopmail/bin/vchkpw
 @exec install -d -o vpopmail -g vchkpw %D/vpopmail/domains
