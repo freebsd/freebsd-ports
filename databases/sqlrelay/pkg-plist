@@ -1,4 +1,3 @@
-bin/backupschema
 bin/sqlr-cachemanager
 bin/sqlr-connection
 bin/sqlr-export
@@ -17,10 +16,9 @@ bin/sqlrserver-config
 bin/sqlrsh
 etc/rc.d/sqlrcachemanager
 etc/rc.d/sqlrelay
-etc/sqlrelay
-etc/sqlrelay.conf.example
-etc/sqlrelay.dtd
-etc/sqlrelay.xsd
+@sample etc/sqlrelay/conf.sample
+etc/sqlrelay/sqlrelay.dtd
+etc/sqlrelay/sqlrelay.xsd
 include/sqlrelay/private/bindvar.h
 include/sqlrelay/private/column.h
 include/sqlrelay/private/dll.h
@@ -30,10 +28,19 @@ include/sqlrelay/private/sqlrconnection.h
 include/sqlrelay/private/sqlrcursor.h
 include/sqlrelay/private/sqlrdefines.h
 include/sqlrelay/private/sqlrincludes.h
+include/sqlrelay/private/sqlrlistener.h
+include/sqlrelay/private/sqlrserverconnection.h
+include/sqlrelay/private/sqlrservercontroller.h
+include/sqlrelay/private/sqlrservercursor.h
+include/sqlrelay/private/sqlrserverdll.h
+include/sqlrelay/private/sqlrserverincludes.h
+include/sqlrelay/private/sqlrshmdata.h
+include/sqlrelay/private/sqlrutildll.h
 include/sqlrelay/private/wrapperdll.h
 include/sqlrelay/sqlrclient.h
 include/sqlrelay/sqlrclientwrapper.h
-include/sqlrelay/sqlrpwdenc.h
+include/sqlrelay/sqlrserver.h
+include/sqlrelay/sqlrutil.h
 lib/libmysql3sqlrelay.so
 lib/libmysql3sqlrelay.so.1
 lib/libmysql3sqlrelay.so.1.0.0
@@ -87,6 +94,8 @@ libexec/sqlrelay/sqlrlogger_custom_nw.so
 libexec/sqlrelay/sqlrlogger_custom_sc.so
 libexec/sqlrelay/sqlrlogger_debug.so
 libexec/sqlrelay/sqlrlogger_slowqueries.so
+libexec/sqlrelay/sqlrparser_default.so
+libexec/sqlrelay/sqlrprotocol_sqlrclient.so
 libexec/sqlrelay/sqlrpwdenc_crypt.so
 libexec/sqlrelay/sqlrpwdenc_md5.so
 libexec/sqlrelay/sqlrpwdenc_rot.so
@@ -97,13 +106,13 @@ man/man1/sqlr-query.1.gz
 man/man1/sqlrsh.1.gz
 man/man8/sqlr-cachemanager.8.gz
 man/man8/sqlr-connection.8.gz
-man/man8/sqlr-ipclean.8.gz
 man/man8/sqlr-listener.8.gz
 man/man8/sqlr-scaler.8.gz
 man/man8/sqlr-start.8.gz
 man/man8/sqlr-stop.8.gz
 share/examples/sample-mssqlserver-mysql-errors.map
 share/examples/sample-oracle-mysql-errors.map
+@dir %%ETCDIR%%
 @dir /var/sqlrelay/tmp/sockets
 @dir /var/sqlrelay/tmp/pids
 @dir /var/sqlrelay/tmp/ipc
