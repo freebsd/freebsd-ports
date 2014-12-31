@@ -260,6 +260,7 @@
     SUBDIR += sisctrl
     SUBDIR += slim
     SUBDIR += slock
+    SUBDIR += slop
     SUBDIR += smproxy
     SUBDIR += sselp
     SUBDIR += stalonetray
