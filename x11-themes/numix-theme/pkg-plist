@@ -6,11 +6,53 @@ share/themes/Numix/gtk-3.0/apps/nemo.css
 share/themes/Numix/gtk-3.0/apps/synaptic.css
 share/themes/Numix/gtk-3.0/apps/unity.css
 share/themes/Numix/gtk-3.0/apps/xfce.css
+share/themes/Numix/gtk-3.0/assets/checkbox-checked-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-checked-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-checked-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-checked.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-mixed-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-mixed-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-mixed-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-mixed.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-unchecked-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-unchecked-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-unchecked-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/checkbox-unchecked.svg
+share/themes/Numix/gtk-3.0/assets/grid-selection-checked-dark.svg
+share/themes/Numix/gtk-3.0/assets/grid-selection-checked.svg
+share/themes/Numix/gtk-3.0/assets/grid-selection-unchecked-dark.svg
+share/themes/Numix/gtk-3.0/assets/grid-selection-unchecked.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-checked-hover.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-checked-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-checked.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-mixed-hover.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-mixed-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-mixed-selected.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-checkbox-mixed.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-radio-checked-hover.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-radio-checked-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/menuitem-radio-checked.svg
+share/themes/Numix/gtk-3.0/assets/pane-handle-vertical.svg
+share/themes/Numix/gtk-3.0/assets/pane-handle.svg
+share/themes/Numix/gtk-3.0/assets/radio-mixed-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-mixed-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-mixed-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/radio-mixed.svg
+share/themes/Numix/gtk-3.0/assets/radio-selected-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-selected-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-selected-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/radio-selected.svg
+share/themes/Numix/gtk-3.0/assets/radio-unselected-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-unselected-insensitive-dark.svg
+share/themes/Numix/gtk-3.0/assets/radio-unselected-insensitive.svg
+share/themes/Numix/gtk-3.0/assets/radio-unselected.svg
 share/themes/Numix/gtk-3.0/gtk-dark.css
+share/themes/Numix/gtk-3.0/gtk-widgets-assets-dark.css
 share/themes/Numix/gtk-3.0/gtk-widgets-assets.css
 share/themes/Numix/gtk-3.0/gtk-widgets.css
 share/themes/Numix/gtk-3.0/gtk.css
 share/themes/Numix/gtk-3.0/settings.ini
+share/themes/Numix/gtk-3.0/thumbnail.png
 %%NOTIFYD%%share/themes/Numix/xfce-notify-4.0/gtkrc
 share/themes/Numix/xfwm4/bottom-active.xpm
 share/themes/Numix/xfwm4/bottom-inactive.xpm
@@ -81,9 +123,3 @@ share/themes/Numix/xfwm4/top-left-active.xpm
 share/themes/Numix/xfwm4/top-left-inactive.xpm
 share/themes/Numix/xfwm4/top-right-active.xpm
 share/themes/Numix/xfwm4/top-right-inactive.xpm
-@dirrm share/themes/Numix/xfwm4
-%%NOTIFYD%%@dirrm share/themes/Numix/xfce-notify-4.0
-@dirrm share/themes/Numix/gtk-3.0/apps
-@dirrm share/themes/Numix/gtk-3.0
-@dirrm share/themes/Numix/gtk-2.0
-@dirrm share/themes/Numix

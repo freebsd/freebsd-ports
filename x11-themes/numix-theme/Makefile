@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numix
-PORTVERSION=	2.2.3
+PORTVERSION=	2.5
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -17,7 +17,7 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engin
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Numix
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3160668
+GH_COMMIT=	09c071e
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
