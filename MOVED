@@ -7354,3 +7354,35 @@ devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream P
 deskutils/xpad-current|deskutils/xpad|2014-12-30|deskutils/xpad-current is ready for prime time
 biology/ncbi-blast|biology/ncbi-blast+|2014-12-30|Clarify that this is blast+ and not the blast, allow for a future ncbi-blast port
 lang/perl5.14||2014-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
+graphics/ender||2014-12-31|Has expired: Unused by EFL 1.11
+graphics/enesim||2014-12-31|Has expired: Unused by EFL 1.11
+graphics/etch||2014-12-31|Has expired: Unused by EFL 1.11
+www/egueb||2014-12-31|Has expired: Unused by EFL 1.11
+x11-wm/e17-module-comp-scale||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-eektool||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-elfe||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-empris||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-engage||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-eooorg||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-everything-aspell||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-everything-mpris||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-everything-pidgin||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-everything-shotgun||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-everything-wallpaper||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-exebuf||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-execwatch||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-flame||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-iiirk||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-itask||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-mail||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-moon||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-news||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-photo||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-rain||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-screenshot||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-slideshow||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-taskbar||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-uptime||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-weather||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-winlist-ng||2014-12-31|Has expired: Broken and updates aren't available
+x11-wm/e17-module-winselector||2014-12-31|Has expired: Broken and updates aren't available

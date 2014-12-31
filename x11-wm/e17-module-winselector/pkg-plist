@@ -1,8 +1,0 @@
-lib/enlightenment/modules/winselector/winselector.edj
-lib/enlightenment/modules/winselector/e-module-winselector.edj
-lib/enlightenment/modules/winselector/module.desktop
-lib/enlightenment/modules/winselector/%%E17_ARCH%%/module.so
-@dirrm lib/enlightenment/modules/winselector/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/winselector
-@dirrmtry lib/enlightenment/modules
-@dirrmtry lib/enlightenment

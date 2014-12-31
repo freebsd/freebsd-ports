@@ -1,5 +1,0 @@
-bin/etch_test
-include/Etch.h
-lib/libetch.so
-lib/libetch.so.0
-libdata/pkgconfig/etch.pc
