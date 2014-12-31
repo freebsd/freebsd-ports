@@ -2,6 +2,7 @@
 
 PORTNAME=	nmsg
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/ \
 		http://dl.farsightsecurity.com/dist/nmsg/

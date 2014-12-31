@@ -1,6 +1,6 @@
---- src/dot.cpp-orig	2014-06-11 20:13:39.000000000 +0200
-+++ src/dot.cpp	2014-06-11 20:15:32.000000000 +0200
-@@ -44,6 +44,7 @@
+--- src/dot.cpp.orig	2014-12-25 12:44:06 UTC
++++ src/dot.cpp
+@@ -39,6 +39,7 @@
  #include "dirdef.h"
  #include "vhdldocgen.h"
  #include "ftextstream.h"
@@ -8,19 +8,19 @@
  #include "md5.h"
  #include "memberlist.h"
  #include "groupdef.h"
-@@ -2318,10 +2319,8 @@
-     }
-     writeGraphFooter(md5stream);
-     resetReNumbering();
--    uchar md5_sig[16];
-     QCString sigStr(33);
--    MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
--    MD5SigToString(md5_sig,sigStr.data(),33);
-+    MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
-     bool regenerate=FALSE;
-     if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
-         !checkDeliverables(absImgName,absMapName))
-@@ -3021,10 +3020,8 @@
+@@ -2297,10 +2298,8 @@ void DotGfxHierarchyTable::createGraph(D
+   }
+   writeGraphFooter(md5stream);
+   resetReNumbering();
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+   bool regenerate=FALSE;
+   if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
+       !checkDeliverables(absImgName,absMapName))
+@@ -3025,10 +3024,8 @@ QCString computeMd5Signature(DotNode *ro
      }
    }
    writeGraphFooter(md5stream);
@@ -32,7 +32,7 @@
    if (reNumber)
    {
      resetReNumbering();
-@@ -3895,10 +3892,8 @@
+@@ -3959,10 +3956,8 @@ QCString DotDirDeps::writeGraph(FTextStr
    QGString theGraph;
    FTextStream md5stream(&theGraph);
    m_dir->writeDepGraph(md5stream);
@@ -43,8 +43,8 @@
 +  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
    bool regenerate=FALSE;
    if (checkAndUpdateMd5Signature(absBaseName,sigStr) ||
-       !checkDeliverables(format==BITMAP ? absImgName :
-@@ -4025,10 +4020,8 @@
+       !checkDeliverables(graphFormat==GOF_BITMAP ? absImgName :
+@@ -4105,10 +4100,8 @@ void generateGraphLegend(const char *pat
    md5stream << "  Node18 -> Node9 [dir=\"back\",color=\"darkorchid3\",fontsize=\"" << FONTSIZE << "\",style=\"dashed\",label=\"m_usedClass\",fontname=\"" << FONTNAME << "\"];\n";
    md5stream << "  Node18 [shape=\"box\",label=\"Used\",fontsize=\"" << FONTSIZE << "\",height=0.2,width=0.4,fontname=\"" << FONTNAME << "\",color=\"black\",URL=\"$classUsed" << Doxygen::htmlFileExtension << "\"];\n";
    writeGraphFooter(md5stream);
@@ -56,7 +56,7 @@
    QCString absBaseName = (QCString)path+"/graph_legend";
    QCString absDotName  = absBaseName+".dot";
    QCString imgExt      = Config_getEnum("DOT_IMAGE_FORMAT");
-@@ -4424,10 +4417,8 @@
+@@ -4505,10 +4498,8 @@ QCString DotGroupCollaboration::writeGra
  
    writeGraphFooter(md5stream);
    resetReNumbering();

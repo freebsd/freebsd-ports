@@ -60,6 +60,8 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/alias_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/alias_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/html/arrowdown.png
+%%PORTDOCS%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/asprintf_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/asprintf_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/asprintf_8h_source.html
@@ -91,6 +93,7 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/dnsqr_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dnsqr_8pb-c_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dnsqr_8pb-c_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
@@ -102,19 +105,8 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/encode_8pb-c_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/encode_8pb-c_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2doc.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderclosed.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderopen.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2lastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2link.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2mlastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2plastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2pnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2vertline.png
+%%PORTDOCS%%%%DOCSDIR%%/html/folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals.html
@@ -209,6 +201,7 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/sock_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sock_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sock_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/strbuf_8c_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/strbuf_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/strbuf_8h_source.html

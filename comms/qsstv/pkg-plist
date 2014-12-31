@@ -8,6 +8,8 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/_t_x_d_r_m.html
 %%PORTDOCS%%%%DOCSDIR%%/_t_x_s_s_t_v.html
 %%PORTDOCS%%%%DOCSDIR%%/arrow.png
+%%PORTDOCS%%%%DOCSDIR%%/arrowdown.png
+%%PORTDOCS%%%%DOCSDIR%%/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/bsr_nfy.png
@@ -31,6 +33,7 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/cqrlog1.png
 %%PORTDOCS%%%%DOCSDIR%%/cqrlog2.png
 %%PORTDOCS%%%%DOCSDIR%%/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/doubletone.png
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/dynsections.js
@@ -45,20 +48,9 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/fix.png
 %%PORTDOCS%%%%DOCSDIR%%/fixdrm.html
 %%PORTDOCS%%%%DOCSDIR%%/flrig1.png
+%%PORTDOCS%%%%DOCSDIR%%/folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/frect.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2doc.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2folderclosed.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2folderopen.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2lastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2link.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2mlastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2plastnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2pnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2splitbar.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2vertline.png
 %%PORTDOCS%%%%DOCSDIR%%/gallery.html
 %%PORTDOCS%%%%DOCSDIR%%/gettingstarted.html
 %%PORTDOCS%%%%DOCSDIR%%/hybrid_checkbox.png
@@ -73,6 +65,7 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/nav_h.png
 %%PORTDOCS%%%%DOCSDIR%%/navtree.css
 %%PORTDOCS%%%%DOCSDIR%%/navtree.js
+%%PORTDOCS%%%%DOCSDIR%%/navtreedata.js
 %%PORTDOCS%%%%DOCSDIR%%/navtreeindex0.js
 %%PORTDOCS%%%%DOCSDIR%%/open.png
 %%PORTDOCS%%%%DOCSDIR%%/pages.html
@@ -84,6 +77,7 @@ bin/qsstv
 %%PORTDOCS%%%%DOCSDIR%%/rxdrm_constellation.png
 %%PORTDOCS%%%%DOCSDIR%%/rxdrm_segments.png
 %%PORTDOCS%%%%DOCSDIR%%/rxdrm_status.png
+%%PORTDOCS%%%%DOCSDIR%%/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/start.png
 %%PORTDOCS%%%%DOCSDIR%%/statusbar.html
 %%PORTDOCS%%%%DOCSDIR%%/statusbar.png
