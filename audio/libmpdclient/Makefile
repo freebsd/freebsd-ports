@@ -3,7 +3,7 @@
 
 PORTNAME=	libmpdclient
 PORTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 

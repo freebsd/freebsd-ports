@@ -41,6 +41,8 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/arrowdown.png
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/audio__format_8h.html
@@ -62,6 +64,7 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/dir_89dd766eb2df7d7257dbe806a34404af.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/directory_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/directory_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/dynsections.js
@@ -70,19 +73,8 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/error_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/error_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/files.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2blank.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2doc.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderclosed.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderopen.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2lastnode.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2link.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2mlastnode.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2mnode.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2node.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2plastnode.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2pnode.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2splitbar.png
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/ftv2vertline.png
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/folderclosed.png
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/folderopen.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/functions.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/functions_vars.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/globals.html
@@ -131,6 +123,7 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/settings_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/song_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/song_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/splitbar.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/stats_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/stats_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/status_8h.html
