@@ -233,6 +233,7 @@
     SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rubygem-jpmobile4
+    SUBDIR += rubygem-mail-iso-2022-jp
     SUBDIR += rubygem-myrurema
     SUBDIR += ryaku-fpw
     SUBDIR += scim-anthy
