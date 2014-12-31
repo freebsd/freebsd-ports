@@ -7353,3 +7353,4 @@ x11-wm/enlightenment-docs|x11-wm/e16-docs|2014-12-28|Renamed for better naming
 devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPi name
 deskutils/xpad-current|deskutils/xpad|2014-12-30|deskutils/xpad-current is ready for prime time
 biology/ncbi-blast|biology/ncbi-blast+|2014-12-30|Clarify that this is blast+ and not the blast, allow for a future ncbi-blast port
+lang/perl5.14||2014-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
