@@ -158,7 +158,6 @@
     SUBDIR += eaccelerator
     SUBDIR += edbrowse
     SUBDIR += efront
-    SUBDIR += egueb
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
