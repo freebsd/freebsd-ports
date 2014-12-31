@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webtrees
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/${PORTVERSION}/+download/
 
