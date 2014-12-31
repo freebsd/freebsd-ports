@@ -28,7 +28,14 @@ GH_COMMIT=	4d90b84
 GH_TAGNAME=	v${PORTVERSION}
 
 USES=		pkgconfig qmake
-USE_QT5=	buildtools_build core gui svg network widgets
+
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	QT4 QT5
+
+QT4_USE=	QT4=corelib,gui,network
+QT5_USE=	QT5=buildtools_build,core,gui,svg,network,widgets
+
+OPTIONS_DEFAULT=	QT5
 
 PLIST_FILES=	bin/gqrx share/applications/gqrx.desktop
 
