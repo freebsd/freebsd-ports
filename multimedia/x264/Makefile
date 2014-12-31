@@ -45,7 +45,6 @@ X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
 X264_SNAPSHOT=	20140827
 
 USES=		gmake pkgconfig tar:bzip2
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
@@ -70,6 +69,8 @@ CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--disable-opencl \
 			--system-libx264
+
+CFLAGS_armv6+=		-mcpu=arm1136jf-s
 
 PLIST_FILES=	bin/x264
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
