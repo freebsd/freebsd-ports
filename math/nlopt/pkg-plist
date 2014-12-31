@@ -18,4 +18,4 @@ libdata/pkgconfig/nlopt.pc
 %%PYTHON_SITELIBDIR%%/nlopt.pyc
 %%PYTHON_SITELIBDIR%%/nlopt.pyo
 man/man3/nlopt.3.gz
-share/guile/site/nlopt.scm
+share/guile/site/2.0/nlopt.scm
