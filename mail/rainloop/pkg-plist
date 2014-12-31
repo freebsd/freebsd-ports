@@ -2,6 +2,8 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/data/EMPTY
 %%WWWDIR%%/data/VERSION
+@owner root
+@group wheel
 %%WWWDIR%%/index.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/disabled
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/gmail.com.ini
@@ -202,6 +204,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/Binary.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/Literal.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/SubStreams.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/TempFile.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/StreamWrappers/Test.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/Utils.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/MailSo/Base/Validator.php
@@ -326,6 +329,10 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHP-OAuth2/GrantType/RefreshToken.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHP-OAuth2/README
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHPGangsta/GoogleAuthenticator.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHPThumb/GD.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHPThumb/PHPThumb.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHPThumb/PluginInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/PHPThumb/Plugins/Reflection.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/CalDAV/Backend/AbstractBackend.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/CalDAV/Backend/BackendInterface.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/CalDAV/Backend/NotificationSupport.php
@@ -556,6 +563,11 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/VObject/VCardConverter.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/VObject/Version.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Sabre/VObject/includes.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Symfony/Component/Filesystem/Exception/ExceptionInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Symfony/Component/Filesystem/Exception/FileNotFoundException.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Symfony/Component/Filesystem/Exception/IOException.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Symfony/Component/Filesystem/Exception/IOExceptionInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/Symfony/Component/Filesystem/Filesystem.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/lessphp/LICENSE
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/lessphp/README.md
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/lessphp/ctype.php
@@ -662,9 +674,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Plugins/Helper.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Plugins/Manager.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Plugins/Property.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/PluginsNext/AbstractPlugin.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/PluginsNext/Manager.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/PluginsNext/Property.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/AbstractProvider.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/AddressBook.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/AddressBook/AddressBookInterface.php
@@ -682,6 +691,14 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Files.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Files/DefaultStorage.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Files/FilesInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Classes/Filter.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ActionType.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ConditionField.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ConditionType.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/FilterRulesType.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/FiltersInterface.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/SieveStorage.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Settings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Settings/DefaultSettings.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Settings/SettingsInterface.php
@@ -750,6 +767,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/MailMessageListItem.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/MailMessageListItemNoPreviewPane.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/MailMessageView.html
+%%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/PhotoSwipe.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/PopupsAddAccount.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/PopupsAddOpenPgpKey.html
 %%WWWDIR%%/rainloop/v/%%VER%%/app/templates/Views/User/PopupsAdvancedSearch.html
@@ -1052,6 +1070,8 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/ckeditor/styles.js
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/app.css
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/app.min.css
+%%WWWDIR%%/rainloop/v/%%VER%%/static/css/default-skin.png
+%%WWWDIR%%/rainloop/v/%%VER%%/static/css/default-skin.svg
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/flags.png
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/fonts/rainloop.eot
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/fonts/rainloop.svg
@@ -1065,6 +1085,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/images/sync.gif
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/images/sync.png
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/images/white.png
+%%WWWDIR%%/rainloop/v/%%VER%%/static/css/preloader.gif
 %%WWWDIR%%/rainloop/v/%%VER%%/static/favicon.ico
 %%WWWDIR%%/rainloop/v/%%VER%%/static/favicon.png
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/admin.js
@@ -1117,5 +1138,3 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/background.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/preview.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/styles.less
-@owner root
-@group wheel

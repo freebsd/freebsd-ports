@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}-webmail/
 
@@ -18,7 +18,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 WANT_PHP_WEB=	yes
 USE_PHP=	curl iconv json xml dom openssl pcre spl zlib
-RVER=		1.7.0.203
+RVER=		1.7.1.215
 PLIST_SUB=	VER="${RVER}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 # @TODO: PDO also for different backends
 
