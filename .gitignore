@@ -1,3 +1,6 @@
 /distfiles
 /packages
 /*/*/work
+*~
+*.rej
+*.orig
