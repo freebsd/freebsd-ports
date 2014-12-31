@@ -7320,7 +7320,6 @@ devel/preps-gui||2014-12-15|Has expired: upstream disappeared
 devel/prepstools||2014-12-15|Has expired: upstream disappeared
 devel/llvm32||2014-12-18|Obsolete and unmaintained upstream
 lang/clang32||2014-12-18|Obsolete and unmaintained upstream
-x11-drivers/xf86-input-egalax||2014-12-19|Removed: Depends on removed xorg-server 1.7
 x11-drivers/xf86-video-newport||2014-12-19|Removed: Depends on removed xorg-server 1.12
 x11-drivers/xf86-video-tga||2014-12-19|Removed: Alpha support was removed in FreeBSD 7.0
 x11/nvidia-driver-71||2014-12-19|Removed: Not compatible with xserver 1.14
