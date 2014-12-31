@@ -907,7 +907,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  directories to be searched for shared libraries.
 #				  Otherwise, this is a list of directories to be added to that
 #				  list. The directory names are written to
-#				  ${PREFIX}/libdata/ldconfig/${UNIQUENAME} which is then
+#				  ${LOCALBASE}/libdata/ldconfig/${UNIQUENAME} which is then
 #				  used by the ldconfig startup script.
 #				  This mechanism replaces ldconfig scripts installed by some
 #				  ports, often under such names as 000.${UNQUENAME}.sh.
@@ -916,7 +916,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  version, and the directory list given will be ignored.
 # USE_LDCONFIG32
 # 				- Same as USE_LDCONFIG but the target file is
-# 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
+# 				  ${LOCALBASE}/libdata/ldconfig32/${UNIQUENAME} instead.
 # 				  Note: that should only be used on 64-bit architectures.
 #
 # DOCSDIR		- Name of the directory to install the packages docs in.
