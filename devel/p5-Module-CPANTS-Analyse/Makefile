@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CPANTS-Analyse
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,20 +19,24 @@ BUILD_DEPENDS=	p5-Archive-Any-Lite>=0.06:${PORTSDIR}/archivers/p5-Archive-Any-Li
 		p5-CPAN-Meta>=2.131490:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
 		p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-File-Find-Rule-VCS>=0:${PORTSDIR}/devel/p5-File-Find-Rule-VCS \
 		p5-IO-Capture>=0.05:${PORTSDIR}/devel/p5-IO-Capture \
-		p5-Module-ExtractUse>=0.30:${PORTSDIR}/devel/p5-Module-ExtractUse \
+		p5-File-Find-Object>=0.2.1:${PORTSDIR}/devel/p5-File-Find-Object \
+		p5-Module-ExtractUse>=0.33:${PORTSDIR}/devel/p5-Module-ExtractUse \
 		p5-Set-Scalar>=0:${PORTSDIR}/devel/p5-Set-Scalar \
-		p5-Software-License>=0.003000:${PORTSDIR}/misc/p5-Software-License \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+		p5-Software-License>=0.103008:${PORTSDIR}/misc/p5-Software-License \
+		p5-Software-License-CCpack>=0:${PORTSDIR}/misc/p5-Software-License-CCpack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-FailWarnings>=0:${PORTSDIR}/devel/p5-Test-FailWarnings
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker-CPANfile>=0.06:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker-CPANfile
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-CPAN-Meta>=2.133380:${PORTSDIR}/devel/p5-CPAN-Meta
+RUN_DEPENDS+=	p5-CPAN-Meta>=2.133380:${PORTSDIR}/devel/p5-CPAN-Meta
+.endif
+
+.include <bsd.port.post.mk>
