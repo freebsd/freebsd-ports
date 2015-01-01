@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/ExtUtils::CBuilder.3.gz
-%%PERL5_MAN3%%/ExtUtils::CBuilder::Platform::Windows.3.gz
 %%SITE_PERL%%/ExtUtils/CBuilder.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Base.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Unix.pm
@@ -9,7 +7,10 @@
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/GCC.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/aix.pm
+%%SITE_PERL%%/ExtUtils/CBuilder/Platform/android.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/cygwin.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/darwin.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/dec_osf.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/os2.pm
+%%PERL5_MAN3%%/ExtUtils::CBuilder.3.gz
+%%PERL5_MAN3%%/ExtUtils::CBuilder::Platform::Windows.3.gz
