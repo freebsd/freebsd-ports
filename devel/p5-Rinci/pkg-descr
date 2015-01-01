@@ -1,0 +1,9 @@
+Rinci is a set of extensible, language-neutral metadata specifications for your
+code (functions/methods, variables, packages, classes, and so on). It allows
+various helper tools, from code generator to web middleware to documentation
+generator to other protocols, to act on your code, making your life easier as a
+programmer. Rinci also allows better interoperability between programming
+languages. It is geared towards dynamic scripting languages like Perl, Python,
+Ruby, PHP, JavaScript, but is not limited to those languages.
+
+WWW: http://search.cpan.org/dist/Rinci/
