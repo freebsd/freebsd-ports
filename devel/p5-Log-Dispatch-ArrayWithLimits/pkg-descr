@@ -1,0 +1,15 @@
+Log::Dispatch::ArrayWithLimits functions similarly to Log::Dispatch::Array, with
+a few differences:
+- only the messages (strings) are stored
+- allow specifying array variable name (e.g. "My::array" instead of \@My:array)
+  This makes it possible to use in Log::Log4perl configuration, which is a text
+  file.
+- can apply some limits
+  Currently only max_elems (the maximum number of elements in the array) is
+  available. Future limits will be added (see "TODO").
+
+Logging to an in-process array can be useful when debugging/testing, or when you
+want to let users of your program connect to your program to request viewing the
+ogs being produced.
+
+WWW: http://search.cpan.org/dist/Log-Dispatch-ArrayWithLimits/
