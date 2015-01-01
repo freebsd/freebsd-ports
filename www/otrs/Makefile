@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.3.7
-PORTREVISION=	1
+PORTVERSION=	3.3.11
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -84,7 +83,7 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-PLIST_SUB+=	VER_CKEDITOR="4.3" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
+PLIST_SUB+=	VER_CKEDITOR="4.4.5" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
 PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 PGSQL_USES=		pgsql
