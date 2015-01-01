@@ -1,0 +1,10 @@
+bin/unison240
+%%TEXT%%share/applications/unison240.desktop
+%%TEXT%%bin/unison240-text
+%%TEXT%%share/pixmaps/unison240.png
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.ps
