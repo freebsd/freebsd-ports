@@ -37,7 +37,8 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig python shebangfix
+USES=		autoreconf:build compiler:c11 gettext gmake libtool \
+		pathfix pkgconfig python shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
