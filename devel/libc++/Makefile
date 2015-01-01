@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://files.etoilebsd.net/libc++/ \
 		LOCAL/bapt
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Llvm's C++ standard library with c++11 support
 
 USES=		tar:xz
