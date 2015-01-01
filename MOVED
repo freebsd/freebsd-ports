@@ -7386,3 +7386,7 @@ x11-wm/e17-module-weather||2014-12-31|Has expired: Broken and updates aren't ava
 x11-wm/e17-module-winlist-ng||2014-12-31|Has expired: Broken and updates aren't available
 x11-wm/e17-module-winselector||2014-12-31|Has expired: Broken and updates aren't available
 x11-wm/e17-module-snow||2014-12-31|Has expired: Broken and updates aren't available
+biology/boinc-simap||2015-01-01|Has expired: Project shutting down, see http://boincsimap.org/boincsimap/forum_thread.php?id=88
+security/openssh-portable-base||2015-01-01|Has expired: Overwrite-base option/port/pkg will be removed. There is no real need for foot-shooting.
+devel/cedet||2015-01-01|Has expired: Fails to build, use Emacs' builtin cedet package instead
+devel/ecb||2015-01-01|Has expired: does not work with newer Emacs versions, use the elpa package instead

@@ -375,7 +375,6 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
-    SUBDIR += openssh-portable-base
     SUBDIR += openssh-portable66
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine

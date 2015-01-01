@@ -200,7 +200,6 @@
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
-    SUBDIR += cedet
     SUBDIR += cervisia
     SUBDIR += cflow
     SUBDIR += cflow2vcg
@@ -385,7 +384,6 @@
     SUBDIR += easygit
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
-    SUBDIR += ecb
     SUBDIR += ecgi
     SUBDIR += edb
     SUBDIR += efl

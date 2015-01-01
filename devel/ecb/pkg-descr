@@ -1,6 +1,0 @@
-ECB is a source code browser for Emacs.  It is a global minor-mode
-which displays a couple of windows that can be used to browse
-directories, files and file-contents like methods and variables.  It
-supports source-code parsing for Java, C, C++, Elisp, Scheme etc.
-
-WWW: http://ecb.sourceforge.net/
