@@ -12,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Encoding and decoding of base36 strings
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
