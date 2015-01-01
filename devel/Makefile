@@ -2324,6 +2324,7 @@
     SUBDIR += p5-Log-Dispatch-File-Stamped
     SUBDIR += p5-Log-Dispatch-FileRotate
     SUBDIR += p5-Log-Dispatch-FileShared
+    SUBDIR += p5-Log-Dispatch-FileWriteRotate
     SUBDIR += p5-Log-Dispatch-Perl
     SUBDIR += p5-Log-Dispatch-Screen-Color
     SUBDIR += p5-Log-Dispatch-Scribe
