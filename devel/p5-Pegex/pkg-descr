@@ -1,0 +1,21 @@
+Pegex is an Acmeist parser framework. It allows you to easily create parsers
+that will work equivalently in lots of programming languages! The inspiration
+for Pegex comes from the parsing engine upon which the postmodern programming
+language Perl 6 is based on. Pegex brings this beauty to the other justmodern
+languages that have a normal regular expression engine available.
+
+Pegex gets it name by combining Parsing Expression Grammars (PEG), with Regular
+Expessions (Regex). That's actually what Pegex does.
+
+PEG is the cool new way to elegantly specify recursive descent grammars. The
+Perl 6 language is defined in terms of a self modifying PEG language called Perl
+6 Rules. Regexes are familiar to programmers of most modern programming
+languages. Pegex defines a simple PEG syntax, where all the terminals are
+regexes. This means that Pegex can be quite fast and powerful.
+
+Pegex attempts to be the simplest way to define new (or old) Domain Specific
+Languages (DSLs) that need to be used in several programming languages and
+environments. Things like JSON, YAML, Markdown etc. It also great for writing
+parsers/compilers that only need to work in one language.
+
+WWW: http://search.cpan.org/dist/Pegex/
