@@ -22,6 +22,7 @@ bin/drush
 %%DATADIR%%/tests/quickDrupalTest.php
 %%DATADIR%%/tests/queueTest.php
 %%DATADIR%%/tests/pmUpdateCodeTest.php
+%%DATADIR%%/tests/pmReleaseNotesTest.php
 %%DATADIR%%/tests/pmEnDisUnListTest.php
 %%DATADIR%%/tests/pmDownloadTest.php
 %%DATADIR%%/tests/phpunit.xml.dist
@@ -218,31 +219,3 @@ bin/drush
 %%DATADIR%%/commands/core/browse.drush.inc
 %%DATADIR%%/commands/core/archive.drush.inc
 %%DATADIR%%/classes/DrushRole.php
-@dirrmtry %%DATADIR%%/tests/resources
-@dirrmtry %%DATADIR%%/tests/makefiles
-@dirrmtry %%DATADIR%%/tests/hooks/magic_help_alter
-@dirrmtry %%DATADIR%%/tests/hooks
-@dirrmtry %%DATADIR%%/tests
-@dirrmtry %%DATADIR%%/misc
-@dirrmtry %%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures
-@dirrmtry %%DATADIR%%/lib/Yaml-2.2.1/Tests
-@dirrmtry %%DATADIR%%/lib/Yaml-2.2.1/Exception
-@dirrmtry %%DATADIR%%/lib/Yaml-2.2.1
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/includes
-@dirrmtry %%DATADIR%%/commands/user
-@dirrmtry %%DATADIR%%/commands/sql
-@dirrmtry %%DATADIR%%/commands/runserver
-@dirrmtry %%DATADIR%%/commands/pm/version_control
-@dirrmtry %%DATADIR%%/commands/pm/update_info
-@dirrmtry %%DATADIR%%/commands/pm/release_info
-@dirrmtry %%DATADIR%%/commands/pm/package_handler
-@dirrmtry %%DATADIR%%/commands/pm
-@dirrmtry %%DATADIR%%/commands/make
-@dirrmtry %%DATADIR%%/commands/core/outputformat/topics
-@dirrmtry %%DATADIR%%/commands/core/outputformat
-@dirrmtry %%DATADIR%%/commands/core/drupal
-@dirrmtry %%DATADIR%%/commands/core
-@dirrmtry %%DATADIR%%/commands
-@dirrmtry %%DATADIR%%/classes
-@dirrmtry %%DATADIR%%

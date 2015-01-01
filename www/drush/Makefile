@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	6.4.0
+PORTVERSION=	6.5.0
 CATEGORIES=	www
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -10,14 +10,12 @@ COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
+RUN_DEPENDS=	pear-Console_Table>0:${PORTSDIR}/devel/pear-Console_Table
 
 NO_BUILD=	yes
 
 GH_ACCOUNT=	${PORTNAME}-ops
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	fd4baef
+GH_COMMIT=	0a7918a
 USE_GITHUB=	yes
 
 # set php requirements same as drupal itself
@@ -39,8 +37,6 @@ do-install:
 	${INSTALL_DATA} drush_logo-black.png drush.php ${STAGEDIR}${DATADIR} && \
 	${INSTALL_SCRIPT} drush drush.complete.sh ${STAGEDIR}${DATADIR} )
 	${LN} -s ${DATADIR}/drush ${STAGEDIR}${PREFIX}/bin/drush
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	( cd ${WRKSRC} && ${INSTALL_MAN} *.md docs/* ${STAGEDIR}${DOCSDIR} )
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
