@@ -295,6 +295,7 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += libyubikey
+    SUBDIR += libzrtpcppcore
     SUBDIR += linux-c6-cyrus-sasl2
     SUBDIR += linux-c6-gnutls
     SUBDIR += linux-c6-libgcrypt
