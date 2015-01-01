@@ -11,11 +11,14 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
 		p5-File-Map>=0.47:${PORTSDIR}/devel/p5-File-Map \
-		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile \
-		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
+		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
+		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
@@ -68,9 +71,6 @@ post-patch:
 	@${GREP} -lR 'x86_64' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|x86_64|amd64|g' -i ''
 	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'${PTHREAD_LIBS}'|" \
 		${WRKSRC}/perldl.conf
-
-test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make test
 
 # autogen plist
 post-install:
