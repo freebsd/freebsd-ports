@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyaudio
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	audio python
 MASTER_SITES=	http://people.csail.mit.edu/hubert/pyaudio/packages/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Portaudio toolkit bindings for Python
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio2
+LICENSE=	MIT
+
+LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -21,7 +23,8 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/setup.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
