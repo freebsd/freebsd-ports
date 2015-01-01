@@ -2062,6 +2062,7 @@
     SUBDIR += p5-File-Finder
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
+    SUBDIR += p5-File-Flock-Retry
     SUBDIR += p5-File-FnMatch
     SUBDIR += p5-File-Grep
     SUBDIR += p5-File-HStore

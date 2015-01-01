@@ -1,0 +1,6 @@
+File::Flock::Retry is yet another flock module. It is a more lightweight
+alternative to File::Flock with some other differences:
+- OO interface only
+- Autoretry (by default for 60s) when trying to acquire lock
+
+WWW: http://search.cpan.org/dist/File-Flock-Retry/
