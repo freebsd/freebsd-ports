@@ -16,6 +16,8 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
