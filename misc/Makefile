@@ -340,6 +340,7 @@
     SUBDIR += p5-Norge
     SUBDIR += p5-OSSP-uuid
     SUBDIR += p5-Software-License
+    SUBDIR += p5-Software-License-CCpack
     SUBDIR += p5-Test-Dir
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
