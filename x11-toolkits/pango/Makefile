@@ -59,9 +59,6 @@ pre-configure:
 	@${FALSE}
 .endif
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/pango/
-
 .include <bsd.port.mk>
 
 .endif
