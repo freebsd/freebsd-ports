@@ -13,10 +13,13 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	User-level file synchronization tool
 
+IGNORE=		No devel release available. \
+		Install net/unison which is the latest stable version.
+
 LICENSE=	GPLv3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		desktop-file-utils gmake
+USES=		gmake
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*

@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150101:
+  AFFECTS: users of net/unison and net/unison-nox11
+  AUTHOR: madpilot@FreeBSD.org
+
+  Unison has been upgraded to version 2.48, which uses a different wire
+  protocol than 2.40 did.  In order to support synchronization with
+  other computers where Unison is still at version 2.40, a new port
+  net/unison240 has been created.  It provides unison240 and if that is
+  GTK2-enabled, also unison240-text.  This unison240 port can be
+  installed in parallel with the existing net/unison port.
+
 20141230:
   AFFECTS: users of deskutils/xpad
   AUTHOR: jgh@FreeBSD.org
