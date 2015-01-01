@@ -3,7 +3,7 @@
 
 PORTNAME=	Inline-Java
 PORTVERSION=	0.540
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write Perl subroutines and classes in Java
 
-BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	p5-Inline>=0.68:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0.62:${PORTSDIR}/devel/p5-Inline-C
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_JAVA=       yes
