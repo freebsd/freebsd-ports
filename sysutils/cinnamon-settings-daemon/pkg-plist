@@ -41,7 +41,7 @@ lib/cinnamon-settings-daemon-3.0/libpower.so
 lib/cinnamon-settings-daemon-3.0/libscreensaver-proxy.a
 lib/cinnamon-settings-daemon-3.0/libscreensaver-proxy.so
 %%SMARTCARD%%lib/cinnamon-settings-daemon-3.0/libsmartcard.a
-lib/cinnamon-settings-daemon-3.0/libsmartcard.so
+%%SMARTCARD%%lib/cinnamon-settings-daemon-3.0/libsmartcard.so
 lib/cinnamon-settings-daemon-3.0/libsound.a
 lib/cinnamon-settings-daemon-3.0/libsound.so
 lib/cinnamon-settings-daemon-3.0/libxrandr.a
@@ -62,7 +62,7 @@ libexec/csd-test-automount
 libexec/cinnamon-settings-daemon
 libexec/csd-datetime-mechanism
 libexec/csd-locate-pointer
-libexec/csd-printer
+%%CUPS%%libexec/csd-printer
 libexec/csd-test-a11y-keyboard
 libexec/csd-test-a11y-settings
 libexec/csd-test-background
@@ -70,9 +70,9 @@ libexec/csd-test-input-helper
 libexec/csd-test-media-keys
 libexec/csd-test-mouse
 libexec/csd-test-power
-libexec/csd-test-print-notifications
+%%CUPS%%libexec/csd-test-print-notifications
 libexec/csd-test-screensaver-proxy
-libexec/csd-test-smartcard
+%%SMARTCARD%%libexec/csd-test-smartcard
 libexec/csd-test-sound
 libexec/csd-test-xsettings
 man/man1/cinnamon-settings-daemon.1.gz
