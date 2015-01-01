@@ -49,7 +49,7 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}\
 USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	*.cgi
-#NO_ARCH=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 MT_DOCS_URL?=	http://www.movabletype.org/documentation/
 MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
