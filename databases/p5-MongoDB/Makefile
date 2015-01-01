@@ -26,6 +26,8 @@ TEST_DEPENDS=	p5-Data-Types>=0:${PORTSDIR}/devel/p5-Data-Types \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
