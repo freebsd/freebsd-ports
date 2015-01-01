@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-${DISTDATE}
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Set of useful GNU Autoconf macros
 
-USES=		makeinfo tar:bzip2
-DISTDATE=	2011.01.02
+USES=		makeinfo tar:xz
+DISTDATE=	2014.10.15
 GNU_CONFIGURE=	yes
 INFO=		${PORTNAME}
 
