@@ -10,7 +10,6 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
-    SUBDIR += boinc-simap
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += consed
