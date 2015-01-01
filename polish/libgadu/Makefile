@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-DISTVERSION=	1.12.0
-PORTREVISION=	1
+PORTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 
@@ -18,9 +17,10 @@ CONFLICTS=	pl-ekg-1.[0-6]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojtekka
-GH_COMMIT=	ff39edb	
+GH_COMMIT=	bee8ba0
 
-USES=		autoreconf gmake libtool pkgconfig tar:bzip2
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
 		--disable-tests --without-gnutls
@@ -43,11 +43,6 @@ OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USE=		OPENSSL=yes
 
 .include <bsd.port.pre.mk>
-
-post-configure:
-	@${REINPLACE_CMD} '/^sed/ s|^|#|' ${WRKSRC}/protobufgen.sh
-	@${REINPLACE_CMD} '/^pkgconfigdir/ s|libdir)|prefix)/libdata|' \
-		${WRKSRC}/pkgconfig/Makefile
 
 pre-install:
 # OpenSSL from base system lacks .pc file for pkgconfig
