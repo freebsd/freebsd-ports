@@ -3,7 +3,7 @@
 
 PORTNAME=	Class-Mix
 PORTVERSION=	0.005
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,8 @@ COMMENT=	Perl module for dynamic class mixing
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
-		p5-Params-Classify>=0:${PORTSDIR}/devel/p5-Params-Classify
+BUILD_DEPENDS=	p5-Params-Classify>=0:${PORTSDIR}/devel/p5-Params-Classify
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
