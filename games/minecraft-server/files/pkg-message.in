@@ -1,17 +1,20 @@
-When you first run minecraft-server, it will create the file
-%%DATADIR%%/eula.txt
+When you first run minecraft-server, it will populate the file
+%%ETCDIR%%/eula.txt
 
-You need to read the EULA, and then set:
+It is required to read the EULA, and then set:
 eula=true
 
 - To run the server, run %%PREFIX%%/bin/minecraft-server
 - Configuration files can be found at %%ETCDIR%%
-- Log files can be found at /var/log/minecraft-server/
+- Log and debug output files can be found at /var/log/minecraft-server/
 - World files can be found at /var/db/minecraft-server
-- Debug output files can be found at /var/log/minecraft-server/debug/
-- To edit java's parameters, edit %%PREFIX%%/bin/minecraft-server
+- To edit java's parameters, edit %%ETCDIR%%/java-args.txt
 
 NOTE:
 Users upgrading from version < 1.8 are advised to run the server to
 generate new config files, and then modify them based on their existing
-configuration, as most files are now JSON instead of txt. Also,
+configuration, as most files are now JSON instead of txt.
+
+Users upgrading from from 1.8 will need to re-accept the EULA. They
+may also wish to delete %%DATADIR%% as it is 
+no longer used.
