@@ -11,8 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Perl module for FastAGI handling
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 		p5-Asterisk>=0:${PORTSDIR}/misc/p5-Asterisk \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove
