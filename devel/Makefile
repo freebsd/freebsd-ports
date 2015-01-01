@@ -2109,6 +2109,7 @@
     SUBDIR += p5-File-Touch
     SUBDIR += p5-File-Type
     SUBDIR += p5-File-Util
+    SUBDIR += p5-File-Write-Rotate
     SUBDIR += p5-File-chdir
     SUBDIR += p5-File-chmod
     SUBDIR += p5-File-pushd
