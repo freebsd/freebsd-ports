@@ -1,0 +1,4 @@
+This package provides the core ZRTP (RFC 6189) support library from
+the GNU ZRTP C++ project.
+
+WWW: https://github.com/wernerd/ZRTPCPP
