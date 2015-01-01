@@ -2635,6 +2635,7 @@
     SUBDIR += p5-Path-Resource
     SUBDIR += p5-Path-Tiny
     SUBDIR += p5-PathTools
+    SUBDIR += p5-Pegex
     SUBDIR += p5-Penguin
     SUBDIR += p5-Perl-Critic-Deprecated
     SUBDIR += p5-Perl-Metrics-Lite
