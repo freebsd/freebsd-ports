@@ -48,7 +48,7 @@ lib/libgnutls-xssl.so.0.0.0
 lib/libgnutls.a
 lib/libgnutls.so
 lib/libgnutls.so.28
-lib/libgnutls.so.28.30.10
+lib/libgnutls.so.28.30.12
 lib/libgnutlsxx.a
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
