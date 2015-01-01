@@ -1,4 +1,3 @@
-bin/cpants_lint.pl
 %%PERL5_MAN3%%/Module::CPANTS::Analyse.3.gz
 %%PERL5_MAN3%%/Module::CPANTS::Kwalitee.3.gz
 %%PERL5_MAN3%%/Module::CPANTS::Kwalitee::BrokenInstaller.3.gz
@@ -35,4 +34,3 @@ bin/cpants_lint.pl
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Signature.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Version.pm
-man/man1/cpants_lint.pl.1.gz
