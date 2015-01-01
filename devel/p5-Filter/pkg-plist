@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/Filter::Util::Call.3.gz
-%%PERL5_MAN3%%/Filter::Util::Exec.3.gz
-%%PERL5_MAN3%%/Filter::Util::perlfilter.3.gz
-%%PERL5_MAN3%%/Filter::cpp.3.gz
-%%PERL5_MAN3%%/Filter::decrypt.3.gz
-%%PERL5_MAN3%%/Filter::exec.3.gz
-%%PERL5_MAN3%%/Filter::sh.3.gz
-%%PERL5_MAN3%%/Filter::tee.3.gz
 %%SITE_ARCH%%/Filter/Util/Call.pm
 %%SITE_ARCH%%/Filter/Util/Exec.pm
 %%SITE_ARCH%%/Filter/Util/filter-util.pl
@@ -19,3 +11,11 @@
 %%SITE_ARCH%%/auto/Filter/Util/Exec/Exec.so
 %%SITE_ARCH%%/auto/Filter/decrypt/decrypt.so
 %%SITE_ARCH%%/auto/Filter/tee/tee.so
+%%PERL5_MAN3%%/Filter::Util::Call.3.gz
+%%PERL5_MAN3%%/Filter::Util::Exec.3.gz
+%%PERL5_MAN3%%/Filter::Util::perlfilter.3.gz
+%%PERL5_MAN3%%/Filter::cpp.3.gz
+%%PERL5_MAN3%%/Filter::decrypt.3.gz
+%%PERL5_MAN3%%/Filter::exec.3.gz
+%%PERL5_MAN3%%/Filter::sh.3.gz
+%%PERL5_MAN3%%/Filter::tee.3.gz
