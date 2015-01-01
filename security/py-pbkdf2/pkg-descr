@@ -1,0 +1,2 @@
+This module implements the password-based key derivation function,
+PBKDF2, specified in RSA PKCS#5 v2.0.
