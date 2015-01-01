@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write Perl subroutines and classes in Java
 
-BUILD_DEPENDS=	p5-Inline>=0.68:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-C>=0.62:${PORTSDIR}/devel/p5-Inline-C
+BUILD_DEPENDS=	p5-Inline>=0.68:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_JAVA=       yes
