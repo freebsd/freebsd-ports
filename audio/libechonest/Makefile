@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libechonest
-PORTVERSION=	2.0.3
+PORTVERSION=	2.3.0
 #PORTREVISION=	0
 CATEGORIES=	audio
 
@@ -15,13 +15,14 @@ LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 GH_ACCOUNT=	lfranchi
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	c02854c
+GH_COMMIT=	248354f
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DECHONEST_BUILD_TESTS=NO
 
 USE_QT4=	qmake_build moc_build network qtestlib rcc_build xml
 

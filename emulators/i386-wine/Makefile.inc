@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 PORTVERSION=	1.6.2
-PORTREVISION=	5
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.txz
 DIST_SUBDIR=	freebsd:${OSREL:C/\..*//}:x86:64
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 
 LICENSE=        LGPL21 LGPL3
 LICENSE_COMB=   dual
@@ -23,7 +23,8 @@ OPTIONS_DEFINE=	GECKO MONO
 GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
-CONFLICTS_INSTALL=	i386-wine-devel-[0-9]* wine-[0-9]* wine-devel-[0-9]*
+CONFLICTS_INSTALL?=	wine-[0-9]* wine-compholio-[0-9]* wine-devel-[0-9]* \
+                        i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
@@ -32,7 +33,8 @@ EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
-PKGINSTALL=	${.CURDIR}/files/pkg-install
+SLAVEDIR?=	${.CURDIR}
+PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -55,8 +57,8 @@ PLIST_SUB+=	OSREL${osrel}="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 803000 && ${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1000510 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100007 && ${OSVERSION} < 1200000))
-IGNORE=		binaries compiled for FreeBSD 8.3+, 9.1+, 10.0+ and -current only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 804000 && ${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1000510 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100048 && ${OSVERSION} < 1200000))
+IGNORE=		binaries compiled for FreeBSD 8.4+, 9.1+, 10.0+ and -current only
 DISTFILES=
 .endif
 
@@ -70,19 +72,18 @@ do-install:
 
 ${PLIST}: fetch
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$' | ${SED} 's|/usr/local/||g' | sort > ${PLIST}
-	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} '/$$' | ${SED} -e 's|/usr/local/\(.*\)/$$|@dirrm \1|g' -e 's|/$$||g' -e 's|@dirrm man|@dirrmtry man|g' | sort -r >> ${PLIST}
 
 port-update:
-	${RM} -f ${.CURDIR}/distinfo ${.CURDIR}/distinfo~ ${.CURDIR}/pkg-plist.*
+	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 .for osrel in 8 9 10 11
 	${MAKE} fetch OSREL=${osrel}
 	${MAKE} makesum OSREL=${osrel}
-	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~
-	${RM} ${.CURDIR}/distinfo
+	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~
+	${RM} ${SLAVEDIR}/distinfo
 	${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
 .endfor
-	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
-	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
-	${RM} ${.CURDIR}/pkg-plist.*
+	${MV} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/distinfo
+	python ${FILESDIR}/mergeplist.py ${SLAVEDIR}/pkg-plist.* > ${PLIST}
+	${RM} ${SLAVEDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>

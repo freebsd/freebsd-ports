@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddpt
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 

@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	cairo-dock
-DISTVERSION=	3.2.1
-PORTREVISION=	5
+PORTVERSION=	3.4.0
 CATEGORIES=	deskutils
-MASTER_SITES=	https://launchpadlibrarian.net/137290048/ \
-		http://pazzle.otdux.com.ua/
+DISTNAME=	${PORTNAME}-core-${PORTVERSION}.git20141115
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock is a light and eye-candy dock
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcurl.so:${PORTSDIR}/ftp/curl \
@@ -17,16 +18,23 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sox:${PORTSDIR}/audio/sox
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.2.1
+USE_GITHUB=	yes
+GH_ACCOUNT=	Cairo-Dock
+GH_PROJECT=	${PORTNAME}-core
+GH_COMMIT=	18df440
+GH_TAGNAME=	18df440
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-core-${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk20 librsvg2 libxml2
+USE_GNOME=	glib20 gtk30 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
 USES=		cmake gettext pathfix pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=man
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -36,5 +44,8 @@ post-patch:
 	     s|/usr/share/applications|${LOCALBASE}/share/applications|g; \
 	     s|/usr/share/icons|${LOCALBASE}/share/icons|g; \
 	     s|%%LOCALBASE%%|${LOCALBASE}|g;'
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgldi.so.3.4.0
 
 .include <bsd.port.mk>

@@ -36,7 +36,7 @@ X11_CONFIGURE_OFF=	--disable-x11 --disable-gl
 IMLIB2_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 IMLIB2_CONFIGURE_ENABLE=	imlib2
 SLANG_LIB_DEPENDS=	libslang.so.2:${PORTSDIR}/devel/libslang2
-SLANG_CONFIGURE_ENABLE=	slang
+SLANG_CONFIGURE_ENABLE=	slang=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 

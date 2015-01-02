@@ -2,7 +2,6 @@
 %%PERL5_MAN3%%/Log::Dispatch::ApacheLog.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Base.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Code.3.gz
-%%PERL5_MAN3%%/Log::Dispatch::Conflicts.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Email.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Email::MIMELite.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Email::MailSend.3.gz

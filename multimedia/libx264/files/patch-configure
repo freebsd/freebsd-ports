@@ -1,0 +1,25 @@
+From 9463ec0004f1bddc49c05ed8e38430a4ce1738fb Mon Sep 17 00:00:00 2001
+From: Janne Grunau <janne-x264@jannau.net>
+Date: Sun, 20 Jul 2014 13:40:28 +0200
+Subject: [PATCH] arm/ppc: use $CC as default assembler
+
+--- configure.orig	2014-08-27 20:45:08 UTC
++++ configure
+@@ -648,7 +648,7 @@ case $host_cpu in
+         ARCH="PPC"
+         if [ $asm = auto ] ; then
+             define HAVE_ALTIVEC
+-            AS="${AS-${cross_prefix}gcc}"
++            AS="${AS-${CC}}"
+             if [ $SYS = MACOSX ] ; then
+                 CFLAGS="$CFLAGS -faltivec -fastf -mcpu=G4"
+             else
+@@ -674,7 +674,7 @@ case $host_cpu in
+                 LDFLAGS="$LDFLAGS -arch armv7"
+             fi
+         else
+-            AS="${AS-${cross_prefix}gcc}"
++            AS="${AS-${CC}}"
+         fi
+         ;;
+     s390|s390x)

@@ -86,7 +86,8 @@ ILBC_BUILD_DEPENDS=		${LOCALBASE}/include/ilbc.h:${PORTSDIR}/net/libilbc
 ILBC_CONFIGURE_ENABLE=		libilbc
 
 JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
-JACK_CONFIGURE_ENABLE=		indev=jack
+JACK_CONFIGURE_ON=		--enable-indev=jack
+JACK_CONFIGURE_OFF=		--disable-indev=jack
 
 LAME_LIB_DEPENDS=		libmp3lame.so:${PORTSDIR}/audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
@@ -118,7 +119,8 @@ THEORA_LIB_DEPENDS=		libtheora.so:${PORTSDIR}/multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	libtheora
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-V4L_CONFIGURE_ENABLE=		indev=v4l2
+V4L_CONFIGURE_ON=		--enable-indev=v4l2
+V4L_CONFIGURE_OFF=		--disable-indev=v4l2
 
 VAAPI_LIB_DEPENDS=		libva.so:${PORTSDIR}/multimedia/libva
 VAAPI_CONFIGURE_ENABLE=		vaapi

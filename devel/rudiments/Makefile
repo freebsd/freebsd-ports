@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.47
+PORTVERSION=	0.49
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
@@ -41,6 +41,6 @@ post-patch:
 		 /finish/s| $$(libdir)| $${DESTDIR}$$(libdir)|'
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-0.47.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-${PORTVERSION}.so.1
 
 .include <bsd.port.mk>

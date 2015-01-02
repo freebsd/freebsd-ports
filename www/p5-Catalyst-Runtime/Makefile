@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90070
-PORTREVISION=	2
+PORTVERSION=	5.90077
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	The Elegant MVC Web Application Framework (Runtime)
+COMMENT=	Elegant MVC Web Application Framework (Runtime)
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -67,6 +66,8 @@ TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		perl5
 USE_PERL5=	configure

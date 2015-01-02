@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.20
+PORTVERSION=	9.21
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -206,8 +206,6 @@ post-build:
 .endif
 
 post-install:
-	${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/urxvt	\
-		${STAGEDIR}${PREFIX}/bin/urxvtd
 	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
 		${STAGEDIR}${PREFIX}/share/misc/
 .if ${PORT_OPTIONS:MDOCS}

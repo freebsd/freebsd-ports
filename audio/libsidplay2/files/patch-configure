@@ -1,0 +1,10 @@
+--- configure.orig
++++ configure
+@@ -1745,6 +1745,7 @@
+ echo; echo "Configuring resid-builder..."
+ cd $pwd/builders/resid-builder
+ if ! eval ./configure $ac_configure_args \
++--with-pic \
+ --with-sidplay2-includes=$pwd/libsidplay/include \
+ --with-sidplay2-library=$pwd/libsidplay/src \
+ --with-resid-includes=$pwd/resid \

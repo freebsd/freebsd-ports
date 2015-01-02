@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.7.33
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		prelink:${PORTSDIR}/sysutils/prelink
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
+CONFLICTS_INSTALL=	wine-[0-9]* wine-compholio-[0-9]* i386-wine-[0-9]* \
+			i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

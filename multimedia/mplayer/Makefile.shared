@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2014-08-24
+MPLAYER_SNAPSHOT_DATE=	2014-12-23
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -17,7 +17,8 @@ MAINTAINER?=	riggs@FreeBSD.org
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
@@ -40,6 +41,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-ggiwmh \
 		--disable-liba52 \
 		--disable-libbs2b \
+		--disable-libdirac-lavc \
 		--disable-libilbc \
 		--disable-libnut \
 		--disable-libvorbis \

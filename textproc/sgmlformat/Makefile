@@ -3,7 +3,7 @@
 
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -39,6 +39,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/sgmlfmt/sgmlfmt.pl
 	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/instant/traninit.c
 .endif
+
+post-build:
+	${REINPLACE_CMD} -E 's#(/usr|${PREFIX})/bin/perl#${PERL}#' ${WRKSRC}/sgmlfmt/sgmlfmt
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sgml/transpec

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-cs
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 
 MAINTAINER=	akosela@andykosela.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${GO_CMD}:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	akosela
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	887ad42
+GH_COMMIT=	f13bce9
 
 PLIST_FILES=	bin/cs man/man1/cs.1.gz
 

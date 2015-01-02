@@ -29,8 +29,8 @@ bin/morbo
 %%SITE_PERL%%/Mojo/IOLoop/Delay.pm
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
-%%SITE_PERL%%/Mojo/IOLoop/server.crt
-%%SITE_PERL%%/Mojo/IOLoop/server.key
+%%SITE_PERL%%/Mojo/IOLoop/certs/server.crt
+%%SITE_PERL%%/Mojo/IOLoop/certs/server.key
 %%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/JSON/Pointer.pm
 %%SITE_PERL%%/Mojo/Loader.pm
@@ -62,7 +62,6 @@ bin/morbo
 %%SITE_PERL%%/Mojo/UserAgent/Server.pm
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
-%%SITE_PERL%%/Mojo/entities.txt
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command.pm
 %%SITE_PERL%%/Mojolicious/Command/cgi.pm

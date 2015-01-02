@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/net/glib-networking/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	glib-networking
-PORTVERSION=	2.42.0
+PORTVERSION=	2.42.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

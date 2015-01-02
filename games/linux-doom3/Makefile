@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	NO_CDKEY
 NO_CDKEY_DESC=	Use older version which doesn't require cd key
 
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
-SUB_FILES=	doom3 doom3-ded pkg-message
+SUB_FILES=	doom3 doom3-ded pkg-message pkg-deinstall
 
 .include <bsd.port.options.mk>
 

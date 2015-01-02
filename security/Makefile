@@ -295,6 +295,7 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += libyubikey
+    SUBDIR += libzrtpcppcore
     SUBDIR += linux-c6-cyrus-sasl2
     SUBDIR += linux-c6-gnutls
     SUBDIR += linux-c6-libgcrypt
@@ -375,7 +376,6 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
-    SUBDIR += openssh-portable-base
     SUBDIR += openssh-portable66
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine
@@ -792,6 +792,7 @@
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
+    SUBDIR += py-pbkdf2
     SUBDIR += py-plaso
     SUBDIR += py-plone.app.openid
     SUBDIR += py-plone.keyring

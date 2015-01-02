@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/graphics/librsvg2/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	librsvg
-PORTVERSION=	2.40.4
+PORTVERSION=	2.40.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dar
-PORTVERSION=	2.4.14
-PORTREVISION=	1
+PORTVERSION=	2.4.15
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -14,7 +13,6 @@ LICENSE=	GPLv2 # (or later)
 
 USES=		libtool shebangfix
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
 		--disable-upx \
@@ -40,10 +38,6 @@ NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|(char \*\*) \(\&inptr,\)|\1| ; \
@@ -51,5 +45,8 @@ post-patch:
 	@${FIND} ${WRKSRC}/doc -name "Makefile.in" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|$$(pkgdatadir)|$$(docdir)|g'
+.if !${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e 's|src doc|src|' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>

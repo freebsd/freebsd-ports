@@ -7,6 +7,7 @@
     SUBDIR += 9box
     SUBDIR += 9menu
     SUBDIR += alltray
+    SUBDIR += antimicro
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += arandr
@@ -260,6 +261,7 @@
     SUBDIR += sisctrl
     SUBDIR += slim
     SUBDIR += slock
+    SUBDIR += slop
     SUBDIR += smproxy
     SUBDIR += sselp
     SUBDIR += stalonetray

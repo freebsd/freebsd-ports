@@ -44,7 +44,7 @@ diff -urN CMakeLists.txt CMakeLists.txt
  if(NOT BUILD_SHARED_LIBS)
      set(BUILD_SHARED_LIBS ON)
  endif()
-@@ -77,34 +71,35 @@
+@@ -77,34 +71,34 @@
  include_directories(.)
  include_directories(remmina/include)
  
@@ -91,7 +91,7 @@ diff -urN CMakeLists.txt CMakeLists.txt
 -
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/config.h)
  
- install(DIRECTORY include/remmina DESTINATION include/remmina FILES_MATCHING PATTERN "*.h")
+-install(DIRECTORY include/remmina DESTINATION include/remmina FILES_MATCHING PATTERN "*.h")
 diff -urN COPYING COPYING
 --- COPYING	1970-01-01 10:00:00.000000000 +1000
 +++ COPYING	2014-01-08 02:31:52.000000000 +1100

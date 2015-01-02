@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	3.4.0.2
+PORTVERSION=	3.4.3
 CATEGORIES=	audio
-MASTER_SITES=	https://codeload.github.com/exaile-dev/exaile/tar.gz/
+MASTER_SITES=	https://github.com/exaile/exaile/archive/
 DISTNAME=	${PORTVERSION}
-EXTRACT_SUFX=
 DIST_SUBDIR=	exaile
 
 MAINTAINER=	rm@FreeBSD.org

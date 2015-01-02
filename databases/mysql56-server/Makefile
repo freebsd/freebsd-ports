@@ -71,4 +71,10 @@ USES+=		readline
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "armv6"	 
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
+.endif
+ 	 
+.include <bsd.port.post.mk>

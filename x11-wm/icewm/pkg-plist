@@ -330,25 +330,3 @@ bin/icewmtray
 %%NLS%%share/locale/vi/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/icewm.mo
-@dirrm %%DATADIR%%/themes/yellowmotif
-@dirrm %%DATADIR%%/themes/win95
-@dirrm %%DATADIR%%/themes/warp4
-@dirrm %%DATADIR%%/themes/warp3
-@dirrm %%DATADIR%%/themes/nice2
-@dirrm %%DATADIR%%/themes/nice
-@dirrm %%DATADIR%%/themes/motif
-@dirrm %%DATADIR%%/themes/metal2
-@dirrm %%DATADIR%%/themes/icedesert
-@dirrm %%DATADIR%%/themes/gtk2
-@dirrm %%DATADIR%%/themes/Infadel2/taskbar
-@dirrm %%DATADIR%%/themes/Infadel2/mailbox
-@dirrm %%DATADIR%%/themes/Infadel2/icons
-@dirrm %%DATADIR%%/themes/Infadel2/cursors
-@dirrm %%DATADIR%%/themes/Infadel2
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/taskbar
-@dirrm %%DATADIR%%/mailbox
-@dirrm %%DATADIR%%/ledclock
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

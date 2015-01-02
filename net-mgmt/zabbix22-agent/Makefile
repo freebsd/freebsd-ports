@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PKGNAMESUFFIX=	-agent
 CATEGORIES=	net-mgmt
+PKGNAMESUFFIX=	-agent
 
 MASTERDIR=	${.CURDIR}/../zabbix22-server
 

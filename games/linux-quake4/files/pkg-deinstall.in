@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	if find "%%PREFIX%%/%%Q4DIR%%" -type f | head -1 | grep -q ''; then
+		echo "Note: %%PREFIX%%/%%Q4DIR%% not empty -- not deleted!"
+	fi
+fi

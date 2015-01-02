@@ -1,16 +1,16 @@
---- htmllintenv.orig	Tue May 22 17:33:22 2001
-+++ htmllintenv	Wed Sep 12 19:37:32 2001
+--- htmllintenv.orig	2007-05-19 17:36:51.000000000 +0900
++++ htmllintenv	2014-12-07 10:59:19.092555161 +0900
 @@ -5,15 +5,15 @@
  #   アクセス権をうまく工夫して、他人から見えないようにしてください。
  
  # CGI 用ディレクトリ (絶対パスかCGI相対パスで指定、なるべく絶対パスにしてください)
 -$RULEDIR  = './';        # 規則ファイルの場所
 -#$LOGSDIR = './logs/';   # ログファイルの場所 (不要ならコメントアウト)
-+$RULEDIR  = '%PREFIX%/share/htmllint/rule/';        # 規則ファイルの場所
-+#$LOGSDIR = '%PREFIX%/share/htmllint/logs/';   # ログファイルの場所 (不要ならコメントアウト)
++$RULEDIR  = '%%DATADIR%%/rule/';        # 規則ファイルの場所
++#$LOGSDIR = '/var/logs/another-htmllint/';   # ログファイルの場所 (不要ならコメントアウト)
  $TMPDIR   = '/tmp/';     # テンポラリファイルの場所
 -$IMGDIR   = './';        # イメージファイルの場所
-+$IMGDIR   = '%PREFIX%/share/htmllint/html/';        # イメージファイルの場所
++$IMGDIR   = '%%DATADIR%%/html/';        # イメージファイルの場所
  $TAGSLIST = '';          # タグ一覧キャッシュ用の場所 (空ならキャッシュしない)
                           # 設定するときはアクセス権を適当に与えておくこと
  
@@ -20,3 +20,27 @@
  $GATEWAYURL = $HTMLDIR.'htmllint.html'; # ゲイトウェイサーヴィス HTML
  $EXPLAIN    = $HTMLDIR.'explain.html';  # 解説用 HTML (HTML用)
  $CGIROOT    = $HTMLDIR;                 # CGIの場所
+@@ -80,12 +80,12 @@
+ #$KANJICODE = 'JIS';    # JIS/EUC/SJIS/UTF8 のいずれか
+ 
+ # Lynx (不要あるいは未実装ならコメントアウト)
+-#$LYNX = '/usr/local/bin/lynx -dump -nolist -force_html';
++#$LYNX = '%%PREFIX%%/bin/lynx -dump -nolist -force_html';
+ 
+ # w3m (不要あるいは未実装ならコメントアウト)
+ #   カラー機能のない場合 -M の指定は不可
+ #   -e は EUC、Shift JIS なら -s
+-#$W3M = '/usr/local/bin/w3m -dump -T text/html -M -e';
++#$W3M = '%%PREFIX%%/bin/w3m -dump -T text/html -M -e';
+ 
+ # 得点記録用ログファイル (不要ならコメントアウト)
+ #   # の部分は年月に置き換わります
+@@ -100,7 +100,7 @@
+ #@EXCEPTSCORES = qw(uso800.ac.jp);
+ 
+ # Muquit's Access Counter CGI (不要あるいは未実装ならコメントアウト)
+-#$COUNTER = '/usr/local/www/cgi-bin/Count.cgi';
++#$COUNTER = '%%PREFIX%%/www/cgi-bin/Count.cgi';
+ 
+ # ビジーチェック関数
+ # sub BusyCheck {

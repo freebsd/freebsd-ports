@@ -1,0 +1,28 @@
+Submitted upstream: https://github.com/hsleisink/hiawatha/pull/20
+
+commit 4f61342f9f6ff46fbb8b4dc5646c9f0b15809bef
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Wed Dec 31 19:31:22 2014 +0200
+
+    Make the INSTALL(DIRECTORY empty) calls work with CMake >= 3.1.0.
+    
+    Since CMake 3.1.0, ${LOG_DIR}, ${PID_DIR} and ${WORK_DIR} were no longer
+    being created because the regular expression does not match anything and
+    CMake's behavior changed in a way that those directories would not be
+    created before filtering the match list anymore.
+    
+    Instead, just call INSTALL(DIRECTORY) with an empty source, which works
+    with all CMake versions currently supported.
+
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -172,6 +172,6 @@ endforeach()
+ install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
+ 
+ # Create directories
+-install(DIRECTORY empty DESTINATION ${LOG_DIR} PATTERN "empty" EXCLUDE)
+-install(DIRECTORY empty DESTINATION ${PID_DIR} PATTERN "empty" EXCLUDE)
+-install(DIRECTORY empty DESTINATION ${WORK_DIR} PATTERN "empty" EXCLUDE)
++install(DIRECTORY DESTINATION ${LOG_DIR})
++install(DIRECTORY DESTINATION ${PID_DIR})
++install(DIRECTORY DESTINATION ${WORK_DIR})

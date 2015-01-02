@@ -40,7 +40,6 @@ man/man1/muffin-theme-viewer.1.gz
 man/man1/muffin-window-demo.1.gz
 man/man1/muffin.1.gz
 share/applications/muffin.desktop
-share/GConf/gsettings/muffin-schemas.convert
 share/locale/am/LC_MESSAGES/muffin.mo
 share/locale/ar/LC_MESSAGES/muffin.mo
 share/locale/as/LC_MESSAGES/muffin.mo

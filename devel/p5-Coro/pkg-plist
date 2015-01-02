@@ -50,14 +50,3 @@
 %%SITE_ARCH%%/auto/Coro/EV/EV.so
 %%SITE_ARCH%%/auto/Coro/Event/Event.so
 %%SITE_ARCH%%/auto/Coro/State/State.so
-%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dns
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lwp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/myhttpd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readline

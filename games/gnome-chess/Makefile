@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/games/gnome-chess/Makefile 20056 2014-11-10 20:49:39Z gusi $
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

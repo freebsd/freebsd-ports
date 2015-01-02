@@ -4,6 +4,7 @@ include/cinnamon-settings-daemon-3.0/cinnamon-settings-daemon/csd-enums.h
 lib/cinnamon-settings-daemon-3.0/a11y-keyboard.cinnamon-settings-plugin
 lib/cinnamon-settings-daemon-3.0/a11y-settings.cinnamon-settings-plugin
 lib/cinnamon-settings-daemon-3.0/automount.cinnamon-settings-plugin
+lib/cinnamon-settings-daemon-3.0/background.cinnamon-settings-plugin
 lib/cinnamon-settings-daemon-3.0/clipboard.cinnamon-settings-plugin
 lib/cinnamon-settings-daemon-3.0/color.cinnamon-settings-plugin
 lib/cinnamon-settings-daemon-3.0/cursor.cinnamon-settings-plugin
@@ -15,6 +16,8 @@ lib/cinnamon-settings-daemon-3.0/liba11y-settings.a
 lib/cinnamon-settings-daemon-3.0/liba11y-settings.so
 lib/cinnamon-settings-daemon-3.0/libautomount.a
 lib/cinnamon-settings-daemon-3.0/libautomount.so
+lib/cinnamon-settings-daemon-3.0/libbackground.a
+lib/cinnamon-settings-daemon-3.0/libbackground.so
 lib/cinnamon-settings-daemon-3.0/libclipboard.a
 lib/cinnamon-settings-daemon-3.0/libclipboard.so
 lib/cinnamon-settings-daemon-3.0/libcolor.a
@@ -38,7 +41,7 @@ lib/cinnamon-settings-daemon-3.0/libpower.so
 lib/cinnamon-settings-daemon-3.0/libscreensaver-proxy.a
 lib/cinnamon-settings-daemon-3.0/libscreensaver-proxy.so
 %%SMARTCARD%%lib/cinnamon-settings-daemon-3.0/libsmartcard.a
-lib/cinnamon-settings-daemon-3.0/libsmartcard.so
+%%SMARTCARD%%lib/cinnamon-settings-daemon-3.0/libsmartcard.so
 lib/cinnamon-settings-daemon-3.0/libsound.a
 lib/cinnamon-settings-daemon-3.0/libsound.so
 lib/cinnamon-settings-daemon-3.0/libxrandr.a
@@ -59,16 +62,17 @@ libexec/csd-test-automount
 libexec/cinnamon-settings-daemon
 libexec/csd-datetime-mechanism
 libexec/csd-locate-pointer
-libexec/csd-printer
+%%CUPS%%libexec/csd-printer
 libexec/csd-test-a11y-keyboard
 libexec/csd-test-a11y-settings
+libexec/csd-test-background
 libexec/csd-test-input-helper
 libexec/csd-test-media-keys
 libexec/csd-test-mouse
 libexec/csd-test-power
-libexec/csd-test-print-notifications
+%%CUPS%%libexec/csd-test-print-notifications
 libexec/csd-test-screensaver-proxy
-libexec/csd-test-smartcard
+%%SMARTCARD%%libexec/csd-test-smartcard
 libexec/csd-test-sound
 libexec/csd-test-xsettings
 man/man1/cinnamon-settings-daemon.1.gz
@@ -181,3 +185,4 @@ share/locale/zh_TW/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/polkit-1/actions/org.cinnamon.settings-daemon.plugins.power.policy
 share/polkit-1/actions/org.cinnamon.settingsdaemon.datetimemechanism.policy
+@dir %%ETCDIR%%/xrandr

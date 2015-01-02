@@ -3,7 +3,7 @@
 
 PORTNAME=	fflas-ffpack
 PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://linalg.org/ LOCAL/bf
 

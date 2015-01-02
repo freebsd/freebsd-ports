@@ -503,6 +503,7 @@
     SUBDIR += p5-IO-Socket-IP
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-IO-Socket-Multicast6
+    SUBDIR += p5-IO-Socket-UNIX-Util
     SUBDIR += p5-IP-Anonymous
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
@@ -1014,10 +1015,13 @@
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
+    SUBDIR += rubygem-fog-atmos
+    SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
+    SUBDIR += rubygem-fog-storm_on_demand
     SUBDIR += rubygem-fog-terremark
     SUBDIR += rubygem-fog-vmfusion
     SUBDIR += rubygem-fog-voxel
@@ -1219,6 +1223,7 @@
     SUBDIR += unison-devel
     SUBDIR += unison-nox11
     SUBDIR += unison232
+    SUBDIR += unison240
     SUBDIR += unix2tcp
     SUBDIR += uplog
     SUBDIR += urelay

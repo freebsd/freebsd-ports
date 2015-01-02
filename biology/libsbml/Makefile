@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsbml
-PORTVERSION=	5.10.2
+PORTVERSION=	5.11.0
 CATEGORIES=	biology devel
 MASTER_SITES=	SF/sbml/${PORTNAME}/${PORTVERSION}/stable
 DISTNAME=	libSBML-${PORTVERSION}-core-src
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		cmake:outsource iconv	
+USES=		cmake:outsource iconv
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

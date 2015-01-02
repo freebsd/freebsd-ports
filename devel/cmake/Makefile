@@ -23,10 +23,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${PATCHDIR}/InitialCache.cmake"
 
-.if defined(STRIP) && ${STRIP} != ""
-INSTALL_TARGET=	install/strip
-.endif
-
 .if !defined(CMAKE_MODULES)
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
@@ -36,6 +32,12 @@ BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:${PORTSDIR}/devel/cmake-modules
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
+INSTALL_TARGET=	install/strip
 .endif
 
 post-patch:
@@ -62,4 +64,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Auxiliary/cmake-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

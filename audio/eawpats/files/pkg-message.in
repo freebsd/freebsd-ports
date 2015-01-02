@@ -1,0 +1,11 @@
+===========================================================================
+
+To use eawpats you'll need to replace your
+
+%%LOCALBASE%%/lib/timidity/timidity.cfg
+
+with
+
+%%PREFIX%%/lib/timidity/timidity.cfg-eawpats
+
+===========================================================================

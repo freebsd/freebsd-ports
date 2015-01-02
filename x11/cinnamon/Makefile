@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11/cinnamon/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon
-PORTVERSION=	2.2.16
+PORTVERSION=	2.4.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -38,7 +37,8 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig python shebangfix
+USES=		autoreconf:build compiler:c11 gettext gmake libtool \
+		pathfix pkgconfig python shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})

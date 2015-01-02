@@ -11,7 +11,7 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.3800.2
+lib/libvte-%%VERSION%%.so.0.3800.3
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/doc/vte-%%VERSION%%/VteTerminal.html
 share/doc/vte-%%VERSION%%/annotation-glossary.html

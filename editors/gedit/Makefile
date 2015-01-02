@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/editors/gedit/Makefile 20047 2014-11-10 07:28:52Z gusi $
 
 PORTNAME=	gedit
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

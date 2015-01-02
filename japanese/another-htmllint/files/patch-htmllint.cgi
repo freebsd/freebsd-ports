@@ -1,17 +1,11 @@
---- htmllint.cgi.orig	Wed Aug 23 19:19:28 2000
-+++ htmllint.cgi	Fri Sep 29 14:41:55 2000
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!%PERL%
+--- htmllint.cgi.orig	2014-12-07 10:16:56.651728605 +0900
++++ htmllint.cgi	2014-12-07 10:22:52.118705399 +0900
+@@ -28,6 +28,8 @@
+ my $OS2; #UNSUPPORTED;
+ my $UNIX = !($WIN || $MAC || $OS2);
  
- # CGI script for Another HTML-lint gateway ###################
- 
-@@ -26,6 +26,8 @@
- #$OS2 = UNSUPPORTED;
- $UNIX = !($WIN || $MAC || $OS2);
- 
-+use lib '%PREFIX%/share/htmllint';
-+use lib '%PREFIX%/share/htmllint/rule';
++use lib '%%DATADIR%%';
++use lib '%%DATADIR%%/rule';
  require 'htmllint.env';
  require $LINT_NAME;
  

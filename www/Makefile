@@ -159,7 +159,6 @@
     SUBDIR += eaccelerator
     SUBDIR += edbrowse
     SUBDIR += efront
-    SUBDIR += egueb
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
@@ -1681,6 +1680,7 @@
     SUBDIR += py-slimmer
     SUBDIR += py-slumber
     SUBDIR += py-splinter
+    SUBDIR += py-spyne
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices

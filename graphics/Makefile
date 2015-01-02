@@ -134,8 +134,6 @@
     SUBDIR += edje_viewer
     SUBDIR += electrix
     SUBDIR += enblend
-    SUBDIR += ender
-    SUBDIR += enesim
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins
@@ -146,7 +144,6 @@
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
-    SUBDIR += etch
     SUBDIR += eterm-bg
     SUBDIR += evas_generic_loaders
     SUBDIR += evas_generic_loaders-gst

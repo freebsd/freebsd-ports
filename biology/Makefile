@@ -10,7 +10,6 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
-    SUBDIR += boinc-simap
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += consed
@@ -41,7 +40,7 @@
     SUBDIR += mrbayes
     SUBDIR += mummer
     SUBDIR += muscle
-    SUBDIR += ncbi-blast
+    SUBDIR += ncbi-blast+
     SUBDIR += ncbi-toolkit
     SUBDIR += njplot
     SUBDIR += ortep3

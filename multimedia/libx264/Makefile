@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DISTNAME=	x264-snapshot-${X264_SNAPSHOT}-2245-stable
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	libx264
+DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -43,24 +43,29 @@ HI10P_DESC=	Enable High 10 Profile 10-bit encoding
 
 ASM_CONFIGURE_OFF=	--disable-asm
 DEBUG_CONFIGURE_ON=	--enable-debug
-GCC_USE=		GCC=yes
 HI10P_CONFIGURE_ON=	--bit-depth=10
-PGO_USE=		GCC=yes
-
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--enable-static --enable-shared \
 			--disable-opencl
+
+CFLAGS_armv6+=		-mcpu=arm1136jf-s
 
 PATHFIX_MAKEFILEIN=	Makefile
 PLIST_SUB+=		X264_BUILD=${X264_BUILD}
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MGCC}
+USE_GCC=	yes
+.elif ${PORT_OPTIONS:MPGO}
+USE_GCC=	any
+.endif
+
 .if ${PORT_OPTIONS:MPGO}
 # y4m sample video
-Y4M_VIDEO=example.y4m
-Y4M_VIDEO_DISTFILE=example.y4m.bz2
+Y4M_VIDEO=		example.y4m
+Y4M_VIDEO_DISTFILE=	example.y4m.bz2
 
 DISTFILES+=	${Y4M_VIDEO_DISTFILE}:pgo
 ALL_TARGET=	fprofiled

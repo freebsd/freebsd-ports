@@ -14,6 +14,8 @@ COMMENT=	Write filesystems in Perl using FUSE
 
 LICENSE=	LGPL21
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5 fuse pkgconfig
 USE_PERL5=	configure
 

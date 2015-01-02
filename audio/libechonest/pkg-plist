@@ -7,6 +7,8 @@ include/echonest/CatalogItem.h
 include/echonest/CatalogSong.h
 include/echonest/CatalogUpdateEntry.h
 include/echonest/Config.h
+include/echonest/CommonTypes.h
+include/echonest/Genre.h
 include/echonest/Playlist.h
 include/echonest/Song.h
 include/echonest/Track.h

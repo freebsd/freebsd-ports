@@ -44,4 +44,3 @@ share/icons/hicolor/scalable/apps/remmina.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
-@dir include/remmina

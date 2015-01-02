@@ -33,7 +33,6 @@ include/rudiments/memorypool.h
 include/rudiments/modemclient.h
 include/rudiments/modemserver.h
 include/rudiments/parameterstring.h
-include/rudiments/passwdentry.h
 include/rudiments/permissions.h
 include/rudiments/private/bytebuffer.h
 include/rudiments/private/bytebufferincludes.h
@@ -110,14 +109,13 @@ include/rudiments/private/modemserverincludes.h
 include/rudiments/private/modemutil.h
 include/rudiments/private/parameterstring.h
 include/rudiments/private/parameterstringincludes.h
-include/rudiments/private/passwdentry.h
-include/rudiments/private/passwdentryincludes.h
 include/rudiments/private/permissions.h
 include/rudiments/private/permissionsincludes.h
 include/rudiments/private/process.h
 include/rudiments/private/processincludes.h
 include/rudiments/private/protocolentry.h
 include/rudiments/private/protocolentryincludes.h
+include/rudiments/private/randomnumber.h
 include/rudiments/private/randomnumberincludes.h
 include/rudiments/private/regularexpression.h
 include/rudiments/private/regularexpressionincludes.h
@@ -134,8 +132,6 @@ include/rudiments/private/server.h
 include/rudiments/private/serverincludes.h
 include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
-include/rudiments/private/shadowentry.h
-include/rudiments/private/shadowentryincludes.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
 include/rudiments/private/shmfile.h
@@ -156,7 +152,6 @@ include/rudiments/private/stderrdestination.h
 include/rudiments/private/stdoutdestination.h
 include/rudiments/private/stringbuffer.h
 include/rudiments/private/stringbufferincludes.h
-include/rudiments/private/sys.h
 include/rudiments/private/sysincludes.h
 include/rudiments/private/syslogdestination.h
 include/rudiments/private/thread.h
@@ -169,6 +164,8 @@ include/rudiments/private/unixsocketserver.h
 include/rudiments/private/unixsocketserverincludes.h
 include/rudiments/private/unixsocketutil.h
 include/rudiments/private/unixsocketutilincludes.h
+include/rudiments/private/userentry.h
+include/rudiments/private/userentryincludes.h
 include/rudiments/private/winsock.h
 include/rudiments/private/xmldom.h
 include/rudiments/private/xmldomincludes.h
@@ -187,7 +184,6 @@ include/rudiments/serialport.h
 include/rudiments/serialportprofile.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
-include/rudiments/shadowentry.h
 include/rudiments/sharedmemory.h
 include/rudiments/shmfile.h
 include/rudiments/signalclasses.h
@@ -203,6 +199,7 @@ include/rudiments/threadmutex.h
 include/rudiments/unixsocketclient.h
 include/rudiments/unixsocketserver.h
 include/rudiments/unixsocketutil.h
+include/rudiments/userentry.h
 include/rudiments/xmldom.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h

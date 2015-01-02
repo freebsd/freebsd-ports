@@ -114,6 +114,7 @@
     SUBDIR += qemu
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
+    SUBDIR += qemu-sbruno
     SUBDIR += qemu-user-static
     SUBDIR += qmc2
     SUBDIR += qtemu

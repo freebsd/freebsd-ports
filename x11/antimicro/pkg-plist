@@ -1,0 +1,12 @@
+bin/antimicro
+%%DATADIR%%/translations/antimicro_br.qm
+%%DATADIR%%/translations/antimicro_de.qm
+%%DATADIR%%/translations/antimicro_en.qm
+%%DATADIR%%/translations/antimicro_fr.qm
+%%DATADIR%%/translations/antimicro_ru.qm
+%%DATADIR%%/translations/antimicro_sr.qm
+%%DATADIR%%/translations/antimicro_uk.qm
+share/applications/antimicro.desktop
+share/man/man1/antimicro.1.gz
+share/mime/packages/antimicro.xml
+share/pixmaps/antimicro.png

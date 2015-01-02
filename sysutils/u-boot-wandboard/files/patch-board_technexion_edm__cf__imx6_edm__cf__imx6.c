@@ -1,4 +1,4 @@
---- board/technexion/edm_cf_imx6/edm_cf_imx6.c.orig	2014-08-14 14:51:10 UTC
+--- board/technexion/edm_cf_imx6/edm_cf_imx6.c.orig	2014-06-12 07:50:48 UTC
 +++ board/technexion/edm_cf_imx6/edm_cf_imx6.c
 @@ -63,10 +63,16 @@ enum boot_device get_boot_device(void);
  
@@ -43,7 +43,7 @@
 +		imxname = "imx6dl";	
 +		break;	
 +	}
-+	setenv("imxname", imxname);
++	setenv("soc", imxname);
 +
  #ifdef CONFIG_CMD_BMODE
  	add_board_boot_modes(board_boot_modes);

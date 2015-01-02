@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blat
-PORTVERSION=	35
-PORTREVISION=	1
+PORTVERSION=	36
 CATEGORIES=	biology
 MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
 		http://users.soe.ucsc.edu/~kent/src/
@@ -24,12 +23,14 @@ MAKEFILE=	makefile
 MAKE_ENV=	MACHTYPE="${ARCH}" STRIP="${TRUE}"
 MAKE_ARGS=	HOME="${WRKSRC}/${BINDIR}"
 
+USE_MYSQL=		yes
+LDFLAGS+=		-L${LOCALBASE}/lib/mysql
+
 CPPFLAGS+=	$$(libpng-config --cflags)
 LDFLAGS+=	$$(libpng-config --ldflags)
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	README
 PLIST_FILES=	${EXECUTABLES:S,^,bin/,} \
 		lib/blat/webBlat/webBlat \
 		lib/blat/webBlat/install.txt
@@ -62,7 +63,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
 	(cd ${WRKSRC}/webBlat && ${INSTALL_DATA} install.txt \
 		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

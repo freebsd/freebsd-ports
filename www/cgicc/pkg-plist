@@ -33,4 +33,3 @@ lib/libcgicc.so.3
 lib/libcgicc.so.3.2.10
 libdata/pkgconfig/cgicc.pc
 share/aclocal/cgicc.m4
-@dirrm include/cgicc

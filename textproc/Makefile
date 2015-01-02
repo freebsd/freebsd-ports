@@ -1091,6 +1091,7 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pear-YAML
+    SUBDIR += pecl-cld
     SUBDIR += pecl-ctemplate
     SUBDIR += pecl-doublemetaphone
     SUBDIR += pecl-enchant
@@ -1198,6 +1199,7 @@
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
+    SUBDIR += py-python-augeas
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml

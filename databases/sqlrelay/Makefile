@@ -3,7 +3,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -32,6 +31,7 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 
 TOSTRIP=	bin/sqlr-start \
+		bin/sqlr-stop \
 		bin/sqlr-listener \
 		bin/sqlr-connection \
 		bin/sqlr-scaler \
@@ -53,18 +53,20 @@ TOSTRIP=	bin/sqlr-start \
 		lib/libmysql50sqlrelay.so.1.0.0 \
 		lib/libmysql51sqlrelay.so.1.0.0 \
 		lib/libsqlrserver.so.1.0.0 \
-		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so \
-		libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so \
-		libexec/sqlrelay/sqlrlogger_debug.so \
-		libexec/sqlrelay/sqlrlogger_slowqueries.so \
-		libexec/sqlrelay/sqlrlogger_custom_nw.so \
-		libexec/sqlrelay/sqlrlogger_custom_sc.so \
-		libexec/sqlrelay/sqlrpwdenc_rot.so \
-		libexec/sqlrelay/sqlrpwdenc_md5.so \
-		libexec/sqlrelay/sqlrpwdenc_crypt.so \
 		libexec/sqlrelay/sqlrauth_default.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
-		libexec/sqlrelay/sqlrconnection_router.so
+		libexec/sqlrelay/sqlrconnection_router.so \
+		libexec/sqlrelay/sqlrlogger_custom_nw.so \
+		libexec/sqlrelay/sqlrlogger_custom_sc.so \
+		libexec/sqlrelay/sqlrlogger_debug.so \
+		libexec/sqlrelay/sqlrlogger_slowqueries.so \
+		libexec/sqlrelay/sqlrparser_default.so \
+		libexec/sqlrelay/sqlrprotocol_sqlrclient.so \
+		libexec/sqlrelay/sqlrpwdenc_crypt.so \
+		libexec/sqlrelay/sqlrpwdenc_md5.so \
+		libexec/sqlrelay/sqlrpwdenc_rot.so \
+		libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so \
+		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -126,7 +128,6 @@ post-patch:
 		-e 's,\$$\(initroot\),\$$\(initroot\)${PREFIX},g' \
 		-e 's,/etc/rc.conf,/etc/defaults/rc.conf,g' \
 			${WRKSRC}/init/Makefile
-	@${REINPLACE_CMD} -e '/EXAMPLEDIR/d' ${WRKSRC}/etc/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 

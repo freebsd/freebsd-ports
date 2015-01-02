@@ -1,7 +1,0 @@
-lib/enlightenment/modules/elfe/module.desktop
-lib/enlightenment/modules/elfe/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/elfe/default.edj
-@dirrm lib/enlightenment/modules/elfe/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/elfe
-@dirrmtry lib/enlightenment/modules
-@dirrmtry lib/enlightenment

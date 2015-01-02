@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	freexl
-DISTVERSION=	1.0.0g
-PORTREVISION=	1
+DISTVERSION=	1.0.0h
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/freexl-sources/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
+
+LICENSE=	MPL GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_locale_charset=no

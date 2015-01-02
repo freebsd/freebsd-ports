@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unison
-PORTVERSION=	2.40.102
-PORTREVISION=	3
+PORTVERSION=	2.48.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -16,7 +15,7 @@ COMMENT?=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		desktop-file-utils gmake
+USES=		gmake
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS?=	unison-devel-[0-9]* unison-nox11-[0-9]*
@@ -64,14 +63,14 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unison ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-text ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png

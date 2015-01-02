@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	2.2.4
+PORTVERSION=	2.4.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -47,6 +46,7 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \
 		org.cinnamon.settings-daemon.peripherals.gschema.xml \
+		org.cinnamon.settings-daemon.plugins.background.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.color.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.housekeeping.gschema.xml \

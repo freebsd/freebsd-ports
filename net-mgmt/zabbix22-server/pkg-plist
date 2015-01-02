@@ -43,3 +43,6 @@ sbin/zabbix_%%ZABBIX_BUILD%%
 %%JAVAGW%%sbin/zabbix_java/settings.sh.sample
 %%JAVAGW%%sbin/zabbix_java/startup.sh
 %%JAVAGW%%sbin/zabbix_java/bin/zabbix-java-gateway-%%PORTVERSION%%.jar
+%%SERVER%%@dir %%ETCDIR%%/zabbix/alertscripts
+@dir %%ETCDIR%%/zabbix/externalscripts
+@dir %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.d

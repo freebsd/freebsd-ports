@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -18,7 +18,7 @@ COMMENT=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		desktop-file-utils gmake
+USES=		gmake
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 

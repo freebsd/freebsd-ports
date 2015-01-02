@@ -1,6 +1,6 @@
---- include/configs/edm_cf_imx6.h.orig	2014-08-14 14:51:10 UTC
+--- include/configs/edm_cf_imx6.h.orig	2014-06-12 07:50:48 UTC
 +++ include/configs/edm_cf_imx6.h
-@@ -338,4 +338,54 @@
+@@ -338,4 +338,64 @@
  #define CONFIG_CMD_CACHE
  #endif
  
@@ -26,32 +26,42 @@
 +/* Create a small(ish) boot environment for FreeBSD. */
 +#undef  CONFIG_EXTRA_ENV_SETTINGS
 +#define CONFIG_EXTRA_ENV_SETTINGS \
-+	"boardname=wandboard\0" \
-+	"bootfile=ubldr\0" \
-+	"fatdev=mmc 0:1\0" \
-+	"loaderdev=disk\0" \
-+	"uenv_file=uEnv.txt\0" \
++	"board=wandboard\0" \
++	"loadaddr=0x11000000\0" \
 +	\
-+	"fatboot=" \
-+	  "env exists user_fatboot && run user_fatboot; " \
++	"Fatboot=" \
++	  "env exists loaderdev || env set loaderdev ${fatdev}; " \
++	  "env exists UserFatboot && run UserFatboot; " \
++	  "echo Booting from: ${fatdev} ${bootfile}; " \
 +	  "fatload ${fatdev} ${loadaddr} ${bootfile} && bootelf; " \
 +	"\0" \
-+	"netboot=" \
-+	  "env exists user_netboot && run user_netboot; " \
++	"Netboot=" \
++	  "env exists loaderdev || env set loaderdev net; " \
++	  "env exists UserNetboot && run UserNetboot; " \
 +	  "dhcp ${loadaddr} ${bootfile} && bootelf; " \
 +	"\0" \
-+	"preboot=" \
-+	  "env exists setfdt && run setfdt; " \
-+	  "env exists uenv_import && run uenv_import; " \
-+	  "env exists user_preboot && run user_preboot; " \
++	"Preboot=" \
++	  "env exists bootfile || bootfile=ubldr; " \
++	  "env exists uenv_file || uenv_file=uEnv.txt; " \
++	  "env exists SetupFdtfile && run SetupFdtfile; " \
++	  "env exists SetupFatdev && run SetupFatdev; " \
++	  "env exists SetupUenv && run SetupUenv; " \
++	  "env exists UserPreboot && run UserPreboot; " \
 +	"\0" \
-+	"setfdt=env set fdt_file ${imxname}-${boardname}.dtb\0" \
-+	"uenv_import=" \
++	"SetupFdtfile=" \
++	  "env set fdt_file ${soc}-${board}.dtb" \
++	"\0" \
++	"SetupFatdev=" \
++	  "env exists fatdev || fatdev='mmc 0'; " \
++	"\0" \
++	"SetupUenv=" \
 +	  "fatload ${fatdev} ${loadaddr} ${uenv_file} && " \
 +	    "env import -t ${loadaddr} ${filesize}; " \
 +	"\0"
 +
 +#undef  CONFIG_BOOTCOMMAND
-+#define CONFIG_BOOTCOMMAND "run fatboot"
++#define CONFIG_BOOTCOMMAND	"run Fatboot"
++#undef  CONFIG_PREBOOT
++#define CONFIG_PREBOOT		"run Preboot"
 +
  #endif			       /* __CONFIG_H * */

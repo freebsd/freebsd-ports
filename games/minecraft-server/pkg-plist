@@ -1,18 +1,20 @@
 bin/minecraft-server
 @owner mcserver
 @group mcserver
-@dir %%DATADIR%%
+@dir minecraft-server
 @dir %%ETCDIR%%
-%%DATADIR%%/banned-ips.json
-%%DATADIR%%/banned-players.json
-%%DATADIR%%/debug
-%%DATADIR%%/logs
-%%DATADIR%%/minecraft_server.1.8.jar
-%%DATADIR%%/ops.json
-%%DATADIR%%/server.properties
-%%DATADIR%%/usercache.json
-%%DATADIR%%/whitelist.json
-%%DATADIR%%/world
+%%ETCDIR%%/java-args.txt
+minecraft-server/banned-ips.json
+minecraft-server/banned-players.json
+minecraft-server/debug
+minecraft-server/eula.txt
+minecraft-server/logs
+minecraft-server/minecraft_server.1.8.1.jar
+minecraft-server/ops.json
+minecraft-server/server.properties
+minecraft-server/usercache.json
+minecraft-server/whitelist.json
+minecraft-server/world
 @dir /var/db/minecraft-server
 @dir /var/log/minecraft-server
 @owner

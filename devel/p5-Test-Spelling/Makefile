@@ -11,8 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Check for spelling errors in POD files
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Pod-Spell>=0:${PORTSDIR}/textproc/p5-Pod-Spell \
-		p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
 RUN_DEPENDS=	p5-Pod-Spell>=0:${PORTSDIR}/textproc/p5-Pod-Spell \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
