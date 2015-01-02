@@ -1199,6 +1199,7 @@
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
+    SUBDIR += py-python-augeas
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml
