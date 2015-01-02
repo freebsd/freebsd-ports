@@ -21,7 +21,6 @@ etc/rspamd/lua/hfilter.lua
 %%DATADIR%%/lua/rbl.lua
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/trie.lua
-%%DATADIR%%/lua/whitelist.lua
 %%DATADIR%%/www/index.html
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/img/spinner.gif
