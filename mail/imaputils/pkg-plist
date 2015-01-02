@@ -20,3 +20,4 @@ bin/iu-purge
 bin/iu-restore
 bin/iu-sync
 bin/iu-trash
+%%SITE_PERL%%/IMAP/Utils.pm
