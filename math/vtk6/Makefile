@@ -14,8 +14,6 @@ COMMENT=	The Visualization Toolkit
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Fails to build
-
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
     		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
