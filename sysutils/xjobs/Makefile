@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xjobs
-PORTVERSION=	20120412
+PORTVERSION=	20140125
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Utility reads job descriptions line by line and executes in parallel
@@ -14,6 +13,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xjobs man/man1/xjobs.1.gz
+USES=		tar:tgz
 
 PORTDOCS=	ChangeLog README
 
