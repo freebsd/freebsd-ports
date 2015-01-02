@@ -3,7 +3,7 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		CRITICAL
