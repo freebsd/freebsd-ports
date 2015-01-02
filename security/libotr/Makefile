@@ -2,6 +2,7 @@
 
 PORTNAME=	libotr
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	security net-im net
 MASTER_SITES=	https://otr.cypherpunks.ca/ \
 		http://www.c-s.li/ports/

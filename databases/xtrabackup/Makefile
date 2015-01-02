@@ -3,6 +3,7 @@
 
 PORTNAME=	xtrabackup
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/redir/downloads/XtraBackup/LATEST/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

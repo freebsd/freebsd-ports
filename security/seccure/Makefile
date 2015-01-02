@@ -3,6 +3,7 @@
 
 PORTNAME=	seccure
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 		${MASTER_SITE_NETBSD}
