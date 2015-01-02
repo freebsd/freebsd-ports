@@ -109,7 +109,7 @@ PLIST_SUB+=			AUDIO="@comment "
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=			yes
-. if ${OSVERSION} >= 1000000
+. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1001000
 EXTRA_PATCHES+=			${FILESDIR}/extra-patch-configure.ac
 CONFIGURE_ENV+=			ECORE_CON_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" ECORE_CON_LIBS="-lssl"
 . else
