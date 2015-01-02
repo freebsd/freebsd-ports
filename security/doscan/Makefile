@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	doscan
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.3.3
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
