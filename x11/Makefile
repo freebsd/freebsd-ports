@@ -7,6 +7,7 @@
     SUBDIR += 9box
     SUBDIR += 9menu
     SUBDIR += alltray
+    SUBDIR += antimicro
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += arandr
