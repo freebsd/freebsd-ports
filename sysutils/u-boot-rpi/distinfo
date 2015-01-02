@@ -1,2 +1,4 @@
 SHA256 (u-boot-2013.01-gonzoua-u-boot-pi.tar.gz) = 29a0d6ffa952483adf37d066bc1823f5f0d62e6534829d6190e9880ef9354f42
 SIZE (u-boot-2013.01-gonzoua-u-boot-pi.tar.gz) = 13850640
+SHA256 (rpi-boot-files-2014.10_1.tar.bz2) = 1c9aaefe6c9558f7e60844b3cb00538eb42d5c45937f3da464cad65fcae4a70b
+SIZE (rpi-boot-files-2014.10_1.tar.bz2) = 1784837
