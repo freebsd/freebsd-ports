@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vtkfox
-PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.gahr.ch/vtkfox/
 
@@ -21,7 +20,7 @@ OPTIONS_DEFAULT=FOX16
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
-GH_COMMIT=	378836c
+GH_COMMIT=	a1c007a
 
 .include <bsd.port.options.mk>
 
