@@ -3,6 +3,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	2014.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}botocore>0:${PORTSDIR}/devel/py-botocore \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:${PORTSDIR}/textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}requests>1:${PORTSDIR}/www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests>1:${PORTSDIR}/www/py-requests \
+		lsof>0:${PORTSDIR}/sysutils/lsof
 
 USES=		python:2
 USE_PYTHON=	distutils
