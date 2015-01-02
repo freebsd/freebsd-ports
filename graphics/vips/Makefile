@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	7.42.0
-PORTREVISION=	1
+PORTVERSION=	7.42.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
