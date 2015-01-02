@@ -2,7 +2,7 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.20120905
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler
 
@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	KERBEROS EXAMPLES
 OPTIONS_DEFAULT=KERBEROS
 
-USES=		makeinfo tar:xz uidfix
+USES=		tar:xz uidfix
 WRKSRC=		${WRKDIR}/call/cvs-build
-INFO=		cvs cvsclient
 
 # bsd.stage.makes sets the wrong value for DESTDIR
 DESTDIRNAME=	NADA
