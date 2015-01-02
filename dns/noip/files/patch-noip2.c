@@ -27,28 +27,3 @@
  	fprintf(stderr, "Options: -C               create configuration data\n");
  	fprintf(stderr, "         -F               force NAT off\n");
  	fprintf(stderr, "         -Y               select all hosts/groups\n");
-@@ -2316,17 +2316,14 @@
- 	dq = (unsigned char *)devs;     // point at name list
- 	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
- 		if (ifa->ifa_addr->sa_family == AF_LINK) {
--// FreeBSD doesn't define some of these!
--#ifdef IFT_PFLOG
- 			struct if_data *ifd = (struct if_data *) ifa->ifa_data;
--			if (ifd->ifi_type == IFT_PFLOG
--				 || ifd->ifi_type == IFT_PFSYNC
--				 || ifd->ifi_type == IFT_ENC
--				 || ifd->ifi_type == IFT_BRIDGE
--				 || ifd->ifi_type == IFT_OTHER
--				 || ifd->ifi_type == IFT_GIF)
--		 	   continue;
--#endif
-+
-+			if (ifd->ifi_type == IFT_OTHER
-+				|| ifd->ifi_type == IFT_GIF
-+				|| ifd->ifi_type == IFT_LOOP
-+				|| ifd->ifi_type == IFT_FAITH)
-+			continue;
-+
- 			q = dq;     // add new name into list
- 			p = ifa->ifa_name;
- 			devnum++;
