@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2013.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-wandboard
 DISTNAME=	u-boot-${PORTVERSION}-technexion-edm
@@ -30,7 +31,7 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.imx \
 
 MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi- \
-		HOSTCC=clang
+		HOSTCC=cc
 
 do-configure:
 	cd ${WRKSRC}; ${GMAKE} ${MAKE_ARGS} edm_cf_imx6_config
