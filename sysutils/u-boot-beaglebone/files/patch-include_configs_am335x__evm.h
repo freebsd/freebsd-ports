@@ -1,6 +1,6 @@
 --- include/configs/am335x_evm.h.orig	2014-10-14 08:47:15 UTC
 +++ include/configs/am335x_evm.h
-@@ -479,4 +479,76 @@
+@@ -479,4 +479,79 @@
  #endif
  #endif  /* NOR support */
  
@@ -15,6 +15,9 @@
 +#define CONFIG_CMD_ENV_EXISTS
 +#define CONFIG_EFI_PARTITION
 +#define CONFIG_SYS_MMC_MAX_DEVICE 2
++#ifndef CONFIG_SYS_DCACHE_OFF
++#define CONFIG_CMD_CACHE
++#endif
 +#endif
 +
 +/* Save the env to the fat partition. */
