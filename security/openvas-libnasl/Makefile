@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libnasl
 PORTVERSION=	2.0.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/561/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacs
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://blu.opsec.eu/
