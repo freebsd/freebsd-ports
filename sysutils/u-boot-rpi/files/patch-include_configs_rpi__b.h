@@ -1,6 +1,6 @@
 --- include/configs/rpi_b.h.orig	2012-11-28 01:28:06 UTC
 +++ include/configs/rpi_b.h
-@@ -183,4 +183,57 @@
+@@ -183,4 +183,64 @@
  #define CONFIG_INITRD_TAG
  #define CONFIG_CMD_BMP
  
@@ -21,40 +21,47 @@
 +#define FAT_ENV_INTERFACE	"mmc"
 +#define FAT_ENV_DEVICE		0
 +#define FAT_ENV_PART		1
-+#define FAT_ENV_FILE		"uboot.env"
++#define FAT_ENV_FILE		"u-boot.env"
 +#define CONFIG_CMD_SAVEENV
 +
 +/* Create a small(ish) boot environment for FreeBSD. */
 +#undef  CONFIG_EXTRA_ENV_SETTINGS
 +#define CONFIG_EXTRA_ENV_SETTINGS \
-+	"bootfile=ubldr\0" \
-+	"fatdev=mmc 0:1\0" \
-+	"loaderdev=disk\0" \
++	"loadaddr=0x00200000\0" \
 +	"stdin=serial\0" \
 +	"stderr=serial,lcd\0" \
 +	"stdout=serial,lcd\0" \
-+	"uenv_file=uEnv.txt\0" \
-+	\
-+	"fatboot=" \
-+	  "env exists user_fatboot && run user_fatboot; " \
++	"Fatboot=" \
++	  "env exists loaderdev || env set loaderdev ${fatdev}; " \
++	  "env exists UserFatboot && run UserFatboot; " \
++	  "echo Booting from: ${fatdev} ${bootfile}; " \
 +	  "fatload ${fatdev} ${loadaddr} ${bootfile} && bootelf; " \
 +	"\0" \
-+	"netboot=" \
++	"Netboot=" \
 +	  "env exists ethact || usb start; " \
-+	  "env exists user_netboot && run user_netboot; " \
++	  "env exists loaderdev || env set loaderdev net; " \
++	  "env exists UserNetboot && run UserNetboot; " \
 +	  "dhcp ${loadaddr} ${bootfile} && bootelf; " \
 +	"\0" \
-+	"preboot=" \
++	"Preboot=" \
 +	  "fdt addr 0x100; " \
-+	  "env exists uenv_import && run uenv_import; " \
-+	  "env exists user_preboot && run user_preboot; " \
++	  "env exists bootfile || bootfile=ubldr; " \
++	  "env exists uenv_file || uenv_file=uEnv.txt; " \
++	  "env exists SetupFatdev && run SetupFatdev; " \
++	  "env exists SetupUenv && run SetupUenv; " \
++	  "env exists UserPreboot && run UserPreboot; " \
 +	"\0" \
-+	"uenv_import=" \
++	"SetupFatdev=" \
++	  "env exists fatdev || fatdev='mmc 0'; " \
++	"\0" \
++	"SetupUenv=" \
 +	  "fatload ${fatdev} ${loadaddr} ${uenv_file} && " \
 +	    "env import -t ${loadaddr} ${filesize}; " \
 +	"\0"
 +
 +#undef  CONFIG_BOOTCOMMAND
-+#define CONFIG_BOOTCOMMAND "run fatboot"
++#define CONFIG_BOOTCOMMAND	"run Fatboot"
++#undef  CONFIG_PREBOOT
++#define CONFIG_PREBOOT		"run Preboot"
 +
  #endif
