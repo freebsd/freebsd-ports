@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Library for ANSII color formatting like HTML for output in terminal
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
 
 USE_RUBY=	yes
