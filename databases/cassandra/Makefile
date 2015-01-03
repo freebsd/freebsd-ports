@@ -51,7 +51,7 @@ SUB_FILES=	repaircluster
 
 MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:${PORTSDIR}/java/mx4j
 JNA_RUN_DEPENDS=	${JAVAJARDIR}/jna.jar:${PORTSDIR}/devel/jna
-CQL_USE=		PYTHON=yes
+CQL_USES=		python
 
 PORTDOCS=	javadoc *.txt
 

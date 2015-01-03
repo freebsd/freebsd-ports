@@ -24,7 +24,7 @@ OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-PYTHON_USE=		PYTHON=2.7+
+PYTHON_USES=		python:2.7+
 PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 .include <bsd.port.options.mk>

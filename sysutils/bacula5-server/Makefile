@@ -39,7 +39,7 @@ OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
 
 .if ${PKGNAMESUFFIX} == "5-client" || ${PKGNAMESUFFIX} == "5-server"  #Till end of the file
 
-PYTHON_USE=		PYTHON=yes
+PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)

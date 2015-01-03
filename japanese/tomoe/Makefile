@@ -35,7 +35,8 @@ MYSQL_DESC=		Enable MySQL dictionary module
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_DESC=		Enable Python module
-PYTHON_USE=		PYTHON=yes GNOME=pygtk2
+PYTHON_USE=		GNOME=pygtk2
+PYTHON_USES=		python
 PYTHON_CONFIGURE_OFF=	--with-python=no
 RUBY_DESC=		Enable Ruby module
 RUBY_USE=		RUBY=yes
