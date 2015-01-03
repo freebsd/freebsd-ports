@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.23.3
+PORTVERSION=	5.24.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="FET" \
 		true
 
 OPTIONS_DEFINE=	EXAMPLES NLS ONLYCL
-ONLYCL_DESC= Build only command line version (without Qt4 GUI)
+ONLYCL_DESC=	Build only command line version (without Qt4 GUI)
 
 OPTIONS_SUB=	yes
 
