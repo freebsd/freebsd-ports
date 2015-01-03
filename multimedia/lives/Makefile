@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.2.6
-PORTREVISION=	3
+PORTVERSION=	2.2.7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ 
 
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libjack.so:${PORTSDIR}/audio/jack \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		liboil-0.3.so:${PORTSDIR}/devel/liboil \
+		libprojectM.so:${PORTSDIR}/graphics/libprojectm \
 		libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04 \
 		libopencv_calib3d.so:${PORTSDIR}/graphics/opencv \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
@@ -47,10 +47,10 @@ SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_GHOSTSCRIPT_RUN=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--disable-ldvgrab --disable-gtk3
+CONFIGURE_ARGS=	--disable-ldvgrab
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
@@ -100,17 +100,17 @@ post-patch:
 	@${REINPLACE_CMD} '/cp -rf/ s|data/|data|g; /cp -rf/ s|icons/|icons|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/cairo/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
+	@${REINPLACE_CMD} '/selectRandom/d' \
+		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	cd ${STAGEDIR}${PREFIX}/bin && ${RM} lives && ${LN} -s lives-exe lives
+	(cd ${STAGEDIR}${PREFIX}/bin && ${RM} lives && ${LN} -s lives-exe lives)
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||}/html ! -type d >> ${TMPPLIST} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||} -type d | ${SORT} -r | \
-	${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||}/html \
+		! -type d >> ${TMPPLIST})
 .endif
 
 .include <bsd.port.mk>

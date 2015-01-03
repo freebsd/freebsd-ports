@@ -96,6 +96,7 @@ lib/lives/plugins/effects/realtime/weed/onedTV.so
 lib/lives/plugins/effects/realtime/weed/palette_test.so
 lib/lives/plugins/effects/realtime/weed/plasma.so
 lib/lives/plugins/effects/realtime/weed/posterise.so
+lib/lives/plugins/effects/realtime/weed/projectM.so
 lib/lives/plugins/effects/realtime/weed/puretext.so
 lib/lives/plugins/effects/realtime/weed/randomiser.so
 lib/lives/plugins/effects/realtime/weed/revTV.so
@@ -191,7 +192,7 @@ lib/lives/plugins/playback/video/vloopback.so
 lib/lives/plugins/playback/video/vloopback2.so
 lib/lives/plugins/playback/video/yuv4mpeg_stream.so
 libdata/pkgconfig/libweed-compat.pc
-libdata/pkgconfig/libweed-plugin-utils.pc
+libdata/pkgconfig/libweed-plugin.pc
 libdata/pkgconfig/libweed-utils.pc
 libdata/pkgconfig/libweed.pc
 libdata/pkgconfig/libweed_slice.pc
