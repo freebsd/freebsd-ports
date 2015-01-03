@@ -16,7 +16,7 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-WWW-Scraper-ISBN>=1.00:${PORTSDIR}/www/p5-WWW-Scraper-ISBN
 RUN_DEPENDS=	p5-Template-Extract>=0:${PORTSDIR}/textproc/p5-Template-Extract \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-WWW-Scraper-ISBN>=1.00:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Driver
+		p5-WWW-Scraper-ISBN>=1.00:${PORTSDIR}/www/p5-WWW-Scraper-ISBN
 
 USES=		perl5
 USE_PERL5=	configure
