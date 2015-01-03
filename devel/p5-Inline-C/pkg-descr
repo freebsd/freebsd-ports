@@ -1,0 +1,6 @@
+Inline::C is a module that allows you to write Perl subroutines in C. Since
+version 0.30 the Inline module supports multiple programming languages and each
+language has its own support module. This document describes how to use Inline
+with the C programming language. It also goes a bit into Perl C internals.
+
+WWW: http://search.cpan.org/dist/Inline-C/

@@ -2244,6 +2244,7 @@
     SUBDIR += p5-Import-Into
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
+    SUBDIR += p5-Inline-C
     SUBDIR += p5-Inline-CPP
     SUBDIR += p5-Inline-Files
     SUBDIR += p5-Inline-Filters
