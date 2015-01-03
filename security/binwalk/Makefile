@@ -1,40 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	binwalk
-PORTVERSION=	0.5.0
-PORTREVISION=	2
-CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+PORTVERSION=	2.0.1
+CATEGORIES=	security python
+MASTER_SITES=	http://github.com/devttys0/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Search binary images for embedded files and executable code
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-
-PLIST_FILES=	bin/binwalk \
-		etc/binwalk/extract.conf \
-		etc/binwalk/magic.binarch \
-		etc/binwalk/magic.bincast \
-		etc/binwalk/magic.binwalk
-
-PORTDOCS=	README
-
+USES=		python gmake
+USE_PYTHON=	autoplist distutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/docs/README \
-		${STAGEDIR}${DOCSDIR}
+BUILD_DEPENDS=	liblzma>=0:${PORTSDIR}/archivers/py-liblzma
+RUN_DEPENDS=	/usr/local/bin/7z:${PORTSDIR}/archivers/p7zip \
+		/usr/local/bin/cabextract:${PORTSDIR}/archivers/cabextract
 
 .include <bsd.port.mk>
