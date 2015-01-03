@@ -11,7 +11,7 @@ DISTNAME=	PyMT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module which provides Movable Type XML-RPC connectivity
 
-USE_PYTHON=	2
+USES=		python:2
 NO_BUILD=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMT.py
 

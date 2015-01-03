@@ -12,10 +12,7 @@ DISTNAME=	grappelli_safe-${PORTVERSION}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of django-grappelli for Mezzanine CMS
 
-USE_PYTHON=	yes
-USES=		gettext
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	grappelli_safe
+USES=		gettext python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

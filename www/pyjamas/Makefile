@@ -11,11 +11,9 @@ DISTNAME=	Pyjamas-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Port of Google Web Toolkit to Python
 
-USE_PYTHON=	yes
 # install/require some libraries in sys.prefix
-USE_PYTHON_PREFIX=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist pythonprefix
 
 REINPLACE_ARGS=	-i '' -e 's,../../bin,${PREFIX}/bin,'
 

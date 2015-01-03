@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>0:${PORTSDIR}/www/py-django14
 
 CONFLICTS=	py[23][0-9]-django-pipeline-[0-9]*
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		python:2
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

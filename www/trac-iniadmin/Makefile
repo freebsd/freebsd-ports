@@ -15,9 +15,8 @@ COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

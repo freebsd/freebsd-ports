@@ -14,9 +14,8 @@ COMMENT=	Modified ticket security for Trac
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

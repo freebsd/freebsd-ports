@@ -15,7 +15,7 @@ COMMENT=	Easily tweak Trac pages with JavaScript expressions
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*\.(css|html|js|py|txt)$
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
@@ -24,9 +24,7 @@ PORTEXAMPLES=	*
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 post-install:
 	cd ${WRKSRC}/tractweakui/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}

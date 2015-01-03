@@ -14,7 +14,7 @@ COMMENT=	Web Offer One File, an ad-hoc single file webserver
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 PLIST_FILES=	bin/woof
 

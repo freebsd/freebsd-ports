@@ -16,8 +16,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-timingandestimation>=0:${PORTSDIR}/www/trac-timingandestimation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

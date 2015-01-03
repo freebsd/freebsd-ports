@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}cssselect>=0.9:${PORTSDIR}/www/py-cssselect \
 		${PYTHON_PKGNAMEPREFIX}queuelib>=1.2.2:${PORTSDIR}/sysutils/py-queuelib
 
-USE_PYTHON=	2
 USES=		python:2 twisted:run,web
 USE_PYTHON=	distutils autoplist
 

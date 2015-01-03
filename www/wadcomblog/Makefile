@@ -10,8 +10,8 @@ MASTER_SITES=	http://laffaye.free.fr/distfiles/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple open-source static blog engine written in Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>

@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi2.* mod_wsgi2.* \
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	22+
-USE_PYTHON=	yes
+USES=		python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"

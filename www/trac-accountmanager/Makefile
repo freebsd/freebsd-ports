@@ -18,10 +18,8 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			12583
-USES=			zip
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			python:2 zip
+USE_PYTHON=		distutils autoplist
 WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 
 # --- trac.ini

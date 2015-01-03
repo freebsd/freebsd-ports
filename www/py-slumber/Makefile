@@ -27,9 +27,8 @@ GH_ACCOUNT=	dstufft
 GH_COMMIT=	85b17b9
 GH_TAGNAME=	v${DISTVERSION}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

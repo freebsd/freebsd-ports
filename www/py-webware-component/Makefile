@@ -13,7 +13,7 @@ COMMENT=	Webware servlet component extension
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webware>0:${PORTSDIR}/www/py-webware
 
-USE_PYTHON=	2
+USES=		python:2
 
 do-build:
 	@${ECHO_MSG} -n ">> Compiling ..."

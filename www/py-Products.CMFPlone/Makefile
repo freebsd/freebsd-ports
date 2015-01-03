@@ -116,8 +116,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
-USES=		zip
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USES=		python:2 zip
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

@@ -13,9 +13,7 @@ COMMENT=	Routing package for Python that matches URLs to dicts and vice versa
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	Routes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

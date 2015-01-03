@@ -15,7 +15,7 @@ LICENSE=	BSD4CLAUSE
 RUN_DEPENDS=	rdjpgcom:${PORTSDIR}/graphics/jpeg \
 		identify:${PORTSDIR}/graphics/ImageMagick
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/imgsizer.1.gz

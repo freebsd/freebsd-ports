@@ -26,7 +26,7 @@ NO_BUILD=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCALLGRAPH}
-USE_PYTHON=	yes
+USES+=		python
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 

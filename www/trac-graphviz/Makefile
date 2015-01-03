@@ -18,8 +18,8 @@ RUN_DEPENDS+=	urwfonts>0:${PORTSDIR}/x11-fonts/urwfonts \
 		dot:${PORTSDIR}/graphics/graphviz \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	graphviz
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin
 

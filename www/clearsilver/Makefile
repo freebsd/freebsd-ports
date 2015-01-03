@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--disable-apache --disable-perl --disable-ruby \
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
-USE_PYTHON=	yes
+USES+=		python
 PLIST_SUB+=	PYTHON=""
 PKGNAMESUFFIX=	-python
 .else

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/monast/MonAst%20for%20Asterisk%201.4_1.6/1.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring and an operator panel interface for AsteriskTM
 
-USE_PYTHON=	yes
+USES=		python
 USE_RC_SUBR=	monast
 
 NO_BUILD=	YES

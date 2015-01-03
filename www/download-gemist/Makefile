@@ -11,7 +11,7 @@ COMMENT=	Download videos from the Dutch uitzending gemist site
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/download-gemist \

@@ -24,11 +24,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USES=		zip
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

@@ -14,10 +14,8 @@ COMMENT=	Plugin for creating date fields
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USES=		zip
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 zip
+USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/datefieldplugin/0.11
 REL=		7267
 

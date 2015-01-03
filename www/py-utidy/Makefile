@@ -16,10 +16,8 @@ COMMENT=	Python interface to tidy-lib
 # XXX Better depend on tidy or tidy-devel???
 LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
 
-USES=		zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 zip
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} \

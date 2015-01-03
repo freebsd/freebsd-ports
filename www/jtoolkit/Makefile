@@ -14,8 +14,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kid>=0.9.5:${PORTSDIR}/devel/py-kid
 # Has optional dependencies on database engines
 # Can optionally use py-lucene (on i386)
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYSETUP=	${PORTNAME}Setup.py
 
 .include <bsd.port.mk>

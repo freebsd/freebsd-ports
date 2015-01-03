@@ -13,9 +13,7 @@ COMMENT=	Easy python web framework
 
 LICENSE=	BSD2CLAUSE
 
-USES=			dos2unix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

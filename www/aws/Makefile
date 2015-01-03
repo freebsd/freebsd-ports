@@ -21,10 +21,9 @@ BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
 RUN_DEPENDS=	templates_parser>11:${PORTSDIR}/textproc/templates_parser \
 		xmlada>=4.4:${PORTSDIR}/textproc/xmlada
 
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-USES=		ada gmake tar:bzip2
+USES=		ada gmake python tar:bzip2
 DOTBUILD=	release
 LINK_SSL=	--
 LINK_TLS=	--
