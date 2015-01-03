@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -12,15 +12,19 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's panel
 
-LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_DISTFILES=	${WRKSRC}/COPYING \
+	${WRKSRC}/COPYING.LIB
+
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		desktop-file-utils gmake libtool:keepla pathfix perl5 \
 		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 intltool intlhack libwnck
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	x11 sm

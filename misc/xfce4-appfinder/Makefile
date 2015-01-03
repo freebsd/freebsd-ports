@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-appfinder
 PORTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	misc xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -29,5 +30,11 @@ CONFIGURE_ARGS+=--enable-nls
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|=gtk-find|=system-search|' \
+		${WRKSRC}/data/xfce4-appfinder.desktop.in
+	${REINPLACE_CMD} -e 's|=gtk-execute|=system-run|' \
+		${WRKSRC}/data/xfce4-run.desktop.in
 
 .include <bsd.port.mk>

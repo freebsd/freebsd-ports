@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -24,5 +24,9 @@ USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	x11
 
 CONFIGURE_ARGS=--enable-ipv6
+
+post-patch:
+	${REINPLACE_CMD} -e 's|xfce-mail|mail-send|' \
+		${WRKSRC}/panel-plugin/mailwatch-plugin.c
 
 .include <bsd.port.mk>
