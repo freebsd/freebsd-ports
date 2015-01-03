@@ -3,7 +3,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
@@ -125,5 +125,9 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=gvfs
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|internet-mail|mail-send|' \
+		${WRKSRC}/plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in
 
 .include <bsd.port.mk>
