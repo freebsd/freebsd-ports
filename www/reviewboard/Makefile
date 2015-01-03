@@ -36,8 +36,8 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_PKGNAMEPREFIX}jsmin>0:${PORTSDIR}/devel/py-jsmin \
 		uglifyjs:${PORTSDIR}/www/uglifyjs
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	ReviewBoard
 # avoid leftover /root/.subversion
 MAKE_ENV+=		HOME=${WRKDIR}

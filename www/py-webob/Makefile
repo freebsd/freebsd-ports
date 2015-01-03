@@ -19,14 +19,11 @@ OPTIONS_DEFINE= DOCS TESTS
 
 PORTDOCS=	*
 
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 TESTS_BUILD_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 TESTS_DESC=	Run tests with Nose
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
 
 .include <bsd.port.options.mk>
 

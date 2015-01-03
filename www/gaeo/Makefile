@@ -16,10 +16,8 @@ RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \
 
 PROJECTHOST=	google-app-engine-oil
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	LICENSE NOTICE README.TXT CHANGELOG
 

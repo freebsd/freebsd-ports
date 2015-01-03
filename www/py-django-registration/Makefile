@@ -15,10 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		gettext
+USES=		gettext python
+USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	pootle-*
 

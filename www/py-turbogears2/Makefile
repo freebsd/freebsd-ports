@@ -30,8 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:${PORTSDIR}/devel/py-Tos
 		${PYTHON_PKGNAMEPREFIX}mako>=0:${PORTSDIR}/textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.4:${PORTSDIR}/devel/py-babel
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

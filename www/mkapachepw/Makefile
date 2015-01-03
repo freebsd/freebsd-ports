@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tundraware.com/Software/mkapachepw/
 MAINTAINER=	mkapachepw@tundraware.com
 COMMENT=	Group & Password Management Tool For Apache
 
-USE_PYTHON=	yes
+USES=		python
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

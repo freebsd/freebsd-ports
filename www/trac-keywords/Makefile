@@ -14,12 +14,10 @@ COMMENT=	Plugin for using pre-configured keywords
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USES=		zip
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-WRKSRC=			${WRKDIR}/trackeywordsplugin/0.11
-REL=			7273
+USES=		python:2 zip
+USE_PYTHON=	distutils autoplist
+WRKSRC=		${WRKDIR}/trackeywordsplugin/0.11
+REL=		7273
 
 post-extract:
 # Fix misplaced Genshi template: https://trac-hacks.org/ticket/6104

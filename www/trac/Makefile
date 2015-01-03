@@ -41,15 +41,13 @@ PORTEXAMPLES=		*
 PORTDATA=		*
 MAKE_ENV=		HOME=/dev/null
 
-USES=			shebangfix
+USES=			python:2 shebangfix
 SHEBANG_FILES=		contrib/cgi-bin/trac.fcgi contrib/cgi-bin/trac.cgi \
 			trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
 			trac/tests/functional/testenv.py trac/tests/functional/compat.py \
 			trac/tests/functional/__init__.py contrib/emailfilter.py \
 			contrib/checkwiki.py contrib/htpasswd.py
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=		distutils autoplist
 USE_RC_SUBR=		tracd
 SUB_LIST+=		PYTHON_CMD=${PYTHON_CMD}
 

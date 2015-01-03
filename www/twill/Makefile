@@ -10,9 +10,8 @@ MASTER_SITES=	http://darcs.idyll.org/~t/projects/
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Simple scripting language for Web browsing
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

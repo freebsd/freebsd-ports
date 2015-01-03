@@ -17,10 +17,8 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			13353
-USES=			zip:infozip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			python zip:infozip
+USE_PYTHON=		distutils autoplist
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin/tags/${PORTVERSION}
 
 .include "${.CURDIR}/../../www/trac/plugin.mk"

@@ -14,8 +14,8 @@ PROJECTHOST=	sitemap-generators
 
 NO_WRKSUBDIR=
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	sitemap_gen
 
 .include <bsd.port.mk>

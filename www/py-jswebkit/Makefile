@@ -17,9 +17,7 @@ BUILD_DEPENDS=		cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
-USES=			pkgconfig
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		pkgconfig python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

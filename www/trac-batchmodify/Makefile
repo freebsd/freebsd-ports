@@ -15,11 +15,9 @@ COMMENT=	Enables users to modify several tickets together at once
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-USES=		zip
+USES=		python:2 zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12/trunk
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	Web interface for anyRemote
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 
 GNU_CONFIGURE=	yes
-USE_PYTHON_RUN=	yes
+USES=		python:run
 
 PORTDOCS=	ChangeLog README COPYING AUTHORS
 

@@ -17,8 +17,8 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 

@@ -10,8 +10,8 @@ MASTER_SITE_SUBDIR=source/u/${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	uWSGI top-like app
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 post-install:
 		${MKDIR} ${STAGEDIR}${DOCSDIR}

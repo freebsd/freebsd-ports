@@ -11,8 +11,8 @@ COMMENT=	Lightweight weblog system
 
 LICENSE=	MIT
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

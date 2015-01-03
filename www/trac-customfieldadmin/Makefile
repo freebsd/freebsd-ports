@@ -16,11 +16,9 @@ COMMENT=	Web interface to administer Trac ticket custom fields
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USES=		zip
+USES=		python:2 zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ DISTNAME=	session2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quixote session manager with persistence support
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.6
 
 OPTIONS_DEFINE=	MYSQL PGSQL DOCS

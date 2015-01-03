@@ -15,9 +15,8 @@ COMMENT=	Plugin that provides a project Blog
 
 RUN_DEPENDS+=	trac-fullblog>=0.1.1:${PORTSDIR}/www/trac-fullblog
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .if defined(BOOTSTRAP)
 do-fetch:
