@@ -1,8 +1,8 @@
-bin/sqlite3
-include/sqlite3.h
-include/sqlite3ext.h
-lib/libsqlite3.so.0.8.6
-lib/libsqlite3.so.0
-lib/libsqlite3.so
-lib/libsqlite3.a
-libdata/pkgconfig/sqlite3.pc
+bin/sqlcipher
+include/sqlcipher/sqlite3.h
+include/sqlcipher/sqlite3ext.h
+lib/libsqlcipher.so.0.8.6
+lib/libsqlcipher.so.0
+lib/libsqlcipher.so
+lib/libsqlcipher.a
+libdata/pkgconfig/sqlcipher.pc
