@@ -1,3 +1,7 @@
 %%SITE_ARCH%%/List/MoreUtils.pm
+%%SITE_ARCH%%/List/MoreUtils/PP.pm
+%%SITE_ARCH%%/List/MoreUtils/XS.pm
 %%SITE_ARCH%%/auto/List/MoreUtils/MoreUtils.so
 %%PERL5_MAN3%%/List::MoreUtils.3.gz
+%%PERL5_MAN3%%/List::MoreUtils::PP.3.gz
+%%PERL5_MAN3%%/List::MoreUtils::XS.3.gz
