@@ -294,6 +294,7 @@ lib/kamailio/modules/xprint.so
 %%PGSQL%%%%DATADIR%%/postgres/imc-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/lcr-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/matrix-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/mohqueue-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/msilo-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/mtree-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/pdt-create.sql
@@ -303,6 +304,7 @@ lib/kamailio/modules/xprint.so
 %%PGSQL%%%%DATADIR%%/postgres/purple-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/registrar-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/rls-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/rtpproxy-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/sca-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/siptrace-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/speeddial-create.sql
