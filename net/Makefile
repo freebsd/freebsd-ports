@@ -1281,6 +1281,7 @@
     SUBDIR += xrdesktop
     SUBDIR += xrdp
     SUBDIR += xrdp-devel
+    SUBDIR += yami4
     SUBDIR += yaph
     SUBDIR += yate
     SUBDIR += yaz
