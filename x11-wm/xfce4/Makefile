@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	4.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -12,14 +12,15 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The "meta-port" for the Xfce Desktop Environment
 
-OPTIONS_DEFINE=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFY XPM
-OPTIONS_DEFAULT=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER NOTIFY
-ORAGE_DESC=	Install the Xfce calendar application
-MOUSEPAD_DESC=	Install the Xfce text editor
-TERMINAL_DESC=	Install the Xfce terminal application
-APPFINDER_DESC=	Install the Xfce application finder
-SQUEEZE_DESC=	Install the Xfce archiver application
-XPM_DESC=	Install the Xfce power manager
+OPTIONS_DEFINE=	APPFINDER ICONS MIXER MOUSEPAD NOTIFY ORAGE PRINT SLIM SQUEEZE TERMINAL XPM
+OPTIONS_DEFAULT=	APPFINDER ICONS MOUSEPAD NOTIFY ORAGE TERMINAL
+ORAGE_DESC=	Calendar
+MOUSEPAD_DESC=	Text editor
+TERMINAL_DESC=	Terminal emulator
+APPFINDER_DESC=	Launcher and finder
+SQUEEZE_DESC=	Archive manager
+XPM_DESC=	Power manager
+SLIM_DESC=	SLiM, login manager
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
@@ -34,15 +35,8 @@ LATEST_LINK=	xfce4
 NO_MTREE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGDM}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
-REINPLACE_ARGS=	-i ""
-PLIST_FILES=	etc/gdm/Sessions/XFce4 \
-		etc/dm/Sessions/XFce4.desktop
-.endif
-
 .if ${PORT_OPTIONS:MICONS}
-RUN_DEPENDS+=	icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
+RUN_DEPENDS+=	gnome-icon-theme>=3.12.0:${PORTSDIR}/misc/gnome-icon-theme
 .endif
 
 .if ${PORT_OPTIONS:MORAGE}
@@ -81,19 +75,10 @@ RUN_DEPENDS+=	xfce4-notifyd-config:${PORTSDIR}/deskutils/xfce4-notifyd
 RUN_DEPENDS+=	xfce4-power-manager:${PORTSDIR}/sysutils/xfce4-power-manager
 .endif
 
-do-install:	# empty
-
-post-install:
-.if ${PORT_OPTIONS:MGDM}
-.for dir in dm gdm
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${dir}/Sessions
-.endfor
-	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 \
-		${STAGEDIR}${PREFIX}/etc/gdm/Sessions
-	@${INSTALL_DATA} ${FILESDIR}/XFce4.desktop \
-		${STAGEDIR}${PREFIX}/etc/dm/Sessions
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
-		${STAGEDIR}${PREFIX}/etc/dm/Sessions/XFce4.desktop
+.if ${PORT_OPTIONS:MSLIM}
+RUN_DEPENDS+=	slim:${PORTSDIR}/x11/slim
 .endif
+
+do-install:	# empty
 
 .include <bsd.port.mk>
