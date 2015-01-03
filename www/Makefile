@@ -1151,6 +1151,7 @@
     SUBDIR += p5-STF-Dispatcher-PSGI
     SUBDIR += p5-SWF-Chart
     SUBDIR += p5-Scrappy
+    SUBDIR += p5-Selenium-Remote-Driver
     SUBDIR += p5-Session-Storage-Secure
     SUBDIR += p5-Squatting
     SUBDIR += p5-Squatting-On-PSGI

@@ -1,0 +1,7 @@
+Selenium is a test tool that allows you to write automated web
+application UI tests in any programming language against any HTTP
+website using any mainstream JavaScript-enabled browser. This module
+is an implementation of the client for the Remote driver that
+Selenium provides.
+
+WWW: http://search.cpan.org/dist/Selenium-Remote-Driver/
