@@ -18,7 +18,6 @@ share/apps/plasma/plasmoids/org.kde.ktp-contact/contents/ui/Avatar.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contact/contents/ui/Contact.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contact/contents/ui/DropDownMenu.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contact/contents/ui/main.qml
-share/apps/plasma/plasmoids/org.kde.ktp-contactlist/contents/ui/ContactDisplayName.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contactlist/contents/ui/ContactList.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contactlist/contents/ui/ExternalLabel.qml
 share/apps/plasma/plasmoids/org.kde.ktp-contactlist/contents/ui/ListContactDelegate.qml
@@ -66,6 +65,8 @@ share/locale/kk/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/km/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/km/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.ktp-contact.mo
