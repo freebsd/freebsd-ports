@@ -325,7 +325,7 @@ CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
-NGINX_CACHE_PURGE_VERSION=	2.1
+NGINX_CACHE_PURGE_VERSION=	2.3
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
