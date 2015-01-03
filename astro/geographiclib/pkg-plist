@@ -52,7 +52,7 @@ include/GeographicLib/Utility.hpp
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.14
-lib/libGeographic.so.14.0.0
+lib/libGeographic.so.14.0.1
 %%PYTHON_SITELIBDIR%%/geographiclib/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/accumulator.py
 %%PYTHON_SITELIBDIR%%/geographiclib/constants.py
@@ -187,3 +187,5 @@ share/cmake/GeographicLib/FindGeographicLib.cmake
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm.cof
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm.cof
+%%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm
+%%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm.cof
