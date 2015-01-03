@@ -3,17 +3,17 @@
 
 PORTNAME=	BBBike
 PORTVERSION=	3.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Route-finder for cyclists in Berlin and Brandenburg
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+BUILD_DEPENDS=	p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
-		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 
 USES=		perl5
@@ -33,6 +33,9 @@ LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e '$$x = qq{$$Config{version}/$$Config{arch
 .endif
 PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 BBBIKE_PERL_EXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
+
+post-patch:
+	@${RM} ${WRKSRC}/tmp/.keep_me
 
 do-build:
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
