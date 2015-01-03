@@ -75,7 +75,7 @@ QT4_CMAKE_ON=		-DOSG_USE_QT=ON
 QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
 LUA_USES=		lua:52
 V8_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
-PYTHON_USE=		PYTHON=2
+PYTHON_USES=		python:2
 
 .include <bsd.port.options.mk>
 

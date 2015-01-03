@@ -39,7 +39,8 @@ MONO_CONFIGURE_WITH=	mono
 PYTHON_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 			${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 PYTHON_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
-PYTHON_USE=		GNOME=pygobject PYTHON=yes
+PYTHON_USE=		GNOME=pygobject
+PYTHON_USES=		python
 PYTHON_CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig2.0"
 PYTHON_CONFIGURE_WITH=	python
 
