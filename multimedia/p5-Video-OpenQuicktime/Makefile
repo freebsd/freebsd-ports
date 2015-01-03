@@ -3,7 +3,7 @@
 
 PORTNAME=	Video-OpenQuicktime
 PORTVERSION=	1.02
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the OpenQuicktime library
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0.01:${PORTSDIR}/devel/p5-Inline-C
 LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
-RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 
