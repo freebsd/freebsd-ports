@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Inline-CPP
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,14 +12,13 @@ COMMENT=	Write Perl subroutines and classes in C++
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Inline>=0.53:${PORTSDIR}/devel/p5-Inline \
+BUILD_DEPENDS=	p5-Inline>=0.78:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0.67:${PORTSDIR}/devel/p5-Inline-C \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-ExtUtils-CppGuess>=0.07:${PORTSDIR}/devel/p5-ExtUtils-CppGuess
 
 USES=		perl5
 USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
