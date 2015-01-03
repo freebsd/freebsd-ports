@@ -105,3 +105,5 @@ include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
 include/SFCGAL/version.h.cmake
 lib/libSFCGAL.so
+lib/libSFCGAL.so.1
+lib/libSFCGAL.so.1.0.5
