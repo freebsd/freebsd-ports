@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-PORTVERSION=	1.39
+PORTVERSION=	1.40
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib:geoids,gravity,magnetic
@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOXYGEN PERL
 OPTIONS_DEFAULT=	DOXYGEN PERL\
 			GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84\
-			MAGNETIC_WMM2010 MAGNETIC_IGRF11
+			MAGNETIC_WMM2015 MAGNETIC_IGRF11
 PERL_DESC=	Build documentation with pod2man and pod2html
 OPTIONS_GROUP=	DATASETS
 OPTIONS_SUB=	yes
@@ -43,7 +43,7 @@ PERL_CONFIGURE_ENV_OFF=	ac_cv_prog_POD2MAN= ac_cv_prog_POD2HTML=
 GEOID_NAMES:=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
 GRAVITY_NAMES:=		egm84 egm96 egm2008 wgs84 grs80
-MAGNETIC_NAMES:=	wmm2010 igrf11 emm2010
+MAGNETIC_NAMES:=	wmm2010 wmm2015 igrf11 emm2010
 
 .for n in ${GEOID_NAMES}
 GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=		Install ${n} geoid dataset
