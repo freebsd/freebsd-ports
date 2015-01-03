@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ReadLine-Gnu
-PORTVERSION=	1.24
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=Term
@@ -19,9 +18,5 @@ LICENSE_COMB=	dual
 USES=		perl5 readline
 CFLAGS+=	${CPPFLAGS}
 USE_PERL5=	configure
-WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
-
-test:	build
-	@(cd ${WRKSRC}; ${MAKE_CMD} test)
 
 .include <bsd.port.mk>
