@@ -303,9 +303,6 @@ lib/libftgl-tulip-%%TULIP_VERS%%.so.2
 lib/libftgl-tulip-%%TULIP_VERS%%.so.2.1
 lib/libgzstream-tulip-%%TULIP_VERS%%.so
 lib/libgzstream-tulip-%%TULIP_VERS%%.so.0
-lib/libquazip-tulip-%%TULIP_VERS%%.so
-lib/libquazip-tulip-%%TULIP_VERS%%.so.1
-lib/libquazip-tulip-%%TULIP_VERS%%.so.1.0.0
 lib/libqxt-tulip-%%TULIP_VERS%%.so
 lib/libqxt-tulip-%%TULIP_VERS%%.so.0
 lib/libtulip-core-%%TULIP_VERS%%.so
