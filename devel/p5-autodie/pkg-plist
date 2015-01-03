@@ -1,12 +1,3 @@
-%%PERL5_MAN3%%/Fatal.3.gz
-%%PERL5_MAN3%%/autodie.3.gz
-%%PERL5_MAN3%%/autodie::Scope::Guard.3.gz
-%%PERL5_MAN3%%/autodie::Scope::GuardStack.3.gz
-%%PERL5_MAN3%%/autodie::ScopeUtil.3.gz
-%%PERL5_MAN3%%/autodie::exception.3.gz
-%%PERL5_MAN3%%/autodie::exception::system.3.gz
-%%PERL5_MAN3%%/autodie::hints.3.gz
-%%PERL5_MAN3%%/autodie::skip.3.gz
 %%SITE_PERL%%/Fatal.pm
 %%SITE_PERL%%/autodie.pm
 %%SITE_PERL%%/autodie/Scope/Guard.pm
@@ -16,3 +7,12 @@
 %%SITE_PERL%%/autodie/exception/system.pm
 %%SITE_PERL%%/autodie/hints.pm
 %%SITE_PERL%%/autodie/skip.pm
+%%PERL5_MAN3%%/Fatal.3.gz
+%%PERL5_MAN3%%/autodie.3.gz
+%%PERL5_MAN3%%/autodie::Scope::Guard.3.gz
+%%PERL5_MAN3%%/autodie::Scope::GuardStack.3.gz
+%%PERL5_MAN3%%/autodie::ScopeUtil.3.gz
+%%PERL5_MAN3%%/autodie::exception.3.gz
+%%PERL5_MAN3%%/autodie::exception::system.3.gz
+%%PERL5_MAN3%%/autodie::hints.3.gz
+%%PERL5_MAN3%%/autodie::skip.3.gz
