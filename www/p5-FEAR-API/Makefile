@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Zen
 
+LICENSE=	ARTPERL10
+
 BUILD_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
