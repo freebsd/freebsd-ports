@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/Geo::KML.3.gz
-%%PERL5_MAN3%%/Geo::KML::Util.3.gz
 %%SITE_PERL%%/Geo/KML.pm
 %%SITE_PERL%%/Geo/KML.pod
 %%SITE_PERL%%/Geo/KML/Util.pm
@@ -12,3 +10,5 @@
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/kml22gx.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
 %%SITE_PERL%%/Geo/KML/xsd/xal-2.0/xAL.xsd
+%%PERL5_MAN3%%/Geo::KML.3.gz
+%%PERL5_MAN3%%/Geo::KML::Util.3.gz
