@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB} -lncursesw
 
+DOCS_BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils
+
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
 
