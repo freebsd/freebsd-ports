@@ -23,4 +23,7 @@ CONFIGURE_ENV=	options="FT,GIF,JPEG,PNG,XPM" \
 USES=		perl5
 USE_PERL5=	configure
 
+post-patch:
+	@${CHMOD} u+w ${WRKSRC}/bdf_scripts/bdf2gdfont.pl
+
 .include <bsd.port.mk>
