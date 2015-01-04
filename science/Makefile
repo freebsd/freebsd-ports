@@ -85,6 +85,7 @@
     SUBDIR += metaf2xml
     SUBDIR += minc2
     SUBDIR += mol2ps
+    SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += ncs
