@@ -45,4 +45,3 @@ man/man7/megatools.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gjs-1.0/mega.js
