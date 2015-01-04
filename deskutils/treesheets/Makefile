@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treesheets
-PORTVERSION=	0.0.20141104
+PORTVERSION=	0.0.20141225
 CATEGORIES=	deskutils
 
 MAINTAINER=	lightside@gmx.com
@@ -13,14 +13,13 @@ LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	4417a4f
+GH_COMMIT=	6ff99fb
 GH_TAGNAME=	${GH_COMMIT}
 
 BUILD_WRKSRC=	${WRKSRC}/src
 EXTRACT_AFTER_ARGS=	--exclude .gitignore
 
-USES=		compiler:c++11-lang
+USES=		compiler:c++11-lib
 USE_WX=		3.0+
 WX_UNICODE=	yes
 
