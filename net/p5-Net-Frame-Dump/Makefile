@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Frame-Dump
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +12,9 @@ COMMENT=	Tcpdump like perl implementation
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
+BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
 		p5-Net-Frame>=0:${PORTSDIR}/net/p5-Net-Frame \
-    		p5-Net-Pcap>=0.12:${PORTSDIR}/net/p5-Net-Pcap \
-    		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor
+    		p5-Net-Pcap>=0.12:${PORTSDIR}/net/p5-Net-Pcap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
