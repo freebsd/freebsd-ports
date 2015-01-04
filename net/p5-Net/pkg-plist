@@ -2,6 +2,7 @@
 %%PERL5_MAN3%%/Net::Config.3.gz
 %%PERL5_MAN3%%/Net::Domain.3.gz
 %%PERL5_MAN3%%/Net::FTP.3.gz
+%%PERL5_MAN3%%/Net::FTP::dataconn.3.gz
 %%PERL5_MAN3%%/Net::NNTP.3.gz
 %%PERL5_MAN3%%/Net::Netrc.3.gz
 %%PERL5_MAN3%%/Net::POP3.3.gz
