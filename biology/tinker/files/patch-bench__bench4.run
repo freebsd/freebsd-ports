@@ -1,7 +1,5 @@
---- bench/bench4.run.orig	Tue Jul 24 14:02:20 2001
-+++ bench/bench4.run	Wed Sep  5 14:02:17 2001
-@@ -1,3 +1,3 @@
- cp bench4.dyn0 bench4.dyn
+--- bench/bench4.run.orig	2014-12-16 05:17:53.000000000 +0200
++++ bench/bench4.run	2014-12-28 18:56:02.000000000 +0200
+@@ -1 +1 @@
 -time ../bin/dynamic bench4 1000 1.0 10.0 2 298.0
 +time dynamic bench4 1000 1.0 10.0 2 298.0
- rm bench4.dyn
