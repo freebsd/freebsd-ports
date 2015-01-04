@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.18
-PORTREVISION=	1
+PORTVERSION=	2.8.21
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -30,14 +29,14 @@ GNUTLS_LDFLAGS=		-L${LOCALBASE}/lib
 OPENSSL_CONFIGURE_ENABLE=	ssl
 
 post-patch:
-	${REINPLACE_CMD} -e 's| sys/timeb.h | |' \
+	@${REINPLACE_CMD} -e 's| sys/timeb.h | |' \
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
-	@${INSTALL_DATA} ${WRKSRC}/gsoap/stdsoap2.c \
+	${INSTALL_DATA} ${WRKSRC}/gsoap/stdsoap2.c \
 	    ${STAGEDIR}${PREFIX}/lib/gsoap
 	@${LN} -fs stdsoap2.c ${STAGEDIR}${PREFIX}/lib/gsoap/stdsoap2.cpp
 
