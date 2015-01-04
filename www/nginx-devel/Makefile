@@ -357,8 +357,8 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
 USE_HTTP_DAV=	yes
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-NGINX_DAV_EXT_VERSION=	0.0.2
-GIT_DAV_EXT_VERSION=	0-g0e07a3e
+NGINX_DAV_EXT_VERSION=	0.0.3
+GIT_DAV_EXT_VERSION=	0-g6974186
 MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_VERSION}/:dav_ext
 DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_VERSION}-${GIT_DAV_EXT_VERSION}.tar.gz:dav_ext
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_VERSION:S/^0-g//}
