@@ -26,6 +26,7 @@ lib/libthunarx-2.so.0.0.0
 libdata/pkgconfig/thunarx-2.pc
 man/man1/Thunar.1.gz
 share/Thunar/sendto/thunar-sendto-email.desktop
+share/appdata/thunar.appdata.xml
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
@@ -33,38 +34,6 @@ share/applications/thunar-settings.desktop
 share/dbus-1/services/org.xfce.FileManager.service
 share/dbus-1/services/org.xfce.Thunar.service
 %%DOCSDIR%%/README.gtkrc
-%%DOCSDIR%%/README.thunarrc
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxFileInfo.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxMenuProvider.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxPreferencesProvider.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxPropertyPage.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxPropertyPageProvider.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxProviderFactory.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxProviderPlugin.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxRenamer.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxRenamerProvider.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/abstraction.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/bulk-rename.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/home.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/index.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/index.sgml
-%%APIDOCS%%share/gtk-doc/html/thunarx/ix01.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/left.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/menu-provider.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/right.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/say-hello.png
-%%APIDOCS%%share/gtk-doc/html/thunarx/style.css
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-Variables-and-functions-to-check-the-library-version.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-abstraction-layer.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-fundamentals.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-overview.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-providers.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-using-extensions.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-writing-extensions-advanced-topics.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-writing-extensions-getting-started.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx-writing-extensions.html
-%%APIDOCS%%share/gtk-doc/html/thunarx/thunarx.devhelp2
-%%APIDOCS%%share/gtk-doc/html/thunarx/up.png
 share/icons/hicolor/16x16/apps/Thunar.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
@@ -77,6 +46,7 @@ share/icons/hicolor/64x64/apps/Thunar.png
 share/icons/hicolor/128x128/apps/Thunar.png
 share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/am/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/be/LC_MESSAGES/Thunar.mo
@@ -106,9 +76,11 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/ko/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/Thunar.mo
@@ -122,6 +94,7 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/sr/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/te/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/th/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/Thunar.mo
@@ -129,34 +102,8 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/Thunar.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/Thunar.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/Thunar.mo
 share/pixmaps/Thunar/Thunar-about-logo.png
+share/polkit-1/actions/org.xfce.thunar.policy
 %%PLUGIN_TPA%%share/xfce4/panel-plugins/thunar-tpa.desktop
-%%PLUGIN_TPA%%@dirrmtry share/xfce4/panel-plugins
-%%PLUGIN_TPA%%@dirrmtry share/xfce4
-@dirrm share/pixmaps/Thunar
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/thunarx
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%
-@dirrm share/Thunar/sendto
-@dirrm share/Thunar
-@dirrmtry lib/thunarx-2
-@dirrm lib/Thunar
-@dirrm include/thunarx-2/thunarx
-@dirrm include/thunarx-2
-%%PLUGIN_UCA%%@dirrm etc/xdg/Thunar
