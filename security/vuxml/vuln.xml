@@ -57,6 +57,111 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5e135178-8aeb-11e4-801f-0022156e8794">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.7.5,1</lt></range>
+	<range><ge>3.8,1</ge><lt>3.8.5,1</lt></range>
+	<range><ge>3.9,1</ge><lt>3.9.3,1</lt></range>
+	<range><ge>4.0,1</ge><lt>4.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9039">
+	  <p>wp-login.php in WordPress before 3.7.5, 3.8.x before
+	    3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1 might allow
+	    remote attackers to reset passwords by leveraging access to
+	    an e-mail account that received a password-reset message.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9038">
+	  <p>wp-includes/http.php in WordPress before 3.7.5, 3.8.x
+	    before 3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1
+	    allows remote attackers to conduct server-side request
+	    forgery (SSRF) attacks by referring to a 127.0.0.0/8
+	    resource.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9037">
+	  <p>WordPress before 3.7.5, 3.8.x before 3.8.5, 3.9.x before
+	    3.9.3, and 4.x before 4.0.1 might allow remote attackers to
+	    obtain access to an account idle since 2008 by leveraging an
+	    improper PHP dynamic type comparison for an MD5 hash.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9036">
+	  <p>Cross-site scripting (XSS) vulnerability in WordPress
+	    before 3.7.5, 3.8.x before 3.8.5, 3.9.x before 3.9.3, and
+	    4.x before 4.0.1 allows remote attackers to inject arbitrary
+	    web script or HTML via a crafted Cascading Style Sheets
+	    (CSS) token sequence in a post.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9035">
+	  <p>Cross-site scripting (XSS) vulnerability in Press This in
+	    WordPress before 3.7.5, 3.8.x before 3.8.5, 3.9.x before
+	    3.9.3, and 4.x before 4.0.1 allows remote attackers to
+	    inject arbitrary web script or HTML via unspecified
+	    vectors</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9034">
+	  <p>wp-includes/class-phpass.php in WordPress before 3.7.5,
+	    3.8.x before 3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1
+	    allows remote attackers to cause a denial of service (CPU
+	    consumption) via a long password that is improperly handled
+	    during hashing, a similar issue to CVE-2014-9016.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9033">
+	  <p>Cross-site request forgery (CSRF) vulnerability in
+	    wp-login.php in WordPress 3.7.4, 3.8.4, 3.9.2, and 4.0
+	    allows remote attackers to hijack the authentication of
+	    arbitrary users for requests that reset passwords.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9033</cvename>
+      <cvename>CVE-2014-9034</cvename>
+      <cvename>CVE-2014-9035</cvename>
+      <cvename>CVE-2014-9036</cvename>
+      <cvename>CVE-2014-9037</cvename>
+      <cvename>CVE-2014-9038</cvename>
+      <cvename>CVE-2014-9039</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-25</discovery>
+      <entry>2015-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c564f9bd-8ba7-11e4-801f-0022156e8794">
     <topic>png -- heap overflow for 32-bit builds</topic>
     <affects>
