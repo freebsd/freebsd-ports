@@ -34,7 +34,8 @@ OPTIONS_SUB=	yes
 SHOUTCAST_CONFIGURE_ENABLE=	shoutcast
 LIB365_CONFIGURE_ENABLE=	libve365
 XIPH_CONFIGURE_ENABLE=	xiph
-PYTHON_USE=	python=yes gnome=pygtk2
+PYTHON_USE=	gnome=pygtk2
+PYTHON_USES=	python
 PYTHON_CONFIGURE_ENABLE=	python
 
 .include <bsd.port.options.mk>

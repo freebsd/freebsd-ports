@@ -94,7 +94,7 @@ GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 GHOSTSCRIPT_USE=GHOSTSCRIPT=yes
 PERL_USES=	perl5
 PHP_USE=	PHP=yes PHP_BUILD=yes
-PYTHON_USE=	PYTHON_BUILD=2.7
+PYTHON_USES=	python:2.7,build
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
