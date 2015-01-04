@@ -2,6 +2,7 @@
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome/flagfox/content/LICENSE
 %%XPI_XPIDIR%%/chrome/flagfox/content/about.xul
+%%XPI_XPIDIR%%/chrome/flagfox/content/contentscript.js
 %%XPI_XPIDIR%%/chrome/flagfox/content/defaultactions.json
 %%XPI_XPIDIR%%/chrome/flagfox/content/defaultprefs.js
 %%XPI_XPIDIR%%/chrome/flagfox/content/editaction.xul
@@ -403,6 +404,10 @@
 %%XPI_XPIDIR%%/chrome/flagfox/locale/ru/flagfox.dtd
 %%XPI_XPIDIR%%/chrome/flagfox/locale/ru/flagfox.properties
 %%XPI_XPIDIR%%/chrome/flagfox/locale/ru/help.properties
+%%XPI_XPIDIR%%/chrome/flagfox/locale/sl-SI/countrynames.properties
+%%XPI_XPIDIR%%/chrome/flagfox/locale/sl-SI/flagfox.dtd
+%%XPI_XPIDIR%%/chrome/flagfox/locale/sl-SI/flagfox.properties
+%%XPI_XPIDIR%%/chrome/flagfox/locale/sl-SI/help.properties
 %%XPI_XPIDIR%%/chrome/flagfox/locale/sr/countrynames.properties
 %%XPI_XPIDIR%%/chrome/flagfox/locale/sr/flagfox.dtd
 %%XPI_XPIDIR%%/chrome/flagfox/locale/sr/flagfox.properties
@@ -432,46 +437,3 @@
 %%XPI_XPIDIR%%/chrome/flagfox/locale/zh-TW/flagfox.properties
 %%XPI_XPIDIR%%/chrome/flagfox/locale/zh-TW/help.properties
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/content/icons/flags
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/content/icons/special
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/content/icons
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/content/ipdb
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/content
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ar
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/bg
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/cs
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/da
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/de
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/el
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/es-AR
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/fi
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/fr
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/he
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/hr-HR
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/hu
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/hy-AM
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/is
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/nl
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/it
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ja
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ko
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/lt
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/lv-LV
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ms-MY
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/pl
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/pt-PT
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ro
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/ru
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/sr
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/tr
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/uk-UA
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/vi
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox/locale
-@dirrm %%XPI_XPIDIR%%/chrome/flagfox
-@dirrm %%XPI_XPIDIR%%/chrome
