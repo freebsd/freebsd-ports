@@ -373,11 +373,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_V
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
-NGINX_FANCYINDEX_VERSION=	0.3.1
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
-MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
+NGINX_FANCYINDEX_VERSION=	0.3.4
+GIT_FANCYINDEX_VERSION=		0-g3de8a4d
+MASTER_SITES+=	https://github.com/aperezdc/ngx-fancyindex/tarball/v${NGINX_FANCYINDEX_VERSION}/:fancyindex
+DISTFILES+=	aperezdc-ngx-fancyindex-v${NGINX_FANCYINDEX_VERSION}-${GIT_FANCYINDEX_VERSION}.tar.gz:fancyindex
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/aperezdc-ngx-fancyindex-${GIT_FANCYINDEX_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FOOTER}
