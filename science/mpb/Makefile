@@ -28,6 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NLOPT_LIB_DEPENDS=	libnlopt.so:${PORTSDIR}/math/nlopt
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
@@ -38,8 +40,6 @@ LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
 		liblapack.so:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
-
-NLOPT_LIB_DEPENDS=	libnlopt.so:${PORTSDIR}/math/nlopt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lhdf5 |-lhdf5 ${PTHREAD_LIBS} |g' \
