@@ -561,12 +561,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
-NGINX_DRIZZLE_VERSION=	0.1.7
-GIT_DRIZZLE_VERSION=	0-gb83a8a9
-MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
-DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module-config
+NGINX_DRIZZLE_VERSION=	0.1.8
+GIT_DRIZZLE_VERSION=	0-gfba80cf
+MASTER_SITES+=	https://github.com/openresty/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
+DISTFILES+=	drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -902,7 +902,7 @@ post-patch:
 .if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
+		${WRKDIR}/openresty-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}
