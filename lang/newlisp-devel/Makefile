@@ -2,30 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.5.4
-PORTREVISION=	2
+PORTVERSION=	10.6.1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.newlisp.org/downloads/
+MASTER_SITES=	http://www.newlisp.org/downloads/development/
 PKGNAMESUFFIX=	-devel
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-[0-9]*
 
-IGNORE=		no development version currently available
+USES=		readline tar:tgz
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
-MAN1=		newlisp.1 newlispdoc.1
-
 REINPLACE_ARGS=	-i ""
 
-MODULES=	canvas cgi crypto ftp getopts infix macro odbc pop3 \
+MODULES=	canvas cgi crypto ftp getopts infix odbc pop3 \
 		postscript smtp smtpx stat unix xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
