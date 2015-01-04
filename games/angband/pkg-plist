@@ -57,7 +57,6 @@
 %%DATADIR%%/help/help.hlp
 %%DATADIR%%/help/option.txt
 %%DATADIR%%/help/playing.txt
-%%DATADIR%%/help/readme.txt
 %%DATADIR%%/help/version.txt
 %%DATADIR%%/info/readme.txt
 @dir(,games,775) %%DATADIR%%/save
@@ -315,4 +314,3 @@
 %%DATADIR%%/xtra/sound/sum_lion_growl.mp3
 %%DATADIR%%/xtra/sound/sum_piano_scrape.mp3
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
