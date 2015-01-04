@@ -75,16 +75,3 @@ lib/erlang/lib/webmachine-%%VERSION%%/src/wrq.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_resource.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_sup.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/start.sh
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/src
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv/www
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv/trace
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/priv
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv/templates
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/priv
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/include
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/webmachine-%%VERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/priv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
