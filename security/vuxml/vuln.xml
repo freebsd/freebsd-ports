@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c564f9bd-8ba7-11e4-801f-0022156e8794">
+    <topic>png -- heap overflow for 32-bit builds</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><ge>1.2.6</ge><lt>1.5.21</lt></range>
+	<range><ge>1.6</ge><lt>1.6.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>32-bit builds of PNG library are vulnerable to an unsigned
+	  integer overflow that is triggered by a crafted wide
+	  interlaced images.
+	  Overflow results in a heap corruption that will crash the
+	  application and may lead to the controlled overwrite of a
+	  selected portions of process address space.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt</url>
+      <url>http://codelabs.ru/security/vulns/analysis/libpng/2014-dec-libpng-1.6.15/</url>
+    </references>
+    <dates>
+      <discovery>2014-12-23</discovery>
+      <entry>2015-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9575259a-92d5-11e4-bce6-d050992ecde8">
     <topic>file -- multiple vulnerabilities</topic>
     <affects>
