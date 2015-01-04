@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-FreeDB
-PORTVERSION=	0.09
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +13,14 @@ COMMENT=	Get the CDID of an audio CD and query the FreeDB servers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CDDB-File>=0:${PORTSDIR}/audio/p5-CDDB-File
+BUILD_DEPENDS=	p5-CDDB-File>=0:${PORTSDIR}/audio/p5-CDDB-File  \
+		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		alias perl5
 USE_PERL5=	configure
+
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/FreeDB/FreeDB.so
 
 .include <bsd.port.mk>
