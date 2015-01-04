@@ -55,9 +55,12 @@ OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SUB=		yes
 .if defined(CUPS_CLIENT)
-PORTREVISION=	3
+PORTREVISION=	4
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
+OPTIONS_RADIO=		ZEROCONF
+OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT+=	MDNSRESPONDER
 .elif defined(CUPS_IMAGE)
 PORTREVISION=	3
 CUPS_SUFFIX=	-image
@@ -165,21 +168,6 @@ CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		libpaper.so:${PORTSDIR}/print/libpaper
 . endif
 
-. if ${PORT_OPTIONS:MMDNSRESPONDER}
-LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
-CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-avahi
-SUB_LIST+=		ZEROCONF="mdnsd"
-. elif ${PORT_OPTIONS:MAVAHI}
-CONFIGURE_ARGS+=	--enable-avahi
-LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
-SUB_LIST+=		ZEROCONF="avahi_daemon"
-. else
-CONFIGURE_ARGS+=	--disable-dnssd
-CONFIGURE_ARGS+=	--disable-avahi
-SUB_LIST+=		ZEROCONF=""
-. endif
-
 . if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--enable-pam
 . else
@@ -209,6 +197,25 @@ CONFIGURE_ARGS+=	--with-icondir=${PREFIX}/share/icons
 . endif
 
 SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
+.endif
+
+.if !defined(CUPS_IMAGE)
+. if ${PORT_OPTIONS:MMDNSRESPONDER}
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+CONFIGURE_ARGS+=	--enable-dnssd
+CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--disable-avahi
+SUB_LIST+=		ZEROCONF="mdnsd"
+. elif ${PORT_OPTIONS:MAVAHI}
+CONFIGURE_ARGS+=	--enable-avahi
+CONFIGURE_ARGS+=	--disable-dnssd
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+SUB_LIST+=		ZEROCONF="avahi_daemon"
+. else
+CONFIGURE_ARGS+=	--disable-dnssd
+CONFIGURE_ARGS+=	--disable-avahi
+SUB_LIST+=		ZEROCONF=""
+. endif
 .endif
 
 .if ${OSVERSION} < 1000036 && ${ARCH} == i386
