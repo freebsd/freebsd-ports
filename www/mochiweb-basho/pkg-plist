@@ -73,10 +73,3 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_cert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_key.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keepalive/keepalive.erl
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/src
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/include
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keepalive
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/https
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
