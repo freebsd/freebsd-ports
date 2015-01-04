@@ -3,6 +3,7 @@
 
 PORTNAME=	info2man
 PORTVERSION=	20040717
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cskk.ezoshosting.com/cs/css/
 DISTNAME=	${PORTNAME}
@@ -11,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into man pages
 
+RUN_DEPENDS=	p5-Perl4-CoreLibs>0:${PORTSDIR}/devel/p5-Perl4-CoreLibs
 USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
