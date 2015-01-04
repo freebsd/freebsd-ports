@@ -632,6 +632,8 @@ share/couchdb/www/verify_install.html
 %%PORTDOCS%%share/doc/couchdb/NOTICE.gz
 %%PORTDOCS%%share/doc/couchdb/README.gz
 %%PORTDOCS%%share/doc/couchdb/THANKS.gz
+@dir etc/couchdb/default.d
+@dir etc/couchdb/local.d
 @dir /var/db/couchdb
 @dir /var/log/couchdb
 @dir /var/run/couchdb
