@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-ArrayWithLimits
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,9 @@ COMMENT=	Log to array, with some limits applied
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
+RUN_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
 
 USE_PERL5=	configure
 USES=		perl5
