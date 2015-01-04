@@ -1,6 +1,7 @@
 bin/gnuchess
 bin/gnuchessu
 bin/gnuchessx
+man/man1/gnuchess.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.in
@@ -16,6 +17,8 @@ bin/gnuchessx
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
 %%DATADIR%%/gnuchess.ini
 %%DATADIR%%/smallbook.bin
+share/games/plugins/logos/gnuchess.png
+share/games/plugins/xboard/gnuchess.eng
 %%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnuchess.mo
@@ -26,5 +29,3 @@ bin/gnuchessx
 %%NLS%%share/locale/sr/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnuchess.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
