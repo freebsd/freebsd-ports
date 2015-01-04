@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	angband
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
@@ -30,6 +29,8 @@ SDL_CONFIGURE_ENABLE=	sdl
 X11_USE=		XORG=sm,x11
 X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
