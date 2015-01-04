@@ -1,8 +1,8 @@
 bin/pavucontrol
 share/applications/pavucontrol.desktop
-share/doc/pavucontrol/README
-share/doc/pavucontrol/README.html
-share/doc/pavucontrol/style.css
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/style.css
 share/locale/as/LC_MESSAGES/pavucontrol.mo
 share/locale/bn_IN/LC_MESSAGES/pavucontrol.mo
 share/locale/ca/LC_MESSAGES/pavucontrol.mo
