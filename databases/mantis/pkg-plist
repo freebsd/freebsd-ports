@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/account_delete.php
 %%WWWDIR%%/account_manage_columns_page.php
 %%WWWDIR%%/account_page.php
@@ -1026,6 +1028,8 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_ukrainian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/XmlImportExport/mantis.dtd
+%%WWWDIR%%/plugins/XmlImportExport/pages/config.php
+%%WWWDIR%%/plugins/XmlImportExport/pages/config_page.php
 %%WWWDIR%%/plugins/XmlImportExport/pages/export.php
 %%WWWDIR%%/plugins/XmlImportExport/pages/import.php
 %%WWWDIR%%/plugins/XmlImportExport/pages/import_action.php
