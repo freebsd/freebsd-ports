@@ -1,0 +1,7 @@
+Log::Report::Optional will allow libraries (helper modules) to have a dependency
+to a small module instead of the full Log-Report distribution. The full power of
+Log::Report is only released when the main program uses that module. In that
+case, the module using the 'Optional' will also use the full Log::Report,
+otherwise the dressed-down Log::Report::Minimal version.
+
+WWW: http://search.cpan.org/dist/Log-Report-Optional/
