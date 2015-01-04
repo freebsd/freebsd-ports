@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	megatools
-PORTVERSION=	1.9.93
+PORTVERSION=	1.9.94
 CATEGORIES=	net
 MASTER_SITES=	http://megatools.megous.com/builds/
 
@@ -13,15 +13,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+RUN_DEPENDS=	glib-networking>=2.32.0:${PORTSDIR}/net/glib-networking
 
-USES=		gmake pkgconfig libtool
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-
-LIBS+=          -lssl -lcrypto
 
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection=no
@@ -32,9 +32,5 @@ OPTIONS_SUB=	yes
 
 FUSE_USES=	fuse
 FUSE_CONFIGURE_WITH=	fuse
-
-post-patch:
-	@${REINPLACE_CMD} -e '/MEGA_REQUIRES=/ s|openssl||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
