@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Statistics::R.3.gz
-%%PERL5_MAN3%%/Statistics::R::Legacy.3.gz
-%%PERL5_MAN3%%/Statistics::R::Win32.3.gz
 %%SITE_PERL%%/Statistics/R.pm
 %%SITE_PERL%%/Statistics/R/Legacy.pm
 %%SITE_PERL%%/Statistics/R/Win32.pm
+%%PERL5_MAN3%%/Statistics::R.3.gz
+%%PERL5_MAN3%%/Statistics::R::Legacy.3.gz
+%%PERL5_MAN3%%/Statistics::R::Win32.3.gz
