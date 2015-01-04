@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Thunar
-PORTVERSION=	1.6.3
-PORTREVISION=	4
+PORTVERSION=	1.6.4
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
@@ -18,20 +17,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libtumbler-1.so:${PORTSDIR}/deskutils/xfce4-tumbler \
 	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gtk20 intltool intlhack gdkpixbuf2
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libexo libmenu libutil
+USE_XFCE=	configenv libexo libmenu libutil xfconf
 USE_XORG=	sm x11
 USES=		desktop-file-utils gmake pathfix perl5 libtool pkgconfig \
 	tar:bzip2
 
-OPTIONS_DEFINE=	DOCS GVFS NLS NOTIFY STARTUP
+OPTIONS_DEFINE=	GVFS NLS NOTIFY STARTUP
 OPTIONS_GROUP=	PLUGINS
 OPTIONS_GROUP_PLUGINS=	PLUG_APR PLUG_SBR PLUG_TPA PLUG_UCA PLUG_WALL
-OPTIONS_DEFAULT=	GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_WALL STARTUP
+OPTIONS_DEFAULT=	GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_TPA STARTUP
 
 # Override NOTIFY_DESC
 NOTIFY_DESC=	Display notifications
@@ -44,7 +44,8 @@ PLUG_WALL_DESC=	Wallpaper plugin
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 		--disable-gudev \
-		--enable-dbus
+		--enable-dbus \
+		--without-html-dir
 
 .include <bsd.port.options.mk>
 
@@ -62,14 +63,6 @@ LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notifications
 .else
 CONFIGURE_ARGS+=--disable-notifications
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/gtk-doc/html
-PLIST_SUB+=	APIDOCS=""
-.else
-CONFIGURE_ARGS+=	--without-html-dir
-PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPLUG_APR}
