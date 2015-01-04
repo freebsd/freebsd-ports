@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		libtool
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
+USE_OPENSSL=	yes
 
 PORTDOCS=	doc/extensions/* doc/plugins/* doc/rfc/*
 
