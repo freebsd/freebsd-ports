@@ -7344,7 +7344,6 @@ x11-toolkits/fpc-gnome1||2014-12-25|Depends on imlib
 graphics/fpc-imlib||2014-12-25|Depends on imlib
 graphics/imlib||2014-12-25|Does not handle modern graphics libraries
 games/secretmaryochronicles-music||2014-12-27|Has expired: Depends on expiring games/secretmaryochronicles
-science/mpb||2014-12-27|Has expired: Broken for more than 6 months
 x11-fm/pbi-thumbnailer||2014-12-27|Has expired: Broken for more than 6 months
 games/secretmaryochronicles||2014-12-27|Has expired: does not run, cegui 0.8 support still in development
 multimedia/ffmpeg24|multimedia/ffmpeg25|2014-12-27|ffmpeg upstream now points to 2.5.x series
