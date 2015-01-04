@@ -10,7 +10,7 @@ man/man1/newlispdoc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.4-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.6.1-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -22,6 +22,7 @@ man/man1/newlispdoc.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd-conf.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/observer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl-demo-ffi.lsp
@@ -58,6 +59,7 @@ man/man1/newlispdoc.1.gz
 %%GUISERV%%%%DATADIR%%/guiserver/pinballs-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/properties-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/rotation-demo.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/scroll-pane-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/shapes-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/sound-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/stroke-demo.lsp
@@ -78,7 +80,6 @@ man/man1/newlispdoc.1.gz
 %%GMP%%%%DATADIR%%/modules/gmp.lsp
 %%GSL%%%%DATADIR%%/modules/gsl.lsp
 %%DATADIR%%/modules/infix.lsp
-%%DATADIR%%/modules/macro.lsp
 %%MYSQL%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
 %%DATADIR%%/modules/pop3.lsp
