@@ -49,13 +49,12 @@ SUB_FILES=	repaircluster
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
 
 MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:${PORTSDIR}/java/mx4j
-CQL_USE=	python=yes
+CQL_USES=	python:2
 
 PORTDOCS=	javadoc *.txt
 
 .if ${PORT_OPTIONS:MCQL}
 SCRIPTS+=	cqlsh
-USES=		python:2
 .endif
 
 post-extract:
