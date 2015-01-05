@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-GITVERSION=	1416412720
-PORTVERSION=	0.7.2.${GITVERSION}
+PORTVERSION=	0.8.0.${GITVERSION}
 PORTEPOCH=	1
 CATEGORIES=	x11
-DISTNAME=	${PORTNAME}-${GITVERSION}
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
+DISTNAME=	${PORTNAME}-${GITVERSION}
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
@@ -22,17 +21,16 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 		xscreensaver:${PORTSDIR}/x11/xscreensaver \
 		xscreensaver-demo:${PORTSDIR}/x11/xscreensaver \
 		xbrightness:${PORTSDIR}/x11/xbrightness \
-		numlockx:${PORTSDIR}/x11/numlockx \
-		phonon-gstreamer>=0:${PORTSDIR}/multimedia/phonon-gstreamer \
-		gstreamer-plugins-ogg>=0:${PORTSDIR}/audio/gstreamer-plugins-ogg
-LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtsolutions-singleapplication \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		numlockx:${PORTSDIR}/x11/numlockx
 
 MAKE_JOBS_UNSAFE=yes
+
+GITVERSION=	1420494806
 USE_XORG=	x11 xcomposite xdamage xrender
+USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui network svg linguist phonon imageformats \
-		moc_build rcc_build uic_build 
+USE_QT5=	core gui network svg linguist multimedia imageformats \
+		buildtools x11extras
 USES=		qmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/lumina
