@@ -99,8 +99,6 @@ man/man1/solterm.1.gz
 man/man7/ipmi_cmdlang.7.gz
 man/man7/openipmi_conparms.7.gz
 man/man8/ipmilan.8.gz
-@dirrmtry include/OpenIPMI/internal
-@dirrmtry include/OpenIPMI
 %%GLIB12%%@comment files list for GLIB12
 %%GLIB12%%lib/libOpenIPMIglib12.a
 %%GLIB12%%lib/libOpenIPMIglib12.so
@@ -217,4 +215,3 @@ man/man8/ipmilan.8.gz
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.py
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.pyc
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.pyo
-%%TKINTER%%@dirrmtry %%PYTHON_SITELIBDIR%%/openipmigui

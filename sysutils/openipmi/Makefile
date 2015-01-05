@@ -11,12 +11,11 @@ DISTNAME=	OpenIPMI-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex IPMI management software
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		execinfo gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
