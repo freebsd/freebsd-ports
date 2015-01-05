@@ -7,7 +7,7 @@
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/ \
@@ -28,7 +28,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
 		cmake:${PORTSDIR}/devel/cmake \
 		${LOCALBASE}/protobuf25/bin/protoc:${PORTSDIR}/devel/protobuf25
 LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		ssid:${PORTSDIR}/sysutils/ssid
 
 CONFLICTS_INSTALL=	apache-hadoop-1*
 
