@@ -3,7 +3,6 @@
 
 PORTNAME=	mcstas
 PORTVERSION=	2.1
-#PORTREVISION=	beta
 CATEGORIES=	science
 MASTER_SITES=	http://download.mcstas.org/${PORTNAME}-${PORTVERSION}/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -22,8 +21,6 @@ USES=		cmake gmake bison:build
 #should perhaps use the toolchain file - but remember the arch
 CMAKE_ARGS=	"-Denable_mcstas=1"
 GNU_CONFIGURE=	yes
-#USE_GMAKE=	yes
-USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
