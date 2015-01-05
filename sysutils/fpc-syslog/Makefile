@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-syslog
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the system logger
 
 USE_FPC=	yes

@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-fpgtk
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Component Library for create programs with gtk
 
 USE_FPC=	fcl-base gtk1 x11 opengl

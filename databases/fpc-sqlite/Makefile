@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-sqlite
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to SQLite
 
 USE_FPC=	yes

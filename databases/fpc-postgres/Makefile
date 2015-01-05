@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to PostGreSQL
 
 USE_FPC=	yes

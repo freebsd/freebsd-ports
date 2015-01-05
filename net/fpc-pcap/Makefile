@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-pcap
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for libpcap library
 
 USE_FPC=	yes

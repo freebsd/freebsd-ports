@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-newt
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to newt library
 
 USE_FPC=	yes

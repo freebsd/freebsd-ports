@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	ftp lang
 PKGNAMESUFFIX=	-libcurl
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to libcurl
 
 USE_FPC=	yes

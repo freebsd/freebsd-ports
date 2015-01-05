@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-ldap
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to OpenLDAP
 
 USE_FPC=	hash

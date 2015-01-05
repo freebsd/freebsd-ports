@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
 USE_FPC=	cairo x11

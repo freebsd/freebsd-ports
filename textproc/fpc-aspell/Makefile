@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-aspell
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Interface to aspell spelling checker
 
 USE_FPC=	yes

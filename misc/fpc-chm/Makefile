@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	misc lang
 PKGNAMESUFFIX=	-chm
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit to manipulate chm files
 
 USE_FPC=	fcl-xml

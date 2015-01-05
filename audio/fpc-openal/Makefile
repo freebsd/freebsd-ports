@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-openal
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to openal library
 
 USE_FPC=	yes

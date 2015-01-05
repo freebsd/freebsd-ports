@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-gmp
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to gmp library
 
 USE_FPC=	yes

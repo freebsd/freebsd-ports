@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-fastcgi
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal fastcgi unit
 
 USE_FPC=	fpmkunit

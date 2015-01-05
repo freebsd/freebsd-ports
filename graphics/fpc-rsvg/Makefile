@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-rsvg
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to librsvg2 library
 
 USE_FPC=	gtk2

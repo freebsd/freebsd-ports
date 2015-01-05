@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-httpd22
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal httpd unit
 
 USE_FPC=	yes
