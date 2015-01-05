@@ -13,10 +13,9 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 LICENSE=	GPLv2
 
 # ABI versions specified on purpose for libtorrent-rasterbar
-LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar
 
-USES=		pkgconfig
+USES=		execinfo pkgconfig
 USE_QT4=	corelib network qmake_build linguist_build moc_build \
 		rcc_build uic_build
 QT_NONSTANDARD=	yes
