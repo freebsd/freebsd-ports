@@ -79,12 +79,6 @@ X509_PATCHFILES=	${PORTNAME}-6.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 
-# 6.7 patch taken from
-# http://sources.debian.net/data/main/o/openssh/1:6.7p1-3/debian/patches/gssapi.patch
-# which was originally based on 5.7 patch from
-# http://www.sxw.org.uk/computing/patches/
-KERB_GSSAPI_PATCHFILES=	openssh-6.7p1-gsskex-all-20141021-284f364.patch.gz:-p1:gsskex
-
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
 
@@ -117,6 +111,16 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-build-options
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-no-hpn
 .  endif
 .endif
+
+# Must add this patch after HPN due to conflicts
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
+# 6.7 patch taken from
+# http://sources.debian.net/data/main/o/openssh/1:6.7p1-3/debian/patches/gssapi.patch
+# which was originally based on 5.7 patch from
+# http://www.sxw.org.uk/computing/patches/
+PATCHFILES+=	openssh-6.7p1-gsskex-all-20141021-284f364.patch.gz:-p1:gsskex
+.endif
+
 
 .if ${OSVERSION} >= 900000
 CONFIGURE_LIBS+=	-lutil
