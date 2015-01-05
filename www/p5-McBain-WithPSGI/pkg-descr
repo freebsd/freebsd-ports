@@ -1,0 +1,9 @@
+McBain::WithPSGI turns your McBain API into a RESTful PSGI web service based on
+Plack, thus making McBain a web application framework.
+
+The created web service will be a JSON-in JSON-out service. Requests to your
+application are expected to have a Content-Type of application/json;
+charset=UTF-8. The JSON body of a request will be the payload. The results of
+the API will be formatted into JSON as well.
+
+WWW: https://metacpan.org/pod/McBain::WithPSGI
