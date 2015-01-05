@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	3.04
-PORTREVISION=	1
+PORTVERSION=	3.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
