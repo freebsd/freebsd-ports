@@ -28,7 +28,3 @@ include/node/v8.h
 include/node/v8stdint.h
 lib/node_modules/.keepme
 man/man1/node.1.gz
-@dirrmtry include/node/openssl
-@dirrmtry include/node/uv-private
-@dirrmtry include/node
-@dirrmtry lib/node_modules
