@@ -1,0 +1,10 @@
+DB Browser for SQLite is a light GUI editor for SQLite databases,
+built on top of Qt. The main goal of the project is to allow
+non-technical users to create, modify and edit SQLite databases
+using a set of wizards and a spreadsheet-like interface.
+
+This project has previous been known as "SQLite Browser" and "Database
+Browser for SQLite". "DB Browser for SQLite" will hopefully be the
+name that sticks. :)
+
+WWW: http://sqlitebrowser.org/
