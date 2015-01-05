@@ -1,14 +1,19 @@
+@comment bin/README
+@comment bin/bdf2gdfont.PLS
 bin/bdf2gdfont.pl
-%%SITE_PERL%%/GD.pm
-%%SITE_PERL%%/GD/Group.pm
-%%SITE_PERL%%/GD/Image.pm
-%%SITE_PERL%%/GD/Polygon.pm
-%%SITE_PERL%%/GD/Polyline.pm
-%%SITE_PERL%%/GD/Simple.pm
-%%SITE_PERL%%/auto/GD/autosplit.ix
+bin/bdftogd
+@comment bin/cvtbdf.pl
+%%SITE_ARCH%%/GD.pm
+%%SITE_ARCH%%/GD/Group.pm
+%%SITE_ARCH%%/GD/Image.pm
+%%SITE_ARCH%%/GD/Polygon.pm
+%%SITE_ARCH%%/GD/Polyline.pm
+%%SITE_ARCH%%/GD/Simple.pm
+%%SITE_ARCH%%/auto/GD/GD.so
 %%PERL5_MAN3%%/GD.3.gz
 %%PERL5_MAN3%%/GD::Image.3.gz
 %%PERL5_MAN3%%/GD::Polygon.3.gz
 %%PERL5_MAN3%%/GD::Polyline.3.gz
 %%PERL5_MAN3%%/GD::Simple.3.gz
+@comment man/man1/bdf2gdfont.PLS.1.gz
 man/man1/bdf2gdfont.pl.1.gz
