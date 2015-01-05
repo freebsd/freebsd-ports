@@ -1,0 +1,10 @@
+McBain is a framework for building powerful APIs and applications. Writing an
+API with McBain provides the following benefits:
+
+* Lightweight-ness
+* Portability
+* Auto-validation
+* Self-documentation
+* Modularity and flexibility
+
+WWW: https://metacpan.org/pod/McBain
