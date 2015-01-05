@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	fpc-
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386 amd64

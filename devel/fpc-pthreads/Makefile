@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-pthreads
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal wrapper for the pthreads library
 
 USE_FPC=	yes

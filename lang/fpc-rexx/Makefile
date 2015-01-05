@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-rexx
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the rexx-regina library
 
 USE_FPC=	yes

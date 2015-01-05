@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	converters lang
 PKGNAMESUFFIX=	-iconvenc
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit to iconv library
 
 USE_FPC=	yes

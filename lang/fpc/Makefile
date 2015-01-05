@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:sourc
 DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
-MAINTAINER?=	acm@FreeBSD.org
+MAINTAINER?=	freebsd-fpc@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 PROJECTHOST=	bsdistfiles

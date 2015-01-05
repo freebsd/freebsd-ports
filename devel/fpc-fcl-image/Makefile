@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 USE_FPC=	fcl-async fcl-base hash pasjpeg paszlib pthreads libpng

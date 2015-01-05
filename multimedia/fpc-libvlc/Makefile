@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-libvlc
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to vlc media player library
 
 USE_FPC=	fcl-base

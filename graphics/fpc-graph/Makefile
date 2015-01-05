@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-graph
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to graphical applications
 
 USE_FPC=	x11 sdl pthreads

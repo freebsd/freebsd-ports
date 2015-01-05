@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-base
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 USE_FPC=	hash paszlib pthreads

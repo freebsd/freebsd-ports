@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-hash
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for MD5 hash routines
 
 USE_FPC=	yes

@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-db
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 USE_FPC=	dblib fcl-async fcl-base fcl-json fcl-xml hash ibase mysql odbc oracle paszlib postgres \

@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-pasjpeg
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Handling JPEG files with Pascal
 
 USE_FPC=	yes

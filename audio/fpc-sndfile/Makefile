@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-sndfile
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal Interface to sndfile library
 
 USE_FPC=	yes

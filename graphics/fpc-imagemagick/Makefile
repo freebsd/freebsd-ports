@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-imagemagick
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to ImageMagick
 
 USE_FPC=	yes

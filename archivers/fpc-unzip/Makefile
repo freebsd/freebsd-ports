@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	archivers lang
 PKGNAMESUFFIX=	-unzip
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal routines for unzipping zip files
 
 USE_FPC=	yes

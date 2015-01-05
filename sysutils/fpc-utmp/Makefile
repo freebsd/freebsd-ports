@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-utmp
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit to gather information from the utmp file
 
 USE_FPC=	yes

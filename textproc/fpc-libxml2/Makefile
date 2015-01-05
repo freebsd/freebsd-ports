@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-libxml2
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Interface to xml2 library
 
 USE_FPC=	yes
