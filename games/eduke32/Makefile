@@ -15,9 +15,7 @@ COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU.TXT
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
-USES=		gmake tar:bzip2
+USES=		execinfo gmake tar:bzip2
 USE_GCC=	any
 USE_CSTD=	gnu89
 USE_GL=		gl
