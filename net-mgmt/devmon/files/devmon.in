@@ -19,7 +19,7 @@ load_rc_config ${name}
 
 command="%%PREFIX%%/devmon/devmon"
 command_args="-c ${devmon_config} -d ${devmon_db}"
-command_interpreter=/usr/local/bin/perl
+command_interpreter="%%PREFIX%%/bin/perl"
 pidfile=${devmon_pid}
 
 start_precmd=devmon_startprecmd
