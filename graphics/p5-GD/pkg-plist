@@ -1,7 +1,7 @@
 @comment bin/README
 @comment bin/bdf2gdfont.PLS
 bin/bdf2gdfont.pl
-bin/bdftogd
+@comment bin/bdftogd
 @comment bin/cvtbdf.pl
 %%SITE_ARCH%%/GD.pm
 %%SITE_ARCH%%/GD/Group.pm
