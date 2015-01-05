@@ -189,6 +189,7 @@ man/zh_CN/man1/mkvextract.1.gz
 man/zh_CN/man1/mkvinfo.1.gz
 man/zh_CN/man1/mkvmerge.1.gz
 man/zh_CN/man1/mkvpropedit.1.gz
+%%WXGTK%%share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/de/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/es/LC_MESSAGES/mkvtoolnix.mo
