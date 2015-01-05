@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	courierpasswd
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing utility
 
-BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+LIB_DEPENDS=	libcourierauth.so:${PORTSDIR}/security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
 USES=		gmake

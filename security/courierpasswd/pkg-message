@@ -8,8 +8,8 @@ root, this presents no problem. However, if you need to run courierpasswd
 as a non-root user, you have three options, all of which require some
 manual work.
 
-Option 1: Add the user courierpasswd will run as to the group that
-owns the authdaemon socket directory in /etc/group. More than one user
+Option 1: Add the user courierpasswd will run as the group that owns
+the authdaemon socket directory in /etc/group. More than one user
 can be added to the group vector in this way. This arrangement works
 well if courierpasswd will be run by only a small number of users.
 If the authdaemon socket directory is owned by courier:courier and you
