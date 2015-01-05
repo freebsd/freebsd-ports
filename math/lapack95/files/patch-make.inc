@@ -1,5 +1,5 @@
---- make.inc.orig	2000-11-30 08:18:37.000000000 -0500
-+++ make.inc	2011-07-21 02:46:07.000000000 -0400
+--- make.inc.orig	2000-11-30 14:18:37.000000000 +0100
++++ make.inc	2015-01-05 23:43:55.000000000 +0100
 @@ -3,8 +3,8 @@
  #     UNI-C, Denmark; Univ. of Tennessee, USA; NAG Ltd., UK
  #     August 5, 2000
@@ -16,9 +16,8 @@
  #          including non-stop arithmetic.
  
 -OPTS0    = -u -V -dcfuns -dusty -ieee=full
--MODLIB   = -I./../lapack95_modules
 +OPTS0    = %%FFLAGS%% #-u -V -dcfuns -dusty -ieee=full
-+MODLIB   = -I./../lapack95_modules -I%%PREFIX%%/lib/lapack95_modules
+ MODLIB   = -I./../lapack95_modules
  OPTS1    = -c $(OPTS0)
  OPTS3    = $(OPTS1) $(MODLIB)
  OPTL     = -o 
