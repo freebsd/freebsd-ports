@@ -3,6 +3,7 @@
 
 PORTNAME=	twitter
 PORTVERSION=	5.13.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -25,5 +26,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-patch:
+# adjust gemspec for "http ~> 0.6.0"
+	@${REINPLACE_CMD} -e '77 s|"~>"|">="|' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
