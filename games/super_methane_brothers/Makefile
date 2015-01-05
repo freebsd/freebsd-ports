@@ -13,10 +13,9 @@ COMMENT=	Port of the Amiga platform game of the same name
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib
 
-USES=		gmake pkgconfig tar:tgz
+USES=		execinfo gmake pkgconfig tar:tgz
 USE_GCC=	yes
 USE_GL=		glu
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LIBS}"
