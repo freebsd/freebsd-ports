@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmatroska
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
@@ -15,30 +14,14 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libebml.so:${PORTSDIR}/textproc/libebml
 
-USES=	gmake dos2unix tar:bzip2
-DOS2UNIX_FILES=	make/linux/Makefile
-BUILD_WRKSRC=	${WRKSRC}/make/linux
-INSTALL_WRKSRC=	${WRKSRC}/make/linux
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
-# Installs dir with proper permissions
-INSTALL_DATA_DIR=	${INSTALL} -d -m 755
-
-MAKE_ARGS=	INSTALL_DIR_OPTS="${INSTALL} -d -m 755" \
-		INSTALL_OPTS="${INSTALL_DATA}" \
-		INSTALL_OPTS_LIB="${INSTALL_LIB}" \
-		INSTALL="" \
-		prefix=${PREFIX} \
-		CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}" \
-		LIBEBML_INCLUDE_DIR="${LOCALBASE}/include" \
-		LIBEBML_LIB_DIR="${LOCALBASE}/lib"
+INSTALL_TARGET=	install-strip
 
 post-patch:
-# XXX - revise at every port update
-# the tests are botched. do not run them
-	@${REINPLACE_CMD} -E \
-		-e 's|^(all:.*)test|\1|' \
-		${WRKSRC}/make/linux/Makefile
+	${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|@prefix@/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

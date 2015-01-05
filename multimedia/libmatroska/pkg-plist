@@ -30,5 +30,5 @@ include/matroska/c/libmatroska_t.h
 lib/libmatroska.a
 lib/libmatroska.so
 lib/libmatroska.so.6
-@dirrm include/matroska/c
-@dirrm include/matroska
+lib/libmatroska.so.6.0.0
+libdata/pkgconfig/libmatroska.pc
