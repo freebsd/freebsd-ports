@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Lightweight auto-validating, self-documenting web framework
 
-LICENSE=	GPLv1 PERLART10
+LICENSE=	GPLv1 ARTPERL10
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Brannigan>=0:${PORTSDIR}/devel/p5-Brannigan \
