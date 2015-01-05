@@ -7389,3 +7389,4 @@ biology/boinc-simap||2015-01-01|Has expired: Project shutting down, see http://b
 security/openssh-portable-base||2015-01-01|Has expired: Overwrite-base option/port/pkg will be removed. There is no real need for foot-shooting.
 devel/cedet||2015-01-01|Has expired: Fails to build, use Emacs' builtin cedet package instead
 devel/ecb||2015-01-01|Has expired: does not work with newer Emacs versions, use the elpa package instead
+devel/rubygem-little_plugger|devel/rubygem-little-plugger|2015-01-05|Rename to match our rubygems naming
