@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssdp
-PORTVERSION=	0.14.10
+PORTVERSION=	0.14.11
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -28,8 +28,5 @@ USES=		gmake libtool pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|__OpenBSD__|__FreeBSD__|' ${WRKSRC}/libgssdp/gssdp-socket-functions.c
 
 .include <bsd.port.mk>
