@@ -22,9 +22,14 @@ LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c	\
 		libmpich.so:${PORTSDIR}/net/mpich2
 
 USES=		fortran gmake tar:Z
+.if defined(WITH_ATLAS)
+USES+=		blaslapack:atlas
+.else
+USES+=		blaslapack
+.endif
 MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${MAKE_CMD} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
-		BLAS_LIB="${BLAS_LIB}" LAPACK_LIB="${LAPACK_LIB}"
+		BLAS_LIB="${BLASLIB}" LAPACK_LIB="-L${LOCALBASE}/lib ${LAPACKLIB}"
 
 MPIDIR=		${LOCALBASE}
 PETSC_ARCH=	freebsd
@@ -39,16 +44,6 @@ PORTDOCS=	manual.ps
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS_LIB=	-lf77blas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
-.else
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-BLAS_LIB=	-lblas
-LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 .endif
 
 do-install:
