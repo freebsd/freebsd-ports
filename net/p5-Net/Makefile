@@ -15,12 +15,12 @@ COMMENT=	Perl5 modules to access and use network protocols
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Socket>=2.016:${PORTSDIR}/net/p5-Socket
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 OPTIONS_DEFINE=	IPV6 SASL SSL
 OPTIONS_DEFAULT=SASL
 SASL_DESC=	SASL auth for POP3 and SMTP support
-
-BUILD_DEPENDS=	p5-Socket>=2.016:${PORTSDIR}/net/p5-Socket
-RUN_DEPENDS=	p5-Socket>=2.016:${PORTSDIR}/net/p5-Socket
 
 SASL_BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 SASL_RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
