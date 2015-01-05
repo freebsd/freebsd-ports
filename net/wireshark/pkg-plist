@@ -1,7 +1,11 @@
 %%CAPINFOS%%
 %%CAPTYPE%%
 %%DFTEST%%
+@group network
+@mode 2555
 bin/dumpcap
+@mode
+@group
 %%EDITCAP%%
 %%WIRESHARK%%
 %%MERGECAP%%
