@@ -46,7 +46,7 @@ HPN_DESC=		HPN-SSH patch
 LDNS_DESC=		SSHFP/LDNS support
 X509_DESC=		x509 certificate patch
 SCTP_DESC=		SCTP support
-OVERWRITE_BASE_DESC=	OpenSSH overwrite base
+OVERWRITE_BASE_DESC=	EOL, No longer supported.
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
@@ -160,10 +160,6 @@ IGNORE=		PAM must be installed in base
 IGNORE=		required /usr/include/tcpd.h missing
 .endif
 
-.if defined(OPENSSH_OVERWRITE_BASE)
-PORT_OPTIONS+=		OVERWRITE_BASE
-.endif
-
 .if ${PORT_OPTIONS:MMIT} || ${PORT_OPTIONS:MHEIMDAL} || ${PORT_OPTIONS:MHEIMDAL_BASE}
 .	if ${PORT_OPTIONS:MHEIMDAL_BASE}
 CONFIGURE_LIBS+=	-lgssapi_krb5
@@ -187,10 +183,8 @@ CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 EMPTYDIR=		/var/empty
 
-.if ${PORT_OPTIONS:MOVERWRITE_BASE}
-# XXX: Mark this BROKEN rather than remove the option to force people to notice for POLA.
-DEPRECATED=		Overwrite-base option/port/pkg will be removed. There is no real need for foot-shooting.
-EXPIRATION_DATE=	2015-01-01
+.if ${PORT_OPTIONS:MOVERWRITE_BASE} || defined(OPENSSH_OVERWRITE_BASE)
+IGNORE=	Overwrite base option is no longer supported.
 WITH_OPENSSL_BASE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 PREFIX=			/usr
@@ -224,10 +218,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \
 			${WRKSRC}/ssh_config.5
-.if !${PORT_OPTIONS:MOVERWRITE_BASE}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-.endif
 	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
 		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
 	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
@@ -239,12 +231,6 @@ post-patch:
 .if ${PORT_OPTIONS:MHPN}
 	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
 		${WRKSRC}/version.h
-.endif
-
-pre-install:
-# Workaround not running mtree BSD.root.dist on / since PREFIX=/usr
-.if ${PORT_OPTIONS:MOVERWRITE_BASE}
-	${MKDIR} ${STAGEDIR}/etc/rc.d
 .endif
 
 post-install:
