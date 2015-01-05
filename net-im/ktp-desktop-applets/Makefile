@@ -6,7 +6,7 @@ CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE instant messaging plasma widgets
 
 LIB_DEPENDS=	libktpcommoninternalsprivate.so:${PORTSDIR}/net-im/ktp-common-internals

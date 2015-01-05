@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	${PORTNAME}-desktop-applets-${PORTVERSION}
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE instant messaging Plasma applets
 
 LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4 \
