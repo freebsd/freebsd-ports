@@ -4314,6 +4314,7 @@
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
+    SUBDIR += rubygem-bones
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bson1
     SUBDIR += rubygem-buftok
