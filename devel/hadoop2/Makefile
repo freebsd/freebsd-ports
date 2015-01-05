@@ -31,7 +31,7 @@ LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		ssid:${PORTSDIR}/sysutils/ssid
 
-CONFLICTS_INSTALL=	apache-hadoop-1*
+CONFLICTS_INSTALL=	hadoop-1*
 
 USES=		shebangfix
 USE_JAVA=	yes
