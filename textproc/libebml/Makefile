@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libebml
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
@@ -12,17 +12,14 @@ COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 LICENSE=	LGPL21
 
-USES=		gmake tar:bzip2
-BUILD_WRKSRC=	${WRKSRC}/make/linux
-INSTALL_WRKSRC=	${WRKSRC}/make/linux
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
-MAKE_ARGS=	INSTALL_DIR_OPTS="${INSTALL} -d -m 755" \
-		INSTALL_OPTS="${INSTALL_DATA}" \
-		INSTALL_OPTS_LIB="${INSTALL_LIB}" \
-		INSTALL="" \
-		prefix=${STAGEDIR}${PREFIX} \
-		CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}"
+INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|@prefix@/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

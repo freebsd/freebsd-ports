@@ -22,8 +22,12 @@ include/ebml/EbmlVersion.h
 include/ebml/EbmlVoid.h
 include/ebml/IOCallback.h
 include/ebml/MemIOCallback.h
+include/ebml/MemReadIOCallback.h
+include/ebml/SafeReadIOCallback.h
 include/ebml/StdIOCallback.h
 include/ebml/c/libebml_t.h
 lib/libebml.a
 lib/libebml.so
 lib/libebml.so.4
+lib/libebml.so.4.0.0
+libdata/pkgconfig/libebml.pc
