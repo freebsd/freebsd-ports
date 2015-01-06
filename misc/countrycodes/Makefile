@@ -5,7 +5,7 @@ PORTNAME=	countrycodes
 PORTVERSION=	1.0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ISO 3166 country code finder

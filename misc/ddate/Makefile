@@ -6,7 +6,7 @@ PORTVERSION=	2.22.2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION:C/^([0-9]*\.[0-9]*).*/\1/}/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
