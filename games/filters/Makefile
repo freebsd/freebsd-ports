@@ -5,7 +5,7 @@ PORTNAME=	filters
 PORTVERSION=	2.53
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

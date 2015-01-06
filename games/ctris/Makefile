@@ -5,7 +5,7 @@ PORTNAME=	ctris
 PORTVERSION=	0.42
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Colorized, small, and flexible Tetris(TM)-clone for the console
