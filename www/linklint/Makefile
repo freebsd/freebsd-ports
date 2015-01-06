@@ -5,7 +5,7 @@ PORTNAME=	linklint
 DISTVERSION=	2.3.6.d
 CATEGORIES=	www
 MASTER_SITES=	http://www.linklint.org/download/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl script that checks links on web sites
