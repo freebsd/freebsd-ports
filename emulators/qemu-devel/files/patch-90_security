@@ -14,27 +14,6 @@ Index: qemu/hw/dma/i8257.c
      ldebug ("dma_pos %d size %d\n", n, (r->base[COUNT] + 1) << ncont);
  }
  
-Index: qemu/hw/block/fdc.c
-@@ -1445,7 +1445,8 @@ static uint32_t fdctrl_read_data(FDCtrl 
-                                    fd_sector(cur_drv));
-                     return 0;
-                 }
--            if (bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
-+            if (cur_drv->bs == NULL ||
-+                bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
-                 FLOPPY_DPRINTF("error getting sector %d\n",
-                                fd_sector(cur_drv));
-                 /* Sure, image size is too small... */
-@@ -1905,7 +1906,8 @@ static void fdctrl_write_data(FDCtrl *fd
-         if (pos == FD_SECTOR_LEN - 1 ||
-             fdctrl->data_pos == fdctrl->data_len) {
-             cur_drv = get_cur_drv(fdctrl);
--            if (bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
-+            if (cur_drv->bs == NULL ||
-+                bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
-                 FLOPPY_DPRINTF("error writing sector %d\n",
-                                fd_sector(cur_drv));
-                 return;
 Index: qemu-0.8.2/hw/audio/sb16.c
 @@ -1235,8 +1235,10 @@ static int SB_read_DMA (void *opaque, in
              s->block_size);
@@ -49,14 +28,3 @@ Index: qemu-0.8.2/hw/audio/sb16.c
      }
  
      return dma_pos;
-Index: qemu/hw/intc/i8259.c
-@@ -291,7 +291,8 @@ static void pic_ioport_write(void *opaqu
-             s->init4 = val & 1;
-             s->single_mode = val & 2;
-             if (val & 0x08) {
--                hw_error("level sensitive irq not supported");
-+                /* hw_error("level sensitive irq not supported"); */
-+                return;
-             }
-         } else if (val & 0x08) {
-             if (val & 0x04) {

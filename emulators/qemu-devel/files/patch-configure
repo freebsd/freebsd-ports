@@ -1,24 +1,24 @@
 --- a/configure
 +++ a/configure
-@@ -192,7 +192,7 @@ gcov="no"
- gcov_tool="gcov"
- EXESUF=""
+@@ -273,7 +273,7 @@ DSOSUF=".so"
+ LDFLAGS_SHARED="-shared"
+ modules="no"
  prefix="/usr/local"
 -mandir="\${prefix}/share/man"
 +mandir="\${prefix}/man"
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -1980,7 +1980,7 @@ if test "$gtk" != "no"; then
-     if $pkg_config --exists "$gtkpackage >= $gtkversion"; then
-         gtk_cflags=`$pkg_config --cflags $gtkpackage`
-         gtk_libs=`$pkg_config --libs $gtkpackage`
+@@ -2062,7 +2062,7 @@ if test "$gtk" != "no"; then
+         if $pkg_config --exists "$gtkx11package >= $gtkversion"; then
+             gtk_libs="$gtk_libs -lX11"
+         fi
 -        libs_softmmu="$gtk_libs $libs_softmmu"
 +        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
          gtk="yes"
      elif test "$gtk" = "yes"; then
-         feature_not_found "gtk" "Install gtk2 or gtk3 (requires --with-gtkabi=3.0 option to configure) devel"
-@@ -3320,15 +3320,18 @@ if compile_prog "" "" ; then
+         feature_not_found "gtk" "Install gtk2 or gtk3 devel"
+@@ -3500,15 +3500,18 @@ if compile_prog "" "" ; then
  fi
  
  # Check if tools are available to build documentation.
@@ -45,7 +45,7 @@
  fi
  
  # Search for bswap_32 function
-@@ -3498,6 +3501,17 @@ fi
+@@ -3650,6 +3653,17 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
@@ -63,7 +63,7 @@
      if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
-@@ -3510,6 +3524,7 @@ if test "$libusb" != "no" ; then
+@@ -3662,6 +3676,7 @@ if test "$libusb" != "no" ; then
          fi
          libusb="no"
      fi
