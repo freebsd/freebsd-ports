@@ -4,7 +4,7 @@
 PORTNAME=	penguinsap
 PORTVERSION=	0.1
 CATEGORIES=	audio
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Atari(TM) .sap player

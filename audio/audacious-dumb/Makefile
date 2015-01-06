@@ -6,7 +6,7 @@ PORTVERSION=	0.83
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audacious plugin that support the IT, XM, S3M, or MOD formats

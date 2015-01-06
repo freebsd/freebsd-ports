@@ -5,7 +5,7 @@ PORTNAME=	resid
 PORTVERSION=	0.16
 PORTREVISION=	2
 CATEGORIES=	audio emulators
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine

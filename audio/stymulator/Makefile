@@ -6,7 +6,7 @@ DISTVERSION=	0.21a
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://atariarea.krap.pl/stymulator/files/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	STYMulator-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

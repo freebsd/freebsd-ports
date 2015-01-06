@@ -5,7 +5,7 @@ PORTNAME=	checkmate
 PORTVERSION=	0.19
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.gissen.nl/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for checking mp3 files for errors

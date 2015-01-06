@@ -6,7 +6,7 @@ PORTVERSION=	2.13
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator

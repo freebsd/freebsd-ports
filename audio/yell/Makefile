@@ -4,7 +4,7 @@
 PORTNAME=	yell
 PORTVERSION=	1.1
 CATEGORIES=	audio
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line pc speaker bell

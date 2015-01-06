@@ -6,7 +6,7 @@ PORTVERSION=	20100101
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://schismtracker.org/dl/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	schismtracker-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
