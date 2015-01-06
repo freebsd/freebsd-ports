@@ -4,7 +4,7 @@
 PORTNAME=	thinglaunch
 PORTVERSION=	1.8
 CATEGORIES=	x11
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Very fast launcher program for X

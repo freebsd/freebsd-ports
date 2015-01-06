@@ -6,7 +6,7 @@ DISTVERSION=	1.1b
 PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast GTK+ program launcher
