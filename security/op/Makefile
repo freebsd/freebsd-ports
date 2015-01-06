@@ -5,7 +5,7 @@ PORTNAME=	op
 PORTVERSION=	1.32
 CATEGORIES=	security
 MASTER_SITES=	http://swapoff.org/files/op/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Controlled privilege escalation tool

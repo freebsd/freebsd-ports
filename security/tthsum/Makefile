@@ -5,7 +5,7 @@ PORTNAME=	tthsum
 PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for generating and checking TTH message digests
