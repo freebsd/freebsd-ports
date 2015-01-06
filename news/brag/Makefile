@@ -5,7 +5,7 @@ PORTNAME=	brag
 PORTVERSION=	1.4.1
 CATEGORIES=	news tcl
 MASTER_SITES=	http://brag.sourceforge.net/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups
