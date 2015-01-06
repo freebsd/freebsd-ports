@@ -1,4 +1,4 @@
-# $FreeBSD: /tmp/pcvs/ports/net/ntp-devel/Makefile.inc,v 1.1 2011-11-27 23:02:28 cy Exp $
+# $FreeBSD: head/net/ntp/Makefile.inc 374987 2014-12-20 00:41:16Z cy $
 
 OPTIONS_DEFINE=	NTPSNMPD \
 		SSL \
