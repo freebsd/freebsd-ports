@@ -3,7 +3,7 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.0
-PORTREVISION?=	16	# also bump japanese/spamassassin
+PORTREVISION?=	17	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
