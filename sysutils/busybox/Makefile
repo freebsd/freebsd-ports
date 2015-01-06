@@ -3,7 +3,7 @@
 
 PORTNAME=	busybox
 PORTVERSION=	1.22.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
@@ -12,6 +12,9 @@ PATCH_DIST_STRIP=	-p1
 PATCHFILES=	busybox-1.22.1-ash.patch \
 		busybox-1.22.1-date.patch \
 		busybox-1.22.1-iplink.patch \
+		busybox-1.22.1-lzop.patch \
+		busybox-1.22.1-nc.patch \
+		busybox-1.22.1-zcat-no-ext.patch \
 		#
 
 MAINTAINER=	mandree@FreeBSD.org
