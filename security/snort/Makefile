@@ -64,7 +64,7 @@ BARNYARD_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2
 PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:${PORTSDIR}/security/pulledpork
 APPID_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
-			luajit_LIBS="-L${LOCALBASE}/lib"
+			luajit_LIBS="-L${LOCALBASE}/lib -lluajit-5.1"
 
 .include <bsd.port.options.mk>
 
