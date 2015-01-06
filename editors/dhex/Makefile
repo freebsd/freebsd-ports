@@ -5,7 +5,7 @@ PORTNAME=	dhex
 PORTVERSION=	0.68
 CATEGORIES=	editors
 MASTER_SITES=	http://www.dettus.net/dhex/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
