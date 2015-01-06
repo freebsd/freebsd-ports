@@ -6,7 +6,7 @@ PORTVERSION=	0.90.86
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2

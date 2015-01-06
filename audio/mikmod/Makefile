@@ -6,7 +6,7 @@ PORTVERSION=	3.2.5
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI, and IT mods

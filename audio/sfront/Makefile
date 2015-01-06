@@ -4,7 +4,7 @@
 PORTNAME=	sfront
 PORTVERSION=	0.99
 CATEGORIES=	audio
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Translator that converts MP4-SA files into efficient C programs
