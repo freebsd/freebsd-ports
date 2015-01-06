@@ -1,5 +1,3 @@
 bin/tenebrae
 %%Q1DIR%%/tenebrae/Pak0.pak
-@dirrm %%Q1DIR%%/tenebrae
 %%PORTDOCS%%%%DOCSDIR%%/Tenebrae_Readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
