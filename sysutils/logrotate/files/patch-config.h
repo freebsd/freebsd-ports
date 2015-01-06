@@ -7,7 +7,7 @@ index ae7f308..7c0a2b3 100644
  #endif
  
 +#ifdef __FreeBSD__
-+    #define DEFAULT_MAIL_COMMAND "/usr/bin/mailx -s"
++    #define DEFAULT_MAIL_COMMAND "/usr/bin/mailx"
 +    #define COMPRESS_COMMAND "/usr/bin/gzip"
 +    #define UNCOMPRESS_COMMAND "/usr/bin/gunzip"
 +    #define STATEFILE "/var/run/logrotate.status"

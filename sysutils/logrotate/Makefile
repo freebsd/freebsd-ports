@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logrotate
-PORTVERSION=	3.8.7
+PORTVERSION=	3.8.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/l/o/logrotate/
 
