@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
