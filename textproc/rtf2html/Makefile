@@ -4,7 +4,7 @@
 PORTNAME=	rtf2html
 DISTVERSION=	1.1b
 CATEGORIES=	textproc
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple rtf2html converter

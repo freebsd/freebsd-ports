@@ -5,7 +5,7 @@ PORTNAME=	colordiff
 PORTVERSION=	1.0.13
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.colordiff.org/ CRITICAL
+MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to colorize diff output
