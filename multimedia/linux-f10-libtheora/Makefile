@@ -5,7 +5,7 @@ PORTNAME=	libtheora
 PORTVERSION=	1.0rc1
 PORTREVISION=	1
 CATEGORIES=	multimedia linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Theora Video Compression Codec (Linux Fedora 10)

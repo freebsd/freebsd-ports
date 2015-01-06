@@ -5,7 +5,7 @@ PORTNAME=	cairo
 PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	graphics linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Vector graphics library Cairo (Linux Fedora 10)

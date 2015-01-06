@@ -5,7 +5,7 @@ PORTNAME=	libglade2
 PORTVERSION=	2.6.3
 PORTREVISION=	2
 CATEGORIES=	devel linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of libglade2 (Linux Fedora 10)

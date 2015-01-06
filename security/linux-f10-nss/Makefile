@@ -5,7 +5,7 @@ PORTNAME=	nss
 PORTVERSION=	3.12.3.99.3
 PORTREVISION=	2
 CATEGORIES=	security linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux Fedora 10)

@@ -5,7 +5,7 @@ PORTNAME=	scim-libs
 PORTVERSION=	1.4.7
 PORTREVISION=	3
 CATEGORIES=	textproc linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Smart Common Input Method libraries (Linux Fedora 10)

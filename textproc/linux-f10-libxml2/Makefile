@@ -5,7 +5,7 @@ PORTNAME=	libxml2
 PORTVERSION=	2.7.3
 PORTREVISION=	2
 CATEGORIES=	textproc linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux Fedora 10)
