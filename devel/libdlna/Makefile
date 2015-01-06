@@ -6,8 +6,7 @@ PORTVERSION=	0.2.3
 PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		LOCAL/ehaupt
 
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Reference DLNA open-source implementation
