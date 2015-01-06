@@ -5,7 +5,7 @@ PORTNAME=	minissdpd
 PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	UPnP IGD discovery speed enhancer

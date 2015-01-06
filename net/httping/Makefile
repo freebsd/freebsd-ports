@@ -6,7 +6,7 @@ PORTVERSION=	2.3.4
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests

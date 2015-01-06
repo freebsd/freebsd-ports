@@ -5,7 +5,7 @@ PORTNAME=	nload
 PORTVERSION=	0.7.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.roland-riegel.de/nload/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
