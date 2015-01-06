@@ -5,7 +5,7 @@ PORTNAME=	tinystats
 PORTVERSION=	1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.morettoni.net/bsd/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	DJB's tinydns statistics generator

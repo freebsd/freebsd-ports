@@ -4,7 +4,7 @@
 PORTNAME=	vizone
 PORTVERSION=	0.1
 CATEGORIES=	dns
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Updates the serial number in one or more zonefiles
