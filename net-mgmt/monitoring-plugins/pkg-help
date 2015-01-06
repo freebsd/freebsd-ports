@@ -5,6 +5,8 @@ doesn't have 127.0.0.1 and ::1, and you want check_ping to
 be built, you have to set NAGIOSPOLLIP and NAGIOSPOLLIP6 to
 an IPV4 and an IPV6 address that can be pinged from the jail.
 
+As a few people seem to be doing it and complaining it does not
+work, you do NOT want to use this when building with poudriere.
 
                          ** DNS **
 Starting from FreeBSD 10.0, BIND has been replaced in base
