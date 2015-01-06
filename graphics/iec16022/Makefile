@@ -6,7 +6,7 @@ PORTVERSION=	0.2.4
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create 2D barcodes, also known as DataMatrix
