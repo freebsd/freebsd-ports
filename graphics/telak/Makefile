@@ -6,7 +6,7 @@ PORTVERSION=	0.6
 PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to draw pictures on your root window

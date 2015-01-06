@@ -4,7 +4,7 @@
 PORTNAME=	recoverjpeg
 PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral

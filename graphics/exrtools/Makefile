@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
