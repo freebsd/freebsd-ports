@@ -6,7 +6,7 @@ PORTVERSION=	0.9.29
 PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/43419242/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	On-screen-display notification agent using libnotify
