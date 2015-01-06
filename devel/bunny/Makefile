@@ -5,7 +5,7 @@ PORTNAME=	bunny
 PORTVERSION=	0.93
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE CRITICAL
+MASTER_SITES=	GOOGLE_CODE LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
