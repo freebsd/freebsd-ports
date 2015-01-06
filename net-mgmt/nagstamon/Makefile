@@ -5,7 +5,7 @@ PORTNAME=	nagstamon
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	https://nagstamon.ifw-dresden.de/files-nagstamon/stable/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	Nagstamon-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
