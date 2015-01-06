@@ -6,6 +6,6 @@ To use eawpats you'll need to replace your
 
 with
 
-%%PREFIX%%/lib/timidity/timidity.cfg-eawpats
+%%PREFIX%%/share/timidity/timidity.cfg-eawpats
 
 ===========================================================================
