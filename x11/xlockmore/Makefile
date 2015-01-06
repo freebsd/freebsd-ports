@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER?=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more

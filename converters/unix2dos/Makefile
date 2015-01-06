@@ -4,7 +4,7 @@
 PORTNAME=	unix2dos
 PORTVERSION=	1.3
 CATEGORIES=	converters
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	obonilla@galileo.edu
 COMMENT=	Convert ASCII newlines between CR/LF and LF

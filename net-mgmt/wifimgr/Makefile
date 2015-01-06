@@ -6,7 +6,7 @@ PORTVERSION=	1.11
 PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
