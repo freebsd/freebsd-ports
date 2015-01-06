@@ -81,7 +81,7 @@ PREPROC_RULE_DIR=	${ETCDIR}/preproc_rules
 LOGS_DIR=		/var/log/snort
 
 CONFIG_FILES=	classification.config gen-msg.map reference.config \
-		snort.conf threshold.conf unicode.map
+		snort.conf threshold.conf unicode.map file_magic.conf
 
 DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 		doc/README* doc/USAGE doc/*.pdf
