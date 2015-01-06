@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelink
-PORTVERSION=	20111012
-PORTREVISION=	1
+PORTVERSION=	20130503
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.redhat.com/jakub/prelink/
 
