@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	QEMU CPU Emulator development version - static bsd-user targets
+COMMENT=	QEMU CPU Emulator github bsd-user branch - static user targets
 PKGNAMESUFFIX=	-user-static
 
 QEMU_USER_STATIC=	yes
@@ -11,9 +11,7 @@ DESCR=		${.CURDIR}/pkg-descr
 OPTIONS_SLAVE=	STATIC_LINK BSD_USER X86_TARGETS
 OPTIONS_EXCLUDE=SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 DOCS
-# XXX soon, when it builds again on 8 and 9:
-# MASTERDIR=	${.CURDIR}/../qemu-sbruno
-MASTERDIR=	${.CURDIR}/../qemu-devel
+MASTERDIR=	${.CURDIR}/../qemu-sbruno
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-ga
