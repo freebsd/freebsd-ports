@@ -4,7 +4,7 @@
 PORTNAME=	tmpreaper
 PORTVERSION=	1.6.13
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age

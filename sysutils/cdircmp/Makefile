@@ -4,7 +4,7 @@
 PORTNAME=	cdircmp
 PORTVERSION=	0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy

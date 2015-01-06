@@ -5,7 +5,7 @@ PORTNAME=	hploscripts
 PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HP Lights-Out management perl scripts
