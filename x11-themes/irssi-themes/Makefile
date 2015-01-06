@@ -5,7 +5,7 @@ PORTNAME=	irssi-themes
 PORTVERSION=	20101013
 CATEGORIES=	x11-themes irc
 MASTER_SITES=	http://www.irssi.org/themefiles/ \
-		CRITICAL
+		LOCAL/ehaupt/${PORTNAME}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 

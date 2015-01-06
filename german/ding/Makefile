@@ -5,7 +5,7 @@ PORTNAME=	ding
 PORTVERSION=	1.7
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	A German-English dictionary program for X windows/Unix

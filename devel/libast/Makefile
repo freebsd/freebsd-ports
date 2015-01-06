@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 PORTREVISION=	13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library of assorted spiffy things

@@ -6,7 +6,7 @@ PORTVERSION=	3.1.10
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tool to minimize the compile time of C/C++ programs
