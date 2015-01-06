@@ -1,15 +1,33 @@
 --- beadm.orig	2014-03-12 02:11:19.000000000 -0400
-+++ beadm	2015-01-06 08:59:19.896613256 -0500
-@@ -535,7 +535,7 @@
++++ beadm	2015-01-06 10:07:59.436327030 -0500
+@@ -535,12 +535,25 @@
        | grep -E "^${POOL}/${BEDS}/${2}(/|$)" \
        | while read NAME
          do
 -          zfs set canmount=on ${NAME}
-+          zfs set canmount=noauto ${NAME}
++          # If we are using GRUB, don't set canmount=on, since it clobbers
++          # what we set in grub.cfg for vfs.root.mountfrom
++          if [ -e /boot/grub/grub.cfg ]
++          then
++            zfs set canmount=noauto ${NAME}
++          else
++            zfs set canmount=on ${NAME}
++          fi
            while __be_clone ${NAME}
            do
              zfs promote ${NAME}
-@@ -737,7 +737,7 @@
+           done
+         done
++
++        # check if we need to update grub
++        if [ "${GRUB}" = YES ]
++        then
++          __update_grub
++        fi
+     echo "Activated successfully"
+     ;;
+ 
+@@ -737,7 +750,7 @@
                    continue
                    ;;
                  (*)
