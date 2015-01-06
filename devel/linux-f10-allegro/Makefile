@@ -5,7 +5,7 @@ PORTNAME=	allegro
 PORTVERSION=	4.2.2
 PORTREVISION=	1
 CATEGORIES=	devel linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (Linux Fedora 10)

@@ -5,7 +5,7 @@ PORTNAME=	openldap
 PORTVERSION=	2.4.12
 PORTREVISION=	2
 CATEGORIES=	net linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux Fedora 10)

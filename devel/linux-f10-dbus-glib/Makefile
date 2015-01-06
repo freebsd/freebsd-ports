@@ -5,7 +5,7 @@ PORTNAME=	dbus-glib
 PORTVERSION=	0.76
 PORTREVISION=	1
 CATEGORIES=	devel linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GLib bindings for D-Bus (Linux Fedora 10)

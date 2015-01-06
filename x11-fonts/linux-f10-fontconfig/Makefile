@@ -5,7 +5,7 @@ PORTNAME=	fontconfig
 PORTVERSION=	2.6.0
 PORTREVISION=	1
 CATEGORIES=	x11-fonts linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows (Linux Fedora 10)
