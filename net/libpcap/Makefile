@@ -6,7 +6,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
 
 GNU_CONFIGURE=	yes
