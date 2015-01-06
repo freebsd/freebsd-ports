@@ -5,7 +5,7 @@ PORTNAME=	cksfv
 PORTVERSION=	1.3.14
 CATEGORIES=	security
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/cksfv/files/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files

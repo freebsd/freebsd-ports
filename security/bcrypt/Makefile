@@ -5,7 +5,7 @@ PORTNAME=	bcrypt
 PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://bcrypt.sourceforge.net/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cross-platform blowfish encryption utility
