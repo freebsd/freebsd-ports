@@ -5,7 +5,7 @@ PORTNAME=	milter-callback
 PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Milter to perform a envelope-from sender verification on target MX
