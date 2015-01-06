@@ -4,7 +4,7 @@
 PORTNAME=	ppmd
 PORTVERSION=	20050811
 CATEGORIES=	archivers
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast archiver with good compression ratio
