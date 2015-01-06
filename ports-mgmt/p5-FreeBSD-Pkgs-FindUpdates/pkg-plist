@@ -1,3 +1,0 @@
-bin/pkg_findupdates
-%%SITE_PERL%%/FreeBSD/Pkgs/FindUpdates.pm
-%%PERL5_MAN3%%/FreeBSD::Pkgs::FindUpdates.3.gz

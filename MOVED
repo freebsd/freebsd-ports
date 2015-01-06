@@ -7390,3 +7390,11 @@ security/openssh-portable-base||2015-01-01|Has expired: Overwrite-base option/po
 devel/cedet||2015-01-01|Has expired: Fails to build, use Emacs' builtin cedet package instead
 devel/ecb||2015-01-01|Has expired: does not work with newer Emacs versions, use the elpa package instead
 devel/rubygem-little_plugger|devel/rubygem-little-plugger|2015-01-05|Rename to match our rubygems naming
+ports-mgmt/portcheckout||2015-01-06|Has expired: Uses ports cvs repo, which is long gone
+ports-mgmt/pkg_trackinst||2015-01-06|Has expired: Does not support pkgng, generates incorrect pkg-plist
+ports-mgmt/pkg_remove||2015-01-06|Has expired: Does not support pkgng
+ports-mgmt/pkg-orphan||2015-01-06|Has expired: Does not support pkgng
+ports-mgmt/p5-FreeBSD-Pkgs-FindUpdates||2015-01-06|Has expired: Depends on ports-mgmt/p5-FreeBSD-Pkgs
+ports-mgmt/p5-FreeBSD-Pkgs||2015-01-06|Has expired: Does not support pkgng
+ports-mgmt/p5-App-Pm2Port||2015-01-06|Has expired: Does not know about USES=perl, generates incorrect pkg-plist
+ports-mgmt/bpkg||2015-01-06|Has expired: Does not support pkgng

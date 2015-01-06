@@ -1,4 +1,0 @@
-bin/pm2port
-man/man1/pm2port.1.gz
-%%PERL5_MAN3%%/App::Pm2Port.3.gz
-%%SITE_PERL%%/App/Pm2Port.pm
