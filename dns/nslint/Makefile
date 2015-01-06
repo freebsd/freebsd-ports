@@ -5,7 +5,7 @@ PORTNAME=	nslint
 PORTVERSION=	3.1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	ehaupt@FreeBSD.org
