@@ -5,7 +5,7 @@ PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
 PORTREVISION=	8
 CATEGORIES=	sysutils www
-MASTER_SITES=	GOOGLE_CODE CRITICAL
+MASTER_SITES=	GOOGLE_CODE LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Website access log visualization tool

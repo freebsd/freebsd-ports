@@ -5,7 +5,7 @@ PORTNAME=	screenie
 PORTVERSION=	1.30.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Small and lightweight screen(1) wrapper
