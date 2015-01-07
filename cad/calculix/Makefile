@@ -16,7 +16,7 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack	\
-		libspooles.so:${PORTSDIR}/math/spooles \
+		libspooles.so:${PORTSDIR}/math/spooles	\
 		libtaucs.so:${PORTSDIR}/math/taucs
 
 DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}	\
@@ -40,7 +40,7 @@ USE_GL=	glut
 BROWSER?=	firefox
 PSVIEWER?=	gv
 
-OPTIONS_DEFINE= ATLAS METIS METIS_EDF DOCS EXAMPLES
+OPTIONS_DEFINE=	ATLAS METIS METIS_EDF DOCS EXAMPLES
 OPTIONS_DEFAULT=METIS
 
 .include <bsd.port.options.mk>
@@ -56,25 +56,16 @@ EXTRACT_ONLY+=	${DIST_HTM} ccx_${PORTVERSION}.ps${EXTRACT_SUFX}
 .endif
 
 .if ${PORT_OPTIONS:MMETIS}
-LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis4
+LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4
 .endif
 .if ${PORT_OPTIONS:MMETIS_EDF}
-LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis-edf
-.endif
-
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=             yes
+LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis-edf
 .endif
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lf77blas
-LAPACK_LIBS=	-lalapack -lcblas
+USES+=		blaslapack:atlas
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-BLAS_LIBS=	-lblas
-LAPACK_LIBS=	-llapack
+USES+=		blaslapack
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -86,15 +77,15 @@ FFLAGS+=	-fpic
 .endif
 
 .if empty(PORT_OPTIONS:MEXAMPLES)
-PLIST_SUB=	WITH_EXAMPLES="@comment "
+PLIST_SUB=	PORTEXAMPLES="@comment "
 .else
-PLIST_SUB=	WITH_EXAMPLES=""
+PLIST_SUB=	PORTEXAMPLES=""
 .endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
-	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
-	s+%%LAPACK_LIBS%%+${LAPACK_LIBS}+ ; \
+	s+%%BLAS_LIBS%%+${BLASLIB}+ ; \
+	s+%%LAPACK_LIBS%%+${LAPACKLIB}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/${CCX_VER}/src/Makefile
 	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
