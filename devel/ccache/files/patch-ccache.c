@@ -1,30 +1,28 @@
-$FreeBSD$
+Determine whether cc(1) is clang or gcc at compile-time.
 
-Disable compiling preprocessed code on CURRENT with default clang. Avoids
-needing to define CCACHE_CPP2 to build with clang. Performance hit but
-much safer until upstream fixes the build issue.
-
---- ./ccache.c.orig	2013-05-08 14:22:16.891630019 -0500
-+++ ./ccache.c	2013-05-08 14:27:18.488628070 -0500
-@@ -31,6 +31,9 @@
- #include "hashutil.h"
- #include "language.h"
- #include "manifest.h"
-+#if defined(__FreeBSD__)
-+#include <sys/param.h>
+--- ccache.c.orig	2015-01-06 18:24:47.738295980 -0600
++++ ccache.c	2015-01-06 18:25:58.685291460 -0600
+@@ -1116,6 +1116,11 @@ compiler_is_clang(struct args *args)
+ {
+ 	char* name = basename(args->argv[0]);
+ 	bool is = strstr(name, "clang");
++#ifdef CC_IS_CLANG
++	if (strcmp(name, "cc") == 0 || strcmp(name, "CC") == 0 ||
++	    strcmp(name, "c++") == 0)
++	        is = true;
 +#endif
- 
- static const char VERSION_TEXT[] =
- MYNAME " version %s\n"
-@@ -2260,7 +2263,11 @@
- 		base_dir = NULL;
- 	}
- 
-+#if __FreeBSD_version >= 1000024
-+	compile_preprocessed_source_code = false;
-+#else
- 	compile_preprocessed_source_code = !getenv("CCACHE_CPP2");
+ 	free(name);
+ 	return is;
+ }
+@@ -1125,6 +1130,11 @@ compiler_is_gcc(struct args *args)
+ {
+ 	char* name = basename(args->argv[0]);
+ 	bool is = strstr(name, "gcc") || strstr(name, "g++");
++#ifdef CC_IS_GCC
++	if (strcmp(name, "cc") == 0 || strcmp(name, "CC") == 0 ||
++	    strcmp(name, "c++") == 0)
++	        is = true;
 +#endif
- 
- 	/* make sure the cache dir exists */
- 	if (create_dir(cache_dir) != 0) {
+ 	free(name);
+ 	return is;
+ }
