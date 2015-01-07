@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	security graphics net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of graph-generating scripts
 
 LICENSE=	GPLv2
