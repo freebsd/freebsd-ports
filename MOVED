@@ -4458,7 +4458,6 @@ comms/kmobiletools||2013-07-26|Has expired: Depends on Qt 3.x
 comms/kpsk||2013-07-26|Has expired: Depends on Qt 3.x
 comms/ktrack||2013-07-26|Has expired: Depends on Qt 3.x
 comms/linpsk||2013-07-26|Has expired: Depends on Qt 3.x
-comms/qtel||2013-07-26|Has expired: Depends on Qt 3.x
 converters/ktextdecode||2013-07-26|Has expired: Depends on Qt 3.x
 databases/kmysqladmin||2013-07-26|Has expired: Depends on Qt 3.x
 databases/knoda||2013-07-26|Has expired: Depends on Qt 3.x
