@@ -181,7 +181,7 @@ post-install:
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
 	${CP} -p ${STAGEDIR}${MAILMANDIR}/icons/* ${STAGEDIR}${PREFIX}/${IMGDIR}
-	uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
+	${INSTALL_DATA} ${FILESDIR}/powerlogo.gif \
 	  ${STAGEDIR}${PREFIX}/${IMGDIR}/powerlogo.gif
 .if ${PORT_OPTIONS:MDOCS}
 	${CP} -R ${WRKSRC}/doc/* ${WRKSRC}/
