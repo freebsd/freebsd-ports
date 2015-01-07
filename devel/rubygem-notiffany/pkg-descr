@@ -1,0 +1,11 @@
+Notiffany is a notification library supporting popular notifiers, such as:
+Growl, libnotify, TMux, Emacs, rb-notifu, notifysend, gntp, TerminalNotifier.
+
+Features:
+- most popular notification libraries supported
+- easy to override options at any level (new(), notify())
+- using multiple notifiers simultaneously
+- child processes reuse same configuration
+
+WWW: https://github.com/guard/notiffany
+RG:  https://rubygems.org/gems/notiffany
