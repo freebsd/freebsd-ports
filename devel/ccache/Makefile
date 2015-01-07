@@ -33,7 +33,7 @@ OPTIONS_SUB=	yes
 
 STATIC_LDFLAGS=	-static
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .  if ${COMPILER_TYPE} == clang
 CPPFLAGS+=	-DCC_IS_CLANG
@@ -98,4 +98,4 @@ post-install:
 	@${CAT} ${FILESDIR}/pkg-message-clang >> ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
