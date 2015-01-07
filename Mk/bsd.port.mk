@@ -1416,10 +1416,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .endif
 
-.if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
-USES+=	python
-.endif
-
 .if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
 .include "${PORTSDIR}/Mk/bsd.fpc.mk"
 .endif
