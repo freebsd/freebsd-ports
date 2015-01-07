@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Encode::Detect.3.gz
-%%PERL5_MAN3%%/Encode::Detect::Detector.3.gz
 %%SITE_ARCH%%/Encode/Detect.pm
 %%SITE_ARCH%%/Encode/Detect/Detector.pm
 %%SITE_ARCH%%/auto/Encode/Detect/Detector/Detector.so
+%%PERL5_MAN3%%/Encode::Detect.3.gz
+%%PERL5_MAN3%%/Encode::Detect::Detector.3.gz
