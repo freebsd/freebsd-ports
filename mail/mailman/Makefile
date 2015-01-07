@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.18-1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -176,7 +176,7 @@ post-install:
 	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
-	@# mm_cfg.py is handled by pkg-plist:
+	@# mm_cfg.py is handled by pkg-plist, no need to archive a copy:
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.py
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${IMGDIR}
