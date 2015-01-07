@@ -4,21 +4,76 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 
-case $2 in
+check_rcfile_fix_perms() {
+    (
+    . /etc/rc.subr
+
+    name="mailman"
+    rcvar=mailman_enable
+
+    load_rc_config $name
+
+    : ${mailman_fix_perms="YES"}
+
+    checkyesno mailman_fix_perms
+    )
+}
+
+set -e
+case "$2" in
 
 POST-INSTALL)
   echo "---> Starting post-install script"
   LC_ALL=C
   export LC_ALL
 
-  MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")" || exit 1
+  MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")"
   trap "rm -rf \"$MYTMP\"" EXIT
 
-  /bin/chmod g+s "%%MAILMANDIR%%" || exit 1
+  # fix up permissions - this is under investigation; pkg or libarchive
+  # goof up the group writable and/or setgid bits
+  /bin/chmod 02770 "%%MAILMANDIR%%/qfiles"
+  /bin/chmod 02775 "%%MAILMANDIR%%" \
+    "%%MAILMANDIR%%/Mailman" \
+    "%%MAILMANDIR%%/bin" \
+    "%%MAILMANDIR%%/cgi-bin" \
+    "%%MAILMANDIR%%/icons" \
+    "%%MAILMANDIR%%/mail" \
+    "%%MAILMANDIR%%/scripts" \
+    "%%MAILMANDIR%%/tests" \
+    "%%MAILMANDIR%%/pythonlib" \
+    "%%MAILMANDIR%%/spam" \
+    "%%MAILMANDIR%%/locks" \
+    "%%MAILMANDIR%%/Mailman/Archiver" \
+    "%%MAILMANDIR%%/Mailman/Bouncers" \
+    "%%MAILMANDIR%%/Mailman/Cgi" \
+    "%%MAILMANDIR%%/Mailman/Commands" \
+    "%%MAILMANDIR%%/Mailman/Gui" \
+    "%%MAILMANDIR%%/Mailman/Handlers" \
+    "%%MAILMANDIR%%/Mailman/Logging" \
+    "%%MAILMANDIR%%/Mailman/MTA" \
+    "%%MAILMANDIR%%/Mailman/Queue" \
+    "%%MAILMANDIR%%/tests/bounces" \
+    "%%MAILMANDIR%%/tests/msgs" \
+    "%%MAILMANDIR%%/cron" \
+    "%%MAILMANDIR%%/data" \
+    "%%MAILMANDIR%%/lists" \
+    "%%MAILMANDIR%%/archives" \
+    "%%MAILMANDIR%%/archives/public"
+  # this can be 2770 or 2771 but should not be stomped over
+  test -d "%%MAILMANDIR%%/archives/private" \
+  || /usr/bin/install -d -m 02771 \
+	"%%MAILMANDIR%%/archives/private" -g "%%GROUP%%"
+
+  /bin/chmod u+rwx,g+srwx      "%%MAILMANDIR%%/archives/private"
+  /bin/chmod u+rwx,g+srwx,o+rx "%%MAILMANDIR%%/logs"
+
+  /usr/bin/find "%%MAILMANDIR%%/messages" "%%MAILMANDIR%%/templates" -type d \
+    -exec chmod 02775 '{}' +
 
   echo "---> Running update"
 
-  LC_ALL=C "%%MAILMANDIR%%/bin/update" || exit 1
+  LC_ALL=C "%%MAILMANDIR%%/bin/update"
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
 
@@ -34,24 +89,28 @@ POST-INSTALL)
           echo "--->     %%MAILMANDIR%%/cron/crontab.in"
       else
           echo "---> Installing crontab(5) file for user \"%%USER%%\""
-          /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in" || exit 1
+          /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in"
       fi
   else
       echo "---> Creating crontab(5) file for user \"%%USER%%\""
-      /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in" || exit 1
+      /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in"
   fi
   rm -f "$MYTMP/crontab"
 
-  echo "---> Checking (and fixing) file and directory permissions"
-  output="$("%%MAILMANDIR%%/bin/check_perms" -f 2>&1)"
-  printf '%s\n' "$output" | egrep -v '^Re-run' || :
+  if check_rcfile_fix_perms ; then
+    echo "---> Checking (and fixing) file and directory permissions"
+    output="$("%%MAILMANDIR%%/bin/check_perms" -f 2>&1)" || :
+    printf '%s\n' "$output" | egrep -v '^Re-run' || :
+  else
+    echo "---> rcfile sets mailman_fix_perms to no, skipping check_perms"
+  fi
 
   echo "---> Running assorted other checks"
   if egrep -q "^[ \t]*MTA.*=.*Postfix" "%%MAILMANDIR%%/Mailman/mm_cfg.py" ; then
       # run Postfix-specific checks
       if [ "x`${PKG_PREFIX}/sbin/postconf -h myhostname`" != "xlocalhost" ] \
-	  && ! egrep "^[ \t]*SMTPHOST.*=.*`${PKG_PREFIX}/sbin/postconf -h myhostname`" \
-	    "%%MAILMANDIR%%/Mailman/mm_cfg.py" 
+	  && ! egrep -q "^[ \t]*SMTPHOST.*=.*`${PKG_PREFIX}/sbin/postconf -h myhostname`" \
+	    "%%MAILMANDIR%%/Mailman/mm_cfg.py"
       then
 	  echo ""
 	  echo "Your Postfix hostname is non-default."
@@ -61,5 +120,4 @@ POST-INSTALL)
       fi
   fi
   ;;
-
 esac
