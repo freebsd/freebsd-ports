@@ -611,7 +611,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-status.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-stripspace.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-submodule.html
-%%HTMLDOCS%%%%DOCSDIR%%/git-subtree.html
+%%CONTRIB%%%%HTMLDOCS%%%%DOCSDIR%%/git-subtree.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-svn.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-symbolic-ref.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-tag.html
@@ -1216,6 +1216,7 @@ share/git-core/templates/info/exclude
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-favicon.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-logo.png
+%%CONTRIB%%share/git-core/contrib/contacts/Makefile
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
 %%CONTRIB%%share/git-core/contrib/README
