@@ -74,6 +74,7 @@
     SUBDIR += jsdr
     SUBDIR += kb
     SUBDIR += kermit
+    SUBDIR += klog
     SUBDIR += kremotecontrol
     SUBDIR += libconcord
     SUBDIR += libfec
