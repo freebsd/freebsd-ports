@@ -1,5 +1,5 @@
---- svxlink/trx/ToneDetector.cpp.orig	2014-04-09 23:45:04.000000000 -0700
-+++ svxlink/trx/ToneDetector.cpp	2014-04-09 23:47:33.000000000 -0700
+--- src/svxlink/trx/ToneDetector.cpp.orig	2014-04-09 23:45:04.000000000 -0700
++++ src/svxlink/trx/ToneDetector.cpp	2014-04-09 23:47:33.000000000 -0700
 @@ -335,7 +335,7 @@
  {
    if (thresh > 0.0f)

@@ -1,5 +1,5 @@
---- svxlink/trx/NetTrxTcpClient.cpp.orig	2014-04-09 23:51:30.000000000 -0700
-+++ svxlink/trx/NetTrxTcpClient.cpp	2014-04-09 23:52:13.000000000 -0700
+--- src/svxlink/trx/NetTrxTcpClient.cpp.orig	2014-04-09 23:51:30.000000000 -0700
++++ src/svxlink/trx/NetTrxTcpClient.cpp	2014-04-09 23:52:13.000000000 -0700
 @@ -328,8 +328,8 @@
        {
          MsgProtoVer *ver_msg = reinterpret_cast<MsgProtoVer *>(msg);

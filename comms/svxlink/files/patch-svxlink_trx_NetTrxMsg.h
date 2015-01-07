@@ -1,5 +1,5 @@
---- svxlink/trx/NetTrxMsg.h.orig	2014-04-09 23:51:14.000000000 -0700
-+++ svxlink/trx/NetTrxMsg.h	2014-04-09 23:51:53.000000000 -0700
+--- src/svxlink/trx/NetTrxMsg.h.orig	2014-04-09 23:51:14.000000000 -0700
++++ src/svxlink/trx/NetTrxMsg.h	2014-04-09 23:51:53.000000000 -0700
 @@ -176,8 +176,8 @@
      MsgProtoVer(void)
        : Msg(TYPE, sizeof(MsgProtoVer)), m_major(MAJOR),

@@ -1,5 +1,5 @@
---- locationinfo/LocationInfo.cpp.orig	2014-04-09 23:26:23.000000000 -0700
-+++ locationinfo/LocationInfo.cpp	2014-04-09 23:26:32.000000000 -0700
+--- src/locationinfo/LocationInfo.cpp.orig	2014-04-09 23:26:23.000000000 -0700
++++ src/locationinfo/LocationInfo.cpp	2014-04-09 23:26:32.000000000 -0700
 @@ -480,7 +480,7 @@
    }
  
