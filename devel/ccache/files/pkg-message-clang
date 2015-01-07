@@ -2,9 +2,5 @@ You've chosen to create symlinks to the clang compiler binaries if they exist.
 While it's known to be safe to build world with clang/ccache, it is not fully
 supported yet. You have been warned.
 
-You should define CCACHE_CPP2=1 in your /etc/make.conf until bug 8460 is fixed.
-
 See:
 	https://bugzilla.samba.org/show_bug.cgi?id=8460
-	https://bugzilla.samba.org/show_bug.cgi?id=8118
-
