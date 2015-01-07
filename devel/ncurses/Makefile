@@ -3,6 +3,7 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	${RELEASE}-20141213
+PORTREVSION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
 MASTER_SITE_SUBDIR=	${PORTNAME}/current
