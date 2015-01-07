@@ -3,7 +3,7 @@
 
 PORTNAME=	DBIx-Class-CustomPrefetch
 PORTVERSION=	0.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,13 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	anes@anes.su
 COMMENT=	Custom prefetches for DBIx::Class
 
-BUILD_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
-		p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
 		p5-DBIx-Class-VirtualColumns>=0:${PORTSDIR}/databases/p5-DBIx-Class-VirtualColumns \
 		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-DBIx-Class>=0.081:${PORTSDIR}/databases/p5-DBIx-Class
-RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
-		p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
+RUN_DEPENDS=	p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
 		p5-DBIx-Class-VirtualColumns>=0:${PORTSDIR}/databases/p5-DBIx-Class-VirtualColumns \
 		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-DBIx-Class>=0.081:${PORTSDIR}/databases/p5-DBIx-Class
