@@ -1,6 +1,6 @@
 @unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
 @unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
-%%IMGDIR%%/%%MM_USERNAME%%-large.jpg
+%%IMGDIR%%/mailman-large.jpg
 %%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg
 %%IMGDIR%%/mm-icon-large.ico
