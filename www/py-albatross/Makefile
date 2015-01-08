@@ -14,8 +14,8 @@ COMMENT=	Python toolkit for developing highly stateful web applications
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

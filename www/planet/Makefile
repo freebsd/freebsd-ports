@@ -12,9 +12,8 @@ COMMENT=	Planet is a flexible feed aggregator - and more!
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental \
 		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
-USES=		tar:bzip2
+USES=		python tar:bzip2
 NO_BUILD=	yes
-USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

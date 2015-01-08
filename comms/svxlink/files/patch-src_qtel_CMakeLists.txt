@@ -1,0 +1,17 @@
+--- src/qtel/CMakeLists.txt.orig	2014-08-02 12:45:56.000000000 -0700
++++ src/qtel/CMakeLists.txt	2015-01-05 21:46:43.000000000 -0800
+@@ -16,7 +16,14 @@
+ set(RESOURCES qtel.qrc)
+ 
+ # Libraries
++if(QT_ONLY)
++find_library(ASYNCCORE_LIB asynccore ${LIB_INSTALL_DIR})
++find_library(ASYNCAUDIO_LIB asyncaudio ${LIB_INSTALL_DIR})
++find_library(ECHOLIB_LIB echolib ${LIB_INSTALL_DIR})
++set(LIBS ${LIBS} ${ECHOLIB_LIB} asyncqt ${ASYNCAUDIO_LIB} ${ASYNCCORE_LIB})
++else(QT_ONLY)
+ set(LIBS ${LIBS} echolib asyncqt asyncaudio asynccore)
++endif(QT_ONLY)
+ 
+ # Find the GSM codec library and include directory
+ find_package(GSM REQUIRED)

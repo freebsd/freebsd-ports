@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode::Encoding subclass that detects the encoding of data
 
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+LICENSE=	MPL
 
 USES=		perl5
 USE_PERL5=	modbuild

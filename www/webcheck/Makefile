@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.gz
 MAINTAINER=	reed@reedmedia.net
 COMMENT=	View structure of a web site, get a list of problems like broken links
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 # what about fancytooltips?

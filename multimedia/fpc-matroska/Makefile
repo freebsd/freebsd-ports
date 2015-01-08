@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-matroska
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to matroska library
 
 USE_FPC=	yes

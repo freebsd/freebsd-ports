@@ -1,5 +1,5 @@
---- svxlink/trx/SwDtmfDecoder.cpp.orig	2014-04-09 23:44:56.000000000 -0700
-+++ svxlink/trx/SwDtmfDecoder.cpp	2014-04-09 23:47:28.000000000 -0700
+--- src/svxlink/trx/SwDtmfDecoder.cpp.orig	2014-04-09 23:44:56.000000000 -0700
++++ src/svxlink/trx/SwDtmfDecoder.cpp	2014-04-09 23:47:28.000000000 -0700
 @@ -175,14 +175,14 @@
    {
      int cfg_fwd_twist = atoi(value.c_str());

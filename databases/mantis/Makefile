@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTVERSION=	1.2.18
+PORTREVISION=	0
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
@@ -17,12 +17,11 @@ USES=	pgsql
 
 SUB_FILES=	pkg-message
 
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}/
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
-	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/developers/en/build
-	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/administration_guide/en/build
-	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/adminguide/en/build
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

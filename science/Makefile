@@ -79,12 +79,15 @@
     SUBDIR += linsmith
     SUBDIR += massxpert
     SUBDIR += mbdyn
+    SUBDIR += mcstas
+    SUBDIR += mcstas-comps
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += mei
     SUBDIR += metaf2xml
     SUBDIR += minc2
     SUBDIR += mol2ps
+    SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += ncs

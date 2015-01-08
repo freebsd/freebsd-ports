@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -333,6 +334,7 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_yubikey \
 		--without-rlm_sql_oracle \
 		--without-rlm_securid \
+		--without-rlm_cache_memcached \
 		--with-vmps \
 		--with-collectdclient-lib-dir=/dev/null
 

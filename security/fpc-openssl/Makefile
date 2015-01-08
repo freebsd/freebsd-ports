@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-openssl
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for OpenSSL
 
 USE_FPC=	yes

@@ -13,7 +13,7 @@ COMMENT=	Versatile web application server written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base
 
-USE_PYTHON=	2
+USES=		python:2
 NO_BUILD=	yes
 
 WEBWARE_USER?=	webkit

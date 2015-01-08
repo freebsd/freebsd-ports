@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jcommon
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	java devel
 MASTER_SITES=	SF/jfreechart/3.%20JCommon/${PORTVERSION}
 

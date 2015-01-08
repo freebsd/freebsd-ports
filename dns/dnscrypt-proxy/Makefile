@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.4.0
-PORTREVISION=	6
+PORTVERSION=	1.4.2
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -12,6 +11,7 @@ MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Boost privacy and security of DNS
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libsodium.so:${PORTSDIR}/security/libsodium
@@ -25,7 +25,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 USERS=		_dnscrypt-proxy
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README \
 		README-PLUGINS.markdown README-WINDOWS.markdown \
 		README.markdown TECHNOTES THANKS
 

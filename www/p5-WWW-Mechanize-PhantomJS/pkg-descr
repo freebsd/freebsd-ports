@@ -1,0 +1,5 @@
+WWW::Mechanize::PhantomJS automates the headless webbrowser PhantomJS
+and handles DOM handling, CSS selector, JSON, Canvas, SVG, and of
+course JavaScript.
+
+WWW: http://search.cpan.org/dist/WWW-Mechanize-PhantomJS/

@@ -17,16 +17,10 @@ BUILD_DEPENDS=	libquvi09>=0.9:${PORTSDIR}/multimedia/libquvi09
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig tar:xz
+CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-suffix=09
+USES=		pkgconfig tar:xz
 
-PLIST_FILES=	bin/quvi09 \
-		man/man1/quvi-dump09.1.gz \
-		man/man1/quvi-get09.1.gz \
-		man/man1/quvi-info09.1.gz \
-		man/man1/quvi-scan09.1.gz \
-		man/man1/quvi09.1.gz \
-		man/man5/quvirc09.5.gz
+PLIST_SUB=	PKGNAMESUFFIX=${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>

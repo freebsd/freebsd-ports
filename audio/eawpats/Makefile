@@ -3,7 +3,7 @@
 
 PORTNAME=	eawpats
 PORTVERSION=	12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	GENTOO/distfiles
 DISTNAME=	eawpats12_full
@@ -21,7 +21,7 @@ PATCH_SUBDIRS=	ethnic mazpat/fx gsdrum08 gsdrum25 gsdrum40 gus power sfx wime
 DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-TIMIDITY_DATADIR=	${PREFIX}/lib/timidity
+TIMIDITY_DATADIR=	${PREFIX}/share/timidity
 
 OPTIONS_DEFINE=	DOCS
 

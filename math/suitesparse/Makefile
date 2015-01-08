@@ -16,6 +16,22 @@ LICENSE_COMB=	multi
 
 USES=		fortran gmake
 
+OPTIONS_RADIO=	BLAS
+OPTIONS_RADIO_BLAS=	OPENBLAS REFERENCE ATLAS GOTO
+OPTIONS_DEFAULT=	OPENBLAS
+
+OPENBLAS_DESC=	Openblas
+OPENBLAS_USES=	blaslapack
+
+REFERENCE_DESC=	Blas / Lapack
+REFERENCE_USES=	blaslapack:netlib
+
+ATLAS_DESC=	ATLAS
+ATLAS_USES=	blaslapack:atlas
+
+GOTO_DESC=	GOTO
+GOTO_USES=	blaslapack:gotoblas
+
 .if defined (WITH_METIS)
 LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
 
@@ -24,40 +40,10 @@ RESTRICTED=	GPL and METIS licenses are contradictory
 
 CONFLICTS=	umfpack-*
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libopenblas.so)
-WITH_BLAS?=	openblas
-.elif exists(${LOCALBASE}/lib/libgoto2.so)
-WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas.so)
-WITH_BLAS?=	atlas
-.else
-WITH_BLAS?=	reference
-.endif
-
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.elif ${WITH_BLAS} == openblas
-LIB_DEPENDS+=	libopenblas.so:${PORTSDIR}/math/openblas
-BLAS=		-lopenblasp
-LAPACK=		-lopenblasp
-.elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-BLAS=		-lgoto2p
-LAPACK=		-lgoto2p
-.elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas
-LAPACK=		-lalapack -lptcblas
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -73,7 +59,7 @@ SVERSION=1
 .if defined (WITH_METIS)
 METIS=${LOCALBASE}/lib/libmetis.a
 METIS_PATH=${LOCALBASE}/include/metis
-CHOLMOD_CONFIG=	
+CHOLMOD_CONFIG=
 .else
 CHOLMOD_CONFIG=		-DNPARTITION
 .endif
@@ -81,14 +67,14 @@ CHOLMOD_CONFIG=		-DNPARTITION
 post-patch:
 	@${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
 	${REINPLACE_CMD} -e '\|^AR =|s|ar|${AR}|' \
-			-e '\|^BLAS =|s|=.*|= ${LDFLAGS} ${BLAS}|' \
+			-e '\|^BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
 			-e '\|^CC =|d' \
 			-e '\|^CFLAGS =|{s|-O[1-9]\{0,1\}||g;s|=|= ${CFLAGS} $${PICFLAG} |;}' \
 			-e '\|^CHOLMOD_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
 			-e '\|^CPLUSPLUS =|s|=.*|= ${CXX}|' \
 			-e '\|^F77 =|d' \
 			-e '\|^F77FLAGS =|s|=.*|= ${FFLAGS} $${PICFLAG}|' \
-			-e '\|^LAPACK =|s|=.*|= ${LDFLAGS} ${LAPACK}|' \
+			-e '\|^LAPACK =|s|=.*|= ${LDFLAGS} ${LAPACKLIB}|' \
 			-e '\|^METIS =|s|=.*|= ${METIS}|' \
 			-e '\|^METIS_PATH =|s|=.*|= ${METIS_PATH}|' \
 			-e 's|-I\$$(METIS_PATH)/Lib|-I${METIS_PATH}|' \
@@ -127,4 +113,4 @@ do-install:
 		j=$${i##*/} ;  ${LN} -sf $${j%.a}.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/$${j%.a}.so ; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

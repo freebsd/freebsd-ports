@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Math::MPFR.3.gz
 %%SITE_ARCH%%/Math/MPFR.pm
 %%SITE_ARCH%%/Math/MPFR/Prec.pm
 %%SITE_ARCH%%/Math/MPFR/V.pm
 %%SITE_ARCH%%/auto/Math/MPFR/MPFR.so
 %%SITE_ARCH%%/auto/Math/MPFR/Prec/Prec.so
 %%SITE_ARCH%%/auto/Math/MPFR/V/V.so
+%%PERL5_MAN3%%/Math::MPFR.3.gz

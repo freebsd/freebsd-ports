@@ -1409,11 +1409,11 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/assembly/spades_single.uwl
 %%DATADIR%%/workflow_samples/NGS/assembly.uwl
 %%DATADIR%%/workflow_samples/NGS/call_variants.uwl
+%%DATADIR%%/workflow_samples/NGS/chipseq_coverage.uwl
 %%DATADIR%%/workflow_samples/NGS/cistrome/chip_seq.uwl
 %%DATADIR%%/workflow_samples/NGS/cistrome/chip_seq_with_control.uwl
 %%DATADIR%%/workflow_samples/NGS/cistrome.uwl
 %%DATADIR%%/workflow_samples/NGS/consensus.uwl
-%%DATADIR%%/workflow_samples/NGS/chipseq_coverage.uwl
 %%DATADIR%%/workflow_samples/NGS/extract_coverage.uwl
 %%DATADIR%%/workflow_samples/NGS/extract_transcript_seq.uwl
 %%DATADIR%%/workflow_samples/NGS/raw_chip.uwl

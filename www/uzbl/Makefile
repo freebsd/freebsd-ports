@@ -17,10 +17,9 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
 		dmenu:${PORTSDIR}/x11/dmenu
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python:2
 USE_GNOME=	gtk20 pygtk2
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
 
 GITDATE=	2012.05.14
 GITVERSION=	228bc38

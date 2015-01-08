@@ -1088,6 +1088,7 @@
     SUBDIR += xjumpx
     SUBDIR += xkoules
     SUBDIR += xlaby
+    SUBDIR += xlennart
     SUBDIR += xlife
     SUBDIR += xlogical
     SUBDIR += xmahjongg

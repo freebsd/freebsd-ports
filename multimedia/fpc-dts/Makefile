@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-dts
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the dts library
 
 USE_FPC=	yes

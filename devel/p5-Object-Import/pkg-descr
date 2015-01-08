@@ -1,0 +1,7 @@
+This module lets you call methods of a certain object more easily
+by exporting them as functions to a package. The exported functions
+are not called as methods and do not receive an object argument,
+but instead the object is fixed at the time you import them with
+this module.
+
+WWW: http://search.cpan.org/dist/Object-Import/

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v3.0/
+MASTER_SITES=	http://www.cmake.org/files/v3.1/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org
@@ -29,6 +29,14 @@ INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
 
 DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
+.include <bsd.port.pre.mk>
+
+# CMake >= 3.1.0 needs libarchive3 because it calls
+# archive_entry_copy_sourcepath_w and archive_write_set_format_7zip.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000009
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
+.endif
+
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
@@ -42,4 +50,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/Utilities/Sphinx/man/cmake-gui.1 \
 		${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

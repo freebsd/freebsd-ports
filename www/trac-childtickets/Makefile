@@ -15,13 +15,11 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-USES=		zip
+USES=		python:2 zip
 
 WRKSRC=		${WRKDIR}/childticketsplugin/0.12
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 SUB_FILES=	pkg-message
 

@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.madness.at/~mad/projects/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cyrus-IMAP to Maildir++ conversion utility

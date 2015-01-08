@@ -18,9 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	django-mptt
 GH_COMMIT=	cc92ea6
 
-USES=			gettext
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gettext python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

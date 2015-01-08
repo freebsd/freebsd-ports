@@ -49,7 +49,7 @@ LATEX_RUN_DEPENDS=	detex:${PORTSDIR}/print/detex \
 			dvips:${PORTSDIR}/print/tex-dvipsk
 PDF_RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 PS_RUN_DEPENDS=		pstotext:${PORTSDIR}/print/pstotext
-PYTHON_USE=		python=yes
+PYTHON_USES=		python
 PYTHON_CONFIGURE_ENABLE=	python-module
 QT4_USE=		qt4=moc_build,qmake_build,rcc_build,uic_build \
 			qt4=iconengines_run,imageformats_run \

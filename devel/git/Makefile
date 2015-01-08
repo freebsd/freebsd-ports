@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 PORTVERSION=	2.2.1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG
 MASTER_SITE_SUBDIR=	software/scm/git
@@ -14,6 +15,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool
+
+LICENSE=	GPLv2
 
 CONFLICTS?=	git-subversion-[0-9]*
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	librouteros
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://verplant.org/librouteros/files/
 

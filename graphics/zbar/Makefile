@@ -37,7 +37,8 @@ V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20101027:${PORTSDIR}/multimedia/v4l_compat
 V4L_CONFIGURE_ON=	--enable-video=yes
 V4L_CONFIGURE_OFF=	--enable-video=no
 
-PYTHON_USE=	PYTHON=2 GNOME=pygtk2
+PYTHON_USE=		GNOME=pygtk2
+PYTHON_USES=		python:2
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
 

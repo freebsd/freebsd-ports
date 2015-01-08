@@ -270,7 +270,6 @@
     SUBDIR += mmv
     SUBDIR += mtail
     SUBDIR += mtx
-    SUBDIR += nagios-base-logos
     SUBDIR += najitool
     SUBDIR += newer
     SUBDIR += nsf

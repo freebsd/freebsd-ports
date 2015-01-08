@@ -5,7 +5,7 @@ PORTNAME=	distilator
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	ports-mgmt perl5
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line script to check the availability of a ports distfiles

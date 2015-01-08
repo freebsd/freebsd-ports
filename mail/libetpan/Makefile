@@ -3,6 +3,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	pawel@FreeBSD.org

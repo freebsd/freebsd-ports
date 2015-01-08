@@ -1,10 +1,3 @@
-%%PERL5_MAN3%%/Image::Compare.3.gz
-%%PERL5_MAN3%%/Image::Compare::AVG_THRESHOLD.3.gz
-%%PERL5_MAN3%%/Image::Compare::Comparator.3.gz
-%%PERL5_MAN3%%/Image::Compare::EXACT.3.gz
-%%PERL5_MAN3%%/Image::Compare::IMAGE.3.gz
-%%PERL5_MAN3%%/Image::Compare::THRESHOLD.3.gz
-%%PERL5_MAN3%%/Image::Compare::THRESHOLD_COUNT.3.gz
 %%SITE_PERL%%/Image/Compare.pm
 %%SITE_PERL%%/Image/Compare/AVG_THRESHOLD.pm
 %%SITE_PERL%%/Image/Compare/Comparator.pm
@@ -12,3 +5,10 @@
 %%SITE_PERL%%/Image/Compare/IMAGE.pm
 %%SITE_PERL%%/Image/Compare/THRESHOLD.pm
 %%SITE_PERL%%/Image/Compare/THRESHOLD_COUNT.pm
+%%PERL5_MAN3%%/Image::Compare.3.gz
+%%PERL5_MAN3%%/Image::Compare::AVG_THRESHOLD.3.gz
+%%PERL5_MAN3%%/Image::Compare::Comparator.3.gz
+%%PERL5_MAN3%%/Image::Compare::EXACT.3.gz
+%%PERL5_MAN3%%/Image::Compare::IMAGE.3.gz
+%%PERL5_MAN3%%/Image::Compare::THRESHOLD.3.gz
+%%PERL5_MAN3%%/Image::Compare::THRESHOLD_COUNT.3.gz

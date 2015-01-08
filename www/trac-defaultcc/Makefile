@@ -14,11 +14,9 @@ COMMENT=	Plugin that adds default CC value for tickets
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USES=		zip
+USES=		python:2 zip
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/trunk
 REL=		10605

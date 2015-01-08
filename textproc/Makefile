@@ -140,6 +140,8 @@
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch
+    SUBDIR += elasticsearch-plugin-head
+    SUBDIR += elasticsearch-plugin-hq
     SUBDIR += elasticsearch-plugin-marvel
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
@@ -731,6 +733,7 @@
     SUBDIR += p5-String-Fraction
     SUBDIR += p5-String-HexConvert
     SUBDIR += p5-String-Koremutake
+    SUBDIR += p5-String-Print
     SUBDIR += p5-String-RewritePrefix
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote

@@ -4,7 +4,7 @@
 PORTNAME=	schwobifyer
 PORTVERSION=	20050730
 CATEGORIES=	german
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for translating German into the Schwaebisch dialect

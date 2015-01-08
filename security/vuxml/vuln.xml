@@ -57,6 +57,182 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5e135178-8aeb-11e4-801f-0022156e8794">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.7.5,1</lt></range>
+	<range><ge>3.8,1</ge><lt>3.8.5,1</lt></range>
+	<range><ge>3.9,1</ge><lt>3.9.3,1</lt></range>
+	<range><ge>4.0,1</ge><lt>4.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>3.7.5</lt></range>
+	<range><ge>3.8</ge><lt>3.8.5</lt></range>
+	<range><ge>3.9</ge><lt>3.9.3</lt></range>
+	<range><ge>4.0</ge><lt>4.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9039">
+	  <p>wp-login.php in WordPress before 3.7.5, 3.8.x before
+	    3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1 might allow
+	    remote attackers to reset passwords by leveraging access to
+	    an e-mail account that received a password-reset message.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9038">
+	  <p>wp-includes/http.php in WordPress before 3.7.5, 3.8.x
+	    before 3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1
+	    allows remote attackers to conduct server-side request
+	    forgery (SSRF) attacks by referring to a 127.0.0.0/8
+	    resource.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9037">
+	  <p>WordPress before 3.7.5, 3.8.x before 3.8.5, 3.9.x before
+	    3.9.3, and 4.x before 4.0.1 might allow remote attackers to
+	    obtain access to an account idle since 2008 by leveraging an
+	    improper PHP dynamic type comparison for an MD5 hash.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9036">
+	  <p>Cross-site scripting (XSS) vulnerability in WordPress
+	    before 3.7.5, 3.8.x before 3.8.5, 3.9.x before 3.9.3, and
+	    4.x before 4.0.1 allows remote attackers to inject arbitrary
+	    web script or HTML via a crafted Cascading Style Sheets
+	    (CSS) token sequence in a post.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9035">
+	  <p>Cross-site scripting (XSS) vulnerability in Press This in
+	    WordPress before 3.7.5, 3.8.x before 3.8.5, 3.9.x before
+	    3.9.3, and 4.x before 4.0.1 allows remote attackers to
+	    inject arbitrary web script or HTML via unspecified
+	    vectors</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9034">
+	  <p>wp-includes/class-phpass.php in WordPress before 3.7.5,
+	    3.8.x before 3.8.5, 3.9.x before 3.9.3, and 4.x before 4.0.1
+	    allows remote attackers to cause a denial of service (CPU
+	    consumption) via a long password that is improperly handled
+	    during hashing, a similar issue to CVE-2014-9016.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9033">
+	  <p>Cross-site request forgery (CSRF) vulnerability in
+	    wp-login.php in WordPress 3.7.4, 3.8.4, 3.9.2, and 4.0
+	    allows remote attackers to hijack the authentication of
+	    arbitrary users for requests that reset passwords.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9033</cvename>
+      <cvename>CVE-2014-9034</cvename>
+      <cvename>CVE-2014-9035</cvename>
+      <cvename>CVE-2014-9036</cvename>
+      <cvename>CVE-2014-9037</cvename>
+      <cvename>CVE-2014-9038</cvename>
+      <cvename>CVE-2014-9039</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-25</discovery>
+      <entry>2015-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c564f9bd-8ba7-11e4-801f-0022156e8794">
+    <topic>png -- heap overflow for 32-bit builds</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><ge>1.2.6</ge><lt>1.5.21</lt></range>
+	<range><ge>1.6</ge><lt>1.6.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>32-bit builds of PNG library are vulnerable to an unsigned
+	  integer overflow that is triggered by a crafted wide
+	  interlaced images.
+	  Overflow results in a heap corruption that will crash the
+	  application and may lead to the controlled overwrite of a
+	  selected portions of process address space.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt</url>
+      <url>http://codelabs.ru/security/vulns/analysis/libpng/2014-dec-libpng-1.6.15/</url>
+    </references>
+    <dates>
+      <discovery>2014-12-23</discovery>
+      <entry>2015-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9575259a-92d5-11e4-bce6-d050992ecde8">
+    <topic>file -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.21</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>8.4</ge><lt>8.4_20</lt></range>
+	<range><ge>9.1</ge><lt>9.1_23</lt></range>
+	<range><ge>9.2</ge><lt>9.2_16</lt></range>
+	<range><ge>9.3</ge><lt>9.3_6</lt></range>
+	<range><ge>10.0</ge><lt>10.0_13</lt></range>
+	<range><ge>10.1</ge><lt>10.1_1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2014/q4/1056">
+	  <p>Thomas Jarosch of Intra2net AG reported a number of
+	    denial of service issues (resource consumption) in
+	    the ELF parser used by file(1). These issues were
+	    fixed in the 5.21 release of file(1), but by mistake
+	    are missing from the changelog.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3710</cvename>
+      <cvename>CVE-2014-8116</cvename>
+      <cvename>CVE-2014-8117</cvename>
+      <freebsdsa>FreeBSD-SA-14:28.file</freebsdsa>
+      <url>http://seclists.org/oss-sec/2014/q4/1056</url>
+    </references>
+    <dates>
+      <discovery>2014-12-16</discovery>
+      <entry>2015-01-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3d43001-8064-11e4-801f-0022156e8794">
     <topic>mutt -- denial of service via crafted mail message</topic>
     <affects>
@@ -3814,6 +3990,10 @@ Notes:
 	<name>lzo2</name>
 	<range><lt>2.07</lt></range>
       </package>
+      <package>
+	<name>busybox</name>
+	<range><lt>1.22.1_2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -3833,10 +4013,12 @@ Notes:
     </description>
     <references>
       <url>http://www.oberhumer.com/opensource/lzo/download/lzo-2.07.tar.gz</url>
+      <cvename>CVE-2014-4608</cvename>
     </references>
     <dates>
       <discovery>2014-06-25</discovery>
       <entry>2014-06-26</entry>
+      <modified>2015-01-06</modified>
     </dates>
   </vuln>
 

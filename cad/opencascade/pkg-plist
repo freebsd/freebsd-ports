@@ -27866,6 +27866,8 @@ lib/libTKernel.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/android_image008.png
 %%PORTDOCS%%%%DOCSDIR%%/html/android_image009.png
 %%PORTDOCS%%%%DOCSDIR%%/html/android_image010.png
+%%PORTDOCS%%%%DOCSDIR%%/html/arrowdown.png
+%%PORTDOCS%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/boolean_image001.svg
@@ -27956,6 +27958,7 @@ lib/libTKernel.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/cmake_image007.png
 %%PORTDOCS%%%%DOCSDIR%%/html/dev_guides.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dev_guides.js
+%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation_folders.png
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation_miktex.png
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation_test_image.svg
@@ -27968,6 +27971,8 @@ lib/libTKernel.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/draw_image005.png
 %%PORTDOCS%%%%DOCSDIR%%/html/draw_image006.png
 %%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
+%%PORTDOCS%%%%DOCSDIR%%/html/folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/foundation_classes_image003.png
 %%PORTDOCS%%%%DOCSDIR%%/html/foundation_classes_image004.png
 %%PORTDOCS%%%%DOCSDIR%%/html/foundation_classes_image005.png
@@ -28064,6 +28069,7 @@ lib/libTKernel.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/navtree.css
 %%PORTDOCS%%%%DOCSDIR%%/html/navtree.js
+%%PORTDOCS%%%%DOCSDIR%%/html/navtreedata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/navtreeindex0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/navtreeindex1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/navtreeindex2.js
@@ -28235,6 +28241,7 @@ lib/libTKernel.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/shape_healing_image012.png
 %%PORTDOCS%%%%DOCSDIR%%/html/shape_healing_image013.png
 %%PORTDOCS%%%%DOCSDIR%%/html/shape_healing_image014.png
+%%PORTDOCS%%%%DOCSDIR%%/html/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/step_image003.png
 %%PORTDOCS%%%%DOCSDIR%%/html/step_image004.png
 %%PORTDOCS%%%%DOCSDIR%%/html/stereo.png

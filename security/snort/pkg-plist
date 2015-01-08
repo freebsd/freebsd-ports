@@ -1,3 +1,4 @@
+%%FILEINSPECT%%bin/file_server
 bin/snort
 bin/u2boat
 bin/u2spewfoo
@@ -30,6 +31,9 @@ etc/snort/threshold.conf-sample
 @unexec if cmp  -s %D/etc/snort/unicode.map-sample %D/etc/snort/unicode.map; then rm -f %D/etc/snort/unicode.map; fi
 etc/snort/unicode.map-sample
 @exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/unicode.map; fi
+@unexec if cmp  -s %D/etc/snort/file_magic.conf-sample %D/etc/snort/file_magic.conf; then rm -f %D/etc/snort/file_magic.conf; fi
+etc/snort/file_magic.conf-sample
+@exec if [ ! -f %D/etc/snort/file_magic.conf ] ; then cp -p %D/%F %B/file_magic.conf; fi
 include/snort/dynamic_output/bitop.h
 include/snort/dynamic_output/ipv6_port.h
 include/snort/dynamic_output/obfuscation.h
@@ -127,6 +131,10 @@ lib/snort_dynamicpreprocessor/libsf_dns_preproc.a
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.0
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.0.0.0
+%%FILEINSPECT%%lib/snort_dynamicpreprocessor/libsf_file_preproc.a
+%%FILEINSPECT%%lib/snort_dynamicpreprocessor/libsf_file_preproc.so
+%%FILEINSPECT%%lib/snort_dynamicpreprocessor/libsf_file_preproc.so.0
+%%FILEINSPECT%%lib/snort_dynamicpreprocessor/libsf_file_preproc.so.0.0.0
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.a
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
@@ -204,6 +212,7 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.file
 %%PORTDOCS%%%%DOCSDIR%%/README.file_ips
+%%FILEINSPECT%%%%PORTDOCS%%%%DOCSDIR%%/README.file_server
 %%PORTDOCS%%%%DOCSDIR%%/README.filters
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3

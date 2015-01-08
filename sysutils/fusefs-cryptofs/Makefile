@@ -3,7 +3,7 @@
 
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://reboot78.re.funpic.de/cryptofs/
 PKGNAMEPREFIX=	fusefs-

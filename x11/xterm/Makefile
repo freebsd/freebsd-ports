@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	313
+PORTVERSION=	314
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
-		CRITICAL:src1 CRITICAL:src2
+		LOCAL/ehaupt:src1 LOCAL/ehaupt:src2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src1 \
 		bsd-xterm-icons-${ICONVERSION}${EXTRACT_SUFX}:src2
 

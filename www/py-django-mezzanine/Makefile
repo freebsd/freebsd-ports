@@ -22,10 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}django-mezzanine-filebrowser>=0.2.27:${PORTSDIR}/www/py-django-mezzanine-filebrowser \
 		${PYTHON_PKGNAMEPREFIX}django-mezzanine-grappelli>=0.2.21:${PORTSDIR}/www/py-django-mezzanine-grappelli
 
-USES=			gettext
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gettext python:2
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

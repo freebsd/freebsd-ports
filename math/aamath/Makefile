@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	math textproc
 MASTER_SITES=	http://fuse.superglue.se/${PORTNAME}/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Renders ASCII art from mathematical expressions

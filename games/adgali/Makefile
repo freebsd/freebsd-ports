@@ -16,11 +16,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-.if !exists(/usr/include/execinfo.h)
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
 
-USES=		gmake libtool tar:bzip2
+USES=		execinfo gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	xpm

@@ -5,7 +5,7 @@ PORTNAME=	nbsmtp
 PORTVERSION=	1.00
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery

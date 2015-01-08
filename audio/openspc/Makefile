@@ -6,7 +6,7 @@ PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://membres.lycos.fr/pixels/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	OpenSPC-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

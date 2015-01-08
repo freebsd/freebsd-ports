@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.0.2
-PORTREVISION=	12
+PORTVERSION=	2.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -24,7 +23,7 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
-		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS BSD_USER \
+		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
 		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
@@ -41,72 +40,10 @@ STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 
 .if !defined(QEMU_USER_STATIC)
-CONFLICTS_INSTALL=	qemu-[0-9]*
+CONFLICTS_INSTALL=	qemu-[0-9]* qemu-sbruno-[0-9]*
 .endif
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBSD_USER}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-790d0ef625d22ff3f1a895d266a48e2bacd63776
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-3d175d6ed5b809976662135369c639f53780ca5c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a3129eea10f188bfd39ce83b18b25dcefbc5bffc
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fd7ec8e06cd1876ef478975f052ff64134d19c6c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9ac2c49c734a49025fe1647ce84728d3988ea5d2
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-38f8d5aaebdb4b1624bae86b374b5265c9f01b54
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-c13_tls2
-#
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-proc.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-05ee8495804599b52a88eb36b13ea9c06b3207cd
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mips-target_arch_vmparam.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-inherit-interp_prefix
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-d62553b108aa27c0c020dbb771d29f8673807a3b
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-6201cb17ad905dffee1b2eb76f58fb032e99b2a1
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-syscall.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-availpages
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-0oldlen
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-mmap.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-pagesizes
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-x86_64-target_arch_vmparam.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-target_siginfo
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-arm-signal
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-getvfsbyname
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kernproc
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-target_os_stack.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-arm-target_arch_thread.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-sparc64-target_arch_cpu.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-trapsig
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-21927cffcc7bcacbb953155f778200846df9f60e
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-sys.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysctl-hw-physmem
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-max-arg-pages
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ad92220df37d1ab3120316fcc436071c78817561
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2478a4e4a33d0523cc436eabb4a27b258b4358b8
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ac9f83019a2059d4bfe5cedfae35ba4151d5ac88
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-d9388715135ed1f36e12e6cdbcc1be09d1657916
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-c9c55ac786f09ce575b5f67b35241ce9452896c9
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-5f81caf45c0d0eb2b4b852f8580a1938fb3d12c6
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-f32d585446698e1faa319c95df6b4d00c16f866c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a6402a4b7077af85733a1c98d63ab09f02d980ec
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-30c8ccb41e2c9e1ddda7e3f8a8ac1eb5dab8b408
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-22b23eb877a8a5ec251b4ae0e71e3c7ce5397721
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-1ebbb5b56e890741f1461662fae9728da0c76e27
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-93cf90cb04fee057a710be43614b033e6b2e86d1
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ad225b8412847303d48d8e7852589456325e8f9b
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-3ed485b9b4ef8d8ba916760aec0cdf9dbce8ca27
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-72f0a64c7dd7be796dc2d8f2b0dab340309800e2
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9ed0e07e2e07791858339874eb4d20daca858c8a
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a8dc4de7f73bc6f8363c0fc81c4c6e53733c444b
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-socket.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cab0d36ffd4e70b1879dc2cf860c975a7965afc3
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-8267ad2cb92b106bb16e91234f04abc49ab32036
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-290a6e398b9d132a673e1f95954fc7d9a86c3baa
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-26a50e8a9d8723d406e5ef3d1449911cfa2d3454
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-22aae36fc2227aa772ebbc701f45319464ecae4d
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a72c668c8ab84c24372ff664d9b853c2a42d37b1
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-d5c3fb7b75b4ea80e09bf3cb7ff6dd1061968d6e
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-f4319eb1a3a8393930570f061bdac6abe007b2bb
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-f254372f13ab5cd8f25bd1ca8641ce6d67bff3fe
-.endif
 
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
@@ -286,6 +223,7 @@ CONFIGURE_ARGS+= --sparc_cpu=v9
 
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	AS=${LOCALBASE}/bin/as
 CONFIGURE_ENV+=	LD=${LOCALBASE}/bin/ld
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -338,8 +276,8 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
 .endif
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
 		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*

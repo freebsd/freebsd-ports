@@ -12,13 +12,12 @@ COMMENT=	Application to organize and edit image collections
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		ufraw-batch:${PORTSDIR}/graphics/ufraw \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		dcraw:${PORTSDIR}/graphics/dcraw
 
-USES=		gmake desktop-file-utils pkgconfig
+USES=		execinfo gmake desktop-file-utils pkgconfig
 USE_GNOME=	gtk30
 
 ALL_TARGET=	fotoxx

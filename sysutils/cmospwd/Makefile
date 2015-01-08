@@ -5,7 +5,7 @@ PORTNAME=	cmospwd
 PORTVERSION=	5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BIOS password recovery tool

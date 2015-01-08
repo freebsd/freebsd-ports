@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.de-moliner.ch/richard/downloads/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	${PORTNAME}.V${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 

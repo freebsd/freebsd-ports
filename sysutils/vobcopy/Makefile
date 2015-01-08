@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files

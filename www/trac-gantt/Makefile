@@ -14,9 +14,8 @@ COMMENT=	Plugin to creates Gantt charts for trac
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
 

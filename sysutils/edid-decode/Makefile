@@ -4,7 +4,7 @@
 PORTNAME=	edid-decode
 PORTVERSION=	0.1.20140911
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Decodes binary EDID information from monitors

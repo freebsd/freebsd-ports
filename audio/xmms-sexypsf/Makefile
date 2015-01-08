@@ -6,7 +6,7 @@ PORTVERSION=	0.4.8
 PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	sexypsf-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

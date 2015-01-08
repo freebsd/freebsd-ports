@@ -5,7 +5,7 @@ PORTNAME=	amigadepacker
 PORTVERSION=	0.04
 CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/amigadepacker/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool for depacking some compressed Amiga formats

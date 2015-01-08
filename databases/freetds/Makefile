@@ -3,7 +3,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.91.103
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/

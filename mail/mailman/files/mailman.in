@@ -6,9 +6,15 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf to enable mailman:
+# Add the following lines to /etc/rc.conf to enable or configure mailman:
+#
 # mailman_enable (bool):        Set it to "YES" to enable mailman.
 #                               Default is "NO".
+#
+# mailman_fix_perms (bool):     Set it to "NO" to disable running
+#                               check_perms on start or post-install.
+#                               Default is "YES", but this is unsuitable
+#                               for slow machines with many lists.
 
 . /etc/rc.subr
 
@@ -20,6 +26,7 @@ pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
 load_rc_config $name
 
 : ${mailman_enable="NO"}
+: ${mailman_fix_perms="YES"}
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop
@@ -27,7 +34,9 @@ status_cmd=${name}_status
 extra_commands="reload status"
 
 mailman_start() {
-	env LC_ALL=C %%MAILMANDIR%%/bin/check_perms
+	if checkyesno mailman_fix_perms ; then 
+	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f
+	fi
 	%%MAILMANDIR%%/bin/mailmanctl -s -q start
 }
 

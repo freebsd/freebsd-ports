@@ -5,7 +5,7 @@ PORTNAME=	imlib
 PORTVERSION=	1.9.15
 PORTREVISION=	1
 CATEGORIES=	graphics linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of imlib (Linux Fedora 10)

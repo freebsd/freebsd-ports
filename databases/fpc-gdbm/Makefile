@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-gdbm
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the GNU database system
 
 USE_FPC=	yes

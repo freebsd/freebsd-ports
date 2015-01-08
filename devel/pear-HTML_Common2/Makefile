@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_Common2
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR::HTML_Common2 is a base class for other HTML classes
+
+LICENSE=	BSD2CLAUSE
 
 USES=	pear
 

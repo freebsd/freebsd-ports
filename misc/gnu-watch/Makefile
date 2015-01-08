@@ -5,7 +5,7 @@ PORTNAME=	watch
 DISTVERSION=	3.2.8
 CATEGORIES=	misc
 MASTER_SITES=	http://procps.sourceforge.net/ \
-		CRITICAL
+		LOCAL/ehaupt
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	procps-${DISTVERSION}
 

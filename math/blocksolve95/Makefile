@@ -22,9 +22,20 @@ LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c	\
 		libmpich.so:${PORTSDIR}/net/mpich2
 
 USES=		fortran gmake tar:Z
+
+OPTIONS_RADIO=	BLAS
+OPTIONS_RADIO_BLAS=	REFERENCE ATLAS
+OPTIONS_DEFAULT=	REFERENCE
+
+REFERENCE_DESC=	Blas / Lapack
+REFERENCE_USES=	blaslapack:netlib
+
+ATLAS_DESC=	ATLAS
+ATLAS_USES=	blaslapack:atlas
+
 MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${MAKE_CMD} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
-		BLAS_LIB="${BLAS_LIB}" LAPACK_LIB="${LAPACK_LIB}"
+		BLAS_LIB="${BLASLIB}" LAPACK_LIB="-L${LOCALBASE}/lib ${LAPACKLIB}"
 
 MPIDIR=		${LOCALBASE}
 PETSC_ARCH=	freebsd
@@ -35,21 +46,7 @@ FFLAGS+=	-O2
 INCLUDES=	BMmsg.h BSdepend.h BSlog.h BSmy_blas.h BSprivate.h BSsparse.h
 PORTDOCS=	manual.ps
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS_LIB=	-lf77blas
-LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
-.else
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-BLAS_LIB=	-lblas
-LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/lib/lib${BOPT}/${PETSC_ARCH}/libBS95.a	\
@@ -79,4 +76,4 @@ regression-test:	build
 	${LOCALBASE}/bin/mpdallexit
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

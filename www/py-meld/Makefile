@@ -15,7 +15,7 @@ COMMENT=	System for manipulating HTML using a Pythonic object model
 
 LICENSE=	MIT
 
-USE_PYTHON=	2
+USES=		python:2
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMeld.py \
 		%%PYTHON_SITELIBDIR%%/PyMeld.pyc \

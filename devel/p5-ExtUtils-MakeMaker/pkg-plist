@@ -22,7 +22,11 @@
 %%SITE_PERL%%/ExtUtils/MakeMaker.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/Config.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/FAQ.pod
+%%SITE_PERL%%/ExtUtils/MakeMaker/Locale.pm
 %%SITE_PERL%%/ExtUtils/MakeMaker/Tutorial.pod
+%%SITE_PERL%%/ExtUtils/MakeMaker/version.pm
+%%SITE_PERL%%/ExtUtils/MakeMaker/version/regex.pm
+%%SITE_PERL%%/ExtUtils/MakeMaker/version/vpp.pm
 %%SITE_PERL%%/ExtUtils/Mkbootstrap.pm
 %%SITE_PERL%%/ExtUtils/Mksymlists.pm
 %%SITE_PERL%%/ExtUtils/testlib.pm
@@ -49,6 +53,7 @@
 %%PERL5_MAN3%%/ExtUtils::MakeMaker.3.gz
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::Config.3.gz
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::FAQ.3.gz
+%%PERL5_MAN3%%/ExtUtils::MakeMaker::Locale.3.gz
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::Tutorial.3.gz
 %%PERL5_MAN3%%/ExtUtils::Mkbootstrap.3.gz
 %%PERL5_MAN3%%/ExtUtils::Mksymlists.3.gz

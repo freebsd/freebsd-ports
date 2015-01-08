@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	csmith
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://embed.cs.utah.edu/csmith/
+MASTER_SITES=	http://embed.cs.utah.edu/csmith/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Generates random C programs that conform to the C99 standard
 
 LICENSE=	BSD2CLAUSE
@@ -24,5 +24,7 @@ USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	DOCS
+
+PLIST_SUB=	PKGNAME="${PKGNAME}"
 
 .include <bsd.port.mk>

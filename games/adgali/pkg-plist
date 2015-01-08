@@ -56,4 +56,3 @@ share/aclocal/adgali.m4
 %%PORTDOCS%%%%DOCSDIR%%/structagl__pos.html
 %%PORTDOCS%%%%DOCSDIR%%/structagl__rect.html
 %%PORTDOCS%%%%DOCSDIR%%/structagl__size.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

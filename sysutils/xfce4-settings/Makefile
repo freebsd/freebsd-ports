@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -12,14 +12,18 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 settings application
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	inputproto x11 xi
-USES=		libtool pathfix pkgconfig gmake tar:bzip2
+USES=		libtool pkgconfig gmake tar:bzip2
 
 CONFIGURE_ARGS=	--enable-pluggable-dialogs \
 		--enable-gio-unix
@@ -77,10 +81,10 @@ CONFIGURE_ARGS+=--disable-sound-settings
 .endif
 
 post-patch:
-	# until xfce4-icon-theme is back we rely on Tango
-	@${REINPLACE_CMD} -e 's|Rodent|Tango|g' \
+# GNOME is default icon theme
+	@${REINPLACE_CMD} -e 's|Rodent|gnome|g' \
 		${WRKSRC}/dialogs/appearance-settings/main.c
-	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="Tango|; \
+	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="gnome|; \
 		s|"ThemeName" type="empty|"ThemeName" type="string" value="Xfce|' \
 		${WRKSRC}/xfsettingsd/xsettings.xml
 	@${REINPLACE_CMD} -e 's|xkl_config_registry_load (settings->priv->xkl_registry)|xkl_config_registry_load (settings->priv->xkl_registry, FALSE)|g; \

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tundraware.com/Software/waccess/
 MAINTAINER=	tundra@tundraware.com
 COMMENT=	Quick-N-Dirty Web Access Log Analyzer
 
-USE_PYTHON=	yes
+USES=		python
 
 OPTIONS_DEFINE=	DOCS
 

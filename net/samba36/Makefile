@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	samba samba/stable samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org
-COMMENT?=		A free SMB and CIFS client and server for UNIX
+COMMENT?=		Free SMB and CIFS client and server for Unix
 
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
@@ -32,7 +32,7 @@ AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
 GNU_CONFIGURE=		yes
-USES=			gmake pkgconfig iconv execinfo cpe
+USES=			cpe execinfo gmake iconv pkgconfig
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 # pkg-config is used to find talloc
@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=	${ICONV_CONFIGURE_BASE} \
 
 .if !defined(SAMBA_SUBPORT)
 OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT AVAHI CUPS DNSUPDATE \
-			DOCS EXAMPLES EXP_MODULES FAM_SUPPORT IPV6 LDAP \
+			DOCS EXAMPLES EXP_MODULES FAM IPV6 LDAP \
 			MAX_DEBUG PAM_SMBPASS POPT PTHREADPOOL QUOTAS \
 			SMBTORTURE SWAT SYSLOG UTMP WINBIND
 
@@ -108,12 +108,11 @@ OPTIONS_DEFAULT=	ACL_SUPPORT AIO_SUPPORT CUPS LDAP POPT PTHREADPOOL \
 
 ACL_SUPPORT_DESC=	ACL support
 ADS_DESC=		Active Directory support
-AIO_SUPPORT_DESC=	Asyncronous IO support
-DNSUPDATE_DESC=		Dynamic DNS update(require ADS)
+AIO_SUPPORT_DESC=	Asynchronous IO support
+DNSUPDATE_DESC=		Dynamic DNS update (requires ADS)
 EXP_MODULES_DESC=	Experimental modules
-FAM_SUPPORT_DESC=	File Alteration Monitor
 MAX_DEBUG_DESC=		Maximum debugging
-PAM_SMBPASS_DESC=	PAM authentication vs passdb backends
+PAM_SMBPASS_DESC=	PAM authentication via passdb backends
 POPT_DESC=		System-wide POPT library
 PTHREADPOOL_DESC=	Pthread pool
 QUOTAS_DESC=		Disk quota support
@@ -237,7 +236,7 @@ WANT_EXP_MODULES+=	vfs_cacheprime vfs_catia vfs_commit vfs_dirsort \
 .	endif
 .endif
 
-.if ${PORT_OPTIONS:MFAM_SUPPORT}
+.if ${PORT_OPTIONS:MFAM}
 USES+=			fam
 WANT_EXP_MODULES+=	vfs_notify_fam
 CONFIGURE_ARGS+=	--enable-fam
@@ -392,7 +391,7 @@ SAMBA_MAN8+=	pam_winbind.8 winbindd.8
 SAMBA_MAN8+=	swat.8
 .endif
 
-.if ${PORT_OPTIONS:MFAM_SUPPORT}
+.if ${PORT_OPTIONS:MFAM}
 SAMBA_MAN8+=	vfs_notify_fam.8
 .endif
 

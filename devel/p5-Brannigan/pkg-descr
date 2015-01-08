@@ -1,0 +1,13 @@
+Brannigan is an attempt to ease the pain of collecting, validating and parsing
+input parameters in web applications. It's designed to answer both of the main
+problems that web applications face:
+
+* Simple user input
+	Brannigan can validate and parse simple, "flat", user input, possibly
+	coming from web forms.
+
+Complex data structures
+	Brannigan can validate and parse complex data structures, possibly
+	deserialized from JSON or XML data sent to web services and APIs.
+
+WWW: https://metacpan.org/pod/Brannigan

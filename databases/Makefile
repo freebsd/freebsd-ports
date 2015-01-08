@@ -906,6 +906,7 @@
     SUBDIR += sqlite-ext-pcre
     SUBDIR += sqlite2
     SUBDIR += sqlite3
+    SUBDIR += sqlitebrowser
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc

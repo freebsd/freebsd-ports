@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	fpc-
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
 WANT_FPC_BASE=	yes

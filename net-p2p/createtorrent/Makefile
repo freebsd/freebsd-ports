@@ -4,7 +4,7 @@
 PORTNAME=	createtorrent
 PORTVERSION=	1.1.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create BitTorrent files from the command line

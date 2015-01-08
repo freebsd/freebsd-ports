@@ -3,7 +3,7 @@
 
 PORTNAME=	Device-USB
 PORTVERSION=	0.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -12,11 +12,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Perl wrapper for libusb
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=yes
 USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|dump_usb.pl|lib/Device/&|' ${WRKSRC}/MANIFEST
+	@${MV} ${WRKSRC}/dump_usb.pl ${WRKSRC}/lib/Device/
 
 .include <bsd.port.mk>

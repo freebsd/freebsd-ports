@@ -5,7 +5,7 @@ PORTNAME=	libmodplug
 PORTVERSION=	0.8.8.5
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION} CRITICAL
+MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION} LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries

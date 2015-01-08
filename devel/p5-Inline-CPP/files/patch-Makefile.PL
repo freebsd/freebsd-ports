@@ -1,15 +1,15 @@
---- ./Makefile.PL.orig	2013-01-01 03:27:22.000000000 +0800
-+++ ./Makefile.PL	2013-01-01 03:30:52.000000000 +0800
-@@ -121,10 +121,9 @@
- print "This will configure and build Inline::C++.\n";
+--- Makefile.PL.orig	2014-12-26 05:17:26.000000000 +0800
++++ Makefile.PL	2015-01-01 04:23:51.734420696 +0800
+@@ -37,10 +37,10 @@
+ my( $cc_guess, $libs_guess ) = guess_compiler();
  
  my $cpp_compiler
--    = prompt( "What default C++ compiler would you like to use?", $cc_guess );
-+    = $cc_guess;
+-  = prompt( "What C++ compiler would you like to use?", $cc_guess );
++  = $cc_guess;
+   
+ my $libs
+-  = prompt( "What default libraries would you like to include?", $libs_guess );
++  = $libs_guess;
  
--my $libs = prompt( "What default libraries would you like to include?",
--    $libs_guess );
-+my $libs = $libs_guess;
+ configure_distribution( $test_cpp_filename, $cpp_compiler, $libs );
  
- #============================================================================
- # Test whether the compiler prefers <iostream> or <iostream.h>.

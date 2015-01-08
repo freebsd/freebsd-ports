@@ -3,7 +3,6 @@
 
     COMMENT = Ports for managing, installing, and developing FreeBSD ports and packages
 
-    SUBDIR += bpkg
     SUBDIR += bpm
     SUBDIR += chucky
     SUBDIR += dialog4ports
@@ -19,9 +18,6 @@
     SUBDIR += lsknobs
     SUBDIR += managepkg
     SUBDIR += mkreadmes
-    SUBDIR += p5-App-Pm2Port
-    SUBDIR += p5-FreeBSD-Pkgs
-    SUBDIR += p5-FreeBSD-Pkgs-FindUpdates
     SUBDIR += p5-FreeBSD-Portindex
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
@@ -30,24 +26,20 @@
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-devel
-    SUBDIR += pkg-orphan
     SUBDIR += pkg-plist
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_jail
-    SUBDIR += pkg_remove
     SUBDIR += pkg_replace
     SUBDIR += pkg_rmleaves
     SUBDIR += pkg_search
-    SUBDIR += pkg_trackinst
     SUBDIR += pkg_tree
     SUBDIR += pkgcompare
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
     SUBDIR += portbuilder
-    SUBDIR += portcheckout
     SUBDIR += portconf
     SUBDIR += portdowngrade
     SUBDIR += porteasy

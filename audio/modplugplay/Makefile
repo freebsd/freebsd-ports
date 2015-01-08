@@ -5,9 +5,7 @@ PORTNAME=	modplugplay
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/modplugplay/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line music mod player using libmodplug

@@ -4,7 +4,7 @@
 PORTNAME=	metacam
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Digital camera EXIF meta-information reader

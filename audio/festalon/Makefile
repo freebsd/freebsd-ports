@@ -6,7 +6,7 @@ PORTVERSION=	0.5.5
 PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
-		CRITICAL
+		LOCAL/ehaupt
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org

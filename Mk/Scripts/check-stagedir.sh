@@ -14,139 +14,7 @@
 set -e
 export LC_ALL=C
 
-#### EXPAND TMPPLIST TO ABSOLUTE PATHS, SPLITTING FILES AND DIRS TO
-#    Use file descriptors 1 and 3 so that the while loop can write
-#    files to the pipe and dirs to a separate file.
-parse_plist() {
-	echo "===> Parsing plist"
-	cwd=${PREFIX}
-	cwd_save=
-	commented_cwd=
-	while read line; do
-		# Handle deactivated OPTIONS. Treat "@comment file" as being in
-		# the plist so it does not show up as an orphan. PLIST_SUB uses
-		# a @comment to deactive files. XXX: It would be better to
-		# make all ports use @ignore instead of @comment.
-		comment=
-		if [ ${makeplist} -eq 0 -a -z "${line%%@comment *}" ]; then
-			line="${line##*@comment }"
-			# Remove @comment so it can be parsed as a file,
-			# but later prepend it again to create a list of
-			# all files commented and uncommented.
-			comment="@comment "
-			# Only consider comment @cwd for commented lines
-			if [ -n "${commented_cwd}" ]; then
-				[ -z "${cwd_save}" ] && cwd_save=${cwd}
-				cwd=${commented_cwd}
-			fi
-		else
-			# On first uncommented line, forget about commented
-			# @cwd
-			if [ -n "${cwd_save}" ]; then
-				cwd=${cwd_save}
-				cwd_save=
-				commented_cwd=
-			fi
-		fi
-
-		# Strip (owner,group,perm) from keywords
-		line="$(printf %s "$line" \
-		    | sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
-			-e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /')"
-		case $line in
-		@dir*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
-			line="$(printf %s "$line" \
-			    | sed -Ee 's/\|\|.*//;s|[[:space:]]+[0-9]*[[:space:]]*>[&]?[[:space:]]*[^[:space:]]+||g' \
-			        -e "/^@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?/s|([^%])%D([^%])|\1${cwd}\2|g" \
-			        -e '/^@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?/s|"(.*)"[[:space:]]*|\1|g' \
-			        -e 's/@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?[[:space:]]+//' \
-				-e 's/@dir(rm|rmtry)?[[:space:]]+//' \
-				-e 's/[[:space:]]+$//')"
-			case "$line" in
-			/*) echo >&3 "${comment}${line%/}" ;;
-			*)  echo >&3 "${comment}${cwd}/${line%/}" ;;
-			esac
-		;;
-		# Handle [file] Keywords
-		@info\ *|@shell\ *)
-			set -- $line
-			shift
-			case "$@" in
-			/*) echo "${comment}$@" ;;
-			*) echo "${comment}${cwd}/$@" ;;
-			esac
-		;;
-		@sample\ *)
-			set -- $line
-			shift
-			# Ignore the actual file if it is in stagedir
-			case "$@" in
-			/*)
-			echo "@comment ${@%.sample}"
-			echo "${comment}$@"
-			;;
-			*)
-			echo "@comment ${cwd}/${@%.sample}"
-			echo "${comment}${cwd}/$@"
-			;;
-			esac
-		;;
-		# Handle [dir] Keywords
-		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
-			set -- $line
-			shift
-			case "$@" in
-			/*)
-			echo >&3 "${comment}$@"
-			;;
-			*)
-			echo >&3 "${comment}${cwd}/$@"
-			;;
-			esac
-		;;
-
-		# order matters here - we must check @cwd first because
-		# otherwise the @cwd* would also match it first, shadowing the
-		# @cwd) line.
-		@cwd|@cd)
-			# Don't actually reset cwd for commented @cwd
-			if [ -n "${comment}" ]; then
-				commented_cwd=${PREFIX}
-			else
-				cwd=${PREFIX}
-			fi
-			;;
-		@cwd*|@cd*)
-			set -- $line
-			newcwd=$2
-			# Don't set cwd=/ as it causes // in plist and
-			# won't match later.
-			[ "${newcwd}" = "/" ] && newcwd=
-			# Don't actually reset cwd for commented @cwd
-			if [ -n "${comment}" ]; then
-				commented_cwd=${newcwd}
-			else
-				cwd=${newcwd}
-			fi
-			unset newcwd
-			;;
-		@*) ;;
-		/*) echo "${comment}${line}" ;;
-		*)  echo "${comment}${cwd}/${line}" ;;
-		esac
-	done < ${TMPPLIST} 3>${WRKDIR}/.plist-dirs-unsorted \
-	    >${WRKDIR}/.plist-files-unsorted
-	unset TMPPLIST
-	# Create the -no-comments files and trim out @comment from the plists.
-	# This is used for various tests later.
-	sed -e '/^@comment/d' ${WRKDIR}/.plist-dirs-unsorted \
-	    >${WRKDIR}/.plist-dirs-unsorted-no-comments
-	sed -i '' -e 's/^@comment //' ${WRKDIR}/.plist-dirs-unsorted
-	sed -e '/^@comment/d' ${WRKDIR}/.plist-files-unsorted | sort \
-	    >${WRKDIR}/.plist-files-no-comments
-	sed -e 's/^@comment //' ${WRKDIR}/.plist-files-unsorted | sort \
-	    >${WRKDIR}/.plist-files
-}
+. ${SCRIPTSDIR}/functions.sh
 
 # lists an mtree file's contents, prefixed to dir.
 listmtree() { # mtreefile prefix
@@ -374,7 +242,20 @@ fi
 set -u
 
 if [ $makeplist = 0 ] ; then
-	parse_plist
+	echo "===> Parsing plist"
+	parse_plist "${PREFIX}" 1 < ${TMPPLIST} \
+	    3>${WRKDIR}/.plist-dirs-unsorted \
+	    >${WRKDIR}/.plist-files-unsorted
+	unset TMPPLIST
+	# Create the -no-comments files and trim out @comment from the plists.
+	# This is used for various tests later.
+	sed -e '/^@comment/d' ${WRKDIR}/.plist-dirs-unsorted \
+	    >${WRKDIR}/.plist-dirs-unsorted-no-comments
+	sed -i '' -e 's/^@comment //' ${WRKDIR}/.plist-dirs-unsorted
+	sed -e '/^@comment/d' ${WRKDIR}/.plist-files-unsorted | sort \
+	    >${WRKDIR}/.plist-files-no-comments
+	sed -e 's/^@comment //' ${WRKDIR}/.plist-files-unsorted | sort \
+	    >${WRKDIR}/.plist-files
 else
 	# generate plist - pretend the plist had been empty
 	: >${WRKDIR}/.plist-dirs-unsorted

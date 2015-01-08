@@ -4,7 +4,7 @@
 #       it still works as well.
 
 PORTNAME?=	unixcw
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/unixcw/unixcw-${PORTVERSION}
 DISTNAME=	unixcw_${PORTVERSION}.orig
@@ -28,6 +28,6 @@ USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 
 post-install:
-	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcw.so.6.2.1
+	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcw.so.6.3.1
 
 .include <bsd.port.mk>

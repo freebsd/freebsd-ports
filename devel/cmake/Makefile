@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v3.0/
+MASTER_SITES=	http://www.cmake.org/files/v3.1/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Cross-platform Makefile generator
@@ -13,7 +13,6 @@ COMMENT?=	Cross-platform Makefile generator
 LICENSE=	BSD3CLAUSE
 
 USE_KDE4=	# env
-USE_OPENSSL=	yes
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
@@ -39,6 +38,14 @@ RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:${PORTSDIR}/devel/cmak
 .if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
 INSTALL_TARGET=	install/strip
 .endif
+
+.if !defined(CMAKE_MODULES)
+# CMake >= 3.1.0 needs libarchive3 because it calls
+# archive_entry_copy_sourcepath_w and archive_write_set_format_7zip.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000009
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
+.endif  # ${OPSYS} == FreeBSD && ${OSVERSION} < 1000009
+.endif  # !defined(CMAKE_MODULES)
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \

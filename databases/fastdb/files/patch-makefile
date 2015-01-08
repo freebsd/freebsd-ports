@@ -1,6 +1,6 @@
---- ./makefile.orig	2014-05-08 01:51:14.473846505 +0200
-+++ ./makefile	2014-05-08 01:52:41.930012434 +0200
-@@ -8,13 +8,13 @@
+--- makefile.orig	2014-12-28 21:25:00.000000000 +0200
++++ makefile	2014-12-28 21:33:28.000000000 +0200
+@@ -8,13 +8,13 @@ DEBUG?=1
  PREFIX ?= /usr/local
  
  # Place where to copy FastDB header files
@@ -17,7 +17,7 @@
  
  ifdef NO_PTHREADS
  OBJS = class.o compiler.o database.o xml.o hashtab.o file.o symtab.o ttree.o rtree.o container.o \
-@@ -38,8 +38,8 @@
+@@ -38,8 +38,8 @@ TFLAGS=-DNO_PTHREADS
  THRLIBS=
  SUFF=
  else
@@ -28,7 +28,7 @@
  SUFF=_r
  endif
  
-@@ -65,23 +65,23 @@
+@@ -65,23 +65,23 @@ EXAMPLES = guess testdb testleak testfra
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -57,7 +57,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -439,16 +439,15 @@
+@@ -439,17 +439,15 @@ examples/TestIndex.class: examples/TestI
  
  install: subsql cleanupsem inspectsem installlib
  	mkdir -p $(BINSPATH)
@@ -65,6 +65,7 @@
 -	strip $(BINSPATH)/subsql
 -	cp cleanupsem $(BINSPATH)
 -	cp inspectsem $(BINSPATH)
+-
 +	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
 +	${BSD_INSTALL_PROGRAM} cleanupsem $(BINSPATH)
 +	${BSD_INSTALL_PROGRAM} inspectsem $(BINSPATH)
@@ -79,7 +80,7 @@
  	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
  	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
  	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
-@@ -456,7 +455,7 @@
+@@ -457,7 +455,7 @@ installlib: $(FASTDB_LIB) $(CLI_LIB) $(F
  
  uninstall:
  	rm -fr $(INCSPATH)

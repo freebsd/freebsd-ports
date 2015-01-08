@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64 sparc64
 USES=		gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
@@ -58,6 +58,18 @@ CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
+.endif
+
+.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+# We have to override the sys.mk -O CFLAG since it breaks libgomp building.
+CFLAGS:=    ${CFLAGS:S/-O/-O2/g}
+. if ${COMPILER_TYPE} == clang
+.  if empty(PORT_OPTIONS:MBOOTSTRAP)
+MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
+.  else
+MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
+.  endif
+. endif
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
@@ -97,9 +109,12 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-INFO+=		gcc${SUFFIX}/libquadmath \
-		gcc${SUFFIX}/libitm
+INFO+=		gcc${SUFFIX}/libquadmath
 .endif
+.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+INFO+=		gcc${SUFFIX}/libitm
+.endif
+
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 

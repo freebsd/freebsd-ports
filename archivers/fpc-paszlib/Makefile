@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	archivers devel
 PKGNAMESUFFIX=	-paszlib
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for native compression IO
 
 USE_FPC=	hash

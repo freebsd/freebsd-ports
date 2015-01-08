@@ -10,7 +10,7 @@ MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
-		CRITICAL
+		LOCAL/ehaupt/rsync
 MASTER_SITE_SUBDIR=	rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 

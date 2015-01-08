@@ -17,8 +17,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 #		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-2.0-py${PYTHON_VER}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -3,10 +3,10 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	sthalik@tehran.lain.pl
 COMMENT=	No-IP.com's dynamic DNS update client

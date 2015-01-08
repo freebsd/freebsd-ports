@@ -29,7 +29,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
 DEPRECATED=	Reached EOL on 28 August 2014, use www/squid (v3.4) instead
-EXPIRATION_DATE=2015-01-31
+# check if http://bugs.squid-cache.org/show_bug.cgi?id=3997 is fixed
+EXPIRATION_DATE=2015-05-31
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

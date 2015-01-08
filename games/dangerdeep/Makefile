@@ -11,16 +11,15 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source World War II German submarine simulation
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/maps/default.xml:${PORTSDIR}/games/dangerdeep-data
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+RUN_DEPENDS=	dangerdeep-data>0:${PORTSDIR}/games/dangerdeep-data
 
-MAKE_ENV=	X11BASE=${LOCALBASE}
+USES=		execinfo scons
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 
-SCONS_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
+MAKE_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
+MAKE_ENV=	X11BASE=${LOCALBASE}
 
 PLIST_FILES=	bin/dangerdeep bin/crosssection bin/damagemodel \
 		bin/oceantest bin/portal bin/viewmodel \
@@ -33,7 +32,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .if defined(PACKAGE_BUILDING)
-SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
+MAKE_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
 .endif
 
 post-patch:
@@ -41,9 +40,6 @@ post-patch:
 		s|Linux|"Danger from the Deep"|' ${WRKSRC}/doc/man/dangerdeep.6
 	@${REINPLACE_CMD} -e 's|/usr/X11BASE|${LOCALBASE}|g' \
 	    ${WRKSRC}/SConstruct
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
 
 do-install:
 	@cd ${WRKSRC}/build/freebsd && \

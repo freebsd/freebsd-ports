@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://red.libssh.org/attachments/download/87/
 

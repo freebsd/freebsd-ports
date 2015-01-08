@@ -1,0 +1,11 @@
+Shellany captures command output.
+
+Features:
+- Portability (should work on recent JRuby versions).
+- Capturing stdout, stderr in a convenient way.
+- Returning the result in a convenient way.
+- Detecting if a shell is needed (though incomplete/primitive implementation).
+- Prevents running the same command multiple times.
+
+WWW: https://github.com/guard/shellany
+RG:  https://rubygems.org/gems/shellany

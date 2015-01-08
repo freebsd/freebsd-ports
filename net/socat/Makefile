@@ -5,7 +5,7 @@ PORTNAME=	socat
 PORTVERSION=	1.7.2.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multipurpose relay and more

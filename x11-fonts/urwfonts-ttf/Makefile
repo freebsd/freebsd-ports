@@ -3,7 +3,7 @@
 
 PORTNAME=	urwfonts-ttf
 PORTVERSION=	1.0.7b18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.izmiran.rssi.ru/pub/fonts/urw/
 DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
@@ -23,6 +23,8 @@ USES=		tar:bzip2
 
 FONTDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+SUB_LIST=	FONTDIR="${FONTDIR}"
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTDIR}

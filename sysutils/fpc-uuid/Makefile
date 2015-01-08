@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-uuid
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal uuid unit
 
 USE_FPC=	yes

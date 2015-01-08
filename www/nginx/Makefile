@@ -325,7 +325,7 @@ CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
-NGINX_CACHE_PURGE_VERSION=	2.1
+NGINX_CACHE_PURGE_VERSION=	2.3
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
@@ -363,8 +363,8 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
 USE_HTTP_DAV=	yes
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-NGINX_DAV_EXT_VERSION=	0.0.2
-GIT_DAV_EXT_VERSION=	0-g0e07a3e
+NGINX_DAV_EXT_VERSION=	0.0.3
+GIT_DAV_EXT_VERSION=	0-g6974186
 MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_VERSION}/:dav_ext
 DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_VERSION}-${GIT_DAV_EXT_VERSION}.tar.gz:dav_ext
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_VERSION:S/^0-g//}
@@ -379,11 +379,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_V
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
-NGINX_FANCYINDEX_VERSION=	0.3.1
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
-MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
+NGINX_FANCYINDEX_VERSION=	0.3.4
+GIT_FANCYINDEX_VERSION=		0-g3de8a4d
+MASTER_SITES+=	https://github.com/aperezdc/ngx-fancyindex/tarball/v${NGINX_FANCYINDEX_VERSION}/:fancyindex
+DISTFILES+=	aperezdc-ngx-fancyindex-v${NGINX_FANCYINDEX_VERSION}-${GIT_FANCYINDEX_VERSION}.tar.gz:fancyindex
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/aperezdc-ngx-fancyindex-${GIT_FANCYINDEX_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FOOTER}
@@ -561,12 +561,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
-NGINX_DRIZZLE_VERSION=	0.1.7
-GIT_DRIZZLE_VERSION=	0-gb83a8a9
-MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
-DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module-config
+NGINX_DRIZZLE_VERSION=	0.1.8
+GIT_DRIZZLE_VERSION=	0-gfba80cf
+MASTER_SITES+=	https://github.com/openresty/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
+DISTFILES+=	drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -655,7 +655,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.53
+PASSENGER_VERSION=	4.0.57
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -701,11 +701,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.1.5
+NGINX_RTMP_VERSION=	1.1.6
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-arut-rtmp-module
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
@@ -903,7 +902,7 @@ post-patch:
 .if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
+		${WRKDIR}/openresty-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}

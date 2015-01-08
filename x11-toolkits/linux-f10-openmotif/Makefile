@@ -5,7 +5,7 @@ PORTNAME=	openmotif
 PORTVERSION=	2.3.3
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.ics.com/openmotif/2.3/${PORTVERSION}/ \
-		CRITICAL/rpm
+		LOCAL/ehaupt/rpm
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries

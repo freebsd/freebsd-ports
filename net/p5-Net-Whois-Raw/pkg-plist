@@ -1,6 +1,6 @@
 bin/pwhois
-%%PERL5_MAN3%%/Net::Whois::Raw.3.gz
 %%SITE_PERL%%/Net/Whois/Raw.pm
 %%SITE_PERL%%/Net/Whois/Raw/Common.pm
 %%SITE_PERL%%/Net/Whois/Raw/Data.pm
+%%PERL5_MAN3%%/Net::Whois::Raw.3.gz
 man/man1/pwhois.1.gz

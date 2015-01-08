@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Inline::CPP.3.gz
-%%PERL5_MAN3%%/Inline::CPP::Config.3.gz
-%%PERL5_MAN3%%/Inline::CPP::grammar.3.gz
 %%SITE_PERL%%/Inline/CPP.pm
 %%SITE_PERL%%/Inline/CPP.pod
 %%SITE_PERL%%/Inline/CPP/Config.pm
-%%SITE_PERL%%/Inline/CPP/grammar.pm
+%%SITE_PERL%%/Inline/CPP/Parser/RecDescent.pm
+%%PERL5_MAN3%%/Inline::CPP.3.gz
+%%PERL5_MAN3%%/Inline::CPP::Config.3.gz
+%%PERL5_MAN3%%/Inline::CPP::Parser::RecDescent.3.gz

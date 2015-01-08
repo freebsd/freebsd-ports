@@ -6,7 +6,7 @@ DISTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nih.at/malint/ \
 		ftp://sunsite.univie.ac.at/pub/nih/malint/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator

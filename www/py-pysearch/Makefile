@@ -11,8 +11,8 @@ DISTNAME=	pYsearch-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Yahoo Search Web Services SDK for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pYsearch
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

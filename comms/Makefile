@@ -74,6 +74,7 @@
     SUBDIR += jsdr
     SUBDIR += kb
     SUBDIR += kermit
+    SUBDIR += klog
     SUBDIR += kremotecontrol
     SUBDIR += libconcord
     SUBDIR += libfec
@@ -134,6 +135,7 @@
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += qt5-serialport
+    SUBDIR += qtel
     SUBDIR += quisk
     SUBDIR += remserial
     SUBDIR += rtl-sdr

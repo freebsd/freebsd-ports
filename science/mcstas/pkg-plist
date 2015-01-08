@@ -1,0 +1,84 @@
+mcstas/2.1/LGPL
+mcstas/2.1/LICENSE.LIB
+mcstas/2.1/NOMENCLATURE
+mcstas/2.1/README
+mcstas/2.1/bin/mcformat
+mcstas/2.1/bin/mcstas
+mcstas/2.1/data/Al.nxs
+mcstas/2.1/data/Cu.nxs
+mcstas/2.1/doc/man/man1/mcformat-2.1.1
+mcstas/2.1/doc/man/man1/mcstas-2.1.1
+mcstas/2.1/environment
+mcstas/2.1/module
+mcstas/2.1/share/adapt_tree-lib.c
+mcstas/2.1/share/adapt_tree-lib.h
+mcstas/2.1/share/general.c
+mcstas/2.1/share/general.h
+mcstas/2.1/share/interoff-lib.c
+mcstas/2.1/share/interoff-lib.h
+mcstas/2.1/share/interpolation/array-utils.c
+mcstas/2.1/share/interpolation/array-utils.h
+mcstas/2.1/share/interpolation/natural/README
+mcstas/2.1/share/interpolation/natural/delaunay.c
+mcstas/2.1/share/interpolation/natural/delaunay.h
+mcstas/2.1/share/interpolation/natural/example.c
+mcstas/2.1/share/interpolation/natural/natural.c
+mcstas/2.1/share/interpolation/natural/natural.h
+mcstas/2.1/share/interpolation/natural/predicates.c
+mcstas/2.1/share/interpolation/natural/utils-extra.c
+mcstas/2.1/share/interpolation/natural/utils-extra.h
+mcstas/2.1/share/interpolation/natural/vertex.h
+mcstas/2.1/share/interpolation/nearest/README
+mcstas/2.1/share/interpolation/nearest/example.c
+mcstas/2.1/share/interpolation/nearest/kdtree.c
+mcstas/2.1/share/interpolation/nearest/kdtree.h
+mcstas/2.1/share/interpolation/nearest/vertex.h
+mcstas/2.1/share/interpolation/resample.c
+mcstas/2.1/share/interpolation/resample.h
+mcstas/2.1/share/intersection.c
+mcstas/2.1/share/intersection.h
+mcstas/2.1/share/mccode-r.c
+mcstas/2.1/share/mccode-r.h
+mcstas/2.1/share/mcstas-r.c
+mcstas/2.1/share/mcstas-r.h
+mcstas/2.1/share/nxslib/README.TXT
+mcstas/2.1/share/nxslib/nxs.c
+mcstas/2.1/share/nxslib/nxs.h
+mcstas/2.1/share/nxslib/sgclib.c
+mcstas/2.1/share/nxslib/sgfind.c
+mcstas/2.1/share/nxslib/sghkl.c
+mcstas/2.1/share/nxslib/sginfo.h
+mcstas/2.1/share/nxslib/sgio.c
+mcstas/2.1/share/nxslib/sgsi.c
+mcstas/2.1/share/pol-lib.c
+mcstas/2.1/share/pol-lib.h
+mcstas/2.1/share/read_table-lib.c
+mcstas/2.1/share/read_table-lib.h
+mcstas/2.1/share/ref-lib.c
+mcstas/2.1/share/ref-lib.h
+mcstas/2.1/share/vitess-lib.c
+mcstas/2.1/share/vitess-lib.h
+@dir mcstas/2.1/bin
+@dir mcstas/2.1/contrib/Gas_tables
+@dir mcstas/2.1/contrib/ISIS_tables
+@dir mcstas/2.1/contrib/Neutronics
+@dir mcstas/2.1/contrib/doc
+@dir mcstas/2.1/contrib
+@dir mcstas/2.1/data
+@dir mcstas/2.1/doc/man/man1
+@dir mcstas/2.1/doc/man
+@dir mcstas/2.1/doc
+@dir mcstas/2.1/examples
+@dir mcstas/2.1/misc
+@dir mcstas/2.1/monitors
+@dir mcstas/2.1/obsolete
+@dir mcstas/2.1/optics
+@dir mcstas/2.1/samples
+@dir mcstas/2.1/share/interpolation/natural
+@dir mcstas/2.1/share/interpolation/nearest
+@dir mcstas/2.1/share/interpolation
+@dir mcstas/2.1/share/nxslib
+@dir mcstas/2.1/share
+@dir mcstas/2.1/sources
+@dir mcstas/2.1
+@dir mcstas

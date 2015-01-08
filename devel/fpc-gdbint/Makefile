@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-gdbint
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit providing interface to gdb
 
 USE_FPC=	yes

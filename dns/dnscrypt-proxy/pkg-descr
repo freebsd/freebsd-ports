@@ -1,6 +1,17 @@
-DNSCrypt is a piece of lightweight software that everyone
-should use to boost online privacy and security. It works
-by encrypting all DNS traffic between the user and OpenDNS,
-preventing any spying, spoofing or man-in-the-middle attacks.
+The dnscrypt-proxy provides local service, which can be used directly as your
+local resolver or as a DNS forwarder, encrypting and authenticating requests
+using the DNSCrypt [1] protocol and passing them to an upstream server.
 
-WWW: https://www.opendns.com/technology/dnscrypt/
+The DNSCrypt protocol uses high-speed high-security elliptic-curve cryptography
+and is very similar to DNSCurve [2], but focuses on securing communications
+between a client and its first-level resolver.
+
+While not providing end-to-end security, it protects the local network, which
+is often the weakest point of the chain, against man-in-the-middle attacks.
+It also provides some confidentiality to DNS queries.
+
+Reference links:
+1. https://www.opendns.com/technology/dnscrypt/
+2. http://dnscurve.org
+
+WWW: http://dnscrypt.org

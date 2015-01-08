@@ -34,9 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.viewletmanager>=1.2:${PORTSDIR}/ww
 		${PYTHON_PKGNAMEPREFIX}Products.CMFDynamicViewFTI>=0:${PORTSDIR}/devel/py-Products.CMFDynamicViewFTI \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFEditions>=1.2.2:${PORTSDIR}/devel/py-Products.CMFEditions
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=			zope zip
+USES=		python:2 zope zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

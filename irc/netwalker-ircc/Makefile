@@ -4,7 +4,7 @@
 PORTNAME=	netwalker-ircc
 PORTVERSION=	0.5.0
 CATEGORIES=	irc
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight curses-based IRC client

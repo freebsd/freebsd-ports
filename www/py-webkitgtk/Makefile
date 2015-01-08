@@ -19,8 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	glib20 libxslt pygtk2
-USE_PYTHON=	yes
 
 .include <bsd.port.mk>

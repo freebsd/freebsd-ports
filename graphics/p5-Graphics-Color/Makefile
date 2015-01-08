@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Graphics-Color
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +12,7 @@ COMMENT=	Device and library agnostic color spaces
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Color-Library>=0.02:${PORTSDIR}/graphics/p5-Color-Library \
 		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
   		p5-MooseX-Aliases>=0.03:${PORTSDIR}/devel/p5-MooseX-Aliases \

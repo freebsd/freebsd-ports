@@ -15,10 +15,9 @@ COMMENT=	Plugin to generate PDF documents from the Wiki
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-WRKSRC=			${WRKDIR}/${PORTNAME}plugin
+USES=		python:2
+USE_PYTHON=	distutils autoplist
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 
 .include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

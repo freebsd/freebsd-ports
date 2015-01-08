@@ -5,7 +5,7 @@ PORTNAME=	zeroer
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for wiping unallocated space on a filesystem

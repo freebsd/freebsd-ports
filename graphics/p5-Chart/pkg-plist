@@ -1,4 +1,3 @@
-%%PERL5_MAN3%%/Chart.3.gz
 %%SITE_PERL%%/Chart.pod
 %%SITE_PERL%%/Chart/Bars.pm
 %%SITE_PERL%%/Chart/Base.pm
@@ -16,3 +15,4 @@
 %%SITE_PERL%%/Chart/Points.pm
 %%SITE_PERL%%/Chart/Split.pm
 %%SITE_PERL%%/Chart/StackedBars.pm
+%%PERL5_MAN3%%/Chart.3.gz

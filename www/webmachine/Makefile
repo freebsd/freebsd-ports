@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmachine
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.6
 CATEGORIES=	www devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,10 +16,11 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 
 PLIST_SUB=      VERSION="${PORTVERSION}"
 
+USES=		gmake
 USE_GITHUB=     yes
 GH_ACCOUNT=     basho
 GH_PROJECT=     webmachine
-GH_COMMIT=      4e2d89c
+GH_COMMIT=      850bf30
 GH_TAGNAME=     ${PORTVERSION}
 
 PORTDOCS=	*

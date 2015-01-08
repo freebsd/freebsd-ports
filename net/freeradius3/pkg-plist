@@ -1,4 +1,3 @@
-@stopdaemon radiusd
 @unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
 @unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 bin/dhcpclient
@@ -68,6 +67,9 @@ include/freeradius/udpfromto.h
 %%LIBDIR%%/rlm_cache.a
 %%LIBDIR%%/rlm_cache.la
 %%LIBDIR%%/rlm_cache.so
+%%LIBDIR%%/rlm_cache_rbtree.a
+%%LIBDIR%%/rlm_cache_rbtree.la
+%%LIBDIR%%/rlm_cache_rbtree.so
 %%LIBDIR%%/rlm_chap.a
 %%LIBDIR%%/rlm_chap.la
 %%LIBDIR%%/rlm_chap.so
@@ -442,6 +444,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
 %%EXAMPLESDIR%%/raddb/certs/index.txt.old
+%%EXAMPLESDIR%%/raddb/certs/passwords.mk
 %%EXAMPLESDIR%%/raddb/certs/random
 %%EXAMPLESDIR%%/raddb/certs/serial
 %%EXAMPLESDIR%%/raddb/certs/serial.old
@@ -459,13 +462,14 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/hints
 %%EXAMPLESDIR%%/raddb/huntgroups
 %%EXAMPLESDIR%%/raddb/mods-available/README.rst
+%%EXAMPLESDIR%%/raddb/mods-available/abfab_psk_sql
 %%EXAMPLESDIR%%/raddb/mods-available/always
 %%EXAMPLESDIR%%/raddb/mods-available/attr_filter
 %%EXAMPLESDIR%%/raddb/mods-available/cache
 %%EXAMPLESDIR%%/raddb/mods-available/cache_eap
 %%EXAMPLESDIR%%/raddb/mods-available/chap
-%%EXAMPLESDIR%%/raddb/mods-available/counter
 %%EXAMPLESDIR%%/raddb/mods-available/couchbase
+%%EXAMPLESDIR%%/raddb/mods-available/counter
 %%EXAMPLESDIR%%/raddb/mods-available/cui
 %%EXAMPLESDIR%%/raddb/mods-available/date
 %%EXAMPLESDIR%%/raddb/mods-available/detail
@@ -620,6 +624,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/unpack
 %%EXAMPLESDIR%%/raddb/mods-enabled/utf8
 %%EXAMPLESDIR%%/raddb/panic.gdb
+%%EXAMPLESDIR%%/raddb/policy.d/abfab-tr
 %%EXAMPLESDIR%%/raddb/policy.d/accounting
 %%EXAMPLESDIR%%/raddb/policy.d/canonicalization
 %%EXAMPLESDIR%%/raddb/policy.d/control
@@ -632,6 +637,8 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
+%%EXAMPLESDIR%%/raddb/sites-available/abfab-tls
+%%EXAMPLESDIR%%/raddb/sites-available/abfab-tr-idp
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
 %%EXAMPLESDIR%%/raddb/sites-available/channel_bindings
 %%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
@@ -677,6 +684,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.alvarion.wimax.v2_2
 %%DATADIR%%/dictionary.apc
 %%DATADIR%%/dictionary.aptis
+%%DATADIR%%/dictionary.arbor
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
 %%DATADIR%%/dictionary.ascend.illegal
@@ -718,6 +726,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.equallogic
 %%DATADIR%%/dictionary.ericsson
+%%DATADIR%%/dictionary.ericsson.ab
 %%DATADIR%%/dictionary.ericsson.packet.core.networks
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
@@ -750,6 +759,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
+%%DATADIR%%/dictionary.meinberg
 %%DATADIR%%/dictionary.merit
 %%DATADIR%%/dictionary.meru
 %%DATADIR%%/dictionary.microsoft
@@ -776,7 +786,6 @@ sbin/radmin
 %%DATADIR%%/dictionary.purewave
 %%DATADIR%%/dictionary.quiconnect
 %%DATADIR%%/dictionary.quintum
-%%DATADIR%%/dictionary.redback
 %%DATADIR%%/dictionary.redcreek
 %%DATADIR%%/dictionary.rfc2865
 %%DATADIR%%/dictionary.rfc2866
@@ -806,6 +815,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc6929
 %%DATADIR%%/dictionary.rfc6930
 %%DATADIR%%/dictionary.rfc7055
+%%DATADIR%%/dictionary.rfc7155
 %%DATADIR%%/dictionary.rfc7268
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone

@@ -5,7 +5,7 @@ PORTNAME=		arts
 PORTVERSION=		1.5.10
 PORTREVISION=		1
 CATEGORIES=		audio kde linux
-MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=		LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Audio system for the KDE integrated X11 desktop (Linux Fedora 10)

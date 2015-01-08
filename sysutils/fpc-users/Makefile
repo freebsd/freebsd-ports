@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-users
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to manipulate system users
 
 USE_FPC=	yes

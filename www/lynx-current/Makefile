@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.9d2
-PORTREVISION=	1
+PORTVERSION=	2.8.9d3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 PKGNAMESUFFIX=	-current

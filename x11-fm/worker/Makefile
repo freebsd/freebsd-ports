@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	simond@irrelevant.org
+MAINTAINER=	mp39590@gmail.com
 COMMENT=	X11 File Manager based on Directory Opus
 
 LICENSE=	GPLv2

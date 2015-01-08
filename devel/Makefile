@@ -1525,6 +1525,7 @@
     SUBDIR += p5-Badger
     SUBDIR += p5-Benchmark-Timer
     SUBDIR += p5-Best
+    SUBDIR += p5-Brannigan
     SUBDIR += p5-Bread-Board
     SUBDIR += p5-Bread-Board-Declare
     SUBDIR += p5-Bundle-Perl6
@@ -2244,6 +2245,7 @@
     SUBDIR += p5-Import-Into
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
+    SUBDIR += p5-Inline-C
     SUBDIR += p5-Inline-CPP
     SUBDIR += p5-Inline-Files
     SUBDIR += p5-Inline-Filters
@@ -2337,6 +2339,7 @@
     SUBDIR += p5-Log-Message-Simple
     SUBDIR += p5-Log-Minimal
     SUBDIR += p5-Log-Report
+    SUBDIR += p5-Log-Report-Optional
     SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
@@ -2537,6 +2540,7 @@
     SUBDIR += p5-Object-Destroyer
     SUBDIR += p5-Object-Enum
     SUBDIR += p5-Object-Event
+    SUBDIR += p5-Object-Import
     SUBDIR += p5-Object-InsideOut
     SUBDIR += p5-Object-MultiType
     SUBDIR += p5-Object-Pluggable
@@ -2647,6 +2651,8 @@
     SUBDIR += p5-Perl-Tidy
     SUBDIR += p5-Perl-Unsafe-Signals
     SUBDIR += p5-Perl-Version
+    SUBDIR += p5-Perl-osnames
+    SUBDIR += p5-Perl4-CoreLibs
     SUBDIR += p5-Perl6-Builtins
     SUBDIR += p5-Perl6-Export
     SUBDIR += p5-Perl6-Export-Attrs
@@ -3007,6 +3013,7 @@
     SUBDIR += p5-Test-TableDriven
     SUBDIR += p5-Test-Taint
     SUBDIR += p5-Test-TempDir
+    SUBDIR += p5-Test-TempDir-Tiny
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
@@ -4308,6 +4315,7 @@
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
+    SUBDIR += rubygem-bones
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bson1
     SUBDIR += rubygem-buftok
@@ -4454,7 +4462,7 @@
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
-    SUBDIR += rubygem-little_plugger
+    SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
@@ -4501,6 +4509,7 @@
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
+    SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-open3_backport
@@ -4546,6 +4555,7 @@
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-require_all
+    SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rrd-ffi

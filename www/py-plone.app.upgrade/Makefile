@@ -48,9 +48,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 		${PYTHON_PKGNAMEPREFIX}Products.SecureMailHost>=0:${PORTSDIR}/mail/py-Products.SecureMailHost \
 		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>=2.13.4:${PORTSDIR}/devel/py-Products.ZCatalog
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=			zope zip
+USES=		python zope zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

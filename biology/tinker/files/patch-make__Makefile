@@ -1,10 +1,10 @@
---- make/Makefile.orig	2013-07-14 11:23:53.000000000 +0900
-+++ make/Makefile	2014-03-14 16:59:17.000000000 +0900
-@@ -30,9 +30,9 @@
+--- make/Makefile.orig	2014-12-16 05:18:02.000000000 +0200
++++ make/Makefile	2014-12-30 10:29:50.000000000 +0200
+@@ -33,9 +33,9 @@
+ ##  BINDIR       Hard Copies of TINKER Executables
  ##  LINKDIR      Linked Copies of TINKER Executables
- ##
  
--TINKERDIR = /Users/ponder/tinker
+-TINKERDIR = $(HOME)/tinker
 -BINDIR = $(TINKERDIR)/bin
 -LINKDIR = /usr/local/bin
 +TINKERDIR = ${WRKDIR}
@@ -13,68 +13,83 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -40,6 +40,20 @@
- ####################################################################
+@@ -46,26 +46,26 @@ LINKDIR = /usr/local/bin
+ ##  CPU Type: Intel x86 Compatible
+ ##  Compiler: GNU gfortran
  
- ##
-+##  Machine:  IntelPC / FreeBSD
-+##  CPU Type: Intel, AMD, Cyrix
-+##  Oper Sys: FreeBSD 4.2
-+##  Compiler: f77 , aka g77
-+##
-+
+-#F77 = gfortran
+-#LIBS =
+-#F77FLAGS = -c
+-#OPTFLAGS = -O3 -ffast-math
+-#LIBFLAGS = -crusv
+-#RANLIB = ranlib -c
+-#LINKFLAGS = $(OPTFLAGS) -static-libgcc
 +F77 = ${FC}
-+LIBS = 
++LIBS =
 +F77FLAGS = -c ${FFLAGS}
-+LINKFLAGS = ${LDFLAGS}
 +OPTFLAGS = 
 +LIBFLAGS = -rcuv
-+
-+##
- ##  Machine:  Generic Linux
++RANLIB = ranlib
++LINKFLAGS = ${LDFLAGS}
+ 
+ ##  Machine:  Generic Linux or Macintosh
  ##  CPU Type: Intel x86 Compatible
- ##  Oper Sys: Fedora Core
-@@ -104,12 +118,12 @@
+ ##  Compiler: GNU gfortran
  ##  Parallel: OpenMP
- ##
  
--F77 = /opt/intel/bin/ifort
--LIBS = -L$(TINKERDIR)/fftw/lib -lfftw3_omp -lfftw3
--F77FLAGS = -c -axSSSE3 -assume cc_omp
--OPTFLAGS = -O3 -no-ipo -no-prec-div -openmp
+-F77 = gfortran
+-LIBS = -L$(TINKERDIR)/fftw/lib -lfftw3_threads -lfftw3
+-F77FLAGS = -c
+-OPTFLAGS = -O3 -ffast-math -fopenmp
 -LIBFLAGS = -crusv
--LINKFLAGS = $(OPTFLAGS) -static-intel -mmacosx-version-min=10.4
-+#F77 = /opt/intel/bin/ifort
-+#LIBS = -L$(TINKERDIR)/fftw/lib -lfftw3_omp -lfftw3
-+#F77FLAGS = -c -axSSSE3 -assume cc_omp
-+#OPTFLAGS = -O3 -no-ipo -no-prec-div -openmp
+-RANLIB = ranlib -c
+-LINKFLAGS = $(OPTFLAGS) -static-libgcc
++#F77 = gfortran
++#LIBS = -L$(TINKERDIR)/fftw/lib -lfftw3_threads -lfftw3
++#F77FLAGS = -c
++#OPTFLAGS = -O3 -ffast-math -fopenmp
 +#LIBFLAGS = -crusv
-+#LINKFLAGS = $(OPTFLAGS) -static-intel -mmacosx-version-min=10.4
++#RANLIB = ranlib -c
++#LINKFLAGS = $(OPTFLAGS) -static-libgcc
  
- ##
+ ##  Machine:  Generic Linux
+ ##  CPU Type: Intel x86 Compatible (also AMD)
+@@ -106,7 +106,7 @@ LINKFLAGS = $(OPTFLAGS) -static-libgcc
+ #LIBFLAGS = -crusv
+ #RANLIB = ranlib -c
+ #LINKFLAGS = $(OPTFLAGS) -static-intel -mmacosx-version-min=10.6 \
+-             -Wl,-stack_size,0x10000000
++#             -Wl,-stack_size,0x10000000
+ 
  ##  Machine:  Macintosh
-@@ -597,14 +611,13 @@
+ ##  CPU Type: Intel Xeon
+@@ -710,93 +710,88 @@ EXEFILES = alchemy.x \
             xyzpdb.x \
             xyzsybyl.x
  
 -%.o: %.f
 -	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
-+.SUFFIXES: .x
- 
+-
 -%.o: %.c
 -	${CC} ${CFLAGS} ${INCLUDEDIR} ${OPTFLAGS} $<
-+.f.o:
-+	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
++.SUFFIXES: .x
  
 -%.x: %.o libtinker.a
 -	${F77} ${LINKFLAGS} -o $@ $^ ${LIBS}; strip $@
++.f.o:
++	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
+ 
+-all:
+-	${EXEFILES}
 +.o.x: libtinker.a
 +	${F77} ${LINKFLAGS} -o $@ $< libtinker.a ${LIBS}
  
- all:	${EXEFILES}
+-install:
+-	rename
++all:	${EXEFILES}
  
-@@ -612,74 +625,74 @@
- 	rm -f *.o *.a *.x
+ clean:
+ 	rm -f *.o *.mod *.a *.x
  
  listing:
 -	cat *.i *.f *.c > tinker.txt
@@ -211,7 +226,7 @@
  	rm -f $(LINKDIR)/anneal
  	rm -f $(LINKDIR)/archive
  	rm -f $(LINKDIR)/bar
-@@ -742,7 +755,7 @@
+@@ -859,7 +854,7 @@ remove_links:
  
  create_links:
  	ln -s $(BINDIR)/alchemy    $(LINKDIR)/alchemy

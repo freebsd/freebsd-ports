@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-CONFLICTS_INSTALL=	apache-hadoop2-2*
+CONFLICTS_INSTALL=	hadoop2-2*
 
 USES=		libtool
 USE_JAVA=	yes

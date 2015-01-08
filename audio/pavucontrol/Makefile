@@ -2,24 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	pavucontrol
-PORTVERSION=	0.9.10
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
+MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK mixer for PulseAudio
 
-LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libcanberra.so:${PORTSDIR}/audio/libcanberra
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	intltool
+USES=		gmake pkgconfig gettext tar:xz
+USE_GNOME=	glibmm intltool libsigc++20
+
+OPTIONS_SUB=	yes
+OPTIONS_SINGLE=	GTK
+OPTIONS_SINGLE_GTK=	GTK2 GTK3
+OPTIONS_DEFAULT=	GTK2
 
 CONFIGURE_ARGS=	--disable-lynx
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+
+GTK2_USE=	GNOME=gtkmm24
+GTK2_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
+GTK2_CONFIGURE_ON=	--disable-gtk3
+
+GTK3_USE=	GNOME=gtkmm30
+GTK3_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-support-gtkmm-24.patch
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-support-gtkmm-30.patch \
+	${FILESDIR}/extra-patch-src_pavucontrol.glade
+.endif
+
+post-patch:
+# Install locales files in right place
+	${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>

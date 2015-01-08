@@ -5,7 +5,7 @@ PORTNAME=	pecomato
 PORTVERSION=	0.0.15
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line picture metadata processor

@@ -14,9 +14,8 @@ COMMENT=	Import or update tickets from a CSV file or Excel file
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.1:${PORTSDIR}/textproc/py-xlrd
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 # Maintainter targets below this point
 

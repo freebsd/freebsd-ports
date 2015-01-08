@@ -5,7 +5,7 @@ PORTNAME=	nas-libs
 PORTVERSION=	1.9.1
 PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 10)

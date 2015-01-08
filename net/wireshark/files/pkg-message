@@ -1,0 +1,17 @@
+===============================================================================
+
+In order for wireshark be able to capture packets when used by unprivileged
+user, /dev/bpf should be in network group and have read-write permissions.
+For example:
+
+# chgrp network /dev/bpf*
+# chmod g+r /dev/bpf*
+# chmod g+w /dev/bpf*
+
+In order for this to persist across reboots, add the following to
+/etc/devfs.conf:
+
+own  bpf* root:network
+perm bpf* 0660
+
+===============================================================================

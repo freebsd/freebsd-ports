@@ -5,7 +5,7 @@ PORTNAME=	rej
 PORTVERSION=	0.16
 PORTREVISION=	1
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes

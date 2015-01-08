@@ -5,7 +5,7 @@ PORTNAME=	watchfolder
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Watch folders for new files and process them

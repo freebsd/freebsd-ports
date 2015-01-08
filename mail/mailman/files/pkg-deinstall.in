@@ -4,7 +4,7 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 
-case $2 in
+case "$2" in
 DEINSTALL)
   echo "---> Starting deinstall script"
 
@@ -23,7 +23,7 @@ DEINSTALL)
   fi
 
   echo "---> Preserving the \"last_mailman_version\" file"
-  /bin/mv -f "%%MAILMANDIR%%/data/last_mailman_version" /var/tmp/
+  /bin/mv -f "%%MAILMANDIR%%/data/last_mailman_version" /var/tmp/ || :
 
   # If the errorlog is the only existing logfile, delete it.  (If Mailman's
   # qrunner had not been running, then the process of trying to stop the
@@ -34,6 +34,9 @@ DEINSTALL)
     echo "---> Deleting errorlog (It is the only existing logfile.)"
     /bin/rm -f "%%MAILMANDIR%%/logs/error"
   fi
+
+  # attempt removal, but do not care if it is not empty
+  /bin/rmdir "%%MAILMANDIR%%/archives/private/" 2>/dev/null || :
   ;;
 
 POST-DEINSTALL)

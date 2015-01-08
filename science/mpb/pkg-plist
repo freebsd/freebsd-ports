@@ -1,0 +1,13 @@
+bin/mpb
+bin/mpb-data
+bin/mpb-split
+include/mpb.h
+include/mpb/eigensolver.h
+include/mpb/matrices.h
+include/mpb/maxwell.h
+include/mpb/scalar.h
+lib/libmpb.a
+man/man1/mpb-data.1.gz
+man/man1/mpb-split.1.gz
+man/man1/mpb.1.gz
+%%DATADIR%%/mpb.scm

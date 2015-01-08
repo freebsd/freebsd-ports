@@ -6,7 +6,7 @@ PORTVERSION=	5.0.0
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pager (like less) which has support for windows and binary files

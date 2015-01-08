@@ -4,7 +4,7 @@
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0
 CATEGORIES=	misc
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Optimally choose files to be put on a CD (or other media)

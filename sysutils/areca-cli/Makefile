@@ -6,7 +6,7 @@ DISTVERSION=	${CLI_VER}.${CLI_REV}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.areca.com.tw/RaidCards/AP_Drivers/FreeBSD/CLI/ \
-		CRITICAL
+		LOCAL/ehaupt
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	v${CLI_VER}_${CLI_REV}
 

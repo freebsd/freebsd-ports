@@ -32,3 +32,4 @@ man/man1/fet-cl.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_untranslated.qm
 %%NLS%%%%DATADIR%%/translations/fet_uz.qm
 %%NLS%%%%DATADIR%%/translations/fet_vi.qm
+%%NLS%%%%DATADIR%%/translations/fet_zh_CN.qm

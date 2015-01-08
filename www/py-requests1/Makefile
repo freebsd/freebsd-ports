@@ -13,9 +13,8 @@ COMMENT=	HTTP library written in Python for human beings (Version 1.x)
 
 LICENSE=	ISCL
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	py*-requests-*
 

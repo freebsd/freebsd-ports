@@ -5,7 +5,7 @@ PORTNAME=	remserial
 PORTVERSION=	1.4
 CATEGORIES=	comms
 MASTER_SITES=	http://lpccomp.bc.ca/remserial/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bridge between a TCP/IP network port and a character-oriented device

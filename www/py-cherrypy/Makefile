@@ -21,10 +21,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
-PYDISTUTILS_AUTOPLIST=	yes
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

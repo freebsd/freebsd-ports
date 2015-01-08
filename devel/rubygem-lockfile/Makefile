@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Ruby library for creating NFS safe lockfiles
 
+LICENSE=	RUBY
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes

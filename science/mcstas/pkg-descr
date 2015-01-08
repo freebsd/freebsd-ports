@@ -1,0 +1,7 @@
+Monte Carlo ray tracing simulations of neutron experiments.
+
+McStas is a tool for simulating neutron instrumentation and experiments
+using a ray-tracing formalism. Currently the main use of McStas is
+in the field of instrument design.
+
+WWW: http://www.mcstas.org

@@ -14,8 +14,7 @@ COMMENT=		Python based CalDAV/CardDAV server
 
 LICENSE=		GPLv3
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	Radicale
 
 USERS=			radicale
@@ -28,14 +27,18 @@ HTTP_DESC=		HTTP authentication support
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MLDAP}
+USES+=		python:2
+.else
+USES+=		python
+.endif
+
 .if ${PORT_OPTIONS:MHTTP}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1
-USE_PYTHON=		2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1	
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}ldap2>=0:${PORTSDIR}/net/py-ldap2
-USE_PYTHON=		2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap2>=0:${PORTSDIR}/net/py-ldap2
 .endif
 
 post-patch:

@@ -6,7 +6,7 @@ PORTVERSION=	2.10.1
 PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/ \
-		CRITICAL
+		LOCAL/ehaupt
 DISTNAME=	zoo-2.10pl1
 
 MAINTAINER=	gabor@FreeBSD.org

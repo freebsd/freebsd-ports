@@ -34,6 +34,7 @@ MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\"" \
 		DEF_PSSCRIPT_DIR="-DPSSCRIPT_DIR=\"\\\"${DATADIR}/\\\"\""
 ALL_TARGET=	compile.shared
+CONFIGURE_ARGS+=--datadir=${PREFIX}/share
 
 DATADIR=	${PREFIX}/share/Ted
 DOCSDIR=	${PREFIX}/share/doc/Ted

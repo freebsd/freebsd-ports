@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Google-SAML-Response
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	SAML responses for Google's SSO implementation
+COMMENT=	SAML responses for Google SSO implementation
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-DSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-DSA \
@@ -23,7 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 MAKE_JOBS_UNSAFE=	yes
 

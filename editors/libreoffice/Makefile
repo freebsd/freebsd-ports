@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--disable-coinmp \
 			--disable-epm \
 			--disable-firebird-sdbc \
 			--disable-gnome-vfs \
-			--disable-gstreamer \
+			--disable-gstreamer-0-10 \
 			--disable-kde \
 			--disable-kdeab \
 			--disable-mergelibs \
@@ -255,15 +255,15 @@ JAVA_CONFIGURE_OFF=	--without-java
 JAVA_BUILD=	yes
 JAVA_USE=	JAVA=yes
 
-KDE4_USE=	KDE4=kdelibs QT4=moc_build QT4=qmake_build
+KDE4_USE=	KDE4=kdelibs QT4=moc_build,qmake_build
 KDE4_CONFIGURE_ENABLE=	kde4
 KDE4_CONFIGURE_ENV=	KDE4DIR="${KDE4_PREFIX}" \
 			QT4DIR="${QT_PREFIX}" \
 			QT4INC="${QT_INCDIR}" \
 			QT4LIB="${QT_LIBDIR}"
 
-MMEDIA_USE=	GSTREAMER=yes
-MMEDIA_CONFIGURE_ENABLE=	gstreamer-0-10
+MMEDIA_USE=	GSTREAMER1=yes
+MMEDIA_CONFIGURE_ENABLE=	gstreamer
 
 PGSQL_USES=	pgsql:9.0+
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc

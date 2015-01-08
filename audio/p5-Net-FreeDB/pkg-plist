@@ -1,4 +1,4 @@
 %%SITE_ARCH%%/Net/FreeDB.pm
+%%SITE_ARCH%%/Net/FreeDBConnection.pm
 %%SITE_ARCH%%/auto/Net/FreeDB/FreeDB.so
-%%SITE_ARCH%%/auto/Net/FreeDB/autosplit.ix
 %%PERL5_MAN3%%/Net::FreeDB.3.gz

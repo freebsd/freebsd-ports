@@ -5,7 +5,7 @@ PORTNAME=	expat
 PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	textproc linux
-MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library (Linux Fedora 10)

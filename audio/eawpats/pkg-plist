@@ -356,7 +356,7 @@
 %%DATADIR%%/woodflut.pat
 %%DATADIR%%/xgmap2.cfg
 %%DATADIR%%/xylophon.pat
-lib/timidity/timidity.cfg-eawpats
+share/timidity/timidity.cfg-eawpats
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyrigh.txt
 %%PORTDOCS%%%%DOCSDIR%%/drumsfx.txt
