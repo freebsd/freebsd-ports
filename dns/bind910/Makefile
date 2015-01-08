@@ -4,7 +4,7 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	1
 .else
 # dns/bind910 here
 PORTREVISION=	1
@@ -15,7 +15,7 @@ PKGNAMESUFFIX?=	910
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+COMMENT?=	BIND DNS suite with updated DNSSEC and DNS64
 
 LICENSE=	ISCL
 
@@ -35,7 +35,7 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
+CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE}
@@ -43,7 +43,9 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS+=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
 
+.if !defined(BIND_TOOLS_SLAVE)
 SUB_FILES=	pkg-message
+.endif
 
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE
 OPTIONS_DEFINE=		IDN LARGE_FILE GOST PYTHON \
