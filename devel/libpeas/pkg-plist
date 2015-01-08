@@ -23,8 +23,8 @@ lib/libpeas-gtk-1.0.so.0
 lib/libpeas-gtk-1.0.so.0.1201.0
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
-%%PYTHON%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-33.pyc
-%%PYTHON%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-33.pyo
+%%PYTHON%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-%%PYVER%%.pyc
+%%PYTHON%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-%%PYVER%%.pyo
 %%PYTHON%%lib/peas-demo/plugins/pythonhello/pythonhello.plugin
 %%PYTHON%%lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/secondtime/libsecondtime.so
