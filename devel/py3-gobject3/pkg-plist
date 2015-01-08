@@ -1,8 +1,8 @@
 %%PYTHON_SITELIBDIR%%/gi/__init__.py
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/__init__.cpython-%%PYTVER%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/__init__.cpython-%%PYTVER%%.pyo
-%%PYTHON_SITELIBDIR%%/gi/__pycache__/_error.cpython-33.pyc
-%%PYTHON_SITELIBDIR%%/gi/__pycache__/_error.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_error.cpython-%%PYTVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/__pycache__/_error.cpython-%%PYTVER%%.pyo
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/_constants.cpython-%%PYTVER%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/_constants.cpython-%%PYTVER%%.pyo
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/_option.cpython-%%PYTVER%%.pyc
