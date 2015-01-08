@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvtm
-PORTVERSION=	0.8
+PORTVERSION=	0.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
