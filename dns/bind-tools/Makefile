@@ -3,7 +3,7 @@
 # Define PORTREVISION in ${MASTERDIR}
 PKGNAMESUFFIX=	-tools
 
-COMMENT=	Command line tools from BIND: dig, host, and nslookup
+COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
 
 CONFIGURE_ARGS+=	--disable-shared
 
