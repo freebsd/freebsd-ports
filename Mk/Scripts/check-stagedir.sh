@@ -18,6 +18,8 @@ export LC_ALL=C
 #    Use file descriptors 1 and 3 so that the while loop can write
 #    files to the pipe and dirs to a separate file.
 parse_plist() {
+	local cwd cwd_save commented_cwd comment line newcwd
+
 	echo "===> Parsing plist"
 	cwd=${PREFIX}
 	cwd_save=
