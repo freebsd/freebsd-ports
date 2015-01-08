@@ -108,7 +108,7 @@ bin/startfluxbox
 %%NLS%%%%DATADIR%%/nls/C/fluxbox.cat
 %%NLS%%%%DATADIR%%/nls/be_BY.CP1251/fluxbox.cat
 %%NLS%%%%DATADIR%%/nls/be_BY.UTF-8/fluxbox.cat
-%%NLS%%%%DATADIR%%/nls/bg_BG.ISO-8859-1/fluxbox.cat
+%%NLS%%%%DATADIR%%/nls/bg_BG.CP1251/fluxbox.cat
 %%NLS%%%%DATADIR%%/nls/bg_BG.UTF-8/fluxbox.cat
 %%NLS%%%%DATADIR%%/nls/cs_CZ.ISO-8859-2/fluxbox.cat
 %%NLS%%%%DATADIR%%/nls/cs_CZ.UTF-8/fluxbox.cat
@@ -402,7 +402,7 @@ man/man5/fluxbox-style.5.gz
 %%NLS%%@dirrm %%DATADIR%%/nls/cs_CZ.UTF-8
 %%NLS%%@dirrm %%DATADIR%%/nls/cs_CZ.ISO-8859-2
 %%NLS%%@dirrm %%DATADIR%%/nls/bg_BG.UTF-8
-%%NLS%%@dirrm %%DATADIR%%/nls/bg_BG.ISO-8859-1
+%%NLS%%@dirrm %%DATADIR%%/nls/bg_BG.CP1251
 %%NLS%%@dirrm %%DATADIR%%/nls/be_BY.UTF-8
 %%NLS%%@dirrm %%DATADIR%%/nls/be_BY.CP1251
 %%NLS%%@dirrm %%DATADIR%%/nls/C
