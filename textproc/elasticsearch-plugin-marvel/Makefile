@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/marvel/
 PKGNAMEPREFIX=	elasticsearch-plugin-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ElasticSearch Mavel Monitoring Plugin
+COMMENT=	ElasticSearch Marvel Monitoring Plugin
 
 LICENSE=	COMMERCIAL
 LICENSE_NAME=	Free for development; license required for production use
