@@ -18,7 +18,9 @@ export LC_ALL=C
 #    Use file descriptors 1 and 3 so that the while loop can write
 #    files to the pipe and dirs to a separate file.
 parse_plist() {
-	local cwd cwd_save commented_cwd comment line newcwd
+	local cwd cwd_save commented_cwd comment line newcwd parse_comments
+
+	parse_comments="${1:-1}"
 
 	echo "===> Parsing plist"
 	cwd=${PREFIX}
@@ -30,7 +32,7 @@ parse_plist() {
 		# a @comment to deactive files. XXX: It would be better to
 		# make all ports use @ignore instead of @comment.
 		comment=
-		if [ ${makeplist} -eq 0 -a -z "${line%%@comment *}" ]; then
+		if [ ${parse_comments} -eq 1 -a -z "${line%%@comment *}" ]; then
 			line="${line##*@comment }"
 			# Remove @comment so it can be parsed as a file,
 			# but later prepend it again to create a list of
