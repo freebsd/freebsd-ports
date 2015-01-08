@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--with-oss \
 		--without-sane \
 		--without-tiff \
-		--with-xcomposite --without-xinerama
+		--without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -50,6 +50,8 @@ SHEBANG_FILES=	tools/make_requests tools/winemaker \
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PORTDATA=	l_intl.nls wine.inf
 
 OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=X11
@@ -94,15 +96,13 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x cms fontconfig glu jpeg opengl png xinput2 xrandr freetype
+X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinput2 xrandr xrender
 X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 			libpng.so:${PORTSDIR}/graphics/png
-
-PORTDATA=	l_intl.nls wine.inf
 
 .include <bsd.port.options.mk>
 
