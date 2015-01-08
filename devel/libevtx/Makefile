@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20141112
+DISTVERSION=	alpha-20150105
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSRnQ0SExzX3JjdFE/ \
-		https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
+MASTER_SITES=	https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		gettext iconv libtool pathfix python:2
+USES=		gettext iconv libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
