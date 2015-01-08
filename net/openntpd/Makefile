@@ -1,36 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	openntpd
-PORTVERSION=	4.6
-PORTREVISION=	3
+PORTVERSION=	5.7p1
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenNTPD
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	naddy@FreeBSD.org
-COMMENT=	OpenBSD's Network Time Protocol daemon
+COMMENT=	Network Time Protocol (NTP) daemon
+
+LICENSE=	ISCL
 
 USERS=		_ntp
 GROUPS=		_ntp
 
 USE_RC_SUBR=	openntpd
 
-WRKSRC=		${WRKDIR}/ntpd
-
-post-extract:
-	@${CP} ${FILESDIR}/compat.h ${FILESDIR}/adjfreq.c ${WRKSRC}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--disable-silent-rules
 
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
-	    ${WRKSRC}/ntpd.h ${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
+	    ${WRKSRC}/ntpd.conf.5 ${WRKSRC}/ntpd.8
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ntpd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ntpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/ntpd.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_DATA} ${FILESDIR}/ntpd.conf \
-	    ${STAGEDIR}${PREFIX}/etc/ntpd.conf.sample
+post-install:
+	cd ${STAGEDIR}${PREFIX}/etc; ${MV} ntpd.conf ntpd.conf.sample
 
 .include <bsd.port.mk>

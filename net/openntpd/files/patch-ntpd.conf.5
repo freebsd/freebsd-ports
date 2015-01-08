@@ -1,88 +1,6 @@
-$FreeBSD$
---- ntpd.conf.5.orig	2009-11-23 21:03:30.000000000 +0100
-+++ ntpd.conf.5	2009-11-23 21:12:27.000000000 +0100
-@@ -59,62 +59,6 @@ or
- listen on 127.0.0.1
- listen on ::1
- .Ed
--.It Xo Ic sensor Ar device
--.Op Ic correction Ar microseconds
--.Op Ic weight Ar weight-value
--.Op Ic refid Ar string
--.Xc
--Specify a timedelta sensor device
--.Xr ntpd 8
--should use.
--The sensor can be specified multiple times:
--.Xr ntpd 8
--will use each given sensor that actually exists.
--Non-existent sensors are ignored.
--If
--.Sq *
--is given as device name,
--.Xr ntpd 8
--will use all timedelta sensors it finds.
--.Xr ntpd 8
--does not use any timedelta sensor by default.
--For example:
--.Bd -literal -offset indent
--sensor *
--sensor nmea0
--.Ed
--.Pp
--An optional correction in microseconds can be given to compensate
--for the sensor's offset.
--The maximum correction is 127 seconds.
--For example, if a DCF77 receiver is lagging 70ms behind
--actual time:
--.Bd -literal -offset indent
--sensor udcf0 correction 70000
--.Ed
--.Pp
--The optional
--.Ic weight
--keyword permits finer control over the relative importance
--of time sources (servers or sensor devices).
--Weights are specified in the range 1 to 10;
--if no weight is given,
--the default is 1.
--A server with a weight of 5, for example,
--will have five times more influence on time offset calculation
--than a server with a weight of 1.
--.Pp
--An optional reference ID string - up to 4 ASCII characters - can be
--given to publish the sensor type to clients.
--RFC 2030 suggests some common reference identifiers, but new identifiers
--"can be contrived as appropriate."
--If an ID string is not given,
--.Xr ntpd 8
--will use a generic reference ID.
--For example:
--.Bd -literal -offset indent
--sensor nmea0 refid GPS
--.Ed
- .It Xo Ic server Ar address
- .Op Ic weight Ar weight-value
- .Xc
-@@ -139,6 +83,17 @@ server ntp.example.org weight 1
- To provide redundancy, it is good practice to configure multiple servers.
- In general, best accuracy is obtained by using servers that have a low
- network latency.
-+.Pp
-+The optional
-+.Ic weight
-+keyword permits finer control over the relative importance
-+of time sources.
-+Weights are specified in the range 1 to 10;
-+if no weight is given,
-+the default is 1.
-+A server with a weight of 5, for example,
-+will have five times more influence on time offset calculation
-+than a server with a weight of 1.
- .It Xo Ic servers Ar address
- .Op Ic weight Ar weight-value
- .Xc
-@@ -157,15 +112,14 @@ servers pool.ntp.org
+--- ntpd.conf.5.orig	2015-01-08 06:57:55 UTC
++++ ntpd.conf.5
+@@ -182,8 +182,8 @@ servers pool.ntp.org rtable 5
  .Ed
  .El
  .Sh FILES
@@ -93,11 +11,3 @@ $FreeBSD$
  default
  .Xr ntpd 8
  configuration file
- .El
- .Sh SEE ALSO
--.Xr ntpd 8 ,
--.Xr sysctl 8
-+.Xr ntpd 8
- .Sh HISTORY
- The
- .Nm

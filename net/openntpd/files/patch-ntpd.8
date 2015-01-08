@@ -1,17 +1,6 @@
-$FreeBSD$
---- ntpd.8.orig	2009-02-12 02:33:37.000000000 +0100
-+++ ntpd.8	2009-11-23 21:36:02.000000000 +0100
-@@ -29,8 +29,7 @@
- .Sh DESCRIPTION
- The
- .Nm
--daemon synchronizes the local clock to one or more remote NTP servers
--or local timedelta sensors.
-+daemon synchronizes the local clock to one or more remote NTP servers.
- .Nm
- can also act as an NTP server itself,
- redistributing the local time.
-@@ -52,7 +51,7 @@ Use
+--- ntpd.8.orig	2015-01-08 06:57:55 UTC
++++ ntpd.8
+@@ -53,7 +53,7 @@ Use
  .Ar file
  as the configuration file,
  instead of the default
@@ -20,7 +9,7 @@ $FreeBSD$
  .It Fl n
  Configtest mode.
  Only check the configuration file for validity.
-@@ -91,19 +90,19 @@ will be logged.
+@@ -96,19 +96,19 @@ will be logged.
  After the local clock is synchronized,
  .Nm
  adjusts the clock frequency using the
@@ -32,7 +21,7 @@ $FreeBSD$
  is usually started at boot time, and can be enabled by
  setting
 -.Va ntpd_flags
-+.Va openntpd_enable
++.Va openntpd_flags
  in
 -.Pa /etc/rc.conf.local .
 +.Pa /etc/rc.conf .
@@ -44,12 +33,8 @@ $FreeBSD$
  for more information on the boot process
  and enabling daemons.
  .Pp
-@@ -120,22 +119,22 @@ When
- .Nm
- receives a
- .Dv SIGINFO
--signal, it writes its peer and sensor status to
-+signal, it writes its peer status to
+@@ -129,8 +129,8 @@ receives a
+ signal, it writes its peer and sensor status to
  .Xr syslog 3 .
  .Sh FILES
 -.Bl -tag -width "/var/db/ntpd.driftXXX" -compact
@@ -59,6 +44,7 @@ $FreeBSD$
  Default configuration file.
  .It Pa /var/db/ntpd.drift
  Drift file.
+@@ -140,12 +140,12 @@ Socket file for communication with
  .El
  .Sh SEE ALSO
  .Xr date 1 ,
@@ -67,8 +53,9 @@ $FreeBSD$
 +.Xr ntp_adjtime 2 ,
  .Xr ntpd.conf 5 ,
 +.Xr rc.conf 5 ,
+ .Xr ntpctl 8 ,
  .Xr rc 8 ,
 -.Xr rc.conf 8 ,
- .Xr rdate 8 ,
- .Xr timed 8
+ .Xr rdate 8
+ .Sh STANDARDS
  .Rs
