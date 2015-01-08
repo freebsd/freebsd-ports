@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	tcpdump
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
 
