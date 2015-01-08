@@ -5932,7 +5932,7 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-perl-things
+				move-uniquefiles-plist
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif
