@@ -1,0 +1,3 @@
+a class for executing remote perl code over an SSH link
+
+Author: Paul Evans <leonerd@leonerd.org.uk>
