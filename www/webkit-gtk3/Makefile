@@ -1,10 +1,8 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTVERSION=	2.4.8
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -26,11 +24,12 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison gettext gmake gperf libtool perl5 \
+USES=		bison compiler:c++11-lib gettext gmake gperf libtool perl5 \
 		pkgconfig shebangfix tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 gtk30 introspection:build libxslt
+USE_GL=		gl
 USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -42,6 +41,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--enable-geolocation \
+		--enable-webkit2 \
 		--enable-introspection
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
@@ -67,44 +67,18 @@ SHEBANG_FILES=	\
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS_DEFINE=	WEBGL WEBAUDIO DEBUG FULLDEBUG
-OPTIONS_DEFAULT=WEBGL WEBAUDIO
-WEBAUDIO_DESC=	Web audio support
-WEBGL_DESC=	Enable Web GL support
+OPTIONS_DEFINE=	DEBUG FULLDEBUG
 DEBUG_DESC=	Just enable debug symbols
 FULLDEBUG_DESC=	Enable asserts and other debug support
 
-WEBGL_CONFIGURE_ENABLE=	webgl
-WEBGL_USE=	GL=gl
-WEBAUDIO_CONFIGURE_ENABLE=	web-audio
 FULLDEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_ON=	--enable-debug-symbols=yes
 DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
 
 .include <bsd.port.options.mk>
 
-# gtest to use <tr1/tuple,> while libc++ only has <tuple>
-CPPFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 # Shutup warning spam
-CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments
-
-CONFIGURE_ARGS+=--enable-webkit2
-# We need clang + libc++ or gcc 4.7+. gcc has libstdc++ conflict between
-# gcc port and base. This originates from icu
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build
-.endif
-.if ${OSVERSION}<1000019
-CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1
-LDFLAGS+=	-stdlib=libc++
-BUILD_DEPENDS+=	clang34>=3.4:${PORTSDIR}/lang/clang34 \
-		libc++>=0:${PORTSDIR}/devel/libc++
-RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
-CC=		clang34
-CXX=		clang++34
-CPP=		clang-cpp34
-CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
-.endif
+CXXFLAGS+=	-Wno-c++11-extensions
 
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc
@@ -119,6 +93,15 @@ BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
+.endif
+
+.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
+# Needed for __atomic_fetch_add_8
+CFLAGS+=	-march=i586
+.endif
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Qunused-arguments
 .endif
 
 post-patch:
