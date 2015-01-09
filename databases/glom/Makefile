@@ -1,10 +1,8 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/glom/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	glom
-PORTVERSION=	1.24.0
-PORTREVISION=	1
+PORTVERSION=	1.28.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,6 +11,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
 BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		itstool:${PORTSDIR}/textproc/itstool \
 		libepc>=0.4.0:${PORTSDIR}/www/libepc \
 		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
 		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
@@ -31,7 +30,6 @@ WANT_PGSQL=	server
 USE_GNOME=	gnomedocutils gnomeprefix intlhack pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
-INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
@@ -41,8 +39,8 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	VERSION=${PORTVERSION:R}
-#PLIST_SUB+=	VERSION=1.24
+#PLIST_SUB+=	VERSION=${PORTVERSION:R}
+PLIST_SUB+=	VERSION=1.26
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
