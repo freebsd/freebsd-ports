@@ -3,7 +3,7 @@
 
 PORTNAME=	gq
 PORTVERSION=	1.3.4
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}client/GQ%20Unstable/${PORTVERSION}
@@ -28,8 +28,8 @@ DND_CONFIGURE_ENABLE=	browser-dns
 CACHE_CONFIGURE_ENABLE=	cache
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -Wno-return-type
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
+LIBS+=		-L${LOCALBASE}/lib -lcrypto
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
