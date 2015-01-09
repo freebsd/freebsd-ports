@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="caa98ffd-0a92-40d0-b234-fd79b429157e">
+    <topic>cURL -- URL request injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.40.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150108B.html">
+	  <p>When libcurl sends a request to a server via a HTTP proxy, it
+	    copies the entire URL into the request and sends if off.
+	    If the given URL contains line feeds and carriage returns those will
+	    be sent along to the proxy too, which allows the program to for
+	    example send a separate HTTP request injected embedded in the URL.
+	    Many programs allow some kind of external sources to set the URL or
+	    provide partial pieces for the URL to ask for, and if the URL as
+	    received from the user is not stripped good enough this flaw allows
+	    malicious users to do additional requests in a way that was not
+	    intended, or just to insert request headers into the request that
+	    the program didn't intend.
+	    We are not aware of any exploit of this flaw.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8150</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150108B.html</url>
+    </references>
+    <dates>
+      <discovery>2014-12-25</discovery>
+      <entry>2015-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e9ccdb28-9802-11e4-9d9c-bcaec565249c">
     <topic>WebKit-gtk -- Multiple vulnabilities</topic>
     <affects>
