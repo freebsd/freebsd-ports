@@ -4810,6 +4810,7 @@
     SUBDIR += tradcpp
     SUBDIR += trio
     SUBDIR += truc
+    SUBDIR += ua_parser-core
     SUBDIR += uatraits
     SUBDIR += uboot-mkimage
     SUBDIR += uclmmbase
