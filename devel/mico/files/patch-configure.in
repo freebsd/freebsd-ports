@@ -1,6 +1,6 @@
---- configure.in.orig	2006-01-21 16:12:08.000000000 +0100
-+++ configure.in	2013-04-17 11:45:36.000000000 +0200
-@@ -605,7 +605,7 @@
+--- configure.in.orig	2008-07-25 13:41:39 UTC
++++ configure.in
+@@ -635,7 +635,7 @@ AC_SUBST(SHLIBS)
  # System dependencies.
  #
  
@@ -9,7 +9,7 @@
  CONF_DEBUG_FLAGS=-g
  CONF_LIBNSL=yes
  CONF_EXCEPT_FLAGS=
-@@ -630,7 +630,7 @@
+@@ -660,7 +660,7 @@ if test X"$GXX" = Xyes; then
    CFLAGS="-Wall $CFLAGS"
  
    if test X"$use_speed_tune" = Xyes; then
@@ -18,7 +18,7 @@
    fi
  
    CONF_SHARED_CC="$CXX -shared"
-@@ -1082,7 +1082,7 @@
+@@ -1144,7 +1144,7 @@ if test X"$TCLDIR" != X; then
    AC_GET_DEFINE(TCL_VERSION, TCL_VERSION, tcl.h)
    if test X"$TCL_VERSION" != X; then
      dnl # remove quotes if any
@@ -27,3 +27,20 @@
      TCL_LIBS=-ltcl$TCL_VERSION
      HAVE_TCL=yes
      AC_MSG_RESULT($TCL_VERSION)
+@@ -2097,13 +2097,13 @@ SSLMTRUN=""
+ if test X"$ac_cv_lib_ssl_open" = Xyes -a X"$ac_cv_lib_crypto_open" = Xyes -a X"$ac_cv_header_openssl_ssl_h" = Xyes -a X"$use_threads" = Xyes; then
+   AC_MSG_CHECKING(for thread-safe openssl)
+   AC_TRY_RUN([
+-int
+-main()
+-{
+ #define OPENSSL_THREAD_DEFINES
+ #undef THREADS
+ #undef OPENSSL_THREADS
+ #include <openssl/opensslconf.h>
++int
++main()
++{
+ #if !defined(THREADS) && !defined(OPENSSL_THREADS)
+ //error You are trying to build multi-threaded MICO with single-threaded OpenSSL!
+ return 1;
