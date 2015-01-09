@@ -6,3 +6,5 @@ SHA256 (freepascal/ppcx64-2.6.4-freebsd.tar.gz) = f74a268a206fbd52d3c92f4e0722cd
 SIZE (freepascal/ppcx64-2.6.4-freebsd.tar.gz) = 1035650
 SHA256 (freepascal/fpc-2.6.4.man.tar.gz) = c1d5bc37f96d60b37dd0ea85b6c7244306ae61c01df6053226309a75145ab804
 SIZE (freepascal/fpc-2.6.4.man.tar.gz) = 43335
+SHA256 (freepascal/ppcx64-2.6.4-dragonfly.tar.gz) = d537d84302c0e0cb56d45851ab8da664145b9e2619346d35f1e3797a6f924ef9
+SIZE (freepascal/ppcx64-2.6.4-dragonfly.tar.gz) = 4033024
