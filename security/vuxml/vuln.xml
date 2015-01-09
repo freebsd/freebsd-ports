@@ -5715,7 +5715,7 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.nl/">
-	  <p>31 vulnerabilies fixed in this release, including:</p>
+	  <p>31 vulnerabilities fixed in this release, including:</p>
 	  <ul>
 	    <li>[354123] High CVE-2014-1716: UXSS in V8. Credit to
 	      Anonymous.</li>
@@ -6267,7 +6267,7 @@ Notes:
   </vuln>
 
   <vuln vid="a70966a1-ac22-11e3-8d04-00262d5ed8ee">
-    <topic>www/chromium -- multiple vulnerabities</topic>
+    <topic>www/chromium -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>chromium</name>
@@ -43124,7 +43124,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="f59dda75-5ff4-11de-a13e-00e0815b8da8">
-    <topic>tor-devel -- DNS resolution vulnerabiliity</topic>
+    <topic>tor-devel -- DNS resolution vulnerability</topic>
     <affects>
       <package>
 	<name>tor-devel</name>
@@ -70344,7 +70344,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	    the webserver process are subject to disclosure.
 	    The vulnerability is *not* restricted to the webserver's
 	    document root but extends to the whole server file space.</p>
-	  <p>The vulnerabilty may be used by any anonymous user,
+	  <p>The vulnerability may be used by any anonymous user,
 	    there is no login to the application required.</p>
 	</blockquote>
       </body>
