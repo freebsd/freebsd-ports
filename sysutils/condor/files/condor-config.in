@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+if [ -z $EDITOR ]; then
+    EDITOR=vi
+    export EDITOR
+fi
+
+$EDITOR %%PREFIX%%/etc/condor_config.local
+
+printf "Restart HTCondor? (y/[n]) "
+read restart
+
+if [ 0$restart = 0y ]; then
+    service condor stop
+    printf "\nCondor processes running after stop:\n\n"
+    ps ax | grep condor
+
+    service condor start
+    sleep 5
+    printf "\nCondor processes running after start:\n\n"
+    ps ax | grep condor
+fi

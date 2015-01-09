@@ -16,5 +16,5 @@ To start the condor daemons, add 'condor_enable="YES"' to
 
 and run
 
-	/usr/local/etc/rc.d/condor start
+	service condor start
 
