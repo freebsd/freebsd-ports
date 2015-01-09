@@ -3,7 +3,7 @@
 
 PORTNAME=	wmmaiload
 PORTVERSION=	2.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -47,8 +47,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| =| ?=|'
 .for i in wmmaiload/Init.make
-	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g ; \
-		 s|-lpthread|-pthread|g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g' ${WRKSRC}/${i}
 .endfor
 .for i in wmmaiload/checkthread.c
 	@${REINPLACE_CMD} -e 's|isnumber(|isnum(|g' ${WRKSRC}/${i}
@@ -68,6 +67,8 @@ post-patch:
 		 s|remove =|rm =|g ; \
 		 s|PACKAGE"-config"|PACKAGE|g' ${WRKSRC}/${i}
 .endfor
+	@${REINPLACE_CMD} 's/SSLv2_client_method/SSLv23_client_method/' \
+		${WRKSRC}/wmmaiload/ssl.c
 
 do-install:
 .for i in wmmaiload wmmaiload-config
