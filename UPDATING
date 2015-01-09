@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150109:
+  AFFECTS: users of audio/speex
+  AUTHOR: tijl@FreeBSD.org
+
+  The audio/speex port has been updated to 1.2rc2 and one of the libraries
+  it installed has been split off into a new port audio/speexdsp.  Before
+  you can update audio/speex you must first delete the old package using
+  "pkg del -f speex".
+
 20150101:
   AFFECTS: users of net/unison and net/unison-nox11
   AUTHOR: madpilot@FreeBSD.org
