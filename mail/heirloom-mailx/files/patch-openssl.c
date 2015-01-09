@@ -1,6 +1,6 @@
---- openssl.c	2007/08/04 11:41:36	1.12
-+++ openssl.c	2009/05/26 21:04:15	1.13
-@@ -101,12 +101,17 @@
+--- openssl.c.orig	2007-08-04 11:38:03 UTC
++++ openssl.c
+@@ -101,12 +101,17 @@ static void sslcatch(int s);
  static int ssl_rand_init(void);
  static void ssl_init(void);
  static int ssl_verify_cb(int success, X509_STORE_CTX *store);
@@ -19,7 +19,7 @@
  static EVP_CIPHER *smime_cipher(const char *name);
  static int ssl_password_cb(char *buf, int size, int rwflag, void *userdata);
  static FILE *smime_sign_cert(const char *xname, const char *xname2, int warn);
-@@ -203,10 +208,10 @@
+@@ -203,19 +208,25 @@ ssl_verify_cb(int success, X509_STORE_CT
  	return 1;
  }
  
@@ -32,7 +32,24 @@
  	char	*cp;
  
  	cp = ssl_method_string(uhp);
-@@ -308,7 +313,11 @@
+ 	if (cp != NULL) {
++#ifndef OPENSSL_NO_SSL2
+ 		if (equal(cp, "ssl2"))
+ 			method = SSLv2_client_method();
+-		else if (equal(cp, "ssl3"))
++		else
++#endif
++#ifndef OPENSSL_NO_SSL3_METHOD
++		if (equal(cp, "ssl3"))
+ 			method = SSLv3_client_method();
+-		else if (equal(cp, "tls1"))
++		else
++#endif
++		if (equal(cp, "tls1"))
+ 			method = TLSv1_client_method();
+ 		else {
+ 			fprintf(stderr, catgets(catd, CATSET, 244,
+@@ -308,7 +319,11 @@ ssl_check_host(const char *server, struc
  	X509 *cert;
  	X509_NAME *subj;
  	char data[256];
@@ -44,7 +61,7 @@
  	GENERAL_NAME	*gen;
  	int	i;
  
-@@ -357,7 +366,8 @@
+@@ -357,7 +372,8 @@ ssl_open(const char *server, struct sock
  
  	ssl_init();
  	ssl_set_vrfy_level(uhp);
@@ -54,7 +71,7 @@
  		ssl_gen_err(catgets(catd, CATSET, 261, "SSL_CTX_new() failed"));
  		return STOP;
  	}
-@@ -496,7 +506,11 @@
+@@ -496,7 +512,11 @@ smime_sign(FILE *ip, struct header *head
  }
  
  static int
@@ -66,7 +83,7 @@
  {
  	struct message	*x;
  	char	*cp, *sender, *to, *cc, *cnttype;
-@@ -505,7 +519,12 @@
+@@ -505,7 +525,12 @@ smime_verify(struct message *m, int n, S
  	off_t	size;
  	BIO	*fb, *pb;
  	PKCS7	*pkcs7;
@@ -79,7 +96,7 @@
  	X509	*cert;
  	X509_NAME	*subj;
  	char	data[LINESIZE];
-@@ -614,7 +633,11 @@
+@@ -614,7 +639,11 @@ cverify(void *vp)
  {
  	int	*msgvec = vp, *ip;
  	int	ec = 0;
@@ -91,7 +108,7 @@
  	X509_STORE	*store;
  	char	*ca_dir, *ca_file;
  
-@@ -687,7 +710,11 @@
+@@ -687,7 +716,11 @@ smime_encrypt(FILE *ip, const char *cert
  	X509	*cert;
  	PKCS7	*pkcs7;
  	BIO	*bb, *yb;
@@ -103,7 +120,7 @@
  	EVP_CIPHER	*cipher;
  
  	certfile = expand((char *)certfile);
-@@ -950,9 +977,14 @@
+@@ -950,9 +983,14 @@ smime_certsave(struct message *m, int n,
  	off_t	size;
  	BIO	*fb, *pb;
  	PKCS7	*pkcs7;
