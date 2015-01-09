@@ -1,0 +1,20 @@
+--- configure.orig	2014-02-19 14:31:33 UTC
++++ configure
+@@ -12021,7 +12021,6 @@ $as_echo "#define NOCONNECT 1" >>confdef
+ 
+ $as_echo "#define NOCONNECT 1" >>confdefs.h
+ 
+-		PTHREAD_LDFLAGS="-pthread"
+ 	;;
+ 	*mingw32ce)
+ 		CFLAGS="$CFLAGS -D_WIN32_WCE -D_WIN32_WINNT=0x0501 -DORTP_STATIC"
+@@ -12211,7 +12210,8 @@ if test "${srtp_prefix}" != "none" ; the
+ 		SRTP_CFLAGS="-I${srtp_prefix}/include -I${srtp_prefix}/include/srtp"
+ 		SRTP_LIBS="-L${srtp_prefix}/lib"
+ 	fi
+-	SRTP_LIBS="$SRTP_LIBS -lsrtp"
++	SRTP_CFLAGS="$(pkg-config --cflags libsrtp)"
++	SRTP_LIBS="$(pkg-config --libs libsrtp)"
+ 
+ 		have_srtp=no
+ 	CPPFLAGS_save=$CPPFLAGS
