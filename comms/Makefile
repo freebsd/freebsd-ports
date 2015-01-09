@@ -85,6 +85,7 @@
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd
+    SUBDIR += linpsk
     SUBDIR += linrad
     SUBDIR += lirc
     SUBDIR += locator
