@@ -15,7 +15,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
