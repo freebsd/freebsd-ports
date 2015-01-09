@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e9ccdb28-9802-11e4-9d9c-bcaec565249c">
+    <topic>WebKit-gtk -- Multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>webkit-gtk2</name>
+	<range><lt>1.4.8</lt></range>
+      </package>
+      <package>
+	<name>webkit-gtk3</name>
+	<range><lt>1.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Webkit release team reports:</p>
+	<blockquote cite="http://webkitgtk.org/2015/01/07/webkitgtk2.4.8-released.html">
+	  <p>This release fixes the following security issues:
+	    CVE-2014-1344, CVE-2014-1384, CVE-2014-1385, CVE-2014-1386,
+	    CVE-2014-1387, CVE-2014-1388, CVE-2014-1389, CVE-2014-1390.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://webkitgtk.org/2015/01/07/webkitgtk2.4.8-released.html</url>
+      <cvename>CVE-2014-1344</cvename>
+      <cvename>CVE-2014-1384</cvename>
+      <cvename>CVE-2014-1385</cvename>
+      <cvename>CVE-2014-1386</cvename>
+      <cvename>CVE-2014-1387</cvename>
+      <cvename>CVE-2014-1388</cvename>
+      <cvename>CVE-2014-1389</cvename>
+      <cvename>CVE-2014-1390</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-07</discovery>
+      <entry>2015-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e536c14-9791-11e4-977d-d050992ecde8">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
