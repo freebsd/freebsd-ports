@@ -54,6 +54,7 @@ horde-Horde_HashTable-DEPEND=	${PEARDIR}/Horde/HashTable/Base.php:${PORTSDIR}/da
 horde-Horde_History-DEPEND=	${PEARDIR}/Horde/History.php:${PORTSDIR}/devel/pear-Horde_History
 horde-Horde_Http-DEPEND=	${PEARDIR}/Horde/Http.php:${PORTSDIR}/www/pear-Horde_Http
 horde-Horde_Icalendar-DEPEND=	${PEARDIR}/Horde/Icalendar.php:${PORTSDIR}/devel/pear-Horde_Icalendar
+horde-Horde_Idna-DEPEND=	${PEARDIR}/Horde/Idna.php:${PORTSDIR}/dns/pear-Horde_Idna
 horde-Horde_Image-DEPEND=	${PEARDIR}/Horde/Image.php:${PORTSDIR}/graphics/pear-Horde_Image
 horde-Horde_Imap_Client-DEPEND=	${PEARDIR}/Horde/Imap/Client.php:${PORTSDIR}/mail/pear-Horde_Imap_Client
 horde-Horde_Imsp-DEPEND=	${PEARDIR}/Horde/Imsp.php:${PORTSDIR}/databases/pear-Horde_Imsp
