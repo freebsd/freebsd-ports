@@ -17,7 +17,7 @@ GH_ACCOUNT=	wernerd
 GH_PROJECT=	ZRTPCPP
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lib
 CMAKE_ARGS=	-DCORE_LIB=true
 USE_LDCONFIG=	yes
 
