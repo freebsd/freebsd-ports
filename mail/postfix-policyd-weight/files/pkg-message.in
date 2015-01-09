@@ -23,4 +23,7 @@ smtpd_recipient_restrictions =
 *   edit %%PREFIX%%/etc/policyd-weight.conf
 *   An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
 *
+* Please compare existing configuration with the provided sample
+* and remove deprecated DNSBL/RHSBL lists
+*
 *************

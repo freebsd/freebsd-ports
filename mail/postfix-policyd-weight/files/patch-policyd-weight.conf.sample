@@ -1,5 +1,5 @@
---- ./policyd-weight.conf.sample.orig	2011-09-03 16:10:01.000000000 +0200
-+++ ./policyd-weight.conf.sample	2014-03-15 17:15:33.000000000 +0100
+--- policyd-weight.conf.sample.orig	2011-09-03 14:10:01 UTC
++++ policyd-weight.conf.sample
 @@ -59,9 +59,8 @@
      'pbl.spamhaus.org',       3.25,          0,        'DYN_PBL_SPAMHAUS',
      'sbl-xbl.spamhaus.org',   4.35,       -1.5,        'SBL_XBL_SPAMHAUS',
@@ -11,19 +11,20 @@
  );
  
     $MAXDNSBLHITS  = 2;  # If Client IP is listed in MORE
-@@ -77,10 +76,7 @@
+@@ -76,11 +75,7 @@
+ 
  ## RHSBL settings
     @rhsbl_score = (
-     'multi.surbl.org',             4,        0,        'SURBL',
+-    'multi.surbl.org',             4,        0,        'SURBL',
 -    'rhsbl.ahbl.org',              4,        0,        'AHBL',
 -    'dsn.rfc-ignorant.org',        3.5,      0,        'DSN_RFCI',
 -    'postmaster.rfc-ignorant.org', 0.1,      0,        'PM_RFCI',
 -    'abuse.rfc-ignorant.org',      0.1,      0,        'ABUSE_RFCI'
-+    'rhsbl.ahbl.org',              4,        0,        'AHBL'
++    'multi.surbl.org',             4,        0,        'SURBL'
  );
  
     $BL_ERROR_SKIP     = 2;  # skip a RBL if this RBL had this many continuous
-@@ -89,7 +85,7 @@
+@@ -89,7 +84,7 @@
     $BL_SKIP_RELEASE   = 10; # skip a RBL for that many times
  
  ## cache stuff
@@ -32,7 +33,7 @@
                                                      # trailing slash)
  
     $SPATH             = $LOCKPATH.'/polw.sock';     # socket path for the cache
-@@ -111,7 +107,7 @@
+@@ -111,7 +106,7 @@
  
     $CACHEMAXSIZE    = 4000; # at this number of entries cleanup takes place
  
