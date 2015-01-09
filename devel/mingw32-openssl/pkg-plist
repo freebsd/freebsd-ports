@@ -88,3 +88,6 @@ mingw32/openssl/misc/c_issuer
 mingw32/openssl/misc/c_name
 mingw32/openssl/misc/tsget
 mingw32/openssl/openssl.cnf
+@dir mingw32/lib/engines
+@dir mingw32/openssl/certs
+@dir mingw32/openssl/private
