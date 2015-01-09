@@ -583,6 +583,7 @@
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
+    SUBDIR += go-raw
     SUBDIR += go-runewidth
     SUBDIR += go-sql-driver
     SUBDIR += go-termbox
