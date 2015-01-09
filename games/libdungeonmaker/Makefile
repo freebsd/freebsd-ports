@@ -10,6 +10,8 @@ DISTNAME=	dungeonmaker-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program/library that "grows" dungeons for use in isometric games
 
+LICENSE=	GPLv1
+
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
