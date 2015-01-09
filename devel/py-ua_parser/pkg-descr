@@ -6,4 +6,4 @@ as is by implementations in other programming languages.
 
 ua-parser is just a small wrapper around this data.
 
-WWW: https://github.com/tobie/ua-parser
+WWW: https://github.com/ua-parser/uap-python
