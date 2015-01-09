@@ -2,6 +2,7 @@
 
 PORTNAME=	Horde_Mail
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -9,6 +10,7 @@ COMMENT=	Horde Mail Library
 
 USES=	horde
 USE_HORDE_RUN=	Horde_Exception \
+		Horde_Idna \
 		Horde_Stream_Filter
 
 # Disabled due to circular dependency
