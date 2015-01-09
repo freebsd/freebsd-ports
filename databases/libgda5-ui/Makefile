@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/libgda5-ui/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-ui
 
@@ -22,8 +21,8 @@ do-build:
 	@cd ${WRKSRC}/tools/browser && ${SETENV} ${MAKE_ENV}  ${MAKE_CMD}
 
 do-install:
-	@cd ${WRKSRC}/libgda-ui && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
-	@cd ${WRKSRC}/control-center && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
-	@cd ${WRKSRC}/tools/browser && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
+	@cd ${WRKSRC}/libgda-ui && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} ${INSTALL_TARGET}
+	@cd ${WRKSRC}/control-center && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} ${INSTALL_TARGET}
+	@cd ${WRKSRC}/tools/browser && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} ${INSTALL_TARGET}
 
 .include "${MASTERDIR}/Makefile"
