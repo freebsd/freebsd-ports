@@ -693,6 +693,7 @@
     SUBDIR += sox
     SUBDIR += specimen
     SUBDIR += speex
+    SUBDIR += speexdsp
     SUBDIR += spek
     SUBDIR += sphinx
     SUBDIR += sphinx3
