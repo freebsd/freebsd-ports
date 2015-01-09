@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afnix
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
 CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --altdir "${PREFIX}" \
-			--shrdir "${PREFIX}/share" --compiler freebsd
+			--shrdir "${PREFIX}/share" --compiler clang++
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -30,9 +30,6 @@ OPTIONS_DEFINE=	DOCS
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not configure on powerpc
 .endif
-
-post-extract:
-	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-4.mak afnix-freebsd.mak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(CP)|$$(BSD_INSTALL_PROGRAM)|' \
