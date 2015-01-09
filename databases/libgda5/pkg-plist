@@ -102,6 +102,7 @@ include/libgda-%%VERSION%%/libgda/virtual/gda-virtual-provider.h
 include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-hub.h
 include/libgda-%%VERSION%%/libgda/virtual/libgda-virtual.h
+lib/girepository-1.0/Gda-%%VERSION%%.typelib
 lib/libgda-%%VERSION%%.so
 lib/libgda-%%VERSION%%.so.4
 lib/libgda-%%VERSION%%.so.4.1.1
@@ -433,6 +434,7 @@ share/doc/libgda-%%VERSION%%/vi-rte.png
 share/doc/libgda-%%VERSION%%/vi-server-op.png
 share/doc/libgda-%%VERSION%%/virtual_connection.html
 share/doc/libgda-%%VERSION%%/writable_data_model.png
+share/gir-1.0/Gda-%%VERSION%%.gir
 share/libgda-%%VERSION%%/dtd/libgda-array.dtd
 share/libgda-%%VERSION%%/dtd/libgda-paramlist.dtd
 share/libgda-%%VERSION%%/dtd/libgda-server-operation.dtd

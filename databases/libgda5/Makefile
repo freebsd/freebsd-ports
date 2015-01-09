@@ -3,7 +3,7 @@
 
 PORTNAME=	libgda
 PORTVERSION?=	5.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -17,6 +17,7 @@ LIBGDA5_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
@@ -30,7 +31,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
-		--disable-introspection
+		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
