@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pen
-PORTVERSION=	0.18.0
+PORTVERSION=	0.25.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://siag.nu/pub/pen/ \
-		http://siag.nu/pub/pen/
+MASTER_SITES=	http://siag.nu/pub/pen/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Load balancer for simple TCP based protocols
 
+LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	pen
-CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} \
+CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} --with-geoip \
 		--with-ssl=${OPENSSLBASE}
 
 PORTDOCS=	penstats HOWTO AUTHORS README ChangeLog COPYING
@@ -33,6 +34,7 @@ CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
 KQUEUE_CONFIGURE_ON=	--with-kqueue
 KQUEUE_CONFIGURE_OFF=	--with-poll
 
-DOCS_MAKE_ARGS_OFF=	-DNOPORTDOCS
+post-patch:
+	@${REINPLACE_CMD} 's/-pg//' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
