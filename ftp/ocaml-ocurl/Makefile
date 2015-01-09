@@ -3,6 +3,7 @@
 
 PORTNAME=	ocurl
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/1463/
 PKGNAMEPREFIX=	ocaml-
@@ -12,7 +13,7 @@ COMMENT=	Interface for OCaml to the curl lib
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gmake
