@@ -1,7 +1,8 @@
-lib/libsrtp.a
 include/srtp/aes.h
 include/srtp/aes_cbc.h
+include/srtp/aes_gcm_ossl.h
 include/srtp/aes_icm.h
+include/srtp/aes_icm_ossl.h
 include/srtp/alloc.h
 include/srtp/auth.h
 include/srtp/cipher.h
@@ -12,6 +13,7 @@ include/srtp/crypto_math.h
 include/srtp/crypto_types.h
 include/srtp/cryptoalg.h
 include/srtp/datatypes.h
+include/srtp/ekt.h
 include/srtp/err.h
 include/srtp/getopt_s.h
 include/srtp/gf2_8.h
@@ -33,3 +35,7 @@ include/srtp/srtp_priv.h
 include/srtp/stat.h
 include/srtp/ut_sim.h
 include/srtp/xfm.h
+lib/libsrtp.a
+lib/libsrtp.so
+lib/libsrtp.so.0
+libdata/pkgconfig/libsrtp.pc
