@@ -13,10 +13,8 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:sourc
 		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		SF/freepascal/Source/${PORTVERSION}:source \
-		${MASTER_SITE_GOOGLE_CODE}:bootstrap \
-		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bootstrap|} \
-		${MASTER_SITE_GOOGLE_CODE}:man \
-		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:man|}
+		LOCAL/acm/freepascal/:bootstrap \
+		LOCAL/acm/freepascal/:man
 DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
