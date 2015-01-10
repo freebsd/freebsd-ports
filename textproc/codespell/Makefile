@@ -2,7 +2,7 @@
 
 PORTNAME=	codespell
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
 		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
