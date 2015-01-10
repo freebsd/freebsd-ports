@@ -13,7 +13,7 @@ COMMENT=	Attractively formatting Project Gutenberg texts
 
 WRKSRC=		${WRKDIR}/GutenMark-source
 
-USES=		gmake
+USES=		compiler:c++11-lib gmake
 USE_WX=		3.0
 WX_UNICODE=	yes
 ALL_TARGET=	default
