@@ -14,12 +14,14 @@ COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		libtool
+USES=		cpe libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg8
 USE_LDCONFIG=	yes
 ALL_TARGET=	test
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	d.r.commander
+CPE_PRODUCT=	libjpeg-turbo
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
