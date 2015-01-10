@@ -22,6 +22,11 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-		@${REINPLACE_CMD} -e 's=1.00rc2=1.001=g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's=1.00rc2=1.001=g' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk2/Spell/Spell.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk2/Spell/Spell.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk2/Spell/Spell.so
 
 .include <bsd.port.mk>
