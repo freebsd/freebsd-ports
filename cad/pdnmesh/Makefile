@@ -23,16 +23,15 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm
 
-DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" "true"
+DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" true
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+USES+=		blaslapack:atlas
 CONFIGURE_ARGS+=--with-blas=cblas --with-lapack=alapack
 .else
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+USES+=		blaslapack
 CONFIGURE_ARGS+=--with-blas=blas --with-lapack=lapack
 .endif
 
