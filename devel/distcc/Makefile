@@ -17,8 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
 USES=		alias gmake tar:bzip2
+WANT_GNOME=	yes
+
+GROUPS=		distcc
+USERS=		distcc
 
 CCLINKDIR?=	libexec/distcc
 CONFIGURE_ARGS=	--disable-Werror
@@ -26,9 +29,8 @@ CONFIGURE_ENV=	PYTHON="${NONEXISTENT}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST=	DISTCCD_PIDFILE=/var/run/distccd.pid
-SUB_LIST+=	NONEXISTENT="${NONEXISTENT}"
 USE_RC_SUBR=	distccd
 
 BIN_FILES=	distcc distccmon-text lsdistcc
