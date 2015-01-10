@@ -2,7 +2,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 USES=		gettext pkgconfig python:build
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgsf
+USE_GNOME=	gnomeprefix gtkhtml4 intlhack libgsf
 
 OPTIONS_DEFINE=	DOCS
 
