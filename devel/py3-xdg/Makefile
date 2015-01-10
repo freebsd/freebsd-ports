@@ -4,6 +4,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://people.freedesktop.org/~takluyver/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
