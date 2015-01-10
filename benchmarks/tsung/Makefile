@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tsung
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	benchmarks sysutils
 MASTER_SITES=	http://tsung.erlang-projects.org/dist/
 
@@ -26,7 +26,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/| ; \
-		s|CONFDIR   = $$(docdir)/examples|CONFDIR   = $$(prefix)/share/examples/tsung|' \
+		s|CONFDIR   = $$(docdir)/examples|CONFDIR   = $$(prefix)/share/examples/tsung| ; \
+		s|install: doc|install: tsung doc|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
