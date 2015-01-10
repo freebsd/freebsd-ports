@@ -30,4 +30,6 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Music.gschema.xml
 
+PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
+
 .include <bsd.port.mk>

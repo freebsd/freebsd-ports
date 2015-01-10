@@ -139,6 +139,7 @@
     SUBDIR += p5-pgeodns
     SUBDIR += pdnsd
     SUBDIR += pear-File_DNS
+    SUBDIR += pear-Horde_Idna
     SUBDIR += pear-Net_DNS
     SUBDIR += pear-Net_DNS2
     SUBDIR += powerdns

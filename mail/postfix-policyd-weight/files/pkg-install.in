@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# make sure we detect a customized config and if one of the deprecated
+# RBL/RHBL server is present alert the user to remove the entry
+
+
+PREFIX=${PKG_PREFIX:=%%PREFIX%%}
+CFG="${PREFIX}/etc/policyd-weight.conf"
+
+# list of deprecated server already removed from the default config
+DEPRECATED_LIST="dnsbl.njabl.org rbl.ipv6-world.net rhsbl.ahbl.org dsn.rfc-ignorant.org postmaster.rfc-ignorant.org abuse.rfc-ignorant.org"
+
+# found deprecated RBS/RHBS servers"
+NOTIFY_LIST=""
+
+_check_deprecated() {
+if [ -s "${CFG}" ]; then
+	for i in ${DEPRECATED_LIST}; do
+		grep -q "${i}" ${CFG} && NOTIFY_LIST="${NOTIFY_LIST} ${i}"
+	done
+fi
+
+if [ "${NOTIFY_LIST}" != "" ]; then
+	echo "========================  !!! WARNING !!! ========================"
+	echo
+	echo "Please make sure to remove the following deprecated entires from"
+	echo " ${CFG}"
+	echo
+	for i in ${NOTIFY_LIST}; do
+		echo " - ${i}"
+	done
+	echo
+	echo "else you risk to reject valid mails!"
+	echo "========================  !!! WARNING !!! ========================"
+	sleep 3
+fi
+}
+
+
+if [ "$2" = "POST-INSTALL" ]; then
+	_check_deprecated
+fi
+

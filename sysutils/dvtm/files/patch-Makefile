@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-01-08 12:22:43.000000000 +0100
++++ Makefile	2015-01-08 12:22:51.000000000 +0100
+@@ -55,8 +55,6 @@
+ 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+ 	@sed "s/VERSION/${VERSION}/g" < dvtm.1 > ${DESTDIR}${MANPREFIX}/man1/dvtm.1
+ 	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dvtm.1
+-	@echo installing terminfo description
+-	@TERMINFO=${TERMINFO} tic -s dvtm.info
+ 
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin

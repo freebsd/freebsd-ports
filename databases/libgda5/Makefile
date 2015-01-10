@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/libgda5/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libgda
-PORTVERSION?=	5.0.3
-PORTREVISION?=	4
+PORTVERSION?=	5.2.2
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -18,6 +17,7 @@ LIBGDA5_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
@@ -27,11 +27,11 @@ USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=yes
+#MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
-		--disable-introspection
+		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--without-mdb
 
 .if ${LIBGDA5_SLAVE}==jdbc
 USE_JAVA=		yes
-JAVA_VERSION=		1.6
+JAVA_VERSION=		1.6+
 JAVA_VENDOR=		bsdjava openjdk
 .else
 CONFIGURE_ARGS+=	--without-java

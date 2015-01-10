@@ -27,4 +27,6 @@ SHEBANG_FILES=	plugins/ipython_view.py
 
 GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml
 
+PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
+
 .include <bsd.port.mk>

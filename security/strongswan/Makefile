@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
+
+LICENSE=	GPLv2
 
 USES=		execinfo libtool:keepla tar:bzip2
 USE_OPENSSL=	yes

@@ -57,6 +57,130 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="caa98ffd-0a92-40d0-b234-fd79b429157e">
+    <topic>cURL -- URL request injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.40.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150108B.html">
+	  <p>When libcurl sends a request to a server via a HTTP proxy, it
+	    copies the entire URL into the request and sends if off.
+	    If the given URL contains line feeds and carriage returns those will
+	    be sent along to the proxy too, which allows the program to for
+	    example send a separate HTTP request injected embedded in the URL.
+	    Many programs allow some kind of external sources to set the URL or
+	    provide partial pieces for the URL to ask for, and if the URL as
+	    received from the user is not stripped good enough this flaw allows
+	    malicious users to do additional requests in a way that was not
+	    intended, or just to insert request headers into the request that
+	    the program didn't intend.
+	    We are not aware of any exploit of this flaw.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8150</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150108B.html</url>
+    </references>
+    <dates>
+      <discovery>2014-12-25</discovery>
+      <entry>2015-01-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e9ccdb28-9802-11e4-9d9c-bcaec565249c">
+    <topic>WebKit-gtk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>webkit-gtk2</name>
+	<range><lt>1.4.8</lt></range>
+      </package>
+      <package>
+	<name>webkit-gtk3</name>
+	<range><lt>1.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Webkit release team reports:</p>
+	<blockquote cite="http://webkitgtk.org/2015/01/07/webkitgtk2.4.8-released.html">
+	  <p>This release fixes the following security issues:
+	    CVE-2014-1344, CVE-2014-1384, CVE-2014-1385, CVE-2014-1386,
+	    CVE-2014-1387, CVE-2014-1388, CVE-2014-1389, CVE-2014-1390.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://webkitgtk.org/2015/01/07/webkitgtk2.4.8-released.html</url>
+      <cvename>CVE-2014-1344</cvename>
+      <cvename>CVE-2014-1384</cvename>
+      <cvename>CVE-2014-1385</cvename>
+      <cvename>CVE-2014-1386</cvename>
+      <cvename>CVE-2014-1387</cvename>
+      <cvename>CVE-2014-1388</cvename>
+      <cvename>CVE-2014-1389</cvename>
+      <cvename>CVE-2014-1390</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-07</discovery>
+      <entry>2015-01-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4e536c14-9791-11e4-977d-d050992ecde8">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_17</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1k</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150108.txt">
+	  <p>DTLS segmentation fault in dtls1_get_record (CVE-2014-3571)</p>
+	  <p>DTLS memory leak in dtls1_buffer_record (CVE-2015-0206)</p>
+	  <p>no-ssl3 configuration sets method to NULL (CVE-2014-3569)</p>
+	  <p>ECDHE silently downgrades to ECDH [Client] (CVE-2014-3572)</p>
+	  <p>RSA silently downgrades to EXPORT_RSA [Client] (CVE-2015-0204)</p>
+	  <p>DH client certificates accepted without verification [Server] (CVE-2015-0205)</p>
+	  <p>Certificate fingerprints can be modified (CVE-2014-8275)</p>
+	  <p>Bignum squaring may produce incorrect results (CVE-2014-3570)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3569</cvename>
+      <cvename>CVE-2014-3570</cvename>
+      <cvename>CVE-2014-3571</cvename>
+      <cvename>CVE-2014-3572</cvename>
+      <cvename>CVE-2014-8275</cvename>
+      <cvename>CVE-2015-0204</cvename>
+      <cvename>CVE-2015-0205</cvename>
+      <cvename>CVE-2015-0206</cvename>
+      <url>https://www.openssl.org/news/secadv_20150108.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-01-08</discovery>
+      <entry>2015-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5e135178-8aeb-11e4-801f-0022156e8794">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
@@ -2513,7 +2637,7 @@ Notes:
   </vuln>
 
   <vuln vid="38242d51-3e58-11e4-ac2f-bcaec565249c">
-    <topic>dbus -- multiple vulnabilities</topic>
+    <topic>dbus -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>dbus</name>
@@ -3889,7 +4013,7 @@ Notes:
   </vuln>
 
   <vuln vid="e6a7636a-02d0-11e4-88b6-080027671656">
-    <topic>dbus -- multiple vulnabilities</topic>
+    <topic>dbus -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>dbus</name>
@@ -4573,7 +4697,7 @@ Notes:
   </vuln>
 
   <vuln vid="02db20d7-e34a-11e3-bd92-bcaec565249c">
-    <topic>openjpeg -- Multiple vulnabilities</topic>
+    <topic>openjpeg -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>openjpeg</name>
@@ -5591,7 +5715,7 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.nl/">
-	  <p>31 vulnerabilies fixed in this release, including:</p>
+	  <p>31 vulnerabilities fixed in this release, including:</p>
 	  <ul>
 	    <li>[354123] High CVE-2014-1716: UXSS in V8. Credit to
 	      Anonymous.</li>
@@ -6143,7 +6267,7 @@ Notes:
   </vuln>
 
   <vuln vid="a70966a1-ac22-11e3-8d04-00262d5ed8ee">
-    <topic>www/chromium -- multiple vulnerabities</topic>
+    <topic>www/chromium -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>chromium</name>
@@ -6154,7 +6278,7 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.nl/">
-	  <p>New vulnerabilites after the Pwn2Own competition:</p>
+	  <p>New vulnerabilities after the Pwn2Own competition:</p>
 	  <ul>
 	    <li>[352369] Code execution outside sandbox. Credit to VUPEN.
 	      <ul>
@@ -20289,7 +20413,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="6dd5e45c-f084-11e1-8d0f-406186f3d89d">
-    <topic>coppermine -- Multiple vulnerabilites</topic>
+    <topic>coppermine -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>coppermine</name>
@@ -28608,7 +28732,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="f08e2c15-ffc9-11e0-b0f3-bcaec565249c">
-    <topic>cacti -- Multiple vulnabilites</topic>
+    <topic>cacti -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>cacti</name>
@@ -33674,7 +33798,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="06a12e26-142e-11e0-bea2-0015f2db7bde">
-    <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
+    <topic>webkit-gtk2 -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>webkit-gtk2</name>
@@ -36618,7 +36742,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="9bcfd7b6-bcda-11df-9a6a-0015f2db7bde">
-    <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
+    <topic>webkit-gtk2 -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>webkit-gtk2</name>
@@ -37582,7 +37706,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="19419b3b-92bd-11df-b140-0015f2db7bde">
-    <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
+    <topic>webkit-gtk2 -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>webkit-gtk2</name>
@@ -43000,7 +43124,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="f59dda75-5ff4-11de-a13e-00e0815b8da8">
-    <topic>tor-devel -- DNS resolution vulnerabiliity</topic>
+    <topic>tor-devel -- DNS resolution vulnerability</topic>
     <affects>
       <package>
 	<name>tor-devel</name>
@@ -45478,7 +45602,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="78f5606b-f9d1-11dd-b79c-0030843d3802">
-    <topic>tor -- multiple vulnerabilites</topic>
+    <topic>tor -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>tor</name>
@@ -50634,7 +50758,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="35e54755-54e4-11dd-ad8b-0030843d3802">
-    <topic>phpmyadmin -- cross site request forgery vulnerabilites</topic>
+    <topic>phpmyadmin -- cross site request forgery vulnerabilities</topic>
     <affects>
       <package>
 	<name>phpMyAdmin</name>
@@ -55637,7 +55761,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="a5f667db-7596-11dc-8b7a-0019b944b34e">
-    <topic>xfs -- multiple vulnerabilites</topic>
+    <topic>xfs -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>xfs</name>
@@ -70220,7 +70344,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	    the webserver process are subject to disclosure.
 	    The vulnerability is *not* restricted to the webserver's
 	    document root but extends to the whole server file space.</p>
-	  <p>The vulnerabilty may be used by any anonymous user,
+	  <p>The vulnerability may be used by any anonymous user,
 	    there is no login to the application required.</p>
 	</blockquote>
       </body>
@@ -73800,7 +73924,7 @@ executed in your Internet Explorer while displaying the email.</p>
 	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200506-04.xml">
 	  <p>Due to a lack of input validation, WordPress is
 	    vulnerable to SQL injection and XSS attacks.</p>
-	  <p>An attacker could use the SQL injection vulnerabilites to
+	  <p>An attacker could use the SQL injection vulnerabilities to
 	    gain information from the database. Furthermore the
 	    cross-site scripting issues give an attacker the ability
 	    to inject and execute malicious script code or to steal
@@ -75361,7 +75485,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Erik Sjölund discovered a vulnerabilitiy in Sympa.  The
+	<p>Erik Sjölund discovered a vulnerability in Sympa.  The
 	  <code>queue</code> application processes messages received via
 	  aliases.  It contains a buffer overflow in the usage of
 	  <code>sprintf</code>.  In some configurations, it may allow an
@@ -77990,7 +78114,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Two separate SQL injection vulnerabilites have been
+	<p>Two separate SQL injection vulnerabilities have been
 	   identified in the PostNuke PHP content management
 	   system. An attacker can use this vulnerability to
 	   potentially insert executable PHP code into the content

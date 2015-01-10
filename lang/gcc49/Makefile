@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc49
-PORTVERSION=	4.9.3.s20141231
+PORTVERSION=	4.9.3.s20150107
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -61,8 +61,8 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
-# We have to override the sys.mk -O CFLAG since it breaks libgomp building.
-CFLAGS:=    ${CFLAGS:S/-O/-O2/g}
+# We have to override the sys.mk -O CFLAGS since it breaks libgomp building.
+CFLAGS:=	${CFLAGS:S/-O/-O2/g}
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512

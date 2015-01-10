@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	liblnk
-PORTVERSION=	20141026
+PORTVERSION=	20150105
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSQmluVC1YeDVvZWM/ \
-		https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -16,7 +15,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		gettext iconv libtool pathfix python:2
+USES=		gettext iconv libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

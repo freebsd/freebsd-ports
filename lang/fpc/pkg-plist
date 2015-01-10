@@ -81,8 +81,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpintres.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpintres.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfpintres.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.ppu
+%%FREEBSD%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.o
+%%FREEBSD%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/getopts.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/getopts.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/gprt0.o
@@ -117,7 +117,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libperrors.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpexeinfo.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfgl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfmtbcd.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfreebsd.a
+%%FREEBSD%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfreebsd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpgetopts.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpheaptrc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpinitc.a

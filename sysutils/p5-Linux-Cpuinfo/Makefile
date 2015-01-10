@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Linux-Cpuinfo
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object Oriented Interface to /proc/cpuinfo
 
 LICENSE=	ART10 GPLv1

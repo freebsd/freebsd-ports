@@ -30,6 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MPI_LIBS="${MPI_LIBS}" \
 		PYEXE="${PYTHON_CMD}"
+CONFIGURE_ARGS=	--with-blas-libs="${BLASLIB} ${LAPACKLIB}"
 MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
@@ -43,7 +44,23 @@ BATCH_DESC=		Use Torque to submit batches
 BATCH_CONFIGURE_WITH=	batch=PBS
 BATCH_LIB_DEPENDS=	libtorque.so:${PORTSDIR}/sysutils/torque
 
+OPTIONS_RADIO=	BLAS
+OPTIONS_RADIO_BLAS=	REFERENCE ATLAS
+OPTIONS_DEFAULT=	REFERENCE
+
+REFERENCE_DESC=	Blas / Lapack
+REFERENCE_USES=	blaslapack:netlib
+
+ATLAS_DESC=	ATLAS
+ATLAS_USES=	blaslapack:atlas
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MREFERENCE}
+CONFIGURE_ARGS+=	--with-blas-type=BLAS
+.else
+CONFIGURE_ARGS+=	--with-blas-type=ATLAS
+.endif
 
 .if defined(PACKAGE_BUILDING)
 TERM=		vt100	# Force for pointyhat to override su
@@ -82,28 +99,12 @@ INSTALL_TARGET=	install install-pdf
 DOCS=		AUTHORS COMPATIBILITY ChangeLog README
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS) && !defined(WITHOUT_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS_LIB=	-lf77blas
-.elif !defined(WITHOUT_BLAS)
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-BLAS_LIB=	-lblas
-.endif
-
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "By default ncs is built with MPICH2, but you can set WITH_LAM or WITH_OPENMPI"
 	@${ECHO_MSG} "if you prefer."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "By default ncs is built with BLAS, unless ATLAS is installed, but you can set"
-	@${ECHO_MSG} "WITHOUT_BLAS or WITHOUT_ATLAS if you prefer."
 	@${ECHO_MSG}
 
 post-install:
@@ -116,4 +117,4 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

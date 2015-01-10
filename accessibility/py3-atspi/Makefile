@@ -25,4 +25,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
+
 .include <bsd.port.mk>

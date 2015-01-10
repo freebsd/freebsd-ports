@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Autoformat
-PORTVERSION=	1.669.004
-PORTREVISION=	1
+PORTVERSION=	1.670.000
 CATEGORIES=	textproc perl5
-MASTER_SITES=	CPAN/Text/DCONWAY
+MASTER_SITES=	CPAN/../../authors/id/N/NE/NEILB
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(...)$/\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0\.(000)$//}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Automatic and manual text wrapping and reformating formatting

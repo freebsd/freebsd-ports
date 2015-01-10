@@ -3,12 +3,14 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	1.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
+
+LICENSE=	BSD2CLAUSE
 
 CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
 

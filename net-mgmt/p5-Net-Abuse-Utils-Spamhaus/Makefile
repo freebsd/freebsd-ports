@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Abuse-Utils-Spamhaus
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Routines useful for checking data against the spamhaus blacklists
 
 LICENSE=	ART10 GPLv1

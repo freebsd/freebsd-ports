@@ -35,5 +35,3 @@ lib/libdungeonmaker.so.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designEmpty2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/designOld1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

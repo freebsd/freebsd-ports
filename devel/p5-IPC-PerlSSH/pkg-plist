@@ -1,0 +1,12 @@
+%%SITE_PERL%%/IPC/PerlSSH.pm
+%%SITE_PERL%%/IPC/PerlSSH/Base.pm
+%%SITE_PERL%%/IPC/PerlSSH/Library.pm
+%%SITE_PERL%%/IPC/PerlSSH/Library/FS.pm
+%%SITE_PERL%%/IPC/PerlSSH/Library/IO.pm
+%%SITE_PERL%%/IPC/PerlSSH/Library/Run.pm
+%%PERL5_MAN3%%/IPC::PerlSSH.3.gz
+%%PERL5_MAN3%%/IPC::PerlSSH::Base.3.gz
+%%PERL5_MAN3%%/IPC::PerlSSH::Library.3.gz
+%%PERL5_MAN3%%/IPC::PerlSSH::Library::FS.3.gz
+%%PERL5_MAN3%%/IPC::PerlSSH::Library::IO.3.gz
+%%PERL5_MAN3%%/IPC::PerlSSH::Library::Run.3.gz

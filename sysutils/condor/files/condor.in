@@ -34,6 +34,9 @@ condor_start() {
 condor_stop() {
     checkyesno condor_enable && echo "Stopping condor_master." && \
 	%%PREFIX%%/sbin/condor_off -master
+    # Prevent restart command from issuing start before daemons are down
+    echo 'Waiting for daemons to shut down...'
+    sleep 5
 }
 
 run_rc_command "$1"

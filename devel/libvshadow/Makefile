@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libvshadow
-PORTVERSION=	20141023
+PORTVERSION=	20150106
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZDZXRFVMdnZCeHc/ \
+MASTER_SITES=	https://github.com/libyal/libvshadow/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
@@ -14,7 +14,7 @@ COMMENT=	Library to support the Volume Service Snapshot (VSS) format
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fuse gettext iconv libtool pathfix pkgconfig python:2
+USES=		fuse gettext iconv libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

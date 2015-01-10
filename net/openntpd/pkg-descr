@@ -1,5 +1,3 @@
-OpenBSD's ntpd.
-
 The ntpd daemon implements the Simple Network Time Protocol version 4 as
 described in RFC 2030 and the Network Time Protocol version 3 as de-
 scribed in RFC 1305.  It can synchronize the local clock to one or more

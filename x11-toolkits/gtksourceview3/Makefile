@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 20046 2014-11-10 07:00:12Z gusi $
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -15,6 +14,8 @@ COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
+
+BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
 
 USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \

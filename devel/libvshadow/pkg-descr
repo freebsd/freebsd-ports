@@ -2,4 +2,4 @@ libvshadow is a library and tools to support the Volume Service Snapshot
 (VSS) format. The VSS format is used by Windows, as of Vista, to maintain
 copies of data on a storage media volume.
 
-WWW: http://code.google.com/p/libvshadow/
+WWW: https://github.com/libyal/libvshadow

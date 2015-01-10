@@ -3,7 +3,7 @@
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -71,8 +71,10 @@ do-configure:
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
 .endif
-	${REINPLACE_CMD} -e "s|\"vsftpd.conf\"|\"${PREFIX}/etc/vsftpd.conf\"|" \
-		${WRKSRC}/defs.h
+	${REINPLACE_CMD} -e \
+		"s|#define VSF_CONFIG_PATH \"/etc/vsftpd/\"|#define VSF_CONFIG_PATH \"${PREFIX}/etc/\"|" \
+		-e "s|#define VSF_CONFIG_PREFIX \"\"|#define VSF_CONFIG_PREFIX \"vsftpd.\"|" \
+		${WRKSRC}/builddefs.h
 	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5
 	${REINPLACE_CMD} -e "s|/usr/share/empty|${PREFIX}/share/vsftpd/empty|" \

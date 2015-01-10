@@ -1,0 +1,10 @@
+This port contains the core of BrowserScope's original user agent string
+parser: data collected over the years by Steve Souders and numerous other
+contributors, extracted into a separate YAML file so as to be reusable as is
+by implementations in any programming language.
+
+This port itself does not contain a parser: only the necessary data to build
+one.  There exists a ref implementation, along with multiple, production-ready
+implementations in various programming languages.
+
+WWW: https://github.com/ua-parser/uap-core

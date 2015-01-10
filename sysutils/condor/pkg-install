@@ -22,18 +22,19 @@ g=condor
 # Place condor on a large partition so it can accommodate output files from
 # jobs.  The default /var/db/condor could result in /var filling up with
 # job output.
-homedir=/home/condor
+# Note that /home may be linked to a shared partition on a cluster built
+# with sysutils/cluster-admin, which could cause collisions between
+# condor daemons on compute nodes sharing this space.  In this case,
+# override by setting LOCAL_DIR in your condor_config file.
+LOCAL_DIR=/home/condor
 
 case $2 in
 PRE-INSTALL)
     ;;
 POST-INSTALL)
     for dir in log spool config execute; do
-	mkdir -p $homedir/$dir
+	mkdir -p $LOCAL_DIR/$dir
     done
-    chown -Rh $u:$g $homedir
-    # Insurance in case pkg-deinstall was not executed
-    /bin/rm -f /var/db/condor
-    /bin/ln -s $homedir /var/db
+    chown -Rh $u:$g $LOCAL_DIR
     ;;
 esac

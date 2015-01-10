@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libpcap
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 USES=		bison gmake
@@ -25,6 +27,7 @@ PLIST_FILES+=	bin/pcap-config \
 		include/pcap/bpf.h \
 		include/pcap/ipnet.h \
 		include/pcap/namedb.h \
+		include/pcap/nflog.h \
 		include/pcap/pcap.h \
 		include/pcap/sll.h \
 		include/pcap/usb.h \

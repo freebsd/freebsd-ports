@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-12-03 15:11:53 UTC
-+++ Makefile.in
-@@ -564,49 +564,19 @@
+--- Makefile.in.orig	2015-01-06 19:12:16.000000000 +0100
++++ Makefile.in	2015-01-06 19:16:34.000000000 +0100
+@@ -565,51 +565,19 @@
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \
  	    (mkdir -p $(DESTDIR)$(bindir); chmod 755 $(DESTDIR)$(bindir))
@@ -50,6 +50,8 @@
 -	$(LN_S) pcap_open_offline.3pcap pcap_fopen_offline.3pcap && \
 -	rm -f pcap_fopen_offline_with_tstamp_precision.3pcap && \
 -	$(LN_S) pcap_open_offline.3pcap pcap_fopen_offline_with_tstamp_precision.3pcap && \
+-	rm -f pcap_tstamp_type_val_to_description.3pcap && \
+-	$(LN_S) pcap_tstamp_type_val_to_name.3pcap pcap_tstamp_type_val_to_description.3pcap && \
 -	rm -f pcap_getnonblock.3pcap && \
 -	$(LN_S) pcap_setnonblock.3pcap pcap_getnonblock.3pcap)
 +			$(DESTDIR)$(mandir)/man3/$$j; done

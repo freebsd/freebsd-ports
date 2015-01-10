@@ -59,7 +59,7 @@
 +   }
 +
 +   if (cap_enter() < 0 && errno != ENOSYS) {
-+       fprintf(stderr, "Can't enter capability mode");
++       fprintf(stderr, "can't enter capability mode");
 +       clean_exit(-1);
 +    }
 +#endif /* HAVE_CAPSICUM */
