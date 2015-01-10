@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--with-oss \
 		--without-sane \
 		--without-tiff \
-		--without-v4l --without-xinerama
+		--without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -50,7 +50,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDATA=	generic.ppd l_intl.nls wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL WINEMAKER X11 GECKO MONO
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
@@ -88,6 +88,9 @@ MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
 
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
+
+V4L_CONFIGURE_WITH=	v4l
+V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
