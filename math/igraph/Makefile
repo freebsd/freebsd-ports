@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/C%20library/${PORTVERSION}
+MASTER_SITES=	http://igraph.org/nightly/get/c/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
-USE_GCC=	any
 USES=		gmake libtool
 USE_GNOME=	libxml2
 CONFIGURE_ARGS+=	--enable-gmp
