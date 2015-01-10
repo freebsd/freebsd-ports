@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -24,11 +24,12 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison  compiler:c++11-lib gettext gmake gperf libtool \
+USES=		bison compiler:c++11-lib gettext gmake gperf libtool \
 		perl5 pkgconfig shebangfix tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 introspection:build libxslt
+USE_GL=		gl
 USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -63,16 +64,10 @@ SHEBANG_FILES= \
 BROWSER_PLUGINS_DIR?=  ${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS_DEFINE=	WEBGL WEBAUDIO DEBUG FULLDEBUG
-OPTIONS_DEFAULT=WEBGL WEBAUDIO
-WEBAUDIO_DESC=	Web audio support
-WEBGL_DESC=	Enable Web GL support
+OPTIONS_DEFINE=	DEBUG FULLDEBUG
 DEBUG_DESC=	Just enable debug symbols
 FULLDEBUG_DESC=	Enable asserts and other debug support
 
-WEBGL_CONFIGURE_ENABLE=	webgl
-WEBGL_USE=	GL=gl
-WEBAUDIO_CONFIGURE_ENABLE=	web-audio
 FULLDEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_ON=	--enable-debug-symbols=yes
 DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
@@ -80,7 +75,7 @@ DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
 .include <bsd.port.options.mk>
 
 # Shutup warning spam
-#CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments
+CXXFLAGS+=	-Wno-c++11-extensions
 
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc
@@ -96,6 +91,11 @@ BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
 BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
 .endif
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Qunused-arguments
+.endif
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
