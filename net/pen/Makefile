@@ -16,6 +16,8 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	pen
 CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} --with-geoip \
 		--with-ssl=${OPENSSLBASE}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=	bin/mergelogs bin/pen bin/penctl bin/penlog \
