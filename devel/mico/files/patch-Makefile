@@ -1,23 +1,8 @@
 --- Makefile.orig	2008-07-25 15:41:44.000000000 +0200
 +++ Makefile	2014-11-01 11:24:25.000000000 +0100
-@@ -33,7 +33,7 @@
- endif
- EXTRADIRS = test demo
- ALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm test tools demo
--INSTALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm tools include man demo
-+INSTALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm tools include man
- # Bootstrap minimal build configuration
- MINLIBDIRS = orb ir idl
- MINPRGDIRS = cpp idl
-@@ -75,11 +75,15 @@
- 
+@@ -76,10 +76,9 @@
  install:
  	for i in $(INSTALLDIRS); do $(MAKE) -C $$i install || exit 1; done
-+
-+install-demo:
-+	$(MAKE) -C demo install || exit 1;
-+
-+install-doc:
  	if test -f doc/doc.ps; then \
 -		$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico; \
 -		$(IMANCMD) doc/doc.ps $(SHARED_INSTDIR)/doc/mico/manual.ps; \
