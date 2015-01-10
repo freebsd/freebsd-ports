@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-flac
-PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 DISTNAME=	flac-${PORTVERSION}
