@@ -80,9 +80,8 @@ OPTIONS_DEFAULT=	PGSQL
 OPTIONS_SUB=		yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
-ALTAS_LIB_DEPENDS=	libalapack.so:${PORTSDIR}/math/atlas
-ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
-			liblapack.so:${PORTSDIR}/math/lapack
+ATLAS_USES=		blaslapack:atlas
+ATLAS_USES_OFF=		blaslapack
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg \
 			--with-ffmpeg-includes="${LOCALBASE}/include/libavcodec \
@@ -106,25 +105,16 @@ SQLITE_CONFIGURE_ON=	--with-sqlite
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MATLAS}
-BLASLIB=	f77blas
-LAPACKLIB=	alapack
-.else
-BLASLIB=	blas
-LAPACKLIB=	lapack
-.endif
-
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lblas|-l${BLASLIB}| ; \
-		 s|echo blas|echo ${BLASLIB}| ; \
-		 s|-llapack|-l${LAPACKLIB}| ; \
-		 s|echo lapack|echo ${LAPACKLIB}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
+pre-configure:
+	${REINPLACE_CMD} -e \
+		's|-lblas|${BLASLIB}| ; \
+		 s|-llapack|${LAPACKLIB}| ; \
+		 s|g2c|f2c|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e \
 		's|make -C|$$(MAKE) -C| ; \
 		 /^BINDIR/s|=.*|=	$${DESTDIR}$${UNIX_BIN}| ; \
 		 /test /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
@@ -132,10 +122,10 @@ post-patch:
 		 /chmod /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 /tar /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 s|> $${INST_DIR}|> $${DESTDIR}$${INST_DIR}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|^CC=.*|CC?=cc| ; \
 		 s|^CFLAGS=.*|CFLAGS+=-fno-common|' ${WRKSRC}/gem/Makefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|= python|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
 
 post-install:
