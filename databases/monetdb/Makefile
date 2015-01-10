@@ -170,6 +170,9 @@ IGNORE=	testing option requires both Python2 and Perl
 
 .if ${PORT_OPTIONS:MPYTHON2} || ${PORT_OPTIONS:MPYTHON3}
 CATEGORIES+=	python
+PLIST_SUB+=	PYTHON=
+.else
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON2}
@@ -183,6 +186,7 @@ CONFIGURE_ARGS+=	--without-python2
 
 .if ${PORT_OPTIONS:MPYTHON3}
 USES+=		python:3
+USE_PYTHON=	py3kplist
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 CONFIGURE_ARGS+=	--with-python3=${PYTHON_CMD} \
 			--without-python2
