@@ -11,6 +11,8 @@ COMMENT=	Ruby extension for using the igraph library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:${PORTSDIR}/math/igraph
 
+BROKEN=		does not build with igraph-0.7.1
+
 CONFIGURE_ARGS+=	--with-igraph-include=${LOCALBASE}/include/igraph \
 			--without-igraph-lib=${LOCALBASE}/lib
 
