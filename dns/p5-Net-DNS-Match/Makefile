@@ -7,7 +7,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Test domains against another list of FQDNs
 
 LICENSE=	ART10 GPLv1
