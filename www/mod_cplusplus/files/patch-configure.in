@@ -1,0 +1,14 @@
+--- configure.in.orig	2007-04-09 17:25:44 UTC
++++ configure.in
+@@ -62,10 +62,7 @@ if test "x$INCLUDES" == "x" ; then
+ 	AC_MSG_ERROR(could not generate includes with apxs set to "$APXS" - you must specify a valid path to apxs using the --with-apxs flag)
+ fi
+ 
+-AC_CHECK_LIB(stdc++, __gxx_personality_v0, LIB_STDCPP="-lstdc++")
+-    if test "$LIB_STDCPP" == "" ; then
+-	CPPFLAGS="$CPPFLAGS -DNO_STDCPP"
+-    fi 
++CPPFLAGS="$CPPFLAGS -DNO_STDCPP"
+ CPLUSPLUS_BUILDDIR=`pwd`
+ CPPFLAGS="$CPPFLAGS -Wall -Werror -g -I$CPLUSPLUS_BUILDDIR/include"
+ 
