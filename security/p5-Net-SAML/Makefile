@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SAML
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	1.22
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/ \
 		CPAN
@@ -23,11 +22,13 @@ USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 
+PORTEXAMPLES=	zxid.pl zxidhlo.pl
+
 SHEBANG_FILES=	../zxid.pl ../zxidhlo.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|hexdump|my&|' ${WRKSRC}/../errmac.h
-	@${REINPLACE_CMD} -e 's|/apps/openssl/std|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/INC/ s|-I\.\.|& -I${LOCALBASE}/include|; /LIBS/ s|-L\.\.|-L${LOCALBASE}/lib|; s|-ldl||' ${WRKSRC}/Makefile.PL
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
