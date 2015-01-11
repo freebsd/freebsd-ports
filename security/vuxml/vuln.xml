@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="daa8a49b-99b9-11e4-8f66-3085a9a4510d">
+    <topic>libevent -- integer overflow in evbuffers</topic>
+    <affects>
+      <package>
+	<name>libevent</name>
+	<range><lt>1.4.15</lt></range>
+      </package>
+      <package>
+	<name>libevent2</name>
+	<range><lt>2.0.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security Team reports:</p>
+	<blockquote cite="https://www.debian.org/security/2015/dsa-3119">
+	  <p>Andrew Bartlett of Catalyst reported a defect affecting certain
+	     applications using the Libevent evbuffer API. This defect leaves
+	     applications which pass insanely large inputs to evbuffers open
+	     to a possible heap overflow or infinite loop. In order to exploit
+	     this flaw, an attacker needs to be able to find a way to provoke
+	     the program into trying to make a buffer chunk larger than what
+	     will fit into a single size_t or off_t.
+	 </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6272</cvename>
+      <url>https://www.debian.org/security/2015/dsa-3119</url>
+    </references>
+    <dates>
+      <discovery>2015-01-05</discovery>
+      <entry>2015-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="caa98ffd-0a92-40d0-b234-fd79b429157e">
     <topic>cURL -- URL request injection vulnerability</topic>
     <affects>
