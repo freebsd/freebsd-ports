@@ -12,6 +12,9 @@ COMMENT=	Concurrent FreeBSD port builder
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Unmaintained, please use ports-mgmt/poudriere.
+EXPIRATION_DATE=	2015-03-31
+
 USE_PYTHON=	distutils
 USES=		python tar:xz
 
