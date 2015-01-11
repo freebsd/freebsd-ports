@@ -10,6 +10,7 @@
 PREFIX=${PKG_PREFIX:=%%PREFIX%%}
 ETCDIR=${ETCDIR:=%%ETCDIR%%}
 DAEMONDIR=${DAEMONDIR:=%%DAEMONDIR%%}
+META_DIRECTORY=${META_DIRECTORY:=%%META_DIRECTORY%%}
 READMEDIR=${READMEDIR:=%%READMEDIR%%}
 BATCH=${BATCH:=no}
 POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
@@ -72,7 +73,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 	 daemon_directory=${DAEMONDIR} \
 	 html_directory=${READMEDIR} \
 	 readme_directory=${READMEDIR} \
- 	 meta_directory=${DAEMONDIR} \
+ 	 meta_directory=${META_DIRECTORY} \
 	 set-permissions ${POSTARG}
 fi
 
