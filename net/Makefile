@@ -748,6 +748,7 @@
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
+    SUBDIR += p5-URI-ws
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-WebService-Dropbox
     SUBDIR += p5-WebService-Prowl
