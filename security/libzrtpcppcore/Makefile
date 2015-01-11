@@ -3,6 +3,7 @@
 PORTNAME=	libzrtpcppcore
 DISTVERSIONPREFIX=	V
 DISTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GHR
 
@@ -17,7 +18,7 @@ GH_ACCOUNT=	wernerd
 GH_PROJECT=	ZRTPCPP
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake:outsource
 CMAKE_ARGS=	-DCORE_LIB=true
 USE_LDCONFIG=	yes
 
