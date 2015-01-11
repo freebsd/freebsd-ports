@@ -1,6 +1,6 @@
---- ./policyd-weight.orig	2011-09-03 15:55:02.000000000 +0200
-+++ ./policyd-weight	2014-05-25 14:34:09.000000000 +0200
-@@ -320,7 +320,7 @@
+--- policyd-weight.orig	2011-09-03 13:55:02 UTC
++++ policyd-weight
+@@ -320,7 +320,7 @@ $SIG{__DIE__} = sub {
  
  my $DEBUG        = 0;               # 1 or 0 - don't comment
  
@@ -9,7 +9,7 @@
  
  my $REJECTLEVEL  = 1;               # Mails with scores which exceed this
                                      # REJECTLEVEL will be rejected
-@@ -374,9 +374,7 @@
+@@ -374,9 +374,7 @@ my @dnsbl_score = (
      'pbl.spamhaus.org',       3.25,          0,        'DYN_PBL_SPAMHAUS',
      'sbl-xbl.spamhaus.org',   4.35,       -1.5,        'SBL_XBL_SPAMHAUS',
      'bl.spamcop.net',         3.75,       -1.5,        'SPAMCOP',
@@ -19,19 +19,20 @@
  );
  
  my $MAXDNSBLHITS  = 2;  # If Client IP is listed in MORE
-@@ -392,10 +390,7 @@
+@@ -391,11 +389,7 @@ my $MAXDNSBLMSG   = '550 Your MTA is lis
+ 
  ## RHSBL settings
  my @rhsbl_score = (
-     'multi.surbl.org',             4,        0,        'SURBL',
+-    'multi.surbl.org',             4,        0,        'SURBL',
 -    'rhsbl.ahbl.org',              4,        0,        'AHBL',
 -    'dsn.rfc-ignorant.org',        3.5,      0,        'DSN_RFCI',
 -    'postmaster.rfc-ignorant.org', 0.1,      0,        'PM_RFCI',
 -    'abuse.rfc-ignorant.org',      0.1,      0,        'ABUSE_RFCI'
-+    'rhsbl.ahbl.org',              4,        0,        'AHBL'
++    'multi.surbl.org',             4,        0,        'SURBL'
  );
  
  my $BL_ERROR_SKIP     = 2;  # skip a RBL if this RBL had this many continuous
-@@ -404,7 +399,7 @@
+@@ -404,7 +398,7 @@ my $BL_ERROR_SKIP     = 2;  # skip a RBL
  my $BL_SKIP_RELEASE   = 10; # skip a RBL for that many times
  
  ## cache stuff
@@ -40,7 +41,7 @@
                                                      # trailing slash)
  
  my $SPATH             = $LOCKPATH.'/polw.sock';     # socket path for the cache
-@@ -426,7 +421,7 @@
+@@ -426,7 +420,7 @@ my $CACHESIZE       = 2000; # set to 0 t
  
  my $CACHEMAXSIZE    = 4000; # at this number of entries cleanup takes place
  
@@ -49,7 +50,7 @@
  
  my $NTTL            = 1;    # after NTTL retries the cache entry is deleted
  
-@@ -582,7 +577,7 @@
+@@ -582,7 +576,7 @@ my %poscache;
  my $my_PTIME;
  my $my_TEMP_PTIME;
  
@@ -58,7 +59,7 @@
  {
      if( -f "/etc/policyd-weight.conf")
      {
-@@ -605,7 +600,7 @@
+@@ -605,7 +599,7 @@ if(!($conf))
  my $conf_err;
  my $conf_str;
  our $old_mtime;
@@ -67,7 +68,7 @@
  {
      if(sprintf("%04o",(stat($conf))[2]) !~ /(7|6|3|2)$/)
      {
-@@ -652,8 +647,12 @@
+@@ -652,8 +646,12 @@ $GROUP = $USER unless $GROUP;
  if($CMD_DEBUG == 1)
  {
      $DEBUG = 1;
@@ -82,7 +83,7 @@
      print "config: $conf\n".$conf_str."\n"; 
      $SPATH   .= ".debug";
      
-@@ -673,7 +672,7 @@
+@@ -673,7 +671,7 @@ if($CMD_DEBUG == 1)
      print "debug: USER:  $USER\n";
      print "debug: GROUP: $GROUP\n";
      print "debug: issuing user:  ".getpwuid($<)."\n";
@@ -91,7 +92,7 @@
  }
  
  $conf_str = "";
-@@ -893,12 +892,12 @@
+@@ -893,12 +891,12 @@ if($NS && $NS =~ /\d/)
  
  
  # watch the version string, I'm afraid that they change to x.x.x notation
@@ -106,7 +107,7 @@
  {
      $res->igntc(1);    # ignore truncated packets if Net-DNS version is
                         # lower than 0.50
-@@ -2282,7 +2281,7 @@
+@@ -2282,7 +2280,7 @@ sub weighted_check
  
  
  ## HELO numeric check #########################################################
@@ -115,7 +116,7 @@
      # check /1.2.3.4/ and /[1.2.3.4]/
      if($helo =~ /^[\d|\[][\d\.]+[\d|\]]$/)
      {
-@@ -2844,7 +2843,7 @@
+@@ -2844,7 +2842,7 @@ sub cache_query
      my $sender = shift(@_) || '';
      my $domain = shift(@_) || '';
  
@@ -124,7 +125,7 @@
      $@ = ();
      if( (!($csock)) || ($csock && (!($csock->connected))) )
      {
-@@ -2972,7 +2971,7 @@
+@@ -2972,7 +2970,7 @@ sub spawn_cache
          die $!;
      }
  
@@ -133,7 +134,7 @@
      {
          mylog(warning=>"cache: couldn't change GID to user $GROUP: $!");
      }
-@@ -3588,7 +3587,7 @@
+@@ -3588,7 +3586,7 @@ sub rbl_lookup
              my    ($id, $bf, $qc, $anc, $nsc, $arc, $qb) = 
              unpack('n   n    n    n     n     n     a*', $buf);
  
@@ -142,7 +143,7 @@
  
              if(($id && $anc) && ($id == $oid) && ($query eq $dn))
              {
-@@ -3842,7 +3841,7 @@
+@@ -3842,7 +3840,7 @@ sub squared_helo
      my $helo = shift;
      my $ip   = shift;
  
