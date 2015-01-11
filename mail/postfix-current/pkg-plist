@@ -8,17 +8,30 @@ bin/qshape
 bin/rmail
 %%TEST%%bin/smtp-sink
 %%TEST%%bin/smtp-source
-%%BASE%%@cwd /
+%%INST_BASE%%@cwd /
 etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
 etc/postfix/bounce.cf.default
 etc/postfix/main.cf.default
 @cwd %%RESETPREFIX%%
+lib/postfix/libpostfix-dns.so
+lib/postfix/libpostfix-global.so
+lib/postfix/libpostfix-master.so
+lib/postfix/libpostfix-tls.so
+lib/postfix/libpostfix-util.so
+%%CDB%%lib/postfix/postfix-cdb.so
+%%OPENLDAP%%lib/postfix/postfix-ldap.so
+%%LMDB%%lib/postfix/postfix-lmdb.so
+%%MYSQL%%lib/postfix/postfix-mysql.so
+%%PCRE%%lib/postfix/postfix-pcre.so
+%%PGSQL%%lib/postfix/postfix-pgsql.so
+%%SQLITE%%lib/postfix/postfix-sqlite.so
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/discard
 libexec/postfix/dnsblog
+libexec/postfix/dynamicmaps.cf
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -64,6 +77,7 @@ libexec/postfix/virtual
 %%BMAN%%man/man1/postmulti.1.gz
 %%BMAN%%man/man1/postqueue.1.gz
 %%BMAN%%man/man1/postsuper.1.gz
+%%BMAN%%man/man1/posttls-finger.1.gz
 %%TEST%%%%BMAN%%man/man1/qmqp-sink.1.gz
 %%TEST%%%%BMAN%%man/man1/qmqp-source.1.gz
 %%BMAN%%man/man1/qshape.1.gz
@@ -140,8 +154,11 @@ sbin/postqueue
 @group
 @mode
 sbin/postsuper
+sbin/posttls-finger
 sbin/sendmail
+@dir libexec/postfix/dynamicmaps.cf.d
 @dir libexec/postfix/postfix-files.d
+@dir %%PFETC%%
 @dir /var/db/postfix
 @dir(postfix,,700) /var/spool/postfix/active
 @dir(postfix,,700) /var/spool/postfix/bounce
@@ -158,6 +175,3 @@ sbin/sendmail
 @dir(postfix,,700) /var/spool/postfix/saved
 @dir(postfix,,700) /var/spool/postfix/trace
 @dir(,,755) /var/spool/postfix
-%%BASE%%@cwd /
-@dir etc/postfix
-@cwd %%RESETPREFIX%%
