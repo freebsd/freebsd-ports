@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -35,10 +34,4 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.16:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
