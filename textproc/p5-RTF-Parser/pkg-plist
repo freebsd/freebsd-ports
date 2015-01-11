@@ -1,9 +1,5 @@
 bin/rtf2html
 bin/rtf2text
-%%PERL5_MAN3%%/RTF::Control.3.gz
-%%PERL5_MAN3%%/RTF::HTML::Converter.3.gz
-%%PERL5_MAN3%%/RTF::Parser.3.gz
-%%PERL5_MAN3%%/RTF::TEXT::Converter.3.gz
 %%SITE_PERL%%/RTF/Charsets.pm
 %%SITE_PERL%%/RTF/Config.pm
 %%SITE_PERL%%/RTF/Control.pm
@@ -14,3 +10,7 @@ bin/rtf2text
 %%SITE_PERL%%/RTF/TEXT/Converter.pm
 %%SITE_PERL%%/RTF/TEXT/Converter/ansi.pm
 %%SITE_PERL%%/RTF/TEXT/Converter/charmap.pm
+%%PERL5_MAN3%%/RTF::Control.3.gz
+%%PERL5_MAN3%%/RTF::HTML::Converter.3.gz
+%%PERL5_MAN3%%/RTF::Parser.3.gz
+%%PERL5_MAN3%%/RTF::TEXT::Converter.3.gz
