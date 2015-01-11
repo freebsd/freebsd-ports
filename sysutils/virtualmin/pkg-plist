@@ -757,8 +757,6 @@ lib/webmin/virtual-server/help/config_show_tabs.html
 lib/webmin/virtual-server/help/config_show_tabs.nl.html
 lib/webmin/virtual-server/help/config_show_ugroup.html
 lib/webmin/virtual-server/help/config_show_ugroup.nl.html
-lib/webmin/virtual-server/help/config_sni_support.html
-lib/webmin/virtual-server/help/config_sni_support.nl.html
 lib/webmin/virtual-server/help/config_spam.html
 lib/webmin/virtual-server/help/config_spam.nl.html
 lib/webmin/virtual-server/help/config_spam_delivery.html
@@ -1957,6 +1955,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.10/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.11/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.12/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.13/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.14/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
