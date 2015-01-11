@@ -4510,8 +4510,8 @@
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
-    SUBDIR += rubygem-notify
     SUBDIR += rubygem-notiffany
+    SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-open3_backport

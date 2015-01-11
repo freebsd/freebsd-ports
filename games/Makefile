@@ -1010,6 +1010,7 @@
     SUBDIR += violetland
     SUBDIR += viruskiller
     SUBDIR += vitetris
+    SUBDIR += vms-empire
     SUBDIR += vodovod
     SUBDIR += volleyball
     SUBDIR += vor
@@ -1030,7 +1031,6 @@
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
     SUBDIR += wmquake
-    SUBDIR += vms-empire
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wolfpack
