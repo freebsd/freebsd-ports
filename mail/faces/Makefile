@@ -30,7 +30,7 @@ OPTIONS_SUB=	X11
 X11_USE=	GNOME=gtk12
 X11_CPPFLAGS=	-I../compface -I${LOCALBASE}/include
 X11_LDFLAGS=	-L../compface -L${LOCALBASE}/lib
-X11_CONFIGURE_ARGS=	--enable-imap --enable-pop \
+X11_CONFIGURE_ON=	--enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
 		--with-facedir=${DATADIR}
 X11_CONFIGURE_WITH=	x
