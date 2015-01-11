@@ -1,4 +1,4 @@
 bin/umlclass.pl
-%%PERL5_MAN3%%/UML::Class::Simple.3.gz
 %%SITE_PERL%%/UML/Class/Simple.pm
+%%PERL5_MAN3%%/UML::Class::Simple.3.gz
 man/man1/umlclass.pl.1.gz
