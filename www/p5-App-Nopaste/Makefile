@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.96
-PORTREVISION=	1
+PORTVERSION=	1.003
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -21,7 +20,8 @@ BUILD_DEPENDS=	p5-Browser-Open>=0:${PORTSDIR}/www/p5-Browser-Open \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 CONFLICTS=	p5-WebService-NoPaste-[0-9]*
 
@@ -32,7 +32,7 @@ GITHUB_DESC=	Support github.com
 PASTEBIN_DESC=	Support pastebin.com
 
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
 CLIPBOARD_BUILD_DEPENDS=p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 CLIPBOARD_RUN_DEPENDS=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
