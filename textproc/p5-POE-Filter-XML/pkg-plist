@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/POE::Filter::XML.3.gz
-%%PERL5_MAN3%%/POE::Filter::XML::Handler.3.gz
-%%PERL5_MAN3%%/POE::Filter::XML::NS.3.gz
-%%PERL5_MAN3%%/POE::Filter::XML::Node.3.gz
 %%SITE_PERL%%/POE/Filter/XML.pm
 %%SITE_PERL%%/POE/Filter/XML/Handler.pm
 %%SITE_PERL%%/POE/Filter/XML/NS.pm
 %%SITE_PERL%%/POE/Filter/XML/Node.pm
+%%PERL5_MAN3%%/POE::Filter::XML.3.gz
+%%PERL5_MAN3%%/POE::Filter::XML::Handler.3.gz
+%%PERL5_MAN3%%/POE::Filter::XML::NS.3.gz
+%%PERL5_MAN3%%/POE::Filter::XML::Node.3.gz
