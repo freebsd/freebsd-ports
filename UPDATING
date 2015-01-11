@@ -14,10 +14,10 @@ you update your ports collection, before attempting any port upgrades.
   DEFAULT_VERSIONS variable in /etc/make.conf.  To upgrade:
 
   If using portupgrade:
-  # portupgrade -o lang/python33 lang/python34
+  # portupgrade -o lang/python34 lang/python33
 
   If using portmaster:
-  # portmaster -o lang/python33 lang/python34
+  # portmaster -o lang/python34 lang/python33
 
 20150109:
   AFFECTS: users of audio/speex
