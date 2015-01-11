@@ -1,7 +1,8 @@
---- Makefile.orig	2014-04-13 05:14:38.000000000 -0700
-+++ Makefile	2014-07-01 04:04:04.000000000 -0700
+--- Makefile	2014-10-03 14:37:57.000000000 -0500
++++ Makefile	2015-01-10 21:44:03.000000000 -0500
 @@ -1,11 +1,12 @@
- CC=lazbuild
+-CC=lazbuild
++CC=lazbuild -d
  ST=strip
 -datadir  = $(DESTDIR)/usr/share/cqrlog
 -bindir   = $(DESTDIR)/usr/bin
@@ -13,7 +14,7 @@
  
  cqrlog: src/cqrlog.lpi
 -	$(CC) --ws=gtk2 src/cqrlog.lpi
-+	$(CC) --pcp=. --ws=gtk2 src/cqrlog.lpi
++	$(CC) --pcp=. --ws=%%LCL_PLATFORM%% src/cqrlog.lpi --lazarusdir=%%LAZARUSDIR%%
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
