@@ -1,9 +1,3 @@
-%%PERL5_MAN3%%/Catalyst::Devel.3.gz
-%%PERL5_MAN3%%/Catalyst::Helper.3.gz
-%%PERL5_MAN3%%/Catalyst::Restarter.3.gz
-%%PERL5_MAN3%%/Catalyst::Restarter::Forking.3.gz
-%%PERL5_MAN3%%/Catalyst::Restarter::Win32.3.gz
-%%PERL5_MAN3%%/Module::Install::Catalyst.3.gz
 %%SITE_PERL%%/Catalyst/Devel.pm
 %%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Restarter.pm
@@ -37,3 +31,9 @@
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/02pod.t.tt
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/03podcoverage.t.tt
 %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/t/comptest.tt
+%%PERL5_MAN3%%/Catalyst::Devel.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter::Forking.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter::Win32.3.gz
+%%PERL5_MAN3%%/Module::Install::Catalyst.3.gz
