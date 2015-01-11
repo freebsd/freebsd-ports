@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-TreePP
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +22,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+PORTEXAMPLES=	envxml.cgi
 
 SHEBANG_FILES=	example/envxml.cgi
 
