@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	FCGI-Engine
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
+		p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
 		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI \
