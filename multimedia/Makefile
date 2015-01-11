@@ -246,7 +246,6 @@
     SUBDIR += mpeg_stat
     SUBDIR += mpgtx
     SUBDIR += mplayer
-    SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplayer2
     SUBDIR += mplex
