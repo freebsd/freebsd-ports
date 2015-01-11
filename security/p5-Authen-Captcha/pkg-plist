@@ -1,4 +1,3 @@
-%%PERL5_MAN3%%/Authen::Captcha.3.gz
 %%SITE_PERL%%/Authen/Captcha.pm
 %%SITE_PERL%%/Authen/Captcha/images/2.png
 %%SITE_PERL%%/Authen/Captcha/images/3.png
@@ -40,3 +39,4 @@
 %%SITE_PERL%%/Authen/Captcha/images/x.png
 %%SITE_PERL%%/Authen/Captcha/images/y.png
 %%SITE_PERL%%/Authen/Captcha/images/z.png
+%%PERL5_MAN3%%/Authen::Captcha.3.gz
