@@ -2,7 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -26,8 +26,7 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
 		${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
-		${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
+RUN_DEPENDS=	${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
 
 USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt

@@ -3,7 +3,7 @@
 
 PORTNAME=	tomahawk
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	arved@FreeBSD.org
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libattica.so:${PORTSDIR}/x11-toolkits/attica \
 		libqjson.so:${PORTSDIR}/devel/qjson \
 		libquazip.so:${PORTSDIR}/archivers/quazip \
 		libtag.so:${PORTSDIR}/audio/taglib
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3_4:${PORTSDIR}/security/qca-ossl
 
 CMAKE_ARGS+=	-DWITH_BREAKPAD:BOOL="OFF" \
 		-DCLUCENE_CONFIG_PATH:PATH="${LOCALBASE}/share/clucene"
