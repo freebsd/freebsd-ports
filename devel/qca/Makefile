@@ -19,7 +19,7 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no -DQT4_BUILD=yes \
 		-DQCA_MAN_INSTALL_DIR=${MANPREFIX}/man
 CMAKE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
-USE_QT4=	corelib moc_build rcc_build
+USE_QT4=	corelib moc_build qmake_build rcc_build
 
 OPTIONS_DEFINE=	GNUPG OPENSSL SASL
 OPTIONS_DEFAULT=GNUPG OPENSSL
