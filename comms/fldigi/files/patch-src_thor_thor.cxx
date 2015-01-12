@@ -5,7 +5,7 @@
  	strSecXmtText = progdefaults.THORsecText;
  	if (strSecXmtText.length() == 0)
 -		strSecXmtText = "fldigi "PACKAGE_VERSION" ";
-+		strSecXmtText = "fldigi " PACKAGE_VERSION;
++		strSecXmtText = "fldigi " PACKAGE_VERSION " ";
  	cptr = 0;
  }
  
