@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slock
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
