@@ -30,6 +30,7 @@ bin/cme-old
 %%SITE_PERL%%/Config/Model/Node.pm
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
+%%SITE_PERL%%/Config/Model/Role/NodeLoader.pm
 %%SITE_PERL%%/Config/Model/SearchElement.pm
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
@@ -92,6 +93,7 @@ bin/cme-old
 %%PERL5_MAN3%%/Config::Model::Node.3.gz
 %%PERL5_MAN3%%/Config::Model::ObjTreeScanner.3.gz
 %%PERL5_MAN3%%/Config::Model::Report.3.gz
+%%PERL5_MAN3%%/Config::Model::Role::NodeLoader.3.gz
 %%PERL5_MAN3%%/Config::Model::SearchElement.3.gz
 %%PERL5_MAN3%%/Config::Model::SimpleUI.3.gz
 %%PERL5_MAN3%%/Config::Model::TermUI.3.gz
