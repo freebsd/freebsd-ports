@@ -2105,6 +2105,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Tail-Dir
+    SUBDIR += p5-File-Tail-Multi
     SUBDIR += p5-File-Tail-Scribe
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
