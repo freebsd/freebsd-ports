@@ -5,5 +5,4 @@ be used for systems without a hardware keyboard such as kiosk terminals
 or handheld devices. This program also has facility to send characters
 specified as the command line option to another client.
 
-Author: Tom Sato <VEF00200@nifty.ne.jp>
 WWW: http://homepage3.nifty.com/tsato/xvkbd/
