@@ -35,6 +35,7 @@ DOS2UNIX_GLOB=	*.bg *.brk *.grp  *.inc *.lev *.lng  *.obj *.qst *.spr *.txt
 USE_GCC=	yes
 
 PORTDOCS=	readme.html
+PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
@@ -78,10 +79,5 @@ post-install:
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL} \
-		-type f >> ${TMPPLIST} && \
-		${FIND} ${DATADIR_REL} -type d -o -type l | ${SORT} -r | \
-		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
