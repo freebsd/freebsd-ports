@@ -931,6 +931,11 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/stars/default/stars_1_0v0_5.cat
 %%DATADIR%%/stars/default/stars_2_0v0_5.cat
 %%DATADIR%%/stars/default/stars_3_1v0_3.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_4_1v0_1.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_5_2v0_1.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_6_2v0_1.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_7_2v0_1.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_8_2v0_1.cat
 %%DATADIR%%/stars/default/stars_hip_cids_0v0_0.cat
 %%DATADIR%%/stars/default/stars_hip_sp_0v0_0.cat
 %%DATADIR%%/textures/amalthea.png

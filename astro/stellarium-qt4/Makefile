@@ -24,7 +24,7 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA SCRIPTING DOCS
 OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING
-MORE_STARS_DESC=	Install extra star catalogs (1.2GB)
+MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 MULTIMEDIA_DESC=	Sound and video support (via Phonon)
 SCRIPTING_DESC=		Scripting support
 
@@ -34,9 +34,9 @@ SCRIPTING_DESC=		Scripting support
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
-DISTFILES+=	stars_4_1v0_0.cat:stars4 stars_5_2v0_0.cat:stars5 \
-		stars_6_2v0_0.cat:stars6 stars_7_2v0_0.cat:stars7 \
-		stars_8_2v0_0.cat:stars8
+DISTFILES+=	stars_4_1v0_1.cat:stars4 stars_5_2v0_1.cat:stars5 \
+		stars_6_2v0_1.cat:stars6 stars_7_2v0_1.cat:stars7 \
+		stars_8_2v0_1.cat:stars8
 PLIST_SUB+=	MORE_STARS=""
 .else
 PLIST_SUB+=	MORE_STARS="@comment "
@@ -66,7 +66,7 @@ post-patch: .SILENT
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
-	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_0.cat \
+	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
