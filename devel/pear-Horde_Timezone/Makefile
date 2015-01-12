@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Timezone
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

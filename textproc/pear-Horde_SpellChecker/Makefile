@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_SpellChecker
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org

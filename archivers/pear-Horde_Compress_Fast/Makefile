@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Compress_Fast
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	archivers www pear
 PKGNAMEPREFIX=	pear-
 
