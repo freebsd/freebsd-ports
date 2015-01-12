@@ -7,8 +7,10 @@ PORTREVISION=	4
 CATEGORIES=	security www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Web proxy to detect malware
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
