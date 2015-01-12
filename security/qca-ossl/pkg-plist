@@ -1,4 +1,0 @@
-%%QT_PLUGINDIR%%/crypto/libqca-ossl.so
-%%DEBUG%%%%QT_PLUGINDIR%%/crypto/libqca-ossl.so.debug
-@dirrmtry %%QT_PLUGINDIR%%/crypto
-@dirrmtry %%QT_PLUGINDIR%%

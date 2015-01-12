@@ -7396,3 +7396,6 @@ ports-mgmt/p5-FreeBSD-Pkgs||2015-01-06|Has expired: Does not support pkgng
 ports-mgmt/p5-App-Pm2Port||2015-01-06|Has expired: Does not know about USES=perl, generates incorrect pkg-plist
 ports-mgmt/bpkg||2015-01-06|Has expired: Does not support pkgng
 multimedia/mplayer-fonts||2015-01-11|Obsolete port
+security/qca-cyrus-sasl|devel/qca|2015-01-12|Part of devel/qca now
+security/qca-gnupg|devel/qca|2015-01-12|Part of devel/qca now
+security/qca-ossl|devel/qca|2015-01-12|Part of devel/qca now
