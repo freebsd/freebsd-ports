@@ -39,6 +39,7 @@
     SUBDIR += ace+tao-doc
     SUBDIR += acme
     SUBDIR += activitymail
+    SUBDIR += actor-framework
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
