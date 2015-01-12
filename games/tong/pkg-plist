@@ -90,5 +90,3 @@ share/pixmaps/tong.png
 %%DATADIR%%/play.png
 %%DATADIR%%/pongbits.png
 %%DATADIR%%/tetrisbits.png
-@dirrm %%DATADIR%%/media
-@dirrm %%DATADIR%%

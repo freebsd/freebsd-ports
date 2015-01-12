@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.nongnu.org/tong/
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tetris and Pong in the same place at the same time
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_SDL=	image mixer sdl
