@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY:=	${DISTFILES}
+EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat\:stars?}
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,9 +22,10 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA SCRIPTING DOCS
+OPTIONS_DEFINE=		MORE_STARS HR_TEXTURES MULTIMEDIA SCRIPTING DOCS
 OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
+HR_TEXTURES_DESC=	Install high-resolution textures
 MULTIMEDIA_DESC=	Sound and video support (via Phonon)
 SCRIPTING_DESC=		Scripting support
 
@@ -40,6 +41,14 @@ DISTFILES+=	stars_4_1v0_1.cat:stars4 stars_5_2v0_1.cat:stars5 \
 PLIST_SUB+=	MORE_STARS=""
 .else
 PLIST_SUB+=	MORE_STARS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MHR_TEXTURES}
+MASTER_SITES+=	SF/${PORTNAME}/textures:gfx
+DISTFILES+=	textures-1K.zip:gfx milkyway.zip:gfx	# yes, in this order
+PLIST_SUB+=	TEXTURES=""
+.else
+PLIST_SUB+=	TEXTURES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
@@ -68,6 +77,9 @@ post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
+.endif
+.if ${PORT_OPTIONS:MHR_TEXTURES}
+	${INSTALL_DATA} ${WRKDIR}/*.png ${STAGEDIR}${DATADIR}/textures
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
