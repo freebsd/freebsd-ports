@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -16,11 +15,12 @@ LICENSE=	ART20
 
 # Do not add p5-DateTime-Format-Strptime>=1.20.00 to TEST_DEPENDS to avoid cyclic dependency in tinderbox
 BUILD_DEPENDS=	p5-DateTime-Locale>=0.41:${PORTSDIR}/devel/p5-DateTime-Locale \
-		p5-DateTime-TimeZone>=1.09:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime-TimeZone>=1.74:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Warnings>=0.005:${PORTSDIR}/devel/p5-Test-Warnings
 
 OPTIONS_DEFINE=	DOCS
 
