@@ -28,10 +28,9 @@ GH_PROJECT=	3omns
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	84f4b60
 
-USES=		compiler:c++11-lang gmake pkgconfig lua:52
+USES=		autoreconf compiler:c++11-lang gmake pkgconfig lua:52
 USE_SDL=	image2 sdl2 ttf2
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	aclocal:env automake:env autoheader:env autoconf:env
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -39,9 +38,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -largp
 
 PORTDOCS=	NEWS README
 OPTIONS_DEFINE=	DOCS
-
-pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTORECONF} -fi)
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
