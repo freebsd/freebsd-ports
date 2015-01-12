@@ -2,6 +2,7 @@
 
 PORTNAME=	gwenview
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -10,7 +11,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and browser for KDE 4
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libpng.so:${PORTSDIR}/graphics/png
 
 USE_KDE4=	kactivities kdelibs kdeprefix baloo kfilemetadata \
 		libkdcraw libkipi libkonq automoc4 soprano
