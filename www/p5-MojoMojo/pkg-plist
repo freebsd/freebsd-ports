@@ -22,8 +22,8 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/Controller/Tag.pm
 %%SITE_PERL%%/MojoMojo/Controller/User.pm
 %%SITE_PERL%%/MojoMojo/Declaw.pm
-%%SITE_PERL%%/MojoMojo/Extensions/Counter.pm
 %%SITE_PERL%%/MojoMojo/Extension.pm
+%%SITE_PERL%%/MojoMojo/Extensions/Counter.pm
 %%SITE_PERL%%/MojoMojo/Formatter.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Amazon.pm
 %%SITE_PERL%%/MojoMojo/Formatter/CPANHyperlink.pm
@@ -39,8 +39,8 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/Formatter/File/Pod.pm
 %%SITE_PERL%%/MojoMojo/Formatter/File/Text.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Gist.pm
-%%SITE_PERL%%/MojoMojo/Formatter/GoogleSearch.pm
 %%SITE_PERL%%/MojoMojo/Formatter/GoogleCalendar.pm
+%%SITE_PERL%%/MojoMojo/Formatter/GoogleSearch.pm
 %%SITE_PERL%%/MojoMojo/Formatter/IDLink.pm
 %%SITE_PERL%%/MojoMojo/Formatter/IRCLog.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Include.pm
@@ -211,6 +211,7 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/forms/user/password.yml
 %%SITE_PERL%%/MojoMojo/root/forms/user/prefs.yml
 %%SITE_PERL%%/MojoMojo/root/forms/user/register.yml
+%%SITE_PERL%%/MojoMojo/root/static/Crystal_Clear_action_stop.png
 %%SITE_PERL%%/MojoMojo/root/static/catalyst.png
 %%SITE_PERL%%/MojoMojo/root/static/css/jquery.autocomplete.css
 %%SITE_PERL%%/MojoMojo/root/static/css/progress.css
@@ -317,7 +318,6 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/static/json/pl.po.json
 %%SITE_PERL%%/MojoMojo/root/static/json/ru.po.json
 %%SITE_PERL%%/MojoMojo/root/static/mm-logo.png
-%%SITE_PERL%%/MojoMojo/root/static/Crystal_Clear_action_stop.png
 %%SITE_PERL%%/MojoMojo/root/static/mojomojo.css
 %%SITE_PERL%%/MojoMojo/root/static/overrides.css
 %%SITE_PERL%%/MojoMojo/root/static/pod.css
