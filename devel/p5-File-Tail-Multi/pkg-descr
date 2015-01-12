@@ -1,0 +1,9 @@
+Derived from MultiTail, this perl library makes it easy to tail a dynamic
+list of files and match/except lines using full regular expressions and
+even maintains their state locally.
+
+File::Tail::Multi will tail multiple files and return the records read
+to a Data Structure. The Data Structure can be processed by
+File::Tail::Multi functions.
+
+WWW: https://metacpan.org/pod/File::Tail::Multi
