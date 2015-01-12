@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.46
-PORTREVISION=	1
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +13,7 @@ COMMENT=	Serialization framework for Moose classes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
+BUILD_DEPENDS=	p5-JSON-MaybeXS>=1.001000:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
@@ -31,6 +30,6 @@ TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
