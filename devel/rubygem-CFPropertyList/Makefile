@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CFPropertyList
-PORTVERSION=	2.2.8
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
