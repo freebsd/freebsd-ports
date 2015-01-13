@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ "$2" != "POST-DEINSTALL" ]; then
-        exit 0
-fi
-
-PATH=/bin:/usr/bin
-
-echo "* If you nolonger plan to run sancp delete /var/log/sancp, the user & group created during install *"
