@@ -28,5 +28,11 @@ what should be added to your server's crontab.
 %%WWWDIR%%/etc/netdot_apache2_local.conf
 %%WWWDIR%%/etc/netdot_apache2_ldap.conf
 
+6. Running Apache 2.4?  Make sure that both the mod_perl and mod_apreq2 have
+been added to httpd.conf:
+
+LoadModule perl_module		libexec/apache24/mod_perl.so
+LoadModule apreq_module		libexec/apache24/mod_apreq2.so
+
 Note that any changes to Site.conf require an apache reload.
 ###############################################################################
