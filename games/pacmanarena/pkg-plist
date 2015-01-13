@@ -54,6 +54,3 @@ share/icons/hicolor/96x96/apps/pacmanarena.png
 %%DATADIR%%/sfx/rocket-launch.wav
 %%DATADIR%%/sfx/tranzy.ogg
 share/pixmaps/pacmanarena.png
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
