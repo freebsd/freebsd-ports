@@ -441,16 +441,3 @@ bin/lugaru
 %%DATADIR%%/Data/config.txt
 %%DATADIR%%/lugaru
 share/pixmaps/lugaru.png
-@dirrm %%DATADIR%%/Data/Textures/Skybox(snow)
-@dirrm %%DATADIR%%/Data/Textures/Skybox(sand)
-@dirrm %%DATADIR%%/Data/Textures/Skybox(grass)
-@dirrm %%DATADIR%%/Data/Textures
-@dirrm %%DATADIR%%/Data/Sounds
-@dirrm %%DATADIR%%/Data/Skeleton
-@dirrm %%DATADIR%%/Data/Models
-@dirrm %%DATADIR%%/Data/Maps
-@dirrm %%DATADIR%%/Data/Dialogues
-@dirrm %%DATADIR%%/Data/Campaigns
-@dirrm %%DATADIR%%/Data/Animations
-@dirrm %%DATADIR%%/Data
-@dirrm %%DATADIR%%
