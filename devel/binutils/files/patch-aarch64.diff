@@ -7,8 +7,8 @@ index 4edcc6a..4c94f69 100644
      want64=true
      ;;
 +  aarch64-*-freebsd*)
-+    targ_defvec=bfd_elf64_littleaarch64_vec
-+    targ_selvecs="bfd_elf64_bigaarch64_vec bfd_elf32_littlearm_vec bfd_elf32_bigarm_vec"
++    targ_defvec=aarch64_elf64_le_vec
++    targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
 +    want64=true
 +    ;;
    aarch64-*-linux*)
