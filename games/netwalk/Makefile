@@ -9,7 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game where the object is to connect every terminal to the main server
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	blynn

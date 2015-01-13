@@ -6,4 +6,3 @@ share/icons/hicolor/64x64/apps/netwalk.png
 share/icons/hicolor/96x96/apps/netwalk.png
 %%DATADIR%%/Vera.ttf
 share/pixmaps/netwalk.png
-@dirrm %%DATADIR%%
