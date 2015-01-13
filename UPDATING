@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150113:
+  AFFECTS: users of pecl-http
+  AUTHOR: vanilla@FreeBSD.org
+
+  The pecl-http has been upgraded to version 2.1.4, and the new version is
+  not compatible with the old. If you need the "old" 1.7.6, you can find it
+  in www/pecl-http1.
+
 20150111:
   AFFECTS: users of python3
   AUTHOR: demon@FreeBSD.org
