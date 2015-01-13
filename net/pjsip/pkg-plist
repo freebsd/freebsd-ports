@@ -342,7 +342,4 @@ lib/libpjsua2-%%CONFIGURE_TARGET%%.a
 %%NO_SAMPLERATE%%%%RESAMPLE%%lib/libresample-%%CONFIGURE_TARGET%%.a
 %%NO_SAMPLERATE%%%%RESAMPLE%%%%RESAMPLEDLL%%lib/libresample.so
 %%NO_SAMPLERATE%%%%RESAMPLE%%%%RESAMPLEDLL%%lib/libresample.so.2
-lib/libsrtp-%%CONFIGURE_TARGET%%.a
-%%SHARED%%lib/libsrtp.so
-%%SHARED%%lib/libsrtp.so.2
 libdata/pkgconfig/libpjproject.pc

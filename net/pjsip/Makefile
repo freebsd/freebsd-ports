@@ -2,6 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -11,10 +12,12 @@ COMMENT=	Multimedia communication library written in C language
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libsrtp.so:${PORTSDIR}/net/libsrtp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
+		--with-external-srtp \
 		--disable-silk
 USES=		gmake tar:bz2
 USE_LDCONFIG=	yes
