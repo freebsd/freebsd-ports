@@ -22,5 +22,3 @@ share/pixmaps/vodovod.png
 %%DATADIR%%/data/walk.xm
 %%DATADIR%%/icon.ico
 %%DATADIR%%/vodovod
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
