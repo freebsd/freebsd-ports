@@ -2,21 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-PORTVERSION=	1.8.29
+PORTVERSION=	1.8.30
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_RUBYGEMS:S/\/gems\//\/rubygems\//}
+MASTER_SITES=	https://github.com/rubygems/rubygems/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Package management framework for the Ruby language
 
+LICENSE=	MIT RUBY
+LICENSE_COMB=	dual
+
 USE_RUBY=	yes
 RUBY_SETUP=	setup.rb
 
 NO_BUILD=	yes
+USES=		tar:tgz
 
 PLIST_SUB+=	DISTNAME="${DISTNAME}" \
 		RUBY_VER_SHORT="${RUBY_VER_SHORT}"
