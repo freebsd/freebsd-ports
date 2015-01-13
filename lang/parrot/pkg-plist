@@ -1,6 +1,6 @@
-bin/ops2c
 bin/parrot
 bin/parrot-nqp
+bin/parrot-ops2c
 bin/parrot-prove
 bin/parrot_config
 bin/parrot_nci_thunk_gen
@@ -60,6 +60,7 @@ include/parrot/%%PARROT_VER%%/parrot/longopt.h
 include/parrot/%%PARROT_VER%%/parrot/memory.h
 include/parrot/%%PARROT_VER%%/parrot/misc.h
 include/parrot/%%PARROT_VER%%/parrot/multidispatch.h
+include/parrot/%%PARROT_VER%%/parrot/namealias.h
 include/parrot/%%PARROT_VER%%/parrot/namespace.h
 include/parrot/%%PARROT_VER%%/parrot/nci.h
 include/parrot/%%PARROT_VER%%/parrot/oo.h
@@ -111,7 +112,6 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_continuation.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_coroutine.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_default.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_env.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_eval.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_eventhandler.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_exception.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_exceptionhandler.h
@@ -577,13 +577,16 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util/Runloop.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Vtable.pm
 lib/parrot/%%PARROT_VER%%/tools/myconfig
-man/man1/ops2c.1.gz
 man/man1/parrot-nqp.1.gz
+man/man1/parrot-ops2c.1.gz
 man/man1/parrot-prove.1.gz
 man/man1/parrot.1.gz
 man/man1/parrot_config.1.gz
 man/man1/parrot_nci_thunk_gen.1.gz
 man/man1/parrotbug.1.gz
+man/man1/pbc_disassemble.1.gz
+man/man1/pbc_dump.1.gz
+man/man1/pbc_merge.1.gz
 man/man1/pbc_to_exe.1.gz
 man/man1/plumage.1.gz
 man/man1/winxed.1.gz
@@ -616,7 +619,6 @@ src/parrot/%%PARROT_VER%%/pmc/continuation.dump
 src/parrot/%%PARROT_VER%%/pmc/coroutine.dump
 src/parrot/%%PARROT_VER%%/pmc/default.dump
 src/parrot/%%PARROT_VER%%/pmc/env.dump
-src/parrot/%%PARROT_VER%%/pmc/eval.dump
 src/parrot/%%PARROT_VER%%/pmc/eventhandler.dump
 src/parrot/%%PARROT_VER%%/pmc/exception.dump
 src/parrot/%%PARROT_VER%%/pmc/exceptionhandler.dump
