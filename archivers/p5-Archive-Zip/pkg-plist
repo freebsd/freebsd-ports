@@ -1,8 +1,4 @@
 bin/crc32
-%%PERL5_MAN3%%/Archive::Zip.3.gz
-%%PERL5_MAN3%%/Archive::Zip::FAQ.3.gz
-%%PERL5_MAN3%%/Archive::Zip::MemberRead.3.gz
-%%PERL5_MAN3%%/Archive::Zip::Tree.3.gz
 %%SITE_PERL%%/Archive/Zip.pm
 %%SITE_PERL%%/Archive/Zip/Archive.pm
 %%SITE_PERL%%/Archive/Zip/BufferedFileHandle.pm
@@ -16,3 +12,7 @@ bin/crc32
 %%SITE_PERL%%/Archive/Zip/StringMember.pm
 %%SITE_PERL%%/Archive/Zip/Tree.pm
 %%SITE_PERL%%/Archive/Zip/ZipFileMember.pm
+%%PERL5_MAN3%%/Archive::Zip.3.gz
+%%PERL5_MAN3%%/Archive::Zip::FAQ.3.gz
+%%PERL5_MAN3%%/Archive::Zip::MemberRead.3.gz
+%%PERL5_MAN3%%/Archive::Zip::Tree.3.gz
