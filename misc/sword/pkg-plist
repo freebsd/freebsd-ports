@@ -14,9 +14,6 @@ bin/vpl2mod
 bin/vs2osisref
 bin/vs2osisreftxt
 bin/xml2gbs
-bin/imp2gbs
-bin/imp2ld
-bin/mod2zmod
 @sample etc/sword.conf.sample
 include/sword/canon.h
 include/sword/canon_abbrevs.h
@@ -85,6 +82,7 @@ include/sword/osismorphsegmentation.h
 include/sword/osisosis.h
 include/sword/osisplain.h
 include/sword/osisredletterwords.h
+include/sword/osisreferencelinks.h
 include/sword/osisrtf.h
 include/sword/osisscripref.h
 include/sword/osisstrongs.h
