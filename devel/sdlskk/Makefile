@@ -14,7 +14,6 @@ COMMENT=	SKK like library for input Japanese, based on SDL
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		iconv libtool
 USE_SDL=	image ttf sdl
 USE_LDCONFIG=   yes
@@ -30,6 +29,7 @@ PORTDOCS=	AUTHORS NEWS README README.ja
 OPTIONS_DEFINE= DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDLSKK.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
