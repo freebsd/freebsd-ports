@@ -2,7 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -47,7 +47,7 @@ CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
-		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX
+		XMPP GSM SQLITE3 CURL SRTP LUA PJSIP SPEEX
 
 OPTIONS_DEFINE_i386=	DAHDI
 OPTIONS_DEFINE_amd64=	DAHDI
@@ -105,7 +105,6 @@ SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
 EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 SRTP_CONFIGURE_WITH=	srtp
-SRTP_BUILD_DEPENDS=	libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
 LUA_CONFIGURE_WITH=	lua
 LUA_USES=		lua:51
 LUA_CFLAGS=		-I${LUA_INCDIR}
@@ -115,7 +114,7 @@ LDAP_USE=		OPENLDAP=yes
 PJSIP_LIB_DEPENDS=	libpj.so:${PORTSDIR}/net/pjsip
 PJSIP_CONFIGURE_WITH=	pjproject
 PJSIP_USES=		pkgconfig
-SPEEX_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_WITH=	speex
 
 ASTERISK_USER?=		asterisk
@@ -123,6 +122,12 @@ ASTERISK_GROUP?=	asterisk
 
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=		libsrtp.so:${PORTSDIR}/net/libsrtp
+.endif
 
 .include <bsd.port.pre.mk>
 
