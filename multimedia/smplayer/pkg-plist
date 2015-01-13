@@ -60,8 +60,3 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_vi_VN.qm
 %%DATADIR%%/translations/smplayer_zh_CN.qm
 %%DATADIR%%/translations/smplayer_zh_TW.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/shortcuts
-@dirrmtry %%DATADIR%%
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
