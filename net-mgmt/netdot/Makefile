@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdot
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netdot.uoregon.edu/pub/dists/
 
@@ -12,6 +12,7 @@ COMMENT=	Open source tool to organize and maintain network information
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+		mp2bug:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-Session>=1.6:${PORTSDIR}/www/p5-Apache-Session \
 		p5-Apache-AuthCookie>=0:${PORTSDIR}/www/p5-Apache-AuthCookie \
 		p5-Apache2-SiteControl>=1.0:${PORTSDIR}/www/p5-Apache2-SiteControl \
