@@ -7,49 +7,34 @@ PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
-OPTIONS_DEFINE=	OPENAL
-OPTIONS_DEFAULT=OPENAL
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake perl5
+USES=		autoreconf gmake perl5 tar:tgz
 USE_GL=		glut glu
 USE_XORG=	xmu xi x11
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-USE_AUTOTOOLS=	automake autoconf
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	OPENAL
+OPTIONS_DEFAULT=OPENAL
 
-.if ${PORT_OPTIONS:MOPENAL}
-USES+=			openal:alut
-CONFIGURE_ARGS+=	--enable-sound
-.else
-CONFIGURE_ARGS+=	--disable-sound
-.endif
+OPENAL_USES=	openal:alut
+OPENAL_CONFIGURE_ENABLE=	sound
 
 pre-patch:
-	@${REINPLACE_CMD} -i '' -e 's|^aclocal|${ACLOCAL}|' \
-			-e 's|^autoconf|${AUTOCONF}|' \
-			-e  's|^automake|${AUTOMAKE}|' \
-		${WRKSRC}/autogen.sh
 	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|' ${WRKSRC}/Makefile.am
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile.am
-
-pre-configure:
-	cd ${WRKSRC}; ${SH} autogen.sh
 
 .include <bsd.port.mk>
