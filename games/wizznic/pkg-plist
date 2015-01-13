@@ -207,29 +207,3 @@ share/pixmaps/wizznic.png
 %%DATADIR%%/packs/010_wizznic-silver/themes/starts/start7.png
 %%DATADIR%%/packs/010_wizznic-silver/themes/tiles/cyber-expl0.png
 %%DATADIR%%/packs/010_wizznic-silver/themes/tiles/cyber.png
-@dirrm %%DATADIR%%/packs/010_wizznic-silver/themes/tiles
-@dirrm %%DATADIR%%/packs/010_wizznic-silver/themes/starts
-@dirrm %%DATADIR%%/packs/010_wizznic-silver/themes/boards
-@dirrm %%DATADIR%%/packs/010_wizznic-silver/themes
-@dirrm %%DATADIR%%/packs/010_wizznic-silver/levels
-@dirrm %%DATADIR%%/packs/010_wizznic-silver
-@dirrm %%DATADIR%%/packs/001_wizznic/levels
-@dirrm %%DATADIR%%/packs/001_wizznic
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/thor/tiles
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/thor/bg
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/thor
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/oldskool/tiles
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/oldskool/snd
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/oldskool/boards
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/oldskool
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/cursors
-@dirrm %%DATADIR%%/packs/000_wizznic/themes/chars
-@dirrm %%DATADIR%%/packs/000_wizznic/themes
-@dirrm %%DATADIR%%/packs/000_wizznic/music
-@dirrm %%DATADIR%%/packs/000_wizznic/levels
-@dirrm %%DATADIR%%/packs/000_wizznic
-@dirrm %%DATADIR%%/packs
-@dirrm %%DATADIR%%/data/snd
-@dirrm %%DATADIR%%/data/menu
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
