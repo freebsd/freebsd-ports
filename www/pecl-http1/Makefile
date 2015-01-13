@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	2.1.4
+PORTVERSION=	1.7.6
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	1
+DISTNAME=	pecl_http-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended HTTP Support
@@ -14,16 +15,14 @@ COMMENT=	Extended HTTP Support
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:${PORTSDIR}/devel/pecl-raphf \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:${PORTSDIR}/devel/pecl-propro
-RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:${PORTSDIR}/devel/pecl-raphf \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:${PORTSDIR}/devel/pecl-propro
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-CONFLICTS=	pecl-http-1*
+PHP_MODNAME=	http
+IGNORE_WITH_PHP=	56
+CONFLICTS=	pecl-http-2*
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \
