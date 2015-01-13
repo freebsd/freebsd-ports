@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	parrot
-PORTVERSION=	${PARROT_VERSION}
-PORTREVISION=	1
+PORTVERSION=	6.9.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/ \
+		ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
@@ -17,8 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libicudata.so:${PORTSDIR}/devel/icu
-
-CONFLICTS=	rakudo-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,15 +37,12 @@ USES=		bison gmake perl5 tar:bzip2
 
 PARROT_SHARE_DIR=	share/doc/${PORTNAME}/${PORTVERSION}
 PARROT_DOCS=		${PARROT_SHARE_DIR}
-PLIST_SUB+=	PARROT_VER="${PORTVERSION}" \
+PLIST_SUB=	PARROT_VER="${PORTVERSION}" \
 		PARROT_DOCS="${PARROT_DOCS}"
 
-.include "${.CURDIR}/Makefile.common"
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	Does not compile on ia64
 
-.if ${ARCH} == ia64
-BROKEN=		Does not compile on ia64
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ${PORT_OPTIONS:MDOCS}
@@ -56,7 +52,10 @@ post-patch:
 do-configure:
 	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libparrot.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/parrot/${PORTVERSION}/dynext/*.so
+
 regression-test test: build
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
