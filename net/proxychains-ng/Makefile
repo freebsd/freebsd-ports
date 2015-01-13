@@ -14,9 +14,6 @@ LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-ALL_TARGET=	all
-INSTALL_TARGET=	install
 USE_LDCONFIG=	yes
 
 CONFLICTS=	proxychains-[0-9]*
@@ -40,5 +37,8 @@ post-install:
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/proxychains
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libproxychains-4.so
 
 .include <bsd.port.mk>
