@@ -3442,6 +3442,7 @@
     SUBDIR += pecl-parsekit
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
+    SUBDIR += pecl-raphf
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
