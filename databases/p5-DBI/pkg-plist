@@ -50,8 +50,8 @@ bin/dbiproxy
 %%SITE_ARCH%%/DBI/ProxyServer.pm
 %%SITE_ARCH%%/DBI/PurePerl.pm
 %%SITE_ARCH%%/DBI/SQL/Nano.pm
-%%SITE_ARCH%%/DBI/Util/_accessor.pm
 %%SITE_ARCH%%/DBI/Util/CacheMemory.pm
+%%SITE_ARCH%%/DBI/Util/_accessor.pm
 %%SITE_ARCH%%/DBI/W32ODBC.pm
 %%SITE_ARCH%%/Win32/DBIODBC.pm
 %%SITE_ARCH%%/auto/DBI/DBI.so
