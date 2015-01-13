@@ -22,7 +22,7 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	http
 IGNORE_WITH_PHP=	56
-CONFLICTS=	pecl-http-2*
+CONFLICTS=	pecl-http-*
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \
