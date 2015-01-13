@@ -3440,6 +3440,7 @@
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
+    SUBDIR += pecl-propro
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
