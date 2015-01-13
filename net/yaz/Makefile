@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.7.2
+PORTVERSION=	5.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -45,6 +45,6 @@ post-configure:
 		${WRKSRC}/doc/Makefile
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 
 .include <bsd.port.mk>
