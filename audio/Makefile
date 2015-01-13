@@ -51,6 +51,7 @@
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += beets
+    SUBDIR += bcg729
     SUBDIR += blop
     SUBDIR += boodler
     SUBDIR += bristol
