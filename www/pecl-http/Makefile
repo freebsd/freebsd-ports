@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-CONFLICTS=	pecl-http-1*
+CONFLICTS=	pecl-http1-*
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \
