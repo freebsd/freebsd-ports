@@ -51,7 +51,3 @@ share/pixmaps/twind.png
 %%DATADIR%%/sound/menu_option.wav
 %%DATADIR%%/sound/option_choice.wav
 %%DATADIR%%/sound/wrong_move.wav
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%
