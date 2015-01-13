@@ -23,7 +23,7 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 USES=		gettext pkgconfig python:build
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtk30 gnomeprefix gtkhtml4 intlhack libgsf
+USE_GNOME=	gnomeprefix gtkhtml4 intlhack gtk30 gconf2 libgsf
 
 OPTIONS_DEFINE=	DOCS
 
