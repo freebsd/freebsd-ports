@@ -4,9 +4,9 @@
 PORTNAME=	data
 PORTVERSION=	20100630
 CATEGORIES=	games
-MASTER_SITES=	SF/vdrift/vdrift/vdrift-${DATE_VERSION}
+MASTER_SITES=	SF/vdrift/vdrift/vdrift-${DATA_VERSION}
 PKGNAMEPREFIX=	vdrift-
-DISTNAME=	${PKGNAMEPREFIX}${DATE_VERSION}
+DISTNAME=	${PKGNAMEPREFIX}${DATA_VERSION}
 DIST_SUBDIR=	vdrift
 
 MAINTAINER=	acm@FreeBSD.org
@@ -14,27 +14,31 @@ COMMENT=	Vdrift driving simulation data files
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${DATE_VERSION}
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${DATA_VERSION}
 
-DATE_VERSION=	2010-06-30
+DATA_VERSION=	2010-06-30
+
+PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/carparts/engine \
+		%%DATADIR%%/carparts/exhaust \
+		%%DATADIR%%/carparts/other \
+		%%DATADIR%%/carparts/suspension \
+		%%DATADIR%%/carparts/transmission \
+		%%DATADIR%%/carparts/turbo \
+		%%DATADIR%%/lists/fontinfo \
+		%%DATADIR%%/settings/replays \
+		%%DATADIR%%/settings/screenshots
 
 post-extract:
 	@cd ${WRKSRC}/data && \
-		${FIND} * -name "SConscript*" -print0 | ${XARGS} -0 ${RM}
+		${FIND} * -name "SConscript*" -delete
 .for DIRE in music
 	@${RMDIR} ${WRKSRC}/data/${DIRE}
 .endfor
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
