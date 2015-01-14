@@ -84,8 +84,8 @@ post-install:
 		existing=`${STAT} -qf '%z' \
 			${STAGEDIR}${DATADIR}/textures/$$f || \
 			${ECHO_CMD} 0` ; \
-		${TEST} $$new -gt $$existing && \
-			${ECHO_CMD} "-- Replacing texture: $$f\
+		${TEST} $$new -gt $$existing || continue ; \
+		${ECHO_CMD} "-- Replacing texture: $$f\
 			(has larger file size or missing)" ; \
 		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/textures ; \
 	done)
