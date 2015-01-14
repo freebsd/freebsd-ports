@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2014-12-09 22:33:50.000000000 +0100
++++ CMakeLists.txt	2015-01-02 15:27:40.696351276 +0100
+@@ -135,7 +135,7 @@
+ 
+ install(
+     FILES ${CMAKE_BINARY_DIR}/${waffle_libname}.pc
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
++    DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig
+     COMPONENT pkgconfig
+     )
+ 

@@ -1,0 +1,13 @@
+diff --git examples/CMakeLists.txt examples/CMakeLists.txt
+index 48147f9..d6d1b5a 100644
+--- examples/CMakeLists.txt
++++ examples/CMakeLists.txt
+@@ -7,7 +7,7 @@ install(FILES Makefile.example
+ # Target: simple-x11-egl (executable)
+ # ----------------------------------------------------------------------------
+ 
+-if(waffle_on_linux)
++if(waffle_on_linux OR waffle_on_freebsd)
+     add_executable(simple-x11-egl simple-x11-egl.c)
+     target_link_libraries(simple-x11-egl ${waffle_libname})
+ endif()
