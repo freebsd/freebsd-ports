@@ -45,7 +45,7 @@ PLIST_SUB+=	MORE_STARS="@comment "
 
 .if ${PORT_OPTIONS:MHR_TEXTURES}
 MASTER_SITES+=	SF/${PORTNAME}/textures:gfx
-DISTFILES+=	textures-1K.zip:gfx milkyway.zip:gfx	# yes, in this order
+DISTFILES+=	textures-1K.zip:gfx
 PLIST_SUB+=	TEXTURES=""
 .else
 PLIST_SUB+=	TEXTURES="@comment "
@@ -79,7 +79,18 @@ post-install:
 		${STAGEDIR}${DATADIR}/stars/default
 .endif
 .if ${PORT_OPTIONS:MHR_TEXTURES}
-	${INSTALL_DATA} ${WRKDIR}/*.png ${STAGEDIR}${DATADIR}/textures
+	(cd ${WRKDIR} && for f in *.png; do \
+		new=`${STAT} -f '%z' $$f` ; \
+		existing=`${STAT} -qf '%z' \
+			${STAGEDIR}${DATADIR}/textures/$$f || \
+			${ECHO_CMD} 0` ; \
+		${TEST} $$new -gt $$existing && \
+			${ECHO_CMD} "-- Replacing texture: $$f\
+			(has larger file size or missing)" ; \
+		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/textures ; \
+	done)
+	@${REINPLACE_CMD} -e '1410s|nomap|vesta|' \
+		${STAGEDIR}${DATADIR}/data/ssystem.ini
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
