@@ -1,2 +1,6 @@
 SHA256 (hevea-2.21.tar.gz) = f9ec0ea0a41eab0c0e10815d79dbc5840823e50e56d5027b4ca547036a09d152
 SIZE (hevea-2.21.tar.gz) = 408047
+SHA256 (hevea-2.21-manual.pdf) = d9c3e9a7a3d0300fc2f0504557ef6c014bf254d25b8419a5aa85010d86e898ff
+SIZE (hevea-2.21-manual.pdf) = 642640
+SHA256 (hevea-2.21-manual.tar.gz) = 7755b155002ec8f03e063f6b952656bb7c0a6c5b8bc29cee0d7a15ae960a7864
+SIZE (hevea-2.21-manual.tar.gz) = 497856
