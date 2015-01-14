@@ -22,6 +22,7 @@
     SUBDIR += arirang
     SUBDIR += arm
     SUBDIR += arpCounterattack
+    SUBDIR += asignify
     SUBDIR += authforce
     SUBDIR += autossh
     SUBDIR += avcheck

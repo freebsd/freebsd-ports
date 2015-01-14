@@ -1,0 +1,7 @@
+bin/asignify
+include/asignify.h
+lib/libasignify.a
+lib/libasignify.so
+lib/libasignify.so.1
+lib/libasignify.so.1.0.0
+man/man1/asignify.1.gz
