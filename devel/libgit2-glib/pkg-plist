@@ -5,6 +5,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cherry-pick-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
@@ -31,6 +32,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-native.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-note.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
