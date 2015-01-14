@@ -279,3 +279,5 @@ lib/libespeak.so.1.1.47
 %%DATADIR%%/espeak-data/voices/test/ur
 %%DATADIR%%/espeak-data/zh_dict
 %%DATADIR%%/espeak-data/zhy_dict
+@dir %%DATADIR%%/espeak-data/mbrola
+@dir %%DATADIR%%/espeak-data/soundicons
