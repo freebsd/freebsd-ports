@@ -3,7 +3,7 @@
 
 PORTNAME=	jamvm
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JamVM%20${PORTVERSION}
 
@@ -14,33 +14,34 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-classpath-install-dir=${LOCALBASE}
-USES=		gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
+OPTIONS_SUB=	yes
+USES=		compiler gmake libtool pkgconfig
 
 OPTIONS_DEFINE=	FFI ZIP
 OPTIONS_DEFAULT=FFI ZIP
 FFI_DESC=	use libffi to call native methods
 ZIP_DESC=	turn-on zip support in the bootstrap loader
 
+FFI_CONFIGURE_ENABLE=	ffi
+FFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+ZIP_BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+ZIP_CONFIGURE_ENABLE=	zip
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFFI}
-LIB_DEPENDS+=		libffi.so:${PORTSDIR}/devel/libffi
-CONFIGURE_ARGS+=	--enable-ffi
-.elif ${ARCH} == "sparc64"
+.if empty(PORT_OPTIONS:MFFI) && ${ARCH} == "sparc64"
 IGNORE=		for ${ARCH} requires libffi
 .endif
 
-.if ${PORT_OPTIONS:MZIP}
-BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
-PLIST_SUB+=		WITH_ZIP="" WITHOUT_ZIP="@comment "
-.else
-CONFIGURE_ARGS+=	--disable-zip
-PLIST_SUB+=		WITH_ZIP="@comment " WITHOUT_ZIP=""
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CONFIGURE_ARGS+=	--disable-int-inlining
 .endif
 
 post-extract:
 	@${REINPLACE_CMD} -e "s,\(^include_HEADERS = .*\)jni.h\(.*\),\1\2," ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
