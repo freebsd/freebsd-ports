@@ -24,10 +24,10 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS HR_TEXTURES MULTIMEDIA SCRIPTING DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING HR_TEXTURES
+OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA SCRIPTING DOCS
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TEXTURES
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
-HR_TEXTURES_DESC=	Install high-resolution textures
+TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support (via Phonon)
 SCRIPTING_DESC=		Scripting support
 
@@ -45,7 +45,7 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MHR_TEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES}
 MASTER_SITES+=	SF/${PORTNAME}/textures:gfx
 DISTFILES+=	textures-1K.zip:gfx
 PLIST_SUB+=	TEXTURES=""
@@ -81,7 +81,7 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
 .endif
-.if ${PORT_OPTIONS:MHR_TEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES}
 	(cd ${WRKDIR} && for f in *.png; do \
 		new=`${STAT} -f '%z' $$f` ; \
 		existing=`${STAT} -qf '%z' \
