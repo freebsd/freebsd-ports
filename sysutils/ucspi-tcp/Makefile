@@ -47,16 +47,11 @@ SCRIPTS=	date@ \
 		who@ \
 		tcpcat
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # SSL and LIMITS can't coexist
 .if ${PORT_OPTIONS:MSSL} && ${PORT_OPTIONS:MLIMITS}
 BROKEN=	SSL and LIMITS options cannot coexist, please choose one of them
-.endif
-
-# Restrict optimization to -O - -O2 causes problems at least on amd64
-.if ${ARCH} == "amd64"
-CFLAGS+=	-O
 .endif
 
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:man \
@@ -74,8 +69,7 @@ PATCHFILES+=	ucspi-rss.diff:rss
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 PATCH_SITES+=	http://www.nrg4u.com/qmail/:ssl
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz:ssl
 .endif
@@ -107,12 +101,19 @@ PATCHFILES+=	ucspi-tcp-0.88-ipv6.diff19.bz2:ipv6
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
 PATCH_SITE_SUBDIR+=	garga/ucspi-tcp/:rss,ssl,rbl2smtpd
 
+.include <bsd.port.pre.mk>
+
+# Restrict optimization to -O - -O2 causes problems at least on amd64
+.if ${ARCH} == "amd64"
+CFLAGS+=	-O
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/^extern int errno;/#include <errno.h>/' \
 		${WRKSRC}/error.h
 .if ${PORT_OPTIONS:MSSL}
-	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \
-			      s|-lcrypto|-L${OPENSSLBASE}/lib |g' \
+	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLINC}|g; \
+			      /^LIBS=/s|-lcrypto|-L${OPENSSLLIB} &|g' \
 		${WRKSRC}/Makefile
 .endif
 
@@ -123,10 +124,10 @@ post-configure:
 
 do-install:
 .for file_name in ${PROGRAMS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file_name} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file_name} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file_name in ${SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file_name} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file_name} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file_name in ${MAN_FILES}
 	${INSTALL_MAN} ${WRKSRC}-man/${file_name} ${STAGEDIR}${MAN1PREFIX}/man/man1/
