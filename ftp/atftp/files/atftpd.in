@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: atftpd
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: NETWORKING
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -25,7 +24,7 @@ logfile=/var/log/${name}.log
 load_rc_config $name
 
 [ -z "$atftpd_enable" ]	&& atftpd_enable="NO"
-[ -z "$atftpd_flags" ]	&& atftpd_flags="--daemon --verbose=5 --pidfile ${pidfile} --logfile ${logfile} /tftpboot"
+[ -z "$atftpd_flags" ]	&& atftpd_flags="--daemon --verbose=5 --pidfile ${pidfile} --logfile ${logfile} %%PREFIX%%/tftp"
 
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
