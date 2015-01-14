@@ -35,6 +35,8 @@ ZIP_CONFIGURE_ENABLE=	zip
 IGNORE=		for ${ARCH} requires libffi
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${COMPILER_TYPE} == clang
 CONFIGURE_ARGS+=	--disable-int-inlining
 .endif
@@ -42,4 +44,4 @@ CONFIGURE_ARGS+=	--disable-int-inlining
 post-extract:
 	@${REINPLACE_CMD} -e "s,\(^include_HEADERS = .*\)jni.h\(.*\),\1\2," ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
