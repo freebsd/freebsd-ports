@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a8a74d1-9c34-11e4-a40b-5453ed2e2b49">
+    <topic>kde-runtime -- incorrect CBC encryption handling</topic>
+    <affects>
+      <package>
+	<name>kde-runtime</name>
+	<range><lt>4.12_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Valentin Rusu reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20150109-1.txt">
+	  <p>Until KDE Applications 14.12.0, kwalletd incorrectly handled CBC
+	    encryption blocks when encrypting secrets in kwl files. The secrets
+	    were still encrypted, but the result binary data corresponded to an
+	    ECB encrypted block instead of CBC.</p>
+	  <p>The ECB encryption algorithm, even if it'll scramble user data,
+	    will produce same encrypted byte sequence for the same input text.
+	    As a result, attackers may eventually find-out the encrypted
+	    text.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-7252</cvename>
+      <url>https://www.kde.org/info/security/advisory-20150109-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-01-09</discovery>
+      <entry>2015-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd62c640-9bb9-11e4-a5ad-000c297fb80f">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
