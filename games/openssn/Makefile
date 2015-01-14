@@ -11,6 +11,7 @@ MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Modern submarine simulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_SDL=	sdl gfx image mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
@@ -20,5 +21,8 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e '/cp|mkdir/s,\$$\(PREFIX\)|\$$\(DATADIR\),$$(DESTDIR)&,' \
 		-e 's,share/man/man6,man/man6,' ${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
