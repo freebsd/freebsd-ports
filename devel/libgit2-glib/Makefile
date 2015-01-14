@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/devel/libgit2-glib/Makefile 19962 2014-10-15 14:57:24Z gusi $
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.0.20
-PORTREVISION=	1
+PORTVERSION=	0.0.24
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,7 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
 
-BROKEN=		Fails to build
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
 		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
