@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTVERSION=	0.12.5
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
+PKGNAMESUFFIX=	-qt4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat\:stars?}
-PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	${PORTNAME}-0.13.*
+PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 
 USES=		cmake gettext iconv
 USE_QT4=	moc_build rcc_build uic_build qmake_build \
@@ -23,7 +25,7 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=		MORE_STARS HR_TEXTURES MULTIMEDIA SCRIPTING DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING HR_TEXTURES
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 HR_TEXTURES_DESC=	Install high-resolution textures
 MULTIMEDIA_DESC=	Sound and video support (via Phonon)
@@ -66,7 +68,8 @@ PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|std::free|::free|' \
+		${WRKSRC}/src/core/renderer/StelQGLInterleavedArrayVertexBufferBackend.cpp
 # Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
 # that does not handle FontChange)
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
