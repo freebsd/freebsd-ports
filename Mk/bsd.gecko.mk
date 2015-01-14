@@ -91,6 +91,10 @@ CPE_VENDOR?=mozilla
 USE_PERL5=	build
 USE_XORG=	xext xrender xt
 
+.if ${MOZILLA} != "libxul"
+BUNDLE_LIBS=	yes
+.endif
+
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
@@ -126,7 +130,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
-.if ${OSVERSION} < 1000012
+.if ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
 MOZ_OPTIONS+=	--enable-jemalloc
 .endif
 
@@ -316,15 +320,6 @@ USE_GNOME+=		libgnomeui:build
 MOZ_OPTIONS+=	--enable-gnomeui
 .else
 MOZ_OPTIONS+=	--disable-gnomeui
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEVFS2}
-BUILD_DEPENDS+=	${gnomevfs2_DETECT}:${gnomevfs2_LIB_DEPENDS:C/.*://}
-USE_GNOME+=		gnomevfs2:build
-MOZ_OPTIONS+=	--enable-gnomevfs
-MOZ_OPTIONS:=	${MOZ_OPTIONS:C/(extensions)=(.*)/\1=\2,gnomevfs/}
-.else
-MOZ_OPTIONS+=	--disable-gnomevfs
 .endif
 
 .if ${PORT_OPTIONS:MLIBPROXY}
@@ -534,10 +529,9 @@ gecko-post-patch:
 	@if [ -f ${WRKSRC}/config/baseconfig.mk ] ; then \
 		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 			${WRKSRC}/config/baseconfig.mk; \
-	else \
-		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
-			${WRKSRC}/config/autoconf.mk.in; \
 	fi
+	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
+			${MOZSRC}/config/baseconfig.mk
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${MOZSRC}/build/unix/run-mozilla.sh
