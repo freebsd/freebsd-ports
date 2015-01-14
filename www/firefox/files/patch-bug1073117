@@ -1,0 +1,245 @@
+diff --git widget/gtk/gtk3drawing.c widget/gtk/gtk3drawing.c
+index e9e21b1..750140c 100644
+--- widget/gtk/gtk3drawing.c
++++ widget/gtk/gtk3drawing.c
+@@ -64,6 +64,7 @@ static GtkWidget* gScrolledWindowWidget;
+ 
+ static style_prop_t style_prop_func;
+ static gboolean have_arrow_scaling;
++static gboolean checkbox_check_state;
+ static gboolean is_initialized;
+ 
+ #define ARROW_UP      0
+@@ -71,6 +72,10 @@ static gboolean is_initialized;
+ #define ARROW_RIGHT   G_PI_2
+ #define ARROW_LEFT    (G_PI+G_PI_2)
+ 
++#if !GTK_CHECK_VERSION(3,14,0)
++#define GTK_STATE_FLAG_CHECKED (1 << 11)
++#endif
++
+ static GtkStateFlags
+ GetStateFlagsFromGtkWidgetState(GtkWidgetState* state)
+ {
+@@ -714,6 +719,11 @@ moz_gtk_init()
+     is_initialized = TRUE;
+     have_arrow_scaling = (gtk_major_version > 2 ||
+                           (gtk_major_version == 2 && gtk_minor_version >= 12));
++    if (gtk_major_version > 3 ||
++       (gtk_major_version == 3 && gtk_minor_version >= 14))
++        checkbox_check_state = GTK_STATE_FLAG_CHECKED;
++    else
++        checkbox_check_state = GTK_STATE_FLAG_ACTIVE;
+ 
+     /* Add style property to GtkEntry.
+      * Adding the style property to the normal GtkEntry class means that it
+@@ -1004,10 +1014,10 @@ moz_gtk_toggle_paint(cairo_t *cr, GdkRectangle* rect,
+     gtk_widget_set_sensitive(w, !state->disabled);
+     gtk_widget_set_direction(w, direction);
+     gtk_style_context_save(style);
+-      
++
+     if (isradio) {
+         gtk_style_context_add_class(style, GTK_STYLE_CLASS_RADIO);
+-        gtk_style_context_set_state(style, selected ? GTK_STATE_FLAG_ACTIVE :
++        gtk_style_context_set_state(style, selected ? checkbox_check_state :
+                                                       GTK_STATE_FLAG_NORMAL);
+         gtk_render_option(style, cr, x, y, width, height);
+         if (state->focused) {
+@@ -1025,7 +1035,7 @@ moz_gtk_toggle_paint(cairo_t *cr, GdkRectangle* rect,
+             gtk_style_context_set_state(style, GTK_STATE_FLAG_INCONSISTENT);
+             gtk_toggle_button_set_inconsistent(GTK_TOGGLE_BUTTON(gCheckboxWidget), TRUE);
+         } else if (selected) {
+-            gtk_style_context_set_state(style, GTK_STATE_FLAG_ACTIVE);
++            gtk_style_context_set_state(style, checkbox_check_state);
+         } else {
+             gtk_toggle_button_set_inconsistent(GTK_TOGGLE_BUTTON(gCheckboxWidget), FALSE);
+         }
+@@ -2588,8 +2598,9 @@ moz_gtk_check_menu_item_paint(cairo_t *cr, GdkRectangle* rect,
+       gtk_style_context_add_class(style, GTK_STYLE_CLASS_CHECK);
+     }
+ 
+-    if (checked)
+-      state_flags |= GTK_STATE_FLAG_ACTIVE;
++    if (checked) {
++      state_flags |= checkbox_check_state;
++    }
+     
+     gtk_style_context_set_state(style, state_flags);
+     gtk_style_context_get_padding(style, state_flags, &padding);
+diff --git widget/gtk/nsLookAndFeel.cpp widget/gtk/nsLookAndFeel.cpp
+index 3562cf2..ea4cc0e 100644
+--- widget/gtk/nsLookAndFeel.cpp
++++ widget/gtk/nsLookAndFeel.cpp
+@@ -38,7 +38,6 @@ nsLookAndFeel::nsLookAndFeel()
+       mStyle(nullptr),
+ #else
+       mBackgroundStyle(nullptr),
+-      mViewStyle(nullptr),
+       mButtonStyle(nullptr),
+ #endif
+       mDefaultFontCached(false), mButtonFontCached(false),
+@@ -53,7 +52,6 @@ nsLookAndFeel::~nsLookAndFeel()
+     g_object_unref(mStyle);
+ #else
+     g_object_unref(mBackgroundStyle);
+-    g_object_unref(mViewStyle);
+     g_object_unref(mButtonStyle);
+ #endif
+ }
+@@ -114,13 +112,19 @@ nsLookAndFeel::NativeGetColor(ColorID aID, nscolor& aColor)
+     case eColorID_IMESelectedRawTextBackground:
+     case eColorID_IMESelectedConvertedTextBackground:
+     case eColorID__moz_dragtargetzone:
+-        aColor = sMozWindowSelectedBackground;
++    case eColorID__moz_cellhighlight:
++    case eColorID__moz_html_cellhighlight:
++    case eColorID_highlight: // preference selected item,
++        aColor = sTextSelectedBackground;
+         break;
+     case eColorID_WidgetSelectForeground:
+     case eColorID_TextSelectForeground:
+     case eColorID_IMESelectedRawTextForeground:
+     case eColorID_IMESelectedConvertedTextForeground:
+-        aColor = sMozWindowSelectedText;
++    case eColorID_highlighttext:
++    case eColorID__moz_cellhighlighttext:
++    case eColorID__moz_html_cellhighlighttext:
++        aColor = sTextSelectedText;
+         break;
+ #endif
+     case eColorID_Widget3DHighlight:
+@@ -238,19 +242,6 @@ nsLookAndFeel::NativeGetColor(ColorID aID, nscolor& aColor)
+                                     GTK_STATE_FLAG_INSENSITIVE, &gdk_color);
+         aColor = GDK_RGBA_TO_NS_RGBA(gdk_color);
+         break;
+-    case eColorID_highlight: // preference selected item,
+-        // background of selected item
+-        gtk_style_context_get_background_color(mViewStyle, 
+-                                               GTK_STATE_FLAG_SELECTED, 
+-                                               &gdk_color);
+-        aColor = GDK_RGBA_TO_NS_RGBA(gdk_color);
+-        break;
+-    case eColorID_highlighttext:
+-        // text of selected item
+-        gtk_style_context_get_color(mViewStyle, 
+-                                    GTK_STATE_FLAG_SELECTED, &gdk_color);
+-        aColor = GDK_RGBA_TO_NS_RGBA(gdk_color);
+-        break;
+     case eColorID_inactivecaption:
+         // inactive window caption
+         gtk_style_context_get_background_color(mBackgroundStyle, 
+@@ -393,19 +384,6 @@ nsLookAndFeel::NativeGetColor(ColorID aID, nscolor& aColor)
+     case eColorID__moz_buttonhovertext:
+         aColor = sButtonHoverText;
+         break;
+-    case eColorID__moz_cellhighlight:
+-    case eColorID__moz_html_cellhighlight:
+-        gtk_style_context_get_background_color(mViewStyle, 
+-                                               GTK_STATE_FLAG_SELECTED, 
+-                                               &gdk_color);
+-        aColor = GDK_RGBA_TO_NS_RGBA(gdk_color);
+-        break;
+-    case eColorID__moz_cellhighlighttext:
+-    case eColorID__moz_html_cellhighlighttext:
+-        gtk_style_context_get_color(mViewStyle, 
+-                                    GTK_STATE_FLAG_SELECTED, &gdk_color);
+-        aColor = GDK_RGBA_TO_NS_RGBA(gdk_color);
+-        break;
+ #endif
+     case eColorID__moz_menuhover:
+         aColor = sMenuHover;
+@@ -967,7 +945,7 @@ nsLookAndFeel::Init()
+     GtkStyleContext *style;
+ 
+     // Gtk manages a screen's CSS in the settings object so we
+-    // ask Gtk to create it explicitly. Otherwise we may end up 
++    // ask Gtk to create it explicitly. Otherwise we may end up
+     // with wrong color theme, see Bug 972382
+     (void)gtk_settings_get_for_screen(gdk_screen_get_default());
+ 
+@@ -977,9 +955,6 @@ nsLookAndFeel::Init()
+     mBackgroundStyle = create_context(path);
+     gtk_style_context_add_class(mBackgroundStyle, GTK_STYLE_CLASS_BACKGROUND);
+ 
+-    mViewStyle = create_context(path);
+-    gtk_style_context_add_class(mViewStyle, GTK_STYLE_CLASS_VIEW);
+-
+     mButtonStyle = create_context(path);
+     gtk_style_context_add_class(mButtonStyle, GTK_STYLE_CLASS_BUTTON); 
+ 
+@@ -992,11 +967,24 @@ nsLookAndFeel::Init()
+     g_object_unref(style);
+ 
+     // Text colors
+-    gtk_style_context_get_background_color(mViewStyle, GTK_STATE_FLAG_NORMAL, &color);
++    style = create_context(path);
++    gtk_style_context_add_class(style, GTK_STYLE_CLASS_VIEW);
++    gtk_style_context_get_background_color(style, GTK_STATE_FLAG_NORMAL, &color);
+     sMozFieldBackground = GDK_RGBA_TO_NS_RGBA(color);
+-    gtk_style_context_get_color(mViewStyle, GTK_STATE_FLAG_NORMAL, &color);
++    gtk_style_context_get_color(style, GTK_STATE_FLAG_NORMAL, &color);
+     sMozFieldText = GDK_RGBA_TO_NS_RGBA(color);
+ 
++    // Selected text and background
++    gtk_style_context_get_background_color(style,
++        static_cast<GtkStateFlags>(GTK_STATE_FLAG_FOCUSED|GTK_STATE_FLAG_SELECTED),
++        &color);
++    sTextSelectedBackground = GDK_RGBA_TO_NS_RGBA(color);
++    gtk_style_context_get_color(style,
++        static_cast<GtkStateFlags>(GTK_STATE_FLAG_FOCUSED|GTK_STATE_FLAG_SELECTED),
++        &color);
++    sTextSelectedText = GDK_RGBA_TO_NS_RGBA(color);
++    g_object_unref(style);
++
+     // Window colors
+     style = create_context(path);
+     gtk_style_context_save(style);
+@@ -1005,12 +993,6 @@ nsLookAndFeel::Init()
+     sMozWindowBackground = GDK_RGBA_TO_NS_RGBA(color);
+     gtk_style_context_get_color(style, GTK_STATE_FLAG_NORMAL, &color);
+     sMozWindowText = GDK_RGBA_TO_NS_RGBA(color);
+-
+-    // Selected text and background
+-    gtk_style_context_get_background_color(style, GTK_STATE_FLAG_SELECTED, &color);
+-    sMozWindowSelectedBackground = GDK_RGBA_TO_NS_RGBA(color);
+-    gtk_style_context_get_color(style, GTK_STATE_FLAG_SELECTED, &color);
+-    sMozWindowSelectedText = GDK_RGBA_TO_NS_RGBA(color);
+     gtk_style_context_restore(style);
+ 
+     // tooltip foreground and background
+@@ -1256,11 +1238,9 @@ nsLookAndFeel::RefreshImpl()
+     mStyle = nullptr;
+ #else
+     g_object_unref(mBackgroundStyle);
+-    g_object_unref(mViewStyle);
+     g_object_unref(mButtonStyle);
+ 
+     mBackgroundStyle = nullptr;
+-    mViewStyle = nullptr;
+     mButtonStyle = nullptr;
+ #endif
+ 
+diff --git widget/gtk/nsLookAndFeel.h widget/gtk/nsLookAndFeel.h
+index aabbca6..7686cca 100644
+--- widget/gtk/nsLookAndFeel.h
++++ widget/gtk/nsLookAndFeel.h
+@@ -35,7 +35,6 @@ protected:
+     struct _GtkStyle *mStyle;
+ #else
+     struct _GtkStyleContext *mBackgroundStyle;
+-    struct _GtkStyleContext *mViewStyle;
+     struct _GtkStyleContext *mButtonStyle;
+ #endif
+ 
+@@ -75,8 +74,8 @@ protected:
+     nscolor sMozFieldBackground;
+     nscolor sMozWindowText;
+     nscolor sMozWindowBackground;
+-    nscolor sMozWindowSelectedText;
+-    nscolor sMozWindowSelectedBackground;
++    nscolor sTextSelectedText;
++    nscolor sTextSelectedBackground;
+     nscolor sMozScrollbar;
+     char16_t sInvisibleCharacter;
+     float   sCaretRatio;
