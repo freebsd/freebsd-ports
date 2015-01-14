@@ -7,7 +7,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat\:stars?}
+EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
