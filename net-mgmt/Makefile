@@ -296,6 +296,7 @@
     SUBDIR += spectools
     SUBDIR += ssgless
     SUBDIR += statsd
+    SUBDIR += statsite
     SUBDIR += subcalc
     SUBDIR += sx
     SUBDIR += sysmon
