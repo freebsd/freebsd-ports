@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	UML-Class-Simple
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Render simple UML class diagrams, by loading the code
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Inspector>=1.16:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
@@ -23,8 +25,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

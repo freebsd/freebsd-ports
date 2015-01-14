@@ -28,6 +28,7 @@
 %%WWWDIR%%/etc/default_data
 %%WWWDIR%%/etc/netdot.cron
 %%WWWDIR%%/etc/netdot.meta
+%%WWWDIR%%/etc/netdot_apache24_local.conf
 %%WWWDIR%%/etc/netdot_apache2_ldap.conf
 %%WWWDIR%%/etc/netdot_apache2_local.conf
 %%WWWDIR%%/etc/netdot_apache2_radius.conf
@@ -202,6 +203,7 @@
 %%WWWDIR%%/htdocs/rest/host
 %%WWWDIR%%/htdocs/rest/host_contacts
 %%WWWDIR%%/htdocs/rest/index.html
+%%WWWDIR%%/htdocs/rest/updatedev
 %%WWWDIR%%/htdocs/user_help/autohandler
 %%WWWDIR%%/htdocs/user_help/dhandler
 %%WWWDIR%%/htdocs/user_help/hosts.html
@@ -319,58 +321,58 @@
 %%WWWDIR%%/upgrade/updatedb
 %%WWWDIR%%/upgrade/upgrade-tasks
 %%WWWDIR%%/var/pollstats.rrd
-@dirrmtry %%WWWDIR%%/bin
-@dirrmtry %%WWWDIR%%/doc/manual
-@dirrmtry %%WWWDIR%%/doc
-@dirrmtry %%WWWDIR%%/htdocs/cable_plant
-@dirrmtry %%WWWDIR%%/htdocs/css
-@dirrmtry %%WWWDIR%%/htdocs/generic
-@dirrmtry %%WWWDIR%%/htdocs/help
-@dirrmtry %%WWWDIR%%/htdocs/img/graphs
-@dirrmtry %%WWWDIR%%/htdocs/img
-@dirrmtry %%WWWDIR%%/htdocs/java_script
-@dirrmtry %%WWWDIR%%/htdocs/management
-@dirrmtry %%WWWDIR%%/htdocs/contacts
-@dirrmtry %%WWWDIR%%/htdocs/operations
-@dirrmtry %%WWWDIR%%/htdocs/reports
-@dirrmtry %%WWWDIR%%/htdocs/export
-@dirrmtry %%WWWDIR%%/htdocs/user_management
-@dirrmtry %%WWWDIR%%/htdocs/user_help
-@dirrmtry %%WWWDIR%%/htdocs/rest
-@dirrmtry %%WWWDIR%%/lib/Netdot/Manual
-@dirrmtry %%WWWDIR%%/lib/Netdot/Meta/Table
-@dirrmtry %%WWWDIR%%/lib/Netdot/Meta
-@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Plugins
-@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Device/CLI
-@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Device
-@dirrmtry %%WWWDIR%%/lib/Netdot/Model
-@dirrmtry %%WWWDIR%%/lib/Netdot/UI
-@dirrmtry %%WWWDIR%%/lib/Netdot/Util
-@dirrmtry %%WWWDIR%%/lib/Netdot/Exporter
-@dirrmtry %%WWWDIR%%/lib/Netdot
-@dirrmtry %%WWWDIR%%/lib
-@dirrmtry %%WWWDIR%%/etc
-@dirrmtry %%WWWDIR%%/import
-@dirrmtry %%WWWDIR%%/export/docs
-@dirrmtry %%WWWDIR%%/export/nagios
-@dirrmtry %%WWWDIR%%/export/sysmon
-@dirrmtry %%WWWDIR%%/export/rancid
-@dirrmtry %%WWWDIR%%/export/cacti
-@dirrmtry %%WWWDIR%%/export/ethers
-@dirrmtry %%WWWDIR%%/export/bind
-@dirrmtry %%WWWDIR%%/export/dhcpd
-@dirrmtry %%WWWDIR%%/export/smokeping
-@dirrmtry %%WWWDIR%%/export
-@dirrmtry %%WWWDIR%%/htdocs/masondata/obj
+@dir %%WWWDIR%%/bin
+@dir %%WWWDIR%%/doc/manual
+@dir %%WWWDIR%%/doc
+@dir %%WWWDIR%%/htdocs/cable_plant
+@dir %%WWWDIR%%/htdocs/css
+@dir %%WWWDIR%%/htdocs/generic
+@dir %%WWWDIR%%/htdocs/help
+@dir %%WWWDIR%%/htdocs/img/graphs
+@dir %%WWWDIR%%/htdocs/img
+@dir %%WWWDIR%%/htdocs/java_script
+@dir %%WWWDIR%%/htdocs/management
+@dir %%WWWDIR%%/htdocs/contacts
+@dir %%WWWDIR%%/htdocs/operations
+@dir %%WWWDIR%%/htdocs/reports
+@dir %%WWWDIR%%/htdocs/export
+@dir %%WWWDIR%%/htdocs/user_management
+@dir %%WWWDIR%%/htdocs/user_help
+@dir %%WWWDIR%%/htdocs/rest
+@dir %%WWWDIR%%/lib/Netdot/Manual
+@dir %%WWWDIR%%/lib/Netdot/Meta/Table
+@dir %%WWWDIR%%/lib/Netdot/Meta
+@dir %%WWWDIR%%/lib/Netdot/Model/Plugins
+@dir %%WWWDIR%%/lib/Netdot/Model/Device/CLI
+@dir %%WWWDIR%%/lib/Netdot/Model/Device
+@dir %%WWWDIR%%/lib/Netdot/Model
+@dir %%WWWDIR%%/lib/Netdot/UI
+@dir %%WWWDIR%%/lib/Netdot/Util
+@dir %%WWWDIR%%/lib/Netdot/Exporter
+@dir %%WWWDIR%%/lib/Netdot
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/etc
+@dir %%WWWDIR%%/import
+@dir %%WWWDIR%%/export/docs
+@dir %%WWWDIR%%/export/nagios
+@dir %%WWWDIR%%/export/sysmon
+@dir %%WWWDIR%%/export/rancid
+@dir %%WWWDIR%%/export/cacti
+@dir %%WWWDIR%%/export/ethers
+@dir %%WWWDIR%%/export/bind
+@dir %%WWWDIR%%/export/dhcpd
+@dir %%WWWDIR%%/export/smokeping
+@dir %%WWWDIR%%/export
+@dir %%WWWDIR%%/htdocs/masondata/obj
 @unexec rm -rf %D/%%WWWDIR%%/htdocs/masondata/obj 2> /dev/null || true
-@dirrmtry %%WWWDIR%%/htdocs/masondata/cache
-@dirrmtry %%WWWDIR%%/htdocs/masondata
-@dirrmtry %%WWWDIR%%/htdocs
-@dirrmtry %%WWWDIR%%/tmp/sessions/locks
-@dirrmtry %%WWWDIR%%/tmp/sessions
+@dir %%WWWDIR%%/htdocs/masondata/cache
+@dir %%WWWDIR%%/htdocs/masondata
+@dir %%WWWDIR%%/htdocs
+@dir %%WWWDIR%%/tmp/sessions/locks
+@dir %%WWWDIR%%/tmp/sessions
 @unexec rm -rf %D/%%WWWDIR%%/tmp/sessions 2> /dev/null || true
-@dirrmtry %%WWWDIR%%/tmp
-@dirrmtry %%WWWDIR%%/upgrade
-@dirrmtry %%WWWDIR%%/var
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/tmp
+@dir %%WWWDIR%%/upgrade
+@dir %%WWWDIR%%/var
+@dir %%WWWDIR%%
 @unexec if [ -d %%WWWDIR%% ]; then echo "===>  There are files/directories remaining under %D/%%WWWDIR%%. If you wish to deinstall netdot completely, inspect this directory for any files you may want to keep and then remove it."; fi

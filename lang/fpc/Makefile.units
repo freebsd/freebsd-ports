@@ -41,7 +41,7 @@ post-extract:
 
 post-patch:
 .if ${PKGNAMESUFFIX} == "-fpmkunit"
-	@${REINPLACE_CMD} -e 's|\[Linux\]|\[Linux,FreeBSD,DragonFly\]|g' \
+	@${REINPLACE_CMD} -e 's|\[Linux\]|\[Linux,FreeBSD,NetBSD,OpenBSD\]|g' \
 		${WRKDIR}/${WRKUNITDIR}/src/${PKGNAMESUFFIX:S/-//}.pp
 .endif
 .if ${PKGNAMESUFFIX} == "-fppkg"

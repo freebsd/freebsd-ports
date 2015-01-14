@@ -9,8 +9,11 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KOST
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 interface for communication with Nessus scanner over XMLRPC
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \

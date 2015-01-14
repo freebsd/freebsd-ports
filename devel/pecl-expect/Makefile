@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,9 +16,11 @@ LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
 
 LICENSE=	PHP301
 
+USES=		tcl:86
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+CFLAGS+=	-I${TCL_INCLUDEDIR}
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
 
 .include <bsd.port.mk>

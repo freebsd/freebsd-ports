@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90077
+PORTVERSION=	5.90082
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -57,7 +57,8 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Tree-Simple>=1.15:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-Try-Tiny>=0.17:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
+		p5-URI>=1.65:${PORTSDIR}/net/p5-URI \
+		p5-URI-ws>=0.03:${PORTSDIR}/net/p5-URI-ws \
 		p5-libwww>=5.837:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.23:${PORTSDIR}/devel/p5-namespace-clean

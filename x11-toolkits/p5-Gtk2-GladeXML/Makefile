@@ -8,8 +8,10 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Creates users interfaces directly from Glade XML files
+
+LICENSE=	LGPL20
 
 BUILD_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 		p5-ExtUtils-Depends>=0.3:${PORTSDIR}/devel/p5-ExtUtils-Depends \

@@ -1,6 +1,7 @@
 include/wels/codec_api.h
 include/wels/codec_app_def.h
 include/wels/codec_def.h
+include/wels/codec_ver.h
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/gmpopenh264.info
 %%PLUGINS%%@rmtry lib/firefox-nightly/defaults/pref/gmpopenh264.js
 %%PLUGINS%%@rmtry lib/firefox/defaults/pref/gmpopenh264.js
@@ -13,3 +14,4 @@ include/wels/codec_def.h
 lib/libopenh264.a
 lib/libopenh264.so
 lib/libopenh264.so.0
+libdata/pkgconfig/openh264.pc

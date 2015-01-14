@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -65,16 +65,23 @@ XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
 # OCSP is supported for openssl only
 .if ${PORT_OPTIONS:MOCSP}
 .if ! ${PORT_OPTIONS:MTLS}
-IGNORE=	You cannot enable OCSP stapling without TLS support
+IGNORE=	you cannot enable OCSP stapling without TLS support
 .elif ${PORT_OPTIONS:MGNUTLS}
-IGNORE=	You cannot enable OCSP stapling with gnutls
+IGNORE=	you cannot enable OCSP stapling with gnutls
 .endif
 .endif
 
 # DMARC implies SPF
 .if ${PORT_OPTIONS:MDMARC}
 .if ! ${PORT_OPTIONS:MSPF} || ! ${PORT_OPTIONS:MDKIM}
-IGNORE=	You cannot enable DMARC without SPF and DKIM support
+IGNORE=	you cannot enable DMARC without SPF and DKIM support
+.endif
+.endif
+
+# DANE implies DNSSEC
+.if ${PORT_OPTIONS:MDANE}
+.if ! ${PORT_OPTIONS:MDNSSEC}
+IGNORE=	you cannot enable DANE without DNSSEC support
 .endif
 .endif
 
@@ -85,7 +92,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.84
+EXIM_VERSION=	4.85
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -199,6 +206,14 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_CERTNAMES=),\1,'
 
 .if ${PORT_OPTIONS:MDSN}
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MDANE}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MEVENT}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_EVENT=),\1,'
 .endif
 
 .if !${PORT_OPTIONS:MPRDR}
@@ -433,10 +448,6 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 .endif
 
 .if ${PORT_OPTIONS:MSRS}
-LIB_DEPENDS+=	libsrs2.so:${PORTSDIR}/mail/libsrs2
-SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
-		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs2,'
-.elif ${PORT_OPTIONS:MSRS_ALT}
 LIB_DEPENDS+=	libsrs_alt.so:${PORTSDIR}/mail/libsrs_alt
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS,' \
 		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs_alt,'

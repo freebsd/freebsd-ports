@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdvideo
 PORTVERSION=	20130117
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac

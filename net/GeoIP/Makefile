@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-c
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	b00cc50
+GH_COMMIT=	d4dda16
 
 USES=		autoreconf libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am

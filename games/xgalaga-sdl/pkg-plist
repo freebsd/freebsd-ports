@@ -74,8 +74,3 @@ share/pixmaps/xgalaga-sdl.png
 %%DATADIR%%/sounds/smart.wav
 %%DATADIR%%/sounds/torphit.wav
 %%DATADIR%%/sounds/warp.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

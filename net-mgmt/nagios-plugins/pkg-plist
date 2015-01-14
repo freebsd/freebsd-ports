@@ -4,7 +4,7 @@ libexec/nagios/check_breeze
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
 %%DBI%%libexec/nagios/check_dbi
-libexec/nagios/check_dhcp
+@(,,04555) libexec/nagios/check_dhcp
 libexec/nagios/check_dig
 libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
@@ -17,7 +17,7 @@ libexec/nagios/check_ftp
 %%QSTAT%%libexec/nagios/check_game
 %%NETSNMP%%libexec/nagios/check_hpjd
 libexec/nagios/check_http
-libexec/nagios/check_icmp
+@(,,04555) libexec/nagios/check_icmp
 libexec/nagios/check_ifoperstatus
 libexec/nagios/check_ifstatus
 libexec/nagios/check_imap

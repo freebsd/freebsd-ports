@@ -8,8 +8,10 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Useful tools for Gnome2/Gtk2 Perl GUI design
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
 		p5-Gtk2-Ex-Utils>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Utils

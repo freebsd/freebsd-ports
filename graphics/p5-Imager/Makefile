@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Imager
-PORTVERSION=	1.000
-PORTREVISION=	3
+PORTVERSION=	1.001
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +20,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libt1.so:${PORTSDIR}/devel/t1lib \
 		libtiff.so:${PORTSDIR}/graphics/tiff
-TEST_DEPENDS=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta \
-		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+TEST_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C
 
 USES=		perl5
 USE_PERL5=	configure

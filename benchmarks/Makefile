@@ -10,6 +10,7 @@
     SUBDIR += cpipe
     SUBDIR += dbench
     SUBDIR += dbs
+    SUBDIR += dhrystone
     SUBDIR += dkftpbench
     SUBDIR += expedite
     SUBDIR += fhourstones

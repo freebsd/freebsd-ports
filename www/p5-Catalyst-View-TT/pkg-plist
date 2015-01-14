@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Catalyst::Helper::View::TT.3.gz
-%%PERL5_MAN3%%/Catalyst::Helper::View::TTSite.3.gz
-%%PERL5_MAN3%%/Catalyst::View::TT.3.gz
 %%SITE_PERL%%/Catalyst/Helper/View/TT.pm
 %%SITE_PERL%%/Catalyst/Helper/View/TTSite.pm
 %%SITE_PERL%%/Catalyst/View/TT.pm
+%%PERL5_MAN3%%/Catalyst::Helper::View::TT.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::View::TTSite.3.gz
+%%PERL5_MAN3%%/Catalyst::View::TT.3.gz

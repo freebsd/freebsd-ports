@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beets
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -25,35 +25,42 @@ USE_PYTHON=	distutils autoplist
 PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
 
 OPTIONS_DEFINE=	BEATPORT BPD CHROMA DISCOGS ECHONEST FETCHART FFMPEG \
-		IMAGEMAGICK LASTFM LASTIMPORT MPDSTATS REPLAYGAIN SPOTIFY WEB
+		IMAGEMAGICK LASTFM LASTIMPORT LYRICS LYRICS_GOOGLE MPDSTATS \
+		PLEXUPDATE REPLAYGAIN SPOTIFY WEB
 OPTIONS_DEFAULT=
 
-CHROMA_DESC=	Audio Fingerprinting Plugin
-BPD_DESC=	MPD Compatible Music Player Plugin
 BEATPORT_DESC=	Beatport Catalog Autotagging Support
+BPD_DESC=	MPD Compatible Music Player Plugin
+CHROMA_DESC=	Audio Fingerprinting Plugin
 DISCOGS_DESC=	Discogs Search Plugin
 ECHONEST_DESC=	Echo Nest Plugin
 FETCHART_DESC=	Cover Art Fetch Plugin
 IMAGEMAGICK_DESC=	Cover Art Resizing and Comparison
 LASTFM_DESC=	LastGenre Plugin
 LASTIMPORT_DESC=	Last.fm Import Plugin
+LYRICS_DESC=	Lyrics Plugin
+LYRICS_GOOGLE_DESC=	Use Google Custom Search for Lyrics
 MPDSTATS_DESC=	MPD Statistics Plugin
+PLEXUPDATE_DESC=	PlexUpdate Plugin
 REPLAYGAIN_DESC=	Normalize Audio Loudness
 SPOTIFY_DESC=	Spotify Plugin
 WEB_DESC=	Webserver Music Player Plugin
 
-CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:${PORTSDIR}/audio/py-pyacoustid
+BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
 BPD_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
-BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:${PORTSDIR}/audio/py-pyacoustid
 DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.0.0:${PORTSDIR}/audio/py-discogs-client
 ECHONEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyechonest>=8.0.1:${PORTSDIR}/devel/py-pyechonest
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
 IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-MPDSTATS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:${PORTSDIR}/audio/py-pylast
 LASTIMPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+LYRICS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+LYRICS_GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-beautifulsoup>=4:${PORTSDIR}/www/py-beautifulsoup
+MPDSTATS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
+PLEXUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 REPLAYGAIN_RUN_DEPENDS=	mp3gain>=0:${PORTSDIR}/audio/mp3gain
 REPLAYGAIN_RUN_DEPENDS+=	aacgain>=0:${PORTSDIR}/audio/aacgain
 SPOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests

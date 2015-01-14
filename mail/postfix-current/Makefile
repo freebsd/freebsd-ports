@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.12-20141106
-PORTREVISION=	1
+DISTVERSION=	2.12-20141228
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -37,6 +36,7 @@ USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BDB CDB DOCS EAI INST_BASE LDAP_SASL LMDB MYSQL NIS \
 		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
 
@@ -96,10 +96,10 @@ PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix
-PLIST_SUB+=	BASE="" BMAN="share/"
+PLIST_SUB+=	BMAN="share/"
 .else
 USE_RC_SUBR=	postfix
-PLIST_SUB+=	BASE="@comment " BMAN=""
+PLIST_SUB+=	BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
@@ -111,14 +111,20 @@ READMEDIR=	${DOCSDIR}
 READMEDIR=	no
 .endif
 
+# dynamic direcory location
 DAEMONDIR=	${PREFIX}/libexec/postfix
+SHLIB_DIRECTORY=${PREFIX}/lib/postfix
+# new proposed location is ETCDIR (see README_FILES/INSTALL)
+# keep compatiblity with Postfix 2.6 .. 2.11 and use DAEMOMDIR
+META_DIRECTORY=	${DAEMONDIR}
 
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
+SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" \
+		DAEMONDIR="${DAEMONDIR}" META_DIRECTORY="${META_DIRECTORY}"
 SUB_FILES+=	pkg-install pkg-message
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
-			-DDEF_META_DIR=\\\"${DAEMONDIR}\\\" \
+			-DDEF_META_DIR=\\\"${META_DIRECTORY}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
 			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
@@ -146,7 +152,7 @@ POSTFIX_CCARGS+=	-DNO_EAI
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PCRE=`${LOCALBASE}/bin/pcre-config --libs`"
 .else
 POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
@@ -179,6 +185,7 @@ POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -l
 .if ${PORT_OPTIONS:MTLS}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
+# XXX LDFLAGS possible distrubs dynamic building 
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
@@ -205,43 +212,43 @@ POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MYSQL=-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lm"
 _REQUIRE+=		mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=			pgsql
-POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
+POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PGSQL=-L${LOCALBASE}/lib -lpq"
 _REQUIRE+=		postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=		yes
 POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=-L${LOCALBASE}/lib -lsqlite3 -lpthread"
 .endif
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if defined(WITH_OPENLDAP_VER)
+. if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
+. endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -L${LOCALBASE}/lib -llber"
 _REQUIRE+=		slapd
-.if ${PORT_OPTIONS:MLDAP_SASL}
-.if ! ${PORT_OPTIONS:MSASL2}
+. if ${PORT_OPTIONS:MLDAP_SASL}
+.  if ! ${PORT_OPTIONS:MSASL2}
 LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-.endif
+.  endif
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
-.endif
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MCDB}
 LIB_DEPENDS+=		libcdb.so:${PORTSDIR}/databases/tinycdb
 POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_CDB=-L${LOCALBASE}/lib -lcdb"
 .endif
 
 .if ${PORT_OPTIONS:MNIS}
@@ -264,7 +271,7 @@ PLIST_SUB+=	TEST="@comment "
 .if ${PORT_OPTIONS:MLMDB}
 LIB_DEPENDS+=		liblmdb.so:${PORTSDIR}/databases/lmdb
 POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -llmdb
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=-L${LOCALBASE}/lib -llmdb"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
@@ -318,10 +325,17 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
 		${WRKSRC}/README_FILES/SPF_README
 .endif
+	@${ECHO} '$$manpage_directory/man1/posttls-finger.1:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+	@${ECHO} '$$command_directory/posttls-finger:f:root:-:755' \
+		>> ${WRKSRC}/conf/postfix-files
 
 do-configure:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
-	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles \
+	${MAKEFILEFLAGS} CCARGS="${POSTFIX_CCARGS}" \
+	shared=yes shlib_directory=${SHLIB_DIRECTORY} \
+	dynamicmaps=yes \
+	${POSTFIX_DYN_AUXLIBS} AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
@@ -330,11 +344,13 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
+	@(cd ${WRKSRC} && ${MAKE} non-interactive-package \
+		install_root=${STAGEDIR} tempdir=${WRKDIR} \
+		shlib_directory=${SHLIB_DIRECTORY} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
-		meta_directory=${DAEMONDIR} \
+		meta_directory=${META_DIRECTORY} \
 		html_directory=${READMEDIR} \
 		mailq_path=${PREFIX}/bin/mailq \
 		manpage_directory=${MANPREFIX}/man \
@@ -354,8 +370,9 @@ do-install:
 
 post-install:
 # Fix compressed man pages and strip executables
-	${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${DAEMONDIR}/postfix-files
+	${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${META_DIRECTORY}/postfix-files
 	-@${STRIP_CMD} ${STRIP_LIBEXEC:S|^|${STAGEDIR}${PREFIX}/libexec/postfix/|}
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+	-@${STRIP_CMD} ${STAGEDIR}${SHLIB_DIRECTORY}/*.so
 
 .include <bsd.port.mk>

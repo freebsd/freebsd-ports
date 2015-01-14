@@ -37,21 +37,13 @@ SUB_FILES=	pkg-message
 LEVELS_BD_FANS=	JuergenBonhagen rnd_the_h_world Walpurgis_Collection
 
 PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	CREDITS ChangeLog
-
-DOCSRCDIR2=	${WRKSRC}/docs/elements
-DOCSDIR2=	${DOCSDIR}/docs/elements
-DOC_FILES2=	*.txt
+PORTDATA=	*
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
 DESKTOP_ENTRIES="R'n'D jue" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-.include <bsd.port.options.mk>
 
 post-extract-script:
 	@(cd ${WRKDIR}/rocksndiamonds* && ${COPYTREE_SHARE} levels ${WRKSRC})
@@ -81,11 +73,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
 .for dir in graphics levels music sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
 .endfor
-
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
@@ -93,15 +83,7 @@ do-install:
 .endfor
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
-
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/levels \
-		-type f >> ${TMPPLIST} && \
-		${FIND} ${DATADIR_REL}/levels -type d -o -type l | ${SORT} -r | \
-		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "CREDITS ChangeLog docs/elements" \
+		${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

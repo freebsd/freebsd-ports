@@ -1,0 +1,33 @@
+diff -Naur drystone-patched/dhry.h dhrystone-working/dhry.h
+--- dhry.h	2014-08-30 16:37:44.933675426 +0200
++++ dhry.h	2014-08-30 17:22:14.124345711 +0200
+@@ -384,7 +384,10 @@
+ /* General definitions: */
+ 
+ #include <stdio.h>
++#include <string.h>
+                 /* for strcpy, strcmp */
++#include <stdlib.h>
++		/* for malloc */
+ #include <unistd.h>
+ 		/* for sysconf */
+ 
+diff -Naur drystone-patched/dhry_1.c dhrystone-working/dhry_1.c
+--- dhry_1.c	2014-08-30 16:44:20.484050144 +0200
++++ dhry_1.c	2014-08-30 17:12:06.705379492 +0200
+@@ -28,7 +28,6 @@
+ int             Arr_1_Glob [50];
+ int             Arr_2_Glob [50] [50];
+ 
+-extern char     *malloc ();
+ Enumeration     Func_1 ();
+   /* forward declaration necessary since Enumeration may not simply be int */
+ 
+@@ -45,7 +44,6 @@
+ 
+ #ifdef TIMES
+ struct tms      time_info;
+-extern  int     times ();
+                 /* see library function "times" */
+ #define Too_Small_Time 120
+                 /* Measurements should last at least about 2 seconds */

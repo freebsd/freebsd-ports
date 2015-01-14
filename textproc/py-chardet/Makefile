@@ -2,24 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	chardet
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Character encoding auto-detection in Python
+COMMENT=	Universal encoding detector for Python 2 and 3
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
-
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	*
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

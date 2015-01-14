@@ -8,7 +8,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	stiginge@pvv.org
 COMMENT=	Python interface to Discogs website
 
 LICENSE=	BSD2CLAUSE

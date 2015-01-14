@@ -4,11 +4,11 @@
 PORTNAME=	sancp
 PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}-stable
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network connection profiler
 
 LICENSE=	QPLv1
@@ -18,8 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ALL_TARGET=	bsd
 USE_RC_SUBR=	sancp
-LOG_DIR=	/var/log/sancp
-PLIST_SUB+=	LOG_DIR=${LOG_DIR}
 
 USERS=		sancp
 GROUPS=		sancp
@@ -31,18 +29,23 @@ PORTDOCS=	CHANGES INSTALL ISSUES \
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		LFLAGS="${LDFLAGS}"
+SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|g ; s|g++|$${CXX}|g' \
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/sancp \
+	${INSTALL_PROGRAM} ${WRKSRC}/sancp \
 		${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/etc/sancp/sancp.conf \
-		${STAGEDIR}${PREFIX}/etc/sancp.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/etc/sancp/sancp.conf \
+		${STAGEDIR}${PREFIX}/etc/sancp.conf.sample
+	${MKDIR} ${STAGEDIR}/var/log/sancp
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL} -m 750 -d ${STAGEDIR}${LOG_DIR}
+.endif
 
 .include <bsd.port.mk>

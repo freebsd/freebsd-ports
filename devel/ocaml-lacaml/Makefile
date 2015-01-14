@@ -13,9 +13,6 @@ COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 GH_PROJECT=	${PORTNAME}
@@ -29,7 +26,7 @@ USE_OCAML_LDCONFIG=yes
 USE_OCAML_WASH=	yes
 OCAMLFIND_LDCONF=ignore
 
-USES=		fortran
+USES=		blaslapack fortran
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples \
 		--override conf_ccopt "${CFLAGS}" \
@@ -37,7 +34,7 @@ CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples \
 MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-fPIC -DEXTERNAL_EXP10
-LDFLAGS+=	-L${LOCALBASE}/lib -lblas -llapack
+LDFLAGS+=	-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB}
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}

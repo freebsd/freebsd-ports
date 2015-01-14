@@ -112,37 +112,3 @@ share/pixmaps/traingame.png
 %%DATADIR%%/waggons/coal_truck/coal_truck.wings
 %%DATADIR%%/waggons/coal_truck/coal_truck.xml
 %%DATADIR%%/waggons/waggon_base.wings
-@dirrm %%DATADIR%%/waggons/coal_truck
-@dirrm %%DATADIR%%/waggons
-@dirrm %%DATADIR%%/trees/pine
-@dirrm %%DATADIR%%/trees/apple
-@dirrm %%DATADIR%%/trees
-@dirrm %%DATADIR%%/schemas
-@dirrm %%DATADIR%%/maps/villages
-@dirrm %%DATADIR%%/maps/uphill
-@dirrm %%DATADIR%%/maps/sbends
-@dirrm %%DATADIR%%/maps/power_plant
-@dirrm %%DATADIR%%/maps/points
-@dirrm %%DATADIR%%/maps/long_map
-@dirrm %%DATADIR%%/maps/goods_demo
-@dirrm %%DATADIR%%/maps/gen_track
-@dirrm %%DATADIR%%/maps/figure8
-@dirrm %%DATADIR%%/maps/demo
-@dirrm %%DATADIR%%/maps/coal_mine
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/layouts
-@dirrm %%DATADIR%%/images/icons
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/engines/tank
-@dirrm %%DATADIR%%/engines/saddle
-@dirrm %%DATADIR%%/engines/red
-@dirrm %%DATADIR%%/engines
-@dirrm %%DATADIR%%/buildings/white_house
-@dirrm %%DATADIR%%/buildings/power_plant
-@dirrm %%DATADIR%%/buildings/platform_middle
-@dirrm %%DATADIR%%/buildings/platform_end
-@dirrm %%DATADIR%%/buildings/house2
-@dirrm %%DATADIR%%/buildings/coal_mine
-@dirrm %%DATADIR%%/buildings
-@dirrm %%DATADIR%%

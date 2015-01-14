@@ -3,6 +3,7 @@
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://crypto.stanford.edu/~nagendra/projects/WebStone/download/
 PKGNAMESUFFIX=	-ssl

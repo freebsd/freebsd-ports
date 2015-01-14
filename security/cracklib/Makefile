@@ -3,6 +3,7 @@
 
 PORTNAME=	cracklib
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
@@ -18,7 +19,7 @@ LICENSE=	LGPL21
 DICTPATH=	${PREFIX}/libdata/${PORTNAME}
 DICTFILE=	${DICTPATH}/pw_dict
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-default-dict=${DICTPATH}
+CONFIGURE_ARGS=	--with-default-dict=${DICTFILE}
 INSTALL_TARGET=	install-strip
 USES=		gettext libtool
 USE_LDCONFIG=	yes

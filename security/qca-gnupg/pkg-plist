@@ -1,4 +1,0 @@
-%%QT_PLUGINDIR%%/crypto/libqca-gnupg.so
-%%DEBUG%%%%QT_PLUGINDIR%%/crypto/libqca-gnupg.so.debug
-@dirrmtry %%QT_PLUGINDIR%%/crypto
-@dirrmtry %%QT_PLUGINDIR%%

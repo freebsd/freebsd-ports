@@ -39,6 +39,7 @@
     SUBDIR += ace+tao-doc
     SUBDIR += acme
     SUBDIR += activitymail
+    SUBDIR += actor-framework
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
@@ -2105,6 +2106,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Tail-Dir
+    SUBDIR += p5-File-Tail-Multi
     SUBDIR += p5-File-Tail-Scribe
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
@@ -3438,8 +3440,10 @@
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
+    SUBDIR += pecl-propro
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
+    SUBDIR += pecl-raphf
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
@@ -4510,8 +4514,8 @@
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
-    SUBDIR += rubygem-notify
     SUBDIR += rubygem-notiffany
+    SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-open3_backport

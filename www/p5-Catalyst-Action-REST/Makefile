@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,11 +24,18 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-libwww>=2.033:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+TEST_DEPENDS=	p5-JSON-MaybeXS>=0:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 CONFIGURE_ARGS=	--default
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502000
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

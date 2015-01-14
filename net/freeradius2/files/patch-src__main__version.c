@@ -1,10 +1,12 @@
---- src/main/version.c.orig	2014-12-09 13:11:34 UTC
+--- src/main/version.c.orig	2014-11-18 19:56:52 UTC
 +++ src/main/version.c
-@@ -67,7 +67,6 @@ int ssl_check_version(int allow_vulnerab
+@@ -66,8 +66,7 @@ int ssl_check_version(int allow_vulnerab
+ 	mismatch:
  		radlog(L_ERR, "libssl version mismatch.  built: %lx linked: %lx",
  		       (unsigned long) ssl_built, (unsigned long) ssl_linked);
- 
+-
 -		return -1;
++		return 0;
  	}
  
  	/*

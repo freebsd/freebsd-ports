@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Business-OnlinePayment
-PORTVERSION=	3.02
-PORTREVISION=	1
+PORTVERSION=	3.03
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IVAN
@@ -15,11 +14,8 @@ COMMENT=	Generic interface for processing online credit card payments
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Net-HTTPS-Any>=0:${PORTSDIR}/net/p5-Net-HTTPS-Any \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$

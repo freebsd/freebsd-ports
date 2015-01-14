@@ -1,0 +1,19 @@
+--- configure.orig	2015-01-11 20:18:10.319363623 +0530
++++ configure	2015-01-11 20:21:02.304351633 +0530
+@@ -5065,6 +5065,8 @@
+ fi
+ done
+ 
++if test "x$with_x" = xyes; then
++
+ # Check whether --with-gtk-prefix or --without-gtk-prefix was given.
+ if test "${with_gtk_prefix+set}" = set; then
+   withval="$with_gtk_prefix"
+@@ -5356,6 +5358,7 @@
+   fi
+ 
+   rm -f conf.gtktest
++fi # with_x=xyes
+ 
+ ALL_LINGUAS=""
+ echo "$as_me:5361: checking for $CC option to accept ANSI C" >&5

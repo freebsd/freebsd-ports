@@ -21,9 +21,7 @@ GH_COMMIT=	bf9c038
 GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf gmake libtool pathfix pkgconfig
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -33,13 +31,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_DEFAULT=DOXYGEN
 
-.include <bsd.port.options.mk>
-
 ALL_TARGET=	all
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-ALL_TARGET+=	html-local
-.endif
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_ALL_TARGET=	html-local
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 post-install:

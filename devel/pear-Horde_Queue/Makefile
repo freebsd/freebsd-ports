@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Queue
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 

@@ -90,5 +90,3 @@
 %%DEMO_NM%%%%DATADIR%%/hr32-nom.lmp
 %%DEMO_UV%%%%DATADIR%%/hr32-uv.lmp
 %%DATADIR%%/hrmus.wad
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

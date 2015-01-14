@@ -10,6 +10,8 @@ MASTER_SITES=	http://ab-initio.mit.edu/meep/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	FDTD simulation software to model electromagnetic systems
 
+BROKEN=		Depends on conflicting guile and guile2 (via libctl)
+
 BUILD_DEPENDS=	harminv:${PORTSDIR}/science/harminv \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \

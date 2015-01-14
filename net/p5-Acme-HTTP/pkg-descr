@@ -1,0 +1,3 @@
+Acme::HTTP provides high-level access to Net::HTTP::NB and Net::HTTPS::NB.
+
+WWW: http://search.cpan.org/dist/Acme-HTTP/

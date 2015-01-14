@@ -465,6 +465,7 @@
     SUBDIR += ostinato
     SUBDIR += owamp
     SUBDIR += owncloud-csync
+    SUBDIR += p5-Acme-HTTP
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-AnyEvent-MPRPC
@@ -747,6 +748,7 @@
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
+    SUBDIR += p5-URI-ws
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-WebService-Dropbox
     SUBDIR += p5-WebService-Prowl

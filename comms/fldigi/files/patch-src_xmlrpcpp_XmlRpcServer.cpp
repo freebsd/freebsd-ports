@@ -5,7 +5,7 @@
  
    char buffLen[40];
 -  sprintf(buffLen,"%"PRIuSZ"\r\n\r\n", body.size());
-+  sprintf(buffLen,"%" PRIuSZ" \r\n\r\n", body.size());
++  sprintf(buffLen,"%" PRIuSZ "\r\n\r\n", body.size());
  
    return header + buffLen;
  }

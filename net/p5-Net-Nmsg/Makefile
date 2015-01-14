@@ -5,7 +5,8 @@ PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	https://tools.netsa.cert.org/confluence/download/attachments/12320770/ \
-		http://tools.netsa.cert.org/confluence/download/attachments/12320770/
+		CPAN
+MASTER_SITE_SUBDIR=	CPAN:MSISK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	truckman@FreeBSD.org

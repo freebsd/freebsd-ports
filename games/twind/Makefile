@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Match and remove all of the blocks before time runs out
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl image mixer
 
@@ -24,6 +25,7 @@ do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
 		-DDATA_PREFIX=\"${DATADIR}/\" -DAUDIO -DLINUX \
 		-lm `${SDL_CONFIG} --cflags --libs` -lSDL_mixer -lSDL_image twind.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music sound" ${STAGEDIR}${DATADIR})

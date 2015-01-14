@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.37
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -30,7 +29,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-USES=		perl5
-USE_PERL5=	configure
+USES=		perl5 shebangfix
+USE_PERL5=	modbuildtiny
+
+SHEBANG_FILES=	bin/scraper
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/scraper ${STAGEDIR}${PREFIX}/bin/scraper
 
 .include <bsd.port.mk>

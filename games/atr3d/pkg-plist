@@ -33,8 +33,3 @@ bin/atr3d
 %%DATADIR%%/sounds/8.wav
 %%DATADIR%%/sounds/9.wav
 %%DATADIR%%/textures/explosion.rgb
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%

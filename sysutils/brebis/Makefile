@@ -3,6 +3,7 @@
 
 PORTNAME=	brebis
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://brebisproject.org/attachments/download/18/ \
 		LOCAL/martymac

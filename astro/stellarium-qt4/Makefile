@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTVERSION=	0.12.5
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY:=	${DISTFILES}
 PKGNAMESUFFIX=	-qt4
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	${PORTNAME}-0.13.*
+PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 
 USES=		cmake gettext iconv
 USE_QT4=	moc_build rcc_build uic_build qmake_build \
@@ -22,9 +24,10 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA SCRIPTING DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING
-MORE_STARS_DESC=	Install extra star catalogs (1.2GB)
+OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA SCRIPTING DOCS
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TEXTURES
+MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
+TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support (via Phonon)
 SCRIPTING_DESC=		Scripting support
 
@@ -34,12 +37,20 @@ SCRIPTING_DESC=		Scripting support
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
-DISTFILES+=	stars_4_1v0_0.cat:stars4 stars_5_2v0_0.cat:stars5 \
-		stars_6_2v0_0.cat:stars6 stars_7_2v0_0.cat:stars7 \
-		stars_8_2v0_0.cat:stars8
+DISTFILES+=	stars_4_1v0_1.cat:stars4 stars_5_2v0_1.cat:stars5 \
+		stars_6_2v0_1.cat:stars6 stars_7_2v0_1.cat:stars7 \
+		stars_8_2v0_1.cat:stars8
 PLIST_SUB+=	MORE_STARS=""
 .else
 PLIST_SUB+=	MORE_STARS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTEXTURES}
+MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/textures:gfx
+DISTFILES+=	textures-1K.zip:gfx
+PLIST_SUB+=	TEXTURES=""
+.else
+PLIST_SUB+=	TEXTURES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
@@ -57,7 +68,8 @@ PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|std::free|::free|' \
+		${WRKSRC}/src/core/renderer/StelQGLInterleavedArrayVertexBufferBackend.cpp
 # Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
 # that does not handle FontChange)
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
@@ -66,8 +78,22 @@ post-patch: .SILENT
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
-	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_0.cat \
+	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
+.endif
+.if ${PORT_OPTIONS:MTEXTURES}
+	(cd ${WRKDIR} && for f in *.png; do \
+		new=`${STAT} -f '%z' $$f` ; \
+		existing=`${STAT} -qf '%z' \
+			${STAGEDIR}${DATADIR}/textures/$$f || \
+			${ECHO_CMD} 0` ; \
+		${TEST} $$new -gt $$existing || continue ; \
+		${ECHO_CMD} "-- Replacing texture: $$f\
+			(has larger file size or missing)" ; \
+		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/textures ; \
+	done)
+	@${REINPLACE_CMD} -e '1410s|nomap|vesta|' \
+		${STAGEDIR}${DATADIR}/data/ssystem.ini
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

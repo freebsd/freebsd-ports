@@ -173,6 +173,8 @@ include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
+include/wine/windows/d3d11_1.h
+include/wine/windows/d3d11_1.idl
 include/wine/windows/d3d11sdklayers.h
 include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
@@ -768,6 +770,8 @@ include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
+include/wine/windows/xaudio2.h
+include/wine/windows/xaudio2.idl
 include/wine/windows/xcmc.h
 include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
@@ -1632,6 +1636,7 @@ lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
 lib/wine/fakedlls/wuaueng.dll
 lib/wine/fakedlls/wusa.exe
+lib/wine/fakedlls/x3daudio1_7.dll
 lib/wine/fakedlls/xapofx1_1.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
@@ -2207,6 +2212,7 @@ lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
 lib/wine/wuaueng.dll.so
 lib/wine/wusa.exe.so
+lib/wine/x3daudio1_7.dll.so
 lib/wine/xapofx1_1.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.22.04
+PORTVERSION=	3.22.05
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}

@@ -3,15 +3,21 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Visual mail, user, and print face server
 
-OPTIONS_DEFINE=	X11 NAS RPLAY SOX DOCS NLS
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	X11 DOCS NLS AUDIO
 OPTIONS_DEFAULT=	X11
+OPTIONS_SINGLE=		AUDIO
+OPTIONS_SINGLE_AUDIO=	NAS RPLAY SOX
+AUDIO_DESC=	Audio support
 X11_DESC=	X11/GTK support
 RPLAY_DESC=	rplay audio support
 SOX_DESC=	Sox audio support
@@ -19,36 +25,33 @@ SOX_DESC=	Sox audio support
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+OPTIONS_SUB=	X11
+
+X11_USE=	GNOME=gtk12
+X11_CPPFLAGS=	-I../compface -I${LOCALBASE}/include
+X11_LDFLAGS=	-L../compface -L${LOCALBASE}/lib
+X11_CONFIGURE_ON=	--enable-imap --enable-pop \
+		--enable-name-unknown --with-spooldir=/var/mail \
+		--with-facedir=${DATADIR}
+X11_CONFIGURE_WITH=	x
+
+AUDIO_CONFIGURE_ENABLE=	audio
+
+NAS_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/auplay
+NAS_RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+
+SOX_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/play
+SOX_RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
+
+RPLAY_CONFIGURE_ON=	--with-audio-cmd=${LOCALBASE}/bin/rplay
+RPLAY_RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
+
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
 
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	X11="@comment "
-WITH_AUDIO=	# none
-.else # with X11
-PLIST_SUB+=	X11=""
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I../compface -I${LOCALBASE}/include
-LDFLAGS+=	-L../compface -L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-imap --enable-pop \
-		--enable-name-unknown --with-spooldir=/var/mail \
-		--with-facedir=${DATADIR}
-.endif
-
-.ifdef WITH_NAS
- CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/auplay
- RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
-.elifdef WITH_SOX
- CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
- RUN_DEPENDS=	play:${PORTSDIR}/audio/sox
-.elifdef WITH_RPLAY
- CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/rplay
- RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
-.endif
 
 # I have no better idea up to now
 # Install the working Makefile for compface from the old faces port
@@ -57,11 +60,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "s%/usr/local/faces%${DATADIR}%g ; \
 		 s%/var/spool/mail%/var/mail%g" ${WRKSRC}/faces/faces.man
 	@${LN} -sf ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.1
-.ifdef WITH_NAS
+.if ${PORT_OPTIONS:MNAS}
 	@${REINPLACE_CMD} -e "s%rplay%auplay%" ${WRKSRC}/faces/Faces.ad
-.elifdef WITH_SOX
+.elif ${PORT_OPTIONS:MSOX}
 	@${REINPLACE_CMD} -e "s%rplay%play%" ${WRKSRC}/faces/Faces.ad
-.elifdef WITH_RPLAY
+.elif ${PORT_OPTIONS:MRPLAY}
 	# nada
 .else
 	@${REINPLACE_CMD} -e "s%^faces.audioSupport.*%faces.audioSupport:		false%" ${WRKSRC}/faces/Faces.ad

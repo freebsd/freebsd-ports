@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	13.0
+PORTVERSION=	13.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_13.x_Fomalhaut/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
@@ -39,7 +39,5 @@ post-install:
 		${SORT} >> ${TMPPLIST})
 	@echo "@owner" >> ${TMPPLIST}
 	@echo "@group" >> ${TMPPLIST}
-	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
-		${SORT} -r | ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST})
 
 .include <bsd.port.mk>

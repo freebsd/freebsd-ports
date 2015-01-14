@@ -12,17 +12,18 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game about Trains
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickg
 GH_PROJECT=	traingame
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	eacfbc3
-
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake compiler:c++11-lib dos2unix pkgconfig
 DOS2UNIX_GLOB=	*.mtl *.obj

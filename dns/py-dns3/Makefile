@@ -3,6 +3,7 @@
 
 PORTNAME=	dns
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	https://launchpad.net/${DISTNAME}/trunk/${PORTVERSION}/+download/ \
 		LOCAL/sunpoet

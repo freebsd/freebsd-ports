@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG
 MASTER_SITE_SUBDIR=	software/scm/git
@@ -82,7 +82,6 @@ MAKE_ENV+=	PERL_PATH=${PERL}
 BUILD_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
-		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 PLIST_SUB+=	PERLSUB=""
 .else

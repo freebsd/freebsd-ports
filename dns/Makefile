@@ -177,6 +177,7 @@
     SUBDIR += vizone
     SUBDIR += walker
     SUBDIR += wdns
+    SUBDIR += wrapsrv
     SUBDIR += yadifa
     SUBDIR += zkt
     SUBDIR += zonecheck

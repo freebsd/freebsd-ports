@@ -10,7 +10,8 @@ MASTER_SITES=	http://adgali.apiou.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source game library useful for 2D game development
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -23,6 +24,7 @@ USE_SDL=	sdl
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-optim=no
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo

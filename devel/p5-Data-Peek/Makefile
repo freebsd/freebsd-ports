@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Peek
-PORTVERSION=	0.41
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,8 @@ USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 post-stage:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Peek/Peek.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Peek/Peek.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Peek/Peek.so
 
 .include <bsd.port.mk>

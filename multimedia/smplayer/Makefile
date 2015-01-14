@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Complete front-end based on Qt4 for mplayer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		smplayer-skins>=0:${PORTSDIR}/multimedia/smplayer-skins \

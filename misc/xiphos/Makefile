@@ -2,7 +2,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -16,13 +16,14 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
 		nspr>=4.8:${PORTSDIR}/devel/nspr
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
+LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib  \
 		libsword.so:${PORTSDIR}/misc/sword
 
 USES=		gettext pkgconfig python:build
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gtkhtml4 intlhack libgsf
+USE_GNOME=	gnomeprefix gtkhtml4 intlhack gtk30 gconf2 libgsf
 
 OPTIONS_DEFINE=	DOCS
 

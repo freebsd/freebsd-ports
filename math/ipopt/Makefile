@@ -17,16 +17,14 @@ COMMENT=	Software package for large-scale nonlinear optimization
 
 LICENSE=	EPL
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack
-
-USES=		fortran libtool pkgconfig tar:tgz
+USES=		blaslapack fortran libtool pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig
-CONFIGURE_ARGS=	--with-lapack-lib="-llapack -L/${LOCALBASE}/lib"	\
-		--with-lapack-incdir=${LOCALBASE}/include/lapack
+CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
+		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
 
 CXXFLAGS+=	-ffast-math
 

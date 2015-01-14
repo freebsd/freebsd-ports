@@ -3,7 +3,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
@@ -12,8 +12,6 @@ COMMENT=	Qt 4 based Jabber client
 
 LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
 		libminizip.so:${PORTSDIR}/archivers/minizip
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
-		qca-gnupg>=2.0.0.b3:${PORTSDIR}/security/qca-gnupg
 
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes

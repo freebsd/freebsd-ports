@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -20,7 +20,7 @@ CONFLICTS?=	fvwm-1.* fvwm-2.[457].*
 NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-mandoc --without-gnome
+CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk
 USES=		gmake perl5 pkgconfig tar:bzip2
 USE_XORG=	xcursor xft xinerama xpm xrender
 

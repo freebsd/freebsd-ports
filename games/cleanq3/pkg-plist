@@ -7,6 +7,3 @@
 %%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
 %%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
 %%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
-%%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
-%%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
-%%GAMELIBS%%@dirrm %%LIBDIR%%

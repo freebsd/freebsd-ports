@@ -317,7 +317,7 @@ PLIST_SUB+=	PING="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
+USES+=		python:2
 CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} --enable-python
 PLIST_SUB+=	PYTHON=""
 .else
