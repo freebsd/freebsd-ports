@@ -20,10 +20,10 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS HR_TEXTURES MULTIMEDIA DOCS
+OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA DOCS
 OPTIONS_DEFAULT=	MULTIMEDIA
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
-HR_TEXTURES_DESC=	Install high-resolution textures
+TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support
 
 .include <bsd.port.options.mk>
@@ -40,7 +40,7 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MHR_TEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES}
 MASTER_SITES+=	SF/${PORTNAME}/textures:gfx
 DISTFILES+=	textures-1K.zip:gfx
 .endif
@@ -59,14 +59,14 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
 .endif
-.if ${PORT_OPTIONS:MHR_TEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES}
 	(cd ${WRKDIR} && for f in *.png; do \
 		new=`${STAT} -f '%z' $$f` ; \
 		existing=`${STAT} -f '%z' \
 			${STAGEDIR}${DATADIR}/textures/$$f` ; \
 		${TEST} $$new -gt $$existing || continue ; \
 		${ECHO_CMD} "-- Replacing texture: $$f\
-			(has larger file size)" ; \
+			(has larger file size: $$new vs. $$existing)" ; \
 		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/textures ; \
 	done)
 .endif
