@@ -3,5 +3,7 @@ requirements of the OpenCL C programming language, as specified by the
 OpenCL 1.1 Specification. The following sections of the specification
 impose library requirements:
 
+Libclc is intended to be used with the Clang compiler's OpenCL frontend
+
 WWW: http://libclc.llvm.org/
 
