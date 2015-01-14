@@ -41,7 +41,7 @@ PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTEXTURES}
-MASTER_SITES+=	SF/${PORTNAME}/textures:gfx
+MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 DISTFILES+=	textures-1K.zip:gfx
 .endif
 
