@@ -123,16 +123,4 @@ share/icons/hicolor/scalable/apps/qmmp.svgz
 share/icons/hicolor/scalable/apps/qmmp-simple.svgz
 %%KDENOTIFY%%%%DATADIR%%/images/app_icon.png
 %%KDENOTIFY%%%%DATADIR%%/images/empty_cover.png
-%%KDENOTIFY%%@dirrm %%DATADIR%%/images
-%%KDENOTIFY%%@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrm include/qmmp
-@dirrm include/qmmpui
 @comment Insert PLIST.doc here

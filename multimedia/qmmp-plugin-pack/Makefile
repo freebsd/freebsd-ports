@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/
 
@@ -53,12 +52,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFFAP} || ${PORT_OPTIONS:MMPG123}
-PLIST_SUB+=	INPUT=""
-.else
-PLIST_SUB+=	INPUT="@comment "
-.endif
 
 pre-configure:
 	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
