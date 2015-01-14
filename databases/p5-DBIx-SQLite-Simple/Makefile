@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-SQLite-Simple
-PORTVERSION=	0.34
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy access to SQLite databases using objects
 
 BUILD_DEPENDS=	p5-Class-Gomor>=0:${PORTSDIR}/devel/p5-Class-Gomor \
