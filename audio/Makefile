@@ -147,6 +147,7 @@
     SUBDIR += festvox-rab16
     SUBDIR += festvox-rab8
     SUBDIR += festvox-russian
+    SUBDIR += filter_audio
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
