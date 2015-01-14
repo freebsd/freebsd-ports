@@ -57,6 +57,90 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bd62c640-9bb9-11e4-a5ad-000c297fb80f">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>35.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.4.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>35.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.32</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.4.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.32</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.4.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MSFA-2015-01 Miscellaneous memory safety hazards (rv:35.0
+	    / rv:31.4)</p>
+	  <p>MSFA-2015-02 Uninitialized memory use during bitmap
+	    rendering</p>
+	  <p>MSFA-2015-03 sendBeacon requests lack an Origin header</p>
+	  <p>MSFA-2015-04 Cookie injection through Proxy Authenticate
+	    responses</p>
+	  <p>MSFA-2015-05 Read of uninitialized memory in Web Audio</p>
+	  <p>MSFA-2015-06 Read-after-free in WebRTC</p>
+	  <p>MSFA-2015-07 Gecko Media Plugin sandbox escape</p>
+	  <p>MSFA-2015-08 Delegated OCSP responder certificates failure
+	    with id-pkix-ocsp-nocheck extension</p>
+	  <p>MSFA-2015-09 XrayWrapper bypass through DOM objects</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8634</cvename>
+      <cvename>CVE-2014-8635</cvename>
+      <cvename>CVE-2014-8637</cvename>
+      <cvename>CVE-2014-8638</cvename>
+      <cvename>CVE-2014-8639</cvename>
+      <cvename>CVE-2014-8640</cvename>
+      <cvename>CVE-2014-8641</cvename>
+      <cvename>CVE-2014-8642</cvename>
+      <cvename>CVE-2014-8643</cvename>
+      <cvename>CVE-2014-8636</cvename>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-01/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-02/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-03/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-04/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-05/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-06/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-07/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-08/</url>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-09/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="daa8a49b-99b9-11e4-8f66-3085a9a4510d">
     <topic>libevent -- integer overflow in evbuffers</topic>
     <affects>
