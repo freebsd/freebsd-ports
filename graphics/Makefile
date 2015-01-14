@@ -1006,6 +1006,7 @@
     SUBDIR += visprint
     SUBDIR += volpack
     SUBDIR += vp
+    SUBDIR += waffle
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune

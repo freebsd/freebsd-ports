@@ -1,0 +1,39 @@
+--- src/waffle/CMakeLists.txt.orig	2014-12-09 22:33:50.000000000 +0100
++++ src/waffle/CMakeLists.txt	2015-01-14 10:00:50.216345455 +0100
+@@ -38,7 +38,7 @@
+     ${THREADS_LIBRARIES}
+     )
+ 
+-if(waffle_on_linux)
++if(waffle_on_linux OR waffle_on_freebsd)
+     if(waffle_has_wayland)
+         list(APPEND waffle_libdeps
+             ${wayland-client_LDFLAGS}
+@@ -114,15 +114,22 @@
+         )
+ endif()
+ 
+-if(waffle_on_linux)
++if(waffle_on_linux OR waffle_on_freebsd)
+     list(APPEND waffle_sources
+         linux/linux_dl.c
+         linux/linux_platform.c
+         )
+-    list(APPEND waffle_libdeps
+-        dl
+-        pthread
+-        )
++    if(waffle_on_linux)
++        list(APPEND waffle_libdeps
++            dl
++            pthread
++            )
++    endif()
++    if(waffle_on_freebsd)
++        list(APPEND waffle_libdeps
++            pthread
++            )
++    endif()
+ endif()
+ 
+ if(waffle_has_wayland)
