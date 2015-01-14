@@ -11,7 +11,7 @@ COMMENT=	C implementation of statsd
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+USES=		scons
 
 USERS=		statsd
 GROUPS=		statsd
@@ -20,11 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/statsite
 
-do-build:
-	cd ${WRKSRC} && make
-
 do-install:
-	${STRIP_CMD} ${WRKSRC}/statsite
-	${CP} ${WRKSRC}/statsite ${STAGEDIR}/${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/statsite ${STAGEDIR}/${PREFIX}/bin/
 
 .include <bsd.port.mk>
