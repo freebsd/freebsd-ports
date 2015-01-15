@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		cmake openal:al,alut python
+USES=		cmake openal:al,alut python shebangfix
+SHEBANG_FILES=	admin/extend2da.py
 USE_SDL=	sdl mixer ttf
 USE_LDCONFIG=	yes
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
