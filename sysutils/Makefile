@@ -854,6 +854,7 @@
     SUBDIR += sas2ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
+    SUBDIR += sbsigntool
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
