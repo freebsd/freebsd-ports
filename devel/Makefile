@@ -548,6 +548,7 @@
     SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitg0
+    SUBDIR += gitinspector
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
