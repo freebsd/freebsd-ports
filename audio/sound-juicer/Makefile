@@ -1,10 +1,8 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/sound-juicer/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	sound-juicer
-PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
