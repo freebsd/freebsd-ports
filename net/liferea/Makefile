@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	liferea
-PORTVERSION=	1.10.8
-PORTREVISION=	3
+PORTVERSION=	1.10.12
 CATEGORIES=	net gnome
-MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION}/ \
-		http://rainbow-runner.nl/~kwm/distfiles/
+MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
