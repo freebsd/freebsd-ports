@@ -146,7 +146,7 @@ llvm-devel/include/llvm/ADT/iterator.h
 llvm-devel/include/llvm/ADT/iterator_range.h
 llvm-devel/include/llvm/Analysis/AliasAnalysis.h
 llvm-devel/include/llvm/Analysis/AliasSetTracker.h
-llvm-devel/include/llvm/Analysis/AssumptionTracker.h
+llvm-devel/include/llvm/Analysis/AssumptionCache.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfo.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfoImpl.h
 llvm-devel/include/llvm/Analysis/BranchProbabilityInfo.h
@@ -217,6 +217,7 @@ llvm-devel/include/llvm/CodeGen/CallingConvLower.h
 llvm-devel/include/llvm/CodeGen/CommandFlags.h
 llvm-devel/include/llvm/CodeGen/DAGCombine.h
 llvm-devel/include/llvm/CodeGen/DFAPacketizer.h
+llvm-devel/include/llvm/CodeGen/DIE.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
 llvm-devel/include/llvm/CodeGen/FastISel.h
 llvm-devel/include/llvm/CodeGen/ForwardControlFlowIntegrity.h
@@ -309,7 +310,23 @@ llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/config.h
 llvm-devel/include/llvm/Config/llvm-config.h
 llvm-devel/include/llvm/DebugInfo/DIContext.h
+llvm-devel/include/llvm/DebugInfo/DWARFAbbreviationDeclaration.h
+llvm-devel/include/llvm/DebugInfo/DWARFAcceleratorTable.h
+llvm-devel/include/llvm/DebugInfo/DWARFCompileUnit.h
+llvm-devel/include/llvm/DebugInfo/DWARFContext.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugAbbrev.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugArangeSet.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugAranges.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugFrame.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugInfoEntry.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugLine.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugLoc.h
+llvm-devel/include/llvm/DebugInfo/DWARFDebugRangeList.h
 llvm-devel/include/llvm/DebugInfo/DWARFFormValue.h
+llvm-devel/include/llvm/DebugInfo/DWARFRelocMap.h
+llvm-devel/include/llvm/DebugInfo/DWARFSection.h
+llvm-devel/include/llvm/DebugInfo/DWARFTypeUnit.h
+llvm-devel/include/llvm/DebugInfo/DWARFUnit.h
 llvm-devel/include/llvm/ExecutionEngine/ExecutionEngine.h
 llvm-devel/include/llvm/ExecutionEngine/GenericValue.h
 llvm-devel/include/llvm/ExecutionEngine/Interpreter.h
@@ -372,7 +389,6 @@ llvm-devel/include/llvm/IR/IntrinsicsR600.td
 llvm-devel/include/llvm/IR/IntrinsicsX86.td
 llvm-devel/include/llvm/IR/IntrinsicsXCore.td
 llvm-devel/include/llvm/IR/LLVMContext.h
-llvm-devel/include/llvm/IR/LeakDetector.h
 llvm-devel/include/llvm/IR/LegacyPassManager.h
 llvm-devel/include/llvm/IR/LegacyPassManagers.h
 llvm-devel/include/llvm/IR/LegacyPassNameParser.h
@@ -386,6 +402,7 @@ llvm-devel/include/llvm/IR/NoFolder.h
 llvm-devel/include/llvm/IR/OperandTraits.h
 llvm-devel/include/llvm/IR/Operator.h
 llvm-devel/include/llvm/IR/PassManager.h
+llvm-devel/include/llvm/IR/PassManagerInternal.h
 llvm-devel/include/llvm/IR/PatternMatch.h
 llvm-devel/include/llvm/IR/PredIteratorCache.h
 llvm-devel/include/llvm/IR/Statepoint.h
