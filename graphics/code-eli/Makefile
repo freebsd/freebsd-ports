@@ -37,6 +37,10 @@ DOCS_ALL_TARGET=	doc
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=	Can not compile if FreeBSD version lower than 10.0-RELEASE
+.endif
+
 post-patch:
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} \
