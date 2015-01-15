@@ -3,7 +3,7 @@
 
 PORTNAME=	subliminal
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,11 +11,6 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python library to search and download subtitles
 
 LICENSE=	LGPL3
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	Diaoul
-GH_COMMIT=	f41fc2b
-GH_TAGNAME=	${GH_COMMIT}
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.4.0:${PORTSDIR}/multimedia/py-enzyme \
@@ -27,7 +22,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 		${PYTHON_PKGNAMEPREFIX}babelfish>=0.4.0:${PORTSDIR}/devel/py-babelfish \
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.2:${PORTSDIR}/devel/py-dogpile.cache \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.25:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Diaoul
+GH_COMMIT=	f41fc2b
+GH_TAGNAME=	${GH_COMMIT}
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
