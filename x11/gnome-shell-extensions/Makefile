@@ -14,6 +14,8 @@ COMMENT=	GNOME desktop shell extensions
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	gnome-shell>=3.12.0:${PORTSDIR}/x11/gnome-shell
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomedesktop3 intlhack
 USE_LDCONFIG=	yes

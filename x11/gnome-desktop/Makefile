@@ -14,6 +14,8 @@ COMMENT=	Additional UI API for GNOME 3
 
 USES=		tar:xz
 
+PORTSCOUT=	limitw:1,even
+
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \

@@ -32,6 +32,8 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
+PORTSCOUT=	limitw:1,even
+
 USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig \
 		tar:xz webplugin:native
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix \

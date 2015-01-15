@@ -14,7 +14,7 @@ COMMENT=	Library used for writing pagers and taskslists
 
 USES=		tar:xz
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 .if !defined(REFERENCE_PORT)
 

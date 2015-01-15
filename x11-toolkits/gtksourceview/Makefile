@@ -14,6 +14,8 @@ COMMENT=	Widget that adds syntax highlighting to GtkTextView
 
 USES+=		tar:bzip2
 
+PORTSCOUT=	ignore:1
+
 .if !defined(REFERENCE_PORT)
 
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
