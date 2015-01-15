@@ -9,7 +9,7 @@ lib/girepository-1.0/Xkl-1.0.typelib
 lib/libxklavier.a
 lib/libxklavier.so
 lib/libxklavier.so.16
-lib/libxklavier.so.16.2.0
+lib/libxklavier.so.16.3.0
 libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/XklConfigItem.html
 %%DOCSDIR%%/XklConfigRec.html
