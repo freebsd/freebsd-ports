@@ -6,5 +6,5 @@
  #include <dirent.h>
 +#include <unistd.h> // for chdir()
  
- #define THEMES_DIR "/home/amdmi3/projects/freebsd/ports/games/chapping/prefix/share/chapping/themes/"
+ #define THEMES_DIR "themes/"
  

@@ -2,7 +2,7 @@
 +++ src/objects/orb.cpp	2013-12-19 22:19:55.234053221 +0400
 @@ -40,7 +40,7 @@
  	else
- 		Node->setMaterialTexture(0, irrDriver->getTexture("/home/amdmi3/projects/freebsd/ports/games/irrlamb/prefix/share/irrlamb/textures/orb_outer0.png"));
+ 		Node->setMaterialTexture(0, irrDriver->getTexture("textures/orb_outer0.png"));
  	Node->setMaterialType(EMT_ONETEXTURE_BLEND);
 -	Node->getMaterial(0).MaterialTypeParam = pack_texureBlendFunc(EBF_ONE, EBF_ONE);
 +	Node->getMaterial(0).MaterialTypeParam = pack_textureBlendFunc(EBF_ONE, EBF_ONE);
