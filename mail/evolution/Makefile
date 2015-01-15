@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/mail/evolution/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	3.12.9
+PORTVERSION=	3.12.10
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -102,6 +102,13 @@ CONFIGURE_ARGS+=--disable-contact-maps
 #MAPS_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain \
 #			libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
 #MAPS_BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+
+.include <bsd.port.options.mk>
+
+# webkit-gtk3 needs this
+.if ${OSVERSION} < 1000000
+USES+=	compiler:c++11-lib
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
