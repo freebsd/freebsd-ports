@@ -250,7 +250,3 @@ bin/0verkill-test_server
 %%PORTDOCS%%%%DOCSDIR%%/avi.txt
 %%PORTDOCS%%%%DOCSDIR%%/bot.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/grx
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
