@@ -11,7 +11,7 @@ DISTNAME=	pgp263is
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP International version - Public-Key encryption for the masses
 
-ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 BROKEN_amd64=	unable to validate signatures
 
 WRKSRC=		${WRKDIR}/src

@@ -51,8 +51,6 @@ ALL_TARGET=	${OSNAME}-x86-any
 . endif
 .elif ${ARCH} == "amd64"
 ALL_TARGET=	${OSNAME}-x86-64
-.elif ${ARCH} == "alpha"
-ALL_TARGET=	${OSNAME}-alpha
 .else
 ALL_TARGET=	generic
 .endif
