@@ -31,7 +31,9 @@ MAITCHFLAGS+=	PARALLEL=${MAKE_JOBS_NUMBER};PREFIX=${PREFIX};
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	vte3
+#USE_GNOME+=	vte3
+# use older vte3-290 port until roxterm can support the 2.91 API from vte3
+LIB_DEPENDS+=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte290
 .else
 USE_GNOME+=	vte
 DISABLE_GTK3=	True
