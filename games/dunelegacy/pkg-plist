@@ -26,8 +26,3 @@ bin/dunelegacy
 %%DATADIR%%/maps/singleplayer/2P - 64x64 - Twin Fists.ini
 %%DATADIR%%/maps/singleplayer/3P - 64x32 - Middle Man.ini
 %%DATADIR%%/maps/singleplayer/5P - 128x128 - All against Atreides.ini
-@dirrmtry %%DATADIR%%/locale
-@dirrmtry %%DATADIR%%/maps/multiplayer
-@dirrmtry %%DATADIR%%/maps/singleplayer
-@dirrmtry %%DATADIR%%/maps
-@dirrmtry %%DATADIR%%

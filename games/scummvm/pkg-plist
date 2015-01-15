@@ -25,5 +25,3 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

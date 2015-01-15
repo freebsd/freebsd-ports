@@ -203,7 +203,3 @@ man/man6/bzfs.6.gz
 %%DATADIR%%/wall.png
 %%DATADIR%%/water.png
 %%DATADIR%%/zone_ground.png
-@dirrmtry lib/bzflag
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/l10n
-@dirrmtry %%DATADIR%%

@@ -8,6 +8,3 @@ share/openttd/baseset/opengfx/ogfxi_logos.grf
 share/openttd/baseset/opengfx/ogfxt_toyland.grf
 share/openttd/baseset/opengfx/opengfx.obg
 share/openttd/baseset/opengfx/readme.txt
-@dirrmtry share/openttd/baseset/opengfx
-@dirrmtry share/openttd/baseset
-@dirrmtry share/openttd

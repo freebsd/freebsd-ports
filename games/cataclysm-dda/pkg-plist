@@ -96,14 +96,3 @@ libexec/cataclysm
 %%NLS%%share/locale/vi/LC_MESSAGES/cataclysm-dda.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cataclysm-dda.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/cataclysm-dda.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/gfx/TsuTileset
-@dirrm %%DATADIR%%/gfx/HoderTileset
-@dirrm %%DATADIR%%/gfx/DeonTileset
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/data/raw
-@dirrm %%DATADIR%%/data/json/items
-@dirrm %%DATADIR%%/data/json
-@dirrm %%DATADIR%%/data/font
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

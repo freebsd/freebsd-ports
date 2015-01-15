@@ -97,33 +97,3 @@ share/games/armagetronad%%SUFFIX%%/scripts/sysinstall
 %%CLIENT%%share/games/armagetronad/textures/shadow.png
 %%CLIENT%%share/games/armagetronad/textures/sky.png
 %%CLIENT%%share/games/armagetronad/textures/title.jpg
-%%CLIENT%%@dirrm share/games/armagetronad/textures
-%%CLIENT%%@dirrm share/games/armagetronad/sound
-@dirrm share/games/armagetronad%%SUFFIX%%/scripts
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom/clever
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/AATeam
-@dirrm share/games/armagetronad%%SUFFIX%%/resource/included
-@dirrm share/games/armagetronad%%SUFFIX%%/resource
-%%CLIENT%%@dirrm share/games/armagetronad/models
-@dirrm share/games/armagetronad%%SUFFIX%%/language
-@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/small
-@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/medium
-@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/large
-@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons
-@dirrm share/games/armagetronad%%SUFFIX%%/desktop
-@dirrm share/games/armagetronad%%SUFFIX%%
-@dirrmtry share/games
-@dirrm share/doc/games/armagetronad%%SUFFIX%%/html/net
-@dirrm share/doc/games/armagetronad%%SUFFIX%%/html
-@dirrm share/doc/games/armagetronad%%SUFFIX%%
-@dirrmtry share/doc/games
-@dirrm etc/games/armagetronad%%SUFFIX%%/examples/cvs_test
-@dirrm etc/games/armagetronad%%SUFFIX%%/examples
-@dirrm etc/games/armagetronad%%SUFFIX%%
-@dirrmtry etc/games

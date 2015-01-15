@@ -6,4 +6,3 @@ bin/powwow-muc
 man/man6/powwow.6.gz
 %%DATADIR%%/powwow.doc
 %%DATADIR%%/powwow.help
-@dirrm %%DATADIR%%

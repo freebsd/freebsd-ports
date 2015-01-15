@@ -363,25 +363,7 @@
 %%ORIGINAL%%%%DATADIR%%/ambient/al_wt_windstrng1.wav
 %%ORIGINAL%%%%DATADIR%%/data/patch.bif
 %%ORIGINAL%%%%DATADIR%%/dialog.tlk
-@dirrm %%DATADIR%%/texturepacks
-%%DIAMOND%%@dirrm %%DATADIR%%/tempclient
-%%DIAMOND%%@dirrm %%DATADIR%%/temp
-%%DIAMOND%%@dirrm %%DATADIR%%/source
-@dirrm %%DATADIR%%/servervault
-%%DIAMOND%%@dirrm %%DATADIR%%/scripttemplates
-@dirrm %%DATADIR%%/saves
-%%ORIGINAL%%@dirrm %%DATADIR%%/portraits
-%%DIAMOND%%@dirrm %%DATADIR%%/patch
-@dirrm %%DATADIR%%/override
-@dirrm %%DATADIR%%/nwm
-@dirrm %%DATADIR%%/music
-%%DIAMOND%%@dirrm %%DATADIR%%/movies
-@dirrm %%DATADIR%%/modules
-%%DIAMOND%%@dirrm %%DATADIR%%/logs
-@dirrm %%DATADIR%%/localvault
-@dirrm %%DATADIR%%/hak
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/dmvault
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/ambient
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/servervault
+@dir %%DATADIR%%/saves
+@dir %%DATADIR%%/portraits
+@dir %%DATADIR%%/hak

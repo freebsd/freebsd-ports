@@ -1777,18 +1777,3 @@ dmjava/spell.gif
 dmjava/theend.gif
 dmjava/title.gif
 dmjava/uparrow.gif
-@dirrm dmjava/Dungeons
-@dirrm dmjava/Endings
-@dirrm dmjava/Events
-@dirrm dmjava/Heroes/Csb
-@dirrm dmjava/Heroes/Dm
-@dirrm dmjava/Heroes/Dm plus
-@dirrm dmjava/Heroes
-@dirrm dmjava/Icons
-@dirrm dmjava/Items
-@dirrm dmjava/Maps
-@dirrm dmjava/Monsters
-@dirrm dmjava/Saves
-@dirrm dmjava/Sounds
-@dirrm dmjava/Spells
-@dirrm dmjava
