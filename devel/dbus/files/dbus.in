@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: dbus
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON ldconfig
 #
 # Add the following lines to /etc/rc.conf to enable the D-BUS messaging system:
 #
