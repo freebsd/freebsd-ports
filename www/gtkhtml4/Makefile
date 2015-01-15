@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/gtkhtml4/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gtkhtml
-PORTVERSION=	4.8.4
+PORTVERSION=	4.8.5
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
