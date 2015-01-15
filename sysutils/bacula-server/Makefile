@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.0.5
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -13,6 +13,7 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
 USES+=		libtool
+USE_OPENSSL=	yes
 
 CONFLICTS?=	bacula5-server-*
 
@@ -29,8 +30,8 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS OPENSSL
-OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS
+OPTIONS_DEFAULT?=	NLS PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file

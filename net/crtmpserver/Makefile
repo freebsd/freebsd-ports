@@ -3,7 +3,7 @@
 
 PORTNAME=	crtmpserver
 PORTVERSION=	0.811
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://rtmpd.com/assets/sources/
 
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 USES=		cmake:outsource lua
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
 CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=${PORTVERSION}
+USE_OPENSSL=	yes
 
 USERS=	crtmpserver
 GROUPS=	crtmpserver

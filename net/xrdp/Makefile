@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	GH
@@ -14,11 +14,13 @@ COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
 
-USES=		autoreconf:build libtool pkgconfig
-USE_XORG=	x11 xfixes
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	xrdp
+USES=		autoreconf:build libtool pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
+USE_OPENSSL=	yes
+USE_RC_SUBR=	xrdp
+USE_XORG=	x11 xfixes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp

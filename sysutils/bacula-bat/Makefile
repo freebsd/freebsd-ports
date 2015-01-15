@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
+PORTREVISION=	3
 PKGNAMESUFFIX=	-bat
 
 COMMENT=	Network backup solution (GUI)
@@ -24,7 +25,7 @@ CONFIGURE_ARGS+=	--enable-bat \
 			--disable-build-stored \
 			--enable-client-only
 
-OPTIONS_DEFINE=	OPENSSL
-OPTIONS_DEFAULT=OPENSSL
+OPTIONS_DEFINE=	#
+OPTIONS_DEFAULT=#
 
 .include "${MASTERDIR}/Makefile"

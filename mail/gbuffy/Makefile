@@ -3,7 +3,7 @@
 
 PORTNAME=	gbuffy
 PORTVERSION=	0.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}/
 
@@ -13,10 +13,12 @@ COMMENT=	GTK+ multiple mailbox "biff" program
 LIB_DEPENDS=	libPropList.so:${PORTSDIR}/devel/libPropList \
 		libcompface.so:${PORTSDIR}/mail/faces
 
-PLIST_FILES=	bin/gbuffy
-USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib
+USE_GNOME=	gtk12
+USE_OPENSSL=	yes
+
+PLIST_FILES=	bin/gbuffy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bindir)|DESTDIR)$$(&|' \

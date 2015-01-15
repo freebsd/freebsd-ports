@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 PKGNAMESUFFIX=	34
@@ -20,12 +20,8 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
-OPTIONS_RADIO=	SSL
-OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS
-OPTIONS_DEFAULT=	PORTS_SSL PCRE
-SYS_SSL_DESC=		Build with OpenSSL support (from system)
-PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS OPENSSL
+OPTIONS_DEFAULT=	OPENSSL PCRE
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
@@ -50,18 +46,15 @@ BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSYS_SSL} || ${PORT_OPTIONS:MPORTS_SSL}
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=		yes
+WITH_OPENSSL_PORT=	yes
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 			OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
 PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.so
 .else
 CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-.if ${PORT_OPTIONS:MPORTS_SSL}
-WITH_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MTCP_WRAPPERS}

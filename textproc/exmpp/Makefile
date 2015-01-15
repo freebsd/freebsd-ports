@@ -3,6 +3,7 @@
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc net-im
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -26,7 +27,7 @@ CONFIGURE_ARGS+=--enable-static=yes \
 		--enable-shared=yes \
 		--with-erlang=${LOCALBASE} \
 		--with-expat=${LOCALBASE} \
-		--with-openssl=/usr \
+		--with-openssl=${OPENSSLBASE} \
 		--disable-debug \
 		--disable-warnings \
 		--disable-examples \
@@ -35,6 +36,7 @@ GNU_CONFIGURE_PREFIX=	"${PREFIX}/lib/erlang/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USES=		libtool pkgconfig
+USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
 

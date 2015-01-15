@@ -2,6 +2,7 @@
 
 PORTNAME=	filtermail
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sourceforge.net/projects/mailfilter/files/Mailfilter/
 DISTNAME=	mailfilter-${PORTVERSION}
@@ -23,6 +24,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		bison gmake
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

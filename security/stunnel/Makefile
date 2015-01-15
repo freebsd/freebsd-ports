@@ -3,6 +3,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	5.08
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -26,32 +27,28 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 USES=		shebangfix libtool
-USE_RC_SUBR=	stunnel
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd
+CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd \
+		--with-ssl="${OPENSSLBASE}"
 SHEBANG_FILES=	src/stunnel3.in
 
-OPTIONS_DEFINE=			IPV6 LIBWRAP SSL_PORT FIPS DOCS EXAMPLES
+OPTIONS_DEFINE=			IPV6 LIBWRAP FIPS DOCS EXAMPLES
 OPTIONS_SINGLE=			THREAD
 OPTIONS_SINGLE_THREAD=		FORK PTHREAD UCONTEXT
 OPTIONS_DEFAULT=		PTHREAD
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 LIBWRAP_CONFIGURE_ENABLE=	libwrap
-SSL_PORT_CONFIGURE_ON=		--with-ssl="${OPENSSLBASE}"
-SSL_PORT_CONFIGURE_OFF=		--with-ssl=/usr
-SSL_PORT_USE=			OPENSSL=yes
 FIPS_CONFIGURE_ENABLE=		fips
 
-SSL_PORT_DESC=			Use OpenSSL from the ports collection
 FORK_DESC=			Use the fork(3) threading model
 PTHREAD_DESC=			Use the pthread(3) threading model
 UCONTEXT_DESC=			Use the ucontext(3) threading model
 FIPS_DESC=			Enable OpenSSL FIPS mode
-
-.include <bsd.port.options.mk>
 
 STUNNEL_USER?=	stunnel
 STUNNEL_GROUP?=	stunnel
@@ -59,11 +56,7 @@ STUNNEL_GROUP?=	stunnel
 USERS=		${STUNNEL_USER}
 GROUPS=		${STUNNEL_GROUP}
 
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBWRAP}
 LDFLAGS+=		-lwrap
@@ -114,4 +107,4 @@ cert:
 	@${ECHO} ""
 	@(cd ${WRKSRC}/tools/; make install-data-local)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

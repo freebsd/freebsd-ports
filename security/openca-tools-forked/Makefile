@@ -3,7 +3,7 @@
 
 PORTNAME=	openca-tools-forked
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 DIST_SUBDIR=	openxpki
 
@@ -17,8 +17,9 @@ GH_ACCOUNT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	641e43a
 
-USES=		gmake perl5
 GNU_CONFIGURE=	yes
+USES=		gmake perl5
+USE_OPENSSL=	yes
 
 # security/openssl already has a verify.1 manpage.
 post-stage:

@@ -3,6 +3,7 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
@@ -18,7 +19,7 @@ UUID!=		uuidgen
 PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd \
 		man/man8/miniupnpd.8.gz
 MAKE_JOBS_UNSAFE=yes
-
+USE_OPENSSL=	yes
 USE_RC_SUBR=	miniupnpd
 
 OPTIONS_DEFINE=	PF_ENABLE_FILTER_RULES CHECK_PORTINUSE IPV6 UPNP_IGDV2 UPNP_STRICT LEASEFILE

@@ -3,7 +3,7 @@
 
 PORTNAME=	httping
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		LOCAL/ehaupt
@@ -40,6 +40,7 @@ MAKE_ENV+=	FW=no
 
 .if ${PORT_OPTIONS:MSSL}
 MAKE_ENV+=	SSL=yes
+USE_OPENSSL=	yes
 .else
 MAKE_ENV+=	SSL=no
 .endif

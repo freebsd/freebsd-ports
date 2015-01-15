@@ -3,6 +3,7 @@
 
 PORTNAME=	l4ip
 PORTVERSION=	1.0.294
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.lundman.net/ftp/l4ip/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)/v\1.\2.b\3/}
@@ -11,6 +12,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	L4 health check daemon for IPFILTER
 
 USES=		gmake tar:tgz
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 post-patch:

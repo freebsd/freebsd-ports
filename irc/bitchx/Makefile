@@ -3,7 +3,7 @@
 
 PORTNAME=	BitchX
 DISTVERSION=	1.2-final
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	http://bitchx.ca/
@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-ssl
+USE_OPENSSL=		yes
 .endif
 
 .if ${PORT_OPTIONS:MPLUGINS}

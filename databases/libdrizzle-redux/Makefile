@@ -3,7 +3,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	5.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/138246183/
 PKGNAMESUFFIX=	-redux
@@ -18,6 +18,7 @@ LICENSE=	BSD2CLAUSE
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 CONFLICTS=	libdrizzle-[0-9]*
 

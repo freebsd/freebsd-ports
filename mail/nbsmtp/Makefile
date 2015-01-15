@@ -3,7 +3,7 @@
 
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -13,8 +13,8 @@ COMMENT=	Simple program for outgoing SMTP delivery
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--enable-ssl --enable-ipv6
+CONFIGURE_ARGS=	--enable-ssl --enable-ipv6
+USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/nbsmtp man/man5/nbsmtprc.5.gz man/man8/nbsmtp.8.gz
 

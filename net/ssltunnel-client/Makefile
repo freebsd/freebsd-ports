@@ -3,7 +3,7 @@
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-client
@@ -19,6 +19,7 @@ GUI_DESC=	GTK 1.2 graphical interface
 CONFIGURE_ARGS=	--disable-server --with-iconv=${ICONV_PREFIX}
 GNU_CONFIGURE=	yes
 USES=		iconv
+USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
 

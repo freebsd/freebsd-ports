@@ -3,6 +3,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
@@ -21,8 +22,9 @@ OPTIONS_DEFINE=	DOCS ULTRAFTP
 ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
 
 USES=		imake:env gmake perl5 tk:wrapper
-USE_XORG=	xi xmu xt xaw ice xpm xext sm
+USE_OPENSSL=	yes
 USE_PERL5=	run
+USE_XORG=	xi xmu xt xaw ice xpm xext sm
 
 MAKE_ENV+=	ROOT=${STAGEDIR}
 

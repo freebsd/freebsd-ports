@@ -2,6 +2,7 @@
 
 PORTNAME=	re
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.creytiv.com/pub/
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		gmake
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 PORTDATA=	re.mk
 

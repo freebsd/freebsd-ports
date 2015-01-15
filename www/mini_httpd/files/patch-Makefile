@@ -5,10 +5,11 @@
  # it may be in /usr/local instead of /usr/local/ssl.
  #SSL_TREE =	/usr/local/ssl
 -#SSL_DEFS =	-DUSE_SSL
-+SSL_DEFS =	-DUSE_SSL
- #SSL_INC =	-I$(SSL_TREE)/include
+-#SSL_INC =	-I$(SSL_TREE)/include
 -#SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
-+SSL_LIBS =	-lssl -lcrypto
++SSL_DEFS =	-DUSE_SSL
++SSL_INC =	-I$(SSL_TREE)/include
++SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
  
  
  BINDIR =	/usr/local/sbin
@@ -16,7 +17,7 @@
  CC =		cc
  CDEFS =		$(SSL_DEFS) $(SSL_INC)
 -CFLAGS =	-O $(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
-+CFLAGS +=	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++CFLAGS =	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
  LDFLAGS =	-s
  LDLIBS =	$(CRYPT_LIB) $(SSL_LIBS) $(SYSV_LIBS)
  

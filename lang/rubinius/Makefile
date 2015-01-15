@@ -3,7 +3,7 @@
 
 PORTNAME=	rubinius
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://releases.rubini.us/:source \
 		RG:gems
@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo
 
 USES=		perl5 gmake tar:bzip2 readline
+USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_PERL5=	build

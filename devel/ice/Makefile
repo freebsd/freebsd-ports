@@ -3,7 +3,7 @@
 
 PORTNAME=		Ice
 PORTVERSION=		3.5.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		devel
 MASTER_SITES=		http://download.zeroc.com/Ice/3.5/
 
@@ -17,6 +17,7 @@ SLAVE_PORT?=		no
 .if ${SLAVE_PORT} == "no"
 LIB_DEPENDS=		libexpat.so:${PORTSDIR}/textproc/expat2 \
 			libmcpp.so:${PORTSDIR}/devel/mcpp
+USE_OPENSSL=		yes
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
 LIB_DEPENDS+=		libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice

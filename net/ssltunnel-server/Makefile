@@ -3,7 +3,7 @@
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-server
@@ -21,6 +21,7 @@ USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
+USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
 

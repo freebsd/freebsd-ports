@@ -3,6 +3,7 @@
 
 PORTNAME=	wrk
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	https://github.com/wg/wrk/archive/
 DISTNAME=	${PORTVERSION}
@@ -13,9 +14,11 @@ COMMENT=	The modern HTTP benchmarking tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake
+USE_OPENSSL=	yes
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
 
 PLIST_FILES=	bin/wrk

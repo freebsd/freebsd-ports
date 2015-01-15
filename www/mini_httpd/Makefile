@@ -3,6 +3,7 @@
 
 PORTNAME=	mini_httpd
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
@@ -11,12 +12,15 @@ COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 
 LICENSE=	BSD2CLAUSE
 
-OPTIONS_DEFINE=	SSL
-SSL_MAKE_ARGS=	-DUSE_OPENSSL
+MAKE_ARGS=	SSL_TREE="${OPENSSLBASE}"
+USE_OPENSSL=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's/htpasswd/${PORTNAME}-htpasswd/g' ${WRKSRC}/htpasswd.1
-	${REINPLACE_CMD} -e 's/\(htpasswd(1)\)/${PORTNAME}-\1/g' ${WRKSRC}/${PORTNAME}.8
+	@${REINPLACE_CMD} -e 's/htpasswd/${PORTNAME}-htpasswd/g' ${WRKSRC}/htpasswd.1
+	@${REINPLACE_CMD} -e 's/\(htpasswd(1)\)/${PORTNAME}-\1/g' ${WRKSRC}/${PORTNAME}.8
+	@${REINPLACE_CMD} \
+		-e '/^CFLAGS =/s|=|= ${CFLAGS}|' \
+		-e '/^LDFLAGS =/s|=|= ${LDFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
