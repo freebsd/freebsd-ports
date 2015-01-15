@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BitchX
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org

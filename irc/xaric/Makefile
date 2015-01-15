@@ -3,14 +3,16 @@
 
 PORTNAME=	xaric
 PORTVERSION=	0.13.6
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://xaric.org/software/xaric/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
-USES=		pathfix gmake
 GNU_CONFIGURE=	yes
+USES=		gmake pathfix
+USE_OPENSSL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in

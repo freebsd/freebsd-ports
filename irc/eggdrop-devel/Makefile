@@ -3,7 +3,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.8.0.20141008
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
@@ -15,6 +15,7 @@ COMMENT=	The most popular open source Internet Relay Chat bot
 LICENSE=	GPLv2
 
 USES=		tcl:85+
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h

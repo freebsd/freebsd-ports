@@ -3,7 +3,7 @@
 
 PORTNAME=	blastbeat
 PORTVERSION=	20121205
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GH GHC
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
 		libzmq.so:${PORTSDIR}/net/libzmq2
 
 USES=		gmake
+USE_OPENSSL=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
 GH_COMMIT=	cdac9a9

@@ -3,7 +3,7 @@
 
 PORTNAME=	sigram
 PORTVERSION=	0.11182014
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	kmoore@freebsd.org
@@ -16,6 +16,7 @@ GH_ACCOUNT=	sialan-labs
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	ce3fb15
 
+USE_OPENSSL=	yes
 USE_QT5=	core gui network opengl xml widgets buildtools_build graphicaleffects \
 		multimedia printsupport qml quick quickcontrols widgets \
 		sql sql-sqlite3

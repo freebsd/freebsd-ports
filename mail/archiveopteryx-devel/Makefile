@@ -3,6 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.99.20140730
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -20,6 +21,7 @@ GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	39bdb8b
 
 USES=		perl5 tar:bzip2 pgsql:9.1+
+USE_OPENSSL=	yes
 USE_PERL5=	build
 
 PORTDOCS=	COPYING README bsd.txt

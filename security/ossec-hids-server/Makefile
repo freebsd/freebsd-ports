@@ -3,7 +3,7 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	2.8.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
@@ -17,6 +17,7 @@ USE_RC_SUBR=	ossec-hids
 CFLAGS+=	-ferror-limit=0
 
 USES=		readline
+USE_OPENSSL=	yes
 
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs

@@ -3,6 +3,7 @@
 
 PORTNAME=	poco
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	https://codeload.github.com/pocoproject/poco/legacy.tar.gz/poco-${PORTVERSION}-release?dummy=/
 PKGNAMESUFFIX=	-devel
@@ -13,6 +14,8 @@ COMMENT=	C++ Portable Components library
 LICENSE=	BSL
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	poco-ssl-[0-9]* poco-[0-9]*
 
@@ -27,12 +30,13 @@ OPTIONS_RADIO=	ODBC
 OPTIONS_RADIO_ODBC=	UODBC IODBC
 ODBC_DESC=	ODBC Driver
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--config=FreeBSD --unbundled
 USES=		gmake
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 MAKE_JOBS_UNSAFE=true
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
 WRKSRC=		${WRKDIR}/pocoproject-poco-a64ebba
 MAKE_ARGS=	CXX=c++ CC=cc POCO_ODBC_LIB=${LOCALBASE}/lib
 
@@ -63,9 +67,6 @@ USE_SQLITE=	yes
 .else
 CONFIGURE_ARGS+=	--omit=Data/SQLite
 .endif
-
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/ =/ ?=/g" ${WRKSRC}/build/config/FreeBSD

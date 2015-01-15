@@ -3,7 +3,7 @@
 
 PORTNAME=	skipfish
 PORTVERSION=	2.10b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake tar:tgz
+USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

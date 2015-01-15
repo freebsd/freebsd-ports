@@ -3,7 +3,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	6.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -23,6 +23,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USES=		gmake libtool readline uidfix
 USE_AUTOTOOLS=	autoheader aclocal
+USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\

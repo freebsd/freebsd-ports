@@ -3,6 +3,7 @@
 
 PORTNAME=	httrack
 PORTVERSION=	3.48.20
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/ \
@@ -23,8 +24,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	${PREFIX}/lib/httrack
 USES=		alias execinfo gmake iconv libtool shebangfix
+USE_LDCONFIG=	${PREFIX}/lib/httrack
+USE_OPENSSL=	yes
 
 PORTDATA=	*
 PORTDOCS=	*

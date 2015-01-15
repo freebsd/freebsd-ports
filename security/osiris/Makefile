@@ -2,7 +2,7 @@
 
 PORTNAME=	osiris
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shmoo client/server host integrity checker
 
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 USE_RC_SUBR=	yes
 
 OPTIONS_DEFINE=	OSIRISMD OSIRISD PRINTDB CLI

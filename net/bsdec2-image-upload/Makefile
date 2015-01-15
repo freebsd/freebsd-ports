@@ -2,6 +2,7 @@
 
 PORTNAME=	bsdec2-image-upload
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd-ec2-dist.s3.amazonaws.com/
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USES=		tar:tgz uidfix
+USE_OPENSSL=	yes
 
 # Install into ${STAGEDIR}${PREFIX}; but the build respects ${DESTDIR} so
 # all we need to give is the ${PREFIX}/bin part.

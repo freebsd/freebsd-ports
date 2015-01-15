@@ -3,6 +3,7 @@
 
 PORTNAME=	spamdyke
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 
@@ -29,6 +30,7 @@ DEBUG_DESC=	Enable debugging output
 DEBUG_EXCESSIVE_DESC=	Enable excessive debugging output
 
 TLS_CONFIGURE_ENABLE=			tls
+TLS_USE=				OPENSSL=yes
 DEBUG_CONFIGURE_ENABLE=			debug-output
 DEBUG_EXCESSIVE_CONFIGURE_ENABLE=	excessive-output
 

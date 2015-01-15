@@ -739,8 +739,6 @@ USE_OPENSSL=    yes
 .if ${PORT_OPTIONS:MSPDY}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000028
 WITH_OPENSSL_PORT=      yes
-.else
-WITH_OPENSSL_BASE=      yes
 .endif
 .endif
 .endif
