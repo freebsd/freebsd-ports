@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 19960 2014-10-15 14:24:24Z gusi $
 
 PORTNAME=	gnome-dictionary
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
