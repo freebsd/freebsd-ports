@@ -251,6 +251,7 @@
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte-reference
+    SUBDIR += vte290
     SUBDIR += vte3
     SUBDIR += vtkfox
     SUBDIR += wmapp
