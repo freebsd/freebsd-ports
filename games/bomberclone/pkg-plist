@@ -151,24 +151,3 @@ bin/bomberclone
 %%DATADIR%%/tileset/zbb_frog/block.png
 %%DATADIR%%/tileset/zbb_frog/stone.png
 share/pixmaps/bomberclone.png
-@dirrm %%DATADIR%%/tileset/zbb_frog
-@dirrm %%DATADIR%%/tileset/uccia_garbage
-@dirrm %%DATADIR%%/tileset/tricked
-@dirrm %%DATADIR%%/tileset/supermario
-@dirrm %%DATADIR%%/tileset/sheep
-@dirrm %%DATADIR%%/tileset/radioactive
-@dirrm %%DATADIR%%/tileset/modern
-@dirrm %%DATADIR%%/tileset/jungle
-@dirrm %%DATADIR%%/tileset/hell
-@dirrm %%DATADIR%%/tileset/farm
-@dirrm %%DATADIR%%/tileset/default
-@dirrm %%DATADIR%%/tileset/cucumber
-@dirrm %%DATADIR%%/tileset/classic
-@dirrm %%DATADIR%%/tileset/cementery
-@dirrm %%DATADIR%%/tileset
-@dirrm %%DATADIR%%/player
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%

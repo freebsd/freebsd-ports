@@ -2,7 +2,6 @@ bin/AEstats
 bin/preAEs
 %%DATADIR%%/logs/ngUT.log
 %%DATADIR%%/logs/ngUT.mlg
-@dirrm %%DATADIR%%/logs
 %%DATADIR%%/stats/headers/AEstatsBestOfsHead.html
 %%DATADIR%%/stats/headers/AEstatsBuddyHead.html
 %%DATADIR%%/stats/headers/AEstatsDiffMatrixHead.html
@@ -21,14 +20,12 @@ bin/preAEs
 %%DATADIR%%/stats/headers/metal.gif
 %%DATADIR%%/stats/headers/t.gif
 %%DATADIR%%/stats/headers/metalw.gif
-@dirrm %%DATADIR%%/stats/headers
 %%DATADIR%%/stats/players/headers/background.gif
 %%DATADIR%%/stats/players/headers/foot.gif
 %%DATADIR%%/stats/players/headers/head.gif
 %%DATADIR%%/stats/players/headers/metal.gif
 %%DATADIR%%/stats/players/headers/metalw.gif
 %%DATADIR%%/stats/players/headers/t.gif
-@dirrm %%DATADIR%%/stats/players/headers
 %%DATADIR%%/stats/players/AEstatsPlayer0.html
 %%DATADIR%%/stats/players/AEstatsPlayer1.html
 %%DATADIR%%/stats/players/AEstatsPlayer10.html
@@ -42,15 +39,12 @@ bin/preAEs
 %%DATADIR%%/stats/players/AEstatsPlayer7.html
 %%DATADIR%%/stats/players/AEstatsPlayer8.html
 %%DATADIR%%/stats/players/AEstatsPlayer9.html
-@dirrm %%DATADIR%%/stats/players
 %%DATADIR%%/stats/teams/headers/background.gif
 %%DATADIR%%/stats/teams/headers/foot.gif
 %%DATADIR%%/stats/teams/headers/head.gif
 %%DATADIR%%/stats/teams/headers/metal.gif
 %%DATADIR%%/stats/teams/headers/metalw.gif
 %%DATADIR%%/stats/teams/headers/t.gif
-@dirrm %%DATADIR%%/stats/teams/headers
-@dirrm %%DATADIR%%/stats/teams
 %%DATADIR%%/stats/AEstats.html
 %%DATADIR%%/stats/AEstatsBestOfs.html
 %%DATADIR%%/stats/AEstatsBuddy.html
@@ -63,15 +57,12 @@ bin/preAEs
 %%DATADIR%%/stats/AEstatsTeam.html
 %%DATADIR%%/stats/aestats.css
 %%DATADIR%%/stats/index.html
-@dirrm %%DATADIR%%/stats
 %%DATADIR%%/unrealmod/AEonsDM.uc
 %%DATADIR%%/unrealmod/AEonsDMmod.int
 %%DATADIR%%/unrealmod/AEonsDMmod.u
 %%DATADIR%%/unrealmod/Unreal.ini
-@dirrm %%DATADIR%%/unrealmod
 %%DATADIR%%/AEsscore.cfg
 %%DATADIR%%/AEstats.cfg
 %%DATADIR%%/AEstats.txt
 %%DATADIR%%/alias.txt
 %%DATADIR%%/banlist.txt
-@dirrm %%DATADIR%%

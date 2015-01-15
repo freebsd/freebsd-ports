@@ -77,21 +77,5 @@ bin/jin
 %%DATADIR%%/servers/chessclub.jar
 %%DATADIR%%/servers/freechess.jar
 %%DATADIR%%/util.jar
-@dirrm %%DATADIR%%/actions/fics
-@dirrm %%DATADIR%%/actions/icc
-@dirrm %%DATADIR%%/actions
-@dirrm %%DATADIR%%/libs/fics
-@dirrm %%DATADIR%%/libs/icc
-@dirrm %%DATADIR%%/libs
-@dirrm %%DATADIR%%/lnfs
-@dirrm %%DATADIR%%/plugins/fics
-@dirrm %%DATADIR%%/plugins/icc
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/resources/boards/icc
-@dirrm %%DATADIR%%/resources/boards
-@dirrm %%DATADIR%%/resources/pieces/fics
-@dirrm %%DATADIR%%/resources/pieces/icc
-@dirrm %%DATADIR%%/resources/pieces
-@dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/servers
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/actions/fics
+@dir %%DATADIR%%/actions/icc

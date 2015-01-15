@@ -60,4 +60,3 @@ share/gtypist/v.typ
 %%NLS%%share/locale/tr/LC_MESSAGES/gtypist.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtypist.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gtypist.mo
-@dirrm share/gtypist

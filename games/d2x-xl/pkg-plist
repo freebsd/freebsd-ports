@@ -73,13 +73,3 @@ bin/d2x-xl
 %%DATADIR%%/textures/slowmotion#0.tga
 %%DATADIR%%/textures/status.tga
 %%DATADIR%%/textures/statusb.tga
-@dirrm %%DATADIR%%/textures/d2x-xl/original
-@dirrm %%DATADIR%%/textures/d2x-xl
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/sounds2/d1
-@dirrm %%DATADIR%%/sounds2
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%

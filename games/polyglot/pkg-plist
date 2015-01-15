@@ -6,4 +6,3 @@ man/man6/polyglot.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/README1.4w
 %%PORTDOCS%%%%DOCSDIR%%/README1.4w10UCI
 %%PORTDOCS%%%%DOCSDIR%%/book_format.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

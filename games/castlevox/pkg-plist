@@ -63,13 +63,3 @@ bin/CastleVox
 %%DATADIR%%/tritonus_share.jar
 %%DATADIR%%/vorbisspi1.0.3.jar
 share/pixmaps/CastleVox.png
-@dirrm %%DATADIR%%/docs/docs_files
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/Support/Themes/Tutorial Map
-@dirrm %%DATADIR%%/Support/Themes/MB WW2 World
-@dirrm %%DATADIR%%/Support/Themes/MB Hex Barons
-@dirrm %%DATADIR%%/Support/Themes
-@dirrm %%DATADIR%%/Support/Music
-@dirrm %%DATADIR%%/Support/Maps
-@dirrm %%DATADIR%%/Support
-@dirrm %%DATADIR%%

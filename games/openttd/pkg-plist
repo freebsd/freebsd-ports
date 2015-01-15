@@ -7,7 +7,6 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_1.2.nut
 %%DATADIR%%/ai/compat_1.3.nut
 %%DATADIR%%/ai/compat_1.4.nut
-@dirrm %%DATADIR%%/ai
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.grf
@@ -18,7 +17,6 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/baseset/orig_win.obg
 %%DATADIR%%/baseset/orig_win.obm
 %%DATADIR%%/baseset/orig_win.obs
-@dirrmtry %%DATADIR%%/baseset
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/basque.lng
@@ -73,7 +71,6 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/lang/ukrainian.lng
 %%DATADIR%%/lang/vietnamese.lng
 %%DATADIR%%/lang/welsh.lng
-@dirrm %%DATADIR%%/lang
 %%DATADIR%%/scripts/autoexec.scr.example
 %%DATADIR%%/scripts/game_start.scr.example
 %%DATADIR%%/scripts/on_client.scr.example
@@ -83,8 +80,6 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/scripts/pre_dedicated.scr.example
 %%DATADIR%%/scripts/pre_server.scr.example
 %%DATADIR%%/scripts/readme.txt
-@dirrm %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%
 share/icons/hicolor/16x16/apps/openttd.png
 share/icons/hicolor/32x32/apps/openttd.png
 share/icons/hicolor/48x48/apps/openttd.png

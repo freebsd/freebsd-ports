@@ -53,13 +53,4 @@ bin/tkscid
 %%DATADIR%%/html/bitmaps/mini/wp.gif
 %%DATADIR%%/html/bitmaps/mini/wq.gif
 %%DATADIR%%/html/bitmaps/mini/wr.gif
-@dirrm %%DATADIR%%/books
-@dirrm %%DATADIR%%/bases
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/engines/phalanx-scid
-@dirrm %%DATADIR%%/engines/togaII1.2.1a
-@dirrm %%DATADIR%%/engines
-@dirrm %%DATADIR%%/html/bitmaps/mini
-@dirrm %%DATADIR%%/html/bitmaps
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/bases
