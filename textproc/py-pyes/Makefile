@@ -3,12 +3,16 @@
 
 PORTNAME=	pyes
 PORTVERSION=	0.99.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Python connector for ElasticSearch - the pythonic way to use ElasticSearch
+
+RUN_DEPENDS=	py-six>=0:${PORTSDIR}/devel/py-six \
+                py-urllib3>=0:${PORTSDIR}/net/py-urllib3
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
