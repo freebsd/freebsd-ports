@@ -42,10 +42,6 @@ CPPFLAGS+=	"-D_M_IX86"
 CONFIGURE_ARGS+=	--disable-x86opts
 .endif
 
-.if ${ARCH} == "alpha"
-CPPFLAGS+=	"-D_M_ALPHA"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|Player::||' ${WRKSRC}/base/include/player.h

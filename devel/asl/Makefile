@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	devel/lang/assemblers
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Assembler for a variety of microcontrollers/-processors
 
-ONLY_FOR_ARCHS=	i386 alpha amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 

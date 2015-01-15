@@ -47,7 +47,7 @@ regression-test:
 	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 .endif
 
-ONLY_FOR_ARCHS=		i386 amd64 alpha
+ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
 
 .include <bsd.port.mk>
