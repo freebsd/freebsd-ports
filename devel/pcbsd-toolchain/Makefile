@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-toolchain
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=
 DISTFILES=
@@ -10,14 +10,11 @@ DISTFILES=
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Development Utilities
 
-RUN_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		uic-qt4:${PORTSDIR}/devel/qt4-uic \
-		rcc:${PORTSDIR}/devel/qt4-rcc \
-		linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
-		designer-qt4:${PORTSDIR}/devel/qt4-designer \
-		qmake-qt4:${PORTSDIR}/devel/qmake4
+USE_QT5=	core dbus designer graphicaleffects gui imageformats multimedia \
+		network printsupport svg webkit widgets x11extras xml linguist qmake
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 do-install:
 	${DO_NADA}
