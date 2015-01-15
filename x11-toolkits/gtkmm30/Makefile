@@ -15,6 +15,8 @@ COMMENT=	C++ wrapper for Gtk+3
 
 USES+=		tar:xz
 
+PORTSCOUT=	limitw:1,even
+
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

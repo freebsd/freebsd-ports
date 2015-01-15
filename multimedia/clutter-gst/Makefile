@@ -12,6 +12,8 @@ COMMENT=	Clutter GStreamer integration
 
 LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
 
+PORTSCOUT=	ignore:1
+
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	introspection gnomeprefix
 GNU_CONFIGURE=	yes
