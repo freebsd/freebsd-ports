@@ -4,6 +4,7 @@
 
 PORTNAME=	libgit2-glib
 PORTVERSION=	0.0.24
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,6 +28,5 @@ CONFIGURE_ARGS=	--disable-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.mk>
