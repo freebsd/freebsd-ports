@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard-minitest
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Automatically run your tests with Minitest framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-guard>=2:${PORTSDIR}/sysutils/rubygem-guard \
+RUN_DEPENDS=	rubygem-guard-compat>=1.2:${PORTSDIR}/sysutils/rubygem-guard-compat \
 		rubygem-minitest>=3:${PORTSDIR}/devel/rubygem-minitest
 
 USE_RUBY=	yes
