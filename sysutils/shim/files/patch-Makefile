@@ -1,0 +1,49 @@
+--- Makefile.orig	2014-10-13 22:41:51.000000000 +0200
++++ Makefile	2014-12-21 16:18:40.000000000 +0100
+@@ -1,16 +1,22 @@
+-CC		= $(CROSS_COMPILE)gcc
++CROSS_COMPILE	= $(LOCALBASE)/bin/
++
++CC		= $(CROSS_COMPILE)gcc48
+ LD		= $(CROSS_COMPILE)ld
+ OBJCOPY		= $(CROSS_COMPILE)objcopy
+ 
+ ARCH		= $(shell $(CC) -dumpmachine | cut -f1 -d- | sed s,i[3456789]86,ia32,)
+ 
++ifeq ($(ARCH),amd64)
++  override ARCH := x86_64
++endif
++
+ SUBDIRS		= Cryptlib lib
+ 
+-LIB_PATH	= /usr/lib64
++LIB_PATH	= $(LOCALBASE)/lib
+ 
+-EFI_INCLUDE	:= /usr/include/efi
++EFI_INCLUDE	:= $(LOCALBASE)/include/efi
+ EFI_INCLUDES	= -nostdinc -ICryptlib -ICryptlib/Include -I$(EFI_INCLUDE) -I$(EFI_INCLUDE)/$(ARCH) -I$(EFI_INCLUDE)/protocol -Iinclude
+-EFI_PATH	:= /usr/lib64/gnuefi
++EFI_PATH	:= $(LOCALBASE)/lib
+ 
+ LIB_GCC		= $(shell $(CC) -print-libgcc-file-name)
+ EFI_LIBS	= -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group $(LIB_GCC) 
+@@ -57,7 +63,7 @@ LDFLAGS		= -nostdlib -znocombreloc -T $(
+ 
+ VERSION		= 0.8
+ 
+-TARGET	= shim.efi MokManager.efi.signed fallback.efi.signed
++TARGET	= shim.efi MokManager.efi fallback.efi
+ OBJS	= shim.o netboot.o cert.o replacements.o version.o
+ KEYS	= shim_cert.h ocsp.* ca.* shim.crt shim.csr shim.p12 shim.pem shim.key shim.cer
+ SOURCES	= shim.c shim.h netboot.c include/PeImage.h include/wincert.h include/console.h replacements.c replacements.h version.c version.h
+@@ -144,8 +150,8 @@ FORMAT		?= --target efi-app-$(ARCH)
+ 		-j .debug_line -j .debug_str -j .debug_ranges \
+ 		$(FORMAT) $^ $@.debug
+ 
+-%.efi.signed: %.efi certdb/secmod.db
+-	pesign -n certdb -i $< -c "shim" -s -o $@ -f
++#%.efi.signed: %.efi certdb/secmod.db
++#	pesign -n certdb -i $< -c "shim" -s -o $@ -f
+ 
+ clean:
+ 	$(MAKE) -C Cryptlib clean

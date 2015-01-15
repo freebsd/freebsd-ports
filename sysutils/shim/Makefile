@@ -1,0 +1,37 @@
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	shim
+PORTVERSION=	0.8
+CATEGORIES=	sysutils
+
+MAINTAINER=	trasz@FreeBSD.org
+COMMENT=	UEFI Secure Boot shim loader
+
+LICENSE=	BSD2CLAUSE
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/gnu-efi \
+		bash:${PORTSDIR}/shells/bash
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mjg59
+GH_COMMIT=	6f4d516
+
+USES=		gmake
+USE_GCC=	4.8+
+USE_GITHUB=	yes
+MAKE_JOBS_UNSAFE=	yes
+ONLY_FOR_ARCHS=	amd64
+
+PLIST_FILES=	lib/shim/MokManager.efi lib/shim/fallback.efi lib/shim/shim.efi
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/make-certs
+
+do-install:
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_PROGRAM} ${WRKSRC}/shim.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_PROGRAM} ${WRKSRC}/MokManager.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_PROGRAM} ${WRKSRC}/fallback.efi ${STAGEDIR}/${PREFIX}/lib/shim
+
+.include <bsd.port.mk>
