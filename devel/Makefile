@@ -575,6 +575,7 @@
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
+    SUBDIR += gnu-efi
     SUBDIR += gnucflow
     SUBDIR += gnulib
     SUBDIR += gnulibiberty
