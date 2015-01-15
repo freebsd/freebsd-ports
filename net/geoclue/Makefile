@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com> 
 # $FreeBSD$
-#   $MCom: ports/trunk/net/geoclue/Makefile 20032 2014-11-02 21:57:34Z kwm $
 
 PORTNAME=	geoclue
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	net devel gnome
 MASTER_SITES=	http://www.freedesktop.org/software/geoclue/releases/2.1/
 
@@ -18,6 +17,7 @@ USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-3g-source \
+		--disable-cdma-source \
 		--disable-modem-gps-source
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
