@@ -12,5 +12,3 @@
 %%Q2DIR%%/matrix/pak2.pak
 %%Q2DIR%%/matrix/pak3.pak
 %%Q2DIR%%/matrix/server.cfg
-@dirrm %%Q2DIR%%/matrix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

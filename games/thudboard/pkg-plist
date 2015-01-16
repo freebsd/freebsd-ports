@@ -64,8 +64,3 @@ bin/thudboard
 %%DATADIR%%/texts.pyc
 %%DATADIR%%/thud.py
 %%DATADIR%%/thud.pyc
-@dirrmtry %%DATADIR%%/koomvalley
-@dirrmtry %%DATADIR%%/img
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

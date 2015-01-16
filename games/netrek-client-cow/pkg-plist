@@ -312,13 +312,3 @@ share/pixmaps/netrek-client-cow/ss/scrshot6.png
 share/pixmaps/netrek-client-cow/ss/scrshot7.png
 share/pixmaps/netrek-client-cow/ss/scrshot8.png
 share/pixmaps/netrek-client-cow/ss/scrshot9.png
-@dirrm share/pixmaps/netrek-client-cow/Fed
-@dirrm share/pixmaps/netrek-client-cow/Ind
-@dirrm share/pixmaps/netrek-client-cow/Kli
-@dirrm share/pixmaps/netrek-client-cow/Misc
-@dirrm share/pixmaps/netrek-client-cow/Ori
-@dirrm share/pixmaps/netrek-client-cow/Planets/Map
-@dirrm share/pixmaps/netrek-client-cow/Planets
-@dirrm share/pixmaps/netrek-client-cow/Rom
-@dirrm share/pixmaps/netrek-client-cow/ss
-@dirrm share/pixmaps/netrek-client-cow

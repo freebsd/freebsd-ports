@@ -38,7 +38,3 @@ man/man6/tworld.6.gz
 %%DATADIR%%/sets/cc-ms.dac
 %%DATADIR%%/sets/intro-lynx.dac
 %%DATADIR%%/sets/intro-ms.dac
-@dirrm %%DATADIR%%/sets
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -19,7 +19,4 @@
 @comment === DATA ===
 %%QMAX%%%%LIBDIR%%/baseq2/maxpak.pak
 @comment === CLEANUP ===
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%CTF%%@dirrm %%LIBDIR%%/ctf
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%
+@dir %%LIBDIR%%/baseq2

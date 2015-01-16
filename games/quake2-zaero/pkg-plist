@@ -10,6 +10,3 @@
 %%DEMO%%%%Q2DIR%%/zaero/sprites/plasma1_3.pcx
 %%DEMO%%%%Q2DIR%%/zaero/sprites/plasmashield.sp2
 %%DEMO%%%%Q2DIR%%/zaero/sprites/plasmashield_0.pcx
-%%DEMO%%@dirrm %%Q2DIR%%/zaero/sprites
-@dirrm %%Q2DIR%%/zaero
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

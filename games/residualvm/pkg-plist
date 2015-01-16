@@ -12,5 +12,3 @@ share/pixmaps/residualvm.xpm
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

@@ -151,10 +151,3 @@
 %%Q2DIR%%/3zb2/game.cfg
 %%Q2DIR%%/3zb2/game.so
 %%Q2DIR%%/3zb2/pak6.pak
-@dirrm %%Q2DIR%%/3zb2/chdtm
-@dirrm %%Q2DIR%%/3zb2/chctf
-@dirrm %%Q2DIR%%/3zb2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/User Guide/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/User Guide/_borders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/User Guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
