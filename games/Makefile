@@ -1003,7 +1003,6 @@
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
-    SUBDIR += vdrift-data
     SUBDIR += vectoroids
     SUBDIR += vegastrike
     SUBDIR += vegastrike-data
