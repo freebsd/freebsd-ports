@@ -168,6 +168,10 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "armv6"
+CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
+.endif
+
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--extra-cflags=-m32
 .endif
