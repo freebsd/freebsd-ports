@@ -2,6 +2,4 @@ bin/ja2
 man/man6/ja2.6.gz
 share/applications/ja2-stracciatella.desktop
 share/pixmaps/jagged2.ico
-@dirrmtry %%DATADIR%%/Data/TILECACHE
-@dirrmtry %%DATADIR%%/Data
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%/Data/TILECACHE

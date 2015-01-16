@@ -55,7 +55,6 @@ MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${PREFIX}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/Data/TILECACHE
-	@${CAT} ${PKGMESSAGE}
 
 lowercase:
 	@for i in \
