@@ -18,17 +18,14 @@ bin/qtv
 %%DATADIR%%/metaqtv/qwnetwork/icons/schedule.gif
 %%DATADIR%%/metaqtv/qwnetwork/icons/tricks.gif
 %%DATADIR%%/metaqtv/qwnetwork/icons/wiki.gif
-@dirrm %%DATADIR%%/metaqtv/qwnetwork/icons
 %%DATADIR%%/metaqtv/qwnetwork/qwnetwork.php
 %%DATADIR%%/metaqtv/qwnetwork/style.css
-@dirrm %%DATADIR%%/metaqtv/qwnetwork
 %%DATADIR%%/metaqtv/config.php
 %%DATADIR%%/metaqtv/header.html
 %%DATADIR%%/metaqtv/index.php
 %%DATADIR%%/metaqtv/qtvbg01.png
 %%DATADIR%%/metaqtv/qtvlist.php
 %%DATADIR%%/metaqtv/style.css
-@dirrm %%DATADIR%%/metaqtv
 %%DATADIR%%/qtv/levelshots/1on1.jpg
 %%DATADIR%%/qtv/levelshots/1on1r.jpg
 %%DATADIR%%/qtv/levelshots/2fort5.jpg
@@ -120,13 +117,10 @@ bin/qtv
 %%DATADIR%%/qtv/levelshots/ztndm4.jpg
 %%DATADIR%%/qtv/levelshots/ztndm5.jpg
 %%DATADIR%%/qtv/levelshots/ztndm6.jpg
-@dirrm %%DATADIR%%/qtv/levelshots
 %%DATADIR%%/qtv/listip.cfg
 %%DATADIR%%/qtv/qtvbg01.png
 %%DATADIR%%/qtv/save.png
 %%DATADIR%%/qtv/stream.png
 %%DATADIR%%/qtv/style.css
-@dirrm %%DATADIR%%/qtv
 %%DATADIR%%/README.1ST
 %%DATADIR%%/qtv.cfg
-@dirrm %%DATADIR%%

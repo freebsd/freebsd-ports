@@ -80,8 +80,3 @@ bin/ptkei
 %%DATADIR%%/src/emps.py
 %%DATADIR%%/src/emps.pyc
 %%DATADIR%%/start.emp
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/doc/pics
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

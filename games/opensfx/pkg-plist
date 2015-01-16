@@ -3,6 +3,3 @@ share/openttd/baseset/opensfx/license.txt
 share/openttd/baseset/opensfx/opensfx.cat
 share/openttd/baseset/opensfx/opensfx.obs
 share/openttd/baseset/opensfx/readme.txt
-@dirrmtry share/openttd/baseset/opensfx
-@dirrmtry share/openttd/baseset
-@dirrmtry share/openttd
