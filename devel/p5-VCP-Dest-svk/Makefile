@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CLKAO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VCP destination driver for svn/svk
 
 BUILD_DEPENDS=	p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus \

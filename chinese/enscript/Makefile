@@ -3,7 +3,7 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 

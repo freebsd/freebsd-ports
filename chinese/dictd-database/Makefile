@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/rafan/chinese/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
 DISTNAME=	dict-zh-${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese <-> English dictd words database
 
 LICENSE=	GPLv2

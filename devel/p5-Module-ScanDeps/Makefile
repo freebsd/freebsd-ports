@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSCHUPP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recursively scan Perl code for dependencies
 
 USES=		perl5

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/2715/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny library for bitwise operations
 
 USES=		lua

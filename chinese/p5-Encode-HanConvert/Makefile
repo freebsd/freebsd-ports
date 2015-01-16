@@ -8,7 +8,7 @@ CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traditional and Simplified Chinese mappings
 
 USES=		perl5
