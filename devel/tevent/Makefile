@@ -33,7 +33,7 @@ DESTDIRNAME=		--destdir
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
-BUILD_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.1:${PORTSDIR}/devel/talloc
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 .include <bsd.port.options.mk>
