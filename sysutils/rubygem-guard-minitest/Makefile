@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard-minitest
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
