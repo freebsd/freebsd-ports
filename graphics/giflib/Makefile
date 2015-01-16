@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	giflib
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-5.x
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
