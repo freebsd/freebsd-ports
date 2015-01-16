@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9360908-9d52-11e4-87fd-10bf48e1088e">
+    <topic>unzip -- input sanitization errors</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<range><le>6.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2014-011.html">
+	  <p>The UnZip tool is an open source extraction utility for archives
+	    compressed in the zip format.</p>
+	  <p>The unzip command line tool is affected by heap-based buffer
+	    overflows within the CRC32 verification, the test_compr_eb() and
+	    the getZip64Data() functions. The input errors may result in
+	    arbitrary code execution.</p>
+	  <p>A specially crafted zip file, passed to unzip -t, can be used to
+	    trigger the vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8139</cvename>
+      <cvename>CVE-2014-8140</cvename>
+      <cvename>CVE-2014-8141</cvename>
+      <url>http://www.info-zip.org/UnZip.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1174844</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2014-8140</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1174856</url>
+    </references>
+    <dates>
+      <discovery>2014-12-03</discovery>
+      <entry>2015-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4f45676-9d33-11e4-8275-000c292e4fd8">
     <topic>samba -- Elevation of privilege to Active Directory Domain Controller</topic>
     <affects>
