@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
 
 USES=		ada tar:bzip2
 USE_MYSQL=	yes
+MYSQL_DEFAULT=	55
+IGNORE_MYSQL_VER=	56
 HAS_CONFIGURE=	yes
 WRKPATH=	${WRKDIR}/build
 CONFIGURE_ARGS= --prefix=${PREFIX} \
