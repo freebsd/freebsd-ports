@@ -60,6 +60,10 @@ CONFIGURE_ARGS+=	--disable-arts \
 
 .include "${.CURDIR}/Makefile.options"
 
+.if ${ARCH} == "armv6"
+CFLAGS_armv6+=	-no-integrated-as
+.endif
+
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	GMPLAYER=""
 DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
