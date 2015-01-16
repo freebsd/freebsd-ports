@@ -1,7 +1,4 @@
-@stopdaemon 3dm2
-@mode 0400
-@sample etc/3dm2/3dm2.conf.sample
-@mode
+@sample(,,0400) etc/3dm2/3dm2.conf.sample
 etc/3dm2/msg/tdm_msg_en
 etc/3dm2/msg/tw_msg_en
 sbin/3dm2
@@ -378,16 +375,6 @@ share/3dm2/help/en/scripts/expand.js
 share/3dm2/help/en/scripts/seealso.js
 share/3dm2/help/en/sqbullet.gif
 share/3dm2/help/en/toc.html
-@cwd /
-etc/3dm2/3dm2.conf
-etc/3dm2/3dm2.pem
-@dirrm etc/3dm2
-@cwd
-@dirrmtry etc/3dm2/msg
-@dirrmtry etc/3dm2
-@dirrmtry share/3dm2/help/en/css
-@dirrmtry share/3dm2/help/en/images
-@dirrmtry share/3dm2/help/en/scripts
-@dirrmtry share/3dm2/help/en
-@dirrmtry share/3dm2/help
-@dirrmtry share/3dm2
+/etc/3dm2/3dm2.conf
+/etc/3dm2/3dm2.pem
+@dir /etc/3dm2
