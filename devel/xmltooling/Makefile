@@ -3,7 +3,7 @@
 
 PORTNAME=	xmltooling
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.3/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
@@ -32,9 +32,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
-
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
 .endif
