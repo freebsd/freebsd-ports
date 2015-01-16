@@ -3,7 +3,7 @@
 
 PORTNAME=	Search-Elasticsearch
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DRTECH
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Any-URI-Escape>=0:${PORTSDIR}/www/p5-Any-URI-Escape \
 		p5-JSON-MaybeXS>=1.002002:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Log-Any>=0:${PORTSDIR}/devel/p5-Log-Any \
-		p5-Log-Any-Adapter>=0:${PORTSDIR}/devel/p5-Log-Any-Adapter \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Moo>=1.003:${PORTSDIR}/devel/p5-Moo \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \

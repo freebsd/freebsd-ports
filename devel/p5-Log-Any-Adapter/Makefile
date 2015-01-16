@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to log anywhere
 
-BROKEN=		Conflicts with p5-Log-Any
+DEPRECATED=	devel/p5-Log-Any-Adapter merged into devel/p5-Log-Any by upstream
+EXPIRATION_DATE=	2015-01-26
 
 RUN_DEPENDS=	\
 	p5-Log-Any>=0.10:${PORTSDIR}/devel/p5-Log-Any \

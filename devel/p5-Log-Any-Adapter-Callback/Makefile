@@ -2,7 +2,7 @@
 
 PORTNAME=	Log-Any-Adapter-Callback
 PORTVERSION=	0.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Perl extension adapter for Log::Any with callbacks
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS:=	p5-Log-Any-Adapter>0:${PORTSDIR}/devel/p5-Log-Any-Adapter
+RUN_DEPENDS:=	p5-Log-Any>0:${PORTSDIR}/devel/p5-Log-Any
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
