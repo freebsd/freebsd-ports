@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.17
+PORTVERSION=		1.1.19
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -32,11 +32,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 DESTDIRNAME=		--destdir
 
 OPTIONS_DEFINE=		MANPAGES
-MANPAGES_DESC=		Build and install manpages(requires textproc/docbook-xsl)
-
-.include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
+MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc \
 			tevent>=0.9.17:${PORTSDIR}/devel/tevent \
@@ -47,6 +43,10 @@ RUN_DEPENDS:=		${BUILD_DEPENDS}
 CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt \
 			--with-modulesdir=${PREFIX}/lib/shared-modules \
 			--with-privatelibdir=${PREFIX}/lib/ldb
+
+.include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ENV+=		XSLTPROC="true"

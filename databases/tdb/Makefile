@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.13
+PORTVERSION=		1.3.4
 PORTREVISION=		0
-PORTEPOCH=		1
+PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,10 +40,6 @@ USES+=			python:2,build
 .else
 USES+=			python:2
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
-.endif
-
-.if defined(NO_PYTHON)
-
 .endif
 
 .include <bsd.port.pre.mk>
