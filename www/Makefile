@@ -1657,6 +1657,7 @@
     SUBDIR += py-pyramid
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysearch
+    SUBDIR += py-python-digitalocean
     SUBDIR += py-pywebdav
     SUBDIR += py-qp
     SUBDIR += py-qpy
