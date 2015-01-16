@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qb
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,4 +19,12 @@ USE_PHPEXT=	yes
 USES=		tar:tgz
 USE_GCC=	any
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000034
+LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing
+CONFIGURE_ARGS=	--with-libmissing=${LOCALBASE}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libmissing
+.endif
+
+.include <bsd.port.post.mk>
