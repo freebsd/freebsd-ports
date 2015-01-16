@@ -38,7 +38,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql55-server
+USE_MYSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
