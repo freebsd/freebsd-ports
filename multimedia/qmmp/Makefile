@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	0.8.0
-PORTREVISION=	6
+PORTVERSION=	0.8.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/
 
@@ -90,7 +89,8 @@ FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad \
 FAAD_CMAKE_ON=	-DUSE_AAC:BOOL=TRUE
 FAAD_CMAKE_OFF=	-DUSE_AAC:BOOL=FALSE
 
-CDIO_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+	libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CMAKE_ON=	-DUSE_CDA:BOOL=TRUE
 CDIO_CMAKE_OFF=	-DUSE_CDA:BOOL=FALSE
 
@@ -169,7 +169,7 @@ MMS_CMAKE_OFF=	-DUSE_MMS:BOOL=FALSE
 CUE_CMAKE_ON=	-DUSE_CUE:BOOL=TRUE
 CUE_CMAKE_OFF=	-DUSE_CUE:BOOL=FALSE
 
-NULLOUT_DESC=	Support a null output
+NULLOUT_DESC=	Support null output
 NULLOUT_CMAKE_ON=	-DUSE_NULL:BOOL=TRUE
 NULLOUT_CMAKE_OFF=	-DUSE_NULL:BOOL=FALSE
 
@@ -315,14 +315,8 @@ post-install:
 	${RM} -f ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
-		>> ${WRKDIR}/PLIST.doc ; \
-	${FIND} ${STAGEDIR}${DOCSDIR}/html -type d | \
-		${SED} 's|${STAGEDIR}${PREFIX}/|@dirrm |' \
-		| ${SORT} -r >> ${WRKDIR}/PLIST.doc
+		>> ${WRKDIR}/PLIST.doc
 .endif
-	${FIND} ${STAGEDIR}${PREFIX}/lib/qmmp -type d | \
-		${SED} 's|${STAGEDIR}${PREFIX}/|@dirrmtry |' \
-		| ${SORT} -r >> ${WRKDIR}/PLIST.doc ; \
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 
 .include <bsd.port.mk>

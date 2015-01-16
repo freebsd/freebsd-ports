@@ -3,7 +3,7 @@
 
 PORTNAME=	jode
 PORTVERSION=	1.1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1.2-pre1
 DISTNAME=	${PORTNAME}-${VENDOR_VERSION}
@@ -29,6 +29,8 @@ CONFIGURE_ENV+=	CLASSLIB=${CLASSLIB} JAR="${JAR}" \
 CONFIGURE_ARGS+=--datadir="${JAVALIBDIR}"
 # Don't create the dependencies:
 MAKE_ARGS+=	JAVADEP=:
+SUB_LIST+=	GETOPT_JAR=${GETOPT_JAR}
+SUB_FILES=	jode
 PLIST_FILES=	bin/jode %%JAVAJARDIR%%/jode-${VENDOR_VERSION}.jar
 
 post-patch:
@@ -41,8 +43,12 @@ post-build:
 	cd ${WRKSRC} && ${JAR} cvf ${PORTNAME}-${VENDOR_VERSION}.jar \
 		`${FIND} jode -name \*.class`
 
-post-install:
+do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${VENDOR_VERSION}.jar \
 		${STAGEDIR}/${JAVAJARDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/jode ${STAGEDIR}/${PREFIX}/bin/
+
+test check regression-test: build
+	${MAKE} -C ${WRKSRC}/test check-TESTS
 
 .include <bsd.port.mk>

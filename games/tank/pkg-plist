@@ -35,4 +35,3 @@ bin/tank
 %%DATADIR%%/miss12.tga
 %%DATADIR%%/miss13.tga
 %%DATADIR%%/miss14.tga
-@dirrm %%DATADIR%%

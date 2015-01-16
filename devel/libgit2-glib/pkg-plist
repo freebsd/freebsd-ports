@@ -5,6 +5,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cherry-pick-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
@@ -28,9 +29,10 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-native.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-note.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
@@ -57,12 +59,11 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-tree-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-types.h
 include/libgit2-glib-1.0/libgit2-glib/ggit.h
+lib/girepository-1.0/Ggit-1.0.typelib
 lib/libgit2-glib-1.0.so
 lib/libgit2-glib-1.0.so.0
 lib/libgit2-glib-1.0.so.0.0.0
-lib/girepository-1.0/Ggit-1.0.typelib
 libdata/pkgconfig/libgit2-glib-1.0.pc
-share/gir-1.0/Ggit-1.0.gir
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitBlob.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitBlobOutputStream.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/GgitBranch.html
@@ -122,5 +123,6 @@ share/gir-1.0/Ggit-1.0.gir
 %%PORTDOCS%%%%DOCSDIR%%-1.0/style.css
 %%PORTDOCS%%%%DOCSDIR%%-1.0/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/up.png
+share/gir-1.0/Ggit-1.0.gir
 share/vala/vapi/ggit-1.0.deps
 share/vala/vapi/ggit-1.0.vapi

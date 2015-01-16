@@ -1,10 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/uhttpmock/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	uhttpmock
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://tecnocode.co.uk/downloads/uhttpmock/
 DIST_SUBDIR=	gnome3

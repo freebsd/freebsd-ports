@@ -2,11 +2,11 @@
 
 PORTNAME=	fossil
 PORTVERSION=	1.29
-DISTVERSION=	20140612172556
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
-DISTVERSIONPREFIX=	src-
+DISTNAME=	${PORTNAME}-src-20140612172556
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
@@ -18,6 +18,7 @@ PLIST_FILES=	bin/fossil
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+USE_OPENSSL=	yes
 USE_RC_SUBR=	fossil
 
 OPTIONS_DEFINE=	JSON STATIC

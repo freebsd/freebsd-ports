@@ -14,6 +14,8 @@ COMMENT?=	Gtk 2 based terminal widget with accessibility and I18N support
 
 USES+=		tar:xz
 
+PORTSCOUT=	ignore:1
+
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper

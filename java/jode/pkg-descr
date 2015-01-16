@@ -12,7 +12,6 @@ including inner and anonymous classes.
 The optimizer transforms class files in various ways with can be
 controlled by a script file. It supports the following operations:
 
- 
 	. Renaming class, method, field and local names to shorter,
 	  obfuscated, or unique names or according to a given
 	  translation table

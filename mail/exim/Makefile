@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -59,6 +59,7 @@ SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 SQLITE_USE=	sqlite=yes
 SQLITE_USES=	pkgconfig
 XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
+RSPAMD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-rspamd
 
 .include <bsd.port.options.mk>
 
@@ -80,8 +81,14 @@ IGNORE=	you cannot enable DMARC without SPF and DKIM support
 
 # DANE implies DNSSEC
 .if ${PORT_OPTIONS:MDANE}
-.if ! ${PORT_OPTIONS:MDNSSEC}
-IGNORE=	you cannot enable DANE without DNSSEC support
+.if ! ${PORT_OPTIONS:MDNSSEC} || ! ${PORT_OPTIONS:MTLS}
+IGNORE=	you cannot enable DANE without DNSSEC support or without TLS support
+.endif
+# Use Openssl from the ports
+.if ${OSVERSION} < 1000000
+. if ! ${PORT_OPTIONS:MGNUTLS}
+WITH_OPENSSL_PORT=	yes
+. endif
 .endif
 .endif
 

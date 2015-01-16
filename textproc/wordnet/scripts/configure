@@ -21,7 +21,7 @@ for mf in ${FILESDIR}/*Makefile ; do \
 	ln -s $mf ${dir}Makefile
 done
 
-patch -d ${WRKSRC}/src -p << EOPATCH
+patch -d ${WRKSRC}/src -p0 << EOPATCH
 Configuring the wnb script to call the right wish-binary directly
 --- wnb	Sun Feb 22 12:49:56 1998
 +++ wnb	Sat Feb 26 17:41:06 2000

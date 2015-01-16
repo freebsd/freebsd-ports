@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-check_
 PKGNAMESUFFIX=	#
@@ -23,5 +24,6 @@ CONFIGURE_ARGS=	--enable-client-only	\
 		--disable-xatt
 
 OPTIONS_DEFINE=	#
+OPTIONS_DEFAULT=#
 
 .include "${MASTERDIR}/Makefile"

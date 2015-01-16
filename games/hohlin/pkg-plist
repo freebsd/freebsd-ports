@@ -4,8 +4,6 @@ bin/HoH
 %%DATADIR%%/Sound/Sound.dat
 %%DATADIR%%/Sound/Game.ogg
 %%DATADIR%%/Sound/Theme.ogg
-@dirrm %%DATADIR%%/Sound
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/File_id.diz
 %%PORTDOCS%%%%DOCSDIR%%/HoH.css
 %%PORTDOCS%%%%DOCSDIR%%/HoH.nfo
@@ -47,5 +45,3 @@ bin/HoH
 %%PORTDOCS%%%%DOCSDIR%%/gfx/c-tr.gif
 %%PORTDOCS%%%%DOCSDIR%%/gfx/Switch.gif
 %%PORTDOCS%%%%DOCSDIR%%/gfx/Spring.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gfx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

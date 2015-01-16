@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.31
-PORTREVISION=	1
+DISTVERSION=	2.32
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -33,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.7.2
-L_VERSION=	3.6
+L_VERSION=	3.7
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
@@ -54,7 +53,7 @@ MOZ_PKGCONFIG_FILES=
 NOT_FOR_ARCHS=	ia64
 
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -90,8 +89,6 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
-BROKEN=		XPCOMGlueLoad error for file ${LOCALBASE}/lib/${MOZILLA}/libxul.so: \
-		Cannot open "../../ldap/sdks/c-sdk/ldap/libraries/libldap/libldap60.so"
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}

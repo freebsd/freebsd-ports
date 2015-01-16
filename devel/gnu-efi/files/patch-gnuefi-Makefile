@@ -1,0 +1,24 @@
+--- gnuefi/Makefile.orig	2014-08-08 21:33:08.000000000 +0200
++++ gnuefi/Makefile	2014-12-01 02:08:56.000000000 +0100
+@@ -47,6 +47,8 @@ FILES	= reloc_$(ARCH)  
+ 
+ OBJS	= $(FILES:%=%.o)
+ 
++CFLAGS += -fPIC
++
+ # on aarch64, avoid jump tables before all relocations have been processed
+ reloc_aarch64.o: CFLAGS += -fno-jump-tables
+ 
+@@ -77,9 +79,8 @@ $(LIBDIRINSTALL):
+ 
+ .SECONDEXPANSION:
+ 
+-$(LIBDIRINSTALL)/%: % | $$(dir $$@)
+-	$(INSTALL) -m 644 $< $(dir $@)
+-
+-install: $(addprefix $(LIBDIRINSTALL)/,$(INSTALLTARGETS))
++install: $(INSTALLTARGETS)
++	echo targets $(INSTALLTARGETS)
++	$(INSTALL) -m 644 $(INSTALLTARGETS) $(LIBDIRINSTALL)
+ 
+ include $(SRCDIR)/../Make.rules

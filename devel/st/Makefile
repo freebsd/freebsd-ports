@@ -12,7 +12,7 @@ COMMENT=	State Threads Library for Internet Applications
 
 USES=		uidfix
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 alpha amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
 DOCS=		fig.gif notes.html reference.html st.html \
 		timeout_heap.txt

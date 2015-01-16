@@ -27,7 +27,7 @@ CPPFLAGS+=	-I${WRKSRC}/common
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	alpha amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 

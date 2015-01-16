@@ -33,10 +33,6 @@ PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Does not build on alpha
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
 	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \

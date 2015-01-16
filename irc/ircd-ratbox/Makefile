@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -17,6 +17,7 @@ CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
 USES=		libtool tar:bzip2
 #MAN8=		ircd.8
+USE_OPENSSL=	yes
 USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox

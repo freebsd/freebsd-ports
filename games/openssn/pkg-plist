@@ -220,8 +220,3 @@ share/applications/openssn.desktop
 %%DATADIR%%/sounds/sonar-ping.ogg
 %%DATADIR%%/sounds/torpedo-launch.ogg
 share/pixmaps/openssn.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/ships
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -12,6 +12,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	0verkill is a bloody 2D action Deathmatch-like game in ASCII-art
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 GNU_CONFIGURE=	yes
 

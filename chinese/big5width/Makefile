@@ -7,7 +7,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode width dirty fix for Big5 font (${LANG} locale)
 
 BASELOCALEDIR=	/usr/share/locale

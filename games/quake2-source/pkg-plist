@@ -298,9 +298,3 @@
 %%XATRIX%%%%DATADIR%%/xatrix/p_weapon.c
 %%XATRIX%%%%DATADIR%%/xatrix/q_shared.c
 %%XATRIX%%%%DATADIR%%/xatrix/q_shared.h
-%%XATRIX%%@dirrm %%DATADIR%%/xatrix
-%%ROGUE%%@dirrm %%DATADIR%%/rogue
-@dirrm %%DATADIR%%/game
-%%CTF%%@dirrm %%DATADIR%%/ctf/docs
-%%CTF%%@dirrm %%DATADIR%%/ctf
-@dirrm %%DATADIR%%

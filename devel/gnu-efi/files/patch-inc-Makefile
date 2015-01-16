@@ -1,0 +1,10 @@
+--- inc/Makefile.orig	2014-08-08 21:08:55.000000000 +0200
++++ inc/Makefile	2014-11-30 18:26:02.000000000 +0100
+@@ -36,6 +36,6 @@ $(INCDIRINSTALL)/protocol/$(ARCH):
+ $(INCDIRINSTALL)/%.h: %.h | $$(dir $$@)
+ 	$(INSTALL) -m 644 $< $(dir $@)
+ 
+-install: $(addprefix $(INCDIRINSTALL)/,$(HEADERS))
++install: $(INCDIRINSTALL) $(INCDIRINSTALL)/protocol $(INCDIRINSTALL)/$(ARCH) $(INCDIRINSTALL)/protocol/$(ARCH) $(addprefix $(INCDIRINSTALL)/,$(HEADERS))
+ 
+ include $(SRCDIR)/../Make.rules

@@ -905,3 +905,4 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/gengtype
 %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/__init__.py
 %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/v6/__init__.py
 %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/v6/printers.py
+@dir lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/finclude

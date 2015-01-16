@@ -15,7 +15,7 @@ RUN_DEPENDS=	pgpin:${PORTSDIR}/security/pgpin
 
 PORTSCOUT=	skipv:1.0
 
-ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 USES=		perl5
 USE_PERL5=	configure

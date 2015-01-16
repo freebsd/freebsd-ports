@@ -3,8 +3,6 @@ man/man6/oneko.6.gz
 man/ja/man6/oneko.6.gz
 lib/X11/app-defaults/Oneko
 lib/X11/ja/app-defaults/Oneko
-@dirrm lib/X11/ja/app-defaults
-@dirrm lib/X11/ja
 lib/X11/oneko/bsd/akubi1.xbm
 lib/X11/oneko/bsd/akubi1.xpm
 lib/X11/oneko/bsd/akubi1_mask.xbm
@@ -127,7 +125,6 @@ lib/X11/oneko/bsd/utogi1_mask.xbm
 lib/X11/oneko/bsd/utogi2.xbm
 lib/X11/oneko/bsd/utogi2.xpm
 lib/X11/oneko/bsd/utogi2_mask.xbm
-@dirrm lib/X11/oneko/bsd
 lib/X11/oneko/oneko/akubi1.xbm
 lib/X11/oneko/oneko/akubi1_mask.xbm
 lib/X11/oneko/oneko/akubi2.xbm
@@ -212,7 +209,6 @@ lib/X11/oneko/oneko/utogi1.xbm
 lib/X11/oneko/oneko/utogi1_mask.xbm
 lib/X11/oneko/oneko/utogi2.xbm
 lib/X11/oneko/oneko/utogi2_mask.xbm
-@dirrm lib/X11/oneko/oneko
 lib/X11/oneko/tora/akubi1.xbm
 lib/X11/oneko/tora/akubi1_mask.xbm
 lib/X11/oneko/tora/akubi2.xbm
@@ -297,7 +293,6 @@ lib/X11/oneko/tora/utogi1.xbm
 lib/X11/oneko/tora/utogi1_mask.xbm
 lib/X11/oneko/tora/utogi2.xbm
 lib/X11/oneko/tora/utogi2_mask.xbm
-@dirrm lib/X11/oneko/tora
 lib/X11/oneko/cursor.xbm
 lib/X11/oneko/cursor_mask.xbm
 lib/X11/oneko/help
@@ -309,4 +304,3 @@ lib/X11/oneko/post.xbm
 lib/X11/oneko/post_mask.xbm
 lib/X11/oneko/sender.xbm
 lib/X11/oneko/sender_mask.xbm
-@dirrm lib/X11/oneko

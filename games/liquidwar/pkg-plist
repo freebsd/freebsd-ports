@@ -56,12 +56,3 @@ share/games/liquidwar/texture/warning.bmp
 games/liquidwar-server
 games/liquidwar-mapgen
 games/liquidwar
-@dirrm share/games/liquidwar/texture
-@dirrm share/games/liquidwar/music
-@dirrm share/games/liquidwar/map
-@dirrm share/games/liquidwar
-@dirrm games
-@dirrm %%DOCSDIR%%/txt
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/games

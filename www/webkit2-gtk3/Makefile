@@ -24,6 +24,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 #add		libicu
 RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue 
 
+PORTSCOUT=	limitw:1,even
 
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xext ice

@@ -3,6 +3,7 @@
 
 PORTNAME=	monit
 PORTVERSION=	5.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -30,6 +31,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	COPYING README
 
 SSL_CONFIGURE_OFF=	--without-ssl
+SSL_USE=		OPENSSL=yes
 
 post-install:
 	${INSTALL} -m 600 ${WRKSRC}/monitrc ${STAGEDIR}${PREFIX}/etc/monitrc.sample

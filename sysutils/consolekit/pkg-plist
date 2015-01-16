@@ -1,6 +1,4 @@
-@cwd /
-var/log/ConsoleKit/history
-@cwd
+/var/log/ConsoleKit/history
 bin/ck-history
 bin/ck-launch-session
 bin/ck-list-sessions
@@ -27,10 +25,6 @@ share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
 share/polkit-1/actions/org.freedesktop.consolekit.policy
-@exec mkdir -p %D/etc/ConsoleKit/run-session.d
-@exec mkdir -p %D/etc/ConsoleKit/run-seat.d
-@exec mkdir -p %D/lib/ConsoleKit/run-session.d
-@exec mkdir -p %D/lib/ConsoleKit/run-seat.d
 @dir /var/run/ConsoleKit
 @dir /var/log/ConsoleKit
 @dir etc/ConsoleKit/run-seat.d

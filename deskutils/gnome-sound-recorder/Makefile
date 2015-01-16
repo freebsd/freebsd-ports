@@ -1,10 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-sound-recorder/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gnome-sound-recorder
-PORTVERSION=	3.12.2
-PORTREVISION=	3
+PORTVERSION=	3.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -2,6 +2,7 @@
 
 PORTNAME=	rem
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.creytiv.com/pub/
 
@@ -14,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/re/re.mk:${PORTSDIR}/audio/re
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_LDCONFIG=	yes
 USES=		gmake
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}

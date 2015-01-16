@@ -1,3 +1,2 @@
 bin/nInvaders
 %%PORTDOCS%%share/doc/nInvaders/README
-%%PORTDOCS%%@dirrm share/doc/nInvaders

@@ -1,0 +1,4 @@
+python-digitalocean is a python package that provide easy acces to
+digitalocean.com APIs to manage droplets, images and more.
+
+WWW: http://projects.setale.me/python-digitalocean

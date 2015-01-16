@@ -79,5 +79,3 @@ man/man6/eboard.6.gz
 %%DATADIR%%/themeconf.extras2
 %%DATADIR%%/timeseal.FreeBSD
 share/pixmaps/eboard.xpm
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

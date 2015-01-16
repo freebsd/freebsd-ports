@@ -3,7 +3,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP-Daemon
-PORTVERSION=	3.06
-PORTREVISION=	1
+PORTVERSION=	3.11
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile>=1.26:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-XML-Compile-Cache>=0.99.1:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
-		p5-XML-Compile-SOAP>=2.29:${PORTSDIR}/net/p5-XML-Compile-SOAP \
-		p5-XML-Compile-SOAP-WSA>=0.12:${PORTSDIR}/net/p5-XML-Compile-SOAP-WSA
+		p5-XML-Compile>=1.44:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-XML-Compile-Cache>=0.991:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
+		p5-XML-Compile-SOAP>=3.00:${PORTSDIR}/net/p5-XML-Compile-SOAP \
+		p5-XML-Compile-WSDL11>=3.00:${PORTSDIR}/net/p5-XML-Compile-WSDL11
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-XML-Compile-Tester>=0.90:${PORTSDIR}/devel/p5-XML-Compile-Tester
 

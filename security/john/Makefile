@@ -3,6 +3,7 @@
 
 PORTNAME=	john
 DISTVERSION=	1.7.9-jumbo-7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
@@ -16,6 +17,7 @@ LICENSE=	GPLv2
 
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	run/*.pl
+USE_OPENSSL=	yes
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 # We prefer -jumbo (community-enhanced) versions instead of vanilla releases
@@ -49,8 +51,6 @@ ALL_TARGET=	${OSNAME}-x86-any
 . endif
 .elif ${ARCH} == "amd64"
 ALL_TARGET=	${OSNAME}-x86-64
-.elif ${ARCH} == "alpha"
-ALL_TARGET=	${OSNAME}-alpha
 .else
 ALL_TARGET=	generic
 .endif

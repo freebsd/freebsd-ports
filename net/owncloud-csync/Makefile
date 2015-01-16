@@ -28,6 +28,9 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/ocsync
 ETCDIR=		${PREFIX}/etc/ocsync
 
+DEPRECATED=	Merged into deskutils/mirall and unsupported upstream
+EXPIRATION_DATE=	2015-01-31
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

@@ -1,4 +1,2 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%DATADIR%%/queen.1c
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

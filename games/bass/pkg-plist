@@ -2,5 +2,3 @@
 %%DATADIR%%/sky.dnr
 %%DATADIR%%/sky.dsk
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%

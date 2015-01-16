@@ -4,7 +4,7 @@
 
 PORTNAME=	gfbgraph
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	GNOME
 
@@ -24,5 +24,9 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/doc/libgfbgraph|/share/doc/libgfbgraph|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

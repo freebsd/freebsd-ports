@@ -494,10 +494,10 @@ index d42137a..695e75a8 100644
  if CONFIG['MOZ_NATIVE_LIBEVENT']:
      OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
  
-diff --git xpcom/build/nsXPComInit.cpp xpcom/build/nsXPComInit.cpp
+diff --git xpcom/build/XPCOMInit.cpp xpcom/build/XPCOMInit.cpp
 index 2cf281e..6d7af0e 100644
---- mozilla/xpcom/build/nsXPComInit.cpp
-+++ mozilla/xpcom/build/nsXPComInit.cpp
+--- mozilla/xpcom/build/XPCOMInit.cpp
++++ mozilla/xpcom/build/XPCOMInit.cpp
 @@ -138,7 +138,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports*, REFNSIID, void**);
  #include "mozilla/VisualEventTracer.h"
  #endif

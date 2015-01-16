@@ -13,6 +13,8 @@ COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 
 USES=		tar:xz
 
+PORTSCOUT=	limitw:1,even
+
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala

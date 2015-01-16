@@ -33,6 +33,3 @@
 %%DATADIR%%/q3ut4/zUrT42_0025.pk3
 %%DATADIR%%/q3ut4/zUrT42_0026.pk3
 %%DATADIR%%/q3ut4/zUrT42_qvm.pk3
-@dirrm %%DATADIR%%/q3ut4
-@dirrmtry %%DATADIR%%%%PORTDOCS%%
-@dirrm %%DOCSDIR%%

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Network backup solution (static client)
@@ -12,8 +12,8 @@ MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 PLIST_FILES=	sbin/bacula-fd-static \
 		sbin/bconsole-static
 
-OPTIONS_DEFINE=	NLS OPENSSL
-OPTIONS_DEFAULT=NLS OPENSSL
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=#
 
 CONFIGURE_ARGS+=	--enable-client-only \
 			--enable-static-fd \

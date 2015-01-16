@@ -47,8 +47,9 @@ include/saml/signature/SignableObject.h
 include/saml/signature/SignatureProfileValidator.h
 include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
-lib/libsaml.so.8
 lib/libsaml.so
+lib/libsaml.so.8
+lib/libsaml.so.8.0.3
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
@@ -106,20 +107,3 @@ share/xml/opensaml/saml-schema-xacml-2.0.xsd
 share/xml/opensaml/sstc-saml1x-metadata.xsd
 share/xml/opensaml/sstc-saml-metadata-ext-query.xsd
 share/xml/opensaml/sstc-saml-protocol-ext-thirdparty.xsd
-@dirrm share/xml/opensaml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/saml/util
-@dirrm include/saml/signature
-@dirrm include/saml/saml2/profile
-@dirrm include/saml/saml2/metadata
-@dirrm include/saml/saml2/core
-@dirrm include/saml/saml2/binding
-@dirrm include/saml/saml2
-@dirrm include/saml/saml1/profile
-@dirrm include/saml/saml1/core
-@dirrm include/saml/saml1/binding
-@dirrm include/saml/saml1
-@dirrm include/saml/encryption
-@dirrm include/saml/binding
-@dirrm include/saml

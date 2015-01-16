@@ -11,7 +11,7 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
 # inherit its master port's PORTREVISION and be appended.
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
 CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-lite-[0-9]*

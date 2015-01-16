@@ -548,6 +548,7 @@
     SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitg0
+    SUBDIR += gitinspector
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
@@ -575,6 +576,7 @@
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
+    SUBDIR += gnu-efi
     SUBDIR += gnucflow
     SUBDIR += gnulib
     SUBDIR += gnulibiberty

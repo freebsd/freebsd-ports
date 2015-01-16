@@ -21,6 +21,8 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack \
 		introspection:build

@@ -114,8 +114,3 @@ share/netherearth/textures/warbaser1.bmp
 share/netherearth/textures/warbasew1.bmp
 share/netherearth/textures/warbasew2.bmp
 share/netherearth/textures/white.bmp
-@dirrm share/netherearth/textures
-@dirrm share/netherearth/sound
-@dirrm share/netherearth/models
-@dirrm share/netherearth/maps
-@dirrm share/netherearth

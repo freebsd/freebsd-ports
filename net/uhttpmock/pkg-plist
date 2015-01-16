@@ -6,7 +6,7 @@ lib/girepository-1.0/Uhm-0.0.typelib
 lib/libuhttpmock-0.0.a
 lib/libuhttpmock-0.0.so
 lib/libuhttpmock-0.0.so.0
-lib/libuhttpmock-0.0.so.0.1.1
+lib/libuhttpmock-0.0.so.0.1.3
 libdata/pkgconfig/libuhttpmock-0.0.pc
 share/doc/libuhttpmock-0.0/UhmResolver.html
 share/doc/libuhttpmock-0.0/UhmServer.html

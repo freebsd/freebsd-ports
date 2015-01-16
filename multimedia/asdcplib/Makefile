@@ -2,7 +2,7 @@
 
 PORTNAME=	asdcplib
 PORTVERSION=	1.11.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.cinecert.com/asdcplib/
 
@@ -16,5 +16,6 @@ CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USES=		libtool
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 .include <bsd.port.mk>

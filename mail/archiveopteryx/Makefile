@@ -3,7 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 
@@ -15,6 +15,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 USES=		perl5 tar:bzip2 pgsql:9.1+
+USE_OPENSSL=	yes
 USE_PERL5=	build
 
 PORTDOCS=	COPYING README bsd.txt

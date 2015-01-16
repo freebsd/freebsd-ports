@@ -60,8 +60,3 @@ man/man6/make-aisleriot-freecell-board.6.gz
 man/man6/make-gnome-freecell-board.6.gz
 man/man6/make_pysol_freecell_board.py.6.gz
 man/man6/pi-make-microsoft-freecell-board.6.gz
-@dirrm %%DATADIR%%/presets
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/freecell-solver

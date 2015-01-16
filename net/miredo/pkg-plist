@@ -30,10 +30,4 @@ etc/miredo/client-hook
 %%NLS%%share/locale/en_GB/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/miredo.mo
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry etc/miredo
-@dirrm include/libtun6
-@dirrm include/libteredo
-@dirrm libexec/miredo
-%%POLICYTABLE%%@cwd /
 %%POLICYTABLE%%/etc/ip6addrctl.conf

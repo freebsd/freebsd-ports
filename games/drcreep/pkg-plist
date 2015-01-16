@@ -1,7 +1,5 @@
 bin/drcreep
 %%DATADIR%%/data/char.rom
-@dirrm %%DATADIR%%/data/save
-@dirrm %%DATADIR%%/data/castles
-@dirrm %%DATADIR%%/data/castle
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/data/save
+@dir %%DATADIR%%/data/castles
+@dir %%DATADIR%%/data/castle

@@ -3,6 +3,7 @@
 
 PORTNAME=	kismet
 DISTVERSION=	2013-03-R1b
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/:1 \
@@ -61,6 +62,7 @@ PLIST_SUB+=	SUID="@comment " SUIDGROUP=""
 .if ${PORT_OPTIONS:MPLUGINS}
 ALL_TARGET=	depend all all-plugins
 INSTALL_TARGET+=	all-plugins-install
+USE_OPENSSL=	yes
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "

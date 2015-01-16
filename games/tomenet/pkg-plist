@@ -150,19 +150,3 @@ bin/tomenet.server
 %%DATADIR%%/lib/xtra/sound/misc/paging/greeting.ogg
 %%DATADIR%%/lib/xtra/sound/misc/paging/warning.ogg
 %%PORTDOCS%%%%DOCSDIR%%/TomeNET-Guide.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%ETCDIR%%
-@dirrm %%DATADIR%%/lib/config
-@dirrm %%DATADIR%%/lib/data
-@dirrm %%DATADIR%%/lib/game
-@dirrm %%DATADIR%%/lib/save
-@dirrm %%DATADIR%%/lib/scpt
-@dirrm %%DATADIR%%/lib/text
-@dirrm %%DATADIR%%/lib/user
-@dirrm %%DATADIR%%/lib/xtra/music
-@dirrm %%DATADIR%%/lib/xtra/sound/misc/paging
-@dirrm %%DATADIR%%/lib/xtra/sound/misc
-@dirrm %%DATADIR%%/lib/xtra/sound
-@dirrm %%DATADIR%%/lib/xtra
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

@@ -62,7 +62,7 @@ OPTIONS_GROUP_LOOKUP=	CDB BDB DNSDB DSEARCH LSEARCH MYSQL NIS OPENLDAP PGSQL RED
 LOOKUP_DESC=	Lookup support
 OPTIONS_GROUP_STORAGE=	MAILDIR MAILSTORE MBX
 STORAGE_DESC=	Supported storage formats
-OPTIONS_GROUP_EXPERIMENTAL= CERTNAMES DANE DCC DMARC DSN EVENT PROXY SPF
+OPTIONS_GROUP_EXPERIMENTAL= CERTNAMES DANE DCC DMARC DSN EVENT PROXY SPF RSPAMD
 EXPERIMENTAL_DESC=	Experimental options
 OPTIONS_GROUP=	AUTH LOOKUP STORAGE EXPERIMENTAL
 
@@ -112,6 +112,7 @@ REDIS_DESC=		Enable redis lookups (experimental)
 SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
 SA_EXIM_DESC=		Build with Spamassassin local scan
 SPF_DESC=		Enable Sender Policy Framework checking
+RSPAMD_DESC=		Build with Rspamd support	
 SQLITE_DESC=		Enable SQLite lookups
 SRS_DESC=		Enable Sender Rewriting Scheme
 SUID_DESC=		Install the exim binary suid root

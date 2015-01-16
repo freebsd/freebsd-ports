@@ -20,7 +20,4 @@ post-patch:
 		-e "s,@@PREFIX@@,${PREFIX}," \
 		${WRKSRC}/Makefile
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

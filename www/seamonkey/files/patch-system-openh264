@@ -1,15 +1,15 @@
 # Revert bug 1045209 to allow using absolute path
 
 diff --git content/media/gmp/GMPChild.cpp content/media/gmp/GMPChild.cpp
-index 4165a75..81914d5 100644
+index 1dde3ac..12c88cf 100644
 --- mozilla/content/media/gmp/GMPChild.cpp
 +++ mozilla/content/media/gmp/GMPChild.cpp
-@@ -66,19 +66,11 @@
+@@ -76,21 +76,14 @@ GetFileBase(const std::string& aPluginPa
    }
  #endif
  
 -  nsCOMPtr<nsIFile> parent;
--  rv = aLibFile->GetParent(getter_AddRefs(parent));
+-  rv = aFileBase->GetParent(getter_AddRefs(parent));
 -  if (NS_FAILED(rv)) {
 -    return false;
 -  }
@@ -18,15 +18,18 @@ index 4165a75..81914d5 100644
 -  rv = parent->GetLeafName(parentLeafName);
 -  if (NS_FAILED(rv)) {
 +  nsAutoString leafName;
-+  if (NS_FAILED(aLibFile->GetLeafName(leafName))) {
++  if (NS_FAILED(aFileBase->GetLeafName(leafName))) {
      return false;
    }
--
--  nsAutoString baseName(Substring(parentLeafName, 4, parentLeafName.Length() - 1));
-+  nsAutoString baseName(Substring(leafName, 4, leafName.Length() - 1));
  
- #if defined(XP_MACOSX)
-   nsAutoString binaryName = NS_LITERAL_STRING("lib") + baseName + NS_LITERAL_STRING(".dylib");
+-  aBaseName = Substring(parentLeafName,
++  aBaseName = Substring(leafName,
+                         4,
+-                        parentLeafName.Length() - 1);
++                        leafName.Length() - 1);
+   return true;
+ }
+ 
 diff --git content/media/gmp/GMPParent.cpp content/media/gmp/GMPParent.cpp
 index aa60acf..90878ca 100644
 --- mozilla/content/media/gmp/GMPParent.cpp

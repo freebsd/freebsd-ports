@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.21
+PORTVERSION=		0.9.22
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -33,6 +33,9 @@ DESTDIRNAME=		--destdir
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
+BUILD_DEPENDS+=		talloc>=2.1.1:${PORTSDIR}/devel/talloc
+RUN_DEPENDS:=		${BUILD_DEPENDS}
+
 .include <bsd.port.options.mk>
 
 .if defined(NO_PYTHON)
@@ -59,9 +62,6 @@ PLIST_FILES+=		include/tevent.h \
 			lib/libtevent.so \
 			lib/libtevent.so.0 \
 			%%PKGCONFIGDIR%%/tevent.pc
-
-BUILD_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
-RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 CONFIGURE_ARGS+=	--bundled-libraries=!talloc
 

@@ -40,9 +40,3 @@ bin/kcheckers
 %%DATADIR%%/kcheckers_fr.qm
 %%DATADIR%%/kcheckers_fr.ts
 %%DATADIR%%/kcheckers_ru.ts
-@dirrm %%DATADIR%%/themes/green
-@dirrm %%DATADIR%%/themes/marble
-@dirrm %%DATADIR%%/themes/simple_small
-@dirrm %%DATADIR%%/themes/simple_big
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%

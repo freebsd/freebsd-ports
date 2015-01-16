@@ -1855,3 +1855,20 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
+@dir share/help/zh_CN/aisleriot/figures
+@dir share/help/sv/aisleriot/figures
+@dir share/help/sr@latin/aisleriot/figures
+@dir share/help/sr/aisleriot/figures
+@dir share/help/sl/aisleriot/figures
+@dir share/help/ru/aisleriot/figures
+@dir share/help/pt_BR/aisleriot/figures
+@dir share/help/oc/aisleriot/figures
+@dir share/help/hu/aisleriot/figures
+@dir share/help/gl/aisleriot/figures
+@dir share/help/fr/aisleriot/figures
+@dir share/help/eu/aisleriot/figures
+@dir share/help/es/aisleriot/figures
+@dir share/help/en_GB/aisleriot/figures
+@dir share/help/el/aisleriot/figures
+@dir share/help/de/aisleriot/figures
+@dir share/help/ca/aisleriot/figures

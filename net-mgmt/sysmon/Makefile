@@ -3,6 +3,7 @@
 
 PORTNAME=	sysmon
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
@@ -12,15 +13,16 @@ COMMENT=	Network tool designed for high performance and accurate monitoring
 
 LICENSE=	GPLv2
 
+GNU_CONFIGURE=	yes
 USES=		alias
+USE_OPENSSL=	yes
+
+OPTIONS_DEFINE=	DOCS
+
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \
 		sysmon.man.html reporting.xml-spec.txt
 MANPAGE=	sysmon.man.8 sysmon.conf.man.8
-
-GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${STAGEDIR}${PREFIX}/bin

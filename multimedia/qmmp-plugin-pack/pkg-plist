@@ -1,6 +1,3 @@
 %%FFAP%%lib/qmmp/Input/libffap.so
 %%MPG123%%lib/qmmp/Input/libmpg123.so
 %%QSUI%%lib/qmmp/Ui/libqsui.so
-%%INPUT%%@dirrmtry lib/qmmp/Input
-%%QSUI%%@dirrmtry lib/qmmp/Ui
-@dirrmtry lib/qmmp

@@ -33,6 +33,3 @@ share/openttd/baseset/openmsx/ttsong_iv_imuh3.mid
 share/openttd/baseset/openmsx/tttheme2.mid
 share/openttd/baseset/openmsx/ultimate_run.mid
 share/openttd/baseset/openmsx/wood_whistles.mid
-@dirrmtry share/openttd/baseset/openmsx
-@dirrmtry share/openttd/baseset
-@dirrmtry share/openttd

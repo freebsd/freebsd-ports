@@ -1,10 +1,8 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/math/gnumeric/Makefile 18444 2013-05-11 12:51:26Z kwm $
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.11
-PORTREVISION=	3
+PORTVERSION=	1.12.18
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,12 +20,14 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 shebangfix tar:xz
-USE_GNOME=	gnomeprefix intlhack libgsf pygobject3
+USE_GNOME=	intlhack libgsf pygobject3
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-compile-warnings
+CONFIGURE_ARGS=	--disable-compile-warnings \
+		--without-paradox \
+		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
@@ -38,7 +38,9 @@ GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 
 SHEBANG_FILES=	plugins/perl-func/perl_func.pl
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.10 SHORT_VER=1.12
+PLIST_SUB=	VERSION=${PORTVERSION} \
+		GOFFICE=0.10 \
+		SHORT_VER=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	PERL GDA
 OPTIONS_DEFAULT=PERL

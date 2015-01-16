@@ -13,6 +13,8 @@ COMMENT=	Perl module for fast, high-quality fixed-point image resizing
 
 LICENSE=	GPLv2
 
+BROKEN=		Uses undocumented giflib API
+
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libgif.so:${PORTSDIR}/graphics/giflib

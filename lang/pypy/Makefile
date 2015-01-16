@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.0
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -43,7 +43,7 @@ USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-32f35069a16d
+WRKSRC=		${WRKDIR}/pypy-pypy-c6ad44ecf5d8
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -142,26 +142,27 @@ PYPY_${inst}_OPT=	2
 #
 .if ${PYPY_ARCH:M*64}
 .  if ${PORT_OPTIONS:MPYPY}
-# 64bit + pypy = 5.5 GiB
-PYPY_TRANSLATION_MEMORY=	5803684
+# 64bit + pypy = 5.1 GiB
+PYPY_TRANSLATION_MEMORY=	5347737
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 64bit + pypy (minimum memory) = 3.3 GiB
-PYPY_TRANSLATION_MEMORY=	3452308
+# 64bit + pypy (minimum memory) = 3.2 GiB
+PYPY_TRANSLATION_MEMORY=	3355443
 .  else
-# 64bit + python = 4.5 GiB
-PYPY_TRANSLATION_MEMORY=	4716500
+# 64bit + python = 4.8 GiB
+PYPY_TRANSLATION_MEMORY=	5033164
 .  endif
 # 64bit system += 366 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 374784))
 .else
 .  if ${PORT_OPTIONS:MPYPY}
-# 32bit + pypy = 2.3GiB
-PYPY_TRANSLATION_MEMORY=	2438856
+# 32bit + pypy = 2.2GiB
+PYPY_TRANSLATION_MEMORY=	2306867
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 32bit + pypy (minimum memory) = 2.0GiB
-PYPY_TRANSLATION_MEMORY=	2120844
-# 32bit + python = 2.2 GiB
-PYPY_TRANSLATION_MEMORY=	2286764
+# 32bit + pypy (minimum memory) = 1.9GiB
+PYPY_TRANSLATION_MEMORY=	1992294
+.  else
+# 32bit + python = 2.5 GiB
+PYPY_TRANSLATION_MEMORY=	2558588
 .  endif
 # 32bit system += 168 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 171787))
@@ -272,7 +273,6 @@ pkg-plist: build
 	${RM} -f ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
 .for path in ${PYPYDIRS}
 	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type f >> ${WRKDIR}/.plist-files-gen
-	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type d | ${SED} 's|/$$||' >> ${WRKDIR}/.plist-dirs-gen
 .endfor
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
@@ -280,16 +280,7 @@ pkg-plist: build
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 		-e 's|-${PYPY_VER:C/\.//}\.|-%%PYPY_VER%%.|g' \
 			${WRKDIR}/.plist-files-gen
-	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|@dirrm %%PYPY_LIBDIR%%|g' \
-		-e 's|^${PYPY_INCLUDEDIR}|@dirrm %%PYPY_INCLUDEDIR%%|g' \
-			${WRKDIR}/.plist-dirs-gen
 	${SORT} ${WRKDIR}/.plist-files-gen > ${WRKDIR}/pkg-plist
-	${SORT} -r ${WRKDIR}/.plist-dirs-gen >> ${WRKDIR}/pkg-plist
-	${REINPLACE_CMD} \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%/site-packages$$|@dirrmtry %%PYPY_LIBDIR%%/site-packages|' \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%$$|@dirrmtry %%PYPY_LIBDIR%%|' \
-		-e 's|^@dirrm %%PYPY_INCLUDEDIR%%$$|@dirrmtry %%PYPY_INCLUDEDIR%%|' \
-			${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.mk>

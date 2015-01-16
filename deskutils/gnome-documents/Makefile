@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/gnome-documents/Makefile 20001 2014-10-20 11:22:53Z gusi $
 
 PORTNAME=	gnome-documents
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
