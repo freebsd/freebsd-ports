@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}4
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		1
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/stable samba/rc
@@ -18,7 +18,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba41-4.1.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.0.23
+SAMBA4_VERSION=		4.0.24
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -64,7 +64,7 @@ DESTDIRNAME=		--destdir
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USES=			compiler cpe execinfo fam iconv perl5 pkgconfig \
+USES=			compiler cpe execinfo iconv perl5 pkgconfig \
 			python:2 readline shebangfix
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
@@ -137,10 +137,11 @@ DEVELOPER_DESC=		With development support
 MANPAGES_DESC=		Build manpages from DOCBOOK templates
 
 OPTIONS_RADIO=		DNS ZEROCONF
-OPTIONS_RADIO_DNS=	NSUPDATE BIND99
+OPTIONS_RADIO_DNS=	NSUPDATE BIND99 BIND910
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 
 BIND99_DESC=		Use bind99 as AD DC DNS server frontend
+BIND910_DESC=		Use bind910 as AD DC DNS server frontend
 NSUPDATE_DESC=		Use samba NSUPDATE utility for AD DC
 
 .include <bsd.port.options.mk>
@@ -161,6 +162,9 @@ CFLAGS+=		-fno-omit-frame-pointer
 
 .if ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
+SUB_LIST+=		NSUPDATE="@comment "
+.elif ${PORT_OPTIONS:MBIND910}
+RUN_DEPENDS+=		bind910>=9.10.0.0:${PORTSDIR}/dns/bind910
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
 RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
