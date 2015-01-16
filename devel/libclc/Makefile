@@ -54,6 +54,7 @@ do-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
+		-e 's|"python |"${PYTHON_VERSION} |g' \
 		${WRKSRC}/build/ninja_syntax.py \
 		${WRKSRC}/configure.py
 
