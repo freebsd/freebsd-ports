@@ -67,15 +67,3 @@ man/man6/gracer.6.gz
 %%DATADIR%%/vehicles/s2000/rtire.dat
 %%DATADIR%%/vehicles/s2000/s2000.grs
 %%DATADIR%%/vehicles/s2000/sbmu.dat
-@dirrm %%DATADIR%%/vehicles/s2000
-@dirrm %%DATADIR%%/vehicles/road
-@dirrm %%DATADIR%%/vehicles/mini
-@dirrm %%DATADIR%%/vehicles/formula
-@dirrm %%DATADIR%%/vehicles/cart
-@dirrm %%DATADIR%%/vehicles
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/scenes
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/courses
-@dirrm %%DATADIR%%

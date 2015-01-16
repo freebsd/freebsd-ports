@@ -164,9 +164,3 @@ man/man6/gl-117.6.gz
 %%DATADIR%%/textures/treeu5.tga
 %%DATADIR%%/textures/water1.tga
 %%DATADIR%%/textures/wheel.tga
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

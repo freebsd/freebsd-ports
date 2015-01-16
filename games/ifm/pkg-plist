@@ -14,4 +14,3 @@ bin/tkifm
 %%DATADIR%%/special.ifm
 %%DATADIR%%/verbose.ifm
 man/man1/ifm.1.gz
-@dirrm %%DATADIR%%

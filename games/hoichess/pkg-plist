@@ -7,4 +7,3 @@ man/man6/hoichess.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/hoichess.6.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

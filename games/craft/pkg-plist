@@ -14,6 +14,3 @@ bin/craft
 %%DATADIR%%/textures/sign.png
 %%DATADIR%%/textures/sky.png
 %%DATADIR%%/textures/texture.png
-@dirrmtry %%DATADIR%%/textures
-@dirrmtry %%DATADIR%%/shaders
-@dirrmtry %%DATADIR%%

@@ -216,10 +216,3 @@ bin/gish
 %%DATADIR%%/texture/text038.tga
 %%DATADIR%%/texture/turbo.tga
 %%DATADIR%%/texture/vsmode.tga
-@dirrm %%DATADIR%%/texture
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/replay
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/leveldemo
-@dirrm %%DATADIR%%/animation
-@dirrm %%DATADIR%%

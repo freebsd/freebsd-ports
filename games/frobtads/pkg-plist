@@ -155,17 +155,3 @@ bin/tadsc
 %%DATADIR%%/tads3/lib/webuires/util.js
 %%DATADIR%%/tads3/lib/webuires/warningPopupBkg.gif
 %%DATADIR%%/tads3/res/charmap/cmaplib.t3r
-@dirrm %%DATADIR%%/tads3/res/charmap
-@dirrm %%DATADIR%%/tads3/res
-@dirrm %%DATADIR%%/tads3/lib/webuires
-@dirrm %%DATADIR%%/tads3/lib/extensions/TCommand/doc
-@dirrm %%DATADIR%%/tads3/lib/extensions/TCommand
-@dirrm %%DATADIR%%/tads3/lib/extensions
-@dirrm %%DATADIR%%/tads3/lib/adv3/en_us
-@dirrm %%DATADIR%%/tads3/lib/adv3
-@dirrm %%DATADIR%%/tads3/lib
-@dirrm %%DATADIR%%/tads3/include
-@dirrm %%DATADIR%%/tads3/doc
-@dirrm %%DATADIR%%/tads3
-@dirrm %%DATADIR%%/tads2
-@dirrm %%DATADIR%%

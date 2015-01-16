@@ -9,5 +9,3 @@ man/man6/prboom.6.gz
 %%DOCSDIR%%-%%PORTVERSION%%/MBFFAQ.txt
 %%DOCSDIR%%-%%PORTVERSION%%/README.demos
 %%DOCSDIR%%-%%PORTVERSION%%/README.compat
-@dirrm %%DOCSDIR%%-%%PORTVERSION%%
-@dirrmtry %%DATADIR%%
