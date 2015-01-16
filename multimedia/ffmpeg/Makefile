@@ -237,10 +237,6 @@ CONFIGURE_ARGS+=	--enable-x11grab
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6
-CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-.endif
-
 .if ${ARCH} == "armv6"
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 .endif
