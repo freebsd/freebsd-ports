@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d4f45676-9d33-11e4-8275-000c292e4fd8">
+    <topic>samba -- Elevation of privilege to Active Directory Domain Controller</topic>
+    <affects>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><lt>4.0.23</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2014-8143">
+	  <p>In Samba's AD DC we neglected to ensure that
+	  attempted modifications of the userAccountControl attribute
+	  did not allow the UF_SERVER_TRUST_ACCOUNT bit to be set.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8143</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2014-8143</url>
+    </references>
+    <dates>
+      <discovery>2015-01-15</discovery>
+      <entry>2015-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a8a74d1-9c34-11e4-a40b-5453ed2e2b49">
     <topic>kde-runtime -- incorrect CBC encryption handling</topic>
     <affects>
