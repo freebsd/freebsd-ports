@@ -16,4 +16,3 @@ etc/gnarr/templates
 etc/gnarr/time
 etc/gnarr/weapon
 man/man6/gnarr.6.gz
-@dirrm etc/gnarr

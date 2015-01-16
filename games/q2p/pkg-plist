@@ -8,6 +8,3 @@
 %%SDL%%%%LIBDIR%%/snd_sdl.so
 %%GLX%%%%LIBDIR%%/vid_gl.so
 %%SDLGL%%%%LIBDIR%%/vid_sdl.so
-@dirrm %%LIBDIR%%/baseq2
-%%CTF%%@dirrm %%LIBDIR%%/ctf
-@dirrm %%LIBDIR%%

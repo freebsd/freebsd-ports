@@ -5,4 +5,3 @@ bin/qccx
 %%DATADIR%%/misc.qc
 %%DATADIR%%/world.qc
 %%DATADIR%%/progs.src
-@dirrm %%DATADIR%%
