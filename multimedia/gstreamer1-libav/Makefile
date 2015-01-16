@@ -43,10 +43,6 @@ MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 CFLAGS+=	-mstack-alignment=16 -mstackrealign
 .endif
 
-.if ${ARCH} == armv6
-CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/LIBAV_ARCH/' \
 		${WRKSRC}/gst-libs/ext/libav/Makefile \
