@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	yac
-PORTVERSION=	0.1.1.r20140114
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	oliver
+MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
@@ -16,12 +15,8 @@ COMMENT=	Yac is a shared memory user data cache for PHP
 LICENSE=	PHP301
 
 USE_PHP=	yes
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-USE_PHP_BUILD=	yes
-
-CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config
+USES=		tar:tgz
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module
