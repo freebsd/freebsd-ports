@@ -2,7 +2,7 @@
 
 PORTNAME=	HTTP-Exception
 PORTVERSION=	0.04006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
-	p5-libwww>=5.817:${PORTSDIR}/www/p5-libwww
+	p5-HTTP-Message>=5.817:${PORTSDIR}/www/p5-HTTP-Message
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception \
