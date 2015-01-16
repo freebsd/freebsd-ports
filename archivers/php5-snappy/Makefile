@@ -29,10 +29,10 @@ test: build
 
 .if !empty(${PORT_OPTIONS:MTEST})
 post-stage: test
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/20100525/snappy.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/snappy.so
 .else
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/20100525/snappy.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/snappy.so
 .endif
 
 .include <bsd.port.mk>
