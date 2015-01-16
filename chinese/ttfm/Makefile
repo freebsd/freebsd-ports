@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	chinese print
 MASTER_SITES=	LOCAL/rafan/chinese
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5/GB enhanced TrueType Font Manager
 
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

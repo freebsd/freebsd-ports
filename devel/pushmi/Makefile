@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CLKAO
 DISTNAME=	Pushmi-v${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository replication tool
 
 RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \

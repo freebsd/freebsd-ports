@@ -8,7 +8,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	LOCAL/rafan/chinese/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four Chinese Big5/GB TrueType fonts made by Arphic Technology
 
 NO_BUILD=	yes
