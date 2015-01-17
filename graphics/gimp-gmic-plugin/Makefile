@@ -25,7 +25,7 @@ BASH_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GCC=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrandr
