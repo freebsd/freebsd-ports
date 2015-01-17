@@ -1,8 +1,0 @@
-bin/rxvt
-bin/rxvt-2.7.10
-include/rxvtlib.h
-lib/librxvt.a
-lib/librxvt.so
-lib/librxvt.so.1
-lib/librxvt.so.1.0.0
-man/man1/rxvt.1.gz
