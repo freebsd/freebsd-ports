@@ -75,7 +75,6 @@ pre-install:
 .for ii in ${DOC_FILES}
 	${ECHO_CMD} share/doc/spiralsynth/${ii} >> ${PLIST}
 .endfor
-	${ECHO_CMD} @dirrm share/doc/spiralsynth >> ${PLIST}
 .endif
 
 do-install:
