@@ -11,7 +11,7 @@
 +#endif
 +{
 +#if GIFLIB_MAJOR >= 5
-+  char *Err = GifErrorString(ErrorCode);
++  const char *Err = GifErrorString(ErrorCode);
 +#else
 +  char *Err = GifErrorString();
 +  int ErrorCode = GifError();
