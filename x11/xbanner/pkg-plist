@@ -25,5 +25,3 @@ lib/X11/app-defaults/XBanner
 %%PORTDOCS%%share/examples/XBanner/FgGrad_Idea_2
 %%PORTDOCS%%share/examples/XBanner/Just_an_Idea
 %%PORTDOCS%%share/examples/XBanner/My_Home_Setup.tar
-%%PORTDOCS%%@dirrm share/doc/XBanner
-%%PORTDOCS%%@dirrm share/examples/XBanner
