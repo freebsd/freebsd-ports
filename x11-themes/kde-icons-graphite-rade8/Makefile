@@ -8,6 +8,8 @@ DISTNAME=	Graphite-RAD.E8-${PORTVERSION}
 
 COMMENT=	KDE Mac OS X like iconset, most from rad-e8 design
 
+BROKEN=		Unfetchable
+
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/Graphite-RAD.E8-${PORTVERSION}
 
