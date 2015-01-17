@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -13,6 +13,8 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org libraries meta-port
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/fontenc.pc:${PORTSDIR}/x11-fonts/libfontenc \
@@ -55,9 +57,5 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xxf86dga.pc:${PORTSDIR}/x11/libXxf86dga \
 		${LOCALBASE}/libdata/pkgconfig/xxf86misc.pc:${PORTSDIR}/x11/libXxf86misc \
 		${LOCALBASE}/libdata/pkgconfig/xxf86vm.pc:${PORTSDIR}/x11/libXxf86vm
-
-do-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/libdata/xorg
-		${TOUCH} ${STAGEDIR}${PREFIX}/libdata/xorg/libraries
 
 .include <bsd.port.mk>
