@@ -66,7 +66,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/LUA_ROOT/s|/usr/local|${LUA_PREFIX}| ; \
 		s,readline/,editline/,g ; \
 		/history\.h/d" \
-		${WRKSRC}/src/luaconf.h
+		${WRKSRC}/src/luaconf.h ${WRKSRC}/src/lua.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
