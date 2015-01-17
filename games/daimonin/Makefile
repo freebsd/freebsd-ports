@@ -10,7 +10,10 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)
+COMMENT=	F/OSS Massively Multiplayer On-line Role-playing Game (MMORPG)
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/../../License
 
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -60,7 +63,7 @@ pre-configure:
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/daimonin ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/daimonin.sh ${STAGEDIR}${PREFIX}/bin/daimonin
-	@${FIND} ${STAGEDIR}${DATADIR} -name '*.orig' -exec rm {} \;
+	@${FIND} ${STAGEDIR}${DATADIR} -name '*.orig' -delete
 	${MV} ${STAGEDIR}${DATADIR}/settings/keys.dat ${STAGEDIR}${DATADIR}/settings/keys-desktop.dat
 .if ${PORT_OPTIONS:MKB_LAPTOP}
 	@${ECHO} Configuring keyboard bindings for laptop
