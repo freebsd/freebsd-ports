@@ -6,10 +6,12 @@ lib/libtiled.so
 lib/libtiled.so.1
 lib/libtiled.so.1.0
 lib/libtiled.so.1.0.0
+lib/tiled/plugins/libcsv.so
 lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
 lib/tiled/plugins/libjson.so
 lib/tiled/plugins/liblua.so
+%%PYTHON%%lib/tiled/plugins/libpython.so
 lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtengine.so
 lib/tiled/plugins/libtmw.so
@@ -19,8 +21,13 @@ man/man1/tmxrasterizer.1.gz
 man/man1/tmxviewer.1.gz
 share/applications/tiled.desktop
 share/icons/hicolor/16x16/apps/tiled.png
+share/icons/hicolor/16x16/mimetypes/application-x-tiled.png
 share/icons/hicolor/32x32/apps/tiled.png
+share/icons/hicolor/32x32/mimetypes/application-x-tiled.png
 share/icons/hicolor/scalable/apps/tiled.svg
+share/icons/hicolor/scalable/mimetypes/application-x-tiled.svg
+share/mime/packages/tiled.xml
+share/pixmaps/tiled.png
 %%DATADIR%%/translations/tiled_cs.qm
 %%DATADIR%%/translations/tiled_de.qm
 %%DATADIR%%/translations/tiled_en.qm
@@ -35,3 +42,4 @@ share/icons/hicolor/scalable/apps/tiled.svg
 %%DATADIR%%/translations/tiled_pt_BR.qm
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_zh.qm
+%%DATADIR%%/translations/tiled_zh_TW.qm
