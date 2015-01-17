@@ -2,7 +2,7 @@
 
 PORTNAME=	xorg-apps
 PORTVERSION=	7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -25,10 +25,8 @@ COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
 COMPONENTS+=	x11-wm/twm:twm x11-clocks/xclock:xclock xinit xterm
 
 NO_BUILD=	yes
-
-do-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/libdata/xorg
-		${TOUCH} ${STAGEDIR}${PREFIX}/libdata/xorg/apps
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 .for comp in ${COMPONENTS}
 OPTIONS_DEFINE+=	${comp:C/:.*//:C/.*\///:tu}
