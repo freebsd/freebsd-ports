@@ -1,9 +1,9 @@
---- src/i965_decoder_utils.c.orig	2013-06-26 05:14:51.000000000 +0200
-+++ src/i965_decoder_utils.c	2013-06-27 16:06:27.234183751 +0200
+--- src/i965_decoder_utils.c.orig	2014-12-24 00:59:48 UTC
++++ src/i965_decoder_utils.c
 @@ -23,7 +23,11 @@
  
  #include "sysdeps.h"
- 
+ #include <limits.h>
 +#ifdef __FreeBSD__
 +#include <stdlib.h>
 +#else
@@ -11,4 +11,4 @@
 +#endif
  
  #include "intel_batchbuffer.h"
- #include "i965_drv_video.h"
+ #include "intel_media.h"
