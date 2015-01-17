@@ -248,7 +248,6 @@
     SUBDIR += ruby-X11
     SUBDIR += rubygem-gnome2
     SUBDIR += rxvt
-    SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
     SUBDIR += sbxkb
