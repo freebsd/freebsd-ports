@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	duktape
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	lang devel
 MASTER_SITES=	http://duktape.org/
 
@@ -11,18 +11,23 @@ COMMENT=	Embeddable Javascript engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=	readline tar:xz
+USES=	tar:xz
 
+LIB_DEPENDS=	libedit.so.0:${PORTSDIR}/devel/libedit
 MAKEFILE=	Makefile.cmdline
 ALL_TARGET=	#
 
 PLIST_FILES=	bin/duk
 
-# for readline
+# for libedit
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-I${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	CC="${CC}"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/history\.h/d ; s,readline/,editline/,g " \
+		${WRKSRC}/examples/cmdline/duk_cmdline.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/duk ${STAGEDIR}${PREFIX}/bin
