@@ -58,7 +58,9 @@ CFLAGS_powerpc=	-fPIC
 post-patch:
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
 		${WRKSRC}/src/lmathlib.c
-	@${REINPLACE_CMD} -e "/LUA_ROOT/s|/usr/local|${LUA_PREFIX}|" \
+	@${REINPLACE_CMD} -e "/LUA_ROOT/s|/usr/local|${LUA_PREFIX}| ; \
+		s,readline/,editline/,g ; \
+		/history\.h/d" \
 		${WRKSRC}/src/luaconf.h
 	@${REINPLACE_CMD} -i '' -Ee \
 		's|^(prefix=).*|\1 ${PREFIX}| ; \
