@@ -15,8 +15,3 @@ man/man7/XOrgFoundation.7.gz
 %%DOCSDIR%%/ReleaseNotes.xml
 %%DOCSDIR%%/MAINTAINERS
 %%DOCSDIR%%/Versions.xml
-@dirrm %%DOCSDIR%%/fonts
-@dirrm %%DOCSDIR%%/input
-@dirrm %%DOCSDIR%%/graphics
-@dirrm %%DOCSDIR%%/platforms
-@dirrm %%DOCSDIR%%
