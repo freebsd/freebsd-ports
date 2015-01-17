@@ -1,5 +1,5 @@
-Verbiste is a French conjugation system. It contains a C++ library, and two
-programs that can be run from the command line or from another program. The
-knowledge base is represented in XML and contains over 7000 verbs.
+Verbiste is a conjugation system, with comprehensive French verb tables, and
+some capabilities for extra languages. It provides a library, a CLI and a GUI
+interface.
 
 WWW: http://sarrazip.com/dev/verbiste.html
