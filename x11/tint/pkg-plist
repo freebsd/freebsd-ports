@@ -21,9 +21,6 @@ man/man1/tint2.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_6.tint2rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tint2rc
 %%DATADIR%%/default_icon.png
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%
 %%PYCONF%%bin/tint2conf
 %%PYCONF%%bin/tintwizard.py
 %%PYCONF%%share/applications/tint2conf.desktop
