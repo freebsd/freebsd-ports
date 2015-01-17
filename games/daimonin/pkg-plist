@@ -566,16 +566,4 @@ bin/daimonin-updater
 %%DATADIR%%/sfx/weapon_hold.wav
 %%DATADIR%%/srv_files/README.txt
 %%DATADIR%%/update/version
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/cache
-@dirrm %%DATADIR%%/gfx_user
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/logs
-@dirrm %%DATADIR%%/man/commands
-@dirrm %%DATADIR%%/man
-@dirrmtry %%DATADIR%%/media
-@dirrm %%DATADIR%%/settings
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/srv_files
-@dirrm %%DATADIR%%/update
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%/logs
