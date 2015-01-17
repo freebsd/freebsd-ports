@@ -9,19 +9,21 @@ MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Tiny/turbo/throttling HTTP server
+COMMENT=	Tiny/turbo/throttling HTTP server with CGI support
 
-GNU_CONFIGURE=	yes
 USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
-USE_RC_SUBR=	thttpd
+GNU_CONFIGURE=	yes
+USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message thttpd.conf.sample
-SUB_LIST=	WWWOWN=${WWWOWN}
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	SENDFILE
+OPTIONS_DEFINE=	SENDFILE IPREAL
 OPTIONS_DEFAULT=	SENDFILE
 SENDFILE_DESC=	Use sendfile(2) to serve files
+IPREAL_DESC=	Respect (pass on) "X-Forwarded-For" header
 
 SENDFILE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.h
+IPREAL_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ip_real
 
 post-patch:
 .for f in extras/htpasswd.1 extras/htpasswd.c thttpd.8 extras/Makefile.in
