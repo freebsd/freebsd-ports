@@ -36,7 +36,7 @@ PLIST_SUB=	TEXMF=${TEXMF}
 post-patch:
 	${CHMOD} 755 ${WRKSRC}/build-aux/install-sh
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
+	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf ${STAGEDIR}${DATADIR}
