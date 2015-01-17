@@ -101,9 +101,3 @@ man/man1/Xdialog.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/Xdialog.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/Xdialog.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/Xdialog.mo
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
-%%NLS%%@dirrmtry share/locale/no_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/no_NO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
