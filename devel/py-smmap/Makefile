@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smmap
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +12,6 @@ COMMENT=	Pure python sliding memory map manager
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
