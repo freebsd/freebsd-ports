@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gim
 
 OPTIONS_DEFINE=	NLS
 
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 
