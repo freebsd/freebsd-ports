@@ -7,9 +7,4 @@ share/icons/oxygen/48x48/apps/phonon-xine.png
 share/icons/oxygen/64x64/apps/phonon-xine.png
 share/icons/oxygen/scalable/apps/phonon-xine.svgz
 share/kde4/services/phononbackends/xine.desktop
-@dirrmtry share/kde4/services/phononbackends
-@dirrmtry lib/kde4/plugins/phonon_backend
-@cwd %%QT_PREFIX%%
-%%QT_PLUGINDIR%%/phonon_backend/libphonon_xine.so
-@dirrmtry %%QT_PLUGINDIR%%/phonon_backend
-@dirrmtry %%QT_PLUGINDIR%%
+%%QT_PREFIX%%/%%QT_PLUGINDIR%%/phonon_backend/libphonon_xine.so
