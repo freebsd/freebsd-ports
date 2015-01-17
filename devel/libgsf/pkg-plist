@@ -54,7 +54,7 @@ lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.so
 lib/libgsf-1.so.114
-lib/libgsf-1.so.114.0.29
+lib/libgsf-1.so.114.0.30
 libdata/pkgconfig/libgsf-1.pc
 man/man1/gsf-office-thumbnailer.1.gz
 man/man1/gsf-vba-dump.1.gz
@@ -108,8 +108,11 @@ share/locale/en_GB/LC_MESSAGES/libgsf.mo
 share/locale/eo/LC_MESSAGES/libgsf.mo
 share/locale/es/LC_MESSAGES/libgsf.mo
 share/locale/eu/LC_MESSAGES/libgsf.mo
+share/locale/fi/LC_MESSAGES/libgsf.mo
 share/locale/fr/LC_MESSAGES/libgsf.mo
 share/locale/gl/LC_MESSAGES/libgsf.mo
+share/locale/he/LC_MESSAGES/libgsf.mo
+share/locale/hu/LC_MESSAGES/libgsf.mo
 share/locale/id/LC_MESSAGES/libgsf.mo
 share/locale/it/LC_MESSAGES/libgsf.mo
 share/locale/ja/LC_MESSAGES/libgsf.mo
@@ -140,13 +143,3 @@ share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
 share/thumbnailers/gsf-office.thumbnailer
-@dirrmtry share/thumbnailers
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrm share/doc/gsf
-@dirrm include/libgsf-1/gsf
-@dirrm include/libgsf-1
