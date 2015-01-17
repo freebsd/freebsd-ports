@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.4.10
-PORTREVISION=	2
+PORTVERSION=	3.4.11
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -98,6 +97,7 @@ SSL_CONFIGURE_ENABLE=		ssl
 SSL_CRTD_CONFIGURE_ENABLE=	ssl-crtd
 STACKTRACES_CONFIGURE_ENABLE=	stacktraces
 STACKTRACES_LIB_DEPENDS=	libunwind.so:${PORTSDIR}/devel/libunwind
+STACKTRACES_CONFIGURE_ON=	--disable-strict-error-checking
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
 TP_PF_CONFIGURE_ENABLE=		pf-transparent
