@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP \
 		http://networkx.lanl.gov/download/pygraphviz/
