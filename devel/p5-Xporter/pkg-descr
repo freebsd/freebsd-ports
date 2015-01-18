@@ -1,0 +1,15 @@
+Xporter provides EXPORT functionality similar to Exporter with some different
+rules to simplify common cases.
+
+The primary difference, in Xporter is that the default EXPORT list remains the
+default EXPORT list unless the user specifically asks for it to not be included,
+whereas in Exporter, asking for any additional exports from the EXPORT_OK list,
+clears the default EXPORT list.
+
+Xporter makes it easy to reset or clear the default so that choice is left to
+the user.
+
+To reset the default EXPORT list to empty, a bare minus ('-') or logical-not
+sign ('!') is placed as the first parameter in the client's import list.
+
+WWW: http://search.cpan.org/dist/Xporter/
