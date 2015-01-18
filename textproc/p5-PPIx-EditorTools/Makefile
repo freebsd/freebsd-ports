@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	PPIx-EditorTools
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SZABGAB
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility methods and base class for manipulating Perl via PPI
 
 LICENSE=	ART10 GPLv1
@@ -20,9 +19,10 @@ BUILD_DEPENDS=	p5-Class-XSAccessor>=1.02:${PORTSDIR}/devel/p5-Class-XSAccessor \
 		p5-Try-Tiny>=0.11:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Most>=0.88:${PORTSDIR}/devel/p5-Test-Most
+		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
+		p5-Test-NoWarnings>=0.084:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
