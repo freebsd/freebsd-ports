@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''
 USE_LDCONFIG=	yes
@@ -29,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so.16.13.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so.16.13.0
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} '{}' \;
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${DOCMODE} '{}' \;
 
