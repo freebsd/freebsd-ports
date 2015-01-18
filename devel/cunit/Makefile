@@ -28,6 +28,7 @@ MEMTRACE_DESC=	Internal memory tracking
 TEST_DESC=	Internal test program
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		autoreconf gmake libtool pathfix tar:bzip2
 
@@ -56,9 +57,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/|/examples/@PACKAGE@/|g' ${WRKSRC}/Examples/*/Makefile.am
 	@${REINPLACE_CMD} -e 's|CUnit-[A-Z][a-z]*\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Automated/Automated.c
 	@${REINPLACE_CMD} -e '/fprintf/ s|Memory-Dump\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Framework/MyMem.c
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcunit.so.1.0.1
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
