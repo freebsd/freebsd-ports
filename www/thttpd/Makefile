@@ -30,6 +30,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/\.htpasswd/!s|htpasswd|thttpdpasswd|g' \
 		${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's|/var/www|${WWWDIR}|' \
+		${WRKSRC}/extras/makeweb.1
 	@${MV} ${WRKSRC}/extras/htpasswd.1 ${WRKSRC}/extras/thttpdpasswd.1
 	@${MV} ${WRKSRC}/extras/htpasswd.c ${WRKSRC}/extras/thttpdpasswd.c
 
