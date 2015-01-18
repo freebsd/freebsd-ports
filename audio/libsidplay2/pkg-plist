@@ -29,3 +29,4 @@ lib/libsidutils.so.0.0.4
 lib/sidplay/builders/libresid-builder.a
 libdata/pkgconfig/libsidplay2.pc
 libdata/pkgconfig/libsidutils.pc
+@comment @dir include/resid

@@ -3,7 +3,7 @@
 
 PORTNAME=	libsidplay2
 PORTVERSION=	2.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio emulators
 MASTER_SITES=	SF/sidplay2/sidplay2/sidplay-libs-${PORTVERSION}
 DISTNAME=	sidplay-libs-${PORTVERSION}
