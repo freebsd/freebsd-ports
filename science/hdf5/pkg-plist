@@ -120,7 +120,7 @@ include/H5version.h
 %%FORTRAN%%include/h5t.mod
 %%FORTRAN%%include/h5t_provisional.mod
 %%FORTRAN%%include/h5tb.mod
-%%FORTRAN%%include/h5test_kind_sizeof_mod.mod
+%%FORTRAN%%include/h5test_kind_storage_size_mod.mod
 %%FORTRAN%%include/h5z.mod
 include/hdf5.h
 %%FORTRAN%%include/hdf5.mod
