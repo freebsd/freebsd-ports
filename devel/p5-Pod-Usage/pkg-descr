@@ -1,0 +1,8 @@
+Pod::Usage provides the function "pod2usage()" to print usage messages for a
+Perl script based on its embedded pod documentation. Pod::Usage is a subclass of
+Pod::PlainText. Please see the POD documentation for this module (embedded in
+the file "Usage.pm") for more details. The pod2usage() function is probably the
+most generally useful function in this entire distribution since it is useful to
+just about any Perl5 script that is invoked from the command-line.
+
+WWW: http://search.cpan.org/dist/Pod-Usage/

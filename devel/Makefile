@@ -2683,6 +2683,7 @@
     SUBDIR += p5-Pod-Coverage-Moose
     SUBDIR += p5-Pod-Coverage-TrustPod
     SUBDIR += p5-Pod-Tests
+    SUBDIR += p5-Pod-Usage
     SUBDIR += p5-Pragmatic
     SUBDIR += p5-Proc-BackOff
     SUBDIR += p5-Proc-Background
