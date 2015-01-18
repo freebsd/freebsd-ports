@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Debugging Support Library
 
 USES=		gmake pathfix pkgconfig libtool
-USE_GCC=	any
+# Fails to build with GCC 4.9, cf. PR 196852
+USE_GCC=	4.8
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \
 		--disable-pch
