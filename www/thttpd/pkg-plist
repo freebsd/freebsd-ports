@@ -1,16 +1,14 @@
-bin/thttpdpasswd
-bin/makeweb
-bin/syslogtocern
 @sample etc/thttpd.conf.sample
 man/man1/makeweb.1.gz
-man/man1/thttpdpasswd.1.gz
+man/man1/thtpasswd.1.gz
 man/man8/redirect.8.gz
 man/man8/ssi.8.gz
 man/man8/syslogtocern.8.gz
 man/man8/thttpd.8.gz
+sbin/makeweb
+sbin/syslogtocern
 sbin/thttpd
-www/cgi-bin/phf
-www/cgi-bin/redirect
-www/cgi-bin/ssi
-@dirrmtry www/cgi-bin
-@dirrmtry www/data
+sbin/thtpasswd
+%%WWWDIR%%/cgi-bin/phf
+%%WWWDIR%%/cgi-bin/redirect
+%%WWWDIR%%/cgi-bin/ssi

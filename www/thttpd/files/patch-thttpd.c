@@ -13,7 +13,7 @@
  	syslog( LOG_NOTICE, "re-opening logfile" );
  	logfp = fopen( logfile, "a" );
 -	if ( logfp == (FILE*) 0 )
-+	retchmod = chmod( logfile, S_IRUSR|S_IWUSR );
++	retchmod = chmod( logfile, S_IRUSR|S_IWUSR|S_IRGRP );
 +	if ( logfp == (FILE*) 0 || retchmod != 0 )
  	    {
  	    syslog( LOG_CRIT, "re-opening %.80s - %m", logfile );
