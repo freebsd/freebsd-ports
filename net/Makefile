@@ -133,6 +133,7 @@
     SUBDIR += freerdp
     SUBDIR += freevrrpd
     SUBDIR += fspclient
+    SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
     SUBDIR += geoclue
