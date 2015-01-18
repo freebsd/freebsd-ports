@@ -143,9 +143,9 @@
      strcpy(user,argv[2]);
  
      found = 0;
--    while(!(getline(line,MAX_STRING_LEN,f))) {
+-    while(!(my_getline(line,MAX_STRING_LEN,f))) {
 +    /* line we get is username:pwd, or possibly any other cruft */
-+    while(!(getline(line,MAX_LINE_LEN,f))) {
++    while(!(my_getline(line,MAX_LINE_LEN,f))) {
 +        char *i;
 +
          if(found || (line[0] == '#') || (!line[0])) {

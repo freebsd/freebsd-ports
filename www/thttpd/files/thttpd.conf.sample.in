@@ -1,6 +1,6 @@
 user=%%WWWOWN%%
-dir=%%PREFIX%%/www/data
+dir=%%WWWDIR%%
 chroot
-cgipat=*.cgi
+cgipat=/cgi-bin/*
 logfile=/var/log/thttpd.log
 pidfile=/var/run/thttpd.pid
