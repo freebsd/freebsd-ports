@@ -25,6 +25,7 @@ OPTIONS_SUB=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-libwebpdecoder \
 		--enable-libwebpdemux  \
@@ -39,8 +40,5 @@ X11_USE=		GL=glut
 
 post-patch:
 	@${REINPLACE_CMD} '/build_vwebp=yes/d' ${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwebp*.so
 
 .include <bsd.port.mk>
