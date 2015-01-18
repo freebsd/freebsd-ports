@@ -1,4 +1,5 @@
 bin/suricata
+%%SC%%bin/suricatasc
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Basic_Setup.txt
 %%DOCSDIR%%/CentOS5.txt
@@ -49,14 +50,24 @@ bin/suricata
 %%NO_HTP_PORT%%lib/libhtp.a
 %%NO_HTP_PORT%%lib/libhtp.so
 %%NO_HTP_PORT%%libdata/pkgconfig/htp.pc
-@sample etc/suricata/suricata.yaml.sample
-@sample etc/suricata/classification.config.sample
-@sample etc/suricata/reference.config.sample
-etc/suricata/rules/decoder-events.rules
-etc/suricata/rules/dns-events.rules
-etc/suricata/rules/files.rules
-etc/suricata/rules/http-events.rules
-etc/suricata/rules/smtp-events.rules
-etc/suricata/rules/stream-events.rules
-etc/suricata/rules/tls-events.rules
+%%NO_HTP_PORT%%@dir include/htp
+%%SC%%%%PYTHON_SITELIBDIR%%/suricatasc-0.9-py%%PYTHON_VER%%.egg-info
+%%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
+%%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
+%%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/suricatasc.py
+%%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/suricatasc.pyc
+@sample %%ETCDIR%%/suricata.yaml.sample
+@sample %%ETCDIR%%/classification.config.sample
+@sample %%ETCDIR%%/reference.config.sample
+%%ETCDIR%%/rules/decoder-events.rules
+%%ETCDIR%%/rules/dns-events.rules
+%%ETCDIR%%/rules/files.rules
+%%ETCDIR%%/rules/http-events.rules
+%%ETCDIR%%/rules/smtp-events.rules
+%%ETCDIR%%/rules/stream-events.rules
+%%ETCDIR%%/rules/tls-events.rules
 @dir etc/suricata/rules
+@dir etc/suricata
+@dir(root,wheel,0700) /var/log/suricata
+@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove any configuration files left."; fi
+@dir %%DOCSDIR%%

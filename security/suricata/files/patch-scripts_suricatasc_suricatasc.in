@@ -1,0 +1,11 @@
+--- scripts/suricatasc/suricatasc.in.orig	2014-12-19 17:49:20.651663649 +0200
++++ scripts/suricatasc/suricatasc.in	2014-12-19 17:49:59.921665563 +0200
+@@ -24,7 +24,7 @@
+ args = parser.parse_args()
+ 
+ if args.socket != None:
+-    SOCKET_PATH = "@e_localstatedir@/" + args.socket[0]
++    SOCKET_PATH = args.socket
+ else:
+     SOCKET_PATH = "@e_localstatedir@/suricata-command.socket"
+ 
