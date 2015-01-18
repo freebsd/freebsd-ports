@@ -1,4 +1,3 @@
 %%DATADIR%%/%%PORTNAME%%.pk3
+%%DATADIR%%/COPYING
 %%DATADIR%%/readme.txt
-@dirrm %%DATADIR%%
-@dirrmtry %%OADIR%%
