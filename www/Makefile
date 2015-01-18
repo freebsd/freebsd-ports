@@ -1193,6 +1193,7 @@
     SUBDIR += p5-Tenjin
     SUBDIR += p5-Test-HTTP
     SUBDIR += p5-Test-HTTP-Server-Simple
+    SUBDIR += p5-Test-LWP-UserAgent
     SUBDIR += p5-Test-Nginx
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Text-MultiMarkdown-ApacheHandler
