@@ -20,6 +20,7 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig
 
@@ -34,8 +35,5 @@ post-patch:
 .if !${PORT_OPTIONS:MDOCS} || !${PORT_OPTIONS:MDOXYGEN}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfishsound.so.1.3.0
 
 .include <bsd.port.mk>
