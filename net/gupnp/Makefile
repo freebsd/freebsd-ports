@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgssdp-1.0.so:${PORTSDIR}/net/gssdp \
 CONFIGURE_ARGS=	--enable-introspection=yes
 CONFIGURE_ENV=	VAPIGEN="" ac_cv_path_VAPIGEN=""
 GNU_CONFIGURE=	yes
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USE_CSTD=	c11
