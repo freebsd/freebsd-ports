@@ -141,6 +141,9 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif # ${PORT_OPTIONS:MOTCHAIN}
 .endif # defined(WITH_BASE_CLANG)
 
+.if ${ARCH} == "armv6"
+CFLAGS_armv6+=	-no-integrated-as
+.endif
 
 # Extra build options for debugging and optimised CFLAGS
 # ======================================================
