@@ -32,6 +32,9 @@ export TEXTDOMAINDIR="/usr/local/share/locale"
 # Set indicator that we haven't written device access yet
 haveDevAccess=0
 
+# Work-around for systems with GPTID enabled still
+echo "insmod part_gpt"
+
 # Do this as early as possible, since other commands might depend on it.
 # (e.g. the `loadfont' command might need lvm or raid modules)
 for i in ${GRUB_PRELOAD_MODULES} ; do
