@@ -5,5 +5,3 @@
 %%LIBDIR%%/baseq2/maxpak.pak
 %%GLX%%%%LIBDIR%%/rfx_glx.so
 %%SDLGL%%%%LIBDIR%%/rfx_sdlgl.so
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%

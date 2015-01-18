@@ -139,17 +139,3 @@ share/locale/vi/LC_MESSAGES/monster-masher.mo
 share/locale/zh_CN/LC_MESSAGES/monster-masher.mo
 share/locale/zh_HK/LC_MESSAGES/monster-masher.mo
 share/locale/zh_TW/LC_MESSAGES/monster-masher.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sr@Latn/LC_MESSAGES
-@dirrmtry share/locale/sr@Latn
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrm share/monster-masher/glade
-@dirrm share/monster-masher/pixmaps
-@dirrm share/monster-masher/sounds
-@dirrm share/monster-masher

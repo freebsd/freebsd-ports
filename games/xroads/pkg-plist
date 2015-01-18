@@ -21,5 +21,3 @@ share/xroads/map15.xrm
 share/xroads/map16.xrm
 share/xroads/map17.xrm
 share/xroads/map18.xrm
-@dirrm share/xroads
-%%PORTDOCS%%@dirrm share/doc/xroads

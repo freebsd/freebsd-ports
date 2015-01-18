@@ -81,6 +81,3 @@ share/xpired/snd/teleport.wav
 share/xpired/xpired.cfg
 share/xpired/xpired.dmo
 share/xpired/xpired.lvl
-@dirrm share/xpired/snd
-@dirrm share/xpired/img
-@dirrm share/xpired
