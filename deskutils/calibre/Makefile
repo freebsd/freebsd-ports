@@ -3,14 +3,14 @@
 
 PORTNAME=	calibre
 PORTVERSION=	1.48.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libwmflite.so:${PORTSDIR}/graphics/libwmf \

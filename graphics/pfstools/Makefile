@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -51,7 +51,7 @@ QT_USE=			QT4=moc_build,corelib,gui
 QT_CONFIGURE_ENABLE=	qt
 
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 
 GDAL_CONFIGURE_ENABLE=	gdal
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal

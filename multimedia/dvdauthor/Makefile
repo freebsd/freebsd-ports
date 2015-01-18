@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -45,7 +45,7 @@ PAL_DESC=	Default video format PAL
 
 SUB_FILES=	README.FreeBSD
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 
 .include <bsd.port.options.mk>
 

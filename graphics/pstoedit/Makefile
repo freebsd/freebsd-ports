@@ -3,7 +3,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.62
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -39,7 +39,7 @@ EMF_LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
 EMF__CONFIGURE_OFF=	--without-emf
 
-MAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
 
