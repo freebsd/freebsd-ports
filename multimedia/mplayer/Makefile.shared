@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
-USES=		gmake iconv ncurses tar:xz
+USES=		compiler:c11 gmake iconv ncurses tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
