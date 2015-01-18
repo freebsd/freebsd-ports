@@ -1,0 +1,9 @@
+LWP::UserAgent suitable for simulating and testing network calls.
+
+It overrides a few key low-level methods of LWP::UserAgent that are
+concerned with actually sending your request over the network,
+allowing an interception of that request and simulating a particular
+response. This greatly facilitates testing of client networking
+code where the server follows a known protocol.
+
+WWW: http://search.cpan.org/dist/Test-LWP-UserAgent/
