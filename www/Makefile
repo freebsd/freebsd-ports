@@ -1114,6 +1114,7 @@
     SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
     SUBDIR += p5-Plack-Middleware-Reproxy
     SUBDIR += p5-Plack-Middleware-ReverseProxy
+    SUBDIR += p5-Plack-Middleware-Rewrite
     SUBDIR += p5-Plack-Middleware-ServerStatus-Lite
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-SocketIO
