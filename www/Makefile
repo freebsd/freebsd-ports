@@ -1726,7 +1726,8 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += quickie
-    SUBDIR += qupzilla
+    SUBDIR += qupzilla-qt4
+    SUBDIR += qupzilla-qt5
     SUBDIR += radicale
     SUBDIR += red5
     SUBDIR += redaxo
