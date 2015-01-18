@@ -18,8 +18,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes
 USES=		charsetfix gmake libtool pathfix
 
