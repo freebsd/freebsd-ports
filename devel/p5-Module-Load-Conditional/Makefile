@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.62
-PORTREVISION=	1
+PORTVERSION=	0.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,11 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata
-RUN_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
