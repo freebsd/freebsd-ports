@@ -3,7 +3,7 @@
 
 PORTNAME=	synfig
 PORTVERSION=	0.64.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	etl>=0.04.17:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmng.so:${PORTSDIR}/graphics/libmng \

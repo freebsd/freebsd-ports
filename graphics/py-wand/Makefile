@@ -2,6 +2,7 @@
 
 PORTNAME=	Wand
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ COMMENT=	MagickWand Python binding
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 
 USES=	python
 USE_PYTHON=	distutils autoplist

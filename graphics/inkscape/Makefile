@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+		libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GNOME=	gtkmm24 intlhack libxslt
