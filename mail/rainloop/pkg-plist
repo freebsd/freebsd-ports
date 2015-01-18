@@ -2,6 +2,7 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/data/EMPTY
 %%WWWDIR%%/data/VERSION
+@dir %%WWWDIR%%/data
 @owner root
 @group wheel
 %%WWWDIR%%/index.php
