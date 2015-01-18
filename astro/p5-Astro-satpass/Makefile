@@ -26,6 +26,8 @@ SOAPLITE_DESC=		Add support for SOAP::Lite (deprecated)
 SPACETRACK_DESC=	Add support for Astro::SpaceTrack
 USGS_DESC=		Add support for Geo::WebService::Elevation::USGS
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 CONFIGURE_ARGS=	-y
 USES=		perl5
 USE_PERL5=	configure
