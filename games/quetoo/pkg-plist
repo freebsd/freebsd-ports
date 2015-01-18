@@ -54,17 +54,3 @@ bin/quetoo
 %%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass/README
 %%VANCTF%%%%PORTDOCS%%%%DOCSDIR%%/vanctf/NOTES
 %%VANCTF%%%%PORTDOCS%%%%DOCSDIR%%/vanctf/README
-@comment === CLEANUP ===
-%%GAME%%@dirrm %%LIBDIR%%/baseq2
-%%CTF%%@dirrm %%LIBDIR%%/ctf
-%%QMASS%%@dirrm %%LIBDIR%%/qmass
-%%QMASS%%@dirrm %%DATADIR%%/qmass/sound
-%%QMASS%%@dirrm %%DATADIR%%/qmass
-%%VANCTF%%@dirrm %%LIBDIR%%/vanctf
-%%VANCTF%%@dirrm %%DATADIR%%/vanctf/maps
-%%VANCTF%%@dirrm %%DATADIR%%/vanctf
-%%QMASS%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/qmass
-%%VANCTF%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/vanctf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%LIBDIR%%
-@dirrmtry %%DATADIR%%
