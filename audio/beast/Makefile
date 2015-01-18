@@ -24,7 +24,8 @@ OPTIONS_DEFINE_i386=	SSE
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	autotools/intltool-merge
-USE_GCC=	yes
+# Fails to build with GCC 4.9, cf. PR 196849.
+USE_GCC=	4.8
 USE_GNOME=	libgnomecanvas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
