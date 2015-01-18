@@ -19,6 +19,7 @@ COMMENT=	Lossless compression library for scientific data
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lm
 USE_LDCONFIG=	yes
 USES=		libtool
@@ -35,7 +36,6 @@ PORTDOCS=	Release_notes_2_0.pdf
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsz.so.2.0.0
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
