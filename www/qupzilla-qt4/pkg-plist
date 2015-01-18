@@ -188,6 +188,7 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/themes/default/windows.css
 %%DATADIR%%/themes/linux/images/flash.png
 %%DATADIR%%/themes/linux/images/flashstart.png
+%%DATADIR%%/themes/linux/images/goto.png
 %%DATADIR%%/themes/linux/images/key.png
 %%DATADIR%%/themes/linux/images/library-bg-left.png
 %%DATADIR%%/themes/linux/images/library-bg-top-right.png
