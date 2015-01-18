@@ -6,4 +6,3 @@ man/man6/xcheckers.6.gz
 %%DATADIR%%/scene.xpm
 %%DATADIR%%/stars.xpm
 lib/X11/app-defaults/XCheckers
-@dirrm %%DATADIR%%

@@ -163,14 +163,3 @@ bin/xrally
 %%DATADIR%%/maps/Test Level
 %%DATADIR%%/sounds/default.mod
 %%DATADIR%%/sounds/rally.mod
-@dirrm %%DATADIR%%/images/classic
-@dirrm %%DATADIR%%/images/default
-@dirrm %%DATADIR%%/images/mini-pov
-@dirrm %%DATADIR%%/images/povaddict
-@dirrm %%DATADIR%%/images/rock
-@dirrm %%DATADIR%%/images/test
-@dirrm %%DATADIR%%/images/water
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

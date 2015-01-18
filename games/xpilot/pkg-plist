@@ -85,6 +85,3 @@ man/man6/xpilots.6.gz
 %%DATADIR%%/textures/wall_ur.ppm
 %%DATADIR%%/textures/wall_url.ppm
 %%DATADIR%%/textures/wormhole.ppm
-@dirrmtry %%DATADIR%%/textures
-@dirrmtry %%DATADIR%%/maps
-@dirrmtry %%DATADIR%%

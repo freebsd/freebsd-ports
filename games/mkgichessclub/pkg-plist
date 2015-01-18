@@ -132,12 +132,3 @@
 %%WWWDIR%%/sample_dnd.php
 %%WWWDIR%%/search.php
 %%WWWDIR%%/service/gameStatus.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%WWWDIR%%/service
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/images/wcg
-@dirrm %%WWWDIR%%/images/lightbox
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%
-@dirrm %%DATADIR%%

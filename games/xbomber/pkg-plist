@@ -218,11 +218,3 @@ bin/xbomber
 %%DATADIR%%/sounds/numbers/90.au
 %%DATADIR%%/sounds/numbers/level.au
 %%DATADIR%%/sounds/numbers/teen.au
-@dirrm %%DATADIR%%/sounds/numbers
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/jungle
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

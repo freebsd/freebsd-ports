@@ -78,11 +78,3 @@ man/man1/xpenguins.1.gz
 %%DATADIR%%/themes/Daemon/faller.xpm
 %%DATADIR%%/themes/Daemon/explosion.xpm
 %%DATADIR%%/themes/Daemon/exit.xpm
-@dirrm %%DATADIR%%/themes/Turtles
-@dirrm %%DATADIR%%/themes/Penguins
-@dirrm %%DATADIR%%/themes/Classic_Penguins
-@dirrm %%DATADIR%%/themes/Bill
-@dirrm %%DATADIR%%/themes/Big_Penguins
-@dirrm %%DATADIR%%/themes/Daemon
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
