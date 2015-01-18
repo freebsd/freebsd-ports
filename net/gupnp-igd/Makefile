@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
