@@ -1918,6 +1918,7 @@ lib/node_modules/npm/test/tap/config-certfile.js
 lib/node_modules/npm/test/tap/config-credentials.js
 lib/node_modules/npm/test/tap/config-malformed.js
 lib/node_modules/npm/test/tap/config-meta.js
+lib/node_modules/npm/test/tap/config-private.js
 lib/node_modules/npm/test/tap/config-project.js
 lib/node_modules/npm/test/tap/config-save.js
 lib/node_modules/npm/test/tap/config-semver-tag.js
@@ -2092,6 +2093,7 @@ lib/node_modules/npm/test/tap/url-dependencies.js
 lib/node_modules/npm/test/tap/url-dependencies/package.json
 lib/node_modules/npm/test/tap/version-git-not-clean.js
 lib/node_modules/npm/test/tap/version-no-git.js
+lib/node_modules/npm/test/tap/version-no-package.js
 lib/node_modules/npm/test/tap/version-no-tags.js
 lib/node_modules/npm/test/tap/version-update-shrinkwrap.js
 lib/node_modules/npm/test/tap/view.js
