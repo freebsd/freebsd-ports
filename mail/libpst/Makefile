@@ -22,6 +22,7 @@ PST2DII_DESC=	Allow Summation Document Image Information output
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USE_LDCONFIG=	yes
 USES=		gmake iconv libtool pathfix pkgconfig
@@ -38,8 +39,5 @@ post-patch:
 	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|doc\/@PACKAGE@-@VERSION@|doc\/@PACKAGE@|g' ${WRKSRC}/Makefile.in ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e '/html_DATA =/ s|COPYING ||' ${WRKSRC}/Makefile.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpst.so.4.1.10
 
 .include <bsd.port.mk>
