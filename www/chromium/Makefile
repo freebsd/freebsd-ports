@@ -1,10 +1,8 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
-#TODO bz@ : if you do undestand the gyp stuff, third_party/widevine/cdm/widevine_cdm.gyp talks about it (plz install libwidevinecdm.so)
 PORTNAME=	chromium
-PORTVERSION=	39.0.2171.95
-PORTREVISION=	3
+PORTVERSION=	39.0.2171.99
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -68,6 +66,7 @@ SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 
+#TODO bz@ : if you do undestand the gyp stuff, third_party/widevine/cdm/widevine_cdm.gyp talks about it (plz install libwidevinecdm.so)
 # See build/common.gypi for all the available variables.
 GYP_DEFINES+=	\
 		clang_use_chrome_plugins=0 \
@@ -127,10 +126,10 @@ GYP_DEFINES+=	google_api_key=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST DEBUG
+OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST KERBEROS DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
 
-OPTIONS_DEFAULT=	CODECS GCONF
+OPTIONS_DEFAULT=	CODECS GCONF KERBEROS
 
 GCONF_USE=	GNOME=gconf2
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
@@ -180,6 +179,7 @@ ALL_TARGET+=	${TEST_TARGETS}
 
 DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
+BROKEN=		Produces empty binary
 BUILDTYPE=	Debug
 .else
 BUILDTYPE=	Release
@@ -204,6 +204,10 @@ GYP_DEFINES+=	clang=1
 CFLAGS+=	-Wno-unknown-warning-option
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
+.endif
+
+.if ! ${PORT_OPTIONS:MKERBEROS}
+GYP_DEFINES+=	use_kerberos=0
 .endif
 
 # according to portlint the below is passed via bsd.port.mk,
