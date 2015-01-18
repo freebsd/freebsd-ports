@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.13
-PORTREVISION=	1
+PORTVERSION=	1.8.14
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
+MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
+		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/ \
 		LOCAL/sunpoet
 
@@ -19,7 +20,6 @@ CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 OPTIONS_SUB=	yes
 
-#CFLAGS+=	-D__BSD_VISIBLE
 CONFIGURE_ARGS=	--enable-cxx \
 		--enable-hl \
 		--enable-instrument \
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-cxx \
 		--with-pthread=/usr \
 		--with-zlib=/usr
 GNU_CONFIGURE=	yes
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool tar:bzip2
