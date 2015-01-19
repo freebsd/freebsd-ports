@@ -2,7 +2,7 @@
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -68,6 +68,7 @@ GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
 GH_COMMIT=	2d6426d
 GH_TAGNAME=	pht-v1.2.2
+BUNDLE_LIBS=	yes
 
 USES=		cmake:outsource iconv:wchar_t pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
