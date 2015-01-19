@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	xpdf
-PORTVERSION=	3.03
-PORTREVISION=	6
+PORTVERSION=	3.04
 CATEGORIES=	graphics print
-MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+MASTER_SITES=	http://mirrors.rit.edu/zi/ \
+		ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN} \
-		http://mirrors.rit.edu/zi/ \
 		http://komquats.com/distfiles/
 MASTER_SITE_SUBDIR=	support/xpdf
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -O0
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
