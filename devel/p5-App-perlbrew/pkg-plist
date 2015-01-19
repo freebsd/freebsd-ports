@@ -1,0 +1,4 @@
+bin/perlbrew
+%%SITE_PERL%%/App/perlbrew.pm
+%%PERL5_MAN3%%/App::perlbrew.3.gz
+man/man1/perlbrew.1.gz
