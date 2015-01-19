@@ -23,15 +23,8 @@ USES=		desktop-file-utils python
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} \
