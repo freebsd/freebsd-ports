@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	BOOST DOCS EXAMPLES
 CONFIGURE_ARGS=	--disable-ewarning
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
