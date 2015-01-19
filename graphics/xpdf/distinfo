@@ -1,4 +1,2 @@
-SHA256 (xpdf-3.03.tar.gz) = 02cf63d8f6326eda644096cd0f969e1588702ad87222c1e9388a93c270fbceca
-SIZE (xpdf-3.03.tar.gz) = 795537
-SHA256 (patch-zz-xpdf-annot.20080728a) = c96308c0fb90450251a6f8a19b5436a5fd5d70b4d6af2626ba85d3c4b7300fe1
-SIZE (patch-zz-xpdf-annot.20080728a) = 69092
+SHA256 (xpdf-3.04.tar.gz) = 11390c74733abcb262aaca4db68710f13ffffd42bfe2a0861a5dfc912b2977e5
+SIZE (xpdf-3.04.tar.gz) = 825519
