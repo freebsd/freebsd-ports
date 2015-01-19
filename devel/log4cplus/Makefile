@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	reed@reedmedia.net
 COMMENT=	Logging library for C++
 
+LICENSE=	APACHE20
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		libtool pathfix tar:xz
