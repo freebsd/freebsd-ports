@@ -26,5 +26,3 @@ share/icons/hicolor/scalable/apps/spek.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/spek.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/spek.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/spek.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
