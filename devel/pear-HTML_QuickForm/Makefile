@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_QuickForm
-PORTVERSION=	3.2.13
+PORTVERSION=	3.2.14
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide methods for creating, validating, and processing HTML forms
+
+LICENSE=	PHP301
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
 RUN_DEPENDS:=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
