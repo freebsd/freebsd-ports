@@ -1,6 +1,6 @@
---- ./local/Makefile.in.orig	2012-06-12 10:48:43.000000000 -0400
-+++ ./local/Makefile.in	2012-06-12 10:48:50.000000000 -0400
-@@ -16,7 +16,7 @@
+--- local/Makefile.in.orig	2015-01-19 14:37:56 UTC
++++ local/Makefile.in
+@@ -16,7 +16,7 @@ OTHERUNINSTALL=localuninstall
  #
  SNMPCONFPATH=@SNMPCONFPATH@
  PERSISTENT_DIRECTORY=@PERSISTENT_DIRECTORY@
