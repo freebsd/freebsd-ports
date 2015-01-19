@@ -23,6 +23,7 @@ TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
 CONFIGURE_ARGS=	--enable-shared
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig tar:bzip2
 
@@ -52,6 +53,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
 	cd ${WRKSRC}/../../../Source/ && ${FIND} MediaInfo -type d | ${XARGS} -I % ${MKDIR} ${STAGEDIR}${PREFIX}/include/%
 	cd ${WRKSRC}/../../../Source/ && ${FIND} MediaInfo -name '*.h' | ${XARGS} -I % ${INSTALL_DATA} % ${STAGEDIR}${PREFIX}/include/%
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmediainfo.so.0.0.0
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmediainfo.so.0.0.0
 
 .include <bsd.port.mk>
