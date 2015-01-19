@@ -16,14 +16,14 @@ package-rename:
 
 package-canonical:
 	@${ECHO_MSG} "===>   Canonical packaging for Apache OpenOffice";
-	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/${PACKAGE_PREFI}* .
+	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/${PACKAGE_PREFIX}* ${WRKDIR}/../.
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of Apache OpenOffice"
 	@${RM} -fr ${WRKDIR}/sdk_tmp
 	@${MKDIR} ${WRKDIR}/sdk_tmp
 	@cd ${WRKDIR}/sdk_tmp ; \
-		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice_*SDK*.tar.gz
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice-*SDK*.tar.gz
 	@cd ${WRKDIR}/sdk_tmp/Apache_*/openoffice* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR}_sdk ; \
 		${MV} * ../${INSTALLATION_BASEDIR}_sdk ; cd .. ; \
