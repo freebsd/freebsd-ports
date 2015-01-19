@@ -18,8 +18,6 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/p
 		--with-system-includedir=/usr/include
 MAKE_ARGS=	MANDIR="${MAN1PREFIX}/man/man1"
 
-CONFLICTS_INSTALL=	pkg-config-*
-
 post-install:
 	${LN} -sf pkgconf ${STAGEDIR}${PREFIX}/bin/pkg-config
 
