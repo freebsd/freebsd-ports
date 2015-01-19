@@ -279,5 +279,3 @@ share/mime/audio/x-bsewave.xml
 share/mime/packages/beast.xml
 share/pixmaps/beast-audio-x-bse.png
 share/pixmaps/beast.png
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
