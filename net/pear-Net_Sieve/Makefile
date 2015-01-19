@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
