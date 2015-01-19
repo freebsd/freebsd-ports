@@ -25,7 +25,7 @@
  installthis:
  	-mkdir -p $(DESTDIR)$(BINDIR)
 -	$(INSTALL) -m 555 -o bin -g bin thttpd $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -m 555 thttpd $(DESTDIR)$(BINDIR)
++	$(INSTALL) -s -m 555 thttpd $(DESTDIR)$(BINDIR)
  
  install-man:
  	-mkdir -p $(DESTDIR)$(MANDIR)/man8

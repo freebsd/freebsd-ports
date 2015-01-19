@@ -51,7 +51,7 @@
 +	    sz = sbytes > 0 ? sbytes : -1;
 +	else if (sz == 0)
 +	    sz = sbytes;
-+#else		      
++#else
  	sz = write(
  	    hc->conn_fd, &(hc->file_address[c->next_byte_index]),
  	    MIN( c->end_byte_index - c->next_byte_index, max_bytes ) );
@@ -78,7 +78,7 @@
 +	    sz = sbytes > 0 ? sbytes : -1;
 +	else if (sz == 0)
 +	    sz = sbytes;
-+#else		      
++#else
  	/* Yes.  We'll combine headers and file into a single writev(),
  	** hoping that this generates a single packet.
  	*/
