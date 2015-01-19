@@ -560,5 +560,3 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gaupol.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
