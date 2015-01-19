@@ -1,6 +1,6 @@
 --- extras/htpasswd.c.orig	2001-12-19 00:08:08 UTC
 +++ extras/htpasswd.c
-@@ -21,7 +21,12 @@ extern char *crypt(const char *key, cons
+@@ -19,7 +19,12 @@
  #define LF 10
  #define CR 13
  
@@ -13,7 +13,7 @@
  
  int tfd;
  char temp_template[] = "/tmp/htp.XXXXXX";
-@@ -137,8 +142,9 @@ add_password( char* user, FILE* f )
+@@ -135,8 +140,9 @@ add_password( char* user, FILE* f )
      }
  
  static void usage(void) {
@@ -25,7 +25,7 @@
      exit(1);
  }
  
-@@ -151,51 +157,131 @@ void interrupted(int signo) {
+@@ -149,51 +155,128 @@ void interrupted(int signo) {
  int main(int argc, char *argv[]) {
      FILE *tfp,*f;
      char user[MAX_STRING_LEN];
@@ -35,7 +35,7 @@
 +    char line[MAX_LINE_LEN];
 +    char l[MAX_LINE_LEN];
      char w[MAX_STRING_LEN];
-     char command[MAX_STRING_LEN];
+-    char command[MAX_STRING_LEN];
 -    int found;
 +    int found,u;
  
@@ -80,8 +80,7 @@
 +	    exit(1);
 +        }
 +        if (strlen(argv[3]) > (sizeof(user) - 1)) {
-+	    fprintf(stderr, "%s: username is too long\n", argv[0],
-+		sizeof(user) - 1);
++	    fprintf(stderr, "%s: username is too long\n", argv[0]);
 +	    exit(1);
 +        }
 +        if ((strchr(argv[3], ':')) != NULL) {
@@ -109,8 +108,7 @@
 +        exit(1);
 +    }
 +    if (strlen(argv[2]) > (sizeof(user) - 1)) {
-+        fprintf(stderr, "%s: username is too long\n", argv[0],
-+                sizeof(user) - 1);
++        fprintf(stderr, "%s: username is too long\n", argv[0]);
 +        exit(1);
 +    }
 +    if ((strchr(argv[2], ':')) != NULL) {
@@ -168,7 +166,7 @@
          if(strcmp(user,w)) {
              putline(tfp,line);
              continue;
-@@ -210,10 +296,28 @@ int main(int argc, char *argv[]) {
+@@ -208,10 +291,28 @@ int main(int argc, char *argv[]) {
          printf("Adding user %s\n",user);
          add_password(user,tfp);
      }
