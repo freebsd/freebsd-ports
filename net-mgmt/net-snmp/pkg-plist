@@ -78,7 +78,7 @@ include/net-snmp/agent/util_funcs.h
 include/net-snmp/agent/util_funcs/header_generic.h
 include/net-snmp/agent/util_funcs/header_simple_table.h
 include/net-snmp/agent/util_funcs/MIB_STATS_CACHE_TIMEOUT.h
-@dirrmtry include/net-snmp/agent/util_funcs
+@dir include/net-snmp/agent/util_funcs
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
@@ -184,6 +184,7 @@ include/net-snmp/system/freebsd8.h
 include/net-snmp/system/freebsd9.h
 include/net-snmp/system/freebsd10.h
 include/net-snmp/system/freebsd11.h
+include/net-snmp/system/freebsd12.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
@@ -304,6 +305,7 @@ man/man3/snmp_alarm_register.3.gz
 man/man3/snmp_alarm_register_hr.3.gz
 man/man3/snmp_alarm_unregister.3.gz
 man/man3/snmp_api_errstring.3.gz
+man/man3/snmp_async_send.3.gz
 man/man3/snmp_clone_pdu.3.gz
 man/man3/snmp_clone_varbind.3.gz
 man/man3/snmp_close.3.gz
@@ -330,6 +332,7 @@ man/man3/snmp_sess_read.3.gz
 man/man3/snmp_sess_select_info.3.gz
 man/man3/snmp_sess_send.3.gz
 man/man3/snmp_sess_session.3.gz
+man/man3/snmp_sess_synch_response.3.gz
 man/man3/snmp_sess_timeout.3.gz
 man/man3/snmp_set_mib_errors.3.gz
 man/man3/snmp_set_mib_warnings.3.gz
@@ -338,6 +341,7 @@ man/man3/snmp_set_var_objid.3.gz
 man/man3/snmp_set_var_typed_integer.3.gz
 man/man3/snmp_set_var_typed_value.3.gz
 man/man3/snmp_set_var_value.3.gz
+man/man3/snmp_synch_response.3.gz
 man/man3/snmp_timeout.3.gz
 man/man3/snmp_varlist_add_variable.3.gz
 man/man3/snprint_description.3.gz
@@ -537,6 +541,8 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMP-NOTIFICATION-MIB.txt
 %%DATADIR%%/mibs/SNMP-PROXY-MIB.txt
 %%DATADIR%%/mibs/SNMP-TARGET-MIB.txt
+%%DATADIR%%/mibs/SNMP-TLS-TM-MIB.txt
+%%DATADIR%%/mibs/SNMP-TSM-MIB.txt
 %%DATADIR%%/mibs/SNMP-USER-BASED-SM-MIB.txt
 %%DATADIR%%/mibs/SNMP-USM-AES-MIB.txt
 %%DATADIR%%/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
@@ -577,3 +583,20 @@ sbin/snmptrapd
 %%DATADIR%%/snmpconf-data/snmptrapd-data/snmpconf-config
 %%DATADIR%%/snmpconf-data/snmptrapd-data/traphandle
 @dir /var/agentx
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__init__.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client_intf.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/test.pyo
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
