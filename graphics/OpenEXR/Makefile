@@ -5,8 +5,11 @@ PORTNAME=	OpenEXR
 PORTVERSION=	2.2.0
 PORTREVISION=	4
 CATEGORIES=	graphics devel
-MASTER_SITES=	SAVANNAH/openexr/
+MASTER_SITES=	SAVANNAH/openexr/:dist \
+		LOCAL/mandree/:test
 DISTNAME=	openexr-${DISTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
+		openexr-2.2.0-comp_dwa-test-images.tar.xz:test
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -79,13 +82,12 @@ pre-configure:
 		${ECHO_CMD} "*** same C++ std. library before trying to build OpenEXR.  Abort.   ***" ; \
 		exit 1; }
 
-
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 EXTRA_PATCHES+=${FILESDIR}/extra-patch-IlmImfExamples__Makefile.in
 .endif
 
 regression-test regression test check:	build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${_MAKE_JOBS} check)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIlmImf-${MAJORVER}.so.${VER}
