@@ -39,7 +39,6 @@
     SUBDIR += ace+tao-doc
     SUBDIR += acme
     SUBDIR += activitymail
-    SUBDIR += actor-framework
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
@@ -185,6 +184,7 @@
     SUBDIR += c-unit
     SUBDIR += c2mdoc
     SUBDIR += c4
+    SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += capstone
     SUBDIR += cask
