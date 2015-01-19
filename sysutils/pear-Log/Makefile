@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log
-PORTVERSION=	1.12.7
+PORTVERSION=	1.12.8
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	ports@FreeBSD.org
