@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5856eba-a015-11e4-a680-1c6f65c3c4ff">
+    <topic>polarssl -- Remote attack using crafted certificates</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.12_1</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PolarSSL team reports:</p>
+	<blockquote cite="https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2014-04">
+	  <p>During the parsing of a ASN.1 sequence, a pointer in the linked list of asn1_sequence is not
+	    initialized by asn1_get_sequence_of(). In case an error occurs during parsing of the list, a
+	    situation is created where the uninitialized pointer is passed to polarssl_free().</p>
+	  <p>This sequence can be triggered when a PolarSSL entity is parsing a certificate. So practically this
+	    means clients when receiving a certificate from the server or servers in case they are actively
+	    asking for a client certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1182</cvename>
+      <url>https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2014-04</url>
+      <url>https://www.certifiedsecure.com/polarssl-advisory/</url>
+    </references>
+    <dates>
+      <discovery>2015-01-14</discovery>
+      <entry>2015-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9360908-9d52-11e4-87fd-10bf48e1088e">
     <topic>unzip -- input sanitization errors</topic>
     <affects>
