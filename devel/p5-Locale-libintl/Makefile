@@ -12,7 +12,9 @@ DISTNAME=	libintl-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Internationalization library for Perl
 
-USES=		perl5 gettext
+LICENSE=	LGPL21
+
+USES=		gettext perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
