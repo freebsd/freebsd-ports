@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	cgdb
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	devel
 MASTER_SITES=	http://cgdb.me/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based interface to the GNU Debugger
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
 USES=		makeinfo readline
 
