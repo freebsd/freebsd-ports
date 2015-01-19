@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	validictory
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -12,12 +13,7 @@ COMMENT=	General purpose Python data validator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	sunlightlabs
-GH_COMMIT=	584d90b
-GH_TAGNAME=	${GH_COMMIT}
-
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
