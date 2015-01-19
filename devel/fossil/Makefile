@@ -6,7 +6,7 @@ DISTVERSION=	20150119112900
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
-DISTNAME=	${PORTNAME}-src-20140612172556
+DISTVERSIONPREFIX=	src-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
