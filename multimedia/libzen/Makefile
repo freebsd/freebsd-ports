@@ -16,6 +16,7 @@ CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
 
 CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix tar:bzip2
 
@@ -28,6 +29,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../../../Source/ZenLib/BitStream_Fast.h ${STAGEDIR}${PREFIX}/include/ZenLib/BitStream_Fast.h
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzen.so.0.0.0
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzen.so.0.0.0
 
 .include <bsd.port.mk>
