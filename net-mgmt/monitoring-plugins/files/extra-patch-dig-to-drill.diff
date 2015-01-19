@@ -1,13 +1,13 @@
 --- plugins/check_dig.c.orig	2014-06-23 16:01:00 UTC
 +++ plugins/check_dig.c
-@@ -94,8 +94,8 @@
+@@ -94,8 +94,8 @@ main (int argc, char **argv)
    timeout_interval_dig = timeout_interval / number_tries + number_tries;
  
    /* get the command to run */
 -  xasprintf (&command_line, "%s @%s -p %d %s -t %s %s %s +tries=%d +time=%d",
 -            PATH_TO_DIG, dns_server, server_port, query_address, record_type, dig_args, query_transport, number_tries, timeout_interval_dig);
 +  xasprintf (&command_line, "%s %s @%s -z -p %d %s %s %s",
-+            PATH_TO_DIG, dig_args, dns_server, server_port, query_address, record_type, query_transport);
++            PATH_TO_DIG, dig_args, dns_server, server_port, query_transport, query_address, record_type);
  
    alarm (timeout_interval);
    gettimeofday (&tv, NULL);
