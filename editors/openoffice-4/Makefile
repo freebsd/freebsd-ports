@@ -3,21 +3,22 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors java
-MASTER_SITES=	${MASTER_SITE_APACHE:S@%SUBDIR%@openoffice/${PORTVERSION}/source@} \
-		${MASTER_SITE_LOCAL:S@%SUBDIR%@truckman/openoffice@}:extsrc
+MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
+		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
+		LOCAL/truckman/openoffice:extsrc
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .endif
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
-DISTFILES=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
+DISTFILES=	${OOOSRC} unowinreg.dll:unoreg ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
-#de facto maintainer is maho@FreeBSD.org
+#de facto maintainer is truckman@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
@@ -39,7 +40,6 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh		\
 		bash:${PORTSDIR}/shells/bash				\
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=								\
@@ -64,7 +64,6 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=		4
@@ -74,7 +73,7 @@ AOOVERSION=		${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=			${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 SVNREVISION=		1617669
 OOOSRC=			apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140809.tar.gz
+EXTSRC=			ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140918.tar.gz
 
 OOODIR=			openoffice${AOOVERSION1}
 AOOSUFFIX=		${PORTVERSION}
@@ -201,8 +200,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
-			--with-system-saxon				\
-			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar	\
 			--with-system-serf				\
 			--with-system-stdlibs				\
 			--enable-symbols=small				\
