@@ -38,7 +38,3 @@ share/xournal/pixmaps/xoj.svg
 share/xournal/pixmaps/xournal.png
 share/xournal/pixmaps/xournal.svg
 share/xournal/pixmaps/yellow.png
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
