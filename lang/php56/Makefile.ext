@@ -132,16 +132,15 @@ USES+=	iconv:translit
 .endif
 
 .if ${PHP_MODNAME} == "imap"
-LIB_DEPENDS+=	libc-client4.so:${PORTSDIR}/mail/cclient
+OPTIONS_DEFINE=	PANDA
+PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
-		--with-pcre-dir=${LOCALBASE}
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
+		--with-pcre-dir=${LOCALBASE} \
+		--with-imap-ssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
-.endif
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -524,6 +523,14 @@ CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 
 CONFIGURE_ARGS+=--with-vpx-dir=${LOCALBASE}
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "imap"
+.	if ${PORT_OPTIONS:MPANDA}
+LIB_DEPENDS+=	libc-client4.so.10:${PORTSDIR}/mail/panda-cclient
+.	else
+LIB_DEPENDS+=	libc-client4.so.9:${PORTSDIR}/mail/cclient
 .	endif
 .endif
 
