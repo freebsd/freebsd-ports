@@ -7403,3 +7403,4 @@ x11/rxvt-devel||2015-01-17|Has expired: No longer developed nor maintained and d
 comms/spandsp-devel|comms/spandsp|2015-01-17|Has expired: Use newer comms/spandsp
 multimedia/universal-media-server||2015-01-17|Has expired: RC script broken, especially prestart target
 www/qupzilla|www/qupzilla-qt4|2015-01-18|Renamed to differentiate from www/qupzilla-qt5 
+devel/p5-perlbrew|devel/p5-App-perlbrew|2015-01-19|Rename to match upstream naming
