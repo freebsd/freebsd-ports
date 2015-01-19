@@ -13,6 +13,7 @@ COMMENT=	Simplified-Traditional Chinese conversion tool
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		iconv libtool
 
