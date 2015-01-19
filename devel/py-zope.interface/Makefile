@@ -17,12 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-post-patch:
-	# fix pkg-plist problem with python3. This file is not installing.
-	@${REINPLACE_CMD} -e 's|src/zope/__init__.py||' \
-		${WRKSRC}/src/zope.interface.egg-info/SOURCES.txt
-	@${RM} ${WRKSRC}/src/zope/__init__.py \
-		${WRKSRC}/src/zope.interface.egg-info/SOURCES.txt.bak
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zope/interface/_zope_interface_coptimizations.so
 
