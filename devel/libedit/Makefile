@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-widec
+MAKE_ENV=	LC_ALL=C
 
 .include <bsd.port.mk>
