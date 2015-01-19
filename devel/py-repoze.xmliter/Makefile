@@ -20,11 +20,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1.1:${PORTSDIR}/devel/py-lxml \
 USES=		python zip
 USE_PYTHON=	autoplist distutils
 
-post-patch:
-	# fix pkg-plist problem with python3. This file is not installing.
-	@${REINPLACE_CMD} -e 's|repoze/__init__.py||' \
-		${WRKSRC}/repoze.xmliter.egg-info/SOURCES.txt
-	@${RM} ${WRKSRC}/repoze/__init__.py \
-		${WRKSRC}/repoze.xmliter.egg-info/SOURCES.txt.bak
-
 .include <bsd.port.mk>
