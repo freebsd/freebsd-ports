@@ -90,7 +90,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	yes
+USE_GCC=	4.8
 USES+=		bison desktop-file-utils gmake perl5 pkgconfig python tar:bzip2
 USE_PERL5=	build
 WITHOUT_CPU_CFLAGS=	true
