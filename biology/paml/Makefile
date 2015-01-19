@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
 USES=		gmake tar:tgz
