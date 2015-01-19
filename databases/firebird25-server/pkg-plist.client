@@ -17,11 +17,7 @@ lib/libgds.so
 lib/libgds.so.2
 lib/libgds.so.2.5
 lib/libib_util.so
-@unexec if cmp -s %D/%%CONFDIR%%/firebird.conf %D/%%CONFDIR%%/firebird.conf.sample; then rm -f %D/%%CONFDIR%%/firebird.conf; fi
-%%CONFDIR%%/firebird.conf.sample
-@exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
-@dirrmtry %%CONFDIR%%
+@sample %%CONFDIR%%/firebird.conf.sample
 %%DATADIR%%/de_DE.msg
 %%DATADIR%%/firebird.msg
 %%DATADIR%%/fr_FR.msg
-@dirrm %%DATADIR%%
