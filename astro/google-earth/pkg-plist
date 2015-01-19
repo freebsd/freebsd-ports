@@ -561,7 +561,3 @@ bin/googleearth
 %%DATADIR%%/shaders/watersurface.vs_2_0
 share/applications/googleearth.desktop
 share/mime/packages/googleearth-mimetypes.xml
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
