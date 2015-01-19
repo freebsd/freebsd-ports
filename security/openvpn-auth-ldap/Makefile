@@ -3,12 +3,13 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4.0.s1379
+PORTREVISION=	1
 CATEGORIES=	security
 #MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITES=	LOCAL/mandree
 DISTNAME=	auth-ldap-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
 LICENSE=	BSD3CLAUSE
@@ -16,8 +17,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
 		${NONEXISTENT}:${PORTSDIR}/security/openvpn:extract \
 		libcheck>=0:${PORTSDIR}/devel/libcheck
-
-BROKEN=		Untested SVN-based port, report success on https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=190497
 
 USES=		objc tar:xz
 
