@@ -129,18 +129,3 @@ share/pixmaps/arista.svg
 %%PYTHON_SITELIBDIR%%/arista/utils.py
 %%PYTHON_SITELIBDIR%%/arista/utils.pyc
 %%PYTHON_SITELIBDIR%%/arista/utils.pyo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/jv/LC_MESSAGES
-@dirrmtry share/locale/jv
-@dirrmtry share/locale/templates
-@dirrmtry share/nautilus-python/extensions
-@dirrmtry share/nautilus-python
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/presets
-@dirrmtry %%DATADIR%%/ui
-@dirrmtry %%DATADIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/arista/inputs
-@dirrmtry %%PYTHON_SITELIBDIR%%/arista
-@dirrmtry share/doc/arista
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
