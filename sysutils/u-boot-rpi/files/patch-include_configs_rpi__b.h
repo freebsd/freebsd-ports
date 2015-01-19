@@ -27,7 +27,7 @@
 +/* Create a small(ish) boot environment for FreeBSD. */
 +#undef  CONFIG_EXTRA_ENV_SETTINGS
 +#define CONFIG_EXTRA_ENV_SETTINGS \
-+	"loadaddr=0x00200000\0" \
++	"loadaddr=0x02000000\0" \
 +	"stdin=serial\0" \
 +	"stderr=serial,lcd\0" \
 +	"stdout=serial,lcd\0" \
