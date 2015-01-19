@@ -21,10 +21,7 @@ USE_MYSQL=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.sh \
+	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
