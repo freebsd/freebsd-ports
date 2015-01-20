@@ -236,3 +236,4 @@ share/locale/zh_HK/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgweather-locations.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-locations.mo
+share/vala/vapi/gweather-3.0.vapi
