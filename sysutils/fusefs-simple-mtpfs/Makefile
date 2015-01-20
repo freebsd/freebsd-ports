@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple MTP fuse filesystem driver
 
 LICENSE=	GPLv2 # or any later version

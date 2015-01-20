@@ -10,7 +10,7 @@ DISTNAME=	gmock-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gmock_doctor.py:svn
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for writing and using C++ mock classes
 
 LICENSE=	BSD3CLAUSE
