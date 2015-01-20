@@ -1,0 +1,11 @@
+--- xpdf/Makefile.in.orig	2014-05-28 11:50:50.000000000 -0700
++++ xpdf/Makefile.in	2015-01-20 08:19:38.054680354 -0800
+@@ -122,7 +122,7 @@
+ 	pdftopng$(EXE) pdfimages$(EXE)
+ 
+ all-no-x: pdftops$(EXE) pdftotext$(EXE) pdftohtml$(EXE) pdfinfo$(EXE) \
+-	pdffonts$(EXE) pdfdetach$(EXE) pdfimages$(EXE)
++	pdffonts$(EXE) pdfdetach$(EXE) pdftoppm$(EXE) pdfimages$(EXE)
+ 
+ #------------------------------------------------------------------------
+ 
