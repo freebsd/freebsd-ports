@@ -19,6 +19,7 @@ OPTIONS_SINGLE_XML=	EXPAT LIBXML2
 OPTIONS_DEFAULT=EXPAT
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		libtool pathfix tar:bzip2
@@ -35,9 +36,6 @@ LIBXML2_CPPFLAGS=	-I${LOCALBASE}/include/libxml2
 LIBXML2_USE=		GNOME=libxml2
 TEST_BUILD_DEPENDS=	cunit>=2.1:${PORTSDIR}/devel/cunit
 TEST_CONFIGURE_ENV=	CUNIT_CFLAGS=-I${LOCALBASE}/include CUNIT_LIBS="-L${LOCALBASE}/lib -lcunit -L${LIBDIR} -lncurses"
-
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libmetalink.so.3
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
