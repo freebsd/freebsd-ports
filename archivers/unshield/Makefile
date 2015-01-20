@@ -13,10 +13,8 @@ COMMENT=	Extract data from InstallShield CAB files
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libunshield.so.0.0.0
 
 .include <bsd.port.mk>
