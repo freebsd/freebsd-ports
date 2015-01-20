@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.46-2
+DISTVERSION=	0.46-5
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
