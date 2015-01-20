@@ -16,13 +16,17 @@ LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee	\
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
+BROKEN=		Does not compile with the recent Tox
+DEPRECATED=	No more support from the project
+EXPIRATION_DATE=	2015-01-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	naxuroqa
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	a9bff73
 
 USES=		cmake desktop-file-utils gettext pkgconfig
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo glib20 gtk30
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 
