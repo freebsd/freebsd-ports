@@ -10,8 +10,7 @@ MASTER_SITES=	SUNSITE/apps/sound/players/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Wav player and recorder
 
-ONLY_FOR_ARCHS=	arm i386 amd64
-ONLY_FOR_ARCHS_REASON=Doesn't work on !arm, i386 and amd64
+ONLY_FOR_ARCHS=	armv6 i386 amd64
 
 INSTALL_TARGET=	install PREFIX="${STAGEDIR}${PREFIX}"
 
