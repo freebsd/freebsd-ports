@@ -31,8 +31,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/doc/xorg-docs/README.xml:${PORTSDIR}/x11/xorg-d
 .endif
 
 # app, lib, font, driver
-RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
-		${LOCALBASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
+RUN_DEPENDS+=	xorg-apps>0:${PORTSDIR}/x11/xorg-apps \
+		xorg-libraries>0:${PORTSDIR}/x11/xorg-libraries \
 		${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
 		${LOCALBASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers
 
