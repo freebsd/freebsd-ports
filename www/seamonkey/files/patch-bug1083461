@@ -1,0 +1,159 @@
+commit 87f367b
+Author: L. David Baron <dbaron@dbaron.org>
+Date:   Sun Oct 19 23:31:39 2014 -0400
+
+    Bug 1083461 - Convert nsCSSValue{,Pair}List::operator== back to a static Equal method so that it can be validly called on null pointers.  r=bzbarsky
+    
+    --HG--
+    extra : transplant_source : %CD%5D%9BE%FE%DE%A4%F2%B8%CF%D7%AE%84%90%3B%E8%A0d%D7%2B
+---
+ layout/style/StyleAnimationValue.cpp |  6 ++++--
+ layout/style/nsCSSValue.cpp          | 28 ++++++++++++++++------------
+ layout/style/nsCSSValue.h            | 22 ++++++++++++++++------
+ 3 files changed, 36 insertions(+), 20 deletions(-)
+
+diff --git layout/style/StyleAnimationValue.cpp layout/style/StyleAnimationValue.cpp
+index 40bc8bf..1898fe6 100644
+--- mozilla/layout/style/StyleAnimationValue.cpp
++++ mozilla/layout/style/StyleAnimationValue.cpp
+@@ -3851,11 +3851,13 @@ StyleAnimationValue::operator==(const StyleAnimationValue& aOther) const
+     case eUnit_Filter:
+     case eUnit_Shadow:
+     case eUnit_BackgroundPosition:
+-      return *mValue.mCSSValueList == *aOther.mValue.mCSSValueList;
++      return nsCSSValueList::Equal(mValue.mCSSValueList,
++                                   aOther.mValue.mCSSValueList);
+     case eUnit_Transform:
+       return *mValue.mCSSValueSharedList == *aOther.mValue.mCSSValueSharedList;
+     case eUnit_CSSValuePairList:
+-      return *mValue.mCSSValuePairList == *aOther.mValue.mCSSValuePairList;
++      return nsCSSValuePairList::Equal(mValue.mCSSValuePairList,
++                                       aOther.mValue.mCSSValuePairList);
+     case eUnit_UnparsedString:
+       return (NS_strcmp(GetStringBufferValue(),
+                         aOther.GetStringBufferValue()) == 0);
+diff --git layout/style/nsCSSValue.cpp layout/style/nsCSSValue.cpp
+index dcb8496..fefb4f9 100644
+--- mozilla/layout/style/nsCSSValue.cpp
++++ mozilla/layout/style/nsCSSValue.cpp
+@@ -264,13 +264,14 @@ bool nsCSSValue::operator==(const nsCSSValue& aOther) const
+       return *mValue.mRect == *aOther.mValue.mRect;
+     }
+     else if (eCSSUnit_List == mUnit) {
+-      return *mValue.mList == *aOther.mValue.mList;
++      return nsCSSValueList::Equal(mValue.mList, aOther.mValue.mList);
+     }
+     else if (eCSSUnit_SharedList == mUnit) {
+       return *mValue.mSharedList == *aOther.mValue.mSharedList;
+     }
+     else if (eCSSUnit_PairList == mUnit) {
+-      return *mValue.mPairList == *aOther.mValue.mPairList;
++      return nsCSSValuePairList::Equal(mValue.mPairList,
++                                       aOther.mValue.mPairList);
+     }
+     else if (eCSSUnit_GridTemplateAreas == mUnit) {
+       return *mValue.mGridTemplateAreas == *aOther.mValue.mGridTemplateAreas;
+@@ -1875,13 +1876,15 @@ nsCSSValueList::AppendToString(nsCSSProperty aProperty, nsAString& aResult,
+   }
+ }
+ 
+-bool
+-nsCSSValueList::operator==(const nsCSSValueList& aOther) const
++/* static */ bool
++nsCSSValueList::Equal(const nsCSSValueList* aList1,
++                      const nsCSSValueList* aList2)
+ {
+-  if (this == &aOther)
++  if (aList1 == aList2) {
+     return true;
++  }
+ 
+-  const nsCSSValueList *p1 = this, *p2 = &aOther;
++  const nsCSSValueList *p1 = aList1, *p2 = aList2;
+   for ( ; p1 && p2; p1 = p1->mNext, p2 = p2->mNext) {
+     if (p1->mValue != p2->mValue)
+       return false;
+@@ -1934,8 +1937,7 @@ nsCSSValueSharedList::AppendToString(nsCSSProperty aProperty, nsAString& aResult
+ bool
+ nsCSSValueSharedList::operator==(const nsCSSValueSharedList& aOther) const
+ {
+-  return !mHead == !aOther.mHead &&
+-         (!mHead || *mHead == *aOther.mHead);
++  return nsCSSValueList::Equal(mHead, aOther.mHead);
+ }
+ 
+ size_t
+@@ -2148,13 +2150,15 @@ nsCSSValuePairList::AppendToString(nsCSSProperty aProperty,
+   }
+ }
+ 
+-bool
+-nsCSSValuePairList::operator==(const nsCSSValuePairList& aOther) const
++/* static */ bool
++nsCSSValuePairList::Equal(const nsCSSValuePairList* aList1,
++                          const nsCSSValuePairList* aList2)
+ {
+-  if (this == &aOther)
++  if (aList1 == aList2) {
+     return true;
++  }
+ 
+-  const nsCSSValuePairList *p1 = this, *p2 = &aOther;
++  const nsCSSValuePairList *p1 = aList1, *p2 = aList2;
+   for ( ; p1 && p2; p1 = p1->mNext, p2 = p2->mNext) {
+     if (p1->mXValue != p2->mXValue ||
+         p1->mYValue != p2->mYValue)
+diff --git layout/style/nsCSSValue.h layout/style/nsCSSValue.h
+index 8418a2d..f0c4e63 100644
+--- mozilla/layout/style/nsCSSValue.h
++++ mozilla/layout/style/nsCSSValue.h
+@@ -871,9 +871,8 @@ struct nsCSSValueList {
+   void AppendToString(nsCSSProperty aProperty, nsAString& aResult,
+                       nsCSSValue::Serialization aValueSerialization) const;
+ 
+-  bool operator==(nsCSSValueList const& aOther) const;
+-  bool operator!=(const nsCSSValueList& aOther) const
+-  { return !(*this == aOther); }
++  static bool Equal(const nsCSSValueList* aList1,
++                    const nsCSSValueList* aList2);
+ 
+   size_t SizeOfIncludingThis(mozilla::MallocSizeOf aMallocSizeOf) const;
+ 
+@@ -886,6 +885,12 @@ private:
+   {
+     MOZ_COUNT_CTOR(nsCSSValueList);
+   }
++
++  // We don't want operator== or operator!= because they wouldn't be
++  // null-safe, which is generally what we need.  Use |Equal| method
++  // above instead.
++  bool operator==(nsCSSValueList const& aOther) const MOZ_DELETE;
++  bool operator!=(const nsCSSValueList& aOther) const MOZ_DELETE;
+ };
+ 
+ // nsCSSValueList_heap differs from nsCSSValueList only in being
+@@ -1264,9 +1269,8 @@ struct nsCSSValuePairList {
+   void AppendToString(nsCSSProperty aProperty, nsAString& aResult,
+                       nsCSSValue::Serialization aValueSerialization) const;
+ 
+-  bool operator==(const nsCSSValuePairList& aOther) const;
+-  bool operator!=(const nsCSSValuePairList& aOther) const
+-  { return !(*this == aOther); }
++  static bool Equal(const nsCSSValuePairList* aList1,
++                    const nsCSSValuePairList* aList2);
+ 
+   size_t SizeOfIncludingThis(mozilla::MallocSizeOf aMallocSizeOf) const;
+ 
+@@ -1280,6 +1284,12 @@ private:
+   {
+     MOZ_COUNT_CTOR(nsCSSValuePairList);
+   }
++
++  // We don't want operator== or operator!= because they wouldn't be
++  // null-safe, which is generally what we need.  Use |Equal| method
++  // above instead.
++  bool operator==(const nsCSSValuePairList& aOther) const MOZ_DELETE;
++  bool operator!=(const nsCSSValuePairList& aOther) const MOZ_DELETE;
+ };
+ 
+ // nsCSSValuePairList_heap differs from nsCSSValuePairList only in being
