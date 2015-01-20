@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	gtest-${PORTVERSION}
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for writing C++ tests on a variety of platforms
 
 LICENSE=	BSD3CLAUSE

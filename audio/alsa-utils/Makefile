@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ALSA/utils \
 		GENTOO/distfiles
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility utils
 
 LICENSE=	GPLv2 # or any later version

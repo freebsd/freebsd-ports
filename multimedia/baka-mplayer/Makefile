@@ -4,7 +4,7 @@ PORTNAME=	baka-mplayer
 DISTVERSION=	2.0.1
 CATEGORIES=	multimedia audio
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 multimedia player based on libmpv
 
 LICENSE=	GPLv2

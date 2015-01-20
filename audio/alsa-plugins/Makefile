@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
 		GENTOO/distfiles
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
 
 LICENSE=	LGPL21 # or any later version
