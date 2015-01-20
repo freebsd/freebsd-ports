@@ -1,9 +1,8 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/folks/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	folks
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -30,7 +29,7 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.2
+PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.3
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SOCIALWEB TRACKER
@@ -43,8 +42,6 @@ TRACKER_CONFIGURE_ENABLE=	tracker-backend
 TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
 
 post-patch:
-#	@${REINPLACE_CMD} -e 's|TRACKER_SPARQL_MAJOR=0.16|TRACKER_SPARQL_MAJOR=1.0|g' \
-#		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|--fatal-warnings||g' \
 		${WRKSRC}/configure
 
