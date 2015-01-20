@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--disable-java --disable-python \
 		--with-expat-include-dir=${LOCALBASE}/include \
 		--with-expat-lib-dir=${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		gmake libtool
 
@@ -30,8 +31,5 @@ SWIG_CONFIGURE_OFF=	--disable-swig
 post-patch:
 	@${REINPLACE_CMD} -e '/SWIG_VERSION:4/ s|:4|#*.*.|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} 's|-Werror||; s| -ansi -pedantic||' '{}' \;
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.mk>
