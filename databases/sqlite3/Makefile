@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.7.4
+PORTVERSION=	3.8.8
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
-DISTNAME=	sqlite-autoconf-3080704
+MASTER_SITES=	http://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
+DISTNAME=	sqlite-autoconf-3080800
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -27,7 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
-		EXTENSION READLINE
+		EXTENSION READLINE ARMOR STMT
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
 OPTIONS_GROUP=	UNICODE RTREEG
@@ -43,6 +43,12 @@ MEMMAN_DESC=		Allows it to release unused memory
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
+
+# http://www.sqlite.org/compile.html#enable_api_armor
+ARMOR_DESC=		Detect misuse of the API
+
+# http://www.sqlite.org/c3ref/stmt_scanstatus.html
+STMT_DESC=		Prepared Statement Scan Status
 
 # http://www.sqlite.org/tempfiles.html#tempstore
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
@@ -113,6 +119,8 @@ STAT4_CPPFLAGS=	-DSQLITE_ENABLE_STAT4=1
 URI_CPPFLAGS=	-DSQLITE_USE_URI=1
 URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 DIRECT_READ_CPPFLAGS=	-DSQLITE_DIRECT_OVERFLOW_READ=1
+ARMOR_CPPFLAGS=	-DSQLITE_ENABLE_API_ARMOR=1
+STMT_CPPFLAGS=	-DSQLITE_ENABLE_STMT_SCANSTATUS=1
 
 EXTENSION_CONFIGURE_ENABLE=	dynamic-extensions
 
