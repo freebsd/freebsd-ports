@@ -2,73 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	5.2.0
+PORTVERSION=	5.4.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PHP=	zip json openssl gd zlib pcntl posix curl ctype
+RUN_DEPENDS=	fpdf>0:${PORTSDIR}/print/fpdf
+
+USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix session \
+	sockets sqlite3 zip zlib
 USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
 
+PORTDATA=	*
 PORTDOCS=	*
-DOCFILES1=	CHANGE-LOG AUTHORS
-DOCFILES2=	phoronix-test-suite.html
 
 OPTIONS_DEFINE=	BASH_COMPLETIONS X11 DOCS
 OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
 
 BASH_COMPLETIONS_DESC=	Install bash completions
+BASH_COMPLETIONS_CONFIGURE_ON=	WITH_BASH_COMPLETIONS=yes
 X11_DESC=		Install X11 icons and mimetypes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		shared-mime-info
-PLIST_SUB+=	X11=""
-.else
-INSTALL_OPTS=	WITHOUT_X11=yes
-PLIST_SUB+=	X11="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBASH_COMPLETIONS}
-INSTALL_OPTS+=	WITH_BASH_COMPLETIONS=yes
-PLIST_SUB+=	BASH_COMPLETIONS=""
-.else
-PLIST_SUB+=	BASH_COMPLETIONS="@comment "
-.endif
+X11_USES=	desktop-file-utils shared-mime-info
+X11_CONFIGURE_OFF=	WITHOUT_X11=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
-				${WRKSRC}/phoronix-test-suite \
-				${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
-				${WRKSRC}/pts-core/objects/client/pts_client.php \
-				${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml
-	@${RM} ${WRKSRC}/phoronix-test-suite.bak \
-		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php.bak \
-		${WRKSRC}/pts-core/objects/client/pts_client.php.bak \
-		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml.bak
+	@${SED} -i '' -e "s|/usr/local|${LOCALBASE}|g" \
+		${WRKSRC}/phoronix-test-suite \
+		${WRKSRC}/pts-core/commands/ob_test_profile_analyze.php \
+		${WRKSRC}/pts-core/external-test-dependencies/scripts/install-dragonfly-packages.sh \
+		${WRKSRC}/pts-core/external-test-dependencies/xml/dragonfly-packages.xml \
+		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml \
+		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
+		${WRKSRC}/pts-core/objects/client/pts_client.php
+	@${SED} -i '' -e "s|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts| ; \
+		s|/usr/X11/lib|${LOCALBASE}/lib|" \
+		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php
+	@${SED} -i '' -e "/fpdf.php/s|/usr/share/php|${PREFIX}/share|" \
+		${WRKSRC}/pts-core/pts-core.php \
+		${WRKSRC}/pts-core/commands/dump_documentation.php \
+		${WRKSRC}/pts-core/commands/result_file_to_pdf.php
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_OPTS} DESTDIR=${STAGEDIR} ./install-sh ${PREFIX}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${DOCFILES1}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-.endfor
-.for FILE in ${DOCFILES2}
-	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-.endfor
-.for DIR in stubs includes
-	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	(cd ${WRKSRC} && ${CONFIGURE_ARGS} DESTDIR="${STAGEDIR}" ./install-sh ${PREFIX})
 
 .include <bsd.port.mk>
