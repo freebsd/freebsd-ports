@@ -119,3 +119,4 @@ man/man8/calendarserver_shell.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertoserver.dtd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/accounts.xml
+@dir etc/caldavd/auth
