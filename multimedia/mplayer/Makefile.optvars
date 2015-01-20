@@ -17,7 +17,7 @@ BLURAY_CONFIGURE_OFF=	--disable-bluray
 CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
 CACA_CONFIGURE_OFF=	--disable-caca
 
-CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 
 CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
