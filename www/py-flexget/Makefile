@@ -3,6 +3,7 @@
 
 PORTNAME=	flexget
 PORTVERSION=	1.2.172
+PORTREVISIO=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -37,8 +38,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-fe
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
-
-BROKEN=	Does not work with devel/py-dateutil 2.2
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
