@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-crashplan
-DISTVERSION=	3.6.4
+DISTVERSION=	3.7.0
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
 DISTNAME=	CrashPlan_${DISTVERSION}_Linux
