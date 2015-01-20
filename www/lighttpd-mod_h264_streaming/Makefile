@@ -6,7 +6,7 @@ CATEGORIES=	www multimedia
 PKGNAMEPREFIX=	lighttpd-
 DISTNAME=	lighttpd-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H264 streaming module for lighttpd
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
