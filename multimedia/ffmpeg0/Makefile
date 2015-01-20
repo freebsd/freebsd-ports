@@ -93,6 +93,11 @@ CONFIGURE_ARGS+=	--enable-x11grab
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == armv6
+CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
+CFLAGS=	-no-integrated-as
+.endif
+
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
