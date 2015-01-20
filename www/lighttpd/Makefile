@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
-MAINTAINER?=	mm@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Secure, fast, compliant, and flexible Web Server
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
