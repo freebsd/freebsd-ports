@@ -6,7 +6,7 @@ CATEGORIES=	www geography
 PKGNAMEPREFIX=	lighttpd-
 DISTNAME=	lighttpd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	GeoIP module for lighttpd
 
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
