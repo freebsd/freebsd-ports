@@ -95,6 +95,7 @@
     SUBDIR += prestashop
     SUBDIR += py-stripe
     SUBDIR += py-vatnumber
+    SUBDIR += py-ystockquote
     SUBDIR += qhacc
     SUBDIR += rubygem-money
     SUBDIR += sabernetdcs-client
