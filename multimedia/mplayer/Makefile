@@ -3,6 +3,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
+PORTREVISION=	1
 
 COMMENT=	High performance media player supporting many formats
 
@@ -140,7 +141,13 @@ post-patch:
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
 		-e 's|-lncurses|/usr/lib/libncurses.so|' \
 		-e 's|-liconv|${ICONV_LIB}|' \
+		-e 's|cdio/cdda.h|cdio/paranoia/cdda.h|' \
+		-e 's|cdio/paranoia.h|cdio/paranoia/paranoia.h|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} \
+		-e 's|cdio/cdda.h|cdio/paranoia/cdda.h|' \
+		-e 's|cdio/paranoia.h|cdio/paranoia/paranoia.h|' \
+		${WRKSRC}/stream/stream_cdda.c
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
 		${XARGS} -x -0 -n 10 \
