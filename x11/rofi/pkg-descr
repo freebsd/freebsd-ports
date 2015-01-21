@@ -1,0 +1,7 @@
+A popup window switcher roughly based on superswitcher, requiring only xlib
+and pango. This version started off as a clone of simpleswitcher, the
+version from Sean Pringle. All credit for this great tool should go to him.
+Rofi developed extra features, like a run-dialog, ssh-launcher and can
+act as a drop-in dmenu replacement, making it a very versatile tool.
+
+WWW: https://davedavenport.github.io/rofi/

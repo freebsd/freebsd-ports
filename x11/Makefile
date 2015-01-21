@@ -240,6 +240,7 @@
     SUBDIR += renderproto
     SUBDIR += resourceproto
     SUBDIR += rgb
+    SUBDIR += rofi
     SUBDIR += rox-wallpaper
     SUBDIR += roxbg
     SUBDIR += roxterm
