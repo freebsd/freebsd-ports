@@ -13,7 +13,7 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	${PORTNAME}-0.12.*
+CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
 
 USES=		cmake gettext iconv
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
