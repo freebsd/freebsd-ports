@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2014-03-15 18:08:16.000000000 +0100
-+++ client/CMakeLists.txt	2014-03-22 21:03:06.194178397 +0100
-@@ -27,17 +27,20 @@
+--- client/CMakeLists.txt.orig	2015-01-07 10:49:52.000000000 +0100
++++ client/CMakeLists.txt	2015-01-21 20:06:10.493605146 +0100
+@@ -27,11 +27,13 @@
  
  ADD_DEFINITIONS(${READLINE_DEFINES})
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -14,6 +14,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+@@ -44,6 +46,7 @@
  TARGET_LINK_LIBRARIES(mysqltest perconaserverclient regex)
  
  
@@ -21,7 +22,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck perconaserverclient)
  
-@@ -46,17 +49,21 @@
+@@ -52,17 +55,21 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  TARGET_LINK_LIBRARIES(mysqlimport perconaserverclient)
@@ -43,7 +44,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc
                       ../sql/rpl_filter.cc ../sql/sql_list.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog perconaserverclient)
-@@ -67,13 +74,14 @@
+@@ -73,13 +80,14 @@
  MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlslap perconaserverclient)
