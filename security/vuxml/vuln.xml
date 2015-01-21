@@ -57,6 +57,120 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e30e0c99-a1b7-11e4-b85c-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>40.0.2214.91</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>40.0.2214.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>62 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[430353] High CVE-2014-7923: Memory corruption in ICU. Credit
+	      to yangdingning.</li>
+	    <li>[435880] High CVE-2014-7924: Use-after-free in IndexedDB.
+	      Credit to Collin Payne.</li>
+	    <li>[434136] High CVE-2014-7925: Use-after-free in WebAudio. Credit
+	      to mark.buer.</li>
+	    <li>[422824] High CVE-2014-7926: Memory corruption in ICU. Credit
+	      to yangdingning.</li>
+	    <li>[444695] High CVE-2014-7927: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[435073] High CVE-2014-7928: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[442806] High CVE-2014-7930: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[442710] High CVE-2014-7931: Memory corruption in V8. Credit to
+	      cloudfuzzer.</li>
+	    <li>[443115] High CVE-2014-7929: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[429666] High CVE-2014-7932: Use-after-free in DOM. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[427266] High CVE-2014-7933: Use-after-free in FFmpeg. Credit
+	      to aohelin.</li>
+	    <li>[427249] High CVE-2014-7934: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[402957] High CVE-2014-7935: Use-after-free in Speech. Credit
+	      to Khalil Zhani.</li>
+	    <li>[428561] High CVE-2014-7936: Use-after-free in Views. Credit
+	      to Christoph Diehl.</li>
+	    <li>[419060] High CVE-2014-7937: Use-after-free in FFmpeg. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[416323] High CVE-2014-7938: Memory corruption in Fonts. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[399951] High CVE-2014-7939: Same-origin-bypass in V8. Credit
+	      to Takeshi Terada.</li>
+	    <li>[433866] Medium CVE-2014-7940: Uninitialized-value in ICU.
+	      Credit to miaubiz.</li>
+	    <li>[428557] Medium CVE-2014-7941: Out-of-bounds read in UI. Credit
+	      to Atte Kettunen of OUSPG and Christoph Diehl.</li>
+	    <li>[426762] Medium CVE-2014-7942: Uninitialized-value in Fonts.
+	      Credit to miaubiz.</li>
+	    <li>[422492] Medium CVE-2014-7943: Out-of-bounds read in Skia.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[418881] Medium CVE-2014-7944: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[414310] Medium CVE-2014-7945: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[414109] Medium CVE-2014-7946: Out-of-bounds read in Fonts.
+	      Credit to miaubiz.</li>
+	    <li>[430566] Medium CVE-2014-7947: Out-of-bounds read in PDFium.
+	      Credit to fuzztercluck.</li>
+	    <li>[414026] Medium CVE-2014-7948: Caching error in AppCache.
+	      Credit to jiayaoqijia.</li>
+	    <li>[449894] CVE-2015-1205: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 3.30
+	      branch (currently 3.30.33.15).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7923</cvename>
+      <cvename>CVE-2014-7924</cvename>
+      <cvename>CVE-2014-7925</cvename>
+      <cvename>CVE-2014-7926</cvename>
+      <cvename>CVE-2014-7927</cvename>
+      <cvename>CVE-2014-7928</cvename>
+      <cvename>CVE-2014-7929</cvename>
+      <cvename>CVE-2014-7930</cvename>
+      <cvename>CVE-2014-7931</cvename>
+      <cvename>CVE-2014-7932</cvename>
+      <cvename>CVE-2014-7933</cvename>
+      <cvename>CVE-2014-7934</cvename>
+      <cvename>CVE-2014-7935</cvename>
+      <cvename>CVE-2014-7936</cvename>
+      <cvename>CVE-2014-7937</cvename>
+      <cvename>CVE-2014-7938</cvename>
+      <cvename>CVE-2014-7939</cvename>
+      <cvename>CVE-2014-7940</cvename>
+      <cvename>CVE-2014-7941</cvename>
+      <cvename>CVE-2014-7942</cvename>
+      <cvename>CVE-2014-7943</cvename>
+      <cvename>CVE-2014-7944</cvename>
+      <cvename>CVE-2014-7945</cvename>
+      <cvename>CVE-2014-7946</cvename>
+      <cvename>CVE-2014-7947</cvename>
+      <cvename>CVE-2014-7948</cvename>
+      <cvename>CVE-2015-1205</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-01-21</discovery>
+      <entry>2015-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5856eba-a015-11e4-a680-1c6f65c3c4ff">
     <topic>polarssl -- Remote attack using crafted certificates</topic>
     <affects>
