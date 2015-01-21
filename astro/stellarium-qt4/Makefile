@@ -34,7 +34,7 @@ SCRIPTING_DESC=		Scripting support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMORE_STARS}
+.if ${PORT_OPTIONS:MMORE_STARS} || ${.TARGETS:Mmakesum}
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
@@ -46,7 +46,7 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES} || ${.TARGETS:Mmakesum}
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 DISTFILES+=	textures-1K.zip:gfx
 PLIST_SUB+=	TEXTURES=""
