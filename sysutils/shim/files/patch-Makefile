@@ -4,7 +4,7 @@
 -CC		= $(CROSS_COMPILE)gcc
 +CROSS_COMPILE	= $(LOCALBASE)/bin/
 +
-+CC		= $(CROSS_COMPILE)gcc48
++CC		= $(CROSS_COMPILE)%%CC%%
  LD		= $(CROSS_COMPILE)ld
  OBJCOPY		= $(CROSS_COMPILE)objcopy
  

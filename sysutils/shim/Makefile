@@ -27,11 +27,12 @@ PLIST_FILES=	lib/shim/MokManager.efi lib/shim/fallback.efi lib/shim/shim.efi
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/make-certs
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_PROGRAM} ${WRKSRC}/shim.efi ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_PROGRAM} ${WRKSRC}/MokManager.efi ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_PROGRAM} ${WRKSRC}/fallback.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_DATA} ${WRKSRC}/shim.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_DATA} ${WRKSRC}/MokManager.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${INSTALL_DATA} ${WRKSRC}/fallback.efi ${STAGEDIR}/${PREFIX}/lib/shim
 
 .include <bsd.port.mk>
