@@ -1,16 +1,3 @@
-@exec mkdir -p %D/www/phpmyfaq/attachments
-@exec mkdir -p %D/www/phpmyfaq/data
-@exec mkdir -p %D/www/phpmyfaq/images
-@exec mkdir -p %D/www/phpmyfaq/inc
-@exec mkdir -p %D/www/phpmyfaq/pdf
-@exec mkdir -p %D/www/phpmyfaq/xml
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/attachments
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/config
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/data
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/images
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/inc
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/pdf
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/xml
 %%WWWDIR%%/_.htaccess
 %%WWWDIR%%/_httpd.ini
 %%WWWDIR%%/_lighttpd.conf
@@ -198,7 +185,6 @@
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts/thickbox.js
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/langs/en.php
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/langs/zh.php
-%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/mediaplayer.swf
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/session/gc_counter.ajax.php
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/session/gc_log.ajax.php
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/css/ajaximageeditor.css
@@ -511,24 +497,6 @@
 %%WWWDIR%%/admin/editor/plugins/legacyoutput/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/lists/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/lists/editor_plugin_src.js
-%%WWWDIR%%/admin/editor/plugins/media/css/content.css
-%%WWWDIR%%/admin/editor/plugins/media/css/media.css
-%%WWWDIR%%/admin/editor/plugins/media/editor_plugin.js
-%%WWWDIR%%/admin/editor/plugins/media/editor_plugin_src.js
-%%WWWDIR%%/admin/editor/plugins/media/img/flash.gif
-%%WWWDIR%%/admin/editor/plugins/media/img/flv_player.swf
-%%WWWDIR%%/admin/editor/plugins/media/img/quicktime.gif
-%%WWWDIR%%/admin/editor/plugins/media/img/realmedia.gif
-%%WWWDIR%%/admin/editor/plugins/media/img/shockwave.gif
-%%WWWDIR%%/admin/editor/plugins/media/img/trans.gif
-%%WWWDIR%%/admin/editor/plugins/media/img/windowsmedia.gif
-%%WWWDIR%%/admin/editor/plugins/media/js/embed.js
-%%WWWDIR%%/admin/editor/plugins/media/js/media.js
-%%WWWDIR%%/admin/editor/plugins/media/langs/cs_dlg.js
-%%WWWDIR%%/admin/editor/plugins/media/langs/de_dlg.js
-%%WWWDIR%%/admin/editor/plugins/media/langs/en_dlg.js
-%%WWWDIR%%/admin/editor/plugins/media/media.htm
-%%WWWDIR%%/admin/editor/plugins/media/moxieplayer.swf
 %%WWWDIR%%/admin/editor/plugins/nonbreaking/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/nonbreaking/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/noneditable/editor_plugin.js
@@ -550,7 +518,7 @@
 %%WWWDIR%%/admin/editor/plugins/paste/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/paste/pastetext.htm
 %%WWWDIR%%/admin/editor/plugins/paste/pasteword.htm
-%%WWWDIR%%/admin/editor/plugins/phpmyfaq/dialog.html
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/dialog.php
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/img/phpmyfaq.gif
@@ -559,11 +527,6 @@
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/en.js
 %%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/en_dlg.js
-%%WWWDIR%%/admin/editor/plugins/preview/editor_plugin.js
-%%WWWDIR%%/admin/editor/plugins/preview/editor_plugin_src.js
-%%WWWDIR%%/admin/editor/plugins/preview/example.html
-%%WWWDIR%%/admin/editor/plugins/preview/jscripts/embed.js
-%%WWWDIR%%/admin/editor/plugins/preview/preview.html
 %%WWWDIR%%/admin/editor/plugins/print/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/print/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/safari/blank.htm
@@ -823,6 +786,8 @@
 %%WWWDIR%%/assets/img/twitter.signin.png
 %%WWWDIR%%/assets/js/autosave.js
 %%WWWDIR%%/assets/js/functions.js
+%%WWWDIR%%/assets/js/jquery.min.map
+%%WWWDIR%%/assets/js/libs/jquery.min.map
 %%WWWDIR%%/assets/js/libs/jquery.min.js
 %%WWWDIR%%/assets/js/libs/modernizr.min.js
 %%WWWDIR%%/assets/js/phpmyfaq.js
@@ -1078,6 +1043,7 @@
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/LICENSE
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/MapClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/README.md
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Psr4ClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ApcUniversalClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ClassCollectionLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ClassLoaderTest.php
@@ -1152,6 +1118,11 @@
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Pearlike2/FooBar.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/includepath/Foo.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/traits.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/psr-4/Class_With_Underscores.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/psr-4/Foo.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/psr-4/Lets/Go/Deeper/Class_With_Underscores.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/psr-4/Lets/Go/Deeper/Foo.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Psr4ClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/UniversalClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/UniversalClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/WinCacheClassLoader.php
@@ -1177,10 +1148,15 @@
 %%WWWDIR%%/inc/libs/tcpdf/fonts/cid0jp.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/cid0kr.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/courier.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/helvetica.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/helveticab.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/helveticabi.php
-%%WWWDIR%%/inc/libs/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.ctg.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusans.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansb.ctg.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansb.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansb.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansbi.ctg.z
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansbi.php
+%%WWWDIR%%/inc/libs/tcpdf/fonts/dejavusansbi.z
 %%WWWDIR%%/inc/libs/tcpdf/fonts/hysmyeongjostdmedium.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/kozgopromedium.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/kozminproregular.php
@@ -1225,7 +1201,6 @@
 %%WWWDIR%%/install/questionnaire.php
 %%WWWDIR%%/install/setup.php
 %%WWWDIR%%/install/sqlite.sql.php
-%%WWWDIR%%/install/sqlite3.php
 %%WWWDIR%%/install/sqlite3.sql.php
 %%WWWDIR%%/install/sqlsrv.sql.php
 %%WWWDIR%%/install/stopwords.sql.php
@@ -1296,285 +1271,10 @@
 %%WWWDIR%%/translate.php
 %%WWWDIR%%/ucp.php
 %%WWWDIR%%/writecomment.php
-@dirrm %%WWWDIR%%/xml
-@dirrm %%WWWDIR%%/services/twitter
-@dirrm %%WWWDIR%%/services
-@dirrm %%WWWDIR%%/pdf
-@dirrm %%WWWDIR%%/multisite
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/inc/libs/twitteroauth
-@dirrm %%WWWDIR%%/inc/libs/tcpdf/include/barcodes
-@dirrm %%WWWDIR%%/inc/libs/tcpdf/include
-@dirrm %%WWWDIR%%/inc/libs/tcpdf/fonts
-@dirrm %%WWWDIR%%/inc/libs/tcpdf
-@dirrm %%WWWDIR%%/inc/libs/phpseclib/Crypt
-@dirrm %%WWWDIR%%/inc/libs/phpseclib
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/includepath
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Pearlike2
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Pearlike
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Namespaced2
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Namespaced
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/fallback
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/deps
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/classmap
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/PrefixCollision/C/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/PrefixCollision/C
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/PrefixCollision/A/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/PrefixCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/PrefixCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/NamespaceCollision/C/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/NamespaceCollision/C
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/NamespaceCollision/A/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/NamespaceCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta/NamespaceCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/beta
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/PrefixCollision/C
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/PrefixCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/PrefixCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/NamespaceCollision/C
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/NamespaceCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha/NamespaceCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/alpha
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Pearlike2
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Pearlike
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Namespaced2
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Namespaced
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/ClassesWithParents
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/fallback/Namespaced
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/fallback/Apc/Pearlike
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/fallback/Apc
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/fallback
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/NamespaceCollision/A/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/NamespaceCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/NamespaceCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/ApcPrefixCollision/A/B
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/ApcPrefixCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc/ApcPrefixCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta/Apc
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/beta
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha/Apc/NamespaceCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha/Apc/NamespaceCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha/Apc/ApcPrefixCollision/A
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha/Apc/ApcPrefixCollision
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha/Apc
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/alpha
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/Pearlike
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/Namespaced
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader
-@dirrm %%WWWDIR%%/inc/libs/Symfony/Component
-@dirrm %%WWWDIR%%/inc/libs/Symfony
-@dirrm %%WWWDIR%%/inc/libs
-@dirrm %%WWWDIR%%/inc/fonts
-@dirrm %%WWWDIR%%/inc/PMF/User
-@dirrm %%WWWDIR%%/inc/PMF/String
-@dirrm %%WWWDIR%%/inc/PMF/Services
-@dirrm %%WWWDIR%%/inc/PMF/Search/Database
-@dirrm %%WWWDIR%%/inc/PMF/Search
-@dirrm %%WWWDIR%%/inc/PMF/Perm
-@dirrm %%WWWDIR%%/inc/PMF/Mail
-@dirrm %%WWWDIR%%/inc/PMF/Language
-@dirrm %%WWWDIR%%/inc/PMF/Instance
-@dirrm %%WWWDIR%%/inc/PMF/Helper
-@dirrm %%WWWDIR%%/inc/PMF/Faq
-@dirrm %%WWWDIR%%/inc/PMF/Export/Pdf
-@dirrm %%WWWDIR%%/inc/PMF/Export
-@dirrm %%WWWDIR%%/inc/PMF/Enc
-@dirrm %%WWWDIR%%/inc/PMF/DB
-@dirrm %%WWWDIR%%/inc/PMF/Category
-@dirrm %%WWWDIR%%/inc/PMF/Cache
-@dirrm %%WWWDIR%%/inc/PMF/Auth
-@dirrm %%WWWDIR%%/inc/PMF/Attachment/Filesystem/File
-@dirrm %%WWWDIR%%/inc/PMF/Attachment/Filesystem
-@dirrm %%WWWDIR%%/inc/PMF/Attachment
-@dirrm %%WWWDIR%%/inc/PMF
-@dirrm %%WWWDIR%%/inc
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/feed/topten
-@dirrm %%WWWDIR%%/feed/openquestions
-@dirrm %%WWWDIR%%/feed/news
-@dirrm %%WWWDIR%%/feed/latest
-@dirrm %%WWWDIR%%/feed/category
-@dirrm %%WWWDIR%%/feed
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/config
-@dirrm %%WWWDIR%%/attachments
-@dirrm %%WWWDIR%%/assets/template/default/less
-@dirrm %%WWWDIR%%/assets/template/default/images
-@dirrm %%WWWDIR%%/assets/template/default/css
-@dirrm %%WWWDIR%%/assets/template/default
-@dirrm %%WWWDIR%%/assets/template
-@dirrm %%WWWDIR%%/assets/js/syntaxhighlighter/styles
-@dirrm %%WWWDIR%%/assets/js/syntaxhighlighter/src
-@dirrm %%WWWDIR%%/assets/js/syntaxhighlighter/scripts
-@dirrm %%WWWDIR%%/assets/js/syntaxhighlighter
-@dirrm %%WWWDIR%%/assets/js/plugins/datePicker
-@dirrm %%WWWDIR%%/assets/js/plugins
-@dirrm %%WWWDIR%%/assets/js/libs
-@dirrm %%WWWDIR%%/assets/js
-@dirrm %%WWWDIR%%/assets/img
-@dirrm %%WWWDIR%%/assets
-@dirrm %%WWWDIR%%/admin/images
-@dirrm %%WWWDIR%%/admin/editor/utils
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7/img
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/default
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/skins
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/langs
-@dirrm %%WWWDIR%%/admin/editor/themes/simple/img
-@dirrm %%WWWDIR%%/admin/editor/themes/simple
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/o2k7/img
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/o2k7
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/highcontrast
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/default/img
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/default
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit/img
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins/cirkuit
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/skins
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/langs
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/js
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced/img
-@dirrm %%WWWDIR%%/admin/editor/themes/advanced
-@dirrm %%WWWDIR%%/admin/editor/themes
-@dirrm %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/xhtmlxtras/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/xhtmlxtras
-@dirrm %%WWWDIR%%/admin/editor/plugins/wordcount
-@dirrm %%WWWDIR%%/admin/editor/plugins/visualchars
-@dirrm %%WWWDIR%%/admin/editor/plugins/visualblocks/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/visualblocks
-@dirrm %%WWWDIR%%/admin/editor/plugins/template/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/template/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/template/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/template
-@dirrm %%WWWDIR%%/admin/editor/plugins/table/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/table/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/table/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/table
-@dirrm %%WWWDIR%%/admin/editor/plugins/tabfocus
-@dirrm %%WWWDIR%%/admin/editor/plugins/syntaxhl/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/syntaxhl/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/syntaxhl/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/syntaxhl
-@dirrm %%WWWDIR%%/admin/editor/plugins/style/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/style/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/style/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/style
-@dirrm %%WWWDIR%%/admin/editor/plugins/spellchecker/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/spellchecker/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/spellchecker
-@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace
-@dirrm %%WWWDIR%%/admin/editor/plugins/save
-@dirrm %%WWWDIR%%/admin/editor/plugins/safari
-@dirrm %%WWWDIR%%/admin/editor/plugins/print
-@dirrm %%WWWDIR%%/admin/editor/plugins/preview/jscripts
-@dirrm %%WWWDIR%%/admin/editor/plugins/preview
-@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq
-@dirrm %%WWWDIR%%/admin/editor/plugins/paste/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/paste/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/paste/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/paste
-@dirrm %%WWWDIR%%/admin/editor/plugins/pagebreak/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/pagebreak/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/pagebreak
-@dirrm %%WWWDIR%%/admin/editor/plugins/noneditable
-@dirrm %%WWWDIR%%/admin/editor/plugins/nonbreaking
-@dirrm %%WWWDIR%%/admin/editor/plugins/media/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/media/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/media/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/media/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/media
-@dirrm %%WWWDIR%%/admin/editor/plugins/lists
-@dirrm %%WWWDIR%%/admin/editor/plugins/legacyoutput
-@dirrm %%WWWDIR%%/admin/editor/plugins/layer
-@dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime
-@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2
-@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins
-@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups
-@dirrm %%WWWDIR%%/admin/editor/plugins/iespell
-@dirrm %%WWWDIR%%/admin/editor/plugins/fullscreen
-@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage
-@dirrm %%WWWDIR%%/admin/editor/plugins/example/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/example/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/example/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/example
-@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/emotions
-@dirrm %%WWWDIR%%/admin/editor/plugins/directionality
-@dirrm %%WWWDIR%%/admin/editor/plugins/contextmenu
-@dirrm %%WWWDIR%%/admin/editor/plugins/compat2x
-@dirrm %%WWWDIR%%/admin/editor/plugins/bbcode
-@dirrm %%WWWDIR%%/admin/editor/plugins/autosave/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/autosave
-@dirrm %%WWWDIR%%/admin/editor/plugins/autoresize
-@dirrm %%WWWDIR%%/admin/editor/plugins/autolink
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/pagination
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/button
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/big_icon
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/action
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/New Folder
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images/standard
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images/pagination
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images/file_type
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images/big_icon
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images/action
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/images
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/dark
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/session
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts/edit_area/reg_syntax
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts/edit_area/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts/edit_area/images
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts/edit_area
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/inc
-@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager
-@dirrm %%WWWDIR%%/admin/editor/plugins/advlist
-@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/advlink
-@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/advimage
-@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/langs
-@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/js
-@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/css
-@dirrm %%WWWDIR%%/admin/editor/plugins/advhr
-@dirrm %%WWWDIR%%/admin/editor/plugins
-@dirrm %%WWWDIR%%/admin/editor/langs
-@dirrm %%WWWDIR%%/admin/editor
-@dirrm %%WWWDIR%%/admin/assets/less
-@dirrm %%WWWDIR%%/admin/assets/js
-@dirrm %%WWWDIR%%/admin/assets/font
-@dirrm %%WWWDIR%%/admin/assets/css
-@dirrm %%WWWDIR%%/admin/assets
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%
+@dir(www,www,) %%WWWDIR%%/xml
+@dir(www,www,) %%WWWDIR%%/pdf
+@dir(www,www,) %%WWWDIR%%/inc
+@dir(www,www,) %%WWWDIR%%/images
+@dir(www,www,) %%WWWDIR%%/data
+@dir(www,www,) %%WWWDIR%%/config
+@dir(www,www,) %%WWWDIR%%/attachments
