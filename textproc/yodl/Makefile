@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	yodl
-PORTVERSION=	3.04.00
+PORTVERSION=	3.05.00
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Easy to use but powerful document formatting/preparation language
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
