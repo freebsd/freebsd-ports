@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intel-pcm
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/imp
 DISTNAME=	intelperformancecountermonitorv${PORTVERSION}
