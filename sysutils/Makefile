@@ -676,6 +676,7 @@
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
     SUBDIR += personality
+    SUBDIR += pesign
     SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftables
