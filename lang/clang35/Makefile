@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.5.0
-PORTREVISION=	3
+DISTVERSION=	3.5.1
 CATEGORIES=	lang devel
-MASTER_SITES=   http://llvm.org/releases/3.5.0/
+MASTER_SITES=   http://llvm.org/releases/3.5.1/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
@@ -181,19 +180,13 @@ build-plist:
 	(ls ${PLIST_FILE_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|}; \
 	    ${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type f) \
 	    | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
-	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' | ${SORT} >> ${PLIST}
+	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' \
+	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' | ${SORT} >> ${PLIST}
 	echo man/man1/clang%%LLVM_SUFFIX%%.1.gz >> ${PLIST}
 	echo man/man1/scan-build%%LLVM_SUFFIX%%.1.gz >> ${PLIST}
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type d | \
-	    ${SED} -e 's|${STAGEDIR}${PREFIX}/|@dirrm |' \
-	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' | \
-	    ${SORT} -r >> ${PLIST}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
-	    >> ${PLIST}
 
 .if make(svn-patch)
 .if !defined(PATCH_REV)
