@@ -22,4 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	"-fPIC"
 ONLY_FOR_ARCHS=	amd64
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
+
 .include <bsd.port.mk>
