@@ -17,6 +17,8 @@ PORTDOCS=	README anldp.pdf mace2.pdf otter33.pdf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 post-patch:
