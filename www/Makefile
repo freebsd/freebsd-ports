@@ -1865,6 +1865,7 @@
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
+    SUBDIR += rubygem-pusher-client
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-accept
