@@ -1,0 +1,164 @@
+From d4d9c7fb4c74485b603026aaa35a528160c87ed4 Mon Sep 17 00:00:00 2001
+From: "Alexander V. Chernikov" <melifaro@yandex-team.ru>
+Date: Fri, 19 Dec 2014 15:44:45 +0000
+Subject: [PATCH 2/3] Improve link-local nexthops handling for link-local
+ BGP-IPv6 sessions.
+
+---
+ doc/bird.sgml       |  9 +++++++++
+ proto/bgp/bgp.h     |  6 ++++++
+ proto/bgp/config.Y  |  8 +++++++-
+ proto/bgp/packets.c | 52 ++++++++++++++++++++++++++++++++++++++++++++++++----
+ 4 files changed, 70 insertions(+), 5 deletions(-)
+
+diff --git doc/bird.sgml doc/bird.sgml
+index e9e5920..2951f13 100644
+--- doc/bird.sgml
++++ doc/bird.sgml
+@@ -1668,6 +1668,15 @@ using the following configuration parameters:
+ 	local address should be used instead, like when the route is sent to an
+ 	interface with a different subnet. Default: disabled.
+ 
++	<tag>next hop lladdr both|only|empty</tag>
++	Different BGP-IPv6 implementations sends/receives link-local nexthops
++	for link-local BGP sessions in different formats. This option specifies
++	exact format understood by particular peer. <cf/both/ means that BIRD
++	sends both addresses in next-hop as link-local. <cf/only/ means that BIRD
++	sends single link-local address as next-hop. <cf/empty/ means that BIRD
++	sends empty global address and original link-local address as next-hop.
++	Default: <cf/empty/.
++
+ 	<tag>missing lladdr self|drop|ignore</tag>
+ 	Next Hop attribute in BGP-IPv6 sometimes contains just the global IPv6
+ 	address, but sometimes it has to contain both global and link-local IPv6
+diff --git proto/bgp/bgp.h proto/bgp/bgp.h
+index 0fd3a73..5a53559 100644
+--- proto/bgp/bgp.h
++++ proto/bgp/bgp.h
+@@ -51,6 +51,7 @@ struct bgp_config {
+   int allow_local_as;			/* Allow that number of local ASNs in incoming AS_PATHs */
+   int gr_mode;				/* Graceful restart mode (BGP_GR_*) */
+   unsigned gr_time;			/* Graceful restart timeout */
++  int nhop_lladdr;			/* Expected link-local nhop format, see NLL_* */
+   unsigned connect_retry_time;
+   unsigned hold_time, initial_hold_time;
+   unsigned keepalive_time;
+@@ -69,6 +70,11 @@ struct bgp_config {
+ #define MLL_DROP 2
+ #define MLL_IGNORE 3
+ 
++#define	NLL_BOTH 1
++#define NLL_ONLY 2
++#define	NLL_EMPTYGLOBAL 3
++#define	NLL_TRANSPARENT 4
++
+ #define GW_DIRECT 1
+ #define GW_RECURSIVE 2
+ 
+diff --git proto/bgp/config.Y proto/bgp/config.Y
+index d04c16d..5c9e826 100644
+--- proto/bgp/config.Y
++++ proto/bgp/config.Y
+@@ -26,7 +26,8 @@ CF_KEYWORDS(BGP, LOCAL, REMOTE, NEIGHBOR, AS, HOLD, TIME, CONNECT, RETRY,
+ 	PREFER, OLDER, MISSING, LLADDR, DROP, IGNORE, ROUTE, REFRESH,
+ 	INTERPRET, COMMUNITIES, BGP_ORIGINATOR_ID, BGP_CLUSTER_LIST, IGP,
+ 	TABLE, GATEWAY, DIRECT, RECURSIVE, MED, TTL, SECURITY, DETERMINISTIC,
+-	SECONDARY, ALLOW, BFD, ADD, PATHS, RX, TX, GRACEFUL, RESTART, AWARE)
++	SECONDARY, ALLOW, BFD, ADD, PATHS, RX, TX, GRACEFUL, RESTART, AWARE,
++	BOTH)
+ 
+ CF_GRAMMAR
+ 
+@@ -53,6 +54,7 @@ bgp_proto_start: proto_start BGP {
+      BGP_CFG->gr_mode = BGP_GR_AWARE;
+      BGP_CFG->gr_time = 120;
+      BGP_CFG->remote_port = BGP_PORT;
++     BGP_CFG->nhop_lladdr = NLL_EMPTYGLOBAL;
+  }
+  ;
+ 
+@@ -88,6 +90,10 @@ bgp_proto:
+  | bgp_proto MULTIHOP expr ';' { BGP_CFG->multihop = $3; if (($3<1) || ($3>255)) cf_error("Multihop must be in range 1-255"); }
+  | bgp_proto NEXT HOP SELF ';' { BGP_CFG->next_hop_self = 1; BGP_CFG->next_hop_keep = 0; }
+  | bgp_proto NEXT HOP KEEP ';' { BGP_CFG->next_hop_keep = 1; BGP_CFG->next_hop_self = 0; }
++ | bgp_proto NEXT HOP LLADDR BOTH ';' { BGP_CFG->nhop_lladdr = NLL_BOTH;  }
++ | bgp_proto NEXT HOP LLADDR ONLY ';' { BGP_CFG->nhop_lladdr = NLL_ONLY;  }
++ | bgp_proto NEXT HOP LLADDR EMPTY  ';' { BGP_CFG->nhop_lladdr = NLL_EMPTYGLOBAL;  }
++ | bgp_proto NEXT HOP LLADDR TRANSPARENT ';' { BGP_CFG->nhop_lladdr = NLL_TRANSPARENT;  }
+  | bgp_proto MISSING LLADDR SELF ';' { BGP_CFG->missing_lladdr = MLL_SELF; }
+  | bgp_proto MISSING LLADDR DROP ';' { BGP_CFG->missing_lladdr = MLL_DROP; }
+  | bgp_proto MISSING LLADDR IGNORE ';' { BGP_CFG->missing_lladdr = MLL_IGNORE; }
+diff --git proto/bgp/packets.c proto/bgp/packets.c
+index 0b9de8c..0744fab 100644
+--- proto/bgp/packets.c
++++ proto/bgp/packets.c
+@@ -522,8 +522,36 @@ bgp_create_update(struct bgp_conn *conn, byte *buf)
+ 	  *tmp++ = BGP_AF_IPV6;
+ 	  *tmp++ = 1;
+ 
+-	  if (ipa_has_link_scope(ip))
+-	    ip = IPA_NONE;
++	  /*
++	   * Handle different nexthops schemes for link-local BGP:
++	   * Possible cases:
++	   * [ ::, fe80::XX ]: bird default
++	   * [ fe80::XX, fe80::XX ]: used in JunoOS
++	   * [ fe80:XX ]: used by some Huawei implementations
++	   */
++	  if ((ipa_zero(ip) || ipa_has_link_scope(ip)) && ipa_nonzero(ip_ll))
++	    {
++	      switch (p->cf->nhop_lladdr)
++		{
++		case NLL_EMPTYGLOBAL:
++		    /* Leave link-local, but reset global address to :: */
++		    if (ipa_has_link_scope(ip))
++		      ip = IPA_NONE;
++		   break;
++		case NLL_ONLY:
++		   /* Link-local address only */
++		   ip = ip_ll;
++		   ip_ll = IPA_NONE;
++		   break;
++		 case NLL_BOTH:
++		   /* Both addresses are link-local */
++		   ip = ip_ll;
++		   break;
++		 case NLL_TRANSPARENT:
++		   /* Leave as is */
++		   break;
++		}
++	    }
+ 
+ 	  if (ipa_nonzero(ip_ll))
+ 	    {
+@@ -1033,9 +1061,25 @@ bgp_set_next_hop(struct bgp_proto *p, rta *a)
+ #ifdef IPV6
+   int second = (nh->u.ptr->length == NEXT_HOP_LENGTH) && ipa_nonzero(nexthop[1]);
+ 
+-  /* First address should not be link-local, but may be zero in direct mode */
++  /*
++   * There are different ways of sending link-local nexthop address:
++   * some implementation pass single entry with link-local address, e.g. [ fe80::xx ]
++   * some may pass dual nexthops, e.g. [ aa::bb fe80::xx ].
++   *
++   * We need to convert both cases to internally used [ :: fe80:xx ] scheme.
++   */
+   if (ipa_has_link_scope(*nexthop))
+-    *nexthop = IPA_NONE;
++    {
++      if (second)
++        *nexthop = IPA_NONE;
++      else
++        {
++	  /* We have received single link-local nexthop */
++	  nexthop = alloca(sizeof(ip_addr) * 2);
++          *nexthop = IPA_NONE;
++	  nexthop[1] = *((ip_addr *) nh->u.ptr->data);
++	}
++    }
+ #else
+   int second = 0;
+ #endif
+-- 
+2.1.2
+
