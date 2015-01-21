@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quantum
-PORTVERSION=	3.0.1
-PORTREVISION=	5
+PORTVERSION=	3.3.0.2
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-plugin/${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
@@ -14,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-                ${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
 USES=		zip
 NO_WRKSUBDIR=	yes
@@ -22,7 +21,7 @@ NO_BUILD=	yes
 NO_EXTRACT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-PLIST_SUB+=	VERSION=${PORTVERSION}
+PLIST_SUB+=	VERSION=${PORTVERSION:S/.2//}
 
 post-extract:
 	@${RM} ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/Thumbs.db
