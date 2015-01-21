@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xonotic
-PORTVERSION=	0.7.0
-PORTREVISION=	8
+PORTVERSION=	0.8.0
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 MANUAL_PACKAGE_BUILD=	huge (930M)
 
-USES=		zip
+USES=		zip:infozip
 WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
