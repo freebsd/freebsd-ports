@@ -1,5 +1,5 @@
 --- Make.defaults.orig	2014-08-08 21:27:21.000000000 +0200
-+++ Make.defaults	2014-12-01 02:18:02.000000000 +0100
++++ Make.defaults	2015-01-15 11:13:35.059134709 +0100
 @@ -45,14 +45,17 @@ TOPDIR := $(shell if [ "$$PWD" != "" ]; 
  # Where to install the package. GNU-EFI will create and access
  # lib and include under the root
@@ -16,8 +16,8 @@
  # Compilation tools
 -HOSTCC       := $(prefix)gcc
 -CC           := $(prefix)$(CROSS_COMPILE)gcc
-+HOSTCC       := $(prefix)gcc48
-+CC           := $(prefix)$(CROSS_COMPILE)gcc48
++HOSTCC       := $(prefix)%%CC%%
++CC           := $(prefix)$(CROSS_COMPILE)%%CC%%
  AS           := $(prefix)$(CROSS_COMPILE)as
  LD           := $(prefix)$(CROSS_COMPILE)ld
  AR           := $(prefix)$(CROSS_COMPILE)ar
