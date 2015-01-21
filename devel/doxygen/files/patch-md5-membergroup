@@ -1,5 +1,5 @@
---- src/membergroup.cpp-orig	2014-06-11 20:23:51.000000000 +0200
-+++ src/membergroup.cpp	2014-06-11 20:24:25.000000000 +0200
+--- src/membergroup.cpp.orig	2015-01-03 22:38:57 UTC
++++ src/membergroup.cpp
 @@ -28,6 +28,7 @@
  #include "docparser.h"
  #include "marshal.h"
@@ -8,7 +8,7 @@
  #include "md5.h"
  
  //static QCString idToName(int id)
-@@ -307,12 +308,10 @@
+@@ -307,12 +308,10 @@ void MemberGroup::setInGroup(bool b)
  
  QCString MemberGroup::anchor() const
  {
@@ -17,8 +17,8 @@
    QCString locHeader = grpHeader;
    if (locHeader.isEmpty()) locHeader="[NOHEADER]";
 -  MD5Buffer((const unsigned char *)locHeader.data(),locHeader.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)locHeader.data(),locHeader.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)locHeader.data(),locHeader.length(),sigStr.rawData());
    return "amgrp"+sigStr;
  }
  
