@@ -18,6 +18,8 @@ MAKE_ARGS+=	CC="${CC}"
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}| ; \
 		s|CFLAGS =|CFLAGS +=| ; \
