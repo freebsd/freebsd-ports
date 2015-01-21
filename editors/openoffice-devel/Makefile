@@ -15,7 +15,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 PKGNAMESUFFIX=		-devel
-DISTFILES=	${OOOSRC}${OOODISTTAG} unowinreg.dll:unoreg ${EXTSRC}:extsrc
+DISTFILES=	${OOOSRC}${AOODISTTAG} unowinreg.dll:unoreg ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
