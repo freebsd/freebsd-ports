@@ -6,7 +6,7 @@ PORTVERSION=	0.13.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Multi-layer client for the github api v3
 
 LICENSE=	MIT
