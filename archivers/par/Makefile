@@ -23,6 +23,8 @@ PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Wall.*-pipe,${CFLAGS}, ; \
 		s,"Linux,"${OPSYS},' ${WRKSRC}/${MAKEFILE}
