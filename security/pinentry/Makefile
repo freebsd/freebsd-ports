@@ -36,7 +36,11 @@ GTK2_DESC=	Gtk+ 2 frontend
 PINENTRY_GTK2=	pinentry-gtk-2
 GTK2_RUN_DEPENDS=	${PINENTRY_GTK2}:${PORTSDIR}/security/pinentry-gtk2
 
+.if exists(/usr/lib/libc++.so)
+QT4_DESC=	Qt 4 frontend (broken)
+.else
 QT4_DESC=	Qt 4 frontend
+.endif
 PINENTRY_QT4=	pinentry-qt4
 QT4_RUN_DEPENDS=	${PINENTRY_QT4}:${PORTSDIR}/security/pinentry-qt4
 
