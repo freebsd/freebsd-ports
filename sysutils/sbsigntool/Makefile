@@ -1,4 +1,4 @@
-# Created by: Edward Tomasz Napierala <trasz@brick>
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sbsigntool
