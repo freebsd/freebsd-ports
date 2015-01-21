@@ -4651,6 +4651,7 @@
     SUBDIR += rubygem-tins0
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-transactionsimple
+    SUBDIR += rubygem-travis
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-turn
