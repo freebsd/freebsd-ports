@@ -1055,6 +1055,7 @@
     SUBDIR += libhoard
     SUBDIR += libhtp
     SUBDIR += libical
+    SUBDIR += libical-glib
     SUBDIR += libinotify
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs

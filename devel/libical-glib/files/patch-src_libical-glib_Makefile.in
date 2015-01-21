@@ -1,0 +1,11 @@
+--- src/libical-glib/Makefile.in.orig	2015-01-21 00:50:00.774723462 +0100
++++ src/libical-glib/Makefile.in	2015-01-21 00:50:18.324728676 +0100
+@@ -448,7 +448,7 @@
+ 	$(GOBJECT2_LIBS) \
+ 	$(NULL)
+ 
+-libical_glib_1_0_la_LDFLAGS = -avoid-version $(NO_UNDEFINED) \
++libical_glib_1_0_la_LDFLAGS = \
+ 	$(CODE_COVERAGE_LDFLAGS) \
+ 	$(NULL)
+ 
