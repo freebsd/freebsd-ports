@@ -99,6 +99,8 @@
 #				USE_FOO+= bar
 #				If you need more than one option, you can do
 #				FOO=bar,baz and you'll get USE_FOO=bar baz
+# ${opt}_USE_OFF=	FOO=bar	When option is disabled, it will enable
+#				USE_FOO+= bar
 #
 # For each of:
 # ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS CONFLICTS_BUILD
@@ -460,6 +462,12 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .      endif
 .    endfor
 .  else
+.    if defined(${opt}_USE_OFF)
+.      for option in ${${opt}_USE_OFF}
+_u=		${option:C/=.*//g}
+USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
+.      endfor
+.    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
 .      for iopt in ${${opt}_CONFIGURE_ENABLE}
 CONFIGURE_ARGS+=	--disable-${iopt:C/=.*//}
