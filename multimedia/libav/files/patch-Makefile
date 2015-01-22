@@ -1,10 +1,11 @@
---- Makefile.orig	2014-04-08 18:24:52.000000000 +0200
-+++ Makefile	2014-04-08 18:25:08.000000000 +0200
-@@ -128,7 +128,7 @@
+--- Makefile.orig	2015-01-15 05:50:49.000000000 +0900
++++ Makefile	2015-01-21 16:21:14.000000000 +0900
+@@ -129,7 +129,7 @@
  $(foreach V,$(SUBDIR_VARS),$(eval $(call RESET,$(V))))
  SUBDIR := $(1)/
  include $(SRC_PATH)/$(1)/Makefile
 --include $(SRC_PATH)/$(1)/$(ARCH)/Makefile
 +-include $(SRC_PATH)/$(1)/$(LIBAV_ARCH)/Makefile
+ -include $(SRC_PATH)/$(1)/$(INTRINSICS)/Makefile
  include $(SRC_PATH)/library.mak
  endef

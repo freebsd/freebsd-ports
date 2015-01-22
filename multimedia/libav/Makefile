@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	10.2
-PORTREVISION=	7
+PORTVERSION=	11.2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -29,8 +28,7 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--enable-shared \
 			--enable-runtime-cpudetect \
 			--disable-debug \
-			--cc="${CC}" \
-			--disable-avserver
+			--cc="${CC}"
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC DOCS FREETYPE \
 		FREI0R GNUTLS GSM ILBC JACK LAME OPENCV OPENJPEG OPENSSL \
@@ -226,7 +224,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
 		${WRKSRC}/configure \
-		${WRKSRC}/libavcodec/libgsm.c
+		${WRKSRC}/libavcodec/libgsmdec.c
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/library.mak
 
@@ -234,5 +232,13 @@ post-configure:
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
 .endif
+
+post-stage:
+.for a in bin/avconv bin/avprobe lib/libav/libavdevice.so.55.0.0\
+	lib/libav/libavfilter.so.5.0.0 lib/libav/libavformat.so.56.1.0\
+	lib/libav/libavcodec.so.56.1.0 lib/libav/libavresample.so.2.1.0\
+	lib/libav/libswscale.so.3.0.0 lib/libav/libavutil.so.54.3.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${a}
+.endfor
 
 .include <bsd.port.post.mk>
