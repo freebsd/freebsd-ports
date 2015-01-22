@@ -4,10 +4,8 @@ bin/stunnel3
 lib/stunnel/libstunnel.a
 lib/stunnel/libstunnel.so
 man/man8/stunnel.8.gz
-man/man8/stunnel.fr.8.gz
 man/man8/stunnel.pl.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.html
-%%PORTDOCS%%%%DOCSDIR%%/stunnel.fr.html
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.pl.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.pl
