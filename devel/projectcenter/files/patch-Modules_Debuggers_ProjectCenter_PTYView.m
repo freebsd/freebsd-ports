@@ -1,5 +1,5 @@
---- Modules/Debuggers/ProjectCenter/PTYView.m.orig	2012-04-20 08:35:30.000000000 +0000
-+++ Modules/Debuggers/ProjectCenter/PTYView.m
+--- Modules/Debuggers/ProjectCenter/PTYView.m.orig	2013-02-09 22:42:13.000000000 +0800
++++ Modules/Debuggers/ProjectCenter/PTYView.m	2015-01-22 22:51:16.258350353 +0800
 @@ -30,7 +30,7 @@
  #include <fcntl.h>
  #include <sys/types.h>
@@ -9,19 +9,9 @@
  #include <sys/ioctl.h>
  #include <termios.h>
  #include <libutil.h>
-@@ -42,7 +42,8 @@
- #include <stdlib.h>
- #include <string.h>
- 
--#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !(defined (__NetBSD__))
-+#if !defined(__OpenBSD__) && !defined(__FreeBSD__) \
-+ && !defined (__NetBSD__) && !defined(__DragonFly__)
- #include <stropts.h>
+@@ -61,7 +61,9 @@
  #endif
  
-@@ -56,7 +57,9 @@
- #define USE_FORKPTY_REPLACEMENT 1
- #endif
  
 -#if !(defined (__NetBSD__)) && !(defined (__SOLARIS__)) && !(defined (__OpenBSD__)) && !(defined(__FreeBSD__))
 +#if !(defined (__NetBSD__)) && !(defined (__SOLARIS__)) \
