@@ -52,6 +52,7 @@ SSP_UNSAFE=	yes
 
 CFLAGS+=	-fPIC -fopenmp -DUSE_OPENMP
 LDFLAGS+=	-pthread -Wl,-export-dynamic
+LINKFLAGS=	# empty
 
 SUB_FILES=	pkg-message
 
