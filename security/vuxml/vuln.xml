@@ -592,7 +592,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.1e_3</lt></range>
       </package>
     </affects>
     <description>
@@ -624,6 +624,7 @@ Notes:
     <dates>
       <discovery>2015-01-08</discovery>
       <entry>2015-01-08</entry>
+      <modified>2015-01-22</modified>
     </dates>
   </vuln>
 
