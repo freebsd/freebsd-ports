@@ -78,8 +78,8 @@ lib/libcrypto.so.30
 lib/libcrypto.so.30.0.3
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.29
-lib/libssl.so.29.0.0
+lib/libssl.so.30
+lib/libssl.so.30.0.0
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
