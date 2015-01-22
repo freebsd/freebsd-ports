@@ -1,6 +1,10 @@
+bin/utp_send
+bin/utp_recv
+bin/utp_test
 lib/libutp.so.0
 lib/libutp.so
 lib/libutp.a
+include/libutp/udp.h
 include/libutp/utp.h
 include/libutp/utp_utils.h
 include/libutp/utypes.h
