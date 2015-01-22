@@ -4,6 +4,7 @@ bin/lumina-config
 bin/lumina-fm
 bin/lumina-screenshot
 bin/lumina-search
+etc/luminaDesktop.conf.dist
 lib/libLuminaUtils.so
 lib/libLuminaUtils.so.1
 lib/libLuminaUtils.so.1.0
@@ -22,7 +23,7 @@ share/pixmaps/Insight-FileManager.png
 share/xsessions/Lumina-DE.desktop
 share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/defaultapps.conf
-share/Lumina-DE/desktopsettings.conf
+share/Lumina-DE/luminaDesktop.conf
 share/Lumina-DE/fluxbox-init-rc
 share/Lumina-DE/fluxbox-keys
 share/Lumina-DE/Login.ogg
