@@ -2,32 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	commons-digester
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	textproc java devel
-MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
+MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML-to-Java-object mapping utility package
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-
-USE_ANT=	yes
-MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
-MAKE_ARGS=	-Dcommons-beanutils.api=${COMMONS_BEANUTILS_API} \
-		-Dcommons-collections.api=${COMMONS_COLLECTIONS_API} \
-		-Dcommons-logging.api=${COMMONS_LOGGING_API} \
-		-Dcommons-beanutils.jar=${JAVALIBDIR}/commons-beanutils.jar \
-		-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
-		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
-ALL_TARGET=	dist
 
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
@@ -35,11 +29,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 OPTIONS_DEFINE=	DOCS
 
 OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
-PORTDOCS=	api ${OTHERDOCS}
-
-COMMONS_BEANUTILS_API=	${LOCALBASE}/share/doc/commons-beanutils
-COMMONS_COLLECTIONS_API=${LOCALBASE}/share/doc/commons-collections/apidocs
-COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -50,30 +40,16 @@ JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-common
 JAR_DEPENDS+=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 .endif
 
-do-configure:
-	@if [ -d "${COMMONS_BEANUTILS_API}" ] ; \
-	then \
-	  ${REINPLACE_CMD} -e 's,http://jakarta.apache.org/commons/beanutils/api/,${COMMONS_BEANUTILS_API},' ${WRKSRC}/build.xml ; \
-	fi
-	@if [ -d "${COMMONS_COLLECTIONS_API}" ] ; \
-	then \
-	  ${REINPLACE_CMD} -e 's,http://jakarta.apache.org/commons/collections/api/,${COMMONS_COLLECTIONS_API},' ${WRKSRC}/build.xml ; \
-	fi
-	@if [ -d "${COMMONS_LOGGING_API}" ] ; \
-	then \
-	  ${REINPLACE_CMD} -e 's,http://jakarta.apache.org/commons/logging/api/,${COMMONS_LOGGING_API},' ${WRKSRC}/build.xml ; \
-	fi
-
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/dist/docs \
-	  && ${FIND} api -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
-	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/dist/,} ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/apidocs \
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
