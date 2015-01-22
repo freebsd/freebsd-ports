@@ -17,6 +17,8 @@ IGNORE=	Incorrect 'USES+= scons:${scons_ARGS}' scons takes no arguments
 MAKEFILE=		#
 MAKE_FLAGS=		#
 ALL_TARGET=		#
+CCFLAGS?=		${CFLAGS}
+LINKFLAGS?=		${LDFLAGS}
 LIBPATH?=		${LOCALBASE}/lib
 CPPPATH?=		${LOCALBASE}/include
 SCONS=			${LOCALBASE}/bin/scons
