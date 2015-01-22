@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f9c388c5-a256-11e4-992a-7b2a515a1247">
+    <topic>LibreSSL -- DTLS vulnerability</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL Security Advisory:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150108.txt">
+	<p>
+	A memory leak can occur in the dtls1_buffer_record function under certain
+	conditions. In particular this could occur if an attacker sent repeated DTLS
+	records with the same sequence number but for the next epoch. The memory leak
+	could be exploited by an attacker in a Denial of Service attack through memory
+	exhaustion.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+		<cvename>CVE-2015-0206</cvename>
+		<url>https://www.openssl.org/news/secadv_20150108.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-01-08</discovery>
+      <entry>2015-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc294a2c-a232-11e4-8e9f-0011d823eebd">
     <topic>Adobe Flash Player -- multiple vulnerabilities</topic>
     <affects>
