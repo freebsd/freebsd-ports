@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.0.${GITVERSION}
+PORTVERSION=	0.8.1.${GITVERSION}
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 
 MAKE_JOBS_UNSAFE=yes
 
-GITVERSION=	1420494806
+GITVERSION=	1421890927
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
