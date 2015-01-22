@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2pp
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 GH_PROJECT=	libSDL2pp
-GH_COMMIT=	feabe14
+GH_COMMIT=	e5210da
+GH_TAGNAME=	${GH_COMMIT}
 
 USES=		compiler:c++11-lib cmake
 CMAKE_ARGS=	-DRUN_GUI_TESTS=OFF \
@@ -23,7 +24,9 @@ USE_SDL=	sdl2 image2 ttf2
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DOXYGEN
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_ALL_TARGET=	all doxygen
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +37,9 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOXYGEN}
+	cd ${CONFIGURE_WRKSRC} && ${COPYTREE_SHARE} doxygen ${STAGEDIR}${DOCSDIR}/
+.endif
 
 regression-test: build
 	cd ${WRKSRC} && ${DO_MAKE_BUILD} test
