@@ -7,6 +7,9 @@ CATEGORIES=	sysutils
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Yet another FreeBSD Jail Management Utility
 
+ONLY_FOR_ARCHS= i386 amd64
+ONLY_FOR_ARCHS_REASON=	Depends on SSE 4.1 instructions
+
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
