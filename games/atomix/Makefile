@@ -8,7 +8,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Yet another little mind game
 
 LICENSE=	GPLv2 # or later
