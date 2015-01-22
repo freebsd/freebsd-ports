@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0523fb7e-8444-4e86-812d-8de05f6f0dce">
+    <topic>libutp -- remote denial of service or arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>bittorrent-libutp</name>
+	<range><lt>0.20130514_1</lt></range>
+      </package>
+      <package>
+	<name>transmission-cli</name>
+	<name>transmission-deamon</name>
+	<name>transmission-gtk</name>
+	<name>transmission-qt4</name>
+	<range><lt>2.74</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6129">
+	  <p>Stack-based buffer overflow in utp.cpp in libutp, as used
+	    in Transmission before 2.74 and possibly other products,
+	    allows remote attackers to cause a denial of service (crash)
+	    and possibly execute arbitrary code via crafted "micro
+	    transport protocol packets."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-6129</cvename>
+      <url>https://github.com/bittorrent/libutp/issues/38</url>
+      <url>https://trac.transmissionbt.com/ticket/5002</url>
+    </references>
+    <dates>
+      <discovery>2012-08-01</discovery>
+      <entry>2014-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9c388c5-a256-11e4-992a-7b2a515a1247">
     <topic>LibreSSL -- DTLS vulnerability</topic>
     <affects>
