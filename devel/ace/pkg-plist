@@ -1426,7 +1426,9 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/vc10nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11nmake.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/vc12.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc12nmake.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/vc14.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc14nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc71.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc8.features
@@ -1480,8 +1482,6 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/docs/index.html
 %%DATADIR%%/docs/msvc_notes.txt
 %%DATADIR%%/docs/run_test.txt
-%%DATADIR%%/docs/svn/config
-%%DATADIR%%/docs/svn/svn-prefs.reg
 %%DATADIR%%/docs/usage-bugzilla.html
 %%DATADIR%%/docs/wchar.txt
 %%DATADIR%%/include/makeinclude/all_in_one.GNU
