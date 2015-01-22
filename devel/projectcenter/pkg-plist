@@ -50,9 +50,6 @@ GNUstep/System/Applications/ProjectCenter.app/Resources/EditorFSC.preferences/Re
 GNUstep/System/Applications/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/Info-gnustep.plist
 GNUstep/System/Applications/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/Info.table
 GNUstep/System/Applications/ProjectCenter.app/Resources/EditorFSC.preferences/stamp.make
-GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.classes
-GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.info
-GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
 GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/Info.tiff
 GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.classes
 GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.info
@@ -122,6 +119,9 @@ GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Res
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMH.tiff
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info-gnustep.plist
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/LineJumper.gorm/objects.gorm
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/ObjC.syntax
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Plist.syntax
 GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/stamp.make
@@ -190,6 +190,7 @@ GNUstep/System/Library/Frameworks/ProjectCenter.framework/Headers
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/ProjectCenter
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/Resources
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCAddFilesPanel.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCAuxiliaryWindow.h
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCBundleManager.h
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCDefines.h
 GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCEditorManager.h
