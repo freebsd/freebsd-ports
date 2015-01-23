@@ -18,7 +18,7 @@ BROKEN=		Uses unknown GNOME component pygnomeextras
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml \
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		yelp:${PORTSDIR}/x11/yelp
 
 USES=		desktop-file-utils gettext gmake python shebangfix tar:bzip2

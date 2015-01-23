@@ -12,7 +12,7 @@ COMMENT=	DocBook to LaTeX/ConTeXt Publishing
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:${PORTSDIR}/print/texlive-texmf
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 
 USES=		tar:bzip2 python:2
 USE_PYTHON=	distutils autoplist

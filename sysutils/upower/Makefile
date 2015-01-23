@@ -34,8 +34,8 @@ OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 MANPAGES_CONFIGURE_ENABLE=	man-pages
 MANPAGES_BUILD_DEPENDS= \
-	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
-	${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-xml \
+	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
+	docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 

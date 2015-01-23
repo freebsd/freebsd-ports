@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
