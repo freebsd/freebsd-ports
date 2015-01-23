@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-IKC
-PORTVERSION=	0.2305
-PORTREVISION=	1
+PORTVERSION=	0.2402
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Devel-Size>=0.77:${PORTSDIR}/devel/p5-Devel-Size \
 		p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-POE-API-Peek>=0:${PORTSDIR}/devel/p5-POE-API-Peek \
-		p5-POE-Component-Daemon>=0:${PORTSDIR}/devel/p5-POE-Component-Daemon \
-		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable
+		p5-Data-Dump>=1:${PORTSDIR}/devel/p5-Data-Dump
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
