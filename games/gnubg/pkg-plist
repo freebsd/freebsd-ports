@@ -225,15 +225,3 @@ share/locale/ja/LC_MESSAGES/gnubg.mo
 share/locale/ro/LC_MESSAGES/gnubg.mo
 share/locale/ru/LC_MESSAGES/gnubg.mo
 share/locale/tr/LC_MESSAGES/gnubg.mo
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/flags
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/met
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/textures
-@dirrmtry %%DATADIR%%
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US

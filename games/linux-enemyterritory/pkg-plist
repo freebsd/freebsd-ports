@@ -236,25 +236,3 @@ lib/enemyterritory/pb/pbweb.x86
 %%PORTDOCS%%%%DOCSDIR%%/PB_EULA.txt
 %%PORTDOCS%%%%DOCSDIR%%/PunkBuster.rtf
 %%DATADIR%%/ET.xpm
-@dirrm lib/enemyterritory/etmain/video
-@dirrm lib/enemyterritory/etmain
-@dirrm lib/enemyterritory/pb/htm
-@dirrm lib/enemyterritory/pb
-@dirrm lib/enemyterritory
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Compatibility
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Credits
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Manual/et-ad
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Manual/et-pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Manual/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Manual/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help/Customer Support
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help/Information
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help/vendor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/_borders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

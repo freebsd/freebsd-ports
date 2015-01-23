@@ -118,25 +118,4 @@ man/man6/i7.6.gz
 %%DATADIR%%/Internal/Extensions/Emily Short/Glulx Image Centering.i7x
 %%DATADIR%%/Internal/Extensions/Emily Short/Basic Help Menu.i7x
 %%DATADIR%%/Internal/Extensions/Emily Short/Basic Screen Effects.i7x
-@dirrm %%DATADIR%%/Internal/Templates/Vorple
-@dirrm %%DATADIR%%/Internal/Templates/Standard
-@dirrm %%DATADIR%%/Internal/Templates/Quixe
-@dirrm %%DATADIR%%/Internal/Templates/Parchment
-@dirrm %%DATADIR%%/Internal/Templates/Classic
-@dirrm %%DATADIR%%/Internal/Templates
-@dirrm %%DATADIR%%/Internal/Languages/Swedish
-@dirrm %%DATADIR%%/Internal/Languages/Spanish
-@dirrm %%DATADIR%%/Internal/Languages/Italian
-@dirrm %%DATADIR%%/Internal/Languages/German
-@dirrm %%DATADIR%%/Internal/Languages/French
-@dirrm %%DATADIR%%/Internal/Languages/English
-@dirrm %%DATADIR%%/Internal/Languages
-@dirrm %%DATADIR%%/Internal/Miscellany
-@dirrm %%DATADIR%%/Internal/Extensions/Reserved
-@dirrm %%DATADIR%%/Internal/Extensions/Graham Nelson
-@dirrm %%DATADIR%%/Internal/Extensions/Eric Eve
-@dirrm %%DATADIR%%/Internal/Extensions/Emily Short
-@dirrm %%DATADIR%%/Internal/Extensions
-@dirrm %%DATADIR%%/Internal/I6T
-@dirrm %%DATADIR%%/Internal
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/Internal/Extensions/Reserved

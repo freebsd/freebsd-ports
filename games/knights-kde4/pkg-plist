@@ -125,16 +125,3 @@ share/icons/hicolor/64x64/apps/knights.png
 %%NLS%%share/locale/sv/LC_MESSAGES/knights.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/knights.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/knights.mo
-%%PORTDOCS%%@dirrm share/doc/HTML/uk/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/sv/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/ru/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/pt_BR/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/pt/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/nl/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/it/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/et/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/es/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/en/knights
-%%PORTDOCS%%@dirrm share/doc/HTML/de/knights
-@dirrm share/apps/knights/themes
-@dirrm share/apps/knights
