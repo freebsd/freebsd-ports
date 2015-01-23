@@ -2,8 +2,8 @@ bin/libtool
 bin/libtoolize
 man/man1/libtool.1.gz
 man/man1/libtoolize.1.gz
-share/aclocal/argz.m4
 share/aclocal/libtool.m4
+share/aclocal/ltargz.m4
 share/aclocal/ltdl.m4
 share/aclocal/ltoptions.m4
 share/aclocal/ltsugar.m4
@@ -14,8 +14,6 @@ share/aclocal/lt~obsolete.m4
 %%DATADIR%%/Makefile.in
 %%DATADIR%%/README
 %%DATADIR%%/aclocal.m4
-%%DATADIR%%/argz.c
-%%DATADIR%%/argz_.h
 %%DATADIR%%/build-aux/compile
 %%DATADIR%%/build-aux/config.guess
 %%DATADIR%%/build-aux/config.sub
@@ -27,6 +25,7 @@ share/aclocal/lt~obsolete.m4
 %%DATADIR%%/configure
 %%DATADIR%%/configure.ac
 %%DATADIR%%/libltdl/lt__alloc.h
+%%DATADIR%%/libltdl/lt__argz_.h
 %%DATADIR%%/libltdl/lt__dirent.h
 %%DATADIR%%/libltdl/lt__glibc.h
 %%DATADIR%%/libltdl/lt__private.h
@@ -43,6 +42,7 @@ share/aclocal/lt~obsolete.m4
 %%DATADIR%%/loaders/preopen.c
 %%DATADIR%%/loaders/shl_load.c
 %%DATADIR%%/lt__alloc.c
+%%DATADIR%%/lt__argz.c
 %%DATADIR%%/lt__dirent.c
 %%DATADIR%%/lt__strl.c
 %%DATADIR%%/lt_dlloader.c
