@@ -1,0 +1,13 @@
+--- readlinebuf/readlinebuf.orig	2015-01-21 16:26:21.946273880 +0600
++++ readlinebuf/readlinebuf	2015-01-21 16:26:46.260272553 +0600
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_READLINEBUF_
+ #define INCLUDED_BOBCAT_READLINEBUF_
+ 
++#if defined(__FreeBSD__) || defined(__DragonFly__) 
++#include <stdio.h>
++#endif
++
+ #include <string>
+ #include <streambuf>
+ #include <memory>
