@@ -11,6 +11,7 @@
 %%SITE_PERL%%/POE/Component/IKC/Server.pm
 %%SITE_PERL%%/POE/Component/IKC/Specifier.pm
 %%SITE_PERL%%/POE/Component/IKC/Timing.pm
+%%SITE_PERL%%/POE/Component/IKC/Util.pm
 %%PERL5_MAN3%%/POE::Component::IKC.3.gz
 %%PERL5_MAN3%%/POE::Component::IKC::Channel.3.gz
 %%PERL5_MAN3%%/POE::Component::IKC::Client.3.gz
