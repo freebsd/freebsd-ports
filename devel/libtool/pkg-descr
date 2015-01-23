@@ -5,4 +5,4 @@ interface.
 To use libtool, add the new generic library building commands to your
 Makefile, Makefile.in, or Makefile.am.
 
-WWW: http://www.gnu.org/software/libtool/
+WWW: https://www.gnu.org/software/libtool/

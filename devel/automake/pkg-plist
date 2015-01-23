@@ -1,9 +1,9 @@
 bin/aclocal-%%BUILD_VERSION%%
 bin/automake-%%BUILD_VERSION%%
-man/man1/aclocal-1.14-1.14.1.gz
-man/man1/aclocal-1.14.1.gz
-man/man1/automake-1.14-1.14.1.gz
-man/man1/automake-1.14.1.gz
+man/man1/aclocal-%%BUILD_VERSION%%-%%BUILD_VERSION%%.1.gz
+man/man1/aclocal-%%BUILD_VERSION%%.1.gz
+man/man1/automake-%%BUILD_VERSION%%-%%BUILD_VERSION%%.1.gz
+man/man1/automake-%%BUILD_VERSION%%.1.gz
 share/aclocal-%%BUILD_VERSION%%/amversion.m4
 share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
 share/aclocal-%%BUILD_VERSION%%/as.m4
@@ -109,7 +109,6 @@ share/automake-%%BUILD_VERSION%%/mdate-sh
 share/automake-%%BUILD_VERSION%%/missing
 share/automake-%%BUILD_VERSION%%/mkinstalldirs
 share/automake-%%BUILD_VERSION%%/py-compile
-share/automake-%%BUILD_VERSION%%/tap-driver.pl
 share/automake-%%BUILD_VERSION%%/tap-driver.sh
 share/automake-%%BUILD_VERSION%%/test-driver
 share/automake-%%BUILD_VERSION%%/texinfo.tex
