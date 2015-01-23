@@ -57,6 +57,80 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c7b6c20-a324-11e4-879c-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/jan/13/security/">
+	  <p>Today the Django team is issuing multiple releases --
+	    Django 1.4.18, Django 1.6.10, and Django 1.7.3 -- as part of our
+	    security process. These releases are now available on PyPI and our
+	    download page.</p>
+	  <p>These releases address several security issues. We encourage all
+	    users of Django to upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/jan/13/security/</url>
+      <cvename>CVE-2015-0219</cvename>
+      <cvename>CVE-2015-0220</cvename>
+      <cvename>CVE-2015-0221</cvename>
+      <cvename>CVE-2015-0222</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0523fb7e-8444-4e86-812d-8de05f6f0dce">
     <topic>libutp -- remote denial of service or arbitrary code execution</topic>
     <affects>
