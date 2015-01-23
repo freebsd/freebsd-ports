@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.066.0
+PORTVERSION=	2.066.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -70,9 +70,7 @@ post-patch:
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man5/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd.conf.5
-.if !exists(${STAGEDIR}${PREFIX}/etc/dmd.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd.conf
-.endif
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd.conf.sample
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd
 .if ${ARCH} == "amd64"
 	${INSTALL_DATA} ${WRKSRC}/../../freebsd/lib64/libphobos2.a ${STAGEDIR}${PREFIX}/lib
