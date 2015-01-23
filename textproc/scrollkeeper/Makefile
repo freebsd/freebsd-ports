@@ -15,10 +15,10 @@ COMMENT=	Open Document Cataloging Project
 
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 

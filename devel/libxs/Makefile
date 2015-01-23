@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--enable-debug
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 
 .else
 CONFIGURE_ARGS+=	--without-documentation

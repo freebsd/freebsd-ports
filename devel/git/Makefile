@@ -156,7 +156,7 @@ IGNORE=	using GITWEB support requires PERL support
 PLIST_SUB+=	CONTRIB=""
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 .else
 PLIST_SUB+=	CONTRIB="@comment "
 .endif

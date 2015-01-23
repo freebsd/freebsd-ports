@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
+BUILD_DEPENDS=	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 

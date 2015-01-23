@@ -200,7 +200,7 @@ CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 
 .endif # MBOOTH
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+BUILD_DEPENDS+=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 

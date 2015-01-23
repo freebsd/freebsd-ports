@@ -12,7 +12,7 @@ COMMENT=	Meta-port for the different versions of the DocBook DTD
 
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xml/docbook/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xml/sdocbook/1.1:${PORTSDIR}/textproc/sdocbook-xml
+		sdocbook-xml>0:${PORTSDIR}/textproc/sdocbook-xml
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

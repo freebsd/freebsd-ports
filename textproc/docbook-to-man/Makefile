@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
 
-RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
+RUN_DEPENDS=	docbook>0:${PORTSDIR}/textproc/docbook
 
 USES=		imake
 XFREE86_HTML_MAN=	no

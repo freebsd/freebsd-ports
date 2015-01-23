@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		jade>=0:${PORTSDIR}/textproc/jade \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook:${PORTSDIR}/textproc/docbook-xsl
+		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext perl5

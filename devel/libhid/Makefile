@@ -11,7 +11,7 @@ MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	User-space HID access library written in C
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13
 
 GNU_CONFIGURE=	yes

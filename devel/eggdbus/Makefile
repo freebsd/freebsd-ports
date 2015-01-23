@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
+BUILD_DEPENDS+=	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
     		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 

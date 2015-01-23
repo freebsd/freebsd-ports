@@ -36,7 +36,7 @@ DOXYGEN_ALL_TARGET=	html-local
 DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2
 DOCBOOK_XSL_NS=	${LOCALBASE}/share/doc/docbook-xsl-ns/html/docbook.css.source.html
 MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
+			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 			${DOCBOOK_XSL_NS}:${PORTSDIR}/textproc/docbook-xsl-ns
 MANPAGES_CONFIGURE_WITH=	xsltproc
 
