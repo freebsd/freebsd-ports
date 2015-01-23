@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Describes an astronomical image
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
