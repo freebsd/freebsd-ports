@@ -74,6 +74,9 @@ CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
+DEPRECATED=	Upstream support ends February 23, 2015
+EXPIRATION_DATE=	2015-02-23
+
 .include <bsd.port.pre.mk>
 
 # PORTEPOCH/PORTREVISION hack
