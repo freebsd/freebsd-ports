@@ -11,8 +11,8 @@ MASTER_SITES=	http://download.gna.org/mypaint/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/cairo:${PORTSDIR}/graphics/py-cairo \
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf
 LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
