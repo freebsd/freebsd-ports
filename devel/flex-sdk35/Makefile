@@ -11,8 +11,6 @@ PKGNAMESUFFIX=	3
 MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk-4.*
 USES=		zip
 USE_JAVA=	YES

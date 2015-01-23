@@ -12,8 +12,6 @@ COMMENT=	XSLT 1.0 processor for Java
 
 LICENSE=	MPL
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

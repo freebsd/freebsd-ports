@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based XInclude processors
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom \
-		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j \
-		java:${PORTSDIR}/java/javavmwrapper
+		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

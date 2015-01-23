@@ -13,8 +13,6 @@ COMMENT=	Java class file shrinker, optimizer, and obfuscator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_JAVA=	yes

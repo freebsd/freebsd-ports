@@ -26,8 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXQUERY_TOOL}
-RUN_DEPENDS+=	${JAVALIBDIR}/java-getopt.jar:${PORTSDIR}/java/java-getopt \
-		classpath:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS+=	${JAVALIBDIR}/java-getopt.jar:${PORTSDIR}/java/java-getopt
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

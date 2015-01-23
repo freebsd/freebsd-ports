@@ -8,8 +8,6 @@ MASTER_SITES=	SF/${PORTNAME}/OpenProj%20Binaries/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, open source Project Manager
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

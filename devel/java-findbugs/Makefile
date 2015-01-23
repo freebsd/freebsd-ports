@@ -10,8 +10,6 @@ PKGNAMEPREFIX=	java-
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Find Bugs in Java Programs
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 LICENSE=	LGPL21
 USE_JAVA=	yes
 NO_BUILD=	yes
