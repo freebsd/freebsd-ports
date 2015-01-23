@@ -29,7 +29,7 @@ TARBALLS_DIR=	${LOCALBASE}/share/octave/tarballs
 INSTALL_TARBALLS_DIR=	${STAGEDIR}${PREFIX}/share/octave/tarballs
 
 MAKE_ENV+=	PACKAGE=${WRKDIR}/${DISTNAME}.tar.gz
-MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD_CXX="${CXX}" DL_LD="${CXX}"
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD_CXX="${CXX}" DL_LD="${CXX}" MKOCTFILE="${LOCALBASE}/bin/mkoctfile" OCTAVE_VERSION=-`${MAKE} -C ${.CURDIR}/../../math/octave -V PORTVERSION`
 
 LOAD_OCTAVE_PKG_CMD=	${LOCALBASE}/libexec/octave/load-octave-pkg
 
