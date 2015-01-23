@@ -1,8 +1,7 @@
 bin/dmd
 lib/libphobos2.a
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; then rm -f %D/etc/dmd.conf; fi
+@sample etc/dmd.conf.sample
 %%EXAMPLESDIR%%/dmd.conf
-@exec if [ ! -f %D/etc/dmd.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd.conf %D/etc/dmd.conf; fi
 %%EXAMPLESDIR%%/samples/d/all.sh
 %%EXAMPLESDIR%%/samples/d/build.bat
 %%EXAMPLESDIR%%/samples/d/chello.d
@@ -132,6 +131,7 @@ include/d/druntime/import/core/sys/posix/sys/uio.d
 include/d/druntime/import/core/sys/posix/sys/un.d
 include/d/druntime/import/core/sys/posix/sys/utsname.d
 include/d/druntime/import/core/sys/posix/sys/wait.d
+include/d/druntime/import/core/sys/posix/syslog.d
 include/d/druntime/import/core/sys/posix/termios.d
 include/d/druntime/import/core/sys/posix/time.d
 include/d/druntime/import/core/sys/posix/ucontext.d
@@ -223,6 +223,7 @@ include/d/phobos2/std/internal/windows/advapi32.d
 include/d/phobos2/std/json.d
 include/d/phobos2/std/math.d
 include/d/phobos2/std/mathspecial.d
+include/d/phobos2/std/metastrings.d
 include/d/phobos2/std/mmfile.d
 include/d/phobos2/std/net/curl.d
 include/d/phobos2/std/net/isemail.d
