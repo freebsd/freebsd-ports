@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	cataclysm-dda
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.B
+PORTEPOCH=	1
 CATEGORIES=	games
+MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:game \
+		http://azmodean.polehammer.com/:sound
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:game
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Fork/variant of Cataclysm Roguelike by Whales
@@ -14,75 +18,89 @@ LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 Unported License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix compiler:c++11-lib execinfo
 SHEBANG_FILES=	lang/*.sh
 bash_CMD=	/bin/sh
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	CleverRaven
 GH_PROJECT=	Cataclysm-DDA
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ebd2393
-MAKE_ARGS+=	RELEASE=1
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	293f250
+MAKE_ARGS+=	PREFIX=${PREFIX} RELEASE=1 USE_HOME_DIR=1
 CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME} -L${LOCALBASE}/lib -lexecinfo
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_DEFAULT=NCURSES
+OPTIONS_DEFINE=	NLS DOCS LUA SOUND
+OPTIONS_DEFAULT=NLS DOCS NCURSES
 OPTIONS_SINGLE=	UI
 OPTIONS_SINGLE_UI=	NCURSES SDL
 
 UI_DESC=	User Interface
+SOUND_DESC=	Sound support (SDL UI only)
 
 OPTIONS_SUB=	yes
-SUB_FILES=	cataclysm
 REINPLACE_ARGS=	-i ''
 
 NCURSES_USES=	ncurses
-SDL_USE=	SDL=sdl,ttf,image
+SDL_USE=	SDL=sdl2,ttf2,image2
+SDL_USES=	pkgconfig
 SDL_MAKE_ARGS=	TILES=1 TILESTARGET=cataclysm
+SDL_FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-fonts/terminus-font:patch
+SDL_BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 NLS_USES=	gettext
 NLS_LDFLAGS=	-lintl
-NLS_MAKE_ARGS=	L10N=localization
+NLS_MAKE_ARGS=	LOCALIZE=1
+LUA_USES=	lua:51 pkgconfig
+LUA_MAKE_ARGS=	LUA=1
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ! ${PORT_OPTIONS:MNLS}
-MAKE_ARGS+=	LOCALIZE=0
+.if ${PORT_OPTIONS:MSOUND}
+.if ${PORT_OPTIONS:MSDL}
+MAKE_ARGS+=	SOUND=1
+USE_SDL+=	mixer2
+SOUND_FILES=	cataclysmthemeREV6.ogg Dark_Days_Ahead_demo_2.ogg
+DISTFILES+=	${SOUND_FILES:S|$|:sound|}
+.else
+IGNORE=		Sound is not supported with ncurses UI.
+.endif
 .endif
 
-post-extract:
-	${RM} ${WRKSRC}/data/.gitignore
-
 post-patch:
-	${REINPLACE_CMD} -e 's|"lang/mo"|"${PREFIX}/share/locale"|' ${WRKSRC}/main.cpp
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|gfx|${DATADIR}/&|' options.cpp \
-		sdltiles.cpp cata_tiles.cpp gfx/*/tileset.txt
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|data/json|${DATADIR}/&|' \
-		game.cpp init.cpp map.cpp sdltiles.cpp
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|data/raw|${DATADIR}/&|' \
-		input.cpp iuse_software_sokoban.cpp
-	${REINPLACE_CMD} -e 's|data/font["/]|${DATADIR}/&| ; \
-		s|data/FONTDATA|${DATADIR}/&|' ${WRKSRC}/sdltiles.cpp
-	${REINPLACE_CMD} -e 's|data/motd|${DATADIR}/&| ; \
-		s|data/credits|${DATADIR}/&|' ${WRKSRC}/main_menu.cpp
-	${REINPLACE_CMD} -e '/^CXX *=/d ; /^LD *=/s/g++/$$(CXX)/ ; \
-		/OTHERS += -O3/d ; s/\(-lncurses\)\(w*\)/\1\2 -ltinfo\2/ ; \
-		/^WARNINGS *=/d' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^ *CXX *=/d ; /^ *LD *=/s/g++/$$(CXX)/ ; \
+		/^ *CXXFLAGS *+*=/s/-O[s0-3]//; /^ *LOCALIZE *=/d ; \
+		s/\(-lncurses\)\(w*\)/\1\2 -ltinfo\2/ ; \
+		s/=$$(PREFIX)\//=$$(DESTDIR)$$(PREFIX)\// ; \
+		/install/s/--mode=/-m / ; s/ -t\( $$(DATA_PREFIX)\)/\1/ ; \
+		/cp -R/s/--no-preserve=ownership// ; \
+		/^ *LUA_BINARY *=/s/lua/${LUA_CMD}/' ${WRKSRC}/Makefile
+.if ! ${PORT_OPTIONS:MNLS}
+	${REINPLACE_CMD} -e '/LOCALE_DIR/s/^/#/' ${WRKSRC}/Makefile
+.endif
+.if ${PORT_OPTIONS:MNCURSES} && ${NCURSESBASE} == /usr
+	${REINPLACE_CMD} -e 's/$$(shell ncursesw5-config --libs)/-lncursesw/ ; \
+		/$$(shell ncursesw5-config --cflags)/d' ${WRKSRC}/Makefile
+.endif
+.if ${PORT_OPTIONS:MSDL}
+	${REINPLACE_CMD} -e '/"file":/s|gfx|${DATADIR}/&|' \
+		${WRKSRC}/gfx/*/tile_config.json
+	# replace bundled windows version of terminus font with X-compatible one
+	${CAT} `cd ${PORTSDIR}/x11-fonts/terminus-font; make -V WRKSRC`/ter-u14n.bdf \
+		| bdftopcf | ${GZIP_CMD} > ${WRKSRC}/data/font/terminus.fon
+.endif
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/cataclysm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/cataclysm ${STAGEDIR}${PREFIX}/libexec
-.for dir in data gfx
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
-.endfor
-.if ${PORT_OPTIONS:MNLS}
-	cd ${WRKSRC}/lang/mo && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/locale
+post-install:
+.if ${PORT_OPTIONS:MSOUND}
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} sound ${STAGEDIR}${DATADIR}
+	cd ${DISTDIR} && \
+		${INSTALL_DATA} ${SOUND_FILES} ${STAGEDIR}${DATADIR}/sound
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${FIND} ${WRKSRC} \( -name "*.md" -or -name "*.txt" \) \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/ \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
