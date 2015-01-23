@@ -5,5 +5,3 @@ bin/linux-defcon
 %%DATADIR%%/open-www.sh
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
