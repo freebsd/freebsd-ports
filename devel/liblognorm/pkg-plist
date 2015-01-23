@@ -3,6 +3,7 @@ include/annot.h
 include/enc.h
 include/liblognorm.h
 include/lognorm.h
+include/lognorm-features.h
 include/parser.h
 include/ptree.h
 include/samp.h
