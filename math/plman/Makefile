@@ -12,8 +12,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\./_/g}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Propositional Logic sentence shell/interpreter
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 NO_BUILD=	yes
 
 USES=		zip

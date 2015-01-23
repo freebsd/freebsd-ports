@@ -12,8 +12,6 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GraphViz .dot file editor
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

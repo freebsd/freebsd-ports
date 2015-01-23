@@ -11,8 +11,6 @@ DISTFILES=	ProjectX_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	DVB (mpeg) cutting/demux tool
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

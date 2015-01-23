@@ -13,8 +13,6 @@ COMMENT=	Powerful translation memory application written in Java
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes

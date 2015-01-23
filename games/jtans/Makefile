@@ -14,8 +14,6 @@ COMMENT=	Ancient puzzle
 
 LICENSE=	GPLv2 # or later; got from website
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

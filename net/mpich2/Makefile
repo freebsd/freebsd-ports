@@ -99,8 +99,6 @@ IGNORE=		WITH_JAVA requires WITH_X11
 CONFIGURE_ARGS+=	--with-java="${JAVA_HOME}"
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
-RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
 PLX11=		""
 BIN2STRIP+=	rlog_check_timeorder rlog_print

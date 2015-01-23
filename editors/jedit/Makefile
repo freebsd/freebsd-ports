@@ -14,8 +14,6 @@ COMMENT=	Powerful programmer's text editor written in Java
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 OPTIONS_DEFINE=	MACROS DOCS
 MACROS_DESC=	Install default set of macros (highly recommended)
 

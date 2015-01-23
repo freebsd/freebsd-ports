@@ -9,8 +9,6 @@ DISTNAME=	flex_sdk_${PORTVERSION}_mpl
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk3-3.*
 USES=		zip
 USE_JAVA=	YES

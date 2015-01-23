@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Platform independent, plugin based dictionary
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

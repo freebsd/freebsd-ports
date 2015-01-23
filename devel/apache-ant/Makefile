@@ -15,8 +15,6 @@ COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
-
 OPTIONS_DEFINE=	DOCS
 
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2

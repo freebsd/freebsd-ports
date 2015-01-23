@@ -10,8 +10,6 @@ DISTNAME=	iReport-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual report builder/designer for JasperReports
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		dos2unix
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -9,8 +9,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non interactive, non graphical, batch download manager
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 OPTIONS_DEFINE=	DOCS
 
 USE_JAVA=	yes
