@@ -3,25 +3,29 @@
 
 PORTNAME=	xpn
 PORTVERSION=	1.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news python
-MASTER_SITES=	http://xpn.altervista.org/codice/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://xpn.altervista.org/codice/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	X Python Newsreader
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>=2.24.0:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.9:${PORTSDIR}/databases/py-sqlite3
 
 NO_BUILD=	yes
 
-FIND_DIRS=	-type d
-FIND_DATA=	-type f -mindepth 2 -not -name "*~"
+python_OLD_CMD=	/usr/bin/env python
+# we want a versioned python command
+python_CMD=	${PYTHON_CMD}
 
+SHEBANG_FILES=	${XPN}
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} XPN=${XPN}
 
-USES=		gettext python
+USES=		gettext python:2 shebangfix
 
 XPN=	${PORTNAME}.py
 
@@ -31,8 +35,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${XPN} ${STAGEDIR}${DATADIR}/${XPN}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	cd ${WRKSRC} && ${FIND} . ${FIND_DIRS} -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
-	cd ${WRKSRC} && ${FIND} . ${FIND_DATA} -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} ";"
+	(cd ${WRKSRC} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "-mindepth 2")
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${STAGEDIR}${DOCSDIR}
 

@@ -129,14 +129,3 @@ bin/xpn
 %%DATADIR%%/xpn_src/__init__.py
 %%DATADIR%%/xpn_src/add_tag.py
 %%DATADIR%%/xpn_src/nntplib_ssl.py
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/xpn_src
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/lang/it/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/it
-@dirrm %%DATADIR%%/lang/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/fr
-@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/de
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
