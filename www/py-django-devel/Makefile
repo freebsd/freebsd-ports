@@ -14,14 +14,14 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD3CLAUSE
 
-SNAPSHOTDATE=	20140821
+SNAPSHOTDATE=	20150124
 
 USES=		cpe gettext python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	ad96254
+GH_TAGNAME=	f8e4e4a
 GH_COMMIT=	${GH_TAGNAME}
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
