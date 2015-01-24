@@ -69,6 +69,7 @@ DIRAC_DESC?=		Dirac codec support via libdirac
 DJVU_DESC?=		DjVu document support
 DOCS_DESC?=		Build and/or install documentation
 DOXYGEN_DESC?=		Build documentation with Doxygen
+DTRACE_DESC?=		Build with DTrace probes
 DV_DESC?=		Quasar DV video codec support (libdv)
 DVDCSS_DESC?=		Encrypted DVD support via libdvdcss
 ECW_DESC?=		ECW image format support
