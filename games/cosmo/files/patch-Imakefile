@@ -1,5 +1,5 @@
---- Imakefile.orig	Sat May 11 16:06:00 1996
-+++ Imakefile	Wed Oct 18 08:09:08 2000
+--- Imakefile.orig	1996-05-11 11:06:00.000000000 +0400
++++ Imakefile	2015-01-24 20:35:32.000000000 +0300
 @@ -1,21 +1,22 @@
 -BINDIR = /usr/local/games
 +XCOMM BINDIR = /usr/local/games
@@ -12,8 +12,9 @@
 +XCOMM CC = gcc
  REGULATE_TIMER = -DREG_TIMER
 -DATADIR = $(BINDIR)/cosmodir
+-DATAFILE = $(DATADIR)/best.dat
 +DATADIR = $(LIBDIR)/cosmo
- DATAFILE = $(DATADIR)/best.dat
++DATAFILE = /var/games/cosmo/best.dat
  PROTO_DEFINES = -DRANK_FILE=\"$(DATAFILE)\" $(PAD) $(REGULATE_TIMER) $(SIGNAL)
 -CDEBUGFLAGS = -O2 # -g
 +XCOMM CDEBUGFLAGS = -O2 # -g
@@ -28,7 +29,7 @@
  
  hd: hd.c
  	$(CC) -o hd hd.c
-@@ -27,11 +28,12 @@
+@@ -27,11 +28,10 @@
  
  install::
  	@if [ -d $(DATADIR) ]; then echo cosmodir exists, not created.;\
@@ -36,10 +37,9 @@
 +	 else $(MKDIRHIER) $(DATADIR); fi
  	$(CHMOD) 711 $(DATADIR)
  	@if [ -f $(DATAFILE) ]; then echo ranking file exists, not created.;\
- 	 else echo > $(DATAFILE); fi
+-	 else echo > $(DATAFILE); fi
 -	$(CHMOD) 666 $(DATAFILE)
-+	$(CHOWN) root:games $(DATAFILE)
-+	$(CHMOD) 664 $(DATAFILE)
++	 else echo > $(DATAFILE).sample; fi
  
  pack::
  	$(TAR) cfz cosmo.tgz *.c *.h Imakefile chara.dat *.doc
