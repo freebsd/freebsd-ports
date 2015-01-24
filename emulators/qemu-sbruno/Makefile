@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.2.50.g20150106
+PORTVERSION=	2.2.50.g20150123
 CATEGORIES=	emulators
 MASTER_SITES=	GH GHC \
 		LOCAL/nox \
@@ -20,7 +20,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_COMMIT=	d1fbcfc
+GH_COMMIT=	0dbb545
 GH_TAGNAME=	${GH_COMMIT}
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
@@ -62,7 +62,7 @@ PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 .if ${ARCH} != "amd64"
 CONFIGURE_ARGS+=	--target-list=i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,ppc-bsd-user
 .else
-CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user,ppc-bsd-user,ppc64-bsd-user
+CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user,ppc-bsd-user,ppc64-bsd-user,aarch64-bsd-user
 .endif
 .else
 .if ${PORT_OPTIONS:MX86_TARGETS}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,spar
 .if ${ARCH} != "amd64"
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,ppc-bsd-user
 .else
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user,ppc-bsd-user,ppc64-bsd-user
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user,ppc-bsd-user,ppc64-bsd-user,aarch64-bsd-user
 .endif
 .else
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
