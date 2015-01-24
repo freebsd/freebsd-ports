@@ -27,6 +27,7 @@
 %%NONX86%%bin/qemu-system-sparc64
 %%NONX86%%bin/qemu-system-tricore
 %%NONX86%%bin/qemu-system-unicore32
+%%BSD_USER64%%bin/qemu-aarch64%%STATIC%%
 %%BSD_USER%%bin/qemu-arm%%STATIC%%
 %%BSD_USER%%bin/qemu-i386%%STATIC%%
 %%BSD_USER%%bin/qemu-mips%%STATIC%%
