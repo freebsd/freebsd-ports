@@ -1,8 +1,3 @@
-@group games
-@mode 2755
-bin/yahtzee
-@mode 664
-%%DATADIR%%/yahtzee.sco
-@group
-@mode
-@dirrm %%DATADIR%%
+@(,games,2755) bin/yahtzee
+@sample(,games,664) /var/games/yahtzee/yahtzee.sco.sample
+@dir(,games,775) /var/games/yahtzee
