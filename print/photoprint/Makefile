@@ -2,7 +2,7 @@
 
 PORTNAME=	photoprint
 DISTVERSION=	0.4.2-pre2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 
@@ -12,7 +12,7 @@ COMMENT=	Utility to print multiple images per sheet
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
-		libgutenprint.so:${PORTSDIR}/print/gutenprint \
+		libgutenprint.so:${PORTSDIR}/print/gutenprint-base \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
