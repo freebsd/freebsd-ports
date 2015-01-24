@@ -2,7 +2,7 @@
 +++ Makefile	Wed Nov  8 04:48:42 2000
 @@ -1,4 +1,4 @@
 -CFLAGS =
-+CFLAGS += -DHAS_RENAME -DSCOREDIR=\"$(PREFIX)/share/yahtzee\"
++CFLAGS += -DHAS_RENAME -DSCOREDIR=\"/var/games/yahtzee\"
  
  OBJ = computer.o main.o
  
