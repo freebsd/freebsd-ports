@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osh
-DISTVERSION=	20141024
+DISTVERSION=	20150115
 CATEGORIES=	shells
 MASTER_SITES=	http://v6shell.org/src/
 
