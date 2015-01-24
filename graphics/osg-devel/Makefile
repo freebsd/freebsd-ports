@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.3.2
-PORTREVISION=	5
+PORTVERSION=	3.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,17 +29,18 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=112 \
+		OSG_SHLIBVER=115 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
 PORTSCOUT=	limitw:1,odd
 
-OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE GTA \
-		VNC OPENEXR FFMPEG SVG PDF SDL NVTT QT4 XRANDR \
-		LUA V8 PYTHON
+OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA INVENTOR \
+		JASPER LIBLAS LUA NVTT OPENEXR PDF PYTHON QT4 SDL \
+		SVG V8 VNC XINE XRANDR
 OPTIONS_DEFAULT=FREETYPE GIF FFMPEG XRANDR
 
+LIBLAS_DESC=	liblas support
 GDAL_DESC=	GDAL support
 INVENTOR_DESC=	SGI OpenInventor support
 GTA_DESC=	GTA file format support
@@ -54,9 +54,11 @@ PYTHON_DESC=	Python script engine support
 OPTIONS_SUB=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIBLAS_LIB_DEPENDS=	liblas.so:${PORTSDIR}/devel/liblas
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GSTREAMER_USE=		GNOME=glib20 GSTREAMER1=yes
 INVENTOR_LIB_DEPENDS=	libInventor.so:${PORTSDIR}/graphics/inventor
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
 XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
@@ -80,7 +82,7 @@ PYTHON_USES=		python:2
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt5Widgets wxWidgets OpenAL GtkGl # only for examples
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt5Widgets wxWidgets OpenAL GtkGl SDL2 # only for examples
 FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
 FORCE_IGNORE+=	OpenVRML                                     # ports version too old
 FORCE_IGNORE+=	ITK                                          # ports version doesn't build on 10.x
