@@ -12,6 +12,8 @@ DISTNAME=	glpng
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to easily load PNG files as an OpenGL textures
 
+LICENSE=	ZLIB
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_GL=		gl
