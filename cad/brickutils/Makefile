@@ -20,7 +20,7 @@ COMMENT=	Utility for building models with LEGO
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
-		${PYTHON_PACKAGENAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYXML}
 
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
