@@ -6,6 +6,7 @@
 %%GUI%%bin/graph-editor
 %%OCAMLGRAPHDIR%%/builder.mli
 %%OCAMLGRAPHDIR%%/classic.mli
+%%OCAMLGRAPHDIR%%/clique.mli
 %%OCAMLGRAPHDIR%%/cliquetree.mli
 %%OCAMLGRAPHDIR%%/coloring.mli
 %%OCAMLGRAPHDIR%%/components.mli
@@ -24,8 +25,8 @@
 %%OCAMLGRAPHDIR%%/graph.cmi
 %%OCAMLGRAPHDIR%%/graph.cmo
 %%OCAMLGRAPHDIR%%/graph.cmx
-%%OCAMLGRAPHDIR%%/graph.cmxs
 %%OCAMLGRAPHDIR%%/graph.cmxa
+%%OCAMLGRAPHDIR%%/graph.cmxs
 %%OCAMLGRAPHDIR%%/graph.o
 %%OCAMLGRAPHDIR%%/graphml.mli
 %%OCAMLGRAPHDIR%%/graphviz.mli
@@ -35,6 +36,7 @@
 %%OCAMLGRAPHDIR%%/mcs_m.mli
 %%OCAMLGRAPHDIR%%/md.mli
 %%OCAMLGRAPHDIR%%/merge.mli
+%%OCAMLGRAPHDIR%%/mincut.mli
 %%OCAMLGRAPHDIR%%/minsep.mli
 %%OCAMLGRAPHDIR%%/nonnegative.mli
 %%OCAMLGRAPHDIR%%/oper.mli
