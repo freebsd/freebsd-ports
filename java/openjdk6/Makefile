@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b33
-PORTREVISION?=	0
+PORTVERSION=	b34
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	14_oct_2014
+OPENJDK_BUILDDATE=	20_jan_2015
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -142,6 +142,10 @@ MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
 
+.if ${PORT_OPTIONS:MPOLICY}
+MAKE_ENV+=	UNLIMITED_CRYPTO="YES"
+.endif
+
 .if ${PORT_OPTIONS:MSOUND}
 EXTRA_PATCHES+=	${FILESDIR}/alsa-enable.patch
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
@@ -248,13 +252,6 @@ post-patch:
 	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java
-.if ${PORT_OPTIONS:MPOLICY}
-	@${REINPLACE_CMD} -e 's|%%POLICY%%|unlimited|' \
-	    ${WRKSRC}/jdk/make/javax/crypto/Makefile
-.else
-	@${REINPLACE_CMD} -e 's|%%POLICY%%|limited|' \
-	    ${WRKSRC}/jdk/make/javax/crypto/Makefile
-.endif
 .if defined(BUILD_JRE)
 	@${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${PREFIX}/openjdk6-jre|" \
 	    ${WRKSRC}/hotspot/src/os/posix/launcher/java_md.c \
