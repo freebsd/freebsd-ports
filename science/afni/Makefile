@@ -28,7 +28,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
 		libgsl.so:${PORTSDIR}/math/gsl \
-		libnetcdf.so:${PORTSDIR}/science/netcdf-fortran
+		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \

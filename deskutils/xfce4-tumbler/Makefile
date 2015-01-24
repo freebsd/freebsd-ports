@@ -86,8 +86,7 @@ USE_GNOME+=	gdkpixbuf2
 CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
 PLIST_SUB+=	PIXBUF=""
 .endif
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libexif.so:${PORTSDIR}/graphics/exif
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg-thumbnailer
 PLIST_SUB+=	JPEG=""
 .else

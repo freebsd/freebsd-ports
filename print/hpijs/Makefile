@@ -39,7 +39,8 @@ PLIST_SUB+=		FOOMATIC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups-install
 PLIST_SUB+=		CUPS=""
 .else

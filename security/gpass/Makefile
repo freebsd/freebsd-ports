@@ -3,14 +3,14 @@
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for GNOME2
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/mcrypt \
+LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 		libmhash.so:${PORTSDIR}/security/mhash
 
 GNU_CONFIGURE=	yes

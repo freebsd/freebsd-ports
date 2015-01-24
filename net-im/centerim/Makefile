@@ -3,7 +3,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -57,7 +57,7 @@ IRC_CONFIGURE_ENABLE=	irc
 JABBER_CONFIGURE_ENABLE=jabber
 RSS_CONFIGURE_ENABLE=	rss
 LJ_CONFIGURE_ENABLE=	lj
-GG_LIB_DEPENDS=		libgadu.so:${PORTSDIR}/polish/ekg
+GG_LIB_DEPENDS=		libgadu.so:${PORTSDIR}/polish/libgadu
 GG_CONFIGURE_ENABLE=	gg
 GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
