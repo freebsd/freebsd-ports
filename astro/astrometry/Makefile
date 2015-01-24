@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	astrometry
-PORTVERSION=	0.46
-PORTREVISION=	3
+PORTVERSION=	0.50
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Describes an astronomical image
+COMMENT=	Software for describing astronomical images
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig python tar:bzip2
+USE_LDCONFIG=	yes
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
