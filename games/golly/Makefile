@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Conway's Game of Life and other cellular automata
 
-USES=		cmake:outsource perl5 python
+USES=		compiler:c++11-lib cmake:outsource perl5 python
 USE_WX=		3.0
 WX_UNICODE=	yes
 
