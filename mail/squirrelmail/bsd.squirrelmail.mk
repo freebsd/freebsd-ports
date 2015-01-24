@@ -36,7 +36,7 @@ DIST_SUBDIR?=	squirrelmail
 RUN_DEPENDS+=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 .ifdef USE_SM_COMPAT
-RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS+=	squirrelmail-compatibility-plugin>0:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 .endif
 
 .ifndef WITHOUT_ACTIVATE

@@ -12,7 +12,7 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 TINYMCEDIR=	www/tinymce
 
 # we support either tinymce2 or tinymce3
-RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}:${PORTSDIR}/www/tinymce3
+RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}/changelog.txt:${PORTSDIR}/www/tinymce3
 
 PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
