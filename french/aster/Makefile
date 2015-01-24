@@ -31,7 +31,7 @@ LICENSE=	GPLv2
 #
 #-----------------------------------------------------------------------
 
-BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
+BUILD_DEPENDS+=	astk-serveur>0:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch		\
 		python:${PORTSDIR}/lang/python					\
@@ -39,10 +39,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5				\
 		libmed.so:${PORTSDIR}/french/med				\
 		libmetis.so.0:${PORTSDIR}/math/metis-edf
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis:${PORTSDIR}/math/metis-edf		\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
-		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
+		astk-serveur>0:${PORTSDIR}/cad/astk-serveur
 
 USES=		bison fortran tk python:2
 
@@ -80,13 +80,13 @@ FLAGARCH=	-DLINUX64
 .endif
 
 .if !defined(WITHOUT_ASTK_CLI)
-RUN_DEPENDS+=	${ASTKDIR}:${PORTSDIR}/cad/astk-client
+RUN_DEPENDS+=	astk-client>0:${PORTSDIR}/cad/astk-client
 PLIST_SUB+=	ASTK_CLIENT=""  ASTKDIR=${ASTKDIR}
 .else
 PLIST_SUB+=	ASTK_CLIENT="@comment " ASTKDIR=""
 .endif
 .if !defined(WITHOUT_EFICAS)
-RUN_DEPENDS+=	${LOCALBASE}/apps/eficas:${PORTSDIR}/french/eficas
+RUN_DEPENDS+=	fr-eficas>0:${PORTSDIR}/french/eficas
 PLIST_SUB+=	EFICAS=""
 .else
 PLIST_SUB+=	EFICAS="@comment "

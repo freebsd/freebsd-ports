@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=-no-gtkstyle
 .endif
 
 .if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
+RUN_DEPENDS+=	xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 .endif
 

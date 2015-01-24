@@ -11,7 +11,7 @@ DISTNAME=	ioquake3-${DISTVERSION}
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
-RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
+RUN_DEPENDS=	urbanterror-data>0:${PORTSDIR}/games/urbanterror-data
 
 MASTERDIR=	${.CURDIR}/../ioquake3
 

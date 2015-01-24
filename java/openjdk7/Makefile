@@ -57,7 +57,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 
 DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties
 
@@ -106,7 +106,7 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 
 DEBUG_MAKE_ENV=	ALT_OBJCOPY=${NONEXISTENT}
 POLICY_MAKE_ENV=	UNLIMITED_CRYPTO=1
-TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
 
 .include <bsd.port.options.mk>
 

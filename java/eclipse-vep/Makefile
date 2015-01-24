@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for creating GUI builders for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
+		eclipse-emf>0:${PORTSDIR}/java/eclipse-emf \
+		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef
 
 USES=		zip
 NO_BUILD=	yes

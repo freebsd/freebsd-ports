@@ -19,8 +19,8 @@ LICENSE_COMB=	multi
 ## XXX - Notify the maintainer if the dependencies on either
 ## java/eclipse-gef of java/eclipse-webtools change
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef \
-		${LOCALBASE}/share/eclipse/dropins/webtools:${PORTSDIR}/java/eclipse-webtools
+		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef \
+		eclipse-webtools>0:${PORTSDIR}/java/eclipse-webtools
 
 USES=		zip
 NO_BUILD=	yes

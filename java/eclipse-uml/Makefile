@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework creating UML diagrams in Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf
+		eclipse-emf>0:${PORTSDIR}/java/eclipse-emf
 
 USES=		zip
 NO_BUILD=	yes

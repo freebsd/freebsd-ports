@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
+		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef
 
 USES=		zip
 NO_BUILD=	yes

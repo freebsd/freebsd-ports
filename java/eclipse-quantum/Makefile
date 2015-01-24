@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
+		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef
 
 USES=		zip
 NO_WRKSUBDIR=	yes

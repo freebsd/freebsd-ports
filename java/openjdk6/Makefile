@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 
 OPENJDK_BUILDDATE=	20_jan_2015
 
@@ -79,7 +79,7 @@ CATEGORIES+=	ipv6
 .endif
 
 .if ${PORT_OPTIONS:MTZUPDATE}
-RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+RUN_DEPENDS+=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
 .endif
 
 # avoid ARCH in MAKEFLAGS, breaks build
@@ -157,7 +157,7 @@ EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
 .if ${PORT_OPTIONS:MTEST}
 DISTFILES+=	${JTREGFILE}:jtreg
 EXTRACT_ONLY+=	${JTREGFILE}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+BUILD_DEPENDS+=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 USES+=		display:test
 .else
 EXTRA_PATCHES+=	${FILESDIR}/test_gamma-disable.patch

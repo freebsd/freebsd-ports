@@ -87,8 +87,7 @@ USE_XORG+=	xxf86dga
 CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
 .endif
 .if ${PORT_OPTIONS:MOPENGL}
-USE_XORG+=	glproto
-LIB_DEPENDS+=	libGL.so:${PORTSDIR}/graphics/libGL
+USE_GL+=	gl
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif

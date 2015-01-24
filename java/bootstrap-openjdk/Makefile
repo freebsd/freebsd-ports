@@ -13,7 +13,7 @@ COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
 
 ONLY_FOR_ARCHS=	amd64 i386
 

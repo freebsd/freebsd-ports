@@ -14,11 +14,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		msgfmt:${PORTSDIR}/devel/gettext \
 		intltool-update:${PORTSDIR}/textproc/intltool
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm:${PORTSDIR}/archivers/rpm4 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm4 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \
-		${PYTHON_SITELIBDIR}/iniparse:${PORTSDIR}/devel/py-iniparse \
-		${PYTHON_SITELIBDIR}/urlgrabber:${PORTSDIR}/www/py-urlgrabber
+		${PYTHON_PKGNAMEPREFIX}iniparse>0:${PORTSDIR}/devel/py-iniparse \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
 
 USES=		gettext gmake python
 
