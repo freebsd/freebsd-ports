@@ -1,5 +1,5 @@
 --- configure.orig	2014-12-17 22:02:44.000000000 +0100
-+++ configure	2014-12-23 15:09:25.965346239 +0100
++++ configure	2015-01-24 17:13:38.903362604 +0100
 @@ -646,7 +646,7 @@
  _iwmmxt=auto
  _mtrr=auto
@@ -131,6 +131,17 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
+@@ -6133,8 +6143,8 @@
+         cat > $TMPC << EOF
+ #include <stdio.h>
+ #include <cdio/version.h>
+-#include <cdio/cdda.h>
+-#include <cdio/paranoia.h>
++#include <cdio/paranoia/cdda.h>
++#include <cdio/paranoia/paranoia.h>
+ int main(void) {
+     void *test = cdda_verbose_set;
+     printf("%s\n", CDIO_VERSION);
 @@ -6566,7 +6576,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
