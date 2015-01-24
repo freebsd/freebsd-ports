@@ -107,7 +107,7 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The Django project reports:</p>
 	<blockquote cite="https://www.djangoproject.com/weblog/2015/jan/13/security/">
 	  <p>Today the Django team is issuing multiple releases --
 	    Django 1.4.18, Django 1.6.10, and Django 1.7.3 -- as part of our
@@ -128,6 +128,7 @@ Notes:
     <dates>
       <discovery>2015-01-13</discovery>
       <entry>2015-01-23</entry>
+      <modified>2015-01-24</modified>
     </dates>
   </vuln>
 
