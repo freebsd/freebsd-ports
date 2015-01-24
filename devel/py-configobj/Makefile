@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	configobj
-PORTVERSION=	4.7.2
-PORTREVISION=	1
+PORTVERSION=	5.0.6
+PORTREVISION=	0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.voidspace.org.uk/downloads/ \
-		SF \
-		${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -15,7 +13,7 @@ COMMENT=	Simple but powerful config file reader and writer
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
