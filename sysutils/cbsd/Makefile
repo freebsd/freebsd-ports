@@ -1,14 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	10.1.3
+PORTVERSION=	10.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
-COMMENT=	Yet another FreeBSD Jail Management Utility
-
-ONLY_FOR_ARCHS= i386 amd64
-ONLY_FOR_ARCHS_REASON=	Depends on SSE 4.1 instructions
+COMMENT=	Yet another FreeBSD Jail and Bhyve Management Utility
 
 LICENSE=	BSD2CLAUSE
 
@@ -21,7 +18,7 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	9d99c8e
+GH_COMMIT=	f68f99f
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
 
