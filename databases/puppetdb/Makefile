@@ -3,7 +3,7 @@
 PORTNAME=	puppetdb
 PORTVERSION=	2.2.2
 CATEGORIES=	databases java
-MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
+MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 
 MAINTAINER=	xaque208@gmail.com
 COMMENT=	PuppetDB storeconfigs backend
