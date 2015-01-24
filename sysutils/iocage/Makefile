@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.6
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	96b83eb
+GH_COMMIT=	41f9863
 
 PLIST_FILES=	etc/rc.d/iocage \
 		sbin/iocage \
@@ -23,8 +23,8 @@ PLIST_FILES=	etc/rc.d/iocage \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		This port works only on FreeBSD 10 and newer
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900044
+BROKEN=		This port works only on FreeBSD 9 and newer
 .endif
 
 NO_BUILD=	yes
