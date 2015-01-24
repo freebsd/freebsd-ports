@@ -60,10 +60,10 @@ PDF_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 PDF_USE=		TEX=texlive,pdftex:build,dvipsk:build
 PDF_USES=		gmake
 PIL_DESC=		Text and window rendering support via PIL
-PIL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-imaging
+PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 PYGAME_DESC=		Window, text and image rendering support via PyGame
-PYGAME_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame:${PORTSDIR}/devel/py-game
-PYGLET_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyglet:${PORTSDIR}/graphics/py-pyglet
+PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>0:${PORTSDIR}/graphics/py-pyglet
 SDL2_DESC=		Simple Direct Media Layer v2.0 support
 SDL2_MAKE_ENV=		USE_SDL=1
 SDL2_USE=		SDL=sdl2,ttf2,mixer2

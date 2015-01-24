@@ -9,7 +9,7 @@ COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
+RUN_DEPENDS=	autoconf>0:${PORTSDIR}/devel/autoconf \
 		curl:${PORTSDIR}/ftp/curl \
 		gmake:${PORTSDIR}/devel/gmake
 

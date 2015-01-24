@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
 		swig2.0:${PORTSDIR}/devel/swig20 \
 		cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/lxml:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \

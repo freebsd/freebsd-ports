@@ -7,7 +7,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -16,7 +16,7 @@ COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libspeexdsp.so:${PORTSDIR}/audio/speex \
+		libspeexdsp.so:${PORTSDIR}/audio/speexdsp \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		liborc-0.4.so:${PORTSDIR}/devel/orc \

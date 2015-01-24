@@ -3,6 +3,7 @@
 
 PORTNAME=	libebur128
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Implementation of the EBU R128 loudness standard
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speexdsp
 
 USES=		cmake:outsource pkgconfig
 

@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-gpg
 PORTVERSION=	0.5.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple commandline wrapper around gpg for gnome-keyring
 
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
 USES=		pkgconfig tar:bzip2

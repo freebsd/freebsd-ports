@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:${PORTSDIR}/audio/py-vorbis \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
 		${PYTHON_PKGNAMEPREFIX}soya3d>0:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_PKGNAMEPREFIX}tofu>0:${PORTSDIR}/net/py-tofu \
 		${PYTHON_PKGNAMEPREFIX}cerealizer>0:${PORTSDIR}/security/py-cerealizer
