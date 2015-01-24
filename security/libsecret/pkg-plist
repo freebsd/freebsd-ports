@@ -118,3 +118,5 @@ share/locale/uk/LC_MESSAGES/libsecret.mo
 share/locale/zh_CN/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
 share/locale/zh_TW/LC_MESSAGES/libsecret.mo
+share/vala/vapi/libsecret-1.deps
+share/vala/vapi/libsecret-1.vapi
