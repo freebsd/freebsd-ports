@@ -25,7 +25,7 @@ WITH_OPENJADE=	yes
 .endif
 
 .if defined(WITH_OPENJADE)
-RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
+RUN_DEPENDS=	openjade>0:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
