@@ -132,11 +132,6 @@ GROUPS=	${MPDGROUP}
 
 .include <bsd.port.options.mk>
 
-# Work around suspected clang bug
-.if ${OSVERSION} >= 1001000
-USE_GCC=	yes
-.endif
-
 .ifdef MPDCONF
 IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
 .endif
