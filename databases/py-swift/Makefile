@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/187486124/
+MASTER_SITES=	http://launchpadlibrarian.net/193017975/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -80,6 +79,7 @@ post-patch:
 		${WRKSRC}/swift/common/db_replicator.py \
 		${WRKSRC}/swift/common/manager.py \
 		${WRKSRC}/swift/common/middleware/account_quotas.py \
+		${WRKSRC}/swift/common/middleware/container_quotas.py \
 		${WRKSRC}/swift/common/middleware/container_sync.py \
 		${WRKSRC}/swift/common/middleware/gatekeeper.py \
 		${WRKSRC}/swift/common/middleware/list_endpoints.py \
