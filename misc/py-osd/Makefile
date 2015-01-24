@@ -3,7 +3,7 @@
 
 PORTNAME=	osd
 PORTVERSION=	0.2.14
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc python
 MASTER_SITES=	http://ichi2.net/pyosd/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
-RUN_DEPENDS=	${LOCALBASE}/bin/twistd:${PORTSDIR}/devel/py-twisted
 
-USES=		python
+USES=		python twisted:run
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
