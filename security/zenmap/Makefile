@@ -17,7 +17,7 @@ COMMENT=	GUI frontend for the Nmap scanning utility
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
-		${PYTHON_PACKAGENAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
