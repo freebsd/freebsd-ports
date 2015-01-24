@@ -675,6 +675,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/index.html
 %%ICINGAWWWDIR%%/docs/js/icinga-docs.js
 %%ICINGAWWWDIR%%/docs/js/jquery-min.js
+%%ICINGAWWWDIR%%/docs/js/jquery-1.8.2.js
 %%ICINGAWWWDIR%%/docs/robots.txt
 %%ICINGAWWWDIR%%/docs/stylesheets/icinga-docs.css
 %%ICINGAWWWDIR%%/images/Icinga_Header_Webinterface.jpg
