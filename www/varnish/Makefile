@@ -5,7 +5,7 @@ PORTVERSION=	3.0.6
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
