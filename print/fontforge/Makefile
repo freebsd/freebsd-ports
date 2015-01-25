@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-DISTVERSION=	20141126
-PORTREVISION=	1
+DISTVERSION=	20141230
 CATEGORIES=	print
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
 
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge
-GH_COMMIT=	2b4e6df
+GH_COMMIT=	eb11c93
 
 USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv libtool pkgconfig python shared-mime-info
 USE_XORG=	x11 xi ice xkbui
@@ -61,7 +60,7 @@ MASTER_SITES+=	http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/:fre
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,}:freetype \
 		ftp://ftp.freetype.org/freetype/freetype2/:freetype
-FREETYPE_VERSION=	2.5.4
+FREETYPE_VERSION=	2.5.5
 FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
 DISTFILES+=	${FREETYPE_SRC:C/$/:freetype/}
 CONFIGURE_ARGS+=	--enable-freetype-debugger=${WRKDIR}/freetype-${FREETYPE_VERSION}
