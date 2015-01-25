@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel pear
 
 MAINTAINER=	bofh@FreeBSD.org
