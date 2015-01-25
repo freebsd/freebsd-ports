@@ -41,11 +41,3 @@ share/ontology/pimo/pimo.ontology
 share/ontology/pimo/pimo.trig
 share/ontology/pimo/tmo.ontology
 share/ontology/pimo/tmo.trig
-@dirrm share/ontology/pimo
-@dirrm share/ontology/nie
-@dirrm share/ontology/nepomuk
-@dirrm share/ontology/dc
-@dirrm share/ontology/core
-@dirrm share/ontology
-@dirrm lib/cmake/SharedDesktopOntologies
-@dirrmtry lib/cmake
