@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-01-25 12:10:35 UTC
++++ configure.ac
+@@ -278,7 +278,7 @@ BINDING_LIB_TARGETS=""
+ dnl Check if cxx-binding not wanted, default is to build it
+ 
+ # TODO: check whether CXX is functional
+-AC_CHECK_PROG(cf_with_cxx, "${CXX}", [yes], [no])
++AC_PATH_PROG(cf_with_cxx, "${CXX}", [yes], [no])
+ 
+ AC_MSG_CHECKING(whether to build C++ binding and demo)
+ AC_ARG_WITH(cxx-binding,
