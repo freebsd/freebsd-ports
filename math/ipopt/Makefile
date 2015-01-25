@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Ipopt
-PORTVERSION=	3.11.9
-PORTREVISION=	1
+PORTVERSION=	3.11.10
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/:srcs	\
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
