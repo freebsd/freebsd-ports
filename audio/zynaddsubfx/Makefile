@@ -54,8 +54,7 @@ LASH_CMAKE_OFF=			-DLashEnabe:BOOL=OFF
 JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_OFF=			-DJackEnable:BOOL=OFF
 
-PORTAUDIO_BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_RUN_DEPENDS=		portaudio2>=0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_LIB_DEPENDS=		libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 PORTAUDIO_CFLAGS=		-I${LOCALBASE}/include/portaudio2
 PORTAUDIO_CMAKE_OFF=		-DPaEnabe:BOOL=OFF
 PORTAUDIO_LDFLAGS=		${LOCALBASE}/lib/portaudio2/libportaudio.so
