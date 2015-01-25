@@ -590,6 +590,7 @@
     SUBDIR += mindguard
     SUBDIR += minecraft-client
     SUBDIR += minecraft-server
+    SUBDIR += minerbold
     SUBDIR += minetest
     SUBDIR += minetest_game
     SUBDIR += mirrormagic
