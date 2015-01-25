@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkstyle
-PORTVERSION=	5.8
+PORTVERSION=	6.2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	java-
@@ -39,9 +39,8 @@ do-install:
 	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE* RIGHTS.antlr \
 		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} site ${STAGEDIR}${DOCSDIR})
 	@-${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for EXAMPLEFILE in checkstyle_checks import-control sun_checks suppressions
+.for EXAMPLEFILE in checkstyle_checks import-control suppressions
 	${INSTALL_DATA} ${WRKSRC}/${EXAMPLEFILE}.xml ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${EXAMPLESDIR})
