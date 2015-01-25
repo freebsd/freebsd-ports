@@ -387,6 +387,7 @@
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
     SUBDIR += edb
+    SUBDIR += editline
     SUBDIR += efivar
     SUBDIR += efl
     SUBDIR += eggdbus

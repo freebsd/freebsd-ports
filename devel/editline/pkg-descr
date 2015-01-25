@@ -1,0 +1,12 @@
+This is a line editing library. It can be linked into almost any program to
+provide command-line editing and history. It is call-compatible with the FSF
+readline library, but is a fraction of the size (and offers fewer features).
+
+The editline library was created by Simmule Turner and Rich Salz back in 1992.
+At the time they chose to distribute the code under a "C News-like" copyright,
+see the file LICENSE for details.
+
+The small size (<30k), lack of dependencies (no ncurses needed!) and the free
+license should make this library interesting to many embedded developers
+
+WWW: https://github.com/troglobit/editline
