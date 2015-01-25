@@ -20,4 +20,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	libedit-*
+
 .include <bsd.port.mk>

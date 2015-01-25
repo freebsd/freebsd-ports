@@ -23,4 +23,6 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-widec
 MAKE_ENV=	LC_ALL=C
 
+CONFLICT_INSTALL=	editline-*
+
 .include <bsd.port.mk>
