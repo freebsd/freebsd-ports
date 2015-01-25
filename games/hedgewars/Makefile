@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.20.5
-PORTREVISION=	4
+PORTVERSION=	0.9.21.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,6 +13,8 @@ COMMENT=	Free Worms-like turn based strategy game
 
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
+
+LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386 and amd64
@@ -30,11 +31,10 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.[0-9]$//}
 
 PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
+		share/appdata/hedgewars.appdata.xml \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png \
-		lib/libhwphysfs.so \
-		lib/libhwphysfs.so.1 \
-		lib/libhwphysfs.so.2.1.0 \
+		share/pixmaps/${PORTNAME}.xpm \
 		lib/libphyslayer.so
 PORTDATA=	*
 
@@ -48,17 +48,19 @@ SERVER_DESC=	Build server (requires haskell)
 #VIDEOREC_LIB_DEPENDS=libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
 #VIDEOREC_CMAKE_OFF=-DNOVIDEOREC=1
 
-SERVER_BUILD_DEPENDS=\
-		ghc:${PORTSDIR}/lang/ghc \
-		hs-vector>=0:${PORTSDIR}/devel/hs-vector \
-		hs-network>=0:${PORTSDIR}/net/hs-network \
-		hs-utf8-string>=0:${PORTSDIR}/devel/hs-utf8-string \
-		hs-bytestring-show>=0:${PORTSDIR}/devel/hs-bytestring-show \
-		hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc \
-		hs-random>=0:${PORTSDIR}/devel/hs-random \
-		hs-hslogger>=0:${PORTSDIR}/devel/hs-hslogger
-SERVER_CMAKE_OFF=-DNOSERVER=1
-SERVER_PLIST_FILES=bin/${PORTNAME}-server
+SERVER_BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+			hs-vector>=0:${PORTSDIR}/devel/hs-vector \
+			hs-network>=0:${PORTSDIR}/net/hs-network \
+			hs-utf8-string>=0:${PORTSDIR}/devel/hs-utf8-string \
+			hs-bytestring-show>=0:${PORTSDIR}/devel/hs-bytestring-show \
+			hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc \
+			hs-random>=0:${PORTSDIR}/devel/hs-random \
+			hs-hslogger>=0:${PORTSDIR}/devel/hs-hslogger \
+			hs-SHA>=0:${PORTSDIR}/security/hs-SHA \
+			hs-entropy>=0:${PORTSDIR}/security/hs-entropy \
+			hs-zlib>=0:${PORTSDIR}/archivers/hs-zlib
+SERVER_CMAKE_OFF=	-DNOSERVER=1
+SERVER_PLIST_FILES=	bin/${PORTNAME}-server
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
