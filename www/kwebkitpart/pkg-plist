@@ -8,4 +8,3 @@ share/icons/hicolor/32x32/apps/webkit.png
 share/icons/hicolor/48x48/apps/webkit.png
 share/icons/hicolor/64x64/apps/webkit.png
 share/kde4/services/kwebkitpart.desktop
-@dirrmtry share/apps/kwebkitpart
