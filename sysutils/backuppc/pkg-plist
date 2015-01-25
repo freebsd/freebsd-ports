@@ -1,4 +1,3 @@
-@stopdaemon backuppc
 @mode 0555
 bin/BackupPC
 bin/BackupPC_archive
@@ -128,35 +127,13 @@ man/man1/backuppc.1.gz
 @group backuppc
 @mode 04554
 %%CGIDIR%%/BackupPC_Admin
-@owner
-@group
 @mode
-@dirrm lib/BackupPC/CGI
-@dirrm lib/BackupPC/Config
-@dirrm lib/BackupPC/Lang
-@dirrm lib/BackupPC/Storage
-@dirrm lib/BackupPC/Xfer
-@dirrm lib/BackupPC/Zip
-@dirrm lib/BackupPC
-@dirrm lib/Net/FTP
-@dirrm lib/Net
-@dirrmtry %%WWWDIR%%
-@dirrmtry %%CGIDIR%%
-@exec install -d -o backuppc -g backuppc -m 0750 /var/log/BackupPC
-@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC
-@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/cpool
-@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pc
-@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pool
-@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/trash
-@dirrmtry /var/log/BackupPC
-@dirrmtry /var/db/BackupPC/cpool
-@dirrmtry /var/db/BackupPC/pc
-@dirrmtry /var/db/BackupPC/pool
-@dirrmtry /var/db/BackupPC/trash
-@dirrmtry /var/db/BackupPC
-@owner backuppc
-@group backuppc
-@dirrmtry %%ETCDIR%%
+@dir /var/log/BackupPC
+@dir /var/db/BackupPC/cpool
+@dir /var/db/BackupPC/pc
+@dir /var/db/BackupPC/pool
+@dir /var/db/BackupPC/trash
+@dir /var/db/BackupPC
 @comment .sample files actually are templates for the configuration script
 @comment and should not be installed as working configuration files.
 @mode 0640
@@ -169,4 +146,3 @@ man/man1/backuppc.1.gz
 %%ETCDIR%%/update.sh
 libexec/backuppc/update.pl
 @mode
-@dirrm libexec/backuppc
