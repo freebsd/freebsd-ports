@@ -22,6 +22,8 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	hdb
 PORTDOCS=	README README.licenses README.unixthanks license.txt
 
+BROKEN=		Does not fetch
+
 .include <bsd.port.pre.mk>
 
 do-extract:
