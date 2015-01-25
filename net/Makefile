@@ -152,6 +152,7 @@
     SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
+    SUBDIR += go-amqp
     SUBDIR += go-cs
     SUBDIR += go.net
     SUBDIR += gofish
