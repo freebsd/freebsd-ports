@@ -126,6 +126,7 @@
     SUBDIR += kawa
     SUBDIR += kturtle
     SUBDIR += lafontaine
+    SUBDIR += lci
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += libobjc2
