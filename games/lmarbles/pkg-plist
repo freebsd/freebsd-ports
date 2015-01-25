@@ -1,7 +1,4 @@
-bin/lmarbles
-@unexec if cmp -s %D/%%ETCDIR%%/lmarbles.prfs.sample %D/%%ETCDIR%%/lmarbles.prfs ; then rm -f %D/%%ETCDIR%%/lmarbles.prfs ; fi
-%%ETCDIR%%/lmarbles.prfs.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lmarbles.prfs ] ; then cp -p %D/%F %B/lmarbles.prfs ; fi
+@(,games,2755) bin/lmarbles
 man/man6/lmarbles.6.gz
 share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/board.bmp
@@ -72,11 +69,5 @@ share/applications/lmarbles.desktop
 share/pixmaps/lmarbles32.png
 share/pixmaps/lmarbles48.gif
 share/pixmaps/lmarbles48.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/gfx/wood
-@dirrm %%DATADIR%%/gfx/stone
-@dirrm %%DATADIR%%/gfx/metal
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%
+@sample(,games,664) /var/games/lmarbles/lmarbles.prfs.sample
+@dir /var/games/lmarbles
