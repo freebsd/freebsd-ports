@@ -3,12 +3,15 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antont@inbox.lv
 COMMENT=	Software for describing astronomical images
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
@@ -19,7 +22,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig python tar:bzip2
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
@@ -36,9 +39,9 @@ post-patch:
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
 		${STAGEDIR}${PREFIX}/${PORTNAME}/etc/${PORTNAME}.cfg
-	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin -type f -not -name "*.py" \
-		-exec ${STRIP_CMD} {} \;
-	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib -type f -name "*.so" \
-		-exec ${STRIP_CMD} {} \;
+	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin \
+		-type f -not -name "*.py" -exec ${STRIP_CMD} {} \;
+	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib \
+		-type f -name "*.so" -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>
