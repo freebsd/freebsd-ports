@@ -3,6 +3,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.17.23
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -31,7 +32,7 @@ SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--program-transform-name="" --with-libintl-prefix=${LOCALBASE} \
-		--disable-compiler-warnings
+		--disable-compiler-warnings --with-logdir=/var/log
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 OPTIONS_DEFINE=	NLS
