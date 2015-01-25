@@ -590,6 +590,7 @@
     SUBDIR += go-pretty
     SUBDIR += go-raw
     SUBDIR += go-runewidth
+    SUBDIR += go-slices
     SUBDIR += go-sql-driver
     SUBDIR += go-termbox
     SUBDIR += go-uuid
