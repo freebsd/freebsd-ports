@@ -16,7 +16,7 @@ MAINTAINER=	ninjin@kth.se
 COMMENT=	Python bindings for the PortAudio multi-platform audio library
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
+LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fastaudio.so

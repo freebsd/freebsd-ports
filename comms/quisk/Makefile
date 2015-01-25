@@ -14,7 +14,7 @@ COMMENT=	Software Defined Radio (SDR)
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libportaudio.so:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
 		libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio
 

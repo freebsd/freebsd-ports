@@ -12,9 +12,8 @@ COMMENT=	Program to listen for and record sound activity
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USES=		ncurses tar:tgz
 

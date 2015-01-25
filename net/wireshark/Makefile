@@ -109,7 +109,7 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRTP} && !defined(LITE)
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
 CONFIGURE_ARGS+=--with-portaudio=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-portaudio
