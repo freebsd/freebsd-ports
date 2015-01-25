@@ -1,3 +1,5 @@
+@owner %%OTRS_USER%%
+@group %%WWWOWN%%
 otrs/.fetchmailrc.dist
 otrs/.mailfilter.dist
 otrs/.procmailrc.dist
@@ -2457,8 +2459,9 @@ otrs/var/stats/Stats.StatusActionOverview.de.xml
 otrs/var/stats/Stats.StatusActionOverview.en.xml
 otrs/var/stats/Stats.TicketOverview.de.xml
 otrs/var/stats/Stats.TicketOverview.en.xml
+@owner root
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
-@exec chown -R %%OTRS_USER%%:%%WWWOWN%% %D/otrs
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING-Third-Party
