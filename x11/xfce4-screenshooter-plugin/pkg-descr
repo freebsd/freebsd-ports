@@ -1,3 +1,4 @@
-Xfce4 Screenshooter is a plugin for the Xfce panel to take screenshots.
+Application and panel plugin to take screenshots. It allows you to capture the
+entire screen, the active window or a selected region.
 
-WWW: http://goodies.xfce.org/projects/panel-plugins/start#xfce4-screenshooter-plugin
+WWW: http://goodies.xfce.org/projects/applications/xfce4-screenshooter
