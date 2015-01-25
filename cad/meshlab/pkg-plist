@@ -13,6 +13,7 @@ lib/meshlab/plugins/libedit_paint.so
 lib/meshlab/plugins/libedit_pickpoints.so
 lib/meshlab/plugins/libedit_point.so
 lib/meshlab/plugins/libedit_quality.so
+lib/meshlab/plugins/libedit_referencing.so
 lib/meshlab/plugins/libedit_select.so
 lib/meshlab/plugins/libedit_texture.so
 lib/meshlab/plugins/libfilter_aging.so
@@ -25,9 +26,12 @@ lib/meshlab/plugins/libfilter_color_projection.so
 lib/meshlab/plugins/libfilter_colorize.so
 lib/meshlab/plugins/libfilter_colorproc.so
 lib/meshlab/plugins/libfilter_create.so
+lib/meshlab/plugins/libfilter_createiso.so
+lib/meshlab/plugins/libfilter_csg.so
 lib/meshlab/plugins/libfilter_dirt.so
 lib/meshlab/plugins/libfilter_fractal.so
 lib/meshlab/plugins/libfilter_func.so
+lib/meshlab/plugins/libfilter_geodesic.so
 lib/meshlab/plugins/libfilter_img_patch_param.so
 lib/meshlab/plugins/libfilter_isoparametrization.so
 lib/meshlab/plugins/libfilter_layer.so
@@ -48,8 +52,6 @@ lib/meshlab/plugins/libfilter_texture.so
 lib/meshlab/plugins/libfilter_trioptimize.so
 lib/meshlab/plugins/libfilter_unsharp.so
 lib/meshlab/plugins/libfilter_zippering.so
-lib/meshlab/plugins/libfiltercreateiso.so
-lib/meshlab/plugins/libfiltergeodesic.so
 lib/meshlab/plugins/libio_3ds.so
 lib/meshlab/plugins/libio_base.so
 lib/meshlab/plugins/libio_bre.so
@@ -61,6 +63,7 @@ lib/meshlab/plugins/libio_json.so
 lib/meshlab/plugins/libio_m.so
 lib/meshlab/plugins/libio_pdb.so
 lib/meshlab/plugins/libio_tri.so
+lib/meshlab/plugins/libio_txt.so
 lib/meshlab/plugins/libio_u3d.so
 lib/meshlab/plugins/libio_x3d.so
 lib/meshlab/plugins/librender_gdp.so
