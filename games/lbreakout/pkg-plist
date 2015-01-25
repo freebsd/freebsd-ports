@@ -43,6 +43,5 @@ share/lbreakout/wall.wav
 share/lbreakout/weapon.bmp
 share/lbreakout/weapon.wav
 share/lbreakout/wontgiveup.wav
-@dirrm share/lbreakout
-@(root,games,664) /var/games/lbreakout/lbreakout.hscr
-@dirrm /var/games/lbreakout
+@sample(root,games,664) /var/games/lbreakout/lbreakout.hscr.sample
+@dir /var/games/lbreakout
