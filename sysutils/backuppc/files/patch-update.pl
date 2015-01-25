@@ -177,7 +177,7 @@
 -    #
 -    # Install new CSS file, making a backup copy if necessary
 -    #
--    my $cssBackup = "$DestDir$Conf{CgiImageDir}/BackupPC_stnd.css.pre-3.3.0";
+-    my $cssBackup = "$DestDir$Conf{CgiImageDir}/BackupPC_stnd.css.pre-3.3.1";
 -    if ( -f "$DestDir$Conf{CgiImageDir}/BackupPC_stnd.css" && !-f $cssBackup ) {
 -	rename("$DestDir$Conf{CgiImageDir}/BackupPC_stnd.css", $cssBackup);
 -    }
