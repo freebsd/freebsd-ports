@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	justinmeza
-GH_COMMIT=                     2464d0c
-GH_TAGNAME=                    v0.11.2
+GH_COMMIT=	2464d0c
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake
 PLIST_FILES=	bin/lci
