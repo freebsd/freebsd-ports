@@ -6,4 +6,3 @@ lib/libqimageblitz.so
 lib/libqimageblitz.so.4
 lib/libqimageblitz.so.4.0.0
 libdata/pkgconfig/qimageblitz.pc
-@dirrm include/qimageblitz
