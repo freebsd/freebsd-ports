@@ -28,7 +28,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
 USES=		gmake shebangfix tar:xz
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
 USE_OPENSSL=	yes
