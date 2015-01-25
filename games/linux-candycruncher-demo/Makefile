@@ -24,6 +24,8 @@ PORTDOCS=	README README.licenses README.unixthanks license.txt
 LIBFILES=	libcrypto.so.0.9.8 libgrapple-0.9.so.2 liblua.so liblualib.so \
 		libssl.so.0.9.8
 
+BROKEN=		Does not fetch
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && ${TAIL} +377 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
