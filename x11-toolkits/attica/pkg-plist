@@ -45,4 +45,3 @@ lib/libattica.so
 lib/libattica.so.0
 lib/libattica.so.0.4.2
 libdata/pkgconfig/libattica.pc
-@dirrmtry include/attica
