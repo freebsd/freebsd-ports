@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.6
-PORTREVISION=	3
+PORTVERSION=	4.4.7
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -15,7 +14,7 @@ LICENSE=	MPL
 # see Bugzilla/Install/Requirements.pm
 RUN_DEPENDS=	\
 		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
-		p5-DBI>=1.54:${PORTSDIR}/databases/p5-DBI \
+		p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI \
 		p5-DateTime-TimeZone>=1.64:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-DateTime>=0.75:${PORTSDIR}/devel/p5-DateTime \
 		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME \
@@ -89,7 +88,7 @@ RUN_DEPENDS+=	p5-PatchReader>=0.9.6:${PORTSDIR}/devel/p5-PatchReader \
 .endif
 
 .if ${PORT_OPTIONS:MMORE_HTML}
-RUN_DEPENDS+=	p5-HTML-Parser>=3.40:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS+=	p5-HTML-Parser>=3.67:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber
 .endif
 
