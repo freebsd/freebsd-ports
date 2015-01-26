@@ -40,6 +40,7 @@
     SUBDIR += avahi-sharp
     SUBDIR += axa
     SUBDIR += babeld
+    SUBDIR += balance
     SUBDIR += beacon
     SUBDIR += beanstalkd
     SUBDIR += belle-sip
