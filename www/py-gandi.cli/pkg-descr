@@ -1,0 +1,10 @@
+Gandi command line interface
+
+Use `$ gandi` to easily create and manage web resources from the command line.
+
+  * `$ gandi domain` to buy and manage your domain names
+  * `$ gandi paas` to create and deploy your web applications
+  * `$ gandi vm` to spin up and upgrade your virtual machines
+  * `$ gandi` to list all available commands
+
+WWW: https://github.com/Gandi/gandi.cli
