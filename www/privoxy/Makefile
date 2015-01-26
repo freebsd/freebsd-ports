@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.22
+PORTVERSION=	3.0.23
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -79,13 +79,6 @@ post-patch:
 		${WRKSRC}/config
 	${REINPLACE_CMD} \
 		-e 's,\(/etc/privoxy\),${PREFIX}\1,' ${WRKSRC}/tools/uagen.pl
-	# Mimic upstream commit v1.209 to fix compilation with --disable-force.
-	${REINPLACE_CMD} \
-		-E 's@#(ifdef|endif).*FEATURE_FORCE_LOAD.*@@' ${WRKSRC}/project.h
-	# Mimic upstream commit v1.57 to get the tests working with the default config.
-	${REINPLACE_CMD} \
-		-e 's@\(keep-alive-timeout\\s\+\).*@\1(2[1-9]+|[3-9]\\d+|1\\d{2,})@' \
-		${WRKSRC}/regression-tests.action
 
 pre-configure:
 	@(cd ${WRKSRC}; ${AUTOHEADER})
