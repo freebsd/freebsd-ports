@@ -33,4 +33,7 @@ RUBY_DEFAULT?=		2.0
 TCLTK_DEFAULT?=		8.6
 FIREBIRD_DEFAULT?=	2.5
 
+# Version of lang/gcc.  Do not override!
+LANG_GCC_IS=		4.8
+
 .endif
