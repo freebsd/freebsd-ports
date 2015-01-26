@@ -25,6 +25,7 @@ share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/select.png
 %%PORTDOCS%%%%DOCSDIR%%/simulate.png
 %%PORTDOCS%%%%DOCSDIR%%/simulation.png
+%%PORTDOCS%%%%DOCSDIR%%/smc_example.svg
 %%PORTDOCS%%%%DOCSDIR%%/state_properties.png
 %%PORTDOCS%%%%DOCSDIR%%/straighten.png
 %%PORTDOCS%%%%DOCSDIR%%/toolbar.png
@@ -38,6 +39,8 @@ share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomin.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomout.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FSM1.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FSM1.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.gv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin.gv
