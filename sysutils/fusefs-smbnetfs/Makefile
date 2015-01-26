@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smbnetfs
-PORTVERSION=	0.5.3b
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SMBNetFS-${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -24,6 +24,7 @@ GNOME_KEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-key
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 USES=		fuse iconv pkgconfig tar:bzip2
+USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
