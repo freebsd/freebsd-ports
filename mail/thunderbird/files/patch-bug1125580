@@ -1,0 +1,11 @@
+--- mozilla/js/src/jit/arm/Architecture-arm.cpp~
++++ mozilla/js/src/jit/arm/Architecture-arm.cpp
+@@ -17,7 +17,7 @@
+ 
+ #define HWCAP_USE_HARDFP_ABI (1 << 28)
+ 
+-#if !(defined(ANDROID) || defined(MOZ_B2G)) && !defined(JS_ARM_SIMULATOR)
++#if defined(__linux__) && !defined(ANDROID) && !defined(MOZ_B2G) && !defined(JS_ARM_SIMULATOR)
+ #define HWCAP_ARMv7 (1 << 29)
+ #include <asm/hwcap.h>
+ #else
