@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GCC=	yes
+USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USES=		bison cpe gmake
 CPE_VENDOR=	digium
