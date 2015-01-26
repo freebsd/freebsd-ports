@@ -1,0 +1,14 @@
+--- js/src/assembler/jit/ExecutableAllocator.h~
++++ js/src/assembler/jit/ExecutableAllocator.h
+@@ -454,6 +454,11 @@ public:
+     {
+         User::IMB_Range(code, static_cast<char*>(code) + size);
+     }
++#elif WTF_CPU_ARM_TRADITIONAL && (WTF_OS_FREEBSD || WTF_OS_NETBSD)
++    static void cacheFlush(void* code, size_t size)
++    {
++	__clear_cache(code, reinterpret_cast<char*>(code) + size);
++    }
+ #elif WTF_CPU_ARM_TRADITIONAL && WTF_OS_LINUX && WTF_COMPILER_RVCT
+     static __asm void cacheFlush(void* code, size_t size);
+ #elif WTF_CPU_ARM_TRADITIONAL && (WTF_OS_LINUX || WTF_OS_ANDROID) && WTF_COMPILER_GCC
