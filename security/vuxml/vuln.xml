@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc2d76df-a595-11e4-9363-20cf30e32f6d">
+    <topic>Bugzilla multiple security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.15/">
+	  <h5>Command Injection</h5>
+	  <p>Some code in Bugzilla does not properly utilize 3 arguments form
+	    for open() and it is possible for an account with editcomponents
+	    permissions to inject commands into product names and other
+	    attributes.</p>
+	  <h5>Information Leak</h5>
+	  <p>Using the WebServices API, a user can possibly execute imported
+	    functions from other non-WebService modules. A whitelist has now
+	    been added that lists explicit methods that can be executed via the
+	    API.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8630</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1079065</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1090275</url>
+    </references>
+    <dates>
+      <discovery>2015-01-21</discovery>
+      <entry>2015-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c7b6c20-a324-11e4-879c-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
