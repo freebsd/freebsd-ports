@@ -942,6 +942,7 @@
     SUBDIR += sdl_gfx
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
+    SUBDIR += sdump
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seom
