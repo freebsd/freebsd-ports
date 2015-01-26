@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clang-cheri
-PORTVERSION=	3.5.d20140815
-PORTREVISION=	2
+PORTVERSION=	3.6.d20150126
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -41,21 +40,14 @@ COMMANDS=	\
 		bugpoint \
 		clang \
 		clang++ \
-		clang-3.5 \
+		clang-3.6 \
 		clang-check \
 		clang-cl \
 		clang-cpp \
 		clang-format \
 		git-clang-format \
 		llc \
-		lldb \
-		lldb-3.5 \
-		lldb-gdbserver \
-		lldb-gdbserver-3.5 \
-		lldb-platform \
-		lldb-platform-3.5 \
 		lli \
-		lli-child-target \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
@@ -96,8 +88,8 @@ do-fetch:
 	svn export --force https://github.com/CTSRD-CHERI/llvm/trunk ${WRKSRC}
 	svn export --force https://github.com/CTSRD-CHERI/clang/trunk \
 	    ${WRKSRC}/tools/clang
-	svn export --force https://github.com/CTSRD-CHERI/lldb/trunk \
-	    ${WRKSRC}/tools/lldb
+	#svn export --force https://github.com/CTSRD-CHERI/lldb/trunk \
+	#    ${WRKSRC}/tools/lldb
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 .if ${USER} == brooks || ${USER} == bed22
 	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
