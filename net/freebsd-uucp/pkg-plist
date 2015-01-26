@@ -51,8 +51,8 @@ sbin/uuconv
 @dirrm etc/uucp
 @dirrm libexec/uucp
 @exec pw usermod uucp -s %D/libexec/uucp/uucico
-@exec mtree -deU -f etc/mtree/uucp-var.mtree -p /var
-@exec mtree -deU -f etc/mtree/uucp-local.mtree -p %D
+@exec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
+@exec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
 @unexec rm -d /var/spool/uucppublic 2>/dev/null || true
 @unexec rm -d /var/spool/uucp/.Preserve 2>/dev/null || true
 @unexec rm -d /var/spool/uucp/.Sequence 2>/dev/null || true
