@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maradns
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	dns
 MASTER_SITES=	http://maradns.samiam.org/download/1.4/\
 		http://www.maradns.org/download/1.4/
@@ -21,6 +21,7 @@ REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS}"
 
 USE_RC_SUBR=	${PORTNAME} zoneserver
+USES=		tar:xz
 USERS=		bind
 GROUPS=		bind
 
@@ -67,5 +68,6 @@ do-install:
 	(cd ${WRKSRC}/doc/en && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR}/en)
 	(cd ${WRKSRC}/doc/en && ${COPYTREE_SHARE} tutorial ${STAGEDIR}${DOCSDIR}/en)
 	(cd ${WRKSRC}/doc/en && ${COPYTREE_SHARE} text ${STAGEDIR}${DOCSDIR}/en)
+	@(cd ${STAGEDIR}${PREFIX} && find . -name Makefile -delete)
 
 .include <bsd.port.mk>

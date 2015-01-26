@@ -77,10 +77,8 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/setup.bind.djbdns.axfr.test
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/vim.cheatsheet
 %%PORTDOCS%%%%DOCSDIR%%/en/misc/year_2038_statement.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/pdf/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/README
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/tmac.an.patch
-%%PORTDOCS%%%%DOCSDIR%%/en/text/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/en/text/authoritative.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/text/bind2csv2.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/text/coding_style.txt
@@ -109,7 +107,6 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/text/update.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/text/win_service.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/00index.html
-%%PORTDOCS%%%%DOCSDIR%%/en/tutorial/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/authoritative.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/bind2csv2.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/coding_style.html
@@ -139,7 +136,6 @@ sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/update.html
 %%PORTDOCS%%%%DOCSDIR%%/en/tutorial/win_service.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_authoritative_mararc.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_csv1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_csv1.txt
@@ -148,3 +144,4 @@ sbin/zoneserver
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_mararc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_recursive_mararc.txt
+@dir %%ETCDIR%%/logger
