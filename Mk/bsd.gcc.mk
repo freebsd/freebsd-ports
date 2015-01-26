@@ -47,9 +47,6 @@ GCCVERSION_040800=	     0       0 4.8
 GCCVERSION_040900=	     0       0 4.9
 GCCVERSION_050000=	     0       0 5
 
-# Version of lang/gcc
-LANG_GCC_IS=	4.8
-
 # No configurable parts below this. ####################################
 #
 
