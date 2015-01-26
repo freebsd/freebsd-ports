@@ -1,0 +1,11 @@
+--- snap-server.cabal.orig	2014-06-04 16:23:51 UTC
++++ snap-server.cabal
+@@ -129,7 +129,7 @@ Library
+ 
+   if flag(openssl)
+     cpp-options: -DOPENSSL
+-    build-depends: HsOpenSSL >= 0.10 && <0.11
++    build-depends: HsOpenSSL >= 0.10 && <0.12
+ 
+   if os(linux) && !flag(portable)
+     cpp-options: -DLINUX -DHAS_SENDFILE
