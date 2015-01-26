@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	yes
+USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USES=		alias bison cpe gmake shebangfix
 CPE_VENDOR=	digium
