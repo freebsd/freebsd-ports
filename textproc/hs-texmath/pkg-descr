@@ -1,6 +1,8 @@
-The texmathml library provides functions to convert LaTeX math formulas
-to presentation MathML (which can be used in HTML) or OMML (Office Math
-Markup Language, used in Microsoft Office). It supports basic LaTeX and
-AMS extensions, and it can parse and apply LaTeX macros.
+The texmath library provides functions to read and write TeX math,
+presentation MathML, and OMML (Office Math Markup Language, used in
+Microsoft Office).  Support is also included for converting math formats to
+pandoc's native format (allowing conversion, via pandoc, to a variety of
+different markup formats).  The TeX reader supports basic LaTeX and AMS
+extensions, and it can parse and apply LaTeX macros.
 
 WWW: http://github.com/jgm/texmath
