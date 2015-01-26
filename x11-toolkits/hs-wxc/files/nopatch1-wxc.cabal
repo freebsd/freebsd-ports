@@ -1,0 +1,11 @@
+--- wxc.cabal.orig	2015-01-16 21:06:43 UTC
++++ wxc.cabal
+@@ -161,6 +161,8 @@ library
+     base >= 4 && < 5,
+     wxdirect >= 0.90.1.0
+ 
++  extra-libraries: stdc++
++
+   x-dll-sources:
+     src/cpp/apppath.cpp
+     src/cpp/dragimage.cpp
