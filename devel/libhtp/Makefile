@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OISF
 GH_COMMIT=	4cb1b99
 
-USES=		autoreconf libtool pkgconfig pathfix iconv
+USES=		autoreconf iconv:translit libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
