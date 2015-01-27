@@ -1,0 +1,54 @@
+--- utp_file/utp_recv.cpp	2013-05-14 19:05:36.000000000 -0400
++++ utp_file/utp_recv.cpp	2015-01-22 16:45:03.000000000 -0500
+@@ -82,5 +82,5 @@
+ UTPSocket *utp_socket = NULL;
+ FILE *file = NULL;
+-size_t total_recv = 0;
++intmax_t total_recv = 0;
+ bool no_connection = true;
+ 
+@@ -205,5 +205,5 @@
+ {
+ 	assert(utp_socket == socket);
+-	printf("utp on_write %u\n", count);
++	printf("utp on_write %zu\n", count);
+ 	assert(false);
+ }
+@@ -365,10 +365,10 @@
+ 			last_recv = total_recv;
+ 			last_time = cur_time;
+-			printf("\r[%u] recv: %d  %.1f bytes/s  ", cur_time, total_recv, rate);
++			printf("\r[%u] recv: %jd  %.1f bytes/s  ", cur_time, total_recv, rate);
+ 			fflush(stdout);
+ 		}
+ 	}
+ 
+-	printf("\nreceived: %d bytes\n", total_recv);
++	printf("\nreceived: %jd bytes\n", (intmax_t)total_recv);
+ 	fclose(file);
+ 	fclose(log_file);
+--- utp_file/utp_send.cpp	2013-05-14 19:05:36.000000000 -0400
++++ utp_file/utp_send.cpp	2015-01-22 16:45:03.000000000 -0500
+@@ -82,6 +82,6 @@
+ UTPSocket *utp_socket = NULL;
+ FILE *file = NULL;
+-size_t total_sent = 0;
+-size_t file_size = 0;
++intmax_t total_sent = 0;
++intmax_t file_size = 0;
+ 
+ void utp_log(char const* fmt, ...)
+@@ -252,5 +252,5 @@
+ {
+ 	assert(utp_socket == socket);
+-	printf("utp on_read %u\n", count);
++	printf("utp on_read %zu\n", count);
+ 	assert(false);
+ }
+@@ -392,5 +392,5 @@
+ 			last_sent = total_sent;
+ 			last_time = cur_time;
+-			printf("\r[%u] sent: %d/%d  %.1f bytes/s  ", cur_time, total_sent, file_size, rate);
++			printf("\r[%u] sent: %jd/%jd  %.1f bytes/s  ", cur_time, total_sent, file_size, rate);
+ 			fflush(stdout);
+ 		}
