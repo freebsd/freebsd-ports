@@ -1,11 +1,4 @@
-%%PERL5_MAN3%%/Term::ProgressBar.3.gz
-%%PERL5_MAN3%%/Term::ProgressBar::IO.3.gz
 %%SITE_PERL%%/Term/ProgressBar.pm
 %%SITE_PERL%%/Term/ProgressBar/IO.pm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers4
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers5
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_use.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smooth_bar.pl
+%%PERL5_MAN3%%/Term::ProgressBar.3.gz
+%%PERL5_MAN3%%/Term::ProgressBar::IO.3.gz
