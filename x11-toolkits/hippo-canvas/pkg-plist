@@ -28,7 +28,3 @@ lib/libhippocanvas-1.so.0.0.0
 %%PYTHON_SITELIBDIR%%/hippo.a
 %%PYTHON_SITELIBDIR%%/hippo.so
 libdata/pkgconfig/hippo-canvas-1.pc
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@dirrm include/hippo-canvas-1/hippo
-@dirrm include/hippo-canvas-1

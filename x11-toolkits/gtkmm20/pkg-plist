@@ -490,20 +490,3 @@ libdata/pkgconfig/gdkmm-2.0.pc
 libdata/pkgconfig/glibmm-2.0.pc
 libdata/pkgconfig/gtkmm-2.0.pc
 libdata/pkgconfig/pangomm-1.0.pc
-@dirrm lib/gtkmm-2.0/proc/pm
-@dirrm lib/gtkmm-2.0/proc/m4
-@dirrm lib/gtkmm-2.0/proc
-@dirrm lib/gtkmm-2.0/include
-@dirrm lib/gtkmm-2.0
-@dirrm include/gtkmm-2.0/pangomm/private
-@dirrm include/gtkmm-2.0/pangomm
-@dirrm include/gtkmm-2.0/gtkmm_generate_extra_defs
-@dirrm include/gtkmm-2.0/gtkmm/private
-@dirrm include/gtkmm-2.0/gtkmm
-@dirrm include/gtkmm-2.0/glibmm/private
-@dirrm include/gtkmm-2.0/glibmm
-@dirrm include/gtkmm-2.0/gdkmm/private
-@dirrm include/gtkmm-2.0/gdkmm
-@dirrm include/gtkmm-2.0/atkmm/private
-@dirrm include/gtkmm-2.0/atkmm
-@dirrm include/gtkmm-2.0

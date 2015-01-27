@@ -1,4 +1,1 @@
 %%PORTDOCS%%share/devhelp/books/gtkmm-2.4/gtkmm-2.4.devhelp2
-%%PORTDOCS%%@dirrm share/devhelp/books/gtkmm-2.4
-%%PORTDOCS%%@dirrmtry share/devhelp/books
-%%PORTDOCS%%@dirrmtry share/devhelp

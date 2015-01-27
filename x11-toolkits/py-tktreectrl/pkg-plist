@@ -10,4 +10,3 @@
 %%PYTHON_SITELIBDIR%%/TkTreectrl/__init__.py
 %%PYTHON_SITELIBDIR%%/TkTreectrl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/TkTreectrl/__init__.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/TkTreectrl

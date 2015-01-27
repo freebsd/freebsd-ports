@@ -78,6 +78,3 @@ lib/bwidget/utils.tcl
 lib/bwidget/widget.tcl
 lib/bwidget/wizard.tcl
 lib/bwidget/xpm2image.tcl
-@dirrm lib/bwidget/lang
-@dirrm lib/bwidget/images
-@dirrm lib/bwidget

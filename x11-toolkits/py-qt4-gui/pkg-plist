@@ -205,5 +205,3 @@ share/py-sip/QtGui/qworkspace.sip
 share/py-sip/QtGui/qx11embed_x11.sip
 share/py-sip/QtGui/qx11info_x11.sip
 %%API%%share/qt4/qsci/api/python/QtGui.api
-@dirrm share/py-sip/QtGui
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

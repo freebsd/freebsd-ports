@@ -131,5 +131,3 @@ man/man3/Xaw.3.gz
 %%DOCSDIR%%/Tree.xml
 %%DOCSDIR%%/Viewport.xml
 %%DOCSDIR%%/libXaw.xml
-@dirrmtry %%DOCSDIR%%
-@dirrmtry include/X11/Xaw

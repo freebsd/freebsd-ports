@@ -207,11 +207,3 @@ man/mann/treeview.n.gz
 man/mann/vector.n.gz
 man/mann/watch.n.gz
 man/mann/winop.n.gz
-@dirrm lib/blt%%BLTVER%%/demos/scripts
-@dirrm lib/blt%%BLTVER%%/demos/images
-@dirrm lib/blt%%BLTVER%%/demos/bitmaps/hand
-@dirrm lib/blt%%BLTVER%%/demos/bitmaps/fish
-@dirrm lib/blt%%BLTVER%%/demos/bitmaps
-@dirrm lib/blt%%BLTVER%%/demos
-@dirrm lib/blt%%BLTVER%%/dd_protocols
-@dirrm lib/blt%%BLTVER%%

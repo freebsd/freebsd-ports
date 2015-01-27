@@ -319,15 +319,3 @@ share/doc/gtkglextmm-1.2/html/windowext_8h__dep__incl.png
 share/doc/gtkglextmm-1.2/html/windowext_8h__incl.map
 share/doc/gtkglextmm-1.2/html/windowext_8h__incl.md5
 share/doc/gtkglextmm-1.2/html/windowext_8h__incl.png
-@dirrm share/doc/gtkglextmm-1.2/html
-@dirrm share/doc/gtkglextmm-1.2
-@dirrm lib/gtkglextmm-1.2/proc/m4
-@dirrm lib/gtkglextmm-1.2/proc
-@dirrm lib/gtkglextmm-1.2/include
-@dirrm lib/gtkglextmm-1.2
-@dirrm include/gtkglextmm-1.2/gtkmm/gl
-@dirrm include/gtkglextmm-1.2/gtkmm
-@dirrm include/gtkglextmm-1.2/gdkmm/gl/private
-@dirrm include/gtkglextmm-1.2/gdkmm/gl
-@dirrm include/gtkglextmm-1.2/gdkmm
-@dirrm include/gtkglextmm-1.2

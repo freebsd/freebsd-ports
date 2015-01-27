@@ -1286,28 +1286,3 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxpdemo.ico
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/snippets
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo
-@dirrmtry %%PYTHON_SITELIBDIR%%/wxPython
-@dirrm include/wx-%%WX_VERSION%%/wx/wxPython/i_files
-@dirrm include/wx-%%WX_VERSION%%/wx/wxPython
-@dirrmtry include/wx-%%WX_VERSION%%/wx
-@dirrmtry include/wx-%%WX_VERSION%%

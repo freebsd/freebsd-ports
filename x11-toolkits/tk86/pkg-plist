@@ -589,12 +589,3 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%MAN%%man/mann/winfo.tk86.n.gz
 %%MAN%%man/mann/wm.tk86.n.gz
 libdata/pkgconfig/tk.pc
-%%DEMOS%%@dirrm lib/tk%%TK_VER%%/demos/images
-%%DEMOS%%@dirrm lib/tk%%TK_VER%%/demos
-@dirrm lib/tk%%TK_VER%%/ttk
-@dirrm lib/tk%%TK_VER%%/msgs
-@dirrm lib/tk%%TK_VER%%/images
-@dirrm lib/tk%%TK_VER%%
-@dirrm include/tk%%TK_VER%%/unix
-@dirrm include/tk%%TK_VER%%/generic
-@dirrm include/tk%%TK_VER%%

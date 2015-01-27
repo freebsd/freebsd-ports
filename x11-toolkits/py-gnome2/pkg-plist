@@ -86,20 +86,3 @@ share/pygtk/2.0/defs/gconf.defs
 share/pygtk/2.0/defs/gnome-types.defs
 share/pygtk/2.0/defs/gnome.defs
 share/pygtk/2.0/defs/ui.defs
-@dirrmtry share/pygtk/2.0/argtypes
-@dirrm share/gtk-doc/html/pygnomevfs
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-%%EXAMPLES%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
-%%EXAMPLES%%@dirrm share/examples/py-gnome/vfs
-%%EXAMPLES%%@dirrm share/examples/py-gnome/popt
-%%EXAMPLES%%@dirrm share/examples/py-gnome/gconf
-%%EXAMPLES%%@dirrm share/examples/py-gnome/canvas
-%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo/echo
-%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo/bonoboui
-%%EXAMPLES%%@dirrm share/examples/py-gnome/bonobo
-%%EXAMPLES%%@dirrm share/examples/py-gnome
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
-@dirrm include/gnome-python-2.0

@@ -109,7 +109,3 @@ lib/libqwtmathml.so.%%SHLIB_SHVER%%
 %%QT_MKSPECDIR%%/features/qwtconfig.pri
 %%QT_MKSPECDIR%%/features/qwtfunctions.pri
 %%QT_MKSPECDIR%%/features/qwtmathml.prf
-@dirrmtry %%QT_MKSPECDIR%%/features
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry share/qt4
-@dirrm %%INCLUDEDIR%%

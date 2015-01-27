@@ -127,36 +127,4 @@ libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/nucleo.icns
 %%DATADIR%%/nucleo.pdf
 %%DATADIR%%/plugin-list
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrm lib/nucleo
-@dirrm include/nucleo/xml
-@dirrm include/nucleo/utils
-%%QT4%%@dirrm include/nucleo/plugins/qt
-%%QT4%%@dirrm include/nucleo/plugins
-@dirrm include/nucleo/network/xmpp
-@dirrm include/nucleo/network/udp
-@dirrm include/nucleo/network/tcp
-@dirrm include/nucleo/network/http
-@dirrm include/nucleo/network/dnssd
-@dirrm include/nucleo/network
-@dirrm include/nucleo/image/source
-@dirrm include/nucleo/image/sink
-@dirrm include/nucleo/image/processing/noise
-@dirrm include/nucleo/image/processing/gamma
-@dirrm include/nucleo/image/processing/difference
-@dirrm include/nucleo/image/processing/convolution
-@dirrm include/nucleo/image/processing/chromakeying
-@dirrm include/nucleo/image/processing/basic
-@dirrm include/nucleo/image/processing
-@dirrm include/nucleo/image/encoding
-@dirrm include/nucleo/image
-@dirrm include/nucleo/helpers
-@dirrm include/nucleo/gl/window
-@dirrm include/nucleo/gl/texture
-@dirrm include/nucleo/gl/text
-@dirrm include/nucleo/gl/shading
-@dirrm include/nucleo/gl/scenegraph
-@dirrm include/nucleo/gl
-@dirrm include/nucleo/core
-@dirrm include/nucleo
+@dir lib/nucleo

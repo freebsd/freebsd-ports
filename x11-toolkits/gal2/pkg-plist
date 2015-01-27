@@ -247,23 +247,3 @@ share/locale/vi/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
-@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories
-@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps
-@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%/glade
-@dirrm share/gal-%%VERSION%%/%%PORTVERSION%%
-@dirrm share/gal-%%VERSION%%
-@dirrm include/gal-%%VERSION%%/gal/widgets
-@dirrm include/gal-%%VERSION%%/gal/util
-@dirrm include/gal-%%VERSION%%/gal/shortcut-bar
-@dirrm include/gal-%%VERSION%%/gal/menus
-@dirrm include/gal-%%VERSION%%/gal/e-text
-@dirrm include/gal-%%VERSION%%/gal/e-table
-@dirrm include/gal-%%VERSION%%/gal/a11y/e-text
-@dirrm include/gal-%%VERSION%%/gal/a11y/e-table
-@dirrm include/gal-%%VERSION%%/gal/a11y
-@dirrm include/gal-%%VERSION%%/gal
-@dirrm include/gal-%%VERSION%%
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw

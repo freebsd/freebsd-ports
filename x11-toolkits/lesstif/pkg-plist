@@ -425,14 +425,3 @@ man/man3/XmWorld.3.gz
 man/man5/VirtualBindings.5.gz
 man/man5/mwmrc.5.gz
 share/aclocal/ac_find_motif.m4
-@dirrm lib/X11/mwm
-@dirrm lib/LessTif/config
-@dirrm lib/LessTif
-@dirrm include/uil
-@dirrm include/Xm
-@dirrm include/Mrm
-@dirrm include/Dt
-@dirrm LessTif/doc/images
-@dirrm LessTif/doc/html
-@dirrm LessTif/doc
-@dirrm LessTif
