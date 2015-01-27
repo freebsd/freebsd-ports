@@ -31,7 +31,10 @@ OPTIONS_SINGLE_FIRMWARE=FIRMWARE_215 FIRMWARE_209
 FIRMWARE_215_DESC=	Calculator ROM firmware version 2.15
 FIRMWARE_209_DESC=	Calculator ROM firmware version 2.09
 
-OPTIONS_DEFAULT=FIRMWARE_215
+OPTIONS_DEFINE=	GRAYSCALE
+GRAYSCALE_DESC=	Apply patch for grayscale support
+
+OPTIONS_DEFAULT=FIRMWARE_215 GRAYSCALE
 
 SUB_FILES=	hp50g.sh
 
@@ -42,6 +45,10 @@ MAKE_ENV+=	DEBUGB=1
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=CC="${CC}"
+
+.if ${PORT_OPTIONS:MGRAYSCALE}
+EXTRA_PATCHES+=	${FILESDIR}/grayscale.diff
+.endif
 
 .if ${PORT_OPTIONS:MFIRMWARE_215H3} || ${PORT_OPTIONS:MFIRMWARE_215}
 MAKE_ARGS+=FIRMWARE=4950_215.bin
@@ -70,7 +77,7 @@ do-configure:
 	cd ${WRKSRC}/qemu/qemu-git && ./configure-small --extra-cflags=-DX49GP --cc="${CC}"
 
 do-build:
-	cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS}
+	cd ${WRKSRC} && ${SETENV} -u MAKELEVEL -u MAKEFLAGS ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
