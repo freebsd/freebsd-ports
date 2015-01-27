@@ -48,7 +48,6 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Hardware.3.gz
 %%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
 %%PERL5_MAN3%%/Rex::Logger.3.gz
-%%PERL5_MAN3%%/Rex::Resource::Common.3.gz
 %%PERL5_MAN3%%/Rex::Task.3.gz
 %%PERL5_MAN3%%/Rex::Template.3.gz
 %%PERL5_MAN3%%/Rex::Test::Base.3.gz
@@ -145,6 +144,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/Array.pm
 %%SITE_PERL%%/Rex/Helper/DBI.pm
 %%SITE_PERL%%/Rex/Helper/Encode.pm
+%%SITE_PERL%%/Rex/Helper/Glob.pm
 %%SITE_PERL%%/Rex/Helper/Hash.pm
 %%SITE_PERL%%/Rex/Helper/INI.pm
 %%SITE_PERL%%/Rex/Helper/Path.pm
@@ -286,6 +286,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/TaskList.pm
 %%SITE_PERL%%/Rex/TaskList/Base.pm
 %%SITE_PERL%%/Rex/TaskList/Parallel_ForkManager.pm
+%%SITE_PERL%%/Rex/Template/NG.pm
 %%SITE_PERL%%/Rex/Template.pm
 %%SITE_PERL%%/Rex/Test.pm
 %%SITE_PERL%%/Rex/Test/Base.pm
@@ -294,6 +295,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Test/Base/has_package.pm
 %%SITE_PERL%%/Rex/Test/Base/has_service_running.pm
 %%SITE_PERL%%/Rex/Test/Base/has_service_stopped.pm
+%%SITE_PERL%%/Rex/Test/Base/has_stat.pm
 %%SITE_PERL%%/Rex/Transaction.pm
 %%SITE_PERL%%/Rex/User.pm
 %%SITE_PERL%%/Rex/User/FreeBSD.pm
