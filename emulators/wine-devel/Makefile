@@ -118,7 +118,7 @@ USE_AUTOTOOLS=	autoconf
 
 pre-configure:
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
-	cd ${WRKSRC} && ${MAKE_CMD} -C ./patches DESTDIR=${WRKSRC} install
+	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 .endif
 
 pre-build:
