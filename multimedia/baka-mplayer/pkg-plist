@@ -1,10 +1,11 @@
 bin/baka-mplayer
 man/man1/baka-mplayer.1.gz
 share/applications/baka-mplayer.desktop
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_it.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_ko.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_pt.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_ru.qm
-%%NLS%%%%DATADIR%%/translations/baka-mplayer_zh.qm
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_zh_CN.qm
 %%PORTDOCS%%%%DOCSDIR%%/baka-mplayer.md
 share/icons/hicolor/128x128/apps/baka-mplayer.png
 share/icons/hicolor/16x16/apps/baka-mplayer.png
