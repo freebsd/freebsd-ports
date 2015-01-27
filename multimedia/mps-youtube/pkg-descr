@@ -3,9 +3,12 @@ Terminal based YouTube jukebox with playlist management.
 Main features:
 
  - Search and play audio/video from YouTube
+ - Search tracks of albums by album title
  - Search and import YouTube playlists
  - Create and save local playlists
  - Download audio/video
+ - Convert to mp3 & other formats (requires ffmpeg or avconv)
+ - View video comments
  - Works with Python 2.7+ and 3.x
  - Works with Windows, Linux and Mac OS X
  - Requires mplayer or mpv
