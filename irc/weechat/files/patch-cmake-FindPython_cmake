@@ -1,5 +1,5 @@
---- cmake/FindPython.cmake.orig	2014-09-29 22:07:54.174485838 +0100
-+++ cmake/FindPython.cmake	2014-09-29 22:13:00.475191375 +0100
+--- cmake/FindPython.cmake.orig	2015-01-12 09:23:34.292562072 +0000
++++ cmake/FindPython.cmake	2015-01-12 09:32:04.954526522 +0000
 @@ -33,17 +33,9 @@
     set(PYTHON_FIND_QUIETLY TRUE)
  endif()
@@ -16,30 +16,42 @@
 -    )
 -endif()
 +find_program(PYTHON_EXECUTABLE
-+	NAMES ${BSD_PYTHON_CMD}
-+	)
++   NAMES ${BSD_PYTHON_CMD}
++   )
  
  if(PYTHON_EXECUTABLE)
    execute_process(
-@@ -65,32 +57,13 @@
+@@ -52,11 +44,6 @@
+     )
+ 
+   execute_process(
+-    COMMAND ${PYTHON_EXECUTABLE} -c "import sys; from distutils.sysconfig import *; sys.stdout.write(get_config_var('LIBPL'))"
+-    OUTPUT_VARIABLE PYTHON_POSSIBLE_LIB_PATH
+-    )
+-
+-  execute_process(
+     COMMAND ${PYTHON_EXECUTABLE} -c "import sys; from distutils.sysconfig import *; sys.stdout.write(get_config_var('LINKFORSHARED'))"
+     OUTPUT_VARIABLE PYTHON_LFLAGS
+     )
+@@ -65,32 +52,13 @@
      NAMES Python.h
-     PATHS ${PYTHON_INC_DIR}
+     HINTS ${PYTHON_INC_DIR}
      )
 -  if(ENABLE_PYTHON3)
 -    find_library(PYTHON_LIBRARY
 -      NAMES python3.4 python3.3 python3.2 python3.1 python3.0 python3 python2.7 python2.6 python2.5 python
--      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
+-      HINTS ${PYTHON_POSSIBLE_LIB_PATH}
 -      )
 -  else()
 -    find_library(PYTHON_LIBRARY
 -      NAMES python2.7 python2.6 python2.5 python
--      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
+-      HINTS ${PYTHON_POSSIBLE_LIB_PATH}
 -      )
 -  endif()
 +
 +  find_library(PYTHON_LIBRARY
 +    NAMES ${BSD_PYTHON_VER}
-+    )
++  	)
  
    if(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
 -    execute_process(

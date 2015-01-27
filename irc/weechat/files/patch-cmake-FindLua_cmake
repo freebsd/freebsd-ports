@@ -1,56 +1,9 @@
---- cmake/FindLua.cmake.orig	2014-09-29 21:49:22.725682010 +0100
-+++ cmake/FindLua.cmake	2014-09-29 22:06:18.215011520 +0100
-@@ -35,14 +35,12 @@
+--- cmake/FindLua.cmake.orig	2015-01-12 09:12:09.922611844 +0000
++++ cmake/FindLua.cmake	2015-01-12 09:23:01.083607077 +0000
+@@ -35,5 +35,5 @@
  
- find_path(
-         LUA51_INCLUDE_PATH lua.h
--        PATHS /usr/include /usr/local/include /usr/pkg/include
--        PATH_SUFFIXES lua51 lua5.1 lua-5.1
-+		PATHS ${BSD_LUA_INCDIR}
- )
- 
- find_library(
--        LUA51_LIBRARY NAMES lua51 lua5.1 lua-5.1 lua
--        PATHS /lib /usr/lib /usr/local/lib /usr/pkg/lib
--        PATH_SUFFIXES lua51 lua5.1 lua-5.1
-+        LUA51_LIBRARY NAMES lua lua-5.1
-+		PATHS ${BSD_LUA_LIBDIR}
- )
- 
- if(LUA51_INCLUDE_PATH AND LUA51_LIBRARY)
-@@ -50,34 +48,11 @@
-   set(LUA_LIBRARY "${LUA51_LIBRARY}")
-   set(LUA_VERSION "5.1")
-   set(LUA_FOUND TRUE)
--else()
--  find_path(
--        LUA50_INCLUDE_PATH lua.h
--        PATHS /usr/include /usr/local/include /usr/pkg/include
--        PATH_SUFFIXES lua50 lua5.0 lua-5.0 lua
--  )
--  find_library(
--        LUA50_LIBRARY NAMES lua50 lua5.0 lua-5.0 lua
--        PATHS /lib /usr/lib /usr/local/lib /usr/pkg/lib
--        PATH_SUFFIXES lua50 lua5.0 lua-5.0 lua
--  )
--  find_library(
--        LUALIB50_LIBRARY NAMES lualib50 lualib5.0 lualib-5.0 lualib
--        PATHS /lib /usr/lib /usr/local/lib /usr/pkg/lib
--        PATH_SUFFIXES lua50 lua5.0 lua-5.0 lua
--  )
--  if(LUA50_INCLUDE_PATH AND LUA50_LIBRARY AND LUALIB50_LIBRARY)
--    set(LUA_INCLUDE_PATH "${LUA50_INCLUDE_PATH}")
--    set(LUA_LIBRARY "${LUA50_LIBRARY}")
--    set(LUALIB_LIBRARY "${LUALIB50_LIBRARY}")
--    set(LUA_VERSION "5.0")
--    set(LUA_FOUND TRUE)
--  endif()
+ find_package(PkgConfig)
+ if(PKG_CONFIG_FOUND)
+-  pkg_search_module(LUA lua5.2 lua-5.2 lua52 lua5.1 lua-5.1 lua51 lua-5.0 lua5.0 lua50 lua)
++  pkg_search_module(LUA lua-${BSD_LUA_VER})
  endif()
- 
- mark_as_advanced(
-   LUA_INCLUDE_PATH
-   LUA_LIBRARY
--  LUALIB_LIBRARY
-+#  LUALIB_LIBRARY
- #  LUA_VERSION
- )
