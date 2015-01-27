@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parrot
-PORTVERSION=	7.0.0
+PORTVERSION=	7.0.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/ \
 		ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
