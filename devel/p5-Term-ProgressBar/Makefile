@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-ProgressBar
-PORTVERSION=	2.16
-PORTREVISION=	1
+PORTVERSION=	2.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,20 +19,15 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0.13:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception
 
+OPTIONS_DEFINE=	EXAMPLES
+
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-	${REINPLACE_CMD} -e 's|Term-ProgressBar|Term/ProgressBar|' ${WRKSRC}/Makefile.PL
-
-OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.options.mk>
+PORTEXAMPLES=	*
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
