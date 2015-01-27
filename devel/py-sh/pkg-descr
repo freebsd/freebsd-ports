@@ -1,0 +1,4 @@
+sh (previously pbs) is a full-fledged subprocess replacement for Python
+2.6 - 3.4 that allows you to call any program as if it were a function.
+
+WWW: https://github.com/amoffat/sh
