@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Write-Rotate
-PORTVERSION=	0.25
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-File-Flock-Retry>=0:${PORTSDIR}/devel/p5-File-Flock-Retry \
 		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File \
 		p5-Taint-Runtime>=0.03:${PORTSDIR}/devel/p5-Taint-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
 TEST_DEPENDS=	p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
 		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
 		p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
