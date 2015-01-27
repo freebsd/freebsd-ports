@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	scm
-PORTVERSION=	5f1
-PORTREVISION=	1
+PORTVERSION=	5f2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b4.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} slib-3b4.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b5.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake readline zip
+USES=		readline zip
 USE_GCC=	any
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--prefix=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
+
+CFLAGS+=	-Wall -Wwrite-strings -Wmissing-declarations -Wredundant-decls -Wcast-qual
+CFLAGS+=	-Wno-unused-label -Wno-uninitialized
 
 SUB_FILES=	require.scm
 
@@ -49,18 +51,26 @@ SCM_MODULES_X11=x.so
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.if ${PORT_OPTIONS:MX11}
+SCM_MODULES+=	${SCM_MODULES_X11}
+SCM_DATA+=	${SCM_DATA_X11}
+.endif
+
+.if ${ARCH} == "ia64"
+EXTRA_PATCHES+=	${FILESDIR}/ia64-patch
+ARCHOBJS=	continue-ia64.S
 .endif
 
 post-extract:
-	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
+	# Certain .scm files are needed during build:
+	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/${DISTFILES:Mslib*.zip} '*.scm'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include| ; \
 		 /strip/s|^|#|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g ; \
+		 s|%%ARCHOBJS%%|${ARCHOBJS}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/build.scm
 	@${REINPLACE_CMD} -e 's|__osf__|__FreeBSD__|' ${WRKSRC}/gmalloc.c
 	@${REINPLACE_CMD} -e 's|gnuregex\.h|gnu/regex.h|g' ${WRKSRC}/rgx.c
@@ -68,38 +78,16 @@ post-patch:
 		${WRKSRC}/xgen.scm
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} scm scmlit \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} scm.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/scm ${WRKSRC}/scmlit \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/scm.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/scm
-	(cd ${WRKDIR} && ${INSTALL_DATA} require.scm \
-		${STAGEDIR}${PREFIX}/lib/scm)
-.for i in ${SCM_DATA}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${PREFIX}/lib/scm)
-.endfor
-.for i in ${SCM_MODULES}
-	(cd ${WRKSRC} && ${INSTALL_LIB} ${i} \
-		${STAGEDIR}${PREFIX}/lib/scm)
-.endfor
-.if ${PORT_OPTIONS:MX11}
-.for i in ${SCM_DATA_X11}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${PREFIX}/lib/scm)
-.endfor
-.for i in ${SCM_MODULES_X11}
-	(cd ${WRKSRC} && ${INSTALL_LIB} ${i} \
-		${STAGEDIR}${PREFIX}/lib/scm)
-.endfor
-.endif
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/scm/slib
-	(cd ${WRKDIR}/slib && ${INSTALL_DATA} *.scm \
-		${STAGEDIR}${PREFIX}/lib/scm/slib)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/scm/slib/psd
-	(cd ${WRKDIR}/slib/psd && ${INSTALL_DATA} *.scm \
-		${STAGEDIR}${PREFIX}/lib/scm/slib/psd)
-	(cd ${WRKDIR}/scm && ${INSTALL_DATA} scm.info \
-		${STAGEDIR}${PREFIX}/${INFO_PATH})
+	${INSTALL_DATA} ${WRKDIR}/require.scm ${SCM_DATA:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${PREFIX}/lib/scm
+	${INSTALL_LIB} ${SCM_MODULES:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${PREFIX}/lib/scm
+	${TAR} -C ${STAGEDIR}${PREFIX}/lib/scm -xf ${DISTDIR}/${DISTFILES:Mslib*.tar.gz} '*.scm'
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${STAGEDIR}${PREFIX}/lib/scm/slib/
+	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>

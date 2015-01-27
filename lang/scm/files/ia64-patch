@@ -1,0 +1,9 @@
+--- Makefile	2013-03-10 03:29:54.000000000 +0000
++++ Makefile	2015-01-23 21:59:51.747074000 +0000
+@@ -104,5 +104,5 @@
+ ofiles = scm.o time.o repl.o scl.o sys.o eval.o subr.o unif.o rope.o \
+ 	continue.o findexec.o script.o debug.o
+-# continue-ia64.o
++ofiles+= continue-ia64.o
+ ifiles = Init$(VERSION).scm Transcen.scm Link.scm Macro.scm Macexp.scm \
+ 	Tscript.scm compile.scm Iedline.scm Idiffer.scm
