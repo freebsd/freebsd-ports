@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	baka-mplayer
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
 GH_PROJECT=	Baka-MPlayer
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	a76ef8d
+GH_COMMIT=	ba6dc76
 
 USES=		compiler:c++11-lib pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
@@ -40,9 +40,6 @@ post-patch:
 		${WRKSRC}/src/Baka-MPlayer.pro
 
 post-install:
-# XXX vendor install_man is too broken
-	${INSTALL_MAN} ${WRKSRC}/etc/doc/${PORTNAME}.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
 	@(cd ${WRKSRC}/etc/logo && for f in *.png; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${f%.*}/apps; \
 		${INSTALL_DATA} -v $$f \

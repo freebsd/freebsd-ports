@@ -1,0 +1,36 @@
+Workaround Clang 3.3 failing to build with:
+
+  In file included from build/moc/moc_keydialog.cpp:9:
+  build/moc/../../src/ui/keydialog.h:18:150: error: expected ')'
+      QPair<QString, QPair<QString, QString>> SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = QPair<QString, QPair<QString, QString>>());
+                                                                                                                                                       ^
+  build/moc/../../src/ui/keydialog.h:18:54: note: to match this '('
+      QPair<QString, QPair<QString, QString>> SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = QPair<QString, QPair<QString, QString>>());
+                                                       ^
+  build/moc/../../src/ui/keydialog.h:18:125: error: expected '>'
+      QPair<QString, QPair<QString, QString>> SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = QPair<QString, QPair<QString, QString>>());
+                                                                                                                              ^
+  2 errors generated.
+
+--- src/ui/keydialog.h~
++++ src/ui/keydialog.h
+@@ -15,7 +15,7 @@ public:
+     explicit KeyDialog(QWidget *parent = 0);
+     ~KeyDialog();
+ 
+-    QPair<QString, QPair<QString, QString>> SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = QPair<QString, QPair<QString, QString>>());
++    QPair<QString, QPair<QString, QString>> SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = (QPair<QString, QPair<QString, QString>>()));
+ 
+ protected:
+     void SetButtons();
+--- src/ui/preferencesdialog.h~
++++ src/ui/preferencesdialog.h
+@@ -27,7 +27,7 @@ protected:
+     void AddRow(QString first, QString second, QString third);
+     void ModifyRow(int row, QString first, QString second, QString third);
+     void RemoveRow(int row);
+-    void SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = QPair<QString, QPair<QString, QString>>());
++    void SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = (QPair<QString, QPair<QString, QString>>()));
+ 
+ private:
+     Ui::PreferencesDialog *ui;
