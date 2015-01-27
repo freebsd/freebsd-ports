@@ -133,6 +133,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/filesnarf
 %%DATADIR%%/completions/find
 %%DATADIR%%/completions/find_member
+%%DATADIR%%/completions/freebsd-update
 %%DATADIR%%/completions/freeciv-gtk2
 %%DATADIR%%/completions/freeciv-sdl
 %%DATADIR%%/completions/freeciv-server
@@ -369,6 +370,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/pm-suspend-hybrid
 %%DATADIR%%/completions/pmake
 %%DATADIR%%/completions/portinstall
+%%DATADIR%%/completions/portsnap
 %%DATADIR%%/completions/portupgrade
 %%DATADIR%%/completions/postalias
 %%DATADIR%%/completions/postcat
