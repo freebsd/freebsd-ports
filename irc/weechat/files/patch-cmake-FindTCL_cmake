@@ -1,5 +1,5 @@
---- cmake/FindTCL.cmake.orig	2014-09-29 22:19:32.084542773 +0100
-+++ cmake/FindTCL.cmake	2014-09-29 22:22:19.254589245 +0100
+--- cmake/FindTCL.cmake.orig	2015-01-12 09:49:31.591454833 +0000
++++ cmake/FindTCL.cmake	2015-01-12 09:52:04.595540774 +0000
 @@ -55,97 +55,18 @@
    set(TCL_FIND_QUIETLY TRUE)
  endif()
