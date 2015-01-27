@@ -1674,6 +1674,7 @@
     SUBDIR += py-requests-toolbelt
     SUBDIR += py-requests1
     SUBDIR += py-restclient
+    SUBDIR += py-rfc3987
     SUBDIR += py-rhodecode
     SUBDIR += py-routes
     SUBDIR += py-satchmo
