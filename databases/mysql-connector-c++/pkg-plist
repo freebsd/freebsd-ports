@@ -11,11 +11,13 @@ include/cppconn/resultset.h
 include/cppconn/resultset_metadata.h
 include/cppconn/statement.h
 include/cppconn/sqlstring.h
+include/cppconn/variant.h
+include/cppconn/version_info.h
 include/cppconn/warning.h
 include/mysql_connection.h
 include/mysql_driver.h
 include/mysql_error.h
 lib/libmysqlcppconn-static.a
 lib/libmysqlcppconn.so
-lib/libmysqlcppconn.so.7.%%PORTVERSION%%
 lib/libmysqlcppconn.so.7
+lib/libmysqlcppconn.so.7.%%PORTVERSION%%
