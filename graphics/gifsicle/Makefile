@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.86
+PORTVERSION=	1.87
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
