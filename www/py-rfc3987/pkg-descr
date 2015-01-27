@@ -1,0 +1,9 @@
+This module provides regular expressions according to `RFC 3986 "Uniform
+Resource Identifier (URI): Generic Syntax" and `RFC 3987 "Internationalized
+Resource Identifiers (IRIs)" and utilities for composition and relative
+resolution of references.
+
+ * http://tools.ietf.org/html/rfc3986
+ * http://tools.ietf.org/html/rfc3987
+
+WWW: http://pypi.python.org/pypi/rfc3987
