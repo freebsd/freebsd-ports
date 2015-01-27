@@ -596,6 +596,7 @@
     SUBDIR += go-uuid
     SUBDIR += gob2
     SUBDIR += gobject-introspection
+    SUBDIR += godot
     SUBDIR += goffice
     SUBDIR += goffice010
     SUBDIR += google-gdata
