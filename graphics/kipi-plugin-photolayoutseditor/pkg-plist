@@ -1,6 +1,5 @@
 bin/photolayoutseditor
 lib/kde4/kipiplugin_photolayoutseditor.so
-lib/libPropertyBrowser.a
 share/applications/kde4/photolayoutseditor.desktop
 share/apps/kipi/kipiplugin_photolayoutseditorui.rc
 share/apps/photolayoutseditor/photolayoutseditorui.rc

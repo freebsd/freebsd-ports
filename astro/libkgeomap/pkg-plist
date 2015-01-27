@@ -1,4 +1,3 @@
-bin/libkgeomap_demo
 include/libkgeomap/abstractmarkertiler.h
 include/libkgeomap/dragdrophandler.h
 include/libkgeomap/geocoordinates.h
@@ -10,6 +9,8 @@ include/libkgeomap/lookup_altitude.h
 include/libkgeomap/lookup_factory.h
 include/libkgeomap/modelhelper.h
 include/libkgeomap/tileindex.h
+include/libkgeomap/track_reader.h
+include/libkgeomap/tracks.h
 include/libkgeomap/version.h
 lib/libkgeomap.so
 lib/libkgeomap.so.1

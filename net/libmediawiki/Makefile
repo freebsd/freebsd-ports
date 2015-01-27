@@ -2,7 +2,6 @@
 
 PORTNAME=	libmediawiki
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	3
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org

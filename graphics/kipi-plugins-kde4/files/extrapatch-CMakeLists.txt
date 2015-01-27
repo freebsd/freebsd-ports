@@ -12,4 +12,4 @@
      ENDIF(NOT WIN32)
  
  ENDIF(KIPIPLUGINS_CAN_BE_COMPILED)
-+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/common/libkipiplugins/tools/kpversion.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/common/libkipiplugins/kpversion.h)
++CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/common/libkipiplugins/tools/kpversion.h.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/common/libkipiplugins/kpversion.h)

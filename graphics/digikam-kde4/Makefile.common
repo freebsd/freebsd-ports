@@ -3,8 +3,8 @@
 # Make sure when DIGIKAM_VER is updated that the following ports are updated:
 #	astro/libkgeomap
 #	graphics/digikam-kde4
-#	digikam-kde4-doc
-#	digikam-kde4-l10n
+#	graphics/digikam-kde4-doc
+#	graphics/digikam-kde4-l10n
 #	graphics/kipi-plugin-*
 #	graphics/kipi-plugins-kde4
 #	graphics/libkface
@@ -12,9 +12,8 @@
 #	net/libkvkontakte
 #	net/libmediawiki
 
-DIGIKAM_VER=	3.5.0
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/digikam
+DIGIKAM_VER=	4.2.0
+MASTER_SITES=	KDE/stable/digikam
 
 KIPI_PLUGINS_ALL=	acquireimages \
 			advancedslideshow \
@@ -22,11 +21,13 @@ KIPI_PLUGINS_ALL=	acquireimages \
 			calendar \
 			debianscreenshots \
 			dngconverter \
+			dropbox \
 			expoblending \
 			facebook \
 			flashexport \
 			flickrexport \
 			galleryexport \
+			googledrive \
 			gpssync \
 			htmlexport \
 			imageshackexport \
@@ -68,16 +69,18 @@ acquireimages_DESC=	Acquire images using flat scanner
 advancedslideshow_DESC=	Slide images with 2D and 3D effects using OpenGL
 batchprocess_DESC=	Batch process images (convert, resize, rename, etc.)
 calendar_DESC=		Create calendars
-# broken
-# dlnaexport_DESC=	Export collection on DLNA network service
 debianscreenshots_DESC=	Export images to Debian Screenshots web service
+# builds and media server shows up, but files are not accessible
+# dlnaexport_DESC=	Export collection on DLNA network service
 dngconverter_DESC=	Convert Raw Image to Digital NeGative
+dropbox_DESC=		Export images to Dropbox cloud service
 expoblending_DESC=	Create pseudo HDR image with a stack of bracketed images
 facebook_DESC=		Import/export images to/from a remote Facebook web service
 flashexport_DESC=	Export images to Flash using SimpleViewer
 flickrexport_DESC=	Export images to a remote Flickr based web service
-gpssync_DESC=		Geolocalize images
 galleryexport_DESC=	Export images to a remote Gallery
+googledrive_DESC=	Export images to Google Drive cloud service
+gpssync_DESC=		Geolocalize images
 htmlexport_DESC=	Export images collections into a static XHTML page
 imageshackexport_DESC=	Export images to ImageShack web service
 imageviewer_DESC=	Preview images using OpenGL
@@ -119,10 +122,12 @@ USES+=		tar:bzip2
 
 .if !defined(NO_BUILD)
 USES+=		cmake
-USE_KDE4+=	automoc4 kdehier kdeprefix kdelibs
+USE_KDE4+=	automoc4 kdeprefix kdelibs
 USE_QT4+=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC?=	${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
+
+PLIST_SUB+=	SHLIB_VER=${DIGIKAM_VER}
 
 . if defined(KIPI_PLUGIN)
 CONFLICTS_INSTALL=	kipi-plugins-2.*
@@ -135,6 +140,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMak
 LIB_DEPENDS+=	libkipiplugins.so:${PORTSDIR}/graphics/libkipiplugins
 .endif
 
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions ${DISTNAME}/extra/kipi-plugins
 WRKSRC=		${WRKDIR}/${DISTNAME}/extra/kipi-plugins
 BUILD_WRKSRC=	${WRKSRC}/${${KIPI_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

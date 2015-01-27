@@ -248,6 +248,11 @@ share/doc/HTML/en/kipi-plugins/acquireimages.docbook
 share/doc/HTML/en/kipi-plugins/colorimages.docbook
 share/doc/HTML/en/kipi-plugins/common
 share/doc/HTML/en/kipi-plugins/convertimages.docbook
+share/doc/HTML/en/kipi-plugins/digikam-html-classic-themeparameters.png
+share/doc/HTML/en/kipi-plugins/digikam-html-collectionselection.png
+share/doc/HTML/en/kipi-plugins/digikam-html-imagesettings.png
+share/doc/HTML/en/kipi-plugins/digikam-html-output.png
+share/doc/HTML/en/kipi-plugins/digikam-html-themeselection.png
 share/doc/HTML/en/kipi-plugins/effectimages.docbook
 share/doc/HTML/en/kipi-plugins/filterimages.docbook
 share/doc/HTML/en/kipi-plugins/flickrexport.docbook
@@ -260,12 +265,7 @@ share/doc/HTML/en/kipi-plugins/geolocation.docbook
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate.png
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate1.png
 share/doc/HTML/en/kipi-plugins/geolocationeditcoords.png
-share/doc/HTML/en/kipi-plugins/imagegallery_albumsettings.png
-share/doc/HTML/en/kipi-plugins/imagegallery_collectionselection.png
-share/doc/HTML/en/kipi-plugins/imagegallery_looksettings.png
-share/doc/HTML/en/kipi-plugins/imagegallery_preview.png
-share/doc/HTML/en/kipi-plugins/imagegallery_progress.png
-share/doc/HTML/en/kipi-plugins/imagegallery_thumbsettings.png
+share/doc/HTML/en/kipi-plugins/gwenview-html-collectionselection.png
 share/doc/HTML/en/kipi-plugins/imagesgallery.docbook
 share/doc/HTML/en/kipi-plugins/imageviewer.docbook
 share/doc/HTML/en/kipi-plugins/index.cache.bz2
