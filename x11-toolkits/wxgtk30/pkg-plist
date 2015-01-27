@@ -787,29 +787,3 @@ share/bakefile/presets/wx30_presets.py
 share/bakefile/presets/wx30_unix.bkl
 share/bakefile/presets/wx30_win32.bkl
 share/bakefile/presets/wx30_xrc.bkl
-@dirrmtry share/bakefile/presets
-@dirrmtry share/bakefile
-@dirrm lib/wx/include/gtk2-unicode-3.0/wx
-@dirrm lib/wx/include/gtk2-unicode-3.0
-@dirrmtry lib/wx/include
-@dirrmtry lib/wx
-@dirrm include/wx-3.0/wx/xrc
-@dirrm include/wx-3.0/wx/xml
-@dirrm include/wx-3.0/wx/unix/private
-@dirrm include/wx-3.0/wx/unix
-@dirrm include/wx-3.0/wx/stc
-@dirrm include/wx-3.0/wx/richtext
-@dirrm include/wx-3.0/wx/ribbon
-@dirrm include/wx-3.0/wx/protocol
-@dirrm include/wx-3.0/wx/propgrid
-@dirrm include/wx-3.0/wx/private
-@dirrm include/wx-3.0/wx/persist
-@dirrm include/wx-3.0/wx/meta
-@dirrm include/wx-3.0/wx/html
-@dirrm include/wx-3.0/wx/gtk/hildon
-@dirrm include/wx-3.0/wx/gtk/gnome
-@dirrm include/wx-3.0/wx/gtk
-@dirrm include/wx-3.0/wx/generic
-@dirrm include/wx-3.0/wx/aui
-@dirrm include/wx-3.0/wx
-@dirrm include/wx-3.0

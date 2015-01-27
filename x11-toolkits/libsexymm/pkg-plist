@@ -18,10 +18,3 @@ lib/libsexymm/include/libsexymmconfig.h
 lib/libsexymm/proc/m4/convert.m4
 lib/libsexymm/proc/m4/convert_libsexymm.m4
 libdata/pkgconfig/libsexymm.pc
-@dirrm lib/libsexymm/proc/m4
-@dirrm lib/libsexymm/proc
-@dirrm lib/libsexymm/include
-@dirrm lib/libsexymm
-@dirrm include/libsexymm/libsexymm/private
-@dirrm include/libsexymm/libsexymm
-@dirrm include/libsexymm

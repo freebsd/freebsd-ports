@@ -16,5 +16,3 @@ man/mann/Widget.n.gz
 man/mann/itk.n.gz
 man/mann/itkvars.n.gz
 man/mann/usual.n.gz
-@dirrm include/itk%%MAJOR%%.%%MINOR%%
-@dirrm lib/itk%%MAJOR%%.%%MINOR%%

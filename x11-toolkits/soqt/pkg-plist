@@ -30,13 +30,3 @@ libdata/pkgconfig/SoQt.pc
 man/man1/soqt-config.1.gz
 share/Coin/conf/soqt-default.cfg
 share/aclocal/soqt.m4
-@dirrmtry share/Coin/conf
-@dirrmtry share/Coin
-@dirrm include/Inventor/Qt/widgets
-@dirrm include/Inventor/Qt/viewers
-@dirrm include/Inventor/Qt/nodes
-@dirrm include/Inventor/Qt/engines
-@dirrm include/Inventor/Qt/editors
-@dirrm include/Inventor/Qt/devices
-@dirrm include/Inventor/Qt
-@dirrmtry include/Inventor

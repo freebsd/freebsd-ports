@@ -562,17 +562,3 @@ share/locale/tr/LC_MESSAGES/wxstd28.mo
 share/locale/uk/LC_MESSAGES/wxstd28.mo
 share/locale/zh_CN/LC_MESSAGES/wxstd28.mo
 share/locale/zh_TW/LC_MESSAGES/wxstd28.mo
-@dirrmtry share/bakefile/presets
-@dirrmtry share/bakefile
-@dirrm include/wx-2.8/wx/xrc
-@dirrm include/wx-2.8/wx/xml
-@dirrm include/wx-2.8/wx/unix
-@dirrm include/wx-2.8/wx/richtext
-@dirrm include/wx-2.8/wx/protocol
-@dirrm include/wx-2.8/wx/html
-@dirrm include/wx-2.8/wx/gtk/gnome
-@dirrm include/wx-2.8/wx/gtk
-@dirrm include/wx-2.8/wx/generic
-@dirrm include/wx-2.8/wx/aui
-@dirrm include/wx-2.8/wx
-@dirrm include/wx-2.8

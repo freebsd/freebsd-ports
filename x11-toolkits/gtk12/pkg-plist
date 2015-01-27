@@ -222,14 +222,4 @@ share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 man/man1/gtk-config.1.gz
-%%NLS%%@dirrmtry share/locale/sp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sp
-@dirrm lib/gtk/themes/engines
-@dirrm lib/gtk/themes
-@dirrm lib/gtk
-@dirrm share/themes/Default/gtk
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
-@dirrm include/gtk-1.2/gtk
-@dirrm include/gtk-1.2/gdk
-@dirrm include/gtk-1.2
+@dir lib/gtk/themes/engines

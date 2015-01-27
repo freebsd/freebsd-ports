@@ -484,11 +484,3 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%MAN%%man/mann/toplevel.tk84.n.gz
 %%MAN%%man/mann/winfo.tk84.n.gz
 %%MAN%%man/mann/wm.tk84.n.gz
-@dirrm lib/tk%%TK_VER%%/demos/images
-@dirrm lib/tk%%TK_VER%%/demos
-@dirrm lib/tk%%TK_VER%%/images
-@dirrm lib/tk%%TK_VER%%/msgs
-@dirrm lib/tk%%TK_VER%%
-@dirrm include/tk%%TK_VER%%/unix
-@dirrm include/tk%%TK_VER%%/generic
-@dirrm include/tk%%TK_VER%%

@@ -127,21 +127,3 @@ share/locale/xh/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_HK/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
-@dirrm share/gtksourceview-1.0/language-specs
-@dirrm share/gtksourceview-1.0
-@dirrm include/gtksourceview-1.0/gtksourceview
-@dirrm include/gtksourceview-1.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN

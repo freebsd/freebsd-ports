@@ -59,16 +59,3 @@ share/locale/uk/LC_MESSAGES/bakery.mo
 share/locale/vi/LC_MESSAGES/bakery.mo
 share/locale/zh_CN/LC_MESSAGES/bakery.mo
 share/locale/zh_TW/LC_MESSAGES/bakery.mo
-@dirrm include/bakery-%%API_VERSION%%/bakery/View
-@dirrm include/bakery-%%API_VERSION%%/bakery/Utilities
-@dirrm include/bakery-%%API_VERSION%%/bakery/Document
-@dirrm include/bakery-%%API_VERSION%%/bakery/Configuration
-@dirrm include/bakery-%%API_VERSION%%/bakery/App
-@dirrm include/bakery-%%API_VERSION%%/bakery
-@dirrm include/bakery-%%API_VERSION%%
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz

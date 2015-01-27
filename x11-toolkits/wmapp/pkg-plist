@@ -20,5 +20,3 @@ lib/libwmapp.a
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Widgets.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/wmapp

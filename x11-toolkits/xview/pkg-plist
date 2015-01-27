@@ -510,13 +510,6 @@ include/xview_private/xv_color.h
 include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
-@dirrmtry include/bitmaps
-@dirrm include/images
-@dirrm include/olgx
-@dirrm include/olgx_private
-@dirrm include/pixrect
-@dirrm include/xview
-@dirrm include/xview_private
 lib/libolgx.a
 lib/libolgx.so
 lib/libolgx.so.3
@@ -537,14 +530,12 @@ lib/help/textedit.info
 lib/help/textsw.info
 lib/help/ttysw.info
 lib/help/xview.info
-@dirrm lib/help
 lib/X11/config/XView.cf
 lib/X11/config/XView.lib
 lib/X11/config/XView.obj
 lib/X11/config/XView.rules
 lib/X11/config/XView.tmpl
 lib/X11/config/XView.prog
-@dirrmtry lib/X11/config
 lib/X11/fonts/ol75dpi/luBIS08.pcf.gz
 lib/X11/fonts/ol75dpi/luBIS10.pcf.gz
 lib/X11/fonts/ol75dpi/luBIS12.pcf.gz
@@ -618,7 +609,6 @@ lib/X11/fonts/ol75dpi/lutRS19.pcf.gz
 lib/X11/fonts/ol75dpi/fonts.scale
 lib/X11/fonts/ol75dpi/fonts.dir
 lib/X11/fonts/ol75dpi/fonts.alias
-@dirrm lib/X11/fonts/ol75dpi
 lib/X11/fonts/ol100dpi/luBIS08.pcf.gz
 lib/X11/fonts/ol100dpi/luBIS10.pcf.gz
 lib/X11/fonts/ol100dpi/luBIS12.pcf.gz
@@ -692,7 +682,6 @@ lib/X11/fonts/ol100dpi/lutRS19.pcf.gz
 lib/X11/fonts/ol100dpi/fonts.scale
 lib/X11/fonts/ol100dpi/fonts.dir
 lib/X11/fonts/ol100dpi/fonts.alias
-@dirrm lib/X11/fonts/ol100dpi
 lib/X11/fonts/olmisc/olcursor.pcf.gz
 lib/X11/fonts/olmisc/olgl10.pcf.gz
 lib/X11/fonts/olmisc/olgl12.pcf.gz
@@ -702,7 +691,6 @@ lib/X11/fonts/olmisc/fonts.scale
 lib/X11/fonts/olmisc/fonts.dir
 lib/X11/fonts/olmisc/fonts.alias
 man/man1/XView.1.gz
-@dirrm lib/X11/fonts/olmisc
 %%PORTDOCS%%%%DOCSDIR%%/bugform
 %%PORTDOCS%%%%DOCSDIR%%/dnd_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/olgx_api.txt
@@ -711,4 +699,3 @@ man/man1/XView.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sel_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/whats_new.ps
 %%PORTDOCS%%%%DOCSDIR%%/xview-info
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
