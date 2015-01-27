@@ -1,0 +1,6855 @@
+--- byte.c	2008-01-30 22:31:40.000000000 -0500
++++ byte.c	2015-01-23 18:55:19.000000000 -0500
+@@ -21,6 +21,6 @@
+ #include "scm.h"
+ 
+-char s_make_bytes[] = "make-bytes";
+-SCM scm_make_bytes(k, n)
++static const char s_make_bytes[] = "make-bytes";
++static SCM scm_make_bytes(k, n)
+      SCM k, n;
+ {
+@@ -39,5 +39,5 @@
+ }
+ #define s_bytes (s_make_bytes+5)
+-SCM scm_bytes(ints)
++static SCM scm_bytes(ints)
+      SCM ints;
+ {
+@@ -55,6 +55,6 @@
+   return res;
+ }
+-static char s_bt_ref[] = "byte-ref";
+-SCM scm_byte_ref(str, k)
++static const char s_bt_ref[] = "byte-ref";
++static SCM scm_byte_ref(str, k)
+      SCM str, k;
+ {
+@@ -64,6 +64,6 @@
+   return MAKINUM(UCHARS(str)[INUM(k)]);
+ }
+-static char s_bt_set[] = "byte-set!";
+-SCM scm_byte_set(str, k, n)
++static const char s_bt_set[] = "byte-set!";
++static SCM scm_byte_set(str, k, n)
+      SCM str, k, n;
+ {
+@@ -75,6 +75,6 @@
+   return UNSPECIFIED;
+ }
+-static char s_bytes2list[] = "bytes->list";
+-SCM scm_bytes2list(str)
++static const char s_bytes2list[] = "bytes->list";
++static SCM scm_bytes2list(str)
+      SCM str;
+ {
+@@ -87,6 +87,6 @@
+   return res;
+ }
+-static char s_bt_reverse[] = "bytes-reverse!";
+-SCM scm_bytes_reverse(str)
++static const char s_bt_reverse[] = "bytes-reverse!";
++static SCM scm_bytes_reverse(str)
+      SCM str;
+ {
+@@ -103,6 +103,6 @@
+   return str;
+ }
+-static char s_write_byte[] = "write-byte";
+-SCM scm_write_byte(chr, port)
++static const char s_write_byte[] = "write-byte";
++static SCM scm_write_byte(chr, port)
+      SCM chr, port;
+ {
+@@ -114,6 +114,6 @@
+   return UNSPECIFIED;
+ }
+-static char s_read_byte[] = "read-byte";
+-SCM scm_read_byte(port)
++static const char s_read_byte[] = "read-byte";
++static SCM scm_read_byte(port)
+      SCM port;
+ {
+@@ -126,6 +126,6 @@
+ }
+ 
+-static char s_sub_rd[] = "subbytes-read!";
+-SCM scm_subbytes_read(sstr, start, args)
++static const char s_sub_rd[] = "subbytes-read!";
++static SCM scm_subbytes_read(sstr, start, args)
+      SCM sstr, start, args;
+ {
+@@ -173,6 +173,6 @@
+ }
+ 
+-static char s_sub_wr[] = "subbytes-write";
+-SCM scm_subbytes_write(sstr, start, args)
++static const char s_sub_wr[] = "subbytes-write";
++static SCM scm_subbytes_write(sstr, start, args)
+      SCM sstr, start, args;
+ {
+--- bytenumb.c	2013-03-24 19:37:38.000000000 -0400
++++ bytenumb.c	2015-01-23 18:55:19.000000000 -0500
+@@ -27,5 +27,5 @@
+ #include "scm.h"
+ 
+-int get_bytes_length(obj)
++static int get_bytes_length(obj)
+      SCM obj;
+ {
+@@ -47,8 +47,8 @@
+ }
+ 
+-static char s_wrong_length[] = "wrong length";
++static const char s_wrong_length[] = "wrong length";
+ static SCM list_of_0;
+ 
+-char * get_bytes(obj, minlen, s_name)
++static void * get_bytes(obj, minlen, s_name)
+      SCM obj;
+      int minlen;
+@@ -60,13 +60,15 @@
+ 	 obj, ARG1, s_name);
+   {
++#ifndef RECKLESS
+     int byvlen = get_bytes_length(obj);
++#endif
+     ASRTER((minlen < 0) ? byvlen >= -minlen : byvlen == minlen,
+ 	   MAKINUM(byvlen), s_wrong_length, s_name);
+-    return (char*)scm_addr(cons(obj, list_of_0), s_name);
++    return scm_addr(cons(obj, list_of_0), s_name);
+   }
+ }
+ 
+-static char s_bytes_to_integer[] = "bytes->integer";
+-SCM scm_bytes_to_integer(sbyts, sn)
++static const char s_bytes_to_integer[] = "bytes->integer";
++static SCM scm_bytes_to_integer(sbyts, sn)
+      SCM sbyts;
+      SCM sn;
+@@ -76,5 +78,5 @@
+   {
+     int cnt = abs(n);
+-    char *byts = get_bytes(sbyts, -cnt, s_bytes_to_integer);
++    const unsigned char *byts = get_bytes(sbyts, -cnt, s_bytes_to_integer);
+     int iu = 0, id = cnt - sizeof(BIGDIG);
+     sizet ndigs = (cnt + sizeof(BIGDIG) - 1) / sizeof(BIGDIG);
+@@ -88,5 +90,5 @@
+ 	for (; j < sizeof(BIGDIG); j++) {
+ 	  dig = (dig<<8) +
+-	    (0xFF ^ ((id + j >= 0) ? (((unsigned char *)byts)[id + j]) : 255));
++	    (0xFF ^ ((id + j >= 0) ? byts[id + j] : 255));
+ 	  /* printf("byts[%d + %d] = %lx\n", id, j, 0xFF & dig); */
+ 	}
+@@ -102,5 +104,5 @@
+ 	for (; j < sizeof(BIGDIG); j++) {
+ 	  dig = (dig<<8) +
+-	    ((id + j >= 0) ? (((unsigned char *)byts)[id + j]) : 0);
++	    ((id + j >= 0) ? byts[id + j] : 0);
+ 	}
+ 	digs[iu] = dig;
+@@ -112,6 +114,6 @@
+ }
+ 
+-static char s_integer_to_bytes[] = "integer->bytes";
+-SCM scm_integer_to_bytes(sn, slen)
++static const char s_integer_to_bytes[] = "integer->bytes";
++static SCM scm_integer_to_bytes(sn, slen)
+      SCM sn;
+      SCM slen;
+@@ -150,5 +152,5 @@
+ 	    sizet j = sizeof(BIGDIG);
+ 	    dig = (iu < ndigs) ? digs[iu] : 0;
+-	    dig = dig ^ ((1 << (8 * sizeof(BIGDIG))) - 1);
++	    dig = dig ^ ((1UL << (8 * sizeof(BIGDIG))) - 1);
+ 	    /* printf("j = %d; id = %d; iu = %d; dig = %04x; borrow = %d\n", j, id, iu, dig, borrow); */
+ 	    for (; 0 < j-- && 0 <= id;) {
+@@ -156,5 +158,5 @@
+ 	      int dg = (0xFF & dig) + borrow;
+ 	      borrow = dg >> 8;
+-	      ((unsigned char *)byts)[id--] = dg;
++	      byts[id--] = dg;
+ 	      dig = (dig)>>8;
+ 	    }
+@@ -167,5 +169,5 @@
+ 	    for (; 0 < j-- && 0 <= id;) {
+ 	      /* printf("byts[%d] = %02x\n", id, 0xFF & dig); */
+-	      ((unsigned char *)byts)[id--] = 0xFF & dig;
++	      byts[id--] = 0xFF & dig;
+ 	      dig = (dig>>8);
+ 	    }
+@@ -177,23 +179,23 @@
+ }
+ 
+-static char s_bytes_to_ieee_float[] = "bytes->ieee-float";
+-SCM scm_bytes_to_ieee_float(sbyts)
++static const char s_bytes_to_ieee_float[] = "bytes->ieee-float";
++static SCM scm_bytes_to_ieee_float(sbyts)
+      SCM sbyts;
+ {
+-  char *byts = get_bytes(sbyts, 4, s_bytes_to_ieee_float);
++  const unsigned char *byts = get_bytes(sbyts, 4, s_bytes_to_ieee_float);
+   int len = LENGTH(sbyts);
+-  int s = (1<<(7)) & ((((unsigned char*)(byts))[0]));
+-  int e = ((0x7f&((((unsigned char*)(byts))[0])))<<1)
+-    + ((0x80&((((unsigned char*)(byts))[1])))>>7);
+-  float f = (((unsigned char*)(byts))[ -1 + (len)]);
++  int s = (1<<(7)) & (((byts)[0]));
++  int e = ((0x7f&(((byts))[0]))<<1)
++    + ((0x80&((((byts))[1])))>>7);
++  float f = (((byts))[ -1 + (len)]);
+   int idx = -2 + (len);
+   while (!((idx)<=1)) {
+     {
+       int T_idx = -1 + (idx);
+-      f = ((((unsigned char*)(byts))[idx])) + ((f) / 0x100);
++      f = ((((byts))[idx])) + ((f) / 0x100);
+       idx = T_idx;
+     }
+   }
+-  f = ((0x7f&((((unsigned char*)(byts))[1]))) + ((f) / 0x100)) / 0x80;
++  f = ((0x7f&((((byts))[1]))) + ((f) / 0x100)) / 0x80;
+   if ((0<(e))
+       && ((e)<0xff))
+@@ -207,23 +209,23 @@
+ }
+ 
+-static char s_bytes_to_ieee_double[] = "bytes->ieee-double";
+-SCM scm_bytes_to_ieee_double(sbyts)
++static const char s_bytes_to_ieee_double[] = "bytes->ieee-double";
++static SCM scm_bytes_to_ieee_double(sbyts)
+      SCM sbyts;
+ {
+-  char *byts = get_bytes(sbyts, 8, s_bytes_to_ieee_double);
++  const unsigned char *byts = get_bytes(sbyts, 8, s_bytes_to_ieee_double);
+   int len = LENGTH(sbyts);
+-  int s = (1<<(7)) & ((((unsigned char*)(byts))[0]));
+-  int e = ((0x7f&((((unsigned char*)(byts))[0])))<<4)
+-    + ((0xf0&((((unsigned char*)(byts))[1])))>>4);
+-  double f = (((unsigned char*)(byts))[ -1 + (len)]);
++  int s = (1<<(7)) & ((((byts))[0]));
++  int e = ((0x7f&((((byts))[0])))<<4)
++    + ((0xf0&((((byts))[1])))>>4);
++  double f = (((byts))[ -1 + (len)]);
+   int idx = -2 + (len);
+   while (!((idx)<=1)) {
+     {
+       int T_idx = -1 + (idx);
+-      f = ((((unsigned char*)(byts))[idx])) + ((f) / 0x100);
++      f = ((((byts))[idx])) + ((f) / 0x100);
+       idx = T_idx;
+     }
+   }
+-  f = ((0xf&((((unsigned char*)(byts))[1]))) + ((f) / 0x100)) / 0x10;
++  f = ((0xf&((((byts))[1]))) + ((f) / 0x100)) / 0x10;
+   if ((0<(e))
+       && ((e)<0x7ff))
+@@ -237,6 +239,6 @@
+ }
+ 
+-static char s_ieee_float_to_bytes[] = "ieee-float->bytes";
+-SCM scm_ieee_float_to_bytes(in_flt)
++static const char s_ieee_float_to_bytes[] = "ieee-float->bytes";
++static SCM scm_ieee_float_to_bytes(in_flt)
+      SCM in_flt;
+ {
+@@ -318,6 +320,6 @@
+ }
+ 
+-static char s_ieee_double_to_bytes[] = "ieee-double->bytes";
+-SCM scm_ieee_double_to_bytes(in_flt)
++static const char s_ieee_double_to_bytes[] = "ieee-double->bytes";
++static SCM scm_ieee_double_to_bytes(in_flt)
+      SCM in_flt;
+ {
+@@ -398,18 +400,18 @@
+ }
+ 
+-static char s_integer_byte_collate_M[] = "integer-byte-collate!";
+-SCM scm_integer_byte_collate_M(byte_vector)
++static const char s_integer_byte_collate_M[] = "integer-byte-collate!";
++static SCM scm_integer_byte_collate_M(byte_vector)
+      SCM byte_vector;
+ {
+-  char* bv = get_bytes(byte_vector, -1, s_integer_byte_collate_M);
++  unsigned char* bv = get_bytes(byte_vector, -1, s_integer_byte_collate_M);
+   bv[0] = 0x80^(bv[0]);
+   return byte_vector;
+ }
+ 
+-static char s_ieee_byte_collate_M[] = "ieee-byte-collate!";
+-SCM scm_ieee_byte_collate_M(byte_vector)
++static const char s_ieee_byte_collate_M[] = "ieee-byte-collate!";
++static SCM scm_ieee_byte_collate_M(byte_vector)
+      SCM byte_vector;
+ {
+-  char* byv = get_bytes(byte_vector, 4, s_ieee_byte_collate_M);
++  unsigned char* byv = get_bytes(byte_vector, 4, s_ieee_byte_collate_M);
+   int byvlen = get_bytes_length(byte_vector);
+   if (0x80&(byv[0])) {
+@@ -425,9 +427,9 @@
+ }
+ 
+-static char s_ieee_byte_decollate_M[] = "ieee-byte-decollate!";
+-SCM scm_ieee_byte_decollate_M(byte_vector)
++static const char s_ieee_byte_decollate_M[] = "ieee-byte-decollate!";
++static SCM scm_ieee_byte_decollate_M(byte_vector)
+      SCM byte_vector;
+ {
+-  char* byv = get_bytes(byte_vector, 4, s_ieee_byte_collate_M);
++  unsigned char* byv = get_bytes(byte_vector, 4, s_ieee_byte_collate_M);
+   int byvlen = get_bytes_length(byte_vector);
+   if (!(0x80&(byv[0]))) {
+--- continue.h	2008-02-19 00:12:54.000000000 -0500
++++ continue.h	2015-01-26 23:02:16.000000000 -0500
+@@ -70,5 +66,9 @@
+ 
+ #ifdef sparc
+-# define FLUSH_REGISTER_WINDOWS asm("ta 3")
++# ifdef __sparcv9
++#  define FLUSH_REGISTER_WINDOWS asm("flushw")
++# else
++#  define FLUSH_REGISTER_WINDOWS asm("ta 3")
++# endif
+ #else
+ # define FLUSH_REGISTER_WINDOWS /* empty */
+@@ -142,4 +138,6 @@
+ 
+ extern long thrown_value;
++void init_storage P((STACKITEM *start, long init_heap_size));
++void mark_locations P((const STACKITEM x[], sizet n));
+ long stack_size P((STACKITEM *start));
+ CONTINUATION *make_root_continuation P((STACKITEM *stack_base));
+--- crs.c	2009-10-21 15:41:30.000000000 -0400
++++ crs.c	2015-01-23 18:55:19.000000000 -0500
+@@ -43,5 +43,5 @@
+ #define WIN(obj) ((WINDOW*)CDR(obj))
+ #define WINP(obj) (tc16_window==TYP16(obj))
+-int freewindow(win)
++static int freewindow(win)
+      WINDOW *win;
+ {
+@@ -50,9 +50,9 @@
+   return 0;
+ }
+-int bwaddch(c, win) int c; WINDOW *win; {waddch(win, c);return c;}
+-int bwaddstr(str, win) char *str; WINDOW *win; {waddstr(win, str);return 0;}
+-sizet bwwrite(str, siz, num, win)
++static int bwaddch(c, win) int c; WINDOW *win; {waddch(win, c);return c;}
++static int bwaddstr(str, win) const char *str; WINDOW *win; {waddstr(win, str);return 0;}
++static sizet bwwrite(str, siz, num, win)
+      sizet siz, num;
+-     char *str; WINDOW *win;
++     const char *str; WINDOW *win;
+ {
+   sizet i = 0, prod = siz*num;
+@@ -74,5 +74,5 @@
+   freewindow};
+ 
+-SCM mkwindow(win)
++static SCM mkwindow(win)
+      WINDOW *win;
+ {
+@@ -85,6 +85,6 @@
+ }
+ 
+-SCM *loc_stdscr = 0;
+-SCM linitscr()
++static SCM *loc_stdscr = NULL;
++static SCM linitscr(void)
+ {
+   WINDOW *win;
+@@ -96,5 +96,5 @@
+   return *loc_stdscr = mkwindow(win);
+ }
+-SCM lendwin()
++static SCM lendwin(void)
+ {
+   if (IMP(*loc_stdscr)) return BOOL_F;
+@@ -102,7 +102,7 @@
+ }
+ 
+-static char s_newwin[] = "newwin", s_subwin[] = "subwin", s_mvwin[] = "mvwin",
++static const char s_newwin[] = "newwin", s_subwin[] = "subwin", s_mvwin[] = "mvwin",
+ 	    s_overlay[] = "overlay", s_overwrite[] = "overwrite";
+-SCM lnewwin(lines, cols, args)
++static SCM lnewwin(lines, cols, args)
+      SCM lines, cols, args;
+ {
+@@ -121,5 +121,5 @@
+ }
+ 
+-SCM lmvwin(win, y, x)
++static SCM lmvwin(win, y, x)
+      SCM win, y, x;
+ {
+@@ -130,5 +130,5 @@
+ }
+ 
+-SCM lsubwin(win, lines, args)
++static SCM lsubwin(win, lines, args)
+      SCM win, lines, args;
+ {
+@@ -150,5 +150,5 @@
+ }
+ 
+-SCM loverlay(srcwin, dstwin)
++static SCM loverlay(srcwin, dstwin)
+      SCM srcwin, dstwin;
+ {
+@@ -158,5 +158,5 @@
+ }
+ 
+-SCM loverwrite(srcwin, dstwin)
++static SCM loverwrite(srcwin, dstwin)
+      SCM srcwin, dstwin;
+ {
+@@ -166,7 +166,7 @@
+ }
+ 
+-static char s_wmove[] = "wmove", s_wadd[] = "wadd", s_winsch[] = "winsch",
++static const char s_wmove[] = "wmove", s_wadd[] = "wadd", s_winsch[] = "winsch",
+ 	s_box[] = "box";
+-SCM lwmove(win, y, x)
++static SCM lwmove(win, y, x)
+      SCM win, y, x;
+ {
+@@ -177,5 +177,5 @@
+ }
+ 
+-SCM lwadd(win, obj)
++static SCM lwadd(win, obj)
+      SCM win, obj;
+ {
+@@ -189,5 +189,5 @@
+ }
+ 
+-SCM lwinsch(win, obj)
++static SCM lwinsch(win, obj)
+      SCM win, obj;
+ {
+@@ -199,5 +199,5 @@
+ }
+ 
+-SCM lbox(win, vertch, horch)
++static SCM lbox(win, vertch, horch)
+      SCM win, vertch, horch;
+ {
+@@ -217,6 +217,6 @@
+ }
+ 
+-static char s_getyx[] = "getyx", s_winch[] = "winch", s_unctrl[] = "unctrl";
+-SCM lgetyx(win)
++static const char s_getyx[] = "getyx", s_winch[] = "winch", s_unctrl[] = "unctrl";
++static SCM lgetyx(win)
+      SCM win;
+ {
+@@ -227,5 +227,5 @@
+ }
+ 
+-SCM lwinch(win)
++static SCM lwinch(win)
+      SCM win;
+ {
+@@ -234,16 +234,16 @@
+ }
+ 
+-SCM lunctrl(c)
++static SCM lunctrl(c)
+      SCM c;
+ {
+   ASRTER(ICHRP(c), c, ARG1, s_unctrl);
+   {
+-    char *str = unctrl(ICHR(c));
++    const char *str = unctrl(ICHR(c));
+     return makfrom0str(str);
+   }
+ }
+-static char s_owidth[] = "output-port-width";
+-static char s_oheight[] = "output-port-height";
+-SCM owidth(arg)
++static const char s_owidth[] = "output-port-width";
++static const char s_oheight[] = "output-port-height";
++static SCM owidth(arg)
+      SCM arg;
+ {
+@@ -256,20 +256,21 @@
+   return MAKINUM(80);
+ }
+-SCM oheight(arg)
++static SCM oheight(arg)
+      SCM arg;
+ {
+   if (UNBNDP(arg)) arg = cur_outp;
+   ASRTER(NIMP(arg) && OPOUTPORTP(arg), arg, ARG1, s_owidth);
+-  if (NIMP(*loc_stdscr))
++  if (NIMP(*loc_stdscr)) {
+     if (WINP(arg)) return MAKINUM(WIN(arg)->_maxy+1);
+     else return MAKINUM(LINES);
++  }
+   return MAKINUM(24);
+ }
+-SCM lrefresh()
++static SCM lrefresh()
+ {
+   return MAKINUM(wrefresh(curscr));
+ }
+ 
+-#define SUBR0(lname, name) SCM lname(){name();return UNSPECIFIED;}
++#define SUBR0(lname, name) static SCM lname(){name();return UNSPECIFIED;}
+ SUBR0(lnl, nl)
+ SUBR0(lnonl, nonl)
+@@ -283,5 +284,5 @@
+ SUBR0(lresetty, resetty)
+ 
+-static char s_nonl[] = "nonl", s_nocbreak[] = "nocbreak",
++static const char s_nonl[] = "nonl", s_nocbreak[] = "nocbreak",
+ 	    s_noecho[] = "noecho", s_noraw[] = "noraw";
+ 
+@@ -302,6 +303,6 @@
+ 	{0, 0}};
+ 
+-#define SUBRW(ln, n, s_n, sn) static char s_n[]=sn;\
+-	SCM ln(w)SCM w;\
++#define SUBRW(ln, n, s_n, sn) static const char s_n[]=sn;\
++	static SCM ln(w)SCM w;\
+ 	{ASRTER(NIMP(w) && WINP(w), w, ARG1, sn);\
+ 	return ERR==n(WIN(w))?BOOL_F:BOOL_T;}
+@@ -336,6 +337,6 @@
+ 	{0, 0}};
+ 
+-#define SUBROPT(ln, n, s_n, sn) static char s_n[]=sn;\
+-	SCM ln(w, b)SCM w, b;\
++#define SUBROPT(ln, n, s_n, sn) static const char s_n[]=sn;\
++	static SCM ln(w, b)SCM w, b;\
+ 	{ASRTER(NIMP(w) && WINP(w), w, ARG1, sn);\
+ 	return ERR==n(WIN(w), BOOL_F != b)?BOOL_F:BOOL_T;}
+@@ -347,6 +348,6 @@
+ 
+ /*  SUBROPT(lclearok, clearok, s_clearok, "clearok") */
+-static char s_clearok[] = "clearok";
+-SCM lclearok(w, b) SCM w, b;
++static const char s_clearok[] = "clearok";
++static SCM lclearok(w, b) SCM w, b;
+ {
+   if (BOOL_T==w) return ERR==clearok(curscr, BOOL_F != b)?BOOL_F:BOOL_T;
+--- debug.c	2008-01-30 22:31:48.000000000 -0500
++++ debug.c	2015-01-23 18:55:19.000000000 -0500
+@@ -291,5 +291,8 @@
+      int writing;
+ {
+-  SCM env, linum = UNDEFINED;
++  SCM env;
++#ifdef CAUTIOUS
++  SCM linum = UNDEFINED;
++#endif
+   proc = CODE(proc);
+   lputs("#<CLOSURE ", port);
+@@ -320,6 +323,6 @@
+ }
+ 
+-static char s_int2linum[] = "integer->line-number";
+-SCM scm_int2linum(n)
++static const char s_int2linum[] = "integer->line-number";
++static SCM scm_int2linum(n)
+      SCM n;
+ {
+@@ -329,6 +332,6 @@
+ }
+ 
+-static char s_linum2int[] = "line-number->integer";
+-SCM scm_linum2int(linum)
++static const char s_linum2int[] = "line-number->integer";
++static SCM scm_linum2int(linum)
+      SCM linum;
+ {
+@@ -337,5 +340,5 @@
+ }
+ 
+-SCM scm_linump(obj)
++static SCM scm_linump(obj)
+      SCM obj;
+ {
+@@ -343,6 +346,6 @@
+ }
+ 
+-static char s_remove_linums[] = "remove-line-numbers!";
+-SCM scm_remove_linums(x)
++static const char s_remove_linums[] = "remove-line-numbers!";
++static SCM scm_remove_linums(x)
+      SCM x;
+ {
+@@ -377,5 +380,5 @@
+ 
+ #ifdef CAUTIOUS
+-long num_frames(estk, i)
++static long num_frames(estk, i)
+      SCM estk;
+      int i;
+@@ -390,5 +393,5 @@
+ }
+ 
+-SCM *estk_frame(estk, i, nf)
++static SCM *estk_frame(estk, i, nf)
+      SCM estk;
+      int i, nf;
+@@ -408,5 +411,5 @@
+ }
+ 
+-SCM stacktrace1(estk, i)
++static SCM stacktrace1(estk, i)
+      SCM estk;
+      int i;
+@@ -444,5 +447,5 @@
+ }
+ 
+-SCM *cont_frame(contin, nf)
++static SCM *cont_frame(contin, nf)
+      SCM contin;
+      int nf;
+@@ -455,5 +458,5 @@
+ }
+ 
+-static char s_stack_trace[] = "stack-trace";
++static const char s_stack_trace[] = "stack-trace";
+ SCM scm_stack_trace(contin)
+      SCM contin;
+@@ -476,6 +479,6 @@
+ }
+ 
+-static char s_frame_trace[] = "frame-trace";
+-SCM scm_frame_trace(contin, nf)
++static const char s_frame_trace[] = "frame-trace";
++static SCM scm_frame_trace(contin, nf)
+      SCM contin, nf;
+ {
+@@ -493,6 +496,6 @@
+ }
+ 
+-static char s_frame2env[] = "frame->environment";
+-SCM scm_frame2env(contin, nf)
++static const char s_frame2env[] = "frame->environment";
++static SCM scm_frame2env(contin, nf)
+      SCM contin, nf;
+ {
+@@ -506,6 +509,6 @@
+ }
+ 
+-static char s_frame_eval[] = "frame-eval";
+-SCM scm_frame_eval(contin, nf, expr)
++static const char s_frame_eval[] = "frame-eval";
++static SCM scm_frame_eval(contin, nf, expr)
+      SCM contin, nf, expr;
+ {
+@@ -526,5 +529,5 @@
+ #endif
+ 
+-static char s_scope_trace[] = "scope-trace";
++static const char s_scope_trace[] = "scope-trace";
+ SCM scm_scope_trace(env)
+      SCM env;
+@@ -593,6 +596,6 @@
+ }
+ 
+-static char s_env_annotation[] = "environment-annotation";
+-SCM scm_env_annotation(var, stenv)
++static const char s_env_annotation[] = "environment-annotation";
++static SCM scm_env_annotation(var, stenv)
+      SCM var, stenv;
+ {
+--- differ.c	2010-08-21 22:12:34.000000000 -0400
++++ differ.c	2015-01-23 18:55:19.000000000 -0500
+@@ -24,69 +24,81 @@
+ #include "scm.h"
+ 
+-#ifdef __x86_64
+-# define I32 int
+-#else
+-# define I32 long
+-#endif
+-/* Currently A:fixZ32b are actually A:fixZ64b.  Remove next line when
++/* Currently A:fixZ32b are actually A:fixZ64b.  Use int64_t, when
+    this gets fixed. */
+-#define I32 long
+-
+-SCM_EXPORT SCM  array_dims P((SCM ra));
++#define I32 int64_t
+ 
+ typedef int (*int_function) ();
+ 
+ typedef struct {
+-  void* (*subarray) ();
++  const void * (*subarray)(const void *, int start, int end);
+   int_function array_refsEql_P;
+   int_function array_refs_revEql_P;
+ } fp_procs;
+ 
+-int fp_compare(I32 *fp,int fpoff,I32 *cc,void *a,int m,void *b,int n,int_function array_refsEql_P,int p_lim);
++static int fp_compare(I32 *fp, int fpoff, I32 *cc,
++    const void *a, int m,
++    const void *b, int n,
++    int_function array_refsEql_P, int p_lim);
+ 
+-int fp_run(I32 *fp,int fpoff,int k,void *a,int m,void *b,int n,int_function array_refsEql_P,I32 *cc,int p);
++static int fp_run(I32 *fp, int fpoff, int k,
++    const void *a, int m,
++    const void *b, int n,
++    int_function array_refsEql_P,
++    I32 *cc, int p);
+ 
+-int diff_mid_split(int n,I32 *rr,I32 *cc,int cost);
++static int diff_mid_split(int n, const I32 *rr, const I32 *cc,int cost);
+ 
+-void fp_init(I32 *fp,int fpoff,int fill,int mindx,int maxdx);
++static void fp_init(I32 *fp, int fpoff, int fill, int mindx, int maxdx);
+ 
+-int diff_divide_and_conquer(I32 *fp,int fpoff,I32 *ccrr,void *a,int start_a,int end_a,void *b,int start_b,int end_b,I32 *edits,int edx,int epo,fp_procs *procs,int p_lim);
++static int diff_divide_and_conquer(I32 *fp, int fpoff, I32 *ccrr,
++    const void *a, int start_a, int end_a,
++    const void *b, int start_b, int end_b,
++    I32 *edits, int edx, int epo, const fp_procs *procs, int p_lim);
+ 
+-int diff2et(I32 *fp,int fpoff,I32 *ccrr,void *a,int start_a,int end_a,void *b,int start_b,int end_b,I32 *edits,int edx,int epo,fp_procs *procs,int p_lim);
++static int diff2et(I32 *fp, int fpoff, I32 *ccrr,
++    const void *a, int start_a, int end_a,
++    const void *b, int start_b, int end_b,
++    I32 *edits, int edx, int epo, const fp_procs *procs, int p_lim);
+ 
+-int diff2ez(I32 *fp,int fpoff,I32 *ccrr,void *a,int start_a,int end_a,void *b,int start_b,int end_b,I32 *edits,int edx,int epo,fp_procs *procs,int p_lim);
++static int diff2ez(I32 *fp, int fpoff, I32 *ccrr,
++    const void *a, int start_a, int end_a,
++    const void *b, int start_b, int end_b,
++    I32 *edits, int edx, int epo, const fp_procs *procs, int p_lim);
+ 
+-void check_cost(unsigned char *name,int est,int cost);
++static void check_cost(const char *name, int est, int cost);
+ 
+-SCM_EXPORT SCM  diff2edits P((SCM Edits, SCM Fp, SCM Args));
++static SCM  diff2edits P((SCM Edits, SCM Fp, SCM Args));
+ 
+-SCM_EXPORT SCM  diff2editlen P((SCM Fp, SCM A, SCM Args));
++static SCM  diff2editlen P((SCM Fp, SCM A, SCM Args));
+ 
+ #define MAX(a,b)		(a<b ? b : a)
+ #define MIN(a,b)		(a>b ? b : a)
+ 
+-I32 *long_subarray(ra, start, end)
+-     I32 *ra; int start, end;
++static const void *I32_subarray(_ra, start, end)
++     const void *_ra; int start, end;
+ {
++  const I32 *ra = _ra;
+   return &(ra[start]);
+ }
+-short *short_subarray(ra, start, end)
+-     short *ra; int start, end;
++static const void *short_subarray(_ra, start, end)
++     const void *_ra; int start, end;
+ {
++  const short *ra = _ra;
+   return &(ra[start]);
+ }
+-char *char_subarray(ra, start, end)
+-     char *ra; int start, end;
++static const void *char_subarray(_ra, start, end)
++     const void *_ra; int start, end;
+ {
++  const char *ra = _ra;
+   return &(ra[start]);
+ }
+ 
+-int long_array_refsEql_P(a, x, m, b, y, n)
++static int long_array_refsEql_P(a, x, m, b, y, n)
+      I32 *a; int x, m; I32 *b; int y, n;
+ {
+   return (a[x])==(b[y]);
+ }
+-int long_array_refs_revEql_P(a, x, m, b, y, n)
+-     I32 *a; int x, m; I32 *b; int y, n;
++static int long_array_refs_revEql_P(a, x, m, b, y, n)
++     const I32 *a; int x, m; const I32 *b; int y, n;
+ {
+ /*   if (x > m) printf("long x(%d) > m(%d)\n", x, m); */
+@@ -94,11 +106,11 @@
+   return a[(m)-(x)-1]==b[(n)-(y)-1];
+ }
+-int short_array_refsEql_P(a, x, m, b, y, n)
+-     short *a; int x, m; short *b; int y, n;
++static int short_array_refsEql_P(a, x, m, b, y, n)
++     const short *a; int x, m; const short *b; int y, n;
+ {
+   return (a[x])==(b[y]);
+ }
+-int short_array_refs_revEql_P(a, x, m, b, y, n)
+-     short *a; int x, m; short *b; int y, n;
++static int short_array_refs_revEql_P(a, x, m, b, y, n)
++     const short *a; int x, m; const short *b; int y, n;
+ {
+ /*   if (x > m) printf("short x(%d) > m(%d)\n", x, m); */
+@@ -106,11 +118,11 @@
+   return a[(m)-(x)-1]==b[(n)-(y)-1];
+ }
+-int char_array_refsEql_P(a, x, m, b, y, n)
+-     char *a; int x, m; char *b; int y, n;
++static int char_array_refsEql_P(a, x, m, b, y, n)
++     const char *a; int x, m; const char *b; int y, n;
+ {
+   return (a[x])==(b[y]);
+ }
+-int char_array_refs_revEql_P(a, x, m, b, y, n)
+-     char *a; int x, m; char *b; int y, n;
++static int char_array_refs_revEql_P(a, x, m, b, y, n)
++     const char *a; int x, m; const char *b; int y, n;
+ {
+ /*   if (x > m) printf("char x(%d) > m(%d)\n", x, m); */
+@@ -120,5 +132,5 @@
+ 
+ fp_procs long_procs =
+-  {long_subarray,
++  {I32_subarray,
+    long_array_refsEql_P,
+    long_array_refs_revEql_P};
+@@ -136,7 +148,7 @@
+      int fpoff;
+      I32 *cc;
+-     void *a;
++     const void *a;
+      int m;
+-     void *b;
++     const void *b;
+      int n;
+      int_function array_refsEql_P;
+@@ -189,7 +201,7 @@
+      int fpoff;
+      int k;
+-     void *a;
++     const void *a;
+      int m;
+-     void *b;
++     const void *b;
+      int n;
+      int_function array_refsEql_P;
+@@ -228,6 +240,6 @@
+ int diff_mid_split(n, rr, cc, cost)
+      int n;
+-     I32 *rr;
+-     I32 *cc;
++     const I32 *rr;
++     const I32 *cc;
+      int cost;
+ {
+@@ -276,8 +288,8 @@
+      int fpoff;
+      I32 *ccrr;
+-     void *a;
++     const void *a;
+      int start_a;
+      int end_a;
+-     void *b;
++     const void *b;
+      int start_b;
+      int end_b;
+@@ -285,5 +297,5 @@
+      int edx;
+      int epo;
+-     fp_procs *procs;
++     const fp_procs *procs;
+      int p_lim;
+ {
+@@ -320,8 +332,8 @@
+      int fpoff;
+      I32 *ccrr;
+-     void *a;
++     const void *a;
+      int start_a;
+      int end_a;
+-     void *b;
++     const void *b;
+      int start_b;
+      int end_b;
+@@ -329,5 +341,5 @@
+      int edx;
+      int epo;
+-     fp_procs *procs;
++     const fp_procs *procs;
+      int p_lim;
+ {
+@@ -370,8 +382,8 @@
+      int fpoff;
+      I32 *ccrr;
+-     void *a;
++     const void *a;
+      int start_a;
+      int end_a;
+-     void *b;
++     const void *b;
+      int start_b;
+      int end_b;
+@@ -379,5 +391,5 @@
+      int edx;
+      int epo;
+-     fp_procs *procs;
++     const fp_procs *procs;
+      int p_lim;
+ {
+@@ -450,6 +462,6 @@
+ }
+ 
+-void check_cost(name, est, cost)
+-     unsigned char *name;
++static void check_cost(name, est, cost)
++     const char *name;
+      int est;
+      int cost;
+@@ -464,7 +476,7 @@
+ 
+ /* Return the fp_procs appropriate for SCM array prototype */
+-fp_procs *raprot2procs(prot, s_name)
++static fp_procs *raprot2procs(prot, s_name)
+      SCM prot;
+-     char *s_name;
++     const char *s_name;
+ {
+   fp_procs *procs;
+@@ -481,17 +493,17 @@
+ static SCM list_of_0;
+ 
+-void* array2addr(RA, prot, pos, s_name)
++static void* array2addr(RA, prot, pos, s_name)
+      SCM RA, prot;
+-     char *pos;
+-     char s_name[];
++     intptr_t pos;
++     const char s_name[];
+ {
+   ASRTER(BOOL_T==arrayp(RA, UNDEFINED) && array_prot(RA)==prot, RA,
+-	 pos, s_name);
++	 (const char *)pos, s_name);
+   return scm_addr(cons(RA, list_of_0), s_name);
+ }
+ 
+ /*  A not longer than B (M <= N) */
+-static char s_d2es[] = "diff2edits!";
+-static char s_incomp[] = "incompatible array types";
++static const char s_d2es[] = "diff2edits!";
++static const char s_incomp[] = "incompatible array types";
+ SCM diff2edits(Edits, Fp, Args)
+      SCM Edits, Fp, Args;	/* Ccrr, A, B; */
+@@ -533,5 +545,5 @@
+ /*  A not longer than B (M <= N) */
+ 
+-static char s_d2el[] = "diff2editlen";
++static const char s_d2el[] = "diff2editlen";
+ SCM diff2editlen(Fp, A, Args)
+      SCM Fp, A, Args;		/* B, P_lim */
+@@ -573,5 +585,5 @@
+ }
+ 
+-static char s_Idiffer[] = "Idiffer.scm";
++static const char s_Idiffer[] = "Idiffer.scm";
+ void init_differ()
+ {
+--- dynl.c	2013-04-06 21:49:18.000000000 -0400
++++ dynl.c	2015-01-23 18:55:19.000000000 -0500
+@@ -45,5 +45,5 @@
+ }
+ 
+-static char s_link[] = "dyn:link", s_call[] = "dyn:call";
++static const char s_link[] = "dyn:link", s_call[] = "dyn:call";
+ SCM l_dyn_link(fname)
+      SCM fname;
+@@ -82,5 +82,5 @@
+   return BOOL_T;
+ }
+-static char s_main_call[] = "dyn:main-call";
++static const char s_main_call[] = "dyn:main-call";
+ SCM l_dyn_main_call(symb, shl, args)
+      SCM symb, shl, args;
+@@ -113,5 +113,5 @@
+ }
+ 
+-static char s_unlink[] = "dyn:unlink";
++static const char s_unlink[] = "dyn:unlink";
+ SCM l_dyn_unlink(fname)
+      SCM fname;
+@@ -165,5 +165,5 @@
+ static smobfuns shlsmob = {mark0, free0, prinshl};
+ 
+-static char s_link[] = "dyn:link", s_call[] = "dyn:call";
++static const char s_link[] = "dyn:link", s_call[] = "dyn:call";
+ SCM l_dyn_link(fname)
+      SCM fname;
+@@ -207,5 +207,5 @@
+ }
+ 
+-static char s_main_call[] = "dyn:main-call";
++static const char s_main_call[] = "dyn:main-call";
+ SCM l_dyn_main_call(symb, shl, args)
+      SCM symb, shl, args;
+@@ -235,5 +235,5 @@
+ }
+ 
+-static char s_unlink[] = "dyn:unlink";
++static const char s_unlink[] = "dyn:unlink";
+ SCM l_dyn_unlink(shl)
+      SCM shl;
+@@ -288,5 +288,5 @@
+  return(x);}
+ 
+-static char s_dynl[] = "vms:dynamic-link-call";
++static const char s_dynl[] = "vms:dynamic-link-call";
+ SCM dynl(dir, symbol, fname)
+      SCM dir, symbol, fname;
+@@ -340,5 +340,5 @@
+ # endif
+ 
+-sizet frshl(ptr)
++static sizet frshl(ptr)
+ 	CELLPTR ptr;
+ {
+@@ -352,5 +352,5 @@
+ }
+ 
+-int prinshl(exp, port, writing)
++static int prinshl(exp, port, writing)
+ 	SCM exp; SCM port; int writing;
+ {
+@@ -363,6 +363,6 @@
+ static smobfuns shlsmob = {mark0, frshl, prinshl};
+ 
+-static char s_link[] = "dyn:link", s_call[] = "dyn:call";
+-SCM l_dyn_link(fname)
++static const char s_link[] = "dyn:link", s_call[] = "dyn:call";
++static SCM l_dyn_link(fname)
+ 	SCM fname;
+ {
+@@ -393,5 +393,5 @@
+ }
+ 
+-SCM l_dyn_call(symb, shl)
++static SCM l_dyn_call(symb, shl)
+ 	SCM symb, shl;
+ {
+@@ -419,6 +419,6 @@
+   return BOOL_T;
+ }
+-static char s_main_call[] = "dyn:main-call";
+-SCM l_dyn_main_call(symb, shl, args)
++static const char s_main_call[] = "dyn:main-call";
++static SCM l_dyn_main_call(symb, shl, args)
+ 	SCM symb, shl, args;
+ {
+@@ -453,6 +453,6 @@
+ }
+ 
+-static char s_unlink[] = "dyn:unlink";
+-SCM l_dyn_unlink(shl)
++static const char s_unlink[] = "dyn:unlink";
++static SCM l_dyn_unlink(shl)
+ 	SCM shl;
+ {
+@@ -490,5 +490,5 @@
+ # define SHL(obj) ((void*)CDR(obj))
+ 
+-sizet frshl(ptr)
++static sizet frshl(ptr)
+ 	CELLPTR ptr;
+ {
+@@ -502,5 +502,5 @@
+ }
+ 
+-int prinshl(exp, port, writing)
++static int prinshl(exp, port, writing)
+ 	SCM exp; SCM port; int writing;
+ {
+@@ -513,6 +513,6 @@
+ static smobfuns shlsmob = {mark0, frshl, prinshl};
+ 
+-static char s_link[] = "dyn:link", s_call[] = "dyn:call";
+-SCM l_dyn_link(fname)
++static const char s_link[] = "dyn:link", s_call[] = "dyn:call";
++static SCM l_dyn_link(fname)
+ 	SCM fname;
+ {
+@@ -545,5 +545,5 @@
+ }
+ 
+-SCM l_dyn_call(symb, shl)
++static SCM l_dyn_call(symb, shl)
+ 	SCM symb, shl;
+ {
+@@ -574,6 +574,6 @@
+   return BOOL_T;
+ }
+-static char s_main_call[] = "dyn:main-call";
+-SCM l_dyn_main_call(symb, shl, args)
++static const char s_main_call[] = "dyn:main-call";
++static SCM l_dyn_main_call(symb, shl, args)
+ 	SCM symb, shl, args;
+ {
+@@ -610,6 +610,6 @@
+ }
+ 
+-static char s_unlink[] = "dyn:unlink";
+-SCM l_dyn_unlink(shl)
++static const char s_unlink[] = "dyn:unlink";
++static SCM l_dyn_unlink(shl)
+ 	SCM shl;
+ {
+@@ -646,5 +646,5 @@
+ # include <windows.h>
+ # define SHL(obj) ((HINSTANCE)(CDR(obj)))
+-int prinshl(exp, port, writing)
++static int prinshl(exp, port, writing)
+ 	SCM exp; SCM port; int writing;
+ {
+@@ -658,6 +658,6 @@
+ static smobfuns shlsmob = {mark0, free0, prinshl};
+ 
+-static char s_link[] = "dyn:link";
+-SCM scm_dyn_link(fname)
++static const char s_link[] = "dyn:link";
++static SCM scm_dyn_link(fname)
+      SCM fname;
+ {
+@@ -677,6 +677,6 @@
+ }
+ 
+-static char s_unlink[] = "dyn:unlink";
+-SCM scm_dyn_unlink(shl)
++static const char s_unlink[] = "dyn:unlink";
++static SCM scm_dyn_unlink(shl)
+      SCM shl;
+ {
+@@ -689,6 +689,6 @@
+ }
+ 
+-static char s_call[] = "dyn:call";
+-SCM scm_dyn_call(symb, shl)
++static const char s_call[] = "dyn:call";
++static SCM scm_dyn_call(symb, shl)
+      SCM symb, shl;
+ {
+@@ -705,6 +705,6 @@
+ }
+ 
+-static char s_main_call[] = "dyn:main-call";
+-SCM scm_dyn_main_call(symb, shl, args)
++static const char s_main_call[] = "dyn:main-call";
++static SCM scm_dyn_main_call(symb, shl, args)
+ 	SCM symb, shl, args;
+ {
+--- edline.c	2008-01-30 22:31:53.000000000 -0500
++++ edline.c	2015-01-23 18:55:19.000000000 -0500
+@@ -20,11 +20,11 @@
+ 
+ #include "scm.h"
++#include <readline/readline.h>
++#include <readline/history.h>
+ 
+-char *readline   P((const char *prompt));
+-void add_history P((char *p));
+ 
+              /* Reads on stdin/stdout only */
+-static char s_readline[] = "read-edited-line";
+-SCM lreadline(prompt)
++static const char s_readline[] = "read-edited-line";
++static SCM lreadline(prompt)
+      SCM prompt;
+ {
+@@ -41,6 +41,6 @@
+   return res;
+ }
+-static char s_add_history[] = "add-history";
+-SCM ladd_history(line)
++static const char s_add_history[] = "add-history";
++static SCM ladd_history(line)
+      SCM line;
+ {
+@@ -49,15 +49,15 @@
+   return UNSPECIFIED;
+ }
+-static char s_def_inport[] = "default-input-port";
+-SCM def_inport()
++static const char s_def_inport[] = "default-input-port";
++static SCM def_inport()
+ {
+   return def_inp;
+ }
+-static char s_def_outport[] = "default-output-port";
+-SCM def_outport()
++static const char s_def_outport[] = "default-output-port";
++static SCM def_outport()
+ {
+   return def_outp;
+ }
+-static char s_Iedline[] = "Iedline.scm";
++static const char s_Iedline[] = "Iedline.scm";
+ void init_edline()
+ {
+--- eval.c	2013-04-06 21:52:40.000000000 -0400
++++ eval.c	2015-01-27 02:14:16.000000000 -0500
+@@ -92,37 +92,33 @@
+ 				   transformers. */
+ 
+-SCM nconc2copy P((SCM x));
+-SCM scm_cp_list P((SCM x, int minlen));
+-SCM scm_v2lst P((long argc, SCM *argv, SCM end));
+-SCM renamed_ident P((SCM id, SCM env));
+-SCM eqv P((SCM x, SCM y));
+-SCM scm_multi_set P((SCM syms, SCM vals));
+-SCM eval_args P((SCM x));
+-SCM m_quote P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_begin P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_if P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_set P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_and P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_or P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_cond P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_case P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_lambda P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_letstar P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_do P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_quasiquote P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_delay P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_define P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_letrec P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_let P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_apply P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_syn_quote P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_let_syntax P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_letrec_syntax P((SCM xorig, SCM env, SCM ctxt));
+-SCM m_the_macro P((SCM xorig, SCM env, SCM ctxt));
+-void scm_dynthrow P((SCM cont, SCM arg1, SCM arg2, SCM rest));
+-void scm_egc P((void));
+-void scm_estk_grow P((void));
+-void scm_estk_shrink P((void));
+-int badargsp P((SCM formals, SCM args));
++static SCM nconc2copy P((SCM x));
++static SCM scm_cp_list P((SCM x, int minlen));
++static SCM scm_v2lst P((long argc, SCM *argv, SCM end));
++static SCM scm_multi_set P((SCM syms, SCM vals));
++static SCM eval_args P((SCM x));
++static SCM m_quote P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_begin P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_if P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_set P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_and P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_or P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_cond P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_case P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_lambda P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_letstar P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_do P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_quasiquote P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_delay P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_define P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_letrec P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_let P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_apply P((SCM xorig, SCM env, SCM ctxt));
++#ifdef MACRO
++static SCM m_syn_quote P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_let_syntax P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_letrec_syntax P((SCM xorig, SCM env, SCM ctxt));
++static SCM m_the_macro P((SCM xorig, SCM env, SCM ctxt));
++#endif
++static int badargsp P((SCM formals, SCM args));
+ 
+ static SCM *lookupcar P((SCM vloc));
+@@ -132,5 +128,9 @@
+ static SCM evalatomcar P((SCM x, int no_error));
+ static SCM evalcar P((SCM x));
++#ifdef MACRO
+ static SCM id2sym P((SCM id));
++static int topdenote_eq P((SCM sym, SCM id, SCM env));
++static int prinid P((SCM exp, SCM port, int writing));
++#endif
+ static SCM iqq P((SCM form));
+ static SCM m_body P((SCM xorig, SCM env, SCM ctxt));
+@@ -151,8 +151,6 @@
+ static SCM m_expr P((SCM x, SCM env, SCM ctxt));
+ static void checked_define P((SCM name, SCM val, const char *what));
+-static int topdenote_eq P((SCM sym, SCM id, SCM env));
+ static int constant_p P((SCM x));
+ static int prinenv P((SCM exp, SCM port, int writing));
+-static int prinid P((SCM exp, SCM port, int writing));
+ static int prinmacro P((SCM exp, SCM port, int writing));
+ static int prinprom P((SCM exp, SCM port, int writing));
+@@ -238,5 +236,5 @@
+ #ifdef MACRO
+ long tc16_ident;		/* synthetic macro identifier */
+-static char s_escaped[] = "escaped synthetic identifier";
++static const char s_escaped[] = "escaped synthetic identifier";
+ # define KEYWORDP(x) (NIMP(x) && IM_KEYWORD==CAR(x))
+ # define KEYWORD_MACRO CDR
+@@ -317,5 +315,5 @@
+      SCM x;
+ {
+-  register CELLPTR ptr;
++  CELLPTR ptr;
+   if (NCELLP(x)) return 0;
+   ptr = (CELLPTR)SCM2PTR(x);
+@@ -377,9 +375,9 @@
+ #endif /* CAREFUL_INTS */
+ 
+-SCM *ilookup(iloc)
++static SCM *ilookup(iloc)
+      SCM iloc;
+ {
+-  register int ir = IFRAME(iloc);
+-  register SCM er, *eloc;
++  int ir = IFRAME(iloc);
++  SCM er, *eloc;
+ #ifdef SCM_PROFILE
+   ilookup_cases[ir<10 ? ir : 9]
+@@ -398,9 +396,9 @@
+   return &CAR(*eloc);
+ }
+-SCM *farlookup(farloc)
++static SCM *farlookup(farloc)
+      SCM farloc;
+ {
+-  register int ir;
+-  register SCM er;
++  int ir;
++  SCM er;
+   SCM x = CDR(farloc);
+   DEFER_INTS_EGC;
+@@ -417,7 +415,9 @@
+ }
+ 
+-char s_badenv[] = "damaged environment";
+-static char  s_lookup[] = "scm_env_lookup",
++const char s_badenv[] = "damaged environment";
++static const char  s_lookup[] = "scm_env_lookup",
++#ifdef MACRO
+   s_badkey[] = "Use of keyword as variable",
++#endif
+   s_unbnd[] = "unbound variable: ",
+   s_wtap[] = "Wrong type to apply: ",
+@@ -861,6 +861,6 @@
+ }
+ 
+-static char s_values[] = "values";
+-static char s_call_wv[] = "call-with-values";
++static const char s_values[] = "values";
++static const char s_call_wv[] = "call-with-values";
+ SCM scm_values(arg1, arg2, rest, what)
+      SCM arg1, arg2, rest;
+@@ -877,15 +877,15 @@
+      * some memoized forms have different syntax */
+ 
+-static char s_expression[] = "missing or extra expression";
+-static char s_test[] = "bad test";
+-static char s_body[] = "bad body";
+-static char s_bindings[] = "bad bindings";
+-static char s_variable[] = "bad variable";
+-static char s_bad_else_clause[] = "bad ELSE clause";
+-static char s_clauses[] = "bad or missing clauses";
+-static char s_formals[] = "bad formals";
+-static char s_expr[] = "bad expression";
++static const char s_expression[] = "missing or extra expression";
++static const char s_test[] = "bad test";
++static const char s_body[] = "bad body";
++static const char s_bindings[] = "bad bindings";
++static const char s_variable[] = "bad variable";
++static const char s_bad_else_clause[] = "bad ELSE clause";
++static const char s_clauses[] = "bad or missing clauses";
++static const char s_formals[] = "bad formals";
++static const char s_expr[] = "bad expression";
+ #define ASSYNT(_cond, _arg, _pos, _subr)\
+-   if (!(_cond))scm_experr(_arg, (char *)_pos, _subr);
++   if (!(_cond))scm_experr(_arg, (const char *)_pos, _subr);
+ 
+ /* These symbols are needed by the reader, in repl.c */
+@@ -1157,5 +1157,5 @@
+ {
+   SCM v1, vs;
+-  char *opstr = ISYMCHARS(op) + 2;
++  const char *opstr = ISYMCHARS(op) + 2;
+   int argc = 0;
+   vars = scm_check_linum(vars, 0L);
+@@ -1218,6 +1218,6 @@
+ static int env_depth()
+ {
+-  register int depth = 0;
+-  register SCM env;
++  int depth = 0;
++  SCM env;
+   DEFER_INTS_EGC;
+   env = scm_env;
+@@ -1231,5 +1231,5 @@
+      int depth;
+ {
+-  register SCM env;
++  SCM env;
+   DEFER_INTS_EGC;
+   env = scm_env;
+@@ -1253,5 +1253,5 @@
+ #endif
+ 
+-static char s_nullenv_p[] = "scm_nullenv_p";
++static const char s_nullenv_p[] = "scm_nullenv_p";
+ int scm_nullenv_p(env)
+      SCM env;
+@@ -1468,7 +1468,6 @@
+ }
+ 
+-extern char s_redefining[];
+ #ifndef RECKLESS
+-char s_built_in_syntax[] = "built-in syntax ";
++static const char s_built_in_syntax[] = "built-in syntax ";
+ # define s_syntax (&s_built_in_syntax[9])
+ #endif
+@@ -1993,6 +1992,6 @@
+ #endif
+ 
+-char s_map[] = "map", s_for_each[] = "for-each", s_eval[] = "@eval";
+-char s_call_cc[] = "call-with-current-continuation"; /* s_apply[] = "apply"; */
++const char s_map[] = "map", s_for_each[] = "for-each", s_eval[] = "@eval";
++const char s_call_cc[] = "call-with-current-continuation"; /* s_apply[] = "apply"; */
+ 
+ /* static int checking_defines_p(ctxt) SCM ctxt; */
+@@ -2055,9 +2054,9 @@
+ }
+ 
+-SCM scm_apply_cxr(proc, arg1)
++static SCM scm_apply_cxr(proc, arg1)
+      SCM proc, arg1;
+ {
+-  double y;
+ #ifdef FLOATS
++  double y;
+   if (SUBRF(proc)) {
+     if (INUMP(arg1)) {
+@@ -2821,6 +2820,6 @@
+ }
+ 
+-static char s_proc_doc[] = "procedure-documentation";
+-SCM l_proc_doc(proc)
++static const char s_proc_doc[] = "procedure-documentation";
++static SCM l_proc_doc(proc)
+      SCM proc;
+ {
+@@ -3169,5 +3168,5 @@
+      int argc;
+ {
+-	register SCM z;
++	SCM z;
+ 	NEWCELL(z);
+ 	SETCODE(z, code);
+@@ -3186,5 +3185,5 @@
+      SCM code;
+ {
+-	register SCM z;
++	SCM z;
+ 	NEWCELL(z);
+ 	CDR(z) = code;
+@@ -3210,5 +3209,5 @@
+      const char *what;
+ {
+-  register SCM z;
++  SCM z;
+   ASRTER(scm_arity_check(code, (MAC_PRIMITIVE & flags ? 3L : 2L),
+ 			 (char *)0), code, ARG1, what);
+@@ -3218,5 +3217,5 @@
+   return z;
+ }
+-static char s_makacro[] = "procedure->syntax";
++static const char s_makacro[] = "procedure->syntax";
+ SCM makacro(code)
+      SCM code;
+@@ -3224,5 +3223,5 @@
+   return makro(code, MAC_ACRO, s_makacro);
+ }
+-static char s_makmacro[] = "procedure->macro";
++static const char s_makmacro[] = "procedure->macro";
+ SCM makmacro(code)
+      SCM code;
+@@ -3230,5 +3229,5 @@
+   return makro(code, MAC_MACRO, s_makmacro);
+ }
+-static char s_makmmacro[] = "procedure->memoizing-macro";
++static const char s_makmmacro[] = "procedure->memoizing-macro";
+ SCM makmmacro(code)
+      SCM code;
+@@ -3236,5 +3235,5 @@
+   return makro(code, MAC_MMACRO, s_makmmacro);
+ }
+-static char s_makidmacro[] = "procedure->identifier-macro";
++static const char s_makidmacro[] = "procedure->identifier-macro";
+ SCM makidmacro(code)
+      SCM code;
+@@ -3251,6 +3250,6 @@
+    (BEGIN #F) will be returned instead of #F if #F is the result.
+  */
+-static char s_macroexpand1[] = "@macroexpand1";
+-SCM scm_macroexpand1(x, env)
++static const char s_macroexpand1[] = "@macroexpand1";
++static SCM scm_macroexpand1(x, env)
+      SCM x, env;
+ {
+@@ -3276,6 +3275,6 @@
+ }
+ 
+-static char s_eval_syntax[] = "eval-syntax";
+-SCM scm_eval_syntax(x, env)
++static const char s_eval_syntax[] = "eval-syntax";
++static SCM scm_eval_syntax(x, env)
+      SCM x, env;
+ {
+@@ -3403,6 +3402,6 @@
+ }
+ 
+-static char s_definedp[] = "defined?";
+-SCM definedp(xorig, env, ctxt)
++static const char s_definedp[] = "defined?";
++static SCM definedp(xorig, env, ctxt)
+      SCM xorig, env, ctxt;
+ {
+@@ -3422,5 +3421,5 @@
+ 
+ #ifdef MACRO
+-static char s_identp[] = "identifier?";
++static const char s_identp[] = "identifier?";
+ SCM identp(obj)
+      SCM obj;
+@@ -3429,5 +3428,5 @@
+ }
+ 
+-static char s_ident_eqp[] = "identifier-equal?";
++static const char s_ident_eqp[] = "identifier-equal?";
+ SCM ident_eqp(id1, id2, env)
+      SCM id1, id2, env;
+@@ -3454,5 +3453,5 @@
+ }
+ 
+-static char s_ident2sym[] = "identifier->symbol";
++static const char s_ident2sym[] = "identifier->symbol";
+ SCM ident2sym(id)
+      SCM id;
+@@ -3463,5 +3462,5 @@
+ }
+ 
+-static char s_renamed_ident[] = "renamed-identifier";
++static const char s_renamed_ident[] = "renamed-identifier";
+ SCM renamed_ident(id, env)
+      SCM id, env;
+@@ -3500,5 +3499,5 @@
+ }
+ 
+-static char s_syn_quote[] = "syntax-quote";
++static const char s_syn_quote[] = "syntax-quote";
+ SCM m_syn_quote(xorig, env, ctxt)
+      SCM xorig, env, ctxt;
+@@ -3508,6 +3507,6 @@
+ }
+ 
+-static char s_defsyntax[] = "defsyntax";
+-SCM m_defsyntax(xorig, env, ctxt)
++static const char s_defsyntax[] = "defsyntax";
++static SCM m_defsyntax(xorig, env, ctxt)
+      SCM xorig, env, ctxt;
+ {
+@@ -3541,5 +3540,5 @@
+   return cons2(IM_LET_SYNTAX, env, m_body(body, env, ctxt));
+ }
+-static char s_letrec_syntax[] = "letrec-syntax";
++static const char s_letrec_syntax[] = "letrec-syntax";
+ SCM m_letrec_syntax(xorig, env, ctxt)
+      SCM xorig, env, ctxt;
+@@ -3564,5 +3563,5 @@
+ }
+ 
+-static char s_the_macro[] = "the-macro";
++static const char s_the_macro[] = "the-macro";
+ SCM m_the_macro(xorig, env, ctxt)
+      SCM xorig, env, ctxt;
+@@ -3624,5 +3623,5 @@
+ #endif
+ 
+-SCM make_synt(name, flags, fcn)
++static SCM make_synt(name, flags, fcn)
+      const char *name;
+      long flags;
+@@ -3638,10 +3637,10 @@
+   return CAR(symcell);
+ }
+-SCM make_specfun(name, typ, flags)
+-     char *name;
++static SCM make_specfun(name, typ, flags)
++     const char *name;
+      int typ, flags;
+ {
+   SCM symcell = sysintern(name, UNDEFINED);
+-  register SCM z;
++  SCM z;
+   NEWCELL(z);
+   CAR(z) = (long)typ | ((long)flags)<<16;
+--- findexec.c	2012-12-18 23:00:10.000000000 -0500
++++ findexec.c	2015-01-23 18:55:19.000000000 -0500
+@@ -132,4 +132,6 @@
+ # endif
+ 
++#include "scm.h"
++
+ static char *copy_of(s)
+      register const char *s;
+@@ -154,6 +156,6 @@
+      const char *name;
+ {
+-  char *search;
+-  register char *p;
++  const char *search;
++  const char *p;
+   char tbuf[MAXPATHLEN];
+ 
+@@ -173,6 +175,6 @@
+   }
+ 
+-  if (((search = (char *) getenv("DLDPATH")) == 0) &&
+-      ((search = (char *) getenv("PATH")) == 0))
++  if (((search = getenv("DLDPATH")) == 0) &&
++      ((search = getenv("PATH")) == 0))
+     search = DEFAULT_PATH;
+ 
+--- gmalloc.c	2008-01-30 22:44:00.000000000 -0500
++++ gmalloc.c	2015-01-23 18:55:19.000000000 -0500
+@@ -1622,5 +1622,5 @@
+ #endif
+ #else
+-#ifndef __osf__			/* declared in <unistd.h> */
++#ifndef __FreeBSD__			/* declared in <unistd.h> */
+ #ifndef hpux			/* declared in <unistd.h> */
+ #ifndef __svr4__		/* declared in <unistd.h> */
+--- gsubr.c	2008-01-30 22:32:00.000000000 -0500
++++ gsubr.c	2015-01-23 18:55:19.000000000 -0500
+@@ -31,35 +31,7 @@
+ 
+ static SCM f_gsubr_apply;
+-SCM make_gsubr(name, req, opt, rst, fcn)
+-     const char *name;
+-     int req, opt, rst;
+-     SCM (*fcn)();
+-{
+-  switch GSUBR_MAKTYPE(req, opt, rst) {
+-  case GSUBR_MAKTYPE(0, 0, 0): return make_subr(name, tc7_subr_0, fcn);
+-  case GSUBR_MAKTYPE(1, 0, 0): return make_subr(name, tc7_subr_1, fcn);
+-  case GSUBR_MAKTYPE(0, 1, 0): return make_subr(name, tc7_subr_1o, fcn);
+-  case GSUBR_MAKTYPE(1, 1, 0): return make_subr(name, tc7_subr_2o, fcn);
+-  case GSUBR_MAKTYPE(2, 0, 0): return make_subr(name, tc7_subr_2, fcn);
+-  case GSUBR_MAKTYPE(3, 0, 0): return make_subr(name, tc7_subr_3, fcn);
+-  case GSUBR_MAKTYPE(0, 0, 1): return make_subr(name, tc7_lsubr, fcn);
+-  case GSUBR_MAKTYPE(2, 0, 1): return make_subr(name, tc7_lsubr_2, fcn);
+-  default:
+-    {
+-      SCM symcell = sysintern(name, UNDEFINED);
+-      SCM z = scm_maksubr(name, tc7_subr_0, fcn);
+-      SCM cclo = makcclo(f_gsubr_apply, 3L);
+-      ASRTER(GSUBR_MAX >= req + opt + rst, MAKINUM(req + opt + rst),
+-	     OUTOFRANGE, "make_gsubr");
+-      GSUBR_PROC(cclo) = z;
+-      GSUBR_TYPE(cclo) = MAKINUM(GSUBR_MAKTYPE(req, opt, rst));
+-      CDR(symcell) = cclo;
+-      return cclo;
+-    }
+-  }
+-}
+ 
+-char s_gsubr_apply[] = " gsubr-apply";
+-SCM gsubr_apply(args)
++static const char s_gsubr_apply[] = " gsubr-apply";
++static SCM gsubr_apply(args)
+      SCM args;
+ {
+@@ -69,5 +41,4 @@
+   int i, n = GSUBR_REQ(typ) + GSUBR_OPT(typ) + GSUBR_REST(typ);
+   SCM v[10];
+-  if (n > 10) wta(self, "internal programming error", s_gsubr_apply);
+   args = CDR(args);
+   for (i = 0; i < GSUBR_REQ(typ); i++) {
+@@ -101,9 +72,8 @@
+   case 9: return (*fcn)(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8]);
+   case 10: return (*fcn)(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8], v[9]);
++  default: wta(self, "internal programming error", s_gsubr_apply);
+   }
+ }
+ 
+-SCM_DLL_EXPORT void init_gsubr P((void));
+-
+ void init_gsubr()
+ {
+--- ioext.c	2010-04-01 15:05:09.000000000 -0400
++++ ioext.c	2015-01-23 18:55:19.000000000 -0500
+@@ -35,5 +35,4 @@
+ #  include <io.h>
+ # endif
+-SCM	stat2scm P((struct stat *stat_temp));
+ /* int	mkdir P((const char *path, mode_t mode)); */
+ #endif
+@@ -107,6 +106,6 @@
+ #endif
+ 
+-static char s_read_line[] = "read-line";
+-SCM read_line(port)
++static const char s_read_line[] = "read-line";
++static SCM read_line(port)
+      SCM port;
+ {
+@@ -136,6 +135,6 @@
+   }
+ }
+-static char s_read_line1[] = "read-line!";
+-SCM read_line1(str, port)
++static const char s_read_line1[] = "read-line!";
++static SCM read_line1(str, port)
+      SCM str, port;
+ {
+@@ -166,6 +165,6 @@
+   }
+ }
+-static char s_write_line[] = "write-line";
+-SCM l_write_line(obj, port)
++static const char s_write_line[] = "write-line";
++static SCM l_write_line(obj, port)
+      SCM obj, port;
+ {
+@@ -174,6 +173,6 @@
+ }
+ 
+-static char s_reopen_file[] = "reopen-file";
+-SCM reopen_file(filename, modes, port)
++static const char s_reopen_file[] = "reopen-file";
++static SCM reopen_file(filename, modes, port)
+      SCM filename, modes, port;
+ {
+@@ -205,6 +204,6 @@
+ #ifndef MCH_AMIGA
+ # ifndef macintosh
+-static char s_dup[]="duplicate-port";
+-SCM l_dup(oldpt, modes)
++static const char s_dup[]="duplicate-port";
++static SCM l_dup(oldpt, modes)
+      SCM oldpt, modes;
+ {
+@@ -239,6 +238,6 @@
+   return newpt;
+ }
+-static char s_dup2[]="redirect-port!";
+-SCM l_dup2(into_pt, from_pt)
++static const char s_dup2[]="redirect-port!";
++static SCM l_dup2(into_pt, from_pt)
+      SCM into_pt, from_pt;
+ {
+@@ -257,11 +256,11 @@
+ 
+ # ifndef vms
+-static char s_opendir[]="opendir";
+-static char s_readdir[]="readdir";
+-static char s_rewinddir[]="rewinddir";
+-static char s_closedir[]="closedir";
++static const char s_opendir[]="opendir";
++static const char s_readdir[]="readdir";
++static const char s_rewinddir[]="rewinddir";
++static const char s_closedir[]="closedir";
+ #  ifndef _WIN32
+ #   include <dirent.h>
+-SCM l_opendir(dirname)
++static SCM l_opendir(dirname)
+      SCM dirname;
+ {
+@@ -279,5 +278,5 @@
+ }
+ 
+-SCM l_readdir(port)
++static SCM l_readdir(port)
+      SCM port;
+ {
+@@ -292,5 +291,5 @@
+ }
+ 
+-SCM l_rewinddir(port)
++static SCM l_rewinddir(port)
+      SCM port;
+ {
+@@ -300,5 +299,5 @@
+ }
+ 
+-SCM l_closedir(port)
++static SCM l_closedir(port)
+      SCM port;
+ {
+@@ -314,5 +313,5 @@
+ }
+ 
+-int dir_print(sexp, port, writing)
++static int dir_print(sexp, port, writing)
+      SCM sexp; SCM port; int writing;
+ {
+@@ -320,5 +319,5 @@
+   return !0;
+ }
+-sizet dir_free(p)
++static sizet dir_free(p)
+      CELLPTR p;
+ {
+@@ -334,5 +333,5 @@
+ };
+ 
+-SCM l_opendir(dirname)
++static SCM l_opendir(dirname)
+      SCM dirname;
+ {
+@@ -362,5 +361,5 @@
+ }
+ 
+-SCM l_readdir(port)
++static SCM l_readdir(port)
+      SCM port;
+ {
+@@ -382,5 +381,5 @@
+ }
+ 
+-SCM l_rewinddir(port)
++static SCM l_rewinddir(port)
+      SCM port;
+ {
+@@ -396,5 +395,5 @@
+ }
+ 
+-SCM l_closedir(port)
++static SCM l_closedir(port)
+      SCM port;
+ {
+@@ -429,5 +428,5 @@
+   return 0;
+ }
+-SCM dir_mark(ptr)
++static SCM dir_mark(ptr)
+      SCM ptr;
+ {
+@@ -439,6 +438,6 @@
+ # endif /* vms */
+ 
+-static char s_mkdir[] = "mkdir";
+-SCM l_mkdir(path, mode)
++static const char s_mkdir[] = "mkdir";
++static SCM l_mkdir(path, mode)
+      SCM path, mode;
+ {
+@@ -455,8 +454,8 @@
+ }
+ # ifdef vms
+-static char s_dot_dir[] = ".DIR";
++static const char s_dot_dir[] = ".DIR";
+ # endif
+-static char s_rmdir[] = "rmdir";
+-SCM l_rmdir(path)
++static const char s_rmdir[] = "rmdir";
++static SCM l_rmdir(path)
+      SCM path;
+ {
+@@ -473,6 +472,6 @@
+ 
+ #ifndef THINK_C
+-static char s_chdir[] = "chdir";
+-SCM lchdir(str)
++static const char s_chdir[] = "chdir";
++static SCM lchdir(str)
+      SCM str;
+ {
+@@ -486,5 +485,5 @@
+ #   include <dir.h>
+ #  endif
+-SCM l_getcwd()
++static SCM l_getcwd()
+ {
+   char *ans;
+@@ -500,6 +499,6 @@
+ 
+ #  ifndef __MWERKS__
+-static char s_chmod[] = "chmod";
+-SCM l_chmod(pathname, mode)
++static const char s_chmod[] = "chmod";
++static SCM l_chmod(pathname, mode)
+      SCM pathname, mode;
+ {
+@@ -522,6 +521,6 @@
+ #    endif
+ #   endif
+-static char s_utime[] = "utime";
+-SCM l_utime(pathname, acctime, modtime)
++static const char s_utime[] = "utime";
++static SCM l_utime(pathname, acctime, modtime)
+      SCM pathname, acctime, modtime;
+ {
+@@ -537,6 +536,6 @@
+ 
+ #  ifndef __MWERKS__
+-static char s_umask[] = "umask";
+-SCM l_umask(mode)
++static const char s_umask[] = "umask";
++static SCM l_umask(mode)
+      SCM mode;
+ {
+@@ -548,6 +547,6 @@
+ #endif /* THINK_C */
+ 
+-static char s_ren_fil[] = "rename-file";
+-SCM ren_fil(oldname, newname)
++static const char s_ren_fil[] = "rename-file";
++static SCM ren_fil(oldname, newname)
+      SCM oldname, newname;
+ {
+@@ -570,6 +569,6 @@
+ #endif
+ }
+-static char s_copy_file[] = "copy-file";
+-SCM scm_copy_file(oldname, newname)
++static const char s_copy_file[] = "copy-file";
++static SCM scm_copy_file(oldname, newname)
+      SCM oldname, newname;
+ {
+@@ -618,6 +617,6 @@
+ }
+ 
+-static char s_fileno[] = "fileno";
+-SCM l_fileno(port)
++static const char s_fileno[] = "fileno";
++static SCM l_fileno(port)
+      SCM port;
+ {
+@@ -634,6 +633,6 @@
+ #   define R_OK 04
+ #  endif
+-static char s_access[] = "access";
+-SCM l_access(pathname, mode)
++static const char s_access[] = "access";
++static SCM l_access(pathname, mode)
+      SCM pathname, mode;
+ {
+@@ -653,8 +652,6 @@
+ # endif /* __MWERKS__ */
+ 
+-SCM stat2scm P((struct stat *stat_temp));
+-
+-char s_stat[] = "stat";
+-SCM l_stat(str)
++static const char s_stat[] = "stat";
++static SCM l_stat(str)
+   SCM str;
+ {
+@@ -677,5 +674,5 @@
+ # ifdef MCH_AMIGA
+ SCM stat2scm(stat_temp)
+-     struct stat *stat_temp;
++     const struct stat *stat_temp;
+ {
+   SCM ans = make_vector(MAKINUM(3), UNSPECIFIED);
+@@ -688,5 +685,5 @@
+ # else
+ SCM stat2scm(stat_temp)
+-     struct stat *stat_temp;
++     const struct stat *stat_temp;
+ {
+   SCM ans = make_vector(MAKINUM(11), UNSPECIFIED);
+@@ -708,5 +705,5 @@
+ #   include <process.h>
+ #  endif
+-SCM l_getpid()
++static SCM l_getpid()
+ {
+   return MAKINUM((unsigned long)getpid());
+@@ -722,8 +719,8 @@
+ #     include <process.h>
+ #    endif
+-char s_execv[] = "execv";
+-char s_execvp[] = "execvp";
+-SCM i_execv(modes, path, args)
+-     char * modes;
++const char s_execv[] = "execv";
++const char s_execvp[] = "execvp";
++static SCM i_execv(modes, path, args)
++     const char * modes;
+      SCM path, args;
+ {
+@@ -743,26 +740,26 @@
+   return MAKINUM(errno);
+ }
+-SCM lexec(path, arg0, args)
++static SCM lexec(path, arg0, args)
+      SCM path, arg0, args;
+ {
+   return i_execv("", path, cons(arg0, args));
+ }
+-SCM lexecp(path, arg0, args)
++static SCM lexecp(path, arg0, args)
+      SCM path, arg0, args;
+ {
+   return i_execv("p", path, cons(arg0, args));
+ }
+-SCM lexecv(path, args)
++static SCM lexecv(path, args)
+      SCM path, args;
+ {
+   return i_execv("", path, args);
+ }
+-SCM lexecvp(path, args)
++static SCM lexecvp(path, args)
+      SCM path, args;
+ {
+   return i_execv("p", path, args);
+ }
+-static char s_putenv[] = "putenv";
+-SCM l_putenv(str)
++static const char s_putenv[] = "putenv";
++static SCM l_putenv(str)
+      SCM str;
+ {
+@@ -819,5 +816,5 @@
+ #include <fcntl.h>		/* for O_RDONLY, O_RDWR, O_EXCL */
+ #ifdef O_EXCL
+-SCM scm_try_create_file(fname, modes, perms)
++static SCM scm_try_create_file(fname, modes, perms)
+      SCM fname, modes, perms;
+ {
+@@ -865,6 +862,4 @@
+ 	{0, 0}};
+ 
+-SCM_DLL_EXPORT void init_ioext P((void));
+-
+ void init_ioext()
+ {
+--- posix.c	2008-01-30 22:32:26.000000000 -0500
++++ posix.c	2015-01-23 18:55:19.000000000 -0500
+@@ -46,6 +46,6 @@
+ #endif
+ 
+-static char s_chown[] = "chown";
+-SCM l_chown(path, owner, group)
++static const char s_chown[] = "chown";
++static SCM l_chown(path, owner, group)
+      SCM path, owner, group;
+ {
+@@ -58,6 +58,6 @@
+ }
+ 
+-static char s_link[] = "link";
+-SCM l_link(oldpath, newpath)
++static const char s_link[] = "link";
++static SCM l_link(oldpath, newpath)
+      SCM oldpath, newpath;
+ {
+@@ -69,5 +69,5 @@
+ }
+ 
+-SCM l_pipe()
++static SCM l_pipe()
+ {
+   int fd[2], ret;
+@@ -96,6 +96,6 @@
+ }
+ 
+-char	s_op_pipe[] = "open-pipe";
+-SCM open_pipe(pipestr, modes)
++const char	s_op_pipe[] = "open-pipe";
++static SCM open_pipe(pipestr, modes)
+      SCM pipestr, modes;
+ {
+@@ -118,6 +118,6 @@
+ }
+ 
+-static char scm_s_getgroups[] = "getgroups";
+-SCM scm_getgroups()
++static const char scm_s_getgroups[] = "getgroups";
++static SCM scm_getgroups()
+ {
+   SCM grps, ans;
+@@ -147,6 +147,6 @@
+    before access to that structure is completed */
+ 
+-static char s_pwinfo[] = "getpw";
+-SCM l_pwinfo(user)
++static const char s_pwinfo[] = "getpw";
++static SCM l_pwinfo(user)
+      SCM user;
+ {
+@@ -173,6 +173,6 @@
+ }
+ #include <grp.h>
+-static char s_grinfo[] = "getgr";
+-SCM l_grinfo(name)
++static const char s_grinfo[] = "getgr";
++static SCM l_grinfo(name)
+      SCM name;
+ {
+@@ -192,8 +192,8 @@
+   ve[ 1] = makfrom0str(entry->gr_passwd);
+   ve[ 2] = ulong2num((unsigned long)entry->gr_gid);
+-  ve[ 3] = makfromstrs(-1, entry->gr_mem);
++  ve[ 3] = makfromstrs(-1, (const char * const *)entry->gr_mem);
+   return ans;
+ }
+-SCM l_setgr(arg)
++static SCM l_setgr(arg)
+      SCM arg;
+ {
+@@ -202,5 +202,5 @@
+   return UNSPECIFIED;
+ }
+-SCM l_setpw(arg)
++static SCM l_setpw(arg)
+      SCM arg;
+ {
+@@ -210,6 +210,6 @@
+ }
+ 
+-static char s_kill[] = "kill";
+-SCM l_kill(pid, sig)
++static const char s_kill[] = "kill";
++static SCM l_kill(pid, sig)
+      SCM pid, sig;
+ {
+@@ -220,6 +220,6 @@
+   return MAKINUM(0L+i);
+ }
+-static char s_waitpid[] = "waitpid";
+-SCM l_waitpid(pid, options)
++static const char s_waitpid[] = "waitpid";
++static SCM l_waitpid(pid, options)
+      SCM pid, options;
+ {
+@@ -231,23 +231,23 @@
+ }
+ 
+-SCM l_getppid()
++static SCM l_getppid()
+ {
+   return MAKINUM(0L+getppid());
+ }
+ 
+-SCM l_getuid()
++static SCM l_getuid()
+ {
+   return MAKINUM(0L+getuid());
+ }
+-SCM l_getgid()
++static SCM l_getgid()
+ {
+   return MAKINUM(0L+getgid());
+ }
+ #ifndef LACK_E_IDs
+-SCM l_geteuid()
++static SCM l_geteuid()
+ {
+   return MAKINUM(0L+geteuid());
+ }
+-SCM l_getegid()
++static SCM l_getegid()
+ {
+   return MAKINUM(0L+getegid());
+@@ -255,6 +255,6 @@
+ #endif
+ 
+-static char s_setuid[] = "setuid";
+-SCM l_setuid(id)
++static const char s_setuid[] = "setuid";
++static SCM l_setuid(id)
+      SCM id;
+ {
+@@ -262,6 +262,6 @@
+   return setuid(INUM(id)) ? BOOL_F : BOOL_T;
+ }
+-static char s_setgid[] = "setgid";
+-SCM l_setgid(id)
++static const char s_setgid[] = "setgid";
++static SCM l_setgid(id)
+      SCM id;
+ {
+@@ -271,6 +271,6 @@
+ 
+ #ifndef LACK_E_IDs
+-static char s_seteuid[] = "seteuid";
+-SCM l_seteuid(id)
++static const char s_seteuid[] = "seteuid";
++static SCM l_seteuid(id)
+      SCM id;
+ {
+@@ -278,6 +278,6 @@
+   return seteuid(INUM(id)) ? BOOL_F : BOOL_T;
+ }
+-static char s_setegid[] = "setegid";
+-SCM l_setegid(id)
++static const char s_setegid[] = "setegid";
++static SCM l_setegid(id)
+      SCM id;
+ {
+@@ -287,6 +287,6 @@
+ #endif
+ 
+-static char s_ttyname[] = "ttyname";
+-SCM l_ttyname(port)
++static const char s_ttyname[] = "ttyname";
++static SCM l_ttyname(port)
+      SCM port;
+ {
+@@ -299,5 +299,5 @@
+ }
+ 
+-SCM l_fork()
++static SCM l_fork()
+ {
+   long pid = 0L + fork();
+@@ -306,5 +306,5 @@
+ 
+ #include <sys/utsname.h>
+-SCM l_uname()
++static SCM l_uname()
+ {
+   struct utsname buf;
+--- ramap.c	2013-03-12 23:30:27.000000000 -0400
++++ ramap.c	2015-01-23 18:55:19.000000000 -0500
+@@ -21,8 +21,8 @@
+ #include "scm.h"
+ 
+-SCM	sc2array P((SCM s, SCM ra, SCM prot));
++static SCM sc2array P((SCM s, SCM ra, SCM prot));
+ 
+ typedef struct {
+-  char *name;
++  const char *name;
+   SCM sproc;
+   int (* vproc)();
+@@ -64,5 +64,5 @@
+ 		    0 --> no match.
+    */
+-int ra_matchp(ra0, ras)
++static int ra_matchp(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -137,6 +137,6 @@
+ }
+ 
+-static char s_ra_mismatch[] = "array shape mismatch";
+-int ramapc(cproc, data, ra0, lra, what)
++static const char s_ra_mismatch[] = "array shape mismatch";
++static int ramapc(cproc, data, ra0, lra, what)
+      int (*cproc)();
+      SCM data, ra0, lra;
+@@ -258,5 +258,5 @@
+ }
+ 
+-SCM array_fill(ra, fill)
++static SCM array_fill(ra, fill)
+      SCM ra, fill;
+ {
+@@ -265,6 +265,6 @@
+ }
+ 
+-static char s_sarray_copy[] = "serial-array:copy!";
+-static char s_array_copy[] = "array:copy!";
++static const char s_sarray_copy[] = "serial-array:copy!";
++static const char s_array_copy[] = "array:copy!";
+ static int racp(src, dst)
+      SCM dst, src;
+@@ -466,5 +466,5 @@
+   return 1;
+ }
+-SCM array_copy(dst, src)
++static SCM array_copy(dst, src)
+      SCM dst;
+      SCM src;
+@@ -479,5 +479,5 @@
+ }
+ 
+-SCM ra2contig(ra, copy)
++static SCM ra2contig(ra, copy)
+      SCM ra;
+      int copy;
+@@ -511,6 +511,6 @@
+ }
+ 
+-static char s_ura_rd[] = "uniform-array-read!";
+-SCM ura_read(ra, port)
++static const char s_ura_rd[] = "uniform-array-read!";
++static SCM ura_read(ra, port)
+      SCM ra, port;
+ {
+@@ -525,6 +525,6 @@
+ }
+ 
+-static char s_ura_wr[] = "uniform-array-write";
+-SCM ura_write(ra, port)
++static const char s_ura_wr[] = "uniform-array-write";
++static SCM ura_write(ra, port)
+      SCM ra, port;
+ {
+@@ -535,5 +535,5 @@
+ }
+ 
+-static char s_sc2array[] = "scalar->array";
++static const char s_sc2array[] = "scalar->array";
+ SCM sc2array(s, ra, prot)
+      SCM s, ra, prot;
+@@ -604,5 +604,5 @@
+ 
+ /* Functions callable by ARRAY-MAP! */
+-int ra_eqp(ra0, ras)
++static int ra_eqp(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -725,20 +725,20 @@
+   return 1;
+ }
+-int ra_lessp(ra0, ras)
++static int ra_lessp(ra0, ras)
+      SCM ra0, ras;
+ {
+  return ra_compare(ra0, CAR(ras), CAR(CDR(ras)), 0);
+ }
+-int ra_leqp(ra0, ras)
++static int ra_leqp(ra0, ras)
+      SCM ra0, ras;
+ {
+   return ra_compare(ra0, CAR(CDR(ras)), CAR(ras), 1);
+ }
+-int ra_grp(ra0, ras)
++static int ra_grp(ra0, ras)
+      SCM ra0, ras;
+ {
+   return ra_compare(ra0, CAR(CDR(ras)), CAR(ras), 0);
+ }
+-int ra_greqp(ra0, ras)
++static int ra_greqp(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -746,5 +746,5 @@
+ }
+ 
+-int ra_sum(ra0, ras)
++static int ra_sum(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -832,5 +832,5 @@
+ }
+ 
+-int ra_difference(ra0, ras)
++static int ra_difference(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -963,5 +963,5 @@
+ }
+ 
+-int ra_product(ra0, ras)
++static int ra_product(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -1052,5 +1052,5 @@
+   return 1;
+ }
+-int ra_divide(ra0, ras)
++static int ra_divide(ra0, ras)
+      SCM ra0, ras;
+ {
+@@ -1209,5 +1209,8 @@
+   ra1 = ARRAY_V(ra1);
+   switch TYP7(ra0) {
+-  default: gencase:
++  default:
++#ifdef FLOATS
++  gencase:
++#endif
+     for (; n-- > 0; i0 += inc0, i1 += inc1) {
+       e1 = cvref(ra1, i1, e1);
+@@ -1369,7 +1372,7 @@
+   {0, 0, 0}};
+ 
+-static char s_sarray_map[] = "serial-array-map!";
++static const char s_sarray_map[] = "serial-array-map!";
+ # define s_array_map  (s_sarray_map + 7)
+-SCM array_map(ra0, proc, lra)
++static SCM array_map(ra0, proc, lra)
+      SCM ra0, proc, lra;
+ {
+@@ -1413,12 +1416,13 @@
+   case tc7_asubr:
+     if (NULLP(lra)) {
+-      SCM prot, fill = SUBRF(proc)(UNDEFINED, UNDEFINED);
++      SCM fill = SUBRF(proc)(UNDEFINED, UNDEFINED);
++# ifdef FLOATS
++      SCM prot;
+       if (INUMP(fill)) {
+ 	prot = array_prot(ra0);
+-# ifdef FLOATS
+ 	if (NIMP(prot) && INEXP(prot))
+ 	  fill = makdbl((double)INUM(fill), 0.0);
+-# endif
+       }
++# endif
+       array_fill(ra0, fill);
+     }
+@@ -1496,6 +1500,6 @@
+   return 1;
+ }
+-static char s_array_for_each[] = "array-for-each";
+-SCM array_for_each(proc, ra0, lra)
++static const char s_array_for_each[] = "array-for-each";
++static SCM array_for_each(proc, ra0, lra)
+      SCM proc, ra0, lra;
+ {
+@@ -1523,6 +1527,6 @@
+ }
+ 
+-static char s_array_index_for_each[] = "array-index-for-each";
+-SCM scm_array_index_for_each(ra, proc)
++static const char s_array_index_for_each[] = "array-index-for-each";
++static SCM scm_array_index_for_each(ra, proc)
+      SCM ra, proc;
+ {
+@@ -1594,6 +1598,6 @@
+ }
+ 
+-static char s_array_imap[] = "array-index-map!";
+-SCM array_imap(ra, proc)
++static const char s_array_imap[] = "array-index-map!";
++static SCM array_imap(ra, proc)
+      SCM ra, proc;
+ {
+@@ -1666,5 +1670,6 @@
+ }
+ 
+-SCM array_equal P((SCM ra0, SCM ra1));
++static SCM array_equal(SCM ra0, SCM ra1); /* Forward declaration */
++
+ static int raeql_1(ra0, as_equal, ra1)
+      SCM ra0, as_equal, ra1;
+@@ -1794,6 +1799,6 @@
+   return (raeql(ra0, BOOL_T, ra1) ? BOOL_T : BOOL_F);
+ }
+-static char s_array_equalp[] = "array-equal?";
+-SCM array_equal(ra0, ra1)
++static const char s_array_equalp[] = "array-equal?";
++static SCM array_equal(ra0, ra1)
+      SCM ra0, ra1;
+ {
+@@ -1846,6 +1851,4 @@
+ }
+ 
+-SCM_DLL_EXPORT void init_ramap P((void));
+-
+ void init_ramap()
+ {
+--- record.c	2008-10-30 11:55:09.000000000 -0400
++++ record.c	2015-01-23 18:55:19.000000000 -0500
+@@ -56,12 +56,12 @@
+ #endif
+ 
+-static char s_record[] = "record";
+-static char s_recordp[] = "record?";
+-SCM recordp(obj)
++static const char s_record[] = "record";
++static const char s_recordp[] = "record?";
++static SCM recordp(obj)
+      SCM obj;
+ {
+   return (NIMP(obj) && RECP(obj) ? BOOL_T : BOOL_F);
+ }
+-SCM rec_pred1(cclo, obj)
++static SCM rec_pred1(cclo, obj)
+      SCM cclo, obj;
+ {
+@@ -71,6 +71,6 @@
+ }
+ static SCM f_rec_pred1;
+-static char s_rec_pred[] = "record-predicate";
+-SCM rec_pred(rtd)
++static const char s_rec_pred[] = "record-predicate";
++static SCM rec_pred(rtd)
+      SCM rtd;
+ {
+@@ -81,6 +81,6 @@
+ }
+ 
+-static char s_rec_rtd[] = "record-type-descriptor";
+-SCM rec_rtd(rec)
++static const char s_rec_rtd[] = "record-type-descriptor";
++static SCM rec_rtd(rec)
+      SCM rec;
+ {
+@@ -90,6 +90,6 @@
+ 
+ static SCM f_rec_constr1;
+-static char s_rec_constr[] = "record-constructor";
+-SCM rec_constr(rtd, flds)
++static const char s_rec_constr[] = "record-constructor";
++static SCM rec_constr(rtd, flds)
+      SCM rtd, flds;
+ {
+@@ -130,5 +130,6 @@
+      SCM arg, rtd;
+      int i;
+-     char *pos, *what;
++     intptr_t pos;
++     const char *what;
+ {
+   SCM recname = RTD_NAME(rtd);
+@@ -143,9 +144,9 @@
+   else
+     mesg = st_append(cons2(mesg, recname, EOL));
+-  wta(arg, pos, CHARS(mesg));
++  wta(arg, (char *)pos, CHARS(mesg));
+ }
+ #endif
+-static char s_rec_constr1[] = "record constructor: ";
+-SCM rec_constr1(args)
++static const char s_rec_constr1[] = "record constructor: ";
++static SCM rec_constr1(args)
+      SCM args;
+ {
+@@ -193,6 +194,6 @@
+   return cclo;
+ }
+-static char s_rec_accessor1[] = "record accessor: ";
+-SCM rec_accessor1(cclo, rec)
++static const char s_rec_accessor1[] = "record accessor: ";
++static SCM rec_accessor1(cclo, rec)
+      SCM cclo, rec;
+ {
+@@ -204,6 +205,6 @@
+   return VELTS(rec)[i];
+ }
+-static char s_rec_modifier1[] = "record modifier: ";
+-SCM rec_modifier1(cclo, rec, val)
++static const char s_rec_modifier1[] = "record modifier: ";
++static SCM rec_modifier1(cclo, rec, val)
+      SCM cclo, rec, val;
+ {
+@@ -217,6 +218,6 @@
+ }
+ static SCM f_rec_accessor1;
+-static char s_rec_accessor[] = "record-accessor";
+-SCM rec_accessor(rtd, field)
++static const char s_rec_accessor[] = "record-accessor";
++static SCM rec_accessor(rtd, field)
+      SCM rtd, field;
+ {
+@@ -224,13 +225,13 @@
+ }
+ static SCM f_rec_modifier1;
+-static char s_rec_modifier[] = "record-modifier";
+-SCM rec_modifier(rtd, field)
++static const char s_rec_modifier[] = "record-modifier";
++static SCM rec_modifier(rtd, field)
+      SCM rtd, field;
+ {
+  return makrecclo(f_rec_modifier1, rtd, field, s_rec_accessor);
+ }
+-SCM *loc_makrtd;
+-static char s_makrectyp[] = "make-record-type";
+-SCM makrectyp(name, fields)
++static SCM *loc_makrtd;
++static const char s_makrectyp[] = "make-record-type";
++static SCM makrectyp(name, fields)
+      SCM name, fields;
+ {
+@@ -247,6 +248,6 @@
+ }
+ 
+-static char s_rec_prinset[] = "record-printer-set!";
+-SCM rec_prinset(rtd, printer)
++static const char s_rec_prinset[] = "record-printer-set!";
++static SCM rec_prinset(rtd, printer)
+      SCM rtd, printer;
+ {
+@@ -276,5 +277,8 @@
+      int writing;
+ {
+-  SCM names, printer = RTD_PRINTER(REC_RTD(exp));
++#ifdef SCM_SHOW_RECORD_FIELDS
++  SCM names;
++#endif
++  SCM printer = RTD_PRINTER(REC_RTD(exp));
+   SCM argv[3];
+   if (NIMP(printer)) {
+@@ -293,5 +297,7 @@
+     }
+   }
++#ifdef SCM_SHOW_RECORD_FIELDS
+   names = RTD_FIELDS(REC_RTD(exp));
++#endif
+   lputs("#s(", port);
+   scm_iprin1(RTD_NAME(REC_RTD(exp)), port, 0);
+@@ -316,5 +322,5 @@
+ 
+ static SCM f_rtdprin1;
+-SCM rec_rtdprin1(rtd, port, writing_p)
++static SCM rec_rtdprin1(rtd, port, writing_p)
+      SCM rtd, port, writing_p;
+ {
+@@ -332,5 +338,5 @@
+ }
+ 
+-SCM recequal(rec0, rec1)
++static SCM recequal(rec0, rec1)
+      SCM rec0, rec1;
+ {
+@@ -356,6 +362,4 @@
+   {0, 0}};
+ 
+-SCM_DLL_EXPORT void init_record P((void));
+-
+ void init_record()
+ {
+--- repl.c	2013-04-06 21:53:18.000000000 -0400
++++ repl.c	2015-01-27 01:03:08.000000000 -0500
+@@ -21,8 +21,4 @@
+ #include "scm.h"
+ #include "setjump.h"
+-void	igc P((const char *what, SCM basecont));
+-void	unexec P((char *new_name, char *a_name, unsigned data_start,
+-		  unsigned bss_start, unsigned entry_address));
+-void	scm_fill_freelist P((void));
+ 
+ #ifdef __CYGWIN__
+@@ -30,10 +26,6 @@
+ #endif
+ 
+-#ifdef __NetBSD__
+-# include <ctype.h>
+-# include <unistd.h>
+-#endif
+-
+-#ifdef __OpenBSD__
++#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__) || \
++    defined(__DragonFlyBSD__)
+ # include <ctype.h>
+ # include <unistd.h>
+@@ -62,8 +54,12 @@
+ #endif
+ 
++#ifdef CAN_DUMP
++static const char s_unexec[] = "unexec";
++#endif
++
+ unsigned char upcase[CHAR_CODE_LIMIT];
+ unsigned char downcase[CHAR_CODE_LIMIT];
+-unsigned char lowers[] = "abcdefghijklmnopqrstuvwxyz";
+-unsigned char uppers[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
++static const unsigned char lowers[] = "abcdefghijklmnopqrstuvwxyz";
++static const unsigned char uppers[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ void init_tables()
+ {
+@@ -77,5 +73,5 @@
+ 
+ #ifdef EBCDIC
+-char *charnames[] = {
++const char *charnames[] = {
+   "nul","soh","stx","etx", "pf", "ht", "lc","del",
+    0   , 0   ,"smm", "vt", "ff", "cr", "so", "si",
+@@ -87,5 +83,5 @@
+    0   , 0   , 0   , 0   ,"dc4","nak", 0   ,"sub",
+   "space", s_newline, "tab", "backspace", "return", "page", "null"};
+-char charnums[] =
++const char charnums[] =
+ "\000\001\002\003\004\005\006\007\
+ \010\011\012\013\014\015\016\017\
+@@ -99,5 +95,5 @@
+ #endif /* def EBCDIC */
+ #ifdef ASCII
+-char *charnames[] = {
++const char *charnames[] = {
+   "nul","soh","stx","etx","eot","enq","ack","bel",
+    "bs", "ht", "nl", "vt", "np", "cr", "so", "si",
+@@ -105,5 +101,5 @@
+   "can", "em","sub","esc", "fs", "gs", "rs", "us",
+   "space", s_newline, "tab", "backspace", "return", "page", "null", "del"};
+-char charnums[] =
++const char charnums[] =
+ "\000\001\002\003\004\005\006\007\
+ \010\011\012\013\014\015\016\017\
+@@ -112,5 +108,5 @@
+  \n\t\b\r\f\0\177";
+ #endif /* def ASCII */
+-char *isymnames[] = {
++const char *isymnames[] = {
+ 				/* Special Forms */
+ 				/*  NUM_ISPCSYMS ISPCSYMS here */
+@@ -128,19 +124,19 @@
+   };
+ 
+-static char	s_read_char[] = "read-char", s_peek_char[] = "peek-char";
+-char	        s_write[] = "write", s_newline[] = "newline";
+-static char	s_display[] = "display", s_write_char[] = "write-char";
+-static char	s_freshline[] = "freshline";
++static const char	s_read_char[] = "read-char", s_peek_char[] = "peek-char";
++const char	        s_write[] = "write", s_newline[] = "newline";
++static const char	s_display[] = "display", s_write_char[] = "write-char";
++static const char	s_freshline[] = "freshline";
+ 
+-static char	s_eofin[] = "end of file in ";
+-static char	s_unknown_sharp[] = "unknown # object";
++static const char	s_eofin[] = "end of file in ";
++static const char	s_unknown_sharp[] = "unknown # object";
+ 
+ static SCM scm_lread1 P((SCM port, int flgs, const char *what));
+ static SCM scm_lreadr P((SCM tok_buf, SCM port, int flgs));
+ static SCM scm_lreadpr P((SCM tok_buf, SCM port, int flgs));
+-static SCM scm_lreadparen P((SCM tok_buf, SCM port, int flgs, char *name));
++static SCM scm_lreadparen P((SCM tok_buf, SCM port, int flgs, const char *name));
+ static SCM scm_lread_rec P((SCM tok_buf, SCM port));
+ static sizet scm_read_token P((int ic, SCM tok_buf, SCM port, int flgs));
+-static void err_head P((char *str));
++static void err_head P((const char *str));
+ extern int case_sensitize_symbols; /* 0 or 8 */
+ 
+@@ -155,5 +151,5 @@
+ 
+ void scm_ipruk(hdr, ptr, port)
+-     char *hdr;
++     const char *hdr;
+      SCM ptr;
+      SCM port;
+@@ -173,6 +169,6 @@
+ }
+ 
+-void scm_iprlist(hdr, exp, tlr, port, writing)
+-     char *hdr, tlr;
++static void scm_iprlist(hdr, exp, tlr, port, writing)
++     const char *hdr, tlr;
+      SCM exp;
+      SCM port;
+@@ -383,5 +379,5 @@
+ }
+ 
+-static char s_char_readyp[]="char-ready?";
++static const char s_char_readyp[]="char-ready?";
+ 
+ #ifdef __IBMC__
+@@ -452,5 +448,5 @@
+ #endif
+ /* perhaps should undefine MSDOS from __IBMC__ here */
+-SCM char_readyp(port)
++static SCM char_readyp(port)
+      SCM port;
+ {
+@@ -476,6 +472,6 @@
+ # define timet long
+ #endif
+-static char s_wfi[] = "wait-for-input";
+-SCM wait_for_input(args)
++static const char s_wfi[] = "wait-for-input";
++static SCM wait_for_input(args)
+      SCM args;
+ {
+@@ -616,6 +612,6 @@
+     ;
+ }
+-static char	s_force_output[] = "force-output";
+-SCM scm_force_output(port)
++static const char	s_force_output[] = "force-output";
++static SCM scm_force_output(port)
+      SCM port;
+ {
+@@ -626,5 +622,5 @@
+ }
+ 
+-SCM scm_write(obj, port)
++static SCM scm_write(obj, port)
+      SCM obj, port;
+ {
+@@ -660,5 +656,5 @@
+ 	return UNSPECIFIED;
+ }
+-SCM scm_freshline(port)
++static SCM scm_freshline(port)
+      SCM port;
+ {
+@@ -716,5 +712,5 @@
+ }
+ sizet lfwrite(ptr, size, nitems, port)
+-     char *ptr;
++     const char *ptr;
+      sizet size;
+      sizet nitems;
+@@ -843,9 +839,9 @@
+ /* Top-level readers */
+ static SCM p_read_for_load, p_read;
+-static char s_read[] = "read";
+-static char s_read_for_load[] = "read-for-load";
++static const char s_read[] = "read";
++static const char s_read_for_load[] = "read-for-load";
+ #ifndef MEMOIZE_LOCALS
+ static SCM p_read_numbered;
+-static char s_read_numbered[] = "read-numbered";
++static const char s_read_numbered[] = "read-numbered";
+ #endif
+ SCM scm_read(port)
+@@ -855,5 +851,5 @@
+ }
+ 
+-SCM scm_read_for_load(port)
++static SCM scm_read_for_load(port)
+      SCM port;
+ {
+@@ -1134,5 +1130,5 @@
+      SCM port;
+      int flgs;
+-     char *name;
++     const char *name;
+ {
+   SCM lst, fst,
+@@ -1162,6 +1158,6 @@
+    with an atomic test-and-set instruction can use it here (and not
+    DEFER_INTS). */
+-char s_swapcar[] = "swap-car!";
+-SCM swapcar(pair, value)
++static const char s_swapcar[] = "swap-car!";
++static SCM swapcar(pair, value)
+      SCM pair, value;
+ {
+@@ -1174,8 +1170,8 @@
+   return ret;
+ }
+-char s_tryarb[] = "try-arbiter";
+-char s_relarb[] = "release-arbiter";
++static const char s_tryarb[] = "try-arbiter";
++static const char s_relarb[] = "release-arbiter";
+ long tc16_arbiter;
+-SCM tryarb(arb)
++static SCM tryarb(arb)
+      SCM arb;
+ {
+@@ -1202,5 +1198,5 @@
+      SCM name;
+ {
+-  register SCM z;
++  SCM z;
+   NEWCELL(z);
+   CDR(z) = name;
+@@ -1218,12 +1214,12 @@
+ }
+ 
+-static char s_tryload[] = "try-load";
++static const char s_tryload[] = "try-load";
+ #define s_load (&s_tryload[4])
+ 
+-struct errdesc {char *msg;char *s_response;short parent_err;};
++struct errdesc {const char *msg; const char *s_response; short parent_err;};
+ struct errdesc errmsgs[] = {
+-  {"Wrong number of args", 0, 0},
+-  {"numerical overflow", 0, FPE_SIGNAL},
+-  {"Argument out of range", 0, FPE_SIGNAL},
++  {"Wrong number of args", NULL, 0},
++  {"numerical overflow", NULL, FPE_SIGNAL},
++  {"Argument out of range", NULL, FPE_SIGNAL},
+   {"Could not allocate", "out-of-storage", 0},
+   {"Thrashing", "thrashing", 0},
+@@ -1232,6 +1228,6 @@
+   {"user interrupt", "user-interrupt", 0},
+   {"arithmetic error", "arithmetic-error", 0},
+-  {"bus error", 0, 0},
+-  {"segment violation", 0, 0},
++  {"bus error", NULL, 0},
++  {"segment violation", NULL, 0},
+   {"alarm", "alarm-interrupt", 0},
+   {"virtual alarm", "virtual-alarm-interrupt", 0},
+@@ -1240,5 +1236,5 @@
+ 
+ void (* deferred_proc) P((void)) = 0;
+-char *errjmp_bad = "init";
++const char *errjmp_bad = "init";
+ VOLATILE int ints_disabled = 1;
+ unsigned long SIG_deferred = 0;
+@@ -1248,5 +1244,5 @@
+ static int errobj_codep;
+ static SCM err_exp, err_env;
+-static char *err_pos, *err_s_subr;
++static const char *err_pos, *err_s_subr;
+ static cell tmp_errobj = {(SCM)UNDEFINED, (SCM)EOL};
+ static cell tmp_loadpath = {(SCM)BOOL_F, (SCM)EOL};
+@@ -1266,7 +1262,7 @@
+ {
+   SCM proc;
+-  char *name = errmsgs[i-WNA].s_response;
++  const char *name = errmsgs[i-WNA].s_response;
+   if (errjmp_bad || errjmp_recursive)
+-    wta(UNDEFINED, (char *)i, ""); /* sends it to def_err_response */
++    wta(UNDEFINED, (char *)(intptr_t)i, ""); /* sends it to def_err_response */
+   /* NEWCELL does not defer interrupts; so be careful to maintain the
+      freelist integrity. */
+@@ -1321,8 +1317,7 @@
+ 
+ SCM exitval = MAKINUM(EXIT_FAILURE); /* INUM return value */
+-extern char s_unexec[];
+ SCM scm_top_level(initpath, toplvl_fun)
+-     char *initpath;
+-     SCM (*toplvl_fun)();
++     const char *initpath;
++     SCM (*toplvl_fun)(void);
+ {
+   SCM ret;
+@@ -1342,5 +1337,5 @@
+   default:
+     {
+-      char *name = errmsgs[i-WNA].s_response;
++      const char *name = errmsgs[i-WNA].s_response;
+       if (name) {
+ 	SCM proc = CDR(intern(name, (sizet)strlen(name)));
+@@ -1354,5 +1349,5 @@
+   case 0:
+     exitval = MAKINUM(EXIT_SUCCESS);
+-    errjmp_bad = (char *)0;
++    errjmp_bad = NULL;
+     errjmp_recursive = 0;
+     if (NIMP(sys_errp) && OPOUTPORTP(sys_errp)) lfflush(sys_errp);
+@@ -1382,5 +1377,5 @@
+   reset_toplvl:
+     ints_disabled = 1;
+-    errjmp_bad = (char *)0;
++    errjmp_bad = NULL;
+     errjmp_recursive = 0;
+     if (NIMP(sys_errp) && OPOUTPORTP(sys_errp)) lfflush(sys_errp);
+@@ -1442,5 +1437,5 @@
+ }
+ 
+-SCM line_num()
++static SCM line_num()
+ {
+   if (IMP(loadports))
+@@ -1448,5 +1443,5 @@
+   return scm_port_line(CAR(loadports));
+ }
+-static char s_port_line[] = "port-line";
++static const char s_port_line[] = "port-line";
+ SCM scm_port_line(port)
+      SCM port;
+@@ -1466,5 +1461,5 @@
+   return MAKINUM(lnum);
+ }
+-static char s_port_col[] = "port-column";
++static const char s_port_col[] = "port-column";
+ SCM scm_port_col(port)
+      SCM port;
+@@ -1487,5 +1482,5 @@
+ }
+ 
+-static char	s_file_position[] = "file-position";
++static const char	s_file_position[] = "file-position";
+ SCM scm_file_position(port, pos)
+      SCM port, pos;
+@@ -1530,6 +1525,6 @@
+ }
+ 
+-static char s_port_filename[] = "port-filename";
+-SCM scm_port_filename(port)
++static const char s_port_filename[] = "port-filename";
++static SCM scm_port_filename(port)
+      SCM port;
+ {
+@@ -1549,7 +1544,7 @@
+ extern char s_heap[];
+ void growth_mon(obj, size, units, grewp)
+-     char *obj;
++     const char *obj;
+      long size;
+-     char *units;
++     const char *units;
+      int grewp;
+ {
+@@ -1648,7 +1643,7 @@
+     scm_init_brk = (unsigned long)sbrk(0);
+ }
+-void scm_brk_report()
++static void scm_brk_report()
+ {
+-  unsigned long scm_curbrk = (unsigned long)sbrk(0),
++  intptr_t scm_curbrk = (unsigned long)sbrk(0),
+     dif1 = ((dumped ? scm_dumped_brk : scm_curbrk) - scm_init_brk)/1024,
+     dif2 = (scm_curbrk - scm_dumped_brk)/1024;
+@@ -1798,11 +1793,11 @@
+   longjump(CONT(rootcont)->jmpbuf, COOKIE(-1));
+ }
+-SCM abrt()
++static SCM abrt()
+ {
+   if (errjmp_bad) exit(EXIT_FAILURE);
+   longjump(CONT(rootcont)->jmpbuf, COOKIE(-2));
+ }
+-char s_restart[] = "restart";
+-SCM restart()
++static const char s_restart[] = "restart";
++static SCM restart()
+ {
+   /* ASRTER(!dumped, UNDEFINED, "dumped can't", s_restart); */
+@@ -1811,5 +1806,4 @@
+ 
+ #ifdef CAN_DUMP
+-char s_unexec[] = "unexec";
+ SCM scm_unexec(newpath)
+      SCM newpath;
+@@ -1904,6 +1898,6 @@
+   return BOOL_T;
+ }
+-static char s_eval_string[] = "eval-string";
+-static char s_load_string[] = "load-string";
++static const char s_eval_string[] = "eval-string";
++static const char s_load_string[] = "load-string";
+ static SCM i_eval_string = 0;
+ SCM scm_eval_string(str)
+@@ -1969,5 +1963,5 @@
+ 
+ static void err_head(str)
+-     char *str;
++     const char *str;
+ {
+   SCM lps;
+@@ -1993,5 +1987,5 @@
+ }
+ void scm_warn(str1, str2, obj)
+-     char *str1, *str2;
++     const char *str1, *str2;
+      SCM obj;
+ {
+@@ -2010,5 +2004,5 @@
+ }
+ 
+-SCM lerrno(arg)
++static SCM lerrno(arg)
+      SCM arg;
+ {
+@@ -2020,6 +2014,6 @@
+   return MAKINUM(old);
+ }
+-static char s_perror[] = "perror";
+-SCM lperror(arg)
++static const char s_perror[] = "perror";
++static SCM lperror(arg)
+      SCM arg;
+ {
+@@ -2075,8 +2069,8 @@
+   else if (WNA > (long)err_pos) {
+     lputs("Wrong type in arg", cur_errp);
+-    lputc((long)err_pos <= ARGn ? ' ' : '1' + (int)err_pos - ARG1, cur_errp);
++    lputc((long)err_pos <= ARGn ? ' ' : '1' + (intptr_t)err_pos - ARG1, cur_errp);
+   }
+ #endif
+-  else lputs(errmsgs[((int)err_pos)-WNA].msg, cur_errp);
++  else lputs(errmsgs[((intptr_t)err_pos)-WNA].msg, cur_errp);
+   lputs(((long)err_pos==WNA)?" given ":" ", cur_errp);
+   err_pos = 0;
+@@ -2137,5 +2131,5 @@
+   longjump(CONT(rootcont)->jmpbuf,
+ 	   (~0x1fL) & (long)pos || (WNA > (long)pos) ?
+-	   COOKIE(1) : COOKIE((int)pos));
++	   COOKIE(1) : COOKIE((intptr_t)pos));
+   /* will do error processing at stack base */
+ }
+@@ -2160,20 +2154,20 @@
+ #endif
+ }
+-SCM cur_input_port()
++static SCM cur_input_port()
+ {
+   return cur_inp;
+ }
+-SCM cur_output_port()
++static SCM cur_output_port()
+ {
+   return cur_outp;
+ }
+-SCM cur_error_port()
++static SCM cur_error_port()
+ {
+   return cur_errp;
+ }
+-char s_cur_inp[] = "set-current-input-port";
+-char s_cur_outp[] = "set-current-output-port";
+-char s_cur_errp[] = "set-current-error-port";
+-SCM set_inp(port)
++static const char s_cur_inp[] = "set-current-input-port";
++static const char s_cur_outp[] = "set-current-output-port";
++static const char s_cur_errp[] = "set-current-error-port";
++static SCM set_inp(port)
+      SCM port;
+ {
+@@ -2186,5 +2180,5 @@
+   return oinp;
+ }
+-SCM set_outp(port)
++static SCM set_outp(port)
+      SCM port;
+ {
+@@ -2197,5 +2191,5 @@
+   return ooutp;
+ }
+-SCM set_errp(port)
++static SCM set_errp(port)
+      SCM port;
+ {
+@@ -2208,6 +2202,6 @@
+   return oerrp;
+ }
+-static char s_isatty[] = "isatty?";
+-SCM l_isatty(port)
++static const char s_isatty[] = "isatty?";
++static SCM l_isatty(port)
+      SCM port;
+ {
+@@ -2270,5 +2264,5 @@
+ 
+ static smobfuns arbsmob = {markcdr, free0, prinarb};
+-char s_ccl[] = "char-code-limit";
++const char s_ccl[] = "char-code-limit";
+ 
+ void init_repl( iverbose )
+--- rgx.c	2013-03-14 00:42:23.000000000 -0400
++++ rgx.c	2015-01-23 18:55:19.000000000 -0500
+@@ -21,5 +21,5 @@
+ #include "scm.h"
+ #ifdef __FreeBSD__
+-# include "gnuregex.h"
++# include "gnu/regex.h"
+ #else
+ # include "regex.h"
+@@ -31,7 +31,4 @@
+ #endif
+ 
+-static char rcsid[] =
+-   "$Id: rgx.c,v 1.20 2013/03/14 04:42:23 jaffer Exp $";
+-
+ #ifdef HAVE_ALLOCA
+ # include <alloca.h>
+@@ -54,17 +51,17 @@
+ /* forward function defs */
+ 
+-SCM lregsearch();
+-SCM lregsearchv();
++static SCM lregsearch();
++static SCM lregsearchv();
+ 
+ /* Posix regexp bindings.  */
+ 
+-static char s_regex[] = "regex";
+-static char s_regcomp[] = "regcomp", s_regerror[] = "regerror";
+-static char s_regexec[] = "regexec", s_regmatp[] = "regmatch?";
+-static char s_regsearch[] = "regsearch", s_regmatch[] = "regmatch";
+-static char s_regsearchv[] = "regsearchv", s_regmatchv[] = "regmatchv";
+-static char s_stringsplit[]  = "string-split";
+-static char s_stringsplitv[] = "string-splitv";
+-static char s_stringedit[] = "string-edit";
++static const char s_regex[] = "regex";
++static const char s_regcomp[] = "regcomp", s_regerror[] = "regerror";
++static const char s_regexec[] = "regexec", s_regmatp[] = "regmatch?";
++static const char s_regsearch[] = "regsearch", s_regmatch[] = "regmatch";
++static const char s_regsearchv[] = "regsearchv", s_regmatchv[] = "regmatchv";
++static const char s_stringsplit[]  = "string-split";
++static const char s_stringsplitv[] = "string-splitv";
++static const char s_stringedit[] = "string-edit";
+ 
+ #define s_error &s_regerror[3]
+@@ -95,5 +92,5 @@
+ } regex_info;
+ 
+-sizet fregex(ptr)
++static sizet fregex(ptr)
+      CELLPTR ptr;
+ {
+@@ -108,5 +105,5 @@
+ }
+ 
+-int prinregex(exp, port, writing)
++static int prinregex(exp, port, writing)
+      SCM exp; SCM port; int writing;
+ {
+@@ -119,5 +116,5 @@
+ }
+ 
+-SCM markregex(ptr)
++static SCM markregex(ptr)
+      SCM ptr;
+ {
+@@ -129,5 +126,5 @@
+ static smobfuns rgxsmob = {markregex, fregex, prinregex};
+ 
+-SCM lregerror(scode)
++static SCM lregerror(scode)
+      SCM scode;
+ {
+@@ -155,5 +152,5 @@
+ }
+ 
+-SCM lregcomp(pattern, flags)
++static SCM lregcomp(pattern, flags)
+      SCM pattern, flags;
+ {
+@@ -273,5 +270,5 @@
+ }
+ 
+-SCM lregexec(prog, str)
++static SCM lregexec(prog, str)
+      SCM prog, str;
+ {
+@@ -307,5 +304,5 @@
+ }
+ 
+-SCM lregmatp(prog, str)
++static SCM lregmatp(prog, str)
+      SCM prog, str;
+ {
+@@ -334,5 +331,5 @@
+ #define SEARCH 1
+ 
+-SCM lregsearchmatch(prog, str, args, search, vector)
++static SCM lregsearchmatch(prog, str, args, search, vector)
+      SCM prog, str, args;
+      int vector, search;
+@@ -446,5 +443,5 @@
+ }
+ 
+-SCM lregsearch(prog, str, args)
++static SCM lregsearch(prog, str, args)
+      SCM prog, str, args;
+ {
+@@ -452,5 +449,5 @@
+ }
+ 
+-SCM lregsearchv(prog, str, args)
++static SCM lregsearchv(prog, str, args)
+      SCM prog, str, args;
+ {
+@@ -458,5 +455,5 @@
+ }
+ 
+-SCM lregmatch(prog, str, args)
++static SCM lregmatch(prog, str, args)
+      SCM prog, str, args;
+ {
+@@ -464,5 +461,5 @@
+ }
+ 
+-SCM lregmatchv(prog, str, args)
++static SCM lregmatchv(prog, str, args)
+      SCM prog, str, args;
+ {
+@@ -470,5 +467,5 @@
+ }
+ 
+-SCM stringsplitutil(prog, str, vector)
++static SCM stringsplitutil(prog, str, vector)
+      SCM prog, str;
+      int vector;
+@@ -528,5 +525,5 @@
+ }
+ 
+-SCM lstringsplit(prog, str)
++static SCM lstringsplit(prog, str)
+      SCM prog, str;
+ {
+@@ -534,5 +531,5 @@
+ }
+ 
+-SCM lstringsplitv(prog, str)
++static SCM lstringsplitv(prog, str)
+      SCM prog, str;
+ {
+@@ -560,5 +557,5 @@
+ 
+ /*  (string-edit <re> <edit-spec> <string> [<count>]) */
+-SCM lstringedit(prog, editspec, args)
++static SCM lstringedit(prog, editspec, args)
+      SCM prog, editspec, args;
+ {
+--- rope.c	2013-03-24 21:58:34.000000000 -0400
++++ rope.c	2015-01-23 18:55:19.000000000 -0500
+@@ -59,5 +59,5 @@
+ unsigned char num2uchar(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   unsigned long res = INUM(num);
+@@ -67,5 +67,5 @@
+ unsigned short num2ushort(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   unsigned long res = INUM(num);
+@@ -75,5 +75,5 @@
+ unsigned long num2ulong(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   unsigned long res;
+@@ -106,5 +106,5 @@
+ long num2long(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   long res;
+@@ -138,5 +138,5 @@
+ short num2short(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   long lres = INUM((long)num);
+@@ -147,5 +147,5 @@
+ signed char num2char(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   long lres = INUM((long)num);
+@@ -157,5 +157,5 @@
+ double num2dbl(num, pos, s_caller)
+      SCM num;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   if (INUMP(num)) return (double)INUM(num);
+@@ -235,5 +235,5 @@
+ 				/* Hooks to call SCM from C */
+ SCM scm_evstr(str)
+-     char *str;
++     const char *str;
+ {
+   SCM lsym;
+@@ -244,5 +244,5 @@
+ }
+ void scm_ldstr(str)
+-     char *str;
++     const char *str;
+ {
+   SCM lsym;
+@@ -253,5 +253,5 @@
+ }
+ int scm_ldfile(path)
+-     char *path;
++     const char *path;
+ {
+   SCM name = makfrom0str(path);
+@@ -260,5 +260,5 @@
+ }
+ int scm_ldprog(path)
+-     char *path;
++     const char *path;
+ {
+   SCM name = makfrom0str(path);
+@@ -270,5 +270,4 @@
+ 				/* Get byte address of SCM array */
+ #ifdef ARRAYS
+-long	aind P((SCM ra, SCM args, const char *what));
+ void* scm_addr(args, s_name)
+      SCM args;
+--- sc2.c	2008-01-30 22:32:35.000000000 -0500
++++ sc2.c	2015-01-23 18:55:19.000000000 -0500
+@@ -21,6 +21,6 @@
+ #include "scm.h"
+ 
+-static char s_last_pair[] = "last-pair";
+-SCM last_pair(sx)
++static const char s_last_pair[] = "last-pair";
++static SCM last_pair(sx)
+      SCM sx;
+ {
+@@ -40,6 +40,6 @@
+ }
+ 
+-static char s_subml[] = "substring-move-left!";
+-SCM subml(str1, start1, args)
++static const char s_subml[] = "substring-move-left!";
++static SCM subml(str1, start1, args)
+      SCM str1, start1, args;
+ {
+@@ -63,6 +63,6 @@
+   return UNSPECIFIED;
+ }
+-static char s_submr[] = "substring-move-right!";
+-SCM submr(str1, start1, args)
++static const char s_submr[] = "substring-move-right!";
++static SCM submr(str1, start1, args)
+      SCM str1, start1, args;
+ {
+@@ -86,6 +86,6 @@
+   return UNSPECIFIED;
+ }
+-static char s_subfl[] = "substring-fill!";
+-SCM subfl(str, start, args)
++static const char s_subfl[] = "substring-fill!";
++static SCM subfl(str, start, args)
+      SCM str, start, args;
+ {
+@@ -107,6 +107,6 @@
+ }
+ 
+-static char s_strnullp[] = "string-null?";
+-SCM strnullp(str)
++static const char s_strnullp[] = "string-null?";
++static SCM strnullp(str)
+      SCM str;
+ {
+@@ -116,6 +116,6 @@
+ }
+ 
+-static char s_appendb[] = "append!";
+-SCM appendb(args)
++static const char s_appendb[] = "append!";
++static SCM appendb(args)
+      SCM args;
+ {
+@@ -138,6 +138,4 @@
+   {0, 0}};
+ 
+-SCM_DLL_EXPORT void init_sc2 P((void));
+-
+ void init_sc2()
+ {
+--- scl.c	2015-01-02 22:43:33.000000000 -0500
++++ scl.c	2015-01-23 18:55:19.000000000 -0500
+@@ -35,5 +35,7 @@
+ static sizet pdbl2str P((double f, char *a, sizet ch));
+ static sizet iflo2str P((SCM flt, char *str));
++#if defined(FLOATS) && defined(BIGDIG) && !defined(DBL_DIG)
+ static void safe_add_1 P((double f, double *fsum));
++#endif
+ static long scm_twos_power P((SCM n));
+ static double mantexp2dbl P((SCM manstr, int expo));
+@@ -42,35 +44,37 @@
+ static SCM ilog P((unsigned long m, SCM b, SCM k, unsigned long *n));
+ 
+-static char s_makrect[] = "make-rectangular", s_makpolar[] = "make-polar",
++static const char s_makrect[] = "make-rectangular", s_makpolar[] = "make-polar",
+ 	    s_magnitude[] = "magnitude", s_angle[] = "angle",
+ 	    s_real_part[] = "real-part", s_imag_part[] = "imag-part",
+ 	    s_in2ex[] = "inexact->exact",s_ex2in[] = "exact->inexact";
+ 
+-static char s_expt[] = "real-expt", s_atan2[] = "$atan2";
++static const char s_expt[] = "real-expt", s_atan2[] = "$atan2";
+ #endif
+-static char s_memv[] = "memv", s_assv[] = "assv";
++static const char s_memv[] = "memv", s_assv[] = "assv";
+ 
+ SCM sys_protects[NUM_PROTECTS];
+ sizet num_protects = NUM_PROTECTS;
+ 
+-char		s_inexactp[] = "inexact?";
+-static char     s_zerop[] = "zero?", s_abs[] = "abs",
++const char		s_inexactp[] = "inexact?";
++static const char     s_zerop[] = "zero?", s_abs[] = "abs",
+ 		s_positivep[] = "positive?", s_negativep[] = "negative?";
+-static char     s_lessp[] = "<", s_grp[] = ">";
+-static char     s_leqp[] = "<=", s_greqp[] = ">=";
++static const char     s_lessp[] = "<", s_grp[] = ">";
++static const char     s_leqp[] = "<=", s_greqp[] = ">=";
+ #define s_eqp (&s_leqp[1])
+-static char     s_max[] = "max", s_min[] = "min";
+-char		s_sum[] = "+", s_difference[] = "-", s_product[] = "*",
++static const char     s_max[] = "max", s_min[] = "min";
++const char		s_sum[] = "+", s_difference[] = "-", s_product[] = "*",
+ 		s_divide[] = "/";
+-static char     s_number2string[] = "number->string",
++static const char     s_number2string[] = "number->string",
+ 		s_str2number[] = "string->number";
+ 
+-static char s_list_tail[] = "list-tail";
+-static char s_str2list[] = "string->list";
+-static char s_st_copy[] = "string-copy", s_st_fill[] = "string-fill!";
+-static char s_vect2list[] = "vector->list", s_ve_fill[] = "vector-fill!";
+-static char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.0";
+-static char s_intexpt[] = "integer-expt", s_cintlog[] = "ceiling-integer-log";
+-static char s_dfloat_parts[] = "double-float-parts";
++static const char s_list_tail[] = "list-tail";
++static const char s_str2list[] = "string->list";
++static const char s_st_copy[] = "string-copy", s_st_fill[] = "string-fill!";
++static const char s_vect2list[] = "vector->list", s_ve_fill[] = "vector-fill!";
++#if defined(FLOATS) && defined(BIGDIG)
++static const char str_inf0[] = "inf.0", str_nan0[] = "nan.0", str_0[] = "0.0";
++static const char s_dfloat_parts[] = "double-float-parts";
++#endif
++static const char s_intexpt[] = "integer-expt", s_cintlog[] = "ceiling-integer-log";
+ #define s_intlog (&s_cintlog[8])
+ 
+@@ -81,5 +85,5 @@
+ 				    are representable exactly as doubles. */
+ 
+-int inf2str(f, a)
++static int inf2str(f, a)
+      double f;
+      char *a;
+@@ -114,5 +118,5 @@
+ 
+ /* There are also temporary strings used in number->string conversion. */
+-void strrecy(str)
++static void strrecy(str)
+      SCM str;
+ {
+@@ -209,5 +213,7 @@
+   while ((dp+1 < ch) && (point+9999)%3) { a[dp] = a[dp+1]; a[++dp] = '.'; point--; }
+ #  endif	/* ENGNOT */
+-  while ('0'==a[--ch]); ch++;
++  while ('0'==a[--ch])
++    ;
++  ch++;
+   if (point != 0) {
+     a[ch++] = 'e';
+@@ -521,5 +527,5 @@
+ #ifdef BIGDIG
+ SCM istr2int(str, len, radix)
+-     char *str;
++     const char *str;
+      long len;
+      register int radix;
+@@ -579,5 +585,5 @@
+ #else
+ SCM istr2int(str, len, radix)
+-     register char *str;
++     const char *str;
+      long len;
+      register int radix;
+@@ -743,7 +749,7 @@
+ 
+ SCM istr2flo(str, len, radix)
+-     register char *str;
+-     register long len;
+-     register long radix;
++     const char *str;
++     long len;
++     long radix;
+ {
+   register int c, i = 0, j = 0;
+@@ -951,5 +957,5 @@
+ 
+ SCM istring2number(str, len, radix)
+-     char *str;
++     const char *str;
+      long len;
+      long radix;
+@@ -1070,5 +1076,5 @@
+   return BOOL_F;
+ }
+-SCM assv(x, alist)		/* m.borza  12.2.91 */
++static SCM assv(x, alist)		/* m.borza  12.2.91 */
+ SCM x, alist;
+ {
+@@ -1088,5 +1094,5 @@
+ #endif
+ 
+-SCM list_tail(lst, k)
++static SCM list_tail(lst, k)
+      SCM lst, k;
+ {
+@@ -1118,5 +1124,5 @@
+   return makfromstr(CHARS(str), (sizet)LENGTH(str));
+ }
+-SCM string_fill(str, chr)
++static SCM string_fill(str, chr)
+      SCM str, chr;
+ {
+@@ -1141,5 +1147,5 @@
+   return res;
+ }
+-SCM vector_fill(v, fill)
++static SCM vector_fill(v, fill)
+      SCM v, fill;
+ {
+@@ -1228,5 +1234,5 @@
+ }
+ #ifdef FLOATS
+-SCM scm_complex_p(obj)
++static SCM scm_complex_p(obj)
+      SCM obj;
+ {
+@@ -1236,5 +1242,5 @@
+ 
+ # ifdef BIGDIG
+-static char twostab[] = {4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0};
++static const char twostab[] = {4, 0, 1, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 1, 0};
+ static long scm_twos_power(n)
+      SCM n;
+@@ -1287,5 +1293,5 @@
+ }
+ # endif
+-SCM realp(x)
++static SCM realp(x)
+      SCM x;
+ {
+@@ -1298,5 +1304,5 @@
+   return BOOL_F;
+ }
+-SCM scm_rationalp(x)
++static SCM scm_rationalp(x)
+      SCM x;
+ {
+@@ -1313,5 +1319,5 @@
+   return BOOL_F;
+ }
+-SCM intp(x)
++static SCM intp(x)
+      SCM x;
+ {
+@@ -1331,5 +1337,5 @@
+ #endif				/* FLOATS */
+ 
+-SCM inexactp(x)
++static SCM inexactp(x)
+      SCM x;
+ {
+@@ -1586,6 +1592,8 @@
+ }
+ 
+-static char s_exactprob[] = "not representable as inexact";
+-SCM scm_max(x, y)
++#if defined(BIGDIG) && defined(FLOATS)
++static const char s_exactprob[] = "not representable as inexact";
++#endif
++static SCM scm_max(x, y)
+      SCM x, y;
+ {
+@@ -1671,5 +1679,5 @@
+ }
+ 
+-SCM scm_min(x, y)
++static SCM scm_min(x, y)
+      SCM x, y;
+ {
+@@ -2361,5 +2369,5 @@
+ }
+ 
+-SCM ilog(m, b, k, n)
++static SCM ilog(m, b, k, n)
+      unsigned long m;
+      SCM b, k;
+@@ -2378,5 +2386,5 @@
+ }
+ 
+-SCM scm_intlog(base, k)
++static SCM scm_intlog(base, k)
+      SCM base, k;
+ {
+@@ -2393,12 +2401,6 @@
+ # define eqv eqp
+ #endif
+-SCM scm_cintlog(base, k)
+-     SCM base, k;
+-{
+-  SCM il = scm_intlog(base, k);
+-  return (BOOL_T==eqv(k, scm_intexpt(base, il))) ? il : sum(MAKINUM(1L), il);
+-}
+ 
+-SCM scm_intexpt(z1, z2)
++static SCM scm_intexpt(z1, z2)
+      SCM z1, z2;
+ {
+@@ -2504,4 +2506,11 @@
+ }
+ 
++static SCM scm_cintlog(base, k)
++     SCM base, k;
++{
++  SCM il = scm_intlog(base, k);
++  return (BOOL_T==eqv(k, scm_intexpt(base, il))) ? il : sum(MAKINUM(1L), il);
++}
++
+ #ifdef FLOATS
+ # ifndef HAVE_ATANH
+@@ -2544,7 +2553,7 @@
+ struct dpair {double x, y;};
+ 
+-void two_doubles(z1, z2, sstring, xy)
++static void two_doubles(z1, z2, sstring, xy)
+      SCM z1, z2;
+-     char *sstring;
++     const char *sstring;
+      struct dpair *xy;
+ {
+@@ -2585,5 +2594,5 @@
+ }
+ 
+-SCM expt(z1, z2)
++static SCM expt(z1, z2)
+      SCM z1, z2;
+ {
+@@ -2592,5 +2601,5 @@
+   return makdbl(pow(xy.x, xy.y), 0.0);
+ }
+-SCM latan2(z1, z2)
++static SCM latan2(z1, z2)
+      SCM z1, z2;
+ {
+@@ -2599,5 +2608,5 @@
+   return makdbl(atan2(xy.x, xy.y), 0.0);
+ }
+-SCM makrect(z1, z2)
++static SCM makrect(z1, z2)
+      SCM z1, z2;
+ {
+@@ -2606,5 +2615,5 @@
+   return makdbl(xy.x, xy.y);
+ }
+-SCM makpolar(z1, z2)
++static SCM makpolar(z1, z2)
+      SCM z1, z2;
+ {
+@@ -2614,5 +2623,5 @@
+ }
+ 
+-SCM real_part(z)
++static SCM real_part(z)
+      SCM z;
+ {
+@@ -2632,5 +2641,5 @@
+   return z;
+ }
+-SCM imag_part(z)
++static SCM imag_part(z)
+      SCM z;
+ {
+@@ -2663,5 +2672,5 @@
+ }
+ 
+-SCM scm_magnitude(z)
++static SCM scm_magnitude(z)
+      SCM z;
+ {
+@@ -2691,5 +2700,5 @@
+ }
+ 
+-SCM angle(z)
++static SCM angle(z)
+      SCM z;
+ {
+@@ -2713,5 +2722,5 @@
+ 
+ 
+-SCM ex2in(z)
++static SCM ex2in(z)
+      SCM z;
+ {
+@@ -2724,5 +2733,5 @@
+  badz: wta(z, (char *)ARG1, s_ex2in);
+ }
+-SCM in2ex(z)
++static SCM in2ex(z)
+      SCM z;
+ {
+@@ -2757,6 +2766,6 @@
+ }
+ #else				/* ~FLOATS */
+-static char s_trunc[] = "truncate";
+-SCM numident(x)
++static const char s_trunc[] = "truncate";
++static SCM numident(x)
+      SCM x;
+ {
+@@ -2837,5 +2846,5 @@
+       sizet j = i - (dbl_mant_dig + BITSPERDIG - 1)/BITSPERDIG;
+       BIGDIG *digits = BDIGITS(quo);
+-      if (j < 0) j = 0;
++      if (i <= dbl_mant_dig + BITSPERDIG) j = 0;
+       while (i-- > j) ans = digits[i] + ldexp(ans, BITSPERDIG);
+       bex += j * BITSPERDIG;
+@@ -2915,5 +2924,5 @@
+ }
+ 
+-SCM scm_dfloat_parts(f)
++static SCM scm_dfloat_parts(f)
+      SCM f;
+ {
+@@ -2928,6 +2937,6 @@
+   return scm_values(dbl2big(mant), MAKINUM(expt), EOL, s_dfloat_parts);
+ }
+-static char s_make_dfloat[] = "make-double-float";
+-SCM scm_make_dfloat(mant, expt)
++static const char s_make_dfloat[] = "make-double-float";
++static SCM scm_make_dfloat(mant, expt)
+      SCM mant, expt;
+ {
+@@ -3014,6 +3023,5 @@
+ }
+ 
+-static char s_hashv[] = "hashv", s_hashq[] = "hashq";
+-extern char s_obunhash[];
++static const char s_hashv[] = "hashv", s_hashq[] = "hashq";
+ #define s_hash (&s_obunhash[9])
+ 
+@@ -3164,5 +3172,5 @@
+ #endif
+ 
+-#ifdef FLOATS
++#if defined(FLOATS) && defined(BIGDIG) && !defined(DBL_DIG)
+ static void safe_add_1(f, fsum)
+      double f, *fsum;
+--- scm.c	2014-11-18 17:04:42.000000000 -0500
++++ scm.c	2015-01-23 18:55:19.000000000 -0500
+@@ -25,4 +25,5 @@
+ #endif
+ #include "scm.h"
++#include "continue.h"
+ #include "patchlvl.h"
+ 
+@@ -58,33 +59,5 @@
+ #endif
+ 
+-void	init_sbrk P((void));
+-
+-void	init_dynl P((void));
+-void	init_edline P((void));
+-void	init_eval P((void));
+-void	init_features P((void));
+-void	init_gsubr P((void));
+-void	init_io P((void));
+-void	init_ioext P((void));
+-void	init_posix P((void));
+-void	init_ramap P((void));
+-void	init_record P((void));
+-void	init_rgx P((void));
+-void	init_rope P((void));
+-void	init_repl P((int iverbose));
+-void	init_sc2 P((void));
+-void	init_scl P((void));
+-void	init_signals P((void));
+-void	init_socket P((void));
+-void	init_subrs P((void));
+-void	init_tables P((void));
+-void	init_time P((void));
+-void	init_types P((void));
+-void	init_unif P((void));
+-void	init_debug P((void));
+-void	reset_time P((void));
+-void	final_repl P((void));
+-
+-void init_banner()
++static void init_banner()
+ {
+   fputs("SCM version "SCMVERSION", Copyright (C) 1990-2006 \
+@@ -162,5 +135,6 @@
+ void process_signals()
+ {
+-  int i, n;
++  intptr_t i;
++  int n;
+   unsigned long mask = 1L;
+   /* printf("process_signals; output_deferred=%d\n", output_deferred); fflush(stdout); */
+@@ -249,5 +223,5 @@
+ 
+ 
+-static char s_unksig[] = "unknown signal";
++static const char s_unksig[] = "unknown signal";
+ static SIGRETTYPE err_signal(sig)
+      int sig;
+@@ -264,5 +238,5 @@
+ {
+   int oerr = errno;
+-  int i = NUM_SIGNALS;
++  intptr_t i = NUM_SIGNALS;
+   while (i--)
+     if (sig == sigdesc[i].signo) break;
+@@ -315,6 +289,6 @@
+ #endif
+ #ifdef SIGALRM
+-static char s_alarm[] = "alarm";
+-SCM lalarm(i)
++static const char s_alarm[] = "alarm";
++static SCM lalarm(i)
+      SCM i;
+ {
+@@ -326,9 +300,9 @@
+ # ifdef SIGPROF
+ #  include <sys/time.h>
+-static char s_setitimer[] = "setitimer";
++static const char s_setitimer[] = "setitimer";
+ static struct {SCM sym; int which;} setitimer_tab[3] = {
+   {UNDEFINED, 0}, {UNDEFINED, 0}, {UNDEFINED, 0}};
+ /* VALUE and INTERVAL are milliseconds */
+-SCM scm_setitimer(which, value, interval)
++static SCM scm_setitimer(which, value, interval)
+      SCM which, value, interval;
+ {
+@@ -364,5 +338,5 @@
+ # endif
+ # ifndef AMIGA
+-SCM l_pause()
++static SCM l_pause(void)
+ {
+   pause();
+@@ -380,6 +354,6 @@
+ #ifndef AMIGA
+ # ifndef _Windows
+-static char s_sleep[] = "sleep";
+-SCM l_sleep(i)
++static const char s_sleep[] = "sleep";
++static SCM l_sleep(i)
+      SCM i;
+ {
+@@ -442,6 +416,6 @@
+ #endif
+ /* int raise P((int sig)); */
+-static char s_raise[] = "raise";
+-SCM l_raise(sig)
++static const char s_raise[] = "raise";
++static SCM l_raise(sig)
+      SCM sig;
+ {
+@@ -468,5 +442,5 @@
+   }
+ }
+-static char s_ticks[] = "ticks";
++static const char s_ticks[] = "ticks";
+ SCM lticks(i)
+      SCM i;
+@@ -485,12 +459,4 @@
+ int dumped = 0;			/* Is this an invocation of unexec exe? */
+ 
+-#ifdef SHORT_ALIGN
+-typedef short STACKITEM;
+-#else
+-typedef long STACKITEM;
+-#endif
+-/* See scm.h for definition of P */
+-void  init_storage P((STACKITEM *stack_start_ptr, long init_heap_size));
+-
+ void init_scm(iverbose, buf0stdin, init_heap_size)
+      int iverbose;
+@@ -666,5 +632,5 @@
+      int argc;
+      const char * const *argv;
+-     char *script_arg;
++     const char *script_arg;
+      int iverbose;
+      int buf0stdin;
+@@ -780,5 +746,5 @@
+ const char dirsep[] = DIRSEP;
+ 
+-SCM softtype()
++static SCM softtype()
+ {
+ #ifdef nosve
+@@ -843,8 +809,8 @@
+ }
+ 
+-char *execpath = 0;
+-char s_no_execpath[] = "no execpath";
++char *execpath = NULL;
++const char s_no_execpath[] = "no execpath";
+ #define s_execpath (s_no_execpath+3)
+-SCM scm_execpath(newpath)
++static SCM scm_execpath(newpath)
+      SCM newpath;
+ {
+@@ -870,5 +836,5 @@
+      const char *script_arg;
+ {
+-  char *exepath = 0;
++  char *exepath = NULL;
+ #ifndef macintosh
+ # ifdef HAVE_UNIX
+@@ -904,6 +870,6 @@
+ 
+ #ifndef _Windows
+-char s_system[] = "system";
+-SCM lsystem(cmd)
++const char s_system[] = "system";
++static SCM lsystem(cmd)
+      SCM cmd;
+ {
+@@ -922,7 +888,6 @@
+ extern char **environ;		/* The Linux man page says this
+ 				   declaration is necessary. */
+-char s_getenv[] = "getenv";
+-char *getenv();
+-SCM scm_getenv(nam)
++static const char s_getenv[] = "getenv";
++static SCM scm_getenv(nam)
+      SCM nam;
+ {
+@@ -949,6 +914,6 @@
+ # include <descrip.h>
+ # include <ssdef.h>
+-char s_ed[] = "ed";
+-SCM ed(fname)
++static const char s_ed[] = "ed";
++static SCM ed(fname)
+      SCM fname;
+ {
+@@ -1009,5 +974,5 @@
+ SCM *loc_features;
+ void add_feature(str)
+-     char* str;
++     const char* str;
+ {
+   *loc_features = cons(CAR(sysintern(str, UNDEFINED)), *loc_features);
+--- scm.h	2014-11-22 21:34:19.000000000 -0500
++++ scm.h	2015-01-27 01:33:21.000000000 -0500
+@@ -95,5 +95,5 @@
+ 
+ typedef struct {
+-  char  *name;
++  const char  *name;
+   SCM   (*mark)P((SCM ptr));
+   int   (*free)P((FILE *p));
+@@ -130,5 +130,5 @@
+ 
+ #ifdef FLOATS
+-typedef struct {char *string;double (*cproc)P((double));} dblproc;
++typedef struct {const char *string;double (*cproc)P((double));} dblproc;
+ # ifdef SINGLES
+ #  ifdef CDR_DOUBLES
+@@ -176,5 +176,5 @@
+ #define MAKSPCSYM2(work, look) ((127L & (work)) | ((127L<<9) & (look)))
+ 
+-SCM_EXPORT char *isymnames[];
++SCM_EXPORT const char *isymnames[];
+ #define NUM_ISPCSYM 14
+ #define IM_AND MAKSPCSYM(0)
+@@ -321,5 +321,5 @@
+ #define SCM_ESTK_PARENT_WRITABLEP(v) (VELTS(v)[1])
+ #define SCM_ESTK_PARENT_INDEX(v) (VELTS(v)[2])
+-SCM_EXPORT long tc16_env, tc16_ident;
++SCM_EXPORT long tc16_env, tc16_ident, tc16_promise;
+ #define ENVP(x) (tc16_env==TYP16(x))
+ #define SCM_ENV_FORMALS CAR
+@@ -408,5 +408,5 @@
+ #define SETNUMDIGS(x, v, t) CAR(x) = MAKE_NUMDIGS(v, t)
+ 
+-#define SNAME(x) ((char *)(subrs[NUMDIGS(x)].name))
++#define SNAME(x) ((const char *)(subrs[NUMDIGS(x)].name))
+ #define SUBRF(x) (((subr *)(SCM2PTR(x)))->cproc)
+ #define DSUBRF(x) (((dsubr *)(SCM2PTR(x)))->dproc)
+@@ -597,5 +597,4 @@
+ #define tc16_sfport (tc7_port + 3*256L)
+ SCM_EXPORT long tc16_dir;
+-SCM_EXPORT long tc16_clport;
+ 
+ SCM_EXPORT SCM sys_protects[];
+@@ -649,5 +648,5 @@
+ SCM_EXPORT SCM *loc_errobj;
+ SCM_EXPORT SCM loadport;
+-SCM_EXPORT char *errjmp_bad;
++SCM_EXPORT const char *errjmp_bad;
+ SCM_EXPORT VOLATILE int ints_disabled;
+ SCM_EXPORT int output_deferred, gc_hook_pending, gc_hook_active;
+@@ -658,5 +657,5 @@
+ SCM_EXPORT int dumped;
+ SCM_EXPORT char *execpath;
+-SCM_EXPORT char s_no_execpath[];
++SCM_EXPORT const char s_no_execpath[];
+ SCM_EXPORT int scm_verbose;
+ #define verbose (scm_verbose+0)
+@@ -666,20 +665,19 @@
+ /* strings used in several source files */
+ 
+-SCM_EXPORT char s_write[], s_newline[], s_system[];
+-SCM_EXPORT char s_make_string[], s_make_vector[], s_list[], s_op_pipe[];
++SCM_EXPORT const char s_write[], s_newline[], s_system[];
++SCM_EXPORT const char s_make_string[], s_make_vector[], s_list[], s_op_pipe[];
++SCM_EXPORT const char s_inexactp[], s_redefining[], s_obunhash[];
+ #define s_string (s_make_string+5)
+ #define s_vector (s_make_vector+5)
+ #define s_pipe (s_op_pipe+5)
+-SCM_EXPORT char s_make_sh_array[];
+-SCM_EXPORT char s_array_fill[];
+-#define s_array (s_make_sh_array+12)
+-SCM_EXPORT char s_ccl[];
++SCM_EXPORT const char s_array_fill[];
++SCM_EXPORT const char s_ccl[];
+ #define s_limit (s_ccl+10)
+-SCM_EXPORT char s_close_port[];
++SCM_EXPORT const char s_close_port[];
+ #define s_port_type (s_close_port+6)
+-SCM_EXPORT char s_call_cc[];
++SCM_EXPORT const char s_call_cc[];
+ #define s_cont (s_call_cc+18)
+-SCM_EXPORT char s_try_create_file[];
+-SCM_EXPORT char s_badenv[];
++SCM_EXPORT const char s_try_create_file[];
++SCM_EXPORT const char s_badenv[];
+ 
+ SCM_EXPORT void (*init_user_scm) P((void));
+@@ -702,22 +700,21 @@
+ SCM_EXPORT SCM  obhash P((SCM obj));
+ SCM_EXPORT SCM  obunhash P((SCM obj));
+-SCM_EXPORT unsigned long strhash P((unsigned char *str, sizet len, unsigned long n));
++SCM_EXPORT unsigned long strhash P((const unsigned char *str, sizet len, unsigned long n));
+ SCM_EXPORT unsigned long hasher P((SCM obj, unsigned long n, sizet d));
+ SCM_EXPORT SCM  lroom P((SCM args));
+ SCM_EXPORT void lfflush P((SCM port));
+-SCM_EXPORT SCM  scm_force_output P((SCM port));
+ SCM_EXPORT void scm_init_gra P((scm_gra *gra, sizet eltsize, sizet len,
+                         sizet maxlen, const char *what));
+-SCM_EXPORT int  scm_grow_gra P((scm_gra *gra, char *elt));
++SCM_EXPORT int  scm_grow_gra P((scm_gra *gra, const char *elt));
+ SCM_EXPORT void scm_trim_gra P((scm_gra *gra));
+ SCM_EXPORT void scm_free_gra P((scm_gra *gra));
+-SCM_EXPORT long newsmob P((smobfuns *smob));
+-SCM_EXPORT long newptob P((ptobfuns *ptob));
++SCM_EXPORT long newsmob P((const smobfuns *smob));
++SCM_EXPORT long newptob P((const ptobfuns *ptob));
+ SCM_EXPORT SCM  scm_port_entry P((FILE *stream, long ptype, long flags));
+ SCM_EXPORT SCM  scm_open_ports P((void));
+-SCM_EXPORT void prinport P((SCM exp, SCM port, char *type));
++SCM_EXPORT void prinport P((SCM exp, SCM port, const char *type));
+ SCM_EXPORT SCM  repl P((void));
+ SCM_EXPORT void repl_report P((void));
+-SCM_EXPORT void growth_mon P((char *obj, long size, char *units, int grewp));
++SCM_EXPORT void growth_mon P((const char *obj, long size, const char *units, int grewp));
+ SCM_EXPORT void gc_start P((const char *what));
+ SCM_EXPORT void gc_end P((void));
+@@ -735,27 +732,19 @@
+ SCM_EXPORT SCM  scm_stack_trace P((SCM contin));
+ SCM_EXPORT SCM  scm_scope_trace P((SCM env));
+-SCM_EXPORT SCM  scm_frame_trace P((SCM contin, SCM nf));
+-SCM_EXPORT SCM  scm_frame2env P((SCM contin, SCM nf));
+-SCM_EXPORT SCM  scm_frame_eval P((SCM contin, SCM nf, SCM expr));
+ SCM_EXPORT void scm_iprin1 P((SCM exp, SCM port, int writing));
+ SCM_EXPORT void scm_intprint P((long n, int radix, SCM port));
+-SCM_EXPORT void scm_iprlist P((char *hdr, SCM exp, int tlr, SCM port, int writing));
+ SCM_EXPORT SCM  scm_env_lookup P((SCM var, SCM stenv));
+ SCM_EXPORT SCM  scm_env_rlookup P((SCM addr, SCM stenv, const char *what));
+ SCM_EXPORT SCM  scm_env_getprop P((SCM prop, SCM env));
+ SCM_EXPORT SCM  scm_env_addprop P((SCM prop, SCM val, SCM env));
+-SCM_EXPORT long num_frames P((SCM estk, int i));
+-SCM_EXPORT SCM  *estk_frame P((SCM estk, int i, int nf));
+-SCM_EXPORT SCM  *cont_frame P((SCM contin, int nf));
+-SCM_EXPORT SCM  stacktrace1 P((SCM estk, int i));
+ SCM_EXPORT void scm_princode P((SCM code, SCM env, SCM port, int writing));
+ SCM_EXPORT void scm_princlosure P((SCM proc, SCM port, int writing));
+ SCM_EXPORT void lputc P((int c, SCM port));
+ SCM_EXPORT void lputs P((const char *s, SCM port));
+-SCM_EXPORT sizet        lfwrite P((char *ptr, sizet size, sizet nitems, SCM port));
++SCM_EXPORT sizet lfwrite P((const char *ptr, sizet size, sizet nitems, SCM port));
+ SCM_EXPORT int  lgetc P((SCM port));
+ SCM_EXPORT void lungetc P((int c, SCM port));
+ SCM_EXPORT char *grow_tok_buf P((SCM tok_buf));
+-SCM_EXPORT long mode_bits P((char *modes, char *cmodes));
++SCM_EXPORT long mode_bits P((const char *modes, char *cmodes));
+ SCM_EXPORT long time_in_msec P((long x));
+ SCM_EXPORT SCM  my_time P((void));
+@@ -764,10 +753,43 @@
+ 
+ SCM_EXPORT void final_scm P((int));
++
++SCM_EXPORT void init_byte P((void));
++SCM_EXPORT void init_bytenumb P((void));
++SCM_EXPORT void init_crs P((void));
++SCM_EXPORT void init_debug P((void));
++SCM_EXPORT void init_differ P((void));
++SCM_EXPORT void init_dynl P((void));
++SCM_EXPORT void init_edline P((void));
++SCM_EXPORT void init_eval P((void));
++SCM_EXPORT void init_features P((void));
++SCM_EXPORT void init_gsubr P((void));
++SCM_EXPORT void init_io P((void));
++SCM_EXPORT void init_ioext P((void));
++SCM_EXPORT void init_posix P((void));
++SCM_EXPORT void init_ramap P((void));
++SCM_EXPORT void init_record P((void));
++SCM_EXPORT void init_repl P((int iverbose));
++SCM_EXPORT void init_rgx P((void));
++SCM_EXPORT void init_rope P((void));
+ SCM_EXPORT void init_sbrk P((void));
++SCM_EXPORT void init_sc2 P((void));
++SCM_EXPORT void init_scl P((void));
++SCM_EXPORT void init_socket P((void));
++SCM_EXPORT void init_subrs P((void));
++SCM_EXPORT void init_tables P((void));
++SCM_EXPORT void init_time P((void));
++SCM_EXPORT void init_types P((void));
++SCM_EXPORT void init_unif P((void));
++SCM_EXPORT void init_unix P((void));
++
++SCM_EXPORT void reset_time P((void));
++SCM_EXPORT void final_repl P((void));
+ SCM_EXPORT int  init_buf0 P((FILE *inport));
+-SCM_EXPORT void scm_init_from_argv P((int argc, const char * const *argv, char *script_arg,
++
++SCM_EXPORT void scm_init_from_argv P((int argc, const char * const *argv,
++                              const char *script_arg,
+                               int iverbose, int buf0stdin));
+ SCM_EXPORT void init_signals P((void));
+-SCM_EXPORT SCM  scm_top_level P((char *initpath, SCM (*toplvl_fun)()));
++SCM_EXPORT SCM  scm_top_level P((const char *initpath, SCM (*toplvl_fun)(void)));
+ SCM_EXPORT void restore_signals P((void));
+ SCM_EXPORT void free_storage P((void));
+@@ -780,5 +802,5 @@
+ SCM_EXPORT void unignore_signals P((void));
+ 
+-SCM_EXPORT void add_feature P((char *str));
++SCM_EXPORT void add_feature P((const char *str));
+ SCM_EXPORT int  raprin1 P((SCM exp, SCM port, int writing));
+ SCM_EXPORT SCM  markcdr P((SCM ptr));
+@@ -786,9 +808,10 @@
+ SCM_EXPORT SCM  equal0 P((SCM ptr1, SCM ptr2));
+ SCM_EXPORT sizet        free0 P((CELLPTR ptr));
+-SCM_EXPORT void scm_warn P((char *str1, char *str2, SCM obj));
+-SCM_EXPORT void everr P((SCM exp, SCM env, SCM arg, const char *pos, const char *s_subr, int codep));
+-SCM_EXPORT void wta P((SCM arg, const char *pos, const char *s_subr));
++SCM_EXPORT void scm_warn P((const char *str1, const char *str2, SCM obj));
++SCM_EXPORT void everr P((SCM exp, SCM env, SCM arg, const char *pos, const char *s_subr, int codep))
++__attribute__((noreturn));
++SCM_EXPORT void wta P((SCM arg, const char *pos, const char *s_subr)) __attribute__((noreturn));
+ SCM_EXPORT void scm_experr P((SCM arg, const char *pos, const char *s_subr));
+-SCM_EXPORT SCM  intern P((char *name, sizet len));
++SCM_EXPORT SCM  intern P((const char *name, sizet len));
+ SCM_EXPORT SCM  sysintern P((const char *name, SCM val));
+ SCM_EXPORT SCM  sym2vcell P((SCM sym));
+@@ -796,12 +819,8 @@
+ SCM_EXPORT SCM  scm_maksubr P((const char *name, int type, SCM (*fcn)()));
+ SCM_EXPORT SCM  make_subr P((const char *name, int type, SCM (*fcn)()));
+-SCM_EXPORT SCM  make_synt P((const char *name, long flags, SCM (*fcn)()));
+-SCM_EXPORT SCM  make_gsubr P((const char *name, int req, int opt, int rst,
+-                      SCM (*fcn)()));
+ SCM_EXPORT SCM  closure P((SCM code, int nargs));
+ SCM_EXPORT SCM  makprom P((SCM code));
+ SCM_EXPORT SCM  force P((SCM x));
+ SCM_EXPORT SCM  makarb P((SCM name));
+-SCM_EXPORT SCM  tryarb P((SCM arb));
+ SCM_EXPORT SCM  relarb P((SCM arb));
+ SCM_EXPORT SCM  ceval P((SCM x, SCM static_env, SCM env));
+@@ -816,25 +835,15 @@
+ SCM_EXPORT SCM  cons2 P((SCM w, SCM x, SCM y));
+ SCM_EXPORT SCM  resizuve P((SCM vect, SCM len));
+-SCM_EXPORT SCM  lnot P((SCM x));
+ SCM_EXPORT SCM  booleanp P((SCM obj));
+ SCM_EXPORT SCM  eq P((SCM x, SCM y));
+ SCM_EXPORT SCM  equal P((SCM x, SCM y));
+-SCM_EXPORT SCM  consp P((SCM x));
+ SCM_EXPORT SCM  cons P((SCM x, SCM y));
+-SCM_EXPORT SCM  nullp P((SCM x));
+-SCM_EXPORT SCM  setcar P((SCM pair, SCM value));
+-SCM_EXPORT SCM  setcdr P((SCM pair, SCM value));
+-SCM_EXPORT SCM  listp P((SCM x));
+ SCM_EXPORT SCM  list P((SCM objs));
+ SCM_EXPORT SCM  length P((SCM x));
+ SCM_EXPORT SCM  append P((SCM args));
+ SCM_EXPORT SCM  reverse P((SCM lst));
+-SCM_EXPORT SCM  list_ref P((SCM lst, SCM k));
+ SCM_EXPORT SCM  memq P((SCM x, SCM lst));
+-SCM_EXPORT SCM  member P((SCM x, SCM lst));
+ SCM_EXPORT SCM  memv P((SCM x, SCM lst));
+ SCM_EXPORT SCM  assq P((SCM x, SCM alist));
+-SCM_EXPORT SCM  assoc P((SCM x, SCM alist));
+-SCM_EXPORT SCM  symbolp P((SCM x));
+ SCM_EXPORT SCM  symbol2string P((SCM s));
+ SCM_EXPORT SCM  string2symbol P((SCM s));
+@@ -842,5 +851,4 @@
+ SCM_EXPORT SCM  numberp P((SCM x));
+ SCM_EXPORT SCM  exactp P((SCM x));
+-SCM_EXPORT SCM  inexactp P((SCM x));
+ SCM_EXPORT SCM  eqp P((SCM x, SCM y));
+ SCM_EXPORT SCM  eqv P((SCM x, SCM y));
+@@ -854,6 +862,4 @@
+ SCM_EXPORT SCM  oddp P((SCM n));
+ SCM_EXPORT SCM  evenp P((SCM n));
+-SCM_EXPORT SCM  scm_max P((SCM x, SCM y));
+-SCM_EXPORT SCM  scm_min P((SCM x, SCM y));
+ SCM_EXPORT SCM  sum P((SCM x, SCM y));
+ SCM_EXPORT SCM  difference P((SCM x, SCM y));
+@@ -864,15 +870,12 @@
+ SCM_EXPORT SCM  scm_iabs P((SCM x));
+ SCM_EXPORT SCM  scm_abs P((SCM x));
+-SCM_EXPORT SCM  lremainder P((SCM x, SCM y));
+ SCM_EXPORT SCM  modulo P((SCM x, SCM y));
+-SCM_EXPORT SCM  lgcd P((SCM x, SCM y));
+-SCM_EXPORT SCM  llcm P((SCM n1, SCM n2));
+ SCM_EXPORT SCM  number2string P((SCM x, SCM radix));
+-SCM_EXPORT SCM  istring2number P((char *str, long len, long radix));
++SCM_EXPORT SCM  istring2number P((const char *str, long len, long radix));
+ SCM_EXPORT SCM  string2number P((SCM str, SCM radix));
+-SCM_EXPORT SCM  istr2flo P((char *str, long len, long radix));
++SCM_EXPORT SCM  istr2flo P((const char *str, long len, long radix));
+ SCM_EXPORT SCM  mkbig P((sizet nlen, int sign));
+ SCM_EXPORT void bigrecy P((SCM bgnm));
+-SCM_EXPORT SCM  mkstrport P((SCM pos, SCM str, long modes, char *caller));
++SCM_EXPORT SCM  mkstrport P((SCM pos, SCM str, long modes, const char *caller));
+ SCM_EXPORT SCM  mksafeport P((int maxlen, SCM port));
+ SCM_EXPORT int  reset_safeport P((SCM sfp, int maxlen, SCM port));
+@@ -887,48 +890,23 @@
+ SCM_EXPORT SCM  uve_write P((SCM v, SCM port));
+ SCM_EXPORT SCM  raequal P((SCM ra0, SCM ra1));
+-SCM_EXPORT SCM  array_equal P((SCM u, SCM v));
+ SCM_EXPORT SCM  array_rank P((SCM ra));
++SCM_EXPORT SCM  array_dims P((SCM ra));
++SCM_EXPORT SCM  dims2ura P((SCM dims, SCM prot, SCM fill));
+ SCM_EXPORT int  rafill P((SCM ra, SCM fill, SCM ignore));
+-SCM_EXPORT SCM  uve_fill P((SCM uve, SCM fill));
+-SCM_EXPORT SCM  array_fill P((SCM ra, SCM fill));
+ SCM_EXPORT SCM  array_prot P((SCM ra));
+-SCM_EXPORT SCM  array_rank P((SCM ra));
+ SCM_EXPORT SCM  array_contents P((SCM ra, SCM strict));
+ SCM_EXPORT int  bigprint P((SCM exp, SCM port, int writing));
+ SCM_EXPORT int  floprint P((SCM sexp, SCM port, int writing));
+-SCM_EXPORT SCM  istr2int P((char *str, long len, int radix));
+-SCM_EXPORT SCM  istr2bve P((char *str, long len));
+-SCM_EXPORT void scm_ipruk P((char *hdr, SCM ptr, SCM port));
+-SCM_EXPORT SCM  charp P((SCM x));
+-SCM_EXPORT SCM  char_lessp P((SCM x, SCM y));
+-SCM_EXPORT SCM  chci_eq P((SCM x, SCM y));
+-SCM_EXPORT SCM  chci_lessp P((SCM x, SCM y));
+-SCM_EXPORT SCM  char_alphap P((SCM chr));
+-SCM_EXPORT SCM  char_nump P((SCM chr));
+-SCM_EXPORT SCM  char_whitep P((SCM chr));
+-SCM_EXPORT SCM  char_upperp P((SCM chr));
+-SCM_EXPORT SCM  char_lowerp P((SCM chr));
+-SCM_EXPORT SCM  char2int P((SCM chr));
+-SCM_EXPORT SCM  int2char P((SCM n));
+-SCM_EXPORT SCM  char_upcase P((SCM chr));
+-SCM_EXPORT SCM  char_downcase P((SCM chr));
+-SCM_EXPORT SCM  stringp P((SCM x));
++SCM_EXPORT SCM  istr2int P((const char *str, long len, int radix));
++SCM_EXPORT SCM  istr2bve P((const char *str, long len));
++SCM_EXPORT void scm_ipruk P((const char *hdr, SCM ptr, SCM port));
+ SCM_EXPORT SCM  string P((SCM chrs));
+ SCM_EXPORT SCM  make_string P((SCM k, SCM chr));
+ SCM_EXPORT SCM  string2list P((SCM str));
+-SCM_EXPORT SCM  st_length P((SCM str));
+-SCM_EXPORT SCM  st_ref P((SCM str, SCM k));
+-SCM_EXPORT SCM  st_set P((SCM str, SCM k, SCM chr));
+ SCM_EXPORT SCM  st_equal P((SCM s1, SCM s2));
+-SCM_EXPORT SCM  stci_equal P((SCM s1, SCM s2));
+-SCM_EXPORT SCM  st_lessp P((SCM s1, SCM s2));
+-SCM_EXPORT SCM  stci_lessp P((SCM s1, SCM s2));
+ SCM_EXPORT SCM  substring P((SCM str, SCM start, SCM end));
+ SCM_EXPORT SCM  st_append P((SCM args));
+-SCM_EXPORT SCM  vectorp P((SCM x));
+ SCM_EXPORT SCM  vector_length P((SCM v));
+ SCM_EXPORT SCM  vector P((SCM l));
+-SCM_EXPORT SCM  vector_ref P((SCM v, SCM k));
+-SCM_EXPORT SCM  vector_set P((SCM v, SCM k, SCM obj));
+ SCM_EXPORT SCM  make_vector P((SCM k, SCM fill));
+ SCM_EXPORT SCM  vector2list P((SCM v));
+@@ -952,12 +930,6 @@
+ SCM_EXPORT SCM  scm_check_linum P((SCM x, SCM *linum));
+ SCM_EXPORT SCM  scm_add_linum P((SCM linum, SCM x));
+-SCM_EXPORT SCM  input_portp P((SCM x));
+-SCM_EXPORT SCM  output_portp P((SCM x));
+-SCM_EXPORT SCM  cur_input_port P((void));
+-SCM_EXPORT SCM  cur_output_port P((void));
+ SCM_EXPORT SCM  i_setbuf0 P((SCM port));
+-SCM_EXPORT SCM  try_open_file P((SCM filename, SCM modes));
+ SCM_EXPORT SCM  open_file P((SCM filename, SCM modes));
+-SCM_EXPORT SCM  open_pipe P((SCM pipestr, SCM modes));
+ SCM_EXPORT SCM  close_port P((SCM port));
+ SCM_EXPORT SCM	scm_file_position P((SCM port, SCM pos));
+@@ -969,5 +941,4 @@
+ SCM_EXPORT SCM  eof_objectp P((SCM x));
+ SCM_EXPORT int  scm_io_error P((SCM port, const char *what));
+-SCM_EXPORT SCM  scm_write P((SCM obj, SCM port));
+ SCM_EXPORT SCM  scm_display P((SCM obj, SCM port));
+ SCM_EXPORT SCM  scm_newline P((SCM port));
+@@ -977,5 +948,4 @@
+ SCM_EXPORT void scm_line_msg P((SCM file, SCM linum, SCM port));
+ SCM_EXPORT void scm_err_line P((const char *what, SCM file, SCM linum, SCM port));
+-SCM_EXPORT SCM  scm_getenv P((SCM nam));
+ SCM_EXPORT SCM  prog_args P((void));
+ SCM_EXPORT SCM  makacro P((SCM code));
+@@ -997,5 +967,5 @@
+ #ifdef CAREFUL_INTS
+ SCM_EXPORT void ints_viol P((ints_infot *info, int sense));
+-SCM_EXPORT void    ints_warn P((char *s1, char* s2, char *fname, int linum));
++SCM_EXPORT void    ints_warn P((const char *s1, const char* s2, const char *fname, int linum));
+ #endif
+ SCM_EXPORT void add_final P((void (*final)(void)));
+@@ -1007,18 +977,12 @@
+ SCM_EXPORT SCM  scm_load_string P((SCM str));
+ SCM_EXPORT SCM  scm_unexec P((const SCM pathname));
+-SCM_EXPORT SCM     scm_logbitp  P((SCM index, SCM j1));
+-SCM_EXPORT SCM     scm_logtest  P((SCM x, SCM y));
+-SCM_EXPORT SCM     scm_logxor P((SCM x, SCM y));
+-SCM_EXPORT SCM     scm_logand P((SCM x, SCM y));
+-SCM_EXPORT SCM     scm_logior P((SCM x, SCM y));
+-SCM_EXPORT SCM     scm_lognot P((SCM n));
+-SCM_EXPORT SCM     scm_intexpt P((SCM z1, SCM z2));
+-SCM_EXPORT SCM     scm_intlog P((SCM base, SCM k));
+-SCM_EXPORT SCM     scm_cintlog P((SCM base, SCM k));
+-SCM_EXPORT SCM     scm_ash P((SCM n, SCM cnt));
+-SCM_EXPORT SCM     scm_bitfield P((SCM n, SCM start, SCM end));
+-SCM_EXPORT SCM     scm_logcount P((SCM n));
+-SCM_EXPORT SCM     scm_intlength P((SCM n));
+-SCM_EXPORT SCM     scm_copybit P((SCM index, SCM j1, SCM bit));
++SCM_EXPORT SCM  scm_logbitp  P((SCM index, SCM j1));
++SCM_EXPORT SCM  scm_logtest  P((SCM x, SCM y));
++SCM_EXPORT SCM  scm_logxor P((SCM x, SCM y));
++SCM_EXPORT SCM  scm_logand P((SCM x, SCM y));
++SCM_EXPORT SCM  scm_logior P((SCM x, SCM y));
++SCM_EXPORT SCM  scm_lognot P((SCM n));
++SCM_EXPORT SCM  scm_ash P((SCM n, SCM cnt));
++SCM_EXPORT SCM  scm_intlength P((SCM n));
+ SCM_EXPORT SCM  scm_bitif P((SCM mask, SCM n0, SCM n1));
+ SCM_EXPORT SCM  scm_copybitfield P((SCM to, SCM start, SCM rest));
+@@ -1027,11 +991,11 @@
+ SCM_EXPORT SCM   long2num P((long n));
+ SCM_EXPORT SCM  ulong2num P((unsigned long n));
+-SCM_EXPORT unsigned char  num2uchar  P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT   signed char  num2char   P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT unsigned short num2ushort P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT          short num2short  P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT unsigned long  num2ulong  P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT          long  num2long   P((SCM num, char *pos, char *s_caller));
+-SCM_EXPORT         double num2dbl    P((SCM num, char *pos, char *s_caller));
++SCM_EXPORT unsigned char  num2uchar  P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT   signed char  num2char   P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT unsigned short num2ushort P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT          short num2short  P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT unsigned long  num2ulong  P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT          long  num2long   P((SCM num, const char *pos, const char *s_caller));
++SCM_EXPORT         double num2dbl    P((SCM num, const char *pos, const char *s_caller));
+ SCM_EXPORT SCM  makfromstr  P((const char *src, sizet len));
+ SCM_EXPORT SCM  makfromstrs P((int argc, const char * const *argv));
+@@ -1039,8 +1003,8 @@
+ SCM_EXPORT char **makargvfrmstrs P((SCM args, const char *s_v));
+ SCM_EXPORT void must_free_argv P((char **argv));
+-SCM_EXPORT SCM  scm_evstr  P((char *str));
+-SCM_EXPORT void scm_ldstr  P((char *str));
+-SCM_EXPORT int  scm_ldfile P((char *path));
+-SCM_EXPORT int  scm_ldprog P((char *path));
++SCM_EXPORT SCM  scm_evstr  P((const char *str));
++SCM_EXPORT void scm_ldstr  P((const char *str));
++SCM_EXPORT int  scm_ldfile P((const char *path));
++SCM_EXPORT int  scm_ldprog P((const char *path));
+ SCM_EXPORT void* scm_addr P((SCM args, const char *name));
+ SCM_EXPORT void* scm_base_addr P((SCM v, const char *name));
+@@ -1061,9 +1025,8 @@
+ SCM_EXPORT SCM  normbig P((SCM b));
+ SCM_EXPORT SCM  copybig P((SCM b, int sign));
+-SCM_EXPORT SCM  addbig P((BIGDIG *x, sizet nx, int xsgn, SCM bigy, int sgny));
+-SCM_EXPORT SCM  mulbig P((BIGDIG *x, sizet nx, BIGDIG *y, sizet ny, int sgn));
++SCM_EXPORT SCM  addbig P((const BIGDIG *x, sizet nx, int xsgn, SCM bigy, int sgny));
++SCM_EXPORT SCM  mulbig P((const BIGDIG *x, sizet nx, const BIGDIG *y, sizet ny, int sgn));
+ SCM_EXPORT UBIGLONG divbigdig P((BIGDIG *ds, sizet h, BIGDIG div));
+-SCM_EXPORT SCM  divbigint P((SCM x, long z, int sgn, int mode));
+-SCM_EXPORT SCM  divbigbig P((BIGDIG *x, sizet nx, BIGDIG *y, sizet ny, int sgn,
++SCM_EXPORT SCM  divbigbig P((const BIGDIG *x, sizet nx, BIGDIG *y, sizet ny, int sgn,
+                    int mode));
+ SCM_EXPORT long  pseudolong P((long x));
+@@ -1077,6 +1040,6 @@
+ SCM_EXPORT char *       scm_try_path P((char *path));
+ SCM_EXPORT char *       script_find_executable P((const char *command));
+-SCM_EXPORT char **      script_process_argv P((int argc, const char **argv));
+-SCM_EXPORT int  script_count_argv P((const char **argv));
++SCM_EXPORT const char * const * script_process_argv P((int argc, const char * const *argv));
++SCM_EXPORT int  script_count_argv P((const char * const *argv));
+ SCM_EXPORT char *       find_impl_file P((const char *exec_path, const char *generic_name,
+                           const char *initname, const char *sep));
+@@ -1085,4 +1048,6 @@
+ SCM_EXPORT void scm_ecache_report P((void));
+ SCM_EXPORT void scm_estk_reset P((sizet size));
++SCM_EXPORT void scm_estk_grow P((void));
++SCM_EXPORT void scm_estk_shrink P((void));
+ SCM_EXPORT void scm_env_cons P((SCM x, SCM y));
+ SCM_EXPORT void scm_env_cons2 P((SCM w, SCM x, SCM y));
+@@ -1091,4 +1056,5 @@
+ SCM_EXPORT void scm_extend_env P((void));
+ SCM_EXPORT void scm_egc P((void));
++SCM_EXPORT void scm_dynthrow P((SCM cont, SCM arg1, SCM arg2, SCM rest));
+ 
+ /* Global state for environment cache */
+@@ -1109,8 +1075,15 @@
+ # define ASRTGO(_cond, _label) ;
+ #else
+-# define ASRTER(_cond, _arg, _pos, _subr) if (SCM_EXPECT_FALSE(!(_cond))) wta(_arg, (char *)(_pos), _subr);
++# define ASRTER(_cond, _arg, _pos, _subr) if (SCM_EXPECT_FALSE(!(_cond))) wta(_arg, (const char *)(_pos), _subr);
+ # define ASRTGO(_cond, _label) if (SCM_EXPECT_FALSE(!(_cond))) goto _label;
+ #endif
+ 
++SCM_EXPORT void igc P((const char *what, SCM basecont));
++SCM_EXPORT void unexec P((const char *new_name, const char *a_name, unsigned data_start,
++    unsigned bss_start, unsigned entry_address));
++SCM_EXPORT void scm_fill_freelist P((void));
++struct stat;
++SCM_EXPORT SCM stat2scm P((const struct stat *stat_temp));
++
+ #define ARGn            1L
+ #define ARG1            2L
+--- scmmain.c	2013-04-06 21:52:41.000000000 -0400
++++ scmmain.c	2015-01-23 18:55:19.000000000 -0500
+@@ -19,9 +19,4 @@
+ /* Author: Aubrey Jaffer */
+ 
+-/* added by Dai Inukai 2001-03-21*/
+-#ifdef __FreeBSD__
+-# include <floatingpoint.h>
+-#endif
+-
+ #ifdef _WIN32
+ # include <io.h>
+@@ -47,5 +42,5 @@
+ #endif
+ 
+-char *scm_find_implpath(execpath)
++static char *scm_find_implpath(execpath)
+      const char *execpath;
+ {
+@@ -84,14 +79,11 @@
+ int main(argc, argv)
+      int argc;
+-     const char **argv;
++     const char * const *argv;
+ {
+-  char *script_arg = 0;		/* location of SCSH style script file or 0. */
+-  char *implpath = 0, **nargv;
++  const char *script_arg = NULL;	/* location of SCSH style script file or 0. */
++  char *implpath = NULL;
++  const char * const * nargv;
+   int nargc, iverbose = 0, buf0stdin;
+   SCM retval;
+-/* added by Dai Inukai 2001-03-21 */
+-#ifdef __FreeBSD__
+-  fp_prec_t fpspec;
+-#endif
+ 
+ #ifdef WINSIGNALS
+@@ -111,9 +103,5 @@
+   init_sbrk();			/* Do this before malloc()s. */
+ #endif
+-/* added by Dai Inukai 2001-03-21 */
+-#ifdef __FreeBSD__
+-   fpspec = fpsetprec(FP_PE); /* IEEE 64 bit FP mantissa*/
+-#endif
+-  execpath = 0;			/* even when dumped */
++  execpath = NULL;		/* even when dumped */
+   if ((nargv = script_process_argv(argc, argv))) { /* SCSH style scripts */
+     script_arg = argv[2];	/* Save for scm_find_execpath() call */
+@@ -152,10 +140,4 @@
+   if (execpath) free(execpath);
+   execpath = 0;
+-/* added by Dai Inukai 2001-03-27 */
+-#ifdef __FreeBSD__
+-  fpspec = fpsetprec(fpspec); /* Set back to FP_PD which is 53 bit FP. */
+-                              /* This may not be needed because the    */
+-                              /* kernel is set to FP_PD by default.    */
+-#endif
+   return (int)INUM(retval);
+ }
+--- script.c	2008-01-30 22:32:55.000000000 -0500
++++ script.c	2015-01-23 18:55:19.000000000 -0500
+@@ -54,10 +54,10 @@
+     {
+       long len = strlen(str1);
+-      str1 = (char *)realloc(str1, (sizet)(len + n + 1));
++      str1 = realloc(str1, (sizet)(len + n + 1));
+       if (!str1) return 0L;
+       strncat(str1 + len, str2, n);
+       return str1;
+     }
+-  str1 = (char *)malloc((sizet)(n + 1));
++  str1 = malloc((sizet)(n + 1));
+   if (!str1) return 0L;
+   str1[0] = 0;
+@@ -81,5 +81,5 @@
+ }
+ 
+-char *scm_sep_init_try(path, sep, initname)
++static char *scm_sep_init_try(path, sep, initname)
+      char *path;
+      const char *sep, *initname;
+@@ -147,6 +147,6 @@
+ {
+   char *sepptr = strrchr(exec_path, sep[0]);
+-  char *extptr = exec_path + strlen(exec_path);
+-  char *path = 0;
++  const char *extptr = exec_path + strlen(exec_path);
++  char *path = NULL;
+ 
+ #ifdef _WIN32
+@@ -189,5 +189,5 @@
+     if (!strcmp(sepptr, "exe") || !strcmp(sepptr, "bin") ||
+ 	!strcmp(sepptr, "EXE") || !strcmp(sepptr, "BIN")) {
+-      char *peer;
++      const char *peer;
+ 
+       /* Look for initname in peer directory "lib". */
+@@ -279,10 +279,10 @@
+ }
+ 
+-char *script_read_arg(f)
++static const char *script_read_arg(f)
+      FILE *f;
+ {
+   sizet tlen = 1;
+   int tind = 0, qted = 0, chr;
+-  char *tbuf = (char *)malloc((1 + tlen) * sizeof(char));
++  char *tbuf = malloc((1 + tlen) * sizeof(char));
+   if (!tbuf) return 0L;
+   while (1) switch (chr = getc(f)) {
+@@ -337,5 +337,5 @@
+ }
+ 
+-int script_meta_arg_P(arg)
++static int script_meta_arg_P(arg)
+      const char *arg;
+ {
+@@ -352,12 +352,12 @@
+ }
+ 
+-char **script_process_argv(argc, argv)
++const char * const *script_process_argv(argc, argv)
+      int argc;
+-     const char **argv;
++     const char * const *argv;
+ {
+   int nargc = argc, argi = 1, nargi = 1;
+-  char *narg, **nargv;
+-  if (!(argc > 2 && script_meta_arg_P(argv[1]))) return 0L;
+-  if (!(nargv = (char **)malloc((1 + nargc) * sizeof(char *)))) return 0L;
++  const char *narg, **nargv;
++  if (!(argc > 2 && script_meta_arg_P(argv[1]))) return NULL;
++  if (!(nargv = malloc((1 + nargc) * sizeof(char *)))) return NULL;
+   nargv[0] = argv[0];
+   while (((argi+1) < argc) && (script_meta_arg_P(argv[argi]))) {
+@@ -366,10 +366,10 @@
+       nargc--;		/* to compensate for replacement of '\\' */
+       while (1) switch (getc(f)) {
+-      case EOF: return 0L;
++      case EOF: return NULL;
+       default: continue;
+       case '\n': goto found_args;
+       }
+     found_args: while ((narg = script_read_arg(f)))
+-      if (!(nargv = (char **)realloc(nargv, (1 + ++nargc) * sizeof(char *))))
++      if (!(nargv = realloc(nargv, (1 + ++nargc) * sizeof(char *))))
+ 	return 0L;
+       else nargv[nargi++] = narg;
+@@ -383,5 +383,5 @@
+ 
+ int script_count_argv(argv)
+-     const char **argv;
++     const char * const *argv;
+ {
+   int argc = 0;
+--- socket.c	2008-01-30 22:32:57.000000000 -0500
++++ socket.c	2015-01-23 18:55:19.000000000 -0500
+@@ -54,6 +54,6 @@
+ #endif /* STDC_HEADERS */
+ 
+-static char s_inetaddr[] = "inet:string->address";
+-SCM l_inetaddr (host)
++static const char s_inetaddr[] = "inet:string->address";
++static SCM l_inetaddr (host)
+      SCM host;
+ {
+@@ -72,6 +72,6 @@
+ }
+ 
+-static char s_inetstr[] = "inet:address->string";
+-SCM l_inetstr (inetid)
++static const char s_inetstr[] = "inet:address->string";
++static SCM l_inetstr (inetid)
+      SCM inetid;
+ {
+@@ -83,6 +83,6 @@
+ }
+ 
+-static char s_network[] = "inet:network";
+-SCM l_network (host)
++static const char s_network[] = "inet:network";
++static SCM l_network (host)
+      SCM host;
+ {
+@@ -93,6 +93,6 @@
+ 
+ #ifndef __CYGWIN__
+-static char s_lna[] = "inet:local-network-address";
+-SCM l_lna (host)
++static const char s_lna[] = "inet:local-network-address";
++static SCM l_lna (host)
+      SCM host;
+ {
+@@ -103,6 +103,6 @@
+ #endif
+ 
+-static char s_makaddr[] = "inet:make-address";
+-SCM l_makaddr (net, lna)
++static const char s_makaddr[] = "inet:make-address";
++static SCM l_makaddr (net, lna)
+      SCM net, lna;
+ {
+@@ -115,6 +115,6 @@
+ 
+ #ifndef __CYGWIN__
+-static char s_hostinfo[] = "gethost";
+-SCM l_hostinfo(name)
++static const char s_hostinfo[] = "gethost";
++static SCM l_hostinfo(name)
+      SCM name;
+ {
+@@ -124,5 +124,5 @@
+   struct hostent *entry;
+   struct in_addr inad;
+-  const char **argv;
++  const char * const *argv;
+   int i = 0;
+ # ifndef linux
+@@ -145,12 +145,13 @@
+   if (!entry) return BOOL_F;
+   ve[ 0] = makfrom0str(entry->h_name);
+-  ve[ 1] = makfromstrs(-1, entry->h_aliases);
++  ve[ 1] = makfromstrs(-1, (const char * const *)entry->h_aliases);
+   ve[ 2] = MAKINUM(entry->h_addrtype + 0L);
+   ve[ 3] = MAKINUM(entry->h_length + 0L);
+   if (sizeof(struct in_addr) != entry->h_length)
+     {ve[ 4] = BOOL_F; return ans;}
+-  for (argv = entry->h_addr_list; argv[i]; i++);
++  for (argv = (const char * const *)entry->h_addr_list; argv[i]; i++)
++    ;
+   while (i--) {
+-    inad = *(struct in_addr *)argv[i];
++    inad = *(const struct in_addr *)argv[i];
+     lst = cons(ulong2num(ntohl(inad.s_addr)), lst);
+   }
+@@ -158,6 +159,6 @@
+   return ans;
+ }
+-static char s_netinfo[] = "getnet";
+-SCM l_netinfo(name)
++static const char s_netinfo[] = "getnet";
++static SCM l_netinfo(name)
+      SCM name;
+ {
+@@ -182,5 +183,5 @@
+   if (!entry) return BOOL_F;
+   ve[ 0] = makfrom0str(entry->n_name);
+-  ve[ 1] = makfromstrs(-1, entry->n_aliases);
++  ve[ 1] = makfromstrs(-1, (const char * const *)entry->n_aliases);
+   ve[ 2] = MAKINUM(entry->n_addrtype + 0L);
+   ve[ 3] = ulong2num(entry->n_net + 0L);
+@@ -188,6 +189,6 @@
+ }
+ #endif
+-static char s_protoinfo[] = "getproto";
+-SCM l_protoinfo(name)
++static const char s_protoinfo[] = "getproto";
++static SCM l_protoinfo(name)
+      SCM name;
+ {
+@@ -212,10 +213,10 @@
+   if (!entry) return BOOL_F;
+   ve[ 0] = makfrom0str(entry->p_name);
+-  ve[ 1] = makfromstrs(-1, entry->p_aliases);
++  ve[ 1] = makfromstrs(-1, (const char * const *)entry->p_aliases);
+   ve[ 2] = MAKINUM(entry->p_proto + 0L);
+   return ans;
+ }
+-static char s_servinfo[] = "getserv";
+-SCM l_servinfo(args)
++static const char s_servinfo[] = "getserv";
++static SCM l_servinfo(args)
+      SCM args;
+ {
+@@ -245,5 +246,5 @@
+   if (!entry) return BOOL_F;
+   ve[ 0] = makfrom0str(entry->s_name);
+-  ve[ 1] = makfromstrs(-1, entry->s_aliases);
++  ve[ 1] = makfromstrs(-1, (const char * const *)entry->s_aliases);
+   ve[ 2] = MAKINUM(ntohs(entry->s_port) + 0L);
+   ve[ 3] = makfrom0str(entry->s_proto);
+@@ -251,5 +252,5 @@
+ }
+ 
+-SCM l_sethost(arg)
++static SCM l_sethost(arg)
+      SCM arg;
+ {
+@@ -259,5 +260,5 @@
+ }
+ #ifndef __CYGWIN__
+-SCM l_setnet(arg)
++static SCM l_setnet(arg)
+      SCM arg;
+ {
+@@ -267,5 +268,5 @@
+ }
+ #endif
+-SCM l_setproto(arg)
++static SCM l_setproto(arg)
+      SCM arg;
+ {
+@@ -274,5 +275,5 @@
+   return UNSPECIFIED;
+ }
+-SCM l_setserv(arg)
++static SCM l_setserv(arg)
+      SCM arg;
+ {
+@@ -282,6 +283,6 @@
+ }
+ 
+-static char s_socket[] = "make-stream-socket";
+-SCM l_socket(fam, proto)
++static const char s_socket[] = "make-stream-socket";
++static SCM l_socket(fam, proto)
+      SCM fam, proto;
+ {
+@@ -316,6 +317,6 @@
+   return port;
+ }
+-static char s_socketpair[] = "make-stream-socketpair";
+-SCM l_socketpair(fam, proto)
++static const char s_socketpair[] = "make-stream-socketpair";
++static SCM l_socketpair(fam, proto)
+      SCM fam, proto;
+ {
+@@ -349,6 +350,6 @@
+ }
+ 
+-static char s_shutdown[] = "socket:shutdown";
+-SCM l_shutdown(port, how)
++static const char s_shutdown[] = "socket:shutdown";
++static SCM l_shutdown(port, how)
+      SCM port, how;
+ {
+@@ -369,7 +370,7 @@
+   return port;
+ }
+-static char s_unkfam[] = "unknown-family";
+-static char s_connect[] = "socket:connect";
+-SCM l_connect (sockpt, address, arg)
++static const char s_unkfam[] = "unknown-family";
++static const char s_connect[] = "socket:connect";
++static SCM l_connect (sockpt, address, arg)
+      SCM sockpt, address, arg;
+ {
+@@ -414,6 +415,6 @@
+ }
+ 
+-static char s_bind[] = "socket:bind";
+-SCM l_bind(sockpt, address)
++static const char s_bind[] = "socket:bind";
++static SCM l_bind(sockpt, address)
+      SCM sockpt, address;
+ {
+@@ -450,6 +451,6 @@
+ }
+ 
+-static char s_listen[] = "socket:listen";
+-SCM l_listen(port, backlog)
++static const char s_listen[] = "socket:listen";
++static SCM l_listen(port, backlog)
+      SCM port, backlog;
+ {
+@@ -468,9 +469,10 @@
+ }
+ 
+-static char s_accept[] = "socket:accept";
+-SCM l_accept(sockpt)
++static const char s_accept[] = "socket:accept";
++static SCM l_accept(sockpt)
+      SCM sockpt;
+ {
+-  int newsd, sadlen;
++  int newsd;
++  socklen_t sadlen;
+   struct sockaddr sad;
+   FILE *newfd;
+@@ -499,5 +501,5 @@
+ }
+ 
+-int sknm_print(exp, port, writing)
++static int sknm_print(exp, port, writing)
+      SCM exp; SCM port; int writing;
+ {
+@@ -521,5 +523,5 @@
+   return !0;
+ }
+-sizet sknm_free(p)
++static sizet sknm_free(p)
+      CELLPTR p;
+ {
+@@ -530,6 +532,6 @@
+ static smobfuns sknm_smob = {mark0, sknm_free, sknm_print, 0};
+ 
+-char s_sknm_family[] = "socket-name:family";
+-SCM l_sknm_family(snm)
++const char s_sknm_family[] = "socket-name:family";
++static SCM l_sknm_family(snm)
+      SCM snm;
+ {
+@@ -537,6 +539,6 @@
+   return MAKINUM(((struct sockaddr *)CDR(snm))->sa_family + 0L);
+ }
+-char s_sknm_port_num[] = "socket-name:port-number";
+-SCM l_sknm_port_num(snm)
++const char s_sknm_port_num[] = "socket-name:port-number";
++static SCM l_sknm_port_num(snm)
+      SCM snm;
+ {
+@@ -550,6 +552,6 @@
+   }
+ }
+-char s_sknm_addr[] = "socket-name:address";
+-SCM l_sknm_addr(snm)
++const char s_sknm_addr[] = "socket-name:address";
++static SCM l_sknm_addr(snm)
+      SCM snm;
+ {
+@@ -566,12 +568,12 @@
+ }
+ 
+-SCM maksknm(sad)
+-     struct sockaddr *sad;
++static SCM maksknm(sad)
++     struct sockaddr_in *sad;
+ {
+   SCM sknm;
+-  struct sockaddr *msknm;
++  struct sockaddr_in *msknm;
+   DEFER_INTS;
+   sknm = must_malloc_cell(0L+sizeof(struct sockaddr), (SCM)tc16_sknm, "sknm");
+-  msknm = (struct sockaddr *)CDR(sknm);
++  msknm = (struct sockaddr_in *)CDR(sknm);
+   *msknm = *sad;
+   ALLOW_INTS;
+@@ -579,10 +581,11 @@
+ }
+ 
+-static char s_getpeername[] = "getpeername";
+-SCM l_getpeername(sockpt)
++static const char s_getpeername[] = "getpeername";
++static SCM l_getpeername(sockpt)
+      SCM sockpt;
+ {
+   struct sockaddr_in sad;
+-  int sts, sadlen = sizeof(sad);
++  int sts;
++  socklen_t sadlen = sizeof(sad);
+   bzero((char *) &sad, sizeof(sad));
+   ASRTER(NIMP(sockpt) && OPFPORTP(sockpt), sockpt, ARG1, s_getpeername);
+@@ -593,11 +596,12 @@
+   return maksknm(&sad);
+ }
+-static char s_getsockname[] = "getsockname";
+-SCM l_getsockname(sockpt)
++static const char s_getsockname[] = "getsockname";
++static SCM l_getsockname(sockpt)
+      SCM sockpt;
+ {
+   struct sockaddr_in sad;
+-  int sts, sadlen = sizeof(sad);
+-  bzero((char *) &sad, sizeof(sad));
++  int sts;
++  socklen_t sadlen = sizeof(sad);
++  bzero(&sad, sizeof(sad));
+   ASRTER(NIMP(sockpt) && OPFPORTP(sockpt), sockpt, ARG1, s_getsockname);
+   SYSCALL(sts = getsockname(fileno(STREAM(sockpt)),
+--- subr.c	2014-05-02 20:06:08.000000000 -0400
++++ subr.c	2015-01-23 18:55:19.000000000 -0500
+@@ -25,14 +25,13 @@
+ #define s_append (s_st_append+7)
+ 
+-char	s_make_string[] = "make-string";
+-char	s_list[] = "list";
++const char	s_make_string[] = "make-string";
++const char	s_list[] = "list";
+ 
+-static char	s_setcar[] = "set-car!", s_setcdr[] = "set-cdr!",
++static const char	s_setcar[] = "set-car!", s_setcdr[] = "set-cdr!",
+ 	s_reverse[] = "reverse", s_list_ref[] = "list-ref";
+-static char	s_memq[] = "memq", s_member[] = "member",
++static const char	s_memq[] = "memq", s_member[] = "member",
+ 	s_assq[] = "assq", s_assoc[] = "assoc";
+-static char	s_symbol2string[] = "symbol->string",
++static const char	s_symbol2string[] = "symbol->string",
+ 	s_str2symbol[] = "string->symbol";
+-extern char s_inexactp[];
+ #define s_exactp (s_inexactp+2)
+ static char	s_oddp[] = "odd?", s_evenp[] = "even?";
+@@ -64,5 +63,9 @@
+ 	s_ve_ref[] = "vector-ref", s_ve_set[] = "vector-set!";
+ 
+-SCM lnot(x)
++#ifdef BIGDIG
++static SCM divbigint(SCM x, long z, int sgn, int mode); /* Forward declaration */
++#endif
++
++static SCM lnot(x)
+      SCM x;
+ {
+@@ -83,5 +86,5 @@
+ }
+ 
+-SCM consp(x)
++static SCM consp(x)
+      SCM x;
+ {
+@@ -89,5 +92,5 @@
+ 	return CONSP(x) ? BOOL_T : BOOL_F;
+ }
+-SCM setcar(pair, value)
++static SCM setcar(pair, value)
+      SCM pair, value;
+ {
+@@ -96,5 +99,5 @@
+ 	return UNSPECIFIED;
+ }
+-SCM setcdr(pair, value)
++static SCM setcdr(pair, value)
+      SCM pair, value;
+ {
+@@ -103,5 +106,5 @@
+ 	return UNSPECIFIED;
+ }
+-SCM nullp(x)
++static SCM nullp(x)
+      SCM x;
+ {
+@@ -127,5 +130,5 @@
+ 	return -1;
+ }
+-SCM listp(x)
++static SCM listp(x)
+      SCM x;
+ {
+@@ -184,5 +187,5 @@
+ 	return res;
+ }
+-SCM list_ref(lst, k)
++static SCM list_ref(lst, k)
+      SCM lst, k;
+ {
+@@ -209,5 +212,5 @@
+ 	return BOOL_F;
+ }
+-SCM member(x, lst)
++static SCM member(x, lst)
+      SCM x, lst;
+ {
+@@ -232,5 +235,5 @@
+ 	return BOOL_F;
+ }
+-SCM assoc(x, alist)
++static SCM assoc(x, alist)
+      SCM x, alist;
+ {
+@@ -246,6 +249,5 @@
+ }
+ 
+-extern long tc16_promise;
+-SCM promisep(x)
++static SCM promisep(x)
+      SCM x;
+ {
+@@ -253,5 +255,5 @@
+ }
+ 
+-SCM symbolp(x)
++static SCM symbolp(x)
+      SCM x;
+ {
+@@ -475,5 +477,5 @@
+   return MAKINUM(z);
+ }
+-SCM lremainder(x, y)
++static SCM lremainder(x, y)
+      SCM x, y;
+ {
+@@ -553,5 +555,5 @@
+ }
+ 
+-SCM lgcd(x, y)
++static SCM lgcd(x, y)
+      SCM x, y;
+ {
+@@ -611,5 +613,5 @@
+   return MAKINUM(u);
+ }
+-SCM llcm(n1, n2)
++static SCM llcm(n1, n2)
+      SCM n1, n2;
+ {
+@@ -662,11 +664,11 @@
+ #ifdef BIGDIG
+ 
+-SCM	scm_big_ior P((BIGDIG *x, sizet nx, int xsgn, SCM bigy));
+-SCM	scm_big_and P((BIGDIG *x, sizet nx, int xsgn, SCM bigy, int zsgn));
+-SCM	scm_big_xor P((BIGDIG *x, sizet nx, int xsgn, SCM bigy));
+-SCM	scm_big_test P((BIGDIG *x, sizet nx, int xsgn, SCM bigy));
+-SCM	scm_big_ash P((SCM x, int cnt));
++static SCM scm_big_ior P((const BIGDIG *x, sizet nx, int xsgn, SCM bigy));
++static SCM scm_big_and P((const BIGDIG *x, sizet nx, int xsgn, SCM bigy, int zsgn));
++static SCM scm_big_xor P((const BIGDIG *x, sizet nx, int xsgn, SCM bigy));
++static SCM scm_big_test P((const BIGDIG *x, sizet nx, int xsgn, SCM bigy));
++static SCM scm_big_ash P((SCM x, int cnt));
+ 
+-SCM scm_copy_big_dec(b, sign)
++static SCM scm_copy_big_dec(b, sign)
+      SCM b;
+      int sign;
+@@ -687,6 +689,6 @@
+ }
+ 
+-SCM scm_copy_smaller(x, nx, zsgn)
+-     BIGDIG *x;
++static SCM scm_copy_smaller(x, nx, zsgn)
++     const BIGDIG *x;
+      sizet nx;
+      int zsgn;
+@@ -706,5 +708,5 @@
+ 
+ SCM scm_big_ior(x, nx, xsgn, bigy)
+-     BIGDIG *x;
++     const BIGDIG *x;
+      SCM bigy;
+      sizet nx;		/* Assumes nx <= NUMDIGS(bigy) */
+@@ -738,5 +740,5 @@
+ 
+ SCM scm_big_xor(x, nx, xsgn, bigy)
+-     BIGDIG *x;
++     const BIGDIG *x;
+      SCM bigy;
+      sizet nx;		/* Assumes nx <= NUMDIGS(bigy) */
+@@ -770,5 +772,5 @@
+ 
+ SCM scm_big_and(x, nx, xsgn, bigy, zsgn)
+-     BIGDIG *x;
++     const BIGDIG *x;
+      SCM bigy;
+      sizet nx;		/* Assumes nx <= NUMDIGS(bigy) */
+@@ -814,5 +816,5 @@
+ 
+ SCM scm_big_test(x, nx, xsgn, bigy)
+-     BIGDIG *x;
++     const BIGDIG *x;
+      SCM bigy;
+      sizet nx;		/* Assumes nx <= NUMDIGS(bigy) */
+@@ -1221,5 +1223,5 @@
+ }
+ 
+-SCM scm_copybit(index, j1, bit)
++static SCM scm_copybit(index, j1, bit)
+      SCM index, j1, bit;
+ {
+@@ -1296,8 +1298,10 @@
+ }
+ 
+-SCM scm_bitfield(n, start, end)
++static SCM scm_bitfield(n, start, end)
+      SCM n, start, end;
+ {
++#ifdef BIGDIG
+   int sign;
++#endif
+   int istart = INUM(start);
+   int iend = INUM(end);
+@@ -1388,6 +1392,6 @@
+ }
+ 
+-char logtab[] = {0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4};
+-SCM scm_bitwise_bit_count(n)
++static const char logtab[] = {0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4};
++static SCM scm_bitwise_bit_count(n)
+      SCM n;
+ {
+@@ -1421,5 +1425,5 @@
+ }
+ 
+-SCM scm_logcount(n)
++static SCM scm_logcount(n)
+      SCM n;
+ {
+@@ -1445,5 +1449,5 @@
+ }
+ 
+-char ilentab[] = {0, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4};
++static const char ilentab[] = {0, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4};
+ SCM scm_intlength(n)
+      SCM n;
+@@ -1475,10 +1479,10 @@
+ }
+ 
+-SCM charp(x)
++static SCM charp(x)
+      SCM x;
+ {
+ 	return ICHRP(x) ? BOOL_T : BOOL_F;
+ }
+-SCM char_lessp(x, y)
++static SCM char_lessp(x, y)
+      SCM x, y;
+ {
+@@ -1487,5 +1491,5 @@
+ 	return (ICHR(x) < ICHR(y)) ? BOOL_T : BOOL_F;
+ }
+-SCM char_leqp(x, y)
++static SCM char_leqp(x, y)
+      SCM x, y;
+ {
+@@ -1494,5 +1498,5 @@
+ 	return (ICHR(x) <= ICHR(y)) ? BOOL_T : BOOL_F;
+ }
+-SCM char_grp(x, y)
++static SCM char_grp(x, y)
+      SCM x, y;
+ {
+@@ -1501,5 +1505,5 @@
+ 	return (ICHR(x) > ICHR(y)) ? BOOL_T : BOOL_F;
+ }
+-SCM char_geqp(x, y)
++static SCM char_geqp(x, y)
+      SCM x, y;
+ {
+@@ -1508,5 +1512,5 @@
+ 	return (ICHR(x) >= ICHR(y)) ? BOOL_T : BOOL_F;
+ }
+-SCM chci_eq(x, y)
++static SCM chci_eq(x, y)
+      SCM x, y;
+ {
+@@ -1515,5 +1519,5 @@
+ 	return (upcase[ICHR(x)]==upcase[ICHR(y)]) ? BOOL_T : BOOL_F;
+ }
+-SCM chci_lessp(x, y)
++static SCM chci_lessp(x, y)
+      SCM x, y;
+ {
+@@ -1522,5 +1526,5 @@
+ 	return (upcase[ICHR(x)] < upcase[ICHR(y)]) ? BOOL_T : BOOL_F;
+ }
+-SCM chci_leqp(x, y)
++static SCM chci_leqp(x, y)
+      SCM x, y;
+ {
+@@ -1529,5 +1533,5 @@
+ 	return (upcase[ICHR(x)] <= upcase[ICHR(y)]) ? BOOL_T : BOOL_F;
+ }
+-SCM chci_grp(x, y)
++static SCM chci_grp(x, y)
+      SCM x, y;
+ {
+@@ -1536,5 +1540,5 @@
+ 	return (upcase[ICHR(x)] > upcase[ICHR(y)]) ? BOOL_T : BOOL_F;
+ }
+-SCM chci_geqp(x, y)
++static SCM chci_geqp(x, y)
+      SCM x, y;
+ {
+@@ -1543,5 +1547,5 @@
+ 	return (upcase[ICHR(x)] >= upcase[ICHR(y)]) ? BOOL_T : BOOL_F;
+ }
+-SCM char_alphap(chr)
++static SCM char_alphap(chr)
+      SCM chr;
+ {
+@@ -1549,5 +1553,5 @@
+ 	return (isascii(ICHR(chr)) && isalpha(ICHR(chr))) ? BOOL_T : BOOL_F;
+ }
+-SCM char_nump(chr)
++static SCM char_nump(chr)
+      SCM chr;
+ {
+@@ -1555,5 +1559,5 @@
+ 	return (isascii(ICHR(chr)) && isdigit(ICHR(chr))) ? BOOL_T : BOOL_F;
+ }
+-SCM char_whitep(chr)
++static SCM char_whitep(chr)
+      SCM chr;
+ {
+@@ -1561,5 +1565,5 @@
+ 	return (isascii(ICHR(chr)) && isspace(ICHR(chr))) ? BOOL_T : BOOL_F;
+ }
+-SCM char_upperp(chr)
++static SCM char_upperp(chr)
+      SCM chr;
+ {
+@@ -1567,5 +1571,5 @@
+ 	return (isascii(ICHR(chr)) && isupper(ICHR(chr))) ? BOOL_T : BOOL_F;
+ }
+-SCM char_lowerp(chr)
++static SCM char_lowerp(chr)
+      SCM chr;
+ {
+@@ -1573,5 +1577,5 @@
+ 	return (isascii(ICHR(chr)) && islower(ICHR(chr))) ? BOOL_T : BOOL_F;
+ }
+-SCM char2int(chr)
++static SCM char2int(chr)
+      SCM chr;
+ {
+@@ -1579,5 +1583,5 @@
+ 	return MAKINUM(ICHR(chr));
+ }
+-SCM int2char(n)
++static SCM int2char(n)
+      SCM n;
+ {
+@@ -1587,5 +1591,5 @@
+   return MAKICHR(INUM(n));
+ }
+-SCM char_upcase(chr)
++static SCM char_upcase(chr)
+      SCM chr;
+ {
+@@ -1593,5 +1597,5 @@
+ 	return MAKICHR(upcase[ICHR(chr)]);
+ }
+-SCM char_downcase(chr)
++static SCM char_downcase(chr)
+      SCM chr;
+ {
+@@ -1600,5 +1604,5 @@
+ }
+ 
+-SCM stringp(x)
++static SCM stringp(x)
+      SCM x;
+ {
+@@ -1637,5 +1641,5 @@
+ 	return res;
+ }
+-SCM st_length(str)
++static SCM st_length(str)
+      SCM str;
+ {
+@@ -1643,5 +1647,5 @@
+ 	return MAKINUM(LENGTH(str));
+ }
+-SCM st_ref(str, k)
++static SCM st_ref(str, k)
+      SCM str, k;
+ {
+@@ -1651,5 +1655,5 @@
+ 	return MAKICHR(UCHARS(str)[INUM(k)]);
+ }
+-SCM st_set(str, k, chr)
++static SCM st_set(str, k, chr)
+      SCM str, k, chr;
+ {
+@@ -1675,5 +1679,5 @@
+ 	return BOOL_T;
+ }
+-SCM stci_equal(s1, s2)
++static SCM stci_equal(s1, s2)
+      SCM s1, s2;
+ {
+@@ -1689,5 +1693,5 @@
+ 	return BOOL_T;
+ }
+-SCM st_lessp(s1, s2)
++static SCM st_lessp(s1, s2)
+      SCM s1, s2;
+ {
+@@ -1709,20 +1713,20 @@
+ 	return (LENGTH(s2) != len) ? BOOL_T : BOOL_F;
+ }
+-SCM st_leqp(s1, s2)
++static SCM st_leqp(s1, s2)
+      SCM s1, s2;
+ {
+   return BOOL_NOT(st_lessp(s2, s1));
+ }
+-SCM st_grp(s1, s2)
++static SCM st_grp(s1, s2)
+      SCM s1, s2;
+ {
+   return st_lessp(s2, s1);
+ }
+-SCM st_geqp(s1, s2)
++static SCM st_geqp(s1, s2)
+      SCM s1, s2;
+ {
+   return BOOL_NOT(st_lessp(s1, s2));
+ }
+-SCM stci_lessp(s1, s2)
++static SCM stci_lessp(s1, s2)
+      SCM s1, s2;
+ {
+@@ -1744,15 +1748,15 @@
+ 	return (LENGTH(s2) != len) ? BOOL_T : BOOL_F;
+ }
+-SCM stci_leqp(s1, s2)
++static SCM stci_leqp(s1, s2)
+      SCM s1, s2;
+ {
+   return BOOL_NOT(stci_lessp(s2, s1));
+ }
+-SCM stci_grp(s1, s2)
++static SCM stci_grp(s1, s2)
+      SCM s1, s2;
+ {
+   return stci_lessp(s2, s1);
+ }
+-SCM stci_geqp(s1, s2)
++static SCM stci_geqp(s1, s2)
+      SCM s1, s2;
+ {
+@@ -1796,5 +1800,5 @@
+ }
+ 
+-SCM vectorp(x)
++static SCM vectorp(x)
+      SCM x;
+ {
+@@ -1820,5 +1824,5 @@
+ 	return res;
+ }
+-SCM vector_ref(v, k)
++static SCM vector_ref(v, k)
+      SCM v, k;
+ {
+@@ -1828,5 +1832,5 @@
+   return VELTS(v)[((long) INUM(k))];
+ }
+-SCM vector_set(v, k, obj)
++static SCM vector_set(v, k, obj)
+      SCM v, k, obj;
+ {
+@@ -1837,5 +1841,5 @@
+   return UNSPECIFIED;
+ }
+-char	s_make_vector[] = "make-vector";
++const char	s_make_vector[] = "make-vector";
+ SCM make_vector(k, fill)
+      SCM k, fill;
+@@ -1860,6 +1864,6 @@
+ }
+ #ifdef BIGDIG
+-char s_big_OVFLOW[] = "numerical overflow; NUMDIGS_MAX <";
+-char s_bignum[] = "bignum";
++static const char s_big_OVFLOW[] = "numerical overflow; NUMDIGS_MAX <";
++static const char s_bignum[] = "bignum";
+ SCM mkbig(nlen, sign)
+      sizet nlen;
+@@ -1894,5 +1898,5 @@
+   return b;
+ }
+-char s_adjbig[] = "adjbig";
++static const char s_adjbig[] = "adjbig";
+ SCM adjbig(b, nlen)
+      SCM b;
+@@ -1918,5 +1922,7 @@
+ # endif
+   BIGDIG *zds = BDIGITS(b);
+-  while (nlen-- && !zds[nlen]); nlen++;
++  while (nlen-- && !zds[nlen])
++    ;
++  nlen++;
+   if (nlen * BITSPERDIG/CHAR_BIT <= sizeof(SCM))
+     if (INUMP(b = big2inum(b, (sizet)nlen))) return b;
+@@ -2005,5 +2011,5 @@
+ 
+ SCM addbig(x, nx, xsgn, bigy, sgny)
+-     BIGDIG *x;
++     const BIGDIG *x;
+      SCM bigy;
+      sizet nx;		/* Assumes nx <= NUMDIGS(bigy) */
+@@ -2053,5 +2059,5 @@
+ 
+ SCM mulbig(x, nx, y, ny, sgn)
+-     BIGDIG *x, *y;
++     const BIGDIG *x, *y;
+      sizet nx, ny;
+      int sgn;
+@@ -2075,4 +2081,5 @@
+   return normbig(z);
+ }
++
+ UBIGLONG divbigdig(ds, h, div)
+      BIGDIG *ds;
+@@ -2088,5 +2095,5 @@
+   return t2;
+ }
+-SCM divbigint(x, z, sgn, mode)
++static SCM divbigint(x, z, sgn, mode)
+      SCM x;
+      long z;
+@@ -2115,8 +2122,7 @@
+ }
+ 
+-static SCM scm_copy_big_ash1 P((BIGDIG *xds, sizet xlen, BIGDIG dscl));
+ /* Make a copy of 2*xds and divide by dscl if dscl > 0 */
+-SCM scm_copy_big_ash1 (xds, xlen, dscl)
+-     BIGDIG *xds;
++static SCM scm_copy_big_ash1 (xds, xlen, dscl)
++     const BIGDIG *xds;
+      sizet xlen;
+      BIGDIG dscl;
+@@ -2140,5 +2146,6 @@
+ 
+ SCM divbigbig(x, xlen, y, ylen, sgn, mode)
+-     BIGDIG *x, *y;
++     const BIGDIG *x;
++     BIGDIG *y;
+      sizet xlen, ylen;
+      int sgn, mode;
+--- sys.c	2014-04-24 23:01:53.000000000 -0400
++++ sys.c	2015-01-27 01:32:50.000000000 -0500
+@@ -26,7 +26,6 @@
+ #endif
+ 
+-void	igc P((const char *what, SCM basecont));
+-SCM	*loc_open_file;		/* for open-file callback */
+-SCM	*loc_try_create_file;
++static SCM	*loc_open_file;		/* for open-file callback */
++static SCM	*loc_try_create_file;
+ 
+ /* ttyname() etc. should be defined in <unistd.h>.  But unistd.h is
+@@ -64,15 +63,15 @@
+ static void gc_sweep P((int contin_bad));
+ 
+-char	s_nogrow[] = "could not grow", s_heap[] = "heap",
++const char	s_nogrow[] = "could not grow", s_heap[] = "heap",
+   s_hplims[] = "hplims", s_try_create_file[] = "try-create-file";
+ 
+-static char s_segs[] = "segments", s_numheaps[] = "number of heaps";
+-static char	s_input_portp[] = "input-port?",
++static const char s_segs[] = "segments", s_numheaps[] = "number of heaps";
++static const char	s_input_portp[] = "input-port?",
+ 		s_output_portp[] = "output-port?";
+ #define s_portp (&s_input_portp[6])
+-static char	s_port_closedp[] = "port-closed?";
+-static char	s_try_open_file[] = "try-open-file";
++static const char	s_port_closedp[] = "port-closed?";
++static const char	s_try_open_file[] = "try-open-file";
+ #define	s_open_file (&s_try_open_file[4])
+-char	s_close_port[] = "close-port";
++const char	s_close_port[] = "close-port";
+ 
+ #ifdef __IBMC__
+@@ -127,5 +126,6 @@
+    which are allowed by ANSI C. */
+ long mode_bits(modes, cmodes)
+-     char *modes, *cmodes;
++     const char *modes;
++     char *cmodes;
+ {
+   int iout = 0;
+@@ -150,8 +150,8 @@
+ }
+ 
+-SCM try_open_file(filename, modes)
++static SCM try_open_file(filename, modes)
+      SCM filename, modes;
+ {
+-  register SCM port;
++  SCM port;
+   FILE *f;
+   char cmodes[4];
+@@ -187,5 +187,5 @@
+ }
+ 
+-long tc16_clport;
++static long tc16_clport;
+ SCM close_port(port)
+      SCM port;
+@@ -213,5 +213,5 @@
+ 	return ret;
+ }
+-SCM scm_portp(x)
++static SCM scm_portp(x)
+      SCM x;
+ {
+@@ -219,5 +219,5 @@
+ 	return PORTP(x) ? BOOL_T : BOOL_F;
+ }
+-SCM input_portp(x)
++static SCM input_portp(x)
+      SCM x;
+ {
+@@ -225,5 +225,5 @@
+ 	return INPORTP(x) ? BOOL_T : BOOL_F;
+ }
+-SCM output_portp(x)
++static SCM output_portp(x)
+      SCM x;
+ {
+@@ -231,5 +231,5 @@
+ 	return OUTPORTP(x) ? BOOL_T : BOOL_F;
+ }
+-SCM port_closedp(port)
++static SCM port_closedp(port)
+      SCM port;
+ {
+@@ -238,5 +238,5 @@
+   return BOOL_F;
+ }
+-SCM scm_port_type(port)
++static SCM scm_port_type(port)
+      SCM port;
+ {
+@@ -261,5 +261,5 @@
+ 
+ #ifdef L_tmpnam
+-SCM ltmpnam()
++static SCM ltmpnam()
+ {
+   char name[L_tmpnam];
+@@ -291,7 +291,7 @@
+ # endif /* AMIGA */
+ 
+-char template[] = TEMPTEMPLATE;
++static const char template[] = TEMPTEMPLATE;
+ # define TEMPLEN (sizeof template/sizeof(char) - 1)
+-SCM ltmpnam()
++static SCM ltmpnam()
+ {
+   SCM name;
+@@ -319,6 +319,6 @@
+ # define remove unlink
+ #endif
+-static char s_del_fil[] = "delete-file";
+-SCM del_fil(str)
++static const char s_del_fil[] = "delete-file";
++static SCM del_fil(str)
+      SCM str;
+ {
+@@ -334,5 +334,5 @@
+ 
+ void prinport(exp, port, type)
+-     SCM exp; SCM port; char *type;
++     SCM exp; SCM port; const char *type;
+ {
+   int filn = fileno(STREAM(exp));
+@@ -391,7 +391,7 @@
+   return c;
+ }
+-sizet stwrite(str, siz, num, p)
++static sizet stwrite(str, siz, num, p)
+      sizet siz, num;
+-     char *str; SCM p;
++     const char *str; SCM p;
+ {
+   sizet ind = INUM(CAR(p));
+@@ -406,5 +406,5 @@
+ }
+ static int stputs(s, p)
+-     char *s; SCM p;
++     const char *s; SCM p;
+ {
+   stwrite(s, 1, strlen(s), p);
+@@ -437,5 +437,5 @@
+   return c;
+ }
+-int noop0(stream)
++static int noop0(stream)
+      FILE *stream;
+ {
+@@ -446,5 +446,5 @@
+      SCM str;
+      long modes;
+-     char *caller;
++     const char *caller;
+ {
+   SCM z;
+@@ -460,7 +460,7 @@
+   return z;
+ }
+-static char s_cwos[] = "call-with-output-string";
+-static char s_cwis[] = "call-with-input-string";
+-SCM cwos(proc)
++static const char s_cwos[] = "call-with-output-string";
++static const char s_cwis[] = "call-with-input-string";
++static SCM cwos(proc)
+      SCM proc;
+ {
+@@ -471,5 +471,5 @@
+   return resizuve(CDR(CDR(p)), CAR(CDR(p)));
+ }
+-SCM cwis(str, proc)
++static SCM cwis(str, proc)
+      SCM str, proc;
+ {
+@@ -557,5 +557,5 @@
+   return c;
+ }
+-sizet sfwrite(str, siz, num, p)
++static sizet sfwrite(str, siz, num, p)
+      sizet siz, num;
+      const void *str; SCM p;
+@@ -573,5 +573,5 @@
+   return 0;
+ }
+-int sfflush(stream)
++static int sfflush(stream)
+      SCM stream;
+ {
+@@ -601,6 +601,6 @@
+   return BOOL_F==f ? EOF : 0;
+ }
+-static char s_mksfpt[] = "make-soft-port";
+-SCM mksfpt(pv, modes)
++static const char s_mksfpt[] = "make-soft-port";
++static SCM mksfpt(pv, modes)
+      SCM pv, modes;
+ {
+@@ -614,10 +614,10 @@
+   for (i = 0; i < 5; i++) {
+     ASRTGO(FALSEP(VELTS(pv)[i]) ||
+-	   scm_arity_check(VELTS(pv)[i], arities[i], (char *)0),
++	   scm_arity_check(VELTS(pv)[i], arities[i], NULL),
+ 	   badarg);
+   }
+ #endif
+   ASRTER(NIMP(modes) && (STRINGP(modes) || SYMBOLP(modes)), modes, ARG2, s_mksfpt);
+-  flags = mode_bits(CHARS(modes), (char *)0);
++  flags = mode_bits(CHARS(modes), NULL);
+   ASRTER(flags, modes, ARG2, s_mksfpt);
+   DEFER_INTS;
+@@ -649,5 +649,5 @@
+ static sizet clwrite(str, siz, num, p)
+      sizet siz, num;
+-     char *str; FILE *p;
++     const void *str; FILE *p;
+ {
+   return 0;
+@@ -689,5 +689,5 @@
+ static sizet syswrite(str, siz, num, p)
+      sizet siz, num;
+-     char *str; FILE *p;
++     const char *str; FILE *p;
+ {
+   sizet src, dst = errbuf_end;
+@@ -757,5 +757,5 @@
+    A setjmp must be done before each use of the safeport. */
+ 
+-static char s_msp[] = "mksafeport";
++static const char s_msp[] = "mksafeport";
+ int tc16_safeport;
+ SCM mksafeport(maxlen, port)
+@@ -895,5 +895,5 @@
+ 
+ scm_gra finals_gra;
+-static char s_final[] = "final";
++static const char s_final[] = "final";
+ 
+ /* statically allocated ports for diagnostic messages */
+@@ -948,5 +948,5 @@
+ 
+ static SCM gc_finalizers = EOL, gc_finalizers_pending = EOL;
+-static char s_add_finalizer[] = "add-finalizer";
++static const char s_add_finalizer[] = "add-finalizer";
+ SCM scm_add_finalizer(value, finalizer)
+      SCM value, finalizer;
+@@ -965,5 +965,5 @@
+ }
+ 
+-static char s_estk[] = "environment stack";
++static const char s_estk[] = "environment stack";
+ static cell ecache_v[ECACHE_SIZE];
+ SCM scm_egc_roots[ECACHE_SIZE/20];
+@@ -1063,6 +1063,6 @@
+      SCM x, y;
+ {
+-   register SCM z;
+-   register int i;
++   SCM z;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1082,5 +1082,5 @@
+ {
+    SCM z1, z2;
+-   register int i;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1103,5 +1103,5 @@
+ {
+    SCM z1, z2;
+-   register int i;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1128,5 +1128,5 @@
+ {
+    SCM z1, z2;
+-   register int i;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1150,5 +1150,5 @@
+ {
+    SCM z;
+-   register int i;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1163,9 +1163,11 @@
+    scm_ecache_index = i;
+ }
++
++#if 0
+ void old_scm_extend_env(names)
+      SCM names;
+ {
+    SCM z1, z2;
+-   register int i;
++   int i;
+    DEFER_INTS_EGC;
+    i = scm_ecache_index;
+@@ -1183,6 +1185,8 @@
+    scm_ecache_index = i;
+ }
+-char s_obunhash[] = "object-unhash", s_cache_gc[] = "cache_gc";
+-char s_recursive[] = "recursive";
++#endif
++
++const char s_obunhash[] = "object-unhash";
++static const char s_recursive[] = "recursive", s_cache_gc[] = "cache_gc";
+ #define s_gc (s_cache_gc+6)
+ static iproc subr0s[] = {
+@@ -1212,5 +1216,5 @@
+ 	{0, 0}};
+ 
+-SCM dynwind P((SCM thunk1, SCM thunk2, SCM thunk3));
++static SCM dynwind P((SCM thunk1, SCM thunk2, SCM thunk3));
+ void init_io()
+ {
+@@ -1232,5 +1236,5 @@
+ }
+ 
+-void grew_lim(nm)
++static void grew_lim(nm)
+      long nm;
+ {
+@@ -1263,6 +1267,6 @@
+     else grew_lim(mtrigger + mtrigger/2);
+   }
+-  if (where) SYSCALL(ptr = (char *)realloc(where, size););
+-  else SYSCALL(ptr = (char *)malloc(size););
++  if (where) SYSCALL(ptr = realloc(where, size););
++  else SYSCALL(ptr = malloc(size););
+   ASRTER(ptr, MAKINUM(size), NALLOC, what);
+   if (nm > mltrigger) {
+@@ -1395,14 +1399,15 @@
+   }
+   wta(sym, "uninterned symbol? ", "");
++  return -1;
+ }
+ /* intern() and sysintern() return a pair;
+    CAR is the symbol, CDR is the value. */
+ SCM intern(name, len)
+-     char *name;
++     const char *name;
+      sizet len;
+ {
+   SCM lsym, z;
+-  register sizet i = len;
+-  register unsigned char *tmp = (unsigned char *)name;
++  sizet i = len;
++  const unsigned char *tmp = (const unsigned char *)name;
+   sizet hash = strhash(tmp, i, (unsigned long)symhash_dim);
+   /* printf("intern %s len=%d\n",name,len); fflush(stdout); */
+@@ -1413,5 +1418,5 @@
+     tmp = UCHARS(z);
+     if (LENGTH(z) != len) goto trynext;
+-    for (i = len;i--;) if (((unsigned char *)name)[i] != tmp[i]) goto trynext;
++    for (i = len;i--;) if (((const unsigned char *)name)[i] != tmp[i]) goto trynext;
+     ALLOW_INTS;
+     return CAR(lsym);
+@@ -1436,6 +1441,6 @@
+   SCM lsym, z;
+   sizet len = strlen(name);
+-  register sizet i = len;
+-  register unsigned char *tmp = (unsigned char *)name;
++  sizet i = len;
++  const unsigned char *tmp = (const unsigned char *)name;
+   sizet hash = strhash(tmp, i, (unsigned long)symhash_dim);
+   for (lsym = VELTS(symhash)[hash];NIMP(lsym);lsym = CDR(lsym)) {
+@@ -1444,5 +1449,5 @@
+     tmp = UCHARS(z);
+     if (LENGTH(z) != len) goto trynext;
+-    for (i = len;i--;) if (((unsigned char *)name)[i] != tmp[i]) goto trynext;
++    for (i = len;i--;) if (((const unsigned char *)name)[i] != tmp[i]) goto trynext;
+     lsym = CAR(lsym);
+     if (!UNBNDP(val)) CDR(lsym) = val;
+@@ -1464,5 +1469,5 @@
+      SCM x, y;
+ {
+-	register SCM z;
++	SCM z;
+ 	NEWCELL(z);
+ 	CAR(z) = x;
+@@ -1473,5 +1478,5 @@
+      SCM w, x, y;
+ {
+-	register SCM z;
++	SCM z;
+ 	NEWCELL(z);
+ 	CAR(z) = x;
+@@ -1486,5 +1491,5 @@
+      SCM w, x, y;
+ {
+-	register SCM z;
++	SCM z;
+ 	NEWCELL(z);
+ 	CAR(z) = w;
+@@ -1511,5 +1516,5 @@
+ }
+ 
+-char s_redefining[] = "redefining ";
++const char s_redefining[] = "redefining ";
+ scm_gra subrs_gra;
+ SCM scm_maksubr(name, type, fcn)
+@@ -1520,9 +1525,9 @@
+ 	subr_info info;
+ 	int isubr;
+-	register SCM z;
++	SCM z;
+ 	info.name = name;
+ 	for (isubr = subrs_gra.len; 0 < isubr--;) {
+ 	  if (0==strcmp(((char **)subrs_gra.elts)[isubr], name)) {
+-	    scm_warn(s_redefining, (char *)name, UNDEFINED);
++	    scm_warn(s_redefining, name, UNDEFINED);
+ 	    goto foundit;
+ 	  }
+@@ -1536,5 +1541,5 @@
+ 	  while (*++p != 'r')
+ 	    switch (*p) {
+-	    default: wta(UNDEFINED, "bad cxr name", (char *)name);
++	    default: wta(UNDEFINED, "bad cxr name", name);
+ 	    case 'a': code = (code<<2) + 1; continue;
+ 	    case 'd': code = (code<<2) + 2; continue;
+@@ -1555,5 +1560,5 @@
+ 
+ #ifdef CCLO
+-char s_comp_clo[] = "compiled-closure";
++static const char s_comp_clo[] = "compiled-closure";
+ SCM makcclo(proc, len)
+      SCM proc;
+@@ -1601,5 +1606,5 @@
+ }
+ 
+-SCM dynwind(thunk1, thunk2, thunk3)
++static SCM dynwind(thunk1, thunk2, thunk3)
+      SCM thunk1, thunk2, thunk3;
+ {
+@@ -1612,5 +1617,5 @@
+   return ans;
+ }
+-void downd(to, delta)
++static void downd(to, delta)
+      SCM to;
+      long delta;
+@@ -1640,11 +1645,12 @@
+ SCM scm_make_cont()
+ {
+-  SCM cont, estk, *from;
++  SCM cont, estk;
+   CONTINUATION *ncont;
+-  sizet n;
++#ifndef CHEAP_CONTINUATIONS
++  SCM *from = VELTS(scm_estk);
++  sizet n = scm_estk_ptr - from + SCM_ESTK_FRLEN;
++#endif
+   VERIFY_INTS("scm_make_cont", 0L);
+   NEWCELL(cont);
+-  from = VELTS(scm_estk);
+-  n = scm_estk_ptr - from + SCM_ESTK_FRLEN;
+ #ifdef CHEAP_CONTINUATIONS
+   estk = scm_estk;
+@@ -1678,5 +1684,5 @@
+   return cont;
+ }
+-static char s_sstale[] = "strangely stale";
++static const char s_sstale[] = "strangely stale";
+ void scm_dynthrow(tocont, arg1, arg2, rest)
+      SCM tocont;
+@@ -1758,6 +1764,6 @@
+        scm_cell_p() in "rope.c", which means that changes to these
+        routines must be coordinated. */
+-    register CELLPTR ptr = (CELLPTR)SCM2PTR(obj);
+-    register sizet i = 0, j = hplim_ind;
++    CELLPTR ptr = (CELLPTR)SCM2PTR(obj);
++    sizet i = 0, j = hplim_ind;
+     do {
+       if (PTR_GT(hplims[i++], ptr)) break;
+@@ -1774,5 +1780,5 @@
+ 
+ unsigned long strhash(str, len, n)
+-     unsigned char *str;
++     const unsigned char *str;
+      sizet len;
+      unsigned long n;
+@@ -1794,5 +1800,5 @@
+ 
+ static void fixconfig(s1, s2, s)
+-     char *s1, *s2;
++     const char *s1, *s2;
+      int s;
+ {
+@@ -1823,11 +1829,11 @@
+     }}
+ }
+-sizet init_heap_seg(seg_org, size)
++static sizet init_heap_seg(seg_org, size)
+      CELLPTR seg_org;
+      sizet size;
+ {
+-  register CELLPTR ptr = seg_org;
++  CELLPTR ptr = seg_org;
+ #ifdef POINTERS_MUNGED
+-  register SCM scmptr;
++  SCM scmptr;
+ #else
+ # define scmptr ptr
+@@ -1918,5 +1924,5 @@
+ int scm_grow_gra(gra, elt)
+      scm_gra *gra;
+-     char *elt;
++     const char *elt;
+ {
+   int i;
+@@ -1964,6 +1970,6 @@
+   mallocated -= gra->maxlen*gra->eltsize;
+ }
+-void gra_report1(gra)
+-     scm_gra *gra;
++static void gra_report1(gra)
++     const scm_gra *gra;
+ {
+   scm_intprint((long)gra->len, -10, cur_errp);
+@@ -1986,17 +1992,17 @@
+ scm_gra smobs_gra;
+ long newsmob(smob)
+-     smobfuns *smob;
++     const smobfuns *smob;
+ {
+-  return tc7_smob + 256*scm_grow_gra(&smobs_gra, (char *)smob);
++  return tc7_smob + 256*scm_grow_gra(&smobs_gra, (const char *)smob);
+ }
+ scm_gra ptobs_gra;
+ long newptob(ptob)
+-     ptobfuns *ptob;
++     const ptobfuns *ptob;
+ {
+-  return tc7_port + 256*scm_grow_gra(&ptobs_gra, (char *)ptob);
++  return tc7_port + 256*scm_grow_gra(&ptobs_gra, (const char *)ptob);
+ }
+-port_info *scm_port_table = 0;
++port_info *scm_port_table = NULL;
+ static sizet scm_port_table_len = 0;
+-static char s_port_table[] = "port table";
++static const char s_port_table[] = "port table";
+ SCM scm_port_entry(stream, ptype, flags)
+      FILE *stream;
+@@ -2073,5 +2079,5 @@
+ }
+ 
+-static char remsg[] = "remove\n#define ", addmsg[] = "add\n#define ",
++static const char remsg[] = "remove\n#define ", addmsg[] = "add\n#define ",
+   rdmsg[] = "reduce";
+ void init_storage(stack_start_ptr, init_heap_size)
+@@ -2249,5 +2255,5 @@
+ Cambridge, MA 02138
+ */
+-char s_cells[] = "cells";
++static const char s_cells[] = "cells";
+ SCM gc_for_newcell()
+ {
+@@ -2285,6 +2291,5 @@
+ }
+ 
+-static char	s_bad_type[] = "unknown type in ";
+-void mark_locations P((STACKITEM x[], sizet n));
++static const char	s_bad_type[] = "unknown type in ";
+ static void mark_syms P((SCM v));
+ static void mark_sym_values P((SCM v));
+@@ -2357,5 +2363,5 @@
+   int j = num_protects;
+   long oheap_cells = heap_cells;
+-  STACKITEM * stackbase = IMP(basecont) ? 0 : CONT(basecont)->stkbse;
++  STACKITEM * stackbase = IMP(basecont) ? NULL : CONT(basecont)->stkbse;
+ #ifdef DEBUG_GMALLOC
+   int err = check_frag_blocks();
+@@ -2419,5 +2425,5 @@
+   egc_sweep();
+   estk_pool = EOL;
+-  errjmp_bad = (char *)0;
++  errjmp_bad = NULL;
+   gc_end();
+   if (oheap_cells != heap_cells) {
+@@ -2430,5 +2436,5 @@
+ }
+ 
+-static char s_not_free[] = "not freed";
++static const char s_not_free[] = "not freed";
+ void free_storage()
+ {
+@@ -2488,10 +2494,10 @@
+ }
+ 
+-static char s_gc_sym[] = "mark_syms", s_wrong_length[] = "wrong length";
++static const char s_gc_sym[] = "mark_syms", s_wrong_length[] = "wrong length";
+ void gc_mark(p)
+      SCM p;
+ {
+-  register long i;
+-  register SCM ptr = p;
++  long i;
++  SCM ptr = p;
+   CHECK_STACK;
+  gc_mark_loop:
+@@ -2619,15 +2625,19 @@
+    code is duplicated by obunhash() in "sys.c" and scm_cell_p() in
+    "rope.c", which means that changes to these routines must be
+-   coordinated. */
++   coordinated.
++   XXX Actually, the old code ran from x[-1:n-1] (down)... It now runs
++   XXX up from 0 to n-1, as seems to be correct. Is it?
++*/
+ 
+ void mark_locations(x, n)
+-     STACKITEM x[];
++     const STACKITEM x[];
+      sizet n;
+ {
+-	register long m = n;
+-	register int i, j;
+-	register CELLPTR ptr;
+-	while(0 <= --m) if (CELLP(*(SCM **)&x[m])) {
+-		ptr = (CELLPTR)SCM2PTR((SCM)(*(SCM **)&x[m]));
++	int i, j;
++	CELLPTR ptr;
++	for (; n; x++, n--) {
++		if (NCELLP(*x))
++			continue;
++		ptr = (CELLPTR)SCM2PTR((SCM)(*x));
+ 		i = 0;
+ 		j = hplim_ind;
+@@ -2638,5 +2648,5 @@
+ 			    && PTR_LE(hplims[i++], ptr)
+ 			    && PTR_GT(hplims[--j], ptr)) continue;
+-			/* if (NFREEP(*(SCM **)&x[m])) */ gc_mark(*(SCM *)&x[m]);
++			gc_mark(*x);
+ 			break;
+ 		} while(i<j);
+@@ -2647,13 +2657,13 @@
+      int contin_bad;
+ {
+-  register CELLPTR ptr;
++  CELLPTR ptr;
+ #ifdef POINTERS_MUNGED
+-  register SCM scmptr;
++  SCM scmptr;
+ #else
+ # define scmptr (SCM)ptr
+ #endif
+-  register SCM nfreelist = EOL;
+-  register long n = 0;
+-  register sizet j, minc;
++  SCM nfreelist = EOL;
++  long n = 0;
++  sizet j, minc;
+   long pre_m = mallocated;
+   sizet i = 0;
+@@ -3087,5 +3097,5 @@
+   }
+ }
+-extern long tc16_env, tc16_promise;
++
+ static void egc_copy_roots()
+ {
+@@ -3192,4 +3202,4 @@
+     scm_egc_end();
+   }
+-  errjmp_bad = (char *)0;
++  errjmp_bad = NULL;
+ }
+--- time.c	2014-02-08 19:38:23.000000000 -0500
++++ time.c	2015-01-23 18:55:19.000000000 -0500
+@@ -94,5 +94,4 @@
+ # include <sys/types.h>
+ # include <sys/time.h>
+-# include <sys/timeb.h>
+ # define USE_GETTIMEOFDAY
+ #endif
+@@ -169,10 +168,6 @@
+ #endif
+ 
+-#ifndef LACK_FTIME
+-# ifdef HAVE_UNIX
+-#  ifndef GO32
++#if !defined(LACK_FTIME) && defined(HAVE_UNIX) && !defined(GO32) && !defined(USE_GETTIMEOFDAY)
+ #   include <sys/timeb.h>
+-#  endif
+-# endif
+ #endif
+ 
+@@ -307,5 +302,5 @@
+ #else /* LACK_FTIME */
+ # ifdef USE_GETTIMEOFDAY
+-int scm_ftime(time_buffer)
++static int scm_ftime(time_buffer)
+      struct timeval *time_buffer;
+ {
+@@ -377,5 +372,5 @@
+ }
+ 
+-SCM curtime()
++static SCM curtime()
+ {
+   timet timv = time((timet*)0);
+--- unexec.c	2008-01-30 22:44:09.000000000 -0500
++++ unexec.c	2015-01-23 18:55:19.000000000 -0500
+@@ -371,5 +371,5 @@
+  */
+ unexec (new_name, a_name, data_start, bss_start, entry_address)
+-     char *new_name, *a_name;
++     const char *new_name, *a_name;
+      unsigned data_start, bss_start, entry_address;
+ {
+@@ -417,6 +417,6 @@
+      int new, a_out;
+      unsigned data_start, bss_start, entry_address;
+-     char *a_name;
+-     char *new_name;
++     const char *a_name;
++     const char *new_name;
+ {
+   int tem;
+--- unexelf.c	2008-01-30 22:44:11.000000000 -0500
++++ unexelf.c	2015-01-23 18:55:19.000000000 -0500
+@@ -403,7 +403,10 @@
+    Instead we read the whole file, modify it, and write it out.  */
+ 
++#include "scm.h"
++
+ #ifndef emacs
+-#define fatal(a, b, c) fprintf (stderr, a, b, c), exit (1)
++#define fatal(...) fprintf (stderr, __VA_ARGS__), exit (1)
+ #include <string.h>
++#include <stdlib.h>	/* Where exit(3) is declared */
+ #else
+ #include <config.h>
+@@ -608,7 +611,7 @@
+ static int
+ find_section (name, section_names, file_name, old_file_h, old_section_h, noerror)
+-     char *name;
+-     char *section_names;
+-     char *file_name;
++     const char *name;
++     const char *section_names;
++     const char *file_name;
+      ElfW(Ehdr) *old_file_h;
+      ElfW(Shdr) *old_section_h;
+@@ -649,5 +652,5 @@
+ void
+ unexec (new_name, old_name, data_start, bss_start, entry_address)
+-     char *new_name, *old_name;
++     const char *new_name, *old_name;
+      unsigned data_start, bss_start, entry_address;
+ {
+@@ -680,5 +683,7 @@
+   int old_bss_index, old_sbss_index;
+   int old_data_index, new_data2_index;
++#if defined (__sony_news) && defined (_SYSTYPE_SYSV) || defined(__sgi)
+   int old_mdebug_index;
++#endif
+   struct stat stat_buf;
+   int old_file_size;
+@@ -709,8 +714,8 @@
+ 		   MAP_ANON | MAP_PRIVATE, mmap_fd, 0);
+   if (old_base == MAP_FAILED)
+-    fatal ("Can't allocate buffer for %s\n", old_name, 0);
++    fatal("Can't allocate buffer for %s\n", old_name);
+ 
+   if (read (old_file, old_base, stat_buf.st_size) != stat_buf.st_size)
+-    fatal ("Didn't read all of %s: errno %d\n", old_name, errno);
++    fatal("Didn't read all of %s: errno %d\n", old_name, errno);
+ 
+   /* Get pointers to headers & section names */
+@@ -724,6 +729,8 @@
+   /* Find the mdebug section, if any.  */
+ 
++#if defined (__sony_news) && defined (_SYSTYPE_SYSV) || defined(__sgi)
+   old_mdebug_index = find_section (".mdebug", old_section_names,
+ 				   old_name, old_file_h, old_section_h, 1);
++#endif
+ 
+   /* Find the old .bss section.  Figure out parameters of the new
+@@ -780,5 +787,5 @@
+ 
+   if ((unsigned) new_bss_addr < (unsigned) old_bss_addr + old_bss_size)
+-    fatal (".bss shrank when undumping???\n", 0, 0);
++    fatal (".bss shrank when undumping???\n");
+ 
+   /* Set the output file to the right size.  Allocate a buffer to hold
+@@ -798,5 +805,5 @@
+ 		   MAP_ANON | MAP_PRIVATE, mmap_fd, 0);
+   if (new_base == MAP_FAILED)
+-    fatal ("Can't allocate buffer for %s\n", old_name, 0);
++    fatal ("Can't allocate buffer for %s\n", old_name);
+ 
+   new_file_h = (ElfW(Ehdr) *) new_base;
+@@ -853,5 +860,5 @@
+ 	     ? old_bss_addr
+ 	     : round_up (old_bss_addr, alignment)))
+-	  fatal ("Program segment above .bss in %s\n", old_name, 0);
++	  fatal ("Program segment above .bss in %s\n", old_name);
+ 
+       if (NEW_PROGRAM_H (n).p_type == PT_LOAD
+@@ -863,5 +870,5 @@
+     }
+   if (n < 0)
+-    fatal ("Couldn't find segment next to .bss in %s\n", old_name, 0);
++    fatal ("Couldn't find segment next to .bss in %s\n", old_name);
+ 
+   /* Make sure that the size includes any padding before the old .bss
+@@ -893,5 +900,5 @@
+       break;
+   if (old_data_index == old_file_h->e_shnum)
+-    fatal ("Can't find .data in %s.\n", old_name, 0);
++    fatal ("Can't find .data in %s.\n", old_name);
+ 
+   /* Walk through all section headers, insert the new data2 section right
+--- unif.c	2010-10-17 22:44:29.000000000 -0400
++++ unif.c	2015-01-27 00:55:00.000000000 -0500
+@@ -114,6 +114,5 @@
+ # ifdef FLOATS
+ #  ifdef SINGLES
+-SCM makflo (x)
+-     float x;
++SCM makflo (float x)
+ {
+   SCM z;
+@@ -254,5 +253,5 @@
+   }
+ }
+-static char s_array_dims[] = "array-dimensions";
++static const char s_array_dims[] = "array-dimensions";
+ SCM array_dims(ra)
+      SCM ra;
+@@ -278,5 +277,5 @@
+   }
+ }
+-static char s_bad_ind[] = "Bad array index";
++static const char s_bad_ind[] = "Bad array index";
+ long aind(ra, args, what)
+      SCM ra, args;
+@@ -323,7 +322,7 @@
+ }
+ 
+-static char s_bad_spec[] = "Bad array dimension";
++static const char s_bad_spec[] = "Bad array dimension";
+ /* Increments will still need to be set. */
+-SCM shap2ra(args, what)
++static SCM shap2ra(args, what)
+      SCM args;
+      const char *what;
+@@ -358,5 +357,5 @@
+ }
+ 
+-char s_array_fill[] = "array-fill!";
++const char s_array_fill[] = "array-fill!";
+ int rafill(ra, fill, ignore)
+      SCM ra, fill, ignore;
+@@ -487,5 +486,5 @@
+ }
+ 
+-static char s_dims2ura[] = "dimensions->uniform-array";
++static const char s_dims2ura[] = "dimensions->uniform-array";
+ SCM dims2ura(dims, prot, fill)
+      SCM dims, prot, fill;
+@@ -545,5 +544,5 @@
+ }
+ 
+-void ra_set_contp(ra)
++static void ra_set_contp(ra)
+      SCM ra;
+ {
+@@ -560,6 +559,7 @@
+   CAR(ra) |= ARRAY_CONTIGUOUS;
+ }
+-char s_make_sh_array[] = "make-shared-array";
+-SCM make_sh_array(oldra, mapfunc, dims)
++static const char s_make_sh_array[] = "make-shared-array";
++#define s_array (s_make_sh_array+12)
++static SCM make_sh_array(oldra, mapfunc, dims)
+      SCM oldra;
+      SCM mapfunc;
+@@ -660,6 +660,6 @@
+ 
+ /* args are RA . DIMS */
+-static char s_trans_array[] = "transpose-array";
+-SCM trans_array(args)
++static const char s_trans_array[] = "transpose-array";
++static SCM trans_array(args)
+      SCM args;
+ {
+@@ -723,6 +723,6 @@
+ 
+ /* args are RA . AXES */
+-static char s_encl_array[] = "enclose-array";
+-SCM encl_array(axes)
++static const char s_encl_array[] = "enclose-array";
++static SCM encl_array(axes)
+      SCM axes;
+ {
+@@ -781,6 +781,6 @@
+ }
+ 
+-static char s_array_inbp[] = "array-in-bounds?";
+-SCM array_inbp(args)
++static const char s_array_inbp[] = "array-in-bounds?";
++static SCM array_inbp(args)
+   SCM args;
+ {
+@@ -823,5 +823,5 @@
+   }
+ }
+-static char s_aref[] = "array-ref";
++static const char s_aref[] = "array-ref";
+ SCM aref(v, args)
+      SCM v, args;
+@@ -1026,5 +1026,5 @@
+ }
+ 
+-static char s_aset[] = "array-set!";
++static const char s_aset[] = "array-set!";
+ SCM aset(v, obj, args)
+      SCM v, obj, args;
+@@ -1115,5 +1115,5 @@
+ }
+ 
+-static char s_array_contents[] = "array-contents";
++static const char s_array_contents[] = "array-contents";
+ SCM array_contents(ra, strict)
+      SCM ra, strict;
+@@ -1152,5 +1152,5 @@
+ }
+ 
+-static char s_uve_rd[] = "uniform-vector-read!";
++static const char s_uve_rd[] = "uniform-vector-read!";
+ SCM uve_read(v, port)
+      SCM v, port;
+@@ -1225,5 +1225,5 @@
+ }
+ 
+-static char s_uve_wr[] = "uniform-vector-write";
++static const char s_uve_wr[] = "uniform-vector-write";
+ SCM uve_write(v, port)
+      SCM v, port;
+@@ -1288,7 +1288,7 @@
+ }
+ 
+-static char cnt_tab[16] = {0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4};
+-static char s_count[] = "bit-count";
+-SCM lcount(item, seq)
++static const char cnt_tab[16] = {0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4};
++static const char s_count[] = "bit-count";
++static SCM lcount(item, seq)
+      SCM item, seq;
+ {
+@@ -1349,6 +1349,6 @@
+   }
+ }
+-static char s_uve_pos[] = "bit-position";
+-SCM bit_position(item, v, k)
++static const char s_uve_pos[] = "bit-position";
++static SCM bit_position(item, v, k)
+      SCM item, v, k;
+ {
+@@ -1418,6 +1418,6 @@
+ }
+ 
+-static char s_bit_set[] = "bit-set*!";
+-SCM bit_set(v, kv, obj)
++static const char s_bit_set[] = "bit-set*!";
++static SCM bit_set(v, kv, obj)
+      SCM v, kv, obj;
+ {
+@@ -1460,6 +1460,6 @@
+ }
+ 
+-static char s_bit_count[] = "bit-count*";
+-SCM bit_count(v, kv, obj)
++static const char s_bit_count[] = "bit-count*";
++static SCM bit_count(v, kv, obj)
+      SCM v, kv, obj;
+ {
+@@ -1506,6 +1506,6 @@
+ }
+ 
+-static char s_bit_inv[] = "bit-invert!";
+-SCM bit_inv(v)
++static const char s_bit_inv[] = "bit-invert!";
++static SCM bit_inv(v)
+      SCM v;
+ {
+@@ -1523,6 +1523,6 @@
+ }
+ 
+-static char s_strup[] = "string-upcase!";
+-SCM strup(v)
++static const char s_strup[] = "string-upcase!";
++static SCM strup(v)
+      SCM v;
+ {
+@@ -1541,6 +1541,6 @@
+ }
+ 
+-static char s_strdown[] = "string-downcase!";
+-SCM strdown(v)
++static const char s_strdown[] = "string-downcase!";
++static SCM strdown(v)
+      SCM v;
+ {
+@@ -1560,6 +1560,6 @@
+ 
+ # include <ctype.h>
+-static char s_strcap[] = "string-capitalize!";
+-SCM strcap(v)
++static const char s_strcap[] = "string-capitalize!";
++static SCM strcap(v)
+      SCM v;
+ {
+@@ -1588,5 +1588,5 @@
+ 
+ SCM istr2bve(str, len)
+-     char *str;
++     const char *str;
+      long len;
+ {
+@@ -1634,6 +1634,6 @@
+ }
+ 
+-static char s_array2list[] = "array->list";
+-SCM array2list(v)
++static const char s_array2list[] = "array->list";
++static SCM array2list(v)
+      SCM v;
+ {
+@@ -1716,6 +1716,6 @@
+ 
+ static int l2ra P((SCM lst, SCM ra, sizet base, sizet k));
+-static char s_bad_ralst[] = "Bad array contents list";
+-static char s_list2ura[] = "list->uniform-array";
++static const char s_bad_ralst[] = "Bad array contents list";
++static const char s_list2ura[] = "list->uniform-array";
+ SCM list2ura(ndim, prot, lst)
+      SCM ndim;
+@@ -1729,8 +1729,10 @@
+   int k = INUM(ndim);
+   ASRTER(INUMP(ndim) && k >= 0, ndim, ARG1, s_list2ura);
+-  for (; --k >= 0 ; (NIMP(row) && (row = CAR(row)))) {
++  while (--k >= 0) {
+     n = ilength(row);
+     ASRTER(n>=0, lst, ARG3, s_list2ura);
+     shp = cons(MAKINUM(n), shp);
++    if (NIMP(row))
++      row = CAR(row);
+   }
+   ra = dims2ura(reverse(shp), prot, EOL);
+@@ -1978,5 +1980,5 @@
+ }
+ 
+-static char s_array_prot[] = "array-prototype";
++static const char s_array_prot[] = "array-prototype";
+ SCM array_prot(ra)
+      SCM ra;
+@@ -2015,6 +2017,6 @@
+    position in an integer element.
+ */
+-static char s_logaref[] = "logaref";
+-SCM scm_logaref(args)
++static const char s_logaref[] = "logaref";
++static SCM scm_logaref(args)
+      SCM args;
+ {
+@@ -2051,6 +2053,6 @@
+ }
+ 
+-static char s_logaset[] = "logaset!";
+-SCM scm_logaset(ra, obj, args)
++static const char s_logaset[] = "logaset!";
++static SCM scm_logaset(ra, obj, args)
+      SCM ra, obj, args;
+ {
+@@ -2175,5 +2177,5 @@
+ 
+ SCM istr2bve(str, len)
+-     char *str;
++     const char *str;
+      long len;
+ {
+@@ -2181,10 +2183,4 @@
+ }
+ 
+-SCM array_equal(ra0, ra1)
+-     SCM ra0, ra1;
+-{
+-  return BOOL_F;
+-}
+-
+ void init_unif()
+ {
+--- unix.c	2008-01-30 22:33:13.000000000 -0500
++++ unix.c	2015-01-23 18:55:19.000000000 -0500
+@@ -26,13 +26,11 @@
+ #include <sys/stat.h>
+ 
+-extern SCM stat2scm P((struct stat *stat_temp));
+-
+-SCM scm_mknod P((SCM path, SCM mode, SCM dev));
+-SCM scm_acct P((SCM path));
+-SCM scm_nice P((SCM incr));
+-SCM scm_sync P((void));
+-SCM scm_symlink P((SCM oldpath, SCM newpath));
+-SCM scm_readlink P((SCM path));
+-SCM scm_lstat P((SCM str));
++static SCM scm_mknod P((SCM path, SCM mode, SCM dev));
++static SCM scm_acct P((SCM path));
++static SCM scm_nice P((SCM incr));
++static SCM scm_sync P((void));
++static SCM scm_symlink P((SCM oldpath, SCM newpath));
++static SCM scm_readlink P((SCM path));
++static SCM scm_lstat P((SCM str));
+ 
+ #ifndef STDC_HEADERS
+--- x.c	2013-03-12 23:30:26.000000000 -0400
++++ x.c	2015-01-23 18:55:19.000000000 -0500
+@@ -335,5 +335,5 @@
+   xcm->dpy = DISPLAY(xcm->display)->dpy;
+   xcm->cm = cmp;
+-  XSaveContext(XDISPLAY(sdpy), (XID)cmp, xtc_cmp, z);
++  XSaveContext(XDISPLAY(sdpy), (XID)cmp, xtc_cmp, (char *)(intptr_t)z);
+   ALLOW_INTS;
+   return z;
+@@ -583,5 +583,5 @@
+     CAR(s_ccc) = tc16_xccc;
+     SETCDR(s_ccc, ccc);
+-    XSaveContext(ccc->dpy, (XID)ccc, xtc_ccc, s_ccc);
++    XSaveContext(ccc->dpy, (XID)ccc, xtc_ccc, (char *)(intptr_t)s_ccc);
+     ALLOW_INTS;
+   }
+@@ -630,5 +630,5 @@
+      SCM dat;
+      XPoint *ipr;
+-     char *pos, *s_caller;
++     const char *pos, *s_caller;
+ {
+   SCM x, y;
+@@ -710,5 +710,5 @@
+ int scm2xpointslen(sara, s_caller)
+      SCM sara;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   array_dim *adm;
+@@ -728,5 +728,5 @@
+      SCM optidx;
+      struct display_screen *dspscn;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   ASRTGO(NIMP(dat), badarg);
+@@ -762,5 +762,5 @@
+ Pixmap thepxmap(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   if (FALSEP(obj) || (INUM0==obj)) return 0L;
+@@ -771,5 +771,5 @@
+ Font thefont(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   ASRTER(NIMP(obj) && FONTP(obj), obj, ARGn, s_caller);
+@@ -778,5 +778,5 @@
+ Colormap thecmap(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   if (FALSEP(obj) || (INUM0==obj)) return 0L;
+@@ -786,5 +786,5 @@
+ Cursor thecsr(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   if (FALSEP(obj) || (INUM0==obj)) return 0L;
+@@ -794,5 +794,5 @@
+ Bool thebool(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   SCM val = thevalue(obj);
+@@ -802,5 +802,5 @@
+ int theint(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   SCM val = thevalue(obj);
+@@ -810,5 +810,5 @@
+ int theuint(obj, s_caller)
+      SCM obj;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   SCM val = thevalue(obj);
+@@ -819,5 +819,5 @@
+ static int args2valmask(oargs, s_caller)
+      SCM oargs;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   SCM args = oargs;
+@@ -840,5 +840,5 @@
+   SCM sval, args = oargs;
+   int attr, len, attr_mask = 0;
+-/*    (void)memset((char *)vlu, 0, sizeof(XGCValues)); */
++/*    (void)memset(vlu, 0, sizeof(XGCValues)); */
+   if (!(len = ilength(args))) return 0;
+   ASRTER(len > 0 && (! (len & 1)), oargs, WNA, s_gc);
+@@ -984,8 +984,9 @@
+   return (display ? make_xdisplay(display) : BOOL_F);
+ }
++
++static int (*previous_after_function)(); /* Might be useful under debugger? */
+ SCM x_display_debug(sd, si)
+      SCM sd, si;
+ {
+-  int (*previous_after_function)();
+   struct display_screen dspscn;
+   scm2display_screen(sd, UNDEFINED, &dspscn, s_x_display_debug);
+@@ -1289,5 +1290,5 @@
+       if (NNULLP(sargs)) contig = thebool(CAR(sargs), s_x_alloc_color_cells);
+       sts = XAllocColorPlanes(xcm->dpy, xcm->cm, contig,
+-			      VELTS(pxra), npixels,
++			      (unsigned long *)VELTS(pxra), npixels,
+ 			      xclr.red, xclr.green, xclr.blue,
+ 			      &rmask_return, &gmask_return, &bmask_return);
+@@ -1302,5 +1303,6 @@
+     plra = make_uve(nplanes, MAKINUM(32L)); /* Uniform vector of long */
+     sts = XAllocColorCells(xcm->dpy, xcm->cm, contig,
+-			   VELTS(plra), nplanes, VELTS(pxra), npixels);
++			   (unsigned long *)VELTS(plra), nplanes,
++			   (unsigned long *)VELTS(pxra), npixels);
+     if (!sts) return BOOL_F;
+     return cons2(pxra, plra, EOL);
+@@ -1321,5 +1323,5 @@
+     planes = theuint(CAR(sargs), s_x_free_color_cells);
+   case 3:
+-    XFreeColors(xcm->dpy, xcm->cm, VELTS(spxls), INUM(spxls), planes);
++    XFreeColors(xcm->dpy, xcm->cm, (unsigned long *)VELTS(spxls), INUM(spxls), planes);
+     return UNSPECIFIED;
+   }
+@@ -1907,5 +1909,5 @@
+      int format;
+      unsigned long nitems;
+-     unsigned char* data;
++     const void* data;
+ {
+   SCM datum = EOL;
+@@ -1918,19 +1920,19 @@
+     case XA_CARDINAL:
+       switch (format) {
+-      case 8: datum = MAKINUM(((unsigned char *)data)[cnt]); break;
+-      case 16: datum = MAKINUM(((unsigned short *)data)[cnt]); break;
+-      case 32: datum = ulong2num(((unsigned long *)data)[cnt]); break;
++      case 8: datum = MAKINUM(((const unsigned char *)data)[cnt]); break;
++      case 16: datum = MAKINUM(((const unsigned short *)data)[cnt]); break;
++      case 32: datum = ulong2num(((const unsigned long *)data)[cnt]); break;
+       default: return MAKINUM(format);
+       } break;
+     case XA_INTEGER:
+       switch (format) {
+-      case 8: datum = MAKINUM(((char *)data)[cnt]); break;
+-      case 16: datum = MAKINUM(((short *)data)[cnt]); break;
+-      case 32: datum = long2num(((long *)data)[cnt]); break;
++      case 8: datum = MAKINUM(((const char *)data)[cnt]); break;
++      case 16: datum = MAKINUM(((const short *)data)[cnt]); break;
++      case 32: datum = long2num(((const long *)data)[cnt]); break;
+       default: return MAKINUM(format);
+       } break;
+     case XA_STRING:
+       switch (format) {
+-      case 8: return makfrom0str(data);
++      case 8: return makfrom0str((const char *)data);
+       default: return MAKINUM(format);
+       } break;
+@@ -2052,5 +2054,5 @@
+      SCM sdbl, sgc, sargs;
+      int (*proc)();
+-     char *s_caller;
++     const char *s_caller;
+ {
+   XPoint position;
+@@ -2113,5 +2115,5 @@
+      SCM sdbl, sgc, sargs;
+      int funcod;
+-     char *s_caller;
++     const char *s_caller;
+ {
+   XPoint pos[2];
+@@ -2228,5 +2230,5 @@
+ static struct {
+   int type;
+-  char *name;
++  const char *name;
+ } event_names[] = {
+ #undef SCM_EVENT_FIELDS
+@@ -2234,5 +2236,5 @@
+ };
+ 
+-static char *x__event_name(type)
++static const char *x__event_name(type)
+      int type;
+ {
+@@ -2340,5 +2342,5 @@
+ }
+ 
+-char *xvisualclass2name(class)
++const char *xvisualclass2name(class)
+      int class;
+ {
+--- x.h	2002-01-28 22:31:55.000000000 -0500
++++ x.h	2015-01-23 18:55:19.000000000 -0500
+@@ -11,16 +11,16 @@
+ SCM make_xevent(XEvent *e);
+ size_t x_free_xevent(CELLPTR ptr);
+-void scm2XPoint(int signp, SCM dat, XPoint *ipr, char *pos, char *s_caller);
++void scm2XPoint(int signp, SCM dat, XPoint *ipr, const char *pos, const char *s_caller);
+ int scm2XColor(SCM s_dat, XColor *xclr);
+-int scm2xpointslen(SCM sara, char *s_caller);
+-void scm2display_screen(SCM dat, SCM optidx, struct display_screen *dspscn, char *s_caller);
++int scm2xpointslen(SCM sara, const char *s_caller);
++void scm2display_screen(SCM dat, SCM optidx, struct display_screen *dspscn, const char *s_caller);
+ SCM thevalue(SCM obj);
+-Pixmap thepxmap(SCM obj, char *s_caller);
+-Font thefont(SCM obj, char *s_caller);
+-Colormap thecmap(SCM obj, char *s_caller);
+-Cursor thecsr(SCM obj, char *s_caller);
+-int thebool(SCM obj, char *s_caller);
+-int theint(SCM obj, char *s_caller);
+-int theuint(SCM obj, char *s_caller);
++Pixmap thepxmap(SCM obj, const char *s_caller);
++Font thefont(SCM obj, const char *s_caller);
++Colormap thecmap(SCM obj, const char *s_caller);
++Cursor thecsr(SCM obj, const char *s_caller);
++int thebool(SCM obj, const char *s_caller);
++int theint(SCM obj, const char *s_caller);
++int theuint(SCM obj, const char *s_caller);
+ SCM x_open_display(SCM dpy_name);
+ SCM x_display_debug(SCM sd, SCM si);
+@@ -78,14 +78,14 @@
+ SCM x_default_visual(SCM sdpy, SCM sscr);
+ SCM x_default_ccc(SCM sdpy, SCM sscr);
+-SCM x_propdata2scm(Atom type, int format, unsigned long nitems, unsigned char *data);
++SCM x_propdata2scm(Atom type, int format, unsigned long nitems, const void *data);
+ SCM x_get_window_property(SCM swin, SCM sprop, SCM sargs);
+ SCM x_list_properties(SCM swin);
+ SCM x_clear_area(SCM swin, SCM spos, SCM sargs);
+ SCM x_fill_rectangle(SCM swin, SCM sgc, SCM sargs);
+-void xldraw_string(SCM sdbl, SCM sgc, SCM sargs, int (*proc)(void), char *s_caller);
++void xldraw_string(SCM sdbl, SCM sgc, SCM sargs, int (*proc)(), const char *s_caller);
+ SCM x_draw_string(SCM sdbl, SCM sgc, SCM sargs);
+ SCM x_image_string(SCM sdbl, SCM sgc, SCM sargs);
+ SCM x_draw_points(SCM sdbl, SCM sgc, SCM sargs);
+-SCM xldraw_lines(SCM sdbl, SCM sgc, SCM sargs, int funcod, char *s_caller);
++SCM xldraw_lines(SCM sdbl, SCM sgc, SCM sargs, int funcod, const char *s_caller);
+ SCM x_draw_segments(SCM sdbl, SCM sgc, SCM sargs);
+ SCM x_draw_lines(SCM sdbl, SCM sgc, SCM sargs);
+@@ -95,5 +95,5 @@
+ SCM x_event_ref(SCM sevent, SCM sfield);
+ SCM x_event_keysym(SCM sevent);
+-char *xvisualclass2name(int class);
++const char *xvisualclass2name(int class);
+ void x_scm_final(void);
+ void init_x(void);
