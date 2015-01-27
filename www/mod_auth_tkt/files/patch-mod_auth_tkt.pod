@@ -1,0 +1,64 @@
+diff --git a/doc/mod_auth_tkt.pod b/doc/mod_auth_tkt.pod
+index dd7d85c..edf0590 100644
+--- a/doc/mod_auth_tkt.pod
++++ b/doc/mod_auth_tkt.pod
+@@ -227,7 +227,9 @@ the ticket hashing, so you should always set a TKTAuthTimeout in
+ addition to using an expiry. Cookie expiries are refreshed with
+ tickets if TKTAuthTimeoutRefresh is set.
+ 
+-Default: none. Examples:
++Default: none (not used).
++
++e.g.
+ 
+   TKTAuthCookieExpires 86400
+   TKTAuthCookieExpires 1w
+@@ -245,6 +247,11 @@ http://www.example.com/index.html and TKTAuthBackArgName is set to
+ 
+ to the TKTAuthLoginURL it redirects to, allowing your login script
+ to redirect back to the requested page upon successful login.
++
++To omit altogether, set to the string B<None> i.e.
++
++  TKTAuthBackArgName None
++
+ Default: 'back'.
+ 
+ =item TKTAuthBackCookieName <name>
+@@ -252,7 +259,9 @@ Default: 'back'.
+ The cookie name to use for the back cookie. If this is set,
+ mod_auth_tkt will set a back cookie containing a URI-escaped version
+ of current requested page when redirecting (see TKTAuthBackArgName
+-above). Default: none.
++above), instead of using a GET parameter.
++
++Default: none (not used).
+ 
+ =item TKTAuthToken <token>
+ 
+@@ -267,7 +276,9 @@ Note that this directive can be repeated, and the semantics are that
+ B<any> of the required tokens is sufficient for access i.e. the tokens
+ are ORed.
+ 
+-Default: none. e.g.
++Default: none (not used).
++
++e.g.
+ 
+   TKTAuthToken finance
+   TKTAuthToken admin
+@@ -281,8 +292,12 @@ this as well, setting the client IP address to 0.0.0.0). This is
+ often required out on the open internet, especially if you are 
+ using an HTTPS login page (as you should) and are dealing with 
+ more than a handful of users (the typical problem being 
+-transparent HTTP proxies at ISPs). Default: 'off' i.e. ticket
+-is only valid from the originating IP address. e.g.
++transparent HTTP proxies at ISPs).
++
++Default: 'off' i.e. ticket is only valid from the originating
++IP address.
++
++e.g.
+ 
+   TKTAuthIgnoreIP on
+ 

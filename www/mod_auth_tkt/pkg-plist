@@ -1,4 +1,4 @@
-libexec/apache22/mod_auth_tkt.so
+%%APACHEMODDIR%%/mod_auth_tkt.so
 man/man3/mod_auth_tkt.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/Apache/AuthTkt.pm
@@ -13,4 +13,4 @@ man/man3/mod_auth_tkt.3.gz
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec egrep -v 'LoadModule +auth_tkt_module +libexec/apache22/mod_auth_tkt.so' %D/etc/apache22/httpd.conf > /tmp/httpd.$$; mv /tmp/httpd.$$ %D/etc/apache22/httpd.conf
+@unexec egrep -v 'LoadModule +auth_tkt_module +%%APACHEMODDIR%%/mod_auth_tkt.so' %D/%%APACHEETCDIR%%/httpd.conf > /tmp/httpd.$$; mv /tmp/httpd.$$ %D/%%APACHEETCDIR%%/httpd.conf
