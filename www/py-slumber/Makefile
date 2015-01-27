@@ -33,8 +33,6 @@ GH_ACCOUNT=	samgiles
 GH_COMMIT=	d53a9ec
 GH_TAGNAME=	v${DISTVERSION}
 
-pre-install: regression-test
-
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
