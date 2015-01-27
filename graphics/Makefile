@@ -398,11 +398,13 @@
     SUBDIR += kipi-plugin-calendar
     SUBDIR += kipi-plugin-debianscreenshots
     SUBDIR += kipi-plugin-dngconverter
+    SUBDIR += kipi-plugin-dropbox
     SUBDIR += kipi-plugin-expoblending
     SUBDIR += kipi-plugin-facebook
     SUBDIR += kipi-plugin-flashexport
     SUBDIR += kipi-plugin-flickrexport
     SUBDIR += kipi-plugin-galleryexport
+    SUBDIR += kipi-plugin-googledrive
     SUBDIR += kipi-plugin-gpssync
     SUBDIR += kipi-plugin-htmlexport
     SUBDIR += kipi-plugin-imageshackexport

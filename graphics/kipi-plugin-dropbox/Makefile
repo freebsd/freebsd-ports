@@ -7,6 +7,8 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-KIPI_PLUGIN=	expoblending
+LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+
+KIPI_PLUGIN=	dropbox
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 .include <bsd.port.mk>

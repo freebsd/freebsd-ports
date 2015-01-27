@@ -634,10 +634,17 @@ share/locale/km/LC_MESSAGES/libkgeomap.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_advancedslideshow.mo
+share/locale/ko/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/ko/LC_MESSAGES/kipiplugin_dngconverter.mo
+share/locale/ko/LC_MESSAGES/kipiplugin_expoblending.mo
+share/locale/ko/LC_MESSAGES/kipiplugin_facebook.mo
+share/locale/ko/LC_MESSAGES/kipiplugin_galleryexport.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/ko/LC_MESSAGES/kipiplugins.mo
+share/locale/ko/LC_MESSAGES/libkgeomap.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_advancedslideshow.mo

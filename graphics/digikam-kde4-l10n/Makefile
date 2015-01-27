@@ -2,7 +2,6 @@
 
 PORTNAME=	digikam-l10n
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	3
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org

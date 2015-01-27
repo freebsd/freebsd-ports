@@ -2,7 +2,6 @@
 
 PORTNAME=	libkgeomap
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	4
 CATEGORIES=	astro kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +9,10 @@ COMMENT=	KDE4 library for browsing photos on a map
 
 .include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
 
-USE_KDE4+=	libkexiv2 marble
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/buffer_concepts.hpp:${PORTSDIR}/devel/boost-libs
+
+# libkexiv2 is used only for demo application
+USE_KDE4+=	marble
 USE_LDCONFIG=	yes
 
 post-patch:

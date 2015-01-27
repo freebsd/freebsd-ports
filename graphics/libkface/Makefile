@@ -2,7 +2,6 @@
 
 PORTNAME=	libkface
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	3
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
