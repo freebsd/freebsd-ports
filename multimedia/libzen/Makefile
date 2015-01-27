@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libzen
-PORTVERSION=	0.7.69
+PORTVERSION=	0.7.72
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/
+MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
+		LOCAL/sunpoet
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -29,6 +30,5 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../../../Source/ZenLib/BitStream_Fast.h ${STAGEDIR}${PREFIX}/include/ZenLib/BitStream_Fast.h
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzen.so.0.0.0
 
 .include <bsd.port.mk>
