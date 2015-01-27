@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Sodium.pm
+%%SITE_ARCH%%/auto/Crypt/Sodium/Sodium.so
+%%PERL5_MAN3%%/Crypt::Sodium.3.gz
