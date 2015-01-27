@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fllog
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fllog/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio logging program
 
 LICENSE=	GPLv2
