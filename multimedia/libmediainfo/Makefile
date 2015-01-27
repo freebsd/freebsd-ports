@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libmediainfo
-PORTVERSION=	0.7.69
+PORTVERSION=	0.7.72
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/
+MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
+		LOCAL/sunpoet
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -51,8 +52,6 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libmediainfo-config ${STAGEDIR}${PREFIX}/bin/libmediainfo-config
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
-	cd ${WRKSRC}/../../../Source/ && ${FIND} MediaInfo -type d | ${XARGS} -I % ${MKDIR} ${STAGEDIR}${PREFIX}/include/%
-	cd ${WRKSRC}/../../../Source/ && ${FIND} MediaInfo -name '*.h' | ${XARGS} -I % ${INSTALL_DATA} % ${STAGEDIR}${PREFIX}/include/%
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmediainfo.so.0.0.0
+	${RM} -fr ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/
 
 .include <bsd.port.mk>
