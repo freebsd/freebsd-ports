@@ -23,14 +23,3 @@
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/showip/showip.properties
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/da-DK/showip
-@dirrm %%XPI_XPIDIR%%/chrome/locale/da-DK
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US/showip
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE/showip
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN/showip
-@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome

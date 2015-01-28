@@ -76,23 +76,3 @@
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/unplug2.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/content/config
-@dirrm %%XPI_XPIDIR%%/chrome/content/display/extern
-@dirrm %%XPI_XPIDIR%%/chrome/content/display/pop
-@dirrm %%XPI_XPIDIR%%/chrome/content/display
-@dirrm %%XPI_XPIDIR%%/chrome/content/overlay
-@dirrm %%XPI_XPIDIR%%/chrome/content/search
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/skin/tango-16
-@dirrm %%XPI_XPIDIR%%/chrome/skin/tango-32
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

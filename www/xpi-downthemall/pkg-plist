@@ -51,14 +51,3 @@
 %%XPI_XPIDIR%%/modules/support/urlmanager.jsm
 %%XPI_XPIDIR%%/modules/utils.jsm
 %%XPI_XPIDIR%%/modules/version.jsm
-@dirrm %%XPI_XPIDIR%%/chrome/icons/default
-@dirrm %%XPI_XPIDIR%%/chrome/icons
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/interfaces
-@dirrm %%XPI_XPIDIR%%/modules/manager/preallocator
-@dirrm %%XPI_XPIDIR%%/modules/manager
-@dirrm %%XPI_XPIDIR%%/modules/support
-@dirrm %%XPI_XPIDIR%%/modules

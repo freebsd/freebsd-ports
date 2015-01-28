@@ -10,7 +10,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/userContent-example.css
 %%XPI_XPIDIR%%/install.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

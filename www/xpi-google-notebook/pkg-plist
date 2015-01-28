@@ -6,8 +6,3 @@
 %%XPI_XPIDIR%%/components/bootstrap.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/lib/gnotes.js
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/lib

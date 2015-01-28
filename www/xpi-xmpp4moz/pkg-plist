@@ -21,7 +21,3 @@
 %%XPI_XPIDIR%%/components/nsIXMPPTransport.xpt
 %%XPI_XPIDIR%%/defaults/preferences/xmpp4moz.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

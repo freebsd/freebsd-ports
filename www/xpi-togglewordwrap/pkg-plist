@@ -7,17 +7,3 @@
 %%XPI_XPIDIR%%/chrome/locale/sv-SE/togglewordwrap/toggleWordWrap.dtd
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/content/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sk/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sk
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE/togglewordwrap
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome

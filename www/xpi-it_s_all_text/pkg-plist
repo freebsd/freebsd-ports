@@ -129,21 +129,3 @@
 %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/zh-TW/newextension.dtd
 %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/zh-TW/preferences.dtd
 %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/zh-TW/preferences.properties
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/zh-TW
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/zh-CN
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/sk-SK
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/pt-BR
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/pl-PL
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/nl-NL
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/ja-JP
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/it-IT
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/fr-FR
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/es-ES
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/en-US
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/de-DE
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale/da-DK
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/locale
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome/content
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org/chrome
-@dirrm %%XPI_LIBDIR%%/itsalltext@docwhat.gerf.org
-@dirrm %%XPI_LIBDIR%%
