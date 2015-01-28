@@ -33,6 +33,7 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += compositeproto
+    SUBDIR += cool-retro-term
     SUBDIR += damageproto
     SUBDIR += decurs
     SUBDIR += deforaos-desktop
