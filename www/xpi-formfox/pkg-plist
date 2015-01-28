@@ -2,7 +2,3 @@
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/formfox.js
 %%XPI_XPIDIR%%/install.rdf
-%%XPI_XPIDIR%%/chrome.manifest
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
