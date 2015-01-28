@@ -1,9 +1,0 @@
-QmidiNet is a MIDI network gateway application that sends and receives
-MIDI data (ALSA Sequencer and/or JACK MIDI) over the network, using UDP/IP
-multicast.  Inspired by multimidicast (http://llg.cubic.org/tools) and
-designed to be compatible with ipMIDI for Windows (http://nerds.de).
-
-QmidiNet is free, open-source software, distributed under the terms of
-the GNU General Public License (GPL) version 2 or later.
-
-WWW: http://sourceforge.net/projects/qmidinet

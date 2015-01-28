@@ -1,8 +1,0 @@
-LifeType is a PHP and MySQL based blogging platform and its main goals 
-are flexibility and extendibility. It uses a powerful template system
-based on the Smarty template engine to render the templates, whick 
-makes the platform highly customizable and safer to let other people 
-customize the templates, since the presentation code is isolated from
-the PHP code.
-
-WWW: http://www.lifetype.net

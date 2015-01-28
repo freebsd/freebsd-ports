@@ -7406,3 +7406,11 @@ www/qupzilla|www/qupzilla-qt4|2015-01-18|Renamed to differentiate from www/qupzi
 devel/p5-perlbrew|devel/p5-App-perlbrew|2015-01-19|Rename to match upstream naming
 devel/actor-framework|deve/caf|2015-01-19|Rename to match upstream naming
 textproc/py-charade||2015-01-28|Charade was merged back to textproc/py-chardet
+audio/qmidinet||2015-01-28|Has expired: Broken for more than 6 months
+audio/wmauda||2015-01-28|Has expired: Broken for more than 6 months
+audio/x11amp||2015-01-28|Has expired: Broken for more than 6 months
+devel/p5-Log-Any-Adapter|devel/p5-Log-Any|2015-01-28|Has expired: devel/p5-Log-Any-Adapter merged into devel/p5-Log-Any by upstream
+ftp/rexx-curl||2015-01-28|Has expired: Broken for more than 6 months
+net-im/pidgin-audacious-remote||2015-01-28|Has expired: Broken for more than 6 months
+www/lifetype||2015-01-28|Has expired: Broken for more than 6 months
+www/ump||2015-01-28|Has expired: Broken for more than 6 months
