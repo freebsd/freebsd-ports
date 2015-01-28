@@ -23,7 +23,11 @@ OPTIONS_DEFINE=	CGDISK UTF16
 OPTIONS_SUB=	yes
 CGDISK_DESC=	Curses-based interactive program
 UTF16_DESC=	Support for Unicode partition names
+UTF16_CPPFLAGS+=	-DUSE_UTF16
+UTF16_LDFLAGS+=	-licuio
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	Makefile.freebsd
 
 PROGRAM_LIST=	fixparts gdisk sgdisk
@@ -40,16 +44,8 @@ LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
-
 .if ! ${PORT_OPTIONS:MCGDISK}
 	${REINPLACE_CMD} -e '/^all:/s| cgdisk||' ${WRKSRC}/${MAKEFILE}
-.endif
-
-.if ! ${PORT_OPTIONS:MUTF16}
-	${REINPLACE_CMD} -e 's| -D USE_UTF16||' \
-			 -e 's| -licuio||' ${WRKSRC}/${MAKEFILE}
 .endif
 
 do-install:
