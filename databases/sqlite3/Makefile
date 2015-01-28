@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.8
+PORTVERSION=	3.8.8.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
-DISTNAME=	sqlite-autoconf-3080800
+DISTNAME=	sqlite-autoconf-3080801
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
