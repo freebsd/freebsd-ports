@@ -1,13 +1,13 @@
---- CMakeLists.txt.orig	2012-04-18 18:16:55.000000000 +0700
-+++ CMakeLists.txt	2012-06-08 14:51:19.000000000 +0700
-@@ -133,12 +133,12 @@
-     INSTALL(FILES ${pgagent_SOURCE_DIR}/pgagent_upgrade.sql DESTINATION .)
+--- CMakeLists.txt.orig	2014-02-26 04:48:45.000000000 +0700
++++ CMakeLists.txt	2015-01-28 08:06:29.000000000 +0600
+@@ -134,12 +134,12 @@
+     INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent_upgrade.sql DESTINATION .)
  ELSE(WIN32)
      INSTALL(TARGETS pgagent DESTINATION bin)
--    INSTALL(FILES ${pgagent_SOURCE_DIR}/pgagent.sql DESTINATION share)
--    INSTALL(FILES ${pgagent_SOURCE_DIR}/pgagent_upgrade.sql DESTINATION share)
-+    INSTALL(FILES ${pgagent_SOURCE_DIR}/pgagent.sql DESTINATION share/pgagent)
-+    INSTALL(FILES ${pgagent_SOURCE_DIR}/pgagent_upgrade.sql DESTINATION share/pgagent)
+-    INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent.sql DESTINATION share)
+-    INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent_upgrade.sql DESTINATION share)
++    INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent.sql DESTINATION share/pgagent)
++    INSTALL(FILES ${pgagent_SOURCE_DIR}/sql/pgagent_upgrade.sql DESTINATION share/pgagent)
  ENDIF(WIN32)
  
 -INSTALL(FILES ${pgagent_SOURCE_DIR}/README DESTINATION .)
@@ -15,5 +15,5 @@
 +INSTALL(FILES ${pgagent_SOURCE_DIR}/README DESTINATION share/pgagent)
 +INSTALL(FILES ${pgagent_SOURCE_DIR}/LICENSE DESTINATION share/pgagent)
  
- ################################################################################
- # pgaevent
+ # Extension
+ IF(PG_EXTENSION)
