@@ -8,5 +8,5 @@ include/libwps-0.3/libwps/WPSDocument.h
 include/libwps-0.3/libwps/libwps.h
 lib/libwps-0.3.so
 lib/libwps-0.3.so.3
-lib/libwps-0.3.so.3.0.0
+lib/libwps-0.3.so.3.0.1
 libdata/pkgconfig/libwps-0.3.pc
