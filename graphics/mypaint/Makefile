@@ -3,7 +3,7 @@
 
 PORTNAME=	mypaint
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/mypaint/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -22,7 +22,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 
 USE_GNOME=	glib20 pygtk2
 MAKE_ARGS=	prefix="${PREFIX}"
-USES=		gettext pkgconfig scons tar:bzip2 python
+# XXX gcc-c++11-lib to fix runtime issues with old -lgcc_s and Clang
+USES=		compiler:gcc-c++11-lib gettext pkgconfig scons tar:bzip2 python
 INSTALLS_ICONS=	yes
 
 SUB_FILES=	pkg-install
