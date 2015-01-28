@@ -1,0 +1,7 @@
+cool-retro-term is a terminal emulator which mimics the look and feel of the
+old cathode ray tube (CRT) screens.  It has been designed to be eye-candy,
+customizable, and reasonably lightweight.
+
+It is based on QML port of QTermWidget (Konsole) and requires Qt 5.2+.
+
+WWW: https://github.com/Swordfish90/cool-retro-term
