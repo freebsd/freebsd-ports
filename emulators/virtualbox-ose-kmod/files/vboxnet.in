@@ -5,7 +5,7 @@
 
 # PROVIDE:	vboxnet
 # BEFORE:	NETWORKING
-# REQUIRE:	FILESYSTEMS ldconfig
+# REQUIRE:	FILESYSTEMS
 # KEYWORD:	nojail
 
 #
@@ -43,7 +43,7 @@ vboxnet_start()
 	fi
 
 	# initialize configured host-only interfaces
-	%%PREFIX%%/bin/VBoxManage list hostonlyifs >/dev/null
+	LD_LIBRARY_PATH=%%PREFIX%%/lib %%PREFIX%%/bin/VBoxManage list hostonlyifs >/dev/null
 }
 
 vboxnet_stop()
