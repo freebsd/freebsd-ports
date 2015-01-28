@@ -66,8 +66,8 @@
  #include <jpeglib.h>
  #elif defined(USE_LIBJPEG_TURBO)
  #include "third_party/libjpeg_turbo/jpeglib.h"
---- third_party/webrtc/common_audio/wav_writer.h.orig	2014-10-17 02:57:34.000000000 +0200
-+++ third_party/webrtc/common_audio/wav_writer.h	2014-10-18 12:04:03.000000000 +0200
+--- third_party/webrtc/common_audio/wav_file.h.orig	2014-10-17 02:57:34.000000000 +0200
++++ third_party/webrtc/common_audio/wav_file.h	2014-10-18 12:04:03.000000000 +0200
 @@ -14,6 +14,7 @@
  #ifdef __cplusplus
  

@@ -189,17 +189,17 @@
                      CMapFormat::kFormat4, cmap_id) {
  }
 
---- v8/src/runtime.cc.orig	2013-11-08 08:01:04.000000000 +0100
-+++ v8/src/runtime.cc	2013-11-15 13:17:39.000000000 +0100
-@@ -14043,7 +14043,7 @@
+--- v8/src/runtime/runtime-i18n.cc.orig	2015-01-25 15:08:31.732972197 +0100
++++ v8/src/runtime/runtime-i18n.cc	2015-01-25 15:09:04.260951597 +0100
+@@ -626,7 +626,7 @@
  
    local_object->SetInternalField(0, reinterpret_cast<Smi*>(break_iterator));
    // Make sure that the pointer to adopted text is NULL.
 -  local_object->SetInternalField(1, reinterpret_cast<Smi*>(NULL));
 +  local_object->SetInternalField(1, static_cast<Smi*>(NULL));
  
-   RETURN_IF_EMPTY_HANDLE(isolate,
-       JSObject::SetLocalPropertyIgnoreAttributes(
+   Factory* factory = isolate->factory();
+   Handle<String> key = factory->NewStringFromStaticChars("breakIterator");
 --- base/strings/safe_sprintf_unittest.cc.orig	2013-11-08 07:42:08.000000000 +0100
 +++ base/strings/safe_sprintf_unittest.cc	2013-11-15 15:04:45.000000000 +0100
 @@ -721,12 +721,14 @@
@@ -256,3 +256,34 @@
    }
  
    static Unique<T> CreateImmovable(Handle<T> handle) {
+--- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig	2015-01-25 14:52:44 UTC
++++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc
+@@ -2072,7 +2072,7 @@
+ 
+ const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
+   FATAL() << "Not implemented yet.";
+-  return reinterpret_cast<const AudioEncoder*>(NULL);
++  return static_cast<const AudioEncoder*>(NULL);
+ }
+ 
+ const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
+@@ -2091,7 +2091,7 @@
+ 
+ const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
+   FATAL() << "Not implemented yet.";
+-  return reinterpret_cast<const ReceiverInfo*>(NULL);
++  return static_cast<const ReceiverInfo*>(NULL);
+ }
+ 
+ bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) {
+--- v8/src/debug.cc.orig	2015-01-25 14:39:37 UTC
++++ v8/src/debug.cc
+@@ -565,7 +565,7 @@
+   thread_local_.step_out_fp_ = 0;
+   // TODO(isolates): frames_are_dropped_?
+   base::NoBarrier_Store(&thread_local_.current_debug_scope_,
+-                        static_cast<base::AtomicWord>(NULL));
++                        reinterpret_cast<base::AtomicWord>(NULL));
+   thread_local_.restarter_frame_function_pointer_ = NULL;
+ }
+ 
