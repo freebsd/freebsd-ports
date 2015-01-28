@@ -2,6 +2,7 @@
 
 PORTNAME=	qt5
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -12,9 +13,9 @@ COMMENT=	Cross-platform application and UI framework (metaport)
 
 USE_QT5=	clucene concurrent core dbus declarative designer \
 		graphicaleffects gui help imageformats multimedia \
-		network opengl printsupport qml quick script \
-		scripttools serialport sql svg testlib webkit widgets x11extras \
-		xml xmlpatterns
+		network opengl paths printsupport qml quick quickcontrols \
+		script scripttools serialport sql svg testlib webkit widgets \
+		x11extras xml xmlpatterns
 
 NO_BUILD=	yes
 NO_MTREE=	yes
