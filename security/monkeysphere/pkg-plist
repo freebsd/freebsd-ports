@@ -61,11 +61,3 @@ sbin/monkeysphere-host-e
 %%DATADIR%%/transitions/0.28
 %%DATADIR%%/transitions/0.28-e
 %%DATADIR%%/transitions/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/transitions
-@dirrmtry %%DATADIR%%/mh
-@dirrmtry %%DATADIR%%/ma
-@dirrmtry %%DATADIR%%/m
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%

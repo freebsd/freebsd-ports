@@ -3276,13 +3276,5 @@ bin/spkproxy.sh
 %%PORTDOCS%%%%DOCSDIR%%/SpikeUsage.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/ntlm
-@dirrm %%DATADIR%%/spikeProxyUI
-@dirrm %%DATADIR%%/testVulnXml
-@dirrm %%DATADIR%%/VulnXML/DirectoryTests
-@dirrm %%DATADIR%%/VulnXML/FileTests
-@dirrm %%DATADIR%%/VulnXML/SiteTests
-@dirrm %%DATADIR%%/VulnXML/VariableTests
-@dirrm %%DATADIR%%/VulnXML
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/spikeProxyUI
+@dir %%DATADIR%%/VulnXML/VariableTests

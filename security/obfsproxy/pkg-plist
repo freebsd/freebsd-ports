@@ -167,11 +167,3 @@ bin/obfsproxy
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/transports.py
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/transports.pyc
 %%PYTHON_SITELIBDIR%%/obfsproxy/transports/transports.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/common
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/managed
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/network
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/test/transports
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/test
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/transports/scramblesuit
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy/transports
-@dirrmtry %%PYTHON_SITELIBDIR%%/obfsproxy

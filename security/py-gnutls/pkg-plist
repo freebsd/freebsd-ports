@@ -38,10 +38,6 @@
 %%PYTHON_SITELIBDIR%%/gnutls/validators.py
 %%PYTHON_SITELIBDIR%%/gnutls/validators.pyc
 %%PYTHON_SITELIBDIR%%/gnutls/validators.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/gnutls/library
-@dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted
-@dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/gnutls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/ca.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/crl.pem
@@ -55,5 +51,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-green-client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-server.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/certs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

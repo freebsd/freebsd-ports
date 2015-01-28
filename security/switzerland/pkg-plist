@@ -143,10 +143,3 @@ bin/switzerland-server
 %%PYTHON_SITELIBDIR%%/switzerland/server/__init__.py
 %%PYTHON_SITELIBDIR%%/switzerland/server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/switzerland/server/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/server
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy/layers
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib/shrunk_scapy
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/lib
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/common
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland/client
-@dirrm %%PYTHON_SITELIBDIR%%/switzerland
