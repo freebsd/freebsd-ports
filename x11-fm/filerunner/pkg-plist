@@ -104,16 +104,3 @@ bin/fr
 %%DATADIR%%/tclmultilistbox.tcl
 %%DATADIR%%/textsearch.tcl
 %%DATADIR%%/updateinplace.tcl
-@dirrm %%DATADIR%%/packages/log
-@dirrm %%DATADIR%%/packages/inotify/x86_64
-@dirrm %%DATADIR%%/packages/inotify/i686
-@dirrm %%DATADIR%%/packages/inotify/i386
-@dirrm %%DATADIR%%/packages/inotify
-@dirrm %%DATADIR%%/packages/ftp
-@dirrm %%DATADIR%%/packages/expect
-@dirrm %%DATADIR%%/packages
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/Makefiles
-@dirrm %%DATADIR%%

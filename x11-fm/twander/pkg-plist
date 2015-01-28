@@ -9,4 +9,3 @@ man/man1/twander.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/twander.pdf
 %%PORTDOCS%%%%DOCSDIR%%/twander.ps
 %%PORTDOCS%%%%DOCSDIR%%/twander.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

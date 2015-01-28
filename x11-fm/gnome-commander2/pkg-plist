@@ -377,27 +377,3 @@ share/pixmaps/gnome-commander/terminal.svg
 share/pixmaps/gnome-commander/toggle_horizontal.xpm
 share/pixmaps/gnome-commander/toggle_vertical.xpm
 share/pixmaps/gnome-commander/unpin.png
-@dirrm share/pixmaps/gnome-commander/mime-icons
-@dirrm share/pixmaps/gnome-commander/file-type-icons
-@dirrm share/pixmaps/gnome-commander/device-icons
-@dirrm share/pixmaps/gnome-commander
-@dirrm share/omf/gnome-commander
-@dirrm share/gnome/help/gnome-commander/sl/figures
-@dirrm share/gnome/help/gnome-commander/sl
-@dirrm share/gnome/help/gnome-commander/ru/figures
-@dirrm share/gnome/help/gnome-commander/ru
-@dirrm share/gnome/help/gnome-commander/fr/figures
-@dirrm share/gnome/help/gnome-commander/fr
-@dirrm share/gnome/help/gnome-commander/es/figures
-@dirrm share/gnome/help/gnome-commander/es
-@dirrm share/gnome/help/gnome-commander/el/figures
-@dirrm share/gnome/help/gnome-commander/el
-@dirrm share/gnome/help/gnome-commander/de/figures
-@dirrm share/gnome/help/gnome-commander/de
-@dirrm share/gnome/help/gnome-commander/cs/figures
-@dirrm share/gnome/help/gnome-commander/cs
-@dirrm share/gnome/help/gnome-commander/C/figures
-@dirrm share/gnome/help/gnome-commander/C
-@dirrm share/gnome/help/gnome-commander
-@dirrm lib/gnome-commander/plugins
-@dirrm lib/gnome-commander

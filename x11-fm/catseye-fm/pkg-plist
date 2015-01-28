@@ -8,4 +8,3 @@ bin/catseye-fm
 %%DATADIR%%/catseye_160x160.png
 %%DATADIR%%/catseye_XML_config_file.conf.sample
 %%DATADIR%%/user_install.sh
-@dirrm %%DATADIR%%

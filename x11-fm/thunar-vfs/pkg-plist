@@ -112,23 +112,3 @@ libdata/pkgconfig/thunar-vfs-1.pc
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/thunar-vfs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/thunar-vfs.mo
 share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
-@dirrm share/thumbnailers
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%APIDOCS%%@dirrm share/gtk-doc/html/thunar-vfs
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%
-@dirrm lib/thunar-vfs-1
-@dirrm include/thunar-vfs-1/thunar-vfs
-@dirrm include/thunar-vfs-1

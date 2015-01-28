@@ -101,8 +101,3 @@ share/pixmaps/emelfm2/terminal_48.png
 share/pixmaps/emelfm2/trash_48.png
 share/pixmaps/emelfm2/user_commands_48.png
 share/pixmaps/emelfm2/view_48.png
-@dirrm share/pixmaps/emelfm2/stock
-@dirrm share/pixmaps/emelfm2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/emelfm2/plugins
-@dirrm lib/emelfm2

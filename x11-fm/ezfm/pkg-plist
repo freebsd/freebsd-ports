@@ -336,5 +336,3 @@ man/man1/ezfm.1.gz
 %%DATADIR%%/ezfmIcons/zip_s.xpm
 %%DATADIR%%/ezfmIcons/zipdisk.xpm
 %%DATADIR%%/ezfmIcons/zsh_script.xpm
-@dirrm %%DATADIR%%/ezfmIcons
-@dirrm %%DATADIR%%
