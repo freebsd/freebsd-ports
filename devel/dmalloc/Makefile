@@ -12,8 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Portable debug memory allocation library
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads --enable-shlib --prefix="${STAGEDIR}${PREFIX}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-threads --enable-shlib
+GNU_CONFIGURE_PREFIX=	"${STAGEDIR}${PREFIX}"
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_DATA}"
 CFLAGS=		-fPIC
 USE_LDCONFIG=	yes
