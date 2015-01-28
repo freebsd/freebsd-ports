@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libabw
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 
