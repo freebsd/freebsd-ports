@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciiquarium
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.robobunny.com/projects/asciiquarium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
