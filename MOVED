@@ -7405,3 +7405,4 @@ multimedia/universal-media-server||2015-01-17|Has expired: RC script broken, esp
 www/qupzilla|www/qupzilla-qt4|2015-01-18|Renamed to differentiate from www/qupzilla-qt5 
 devel/p5-perlbrew|devel/p5-App-perlbrew|2015-01-19|Rename to match upstream naming
 devel/actor-framework|deve/caf|2015-01-19|Rename to match upstream naming
+textproc/py-charade||2015-01-28|Charade was merged back to textproc/py-chardet
