@@ -522,10 +522,6 @@ lib/tcllib/struct/tree_tcl.tcl
 lib/tcllib/tar/pkgIndex.tcl
 lib/tcllib/tar/tar.tcl
 lib/tcllib/tar/test-support.tcl
-lib/tcllib/tcllibc/%%BINARCH%%/tcllibc.so
-lib/tcllib/tcllibc/pkgIndex.tcl
-lib/tcllib/tcllibc/critcl-rt.tcl
-lib/tcllib/tcllibc/teapot.txt
 lib/tcllib/tepam/pkgIndex.tcl
 lib/tcllib/tepam/tepam.tcl
 lib/tcllib/tepam/tepam_doc_gen.tcl
