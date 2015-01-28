@@ -1,0 +1,18 @@
+--- freebsd/freebsd/wcb4xxp/Makefile.orig	2015-01-28 06:35:48.000000000 +0600
++++ freebsd/freebsd/wcb4xxp/Makefile	2015-01-28 06:44:25.000000000 +0600
+@@ -5,5 +5,6 @@
+ KMOD=	wcb4xxp
+ SRCS=	base.c
+ SRCS+=	device_if.h bus_if.h pci_if.h
++CFLAGS.clang=	-Wno-unused-command-line-argument
+ 
+ .include <bsd.kmod.mk>
+--- freebsd/freebsd/wcte11xp/Makefile.orig	2015-01-28 06:44:53.000000000 +0600
++++ freebsd/freebsd/wcte11xp/Makefile	2015-01-28 06:53:29.000000000 +0600
+@@ -6,5 +6,6 @@
+ SRCS=	wcte11xp.c
+ SRCS+=	device_if.h bus_if.h pci_if.h
+ CFLAGS=	--param inline-unit-growth=100
++CFLAGS.clang=	-Wno-unused-command-line-argument
+ 
+ .include <bsd.kmod.mk>
