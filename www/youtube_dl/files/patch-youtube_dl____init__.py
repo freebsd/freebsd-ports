@@ -8,10 +8,10 @@
  from .downloader import (
      FileDownloader,
  )
-@@ -324,17 +323,13 @@
-             ydl.add_post_processor(ExecAfterDownloadPP(
-                 verboseOutput=opts.verbose, exec_cmd=opts.exec_cmd))
+@@ -347,17 +346,13 @@ def _real_main(argv=None):
+     }
  
+     with YoutubeDL(ydl_opts) as ydl:
 -        # Update version
 -        if opts.update_self:
 -            update_self(ydl.to_screen, opts.verbose)
