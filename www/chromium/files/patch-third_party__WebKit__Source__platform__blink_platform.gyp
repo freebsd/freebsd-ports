@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig	2014-10-10 09:34:37 UTC
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig	2015-01-21 20:48:07 UTC
 +++ third_party/WebKit/Source/platform/blink_platform.gyp
 @@ -38,6 +38,9 @@
    'targets': [{
@@ -18,18 +18,18 @@
 +      ['OS=="linux" or OS=="android" or OS=="win" or os_bsd==1', {
          'sources/': [
            # Cherry-pick files excluded by the broader regular expressions above.
-           ['include', 'fonts/harfbuzz/FontHarfBuzz\\.cpp$'],
-@@ -267,7 +270,7 @@
-           ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
+           ['include', 'fonts/opentype/OpenTypeTypes\\.h$'],
+@@ -259,7 +262,7 @@
          ],
-       }],
+       },
+       ],
 -      ['OS=="linux" or OS=="android"', {
 +      ['OS=="linux" or OS=="android" or os_bsd==1', {
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
          ]
-@@ -363,7 +366,7 @@
-           ['exclude', 'fonts/harfbuzz/HarfBuzzFaceCoreText\\.cpp$'],
+@@ -350,7 +353,7 @@
+           ['exclude', 'scroll/ScrollbarThemeMac'],
          ],
        }],
 -      ['OS != "linux" and OS != "mac" and OS != "win"', {
@@ -37,7 +37,7 @@
          'sources/': [
            ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
          ],
-@@ -409,7 +412,7 @@
+@@ -395,7 +398,7 @@
            ['exclude', 'Android\\.cpp$'],
          ],
        }],
