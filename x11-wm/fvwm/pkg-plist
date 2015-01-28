@@ -74,5 +74,3 @@ man/man1/FvwmWinList.1.gz
 man/man1/GoodStuff.1.gz
 man/man1/fvwm.1.gz
 man/man1/xpmroot.1.gz
-@dirrm lib/X11/fvwm
-@dirrmtry include/X11/pixmaps

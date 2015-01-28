@@ -9,5 +9,3 @@ bin/bbpager
 %%DOCS%%%%DOCSDIR%%/TODO
 %%EXAMPLES%%%%EXAMPLESDIR%%/README.bbpager
 %%EXAMPLES%%%%EXAMPLESDIR%%/bbpager.rc
-%%DOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

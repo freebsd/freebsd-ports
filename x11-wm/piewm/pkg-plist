@@ -2,4 +2,3 @@ bin/piewm
 bin/ssetroot
 lib/X11/piewm/system.twmrc
 man/man1/piewm.1.gz
-@dirrm lib/X11/piewm

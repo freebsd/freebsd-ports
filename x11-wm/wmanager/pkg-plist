@@ -7,5 +7,3 @@ bin/wmanager
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmanagerrc_sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xinitrc_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

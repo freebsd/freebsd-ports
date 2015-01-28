@@ -51,10 +51,3 @@ share/locale/zh_TW/LC_MESSAGES/simple-ccsm.mo
 %%DATADIR%%/profiles/Ultimate.profile
 %%DATADIR%%/simple-ccsm.glade
 %%PYTHON_SITELIBDIR%%/simple_ccsm-0.8.8-py%%PYTHON_VER%%.egg-info
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ml_IN/LC_MESSAGES
-@dirrmtry share/locale/ml_IN
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO

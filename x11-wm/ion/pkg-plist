@@ -18,5 +18,3 @@ man/man1/ion.1x.gz
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/config.txt
 %%DOCSDIR%%/functions.txt
-@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%

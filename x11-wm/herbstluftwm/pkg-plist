@@ -4,7 +4,6 @@ bin/herbstluftwm
 %%DEFAULTCONF%%etc/xdg/herbstluftwm/panel.sh
 %%DEFAULTCONF%%etc/xdg/herbstluftwm/restartpanels.sh
 %%BASH%%etc/bash_completion.d/herbstclient-completion
-%%BASH%%@dirrmtry etc/bash_completion.d
 man/man1/herbstclient.1.gz
 man/man1/herbstluftwm.1.gz
 man/man7/herbstluftwm-tutorial.7.gz
@@ -30,11 +29,4 @@ man/man7/herbstluftwm-tutorial.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scratchpad.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wselect.sh
 share/xsessions/herbstluftwm.desktop
-@dirrmtry share/xsessions
 %%ZSH%%share/zsh/functions/Completion/X/_herbstclient
-%%ZSH%%@dirrmtry share/zsh/functions/Completion/X
-%%ZSH%%@dirrmtry share/zsh/functions/Completion
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DEFAULTCONF%%@dirrm etc/xdg/herbstluftwm
-%%DEFAULTCONF%%@dirrmtry etc/xdg

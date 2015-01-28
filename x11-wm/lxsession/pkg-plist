@@ -70,17 +70,3 @@ man/man1/lxsession.1.gz
 %%DATADIR%%/images/gnome-session-switch.png
 %%DATADIR%%/images/system-log-out.png
 %%DATADIR%%/images/system-shutdown.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt_RU
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE

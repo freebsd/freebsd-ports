@@ -670,24 +670,3 @@ bin/oroborus
 %%DATADIR%%/themes/windows/top-right-inactive.xpm
 man/man1/oroborus.1.gz
 man/man5/oroborusrc.5.gz
-@dirrm %%DATADIR%%/themes/windows
-@dirrm %%DATADIR%%/themes/slimline
-@dirrm %%DATADIR%%/themes/platinum
-@dirrm %%DATADIR%%/themes/pillage
-@dirrm %%DATADIR%%/themes/oroborus
-@dirrm %%DATADIR%%/themes/next
-@dirrm %%DATADIR%%/themes/mkultra
-@dirrm %%DATADIR%%/themes/gorillaworm
-@dirrm %%DATADIR%%/themes/e017
-@dirrm %%DATADIR%%/themes/defold
-@dirrm %%DATADIR%%/themes/cruxish
-@dirrm %%DATADIR%%/themes/bluecurve
-@dirrm %%DATADIR%%/themes/beos
-@dirrm %%DATADIR%%/themes/agua
-@dirrm %%DATADIR%%/themes/QNX
-@dirrm %%DATADIR%%/themes/Elberg_Red
-@dirrm %%DATADIR%%/themes/Elberg_Green
-@dirrm %%DATADIR%%/themes/Elberg_Blue
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/schemes
-@dirrm %%DATADIR%%

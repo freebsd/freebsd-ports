@@ -149,6 +149,3 @@ share/compiz/Oxygen/overlay.png
 share/compiz/Oxygen/mask.png
 share/compiz/Gnome/overlay.png
 share/compiz/Gnome/mask.png
-@dirrmtry share/compiz/filters
-@dirrmtry share/compiz/Oxygen
-@dirrmtry share/compiz/Gnome

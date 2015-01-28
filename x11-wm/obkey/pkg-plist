@@ -6,5 +6,3 @@ share/locale/uk/LC_MESSAGES/obkey.mo
 share/applications/obkey.desktop
 share/obkey/icons/add_child.png
 share/obkey/icons/add_sibling.png
-@dirrm share/obkey/icons
-@dirrm share/obkey

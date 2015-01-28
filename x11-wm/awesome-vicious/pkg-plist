@@ -42,8 +42,3 @@ share/awesome/lib/vicious/widgets/uptime.lua
 share/awesome/lib/vicious/widgets/volume.lua
 share/awesome/lib/vicious/widgets/weather.lua
 share/awesome/lib/vicious/widgets/wifi.lua
-@dirrm share/awesome/lib/vicious/widgets
-@dirrm share/awesome/lib/vicious/contrib
-@dirrm share/awesome/lib/vicious
-@dirrmtry share/awesome/lib
-@dirrmtry share/awesome

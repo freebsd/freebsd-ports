@@ -10,4 +10,3 @@ bin/obmenu
 %%DATADIR%%/mnu48.png
 %%DATADIR%%/obmenu.glade
 share/pixmaps/obmenu.png
-@dirrm %%DATADIR%%
