@@ -17,6 +17,3 @@ share/gtk-doc/html/libtubo/libtubo.devhelp2
 share/gtk-doc/html/libtubo/right.png
 share/gtk-doc/html/libtubo/style.css
 share/gtk-doc/html/libtubo/up.png
-@dirrmtry share/gtk-doc/html/libtubo
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc

@@ -335,12 +335,7 @@ lib/X11/xplore/startup
 lib/X11/xplore/system.xplorerc
 man/man1/xplore.1.gz
 man/man1/xploretype.1.gz
-@dirrm lib/X11/xplore/shelf/Trash
-@dirrm lib/X11/xplore/shelf/Programs
-@dirrm lib/X11/xplore/shelf/Desk
-@dirrm lib/X11/xplore/shelf/Clipboard
-@dirrm lib/X11/xplore/shelf
-@dirrm lib/X11/xplore/schemes
-@dirrm lib/X11/xplore/icons
-@dirrm lib/X11/xplore/etc
-@dirrm lib/X11/xplore
+@dir lib/X11/xplore/shelf/Trash
+@dir lib/X11/xplore/shelf/Programs
+@dir lib/X11/xplore/shelf/Desk
+@dir lib/X11/xplore/shelf/Clipboard

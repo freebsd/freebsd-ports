@@ -224,6 +224,3 @@ lib/X11/app-defaults/Files.ad
 man/man1/files.1.gz
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
-@dirrm share/OffiX
-@dirrmtry include/bitmaps
-@dirrmtry include/pixmaps

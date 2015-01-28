@@ -2828,18 +2828,3 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/zoomout.png
 %%DATADIR%%/icons/xfe-theme/zoomwin.png
 %%DATADIR%%/xferc
-@dirrm %%DATADIR%%/icons/xfe-theme
-@dirrm %%DATADIR%%/icons/xfce-theme
-@dirrm %%DATADIR%%/icons/windows-theme
-@dirrm %%DATADIR%%/icons/tango-theme
-@dirrm %%DATADIR%%/icons/kde-theme
-@dirrm %%DATADIR%%/icons/gnomeblue-theme
-@dirrm %%DATADIR%%/icons/gnome-theme
-@dirrm %%DATADIR%%/icons/brown-theme
-@dirrm %%DATADIR%%/icons/blue-theme
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/es_CO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_CO
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
