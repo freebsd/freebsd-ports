@@ -360,7 +360,6 @@
     SUBDIR += libsocialweb
     SUBDIR += libwww
     SUBDIR += libxul
-    SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_geoip
@@ -2119,7 +2118,6 @@
     SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += uglifyjs
-    SUBDIR += ump
     SUBDIR += usermanager
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
