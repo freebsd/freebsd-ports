@@ -26,10 +26,3 @@ lib/libgtksourceviewmm-2.0.so
 lib/libgtksourceviewmm-2.0.so.2
 lib/libgtksourceviewmm-2.0.so.2.0.0
 libdata/pkgconfig/gtksourceviewmm-2.0.pc
-@dirrm lib/gtksourceviewmm-2.0/proc/m4
-@dirrm lib/gtksourceviewmm-2.0/proc
-@dirrm lib/gtksourceviewmm-2.0/include
-@dirrm lib/gtksourceviewmm-2.0
-@dirrm include/gtksourceviewmm-2.0/gtksourceviewmm/private
-@dirrm include/gtksourceviewmm-2.0/gtksourceviewmm
-@dirrm include/gtksourceviewmm-2.0

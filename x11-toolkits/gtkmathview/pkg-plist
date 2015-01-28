@@ -197,8 +197,3 @@ man/man1/mathmlviewer.1.gz
 %%DATADIR%%/entities-table.xml
 %%DATADIR%%/gtkmathview.conf.dtd
 %%DATADIR%%/mathml-entities.dtd
-@dirrm %%DATADIR%%
-@dirrm include/gtkmathview/gtk
-@dirrm include/gtkmathview/MathView
-@dirrm include/gtkmathview
-@dirrm etc/gtkmathview

@@ -304,6 +304,4 @@ man/man1/reswrap-16.1.gz
 %%APPS%%man/man1/PathFinder-16.1.gz
 %%APPS%%man/man1/adie-16.1.gz
 %%APPS%%man/man1/calculator-16.1.gz
-@dirrm include/fox-%%MAJORVER%%/chart
-@dirrm include/fox-%%MAJORVER%%
 libdata/pkgconfig/fox.pc

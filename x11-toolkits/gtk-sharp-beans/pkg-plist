@@ -2,4 +2,3 @@ lib/gtk-sharp-beans/gtk-sharp-beans.dll.config
 lib/gtk-sharp-beans/gtk-sharp-beans.dll
 lib/gtk-sharp-beans/gtk-sharp-beans.dll.mdb
 libdata/pkgconfig/gtk-sharp-beans-2.0.pc
-@dirrm lib/gtk-sharp-beans

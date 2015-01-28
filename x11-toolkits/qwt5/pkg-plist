@@ -159,4 +159,3 @@ man/man3/QwtTextEngine.3.gz
 man/man3/QwtTextLabel.3.gz
 man/man3/QwtThermo.3.gz
 man/man3/QwtWheel.3.gz
-@dirrm include/qwt

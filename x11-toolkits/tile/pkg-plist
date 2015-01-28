@@ -30,4 +30,3 @@ lib/%%TKPKG%%/utils.tcl
 lib/%%TKPKG%%/vistaTheme.tcl
 lib/%%TKPKG%%/winTheme.tcl
 lib/%%TKPKG%%/xpTheme.tcl
-@dirrm lib/%%TKPKG%%

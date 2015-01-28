@@ -41,7 +41,3 @@ libdata/pkgconfig/phat.pc
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTDOCS%%%%DOCSDIR%%/use.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-@dirrm include/phat

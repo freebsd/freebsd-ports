@@ -46,5 +46,3 @@ libdata/pkgconfig/gtkimageview.pc
 %%PORTDOCS%%%%DOCSDIR%%/sourcecode.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gtkimageview

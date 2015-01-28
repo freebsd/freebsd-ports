@@ -54,8 +54,3 @@ lib/libgtksourceviewmm-3.0.so
 lib/libgtksourceviewmm-3.0.so.0
 lib/libgtksourceviewmm-3.0.so.0.0.0
 libdata/pkgconfig/gtksourceviewmm-3.0.pc
-@dirrm lib/gtksourceviewmm-3.0/include/
-@dirrm lib/gtksourceviewmm-3.0
-@dirrm include/gtksourceviewmm-3.0/gtksourceviewmm/private
-@dirrm include/gtksourceviewmm-3.0/gtksourceviewmm
-@dirrm include/gtksourceviewmm-3.0

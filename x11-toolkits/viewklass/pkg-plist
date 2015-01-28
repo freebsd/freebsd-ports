@@ -74,4 +74,3 @@ include/Vk/VkWindow.h
 include/Vk/builtinbusy.h
 lib/libvk.a
 lib/libvkhelp.a
-@dirrm include/Vk
