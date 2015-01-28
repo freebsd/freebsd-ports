@@ -1,0 +1,25 @@
+--- src/Makefile~
++++ src/Makefile
+@@ -1,4 +1,5 @@
+-LIBRARIES = libb64.a
++LIBRARIES = libb64.a libb64.so
++SOVERSION ?= 0
+ 
+ # Build flags (uncomment one)
+ #############################
+@@ -27,6 +28,15 @@ all: $(TARGETS) #strip
+ libb64.a: cencode.o cdecode.o
+ 	$(AR) $(ARFLAGS) $@ $^
+ 
++libb64.so.$(SOVERSION): cencode.So cdecode.So
++	$(CC) $(CFLAGS) $(LDFLAGS) -shared -Wl,-soname,$@ -o $@ $^
++
++%.So: %.c
++	$(CC) -fPIC -c $(CFLAGS) $(CPPFLAGS) $< -o $@
++
++%.so: %.so.$(SOVERSION)
++	ln -fs $< $@
++
+ strip:
+ 	strip $(BINARIES) *.exe
+ 
