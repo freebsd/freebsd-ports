@@ -1818,6 +1818,7 @@ lib32/wine/fakedlls/wuaueng.dll
 lib32/wine/fakedlls/wusa.exe
 lib32/wine/fakedlls/x3daudio1_7.dll
 lib32/wine/fakedlls/xapofx1_1.dll
+lib32/wine/fakedlls/xaudio2_7.dll
 lib32/wine/fakedlls/xcopy.exe
 lib32/wine/fakedlls/xinput1_1.dll
 lib32/wine/fakedlls/xinput1_2.dll
@@ -2395,6 +2396,7 @@ lib32/wine/wuaueng.dll.so
 lib32/wine/wusa.exe.so
 lib32/wine/x3daudio1_7.dll.so
 lib32/wine/xapofx1_1.dll.so
+lib32/wine/xaudio2_7.dll.so
 lib32/wine/xcopy.exe.so
 lib32/wine/xinput1_1.dll.so
 lib32/wine/xinput1_2.dll.so
