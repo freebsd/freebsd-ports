@@ -6,8 +6,3 @@ share/phluid/themes/default/images/title_bg.png
 share/phluid/ttfonts/notepad.ttf
 share/phluid/ttfonts/tahoma.ttf
 share/phluid/ttfonts/tahomabd.ttf
-@dirrm share/phluid/themes/default/images
-@dirrm share/phluid/themes/default
-@dirrm share/phluid/themes
-@dirrm share/phluid/ttfonts
-@dirrm share/phluid

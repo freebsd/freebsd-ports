@@ -91,5 +91,3 @@ lib/X11/twm/images/xrn.xpm
 lib/X11/twm/images/xterm.xpm
 lib/X11/twm/system.ctwmrc
 man/man1/ctwm.1.gz
-@dirrm lib/X11/twm/images
-@dirrmtry lib/X11/twm

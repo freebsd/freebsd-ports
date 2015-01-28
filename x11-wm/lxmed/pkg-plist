@@ -5,4 +5,3 @@ share/applications/lxmed.desktop
 %%DATADIR%%/LXMenuEditor.jar
 %%DATADIR%%/pc-su
 share/pixmaps/lxmed.png
-@dirrm %%DATADIR%%

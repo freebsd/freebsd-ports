@@ -48,9 +48,3 @@ bin/pekwm
 %%ETCDIR%%/start
 %%ETCDIR%%/vars
 man/man1/pekwm.1.gz
-@dirrm %%DATADIR%%/themes/default-plain
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%

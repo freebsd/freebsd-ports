@@ -33,6 +33,3 @@ etc/pawm.conf
 %%DATADIR%%/icons/powerbutton_normal_256.xpm
 %%DATADIR%%/icons/powerbutton_pressed.xpm
 %%DATADIR%%/icons/powerbutton_pressed_256.xpm
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

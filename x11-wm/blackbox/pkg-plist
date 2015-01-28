@@ -31,6 +31,3 @@ include/bt/XDG.hh
 man/man1/blackbox.1.gz
 man/man1/bsetbg.1.gz
 man/man1/bsetroot.1.gz
-@dirrm include/bt
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%

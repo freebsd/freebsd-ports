@@ -62,8 +62,3 @@ man/man1/Auto.1.gz
 man/man1/Banner.1.gz
 man/man1/Pager.1.gz
 man/man1/Wharf.1.gz
-@dirrm lib/X11/afterstep/backgrounds
-@dirrm lib/X11/afterstep/doc
-@dirrm lib/X11/afterstep/sounds
-@dirrm lib/X11/afterstep
-@dirrmtry include/X11/pixmaps
