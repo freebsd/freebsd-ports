@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
-CONFIGURE_ARGS=	--disable-werror --without-docs
+CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
