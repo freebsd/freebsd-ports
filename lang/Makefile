@@ -195,6 +195,7 @@
     SUBDIR += p5-Modern-Perl
     SUBDIR += p5-Parse-Perl
     SUBDIR += p5-Perl6-Subs
+    SUBDIR += p5-Promises
     SUBDIR += p5-Pugs-Compiler-Rule
     SUBDIR += p5-Quantum-Superpositions
     SUBDIR += p5-Scalar-List-Utils

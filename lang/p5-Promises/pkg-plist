@@ -1,0 +1,29 @@
+%%SITE_PERL%%/Promises.pm
+%%SITE_PERL%%/Promises/Cookbook/ChainingAndPipelining.pod
+%%SITE_PERL%%/Promises/Cookbook/GentleIntro.pod
+%%SITE_PERL%%/Promises/Cookbook/Recursion.pod
+%%SITE_PERL%%/Promises/Cookbook/ScalaFuturesComparison.pod
+%%SITE_PERL%%/Promises/Cookbook/SynopsisBreakdown.pod
+%%SITE_PERL%%/Promises/Cookbook/TIMTOWTDI.pod
+%%SITE_PERL%%/Promises/Deferred.pm
+%%SITE_PERL%%/Promises/Deferred/AE.pm
+%%SITE_PERL%%/Promises/Deferred/AnyEvent.pm
+%%SITE_PERL%%/Promises/Deferred/EV.pm
+%%SITE_PERL%%/Promises/Deferred/Mojo.pm
+%%SITE_PERL%%/Promises/Promise.pm
+%%PERL5_MAN3%%/Promises.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::ChainingAndPipelining.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::GentleIntro.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::Recursion.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::ScalaFuturesComparison.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::SynopsisBreakdown.3.gz
+%%PERL5_MAN3%%/Promises::Cookbook::TIMTOWTDI.3.gz
+%%PERL5_MAN3%%/Promises::Deferred.3.gz
+%%PERL5_MAN3%%/Promises::Deferred::AE.3.gz
+%%PERL5_MAN3%%/Promises::Deferred::AnyEvent.3.gz
+%%PERL5_MAN3%%/Promises::Deferred::EV.3.gz
+%%PERL5_MAN3%%/Promises::Deferred::Mojo.3.gz
+%%PERL5_MAN3%%/Promises::Promise.3.gz
+@dir %%SITE_PERL%%/Promises/Deferred
+@dir %%SITE_PERL%%/Promises/Cookbook
+@dir %%SITE_PERL%%/Promises
