@@ -3,7 +3,7 @@
 
 PORTNAME=	atunes
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -63,7 +63,7 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 DESKTOP_ENTRIES="aTunes" \
 		"Audio player and manager" \
 		"${PREFIX}/share/pixmaps/atunes.png" \
-		"aTunes" \
+		"atunes" \
 		"Audio;AudioVideo;Java;" \
 		true
 
