@@ -161,4 +161,3 @@ lib/libfltk_images.so.1.3
 man/man1/fltk-config.1.gz
 man/man1/fluid.1.gz
 man/man3/fltk.3.gz
-@dirrm include/FL

@@ -50,9 +50,3 @@ include/wx-2.8/wx/plot/plot_zot.bmp
 include/wx-2.8/wx/plot/wxplot.rc
 include/wx-2.8/wx/stc/stc.h
 include/wx-2.8/wx/svg/dcsvg.h
-@dirrm include/wx-2.8/wx/svg
-@dirrm include/wx-2.8/wx/stc
-@dirrm include/wx-2.8/wx/plot
-@dirrm include/wx-2.8/wx/ogl
-@dirrm include/wx-2.8/wx/gizmos
-@dirrm include/wx-2.8/wx/fl

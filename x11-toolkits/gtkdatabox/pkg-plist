@@ -24,4 +24,3 @@ lib/libgtkdatabox.a
 lib/libgtkdatabox.so
 libdata/pkgconfig/gtkdatabox.pc
 %%GLADEUI%%share/glade3/catalogs/gtkdatabox.xml
-@dirrm include/gtkdatabox

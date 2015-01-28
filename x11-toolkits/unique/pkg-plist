@@ -27,6 +27,3 @@ share/gir-1.0/Unique-1.0.gir
 %%DOCSDIR%%/unique.devhelp
 %%DOCSDIR%%/unique.devhelp2
 %%DOCSDIR%%/up.png
-@dirrm %%DOCSDIR%%
-@dirrm include/unique-1.0/unique
-@dirrm include/unique-1.0
