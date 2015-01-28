@@ -5,7 +5,7 @@
 
 # PROVIDE:	vboxnet
 # BEFORE:	NETWORKING
-# REQUIRE:	FILESYSTEMS ldconfig
+# REQUIRE:	FILESYSTEMS
 # KEYWORD:	nojail
 
 #
