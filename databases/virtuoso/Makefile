@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	virtuoso
-PORTVERSION=	6.1.6
-PORTREVISION=	6
+PORTVERSION=	7.1.0
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
 
-MAINTAINER=	michelle@sorbs.net
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Universal SQL/Application Server
 
 LICENSE=	GPLv2
@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-readline\
 		--without-jdk4\
 		--disable-hslookup\
 		--disable-wbxml2\
-		--enable-bpel-vad\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
@@ -61,6 +60,7 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
+	${RMDIR} ${STAGEDIR}/${PREFIX}/lib/virtuoso/hosting ${STAGEDIR}/${PREFIX}/virtuoso/doc/html
 
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
