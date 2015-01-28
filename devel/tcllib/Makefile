@@ -3,6 +3,7 @@
 
 PORTNAME=	tcllib
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -12,6 +13,8 @@ LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BUILD_DEPENDS=	critcl:${PORTSDIR}/devel/critcl
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 
@@ -24,9 +27,12 @@ GH_TAGNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
-ALL_TARGET=	all
+ALL_TARGET=	critcl
 MAKE_ENV+=	LANG=C
 PORTDOCS=	*
+REINPLACE_ARGS=	-i'""'
+CFLAGS+=	-Wno-pointer-sign -Werror
+PLIST_SUB+=	BINARCH=${OPSYS:tl}-${ARCH}
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 		-apps -app-path ${STAGEDIR}${PREFIX}/bin \
@@ -73,11 +79,6 @@ post-patch:
 	   ${WRKSRC}/modules/doctools/tests/text/04 > ${WRKSRC}/modules/doctools/tests/text/04.new
 	${MV} ${WRKSRC}/modules/doctools/tests/text/04.new ${WRKSRC}/modules/doctools/tests/text/04
 #
-#	 .orig files confuse the pt module test suite and eventually get
-#	 installed
-#
-	${FIND} ${WRKSRC} -name "*.orig" -delete
-#
 #	man pages have the .tcllib suffix, so there's no need to have a
 #	tcllib_ prefix too
 #
@@ -99,9 +100,12 @@ post-patch:
 	for man in `${FIND} . -name "*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
+	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
 
 do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
+	${CP} -Rp ${WRKSRC}/modules/tcllibc ${STAGEDIR}${PREFIX}/lib/tcllib/
+	rm ${STAGEDIR}${PREFIX}/lib/tcllib/tcllibc/license.terms
 
 regression-test: build
 	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test
