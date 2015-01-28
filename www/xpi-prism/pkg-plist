@@ -34,17 +34,3 @@
 %%XPI_XPIDIR%%/prism/prism
 %%XPI_XPIDIR%%/prism/res/bloatcycle.html
 %%XPI_XPIDIR%%/prism/run-mozilla.sh
-@dirrmtry %%XPI_XPIDIR%%/chrome/icons/default
-@dirrmtry %%XPI_XPIDIR%%/chrome/icons
-@dirrmtry %%XPI_XPIDIR%%/chrome
-@dirrmtry %%XPI_XPIDIR%%/components
-@dirrmtry %%XPI_XPIDIR%%/modules
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/icons/default
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome/icons
-@dirrmtry %%XPI_XPIDIR%%/prism/chrome
-@dirrmtry %%XPI_XPIDIR%%/prism/components
-@dirrmtry %%XPI_XPIDIR%%/prism/defaults/preferences
-@dirrmtry %%XPI_XPIDIR%%/prism/defaults
-@dirrmtry %%XPI_XPIDIR%%/prism/modules
-@dirrmtry %%XPI_XPIDIR%%/prism/res
-@dirrmtry %%XPI_XPIDIR%%/prism

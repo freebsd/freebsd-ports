@@ -37,15 +37,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/HttpFox.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/license.txt
-@dirrm lib/xpi
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome/locale/nl-NL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome

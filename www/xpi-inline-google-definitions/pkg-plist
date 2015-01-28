@@ -6,8 +6,3 @@
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.dtd
 %%XPI_XPIDIR%%/locale/en-US/inlinedefinitions.properties
 %%XPI_XPIDIR%%/skin/classic/inlinedefinitions.png
-@dirrm %%XPI_XPIDIR%%/content
-@dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale
-@dirrm %%XPI_XPIDIR%%/skin/classic
-@dirrm %%XPI_XPIDIR%%/skin

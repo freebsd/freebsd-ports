@@ -20,11 +20,3 @@
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/prefs.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale
-@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

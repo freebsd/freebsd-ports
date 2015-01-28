@@ -101,31 +101,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/tt_defaults.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/chrome.manifest
-@dirrm %%XPI_XPIDIR%%/chrome/content/tabletools
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/cs-CZ
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/da-DK
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/es-AR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/fi-FI
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/pl-PL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/pt-BR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/tr-TR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-TW
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/skin/classic/tabletools
-@dirrm %%XPI_XPIDIR%%/chrome/skin/classic
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

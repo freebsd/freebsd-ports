@@ -6,7 +6,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/noscript.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/mozilla.cfg
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

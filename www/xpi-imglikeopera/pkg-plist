@@ -46,22 +46,3 @@
 %%XPI_XPIDIR%%/components/nsImgLikeOpera.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/defaults/preferences/imglikeopera.js
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/chrome/skin/img
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/icons/default
-@dirrm %%XPI_XPIDIR%%/chrome/icons
-@dirrm %%XPI_XPIDIR%%/chrome/content/sub-scripts
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome

@@ -107,16 +107,3 @@
 %%XPI_XPIDIR%%/icon.png
 %%XPI_XPIDIR%%/icon64.png
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/common/content
-@dirrm %%XPI_XPIDIR%%/chrome/common/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/common/locale
-@dirrm %%XPI_XPIDIR%%/chrome/common/modules
-@dirrm %%XPI_XPIDIR%%/chrome/common/skin
-@dirrm %%XPI_XPIDIR%%/chrome/common
-@dirrm %%XPI_XPIDIR%%/chrome/pentadactyl/content
-@dirrm %%XPI_XPIDIR%%/chrome/pentadactyl/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/pentadactyl/locale
-@dirrm %%XPI_XPIDIR%%/chrome/pentadactyl/skin
-@dirrm %%XPI_XPIDIR%%/chrome/pentadactyl
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
