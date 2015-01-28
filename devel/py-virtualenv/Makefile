@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualenv
-PORTVERSION=	1.11.6
+PORTVERSION=	12.0.5
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>
 
