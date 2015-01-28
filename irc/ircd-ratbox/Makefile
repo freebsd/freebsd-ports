@@ -17,7 +17,6 @@ CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
 USES=		libtool tar:bzip2
 #MAN8=		ircd.8
-USE_OPENSSL=	yes
 USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
@@ -68,7 +67,7 @@ OPTIONS_EXCLUDE=	NLS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-WITH_OPENSSL_BASE=yes
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-openssl
 .else
 CONFIGURE_ARGS+=	--disable-openssl
