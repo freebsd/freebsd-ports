@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clint
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4.1
 #PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
@@ -16,6 +16,6 @@ LICENSE=	ISCL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}args>=0.1.0:${PORTSDIR}/devel/py-args
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
