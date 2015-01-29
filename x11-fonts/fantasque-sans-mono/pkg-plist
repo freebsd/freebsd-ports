@@ -2,6 +2,4 @@ lib/X11/fonts/fantasque-sans-mono/FantasqueSansMono-Bold.otf
 lib/X11/fonts/fantasque-sans-mono/FantasqueSansMono-BoldItalic.otf
 lib/X11/fonts/fantasque-sans-mono/FantasqueSansMono-RegItalic.otf
 lib/X11/fonts/fantasque-sans-mono/FantasqueSansMono-Regular.otf
-@dirrm lib/X11/fonts/fantasque-sans-mono
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

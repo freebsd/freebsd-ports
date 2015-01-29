@@ -130,4 +130,3 @@
 %%INST_DIR%%/fonts.alias
 %%INST_DIR%%/fonts.dir
 %%INST_DIR%%/nil2o.pcf.gz
-@dirrm %%INST_DIR%%

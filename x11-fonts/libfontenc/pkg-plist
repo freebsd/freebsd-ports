@@ -5,4 +5,3 @@ lib/libfontenc.so
 lib/libfontenc.so.1
 lib/libfontenc.so.1.0.0
 libdata/pkgconfig/fontenc.pc
-@dirrmtry include/X11/fonts

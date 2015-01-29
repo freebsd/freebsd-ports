@@ -12,6 +12,3 @@ lib/X11/fonts/TTF/luxisb.ttf
 lib/X11/fonts/TTF/luxisbi.ttf
 lib/X11/fonts/TTF/luxisr.ttf
 lib/X11/fonts/TTF/luxisri.ttf
-@dirrmtry etc/fonts/conf.d
-@dirrmtry etc/fonts/conf.avail
-@dirrmtry etc/fonts

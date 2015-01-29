@@ -8,4 +8,3 @@ lib/libXft.so.2
 lib/libXft.so.2.3.2
 libdata/pkgconfig/xft.pc
 man/man3/Xft.3.gz
-@dirrm include/X11/Xft
