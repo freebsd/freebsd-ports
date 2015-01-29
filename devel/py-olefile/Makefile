@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefile
-PORTVERSION=	0.41
+PORTVERSION=	0.42.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ USE_PYTHON=	distutils autoplist
 # Remove files not python 3 ready and allow compile again
 post-patch:
 .if ${PYTHON_REL} >= 300
-	${RM} ${WRKSRC}/olefile/olefile2.py ${WRKSRC}/olefile/test_open_string.py
+	${RM} ${WRKSRC}/olefile/olefile2.py
 .endif
 	${REINPLACE_CMD} "/install' in sys.argv:/,+1d" ${WRKSRC}/setup.py
 
