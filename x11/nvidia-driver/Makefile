@@ -11,7 +11,7 @@
 # or `x11/nvidia-driver-304' slave ports.
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	340.65
+DISTVERSION?=	340.76
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -191,6 +191,10 @@ post-patch: .SILENT
 		s/^[[:blank:]]*CTLFLAG_RD/CTLTYPE_STRING |&/' \
 			${WRKSRC}/src/nvidia_sysctl.c
 .endif
+# Replace d_thread_t (compat shim to support FreeBSD 4) with `struct thread'
+	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
+		${WRKSRC}/src/nvidia_ctl.c ${WRKSRC}/src/nvidia_dev.c \
+		${WRKSRC}/src/nvidia_linux.c
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 	${REINPLACE_CMD} -e 's/8 bus_type\[4\]/8 bus_type[8]/' \
 		${WRKSRC}/src/nvidia_sysctl.c
