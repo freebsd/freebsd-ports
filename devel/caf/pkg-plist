@@ -104,12 +104,15 @@ include/caf/io/handle.hpp
 include/caf/io/hook.hpp
 include/caf/io/max_msg_size.hpp
 include/caf/io/middleman.hpp
+include/caf/io/middleman_actor.hpp
 include/caf/io/network/acceptor_manager.hpp
 include/caf/io/network/default_multiplexer.hpp
+include/caf/io/network/interfaces.hpp
 include/caf/io/network/manager.hpp
 include/caf/io/network/multiplexer.hpp
 include/caf/io/network/native_socket.hpp
 include/caf/io/network/operation.hpp
+include/caf/io/network/protocol.hpp
 include/caf/io/network/stream_manager.hpp
 include/caf/io/publish.hpp
 include/caf/io/publish_local_groups.hpp
@@ -146,7 +149,6 @@ include/caf/policy/actor_policies.hpp
 include/caf/policy/cooperative_scheduling.hpp
 include/caf/policy/event_based_resume.hpp
 include/caf/policy/invoke_policy.hpp
-include/caf/policy/middleman_scheduling.hpp
 include/caf/policy/nestable_invoke.hpp
 include/caf/policy/no_resume.hpp
 include/caf/policy/no_scheduling.hpp
@@ -188,6 +190,7 @@ include/caf/typed_actor.hpp
 include/caf/typed_behavior.hpp
 include/caf/typed_continue_helper.hpp
 include/caf/typed_event_based_actor.hpp
+include/caf/typed_response_promise.hpp
 include/caf/uniform_type_info.hpp
 include/caf/uniform_typeid.hpp
 include/caf/unit.hpp
@@ -204,7 +207,9 @@ include/cppa/spawn_io.hpp
 include/cppa/tuple_cast.hpp
 lib/libcaf_core.so
 lib/libcaf_core.so.0
-lib/libcaf_core.so.0.12.1
+lib/libcaf_core.so.0.12.2
+%%STATIC%%lib/libcaf_core_static.a
 lib/libcaf_io.so
 lib/libcaf_io.so.0
-lib/libcaf_io.so.0.12.1
+lib/libcaf_io.so.0.12.2
+%%STATIC%%lib/libcaf_io_static.a
