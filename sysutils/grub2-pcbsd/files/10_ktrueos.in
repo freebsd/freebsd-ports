@@ -176,9 +176,6 @@ display_loaderopts()
   if [ "$haveGELI" = "true" ] ; then
     echo "    set kFreeBSD.kern.geom.eli.passphrase=\"\$pass\""
   fi
-
-  # GRUB does NOT support gptid labels yet
-  echo "    set kFreeBSD.kern.geom.label.gptid.enable=\"0\""
 }
 
 detect_beadm()
