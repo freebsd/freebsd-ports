@@ -41,5 +41,3 @@ bin/bdflib-passthrough
 %%PYTHON_SITELIBDIR%%/bdflib/writer.py
 %%PYTHON_SITELIBDIR%%/bdflib/writer.pyc
 %%PYTHON_SITELIBDIR%%/bdflib/writer.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/bdflib/test
-@dirrm %%PYTHON_SITELIBDIR%%/bdflib

@@ -83,4 +83,3 @@
 %%GUJARATI%%@fcfontsdir %%FONTSDIR%%/gujarati
 %%DEVANAGARI%%@fcfontsdir %%FONTSDIR%%/devanagari
 %%BENGALI%%@fcfontsdir %%FONTSDIR%%/bengali
-@dirrm %%FONTSDIR%%
