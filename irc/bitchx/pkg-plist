@@ -7,6 +7,7 @@ man/man1/BitchX.1.gz
 %%DATADIR%%/BitchX.ircnames
 %%DATADIR%%/BitchX.quit
 %%DATADIR%%/BitchX.kick
+@dir %%DATADIR%%/plugins
 %%PLUGINS%%%%DATADIR%%/plugins/BitchX.hints
 %%PLUGINS%%%%DATADIR%%/plugins/acro.so
 %%PLUGINS%%%%DATADIR%%/plugins/aim.so
