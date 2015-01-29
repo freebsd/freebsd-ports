@@ -11,8 +11,8 @@ share/applications/mpv.desktop
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
-%%PORTDOCS%%%%DOCSDIR%%/example.conf
-%%PORTDOCS%%%%DOCSDIR%%/input.conf
-%%PORTDOCS%%%%DOCSDIR%%/mplayer-input.conf
-%%PORTDOCS%%%%DOCSDIR%%/restore-old-bindings.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/input.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/restore-old-bindings.conf
 %%ZSH%%share/zsh/site-functions/_mpv
