@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -235,6 +235,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' \
 	    ${WRKSRC}/agent/mibgroup/host/hr_system.c
 .endif
+	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
+		${WRKSRC}/configure
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
