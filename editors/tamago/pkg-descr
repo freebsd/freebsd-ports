@@ -1,14 +1,9 @@
-The Multilingual Input Method - Egg V4
+Egg V4 (tamago) is a multilingual input method for Emacsen
+written in only Emacs-Lisp.  It supports the following translating servers:
+jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2, cannaserver, wxgserver,
+and anthy.
 
-This enables you to input Multilingual Characters.
-
-Tamago is only coded by emacs lisp.
-
-This input method is working with various translation servers 
-(i.e. jserver, cserver, tserver, Wnn6, SJ3 ver 1 and ver 2,
-      cannaserver and wxgserver).
-
-This package also includes enhancements from Debian, some of which are:
+This package also includes the following enhancements from Debian:
 
 - Partial support for Wnn7/Wnn8.
 - Support connection to cannaserver using UNIX domain socket.
