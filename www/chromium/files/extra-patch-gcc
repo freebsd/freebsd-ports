@@ -76,3 +76,13 @@
  #include <cstddef>
  #include <string>
  
+--- v8/src/base/platform/platform.h.orig	2015-01-27 03:22:59.000000000 +0100
++++ v8/src/base/platform/platform.h	2015-01-28 18:37:43.268781292 +0100
+@@ -22,6 +22,7 @@
+ #define V8_BASE_PLATFORM_PLATFORM_H_
+ 
+ #include <cstdarg>
++#include <cstdio>
+ #include <string>
+ #include <vector>
+ 
