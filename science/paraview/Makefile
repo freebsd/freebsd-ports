@@ -16,8 +16,6 @@ LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		Fails to build
-
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -33,6 +31,8 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
+
+CONFLICTS_BUILD=	protobuf*
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguist_build assistant_run qt3support \
