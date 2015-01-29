@@ -608,6 +608,7 @@
     SUBDIR += rubygem-narray_miss
     SUBDIR += rubygem-numru-misc
     SUBDIR += rubygem-numru-units
+    SUBDIR += rubygem-rb-gsl
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
