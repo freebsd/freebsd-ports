@@ -10,6 +10,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/future.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/manipulating.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pseudo_classes.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/scrap.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/tips.txt
@@ -43,6 +44,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manipulating.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/pseudo_classes.html
 %%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
 %%PORTDOCS%%%%DOCSDIR%%/scrap.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
@@ -50,9 +52,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/testing.html
 %%PORTDOCS%%%%DOCSDIR%%/tips.html
 %%PORTDOCS%%%%DOCSDIR%%/traversing.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_modules/pyquery
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_modules
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

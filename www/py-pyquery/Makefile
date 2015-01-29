@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyquery
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>
 
@@ -34,8 +34,9 @@ PYDISTUTILS_BUILD_TARGET+=	build_sphinx -a -E
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/docs/_build/html && \
-	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -or ! -name objects.inv")
+	@(cd ${WRKSRC}/build/sphinx/html && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! -name .buildinfo -or ! -name objects.inv")
 .endif
 
 .include <bsd.port.mk>
