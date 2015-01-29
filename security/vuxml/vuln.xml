@@ -57,6 +57,85 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7656fc62-a7a7-11e4-96ba-001999f8d30b">
+    <topic>asterisk -- Mitigation for libcURL HTTP request injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.15.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>CVE-2014-8150 reported an HTTP request injection
+	  vulnerability in libcURL. Asterisk uses libcURL in its
+	  func_curl.so module (the CURL() dialplan function), as
+	  well as its res_config_curl.so (cURL realtime backend)
+	  modules.</p>
+	  <p>Since Asterisk may be configured to allow for user-supplied
+	  URLs to be passed to libcURL, it is possible that an
+	  attacker could use Asterisk as an attack vector to inject
+	  unauthorized HTTP requests if the version of libcURL
+	  installed on the Asterisk server is affected by
+	  CVE-2014-8150.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-002.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-12</discovery>
+      <entry>2015-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2eeb6652-a7a6-11e4-96ba-001999f8d30b">
+    <topic>asterisk -- File descriptor leak when incompatible codecs are offered</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>Asterisk may be configured to only allow specific audio
+	  or video codecs to be used when communicating with a
+	  particular endpoint. When an endpoint sends an SDP offer
+	  that only lists codecs not allowed by Asterisk, the offer
+	  is rejected. However, in this case, RTP ports that are
+	  allocated in the process are not reclaimed.</p>
+	  <p>This issue only affects the PJSIP channel driver in
+	  Asterisk. Users of the chan_sip channel driver are not
+	  affected.</p>
+	  <p>As the resources are allocated after authentication,
+	  this issue only affects communications with authenticated
+	  endpoints.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-001.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-06</discovery>
+      <entry>2015-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0765de84-a6c1-11e4-a0c1-c485083ca99c">
     <topic>glibc -- gethostbyname buffer overflow</topic>
     <affects>
@@ -1372,6 +1451,7 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-019.html</url>
+      <cvename>CVE-2014-9374</cvename>
     </references>
     <dates>
       <discovery>2014-10-30</discovery>
