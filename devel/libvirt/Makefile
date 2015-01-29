@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS NLS QEMU
+OPTIONS_DEFINE=	DOCS NLS QEMU SASL
 OPTIONS_DEFINE_amd64=	BHYVE
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFAULT_amd64=	BHYVE
@@ -42,13 +42,16 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
+SASL_CONFIGURE_WITH=	sasl
+SASL_BUILD_DEPENDS=	sasl:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
 VARDIR=		/var
 
 USE_RC_SUBR=	libvirtd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-sasl \
-		--without-avahi \
+CONFIGURE_ARGS=	--without-avahi \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
