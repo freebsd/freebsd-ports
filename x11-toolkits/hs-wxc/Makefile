@@ -25,8 +25,10 @@ post-patch::
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 
-.if ${OSVERSION} >= 900000
-EXTRA_PATCHES+=		${PATCHDIR}/nopatch-wxc.cabal
+.if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=		${PATCHDIR}/nopatch0-wxc.cabal
+.else
+EXTRA_PATCHES+=		${PATCHDIR}/nopatch1-wxc.cabal
 .endif
 
 .include <bsd.port.mk>
