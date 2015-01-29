@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ DOCS_MAKE_ENV=	HOME=${WRKDIR}
 OPTIONS_DEFINE=	DOCS
 
 USES=		python shebangfix
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 # This port installs the following file in shared dirs
 # PLIST_FILES= bin/pip
