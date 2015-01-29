@@ -5137,7 +5137,6 @@ sysutils/mktool||2013-11-03|Has expired
 databases/ruby-memcache||2013-11-03|Has expired: Development has been abandoned upstream
 deskutils/blogtk||2013-11-03|Has expired: This is dead upstream and is no longer being maintained
 devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
-textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
 net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
 textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while
@@ -6763,7 +6762,6 @@ net-p2p/teknap||2014-09-01|Not staged
 net-p2p/vhcp||2014-09-01|Not staged
 net/DarwinStreamingServer||2014-09-01|Not staged
 net/acx100||2014-09-01|Not staged
-net/balance||2014-09-01|Not staged
 net/bcusdk-eibd||2014-09-01|Not staged
 net/blam||2014-09-01|Not staged
 net/bld||2014-09-01|Not staged
@@ -6843,7 +6841,6 @@ science/elmer-hutiter||2014-09-01|Not staged
 science/elmerpost||2014-09-01|Not staged
 science/g3data||2014-09-01|Not staged
 science/gamess||2014-09-01|Not staged
-science/mcstas||2014-09-01|Not staged
 science/minc||2014-09-01|Not staged
 science/psi3||2014-09-01|Not staged
 science/x11iraf||2014-09-01|Not staged
