@@ -20,6 +20,8 @@ ALL_TARGET=	all build_openssl
 MAKE_JOBS_UNSAFE=	yes
 
 BROKEN=		Misuse libevent API
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-02-28
 
 OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off
