@@ -1,0 +1,355 @@
+commit 0df92439241a76c6a67efa9485bd95c3c25d63a0
+Author: Christian Mollekopf <chrigi_1@fastmail.fm>
+Date:   Thu Jan 22 15:04:16 2015 +0100
+
+    KRecursiveFilterProxyModel: Fixed the model
+    
+    The model was not working properly and didn't include all items under
+    some circumstances.
+    This patch fixes the following scenarios in particular:
+    
+    * The change in sourceDataChanged is required to fix the shortcut condition.
+    The idea is that if the parent is already part of the model (it must be if acceptRow returns true),
+    we can directly invoke dataChanged on the parent, resulting in the changed index
+    getting reevaluated. However, because the recursive filterAcceptsRow version was used
+    the shortcut was also used when only the current index matches the filter and
+    the parent index is in fact not yet in the model. In this case we failed to call
+    dataChanged on the right index and thus the complete branch was never added to the model.
+    
+    * The change in refreshAscendantMapping is required to include indexes that were
+    included by descendants. The intended way how this was supposed to work is that we
+    traverse the tree upwards and find the last index that is not yet part of the model.
+    We would then call dataChanged on that index causing it and its descendants to get reevaluated.
+    However, acceptRow does not reflect wether an index is already in the model or not.
+    Consider the following model:
+    
+    - A
+      - B
+        - C
+        - D
+    
+    If C is included in the model by default but D not, and A & B only get included due to C, we have the following model:
+    
+    - A
+      - B
+        - C
+    
+    If we then call refreshAscendantsMapping on D it will not consider B as already being part of the model.
+    This results in the toplevel index A being considered lastAscendant, and a call to dataChanged on A results in
+    a reevaluation of A only, which is already in the model. Thus D never gets added to the model.
+    
+    Unfortunately there is no way to probe QSortFilterProxyModel for indexes that are
+    already part of the model. Even the const mapFromSource internally creates a mapping when called,
+    and thus instead of revealing indexes that are not yet part of the model, it silently
+    creates a mapping (without issuing the relevant signals!).
+    
+    As the only possible workaround we have to issues dataChanged for all ancestors
+    which is ignored for indexes that are not yet mapped, and results in a rowsInserted
+    signal for the correct indexes. It also results in superfluous dataChanged signals,
+    since we don't know when to stop, but at least we have a properly behaving model
+    this way.
+    
+    REVIEW: 120119
+    BUG: 338950
+
+--- kdeui/itemviews/krecursivefilterproxymodel.cpp
++++ kdeui/itemviews/krecursivefilterproxymodel.cpp
+@@ -108,12 +108,9 @@ public:
+   void sourceRowsRemoved(const QModelIndex &source_parent, int start, int end);
+ 
+   /**
+-    Given that @p index does not match the filter, clear mappings in the QSortFilterProxyModel up to and excluding the
+-    first ascendant that does match, and remake the mappings.
+-
+-    If @p refreshAll is true, this method also refreshes intermediate mappings. This is significant when removing rows.
++    Given that @p index does not match the filter, clear mappings in the QSortFilterProxyModel up to roo, and remake the mappings.
+   */
+-  void refreshAscendantMapping(const QModelIndex &index, bool refreshAll = false);
++  void refreshAscendantMapping(const QModelIndex &index);
+ 
+   bool ignoreRemove;
+   bool completeInsert;
+@@ -126,7 +123,7 @@ void KRecursiveFilterProxyModelPrivate::sourceDataChanged(const QModelIndex &sou
+ 
+   QModelIndex source_parent = source_top_left.parent();
+ 
+-  if (!source_parent.isValid() || q->filterAcceptsRow(source_parent.row(), source_parent.parent()))
++  if (!source_parent.isValid() || q->acceptRow(source_parent.row(), source_parent.parent()))
+   {
+     invokeDataChanged(source_top_left, source_bottom_right);
+     return;
+@@ -146,27 +143,20 @@ void KRecursiveFilterProxyModelPrivate::sourceDataChanged(const QModelIndex &sou
+   refreshAscendantMapping(source_parent);
+ }
+ 
+-void KRecursiveFilterProxyModelPrivate::refreshAscendantMapping(const QModelIndex &index, bool refreshAll)
++void KRecursiveFilterProxyModelPrivate::refreshAscendantMapping(const QModelIndex &index)
+ {
+   Q_Q(KRecursiveFilterProxyModel);
+-
+   Q_ASSERT(index.isValid());
+-  QModelIndex lastAscendant = index;
+-  QModelIndex sourceAscendant = index.parent();
++
++  QModelIndex sourceAscendant = index;
+   // We got a matching descendant, so find the right place to insert the row.
+   // We need to tell the QSortFilterProxyModel that the first child between an existing row in the model
+   // has changed data so that it will get a mapping.
+-  while(sourceAscendant.isValid() && !q->acceptRow(sourceAscendant.row(), sourceAscendant.parent()))
++  while(sourceAscendant.isValid())
+   {
+-    if (refreshAll)
+-      invokeDataChanged(sourceAscendant, sourceAscendant);
+-
+-    lastAscendant = sourceAscendant;
++    invokeDataChanged(sourceAscendant, sourceAscendant);
+     sourceAscendant = sourceAscendant.parent();
+   }
+-
+-  // Inform the model that its data changed so that it creates new mappings and finds the rows which now match the filter.
+-  invokeDataChanged(lastAscendant, lastAscendant);
+ }
+ 
+ void KRecursiveFilterProxyModelPrivate::sourceRowsAboutToBeInserted(const QModelIndex &source_parent, int start, int end)
+@@ -261,7 +251,7 @@ void KRecursiveFilterProxyModelPrivate::sourceRowsRemoved(const QModelIndex &sou
+   // This is needed because QSFPM only invalidates the mapping for the
+   // index range given to dataChanged, not its children.
+   if (source_parent.isValid())
+-    refreshAscendantMapping(source_parent, true);
++    refreshAscendantMapping(source_parent);
+ }
+ 
+ KRecursiveFilterProxyModel::KRecursiveFilterProxyModel(QObject* parent)
+--- kdeui/tests/CMakeLists.txt
++++ kdeui/tests/CMakeLists.txt
+@@ -82,6 +82,7 @@ KDEUI_PROXYMODEL_TESTS(
+   kdescendantsproxymodeltest
+   kselectionproxymodeltest
+   testmodelqueuedconnections
++  krecursivefilterproxymodeltest
+ )
+ 
+ KDEUI_EXECUTABLE_TESTS(
+--- /dev/null
++++ kdeui/tests/krecursivefilterproxymodeltest.cpp
+@@ -0,0 +1,220 @@
++/*
++    Copyright (c) 2014 Christian Mollekopf <mollekopf@kolabsys.com>
++
++    This library is free software; you can redistribute it and/or modify it
++    under the terms of the GNU Library General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or (at your
++    option) any later version.
++
++    This library is distributed in the hope that it will be useful, but WITHOUT
++    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
++    License for more details.
++
++    You should have received a copy of the GNU Library General Public License
++    along with this library; see the file COPYING.LIB.  If not, write to the
++    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++    02110-1301, USA.
++*/
++
++
++#include <qtest_kde.h>
++
++#include <krecursivefilterproxymodel.h>
++#include <QStandardItemModel>
++
++class ModelSignalSpy : public QObject {
++    Q_OBJECT
++public:
++    explicit ModelSignalSpy(QAbstractItemModel &model) {
++        connect(&model, SIGNAL(rowsInserted(QModelIndex, int, int)), this, SLOT(onRowsInserted(QModelIndex,int,int)));
++        connect(&model, SIGNAL(rowsRemoved(QModelIndex, int, int)), this, SLOT(onRowsRemoved(QModelIndex,int,int)));
++        connect(&model, SIGNAL(rowsMoved(QModelIndex, int, int, QModelIndex, int)), this, SLOT(onRowsMoved(QModelIndex,int,int, QModelIndex, int)));
++        connect(&model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(onDataChanged(QModelIndex,QModelIndex)));
++        connect(&model, SIGNAL(layoutChanged()), this, SLOT(onLayoutChanged()));
++        connect(&model, SIGNAL(modelReset()), this, SLOT(onModelReset()));
++    }
++
++    QStringList mSignals;
++    QModelIndex parent;
++    int start;
++    int end;
++
++public Q_SLOTS:
++    void onRowsInserted(QModelIndex p, int s, int e) {
++        mSignals << QLatin1String("rowsInserted");
++        parent = p;
++        start = s;
++        end = e;
++    }
++    void onRowsRemoved(QModelIndex p, int s, int e) {
++        mSignals << QLatin1String("rowsRemoved");
++        parent = p;
++        start = s;
++        end = e;
++    }
++    void onRowsMoved(QModelIndex,int,int,QModelIndex,int) {
++        mSignals << QLatin1String("rowsMoved");
++    }
++    void onDataChanged(QModelIndex,QModelIndex) {
++        mSignals << QLatin1String("dataChanged");
++    }
++    void onLayoutChanged() {
++        mSignals << QLatin1String("layoutChanged");
++    }
++    void onModelReset() {
++        mSignals << QLatin1String("modelReset");
++    }
++};
++
++class TestModel : public KRecursiveFilterProxyModel
++{
++    Q_OBJECT
++public:
++    virtual bool acceptRow(int sourceRow, const QModelIndex &sourceParent) const
++    {
++        // qDebug() << sourceModel()->index(sourceRow, 0, sourceParent).data().toString() << sourceModel()->index(sourceRow, 0, sourceParent).data(Qt::UserRole+1).toBool();
++        return sourceModel()->index(sourceRow, 0, sourceParent).data(Qt::UserRole+1).toBool();
++    }
++};
++
++static QModelIndex getIndex(const char *string, const QAbstractItemModel &model)
++{
++    QModelIndexList list = model.match(model.index(0, 0), Qt::DisplayRole, QString::fromLatin1(string), 1, Qt::MatchRecursive);
++    if (list.isEmpty()) {
++        return QModelIndex();
++    }
++    return list.first();
++}
++
++class KRecursiveFilterProxyModelTest : public QObject
++{
++    Q_OBJECT
++private:
++
++private slots:
++    // Test that we properly react to a data-changed signal in a descendant and include all required rows
++    void testDataChange()
++    {
++        QStandardItemModel model;
++        TestModel proxy;
++        proxy.setSourceModel(&model);
++
++        QStandardItem *index1 = new QStandardItem("1");
++        index1->setData(false);
++        model.appendRow(index1);
++
++        QVERIFY(!getIndex("1", proxy).isValid());
++
++        QStandardItem *index1_1_1 = new QStandardItem("1.1.1");
++        index1_1_1->setData(false);
++        QStandardItem *index1_1 = new QStandardItem("1.1");
++        index1_1->setData(false);
++        index1_1->appendRow(index1_1_1);
++        index1->appendRow(index1_1);
++
++        ModelSignalSpy spy(proxy);
++        index1_1_1->setData(true);
++
++        QVERIFY(getIndex("1", proxy).isValid());
++        QVERIFY(getIndex("1.1", proxy).isValid());
++        QVERIFY(getIndex("1.1.1", proxy).isValid());
++
++        QCOMPARE(spy.mSignals, QStringList() << QLatin1String("rowsInserted"));
++    }
++
++    void testInsert()
++    {
++        QStandardItemModel model;
++        TestModel proxy;
++        proxy.setSourceModel(&model);
++
++        QStandardItem *index1 = new QStandardItem("index1");
++        index1->setData(false);
++        model.appendRow(index1);
++
++        QStandardItem *index1_1 = new QStandardItem("index1_1");
++        index1_1->setData(false);
++        index1->appendRow(index1_1);
++
++        QStandardItem *index1_1_1 = new QStandardItem("index1_1_1");
++        index1_1_1->setData(false);
++        index1_1->appendRow(index1_1_1);
++
++        QVERIFY(!getIndex("index1", proxy).isValid());
++        QVERIFY(!getIndex("index1_1", proxy).isValid());
++        QVERIFY(!getIndex("index1_1_1", proxy).isValid());
++
++        ModelSignalSpy spy(proxy);
++        {
++            QStandardItem *index1_1_1_1 = new QStandardItem("index1_1_1_1");
++            index1_1_1_1->setData(true);
++            index1_1_1->appendRow(index1_1_1_1);
++        }
++
++        QVERIFY(getIndex("index1", proxy).isValid());
++        QVERIFY(getIndex("index1_1", proxy).isValid());
++        QVERIFY(getIndex("index1_1_1", proxy).isValid());
++        QVERIFY(getIndex("index1_1_1_1", proxy).isValid());
++        QCOMPARE(spy.mSignals, QStringList() << QLatin1String("rowsInserted"));
++        QCOMPARE(spy.parent, QModelIndex());
++    }
++
++
++    // We want to get index1_1_1_1 into the model which is a descendant of index1_1.
++    // index1_1 is already in the model from the neighbor2 branch. We must ensure dataChange is called on index1_1, 
++    // so index1_1_1_1 is included in the model.
++    void testNeighborPath()
++    {
++        QStandardItemModel model;
++        TestModel proxy;
++        proxy.setSourceModel(&model);
++
++        QStandardItem *index1 = new QStandardItem("index1");
++        index1->setData(false);
++        model.appendRow(index1);
++
++        QStandardItem *index1_1 = new QStandardItem("index1_1");
++        index1_1->setData(false);
++        index1->appendRow(index1_1);
++
++        QStandardItem *index1_1_1 = new QStandardItem("index1_1_1");
++        index1_1_1->setData(false);
++        index1_1->appendRow(index1_1_1);
++
++        {
++            QStandardItem *nb1 = new QStandardItem("neighbor");
++            nb1->setData(false);
++            index1_1->appendRow(nb1);
++
++            QStandardItem *nb2 = new QStandardItem("neighbor2");
++            nb2->setData(true);
++            nb1->appendRow(nb2);
++        }
++
++        //These tests affect the test. It seems without them the mapping is not created in qsortfilterproxymodel, resulting in the item
++        //simply getting added later on. With these the model didn't react to the added index1_1_1_1 as it should.
++        QVERIFY(!getIndex("index1_1_1", proxy).isValid());
++        QVERIFY(getIndex("index1_1", proxy).isValid());
++        QVERIFY(getIndex("neighbor", proxy).isValid());
++        QVERIFY(getIndex("neighbor2", proxy).isValid());
++
++        ModelSignalSpy spy(proxy);
++
++        {
++            QStandardItem *index1_1_1_1 = new QStandardItem("index1_1_1_1");
++            index1_1_1_1->setData(true);
++            index1_1_1->appendRow(index1_1_1_1);
++        }
++
++        QVERIFY(getIndex("index1_1_1", proxy).isValid());
++        QVERIFY(getIndex("index1_1_1_1", proxy).isValid());
++        //The dataChanged signals are not intentional and caused by refreshAscendantMapping. Unfortunately we can't avoid them.
++        QCOMPARE(spy.mSignals, QStringList() << QLatin1String("rowsInserted") << QLatin1String("dataChanged") << QLatin1String("dataChanged"));
++    }
++
++};
++
++QTEST_KDEMAIN(KRecursiveFilterProxyModelTest, NoGUI)
++
++#include "krecursivefilterproxymodeltest.moc"
