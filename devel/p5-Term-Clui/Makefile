@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Clui
-PORTVERSION=	1.68
-PORTREVISION=	1
+PORTVERSION=	1.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
-		p5-Term-ReadKey>=2.14:${PORTSDIR}/devel/p5-Term-ReadKey
+		p5-Term-ReadKey>=2.14:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
