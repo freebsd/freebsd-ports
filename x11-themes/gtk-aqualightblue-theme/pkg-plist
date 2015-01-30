@@ -77,5 +77,3 @@ share/themes/AquaLightBlue/gtk-2.0/gtkrc~
 share/themes/AquaLightBlue/gtk-2.0/background.png.org
 share/themes/AquaLightBlue/gtk-2.0/nothing.png
 share/themes/AquaLightBlue/gtk-2.0/scrollbar_vert1.png.saved
-@dirrm share/themes/AquaLightBlue/gtk-2.0
-@dirrm share/themes/AquaLightBlue

@@ -124,7 +124,3 @@ share/themes/Envy/metacity-1/restore-i.png
 share/themes/Envy/metacity-1/restore-inv.png
 share/themes/Envy/metacity-1/restore-pre.png
 share/themes/Envy/metacity-1/restore.png
-@dirrm share/themes/Envy/metacity-1
-@dirrm share/themes/Envy/gtk-2.0
-@dirrm share/themes/Envy
-@dirrmtry share/themes

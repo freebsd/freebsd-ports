@@ -64,6 +64,3 @@ lib/X11/icons/grounation/cursors/top_side
 lib/X11/icons/grounation/cursors/v_double_arrow
 lib/X11/icons/grounation/cursors/watch
 lib/X11/icons/grounation/cursors/xterm
-@dirrm lib/X11/icons/grounation/cursors
-@dirrm lib/X11/icons/grounation
-@dirrmtry lib/X11/icons

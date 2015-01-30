@@ -223,9 +223,6 @@
 %%GTK20%%share/themes/AluminumAlloy-Cryogenic/gtk-2.0/button_flat.png
 %%GTK20%%share/themes/AluminumAlloy-Cryogenic/gtk-2.0/bg_light.png
 %%GTK20%%share/themes/AluminumAlloy-Cryogenic/index.theme
-%%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic/gtk-2.0/icons
-%%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic/gtk-2.0
-%%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/title-bar.png
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/title-bar-inactive.png
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/text_right.png
@@ -250,6 +247,3 @@
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/button-close.png
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/button-close-push.png
 %%METACITY%%share/themes/AluminumAlloy-Cryogenic/metacity-1/button-close-focus.png
-%%METACITY%%@dirrm share/themes/AluminumAlloy-Cryogenic/metacity-1
-%%METACITY%%@dirrm share/themes/AluminumAlloy-Cryogenic
-@dirrmtry share/themes

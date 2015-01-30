@@ -51,6 +51,3 @@ lib/X11/icons/Jimmac/cursors/ul_angle
 lib/X11/icons/Jimmac/cursors/ur_angle
 lib/X11/icons/Jimmac/cursors/watch
 lib/X11/icons/Jimmac/cursors/xterm
-@dirrm lib/X11/icons/Jimmac/cursors
-@dirrm lib/X11/icons/Jimmac
-@dirrmtry lib/X11/icons

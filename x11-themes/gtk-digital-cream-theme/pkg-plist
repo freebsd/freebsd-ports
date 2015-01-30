@@ -152,7 +152,6 @@
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/icons/volume-min.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/icons/volume-mute.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/icons/volume-zero.png
-%%GTK20%%@dirrm share/themes/Digital-Cream/gtk-2.0/icons
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/menu_background.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/menu_background_overlay.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/menu_border.png
@@ -229,9 +228,7 @@
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/trough.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/vertical_trough.png
 %%GTK20%%share/themes/Digital-Cream/gtk-2.0/vline.png
-%%GTK20%%@dirrm share/themes/Digital-Cream/gtk-2.0
 %%GTK20%%share/themes/Digital-Cream/index.theme
-%%GTK20%%@dirrm share/themes/Digital-Cream
 %%METACITY%%share/themes/Digital-Cream/metacity-1/button-close-focus.png
 %%METACITY%%share/themes/Digital-Cream/metacity-1/button-close-push.png
 %%METACITY%%share/themes/Digital-Cream/metacity-1/button-close.png
@@ -260,7 +257,4 @@
 %%METACITY%%share/themes/Digital-Cream/metacity-1/right-side.png
 %%METACITY%%share/themes/Digital-Cream/metacity-1/title-bar-inactive.png
 %%METACITY%%share/themes/Digital-Cream/metacity-1/title-bar.png
-%%METACITY%%@dirrm share/themes/Digital-Cream/metacity-1
 %%METACITY%%share/themes/Digital-Cream/index.theme
-%%METACITY%%@dirrm share/themes/Digital-Cream
-@dirrmtry share/themes

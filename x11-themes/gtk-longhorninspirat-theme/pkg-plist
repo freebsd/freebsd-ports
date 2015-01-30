@@ -180,12 +180,6 @@
 %%GTK20%%share/themes/Longhorn Inspirat/gtk-2.0/frame-gap-end.png
 %%GTK20%%share/themes/Longhorn Inspirat/gtk-2.0/trough.png
 %%GTK20%%share/themes/Longhorn Inspirat/index.theme
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0/Panel
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0/gartoon-stock/Xtra
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0/gartoon-stock
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0/Tabs
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0
-%%GTK20%%@dirrm share/themes/Longhorn Inspirat
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/metacity-theme-1.xml
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-close-pressed.png
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-minimize-pressed.png
@@ -216,7 +210,4 @@
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-maximize-focused.png
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-left-shaded-unfocused.png
 %%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-bottom-mid-focused.png
-%%METACITY%%@dirrm share/themes/Longhorn Inspirat/metacity-1
 %%METACITY%%share/themes/Longhorn Inspirat/index.theme
-%%METACITY%%@dirrm share/themes/Longhorn Inspirat
-@dirrmtry share/themes

@@ -17,6 +17,3 @@ share/themes/Aurora/metacity-1/minimize.png
 share/themes/Aurora/metacity-1/minimize_prelight.png
 share/themes/Aurora/metacity-1/restore.png
 share/themes/Aurora/metacity-1/restore_prelight.png
-@dirrm share/themes/Aurora/gtk-2.0
-@dirrm share/themes/Aurora/metacity-1
-@dirrm share/themes/Aurora

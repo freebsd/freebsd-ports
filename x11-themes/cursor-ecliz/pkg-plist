@@ -72,6 +72,3 @@ lib/X11/icons/ecliz/cursors/ur_angle
 lib/X11/icons/ecliz/cursors/v_double_arrow
 lib/X11/icons/ecliz/cursors/watch
 lib/X11/icons/ecliz/cursors/xterm
-@dirrm lib/X11/icons/ecliz/cursors
-@dirrm lib/X11/icons/ecliz
-@dirrmtry lib/X11/icons/
