@@ -4265,6 +4265,7 @@
     SUBDIR += replay
     SUBDIR += rhtvision
     SUBDIR += rlog
+    SUBDIR += rlvm
     SUBDIR += rlwrap
     SUBDIR += roboctl
     SUBDIR += robodoc

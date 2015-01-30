@@ -1,0 +1,81 @@
+--- SConstruct~
++++ SConstruct
+@@ -19,7 +19,12 @@ AddOption('--fullstatic', action='store_
+ 
+ # Set libraries used by all configurations and all binaries in rlvm.
+ env = Environment(
++  ENV=os.environ,
+   tools = ["default", "rlvm"],
++  **dict((k, v.split()) for k, v in ARGUMENTS.iteritems())
++)
++
++env.Append(
+ 
+   LIBS = ["z"],
+ 
+@@ -87,13 +91,6 @@ else:
+ if GetOption("fullstatic"):
+   env["FULL_STATIC_BUILD"] = True
+ 
+-# Auto select the number of processors
+-if os.path.exists('/proc'):
+-  cpus = len([l for l in open('/proc/cpuinfo') if l.startswith('processor\t')])
+-else:
+-  cpus = 1
+-env.SetOption('num_jobs', cpus + 1)
+-
+ # Use timestamps change, followed by MD5 for speed
+ env.Decider('MD5-timestamp')
+ 
+@@ -277,11 +274,15 @@ if not config.CheckGuichan():
+   print "(Using included copy of guichan)"
+   subcomponents.append("guichan")
+ 
++# Get the configuration from sdl and freetype
++env.ParseConfig("sdl-config --cflags")
++env.ParseConfig("freetype-config --cflags --libs")
++
+ # Really optional libraries that jagarl's file loaders take advantage of if on
+ # the system.
+ config.CheckLibWithHeader('png', 'png.h', "cpp")
+-config.CheckLibWithHeader('jpeg', 'jpeglib.h', "cpp")
+-config.CheckLibWithHeader('mad', 'mad.h', "cpp")
++config.CheckLibWithHeader('jpeg', 'jconfig.h', "cpp")
++config.CheckLibWithHeader('smpeg', 'smpeg/smpeg.h', "cpp")
+ 
+ env = config.Finish()
+ 
+@@ -291,10 +292,6 @@ env = config.Finish()
+ if env['PLATFORM'] == 'darwin':
+   env.Append(LIBS=["SDL", "intl", "iconv"])
+ 
+-# Get the configuration from sdl and freetype
+-env.ParseConfig("sdl-config --cflags")
+-env.ParseConfig("freetype-config --cflags --libs")
+-
+ #########################################################################
+ ## Building subcomponent functions
+ #########################################################################
+@@ -314,7 +311,6 @@ if GetOption('release'):
+   # Now add release optimizations to the environment
+   env.Append(
+     CPPFLAGS = [
+-      "-Os",
+       "-DNDEBUG",
+       "-DBOOST_DISABLE_ASSERTS"
+     ]
+@@ -360,13 +356,7 @@ elif GetOption('pprof'):
+              "profiler"]
+   )
+ else:
+-  # Add debugging flags to all binaries here
+-  env.Append(
+-    CPPFLAGS = [
+-      "-g",
+-      "-O0"
+-    ]
+-  )
++  pass
+ 
+ # Cross platform core of rlvm. Produces librlvm.a and libsystem_sdl.a
+ env.SConscript("SConscript",
