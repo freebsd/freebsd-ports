@@ -3,7 +3,7 @@
 
 PORTNAME=	DBIx-Class-Helpers
 PORTVERSION=	2.024001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +24,8 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-String-CamelCase>=0:${PORTSDIR}/textproc/p5-String-CamelCase \
 		p5-Sub-Exporter-Progressive>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive \
 		p5-Text-Brew>=0:${PORTSDIR}/textproc/p5-Text-Brew \
-		p5-Try-Tiny>=0:${PORTSDIE}/lang/p5-Try-Tiny
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-Try-Tiny>=0:${PORTSDIE}/lang/p5-Try-Tiny \
+		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
