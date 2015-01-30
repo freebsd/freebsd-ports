@@ -1,5 +1,5 @@
---- extra/CMakeLists.txt.orig	2012-12-17 03:38:29.000000000 +0200
-+++ extra/CMakeLists.txt	2012-12-17 03:40:12.000000000 +0200
+--- extra/CMakeLists.txt.orig	2015-01-25 16:21:40.000000000 +0100
++++ extra/CMakeLists.txt	2015-01-29 20:20:56.846047266 +0100
 @@ -54,6 +54,7 @@
                    DEPENDS 
                    ${CMAKE_BINARY_DIR}/include/mysqld_error.h.tmp)
@@ -8,18 +8,26 @@
  MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys)
  
-@@ -74,11 +75,14 @@
+@@ -74,9 +75,12 @@
  
  MYSQL_ADD_EXECUTABLE(replace replace.c COMPONENT Server)
  TARGET_LINK_LIBRARIES(replace mysys)
 +ENDIF()
  IF(UNIX)
 +IF(FALSE)
-   MYSQL_ADD_EXECUTABLE(innochecksum innochecksum.c)
- 
    MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.c)
    TARGET_LINK_LIBRARIES(resolve_stack_dump mysys)
 +ENDIF()
  
    MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c COMPONENT Client)
    TARGET_LINK_LIBRARIES(mysql_waitpid mysys)
+@@ -97,7 +101,9 @@
+       ../storage/innobase/page/page0zip.cc
+       )
+ 
++IF(FALSE)
+   MYSQL_ADD_EXECUTABLE(innochecksum innochecksum.cc ${INNOBASE_SOURCES})
+   TARGET_LINK_LIBRARIES(innochecksum mysys mysys_ssl)
+   ADD_DEPENDENCIES(innochecksum GenError)
++ENDIF()
+ 
