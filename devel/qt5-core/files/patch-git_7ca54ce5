@@ -1,0 +1,43 @@
+commit 7ca54ce5d964646a141acac82f468476f2d66c35
+Author: Kai Koehne <kai.koehne@digia.com>
+Date:   Wed Oct 1 13:22:02 2014 +0200
+
+    Avoid naming clashes with QStringLiteral local variable
+    
+    MSVC 2013 complains about the use of 's' if a variable 's' is already
+    defined in the context:
+    
+    error C2373: 's' : redefinition; different type modifiers
+    error C3493: 's' cannot be implicitly captured because no default capture
+    mode has been specified
+    
+    This looks like a compiler bug. Anyhow, it's easy to avoid the clash in
+    most cases by using a more distinctive name ...
+    
+    Task-number: QTBUG-41706
+    Change-Id: Iaff1b6d37897fa8cf9e4913effa0498f9fd7bb07
+    Reviewed-by: hjk <hjk121@nokiamail.com>
+    Reviewed-by: Olivier Goffart <ogoffart@woboq.com>
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+
+--- src/corelib/tools/qstring.h
++++ src/corelib/tools/qstring.h
+@@ -1,6 +1,6 @@
+ /****************************************************************************
+ **
+-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
++** Copyright (C) 2014 Digia Plc and/or its subsidiary(-ies).
+ ** Contact: http://www.qt-project.org/legal
+ **
+ ** This file is part of the QtCore module of the Qt Toolkit.
+@@ -167,8 +167,8 @@ Q_STATIC_ASSERT_X(sizeof(qunicodechar) == 2,
+             Q_STATIC_STRING_DATA_HEADER_INITIALIZER(Size), \
+             QT_UNICODE_LITERAL(str) }; \
+         QStringDataPtr holder = { qstring_literal.data_ptr() }; \
+-        const QString s(holder); \
+-        return s; \
++        const QString qstring_literal_temp(holder); \
++        return qstring_literal_temp; \
+     }()) \
+     /**/
+ 
