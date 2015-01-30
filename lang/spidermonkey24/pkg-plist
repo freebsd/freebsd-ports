@@ -1,5 +1,6 @@
 bin/js24
 bin/js24-config
+%%DTRACE%%include/mozjs-24/javascript-trace.h
 include/mozjs-24/js-config.h
 include/mozjs-24/js.msg
 include/mozjs-24/js/Anchor.h
@@ -73,6 +74,7 @@ include/mozjs-24/mozilla/TypedEnum.h
 include/mozjs-24/mozilla/Types.h
 include/mozjs-24/mozilla/Util.h
 include/mozjs-24/mozilla/WeakPtr.h
+@comment lib/libmozjs-24.a
 lib/libmozjs-24.so
 lib/libmozjs-24.so.1
 libdata/pkgconfig/mozjs-24.pc
