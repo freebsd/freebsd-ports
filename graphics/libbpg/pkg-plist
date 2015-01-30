@@ -1,0 +1,6 @@
+bin/bpgdec
+bin/bpgenc
+%%SDL%%bin/bpgview
+include/libbpg.h
+lib/libbpg.a
+lib/libbpg.so
