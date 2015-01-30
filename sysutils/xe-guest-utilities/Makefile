@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xe-guest-utilities
-PORTVERSION=	6.0.2
-PORTREVISION=	3
+PORTVERSION=	6.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	feld
+DISTNAME=	${PORTNAME}-6.0.2
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD VM tools for Citrix XenServer and XCP
 
-RUN_DEPENDS=	xen-tools>0:${PORTSDIR}/sysutils/xen-tools
+RUN_DEPENDS=	xen-tools>0:${PORTSDIR}/${PKGCATEGORY}/xen-tools
 
 USES=		gmake python
 USE_RC_SUBR=	xenguest
