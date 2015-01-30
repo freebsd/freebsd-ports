@@ -86,6 +86,7 @@ man/man3/ck_array_put_unique.3.gz
 man/man3/ck_array_remove.3.gz
 man/man3/ck_bitmap_base.3.gz
 man/man3/ck_bitmap_bits.3.gz
+man/man3/ck_bitmap_bts.3.gz
 man/man3/ck_bitmap_buffer.3.gz
 man/man3/ck_bitmap_clear.3.gz
 man/man3/ck_bitmap_init.3.gz
@@ -110,6 +111,7 @@ man/man3/ck_epoch_recycle.3.gz
 man/man3/ck_epoch_register.3.gz
 man/man3/ck_epoch_synchronize.3.gz
 man/man3/ck_epoch_unregister.3.gz
+man/man3/ck_hs_apply.3.gz
 man/man3/ck_hs_count.3.gz
 man/man3/ck_hs_destroy.3.gz
 man/man3/ck_hs_fas.3.gz
