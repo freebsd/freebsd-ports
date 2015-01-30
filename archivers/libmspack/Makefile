@@ -18,4 +18,7 @@ USE_LDCONFIG=	yes
 USES=		libtool pathfix
 INSTALL_TARGET=	install-strip
 
+post-patch:
+	@${REINPLACE_CMD} 's,-Wno-unused-result,,' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
