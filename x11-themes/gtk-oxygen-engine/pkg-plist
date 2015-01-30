@@ -8,10 +8,3 @@ share/themes/oxygen-gtk/gtk-2.0/oxygenrc
 share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-16.png
 share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-down-16.png
 share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-hover-16.png
-@dirrm share/themes/oxygen-gtk/gtk-2.0/special-icons
-@dirrm share/themes/oxygen-gtk/gtk-2.0
-@dirrmtry share/themes/oxygen-gtk
-@dirrmtry share/themes
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrmtry lib/gtk-2.0

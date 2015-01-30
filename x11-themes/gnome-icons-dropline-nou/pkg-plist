@@ -772,32 +772,3 @@ share/icons/Nou/scalable/status/stock_open.svg
 share/icons/Nou/scalable/status/stock_trash_full.svg
 share/icons/Nou/scalable/status/trashcan_full.svg
 share/icons/Nou/scalable/status/user-trash-full.svg
-@dirrm share/icons/Nou/scalable/status
-@dirrm share/icons/Nou/scalable/places/Special Folders/SVGs
-@dirrm share/icons/Nou/scalable/places/Special Folders
-@dirrm share/icons/Nou/scalable/places
-@dirrm share/icons/Nou/scalable/mimetypes
-@dirrm share/icons/Nou/scalable/devices
-@dirrm share/icons/Nou/scalable/apps
-@dirrm share/icons/Nou/scalable
-@dirrm share/icons/Nou/48x48/status
-@dirrm share/icons/Nou/48x48/places
-@dirrm share/icons/Nou/48x48/mimetypes
-@dirrm share/icons/Nou/48x48/devices
-@dirrm share/icons/Nou/48x48/apps
-@dirrm share/icons/Nou/48x48
-@dirrm share/icons/Nou/24x24/places
-@dirrm share/icons/Nou/24x24/mimetypes
-@dirrm share/icons/Nou/24x24/actions
-@dirrm share/icons/Nou/24x24
-@dirrm share/icons/Nou/22x22/mimetypes/SVGs
-@dirrm share/icons/Nou/22x22/mimetypes
-@dirrm share/icons/Nou/22x22/actions/SVGs
-@dirrm share/icons/Nou/22x22/actions
-@dirrm share/icons/Nou/22x22
-@dirrm share/icons/Nou/128x128/places/Special Folders
-@dirrm share/icons/Nou/128x128/places
-@dirrm share/icons/Nou/128x128/apps
-@dirrm share/icons/Nou/128x128
-@dirrm share/icons/Nou
-@dirrmtry share/icons

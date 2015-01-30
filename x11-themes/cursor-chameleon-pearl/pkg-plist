@@ -619,10 +619,3 @@ lib/X11/icons/chameleon-pearl-small/cursors/zoom-out.in
 lib/X11/icons/chameleon-pearl-small/cursors/zoom-out.png
 lib/X11/icons/chameleon-pearl-small/index.theme
 lib/X11/icons/chameleon-pearl-small/preview.jpg
-@dirrm lib/X11/icons/chameleon-pearl-small/cursors
-@dirrm lib/X11/icons/chameleon-pearl-small
-@dirrm lib/X11/icons/chameleon-pearl-regular/cursors
-@dirrm lib/X11/icons/chameleon-pearl-regular
-@dirrm lib/X11/icons/chameleon-pearl-large/cursors
-@dirrm lib/X11/icons/chameleon-pearl-large
-@dirrm lib/X11/icons

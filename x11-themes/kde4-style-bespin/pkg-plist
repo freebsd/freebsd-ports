@@ -8,4 +8,3 @@ lib/libQtBespin.so
 share/apps/kstyle/themes/bespin.themerc
 share/apps/kwin/bespin.desktop
 share/kde4/services/plasma-applet-xbar.desktop
-@dirrmtry %%QT_PLUGINDIR%%/styles

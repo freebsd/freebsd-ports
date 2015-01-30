@@ -12,6 +12,3 @@ share/apps/kstyle/themes/skulpture.themerc
 share/apps/kwin/skulpture.desktop
 share/apps/skulpture/pics/skulpture.png
 share/apps/skulpture/skulptureui.rc
-@dirrmtry %%QT_PLUGINDIR%%/styles
-@dirrm share/apps/skulpture/pics
-@dirrm share/apps/skulpture

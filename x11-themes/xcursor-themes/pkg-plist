@@ -150,10 +150,3 @@ lib/X11/icons/whiteglass/cursors/ul_angle
 lib/X11/icons/whiteglass/cursors/ur_angle
 lib/X11/icons/whiteglass/cursors/watch
 lib/X11/icons/whiteglass/cursors/xterm
-@dirrm lib/X11/icons/whiteglass/cursors
-@dirrm lib/X11/icons/whiteglass
-@dirrm lib/X11/icons/redglass/cursors
-@dirrm lib/X11/icons/redglass
-@dirrm lib/X11/icons/handhelds/cursors
-@dirrm lib/X11/icons/handhelds
-@dirrm lib/X11/icons
