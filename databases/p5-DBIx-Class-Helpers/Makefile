@@ -14,17 +14,19 @@ COMMENT=	Simplify the common case stuff for DBIx::Class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN=		Missing distinfo
+
 RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBIx-Class>=0.08123:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBIx-Class-Candy>=0:${PORTSDIR}/databases/p5-DBIx-Class-Candy \
-		p5-DBIx-Introspector>=0:${PORTSDIR}/databases/p5-Introspector \
+		p5-DBIx-Introspector>=0:${PORTSDIR}/databases/p5-DBIx-Introspector \
 		p5-Lingua-EN-Inflect>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 		p5-Safe-Isa>=0:${PORTSDIR}/devel/p5-Safe-Isa \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-String-CamelCase>=0:${PORTSDIR}/textproc/p5-String-CamelCase \
 		p5-Sub-Exporter-Progressive>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive \
 		p5-Text-Brew>=0:${PORTSDIR}/textproc/p5-Text-Brew \
-		p5-Try-Tiny>=0:${PORTSDIE}/lang/p5-Try-Tiny \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
