@@ -464,6 +464,7 @@
     SUBDIR += libart_lgpl
     SUBDIR += libaux
     SUBDIR += libboard
+    SUBDIR += libbpg
     SUBDIR += libcaca
     SUBDIR += libcdr01
     SUBDIR += libchamplain
