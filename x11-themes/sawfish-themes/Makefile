@@ -25,17 +25,12 @@ DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow \
 		T-16-red T-16-yellow Titanium V absolute-metal bluefoo \
 		debian gorilla gorillaz mxflat typo
 
+post-extract:
+	${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -rf
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/sawfish/themes
-.for d in ${DATA_DIRS}
-	@${TAR} --exclude ".pc" --exclude ".xvpics" -C ${WRKSRC} -cf - ${d} | \
-		${TAR} -C ${STAGEDIR}${PREFIX}/share/sawfish/themes -xf -
-	@${FIND} ${STAGEDIR}${PREFIX}/share/sawfish/themes/${d} | \
-		${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${STAGEDIR}${PREFIX}/share/sawfish/themes/${d} -type f | \
-		${XARGS} ${CHMOD} ${SHAREMODE}
-	@${FIND} ${STAGEDIR}${PREFIX}/share/sawfish/themes/${d} -type d | \
-		${XARGS} ${CHMOD} a+rx
-.endfor
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" \
+		${STAGEDIR}${PREFIX}/share/sawfish/themes
 
 .include <bsd.port.mk>
