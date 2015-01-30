@@ -1,0 +1,10 @@
+bin/rlvm
+man/man6/rlvm.6.gz
+share/applications/rlvm.desktop
+share/icons/hicolor/128x128/apps/rlvm.png
+share/icons/hicolor/16x16/apps/rlvm.png
+share/icons/hicolor/24x24/apps/rlvm.png
+share/icons/hicolor/256x256/apps/rlvm.png
+share/icons/hicolor/32x32/apps/rlvm.png
+share/icons/hicolor/48x48/apps/rlvm.png
+%%NLS%%share/locale/ja/LC_MESSAGES/rlvm.mo
