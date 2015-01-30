@@ -6,6 +6,7 @@ include/js-17.0/gc/Heap.h
 include/js-17.0/gc/Root.h
 include/js-17.0/gc/Statistics.h
 include/js-17.0/gc/StoreBuffer.h
+%%DTRACE%%include/js-17.0/javascript-trace.h
 include/js-17.0/js-config.h
 include/js-17.0/js.msg
 include/js-17.0/js/HashTable.h
@@ -62,7 +63,6 @@ include/js-17.0/mozilla/TypeTraits.h
 include/js-17.0/mozilla/Types.h
 include/js-17.0/mozilla/Util.h
 include/js-17.0/mozilla/WeakPtr.h
-lib/libmozjs-17.0.a
 lib/libmozjs-17.0.so
 lib/libmozjs-17.0.so.1
 libdata/pkgconfig/mozjs-17.0.pc
