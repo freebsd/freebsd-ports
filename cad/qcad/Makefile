@@ -3,7 +3,7 @@
 
 PORTNAME=	qcad
 PORTVERSION=	3.7.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
 		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
@@ -49,6 +49,8 @@ SHRDIR=		fonts libraries patterns plugins scripts ts
 QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 
 pre-configure:
+	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
+		${WRKSRC}/src/core/RS.cpp
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RSettings.cpp
 
