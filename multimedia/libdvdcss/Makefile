@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.13
+PORTVERSION=	1.3.99
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}

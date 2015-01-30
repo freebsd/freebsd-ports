@@ -2,7 +2,7 @@ include/dvdcss/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.so
 lib/libdvdcss.so.2
-lib/libdvdcss.so.2.1.0
+lib/libdvdcss.so.2.2.0
 libdata/pkgconfig/libdvdcss.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
