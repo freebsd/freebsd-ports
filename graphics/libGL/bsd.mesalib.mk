@@ -11,6 +11,7 @@
 #    - graphics/libglapi
 #    - graphics/libglesv2
 #    - graphics/libosmesa
+#    - lang/clover
 #
 # $FreeBSD$
 
@@ -29,7 +30,7 @@ MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
 .if defined(WITH_NEW_MESA)
-MESABASEVERSION=	10.4.0
+MESABASEVERSION=	10.4.3
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -95,6 +96,12 @@ INSTALL_TARGET=		install-strip
 
 COMPONENT=		${PORTNAME:tl:C/^lib//:C/mesa-//}
 
+.if defined(WITH_NEW_MESA)
+MESA_LLVM_VER=34
+.else
+MESA_LLVM_VER=33
+.endif
+
 .if ${COMPONENT:Mglesv2} == ""
 CONFIGURE_ARGS+=	--disable-gles2
 .else
@@ -107,13 +114,13 @@ CONFIGURE_ARGS+=	--disable-egl
 CONFIGURE_ARGS+=	--enable-egl
 .endif
 
-.if ${COMPONENT:Mopencl} == ""
+.if ${COMPONENT:Mclover} == ""
 CONFIGURE_ARGS+=	--disable-opencl
 .else
 CONFIGURE_ARGS+=	--enable-opencl
 .endif
 
-.if ${COMPONENT:Mdri} == ""
+.if ${COMPONENT:Mdri} == "" && ${COMPONENT:Mclover} == ""
 CONFIGURE_ARGS+=--with-dri-drivers=no
 CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers
 .else
