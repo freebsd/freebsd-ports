@@ -1,10 +1,15 @@
---- config/StdGNU.mk.orig	2013-10-30 14:56:35.070570838 -0500
-+++ config/StdGNU.mk	2013-10-30 14:56:42.021581306 -0500
-@@ -1,6 +1,6 @@
+--- config/StdGNU.mk.orig	2013-04-23 18:42:55.000000000 +0200
++++ config/StdGNU.mk	2015-01-30 09:12:53.000000000 +0100
+@@ -1,10 +1,10 @@
  AS         = $(CROSS_COMPILE)as
  LD         = $(CROSS_COMPILE)ld
+ ifeq ($(clang),y)
+-CC         = $(CROSS_COMPILE)clang
++CC         ?= $(CROSS_COMPILE)clang
+ LD_LTO     = $(CROSS_COMPILE)llvm-ld
+ else
 -CC         = $(CROSS_COMPILE)gcc
 +CC         ?= $(CROSS_COMPILE)gcc
+ LD_LTO     = $(CROSS_COMPILE)ld
+ endif
  CPP        = $(CC) -E
- AR         = $(CROSS_COMPILE)ar
- RANLIB     = $(CROSS_COMPILE)ranlib
