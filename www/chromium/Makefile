@@ -137,6 +137,10 @@ TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 900000
+BROKEN=	missing pthread_getthreadid_np(3)
+.endif
+
 .if ${PORT_OPTIONS:MCODECS}
 GYP_DEFINES+=	ffmpeg_branding=Chrome
 GYP_DEFINES+=	proprietary_codecs=1
