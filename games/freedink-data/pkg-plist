@@ -33,6 +33,8 @@ share/dink/dink/Sound/grunt2.wav
 share/dink/dink/Sound/grunt1.wav
 share/dink/dink/Sound/sword2.wav
 share/dink/dink/Sound/bhit.wav
+share/dink/dink/Sound/lovin.ogg
+share/dink/dink/Sound/open.wav
 share/dink/dink/Story/1GOLD.c
 share/dink/dink/Story/APOTION.c
 share/dink/dink/Story/BAR-DP.c
@@ -756,4 +758,8 @@ share/dink/dink/l10n/dink.pot
 share/dink/dink/l10n/hr.po
 share/dink/dink/l10n/nl.po
 share/dink/dink/l10n/eo.po
+share/dink/dink/l10n/ca.po
+share/dink/dink/l10n/ca/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/hu.po
+share/dink/dink/l10n/hu/LC_MESSAGES/dink.mo
 share/dink/dink/preview.bmp

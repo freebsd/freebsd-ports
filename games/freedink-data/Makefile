@@ -4,7 +4,7 @@
 PORTNAME=	freedink-data
 PORTVERSION=	1.08.${PORTVER}
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	freedink
 
 MAINTAINER=	shurd@FreeBSD.org
@@ -13,7 +13,7 @@ COMMENT=	Game data for games/freedink (Dink Smallwood)
 USES=		gettext gmake
 NO_BUILD=	yes
 
-PORTVER=	20121209
+PORTVER=	20140901
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
