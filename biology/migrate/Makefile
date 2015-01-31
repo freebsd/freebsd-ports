@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.6.5
+PORTVERSION=	3.6.6
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
