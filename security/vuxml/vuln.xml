@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5804b9d4-a959-11e4-9363-20cf30e32f6d">
+    <topic>apache24 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.4.html">
+	  <p>mod_proxy_fcgi: Fix a potential crash due to buffer over-read,
+	    with response headers' size above 8K.</p>
+	  <p>mod_cache: Avoid a crash when Content-Type has an empty value. PR 56924.</p>
+	  <p>mod_lua: Fix handling of the Require line when a LuaAuthzProvider is used
+	    in multiple Require directives with different arguments. PR57204.</p>
+	  <p>core: HTTP trailers could be used to replace HTTP headers late during
+	    request processing, potentially undoing or otherwise confusing modules
+	    that examined or modified request headers earlier. Adds "MergeTrailers"
+	    directive to restore legacy behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3583</cvename>
+      <cvename>CVE-2014-3581</cvename>
+      <cvename>CVE-2014-8109</cvename>
+      <cvename>CVE-2013-5704</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-29</discovery>
+      <entry>2015-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7656fc62-a7a7-11e4-96ba-001999f8d30b">
     <topic>asterisk -- Mitigation for libcURL HTTP request injection vulnerability</topic>
     <affects>
