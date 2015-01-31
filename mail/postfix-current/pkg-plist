@@ -141,18 +141,14 @@ libexec/postfix/virtual
 sbin/postalias
 sbin/postcat
 sbin/postconf
+@(,maildrop,2755) sbin/postdrop
 sbin/postfix
 sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
 sbin/postmulti
-@group maildrop
-@mode 2755
-sbin/postdrop
-sbin/postqueue
-@group
-@mode
+@(,maildrop,2755) sbin/postqueue
 sbin/postsuper
 sbin/posttls-finger
 sbin/sendmail
