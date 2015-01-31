@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.10
-PORTREVISION=	2
+PORTVERSION=	2.4.12
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -28,6 +27,10 @@ CPE_VENDOR=	apache
 CPE_PRODUCT=	http_server
 
 PORTDOCS=	*
+SUB_FILES=	pkg-install pkg-deinstall
+
+# Fallback MPM after switching from static to modular MPM
+SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 
 USERS=		www
 GROUPS=		www
@@ -102,7 +105,7 @@ CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
 
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}" \
-		EXAMPLESDIR=${EXAMPLESDIR}
+		DATADIR=${DATADIR}
 
 #=====================================================
 # CONFIGURE_ARGS will be handled in Makefile.modules,
@@ -129,36 +132,38 @@ post-extract:
 # remove possible leftover .svn directories in the sources
 	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
 # limit grep results ...
-	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' \) -delete
+	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' -o -name '*.vbs' -o -name '*.wsf' \) -delete
+# make sure the configure script contains our patches, preserve the original script for comparsion
+	-${MV} -v ${WRKSRC}/configure ${WRKSRC}/configure.upstream
 
-# make qa script happy, it complains on empty dirs even 'PORTDOCS=*' is set
-# use RMDIR in case upstream ever place some files into this dirs
+# make stage-qa script happy, it complains on empty dirs even 'PORTDOCS=*' is set
+# use RMDIR in case upstream ever place some files into this directories
 .for d in xsl/util xsl lang
 	-${RMDIR} ${WRKSRC}/docs/manual/style/${d}
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
-# IPv4_mapping fix: https://issues.apache.org/bugzilla/show_bug.cgi?id=53824
-	@${REINPLACE_CMD} -e 's|freebsd5|freebsd|' \
-		-e 's|^perlbin=.*|perlbin=${PERL}|' \
-		${WRKSRC}/configure.in ${WRKSRC}/configure
-	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
+	${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
+	${REINPLACE_CMD} -e 's|logs/error_log|/var/log/httpd-error.log|' \
+		${WRKSRC}/include/httpd.h
+	${REINPLACE_CMD} -e 's|perlbin=.*|perlbin=${PERL}|' \
+		${WRKSRC}/configure.in
+	${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-		${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," ${WRKSRC}/docs/conf/extra/httpd-userdir.conf
-	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
+		${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," \
+			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
+	${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e "s,%%WWWGRP%%,${WWWGRP}," \
+		${WRKSRC}/docs/conf/httpd.conf
+	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 # place for 3rd party module configuration
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${ETCDIR}/modules.d/
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${EXAMPLESDIR}/modules.d
 # strip returns an error for non binary files, but we have a big mix
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* 2>/dev/null
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

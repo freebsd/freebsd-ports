@@ -43,9 +43,11 @@ IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in
 # XXX in case we use OPTIONS for MPM
 # we do not have a WITH_MPM variable
 .if ${PORT_OPTIONS:MMPM_SHARED}
+SUB_LIST+=		MPM_FALLBACK_CHECK=""
 PLIST_SUB+=		MPM_SHARED=""
 CONFIGURE_ARGS+=	--enable-mpms-shared=all
 .else
+SUB_LIST+=		MPM_FALLBACK_CHECK="\#"
 PLIST_SUB+=		MPM_SHARED="@comment "
 .endif
 
