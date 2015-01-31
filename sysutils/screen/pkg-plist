@@ -21,3 +21,5 @@ bin/screen
 @comment are installing the the one bundled with source, or the one from
 @comment FILESDIR/screenrc.sample
 @sample %%ETCDIR%%/screenrc.sample
+@sample %%EXAMPLESDIR%%/screenrc.sample-1
+@sample %%EXAMPLESDIR%%/screenrc.sample-2
