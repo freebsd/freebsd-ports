@@ -21,8 +21,5 @@
 %%RICTY%%%%X_FONTSDIR%%/TTF/Ricty-Regular.ttf
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Bold.ttf
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Regular.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec rm -f %D/%%X_FONTSDIR%%/OTF/fonts.cache-1
+@fc %%X_FONTSDIR%%/TTF
 @dirrmtry %%X_FONTSDIR%%/TTF
-@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TTF || true; fi
