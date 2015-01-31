@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ploy_fabric
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
-		${PYTHON_PKGNAMEPREFIX}fabric>=1.3.0:${PORTSDIR}/devel/py-fabric
+		${PYTHON_PKGNAMEPREFIX}fabric>=1.4.0:${PORTSDIR}/devel/py-fabric
 
 USES=		python:-2.7 zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
