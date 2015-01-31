@@ -1,12 +1,3 @@
-From 5a0c2079efae0f9734d85932ed72645808b32091 Mon Sep 17 00:00:00 2001
-From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Wed, 6 Nov 2013 22:01:20 +0100
-Subject: [PATCH 15/25] patch-src__sss_client__nss_group.c
-
----
- src/sss_client/nss_group.c | 70 ++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 70 insertions(+)
-
 diff --git src/sss_client/nss_group.c src/sss_client/nss_group.c
 index e6ea54b..b27b671 100644
 --- src/sss_client/nss_group.c
@@ -88,6 +79,3 @@ index e6ea54b..b27b671 100644
  enum nss_status _nss_sss_getgrnam_r(const char *name, struct group *result,
                                      char *buffer, size_t buflen, int *errnop)
  {
--- 
-1.8.0
-

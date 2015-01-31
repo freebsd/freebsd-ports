@@ -1,17 +1,16 @@
-From e40f55767383f300f71103ca404b7839b8499104 Mon Sep 17 00:00:00 2001
-From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Wed, 6 Nov 2013 22:01:20 +0100
-Subject: [PATCH 01/25] patch-Makefile.am
-
----
- Makefile.am | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
-
 diff --git Makefile.am Makefile.am
-index 04df7cb..e2558f7 100644
+index fd74d85..4a7e6ae 100644
 --- Makefile.am
 +++ Makefile.am
-@@ -318,6 +318,7 @@ SSSD_LIBS = \
+@@ -311,6 +311,7 @@ AM_CPPFLAGS = \
+     $(LIBNL_CFLAGS) \
+     $(OPENLDAP_CFLAGS) \
+     $(GLIB2_CFLAGS) \
++    -DHOST_NAME_MAX=_POSIX_HOST_NAME_MAX \
+     -DLIBDIR=\"$(libdir)\" \
+     -DVARDIR=\"$(localstatedir)\" \
+     -DSHLIBEXT=\"$(SHLIBEXT)\" \
+@@ -378,6 +379,7 @@ SSSD_LIBS = \
      $(DHASH_LIBS) \
      $(SSS_CRYPT_LIBS) \
      $(OPENLDAP_LIBS) \
@@ -19,24 +18,15 @@ index 04df7cb..e2558f7 100644
      $(TDB_LIBS)
  
  PYTHON_BINDINGS_LIBS = \
-@@ -369,6 +370,7 @@ dist_noinst_HEADERS = \
-     src/util/sss_selinux.h \
-     src/util/sss_utf8.h \
+@@ -433,6 +435,7 @@ dist_noinst_HEADERS = \
      src/util/sss_ssh.h \
+     src/util/sss_ini.h \
+     src/util/sss_format.h \
 +    src/util/sss_bsd_errno.h \
      src/util/refcount.h \
      src/util/find_uid.h \
      src/util/user_info_msg.h \
-@@ -1170,7 +1172,7 @@ noinst_PROGRAMS += autofs_test_client
- endif
- 
- pam_test_client_SOURCES = src/sss_client/pam_test_client.c
--pam_test_client_LDFLAGS = -lpam -lpam_misc
-+pam_test_client_LDFLAGS = -lpam
- 
- if BUILD_AUTOFS
- autofs_test_client_SOURCES = src/sss_client/autofs/autofs_test_client.c \
-@@ -1184,9 +1186,10 @@ endif
+@@ -1700,9 +1703,10 @@ endif
  # Client Libraries #
  ####################
  
@@ -49,16 +39,19 @@ index 04df7cb..e2558f7 100644
      src/sss_client/nss_passwd.c \
      src/sss_client/nss_group.c \
      src/sss_client/nss_netgroup.c \
-@@ -1198,7 +1201,7 @@ libnss_sss_la_SOURCES = \
+@@ -1715,9 +1719,9 @@ libnss_sss_la_SOURCES = \
      src/sss_client/nss_mc_passwd.c \
      src/sss_client/nss_mc_group.c \
      src/sss_client/nss_mc.h
+-libnss_sss_la_LIBADD = \
++nss_sss_la_LIBADD = \
+     $(CLIENT_LIBS)
 -libnss_sss_la_LDFLAGS = \
 +nss_sss_la_LDFLAGS = \
-     $(CLIENT_LIBS) \
      -module \
      -version-info 2:0:0 \
-@@ -1532,6 +1535,7 @@ ldap_child_LDADD = \
+     -Wl,--version-script,$(srcdir)/src/sss_client/sss_nss.exports
+@@ -2086,6 +2090,7 @@ ldap_child_LDADD = \
      $(POPT_LIBS) \
      $(OPENLDAP_LIBS) \
      $(DHASH_LIBS) \
@@ -66,6 +59,3 @@ index 04df7cb..e2558f7 100644
      $(KRB5_LIBS)
  
  proxy_child_SOURCES = \
--- 
-1.8.0
-

@@ -1,12 +1,3 @@
-From d7dcd7c8796efbecd4e41931080d7d28f72f9ee1 Mon Sep 17 00:00:00 2001
-From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 21/34] patch-src__sss_client__sss_nss.exports
-
----
- src/sss_client/sss_nss.exports | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
-
 diff --git src/sss_client/sss_nss.exports src/sss_client/sss_nss.exports
 index 1eefea8..8e85a05 100644
 --- src/sss_client/sss_nss.exports
@@ -45,6 +36,3 @@ index 1eefea8..8e85a05 100644
  		#_nss_sss_getaliasbyname_r;
  		#_nss_sss_setaliasent;
  		#_nss_sss_getaliasent_r;
--- 
-1.8.0
-
