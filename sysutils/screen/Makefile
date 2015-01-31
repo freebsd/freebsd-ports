@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -89,6 +89,11 @@ post-configure:
 ETCDIR?=	${PREFIX}/etc
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc \
+		${STAGEDIR}${EXAMPLESDIR}/screenrc.sample-1
+	${INSTALL_DATA} ${FILESDIR}/screenrc.sample \
+		${STAGEDIR}${EXAMPLESDIR}/screenrc.sample-2
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .if ${PORT_OPTIONS:MSYSTEM_SCREENRC}
 	${INSTALL_DATA} ${FILESDIR}/screenrc.sample \
