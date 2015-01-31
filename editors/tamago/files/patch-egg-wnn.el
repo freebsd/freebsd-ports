@@ -1,5 +1,5 @@
---- egg/wnn.el.2	2010-03-02 10:35:45.000000000 +0900
-+++ egg/wnn.el	2010-03-02 11:54:30.000000000 +0900
+--- egg/wnn.el.orig	2015-01-31 19:24:09.000000000 +0900
++++ egg/wnn.el	2015-01-31 19:55:02.000000000 +0900
 @@ -82,6 +82,10 @@
  			     (const wnn-uniq)
  			     (const wnn-uniq-kanji)))
@@ -123,6 +123,7 @@
 -						  (+ port port-off)))
 -		((error quit))))
 -	    (when proc
+-	      (process-kill-without-query proc)
 +             (if (fboundp 'make-network-process)
 +                 (condition-case nil
 +                     (setq proc (make-network-process :name proc-name :buffer buf :host host :service port :family family))
@@ -134,7 +135,7 @@
 +                     (setq proc (open-network-stream proc-name buf hostname port))
 +                   (error quit)))))
 +           (when (processp proc)
- 	      (process-kill-without-query proc)
++	      (set-process-query-on-exit-flag proc nil)
  	      (set-process-coding-system proc 'binary 'binary)
  	      (set-process-sentinel proc 'wnn-comm-sentinel)
  	      (set-marker-insertion-type (process-mark proc) t)

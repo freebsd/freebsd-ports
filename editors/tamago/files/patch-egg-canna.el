@@ -1,5 +1,5 @@
---- egg/canna.el.orig	2014-11-23 16:07:10.000000000 +0900
-+++ egg/canna.el	2014-11-23 16:10:05.000000000 +0900
+--- egg/canna.el.orig	2015-01-31 19:24:09.000000000 +0900
++++ egg/canna.el	2015-01-31 19:39:19.000000000 +0900
 @@ -337,7 +337,7 @@
  		    (setq port (substring hostname (match-end 0))
  			  hostname (substring hostname 0 (match-beginning 0))))

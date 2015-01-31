@@ -1,5 +1,5 @@
---- menudiag.el.orig	2001-01-28 03:53:13.000000000 +0900
-+++ menudiag.el	2015-01-29 18:32:59.000000000 +0900
+--- menudiag.el.orig	2015-01-31 19:23:34.000000000 +0900
++++ menudiag.el	2015-01-31 19:25:52.000000000 +0900
 @@ -226,6 +226,9 @@
    (remove-hook 'minibuffer-setup-hook 'menudiag-minibuffer-hook)
    (setq menudiag-minibuffer-list (cons (current-buffer)
@@ -10,15 +10,6 @@
    (buffer-disable-undo)
    (menudiag-receive-variables)
    (menudiag-beginning-of-items)
-@@ -248,7 +251,7 @@
- 			       (string-width (cadr menu)))))
-   (add-hook 'minibuffer-setup-hook 'menudiag-minibuffer-hook)
-   (unwind-protect
--      (progn
-+      (let ((overriding-local-map menudiag-mode-map))
- 	(read-from-minibuffer "" "" menudiag-mode-map)
- 	(menudiag-receive-variables))
-     (setq menudiag-minibuffer-list (cdr menudiag-minibuffer-list))
 @@ -296,7 +299,7 @@
  (defun menudiag-goto-item ()
    (interactive)
