@@ -1,25 +1,21 @@
 Hints:
 
-- only a subset from the selected modules are enabled by default in
-  httpd.conf.
+  - only a subset from the selected modules are activated by default in
+    httpd.conf.
 
-- by default apache24 builds with static prefork MPM
+  - by default apache24 builds mpm_prefork, mpm_event and mpm_worker
+    as dynamically loadable module.  Even mpm_event is the preferred
+    MPM, mpm_prefork will be activated to keep compatibility with 
+    pre-build php/perl/python/... modules (used by apache22/apache24).
 
-- if MPM_SHARED is selected then all MPM modules will be build, but
-  only the selected DEFAULT MPM module will be registered and enabled 
-  in httpd.conf. For more information see:
-  https://issues.apache.org/bugzilla/show_bug.cgi?id=53882
 
 Note:
-  Shared MPM loading is at the moment not supported by most additional
-  modules (php/perl/python) because they need to know the apache
-  threading model during build time
 
   To build the develop/example modules specify additional the parameter
-  -DIAMADEVELOPER (I am a developer)
+    -DIAMADEVELOPER (I am a developer)
 
-For detailed module description visit
-  http://httpd.apache.org/docs/2.4/mod/
+  For detailed module description visit
+    http://httpd.apache.org/docs/2.4/mod/
 
-and for the develop/example modules
-  http://httpd.apache.org/docs/2.2/programs/configure.html
+  and for the develop/example modules
+    http://httpd.apache.org/docs/2.2/programs/configure.html#developermodules

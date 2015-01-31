@@ -1,6 +1,6 @@
---- ./support/envvars-std.in.orig	2012-03-08 17:10:51.000000000 +0100
-+++ ./support/envvars-std.in	2013-03-22 18:55:53.000000000 +0100
-@@ -26,3 +26,10 @@
+--- support/envvars-std.in.orig	2012-03-08 16:10:51 UTC
++++ support/envvars-std.in
+@@ -26,3 +26,10 @@ fi
  export @SHLIBPATH_VAR@
  #
  @OS_SPECIFIC_VARS@

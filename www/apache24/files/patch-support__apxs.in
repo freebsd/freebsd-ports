@@ -1,6 +1,6 @@
---- ./support/apxs.in.orig	2012-07-25 13:42:40.000000000 +0200
-+++ ./support/apxs.in	2013-03-22 18:55:53.000000000 +0100
-@@ -636,7 +636,13 @@
+--- support/apxs.in.orig	2013-12-26 18:01:53 UTC
++++ support/apxs.in
+@@ -636,7 +636,13 @@ if ($opt_i or $opt_e) {
                  }
              } else {
                  # replace already existing LoadModule line
@@ -15,7 +15,7 @@
              }
              $lmd =~ m|LoadModule\s+(.+?)_module.*|;
              notice("[$what module `$1' in $CFG_SYSCONFDIR/$CFG_TARGET.conf]");
-@@ -645,8 +651,7 @@
+@@ -645,8 +651,7 @@ if ($opt_i or $opt_e) {
              if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
                  print FP $content;
                  close(FP);

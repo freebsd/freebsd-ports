@@ -1,6 +1,6 @@
---- ./support/log_server_status.in.orig	2012-04-29 01:08:09.000000000 +0200
-+++ ./support/log_server_status.in	2013-03-22 18:55:53.000000000 +0100
-@@ -29,7 +29,7 @@
+--- support/log_server_status.in.orig	2012-04-28 23:08:09 UTC
++++ support/log_server_status.in
+@@ -29,7 +29,7 @@ use IO::Socket;
  use strict;
  use warnings;
  
@@ -9,7 +9,7 @@
  my $server   = "localhost";        # Name of server, could be "www.foo.com"
  my $port     = "@PORT@";               # Port on server
  my $request = "/server-status/?auto";    # Request to send
-@@ -46,7 +46,7 @@
+@@ -46,7 +46,7 @@ my $time =
    . sprintf( "%02d", $ltime[1] )
    . sprintf( "%02d", $ltime[0] );
  

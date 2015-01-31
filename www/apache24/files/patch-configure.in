@@ -1,6 +1,6 @@
---- ./configure.in.orig	2013-01-09 17:39:05.000000000 +0100
-+++ ./configure.in	2013-03-22 18:55:53.000000000 +0100
-@@ -111,7 +111,7 @@
+--- configure.in.orig	2015-01-22 17:33:07 UTC
++++ configure.in
+@@ -111,7 +111,7 @@ fi
  
  if test "$apr_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr,
@@ -9,7 +9,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the first to build and the last to be cleaned
    AP_BUILD_SRCLIB_DIRS="apr $AP_BUILD_SRCLIB_DIRS"
-@@ -177,7 +177,7 @@
+@@ -177,7 +177,7 @@ esac  
  
  if test "$apu_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr-util,
@@ -18,7 +18,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -822,8 +822,14 @@
+@@ -830,8 +830,14 @@ AC_DEFINE_UNQUOTED(HTTPD_ROOT, "${ap_pre
  	[Root directory of the Apache install area])
  AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
  	[Location of the config file, relative to the Apache root directory])
