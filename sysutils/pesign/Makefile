@@ -10,6 +10,8 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
+BROKEN=		Checksum and size mismatch
+
 LIB_DEPENDS=	libefivar.so:${PORTSDIR}/devel/efivar \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
 		libnss3.so:${PORTSDIR}/security/nss \
