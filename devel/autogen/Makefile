@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autogen
-PORTVERSION=	5.12
-PORTREVISION=	4
+PORTVERSION=	5.18.4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}/rel${PORTVERSION}
@@ -13,12 +12,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Automated Program Generator
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
 
-USES=		gmake libtool pathfix shebangfix tar:bzip2
+USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
+USE_PERL5=	build
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes --datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes \
+		--datadir=${PREFIX}/share
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	autoopts/tpl/*.pl
 
