@@ -2,13 +2,10 @@
 %%RICTY%%%%DATADIR%%/Ricty-Regular.ttf
 %%DISCORD%%%%DATADIR%%/RictyDiscord-Bold.ttf
 %%DISCORD%%%%DATADIR%%/RictyDiscord-Regular.ttf
-@dirrm %%DATADIR%%
 %%RICTY%%%%LOCAL_FONTSDIR%%/TTF/Ricty-Bold.ttf
 %%RICTY%%%%LOCAL_FONTSDIR%%/TTF/Ricty-Regular.ttf
 %%DISCORD%%%%LOCAL_FONTSDIR%%/TTF/RictyDiscord-Bold.ttf
 %%DISCORD%%%%LOCAL_FONTSDIR%%/TTF/RictyDiscord-Regular.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 %%RICTY%%etc/fonts/conf.avail/20-unhint-ricty.conf
 %%RICTY%%etc/fonts/conf.avail/62-fonts-ricty.conf
 %%RICTY%%etc/fonts/conf.d/20-unhint-ricty.conf
@@ -22,4 +19,3 @@
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Bold.ttf
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Regular.ttf
 @fc %%X_FONTSDIR%%/TTF
-@dirrmtry %%X_FONTSDIR%%/TTF
