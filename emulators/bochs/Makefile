@@ -2,31 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	bochs
-PORTVERSION=	2.6.6
-PORTREVISION=	1
+PORTVERSION=	2.6.7
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antont@inbox.lv
 COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no
 CONFIGURE_ARGS=	--disable-docbook --disable-instrumentation
 
 SUB_FILES=	pkg-message
 
-CFLAGS+=	-fno-exceptions -fomit-frame-pointer ${CPPFLAGS}
+CFLAGS+=	-fno-exceptions -fomit-frame-pointer
 CXXFLAGS+=	-fno-rtti
-CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		A20_PIN ALIGN_CHECK ASSERT_CHECK AVX BUSMOUSE \
-			CDROM CHAINING CLGD54XX CONF_MSRS CPP_SUFX \
+			CDROM CHAINING CLGD54XX CONF_MSRS \
 			DISASM DOCS \
 			E1000 ES1370 EVEX FPU \
 			GAMEPORT IDLE_HACK IODEBUG \
@@ -61,8 +59,6 @@ CLGD54XX_DESC=		Enable Cirrus Logic GD54xx video card
 CLGD54XX_CONFIGURE_ENABLE=	clgd54xx
 CONF_MSRS_DESC=		Enable configurable MSR registers support
 CONF_MSRS_CONFIGURE_ENABLE=	configurable-msrs
-CPP_SUFX_DESC=		Use .cpp as C++ suffix
-CPP_SUFX_CONFIGURE_ENABLE=	cpp
 DEBUG_DESCR=		Enable Debugging, select this and one of DEBUGGER or GDB_STUB (or none)
 DEBUGGER_DESC=		Enable debugger support
 DEBUGGER_CONFIGURE_ENABLE=	debugger
@@ -263,7 +259,7 @@ post-build:
 	@${LN} -sf .bochsrc ${WRKSRC}/bochsrc-sample.txt
 
 post-install:
-.for f in bochs bxcommit bximage bximage_old
+.for f in bochs bximage
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 .if ${PORT_OPTIONS:MPLUGINS}

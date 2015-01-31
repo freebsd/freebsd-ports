@@ -1,12 +1,8 @@
 bin/bochs
-bin/bxcommit
 bin/bximage
-bin/bximage_old
-man/man1/bochs.1.gz
 man/man1/bochs-dlx.1.gz
-man/man1/bxcommit.1.gz
+man/man1/bochs.1.gz
 man/man1/bximage.1.gz
-man/man1/bximage_old.1.gz
 man/man5/bochsrc.5.gz
 %%DATADIR%%/BIOS-bochs-latest
 %%DATADIR%%/BIOS-bochs-legacy
@@ -21,6 +17,8 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/bios.bin-1.7.5
 %%DATADIR%%/keymaps/sdl-pc-de.map
 %%DATADIR%%/keymaps/sdl-pc-us.map
+%%DATADIR%%/keymaps/sdl2-pc-de.map
+%%DATADIR%%/keymaps/sdl2-pc-us.map
 %%DATADIR%%/keymaps/x11-pc-be.map
 %%DATADIR%%/keymaps/x11-pc-da.map
 %%DATADIR%%/keymaps/x11-pc-de.map
