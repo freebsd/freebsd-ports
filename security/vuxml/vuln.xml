@@ -57,6 +57,63 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8469d41c-a960-11e4-b18e-bcaec55be5e5">
+    <topic>rabbitmq -- Security issues in management plugin</topic>
+    <affects>
+      <package>
+	<name>rabbitmq</name>
+	<range><lt>3.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RabbitMQ project reports:</p>
+	<blockquote cite="http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100">
+	  <p>Some user-controllable content was not properly HTML-escaped
+	  before being presented to a user in the management web UI:</p>
+	  <ul>
+	    <li>When a user unqueued a message from the management UI,
+	    message details (header names, arguments, etc.) were displayed
+	    unescaped. An attacker could publish a specially crafted
+	    message to add content or execute arbitrary Javascript code on
+	    behalf of a user, if this user unqueued the message from the
+	    management UI.</li>
+	    <li>When viewing policies, their name was displayed unescaped.
+	    An attacker could create a policy with a specially crafted name
+	    to add content or execute arbitrary Javascript code on behalf
+	    of a user who is viewing policies.</li>
+	    <li>When listing connected AMQP network clients, client details
+	    such as its version were displayed unescaped. An attacker could
+	    use a client with a specially crafted version field to add
+	    content or execute arbitrary Javascript code on behalf of a
+	    user who is viewing connected clients.</li>
+	  </ul>
+	  <p>In all cases, the attacker needs a valid user account on the
+	  targetted RabbitMQ cluster.</p>
+	  <p>Furthermore, some admin-controllable content was not properly
+	  escaped:</p>
+	  <ul>
+	    <li>user names;</li>
+	    <li>the cluster name.</li>
+	  </ul>
+	  <p>Likewise, an attacker could add content or execute arbitrary
+	  Javascript code on behalf of a user using the management web UI.
+	  However, the attacker must be an administrator on the RabbitMQ
+	  cluster, thus a trusted user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100</url>
+      <url>http://www.rabbitmq.com/release-notes/README-3.4.3.txt</url>
+      <cvename>CVE-2015-0862</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-08</discovery>
+      <entry>2015-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5804b9d4-a959-11e4-9363-20cf30e32f6d">
     <topic>apache24 -- several vulnerabilities</topic>
     <affects>
