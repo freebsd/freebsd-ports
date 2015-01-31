@@ -1,12 +1,17 @@
---- makedefs.orig	2014-01-20 23:24:30.000000000 +0000
-+++ makedefs	2014-01-20 23:25:24.000000000 +0000
-@@ -158,6 +158,10 @@
+--- makedefs.orig	2015-01-18 00:10:28 UTC
++++ makedefs
+@@ -235,6 +235,15 @@ case "$SYSTEM.$RELEASE" in
+ 		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
+ 		: ${PLUGIN_LD="${CC} -shared"}
  		;;
-   FreeBSD.9*)	SYSTYPE=FREEBSD9
- 		;;
-+  FreeBSD.10*)	SYSTYPE=FREEBSD10
-+		;;
 +  FreeBSD.11*)	SYSTYPE=FREEBSD11
++		: ${CC=cc}
++		: ${SHLIB_SUFFIX=.so}
++		: ${SHLIB_CFLAGS=-fPIC}
++		: ${SHLIB_LD="${CC} -shared"' -Wl,-soname,${LIB}'}
++		: ${SHLIB_RPATH='-Wl,-rpath,${SHLIB_DIR}'}
++		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
++		: ${PLUGIN_LD="${CC} -shared"}
 +		;;
   DragonFly.*)	SYSTYPE=DRAGONFLY
  		;;
