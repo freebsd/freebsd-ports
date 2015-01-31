@@ -1,5 +1,5 @@
---- egg.el.orig	2013-05-05 14:02:05.000000000 +0900
-+++ egg.el	2013-05-05 14:02:05.000000000 +0900
+--- egg.el.orig	2015-01-31 19:24:09.000000000 +0900
++++ egg.el	2015-01-31 19:48:25.000000000 +0900
 @@ -167,16 +167,22 @@
  	  (setq egg-modefull-mode t)
  	  (its-define-select-keys egg-modefull-map))
@@ -21,8 +21,8 @@
  (defun egg-exit-from-minibuffer ()
 -  (inactivate-input-method)
 +  (if (boundp 'deactivate-input-method)
-+      deactivate-input-method
-+    inactivate-input-method)
++      (deactivate-input-method)
++    (inactivate-input-method))
    (if (<= (minibuffer-depth) 1)
        (remove-hook 'minibuffer-exit-hook 'egg-exit-from-minibuffer)))
  

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2004-11-22 03:53:05.000000000 +0900
-+++ Makefile.in	2014-06-10 13:51:03.000000000 +0900
-@@ -113,32 +115,32 @@
+--- Makefile.in.orig	2015-01-31 19:24:09.000000000 +0900
++++ Makefile.in	2015-01-31 19:25:52.000000000 +0900
+@@ -115,32 +115,32 @@
  
  install-site: all
  	echo "Egg system will be installed in ${lispdir}/egg...."; \

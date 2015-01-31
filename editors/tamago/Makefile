@@ -3,7 +3,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -22,7 +22,6 @@ LICENSE=	GPLv2
 
 USES=		gmake
 USE_EMACS=	yes
-POST_PATCHES=	${PATCHDIR}/post-patch-*
 WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	lispdir="${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}"
@@ -39,9 +38,6 @@ PLIST_SUB+=	HAS_JISX0213=""
 .else
 PLIST_SUB+=	HAS_JISX0213="@comment "
 .endif
-
-post-patch:
-	cd ${PATCH_WRKSRC} && (${CAT} ${POST_PATCHES} | ${PATCH})
 
 post-build:
 	cd ${WRKSRC}/helper && \

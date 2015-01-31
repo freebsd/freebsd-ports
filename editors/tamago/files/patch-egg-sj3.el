@@ -1,5 +1,5 @@
---- egg/sj3.el.orig	2014-11-23 16:07:41.000000000 +0900
-+++ egg/sj3.el	2014-11-23 16:08:04.000000000 +0900
+--- egg/sj3.el.orig	2015-01-31 19:23:34.000000000 +0900
++++ egg/sj3.el	2015-01-31 19:25:52.000000000 +0900
 @@ -146,7 +146,7 @@
  	(setq proc (open-network-stream "SJ3" buf hostname sj3-server-port))
        ((error quit)
