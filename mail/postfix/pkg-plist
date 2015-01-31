@@ -8,7 +8,7 @@ bin/qshape
 bin/rmail
 %%TEST%%bin/smtp-sink
 %%TEST%%bin/smtp-source
-%%BASE%%@cwd /
+%%INST_BASE%%@cwd /
 etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
 etc/postfix/bounce.cf.default
@@ -128,21 +128,18 @@ libexec/postfix/virtual
 sbin/postalias
 sbin/postcat
 sbin/postconf
+@(,maildrop,2755) sbin/postdrop
 sbin/postfix
 sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
 sbin/postmulti
-@group maildrop
-@mode 2755
-sbin/postdrop
-sbin/postqueue
-@group
-@mode
+@(,maildrop,2755) sbin/postqueue
 sbin/postsuper
 sbin/posttls-finger
 sbin/sendmail
+@dir %%PFETC%%
 @dir /var/db/postfix
 @dir(postfix,,700) /var/spool/postfix/active
 @dir(postfix,,700) /var/spool/postfix/bounce
@@ -159,6 +156,3 @@ sbin/sendmail
 @dir(postfix,,700) /var/spool/postfix/saved
 @dir(postfix,,700) /var/spool/postfix/trace
 @dir(,,755) /var/spool/postfix
-%%BASE%%@cwd /
-@dir etc/postfix
-@cwd %%RESETPREFIX%%

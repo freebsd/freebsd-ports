@@ -3,7 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -25,9 +25,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 PORTSCOUT=	limit:^2\.11\.
 
 VDAVERSION=	2.10.0
-CONFLICTS_INSTALL?=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
-		postfix-current-2.* postfix-current-base-2.* postfix-tls-* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
+		postfix2?-* postfix21?-* postfix-tls-* \
+		postfix-current-[23].* postfix-current-base-[23].* \
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -39,13 +40,14 @@ USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP_SASL LMDB MYSQL NIS \
 		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
 
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
 OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
-OPTIONS_DEFAULT=	PCRE
+OPTIONS_DEFAULT=	PCRE TLS
 
 PCRE_DESC=	Perl Compatible Regular Expressions
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
@@ -97,10 +99,10 @@ PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix
-PLIST_SUB+=	BASE="" BMAN="share/"
+PLIST_SUB+=	BMAN="share/"
 .else
 USE_RC_SUBR=	postfix
-PLIST_SUB+=	BASE="@comment " BMAN=""
+PLIST_SUB+=	BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
@@ -114,7 +116,8 @@ READMEDIR=	no
 
 DAEMONDIR=	${PREFIX}/libexec/postfix
 
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
+SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" \
+		DAEMONDIR="${DAEMONDIR}"
 SUB_FILES+=	pkg-install pkg-message
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
@@ -169,9 +172,11 @@ POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -l
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=		yes
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
+.else
+POSTFIX_CCARGS+=	-DNO_TLS
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
@@ -182,9 +187,6 @@ PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
 PATCH_DIST_STRIP=	-p1
 POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
-PLIST_SUB+=		SPF=""
-.else
-PLIST_SUB+=		SPF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
@@ -216,18 +218,18 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if defined(WITH_OPENLDAP_VER)
+. if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
+. endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
-.if ${PORT_OPTIONS:MLDAP_SASL}
-.if ! ${PORT_OPTIONS:MSASL2}
+. if ${PORT_OPTIONS:MLDAP_SASL}
+.  if ! ${PORT_OPTIONS:MSASL2}
 LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-.endif
+.  endif
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
-.endif
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MCDB}
@@ -245,17 +247,11 @@ _REQUIRE+=		ypserv
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
 PATCHFILES+=		postfix-vda-v13-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
-PLIST_SUB+=		VDA=""
-.else
-PLIST_SUB+=		VDA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
-PLIST_SUB+=	TEST=""
-.else
-PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
@@ -327,8 +323,9 @@ post-patch:
 		>> ${WRKSRC}/conf/postfix-files
 
 do-configure:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
-	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles \
+	${MAKEFILEFLAGS} CCARGS="${POSTFIX_CCARGS}" \
+	AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
@@ -337,7 +334,8 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
+	@(cd ${WRKSRC} && ${MAKE} non-interactive-package \
+		install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
