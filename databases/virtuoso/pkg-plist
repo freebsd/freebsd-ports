@@ -1,9 +1,13 @@
 @owner virtuoso
 @group virtuoso
 bin/inifile
+%%WITH_IODBC%%bin/isql-iodbc
 bin/isql-vt
+%%WITH_IODBC%%bin/isqlw-iodbc
 bin/isqlw-vt
+%%WITH_IODBC%%bin/odbc_mail
 bin/virt_mail
+%%WITH_IODBC%%bin/virtuoso-iodbc-t
 bin/virtuoso-t
 lib/hibernate/virt_dialect.jar
 lib/jdbc-2.0/virtjdbc2.jar
@@ -15,6 +19,7 @@ lib/jdbc-4.1/virtjdbc4_1.jar
 lib/jdbc-4.1/virtjdbc4ssl.jar
 lib/jena/virt_jena.jar
 lib/jena2/virt_jena2.jar
+%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.a
 lib/libvirtuoso-t.a
 lib/sesame/create-virtuoso.xsl
 lib/sesame/create.xsl
@@ -30,6 +35,8 @@ lib/virtodbcu.so
 lib/virtodbcu_r.a
 lib/virtodbcu_r.so
 @sample lib/virtuoso/db/virtuoso.ini.sample
+%%WITH_IMAGEMAGICK%%lib/virtuoso/hosting/im.a
+%%WITH_IMAGEMAGICK%%lib/virtuoso/hosting/im.so
 lib/virtuoso/vsp/admin/index_left.vsp
 lib/virtuoso/vsp/admin_style.html
 lib/virtuoso/vsp/bugsfixed.html
