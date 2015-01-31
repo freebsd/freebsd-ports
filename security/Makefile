@@ -177,6 +177,7 @@
     SUBDIR += hmap
     SUBDIR += honggfuzz
     SUBDIR += hotssh
+    SUBDIR += hpenc
     SUBDIR += hs-Crypto
     SUBDIR += hs-DRBG
     SUBDIR += hs-HsOpenSSL
