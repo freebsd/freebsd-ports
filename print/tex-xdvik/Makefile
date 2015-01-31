@@ -3,7 +3,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.87
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -14,12 +14,14 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpaper.so:${PORTSDIR}/print/libpaper
+RUN_DEPENDS=	tex-dvipsk>=5.994_1:${PORTSDIR}/print/tex-dvipsk
 
 USES=		iconv gmake motif
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt xi
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}	
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--datarootdir=${LOCALBASE}/share \
@@ -52,8 +54,11 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/xdvi
+	${INSTALL_DATA} ${WRKSRC}/xdvi-ptex.map \
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/xdvi/xdvi-ptex.map
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME} && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

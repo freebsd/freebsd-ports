@@ -1,6 +1,15 @@
---- Makefile.in.orig	2013-04-03 11:30:04.000000000 +0900
-+++ Makefile.in	2013-05-06 04:17:09.000000000 +0900
-@@ -472,7 +472,7 @@
+--- texk/xdvik/Makefile.in.orig	2014-09-02 18:41:34.000000000 +0900
++++ texk/xdvik/Makefile.in	2015-01-31 21:03:09.000000000 +0900
+@@ -154,6 +154,8 @@
+ 	search-internal.$(OBJEXT) special.$(OBJEXT) \
+ 	string-utils.$(OBJEXT) string_list.$(OBJEXT) util.$(OBJEXT) \
+ 	vf.$(OBJEXT) x_util.$(OBJEXT) xdvi.$(OBJEXT) \
++	AJ16.$(OBJEXT) fontconfig.$(OBJEXT) ft2.$(OBJEXT) \
++	ft2vert.$(OBJEXT) jfm.$(OBJEXT) ptexmap.$(OBJEXT) ptexvf.$(OBJEXT) \
+ 	xserver-info.$(OBJEXT) gui/Panner.$(OBJEXT) gui/Tip.$(OBJEXT) \
+ 	gui/help-window.$(OBJEXT) gui/mag.$(OBJEXT) gui/menu.$(OBJEXT) \
+ 	gui/message-window.$(OBJEXT) gui/pagesel.$(OBJEXT) \
+@@ -502,7 +504,7 @@
  x_extra_libs = $(X_EXTRA_LIBS) $(iconv_libs)
  xdvi_x_libs = $(x_ldflags) $(x_tool_libs) $(x_xmu_lib) -lXt \
  	$(X_PRE_LIBS) $(x_ext_lib) $(x_xpm_libs) -lX11 $(x_extra_libs)
@@ -9,14 +18,23 @@
  common_dependencies = $(KPATHSEA_DEPEND) $(FREETYPE2_DEPEND)
  libxdvi_dependencies = ${top_srcdir}/*.[ch] ${top_srcdir}/gui/*.[ch] ${top_builddir}/psheader.c
  AM_CPPFLAGS = -I$(srcdir)/gui $(common_includes)
-@@ -532,10 +532,10 @@
+@@ -521,6 +523,8 @@
+ 	string-utils.c string-utils.h string_list.c string_list.h \
+ 	translations.h util.c util.h version.h vf.c x_util.c x_util.h \
+ 	xdvi.c xdvi-config.h xdvi-debug.h xserver-info.c xdvi.h \
++	ptexvf.c ptexvf.h ptexmap.c ptexmap.h ft2.c ft2.h jfm.c jfm.h \
++	fontconfig.c fontconfig.h ft2vert.c ft2vert.h AJ16.c \
+ 	xserver-info.h gui/Panner.c gui/Panner.h gui/PannerP.h \
+ 	gui/Tip.c gui/Tip.h gui/TipP.h gui/help-window.c \
+ 	gui/help-window.h gui/mag.c gui/mag.h gui/menu.c gui/menu.h \
+@@ -562,10 +566,10 @@
  	xdvi.icon xdvizilla xdvizilla.1
  CLEANFILES = psheader.c sedscript xdvi.1
  nodist_man1_MANS = xdvi.1
 -xdvidir = $(datarootdir)/texmf-dist/xdvi
 -dvipsconfdir = $(datarootdir)/texmf-dist/dvips/config
-+xdvidir = $(datarootdir)/texmf-dist/xdvi
-+dvipsconfdir = $(datarootdir)/texmf-dist/xdvi
++xdvidir = $(datarootdir)/texmf-dist/dvips/xdvi
++dvipsconfdir = $(datarootdir)/texmf-dist/dvips/xdvi
  dist_xdvi_DATA = texmf/XDvi
 -pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmap
 +pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmaps

@@ -1,5 +1,5 @@
---- texmf/XDvi.orig	2013-05-06 03:19:23.000000000 +0900
-+++ texmf/XDvi	2013-05-06 03:19:33.000000000 +0900
+--- texk/xdvik/texmf/XDvi.orig	2014-09-02 18:41:34.000000000 +0900
++++ texk/xdvik/texmf/XDvi	2015-01-31 21:03:10.000000000 +0900
 @@ -21,7 +21,7 @@
  !!! and greater flexibility for shrink values. Generating MF fonts shouldn't be an
  !!! issue when using T1lib.
@@ -9,3 +9,62 @@
  
  !!! This should be the best choice for modern displays with large color depth.
  *thorough: true
+@@ -118,14 +118,14 @@
+ 
+ 
+ !!! help topics label for Xaw
+-*help_label.font: -*-helvetica-bold-r-*-*-14-*-*-*-*-*-*-*
++*help_label.font: -*-*-bold-r-*-*-14-*-*-*-*-*-*-*
+ 
+ !!!------------------------------------------------------------------------------
+ !!!-------------------------------- Motif tooltips ------------------------------
+ !!!------------------------------------------------------------------------------
+ !!! background color and font:
+ *tipShell.background: cornsilk
+-*tipShell.fontSet: -*-helvetica-medium-r-*-*-12-*-*-*-*-*-*
++*tipShell.fontSet: -*-*-medium-r-*-*-12-*-*-*-*-*-*-*
+ 
+ !!! time the mouse needs to stay on a button until tooltips pop up,
+ !!! in milliseconds; set to a negative value to disable:
+@@ -133,11 +133,22 @@
+ 
+ 
+ !!!------------------------------------------------------------------------------
++!!!-------------------------------- Xaw i18n ------------------------------------
++!!!------------------------------------------------------------------------------
++!!! note: when i18n'ed, *font and *fontSet should have same size of font
++*international: true
++*inputMethod: kinput2
++*preeditType: OverTheSpot,OffTheSpot,Root
++!!! note: xdviSelFile can not be i18n'ed (bug?)
++xdviSelFile*international: false
++
++
++!!!------------------------------------------------------------------------------
+ !!!------------------------------ Fonts and colors ------------------------------
+ !!!------------------------------------------------------------------------------
+-*font:     -*-helvetica-medium-r-*-*-12-*-*-*-*-*-*
++*font:     -*-*-medium-r-*-*-12-*-*-*-*-*-*-*
+ !!! Use a smaller font for the statusline in the Xaw version:
+-*statusline.font: -*-helvetica-medium-r-*-*-10-*-*-*-*-*-*
++*statusline.font: -*-*-medium-r-*-*-10-*-*-*-*-*-*-*
+ 
+ !!! Motif fonts. Meaning of the tags is:
+ !!! NORMAL: Ordinary text, labels etc.
+@@ -147,11 +158,11 @@
+ !!! TOPIC_HEADING: Heading for help text in help window
+ !!!
+ *fontList: \
+--*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*=NORMAL,\
+--*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*=UNMARKED,\
+--*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*=MARKED,\
+--*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*=TOPIC_LABEL,\
+--*-helvetica-bold-r-*-*-14-*-*-*-*-*-*-*=TOPIC_HEADING
++-*-*-medium-r-*-*-12-*-*-*-*-*-*-*=NORMAL,\
++-*-*-medium-r-*-*-12-*-*-*-*-*-*-*=UNMARKED,\
++-*-*-bold-r-*-*-12-*-*-*-*-*-*-*=MARKED,\
++-*-*-bold-r-*-*-12-*-*-*-*-*-*-*=TOPIC_LABEL,\
++-*-*-bold-r-*-*-14-*-*-*-*-*-*-*=TOPIC_HEADING
+ 
+ 
+ !!! Color used for page border, image bounding boxes and the ruler in `Ruler mode'.
