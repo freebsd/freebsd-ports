@@ -2,6 +2,7 @@
 
 PORTNAME=	ipa-uigothic
 PORTVERSION=	00203
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/old/
 PKGNAMEPREFIX=	ja-font-

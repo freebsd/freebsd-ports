@@ -3,6 +3,7 @@
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 

@@ -17,7 +17,4 @@ etc/fonts/conf.d/62-fonts-koruri.conf
 %%X_FONTSDIR%%/TTF/Koruri-Light.ttf
 %%X_FONTSDIR%%/TTF/Koruri-Semibold.ttf
 %%X_FONTSDIR%%/TTF/Koruri-Regular.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
-@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi
+@fc %%X_FONTSDIR%%/TTF
