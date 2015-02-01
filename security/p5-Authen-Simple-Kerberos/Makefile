@@ -10,7 +10,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple Kerberos authentication
 
 BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
-		p5-Authen-Krb5-Simple>=0:${PORTSDIR}/security/p5-Krb5-Simple
+		p5-Authen-Krb5-Simple>=0:${PORTSDIR}/security/p5-Authen-Krb5-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
