@@ -9,6 +9,7 @@ include/zathura/version.h
 libdata/pkgconfig/zathura.pc
 man/man1/zathura.1.gz
 man/man5/zathurarc.5.gz
+share/appdata/zathura.appdata.xml
 share/applications/zathura.desktop
 share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/ca/LC_MESSAGES/zathura.mo
