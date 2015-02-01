@@ -1155,6 +1155,7 @@
     SUBDIR += libsigcx
     SUBDIR += libsigrok
     SUBDIR += libsigrokdecode
+    SUBDIR += libsigscan
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libsmdev
