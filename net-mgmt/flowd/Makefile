@@ -58,7 +58,7 @@ post-build:
 	( cd ${WRKSRC} && ${PYTHON_CMD} setup.py build )
 .endif
 
-post-install:
+pre-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -66,7 +66,9 @@ post-install:
 
 .if ${PORT_OPTIONS:MPERL}
 	( cd ${WRKSRC}/Flowd-perl && ${MAKE_CMD} install )
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
+	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
