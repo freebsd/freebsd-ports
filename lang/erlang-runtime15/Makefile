@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -164,9 +164,6 @@ MAKE_ARGS+=	ARCH=x86
 # links in the documentation.
 
 pre-configure:
-.if ! ${PORT_OPTIONS:MHIPE}
-	echo "disabled by port options" > ${WRKSRC}/lib/hipe/SKIP
-.endif
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
