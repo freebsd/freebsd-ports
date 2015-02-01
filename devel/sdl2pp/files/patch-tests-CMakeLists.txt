@@ -1,0 +1,26 @@
+commit a31677af6a501c7986a6070a0cf1471fe3ca57fd
+Author: Dmitry Marakasov <amdmi3@amdmi3.ru>
+Date:   Fri Jan 30 20:06:19 2015 +0300
+
+    Disable self-assignment warning for tests
+    
+    As we deliberately do these self-assignments. Fixes -Werror build with clang 3.6.
+
+diff --git tests/CMakeLists.txt tests/CMakeLists.txt
+index d9b1af4..103ec2e 100644
+--- tests/CMakeLists.txt
++++ tests/CMakeLists.txt
+@@ -12,6 +12,13 @@ SET(GUI_TESTS
+ 	gui_rendering
+ )
+ 
++# disable self-move warning: it's deliberately used in tests
++INCLUDE(CheckCXXCompilerFlag)
++CHECK_CXX_COMPILER_FLAG("-Wno-self-move" COMPILER_SUPPORTS_WNOSELFMOVE)
++IF(COMPILER_SUPPORTS_WNOSELFMOVE)
++	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-self-move")
++ENDIF(COMPILER_SUPPORTS_WNOSELFMOVE)
++
+ ADD_DEFINITIONS(-DTESTDATA_DIR="${PROJECT_SOURCE_DIR}/testdata")
+ 
+ # header tests: these just include specific headers to check if
