@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SF/modauthkerb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -12,39 +12,24 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for authenticating users with Kerberos v5
 
-USE_APACHE=	22+
-USES=		gmake
-GNU_CONFIGURE=	yes
+LICENSE=	MIT BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
 
+LATEST_LINK=	mod_auth_kerb2
 PORTSCOUT=	limit:^5.4
 
-.if defined(KRB5_HOME)
-BUILD_DEPENDS+=		${KRB5_HOME}/lib/libgssapi_krb5.so:${PORTSDIR}/security/krb5
-RUN_DEPENDS+=		${KRB5_HOME}/lib/libgssapi_krb5.so:${PORTSDIR}/security/krb5
-CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME} --without-krb4
+USE_APACHE=	22+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	-with-krb5=${GSSAPIBASEDIR} --without-krb4
 
-.elif defined(HEIMDAL_HOME)
-BUILD_DEPENDS+=		${HEIMDAL_HOME}/lib/libgssapi.so:${PORTSDIR}/security/heimdal
-RUN_DEPENDS+=		${HEIMDAL_HOME}/lib/libgssapi.so:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --without-krb4
-
-.elif exists(${DESTDIR}/usr/lib/libkrb5.a) && exists(${DESTDIR}/usr/bin/krb5-config)
-CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr --without-krb4
-
-.else
-LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
-		${WRKSRC}/Makefile.in
-.if !defined(HEIMDAL_HOME)
-	${REINPLACE_CMD} -e 's|@KRB5_LDFLAGS@|@KRB5_LDFLAGS@ -lgssapi_krb5|' \
-		${WRKSRC}/Makefile.in
-.endif
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+OPTIONS_RADIO=		GSSAPI
+OPTIONS_DEFAULT=	GSSAPI_BASE
+OPTIONS_RADIO_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=	gssapi:mit
 
 .include <bsd.port.mk>

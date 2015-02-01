@@ -2,8 +2,12 @@
 # Rev in latest src archive is r150.
 # http://modauthkerb.cvs.sourceforge.net/viewvc/modauthkerb/mod_auth_kerb/src/mod_auth_kerb.c?revision=1.157
 # Further patched to work with Apache 2.4.
---- src/mod_auth_kerb.c.orig	2008-12-04 11:14:03.000000000 +0100
-+++ src/mod_auth_kerb.c	2014-06-01 14:51:14.681087749 +0200
+#
+# Patch to fix a bug in KrbSaveCredentials: 
+#     https://bugzilla.redhat.com/show_bug.cgi?id=688210
+#
+--- src/mod_auth_kerb.c.orig	2008-12-04 19:14:03.000000000 +0900
++++ src/mod_auth_kerb.c	2014-11-22 19:34:12.000000000 +0900
 @@ -11,6 +11,12 @@
   */
  
@@ -60,7 +64,15 @@
  module AP_MODULE_DECLARE_DATA auth_kerb_module;
  #else
  module auth_kerb_module;
-@@ -298,7 +313,7 @@
+@@ -176,6 +191,7 @@
+ 	char *authline;
+ 	char *user;
+ 	char *mech;
++	char *ccname;
+ 	int  last_return;
+ } krb5_conn_data;
+ 
+@@ -298,7 +314,7 @@
  }
  
  /* And this is the operations vector for our replay cache */
@@ -69,7 +81,7 @@
    0,
    "dfl",
    krb5_rc_dfl_init,
-@@ -329,7 +344,7 @@
+@@ -329,7 +345,7 @@
  	((kerb_auth_config *)rec)->krb_ssl_preauthentication = 0;
  #endif
  #ifdef KRB5
@@ -78,7 +90,7 @@
  	((kerb_auth_config *)rec)->krb_method_k5pass = 1;
  	((kerb_auth_config *)rec)->krb_method_gssapi = 1;
  #endif
-@@ -347,9 +362,15 @@
+@@ -347,9 +363,15 @@
     return NULL;
  }
  
@@ -94,7 +106,7 @@
  {
     char errstr[1024];
     va_list ap;
-@@ -359,7 +380,9 @@
+@@ -359,7 +381,9 @@
     va_end(ap);
  
     
@@ -105,7 +117,7 @@
     ap_log_rerror(file, line, level | APLOG_NOERRNO, status, r, "%s", errstr);
  #else
     ap_log_rerror(file, line, level | APLOG_NOERRNO, r, "%s", errstr);
-@@ -527,7 +550,7 @@
+@@ -527,7 +551,7 @@
     user = apr_pstrcat(r->pool, user, "@", realm, NULL);
  
     MK_USER = user;
@@ -114,7 +126,7 @@
     apr_table_setn(r->subprocess_env, "KRBTKFILE", tkt_file_p);
  
     if (!conf->krb_save_credentials)
-@@ -677,7 +700,8 @@
+@@ -677,7 +701,8 @@
  static krb5_error_code
  verify_krb5_user(request_rec *r, krb5_context context, krb5_principal principal,
        		 const char *password, krb5_principal server,
@@ -124,7 +136,18 @@
  {
     krb5_creds creds;
     krb5_get_init_creds_opt options;
-@@ -926,7 +950,6 @@
+@@ -869,8 +894,8 @@
+    }
+ 
+    apr_table_setn(r->subprocess_env, "KRB5CCNAME", ccname);
+-   apr_pool_cleanup_register(r->pool, ccname, krb5_cache_cleanup,
+-	 		     apr_pool_cleanup_null);
++   apr_pool_cleanup_register(r->connection->pool, ccname, krb5_cache_cleanup,
++                             apr_pool_cleanup_null);
+ 
+    *ccache = tmp_ccache;
+    tmp_ccache = NULL;
+@@ -926,7 +951,6 @@
     return OK;
  }
  
@@ -132,7 +155,7 @@
  static int
  authenticate_user_krb5pwd(request_rec *r,
                            kerb_auth_config *conf,
-@@ -1061,7 +1084,7 @@
+@@ -1061,7 +1085,7 @@
        goto end;
     }
     MK_USER = apr_pstrdup (r->pool, name);
@@ -141,7 +164,7 @@
     free(name);
  
     if (conf->krb_save_credentials)
-@@ -1280,6 +1303,7 @@
+@@ -1280,6 +1304,7 @@
     return 0;
  }
  
@@ -149,7 +172,7 @@
  static int
  cmp_gss_type(gss_buffer_t token, gss_OID oid)
  {
-@@ -1306,6 +1330,7 @@
+@@ -1306,6 +1331,7 @@
  
     return memcmp(p, oid->elements, oid->length);
  }
@@ -157,7 +180,7 @@
  
  static int
  authenticate_user_gss(request_rec *r, kerb_auth_config *conf,
-@@ -1438,15 +1463,15 @@
+@@ -1438,15 +1464,15 @@
       goto end;
    }
  
@@ -178,7 +201,7 @@
  
    major_status = gss_display_name(&minor_status, client_name, &output_token, NULL);
    gss_release_name(&minor_status, &client_name); 
-@@ -1549,13 +1574,13 @@
+@@ -1549,28 +1575,52 @@
  #endif /* KRB5 */
  
  static krb5_conn_data *
@@ -195,7 +218,24 @@
  	r->connection->id);
  
     if (apr_pool_userdata_get((void**)&conn_data, keyname, r->connection->pool) != 0)
-@@ -1571,6 +1596,24 @@
+ 	return NULL;
+ 
+-   if(conn_data) {
+-	if(strcmp(conn_data->authline, auth_line) == 0) {
+-		log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "matched previous auth request");
+-		return conn_data;
++   if(conn_data && conn_data->ccname != NULL) {
++       apr_finfo_t finfo;
++
++       if (apr_stat(&finfo, conn_data->ccname + strlen("FILE:"),
++                    APR_FINFO_NORM, r->pool) == APR_SUCCESS
++           && (finfo.valid & APR_FINFO_TYPE)
++           && finfo.filetype == APR_REG) {
++           log_rerror(APLOG_MARK, APLOG_DEBUG, 0, r, "matched previous auth request");
++           return conn_data;
+ 	}
+    }
+    return NULL;
  }
  
  static void
@@ -208,6 +248,7 @@
 +    prevauth->user = apr_pstrdup(r->connection->pool, MK_USER);
 +    prevauth->authline = apr_pstrdup(r->connection->pool, auth_line);
 +    prevauth->mech = apr_pstrdup(r->connection->pool, auth_type);
++    prevauth->ccname = apr_pstrdup(r->connection->pool, apr_table_get(r->subprocess_env, "KRB5CCNAME"));
 +    prevauth->last_return = ret;
 +    
 +    snprintf(keyname, sizeof(keyname) - 1,
@@ -220,7 +261,7 @@
  set_kerb_auth_headers(request_rec *r, const kerb_auth_config *conf,
        		      int use_krb4, int use_krb5pwd, char *negotiate_ret_value)
  {
-@@ -1607,51 +1650,16 @@
+@@ -1607,51 +1657,16 @@
  }
  
  static int
@@ -279,7 +320,7 @@
     if (!auth_line) {
        set_kerb_auth_headers(r, conf, use_krb4, use_krb5, 
  	                    (use_krb5) ? "\0" : NULL);
-@@ -1669,60 +1677,108 @@
+@@ -1669,60 +1684,110 @@
  #endif
         (strcasecmp(auth_type, "Basic") == 0))
         return DECLINED;
@@ -319,6 +360,8 @@
 +      ret = prevauth->last_return;
 +      MK_USER = prevauth->user;
 +      MK_AUTH_TYPE = prevauth->mech;
++       if (prevauth->ccname)
++               apr_table_setn(r->subprocess_env, "KRB5CCNAME", prevauth->ccname);
     }
  
     /*
@@ -336,30 +379,30 @@
 -       apr_pool_userdata_set(prevauth, keyname, NULL, r->connection->pool);
 +   if(!prevauth) {
 +      save_authorized(r, auth_line, auth_type, ret);
-+   }
-+
-+   if (ret == OK && conf->krb5_do_auth_to_local) {
-+      ret = do_krb5_an_to_ln(r);
     }
-+   return ret;
-+}
  
 -     if (ret == OK && conf->krb5_do_auth_to_local)
 -       ret = do_krb5_an_to_ln(r);
++   if (ret == OK && conf->krb5_do_auth_to_local) {
++      ret = do_krb5_an_to_ln(r);
++   }
++   return ret;
++}
++
 +static authn_status authn_krb_password(request_rec *r, const char *user,
 +                                       const char *password)
 +{
 +   char *auth_line = NULL;
 +   int ret;
 +   const char *type = NULL;
-+   
+    
+-   /* XXX log_debug: if ret==OK, log(user XY authenticated) */
 +   type = ap_auth_type(r);
 +   auth_line = ap_pbase64encode (r->pool, apr_psprintf(r->pool, "%s:%s", user, password));
 +   auth_line = apr_psprintf(r->pool, "Basic %s", auth_line);
 +
 +   ret = authenticate_user(r, auth_line, type, 1, 1);
-    
--   /* XXX log_debug: if ret==OK, log(user XY authenticated) */
++   
 +   if (ret == OK) return AUTH_GRANTED;
 +   else return AUTH_USER_NOT_FOUND;
 +}
@@ -415,7 +458,7 @@
  have_rcache_type(const char *type)
  {
     krb5_error_code ret;
-@@ -1805,6 +1861,12 @@
+@@ -1805,6 +1870,12 @@
  static void
  kerb_register_hooks(apr_pool_t *p)
  {
