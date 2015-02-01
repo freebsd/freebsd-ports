@@ -1,0 +1,18 @@
+bin/sigscan
+@sample etc/sigscan.conf.sample
+include/libsigscan.h
+include/libsigscan/codepage.h
+include/libsigscan/definitions.h
+include/libsigscan/error.h
+include/libsigscan/extern.h
+include/libsigscan/features.h
+include/libsigscan/types.h
+lib/libsigscan.a
+lib/libsigscan.so
+lib/libsigscan.so.1
+lib/libsigscan.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pysigscan.a
+%%PYTHON_SITELIBDIR%%/pysigscan.so
+libdata/pkgconfig/libsigscan.pc
+man/man1/sigscan.1.gz
+man/man3/libsigscan.3.gz
