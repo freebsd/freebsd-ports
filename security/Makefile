@@ -426,6 +426,7 @@
     SUBDIR += p5-Authen-Simple-DBI
     SUBDIR += p5-Authen-Simple-DBM
     SUBDIR += p5-Authen-Simple-HTTP
+    SUBDIR += p5-Authen-Simple-Kerberos
     SUBDIR += p5-Authen-Simple-LDAP
     SUBDIR += p5-Authen-Simple-Net
     SUBDIR += p5-Authen-Simple-PAM
