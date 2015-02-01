@@ -5,11 +5,11 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
-		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
+		ftp://ftpmirror.uk/ftp.proftpd.org/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTNAME=	proftpd-${PROFTPD_VERSION}
@@ -101,6 +101,9 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 .if !defined(_BUILDING_PROFTPD_MODULE)
 CPPFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
 LIBS+=		-lssl -lcrypto -L${OPENSSLLIB}
+. if !defined(WITH_OPENSSL_PORT)
+LDFLAGS+=	-pthread
+. endif
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
