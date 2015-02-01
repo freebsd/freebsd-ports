@@ -100,7 +100,9 @@ post-install:
 	expat exquat exrgbhsv exrotscl exsample exscale exscn3d exscroll exshade \
 	exspline exsprite exstars exstream exswitch exsyscur extimer extrans \
 	extrans2 extruec exunicod exupdate exxfade exzbuf
+	@${CHMOD} u+w ${STAGEDIR}${EXAMPLESDIR}/${l}
 	${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/${l}
+	@${CHMOD} u-w ${STAGEDIR}${EXAMPLESDIR}/${l}
 . endfor
 .endif
 
