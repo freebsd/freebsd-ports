@@ -1,10 +1,7 @@
-bin/uucp
 bin/uulog
 bin/uupick
 bin/uusched
-bin/uustat
 bin/uuto
-bin/uux
 etc/mtree/uucp-var.mtree
 etc/mtree/uucp-local.mtree
 etc/periodic/daily/340.uucp
@@ -32,24 +29,20 @@ man/man8/uucico.8.gz
 man/man8/uusched.8.gz
 man/man8/uuxqt.8.gz
 man/man8/uucpd.8.gz
-@exec chown uucp:uucp %D/etc/uucp
-@exec chmod 750 %D/etc/uucp
 libexec/uucpd
-@group dialer
-bin/cu
-bin/uuname
-libexec/uucp/uucico
-@group uucp
-libexec/uucp/uuxqt
-@group wheel
 sbin/uuchk
 sbin/uuconv
-@dirrmtry etc/mtree
-@dirrm etc/periodic/daily
-@dirrm etc/periodic/weekly
-@dirrm etc/periodic
-@dirrm etc/uucp
-@dirrm libexec/uucp
+@owner uucp
+bin/uucp
+bin/uuname
+bin/uux
+@group uucp
+libexec/uucp/uuxqt
+@group dialer
+bin/cu
+bin/uustat
+libexec/uucp/uucico
+@owner
 @exec pw usermod uucp -s %D/libexec/uucp/uucico
 @exec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
 @exec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
