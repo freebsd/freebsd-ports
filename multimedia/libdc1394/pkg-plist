@@ -26,5 +26,3 @@ man/man1/dc1394_vloopback.1.gz
 man/man1/grab_color_image.1.gz
 man/man1/grab_gray_image.1.gz
 man/man1/grab_partial_image.1.gz
-@dirrmtry include/dc1394/vendor
-@dirrmtry include/dc1394

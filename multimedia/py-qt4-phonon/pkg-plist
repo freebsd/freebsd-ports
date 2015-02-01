@@ -19,5 +19,3 @@ share/py-sip/phonon/videoplayer.sip
 share/py-sip/phonon/videowidget.sip
 share/py-sip/phonon/volumeslider.sip
 %%API%%share/qt4/qsci/api/python/phonon.api
-@dirrm share/py-sip/phonon
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

@@ -453,19 +453,3 @@ lib/ADM_plugins6/autoScripts/lib/ADM_image.py
 %%QT4%%share/avidemux6/help/QtScript/tab_h.png
 %%QT4%%share/avidemux6/help/QtScript/tab_s.png
 %%QT4%%share/avidemux6/help/QtScript/tabs.css
-%%QT4%%@dirrm share/avidemux6/help/QtScript/search
-%%QT4%%@dirrm share/avidemux6/help/QtScript
-%%QT4%%@dirrm share/avidemux6/help
-%%QT4%%@dirrm share/avidemux6
-@dirrm lib/ADM_plugins6/audioDecoder
-@dirrm lib/ADM_plugins6/audioDevices
-@dirrm lib/ADM_plugins6/demuxers
-@dirrm lib/ADM_plugins6/muxers
-@dirrm lib/ADM_plugins6/autoScripts/lib
-@dirrm lib/ADM_plugins6/autoScripts
-@dirrm lib/ADM_plugins6/videoDecoders
-@dirrm lib/ADM_plugins6/videoEncoders
-@dirrm lib/ADM_plugins6/videoFilters
-@dirrm lib/ADM_plugins6/scriptEngines
-@dirrm lib/ADM_plugins6/audioEncoders
-@dirrm lib/ADM_plugins6

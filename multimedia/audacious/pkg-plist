@@ -111,32 +111,3 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-%%NLS%%@dirrmtry share/locale/sr_RS/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr_RS
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ml_IN
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id_ID
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
-%%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cmn
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm include/libaudgui
-@dirrm include/libaudcore
-@dirrm include/audacious

@@ -295,19 +295,3 @@ share/locale/sr@Latn/LC_MESSAGES/kplayer.mo
 share/locale/sv/LC_MESSAGES/kplayer.mo
 share/locale/tr/LC_MESSAGES/kplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kplayer.mo
-@dirrm share/doc/HTML/sv/kplayer
-@dirrm share/doc/HTML/pt/kplayer
-@dirrm share/doc/HTML/it/kplayer
-@dirrm share/doc/HTML/es/kplayer
-@dirrm share/doc/HTML/en/kplayer
-@dirrm share/doc/HTML/da/kplayer
-@dirrm share/apps/kplayer/icons/hicolor/32x32/actions
-@dirrm share/apps/kplayer/icons/hicolor/32x32
-@dirrm share/apps/kplayer/icons/hicolor/22x22/actions
-@dirrm share/apps/kplayer/icons/hicolor/22x22
-@dirrm share/apps/kplayer/icons/hicolor/16x16/actions
-@dirrm share/apps/kplayer/icons/hicolor/16x16
-@dirrm share/apps/kplayer/icons/hicolor
-@dirrm share/apps/kplayer/icons
-@dirrm share/apps/kplayer
-@dirrmtry share/apps/konqueror/servicemenus

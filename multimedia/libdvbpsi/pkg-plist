@@ -75,4 +75,3 @@ lib/libdvbpsi.so
 lib/libdvbpsi.so.9
 lib/libdvbpsi.so.9.0.0
 libdata/pkgconfig/libdvbpsi.pc
-@dirrm include/dvbpsi

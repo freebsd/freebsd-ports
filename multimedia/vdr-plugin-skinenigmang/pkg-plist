@@ -103,14 +103,6 @@ etc/vdr/plugins/skinenigmang/icons/menu/vcd.xpm
 etc/vdr/plugins/skinenigmang/icons/menu/soccer.xpm
 etc/vdr/plugins/skinenigmang/icons/menu/webepg.xpm
 etc/vdr/plugins/skinenigmang/icons/menu/vdr.xpm
-@dirrm etc/vdr/plugins/skinenigmang/flags
-@dirrm etc/vdr/plugins/skinenigmang/icons/message
-@dirrm etc/vdr/plugins/skinenigmang/icons/replay
-@dirrm etc/vdr/plugins/skinenigmang/icons/audio
-@dirrm etc/vdr/plugins/skinenigmang/icons/volume
-@dirrm etc/vdr/plugins/skinenigmang/icons/menu
-@dirrm etc/vdr/plugins/skinenigmang/icons
-@dirrm etc/vdr/plugins/skinenigmang
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-skinenigmang.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/vdr-skinenigmang.mo
 %%NLS%%share/locale/da_DK/LC_MESSAGES/vdr-skinenigmang.mo

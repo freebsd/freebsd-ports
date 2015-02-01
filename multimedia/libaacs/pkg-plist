@@ -7,4 +7,3 @@ lib/libaacs.so
 lib/libaacs.so.0
 lib/libaacs.so.0.4.0
 libdata/pkgconfig/libaacs.pc
-@dirrm include/libaacs

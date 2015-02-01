@@ -50,4 +50,3 @@ bin/sabbu
 %%DATADIR%%/time-left.png
 %%DATADIR%%/time-right-2.png
 %%DATADIR%%/time-right.png
-@dirrm %%DATADIR%%

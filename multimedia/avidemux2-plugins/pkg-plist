@@ -141,17 +141,3 @@ lib/ADM_plugins/videoFilter/libADM_vidChromaV.so
 %%X264%%lib/ADM_plugins/videoEncoder/x264/x264Param.xsd
 %%XVID%%lib/ADM_plugins/videoEncoder/libADM_vidEnc_xvid.so
 %%XVID%%lib/ADM_plugins/videoEncoder/xvid/XvidParam.xsd
-@dirrm lib/ADM_plugins/audioDecoder
-@dirrm lib/ADM_plugins/audioDevices
-@dirrm lib/ADM_plugins/videoEncoder/avcodec/mpeg-1
-@dirrm lib/ADM_plugins/videoEncoder/avcodec/mpeg-2
-@dirrm lib/ADM_plugins/videoEncoder/avcodec
-%%X264%%@dirrm lib/ADM_plugins/videoEncoder/x264
-%%XVID%%@dirrm lib/ADM_plugins/videoEncoder/xvid
-@dirrm lib/ADM_plugins/videoEncoder/mpeg2enc/mpeg-1
-@dirrm lib/ADM_plugins/videoEncoder/mpeg2enc/mpeg-2
-@dirrm lib/ADM_plugins/videoEncoder/mpeg2enc
-@dirrm lib/ADM_plugins/videoEncoder
-@dirrm lib/ADM_plugins/videoFilter
-@dirrm lib/ADM_plugins/audioEncoders
-@dirrm lib/ADM_plugins

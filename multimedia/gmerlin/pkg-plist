@@ -320,14 +320,3 @@ share/icons/hicolor/48x48/apps/gmerlin-recorder.png
 share/icons/hicolor/48x48/apps/gmerlin-transcoder.png
 share/icons/hicolor/48x48/apps/gmerlin-visualizer.png
 share/locale/de/LC_MESSAGES/gmerlin.mo
-@dirrm %%DATADIR%%/skins/Default
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/osd
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gmerlin/plugins
-@dirrm lib/gmerlin
-@dirrm include/gmerlin/x11
-@dirrm include/gmerlin/gui_gtk
-@dirrm include/gmerlin

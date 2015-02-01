@@ -291,11 +291,3 @@ lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2.0.1
 libdata/pkgconfig/gstreamermm-%%GST_VERSION%%.pc
-@dirrm lib/gstreamermm-%%GST_VERSION%%/include
-@dirrm lib/gstreamermm-%%GST_VERSION%%/gen/m4
-@dirrm lib/gstreamermm-%%GST_VERSION%%/gen
-@dirrm lib/gstreamermm-%%GST_VERSION%%
-@dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm_get_plugin_defs
-@dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm/private
-@dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm
-@dirrm include/gstreamermm-%%GST_VERSION%%

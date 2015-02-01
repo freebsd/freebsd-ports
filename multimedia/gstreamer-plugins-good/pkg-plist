@@ -136,7 +136,3 @@ share/locale/vi/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/gstreamer-%%VERSION%%/presets
-@dirrmtry share/gstreamer-%%VERSION%%

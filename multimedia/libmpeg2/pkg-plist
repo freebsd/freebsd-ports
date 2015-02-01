@@ -17,4 +17,3 @@ libdata/pkgconfig/libmpeg2.pc
 libdata/pkgconfig/libmpeg2convert.pc
 man/man1/extract_mpeg2.1.gz
 man/man1/mpeg2dec.1.gz
-@dirrm include/mpeg2dec

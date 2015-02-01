@@ -237,4 +237,3 @@ lib/win32/zmbv.dll
 @mode 0444
 lib/win32/%%PKGNAME%%
 @mode
-@dirrm lib/win32

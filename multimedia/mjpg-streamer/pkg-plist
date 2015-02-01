@@ -24,5 +24,3 @@ bin/mjpg_streamer
 %%HTTP%%%%WWWDIR%%/example.jpg
 %%HTTP%%%%WWWDIR%%/cambozola.jar
 %%HTTP%%%%WWWDIR%%/LICENSE.txt
-%%HTTP%%@dirrm %%WWWDIR%%
-@dirrm lib/mjpg-streamer

@@ -5,4 +5,3 @@ lib/libass.so
 lib/libass.so.5
 lib/libass.so.5.0.0
 libdata/pkgconfig/libass.pc
-@dirrmtry include/ass

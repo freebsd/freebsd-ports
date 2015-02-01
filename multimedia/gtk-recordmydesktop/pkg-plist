@@ -49,4 +49,3 @@ share/locale/ru/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/sv/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/tr/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/pixmaps/gtk-recordmydesktop.png
-@dirrm %%PYTHON_SITELIBDIR%%/recordMyDesktop

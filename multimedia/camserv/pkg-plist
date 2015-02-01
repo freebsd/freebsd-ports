@@ -36,6 +36,3 @@ lib/camserv/libvideo_fbsd_bttv.so.0.0.0
 %%DATADIR%%/defpage.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/javascript.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/camserv

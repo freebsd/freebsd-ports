@@ -21,4 +21,3 @@ share/pixmaps/pymp.png
 %%DATADIR%%/remote.py
 %%DATADIR%%/remote.pyc
 %%DATADIR%%/remote.pyo
-@dirrm %%DATADIR%%

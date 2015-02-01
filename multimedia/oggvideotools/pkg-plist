@@ -90,4 +90,3 @@ man/man1/oggSplit.1.gz
 man/man1/oggThumb.1.gz
 man/man1/oggTranscode.1.gz
 sbin/mkThumbs
-@dirrm include/oggvt

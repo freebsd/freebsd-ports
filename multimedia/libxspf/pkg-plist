@@ -29,5 +29,3 @@ lib/libxspf.so
 lib/libxspf.so.4
 lib/libxspf.so.4.0.1
 libdata/pkgconfig/xspf.pc
-@dirrm include/xspf/ProjectOpus
-@dirrm include/xspf
