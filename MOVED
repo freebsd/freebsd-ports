@@ -7411,3 +7411,4 @@ ftp/rexx-curl||2015-01-28|Has expired: Broken for more than 6 months
 net-im/pidgin-audacious-remote||2015-01-28|Has expired: Broken for more than 6 months
 www/lifetype||2015-01-28|Has expired: Broken for more than 6 months
 www/ump||2015-01-28|Has expired: Broken for more than 6 months
+net/owncloud-csync||2015-02-01|Merged into deskutils/mirall
