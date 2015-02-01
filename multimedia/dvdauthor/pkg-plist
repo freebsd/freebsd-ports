@@ -13,4 +13,3 @@ man/man1/spuunmux.1.gz
 %%DATADIR%%/common.xsd
 %%DATADIR%%/dvdauthor.xsd
 %%DATADIR%%/spumux.xsd
-@dirrm %%DATADIR%%

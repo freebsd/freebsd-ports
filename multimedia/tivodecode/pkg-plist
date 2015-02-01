@@ -6,7 +6,5 @@ include/tivodecode/tivodecoder.h
 include/tivodecode/tivo-parse.h
 include/tivodecode/turing_stream.h
 include/tivodecode/Turing.h
-@dirrm include/tivodecode
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

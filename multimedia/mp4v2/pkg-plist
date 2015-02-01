@@ -30,4 +30,3 @@ man/man1/mp4art.1.gz
 man/man1/mp4file.1.gz
 man/man1/mp4subtitle.1.gz
 man/man1/mp4track.1.gz
-@dirrm include/mp4v2

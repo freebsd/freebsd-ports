@@ -129,12 +129,3 @@ libdata/pkgconfig/QtGLib-2.0.pc
 libdata/pkgconfig/QtGStreamer-%%GST_VERSION%%.pc
 libdata/pkgconfig/QtGStreamerUi-%%GST_VERSION%%.pc
 libdata/pkgconfig/QtGStreamerUtils-%%GST_VERSION%%.pc
-@dirrm %%QT_LIBDIR%%/imports/QtGStreamer
-@dirrmtry %%QT_LIBDIR%%/imports
-@dirrm lib/cmake/QtGStreamer
-@dirrmtry lib/cmake
-@dirrm include/QtGStreamer/QGst/Ui
-@dirrm include/QtGStreamer/QGst/Utils
-@dirrm include/QtGStreamer/QGst
-@dirrm include/QtGStreamer/QGlib
-@dirrm include/QtGStreamer

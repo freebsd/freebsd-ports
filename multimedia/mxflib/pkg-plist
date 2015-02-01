@@ -38,5 +38,3 @@ include/mxflib/xmlparser.h
 lib/libmxf.a
 share/mxflib/DMS_Crypto.xml
 share/mxflib/dict.xml
-@dirrm include/mxflib
-@dirrm share/mxflib

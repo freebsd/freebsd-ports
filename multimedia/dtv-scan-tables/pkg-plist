@@ -1112,14 +1112,3 @@
 %%DATADIR%%/dvbv5_dvb-t/fi-Ylitornio_Raanujarvi
 %%DATADIR%%/dvbv5_dvb-t/fi-Yllas
 %%DATADIR%%/dvbv5_dvb-t/fi-Yllasjarvi
-@dirrm %%DATADIR%%/atsc
-@dirrm %%DATADIR%%/channels-conf/atsc
-@dirrm %%DATADIR%%/channels-conf/dvb-c
-@dirrm %%DATADIR%%/channels-conf/dvb-s
-@dirrm %%DATADIR%%/channels-conf/dvb-t
-@dirrm %%DATADIR%%/channels-conf
-@dirrm %%DATADIR%%/dvb-c
-@dirrm %%DATADIR%%/dvb-s
-@dirrm %%DATADIR%%/dvb-t
-@dirrm %%DATADIR%%/dvbv5_dvb-t
-@dirrm %%DATADIR%%

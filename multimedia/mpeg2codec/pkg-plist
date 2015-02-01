@@ -6,6 +6,3 @@ bin/mpeg2encode
 %%DATADIR%%/PAL.par
 %%DATADIR%%/inter.mat
 %%DATADIR%%/intra.mat
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-

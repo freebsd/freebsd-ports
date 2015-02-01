@@ -68,5 +68,3 @@ share/locale/pt_BR/LC_MESSAGES/bangarang.mo
 share/locale/ru/LC_MESSAGES/bangarang.mo
 share/locale/uk/LC_MESSAGES/bangarang.mo
 share/locale/zh_CN/LC_MESSAGES/bangarang.mo
-@dirrmtry share/icons/hicolor/8x8/apps
-@dirrmtry share/icons/hicolor/8x8

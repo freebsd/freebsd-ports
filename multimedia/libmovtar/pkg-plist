@@ -10,4 +10,3 @@ bin/rtjshow
 include/movtar.h
 lib/libmovtar.a
 share/aclocal/movtar.m4
-@dirrmtry share/aclocal

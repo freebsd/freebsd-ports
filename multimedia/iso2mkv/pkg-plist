@@ -1,5 +1,3 @@
 bin/iso2mkv
 %%PORTDOCS%%%%DOCSDIR%%/README.utf8.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iso2mkv.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

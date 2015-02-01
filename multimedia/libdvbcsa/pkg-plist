@@ -3,4 +3,3 @@ lib/libdvbcsa.a
 lib/libdvbcsa.so
 lib/libdvbcsa.so.1
 lib/libdvbcsa.so.1.0.1
-@dirrm include/dvbcsa

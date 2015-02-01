@@ -57,7 +57,6 @@ etc/vdr/plugins/transponders/S91.5E.tpl
 etc/vdr/plugins/transponders/S93.5E.tpl
 etc/vdr/plugins/transponders/S95.0E.tpl
 etc/vdr/plugins/transponders/S96.5E.tpl
-@dirrm etc/vdr/plugins/transponders
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-reelchannelscan.mo
 %%NLS%%share/locale/sl_SI/LC_MESSAGES/vdr-reelchannelscan.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/vdr-reelchannelscan.mo

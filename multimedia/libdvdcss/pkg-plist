@@ -9,5 +9,3 @@ libdata/pkgconfig/libdvdcss.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrmtry include/dvdcss
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -63,18 +63,3 @@ share/omf/gnome-subtitles/gnome-subtitles-sl.omf
 share/omf/gnome-subtitles/gnome-subtitles-sv.omf
 share/pixmaps/gnome-subtitles.svg
 man/man1/gnome-subtitles.1.gz
-@dirrmtry lib/gnome-subtitles
-@dirrmtry share/omf/gnome-subtitles
-@dirrmtry share/gnome/help/gnome-subtitles/C
-@dirrmtry share/gnome/help/gnome-subtitles/ca
-@dirrmtry share/gnome/help/gnome-subtitles/cs
-@dirrmtry share/gnome/help/gnome-subtitles/da
-@dirrmtry share/gnome/help/gnome-subtitles/de
-@dirrmtry share/gnome/help/gnome-subtitles/el
-@dirrmtry share/gnome/help/gnome-subtitles/es
-@dirrmtry share/gnome/help/gnome-subtitles/fr
-@dirrmtry share/gnome/help/gnome-subtitles/oc
-@dirrmtry share/gnome/help/gnome-subtitles/ro
-@dirrmtry share/gnome/help/gnome-subtitles/sl
-@dirrmtry share/gnome/help/gnome-subtitles/sv
-@dirrmtry share/gnome/help/gnome-subtitles

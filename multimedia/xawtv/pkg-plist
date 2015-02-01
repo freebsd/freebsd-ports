@@ -101,17 +101,3 @@ lib/X11/app-defaults/mtt
 lib/X11/de_DE.UTF-8/app-defaults/MoTV
 lib/X11/fr_FR.UTF-8/app-defaults/MoTV
 lib/X11/it_IT.UTF-8/app-defaults/MoTV
-@dirrm lib/xawtv
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/es/man8
-@dirrmtry man/es/man5
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrm share/xawtv
-@dirrm lib/X11/de_DE.UTF-8/app-defaults
-@dirrm lib/X11/de_DE.UTF-8
-@dirrm lib/X11/fr_FR.UTF-8/app-defaults
-@dirrm lib/X11/fr_FR.UTF-8
-@dirrm lib/X11/it_IT.UTF-8/app-defaults
-@dirrm lib/X11/it_IT.UTF-8

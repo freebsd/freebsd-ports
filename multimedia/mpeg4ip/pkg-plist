@@ -278,5 +278,3 @@ man/man3/MP4SetVideoProfileLevel.3.gz
 man/man3/MP4WriteRtpHint.3.gz
 man/man3/MP4WriteSample.3.gz
 %%DATADIR%%/mp4venc_template.par
-@dirrm %%DATADIR%%
-@dirrm lib/mp4player_plugin

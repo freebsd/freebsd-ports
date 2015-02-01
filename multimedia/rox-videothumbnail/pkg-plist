@@ -27,7 +27,3 @@ apps/VideoThumbnail/thumb.pyo
 apps/VideoThumbnail/vidthumb.py
 apps/VideoThumbnail/vidthumb.pyc
 apps/VideoThumbnail/vidthumb.pyo
-@dirrm apps/VideoThumbnail/Messages
-@dirrm apps/VideoThumbnail/Help
-@dirrm apps/VideoThumbnail
-@dirrmtry apps

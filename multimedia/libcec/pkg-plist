@@ -8,4 +8,3 @@ lib/libcec.so
 lib/libcec.so.2
 lib/libcec.so.2.0.1
 libdata/pkgconfig/libcec.pc
-@dirrm include/libcec

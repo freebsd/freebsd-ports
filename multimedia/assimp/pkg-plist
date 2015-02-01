@@ -47,7 +47,3 @@ lib/libassimp.so
 lib/libassimp.so.3
 lib/libassimp.so.3.0.1264
 libdata/pkgconfig/assimp.pc
-@dirrm lib/cmake/assimp-3.0
-@dirrmtry lib/cmake
-@dirrm include/assimp/Compiler
-@dirrm include/assimp

@@ -52,5 +52,3 @@ man/man1/kateenc.1.gz
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/ui_options.py
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/ui_options.pyc
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/ui_options.pyo
-%%KATEDJ%%@dirrm %%PYTHON_SITELIBDIR%%/kdj
-@dirrm include/kate

@@ -72,6 +72,3 @@ share/locale/ug/LC_MESSAGES/kmplayer.mo
 share/locale/uk/LC_MESSAGES/kmplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
 share/locale/zh_TW/LC_MESSAGES/kmplayer.mo
-@dirrmtry share/doc/HTML/en/kmplayer
-@dirrmtry share/apps/kmplayer/generators
-@dirrmtry share/apps/kmplayer

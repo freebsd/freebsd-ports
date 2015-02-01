@@ -179,6 +179,3 @@ share/icons/hicolor/scalable/apps/imagination.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/imagination.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/imagination.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/imagination.mo
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%
-@dirrm lib/imagination

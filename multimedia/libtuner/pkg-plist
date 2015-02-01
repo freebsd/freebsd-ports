@@ -33,6 +33,3 @@ include/libtuner/xc5000.h
 %%DATADIR%%/license.txt
 %%DATADIR%%/xc5000-1.6.114.fw
 %%DATADIR%%/or51132_vsb.fw
-@dirrm lib/libtuner
-@dirrm include/libtuner
-@dirrm %%DATADIR%%

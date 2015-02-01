@@ -15,4 +15,3 @@ lib/libv4lconvert.so.0
 libdata/pkgconfig/libv4l1.pc
 libdata/pkgconfig/libv4l2.pc
 libdata/pkgconfig/libv4lconvert.pc
-@dirrm lib/libv4l

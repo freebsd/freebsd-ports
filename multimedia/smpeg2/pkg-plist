@@ -17,4 +17,3 @@ lib/libsmpeg2.a
 lib/libsmpeg2.so
 %%PLAYMPEG%%man/man1/plaympeg.1.gz
 share/aclocal/smpeg2.m4
-@dirrm include/smpeg2

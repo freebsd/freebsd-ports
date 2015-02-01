@@ -12,6 +12,4 @@ lib/libbluray.so
 lib/libbluray.so.1
 lib/libbluray.so.1.5.0
 libdata/pkgconfig/libbluray.pc
-@dirrm include/libbluray
 %%JAVA%%lib/libbluray/libbluray.jar
-%%JAVA%%@dirrm lib/libbluray
