@@ -1,8 +1,6 @@
 bin/fusioninventory-agent
 bin/fusioninventory-injector
-@unexec if cmp -s %D/etc/fusioninventory/agent.cfg.sample %D/etc/fusioninventory/agent.cfg; then rm -f %D/etc/fusioninventory/agent.cfg; fi
-etc/fusioninventory/agent.cfg.sample
-@exec if [ ! -f %D/etc/fusioninventory/agent.cfg ] ; then cp -p %D/etc/fusioninventory/agent.cfg.sample %D/etc/fusioninventory/agent.cfg; fi
+@sample etc/fusioninventory/agent.cfg.sample
 %%PERL5_MAN3%%/FusionInventory::Agent.3.gz
 %%PERL5_MAN3%%/FusionInventory::Agent::Config.3.gz
 %%PERL5_MAN3%%/FusionInventory::Agent::HTTP::Client.3.gz
@@ -244,38 +242,3 @@ share/fusioninventory/html/logo.png
 share/fusioninventory/html/now.tpl
 share/fusioninventory/html/site.css
 share/fusioninventory/pci.ids
-@dirrm share/fusioninventory/html
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/XML/Query
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/XML
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Tools
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Win32
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Solaris
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/MacOS
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Distro
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Archs
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/HPUX
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Storages
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Softwares
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Lspci
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Dmidecode
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Archs
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Storages
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/AIX
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Target
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/Logger
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/HTTP/Protocol
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/HTTP/Client
-@dirrm share/fusioninventory/lib/FusionInventory/Agent/HTTP
-@dirrm share/fusioninventory/lib/FusionInventory/Agent
-@dirrm share/fusioninventory/lib/FusionInventory
-@dirrm share/fusioninventory/lib
-@dirrm share/fusioninventory
-@dirrmtry etc/fusioninventory
