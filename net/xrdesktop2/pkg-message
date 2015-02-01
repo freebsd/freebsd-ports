@@ -1,0 +1,19 @@
+=========================================================================
+* WARNING * WARNING * WARNING * WARNING * WARNING * WARNING * WARNING *
+
+	If are upgrading from a previous version;
+
+	xrdesktop_config is now xrdesktop2_config
+
+	If you intend to use previous config settings from 1.x versions, you
+	will need to start xrdesktop2, and allow it to create the config file
+	for the first time. Then exit xrdesktop2. You must do this BEFORE you
+	attempt to migrate settings from your previous config.
+
+	This is only required the first time you use xrdesktop2. This only
+	concerns those wanting to migrate their xrdesktop 1.x settings, and
+	does not affect first time users of xrdesktop2. This will NOT be
+	required in future versions.
+
+* WARNING * WARNING * WARNING * WARNING * WARNING * WARNING * WARNING *
+=========================================================================
