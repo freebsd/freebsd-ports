@@ -1,0 +1,11 @@
+Data validator. Validates only the data. No form generation, no javascript
+generation, no other stuff that does something else. Only data validation!
+
+Features:
+  * Validates data that is presented as a hash reference
+  * Multiple values
+  * Field registration
+  * Group validation
+  * Conditional validation
+
+WWW: https://metacpan.org/pod/Input::Validator
