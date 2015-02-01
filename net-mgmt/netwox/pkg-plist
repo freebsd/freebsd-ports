@@ -247,8 +247,3 @@ man/man1/netwox%%SHORTPORTVERSION%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tools/222.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/223.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
