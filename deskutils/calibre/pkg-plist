@@ -1126,6 +1126,7 @@ lib/calibre/calibre/plugins/msdes.so
 lib/calibre/calibre/plugins/pictureflow.so
 lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
+lib/calibre/calibre/plugins/qt_hack.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
 lib/calibre/calibre/plugins/tokenizer.so

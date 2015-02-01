@@ -3,7 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	1.48.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${NONEXISTENT}:${PORTSDIR}/x11-toolkits/qt4-gui:patch
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython \
@@ -70,8 +71,14 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share \
 		XDG_CONFIG_HOME=${WRKDIR}/xdg-config
 
+.include <bsd.port.pre.mk>
+
+QTGUI_WRKSRC!=	cd ${PORTSDIR}/x11-toolkits/qt4-gui && ${MAKE} -V WRKSRC
+
 post-patch:
 	@${FIND} ${WRKSRC}/resources/content_server -name "*.orig" -delete
+	@${REINPLACE_CMD} -e "/^qt_private_inc =/s|\[]|[ '${QTGUI_WRKSRC}/include/QtGui', '${QTGUI_WRKSRC}/include/QtCore' ]|" \
+		${WRKSRC}/setup/build_environment.py
 
 do-build:
 	@${MKDIR} ${WRKDIR}/calibre-config ${WRKDIR}/xdg-config
@@ -88,5 +95,6 @@ do-install:
 		${PYSETUP} install --prefix ${PREFIX} \
 		--staging-root ${STAGEDIR}${PREFIX})
 	@${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
