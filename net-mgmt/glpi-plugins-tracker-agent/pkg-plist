@@ -13,8 +13,4 @@ share/tracker_agent/inc/tracker_snmp.pm
 share/tracker_agent/inc/tracker_xml.pm
 share/tracker_agent/tools/verif_descr.pl
 share/tracker_agent/tracker_agent.pl
-@dirrm share/tracker_agent/tools
-@dirrm share/tracker_agent/log
-@dirrm share/tracker_agent/inc/devices
-@dirrm share/tracker_agent/inc
-@dirrm share/tracker_agent
+@dir share/tracker_agent/log

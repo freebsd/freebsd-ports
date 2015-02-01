@@ -13,7 +13,3 @@ man/man1/netwag%%SHORTPORTVERSION%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/txt/problemreport.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/problemusagebin.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/problemusageunix.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

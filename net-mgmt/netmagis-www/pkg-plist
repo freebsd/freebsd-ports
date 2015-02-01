@@ -338,37 +338,3 @@ lib/netmagis/tmpl/fr/topotop.html
 %%WWWDIR%%/statorg
 %%WWWDIR%%/statuser
 %%WWWDIR%%/topotop
-@dirrm %%WWWDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm lib/netmagis/tmpl/fr
-@dirrm lib/netmagis/tmpl/en
-@dirrm lib/netmagis/tmpl
-@dirrm lib/netmagis/htg/models/netmagis/texte
-@dirrm lib/netmagis/htg/models/netmagis/include/latex
-@dirrm lib/netmagis/htg/models/netmagis/include/html
-@dirrm lib/netmagis/htg/models/netmagis/include
-@dirrm lib/netmagis/htg/models/netmagis/css/images
-@dirrm lib/netmagis/htg/models/netmagis/css
-@dirrm lib/netmagis/htg/models/netmagis
-@dirrm lib/netmagis/htg/models/empty/transp
-@dirrm lib/netmagis/htg/models/empty/texte
-@dirrm lib/netmagis/htg/models/empty/include/latex
-@dirrm lib/netmagis/htg/models/empty/include/html
-@dirrm lib/netmagis/htg/models/empty/include
-@dirrm lib/netmagis/htg/models/empty/accueil
-@dirrm lib/netmagis/htg/models/empty
-@dirrm lib/netmagis/htg/models/crc/transp
-@dirrm lib/netmagis/htg/models/crc/texte
-@dirrm lib/netmagis/htg/models/crc/personne
-@dirrm lib/netmagis/htg/models/crc/include/latex
-@dirrm lib/netmagis/htg/models/crc/include/html
-@dirrm lib/netmagis/htg/models/crc/include
-@dirrm lib/netmagis/htg/models/crc/css/images
-@dirrm lib/netmagis/htg/models/crc/css
-@dirrm lib/netmagis/htg/models/crc/accueil
-@dirrm lib/netmagis/htg/models/crc
-@dirrm lib/netmagis/htg/models
-@dirrm lib/netmagis/htg/doc/pres19980629
-@dirrm lib/netmagis/htg/doc
-@dirrm lib/netmagis/htg
-@dirrmtry lib/netmagis

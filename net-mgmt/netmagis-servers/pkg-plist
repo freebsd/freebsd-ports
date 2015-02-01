@@ -7,4 +7,3 @@ sbin/mkzones
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.mroute
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.smtpf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
