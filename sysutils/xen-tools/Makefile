@@ -13,9 +13,9 @@ COMMENT=	Xen tools within FreeBSD domU
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 DISTFILES=	xen-${PORTVERSION}.tar.gz
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		lib/libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		lib/ibyajl.so:${PORTSDIR}/devel/yajl
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/lib/libglib-2.0.so:${PORTSDIR}/devel/glib20 \
+		${LOCALBASE}/lib/ibyajl.so:${PORTSDIR}/devel/yajl
 
 USES=		gmake python:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
 USE_PERL5=	build
