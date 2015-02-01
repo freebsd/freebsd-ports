@@ -16,4 +16,3 @@ man/man1/pancho.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
 %%PORTDOCS%%%%DOCSDIR%%/Plugin.sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

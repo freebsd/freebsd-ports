@@ -65,10 +65,3 @@ sbin/ipfw2netflow
 %%CGI%%%%WWWDIR%%/images/showtable-logo.gif
 %%CGI%%%%WWWDIR%%/index.html
 %%CGI%%%%WWWDIR%%/netams.js
-%%CGI%%@dirrm %%WWWDIR%%/images
-%%CGI%%@dirrm %%WWWDIR%%/cgi-bin/admin
-%%CGI%%@dirrm %%WWWDIR%%/cgi-bin
-%%CGI%%@dirrm %%WWWDIR%%
-@dirrm %%DATADIR%%/tools/oracle
-@dirrm %%DATADIR%%/tools
-@dirrmtry %%DATADIR%%

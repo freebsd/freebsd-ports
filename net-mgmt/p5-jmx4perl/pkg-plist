@@ -116,4 +116,3 @@ man/man1/jolokia.1.gz
 %%ETCDIR%%/threads.cfg.sample
 %%ETCDIR%%/tomcat.cfg.sample
 %%ETCDIR%%/weblogic.cfg.sample
-@dirrmtry %%ETCDIR%%
