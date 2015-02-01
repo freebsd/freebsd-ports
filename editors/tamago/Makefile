@@ -3,7 +3,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -31,13 +31,7 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		README.Debian changelog.Debian
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_PORT_NAME:Memacs2[1234]}
-PLIST_SUB+=	HAS_JISX0213=""
-.else
-PLIST_SUB+=	HAS_JISX0213="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-build:
 	cd ${WRKSRC}/helper && \
@@ -54,4 +48,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
