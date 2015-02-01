@@ -411,6 +411,7 @@
     SUBDIR += p5-Authen-DecHpwd
     SUBDIR += p5-Authen-Htpasswd
     SUBDIR += p5-Authen-Krb5
+    SUBDIR += p5-Authen-Krb5-Simple
     SUBDIR += p5-Authen-Libwrap
     SUBDIR += p5-Authen-NTLM
     SUBDIR += p5-Authen-OATH
