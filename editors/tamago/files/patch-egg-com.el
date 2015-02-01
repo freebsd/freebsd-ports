@@ -1,5 +1,5 @@
 --- egg-com.el.orig	2015-01-31 19:24:09.000000000 +0900
-+++ egg-com.el	2015-01-31 19:25:52.000000000 +0900
++++ egg-com.el	2015-02-02 00:29:50.000000000 +0900
 @@ -99,9 +99,10 @@
      (prog1 (- (point) pos)
        (goto-char pos))))
@@ -66,7 +66,17 @@
  
  (defconst egg-pinyin-shengmu
    '((""  . 0)  ("B" . 1)  ("C"  . 2)  ("Ch" . 3)  ("D" . 4)
-@@ -828,9 +848,10 @@
+@@ -578,8 +598,7 @@
+     (set-buffer work)
+     (erase-buffer)
+     (if (null (stringp from))
+-	(save-excursion
+-	  (set-buffer buf)
++	(with-current-buffer buf
+ 	  (setq from (buffer-substring from to))))
+     (insert (string-as-multibyte from))
+     (encode-fixed-euc-china-region 1 (point-max) type)
+@@ -828,9 +847,10 @@
  ;; Do not move the point, leave it where it was.
  (defmacro comm-accept-process-output ()
    `(let ((p (point)))
@@ -80,7 +90,7 @@
  
  (defmacro comm-require-process-output (n)
    `(if (< (point-max) (+ (point) ,n))
-@@ -839,10 +860,11 @@
+@@ -839,10 +859,11 @@
  (defun comm-wait-for-space (proc n)
    (let ((p (point))
  	(r (+ (point) n)))
@@ -96,3 +106,13 @@
  
  (defmacro comm-following+forward-char ()
    `(prog1
+@@ -967,8 +988,7 @@
+ 	  ,@vlist)
+      (if (and (memq (process-status proc) '(open run))
+ 	      (buffer-live-p buffer))
+-	 (save-excursion
+-	   (set-buffer buffer)
++	 (with-current-buffer buffer
+ 	   (let ,euc-select
+ 	     (erase-buffer)
+ 	     ,send-expr
