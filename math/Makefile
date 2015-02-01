@@ -303,6 +303,7 @@
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
+    SUBDIR += octave-forge-interval
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
     SUBDIR += octave-forge-linear-algebra
