@@ -1284,6 +1284,7 @@
     SUBDIR += xprobe
     SUBDIR += xpvm
     SUBDIR += xrdesktop
+    SUBDIR += xrdesktop2
     SUBDIR += xrdp
     SUBDIR += xrdp-devel
     SUBDIR += yami4
