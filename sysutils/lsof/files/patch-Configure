@@ -1,0 +1,11 @@
+--- Configure.orig	2014-12-19 19:55:04.000000000 +0100
++++ Configure	2015-02-01 12:45:30.783557202 +0100
+@@ -1642,7 +1642,7 @@
+     then
+       FREEBSD_MAKE_CONF="/etc/make.conf"
+     fi	# }
+-    if test -r $FREEBSD_MAKE_CONF	# {
++    if test $FREEBSD_MAKE_CONF	# {
+     then
+       LSOF_TMP1=`echo "all:\n.include <bsd.prog.mk>" | $LSOF_MAKE -f- -VCFLAGS`
+       LSOF_TMP=1
