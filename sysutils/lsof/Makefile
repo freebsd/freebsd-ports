@@ -41,8 +41,8 @@ SHEBANG_FILES=	scripts/sort_res.perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not compile on arm
+.if !empty(ARCH:Marm*) && ((${OSVERSION} < 1001505) || (${OSVERSION} > 1100000 && ${OSVERSION} < 1100052))
+BROKEN=	Not supported on ARM platform below release 10.1 or a more recent current
 .endif
 
 CONFIGURE_SCRIPT=	Configure
