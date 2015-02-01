@@ -1053,6 +1053,7 @@
     SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-mupdf
     SUBDIR += zathura-pdf-poppler
+    SUBDIR += zathura-ps
     SUBDIR += zbar
     SUBDIR += zgv
     SUBDIR += zimg
