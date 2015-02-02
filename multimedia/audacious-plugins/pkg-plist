@@ -222,34 +222,3 @@ share/audacious/Skins/TinyPlayer/volume.png
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
-%%NLS%%@dirrmtry share/locale/sr_RS/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr_RS
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ml_IN
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id_ID
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
-%%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cmn
-@dirrm share/audacious/Skins/TinyPlayer
-@dirrm share/audacious/Skins/Refugee
-@dirrm share/audacious/Skins/Osmosis
-@dirrm share/audacious/Skins/Ivory
-@dirrm share/audacious/Skins/Default
-@dirrm share/audacious/Skins/Classic1.3
-@dirrm share/audacious/Skins/Classic
-@dirrm share/audacious/Skins
-@dirrmtry share/audacious
-@dirrm lib/audacious/Visualization
-@dirrm lib/audacious/Transport
-@dirrm lib/audacious/Output
-@dirrm lib/audacious/Input
-@dirrm lib/audacious/General
-@dirrm lib/audacious/Effect
-@dirrm lib/audacious/Container
-@dirrmtry lib/audacious

@@ -619,10 +619,3 @@ lib/X11/icons/chameleon-darkskyblue-small/cursors/zoom-out.in
 lib/X11/icons/chameleon-darkskyblue-small/cursors/zoom-out.png
 lib/X11/icons/chameleon-darkskyblue-small/index.theme
 lib/X11/icons/chameleon-darkskyblue-small/preview.jpg
-@dirrm lib/X11/icons/chameleon-darkskyblue-small/cursors
-@dirrm lib/X11/icons/chameleon-darkskyblue-small
-@dirrm lib/X11/icons/chameleon-darkskyblue-regular/cursors
-@dirrm lib/X11/icons/chameleon-darkskyblue-regular
-@dirrm lib/X11/icons/chameleon-darkskyblue-large/cursors
-@dirrm lib/X11/icons/chameleon-darkskyblue-large
-@dirrm lib/X11/icons

@@ -1,0 +1,38 @@
+--- SConstruct.orig	2014-12-16 05:19:18.000000000 +1030
++++ SConstruct	2015-01-27 00:22:23.169373963 +1030
+@@ -110,7 +110,8 @@
+ opts.Add('builtin_zlib','Use built-in zlib (yes/no)','yes')
+ opts.Add('openssl','Use OpenSSL (yes/no/builtin)','no')
+ opts.Add('musepack','Musepack Audio (yes/no)','yes')
+-opts.Add("CXX", "Compiler");
++opts.Add("CC", "C Compiler")
++opts.Add("CXX", "C++ Compiler");
+ opts.Add("CCFLAGS", "Custom flags for the C++ compiler");
+ opts.Add("CFLAGS", "Custom flags for the C compiler");
+ opts.Add("LINKFLAGS", "Custom flags for the linker");
+@@ -172,15 +173,17 @@
+ 
+ 	env.extra_suffix=""
+ 
+-	CCFLAGS = env.get('CCFLAGS', '')
+-	env['CCFLAGS'] = ''
+-
+-	env.Append(CCFLAGS=string.split(str(CCFLAGS)))
+-
+-	CFLAGS = env.get('CFLAGS', '')
+-	env['CFLAGS'] = ''
++	env['CC'] = os.environ['CC']
++	
++	env['CXX'] = os.environ['CXX']
+ 
+-	env.Append(CFLAGS=string.split(str(CFLAGS)))
++	CFLAGS = os.environ['CFLAGS']
++	env['CFLAGS'] = []
++	env.Append(CFLAGS=string.split(CFLAGS))
++
++	CCFLAGS = os.environ['CXXFLAGS']
++	env['CCFLAGS'] = []
++	env.Append(CCFLAGS=string.split(CCFLAGS))
+ 
+ 	LINKFLAGS = env.get('LINKFLAGS', '')
+ 	env['LINKFLAGS'] = ''

@@ -35,8 +35,4 @@ share/locale/es/LC_MESSAGES/wdm.mo
 share/locale/fr_FR/LC_MESSAGES/wdm.mo
 share/locale/ja/LC_MESSAGES/wdm.mo
 share/locale/ru/LC_MESSAGES/wdm.mo
-@dirrmtry lib/X11/wdm/pixmaps
-@dirrmtry lib/X11/wdm/authdir
-@dirrmtry lib/X11/wdm
 %%PAM%%%%LOCALBASE%%/etc/pam.d/wdm
-@dirrmtry /var/run/wdm

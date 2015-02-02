@@ -265,23 +265,3 @@ share/icons/hicolor/64x64/apps/umplayer.png
 %%DATADIR%%/translations/umplayer_vi_VN.qm
 %%DATADIR%%/translations/umplayer_zh_CN.qm
 %%DATADIR%%/translations/umplayer_zh_TW.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/themes/Vista
-@dirrm %%DATADIR%%/themes/Modern
-@dirrm %%DATADIR%%/themes/Mac
-@dirrm %%DATADIR%%/themes/Gonzo
-@dirrm %%DATADIR%%/themes/Black
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/shortcuts
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

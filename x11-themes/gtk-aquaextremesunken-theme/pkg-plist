@@ -258,30 +258,6 @@
 %%GTK20%%share/themes/AquaExtremeSunken/gtk-2.0/iconrc
 %%GTK20%%share/themes/AquaExtremeSunken/gtk-2.0/highlight-alt.png
 %%GTK20%%share/themes/AquaExtremeSunken/index.theme
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Tabs
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/OptionCheck
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Menus
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Scrollbars
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Panel
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Tooltips
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Arrows
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Handles
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Buttons/Aquaish
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Buttons
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Shadows
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Spinbuttons
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Others
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Menubar
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/icons
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Frames
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Toolbar
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Progress
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Bgs
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Listheaders
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Lines
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0/Sliders
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken/gtk-2.0
-%%GTK20%%@dirrm share/themes/AquaExtremeSunken
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/titlebar-right-focused.png
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/button-maximize-focused.png
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/titlebar-left-unfocused.png
@@ -309,6 +285,3 @@
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/titlebar-right-shaded-focused.png
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/button-minimize-pressed.png
 %%METACITY%%share/themes/AquaExtremeSunken/metacity-1/button-maximize-unfocused.png
-%%METACITY%%@dirrm share/themes/AquaExtremeSunken/metacity-1
-%%METACITY%%@dirrm share/themes/AquaExtremeSunken
-@dirrmtry share/themes

@@ -14,8 +14,8 @@ COMMENT=	Program to create labels and business cards
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui gnomedocutils intlhack
-WANT_GNOME=	yes
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-desktopdb --disable-update-mimedb

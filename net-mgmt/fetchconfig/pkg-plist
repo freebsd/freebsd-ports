@@ -18,5 +18,3 @@ bin/fetchconfig
 %%SITE_PERL%%/fetchconfig/model/Terayon.pm
 %%SITE_PERL%%/fetchconfig/Constants.pm
 %%SITE_PERL%%/fetchconfig/Logger.pm
-@dirrm lib/perl5/site_perl
-@dirrm lib/perl5

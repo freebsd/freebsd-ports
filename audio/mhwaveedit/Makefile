@@ -50,7 +50,7 @@ LADSPA_BUILD_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
 LADSPA_RUN_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
 LADSPA_CONFIGURE_ENV_OFF=	ac_cv_header_ladspa_h=no
 OSS_CONFIGURE_WITH=	oss
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
 PORTAUDIO_CONFIGURE_WITH=	portaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulse

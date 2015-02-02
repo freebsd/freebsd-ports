@@ -1,6 +1,42 @@
 --- thttpd.c.orig	Wed Jun 29 19:50:59 2005
 +++ thttpd.c	Sun Jun 17 21:30:11 2007
-@@ -1723,12 +1723,45 @@
+@@ -331,6 +331,7 @@
+ re_open_logfile( void )
+     {
+     FILE* logfp;
++    int retchmod;
+ 
+     if ( no_log || hs == (httpd_server*) 0 )
+ 	return;
+@@ -340,7 +341,8 @@
+ 	{
+ 	syslog( LOG_NOTICE, "re-opening logfile" );
+ 	logfp = fopen( logfile, "a" );
+-	if ( logfp == (FILE*) 0 )
++	retchmod = chmod( logfile, S_IRUSR|S_IWUSR|S_IRGRP );
++	if ( logfp == (FILE*) 0 || retchmod != 0 )
+ 	    {
+ 	    syslog( LOG_CRIT, "re-opening %.80s - %m", logfile );
+ 	    return;
+@@ -360,6 +362,7 @@
+     gid_t gid = 32767;
+     char cwd[MAXPATHLEN+1];
+     FILE* logfp;
++    int retchmod;
+     int num_ready;
+     int cnum;
+     connecttab* c;
+@@ -429,7 +432,8 @@
+ 	else
+ 	    {
+ 	    logfp = fopen( logfile, "a" );
+-	    if ( logfp == (FILE*) 0 )
++	    retchmod = chmod( logfile, S_IRUSR|S_IWUSR|S_IRGRP );
++	    if ( logfp == (FILE*) 0 || retchmod != 0 )
+ 		{
+ 		syslog( LOG_CRIT, "%.80s - %m", logfile );
+ 		perror( logfile );
+@@ -1714,12 +1718,45 @@
      if ( hc->responselen == 0 )
  	{
  	/* No, just write the file. */
@@ -15,7 +51,7 @@
 +	    sz = sbytes > 0 ? sbytes : -1;
 +	else if (sz == 0)
 +	    sz = sbytes;
-+#else		      
++#else
  	sz = write(
  	    hc->conn_fd, &(hc->file_address[c->next_byte_index]),
  	    MIN( c->end_byte_index - c->next_byte_index, max_bytes ) );
@@ -42,11 +78,11 @@
 +	    sz = sbytes > 0 ? sbytes : -1;
 +	else if (sz == 0)
 +	    sz = sbytes;
-+#else		      
++#else
  	/* Yes.  We'll combine headers and file into a single writev(),
  	** hoping that this generates a single packet.
  	*/
-@@ -1739,6 +1772,7 @@
+@@ -1730,6 +1767,7 @@
  	iv[1].iov_base = &(hc->file_address[c->next_byte_index]);
  	iv[1].iov_len = MIN( c->end_byte_index - c->next_byte_index, max_bytes );
  	sz = writev( hc->conn_fd, iv, 2 );
@@ -54,7 +90,7 @@
  	}
  
      if ( sz < 0 && errno == EINTR )
-@@ -1786,7 +1820,11 @@
+@@ -1777,7 +1815,11 @@
  	**
  	** And ECONNRESET isn't interesting either.
  	*/

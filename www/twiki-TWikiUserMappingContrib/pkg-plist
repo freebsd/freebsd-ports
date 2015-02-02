@@ -32,20 +32,3 @@
 %%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingContribTests.pm
 %%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingTests.pm
 %%TWDIR%%/tools/upgrade_emails.pl
-@dirrm %%TWDIR%%/data/Main
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib
-@dirrm %%TWDIR%%/lib/TWiki/Contrib
-@dirrm %%TWDIR%%/lib/TWiki/Users
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/RegistrationApprovals
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/test/unit/TWikiUserMappingContrib
-@dirrm %%TWDIR%%/test/unit
-@dirrm %%TWDIR%%/test
-@dirrm %%TWDIR%%/tools
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

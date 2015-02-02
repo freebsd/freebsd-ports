@@ -62,13 +62,3 @@ man/man1/jigl2slideshow.1.gz
 %%NOTHEMES%%%%DATADIR%%/themes/wedding/slide_thumbnail.jpg
 %%NOTHEMES%%%%DATADIR%%/themes/wedding/journal.ttf.license.txt
 %%NOTHEMES%%%%DATADIR%%/themes/wedding/title_thumbnail.jpg
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/wedding
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/travel
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/dinner
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/default
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/babypink
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/babyblue
-%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes
-%%NOTHEMES%%@dirrmtry %%DATADIR%%
-%%NOTHEMES%%@dirrmtry share/apps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

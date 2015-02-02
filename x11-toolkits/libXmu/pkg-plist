@@ -35,5 +35,3 @@ libdata/pkgconfig/xmu.pc
 libdata/pkgconfig/xmuu.pc
 %%DOCSDIR%%/Xmu.xml
 %%DOCSDIR%%/xlogo.svg
-@dirrmtry %%DOCSDIR%%
-@dirrmtry include/X11/Xmu

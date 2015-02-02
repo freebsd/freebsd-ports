@@ -35,13 +35,3 @@
 %%XPI_XPIDIR%%/chrome/skin/x-hover.png
 %%XPI_XPIDIR%%/chrome/skin/x-normal.png
 %%XPI_XPIDIR%%/install.rdf
-@dirrmtry %%XPI_XPIDIR%%/chrome/content
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale/el-GR
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale/hu-HU
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale/ko-KR
-@dirrmtry %%XPI_XPIDIR%%/chrome/locale
-@dirrmtry %%XPI_XPIDIR%%/chrome/skin/dark
-@dirrmtry %%XPI_XPIDIR%%/chrome/skin
-@dirrmtry %%XPI_XPIDIR%%/chrome

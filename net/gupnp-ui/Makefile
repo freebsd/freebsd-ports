@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+INSTALL_TARGET=	install-strip
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig python

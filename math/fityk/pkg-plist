@@ -23,5 +23,3 @@ share/fityk/samples/nacl01.fit
 share/fityk/samples/README
 share/fityk/samples/test_syntax.fit
 share/fityk/samples/read-shockley.fit
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

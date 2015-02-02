@@ -398,11 +398,13 @@
     SUBDIR += kipi-plugin-calendar
     SUBDIR += kipi-plugin-debianscreenshots
     SUBDIR += kipi-plugin-dngconverter
+    SUBDIR += kipi-plugin-dropbox
     SUBDIR += kipi-plugin-expoblending
     SUBDIR += kipi-plugin-facebook
     SUBDIR += kipi-plugin-flashexport
     SUBDIR += kipi-plugin-flickrexport
     SUBDIR += kipi-plugin-galleryexport
+    SUBDIR += kipi-plugin-googledrive
     SUBDIR += kipi-plugin-gpssync
     SUBDIR += kipi-plugin-htmlexport
     SUBDIR += kipi-plugin-imageshackexport
@@ -462,6 +464,7 @@
     SUBDIR += libart_lgpl
     SUBDIR += libaux
     SUBDIR += libboard
+    SUBDIR += libbpg
     SUBDIR += libcaca
     SUBDIR += libcdr01
     SUBDIR += libchamplain
@@ -942,6 +945,7 @@
     SUBDIR += sdl_gfx
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
+    SUBDIR += sdump
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seom
@@ -1046,9 +1050,11 @@
     SUBDIR += yed
     SUBDIR += yukon
     SUBDIR += zathura
+    SUBDIR += zathura-cb
     SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-mupdf
     SUBDIR += zathura-pdf-poppler
+    SUBDIR += zathura-ps
     SUBDIR += zbar
     SUBDIR += zgv
     SUBDIR += zimg

@@ -151,7 +151,6 @@
     SUBDIR += smstools3
     SUBDIR += soundmodem
     SUBDIR += spandsp
-    SUBDIR += spandsp-devel
     SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += svxlink

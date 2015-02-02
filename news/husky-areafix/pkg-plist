@@ -6,4 +6,3 @@ include/areafix/version.h
 lib/libareafix.a
 lib/libareafix.so
 lib/libareafix.so.1
-@dirrmtry include/areafix

@@ -14,6 +14,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
+DEPRECATED=	not supported by upstream
+EXPIRATION_DATE=	2015-02-28
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

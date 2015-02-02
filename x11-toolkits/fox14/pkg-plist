@@ -244,6 +244,3 @@ man/man1/reswrap-14.1.gz
 %%APPS%%man/man1/PathFinder-14.1.gz
 %%APPS%%man/man1/adie-14.1.gz
 %%APPS%%man/man1/calculator-14.1.gz
-@dirrm include/fox-%%MAJORVER%%/chart
-@dirrm include/fox-%%MAJORVER%%
-@dirrm bin/fox-%%MAJORVER%%

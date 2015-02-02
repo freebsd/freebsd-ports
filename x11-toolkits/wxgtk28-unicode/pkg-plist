@@ -37,7 +37,3 @@ lib/libwx_gtk2u_xrc-2.8.so
 lib/libwx_gtk2u_xrc-2.8.so.0
 lib/libwx_gtk2u_xrc-2.8.so.0.8.0
 lib/wx/include/gtk2-unicode-release-2.8/wx/setup.h
-@dirrm lib/wx/include/gtk2-unicode-release-2.8/wx
-@dirrm lib/wx/include/gtk2-unicode-release-2.8
-@dirrmtry lib/wx/include
-@dirrmtry lib/wx

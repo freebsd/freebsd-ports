@@ -44,4 +44,3 @@ share/locale/sv/LC_MESSAGES/kde-gtk-config.mo
 share/locale/uk/LC_MESSAGES/kde-gtk-config.mo
 share/locale/zh_CN/LC_MESSAGES/kde-gtk-config.mo
 share/locale/zh_TW/LC_MESSAGES/kde-gtk-config.mo
-@dirrm share/apps/kcm-gtk-module

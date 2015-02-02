@@ -1,0 +1,10 @@
+--- src/Makefile.orig	2015-01-19 15:35:31.000000000 +0100
++++ src/Makefile	2015-01-19 15:35:42.000000000 +0100
+@@ -15,7 +15,6 @@ all : $(LIBTARGETS) $(PCTARGETS) $(BINTA
+ OBJECTS = lib.o vars.o efivarfs.o guid.o guidlist.o guid-symbols.o
+ DEPS = .lib.c.P .efivar.c.P .efivar.h.P .vars.c.P .lib.h.P \
+ 	.generics.h.P .guid.h.P .guid.c.P
+-LIBS = dl
+ 
+ libefivar.a :: $(OBJECTS)
+ 

@@ -6,4 +6,3 @@ lib/X11/fonts/clearsans/ClearSans-Medium.ttf
 lib/X11/fonts/clearsans/ClearSans-MediumItalic.ttf
 lib/X11/fonts/clearsans/ClearSans-Regular.ttf
 lib/X11/fonts/clearsans/ClearSans-Thin.ttf
-@dirrm lib/X11/fonts/clearsans

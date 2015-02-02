@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# Note:
+# We have to use grep or wc after awk, else
+# there is no usable ret value that can be
+# used for further processing
+
+HTTPD_CONF="%%ETCDIR%%/httpd.conf"
+MPM_FALLBACK="%%ETCDIR%%/modules.d/%%MPMF%%"
+
+_log_msg(){
+	/usr/bin/logger -p local0.notice -s -t apache24 "$1"
+}
+
+_check_deprecated(){
+if [ -r ${HTTPD_CONF} ]; then
+	/usr/bin/awk '/^LoadModule[[:blank:]]+mpm_(event|prefork|worker)_module/ {print $2}' ${HTTPD_CONF} | /usr/bin/grep -q '^mpm_'
+	if [ $? -ne 0 ]; then
+		_log_msg "==================================================="
+		_log_msg "WARNING!"
+		_log_msg " No apache MPM module is activated in httpd.conf,"
+		_log_msg " mpm_prefork will be activated as fall back"
+		_log_msg ""
+		_log_msg " Please follow the instructions in"
+		_log_msg "  ${MPM_FALLBACK}"
+		_log_msg "==================================================="
+
+cat > ${MPM_FALLBACK} << _EOF
+# ==================================================================
+# Note:
+# www/apache24 build changed from static MPM to modular MPM loading!
+#
+# This file was installed as fall back, since no activated MPM
+# was detected in the existing httpd.conf.
+#
+# Please merge additions from httpd.conf.sample into your httpd.conf!
+#
+# After activating one of the mpm_modules in httpd.conf it is save
+# to deactivate the "LoadModule" line in this file.
+#
+# In case mod_(php|perl|python|...) modules from the official FreeBSD
+# package repo are installed please use the mpm_prefork module, else
+# feel free to test mpm_event (preferred) or mpm_worker.
+#
+# For more information see:
+#  http://httpd.apache.org/docs/2.4/mod/
+# ==================================================================
+
+LoadModule mpm_prefork_module libexec/apache24/mod_mpm_prefork.so
+_EOF
+
+	fi # $? -ne 0
+else
+	echo ${HTTPD_CONF} not readable
+fi
+}
+
+# run only if build with modular MPM
+if [ "$2" = "POST-INSTALL" ]; then
+	%%MPM_FALLBACK_CHECK%%_check_deprecated
+fi
+

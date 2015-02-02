@@ -34,6 +34,3 @@ share/themes/microgui/metacity-1/title_right_shade.png
 share/themes/microgui/metacity-1/title_right_shade_off.png
 share/themes/microgui/metacity-1/title_text_bg.png
 share/themes/microgui/metacity-1/title_text_bg_off.png
-@dirrm share/themes/microgui/metacity-1
-@dirrm share/themes/microgui
-@dirrmtry share/themes

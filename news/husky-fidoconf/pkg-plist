@@ -43,5 +43,3 @@ lib/libfidoconfig.so.1
 %%PORTDOCS%%man/man1/linkedto.1.gz
 %%PORTDOCS%%man/man1/tparser.1.gz
 %%PORTDOCS%%share/doc/husky/fidoconfig.html
-@dirrmtry include/fidoconf
-@dirrmtry share/doc/husky

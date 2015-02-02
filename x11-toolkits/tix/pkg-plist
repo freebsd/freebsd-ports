@@ -220,9 +220,3 @@ lib/Tix8.4.3/pref/WmDefault.txt
 lib/Tix8.4.3/pref/pkgIndex.tcl
 lib/libTix8.4.3.so
 lib/libTix8.4.3.so.0
-@dirrm lib/Tix8.4.3/bitmaps
-@dirrm lib/Tix8.4.3/pref
-@dirrm lib/Tix8.4.3
-@dirrm include/tix/unix
-@dirrm include/tix/generic
-@dirrm include/tix

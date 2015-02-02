@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2003-11-03 20:49:37.000000000 +0800
-+++ src/Makefile.in	2014-08-30 04:12:00.646368587 +0800
-@@ -279,12 +279,12 @@
+--- src/Makefile.in.orig	2003-11-03 12:49:37 UTC
++++ src/Makefile.in
+@@ -279,12 +279,12 @@ uninstall-am: uninstall-info-am uninstal
  
  
  install-data-hook:

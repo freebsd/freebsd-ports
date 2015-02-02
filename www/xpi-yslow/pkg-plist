@@ -41,11 +41,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/yslow.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/license.txt
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome/content/yslow/lib
-@dirrm %%XPI_XPIDIR%%/chrome/content/yslow/img
-@dirrm %%XPI_XPIDIR%%/chrome/content/yslow
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome

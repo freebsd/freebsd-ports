@@ -10,8 +10,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
 MAINTAINER=	jon@witchspace.com
 COMMENT=	Java program to graphically display disk usage statistics
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

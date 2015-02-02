@@ -3,7 +3,7 @@
 
 PORTNAME=	foxitreader
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://cdn04.foxitsoftware.com/pub/foxit/%SUBDIR%/:reader,manual
 MASTER_SITE_SUBDIR=	reader/desktop/linux/1.x/${PORTVERSION:R}/enu/:reader \
@@ -14,8 +14,9 @@ EXTRACT_ONLY=	FoxitReader-${PORTVERSION}.tar.bz2
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Free PDF document viewer for desktop Linux
 
-LICENSE_NAME=	EULA
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE=	EULA
+LICENSE_NAME=	End-User License Agreement
+LICENSE_PERMS=	auto-accept
 LICENSE_TEXT=	http://www.foxitsoftware.com/pdf/desklinux/eula.htm
 
 NO_BUILD=	yes
@@ -25,7 +26,7 @@ OPTIONS_SUB=	yes
 
 USES=	gettext tar:bzip2
 USE_LINUX=	yes
-USE_LINUX_APPS=	avahi-libs cups-libs gtk2
+USE_LINUX_APPS=	avahi-libs cups-libs dbuslibs gtk2
 
 WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 

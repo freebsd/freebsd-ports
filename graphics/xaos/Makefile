@@ -49,6 +49,7 @@ INFO=		xaos
 
 PLIST_SUB+=	XAOSDIR="share/XaoS"
 
+MAKE_JOBS_UNSAFE=	yes
 DESKTOP_ENTRIES=	"XaoS" "" "${PREFIX}/share/pixmaps/xaos.png" \
 			"xaos" "" false
 

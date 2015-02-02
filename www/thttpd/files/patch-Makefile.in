@@ -20,7 +20,17 @@
  		WEBDIR=$(WEBDIR) \
  		CGIBINDIR=$(CGIBINDIR) \
  		MANDIR=$(MANDIR) \
-@@ -118,9 +116,7 @@ install-man:
+@@ -110,17 +108,15 @@ install:	installthis install-man install
+ 
+ installthis:
+ 	-mkdir -p $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 555 -o bin -g bin thttpd $(DESTDIR)$(BINDIR)
++	$(INSTALL) -s -m 555 thttpd $(DESTDIR)$(BINDIR)
+ 
+ install-man:
+ 	-mkdir -p $(DESTDIR)$(MANDIR)/man8
+-	$(INSTALL) -m 444 -o bin -g bin thttpd.8 $(DESTDIR)$(MANDIR)/man8
++	$(INSTALL) -m 444 thttpd.8 $(DESTDIR)$(MANDIR)/man8
  
  installsubdirs:
  	for i in $(SUBDIRS) ; do ( \

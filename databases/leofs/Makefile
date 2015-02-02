@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.5
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	fff7aa7
-GH_COMMIT=	fff7aa7
+GH_TAGNAME=	0c21a95
+GH_COMMIT=	0c21a95
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -69,11 +69,11 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?16cd90b:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?08c3aae:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?713e65d:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}?27245f5:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?80dc194:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?1f20aa4:leo_storage \
 	DeadZen/goldrush=0.1.6?71e6321:goldrush \
-	basho/cuttlefish=origin/2.0?602a0c3:cuttlefish \
+	basho/cuttlefish=2.0.0-34?a459ba6:cuttlefish \
 	basho/eleveldb=1.4.11?d22a186:eleveldb \
 	basho/lager=2.0.3?b6b6ceb:lager \
 	basho/leveldb=1.4.11?aea66e1:leveldb \
@@ -94,16 +94,16 @@ LEOFS_DEPS=	\
 	leo-project/leo_dcerl=0.2.11?929fd59:leo_dcerl \
 	leo-project/leo_logger=1.1.4?4687511:leo_logger \
 	leo-project/leo_mcerl=0.4.1?addcda0:leo_mcerl \
-	leo-project/leo_mq=1.3.0?5dd2272:leo_mq \
-	leo-project/leo_object_storage=1.2.0?625d08a:leo_object_storage \
+	leo-project/leo_mq=1.3.3?56287fb:leo_mq \
+	leo-project/leo_object_storage=1.2.3?0c89feb:leo_object_storage \
 	leo-project/leo_ordning_reda=0.10.9?eb168f0:leo_ordning_reda \
 	leo-project/leo_pod=0.6.2?cfd8557:leo_pod \
-	leo-project/leo_redundant_manager=1.9.2?83b57c4:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.6?58ab91e:leo_redundant_manager \
 	leo-project/leo_rpc=0.8.10?5f55064:leo_rpc \
 	leo-project/leo_s3_libs=1.1.5?cb77f7e:leo_s3_libs \
-	leo-project/leo_statistics=1.0.7?4bdb570:leo_statistics \
+	leo-project/leo_statistics=1.0.8?3112bf4:leo_statistics \
+	leo-project/leo_watchdog=0.6.2?a5a3865:leo_watchdog \
 	leo-project/libcutil=0.4.3?36b02d9:libcutil \
-	leo-project/leo_watchdog=0.6.0?a03ef1f:leo_watchdog \
 	leo-project/nfs_rpc_server=0.2.2?d63c5ba:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.4?850143a:savanna_agent \
 	leo-project/savanna_commons=0.8.6?bbcc77f:savanna_commons \

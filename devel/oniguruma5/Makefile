@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-PORTVERSION=	5.9.5
-PORTREVISION=	1
+PORTVERSION=	5.9.6
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 PKGNAMESUFFIX=	5

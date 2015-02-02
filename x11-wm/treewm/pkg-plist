@@ -9,5 +9,3 @@ bin/xkill-treewm
 %%DATADIR%%/pixmaps/none1.xpm
 %%DATADIR%%/pixmaps/none2.xpm
 %%DATADIR%%/pixmaps/resize.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

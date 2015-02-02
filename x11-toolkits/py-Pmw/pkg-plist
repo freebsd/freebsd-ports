@@ -269,11 +269,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/TextDisplay.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/TimeCounter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/WidgetDestroy.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/Pmw/%%PMWVERSION%%/lib
-@dirrm %%PYTHON_SITELIBDIR%%/Pmw/%%PMWVERSION%%
-@dirrm %%PYTHON_SITELIBDIR%%/Pmw

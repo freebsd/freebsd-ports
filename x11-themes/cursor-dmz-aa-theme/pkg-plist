@@ -85,6 +85,3 @@ lib/X11/icons/Vanilla-DMZ-AA/cursors/ur_angle
 lib/X11/icons/Vanilla-DMZ-AA/cursors/v_double_arrow
 lib/X11/icons/Vanilla-DMZ-AA/cursors/watch
 lib/X11/icons/Vanilla-DMZ-AA/cursors/xterm
-@dirrm lib/X11/icons/Vanilla-DMZ-AA/cursors
-@dirrm lib/X11/icons/Vanilla-DMZ-AA
-@dirrmtry lib/X11/icons

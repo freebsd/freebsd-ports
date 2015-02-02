@@ -154,9 +154,3 @@ man/man6/pathological.6.gz
 %%DATADIR%%/sounds/wheel_turn.wav
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%/circuits
-@dirrm %%DATADIR%%

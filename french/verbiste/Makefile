@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.33
-PORTREVISION=	2
+PORTVERSION=	0.1.41
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
 
-OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
-
 LICENSE=	GPLv2
 
-USES=		pathfix pkgconfig iconv libtool shebangfix
+OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
+
+USES=		pathfix pkgconfig iconv:wchar_t libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/examples/*.pl
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
@@ -27,18 +26,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=--with-gtk-app
 USE_GNOME+=	gtk20
 PLIST_SUB+=	HASGTK=""
 .else
+CONFIGURE_ARGS+=--without-gtk-app
 PLIST_SUB+=	HASGTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
-CONFIGURE_ARGS+=--with-gnome-app
 USE_GNOME+=	gnomeprefix libgnomeui
 PLIST_SUB+=	HASGNOME=""
 .else
+CONFIGURE_ARGS+=--without-gnome-app --without-gnome-applet
 PLIST_SUB+=	HASGNOME="@comment "
 .endif
 

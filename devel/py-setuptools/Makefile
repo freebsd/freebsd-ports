@@ -2,6 +2,7 @@
 
 PORTNAME=	setuptools
 PORTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Python packages installer
 
 LICENSE=	PSFL
 
-# This creates a dependency loop
+# This creates a dependency loop in Redports (tinderbox)
 #TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}distribute-[0-9]*
@@ -22,6 +23,7 @@ PLIST_SUB=	PYVER=${PYTHON_VER} VERSION=${PORTVERSION} \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 PYDISTUTILS_SETUP=	${PYSETUP}
 
 SUB_LIST=	IF_DEFAULT=${IF_DEFAULT}
@@ -45,6 +47,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/easy-install.pth.dist ${STAGEDIR}${PYTHON_SITELIBDIR}/
 
 #regression-test: build
-#	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+#	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>

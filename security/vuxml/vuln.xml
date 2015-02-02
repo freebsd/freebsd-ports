@@ -57,6 +57,686 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c7cfd05-aaee-11e4-83b4-14dae9d210b8">
+    <topic>Xymon -- buffer overrun</topic>
+    <affects>
+      <package>
+	<name>xymon-server</name>
+	<range><ge>4.3.4</ge><lt>4.3.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776007">
+	  <p>web/acknowledge.c uses a string twice in a format string, but only
+	    allocates memory for one copy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/01/31/4</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-1430</url>
+      <cvename>CVE-2015-1430</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-28</discovery>
+      <entry>2015-02-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="734bcd49-aae6-11e4-a0c1-c485083ca99c">
+    <topic>Adobe Flash Player -- critical vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.440</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.440</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-02.html">
+	  <p>A critical vulnerability (CVE-2015-0313) exists in Adobe Flash
+	    Player 16.0.0.296 and earlier versions for Windows, Macintosh, and
+	    Linux. Successful exploitation could cause a crash and potentially
+	    allow an attacker to take control of the affected system.  We are
+	    aware of reports that this vulnerability is being actively exploited
+	    in the wild via drive-by-download attacks against systems running
+	    Internet Explorer and Firefox on Windows 8.1 and below. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-02.html</url>
+      <cvename>CVE-2015-0313</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-02</discovery>
+      <entry>2015-02-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8469d41c-a960-11e4-b18e-bcaec55be5e5">
+    <topic>rabbitmq -- Security issues in management plugin</topic>
+    <affects>
+      <package>
+	<name>rabbitmq</name>
+	<range><lt>3.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RabbitMQ project reports:</p>
+	<blockquote cite="http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100">
+	  <p>Some user-controllable content was not properly HTML-escaped
+	  before being presented to a user in the management web UI:</p>
+	  <ul>
+	    <li>When a user unqueued a message from the management UI,
+	    message details (header names, arguments, etc.) were displayed
+	    unescaped. An attacker could publish a specially crafted
+	    message to add content or execute arbitrary Javascript code on
+	    behalf of a user, if this user unqueued the message from the
+	    management UI.</li>
+	    <li>When viewing policies, their name was displayed unescaped.
+	    An attacker could create a policy with a specially crafted name
+	    to add content or execute arbitrary Javascript code on behalf
+	    of a user who is viewing policies.</li>
+	    <li>When listing connected AMQP network clients, client details
+	    such as its version were displayed unescaped. An attacker could
+	    use a client with a specially crafted version field to add
+	    content or execute arbitrary Javascript code on behalf of a
+	    user who is viewing connected clients.</li>
+	  </ul>
+	  <p>In all cases, the attacker needs a valid user account on the
+	  targetted RabbitMQ cluster.</p>
+	  <p>Furthermore, some admin-controllable content was not properly
+	  escaped:</p>
+	  <ul>
+	    <li>user names;</li>
+	    <li>the cluster name.</li>
+	  </ul>
+	  <p>Likewise, an attacker could add content or execute arbitrary
+	  Javascript code on behalf of a user using the management web UI.
+	  However, the attacker must be an administrator on the RabbitMQ
+	  cluster, thus a trusted user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100</url>
+      <url>http://www.rabbitmq.com/release-notes/README-3.4.3.txt</url>
+      <cvename>CVE-2015-0862</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-08</discovery>
+      <entry>2015-01-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5804b9d4-a959-11e4-9363-20cf30e32f6d">
+    <topic>apache24 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.4.html">
+	  <p>mod_proxy_fcgi: Fix a potential crash due to buffer over-read,
+	    with response headers' size above 8K.</p>
+	  <p>mod_cache: Avoid a crash when Content-Type has an empty value. PR 56924.</p>
+	  <p>mod_lua: Fix handling of the Require line when a LuaAuthzProvider is used
+	    in multiple Require directives with different arguments. PR57204.</p>
+	  <p>core: HTTP trailers could be used to replace HTTP headers late during
+	    request processing, potentially undoing or otherwise confusing modules
+	    that examined or modified request headers earlier. Adds "MergeTrailers"
+	    directive to restore legacy behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3583</cvename>
+      <cvename>CVE-2014-3581</cvename>
+      <cvename>CVE-2014-8109</cvename>
+      <cvename>CVE-2013-5704</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-29</discovery>
+      <entry>2015-01-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7656fc62-a7a7-11e4-96ba-001999f8d30b">
+    <topic>asterisk -- Mitigation for libcURL HTTP request injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.15.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>CVE-2014-8150 reported an HTTP request injection
+	  vulnerability in libcURL. Asterisk uses libcURL in its
+	  func_curl.so module (the CURL() dialplan function), as
+	  well as its res_config_curl.so (cURL realtime backend)
+	  modules.</p>
+	  <p>Since Asterisk may be configured to allow for user-supplied
+	  URLs to be passed to libcURL, it is possible that an
+	  attacker could use Asterisk as an attack vector to inject
+	  unauthorized HTTP requests if the version of libcURL
+	  installed on the Asterisk server is affected by
+	  CVE-2014-8150.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-002.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-12</discovery>
+      <entry>2015-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2eeb6652-a7a6-11e4-96ba-001999f8d30b">
+    <topic>asterisk -- File descriptor leak when incompatible codecs are offered</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>Asterisk may be configured to only allow specific audio
+	  or video codecs to be used when communicating with a
+	  particular endpoint. When an endpoint sends an SDP offer
+	  that only lists codecs not allowed by Asterisk, the offer
+	  is rejected. However, in this case, RTP ports that are
+	  allocated in the process are not reclaimed.</p>
+	  <p>This issue only affects the PJSIP channel driver in
+	  Asterisk. Users of the chan_sip channel driver are not
+	  affected.</p>
+	  <p>As the resources are allocated after authentication,
+	  this issue only affects communications with authenticated
+	  endpoints.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-001.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-06</discovery>
+      <entry>2015-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0765de84-a6c1-11e4-a0c1-c485083ca99c">
+    <topic>glibc -- gethostbyname buffer overflow</topic>
+    <affects>
+      <package>
+	<name>linux_base-c6</name>
+	<range><lt>6.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux_base-f10</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Robert Krátký reports:</p>
+	<blockquote cite="https://access.redhat.com/discussions/1332403">
+	  <p>
+	    GHOST is a 'buffer overflow' bug affecting the gethostbyname() and
+	    gethostbyname2() function calls in the glibc library. This
+	    vulnerability allows a remote attacker that is able to make an
+	    application call to either of these functions to execute arbitrary
+	    code with the permissions of the user running the application.
+	    The gethostbyname() function calls are used for DNS resolving, which
+	    is a very common event. To exploit this vulnerability, an attacker
+	    must trigger a buffer overflow by supplying an invalid hostname
+	    argument to an application that performs a DNS resolution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0235</cvename>
+      <url>https://access.redhat.com/articles/1332213</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/01/27/9</url>
+    </references>
+    <dates>
+      <discovery>2015-01-27</discovery>
+      <entry>2015-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="37a87ade-a59f-11e4-958e-0011d823eebd">
+    <topic>Adobe Flash Player -- critical vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.438</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.438</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-01.html">
+	  <p>Successful exploitation could cause a crash and potentially allow
+	    an attacker to take control of the affected system.  We are aware
+	    of reports that this vulnerability is being actively exploited in
+	    the wild via drive-by-download attacks against systems running
+	    Internet Explorer and Firefox on Windows 8.1 and below.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0311</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-01.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-22</discovery>
+      <entry>2015-01-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dc2d76df-a595-11e4-9363-20cf30e32f6d">
+    <topic>Bugzilla multiple security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.15/">
+	  <h5>Command Injection</h5>
+	  <p>Some code in Bugzilla does not properly utilize 3 arguments form
+	    for open() and it is possible for an account with editcomponents
+	    permissions to inject commands into product names and other
+	    attributes.</p>
+	  <h5>Information Leak</h5>
+	  <p>Using the WebServices API, a user can possibly execute imported
+	    functions from other non-WebService modules. A whitelist has now
+	    been added that lists explicit methods that can be executed via the
+	    API.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8630</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1079065</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1090275</url>
+    </references>
+    <dates>
+      <discovery>2015-01-21</discovery>
+      <entry>2015-01-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c7b6c20-a324-11e4-879c-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4</ge><lt>1.4.18</lt></range>
+	<range><ge>1.5</ge><le>1.5.12</le></range>
+	<range><ge>1.6</ge><lt>1.6.10</lt></range>
+	<range><ge>1.7</ge><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150124,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/jan/13/security/">
+	  <p>Today the Django team is issuing multiple releases --
+	    Django 1.4.18, Django 1.6.10, and Django 1.7.3 -- as part of our
+	    security process. These releases are now available on PyPI and our
+	    download page.</p>
+	  <p>These releases address several security issues. We encourage all
+	    users of Django to upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/jan/13/security/</url>
+      <cvename>CVE-2015-0219</cvename>
+      <cvename>CVE-2015-0220</cvename>
+      <cvename>CVE-2015-0221</cvename>
+      <cvename>CVE-2015-0222</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-01-23</entry>
+      <modified>2015-01-24</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="0523fb7e-8444-4e86-812d-8de05f6f0dce">
+    <topic>libutp -- remote denial of service or arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>bittorrent-libutp</name>
+	<range><lt>0.20130514_1</lt></range>
+      </package>
+      <package>
+	<name>transmission-cli</name>
+	<name>transmission-deamon</name>
+	<name>transmission-gtk</name>
+	<name>transmission-qt4</name>
+	<range><lt>2.74</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6129">
+	  <p>Stack-based buffer overflow in utp.cpp in libutp, as used
+	    in Transmission before 2.74 and possibly other products,
+	    allows remote attackers to cause a denial of service (crash)
+	    and possibly execute arbitrary code via crafted "micro
+	    transport protocol packets."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-6129</cvename>
+      <url>https://github.com/bittorrent/libutp/issues/38</url>
+      <url>https://trac.transmissionbt.com/ticket/5002</url>
+    </references>
+    <dates>
+      <discovery>2012-08-01</discovery>
+      <entry>2014-12-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f9c388c5-a256-11e4-992a-7b2a515a1247">
+    <topic>LibreSSL -- DTLS vulnerability</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL Security Advisory:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150108.txt">
+	<p>
+	A memory leak can occur in the dtls1_buffer_record function under certain
+	conditions. In particular this could occur if an attacker sent repeated DTLS
+	records with the same sequence number but for the next epoch. The memory leak
+	could be exploited by an attacker in a Denial of Service attack through memory
+	exhaustion.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+		<cvename>CVE-2015-0206</cvename>
+		<url>https://www.openssl.org/news/secadv_20150108.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-01-08</discovery>
+      <entry>2015-01-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc294a2c-a232-11e4-8e9f-0011d823eebd">
+    <topic>Adobe Flash Player -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.429</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><lt>11.2r202.429</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://helpx.adobe.com/security/products/flash-player/apsb15-01.html">
+	  <p>These updates address vulnerabilities that could potentially allow
+	    an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0301</cvename>
+      <cvename>CVE-2015-0302</cvename>
+      <cvename>CVE-2015-0303</cvename>
+      <cvename>CVE-2015-0304</cvename>
+      <cvename>CVE-2015-0305</cvename>
+      <cvename>CVE-2015-0306</cvename>
+      <cvename>CVE-2015-0307</cvename>
+      <cvename>CVE-2015-0308</cvename>
+      <cvename>CVE-2015-0309</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb15-01.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-01-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e30e0c99-a1b7-11e4-b85c-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>40.0.2214.91</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>40.0.2214.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>62 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[430353] High CVE-2014-7923: Memory corruption in ICU. Credit
+	      to yangdingning.</li>
+	    <li>[435880] High CVE-2014-7924: Use-after-free in IndexedDB.
+	      Credit to Collin Payne.</li>
+	    <li>[434136] High CVE-2014-7925: Use-after-free in WebAudio. Credit
+	      to mark.buer.</li>
+	    <li>[422824] High CVE-2014-7926: Memory corruption in ICU. Credit
+	      to yangdingning.</li>
+	    <li>[444695] High CVE-2014-7927: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[435073] High CVE-2014-7928: Memory corruption in V8. Credit to
+	      Christian Holler.</li>
+	    <li>[442806] High CVE-2014-7930: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[442710] High CVE-2014-7931: Memory corruption in V8. Credit to
+	      cloudfuzzer.</li>
+	    <li>[443115] High CVE-2014-7929: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[429666] High CVE-2014-7932: Use-after-free in DOM. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[427266] High CVE-2014-7933: Use-after-free in FFmpeg. Credit
+	      to aohelin.</li>
+	    <li>[427249] High CVE-2014-7934: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[402957] High CVE-2014-7935: Use-after-free in Speech. Credit
+	      to Khalil Zhani.</li>
+	    <li>[428561] High CVE-2014-7936: Use-after-free in Views. Credit
+	      to Christoph Diehl.</li>
+	    <li>[419060] High CVE-2014-7937: Use-after-free in FFmpeg. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[416323] High CVE-2014-7938: Memory corruption in Fonts. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[399951] High CVE-2014-7939: Same-origin-bypass in V8. Credit
+	      to Takeshi Terada.</li>
+	    <li>[433866] Medium CVE-2014-7940: Uninitialized-value in ICU.
+	      Credit to miaubiz.</li>
+	    <li>[428557] Medium CVE-2014-7941: Out-of-bounds read in UI. Credit
+	      to Atte Kettunen of OUSPG and Christoph Diehl.</li>
+	    <li>[426762] Medium CVE-2014-7942: Uninitialized-value in Fonts.
+	      Credit to miaubiz.</li>
+	    <li>[422492] Medium CVE-2014-7943: Out-of-bounds read in Skia.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[418881] Medium CVE-2014-7944: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[414310] Medium CVE-2014-7945: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[414109] Medium CVE-2014-7946: Out-of-bounds read in Fonts.
+	      Credit to miaubiz.</li>
+	    <li>[430566] Medium CVE-2014-7947: Out-of-bounds read in PDFium.
+	      Credit to fuzztercluck.</li>
+	    <li>[414026] Medium CVE-2014-7948: Caching error in AppCache.
+	      Credit to jiayaoqijia.</li>
+	    <li>[449894] CVE-2015-1205: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 3.30
+	      branch (currently 3.30.33.15).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7923</cvename>
+      <cvename>CVE-2014-7924</cvename>
+      <cvename>CVE-2014-7925</cvename>
+      <cvename>CVE-2014-7926</cvename>
+      <cvename>CVE-2014-7927</cvename>
+      <cvename>CVE-2014-7928</cvename>
+      <cvename>CVE-2014-7929</cvename>
+      <cvename>CVE-2014-7930</cvename>
+      <cvename>CVE-2014-7931</cvename>
+      <cvename>CVE-2014-7932</cvename>
+      <cvename>CVE-2014-7933</cvename>
+      <cvename>CVE-2014-7934</cvename>
+      <cvename>CVE-2014-7935</cvename>
+      <cvename>CVE-2014-7936</cvename>
+      <cvename>CVE-2014-7937</cvename>
+      <cvename>CVE-2014-7938</cvename>
+      <cvename>CVE-2014-7939</cvename>
+      <cvename>CVE-2014-7940</cvename>
+      <cvename>CVE-2014-7941</cvename>
+      <cvename>CVE-2014-7942</cvename>
+      <cvename>CVE-2014-7943</cvename>
+      <cvename>CVE-2014-7944</cvename>
+      <cvename>CVE-2014-7945</cvename>
+      <cvename>CVE-2014-7946</cvename>
+      <cvename>CVE-2014-7947</cvename>
+      <cvename>CVE-2014-7948</cvename>
+      <cvename>CVE-2015-1205</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-01-21</discovery>
+      <entry>2015-01-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5856eba-a015-11e4-a680-1c6f65c3c4ff">
+    <topic>polarssl -- Remote attack using crafted certificates</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.12_1</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PolarSSL team reports:</p>
+	<blockquote cite="https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2014-04">
+	  <p>During the parsing of a ASN.1 sequence, a pointer in the linked list of asn1_sequence is not
+	    initialized by asn1_get_sequence_of(). In case an error occurs during parsing of the list, a
+	    situation is created where the uninitialized pointer is passed to polarssl_free().</p>
+	  <p>This sequence can be triggered when a PolarSSL entity is parsing a certificate. So practically this
+	    means clients when receiving a certificate from the server or servers in case they are actively
+	    asking for a client certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1182</cvename>
+      <url>https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2014-04</url>
+      <url>https://www.certifiedsecure.com/polarssl-advisory/</url>
+    </references>
+    <dates>
+      <discovery>2015-01-14</discovery>
+      <entry>2015-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9360908-9d52-11e4-87fd-10bf48e1088e">
     <topic>unzip -- input sanitization errors</topic>
     <affects>
@@ -371,7 +1051,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.1e_3</lt></range>
       </package>
     </affects>
     <description>
@@ -403,6 +1083,7 @@ Notes:
     <dates>
       <discovery>2015-01-08</discovery>
       <entry>2015-01-08</entry>
+      <modified>2015-01-22</modified>
     </dates>
   </vuln>
 
@@ -927,6 +1608,7 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-019.html</url>
+      <cvename>CVE-2014-9374</cvename>
     </references>
     <dates>
       <discovery>2014-10-30</discovery>
@@ -2600,7 +3282,7 @@ Notes:
     <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
     <affects>
       <package>
-	<name>flashplugin11</name>
+	<name>linux-f10-flashplugin11</name>
 	<range><lt>11.2r202.400</lt></range>
       </package>
       <package>

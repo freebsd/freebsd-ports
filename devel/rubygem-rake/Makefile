@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rake
-PORTVERSION=	10.3.2
+PORTVERSION=	10.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,10 +15,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/rake \
-		man/man1/rake.1.gz
-
-post-install:
-	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz ${STAGEDIR}${PREFIX}/man/man1
+PLIST_FILES=	bin/rake
 
 .include <bsd.port.mk>

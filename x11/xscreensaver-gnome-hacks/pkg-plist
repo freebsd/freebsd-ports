@@ -598,6 +598,3 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
-@dirrm share/xscreensaver/config
-@dirrm share/xscreensaver
-@dirrm bin/xscreensaver-hacks

@@ -184,7 +184,3 @@ man/man5/yuv4mpeg.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.lavpipe
 %%PORTDOCS%%%%DOCSDIR%%/README.transist
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/mjpegtools/mplex
-@dirrm include/mjpegtools/mpeg2enc
-@dirrm include/mjpegtools

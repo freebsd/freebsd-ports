@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	freedink
-PORTVERSION=	1.08.${PORTVER}
-PORTREVISION=	6
+PORTVERSION=	108.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	freedink
+MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Dink Smallwood RPG and RPG Construction Set
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libcheck.so:${PORTSDIR}/devel/libcheck
 
 USES=		gettext gmake pkgconfig
 USE_SDL=	sdl gfx ttf image mixer
 GNU_CONFIGURE=	yes
-PORTVER=	20121209
 CONFIGURE_ARGS=	--disable-static --disable-upx
 
 OPTIONS_DEFINE=	EMBEDDED

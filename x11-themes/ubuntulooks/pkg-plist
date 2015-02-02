@@ -1,4 +1,2 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libubuntulooks.so
 share/themes/Human/gtk-2.0/gtkrc
-@dirrm share/themes/Human/gtk-2.0
-@dirrm share/themes/Human

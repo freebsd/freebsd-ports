@@ -43,21 +43,3 @@
 %%TWDIR%%/test/unit/WysiwygPlugin/test_html/verbatim.html
 %%TWDIR%%/tools/html2tml.pl
 %%TWDIR%%/tools/tml2html.pl
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/WysiwygPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/test/unit/WysiwygPlugin/result_tml
-@dirrm %%TWDIR%%/test/unit/WysiwygPlugin/test_html
-@dirrm %%TWDIR%%/test/unit/WysiwygPlugin
-@dirrm %%TWDIR%%/test/unit
-@dirrm %%TWDIR%%/test
-@dirrm %%TWDIR%%/tools
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

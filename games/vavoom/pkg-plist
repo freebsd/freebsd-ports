@@ -19,15 +19,3 @@ bin/vavoom-dedicated.bin
 %%DATADIR%%/basev/tnt/base.txt
 %%DATADIR%%/basev/tnt/basepak.pk3
 %%DATADIR%%/vavoom.png
-@dirrm %%DATADIR%%/basev/tnt
-@dirrm %%DATADIR%%/basev/strife
-@dirrm %%DATADIR%%/basev/plutonia
-@dirrm %%DATADIR%%/basev/hexen
-@dirrm %%DATADIR%%/basev/heretic
-@dirrm %%DATADIR%%/basev/doom2
-@dirrm %%DATADIR%%/basev/doom1
-@dirrm %%DATADIR%%/basev/doom
-@dirrm %%DATADIR%%/basev/common
-@dirrm %%DATADIR%%/basev
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

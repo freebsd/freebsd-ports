@@ -1,0 +1,17 @@
+--- src/sbin/xe-update-guest-attrs.orig	2014-07-07 15:45:10.000000000 +0200
++++ src/sbin/xe-update-guest-attrs	2015-01-30 10:24:05.000000000 +0100
+@@ -173,10 +173,10 @@
+ xenstore_write_cached "control/feature-balloon" "1"
+ 
+ # build time addons
+-xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
+-xenstore_write_cached "attr/PVAddons/MinorVersion" "0"
+-xenstore_write_cached "attr/PVAddons/MicroVersion" "2" 
+-xenstore_write_cached "attr/PVAddons/BuildVersion" "54078"
++xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
++xenstore_write_cached "attr/PVAddons/MinorVersion" "2"
++xenstore_write_cached "attr/PVAddons/MicroVersion" "0" 
++xenstore_write_cached "attr/PVAddons/BuildVersion" "76888"
+ xenstore_write_cached "attr/PVAddons/Installed" "1" 
+ 
+ # update xenstore if necc

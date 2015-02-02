@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,6 +13,8 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
+CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
+
 USES=		cmake gettext iconv
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
 		core concurrent declarative
@@ -21,14 +23,14 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA
+OPTIONS_DEFAULT=	MULTIMEDIA TEXTURES
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMORE_STARS}
+.if ${PORT_OPTIONS:MMORE_STARS} || ${.TARGETS:Mmakesum}
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
@@ -40,7 +42,7 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTEXTURES}
+.if ${PORT_OPTIONS:MTEXTURES} || ${.TARGETS:Mmakesum}
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 DISTFILES+=	textures-1K.zip:gfx
 .endif

@@ -3,3 +3,5 @@ include/b64/cencode.h
 include/b64/decode.h
 include/b64/encode.h
 lib/libb64.a
+lib/libb64.so
+lib/libb64.so.0

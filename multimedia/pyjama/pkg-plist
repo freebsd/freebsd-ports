@@ -228,37 +228,3 @@ share/pixmaps/pyjama.xpm
 %%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent/torrent.py
 %%PYTHON_SITELIBDIR%%/pyjama/themes/README
 %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime/gtk-2.0/gtkrc
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/clLayouts/default_layouts
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/clLayouts
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/extended_modules
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_big
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images/cc_small
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images/license_images
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/images
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/modules
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/PVC
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/artist_browser
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/configtool
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/downloadGUI
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/example
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/jam_query
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/jamlists
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/lastfm
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/librefm
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/listenstats
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/lyrics
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/mmhotkeys
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/mozplug
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/nowplaying
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/radios
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/randomplayback
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/rating
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/search
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/starred_albums
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer/pytorrent
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins/torrent-peer
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime/gtk-2.0
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/
-@dirrm %%PYTHON_SITELIBDIR%%/pyjama

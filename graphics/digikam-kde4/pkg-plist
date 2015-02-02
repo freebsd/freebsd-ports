@@ -14,11 +14,9 @@ lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
 %%MYSQL%%lib/kde4/libexec/digikamdatabaseserver
 lib/libdigikamcore.so
-lib/libdigikamcore.so.3
-lib/libdigikamcore.so.3.0.0
+lib/libdigikamcore.so.%%SHLIB_VER%%
 lib/libdigikamdatabase.so
-lib/libdigikamdatabase.so.3
-lib/libdigikamdatabase.so.3.0.0
+lib/libdigikamdatabase.so.%%SHLIB_VER%%
 man/man1/cleanup_digikamdb.1.gz
 man/man1/digitaglinktree.1.gz
 share/applications/kde4/digikam.desktop
@@ -140,6 +138,7 @@ share/apps/digikam/icons/hicolor/128x128/actions/restoration.png
 share/apps/digikam/icons/hicolor/128x128/actions/sharpenimage.png
 share/apps/digikam/icons/hicolor/128x128/actions/shear.png
 share/apps/digikam/icons/hicolor/128x128/actions/superimpose.png
+share/apps/digikam/icons/hicolor/128x128/actions/tag.png
 share/apps/digikam/icons/hicolor/128x128/actions/texture.png
 share/apps/digikam/icons/hicolor/128x128/actions/tonemap.png
 share/apps/digikam/icons/hicolor/128x128/actions/viewimage.png
@@ -256,7 +255,6 @@ share/apps/digikam/icons/hicolor/22x22/actions/texture.png
 share/apps/digikam/icons/hicolor/22x22/actions/tonemap.png
 share/apps/digikam/icons/hicolor/22x22/actions/viewimage.png
 share/apps/digikam/icons/hicolor/22x22/actions/whitebalance.png
-share/apps/digikam/icons/hicolor/22x22/mimetypes/raw.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjustlevels.png
@@ -323,14 +321,12 @@ share/apps/digikam/icons/hicolor/32x32/actions/tag-places.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-properties.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-recents.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-reset.png
-share/apps/digikam/icons/hicolor/32x32/actions/tag.png
 share/apps/digikam/icons/hicolor/32x32/actions/texture.png
 share/apps/digikam/icons/hicolor/32x32/actions/tonemap.png
 share/apps/digikam/icons/hicolor/32x32/actions/underexposure.png
 share/apps/digikam/icons/hicolor/32x32/actions/viewimage.png
 share/apps/digikam/icons/hicolor/32x32/actions/whitebalance.png
 share/apps/digikam/icons/hicolor/32x32/actions/zoom-select-fit.png
-share/apps/digikam/icons/hicolor/32x32/mimetypes/raw.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/48x48/actions/adjustlevels.png
@@ -387,7 +383,6 @@ share/apps/digikam/icons/hicolor/48x48/actions/texture.png
 share/apps/digikam/icons/hicolor/48x48/actions/tonemap.png
 share/apps/digikam/icons/hicolor/48x48/actions/viewimage.png
 share/apps/digikam/icons/hicolor/48x48/actions/whitebalance.png
-share/apps/digikam/icons/hicolor/48x48/mimetypes/raw.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjustcurves.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/64x64/actions/adjustlevels.png
@@ -444,7 +439,6 @@ share/apps/digikam/icons/hicolor/64x64/actions/texture.png
 share/apps/digikam/icons/hicolor/64x64/actions/tonemap.png
 share/apps/digikam/icons/hicolor/64x64/actions/viewimage.png
 share/apps/digikam/icons/hicolor/64x64/actions/whitebalance.png
-share/apps/digikam/icons/hicolor/64x64/mimetypes/raw.png
 share/apps/digikam/icons/hicolor/scalable/actions/adjustcurves.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/adjustlevels.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/adjustrgb.svgz

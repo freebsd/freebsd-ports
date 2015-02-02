@@ -3,7 +3,7 @@
 
 PORTNAME=	cosmo
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 		http://ftp.jaist.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
@@ -29,7 +29,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/cosmo
 	${INSTALL_PROGRAM} ${WRKSRC}/cosmo ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cosmorc ${STAGEDIR}${PREFIX}/lib/X11/cosmo
-	${ECHO} > ${STAGEDIR}${PREFIX}/lib/X11/cosmo/best.dat
+	${MKDIR} ${STAGEDIR}/var/games/cosmo
+	${ECHO_CMD} > ${STAGEDIR}/var/games/cosmo/best.dat.sample
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moon.tif.gz \
 		${STAGEDIR}${PREFIX}/lib/X11/cosmo
 

@@ -14,6 +14,8 @@ COMMENT=	Scientific and Mathematical calculations
 LICENSE=	BSD3CLAUSE LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.6.0:${PORTSDIR}/devel/py-traits
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

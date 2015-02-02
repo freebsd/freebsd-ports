@@ -1,15 +1,6 @@
---- c_check.orig	2012-02-05 16:25:21.000000000 +0900
-+++ c_check	2012-02-05 16:26:54.000000000 +0900
-@@ -2,7 +2,7 @@
- 
- # Checking cross compile
- $hostos   = `uname -s | sed -e s/\-.*//`;    chop($hostos);
--$hostarch = `uname -m | sed -e s/i.86/x86/`;chop($hostarch);
-+$hostarch = `uname -m | sed -e s/i.86/x86/ | sed -e s/amd64/x86_64/`;chop($hostarch);
- 
- $binary = $ENV{"BINARY"};
- 
-@@ -215,7 +215,7 @@
+--- c_check.orig	2014-12-03 16:14:21.000000000 +0100
++++ c_check	2015-02-01 01:01:27.784108000 +0100
+@@ -228,7 +228,7 @@
  # print $data, "\n";
  
  print MAKEFILE "OSNAME=$os\n";

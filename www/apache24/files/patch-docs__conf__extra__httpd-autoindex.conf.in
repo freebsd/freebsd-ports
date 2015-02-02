@@ -1,6 +1,6 @@
---- ./docs/conf/extra/httpd-autoindex.conf.in.orig	2010-06-15 13:05:13.000000000 +0200
-+++ ./docs/conf/extra/httpd-autoindex.conf.in	2013-03-22 18:55:53.000000000 +0100
-@@ -89,5 +89,5 @@
+--- docs/conf/extra/httpd-autoindex.conf.in.orig	2010-06-15 11:05:13 UTC
++++ docs/conf/extra/httpd-autoindex.conf.in
+@@ -89,5 +89,5 @@ HeaderName HEADER.html
  # IndexIgnore is a set of filenames which directory indexing should ignore
  # and not include in the listing.  Shell-style wildcarding is permitted.
  #

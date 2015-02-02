@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+MPM_FALLBACK="%%ETCDIR%%/modules.d/%%MPMF%%"
+
+_cleanup(){
+	if [ -f ${MPM_FALLBACK} ]; then
+		echo -n "remove fallback MPM : "
+		/bin/rm -vf ${MPM_FALLBACK}
+	fi
+}
+
+# run only if build with modular MPM
+if [ "x$2" = "xDEINSTALL" ]; then
+	%%MPM_FALLBACK_CHECK%%_cleanup
+fi
+

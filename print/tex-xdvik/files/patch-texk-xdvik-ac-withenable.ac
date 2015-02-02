@@ -1,0 +1,9 @@
+--- texk/xdvik/ac/withenable.ac.orig	2014-09-02 18:41:34.000000000 +0900
++++ texk/xdvik/ac/withenable.ac	2015-01-31 21:02:19.000000000 +0900
+@@ -6,5 +6,5 @@
+ dnl extra_dirs = texk/xdvik/squeeze
+ dnl
+ ## configure options and TL libraries required for xdvik
+-KPSE_ENABLE_PROG([xdvik], [kpathsea freetype2], [x])
++KPSE_ENABLE_PROG([xdvik], [kpathsea freetype2 zlib], [x])
+ m4_include(kpse_TL[texk/xdvik/ac/xdvik.ac])

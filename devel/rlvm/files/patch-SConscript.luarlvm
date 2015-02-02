@@ -1,0 +1,20 @@
+--- SConscript.luarlvm~
++++ SConscript.luarlvm
+@@ -31,7 +31,7 @@ config = test_env.Configure()
+ # Building the luaRlvm test harness requires having lua installed; if we do
+ # have lua installed, go ahead and use it, but don't really worry if this fails
+ # since end users don't use this binary.
+-if config.CheckLibWithHeader('lua5.1', 'lua5.1/lua.h', 'cpp'):
++if config.CheckLibWithHeader('lua-5.1', 'lua51/lua.h', 'cpp'):
+   env['BUILD_LUA_TESTS'] = True
+ else:
+   print "Not building luaRlvm. (Don't worry, it's only a testing tool!)"
+@@ -50,7 +50,7 @@ script_machine_files = [
+ ]
+ 
+ if env['BUILD_LUA_TESTS'] == True:
+-  test_env.Append(CPPPATH = [ "/usr/include/lua5.1" ] )
++  test_env.Append(CPPPATH = [ env['ENV']['LUA_INCDIR'] ] )
+ 
+   # Build our included copy of luabind.
+   test_env.BuildSubcomponent("luabind")

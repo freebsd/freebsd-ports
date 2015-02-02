@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	potr
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,11 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Pure Python Off-The-Record encryption
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		python zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

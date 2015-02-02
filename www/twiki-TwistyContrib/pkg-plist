@@ -8,14 +8,3 @@
 %%TWDIR%%/pub/TWiki/TwistyContrib/twist.css
 %%TWDIR%%/pub/TWiki/TwistyContrib/twist.js
 %%TWDIR%%/pub/TWiki/TwistyContrib/twist_src.js
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Contrib/TwistyContrib
-@dirrm %%TWDIR%%/lib/TWiki/Contrib
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/TwistyContrib
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

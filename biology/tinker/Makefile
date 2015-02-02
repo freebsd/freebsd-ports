@@ -14,6 +14,7 @@ LICENSE_NAME=	TINKER license agreement
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		Checksum and size mismatch
 RESTRICTED=	author requests no distribution except from his FTP site
 
 OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DOCS EXAMPLES

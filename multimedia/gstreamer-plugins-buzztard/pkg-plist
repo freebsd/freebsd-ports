@@ -57,6 +57,3 @@ libdata/pkgconfig/libgstbuzztard.pc
 %%PORTDOCS%%%%DOCSDIR%%/gst-buzztard/right.png
 %%PORTDOCS%%%%DOCSDIR%%/gst-buzztard/style.css
 %%PORTDOCS%%%%DOCSDIR%%/gst-buzztard/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gst-buzztard
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/libgstbuzztard

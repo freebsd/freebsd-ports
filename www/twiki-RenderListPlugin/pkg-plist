@@ -31,14 +31,3 @@
 %%TWDIR%%/pub/TWiki/RenderListPlugin/virtualpersons.gif
 %%TWDIR%%/pub/TWiki/RenderListPlugin/xls.gif
 %%TWDIR%%/pub/TWiki/RenderListPlugin/zip.gif
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/RenderListPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

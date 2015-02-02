@@ -4,7 +4,7 @@ programming. The Dhrystone grew to become representative of general
 processor (CPU) performance.
 
 DMIPS value is result of dhrystone test divided by 1757, results are often
-reported in DMIPS/MHz. For more information, see 
+reported in DMIPS/MHz. For more information, see
 http://en.wikipedia.org/wiki/Dhrystone.
 
 WWW: http://www.netlib.org/benchmark/

@@ -2,50 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	thttpd
-PORTVERSION=	2.25b
-PORTREVISION=	5
+PORTVERSION=	2.26
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.acme.com/software/thttpd/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	http://www.acme.com/software/thttpd/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Tiny/turbo/throttling HTTP server
+COMMENT=	Tiny/turbo/throttling HTTP server with CGI support
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD2CLAUSE
+
 USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
-USE_RC_SUBR=	thttpd
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	WEBDIR=${WWWDIR}
+USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message thttpd.conf.sample
-SUB_LIST=	WWWOWN=${WWWOWN}
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	SENDFILE
-OPTIONS_DEFAULT=	SENDFILE
+OPTIONS_DEFINE=	SENDFILE IPREAL INDEXES
+OPTIONS_DEFAULT=	SENDFILE IPREAL
+
 SENDFILE_DESC=	Use sendfile(2) to serve files
+IPREAL_DESC=	Respect (pass on) "X-Forwarded-For" header
+INDEXES_DESC=	Generate index pages for directories
 
 SENDFILE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.h
+IPREAL_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ip_real
+
+.include <bsd.port.options.mk>
 
 post-patch:
-.for f in extras/htpasswd.1 extras/htpasswd.c thttpd.8 extras/Makefile.in
-	@${REINPLACE_CMD} -e '/\.htpasswd/!s|htpasswd|thttpdpasswd|g' \
-		${WRKSRC}/${f}
+# To avoid conflict with other ports that also install htpasswd(1)
+.for f in extras/htpasswd.1 extras/htpasswd.c thttpd.8
+	@${REINPLACE_CMD} -e '/\.htpasswd/!s|htpasswd|t&|g' ${WRKSRC}/${f}
 .endfor
-	@${MV} ${WRKSRC}/extras/htpasswd.1 ${WRKSRC}/extras/thttpdpasswd.1
-	@${MV} ${WRKSRC}/extras/htpasswd.c ${WRKSRC}/extras/thttpdpasswd.c
+	@${REINPLACE_CMD} -e 's|/var/www|${WWWDIR}|' \
+		${WRKSRC}/extras/makeweb.1
+.if ! ${PORT_OPTIONS:MINDEXES}
+	@${REINPLACE_CMD} -e '/GENERATE_INDEXES/s|.*|/* & */|' \
+		${WRKSRC}/config.h
+.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/extras/makeweb \
-		${WRKSRC}/extras/thttpdpasswd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/syslogtocern \
-		${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data \
-		${STAGEDIR}${PREFIX}/www/cgi-bin
-	${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/redirect ${WRKSRC}/cgi-src/ssi \
-		${WRKSRC}/cgi-src/phf ${STAGEDIR}${PREFIX}/www/cgi-bin
-	${INSTALL_MAN} ${WRKSRC}/extras/makeweb.1 \
-		${WRKSRC}/extras/thttpdpasswd.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/thttpd.8 ${WRKSRC}/cgi-src/redirect.8 \
-		${WRKSRC}/cgi-src/ssi.8 ${WRKSRC}/extras/syslogtocern.8 \
-			${STAGEDIR}${PREFIX}/man/man8
+post-install:
 	${INSTALL_DATA} ${WRKDIR}/thttpd.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

@@ -1797,6 +1797,84 @@
    static int pthread_getcpuclockid(pthread_t tid, clockid_t *clock_id) {
      return _pthread_getcpuclockid ? _pthread_getcpuclockid(tid, clock_id) : -1;
    }
+--- hotspot/src/os/bsd/vm/perfMemory_bsd.cpp
++++ hotspot/src/os/bsd/vm/perfMemory_bsd.cpp
+@@ -303,7 +303,6 @@
+   DIR *dirp = NULL;
+   RESTARTABLE(::open(dirname, O_RDONLY|O_NOFOLLOW), result);
+   if (result == OS_ERR) {
+-    // Directory doesn't exist or is a symlink, so there is nothing to cleanup.
+     if (PrintMiscellaneous && Verbose) {
+       if (errno == ELOOP) {
+         warning("directory %s is a symlink and is not secure\n", dirname);
+@@ -420,6 +419,7 @@
+   return true;
+ }
+ 
++
+ // return the user name for the given user id
+ //
+ // the caller is expected to free the allocated memory.
+@@ -542,6 +542,18 @@
+       continue;
+     }
+ 
++    // Since we don't create the backing store files in directories
++    // pointed to by symbolic links, we also don't follow them when
++    // looking for the files. We check for a symbolic link after the
++    // call to opendir in order to eliminate a small window where the
++    // symlink can be exploited.
++    //
++    if (!is_directory_secure(usrdir_name)) {
++      FREE_C_HEAP_ARRAY(char, usrdir_name);
++      os::closedir(subdirp);
++      continue;
++    }
++
+     struct dirent* udentry;
+     char* udbuf = NEW_C_HEAP_ARRAY(char, os::readdir_buf_size(usrdir_name));
+     errno = 0;
+@@ -643,6 +655,7 @@
+   }
+ }
+ 
++
+ // cleanup stale shared memory resources
+ //
+ // This method attempts to remove all stale shared memory files in
+@@ -655,7 +668,7 @@
+ static void cleanup_sharedmem_resources(const char* dirname) {
+ 
+   int saved_cwd_fd;
+-  // open the directory and set the current working directory to it
++  // open the directory
+   DIR* dirp = open_directory_secure_cwd(dirname, &saved_cwd_fd);
+   if (dirp == NULL) {
+     // directory doesn't exist or is insecure, so there is nothing to cleanup
+@@ -681,7 +694,6 @@
+     if (pid == 0) {
+ 
+       if (strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0) {
+-
+         // attempt to remove all unexpected files, except "." and ".."
+         unlink(entry->d_name);
+       }
+@@ -705,7 +717,6 @@
+     //
+     if ((pid == os::current_process_id()) ||
+         (kill(pid, 0) == OS_ERR && (errno == ESRCH || errno == EPERM))) {
+-
+         unlink(entry->d_name);
+     }
+     errno = 0;
+@@ -914,7 +925,6 @@
+ 
+   char* dirname = get_user_tmp_dir(user_name);
+   char* filename = get_sharedmem_filename(dirname, vmid);
+-
+   // get the short filename
+   char* short_filename = strrchr(filename, '/');
+   if (short_filename == NULL) {
 --- hotspot/src/os/bsd/vm/threadCritical_bsd.cpp
 +++ hotspot/src/os/bsd/vm/threadCritical_bsd.cpp
 @@ -33,35 +33,36 @@
@@ -4331,17 +4409,6 @@
  OTHER_LDLIBS = $(JVMLIB)
 +endif
 +
---- jdk/make/javax/crypto/Makefile
-+++ jdk/make/javax/crypto/Makefile
-@@ -155,7 +155,7 @@
- #
- 
- ifdef OPENJDK
--all: build-jar install-jar build-policy install-limited
-+all: build-jar install-jar build-policy install-%%POLICY%%
- else  # OPENJDK
- ifeq ($(strip $(FILES_java)),)
- all:
 --- jdk/make/javax/sound/FILES_c.gmk
 +++ jdk/make/javax/sound/FILES_c.gmk
 @@ -34,6 +34,8 @@
@@ -12036,9 +12103,9 @@
  }
 --- jdk/src/solaris/native/java/net/NetworkInterface.c
 +++ jdk/src/solaris/native/java/net/NetworkInterface.c
-@@ -23,13 +23,13 @@
-  * questions.
+@@ -24,13 +24,13 @@
   */
+ 
  
 +#include <sys/types.h>
 +#include <sys/socket.h>
@@ -12052,11 +12119,11 @@
  #include <arpa/inet.h>
  #include <net/if.h>
  #include <net/if_arp.h>
-@@ -47,6 +47,19 @@
- #else
+@@ -41,6 +41,19 @@
+ #include <stropts.h>
  #include <sys/sockio.h>
  #endif
-+#if defined(_ALLBSD_SOURCE)
++#ifdef _ALLBSD_SOURCE
 +#include <sys/param.h>
 +#include <sys/ioctl.h>
 +#if defined(__FreeBSD__) || defined(__APPLE__)
@@ -12071,247 +12138,267 @@
 +#endif
  
  #ifdef __linux__
- #define ifr_index ifr_ifindex
-@@ -577,6 +590,7 @@
- }
+ #include <sys/ioctl.h>
+@@ -133,8 +146,9 @@
  
  
-+#if !defined(_ALLBSD_SOURCE)
- /*
-  * Enumerates and returns all IPv4 interfaces
-  */
-@@ -687,6 +701,176 @@
-     return ifs;
- }
  
-+#else /* _ALLBSD_SOURCE */
-+ 
-+/*
-+ * Enumerates and returns all IPv4 interfaces
-+ *
-+ * WARNING! Make sure that it's correctly synchronized on future JDK
-+ * versions imports!
-+ */
-+static netif *enumIPv4Interfaces(JNIEnv *env, netif *ifs)
-+{
-+    int sock;
-+    struct ifaddrs *ifa, *origifa;
-+
-+    sock = JVM_Socket(AF_INET, SOCK_DGRAM, 0);
-+    if (sock < 0) {
-+	/*
-+	 * If EPROTONOSUPPORT is returned it means we don't have
-+	 * IPv4 support so don't throw an exception.
-+	 */
-+	if (errno != EPROTONOSUPPORT) {
-+	    NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                             "Socket creation failed");
-+	}
-+	return ifs;
-+    }
-+
-+    if (getifaddrs(&origifa) != 0) {
-+        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                         "getifaddrs() function failed");
-+	close(sock);
-+	return ifs;
-+    }
-+
-+    for (ifa = origifa; ifa != NULL; ifa = ifa->ifa_next) {
-+
-+	/*
-+	 * Skip non-AF_INET entries.
-+	 */
-+	if (ifa->ifa_addr == NULL || ifa->ifa_addr->sa_family != AF_INET)
-+	    continue;
-+
-+	/*
-+	 * Add to the list.
-+	 *
-+	 * BSDNOTE: in order to optimize code, interface index detection
-+	 * logic was added directly to addif().
-+	 */
-+	ifs = addif(env, ifs, ifa->ifa_name, (-1), AF_INET,
-+		    ifa->ifa_addr, sizeof(struct sockaddr_in), 0);
-+
-+	/*
-+	 * If an exception occurred then free the list.
-+	 */
-+	if ((*env)->ExceptionOccurred(env)) {
-+	    close(sock);
-+	    freeifaddrs(origifa);
-+	    freeif(ifs);
-+	    return NULL;
-+	}
-+    }
-+
-+    /*
-+     * Free socket and buffer
-+     */
-+    close(sock);
-+    freeifaddrs(origifa);
-+    return ifs;
-+}
-+
-+#if defined(AF_INET6)
-+/*
-+ * Determines the prefix on BSD for IPv6 interfaces.
-+ */
-+static
-+int prefix(void *val, int size) {
-+    u_char *name = (u_char *)val;
-+    int byte, bit, plen = 0;
-+
-+    for (byte = 0; byte < size; byte++, plen += 8)
-+        if (name[byte] != 0xff)
-+            break;
-+    if (byte == size)
-+        return (plen);
-+    for (bit = 7; bit != 0; bit--, plen++)
-+        if (!(name[byte] & (1 << bit)))
-+            break;
-+    for (; bit != 0; bit--)
-+        if (name[byte] & (1 << bit))
-+            return (0);
-+    byte++;
-+    for (; byte < size; byte++)
-+        if (name[byte])
-+            return (0);
-+    return (plen);
-+}
-+
-+/*
-+ * Enumerates and returns all IPv6 interfaces on FreeBSD
-+ *
-+ * BSDNOTE: it's done in same as IPv4 enumeration and should be carefully
-+ *          reviewed with each JDK update (according to Solaris/Linux version)
-+ */
-+static netif *enumIPv6Interfaces(JNIEnv *env, netif *ifs) {
-+
-+    int sock;
-+    struct ifaddrs *ifa, *origifa;
-+    struct sockaddr_in6 *sin6;
-+    struct in6_ifreq ifr6;
-+
-+    // Open IPv6 UDP socket.
-+    sock = JVM_Socket(AF_INET6, SOCK_DGRAM, 0);
-+    if (sock < 0) {
-+        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                     "Failed to create IPv6 socket");
-+        return ifs;
-+    }
-+
-+    if (getifaddrs(&origifa) != 0) {
-+        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                         "getifaddrs() function failed");
-+	close(sock);
-+	return ifs;
-+    }
-+
-+    for (ifa = origifa; ifa != NULL; ifa = ifa->ifa_next) {
-+
-+	/*
-+	 * Skip non-AF_INET6 entries.
-+	 */
-+	if (ifa->ifa_addr == NULL || ifa->ifa_addr->sa_family != AF_INET6)
-+	    continue;
-+
-+	memset(&ifr6, 0, sizeof(ifr6));
-+	strlcpy(ifr6.ifr_name, ifa->ifa_name, sizeof(ifr6.ifr_name));
-+	memcpy(&ifr6.ifr_addr, ifa->ifa_addr, MIN(sizeof(ifr6.ifr_addr), ifa->ifa_addr->sa_len));
-+
-+	if (ioctl(sock, SIOCGIFNETMASK_IN6, (caddr_t)&ifr6) < 0) {
-+	    NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                             "ioctl SIOCGIFNETMASK_IN6 failed");
-+	    close(sock);
-+	    freeifaddrs(origifa);
-+	    freeif(ifs);
-+	    return NULL;
-+	}
-+
-+	/* Add to the list.  */
-+	sin6 = (struct sockaddr_in6 *)&ifr6.ifr_addr;
-+	ifs = addif(env, ifs, ifa->ifa_name, (-1), AF_INET6,
-+	            ifa->ifa_addr, sizeof(struct sockaddr_in6),
-+		    prefix(&sin6->sin6_addr, sizeof(struct in6_addr)));
-+
-+	/* If an exception occurred then free the list.  */
-+	if ((*env)->ExceptionOccurred(env)) {
-+	    close(sock);
-+	    freeifaddrs(origifa);
-+	    freeif(ifs);
-+	    return NULL;
-+	}
-+    }
-+
-+    /*
-+     * Free socket and ifaddrs buffer
-+     */
-+    close(sock);
-+    freeifaddrs(origifa);
-+    return ifs;
-+}
-+#endif /* AF_INET6 */
-+
-+#endif /* !_ALLBSD_SOURCE */
+-#ifdef __solaris__
++#if defined(_ALLBSD_SOURCE) || defined(__solaris__)
+ static netif *enumIPvXInterfaces(JNIEnv *env, int sock, netif *ifs, int family);
++#ifdef __solaris__
+ static int    getMacFromDevice(JNIEnv *env, const char* ifname, unsigned char* retbuf);
  
- #if defined(__solaris__) && defined(AF_INET6)
- /*
-@@ -1007,7 +1191,13 @@
-             JNU_ThrowOutOfMemoryError(env, "heap allocation failed");
-             return ifs;
-         }
-+#if defined(_ALLBSD_SOURCE)
-+	currif->index = if_nametoindex(name);
-+	if (currif->index == 0)
-+	    currif->index = -1;
-+#else
-         currif->index = index;
+ #ifndef SIOCGLIFHWADDR
+@@ -142,6 +156,7 @@
+ #endif
+ 
+ #endif
 +#endif
-         currif->addr = NULL;
-         currif->childs = NULL;
-         currif->virtual = isVirtual;
-@@ -1295,6 +1485,31 @@
-    * All bytes to 0 means no hardware address.
-    */
-   return -1;
-+#elif defined(_ALLBSD_SOURCE)
-+  struct ifaddrs *ifa0, *ifa;
-+  struct sockaddr *saddr;
-+  int i;
+ 
+ /******************* Java entry points *****************************/
+ 
+@@ -995,6 +1010,240 @@
+ }
+ 
+ 
++/** BSD **/
++#ifdef _ALLBSD_SOURCE
++/* Open socket for further ioct calls, try v4 socket first and
++ * if it falls return v6 socket
++ */
 +
-+  /* Grab the interface list */
-+  if (!getifaddrs(&ifa0)) {
-+    /* Cycle through the interfaces */
-+    for (i = 0, ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next, i++) {
-+      saddr = ifa->ifa_addr;
-+      /* Link layer contains the MAC address */
-+      if (saddr->sa_family == AF_LINK && !strcmp(ifname, ifa->ifa_name)) {
-+        struct sockaddr_dl *sadl = (struct sockaddr_dl *) saddr;
-+        /* Check the address is the correct length */
-+        if (sadl->sdl_alen == ETHER_ADDR_LEN) {
-+           memcpy(buf, (sadl->sdl_data + sadl->sdl_nlen), ETHER_ADDR_LEN);
-+           freeifaddrs(ifa0);
-+           return ETHER_ADDR_LEN;
++#ifdef AF_INET6
++// unused arg ifname and struct if2
++static int openSocketWithFallback(JNIEnv *env, const char *ifname){
++    int sock;
++    struct ifreq if2;
++
++    if ((sock = JVM_Socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
++        if (errno == EPROTONOSUPPORT){
++            if ( (sock = JVM_Socket(AF_INET6, SOCK_DGRAM, 0)) < 0 ){
++                NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException", "IPV6 Socket creation failed");
++                return -1;
++            }
 +        }
-+      }
++        else{ // errno is not NOSUPPORT
++            NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException", "IPV4 Socket creation failed");
++            return -1;
++        }
++    }
++
++    return sock;
++}
++
++#else
++static int openSocketWithFallback(JNIEnv *env, const char *ifname){
++    return openSocket(env, AF_INET);
++}
++#endif
++
++static netif *enumIPv4Interfaces(JNIEnv *env, int sock, netif *ifs) {
++    return enumIPvXInterfaces(env, sock, ifs, AF_INET);
++}
++
++#ifdef AF_INET6
++static netif *enumIPv6Interfaces(JNIEnv *env, int sock, netif *ifs) {
++    return enumIPvXInterfaces(env, sock, ifs, AF_INET6);
++}
++#endif
++
++/*
++   Enumerates and returns all interfaces on BSD
++   use the same code for IPv4 and IPv6
++ */
++static netif *enumIPvXInterfaces(JNIEnv *env, int sock, netif *ifs, int family) {
++    struct ifaddrs *ifa0, *ifa;
++  
++    /*
++     * Grab the interface list
++     */
++    if (getifaddrs(&ifa0) < 0) {
++        return NULL;
++    }
++
++    /*
++     * Iterate through each interface
++     */
++    for (ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next) {
++        if (ifa->ifa_addr->sa_family == family) {
++            /*
++             * Add to the list
++             */
++            ifs = addif(env, sock, ifa->ifa_name, ifs, ifa->ifa_addr, family, 0);
++
++            /*
++             * If an exception occurred then free the list
++             */
++            if ((*env)->ExceptionOccurred(env)) {
++                freeif(ifs);
++                ifs = NULL;
++                break;
++            }
++        }
 +    }
 +    freeifaddrs(ifa0);
++
++    return ifs;
++}
++
++static int getIndex(int sock, const char *name){
++     /*
++      * Try to get the interface index
++      */
++    struct ifreq if2;
++    strcpy(if2.ifr_name, name);
++
++    if (ioctl(sock, SIOCGIFINDEX, (char *)&if2) < 0) {
++        return -1;
++    }
++
++    return if2.ifr_index;
++}
++
++/**
++ * Returns the IPv4 broadcast address of a named interface, if it exists.
++ * Returns 0 if it doesn't have one.
++ */
++static struct sockaddr *getBroadcast(JNIEnv *env, int sock, const char *ifname, struct sockaddr *brdcast_store) {
++  struct sockaddr *ret = NULL;
++  struct ifreq if2;
++
++  memset((char *) &if2, 0, sizeof(if2));
++  strcpy(if2.ifr_name, ifname);
++
++  /* Let's make sure the interface does have a broadcast address */
++  if (ioctl(sock, SIOCGIFFLAGS, (char *)&if2)  < 0) {
++      NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL  SIOCGIFFLAGS failed");
++      return ret;
 +  }
 +
-+  return -1;
- #else
-   struct arpreq arpreq;
-   struct sockaddr_in* sin;
-@@ -1460,7 +1675,7 @@
-                                  "Socket creation failed");
-   } else {
- 
--#ifdef __linux__
-+#if defined(__linux__) || defined(_ALLBSD_SOURCE)
-     memset((char *) &if2, 0, sizeof(if2));
-     strcpy(if2.ifr_name, name_utf);
- 
++  if (if2.ifr_flags & IFF_BROADCAST) {
++      /* It does, let's retrieve it*/
++      if (ioctl(sock, SIOCGIFBRDADDR, (char *)&if2) < 0) {
++          NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFBRDADDR failed");
++          return ret;
++      }
++
++      ret = brdcast_store;
++      memcpy(ret, &if2.ifr_broadaddr, sizeof(struct sockaddr));
++  }
++
++  return ret;
++}
++
++/**
++ * Returns the IPv4 subnet prefix length (aka subnet mask) for the named
++ * interface, if it has one, otherwise return -1.
++ */
++static short getSubnet(JNIEnv *env, int sock, const char *ifname) {
++    unsigned int mask;
++    short ret;
++    struct ifreq if2;
++
++    memset((char *) &if2, 0, sizeof(if2));
++    strcpy(if2.ifr_name, ifname);
++
++    if (ioctl(sock, SIOCGIFNETMASK, (char *)&if2) < 0) {
++        NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFNETMASK failed");
++        return -1;
++    }
++
++    mask = ntohl(((struct sockaddr_in*)&(if2.ifr_addr))->sin_addr.s_addr);
++    ret = 0;
++    while (mask) {
++       mask <<= 1;
++       ret++;
++    }
++
++    return ret;
++}
++
++/**
++ * Get the Hardware address (usually MAC address) for the named interface.
++ * return puts the data in buf, and returns the length, in byte, of the
++ * MAC address. Returns -1 if there is no hardware address on that interface.
++ */
++static int getMacAddress(JNIEnv *env, int sock, const char* ifname, const struct in_addr* addr, unsigned char *buf) {
++    struct ifaddrs *ifa0, *ifa;
++    struct sockaddr *saddr;
++    struct sockaddr_dl *sadl;
++    int ret = -1;
++  
++    /*
++     * Grab the interface list
++     */
++    if (getifaddrs(&ifa0) < 0) {
++        return ret;
++    }
++
++    /*
++     * Iterate through each interface
++     */
++    for (ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next) {
++        saddr = ifa->ifa_addr;
++
++        /* Link layer contains the MAC address */
++        if (saddr->sa_family == AF_LINK && strcmp(ifname, ifa->ifa_name) == 0) {
++            sadl = (struct sockaddr_dl *)saddr;
++
++            /* Check the address is the correct length */
++            if (sadl->sdl_alen == ETHER_ADDR_LEN) {
++                memcpy(buf, (sadl->sdl_data + sadl->sdl_nlen), ETHER_ADDR_LEN);
++                ret = ETHER_ADDR_LEN;
++                break;
++            }
++        }
++    }
++    freeifaddrs(ifa0);
++
++    return ret;
++}
++
++static int getMTU(JNIEnv *env, int sock,  const char *ifname) {
++    struct ifreq if2;
++    memset((char *) &if2, 0, sizeof(if2));
++
++    if (ifname != NULL) {
++        strcpy(if2.ifr_name, ifname);
++    } else {
++        JNU_ThrowNullPointerException(env, "network interface name is NULL");
++        return -1;
++    }
++
++    if (ioctl(sock, SIOCGIFMTU, (char *)&if2) < 0) {
++        NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFMTU failed");
++        return -1;
++    }
++
++    return  if2.ifr_mtu;
++}
++
++static int getFlags(int sock, const char *ifname) {
++    struct ifreq if2;
++    int flags;
++
++    memset((char *) &if2, 0, sizeof(if2));
++    strcpy(if2.ifr_name, ifname);
++
++    if (ioctl(sock, SIOCGIFFLAGS, (char *)&if2) < 0) {
++        return -1;
++    }
++
++    flags = if2.ifr_flags & 0xffff;
++    flags |= if2.ifr_flagshigh << 16;
++
++    return flags;
++}
++
++#endif
++
+ /** Linux **/
+ #ifdef __linux__
+ /* Open socket for further ioct calls, try v4 socket first and
 --- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
 +++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
 @@ -23,12 +23,12 @@
@@ -12329,7 +12416,7 @@
  
  #ifdef __solaris__
  #include <fcntl.h>
-@@ -335,7 +335,7 @@
+@@ -331,7 +331,7 @@
      /* The fdObj'fd */
      jint fd;
  
@@ -12338,7 +12425,7 @@
      SOCKADDR addr;
      int len;
  #endif
-@@ -345,26 +345,39 @@
+@@ -341,26 +341,39 @@
      }
      fd = (*env)->GetIntField(env, fdObj, IO_fd_fdID);
  
@@ -12378,7 +12465,7 @@
          // After disconnecting a UDP socket, Linux kernel will set
          // local port to zero if the port number comes from implicit
          // bind. Successive send/recv on the same socket will fail.
-@@ -387,6 +400,7 @@
+@@ -383,6 +396,7 @@
              NET_Bind(fd, (struct sockaddr *)&addr, len);
          }
      }
@@ -12386,69 +12473,7 @@
  #else
      JVM_Connect(fd, 0, 0);
  #endif
-@@ -1056,31 +1070,38 @@
- Java_java_net_PlainDatagramSocketImpl_datagramSocketCreate(JNIEnv *env,
-                                                            jobject this) {
-     jobject fdObj = (*env)->GetObjectField(env, this, pdsi_fdID);
--    int fd;
--
--    int arg = -1;
--    int t = 1;
-+    int fd, t = 1;
-+#ifdef AF_INET6
-+    int domain = ipv6_available() ? AF_INET6 : AF_INET;
-+#else
-+    int domain = AF_INET;
-+#endif
- 
-     if (IS_NULL(fdObj)) {
-         JNU_ThrowByName(env, JNU_JAVANETPKG "SocketException",
-                         "Socket closed");
-         return;
--    } else {
--#ifdef AF_INET6
--        if (ipv6_available()) {
--            fd =  JVM_Socket(AF_INET6, SOCK_DGRAM, 0);
--        } else
--#endif /* AF_INET6 */
--            {
--                fd =  JVM_Socket(AF_INET, SOCK_DGRAM, 0);
--            }
-     }
--    if (fd == JVM_IO_ERR) {
-+
-+    if ((fd = JVM_Socket(domain, SOCK_DGRAM, 0)) == JVM_IO_ERR) {
-         NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException",
-                        "Error creating socket");
-         return;
-     }
- 
-+#ifdef AF_INET6
-+    /* Disable IPV6_V6ONLY to ensure dual-socket support */
-+    if (domain == AF_INET6) {
-+        int arg = 0;
-+        if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&arg,
-+                       sizeof(int)) < 0) {
-+            NET_ThrowNew(env, errno, "cannot set IPPROTO_IPV6");
-+            close(fd);
-+            return;
-+        }
-+    }
-+#endif /* AF_INET6 */
-+
-      setsockopt(fd, SOL_SOCKET, SO_BROADCAST, (char*) &t, sizeof(int));
- 
- #ifdef __linux__
-@@ -1093,7 +1114,7 @@
-      * On Linux for IPv6 sockets we must set the hop limit
-      * to 1 to be compatible with default ttl of 1 for IPv4 sockets.
-      */
--    if (ipv6_available()) {
-+    if (domain == AF_INET6) {
-         int ttl = 1;
-         setsockopt(fd, IPPROTO_IPV6, IPV6_MULTICAST_HOPS, (char *)&ttl,
-                    sizeof(ttl));
-@@ -1303,7 +1324,7 @@
+@@ -1306,7 +1320,7 @@
          /*
           * value is an InetAddress.
           */
@@ -12457,7 +12482,7 @@
          if (ipv6_available()) {
              mcast_set_if_by_addr_v6(env, this, fd, value);
          } else {
-@@ -1322,7 +1343,7 @@
+@@ -1325,7 +1339,7 @@
          /*
           * value is a NetworkInterface.
           */
@@ -12466,7 +12491,7 @@
          if (ipv6_available()) {
              mcast_set_if_by_if_v6(env, this, fd, value);
          } else {
-@@ -1399,7 +1420,7 @@
+@@ -1402,7 +1416,7 @@
   */
  static void setMulticastLoopbackMode(JNIEnv *env, jobject this, int fd,
                                    jint opt, jobject value) {
@@ -12475,7 +12500,7 @@
      if (ipv6_available()) {
          mcast_set_loop_v6(env, this, fd, value);
      } else {
-@@ -1964,7 +1985,7 @@
+@@ -1982,7 +1996,7 @@
          fd = (*env)->GetIntField(env, fdObj, IO_fd_fdID);
      }
      /* setsockopt to be correct ttl */
@@ -12484,7 +12509,7 @@
      if (ipv6_available()) {
          setHopLimit(env, fd, ttl);
      } else {
-@@ -2357,18 +2378,30 @@
+@@ -2374,18 +2388,30 @@
              mname6.ipv6mr_interface = idx;
          }
  
@@ -12520,38 +12545,7 @@
          }
 --- jdk/src/solaris/native/java/net/PlainSocketImpl.c
 +++ jdk/src/solaris/native/java/net/PlainSocketImpl.c
-@@ -253,7 +253,12 @@
-                                            jboolean stream) {
-     jobject fdObj, ssObj;
-     int fd;
--    int arg = -1;
-+    int type = (stream ? SOCK_STREAM : SOCK_DGRAM);
-+#ifdef AF_INET6
-+    int domain = ipv6_available() ? AF_INET6 : AF_INET;
-+#else
-+    int domain = AF_INET;
-+#endif
- 
-     if (socketExceptionCls == NULL) {
-         jclass c = (*env)->FindClass(env, "java/net/SocketException");
-@@ -267,25 +272,29 @@
-         (*env)->ThrowNew(env, socketExceptionCls, "null fd object");
-         return;
-     }
--#ifdef AF_INET6
--    if (ipv6_available()) {
--        fd = JVM_Socket(AF_INET6, (stream ? SOCK_STREAM: SOCK_DGRAM), 0);
--    } else
--#endif /* AF_INET6 */
--        {
--            fd = JVM_Socket(AF_INET, (stream ? SOCK_STREAM: SOCK_DGRAM), 0);
--        }
--    if (fd == JVM_IO_ERR) {
-+
-+    if ((fd = JVM_Socket(domain, type, 0)) == JVM_IO_ERR) {
-         /* note: if you run out of fds, you may not be able to load
-          * the exception class, and get a NoClassDefFoundError
-          * instead.
+@@ -279,10 +279,21 @@
           */
          NET_ThrowNew(env, errno, "can't create socket");
          return;
@@ -12561,7 +12555,7 @@
  
 +#ifdef AF_INET6
 +    /* Disable IPV6_V6ONLY to ensure dual-socket support */
-+    if (domain == AF_INET6) {
++    if (ipv6_available()) {
 +        int arg = 0;
 +        if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&arg,
 +                       sizeof(int)) < 0) {
@@ -12575,7 +12569,7 @@
      /*
       * If this is a server socket then enable SO_REUSEADDR
       * automatically and set to non blocking.
-@@ -294,9 +303,15 @@
+@@ -291,9 +302,15 @@
      if (ssObj != NULL) {
          int arg = 1;
          SET_NONBLOCKING(fd);
@@ -12593,7 +12587,7 @@
  }
  
  /*
-@@ -528,9 +543,11 @@
+@@ -525,9 +542,11 @@
          if (connect_rv == JVM_IO_INTR) {
              JNU_ThrowByName(env, JNU_JAVAIOPKG "InterruptedIOException",
                              "operation interrupted");
@@ -12616,6 +12610,24 @@
  
  /*
   * The fd table and the number of file descriptors
+@@ -281,7 +281,7 @@
+ 
+ int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
+        struct sockaddr *from, int *fromlen) {
+-    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t)fromlen) );
++    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t *)fromlen) );
+ }
+ 
+ int NET_Send(int s, void *msg, int len, unsigned int flags) {
+@@ -298,7 +298,7 @@
+ }
+ 
+ int NET_Accept(int s, struct sockaddr *addr, int *addrlen) {
+-    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t)addrlen) );
++    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t *)addrlen) );
+ }
+ 
+ int NET_Connect(int s, struct sockaddr *addr, int addrlen) {
 --- jdk/src/solaris/native/java/net/net_util_md.c
 +++ jdk/src/solaris/native/java/net/net_util_md.c
 @@ -34,6 +34,15 @@
@@ -12649,15 +12661,6 @@
  jint  IPv6_supported()
  {
  #ifndef AF_INET6
-@@ -230,7 +247,7 @@
-     int fd;
-     void *ipv6_fn;
-     SOCKADDR sa;
--    int sa_len = sizeof(sa);
-+    socklen_t sa_len = sizeof(sa);
- 
-     fd = JVM_Socket(AF_INET6, SOCK_STREAM, 0) ;
-     if (fd < 0) {
 @@ -356,6 +373,7 @@
      close(fd);
      return JNI_TRUE;
@@ -12666,7 +12669,7 @@
  
  void
  NET_AllocSockaddr(struct sockaddr **him, int *len) {
-@@ -710,6 +728,10 @@
+@@ -707,6 +725,10 @@
          him6->sin6_family = AF_INET6;
          *len = sizeof(struct sockaddr_in6) ;
  
@@ -12677,24 +12680,16 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1107,7 +1129,16 @@
+@@ -1104,7 +1126,7 @@
      }
  #endif
  
-+#ifdef __solaris__
-     rv = getsockopt(fd, level, opt, result, len);
-+#else
-+    {
-+        socklen_t socklen = *len;
-+        rv = getsockopt(fd, level, opt, result, &socklen);
-+        *len = socklen;
-+    }
-+#endif
-+
+-    rv = getsockopt(fd, level, opt, result, (socklen_t)len);
++    rv = getsockopt(fd, level, opt, result, (socklen_t *)len);
      if (rv < 0) {
          return rv;
      }
-@@ -1154,6 +1185,24 @@
+@@ -1151,6 +1173,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -12719,7 +12714,7 @@
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1186,6 +1235,10 @@
+@@ -1183,6 +1223,10 @@
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -12730,7 +12725,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1233,6 +1286,84 @@
+@@ -1230,6 +1274,84 @@
      }
  #endif
  

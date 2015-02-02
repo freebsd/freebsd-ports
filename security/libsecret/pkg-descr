@@ -1,7 +1,6 @@
-libsecret is a library for storing and retrieving passwords and other 
-secrets. It communicates with the "Secret Service" using 
-DBus. gnome-keyring and ksecretservice are both implementations 
-of a Secret Service. interfaces and classes for commonly used 
-data structures. interfaces and classes for commonly used data structures.
+libsecret is a library for storing and retrieving passwords and other
+secrets.  It communicates with the "Secret Service" using DBus.
+gnome-keyring and ksecretservice are both implementations of a Secret
+Service; libsecret replaces libgnome-keyring.
 
-WWW: https://live.gnome.org/Libsecret
+WWW: https://wiki.gnome.org/Projects/Libsecret/

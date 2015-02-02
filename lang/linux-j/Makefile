@@ -18,8 +18,6 @@ LICENSE_NAME=	JSoftware End User License Agreement
 LICENSE_FILE=	${FILESDIR}/license.txt
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
 USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -13,7 +13,7 @@ COMMENT=	High performance Python package for predictive modeling
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+BUILD_DEPENDS=	${PYNUMPY} \
 		cython>0:${PORTSDIR}/lang/cython
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl

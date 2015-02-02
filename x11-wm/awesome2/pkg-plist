@@ -27,6 +27,3 @@ man/man5/awesome2rc.5.gz
 %%DATADIR%%/icons/layouts/tiletop.png
 %%DATADIR%%/icons/layouts/tiletopw.png
 %%DATADIR%%/icons/layouts/tilew.png
-@dirrm %%DATADIR%%/icons/layouts
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

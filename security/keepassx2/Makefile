@@ -3,7 +3,7 @@
 
 PORTNAME=	KeePassX
 DISTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/69/
 PKGNAMESUFFIX=	-alpha

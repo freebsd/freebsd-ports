@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ricty
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
@@ -17,9 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${X_FONTSDIR}/OTF/Inconsolata.otf:${PORTSDIR}/x11-fo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yascentur
-GH_COMMIT=	${GH_TAGNAME}
 GH_PROJECT=	Ricty
-GH_TAGNAME=	0fd7047
+GH_COMMIT=	c22daa9
 
 NO_PACKAGE=	redistribution is not allowed
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -54,7 +53,7 @@ RUN_DEPENDS+=	${DATADIR}/RictyDiscord-Regular.ttf:${PORTSDIR}/japanese/font-rict
 .endif
 
 do-build:
-	cd ${WRKSRC} &&\
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${SH} ${WRKSRC}/ricty_generator.sh \
 			${PREFIX}/${X_FONTSDIR}/OTF/Inconsolata.otf \
 			${PREFIX}/${X_FONTSDIR}/TTF/migu-1m-regular.ttf \
@@ -97,9 +96,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${X_FONTSDIR}/TTF
-	${SETENV} PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

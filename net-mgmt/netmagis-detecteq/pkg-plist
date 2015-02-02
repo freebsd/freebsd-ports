@@ -2,5 +2,3 @@ sbin/detectconfmod
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius/radiusd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius/server.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius/topo.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/radius
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

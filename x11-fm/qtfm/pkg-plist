@@ -12,4 +12,3 @@ share/pixmaps/qtfm.png
 %%DATADIR%%/qtfm_sv.qm
 %%DATADIR%%/qtfm_zh.qm
 %%DATADIR%%/qtfm_zh_TW.qm
-@dirrm %%DATADIR%%

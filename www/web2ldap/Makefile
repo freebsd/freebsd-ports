@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.1.49
+PORTVERSION=	1.2.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/ \
@@ -22,6 +22,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/var/log %%DATADIR%%/var/run
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

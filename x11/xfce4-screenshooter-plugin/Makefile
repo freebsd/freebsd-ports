@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.8.1
-PORTREVISION=	6
+PORTVERSION=	1.8.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/xfce4-screenshooter/${PORTVERSION:R}
@@ -11,7 +10,7 @@ DISTNAME=	xfce4-screenshooter-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Desktop Screenshot plugin for Xfce
+COMMENT=	Application and panel plugin to take screenshots
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,23 +19,14 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 intltool intlhack libxml2
 USE_XFCE=	configenv libexo libmenu libutil panel
 USES=		pkgconfig gmake libtool tar:bzip2
+USE_XORG=	xfixes xext
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|g' ${WRKSRC}/Makefile.in
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

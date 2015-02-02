@@ -80,7 +80,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Samples/smile.blob
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/blobedit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/setup.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BlobEdit
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ToDo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

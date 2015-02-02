@@ -1,6 +1,6 @@
---- ./support/Makefile.in.orig	2012-12-11 11:37:25.000000000 +0100
-+++ ./support/Makefile.in	2013-10-26 19:29:20.000000000 +0200
-@@ -17,10 +17,10 @@
+--- support/Makefile.in.orig	2012-12-11 10:37:25 UTC
++++ support/Makefile.in
+@@ -17,10 +17,10 @@ install:
  	@test -d $(DESTDIR)$(sbindir) || $(MKINSTALLDIRS) $(DESTDIR)$(sbindir)
  	@test -d $(DESTDIR)$(libexecdir) || $(MKINSTALLDIRS) $(DESTDIR)$(libexecdir)
  	@cp -p $(top_builddir)/server/httpd.exp $(DESTDIR)$(libexecdir)
@@ -14,7 +14,7 @@
  	    fi ; \
  	done
  	@for i in apachectl; do \
-@@ -30,10 +30,7 @@
+@@ -30,10 +30,7 @@ install:
  	    fi ; \
  	done
  	@if test -f "$(builddir)/envvars-std"; then \

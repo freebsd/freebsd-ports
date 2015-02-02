@@ -2118,7 +2118,7 @@ man/man8/squid.8.gz
 sbin/purge
 sbin/squid
 sbin/squidclient
-@dir /var/log/squid
-@dir /var/squid/cache
-@dir /var/squid/logs
-@dir /var/squid
+@dir(squid,squid,750) /var/log/squid
+@dir(squid,squid,750) /var/squid/cache
+@dir(squid,squid,750) /var/squid/logs
+@dir(squid,squid,750) /var/squid

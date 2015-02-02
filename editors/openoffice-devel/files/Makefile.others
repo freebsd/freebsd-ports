@@ -12,38 +12,37 @@
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for Apache OpenOffice mirror upload";
 	@${LN} ${PKGFILE} \
-		${WRKDIR}/../OOo-Dev_${PACKAGE_BASENAME}_install_${LOCALIZED_LANG}${PKG_SUFX}
+		${WRKDIR}/../${PACKAGE_PREFIX}_${PACKAGE_MIDDLE}_install_${LOCALIZED_LANG}${PKG_SUFX}
 
 package-canonical:
 	@${ECHO_MSG} "===>   Canonical packaging for Apache OpenOffice";
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ;\
-	${TAR} cfj ${WRKDIR}/../OOo-Dev_${PACKAGE_BASENAME}_native_install_${LOCALIZED_LANG}${PKG_SUFX} .
+	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/${PACKAGE_PREFIX}* ${WRKDIR}/../.
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of Apache OpenOffice"
 	@${RM} -fr ${WRKDIR}/sdk_tmp
 	@${MKDIR} ${WRKDIR}/sdk_tmp
 	@cd ${WRKDIR}/sdk_tmp ; \
-		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_SDK/bsd/install/${LOCALIZED_LANG}/freebsd/ooobasis*.t?z
-	@cd ${WRKDIR}/sdk_tmp/opt/openoffice* ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice-*SDK*.tar.gz
+	@cd ${WRKDIR}/sdk_tmp/Apache_*/openoffice* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR}_sdk ; \
 		${MV} * ../${INSTALLATION_BASEDIR}_sdk ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../OOo-Dev-SDK_${PACKAGE_BASENAME}_install_en-US.tbz ${INSTALLATION_BASEDIR}_sdk
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-SDK_${PACKAGE_MIDDLE}_install_en-US.tbz ${INSTALLATION_BASEDIR}_sdk
 
 ure:
 	@${ECHO_MSG} "===>   Make Uno Runtime Environment of Apache OpenOffice"
 	@${RM} -fr ${WRKDIR}/ure_tmp
 	@${MKDIR} ${WRKDIR}/ure_tmp
 	@cd ${WRKDIR}/ure_tmp ; \
-		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/URE/bsd/install/${LOCALIZED_LANG}/freebsd/openoffice*.t?z
-	@cd ${WRKDIR}/ure_tmp/opt/openoffice* ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/URE/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice_*URE*.tar.gz
+	@cd ${WRKDIR}/ure_tmp/Apache_OpenOffice*URE* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../OOo-Dev-URE_${PACKAGE_BASENAME}_install_en-US.tbz ${INSTALLATION_BASEDIR}
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-URE_${PACKAGE_MIDDLE}_install_en-US.tbz ${INSTALLATION_BASEDIR}
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of Apache OpenOffice"
-	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_solver.tar.bz2 solver
+	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-solver_${PACKAGE_MIDDLE}.tar.bz2 solver
 
 languagepack:
 	@${ECHO_MSG} "===>   Make languagepack of Apache OpenOffice"
@@ -52,20 +51,19 @@ languagepack:
 .else
 	@cd ${WRKSRC} ; ${BASH} -c 'source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
 .endif
-
 .if !defined (ALL_LOCALIZED_LANGS)
 	@${RM} -fr ${WRKDIR}/langpack_tmp
 	@${MKDIR} ${WRKDIR}/langpack_tmp
 .if defined (LOCALIZED_LANG)
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ls openoffice*.t?z ooobasis*.t?z > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
 	@cd ${WRKDIR}/langpack_tmp ; \
 	for i in `${CAT} ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK`; do \
                 ${ECHO_CMD} "extracting $$i" ; \
-                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/${LOCALIZED_LANG}/freebsd/$$i ; \
+                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
         done
-	@cd ${WRKDIR}/langpack_tmp/opt/ ; \
+	@cd ${WRKDIR}/langpack_tmp/Apache_OpenOffice*/ ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../OOo-Dev_${PACKAGE_BASENAME}_langpack_${LOCALIZED_LANG}.tbz ${INSTALLATION_BASEDIR}
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}_${PACKAGE_MIDDLE}_langpack_${LOCALIZED_LANG}.tbz ${INSTALLATION_BASEDIR}
 .endif
 .endif

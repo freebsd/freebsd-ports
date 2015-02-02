@@ -101,36 +101,3 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
-@dirrm share/themes/Default/balou
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/xsessions
-@dirrm lib/xfce4/session/splash-engines
-@dirrm lib/xfce4/session
-@dirrmtry lib/xfce4
-@dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
-@dirrm include/xfce4/xfce4-session-%%VERSION%%
-@dirrmtry include/xfce4
-@dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
-@dirrmtry etc/xdg/xfce4/xfconf
-@dirrmtry etc/xdg/xfce4

@@ -667,28 +667,3 @@
 %%DOCS%%%%DOCSDIR%%/tutorials/firstwidget.html
 %%DOCS%%%%DOCSDIR%%/tutorials/pong.html
 %%DOCS%%%%DOCSDIR%%/user-guide.html
-%%DOCS%%@dirrm %%DOCSDIR%%/tutorials
-%%DOCS%%@dirrm %%DOCSDIR%%/installation
-%%DOCS%%@dirrm %%DOCSDIR%%/guide
-%%DOCS%%@dirrm %%DOCSDIR%%/gettingstarted
-%%DOCS%%@dirrm %%DOCSDIR%%/_static
-%%DOCS%%@dirrm %%DOCSDIR%%/_sources/tutorials
-%%DOCS%%@dirrm %%DOCSDIR%%/_sources/installation
-%%DOCS%%@dirrm %%DOCSDIR%%/_sources/guide
-%%DOCS%%@dirrm %%DOCSDIR%%/_sources/gettingstarted
-%%DOCS%%@dirrm %%DOCSDIR%%/_sources
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/uix
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/storage
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/network
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/modules
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input/providers
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input/postproc
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/input
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/effects
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/core/text
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/core
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy/adapters
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules/kivy
-%%DOCS%%@dirrm %%DOCSDIR%%/_modules
-%%DOCS%%@dirrm %%DOCSDIR%%/_images
-%%DOCS%%@dirrm %%DOCSDIR%%

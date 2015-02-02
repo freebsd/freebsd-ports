@@ -2,6 +2,7 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/data/EMPTY
 %%WWWDIR%%/data/VERSION
+@dir %%WWWDIR%%/data
 @owner root
 @group wheel
 %%WWWDIR%%/index.php
@@ -693,6 +694,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Files/FilesInterface.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Classes/Filter.php
+%%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Classes/FilterCondition.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ActionType.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ConditionField.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/src/RainLoop/Providers/Filters/Enumerations/ConditionType.php

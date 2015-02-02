@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/ \
 		LOCAL/ohauer
@@ -27,9 +27,14 @@ USERS=		polw
 GROUPS=		polw
 
 USE_RC_SUBR+=	policyd-weight
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+
+SHEBANG_LANG=	perl
+perl_OLD_CMD=	${SETENV} perl
+perl_CMD=	${PERL}
+SHEBANG_FILES=	${WRKSRC}/policyd-weight
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

@@ -27,6 +27,3 @@ share/avidemux6/i18n/qt_eu.qm
 share/avidemux6/i18n/qt_fr.qm
 share/avidemux6/i18n/qt_it.qm
 share/avidemux6/i18n/qt_zh_TW.qm
-@dirrm share/avidemux6/i18n
-@dirrm share/avidemux6
-@dirrm include/avidemux/2.6/qt4

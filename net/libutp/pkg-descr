@@ -9,4 +9,4 @@ transport for uTorrent peer-to-peer connections.
 uTP is written in C++, but the external interface is strictly C
 (ANSI C89).
 
-WWW:	https://github.com/bittorrent/libutp
+WWW: https://github.com/bittorrent/libutp

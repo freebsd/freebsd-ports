@@ -2,7 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2013.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GH:uboot \
 		http://distcache.FreeBSD.org/local-distfiles/ian/:bootfiles \
@@ -11,7 +11,7 @@ MASTER_SITES=	GH:uboot \
 		http://distcache.us-west.FreeBSD.org/local-distfiles/ian/:bootfiles
 PKGNAMESUFFIX=	-rpi
 DISTFILES=	u-boot-${PORTVERSION}-${GH_ACCOUNT}-${GH_PROJECT}.tar.gz:uboot \
-		rpi-boot-files-2014.10_1.tar.bz2:bootfiles
+		rpi-boot-files-2014.10_2.tar.bz2:bootfiles
 
 MAINTAINER=	ian@FreeBSD.org
 COMMENT=	Cross-build U-Boot loader for Raspberry Pi

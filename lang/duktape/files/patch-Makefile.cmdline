@@ -14,7 +14,7 @@
 -#CCOPTS += -DDUK_CMDLINE_FANCY
 -#CCLIBS += -lreadline
 +CCOPTS += -DDUK_CMDLINE_FANCY
-+CCLIBS += ${LDFLAGS} -lreadline
++CCLIBS += ${LDFLAGS} -ledit
  #CCLIBS += -lncurses
  
  # Optional feature defines, see: http://duktape.org/guide.html#compiling

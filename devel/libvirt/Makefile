@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTVERSION=	1.2.12
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS NLS QEMU
+OPTIONS_DEFINE=	DOCS NLS QEMU SASL
 OPTIONS_DEFINE_amd64=	BHYVE
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFAULT_amd64=	BHYVE
@@ -43,13 +42,16 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
+SASL_CONFIGURE_WITH=	sasl
+SASL_BUILD_DEPENDS=	sasl:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
 VARDIR=		/var
 
 USE_RC_SUBR=	libvirtd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-sasl \
-		--without-avahi \
+CONFIGURE_ARGS=	--without-avahi \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
@@ -73,7 +75,7 @@ CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHLIB_VER=	0.1002.11
+SHLIB_VER=	0.1002.12
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*

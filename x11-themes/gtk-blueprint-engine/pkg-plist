@@ -911,30 +911,3 @@ share/themes/blueprint/metacity-1/window-chrome-close-unfocused.png
 share/themes/blueprint/metacity-1/window-chrome-maximize-unfocused.png
 share/themes/blueprint/metacity-1/window-chrome-minimize-unfocused.png
 share/themes/blueprint/metacity-1/window-chrome-unmaximize-unfocused.png
-@dirrm share/themes/blueprint/metacity-1
-@dirrm share/themes/blueprint/gtk-2.0
-@dirrm share/themes/blueprint-Sand/gtk-2.0
-@dirrm share/themes/blueprint-Sand
-@dirrm share/themes/blueprint-Ice/gtk-2.0
-@dirrm share/themes/blueprint-Ice
-@dirrm share/themes/blueprint-Green/gtk-2.0
-@dirrm share/themes/blueprint-Green
-@dirrm share/themes/blueprint
-@dirrm share/icons/blueprint/stock/48x48
-@dirrm share/icons/blueprint/stock/32x32
-@dirrm share/icons/blueprint/stock/25x25
-@dirrm share/icons/blueprint/stock/24x24
-@dirrm share/icons/blueprint/stock/20x20
-@dirrm share/icons/blueprint/stock/16x16
-@dirrm share/icons/blueprint/stock
-@dirrm share/icons/blueprint/48x48/stock/generic
-@dirrm share/icons/blueprint/48x48/stock
-@dirrm share/icons/blueprint/48x48/mimetypes
-@dirrm share/icons/blueprint/48x48/filesystems
-@dirrm share/icons/blueprint/48x48/emblems
-@dirrm share/icons/blueprint/48x48/devices
-@dirrm share/icons/blueprint/48x48/apps
-@dirrm share/icons/blueprint/48x48
-@dirrm share/icons/blueprint/36x36/apps
-@dirrm share/icons/blueprint/36x36
-@dirrm share/icons/blueprint

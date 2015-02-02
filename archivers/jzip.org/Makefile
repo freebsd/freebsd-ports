@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WinZip like program written in Java
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 PLIST_FILES=	%%JAVAJARDIR%%/jzip.org.jar bin/${PORTNAME}
 USE_JAVA=	yes

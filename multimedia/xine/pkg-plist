@@ -149,18 +149,3 @@ share/pixmaps/xine.xpm
 %%DATADIR%%/skins/xinetic/SmallArrowUp.png
 %%DATADIR%%/skins/xinetic/skinconfig
 %%DATADIR%%/visuals/default.mpv
-@dirrm %%DATADIR%%/visuals
-@dirrm %%DATADIR%%/skins/xinetic
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/oxine
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/doc/xitk
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/de/man1
-@dirrmtry man/de

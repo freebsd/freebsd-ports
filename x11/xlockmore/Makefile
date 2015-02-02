@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.43
-PORTREVISION=	3
+PORTVERSION=	5.45
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
@@ -22,6 +21,7 @@ USE_GNOME=	#
 USE_XORG=	x11 xaw ice
 
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+CONFIGURE_ENV+=	ac_freetype_includes="${LOCALBASE}/include/freetype2"
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK
@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=	--enable-blank-only
 CONFIGURE_ARGS+=	--enable-use-mb
 .endif
 
-.if ${PORT_OPTIONS:MXLOCKMORE_LANG}
+.if defined(XLOCKMORE_LANG)
 CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 .endif
 
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libMagickCore-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--without-magick
 .endif

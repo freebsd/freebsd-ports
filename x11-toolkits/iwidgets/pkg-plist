@@ -242,8 +242,3 @@ man/mann/iwidgets_timeentry.n.gz
 man/mann/iwidgets_timefield.n.gz
 man/mann/iwidgets_toolbar.n.gz
 man/mann/iwidgets_watch.n.gz
-@dirrm lib/%%IWIDGETS%%/scripts
-@dirrm lib/%%IWIDGETS%%/demos/images
-@dirrm lib/%%IWIDGETS%%/demos/html
-@dirrm lib/%%IWIDGETS%%/demos
-@dirrm lib/%%IWIDGETS%%

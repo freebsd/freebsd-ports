@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seq2gif
-PORTVERSION=	0.10.3.20140802
-#PORTEPOCH=	0
+PORTVERSION=	0.10.4
 CATEGORIES=	graphics
 
 MAINTAINER=	sue@iwmt.org
@@ -15,13 +14,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	saitoha
 #GH_TAGNAME=	v${PORTVERSION}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	253dacb
+GH_COMMIT=	798a2fe
 
 USE_LDCONFIG=	yes
 USES=		libtool
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
 

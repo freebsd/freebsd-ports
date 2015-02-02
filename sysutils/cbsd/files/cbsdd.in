@@ -24,11 +24,6 @@ if [ ! -f ${globalconf} ]; then
 	exit 1
 fi
 
-if [ ! -f ${inventory} ]; then
-	echo "cbsd: no such ${inventory}";
-	exit 1
-fi
-
 if [ ! -f ${mdtools} ]; then
 	echo "cbsd: no such ${mdtools}";
 	exit 1
@@ -45,7 +40,6 @@ if [ ! -f ${localcbsdconf} ]; then
 fi
 
 . ${globalconf}
-. ${inventory}
 . ${mdtools}
 . ${subr}
 

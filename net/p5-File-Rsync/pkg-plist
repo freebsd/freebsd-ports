@@ -1,3 +1,2 @@
 %%PERL5_MAN3%%/File::Rsync.3.gz
-%%SITE_ARCH%%/File/Rsync.pm
-%%SITE_ARCH%%/File/Rsync/Config.pm
+%%SITE_PERL%%/File/Rsync.pm

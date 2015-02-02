@@ -17,5 +17,3 @@ lib/X11/amiwm/system.map
 man/man1/amiwm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.modules
-@dirrm lib/X11/amiwm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

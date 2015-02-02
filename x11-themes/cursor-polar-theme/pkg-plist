@@ -268,10 +268,3 @@ lib/X11/icons/polargreen/cursors/watch
 lib/X11/icons/polargreen/cursors/xterm
 lib/X11/icons/polargreen/cursors/zoomIn
 lib/X11/icons/polargreen/cursors/zoomOut
-@dirrm lib/X11/icons/polargreen/cursors
-@dirrm lib/X11/icons/polargreen
-@dirrm lib/X11/icons/polarblue/cursors
-@dirrm lib/X11/icons/polarblue
-@dirrm lib/X11/icons/polar/cursors
-@dirrm lib/X11/icons/polar
-@dirrmtry lib/X11/icons

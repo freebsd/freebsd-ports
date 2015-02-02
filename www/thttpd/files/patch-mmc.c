@@ -1,7 +1,7 @@
 --- mmc.c.orig	Tue Oct 22 09:42:01 2002
 +++ mmc.c	Fri Nov 14 12:26:39 2003
-@@ -74,6 +74,9 @@
-     time_t ctime;
+@@ -83,6 +83,9 @@
+     time_t ct;
      int refcount;
      time_t reftime;
 +#ifdef USE_SENDFILE
@@ -10,7 +10,7 @@
      void* addr;
      unsigned int hash;
      int hash_idx;
-@@ -140,7 +143,11 @@
+@@ -149,7 +152,11 @@
  	/* Yep.  Just return the existing map */
  	++m->refcount;
  	m->reftime = now;
@@ -22,7 +22,7 @@
  	}
  
      /* Open the file. */
-@@ -186,7 +193,9 @@
+@@ -195,7 +202,9 @@
      else
  	{
  	size_t size_size = (size_t) m->size;	/* loses on files >2GB */
@@ -33,7 +33,7 @@
  	/* Map the file into memory. */
  	m->addr = mmap( 0, size_size, PROT_READ, MAP_PRIVATE, fd, 0 );
  	if ( m->addr == (void*) -1 && errno == ENOMEM )
-@@ -234,8 +243,9 @@
+@@ -243,8 +252,9 @@
  	    }
  #endif /* HAVE_MMAP */
  	}
@@ -44,7 +44,7 @@
      /* Put the Map into the hash table. */
      if ( add_hash( m ) < 0 )
  	{
-@@ -253,8 +263,12 @@
+@@ -262,8 +272,12 @@
      /* Update the total byte count. */
      mapped_bytes += m->size;
  
@@ -57,7 +57,7 @@
      }
  
  
-@@ -267,14 +281,18 @@
+@@ -276,14 +290,18 @@
      if ( sbP != (struct stat*) 0 )
  	{
  	m = find_hash( sbP->st_ino, sbP->st_dev, sbP->st_size, sbP->st_ctime );
@@ -76,14 +76,23 @@
      if ( m == (Map*) 0 )
  	syslog( LOG_ERR, "mmc_unmap failed to find entry!" );
      else if ( m->refcount <= 0 )
-@@ -363,7 +381,9 @@
+@@ -372,7 +390,9 @@
      m = *mm;
      if ( m->size != 0 )
  	{
 -#ifdef HAVE_MMAP
 +#ifdef USE_SENDFILE
-+	close(m->fd);	    
++	close(m->fd);
 +#elif defined(HAVE_MMAP)
  	if ( munmap( m->addr, m->size ) < 0 )
  	    syslog( LOG_ERR, "munmap - %m" );
  #else /* HAVE_MMAP */
+@@ -523,7 +543,7 @@
+ mmc_logstats( long secs )
+     {
+     syslog(
+-	LOG_INFO, "  map cache - %d allocated, %d active (%lld bytes), %d free; hash size: %d; expire age: %ld",
++	LOG_INFO, "  map cache - %d allocated, %d active (%lld bytes), %d free; hash size: %d; expire age: %d",
+ 	alloc_count, map_count, (long long) mapped_bytes, free_count, hash_size,
+ 	expire_age );
+     if ( map_count + free_count != alloc_count )

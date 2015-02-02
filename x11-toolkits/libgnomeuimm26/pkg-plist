@@ -59,10 +59,3 @@ lib/libgnomeuimm-%%API_VERSION%%/include/libgnomeuimmconfig.h
 lib/libgnomeuimm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomeuimm-%%API_VERSION%%/proc/m4/convert_libgnomeuimm.m4
 libdata/pkgconfig/libgnomeuimm-%%API_VERSION%%.pc
-@dirrm lib/libgnomeuimm-%%API_VERSION%%/proc/m4
-@dirrm lib/libgnomeuimm-%%API_VERSION%%/proc
-@dirrm lib/libgnomeuimm-%%API_VERSION%%/include
-@dirrm lib/libgnomeuimm-%%API_VERSION%%
-@dirrm include/libgnomeuimm-%%API_VERSION%%/libgnomeuimm/private
-@dirrm include/libgnomeuimm-%%API_VERSION%%/libgnomeuimm
-@dirrm include/libgnomeuimm-%%API_VERSION%%

@@ -6,7 +6,5 @@
 %%FONTDIR%%/Vollkorn-Regular.ttf
 %%FONTDIR%%/Vollkorn-Semibold.ttf
 %%FONTDIR%%/Vollkorn-SemiboldItalic.ttf
-@dirrm %%FONTDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/Fontlog.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

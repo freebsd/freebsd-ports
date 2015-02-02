@@ -2,6 +2,7 @@
 
 PORTNAME=	polarssl
 PORTVERSION=	1.2.12
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 ALL_TARGET=	no_test
 
-USES=	gmake tar:tgz
+USES=	cpe gmake tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

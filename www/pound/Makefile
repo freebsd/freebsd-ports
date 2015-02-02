@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pound
-PORTVERSION=	2.6
-PORTREVISION=	3
+PORTVERSION=	2.7
+PORTREVISION=
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	Pound-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ncrogers@gmail.com
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 LICENSE=	GPLv3

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.15
+PORTVERSION=	10.0.16
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -16,11 +16,13 @@ PKGNAMESUFFIX?=	100-server
 MAINTAINER=	spil.oss@gmail.com
 COMMENT?=	Multithreaded SQL database (server)
 
+LICENSE=	GPLv2
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake execinfo gmake shebangfix
+USES=		bison:build cmake execinfo gmake shebangfix cpe
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 
@@ -77,7 +79,7 @@ OQGRAPH_DESC=		Open Query Graph Computation engine (gcc)
 .endif
 
 BUNDLED_SSL_CMAKE_ON=   -DWITH_SSL=bundled
-FASTMX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
+FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
 OPENSSL_USE=	OPENSSL=yes
 WITHOUT_SSL_CMAKE_ON=	-DWITH_SSL=no
@@ -104,9 +106,9 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 INNODB_CMAKE_OFF=	-DWITHOUT_INNOBASE=1
 MAXKEY_EXTRA_PATCHES+=  ${FILESDIR}/extra-patch-include_my_compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
-MROONGA_USE=	GCC=yes
+MROONGA_USE=	GCC?=yes
 OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH=1
-OQGRAPH_USE=	GCC=yes
+OQGRAPH_USE=	GCC?=yes
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 
 post-install:

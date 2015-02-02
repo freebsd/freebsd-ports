@@ -28,7 +28,3 @@ apps/MIME-Editor/override.pyo
 apps/MIME-Editor/type.py
 apps/MIME-Editor/type.pyc
 apps/MIME-Editor/type.pyo
-@dirrm apps/MIME-Editor/Messages
-@dirrm apps/MIME-Editor/Help
-@dirrm apps/MIME-Editor
-@dirrmtry apps

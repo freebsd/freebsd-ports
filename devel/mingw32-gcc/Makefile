@@ -3,7 +3,6 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
@@ -12,6 +11,9 @@ PKGNAMEPREFIX=	mingw32-
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	FSF gcc-4 for Windows cross-development
 
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
@@ -19,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libmpc.so:${PORTSDIR}/math/mpc
 
-GCCVERSION=	4.7.2
+GCCVERSION=	4.8.1
 
 SSP_UNSAFE=	yes
 
@@ -38,9 +40,9 @@ BINARIES=	c++ cpp g++ gcc gcov gfortran
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == powerpc64
@@ -51,28 +53,32 @@ LANGUAGES:=	c,c++,fortran,objc,obj-c++
 SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 WRKSRC=		${WRKDIR}/build
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-nls --target=${GCC_TARG} \
-		--enable-languages=${LANGUAGES} \
 		--with-gxx-include-dir=${PREFIX}/${GCC_TARG}/include/c++/${GCCVERSION} \
-		--disable-sjlj-exceptions \
-		--with-dwarf2 --enable-shared \
-		--with-gmp=${LOCALBASE} \
-		--disable-win32-registry \
-		--enable-libstdcxx-debug \
 		--disable-build-poststage1-with-cxx \
-		--enable-version-specific-runtime-libs \
-		${ICONV_CONFIGURE_ARG} \
 		--includedir=${PREFIX}/${GCC_TARG}/include \
 		--datadir=${PREFIX}/${GCC_TARG}/share \
-		--with-system-zlib
+		--enable-shared --with-gnu-ld \
+		--enable-lto --disable-multilib \
+		--enable-languages=${LANGUAGES} \
+		--disable-sjlj-exceptions \
+		--with-dwarf2 --disable-win32-registry \
+		--enable-libstdcxx-debug \
+		--enable-version-specific-runtime-libs \
+		--with-gmp=${LOCALBASE} \
+		--with-system-zlib --with-gnu-as \
+		--enable-decimal-float=yes \
+		--disable-libgomp --disable-threads \
+		${ICONV_CONFIGURE_ARG} \
+		--disable-bootstrap
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-PLIST_SUB+=	GCC_TARG=${GCC_TARG} GCC_REV=${GCCVERSION} PKGNAMEPREFIX=${PKGNAMEPREFIX}
+PLIST_SUB+=	GCC_TARG=${GCC_TARG} GCC_REV=${GCCVERSION}
 INFO_PATH=	${GCC_TARG}/info
 INFO=		cpp cppinternals gcc gccinstall gccint gfortran
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		libquadmath
 .endif
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	${REINPLACE_CMD} -e "s,# include <sys/sysctl.h>,," \
@@ -84,6 +90,7 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/lib/libiberty.a
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GCC_TARG}/bin
 .for F in ${BINARIES}
 	@${LN} -f ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}$F \

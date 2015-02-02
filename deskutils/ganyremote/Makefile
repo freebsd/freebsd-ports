@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganyremote
-PORTVERSION=	6.3.2
+PORTVERSION=	6.3.3
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 

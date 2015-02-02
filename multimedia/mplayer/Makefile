@@ -9,15 +9,12 @@ COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
 
-OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB BLURAY CACA DEBUG DV \
+OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB BLURAY CACA CDIO DEBUG DV \
 		ENCA FONTCONFIG FRIBIDI GIF GNUTLS GSM GUI IPV6 JACK \
 		LADSPA LIBMNG LIRC LZO NAS OCFLAGS  OPENAL OPENGL \
-		OPENJPEG OPUS OTCHAIN PULSEAUDIO REAL RTC RTCPU RTMP \
+		OPENJPEG OPUS PULSEAUDIO REAL RTC RTCPU RTMP \
 		SCHROEDINGER SDL SKINS SMB SVGALIB V4L VDPAU VPX \
 		WIN32 X11 X11DGA X11VM XINERAMA XVIDEO XVMC
-
-OPTIONS_RADIO=	RGCD
-OPTIONS_RADIO_RGCD=	CDIO CDPARANOIA
 
 OPTIONS_DEFAULT=FONTCONFIG FRIBIDI GNUTLS IPV6 OCFLAGS OPENGL RTCPU \
 		SKINS WIN32 X11 X11DGA X11VM XINERAMA XVIDEO
@@ -26,7 +23,6 @@ BLURAY_DESC?=	BluRay support
 ENCA_DESC?=	Charset conversion via enca
 LZO_DESC?=	External liblzo support
 OCFLAGS_DESC?=	Use optimized compiler flags
-OTCHAIN_DESC?=	Use up-to-date gcc toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTC_DESC?=	Add support for kernel real time clock
 RTCPU_DESC?=	Use runtime CPU detection on supported archs
@@ -88,8 +84,7 @@ USE_XORG+=	xxf86dga
 CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
 .endif
 .if ${PORT_OPTIONS:MOPENGL}
-USE_XORG+=	glproto
-LIB_DEPENDS+=	libGL.so:${PORTSDIR}/graphics/libGL
+USE_GL+=	gl
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif

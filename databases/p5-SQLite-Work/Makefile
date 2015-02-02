@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Text-NeatTemplate>=0:${PORTSDIR}/textproc/p5-Text-NeatTemplate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PORTSCOUT=	skipv:0.0501,0.1001,0.1002,0.1003
+PORTSCOUT=	skipv:0.0202,0.0501,0.1001,0.1002,0.1003
 
 USES=		perl5
 USE_PERL5=	modbuild

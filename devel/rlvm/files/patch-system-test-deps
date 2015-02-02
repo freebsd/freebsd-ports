@@ -1,0 +1,24 @@
+--- SConscript.luarlvm~
++++ SConscript.luarlvm
+@@ -52,8 +52,7 @@ script_machine_files = [
+ if env['BUILD_LUA_TESTS'] == True:
+   test_env.Append(CPPPATH = [ env['ENV']['LUA_INCDIR'] ] )
+ 
+-  # Build our included copy of luabind.
+-  test_env.BuildSubcomponent("luabind")
++  test_env.Append(LIBS = ["luabind"])
+ 
+   test_env.RlvmProgram("lua_rlvm", ['test/lua_rlvm.cc', script_machine_files],
+                        use_lib_set = ["SDL", "LUA"],
+--- SConscript.test~
++++ SConscript.test
+@@ -23,8 +23,7 @@ test_env.Append(CPPPATH = ["#/test"])
+ # We need to build gtest/gmock always. Downstream distributors: if you comment
+ # this out and add a ParseConfig, make sure to do it here in |test_env| instead
+ # of one of the environments that could link gtest into the main rlvm binary.
+-test_env.BuildSubcomponent("gtest")
+-test_env.BuildSubcomponent("gmock")
++test_env.Append(LIBS = ["gtest", "gmock"])
+ 
+ test_case_files = [
+   "test/test_system/test_machine.cc",

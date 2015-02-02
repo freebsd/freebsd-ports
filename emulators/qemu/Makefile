@@ -14,8 +14,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
-USE_GCC=	any
-USES=		gmake perl5
+USES=		gmake perl5 compiler:features
 USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
@@ -38,6 +37,14 @@ ALL_TARGETS_DESC=	Also build non-x86 targets
 OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && ${COMPILER_TYPE} == "clang"
+# gcc49 breaks target-i386 on i386, and gcc48 breaks ALL_TARGETS on i386:
+#	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196855
+USE_GCC=	4.7
+.else
+USE_GCC=	any
+.endif
 
 .if empty(PORT_OPTIONS:MALL_TARGETS)
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu

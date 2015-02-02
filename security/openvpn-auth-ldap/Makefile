@@ -3,12 +3,13 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4.0.s1379
+PORTREVISION=	1
 CATEGORIES=	security
 #MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITES=	LOCAL/mandree
 DISTNAME=	auth-ldap-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
 LICENSE=	BSD3CLAUSE
@@ -16,8 +17,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
 		${NONEXISTENT}:${PORTSDIR}/security/openvpn:extract \
 		libcheck>=0:${PORTSDIR}/devel/libcheck
-
-BROKEN=		Untested SVN-based port, report success on https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=190497
 
 USES=		objc tar:xz
 
@@ -28,16 +27,16 @@ OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 			--with-openvpn=${OPENVPN_WRKSRC}/include \
 			--with-objc-runtime=GNU
-# this issue would cause run-time trouble, so turn it into an error:
-#OBJCFLAGS+=	-Werror=objc-method-access
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
 OBJCFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include -fPIC
 CFLAGS+=	-fPIC
+MAKE_JOBS_UNSAFE=yes # work around missing deps in src/Makefile[.in]
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	OBJC="${CC}"

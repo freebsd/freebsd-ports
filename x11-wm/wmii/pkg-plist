@@ -10,4 +10,3 @@ etc/wmii-3.5/wmiirc
 man/man1/wmii.1.gz
 man/man1/wmiiloop.1.gz
 man/man1/wmiir.1.gz
-@dirrm etc/wmii-3.5

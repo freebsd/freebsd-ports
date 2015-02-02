@@ -51,21 +51,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/prefs.js
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/license.txt
-@dirrm %%XPI_XPIDIR%%/chrome/content/common
-@dirrm %%XPI_XPIDIR%%/chrome/content/dialogs
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hr-HR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/chrome/locale/nl-NL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/skin/classic
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

@@ -51,11 +51,11 @@ GTKMM_USE=		GNOME=gtkmm24
 GTKMM_CONFIGURE_ON=	--enable-gtkmm
 GTKMM_CONFIGURE_OFF=	--disable-gtkmm
 GUILE1_LIB_DEPENDS=     libguile.so:${PORTSDIR}/lang/guile
-GUILE1_BUILD_DEPENDS=	${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
-GUILE1_RUN_DEPENDS=	${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
+GUILE1_BUILD_DEPENDS=	slib-guile>0:${PORTSDIR}/lang/slib-guile
+GUILE1_RUN_DEPENDS=	slib-guile>0:${PORTSDIR}/lang/slib-guile
 GUILE2_LIB_DEPENDS=     libguile-2.0.so:${PORTSDIR}/lang/guile2
-GUILE2_BUILD_DEPENDS=	${LOCALBASE}/share/guile/2.0/slibcat:${PORTSDIR}/lang/slib-guile2
-GUILE2_RUN_DEPENDS=	${LOCALBASE}/share/guile/2.0/slibcat:${PORTSDIR}/lang/slib-guile2
+GUILE2_BUILD_DEPENDS=	slib-guile2>0:${PORTSDIR}/lang/slib-guile2
+GUILE2_RUN_DEPENDS=	slib-guile2>0:${PORTSDIR}/lang/slib-guile2
 
 USE_XORG=	x11
 USES=		desktop-file-utils gettext gmake libtool perl5 pkgconfig shebangfix tar:bzip2

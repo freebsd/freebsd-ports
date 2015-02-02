@@ -50,21 +50,3 @@ GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj/CommentInfo.strings
 GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj/Localizable.strings
 GNUstep/Local/Applications/Poe.app/stamp.make
 GNUstep/Local/Tools/Poe
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj
-@dirrm GNUstep/Local/Applications/Poe.app/Resources
-@dirrm GNUstep/Local/Applications/Poe.app

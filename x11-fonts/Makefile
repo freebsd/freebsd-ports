@@ -159,6 +159,7 @@
     SUBDIR += suxus
     SUBDIR += terminus-font
     SUBDIR += tkfont
+    SUBDIR += tlwg-ttf
     SUBDIR += tmu
     SUBDIR += ttmkfdir
     SUBDIR += tv-fonts

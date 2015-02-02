@@ -677,6 +677,7 @@
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
     SUBDIR += personality
+    SUBDIR += pesign
     SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftables
@@ -762,6 +763,7 @@
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += qsynergy
+    SUBDIR += qt5-qtpaths
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
     SUBDIR += racktables

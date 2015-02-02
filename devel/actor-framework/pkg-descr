@@ -1,5 +1,0 @@
-Actors in CAF are lightweight, consist of only a few hundred bytes,
-and are cooperatively managed by a state-of-the-art, work-stealing scheduler.
-You can spawn literally millions of actors if you want to.
-
-WWW: http://actor-framework.org/

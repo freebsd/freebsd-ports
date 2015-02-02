@@ -1,11 +1,18 @@
---- build.scm.orig	2009-08-04 03:35:57.000000000 +0900
-+++ build.scm	2009-08-07 01:59:30.000000000 +0900
+--- build.scm	2009-08-04 03:35:57.000000000 +0900
++++ build.scm	2015-01-23 16:23:32.000000000 -0500
+@@ -618,5 +618,5 @@
+ 
+      (nostart gcc "" "-e __start -nostartfiles" #f ("ecrt0.c") ())
+-     (dump gcc "" "" #f ("unexelf.c" "gmalloc.c") ())
++     (dump gcc "" "" #f ("unexelf.c") ())
+ 
+      (m hp-ux "" "-lm" #f () ())
 @@ -665,14 +665,15 @@
       (dump darwin "" "" #f ("unexmacosx.c" "lastfile.c") ())
       (dlll darwin "-DSUN_DL" "-ldl" "" () ())
  
 -     (c freebsd "" "-export-dynamic" #f () ())
-+     (c freebsd "" "-Wl,-export-dynamic" #f () ())
++     (c freebsd "" "-Wl,-export-dynamic %%ARCHOBJS%%" #f () ())
       (m freebsd "" "-lm" #f () ())
 -     (curses freebsd "" "-lncurses" "/usr/lib/libncurses.a" () ())
 +     (curses freebsd "" "-lcurses" "/usr/lib/libcurses.a" () ())
@@ -17,7 +24,7 @@
 +     (graphics freebsd "-I%%LOCALBASE%%/include -DX11" "-lX11" "-L%%LOCALBASE%%/lib" () ())
 +     (dlll freebsd "-DSUN_DL" "" "" () ())
 +     (nostart freebsd "" "" #f () ())
-+     (dump freebsd "" "" #f ("unexelf.c" "gmalloc.c") ())
++     (dump freebsd "" "" #f ("unexelf.c") ())
       (curses netbsd "-I/usr/pkg/include" "-lncurses" "-Wl,-rpath -Wl,/usr/pkg/lib -L/usr/pkg/lib" () ())
       (editline netbsd "-I/usr/pkg/include" "-lreadline" "-Wl,-rpath -Wl,/usr/pkg/lib -L/usr/pkg/lib" () ())
       (graphics netbsd "-I/usr/X11R6/include -DX11" "-lX11" "-Wl,-rpath -Wl,/usr/X11R6/lib -L/usr/X11R6/lib" () ())

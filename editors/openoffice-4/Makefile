@@ -3,21 +3,22 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors java
-MASTER_SITES=	${MASTER_SITE_APACHE:S@%SUBDIR%@openoffice/${PORTVERSION}/source@} \
-		${MASTER_SITE_LOCAL:S@%SUBDIR%@truckman/openoffice@}:extsrc
+MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
+		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
+		LOCAL/truckman/openoffice:extsrc
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .endif
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
-DISTFILES=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
+DISTFILES=	${OOOSRC} unowinreg.dll:unoreg ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
-#de facto maintainer is maho@FreeBSD.org
+#de facto maintainer is truckman@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
@@ -39,7 +40,6 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh		\
 		bash:${PORTSDIR}/shells/bash				\
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=								\
@@ -64,20 +64,20 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
-AOOVERSION1=		4
-AOOVERSION2=		1
-AOOVERSION3=		1
-AOOVERSION=		${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
-AOOXXX=			${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
-SVNREVISION=		1617669
-OOOSRC=			apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140809.tar.gz
+AOOVERSION1=	4
+AOOVERSION2=	1
+AOOVERSION3=	1
+SVNREVISION=	1617669
+EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140918.tar.gz
+
+AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
+AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
+AOOSUFFIX=	${PORTVERSION}
+OOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
 
 OOODIR=			openoffice${AOOVERSION1}
-AOOSUFFIX=		${PORTVERSION}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 EXECBASE?=		openoffice-${AOOSUFFIX}
 DIST_SUBDIR=		openoffice
@@ -91,7 +91,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	yes
+USE_GCC=	4.8
 USES+=		bison desktop-file-utils gmake perl5 pkgconfig python tar:bzip2
 USE_PERL5=	build
 WITHOUT_CPU_CFLAGS=	true
@@ -201,8 +201,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
-			--with-system-saxon				\
-			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar	\
 			--with-system-serf				\
 			--with-system-stdlibs				\
 			--enable-symbols=small				\
@@ -283,8 +281,6 @@ do-install:
 	${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/${AOOVERSION1}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
 	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-
-post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
 	for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/$${prog}; \
@@ -307,14 +303,10 @@ post-install:
 	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-smath
 	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-spadmin
 	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-swriter
-	${ECHO_CMD} "" > ${TMPPLIST}
-	${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
-	${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
-	${ECHO_CMD} "share/licenses/${PKGNAME}/APACHE20"   >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
-		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
+		${XARGS} -n 1 ${ECHO_CMD} @dir >> ${TMPPLIST}
 	for app in base calc draw impress math writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
 			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \

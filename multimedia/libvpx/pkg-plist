@@ -17,4 +17,3 @@ libdata/pkgconfig/vpx.pc
 %%SHARED%%lib/libvpx.so.1
 %%SHARED%%lib/libvpx.so.1.3
 %%SHARED%%lib/libvpx.so.1.3.0
-@dirrm include/vpx

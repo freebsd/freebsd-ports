@@ -1,5 +1,6 @@
 bin/gimmix
 man/man1/gimmix.1.gz
+%%NLS%%share/locale/cs/LC_MESSAGES/gimmix.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gimmix.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gimmix.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gimmix.mo

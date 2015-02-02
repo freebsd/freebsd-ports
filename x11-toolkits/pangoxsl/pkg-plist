@@ -12,6 +12,3 @@ libdata/pkgconfig/pangoxsl.pc
 %%PORTDOCS%%%%DOCSDIR%%/pangoxsl.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/pangoxsl/pangoxsl
-@dirrm include/pangoxsl

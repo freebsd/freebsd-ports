@@ -171,14 +171,3 @@ man/man1/avibox.1.gz
 %%GTK2_SUPPORT%%%%DATADIR%%/ogmrip-xvid.glade
 %%GTK2_SUPPORT%%%%DATADIR%%/profiles/profiles.xml
 %%GTK2_SUPPORT%%share/pixmaps/ogmrip.png
-%%GTK2_SUPPORT%%@dirrm %%DATADIR%%/profiles
-%%GTK2_SUPPORT%%@dirrm %%DATADIR%%
-@dirrm lib/ogmrip/video-plugins
-@dirrm lib/ogmrip/subp-plugins
-%%GTK2_SUPPORT%%@dirrm lib/ogmrip/options-plugins
-@dirrm lib/ogmrip/container-plugins
-@dirrm lib/ogmrip/audio-plugins
-@dirrm lib/ogmrip
-@dirrm include/ogmrip
-@dirrm include/ogmjob
-@dirrm include/ogmdvd

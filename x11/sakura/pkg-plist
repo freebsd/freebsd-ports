@@ -21,4 +21,3 @@ share/locale/ru/LC_MESSAGES/sakura.mo
 share/locale/uk/LC_MESSAGES/sakura.mo
 share/locale/zh_CN/LC_MESSAGES/sakura.mo
 share/pixmaps/terminal-tango.svg
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

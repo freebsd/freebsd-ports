@@ -1,10 +1,11 @@
-Index: splash/Makefile.in
+--- splash/Makefile.in.orig	2014-05-28 11:50:50.000000000 -0700
++++ splash/Makefile.in	2014-12-20 18:20:37.776117864 -0800
 @@ -16,7 +16,7 @@
  FOFISRCDIR = $(srcdir)/../fofi
  FOFILIBDIR = ../fofi
  
--CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @t1_CFLAGS@ @freetype2_CFLAGS@
-+CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @t1_CFLAGS@ @freetype2_CFLAGS@ @X_CFLAGS@
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@
++CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @X_CFLAGS@
  
  CXX = @CXX@
  AR = @AR@

@@ -6,7 +6,3 @@
 %%XPI_XPIDIR%%/defaults/preferences/flashgot.js
 %%XPI_XPIDIR%%/install.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults

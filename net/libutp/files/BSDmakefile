@@ -9,6 +9,8 @@ CXXFLAGS+=	-Wall
 
 INCLUDEDIR=	${PREFIX}/include/libutp
 LIBDIR= 	${PREFIX}/lib
-INCS=  		utp.h utp_utils.h utypes.h
+INCS=  		utp.h utp_utils.h utypes.h utp_file/udp.h
+
+WARNS=	5
 
 .include <bsd.lib.mk>

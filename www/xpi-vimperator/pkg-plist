@@ -96,14 +96,3 @@
 %%XPI_XPIDIR%%/locale/en-US/tutorial.xml
 %%XPI_XPIDIR%%/skin/about.css
 %%XPI_XPIDIR%%/skin/icon.png
-@dirrm %%XPI_XPIDIR%%/common/content
-@dirrm %%XPI_XPIDIR%%/common/locale/en-US
-@dirrm %%XPI_XPIDIR%%/common/locale
-@dirrm %%XPI_XPIDIR%%/common/modules
-@dirrm %%XPI_XPIDIR%%/common/skin
-@dirrm %%XPI_XPIDIR%%/common
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/content
-@dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale
-@dirrm %%XPI_XPIDIR%%/skin

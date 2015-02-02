@@ -9,4 +9,4 @@ program. aclocal is a program to generate an 'aclocal.m4' based on the
 contents of 'configure.in'. It is useful as an extensible, maintainable
 mechanism for augmenting autoconf.
 
-WWW: http://www.gnu.org/software/automake/
+WWW: https://www.gnu.org/software/automake/

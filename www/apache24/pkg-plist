@@ -5,6 +5,21 @@ bin/htpasswd
 bin/httxt2dbm
 bin/logresolve
 %%ETCDIR%%/Includes/no-accf.conf
+@sample %%ETCDIR%%/extra/httpd-autoindex.conf.sample
+@sample %%ETCDIR%%/extra/httpd-dav.conf.sample
+@sample %%ETCDIR%%/extra/httpd-default.conf.sample
+@sample %%ETCDIR%%/extra/httpd-info.conf.sample
+@sample %%ETCDIR%%/extra/httpd-languages.conf.sample
+@sample %%ETCDIR%%/extra/httpd-manual.conf.sample
+@sample %%ETCDIR%%/extra/httpd-mpm.conf.sample
+@sample %%ETCDIR%%/extra/httpd-multilang-errordoc.conf.sample
+@sample %%ETCDIR%%/extra/httpd-ssl.conf.sample
+@sample %%ETCDIR%%/extra/httpd-userdir.conf.sample
+@sample %%ETCDIR%%/extra/httpd-vhosts.conf.sample
+@sample %%ETCDIR%%/extra/proxy-html.conf.sample
+@sample %%ETCDIR%%/httpd.conf.sample
+@sample %%ETCDIR%%/magic.sample
+@sample %%ETCDIR%%/mime.types.sample
 %%ETCDIR%%/modules.d/README_modules.d
 include/apache24/ap_compat.h
 include/apache24/ap_config.h
@@ -217,7 +232,7 @@ sbin/htcacheclean
 sbin/httpd
 sbin/rotatelogs
 sbin/split-logfile
-%%SUEXEC%%sbin/suexec
+%%SUEXEC%%@(,,4755) sbin/suexec
 %%DATADIR%%/build/config.nice
 %%DATADIR%%/build/config_vars.mk
 %%DATADIR%%/build/instdso.sh
@@ -227,60 +242,11 @@ sbin/split-logfile
 %%DATADIR%%/build/program.mk
 %%DATADIR%%/build/rules.mk
 %%DATADIR%%/build/special.mk
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-autoindex.conf %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-autoindex.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-autoindex.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-autoindex.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf %D/%%ETCDIR%%/extra/httpd-autoindex.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-dav.conf %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-dav.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-dav.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-dav.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf %D/%%ETCDIR%%/extra/httpd-dav.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-default.conf %D/%%EXAMPLESDIR%%/extra/httpd-default.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-default.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-default.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-default.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-default.conf %D/%%ETCDIR%%/extra/httpd-default.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-info.conf %D/%%EXAMPLESDIR%%/extra/httpd-info.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-info.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-info.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-info.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-info.conf %D/%%ETCDIR%%/extra/httpd-info.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-languages.conf %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-languages.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-languages.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-languages.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf %D/%%ETCDIR%%/extra/httpd-languages.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-manual.conf %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-manual.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-manual.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-manual.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf %D/%%ETCDIR%%/extra/httpd-manual.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-mpm.conf %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-mpm.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-mpm.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-mpm.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf %D/%%ETCDIR%%/extra/httpd-mpm.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-ssl.conf %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-ssl.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-ssl.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-ssl.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf %D/%%ETCDIR%%/extra/httpd-ssl.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-userdir.conf %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-userdir.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-userdir.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-userdir.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf %D/%%ETCDIR%%/extra/httpd-userdir.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-vhosts.conf %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-vhosts.conf; fi
-%%EXAMPLESDIR%%/extra/httpd-vhosts.conf
-@exec [ -f %D/%%ETCDIR%%/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/%%ETCDIR%%/extra/httpd-vhosts.conf
-@unexec if cmp -s %D/%%ETCDIR%%/extra/proxy-html.conf %D/%%EXAMPLESDIR%%/extra/proxy-html.conf; then rm -f %D/%%ETCDIR%%/extra/proxy-html.conf; fi
-%%EXAMPLESDIR%%/extra/proxy-html.conf
-@exec [ -f %D/%%ETCDIR%%/extra/proxy-html.conf ] || cp %D/%%EXAMPLESDIR%%/extra/proxy-html.conf %D/%%ETCDIR%%/extra/proxy-html.conf
-@unexec if cmp %D/%%ETCDIR%%/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -vf %D/%%ETCDIR%%/httpd.conf; fi
-%%EXAMPLESDIR%%/httpd.conf
-@exec [ -f %D/%%ETCDIR%%/httpd.conf ] || cp -v %D/%%EXAMPLESDIR%%/httpd.conf %D/%%ETCDIR%%/httpd.conf
-@unexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%EXAMPLESDIR%%/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
-%%EXAMPLESDIR%%/index.html
-@exec [ -d %D/%%WWWDIR%%/data ] || mkdir -p %D/%%WWWDIR%%/data
-@exec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%EXAMPLESDIR%%/index.html %D/%%WWWDIR%%/data/index.html
-@unexec if cmp -s %D/%%ETCDIR%%/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/%%ETCDIR%%/magic; fi
-%%EXAMPLESDIR%%/magic
-@exec [ -f %D/%%ETCDIR%%/magic ] || cp %D/%%EXAMPLESDIR%%/magic %D/%%ETCDIR%%/magic
-@unexec if cmp -s %D/%%ETCDIR%%/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
-%%EXAMPLESDIR%%/mime.types
-@exec [ -f %D/%%ETCDIR%%/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/%%ETCDIR%%/mime.types
-%%EXAMPLESDIR%%/modules.d/README_modules.d
-%%WWWDIR%%/cgi-bin/printenv
-%%WWWDIR%%/cgi-bin/printenv.vbs
-%%WWWDIR%%/cgi-bin/printenv.wsf
-%%WWWDIR%%/cgi-bin/test-cgi
+@unexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%DATADIR%%/misc/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
+%%DATADIR%%/misc/index.html
+@exec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%DATADIR%%/misc/index.html %D/%%WWWDIR%%/data/index.html
+@(,,0400) %%WWWDIR%%/cgi-bin/printenv
+@(,,0400) %%WWWDIR%%/cgi-bin/test-cgi
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
 %%WWWDIR%%/error/HTTP_BAD_REQUEST.html.var
 %%WWWDIR%%/error/HTTP_FORBIDDEN.html.var
@@ -544,7 +510,5 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world2.png
 %%WWWDIR%%/icons/xml.png
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
-@dir %%ETCDIR%%/Includes
 @dir %%ETCDIR%%/envvars.d
-@dir %%ETCDIR%%/extra
 @dir %%WWWDIR%%/data

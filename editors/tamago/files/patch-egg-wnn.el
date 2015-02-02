@@ -1,5 +1,5 @@
---- egg/wnn.el.2	2010-03-02 10:35:45.000000000 +0900
-+++ egg/wnn.el	2010-03-02 11:54:30.000000000 +0900
+--- egg/wnn.el.orig	2015-01-31 19:24:09.000000000 +0900
++++ egg/wnn.el	2015-02-02 00:53:09.000000000 +0900
 @@ -82,6 +82,10 @@
  			     (const wnn-uniq)
  			     (const wnn-uniq-kanji)))
@@ -33,6 +33,15 @@
  (defmacro wnn-backend-plist ()
    ''(egg-initialize-backend        wnn-init
       egg-start-conversion          wnn-start-conversion
+@@ -128,7 +142,7 @@
+ (defun wnn-make-backend (lang env &optional source-lang converted-lang)
+   (let ((finalize (wnn-backend-func-name "wnn-finalize-backend" lang))
+ 	(backend (wnn-backend-func-name "wnn-backend" lang env)))
+-    (if (null (fboundp finalize))
++    (if (null (fboundp 'finalize))
+ 	(progn
+ 	  (fset finalize `(lambda () (wnn-finalize-backend ',lang)))
+ 	  (egg-set-finalize-backend (list finalize))))
 @@ -559,11 +573,11 @@
  	  bunsetsu))
  
@@ -69,7 +78,7 @@
  
  (defconst wnn-accept-charset-alist
    '((Chinese-CNS ascii chinese-sisheng chinese-cns11643-1 chinese-cns11643-2)))
-@@ -1209,9 +1227,11 @@
+@@ -1209,14 +1227,15 @@
  	(port (wnn-server-port server-info))
  	(hostname-list (wnn-server-hostname server-info))
  	(proc-name (wnn-server-proc-name server-info))
@@ -82,7 +91,13 @@
      (unwind-protect
  	(progn
  	  (setq buf (generate-new-buffer (wnn-server-buffer-name server-info)))
-@@ -1225,13 +1245,24 @@
+-	  (save-excursion
+-	    (set-buffer buf)
++	  (with-current-buffer buf
+ 	    (erase-buffer)
+ 	    (buffer-disable-undo)
+ 	    (set-buffer-multibyte nil)
+@@ -1225,13 +1244,24 @@
  	      (setq hostname-list (list hostname-list)))
  	  (while (and hostname-list (null proc))
  	    (setq hostname (or (car hostname-list) "")
@@ -114,7 +129,7 @@
  	    (let ((inhibit-quit save-inhibit-quit))
  	      (if (and msg
  		       (null (y-or-n-p (format "%s failed. Try to %s? "
-@@ -1241,16 +1272,22 @@
+@@ -1241,16 +1271,22 @@
  			      server-type hostname))
  	    (message "%s" msg)
  	    (let ((inhibit-quit save-inhibit-quit))
@@ -123,6 +138,7 @@
 -						  (+ port port-off)))
 -		((error quit))))
 -	    (when proc
+-	      (process-kill-without-query proc)
 +             (if (fboundp 'make-network-process)
 +                 (condition-case nil
 +                     (setq proc (make-network-process :name proc-name :buffer buf :host host :service port :family family))
@@ -134,7 +150,7 @@
 +                     (setq proc (open-network-stream proc-name buf hostname port))
 +                   (error quit)))))
 +           (when (processp proc)
- 	      (process-kill-without-query proc)
++	      (set-process-query-on-exit-flag proc nil)
  	      (set-process-coding-system proc 'binary 'binary)
  	      (set-process-sentinel proc 'wnn-comm-sentinel)
  	      (set-marker-insertion-type (process-mark proc) t)

@@ -28,15 +28,3 @@ share/themes/MurrinaFancyAncient/gtk-2.0/1
 share/themes/MurrinaFancyAncient/gtk-2.0/2
 share/themes/MurrinaFancyAncient/gtk-2.0/3
 share/themes/MurrinaFancyAncient/gtk-2.0/gtkrc
-@dirrm share/themes/MurrinaFancySky/gtk-2.0
-@dirrm share/themes/MurrinaFancySky
-@dirrm share/themes/MurrinaFancySea/gtk-2.0
-@dirrm share/themes/MurrinaFancySea
-@dirrm share/themes/MurrinaFancySand/gtk-2.0
-@dirrm share/themes/MurrinaFancySand
-@dirrm share/themes/MurrinaFancyGrass/gtk-2.0
-@dirrm share/themes/MurrinaFancyGrass
-@dirrm share/themes/MurrinaFancyEarth/gtk-2.0
-@dirrm share/themes/MurrinaFancyEarth
-@dirrm share/themes/MurrinaFancyAncient/gtk-2.0
-@dirrm share/themes/MurrinaFancyAncient

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/docbook/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook XML JRefEntry DTD
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
+RUN_DEPENDS=	docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 
 NO_BUILD=	yes
 

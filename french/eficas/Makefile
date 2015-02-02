@@ -11,8 +11,8 @@ COMMENT=	ASter Command FIle Editor
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw	\
-		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:${PORTSDIR}/x11-toolkits/py-Pmw	\
+		${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base		\
 		bash:${PORTSDIR}/shells/bash					\
 		${PYNUMPY}
 

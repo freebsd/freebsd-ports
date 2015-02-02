@@ -18,19 +18,3 @@
 %%TWDIR%%/templates/newsletter.tmpl
 %%TWDIR%%/test/unit/MailerContrib/MailerContribSuite.pm
 %%TWDIR%%/tools/mailnotify
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Contrib/MailerContrib
-@dirrm %%TWDIR%%/lib/TWiki/Contrib
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/MailerContrib
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%/test/unit/MailerContrib
-@dirrm %%TWDIR%%/test/unit
-@dirrm %%TWDIR%%/test
-@dirrm %%TWDIR%%/tools
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

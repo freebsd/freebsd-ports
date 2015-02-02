@@ -3,7 +3,7 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
@@ -12,7 +12,7 @@ MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 
 OPTIONS_DEFINE=		OMNI SCTP SOCKETS HISTOGRAM EXS
-OPTIONS_DEFAULT=	SCTP SOCKETS HISTOGRAM EXS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 OMNI_DESC=	Enable OMNI tests
 SCTP_DESC=	Enable SCTP support
@@ -23,7 +23,7 @@ EXS_DESC=	Enable ICSC async socket support
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"transform="
-CONFIGURE_ARGS=	--program-prefix=""  --program-suffix="" --enable-dirty \
+CONFIGURE_ARGS=	--program-prefix="" --program-suffix="" --enable-dirty \
 		--enable-demo --enable-burst --enable-intervals
 
 INFO=		netperf

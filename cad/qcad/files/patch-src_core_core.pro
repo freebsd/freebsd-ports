@@ -1,11 +1,9 @@
---- src/core/core.pro.orig	2013-08-06 17:32:09.000000000 +0200
-+++ src/core/core.pro	2013-08-08 11:01:42.000000000 +0200
-@@ -232,7 +232,7 @@
- OTHER_FILES += core.dox math/math.dox
+--- src/core/core.pro.orig	2015-01-11 21:24:31.997403718 +0100
++++ src/core/core.pro	2015-01-11 21:24:46.507444784 +0100
+@@ -272,5 +272,5 @@
  DEFINES += QCADCORE_LIBRARY
  
--LIBS += -lzlib -lopennurbs
-+LIBS += -lz -lopenNURBS
+-LIBS += -lopennurbs -lzlib
++LIBS += -lopenNURBS -lz
  
  win32 {
-     LIBS += -lRpcrt4 -lAdvapi32

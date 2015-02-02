@@ -18,4 +18,3 @@ man/man1/lmove.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckkillfile.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sucknewsrc.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckothermsgs.sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

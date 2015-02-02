@@ -61,4 +61,3 @@ share/locale/tr/LC_MESSAGES/wmakerconf.mo
 %%DATADIR%%/wmaker-version
 %%DATADIR%%/wmakerconf.xpm
 %%DATADIR%%/workspace.xpm
-@dirrm %%DATADIR%%

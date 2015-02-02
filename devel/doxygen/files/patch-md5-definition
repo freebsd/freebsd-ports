@@ -1,5 +1,5 @@
---- src/definition.cpp-orig	2014-06-11 20:09:07.000000000 +0200
-+++ src/definition.cpp	2014-06-11 20:12:32.000000000 +0200
+--- src/definition.cpp.orig	2015-01-03 22:38:57 UTC
++++ src/definition.cpp
 @@ -17,6 +17,7 @@
  
  #include <ctype.h>
@@ -8,7 +8,7 @@
  #include "md5.h"
  #include <stdio.h>
  #include <stdlib.h>
-@@ -539,13 +540,11 @@
+@@ -537,13 +538,11 @@ void Definition::writeDocAnchorsToTagFil
  
  bool Definition::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
  {
@@ -18,8 +18,8 @@
    // double whitespaces...
    QCString docStr = doc.simplifyWhiteSpace();
 -  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.rawData());
    //printf("%s:_docsAlreadyAdded doc='%s' sig='%s' docSigs='%s'\n",
    //    name().data(),doc.data(),sigStr.data(),sigList.data());
    if (sigList.find(sigStr)==-1) // new docs, add signature to prevent re-adding it

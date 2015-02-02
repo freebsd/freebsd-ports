@@ -13,6 +13,8 @@ COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21
 
+BROKEN=		Fails to build with ocamlgraph 1.8.6
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
 

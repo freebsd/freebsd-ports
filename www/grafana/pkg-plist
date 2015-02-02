@@ -1,7 +1,7 @@
 %%WWWDIR%%/LICENSE.md
 %%WWWDIR%%/NOTICE.md
 %%WWWDIR%%/README.md
-%%WWWDIR%%/app/app.9c301bac.js
+%%WWWDIR%%/app/app.496fdc2e.js
 %%WWWDIR%%/app/app.js
 %%WWWDIR%%/app/components/require.config.js
 %%WWWDIR%%/app/controllers/console-ctrl.js
@@ -59,9 +59,9 @@
 %%WWWDIR%%/css/bootstrap-responsive.min.css
 %%WWWDIR%%/css/bootstrap.dark.min.css
 %%WWWDIR%%/css/bootstrap.light.min.css
-%%WWWDIR%%/css/grafana.dark.min.968e043c.css
+%%WWWDIR%%/css/grafana.dark.min.21253ffa.css
 %%WWWDIR%%/css/grafana.dark.min.css
-%%WWWDIR%%/css/grafana.light.min.4a623d02.css
+%%WWWDIR%%/css/grafana.light.min.81a2958f.css
 %%WWWDIR%%/css/grafana.light.min.css
 %%WWWDIR%%/font/FontAwesome.otf
 %%WWWDIR%%/font/fontawesome-webfont.eot

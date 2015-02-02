@@ -368,6 +368,3 @@ man/man1/adie-17.1.gz
 man/man1/PathFinder-17.1.gz
 man/man1/calculator-17.1.gz
 man/man1/ControlPanel-17.1.gz
-@dirrm include/fox-%%MAJORVER%%/chart
-@dirrm include/fox-%%MAJORVER%%
-@dirrm bin/fox-%%MAJORVER%%

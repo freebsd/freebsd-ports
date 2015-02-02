@@ -1,4 +1,4 @@
---- src/dot.cpp.orig	2014-12-25 12:44:06 UTC
+--- src/dot.cpp.orig	2015-01-03 22:38:57 UTC
 +++ src/dot.cpp
 @@ -39,6 +39,7 @@
  #include "dirdef.h"
@@ -8,63 +8,63 @@
  #include "md5.h"
  #include "memberlist.h"
  #include "groupdef.h"
-@@ -2297,10 +2298,8 @@ void DotGfxHierarchyTable::createGraph(D
+@@ -2296,10 +2297,8 @@ void DotGfxHierarchyTable::createGraph(D
    }
    writeGraphFooter(md5stream);
    resetReNumbering();
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.rawData());
    bool regenerate=FALSE;
    if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
        !checkDeliverables(absImgName,absMapName))
-@@ -3025,10 +3024,8 @@ QCString computeMd5Signature(DotNode *ro
+@@ -3024,10 +3023,8 @@ QCString computeMd5Signature(DotNode *ro
      }
    }
    writeGraphFooter(md5stream);
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)buf.data(),buf.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)buf.data(),buf.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)buf.data(),buf.length(),sigStr.rawData());
    if (reNumber)
    {
      resetReNumbering();
-@@ -3959,10 +3956,8 @@ QCString DotDirDeps::writeGraph(FTextStr
+@@ -3954,10 +3951,8 @@ QCString DotDirDeps::writeGraph(FTextStr
    QGString theGraph;
    FTextStream md5stream(&theGraph);
    m_dir->writeDepGraph(md5stream);
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.rawData());
    bool regenerate=FALSE;
    if (checkAndUpdateMd5Signature(absBaseName,sigStr) ||
        !checkDeliverables(graphFormat==GOF_BITMAP ? absImgName :
-@@ -4105,10 +4100,8 @@ void generateGraphLegend(const char *pat
+@@ -4099,10 +4094,8 @@ void generateGraphLegend(const char *pat
    md5stream << "  Node18 -> Node9 [dir=\"back\",color=\"darkorchid3\",fontsize=\"" << FONTSIZE << "\",style=\"dashed\",label=\"m_usedClass\",fontname=\"" << FONTNAME << "\"];\n";
    md5stream << "  Node18 [shape=\"box\",label=\"Used\",fontsize=\"" << FONTSIZE << "\",height=0.2,width=0.4,fontname=\"" << FONTNAME << "\",color=\"black\",URL=\"$classUsed" << Doxygen::htmlFileExtension << "\"];\n";
    writeGraphFooter(md5stream);
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.rawData());
    QCString absBaseName = (QCString)path+"/graph_legend";
    QCString absDotName  = absBaseName+".dot";
    QCString imgExt      = Config_getEnum("DOT_IMAGE_FORMAT");
-@@ -4505,10 +4498,8 @@ QCString DotGroupCollaboration::writeGra
+@@ -4499,10 +4492,8 @@ QCString DotGroupCollaboration::writeGra
  
    writeGraphFooter(md5stream);
    resetReNumbering();
 -  uchar md5_sig[16];
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
--  MD5SigToString(md5_sig,sigStr.data(),33);
-+  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+-  MD5SigToString(md5_sig,sigStr.rawData(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.rawData());
    QCString imgExt      = Config_getEnum("DOT_IMAGE_FORMAT");
    QCString baseName    = m_diskName;
    QCString imgName     = baseName+"."+imgExt;

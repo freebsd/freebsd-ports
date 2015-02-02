@@ -8,4 +8,3 @@ lib/tkfont/FileMenu.txt
 lib/tkfont/Bugs.txt
 lib/tkfont/FindFont
 lib/tkfont/WhatsNew.txt
-@dirrm lib/tkfont

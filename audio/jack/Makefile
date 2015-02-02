@@ -14,7 +14,7 @@ COMMENT=	Low latency audio server
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
+LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libcelt0.so:${PORTSDIR}/audio/celt \

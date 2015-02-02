@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tralics
-PORTVERSION=	2.15.1
+PORTVERSION=	2.15.2
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/marelle/tralics/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	LaTeX to XML translator
+
+LICENSE=	CeCILLv21
+LICENSE_NAME=	Ce(A)C(nrs)I(NRIA)L(ogiciel)L(ibre) version 2.1
+LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/Licence_CeCILL_V2-en.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

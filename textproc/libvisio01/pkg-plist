@@ -1,12 +1,12 @@
+bin/vsd2raw
+bin/vsd2text
+bin/vsd2xhtml
 bin/vss2raw
 bin/vss2text
 bin/vss2xhtml
-bin/vsd2text
-bin/vsd2raw
-bin/vsd2xhtml
 include/libvisio-0.1/libvisio/VisioDocument.h
 include/libvisio-0.1/libvisio/libvisio.h
 lib/libvisio-0.1.so
 lib/libvisio-0.1.so.1
-lib/libvisio-0.1.so.1.0.0
+lib/libvisio-0.1.so.1.0.1
 libdata/pkgconfig/libvisio-0.1.pc

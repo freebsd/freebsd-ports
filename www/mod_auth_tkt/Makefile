@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.openfusion.com.au/labs/dist/mod_auth_tkt/
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
 
-USE_APACHE=	22
+USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PATCH_STRIP=	-p1

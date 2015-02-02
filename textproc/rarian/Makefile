@@ -12,12 +12,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OMF help system based on the Freedesktop specification
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
+    		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
     		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 

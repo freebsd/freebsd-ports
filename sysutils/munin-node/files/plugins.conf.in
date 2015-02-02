@@ -1,3 +1,10 @@
+# $FreeBSD$
+#
+######################################################################
+# This file is installed by the sysutils/munin-node port, you should #
+# not change it, you should create a local.conf file in the same     #
+# directory with your local changes.                                 #
+######################################################################
 #
 # This file contains configuration options for the plugins. Three
 # options are understood by munin-node itself:
@@ -19,6 +26,9 @@
 # port security/logcheck. The munin-node port has no dependency on
 # that port because most plugins do not require it.
 
+[*]
+env.PATH %%LOCALBASE%%/sbin:%%LOCALBASE%%/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
 [amavis]
 env.amavislog /var/log/maillog
 env.logtail %%LOCALBASE%%/bin/logtail
@@ -36,10 +46,12 @@ group mail
 env.exim %%LOCALBASE%%/sbin/exim
 
 [smart_*]
+user root
 group operator
-env.smartctl %%LOCALBASE%%/sbin/smartctl
+env.smartpath %%LOCALBASE%%/sbin/smartctl
 
 [hddtemp_smartctl]
+user root
 group operator
 env.smartctl %%LOCALBASE%%/sbin/smartctl
 
@@ -56,6 +68,7 @@ user root
 env.logfile /var/log/maillog
 
 [sendmail*]
+group wheel
 env.mspqueue /var/spool/clientmqueue
 env.mailstats /usr/sbin/mailstats
 
@@ -65,4 +78,5 @@ env.client %%LOCALBASE%%/bin/fail2ban-client
 
 [nut*]
 env.upsc    %%LOCALBASE%%/bin/upsc
-env.upsconf %%LOCALBASE%%/etc/nut/ups.conf"
+env.upsconf %%LOCALBASE%%/etc/nut/ups.conf
+

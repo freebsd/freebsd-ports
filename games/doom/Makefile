@@ -13,7 +13,7 @@ COMMENT=	DOOM: the game and the sound server
 
 LICENSE=	IDSOFTWARE
 LICENSE_NAME=	ID SOFTWARE LICENSE
-LICENSE_FILE=	${WRKSRC}/DOOMLIC.TXT
+LICENSE_FILE=	${WRKSRC}/linuxdoom-${PORTVERSION}/DOOMLIC.TXT
 LICENSE_PERMS=	dist-mirror pkg-mirror
 
 NO_CDROM=	Redistribution is limited, see license; Requested by id Software

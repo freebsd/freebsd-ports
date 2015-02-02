@@ -84,11 +84,6 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 # Build system handling (including OPTIONS)
 # =========================================
 
-# Supported architectures for clang
-.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "armv6"
-MPLAYER_CLANG_SUPPORTED_ARCH=	yes
-.endif
-
 # Supported architectures for runtime CPU detection
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ppc"
 MPLAYER_RTCPU_SUPPORTED_ARCH=	yes
@@ -109,38 +104,18 @@ BROKEN=		Does not compile on sparc64
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
-.if ${OSVERSION} >= 900033 \
-	&& exists(/usr/bin/clang) \
-	&& defined(MPLAYER_CLANG_SUPPORTED_ARCH)
-WITH_BASE_CLANG=yes
-.endif
-
-.if defined(WITH_BASE_CLANG)
-CC=		clang
-CXX=		clang++
-CPP=		clang-cpp
+.if ${CHOSEN_COMPILER_TYPE} == clang
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 # Require 16 byte stack realignment on i386 to interface
 # properly with hand crafted assembler code in ffmpeg
 .if ${ARCH} == "i386"
 CFLAGS+=	-mstack-alignment=16 -mstackrealign
 .endif # ${ARCH} == "i386"
-.else
-.if ${PORT_OPTIONS:MOTCHAIN}
-USE_GCC?=	yes
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-.else
-CONFIGURE_ARGS+=--disable-ssse3 --disable-sse4 --disable-sse42 \
-		--disable-avx --disable-fast-cmov
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_gcc
-.if ${ARCH} == "amd64"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif # ${ARCH} == "amd64"
-.endif # ${PORT_OPTIONS:MOTCHAIN}
-.endif # defined(WITH_BASE_CLANG)
+.endif # ${CHOSEN_COMPILER_TYPE} == clang
 
+.if ${ARCH} == "armv6"
+CFLAGS_armv6+=	-no-integrated-as
+.endif
 
 # Extra build options for debugging and optimised CFLAGS
 # ======================================================

@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME:S,k,K,}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little tool to memorize Japanese KANA (Hiragana/Katakana)
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 
 NO_BUILD=	yes
 
@@ -21,6 +20,7 @@ RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
 USES=		gettext python
+USE_GNOME=	pygtk2:run
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Kana-no-quiz
 

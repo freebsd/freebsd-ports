@@ -236,30 +236,3 @@
 %%WWWDIR%%/list-alluser.php
 %%WWWDIR%%/acct-username-input.php
 %%WWWDIR%%/config-editor.php
-@dirrmtry %%WWWDIR%%/screenshot
-@dirrmtry %%WWWDIR%%/resources/mysql-dump
-@dirrmtry %%WWWDIR%%/resources/hotspotlogin-without-popup/Connections
-@dirrmtry %%WWWDIR%%/resources/hotspotlogin-without-popup
-@dirrmtry %%WWWDIR%%/resources/hotspotlogin-with-popup/screenshot
-@dirrmtry %%WWWDIR%%/resources/hotspotlogin-with-popup/Connections
-@dirrmtry %%WWWDIR%%/resources/hotspotlogin-with-popup
-@dirrmtry %%WWWDIR%%/resources/freeradius-example-config/certs/demoCA
-@dirrmtry %%WWWDIR%%/resources/freeradius-example-config/certs
-@dirrmtry %%WWWDIR%%/resources/freeradius-example-config
-@dirrmtry %%WWWDIR%%/resources/chillispot-example-config
-@dirrmtry %%WWWDIR%%/resources
-@dirrmtry %%WWWDIR%%/library/_notes
-@dirrmtry %%WWWDIR%%/library
-@dirrmtry %%WWWDIR%%/images/_notes
-@dirrmtry %%WWWDIR%%/images
-@dirrmtry %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%/_notes
-@dirrmtry %%WWWDIR%%/_mmServerScripts/_notes
-@dirrmtry %%WWWDIR%%/_mmServerScripts
-@dirrmtry %%WWWDIR%%/Templates/_notes
-@dirrmtry %%WWWDIR%%/Templates
-@dirrmtry %%WWWDIR%%/SpryAssets/_notes
-@dirrmtry %%WWWDIR%%/SpryAssets
-@dirrmtry %%WWWDIR%%/Connections/_notes
-@dirrmtry %%WWWDIR%%/Connections
-@dirrmtry %%WWWDIR%%

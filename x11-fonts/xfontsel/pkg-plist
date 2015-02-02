@@ -1,5 +1,3 @@
 bin/xfontsel
 man/man1/xfontsel.1.gz
 share/X11/app-defaults/XFontSel
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11

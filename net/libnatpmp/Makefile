@@ -17,8 +17,6 @@ USE_LDCONFIG=	yes
 MAKE_ARGS+=	CC="${CC}"
 MAKE_ENV+=	INSTALLPREFIX=${STAGEDIR}${PREFIX}
 
-CFLAGS+=	-fPIC
-
 PLIST_FILES=	bin/natpmpc \
 		include/natpmp.h \
 		lib/libnatpmp.a \

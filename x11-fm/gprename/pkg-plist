@@ -20,5 +20,3 @@ share/locale/zh_CN/LC_MESSAGES/gprename.mo
 share/pixmaps/gprename/gprename.png
 share/pixmaps/gprename/gprename_debian_menu_icon.xpm
 share/pixmaps/gprename/gprename_nautilus-action.png
-@dirrm share/pixmaps/gprename
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -12,12 +12,3 @@
  # SDL-1.1 is the name used by FreeBSD ports...
  # don't confuse it for the version number.
  find_library(SDL_LIBRARY_TEMP
-@@ -83,7 +88,7 @@
- )
- 
- if(NOT SDL_BUILDING_LIBRARY)
--  if(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
-+  if(NOT "${SDL_INCLUDE_DIR}" MATCHES ".framework")
-     # Non-OS X framework versions expect you to also dynamically link to
-     # SDLmain. This is mainly for Windows and OS X. Other (Unix) platforms
-     # seem to provide SDLmain for compatibility even though they don't

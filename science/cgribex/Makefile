@@ -18,10 +18,11 @@ LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 CONFIGURE_ARGS=	--with-jasper=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgribex.so.0.0.0
+#post-install:
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgribex.so.0.0.0
 
 .include <bsd.port.mk>

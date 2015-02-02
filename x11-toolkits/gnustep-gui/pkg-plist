@@ -805,72 +805,6 @@ GNUstep/System/Tools/set_show_service
 GNUstep/System/Library/Headers/AppKit/NSTreeController.h
 GNUstep/System/Library/Images/NSAddTemplate.tiff
 GNUstep/System/Library/Images/common_Info.tiff
-@dirrm GNUstep/System/Library/Themes
-@dirrm GNUstep/System/Library/Services/GSspell.service/Resources
-@dirrm GNUstep/System/Library/Services/GSspell.service
-@dirrm GNUstep/System/Library/PostScript/PPD/English.lproj
-@dirrm GNUstep/System/Library/PostScript/PPD
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSToolbarCustomizationPalette.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSFindPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Italian.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/German.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/French.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Esperanto.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSToolbarCustomizationPalette.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui
-@dirrm GNUstep/System/Library/Headers/gnustep/gui
-@dirrm GNUstep/System/Library/Headers/GNUstepGUI
-@dirrm GNUstep/System/Library/Headers/Cocoa
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/User/Gui/GuiUser
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/User/Gui
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/ReleaseNotes
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/Reference
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/General
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/Additions
-%%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui
-@dirrm GNUstep/System/Library/ColorPickers/WheelPicker.bundle/Resources
-@dirrm GNUstep/System/Library/ColorPickers/WheelPicker.bundle
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle/Resources/Spanish.lproj
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle/Resources
-@dirrm GNUstep/System/Library/ColorPickers/StandardPicker.bundle
-@dirrm GNUstep/System/Library/ColorPickers/NamedPicker.bundle/Resources
-@dirrm GNUstep/System/Library/ColorPickers/NamedPicker.bundle
-@dirrm GNUstep/System/Library/Bundles/libgmodel.bundle/Resources
-@dirrm GNUstep/System/Library/Bundles/libgmodel.bundle
-@dirrm GNUstep/System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
-@dirrm GNUstep/System/Library/Bundles/TextConverters/RTFConverter.bundle
-@dirrm GNUstep/System/Library/Bundles/TextConverters
-@dirrm GNUstep/System/Library/Bundles/Sndfile.nssound/Resources
-@dirrm GNUstep/System/Library/Bundles/Sndfile.nssound
-@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources
-@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle
-%%CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources
-%%CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle
-@dirrm GNUstep/System/Library/Bundles/GSPrinting
-@dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound/Resources
-@dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound
-@dirrm GNUstep/System/Applications/GSSpeechServer.app/Resources
-@dirrm GNUstep/System/Applications/GSSpeechServer.app
 GNUstep/System/Library/Headers/AppKit/NSCollectionView.h
 GNUstep/System/Library/Headers/AppKit/NSCollectionViewItem.h
 GNUstep/System/Library/Headers/AppKit/NSPopover.h
@@ -883,5 +817,4 @@ GNUstep/System/Library/Images/common_StepperDownHighlighted.tiff
 GNUstep/System/Library/Images/common_StepperUp.tiff
 GNUstep/System/Library/Images/common_StepperUpHighlighted.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedToSelectedJunction.tiff
-@dirrm GNUstep/System/Library/Headers/AppKit
-
+@dir GNUstep/System/Library/Themes

@@ -19,5 +19,3 @@ share/pixmaps/icon_odasrv_96.png
 %%DATADIR%%/odamex.wad
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

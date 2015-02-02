@@ -17,8 +17,10 @@ RUN_DEPENDS=	${PYNUMPY}
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
-.if !defined(WITHOUT_REPORTLAB)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab1>0:${PORTSDIR}/print/py-reportlab1
-.endif
+OPTIONS_DEFINE=	REPORTLAB
+OPTIONS_DEFAULT=	REPORTLAB
+
+REPORTLAB_DESC=	PDF support in Bio.Graphics module
+REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab1>0:${PORTSDIR}/print/py-reportlab1
 
 .include <bsd.port.mk>

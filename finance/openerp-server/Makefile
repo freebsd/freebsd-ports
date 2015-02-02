@@ -13,6 +13,8 @@ MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
 BROKEN=		Non-functional as shipped (Operational Error)(PR: 186262)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-02-28
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \

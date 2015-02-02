@@ -342,14 +342,3 @@
 %%PYTHON_SITELIBDIR%%/wax/utils.py
 %%PYTHON_SITELIBDIR%%/wax/waxconfig.py
 %%PYTHON_SITELIBDIR%%/wax/waxobject.py
-@dirrm %%PYTHON_SITELIBDIR%%/wax/auxiliary/WaxAPI/support
-@dirrm %%PYTHON_SITELIBDIR%%/wax/auxiliary/WaxAPI/temp
-@dirrm %%PYTHON_SITELIBDIR%%/wax/auxiliary/WaxAPI
-@dirrm %%PYTHON_SITELIBDIR%%/wax/auxiliary
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/more
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/wax/src
-@dirrm %%PYTHON_SITELIBDIR%%/wax/tools/waxrf/doc
-@dirrm %%PYTHON_SITELIBDIR%%/wax/tools/waxrf
-@dirrm %%PYTHON_SITELIBDIR%%/wax/tools
-@dirrm %%PYTHON_SITELIBDIR%%/wax

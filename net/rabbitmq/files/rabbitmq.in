@@ -24,32 +24,57 @@ load_rc_config $name
 
 rabbitmq_server="%%PREFIX%%/sbin/rabbitmq-server"
 rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
-pidfile="/var/run/rabbitmq.pid"
+pidfile="/var/run/${name}.pid"
 
 start_cmd="${name}_start"
-stop_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} stop\"'"
-stop_postcmd="wait_for_pids $rc_pid"
-rotate_logs_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\"'"
-status_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
-extra_commands="rotate_logs status wait"
-wait_cmd=rabbitmq_wait
+stop_cmd="${name}_stop"
+rotate_logs_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\"'"
+status_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
+extra_commands="rotate_logs status"
+
+export HOME=/var/db/${name}
+
+# Prevent conflicts with amqp_client and rabbit_common applications that
+# may be installed in ERL_LIBS.
+unset ERL_LIBS
 
 rabbitmq_start()
 {
-	export HOME=/var/db/rabbitmq
-	unset ERL_LIBS
-	su -m ${rabbitmq_user} \
-		-c "sh -c \"${rabbitmq_server} -detached\""
-# Grab pid (it appears that parsing the output of
-# status is the most reliable method)
-	su -m ${rabbitmq_user} \
-		-c "sh -c \"${rabbitmq_ctl} status\"" \
-		| sed -n 's/[^p]*pid,\([0-9]*\)[^0-9]*/\1/p' > ${pidfile}
+	echo "Starting ${name}."
+
+	if [ -f ${HOME}/.erlang.cookie ]; then
+		chown ${rabbitmq_user}:${rabbitmq_user} ${HOME}/.erlang.cookie
+	fi
+
+	daemon -c -f -u ${rabbitmq_user} -p ${pidfile} ${rabbitmq_server}
+
+	local _attempt=10
+
+	while [ ${_attempt} -gt 0 ]; do
+		debug "Running: rabbitmqctl status (${_attempt})"
+		$rabbitmq_ctl status > /dev/null 2>&1 && break
+		_attempt=$((${_attempt} - 1))
+		sleep 1
+	done
+
+	if [ ${_attempt} -gt 0 ]; then
+		debug "Running: rabbitmqctl wait ${pidfile}"
+		$rabbitmq_ctl wait ${pidfile} >/dev/null 2>&1
+	fi
 }
 
-rabbitmq_wait()
+rabbitmq_stop()
 {
-	$rabbitmq_ctl wait ${pidfile}
+	echo "Stopping ${name}."
+
+	debug "Running: ${rabbitmq_ctl} stop"
+
+	su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop\"" >/dev/null 2>&1
+
+	if [ -f ${pidfile} ]; then
+		read rc_pid < ${pidfile}
+		wait_for_pids $rc_pid
+	fi
 }
 
 run_rc_command "$1"

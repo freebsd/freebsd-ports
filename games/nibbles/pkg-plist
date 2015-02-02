@@ -1,3 +1,2 @@
 bin/nibbles
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%

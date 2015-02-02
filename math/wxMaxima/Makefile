@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wxMaxima
-PORTVERSION=	13.04.2
-PORTREVISION=	3
+PORTVERSION=	14.12.1
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
+DISTFILES=	${PORTNAME:tl}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	WxWidgets GUI for the computer algebra system maxima
@@ -15,16 +16,20 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima
 
-USES=		gettext desktop-file-utils
-USE_GNOME=	libxml2
-USE_WX=		2.8
-WX_COMPS=	wx
-WX_CONF_ARGS=	absolute
-WANT_UNICODE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=
 
+GNU_CONFIGURE=	yes
+
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
+
+USES=		desktop-file-utils gettext
+USE_GNOME=	libxml2
+USE_WX=		2.8
+
+WANT_UNICODE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
+WX_COMPS=	wx
+WX_CONF_ARGS=	absolute
 
 post-install:
 	@${LN} -s ../wxMaxima/wxmaxima.png ${STAGEDIR}${PREFIX}/share/pixmaps/wxmaxima.png

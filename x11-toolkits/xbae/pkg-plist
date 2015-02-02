@@ -185,8 +185,3 @@ share/Xbae/sites.html
 share/Xbae/spancells.html
 share/Xbae/title.html
 share/Xbae/users.html
-@dirrm share/Xbae/images
-@dirrm share/Xbae/examples/builderXcessory
-@dirrm share/Xbae/examples
-@dirrm share/Xbae
-@dirrm include/Xbae

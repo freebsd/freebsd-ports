@@ -28,6 +28,3 @@ sbin/flowd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockclient.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wormsuspects.pl
-@dirrm include/flowd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/flowrrd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

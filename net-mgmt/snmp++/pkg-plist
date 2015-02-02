@@ -11,6 +11,7 @@ include/snmp_pp/eventlistholder.h
 include/snmp_pp/gauge.h
 include/snmp_pp/idea.h
 include/snmp_pp/integer.h
+include/snmp_pp/libsnmp.h
 include/snmp_pp/log.h
 include/snmp_pp/md5.h
 include/snmp_pp/mp_v3.h
@@ -37,4 +38,3 @@ include/snmp_pp/vb.h
 lib/libsnmp++.a
 lib/libsnmp++.so
 lib/libsnmp++.so.3.3.0
-@dirrm include/snmp_pp

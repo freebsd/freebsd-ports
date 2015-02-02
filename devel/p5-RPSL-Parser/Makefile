@@ -18,6 +18,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.039001,0.039_001,0.19,0.28,0.29,0.32,0.38,0.39
+
 USES=		perl5
 USE_PERL5=	configure
 

@@ -17,7 +17,8 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake
-USE_GCC=	yes
+# Fails to build with GCC 4.9, cf. PR 196857.
+USE_GCC=	4.8
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --heap=4M

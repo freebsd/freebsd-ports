@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pigz
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.zlib.net/pigz/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -11,6 +11,7 @@ MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel GZIP
 
 USES=		gmake
+MAKE_FLAGS+=	ZOPFLI=zopfli/src/zopfli/
 
 PLIST_FILES=	bin/pigz bin/pigzn bin/pigzt bin/unpigz
 PLIST_FILES+=	man/man1/pigz.1.gz

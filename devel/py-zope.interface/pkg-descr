@@ -1,4 +1,6 @@
-This is a separate distribution of the zope.interface package used in Zope 3,
-along with the packages it depends on.
+This package provides an implementation of "object interfaces" for Python.
+Interfaces are a mechanism for labeling objects as conforming to a given API or
+contract. So, this package can be considered as implementation of the Design By
+Contract methodology support in Python.
 
 WWW: https://pypi.python.org/pypi/zope.interface/

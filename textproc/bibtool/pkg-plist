@@ -1,4 +1,5 @@
 bin/bibtool
+lib/BibTool/biblatex.rsc
 lib/BibTool/braces.rsc
 lib/BibTool/check_y.rsc
 lib/BibTool/default.rsc

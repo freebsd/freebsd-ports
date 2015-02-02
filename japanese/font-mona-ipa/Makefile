@@ -2,7 +2,7 @@
 
 PORTNAME=	mona-ipa
 PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.geocities.jp/ipa_mona/
 PKGNAMEPREFIX=	ja-font-

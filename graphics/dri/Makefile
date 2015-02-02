@@ -60,19 +60,10 @@ DRIREVISION=	6
 PLIST=	${.CURDIR}/pkg-plist-old
 .endif
 
-DRI_LLVM_VER=	0
-
 .if ${PORT_OPTIONS:MGALLIUM}
-. if defined(WITH_NEW_MESA)
-# keep in sync with libopencl please
-DRI_LLVM_VER=	34
-. else
-DRI_LLVM_VER=	33
-. endif
-
-BUILD_DEPENDS+=	llvm${DRI_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${DRI_LLVM_VER}
-RUN_DEPENDS+=	llvm${DRI_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${DRI_LLVM_VER}
-CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${DRI_LLVM_VER}
+BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
+CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
 
 CONFIGURE_ARGS+=--enable-gallium-llvm \
 		--enable-xvmc \

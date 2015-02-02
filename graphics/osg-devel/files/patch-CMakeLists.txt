@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2011-07-31 11:50:34.000000000 +0400
-+++ CMakeLists.txt	2012-03-05 05:54:52.485029323 +0400
-@@ -588,7 +588,7 @@
+--- CMakeLists.txt.orig	2014-12-18 20:47:08.000000000 +0300
++++ CMakeLists.txt	2015-01-24 21:51:57.000000000 +0300
+@@ -629,7 +629,7 @@
+     FIND_PACKAGE(LibVNCServer)
+     FIND_PACKAGE(OurDCMTK)
+     FIND_PACKAGE(FFmpeg)
+-    FIND_PACKAGE(GStreamer COMPONENTS gstreamer-app gstreamer-pbutils)
++    FIND_PACKAGE(GStreamer COMPONENTS app pbutils)
+     FIND_PACKAGE(GLIB COMPONENTS gobject)
+     FIND_PACKAGE(DirectShow)
+     FIND_PACKAGE(SDL2)
+@@ -805,7 +805,7 @@
  
  IF(UNIX AND NOT WIN32 AND NOT APPLE)
    IF(CMAKE_SIZEOF_VOID_P MATCHES "8")
@@ -9,7 +18,7 @@
        MARK_AS_ADVANCED(LIB_POSTFIX)
    ENDIF()
  ENDIF()
-@@ -972,7 +972,7 @@
+@@ -1234,7 +1234,7 @@
      ${PROJECT_BINARY_DIR}/packaging/pkgconfig/${PKGCONFIG_FILE}.pc
      @ONLY
      )

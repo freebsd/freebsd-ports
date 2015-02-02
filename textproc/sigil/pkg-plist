@@ -42,5 +42,3 @@ share/sigil/translations/sigil_tr_TR.qm
 share/sigil/translations/sigil_ug.qm
 share/sigil/translations/sigil_zh_CN.qm
 share/sigil/translations/sigil_zh_TW.qm
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :

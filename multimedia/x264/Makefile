@@ -34,7 +34,7 @@ COMMENT=	Front-end for encoding H.264/MPEG-4 AVC video
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
+BUILD_DEPENDS=	yasm>=1.2.0:${PORTSDIR}/devel/yasm \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 

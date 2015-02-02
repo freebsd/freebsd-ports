@@ -358,36 +358,3 @@
 %%XPI_XPIDIR%%/skin/manage.css
 %%XPI_XPIDIR%%/skin/overlay.css
 %%XPI_XPIDIR%%/skin/style.css
-@dirrm %%XPI_XPIDIR%%/components
-@dirrm %%XPI_XPIDIR%%/content
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/idl
-@dirrm %%XPI_XPIDIR%%/locale/cs
-@dirrm %%XPI_XPIDIR%%/locale/da
-@dirrm %%XPI_XPIDIR%%/locale/de
-@dirrm %%XPI_XPIDIR%%/locale/en-GB
-@dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale/es-AR
-@dirrm %%XPI_XPIDIR%%/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/locale/et-EE
-@dirrm %%XPI_XPIDIR%%/locale/fr
-@dirrm %%XPI_XPIDIR%%/locale/he-IL
-@dirrm %%XPI_XPIDIR%%/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/locale/it
-@dirrm %%XPI_XPIDIR%%/locale/ja
-@dirrm %%XPI_XPIDIR%%/locale/ko-KR
-@dirrm %%XPI_XPIDIR%%/locale/lt
-@dirrm %%XPI_XPIDIR%%/locale/nl
-@dirrm %%XPI_XPIDIR%%/locale/pl-PL
-@dirrm %%XPI_XPIDIR%%/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/locale/ro-RO
-@dirrm %%XPI_XPIDIR%%/locale/ru-RU
-@dirrm %%XPI_XPIDIR%%/locale/sr
-@dirrm %%XPI_XPIDIR%%/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/locale/uk
-@dirrm %%XPI_XPIDIR%%/locale/vi
-@dirrm %%XPI_XPIDIR%%/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/locale
-@dirrm %%XPI_XPIDIR%%/skin

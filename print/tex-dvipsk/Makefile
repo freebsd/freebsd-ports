@@ -2,6 +2,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.994
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -31,6 +32,7 @@ EXTRACT_FILES= \
 EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 	--strip-components 1 --no-same-permission --no-same-owner \
+	${EXCLUDE_FILES:S,^,--exclude ,} \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTVERSION_TEXMF=	20140525
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
@@ -40,6 +42,8 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/map/dvips/ \
 	texmf-dist/fonts/enc/dvips/ \
 	texmf-dist/tex/generic/dvips/
+EXCLUDE_FILES= \
+	texmf-dist/dvips/xdvi
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-paper \

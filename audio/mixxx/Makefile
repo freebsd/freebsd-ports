@@ -13,15 +13,14 @@ COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libmad.so:${PORTSDIR}/audio/libmad \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

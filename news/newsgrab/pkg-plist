@@ -1,4 +1,3 @@
 bin/newsgrab
 %%PORTDOCS%%share/doc/newsgrab/README
 %%PORTDOCS%%share/doc/newsgrab/newsgrabrc
-%%PORTDOCS%%@dirrm share/doc/newsgrab

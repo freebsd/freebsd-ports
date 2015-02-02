@@ -203,16 +203,3 @@ share/icons/hicolor/scalable/apps/terminator.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
 share/pixmaps/terminator.png
-%%NLS%%@dirrmtry share/locale/tyv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tyv
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/jv
-%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fy
-%%NLS%%@dirrmtry share/locale/ckb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ckb
-@dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/configobj
-@dirrm %%PYTHON_SITELIBDIR%%/terminatorlib

@@ -421,20 +421,21 @@ share/applications/freetuxtv.desktop
 %%DATADIR%%/ui/addrecording.glade
 %%DATADIR%%/ui/channelproperties.glade
 %%DATADIR%%/ui/freetuxtv.glade
+share/icons/hicolor/128x128/apps/freetuxtv.png
 share/icons/hicolor/16x16/apps/freetuxtv.png
 share/icons/hicolor/22x22/apps/freetuxtv.png
 share/icons/hicolor/32x32/apps/freetuxtv.png
 share/icons/hicolor/48x48/apps/freetuxtv.png
+share/icons/hicolor/64x64/apps/freetuxtv.png
 share/icons/hicolor/scalable/apps/freetuxtv.svg
 %%NLS%%share/locale/de/LC_MESSAGES/freetuxtv.mo
+%%NLS%%share/locale/es/LC_MESSAGES/freetuxtv.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/freetuxtv.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/freetuxtv.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/freetuxtv.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/freetuxtv.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/freetuxtv.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/freetuxtv.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/freetuxtv.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/freetuxtv.mo
 share/pixmaps/freetuxtv.png
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/images/channels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry include/libvlc-gtk
-@dirrmtry include/libdbevolution

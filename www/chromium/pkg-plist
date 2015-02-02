@@ -73,6 +73,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/checker.png
 %%DATADIR%%/resources/inspector/Images/chromeDisabledSelect.png
 %%DATADIR%%/resources/inspector/Images/chromeDisabledSelect_2x.png
+%%DATADIR%%/resources/inspector/Images/chromeLeft.png
+%%DATADIR%%/resources/inspector/Images/chromeMiddle.png
+%%DATADIR%%/resources/inspector/Images/chromeRight.png
 %%DATADIR%%/resources/inspector/Images/chromeSelect.png
 %%DATADIR%%/resources/inspector/Images/chromeSelect_2x.png
 %%DATADIR%%/resources/inspector/Images/cookie.png
@@ -133,73 +136,31 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/transformControls.png
 %%DATADIR%%/resources/inspector/Images/transformControls_2x.png
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
-%%DATADIR%%/resources/inspector/Runtime.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
-%%DATADIR%%/resources/inspector/accelerometer.css
-%%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/audits_module.js
-%%DATADIR%%/resources/inspector/breakpointsList.css
-%%DATADIR%%/resources/inspector/canvasProfiler.css
-%%DATADIR%%/resources/inspector/cm/codemirror.css
-%%DATADIR%%/resources/inspector/cmdevtools.css
 %%DATADIR%%/resources/inspector/console_module.js
-%%DATADIR%%/resources/inspector/dataGrid.css
-%%DATADIR%%/resources/inspector/devicesView.css
 %%DATADIR%%/resources/inspector/devices_module.js
 %%DATADIR%%/resources/inspector/devtools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/resources/inspector/devtools.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
-%%DATADIR%%/resources/inspector/documentationView.css
 %%DATADIR%%/resources/inspector/documentation_module.js
-%%DATADIR%%/resources/inspector/elementsPanel.css
 %%DATADIR%%/resources/inspector/elements_module.js
-%%DATADIR%%/resources/inspector/extensions_module.js
-%%DATADIR%%/resources/inspector/filter.css
-%%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
-%%DATADIR%%/resources/inspector/flameChart.css
-%%DATADIR%%/resources/inspector/heapProfiler.css
 %%DATADIR%%/resources/inspector/heap_snapshot_worker_module.js
-%%DATADIR%%/resources/inspector/helpScreen.css
-%%DATADIR%%/resources/inspector/indexedDBViews.css
-%%DATADIR%%/resources/inspector/inspectorCommon.css
-%%DATADIR%%/resources/inspector/inspectorSyntaxHighlight.css
-%%DATADIR%%/resources/inspector/layersPanel.css
 %%DATADIR%%/resources/inspector/layers_module.js
-%%DATADIR%%/resources/inspector/navigatorView.css
-%%DATADIR%%/resources/inspector/networkLogView.css
-%%DATADIR%%/resources/inspector/networkPanel.css
 %%DATADIR%%/resources/inspector/network_module.js
-%%DATADIR%%/resources/inspector/overrides.css
-%%DATADIR%%/resources/inspector/overviewGrid.css
-%%DATADIR%%/resources/inspector/panelEnablerView.css
-%%DATADIR%%/resources/inspector/pieChart.css
 %%DATADIR%%/resources/inspector/profiler_module.js
-%%DATADIR%%/resources/inspector/profilesPanel.css
-%%DATADIR%%/resources/inspector/promisesPanel.css
 %%DATADIR%%/resources/inspector/promises_module.js
-%%DATADIR%%/resources/inspector/requestCookiesView.css
-%%DATADIR%%/resources/inspector/requestHeadersView.css
-%%DATADIR%%/resources/inspector/resourceView.css
-%%DATADIR%%/resources/inspector/resourcesPanel.css
 %%DATADIR%%/resources/inspector/resources_module.js
-%%DATADIR%%/resources/inspector/responsiveDesignView.css
-%%DATADIR%%/resources/inspector/revisionHistory.css
-%%DATADIR%%/resources/inspector/screencastView.css
 %%DATADIR%%/resources/inspector/script_formatter_worker_module.js
 %%DATADIR%%/resources/inspector/settings_module.js
 %%DATADIR%%/resources/inspector/source_frame_module.js
-%%DATADIR%%/resources/inspector/sourcesPanel.css
-%%DATADIR%%/resources/inspector/sourcesView.css
 %%DATADIR%%/resources/inspector/sources_module.js
-%%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/temp_storage_shared_worker_module.js
-%%DATADIR%%/resources/inspector/timelinePanel.css
 %%DATADIR%%/resources/inspector/timeline_module.js
 %%DATADIR%%/resources/inspector/toolbox.css
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
-%%DATADIR%%/resources/inspector/webSocketFrameView.css
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
@@ -210,7 +171,6 @@ share/icons/hicolor/64x64/apps/chrome.png
 @dir %%DATADIR%%/resources/extension/demo
 @dir %%DATADIR%%/resources/extension
 @dir %%DATADIR%%/resources/inspector/Images
-@dir %%DATADIR%%/resources/inspector/cm
 @dir %%DATADIR%%/resources/inspector
 @dir %%DATADIR%%/resources
 @dir %%DATADIR%%

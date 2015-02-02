@@ -35,8 +35,6 @@ CONFIGURE_ARGS=	--disable-static \
 SHLIB_VER=	7
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
-SUB_FILES=	pkg-message
-
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}

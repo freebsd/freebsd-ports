@@ -54,17 +54,3 @@ share/locale/sr/LC_MESSAGES/k9copy.mo
 share/locale/sr@Latn/LC_MESSAGES/k9copy.mo
 share/locale/tr/LC_MESSAGES/k9copy.mo
 share/locale/zh_TW/LC_MESSAGES/k9copy.mo
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
-@dirrm share/doc/HTML/en/k9copy
-@dirrm share/apps/k9copy/icons/hicolor/48x48/actions
-@dirrm share/apps/k9copy/icons/hicolor/48x48
-@dirrm share/apps/k9copy/icons/hicolor/32x32/actions
-@dirrm share/apps/k9copy/icons/hicolor/32x32
-@dirrm share/apps/k9copy/icons/hicolor/22x22/actions
-@dirrm share/apps/k9copy/icons/hicolor/22x22
-@dirrm share/apps/k9copy/icons/hicolor/16x16/actions
-@dirrm share/apps/k9copy/icons/hicolor/16x16
-@dirrm share/apps/k9copy/icons/hicolor
-@dirrm share/apps/k9copy/icons
-@dirrm share/apps/k9copy

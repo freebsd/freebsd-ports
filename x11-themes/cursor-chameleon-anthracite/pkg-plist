@@ -619,10 +619,3 @@ lib/X11/icons/chameleon-anthracite-small/cursors/zoom-out.in
 lib/X11/icons/chameleon-anthracite-small/cursors/zoom-out.png
 lib/X11/icons/chameleon-anthracite-small/index.theme
 lib/X11/icons/chameleon-anthracite-small/preview.jpg
-@dirrm lib/X11/icons/chameleon-anthracite-small/cursors
-@dirrm lib/X11/icons/chameleon-anthracite-small
-@dirrm lib/X11/icons/chameleon-anthracite-regular/cursors
-@dirrm lib/X11/icons/chameleon-anthracite-regular
-@dirrm lib/X11/icons/chameleon-anthracite-large/cursors
-@dirrm lib/X11/icons/chameleon-anthracite-large
-@dirrm lib/X11/icons

@@ -14,7 +14,3 @@ lib/X11/fonts/dockapp/seg7-ascii-05x07.pcf.gz
 %%EXAMPLES%%%%EXAMPLESDIR%%/basic/basic.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/rectangles/Imakefile
 %%EXAMPLES%%%%EXAMPLESDIR%%/rectangles/rectangles.c
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/rectangles
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/X11/fonts/dockapp

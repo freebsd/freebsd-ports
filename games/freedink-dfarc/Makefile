@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	freedink-dfarc
-PORTVERSION=	3.10
-PORTREVISION=	2
+PORTVERSION=	3.12
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	freedink
 DISTNAME=	dfarc-${PORTVERSION}
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Frontend and .dmod installer for GNU FreeDink
 
-USES=		desktop-file-utils gettext gmake shared-mime-info
-USE_WX=		2.8
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake shared-mime-info
+USE_WX=		3.0
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

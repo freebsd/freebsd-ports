@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libportaudio.so:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
 		libcblas.so:${PORTSDIR}/math/cblas
 
 # OCTSRC is the name of the directory of the package.

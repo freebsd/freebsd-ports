@@ -21,7 +21,6 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libmeanwhile.so:${PORTSDIR}/net-im/meanwhile \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libgif.so:${PORTSDIR}/graphics/giflib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \

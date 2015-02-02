@@ -63,9 +63,7 @@ PORTDOCS=	eb-01.html eb-02.html eb-03.html eb-04.html eb-05.html eb-06.html \
 		ebzip-03.html ebzip-04.html ebzip-05.html ebzip-06.html ebzip-07.html \
 		ebzip-08.html ebzip-09.html ebzip-10.html ebzip.html
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal
-ACLOCAL_ARGS=	-I ${WRKSRC}/m4
-USES=		iconv libtool perl5 tar:bzip2
+USES=		autoreconf iconv libtool perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}

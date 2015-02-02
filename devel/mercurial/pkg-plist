@@ -247,6 +247,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/dagutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/dagutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dagutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/default.d/mergetools.rc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
@@ -422,6 +423,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/minirst.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/minirst.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/mpatch.so
+%%PYTHON_SITELIBDIR%%/mercurial/namespaces.py
+%%PYTHON_SITELIBDIR%%/mercurial/namespaces.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/namespaces.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/node.py
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyo
@@ -729,7 +733,6 @@ man/man5/hgrc.5.gz
 %%DATA%%%%DATADIR%%/contrib/hgsh/Makefile
 %%DATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
 %%DATA%%%%DATADIR%%/contrib/mercurial.el
-%%DATA%%%%DATADIR%%/contrib/mergetools.hgrc
 %%DATA%%%%DATADIR%%/contrib/mq.el
 %%DATA%%%%DATADIR%%/contrib/perf.py
 %%DATA%%%%DATADIR%%/contrib/pylintrc

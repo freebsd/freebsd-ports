@@ -1,5 +1,5 @@
---- egg-cnv.el.orig	2002-07-23 06:59:44.000000000 +0900
-+++ egg-cnv.el	2014-11-23 16:00:50.000000000 +0900
+--- egg-cnv.el.orig	2015-01-31 19:23:34.000000000 +0900
++++ egg-cnv.el	2015-01-31 19:25:52.000000000 +0900
 @@ -1245,7 +1245,8 @@
    (with-output-to-temp-buffer "*Help*"
      (princ "EGG Conversion mode:\n")

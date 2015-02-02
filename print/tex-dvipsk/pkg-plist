@@ -196,7 +196,6 @@ man/man1/dvips.1.gz
 %%TEXMFDISTDIR%%/dvips/tree-dvips/tree-dvips91.pro
 %%TEXMFDISTDIR%%/dvips/uhc/config.uhc
 %%TEXMFDISTDIR%%/dvips/xcolor/xcolor.pro
-%%TEXMFDISTDIR%%/dvips/xdvi/config.xdvi
 %%TEXMFDISTDIR%%/dvips/xypic/xy389dict.pro
 %%TEXMFDISTDIR%%/dvips/zapfchan/config.uzc
 %%TEXMFDISTDIR%%/dvips/zapfding/config.uzd

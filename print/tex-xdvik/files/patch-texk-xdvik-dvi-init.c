@@ -1,6 +1,17 @@
---- dvi-init.c.orig	2013-04-05 09:14:54.000000000 +0900
-+++ dvi-init.c	2014-08-22 23:26:27.000000000 +0900
-@@ -53,6 +53,9 @@
+--- texk/xdvik/dvi-init.c.orig	2014-09-02 18:41:34.000000000 +0900
++++ texk/xdvik/dvi-init.c	2015-01-31 21:03:09.000000000 +0900
+@@ -31,6 +31,10 @@
+ 
+ #include "dvi-init.h"
+ #include "dvi-draw.h"
++#ifdef PTEX
++#include "ptexvf.h"
++#include "ptexmap.h"
++#endif
+ #include "util.h"
+ #include "x_util.h"
+ #include "exit-handlers.h"
+@@ -53,6 +57,9 @@
  #include "statusline.h"
  #include "events.h"
  #include "font-open.h"
@@ -10,7 +21,145 @@
  
  #if FREETYPE
  # include FT_SIZES_H
-@@ -865,9 +868,14 @@
+@@ -67,6 +74,10 @@
+ #define	VF_PRE		247
+ #define	VF_ID_BYTE	202
+ #define	VF_MAGIC	((VF_PRE << 8) | VF_ID_BYTE)
++#ifdef PTEX
++#define	JFMS_MAGIC	11
++#define	JFMS_TATEMAGIC	9
++#endif /* PTEX */
+ 
+ /* font stuff */
+ struct font *tn_table[TNTABLELEN];
+@@ -170,8 +181,22 @@
+ delete_glyphs(struct font *fontp)
+ {
+     struct glyph *g;
++#ifdef PTEX
++    int n, maxchar;
+ 
++    maxchar = fontp->maxchar + 1;
++    for (n = 0; n < maxchar; ++n) {
++	g = (fontp->flags & FONT_KANJI) ? fontp->kglyph[n] : &fontp->glyph[n];
++	if (g == NULL) continue;
++#else /* !PTEX */
+     for (g = fontp->glyph; g <= fontp->glyph + fontp->maxchar; ++g) {
++#endif /* !PTEX */
++	free_bitmap2(g);
++    }
++}
++
++void free_bitmap2(struct glyph *g) {
++    {
+ 	if (g->bitmap2.bits) {
+ 	    free(g->bitmap2.bits);
+ 	    g->bitmap2.bits = NULL;
+@@ -283,7 +308,23 @@
+ 		}
+ 		else {
+ 		    delete_glyphs(fontp);
++#ifdef PTEX
++		    if (fontp->flags & FONT_KANJI) {
++			int n;
++			for (n = 0; n < (int)fontp->maxchar + 1; ++n) {
++			    if (fontp->kglyph[n] != NULL) {
++				free(fontp->kglyph[n]);
++			    }
++			}
++			free(fontp->kglyph);
++		    }
++		    else {
++#endif /* PTEX */
+ 		    free((char *)fontp->glyph);
++		    fontp->glyph = NULL;
++#ifdef PTEX
++		    }
++#endif /* PTEX */
+ 		}
+ 		free((char *)fontp);
+ 	    }
+@@ -324,7 +365,11 @@
+ 	struct glyph *g;
+ 
+ 	for (f = font_head; f != NULL; f = f->next)
+-	    if ((f->flags & FONT_LOADED) && !(f->flags & FONT_VIRTUAL))
++	    if ((f->flags & FONT_LOADED) && !(f->flags & FONT_VIRTUAL)
++#ifdef PTEX
++		&& !(f->flags & FONT_KANJI)
++#endif /* PTEX */
++		)
+ 		for (g = f->glyph; g <= f->glyph + f->maxchar; ++g)
+ 		    g->fg = NULL;
+     }
+@@ -447,6 +492,10 @@
+      * appear before the main window comes up ...
+      */
+ 
++#ifdef PTEX
++    fontp->dir = 0;
++#endif /* PTEX */
++
+     fontp->file = font_open(
+ #if DELAYED_MKTEXPK
+ 			    load_font_now,
+@@ -511,6 +560,12 @@
+     fontp->fsize = size_found;
+     fontp->timestamp = ++current_timestamp;
+     fontp->maxchar = maxchar = 255;
++#ifdef PTEX
++    if (iskanjifont(fontp->fontname)) {
++	fontp->flags |= FONT_KANJI;
++	fontp->set_char_p = set_char2;
++    } else
++#endif /* PTEX */
+     fontp->set_char_p = set_char;
+     magic = get_bytes(fontp->file, 2);
+ 
+@@ -529,6 +584,13 @@
+ 	else
+ 	    (void)read_VF_index(fontp, (wide_bool)hushcs);
+ 	break;
++#ifdef PTEX
++    case JFMS_MAGIC:
++    case JFMS_TATEMAGIC:
++	fontp->dir = (magic == JFMS_TATEMAGIC);
++	read_PTEXVF_index(fontp);
++	return True;
++#endif /* PTEX */
+     default:
+ 	XDVI_FATAL((stderr, "Cannot recognize format for font file %s",
+ 	  fontp->filename));
+@@ -783,7 +845,13 @@
+ 	TRACE_FILES((stderr, "process_preamble: fp = %p, errflag = %d, returning False", (void *)fp, *errflag));
+ 	return False;
+     }
+-    if (get_byte(fp) != 2) {
++#ifdef PTEX
++    k = get_byte(fp);
++    if (k != 2 && k != 3)
++#else /* !PTEX */
++    if (get_byte(fp) != 2)
++#endif /* !PTEX */
++    {
+ 	*errflag = WRONG_DVI_VERSION;
+ 	TRACE_FILES((stderr, "process_preamble: fp = %p, errflag = %d, returning False", (void *)fp, *errflag));
+ 	return False;
+@@ -845,7 +913,12 @@
+ 	fseek(fp, --pos, SEEK_SET);
+ 	byte = get_byte(fp);
+     }
+-    if (byte != 2) {
++#ifdef PTEX
++    if (byte != 2 && byte != 3)
++#else /* !PTEX */
++    if (byte != 2)
++#endif /* !PTEX */
++    {
+ 	*errflag = WRONG_DVI_VERSION;
+ 	TRACE_FILES((stderr, "find_postamble: returning FALSE"));
+ 	return False;
+@@ -865,9 +938,14 @@
      char temp[21];
      const char **p;
      char *q;
@@ -26,7 +175,7 @@
      if (*arg == '+') {
  	++arg;
  	ignore_papersize_specials = True;
-@@ -884,6 +892,57 @@
+@@ -884,6 +962,57 @@
  	    break;
      }
      arg = temp;
@@ -84,7 +233,7 @@
      /* perform substitutions */
      for (p = paper_types; p < paper_types + paper_types_size; p += 2) {
  	if (strcmp(temp, *p) == 0) {
-@@ -898,6 +957,7 @@
+@@ -898,6 +1027,7 @@
      m_paper_unshrunk_h = atopix(arg1 + 1, False);
  
      globals.grid_paper_unit = atopixunit(arg);

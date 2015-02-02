@@ -11,6 +11,3 @@ lib/netmagis/pkgtcl/pgsql.tcl
 lib/netmagis/pkgtcl/pkgIndex.tcl
 lib/netmagis/pkgtcl/webapp.n
 lib/netmagis/pkgtcl/webapp.tcl
-@dirrm lib/netmagis/pkgtcl
-@dirrm lib/netmagis/msgs
-@dirrm lib/netmagis

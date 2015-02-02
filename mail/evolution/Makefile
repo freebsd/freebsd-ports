@@ -4,6 +4,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	3.12.10
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +21,8 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
+		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
 
 USES=		desktop-file-utils bison gettext gmake libtool \
 		pathfix perl5 pkgconfig tar:xz

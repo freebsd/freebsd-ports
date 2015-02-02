@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/site
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWTP}
-RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/webtools:${PORTSDIR}/java/eclipse-webtools
+RUN_DEPENDS+=	eclipse-webtools>0:${PORTSDIR}/java/eclipse-webtools
 .endif
 
 .include "${.CURDIR}/../../java/eclipse/Makefile.plugins"

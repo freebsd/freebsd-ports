@@ -1,0 +1,26 @@
+# libressl support
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196139
+# https://issues.apache.org/bugzilla/show_bug.cgi?id=57375
+
+--- include/ap_config_auto.h.in.orig	2015-01-15 19:59:13 UTC
++++ include/ap_config_auto.h.in
+@@ -130,6 +130,9 @@
+ /* Define to 1 if you have the <pwd.h> header file. */
+ #undef HAVE_PWD_H
+ 
++/* Define to 1 if you have the `RAND_egd' function. */
++#undef HAVE_RAND_EGD
++
+ /* Define to 1 if you have the `setsid' function. */
+ #undef HAVE_SETSID
+ 
+@@ -139,6 +142,9 @@
+ /* Define to 1 if you have the `SSL_CTX_new' function. */
+ #undef HAVE_SSL_CTX_NEW
+ 
++/* Define to 1 if you have the `SSL_CTX_use_certificate_chain' function. */
++#undef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
++
+ /* Define to 1 if you have the <stdint.h> header file. */
+ #undef HAVE_STDINT_H
+ 

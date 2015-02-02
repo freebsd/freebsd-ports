@@ -5,7 +5,7 @@ PORTVERSION=	20141029
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	jbeich@vfemail.net
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
 
 LICENSE=	GPLv3

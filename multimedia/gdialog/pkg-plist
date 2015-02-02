@@ -2,4 +2,3 @@ bin/gdialog
 %%DATADIR%%/GDialog-Copying
 %%DATADIR%%/GDialog.jar
 %%DATADIR%%/GDialog-ReleaseNotes.txt
-@dirrmtry %%DATADIR%%

@@ -122,6 +122,3 @@ lib/X11/icons/Neutral++_White/cursors/wait
 lib/X11/icons/Neutral++_White/cursors/watch
 lib/X11/icons/Neutral++_White/cursors/whats_this
 lib/X11/icons/Neutral++_White/cursors/xterm
-@dirrm lib/X11/icons/Neutral++_White/cursors
-@dirrm lib/X11/icons/Neutral++_White
-@dirrmtry lib/X11/icons

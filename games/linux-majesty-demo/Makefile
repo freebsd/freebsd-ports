@@ -22,6 +22,8 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	majesty
 PORTDOCS=	README README.licenses EULA
 
+BROKEN=		Does not fetch
+
 .include <bsd.port.pre.mk>
 
 do-extract:

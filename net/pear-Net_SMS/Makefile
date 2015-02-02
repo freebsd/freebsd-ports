@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_SMS
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	net pear
 
 MAINTAINER=	ports@FreeBSD.org

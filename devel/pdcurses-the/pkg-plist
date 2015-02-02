@@ -1,7 +1,6 @@
 bin/xcurses-config
 include/xcurses.h
 include/xcurses/curses.h
-include/xcurses/curspriv.h
 include/xcurses/panel.h
 include/xcurses/term.h
 include/xpanel.h

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darcs
-PORTVERSION=	2.8.4
-PORTREVISION=	8
+PORTVERSION=	2.8.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -53,4 +52,9 @@ MMAP_FLAG_ENABLE=	mmap
 MMAP_FLAG_CABAL=	mmap>=0.5
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+
+.if ${PORT_OPTIONS:MSTATIC} && ${PORT_OPTIONS:MCURL}
+BROKEN=			enabling STATIC and CURL together will produce linker errors
+.endif
+
 .include <bsd.port.mk>

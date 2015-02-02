@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
-PORTVERSION=	1.54
-PORTREVISION=	2
+PORTVERSION=	1.56
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:BORISZ
+MASTER_SITE_SUBDIR=	CPAN:MAXMIND
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Business-MaxMind-${PORTVERSION}
 
@@ -21,11 +20,13 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	\
+	%%SITE_PERL%%/Business/MaxMind.pm \
 	%%SITE_PERL%%/Business/MaxMind/CreditCardFraudDetection.pm \
 	%%SITE_PERL%%/Business/MaxMind/HTTPBase.pm \
 	%%SITE_PERL%%/Business/MaxMind/TelephoneVerification.pm \
 	%%SITE_PERL%%/Business/example.pl \
 	%%SITE_PERL%%/Business/example_telv.pl \
+	%%PERL5_MAN3%%/Business::MaxMind.3.gz \
 	%%PERL5_MAN3%%/Business::MaxMind::CreditCardFraudDetection.3.gz \
 	%%PERL5_MAN3%%/Business::MaxMind::HTTPBase.3.gz \
 	%%PERL5_MAN3%%/Business::MaxMind::TelephoneVerification.3.gz

@@ -73,7 +73,3 @@ share/themes/qnxtheme/gtk/vbuttonbarpressed.png
 %%GTK2%%share/themes/qnxtheme/gtk-2.0/trough.png
 %%GTK2%%share/themes/qnxtheme/gtk-2.0/vbuttonbar.png
 %%GTK2%%share/themes/qnxtheme/gtk-2.0/vbuttonbarpressed.png
-%%GTK2%%@dirrm share/themes/qnxtheme/gtk-2.0
-@dirrm share/themes/qnxtheme/gtk
-@dirrm share/themes/qnxtheme
-@dirrmtry share/themes

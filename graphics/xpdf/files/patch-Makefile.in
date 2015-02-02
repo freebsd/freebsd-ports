@@ -1,18 +1,23 @@
-Index: Makefile.in
-@@ -89,7 +89,7 @@
+--- Makefile.in.orig	2014-05-28 11:50:50.000000000 -0700
++++ Makefile.in	2015-01-20 11:21:34.614223754 -0800
+@@ -89,7 +89,9 @@
  	$(INSTALL_PROGRAM) xpdf/pdfinfo$(EXE) $(DESTDIR)@bindir@/pdfinfo$(EXE)
  	$(INSTALL_PROGRAM) xpdf/pdffonts$(EXE) $(DESTDIR)@bindir@/pdffonts$(EXE)
  	$(INSTALL_PROGRAM) xpdf/pdfdetach$(EXE) $(DESTDIR)@bindir@/pdfdetach$(EXE)
 -@X@	$(INSTALL_PROGRAM) xpdf/pdftoppm$(EXE) $(DESTDIR)@bindir@/pdftoppm$(EXE)
++	$(INSTALL_PROGRAM) xpdf/pdftohtml$(EXE) $(DESTDIR)@bindir@/pdftohtml$(EXE)
++	$(INSTALL_PROGRAM) xpdf/pdftopng$(EXE) $(DESTDIR)@bindir@/pdftopng$(EXE)
 +	$(INSTALL_PROGRAM) xpdf/pdftoppm$(EXE) $(DESTDIR)@bindir@/pdftoppm$(EXE)
  	$(INSTALL_PROGRAM) xpdf/pdfimages$(EXE) $(DESTDIR)@bindir@/pdfimages$(EXE)
  	-mkdir -p $(DESTDIR)@mandir@/man1
  @X@	$(INSTALL_DATA) $(srcdir)/doc/xpdf.1 $(DESTDIR)@mandir@/man1/xpdf.1
-@@ -98,7 +98,7 @@
+@@ -98,7 +100,9 @@
  	$(INSTALL_DATA) $(srcdir)/doc/pdfinfo.1 $(DESTDIR)@mandir@/man1/pdfinfo.1
  	$(INSTALL_DATA) $(srcdir)/doc/pdffonts.1 $(DESTDIR)@mandir@/man1/pdffonts.1
  	$(INSTALL_DATA) $(srcdir)/doc/pdfdetach.1 $(DESTDIR)@mandir@/man1/pdfdetach.1
 -@X@	$(INSTALL_DATA) $(srcdir)/doc/pdftoppm.1 $(DESTDIR)@mandir@/man1/pdftoppm.1
++	$(INSTALL_DATA) $(srcdir)/doc/pdftohtml.1 $(DESTDIR)@mandir@/man1/pdftohtml.1
++	$(INSTALL_DATA) $(srcdir)/doc/pdftopng.1 $(DESTDIR)@mandir@/man1/pdftopng.1
 +	$(INSTALL_DATA) $(srcdir)/doc/pdftoppm.1 $(DESTDIR)@mandir@/man1/pdftoppm.1
  	$(INSTALL_DATA) $(srcdir)/doc/pdfimages.1 $(DESTDIR)@mandir@/man1/pdfimages.1
  	-mkdir -p $(DESTDIR)@mandir@/man5

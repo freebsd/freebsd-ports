@@ -396,27 +396,5 @@ man/sk/man1/wmaker.1x.gz
 man/sk/man1/wmsetbg.1x.gz
 man/sk/man1/wxcopy.1x.gz
 man/sk/man1/wxpaste.1x.gz
-%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hy
-@dirrm share/WindowMaker/Styles
-@dirrm share/WindowMaker/Sounds
-@dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Backgrounds
-@dirrmtry share/WindowMaker/Themes
-@dirrmtry share/WindowMaker/Pixmaps
-@dirrmtry share/WindowMaker/Icons
-@dirrmtry share/WindowMaker
-@dirrm share/WINGs
-@dirrmtry man/sk/man1
-@dirrmtry man/sk
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/cs/man1
-@dirrmtry man/cs
-@dirrm include/WINGs
-@dirrm etc/WindowMaker
-@dirrm GNUstep/Applications/WPrefs.app/xpm
-@dirrm GNUstep/Applications/WPrefs.app/tiff
-@dirrm GNUstep/Applications/WPrefs.app
-@dirrm GNUstep/Applications
-@dirrm GNUstep
+@dir GNUstep/Applications/WPrefs.app/xpm
+@dir share/WindowMaker/Sounds

@@ -3,11 +3,14 @@
 # Provide support for lua
 # 
 # MAINTAINER: lua@FreeBSD.org
-
+# Usage:
+#
+# USES+=	lua:[version]
+#
 .if !defined(_INCLUDE_USES_LUA_MK)
 _INCLUDE_USES_LUA_MK=	yes
 
-_LUA_VALID_VERSIONS=	52 51
+_LUA_VALID_VERSIONS=	53 52 51
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _LUA_DEFAULT_VERSION=	${LUA_DEFAULT:S/.//}
@@ -26,8 +29,8 @@ _LUA_WANTED_VERSION:=	${_LUA_DEFAULT_VERSION}
 #
 # Parse one or more ver arguments
 #
-.if ${lua_ARGS:M5[1-2]}
-_LUA_WANTED_VERSIONS:=	${lua_ARGS:M5[1-2]}
+.if ${lua_ARGS:M5[1-3]}
+_LUA_WANTED_VERSIONS:=	${lua_ARGS:M5[1-3]}
 .endif
 
 #

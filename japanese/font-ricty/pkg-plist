@@ -2,13 +2,10 @@
 %%RICTY%%%%DATADIR%%/Ricty-Regular.ttf
 %%DISCORD%%%%DATADIR%%/RictyDiscord-Bold.ttf
 %%DISCORD%%%%DATADIR%%/RictyDiscord-Regular.ttf
-@dirrm %%DATADIR%%
 %%RICTY%%%%LOCAL_FONTSDIR%%/TTF/Ricty-Bold.ttf
 %%RICTY%%%%LOCAL_FONTSDIR%%/TTF/Ricty-Regular.ttf
 %%DISCORD%%%%LOCAL_FONTSDIR%%/TTF/RictyDiscord-Bold.ttf
 %%DISCORD%%%%LOCAL_FONTSDIR%%/TTF/RictyDiscord-Regular.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 %%RICTY%%etc/fonts/conf.avail/20-unhint-ricty.conf
 %%RICTY%%etc/fonts/conf.avail/62-fonts-ricty.conf
 %%RICTY%%etc/fonts/conf.d/20-unhint-ricty.conf
@@ -21,8 +18,4 @@
 %%RICTY%%%%X_FONTSDIR%%/TTF/Ricty-Regular.ttf
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Bold.ttf
 %%DISCORD%%%%X_FONTSDIR%%/TTF/RictyDiscord-Regular.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
-@unexec rm -f %D/%%X_FONTSDIR%%/OTF/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TTF
-@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TTF || true; fi
+@fc %%X_FONTSDIR%%/TTF

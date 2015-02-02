@@ -13,5 +13,3 @@ bin/vobsub2pgm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_fr.sed
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_nl.sed
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_none.sed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

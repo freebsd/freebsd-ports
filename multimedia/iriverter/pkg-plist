@@ -34,9 +34,3 @@ share/applications/iriverter.desktop
 %%DATADIR%%/profiles/x5.profile
 %%DATADIR%%/profiles/zvm.profile
 share/pixmaps/iriverter.png
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/doc/images
-@dirrm %%DATADIR%%/doc/html
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

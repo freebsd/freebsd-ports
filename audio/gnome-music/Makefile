@@ -1,10 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/gnome-music/Makefile 20073 2014-11-12 22:09:30Z gusi $
 
 PORTNAME=	gnome-music
-PORTVERSION=	3.14.2
-PORTREVISION=	1
+PORTVERSION=	3.14.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

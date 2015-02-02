@@ -8,5 +8,3 @@ etc/pwm/menus-default.conf
 man/man1/pwm.1x.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/config.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/pwm

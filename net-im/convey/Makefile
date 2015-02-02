@@ -12,8 +12,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Instant Message (IM) program using the Jabber protocol
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USE_ANT=	yes
 USE_JAVA=	yes
 

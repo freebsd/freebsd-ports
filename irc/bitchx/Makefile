@@ -1,21 +1,17 @@
 # Created by: Jimbo Bahooli <griffin@blackhole.iceworld.org>
 # $FreeBSD$
 
-PORTNAME=	BitchX
-DISTVERSION=	1.2-final
-PORTREVISION?=	3
+PORTNAME=	bitchx
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES+=	irc
-MASTER_SITES=	http://bitchx.ca/
+MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER?=	dan.mashal@gmail.com
-# Co-maintainer: Chris Petrik <c.petrik.sosa@gmail.com> (PR/181627)
-COMMENT?=	Feature-rich scriptable IRC client
+MAINTAINER=	dan.mashal@gmail.com
+# Co-maintainer: Chris Petrik <chris@bsdjunk.com> (PR/181627)
+COMMENT=	Feature-rich scriptable IRC client
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C,-final$,,}
-
-USES=		gmake perl5
-USE_GCC=	yes # PR: 186425
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
@@ -23,61 +19,56 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
 LIBS+=		-L${LOCALBASE}/lib
 
+OPTIONS_SUB=	yes
+
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/bx/help
 PORTDOCS=	*
 DATADIR=	${PREFIX}/share/bx
 
-OPTIONS_DEFINE=	IPV6 LATIN PLUGINS SSL DOCS
+OPTIONS_DEFINE=	DOCS HEBREW IPV6 LATIN PLUGINS SSL TOGGLES
 
 LATIN_DESC=	Recommended for ISO-8859-1 display
 PLUGINS_DESC=	Build a handful of BitchX plugins
-
-OPTIONS_DEFAULT=PLUGINS SSL
+HEBREW_DESC=	Add support for hebrew language
+TOGGLES_DESC=	Disable away,kick_ops,auto_rejoin
+OPTIONS_DEFAULT=	PLUGINS SSL
 
 MAKE_JOBS_UNSAFE=	yes
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-ssl
-USE_OPENSSL=		yes
-.endif
+SSL_CONFIGURE_WITH=	ssl
+SSL_USE=	openssl=yes
 
-.if ${PORT_OPTIONS:MPLUGINS}
-PLUGINS=	abot acro aim arcfour autocycle blowfish cavlink cdrom encrypt \
+PLUGINS_CONFIGURE_WITH=		plugins="${PLUGIN_LIST:C/\$$/,/g}"
+
+PLUGIN_LIST=	abot acro aim arcfour autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
-PLIST_SUB+=	PLUGINS=""
-.else
-PLIST_SUB+=	PLUGINS="@comment "
-.endif
-
-.if !empty(PLUGINS)
-CONFIGURE_ARGS+=	--with-plugins="${PLUGINS:C/\$$/,/g}"
-.else
-CONFIGURE_ARGS+=	--without-plugins
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ${PORT_OPTIONS:MLATIN}
 	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|' \
 		${WRKSRC}/include/config.h
 .endif
+.if ${PORT_OPTIONS:MHEBREW}
+	${REINPLACE_CMD} -e 's|#undef WANT_HEBREW|#define WANT_HEBREW|' \
+		${WRKSRC}/include/config.h
+.endif
+.if ${PORT_OPTIONS:MTOGGLES}
+	${REINPLACE_CMD} -e 's|DEFAULT_AUTO_AWAY ON|DEFAULT_AUTO_AWAY OFF|' \
+		${WRKSRC}/include/config.h
+	${REINPLACE_CMD} -e 's|DEFAULT_KICK_OPS ON|DEFAULT_KICK_OPS OFF|' \
+		${WRKSRC}/include/config.h
+	${REINPLACE_CMD} -e 's|DEFAULT_AUTO_REJOIN ON|DEFAULT_AUTO_REJOIN OFF|' \
+		${WRKSRC}/include/config.h
+.endif
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/BitchX
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scr-bx
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
-
-# Ensure that `@dirrm share/bx' will be appended last (after PORTDOCS stuff)
-add-plist-post:
-	@${ECHO_CMD} "@dirrm ${DATADIR_REL}" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

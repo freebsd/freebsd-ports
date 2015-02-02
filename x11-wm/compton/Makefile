@@ -62,7 +62,7 @@ MAKE_ARGS+=	NO_DBUS=yes
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS=	a2x:${PORTSDIR}/textproc/asciidoc \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml \
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 MAKE_ARGS+=	DOCDIR=${DOCSDIR} MANDIR=${MANPREFIX}/man/man1
 ALL_TARGET+=	docs

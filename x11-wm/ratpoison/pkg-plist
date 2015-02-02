@@ -16,5 +16,3 @@ man/man1/ratpoison.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%WITH_GDM%%etc/dm/Sessions/ratpoison.desktop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	libbobcat
-PORTVERSION=	3.18.01
-PORTREVISION=	1
+PORTVERSION=	3.21.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Brokken's Own Base Classes And Templates
 
 LICENSE=	GPLv3

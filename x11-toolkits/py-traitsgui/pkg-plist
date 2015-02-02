@@ -54,11 +54,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/DockWindowFeature.pdf
 %%PORTDOCS%%%%DOCSDIR%%/DockWindow.ppt
 %%PORTDOCS%%%%DOCSDIR%%/html.zip
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/workbench/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/workbench
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dock/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dock
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

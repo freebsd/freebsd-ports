@@ -6,7 +6,7 @@
 %%IMGDIR%%/mm-icon-large.ico
 %%IMGDIR%%/mm-icon.ico
 %%IMGDIR%%/mm-icon.png
-%%IMGDIR%%/powerlogo.gif
+%%IMGDIR%%/powerlogo.png
 %%IMGDIR%%/PythonPowered.png
 @group %%MM_GROUPNAME%%
 %%MMDIR%%/Mailman/Archiver/Archiver.py
@@ -393,6 +393,7 @@
 %%MMDIR%%/icons/mm-icon-large.ico
 %%MMDIR%%/icons/mm-icon.ico
 %%MMDIR%%/icons/mm-icon.png
+%%MMDIR%%/icons/powerlogo.png
 %%MMDIR%%/mail/mailman
 %%NLS%%%%MMDIR%%/messages/ar/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/ar/LC_MESSAGES/mailman.po

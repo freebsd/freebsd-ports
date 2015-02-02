@@ -7,5 +7,3 @@ bin/megaglest
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.source_code.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.source_code.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%

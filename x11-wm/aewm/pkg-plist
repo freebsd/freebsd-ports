@@ -9,4 +9,3 @@ bin/set-gnome-pda
 @sample etc/aewm/clientsrc.sample
 man/man1/aeclients.1.gz
 man/man1/aewm.1.gz
-@dirrmtry etc/aewm

@@ -3,6 +3,7 @@
 
 PORTNAME=	lxml
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +16,11 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python uniquefiles:dirs
+USE_PYTHON=	autoplist concurrent distutils
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 DOCS_FILES=	CHANGES.txt CREDITS.txt TODO.txt README.rst
 PORTDOCS=	*
 

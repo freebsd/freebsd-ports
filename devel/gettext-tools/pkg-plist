@@ -17,13 +17,13 @@ bin/msguniq
 bin/recode-sr-latin
 bin/xgettext
 include/gettext-po.h
-lib/libgettextlib-0.19.3.so
+lib/libgettextlib-0.19.4.so
 lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.so
 lib/libgettextpo.so.0
-lib/libgettextpo.so.0.5.2
-lib/libgettextsrc-0.19.3.so
+lib/libgettextpo.so.0.5.3
+lib/libgettextsrc-0.19.4.so
 lib/libgettextsrc.so
 lib/gettext/hostname
 lib/gettext/project-id

@@ -1,5 +1,5 @@
---- src/util.cpp-orig	2014-06-11 20:24:54.000000000 +0200
-+++ src/util.cpp	2014-06-11 20:26:48.000000000 +0200
+--- src/util.cpp.orig	2015-01-03 22:45:44 UTC
++++ src/util.cpp
 @@ -19,6 +19,7 @@
  #include <errno.h>
  #include <math.h>
@@ -8,15 +8,15 @@
  #include "md5.h"
  
  #include <qregexp.h>
-@@ -5283,16 +5284,16 @@
+@@ -5335,16 +5336,16 @@ QCString convertNameToFile(const char *n
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
 -      uchar md5_sig[16];
        QCString sigStr(33);
 -      MD5Buffer((const unsigned char *)result.data(),resultLen,md5_sig);
--      MD5SigToString(md5_sig,sigStr.data(),33);
-+      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.data());
+-      MD5SigToString(md5_sig,sigStr.rawData(),33);
++      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.rawData());
        result=result.left(128-32)+sigStr; 
      }
    }
@@ -28,7 +28,7 @@
  
  #if MAP_ALGO==ALGO_COUNT 
      // old algorithm, has the problem that after regeneration the
-@@ -5323,12 +5324,13 @@
+@@ -5375,12 +5376,13 @@ QCString convertNameToFile(const char *n
      l2Dir = (dirNum>>4)&0xff;
  #elif MAP_ALGO==ALGO_MD5
      // third algorithm based on MD5 hash

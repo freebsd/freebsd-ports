@@ -191,11 +191,3 @@ lib/libXmHTML.so.1.0.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/test-pages/unclosed.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/test-pages/unclosed1.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/visual.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/test-pages
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/book
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/XmHTML

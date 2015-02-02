@@ -6,5 +6,3 @@ lib/libFS.so
 lib/libFS.so.6
 lib/libFS.so.6.0.0
 libdata/pkgconfig/libfs.pc
-@dirrmtry include/X11/fonts
-@dirrm %%DOCSDIR%%

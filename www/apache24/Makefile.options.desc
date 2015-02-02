@@ -7,6 +7,7 @@ PROXY_DESC=			Build enabled PROXY modules
 SESSION_DESC=			Build enabled SESSION modules
 DEFAULT_MPM_DESC=		The default MPM module
 SHARED_MPM_DESC=		Build all MPMs as shared Module
+EXAMPLE_DESC=			Example and devel modules (do not use in prod)
 
 # =====================================
 # MPMs
@@ -88,7 +89,7 @@ DUMPIO_DESC=			I/O dump filter
 ECHO_DESC=			(dev) example echo server
 ENV_DESC=			Clearing/setting of ENV vars
 EXAMPLE_HOOKS_DESC=		(dev) example hook callback handler module
-EXAMPLE_IPC_DESC=		(dev) Example of shared memory and mutex usage
+EXAMPLE_IPC_DESC=		(dev) example of shared memory and mutex usage
 EXPIRES_DESC=			Expires header control
 EXT_FILTER_DESC=		External filter module
 

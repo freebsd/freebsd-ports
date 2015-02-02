@@ -17,4 +17,3 @@ lib/libtheoraenc.so.1.1.2
 libdata/pkgconfig/theora.pc
 libdata/pkgconfig/theoraenc.pc
 libdata/pkgconfig/theoradec.pc
-@dirrm include/theora

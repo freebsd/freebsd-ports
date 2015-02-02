@@ -25,8 +25,6 @@ share/locale/de/LC_MESSAGES/freedink-gnulib.mo
 share/locale/de/LC_MESSAGES/freedink.mo
 share/locale/el/LC_MESSAGES/freedink-gnulib.mo
 share/locale/el/LC_MESSAGES/freedink.mo
-share/locale/en@boldquot/LC_MESSAGES/freedink.mo
-share/locale/en@quot/LC_MESSAGES/freedink.mo
 share/locale/eo/LC_MESSAGES/freedink.mo
 share/locale/es/LC_MESSAGES/freedink-gnulib.mo
 share/locale/es/LC_MESSAGES/freedink.mo
@@ -69,6 +67,9 @@ share/locale/vi/LC_MESSAGES/freedink-gnulib.mo
 share/locale/vi/LC_MESSAGES/freedink.mo
 share/locale/zh_CN/LC_MESSAGES/freedink-gnulib.mo
 share/locale/zh_TW/LC_MESSAGES/freedink-gnulib.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry %%DATADIR%%
+share/locale/eo/LC_MESSAGES/freedink-gnulib.mo
+share/locale/hu/LC_MESSAGES/freedink.mo
+share/locale/pt_BR/LC_MESSAGES/freedink.mo
+share/locale/ru/LC_MESSAGES/freedink.mo
+share/locale/sr/LC_MESSAGES/freedink-gnulib.mo
+share/appdata/freedink.appdata.xml

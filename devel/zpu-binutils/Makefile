@@ -21,7 +21,7 @@ USES=		gettext gmake
 INFO=		zpu/as zpu/bfd zpu/binutils zpu/configure zpu/ld zpu/standards
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' ${WRKSRC}/build.sh
 	@${REINPLACE_CMD} -e 's|%%GMAKE%%|${MAKE_CMD}|g' ${WRKSRC}/build.sh
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/build.sh
 

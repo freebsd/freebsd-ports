@@ -20,7 +20,4 @@ etc/fonts/conf.d/62-fonts-takao.conf
 %%X_FONTSDIR%%/OTF/TakaoMincho.otf
 %%X_FONTSDIR%%/OTF/TakaoPMincho.otf
 %%X_FONTSDIR%%/OTF/TakaoExMincho.otf
-@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
-@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
-@unexec rm -f %D/%%X_FONTSDIR%%/OTF/fonts.cache-1
-@unexec if [ -d %D/%%X_FONTSDIR%%/OTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/OTF || true; fi
+@fc %%X_FONTSDIR%%/OTF

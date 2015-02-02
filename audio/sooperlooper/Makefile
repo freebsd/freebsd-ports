@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sooperlooper
-PORTVERSION=	1.7.2
-PORTREVISION=	3
+PORTVERSION=	1.7.3
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 

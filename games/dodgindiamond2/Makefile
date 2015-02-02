@@ -1,19 +1,19 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 
-PORTNAME=		dodgindiamond2
-PORTVERSION=		0.2.2
-PORTREVISION=		10
-CATEGORIES=		games
-MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
-DISTNAME=		dd2-${PORTVERSION}
+PORTNAME=	dodgindiamond2
+PORTVERSION=	0.2.2
+PORTREVISION=	11
+CATEGORIES=	games
+MASTER_SITES=	http://www.usebox.net/jjm/dd2/releases/
+DISTNAME=	dd2-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Old school shoot'em up game
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Old school shoot'em up game
 
-USE_SDL=		sdl image mixer
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--localstatedir=/var/games
+USE_SDL=	sdl image mixer
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,5 +29,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/src/data/dd2.cfg ${STAGEDIR}${PREFIX}/etc/dd2.cfg.sample
+	${MKDIR} ${STAGEDIR}/var/games
+	${TOUCH} ${STAGEDIR}/var/games/dd2-hiscore.sample
 
 .include <bsd.port.mk>

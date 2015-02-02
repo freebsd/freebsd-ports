@@ -81,32 +81,3 @@ share/gapi/gtkhtml-api.xml
 share/gapi/pango-api.xml
 share/gapi/rsvg-api.xml
 share/gapi/vte-api.xml
-@dirrmtry share/gapi
-@dirrm lib/mono/gtk-sharp
-@dirrm lib/mono/gac/vte-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/vte-sharp
-@dirrm lib/mono/gac/rsvg-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/rsvg-sharp
-@dirrm lib/mono/gac/pango-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/pango-sharp
-@dirrm lib/mono/gac/gtkhtml-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gtkhtml-sharp
-@dirrm lib/mono/gac/gtk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gtk-sharp
-@dirrm lib/mono/gac/gnome-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gnome-sharp
-@dirrm lib/mono/gac/glib-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/glib-sharp
-@dirrm lib/mono/gac/glade-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/glade-sharp
-@dirrm lib/mono/gac/gdk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gdk-sharp
-@dirrm lib/mono/gac/gconf-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gconf-sharp-peditors/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/gconf-sharp-peditors
-@dirrmtry lib/mono/gac/gconf-sharp
-@dirrm lib/mono/gac/atk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/atk-sharp
-@dirrm lib/mono/gac/art-sharp/1.0.0.0__35e10195dab3c99f
-@dirrmtry lib/mono/gac/art-sharp
-@dirrmtry %%LOCALBASE%%/share/gapi

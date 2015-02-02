@@ -18,4 +18,3 @@ man/man1/Pnews.1.gz
 man/man1/Rnmail.1.gz
 man/man1/newsetup.1.gz
 man/man1/newsgroups.1.gz
-@dirrm lib/trn

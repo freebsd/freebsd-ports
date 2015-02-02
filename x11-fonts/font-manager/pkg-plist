@@ -6,4 +6,3 @@ share/applications/font-sampler.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/font-manager.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/font-manager.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/font-manager.mo
-@dirrm lib/font-manager

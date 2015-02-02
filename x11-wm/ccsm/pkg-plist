@@ -182,19 +182,3 @@ share/locale/tr/LC_MESSAGES/ccsm.mo
 share/locale/wo/LC_MESSAGES/ccsm.mo
 share/locale/zh_CN/LC_MESSAGES/ccsm.mo
 share/locale/zh_HK/LC_MESSAGES/ccsm.mo
-@dirrmtry share/locale/md/LC_MESSAGES
-@dirrmtry share/locale/md
-@dirrmtry share/locale/ml_IN/LC_MESSAGES
-@dirrmtry share/locale/ml_IN
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/icons/hicolor/scalable/categories
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/22x22/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/22x22/devices
-@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ccm

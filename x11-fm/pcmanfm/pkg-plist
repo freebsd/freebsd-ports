@@ -63,12 +63,4 @@ share/applications/pcmanfm.desktop
 %%DATADIR%%/ui/connect.ui
 %%DATADIR%%/ui/desktop-pref.ui
 %%DATADIR%%/ui/pref.ui
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt_RU
-@dirrmtry %%DATADIR%%/ui
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/pcmanfm
-@dirrmtry etc/xdg/pcmanfm/default
-@dirrmtry etc/xdg/pcmanfm
+@dir lib/pcmanfm

@@ -12,4 +12,3 @@ lib/libopenquicktime.so
 lib/quicktime_codec_.mp3.so
 lib/quicktime_codec_ms.so
 lib/quicktime_codec_jpeg.so
-@dirrm include/openquicktime

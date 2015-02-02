@@ -11,4 +11,3 @@ lib/libflowcanvas.so
 lib/libflowcanvas.so.5
 lib/libflowcanvas.so.5.1.0
 libdata/pkgconfig/flowcanvas.pc
-@dirrm include/flowcanvas

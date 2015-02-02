@@ -1,22 +1,25 @@
-
 $FreeBSD$
 
---- tools/clang/lib/Headers/CMakeLists.txt.orig
+--- tools/clang/lib/Headers/CMakeLists.txt.orig	2014-11-13 09:02:37 UTC
 +++ tools/clang/lib/Headers/CMakeLists.txt
-@@ -27,16 +27,9 @@
+@@ -37,20 +37,12 @@
    rtmintrin.h
    shaintrin.h
    smmintrin.h
 -  stdalign.h
 -  stdarg.h
+-  stdatomic.h
 -  stdbool.h
 -  stddef.h
+   __stddef_max_align_t.h
 -  stdint.h
 -  stdnoreturn.h
    tbmintrin.h
    tgmath.h
    tmmintrin.h
+   unwind.h
+   vadefs.h
 -  varargs.h
-   wmmintrin.h
    __wmmintrin_aes.h
+   wmmintrin.h
    __wmmintrin_pclmul.h

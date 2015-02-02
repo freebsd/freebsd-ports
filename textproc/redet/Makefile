@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual regexp development and execution
 
-RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
+RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
 
 OPTIONS_DEFINE=	DOCS
 

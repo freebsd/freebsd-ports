@@ -16,9 +16,13 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.0
 
 USES=		gmake
-USE_GCC=	4.8+
+# The version of GCC is also hard-coded in files/patch-Make.defaults.
+USE_GCC=	4.8
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	"-fPIC"
 ONLY_FOR_ARCHS=	amd64
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
 
 .include <bsd.port.mk>

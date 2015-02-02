@@ -20,5 +20,3 @@ lib/libsspkg.so.1
 %%PORTDOCS%%%%DOCSDIR%%/ch1.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ch2.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ch3.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/sspkg

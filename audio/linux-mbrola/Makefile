@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MBROLA speech synthesizer for Linux
 
-RUN_DEPENDS=	${LOCALBASE}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
+RUN_DEPENDS=	mbrolavox>0:${PORTSDIR}/audio/mbrolavox
 
 CONFLICTS=	mbrola-*
 NO_BUILD=	yes

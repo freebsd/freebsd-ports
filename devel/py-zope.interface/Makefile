@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.interface
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,12 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Interfaces for Python
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zope/interface/_zope_interface_coptimizations.so
 
 .include <bsd.port.mk>

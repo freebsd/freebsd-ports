@@ -10,4 +10,3 @@ include/smapi/old_msg.h
 lib/libsmapi.a
 lib/libsmapi.so
 lib/libsmapi.so.2
-@dirrmtry include/smapi

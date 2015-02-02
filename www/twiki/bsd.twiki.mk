@@ -40,10 +40,6 @@ make-dist:
 create-plist:	extract
 	@${FIND} -s ${WRKSRC} -not -type d |\
 		${SED} -e 's|^${WRKSRC}|%%TWDIR%%|' > ${PLIST}
-	@${FIND} -ds ${WRKSRC} -type d -not -name ${DISTNAME} | \
-		${SED} -e "s,^${WRKSRC},@dirrm %%TWDIR%%," >> ${PLIST}
-	@${ECHO_CMD} '@dirrm %%TWDIR%%' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry share/twiki' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${TWDIR}

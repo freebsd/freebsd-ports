@@ -34,5 +34,3 @@ share/icons/hicolor/scalable/apps/wifimgr.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wifimgr.mo
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

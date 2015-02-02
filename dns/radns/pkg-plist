@@ -1,5 +1,5 @@
 bin/radns
-@exec install -d -o radns -g radns %D/etc/radns
 etc/radns/dhclient-exit-hooks
 etc/radns/radns-script
 man/man8/radns.8.gz
+@dir(radns,radns,) etc/radns

@@ -678,5 +678,3 @@
 %%DATADIR%%/Skins/t12.tar.gz
 %%DATADIR%%/Skins/t9.tar.gz
 %%DATADIR%%/Skins/water_elimental.wsz
-@dirrmtry %%DATADIR%%/Skins
-@dirrmtry %%DATADIR%%

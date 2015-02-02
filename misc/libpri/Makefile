@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpri
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.15
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
@@ -15,7 +15,6 @@ USES=		gmake
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.so lib/libpri.so.1
 MAKE_ARGS=	INSTALL_PREFIX=${STAGEDIR}${PREFIX}
-
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 

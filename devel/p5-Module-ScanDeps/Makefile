@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSCHUPP
@@ -11,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recursively scan Perl code for dependencies
+
+LICENSE=	ARTPERL10
 
 USES=		perl5
 USE_PERL5=	configure

@@ -45,9 +45,11 @@ include/bobcat/irandstream
 include/bobcat/isharedstream
 include/bobcat/isymcryptstream
 include/bobcat/isymcryptstreambuf
+include/bobcat/iterator
 include/bobcat/iuo
 include/bobcat/lc
 include/bobcat/level
+include/bobcat/linearmap
 include/bobcat/localclientsocket
 include/bobcat/localserversocket
 include/bobcat/localsocketbase
@@ -71,6 +73,7 @@ include/bobcat/pattern
 include/bobcat/pipe
 include/bobcat/primefactors
 include/bobcat/process
+include/bobcat/processenums
 include/bobcat/ptriter
 include/bobcat/randbuffer
 include/bobcat/ranger
@@ -151,7 +154,9 @@ man/man3/irandstream.3bobcat.gz
 man/man3/isharedstream.3bobcat.gz
 man/man3/isymcryptstream.3bobcat.gz
 man/man3/isymcryptstreambuf.3bobcat.gz
+man/man3/iterator.3bobcat.gz
 man/man3/level.3bobcat.gz
+man/man3/linearmap.3bobcat.gz
 man/man3/lm.3bobcat.gz
 man/man3/localclientsocket.3bobcat.gz
 man/man3/localserversocket.3bobcat.gz
@@ -185,6 +190,7 @@ man/man3/readlinehistory.3bobcat.gz
 man/man3/readlinestream.3bobcat.gz
 man/man3/redirector.3bobcat.gz
 man/man3/repeat.3bobcat.gz
+man/man3/reverseiterator.3bobcat.gz
 man/man3/selector.3bobcat.gz
 man/man3/serversocket.3bobcat.gz
 man/man3/sharedblock.3bobcat.gz

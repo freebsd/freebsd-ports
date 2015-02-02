@@ -1,0 +1,20 @@
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	Plack-Middleware-Rewrite
+PORTVERSION=	1.010
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ARISTOTLE
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	mod_rewrite for Plack
+
+BUILD_DEPENDS=	p5-Plack>=0.9942:${PORTSDIR}/www/p5-Plack
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

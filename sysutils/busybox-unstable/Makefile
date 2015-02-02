@@ -21,10 +21,9 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-[1-9]*
 
-#IGNORE=		is older than stable version. Use sysutils/busybox
-BROKEN=		uses mempcpy() GNU-ism
+IGNORE=		is older than stable version. Use sysutils/busybox
 
-PORTSCOUT=	skipv:1.22.1
+PORTSCOUT=	skipv:1.23.1
 
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
 # findutils/find.c l. 752+, uses a GCC extension/invalid C code:

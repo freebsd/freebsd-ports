@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-linear-algebra
-PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTVERSION=	2.2.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

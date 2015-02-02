@@ -32,7 +32,8 @@ POST-INSTALL)
 
   # fix up permissions - this is under investigation; pkg or libarchive
   # goof up the group writable and/or setgid bits
-  /bin/chmod 02770 "%%MAILMANDIR%%/qfiles"
+  /usr/bin/find "%%MAILMANDIR%%/qfiles" -maxdepth 1 -type d -exec \
+    /bin/chmod u+rwx,g+rwsx,o-w "{}" +
   /bin/chmod 02775 "%%MAILMANDIR%%" \
     "%%MAILMANDIR%%/Mailman" \
     "%%MAILMANDIR%%/bin" \

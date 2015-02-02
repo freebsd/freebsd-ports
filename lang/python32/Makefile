@@ -33,17 +33,19 @@ MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 NLS PYMALLOC THREADS TSC UCS4 LIBFFI
-OPTIONS_DEFAULT=	IPV6 NLS PYMALLOC THREADS UCS4 LIBFFI
+OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS TSC UCS4
+OPTIONS_DEFAULT=	IPV6 LIBFFI NLS PYMALLOC THREADS UCS4
 OPTIONS_SUB=		yes
 
+LIBFFI_DESC=		Use libffi from ports instead of bundled version
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
 TSC_DESC=		Enable processor timestamp counter profiling
-LIBFFI_DESC=		Use libffi from ports instead of bundled version
 
 DEBUG_CONFIGURE_WITH=	pydebug
 IPV6_CONFIGURE_ENABLE=	ipv6
+LIBFFI_CONFIGURE_ON=	--with-system-ffi
+LIBFFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
@@ -52,6 +54,8 @@ NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
+
+PYMALLOC_CONFIGURE_WITH=	pymalloc
 
 THREADS_CONFIGURE_WITH=	threads
 THREADS_CFLAGS=		${PTHREAD_CFLAGS}
@@ -67,18 +71,10 @@ ABIFLAGS:=	u${ABIFLAGS}
 
 .if ${PORT_OPTIONS:MPYMALLOC}
 ABIFLAGS:=	m${ABIFLAGS}
-.else
-# Can't use PYMALLOC_CONFIGURE_WITH here, since the configure script has a bug
-CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-ABIFLAGS:=		d${ABIFLAGS}
-.endif
-
-.if ${PORT_OPTIONS:MLIBFFI}
-CONFIGURE_ARGS+=	--with-system-ffi
-LIB_DEPENDS+=		libffi.so:${PORTSDIR}/devel/libffi
+ABIFLAGS:=	d${ABIFLAGS}
 .endif
 
 .if !empty(ABIFLAGS)

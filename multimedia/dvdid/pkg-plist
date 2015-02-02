@@ -6,4 +6,3 @@ lib/libdvdid.a
 lib/libdvdid.so
 lib/libdvdid.so.0
 lib/libdvdid.so.0.1.0
-@dirrm include/dvdid

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgjs.so:${PORTSDIR}/lang/gjs \
 		libtracker-sparql-1.0.so:${PORTSDIR}/sysutils/tracker \
 		libzapojit-0.0.so:${PORTSDIR}/net/libzapojit
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
+RUN_DEPENDS=	py2?-dbus>0:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		unoconv:${PORTSDIR}/textproc/unoconv
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.32.1
-PORTREVISION=	3
+PORTVERSION=	1.8.32.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -26,6 +25,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	yes
+USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USES=		alias bison cpe gmake shebangfix
 CPE_VENDOR=	digium

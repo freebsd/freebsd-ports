@@ -13,8 +13,6 @@ COMMENT=	Java Network Browser
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 USE_JAVA=	yes

@@ -10,5 +10,3 @@ lib/libunique-3.0.so.0
 lib/libunique-3.0.so.0.0.2
 libdata/pkgconfig/unique-3.0.pc
 share/gir-1.0/Unique-3.0.gir
-@dirrm include/unique-3.0/unique
-@dirrm include/unique-3.0

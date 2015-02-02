@@ -14,9 +14,3 @@ lib/compiz/libccp.a
 libdata/pkgconfig/libcompizconfig.pc
 share/compiz/ccp.xml
 etc/compizconfig/config
-@dirrmtry etc/compizconfig
-@dirrmtry share/compiz
-@dirrmtry lib/compizconfig/backends
-@dirrmtry lib/compizconfig
-@dirrmtry include/compizconfig
-@dirrmtry lib/compiz

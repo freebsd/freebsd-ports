@@ -11,7 +11,7 @@ DISTNAME=	smm611
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical mudclient with mapper
 
-RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets4.0.1/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
+RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
 

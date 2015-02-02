@@ -124,8 +124,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/baresip/modules; \
 	   ${ECHO_CMD} lib/${PORTNAME}/modules/$$m.so >> ${TMPPLIST}; \
 	done
-	${ECHO_CMD} "@dirrm lib/baresip/modules" >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrm lib/baresip" >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 

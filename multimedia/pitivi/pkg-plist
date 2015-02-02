@@ -362,28 +362,3 @@ share/pitivi/pixmaps/processing-clip.png
 share/pitivi/pixmaps/processing-clip.svg
 share/pitivi/pixmaps/trimbar-focused.png
 share/pitivi/pixmaps/trimbar-normal.png
-@dirrm share/pitivi/pixmaps
-@dirrm share/pitivi
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrm lib/pitivi/python/pitivi/ui
-@dirrm lib/pitivi/python/pitivi/timeline
-@dirrm lib/pitivi/python/pitivi/log
-@dirrm lib/pitivi/python/pitivi/formatters
-@dirrm lib/pitivi/python/pitivi/factories
-@dirrm lib/pitivi/python/pitivi/elements
-@dirrm lib/pitivi/python/pitivi
-@dirrm lib/pitivi/python
-@dirrm lib/pitivi

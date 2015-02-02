@@ -4,4 +4,3 @@
 %%DATADIR%%/game.log
 %%DATADIR%%/game.secure
 %%DATADIR%%/game.winlist
-@dirrm %%DATADIR%%

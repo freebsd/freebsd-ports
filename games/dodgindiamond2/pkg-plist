@@ -1,13 +1,6 @@
-@group games
-@mode 2755
-bin/dd2
-@mode
-@group
-@exec touch /var/games/dd2-hiscore ; chmod 664 /var/games/dd2-hiscore
-@unexec if [ -f /var/games/dd2-hiscore ] ; then rm /var/games/dd2-hiscore; fi
-@unexec if cmp -s %D/etc/dd2.cfg %D/etc/dd2.cfg.sample; then rm -f %D/etc/dd2.cfg; fi
-etc/dd2.cfg.sample
-@exec if test ! -f %D/etc/dd2.cfg; then cp -p %D/etc/dd2.cfg.sample %D/etc/dd2.cfg; fi
+@(,games,2755) bin/dd2
+@sample(,games,664) /var/games/dd2-hiscore.sample
+@sample etc/dd2.cfg.sample
 share/dd2/bgm1.xm
 share/dd2/bgm2.xm
 share/dd2/efx1.wav
@@ -25,5 +18,3 @@ share/dd2/gfx.bmp
 %%PORTDOCS%%share/doc/dd2/NEWS
 %%PORTDOCS%%share/doc/dd2/README
 %%PORTDOCS%%share/doc/dd2/TODO
-@dirrm share/dd2
-%%PORTDOCS%%@dirrm share/doc/dd2

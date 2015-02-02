@@ -361,6 +361,7 @@
     SUBDIR += p5-DBIx-Ease
     SUBDIR += p5-DBIx-HA
     SUBDIR += p5-DBIx-Inspector
+    SUBDIR += p5-DBIx-Introspector
     SUBDIR += p5-DBIx-Log4perl
     SUBDIR += p5-DBIx-MySQLSequence
     SUBDIR += p5-DBIx-NoSQL

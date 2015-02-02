@@ -66,8 +66,8 @@
  #include <jpeglib.h>
  #elif defined(USE_LIBJPEG_TURBO)
  #include "third_party/libjpeg_turbo/jpeglib.h"
---- third_party/webrtc/common_audio/wav_writer.h.orig	2014-10-17 02:57:34.000000000 +0200
-+++ third_party/webrtc/common_audio/wav_writer.h	2014-10-18 12:04:03.000000000 +0200
+--- third_party/webrtc/common_audio/wav_file.h.orig	2014-10-17 02:57:34.000000000 +0200
++++ third_party/webrtc/common_audio/wav_file.h	2014-10-18 12:04:03.000000000 +0200
 @@ -14,6 +14,7 @@
  #ifdef __cplusplus
  
@@ -75,4 +75,14 @@
 +#include <stdio.h>
  #include <cstddef>
  #include <string>
+ 
+--- v8/src/base/platform/platform.h.orig	2015-01-27 03:22:59.000000000 +0100
++++ v8/src/base/platform/platform.h	2015-01-28 18:37:43.268781292 +0100
+@@ -22,6 +22,7 @@
+ #define V8_BASE_PLATFORM_PLATFORM_H_
+ 
+ #include <cstdarg>
++#include <cstdio>
+ #include <string>
+ #include <vector>
  

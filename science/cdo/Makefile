@@ -3,6 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/9444/ \
 		LOCAL/sunpoet

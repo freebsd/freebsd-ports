@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://grafanarel.s3.amazonaws.com/
 

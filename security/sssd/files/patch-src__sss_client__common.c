@@ -1,12 +1,3 @@
-From 6874fb930a30eac6fe12104923ab97083f58bcf9 Mon Sep 17 00:00:00 2001
-From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Wed, 6 Nov 2013 22:01:20 +0100
-Subject: [PATCH 14/25] patch-src__sss_client__common.c
-
----
- src/sss_client/common.c | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
-
 diff --git src/sss_client/common.c src/sss_client/common.c
 index ec5c708..5d17eed 100644
 --- src/sss_client/common.c
@@ -80,6 +71,3 @@ index ec5c708..5d17eed 100644
      }
  }
  
--- 
-1.8.0
-

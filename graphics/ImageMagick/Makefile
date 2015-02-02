@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.0-2
+DISTVERSION=	6.9.0-4
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -44,6 +44,7 @@ CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \
 		--without-lcms
 USE_LDCONFIG=	yes
+USE_GNOME=	libxml2
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Y${LOCALBASE}/lib
@@ -52,26 +53,23 @@ SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-dejavu.xml \
 		type-ghostscript.xml type-windows.xml type.xml
 
-
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
-		THREADS X11
+		THREADS X11 16BIT_PIXEL HDRI
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
 		TIFF WEBP WMF THREADS X11
-OPTIONS_GROUP=	HALFSUPPORTED
-OPTIONS_GROUP_HALFSUPPORTED=	16BIT_PIXEL HDRI
 
-HALFSUPPORTED_DESC=	Half supported options (see help dialog)
 16BIT_PIXEL_DESC=	16bit pixel support
 JPEG2000_DESC=		OpenJPEG 2000 support via openjpeg
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
 HDRI_DESC=		High dynamic range images support
 MODULES_DESC=		Modules support
+SVG_DESC=		SVG vector image format support (via librsvg)
 TESTS_DESC=		Run bundled self-tests after build
 #SIMD_CONFIGURE_WITH=	gcc-arch
 CONFIGURE_ARGS+=	--without-gcc-arch
@@ -338,13 +336,10 @@ PLIST_SUB+=		WMF="@comment "
 
 # SVG (Scalable Vector Graphics) requires both libxml2 and X11
 .if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
-USE_GNOME+=		libxml2
 LIB_DEPENDS+=		librsvg-2.so:${PORTSDIR}/graphics/librsvg2
-CONFIGURE_ARGS+=	--with-rsvg --with-xml
-CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2.0" \
-			RSVG_LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-rsvg
 .else
-CONFIGURE_ARGS+=	--without-rsvg --without-xml
+CONFIGURE_ARGS+=	--without-rsvg
 .endif
 
 # Pango support
@@ -384,6 +379,22 @@ INSTALL_TARGET=	install-strip
 USE_GHOSTSCRIPT_BUILD=yes
 .endif
 
+post-patch:
+# strip library name of variable parts that can change due to
+# the HDRI and Q16 option
+	@${REINPLACE_CMD}  -e 's|_@MAGICK_ABI_SUFFIX@||g; \
+		s|\.@MAGICK_ABI_SUFFIX@||g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|@\.@MAGICK_ABI_SUFFIX@|@|g' \
+		${WRKSRC}/PerlMagick/Makefile.PL.in \
+		${WRKSRC}/PerlMagick/quantum/Makefile.PL.in \
+		${WRKSRC}/Magick++/lib/Magick++.pc.in \
+		${WRKSRC}/Magick++/lib/ImageMagick++.pc.in \
+		${WRKSRC}/magick/ImageMagick.pc.in \
+		${WRKSRC}/magick/MagickCore.pc.in \
+		${WRKSRC}/wand/Wand.pc.in \
+		${WRKSRC}/wand/MagickWand.pc.in
+
 pre-configure:
 .if defined(_IMAGEMAGICK_THREADS_PERL_MSG)
 	@${ECHO_CMD} '###################################################################'
@@ -396,10 +407,6 @@ pre-configure:
 .endif
 
 post-install: test
-.if ${PORT_OPTIONS:MMODULES}
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-${_QBIT}${_HDRI}/coders/.keep
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-${_QBIT}${_HDRI}/filters/.keep
-.endif
 .for i in ${SAMPLE_FILES}
 	@${MV} ${STAGEDIR}${PREFIX}/etc/ImageMagick-6/${i} \
 		${STAGEDIR}${PREFIX}/etc/ImageMagick-6/${i}.sample

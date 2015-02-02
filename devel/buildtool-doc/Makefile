@@ -13,7 +13,7 @@ COMMENT=	Buildtool User's and Developer's manuals
 BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		xmlcatalog:${PORTSDIR}/textproc/libxml2 \
-		${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		${DOCBOOK_XSL}:${PORTSDIR}/textproc/docbook-xsl
 
 BUILDTOOL=	${LOCALBASE}/bin/buildtool

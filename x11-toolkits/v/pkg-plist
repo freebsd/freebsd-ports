@@ -96,4 +96,3 @@ include/v/vxutil.h
 include/v/vynreply.h
 lib/libVx.a
 lib/libVxgl.a
-@dirrm include/v

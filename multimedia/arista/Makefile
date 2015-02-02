@@ -27,6 +27,5 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/ui/icon.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/arista.svg
-	@-update-desktop-database
 
 .include <bsd.port.mk>

@@ -99,20 +99,3 @@
 %%TWDIR%%/pub/TWiki/JSCalendarContrib/twiki.js
 %%TWDIR%%/pub/TWiki/JSCalendarContrib/twiki_src.js
 %%TWDIR%%/pub/TWiki/JSCalendarContrib/wikiringlogo20x20.png
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib
-@dirrm %%TWDIR%%/lib/TWiki/Contrib
-@dirrm %%TWDIR%%/lib/TWiki/Form
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/doc
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/lang
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/skins
-@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

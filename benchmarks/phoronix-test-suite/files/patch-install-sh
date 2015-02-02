@@ -1,5 +1,5 @@
---- install-sh.orig	2014-04-02 04:01:50.000000000 +0200
-+++ install-sh	2014-06-29 13:45:13.466462663 +0200
+--- install-sh.orig	2014-11-28 20:51:03.000000000 +0400
++++ install-sh	2015-01-15 01:21:40.000000000 +0400
 @@ -47,16 +47,21 @@
  fi
  
@@ -22,10 +22,10 @@
 +then
 +mkdir -p $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/
 +fi
+ #mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+ #mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
  
- cp CHANGE-LOG $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
- cp COPYING $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
-@@ -67,12 +72,18 @@
+@@ -69,15 +74,19 @@
  cd ..
  rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/man-pages/
  
@@ -44,9 +44,12 @@
  cp pts-core/static/phoronix-test-suite.appdata.xml $DESTDIR$INSTALL_PREFIX/share/appdata/
 +fi
  
- rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts/etc/scripts/package-build-*
- cp -r pts-core $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
-@@ -83,12 +94,13 @@
+-mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+-cp pts-core/static/*.service $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+ 
+ # mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
+ # cp pts-core/static/upstart/*.conf $DESTDIR$INSTALL_PREFIX/../etc/init/
+@@ -92,12 +101,13 @@
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/openbenchmarking.png
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/%phoronix-test-suite.png
  
@@ -61,7 +64,7 @@
  # XDG MIME OpenBenchmarking support
  if [ "X$DESTDIR" = "X" ]
  then
-@@ -103,10 +115,10 @@
+@@ -112,15 +122,14 @@
  	cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
  
  fi
@@ -73,3 +76,8 @@
  Phoronix Test Suite Files: $INSTALL_PREFIX/share/phoronix-test-suite/\n"
  
  if [ "X$DESTDIR" != "X" ]
+ then
+ 	echo "Installed to chroot: $DESTDIR"
+-	echo "Please update your desktop and mime-database manually"
+ fi
+ 

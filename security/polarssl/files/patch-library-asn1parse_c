@@ -1,0 +1,11 @@
+--- library/asn1parse.c.orig	2015-01-19 19:31:49.664592954 +0000
++++ library/asn1parse.c	2015-01-19 19:34:11.583587052 +0000
+@@ -244,6 +244,8 @@
+             if( cur->next == NULL )
+                 return( POLARSSL_ERR_ASN1_MALLOC_FAILED );
+ 
++            memset( cur->next, 0, sizeof( asn1_sequence ) );
++
+             cur = cur->next;
+         }
+     }

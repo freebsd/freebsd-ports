@@ -302,7 +302,7 @@ foreach my $thisdir (@dirs) {
 			$tmp = $pkgcomment;
 		}
 		print AUTOFILL $tmp;
-		print AUTOFILL "PR:		ports/$autofill\n" if ($autofill != -1);
+		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
 		print AUTOFILL "Submitted by:	$maintainer" if ($maintainer && $autofill != -1);
 		close(AUTOFILL);
 		print "Okay, a commit log message was automatically generated for you.\n";

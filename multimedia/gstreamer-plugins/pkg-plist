@@ -264,18 +264,3 @@ share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
-@dirrm share/gst-plugins-base
-@dirrm include/gstreamer-%%VERSION%%/gst/video
-@dirrm include/gstreamer-%%VERSION%%/gst/tag
-@dirrm include/gstreamer-%%VERSION%%/gst/sdp
-@dirrm include/gstreamer-%%VERSION%%/gst/rtsp
-@dirrm include/gstreamer-%%VERSION%%/gst/rtp
-@dirrm include/gstreamer-%%VERSION%%/gst/riff
-@dirrm include/gstreamer-%%VERSION%%/gst/pbutils
-@dirrm include/gstreamer-%%VERSION%%/gst/netbuffer
-@dirrm include/gstreamer-%%VERSION%%/gst/interfaces
-@dirrm include/gstreamer-%%VERSION%%/gst/floatcast
-@dirrm include/gstreamer-%%VERSION%%/gst/fft
-@dirrm include/gstreamer-%%VERSION%%/gst/cdda
-@dirrm include/gstreamer-%%VERSION%%/gst/audio
-@dirrm include/gstreamer-%%VERSION%%/gst/app

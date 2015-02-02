@@ -97,7 +97,4 @@ share/applications/devede.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/devede.mo
 %%NLS%%share/pixmaps/devede.svg
-@dirrm %%DATADIR%%/interface
-@dirrm %%DATADIR%%/backgrounds
-@dirrm %%DATADIR%%
-@dirrm lib/devede
+@dir %%DATADIR%%/interface

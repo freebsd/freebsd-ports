@@ -3,6 +3,7 @@
 
 PORTNAME=	dcraw-m
 PORTVERSION=	9.22
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GH
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman

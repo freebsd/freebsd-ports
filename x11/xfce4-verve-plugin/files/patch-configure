@@ -1,0 +1,11 @@
+--- configure.orig	2015-01-26 21:05:44.000000000 +0100
++++ configure	2015-01-26 23:11:21.000000000 +0100
+@@ -13172,7 +13172,7 @@
+ 
+     fi
+   fi
+-     USE_NLS=yes
++     #USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no

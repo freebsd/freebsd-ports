@@ -78,5 +78,3 @@ share/omf/glade-2/glade-faq-ro.omf
 share/omf/glade-2/glade-user-guide-C.omf
 share/pixmaps/glade-2.png
 share/pixmaps/glade-2/glade_logo.png
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

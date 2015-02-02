@@ -3,13 +3,11 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Arrows/arrow-right-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Arrows/arrow-right.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Arrows/arrow-up.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Arrows
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Buttons/button-default.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Buttons/button-insensitive.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Buttons/button-normal.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Buttons/button-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Buttons/button-pressed.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Buttons
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/check1.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/check2.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/check3.png
@@ -19,49 +17,39 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/option1.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/option2.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Check-Radio/option4.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Check-Radio
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-active.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-arrow-insens.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-arrow-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-arrow.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-normal.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Combo/combo-prelight.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Combo
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Frame-Gap/frame-gap-end.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Frame-Gap/frame-gap-start.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Frame-Gap/frame1.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Frame-Gap/frame2.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Frame-Gap
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Handles/handle-h.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Handles/handle-v.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Handles
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Lines/line-h.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Lines/line-v.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Lines
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ListHeaders/list_header-pressed.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ListHeaders/list_header.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/ListHeaders
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar/menu-overlay.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar/menu.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar/menubar.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar/menuitem.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar/menuline.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Menu-Menubar
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Others/focus.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Others/null.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Others/ruler.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Others
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Panel/panel-bg.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Panel/panelbutton1.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Panel/panelbutton2.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Panel/panelbutton3.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Panel/panelbutton4.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Panel
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ProgressBar/progressbar-horiz.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ProgressBar/progressbar-vert.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ProgressBar/trough-progressbar-horiz.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/ProgressBar/trough-progressbar-vert.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/ProgressBar
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/slider-horiz (copy).png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/slider-horiz.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/slider-thumb-horiz-prelight.png
@@ -72,7 +60,6 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/slider-vert.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/trough-horizontal.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Range/trough-vertical.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Range
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/scroll-thumb-horiz-prelight-2.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/scroll-thumb-horiz.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/scroll-thumb-vert-prelight-2.png
@@ -92,12 +79,10 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/stepper-up-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/stepper-up.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Scrollbars/trough-scrollbar.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Scrollbars
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Shadows/shadow-etched-out.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Shadows/shadow-in.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Shadows/shadow-none.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Shadows/shadow-out.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Shadows
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin-down-disable.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin-down-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin-down.png
@@ -105,7 +90,6 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin-up-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin-up.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Spin/spin.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Spin
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/notebook.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/null.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/tab-bottom-active.png
@@ -116,13 +100,11 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/tab-right.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/tab-top-active.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Tabs/tab-top.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Tabs
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Toolbar/toolbar.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Toolbar/toolbutton-normal.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Toolbar/toolbutton-prelight.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Toolbar/toolbutton-pressed.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/Toolbar/toolbutton-toggled.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/Toolbar
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/gtk-add.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/gtk-apply.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/gtk-bookmark.png
@@ -169,13 +151,10 @@
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/v3.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/v4.png
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/icons/volume-mute.png
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0/icons
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/gtkrc
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/panel.rc
 %%GTK20%%share/themes/Digital-Harmony/gtk-2.0/panelbuttons.rc
-%%GTK20%%@dirrm share/themes/Digital-Harmony/gtk-2.0
 %%GTK20%%share/themes/Digital-Harmony/index.theme
-%%GTK20%%@dirrm share/themes/Digital-Harmony
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/button-close-focused.png
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/button-close-pressed.png
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/button-close-unfocused.png
@@ -211,7 +190,4 @@
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/titlebar-right-shaded-focused.png
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/titlebar-right-shaded-unfocused.png
 %%METACITY%%share/themes/Digital-Harmony/metacity-1/titlebar-right-unfocused.png
-%%METACITY%%@dirrm share/themes/Digital-Harmony/metacity-1
 %%METACITY%%share/themes/Digital-Harmony/index.theme
-%%METACITY%%@dirrm share/themes/Digital-Harmony
-@dirrmtry share/themes

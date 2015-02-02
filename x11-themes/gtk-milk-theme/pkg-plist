@@ -3,42 +3,33 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/Arrows/arrow-right-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Arrows/arrow-right.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Arrows/arrow-up.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Arrows
 %%GTK20%%share/themes/Milk/gtk-2.0/Bgs/appbg.gif
 %%GTK20%%share/themes/Milk/gtk-2.0/Bgs/appbg.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Bgs
 %%GTK20%%share/themes/Milk/gtk-2.0/Buttons/button-default.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Buttons/button-insensitive.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Buttons/button-normal.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Buttons/button-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Buttons/button-pressed.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Buttons
 %%GTK20%%share/themes/Milk/gtk-2.0/Frames/frame-gap-end.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Frames/frame-gap-start.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Frames/frame1.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Frames/frame2.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Frames
 %%GTK20%%share/themes/Milk/gtk-2.0/Handles/handle-h.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Handles/handle-v.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Handles/handle.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Handles
 %%GTK20%%share/themes/Milk/gtk-2.0/Lines/line-h.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Lines/line-v.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Lines
 %%GTK20%%share/themes/Milk/gtk-2.0/Listheaders/list-header-pressed.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Listheaders/list-header.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Listheaders/list_header-pressed.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Listheaders/list_header.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Listheaders
 %%GTK20%%share/themes/Milk/gtk-2.0/Menubar/menubar.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Menubar
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menu-noxorg.gif
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menu-overlay.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menu.gif
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menu.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menuitem.gif
 %%GTK20%%share/themes/Milk/gtk-2.0/Menus/menuline.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Menus
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/check1.png
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/check2.png
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/check3.png
@@ -51,22 +42,18 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/option1.png
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/option2.png
 %%GTK20%%share/themes/Milk/gtk-2.0/OptionCheck/option3.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/OptionCheck
 %%GTK20%%share/themes/Milk/gtk-2.0/Others/focus.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Others/highlight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Others/null.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Others/ruler.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Others
 %%GTK20%%share/themes/Milk/gtk-2.0/Panel/panel-bg.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Panel/panelbutton1.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Panel/panelbutton2.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Panel/panelbutton3.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Panel
 %%GTK20%%share/themes/Milk/gtk-2.0/Progress/progressbar-vert.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Progress/progressbar.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Progress/trough-progressbar-vert.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Progress/trough-progressbar.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Progress
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/horizontal_trough.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/horizontal_trough_insens.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/null.png
@@ -90,14 +77,12 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/scrollbar_vertical_prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/vertical_trough.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Scroll2/vertical_trough_insens.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Scroll2
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/entry-shadow-in.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/shadow-in.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/shadow-none.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/shadow-out.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/shadow-up.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Shadows/text-entry.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Shadows
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/slider-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/slider.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/thumb-grip-h-insens.png
@@ -111,7 +96,6 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/trough-range-vert-insensitive.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/trough-range-vert.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Sliders/trough-range.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Sliders
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spin-arrow-down-insensitive.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spin-arrow-down.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spin-arrow-up-insensitive.png
@@ -125,7 +109,6 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spin-up-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spin-up.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Spinbuttons/spins.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Spinbuttons
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/notebook.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/null.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/tab-bottom-active.png
@@ -136,26 +119,21 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/tab-right.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/tab-top-active.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Tabs2/tab-top.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Tabs2
 %%GTK20%%share/themes/Milk/gtk-2.0/Toolbar/toolbar-bg.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Toolbar/toolbutton_normal.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Toolbar/toolbutton_prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/Toolbar/toolbutton_togle.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Toolbar
 %%GTK20%%share/themes/Milk/gtk-2.0/Tooltips/tooltips.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/Tooltips
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/combo-button-insens.png
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/combo-button-normal.png
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/combo-button-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/combo-menu-arrow.png
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/line.png
 %%GTK20%%share/themes/Milk/gtk-2.0/combo/null.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/combo
 %%GTK20%%share/themes/Milk/gtk-2.0/font/font-button-insens.png
 %%GTK20%%share/themes/Milk/gtk-2.0/font/font-button-normal.png
 %%GTK20%%share/themes/Milk/gtk-2.0/font/font-button-prelight.png
 %%GTK20%%share/themes/Milk/gtk-2.0/font/font-menu-arrow.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/font
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/epiphany-bookmark.png
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/gtk-add.png
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/gtk-apply.png
@@ -204,16 +182,13 @@
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/v3.png
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/v4.png
 %%GTK20%%share/themes/Milk/gtk-2.0/icons/volume-mute.png
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0/icons
 %%GTK20%%share/themes/Milk/gtk-2.0/gtkrc
 %%GTK20%%share/themes/Milk/gtk-2.0/iconrc
 %%GTK20%%share/themes/Milk/gtk-2.0/menu-noxorg.rc
 %%GTK20%%share/themes/Milk/gtk-2.0/menu.rc
 %%GTK20%%share/themes/Milk/gtk-2.0/panel.rc
 %%GTK20%%share/themes/Milk/gtk-2.0/toolbar.rc
-%%GTK20%%@dirrm share/themes/Milk/gtk-2.0
 %%GTK20%%share/themes/Milk/index.theme
-%%GTK20%%@dirrm share/themes/Milk
 %%METACITY%%share/themes/Milk/metacity-1/button-close-focused.png
 %%METACITY%%share/themes/Milk/metacity-1/button-close-prelight.png
 %%METACITY%%share/themes/Milk/metacity-1/button-close-pressed.png
@@ -256,7 +231,4 @@
 %%METACITY%%share/themes/Milk/metacity-1/titlebar-right-shaded-focused.xpm
 %%METACITY%%share/themes/Milk/metacity-1/titlebar-right-shaded-unfocused.xpm
 %%METACITY%%share/themes/Milk/metacity-1/titlebar-right-unfocused.xpm
-%%METACITY%%@dirrm share/themes/Milk/metacity-1
 %%METACITY%%share/themes/Milk/index.theme
-%%METACITY%%@dirrm share/themes/Milk
-@dirrmtry share/themes
