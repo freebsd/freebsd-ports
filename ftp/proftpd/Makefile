@@ -5,7 +5,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -101,7 +101,7 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 .if !defined(_BUILDING_PROFTPD_MODULE)
 CPPFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
 LIBS+=		-lssl -lcrypto -L${OPENSSLLIB}
-LDFLAGS+=	-pthread
+LDFLAGS+=	-lpthread
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
