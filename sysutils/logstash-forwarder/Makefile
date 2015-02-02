@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash-forwarder
-PORTVERSION=	0.3.1.20140829
+PORTVERSION=	0.3.1.20150121
 CATEGORIES=	sysutils
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch
 GH_PROJECT=	logstash-forwarder
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	fcf431c
+GH_COMMIT=	9c69a36
 
 USE_RC_SUBR=	logstash-forwarder
 SUB_FILES=	pkg-message
