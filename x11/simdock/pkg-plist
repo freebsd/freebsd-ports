@@ -6,4 +6,3 @@ share/pixmaps/simdock.png
 %%DATADIR%%/bg5.png
 %%DATADIR%%/mark.png
 %%DATADIR%%/question.png
-@dirrm share/simdock
