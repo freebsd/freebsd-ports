@@ -15,7 +15,5 @@ bin/rawdog
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyo
 man/man1/rawdog.1.gz
-@dirrm %%PYTHON_SITELIBDIR%%/rawdoglib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/style.css
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

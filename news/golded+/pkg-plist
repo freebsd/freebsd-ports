@@ -386,8 +386,3 @@ man/man1/rddt.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template/golded.tpl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template/newsgrps.tpl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template/rusCP866.tpl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/template
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/colorset
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/charset
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

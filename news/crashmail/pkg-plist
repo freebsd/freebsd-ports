@@ -7,4 +7,3 @@ bin/crashstats
 bin/crashwrite
 %%ETCDIR%%/example.prefs
 %%ETCDIR%%/areafix.help
-@dirrm %%ETCDIR%%
