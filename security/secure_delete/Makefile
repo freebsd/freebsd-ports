@@ -11,8 +11,6 @@ MASTER_SITES=	PACKETSTORM/groups/thc \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure data deletion toolkit
 
-OPTIONS_DEFINE=	DOCS
-
 CONFLICTS=	srm-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
@@ -27,7 +25,10 @@ PLIST_FILES=	bin/sdel bin/sfill bin/smem bin/srm bin/sswap \
 BIN_PROGRAMS=	srm sfill sswap smem
 BIN_SCRIPTS=	the_cleaner.sh
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	@${CHMOD} u+w ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
