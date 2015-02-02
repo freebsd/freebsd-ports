@@ -587,4 +587,4 @@ share/pixmaps/tortoisehg/icons/svg/sync.svg
 share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
 share/pixmaps/tortoisehg/icons/thg_logo.ico
 share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
-share/tortoisehg/mergetools.rc
+%%DATADIR%%/mergetools.rc
