@@ -3827,6 +3827,7 @@
     SUBDIR += py-jellyfish
     SUBDIR += py-jira
     SUBDIR += py-jmespath
+    SUBDIR += py-joblib
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
     SUBDIR += py-jsonlib
