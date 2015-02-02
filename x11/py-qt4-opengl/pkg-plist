@@ -7,5 +7,3 @@ share/py-sip/QtOpenGL/qglframebufferobject.sip
 share/py-sip/QtOpenGL/qglpixelbuffer.sip
 share/py-sip/QtOpenGL/qglshaderprogram.sip
 %%API%%share/qt4/qsci/api/python/QtOpenGL.api
-@dirrm share/py-sip/QtOpenGL
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
