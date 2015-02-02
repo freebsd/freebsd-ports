@@ -157,6 +157,7 @@
     SUBDIR += sourcesanspro-ttf
     SUBDIR += stix-fonts
     SUBDIR += suxus
+    SUBDIR += symbola
     SUBDIR += terminus-font
     SUBDIR += tkfont
     SUBDIR += tlwg-ttf
