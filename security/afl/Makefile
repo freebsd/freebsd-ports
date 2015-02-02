@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.11b
+PORTVERSION=	1.38b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -13,7 +13,7 @@ USES=		compiler gmake tar:tgz
 
 OPTIONS_DEFINE=			DEBUG DOCS MINIMIZE_CORPUS \
 				PLOT_SUPPORT TEST_INSTRUMENTATION
-MINIMIZE_CORPUS_DESC=	Install minimize_corpus.sh (bash dependency).
+MINIMIZE_CORPUS_DESC=	Install afl-cmin. Adds bash dependency
 PLOT_SUPPORT_DESC=	Support progress plotting. Adds Gnuplot dependency
 TEST_INSTRUMENTATION_DESC=	Execute tests expected to fail in jails
 OPTIONS_DEFAULT=		MINIMIZE_CORPUS PLOT_SUPPORT
@@ -50,9 +50,10 @@ post-patch:
 # by default anyway.
 	${REINPLACE_CMD} -e 's@^\(all.*\) test_build@\1@' ${WRKSRC}/Makefile
 .endif
-	${REINPLACE_CMD} -e 's@ -O3@@; s@ -g@@' \
+	${REINPLACE_CMD} -E -e 's@ -O3@@; s@ -g@@' \
 		-e 's@install -m 755@${INSTALL_PROGRAM}@' \
-		-e 's@ afl-plot @ @' ${WRKSRC}/Makefile
+		-e 's@ afl-(cmin|plot|whatsup) @ @g' \
+		${WRKSRC}/Makefile
 .if (${COMPILER_TYPE} == "clang" && ${ARCH} == "i386")
 	${REINPLACE_CMD} -e 's@\(  as_params\[0\] = "\)@\1${LOCALBASE}/bin/@' \
 		${WRKSRC}/afl-as.c
@@ -65,11 +66,13 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/afl-plot ${STAGEDIR}${LOCALBASE}/bin/
+
+.for afl_script in afl-cmin afl-plot afl-whatsup
+	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${LOCALBASE}/bin/
+.endfor
+
 .if ${PORT_OPTIONS:MMINIMIZE_CORPUS}
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/experimental/minimization_script/minimize_corpus.sh \
-		${STAGEDIR}${LOCALBASE}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/afl-cmin ${STAGEDIR}${LOCALBASE}/bin/
 .endif
 
 .include <bsd.port.post.mk>
