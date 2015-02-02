@@ -14,14 +14,3 @@
 %%TWDIR%%/pub/TWiki/SlideShowPlugin/next.gif
 %%TWDIR%%/pub/TWiki/SlideShowPlugin/prev.gif
 %%TWDIR%%/pub/TWiki/SlideShowPlugin/startpres.gif
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/SlideShowPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

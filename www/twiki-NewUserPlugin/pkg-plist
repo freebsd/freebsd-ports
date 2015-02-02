@@ -14,24 +14,3 @@
 %%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin/build.pl
 %%TWDIR%%/pub/TWiki/NewUserPlugin/wikiringlogo40x40.png
-@dirrm %%TWDIR%%/NewUserPlugin/data/TWiki
-@dirrm %%TWDIR%%/NewUserPlugin/data
-@dirrm %%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins/NewUserPlugin
-@dirrm %%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/NewUserPlugin/lib/TWiki
-@dirrm %%TWDIR%%/NewUserPlugin/lib
-@dirrm %%TWDIR%%/NewUserPlugin/pub/TWiki/NewUserPlugin
-@dirrm %%TWDIR%%/NewUserPlugin/pub/TWiki
-@dirrm %%TWDIR%%/NewUserPlugin/pub
-@dirrm %%TWDIR%%/NewUserPlugin
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/NewUserPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

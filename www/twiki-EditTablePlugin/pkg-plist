@@ -23,17 +23,3 @@
 %%TWDIR%%/pub/TWiki/EditTablePlugin/separator_bg_anim.gif
 %%TWDIR%%/test/unit/EditTablePlugin/EditTablePluginSuite.pm
 %%TWDIR%%/test/unit/EditTablePlugin/EditTablePluginTests.pm
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/EditTablePlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/test/unit/EditTablePlugin
-@dirrm %%TWDIR%%/test/unit
-@dirrm %%TWDIR%%/test
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki
