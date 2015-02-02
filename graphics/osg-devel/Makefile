@@ -210,8 +210,8 @@ USE_XORG+=	xrandr
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
-	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d' \
-		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d; \
+		s|-pedantic||' ${WRKSRC}/CMakeLists.txt
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
