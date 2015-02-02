@@ -57,6 +57,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst4.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialflowlabel1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialflowlabel2.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialformatting1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage3.mapyrus

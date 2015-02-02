@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 if [ -z "${DISPLAY}" ]; then
     JAVA_AWT_HEADLESS="-Djava.awt.headless=true"
 else
