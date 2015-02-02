@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc5
-PORTVERSION=	5.0.s20150125
+PORTVERSION=	5.0.s20150201
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -40,17 +40,12 @@ SSP_UNSAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-# libffi is broken on FreeBSD 10.x or later since 2015-01-11, cf.
-# https://gcc.gnu.org/bugzilla/show_bug.cgi?id=64779, so disable it.
-CONFIGURE_ARGS+=--without-libffi
-
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
 OPTIONS_DEFAULT=	BOOTSTRAP
-# Also disable the JAVA defaults for now.
-#OPTIONS_DEFAULT_i386=	JAVA
-#OPTIONS_DEFAULT_amd64=	JAVA
+OPTIONS_DEFAULT_i386=	JAVA
+OPTIONS_DEFAULT_amd64=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .include <bsd.port.pre.mk>
