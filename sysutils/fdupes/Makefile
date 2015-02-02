@@ -4,12 +4,16 @@
 PORTNAME=	fdupes
 PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files
 
 LICENSE=	MIT
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	adrianlopezroche
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+GH_COMMIT=	2ad90e5
 
 PLIST_FILES=	bin/fdupes man/man1/fdupes.1.gz
 
