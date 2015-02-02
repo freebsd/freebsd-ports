@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shadowsocks-libev
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/
 
@@ -15,13 +14,17 @@ LICENSE=	GPLv3
 # fetch from github repo
 USE_GITHUB=	yes
 GH_ACCOUNT=	madeye
-GH_TAGNAME=	v1.4.0
+GH_TAGNAME=	v1.6.4
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool:keepla
 
 USE_RC_SUBR=	shadowsocks_libev
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
