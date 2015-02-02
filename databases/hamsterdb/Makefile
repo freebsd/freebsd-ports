@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-USES=		gmake libtool
+USES=		alias gmake libtool
 USE_LDCONFIG=	yes
 
 HAM_DOCS=	README INSTALL ChangeLog TODO AUTHORS CREDITS
