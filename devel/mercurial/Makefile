@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -41,7 +41,6 @@ CONTRIB_FILES=	bash_completion \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
 		mercurial.el \
-		mergetools.hgrc \
 		mq.el \
 		perf.py \
 		pylintrc \
