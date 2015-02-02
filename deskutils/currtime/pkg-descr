@@ -1,0 +1,8 @@
+currtime is an enhanced command-line operated real time clock. Features include:
+
+ * Time displayed in Unix-compatible format
+ * Shows the current time on the same line
+ * Can run for a specified number of ticks (seconds) with the -T (ticks) flag
+ * Option to display each tick on a new line with the -n flag
+
+WWW: http://www.neelc.org/software/currtime/
