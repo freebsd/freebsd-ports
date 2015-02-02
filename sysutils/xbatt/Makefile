@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Laptop battery status display for X11
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		imake:noman
 USE_XORG=	xpm xaw
