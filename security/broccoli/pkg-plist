@@ -1,24 +1,22 @@
 bin/broccoli-config
-@unexec cmp -s %D/etc/broccoli.conf.example %D/etc/broccoli.conf && rm %D/etc/broccoli.conf || true
+@unexec cmp -s %D/etc/broccoli.conf.example %D/etc/broccoli.conf && rm -f %D/etc/broccoli.conf || true
 etc/broccoli.conf.example
-@exec test -f %D/etc/broccoli.conf || cp -p %D/%F %D/etc/broccoli.conf
+@exec test -f %D/etc/broccoli.conf || cp -p %D/etc/broccoli.conf.example %D/etc/broccoli.conf
 include/broccoli.h
 lib/libbroccoli.a
 lib/libbroccoli.so
 lib/libbroccoli.so.5
 lib/libbroccoli.so.5.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
-%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.py
-%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/broccoli.py
+%%PYTHON%%@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/broccoli.pyc
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/connection.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/event.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/record.rb
-%%RUBY%%%%RUBY_SITELIBDIR%%/broccoli.rb
-%%RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%/Broccoli
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/broccoli_ext.so
-%%CLEANUP_PREFIX%%%%PORTDOCS%%@dirrmtry share
-%%CLEANUP_PREFIX%%@dirrmtry lib
-%%CLEANUP_PREFIX%%@dirrmtry include
-%%CLEANUP_PREFIX%%@dirrmtry etc
-%%CLEANUP_PREFIX%%@dirrmtry bin
-%%CLEANUP_PREFIX%%@unexec rmdir %D || :
+%%RUBY%%%%RUBY_SITELIBDIR%%/broccoli.rb
+%%CLEANUP_PREFIX%%@dir share
+%%CLEANUP_PREFIX%%@dir lib
+%%CLEANUP_PREFIX%%@dir include
+%%CLEANUP_PREFIX%%@dir etc
+%%CLEANUP_PREFIX%%@dir bin
