@@ -97,9 +97,12 @@ CONFIGURE_ARGS+=	--enable-use-mb
 
 .if ${PORT_OPTIONS:MJP}
 XLOCKMORE_LANG=	ja
-CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 CATEGORIES+=	japanese
 PORT_OPTIONS+=	MB
+.endif
+
+.if defined(XLOCKMORE_LANG)
+CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG}
