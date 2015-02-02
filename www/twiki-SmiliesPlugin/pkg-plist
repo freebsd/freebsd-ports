@@ -43,14 +43,3 @@
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/wink.gif,v
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/yes.gif
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/yes.gif,v
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/SmiliesPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

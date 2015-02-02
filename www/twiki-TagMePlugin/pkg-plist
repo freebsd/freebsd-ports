@@ -26,15 +26,3 @@
 %%TWDIR%%/templates/view.tagme04x01.tmpl
 %%TWDIR%%/templates/view.tagme_styleblog.tmpl
 %%TWDIR%%/templates/view.tagme_styleblogbutton.tmpl
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/TagMePlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

@@ -11,18 +11,3 @@
 %%TWDIR%%/templates/twistyplugin.tmpl
 %%TWDIR%%/test/unit/TwistyPlugin/TwistyPluginSuite.pm
 %%TWDIR%%/test/unit/TwistyPlugin/TwistyPluginTests.pm
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Plugins/TwistyPlugin
-@dirrm %%TWDIR%%/lib/TWiki/Plugins
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/TwistyPlugin
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%/test/unit/TwistyPlugin
-@dirrm %%TWDIR%%/test/unit
-@dirrm %%TWDIR%%/test
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki

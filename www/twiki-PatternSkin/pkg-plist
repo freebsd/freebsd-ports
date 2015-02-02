@@ -121,29 +121,3 @@
 %%TWDIR%%/templates/viewprint.pattern.tmpl
 %%TWDIR%%/templates/viewrightbar.pattern.tmpl
 %%TWDIR%%/templates/viewtopbar.pattern.tmpl
-@dirrm %%TWDIR%%/data/Main
-@dirrm %%TWDIR%%/data/Sandbox
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data/Trash
-@dirrm %%TWDIR%%/data/_default
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Contrib/PatternSkin
-@dirrm %%TWDIR%%/lib/TWiki/Contrib
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkin
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinColorSettings
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCss
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPage
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPageBorder
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookEditTableStyle
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookFonts
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoLeftBar
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoTopBar
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCustomization
-@dirrm %%TWDIR%%/pub/TWiki/PatternSkinGraphics
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%
-@dirrmtry share/twiki
