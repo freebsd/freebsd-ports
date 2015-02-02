@@ -304,6 +304,14 @@ Notes:
 	<name>linux_base-f10</name>
 	<range><ge>0</ge></range>
       </package>
+      <package>
+	<name>linux-c6-devtools</name>
+	<range><lt>6.6_3</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-devtools</name>
+	<range><ge>0</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -330,6 +338,7 @@ Notes:
     <dates>
       <discovery>2015-01-27</discovery>
       <entry>2015-01-28</entry>
+      <modified>2015-02-02</modified>
     </dates>
   </vuln>
 
