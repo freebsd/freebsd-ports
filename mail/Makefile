@@ -487,7 +487,6 @@
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-tls
-    SUBDIR += postfix210
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
