@@ -3,13 +3,14 @@
 
 PORTNAME=	devtools
 PORTVERSION=	6.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
+MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 DISTFILES=	binutils-2.20.51.0.2-5.42.el6.i686.rpm \
 		binutils-devel-2.20.51.0.2-5.42.el6.i686.rpm \
-		glibc-devel-2.12-1.149.el6.i686.rpm \
-		glibc-headers-2.12-1.149.el6.i686.rpm \
-		kernel-headers-2.6.32-504.el6.i686.rpm \
+		glibc-devel-2.12-1.149.el6_6.5.i686.rpm \
+		glibc-headers-2.12-1.149.el6_6.5.i686.rpm \
+		kernel-headers-2.6.32-504.8.1.el6.i686.rpm \
 		libstdc++-devel-4.4.7-11.el6.i686.rpm \
 		libgomp-4.4.7-11.el6.i686.rpm \
 		mpfr-2.4.1-6.el6.i686.rpm \
@@ -33,8 +34,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	NLS=""
 
 SRC_DISTFILES=	binutils-2.20.51.0.2-5.42.el6.src.rpm \
-		glibc-2.12-1.149.el6.src.rpm \
-		kernel-2.6.32-504.el6.src.rpm \
+		glibc-2.12-1.149.el6_6.5.src.rpm \
+		kernel-2.6.32-504.8.1.el6.src.rpm \
 		mpfr-2.4.1-6.el6.src.rpm \
 		gcc-4.4.7-11.el6.src.rpm
 
