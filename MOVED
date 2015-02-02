@@ -7412,3 +7412,9 @@ net-im/pidgin-audacious-remote||2015-01-28|Has expired: Broken for more than 6 m
 www/lifetype||2015-01-28|Has expired: Broken for more than 6 months
 www/ump||2015-01-28|Has expired: Broken for more than 6 months
 net/owncloud-csync||2015-02-01|Merged into deskutils/mirall
+audio/py-eyed3-06|audio/py-eyed3|2015-02-02|Has expired: In audio/abcde dependency has been changed to audio/py-eyed3
+mail/postfix210|mail/postfix|2015-02-02|Has expired: Use mail/postfix instead.
+net-im/venom||2015-02-02|Has expired: No more support from the project
+security/openssh-portable66|security/openssh-portable|2015-02-02|Has expired: security/openssh-portable now has all patches working. This port is obsolete.
+www/p5-WWW-Scraper-ISBN-Driver|www/p5-WWW-Scraper-ISBN|2015-02-02|Has expired: Merged to www/p5-WWW-Scraper-ISBN by upstream
+www/p5-WWW-Scraper-ISBN-Record|www/p5-WWW-Scraper-ISBN|2015-02-02|Has expired: Merged to www/p5-WWW-Scraper-ISBN by upstream

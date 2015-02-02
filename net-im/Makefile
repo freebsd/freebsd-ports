@@ -173,7 +173,6 @@
     SUBDIR += twitmail
     SUBDIR += uTox
     SUBDIR += vacuum-im
-    SUBDIR += venom
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
     SUBDIR += zephyr
