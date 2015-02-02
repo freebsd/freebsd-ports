@@ -20,7 +20,7 @@
  
  jacal.dvi: jacal.texi version.txi
  	$(TEXI2DVI) -b -c $<
-@@ -142,16 +136,9 @@
+@@ -142,16 +136,8 @@
  	cd DOC/; pdflatex ratint.tex
  	$(INSTALL_DATA) DOC/ratint.pdf $(DESTDIR)$(pdfdir)
  
@@ -35,12 +35,11 @@
 -	-$(INSTALL_INFO) $@ $(DESTDIR)$(infodir)dir
 -	-rm $(DESTDIR)$(infodir)-jacal.info.gz
 +$(DESTDIR)$(infodir)jacal.info:        jacal.texi version.txi
-+	$(MAKEINFO) $< --no-split -o jacal.info
 +	$(INSTALL_DATA) jacal.info $@
  install-info:	$(DESTDIR)$(infodir)jacal.info
  info:	install-info
  $(DESTDIR)$(infodir)jacal.info.gz: $(DESTDIR)$(infodir)jacal.info
-@@ -195,7 +182,6 @@
+@@ -195,7 +181,6 @@
  	$(INSTALL_DATA) go-scm $(DESTDIR)$(jacallibdir)go.scm
  	rm go-scm
  	echo '#! /bin/sh'			   > jacal-script
