@@ -9,5 +9,3 @@ news/cleanfeed/etc/bad_paths
 news/cleanfeed/etc/bad_subject
 news/cleanfeed/etc/bad_url
 news/cleanfeed/etc/cleanfeed.local.sample
-@dirrmtry news/cleanfeed/etc
-@dirrmtry news/cleanfeed

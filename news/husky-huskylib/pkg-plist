@@ -45,4 +45,3 @@ lib/libhusky.a
 lib/libhusky.so
 lib/libhusky.so.1
 %%PORTDOCS%%man/man1/gnmsgid.1.gz
-@dirrmtry include/huskylib
