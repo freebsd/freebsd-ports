@@ -288,7 +288,6 @@
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
     SUBDIR += xgate
-    SUBDIR += xlockmore
     SUBDIR += xpdf
     SUBDIR += xshodou
     SUBDIR += xtr

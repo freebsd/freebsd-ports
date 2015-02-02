@@ -7418,3 +7418,4 @@ net-im/venom||2015-02-02|Has expired: No more support from the project
 security/openssh-portable66|security/openssh-portable|2015-02-02|Has expired: security/openssh-portable now has all patches working. This port is obsolete.
 www/p5-WWW-Scraper-ISBN-Driver|www/p5-WWW-Scraper-ISBN|2015-02-02|Has expired: Merged to www/p5-WWW-Scraper-ISBN by upstream
 www/p5-WWW-Scraper-ISBN-Record|www/p5-WWW-Scraper-ISBN|2015-02-02|Has expired: Merged to www/p5-WWW-Scraper-ISBN by upstream
+japanese/xlockmore|x11/xlockmore|2015-02-02|Merged into x11/xlockmore
