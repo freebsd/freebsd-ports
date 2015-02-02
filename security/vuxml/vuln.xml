@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c7cfd05-aaee-11e4-83b4-14dae9d210b8">
+    <topic>Xymon -- buffer overrun</topic>
+    <affects>
+      <package>
+	<name>xymon-server</name>
+	<range><ge>4.3.4</ge><lt>4.3.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776007">
+	  <p>web/acknowledge.c uses a string twice in a format string, but only
+	    allocates memory for one copy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/01/31/4</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-1430</url>
+      <cvename>CVE-2015-1430</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-28</discovery>
+      <entry>2015-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="734bcd49-aae6-11e4-a0c1-c485083ca99c">
     <topic>Adobe Flash Player -- critical vulnerability</topic>
     <affects>
