@@ -1,29 +1,32 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pcbsd-utils-qt4
-PORTVERSION=	1409841477
-PORTREVISION=	1
+PORTNAME=	pcbsd-utils-qt5
+PORTVERSION=	1422974666
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	PC-BSD Qt4 Utilities
+COMMENT=	PC-BSD Qt5 Utilities
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	lpreserver:${PORTSDIR}/sysutils/pcbsd-utils \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtsolutions-singleapplication \
-		libcurl.so:${PORTSDIR}/ftp/curl
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+		cdda2wav:${PORTSDIR}/sysutils/cdrtools
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+
+CONFLICTS?=	pcbsd-utils-qt4-[0-9]*
 
 MAKE_JOBS_UNSAFE=yes
 ONLY_FOR_ARCHS=	amd64
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui network svg linguist \
-		moc_build rcc_build uic_build
-USES=		qmake tar:bzip2 python
+USE_QT5=	core gui network svg linguist \
+		buildtools x11extras
+USES=		qmake tar:xz python
 
-WRKSRC=		${WRKDIR}/src-qt4
+WRKSRC=		${WRKDIR}/src-qt5
 
 QMAKE_ARGS=	CONFIG+="configure"
 
