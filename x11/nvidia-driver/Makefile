@@ -7,11 +7,11 @@
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
-# `x11/nvidia-driver-71', `x11/nvidia-driver-96', `x11/nvidia-driver-173',
-# or `x11/nvidia-driver-304' slave ports.
+# slave ports instead (`x11/nvidia-driver-173', `x11/nvidia-driver-304',
+# or `x11/nvidia-driver-340').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	340.76
+DISTVERSION?=	346.35
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -117,13 +117,8 @@ PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 
 .include <bsd.port.options.mk>
 
-# FreeBSD src SVN r254138 had broken 71.86.xx legacy series :(
-.if ${OSVERSION} > 1000041 && ${NVVERSION} <= 71.08615
-BROKEN=		does not compile
-.endif
-
 .if ${PORT_OPTIONS:MLINUX}
-CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
+CONFLICTS_INSTALL=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
 .else
@@ -240,6 +235,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
 .endif
 	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+# Also do not install libnvidia-gtk* libraries which are for nvidia-settings
+.if ${NVVERSION} >= 346.016
+	${REINPLACE_CMD} -e '/libnvidia-gtk/d' ${WRKSRC}/lib/Makefile
+.endif
 # Conditionally install documentation (but you generally want it)
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
