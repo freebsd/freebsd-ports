@@ -2,9 +2,9 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.18
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
-#MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
-MASTER_SITES=	https://www.xymon.com/patches/
+MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
 DIST_SUBDIR=	repacked
 
