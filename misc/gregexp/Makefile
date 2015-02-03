@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gregexp
-PORTVERSION=	0.3
-PORTREVISION=	13
+PORTVERSION=	0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://dentrassi.de/download/gregexp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
