@@ -13,38 +13,28 @@ COMMENT=	Cross-platform C++ graphical user interface toolkit
 
 LICENSE=	LGPL20
 
-OPTIONS_DEFINE=	DOCS
-
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_LDCONFIG=	yes
+USES=		pkgconfig
 USE_XORG=	xft
 USE_GL=		glu
-USES=		pkgconfig
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-threads \
-		--enable-shared \
-		--enable-xft
+CONFIGURE_ARGS=	--enable-shared
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${WRKSRC}/src -L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
 	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \
 	${WRKSRC}/src/Fl_Preferences.cxx
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	cd ${WRKSRC}/documentation && ${MAKE} ${MAKE_ARGS} docinstall
-	cd ${WRKSRC}/test && ${MAKE} ${MAKE_ARGS} install
-.endif
 
 .include <bsd.port.mk>

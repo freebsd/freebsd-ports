@@ -1,19 +1,8 @@
 --- documentation/Makefile.orig	2011-08-27 01:33:42.000000000 +0000
 +++ documentation/Makefile	2011-08-27 01:39:59.000000000 +0000
-@@ -80,6 +80,7 @@
- depend:
- 
- install: $(MANPAGES)
-+docinstall:
- 	echo "Installing documentation files in $(DESTDIR)$(docdir) ..."
- 	-$(INSTALL_DIR) $(DESTDIR)$(docdir)
- 	if test -f html/index.html ; then \
-@@ -91,12 +92,9 @@
- 	  echo "Installing fltk.pdf in $(DESTDIR)$(docdir) ..."; \
+@@ -84,11 +84,6 @@
  	  $(INSTALL_DATA) fltk.pdf $(DESTDIR)$(docdir); \
  	fi
-+
-+install: $(MANPAGES)
  	echo "Installing man pages in $(DESTDIR)$(mandir) ..."
 -	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat1
 -	$(INSTALL_MAN) $(SRC_DOCDIR)/fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
