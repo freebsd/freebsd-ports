@@ -3,8 +3,8 @@
 #   $MCom: ports/graphics/poppler/Makefile,v 1.84 2013/03/12 14:53:49 kwm Exp $
 
 PORTNAME=	poppler
-PORTVERSION=	0.26.3
-PORTREVISION?=	1
+PORTVERSION=	0.30.0
+PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -115,8 +115,10 @@ CONFIGURE_ARGS+=--disable-libcurl
 PLIST_SUB+=	CURL="@comment "
 .endif
 
+# stick with openjpeg1 for now due to regression in openjpeg2 (configure)
+# https://bugs.freedesktop.org/show_bug.cgi?id=58906 Comment #35
 .if ${PORT_OPTIONS:MOPENJPEG}
-CONFIGURE_ARGS+=--enable-libopenjpeg
+CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg1
 LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 .else
 CONFIGURE_ARGS+=--disable-libopenjpeg

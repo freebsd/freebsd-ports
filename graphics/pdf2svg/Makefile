@@ -3,7 +3,7 @@
 
 PORTNAME=	pdf2svg
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cityinthesky.co.uk/_media/opensource/
 

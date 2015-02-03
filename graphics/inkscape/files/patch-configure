@@ -1,6 +1,37 @@
---- configure.orig	2014-10-20 01:29:05.836430783 +0200
-+++ configure	2014-10-20 01:29:05.872430406 +0200
-@@ -9046,10 +9046,11 @@
+--- configure.orig	2015-01-29 19:57:54.424153129 +0100
++++ configure	2015-01-29 20:00:37.112141976 +0100
+@@ -657,6 +657,8 @@
+ LIBWPG01_CFLAGS
+ INKBOARD_CFLAGS
+ INKBOARD_LIBS
++POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS
++POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS
+ POPPLER_EVEN_NEWER_COLOR_SPACE_API_LIBS
+ POPPLER_EVEN_NEWER_COLOR_SPACE_API_CFLAGS
+ POPPLER_NEWERRORAPI_LIBS
+@@ -914,6 +916,8 @@
+ POPPLER_NEWERRORAPI_LIBS
+ POPPLER_EVEN_NEWER_COLOR_SPACE_API_CFLAGS
+ POPPLER_EVEN_NEWER_COLOR_SPACE_API_LIBS
++POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS
++POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS
+ LIBWPG01_CFLAGS
+ LIBWPG01_LIBS
+ LIBWPG02_CFLAGS
+@@ -1630,6 +1634,12 @@
+   POPPLER_EVEN_NEWER_COLOR_SPACE_API_LIBS
+               linker flags for POPPLER_EVEN_NEWER_COLOR_SPACE_API, overriding
+               pkg-config
++  POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS
++              C compiler flags for POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API,
++              overriding pkg-config
++  POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS
++              linker flags for POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API,
++              overriding pkg-config
+   LIBWPG01_CFLAGS
+               C compiler flags for LIBWPG01, overriding pkg-config
+   LIBWPG01_LIBS
+@@ -9047,10 +9057,11 @@
  			#include <stdio.h>
  			extern unsigned GC_version;
  			int main(void){
@@ -16,3 +47,87 @@
  			}
  _ACEOF
  if ac_fn_cxx_try_run "$LINENO"; then :
+@@ -10561,6 +10572,83 @@
+ 
+ fi
+ 
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API" >&5
++$as_echo_n "checking for POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API... " >&6; }
++
++if test -n "$POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS"; then
++    pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS="$POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"poppler >= 0.29.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "poppler >= 0.29.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS=`$PKG_CONFIG --cflags "poppler >= 0.29.0" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS"; then
++    pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS="$POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"poppler >= 0.29.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "poppler >= 0.29.0") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS=`$PKG_CONFIG --libs "poppler >= 0.29.0" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "poppler >= 0.29.0" 2>&1`
++        else
++	        POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "poppler >= 0.29.0" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_PKG_ERRORS" >&5
++
++	popplernewernewcolorspaceapi=no
++elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++	popplernewernewcolorspaceapi=no
++else
++	POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS=$pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_CFLAGS
++	POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS=$pkg_cv_POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++	popplernewernewcolorspaceapi=yes
++fi
++if test "x$popplernewernewcolorspaceapi" = "xyes"; then
++
++$as_echo "#define POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API 1" >>confdefs.h
++
++fi
++
+ # Poppler's b604a008 commit changes this
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether Poppler's GfxPatch no longer uses GfxColor" >&5
+ $as_echo_n "checking whether Poppler's GfxPatch no longer uses GfxColor... " >&6; }

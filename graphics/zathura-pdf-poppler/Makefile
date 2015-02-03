@@ -3,7 +3,7 @@
 
 PORTNAME=	zathura-pdf-poppler
 PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
