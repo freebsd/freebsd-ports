@@ -3,8 +3,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
-DISTVERSIONSUFFIX=	j
-PORTREVISION=	16
+DISTVERSIONSUFFIX=	l
+PORTREVISION=	18
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -165,7 +165,6 @@ EXTRACONFIGURE+=	no-rc5
 .endif
 
 .if ${PORT_OPTIONS:MPADLOCK}
-#BROKEN=		does not build with openssl-1.0.1f
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
 PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
