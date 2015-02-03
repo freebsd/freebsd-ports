@@ -7,13 +7,13 @@ PORTREVISION=	13
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://gmfsk.connect.fi/ \
 		http://he.fi/pub/ham/unix/linux/hfmodems/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	The Gnome MFSK terminal program
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
@@ -26,6 +26,8 @@ USE_GNOME=	libgnomeui gnomeprefix
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	gmfsk.schemas
+
+CPPFLAGS+=	-DFBSD_HAS_LOG2
 
 OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Enable HAMLIB Support
@@ -41,15 +43,8 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 CONFIGURE_ARGS+=	--disable-hamlib
 .endif
 
-.if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
-CPPFLAGS+=	-DFBSD_HAS_LOG2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]localstatedir[)]/lib/scrollkeeper|${SCROLLKEEPER_DIR}|g' \
 		${WRKSRC}/omf.make ${WRKSRC}/help/gmfsk/C/Makefile.in
-
-post-install:
-	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
