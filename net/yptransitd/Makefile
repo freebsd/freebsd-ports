@@ -24,7 +24,7 @@ PLIST_FILES=	%%ETCDIR%%/ldap.conf %%ETCDIR%%/modules/ldap.so \
 		%%ETCDIR%%/yptransitd.conf sbin/yptransitd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's, $$(CONFDIR), $${DESTDIR}$$(CONFDIR),' \
+	@${REINPLACE_CMD} -e 's, \($$([A-Z]*DIR)\), $${DESTDIR}\1,g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,=gcc,=@CC@,' \
 		${WRKSRC}/lib/Makefile.in
