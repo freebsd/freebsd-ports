@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e543c6f8-abf2-11e4-8ac7-d050992ecde8">
+    <topic>unzip -- out of boundary access issues in test_compr_eb</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<range><lt>6.0_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ubuntu Security Notice USN-2489-1 reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-2489-1/">
+	  <p>Michal Zalewski discovered that unzip incorrectly handled
+	    certain malformed zip archives. If a user or automated system
+	    were tricked into processing a specially crafted zip archive,
+	    an attacker could possibly execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9636</cvename>
+      <url>http://www.ubuntu.com/usn/usn-2489-1/</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2014/CVE-2014-9636.html</url>
+      <url>http://seclists.org/oss-sec/2014/q4/489</url>
+      <url>http://www.info-zip.org/phpBB3/viewtopic.php?f=7&amp;t=450</url>
+    </references>
+    <dates>
+      <discovery>2014-11-02</discovery>
+      <entry>2015-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c7cfd05-aaee-11e4-83b4-14dae9d210b8">
     <topic>Xymon -- buffer overrun</topic>
     <affects>
