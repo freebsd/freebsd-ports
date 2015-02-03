@@ -10,11 +10,11 @@ libdata/pkgconfig/fox17.pc
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.49
+lib/libCHART-%%MAJORVER%%.so.0.0.50
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.49
+lib/libFOX-%%MAJORVER%%.so.0.0.50
 include/fox-%%MAJORVER%%/FX4Splitter.h
 include/fox-%%MAJORVER%%/FX7Segment.h
 include/fox-%%MAJORVER%%/FX885910Codec.h
