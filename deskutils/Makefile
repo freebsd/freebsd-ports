@@ -30,7 +30,6 @@
     SUBDIR += conkyemail
     SUBDIR += conkyforecast
     SUBDIR += countdown
-    SUBDIR += currtime
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo

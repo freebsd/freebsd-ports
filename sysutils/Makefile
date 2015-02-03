@@ -160,6 +160,7 @@
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
     SUBDIR += curly
+    SUBDIR += currtime
     SUBDIR += cw
     SUBDIR += daa2iso
     SUBDIR += dae

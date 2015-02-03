@@ -2,7 +2,7 @@
 
 PORTNAME=	currtime
 PORTVERSION=	0.2
-CATEGORIES=	deskutils
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.neelc.org/files/currtime/${PORTVERSION}/
 
 MAINTAINER=	neel@neelc.org
