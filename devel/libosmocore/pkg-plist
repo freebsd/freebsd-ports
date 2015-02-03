@@ -57,6 +57,7 @@ include/osmocom/gsm/abis_nm.h
 include/osmocom/gsm/comp128.h
 include/osmocom/gsm/comp128v23.h
 include/osmocom/gsm/gan.h
+include/osmocom/gsm/gsm0341.h
 include/osmocom/gsm/gsm0411_smc.h
 include/osmocom/gsm/gsm0411_smr.h
 include/osmocom/gsm/gsm0411_utils.h
@@ -80,6 +81,7 @@ include/osmocom/gsm/protocol/gsm_04_12.h
 include/osmocom/gsm/protocol/gsm_04_80.h
 include/osmocom/gsm/protocol/gsm_08_08.h
 include/osmocom/gsm/protocol/gsm_08_58.h
+include/osmocom/gsm/protocol/gsm_09_02.h
 include/osmocom/gsm/protocol/gsm_12_21.h
 include/osmocom/gsm/protocol/gsm_44_318.h
 include/osmocom/gsm/protocol/ipaccess.h
@@ -89,6 +91,7 @@ include/osmocom/gsm/rxlev_stat.h
 include/osmocom/gsm/sysinfo.h
 include/osmocom/gsm/tlv.h
 include/osmocom/gsm/ipa.h
+include/osmocom/sim/sim.h
 include/osmocom/vty/buffer.h
 include/osmocom/vty/command.h
 include/osmocom/vty/logging.h
@@ -103,8 +106,8 @@ lib/libosmocodec.so.0
 lib/libosmocodec.so.0.0.0
 lib/libosmocore.a
 lib/libosmocore.so
-lib/libosmocore.so.4
-lib/libosmocore.so.4.0.0
+lib/libosmocore.so.6
+lib/libosmocore.so.6.0.0
 lib/libosmogb.a
 lib/libosmogb.so
 lib/libosmogb.so.3
@@ -113,10 +116,14 @@ lib/libosmogsm.a
 lib/libosmogsm.so
 lib/libosmogsm.so.5
 lib/libosmogsm.so.5.1.0
+lib/libosmosim.a
+lib/libosmosim.so
+lib/libosmosim.so.0
+lib/libosmosim.so.0.0.0
 lib/libosmovty.a
 lib/libosmovty.so
-lib/libosmovty.so.0
-lib/libosmovty.so.0.0.1
+lib/libosmovty.so.1
+lib/libosmovty.so.1.0.0
 lib/libosmoctrl.a
 lib/libosmoctrl.so
 lib/libosmoctrl.so.0

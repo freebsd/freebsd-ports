@@ -1,9 +1,10 @@
---- ./Makefile.am.orig	2014-08-11 15:41:34.000000000 +0200
-+++ ./Makefile.am	2014-08-11 15:41:41.000000000 +0200
-@@ -15,42 +15,3 @@
+--- Makefile.am.orig	2015-01-22 11:13:28.000000000 +0200
++++ Makefile.am	2015-01-22 11:15:29.000000000 +0200
+@@ -14,43 +14,3 @@ dist-hook:
+ 	echo $(VERSION) > $(distdir)/.tarball-version
  
- EXTRA_DIST = git-version-gen
- 
+ EXTRA_DIST = git-version-gen .version
+-
 -if HAVE_DOXYGEN
 -
 -html_DATA = $(top_builddir)/doc/html.tar
@@ -39,7 +40,7 @@
 -uninstall-hook:
 -	cd $(DESTDIR)$(htmldir) && rm -rf {core,gsm,vty,codec}
 -
--DX_CLEAN = doc/{core,gsm,vty,codec}/{html,latex}/* doc/html.tar
+-DX_CLEAN = doc/{core,gsm,vty,codec}/{html,latex}/* doc/html.tar doc/{core,gsm,vty,codec}/doxygen_sqlite3.db
 -endif
 -
 -MOSTLYCLEANFILES = $(DX_CLEAN)
