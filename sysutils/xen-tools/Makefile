@@ -15,7 +15,7 @@ DISTFILES=	xen-${PORTVERSION}.tar.gz
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		${LOCALBASE}/lib/ibyajl.so:${PORTSDIR}/devel/yajl
+		${LOCALBASE}/lib/libyajl.so:${PORTSDIR}/devel/yajl
 
 USES=		gmake python:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
 USE_PERL5=	build
