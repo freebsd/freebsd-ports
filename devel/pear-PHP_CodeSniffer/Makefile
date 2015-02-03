@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	1.5.4
+PORTVERSION=	2.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
