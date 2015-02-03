@@ -33,9 +33,7 @@ LIBCUSE=	${LIBDIR}/libcuse4bsd.so
 MAKE_ENV+=	DEBUG_FLAGS='${DEBUG_FLAGS}'
 .endif
 
-.if ${OSVERSION} < 800069
-IGNORE=		does not build with the old USB stack
-.elif ${OSVERSION} > 1000012
+.if ${OSVERSION} > 1000012
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-uhidd-parser.y
 .endif
 
