@@ -4,6 +4,7 @@
 
 PORTNAME=	cheese
 PORTVERSION=	3.14.2
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -25,7 +26,7 @@ USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3 libxml2:build introspection:build
 USE_XORG=	xxf86vm x11
-USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vpx
+USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vorbis vpx
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
