@@ -16,6 +16,9 @@ GNU_CONFIGURE=	yes
 USES=		zip
 
 post-extract:
-	${CHMOD} 755 ${WRKSRC}/configure
+	@${CHMOD} 755 ${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
