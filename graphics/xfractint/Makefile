@@ -18,12 +18,6 @@ ALL_TARGET=	${PORTNAME}
 
 DESKTOP_ENTRIES+="Xfracint" "${COMMENT}" "" "${PORTNAME}" "" "false"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-EXTRA_PATCHES+=	${FILESDIR}/extra-unix__fpu087.c
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xfractint ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/unix/xfractint.man ${STAGEDIR}${PREFIX}/man/man1/${MAN1}
@@ -34,4 +28,4 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
