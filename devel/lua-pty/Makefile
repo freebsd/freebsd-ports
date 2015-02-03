@@ -13,6 +13,8 @@ DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
+BROKEN=		doesn't fetch
+
 USES=		lua:51
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
