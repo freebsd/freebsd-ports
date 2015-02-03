@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdread
-PORTVERSION=	4.9.9
-PORTREVISION=	3
+PORTVERSION=	5.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
+MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdread/${PORTVERSION}/ \
+		http://dvdnav.mplayerhq.hu/releases/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
 
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		tar:bz2 gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO

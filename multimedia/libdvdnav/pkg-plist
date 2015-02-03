@@ -1,13 +1,8 @@
-bin/dvdnav-config
 include/dvdnav/dvd_types.h
 include/dvdnav/dvdnav.h
 include/dvdnav/dvdnav_events.h
 lib/libdvdnav.a
 lib/libdvdnav.so
 lib/libdvdnav.so.4
-lib/libdvdnav.so.4.2.1
-lib/libdvdnavmini.so
-lib/libdvdnavmini.so.4
-lib/libdvdnavmini.so.4.2.1
+lib/libdvdnav.so.4.1.2
 libdata/pkgconfig/dvdnav.pc
-libdata/pkgconfig/dvdnavmini.pc
