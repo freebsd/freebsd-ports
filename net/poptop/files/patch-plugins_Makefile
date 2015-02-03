@@ -11,7 +11,7 @@
  LDADD   = -lutil
 -INSTALL	= install -o root
 -prefix  = /usr/local
-+INSTALL	?= install -o root
++INSTALL	?= install
 +prefix  = $(PREFIX)
  
  PLUGINS = pptpd-logwtmp.so
