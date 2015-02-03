@@ -1,101 +1,105 @@
---- utils/Makefile.in.orig	2014-11-25 11:49:19 UTC
+--- utils/Makefile.in.orig	2014-11-04 18:46:22 UTC
 +++ utils/Makefile.in
-@@ -111,7 +111,7 @@
- am_pdfdetach_OBJECTS = pdfdetach.$(OBJEXT) $(am__objects_1)
+@@ -125,40 +125,34 @@ PROGRAMS = $(bin_PROGRAMS)
+ am_pdfdetach_OBJECTS = pdfdetach.$(OBJEXT)
  pdfdetach_OBJECTS = $(am_pdfdetach_OBJECTS)
  pdfdetach_LDADD = $(LDADD)
--pdfdetach_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfdetach_DEPENDENCIES =
- AM_V_lt = $(am__v_lt_@AM_V@)
- am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
- am__v_lt_0 = --silent
-@@ -119,31 +119,31 @@
- am_pdffonts_OBJECTS = pdffonts.$(OBJEXT) $(am__objects_1)
+-pdfdetach_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfdetach_DEPENDENCIES = libparseargs.la
+ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
--pdffonts_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdffonts_DEPENDENCIES =
+-pdffonts_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdffonts_DEPENDENCIES = libparseargs.la
  am_pdfimages_OBJECTS = pdfimages.$(OBJEXT) ImageOutputDev.$(OBJEXT) \
- 	JSInfo.$(OBJEXT) $(am__objects_1)
+ 	JSInfo.$(OBJEXT)
  pdfimages_OBJECTS = $(am_pdfimages_OBJECTS)
  pdfimages_LDADD = $(LDADD)
--pdfimages_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfimages_DEPENDENCIES =
+-pdfimages_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfimages_DEPENDENCIES = libparseargs.la
  am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) printencodings.$(OBJEXT) \
- 	JSInfo.$(OBJEXT) $(am__objects_1)
+ 	JSInfo.$(OBJEXT)
  pdfinfo_OBJECTS = $(am_pdfinfo_OBJECTS)
  pdfinfo_LDADD = $(LDADD)
--pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfinfo_DEPENDENCIES =
- am_pdfseparate_OBJECTS = pdfseparate.$(OBJEXT) $(am__objects_1)
+-pdfinfo_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfinfo_DEPENDENCIES = libparseargs.la
+ am_pdfseparate_OBJECTS = pdfseparate.$(OBJEXT)
  pdfseparate_OBJECTS = $(am_pdfseparate_OBJECTS)
  pdfseparate_LDADD = $(LDADD)
--pdfseparate_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfseparate_DEPENDENCIES =
- am__pdftocairo_SOURCES_DIST = pdftocairo.cc parseargs.cc parseargs.h
- @BUILD_CAIRO_OUTPUT_TRUE@am_pdftocairo_OBJECTS = pdftocairo.$(OBJEXT) \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__objects_1)
+-pdfseparate_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfseparate_DEPENDENCIES = libparseargs.la
+ am_pdftocairo_OBJECTS = pdftocairo-pdftocairo.$(OBJEXT) \
+ 	pdftocairo-pdftocairo-win32.$(OBJEXT)
  pdftocairo_OBJECTS = $(am_pdftocairo_OBJECTS)
--am__DEPENDENCIES_1 = $(top_builddir)/poppler/libpoppler.la
-+am__DEPENDENCIES_1 =
+-am__DEPENDENCIES_1 = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++am__DEPENDENCIES_1 = libparseargs.la
  am__DEPENDENCIES_2 =
  @BUILD_CAIRO_OUTPUT_TRUE@@USE_CMS_TRUE@am__DEPENDENCIES_3 =  \
  @BUILD_CAIRO_OUTPUT_TRUE@@USE_CMS_TRUE@	$(am__DEPENDENCIES_2)
  am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
--@BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler-cairo.la \
-+@BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_DEPENDENCIES = \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_1) \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_4) \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_2)
-@@ -153,7 +153,7 @@
- 	pdftohtml-HtmlOutputDev.$(OBJEXT) $(am__objects_2)
+-pdftocairo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler-cairo.la \
++pdftocairo_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_4) \
+ 	$(am__DEPENDENCIES_2)
+ am_pdftohtml_OBJECTS = pdftohtml-pdftohtml.$(OBJEXT) \
+@@ -166,31 +160,26 @@ am_pdftohtml_OBJECTS = pdftohtml-pdftoht
+ 	pdftohtml-HtmlOutputDev.$(OBJEXT)
  pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
  pdftohtml_LDADD = $(LDADD)
--pdftohtml_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftohtml_DEPENDENCIES =
+-pdftohtml_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdftohtml_DEPENDENCIES = libparseargs.la
  pdftohtml_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(pdftohtml_CXXFLAGS) \
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -162,20 +162,20 @@
- @BUILD_SPLASH_OUTPUT_TRUE@	$(am__objects_1)
+ am_pdftoppm_OBJECTS = pdftoppm.$(OBJEXT)
  pdftoppm_OBJECTS = $(am_pdftoppm_OBJECTS)
  pdftoppm_LDADD = $(LDADD)
--pdftoppm_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftoppm_DEPENDENCIES =
- am_pdftops_OBJECTS = pdftops.$(OBJEXT) $(am__objects_1)
+-pdftoppm_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdftoppm_DEPENDENCIES = libparseargs.la
+ am_pdftops_OBJECTS = pdftops.$(OBJEXT)
  pdftops_OBJECTS = $(am_pdftops_OBJECTS)
  pdftops_LDADD = $(LDADD)
--pdftops_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftops_DEPENDENCIES =
- am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) printencodings.$(OBJEXT) \
- 	$(am__objects_1)
+-pdftops_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdftops_DEPENDENCIES = libparseargs.la
+ am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) printencodings.$(OBJEXT)
  pdftotext_OBJECTS = $(am_pdftotext_OBJECTS)
  pdftotext_LDADD = $(LDADD)
--pdftotext_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftotext_DEPENDENCIES =
- am_pdfunite_OBJECTS = pdfunite.$(OBJEXT) $(am__objects_1)
+-pdftotext_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdftotext_DEPENDENCIES = libparseargs.la
+ am_pdfunite_OBJECTS = pdfunite.$(OBJEXT)
  pdfunite_OBJECTS = $(am_pdfunite_OBJECTS)
  pdfunite_LDADD = $(LDADD)
--pdfunite_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfunite_DEPENDENCIES =
+-pdfunite_DEPENDENCIES = libparseargs.la \
+-	$(top_builddir)/poppler/libpoppler.la
++pdfunite_DEPENDENCIES = libparseargs.la
  AM_V_P = $(am__v_P_@AM_V@)
  am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
  am__v_P_0 = false
-@@ -516,7 +516,7 @@
- 	$(PDFTOCAIRO_CFLAGS)
+@@ -527,7 +516,7 @@ AM_CPPFLAGS = \
  
  LDADD = \
+ 	libparseargs.la				\
 -	$(top_builddir)/poppler/libpoppler.la	\
 +	-lpoppler	\
  	$(UTILS_LIBS)
  
- @BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_SOURCES = \
-@@ -524,7 +524,7 @@
- @BUILD_CAIRO_OUTPUT_TRUE@	$(common)
+ @BUILD_UTILS_TRUE@dist_man1_MANS = pdfdetach.1 pdffonts.1 pdfimages.1 \
+@@ -590,7 +579,7 @@ pdftocairo_SOURCES = \
+ 	pdftocairo-win32.h
  
- @BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_LDADD = \
--@BUILD_CAIRO_OUTPUT_TRUE@	$(top_builddir)/poppler/libpoppler-cairo.la \
-+@BUILD_CAIRO_OUTPUT_TRUE@	-lpoppler-glib \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(LDADD)				\
- @BUILD_CAIRO_OUTPUT_TRUE@	$(PDFTOCAIRO_LIBS)			\
- @BUILD_CAIRO_OUTPUT_TRUE@	$(PTHREAD_LIBS)
+ pdftocairo_LDADD = \
+-	$(top_builddir)/poppler/libpoppler-cairo.la	\
++	-lpoppler-glib	\
+ 	$(LDADD)					\
+ 	$(PDFTOCAIRO_LIBS)				\
+ 	$(PTHREAD_LIBS)

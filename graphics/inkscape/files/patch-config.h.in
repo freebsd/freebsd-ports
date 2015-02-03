@@ -1,0 +1,12 @@
+--- config.h.in.orig	2015-01-29 20:28:40.068026139 +0100
++++ config.h.in	2015-01-29 20:31:07.000000000 +0100
+@@ -246,6 +246,9 @@
+ /* Use even newer color space API from Poppler >= 0.26.0 */
+ #undef POPPLER_EVEN_NEWER_COLOR_SPACE_API
+ 
++/* Use even newer new color space API from Poppler >= 0.29.0 */
++#undef POPPLER_EVEN_NEWER_NEW_COLOR_SPACE_API
++
+ /* Use color space API from Poppler >= 0.12.2 */
+ #undef POPPLER_NEW_COLOR_SPACE_API
+ 
