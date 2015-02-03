@@ -1,24 +1,21 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pcbsd-utils
+PORTNAME=	warden
 PORTVERSION=	1422974289
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	PC-BSD Command-Line Utilities
+COMMENT=	Warden jail management system utility
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
-		eject:${PORTSDIR}/sysutils/eject \
-		unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
+		jailme:${PORTSDIR}/sysutils/jailme
 
-WRKSRC=		${WRKDIR}/pcbsd-utils
-CONFLICTS?=	pbi-manager-[0-9]*
-USE_QT5=	core network buildtools qmake
+WRKSRC=		${WRKDIR}/warden
 USES=		pkgconfig tar:xz
 NO_BUILD=	yes
 
