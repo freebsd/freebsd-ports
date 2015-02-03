@@ -8,11 +8,13 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alfred@freebsd.org
-COMMENT=	Json in models for django
+COMMENT=	JSONField for Django models
 
-LICENSE=	ISCL
+LICENSE=	BSD2CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+RUN_DEPENDS:=  ${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
 
 .include <bsd.port.mk>
