@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sockd
 INSTALL_TARGET=	install-strip
@@ -39,13 +39,13 @@ CONFIGURE_ARGS+=	--with-libc=libc.so.7
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${STAGEDIR}${PREFIX}/etc/socks.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${STAGEDIR}${PREFIX}/etc/sockd.conf.sample
-	${INSTALL} -d -m 555 ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/sockd-basic.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/sockd-chaining.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/socks-simple-withoutnameserver.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/socks-simple.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL} -d -m 555 ${STAGEDIR}${DOCSDIR}
-	${INSTALL} -d -m 555 ${STAGEDIR}${DOCSDIR}/contrib
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 	${INSTALL_DATA} ${WRKSRC}/doc/README* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4*.protocol ${STAGEDIR}${DOCSDIR}
