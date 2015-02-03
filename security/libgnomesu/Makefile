@@ -14,7 +14,8 @@ COMMENT=	Library and frontend for running commands as root
 USES=		gmake gettext-tools libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui
-CONFIGURE_ARGS+=--disable-install-pam
+CONFIGURE_ARGS+=--disable-install-pam \
+		--disable-setuid-error
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
