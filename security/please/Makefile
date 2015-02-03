@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	security
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	1d65ba2
+GH_COMMIT=	116db2d
 
 INSTALL_TARGET=	install install-pam
 PLIST_FILES=	"@(,,6555) bin/please" etc/pam.d/please.sample man/man1/please.1.gz
