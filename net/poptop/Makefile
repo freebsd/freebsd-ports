@@ -43,5 +43,6 @@ post-patch:
 post-install:
 	(cd ${WRKSRC}/samples && ${INSTALL_DATA} pptpd.conf \
 		${STAGEDIR}${PREFIX}/etc/pptpd.conf.sample)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pptpd/pptpd-logwtmp.so
 
 .include <bsd.port.mk>
