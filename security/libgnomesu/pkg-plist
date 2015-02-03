@@ -5,8 +5,8 @@ lib/libgnomesu.so
 lib/libgnomesu.so.0
 lib/libgnomesu.so.0.2.0
 libdata/pkgconfig/libgnomesu-1.0.pc
-libexec/gnomesu-backend
-libexec/gnomesu-pam-backend
+@(,,6111) libexec/gnomesu-backend
+@(,,6111) libexec/gnomesu-pam-backend
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/libgnomesu.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnomesu-pam.sample
@@ -49,7 +49,3 @@ share/locale/sv/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/tr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomesu-1.0.mo
-@dirrm include/libgnomesu-1.0/libgnomesu
-@dirrm include/libgnomesu-1.0
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
