@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=--enable-release="yes" \
 		--with-pcsc-libs=${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
 USE_LDCONFIG=	yes
@@ -60,8 +61,6 @@ post-install:
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/apidoc
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-	@${FIND} -P -d ${STAGEDIR}${DOCSDIR} -type d 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dirrm |p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
