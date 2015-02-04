@@ -35,11 +35,6 @@ do-install:
 	    ${FIND} share/mk -type f -o -type l				\
 	    	| ${SORT}						\
 	    	>${WRKDIR}/PLIST.share-mk
-	cd ${STAGEDIR}${PREFIX} ;					\
-	    ${FIND} share/mk -type d					\
-	    	| ${SORT} -r						\
-		| ${SED} -e 's/^/@dirrmtry /; ${PLIST_REINPLACE_DIRRMTRY}' \
-		>>${WRKDIR}/PLIST.share-mk
 	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.share-mk"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script
