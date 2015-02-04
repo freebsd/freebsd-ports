@@ -80,8 +80,6 @@ post-install:
 .endif
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${CONFIGURE_TARGET} ! -type d | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${CONFIGURE_TARGET} -type d | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	${RM} ${STAGEDIR}${PREFIX}/include/ansidecl.h
 	${REINPLACE_CMD} '/#include "ansidecl.h"/d' ${STAGEDIR}${PREFIX}/include/bfd.h
 .else
