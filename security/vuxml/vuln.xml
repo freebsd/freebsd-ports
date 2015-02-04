@@ -57,6 +57,62 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24ce5597-acab-11e4-a847-206a8a720317">
+    <topic>krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.13_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-112</name>
+	<range><lt>1.12.2_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-111</name>
+	<range><lt>1.11.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt">
+	  <p>CVE-2014-5352: In the MIT krb5 libgssapi_krb5 library, after
+	     gss_process_context_token() is used to process a valid context
+	     deletion token, the caller is left with a security context handle
+	     containing a dangling pointer.  Further uses of this handle will
+	     result in use-after-free and double-free memory access violations.
+	     libgssrpc server applications such as kadmind are vulnerable as
+	     they can be instructed to call gss_process_context_token().</p>
+	  <p>CVE-2014-9421: If the MIT krb5 kadmind daemon receives invalid XDR
+	     data from an authenticated user, it may perform use-after-free and
+	     double-free memory access violations while cleaning up the partial
+	     deserialization results.  Other libgssrpc server applications may
+	     also be vulnerable if they contain insufficiently defensive XDR
+	     functions.</p>
+	  <p>CVE-2014-9422: The MIT krb5 kadmind daemon incorrectly accepts
+	     authentications to two-component server principals whose first
+	     component is a left substring of "kadmin" or whose realm is a left
+	     prefix of the default realm.</p>
+	  <p>CVE-2014-9423: libgssrpc applications including kadmind output
+	     four or eight bytes of uninitialized memory to the network as
+	     part of an unused "handle" field in replies to clients.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-5352</cvename>
+      <cvename>CVE-2014-9421</cvename>
+      <cvename>CVE-2014-9422</cvename>
+      <cvename>CVE-2014-9423</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-02-03</discovery>
+      <entry>2015-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e543c6f8-abf2-11e4-8ac7-d050992ecde8">
     <topic>unzip -- out of boundary access issues in test_compr_eb</topic>
     <affects>
