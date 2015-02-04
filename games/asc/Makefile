@@ -28,7 +28,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 OPTIONS_DEFINE=	MUSIC XVID
 MUSIC_DESC=	Install extra music files
 
-USES=		gmake libtool lua:51 perl5 pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake libtool lua:51 perl5 pkgconfig tar:bzip2
 USE_SDL=	image mixer sound sdl
 USE_WX=		3.0
 WX_UNICODE=	yes
