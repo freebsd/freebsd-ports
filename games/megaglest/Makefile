@@ -23,7 +23,7 @@ RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSD
 
 SUB_FILES=	pkg-message
 
-USES=		cmake display:build dos2unix lua openal:al,alut pkgconfig tar:xz
+USES=		cmake compiler:c++11-lib display:build dos2unix lua openal:al,alut pkgconfig tar:xz
 USE_GL=		glew gl glu
 USE_SDL=	yes
 USE_WX=		3.0
