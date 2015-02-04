@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pen
-PORTVERSION=	0.25.1
+PORTVERSION=	0.26.1
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Load balancer for simple TCP based protocols
+MAINTAINER=	danilo@FreeBSD.org
+COMMENT=	Load balancer for UDP and TCP based protocols
 
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
@@ -25,7 +25,7 @@ PLIST_FILES=	bin/mergelogs bin/pen bin/penctl bin/penlog \
 		man/man1/pen.1.gz man/man1/penctl.1.gz \
 		man/man1/penlog.1.gz man/man1/penlogd.1.gz
 
-OPTIONS_DEFINE=	DOCS KQUEUE
+OPTIONS_DEFINE=	DEBUG DOCS KQUEUE
 OPTIONS_DEFAULT=KQUEUE
 KQUEUE_DESC=	Use kqueue backend
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
 
 KQUEUE_CONFIGURE_ON=	--with-kqueue
 KQUEUE_CONFIGURE_OFF=	--with-poll
+DEBUG_CONFIGURE_ENABLE=	debugging
 
 post-patch:
 	@${REINPLACE_CMD} 's/-pg//' ${WRKSRC}/configure
