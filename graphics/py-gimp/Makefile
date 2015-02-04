@@ -12,7 +12,7 @@ COMMENT=	GIMP python plugin
 
 GIMP_SLAVE=	pygimp
 
-USES=		python
+USES=		python:2
 USE_GNOME=	pygtk2
 
 CONFIGURE_ARGS=	--enable-python
