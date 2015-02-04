@@ -3,12 +3,14 @@
 
 PORTNAME=	kstart
 DISTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://archives.eyrie.org/software/kerberos/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Automated Kerberos ticket cache and keytab management utilities
 
+USE_RC_SUBR=	${PORTNAME}
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/k5start bin/krenew \
 		man/man1/k5start.1.gz man/man1/krenew.1.gz
