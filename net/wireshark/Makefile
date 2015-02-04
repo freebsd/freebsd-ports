@@ -1,7 +1,7 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
 
-PORTNAME?=	wireshark
+PORTNAME=	wireshark
 PORTVERSION=	1.12.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -12,10 +12,11 @@ MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		http://wireshark.zing.org/download/src/
-DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
+
+LICENSE=	GPLv2
 
 DATADIR_NAME=	wireshark
 
@@ -24,6 +25,8 @@ USES=		alias gettext gmake iconv libtool perl5 pkgconfig \
 		python:build tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
+CONFLICTS?=	wireshark-qt5-[0-9]*
+
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE} \
 			--with-qt=no
@@ -51,7 +54,11 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .if !defined(LITE)
 OPTIONS_DEFINE=		RTP SNMP ADNS PCRE IPV6 GEOIP LUA CARES GSSAPI X11 \
 			GNUTLS GCRYPT THREADS
-OPTIONS_DEFAULT=	SNMP ADNS PCRE IPV6 GEOIP GSSAPI X11
+
+OPTIONS_RADIO=		GUI
+OPTIONS_RADIO_GUI=	GTK3 QT5
+
+OPTIONS_DEFAULT?=	SNMP ADNS PCRE IPV6 GEOIP GSSAPI X11 GTK3
 
 RTP_DESC=		Enable support for playing back RTP streams
 ADNS_DESC=		Enable asynchronous DNS lookup support
@@ -63,18 +70,31 @@ ADNS_DESC=		Enable asynchronous DNS lookup support
 USE_XORG=		x11
 .endif
 
-.include <bsd.port.options.mk>
-
 .if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
-USE_GNOME+=	gtk30
-CONFIGURE_ARGS+=--with-gtk3=yes
 .else
 PLIST_SUB+=	WIRESHARK="@comment wireshark not built" \
 		WIRESHARK_MAN="@comment wireshark not built "
 USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--enable-wireshark=no \
 			--disable-gtktest
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=		gtk30
+CONFIGURE_ARGS+=	--with-gtk2=no \
+			--with-gtk3=yes \
+			--with-qt=no
+.endif
+
+.if ${PORT_OPTIONS:MQT5}
+CONFIGURE_ARGS+=	--with-gtk2=no \
+			--with-gtk3=no \
+			--with-qt=yes
+USE_QT5+=		core widgets printsupport buildtools_build
+PKGNAMESUFFIX+=		-qt5
+MAKE_ENV+=		PATH="${PATH}:${LOCALBASE}/lib/qt5/bin"
+CONFIGURE_ENV+=		PATH="${PATH}:${LOCALBASE}/lib/qt5/bin"
 .endif
 
 GNU_CONFIGURE=	yes
@@ -165,12 +185,15 @@ PKG_MESSAGE=	${FILESDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g ; \
-	    	s|-DGDK_PIXBUF_DISABLE_DEPRECATED||g ; \
+		s|-DGDK_PIXBUF_DISABLE_DEPRECATED||g ; \
 		s|-Wl,--as-needed|| ' \
 		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png \
-	    ${STAGEDIR}${DATADIR}
+		${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MQT5}
+		${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-qt ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
