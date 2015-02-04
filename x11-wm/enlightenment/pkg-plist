@@ -225,7 +225,9 @@ lib/enlightenment/modules/conf_window_remembers/e-module-conf_window_remembers.e
 lib/enlightenment/modules/conf_window_remembers/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/conf_window_remembers/module.desktop
 lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
+@mode 4555
 lib/enlightenment/modules/cpufreq/%%ENLIGHTENMENT_ARCH%%/freqset
+@mode
 lib/enlightenment/modules/cpufreq/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/cpufreq/module.desktop
 lib/enlightenment/modules/everything/e-module-everything-start.edj

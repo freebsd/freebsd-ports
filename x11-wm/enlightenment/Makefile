@@ -3,6 +3,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.19.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graph
 DIST_SUBDIR=	enlightenment
 USE_AUTOTOOLS=	autoconf aclocal
 GNU_CONFIGURE=	yes
-USES=		alias desktop-file-utils execinfo libtool pathfix iconv gmake pkgconfig tar:xz
+USES=		alias desktop-file-utils execinfo libtool pathfix iconv gmake \
+		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
