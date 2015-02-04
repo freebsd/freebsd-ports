@@ -47,8 +47,6 @@ CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
-
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
 	@/usr/bin/touch ${WRKSRC}/scripts/build/checkHtmlFileDates
