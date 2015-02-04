@@ -1,0 +1,60 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: kstart
+# REQUIRE: DAEMON LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable kstart:
+# kstart_enable (bool):		Set to YES to enable kstart
+# 				Default: NO
+# kstart_flags (str):		Extra flags passed to kstart
+#				Default: -LUFK 120
+# kstart_keytab (str):		Default keytab file to use
+#				Default: /etc/krb5.keytab
+#
+# To enable multi-instance support, use:
+# kstart_instances="name1 name2"
+# kstart_name1_keytab="/path/to/keytab"
+
+
+. /etc/rc.subr
+
+name="kstart"
+rcvar=kstart_enable
+
+command="%%PREFIX%%/bin/k5start"
+pidfile="/var/run/kstart.pid"
+
+load_rc_config $name
+
+[ -z "$kstart_enable" ]		&& kstart_enable="NO"
+[ -z "$kstart_keytab" ]		&& kstart_keytab="/etc/krb5.keytab"
+[ -z "$kstart_flags" ]		&& kstart_flags="-LUFK 120"
+
+if [ -n "$kstart_instances" ]; then
+  _1=$1
+  if [ $# -gt 1 ]; then shift; kstart_instances=$*; fi
+  kstart_keytab=""
+  kstart_flags=""
+  rc=0
+  for i in ${kstart_instances}; do
+	eval _keytab=\$kstart_${i}_keytab
+	if [ -z "$_keytab" ]; then
+	    _keytab="/etc/krb5.keytab"
+	fi
+	eval _flags=\$kstart_${i}_flags
+	if [ -z "$_flags" ]; then
+	    _flags="-LUFK 120"
+	fi
+	eval pidfile="/var/run/kstart_${i}.pid"
+	command_args="-bf $_keytab $_flags -p $pidfile"
+        run_rc_command "$_1"
+        if [ $? -ne 0 ]; then rc=1; fi
+	unset _pidcmd _rc_restart_done
+   done
+   exit $rc
+else
+	command_args="-bf $kstart_keytab $kstart_flags -p $pidfile"
+	run_rc_command "$1"
+fi
