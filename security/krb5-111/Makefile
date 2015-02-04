@@ -3,12 +3,13 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.11.5
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-111
 DISTNAME=		krb5-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
+PATCHFILES=		2015-001-patch-r111.txt
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
