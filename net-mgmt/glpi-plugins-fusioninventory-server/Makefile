@@ -1,62 +1,35 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/668/
+MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/1665/
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
-DISTNAME=	fusioninventory-for-glpi-metapackage_${GLPI_VER}+${FUNV_VER}
+DISTNAME=	fusioninventory-for-glpi_${GLPI_VER}+${FUNV_VER}
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices
 
-RUN_DEPENDS=	glpi>=0.80:${PORTSDIR}/www/glpi
+LICENSE=	AGPLv3
 
-USE_PHP=	simplexml wddx
+RUN_DEPENDS=	glpi>=0.84:${PORTSDIR}/www/glpi
 
-GLPI_VER=	0.80
-FUNV_VER=	1.5
+USE_PHP=	fileinfo simplexml wddx
+USES=		gettext
+GLPI_VER=	0.84
+FUNV_VER=	3.5
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
 GLPIPLUGINDIR?=	www/glpi/plugins
 
-OPTIONS_DEFINE=	INVENTORY SNMP
-
-INVENTORY_DESC=	Additional features
-SNMP_DESC=	SNMP support
-
-OPTIONS_DEFAULT=INVENTORY
-
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MINVENTORY}
-PLIST_SUB+=	INVENTORY=""
-.else
-PLIST_SUB+=	INVENTORY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-PLIST_SUB+=	SNMP=""
-.else
-PLIST_SUB+=	SNMP="@comment "
-.endif
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
 	@${CP} -R ${WRKSRC}/fusioninventory ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
-
-.if ${PORT_OPTIONS:MINVENTORY}
-	@${CP} -R ${WRKSRC}/fusinvinventory ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-	@${CP} -R ${WRKSRC}/fusinvsnmp ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
-.endif
 
 .include <bsd.port.post.mk>
