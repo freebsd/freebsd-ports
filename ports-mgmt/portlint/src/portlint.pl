@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.344 2014/10/27 16:00:59 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.350 2015/02/04 17:07:25 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 1;
+my $micro = 2;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -289,12 +289,12 @@ if ($committer) {
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
 		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) {
-			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.svn/);
+			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.svn/ || $fullname =~ /^\.git/);
 		} elsif (/^\./) {
 			&perror("WARN", $fullname, -1, "dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
 					"consider importing it as \"dot$_\".") unless
-					(-d && $_ eq '.svn');
+					(-d && ($_ eq '.svn' || $_ eq '.git'));
 		} elsif (/[^-.a-zA-Z0-9_\+]/) {
 			&perror("WARN", $fullname, -1, "only use characters ".
 					"[-_.a-zA-Z0-9+] for patch or script names.");
@@ -307,7 +307,7 @@ if ($committer) {
 		} elsif (/README.html/) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
 					"README.html files before committing the port.");
-		} elsif ($_ eq '.svn' && -d) {
+		} elsif (($_ eq '.svn' || $_ eq '.git') && -d) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
 				"Subversion files before committing the port.");
 
@@ -573,9 +573,12 @@ sub checkplist {
 				"be installed.");
 		}
 
-		if (m'lib/perl5/site_perl/%%PERL_VER%%') {
+		if (m'lib/perl5/site_perl/mach/%%PERL_VER%%') {
+			&perror("WARN", $file, $., "use \%\%SITE_ARCH\%\% ".
+				"instead of lib/perl5/site_perl/mach/\%\%PERL_VER\%\%");
+		} elsif (m'lib/perl5/site_perl') {
 			&perror("WARN", $file, $., "use \%\%SITE_PERL\%\% ".
-					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
+					"instead of lib/perl5/site_perl.");
 		}
 
 		if (m'([\w\d]+-portbld-freebsd\d+\.\d+)') {
@@ -1813,6 +1816,7 @@ xargs xmkmf
 				&& $curline !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
+				&& $curline !~ /\$\{MAKE_CMD\}.*\binstall\b/m
 				&& $curline !~ /\-\-$i/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
 					&perror("WARN", $file, $lineno, "possible direct use of ".
@@ -1956,12 +1960,32 @@ xargs xmkmf
 	}
 
 	#
-	# whole file: ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+	# whole file: ${LOCALBASE}/lib/perl5/site_perl
 	#
-	if ($j =~ m'\${(?:LOCALBASE|PREFIX)}/lib/perl5/site_perl/\${PERL_VER}') {
+	if ($j =~ m'\${(?:LOCALBASE|PREFIX)}/lib/perl5/site_perl') {
 		my $lineno = &linenumber($`);
-		&perror("WARN", $file, $lineno, "possible use of \"\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}\" ".
-				"found. use \"\${SITE_PERL}\" instead.");
+		if ($1 !~ /PREFIX/) {
+			&perror("WARN", $file, $lineno, "possible use of \"\${LOCALBASE}/lib/perl5/site_perl\" ".
+					"found. use \"\${SITE_PERL}\" instead.");
+		} else {
+			&perror("WARN", $file, $lineno, "possible use of \"\${PREFIX}/lib/perl5/site_perl\" ".
+				"found.  use \"\${PREFIX}/\${SITE_PERL_REL}\" instead.");
+		}
+	}
+
+	#
+	# whole file: check for misuse of STAGE with SITE_PERL and SITE_ARCH
+	#
+	if ($j =~ m'\${STAGEDIR}\${SITE_PERL}') {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "\${STAGEDIR}\${SITE_PERL} should be ".
+			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_PERL_REL}.");
+	}
+
+	if ($j =~ m'\${STAGEDIR}\${SITE_ARCH}') {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "\${STAGEDIR}\${SITE_ARCH} should be ".
+			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_BASE_REL}.");
 	}
 
 	#
