@@ -1,2 +1,4 @@
 SHA256 (krb5-1.13-signed.tar) = dc8f79ae9ab777d0f815e84ed02ac4ccfe3d5826eb4947a195dfce9fd95a9582
 SIZE (krb5-1.13-signed.tar) = 12083200
+SHA256 (2015-001-patch-r113.txt) = c41cb0dd88abb53543697a6e91832d6e0639a99a811c3092904eff03fa4b5ec6
+SIZE (2015-001-patch-r113.txt) = 12569
