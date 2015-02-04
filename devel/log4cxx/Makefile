@@ -39,9 +39,7 @@ post-configure:
 post-install:
 .if ${PORT_OPTIONS:MDOXYGEN}
 	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||} -type d | ${SORT} -r | \
-	${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
