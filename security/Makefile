@@ -257,6 +257,7 @@
     SUBDIR += krb5-112
     SUBDIR += krb5-appl
     SUBDIR += kripp
+    SUBDIR += kstart
     SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack

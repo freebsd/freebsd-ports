@@ -1,0 +1,10 @@
+k5start is a modified version of kinit that can use keytabs to authenticate,
+can run as a daemon and wake up periodically to refresh a ticket, and can run
+single commands with their own authentication credentials and refresh those
+credentials until the command exits.
+
+It is commonly used to maintain Kerberos tickets for services that need to
+authenticate to minimize the amount of Kerberos-related logic that must be
+in the service itself.
+
+WWW: http://www.eyrie.org/~eagle/software/kstart/
