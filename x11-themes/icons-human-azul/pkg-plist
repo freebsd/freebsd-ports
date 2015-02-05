@@ -420,28 +420,3 @@ share/icons/HumanAzul/cursors/hand1
 share/icons/HumanAzul/cursors/sb_up_arrow
 share/icons/HumanAzul/cursors/left_ptr
 share/icons/HumanAzul/index.theme
-@unexec rm %D/share/icons/HumanAzul/icon-theme.cache 2>/dev/null || true
-@dirrm share/icons/HumanAzul/cursors
-@dirrm share/icons/HumanAzul/48x48/status
-@dirrm share/icons/HumanAzul/48x48/places
-@dirrm share/icons/HumanAzul/48x48/mimetypes
-@dirrm share/icons/HumanAzul/48x48/filesystems
-@dirrm share/icons/HumanAzul/48x48/devices
-@dirrm share/icons/HumanAzul/48x48/apps
-@dirrm share/icons/HumanAzul/48x48
-@dirrm share/icons/HumanAzul/32x32/status
-@dirrm share/icons/HumanAzul/32x32/places
-@dirrm share/icons/HumanAzul/32x32/devices
-@dirrm share/icons/HumanAzul/32x32
-@dirrm share/icons/HumanAzul/24x24/status
-@dirrm share/icons/HumanAzul/24x24/places
-@dirrm share/icons/HumanAzul/24x24/devices
-@dirrm share/icons/HumanAzul/24x24/apps
-@dirrm share/icons/HumanAzul/24x24
-@dirrm share/icons/HumanAzul/16x16/status
-@dirrm share/icons/HumanAzul/16x16/places
-@dirrm share/icons/HumanAzul/16x16/filesystems
-@dirrm share/icons/HumanAzul/16x16/devices
-@dirrm share/icons/HumanAzul/16x16
-@dirrm share/icons/HumanAzul
-@dirrmtry share/icons
