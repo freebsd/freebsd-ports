@@ -57,6 +57,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b40bf2c-ad83-11e4-a2b2-0026551a22dc">
+    <topic>PostgreSQL -- multiple buffer overflows and memory issues</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.19</lt></range>
+	<range><ge>9.1.0</ge><lt>9.1.15</lt></range>
+	<range><ge>9.2.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.6</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1569/">
+	  <p>This update fixes multiple security issues reported in PostgreSQL
+	    over the past few months.  All of these issues require prior
+	    authentication, and some require additional conditions, and as such
+	    are not considered generally urgent.  However, users should examine
+	    the list of security holes patched below in case they are particularly
+	    vulnerable.</p>
+	  <ol>
+	    <li>CVE-2015-0241 Buffer overruns in "to_char" functions.</li>
+	    <li>CVE-2015-0242 Buffer overrun in replacement printf family of
+		functions.</li>
+	    <li>CVE-2015-0243 Memory errors in functions in the pgcrypto extension.</li>
+	    <li>CVE-2015-0244 An error in extended protocol message reading.</li>
+	    <li>CVE-2014-8161 Constraint violation errors can cause display of values in columns
+		which the user would not normally have rights to see.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0241</cvename>
+      <cvename>CVE-2015-0242</cvename>
+      <cvename>CVE-2015-0243</cvename>
+      <cvename>CVE-2015-0244</cvename>
+      <cvename>CVE-2014-8161</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-05</discovery>
+      <entry>2015-02-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24ce5597-acab-11e4-a847-206a8a720317">
     <topic>krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092</topic>
     <affects>
