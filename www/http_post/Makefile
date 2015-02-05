@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	http_post
-PORTVERSION=	1.0.20110118
+PORTVERSION=	1.0.20140814
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/http_post/
-DISTNAME=	${PORTNAME}_18jan2011
+DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
-COMMENT=	Do a POST operaion and Dump http-contents to stdout
+COMMENT=	Do a POST operation and dump http-contents to stdout
 
 WRKSRC=		${WRKDIR}/http_post
 USES=		uidfix
