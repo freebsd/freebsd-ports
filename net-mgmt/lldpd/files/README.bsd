@@ -1,0 +1,3 @@
+A normal user has to be member of the _lldpd group in order to run lldpcli.
+
+-- Mathieu Simon <freebsd@simweb.ch>, Tue, 10 Dec 2014 13:40:00 +01:00

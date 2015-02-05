@@ -95,6 +95,7 @@
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += libsmi
+    SUBDIR += lldpd
     SUBDIR += mbrowse
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
