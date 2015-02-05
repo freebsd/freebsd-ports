@@ -46,5 +46,5 @@ man/man8/puppet.8.gz
 %%RUBY_SITELIBDIR%%/puppetx.rb
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
-@(puppet:puppet) www/puppet/config.ru
+@(puppet,puppet,) www/puppet/config.ru
 @dir(puppet,puppet,) /var/puppet
