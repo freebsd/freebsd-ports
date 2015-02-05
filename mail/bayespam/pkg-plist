@@ -9,4 +9,3 @@ bin/bayestest.pl
 %%PORTDOCS%%share/doc/bayespam/README
 %%PORTDOCS%%share/doc/bayespam/TODO
 %%PORTDOCS%%share/doc/bayespam/qmail.sample
-%%PORTDOCS%%@dirrm share/doc/bayespam
