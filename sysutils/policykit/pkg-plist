@@ -65,21 +65,9 @@ share/PolicyKit/config.dtd
 share/PolicyKit/policy/org.freedesktop.policykit.policy
 share/dbus-1/interfaces/org.freedesktop.PolicyKit.AuthenticationAgent.xml
 share/dbus-1/system-services/org.freedesktop.PolicyKit.service
-@dirrmtry share/PolicyKit/policy
-@dirrmtry share/PolicyKit
-@dirrm include/PolicyKit/polkit
-@dirrm include/PolicyKit/polkit-grant
-@dirrm include/PolicyKit/polkit-dbus
-@dirrm include/PolicyKit
-@dirrmtry etc/profile.d
-@dirrm etc/PolicyKit
-@unexec rm -rf /var/run/PolicyKit 2>/dev/null || true
-@unexec rmdir /var/lib/PolicyKit 2>/dev/null || true
-@unexec rmdir /var/lib/PolicyKit-public 2>/dev/null || true
-@exec mkdir -p /var/lib/misc/
-@exec touch /var/lib/misc/PolicyKit.reload
-@unexec rm -f /var/lib/misc/PolicyKit.reload 2>/dev/null || true
-@unexec rmdir /var/lib/misc 2>/dev/null || true
-@cwd /
-@dirrmtry var/lib
-@cwd
+@rmtry /var/lib/misc/PolicyKit.reload
+@dir /var/run/PolicyKit
+@dir /var/lib/PolicyKit
+@dir /var/lib/PolicyKit-public
+@dir /var/lib/misc
+@dir /var/lib
