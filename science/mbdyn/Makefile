@@ -17,6 +17,7 @@ LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack \
 
 GNU_CONFIGURE=	yes
 USES=		fortran gmake libtool
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=''
@@ -28,28 +29,26 @@ METIS_DESC=	Enable metis-support
 CHACO_DESC=	Enable chaco-support
 GINAC_DESC=	Enable GiNaC-support (not implemented yet)
 TCL_DESC=	Enable tcl-support (not implemented yet)
+OPTIONS_RADIO=	BLAS
+OPTIONS_RADIO_BLAS=	REFERENCE GOTOBLAS ATLAS
+OPTIONS_DEFAULT=	REFERENCE
+
+REFERENCE_DESC=	Blas / Lapack
+REFERENCE_USES=	blaslapack:netlib
+REFERENCE_CONFIGURE_ON=	--with-blas=blas
+
+ATLAS_DESC=	ATLAS
+ATLAS_USES=	blaslapack:atlas
+ATLAS_CONFIGURE_ON=	--with-blas=atlas
+
+GOTOBLAS_DESC=	GotoBLAS2
+GOTOBLAS_USES=	blaslapack:gotoblas
+GOTOBLAS_CONFIGURE_ON=	--with-blas=goto --with-goto=goto2
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
-.endif
-
-WITH_BLAS?=	reference
-
-. if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
-CONFIGURE_ARGS+=	--with-blas=blas
-LAPACK_LIBS=	-llapack
-.elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto.so:${PORTSDIR}/math/gotoblas
-CONFIGURE_ARGS+=	--with-blas=goto --with-goto=goto2
-LAPACK_LIBS=	-lgoto2
-.elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=	--with-blas=atlas
-LAPACK_LIBS=	-lalapack
 .endif
 
 .if ${PORT_OPTIONS:MMPI}
@@ -80,7 +79,7 @@ CONFIGURE_ARGS+=	--with-chaco=no
 
 .if ${PORT_OPTIONS:MGINAC}
 LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4 \
-		ginac:${PORTSDIR}/math/GiNaC
+		libginac.so:${PORTSDIR}/math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -96,8 +95,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 CONFIGURE_ARGS+=	--with-tcl=no
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e '/try_lapack_LIBS=/s/-llapack/${LAPACK_LIBS}/' \
+pre-configure:
+	${REINPLACE_CMD} -e '/try_lapack_LIBS=/s/-llapack/${LAPACKLIB}/' \
+		-e 's/ -lxerbla//; s/-lcholmod/-lcholmod ${BLASLIB} ${LAPACKLIB} -lsuitesparseconfig/'	\
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
