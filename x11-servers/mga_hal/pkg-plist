@@ -1,6 +1,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 lib/modules/drivers/mga_hal_drv.so
 lib/modules/drivers/mga_drv.so
-@dirrmtry lib/modules/drivers
-@dirrmtry lib/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
