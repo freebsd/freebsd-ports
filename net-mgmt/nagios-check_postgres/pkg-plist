@@ -57,6 +57,3 @@ bin/check_postgres.pl
 %%NAGIOS%%libexec/nagios/check_postgres_wal_files
 man/man1/check_postgres.1p.gz
 %%CACTI%%share/cacti/scripts/check_postgres_dbstats
-%%CACTI%%@dirrmtry share/cacti/scripts
-%%CACTI%%@dirrmtry share/cacti
-%%NAGIOS%%@dirrmtry libexec/nagios

@@ -18,5 +18,3 @@ libexec/nagios/imap_ssl_cert_epn
 %%PORTDOCS%%%%DOCSDIR%%/check_smtp_send.pod
 %%PORTDOCS%%%%DOCSDIR%%/imap_ssl_cert.html
 %%PORTDOCS%%%%DOCSDIR%%/imap_ssl_cert.pod
-%%PORTDOCS%%@dir %%DOCSDIR%%
-@dir libexec/nagios
