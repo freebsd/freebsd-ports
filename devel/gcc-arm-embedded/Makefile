@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	4.8.20140805
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q3-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
