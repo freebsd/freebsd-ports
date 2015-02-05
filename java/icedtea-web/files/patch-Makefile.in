@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-04-02 06:21:18.672343000 -0400
-+++ Makefile.in	2014-04-09 20:12:29.000000000 -0400
+--- Makefile.in.orig	2014-08-15 03:08:34.349127000 -0400
++++ Makefile.in	2014-10-21 18:14:35.000000000 -0400
 @@ -309,9 +309,9 @@
  #end of exported autoconf copies
  
@@ -12,7 +12,7 @@
  
  # the launcher needs to know $(bindir) and $(datadir) which can be different at
  # make-time from configure-time
-@@ -851,34 +851,36 @@
+@@ -852,34 +852,36 @@
  @ENABLE_PLUGIN_TRUE@	${INSTALL_DATA} $(abs_top_builddir)/liveconnect/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
  	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
  	${INSTALL_DATA} $(NETX_SRCDIR)/javaws_splash.png $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/javaws_splash.png
@@ -58,7 +58,7 @@
  	rm -f $(DESTDIR)$(bindir)/$(javaws)
  	rm -f $(DESTDIR)$(bindir)/$(itweb_settings)
  	rm -f $(DESTDIR)$(bindir)/$(policyeditor)
-@@ -1041,10 +1043,10 @@
+@@ -1042,10 +1044,10 @@
  	find $(NETX_SRCDIR) -name '*.java' | sort > $@ ; \
  	for src in $(NETX_EXCLUDE_SRCS) ; \
  	do \
@@ -72,7 +72,7 @@
  
  stamps/netx-html-gen.stamp:
  	(cd $$NETX_SRCDIR/..; \
-@@ -1058,7 +1060,7 @@
+@@ -1059,7 +1061,7 @@
  	mkdir -p stamps
  	touch $@
  
@@ -81,7 +81,7 @@
  	mkdir -p $(NETX_DIR)
  	$(BOOT_DIR)/bin/javac $(IT_JAVACFLAGS) \
  	    -d $(NETX_DIR) \
-@@ -1069,7 +1071,8 @@
+@@ -1070,7 +1072,8 @@
  	(cd $(NETX_RESOURCE_DIR); \
  	 for files in $$(find . -type f); \
  	 do \
@@ -91,7 +91,7 @@
  	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
  	 done)
  	cp -a $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
-@@ -1099,7 +1102,7 @@
+@@ -1100,7 +1103,7 @@
  	rm -f $(NETX_RESOURCE_DIR)/{NEWS,AUTHORS,COPYING,ChangeLog}.html
  
  clean-desktop-files:
@@ -100,7 +100,7 @@
  	rm -f itweb-settings.desktop
  
  launcher.build/$(javaws): launcher/launchers.in
-@@ -1132,7 +1135,7 @@
+@@ -1133,7 +1136,7 @@
  	fi
  
  javaws.desktop: javaws.desktop.in
@@ -109,7 +109,7 @@
  
  itweb-settings.desktop: $(srcdir)/itweb-settings.desktop.in
  	sed "s#PATH_TO_ITWEB_SETTINGS#$(bindir)/$(itweb_settings)#" \
-@@ -1140,7 +1143,7 @@
+@@ -1141,7 +1144,7 @@
  
  policyeditor.desktop: $(srcdir)/policyeditor.desktop.in
  	sed 's#PATH_TO_POLICYEDITOR#$(bindir)/$(policyeditor)#' \
@@ -118,7 +118,7 @@
  
  # documentation
  
-@@ -1251,7 +1254,7 @@
+@@ -1252,7 +1255,7 @@
  	      notSrcFiles=`find . -mindepth 1 -type f \! -name "*.java" | sed "s/.\/*//"` ; \
  	      $(BOOT_DIR)/bin/javac -cp $(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect -d "$(REPRODUCERS_BUILD_DIR)/$$dir/" $$srcFiles ; \
  	      if [ -n "$$notSrcFiles" ] ; then \
@@ -127,7 +127,7 @@
  	      fi ; \
  	      cd "$(REPRODUCERS_BUILD_DIR)/$$dir/" ; \
  	      if [ -f $(META_MANIFEST) ]; \
-@@ -1306,7 +1309,7 @@
+@@ -1307,7 +1310,7 @@
  	      path="`dirname $$slashed_dir`" ; \
  	      file="`basename $$slashed_dir`.jar" ; \
  	      echo "copying $$dir.jar to $$path as $$file" ; \
@@ -136,7 +136,7 @@
  	      cp $$dir".jar" "$$path"/"$$file" ; \
  	    fi ; \
  	  done ; \
-@@ -1434,7 +1437,7 @@
+@@ -1435,7 +1438,7 @@
  	whiteListed=`cat $(REPRODUCERS_CLASS_WHITELIST)`; \
  	cd $(TEST_EXTENSIONS_TESTS_DIR) ; \
  	class_names= ; \
@@ -145,7 +145,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  INLCUDE="NO" ; \
-@@ -1624,7 +1627,7 @@
+@@ -1625,7 +1628,7 @@
  $(UNIT_CLASS_NAMES):
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names= ; \
@@ -154,7 +154,7 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  class_names="$$class_names $$class_name" ; \
-@@ -1635,10 +1638,7 @@
+@@ -1636,10 +1639,7 @@
   $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME)  $(UNIT_CLASS_NAMES)
  	filename=" " ; \
  	cd $(NETX_UNIT_TEST_SRCDIR) ; \
@@ -165,8 +165,8 @@
 +	tar -c -f - `find . -type f \! -iname "*.java"` | tar -x -f - -C $(NETX_UNIT_TEST_DIR) ; \
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names=`cat $(UNIT_CLASS_NAMES)` ; \
- 	CLASSPATH=$(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect/lib/classes.jar:$(JUNIT_JAR):$(JUNIT_RUNNER_JAR):$(TEST_EXTENSIONS_DIR):.:$(TEST_EXTENSIONS_SRCDIR):$(TAGSOUP_JAR) \
-@@ -2128,9 +2128,7 @@
+ 	CLASSPATH=$(NETX_DIR)/lib/classes.jar:$(abs_top_builddir)/liveconnect/lib/classes.jar:$(JUNIT_JAR):$(JUNIT_RUNNER_JAR):$(TEST_EXTENSIONS_DIR):.:$(TEST_EXTENSIONS_SRCDIR):$(TAGSOUP_JAR) ; \
+@@ -2131,9 +2131,7 @@
  @ENABLE_PLUGIN_TRUE@	 $(PLUGIN_TEST_SRCS) ;
  @ENABLE_PLUGIN_TRUE@	$(BOOT_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
  @ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect/*.class ;
