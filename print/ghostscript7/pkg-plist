@@ -359,12 +359,5 @@ man/man1/wftopfa.1.gz
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-EnvDLRotated.ps
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-Letter.ps
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
-%%GS_pcl3%%@dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
 %%GS_pcl3%%man/man1/gs-pcl3.1.gz
 %%GS_pcl3%%man/man1/pcl3opts.1.gz
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib
-@dirrm %%DATADIR%%/%%GS_VERSION%%/examples/cjk
-@dirrm %%DATADIR%%/%%GS_VERSION%%/examples
-@dirrm %%DATADIR%%/%%GS_VERSION%%/doc
-@dirrm %%DATADIR%%/%%GS_VERSION%%
-@dirrmtry %%DATADIR%%
