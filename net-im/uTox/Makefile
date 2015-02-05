@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.1.9.git20150114
+DISTVERSION=	0.2.l.git20150204
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -15,14 +15,15 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox \
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libv4lconvert.so:${PORTSDIR}/multimedia/libv4l \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx
+		libvpx.so:${PORTSDIR}/multimedia/libvpx \
+		libfilteraudio.so:${PORTSDIR}/audio/filter_audio
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	notsecure
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	a78a756
+GH_COMMIT=	621727d
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
