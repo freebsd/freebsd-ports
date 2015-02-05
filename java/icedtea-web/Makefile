@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -46,7 +45,9 @@ PORTDOCS=	netx
 
 CONFIGURE_ARGS=	--with-asm=no --with-ecj=no --with-emma=no --with-jacoco=no
 CONFIGURE_ARGS+=--with-jdk-home="${JAVA_HOME}"
-CONFIGURE_ENV=	ac_cv_path_BIN_BASH=${bash_CMD}
+CONFIGURE_ARGS+=--with-jre-home="${JAVA_HOME}/jre"
+CONFIGURE_ARGS+=--with-tagsoup=no
+CONFIGURE_ENV=	BIN_BASH=${bash_CMD}
 SH=		${bash_CMD}
 
 OPTIONS_DEFINE=	PLUGIN RHINO TEST
