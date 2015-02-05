@@ -173,42 +173,6 @@ Notes:
     </dates>
   </vuln>
 
-  <vuln vid="734bcd49-aae6-11e4-a0c1-c485083ca99c">
-    <topic>Adobe Flash Player -- critical vulnerability</topic>
-    <affects>
-      <package>
-	<name>linux-c6-flashplugin11</name>
-	<range><le>11.2r202.440</le></range>
-      </package>
-      <package>
-	<name>linux-f10-flashplugin11</name>
-	<range><le>11.2r202.440</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Adobe reports:</p>
-	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-02.html">
-	  <p>A critical vulnerability (CVE-2015-0313) exists in Adobe Flash
-	    Player 16.0.0.296 and earlier versions for Windows, Macintosh, and
-	    Linux. Successful exploitation could cause a crash and potentially
-	    allow an attacker to take control of the affected system.  We are
-	    aware of reports that this vulnerability is being actively exploited
-	    in the wild via drive-by-download attacks against systems running
-	    Internet Explorer and Firefox on Windows 8.1 and below. </p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-02.html</url>
-      <cvename>CVE-2015-0313</cvename>
-    </references>
-    <dates>
-      <discovery>2015-02-02</discovery>
-      <entry>2015-02-02</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="8469d41c-a960-11e4-b18e-bcaec55be5e5">
     <topic>rabbitmq -- Security issues in management plugin</topic>
     <affects>
