@@ -37,9 +37,4 @@ sbin/foomatic-replaceoldprinterids
 share/foomatic/templates/pjl_enum_choice.xml
 share/foomatic/templates/pjl_enum_option.xml
 share/foomatic/templates/pjl_num_option.xml
-@dirrm share/foomatic/templates
-@dirrmtry share/foomatic
-@dirrmtry libexec/cups/driver
-@dirrmtry libexec/cups
-@dirrmtry etc/foomatic
-@exec mkdir -p %D/etc/foomatic
+@dir etc/foomatic

@@ -991,7 +991,3 @@
 %%GS_RESDIR%%/CMap/V
 %%GS_RESDIR%%/CMap/WP-Symbol
 %%GS_RESDIR%%/CMap/cid2code.txt
-@dirrm %%GS_RESDIR%%/Font
-@dirrm %%GS_RESDIR%%/CMap
-@dirrm %%GS_RESDIR%%/CIDFont
-@dirrm %%GS_RESDIR%%
