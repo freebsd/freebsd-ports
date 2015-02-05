@@ -9,10 +9,10 @@ MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0
 PKGNAMESUFFIX=		-111
 DISTNAME=		krb5-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
-PATCHFILES=		2015-001-patch-r111.txt
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
+PATCHFILES=		2015-001-patch-r111.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
@@ -31,8 +31,8 @@ USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--without-system-verto
-CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
-MAKE_ARGS=		INSTALL="${INSTALL}"
+CONFIGURE_ENV=		NSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
+MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
 OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
@@ -112,15 +112,15 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MKRB5_PDF}
 	for i in $${pdf_dirs}; do \
-		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 .if ${PORT_OPTIONS:MKRB5_HTML}
 	for i in $${html_dirs}; do \
-		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
-	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
+	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
 	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"
