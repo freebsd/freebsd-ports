@@ -55,8 +55,5 @@ man/man8/puppetrun.8.gz
 man/man8/ralsh.8.gz
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
-@dirrmtry etc/puppet
-@cwd /
-@dirrm var/puppet
-@dirrm var/run/puppet
-@cwd %%RESETPREFIX%%
+@dir /var/puppet
+@dir /var/run/puppet
