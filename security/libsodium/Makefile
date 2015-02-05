@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
@@ -19,6 +19,13 @@ INSTALL_TARGET?=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386 && ${OSVERSION} < 1000036
+# resolve undefined reference to __stack_chk_fail_local
+LDFLAGS+=	-lssp_nonshared -Wl,--no-undefined
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/
@@ -29,4 +36,4 @@ regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
