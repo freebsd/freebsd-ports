@@ -8,6 +8,7 @@ COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql93-server
 
+LIB_DEPENDS=	libedit.so.0:${PORTSDIR}/devel/libedit
 BUILD_DIRS=	config src/include src/interfaces src/port \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
 		doc src/makefiles
@@ -16,6 +17,7 @@ INSTALL_DIRS=	${BUILD_DIRS}
 CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
-USES+=		pkgconfig readline
+USES+=		pkgconfig
+CONFIGURE_ARGS+=--with-libedit-preferred
 
 .include "${MASTERDIR}/Makefile"
