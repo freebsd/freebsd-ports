@@ -107,4 +107,3 @@ lib/compat/snmp_hostres.so.4
 lib/compat/snmp_mibII.so.4
 lib/compat/snmp_netgraph.so.4
 lib/compat/snmp_pf.so.4
-@dirrmtry lib/compat
