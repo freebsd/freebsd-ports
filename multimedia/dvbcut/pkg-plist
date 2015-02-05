@@ -11,6 +11,3 @@ share/icons/dvbcut/bookmark.svgz
 share/icons/dvbcut/chapter.png
 share/icons/dvbcut/stop.svgz
 man/man1/dvbcut.1.gz
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrm share/icons/dvbcut

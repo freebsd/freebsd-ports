@@ -3,7 +3,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.6.2.a1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
@@ -28,7 +28,7 @@ GH_COMMIT=	81c31ed
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
-USES=		qmake
+USES=		qmake desktop-file-utils shared-mime-info
 USE_QT4=	gui linguist  moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 
