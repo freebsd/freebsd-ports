@@ -11,7 +11,6 @@ MAINTAINER=	qjail@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails
 
 USES=		tar:bzip2
-NEED_ROOT=	yes
 NO_BUILD=	yes
 
 CONFLICTS_INSTALL=	qjail-1.* qjail-3.*
