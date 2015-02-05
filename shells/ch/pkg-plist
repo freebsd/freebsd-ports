@@ -28,10 +28,3 @@
 %%DATADIR%%/docs/man/man1/strjoin.1..gz
 %%DATADIR%%/docs/man/man1/strputc.1.gz
 %%DATADIR%%/docs/man/man1/strrep.1.gz
-@dirrmtry %%DATADIR%%/docs/cn
-@dirrmtry %%DATADIR%%/docs/jp
-@dirrmtry %%DATADIR%%/docs/jp
-@dirrmtry %%DATADIR%%/docs/images
-@dirrmtry %%DATADIR%%/docs/man/man1
-@dirrmtry %%DATADIR%%/docs/man
-@dirrmtry %%DATADIR%%/docs

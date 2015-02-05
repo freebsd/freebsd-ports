@@ -178,6 +178,3 @@ man/man1/pshdevel.1.gz
 %%PERL5_MAN3%%/Psh::Strategy::Perlfunc.3.gz
 %%PERL5_MAN3%%/Psh::Strategy::Perlfunc_heavy.3.gz
 %%PERL5_MAN3%%/Psh::Strategy::Perlscript.3.gz
-@dirrm %%DATADIR%%/complete
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
