@@ -80,7 +80,6 @@ man/man1/update-mime-database.1.gz
 @unexec rm -fr %D/share/mime/x-content 2>/dev/null || true
 @unexec rm -fr %D/share/mime/video 2>/dev/null || true
 @unexec rm -fr %D/share/mime/text 2>/dev/null || true
-@dirrmtry share/mime/packages
 @unexec rm -fr %D/share/mime/multipart 2>/dev/null || true
 @unexec rm -fr %D/share/mime/model 2>/dev/null || true
 @unexec rm -fr %D/share/mime/message 2>/dev/null || true
@@ -88,20 +87,3 @@ man/man1/update-mime-database.1.gz
 @unexec rm -fr %D/share/mime/image 2>/dev/null || true
 @unexec rm -fr %D/share/mime/audio 2>/dev/null || true
 @unexec rm -fr %D/share/mime/application 2>/dev/null || true
-@dirrmtry share/mime
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/bg_BG/LC_MESSAGES
-@dirrmtry share/locale/bg_BG
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
