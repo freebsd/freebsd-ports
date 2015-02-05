@@ -8,7 +8,7 @@ PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@bsdjunk.com
 COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
 LICENSE=	GPLv2
