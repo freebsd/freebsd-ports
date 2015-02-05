@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	http_get
-PORTVERSION=	1.0.20100619
+PORTVERSION=	1.0.20140814
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/http_get/
-DISTNAME=	${PORTNAME}_19jun2010
+DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Dump http-contents to stdout
