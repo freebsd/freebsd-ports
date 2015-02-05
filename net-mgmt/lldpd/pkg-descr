@@ -1,0 +1,18 @@
+LLDP (Link Layer Discovery Protocol) is an industry standard protocol
+designed to supplant proprietary Link-Layer protocols such as
+Extreme's EDP (Extreme Discovery Protocol) and CDP (Cisco Discovery
+Protocol). The goal of LLDP is to provide an inter-vendor compatible
+mechanism to deliver Link-Layer notifications to adjacent network
+devices.
+
+lldpd implements both reception and sending. It also implements an
+SNMP subagent for net-snmp to get local and remote LLDP
+information. The LLDP MIB is partially implemented but the most useful
+tables are here. lldpd also partially implements LLDP-MED.
+
+lldpd supports bridge, vlan and bonding. Bonding need to be done on
+real physical devices, not on bridges, vlans, etc. However, vlans can
+be mapped on the bonding device. You can bridge vlan but not add vlans
+on bridges. More complex setups may give false results.
+
+WWW: http://vincentbernat.github.io/lldpd/
