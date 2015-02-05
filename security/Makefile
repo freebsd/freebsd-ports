@@ -163,6 +163,7 @@
     SUBDIR += gpass
     SUBDIR += gpgdir
     SUBDIR += gpgme
+    SUBDIR += gputty
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
