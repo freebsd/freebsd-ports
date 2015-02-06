@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	automount
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.github.com/vermaden/automount/master/ \
-		LOCAL/bdrewery/${PORTNAME}/
+		LOCAL/madpilot/${PORTNAME}/
 
 MAINTAINER=	vermaden@interia.pl
 COMMENT=	FreeBSD's devd(8) based automount solution
@@ -14,7 +14,9 @@ LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	sbin/automount etc/devd/automount_devd.conf etc/automount.conf.sample
 
+SUB_FILES=	pkg-install
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		NTFS3G EXT4 EXFAT
 OPTIONS_DEFAULT=	NTFS3G EXT4

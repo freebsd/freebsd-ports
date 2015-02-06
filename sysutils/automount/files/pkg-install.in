@@ -2,10 +2,10 @@
 
 case ${2} in
   (POST-INSTALL)
-    /etc/rc.d/devd restart
+    service devd restart
     echo
     echo
-    echo "Check /usr/local/sbin/automount --help for available options."
+    echo "Check %%PREFIX%%/bin/automount --help for available options."
     echo
     echo
     ;;
