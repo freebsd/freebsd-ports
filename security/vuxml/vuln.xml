@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0c45e53-ae51-11e4-8ac7-d050992ecde8">
+    <topic>openldap -- two remote denial of service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><lt>2.4.40_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ryan Tandy reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776988">
+	  <p>With the deref overlay enabled, ldapsearch with '-E deref=member:'
+	    causes slapd to crash.</p>
+	</blockquote>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776991">
+	  <p>Bill MacAllister discovered that certain queries cause slapd
+	    to crash while freeing operation controls.  This is a 2.4.40 regression.
+	    Earlier releases are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776988</url>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776991</url>
+    </references>
+    <dates>
+      <discovery>2015-02-02</discovery>
+      <entry>2015-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6eb239f-adbe-11e4-9fce-080027593b9a">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
