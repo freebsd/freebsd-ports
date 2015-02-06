@@ -1,4 +1,4 @@
---- Makefile.in.orig	2009-07-17 16:03:01.000000000 -0500
+--- Makefile.in.orig	2009-07-17 21:03:01 UTC
 +++ Makefile.in
 @@ -1,7 +1,7 @@
  SUBDIRS=src modules
@@ -59,7 +59,7 @@
  
  	@( if [ $(OS) = "Linux" ]; then \
  	if [ ! -d $(dst_dir)/etc/rc.d/init.d ]; then mkdir -p $(dst_dir)/etc/rc.d/init.d; fi ; \
-@@ -67,47 +76,52 @@ install:
+@@ -67,45 +76,51 @@ install:
  	if [ ! -f $(dst_dir)/etc/init.d/ss5 ]; then cp conf/ss5.init $(dst_dir)/etc/init.d/ss5; \
  	else cp conf/ss5.init $(dst_dir)/etc/init.d/ss5.rpmnew ; fi ; \
          fi )
@@ -74,7 +74,12 @@
 -	@( cp -r doc/pam/* $(dst_dir)$(doc_path_base)/ss5 )
 -	@( cp modules/mod_statistics/README.statmgr $(dst_dir)$(doc_path_base)/ss5 )
 -	@( cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5 )
--
++	cp License $(dst_dir)$(doc_path_base)/ss5
++	cp -r doc/ldap/README.ldap $(dst_dir)$(doc_path_base)/ss5
++	cp -r doc/pam/README.pam $(dst_dir)$(doc_path_base)/ss5
++	cp modules/mod_statistics/README.statmgr $(dst_dir)$(doc_path_base)/ss5
++	cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5
+ 
 -	@( if [ ! -d $(dst_dir)$(man_path_base)/man1 ]; then mkdir -p $(dst_dir)$(man_path_base)/man1; fi )
 -	@( cp man/$(OS)/ss5.1* $(dst_dir)$(man_path_base)/man1 )
 -	@( cp man/$(OS)/ss5srv.1* $(dst_dir)$(man_path_base)/man1 )
@@ -85,21 +90,6 @@
 -	@( cp man/$(OS)/ss5.conf.5* $(dst_dir)$(man_path_base)/man5 )
 -	@( cp man/$(OS)/ss5_gss.5* $(dst_dir)$(man_path_base)/man5 )
 -	@( cp man/$(OS)/ss5_supa.5* $(dst_dir)$(man_path_base)/man5 )
--
--	@( if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi )
--	@( if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi )
--	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; \
--	else cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5/ss5.conf.rpmnew ; fi )
--	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.ha ]; then cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5; \
--	else cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5/ss5.ha.rpmnew ; fi )
--	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.passwd ]; then cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5; \
--	else cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5/ss5.passwd.rpmnew ; fi )
-+	cp License $(dst_dir)$(doc_path_base)/ss5
-+	cp -r doc/ldap/README.ldap $(dst_dir)$(doc_path_base)/ss5
-+	cp -r doc/pam/README.pam $(dst_dir)$(doc_path_base)/ss5
-+	cp modules/mod_statistics/README.statmgr $(dst_dir)$(doc_path_base)/ss5
-+	cp modules/mod_balance/README.balamgr $(dst_dir)$(doc_path_base)/ss5
-+
 +	if [ $(OS) = "FreeBSD" ]; then \
 +	 cp man/$(OS)/ss5.1* $(ss5_man)/man1/; \
 +	 cp man/$(OS)/ss5srv.1* $(ss5_man)/man1/; \
@@ -119,7 +109,15 @@
 +	 cp man/$(OS)/ss5_gss.5* $(dst_dir)$(man_path_base)/man5/; \
 +	 cp man/$(OS)/ss5_supa.5* $(dst_dir)$(man_path_base)/man5/; \
 +	fi
-+
+ 
+-	@( if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi )
+-	@( if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi )
+-	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; \
+-	else cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5/ss5.conf.rpmnew ; fi )
+-	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.ha ]; then cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5; \
+-	else cp conf/ss5.ha $(dst_dir)$(conf_path_base)/ss5/ss5.ha.rpmnew ; fi )
+-	@( if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.passwd ]; then cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5; \
+-	else cp conf/ss5.passwd $(dst_dir)$(conf_path_base)/ss5/ss5.passwd.rpmnew ; fi )
 +	if [ ! -d $(dst_dir)$(conf_path_base) ]; then mkdir -p $(dst_dir)$(conf_path_base); fi
 +	if [ ! -d $(dst_dir)$(conf_path_base)/ss5 ]; then mkdir -p $(dst_dir)$(conf_path_base)/ss5; fi
 +	if [ ! -f $(dst_dir)$(conf_path_base)/ss5/ss5.conf ]; then cp conf/ss5.conf $(dst_dir)$(conf_path_base)/ss5; fi
@@ -140,7 +138,5 @@
 +	   cp doc/ldap/examples/* doc/pam/examples/ss5.pam $(ss5_examples); \
 +	fi
  
--	@( if [ ! -d $(dst_dir)/var/run/ss5 ]; then mkdir -p $(dst_dir)/var/run/ss5; fi )
+ 	@( if [ ! -d $(dst_dir)/var/run/ss5 ]; then mkdir -p $(dst_dir)/var/run/ss5; fi )
  
- 
- .PHONY : uninstall
