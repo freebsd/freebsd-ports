@@ -207,20 +207,24 @@ detect_beadm()
       NICK="TrueOS"
    fi
 
-   # Only list the default BE here
+   # Now we will list all the non-default BEs
    $BEADM list -H >/tmp/.grub-beadm.$$ 2>/dev/null
    while read line
    do
      be=`echo $line | awk '{print $1}'`
      flags=`echo $line | awk '{print $2}'`
 
-     # Is this BE marked as wanting to be used for next boot? Make it the first one if so
+     # Skip the active BE
      if [ "$flags" = "NR" -o "$flags" = "R" ] ; then
-        BE_LIST="$be"
-        break
+	continue
      fi
+     BE_LIST="${be} ${BE_LIST}"
    done < /tmp/.grub-beadm.$$
    rm /tmp/.grub-beadm.$$
+
+   if [  -z "$BE_LIST" ] ; then return; fi
+
+   echo "submenu \"Boot Environment Menu\" {"
 
    # Get list of beadm datasets
    for b in $BE_LIST
@@ -372,6 +376,9 @@ EOF
 
 EOF
    done
+
+   echo "}"
+   echo ""
 
    # Cleanup after ourselves
    if [ -e "/tmp/.grubdataset.$$.1" ] ; then

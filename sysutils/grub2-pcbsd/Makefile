@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02p
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
 		LEX=${LOCALBASE}/bin/flex
 
-SUB_FILES=	00_header 10_kfreebsd 10_ktrueos 30_os-prober
+SUB_FILES=	00_header 10_kfreebsd 10_ktrueos 30_os-prober 50_otherbe
 
 OPTIONS_DEFINE=	MKFONT FUSE
 OPTIONS_DEFAULT=MKFONT
@@ -88,6 +88,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/10_kfreebsd ${STAGEDIR}${PREFIX}/etc/grub.d/
 	@${INSTALL_SCRIPT} ${WRKDIR}/10_ktrueos ${STAGEDIR}${PREFIX}/etc/grub.d/
 	@${INSTALL_SCRIPT} ${WRKDIR}/30_os-prober ${STAGEDIR}${PREFIX}/etc/grub.d/
+	@${INSTALL_SCRIPT} ${WRKDIR}/50_otherbe ${STAGEDIR}${PREFIX}/etc/grub.d/
 	@${MV} ${STAGEDIR}${PREFIX}/etc/grub.d/40_custom ${STAGEDIR}/${PREFIX}/etc/grub.d/40_custom.dist
 
 .include <bsd.port.post.mk>
