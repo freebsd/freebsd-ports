@@ -157,6 +157,7 @@ etc/grub.d/00_header
 etc/grub.d/30_os-prober
 etc/grub.d/40_custom.dist
 etc/grub.d/41_custom
+etc/grub.d/50_otherbe
 etc/grub.d/10_kfreebsd
 etc/grub.d/10_ktrueos
 etc/grub.d/README
