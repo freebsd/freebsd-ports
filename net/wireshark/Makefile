@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		http://wireshark.zing.org/download/src/
+DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
