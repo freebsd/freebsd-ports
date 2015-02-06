@@ -3,7 +3,7 @@
 
 PORTNAME=	opennurbs
 PORTVERSION=	20121024
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2012-10-24/
 MASTER_SITE_SUBDIR=	${PORTNAME}_${PORTVERSION}
@@ -31,6 +31,8 @@ pre-build:
 	${ICONV_CMD} -c -f utf-8 -t ascii ${WRKSRC}/opennurbs_version.h \
 		> ${WRKSRC}/opennurbs_version.h.tmp || ${TRUE}
 	${MV} ${WRKSRC}/opennurbs_version.h.tmp ${WRKSRC}/opennurbs_version.h
+	${MV} ${WRKSRC}/zlib ${WRKSRC}/zlib_
+	${CP} -R /usr/src/lib/libz ${WRKSRC}/zlib
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} \
@@ -71,5 +73,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/openNURBS/
 	${INSTALL_DATA} ${WRKSRC}/zlib/*.h \
 		${STAGEDIR}${PREFIX}/include/openNURBS/zlib
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+	${TOUCH} ${STAGEDIR}${PREFIX}/include/openNURBS/zlib/gzguts.h
+.endif
 
 .include <bsd.port.post.mk>
