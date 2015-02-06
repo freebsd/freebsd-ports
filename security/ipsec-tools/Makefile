@@ -7,8 +7,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.8.1
-PORTREVISION=	7
+PORTVERSION=	0.8.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -34,7 +33,7 @@ SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 OPTIONS_DEFINE=	DEBUG IPV6 ADMINPORT STATS DPD NATT NATTF FRAG HYBRID PAM \
-		RADIUS LDAP GSSAPI SAUNSPEC RC5 IDEA DOCS
+		RADIUS LDAP GSSAPI SAUNSPEC RC5 IDEA DOCS EXAMPLES WCPSKEY
 OPTIONS_DEFAULT=	DEBUG DPD NATT FRAG HYBRID
 
 ADMINPORT_DESC=	Enable Admin port
@@ -50,8 +49,10 @@ IDEA_DESC=	IDEA encryption (patented)
 PAM_DESC=	PAM authentication (Xauth server)
 RADIUS_DESC=	Radius authentication (Xauth server)
 LDAP_DESC=	LDAP authentication (Xauth server)
+WCPSKEY_DESC=	Allow wildcard matching for pre-shared keys
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
@@ -155,6 +156,10 @@ CONFIGURE_ARGS+=	--disable-rc5
 CONFIGURE_ARGS+=	--enable-idea
 .else
 CONFIGURE_ARGS+=	--disable-idea
+.endif
+
+.if ${PORT_OPTIONS:MWCPSKEY}
+EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff
 .endif
 
 post-patch:
