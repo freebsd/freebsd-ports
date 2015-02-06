@@ -2,37 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.1.9
+PORTVERSION=	7.0.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
-COMMENT=	The typo3 content management system
+COMMENT=	Typo3 content management system
 
 LICENSE=	GPLv2
 
-PORTSCOUT=	limit:^6\.1\.
+PORTSCOUT=	limit:^7\.0\.
 
 NO_BUILD=	yes
-USE_PHP=	ctype filter json mysqli pcre session xml
+USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
 WANT_PHP_WEB=	yes
 
 TYPO3WWW=	www
-TYPO3RELEASE=
-TYPO3SITE=	${TYPO3WWW}/${PORTNAME}
-TYPO3PKG=	${PORTNAME}-${PORTVERSION}
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
-TYPO3DUMMY=	dummy-${PORTVERSION}
+TYPO3DIR=	${PORTNAME}
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX}
 
-DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
-
-OPTIONS_DEFINE=	APC CURL GD IMAGICK MBSTRING MYSQL ZLIB
+OPTIONS_DEFINE=	APC CURL GD GMP IMAGICK MBSTRING MYSQL ZLIB
 APC_DESC=	Alternative PHP Cache
 GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
@@ -42,6 +36,7 @@ MYSQL_DESC=	Install MySQL Server
 APC_USE=	PHP=apc
 CURL_USE=	PHP=curl
 GD_USE=		PHP=gd
+GMP_USE=	PHP=gmp
 MBSTRING_USE=	PHP=mbstring
 MYSQL_USE=	MYSQL=server
 ZLIB_USE=	PHP=zlib
@@ -56,16 +51,25 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 .endif
 
-pre-install:
-	@if [ -f ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php ]; then \
-		${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php \
-			${WRKDIR}/${TYPO3DUMMY}/typo3conf/LocalConfiguration.php.dist; \
-	fi
-
 do-install:
-	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${STAGEDIR}${PREFIX}/${TYPO3SITE}
-	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}
-	${RM} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src && \
-		${LN} -s ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3SITE}/typo3_src
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}
+	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/
+	${LN} -fs ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/typo3_src
+	${LN} -fs typo3_src/index.php ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/index.php
+	${LN} -fs typo3_src/typo3 ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/typo3
+	${CP} ${WRKDIR}/${TYPO3SRC}/_.htaccess ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/.htaccess
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3DIR}/*" | \
+		${SORT} >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) \( -path "${TYPO3WWW}/${TYPO3SRC}/*" -and \
+		-not -path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" \) | \
+		${SORT} >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" | \
+		${SORT} | ${SED} -ne 's#^#@(${WWWOWN},${WWWGRP},) #p' >> ${TMPPLIST}
+	@${ECHO} "@dir(${WWWOWN},${WWWGRP},) ${TYPO3WWW}/${TYPO3SRC}/typo3/ext" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
