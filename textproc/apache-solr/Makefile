@@ -8,7 +8,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
 
-MAINTAINER=	gaod@hychen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance search server built using Lucene Java
 
 LICENSE=	APACHE20
