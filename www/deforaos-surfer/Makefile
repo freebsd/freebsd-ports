@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	surfer
-PORTVERSION=	0.2.6
-PORTREVISION=	2
+PORTVERSION=	0.2.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.defora.org/os/download/download/3709/
+MASTER_SITES=	http://www.defora.org/os/download/download/4345/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Surfer-${PORTVERSION}
 
@@ -14,10 +13,8 @@ COMMENT=	DeforaOS desktop web browser
 
 LICENSE=	GPLv3
 
-BROKEN=		Fails to build
-
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	xsltproc>=0:${PORTSDIR}/textproc/libxslt \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
 		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
 		libgnet-2.0.so:${PORTSDIR}/net/gnet2 \
@@ -25,10 +22,15 @@ LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USE_GNOME=	gtk20
-USES=		pkgconfig gettext
+USES=		desktop-file-utils pkgconfig gettext
 INSTALLS_ICONS=	yes
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+
+MANDIRS=	${PREFIX}/share/man/man1
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
