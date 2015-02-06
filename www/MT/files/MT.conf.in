@@ -10,7 +10,7 @@
 # This is to permit URL access to scripts/files in %%PACKAGENAME%% directory.
 #
 <Directory "%%PREFIX%%/%%CGIDIR%%">
-	Options EcexCGI
+	Options ExecCGI
 %%APACHE22%%	Order allow,deny
 %%APACHE22%%	Allow from all
 %%APACHE24%%	Require all granted

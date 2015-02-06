@@ -165,7 +165,7 @@ pre-everything::
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
+	@${FIND} ${WRKSRC}/* -name "*.orig" -delete
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt.psgi mt-config.cgi-original \
@@ -193,7 +193,7 @@ post-install:
 	@${CAT} ${WRKDIR}/MT.conf
 	@${ECHO_CMD} ""
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
-	@${INSTALL_DATA} ${WRKDIR}/MT.conf \
+	${INSTALL_DATA} ${WRKDIR}/MT.conf \
 	  ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
 .else
 	@${ECHO_CMD} ""
