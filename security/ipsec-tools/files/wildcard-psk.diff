@@ -1,0 +1,12 @@
+--- src/racoon/localconf.c	9 Sep 2006 16:22:09 -0000	1.4
++++ src/racoon/localconf.c	11 Jul 2008 20:58:55 -0000
+@@ -211,7 +211,8 @@ getpsk(str, len)
+ 		if (*p == '\0')
+ 			continue;	/* no 2nd parameter */
+ 		p--;
+-		if (strncmp(buf, str, len) == 0 && buf[len] == '\0') {
++		if (strcmp(buf, "*") == 0
++		 || (strncmp(buf, str, len) == 0 && buf[len] == '\0')) {
+ 			p++;
+ 			keylen = 0;
+ 			for (q = p; *q != '\0' && *q != '\n'; q++)
