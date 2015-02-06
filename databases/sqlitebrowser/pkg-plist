@@ -1,3 +1,7 @@
 %%QT_BINDIR%%/sqlitebrowser
 share/applications/sqlitebrowser.desktop
 share/icons/hicolor/256x256/apps/sqlitebrowser.png
+%%DATADIR%%/translations/sqlb_de.qm
+%%DATADIR%%/translations/sqlb_fr.qm
+%%DATADIR%%/translations/sqlb_ru.qm
+%%DATADIR%%/translations/sqlb_zh.qm
