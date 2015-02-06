@@ -1475,6 +1475,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/encodings.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/encodings.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/encodings.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.pyo
