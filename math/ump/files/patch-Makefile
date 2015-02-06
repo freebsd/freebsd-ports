@@ -7,7 +7,7 @@
 -BIN_DIR = /usr/bin
 -DATA_DIR = /usr/share/$(APP_NAME)
 +BIN_DIR = $(PREFIX)/bin
-+DATA_DIR = $(DATADIR)
++DATA_DIR = $(PREFIX)/share/$(APP_NAME)
  
  
  ## One of these three flags must be uncommented
