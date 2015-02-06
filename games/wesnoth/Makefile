@@ -1,29 +1,30 @@
 # $FreeBSD$
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.10.7
-PORTREVISION=	7
+PORTVERSION=	1.12.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
-		http://files.wesnoth.org/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION:R} \
+		http://files.wesnoth.org/ \
+		http://ports.toco-domains.de
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Fantasy turn-based strategy game
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf:${PORTSDIR}/x11-fonts/junicode
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng.so:${PORTSDIR}/graphics/png
 
+LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango
-USES=		cmake desktop-file-utils pkgconfig tar:bzip2
+USES=		cmake pkgconfig tar:bzip2
 CMAKE_ARGS=	-DMANDIR="man"
-
-MAN6=		wesnoth.6
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -48,15 +49,15 @@ TOOLS_DESC=	Extra tools for artists and translators
 
 .include <bsd.port.options.mk>
 
-# XXX: breaks compilation because of -Werror
-.if empty(PORT_OPTIONS:MSTRICT)
+# disable strict compilation, because it will break the build
 CMAKE_ARGS+=	-DENABLE_STRICT_COMPILATION=off
-.endif
 
 .if ${PORT_OPTIONS:MANA}
 CMAKE_ARGS+=	-DUSE_ANA_NETWORK=on
+PLIST_SUB+=	ANA=""
 .else
 CMAKE_ARGS+=	-DUSE_ANA_NETWORK=off
+PLIST_SUB+=	ANA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCAMPAIGN}
@@ -91,7 +92,7 @@ CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
 CMAKE_ARGS+=	-DENABLE_NLS=on -DLOCALEDIR=${PREFIX}/share/locale
 USES+=		gettext
 MANLANG=	"" cs de en_GB es et fi fr gl hu id it lt pl ru sk \
-		sr sr@ijekavian sr@ijekavianlatin sr@latin vi zh_CN zh_TW
+		sr sr@ijekavian sr@ijekavianlatin sr@latin tr uk vi zh_CN zh_TW
 .if ${PORT_OPTIONS:MSERVER}
 _MANPAGES+=	${PREFIX}/man/ja/man6/wesnothd.6 \
 		${PREFIX}/man/pt_BR/man6/wesnothd.6 \
@@ -104,6 +105,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
+BROKEN=	compilation fails with OpenMP
 CMAKE_ARGS+=	-DENABLE_OMP=on
 .else
 CMAKE_ARGS+=	-DENABLE_OMP=off
@@ -111,13 +113,11 @@ CMAKE_ARGS+=	-DENABLE_OMP=off
 
 .if ${PORT_OPTIONS:MPOOLALLOC}
 CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=on
-BROKEN=		does not build with pool alloc
 .else
 CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-BROKEN=		cmake build doesn't support installing python tools
 USES+=		python
 CONFIGURE_ENV+=	PYTHON_PREFIX=${PREFIX} \
 		PYTHON_VERSION=${PYTHON_VERSION:S/python//}
@@ -133,7 +133,6 @@ CFLAGS+=	-DNETWORK_USE_RAW_SOCKETS
 
 .if ${PORT_OPTIONS:MSERVER}
 CMAKE_ARGS+=	-DENABLE_SERVER=on
-MAN6+=		wesnothd.6
 PLIST_SUB+=	SERVER=""
 .else
 CMAKE_ARGS+=	-DENABLE_SERVER=off
@@ -143,6 +142,7 @@ PLIST_SUB+=	SERVER="@comment "
 .if ${PORT_OPTIONS:MTESTS}
 CMAKE_ARGS+=	-DENABLE_TESTS=on
 PLIST_SUB+=	TESTS=""
+BROKEN=	compilations fails with enabled TEST option
 .else
 CMAKE_ARGS+=	-DENABLE_TESTS=off
 PLIST_SUB+=	TESTS="@comment "
@@ -160,11 +160,9 @@ PLIST_SUB+=	TOOLS="@comment "
 CMAKE_ARGS+=	-DDOCDIR=none
 .endif
 
-pre-build:
-	${CP} ${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf \
-		${WRKSRC}/fonts/Junicode-Regular.ttf
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	-@update-desktop-database ${STAGEDIR}${PREFIX}/share/applications
+	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
 
 .include <bsd.port.mk>
