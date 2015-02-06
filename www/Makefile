@@ -326,6 +326,7 @@
     SUBDIR += imgsizer
     SUBDIR += impresscms
     SUBDIR += interchange
+    SUBDIR += iojs
     SUBDIR += ismail
     SUBDIR += iwebcal
     SUBDIR += jawstats
