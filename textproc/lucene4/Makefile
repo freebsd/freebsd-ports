@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	4.10.2
+PORTVERSION=	4.10.3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 4.x branch
@@ -15,6 +14,7 @@ LICENSE=	APACHE20
 
 CONFLICTS=	lucene-[0-9].*
 
+USES=		tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
