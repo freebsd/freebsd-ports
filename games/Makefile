@@ -187,6 +187,7 @@
     SUBDIR += dcross
     SUBDIR += defendguin
     SUBDIR += diameter
+    SUBDIR += diaspora
     SUBDIR += digger-vgl
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
