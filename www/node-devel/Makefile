@@ -18,7 +18,7 @@ USES=		gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	node-0.[0-9]*
+CONFLICTS=	node-0.[0-9]* iojs-*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
