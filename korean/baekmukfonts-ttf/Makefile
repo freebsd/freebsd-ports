@@ -3,6 +3,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://kldp.net/frs/download.php/1429/
 PKGNAMESUFFIX=	-ttf
@@ -11,7 +12,7 @@ DISTNAME=	${FONTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Baekmuk family Korean TrueType Fonts
 
-LICENSE=	BSD
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 NO_BUILD=	yes
