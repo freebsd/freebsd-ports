@@ -4,5 +4,5 @@ include/dvdnav/dvdnav_events.h
 lib/libdvdnav.a
 lib/libdvdnav.so
 lib/libdvdnav.so.4
-lib/libdvdnav.so.4.1.2
+lib/libdvdnav.so.4.2.0
 libdata/pkgconfig/dvdnav.pc
