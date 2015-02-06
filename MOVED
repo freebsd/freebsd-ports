@@ -7412,7 +7412,6 @@ net-im/pidgin-audacious-remote||2015-01-28|Has expired: Broken for more than 6 m
 www/lifetype||2015-01-28|Has expired: Broken for more than 6 months
 www/ump||2015-01-28|Has expired: Broken for more than 6 months
 net/owncloud-csync||2015-02-01|Merged into deskutils/mirall
-devel/ntopng-zmq||2015-02-05|Has expired: No longer required after net/ntopng 1.1
 audio/py-eyed3-06|audio/py-eyed3|2015-02-02|Has expired: In audio/abcde dependency has been changed to audio/py-eyed3
 mail/postfix210|mail/postfix|2015-02-02|Has expired: Use mail/postfix instead.
 net-im/venom||2015-02-02|Has expired: No more support from the project
@@ -7422,3 +7421,4 @@ www/p5-WWW-Scraper-ISBN-Record|www/p5-WWW-Scraper-ISBN|2015-02-02|Has expired: M
 japanese/xlockmore|x11/xlockmore|2015-02-02|Merged into x11/xlockmore
 deskutils/currtime|sysutils/currtime|2015-02-03|Move to sysutils category
 sysutils/pcbsd-utils-qt4|sysutils/pcbsd-utils-qt5|2015-02-03|Renamed to pcbsd-utils-qt5
+devel/ntopng-zmq||2015-02-05|Has expired: No longer required after net/ntopng 1.1
