@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150206:
+  AFFECTS: users of net/serviio
+  AUTHOR: netchild@FreeBSD.org
+
+  The java dependency changed from java 7 (lang/openjdk7 if you haven't
+  installed another java 7 implementation) to java 8 (e.g. lang/openjdk8).
+  If serviio is the only reason that java 7 is installed, you can delete
+  java 7 after the update to serviio 1.5.0.
+
+  The Java Polling Watch Service used in Serviio 1.5 aggressively searches
+  for file system updates. Until the Serviio poller is re-enabled in 1.5.1,
+  consider unchecking "Keep library automatically updated" if you have a
+  large media collection or are concerned about CPU/disk usage.
+
 20150204:
   AFFECTS: users of databases/mysql55-(server|client)
   AUTHOR: ale@FreeBSD.org

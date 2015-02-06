@@ -17,9 +17,8 @@ done
 SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 
 # Setup Serviio specific properties
-JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
+JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dorg.restlet.engine.loggerFacadeClass=org.restlet.ext.slf4j.Slf4jLoggerFacade -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg -Ddcraw.location=%%LOCALBASE%%/bin/dcraw"
 JAVA_OPTS="${JAVA_OPTS} -Djcs.auxiliary.DC.attributes.DiskPath=/var/db/serviio"
-
 
 # A kludge to get the -D... flags to Java, rather than to Serviio itself:
 for o in "$@"
@@ -33,4 +32,4 @@ done
 
 # Execute the JVM in the foreground
 export HOME PATH
-exec java -Xmx512M -Xms20M -XX:+UseParNewGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null
+exec java -Xmx512M -Xms20M -XX:+UseG1GC -XX:GCTimeRatio=1 -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null
