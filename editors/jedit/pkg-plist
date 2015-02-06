@@ -18,6 +18,7 @@ share/java/jedit/keymaps/jEdit_keys.props
 %%MACROS%%share/java/jedit/macros/Editing/Duplicate_Lines_Above.bsh
 %%MACROS%%share/java/jedit/macros/Editing/Duplicate_Lines_Below.bsh
 %%MACROS%%share/java/jedit/macros/Editing/Go_to_Column.bsh
+%%MACROS%%share/java/jedit/macros/Editing/Go_to_Offset.bsh
 %%MACROS%%share/java/jedit/macros/Editing/Greedy_Backspace.bsh
 %%MACROS%%share/java/jedit/macros/Editing/Greedy_Delete.bsh
 %%MACROS%%share/java/jedit/macros/Editing/Greedy_Left.bsh
@@ -113,6 +114,7 @@ share/java/jedit/keymaps/jEdit_keys.props
 %%MACROS%%share/java/jedit/macros/Text/Line_Filter.bsh
 %%MACROS%%share/java/jedit/macros/Text/Next_Char.bsh
 %%MACROS%%share/java/jedit/macros/Text/Reverse_Lines.bsh
+%%MACROS%%share/java/jedit/macros/Text/Reverse_Selection.bsh
 %%MACROS%%share/java/jedit/macros/Text/Single_Space_Buffer.bsh
 share/java/jedit/modes/actionscript.xml
 share/java/jedit/modes/ada.xml
@@ -251,6 +253,7 @@ share/java/jedit/modes/plaintex.xml
 share/java/jedit/modes/pop11.xml
 share/java/jedit/modes/postscript.xml
 share/java/jedit/modes/povray.xml
+share/java/jedit/modes/powercenter_parameter_file.xml
 share/java/jedit/modes/powerdynamo.xml
 share/java/jedit/modes/powershell.xml
 share/java/jedit/modes/progress.xml
