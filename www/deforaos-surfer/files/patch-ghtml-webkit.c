@@ -1,6 +1,6 @@
---- src/ghtml-webkit.c.orig	2012-10-21 14:12:06.000000000 +0200
-+++ src/ghtml-webkit.c	2012-10-21 14:13:02.000000000 +0200
-@@ -160,7 +160,8 @@
+--- src/ghtml-webkit.c.orig	2015-02-03 21:41:14.728793636 +0100
++++ src/ghtml-webkit.c	2015-02-03 21:41:39.669804743 +0100
+@@ -207,7 +207,8 @@
  		"/etc/ssl/certs/ca-certificates.crt",
  		"/etc/openssl/certs/ca-certificates.crt",
  		PREFIX "/etc/ssl/certs/ca-certificates.crt",
