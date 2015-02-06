@@ -7,6 +7,6 @@ CATEGORIES=	net ipv6
 
 MASTERDIR=	${.CURDIR}/../wireshark
 
-WITHOUT_X11=	yes
+OPTIONS_EXCLUDE=	X11 GTK3 QT5
 
 .include "${MASTERDIR}/Makefile"
