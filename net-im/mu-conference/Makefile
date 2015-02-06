@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Multi-User Conferencing component for Jabber
 
 LICENSE=	GPLv2
