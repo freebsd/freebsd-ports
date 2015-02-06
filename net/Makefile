@@ -856,6 +856,7 @@
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
+    SUBDIR += pimd
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pjsip
