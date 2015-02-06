@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a6eb239f-adbe-11e4-9fce-080027593b9a">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>40.0.2214.111</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>40.0.2214.111</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>11 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[447906] High CVE-2015-1209: Use-after-free in DOM. Credit to
+	      Maksymillian.</li>
+	    <li>[453979] High CVE-2015-1210: Cross-origin-bypass in V8
+	      bindings. Credit to anonymous.</li>
+	    <li>[453982] High CVE-2015-1211: Privilege escalation using service
+	      workers. Credit to anonymous.</li>
+	    <li>[455225] CVE-2015-1212: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-12O9</cvename>
+      <cvename>CVE-2015-1210</cvename>
+      <cvename>CVE-2015-1211</cvename>
+      <cvename>CVE-2015-1212</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-02-05</discovery>
+      <entry>2015-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b40bf2c-ad83-11e4-a2b2-0026551a22dc">
     <topic>PostgreSQL -- multiple buffer overflows and memory issues</topic>
     <affects>
