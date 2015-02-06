@@ -16,11 +16,11 @@ LICENSE=	GPLv2
 USERS=	xymon
 GROUPS=	xymon
 
-SUB_LIST+=	USERS="${USERS}"
-
 # Options
 XYMONUSER?=	xymon
 XYMONHOSTIP?=	127.0.0.1
+
+SUB_LIST+=	XYMONUSER="${XYMONUSER}"
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe gmake

@@ -14,7 +14,7 @@ rcvar=xymon_client_enable
 
 load_rc_config "$name"
 : ${xymon_client_enable:=NO}
-: ${xymon_client_user:=%%USERS%%}
+: ${xymon_client_user:=%%XYMONUSER%%}
 
 command=/usr/local/www/xymon/client/runclient.sh
 command_args="${xymon_client_flags} ${1}"
