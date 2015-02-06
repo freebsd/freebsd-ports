@@ -1,7 +1,7 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
 
-PORTNAME=	wireshark
+PORTNAME?=	wireshark
 PORTVERSION=	1.12.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
