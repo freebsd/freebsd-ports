@@ -3,8 +3,8 @@
 
 PORTNAME=	backuppc
 DISTVERSION=	4.0.0alpha3
+PORTREVISION=	2
 CATEGORIES=	sysutils
-PORTREVISION=	1
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-beta/${DISTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -97,6 +97,7 @@ do-install:
 	cd ${WRKSRC} && ${PERL} configure.pl	\
 		--batch				\
 		--backuppc-user ${USERS}	\
+		--bin-path perl=${PERL}		\
 		--config-dir ${ETCDIR}		\
 		--cgi-dir ${CGIDIR}		\
 		--data-dir /var/db/BackupPC	\

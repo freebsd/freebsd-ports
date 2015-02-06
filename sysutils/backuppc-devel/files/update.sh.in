@@ -1,6 +1,7 @@
 #!/bin/sh
 
 perl %%PREFIX%%/libexec/backuppc/update.pl \
+    --bin-path perl=%%PREFIX%%/bin/perl \
     --config-dir %%ETCDIR%% \
     --cgi-dir %%CGIDIR%% \
     --data-dir /var/db/BackupPC \
