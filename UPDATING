@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150207:
+  AFFECTS: users of mail/opensmtpd-devel
+  AUTHOR: ashish@FreeBSD.org
+
+  MYSQL, PGSQL, LDAP, and REDIS options are removed from port, as
+  they're moved upstream to a separate project, which is yet to
+  release snapshots. If you need those options, then please install
+  "mail/opensmtpd" port instead. To do that:
+
+  If using portupgrade:
+  # portupgrade -o mail/opensmtpd mail/opensmtpd-devel
+
+  If using portmaster:
+  # portmaster -o mail/opensmtpd mail/opensmtpd-devel
+
 20150206:
   AFFECTS: users of net/serviio
   AUTHOR: netchild@FreeBSD.org
