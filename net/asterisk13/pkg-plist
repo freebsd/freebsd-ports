@@ -72,6 +72,7 @@
 @sample %%ETCDIR%%/phoneprov.conf.sample
 @sample %%ETCDIR%%/pjsip.conf.sample
 @sample %%ETCDIR%%/pjsip_notify.conf.sample
+@sample %%ETCDIR%%/pjsip_wizard.conf.sample
 @sample %%ETCDIR%%/queuerules.conf.sample
 @sample %%ETCDIR%%/queues.conf.sample
 @sample %%ETCDIR%%/res_config_mysql.conf.sample
@@ -354,6 +355,11 @@ lib/asterisk/modules/func_lock.so
 lib/asterisk/modules/func_module.so
 lib/asterisk/modules/func_periodic_hook.so
 %%PJSIP%%lib/asterisk/modules/func_pjsip_endpoint.so
+%%PJSIP%%lib/asterisk/modules/func_pjsip_aor.so
+%%PJSIP%%lib/asterisk/modules/func_pjsip_contact.so
+%%PJSIP%%lib/asterisk/modules/res_pjsip_config_wizard.so
+%%PJSIP%%lib/asterisk/modules/res_pjsip_keepalive.so
+%%PJSIP%%lib/asterisk/modules/res_pjsip_sips_contact.so
 lib/asterisk/modules/func_presencestate.so
 lib/asterisk/modules/func_shell.so
 lib/asterisk/modules/func_sorcery.so
