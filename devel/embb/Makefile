@@ -2,34 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	embb
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	devel
 
 MAINTAINER=	riggs@FreeBSD.org
-COMMENT=	Embedded Multicore Building Blocks
+COMMENT=	C/C++ library for parallel programming
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	riggs-
-GH_COMMIT=	d40a5c3
+GH_ACCOUNT=	siemens
+GH_COMMIT=	d9c1d0c
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		cmake:outsource compiler:c11
 
-CMAKE_ARGS=	-DINSTALL_PREFIX=${PREFIX} \
-		-DBUILD_TESTS=OFF
+CMAKE_ARGS=	-DINSTALL_PREFIX=${PREFIX}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES TESTS
+
+TESTS_DESC=	Build and run parallel unit tests
 
 DOCS_CMAKE_OFF=	-DINSTALL_DOCS=OFF
 
+TESTS_CMAKE_OFF=-DBUILD_TESTS=OFF
+
 OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${RM} ${WRKSRC}/doc/examples/CMakeLists.txt
 	${MV} ${WRKSRC}/doc/examples ${WRKSRC}
+	${REINPLACE_CMD} -e \
+		's|$${INSTALL_PREFIX_DOCS} PARENT_SCOPE|"${DOCSDIR}" PARENT_SCOPE|' \
+		${WRKSRC}/CMakeCommon/SetInstallPaths.cmake
+
+.if ${PORT_OPTIONS:MTESTS}
+post-build:
+	(cd ${BUILD_WRKSRC}/binaries && ./run_tests.sh)
+.endif
 
 post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}/${EXAMPLESDIR}
