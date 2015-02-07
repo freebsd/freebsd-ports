@@ -23,6 +23,11 @@ MKFILE=		${EXAMPLESDIR}/bsd.openNURBS.mk
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
+.if !exists(${SRC_BASE})
+IGNORE=	needs SRC_BASE to compile. Install base system sources and try again
+.endif
+
 .if ${ARCH} != i386
 MAKE_ARGS+=	ON_GNU_OPTIMIZER_FLAGS="-g -fPIC"
 .endif
@@ -32,7 +37,7 @@ pre-build:
 		> ${WRKSRC}/opennurbs_version.h.tmp || ${TRUE}
 	${MV} ${WRKSRC}/opennurbs_version.h.tmp ${WRKSRC}/opennurbs_version.h
 	${MV} ${WRKSRC}/zlib ${WRKSRC}/zlib_
-	${CP} -R /usr/src/lib/libz ${WRKSRC}/zlib
+	${CP} -R ${SRC_BASE}/lib/libz ${WRKSRC}/zlib
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} \
