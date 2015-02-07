@@ -4,8 +4,8 @@
    cp = charset_aliases;
    if (cp == NULL)
      {
--#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__)
-+#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__ || defined __FreeBSD__)
+-#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__ || defined OS2)
++#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__ || defined OS2 || defined __FreeBSD__)
        const char *dir;
        const char *base = "charset.alias";
        char *file_name;
