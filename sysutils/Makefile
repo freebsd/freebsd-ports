@@ -48,6 +48,7 @@
     SUBDIR += automount
     SUBDIR += automounter
     SUBDIR += autopsy
+    SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b43-fwcutter
     SUBDIR += backuppc
