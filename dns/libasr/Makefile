@@ -3,6 +3,7 @@
 
 PORTNAME=	libasr
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -16,9 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 CONFLICTS=	libasr-devel-[0-9]*
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
+USES=		libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
