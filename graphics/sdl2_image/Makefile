@@ -12,16 +12,23 @@ COMMENT=	Simple library to load images of various formats as SDL surfaces
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libwebp.so:${PORTSDIR}/graphics/webp
-
 USES=		pkgconfig:build pathfix gmake libtool
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
+OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
+
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_ENABLE=	jpg
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ENABLE=	png
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_CONFIGURE_ENABLE=	tif
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_CONFIGURE_ENABLE=	webp
 
 .include <bsd.port.mk>
