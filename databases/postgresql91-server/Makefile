@@ -71,7 +71,10 @@ GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
-.if !defined(CLIENT_ONLY)
+.if defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=LIBEDIT
+LIBEDIT_DESC=   Use non-GPL libedit instead of readline
+.else
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
@@ -111,6 +114,15 @@ OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
 .include <bsd.port.options.mk>
+
+.if defined(CLIENT_ONLY)
+.  if ${PORT_OPTIONS:MLIBEDIT}
+CONFIGURE_ARGS+=--with-libedit-preferred
+LIB_DEPENDS=    libedit.so.0:${PORTSDIR}/devel/libedit
+.  else
+USES+=          readline
+.  endif
+.endif # CLIENT_ONLY
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
