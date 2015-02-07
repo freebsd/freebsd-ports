@@ -72,7 +72,7 @@ post-build:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
