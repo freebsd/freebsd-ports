@@ -71,6 +71,7 @@
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += ldnsm
+    SUBDIR += libasr
     SUBDIR += libbind
     SUBDIR += libdjbdns
     SUBDIR += libidn
