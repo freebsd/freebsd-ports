@@ -1399,6 +1399,8 @@
     SUBDIR += oniguruma
     SUBDIR += oniguruma4
     SUBDIR += oniguruma5
+    SUBDIR += onscripter
+    SUBDIR += onscripter-1byte
     SUBDIR += open-beagle
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl

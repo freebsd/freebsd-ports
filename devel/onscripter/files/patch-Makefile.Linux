@@ -1,0 +1,48 @@
+--- Makefile.Linux~
++++ Makefile.Linux
+@@ -30,28 +30,13 @@ LIBS += `smpeg-config --libs`
+ DEFS += -DUSE_FONTCONFIG
+ LIBS += -lfontconfig
+ 
+-# recommended: OggVorbis 
+-DEFS += -DUSE_OGG_VORBIS
+-LIBS += -logg -lvorbis -lvorbisfile
+-
+-# optional: Integer OggVorbis
+-#DEFS += -DUSE_OGG_VORBIS -DINTEGER_OGG_VORBIS
+-#LIBS += -lvorbisidec
+-
+ # optional: support CD audio
+ DEFS += -DUSE_CDROM
+ 
+-# optional: avifile
+-DEFS += -DUSE_AVIFILE
+-INCS += `avifile-config --cflags`
+-LIBS += `avifile-config --libs`
+-TARGET += simple_aviplay$(EXESUFFIX)
+-EXT_OBJS += AVIWrapper$(OBJSUFFIX)
+-
+ # optional: lua
+ DEFS += -DUSE_LUA
+-INCS += -I/usr/include/lua5.1
+-LIBS += -llua5.1
++INCS += -I$(LUA_INCDIR)
++LIBS += -llua-$(LUA_VER)
+ EXT_OBJS += LUAHandler$(OBJSUFFIX)
+ 
+ # optional: force screen width for PDA
+@@ -62,11 +47,10 @@ EXT_OBJS += LUAHandler$(OBJSUFFIX)
+ 
+ 
+ # for GNU g++
+-CC = g++ 
+-LD = g++ -o
++CC = $(CXX)
++LD = $(CXX) -o
+ 
+-#CFLAGS = -g -Wall -pipe -c $(INCS) $(DEFS)
+-CFLAGS = -O3 -Wall -fomit-frame-pointer -pipe -c $(INCS) $(DEFS)
++CFLAGS += -Wall -c $(INCS) $(DEFS)
+ 
+ # for GCC on PowerPC specfied
+ #CC = powerpc-unknown-linux-gnu-g++
