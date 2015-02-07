@@ -23,8 +23,7 @@ MKFILE=		${EXAMPLESDIR}/bsd.openNURBS.mk
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-.if !exists(${SRC_BASE})
+.if !exists(${SRC_BASE}/lib/libz)
 IGNORE=	needs SRC_BASE to compile. Install base system sources and try again
 .endif
 
