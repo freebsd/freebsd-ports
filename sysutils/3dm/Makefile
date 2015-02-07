@@ -13,6 +13,7 @@ DIST_SUBDIR=	3dm2
 MAINTAINER=	takefu@airport.fm
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
+BROKEN=		Unfetchable
 RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
