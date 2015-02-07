@@ -1,15 +1,13 @@
---- Makefile.in.orig	2014-10-11 19:24:48.000000000 +0900
-+++ Makefile.in	2014-10-23 21:48:16.000000000 +0900
-@@ -1982,10 +1982,10 @@
- @HAVE_DOXYGEN_TRUE@	rm -fr $(builddir)/docs/html
+--- Makefile.in.orig	2015-01-25 00:59:52.000000000 +0900
++++ Makefile.in	2015-01-26 21:02:06.000000000 +0900
+@@ -2000,8 +2000,8 @@
  
- sidplayfp/psiddrv.o65:
--	xa -R -G $(srcdir)/sidplayfp/psiddrv.a65 -o $@
-+	xa65 -R -G $(srcdir)/sidplayfp/psiddrv.a65 -o $@
- 
- sidplayfp/psiddrv.bin: sidplayfp/psiddrv.o65
--	od -v -An -w8 -tx1 $< | sed -re 's/[[:alnum:]]+/0x&,/g' > sidplayfp/psiddrv.bin
-+	od -v -An -tx1 $< | sed -re 's/[[:alnum:]]+/0x&,/g' | rs 0 8 > sidplayfp/psiddrv.bin
+ .a65.bin:
+ 	o65file=`echo $@ | sed 's/bin/o65/'`;\
+-	xa -R -G $< -o $$o65file &&\
+-	od -v -An -w8 -tx1 $$o65file | sed -re 's/[[:alnum:]]+/0x&,/g' > $@ &&\
++	xa65 -R -G $< -o $$o65file &&\
++	od -v -An -tx1 $$o65file | sed -re 's/[[:alnum:]]+/0x&,/g' | rs 0 8 > $@ &&\
+ 	${RM} $$o65file
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
