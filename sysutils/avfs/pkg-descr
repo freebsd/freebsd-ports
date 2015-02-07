@@ -1,0 +1,10 @@
+AVFS is a system, which enables all programs to look inside gzip, tar,
+zip, etc. files or view remote (ftp, http, dav, etc.) files, without
+recompiling the programs.
+
+Shared library and FUSE daemon are provided.
+
+AVFS is (C) under the GNU GPL. The shared library supporting AVFS with
+LD_PRELOAD is (C) under the GNU LGPL.
+
+WWW: http://avf.sourceforge.net/
