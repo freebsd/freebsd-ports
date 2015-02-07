@@ -1,6 +1,5 @@
 include/embb/algorithms/algorithms.h
 include/embb/algorithms/count.h
-include/embb/algorithms/execution_policy.h
 include/embb/algorithms/for_each.h
 include/embb/algorithms/identity.h
 include/embb/algorithms/internal/count-inl.h
@@ -126,9 +125,9 @@ include/embb/dataflow/internal/tuple.h
 include/embb/dataflow/internal/typelist.h
 include/embb/dataflow/network.h
 include/embb/mtapi/action.h
-include/embb/mtapi/affinity.h
 include/embb/mtapi/c/mtapi.h
 include/embb/mtapi/continuation.h
+include/embb/mtapi/execution_policy.h
 include/embb/mtapi/group.h
 include/embb/mtapi/mtapi.h
 include/embb/mtapi/node.h
