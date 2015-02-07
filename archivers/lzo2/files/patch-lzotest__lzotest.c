@@ -1,6 +1,6 @@
---- ./lzotest/lzotest.c.orig	2011-04-23 12:55:35.000000000 +0200
-+++ ./lzotest/lzotest.c	2011-05-10 21:47:16.000000000 +0200
-@@ -234,7 +234,7 @@
+--- lzotest/lzotest.c.orig	2015-02-04 11:24:51 UTC
++++ lzotest/lzotest.c
+@@ -206,7 +206,7 @@ enum {
  // command line options
  **************************************************************************/
  
@@ -9,18 +9,14 @@
  
  long opt_c_loops = 0;
  long opt_d_loops = 0;
-@@ -1929,6 +1931,7 @@
+@@ -1902,9 +1902,11 @@ int __lzo_cdecl_main main(int argc, char
          if ((*s == '/' || *s == '\\') && s[1])
              progname = s + 1;
  
 +#if 0
- #if defined(__LZO_PROFESSIONAL__)
-     printf("\nLZO Professional real-time data compression library (v%s, %s).\n",
+     printf("\nLZO real-time data compression library (v%s, %s).\n",
             lzo_version_string(), lzo_version_date());
-@@ -1938,6 +1941,7 @@
-            lzo_version_string(), lzo_version_date());
-     printf("Copyright (C) 1996-2011 Markus Franz Xaver Johannes Oberhumer\nAll Rights Reserved.\n\n");
- #endif
+     printf("Copyright (C) 1996-2015 Markus Franz Xaver Johannes Oberhumer\nAll Rights Reserved.\n\n");
 +#endif
  
  
