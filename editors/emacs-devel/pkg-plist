@@ -4,7 +4,6 @@ bin/emacs
 bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
-bin/grep-changelog
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
@@ -13,7 +12,6 @@ libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 man/man1/emacs.1.gz
 man/man1/ctags.1.gz
 man/man1/etags.1.gz
-man/man1/grep-changelog.1.gz
 man/man1/emacsclient.1.gz
 man/man1/ebrowse.1.gz
 share/applications/emacs.desktop
@@ -158,6 +156,7 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/gnus-logo.eps
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/pt-br-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex.in
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/gnus-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/Makefile
@@ -324,7 +323,6 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/ORDERS
 %%DATADIR%%/%%EMACS_VER%%/etc/TERMS
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-buffer.gdb
-%%DATADIR%%/%%EMACS_VER%%/etc/CONTRIBUTE
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.22
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/01720-0173F.el
 %%DATADIR%%/%%EMACS_VER%%/etc/nxml/00100-0017F.el
@@ -922,6 +920,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/descr-text.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-file.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/info-look.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/dom.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/dom.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/uni-input.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/4Corner.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/PY-b5.elc
@@ -1927,6 +1927,10 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/reposition.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/foldout.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/find-dired.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-filewise.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-filewise.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-src.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-src.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/compare-w.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/ediff-merg.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/pcvs-util.el
@@ -1949,7 +1953,6 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/cvs-status.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-hooks.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dir.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-arch.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-rcs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/ediff-vers.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-mtn.elc
@@ -1979,7 +1982,6 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/emerge.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/pcvs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/add-log.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-arch.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-hg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-bzr.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/smerge-mode.el
@@ -2537,6 +2539,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/ido.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/view.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/elide-head.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xref.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xref.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/meta-mode.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/hideif.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-langs.el
@@ -2728,6 +2732,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/vt-control.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/nsm.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/nsm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/mairix.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/soap-client.elc
@@ -3147,6 +3153,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/dnd.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/kermit.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/echistory.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/assoc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mouse-sel.el
@@ -3543,6 +3551,10 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-files.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-cscope.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/config.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/config.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/detect.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/detect.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/proj-shared.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/proj-misc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/custom.elc
@@ -3618,6 +3630,14 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/inversion.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/data-debug.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-idutils.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-generic.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-generic.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-preloaded.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-preloaded.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/shadow.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/unsafep.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elp.el
@@ -3765,6 +3785,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/syntax.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/easymenu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/advice.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/seq.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/seq.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/informat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/wdired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.el
@@ -3798,6 +3820,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/autoinsert.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/files.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/let-alist.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/let-alist.elc
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/macuvs.h
