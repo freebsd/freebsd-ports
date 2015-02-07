@@ -513,6 +513,7 @@
     SUBDIR += libpuzzle
     SUBDIR += libqrencode
     SUBDIR += librasterlite
+    SUBDIR += librasterlite2
     SUBDIR += libraw
     SUBDIR += libreatlas
     SUBDIR += librsvg2
