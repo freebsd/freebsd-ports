@@ -1,22 +1,6 @@
 etc/mail/smtpd.conf.sample
 libexec/opensmtpd/mail.local
 libexec/opensmtpd/makemap
-libexec/opensmtpd/queue-null
-libexec/opensmtpd/queue-ram
-libexec/opensmtpd/queue-stub
-libexec/opensmtpd/table-stub
-libexec/opensmtpd/table-passwd
-%%MYSQL%%libexec/opensmtpd/table-mysql
-%%SQLITE%%libexec/opensmtpd/table-sqlite
-%%LDAP%%libexec/opensmtpd/table-ldap
-%%PGSQL%%libexec/opensmtpd/table-postgres
-%%REDIS%%libexec/opensmtpd/table-redis
-libexec/opensmtpd/scheduler-ram
-libexec/opensmtpd/scheduler-stub
-libexec/opensmtpd/filter-dnsbl
-libexec/opensmtpd/filter-monkey
-libexec/opensmtpd/filter-stub
-libexec/opensmtpd/filter-trace
 libexec/opensmtpd/encrypt
 sbin/smtpctl
 sbin/smtpd
@@ -29,3 +13,5 @@ man/man5/table.5.gz
 man/man5/smtpd.conf.5.gz
 man/man5/forward.5.gz
 man/man5/aliases.5.gz
+@dir libexec/opensmtpd
+@dirrmtry etc/mail
