@@ -60,7 +60,7 @@ do-install:
 	(cd ${WRKSRC}/game && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/*.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

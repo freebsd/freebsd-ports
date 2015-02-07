@@ -42,7 +42,7 @@ SUB_FILES+=	special_${PORTNAME}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .if exists(/etc/autofs)
 	@${MKDIR} ${STAGEDIR}/etc/autofs
 	${INSTALL_SCRIPT} ${WRKDIR}/special_${PORTNAME} \
