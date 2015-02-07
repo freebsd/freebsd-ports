@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTVERSION=	2.5.5
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
