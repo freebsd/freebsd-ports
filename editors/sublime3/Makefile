@@ -3,7 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	3.0.65
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 PKGNAMEPREFIX=	linux-
@@ -13,7 +13,7 @@ MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
 USES=		tar:bzip2 desktop-file-utils
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/sublime_text_3
 
 CONFLICTS=	linux-sublime-[0-24-9]*
