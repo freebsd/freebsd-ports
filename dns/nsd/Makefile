@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -48,7 +47,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
-		MINRESPSIZE NSEC3 MMAP MAXIPS DOCS RRL
+		MINRESPSIZE NSEC3 MMAP MAXIPS DOCS RRL ZONE_STATS
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 MINRESPSIZE RRL
 
 ROOT_SERVER_DESC=	Configure as a root server
@@ -60,6 +59,7 @@ MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
+ZONE_STATS_DESC=	Separate statistics for each zone
 
 LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 
@@ -73,6 +73,7 @@ MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
 MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
+ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
