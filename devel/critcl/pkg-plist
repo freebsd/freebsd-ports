@@ -101,3 +101,17 @@ lib/stubs/writer.tcl
 lib/util84/dict.tcl
 lib/util84/lassign.tcl
 lib/util84/pkgIndex.tcl
+man/mann/critcl_app.n.gz
+man/mann/critcl_apppkg.n.gz
+man/mann/critcl_bitmap.n.gz
+man/mann/critcl_class.n.gz
+man/mann/critcl_devguide.n.gz
+man/mann/critcl_enum.n.gz
+man/mann/critcl_iassoc.n.gz
+man/mann/critcl_installer.n.gz
+man/mann/critcl_introduction.n.gz
+man/mann/critcl_literals.n.gz
+man/mann/critcl_pkg.n.gz
+man/mann/critcl_sources.n.gz
+man/mann/critcl_usingit.n.gz
+man/mann/critcl_util.n.gz
