@@ -30,6 +30,8 @@ TESTS_CMAKE_OFF=-DBUILD_TESTS=OFF
 
 OPTIONS_SUB=	yes
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 .include <bsd.port.options.mk>
 
 post-patch:
