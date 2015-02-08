@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	the_silver_searcher
-PORTVERSION=	0.29.0
+PORTVERSION=	0.29.1
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	808b32d
+GH_COMMIT=	803700e
 
 ACLOCAL_ARGS+=	-I ${ACLOCAL_DIR}
 AUTOMAKE_ARGS+=	--add-missing
