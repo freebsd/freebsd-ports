@@ -15,6 +15,7 @@ libdata/pkgconfig/glewmx.pc
 %%PORTDOCS%%%%DOCSDIR%%/basic.html
 %%PORTDOCS%%%%DOCSDIR%%/build.html
 %%PORTDOCS%%%%DOCSDIR%%/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/github.png
 %%PORTDOCS%%%%DOCSDIR%%/glew.css
 %%PORTDOCS%%%%DOCSDIR%%/glew.html
 %%PORTDOCS%%%%DOCSDIR%%/glew.png
