@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.72b
-PORTREVISION=	2
+PORTVERSION=	2.73a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -21,8 +20,10 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
 USES=		cmake:outsource compiler:features python:3.4 shebangfix
-CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
-		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF
+INSTALLS_ICONS=	yes
+CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
+		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \
+		-DWITH_INSTALL_PORTABLE:BOOL=FALSE
 
 python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
@@ -30,10 +31,12 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
 
-SUB_FILES=	blender blenderplayer
-
+BL_VERSION=	2.73
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.72
+OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
+
+PLIST_SUB+=	VER=${BL_VERSION}
+OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
 
@@ -173,13 +176,13 @@ BUILD_DEPENDS+=	llvm-config34:${PORTSDIR}/devel/llvm34
 CMAKE_ARGS+=	-DWITH_CYCLES_OSL:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MHEADLESS} 
+.if ${PORT_OPTIONS:MHEADLESS}
 .if ${PORT_OPTIONS:MXINPUT} || ${PORT_OPTIONS:MXF86VMODE}
 BROKEN=	HEADLESS does not require any X11 dependency
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MOPENIMAGEIO} 
+.if ${PORT_OPTIONS:MOPENIMAGEIO}
 .if !${PORT_OPTIONS:MOPENEXR} || !${PORT_OPTIONS:MTIFF}
 BROKEN=	OPENIMAGEIO requires OPENEXR and TIFF
 .endif
@@ -195,18 +198,11 @@ BROKEN=	REDCODE requires OPENJPEG and FFMPEG
 .endif
 .endif
 
-
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == gcc
 # gcc 4.2 does not support -msse4.1, which is needed for blender 2.70+
 USE_GCC=	yes
-.endif
-
-.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
-.if ${PORT_OPTIONS:MFFMPEG}
-BROKEN=	Blender crashes on rendering, if ffmpeg is built with SSE support
-.endif
 .endif
 
 post-patch:
@@ -221,68 +217,11 @@ post-build:
 			${INSTALL_WRKSRC}/bin/blender \
 			${INSTALL_WRKSRC}/bin/${PORTNAME}.1)
 
-# We ignore MAKE_ARGS, since those would set DESTDIR for make stage,
-# which in turn would cause make install to install everything in a
-# wrong location
-do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/blender ${STAGEDIR}${PREFIX}/bin/blender
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/blender \
-		${STAGEDIR}${PREFIX}/bin/blender-bin
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/blender-thumbnailer.py \
-		${STAGEDIR}${PREFIX}/bin/blender-thumbnailer.py
-	@${ECHO} bin/blender >> ${TMPPLIST}
-	@${ECHO} bin/blender-bin >> ${TMPPLIST}
-	@${ECHO} bin/blender-thumbnailer.py >> ${TMPPLIST}
-
-.if ${PORT_OPTIONS:MPLAYER}
-	${INSTALL_SCRIPT} ${WRKDIR}/blenderplayer \
-		${STAGEDIR}${PREFIX}/bin/blenderplayer
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/blenderplayer \
-		${STAGEDIR}${PREFIX}/bin/blenderplayer-bin
-	@${ECHO} bin/blenderplayer >> ${TMPPLIST}
-	@${ECHO} bin/blenderplayer-bin >> ${TMPPLIST}
-.endif
-
 .if ${PORT_OPTIONS:MMENU}
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
 	@-update-desktop-database -q
-	@${ECHO} share/applications/${PORTNAME}.desktop >> ${TMPPLIST}
 .endif
-
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${OUTDIR} && ${COPYTREE_SHARE} scripts ${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.svg \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.svg
-	@(cd ${OUTDIR}; ${FIND} scripts -type f) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
-	@(cd ${OUTDIR}; ${FIND} scripts -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
-	@${ECHO} share/pixmaps/${PORTNAME}.svg >> ${TMPPLIST}
-
-.if ${PORT_OPTIONS:MOPENCOLORIO}
-	cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/colormanagement ${STAGEDIR}${DATADIR}
-	@(cd ${OUTDIR}; ${FIND} datafiles/colormanagement -type f) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
-	@(cd ${OUTDIR}; ${FIND} datafiles/colormanagement -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-	cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/locale ${STAGEDIR}${DATADIR}
-	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name languages) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
-	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name ${PORTNAME}.mo) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
-	cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/fonts ${STAGEDIR}${DATADIR}
-	@(cd ${OUTDIR}; ${FIND} datafiles/fonts -type f) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
-	@(cd ${OUTDIR}; ${FIND} datafiles/fonts -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
-	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
-.endif
-	@${ECHO} @dirrm ${DATADIR_REL}/datafiles >> ${TMPPLIST}
-	@${ECHO} @dirrm ${DATADIR_REL} >> ${TMPPLIST}
-
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
-	@${ECHO} man/man1/${PORTNAME}.1.gz >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
