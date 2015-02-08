@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lightning
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generates assembly language code at run-time
 
 LICENSE=	GPLv3 LGPL3
