@@ -51,7 +51,7 @@ include/ibus-1.0/ibusenginesimple.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.505
+lib/libibus-1.0.so.5.0.509
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.py
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyc
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyo
@@ -218,6 +218,9 @@ share/applications/ibus-setup.desktop
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
+%%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
+%%PORTDOCS%%%%DOCSDIR%%/right-insensitive.png
+%%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%GTK3%%%%DATADIR%%/component/gtkpanel.xml
 %%GCONF%%%%DATADIR%%/component/gconf.xml
 %%DCONF%%%%DATADIR%%/component/dconf.xml
@@ -234,6 +237,9 @@ share/applications/ibus-setup.desktop
 %%DATADIR%%/setup/enginecombobox.py
 %%DATADIR%%/setup/enginecombobox.pyc
 %%DATADIR%%/setup/enginecombobox.pyo
+%%DATADIR%%/setup/enginedialog.py
+%%DATADIR%%/setup/enginedialog.pyc
+%%DATADIR%%/setup/enginedialog.pyo
 %%DATADIR%%/setup/enginetreeview.py
 %%DATADIR%%/setup/enginetreeview.pyc
 %%DATADIR%%/setup/enginetreeview.pyo
@@ -274,6 +280,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/fa/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/he/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/ibus10.mo
@@ -297,6 +304,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/te/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/tg/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus10.mo
@@ -305,16 +313,16 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%VALA%%share/vala/vapi/ibus-1.0.vapi
 share/bash-completion/completions/ibus.bash
 %%DCONF%%share/GConf/gsettings/ibus.convert
-@dirrm %%DATADIR%%/setup
-@dirrmtry %%DATADIR%%/keymaps
-@dirrmtry %%DATADIR%%/engine
-%%COMPDIR%%@dirrmtry %%DATADIR%%/component
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PYTHON_LIB%%@dirrm %%PYTHON_SITELIBDIR%%/ibus/interface
-%%PYTHON_LIB%%@dirrm %%PYTHON_SITELIBDIR%%/ibus
-@dirrm include/ibus-1.0
-%%DCONF%%@dirrmtry etc/dconf/db/ibus.d
+@dir %%DATADIR%%/setup
+@dir %%DATADIR%%/keymaps
+@dir %%DATADIR%%/engine
+%%COMPDIR%%@dir %%DATADIR%%/component
+@dir %%DATADIR%%
+%%PORTDOCS%%@dir %%DOCSDIR%%
+%%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus/interface
+%%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus
+@dir include/ibus-1.0
+%%DCONF%%@dir etc/dconf/db/ibus.d
 %%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
 %%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
