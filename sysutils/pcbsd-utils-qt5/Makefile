@@ -12,7 +12,7 @@ COMMENT=	PC-BSD Qt5 Utilities
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	lpreserver:${PORTSDIR}/sysutils/pcbsd-utils \
+RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		cdda2wav:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
