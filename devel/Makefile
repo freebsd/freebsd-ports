@@ -4749,6 +4749,7 @@
     SUBDIR += srecord
     SUBDIR += st
     SUBDIR += statcvs
+    SUBDIR += statik
     SUBDIR += statsvn
     SUBDIR += stfl
     SUBDIR += stlfilt
