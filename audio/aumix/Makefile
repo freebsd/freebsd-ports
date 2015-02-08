@@ -33,23 +33,14 @@ PLIST_FILES+=	share/aumix/${ii}
 
 OPTIONS_DEFINE=	NLS GTK2
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 .for ii in ca de el es fr gl it ja nl pl pt_BR ru sv uk zh_CN
-PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
+NLS_PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
 .endfor
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
-.else
-CONFIGURE_ARGS+=--without-gtk
-.endif
+GTK2_USE=	GNOME=gtk20
+GTK2_CONFIGURE_OFF=--without-gtk
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[ch]
