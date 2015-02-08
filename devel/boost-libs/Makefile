@@ -35,10 +35,6 @@ USES+=		iconv
 BJAM_ARGS+=	-sICONV_PATH=${LOCALBASE}
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: invokes i386 assembler
-.endif
-
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
