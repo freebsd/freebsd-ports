@@ -30,7 +30,7 @@ XFT_USE=	XORG=xft
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000024
-USE_GCC=	4.6+
+USE_GCC=	yes
 .else
 CONFIGURE_ARGS+=	--disable-cxx-check
 CXXFLAGS+=	-std=c++11
