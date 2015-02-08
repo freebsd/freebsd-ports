@@ -35,6 +35,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringySplit.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalCan.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalIsa.pm
+%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUselessTopic.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidGrep.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidMap.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireBlockGrep.pm
@@ -109,6 +110,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitSingleCharAlternation.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitUnusedCapture.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitUnusualDelimiters.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitUselessTopic.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireBracesForMultiline.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireDotMatchAnything.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireExtendedFormatting.pm
@@ -230,6 +232,7 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitUselessTopic.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidGrep.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidMap.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3.gz
@@ -304,6 +307,7 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::ProhibitSingleCharAlternation.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::ProhibitUnusedCapture.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::ProhibitUnusualDelimiters.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::ProhibitUselessTopic.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::RequireBracesForMultiline.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::RequireDotMatchAnything.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3.gz
