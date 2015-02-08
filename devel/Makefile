@@ -2745,6 +2745,7 @@
     SUBDIR += p5-Role-Tiny
     SUBDIR += p5-Rose-DateTime
     SUBDIR += p5-Rose-Object
+    SUBDIR += p5-Router-R3
     SUBDIR += p5-RunApp
     SUBDIR += p5-SDL
     SUBDIR += p5-SNMP-Persist
