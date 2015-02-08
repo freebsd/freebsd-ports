@@ -1,0 +1,7 @@
+LaTeXML is a TeX and LaTeX to XML/HTML/MathML converter.
+From XML it can generate various flavors of HTML.
+MathML and ePub, with other formats under development.
+
+See the included manual.pdf for an documentation.
+
+WWW: http://dlmf.nist.gov/LaTeXML/

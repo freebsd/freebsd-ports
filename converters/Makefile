@@ -91,6 +91,7 @@
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-JSON-XS-VersionOneAndTwo
     SUBDIR += p5-JSON1
+    SUBDIR += p5-LaTeXML
     SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-MIME-Base64-URLSafe
