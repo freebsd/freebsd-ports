@@ -4,6 +4,7 @@ man/man6/manaplus.6.gz
 man/man6/manaplustest.6.gz
 share/applications/manaplus.desktop
 share/applications/manaplustest.desktop
+share/locale/ca/LC_MESSAGES/manaplus.mo
 share/locale/cs/LC_MESSAGES/manaplus.mo
 share/locale/de/LC_MESSAGES/manaplus.mo
 share/locale/es/LC_MESSAGES/manaplus.mo
@@ -12,13 +13,16 @@ share/locale/fr/LC_MESSAGES/manaplus.mo
 share/locale/id/LC_MESSAGES/manaplus.mo
 share/locale/it/LC_MESSAGES/manaplus.mo
 share/locale/ja/LC_MESSAGES/manaplus.mo
+share/locale/nl/LC_MESSAGES/manaplus.mo
 share/locale/nl_BE/LC_MESSAGES/manaplus.mo
 share/locale/pl/LC_MESSAGES/manaplus.mo
 share/locale/pt/LC_MESSAGES/manaplus.mo
 share/locale/pt_BR/LC_MESSAGES/manaplus.mo
 share/locale/ru/LC_MESSAGES/manaplus.mo
+share/locale/sv/LC_MESSAGES/manaplus.mo
 share/locale/sv_SE/LC_MESSAGES/manaplus.mo
 share/locale/tr/LC_MESSAGES/manaplus.mo
+share/locale/uk/LC_MESSAGES/manaplus.mo
 share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/fonts/dejavusans-bold.ttf
 %%DATADIR%%/data/fonts/dejavusans.ttf
