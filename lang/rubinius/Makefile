@@ -2,15 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	2.2.10
-PORTREVISION=	2
+PORTVERSION=	2.5.2
 CATEGORIES=	lang
-MASTER_SITES=	http://releases.rubini.us/:source \
-		RG:gems
-DISTFILES=	redcard-1.1.0.gem:gems \
-		rubinius-bridge-1.0.8.gem:gems \
-		daedalus-core-0.0.3.gem:gems \
-		${DISTNAME}${EXTRACT_SUFX}:source
+MASTER_SITES=	http://releases.rubini.us/:source
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
-		${LOCALBASE}/bin/llvm-config34:${PORTSDIR}/devel/llvm34 \
+		${LOCALBASE}/bin/llvm-config35:${PORTSDIR}/devel/llvm35 \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 HAS_CONFIGURE=	yes
@@ -33,12 +28,14 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--cc ${CC} \
 		--cxx ${CXX} \
 		--no-bin-links \
-		--llvm-config ${LOCALBASE}/bin/llvm-config34 \
+		--llvm-config ${LOCALBASE}/bin/llvm-config35 \
+		--with-fibers --without-dtrace --release-build \
 		--sitedir "${PREFIX}/lib/ruby/site_ruby/rubinius" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius" \
-		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo
+		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo \
+		--system-name ${OPSYS}
 
-USES=		perl5 gmake tar:bzip2 readline
+USES=		perl5 gmake tar:bzip2 readline compiler:c++11-lib
 USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -96,13 +93,14 @@ do-build:
 	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius/.keep_me
 	@${MV} ${STAGEDIR}${PREFIX}/bin/testrb ${STAGEDIR}${PREFIX}/bin/testrbx
 	@${FIND} ${STAGEDIR} -type f -name '*.so' |${XARGS} ${STRIP_CMD}
-	@${FIND} ${STAGEDIR} -type f -name 'gem_make.out' |${XARGS} ${RM}
-	@${FIND} ${STAGEDIR} -type f -name 'gem.build_complete' |${XARGS} ${RM}
-	@${FIND} ${STAGEDIR} -type f -name 'mkmf.log' |${XARGS} ${RM}
+	@${FIND} ${STAGEDIR} -type f -name 'gem_make.out' -delete
+	@${FIND} ${STAGEDIR} -type f -name 'mkmf.log' -delete
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rbx
 
 plist:
 	@truncate -s0 pkg-plist
 	@${ECHO_CMD} "bin/rbx" >> pkg-plist
+	@${ECHO_CMD} "bin/testrbx" >> pkg-plist
 #
 # Includes
 #
