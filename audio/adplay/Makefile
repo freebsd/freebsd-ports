@@ -34,7 +34,7 @@ PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz
 
 OPTIONS_DEFINE=	SDL
 SDL_CONFIGURE_OFF=	--disable-output-sdl
-SDL_USE=	SDL=sdl SDL=mixer
+SDL_USE=	SDL=sdl,mixer
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lstdc++//g' ${WRKSRC}/configure
