@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga2
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
