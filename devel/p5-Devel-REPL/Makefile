@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-REPL
-PORTVERSION=	1.003025
-PORTREVISION=	2
+PORTVERSION=	1.003026
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,11 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Modern Perl interactive shell
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Object-Pluggable>=0.0009:${PORTSDIR}/devel/p5-MooseX-Object-Pluggable \
 	p5-MooseX-Getopt>=0.18:${PORTSDIR}/devel/p5-MooseX-Getopt \
 	p5-MooseX-AttributeHelpers>=0.16:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-File-HomeDir>0:${PORTSDIR}/devel/p5-File-HomeDir \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
