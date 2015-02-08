@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	venusian
-PORTVERSION=	1.0a8
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python library for deferring decorator actions
 
 LICENSE=	BSD4CLAUSE
