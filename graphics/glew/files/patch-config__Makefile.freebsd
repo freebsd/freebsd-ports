@@ -1,5 +1,5 @@
---- ./config/Makefile.freebsd.orig	2014-08-11 16:14:56.000000000 +0200
-+++ ./config/Makefile.freebsd	2014-08-17 19:36:47.000000000 +0200
+--- config/Makefile.freebsd.orig	2015-02-08 09:24:57 UTC
++++ config/Makefile.freebsd
 @@ -1,22 +1,22 @@
  NAME = $(GLEW_NAME)
 -CC = cc
@@ -11,7 +11,7 @@
  LDFLAGS.GL = -lGL -lX11
  LDFLAGS.STATIC = -Wl,-Bstatic
  LDFLAGS.DYNAMIC = -Wl,-Bdynamic
--CFLAGS.EXTRA += -I/usr/X11R6/include
+-CFLAGS.EXTRA += -I/usr/X11R6/include -fPIC
 +CFLAGS.EXTRA += -I${LOCALBASE}/include -fPIC
  NAME = GLEW
  WARN = -Wall -W
