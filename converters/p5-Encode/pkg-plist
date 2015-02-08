@@ -1,3 +1,4 @@
+bin/encguess
 %%PERL5_MAN3%%/Encode.3.gz
 %%PERL5_MAN3%%/Encode::Alias.3.gz
 %%PERL5_MAN3%%/Encode::CJKConstants.3.gz
@@ -59,3 +60,4 @@
 %%SITE_ARCH%%/auto/Encode/TW/TW.so
 %%SITE_ARCH%%/auto/Encode/Unicode/Unicode.so
 %%SITE_ARCH%%/encoding.pm
+man/man1/encguess.1.gz
