@@ -53,9 +53,7 @@
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
 %%WWWDIR%%/classes/ttrssmailer.php
-@unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php-dist
-@exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
 %%WWWDIR%%/css/cdm.css
 %%WWWDIR%%/css/dijit.css
 %%WWWDIR%%/css/layout.css
@@ -2072,6 +2070,9 @@
 %%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_habr/init.php
 %%WWWDIR%%/plugins/af_natgeo/init.php
+%%WWWDIR%%/plugins/af_psql_trgm/button.png
+%%WWWDIR%%/plugins/af_psql_trgm/init.js
+%%WWWDIR%%/plugins/af_psql_trgm/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_sciam/init.php
 %%WWWDIR%%/plugins/af_tumblr_1280/init.php
@@ -2123,8 +2124,6 @@
 %%WWWDIR%%/plugins/shorten_expanded/init.js
 %%WWWDIR%%/plugins/shorten_expanded/init.php
 %%WWWDIR%%/plugins/swap_jk/init.php
-%%WWWDIR%%/plugins/updater/init.php
-%%WWWDIR%%/plugins/updater/updater.js
 %%WWWDIR%%/plugins/vf_shared/init.php
 %%WWWDIR%%/plugins/vf_shared/share.png
 %%WWWDIR%%/prefs.php
@@ -2163,6 +2162,7 @@
 %%WWWDIR%%/schema/versions/mysql/124.sql
 %%WWWDIR%%/schema/versions/mysql/125.sql
 %%WWWDIR%%/schema/versions/mysql/126.sql
+%%WWWDIR%%/schema/versions/mysql/127.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2287,6 +2287,7 @@
 %%WWWDIR%%/schema/versions/pgsql/124.sql
 %%WWWDIR%%/schema/versions/pgsql/125.sql
 %%WWWDIR%%/schema/versions/pgsql/126.sql
+%%WWWDIR%%/schema/versions/pgsql/127.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2391,6 +2392,8 @@
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
 %%WWWDIR%%/themes/night.css
+@exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
+@unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 @mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
@@ -2412,7 +2415,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema/versions
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/vf_shared
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/updater
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/swap_jk
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/shorten_expanded
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/share
