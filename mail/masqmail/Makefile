@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	masqmail
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
@@ -34,10 +33,10 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/masqmail.conf ${STAGEDIR}${ETCDIR}/masqmail.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/examples/example.route ${STAGEDIR}${ETCDIR}/masqmail.route-dist
-	${INSTALL_DATA} ${WRKSRC}/examples/localnet.route ${STAGEDIR}${ETCDIR}/localnet.route-dist
-	${INSTALL_DATA} ${WRKSRC}/examples/openssl.route ${STAGEDIR}${ETCDIR}/openssl.route-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/masqmail.conf ${STAGEDIR}${ETCDIR}/masqmail.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/example.route ${STAGEDIR}${ETCDIR}/masqmail.route.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/localnet.route ${STAGEDIR}${ETCDIR}/localnet.route.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/openssl.route ${STAGEDIR}${ETCDIR}/openssl.route.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
 	cd ${WRKSRC} && ${CP} ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docs/

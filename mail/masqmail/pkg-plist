@@ -1,12 +1,8 @@
 bin/mservdetect
-@owner mailnull
-@group mail
-%%ETCDIR%%/localnet.route-dist
-%%ETCDIR%%/masqmail.conf-dist
-%%ETCDIR%%/masqmail.route-dist
-%%ETCDIR%%/openssl.route-dist
-@owner
-@group
+@sample(mailnull,mail,) %%ETCDIR%%/localnet.route.sample
+@sample(mailnull,mail,) %%ETCDIR%%/masqmail.conf.sample
+@sample(mailnull,mail,) %%ETCDIR%%/masqmail.route.sample
+@sample(mailnull,mail,) %%ETCDIR%%/openssl.route.sample
 man/man1/mservdetect.1.gz
 man/man5/masqmail.aliases.5.gz
 man/man5/masqmail.conf.5.gz
@@ -45,8 +41,3 @@ sbin/rmail
 %%PORTDOCS%%%%DOCSDIR%%/docs/simple-local-setup
 %%PORTDOCS%%%%DOCSDIR%%/docs/simple-relay-setup
 %%PORTDOCS%%%%DOCSDIR%%/docs/uucp-setup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/tpl
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%
