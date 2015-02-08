@@ -28,15 +28,10 @@ DESKTOP_ENTRIES="AutoZen" \
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USES+=		pkgconfig
-USE_GNOME=	gtk20
-MAKE_ENV+=	GTK_CONFIG="pkg-config gtk+-2.0"
-.else
-USE_GNOME=	gtk12
-.endif
+GTK2_USES=	pkgconfig
+GTK2_USE=	GNOME=gtk20
+GTK2_MAKE_ENV=	GTK_CONFIG="pkg-config gtk+-2.0"
+GTK2_USE_OFF=	GNOME=gtk12
 
 post-extract:
 	@cd ${WRKSRC} && ${RM} -f autozen seq2wav
@@ -57,9 +52,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.seq ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} HTML ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
