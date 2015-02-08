@@ -1,15 +1,15 @@
 # Created by: Svyatoslav Lempert <svyatoslav.lempert@gmail dot com>
 # $FreeBSD$
 
-PORTNAME=		c6
-PORTVERSION=		6.6
-PORTREVISION=		2
-CATEGORIES=		emulators linux
+PORTNAME=	c6
+PORTVERSION=	6.6
+PORTREVISION=	3
+CATEGORIES=	emulators linux
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
 		http://mirror.centos.org/centos/6/updates/i386/Packages/
-PKGNAMEPREFIX=		linux_base-
-DISTFILES=		${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
-EXTRACT_ONLY=		${BIN_DISTFILES}
+PKGNAMEPREFIX=	linux_base-
+DISTFILES=	${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
+EXTRACT_ONLY=	${BIN_DISTFILES}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 6)
@@ -244,6 +244,10 @@ do-install:
 		| ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 
 	@${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
+	@${LN} -sf ../usr/bin/[ ${STAGEDIR}${PREFIX}/bin/[
+	@${LN} -sf ../usr/bin/expr ${STAGEDIR}${PREFIX}/bin/expr
+	@${LN} -sf ../usr/bin/test ${STAGEDIR}${PREFIX}/bin/test
+	@${LN} -sf ../usr/bin/uuidgen ${STAGEDIR}${PREFIX}/bin/uuidgen
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/var/lock ${STAGEDIR}${PREFIX}/var/spool/mail
 #
 # Let some linux applications (e.g. print/acroread8) print with default settings
