@@ -3,6 +3,7 @@
 
 PORTNAME=	django-mezzanine
 PORTVERSION=	3.1.10
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>1.6:${PORTSDIR}/www/py-django \
+		${PYTHON_PKGNAMEPREFIX}django-contrib-comments>0:${PORTSDIR}/www/py-django-contrib-comments \
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4:${PORTSDIR}/www/py-bleach \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.1.3:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet \
