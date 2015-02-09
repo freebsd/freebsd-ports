@@ -16,9 +16,10 @@ load_rc_config "$name"
 : ${xymon_client_enable:=NO}
 : ${xymon_client_user:=%%XYMONUSER%%}
 
-command=/usr/local/www/xymon/client/runclient.sh
+command=%%WWWDIR%%/client/runclient.sh
 command_args="${xymon_client_flags} ${1}"
-procname=/usr/local/www/xymon/client/bin/xymonlaunch
-pidfile="/usr/local/www/xymon/client/logs/clientlaunch.`hostname`.pid"
+procname=%%WWWDIR%%/client/bin/xymonlaunch
+pidfile="%%WWWDIR%%/client/logs/clientlaunch.`hostname`.pid"
+start_precmd="chown -R %%XYMONUSER%% %%WWWDIR%%/client/logs"
 
 run_rc_command "$1"
