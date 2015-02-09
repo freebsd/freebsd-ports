@@ -20,6 +20,6 @@ command=%%WWWDIR%%/client/runclient.sh
 command_args="${xymon_client_flags} ${1}"
 procname=%%WWWDIR%%/client/bin/xymonlaunch
 pidfile="%%WWWDIR%%/client/logs/clientlaunch.`hostname`.pid"
-start_precmd="chown -R %%XYMONUSER%% %%WWWDIR%%/client/logs"
+start_precmd="chown -R ${xymon_client_user} %%WWWDIR%%/client/logs"
 
 run_rc_command "$1"
