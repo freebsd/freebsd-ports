@@ -5,7 +5,7 @@ PORTNAME=	django-contrib-comments
 PORTVERSION=	1.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Code formerly known as django.contrib.comments
