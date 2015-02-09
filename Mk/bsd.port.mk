@@ -1766,9 +1766,12 @@ RUN_DEPENDS+=	${LINUX_BASE_PORT}
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 _GL_gbm_LIB_DEPENDS=		libgbm.so:${PORTSDIR}/graphics/gbm
-_GL_glesv2_LIB_DEPENDS=		libGLESv2.so:${PORTSDIR}/graphics/libglesv2
-_GL_egl_LIB_DEPENDS=		libEGL.so:${PORTSDIR}/graphics/libEGL
-_GL_gl_LIB_DEPENDS=		libGL.so:${PORTSDIR}/graphics/libGL
+_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
+_GL_glesv2_RUN_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
+_GL_egl_BUILD_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
+_GL_egl_RUN_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
+_GL_gl_BUILD_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
+_GL_gl_RUN_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
 _GL_gl_USE_XORG=		glproto dri2proto
 _GL_glew_LIB_DEPENDS=		libGLEW.so:${PORTSDIR}/graphics/glew
 _GL_glu_LIB_DEPENDS=		libGLU.so:${PORTSDIR}/graphics/libGLU
@@ -4473,18 +4476,8 @@ lib-depends:
 		target="${DEPENDS_TARGET}"; \
 		depends_args="${DEPENDS_ARGS}"; \
 		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
-		found=0 ; \
-		dirs="${LIB_DIRS} `${CAT} ${LOCALBASE}/libdata/ldconfig/* 2>/dev/null || : `" ; \
-		for libdir in $$dirs; do \
-			test -f $${libdir}/$${lib} || continue; \
-			if [ -x /usr/bin/file ]; then \
-				_LIB_FILE=`realpath $${libdir}/$${lib}`; \
-				[ `file -b -L --mime-type $${_LIB_FILE}` = "application/x-sharedlib" ] || continue ; \
-			fi ; \
-			found=1 ; \
-			${ECHO_MSG} -n " - found ($${_LIB_FILE})"; \
-		done ; \
-		if [ $${found} -eq 0 ]; then \
+		libfile=`${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}` ; \
+		if [ -z "$${libfile}" ]; then \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
 			if [ ! -d "$$dir" ] ; then \
@@ -4493,7 +4486,7 @@ lib-depends:
 				${_INSTALL_DEPENDS} \
 			fi ; \
 		else \
-			${ECHO_MSG}; \
+			${ECHO_MSG} " - found ($${libfile})"; \
 		fi ; \
 	done
 .endif
@@ -4801,9 +4794,11 @@ PACKAGE-DEPENDS-LIST?= \
 	done
 
 ACTUAL-PACKAGE-DEPENDS?= \
-	if [ "${_LIB_RUN_DEPENDS}" != "  " ]; then \
-		${PKG_QUERY} "\"%n\": {origin: %o, version: \"%v\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
-	fi
+	depfiles="" ; \
+	for lib in ${LIB_DEPENDS:C/\:.*//}; do \
+		depfiles="$$depfiles `${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}`" ; \
+	done ; \
+	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS:C/(.*)\:.*/"\1"/}
 
 create-manifest:
 	@${MKDIR} ${METADIR}; \
