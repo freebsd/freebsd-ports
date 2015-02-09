@@ -21,8 +21,8 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 #RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GNOME=	gtkmm24 intlhack libxslt
-USES=		desktop-file-utils gettext gmake iconv libtool pathfix \
-		perl5 pkgconfig shebangfix tar:bzip2
+USES=		compiler:c++0x desktop-file-utils gettext gmake iconv \
+		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
