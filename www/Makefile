@@ -80,6 +80,7 @@
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chromium
+    SUBDIR += chromium-npapi
     SUBDIR += chromium-pulse
     SUBDIR += chtml
     SUBDIR += ckeditor
