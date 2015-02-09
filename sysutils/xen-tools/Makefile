@@ -39,6 +39,10 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-rm \
 		bin/xenstore-write
 
+post-patch:
+	${REINPLACE_CMD} -e 's;86|x86_64;86no|x86_64no;' \
+		${WRKSRC}/tools/configure
+
 do-build:
 	cd ${WRKSRC}/tools && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C include
 	cd ${WRKSRC}/tools/misc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} xen-detect
