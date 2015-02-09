@@ -136,11 +136,23 @@ Notes:
     <topic>PostgreSQL -- multiple buffer overflows and memory issues</topic>
     <affects>
       <package>
-	<name>postgresql-server</name>
+	<name>postgresql90-server</name>
 	<range><ge>9.0.0</ge><lt>9.0.19</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
 	<range><ge>9.1.0</ge><lt>9.1.15</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
 	<range><ge>9.2.0</ge><lt>9.2.10</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
 	<range><ge>9.3.0</ge><lt>9.3.6</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
 	<range><ge>9.4.0</ge><lt>9.4.1</lt></range>
       </package>
     </affects>
