@@ -2,20 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	libchewing
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	chinese textproc
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Chewing intelligent phonetic input method library
+COMMENT=	Chewing intelligent phonetic input method library
 
-USES=		tar:bzip2 gmake pkgconfig pathfix libtool
-GNU_CONFIGURE=	yes
+LICENSE=	LGPL21
+LICENSE_FILE=	 ${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+
+USES=		cmake gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	chewing
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	6d6e67c
 
-DATADIR=	${PREFIX}/share/chewing
-PROJECTHOST=	chewing
+CFLAGS+=	-I${LOCALBASE}/include
 INFO=		libchewing
 
 .include <bsd.port.pre.mk>
