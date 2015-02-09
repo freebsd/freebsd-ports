@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	composer
-DISTVERSION=	1.0.0-alpha8.20140419
+DISTVERSION=	1.0.0-alpha9
 CATEGORIES=	devel
-MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/ \
-		http://freebsd.cs.nctu.edu.tw/~gslin/files/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	php-
 DISTNAME=	composer
 EXTRACT_SUFX=	.phar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Dependency Manager for PHP
 
 LICENSE=	MIT
