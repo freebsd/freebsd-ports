@@ -3,8 +3,8 @@ include/zmq.h
 include/zmq_utils.h
 lib/libzmq.a
 lib/libzmq.so
-lib/libzmq.so.3
-lib/libzmq.so.3.1.0
+lib/libzmq.so.4
+lib/libzmq.so.4.0.0
 libdata/pkgconfig/libzmq.pc
 man/man3/zmq_bind.3.gz
 man/man3/zmq_close.3.gz
@@ -37,6 +37,7 @@ man/man7/zmq_null.7.gz
 man/man3/zmq_poll.3.gz
 man/man7/zmq_plain.7.gz
 man/man3/zmq_proxy.3.gz
+man/man3/zmq_proxy_steerable.3.gz
 man/man3/zmq_recv.3.gz
 man/man3/zmq_recvmsg.3.gz
 man/man3/zmq_send.3.gz

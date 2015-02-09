@@ -3,6 +3,7 @@
 
 PORTNAME=	czmq
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 
@@ -18,6 +19,9 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE}
+
+MAKE_ENV=	V=1
+INSTALL_TARGET=	install-strip
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check

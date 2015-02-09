@@ -18,7 +18,8 @@ USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DEBUG PGM
+OPTIONS_DEFINE=		DEBUG PGM
+OPTIONS_DEFAULT=	PGM
 
 PGM_DESC=	Reliable multicast transport using PGM via OpenPGM
 
