@@ -44,7 +44,7 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
-USES=			libtool:keepla
+USES=			cpe libtool:keepla
 USE_OPENSSL=		yes
 .if !defined(CLIENT_ONLY)
 USERS=			ldap
