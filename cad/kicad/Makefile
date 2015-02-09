@@ -23,8 +23,7 @@ CONFLICTS=	kicad-devel*
 USES=		cmake dos2unix desktop-file-utils shared-mime-info tar:xz
 
 # Does not compile with Gcc48
-GCC_DEFAULT=	4.7
-USE_GCC=	${GCC_DEFAULT}
+USE_GCC=	4.7
 #USES+=		compiler:gcc-c++11-lib
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
