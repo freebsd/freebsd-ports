@@ -130,8 +130,8 @@ lib/purple-2/log_reader.a
 lib/purple-2/log_reader.so
 lib/purple-2/newline.a
 lib/purple-2/newline.so
-lib/purple-2/nss-prefs.a
-lib/purple-2/nss-prefs.so
+%%NSS%%lib/purple-2/nss-prefs.a
+%%NSS%%lib/purple-2/nss-prefs.so
 lib/purple-2/offlinemsg.a
 lib/purple-2/offlinemsg.so
 %%PERL:%%lib/purple-2/perl.a
