@@ -17,6 +17,7 @@ include/FL/Fl_Check_Button.H
 include/FL/Fl_Choice.H
 include/FL/Fl_Clock.H
 include/FL/Fl_Color_Chooser.H
+include/FL/Fl_Copy_Surface.H
 include/FL/Fl_Counter.H
 include/FL/Fl_Device.H
 include/FL/Fl_Dial.H
@@ -43,6 +44,7 @@ include/FL/Fl_Hor_Nice_Slider.H
 include/FL/Fl_Hor_Slider.H
 include/FL/Fl_Hor_Value_Slider.H
 include/FL/Fl_Image.H
+include/FL/Fl_Image_Surface.H
 include/FL/Fl_Input.H
 include/FL/Fl_Input_.H
 include/FL/Fl_Input_Choice.H
@@ -121,7 +123,6 @@ include/FL/Fl_Window.H
 include/FL/Fl_Wizard.H
 include/FL/Fl_XBM_Image.H
 include/FL/Fl_XPM_Image.H
-include/FL/Xutf8.h
 include/FL/dirent.h
 include/FL/filename.H
 include/FL/fl_ask.H
