@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -14,8 +14,8 @@ COMMENT=	Lock-free data structures for high performance concurrent systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	RTM VMAPACK
-OPTIONS_DEFAULT=RTM VMAPACK
+OPTIONS_DEFINE=		RTM VMAPACK
+OPTIONS_DEFAULT=	VMAPACK
 
 RTM_DESC=	Restricted Transactional Memory (x86_64 only)
 VMAPACK_DESC=	Enable pointer packing
