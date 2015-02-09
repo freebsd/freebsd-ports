@@ -22,4 +22,6 @@ INSTALL_TARGET=	install-strip
 USES=		libtool
 USE_LDCONFIG=	yes
 
+CONFLICTS=	softhsm2-2.0.*
+
 .include <bsd.port.mk>
