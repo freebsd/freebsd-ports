@@ -3,50 +3,43 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.3
-DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://fltk.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://fltk.org/pub/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		pkgconfig
 USE_XORG=	xft
 USE_GL=		glu
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads \
-		--enable-shared \
-		--enable-xft
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+# -L../src is needed to be able to build new version with older one installed
+LDFLAGS+=	-L../src -L${LOCALBASE}/lib
 
-PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/.SILENT/s|^|#| ; \
-		 /echo /s|^|#|' ${WRKSRC}/makeinclude.in
-	@${REINPLACE_CMD} -e \
-		'/cat[13]/s|^|#|' ${WRKSRC}/documentation/Makefile
-	@${REINPLACE_CMD} -e \
-		's|"/etc/fltk/"|"${ETCDIR}/"|' ${WRKSRC}/src/Fl_Preferences.cxx
-
-post-install:
-	@(cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fluid
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfltk*.so.[0-9]*
+post-patch: .SILENT
+	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
+	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \
+		${WRKSRC}/src/Fl_Preferences.cxx
+	${REINPLACE_CMD} -e 's,$$(docdir)/examples,${EXAMPLESDIR},' \
+		${WRKSRC}/test/Makefile
+	${REINPLACE_CMD} -E '/^INSTALL_(BIN|LIB)/s,-m,${STRIP} &, ; \
+		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
 
 .include <bsd.port.mk>
