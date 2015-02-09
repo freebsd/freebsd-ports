@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-stage-dir:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/purple-2
+pre-configure:
+	@${REINPLACE_CMD} -e 's|/etc/telegram-purple/server.pub|${PREFIX}/etc/telegram-purple/server.pub|g' \
+		 ${WRKSRC}/telegram-purple.c
 
 .include <bsd.port.post.mk>
