@@ -1542,6 +1542,7 @@
     SUBDIR += py-flask-admin
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-flatpages
+    SUBDIR += py-flask-restful
     SUBDIR += py-flask-sockets
     SUBDIR += py-flask-uploads
     SUBDIR += py-flask-wtf
