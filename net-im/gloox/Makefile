@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gloox
-PORTVERSION=	1.0.10
-PORTREVISION=	4
+PORTVERSION=	1.0.13
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -11,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
@@ -24,10 +22,12 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PORTSCOUT=	skipv:1.0.x
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's| -ansi|| ; \
-		 s| -lgcrypt||' ${WRKSRC}/configure
+		's|"GNU strip"|"strip"| ; \
+		 s| -ansi||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| -pedantic|| ; \
 		 s| -pipe||'

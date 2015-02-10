@@ -2,6 +2,7 @@ bin/gloox-config
 include/gloox/adhoc.h
 include/gloox/adhoccommandprovider.h
 include/gloox/adhochandler.h
+include/gloox/adhocplugin.h
 include/gloox/amp.h
 include/gloox/annotations.h
 include/gloox/annotationshandler.h
@@ -59,6 +60,7 @@ include/gloox/gpgencrypted.h
 include/gloox/gpgsigned.h
 include/gloox/inbandbytestream.h
 include/gloox/instantmucroom.h
+include/gloox/iodata.h
 include/gloox/iq.h
 include/gloox/iqhandler.h
 include/gloox/jid.h
@@ -148,6 +150,6 @@ include/gloox/vcardupdate.h
 include/gloox/xhtmlim.h
 lib/libgloox.a
 lib/libgloox.so
-lib/libgloox.so.12
-lib/libgloox.so.12.0.0
+lib/libgloox.so.13
+lib/libgloox.so.13.0.0
 libdata/pkgconfig/gloox.pc
