@@ -57,7 +57,7 @@ pre-everything::
 	@ ${ECHO} "Make sure your rancid repository is quiet before upgrading; disable rancid cron jobs"
 
 post-patch:
-	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in ${WRKSRC}/man/Makefile.am
+	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
 
 post-install:
