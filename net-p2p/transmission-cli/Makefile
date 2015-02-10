@@ -2,13 +2,13 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.84
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
-MAINTAINER?=	crees@FreeBSD.org
+MAINTAINER?=	jbeich@FreeBSD.org
 COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
@@ -21,7 +21,8 @@ LICENSE=	GPLv2
 .endif
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		tar:xz
+USES+=		cpe tar:xz
+CPE_VENDOR=	transmissionbt
 
 CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
@@ -50,6 +51,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DWITH_UTP=1
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		${ICONV_LIB}
 CONFIGURE_ARGS=--with-zlib=/usr \
+		 --without-inotify \
 		 --disable-utp \
 		 --enable-external-natpmp \
 		${EXTRA_CONF_ARGS}

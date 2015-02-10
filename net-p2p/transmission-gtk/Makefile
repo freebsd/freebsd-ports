@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-gtk
-PORTREVISION=	3
+PORTREVISION=	4
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Fast and lightweight GTK+2 BitTorrent client
 
 LIB_DEPENDS=	${GEN_LIB_DEPENDS} \
-		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
@@ -22,12 +21,10 @@ SLAVEPORT=	gtk
 USE_GNOME=	gtk30 intlhack
 USES=		gettext pathfix desktop-file-utils
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-linotify
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
 		--with-gtk \
-		--with-inotify \
 		--disable-mac \
 		--enable-nls
 
