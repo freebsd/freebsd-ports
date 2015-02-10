@@ -3554,6 +3554,7 @@
     SUBDIR += poco
     SUBDIR += poco-devel
     SUBDIR += poco-ssl
+    SUBDIR += ponscripter-sekai
     SUBDIR += popt
     SUBDIR += poslib
     SUBDIR += powerpc64-binutils

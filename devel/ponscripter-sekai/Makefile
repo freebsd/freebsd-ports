@@ -1,0 +1,79 @@
+# $FreeBSD$
+
+PORTNAME=	ponscripter-sekai
+PORTVERSION=	0.0.6
+CATEGORIES=	devel games
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	NScripter-like novel-game interpreter with Unicode support
+
+LICENSE=	GPLv2 # or any later version
+
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2
+
+CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sekaiproject
+GH_PROJECT=	${PORTNAME:S/sekai/fork/}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	3a8d107
+
+USES=		compiler:c++11-lang gmake shebangfix
+USE_SDL=	image2 mixer2
+EXTRACT_AFTER_ARGS=--exclude src/extlib
+SHEBANG_FILES=	util/xml-template
+HAS_CONFIGURE=	yes
+# XXX Pretend clang is like lang/gcc and can USE_CPU_GFX
+CONFIGURE_ENV=	CC_VER="4.8" CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}" \
+		CPATH="${LOCALBASE}/include" LIBRARY_PATH="${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--prefix="${STAGEDIR}${PREFIX}" --unsupported-compiler
+LDFLAGS+=	-Wl,--as-needed
+PORTDOCS=	BUGS CHANGES MANUAL README TODO
+PLIST_FILES=	bin/ponscr \
+		share/emacs/site-lisp/ponscripter-mode.el
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_PLIST_FILES=\
+	man/man6/ponscr.6.gz \
+	man/man7/ponscr-ext.7.gz \
+	man/man7/ponscr-syntax.7.gz \
+	man/man7/ponscripter.7.gz
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
+		-e 's/$$STRIPFLAG/${STRIP}/' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
+		${WRKSRC}/src/Makefile.ponscripter
+.if ! ${PORT_OPTIONS:MMANPAGES}
+	@${REINPLACE_CMD} -e '/install-man/d' \
+		-e 's/xmlto/${FALSE}/' \
+		${WRKSRC}/configure
+.endif
+
+post-build:
+.if ${PORT_OPTIONS:MMANPAGES}
+	# Remove extraneous whitespace to unbreak manpage syntax
+	${REINPLACE_CMD} -e 's/^[[:space:]]*//; /^$$/d' \
+		${WRKSRC}/doc/*.[0-9]
+.endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/misc/ponscripter-mode.el \
+		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+. for f in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+. endfor
+.endif
+
+.include <bsd.port.mk>
