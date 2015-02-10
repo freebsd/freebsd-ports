@@ -79,6 +79,7 @@ share/texmaker/es_ES.aff
 share/texmaker/es_ES.dic
 share/texmaker/fr_FR.aff
 share/texmaker/fr_FR.dic
+share/texmaker/hardwordwrap_selection_80col.tms
 share/texmaker/hu_HU.aff
 share/texmaker/hu_HU.dic
 share/texmaker/it_IT.aff
@@ -122,9 +123,10 @@ share/texmaker/texmaker_ru.qm
 share/texmaker/texmaker_se.qm
 share/texmaker/texmaker_sr.qm
 share/texmaker/texmaker_uk.qm
+share/texmaker/texmaker_vi_VN.qm
 share/texmaker/texmaker_zh_CN.qm
 share/texmaker/texmaker_zh_TW.qm
-share/texmaker/titlecase.tms
+share/texmaker/titlecase_selection.tms
 share/texmaker/usermanual_en.html
 share/texmaker/usermanual_fr.html
 share/texmaker/usermanual_hu.html

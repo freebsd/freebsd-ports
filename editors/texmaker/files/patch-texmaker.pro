@@ -1,6 +1,6 @@
---- texmaker.pro.orig	2014-07-29 04:02:06 UTC
+--- texmaker.pro.orig	2014-12-14 22:51:47 UTC
 +++ texmaker.pro
-@@ -390,13 +390,6 @@
+@@ -393,13 +393,6 @@ utilities.files = doc/doc1.png \
  	utilities/AUTHORS \
  	utilities/COPYING \
  	utilities/CHANGELOG.txt \
@@ -11,10 +11,10 @@
 -	utilities/texmaker64x64.png \
 -	utilities/texmaker128x128.png \
 -	utilities/texmaker.svg \
- 	scripts/titlecase.tms \
+ 	scripts/titlecase_selection.tms \
+ 	scripts/hardwordwrap_selection_80col.tms \
  	locale/qt_cs.qm \
- 	locale/qt_de.qm \
-@@ -470,4 +463,20 @@
+@@ -475,4 +468,20 @@ INSTALLS += desktop
  
  icon.files = utilities/texmaker.png
  INSTALLS += icon
