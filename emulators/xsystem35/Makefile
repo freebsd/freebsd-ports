@@ -17,6 +17,13 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
+OPTIONS_DEFINE_i386=	MMX
+OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MMMX}
+
+ESOUND_USE=	GNOME=esound
+ESOUND_CONFIGURE_ON=--enable-audio=oss,esd --with-default-output=esd
+MMX_BUILD_DEPENDS=nasm:${PORTSDIR}/devel/nasm
+MMX_CONFIGURE_ENABLE=mmx
 
 USES=		gettext gmake libtool shebangfix
 SHEBANG_FILES=	contrib/instgame
@@ -27,6 +34,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
 		--disable-static \
+		--enable-audio=oss \
+		--with-default-output=oss \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -37,22 +46,6 @@ INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-audio=oss,esd --with-default-output=esd
-.else
-CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
-.endif
-
-.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
-CONFIGURE_ARGS+=	--enable-mmx
-BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
-.else
-CONFIGURE_ARGS+=	--disable-mmx
-.endif
 
 post-patch:
 	@${CP} ${WRKSRC}/INSTALL ${WRKSRC}/doc/INSTALL
