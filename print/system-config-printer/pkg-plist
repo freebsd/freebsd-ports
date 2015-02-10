@@ -30,6 +30,7 @@ etc/xdg/autostart/print-applet.desktop
 %%PYTHON_SITELIBDIR%%/cupshelpers/xmldriverprefs.pyo
 man/man1/system-config-printer-applet.1.gz
 man/man1/system-config-printer.1.gz
+share/appdata/system-config-printer.appdata.xml
 share/applications/system-config-printer.desktop
 share/dbus-1/interfaces/org.fedoraproject.Config.Printing.xml
 share/dbus-1/services/org.fedoraproject.Config.Printing.service
@@ -99,6 +100,7 @@ share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 share/system-config-printer/HIG.py
+share/system-config-printer/OpenPrintingRequest.py
 share/system-config-printer/PhysicalDevice.py
 share/system-config-printer/SearchCriterion.py
 share/system-config-printer/ToolbarSearchEntry.py
