@@ -91,7 +91,7 @@ fi
 export menuentry_id_option
 
 if [ x"\${gelipassphrase}" != x ]; then
-  set pass=\$gelipassphrase
+  set pass="\$gelipassphrase"
   export pass
 fi
 
