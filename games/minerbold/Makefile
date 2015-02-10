@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minerbold
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	instead:${PORTSDIR}/games/instead
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gl00my
-GH_COMMIT=	5c0b4f3
+GH_COMMIT=	75f3f79
 
 NO_BUILD=	yes
 NO_ARCH=	yes
