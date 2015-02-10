@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httping
-PORTVERSION=	2.3.4
-PORTREVISION=	2
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		LOCAL/ehaupt
