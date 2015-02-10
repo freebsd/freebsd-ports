@@ -3,7 +3,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	emulators games
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
@@ -13,6 +13,7 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
@@ -25,9 +26,9 @@ ESOUND_CONFIGURE_ON=--enable-audio=oss,esd --with-default-output=esd
 MMX_BUILD_DEPENDS=nasm:${PORTSDIR}/devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 
+EXTRACT_AFTER_ARGS=--exclude libltdl
 USES=		gettext gmake libtool shebangfix
 SHEBANG_FILES=	contrib/instgame
-USE_AUTOTOOLS=	autoconf:env
 USE_GNOME=	gtk12
 USE_XORG=	x11 xext xxf86vm
 GNU_CONFIGURE=	yes
@@ -49,11 +50,12 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 post-patch:
 	@${CP} ${WRKSRC}/INSTALL ${WRKSRC}/doc/INSTALL
-	@${REINPLACE_CMD} '/-lxpg4/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/-lxpg4/d' \
+		-e '/INCLTDL=/d; /LTDLINCL=/d' \
+		-e '/LIBLTDL=/s/=.*/="-lltdl"/' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^SUBDIRS/s/ libltdl//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's|__COUNTER__|__COUNTER_H__|' ${WRKSRC}/src/counter.h
-
-pre-configure:
-	(cd ${WRKSRC}/libltdl; ${AUTOCONF})
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${STAGEDIR}${PREFIX}/bin
