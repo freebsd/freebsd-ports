@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	databases
 
 MAINTAINER=	coder@tuxfamily.org
@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GH_COMMIT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sqlitebrowser
-GH_COMMIT=	634c51b
+GH_COMMIT=	1d12977
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		cmake desktop-file-utils
