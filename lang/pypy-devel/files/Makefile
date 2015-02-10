@@ -28,6 +28,7 @@ BUILDDIR=	usession-release-${DISTVERSION}-0
 ${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/${BUILDDIR}/testing_1/pypy-c
 	${CP} build_${PYPY_${inst}_NAME}/${BUILDDIR}/testing_1/pypy-c \
 		${PYPY_${inst}_NAME}
+	-${CP} build_${PYPY_${inst}_NAME}/${BUILDDIR}/testing_1/libpypy-c.so .
 
 .done_translate_${PYPY_${inst}_NAME}:
 	${RM} -rf build_${PYPY_${inst}_NAME}
