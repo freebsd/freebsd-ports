@@ -4,15 +4,15 @@
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
 PORTREVISION=	18
-CATEGORIES=	emulators
+CATEGORIES=	emulators games
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
@@ -29,7 +29,7 @@ USES=		gettext gmake libtool shebangfix
 SHEBANG_FILES=	contrib/instgame
 USE_AUTOTOOLS=	autoconf:env
 USE_GNOME=	gtk12
-USE_XORG=	xxf86vm
+USE_XORG=	x11 xext xxf86vm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
