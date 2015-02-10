@@ -3662,6 +3662,7 @@
     SUBDIR += py-TurboJinja
     SUBDIR += py-ZopeUndo
     SUBDIR += py-akismet
+    SUBDIR += py-aniso8601
     SUBDIR += py-anonfunc
     SUBDIR += py-anyconfig
     SUBDIR += py-anyjson
