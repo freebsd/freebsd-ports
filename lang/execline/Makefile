@@ -2,46 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	execline
-PORTVERSION=	1.08
+PORTVERSION=	2.0.2.0
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	colin@heliocat.net
 COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/skalibs/libstddjb.a:${PORTSDIR}/devel/skalibs
+LICENSE=	ISCL
 
-WRKSRC=		${WRKDIR}/admin/${DISTNAME}
+BUILD_DEPENDS=	skalibs>=2.2.1.0:${PORTSDIR}/devel/skalibs
 
-DOCS=		package/CHANGES package/README package/THANKS package/TODO \
-		doc/*.html
+USES=		gmake
+USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--with-sysdeps=${LOCALBASE}/lib/skalibs/sysdeps \
+		--with-lib=${LOCALBASE}/lib/skalibs \
+		--with-include=${LOCALBASE}/include \
+		--enable-shared
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCS=		AUTHORS COPYING INSTALL README doc/*.html
 
-do-configure:
-	${ECHO_CMD} "FreeBSD"	> ${WRKSRC}/src/sys/systype
-	${ECHO_CMD} "${LOCALBASE}/include/skalibs" \
-		> ${WRKSRC}/conf-compile/import
-	${ECHO_CMD} "${LOCALBASE}/lib/skalibs" \
-		>> ${WRKSRC}/conf-compile/import
-	${REINPLACE_CMD} -e 's|superstrip1|#superstrip1|g' \
-		${WRKSRC}/conf-compile/conf-stripbins
-	@${REINPLACE_CMD} 's|gcc|${CC}|; s|-O2.*|${CFLAGS}|' \
-		${WRKSRC}/conf-compile/conf-cc \
-		${WRKSRC}/conf-compile/conf-ld
-
-do-build:
-	(cd ${WRKSRC} && package/compile)
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/* \
-		${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/library/* ${STAGEDIR}${PREFIX}/lib
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/* ${STAGEDIR}${EXAMPLESDIR}
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libexecline.so.${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
+	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
