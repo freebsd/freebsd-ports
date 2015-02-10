@@ -20,6 +20,8 @@ DOCS=		src/CHANGES src/TODO package/README
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=		fails to build with skalibs-2.x
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!gcc -O2!${CC} ${CFLAGS}!' \
 		${WRKSRC}/conf-compile/host_compile.sh
