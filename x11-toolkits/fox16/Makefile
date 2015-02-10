@@ -3,6 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.6.50
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
     		http://ftp.fox-toolkit.org/pub/
@@ -68,7 +69,7 @@ post-patch:
 		 s|"||g' ${WRKSRC}/fox.pc.in
 # CXXFLAGS safeness
 	@${REINPLACE_CMD} -e \
-		's|^\(CXXFLAGS=\)|#\1| ; \
+		's|^\(CXXFLAGS=""\)|#\1|; \
 		 /CXXFLAGS/s|-O2 ||; \
 		 /CXXFLAGS/s|\(-Wuninitialized\).*"|\1"|; \
 		 /LDFLAGS/s|-s ||' \
