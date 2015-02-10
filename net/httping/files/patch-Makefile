@@ -1,21 +1,12 @@
---- ./Makefile.orig	2013-06-07 15:18:52.000000000 +0200
-+++ ./Makefile	2013-10-02 16:10:24.583316212 +0200
-@@ -13,8 +13,6 @@
- # files in the program, then also delete it here.
- # $Revision: 268 $
- 
---include makefile.inc
--
- # *** configure script ***
- # support for tcp fast open?
- #TFO=yes
-@@ -33,11 +31,11 @@
+--- Makefile.orig	2015-02-10 12:39:25 UTC
++++ Makefile
+@@ -33,11 +33,10 @@ TARGET=httping
  
  LOCALEDIR=/usr/share/locale
  
 -DEBUG=yes
+-WFLAGS=-Wall -W -Wextra -pedantic -D_FORTIFY_SOURCE=2
 +DEBUG?=no
- WFLAGS=-Wall -W
  OFLAGS=
  CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\" -DLOCALEDIR=\"$(LOCALEDIR)\"
 -LDFLAGS+=-lm
