@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xsystem35
-PORTVERSION=	1.7.2
-PORTREVISION=	19
+DISTVERSION=	1.7.3-pre5
 CATEGORIES=	emulators games
-MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
@@ -32,7 +32,7 @@ SHEBANG_FILES=	contrib/instgame
 USE_GNOME=	gtk12
 USE_XORG=	x11 xext xxf86vm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-included-gettext \
+CONFIGURE_ARGS=	\
 		--with-cachesize=20 \
 		--disable-static \
 		--enable-audio=oss \
@@ -41,11 +41,11 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--enable-cdrom=bsd,mp3
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 post-patch:
