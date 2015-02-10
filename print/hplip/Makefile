@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.14.4
-PORTREVISION=	4
+PORTVERSION=	3.14.10
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -40,8 +39,7 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-mimedir=${PREFIX}/etc/cups \
 		--with-docdir=${DOCSDIR} \
 		--with-htmldir=${DOCSDIR} \
-		--with-drvdir=${PREFIX}/libexec/cups/driver \
-		--enable-libusb01_build
+		--with-drvdir=${PREFIX}/libexec/cups/driver
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
@@ -78,7 +76,7 @@ FILES4FIX=	Makefile.in \
 PYTHON_SITELIBDIR_REL=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE DOCS
-OPTIONS_DEFAULT=	QT
+OPTIONS_DEFAULT=	QT SNMP SCAN
 OPTIONS_SUB=		yes # QT FAX SCAN
 
 QT_DESC=	Graphical User Interface (Qt 4)
@@ -114,6 +112,8 @@ RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g' \
+		-e 's,-lusb-1.0,-lusb,g' \
+		-e 's,libusb-1.0/libusb.h,libusb.h,g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
@@ -152,5 +152,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 	${LN} -sf ${LOCALBASE}/bin/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip-hplip
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model
+	${LN} -sf ${LOCALBASE}/share/ppd/HP ${STAGEDIR}${PREFIX}/share/cups/model/hplip
 
 .include <bsd.port.mk>
