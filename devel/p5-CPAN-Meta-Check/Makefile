@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Meta-Check
-PORTVERSION=	0.009
-PORTREVISION=	2
+PORTVERSION=	0.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,8 @@ COMMENT=	Verify requirements in a CPAN::Meta object
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Module-Metadata>=1.000023:${PORTSDIR}/devel/p5-Module-Metadata
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
 USES=		perl5
