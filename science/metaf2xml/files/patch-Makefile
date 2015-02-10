@@ -1,8 +1,0 @@
---- ./Makefile.orig	2014-06-01 10:42:17.000000000 +0300
-+++ ./Makefile	2014-06-25 19:21:30.625134928 +0300
-@@ -80,4 +80,5 @@
-         CGI_LOG_NAME=${CGI_LOG_NAME} \
-         CURL=${CURL} \
-         CURL_PROXY_OPTS=${CURL_PROXY_OPTS} \
-+        BUILD_ROOT=${DESTDIR} \
-         perl ./install.pl $@
