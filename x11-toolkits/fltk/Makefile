@@ -3,7 +3,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -26,8 +26,7 @@ CONFIGURE_ARGS=	--enable-shared
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-# -L../src is needed to be able to build new version with older one installed
-LDFLAGS+=	-L../src -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTEXAMPLES=	*
 
@@ -39,7 +38,14 @@ post-patch: .SILENT
 		${WRKSRC}/src/Fl_Preferences.cxx
 	${REINPLACE_CMD} -e 's,$$(docdir)/examples,${EXAMPLESDIR},' \
 		${WRKSRC}/test/Makefile
-	${REINPLACE_CMD} -E '/^INSTALL_(BIN|LIB)/s,-m,${STRIP} &, ; \
+	${REINPLACE_CMD} -e '/^INSTALL_BIN/s,-m,${STRIP} &, ; \
 		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
+	${REINPLACE_CMD} -E \
+		's,(.*)LDFLAGS(.*)LINKSHARED(.*),\1LINKSHARED\2LDFLAGS\3,' \
+			${WRKSRC}/fluid/Makefile
+	${REINPLACE_CMD} -e '/Fl_XFont_On_Demand/s,class,& FL_EXPORT,' \
+		${WRKSRC}/FL/x.H
+	${REINPLACE_CMD} -e 's,result = 0;,fl_open_display(); &,' \
+		${WRKSRC}/src/Fl_x.cxx
 
 .include <bsd.port.mk>
