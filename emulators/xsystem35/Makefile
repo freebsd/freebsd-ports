@@ -19,19 +19,27 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 OPTIONS_DEFINE_i386=	MMX
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	GTK1 GTK2
+OPTIONS_DEFAULT=GTK2
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MMMX}
 
 ESOUND_USE=	GNOME=esound
 ESOUND_CONFIGURE_ON=--enable-audio=oss,esd --with-default-output=esd
+GTK1_USE=	GNOME=gtk12
+GTK1_CONFIGURE_OFF=--with-glib-prefix=${NONEXISTENT} \
+		--with-gtk-prefix=${NONEXISTENT}
+GTK2_USE=	GNOME=gtk20
+GTK2_USES=	pkgconfig
 MMX_BUILD_DEPENDS=nasm:${PORTSDIR}/devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 
 EXTRACT_AFTER_ARGS=--exclude libltdl
 USES=		gettext gmake libtool shebangfix
 SHEBANG_FILES=	contrib/instgame
-USE_GNOME=	gtk12
 USE_XORG=	x11 xext xxf86vm
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	X_LIBS="-lX11"
 CONFIGURE_ARGS=	\
 		--with-cachesize=20 \
 		--disable-static \
