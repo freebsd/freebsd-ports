@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 USE_GCC=	4.8+
 USE_GITHUB=	yes
-GH_ACCOUNT=	vathpela
+GH_ACCOUNT=	rhinstaller
 GH_COMMIT=	5776088
 
 USES=		gmake pkgconfig
