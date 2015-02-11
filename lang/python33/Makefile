@@ -33,21 +33,25 @@ MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 NLS PYMALLOC THREADS TSC LIBFFI
-OPTIONS_DEFAULT=	IPV6 NLS PYMALLOC THREADS LIBFFI
+OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS TSC
+OPTIONS_DEFAULT=	IPV6 LIBFFI NLS PYMALLOC THREADS
 OPTIONS_SUB=		yes
 
+LIBFFI_DESC=		Use libffi from ports instead of bundled version
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
-TSC_DESC=		Enable processor timestamp counter profiling
-LIBFFI_DESC=		Use libffi from ports instead of bundled version
+TSC_DESC=		Enable rocessor timestamp counter profiling
 
 DEBUG_CONFIGURE_WITH=	pydebug
 IPV6_CONFIGURE_ENABLE=	ipv6
 
+LIBFFI_CONFIGURE_ON=	--with-system-ffi
+LIBFFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
 # Upstream Issue: http://bugs.python.org/issue6299
+
 NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
@@ -58,6 +62,7 @@ PYMALLOC_CONFIGURE_WITH=	pymalloc
 THREADS_CONFIGURE_WITH=	threads
 THREADS_CFLAGS=		${PTHREAD_CFLAGS}
 THREADS_LDFLAGS=	${PTHREAD_LIBS}
+
 TSC_CONFIGURE_WITH=	tsc
 
 .include <bsd.port.options.mk>
@@ -70,15 +75,16 @@ ABIFLAGS:=	m${ABIFLAGS}
 ABIFLAGS:=	d${ABIFLAGS}
 .endif
 
-.if ${PORT_OPTIONS:MLIBFFI}
-CONFIGURE_ARGS+=	--with-system-ffi
-LIB_DEPENDS+=		libffi.so:${PORTSDIR}/devel/libffi
-.endif
-
 .if !empty(ABIFLAGS)
 PLIST_FILES+=	bin/python3.3%%ABI%%
 PLIST_FILES+=	bin/python3.3%%ABI%%-config
 PLIST_FILES+=	libdata/pkgconfig/python-3.3%%ABI%%.pc
+.endif
+
+# http://bugs.python.org/issue22521
+# http://bugs.python.org/issue23042
+.if ${ARCH} == i386 && !${PORT_OPTIONS:MLIBFFI}
+BROKEN=		You must use libffi from ports on i386. Enable the LIBFFI option
 .endif
 
 .if ${ARCH} == sparc64
