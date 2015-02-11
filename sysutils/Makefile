@@ -838,6 +838,7 @@
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
     SUBDIR += rubygem-mogilefs-client
+    SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
