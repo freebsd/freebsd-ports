@@ -5,7 +5,7 @@ PORTNAME=	hive
 PORTVERSION=	1.0.0
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
-		LOCAL/demon/ \
+		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
 MASTER_SITE_SUBDIR=${PORTNAME}/stable
 DISTFILES=	apache-${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
