@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
 
 LICENSE=	GPLv2
