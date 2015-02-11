@@ -1,0 +1,22 @@
+WebDAV server protocol compliance test suite.
+
+Tests include:
+- OPTIONS for DAV: header
+- PUT, GET with byte comparison
+- MKCOL
+- DELETE (collections, non-collections)
+- COPY, MOVE using combinations of:
+  o overwrite t/f
+  o destination exists/doesn't exist
+  o collection/non-collection
+- Property manipulation and querying:
+  o set, delete, replace properties
+  o persist dead props across COPY
+  o namespace handling
+- Locking
+  o attempts to modify locked resource (as lock owner, not owner)
+  o shared/exclusive locks, lock discovery
+
+usage: litmus <url> <username> <password>
+
+WWW: http://www.webdav.org/neon/litmus/

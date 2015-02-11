@@ -381,6 +381,7 @@
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
     SUBDIR += lionwiki
+    SUBDIR += litmus
     SUBDIR += ljdeps
     SUBDIR += ljdump
     SUBDIR += llgal
