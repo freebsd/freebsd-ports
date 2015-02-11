@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-02-11 08:44:24.000000000 +0100
++++ Makefile.in	2015-02-11 08:44:07.000000000 +0100
+@@ -69,7 +69,7 @@
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d $(DESTDIR)$(libexecdir)/litmus
+ 	$(INSTALL) -d $(DESTDIR)$(datadir)/litmus/htdocs
+-	$(INSTALL_PROGRAM) $(top_builddir)/litmus $(DESTDIR)$(bindir)/litmus
++	DONTSTRIP=1 $(INSTALL_PROGRAM) $(top_builddir)/litmus $(DESTDIR)$(bindir)/litmus
+ 	for t in $(TESTS); do \
+ 	  $(INSTALL_PROGRAM) $(top_builddir)/$$t $(DESTDIR)$(libexecdir)/litmus/$$t; done
+ 	for d in $(HTDOCS); do \

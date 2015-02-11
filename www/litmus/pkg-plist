@@ -1,0 +1,7 @@
+bin/litmus
+libexec/litmus/basic
+libexec/litmus/copymove
+libexec/litmus/http
+libexec/litmus/locks
+libexec/litmus/props
+%%DATADIR%%/htdocs/foo
