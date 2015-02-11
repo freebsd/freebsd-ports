@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 CONFLICTS_INSTALL=	lynx-2.8.[0-8].* ja-lynx-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/[pd].*//}
-USES=		iconv shebangfix tar:bzip2
+USES=		cpe iconv shebangfix tar:bzip2
 USE_OPENSSL=	yes
 SHEBANG_FILES=	samples/mailto-form.pl
 GNU_CONFIGURE=	yes
@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	--with-zlib --libdir="${L_LIB}" \
 		${ICONV_CONFIGURE_ARG} \
 		--with-screen=ncursesw \
 		--with-ssl=${OPENSSLBASE}
+CPE_VERSION=	${PORTVERSION:C/[pd].+//}
+CPE_UPDATE=	${PORTVERSION:E:C/[0-9]+//:S/p/pre./:S/d/dev./}
 
 MAKE_JOBS_UNSAFE=	yes
 
