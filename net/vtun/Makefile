@@ -3,6 +3,7 @@
 
 PORTNAME=	vtun
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -42,7 +43,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-tun_dev.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vtund
-	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${STAGEDIR}${PREFIX}/etc/vtund.conf.example
+	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${STAGEDIR}${PREFIX}/etc/vtund.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
