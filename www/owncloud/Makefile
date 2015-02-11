@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	7.0.4
+PORTVERSION=	8.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -17,8 +17,8 @@ USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
 
-OWNCLOUD_USERNAME?=	www
-OWNCLOUD_GROUPNAME?=	${OWNCLOUD_USERNAME}
+OWNCLOUD_USERNAME?=	${WWWOWN}
+OWNCLOUD_GROUPNAME?=	${WWWGRP}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
