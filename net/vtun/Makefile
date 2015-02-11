@@ -11,6 +11,7 @@ COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
+CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
