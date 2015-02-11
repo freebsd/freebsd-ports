@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		gtk-vnc>=0.4.4:${PORTSDIR}/net/gtk-vnc \
 		libvirt-glib>=0.1.9:${PORTSDIR}/devel/libvirt-glib \
 		libosinfo>=0:${PORTSDIR}/devel/libosinfo \
-		${PYTHON_PGKNAMEPREFIX}spice-gtk>=0.26:${PORTSDIR}/deskutils/py-spice-gtk
+		${PYTHON_PKGNAMEPREFIX}spice-gtk>=0.26:${PORTSDIR}/deskutils/py-spice-gtk
 
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
