@@ -2569,6 +2569,7 @@
     SUBDIR += p5-Object-Tiny
     SUBDIR += p5-Object-Tiny-Lvalue
     SUBDIR += p5-Olson-Abbreviations
+    SUBDIR += p5-Opcodes
     SUBDIR += p5-Ouch
     SUBDIR += p5-PAR
     SUBDIR += p5-PAR-Dist
