@@ -10,8 +10,6 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
-BROKEN=		Checksum and size mismatch
-
 LIB_DEPENDS=	libefivar.so:${PORTSDIR}/devel/efivar \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
 		libnss3.so:${PORTSDIR}/security/nss \
@@ -20,7 +18,7 @@ LIB_DEPENDS=	libefivar.so:${PORTSDIR}/devel/efivar \
 
 USE_GCC=	4.8+
 USE_GITHUB=	yes
-GH_ACCOUNT=	vathpela
+GH_ACCOUNT=	rhinstaller
 GH_COMMIT=	00288b4
 
 USES=		gmake pkgconfig
