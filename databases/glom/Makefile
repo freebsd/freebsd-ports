@@ -42,6 +42,10 @@ INSTALLS_ICONS=	yes
 #PLIST_SUB+=	VERSION=${PORTVERSION:R}
 PLIST_SUB+=	VERSION=1.26
 
+.if ! exists(/usr/libdata/pkgconfig/libarchive.pc)
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
 		${WRKSRC}/Makefile.in
