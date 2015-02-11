@@ -2,16 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	basemap
-PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTVERSION=	1.0.7
 CATEGORIES=	math python
 MASTER_SITES=	SF/matplotlib/matplotlib-toolkits/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Plots data on map projections with continental and political boundaries
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Plots data on map projections with boundaries
 
+LICENSE=	GPLv2 LGPL21 MIT
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
+LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -32,5 +36,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_geoslib.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mpl_toolkits/basemap/_proj.so
 
 .include <bsd.port.mk>
