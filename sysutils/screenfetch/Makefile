@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	screenFetch
-PORTVERSION=	3.2.0
+PORTVERSION=	3.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:tl}/ \
 		GH
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KittyKatt
-GH_TAGNAME=	be0e27d
+GH_TAGNAME=	0fb5733
 GH_COMMIT=	${GH_TAGNAME}
 
 PLIST_FILES=	bin/screenFetch bin/screenfetch
