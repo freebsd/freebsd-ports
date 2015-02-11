@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.14
+PORTVERSION=	0.11.16
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -12,9 +12,7 @@ COMMENT=	V8 javascript for client and server
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
-USES=		gmake python:2
+USES=		execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
