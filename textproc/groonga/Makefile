@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	4.0.6.1
+PORTVERSION=	5.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
 
 LICENSE=	LGPL21
@@ -29,8 +29,6 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-PKGDEINSTALL=	${PKGINSTALL}
 
 BROKEN_ia64=	does not compile on ia64
 BROKEN_powerpc=	does not compile on powerpc
@@ -56,10 +54,6 @@ SUGGEST_CONFIGURE_OFF=	--without-libevent \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
-USE_GCC=	any
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|lib/$${PACKAGE}/db/db|db/$${PACKAGE}/db| ; \
@@ -68,9 +62,11 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.7.6/auto/install
+		${WRKSRC}/vendor/nginx-1.7.9/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd
+	@${MKDIR} ${STAGEDIR}/var/log/groonga/httpd
+	@${MKDIR} ${STAGEDIR}/var/run/groonga
 
 .include <bsd.port.mk>
