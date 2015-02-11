@@ -1518,6 +1518,7 @@
     SUBDIR += p5-AutoXS-Header
     SUBDIR += p5-B-Compiling
     SUBDIR += p5-B-Deobfuscate
+    SUBDIR += p5-B-Flags
     SUBDIR += p5-B-Generate
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Hooks-EndOfScope
