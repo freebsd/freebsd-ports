@@ -3926,6 +3926,7 @@
     SUBDIR += py-ptrace
     SUBDIR += py-pudb
     SUBDIR += py-px
+    SUBDIR += py-py
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
@@ -3941,7 +3942,6 @@
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
-    SUBDIR += py-pylib
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
     SUBDIR += py-pyparsing15
