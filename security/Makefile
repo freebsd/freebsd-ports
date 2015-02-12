@@ -877,6 +877,7 @@
     SUBDIR += rdigest
     SUBDIR += regripper
     SUBDIR += regripperplugins
+    SUBDIR += reop
     SUBDIR += retranslator
     SUBDIR += revealrk
     SUBDIR += revelation
