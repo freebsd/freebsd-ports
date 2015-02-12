@@ -9,6 +9,7 @@ bin/sqlt-graph
 %%PERL5_MAN3%%/SQL::Translator::Filter::DefaultExtra.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Filter::Globals.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Filter::Names.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::DDL::MySQL.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Generator::DDL::PostgreSQL.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Generator::DDL::SQLServer.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Generator::DDL::SQLite.3.gz
@@ -86,6 +87,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Filter/DefaultExtra.pm
 %%SITE_PERL%%/SQL/Translator/Filter/Globals.pm
 %%SITE_PERL%%/SQL/Translator/Filter/Names.pm
+%%SITE_PERL%%/SQL/Translator/Generator/DDL/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Generator/DDL/PostgreSQL.pm
 %%SITE_PERL%%/SQL/Translator/Generator/DDL/SQLServer.pm
 %%SITE_PERL%%/SQL/Translator/Generator/DDL/SQLite.pm
