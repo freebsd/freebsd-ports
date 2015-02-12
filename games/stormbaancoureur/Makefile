@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	stormbaancoureur
-PORTVERSION=	2.1.5
-PORTREVISION=	5
+PORTVERSION=	2.1.6
 CATEGORIES=	games
-MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
+MASTER_SITES=	http://www.stolk.org/stormbaancoureur/download/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,7 +24,14 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	ALSA DOCS
+OPTIONS_DEFAULT=ALSA
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_MAKE_ENV=		ALSA_LIBS="-lasound"
+ALSA_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-src-common-soundenginealsa.cxx \
+			${FILESDIR}/extra-patch-src-common-soundenginealsa.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__DATADIR|"${DATADIR}"|' \

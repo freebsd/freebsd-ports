@@ -37,7 +37,7 @@
 +  $(LOCALBASE)/lib/libode.a \
    -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul \
 -  -lglut -lGLU -lGL -lasound
-+  -lglut -lGLU -lGL
++  -lglut -lGLU -lGL $(ALSA_LIBS)
  
  
  all: stormbaancoureur

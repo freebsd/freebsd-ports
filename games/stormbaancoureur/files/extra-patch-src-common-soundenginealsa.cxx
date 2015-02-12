@@ -189,7 +189,7 @@
 -  if (delay < (int) buffersz)
 -  {
 -    int todo = buffersz - delay;
--#if 0
+-#if 1
 -    int cnt  = (todo + periodsz-1) / periodsz; // Use this with pulse audio (fedora)
 -#else
 -    int cnt  = todo / periodsz; // Use this with all other alsa implementations
