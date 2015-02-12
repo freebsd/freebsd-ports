@@ -484,7 +484,7 @@ build-libstdcxx:
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
 	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-size-libstdcxx install-target-libstdc++-v3 ${MAKE_ARGS} >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
 	@${ECHO_MSG} "=====>  Copy all target libraries into stage directory"
-	@for multilib in $$(${BUILD_PREFIX}/target-libs/bin/${TARGET}-gcc -print-multi-lib) ; do \
+	@for multilib in $$(${INTERIM_PREFIX}/bin/${TARGET}-gcc -print-multi-lib) ; do \
 	  multilib_dir=$${multilib%%;*} ; \
 	  for srclib in libstdc++.a libsupc++.a libc.a libg.a librdimon.a nano.specs rdimon.specs nosys.specs ; do \
 	    dstlib=$$(echo "$${srclib}" | ${SED} 's/\.a$$/_nano.a/') ; \
