@@ -13,6 +13,7 @@ bin/mysqldump
 bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
+bin/ps_tokudb_admin
 include/mysql/big_endian.h
 include/mysql/byte_order_generic.h
 include/mysql/byte_order_generic_x86.h
