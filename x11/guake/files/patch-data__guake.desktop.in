@@ -1,5 +1,5 @@
---- ./data/guake.desktop.in.orig	2013-01-18 15:09:46.000000000 +0100
-+++ ./data/guake.desktop.in	2013-01-18 15:09:51.000000000 +0100
+--- data/guake.desktop.in.orig	2015-02-12 00:33:06 UTC
++++ data/guake.desktop.in
 @@ -1,5 +1,4 @@
  [Desktop Entry]
 -Encoding=UTF-8
