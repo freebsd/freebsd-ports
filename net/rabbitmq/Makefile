@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTVERSION=	3.4.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -25,7 +24,7 @@ OPTIONS_SUB=	yes
 
 ADMIN_DESC=	Install rabbitmqadmin script
 
-USES=		gmake python:build shebangfix
+USES=		cpe gmake python:build shebangfix
 USE_RC_SUBR=	rabbitmq
 SHEBANG_FILES=	calculate-relative plugins-src/rabbitmq-amqp1.0/codegen.py
 python_OLD_CMD=	.*python
@@ -36,6 +35,8 @@ GROUPS=		rabbitmq
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+CPE_VENDOR=	pivotal_software
+ 
 SCRIPTS_DIR=	${WRKSRC}/scripts/
 MAKE_ARGS+=	PYTHON=${PYTHON_CMD}
 MAKE_ENV+=	TARGET_DIR="${STAGEDIR}${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" \
