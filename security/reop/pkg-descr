@@ -1,0 +1,8 @@
+reop is a simple, semi-modern wannabe PGP clone.
+
+Supported operations include signing -S and verifying -V messages, plus a
+variety of options for encrypting messages (-D -E). It does everything you'd
+expect a PGP program to do. More accurately, it does everything I expect you
+to expect a PGP program to do.
+
+WWW: https://github.com/tedu/reop
