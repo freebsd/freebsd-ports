@@ -1,16 +1,20 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
 
-PORTNAME=	brebis
-PORTVERSION=	0.10
+PORTNAME=	backupchecker
+PORTVERSION=	1.1
 CATEGORIES=	sysutils archivers
-MASTER_SITES=	http://brebisproject.org/attachments/download/19/ \
-		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Fully automated backup checker
 
 LICENSE=	GPLv3
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	8639d24
+GH_TAGNAME=	${PORTVERSION}
 
 USES=	python:3.3+
 USE_PYTHON=	distutils noegginfo
@@ -21,13 +25,13 @@ MAKE_ENV+=	LC_ALL=en_US.UTF-8
 PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
-PORTDOCS=	README
+PORTDOCS=	README.md
 
 post-patch:
 	@${REINPLACE_CMD} "s|'share','man'|'${MANPREFIX}/man'|" ${WRKSRC}/setup.py
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

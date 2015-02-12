@@ -51,6 +51,7 @@
     SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b43-fwcutter
+    SUBDIR += backupchecker
     SUBDIR += backuppc
     SUBDIR += backuppc-devel
     SUBDIR += bacula-bat
@@ -84,7 +85,6 @@
     SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
-    SUBDIR += brebis
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
     SUBDIR += bsdconfig
