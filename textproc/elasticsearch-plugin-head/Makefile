@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	head
-PORTVERSION=	2014.11.16
+PORTVERSION=	2015.02.11
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch-plugin-
 
@@ -15,7 +15,7 @@ RUN_DEPENDS:=	elasticsearch>=0.90.9:${PORTSDIR}/textproc/elasticsearch
 USE_GITHUB=	yes
 GH_ACCOUNT=	mobz
 GH_PROJECT=	elasticsearch-head
-GH_COMMIT=	3706e79
+GH_COMMIT=	ff22290
 GH_TAGNAME=	${GH_COMMIT}
 
 NO_BUILD=	yes
