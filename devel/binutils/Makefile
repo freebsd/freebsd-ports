@@ -60,7 +60,7 @@ EXTRA_PATCHES+=	${FILESDIR}/allow-missing-group-info
 .endif
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != ia64 && ${ARCH} != mips && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
+.if ${ARCH} != ia64 && ${ARCH} != mips && ${ARCH} != mips64 && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
