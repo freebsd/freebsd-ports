@@ -201,8 +201,3 @@ lib/fretsonfire/data/title.ttf
 lib/fretsonfire/data/translations
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-@dirrm lib/fretsonfire/FretsOnFire/midi
-@dirrm lib/fretsonfire/FretsOnFire
-@dirrm lib/fretsonfire/data
-@dirrm lib/fretsonfire
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
