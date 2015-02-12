@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54a69cf7-b2ef-11e4-b1f1-bcaec565249c">
+    <topic>xorg-server -- Information leak in the XkbSetGeometry request of X servers.</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.14.7_2,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-server</name>
+	<range><ge>1.15.0</ge><lt>1.16.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Peter Hutterer reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg/2015-February/057158.html">
+	  <p>Olivier Fourdan from Red Hat has discovered a protocol handling
+	    issue in the way the X server code base handles the XkbSetGeometry
+	    request.</p>
+	  <p>The issue stems from the server trusting the client to send valid
+	    string lengths in the request data. A malicious client with string
+	    lengths exceeding the request length can cause the server to copy
+	    adjacent memory data into the XKB structs. This data is then
+	    available to the client via the XkbGetGeometry request. The
+	    data length is at least up to 64k, it is possible to obtain
+	    more data by chaining strings, each string length is then
+	    determined by whatever happens to be in that 16-bit region of
+	    memory.</p>
+	  <p>A similarly crafted request can likely cause the X server
+	    to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0255</cvename>
+      <url>http://lists.freedesktop.org/archives/xorg/2015-February/057158.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-10</discovery>
+      <entry>2015-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0c45e53-ae51-11e4-8ac7-d050992ecde8">
     <topic>openldap -- two remote denial of service vulnerabilities</topic>
     <affects>
