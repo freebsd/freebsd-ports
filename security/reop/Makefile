@@ -20,9 +20,6 @@ MAKE_ARGS+=	CPPFLAGS="-D_NSIG=NSIG" \
 		CFLAGS+="-I${LOCALBASE}/include -Iother -Wno-pointer-sign" \
 		PREFIX="${STAGEDIR}${PREFIX}"
 
-#CFLAGS+=	-I${LOCALBASE}/include -Iother
-#LDFLAGS+=	-L${LOCALBASE}/lib -lsodium
-
 PLIST_FILES=	bin/reop \
 		man/man1/reop.1.gz
 
