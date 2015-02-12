@@ -8,17 +8,3 @@
 +
  # on aarch64, avoid jump tables before all relocations have been processed
  reloc_aarch64.o: CFLAGS += -fno-jump-tables
- 
-@@ -77,9 +79,8 @@ $(LIBDIRINSTALL):
- 
- .SECONDEXPANSION:
- 
--$(LIBDIRINSTALL)/%: % | $$(dir $$@)
--	$(INSTALL) -m 644 $< $(dir $@)
--
--install: $(addprefix $(LIBDIRINSTALL)/,$(INSTALLTARGETS))
-+install: $(INSTALLTARGETS)
-+	echo targets $(INSTALLTARGETS)
-+	$(INSTALL) -m 644 $(INSTALLTARGETS) $(LIBDIRINSTALL)
- 
- include $(SRCDIR)/../Make.rules
