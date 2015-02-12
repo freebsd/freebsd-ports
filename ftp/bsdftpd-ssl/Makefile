@@ -25,6 +25,9 @@ USE_RC_SUBR=	${PORTNAME}
 OPTIONS_DEFAULT=SERVER
 .endif
 
+# explicitly link against libpam to support external toolchains.
+LDFLAGS+=	-lpam
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSERVER} && ${PORT_OPTIONS:MEXAMPLES}
