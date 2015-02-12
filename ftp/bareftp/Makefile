@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.10
-PORTREVISION=	1
+PORTVERSION=	0.3.11
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@bsdjunk.com
 COMMENT=	FTP client made in C sharp
 
 GNU_CONFIGURE=	yes
@@ -24,24 +23,12 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	GNOMEKEYRING NLS
 OPTIONS_DEFAULT=GNOMEKEYRING
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOMEKEYRING}
-KEYRING_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keyring-sharp-1.0.pc
-BUILD_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
-RUN_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
-.else
-CONFIGURE_ARGS+=	--without-gnomekeyring
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+GNOMEKEYRING_CONFIGURE_WITH=	gnomekeyring
+GNOMEKEYRING_BUILD_DEPENDS=	gnome-keyring-sharp>0:${PORTSDIR}/security/gnome-keyring-sharp
+GNOMEKEYRING_RUN_DEPENDS=	gnome-keyring-sharp>0:${PORTSDIR}/security/gnome-keyring-sharp
+NLS_CONFIGURE_ENABLE=	nls
 
 # TODO
 # Ugly way but configure ignore "--localedir=" fu* ;/
