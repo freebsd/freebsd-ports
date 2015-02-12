@@ -148,6 +148,7 @@
     SUBDIR += skype-devel
     SUBDIR += skype4
     SUBDIR += telegram
+    SUBDIR += telegram-purple
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-farstream
