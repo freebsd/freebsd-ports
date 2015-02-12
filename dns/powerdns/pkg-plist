@@ -31,14 +31,14 @@ lib/pdns/libbindbackend.so
 lib/pdns/libpipebackend.so
 %%TOOLS%%man/man1/dnsdist.1.gz
 %%TOOLS%%man/man1/dnstcpbench.1.gz
-%%TOOLS%%man/man8/dnsreplay.8.gz
-%%TOOLS%%man/man8/dnsscope.8.gz
-%%TOOLS%%man/man8/dnswasher.8.gz
-man/man8/pdns_control.8.gz
-man/man8/pdns_server.8.gz
-man/man8/pdnssec.8.gz
-man/man8/zone2ldap.8.gz
-man/man8/zone2sql.8.gz
+%%TOOLS%%man/man1/dnsreplay.1.gz
+%%TOOLS%%man/man1/dnsscope.1.gz
+%%TOOLS%%man/man1/dnswasher.1.gz
+man/man1/pdns_control.1.gz
+man/man1/pdns_server.1.gz
+man/man1/pdnssec.1.gz
+man/man1/zone2ldap.1.gz
+man/man1/zone2sql.1.gz
 @unexec if cmp -s %D/etc/pdns/pdns.conf %D/etc/pdns/pdns.conf-dist; then rm -f %D/etc/pdns/pdns.conf; fi
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
