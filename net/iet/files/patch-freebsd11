@@ -10,3 +10,17 @@
  #define DATA_PROTECT			SSD_KEY_DATA_PROTECT
  #define NO_SENSE			SSD_KEY_NO_SENSE
  #define MEDIUM_ERROR			SSD_KEY_MEDIUM_ERROR
+--- kernel/conn.c.orig	2015-02-13 14:23:20.438348146 -0800
++++ kernel/conn.c	2015-02-13 14:33:52.728261609 -0800
+@@ -80,7 +80,11 @@
+ 
+ 	if ((so->so_state & SS_ISDISCONNECTING) ||(so->so_state & SS_ISDISCONNECTED))
+ 		conn_close(conn);
++#if __FreeBSD_version >= 1100048
++	else if (soreadable(so))
++#else
+ 	else if (so->so_rcv.sb_cc || !(so->so_rcv.sb_state & SBS_CANTRCVMORE))
++#endif
+ 		__nthread_wakeup(info);
+ 
+ 	return (SU_OK);
