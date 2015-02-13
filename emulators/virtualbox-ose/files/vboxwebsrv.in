@@ -36,7 +36,7 @@ vboxwebsrv_start()
 	fi
 
 	echo -n "Starting ${name}"
-	/usr/bin/install -o ${vboxwebsrv_user} -g wheel -m 644 /dev/null ${pidfile}
+	/usr/bin/install -o ${vboxwebsrv_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
 	/usr/sbin/daemon -f -p ${pidfile} -u ${vboxwebsrv_user} ${command} ${vboxwebsrv_flags}
 	echo '.'
 }

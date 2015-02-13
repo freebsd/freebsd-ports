@@ -1,9 +1,9 @@
---- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2014-09-09 23:47:06.000000000 +0400
-+++ src/VBox/Additions/x11/Installer/98vboxadd-xclient	2014-09-10 23:59:10.884611643 +0400
+--- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2015-02-12 11:08:13.000000000 -0500
++++ src/VBox/Additions/x11/Installer/98vboxadd-xclient	2015-02-12 14:38:40.689104000 -0500
 @@ -28,9 +28,9 @@
- # we had in mind, so we do not start VBoxClient in that case.  We do not use
- # "exit" here as this script is "source"d, not executed.
- if test -z "${SSH_CONNECTION}"; then
+    # This script can also be triggered by a connection over SSH, which is not
+    # what we had in mind, so we do not start VBoxClient in that case.  We do
+    # not use "exit" here as this script is "source"d, not executed.
 -  /usr/bin/VBoxClient --clipboard
 -  /usr/bin/VBoxClient --checkhostversion
 -  /usr/bin/VBoxClient --display

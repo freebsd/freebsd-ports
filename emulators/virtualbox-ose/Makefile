@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.20
-PORTREVISION=	4
+DISTVERSION=	4.3.22
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -52,7 +51,11 @@ VBOXWSUSER?=	vboxusers
 VBOXGROUP?=	vboxusers
 USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
-VBOX_FRONTENDS=	VBoxAutostart VBoxHeadless
+VBOX_LINKS=	VBoxVRDP
+VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxHeadless VBoxManage
+VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxSVC \
+		VBoxXPCOMIPCD
+
 VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO PYTHON \
@@ -100,8 +103,8 @@ PLIST_SUB+=	GUEST_VER=${VBOX_GUEST_VER} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
 		VBOXGROUP=${VBOXGROUP}
-
-SUB_LIST+=	VBOXUSER=${VBOXUSER} \
+SUB_LIST+=	VBOXGROUP=${VBOXGROUP} \
+		VBOXUSER=${VBOXUSER} \
 		VBOXWSUSER=${VBOXWSUSER}
 USE_RC_SUBR+=	vboxheadless vboxwatchdog
 
@@ -146,19 +149,21 @@ QT_NONSTANDARD=	yes
 USE_QT4=	linguist_build moc_build rcc_build uic_build
 USE_QT4+=	gui network opengl
 INSTALLS_ICONS=	yes
-VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
+VBOX_PROGS+=	VirtualBox
+VBOX_UTILS+=	VBoxTestOGL
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
 BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
-VBOX_WEB=	vboxwebsrv webtest
 USE_RC_SUBR+=	vboxwebsrv
+VBOX_LINKS+=	vboxwebsrv
+VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
 USE_SDL=	sdl
 USE_XORG=	xcursor xmu inputproto xinerama
-VBOX_FRONTENDS+=VBoxSDL
+VBOX_PROGS+=	VBoxSDL
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MWEBSERVICE}
@@ -249,6 +254,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
 
 do-build:
 	cd ${WRKSRC} && \
@@ -265,12 +272,22 @@ do-install:
 	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${STAGEDIR}${PREFIX}/include/virtualbox
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox
-	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${STAGEDIR}${PREFIX}/lib/virtualbox
+	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components" ${STAGEDIR}${PREFIX}/lib/virtualbox
 	${LN} -sf ${DATADIR}/sdk ${STAGEDIR}${PREFIX}/lib/virtualbox
 
-.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxBalloonCtrl ${VBOX_FRONTENDS} ${VBOX_WEB}
-	${INSTALL_PROGRAM} ${KMK_BUILDDIR}/bin/${f} ${STAGEDIR}${PREFIX}/lib/virtualbox/
-	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh \
+	    ${STAGEDIR}${PREFIX}/lib/virtualbox
+.for f in ${VBOX_PROGS} ${VBOX_UTILS}
+	${INSTALL_PROGRAM} ${KMK_BUILDDIR}/bin/${f} \
+	    ${STAGEDIR}${PREFIX}/lib/virtualbox
+.endfor
+.for f in ${VBOX_PROGS} ${VBOX_LINKS}
+	${LN} -sf ${PREFIX}/lib/virtualbox/VBox.sh \
+	    ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
+.for f in ${VBOX_PROGS}
+	${LN} -sf ${PREFIX}/lib/virtualbox/VBox.sh \
+	    ${STAGEDIR}${PREFIX}/bin/${f:tl}
 .endfor
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -314,9 +331,8 @@ do-install:
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
 	${MKDIR} ${STAGEDIR}${DATADIR}/sdk/bindings/webservice
-.for f in vboxweb.wsdl
-	${INSTALL_DATA} ${KMK_BUILDDIR}/obj/webservice/${f} ${STAGEDIR}${DATADIR}/sdk/bindings/webservice/
-.endfor
+	${INSTALL_DATA} ${KMK_BUILDDIR}/obj/webservice/vboxweb.wsdl \
+	    ${STAGEDIR}${DATADIR}/sdk/bindings/webservice/
 .endif
 
 .include <bsd.port.post.mk>
