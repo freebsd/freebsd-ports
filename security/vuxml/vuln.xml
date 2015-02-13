@@ -57,6 +57,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a888a1e-b321-11e4-83b2-206a8a720317">
+    <topic>krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.13.1</lt></range>
+      </package>
+      <package>
+	<name>krb5-112</name>
+      </package>
+      <package>
+	<name>krb5-111</name>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt">
+          <p>CVE-2014-5353: The krb5_ldap_get_password_policy_from_dn
+             function in plugins/kdb/ldap/libkdb_ldap/ldap_pwd_policy.c in
+             MIT Kerberos 5 (aka krb5) before 1.13.1, when the KDC uses LDAP,
+             allows remote authenticated users to cause a denial of service
+             (daemon crash) via a successful LDAP query with no results, as
+             demonstrated by using an incorrect object type for a password
+             policy.</p>
+          <p>CVE-2014-5354: plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c in
+             MIT Kerberos 5 (aka krb5) 1.12.x and 1.13.x before 1.13.1, when
+             the KDC uses LDAP, allows remote authenticated users to cause a
+             denial of service (NULL pointer dereference and daemon crash) by
+             creating a database entry for a keyless principal, as
+             demonstrated by a kadmin "add_principal -nokey" or "purgekeys
+             -all" command.<p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-5353</cvename>
+      <cvename>CVE-2014-5354</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-12</discovery>
+      <entry>2015-02-12</entry>
+    </dates>
+  </vuln>
   <vuln vid="54a69cf7-b2ef-11e4-b1f1-bcaec565249c">
     <topic>xorg-server -- Information leak in the XkbSetGeometry request of X servers.</topic>
     <affects>
