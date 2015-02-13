@@ -164,6 +164,14 @@ MAKE_ARGS+=	ARCH=x86
 # links in the documentation.
 
 pre-configure:
+.if ${PORT_OPTIONS:MDTRACE}
+	@if ! /sbin/kldstat | ${GREP} dtraceall >/dev/null 2>&1; then \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "DTRACE option requires kernel module \"dtraceall\" to be loaded."; \
+		${ECHO_CMD}; \
+		exit 1; \
+	fi
+.endif
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
