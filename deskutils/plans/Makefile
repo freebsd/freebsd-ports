@@ -3,7 +3,7 @@
 
 PORTNAME=	plans
 PORTVERSION=	8.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
