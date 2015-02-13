@@ -66,11 +66,11 @@ Notes:
       </package>
       <package>
 	<name>krb5-112</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.12.2_2</lt></range>
       </package>
       <package>
 	<name>krb5-111</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.11.5_5</lt></range>
       </package>
     </affects>
     <description>
@@ -102,7 +102,7 @@ Notes:
     <dates>
       <discovery>2015-02-12</discovery>
       <entry>2015-02-12</entry>
-      <modified>2015-02-12</modified>
+      <modified>2015-02-13</modified>
     </dates>
   </vuln>
 
