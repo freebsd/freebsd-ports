@@ -7,7 +7,7 @@ CATEGORIES=	net python
 MASTER_SITES=	GHC
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python library for the manipulation of network addresses
 
 LICENSE=	BSD3CLAUSE MIT
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	drkjam
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
