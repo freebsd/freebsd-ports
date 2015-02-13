@@ -375,7 +375,7 @@ lib/virtualbox/VBoxREM.so
 %%I386%%lib/virtualbox/VBoxREM32.so
 %%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so
-@(root,%%VBOXGROUP%%,4510) %%X11%%lib/virtualbox/VBoxSDL
+%%X11%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxSDL
 %%X11%%lib/virtualbox/VBoxSDL.so
 lib/virtualbox/VBoxSVC
 lib/virtualbox/VBoxSharedClipboard.so
@@ -387,7 +387,7 @@ lib/virtualbox/VBoxVMMPreload.so
 lib/virtualbox/VBoxXPCOM.so
 lib/virtualbox/VBoxXPCOMC.so
 lib/virtualbox/VBoxXPCOMIPCD
-@(root,%%VBOXGROUP%%,4510) %%QT4%%lib/virtualbox/VirtualBox
+%%QT4%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBox
 %%QT4%%lib/virtualbox/VirtualBox.so
 lib/virtualbox/sdk
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
