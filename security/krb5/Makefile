@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.13
-PORTREVISION=		2
+PORTVERSION=		1.13.1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -11,7 +10,6 @@ EXTRACT_SUFX=		.tar
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
-PATCHFILES=		2015-001-patch-r113.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
