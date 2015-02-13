@@ -2,21 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.13
 CATEGORIES=	net python
-MASTER_SITES=	GHC
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python library for the manipulation of network addresses
+COMMENT=	Manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	drkjam
 
 USES=		python
 USE_PYTHON=	autoplist distutils
