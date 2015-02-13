@@ -625,7 +625,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VE
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.8.0
+NGINX_MODSECURITY_VERSION=	2.9.0
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
