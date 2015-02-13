@@ -26,6 +26,11 @@ check_process()
 name="smtpd"
 rcvar=smtpd_enable
 
+start_precmd="smtpd_precmd"
+restart_precmd="smtpd_checkconfig"
+configtest_cmd="smtpd_checkconfig"
+extra_commands="configtest"
+
 load_rc_config $name
 
 : ${smtpd_enable:="NO"}
@@ -36,5 +41,16 @@ load_rc_config $name
 command=${smtpd_procname}
 
 procname=${smtpd_procname}
+
+smtpd_checkconfig()
+{
+    echo "Performing sanity check on smtpd configuration:"
+    eval ${command} ${smtpd_flags} -n
+}
+
+smtpd_precmd()
+{
+    smtpd_checkconfig
+}
 
 run_rc_command "$1"
