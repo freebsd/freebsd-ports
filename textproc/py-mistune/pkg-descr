@@ -1,0 +1,9 @@
+The fastest markdown parser in pure Python, inspired by marked.
+
+Features:
+
+  * Pure Python. Tested in Python 2.6+, Python 3.3+ and PyPy.
+  * Very Fast. It is the fastest in all pure Python markdown parsers.
+  * More Features. Table, footnotes, autolink, fenced code etc.
+
+WWW: https://github.com/lepture/mistune
