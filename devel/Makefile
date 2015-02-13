@@ -3952,6 +3952,7 @@
     SUBDIR += py-pytest-runner
     SUBDIR += py-python-statsd
     SUBDIR += py-pythonbrew
+    SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-pyxml2obj
