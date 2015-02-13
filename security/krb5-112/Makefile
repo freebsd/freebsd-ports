@@ -14,6 +14,8 @@ PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 PATCHFILES=		2015-001-patch-r112.txt
 
+FORBIDDEN=		CVE-2014-5353, CVE-2014-5354
+
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
