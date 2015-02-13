@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.11.5
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-111
@@ -13,8 +13,6 @@ EXTRACT_SUFX=		.tar
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 PATCHFILES=		2015-001-patch-r111.txt
-
-FORBIDDEN=		CVE-2014-5353, CVE-2014-5354
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
