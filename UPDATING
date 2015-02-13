@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150213:
+  AFFECTS: users who upgraded from FreeBSD 7.x or older with "make world" but never ran "make delete-old"
+  AUTHOR: antoine@FreeBSD.org
+
+  Dependency registration has been reworked.
+  If you encounter the following error,  you may have stale magic files
+  for file(1):
+
+    ===>   bar-x depends on shared library: libfoo.so - not found
+
+  You can remove the stale /usr/share/misc/magic.mime{,.mgc} files
+  manually or run "make delete-old" in ${SRCDIR}.
+
 20150207:
   AFFECTS: users of mail/opensmtpd-devel
   AUTHOR: ashish@FreeBSD.org
