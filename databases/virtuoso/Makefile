@@ -25,6 +25,8 @@ USES=		gmake libtool readline uidfix
 USE_AUTOTOOLS=	autoheader aclocal
 USE_OPENSSL=	yes
 
+NOT_FOR_ARCHS=	i386
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\
 		--without-internal-zlib\
