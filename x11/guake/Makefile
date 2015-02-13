@@ -2,7 +2,7 @@
 
 PORTNAME=	guake
 PORTVERSION=	0.5.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -35,16 +35,12 @@ LIBS+=		-L${LOCALBASE}/lib
 MANPAGES_MAKE_ENV_OFF=	man_MANS=""
 
 NLS_CONFIGURE_ENABLE=	nls
-#NLS_USES=	gettext
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	NLS
 
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
-
-REINPLACE_ARGS=	-e 's,/usr/bin/env python,&${PYTHON_VER},' -i.bak
-REINPLACE_FILES=	guake guake-prefs prefs.py
 
 USES=		desktop-file-utils gettext gmake libtool pkgconfig python:2
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
@@ -60,9 +56,6 @@ REINPLACE_FILES+=	../../configure
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
-
-post-configure:
-	@(cd ${WRKSRC}/src/guake ; ${REINPLACE_CMD} ${REINPLACE_FILES})
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/src/guake/globalhotkeys/.libs/globalhotkeys.so
