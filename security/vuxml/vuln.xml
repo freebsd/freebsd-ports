@@ -75,7 +75,7 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The MIT Kerberos team reports:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt">
 	  <p>CVE-2014-5353: The krb5_ldap_get_password_policy_from_dn
 	     function in plugins/kdb/ldap/libkdb_ldap/ldap_pwd_policy.c in
@@ -97,10 +97,12 @@ Notes:
     <references>
       <cvename>CVE-2014-5353</cvename>
       <cvename>CVE-2014-5354</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt</url>
     </references>
     <dates>
       <discovery>2015-02-12</discovery>
       <entry>2015-02-12</entry>
+      <modified>2015-02-12</modified>
     </dates>
   </vuln>
 
