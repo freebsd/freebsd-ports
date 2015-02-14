@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-EasyDBI
-PORTVERSION=	1.24
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +13,13 @@ COMMENT=	POE Component for simplified DBI usage
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-DBI>=1.38:${PORTSDIR}/databases/p5-DBI \
+		p5-POE>=0.3101:${PORTSDIR}/devel/p5-POE \
+		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
