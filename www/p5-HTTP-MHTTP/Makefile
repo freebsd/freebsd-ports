@@ -17,6 +17,8 @@ USE_OPENSSL=	yes
 CONFIGURE_ENV=	GOTSSL=yes
 CONFIGURE_ARGS=	--default
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${PERL} -pi -e 's!(?<=POSSIBLE_SSL_DIRS = qw\().*(?=\);)!${OPENSSLBASE}!;' \
 		${WRKSRC}/Makefile.PL

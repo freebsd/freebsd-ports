@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minerbold
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	instead:${PORTSDIR}/games/instead
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gl00my
-GH_COMMIT=	fad9735
+GH_COMMIT=	75f3f79
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -32,7 +32,7 @@ DESKTOP_ENTRIES="Miner Bold" \
 		""
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "*.lua *.ini gfx snd" \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "*.lua *.ini *.map gfx snd" \
 		${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

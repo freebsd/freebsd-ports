@@ -33,14 +33,8 @@ CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz
 
 OPTIONS_DEFINE=	SDL
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl mixer
-.else
-CONFIGURE_ARGS+=	--disable-output-sdl
-.endif
+SDL_CONFIGURE_OFF=	--disable-output-sdl
+SDL_USE=	SDL=sdl,mixer
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lstdc++//g' ${WRKSRC}/configure

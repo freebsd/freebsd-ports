@@ -60,9 +60,8 @@ NONE_DESC=	No GUI support
 NONE_CONFIGURE_ON=	--without-gui
 NONE_CONFIGURE_ENV=	WISH=/usr/bin/true
 
-.for a in ia64 powerpc sparc64
-BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
-.endfor
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	Uses x86 specific libc functions and has not been ported
 
 .include <bsd.port.options.mk>
 

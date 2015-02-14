@@ -31,6 +31,7 @@ rcvar=haproxy_enable
 command="%%PREFIX%%/sbin/haproxy"
 extra_commands="reload configtest"
 reload_cmd="haproxy_reload"
+stop_cmd="haproxy_stop"
 
 : ${haproxy_enable:="NO"}
 : ${haproxy_config:="%%PREFIX%%/etc/${name}.conf"}
@@ -94,6 +95,19 @@ haproxy_reload()
 		else
 			${command} ${haproxy_flags} -st $(cat ${pidfile})
 		fi
+	else
+		_run_rc_notrunning
+		return 1
+	fi
+}
+
+haproxy_stop()
+{
+	rc_pid=$(check_pidfile ${pidfile} ${command})
+	if [ $rc_pid ]; then
+		rc_pid=$(cat ${pidfile})
+		kill -$sig_stop $rc_pid
+		wait_for_pids $rc_pid
 	else
 		_run_rc_notrunning
 		return 1

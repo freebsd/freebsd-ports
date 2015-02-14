@@ -29,9 +29,8 @@ OPTIONS_DEFAULT=	FLOAT OPENMP X11
 OPTIONS_SUB=		yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
-ATLAS_LIB_DEPENDS=	libalapack.so:${PORTSDIR}/math/atlas
-ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
-			liblapack.so:${PORTSDIR}/math/lapack
+ATLAS_USES=		blaslapack:atlas
+ATLAS_USES_OFF=		blaslapack
 ATLAS_CMAKE_ON=		-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libcblas.so;${LOCALBASE}/lib/libf77blas.so" \
 			-DLAPACK_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libalapack.so"
 ATLAS_CMAKE_OFF=	-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libblas.so" \
@@ -43,7 +42,7 @@ FLOAT_LIB_DEPENDS_OFF=	libfftw3.so:${PORTSDIR}/math/fftw3
 FLOAT_CMAKE_ON=		-DGMX_DOUBLE:BOOL=OFF
 FLOAT_CMAKE_OFF=	-DGMX_DOUBLE:BOOL=ON
 MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
-MPICH2_CMAKE_ON= 	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/bin/mpicc"
+MPICH2_CMAKE_ON=	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/bin/mpicc"
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_ON=	-DGMX_CXX11:BOOL=OFF
 OPENMP_CMAKE_OFF=	-DGMX_OPENMP:BOOL=OFF
@@ -72,14 +71,14 @@ PLIST_SUB+=	SUFFIX_MPI=""
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
+	${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|share/man|man| ; \
 		 /pkgconfig/s|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|'
-	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
+	${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
-	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
+	${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
 
 .include <bsd.port.mk>

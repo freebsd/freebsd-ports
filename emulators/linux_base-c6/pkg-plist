@@ -1,3 +1,4 @@
+bin/[
 bin/arch
 bin/basename
 bin/bash
@@ -12,6 +13,7 @@ bin/dd
 bin/echo
 bin/egrep
 bin/env
+bin/expr
 bin/false
 bin/find
 bin/fgrep
@@ -36,6 +38,7 @@ bin/sleep
 bin/sort
 bin/stty
 bin/sync
+bin/test
 bin/touch
 bin/true
 bin/uname
@@ -52,6 +55,7 @@ bin/raw
 bin/sed
 bin/taskset
 bin/umount
+bin/uuidgen
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
 etc/DIR_COLORS.lightbgcolor

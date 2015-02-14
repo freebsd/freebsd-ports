@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_activity
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	GH
 
@@ -19,10 +19,11 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	ba36bae
+GH_COMMIT=	3b6b371
 
 USES=		python
 USE_PYTHON=	distutils autoplist noegginfo
+PYDISTUTILS_INSTALLARGS=	--with-man
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\/usr\/share|${MAN1PREFIX}|g' \

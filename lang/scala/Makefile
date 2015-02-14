@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.11.2
+PORTVERSION=	2.11.5
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mitsururike@gmail.com
 COMMENT=	Scala Programming Language
@@ -17,6 +16,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		tar:tgz
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -48,18 +48,18 @@ pre-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${SCALA_HOME}/bin
 .for f in ${SCALA_BINS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${SCALA_HOME}/bin/${f}
-	@${LN} -s ${SCALA_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${SCALA_HOME}/bin/${f}
+	${LN} -s ${SCALA_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 .for d in ${SCALA_SHRDIRS}
-	@cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${SCALA_HOME}/${d}
+	(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${SCALA_HOME}/${d})
 .endfor
 .for m in ${SCALA_MANS}
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${m} ${STAGEDIR}${MANPREFIX}/man/man1/${m}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${m} ${STAGEDIR}${MANPREFIX}/man/man1/${m}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${SCALA_DOCDIRS}
-	@cd ${WRKSRC}/doc/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${d}
+	(cd ${WRKSRC}/doc/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${d})
 .endfor
 
 .include <bsd.port.mk>

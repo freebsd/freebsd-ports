@@ -2,39 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	skalibs
-PORTVERSION=	0.47
+PORTVERSION=	2.2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	colin@heliocat.net
 COMMENT=	General purpose C libraries used by skarnet.org software
 
-USE_GCC=	any
+LICENSE=	ISCL
 
-LDFLAGS?=	-s
-STRIPFLAGS?=	-x
+USES=		gmake
+USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--with-default-path=${PREFIX}/bin:/usr/bin:/bin
 
-WRKSRC=		${WRKDIR}/prog/${DISTNAME}
+DOCS=		AUTHORS COPYING INSTALL README doc/*.html
 
-DOCS=		package/CHANGES package/README package/THANKS doc/*.html
-
-OPTIONS_DEFINE=	DOCS
-
-do-configure:
-	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-compile/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-compile/conf-ld
-	${ECHO_CMD} "${STRIP_CMD} ${STRIPFLAGS}" \
-					> ${WRKSRC}/conf-compile/conf-striplibs
-
-do-build:
-	cd ${WRKSRC} && package/compile
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/library/* ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskarnet.so.${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${STAGEDIR}${DOCSDIR}
+.for d in libbiguint libdatastruct librandom libstdcrypto libstddjb libunixonacid
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
+	cd ${WRKSRC} && ${INSTALL_MAN} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}
+.endfor
 
 .include <bsd.port.mk>

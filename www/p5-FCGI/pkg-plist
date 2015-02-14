@@ -1,3 +1,3 @@
 %%PERL5_MAN3%%/FCGI.3.gz
 %%SITE_ARCH%%/FCGI.pm
-%%PURE_PERL%%%%SITE_ARCH%%/auto/FCGI/FCGI.so
+%%SITE_ARCH%%/auto/FCGI/FCGI.so

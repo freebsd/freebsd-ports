@@ -20,4 +20,3 @@ lib/compat/libssl.so.6
 lib/compat/libstdc++.so.6
 lib/compat/libsupc++.so.1
 lib/compat/libusb.so.2
-@dirrmtry lib/compat

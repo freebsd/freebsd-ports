@@ -23,7 +23,7 @@
 %%FLOWVIEWERDIR%%/FlowViewer_CleanFiles
 %%FLOWVIEWERDIR%%/FlowViewer_CleanHostCache
 %%FLOWVIEWERDIR%%/FlowViewer_CleanSiLK
-%%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.dist
+%%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.sample
 %%FLOWVIEWERDIR%%/FlowViewer_Main.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Replay.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Save.cgi
@@ -31,8 +31,8 @@
 %%FLOWVIEWERDIR%%/FlowViewer_Sort.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_UI.pm
 %%FLOWVIEWERDIR%%/FlowViewer_Utilities.pm
-%%FLOWVIEWERDIR%%/NamedInterfaces_Devices
-%%FLOWVIEWERDIR%%/NamedInterfaces_Exporters
+%%FLOWVIEWERDIR%%/NamedInterfaces_Devices.sample
+%%FLOWVIEWERDIR%%/NamedInterfaces_Exporters.sample
 %%FLOWVIEWERDIR%%/dscan.suppress.dst
 %%FLOWVIEWERDIR%%/dscan.suppress.src
 %%FLOWVIEWERDIR%%/tools/analyze_flowmonitor_debug

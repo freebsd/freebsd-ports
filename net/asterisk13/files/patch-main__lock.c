@@ -1,13 +1,12 @@
---- main/lock.c.orig	2014-03-25 15:47:17 UTC
+--- main/lock.c.orig	2014-12-12 23:40:50 UTC
 +++ main/lock.c
-@@ -691,10 +691,6 @@ int __ast_rwlock_init(int tracking, cons
+@@ -701,9 +701,6 @@ int __ast_rwlock_init(int tracking, cons
+ #endif /* DEBUG_THREADS */
  
  	pthread_rwlockattr_init(&attr);
- 
 -#ifdef HAVE_PTHREAD_RWLOCK_PREFER_WRITER_NP
 -	pthread_rwlockattr_setkind_np(&attr, PTHREAD_RWLOCK_PREFER_WRITER_NP);
 -#endif
--
  	res = pthread_rwlock_init(&t->lock, &attr);
  	pthread_rwlockattr_destroy(&attr);
- 	return res;
+ 

@@ -6,7 +6,6 @@ CATEGORIES=	german comms news mail
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 		SF		
 
-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Unix-Connect - mail+news-gateway for Zconnect (tm)
 
@@ -16,7 +15,8 @@ LICENSE_COMB=	multi
 LICENSE=	GPLv2 BSD3CLAUSE
 
 MANUAL_PACKAGE_BUILD=	needs hostname
-NEED_ROOT=	yes
+
+USES=		fakeroot
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes

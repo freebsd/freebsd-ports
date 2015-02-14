@@ -44,7 +44,7 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
-USES=			libtool:keepla
+USES=			cpe libtool:keepla
 USE_OPENSSL=		yes
 .if !defined(CLIENT_ONLY)
 USERS=			ldap
@@ -59,7 +59,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	2
+PORTREVISION_SERVER=	3
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	10.3
 OPENLDAP_MAJOR=		${DISTVERSION:R}

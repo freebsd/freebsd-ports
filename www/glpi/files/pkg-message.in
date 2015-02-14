@@ -15,15 +15,18 @@ If you are using MySQL, here's the short version of the instructions:
   $ mysql -uroot -e"GRANT ALL ON glpi.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" glpi
   (choose your own values for USERNAME and PASSWORD)
 
-You will also need to configure Apache.  Consider adding the following
-to your httpd.conf:
+Make sur Apache supports PHP (www/mod_php5) and add a config file for GLPI in Includes/glpi.conf:
 
+    Alias /glpi %%PREFIX%%/%%GLPIDIR%%
     <Directory %%PREFIX%%/%%GLPIDIR%%>
         AllowOverride Options FileInfo
+        Options Indexes FollowSymLinks
+        Require all granted
+        DirectoryIndex index.php
     </Directory>
 
 Then reload Apache: 'apachectl graceful'
 
-Please visit 'http://{host.domain}/%%GLPIDIR%%/' in a
+Please visit 'http://{host.domain}/glpi/' in a
 web-browser and follow the configuration instructions.
 *****************************************************************

@@ -234,6 +234,7 @@ tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
+proxy65:*:909:909::0:0:Proxy65 Daemon:/nonexistent:/usr/sbin/nologin
 bacula:*:910:910::0:0:Bacula Daemon:/var/db/bacula:/usr/sbin/nologin
 iserv:*:911:911::0:0:Iserv Daemon:/nonexistent:/usr/sbin/nologin
 _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
@@ -271,6 +272,7 @@ bbs:*:944:944::0:0:& user:/nonexistent:/usr/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/usr/sbin/nologin
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
+_lldpd:*:949:949::0:0:lldpd user:/nonexistent:/usr/sbin/nologin
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/usr/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/sbin/nologin
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin

@@ -101,9 +101,6 @@ pre-install:
 .if ${PORT_OPTIONS:MSERVER}
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
 		${ECHO_CMD} lib/modules/extensions/vnc.so ; \
-		${ECHO_CMD} "@dirrmtry lib/modules/extensions" ; \
-		${ECHO_CMD} "@dirrmtry lib/modules" ; \
-		${ECHO_CMD} "@dirrmtry lib" ; \
 	fi >> ${PLIST}
 .endif
 

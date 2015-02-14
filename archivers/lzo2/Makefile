@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lzo2
-PORTVERSION=	2.08
-PORTREVISION=	1
+PORTVERSION=	2.09
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree

@@ -21,8 +21,14 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 CONFLICTS=	kicad-devel*
 
 USES=		cmake dos2unix desktop-file-utils shared-mime-info tar:xz
-# Boost templates and compiler and library support for the ISO C++ 2011 standard from include/wx-3.0
-USES+=		compiler:gcc-c++11-lib
+
+# Does not compile with Gcc48
+USE_GCC=	4.7
+#USES+=		compiler:gcc-c++11-lib
+LDFLAGS+=	-L${LOCALBASE}/lib/c++
+CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	x11 ice xext
 USE_GL=		yes
@@ -47,7 +53,6 @@ NLS_USES=		gettext
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-
 
 .include <bsd.port.options.mk>
 

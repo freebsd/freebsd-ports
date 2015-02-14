@@ -65,6 +65,7 @@ etc/diakonos-256-colour.conf.dist
 %%RUBY_SITELIBDIR%%/diakonos/list.rb
 %%RUBY_SITELIBDIR%%/diakonos/logging.rb
 %%RUBY_SITELIBDIR%%/diakonos/mode.rb
+%%RUBY_SITELIBDIR%%/diakonos/mouse.rb
 %%RUBY_SITELIBDIR%%/diakonos/readline.rb
 %%RUBY_SITELIBDIR%%/diakonos/sessions.rb
 %%RUBY_SITELIBDIR%%/diakonos/search.rb

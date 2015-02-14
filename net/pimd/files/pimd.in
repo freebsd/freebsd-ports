@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: pimd
+# REQUIRE: netif routing
+# KEYWORD: nojail
+
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# pimd_enable="YES"
+#
+
+. /etc/rc.subr
+
+pimd_enable=${pimd_enable-"NO"}
+
+name="pimd"
+rcvar=${name}_enable
+
+command="/usr/local/sbin/${name}"
+
+extra_commands=reload
+
+load_rc_config $name
+run_rc_command "$1"
+

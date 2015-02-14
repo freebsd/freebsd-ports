@@ -1109,10 +1109,3 @@ share/doc/gimp/GUMC/images/quadlogo.gif
 share/doc/gimp/GUMC/index.html
 share/doc/gimp/GUMC/standard.css
 share/doc/gimp/README_NOW
-@dirrm share/doc/gimp/GUMC/images
-@dirrm share/doc/gimp/GUMC
-@dirrm share/doc/gimp/GUM/images/.xvpics
-@dirrm share/doc/gimp/GUM/images
-@dirrm share/doc/gimp/GUM/wwhgifs
-@dirrm share/doc/gimp/GUM
-@dirrm share/doc/gimp

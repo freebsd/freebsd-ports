@@ -3,7 +3,7 @@
 
 PORTNAME=	colordiff
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 
@@ -18,7 +18,8 @@ NO_BUILD=	yes
 SHEBANG_FILES=	colordiff.pl
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}.1
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
+		${WRKSRC}/${PORTNAME}.pl ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

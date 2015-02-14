@@ -1,0 +1,97 @@
+# Origin: http://scp.indiegames.us/mantis/view.php?id=2651
+Index: code/controlconfig/controlsconfigcommon.cpp
+===================================================================
+--- code/controlconfig/controlsconfigcommon.cpp	(revision 8781)
++++ code/controlconfig/controlsconfigcommon.cpp	(working copy)
+@@ -233,12 +233,23 @@
+ };
+ 
+ char *Joy_button_text_german[] = {
+-	"Knopf 1",		"Knopf 2",		"Knopf 3",		"Knopf 4",		"Knopf 5",		"Knopf 6",
+-	"Knopf 7",		"Knopf 8",		"Knopf 9",		"Knopf 10",		"Knopf 11",		"Knopf 12",
+-	"Knopf 13",		"Knopf 14",		"Knopf 15",		"Knopf 16",		"Knopf 17",		"Knopf 18",
+-	"Knopf 19",		"Knopf 20",		"Knopf 21",		"Knopf 22",		"Knopf 23",		"Knopf 24",
+-	"Knopf 25",		"Knopf 26",		"Knopf 27",		"Knopf 28",		"Knopf 29",		"Knopf 30",
+-	"Knopf 31",		"Knopf 32",		"Hut Hinten",	"Hut Vorne",	"Hut Links",	"Hut Rechts"
++	"Knopf 1",	"Knopf 2",	"Knopf 3",	"Knopf 4",	"Knopf 5",	"Knopf 6",
++	"Knopf 7",	"Knopf 8",	"Knopf 9",	"Knopf 10",	"Knopf 11",	"Knopf 12",
++	"Knopf 13",	"Knopf 14",	"Knopf 15",	"Knopf 16",	"Knopf 17",	"Knopf 18",
++	"Knopf 19",	"Knopf 20",	"Knopf 21",	"Knopf 22",	"Knopf 23",	"Knopf 24",
++	"Knopf 25",	"Knopf 26",	"Knopf 27",	"Knopf 28",	"Knopf 29",	"Knopf 30",
++	"Knopf 31",	"Knopf 32",	"Knopf 33",	"Knopf 34",	"Knopf 35",	"Knopf 36",
++	"Knopf 37",	"Knopf 38",	"Knopf 39",	"Knopf 40",	"Knopf 41",	"Knopf 42",
++	"Knopf 43",	"Knopf 44",	"Knopf 45",	"Knopf 46",	"Knopf 47",	"Knopf 48",
++	"Knopf 49",	"Knopf 50",	"Knopf 51",	"Knopf 52",	"Knopf 53",	"Knopf 54",
++	"Knopf 55",	"Knopf 56",	"Knopf 57",	"Knopf 58",	"Knopf 59",	"Knopf 60",
++	"Knopf 61",	"Knopf 62",	"Knopf 63",	"Knopf 64",	"Knopf 65",	"Knopf 66",
++	"Knopf 67",	"Knopf 68",	"Knopf 69",	"Knopf 70",	"Knopf 71",	"Knopf 72",
++	"Knopf 73",	"Knopf 74",	"Knopf 75",	"Knopf 76",	"Knopf 77",	"Knopf 78",
++	"Knopf 79",	"Knopf 80",	"Knopf 81",	"Knopf 82",	"Knopf 83",	"Knopf 84",
++	"Knopf 85",	"Knopf 86",	"Knopf 87",	"Knopf 88",	"Knopf 89",	"Knopf 90",
++	"Knopf 91",	"Knopf 92",	"Knopf 93",	"Knopf 94",	"Knopf 95",	"Knopf 96",
++	"Knopf 97",	"Knopf 98",	"Hut Hinten",	"Hut Vorne",	"Hut Links",	"Hut Rechts"
+ };
+ 
+ char *Scan_code_text_french[] = {
+@@ -285,11 +296,22 @@
+ 
+ char *Joy_button_text_french[] = {
+ 	"Bouton 1",		"Bouton 2",		"Bouton 3",		"Bouton 4",		"Bouton 5",		"Bouton 6",
+-	"Bouton 7",		"Bouton 8",		"Bouton 9",		"Bouton 10",		"Bouton 11",		"Bouton 12",
+-	"Bouton 13",		"Bouton 14",		"Bouton 15",		"Bouton 16",		"Bouton 17",		"Bouton 18",
+-	"Bouton 19",		"Bouton 20",		"Bouton 21",		"Bouton 22",		"Bouton 23",		"Bouton 24",
+-	"Bouton 25",		"Bouton 26",		"Bouton 27",		"Bouton 28",		"Bouton 29",		"Bouton 30",
+-	"Bouton 31",		"Bouton 32",		"Chapeau Arriere",		"Chapeau Avant",		"Chapeau Gauche",		"Chapeau Droite"
++	"Bouton 7",		"Bouton 8",		"Bouton 9",		"Bouton 10",	"Bouton 11",	"Bouton 12",
++	"Bouton 13",	"Bouton 14",	"Bouton 15",	"Bouton 16",	"Bouton 17",	"Bouton 18",
++	"Bouton 19",	"Bouton 20",	"Bouton 21",	"Bouton 22",	"Bouton 23",	"Bouton 24",
++	"Bouton 25",	"Bouton 26",	"Bouton 27",	"Bouton 28",	"Bouton 29",	"Bouton 30",
++	"Bouton 31",	"Bouton 32",	"Bouton 33",	"Bouton 34",	"Bouton 35",	"Bouton 36",
++	"Bouton 37",	"Bouton 38",	"Bouton 39",	"Bouton 40",	"Bouton 41",	"Bouton 42",
++	"Bouton 43",	"Bouton 44",	"Bouton 45",	"Bouton 46",	"Bouton 47",	"Bouton 48",
++	"Bouton 49",	"Bouton 50",	"Bouton 51",	"Bouton 52",	"Bouton 53",	"Bouton 54",
++	"Bouton 55",	"Bouton 56",	"Bouton 57",	"Bouton 58",	"Bouton 59",	"Bouton 60",
++	"Bouton 61",	"Bouton 62",	"Bouton 63",	"Bouton 64",	"Bouton 65",	"Bouton 66",
++	"Bouton 67",	"Bouton 68",	"Bouton 69",	"Bouton 70",	"Bouton 71",	"Bouton 72",
++	"Bouton 73",	"Bouton 74",	"Bouton 75",	"Bouton 76",	"Bouton 77",	"Bouton 78",
++	"Bouton 79",	"Bouton 80",	"Bouton 81",	"Bouton 82",	"Bouton 83",	"Bouton 84",
++	"Bouton 85",	"Bouton 86",	"Bouton 87",	"Bouton 88",	"Bouton 89",	"Bouton 90",
++	"Bouton 91",	"Bouton 92",	"Bouton 93",	"Bouton 94",	"Bouton 95",	"Bouton 96",
++	"Bouton 97",	"Bouton 98",	"Chapeau Arriere",		"Chapeau Avant",		"Chapeau Gauche",		"Chapeau Droite"
+ };
+ 
+ //	This is the text that is displayed on the screen for the keys a player selects
+@@ -341,7 +363,18 @@
+ 	"Button 13",	"Button 14",	"Button 15",	"Button 16",	"Button 17",	"Button 18",
+ 	"Button 19",	"Button 20",	"Button 21",	"Button 22",	"Button 23",	"Button 24",
+ 	"Button 25",	"Button 26",	"Button 27",	"Button 28",	"Button 29",	"Button 30",
+-	"Button 31",	"Button 32",	"Hat Back",		"Hat Forward",	"Hat Left",		"Hat Right"
++	"Button 31",	"Button 32",	"Button 33",	"Button 34",	"Button 35",	"Button 36",
++	"Button 37",	"Button 38",	"Button 39",	"Button 40",	"Button 41",	"Button 42",
++	"Button 43",	"Button 44",	"Button 45",	"Button 46",	"Button 47",	"Button 48",
++	"Button 49",	"Button 50",	"Button 51",	"Button 52",	"Button 53",	"Button 54",
++	"Button 55",	"Button 56",	"Button 57",	"Button 58",	"Button 59",	"Button 60",
++	"Button 61",	"Button 62",	"Button 63",	"Button 64",	"Button 65",	"Button 66",
++	"Button 67",	"Button 68",	"Button 69",	"Button 70",	"Button 71",	"Button 72",
++	"Button 73",	"Button 74",	"Button 75",	"Button 76",	"Button 77",	"Button 78",
++	"Button 79",	"Button 80",	"Button 81",	"Button 82",	"Button 83",	"Button 84",
++	"Button 85",	"Button 86",	"Button 87",	"Button 88",	"Button 89",	"Button 90",
++	"Button 91",	"Button 92",	"Button 93",	"Button 94",	"Button 95",	"Button 96",
++	"Button 97",	"Button 98",	"Hat Back",		"Hat Forward",	"Hat Left",		"Hat Right"	
+ };
+ 
+ char **Scan_code_text = Scan_code_text_english;
+
+Index: code/io/joy.h
+===================================================================
+--- code/io/joy.h	(revision 8781)
++++ code/io/joy.h	(working copy)
+@@ -12,7 +12,7 @@
+ #ifndef __JOY_H__
+ #define __JOY_H__
+ 
+-#define JOY_NUM_BUTTONS		32
++#define JOY_NUM_BUTTONS		98
+ #define JOY_NUM_HAT_POS		4
+ #define JOY_TOTAL_BUTTONS	(JOY_NUM_BUTTONS + JOY_NUM_HAT_POS)
+ #define JOY_NUM_AXES			6

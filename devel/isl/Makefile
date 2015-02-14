@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	isl
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://isl.gforge.inria.fr/
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Integer Set Library
 
 LICENSE=	MIT

@@ -438,3 +438,4 @@
 %%WWWDIR%%/us_english.pl
 %%WWWDIR%%/us_english_utf8.pl
 %%WWWDIR%%/zh_tw.pl
+@dir %%WWWDIR%%/sessions

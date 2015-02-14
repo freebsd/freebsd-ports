@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1409841477
+PORTVERSION=	1422974289
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -10,15 +10,16 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Command-Line Utilities
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
 		eject:${PORTSDIR}/sysutils/eject \
-		unzip:${PORTSDIR}/archivers/unzip \
-		jailme:${PORTSDIR}/sysutils/jailme
+		unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		${WRKDIR}/src-sh
+WRKSRC=		${WRKDIR}/pcbsd-utils
 CONFLICTS?=	pbi-manager-[0-9]*
-USE_QT4=	corelib network qmake moc_build rcc_build uic_build
-USES=		pkgconfig tar:bzip2
+USE_QT5=	core network buildtools qmake
+USES=		pkgconfig tar:xz
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

@@ -33,10 +33,4 @@ sbin/ss5srv
 %%DOCSDIR%%/README.ldap
 %%DOCSDIR%%/README.pam
 %%DOCSDIR%%/README.statmgr
-@exec mkdir -p /var/run/ss5
-@unexec rmdir >/dev/null 2>&1 /var/log/ss5 || :
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry etc/ss5
-@dirrm lib/ss5
+@dir /var/run/ss5

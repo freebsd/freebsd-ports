@@ -10,4 +10,3 @@ lib/compat/libtacplus.so.4
 lib/compat/libufs.so.5
 lib/compat/libutil.so.8
 lib/compat/libz.so.5
-@dirrmtry lib/compat

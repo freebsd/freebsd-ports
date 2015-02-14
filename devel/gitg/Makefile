@@ -7,23 +7,20 @@ PORTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME GUI client to view git repositories
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK-based git repository viewer
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
-LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
-		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake libtool pathfix pkgconfig \
-		python:3 tar:xz
-USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack libxslt
-USE_LDCONFIG=	yes
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		git:${PORTSDIR}/devel/git
+
+CONFLICTS=	gitg0-[0-9]*
+
+USES=		tar:xz gettext gmake pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral

@@ -35,8 +35,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${FIND} ${WRKSRC}/doc/html -not -type d \
                 | ${SED} 's,^${WRKSRC}/doc/html,${DOCSDIR_REL},' >> ${TMPPLIST}
-	${FIND} ${STAGEDIR}${PREFIX}/include/cppunit -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	${INSTALL_MAN} ${WRKSRC}/doc/FAQ ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

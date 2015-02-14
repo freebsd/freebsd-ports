@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjsonrpc
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net www devel
 MASTER_SITES=	http://bitbucket.org/devonit/qjsonrpc/get/
 DISTNAME=	v${PORTVERSION}
@@ -17,7 +17,7 @@ USES=		qmake
 USE_QT4=	moc_build network qtestlib_build rcc_build
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/devonit-qjsonrpc-b138256fe2b8
+WRKSRC=		${WRKDIR}/devonit-qjsonrpc-adefe89b0c6f
 
 post-configure:
 	@${REINPLACE_CMD} 's|lib/pkgconfig|libdata/pkgconfig|g' \

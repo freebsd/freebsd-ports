@@ -207,7 +207,4 @@ lib32/compat/pam_self.so.3
 lib32/compat/pam_ssh.so.3
 lib32/compat/pam_tacplus.so.3
 lib32/compat/pam_unix.so.3
-@dirrmtry lib/compat
-@dirrmtry lib32/compat
-@dirrmtry lib32
 @exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

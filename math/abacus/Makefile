@@ -3,7 +3,7 @@
 
 PORTNAME=	abacus
 DISTVERSION=	3.2betaU1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 

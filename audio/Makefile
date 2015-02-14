@@ -433,6 +433,7 @@
     SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += lmms
+    SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
     SUBDIR += lv2core
@@ -599,7 +600,6 @@
     SUBDIR += py-cddb
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
-    SUBDIR += py-eyed3-06
     SUBDIR += py-fastaudio
     SUBDIR += py-gmusicapi
     SUBDIR += py-id3

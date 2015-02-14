@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 
+LICENSE=	MPL GPLv2 LGPL21
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
@@ -22,14 +25,11 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libfreexl.so:${PORTSDIR}/textproc/freexl
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pkgconfig libtool
+USES=		gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

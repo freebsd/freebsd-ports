@@ -2,7 +2,7 @@
 
 PORTNAME=	mailx
 PORTVERSION=	12.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
@@ -21,6 +21,7 @@ USES=		iconv tar:bzip2
 USE_OPENSSL=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \
+		SENDMAIL="/usr/sbin/sendmail" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 

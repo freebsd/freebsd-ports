@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloog
-PORTVERSION=	0.18.1
-PORTREVISION=	3
+PORTVERSION=	0.18.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.bastoul.net/cloog/pages/download/
 
@@ -14,8 +13,6 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libisl.so:${PORTSDIR}/devel/isl
-
-PORTSCOUT=	ignore:0.18.2
 
 USE_LDCONFIG=	yes
 USES=		libtool

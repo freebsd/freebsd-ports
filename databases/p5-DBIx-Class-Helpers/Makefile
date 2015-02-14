@@ -14,8 +14,6 @@ COMMENT=	Simplify the common case stuff for DBIx::Class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BROKEN=		Missing distinfo
-
 RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBIx-Class>=0.08123:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBIx-Class-Candy>=0:${PORTSDIR}/databases/p5-DBIx-Class-Candy \

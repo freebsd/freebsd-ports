@@ -26,7 +26,7 @@ $FreeBSD$
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -109,25 +109,22 @@
+@@ -113,25 +113,22 @@
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -59,17 +59,17 @@ $FreeBSD$
  	#
  	# Init script
  	$(SED) -e "s*@ctlscriptpath@*$(SBINDIR)*" \
-@@ -177,6 +176,7 @@
+@@ -184,6 +181,7 @@
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation
 +ifndef NOPORTDOCS
  	$(INSTALL) -d $(DOCDIR)
- 	$(INSTALL) -m 644 doc/dev.html $(DOCDIR)
- 	$(INSTALL) -m 644 doc/guide.html $(DOCDIR)
-@@ -186,6 +186,7 @@
- 		&& $(INSTALL) -m 644 doc/guide.pdf $(DOCDIR) \
+ 	[ -f doc/dev.html ] \
+ 		&& $(INSTALL) -m 644 doc/dev.html $(DOCDIR) \
+@@ -196,6 +194,7 @@
  		|| echo "No doc/guide.pdf was built"
+ 	$(INSTALL) -m 644 doc/*.png $(DOCDIR)
  	$(INSTALL) -m 644 COPYING $(DOCDIR)
 +endif
  

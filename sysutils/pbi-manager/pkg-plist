@@ -1,0 +1,20 @@
+sbin/app
+sbin/pbi
+sbin/pbi_add
+sbin/pbi_delete
+sbin/pbi_icon
+sbin/pbi_info
+sbin/pbi_makeindex
+sbin/pbi_updateindex
+etc/pbi.conf
+share/pbi-manager/icons/default.png
+share/pbi-manager/icons/patch.png
+share/pbi-manager/pkgng-repo
+share/pbi-manager/repokey.ssl
+man/man1/pbi_add.1.gz
+man/man1/pbi_delete.1.gz
+man/man1/pbi_icon.1.gz
+man/man1/pbi_info.1.gz
+man/man5/pbi.conf.5.gz
+@dirrm share/pbi-manager/icons
+@dirrm share/pbi-manager

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
-
 COMMENT=	PostgreSQL database (client)
+PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../postgresql92-server
 
@@ -16,6 +15,5 @@ INSTALL_DIRS=	${BUILD_DIRS}
 CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
-USES+=		readline
 
 .include "${MASTERDIR}/Makefile"

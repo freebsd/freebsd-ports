@@ -23,11 +23,19 @@ bin/groonga-benchmark
 %%ETCDIR%%/httpd/win-utf
 %%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
+include/groonga/groonga/command.h
+include/groonga/groonga/expr.h
+include/groonga/groonga/groonga.h
+include/groonga/groonga/ii.h
 include/groonga/groonga/nfkc.h
 include/groonga/groonga/normalizer.h
+include/groonga/groonga/output.h
 include/groonga/groonga/plugin.h
+include/groonga/groonga/request_canceler.h
+include/groonga/groonga/token.h
 include/groonga/groonga/token_filter.h
 include/groonga/groonga/tokenizer.h
+include/groonga/groonga/util.h
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
 lib/groonga/plugins/suggest/suggest.a
@@ -68,8 +76,8 @@ sbin/groonga-httpd-restart
 %%DATADIR%%/examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css
 %%DATADIR%%/examples/dictionary/html/index.html
 %%DATADIR%%/examples/dictionary/html/js/dictionary.js
-%%DATADIR%%/examples/dictionary/html/js/jquery-1.7.2.min.js
-%%DATADIR%%/examples/dictionary/html/js/jquery-ui-1.8.18.custom.min.js
+%%DATADIR%%/examples/dictionary/html/js/jquery-1.7.2.js
+%%DATADIR%%/examples/dictionary/html/js/jquery-ui-1.8.18.custom.js
 %%DATADIR%%/examples/dictionary/init-db.sh
 %%DATADIR%%/examples/dictionary/jmdict/jmdict.rb
 %%DATADIR%%/examples/dictionary/readme.txt
@@ -100,9 +108,9 @@ sbin/groonga-httpd-restart
 %%DATADIR%%/html/admin/index.ja.html
 %%DATADIR%%/html/admin/js/groonga-admin.js
 %%DATADIR%%/html/admin/js/groonga-admin.ja.js
-%%DATADIR%%/html/admin/js/jquery-1.7.2.min.js
-%%DATADIR%%/html/admin/js/jquery-ui-1.8.18.custom.min.js
-%%DATADIR%%/html/admin/js/jquery.flot-0.7.min.js
+%%DATADIR%%/html/admin/js/jquery-1.7.2.js
+%%DATADIR%%/html/admin/js/jquery-ui-1.8.18.custom.js
+%%DATADIR%%/html/admin/js/jquery.flot-0.7.js
 %%DATADIR%%/html/admin/js/jquery.flot.license.txt
 %%DATADIR%%/images/logo/groonga-icon-foreground-white.png
 %%DATADIR%%/images/logo/groonga-icon-foreground-white.svg
@@ -162,3 +170,6 @@ sbin/groonga-httpd-restart
 %%DATADIR%%/munin/plugins/groonga_query_performance_
 %%DATADIR%%/munin/plugins/groonga_status_
 %%DATADIR%%/munin/plugins/groonga_throughput_
+@dir /var/log/groonga/httpd
+@dir /var/log/groonga
+@dir /var/run/groonga

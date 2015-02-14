@@ -38,6 +38,4 @@ man/man3/SP_scat_receive.3.gz
 %%SITE_ARCH%%/auto/Spread/autosplit.ix
 sbin/spread
 %%EXAMPLESDIR%%/test.pl
-@dirrm %%EXAMPLESDIR%%
-@exec install -m 750 -o %%USERS%% -g %%GROUPS%% -d %%RUNDIR%%
-@dirrmtry %%RUNDIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%RUNDIR%%

@@ -3,9 +3,7 @@ bin/lxac3scan
 bin/lxdvdrip
 bin/play_cell_lxdvdrip
 bin/vamps_lxdvdrip
-@unexec if cmp -s %D/etc/lxdvdrip.conf %D/etc/lxdvdrip.conf.sample; then rm -f %D/etc/lxdvdrip.conf; fi
-etc/lxdvdrip.conf.sample
-@exec [ -f %B/lxdvdrip.conf ] || cp %B/%f %B/lxdvdrip.conf
+@sample etc/lxdvdrip.conf.sample
 %%DATADIR%%/lxdvdrip.wav
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lxdvdrip.conf.DE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lxdvdrip.conf.EN
@@ -22,6 +20,3 @@ man/man1/lxdvdrip.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.fr
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/freebsd.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

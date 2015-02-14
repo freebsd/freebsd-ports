@@ -21,6 +21,7 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--target="psp" \
 		--enable-install-libbfd \
+		--disable-werror \
 		--disable-nls \
 		--mandir=${PREFIX}/man
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squashfs-tools
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/squashfs/squashfs/${DISTNAME}/
 DISTNAME=	squashfs${PORTVERSION}
@@ -25,7 +25,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 
 USE_CSTD=	gnu89
 
-USES=		alias gmake
+USES=		alias cpe gmake
+CPE_PRODUCT=	squashfs
+CPE_VENDOR=	phillip_lougher
 
 .include <bsd.port.options.mk>
 

@@ -77,17 +77,6 @@
       * @throws ParseException if the JNLP file was invalid
       */
      public JNLPFile(InputStream input, URL codebase, ParserSettings settings) throws ParseException {
---- netx/net/sourceforge/jnlp/SecurityDesc.java	2014-04-02 06:20:59.680124000 -0400
-+++ netx/net/sourceforge/jnlp/SecurityDesc.java	2014-05-15 16:57:19.000000000 -0400
-@@ -90,7 +90,7 @@
-          * The HTML permission level corresponding to the given String. If null is given, null comes
-          * back. If there is no permission level that can be granted in HTML matching the given String,
-          * null is also returned.
--         * @param jnlpString the JNLP permission String
-+         * @param htmlString the JNLP permission String
-          * @return the matching RequestedPermissionLevel
-          */
-         public RequestedPermissionLevel fromHtmlString(final String htmlString) {
 --- netx/net/sourceforge/jnlp/controlpanel/ControlPanel.java	2014-04-02 06:20:59.683125000 -0400
 +++ netx/net/sourceforge/jnlp/controlpanel/ControlPanel.java	2014-05-15 16:57:19.000000000 -0400
 @@ -292,12 +292,13 @@
@@ -185,124 +174,6 @@
          cbCompression.setSelectedIndex(Integer.parseInt(this.config.getProperty(properties[3])));
          cbCompression.addItemListener(new ItemListener() {
              @Override
---- netx/net/sourceforge/jnlp/controlpanel/UnsignedAppletsTrustingListPanel.java	2014-04-02 06:20:59.683125000 -0400
-+++ netx/net/sourceforge/jnlp/controlpanel/UnsignedAppletsTrustingListPanel.java	2014-05-15 16:57:19.000000000 -0400
-@@ -51,6 +51,7 @@
- import java.util.Date;
- import java.util.List;
- import java.util.regex.Pattern;
-+
- import javax.swing.DefaultCellEditor;
- import javax.swing.JComboBox;
- import javax.swing.JDialog;
-@@ -72,6 +73,7 @@
- import javax.swing.table.TableCellRenderer;
- import javax.swing.table.TableModel;
- import javax.swing.table.TableRowSorter;
-+
- import net.sourceforge.jnlp.config.DeploymentConfiguration;
- import net.sourceforge.jnlp.runtime.Translator;
- import net.sourceforge.jnlp.security.appletextendedsecurity.AppletSecurityLevel;
-@@ -95,9 +97,9 @@
-     private javax.swing.JButton moveRowDownButton;
-     private javax.swing.JCheckBox askBeforeActionCheckBox;
-     private javax.swing.JCheckBox filterRegexesCheckBox;
--    private javax.swing.JComboBox mainPolicyComboBox;
--    private javax.swing.JComboBox deleteTypeComboBox;
--    private javax.swing.JComboBox viewFilter;
-+    private javax.swing.JComboBox<AppletSecurityLevel> mainPolicyComboBox;
-+    private javax.swing.JComboBox<String> deleteTypeComboBox;
-+    private javax.swing.JComboBox<String> viewFilter;
-     private javax.swing.JLabel globalBehaviourLabel;
-     private javax.swing.JLabel securityLevelLabel;
-     private javax.swing.JScrollPane userTableScrollPane;
-@@ -175,7 +177,7 @@
-         setButtons((!currentModel.back.isReadOnly()));
-     }
- 
--    public String appletItemsToCaption(List<UnsignedAppletActionEntry> ii, String caption) {
-+    public static String appletItemsToCaption(List<UnsignedAppletActionEntry> ii, String caption) {
-         StringBuilder sb = new StringBuilder();
-         for (UnsignedAppletActionEntry i : ii) {
-             sb.append(appletItemToCaption(i, caption)).append("\n");
-@@ -197,7 +199,7 @@
- 
-     public static void removeSelectedFromTable(JTable table, boolean ask, UnsignedAppletActionTableModel data, Component forDialog) {
-         int[] originalIndexes = table.getSelectedRows();
--        List<Integer> newIndexes = new ArrayList<Integer>(originalIndexes.length);
-+        List<Integer> newIndexes = new ArrayList<>(originalIndexes.length);
-         for (int i = 0; i < originalIndexes.length; i++) {
-             //we need to remap values first
-             int modelRow = table.convertRowIndexToModel(originalIndexes[i]);
-@@ -249,7 +251,7 @@
-         userTable = createTbale(customModel);
-         globalTable = createTbale(globalModel);
-         helpButton = new javax.swing.JButton();
--        mainPolicyComboBox = new JComboBox(new AppletSecurityLevel[]{
-+        mainPolicyComboBox = new JComboBox<>(new AppletSecurityLevel[] {
-                     AppletSecurityLevel.DENY_ALL,
-                     AppletSecurityLevel.DENY_UNSIGNED,
-                     AppletSecurityLevel.ASK_UNSIGNED,
-@@ -258,8 +260,8 @@
-         mainPolicyComboBox.setSelectedItem(AppletSecurityLevel.getDefault());
-         securityLevelLabel = new javax.swing.JLabel();
-         globalBehaviourLabel = new javax.swing.JLabel();
--        deleteTypeComboBox = new javax.swing.JComboBox();
--        viewFilter = new javax.swing.JComboBox();
-+        deleteTypeComboBox = new javax.swing.JComboBox<>();
-+        viewFilter = new javax.swing.JComboBox<>();
-         deleteButton = new javax.swing.JButton();
-         testUrlButton = new javax.swing.JButton();
-         addRowButton = new javax.swing.JButton();
-@@ -335,7 +337,7 @@
- 
-         globalBehaviourLabel.setText(Translator.R("APPEXTSECguiPanelGlobalBehaviourCaption"));
- 
--        deleteTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
-+        deleteTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
-                     Translator.R("APPEXTSECguiPanelDeleteMenuSelected"),
-                     Translator.R("APPEXTSECguiPanelDeleteMenuAllA"),
-                     Translator.R("APPEXTSECguiPanelDeleteMenuAllN"),
-@@ -343,7 +345,7 @@
-                     Translator.R("APPEXTSECguiPanelDeleteMenuAlln"),
-                     Translator.R("APPEXTSECguiPanelDeleteMenuAllAll")}));
- 
--        viewFilter.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
-+        viewFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
-                     Translator.R("APPEXTSECguiPanelShowOnlyPermanent"),
-                     Translator.R("APPEXTSECguiPanelShowOnlyTemporal"),
-                     Translator.R("APPEXTSECguiPanelShowAll"),
-@@ -681,7 +683,7 @@
-         }
-     }
- 
--    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {
-+    private static void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {
-         JDialog d = new ExtendedAppletSecurityHelp(null, false);
-         ScreenFinder.centerWindowsToCurrentScreen(d);
-         d.setVisible(true);
-@@ -701,7 +703,11 @@
-             public TableCellEditor getCellEditor(int row, int column) {
-                 int columnx = convertColumnIndexToModel(column);
-                 if (columnx == 0) {
--                    return new DefaultCellEditor(new JComboBox(new ExecuteAppletAction[]{ExecuteAppletAction.ALWAYS, ExecuteAppletAction.NEVER, ExecuteAppletAction.YES, ExecuteAppletAction.NO}));
-+                    return new DefaultCellEditor(new JComboBox<>(new ExecuteAppletAction[] {
-+                            ExecuteAppletAction.ALWAYS,
-+                            ExecuteAppletAction.NEVER,
-+                            ExecuteAppletAction.YES,
-+                            ExecuteAppletAction.NO }));
-                 }
-                 if (columnx == 2) {
-                     column = convertColumnIndexToModel(column);
-@@ -761,7 +767,7 @@
-     private void removeByBehaviour(ExecuteAppletAction unsignedAppletAction) {
-         UnsignedAppletActionEntry[] items = currentModel.back.toArray();
-         if (askBeforeActionCheckBox.isSelected()) {
--            List<UnsignedAppletActionEntry> toBeDeleted = new ArrayList<UnsignedAppletActionEntry>();
-+            List<UnsignedAppletActionEntry> toBeDeleted = new ArrayList<>();
-             for (int i = 0; i < items.length; i++) {
-                 UnsignedAppletActionEntry unsignedAppletActionEntry = items[i];
-                 if (unsignedAppletActionEntry.getUnsignedAppletAction() == unsignedAppletAction) {
 --- netx/net/sourceforge/jnlp/security/VariableX509TrustManagerJDK6.java	2014-04-02 06:20:59.679124000 -0400
 +++ netx/net/sourceforge/jnlp/security/VariableX509TrustManagerJDK6.java	2014-05-15 16:57:19.000000000 -0400
 @@ -1,75 +0,0 @@
@@ -869,26 +740,25 @@
  
          if (argsList.contains(HELP_FLAG)) {
              map.put(HELP_FLAG, null);
---- netx/net/sourceforge/jnlp/security/policyeditor/PolicyEditorPermissions.java	2014-04-02 06:20:59.679124000 -0400
-+++ netx/net/sourceforge/jnlp/security/policyeditor/PolicyEditorPermissions.java	2014-05-15 16:57:20.000000000 -0400
-@@ -123,13 +123,14 @@
+--- netx/net/sourceforge/jnlp/security/policyeditor/PolicyEditorPermissions.java	2014-08-14 06:15:47.038832000 -0400
++++ netx/net/sourceforge/jnlp/security/policyeditor/PolicyEditorPermissions.java	2014-10-21 18:32:55.000000000 -0400
+@@ -128,12 +128,13 @@
  
          private final PolicyEditorPermissions[] permissions;
-         private final String title; 
+         private final String title;
 -        private Group(String title, PolicyEditorPermissions... permissions) {
 +
 +        private Group(final String title, final PolicyEditorPermissions... permissions) {
              this.title = title;
              this.permissions = permissions;
-         
          }
  
 -        public static boolean anyContains(PolicyEditorPermissions permission) {
 +        public static boolean anyContains(final PolicyEditorPermissions permission) {
-             for (Group g : Group.values()) {
+             for (final Group g : Group.values()) {
                  if (g.contains(permission)) {
                      return true;
-@@ -138,10 +139,10 @@
+@@ -142,10 +143,10 @@
              return false;
          }
  
@@ -902,7 +772,7 @@
                          if (g.contains(pairs.getKey())) {
                              return true;
                          }
-@@ -157,10 +158,10 @@
+@@ -161,10 +162,10 @@
           * - none is selected
           */
          public int getState (final Map<PolicyEditorPermissions, Boolean> map) {
@@ -917,7 +787,7 @@
                  if (b == null){
                      return 0;
                  }
-@@ -170,23 +171,22 @@
+@@ -174,23 +175,22 @@
                      allTrue = false;
                  }
              }
@@ -945,7 +815,7 @@
          }
  
          public String getTitle() {
-@@ -199,7 +199,7 @@
+@@ -203,7 +203,7 @@
  
      }
  
@@ -1185,17 +1055,17 @@
                          throw new InvalidJarHeaderException("Jar " + file.getName() + " do not heave valid header. You can skip this check by -Xignoreheaders");
                      }
                  }
---- netx/net/sourceforge/jnlp/util/logging/ConsoleOutputPane.java	2014-04-02 06:20:59.684125000 -0400
-+++ netx/net/sourceforge/jnlp/util/logging/ConsoleOutputPane.java	2014-05-15 16:57:20.000000000 -0400
-@@ -15,6 +15,7 @@
+--- netx/net/sourceforge/jnlp/util/logging/ConsoleOutputPane.java	2014-08-14 06:15:47.055833000 -0400
++++ netx/net/sourceforge/jnlp/util/logging/ConsoleOutputPane.java	2014-10-21 19:02:25.000000000 -0400
+@@ -17,6 +17,7 @@
  import java.util.Observer;
  import java.util.concurrent.atomic.AtomicBoolean;
  import java.util.regex.Pattern;
 +
  import javax.swing.ButtonGroup;
- import javax.swing.JFrame;
- import javax.swing.JMenuItem;
-@@ -26,6 +27,7 @@
+ import javax.swing.DefaultComboBoxModel;
+ import javax.swing.GroupLayout;
+@@ -41,6 +42,7 @@
  import javax.swing.text.Document;
  import javax.swing.text.PlainDocument;
  import javax.swing.text.html.HTMLDocument;
@@ -1203,41 +1073,41 @@
  import net.sourceforge.jnlp.runtime.JNLPRuntime;
  import net.sourceforge.jnlp.runtime.Translator;
  import net.sourceforge.jnlp.util.logging.headers.ObservableMessagesProvider;
-@@ -247,7 +249,6 @@
+@@ -104,7 +106,7 @@
+         showPreInit = new JCheckBox();
+         sortByLabel = new JLabel();
+         regExLabel = new JCheckBox();
+-        sortBy = new JComboBox();
++        sortBy = new JComboBox<>();
+         searchLabel = new JLabel();
+         autorefresh = new JCheckBox();
+         refresh = new JButton();
+@@ -313,7 +315,6 @@
          statistics.setText(model.createStatisticHint());
      }
  
 -    @SuppressWarnings("unchecked")
      private void initComponents() {
- 
-         jPanel2 = new javax.swing.JPanel();
-@@ -267,7 +268,7 @@
-         showPreInit = new javax.swing.JCheckBox();
-         sortByLabel = new javax.swing.JLabel();
-         regExLabel = new javax.swing.JCheckBox();
--        sortBy = new javax.swing.JComboBox();
-+        sortBy = new javax.swing.JComboBox<>();
-         searchLabel = new javax.swing.JLabel();
-         autorefresh = new javax.swing.JCheckBox();
-         refresh = new javax.swing.JButton();
-@@ -362,7 +363,7 @@
+         //this is crucial, otherwie PlainDocument implementatin is repalcing all \n by space
+         ((PlainDocument)regExFilter.getDocument()).getDocumentProperties().remove("filterNewlines");
+@@ -380,7 +381,7 @@
          regExLabel.setText(Translator.R("COPregex") + ":");
          regExLabel.addActionListener(getDefaultActionSingleton());
  
--        sortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
-+        sortBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+-        sortBy.setModel(new DefaultComboBoxModel(new String[] {
++        sortBy.setModel(new DefaultComboBoxModel<>(new String[] {
              Translator.R("COPAsArrived"),
              Translator.R("COPuser"),
              Translator.R("COPorigin"),
-@@ -943,7 +944,7 @@
-     private javax.swing.JCheckBox showThread2;
-     private javax.swing.JCheckBox showUser;
-     private javax.swing.JCheckBox sortCopyAll;
--    private javax.swing.JComboBox sortBy;
-+    private javax.swing.JComboBox<String> sortBy;
-     private javax.swing.JLabel sortByLabel;
-     private javax.swing.JLabel statistics;
-     private javax.swing.JCheckBox wordWrap;
+@@ -961,7 +962,7 @@
+     private final JCheckBox showThread2;
+     private final JCheckBox showUser;
+     private final JCheckBox sortCopyAll;
+-    private final JComboBox sortBy;
++    private final JComboBox<String> sortBy;
+     private final JLabel sortByLabel;
+     private final JLabel statistics;
+     private final JCheckBox wordWrap;
 --- netx/net/sourceforge/nanoxml/XMLElement.java	2014-04-02 06:20:59.669124000 -0400
 +++ netx/net/sourceforge/nanoxml/XMLElement.java	2014-05-15 16:57:20.000000000 -0400
 @@ -39,7 +39,7 @@
@@ -1409,119 +1279,3 @@
    "application/x-java-bean;jpi-version=" JPI_VERSION ":class,jar:IcedTea;"    \
    "application/x-java-vm-npruntime::IcedTea;"
  
---- tests/test-extensions/net/sourceforge/jnlp/tools/CodeSignerCreator.java	2014-04-02 06:20:59.637124000 -0400
-+++ tests/test-extensions/net/sourceforge/jnlp/tools/CodeSignerCreator.java	2014-05-15 16:57:20.000000000 -0400
-@@ -25,17 +25,24 @@
- 
- package net.sourceforge.jnlp.tools;
- 
-+import java.lang.reflect.Constructor;
-+import java.lang.reflect.InvocationTargetException;
-+import java.lang.reflect.Method;
- import java.security.CodeSigner;
-+import java.security.InvalidKeyException;
-+import java.security.NoSuchAlgorithmException;
-+import java.security.NoSuchProviderException;
- import java.security.PrivateKey;
-+import java.security.SignatureException;
- import java.security.Timestamp;
- import java.security.cert.CertPath;
-+import java.security.cert.CertificateException;
- import java.security.cert.CertificateFactory;
- import java.security.cert.X509Certificate;
- import java.util.ArrayList;
- import java.util.Date;
- 
- import sun.security.x509.AlgorithmId;
--import sun.security.x509.CertAndKeyGen;
- import sun.security.x509.CertificateAlgorithmId;
- import sun.security.x509.CertificateIssuerName;
- import sun.security.x509.CertificateSerialNumber;
-@@ -72,13 +79,10 @@
-         // KeyTool#doGenKeyPair
-         X500Name x500Name = new X500Name(dname);
- 
--        CertAndKeyGen keypair = new CertAndKeyGen(keyAlgName, sigAlgName);
-+        KeyPair keyPair = new KeyPair(keyAlgName, sigAlgName, keysize);
-+        PrivateKey privKey = keyPair.getPrivateKey();
- 
--        keypair.generate(keysize);
--        PrivateKey privKey = keypair.getPrivateKey();
--
--        X509Certificate oldCert = keypair.getSelfCertificate(x500Name,
--                notBefore, validity * 24L * 60L * 60L);
-+        X509Certificate oldCert = keyPair.getSelfCertificate(x500Name, notBefore, validity);
- 
-         // KeyTool#doSelfCert
-         byte[] encoded = oldCert.getEncoded();
-@@ -142,4 +146,70 @@
-         Timestamp certTimestamp = new Timestamp(jarEntryCert.getNotBefore(), certPath);
-         return new CodeSigner(certPath, certTimestamp);
-     }
-+
-+    /**
-+     * A wrapper over JDK-internal CertAndKeyGen Class.
-+     * <p>
-+     * This is an internal class whose package changed between OpenJDK 7 and 8.
-+     * Use reflection to access the right thing.
-+     */
-+    public static class KeyPair {
-+
-+        private /* CertAndKeyGen */ Object keyPair;
-+
-+        public KeyPair(String keyAlgName, String sigAlgName, int keySize) throws NoSuchAlgorithmException, InvalidKeyException {
-+            try {
-+                // keyPair = new CertAndKeyGen(keyAlgName, sigAlgName);
-+                Class<?> certAndKeyGenClass = Class.forName(getCertAndKeyGenClass());
-+                Constructor<?> constructor = certAndKeyGenClass.getDeclaredConstructor(String.class, String.class);
-+                keyPair = constructor.newInstance(keyAlgName, sigAlgName);
-+
-+                // keyPair.generate(keySize);
-+                Method generate = certAndKeyGenClass.getMethod("generate", int.class);
-+                generate.invoke(keyPair, keySize);
-+            } catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException |
-+                    IllegalAccessException | IllegalArgumentException | InvocationTargetException certAndKeyGenClassError) {
-+                throw new AssertionError("Unable to use CertAndKeyGen class", certAndKeyGenClassError);
-+            }
-+        }
-+
-+        public PrivateKey getPrivateKey() {
-+            try {
-+                // return keyPair.getPrivateKey();
-+                Class<?> klass = keyPair.getClass();
-+                Method method = klass.getMethod("getPrivateKey");
-+                return (PrivateKey) method.invoke(keyPair);
-+            } catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException | InvocationTargetException error) {
-+                throw new AssertionError(error);
-+            }
-+        }
-+
-+        public X509Certificate getSelfCertificate(X500Name name, Date notBefore, long validityInDays)
-+                throws InvalidKeyException, CertificateException, SignatureException,
-+                NoSuchAlgorithmException, NoSuchProviderException {
-+            try {
-+                // return keyPair.getSelfCertificate(name, notBefore, validityInDays * 24L * 60L * 60L);
-+                Class<?> klass = keyPair.getClass();
-+                Method method = klass.getMethod("getSelfCertificate", X500Name.class, Date.class, long.class);
-+                return (X509Certificate) method.invoke(keyPair, name, notBefore, validityInDays * 24L * 60L * 60L);
-+            } catch (InvocationTargetException ite) {
-+                throw new RuntimeException(ite.getCause());
-+            } catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException error) {
-+                throw new AssertionError(error);
-+            }
-+        }
-+
-+        private String getCertAndKeyGenClass() {
-+            String javaVersion = System.getProperty("java.version");
-+            String className = null;
-+            if (javaVersion.startsWith("1.7")) {
-+                className = "sun.security.x509.CertAndKeyGen";
-+            } else if (javaVersion.startsWith("1.8")) {
-+                className = "sun.security.tools.keytool.CertAndKeyGen";
-+            } else {
-+                throw new AssertionError("Unrecognized Java Version");
-+            }
-+            return className;
-+        }
-+    }
- }

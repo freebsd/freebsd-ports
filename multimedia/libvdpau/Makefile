@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvdpau
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/~aplattner/libvdpau/snapshot/
 

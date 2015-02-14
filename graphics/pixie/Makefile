@@ -3,7 +3,7 @@
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libfltk_gl.so:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GL=		glu
-USES=		bison libtool pathfix tar:tgz
+USES=		bison compiler:c++0x libtool pathfix tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \
@@ -45,7 +45,7 @@ BROKEN_sparc64=	Does not compile on sparc64
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -69,4 +69,4 @@ post-install:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		'! -name "*Makefile*"')
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

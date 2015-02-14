@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.5.5
-PORTREVISION=	3
+PORTVERSION=	1.5.9
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
+		http://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Input Bus for Linux / Unix OS
@@ -13,17 +13,15 @@ COMMENT=	Intelligent Input Bus for Linux / Unix OS
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
-		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2 \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		compiler gmake libtool pathfix pkgconfig python
-USE_GNOME=	pygobject3
+USES=		compiler cpe gmake libtool pathfix pkgconfig python
+USE_GNOME=	glib20 librsvg2 pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -48,6 +46,7 @@ GCONF_DESC=	Use GConf for configuration
 DCONF_DESC=	Use dconf for configuration
 XIM_DESC=	Install XIM server
 ENGINE_DESC=	Install ibus simple engine
+CPE_VENDOR=	ibus_project
 
 ISOCODES_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 ISOCODES_RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
@@ -63,7 +62,7 @@ GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
 GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
-VALA_BUILD_DEPENDS=	vala>=0.16:${PORTSDIR}/lang/vala
+VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala
 VALA_CONFIGURE_ENABLE=	vala
 
 GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
@@ -108,10 +107,10 @@ PLIST_SUB+=	COMPDIR="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c
+	${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
-	@${INSTALL_DATA} ${PATCHDIR}/ibus.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	${INSTALL_DATA} ${PATCHDIR}/ibus.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart
 
 .include <bsd.port.post.mk>

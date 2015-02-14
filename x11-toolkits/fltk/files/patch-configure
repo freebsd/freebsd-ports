@@ -1,11 +1,29 @@
 --- configure.orig	2011-08-31 09:14:41.000000000 +0200
 +++ configure	2011-08-31 09:14:54.000000000 +0200
-@@ -11566,7 +11566,7 @@
+@@ -7362,7 +7362,7 @@
  	LIBS="$LIBS -lX11 $X_EXTRA_LIBS"
  	CFLAGS="$CFLAGS $X_CFLAGS"
  	CXXFLAGS="$CXXFLAGS $X_CFLAGS"
 -	LDFLAGS="$X_LIBS $LDFLAGS"
 +	LDFLAGS="$LDFLAGS $X_LIBS"
  	DSOFLAGS="$X_LIBS $DSOFLAGS"
- 	cat >>confdefs.h <<\_ACEOF
- #define USE_X11 1
+ 	$as_echo "#define USE_X11 1" >>confdefs.h
+ 
+@@ -8137,17 +8137,10 @@
+ 	#       Don't use -fforce-mem, -fforce-addr, or -fcaller-saves.
+ 	#       They all seem to make either no difference or enlarge
+ 	#       the code by a few hundred bytes.
+-        #
+-	#       "-Os" seems to be the best compromise between speed and
+-	#       code size.  "-O3" and higher seem to make no effective
+-	#       difference in the speed of the code, but does bloat the
+-	#       library 10+%.
+ 	#
+ 
+         if test "x$with_optim" != x; then
+ 	    OPTIM="$with_optim $OPTIM"
+-	else
+-            OPTIM="-Os $OPTIM"
+ 	fi
+     fi
+ 

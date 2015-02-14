@@ -44,4 +44,3 @@ lib/crt0-efi-x86_64.o
 lib/elf_x86_64_fbsd_efi.lds
 lib/libefi.a
 lib/libgnuefi.a
-@dir include/efi/protocol/x86_64

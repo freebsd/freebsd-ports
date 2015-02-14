@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.14
+PORTVERSION=	0.11.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -12,13 +13,11 @@ COMMENT=	V8 javascript for client and server
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
-USES=		gmake python:2
+USES=		execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	node-0.[0-9]*
+CONFLICTS=	node-0.[0-9]* iojs-*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib

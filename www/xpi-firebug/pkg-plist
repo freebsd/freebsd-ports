@@ -445,6 +445,7 @@
 %%XPI_XPIDIR%%/locale/sl-SI/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/sl-SI/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/sl-SI/firebug.properties
+%%XPI_XPIDIR%%/locale/sl-SI/selectors.properties
 %%XPI_XPIDIR%%/locale/sr/cookies.properties
 %%XPI_XPIDIR%%/locale/sr/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/sr/firebug-tracing.properties

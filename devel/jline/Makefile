@@ -52,9 +52,6 @@ plist:
 		${FIND} ./apidocs ./examples -type f | ${SORT};	\
 		${ECHO_CMD} "./examples/JLineCompleter.py";	\
 		${ECHO_CMD} "./examples/jython.sh";		\
-		${FIND} ./apidocs ./examples -type d | ${SORT} -r \
-			| ${SED} -e 's/^/@dirrm /';	\
-		${ECHO_CMD} "@dirrm %%DOCSDIR%%" ;	\
 	) | ${SED} -e 's/\.\//%%DOCSDIR%%\//' -e 's/^/%%PORTDOCS%%/' >>${PLIST}
 
 .include <bsd.port.mk>

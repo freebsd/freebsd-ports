@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tvbrowser
-PORTVERSION=	3.4.0.1
+PORTVERSION=	3.4.1.0
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}/TV-Browser%20Releases%20%28Java%206%20and%20higher%29/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_bin
@@ -22,13 +22,13 @@ SUB_FILES=	tvbrowser
 do-install:
 	@${REINPLACE_CMD} -e "s/${PORTNAME}\.sh/${PORTNAME}/" \
 		${WRKSRC}/${PORTNAME}.desktop
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	@${RM} ${WRKSRC}/${PORTNAME}.desktop ${WRKSRC}/${PORTNAME}.desktop.bak
 	@cd ${WRKSRC} && ${FIND} . -type d -exec \
 		${MKDIR} "${STAGEDIR}${DATADIR}/{}" \;
 	@cd ${WRKSRC} && ${FIND} . -type f -exec \
 		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

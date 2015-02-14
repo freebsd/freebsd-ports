@@ -1,10 +1,8 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/print/system-config-printer/Makefile,v 1.6 2009/12/29 16:03:58 ahze Exp $
 
 PORTNAME=	system-config-printer
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	1.4.7
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
@@ -18,8 +16,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
 		${LOCALBASE}/libexec/cups-pk-helper-mechanism:${PORTSDIR}/print/cups-pk-helper
 
+# 1.5 series is python3 ignore them for now.
+PORTSCOUT=	limitw:1,even
+
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2 \
 		shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

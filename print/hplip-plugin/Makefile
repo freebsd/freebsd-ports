@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.14.4
-PORTREVISION=	1
+PORTVERSION=	3.14.10
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
@@ -67,10 +66,13 @@ do-install:
 	${LN} -sf ${LOCALBASE}/share/hplip/prnt ${HPLIP_FAKEDIR}
 	${CP} -R ${LOCALBASE}/share/hplip/installer ${HPLIP_FAKEDIR}
 	${REINPLACE_CMD} -e 's,HOMEDIR = .*,HOMEDIR = "${STAGEDIR}${PREFIX}/share/hplip",' \
-		${HPLIP_FAKEDIR}/installer/pluginhandler.py
+		-e 's,/var/lib/hp/hplip.state,${STAGEDIR}&,' \
+		${HPLIP_FAKEDIR}/installer/pluginhandler.py \
+		${HPLIP_FAKEDIR}/installer/core_install.py
+	${MKDIR} ${STAGEDIR}/var/lib/hp
 # install hplip-plugin
 	${MKDIR} ${PLUGIN_DIRS:S,^,${STAGEDIR}${PREFIX}/share/hplip/,}
-	(cd ${WRKSRC} && ${PYTHON_CMD} -B plugin_install.py)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -B plugin_install.py)
 .for i in ${PLUGIN_LINKS}
 	${LN} -sf ${i:T}-${LINARCH}.so ${STAGEDIR}${PREFIX}/share/hplip/${i}.so
 .endfor

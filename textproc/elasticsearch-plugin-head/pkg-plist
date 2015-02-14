@@ -15,6 +15,7 @@ lib/elasticsearch/plugins/head/_site/dist/i18n.js
 lib/elasticsearch/plugins/head/_site/dist/lang/en_strings.js
 lib/elasticsearch/plugins/head/_site/dist/lang/fr_strings.js
 lib/elasticsearch/plugins/head/_site/dist/lang/pt_strings.js
+lib/elasticsearch/plugins/head/_site/dist/lang/zh_strings.js
 lib/elasticsearch/plugins/head/_site/dist/vendor.css
 lib/elasticsearch/plugins/head/_site/dist/vendor.js
 lib/elasticsearch/plugins/head/_site/elasticsearch-head.sublime-project
@@ -39,6 +40,7 @@ lib/elasticsearch/plugins/head/_site/src/app/data/resultDataSourceInterface.js
 lib/elasticsearch/plugins/head/_site/src/app/lang/en_strings.js
 lib/elasticsearch/plugins/head/_site/src/app/lang/fr_strings.js
 lib/elasticsearch/plugins/head/_site/src/app/lang/pt_strings.js
+lib/elasticsearch/plugins/head/_site/src/app/lang/zh_strings.js
 lib/elasticsearch/plugins/head/_site/src/app/services/cluster/cluster.js
 lib/elasticsearch/plugins/head/_site/src/app/services/cluster/clusterSpec.js
 lib/elasticsearch/plugins/head/_site/src/app/services/clusterState/clusterState.js

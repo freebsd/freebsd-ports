@@ -1,0 +1,208 @@
+$FreeBSD$
+
+Fixes to make it work with Erlang R17
+
+--- ../deps/meck/rebar.config.orig
++++ ../deps/meck/rebar.config
+@@ -1,4 +1,6 @@
+-{erl_opts, [warnings_as_errors, debug_info]}.
++{erl_opts, [
++	{platform_define, "^17-", 'ERLANG_17'},
++	warnings_as_errors, debug_info]}.
+ {xref_checks, [undefined_function_calls]}.
+ {dialyzer_opts, [{warnings, [unmatched_returns]}]}.
+ 
+--- ../deps/meck/src/meck_proc.erl.orig
++++ ../deps/meck/src/meck_proc.erl
+@@ -46,6 +46,17 @@
+ %%% Definitions
+ %%%============================================================================
+ 
++-ifdef(ERLANG_17).
++-record(state, {mod :: atom(),
++                can_expect :: any | [{Mod::atom(), Ari::byte()}],
++                expects :: dict:dict(),
++                valid = true :: boolean(),
++                history = [] :: meck_history:history() | undefined,
++                original :: term(),
++                was_sticky = false :: boolean(),
++                reload :: {Compiler::pid(), {From::pid(), Tag::any()}} |
++                undefined}).
++-else.
+ -record(state, {mod :: atom(),
+                 can_expect :: any | [{Mod::atom(), Ari::byte()}],
+                 expects :: dict(),
+@@ -55,6 +66,7 @@
+                 was_sticky = false :: boolean(),
+                 reload :: {Compiler::pid(), {From::pid(), Tag::any()}} |
+                 undefined}).
++-endif.
+ 
+ 
+ %%%============================================================================
+@@ -340,9 +352,17 @@
+     end.
+ 
+ 
++-ifdef(ERLANG_17).
++-spec init_expects(Exports::[meck_expect:func_ari()] | undefined,
++                   Options::[proplists:property()]) ->
++        dict:dict().
++-else.
+ -spec init_expects(Exports::[meck_expect:func_ari()] | undefined,
+                    Options::[proplists:property()]) ->
+         dict().
++-endif.
++
++
+ init_expects(Exports, Options) ->
+     Passthrough = proplists:get_bool(passthrough, Options),
+     StubAll = proplists:is_defined(stub_all, Options),
+@@ -379,8 +399,13 @@
+     erlang:error(concurrent_reload).
+ 
+ 
++-ifdef(ERLANG_17).
++-spec do_get_result_spec(Expects::dict:dict(), Func::atom(), Args::[any()]) ->
++        {meck_ret_spec:result_spec() | undefined, NewExpects::dict:dict()}.
++-else.
+ -spec do_get_result_spec(Expects::dict(), Func::atom(), Args::[any()]) ->
+         {meck_ret_spec:result_spec() | undefined, NewExpects::dict()}.
++-endif.
+ do_get_result_spec(Expects, Func, Args) ->
+     FuncAri = {Func, erlang:length(Args)},
+     Clauses = dict:fetch(FuncAri, Expects),
+@@ -411,23 +436,39 @@
+     end.
+ 
+ 
++-ifdef(ERLANG_17).
++-spec store_expect(Mod::atom(), meck_expect:func_ari(),
++                   meck_expect:expect(), Expects::dict:dict()) ->
++        {NewExpects::dict:dict(), CompilerPid::pid()}.
++-else.
+ -spec store_expect(Mod::atom(), meck_expect:func_ari(),
+                    [meck_expect:func_clause()], Expects::dict()) ->
+         {NewExpects::dict(), CompilerPid::pid()}.
++-endif.
+ store_expect(Mod, FuncAri, Clauses, Expects) ->
+     NewExpects = dict:store(FuncAri, Clauses, Expects),
+     compile_expects(Mod, NewExpects).
+ 
+ 
++-ifdef(ERLANG_17).
++-spec do_delete_expect(Mod::atom(), meck_expect:func_ari(), Expects::dict:dict()) ->
++        {NewExpects::dict:dict(), CompilerPid::pid()}.
++-else.
+ -spec do_delete_expect(Mod::atom(), meck_expect:func_ari(), Expects::dict()) ->
+         {NewExpects::dict(), CompilerPid::pid()}.
++-endif.
+ do_delete_expect(Mod, FuncAri, Expects) ->
+     NewExpects = dict:erase(FuncAri, Expects),
+     compile_expects(Mod, NewExpects).
+ 
+ 
++-ifdef(ERLANG_17).
++-spec compile_expects(Mod::atom(), Expects::dict:dict()) ->
++        {NewExpects::dict:dict(), CompilerPid::pid()}.
++-else.
+ -spec compile_expects(Mod::atom(), Expects::dict()) ->
+         {NewExpects::dict(), CompilerPid::pid()}.
++-endif.
+ compile_expects(Mod, Expects) ->
+     %% If the recompilation is made by the server that executes a module
+     %% no module that is called from meck_code:compile_and_load_forms/2
+--- ../deps/riakc/rebar.config.orig
++++ ../deps/riakc/rebar.config
+@@ -1,6 +1,8 @@
+ {cover_enabled, true}.
+ {eunit_opts, [verbose]}.
+-{erl_opts, [warnings_as_errors, debug_info]}.
++{erl_opts, [
++	{platform_define, "^17-", 'ERLANG_17'},
++        warnings_as_errors, debug_info]}.
+ {deps, [
+         {riak_pb, ".*", {git, "git://github.com/basho/riak_pb", {tag, "1.4.4.0"}}}
+        ]}.
+--- ../deps/riakc/src/riakc_obj.erl.orig
++++ ../deps/riakc/src/riakc_obj.erl
+@@ -79,7 +79,11 @@
+ -type key() :: binary() | 'undefined'. %% A key name
+ -type id() :: {bucket(), key()}.
+ -type vclock() :: binary(). %% An opaque vector clock
++-ifdef(ERLANG_17).
++-type metadata() :: dict:dict(). %% Value metadata
++-else.
+ -type metadata() :: dict(). %% Value metadata
++-endif.
+ -type content_type() :: string(). %% The media type of a value
+ -type value() :: binary(). %% An opaque value
+ -type contents() :: [{metadata(), value()}]. %% All metadata/value pairs in a `riakc_obj'.
+@@ -98,6 +102,16 @@
+ -type tag() :: binary().
+ -type link() :: {tag(), [id()]}.
+ 
++-ifdef(ERLANG_17).
++-record(riakc_obj, {
++          bucket :: bucket(),
++          key :: key(),
++          vclock :: vclock(),
++          contents :: contents(),
++          updatemetadata :: dict:dict(),
++          updatevalue :: value()
++         }).
++-else.
+ -record(riakc_obj, {
+           bucket :: bucket(),
+           key :: key(),
+@@ -106,6 +120,7 @@
+           updatemetadata :: dict(),
+           updatevalue :: value()
+          }).
++-endif.
+ 
+ -type riakc_obj() :: #riakc_obj{}. %% The record/type containing the entire Riak object.
+ -export_type([riakc_obj/0, bucket/0, key/0, vclock/0, contents/0, metadata/0, value/0,
+@@ -284,7 +299,11 @@
+     end.
+ 
+ %% @doc  Return the content type from metadata
++-ifdef(ERLANG_17).
++-spec md_ctype(dict:dict()) -> undefined | content_type().
++-else.
+ -spec md_ctype(dict()) -> undefined | content_type().
++-endif.
+ md_ctype(MetaData) ->
+     case dict:find(?MD_CTYPE, MetaData) of
+         error ->
+--- ../deps/riakc/src/riakc_pb_socket.erl.orig
++++ ../deps/riakc/src/riakc_pb_socket.erl
+@@ -110,6 +110,20 @@
+ 
+ -type portnum() :: non_neg_integer(). %% The TCP port number of the Riak node's Protocol Buffers interface
+ -type address() :: string() | atom() | inet:ip_address(). %% The TCP/IP host name or address of the Riak node
++-ifdef(ERLANG_17).
++-record(state, {address :: address(),    % address to connect to
++                port :: portnum(),       % port to connect to
++                auto_reconnect = false :: boolean(), % if true, automatically reconnects to server
++                                        % if false, exits on connection failure/request timeout
++                queue_if_disconnected = false :: boolean(), % if true, add requests to queue if disconnected
++                sock :: port(),       % gen_tcp socket
++                active :: #request{} | undefined,     % active request
++                queue :: queue:queue() | undefined,      % queue of pending requests
++                connects=0 :: non_neg_integer(), % number of successful connects
++                failed=[] :: [connection_failure()],  % breakdown of failed connects
++                connect_timeout=infinity :: timeout(), % timeout of TCP connection
++                reconnect_interval=?FIRST_RECONNECT_INTERVAL :: non_neg_integer()}).
++-else.
+ -record(state, {address :: address(),    % address to connect to
+                 port :: portnum(),       % port to connect to
+                 auto_reconnect = false :: boolean(), % if true, automatically reconnects to server
+@@ -122,6 +136,7 @@
+                 failed=[] :: [connection_failure()],  % breakdown of failed connects
+                 connect_timeout=infinity :: timeout(), % timeout of TCP connection
+                 reconnect_interval=?FIRST_RECONNECT_INTERVAL :: non_neg_integer()}).
++-endif.
+ 
+ %% @doc Create a linked process to talk with the riak server on Address:Port
+ %%      Client id will be assigned by the server.

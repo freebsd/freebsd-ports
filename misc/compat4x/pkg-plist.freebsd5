@@ -38,6 +38,4 @@
 %%LIBDIR%%/compat/pam_tacplus.so
 %%LIBDIR%%/compat/pam_unix.so
 %%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
-@dirrmtry %%LIBDIR%%/compat
 @comment Hardcode lib32 since we should not remove lib.
-%%AMD64_ONLY%%@dirrmtry lib32

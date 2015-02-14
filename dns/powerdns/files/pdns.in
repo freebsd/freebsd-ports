@@ -27,6 +27,7 @@ command=%%PREFIX%%/sbin/pdns_server
 
 pdns_enable=${pdns_enable:-"NO"}
 pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
+pdns_flags=${pdns_flags:-"--daemon=yes --guardian=yes"}
 
 load_rc_config ${name}
 

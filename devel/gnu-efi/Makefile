@@ -2,27 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-efi
-PORTVERSION=	3.0w
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnu-efi
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	SDK for EFI applications
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.0
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:${PORTSDIR}/devel/binutils
 
-USES=		gmake
-# The version of GCC is also hard-coded in files/patch-Make.defaults.
-USE_GCC=	4.8
+USES=		gmake tar:bz2
+USE_GCC=	4.8+
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	"-fPIC"
+CPPFLAGS+=	"-fPIC"
+MAKE_ARGS+=	CC=${CC} HOSTCC=${CC} AR=${AR}
 ONLY_FOR_ARCHS=	amd64
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
 
 .include <bsd.port.mk>

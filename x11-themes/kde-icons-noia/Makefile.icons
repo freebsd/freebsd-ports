@@ -75,15 +75,6 @@ generate-tmpplist:
 		| ${SED} -E \
 			-e 's|^\.|share/icons/${PORT_SHAREDIR:S/"//g}|' \
 			> ${TMPPLIST}
-# annotate dirs
-	@${CAT} ${WRKDIR}/dirs.list \
-		| ${SED} -E \
-			-e 's|^\.|@dirrm share/icons/${PORT_SHAREDIR:S/"//g}|' \
-			>> ${TMPPLIST}
-	@${ECHO_CMD} \
-		'@dirrm share/icons/${PORT_SHAREDIR:S/"//g}' >> ${TMPPLIST}
-	@${ECHO_CMD} \
-		'@unexec rmdir %D/share/icons 2>/dev/null || true' >> ${TMPPLIST}
 
 # use generated installation scripts
 install-run-scripts:

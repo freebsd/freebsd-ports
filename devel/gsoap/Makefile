@@ -3,6 +3,7 @@
 
 PORTNAME=	gsoap
 PORTVERSION=	2.8.21
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -36,8 +37,9 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
-	${INSTALL_DATA} ${WRKSRC}/gsoap/stdsoap2.c \
+	${INSTALL_DATA} ${WRKSRC}/gsoap/stdsoap2.c ${WRKSRC}/gsoap/dom.cpp \
 	    ${STAGEDIR}${PREFIX}/lib/gsoap
 	@${LN} -fs stdsoap2.c ${STAGEDIR}${PREFIX}/lib/gsoap/stdsoap2.cpp
+	@${LN} -fs dom.cpp ${STAGEDIR}${PREFIX}/lib/gsoap/dom.c
 
 .include <bsd.port.mk>

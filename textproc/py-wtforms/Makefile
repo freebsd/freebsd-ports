@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	wtforms
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	WTForms-${DISTVERSION}
 
-MAINTAINER=	moggie@elasticmind.net
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Flexible forms validation and rendering library for python
 
 LICENSE=	BSD3CLAUSE

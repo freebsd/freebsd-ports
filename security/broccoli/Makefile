@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	broccoli
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}
 
 MAINTAINER=	leres@ee.lbl.gov
-COMMENT=	The Bro Client Communications Library
+COMMENT=	Bro Client Communications Library
 
 LICENSE=	BSD3CLAUSE
 
@@ -33,8 +32,10 @@ PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-D BRO_ETC_INSTALL_DIR:PATH=${PREFIX}/etc
 
-OPTIONS_DEFINE=	DEBUG PYTHON RUBY DOCS
+OPTIONS_DEFINE=	DEBUG PYTHON RUBY
 OPTIONS_SUB=
+
+OPTIONS_DEFAULT=	PYTHON
 
 DEBUG_DESC=	Compile in debugging mode
 PYTHON_DESC=	Build python bindings for broccoli
@@ -50,15 +51,13 @@ RUBY_CMAKE_ON=	-D RB_INSTALL_DIR:PATH=${RUBY_SITELIBDIR} \
 RUBY_CMAKE_OFF=		-D DISABLE_RUBY_BINDINGS:BOOL=true
 
 post-install::
+	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
 .if defined(BRO_PREFIX) && empty(${PORT_OPTIONS:MPYTHON})
 	# Move lib/pythonX.X tree into BRO_PREFIX
 	${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PREFIX}/lib
 .endif
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
-	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
-.if !empty(${PORT_OPTIONS:MPYTHON}) && defined(BRO_PREFIX)
-	# bsd.python.mk isn't PREFIX-safe yet.
-	@${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}
+.if defined(BRO_PREFIX)
+	${FIND} ${STAGEDIR} -type d | ${XARGS} ${CHMOD} g-w
 .endif
 
 .include <bsd.port.mk>

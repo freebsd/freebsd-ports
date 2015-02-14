@@ -1191,6 +1191,7 @@
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
+    SUBDIR += py-mistune
     SUBDIR += py-openpyxl
     SUBDIR += py-openpyxl1
     SUBDIR += py-paragrep

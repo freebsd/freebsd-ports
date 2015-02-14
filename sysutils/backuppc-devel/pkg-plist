@@ -1,4 +1,3 @@
-@stopdaemon backuppc
 @mode 0555
 bin/BackupPC
 bin/BackupPC_Admin_SCGI
@@ -128,11 +127,7 @@ man/man1/backuppc.1.gz
 @group backuppc
 @mode 04554
 %%CGIDIR%%/BackupPC_Admin
-@owner
-@group
 @mode
-@owner backuppc
-@group backuppc
 @dir /var/run/BackupPC
 @dir /var/log/BackupPC
 @dir /var/db/BackupPC/cpool
@@ -142,9 +137,9 @@ man/man1/backuppc.1.gz
 @comment .sample files actually are templates for the configuration script
 @comment and should not be installed as working configuration files.
 @mode 0640
-@sample %%ETCDIR%%/config.pl.sample
+%%ETCDIR%%/config.pl.sample
 @mode 0644
-@sample %%ETCDIR%%/hosts.sample
+%%ETCDIR%%/hosts.sample
 @owner
 @group
 @mode 0544

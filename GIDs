@@ -229,6 +229,7 @@ munin:*:842:
 dahdi:*:843:asterisk
 fossy:*:901:www
 scanlogd:*:902:
+proxy65:*:909:
 bacula:*:910:
 iserv:*:911:
 _sj3:*:912:
@@ -267,6 +268,7 @@ bbs:*:944:
 dbxml:*:945:
 gnokii:*:947:
 dnrd:*:948:
+_lldpd:*:949:
 conquest:*:950:
 openerpd:*:951:
 bitten-slave:*:952:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	1.12.3
+PORTVERSION=	1.13.0
 CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 

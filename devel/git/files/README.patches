@@ -1,8 +1,0 @@
-  $FreeBSD$
-  
-  These two patches: 
-      patch-git-svn.perl
-      patch-perl_Git_SVN_Editor.pm
-  Are forward ported from: http://marc.info/?l=git&m=125259772625008&w=2
-  Updated here: https://github.com/splbio/git/tree/v2.1.2-git-svn-propset
-

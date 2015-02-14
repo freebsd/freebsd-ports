@@ -3,7 +3,7 @@
 
 PORTNAME=	xbatt
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 
@@ -14,6 +14,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		imake:noman
 USE_XORG=	xpm xaw
-PLIST_FILES=	bin/xbatt
+PLIST_FILES=	"@(,operator,2755) bin/xbatt"
 
 .include <bsd.port.mk>

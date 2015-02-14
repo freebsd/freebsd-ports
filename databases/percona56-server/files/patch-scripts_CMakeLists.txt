@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2013-01-22 17:54:49.000000000 +0100
-+++ scripts/CMakeLists.txt	2013-02-13 14:39:57.000000000 +0100
-@@ -264,6 +264,8 @@
+--- scripts/CMakeLists.txt.orig	2015-02-05 14:28:58.000000000 +0100
++++ scripts/CMakeLists.txt	2015-02-12 23:25:55.432292000 +0100
+@@ -273,6 +273,8 @@
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
            SET(${var} "${${var}}-l${lib} " ) 
@@ -9,7 +9,7 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -314,15 +316,10 @@
+@@ -326,25 +328,19 @@
    # On Unix, most of the files end up in the bin directory
    SET(mysql_config_COMPONENT COMPONENT Development)
    SET(BIN_SCRIPTS
@@ -25,7 +25,9 @@
      mysqlhotcopy
      mysqldumpslow
      mysqld_multi
-@@ -331,7 +328,7 @@
+     mysqld_safe
+-    ps_tokudb_admin
+   )
    FOREACH(file ${BIN_SCRIPTS})
      IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)
        CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://getdnsapi.net/dist/ \
     		http://mirrors.rit.edu/zi/
@@ -44,18 +44,18 @@ LIBEVENT_CONFIGURE_WITH=libevent
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
+	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
 	    	-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${WRKDIR}/examples
-	@${MV} ${WRKSRC}/spec/${PORTNAME}*gz ${WRKDIR}/examples/${PORTNAME}.tgz
+	${MKDIR} ${WRKDIR}/examples
+	${MV} ${WRKSRC}/spec/${PORTNAME}*gz ${WRKDIR}/examples/${PORTNAME}.tgz
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKDIR}/examples && ${TAR} --strip-components=1 -xf ${PORTNAME}.tgz)
-	@(cd ${WRKDIR}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKDIR}/examples && ${TAR} --strip-components=1 -xf ${PORTNAME}.tgz)
+	(cd ${WRKDIR}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.1.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.1.0.1
 
 .include <bsd.port.mk>

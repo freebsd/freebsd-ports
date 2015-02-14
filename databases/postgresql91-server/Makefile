@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1.14
-PORTREVISION?=	1
+DISTVERSION?=	9.1.15
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -12,10 +12,10 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
-		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
-		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
-		${PORTNAME}${COMPONENT}-9.[^${PORTVERSION:R:E}].*
+#CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
+#		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
+#		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
+#		${PORTNAME}${COMPONENT}-9.[^${PORTVERSION:R:E}].*
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
@@ -71,7 +71,10 @@ GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
-.if !defined(CLIENT_ONLY)
+.if defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=LIBEDIT
+LIBEDIT_DESC=   Use non-GPL libedit instead of readline
+.else
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
@@ -111,6 +114,15 @@ OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
 .include <bsd.port.options.mk>
+
+.if defined(CLIENT_ONLY)
+.  if ${PORT_OPTIONS:MLIBEDIT}
+CONFIGURE_ARGS+=--with-libedit-preferred
+LIB_DEPENDS=    libedit.so.0:${PORTSDIR}/devel/libedit
+.  else
+USES+=          readline
+.  endif
+.endif # CLIENT_ONLY
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes

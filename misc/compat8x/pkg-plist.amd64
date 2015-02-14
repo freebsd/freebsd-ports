@@ -22,7 +22,4 @@ lib32/compat/libtacplus.so.4
 lib32/compat/libufs.so.5
 lib32/compat/libutil.so.8
 lib32/compat/libz.so.5
-@dirrmtry lib/compat
-@dirrmtry lib32/compat
-@dirrmtry lib32
 @exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

@@ -996,33 +996,12 @@ _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
 .endif
 
 #
-# PostgreSQL mirror sites
-#
-# For the full list, see the following:
-#
-#	http://wwwmaster.postgresql.org/download/mirrors-ftp
-#
-# Before update mirror list please consult with fenner's distfiles survey.
+# PostgreSQL master site
 #
 .if !defined(IGNORE_MASTER_SITE_PGSQL)
 MASTER_SITE_PGSQL+= \
-	ftp://ftp.se.postgresql.org/pub/databases/relational/postgresql/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
-	ftp://ftp2.cz.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.ee.postgresql.org/mirrors/postgresql/%SUBDIR%/ \
-	ftp://ftp3.de.postgresql.org/pub/Mirrors/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.gr.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
-	ftp://ftp.ie.postgresql.org/mirrors/ftp.postgresql.org/pub/%SUBDIR%/ \
-	ftp://ftp2.it.postgresql.org/mirrors/postgres/%SUBDIR%/ \
-	http://ftp2.jp.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.lv.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp6.pl.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp7.pl.postgresql.org/pub/mirror/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp6.ro.postgresql.org/pub/mirrors/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp3.ru.postgresql.org/pub/mirror/postgresql/pub/%SUBDIR%/ \
-	ftp://ftp5.es.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp3.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
+	http://ftp.postgresql.org/pub/%SUBDIR%/ \
+	https://ftp.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp.postgresql.org/pub/%SUBDIR%/
 .endif
 

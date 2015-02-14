@@ -11,13 +11,12 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Metaport for FreeDink engine and data
 
-RUN_DEPENDS=	freedink>=${PORTVERSION}:${PORTSDIR}/games/freedink-engine \
+RUN_DEPENDS=	freedink-engine>=${PORTVERSION}:${PORTSDIR}/games/freedink-engine \
 		freedink-data>=1.08.20140901:${PORTSDIR}/games/freedink-data \
-		dfarc>=3.12:${PORTSDIR}/games/freedink-dfarc
+		freedink-dfarc>=3.12:${PORTSDIR}/games/freedink-dfarc
 
 NO_BUILD=	yes
-
-do-install:	# empty
+NO_INSTALL=	yes
 
 pre-everything::
 	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."

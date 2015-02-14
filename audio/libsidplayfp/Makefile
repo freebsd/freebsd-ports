@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsidplayfp
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
 
@@ -36,7 +36,7 @@ BUILD_DEPENDS+=	xa65:${PORTSDIR}/devel/xa65
 
 .include <bsd.port.options.mk>
 
-SIDPLAYFP_SHLIB_VERSION=	3.1.0
+SIDPLAYFP_SHLIB_VERSION=	3.2.0
 STILVIEW_SHLIB_VERSION=	0.0.2
 PLIST_SUB+=	\
 	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \

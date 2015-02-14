@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd %%DATADIR%% && exec %%PREFIX%%/libexec/fs2_open_diaspora "$@"

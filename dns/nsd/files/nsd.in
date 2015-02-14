@@ -23,7 +23,7 @@ load_rc_config "${name}"
 
 config=${nsd_config:=%%PREFIX%%/etc/nsd/nsd.conf}
 required_files=${config}
-pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile ${config}`
+pidfile=`%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile ${config}`
 command="%%PREFIX%%/sbin/${name}"
 command_args="-c ${required_files}"
 extra_commands="reload"

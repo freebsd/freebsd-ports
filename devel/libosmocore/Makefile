@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmocore
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -11,6 +11,8 @@ COMMENT=	Common library for all Osmocom projects
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
 USES=		gmake libtool pkgconfig execinfo
 USE_AUTOTOOLS=	aclocal autoconf automake libtoolize autoheader

@@ -1,3 +1,4 @@
+bin/diffeet
 bin/ecore_evas_convert
 bin/edje_cc
 bin/edje_codegen
@@ -227,7 +228,7 @@ include/eina-cxx-1/Eina.hh
 include/eina-cxx-1/eina-cxx/eina_accessor.hh
 include/eina-cxx-1/eina-cxx/eina_array.hh
 include/eina-cxx-1/eina-cxx/eina_clone_allocators.hh
-include/eina-cxx-1/eina-cxx/eina_eo_base_fwd.hh
+include/eina-cxx-1/eina-cxx/eina_eo_concrete_fwd.hh
 include/eina-cxx-1/eina-cxx/eina_error.hh
 include/eina-cxx-1/eina-cxx/eina_fold.hh
 include/eina-cxx-1/eina-cxx/eina_inarray.hh
@@ -273,6 +274,13 @@ include/eldbus_cxx-1/eldbus_proxy_call.hh
 include/eldbus_cxx-1/eldbus_raw_tuple.hh
 include/eldbus_cxx-1/eldbus_service.hh
 include/eldbus_cxx-1/eldbus_signature_traits.hh
+include/elocation-1/Elocation.h
+include/elocation-1/eldbus_geo_clue2_client.h
+include/elocation-1/eldbus_geo_clue2_location.h
+include/elocation-1/eldbus_geo_clue2_manager.h
+include/elocation-1/eldbus_utils.h
+include/elocation-1/elocation_private.h
+%%ELUA%%include/elua-1/Elua.h
 include/embryo-1/Embryo.h
 include/emotion-1/Emotion.h
 include/emotion-1/Emotion_Eo.h
@@ -284,7 +292,9 @@ include/eo-1/Eo.h
 include/eo-1/eo_abstract_class.eo.h
 include/eo-1/eo_base.eo.h
 include/eo-cxx-1/Eo.hh
-include/eo-cxx-1/eo_base.hh
+include/eo-cxx-1/eo_abstract_class.eo.hh
+include/eo-cxx-1/eo_base.eo.hh
+include/eo-cxx-1/eo_concrete.hh
 include/eo-cxx-1/eo_cxx_interop.hh
 include/eo-cxx-1/eo_event.hh
 include/eo-cxx-1/eo_inherit.hh
@@ -305,6 +315,7 @@ include/eolian-cxx-1/grammar/eo_class_functions_generator.hh
 include/eolian-cxx-1/grammar/eo_class_generator.hh
 include/eolian-cxx-1/grammar/eo_header_generator.hh
 include/eolian-cxx-1/grammar/inheritance_base_generator.hh
+include/eolian-cxx-1/grammar/namespace_generator.hh
 include/eolian-cxx-1/grammar/parameters_generator.hh
 include/eolian-cxx-1/grammar/tab.hh
 include/eolian-cxx-1/grammar/type_generator.hh
@@ -434,6 +445,8 @@ lib/cmake/EinaCxx/EinaCxxConfig.cmake
 lib/cmake/EinaCxx/EinaCxxConfigVersion.cmake
 lib/cmake/Eldbus/EldbusConfig.cmake
 lib/cmake/Eldbus/EldbusConfigVersion.cmake
+%%ELUA%%lib/cmake/Elua/EluaConfig.cmake
+%%ELUA%%lib/cmake/Elua/EluaConfigVersion.cmake
 lib/cmake/Emotion/EmotionConfig.cmake
 lib/cmake/Emotion/EmotionConfigVersion.cmake
 lib/cmake/Eo/EoConfig.cmake
@@ -473,12 +486,12 @@ lib/ethumb_client/utils/v-%%BRANCHVERSION%%/ethumbd_slave
 lib/evas/modules/engines/software_x11/v-%%BRANCHVERSION%%/module.so
 %%OPENGL%%lib/evas/modules/engines/gl_x11/v-%%BRANCHVERSION%%/module.so
 %%OPENGL%%%%SDL%%lib/evas/modules/engines/gl_sdl/v-%%BRANCHVERSION%%/module.so
-lib/evas/modules/loaders/gif/v-%%BRANCHVERSION%%/module.so
-%%OPENJPEG%%lib/evas/modules/loaders/jp2k/v-%%BRANCHVERSION%%/module.so
-lib/evas/modules/loaders/tiff/v-%%BRANCHVERSION%%/module.so
-lib/evas/modules/savers/tiff/v-%%BRANCHVERSION%%/module.so
-%%WEBP%%lib/evas/modules/loaders/webp/v-%%BRANCHVERSION%%/module.so
-%%WEBP%%lib/evas/modules/savers/webp/v-%%BRANCHVERSION%%/module.so
+lib/evas/modules/image_loaders/gif/v-%%BRANCHVERSION%%/module.so
+%%OPENJPEG%%lib/evas/modules/image_loaders/jp2k/v-%%BRANCHVERSION%%/module.so
+lib/evas/modules/image_loaders/tiff/v-%%BRANCHVERSION%%/module.so
+lib/evas/modules/image_savers/tiff/v-%%BRANCHVERSION%%/module.so
+%%WEBP%%lib/evas/modules/image_loaders/webp/v-%%BRANCHVERSION%%/module.so
+%%WEBP%%lib/evas/modules/image_savers/webp/v-%%BRANCHVERSION%%/module.so
 lib/libecore.so
 lib/libecore.so.1
 lib/libecore.so.%%PORTVERSION%%
@@ -545,6 +558,12 @@ lib/libeio.so.%%PORTVERSION%%
 lib/libeldbus.so
 lib/libeldbus.so.1
 lib/libeldbus.so.%%PORTVERSION%%
+lib/libelocation.so
+lib/libelocation.so.1
+lib/libelocation.so.%%PORTVERSION%%
+%%ELUA%%lib/libelua.so
+%%ELUA%%lib/libelua.so.1
+%%ELUA%%lib/libelua.so.%%PORTVERSION%%
 lib/libembryo.so
 lib/libembryo.so.1
 lib/libembryo.so.%%PORTVERSION%%
@@ -597,6 +616,8 @@ libdata/pkgconfig/eina.pc
 libdata/pkgconfig/eina-cxx.pc
 libdata/pkgconfig/eio.pc
 libdata/pkgconfig/eldbus.pc
+libdata/pkgconfig/elocation.pc
+libdata/pkgconfig/elua.pc
 libdata/pkgconfig/embryo.pc
 libdata/pkgconfig/emotion.pc
 libdata/pkgconfig/eo.pc
@@ -620,6 +641,7 @@ share/ecore_x/checkme
 share/edje/include/edje.inc
 share/eeze/checkme
 share/efreet/checkme
+%%ELUA%%share/elua/checkme
 %%ELUA%%share/elua/apps/lualian.lua
 %%ELUA%%share/elua/apps/xgettext.lua
 %%ELUA%%share/elua/core/gettext.lua

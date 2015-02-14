@@ -30,7 +30,7 @@ MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
 .if defined(WITH_NEW_MESA)
-MESABASEVERSION=	10.4.3
+MESABASEVERSION=	10.4.4
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -97,7 +97,7 @@ INSTALL_TARGET=		install-strip
 COMPONENT=		${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 .if defined(WITH_NEW_MESA)
-MESA_LLVM_VER=34
+MESA_LLVM_VER=35
 .else
 MESA_LLVM_VER=33
 .endif

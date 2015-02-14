@@ -115,6 +115,7 @@
     SUBDIR += poezio
     SUBDIR += pork
     SUBDIR += prosody
+    SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
     SUBDIR += pwytter
@@ -174,7 +175,6 @@
     SUBDIR += twitmail
     SUBDIR += uTox
     SUBDIR += vacuum-im
-    SUBDIR += venom
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
     SUBDIR += zephyr

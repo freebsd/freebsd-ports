@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rednotebook
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rednotebook

@@ -17,10 +17,10 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #			  If no version is given (by the maintainer via the port or
 #			  by the user via defined variable), try to find the
 #			  currently installed version.  Fall back to default if
-#			  necessary (MySQL-5.5 = 55).
+#			  necessary (MySQL-5.6 = 56).
 # DEFAULT_MYSQL_VER
 #			- MySQL default version.  Can be overridden within a port.
-#			  Default: 55.
+#			  Default: 56.
 # WANT_MYSQL_VER
 #			- Maintainer can set an arbitrary version of MySQL to always
 #			  build this port with (overrides WITH_MYSQL_VER).

@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	yourls
-DISTVERSION=	1.5.1
+PORTVERSION=	1.7
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Your Own URL Shortener
 
-LICENSE=	GPLv3
+LICENSE=	ISCL MIT
+LICENSE_COMB=	multi
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME:tu}
+GH_PROJECT=	${PORTNAME:tu}
+GH_COMMIT=	68cdac8
 
-USES=		zip:infozip
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 USE_PHP=	bcmath curl json mysql pcre xml
 
@@ -25,6 +26,6 @@ PLIST_SUB=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "! -name \.*")
 
 .include <bsd.port.mk>

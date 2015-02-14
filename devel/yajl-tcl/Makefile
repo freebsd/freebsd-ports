@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yajl-tcl
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	803e33a
+GH_COMMIT=	002cd30
 
 USES+=		pkgconfig tcl:85+
 USE_AUTOTOOLS=	autoconf
@@ -25,5 +25,9 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
 		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
+
+regression-test: build
+#	Requires devel/tcllib
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>

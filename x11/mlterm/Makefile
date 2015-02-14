@@ -3,6 +3,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -17,17 +18,18 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gui=x11 --with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--enable-optimize-redrawing \
-		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
 		--disable-iiimf
+EXTERNAL_TOOLS=	mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB SCIM SIXEL UIM
+OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
 CAIRO_DESC=	Use Cairo for type engine (experimental)
 FRIBIDI_DESC=	Use Fribidi for BiDi rendering
 IBUS_DESC=	IBUS support (experimental)
 M17NLIB_DESC=	m17n library support (experimental)
+REGIS_DESC=	ReGIS graphics support
 SCIM_DESC=	SCIM support (experimental)
 SIXEL_DESC=	Sixel graphics support
 UIM_DESC=	uim support (experimental)
@@ -95,6 +97,18 @@ PLIST_SUB+=	SIXEL=""
 CONFIGURE_ARGS+=	--disable-sixel
 PLIST_SUB+=	SIXEL="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MREGIS}
+LIB_DEPENDS+=	libSDL.so:${PORTSDIR}/devel/sdl12 \
+		libSDL_ttf.so:${PORTSDIR}/graphics/sdl_ttf \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+EXTERNAL_TOOLS+=,registobmp
+PLIST_SUB+=	REGIS=""
+.else
+PLIST_SUB+=	REGIS="@comment "
+.endif
+
+CONFIGURE_ARGS+=--with-tools="${EXTERNAL_TOOLS}"
 
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter

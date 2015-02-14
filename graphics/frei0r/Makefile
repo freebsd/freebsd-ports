@@ -65,7 +65,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET+=	${FILE}.la
 PLIST_FILES+=	lib/frei0r-1/${FILE}.so
 . endfor
-PLIST_FILES+=	"@dirrmtry lib/frei0r-1"
 .endif
 
 post-patch:

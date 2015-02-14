@@ -1,0 +1,21 @@
+--- Makefile.orig	2015-01-28 12:42:36.939246000 +0200
++++ Makefile	2015-01-28 12:44:04.733423000 +0200
+@@ -15,10 +15,6 @@
+ 	DEPS += libv4lconvert
+ endif
+ 
+-ifeq ($(FILTER_AUDIO), 1)
+-	DEPS += filteraudio
+-endif
+-
+ UNAME_S := $(shell uname -s)
+ 
+ CFLAGS += -g -Wall -Wshadow -pthread -std=gnu99
+@@ -36,6 +32,7 @@
+ 
+ ifeq ($(FILTER_AUDIO), 1)
+ 	CFLAGS += -DAUDIO_FILTERING
++	LDFLAGS += -lfilteraudio
+ endif
+ 
+ ifeq ($(UNAME_S), Linux)

@@ -51,8 +51,8 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/yukon/system
 	@${PRINTF} 'LDPATH="%s"\n' ${PREFIX}/lib/yukon \
-		>> ${TMPDIR}/yukon-system-conf
-	${INSTALL_DATA} ${TMPDIR}/yukon-system-conf \
+		>> ${WRKSRC}/yukon-system-conf
+	${INSTALL_DATA} ${WRKSRC}/yukon-system-conf \
 		${STAGEDIR}${PREFIX}/etc/yukon/system/default
 	${INSTALL_DATA} ${WRKSRC}/tools/yukon.conf \
 		${STAGEDIR}${PREFIX}/etc/yukon/conf.sample

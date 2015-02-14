@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	serviio
-PORTVERSION=	1.4.1.2
-PORTREVISION=	2
+PORTVERSION=	1.5
+#PORTREVISION=	0
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -15,6 +15,7 @@ RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes
+JAVA_VERSION=	1.8
 USES=		dos2unix
 DOS2UNIX_GLOB=	derby.properties
 
@@ -36,10 +37,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 .for f in application-profiles profiles log4j
 	${INSTALL_DATA} ${WRKSRC}/config/$f.xml \
-		${STAGEDIR}${ETCDIR}/$f.dist.xml
+		${STAGEDIR}${ETCDIR}/$f.xml.sample
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/console-log4j.properties	\
-		${STAGEDIR}${ETCDIR}/console-log4j.dist.properties
+		${STAGEDIR}${ETCDIR}/console-log4j.properties.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/serviio-console ${STAGEDIR}${PREFIX}/bin
 

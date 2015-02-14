@@ -3,6 +3,7 @@
 
 PORTNAME=	ogdf
 PORTVERSION=	2012.07
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/gahr \
 		http://people.freebsd.org/~gahr/distfiles/

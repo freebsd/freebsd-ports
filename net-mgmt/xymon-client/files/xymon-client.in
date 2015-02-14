@@ -14,12 +14,12 @@ rcvar=xymon_client_enable
 
 load_rc_config "$name"
 : ${xymon_client_enable:=NO}
+: ${xymon_client_user:=%%XYMONUSER%%}
 
-command="%%PREFIX%%/www/xymon/client/runclient.sh"
-start_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${xymon_client_flags} start"
-stop_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${xymon_client_flags} stop"
-status_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${xymon_client_flags} status"
-reload_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${xymon_client_flags} restart"
-pidfile="%%PREFIX%%/www/xymon/client/logs/clientlaunch.`hostname`.pid"
+command=%%WWWDIR%%/client/runclient.sh
+command_args="${xymon_client_flags} ${1}"
+procname=%%WWWDIR%%/client/bin/xymonlaunch
+pidfile="%%WWWDIR%%/client/logs/clientlaunch.`hostname`.pid"
+start_precmd="chown -R ${xymon_client_user} %%WWWDIR%%/client/logs"
 
 run_rc_command "$1"

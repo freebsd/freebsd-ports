@@ -20,7 +20,13 @@ CXXFLAGS+=	-std=c++11 \
 			-I${WRKSRC}/poly1305-opt/app/include
 LDFLAGS+=	-pthread -lcrypto
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000036
+WITH_OPENSSL_PORT=	yes
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hpenc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

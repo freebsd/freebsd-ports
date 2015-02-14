@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Provides a graphical viewer for a guest OS display
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2 \
 		intltoolize:${PORTSDIR}/textproc/intltool
@@ -22,6 +24,7 @@ CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS=	--with-gtk=3.0 --without-spice-gtk
 USES=		desktop-file-utils gmake pkgconfig shared-mime-info cpe
 USE_GNOME=	gtk30
+INSTALLS_ICONS=	yes
 CPE_VENDOR=	redhat
 
 NLS_USES=	gettext

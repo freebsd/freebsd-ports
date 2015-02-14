@@ -3,7 +3,8 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTEPOCH=	2
+PORTREVISION=	1
+PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \

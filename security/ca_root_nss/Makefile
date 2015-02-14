@@ -2,15 +2,21 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	The root certificate bundle from the Mozilla Project
+COMMENT=	Root certificate bundle from the Mozilla Project
 
-OPTIONS_DEFINE=	ETCSYMLINK
+LICENSE=	MPL
+
+OPTIONS_DEFINE=		ETCSYMLINK
+OPTIONS_SUB=		yes
+
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
+ETCSYMLINK_CONFLICTS=	ca-roots-[0-9]*
 
 USES=		perl5
 USE_PERL5=	build
@@ -21,7 +27,7 @@ CERTDIR?=	share/certs
 PLIST_SUB+=	CERTDIR=${CERTDIR}
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# !!!  These versions are indented to track security/nss.        !!!
+# !!!  These versions are intended to track security/nss.        !!!
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -29,17 +35,11 @@ VERSION_NSS=	3.17.4
 #NSS_SUFFIX=	.with.ckbi.1.93
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
-SUB_FILES=	MAca-bundle.pl
+
+SUB_FILES=	MAca-bundle.pl pkg-message
 SUB_LIST=	VERSION_NSS=${VERSION_NSS}
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:METCSYMLINK}
-PLIST_SUB+=	ETCSYMLINK=
-CONFLICTS=	ca-roots-[0-9]*
-.else
-PLIST_SUB+=	ETCSYMLINK="@comment "
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -63,6 +63,8 @@ post-install:
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssl
-	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem
+	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/openssl
+	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/openssl/cert.pem.sample
 
 .include <bsd.port.mk>

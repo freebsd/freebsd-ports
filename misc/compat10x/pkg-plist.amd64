@@ -14,7 +14,4 @@ lib32/compat/libipx.so.5
 lib32/compat/libopie.so.7
 lib32/compat/libreadline.so.8
 lib32/compat/libsbuf.so.6
-@dirrmtry lib/compat
-@dirrmtry lib32/compat
-@dirrmtry lib32
 @exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

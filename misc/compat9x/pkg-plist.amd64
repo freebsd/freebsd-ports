@@ -41,7 +41,4 @@ lib32/compat/libssl.so.6
 lib32/compat/libstdc++.so.6
 lib32/compat/libsupc++.so.1
 lib32/compat/libusb.so.2
-@dirrmtry lib/compat
-@dirrmtry lib32/compat
-@dirrmtry lib32
 @exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

@@ -21,10 +21,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 # prevent types conflict: videodev2.h vs. drm.h
-CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
+CFLAGS+=	-I${LOCALBASE}/include -DHAVE_LINUX_INTEGER_TYPES
 
 OPTIONS_DEFINE=	DEBUG
 

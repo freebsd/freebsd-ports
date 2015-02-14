@@ -1,0 +1,2 @@
+To run lldpd from startup, add lldpd_enable="YES" to your rc.conf.
+Add lldpd_flags to your rc.conf to set options.

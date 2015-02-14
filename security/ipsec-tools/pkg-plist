@@ -33,19 +33,5 @@ man/man8/plainrsa-gen.8.gz
 man/man8/racoon.8.gz
 man/man8/racoonctl.8.gz
 man/man8/setkey.8.gz
-%%EXAMPLESDIR%%/psk.txt
-%%EXAMPLESDIR%%/psk.txt.sample
-%%EXAMPLESDIR%%/racoon.conf
-%%EXAMPLESDIR%%/racoon.conf.sample
-%%EXAMPLESDIR%%/racoon.conf.sample-gssapi
-%%EXAMPLESDIR%%/racoon.conf.sample-inherit
-%%EXAMPLESDIR%%/racoon.conf.sample-natt
-%%EXAMPLESDIR%%/racoon.conf.sample-plainrsa
-%%EXAMPLESDIR%%/roadwarrior/README
-%%EXAMPLESDIR%%/roadwarrior/client/phase1-down.sh
-%%EXAMPLESDIR%%/roadwarrior/client/phase1-up.sh
-%%EXAMPLESDIR%%/roadwarrior/client/racoon.conf
-%%EXAMPLESDIR%%/roadwarrior/server/racoon.conf
-%%EXAMPLESDIR%%/roadwarrior/server/racoon.conf-radius
 @dir etc/racoon
 @dir %%STATEDIR%%

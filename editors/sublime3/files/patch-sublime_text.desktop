@@ -1,0 +1,24 @@
+--- sublime_text.desktop.orig	2014-08-27 
++++ sublime_text.desktop	
+@@ -4,20 +4,9 @@
+ Name=Sublime Text
+ GenericName=Text Editor
+ Comment=Sophisticated text editor for code, markup and prose
+-Exec=/opt/sublime_text/sublime_text %F
++Exec=sublime %F
+ Terminal=false
+ MimeType=text/plain;
+ Icon=sublime-text
+ Categories=TextEditor;Development;
+ StartupNotify=true
+-Actions=Window;Document;
+-
+-[Desktop Action Window]
+-Name=New Window
+-Exec=/opt/sublime_text/sublime_text -n
+-OnlyShowIn=Unity;
+-
+-[Desktop Action Document]
+-Name=New File
+-Exec=/opt/sublime_text/sublime_text --command new_file
+-OnlyShowIn=Unity;

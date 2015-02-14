@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2014-03-31
+DISTVERSION=	2014-08-20
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
@@ -15,7 +15,8 @@ LICENSE=	BSD2CLAUSE
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS=
 
-ONLY_FOR_ARCHS=	i386 amd64	# not tested on other archs
+ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS_REASON= Untested on any other arch.
 
 USES=		kmod uidfix
 

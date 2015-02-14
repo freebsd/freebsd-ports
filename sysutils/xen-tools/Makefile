@@ -15,7 +15,7 @@ DISTFILES=	xen-${PORTVERSION}.tar.gz
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		${LOCALBASE}/lib/ibyajl.so:${PORTSDIR}/devel/yajl
+		${LOCALBASE}/lib/libyajl.so:${PORTSDIR}/devel/yajl
 
 USES=		gmake python:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
 USE_PERL5=	build
@@ -38,6 +38,10 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-read \
 		bin/xenstore-rm \
 		bin/xenstore-write
+
+post-patch:
+	${REINPLACE_CMD} -e 's;86|x86_64;86no|x86_64no;' \
+		${WRKSRC}/tools/configure
 
 do-build:
 	cd ${WRKSRC}/tools && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C include

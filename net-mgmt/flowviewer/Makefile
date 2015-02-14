@@ -3,6 +3,7 @@
 
 PORTNAME=	flowviewer
 PORTVERSION=	4.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FlowViewer_${DISTVERSION}
@@ -36,8 +37,7 @@ PLIST_SCRIPT=	FV.cgi FV_Relay.cgi FlowGrapher.cgi FlowGrapher_Main.cgi \
 		FlowViewer_UI.pm FlowViewer_Utilities.pm FlowGrapher_Colors \
 		FlowMonitor_Collector FlowMonitor_Grapher \
 		FlowMonitor_Recreate FlowMonitor_Thumbnail FlowViewer_CleanASCache \
-		FlowViewer_CleanFiles FlowViewer_CleanHostCache FlowViewer_CleanSiLK \
-		NamedInterfaces_Devices NamedInterfaces_Exporters
+		FlowViewer_CleanFiles FlowViewer_CleanHostCache FlowViewer_CleanSiLK
 PLIST_DATA=	FG_button.png FM_button.png FV_button.png FlowViewer.css
 PLIST_TOOLS=	flowcapture_restart resize_rrdtools flowmonitor_grapher_nonlazy \
 		date_to_epoch_gm performance_check flowmonitor_restart \
@@ -69,7 +69,9 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${FLOWVIEWERDIR}
 	${MKDIR} ${STAGEDIR}${FLOWVIEWERDIR}/tools
-	${INSTALL_DATA} ${WRKSRC}/FlowViewer_Configuration.pm ${STAGEDIR}${FLOWVIEWERDIR}/FlowViewer_Configuration.pm.dist
+	${INSTALL_DATA} ${WRKSRC}/FlowViewer_Configuration.pm ${STAGEDIR}${FLOWVIEWERDIR}/FlowViewer_Configuration.pm.sample
+	${INSTALL_DATA} ${WRKSRC}/NamedInterfaces_Devices ${STAGEDIR}${FLOWVIEWERDIR}/NamedInterfaces_Devices.sample
+	${INSTALL_DATA} ${WRKSRC}/NamedInterfaces_Exporters ${STAGEDIR}${FLOWVIEWERDIR}/NamedInterfaces_Exporters.sample
 	${MKDIR} ${STAGEDIR}${FLOWVIEWERDIR}/tmp ${STAGEDIR}${FLOWVIEWERDIR}/reports ${STAGEDIR}${FLOWVIEWERDIR}/graphs \
 	${STAGEDIR}${FLOWVIEWERDIR}/monitor ${STAGEDIR}${FLOWVIEWERDIR}/working ${STAGEDIR}${FLOWVIEWERDIR}/saves \
 	${STAGEDIR}${FLOWVIEWERDIR}/names ${STAGEDIR}${FLOWVIEWERDIR}/ipsets ${STAGEDIR}${FLOWVIEWERDIR}/filters \

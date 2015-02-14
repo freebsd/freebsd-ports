@@ -52,7 +52,9 @@ restart_cmd()
 for config in ${dovecot_config}; do
 	required_files="${config}"
 	command_args="-c ${config}"
-	base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
-	pidfile="${base_dir}/master.pid"
-	run_rc_command "$1"
+	if [ -f ${config} ]; then
+		base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
+		pidfile="${base_dir}/master.pid"
+		run_rc_command "$1"
+	fi
 done

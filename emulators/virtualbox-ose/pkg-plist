@@ -2,15 +2,16 @@ bin/VBoxAutostart
 bin/VBoxBalloonCtrl
 bin/VBoxHeadless
 bin/VBoxManage
-bin/VBoxNetAdpCtl
-bin/VBoxNetDHCP
 %%X11%%bin/VBoxSDL
-bin/VBoxSVC
-%%QT4%%bin/VBoxTestOGL
-bin/VBoxXPCOMIPCD
+bin/VBoxVRDP
 %%QT4%%bin/VirtualBox
+bin/vboxautostart
+bin/vboxballoonctrl
+bin/vboxheadless
+bin/vboxmanage
+%%X11%%bin/vboxsdl
 %%WEBSERVICE%%bin/vboxwebsrv
-%%WEBSERVICE%%bin/webtest
+%%QT4%%bin/virtualbox
 include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
@@ -339,18 +340,11 @@ include/virtualbox/xpcom/xptcstubsdecl.inc
 include/virtualbox/xpcom/xptcstubsdef.inc
 include/virtualbox/xpcom/xptinfo.h
 lib/virtualbox/DBGCPlugInDiggers.so
+lib/virtualbox/VBox.sh
 lib/virtualbox/VBoxAuth.so
 lib/virtualbox/VBoxAuthSimple.so
-@group %%VBOXGROUP%%
-@mode 4511
 lib/virtualbox/VBoxAutostart
-@group
-@mode
-@group %%VBOXGROUP%%
-@mode 0711
 lib/virtualbox/VBoxBalloonCtrl
-@group
-@mode
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDD2GC.gc
@@ -361,32 +355,16 @@ lib/virtualbox/VBoxDDU.so
 %%QT4%%lib/virtualbox/VBoxDbg.so
 lib/virtualbox/VBoxEFI32.fd
 lib/virtualbox/VBoxEFI64.fd
-@group %%VBOXGROUP%%
-@mode 0711
 lib/virtualbox/VBoxExtPackHelperApp
-@group
-@mode
 lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
-@group %%VBOXGROUP%%
-@mode 4511
-lib/virtualbox/VBoxHeadless
-@group
-@mode
+@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxHeadless
 lib/virtualbox/VBoxHeadless.so
 lib/virtualbox/VBoxHostChannel.so
 %%X11%%lib/virtualbox/VBoxKeyboard.so
-@group %%VBOXGROUP%%
-@mode 0711
 lib/virtualbox/VBoxManage
-@group
-@mode
-@mode 4511
-lib/virtualbox/VBoxNetAdpCtl
-@group %%VBOXGROUP%%
-lib/virtualbox/VBoxNetDHCP
-@group
-@mode
+@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetAdpCtl
+@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetDHCP
 lib/virtualbox/VBoxNetDHCP.so
 lib/virtualbox/VBoxNetNAT.so
 %%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
@@ -397,39 +375,19 @@ lib/virtualbox/VBoxREM.so
 %%I386%%lib/virtualbox/VBoxREM32.so
 %%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so
-@group %%VBOXGROUP%%
-@mode 4511
-%%X11%%lib/virtualbox/VBoxSDL
-@group
-@mode
+%%X11%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxSDL
 %%X11%%lib/virtualbox/VBoxSDL.so
-@group %%VBOXGROUP%%
-@mode 0711
 lib/virtualbox/VBoxSVC
-@group
-@mode
 lib/virtualbox/VBoxSharedClipboard.so
 %%X11%%lib/virtualbox/VBoxSharedCrOpenGL.so
 lib/virtualbox/VBoxSharedFolders.so
-@group %%VBOXGROUP%%
-@mode 4511
 %%QT4%%lib/virtualbox/VBoxTestOGL
-@group
-@mode
 lib/virtualbox/VBoxVMM.so
 lib/virtualbox/VBoxVMMPreload.so
 lib/virtualbox/VBoxXPCOM.so
 lib/virtualbox/VBoxXPCOMC.so
-@group %%VBOXGROUP%%
-@mode 0711
 lib/virtualbox/VBoxXPCOMIPCD
-@group
-@mode
-@group %%VBOXGROUP%%
-@mode 4511
-%%QT4%%lib/virtualbox/VirtualBox
-@group
-@mode
+%%QT4%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBox
 %%QT4%%lib/virtualbox/VirtualBox.so
 lib/virtualbox/sdk
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html

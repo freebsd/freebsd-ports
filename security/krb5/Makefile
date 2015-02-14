@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.13
+PORTVERSION=		1.13.1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -27,8 +27,8 @@ USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 USES=			gettext gmake perl5 libtool:build
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto
-CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
-MAKE_ARGS=		INSTALL="${INSTALL}"
+CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
+MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
 OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP READLINE
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
@@ -67,7 +67,13 @@ PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
+.if ${OSVERSION} >= 1100000
+# libtool has some gas with libreadline in 11-CURRENT.
+BUILD_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
+.else
 USES+=			readline:port
+.endif
 CONFIGURE_ARGS+=	--with-readline
 .endif
 
@@ -115,15 +121,15 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MKRB5_PDF}
 	for i in $${pdf_dirs}; do \
-		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 .if ${PORT_OPTIONS:MKRB5_HTML}
 	for i in $${html_dirs}; do \
-		${ECHO_CMD} @dirrm share/doc/krb5/$${i} >> ${TMPPLIST}; \
+		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
-	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
+	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
 	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 	@${ECHO} "------------------------------------------------------"

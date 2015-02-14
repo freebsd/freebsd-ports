@@ -24,8 +24,11 @@
 %%PYPY_INCLUDEDIR%%/methodobject.h
 %%PYPY_INCLUDEDIR%%/missing.h
 %%PYPY_INCLUDEDIR%%/modsupport.h
+%%PYPY_INCLUDEDIR%%/numpy/__multiarray_api.h
 %%PYPY_INCLUDEDIR%%/numpy/arrayobject.h
+%%PYPY_INCLUDEDIR%%/numpy/ndarraytypes.h
 %%PYPY_INCLUDEDIR%%/numpy/npy_3kcompat.h
+%%PYPY_INCLUDEDIR%%/numpy/npy_common.h
 %%PYPY_INCLUDEDIR%%/numpy/old_defines.h
 %%PYPY_INCLUDEDIR%%/object.h
 %%PYPY_INCLUDEDIR%%/patchlevel.h
@@ -1517,6 +1520,7 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g134d2a74x4a412aa3.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g29b85a97xace1544d.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g5ebcbb41x576c1bb2.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g82f9edffx359e5476.pypy-%%PYPY_VER%%.so
@@ -3834,3 +3838,4 @@
 %%PYPY_LIBDIR%%/xmlrpclib.pyc
 %%PYPY_LIBDIR%%/zipfile.py
 %%PYPY_LIBDIR%%/zipfile.pyc
+lib/libpypy-c.so

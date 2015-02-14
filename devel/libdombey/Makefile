@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdombey
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
