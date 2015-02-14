@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Password-Util
-PORTVERSION=	0.09
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	p5-UUID-Random-Patch-UseMRS>=0:${PORTSDIR}/devel/p5-UUID-Random-P
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
 
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.mk>
