@@ -16,6 +16,8 @@ COMMENT=	Equinox Desktop Environment
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+BROKEN=		Fails to link, tries to use internal fltk symbols
+
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
