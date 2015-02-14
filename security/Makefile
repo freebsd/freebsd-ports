@@ -491,6 +491,8 @@
     SUBDIR += p5-Crypt-OpenSSL-Bignum
     SUBDIR += p5-Crypt-OpenSSL-CA
     SUBDIR += p5-Crypt-OpenSSL-DSA
+    SUBDIR += p5-Crypt-OpenSSL-EC
+    SUBDIR += p5-Crypt-OpenSSL-ECDSA
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
     SUBDIR += p5-Crypt-OpenSSL-X509

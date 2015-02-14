@@ -1,0 +1,6 @@
+This module provides a standard (non-OO) interface to the OpenSSL EC (Elliptic
+Curve) library. Some OO Calls are supported.
+
+Most of the functions described in openssl/ec.h are supported.
+
+WWW: https://metacpan.org/pod/Crypt::OpenSSL::EC
