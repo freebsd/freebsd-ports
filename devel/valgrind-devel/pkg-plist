@@ -17,6 +17,7 @@ include/valgrind/libvex_basictypes.h
 include/valgrind/libvex_emnote.h
 include/valgrind/libvex_guest_amd64.h
 include/valgrind/libvex_guest_arm.h
+include/valgrind/libvex_guest_arm64.h
 include/valgrind/libvex_guest_mips32.h
 include/valgrind/libvex_guest_mips64.h
 include/valgrind/libvex_guest_offsets.h
@@ -28,12 +29,14 @@ include/valgrind/libvex_ir.h
 include/valgrind/libvex_s390x_common.h
 include/valgrind/libvex_trc_values.h
 include/valgrind/memcheck.h
+include/valgrind/pub_tool_addrinfo.h
 include/valgrind/pub_tool_aspacehl.h
 include/valgrind/pub_tool_aspacemgr.h
 include/valgrind/pub_tool_basics.h
 include/valgrind/pub_tool_basics_asm.h
 include/valgrind/pub_tool_clientstate.h
 include/valgrind/pub_tool_clreq.h
+include/valgrind/pub_tool_deduppoolalloc.h
 include/valgrind/pub_tool_debuginfo.h
 include/valgrind/pub_tool_errormgr.h
 include/valgrind/pub_tool_execontext.h
@@ -51,6 +54,7 @@ include/valgrind/pub_tool_mallocfree.h
 include/valgrind/pub_tool_options.h
 include/valgrind/pub_tool_oset.h
 include/valgrind/pub_tool_poolalloc.h
+include/valgrind/pub_tool_rangemap.h
 include/valgrind/pub_tool_redir.h
 include/valgrind/pub_tool_replacemalloc.h
 include/valgrind/pub_tool_seqmatch.h
@@ -68,6 +72,7 @@ include/valgrind/valgrind.h
 include/valgrind/vki/vki-amd64-freebsd.h
 include/valgrind/vki/vki-amd64-linux.h
 include/valgrind/vki/vki-arm-linux.h
+include/valgrind/vki/vki-arm64-linux.h
 include/valgrind/vki/vki-darwin.h
 include/valgrind/vki/vki-freebsd.h
 include/valgrind/vki/vki-linux.h
@@ -76,6 +81,7 @@ include/valgrind/vki/vki-machine-types-x86-freebsd.h
 include/valgrind/vki/vki-mips32-linux.h
 include/valgrind/vki/vki-posixtypes-amd64-linux.h
 include/valgrind/vki/vki-posixtypes-arm-linux.h
+include/valgrind/vki/vki-posixtypes-arm64-linux.h
 include/valgrind/vki/vki-posixtypes-mips32-linux.h
 include/valgrind/vki/vki-posixtypes-ppc32-linux.h
 include/valgrind/vki/vki-posixtypes-ppc64-linux.h
@@ -86,6 +92,7 @@ include/valgrind/vki/vki-ppc64-linux.h
 include/valgrind/vki/vki-s390x-linux.h
 include/valgrind/vki/vki-scnums-amd64-linux.h
 include/valgrind/vki/vki-scnums-arm-linux.h
+include/valgrind/vki/vki-scnums-arm64-linux.h
 include/valgrind/vki/vki-scnums-darwin.h
 include/valgrind/vki/vki-scnums-freebsd.h
 include/valgrind/vki/vki-scnums-mips32-linux.h
@@ -106,6 +113,7 @@ include/valgrind/vki/vki-xen-hvm.h
 include/valgrind/vki/vki-xen-memory.h
 include/valgrind/vki/vki-xen-mmuext.h
 include/valgrind/vki/vki-xen-sysctl.h
+include/valgrind/vki/vki-xen-tmem.h
 include/valgrind/vki/vki-xen-version.h
 include/valgrind/vki/vki-xen-x86.h
 include/valgrind/vki/vki-xen.h
@@ -199,6 +207,7 @@ lib/valgrind/default.supp
 %%X86%%lib/valgrind/helgrind-x86-freebsd
 lib/valgrind/i386-coresse-valgrind.xml
 lib/valgrind/i386-linux-valgrind.xml
+lib/valgrind/getoff-%%ARCH%%-freebsd
 %%AMD64%%lib/valgrind/lackey-amd64-freebsd
 %%X86%%lib/valgrind/lackey-x86-freebsd
 %%AMD64%%lib/valgrind/libcoregrind-amd64-freebsd.a
