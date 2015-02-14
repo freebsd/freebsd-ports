@@ -1720,6 +1720,7 @@
     SUBDIR += py-webware-component
     SUBDIR += py-werkzeug
     SUBDIR += py-wikitools
+    SUBDIR += py-wsaccel
     SUBDIR += py-ws4py
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
