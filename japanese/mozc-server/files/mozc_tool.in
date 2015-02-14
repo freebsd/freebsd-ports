@@ -15,6 +15,6 @@ EOT
 	exit 1
 ;;
 *)
-	exec %%PREFIX%%/libexec/mozc_tool "$@"
+	exec %%PREFIX%%/libexec/mozc_tool --mode="$1"
 ;;
 esac
