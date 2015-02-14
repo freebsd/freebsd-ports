@@ -1,4 +1,6 @@
 %%SITE_PERL%%/Net/DNS/Keyset.pm
+%%SITE_PERL%%/Net/DNS/RR/CDNSKEY.pm
+%%SITE_PERL%%/Net/DNS/RR/CDS.pm
 %%SITE_PERL%%/Net/DNS/RR/DLV.pm
 %%SITE_PERL%%/Net/DNS/RR/DNSKEY.pm
 %%SITE_PERL%%/Net/DNS/RR/DS.pm
@@ -9,8 +11,15 @@
 %%SITE_PERL%%/Net/DNS/RR/RRSIG.pm
 %%SITE_PERL%%/Net/DNS/RR/SIG.pm
 %%SITE_PERL%%/Net/DNS/SEC.pm
+%%SITE_PERL%%/Net/DNS/SEC/DSA.pm
+%%SITE_PERL%%/Net/DNS/SEC/ECCGOST.pm
+%%SITE_PERL%%/Net/DNS/SEC/ECDSA.pm
+%%SITE_PERL%%/Net/DNS/SEC/Keyset.pm
 %%SITE_PERL%%/Net/DNS/SEC/Private.pm
-%%PERL5_MAN3%%/Net::DNS::Keyset.3.gz
+%%SITE_PERL%%/Net/DNS/SEC/RSA.pm
+%%PERL5_MAN3%%/Net::DNS::KeysetStub.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::CDNSKEY.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::CDS.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DLV.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DNSKEY.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DS.3.gz
@@ -21,4 +30,9 @@
 %%PERL5_MAN3%%/Net::DNS::RR::RRSIG.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::SIG.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::DSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::ECCGOST.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::ECDSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::Keyset.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Private.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::RSA.3.gz
