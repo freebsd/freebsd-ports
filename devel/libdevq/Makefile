@@ -3,6 +3,7 @@
 
 PORTNAME=	libdevq
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rainbow-runner.nl/freebsd/
 
