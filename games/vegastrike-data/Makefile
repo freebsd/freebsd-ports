@@ -11,29 +11,22 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vega Strike data files
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-MANUAL_PACKAGE_BUILD=huge
+MANUAL_PACKAGE_BUILD=	huge
+
+PORTDATA=	* .vegastrike
+PLIST_DIRS=	%%DATADIR%%/movies
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	# Will extract directly into ${STAGEDIR}${DATADIR:H}
+	# Will extract on install phase
 
 do-install:
-	${RM} -rf ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DATADIR:H}
-	${TAR} -C ${STAGEDIR}${DATADIR:H} -xvf ${_DISTDIR}/${DISTFILES} \
-	    --exclude Makefile.am --no-same-owner 2>&1 | \
-		${AWK} ' \
-		    BEGIN { dirn = 0 ; print "@cwd ${DATADIR}" } \
-		    { sub("^x [^/]*/", "") } \
-		    /\/$$/ { sub("/$$", ""); dirs[dirn++] = $$0 ; next } \
-		    !/^$$/ { print $$0 } \
-		    END {while (dirn--) print "@dirrm " dirs[dirn]; \
-			print "@cwd"; print "@dirrm ${DATADIR_REL}" } \
-		' >> ${TMPPLIST}
-	${MV} ${STAGEDIR}${DATADIR:H}/vegastrike-data-${PORTVERSION} \
-		${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${TAR} -C ${STAGEDIR}${DATADIR} -xf ${_DISTDIR}/${DISTFILES} \
+	    --exclude Makefile.am --no-same-owner --strip-components=1
 
 .include <bsd.port.mk>
