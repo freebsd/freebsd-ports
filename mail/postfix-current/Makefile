@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.0-20150129
+DISTVERSION=	3.0-20150208
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
-		ftp://postfix.mirrors.pair.com/experimental/ \
-		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
-		http://mirrors.rootservices.net/postfix/experimental/ \
-		ftp://ftp.samurai.com/pub/postfix/experimental/ \
-		http://ftp.unicamp.br/pub/postfix/experimental/
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
+		http://de.postfix.org/ftpmirror/ \
+		http://cdn.postfix.johnriley.me/mirrors/postfix-release/ \
+		http://www.artfiles.org/postfix.org/postfix-release/ \
+		http://mirror.lhsolutions.nl/postfix-release/ \
+		ftp://postfix.mirrors.pair.com/
+#MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
+MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 PKGNAMESUFFIX=	-current
+DISTNAME=	${PORTNAME}-3.0.0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
@@ -90,7 +93,7 @@ IS_INTERACTIVE=	yes
 MAKEFILEFLAGS+=	DEBUG=
 .endif
 
-MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
+MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MINST_BASE}
 PKGNAMESUFFIX=	-base
@@ -186,7 +189,7 @@ POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -l
 .if ${PORT_OPTIONS:MTLS}
 USE_OPENSSL=		yes
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
-# XXX LDFLAGS possible breaks dynamic building 
+# XXX LDFLAGS possible breaks dynamic building
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .else
 POSTFIX_CCARGS+=	-DNO_TLS

@@ -155,7 +155,7 @@ sbin/sendmail
 @dir libexec/postfix/dynamicmaps.cf.d
 @dir libexec/postfix/postfix-files.d
 @dir %%PFETC%%
-@dir /var/db/postfix
+@dir(postfix,,700) /var/db/postfix
 @dir(postfix,,700) /var/spool/postfix/active
 @dir(postfix,,700) /var/spool/postfix/bounce
 @dir(postfix,,700) /var/spool/postfix/corrupt
