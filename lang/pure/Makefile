@@ -12,12 +12,14 @@ DIST_SUBDIR=	pure
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Modern-style functional programming language
 
-BROKEN=		Depends on deleted devel/llvm32
-
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 LLVM_VERSION=	32
+
+BROKEN=		Depends on deleted devel/llvm32
+DEPRECATED=	Old revision of software, depends on deleted version of llvm
+EXPIRATION_DATE=	2015-05-14
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgmp.so:${PORTSDIR}/math/gmp \
