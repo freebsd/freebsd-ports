@@ -1460,7 +1460,7 @@
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
-    SUBDIR += py-autbahn
+    SUBDIR += py-autobahn
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup32
