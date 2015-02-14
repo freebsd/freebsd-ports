@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		compiler gmake libtool pathfix pkgconfig python
+USES=		compiler cpe gmake libtool pathfix pkgconfig python
 USE_GNOME=	glib20 librsvg2 pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -46,6 +46,7 @@ GCONF_DESC=	Use GConf for configuration
 DCONF_DESC=	Use dconf for configuration
 XIM_DESC=	Install XIM server
 ENGINE_DESC=	Install ibus simple engine
+CPE_VENDOR=	ibus_project
 
 ISOCODES_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 ISOCODES_RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
