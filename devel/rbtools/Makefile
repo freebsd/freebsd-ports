@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:tl}
-DISTVERSION=	0.7
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION}/
+MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:R}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
 MAINTAINER=	rakuco@FreeBSD.org
