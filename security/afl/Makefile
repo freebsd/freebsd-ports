@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.38b
+PORTVERSION=	1.44b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -68,11 +68,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
 
 .for afl_script in afl-cmin afl-plot afl-whatsup
-	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${LOCALBASE}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 .if ${PORT_OPTIONS:MMINIMIZE_CORPUS}
-	${INSTALL_SCRIPT} ${WRKSRC}/afl-cmin ${STAGEDIR}${LOCALBASE}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/afl-cmin ${STAGEDIR}${PREFIX}/bin/
 .endif
 
 .include <bsd.port.post.mk>
