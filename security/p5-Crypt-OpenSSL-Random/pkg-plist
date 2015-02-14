@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Crypt::OpenSSL::Random.3.gz
 %%SITE_ARCH%%/Crypt/OpenSSL/Random.pm
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/Random/Random.so
-%%SITE_ARCH%%/auto/Crypt/OpenSSL/Random/autosplit.ix
