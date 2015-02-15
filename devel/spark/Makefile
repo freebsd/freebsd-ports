@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spark
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/:maven \
@@ -19,7 +19,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/share/hadoop/common/hadoop-common-2.4.1.jar:${PORTSDIR}/devel/hadoop2
+		yarn:${PORTSDIR}/devel/hadoop2
 
 USES=		python:2
 USE_JAVA=	yes
