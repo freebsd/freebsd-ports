@@ -32,8 +32,8 @@ SHAREFILESDIR=	${PREFIX}/share/spice
 HELPFILESDIR=	${SHAREFILESDIR}/helpdir
 SCRIPTFILESDIR=	${SHAREFILESDIR}/scripts
 
-PROGRAMS=	spice3 nutmeg sconvert help proc2mod multidec
-HELPFILES=	spice.txt
+PROGRAMS=	spice3 nutmeg sconvert help proc2mod multidec makeidx
+HELPFILES=	spice.txt spice.idx
 SCRIPTFILES=	setplot spinit
 SHAREFILES=	mfbcap news
 
@@ -53,6 +53,11 @@ ${DESTDIR}${MANDIR}${n}/$M: $M
 . endfor
 .endfor
 	ln -s -f spice.1 ${DESTDIR}${MANDIR}1/spice3.1
+
+spice.idx: spice.txt
+	${DESTDIR}${BINDIR}/makeidx ${.ALLSRC}
+	${BSD_INSTALL_DATA} ${.CURDIR}/lib/helpdir/spice.idx \
+	    ${.CURDIR}/spice.idx
 
 .for D in HELPFILES SCRIPTFILES SHAREFILES
 . for F in ${${D}}
