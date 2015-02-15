@@ -1,6 +1,6 @@
---- jdk/make/lib/ServiceabilityLibraries.gmk.orig	2014-11-08 19:59:40.000000000 -0800
-+++ jdk/make/lib/ServiceabilityLibraries.gmk	2014-11-08 20:00:50.000000000 -0800
-@@ -252,7 +252,7 @@
+--- jdk/make/lib/ServiceabilityLibraries.gmk	2014-11-25 21:11:53 UTC
++++ jdk/make/lib/ServiceabilityLibraries.gmk	
+@@ -252,15 +252,14 @@ $(eval $(call SetupNativeCompilation,BUI
      CFLAGS := $(LIBINSTRUMENT_CFLAGS), \
      CFLAGS_debug := -DJPLIS_LOGGING, \
      CFLAGS_release := -DNO_JPLIS_LOGGING, \
@@ -9,12 +9,12 @@
      MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libinstrument/mapfile-vers, \
      LDFLAGS := $(LDFLAGS_JDKLIB) \
          $(call SET_SHARED_LIBRARY_ORIGIN) \
-@@ -260,7 +260,7 @@
+         $(LIBINSTRUMENT_LDFLAGS), \
      LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
      LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
-     LDFLAGS_bsd := -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
+-    LDFLAGS_bsd := -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
 -        -Xlinker --no-whole-archive, \
-+        -Xlinker --no-whole-archive %%ICONV_LDFLAGS%% $(LIBZ), \
++    LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
      LDFLAGS_macosx := -Xlinker -all_load $(JDK_OUTPUTDIR)/objs/libjli_static.a \
          -framework Cocoa -framework Security -framework ApplicationServices, \
      LDFLAGS_SUFFIX := $(LIBINSTRUMENT_LDFLAGS_SUFFIX), \
