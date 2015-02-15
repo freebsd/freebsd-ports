@@ -2,7 +2,13 @@
 
 NO_WRKSUBDIR=	yes
 
+.if exists(/usr/games/strfile)
 _STRFILE=		/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+_STRFILE=		/usr/bin/strfile
+.else
+IGNORE=			needs strfile command. Please install games distribution of base system
+.endif
 _STRFILE_ARGS?=		-C
 _FORTUNE_DIR=		share/games/fortune
 FORTUNE_DIR=		${PREFIX}/${_FORTUNE_DIR}
@@ -29,16 +35,13 @@ do-build:
 	fi
 do-install:
 	@${MKDIR} ${STAGEDIR}${FORTUNE_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.dat ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}.dat
-	@if [ -f ${WRKSRC}/${PORTNAME}-o ]; then \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.dat ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}.dat
+	if [ -f ${WRKSRC}/${PORTNAME}-o ]; then \
 		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE_O}; \
 		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o.dat ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE_O}.dat; \
 	fi
-post-install:
 	@if [ -f ${WRKSRC}/${PORTNAME}-o ]; then \
 		${ECHO_CMD} ${_FORTUNE_DIR}/${FORTUNE_FILE_O} >> ${TMPPLIST}; \
 		${ECHO_CMD} ${_FORTUNE_DIR}/${FORTUNE_FILE_O}.dat >> ${TMPPLIST}; \
 	fi
-	@${ECHO_CMD} "@unexec rmdir %D/${_FORTUNE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/games 2>/dev/null || true" >> ${TMPPLIST}

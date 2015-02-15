@@ -10,18 +10,18 @@ DISTNAME=	fortune-it-${PORTVERSION}
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Funny fortune file in Italian
 
+.if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRCMD=		/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
+.endif
 
 FORTUNEFILES=	adams banner computer definizioni formiche italia itatrek \
 		jackfr leggi luke luttazzi norm paolotedeschi zuse \
 		computer-o definizioni-o film-o italia-o jackfr-o leggi-o \
 		luttazzi-o obsc-o zuse-o
-
-pre-build:
-.if !exists(${STRCMD})
-	@${ECHO_MSG} "Please install the games distribution"
-	@exit 1
-.endif
 
 do-build:
 .for f in ${FORTUNEFILES}
@@ -29,19 +29,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
 .for f in ${FORTUNEFILES}
-	@${INSTALL_DATA} ${WRKSRC}/testi/${f}* \
+	${INSTALL_DATA} ${WRKSRC}/testi/${f}* \
 		${STAGEDIR}${PREFIX}/share/games/fortune
 .endfor
-
-post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "/usr/games/fortune [-aDefilosw] ${PREFIX}/share/games/fortune/"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please check fortune manual pages for more informations"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

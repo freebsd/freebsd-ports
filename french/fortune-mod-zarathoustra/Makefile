@@ -4,20 +4,19 @@
 PORTNAME=	fortune-mod-zarathoustra
 PORTVERSION=	20100905
 CATEGORIES=	french
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	culot
+MASTER_SITES=	LOCAL/culot
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Compilation of quotes from Nietzsche's Thus spoke Zarathustra
 
 SUB_FILES=	pkg-message
 
+.if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
-
-pre-build:
-.if !exists(${STRCMD})
-	@${ECHO_MSG} "Please install the games distribution"
-	@exit 1
+.elif exists(/usr/bin/strfile)
+STRCMD=		/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
 .endif
 
 do-build:
@@ -25,9 +24,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/zarathoustra* ${STAGEDIR}${PREFIX}/share/games/fortune
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/zarathoustra* ${STAGEDIR}${PREFIX}/share/games/fortune
 
 .include <bsd.port.mk>

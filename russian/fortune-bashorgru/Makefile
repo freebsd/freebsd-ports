@@ -3,6 +3,7 @@
 
 PORTNAME=	fortune-bashorgru
 PORTVERSION=	20080903
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	http://limbo.xim.bz/distfiles/
 

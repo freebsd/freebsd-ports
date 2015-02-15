@@ -14,7 +14,13 @@ PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lot of funny Polish fortune files
 
+.if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRCMD=		/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
+.endif
 WRKSRC=		${WRKDIR}/fortunes-pl-${PORTVERSION}.orig
 
 FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
@@ -27,11 +33,6 @@ FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
 		seneka sigpl sigvirus slownik spolem sport stachura stirlitz \
 		teleturnieje testnaosobowosc wierszyki wieza-pilot zen \
 		znaki_zodiaku
-
-pre-everything::
-.if !exists(${STRCMD})
-IGNORE=		need strfile command. Please install games distribution of base system
-.endif
 
 do-patch:
 	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.freebsd.pl ${WRKSRC}/freebsd.pl
@@ -50,11 +51,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE}.dat \
 		${STAGEDIR}${PREFIX}/share/games/fortune/pl
 .endfor
-
-post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/pl/<category>"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

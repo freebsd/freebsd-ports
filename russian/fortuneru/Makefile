@@ -3,6 +3,7 @@
 
 PORTNAME=	fortuneru
 PORTVERSION=	20090524
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	ftp://bestia.kiev.ua/pub/files/ ftp://hosting.cvu.kiev.ua/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}
@@ -10,30 +11,23 @@ DISTNAME=	fortune.ru-${PORTVERSION}
 MAINTAINER=	obezpalko@gmail.com
 COMMENT=	Fortunes in Russian
 
-NO_BUILD=	yes
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.if exists(/usr/games/strfile)
 STRCMD=		/usr/games/strfile
-
-do-install:
-	@${SETENV} STRCMD=${STRCMD} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune/rus
-	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/games/fortune/rus
-
-pre-install:
-.if !exists(${STRCMD})
-	@${ECHO_MSG}   "Please install the games distribution"
-	@exit 1
+.elif exists(/usr/bin/strfile)
+STRCMD=		/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
 .endif
 
-post-install:
-	@for fortune in ${STAGEDIR}${PREFIX}/share/games/fortune/rus/* ; do \
-		${STRCMD} $$fortune >/dev/null 2>/dev/null ; \
-		done
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/rus"
-	@${ECHO_MSG} ""
+do-build:
+	@for fortune in ${WRKSRC}/* ; do \
+		${STRCMD} $$fortune ; \
+	done
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune/rus
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/games/fortune/rus
 
 .include <bsd.port.mk>
