@@ -1,0 +1,9 @@
+Argcomplete provides easy, extensible command line tab completion
+of arguments for your Python script.
+
+It makes two assumptions:
+
+- You're using bash or zsh as your shell
+- You're using argparse to manage your command line arguments/options
+
+WWW: https://pypi.python.org/pypi/argcomplete
