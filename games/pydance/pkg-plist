@@ -384,33 +384,4 @@ share/games/pydance/themes/gfx/64x64/soloesque.zip
 share/games/pydance/themes/gfx/64x64/vividesque.zip
 share/games/pydance/ui.py
 share/games/pydance/util.py
-@dirrm share/games/pydance/themes/gfx/64x64/oldschool
-@dirrm share/games/pydance/themes/gfx/64x64/default
-@dirrm share/games/pydance/themes/gfx/64x64
-@dirrm share/games/pydance/themes/gfx/56x56/ez2
-@dirrm share/games/pydance/themes/gfx/56x56/default
-@dirrm share/games/pydance/themes/gfx/56x56
-@dirrm share/games/pydance/themes/gfx/48x48/default
-@dirrm share/games/pydance/themes/gfx/48x48
-@dirrm share/games/pydance/themes/gfx/32x32/ez2
-@dirrm share/games/pydance/themes/gfx/32x32/dmxesque
-@dirrm share/games/pydance/themes/gfx/32x32/default
-@dirrm share/games/pydance/themes/gfx/32x32
-@dirrm share/games/pydance/themes/gfx
-@dirrm share/games/pydance/themes/font
-@dirrm share/games/pydance/themes/dj/none
-@dirrm share/games/pydance/themes/dj/djenzay/rankings
-@dirrm share/games/pydance/themes/dj/djenzay/positive
-@dirrm share/games/pydance/themes/dj/djenzay/neutral
-@dirrm share/games/pydance/themes/dj/djenzay/negative
-@dirrm share/games/pydance/themes/dj/djenzay
-@dirrm share/games/pydance/themes/dj
-@dirrm share/games/pydance/themes
-@dirrm share/games/pydance/sound
-@dirrm share/games/pydance/songs
-@dirrm share/games/pydance/images
-@dirrm share/games/pydance
-@dirrmtry share/games
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -f %D/share/games/pydance/*.py[co]
