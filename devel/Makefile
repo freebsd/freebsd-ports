@@ -3545,6 +3545,7 @@
     SUBDIR += physfs-devel
     SUBDIR += picp
     SUBDIR += picprog
+    SUBDIR += pig
     SUBDIR += piklab
     SUBDIR += pinba_engine
     SUBDIR += pipestatus
