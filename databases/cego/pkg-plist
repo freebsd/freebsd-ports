@@ -3,6 +3,7 @@ bin/cgadm
 bin/cgblow
 bin/cgclt
 bin/cglog
+etc/rc.d/cego
 include/cego/CegoAdmNet.h
 include/cego/CegoAdminHandler.h
 include/cego/CegoBlob.h
