@@ -11,6 +11,7 @@ COMMENT=	Chewing intelligent phonetic input method library
 LICENSE=	LGPL21
 LICENSE_FILE=	 ${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USES=		cmake gmake libtool pathfix pkgconfig tar:bzip2
@@ -21,6 +22,7 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	6d6e67c
 
+CMAKE_ARGS+=	-DMAKEINFO=${LOCALBASE}/bin/makeinfo
 CFLAGS+=	-I${LOCALBASE}/include
 INFO=		libchewing
 
