@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	engine
-PORTVERSION=	4.0.11
-PORTREVISION=	2
+PORTVERSION=	4.0.12
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
@@ -13,8 +12,10 @@ PKGNAMEPREFIX=	foomatic-db-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Foomatic database engine
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
@@ -25,8 +26,6 @@ CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \
 		LIB_CUPS=${LOCALBASE}/libexec/cups \
 		CUPS_FILTERS=${LOCALBASE}/libexec/cups/filters \
 		CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backends
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
