@@ -42,7 +42,7 @@ load_rc_config $name
 required_files=${solr_instance}/solr.xml
 pidfile=/var/run/solr.pid
 command=/usr/sbin/daemon
-procname=%%LOCALBASE%%/openjdk7/bin/java
+procname=`env JAVAVM_DRYRUN=true JAVA_VERSION=1.7+ %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -f 2 -d =`
 start_precmd="cd %%EXAMPLESDIR%%"
 
 command_args="-f -p ${pidfile} ${procname} ${solr_flags} -Dsolr.solr.home=${solr_instance} -Dsolr.log=/var/log -jar %%EXAMPLESDIR%%/start.jar"
