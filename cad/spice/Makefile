@@ -3,7 +3,7 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	cad
 MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:srcs \
 		http://www-device.eecs.berkeley.edu/~bsim/Files/BSIM3/ftpv330/src/:bsim3 \
@@ -102,8 +102,11 @@ post-extract:
 
 ${CONFIGFILE}::
 	@${SETENV} ${CONFIGURE_ENV} ${MAKE} -f ${MAKEFILE} configure
-.for V in CC MAKE CC_OPT DEVICES
+.for V in CC MAKE CC_OPT
 	@${ECHO_CMD} "${V}=${$V}" >> ${WRKSRC}/conf/FreeBSD
+.endfor
+.for V in DEVICES
+	@${ECHO_CMD} "${V}+=${$V}" >> ${WRKSRC}/conf/FreeBSD
 .endfor
 
 do-configure: ${CONFIGFILE}
