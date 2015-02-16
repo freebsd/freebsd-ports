@@ -2,19 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	4.069
-PORTREVISION=	2
+PORTVERSION=	4.075
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	Perl module for working with IP addresses and blocks thereof
+COMMENT=	Work with IPv4 and IPv6 addresses and subnets
 
 USES=		perl5
 USE_PERL5=	patch configure
-
-post-patch:
-	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
 
 .include <bsd.port.mk>
