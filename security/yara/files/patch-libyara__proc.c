@@ -1,6 +1,6 @@
---- ./libyara/proc.c.orig	2013-12-26 09:01:02.000000000 -0500
-+++ ./libyara/proc.c	2013-12-28 15:26:52.000000000 -0500
-@@ -141,10 +141,9 @@
+--- libyara/proc.c.orig	2015-02-10 12:43:13 UTC
++++ libyara/proc.c
+@@ -140,10 +140,9 @@ int yr_process_get_memory(
  
  #else
  
