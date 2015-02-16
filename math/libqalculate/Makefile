@@ -23,9 +23,11 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
-
 .include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MNLS}
+USES+=		gettext
+.endif
 
 post-patch:
 .if !${PORT_OPTIONS:MNLS}
