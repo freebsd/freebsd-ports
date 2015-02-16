@@ -14,6 +14,7 @@
 export PATH=${PATH}:%%LOCALBASE%%/bin
 name=nodemanager
 rcvar=nodemanager_enable
+pidfile=%%HADOOP_RUNDIR%%/yarn-yarn-${name}.pid
 
 load_rc_config "${name}"
 
@@ -23,7 +24,15 @@ load_rc_config "${name}"
 command="%%PREFIX%%/sbin/yarn-daemon.sh"
 command_args='--config %%ETCDIR%% start nodemanager'
 
+start_postcmd="start_postcmd"
 stop_cmd=nodemanager_stop
+
+start_postcmd () {
+  rc_pid=$(check_pidfile ${pidfile} %%JAVA_HOME%%/bin/java)
+  if [ -n "$rc_pid" ]; then
+    protect -p $rc_pid
+  fi
+}
 
 nodemanager_stop () {
   su -m ${nodemanager_user} -c "${command} --config %%ETCDIR%% stop nodemanager"
