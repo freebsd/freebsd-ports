@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sowing
-PORTVERSION=	1.1.16
-PORTREVISION=	1
+PORTVERSION=	1.1.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 
