@@ -1,11 +1,11 @@
---- ./src/fluxbox.hh.orig	2013-02-13 10:04:05.899812000 +0000
-+++ ./src/fluxbox.hh	2013-09-20 15:41:23.585087645 +0000
-@@ -88,7 +88,7 @@
-     /// main event loop
-     void eventLoop();
+--- src/fluxbox.hh.orig	2015-02-08 10:44:45 UTC
++++ src/fluxbox.hh
+@@ -103,7 +103,7 @@ public:
+     WinClient *searchWindow(Window);
+     BScreen *searchScreen(Window w);
      bool validateWindow(Window win) const;
 -    bool validateClient(const WinClient *client) const;
 +    bool validateClient(WinClient *client) const;
  
-     void grab();
-     void ungrab();
+     // Not currently implemented until we decide how it'll be used
+     //WinClient *searchGroup(Window);
