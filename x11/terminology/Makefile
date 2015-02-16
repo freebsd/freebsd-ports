@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminology
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -24,7 +23,7 @@ OPTIONS_SUB=		yes
 
 .include <bsd.port.options.mk>
 
-NLS_USES=				gettext
+NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

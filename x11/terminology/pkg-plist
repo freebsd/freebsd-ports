@@ -49,7 +49,9 @@ share/icons/terminology.png
 %%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/it/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/terminology.mo
