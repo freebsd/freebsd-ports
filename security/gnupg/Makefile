@@ -21,7 +21,7 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libksba.so:${PORTSDIR}/security/libksba \
 		libnpth.so:${PORTSDIR}/devel/npth
-BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
+BUILD_DEPENDS=	libgpg-error>=1.16:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
