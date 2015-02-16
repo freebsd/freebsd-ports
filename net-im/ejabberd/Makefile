@@ -71,6 +71,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/deps/p1_iconv/rebar.config
 
 post-install:
 .if ${PORT_OPTIONS:MPAM}
