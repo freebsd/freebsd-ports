@@ -173,13 +173,16 @@ lib/usermin/blue-theme/at/images/icon.gif
 lib/usermin/blue-theme/backup-config/images/icon.gif
 lib/usermin/blue-theme/bandwidth/images/icon.gif
 lib/usermin/blue-theme/bind8/images/A.gif
+lib/usermin/blue-theme/bind8/images/AAAA.gif
 lib/usermin/blue-theme/bind8/images/ALL.gif
 lib/usermin/blue-theme/bind8/images/CNAME.gif
+lib/usermin/blue-theme/bind8/images/DMARC.gif
 lib/usermin/blue-theme/bind8/images/HINFO.gif
 lib/usermin/blue-theme/bind8/images/KEY.gif
 lib/usermin/blue-theme/bind8/images/LOC.gif
 lib/usermin/blue-theme/bind8/images/MX.gif
 lib/usermin/blue-theme/bind8/images/NS.gif
+lib/usermin/blue-theme/bind8/images/NSEC3PARAM.gif
 lib/usermin/blue-theme/bind8/images/PTR.gif
 lib/usermin/blue-theme/bind8/images/RP.gif
 lib/usermin/blue-theme/bind8/images/SPF.gif
@@ -467,6 +470,7 @@ lib/usermin/blue-theme/lang/en
 lib/usermin/blue-theme/lang/fr
 lib/usermin/blue-theme/lang/ja_JP.euc
 lib/usermin/blue-theme/lang/nl
+lib/usermin/blue-theme/lang/no
 lib/usermin/blue-theme/lang/pl
 lib/usermin/blue-theme/lang/pt_BR
 lib/usermin/blue-theme/lang/ru_SU
@@ -1146,6 +1150,7 @@ lib/usermin/changepass/config.info.de.UTF-8
 lib/usermin/changepass/config.info.el
 lib/usermin/changepass/config.info.nl
 lib/usermin/changepass/config.info.nl.UTF-8
+lib/usermin/changepass/images/changepass.gif
 lib/usermin/changepass/images/icon.gif
 lib/usermin/changepass/index.cgi
 lib/usermin/changepass/lang/ca
@@ -1183,7 +1188,9 @@ lib/usermin/changepass/lang/zh_TW.Big5
 lib/usermin/changepass/lang/zh_TW.UTF-8
 lib/usermin/changepass/md5-lib.pl
 lib/usermin/changepass/module.info
+lib/usermin/changepass/recovery.cgi
 lib/usermin/changepass/uconfig.info.de
+lib/usermin/changepass/webmin_menu.pl
 lib/usermin/chfn/CHANGELOG
 lib/usermin/chfn/chfn-lib.pl
 lib/usermin/chfn/config
@@ -2208,13 +2215,16 @@ lib/usermin/gray-theme/at/images/icon.gif
 lib/usermin/gray-theme/backup-config/images/icon.gif
 lib/usermin/gray-theme/bandwidth/images/icon.gif
 lib/usermin/gray-theme/bind8/images/A.gif
+lib/usermin/gray-theme/bind8/images/AAAA.gif
 lib/usermin/gray-theme/bind8/images/ALL.gif
 lib/usermin/gray-theme/bind8/images/CNAME.gif
+lib/usermin/gray-theme/bind8/images/DMARC.gif
 lib/usermin/gray-theme/bind8/images/HINFO.gif
 lib/usermin/gray-theme/bind8/images/KEY.gif
 lib/usermin/gray-theme/bind8/images/LOC.gif
 lib/usermin/gray-theme/bind8/images/MX.gif
 lib/usermin/gray-theme/bind8/images/NS.gif
+lib/usermin/gray-theme/bind8/images/NSEC3PARAM.gif
 lib/usermin/gray-theme/bind8/images/PTR.gif
 lib/usermin/gray-theme/bind8/images/RP.gif
 lib/usermin/gray-theme/bind8/images/SPF.gif
@@ -2502,6 +2512,7 @@ lib/usermin/gray-theme/lang/en
 lib/usermin/gray-theme/lang/fr
 lib/usermin/gray-theme/lang/ja_JP.euc
 lib/usermin/gray-theme/lang/nl
+lib/usermin/gray-theme/lang/no
 lib/usermin/gray-theme/lang/pl
 lib/usermin/gray-theme/lang/pt_BR
 lib/usermin/gray-theme/lang/ru_SU
@@ -3265,6 +3276,8 @@ lib/usermin/lang/de.UTF-8
 lib/usermin/lang/el
 lib/usermin/lang/en
 lib/usermin/lang/en.UTF-8
+lib/usermin/lang/en_GB
+lib/usermin/lang/en_GB.UTF-8
 lib/usermin/lang/es
 lib/usermin/lang/es.UTF-8
 lib/usermin/lang/eu
