@@ -27,7 +27,7 @@ _INCLUDE_USES_LIBTOOL_POST_MK=	yes
 
 patch-libtool:
 	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
-		-type f | while read i; do ${SED} -i.bak		\
+		-type f | while read i; do ${SED} -i.libtool.bak	\
 		-e '/dragonfly\*/!s/^ *freebsd\*[ )]/dragonfly* | &/'	\
 		-e '/gcc_dir=\\`/s/gcc /$$CC /'				\
 		-e '/gcc_ver=\\`/s/gcc /$$CC /'				\
@@ -44,7 +44,7 @@ patch-libtool:
 			\$$libname\$$release\$$shared_ext\$$major	\
 			\$$libname\$$shared_ext'			\
 		    soname_spec='\$$libname\$$release\$$shared_ext\$$major'/; \
-		    }" $${i} && ${TOUCH} -mr $${i}.bak $${i}; done
+		    }" $${i} && ${TOUCH} -mr $${i}.libtool.bak $${i}; done
 
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
