@@ -1,5 +1,5 @@
---- src/VBox/Installer/freebsd/VBox.sh.orig	2015-02-04 18:09:31.733441170 -0500
-+++ src/VBox/Installer/freebsd/VBox.sh	2015-02-04 18:09:31.733441170 -0500
+--- src/VBox/Installer/freebsd/VBox.sh.orig	2015-02-16 12:58:52.951032000 -0500
++++ src/VBox/Installer/freebsd/VBox.sh	2015-02-16 13:00:48.096063000 -0500
 @@ -0,0 +1,58 @@
 +#!/bin/sh
 +#
@@ -22,8 +22,8 @@
 +test -r "${CONFIG}" &&
 +    . "${CONFIG}"
 +test -z "${INSTALL_DIR}" &&
-+    if test -f /usr/local/lib/virtualbox/VirtualBox &&
-+        test -x /usr/local/lib/virtualbox/VirtualBox; then
++    if test -d /usr/local/lib/virtualbox &&
++        test -f /usr/local/lib/virtualbox/VBoxRT.so; then
 +        INSTALL_DIR=/usr/local/lib/virtualbox
 +    else
 +        echo "Could not find VirtualBox installation. Please reinstall."
