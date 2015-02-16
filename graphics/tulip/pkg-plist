@@ -233,6 +233,7 @@ include/tulip/StlFunctions.h
 include/tulip/StlIterator.h
 include/tulip/StoredType.h
 include/tulip/StringCollection.h
+include/tulip/StringEditor.h
 include/tulip/StringProperty.h
 include/tulip/StringsListSelectionDialog.h
 include/tulip/StringsListSelectionWidget.h
@@ -613,6 +614,7 @@ lib/tulip/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/bitmaps/samplePictures/741.png
 %%DATADIR%%/bitmaps/samplePictures/891.png
 %%DATADIR%%/bitmaps/titlebarGradient.png
+%%DATADIR%%/bitmaps/tulip.ico
 %%DATADIR%%/bitmaps/welcomelogo.bmp
 %%DATADIR%%/wizards/README.txt
 %%DATADIR%%/wizards/tlpalgorithm/algorithm.cmake
@@ -649,3 +651,4 @@ lib/tulip/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/wizards/tlpview/view.cpp
 %%DATADIR%%/wizards/tlpview/view.h
 %%DATADIR%%/wizards/tlpview/wizard.xml
+share/pixmaps/tulip.png
