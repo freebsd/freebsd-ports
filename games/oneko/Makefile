@@ -30,12 +30,10 @@ MAKE_ARGS=	MANSUFFIX=6 \
 		MANDIR=${PREFIX}/man/man6 \
 		JMANDIR=${PREFIX}/man/ja/man6
 
-pre-patch:
-	@(cd ${WRKSRC}; \
-	${PATCH} -p1 < ../oneko-2.0b-pop1.1.patch ; \
-	${PATCH} -p1 < oneko-2.0b-tip1.7.patch ; \
-	${PATCH} -p1 < ../oneko-2.0b-sender0.5.patch ; \
-	${PATCH} -p1 < ../oneko-2.0b-bsd0.2.patch ; \
-	${PATCH} < ${FILESDIR}/extrapatch-Makefile.in )
+EXTRA_PATCHES=	${WRKDIR}/oneko-2.0b-pop1.1.patch:-p1 \
+		${WRKSRC}/oneko-2.0b-tip1.7.patch:-p1 \
+		${WRKDIR}/oneko-2.0b-sender0.5.patch:-p1 \
+		${WRKDIR}/oneko-2.0b-bsd0.2.patch:-p1 \
+		${FILESDIR}/extrapatch-Makefile.in
 
 .include <bsd.port.mk>
