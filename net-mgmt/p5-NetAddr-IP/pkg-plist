@@ -48,6 +48,7 @@
 %%SITE_ARCH%%/auto/NetAddr/IP/_splitplan.al
 %%SITE_ARCH%%/auto/NetAddr/IP/_splitref.al
 %%SITE_ARCH%%/auto/NetAddr/IP/autosplit.ix
+%%SITE_ARCH%%/auto/NetAddr/IP/canon.al
 %%SITE_ARCH%%/auto/NetAddr/IP/coalesce.al
 %%SITE_ARCH%%/auto/NetAddr/IP/compactref.al
 %%SITE_ARCH%%/auto/NetAddr/IP/do_prefix.al
