@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aegisub
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
