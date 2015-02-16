@@ -1,6 +1,6 @@
---- ./src/fluxbox.cc.orig	2013-02-13 10:04:05.899812000 +0000
-+++ ./src/fluxbox.cc	2013-09-20 15:41:23.584087389 +0000
-@@ -1355,7 +1355,7 @@
+--- src/fluxbox.cc.orig	2015-02-08 10:44:45 UTC
++++ src/fluxbox.cc
+@@ -1316,7 +1316,7 @@ void Fluxbox::revertFocus() {
          FocusControl::setFocusedWindow(0);
  }
  
