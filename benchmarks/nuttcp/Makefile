@@ -2,27 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	nuttcp
-PORTVERSION=	6.1.2
+PORTVERSION=	7.3.2
 CATEGORIES=	benchmarks net
-MASTER_SITES=	ftp://ftp.lcp.nrl.navy.mil/pub/${PORTNAME}/ \
-		ftp://ftp.lcp.nrl.navy.mil/pub/${PORTNAME}/beta/:beta
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${NUTTSCPDISTFILE}:beta
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://nuttcp.net/nuttcp/
+DISTFILES=	beta/${PORTNAME}-${PORTVERSION}.c beta/${NUTTSCPDISTFILE} latest/${PORTNAME}.8 latest/examples.txt latest/LICENSE latest/README
+EXTRACT_ONLY=	# none
+WRKSRC=		${WRKDIR}
 
-MAINTAINER=	andrewclarkii@gmail.com
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	TCP/UDP network testing tool
 
-USES=		tar:bzip2 shebangfix
-SHEBANG_FILES=	../nuttscp
-MAKEFILE=	/dev/null
-ALL_TARGET=	${PORTNAME}
+USES=		shebangfix
+SHEBANG_FILES=	nuttscp
 
-NUTTSCPVERSION=	1.7
+NUTTSCPVERSION=	2.2
 NUTTSCPDISTFILE=nuttscp-${NUTTSCPVERSION}
 
 OPTIONS_DEFINE=	NUTTSCP
-OPTIONS_DEFAULT=	NUTTSCP
+OPTIONS_DEFAULT=NUTTSCP
 
 NUTTSCP_DESC=	Install script for copying files over nuttcp
 OPTIONS_SUB=	yes
@@ -31,11 +28,15 @@ NUTTSCP_USES=	perl5
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${NUTTSCPDISTFILE} ${WRKDIR}/nuttscp
+	${CP} ${DISTDIR}/beta/${NUTTSCPDISTFILE} ${WRKDIR}/nuttscp
+	${CP} ${DISTDIR}/beta/${PORTNAME}-${PORTVERSION}.c ${WRKDIR}/
+	${CP} ${DISTDIR}/latest/${PORTNAME}.8 ${WRKDIR}/
+	${CP} ${DISTDIR}/latest/LICENSE ${WRKDIR}/
+	${CP} ${DISTDIR}/latest/README ${WRKDIR}/
+	${CP} ${DISTDIR}/latest/examples.txt ${WRKDIR}/
 
-post-patch:
-	${FIND} ${WRKSRC}/ -type f -exec \
-		${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' {} +
+do-build:
+	cd ${WRKDIR} && ${CC} -o ${PORTNAME} nuttcp-${PORTVERSION}.c
 
 do-install:
 .	if ${PORT_OPTIONS:MNUTTSCP}
@@ -43,18 +44,12 @@ do-install:
 		( cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf nuttscp nuttrcp )
 .	endif
 
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 .	for file in LICENSE README examples.txt
 		${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}/
-.	endfor
-
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xinetd.d/
-.	for file in ${PORTNAME} ${PORTNAME}4 ${PORTNAME}6
-		${INSTALL_DATA} ${WRKSRC}/xinetd.d/${file} \
-			${STAGEDIR}${PREFIX}/etc/xinetd.d/
 .	endfor
 
 .include <bsd.port.mk>
