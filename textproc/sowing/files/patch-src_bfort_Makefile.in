@@ -1,6 +1,6 @@
 --- ./src/bfort/Makefile.in.orig	2009-12-28 17:03:12.000000000 +0100
 +++ ./src/bfort/Makefile.in	2009-12-30 14:34:18.000000000 +0100
-@@ -4,14 +4,14 @@
+@@ -4,15 +4,15 @@
  include ../../Makerules
  top_srcdir=@top_srcdir@
  srcdir=@srcdir@
@@ -12,8 +12,10 @@
  
  LIBS       =  ../../lib/libsowing.a
  INCLUDES   = -I${top_srcdir}/include -I../../include
--DEFS       = -DBASEDEF='"@datarootdir@/basedefs.txt"'
-+DEFS       = -DBASEDEF='"@datadir@/basedefs.txt"'
+-DEFS       = -DBASEDEF='"@datarootdir@/bfort-base.txt"' \
+-	     -DBASEPATH='"@datarootdir@"'
++DEFS       = -DBASEDEF='"@datadir@/bfort-base.txt"' \
++	     -DBASEPATH='"@datadir@"'
  PROGRAMS   = bfort
  
  bfort: bfort.o  doc.o
