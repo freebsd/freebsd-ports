@@ -31,7 +31,7 @@
        LDFLAGS_SUFFIX_windows := $$($1_WINDOWS_JLI_LIB) \
            $(JDK_OUTPUTDIR)/objs/libjava/java.lib advapi32.lib $5, \
        LDFLAGS_SUFFIX_linux := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli $(LIBDL) -lc, \
-+      LDFLAGS_SUFFIX_bsd := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli $(LIBDL) -lc, \
++      LDFLAGS_SUFFIX_bsd := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -lc, \
        LDFLAGS_SUFFIX_solaris := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -lthread $(LIBDL) -lc, \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/$1_objs$(OUTPUT_SUBDIR), \
        OUTPUT_DIR := $$($1_OUTPUT_DIR_ARG)$(OUTPUT_SUBDIR), \
@@ -48,7 +48,7 @@
          $(call SET_SHARED_LIBRARY_ORIGIN), \
      LDFLAGS_linux := -lc, \
      LDFLAGS_solaris := $(UNPACKEXE_LDFLAGS_solaris) -lc, \
-+    LDFLAGS_bsd := -lstdc++ -lc, \
++    LDFLAGS_bsd := -lc, \
      LDFLAGS_SUFFIX := $(LIBCXX), \
      OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
      OUTPUT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
