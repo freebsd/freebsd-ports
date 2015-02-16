@@ -1,15 +1,15 @@
-libexec/cups/backend/cloudprint
+libexec/cups/backend/gcp
 libexec/cups/driver/cupscloudprint
+share/cloudprint-cups/.coveragerc
 share/cloudprint-cups/COPYING
 share/cloudprint-cups/README.md
 share/cloudprint-cups/auth.py
 share/cloudprint-cups/backend.py
+share/cloudprint-cups/ccputils.py
 share/cloudprint-cups/cloudprintrequestor.py
 share/cloudprint-cups/deleteaccount.py
 share/cloudprint-cups/dynamicppd.py
-share/cloudprint-cups/full-test.sh
 share/cloudprint-cups/listcloudprinters.py
-share/cloudprint-cups/listdrivefiles.py
 share/cloudprint-cups/oauth2client/__init__.py
 share/cloudprint-cups/oauth2client/anyjson.py
 share/cloudprint-cups/oauth2client/client.py
@@ -18,19 +18,31 @@ share/cloudprint-cups/oauth2client/crypt.py
 share/cloudprint-cups/oauth2client/locked_file.py
 share/cloudprint-cups/oauth2client/multistore_file.py
 share/cloudprint-cups/printer.py
+share/cloudprint-cups/printermanager.py
+share/cloudprint-cups/refreshtokens.py
 share/cloudprint-cups/reportissues.py
-share/cloudprint-cups/setup.py
+share/cloudprint-cups/selinux/Makefile
+share/cloudprint-cups/selinux/cupscloudprint.fc
+share/cloudprint-cups/selinux/cupscloudprint.if
+share/cloudprint-cups/selinux/cupscloudprint.pp
+share/cloudprint-cups/selinux/cupscloudprint.te
 share/cloudprint-cups/setupcloudprint.py
-share/cloudprint-cups/submitjob.py
-share/cloudprint-cups/test_auth.py
-share/cloudprint-cups/test_backend.py
-share/cloudprint-cups/test_cloudprintrequestor.py
-share/cloudprint-cups/test_mockrequestor.py
-share/cloudprint-cups/test_printer.py
-share/cloudprint-cups/testfiles/NotPdf.txt
-share/cloudprint-cups/testfiles/Test Page.pdf
-share/cloudprint-cups/testfiles/Test Page.png
-share/cloudprint-cups/testfiles/capabilitylist
-share/cloudprint-cups/testfiles/testppd.ppd
+share/cloudprint-cups/testing/full-test.sh
+share/cloudprint-cups/testing/listdrivefiles.py
+share/cloudprint-cups/testing/mockrequestor.py
+share/cloudprint-cups/testing/remove-test.sh
+share/cloudprint-cups/testing/test_auth.py
+share/cloudprint-cups/testing/test_ccputils.py
+share/cloudprint-cups/testing/test_cloudprintrequestor.py
+share/cloudprint-cups/testing/test_printer.py
+share/cloudprint-cups/testing/test_printermanager.py
+share/cloudprint-cups/testing/testfiles/NotPdf.txt
+share/cloudprint-cups/testing/testfiles/Test Page Corrupt.pdf
+share/cloudprint-cups/testing/testfiles/Test Page reader.ps
+share/cloudprint-cups/testing/testfiles/Test Page.pdf
+share/cloudprint-cups/testing/testfiles/Test Page.png
+share/cloudprint-cups/testing/testfiles/Test Page.ps
+share/cloudprint-cups/testing/testfiles/capabilitylist
+share/cloudprint-cups/testing/testfiles/testppd.ppd
 share/cloudprint-cups/upgrade.py
 @dir share/cups/model
