@@ -12,7 +12,7 @@ COMMENT=	Multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
 
-USES=		pkgconfig pathfix gmake libtool
+USES=		pkgconfig pathfix gmake libtool gettext-tools
 USE_GNOME=	glib20 intltool libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -23,11 +23,9 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+NLS_USES=	gettext-runtime
 
-.if !${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 .if !${PORT_OPTIONS:MNLS}
