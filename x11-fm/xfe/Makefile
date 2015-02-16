@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfe
-PORTVERSION=	1.37
-PORTREVISION=	1
+PORTVERSION=	1.40
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -16,27 +15,23 @@ LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 
 OPTIONS_DEFINE=	NLS
 
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=	nls
+
+USES=		desktop-file-utils gettext gmake pathfix
 USE_XORG=	xft
 USE_GNOME=	intltool
-USES=		gettext gmake pathfix
 GNU_CONFIGURE=	yes
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/local/share/xfe|${DATADIR}|g' \
-		${WRKSRC}/src/XFileExplorer.cpp \
-		${WRKSRC}/src/help.h \
-		${WRKSRC}/src/xfedefs.h
-	@${REINPLACE_CMD} -e 's|freetype/||g' ${WRKSRC}/configure
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.endif
+.for i in XFileExplorer.cpp help.h xfedefs.h
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/share/xfe|${DATADIR}|g' ${WRKSRC}/src/${i}
+.endfor
+	@${REINPLACE_CMD} -e \
+		'/<utmp.h>/d' ${WRKSRC}/xvt/ttyinit.c
 
 .include <bsd.port.mk>
