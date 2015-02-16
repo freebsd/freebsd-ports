@@ -97,10 +97,8 @@ do-install:
 		. ${STAGEDIR}${PREFIX}/share/locale)
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${PORTDOCS:Nnotes}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDOCS:Nnotes}" ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		notes ${STAGEDIR}${DOCSDIR})
 .endif

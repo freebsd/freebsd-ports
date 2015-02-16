@@ -32,14 +32,15 @@ MANPAGES_CONFIGURE_ENABLE=xmlto
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
-NLS_LDFLAGS=	-lintl
+NLS_LIBS=	-lintl
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/s/-ldl//g; /LIBRT/s/-lrt//g;' \
 		${WRKSRC}/configure
 	${FIND} -E ${WRKSRC} -type f -regex \
 		'.*\.([[:digit:]]|spec\.in|csv|xml)' -exec \
-		${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${REINPLACE_CMD} -i .pathfix.bak \
+		-e 's|/usr/share|${PREFIX}/share|g' \
 		-e 's|/etc/asound\.conf|${LOCALBASE}&|g' {} +
 
 .include <bsd.port.mk>
