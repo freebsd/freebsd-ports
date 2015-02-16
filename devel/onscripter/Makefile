@@ -53,7 +53,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/www && ${COPYTREE_SHARE} \
 		. ${STAGEDIR}${DOCSDIR} \
 		"! -name *.orig ! -name *.bak")

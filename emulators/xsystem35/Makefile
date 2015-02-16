@@ -68,14 +68,11 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc;\
-		${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/contrib; \
-		${INSTALL_DATA} *.* ${STAGEDIR}${EXAMPLESDIR})
-	@(cd ${WRKSRC}/patch; \
-		${INSTALL_DATA} pastel.diff ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} \
+		"*.*" ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/patch/pastel.diff \
+		${WRKSRC}/src/xsys35rc.sample \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

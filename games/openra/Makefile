@@ -28,7 +28,7 @@ MAKE_ARGS=	VERSION="${GH_TAGNAME}"
 INSTALL_TARGET=	install-all install-linux-shortcuts
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 PORTDATA=	*
-PORTDOCS=	*
+PORTDOCS=	*.html
 
 OPTIONS_DEFINE=	DOCS TEST ZENITY
 OPTIONS_DEFAULT=ZENITY
@@ -71,8 +71,8 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
