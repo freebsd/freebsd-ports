@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 # Please do not submit untested updates.  Be sure to start hadoop in
-# distributed mode and run few map/reduce.  Be sure there are no exception
-# in any of it's log files.  This version is tested under the load and
+# distributed mode and to run few map/reduce.  Be sure there are no exception
+# in any of it's log files.  This version was tested under the load and
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}/common/stable
 PKGNAMESUFFIX=	2
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz jetty-6.1.14.zip
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
