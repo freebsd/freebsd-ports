@@ -76,15 +76,27 @@
 +
 +    slen = strlen(string);
 +    s = string;
-+    dlen = buflen = 2*slen;
-+    d = buf = malloc(buflen + 1);
++
++    /*  Make sure OUTBUFSIZ + 1 never ends up smaller than FILNAMSIZ
++     *  as this function also gets called with G.outbuf in fileio.c
++     */
++    buflen = FILNAMSIZ;
++    if (OUTBUFSIZ + 1 < FILNAMSIZ)
++    {
++        buflen = OUTBUFSIZ + 1;
++    }
++
++    d = buf = malloc(buflen);
 +    if(!d)
 +    	goto cleanup;
++
 +    bzero(buf,buflen);
++    dlen = buflen - 1;
++
 +    if(iconv(cd, &s, &slen, &d, &dlen) == (size_t)-1)
 +    	goto cleanup;
 +    strncpy(string, buf, buflen);
-+    
++
 +    cleanup:
 +    free(buf);
 +    iconv_close(cd);
