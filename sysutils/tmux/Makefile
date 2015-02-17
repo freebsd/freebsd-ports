@@ -3,6 +3,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.9a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S/a$//}
 
@@ -11,7 +12,7 @@ COMMENT=	Terminal Multiplexer
 
 LICENSE=	BSD2CLAUSE
 
-USES=		pkgconfig shebangfix
+USES=		pkgconfig shebangfix ncurses
 SHEBANG_FILES=	examples/tmux_backup.sh
 
 GNU_CONFIGURE=	yes
