@@ -58,6 +58,7 @@
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
     SUBDIR += libpurple
+    SUBDIR += libstrophe
     SUBDIR += libtelepathy
     SUBDIR += libyahoo2
     SUBDIR += licq
