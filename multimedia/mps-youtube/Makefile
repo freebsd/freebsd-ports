@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mps-youtube
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	CHEESESHOP
@@ -37,8 +37,6 @@ PLAYER_DESC=	Video player
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},1' \
