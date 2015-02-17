@@ -101,7 +101,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	4.8
+USE_GCC=	yes
 USES+=		bison desktop-file-utils gmake perl5 pkgconfig python tar:xz
 USE_PERL5=	build
 WITHOUT_CPU_CFLAGS=	true
@@ -262,6 +262,11 @@ post-patch:
 .if defined (USE_GCC)
 	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
 	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	# g++49 -Os sometimes leaves inline class methods undefined
+	if [ ${CXX} = g++49 ]; then \
+		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
+		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
+	fi
 .else
 	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
 	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
