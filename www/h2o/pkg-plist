@@ -1,0 +1,5 @@
+bin/h2o
+@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
+@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_PIDDIR%%
+@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%ETCDIR%%
+@sample %%ETCDIR%%/h2o.conf.sample
