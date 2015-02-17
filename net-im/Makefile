@@ -115,6 +115,7 @@
     SUBDIR += plasma-applet-ktp
     SUBDIR += poezio
     SUBDIR += pork
+    SUBDIR += profanity
     SUBDIR += prosody
     SUBDIR += proxy65
     SUBDIR += psi
