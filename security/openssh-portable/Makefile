@@ -1,5 +1,5 @@
 # Created by: dwcjr@inethouston.net
-# $FreeBSD$
+# $FreeBSD: head/security/openssh-portable/Makefile 376373 2015-01-05 23:21:27Z bdrewery $
 
 PORTNAME=	openssh
 DISTVERSION=	6.7p1
@@ -224,16 +224,8 @@ post-patch:
 			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
-		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
-	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
-		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_VERSION	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
 .if ${PORT_OPTIONS:MHPN}
-	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
+	@${REINPLACE_CMD} -e 's|SSH_VERSION SSH_PORTABLE|SSH_VERSION SSH_PORTABLE SSH_HPN|' \
 		${WRKSRC}/version.h
 .endif
 

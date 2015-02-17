@@ -1,0 +1,115 @@
+--- modules/ssl/ssl_engine_init.c.orig	2014-07-14 14:29:22.000000000 +0200
++++ modules/ssl/ssl_engine_init.c	2014-12-17 10:13:39.269794278 +0100
+@@ -353,9 +353,11 @@
+             return ssl_die(s);
+         }
+ 
++#ifdef ENGINE_CTRL_CHIL_SET_FORKCHECK
+         if (strEQ(mc->szCryptoDevice, "chil")) {
+             ENGINE_ctrl(e, ENGINE_CTRL_CHIL_SET_FORKCHECK, 1, 0, 0);
+         }
++#endif
+ 
+         if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
+             ap_log_error(APLOG_MARK, APLOG_EMERG, 0, s, APLOGNO(01889)
+@@ -828,7 +830,11 @@
+         }
+     }
+ 
+-    n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
++#ifndef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
++          n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
++#else
++          n = _SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
++#endif
+                                       (char *)chain,
+                                       skip_first, NULL);
+     if (n < 0) {
+--- modules/ssl/ssl_util_ssl.c.orig	2014-03-02 21:20:14.000000000 +0100
++++ modules/ssl/ssl_util_ssl.c	2014-12-17 10:11:23.293801088 +0100
+@@ -460,7 +460,11 @@
+  * format, possibly followed by a sequence of CA certificates that
+  * should be sent to the peer in the SSL Certificate message.
+  */
++#ifndef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
+ int SSL_CTX_use_certificate_chain(
++#else
++int _SSL_CTX_use_certificate_chain(
++#endif
+     SSL_CTX *ctx, char *file, int skipfirst, pem_password_cb *cb)
+ {
+     BIO *bio;
+--- modules/ssl/ssl_util_ssl.h.orig	2014-03-02 21:20:14.000000000 +0100
++++ modules/ssl/ssl_util_ssl.h	2014-12-17 10:10:36.197804421 +0100
+@@ -69,7 +69,11 @@
+ BOOL        SSL_X509_match_name(apr_pool_t *, X509 *, const char *, BOOL, server_rec *);
+ BOOL        SSL_X509_INFO_load_file(apr_pool_t *, STACK_OF(X509_INFO) *, const char *);
+ BOOL        SSL_X509_INFO_load_path(apr_pool_t *, STACK_OF(X509_INFO) *, const char *);
++#ifndef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
+ int         SSL_CTX_use_certificate_chain(SSL_CTX *, char *, int, pem_password_cb *);
++#else
++int         _SSL_CTX_use_certificate_chain(SSL_CTX *, char *, int, pem_password_cb *);
++#endif
+ char       *SSL_SESSION_id2sz(unsigned char *, int, char *, int);
+ 
+ #endif /* __SSL_UTIL_SSL_H__ */
+--- configure.orig	2014-12-17 10:02:21.347839093 +0100
++++ configure	2014-12-17 10:05:43.329830871 +0100
+@@ -24897,6 +24897,17 @@
+ fi
+ done
+ 
++      for ac_func in SSL_CTX_use_certificate_chain
++do :
++  ac_fn_c_check_func "$LINENO" "SSL_CTX_use_certificate_chain" "ac_cv_func_SSL_CTX_use_certificate_chain"
++if test "x$ac_cv_func_SSL_CTX_use_certificate_chain" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN 1
++_ACEOF
++
++fi
++done
++
+       if test "x$liberrors" != "x"; then
+         { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: OpenSSL libraries are unusable" >&5
+ $as_echo "$as_me: WARNING: OpenSSL libraries are unusable" >&2;}
+--- acinclude.m4.orig	2014-01-05 09:37:21.000000000 +0100
++++ acinclude.m4	2014-12-17 10:05:33.351835262 +0100
+@@ -577,6 +577,7 @@
+       AC_CHECK_HEADERS([openssl/engine.h])
+       AC_CHECK_FUNCS([SSLeay_version SSL_CTX_new], [], [liberrors="yes"])
+       AC_CHECK_FUNCS([ENGINE_init ENGINE_load_builtin_engines])
++      AC_CHECK_FUNCS([SSL_CTX_use_certificate_chain])
+       if test "x$liberrors" != "x"; then
+         AC_MSG_WARN([OpenSSL libraries are unusable])
+       fi
+--- modules/ssl/ssl_engine_rand.c.orig	2011-12-05 01:08:01.000000000 +0100
++++ modules/ssl/ssl_engine_rand.c	2014-12-17 16:33:37.584222069 +0100
+@@ -81,15 +81,6 @@
+                 nDone += ssl_rand_feedfp(p, fp, pRandSeed->nBytes);
+                 ssl_util_ppclose(s, p, fp);
+             }
+-            else if (pRandSeed->nSrc == SSL_RSSRC_EGD) {
+-                /*
+-                 * seed in contents provided by the external
+-                 * Entropy Gathering Daemon (EGD)
+-                 */
+-                if ((n = RAND_egd(pRandSeed->cpPath)) == -1)
+-                    continue;
+-                nDone += n;
+-            }
+             else if (pRandSeed->nSrc == SSL_RSSRC_BUILTIN) {
+                 struct {
+                     time_t t;
+--- include/ap_config_auto.h.in.orig	2014-12-17 17:17:19.700041176 +0100
++++ include/ap_config_auto.h.in	2014-12-17 17:18:33.231033347 +0100
+@@ -64,6 +64,9 @@
+ /* Define to 1 if you have the `ENGINE_load_builtin_engines' function. */
+ #undef HAVE_ENGINE_LOAD_BUILTIN_ENGINES
+ 
++/* Define to 1 if you run LibreSSL which defines SSL_CTX_use_certificate_chain as well */
++#undef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
++
+ /* Define to 1 if you have the `epoll_create' function. */
+ #undef HAVE_EPOLL_CREATE
+ 

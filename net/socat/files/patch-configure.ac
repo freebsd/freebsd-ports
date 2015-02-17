@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-01-24 10:15:22 UTC
++++ configure.ac
+@@ -1451,6 +1451,8 @@ AC_CHECK_FUNC(TLSv1_2_server_method, AC_
+ AC_CHECK_FUNC(DTLSv1_client_method, AC_DEFINE(HAVE_DTLSv1_client_method), AC_CHECK_LIB(crypt, DTLSv1_client_method, [LIBS=-lcrypt $LIBS]))
+ AC_CHECK_FUNC(DTLSv1_server_method, AC_DEFINE(HAVE_DTLSv1_server_method), AC_CHECK_LIB(crypt, DTLSv1_server_method, [LIBS=-lcrypt $LIBS]))
+ 
++AC_CHECK_FUNC(RAND_egd, AC_DEFINE(HAVE_RAND_egd_method), AC_CHECK_LIB(crypto, RAND_egd, [LIBS=-lcrypt $LIBS]))
++
+ dnl Run time checks
+ 
+ 

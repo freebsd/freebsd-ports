@@ -1,5 +1,5 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/security/py-cryptography/Makefile 377287 2015-01-18 09:38:15Z koobs $
 
 PORTNAME=	cryptography
 PORTVERSION=	0.7.2

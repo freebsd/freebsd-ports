@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/databases/mariadb-client/Makefile 373557 2014-11-28 11:33:14Z marino $
 
 PORTNAME=	mariadb
 PKGNAMESUFFIX=	53-client

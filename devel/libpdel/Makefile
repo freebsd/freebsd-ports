@@ -1,5 +1,5 @@
 # Created by: Archie Cobbs
-# $FreeBSD$
+# $FreeBSD: head/devel/libpdel/Makefile 354083 2014-05-14 18:29:25Z garga $
 
 PORTNAME=	libpdel
 PORTVERSION=	0.5.3
