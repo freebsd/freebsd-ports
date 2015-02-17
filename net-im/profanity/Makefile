@@ -11,7 +11,7 @@ COMMENT=	Console based XMPP client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libstrophe.so:${PORTNAME}/net-im/libstrophe \
+LIB_DEPENDS=	libstrophe.so:${PORTSDIR}/net-im/libstrophe \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libotr.so:${PORTSDIR}/security/libotr3
