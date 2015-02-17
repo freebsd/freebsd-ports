@@ -26,6 +26,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	EXAMPLES
 
+CONFIGURE_ARGS=	--default
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
