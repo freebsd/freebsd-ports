@@ -1,5 +1,5 @@
---- unix/unix.c.orig	2009-01-23 23:31:26 UTC
-+++ unix/unix.c
+--- unix.c.orig	2015-02-17 15:18:36.176142072 -0800
++++ unix.c	2015-02-17 15:18:56.289341100 -0800
 @@ -30,6 +30,9 @@
  #define UNZIP_INTERNAL
  #include "unzip.h"
@@ -10,7 +10,7 @@
  #ifdef SCO_XENIX
  #  define SYSNDIR
  #else  /* SCO Unix, AIX, DNIX, TI SysV, Coherent 4.x, ... */
-@@ -1874,3 +1877,90 @@ static void qlfix(__G__ ef_ptr, ef_len)
+@@ -1874,3 +1877,102 @@
      }
  }
  #endif /* QLZIP */
