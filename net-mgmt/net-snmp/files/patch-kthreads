@@ -50,7 +50,7 @@ index d99cc7d..e853779 100644
  extern int      count_processes(void);
 -extern int      swrun_count_processes(void);
 +#if USING_HOST_DATA_ACCESS_SWRUN_MODULE
-+static int      count_kthreads = 1;
++static int      count_kthreads = 0;
 +
 +static void parse_count_kthreads(const char *token, const char *line)
 +{
@@ -77,7 +77,7 @@ index d99cc7d..e853779 100644
      case HRSYS_PROCS:
  #if USING_HOST_DATA_ACCESS_SWRUN_MODULE
 -        long_return = swrun_count_processes();
-+        long_return = swrun_count_processes(1);
++        long_return = swrun_count_processes(count_kthreads);
  #elif USING_HOST_HR_SWRUN_MODULE
          long_return = count_processes();
  #else
