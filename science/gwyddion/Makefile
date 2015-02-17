@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.38
+PORTVERSION=	2.40
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -48,6 +48,8 @@ UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 UNIQUE_CONFIGURE_WITH=	unique
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|thumbnailer \\|thumbnailer| ; \
 		 s|devel-docs$$||' ${WRKSRC}/Makefile.in
