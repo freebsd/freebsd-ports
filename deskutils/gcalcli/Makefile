@@ -2,22 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	gcalcli
-PORTVERSION=	2.4.2
+PORTVERSION=	3.2
 CATEGORIES=	deskutils
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	ports@thelanman.net
 COMMENT=	Google Calendar Command Line Interface
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata \
+		${PYTHON_SITELIBDIR}/gflags.py:${PORTSDIR}/devel/py-gflags \
+		${PYTHON_SITELIBDIR}/apiclient/__init__.py:${PORTSDIR}/www/py-google-api-python-client \
+		${PYTHON_SITELIBDIR}/httplib2/__init__.py:${PORTSDIR}/www/py-httplib2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	insanum
 GH_PROJECT=	gcalcli
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	a0fc61a
+GH_COMMIT=	3964779
 
 USES=		python
 
