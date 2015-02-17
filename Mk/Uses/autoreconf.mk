@@ -75,6 +75,13 @@ do-autoreconf:
 # Don't modify time stamps if the files already exist
 	@test -e ${CONFIGURE_WRKSRC}/${f} || ${TOUCH} ${CONFIGURE_WRKSRC}/${f}
 .endfor
+.if defined(_USE_GNOME) && ${_USE_GNOME:Mintltool}
+	@(cd ${CONFIGURE_WRKSRC} && \
+		if test -f configure.ac; then configure=configure.ac; \
+		else configure=configure.in; fi && \
+		if ${EGREP} -q '^(AC|IT)_PROG_INTLTOOL' $${configure}; \
+		then ${LOCALBASE}/bin/intltoolize -f -c; fi)
+.endif
 	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
 .endif
 
