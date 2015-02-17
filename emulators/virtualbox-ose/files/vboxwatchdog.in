@@ -18,7 +18,7 @@
 name=vboxwatchdog
 rcvar=vboxwatchdog_enable
 
-command="%%PREFIX%%/bin/VBoxBalloonCtrl"
+command="%%VBOXDIR%%/VBoxBalloonCtrl"
 pidfile="/var/run/${name}.pid"
 
 start_cmd="${name}_start"
@@ -39,7 +39,7 @@ vboxwatchdog_start()
 	unset VBOX_RELEASE_LOG_DEST
 
 	echo -n "Starting ${name}"
-	/usr/bin/install -o ${vboxwatchdog_user} -g wheel -m 644 /dev/null ${pidfile}
+	/usr/bin/install -o ${vboxwatchdog_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
 	/usr/sbin/daemon -f -p ${pidfile} -u ${vboxwatchdog_user} ${command} ${vboxwatchdog_flags}
 	echo '.'
 }
