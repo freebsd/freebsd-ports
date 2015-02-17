@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	quimup
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/Quimup/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt 4 client for MPD (the Music Player Daemon)
+COMMENT=	Qt4 client for MPD (the Music Player Daemon)
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
+		libtag.so:${PORTSDIR}/audio/taglib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
@@ -23,14 +24,16 @@ USE_QT4=	corelib gui network \
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
-DESKTOP_ENTRIES="Quimup" "MPD client" "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}" "Audio;AudioVideo;Qt;" true
+DESKTOP_ENTRIES="Quimup" "MPD client" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
+		"Audio;AudioVideo;Qt;" true
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CONFIG/s|-O2|| ; \
-		 s|/usr/lib/|${LOCALBASE}/lib/| ; \
 		 s|^QMAKE_|#QMAKE_|' ${WRKSRC}/${PORTNAME}.pro
+	@${REINPLACE_CMD} -e \
+		'/^#define get_time/d' ${WRKSRC}/src/qm_playlistview.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
