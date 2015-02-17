@@ -1,10 +1,10 @@
-@unexec if cmp -s %D/%%WWWDIR%%/config.php-example %D/%%WWWDIR%%/config.php; then rm -f %D/%%WWWDIR%%/config.php; fi
-%%WWWDIR%%/config.php-example
-@exec if [ ! -f %D/%%WWWDIR%%/config.php ]; then cp -p %D/%%WWWDIR%%/config.php-example %D/%%WWWDIR%%/config.php; fi
+@group www
+@owner www
 %%WWWDIR%%/CHANGELOG.txt
 %%WWWDIR%%/GPLv3.txt
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.txt
+@sample %%ETCDIR%%/config.php.sample
 %%WWWDIR%%/css/jquery-ui.css
 %%WWWDIR%%/css/jquery.projectPlugins.css
 %%WWWDIR%%/css/layout.css
@@ -89,6 +89,7 @@
 %%WWWDIR%%/images/vbox/cd_disabled_32px.png
 %%WWWDIR%%/images/vbox/cd_unmount_16px.png
 %%WWWDIR%%/images/vbox/cd_unmount_dis_16px.png
+%%WWWDIR%%/images/vbox/cd_unmount_disabled_16px.png
 %%WWWDIR%%/images/vbox/chipset_16px.png
 %%WWWDIR%%/images/vbox/chipset_disabled_16px.png
 %%WWWDIR%%/images/vbox/close_16px.png
@@ -455,7 +456,6 @@
 %%WWWDIR%%/js/jquery.scrollTo-min.js
 %%WWWDIR%%/js/jquery.tipped-2.1b.min.js
 %%WWWDIR%%/js/language.php
-%%WWWDIR%%/js/phptest.php
 %%WWWDIR%%/js/phpvirtualbox.js
 %%WWWDIR%%/js/utils.js
 %%WWWDIR%%/languages/de.xml
@@ -554,18 +554,3 @@
 %%WWWDIR%%/screen.php
 %%WWWDIR%%/tightvnc/VncViewer.jar
 %%WWWDIR%%/vboxinit
-@dirrm %%WWWDIR%%/tightvnc
-@dirrm %%WWWDIR%%/rdpweb
-@dirrm %%WWWDIR%%/panes
-@dirrm %%WWWDIR%%/lib/auth
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/languages/source
-@dirrm %%WWWDIR%%/languages
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/images/vbox/OSE
-@dirrm %%WWWDIR%%/images/vbox
-@dirrm %%WWWDIR%%/images/jqueryFileTree
-@dirrm %%WWWDIR%%/images/jquery-ui
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%
