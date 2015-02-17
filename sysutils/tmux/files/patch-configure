@@ -1,8 +1,17 @@
---- configure.bak	2013-03-26 21:08:51.000000000 +0100
-+++ configure	2014-01-28 10:49:58.000000000 +0100
-@@ -5635,6 +5635,28 @@
+--- configure.bak	2014-02-22 15:56:15.000000000 -0500
++++ configure	2014-09-16 12:14:41.103867989 -0400
+@@ -4975,7 +4975,7 @@
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' terminfo curses ncurses tinfo; do
++for ac_lib in '' terminfo ncurses tinfo; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+@@ -5692,6 +5692,28 @@
+ 	fi
  fi
- 
  if test "x$found_strnvis" = xyes; then
 +   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if strnvis is broken" >&5
 +$as_echo_n "checking if strnvis is broken... " >&6; }
