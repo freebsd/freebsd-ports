@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.11
+DISTVERSION=	0.3.12
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -31,8 +31,5 @@ MAKE_JOBS_UNSAFE=yes
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
 		${QMAKE_ARGS}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
