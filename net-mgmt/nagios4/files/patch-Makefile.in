@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2014-08-12 15:00:01 UTC
 +++ Makefile.in
-@@ -245,11 +245,10 @@
+@@ -245,11 +245,10 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:
@@ -13,7 +13,7 @@
  
  	@echo ""
  	@echo "*** Main program, CGIs and HTML files installed ***"
-@@ -270,19 +269,18 @@
+@@ -270,19 +269,18 @@ install-basic:
  
  
  install-config:
@@ -45,7 +45,7 @@
  
  	@echo ""
  	@echo "*** Config files installed ***"
-@@ -330,7 +328,6 @@
+@@ -330,7 +328,6 @@ install-daemoninit:
  
  install-commandmode:
  	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(LOGDIR)/rw
