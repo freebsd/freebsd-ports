@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-alsa --disable-pulseaudio \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		gettext-tools gmake libtool pathfix pkgconfig
 USE_GNOME=	intlhack
 USE_LDCONFIG=	yes
 
@@ -51,7 +51,7 @@ GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 
 OPUS_CONFIGURE_ENABLE=	opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
