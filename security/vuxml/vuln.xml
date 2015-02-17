@@ -569,6 +569,7 @@ Notes:
     <dates>
       <discovery>2015-01-06</discovery>
       <entry>2015-01-29</entry>
+      <modified>2015-02-17</modified>
     </dates>
   </vuln>
 
@@ -1901,6 +1902,7 @@ Notes:
     <dates>
       <discovery>2014-10-30</discovery>
       <entry>2014-12-11</entry>
+      <modified>2015-01-29</modified>
     </dates>
   </vuln>
 
