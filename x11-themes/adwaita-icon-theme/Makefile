@@ -19,6 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GTK_ENCODE_SYMBOLIC_SVG="false"
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/locale
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/locale
 
 .include <bsd.port.mk>
