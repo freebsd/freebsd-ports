@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -105,7 +105,8 @@ PLIST_SUB+=	GUEST_VER=${VBOX_GUEST_VER} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
 		VBOXGROUP=${VBOXGROUP}
-SUB_LIST+=	VBOXGROUP=${VBOXGROUP} \
+SUB_LIST+=	VBOXDIR=${VBOX_DIR} \
+		VBOXGROUP=${VBOXGROUP} \
 		VBOXUSER=${VBOXUSER} \
 		VBOXWSUSER=${VBOXWSUSER}
 USE_RC_SUBR+=	vboxheadless vboxwatchdog

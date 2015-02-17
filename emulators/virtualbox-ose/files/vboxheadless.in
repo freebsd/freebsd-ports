@@ -28,7 +28,7 @@
 name="vboxheadless"
 rcvar=vboxheadless_enable
 
-command="%%PREFIX%%/bin/VBoxHeadless"
+command="%%VBOXDIR%%/VBoxHeadless"
 pidbase="/var/run/${name}"
    
 start_cmd="${name}_start"
@@ -52,7 +52,7 @@ vboxheadless_start()
 
 		/usr/bin/printf "%25s " "${vmname}"
 
-		/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
+		/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
 
 		if [ $? != 0 ]; then
 			echo "Unknown machine"
@@ -65,7 +65,7 @@ vboxheadless_start()
 		fi
 
 		/bin/sleep ${vmdelay}
-		/usr/bin/install -o ${vmuser} -g wheel -m 644 /dev/null ${mpidfile}
+		/usr/bin/install -o ${vmuser} -g %%VBOXGROUP%% -m 644 /dev/null ${mpidfile}
 		/usr/sbin/daemon -f -p ${mpidfile} -u ${vmuser} ${command} --startvm "${vmname}" ${vmflags}
 		echo "Started"
 	done
@@ -88,7 +88,7 @@ vboxheadless_stop()
 
 		if [ -n "${pid}" ]; then
 			/bin/sleep ${vmdelay}
-			/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null" 2>/dev/null
+			/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null" 2>/dev/null
 			wait_for_pids $pid >/dev/null
 			echo "Stopped"
 		else
@@ -110,7 +110,7 @@ vboxheadless_status()
 		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
 		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
 
-		/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
+		/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
 
 		if [ $? != 0 ]; then
 			/usr/bin/printf "%20s %s\n" "${vmname}" "Unknown Machine"
