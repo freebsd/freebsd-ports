@@ -23,6 +23,8 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=yes
+
 # Moonlight is installed as part of www/moonlight
 CONFIGURE_ARGS=	--with-moonlight=no --disable-dtrace
 
