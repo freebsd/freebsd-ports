@@ -69,7 +69,7 @@ start_postcmd()
 	if [ "${quagga_daemons}" = "${quagga_daemons% ${name}}" ]; then
 		return;
 	fi
-        if [ -n ${quagga_wait_for} ]; then
+        if [ -n "${quagga_wait_for}" ]; then
 		echo Waiting for ${quagga_wait_for} route...
 		while [ ${waited_for} -lt ${quagga_wait_seconds} ]; do
 			/sbin/route -n get ${quagga_wait_for} >/dev/null 2>&1 && break;
@@ -127,7 +127,7 @@ fi
 
 case "${quagga_cmd}" in
     start)
-	if [ -n ${quagga_extralibs_path} ]; then
+	if [ -n "${quagga_extralibs_path}" ]; then
 	    /sbin/ldconfig -m ${quagga_extralibs_path}
 	fi
 	do_cmd "start"
