@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90082
+PORTVERSION=	5.90083
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -38,9 +38,6 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-MooseX-Getopt>=0.30:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-MethodAttributes>=0.24:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
 		p5-MooseX-Role-WithOverloading>=0.09:${PORTSDIR}/devel/p5-MooseX-Role-WithOverloading \
-		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
-		p5-MooseX-Types-LoadableClass>=0.003:${PORTSDIR}/devel/p5-MooseX-Types-LoadableClass \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Plack>=0.9991:${PORTSDIR}/www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0.09:${PORTSDIR}/www/p5-Plack-Middleware-FixMissingBodyInRedirect \
