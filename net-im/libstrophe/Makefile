@@ -17,14 +17,10 @@ GH_ACCOUNT=	strophe
 GH_PROJECT=	libstrophe
 GH_COMMIT=	2093aac
 GH_TAGNAME=	${GH_COMMIT}
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
-USES=		libtool pkgconfig
+USES=		libtool pkgconfig autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-
-pre-configure:
-	cd ${WRKSRC}; ./bootstrap.sh
 
 .include <bsd.port.mk>
