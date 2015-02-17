@@ -564,6 +564,7 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2015-001.html</url>
+      <cvename>CVE-2015-1558</cvename>
     </references>
     <dates>
       <discovery>2015-01-06</discovery>
