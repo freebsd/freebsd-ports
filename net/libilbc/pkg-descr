@@ -5,4 +5,4 @@ of 30 ms and 15.20 kbps with an encoding length of 20 ms. The iLBC codec
 enables graceful speech quality degradation in the case of lost frames,
 which occurs in connection with lost or delayed IP packets.
 
-WWW: http://github.com/dekkers/libilbc
+WWW: https://github.com/TimothyGu/libilbc
