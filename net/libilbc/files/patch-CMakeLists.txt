@@ -1,0 +1,45 @@
+--- CMakeLists.txt.orig	2014-12-14 19:34:22 UTC
++++ CMakeLists.txt
+@@ -50,7 +50,6 @@ else()
+ endif()
+ 
+ configure_file(config.h.cmakein config.h   @ONLY)
+-configure_file(libilbc.pc.in    libilbc.pc @ONLY)
+ 
+ #############################################################################
+ ## Configure output files
+@@ -175,8 +174,9 @@ target_link_libraries(ilbc ${CMAKE_THREA
+ ## Compiler flags
+ #############################################################################
+ 
+-if(${CMAKE_COMPILER_IS_GNUCC})
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Wextra -Werror -fvisibility=hidden -Wno-unused-parameter -fno-strict-aliasing")
++if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
++   "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
++    set(CMAKE_C_FLAGS "-Wall -Wextra -fvisibility=hidden -Wno-unused-parameter -fno-strict-aliasing")
+ endif()
+ 
+ ###################################################################################################
+@@ -186,18 +186,15 @@ endif()
+ set(prefix "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "${prefix}")
+ set(includedir "${prefix}/include")
+-get_property(LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
+-if (${LIB64})
+-    set(libdir "${exec_prefix}/lib64")
+-else()
+-    set(libdir "${exec_prefix}/lib")
+-endif()
++set(libdir "${exec_prefix}/lib")
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libilbc.pc
+-        DESTINATION ${libdir}/pkgconfig)
++        DESTINATION ${prefix}/libdata/pkgconfig)
+ install(FILES ilbc/interface/ilbc.h
+         DESTINATION ${includedir})
+ install(TARGETS ilbc
+         ARCHIVE DESTINATION ${libdir}
+         LIBRARY DESTINATION ${libdir}
+         RUNTIME DESTINATION bin)
++
++configure_file(libilbc.pc.in    libilbc.pc @ONLY)
