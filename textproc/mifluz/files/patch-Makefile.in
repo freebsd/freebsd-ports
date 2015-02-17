@@ -1,6 +1,16 @@
 --- ./Makefile.in.orig	2013-01-16 13:41:40.786389684 +0800
 +++ ./Makefile.in	2013-01-16 13:51:11.373721235 +0800
-@@ -957,6 +957,6 @@
+@@ -363,7 +363,7 @@
+ # or the GNU General Public License version 2 or later
+ # <http://www.gnu.org/copyleft/gpl.html>
+ #
+-SUBDIRS = clib db mifluz htdb search man doc test examples
++SUBDIRS = clib db mifluz htdb search man doc test
+ DISTCLEANFILES = autom4te.cache
+ EXTRA_DIST = .version acconfig.h Makefile.config mifluz.conf acinclude.m4
+ bin_SCRIPTS = mifluz-config
+@@ -956,7 +956,7 @@
+ 	mkdir -p ${DESTDIR}${localstatedir}/cache/mifluz
  	@if [ ! -d ${DESTDIR}${sysconfdir} ] ; then mkdir -p ${DESTDIR}${sysconfdir} ; fi
  	@if [ ! -f ${DESTDIR}${sysconfdir}/mifluz.conf ] ; \
 -	then a="cp ${srcdir}/mifluz.conf ${DESTDIR}${sysconfdir}/mifluz.conf" ; echo $$a ; $$a ; \
