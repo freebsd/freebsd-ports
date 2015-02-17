@@ -1,6 +1,6 @@
 --- base/Makefile.in.orig	2014-08-12 15:00:01 UTC
 +++ base/Makefile.in
-@@ -180,9 +180,9 @@
+@@ -180,9 +180,9 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:

@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	4.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -88,9 +88,6 @@ NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 # sed -e 's#;serviceprops=42\&#;serviceprops=10\&#g' -e \
 #	 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 UNHANDLED_HACK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-html__side.php
-
-post-patch:
-	@${REINPLACE_CMD} '/^INSTALL_OPTS=/d;/COMMAND_OPTS=/d' ${WRKSRC}/configure
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php.sample

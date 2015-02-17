@@ -1,6 +1,6 @@
 --- cgi/Makefile.in.orig	2014-08-12 15:00:01 UTC
 +++ cgi/Makefile.in
-@@ -201,9 +201,9 @@
+@@ -201,9 +201,9 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:
