@@ -20,17 +20,10 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-lm
+LIBS+=		-lm
 USE_LDCONFIG=	yes
 USES=		libtool
 
-PLIST_FILES=	include/ricehdf.h \
-		include/szip_adpt.h \
-		include/szlib.h \
-		lib/libsz.a \
-		lib/libsz.so \
-		lib/libsz.so.2 \
-		lib/libsz.so.2.0.0
 PORTDOCS=	Release_notes_2_0.pdf
 
 post-install:
