@@ -1,6 +1,6 @@
---- build_mozc.py.orig	2014-08-31 03:36:22.000000000 +0900
-+++ build_mozc.py	2014-09-17 04:37:10.000000000 +0900
-@@ -351,6 +351,11 @@
+--- build_mozc.py.orig	2015-02-15 04:18:52.000000000 +0900
++++ build_mozc.py	2015-02-19 03:40:47.000000000 +0900
+@@ -357,6 +357,11 @@
    parser.add_option('--version_file', dest='version_file',
                      help='use the specified version template file',
                      default='mozc_version_template.txt')
@@ -12,7 +12,22 @@
    AddTargetPlatformOption(parser)
  
    # Mac and Linux
-@@ -538,7 +543,7 @@
+@@ -377,6 +382,14 @@
+                     default='',
+                     help='A path to the directory where the server executable'
+                     'is installed. This option is used only on Linux.')
++  parser.add_option('--renderer_dir', dest='renderer_dir',
++                    default='',
++                    help='A path to the directory where the renderer executable'
++                    'is installed. This option is used only on Linux.')
++  parser.add_option('--tool_dir', dest='tool_dir',
++                    default='',
++                    help='A path to the directory where the tool executable'
++                    'is installed. This option is used only on Linux.')
+ 
+   # Android
+   parser.add_option('--android_arch', dest='android_arch',
+@@ -548,7 +561,7 @@
    parser = optparse.OptionParser(usage='Usage: %prog build [options]')
    AddCommonOptions(parser)
    if IsLinux():
@@ -21,7 +36,7 @@
      parser.add_option('--jobs', '-j', dest='jobs',
                        default=('%d' % default_build_concurrency),
                        metavar='N', help='run build jobs in parallel')
-@@ -701,6 +706,17 @@
+@@ -707,6 +720,17 @@
    logging.info('Building GYP command line...')
    gyp_options = ['--depth=.', '--include=%s/gyp/common.gypi' % SRC_DIR]
  
@@ -39,3 +54,18 @@
  
    mozc_root = os.path.abspath(GetTopLevelSourceDirectoryName())
    gyp_options.extend(['-D', 'abs_depth=%s' % mozc_root])
+@@ -936,6 +960,14 @@
+   if options.server_dir:
+     gyp_options.extend([
+         '-D', 'server_dir=%s' % os.path.abspath(options.server_dir)])
++  if options.tool_dir:
++    gyp_options.extend([
++        '-D', 'tool_dir=%s' % os.path.abspath(options.tool_dir)])
++  if options.renderer_dir:
++    gyp_options.extend([
++        '-D', 'renderer_dir=%s' % os.path.abspath(options.renderer_dir)])
++
++
+ 
+   # TODO(yukawa): Use ninja on OSX.
+   if generator == 'ninja':
