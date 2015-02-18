@@ -676,6 +676,7 @@
     SUBDIR += hs-ReadArgs
     SUBDIR += hs-STMonadTrans
     SUBDIR += hs-SafeSemaphore
+    SUBDIR += hs-ShellCheck
     SUBDIR += hs-Stream
     SUBDIR += hs-TypeCompose
     SUBDIR += hs-abstract-deque
