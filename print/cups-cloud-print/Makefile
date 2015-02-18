@@ -4,7 +4,7 @@ PORTNAME=	cups-cloud-print
 PORTVERSION=	20140814.2
 CATEGORIES=	print
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print using Google Cloud Print
 
 LICENSE=	GPLv3
