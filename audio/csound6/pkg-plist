@@ -23,7 +23,6 @@ bin/pv_import
 bin/pvanal
 bin/pvlook
 bin/scale
-bin/scope
 bin/scot
 bin/scsort
 bin/sdif2ad
@@ -47,7 +46,6 @@ include/csound/csound_standard_types.h
 include/csound/csound_type_system.h
 include/csound/cwindow.h
 include/csound/filebuilding.h
-@comment include/csound/float-version-double.h
 include/csound/float-version.h
 include/csound/interlocks.h
 include/csound/msg_attr.h
@@ -61,12 +59,14 @@ include/csound/version.h
 lib/csound/plugins-6.0/csladspa.so
 %%LUA%%lib/csound/plugins-6.0/libLuaCsound.so
 lib/csound/plugins-6.0/libampmidid.so
+lib/csound/plugins-6.0/libbuchla.so
 lib/csound/plugins-6.0/libcellular.so
 lib/csound/plugins-6.0/libchua.so
 lib/csound/plugins-6.0/libcontrol.so
 lib/csound/plugins-6.0/libcs_date.so
 lib/csound/plugins-6.0/libdoppler.so
 %%DSSI%%lib/csound/plugins-6.0/libdssi4cs.so
+lib/csound/plugins-6.0/libexciter.so
 lib/csound/plugins-6.0/libfareygen.so
 %%FLUIDSYNTH%%lib/csound/plugins-6.0/libfluidOpcodes.so
 lib/csound/plugins-6.0/libfractalnoise.so
@@ -106,6 +106,7 @@ lib/libcsound64.so.6.0
 %%FLTK%%%%PYTHON_SITELIBDIR%%/_CsoundAC.so
 %%PYTHON_SITELIBDIR%%/_csnd6.so
 %%PYTHON_SITELIBDIR%%/csnd6.py
+%%PYTHON_SITELIBDIR%%/icsound.py
 %%NLS%%share/locale/de/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/es_CO/LC_MESSAGES/csound6.mo

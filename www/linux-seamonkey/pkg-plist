@@ -116,6 +116,7 @@ lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/seamonkey
 lib/%%APP_NAME%%/seamonkey-bin
 lib/%%APP_NAME%%/searchplugins/creativecommons.xml
+lib/%%APP_NAME%%/searchplugins/duckduckgo.xml
 lib/%%APP_NAME%%/searchplugins/google.xml
 lib/%%APP_NAME%%/searchplugins/wikipedia.xml
 lib/%%APP_NAME%%/searchplugins/yahoo.xml

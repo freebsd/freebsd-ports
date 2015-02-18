@@ -117,9 +117,6 @@ bin/ocrfeeder-cli
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.pyo
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.py
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyc
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyo

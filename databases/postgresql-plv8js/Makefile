@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plv8js
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	databases
 MASTER_SITES=	http://api.pgxn.org/dist/plv8/${PORTVERSION}/
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-

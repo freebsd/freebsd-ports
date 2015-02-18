@@ -345,6 +345,7 @@ setenv_port=                                    devel/hs-setenv
 SHA_port=                                       security/hs-SHA                                 # executable
 shake_port=                                     devel/hs-shake                                  # executable
 shakespeare_port=                               www/hs-shakespeare
+ShellCheck_port=                                devel/hs-ShellCheck                             # executable
 show_port=                                      devel/hs-show
 silently_port=                                  devel/hs-silently
 simple-reflect_port=                            devel/hs-simple-reflect

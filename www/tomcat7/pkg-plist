@@ -130,6 +130,7 @@
 %%T%%/webapps/docs/config/resources.html
 %%T%%/webapps/docs/config/server.html
 %%T%%/webapps/docs/config/service.html
+%%T%%/webapps/docs/config/sessionidgenerator.html
 %%T%%/webapps/docs/config/systemprops.html
 %%T%%/webapps/docs/config/valve.html
 %%T%%/webapps/docs/connectors.html

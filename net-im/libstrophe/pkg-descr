@@ -1,0 +1,4 @@
+libstrophe is a minimal XMPP library written in C. It has almost no external
+dependencies, only an XML parsing library (expat or libxml are both supported).
+
+WWW: http://strophe.im/libstrophe/

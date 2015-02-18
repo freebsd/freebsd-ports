@@ -4,7 +4,4 @@ bin/nuttcp
 %%DATADIR%%/LICENSE
 %%DATADIR%%/README
 %%DATADIR%%/examples.txt
-etc/xinetd.d/nuttcp
-etc/xinetd.d/nuttcp4
-etc/xinetd.d/nuttcp6
 man/man8/nuttcp.8.gz

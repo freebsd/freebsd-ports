@@ -2,6 +2,7 @@ bin/yabause
 man/man1/yabause.1.gz
 share/applications/yabause.desktop
 share/pixmaps/yabause.png
+%%DATADIR%%/yts/ar.yts
 %%DATADIR%%/yts/de.yts
 %%DATADIR%%/yts/es.yts
 %%DATADIR%%/yts/fr.yts
@@ -10,4 +11,7 @@ share/pixmaps/yabause.png
 %%DATADIR%%/yts/nl.yts
 %%DATADIR%%/yts/pt.yts
 %%DATADIR%%/yts/pt_BR.yts
+%%DATADIR%%/yts/ru.yts
 %%DATADIR%%/yts/sv.yts
+%%DATADIR%%/yts/zh_CN.yts
+%%DATADIR%%/yts/zh_TW.yts

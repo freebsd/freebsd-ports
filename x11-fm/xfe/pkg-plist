@@ -1,13 +1,15 @@
 bin/xfe
 bin/xfi
 bin/xfp
-bin/xfv
 bin/xfw
 man/man1/xfe.1.gz
 man/man1/xfi.1.gz
 man/man1/xfp.1.gz
-man/man1/xfv.1.gz
 man/man1/xfw.1.gz
+share/applications/xfe.desktop
+share/applications/xfi.desktop
+share/applications/xfp.desktop
+share/applications/xfw.desktop
 %%NLS%%share/locale/bs/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfe.mo
@@ -32,20 +34,13 @@ man/man1/xfw.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png
-share/pixmaps/xfi.png
-share/pixmaps/xfp.png
-share/pixmaps/xfv.png
-share/pixmaps/xfw.png
 share/pixmaps/xfe.xpm
-share/pixmaps/xfv.xpm
+share/pixmaps/xfi.png
 share/pixmaps/xfi.xpm
+share/pixmaps/xfp.png
 share/pixmaps/xfp.xpm
+share/pixmaps/xfw.png
 share/pixmaps/xfw.xpm
-share/applications/xfe.desktop
-share/applications/xfw.desktop
-share/applications/xfi.desktop
-share/applications/xfv.desktop
-share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/a_16x16.png
 %%DATADIR%%/icons/blue-theme/a_32x32.png
 %%DATADIR%%/icons/blue-theme/ace_16x16.png
@@ -62,6 +57,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/bigbrokenlink.png
 %%DATADIR%%/icons/blue-theme/bigcdrom.png
 %%DATADIR%%/icons/blue-theme/bigchardev.png
+%%DATADIR%%/icons/blue-theme/bigcompare.png
 %%DATADIR%%/icons/blue-theme/bigdoc.png
 %%DATADIR%%/icons/blue-theme/bigexec.png
 %%DATADIR%%/icons/blue-theme/bigfloppy.png
@@ -95,6 +91,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/closefile.png
 %%DATADIR%%/icons/blue-theme/clrbook.png
 %%DATADIR%%/icons/blue-theme/colltree.png
+%%DATADIR%%/icons/blue-theme/compare.png
 %%DATADIR%%/icons/blue-theme/config_16x16.png
 %%DATADIR%%/icons/blue-theme/config_32x32.png
 %%DATADIR%%/icons/blue-theme/copy_big.png
@@ -115,6 +112,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/dirup.png
 %%DATADIR%%/icons/blue-theme/djvu_16x16.png
 %%DATADIR%%/icons/blue-theme/djvu_32x32.png
+%%DATADIR%%/icons/blue-theme/dl_16x16.png
+%%DATADIR%%/icons/blue-theme/dl_32x32.png
 %%DATADIR%%/icons/blue-theme/doc_16x16.png
 %%DATADIR%%/icons/blue-theme/doc_32x32.png
 %%DATADIR%%/icons/blue-theme/drw_16x16.png
@@ -123,6 +122,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/dvi_32x32.png
 %%DATADIR%%/icons/blue-theme/edit.png
 %%DATADIR%%/icons/blue-theme/enter.png
+%%DATADIR%%/icons/blue-theme/epub_16x16.png
+%%DATADIR%%/icons/blue-theme/epub_32x32.png
 %%DATADIR%%/icons/blue-theme/errorbig.png
 %%DATADIR%%/icons/blue-theme/exe_16x16.png
 %%DATADIR%%/icons/blue-theme/exe_32x32.png
@@ -161,6 +162,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/hidenumbers.png
 %%DATADIR%%/icons/blue-theme/hidethumb.png
 %%DATADIR%%/icons/blue-theme/home.png
+%%DATADIR%%/icons/blue-theme/horzpanels.png
 %%DATADIR%%/icons/blue-theme/html_16x16.png
 %%DATADIR%%/icons/blue-theme/html_32x32.png
 %%DATADIR%%/icons/blue-theme/info_16x16.png
@@ -317,6 +319,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/undo.png
 %%DATADIR%%/icons/blue-theme/unmaphost.png
 %%DATADIR%%/icons/blue-theme/uppercase.png
+%%DATADIR%%/icons/blue-theme/vertpanels.png
 %%DATADIR%%/icons/blue-theme/vhdl_16x16.png
 %%DATADIR%%/icons/blue-theme/vhdl_32x32.png
 %%DATADIR%%/icons/blue-theme/video_16x16.png
@@ -339,7 +342,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/xfe.png
 %%DATADIR%%/icons/blue-theme/xfi.png
 %%DATADIR%%/icons/blue-theme/xfp.png
-%%DATADIR%%/icons/blue-theme/xfv.png
 %%DATADIR%%/icons/blue-theme/xfw.png
 %%DATADIR%%/icons/blue-theme/xfwsmall.png
 %%DATADIR%%/icons/blue-theme/xls_16x16.png
@@ -371,6 +373,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/bigbrokenlink.png
 %%DATADIR%%/icons/brown-theme/bigcdrom.png
 %%DATADIR%%/icons/brown-theme/bigchardev.png
+%%DATADIR%%/icons/brown-theme/bigcompare.png
 %%DATADIR%%/icons/brown-theme/bigdoc.png
 %%DATADIR%%/icons/brown-theme/bigexec.png
 %%DATADIR%%/icons/brown-theme/bigfloppy.png
@@ -404,6 +407,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/closefile.png
 %%DATADIR%%/icons/brown-theme/clrbook.png
 %%DATADIR%%/icons/brown-theme/colltree.png
+%%DATADIR%%/icons/brown-theme/compare.png
 %%DATADIR%%/icons/brown-theme/config_16x16.png
 %%DATADIR%%/icons/brown-theme/config_32x32.png
 %%DATADIR%%/icons/brown-theme/copy_big.png
@@ -424,6 +428,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/dirup.png
 %%DATADIR%%/icons/brown-theme/djvu_16x16.png
 %%DATADIR%%/icons/brown-theme/djvu_32x32.png
+%%DATADIR%%/icons/brown-theme/dl_16x16.png
+%%DATADIR%%/icons/brown-theme/dl_32x32.png
 %%DATADIR%%/icons/brown-theme/doc_16x16.png
 %%DATADIR%%/icons/brown-theme/doc_32x32.png
 %%DATADIR%%/icons/brown-theme/drw_16x16.png
@@ -432,6 +438,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/dvi_32x32.png
 %%DATADIR%%/icons/brown-theme/edit.png
 %%DATADIR%%/icons/brown-theme/enter.png
+%%DATADIR%%/icons/brown-theme/epub_16x16.png
+%%DATADIR%%/icons/brown-theme/epub_32x32.png
 %%DATADIR%%/icons/brown-theme/errorbig.png
 %%DATADIR%%/icons/brown-theme/exe_16x16.png
 %%DATADIR%%/icons/brown-theme/exe_32x32.png
@@ -470,6 +478,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/hidenumbers.png
 %%DATADIR%%/icons/brown-theme/hidethumb.png
 %%DATADIR%%/icons/brown-theme/home.png
+%%DATADIR%%/icons/brown-theme/horzpanels.png
 %%DATADIR%%/icons/brown-theme/html_16x16.png
 %%DATADIR%%/icons/brown-theme/html_32x32.png
 %%DATADIR%%/icons/brown-theme/info_16x16.png
@@ -626,6 +635,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/undo.png
 %%DATADIR%%/icons/brown-theme/unmaphost.png
 %%DATADIR%%/icons/brown-theme/uppercase.png
+%%DATADIR%%/icons/brown-theme/vertpanels.png
 %%DATADIR%%/icons/brown-theme/vhdl_16x16.png
 %%DATADIR%%/icons/brown-theme/vhdl_32x32.png
 %%DATADIR%%/icons/brown-theme/video_16x16.png
@@ -648,7 +658,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/xfe.png
 %%DATADIR%%/icons/brown-theme/xfi.png
 %%DATADIR%%/icons/brown-theme/xfp.png
-%%DATADIR%%/icons/brown-theme/xfv.png
 %%DATADIR%%/icons/brown-theme/xfw.png
 %%DATADIR%%/icons/brown-theme/xfwsmall.png
 %%DATADIR%%/icons/brown-theme/xls_16x16.png
@@ -680,6 +689,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/bigbrokenlink.png
 %%DATADIR%%/icons/gnome-theme/bigcdrom.png
 %%DATADIR%%/icons/gnome-theme/bigchardev.png
+%%DATADIR%%/icons/gnome-theme/bigcompare.png
 %%DATADIR%%/icons/gnome-theme/bigdoc.png
 %%DATADIR%%/icons/gnome-theme/bigexec.png
 %%DATADIR%%/icons/gnome-theme/bigfloppy.png
@@ -713,6 +723,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/closefile.png
 %%DATADIR%%/icons/gnome-theme/clrbook.png
 %%DATADIR%%/icons/gnome-theme/colltree.png
+%%DATADIR%%/icons/gnome-theme/compare.png
 %%DATADIR%%/icons/gnome-theme/config_16x16.png
 %%DATADIR%%/icons/gnome-theme/config_32x32.png
 %%DATADIR%%/icons/gnome-theme/copy_big.png
@@ -733,6 +744,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/dirup.png
 %%DATADIR%%/icons/gnome-theme/djvu_16x16.png
 %%DATADIR%%/icons/gnome-theme/djvu_32x32.png
+%%DATADIR%%/icons/gnome-theme/dl_16x16.png
+%%DATADIR%%/icons/gnome-theme/dl_32x32.png
 %%DATADIR%%/icons/gnome-theme/doc_16x16.png
 %%DATADIR%%/icons/gnome-theme/doc_32x32.png
 %%DATADIR%%/icons/gnome-theme/drw_16x16.png
@@ -741,6 +754,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/dvi_32x32.png
 %%DATADIR%%/icons/gnome-theme/edit.png
 %%DATADIR%%/icons/gnome-theme/enter.png
+%%DATADIR%%/icons/gnome-theme/epub_16x16.png
+%%DATADIR%%/icons/gnome-theme/epub_32x32.png
 %%DATADIR%%/icons/gnome-theme/errorbig.png
 %%DATADIR%%/icons/gnome-theme/exe_16x16.png
 %%DATADIR%%/icons/gnome-theme/exe_32x32.png
@@ -779,6 +794,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/hidenumbers.png
 %%DATADIR%%/icons/gnome-theme/hidethumb.png
 %%DATADIR%%/icons/gnome-theme/home.png
+%%DATADIR%%/icons/gnome-theme/horzpanels.png
 %%DATADIR%%/icons/gnome-theme/html_16x16.png
 %%DATADIR%%/icons/gnome-theme/html_32x32.png
 %%DATADIR%%/icons/gnome-theme/info_16x16.png
@@ -935,6 +951,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/undo.png
 %%DATADIR%%/icons/gnome-theme/unmaphost.png
 %%DATADIR%%/icons/gnome-theme/uppercase.png
+%%DATADIR%%/icons/gnome-theme/vertpanels.png
 %%DATADIR%%/icons/gnome-theme/vhdl_16x16.png
 %%DATADIR%%/icons/gnome-theme/vhdl_32x32.png
 %%DATADIR%%/icons/gnome-theme/video_16x16.png
@@ -957,7 +974,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/xfe.png
 %%DATADIR%%/icons/gnome-theme/xfi.png
 %%DATADIR%%/icons/gnome-theme/xfp.png
-%%DATADIR%%/icons/gnome-theme/xfv.png
 %%DATADIR%%/icons/gnome-theme/xfw.png
 %%DATADIR%%/icons/gnome-theme/xfwsmall.png
 %%DATADIR%%/icons/gnome-theme/xls_16x16.png
@@ -989,6 +1005,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/bigbrokenlink.png
 %%DATADIR%%/icons/gnomeblue-theme/bigcdrom.png
 %%DATADIR%%/icons/gnomeblue-theme/bigchardev.png
+%%DATADIR%%/icons/gnomeblue-theme/bigcompare.png
 %%DATADIR%%/icons/gnomeblue-theme/bigdoc.png
 %%DATADIR%%/icons/gnomeblue-theme/bigexec.png
 %%DATADIR%%/icons/gnomeblue-theme/bigfloppy.png
@@ -1022,6 +1039,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/closefile.png
 %%DATADIR%%/icons/gnomeblue-theme/clrbook.png
 %%DATADIR%%/icons/gnomeblue-theme/colltree.png
+%%DATADIR%%/icons/gnomeblue-theme/compare.png
 %%DATADIR%%/icons/gnomeblue-theme/config_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/config_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/copy_big.png
@@ -1042,6 +1060,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/dirup.png
 %%DATADIR%%/icons/gnomeblue-theme/djvu_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/djvu_32x32.png
+%%DATADIR%%/icons/gnomeblue-theme/dl_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/dl_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/doc_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/doc_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/drw_16x16.png
@@ -1050,6 +1070,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/dvi_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/edit.png
 %%DATADIR%%/icons/gnomeblue-theme/enter.png
+%%DATADIR%%/icons/gnomeblue-theme/epub_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/epub_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/errorbig.png
 %%DATADIR%%/icons/gnomeblue-theme/exe_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/exe_32x32.png
@@ -1088,6 +1110,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/hidenumbers.png
 %%DATADIR%%/icons/gnomeblue-theme/hidethumb.png
 %%DATADIR%%/icons/gnomeblue-theme/home.png
+%%DATADIR%%/icons/gnomeblue-theme/horzpanels.png
 %%DATADIR%%/icons/gnomeblue-theme/html_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/html_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/info_16x16.png
@@ -1244,6 +1267,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/undo.png
 %%DATADIR%%/icons/gnomeblue-theme/unmaphost.png
 %%DATADIR%%/icons/gnomeblue-theme/uppercase.png
+%%DATADIR%%/icons/gnomeblue-theme/vertpanels.png
 %%DATADIR%%/icons/gnomeblue-theme/vhdl_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/vhdl_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/video_16x16.png
@@ -1266,7 +1290,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/xfe.png
 %%DATADIR%%/icons/gnomeblue-theme/xfi.png
 %%DATADIR%%/icons/gnomeblue-theme/xfp.png
-%%DATADIR%%/icons/gnomeblue-theme/xfv.png
 %%DATADIR%%/icons/gnomeblue-theme/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/xfwsmall.png
 %%DATADIR%%/icons/gnomeblue-theme/xls_16x16.png
@@ -1298,6 +1321,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/bigbrokenlink.png
 %%DATADIR%%/icons/kde-theme/bigcdrom.png
 %%DATADIR%%/icons/kde-theme/bigchardev.png
+%%DATADIR%%/icons/kde-theme/bigcompare.png
 %%DATADIR%%/icons/kde-theme/bigdoc.png
 %%DATADIR%%/icons/kde-theme/bigexec.png
 %%DATADIR%%/icons/kde-theme/bigfloppy.png
@@ -1331,6 +1355,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/closefile.png
 %%DATADIR%%/icons/kde-theme/clrbook.png
 %%DATADIR%%/icons/kde-theme/colltree.png
+%%DATADIR%%/icons/kde-theme/compare.png
 %%DATADIR%%/icons/kde-theme/config_16x16.png
 %%DATADIR%%/icons/kde-theme/config_32x32.png
 %%DATADIR%%/icons/kde-theme/copy_big.png
@@ -1351,6 +1376,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/dirup.png
 %%DATADIR%%/icons/kde-theme/djvu_16x16.png
 %%DATADIR%%/icons/kde-theme/djvu_32x32.png
+%%DATADIR%%/icons/kde-theme/dl_16x16.png
+%%DATADIR%%/icons/kde-theme/dl_32x32.png
 %%DATADIR%%/icons/kde-theme/doc_16x16.png
 %%DATADIR%%/icons/kde-theme/doc_32x32.png
 %%DATADIR%%/icons/kde-theme/drw_16x16.png
@@ -1359,6 +1386,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/dvi_32x32.png
 %%DATADIR%%/icons/kde-theme/edit.png
 %%DATADIR%%/icons/kde-theme/enter.png
+%%DATADIR%%/icons/kde-theme/epub_16x16.png
+%%DATADIR%%/icons/kde-theme/epub_32x32.png
 %%DATADIR%%/icons/kde-theme/errorbig.png
 %%DATADIR%%/icons/kde-theme/exe_16x16.png
 %%DATADIR%%/icons/kde-theme/exe_32x32.png
@@ -1397,6 +1426,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/hidenumbers.png
 %%DATADIR%%/icons/kde-theme/hidethumb.png
 %%DATADIR%%/icons/kde-theme/home.png
+%%DATADIR%%/icons/kde-theme/horzpanels.png
 %%DATADIR%%/icons/kde-theme/html_16x16.png
 %%DATADIR%%/icons/kde-theme/html_32x32.png
 %%DATADIR%%/icons/kde-theme/info_16x16.png
@@ -1553,6 +1583,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/undo.png
 %%DATADIR%%/icons/kde-theme/unmaphost.png
 %%DATADIR%%/icons/kde-theme/uppercase.png
+%%DATADIR%%/icons/kde-theme/vertpanels.png
 %%DATADIR%%/icons/kde-theme/vhdl_16x16.png
 %%DATADIR%%/icons/kde-theme/vhdl_32x32.png
 %%DATADIR%%/icons/kde-theme/video_16x16.png
@@ -1575,7 +1606,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/xfe.png
 %%DATADIR%%/icons/kde-theme/xfi.png
 %%DATADIR%%/icons/kde-theme/xfp.png
-%%DATADIR%%/icons/kde-theme/xfv.png
 %%DATADIR%%/icons/kde-theme/xfw.png
 %%DATADIR%%/icons/kde-theme/xfwsmall.png
 %%DATADIR%%/icons/kde-theme/xls_16x16.png
@@ -1607,6 +1637,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/bigbrokenlink.png
 %%DATADIR%%/icons/tango-theme/bigcdrom.png
 %%DATADIR%%/icons/tango-theme/bigchardev.png
+%%DATADIR%%/icons/tango-theme/bigcompare.png
 %%DATADIR%%/icons/tango-theme/bigdoc.png
 %%DATADIR%%/icons/tango-theme/bigexec.png
 %%DATADIR%%/icons/tango-theme/bigfloppy.png
@@ -1640,6 +1671,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/closefile.png
 %%DATADIR%%/icons/tango-theme/clrbook.png
 %%DATADIR%%/icons/tango-theme/colltree.png
+%%DATADIR%%/icons/tango-theme/compare.png
 %%DATADIR%%/icons/tango-theme/config_16x16.png
 %%DATADIR%%/icons/tango-theme/config_32x32.png
 %%DATADIR%%/icons/tango-theme/copy_big.png
@@ -1660,6 +1692,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/dirup.png
 %%DATADIR%%/icons/tango-theme/djvu_16x16.png
 %%DATADIR%%/icons/tango-theme/djvu_32x32.png
+%%DATADIR%%/icons/tango-theme/dl_16x16.png
+%%DATADIR%%/icons/tango-theme/dl_32x32.png
 %%DATADIR%%/icons/tango-theme/doc_16x16.png
 %%DATADIR%%/icons/tango-theme/doc_32x32.png
 %%DATADIR%%/icons/tango-theme/drw_16x16.png
@@ -1668,6 +1702,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/dvi_32x32.png
 %%DATADIR%%/icons/tango-theme/edit.png
 %%DATADIR%%/icons/tango-theme/enter.png
+%%DATADIR%%/icons/tango-theme/epub_16x16.png
+%%DATADIR%%/icons/tango-theme/epub_32x32.png
 %%DATADIR%%/icons/tango-theme/errorbig.png
 %%DATADIR%%/icons/tango-theme/exe_16x16.png
 %%DATADIR%%/icons/tango-theme/exe_32x32.png
@@ -1706,6 +1742,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/hidenumbers.png
 %%DATADIR%%/icons/tango-theme/hidethumb.png
 %%DATADIR%%/icons/tango-theme/home.png
+%%DATADIR%%/icons/tango-theme/horzpanels.png
 %%DATADIR%%/icons/tango-theme/html_16x16.png
 %%DATADIR%%/icons/tango-theme/html_32x32.png
 %%DATADIR%%/icons/tango-theme/info_16x16.png
@@ -1862,6 +1899,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/undo.png
 %%DATADIR%%/icons/tango-theme/unmaphost.png
 %%DATADIR%%/icons/tango-theme/uppercase.png
+%%DATADIR%%/icons/tango-theme/vertpanels.png
 %%DATADIR%%/icons/tango-theme/vhdl_16x16.png
 %%DATADIR%%/icons/tango-theme/vhdl_32x32.png
 %%DATADIR%%/icons/tango-theme/video_16x16.png
@@ -1884,7 +1922,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/xfe.png
 %%DATADIR%%/icons/tango-theme/xfi.png
 %%DATADIR%%/icons/tango-theme/xfp.png
-%%DATADIR%%/icons/tango-theme/xfv.png
 %%DATADIR%%/icons/tango-theme/xfw.png
 %%DATADIR%%/icons/tango-theme/xfwsmall.png
 %%DATADIR%%/icons/tango-theme/xls_16x16.png
@@ -1916,6 +1953,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/bigbrokenlink.png
 %%DATADIR%%/icons/windows-theme/bigcdrom.png
 %%DATADIR%%/icons/windows-theme/bigchardev.png
+%%DATADIR%%/icons/windows-theme/bigcompare.png
 %%DATADIR%%/icons/windows-theme/bigdoc.png
 %%DATADIR%%/icons/windows-theme/bigexec.png
 %%DATADIR%%/icons/windows-theme/bigfloppy.png
@@ -1949,6 +1987,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/closefile.png
 %%DATADIR%%/icons/windows-theme/clrbook.png
 %%DATADIR%%/icons/windows-theme/colltree.png
+%%DATADIR%%/icons/windows-theme/compare.png
 %%DATADIR%%/icons/windows-theme/config_16x16.png
 %%DATADIR%%/icons/windows-theme/config_32x32.png
 %%DATADIR%%/icons/windows-theme/copy_big.png
@@ -1969,6 +2008,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/dirup.png
 %%DATADIR%%/icons/windows-theme/djvu_16x16.png
 %%DATADIR%%/icons/windows-theme/djvu_32x32.png
+%%DATADIR%%/icons/windows-theme/dl_16x16.png
+%%DATADIR%%/icons/windows-theme/dl_32x32.png
 %%DATADIR%%/icons/windows-theme/doc_16x16.png
 %%DATADIR%%/icons/windows-theme/doc_32x32.png
 %%DATADIR%%/icons/windows-theme/drw_16x16.png
@@ -1977,6 +2018,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/dvi_32x32.png
 %%DATADIR%%/icons/windows-theme/edit.png
 %%DATADIR%%/icons/windows-theme/enter.png
+%%DATADIR%%/icons/windows-theme/epub_16x16.png
+%%DATADIR%%/icons/windows-theme/epub_32x32.png
 %%DATADIR%%/icons/windows-theme/errorbig.png
 %%DATADIR%%/icons/windows-theme/exe_16x16.png
 %%DATADIR%%/icons/windows-theme/exe_32x32.png
@@ -2015,6 +2058,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/hidenumbers.png
 %%DATADIR%%/icons/windows-theme/hidethumb.png
 %%DATADIR%%/icons/windows-theme/home.png
+%%DATADIR%%/icons/windows-theme/horzpanels.png
 %%DATADIR%%/icons/windows-theme/html_16x16.png
 %%DATADIR%%/icons/windows-theme/html_32x32.png
 %%DATADIR%%/icons/windows-theme/info_16x16.png
@@ -2171,6 +2215,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/undo.png
 %%DATADIR%%/icons/windows-theme/unmaphost.png
 %%DATADIR%%/icons/windows-theme/uppercase.png
+%%DATADIR%%/icons/windows-theme/vertpanels.png
 %%DATADIR%%/icons/windows-theme/vhdl_16x16.png
 %%DATADIR%%/icons/windows-theme/vhdl_32x32.png
 %%DATADIR%%/icons/windows-theme/video_16x16.png
@@ -2193,7 +2238,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/xfe.png
 %%DATADIR%%/icons/windows-theme/xfi.png
 %%DATADIR%%/icons/windows-theme/xfp.png
-%%DATADIR%%/icons/windows-theme/xfv.png
 %%DATADIR%%/icons/windows-theme/xfw.png
 %%DATADIR%%/icons/windows-theme/xfwsmall.png
 %%DATADIR%%/icons/windows-theme/xls_16x16.png
@@ -2225,6 +2269,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/bigbrokenlink.png
 %%DATADIR%%/icons/xfce-theme/bigcdrom.png
 %%DATADIR%%/icons/xfce-theme/bigchardev.png
+%%DATADIR%%/icons/xfce-theme/bigcompare.png
 %%DATADIR%%/icons/xfce-theme/bigdoc.png
 %%DATADIR%%/icons/xfce-theme/bigexec.png
 %%DATADIR%%/icons/xfce-theme/bigfloppy.png
@@ -2258,6 +2303,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/closefile.png
 %%DATADIR%%/icons/xfce-theme/clrbook.png
 %%DATADIR%%/icons/xfce-theme/colltree.png
+%%DATADIR%%/icons/xfce-theme/compare.png
 %%DATADIR%%/icons/xfce-theme/config_16x16.png
 %%DATADIR%%/icons/xfce-theme/config_32x32.png
 %%DATADIR%%/icons/xfce-theme/copy_big.png
@@ -2278,6 +2324,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/dirup.png
 %%DATADIR%%/icons/xfce-theme/djvu_16x16.png
 %%DATADIR%%/icons/xfce-theme/djvu_32x32.png
+%%DATADIR%%/icons/xfce-theme/dl_16x16.png
+%%DATADIR%%/icons/xfce-theme/dl_32x32.png
 %%DATADIR%%/icons/xfce-theme/doc_16x16.png
 %%DATADIR%%/icons/xfce-theme/doc_32x32.png
 %%DATADIR%%/icons/xfce-theme/drw_16x16.png
@@ -2286,6 +2334,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/dvi_32x32.png
 %%DATADIR%%/icons/xfce-theme/edit.png
 %%DATADIR%%/icons/xfce-theme/enter.png
+%%DATADIR%%/icons/xfce-theme/epub_16x16.png
+%%DATADIR%%/icons/xfce-theme/epub_32x32.png
 %%DATADIR%%/icons/xfce-theme/errorbig.png
 %%DATADIR%%/icons/xfce-theme/exe_16x16.png
 %%DATADIR%%/icons/xfce-theme/exe_32x32.png
@@ -2324,6 +2374,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/hidenumbers.png
 %%DATADIR%%/icons/xfce-theme/hidethumb.png
 %%DATADIR%%/icons/xfce-theme/home.png
+%%DATADIR%%/icons/xfce-theme/horzpanels.png
 %%DATADIR%%/icons/xfce-theme/html_16x16.png
 %%DATADIR%%/icons/xfce-theme/html_32x32.png
 %%DATADIR%%/icons/xfce-theme/info_16x16.png
@@ -2480,6 +2531,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/undo.png
 %%DATADIR%%/icons/xfce-theme/unmaphost.png
 %%DATADIR%%/icons/xfce-theme/uppercase.png
+%%DATADIR%%/icons/xfce-theme/vertpanels.png
 %%DATADIR%%/icons/xfce-theme/vhdl_16x16.png
 %%DATADIR%%/icons/xfce-theme/vhdl_32x32.png
 %%DATADIR%%/icons/xfce-theme/video_16x16.png
@@ -2502,7 +2554,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/xfe.png
 %%DATADIR%%/icons/xfce-theme/xfi.png
 %%DATADIR%%/icons/xfce-theme/xfp.png
-%%DATADIR%%/icons/xfce-theme/xfv.png
 %%DATADIR%%/icons/xfce-theme/xfw.png
 %%DATADIR%%/icons/xfce-theme/xfwsmall.png
 %%DATADIR%%/icons/xfce-theme/xls_16x16.png
@@ -2534,6 +2585,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/bigbrokenlink.png
 %%DATADIR%%/icons/xfe-theme/bigcdrom.png
 %%DATADIR%%/icons/xfe-theme/bigchardev.png
+%%DATADIR%%/icons/xfe-theme/bigcompare.png
 %%DATADIR%%/icons/xfe-theme/bigdoc.png
 %%DATADIR%%/icons/xfe-theme/bigexec.png
 %%DATADIR%%/icons/xfe-theme/bigfloppy.png
@@ -2567,6 +2619,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/closefile.png
 %%DATADIR%%/icons/xfe-theme/clrbook.png
 %%DATADIR%%/icons/xfe-theme/colltree.png
+%%DATADIR%%/icons/xfe-theme/compare.png
 %%DATADIR%%/icons/xfe-theme/config_16x16.png
 %%DATADIR%%/icons/xfe-theme/config_32x32.png
 %%DATADIR%%/icons/xfe-theme/copy_big.png
@@ -2587,6 +2640,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/dirup.png
 %%DATADIR%%/icons/xfe-theme/djvu_16x16.png
 %%DATADIR%%/icons/xfe-theme/djvu_32x32.png
+%%DATADIR%%/icons/xfe-theme/dl_16x16.png
+%%DATADIR%%/icons/xfe-theme/dl_32x32.png
 %%DATADIR%%/icons/xfe-theme/doc_16x16.png
 %%DATADIR%%/icons/xfe-theme/doc_32x32.png
 %%DATADIR%%/icons/xfe-theme/drw_16x16.png
@@ -2595,6 +2650,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/dvi_32x32.png
 %%DATADIR%%/icons/xfe-theme/edit.png
 %%DATADIR%%/icons/xfe-theme/enter.png
+%%DATADIR%%/icons/xfe-theme/epub_16x16.png
+%%DATADIR%%/icons/xfe-theme/epub_32x32.png
 %%DATADIR%%/icons/xfe-theme/errorbig.png
 %%DATADIR%%/icons/xfe-theme/exe_16x16.png
 %%DATADIR%%/icons/xfe-theme/exe_32x32.png
@@ -2633,6 +2690,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/hidenumbers.png
 %%DATADIR%%/icons/xfe-theme/hidethumb.png
 %%DATADIR%%/icons/xfe-theme/home.png
+%%DATADIR%%/icons/xfe-theme/horzpanels.png
 %%DATADIR%%/icons/xfe-theme/html_16x16.png
 %%DATADIR%%/icons/xfe-theme/html_32x32.png
 %%DATADIR%%/icons/xfe-theme/info_16x16.png
@@ -2789,6 +2847,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/undo.png
 %%DATADIR%%/icons/xfe-theme/unmaphost.png
 %%DATADIR%%/icons/xfe-theme/uppercase.png
+%%DATADIR%%/icons/xfe-theme/vertpanels.png
 %%DATADIR%%/icons/xfe-theme/vhdl_16x16.png
 %%DATADIR%%/icons/xfe-theme/vhdl_32x32.png
 %%DATADIR%%/icons/xfe-theme/video_16x16.png
@@ -2811,7 +2870,6 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/xfe.png
 %%DATADIR%%/icons/xfe-theme/xfi.png
 %%DATADIR%%/icons/xfe-theme/xfp.png
-%%DATADIR%%/icons/xfe-theme/xfv.png
 %%DATADIR%%/icons/xfe-theme/xfw.png
 %%DATADIR%%/icons/xfe-theme/xfwsmall.png
 %%DATADIR%%/icons/xfe-theme/xls_16x16.png

@@ -27,7 +27,7 @@ NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/Katawa\ Shoujo-linux-x86
 PORTDATA=	*
-PORTDOCS=	*
+PORTDOCS=	*.pdf
 PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/256x256/apps/${PORTNAME}.png
@@ -43,8 +43,6 @@ OPTIONS_DEFINE=	DOCS
 
 MANUAL_PACKAGE_BUILD=	huge (470MiB)
 
-.include <bsd.port.options.mk>
-
 pre-install:
 	${PRINTF} '#! /bin/sh\nrenpy ${DATADIR} "$$@"\n' \
 		>${WRKDIR}/${PORTNAME}
@@ -56,11 +54,8 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${i}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/${PORTNAME}.png
 .endfor
-	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/game && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/*.pdf ${STAGEDIR}${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

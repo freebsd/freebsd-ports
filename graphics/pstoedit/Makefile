@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.62
-PORTREVISION=	6
+PORTVERSION=	3.70
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -14,20 +13,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-OPTIONS_DEFINE=	DOCS EMF EXAMPLES MAGICK MING PLOTUTILS
-OPTIONS_DEFAULT=	EMF MAGICK MING PLOTUTILS
-
-OPTIONS_SUB=	yes
-
-EMF_DESC=	Enable emf interface
-MING_DESC=	Enable swf interface
-PLOTUTILS_DESC=	Enable libplot interface
-
 USES=		pathfix pkgconfig libtool
 USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 USE_LDCONFIG=	yes
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
 CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -35,18 +25,22 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=		DOCS EMF EXAMPLES MAGICK MING PLOTUTILS
+OPTIONS_DEFAULT=	EMF MAGICK MING PLOTUTILS
+OPTIONS_SUB=		yes
+
+EMF_DESC=		WMF/EMF support via libEMF
 EMF_LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
-EMF__CONFIGURE_OFF=	--without-emf
-
+EMF_CONFIGURE_OFF=	--without-emf
 MAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
-
+MING_DESC=		Flash support via Ming
 MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
 MING_CONFIGURE_ON=	--with-swf
 MING_CONFIGURE_OFF=	--without-swf
-
+PLOTUTILS_DESC=		Plotting support via Plotutils
 PLOTUTILS_LIB_DEPENDS=	libplotter.so:${PORTSDIR}/graphics/plotutils
 PLOTUTILS_CONFIGURE_ON=	--with-libplot
 PLOTUTILS_CONFIGURE_OFF=	--without-libplot

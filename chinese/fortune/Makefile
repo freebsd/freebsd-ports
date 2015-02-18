@@ -18,13 +18,17 @@ NO_BUILD=	yes
 USES=		tar:bzip2 gmake
 SUB_FILES=	pkg-message
 
-.if !exists(/usr/games/fortune) || !exists(/usr/games/strfile)
-IGNORE=		needs the FreeBSD games distribution
+.if exists(/usr/games/strfile)
+STRFILE=	/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRFILE=	/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|" \
-		-e "s|strfile|/usr/games/strfile|" \
+		-e "s|strfile|${STRFILE}|" \
 		${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>

@@ -22,6 +22,6 @@
 -	ass->SetScriptInfo("PlayResY", std::to_string(settings.dest_y));
 +	ass->SetScriptInfo("PlayResX", TO_STRING(settings.dest_x));
 +	ass->SetScriptInfo("PlayResY", TO_STRING(settings.dest_y));
- 	ass->SetScriptInfo("YCbCr Matrix", MatrixToString(settings.dest_matrix));
+ 	if (resample_colors)
+ 		ass->SetScriptInfo("YCbCr Matrix", MatrixToString(settings.dest_matrix));
  
- 	ass->Commit(_("resolution resampling"), AssFile::COMMIT_SCRIPTINFO | AssFile::COMMIT_DIAG_FULL);

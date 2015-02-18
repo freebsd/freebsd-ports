@@ -94,6 +94,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Options.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/PTRRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/PXRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/PacketLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/RPRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/RRSIGRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/RRset.html
@@ -132,6 +133,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Tokenizer.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Type.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/UNKRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/URIRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Update.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/WKSRecord.Protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/WKSRecord.Service.html

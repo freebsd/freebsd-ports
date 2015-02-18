@@ -18,7 +18,7 @@
 name=vboxwebsrv
 rcvar=vboxwebsrv_enable
 
-command="%%PREFIX%%/bin/vboxwebsrv"
+command="%%VBOXDIR%%/vboxwebsrv"
 pidfile="/var/run/${name}.pid"
 
 start_cmd="${name}_start"

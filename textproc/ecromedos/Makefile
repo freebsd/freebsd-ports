@@ -2,45 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	ecromedos
-PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTVERSION=	2.1.0
+PORTREVISION=	0
 CATEGORIES=	textproc print www
-MASTER_SITES=	http://www.ecromedos.net/files/${PORTVERSION}/
+MASTER_SITES=	http://www.ecromedos.net/files/src/${PORTVERSION}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Document preparation system that allows concurrent publication
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		pygmentize:${PORTSDIR}/textproc/py-pygments
 
 NO_BUILD=	yes
-USES=		python
-USE_TEX=	latex
+
+USES=		python:2
 USE_GNOME=	libxml2 libxslt
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
-
-ECMDS_CONF=	${WRKSRC}/etc/ecmds.conf
-ECROMEDOC=	${DATADIR}/doc
-ECROMEBIN=	${DATADIR}/bin/${PORTNAME}
+USE_TEX=	latex
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		     -e 's|%%DATADIR%%|${DATADIR}|g' ${ECMDS_CONF}
+	@(cd ${WRKSRC} && \
+	${REINPLACE_CMD} \
+		-e 's|^\#!${SETENV} python|&2|1' \
+		-e 's|[^!]/usr/bin|${LOCALBASE}/bin|g' \
+		-e 's|%%ETCDIR%%|${ETCDIR}|g' \
+		bin/${PORTNAME} etc/ecmds.conf lib/ecmds/configreader.py)
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "-not ( -name "*.orig" -or -name "*.bak" )"
-	${RM} -f ${STAGEDIR}${ECROMEBIN}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${ECROMEBIN}
-	${LN} -s ${ECROMEBIN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${LN} -s ${ECROMEBIN} ${STAGEDIR}${PREFIX}/bin/ecmds
-	${MV} ${STAGEDIR}${DATADIR}/etc/ecmds.conf ${STAGEDIR}${DATADIR}/etc/ecmds.conf.sample
-	${MV} ${STAGEDIR}${DATADIR}/etc/plugins.conf ${STAGEDIR}${DATADIR}/etc/plugins.conf.sample
-	${MV} ${STAGEDIR}${ECROMEDOC} ${STAGEDIR}${DOCSDIR}
-	${LN} -s ${DOCSDIR} ${STAGEDIR}${ECROMEDOC}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR} 
+	(cd ${WRKSRC} ; \
+	${COPYTREE_SHARE} "data lib transform" ${STAGEDIR}${DATADIR} \
+		"-not ( -name "*.orig" -or -name "*.bak" )" ; \
+	${INSTALL_DATA} etc/ecmds.conf ${STAGEDIR}${ETCDIR}/ecmds.conf.sample ; \
+	${INSTALL_DATA} etc/plugins.conf ${STAGEDIR}${ETCDIR}/plugins.conf.sample ; \
+	${INSTALL_SCRIPT} bin/${PORTNAME} ${STAGEDIR}${DATADIR}/bin/${PORTNAME})
+	@(cd ${STAGEDIR}${PREFIX}/bin ; \
+	${LN} -s ../${DATADIR_REL}/bin/${PORTNAME}  ecmds ; \
+	${LN} -s ../${DATADIR_REL}/bin/${PORTNAME} ${PORTNAME})
 
 .include <bsd.port.mk>

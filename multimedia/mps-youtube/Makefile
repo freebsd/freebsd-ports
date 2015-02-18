@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mps-youtube
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	CHEESESHOP
@@ -13,7 +13,7 @@ COMMENT=	Terminal based YouTube jukebox with playlist management
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	ca_root_nss>=3.17.3:${PORTSDIR}/security/ca_root_nss \
-		${PYTHON_PKGNAMEPREFIX}pafy>=0.3.66:${PORTSDIR}/www/py-pafy
+		${PYTHON_PKGNAMEPREFIX}pafy>=0.3.72:${PORTSDIR}/www/py-pafy
 
 CONVERTER_DESC=	Converter to MP3 and other formats
 
@@ -37,8 +37,6 @@ PLAYER_DESC=	Video player
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},1' \

@@ -11,13 +11,21 @@ MASTER_SITES=	http://www.netmeister.org/apps/ \
 MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 
+.if exists(/usr/games/strfile)
+STRFILE=	/usr/games/strfile
+.elif exists(/usr/bin/strfile)
+STRFILE=	/usr/bin/strfile
+.else
+IGNORE=		needs strfile command. Please install games distribution of base system
+.endif
+
 do-build:
-	@cd ${WRKSRC} && /usr/games/strfile futurama
+	@${STRFILE} ${WRKSRC}/futurama
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune

@@ -1,3 +1,4 @@
+bin/yadifa
 @sample etc/yadifad.conf.sample
 include/dnscore/alarm.h
 include/dnscore/allocator.h
@@ -164,6 +165,11 @@ include/dnsdb/zdb_zone_load.h
 include/dnsdb/zdb_zone_load_interface.h
 include/dnsdb/zdb_zone_process.h
 include/dnsdb/zdb_zone_write.h
+include/dnslg/config-load.h
+include/dnslg/config-resolver.h
+include/dnslg/dns.h
+include/dnslg/resolv-conf.h
+include/dnslg/resolv.h
 include/dnszone/dnszone-config.h
 include/dnszone/dnszone.h
 include/dnszone/hints_file_reader.h
@@ -171,6 +177,7 @@ include/dnszone/zone_axfr_reader.h
 include/dnszone/zone_file_reader.h
 lib/libdnscore.a
 lib/libdnsdb.a
+lib/libdnslg.a
 lib/libdnszone.a
 man/man1/yadifa.1.gz
 man/man1/yadifad.1.gz
@@ -179,12 +186,20 @@ sbin/yadifad
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-master.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-slave.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.conf.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.debian
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.rhel
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.logrotate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.arch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.debian
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.rhel
 /var/yadifa/masters/0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa.zone
 /var/yadifa/masters/0.0.127.in-addr.arpa.zone
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
+@dir /var/log/yadifa
 @dir /var/yadifa/keys
 @dir /var/yadifa/masters
 @dir /var/yadifa/slaves

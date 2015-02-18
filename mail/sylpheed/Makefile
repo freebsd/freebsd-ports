@@ -3,7 +3,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		LOCAL/ehaupt
@@ -32,68 +32,48 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
-OPTIONS_DEFINE=	GPGME COMPFACE JPILOT LDAP SSL GTKSPELL ONIGURUMA DOCS
+OPTIONS_DEFINE=	CA_BUNDLE COMPFACE CURL DOCS GPGME GTKSPELL JPILOT LDAP \
+		ONIGURUMA SSL
 
-GPGME_DESC=	GnuPG support using GPGME
+CA_BUNDLE_DESC=	Include CA bundle for certificate verification
 COMPFACE_DESC=	X-Face support
-JPILOT_DESC=	JPilot support
+CURL_DESC=	libcurl dependency (remote update check)
+GPGME_DESC=	GnuPG support using GPGME
 GTKSPELL_DESC=	Spell checking support
+JPILOT_DESC=	JPilot support
 ONIGURUMA_DESC=	Oniguruma support
 
-OPTIONS_DEFAULT=SSL GTKSPELL
+OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL SSL
+
+CA_BUNDLE_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsylph_ssl.c
+
+COMPFACE_LIB_DEPENDS=		libcompface.so:${PORTSDIR}/mail/faces
+COMPFACE_CONFIGURE_ENABLE=	compface
+
+CURL_RUN_DEPENDS=		curl:${PORTSDIR}/ftp/curl
+
+GPGME_LIB_DEPENDS=		libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
+GPGME_CONFIGURE_ENABLE=		gpgme
+
+GTKSPELL_LIB_DEPENDS=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_CONFIGURE_ENABLE=	gtkspell
+
+JPILOT_LIB_DEPENDS=		libpisock.so:${PORTSDIR}/palm/pilot-link
+JPILOT_RUN_DEPENDS=		jpilot:${PORTSDIR}/palm/jpilot
+JPILOT_CONFIGURE_ENABLE=	jpilot
+
+LDAP_CONFIGURE_ENABLE=		ldap
+LDAP_USE=			openldap=yes
+
+ONIGURUMA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
+ONIGURUMA_CONFIGURE_ENABLE=	oniguruma
+
+SSL_CONFIGURE_ENABLE=		ssl
+SSL_USE=			openssl=yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--enable-ssl
-.else
-CONFIGURE_ARGS+=--disable-ssl
-.endif
-
-.if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
-CONFIGURE_ARGS+=--enable-gpgme
-.else
-CONFIGURE_ARGS+=--disable-gpgme
-.endif
-
-.if ${PORT_OPTIONS:MCOMPFACE}
-LIB_DEPENDS+=	libcompface.so:${PORTSDIR}/mail/faces
-CONFIGURE_ARGS+=--enable-compface
-.else
-CONFIGURE_ARGS+=--disable-compface
-.endif
-
-.if ${PORT_OPTIONS:MJPILOT}
-LIB_DEPENDS+=	libpisock.so:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
-CONFIGURE_ARGS+=--enable-jpilot
-.else
-CONFIGURE_ARGS+=--disable-jpilot
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--enable-ldap
-.else
-CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
-CONFIGURE_ARGS+=--enable-gtkspell
-.else
-CONFIGURE_ARGS+=--disable-gtkspell
-.endif
-
-.if ${PORT_OPTIONS:MONIGURUMA}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
-CONFIGURE_ARGS+=--enable-oniguruma
-.else
-CONFIGURE_ARGS+=--disable-oniguruma
-.endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
@@ -126,10 +106,10 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog INSTALL README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i}.ja ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

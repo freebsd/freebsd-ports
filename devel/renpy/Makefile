@@ -68,14 +68,12 @@ post-install:
 		-exec ${STRIP_CMD} {} +
 	${LN} -fs ${DATADIR}/renpy.py \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR} \
 		"! -name *.orig ! -name *.bak")
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/renpy.py
 	${CHMOD} -R u+w ${STAGEDIR}${DATADIR}/templates
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		. ${STAGEDIR}${DOCSDIR} \
 		"! -name *.orig ! -name *.bak")

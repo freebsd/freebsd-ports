@@ -3,37 +3,38 @@
 
 PORTNAME=	pyspatialite
 PORTVERSION=	3.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP:pyspatialite \
-		http://www.gaia-gis.it/gaia-sins/libspatialite-sources/:amalgam
+MASTER_SITES=	CHEESESHOP:pyspatialite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:pyspatialite \
-		${AMALGAMATION_NAME}${EXTRACT_SUFX}:amalgam
+DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-0${EXTRACT_SUFX}:pyspatialite
 
 MAINTAINER=	coder@tuxfamily.org
-COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite 3.x
+COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 
-LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite
+LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
+		libgeos_c.so:${PORTSDIR}/graphics/geos \
+		libproj.so:${PORTSDIR}/graphics/proj \
+		libfreexl.so:${PORTSDIR}/textproc/freexl
+		
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha-0
 
 USES=		iconv python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pyspatialite
 
-AMALGAMATION_NAME=	libspatialite-amalgamation-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
 ICONV_APPEND=
 .else
-ICONV_APPEND=	,'iconv'
+ICONV_APPEND=	,iconv
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|pyspatialite-doc|${DOCSDIR}|g" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		-e "s|%%ICONV%%|${ICONV_APPEND}|" ${WRKSRC}/setup.py
-	@${MV} ${WRKDIR}/${AMALGAMATION_NAME} ${WRKSRC}/amalgamation
-
+	@${REINPLACE_CMD} -e "s|pyspatialite-doc|${DOCSDIR}|g" ${WRKSRC}/setup.py 
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%ICONV%%|${ICONV_APPEND}|" ${WRKSRC}/setup.cfg
 .include <bsd.port.post.mk>

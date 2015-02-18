@@ -13,10 +13,12 @@ COMMENT=	IPv6 network diagnostic tools
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
+USES=		tar:bzip2 perl5
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
+CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl
+MAKE_ENV=	CHOWNPROG=:
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
@@ -26,7 +28,7 @@ OPTIONS_DEFINE=	DOCS NLS
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 803000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd__rdnssd.h
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

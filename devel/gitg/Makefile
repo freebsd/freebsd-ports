@@ -3,9 +3,8 @@
 #   $MCom: ports/branches/GNOME_3_12/devel/gitg/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gitg
-PORTVERSION=	0.3.2
-PORTREVISION=	1
-CATEGORIES=	devel gnome
+PORTVERSION=	3.14.1
+CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,17 +13,39 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		git:${PORTSDIR}/devel/git
+LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+		libgee-0.8.so:${PORTSDIR}/devel/libgee \
+		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
+		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
+		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
+		libwebkit2gtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		valac:${PORTSDIR}/lang/vala
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 CONFLICTS=	gitg0-[0-9]*
 
-USES=		tar:xz gettext gmake pkgconfig pathfix libtool
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
-CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-maintainer-mode \
+		--enable-compile-warnings=no
+USE_GNOME=	glib20 gtk30 gtksourceview3 intlhack introspection
 INSTALL_TARGET=	install-strip
+
+INSTALLS_ICONS=	yes
+GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	DEBUG NLS PYTHON
+OPTIONS_SUB=	yes
+DEBUG_CONFIGURE_ENABLE=	debug
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+PYTHON_USES=	python:3
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
 .include <bsd.port.mk>

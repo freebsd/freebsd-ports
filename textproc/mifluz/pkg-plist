@@ -6,7 +6,7 @@ bin/mifluzdict
 bin/mifluzdump
 bin/mifluzload
 bin/mifluzsearch
-etc/mifluz.conf.sample
+@sample etc/mifluz.conf.sample
 include/mifluz.h
 include/mifluz/Configuration.h
 include/mifluz/Dictionary.h
@@ -59,7 +59,6 @@ include/mifluz/db_upgrade.h
 include/mifluz/db_verify.h
 include/mifluz/debug.h
 include/mifluz/env_ext.h
-include/mifluz/example1.h
 include/mifluz/hash.h
 include/mifluz/hash_auto.h
 include/mifluz/hash_ext.h
@@ -93,7 +92,7 @@ include/mifluz/xa_ext.h
 lib/libmifluz.a
 lib/libmifluz.so
 lib/libmifluz.so.0
-lib/libmifluz.so.0.0.25
+lib/libmifluz.so.0.0.26
 man/man1/htdb_dump.1.gz
 man/man1/htdb_load.1.gz
 man/man1/htdb_stat.1.gz

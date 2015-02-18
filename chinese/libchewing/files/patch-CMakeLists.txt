@@ -1,14 +1,30 @@
---- CMakeLists.txt.orig	2015-02-08 15:09:15 UTC
-+++ CMakeLists.txt
-@@ -103,6 +103,7 @@ set(TEST_BIN_DIR ${PROJECT_BINARY_DIR}/t
+--- CMakeLists.txt.orig	2014-04-11 09:25:28.000000000 +0800
++++ CMakeLists.txt	2015-02-15 11:25:11.959775965 +0800
+@@ -103,8 +103,9 @@ set(TEST_BIN_DIR ${PROJECT_BINARY_DIR}/t
  
  set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include/chewing)
  set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
 +set(INSTALL_LIBDATA_DIR ${CMAKE_INSTALL_PREFIX}/libdata)
  set(INSTALL_DATA_DIR ${CMAKE_INSTALL_PREFIX}/share/libchewing)
- set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/share/info)
+-set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/share/info)
++set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/info)
  
-@@ -428,5 +429,5 @@ install(FILES ${ALL_DATA} DESTINATION ${
+ set(INFO_SRC ${PROJECT_SOURCE_DIR}/doc/libchewing.texi)
+ set(INFO_BIN ${PROJECT_BINARY_DIR}/doc/libchewing.info)
+@@ -166,11 +167,7 @@ if (MAKEINFO)
+     add_custom_target(INFO ALL DEPENDS ${INFO_BIN})
+     add_dependencies(check INFO)
+ 
+-    find_program(INSTALL_INFO NAMES ginstall-info install-info)
+-    if (INSTALL_INFO)
+-        install(FILES ${INFO_BIN} DESTINATION ${INSTALL_INFO_DIR})
+-        install(CODE "execute_process(COMMAND ${INSTALL_INFO} --info-dir=${INSTALL_INFO_DIR} ${INFO_BIN})")
+-    endif()
++    install(FILES ${INFO_BIN} DESTINATION ${INSTALL_INFO_DIR})
+ endif()
+ 
+ 
+@@ -428,5 +425,5 @@ install(FILES ${ALL_DATA} DESTINATION ${
  install(FILES ${ALL_STATIC_DATA} DESTINATION ${INSTALL_DATA_DIR})
  install(FILES ${ALL_INC} DESTINATION ${INSTALL_INC_DIR})
  install(FILES ${PROJECT_BINARY_DIR}/chewing.pc

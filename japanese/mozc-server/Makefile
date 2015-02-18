@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	1.15.1868.102
-PORTREVISION=	2
+PORTVERSION=	2.16.2051.102
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -138,8 +137,10 @@ DISTFILES+= \
 
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
-PLIST_FILES+=	bin/mozc_server \
+PLIST_FILES+=	bin/mozc \
+		bin/mozc_server \
 		bin/mozc_emacs_helper
+SUB_FILES+=	mozc
 
 post-extract-mozc_server:
 	@for F in jigyosyo-20130628.lzh ken_all-20130628.lzh; do \
@@ -161,6 +162,8 @@ do-install-mozc_server:
 	    ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
 	    ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
 	    ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+	    ${WRKDIR}/mozc ${STAGEDIR}/${PREFIX}/bin
 .endif
 
 # mozc_tool
@@ -202,7 +205,6 @@ GYP_DEFINES+=	use_libibus=1 \
 LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
-		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 
 PLIST_FILES+=	bin/mozc_renderer \
@@ -251,13 +253,13 @@ do-install-ibus_mozc:
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" || make(makesum)
 PATCH_SITES=	http://download.fcitx-im.org/fcitx-mozc/
-PATCHFILES=	fcitx-mozc-1.15.1834.102.1.patch
+PATCHFILES=	fcitx-mozc-2.16.2037.102.2.patch
 .endif
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 PATCH_DIST_STRIP=-p2
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-unix-fcitx-eim.cc \
-		${FILESDIR}/extra-patch-unix-fcitx-mozc_response_parser.cc \
-		${FILESDIR}/extra-patch-unix-fcitx-surrounding_text_util.cc
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-unix-fcitx-eim.cc \
+		${PATCHDIR}/extra-patch-unix-fcitx-mozc_response_parser.cc \
+		${PATCHDIR}/extra-patch-unix-fcitx-surrounding_text_util.cc
 
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
@@ -265,8 +267,7 @@ GYP_DEFINES+=	use_libibus=0 \
 
 LIB_DEPENDS+=	libfcitx-core.so:${PORTSDIR}/chinese/fcitx
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
-		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
-		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
+		mozc_tool:${PORTSDIR}/japanese/mozc-tool
 
 PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
 		share/fcitx/addon/fcitx-mozc.conf \
@@ -285,6 +286,11 @@ PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
 		share/locale/zh_CN/LC_MESSAGES/fcitx-mozc.mo \
 		share/locale/zh_TW/LC_MESSAGES/fcitx-mozc.mo
 PLIST_DIRS+=	%%DATADIR%%/icon ${DATADIR_REL}
+
+post-extract-fcitx_mozc:
+	${RM} ${WRKSRC}/unix/fcitx/fcitx.gyp
+
+post-extract: post-extract-fcitx_mozc
 
 do-build-fcitx_mozc:
 	${BUILD_MOZC_CMD_BUILD} unix/fcitx/fcitx.gyp:fcitx-mozc
@@ -323,8 +329,7 @@ do-install-fcitx_mozc:
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 CATEGORIES+=	elisp
-RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
-		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
+RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server
 
 PLIST_FILES+=	${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.elc \

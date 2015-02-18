@@ -1,6 +1,6 @@
 --- html/main.php.orig	2014-08-12 15:00:01 UTC
 +++ html/main.php
-@@ -130,31 +130,6 @@
+@@ -130,31 +130,6 @@ $this_year = '2014';
  	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
  	<div class="version">Version <?php echo $this_version; ?></div>
  	<div class="releasedate">August 12, 2014</div>

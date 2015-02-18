@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easytag
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-USES=		desktop-file-utils gmake pkgconfig tar:xz
+USES=		desktop-file-utils gmake pkgconfig tar:xz gettext-tools
 USE_GNOME=	glib20 intltool intlhack libxslt
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -43,7 +42,6 @@ OPTIONS_SUB=	yes
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
 WAVPACK_CONFIGURE_ENABLE=	wavpack
-NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
 OPUS_CONFIGURE_ENABLE=	opus
@@ -51,6 +49,8 @@ SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_ENABLE=	speex
 
 .include <bsd.port.options.mk>
+
+NLS_USES=		gettext-runtime
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20

@@ -54,7 +54,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
 .if ! ${PORT_OPTIONS:MMANPAGES}
-	@${REINPLACE_CMD} -e '/install-man/d' \
+	@${REINPLACE_CMD} -i .manpages.bak \
+		-e '/install-man/d' \
 		-e 's/xmlto/${FALSE}/' \
 		${WRKSRC}/configure
 .endif
@@ -70,10 +71,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/ponscripter-mode.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

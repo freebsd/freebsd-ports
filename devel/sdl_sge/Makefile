@@ -23,7 +23,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	SDL FREETYPE DOCS EXAMPLES
-OPTIONS_DEFAULT=SDL FREETYPE DOCS EXAMPLES
+OPTIONS_DEFAULT=SDL FREETYPE
 SDL_DESC=	Enable support for SDL_image
 
 .include <bsd.port.options.mk>
@@ -49,6 +49,7 @@ post-patch:
 		 s|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile.conf
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSGE.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

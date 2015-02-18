@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3680b234-b6f0-11e4-b7cc-d050992ecde8">
+    <topic>unzip -- heap based buffer overflow in iconv patch</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<range><lt>6.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ubuntu Security Notice USN-2502-1 reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-2502-1/">
+	  <p>unzip could be made to run programs if it opened a specially crafted file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1315</cvename>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-1315.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-1315</url>
+      <url>http://www.ubuntu.com/usn/usn-2502-1/</url>
+    </references>
+    <dates>
+      <discovery>2015-02-17</discovery>
+      <entry>2015-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a888a1e-b321-11e4-83b2-206a8a720317">
     <topic>krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092</topic>
     <affects>
@@ -564,10 +592,12 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2015-001.html</url>
+      <cvename>CVE-2015-1558</cvename>
     </references>
     <dates>
       <discovery>2015-01-06</discovery>
       <entry>2015-01-29</entry>
+      <modified>2015-02-17</modified>
     </dates>
   </vuln>
 
@@ -1900,6 +1930,7 @@ Notes:
     <dates>
       <discovery>2014-10-30</discovery>
       <entry>2014-12-11</entry>
+      <modified>2015-01-29</modified>
     </dates>
   </vuln>
 

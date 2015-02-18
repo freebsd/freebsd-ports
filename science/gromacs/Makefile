@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTVERSION=	5.0.4
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -71,14 +70,14 @@ PLIST_SUB+=	SUFFIX_MPI=""
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
+	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|share/man|man| ; \
 		 /pkgconfig/s|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|'
-	${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
-	${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
+	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
 
 .include <bsd.port.mk>

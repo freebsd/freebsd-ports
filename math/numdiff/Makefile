@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	numdiff
-PORTVERSION=	5.6.1
+PORTVERSION=	5.8.1
+PORTREVISION=	1
 CATEGORIES=	math textproc
 MASTER_SITES=	SAVANNAH
 
@@ -10,25 +11,30 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-		--mandir=${PREFIX}/man \
-		--exec-prefix=${PREFIX} \
-		--infodir=${PREFIX}/${INFO_PATH} \
-		--disable-nls
-LIBS+=		-lm
 USES=		gmake
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
-INFO=	numdiff
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS
+INFO=		numdiff
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		DOCS GMP NLS
+OPTIONS_DEFAULT=	GMP
+OPTIONS_SUB=		yes
 
-.if ! ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--docdir=${WRKDIR}/doc
-.endif
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_CONFIGURE_ENABLE=	gmp
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+NLS_INSTALL_TARGET=	install install-nls
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/$$(DOCS)/s|$$(INSTALL_DATA)|:| ; \
+		 /$$(INFOFILE).gz/s|$$(INSTALL_DATA)|:|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

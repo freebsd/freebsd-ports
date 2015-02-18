@@ -10,7 +10,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	WebDAV server protocol compliance test suite
 
 LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon \
-		libk5crypto:${PORTSDIR}/security/krb5
+		libk5crypto.so:${PORTSDIR}/security/krb5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl --with-neon=/usr/local

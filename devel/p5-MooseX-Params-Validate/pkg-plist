@@ -1,2 +1,4 @@
 %%PERL5_MAN3%%/MooseX::Params::Validate.3.gz
+%%PERL5_MAN3%%/MooseX::Params::Validate::Exception::ValidationFailedForTypeConstraint.3.gz
 %%SITE_PERL%%/MooseX/Params/Validate.pm
+%%SITE_PERL%%/MooseX/Params/Validate/Exception/ValidationFailedForTypeConstraint.pm

@@ -1475,8 +1475,10 @@ etc/perl5_version
 %%PRIV_LIB%%/pod/perl5180delta.pod
 %%PRIV_LIB%%/pod/perl5181delta.pod
 %%PRIV_LIB%%/pod/perl5182delta.pod
+%%PRIV_LIB%%/pod/perl5184delta.pod
 %%PRIV_LIB%%/pod/perl5200delta.pod
 %%PRIV_LIB%%/pod/perl5201delta.pod
+%%PRIV_LIB%%/pod/perl5202delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1617,6 +1619,7 @@ etc/perl5_version
 %%PRIV_LIB%%/pod/perltru64.pod
 %%PRIV_LIB%%/pod/perltw.pod
 %%PRIV_LIB%%/pod/perlunicode.pod
+%%PRIV_LIB%%/pod/perlunicook.pod
 %%PRIV_LIB%%/pod/perlunifaq.pod
 %%PRIV_LIB%%/pod/perluniintro.pod
 %%PRIV_LIB%%/pod/perluniprops.pod
@@ -2071,8 +2074,10 @@ man/man1/perl5163delta.1.gz
 man/man1/perl5180delta.1.gz
 man/man1/perl5181delta.1.gz
 man/man1/perl5182delta.1.gz
+man/man1/perl5184delta.1.gz
 man/man1/perl5200delta.1.gz
 man/man1/perl5201delta.1.gz
+man/man1/perl5202delta.1.gz
 man/man1/perl561delta.1.gz
 man/man1/perl56delta.1.gz
 man/man1/perl581delta.1.gz
@@ -2216,6 +2221,7 @@ man/man1/perltrap.1.gz
 man/man1/perltru64.1.gz
 man/man1/perltw.1.gz
 man/man1/perlunicode.1.gz
+man/man1/perlunicook.1.gz
 man/man1/perlunifaq.1.gz
 man/man1/perluniintro.1.gz
 man/man1/perluniprops.1.gz

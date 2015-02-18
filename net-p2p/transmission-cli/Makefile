@@ -112,10 +112,8 @@ general-patch:
 post-patch: general-patch
 
 general-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${DOCS}" ${STAGEDIR}${DOCSDIR})
 
 post-install: general-install
 

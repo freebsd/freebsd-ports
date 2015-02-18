@@ -238,6 +238,7 @@
     SUBDIR += gtkhtml4
     SUBDIR += guile-www
     SUBDIR += gurlchecker
+    SUBDIR += h2o
     SUBDIR += habari
     SUBDIR += hastymail
     SUBDIR += hastymail2

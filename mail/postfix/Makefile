@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.3
-PORTREVISION=	4
+PORTVERSION=	2.11.4
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
-		ftp://ftp.tux.org/pub/net/postfix/official/ \
-		ftp://ftp.utoronto.ca/mirror/packages/postfix/official/ \
-		ftp://ftp.samurai.com/pub/postfix/official/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
-MASTER_SITE_SUBDIR=	. old related/postfix
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
+		http://de.postfix.org/ftpmirror/ \
+		http://cdn.postfix.johnriley.me/mirrors/postfix-release/ \
+		http://www.artfiles.org/postfix.org/postfix-release/ \
+		http://mirror.lhsolutions.nl/postfix-release/ \
+		ftp://postfix.mirrors.pair.com/
+MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
