@@ -3,6 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -69,11 +70,6 @@ TUI_CONFIGURE_ENABLE=	tui
 EXCLUDE+=	readline
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-gdb-configure.tgt \
-		${FILESDIR}/extrapatch-gdb-Makefile.in
-.endif
-
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
@@ -81,9 +77,9 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$| [GDB v${PORTVERSION} for FreeBSD]|' \
 		${WRKSRC}/gdb/version.in
-
 .if ${PORT_OPTIONS:MTHREADS}
 	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-threads
 .endif
 
 do-install:
