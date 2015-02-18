@@ -2,7 +2,6 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.9
-PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -104,10 +103,6 @@ CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 PLIST_SUB+=	NO_NIS="@comment "
 .else
 PLIST_SUB+=	NO_NIS=""
-.endif
-
-.if defined(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	CPPFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
 .endif
 
 post-patch:

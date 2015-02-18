@@ -94,13 +94,6 @@ PLIST_SUB+=	NO_NIS="@comment "
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-### Fix build with LibreSSL (does not have RAND_egd)
-### PR195513, http://bugs.python.org/issue21356
-.if !EMPTY(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	CPPFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
-.endif
-### End PR195513
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
