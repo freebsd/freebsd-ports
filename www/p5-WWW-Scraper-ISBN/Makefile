@@ -17,4 +17,11 @@ CONFLICTS_INSTALL=	p5-WWW-Scraper-ISBN-Driver-[0-9]* p5-WWW-Scraper-ISBN-Record-
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502000
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>
