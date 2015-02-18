@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: head/www/apache24/files/apache24.in 362371 2014-07-20 20:49:32Z ohauer $
+# $FreeBSD$
 
 # PROVIDE: apache24
 # REQUIRE: LOGIN cleanvar sshd

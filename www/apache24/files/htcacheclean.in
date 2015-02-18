@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: head/www/apache24/files/htcacheclean.in 315335 2013-03-26 21:35:33Z ohauer $
+# $FreeBSD$
 #
 # PROVIDE: htcacheclean
 #

@@ -1,4 +1,4 @@
-# $FreeBSD: head/www/apache24/Makefile.modules 368986 2014-09-22 18:50:18Z ohauer $
+# $FreeBSD$
 #
 # Note by Clement Laforet: (to generate PLIST_SUB entries for modules)
 #	gsed 's/^\(.*\)mod\(.*\)\.so/%%\MOD\U\2%%\L\1mod\2\.so/' pkg-plist > tmp
@@ -43,9 +43,11 @@ IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in
 # XXX in case we use OPTIONS for MPM
 # we do not have a WITH_MPM variable
 .if ${PORT_OPTIONS:MMPM_SHARED}
+SUB_LIST+=		MPM_FALLBACK_CHECK=""
 PLIST_SUB+=		MPM_SHARED=""
 CONFIGURE_ARGS+=	--enable-mpms-shared=all
 .else
+SUB_LIST+=		MPM_FALLBACK_CHECK="\#"
 PLIST_SUB+=		MPM_SHARED="@comment "
 .endif
 

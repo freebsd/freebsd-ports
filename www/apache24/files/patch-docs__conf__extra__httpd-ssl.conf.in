@@ -1,6 +1,37 @@
---- ./docs/conf/extra/httpd-ssl.conf.in.orig	2012-12-11 10:55:03.000000000 +0100
-+++ ./docs/conf/extra/httpd-ssl.conf.in	2013-03-22 18:55:53.000000000 +0100
-@@ -86,8 +86,8 @@
+--- docs/conf/extra/httpd-ssl.conf.in.orig	2015-01-31 12:20:34 UTC
++++ docs/conf/extra/httpd-ssl.conf.in
+@@ -42,11 +42,30 @@ Listen @@SSLPort@@
+ ##  the main server and all SSL-enabled virtual hosts.
+ ##
+ 
++## disable unsecure SSL protocols
++SSLProtocol ALL -SSLv2 -SSLv3
++
+ #   SSL Cipher Suite:
+ #   List the ciphers that the client is permitted to negotiate.
+ #   See the mod_ssl documentation for a complete list.
+ SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+ 
++## The following entries can be used as suggestions,
++##  for more information see:
++##  - http://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslciphersuite
++##  - http://blog.ivanristic.com/2013/08/configuring-apache-nginx-and-openssl-for-forward-secrecy.html
++##
++## To test your SSL implementation use for example security/sslscan or for public reachable systems https://www.ssllabs.com/
++
++## sample for OpenSSL >= 1.0.x (with RC4)
++# SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS"
++
++## sample for OpenSSL >= 1.0.x (keep support for IE8 on XP)
++# SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS +RC4 RC4"
++
++## sample for OpenSSL >= 1.0.x (no RC4 support)
++# SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4"
++
+ #   Speed-optimized SSL Cipher configuration:
+ #   If speed is your main concern (on busy HTTPS servers e.g.),
+ #   you might want to force clients to specific, performance
+@@ -105,8 +124,8 @@ SSLSessionCacheTimeout  300
  DocumentRoot "@exp_htdocsdir@"
  ServerName www.example.com:@@SSLPort@@
  ServerAdmin you@example.com
@@ -11,7 +42,7 @@
  
  #   SSL Engine Switch:
  #   Enable/Disable SSL for this virtual host.
-@@ -246,7 +246,7 @@
+@@ -265,7 +284,7 @@ BrowserMatch "MSIE [2-5]" \
  #   Per-Server Logging:
  #   The home of a custom SSL log file. Use this when you want a
  #   compact non-error SSL logfile on a virtual host basis.

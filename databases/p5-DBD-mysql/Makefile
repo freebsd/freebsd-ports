@@ -1,5 +1,5 @@
 # Created by: Sergey Skvortsov <skv@FreeBSD.org>
-# $FreeBSD: head/databases/p5-DBD-mysql/Makefile 374610 2014-12-12 23:04:14Z pi $
+# $FreeBSD$
 
 PORTNAME=	DBD-mysql
 PORTVERSION=	4.029

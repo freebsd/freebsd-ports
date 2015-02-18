@@ -1,28 +1,65 @@
---- ./Makefile.in.orig	2012-12-17 12:50:41.000000000 +0100
-+++ ./Makefile.in	2014-07-08 06:27:38.000000000 +0200
-@@ -32,12 +32,10 @@
+--- Makefile.in.orig	2012-12-17 11:50:41 UTC
++++ Makefile.in
+@@ -32,12 +32,9 @@ include $(top_srcdir)/build/program.mk
  install-conf:
  	@echo Installing configuration files
  	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) $(DESTDIR)$(sysconfdir)/extra
 -	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)/original/extra
-+	@$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) $(DESTDIR)$(EXAMPLESDIR)/extra
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
 -	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
 -	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
 -	    fi; \
-+	    $(INSTALL_DATA) $$i $(DESTDIR)$(EXAMPLESDIR); \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir)/$${i}.sample; \
  	done; \
  	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
  	    cd $$j ; \
-@@ -78,15 +76,12 @@
+@@ -58,6 +55,16 @@ install-conf:
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
+ 	    				-e 'p' \
+ 	    				< $$i; \
++	    			if echo " $(DSO_MODULES) "|$(EGREP) " cgi " > /dev/null ; then \
++	    				have_cgi="1"; \
++	    			else \
++	    				have_cgi="0"; \
++	    			fi; \
++	    			if echo " $(DSO_MODULES) "|$(EGREP) " cgid " > /dev/null ; then \
++	    				have_cgid="1"; \
++	    			else \
++	    				have_cgid="0"; \
++	    			fi; \
+ 	    			for j in $(DSO_MODULES) "^EOL^"; do \
+ 	    				if test $$j != "^EOL^"; then \
+ 	    					if echo ",$(ENABLED_DSO_MODULES),"|$(EGREP) ",$$j," > /dev/null ; then \
+@@ -68,8 +75,18 @@ install-conf:
+ 	    					if test "$(LOAD_ALL_MODULES)" = "yes"; then \
+ 	    						loading_disabled=""; \
+ 	    					fi; \
+-    						echo "$${loading_disabled}LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
+-	    				fi; \
++							if test $$j = "cgid" -a "$$have_cgi" = "1"; then \
++								echo "<IfModule !mpm_prefork_module>"; \
++								echo "	$${loading_disabled}LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
++								echo "</IfModule>"; \
++							elif test $$j = "cgi" -a "$$have_cgid" = "1"; then \
++								echo "<IfModule mpm_prefork_module>"; \
++								echo "	$${loading_disabled}LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
++								echo "</IfModule>"; \
++							else \
++								echo "$${loading_disabled}LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
++							fi; \
++						fi; \
+ 	    			done; \
+ 	    			sed -e '1,/@@LoadModule@@/d' \
+ 	    				-e '/@@LoadModule@@/d' \
+@@ -78,15 +95,12 @@ install-conf:
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
  	    				< $$i; \
  	    		fi \
 -	    	) > $(DESTDIR)$(sysconfdir)/original/$$i; \
 -	    	chmod 0644 $(DESTDIR)$(sysconfdir)/original/$$i; \
-+	    	) > $(DESTDIR)$(EXAMPLESDIR)/$$i; \
-+	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
++	    	) > $(DESTDIR)$(sysconfdir)/$${i}.sample; \
++	    	chmod 0644 $(DESTDIR)$(sysconfdir)/$${i}.sample; \
  	    	file=$$i; \
  	    	if [ "$$i" = "httpd.conf" ]; then \
  	    		file=`echo $$i|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
@@ -33,7 +70,7 @@
  	    	fi; \
  	    done ; \
  	done ; \
-@@ -137,48 +132,25 @@
+@@ -137,48 +151,25 @@ dox:
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -50,8 +87,8 @@
 -		cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	    fi; \
 -	fi
-+	    $(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
-+		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) || true
++	    $(MKINSTALLDIRS) $(DESTDIR)$(DATADIR)/misc ; \
++		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(DATADIR)/misc) || true
  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
@@ -91,7 +128,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -231,12 +203,7 @@
+@@ -231,12 +222,7 @@ install-man:
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8

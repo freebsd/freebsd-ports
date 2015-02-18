@@ -1,9 +1,9 @@
 # Created by: Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
-# $FreeBSD: head/dns/ldns/Makefile 376416 2015-01-06 10:01:41Z ehaupt $
+# $FreeBSD$
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.17
-PORTREVISION=	4
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -80,7 +80,6 @@ INSTALL_TARGET+=install-manpages
 .if ${PORT_OPTIONS:MGOST}
 . if ${OSVERSION} < 1000015
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
-CONFLICTS+=    libressl-*
 . endif
 .else
 NO_GOST=	--disable-gost

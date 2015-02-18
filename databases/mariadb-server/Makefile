@@ -1,4 +1,4 @@
-# $FreeBSD: head/databases/mariadb-server/Makefile 373557 2014-11-28 11:33:14Z marino $
+# $FreeBSD$
 
 PORTNAME=	mariadb
 PORTVERSION=	5.3.12

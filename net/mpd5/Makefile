@@ -1,5 +1,5 @@
 # Created by: Archie Cobbs
-# $FreeBSD: head/net/mpd5/Makefile 375100 2014-12-20 19:23:19Z bapt $
+# $FreeBSD$
 
 PORTNAME=	mpd
 PORTREVISION=	1

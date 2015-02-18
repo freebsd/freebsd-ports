@@ -1,4 +1,4 @@
-$FreeBSD: head/security/openssh-portable/files/patch-ssh.c 340725 2014-01-22 17:40:44Z mat $
+$FreeBSD$
 
 r99054 | des | 2002-06-29 05:57:53 -0500 (Sat, 29 Jun 2002) | 4 lines
 Changed paths:
