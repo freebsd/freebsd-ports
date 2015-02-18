@@ -18,9 +18,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 
+CONFLICTS_INSTALL=	ja-ack-[0-9]*
+
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
 USE_PERL5=	configure
-
-CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
 .include <bsd.port.mk>
