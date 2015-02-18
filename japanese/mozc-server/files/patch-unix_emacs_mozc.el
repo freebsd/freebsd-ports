@@ -1,5 +1,14 @@
---- unix/emacs/mozc.el.orig	2014-08-31 03:35:19.000000000 +0900
-+++ unix/emacs/mozc.el	2014-08-31 03:52:11.000000000 +0900
+--- unix/emacs/mozc.el.orig	2015-02-15 04:18:31.000000000 +0900
++++ unix/emacs/mozc.el	2015-02-19 04:01:46.000000000 +0900
+@@ -1538,7 +1538,7 @@
+ 
+ ;;;; Communication with Mozc server through the helper process
+ 
+-(defvar mozc-helper-program-name "mozc_emacs_helper"
++(defvar mozc-helper-program-name "%%PREFIX%%/libexec/mozc_emacs_helper"
+   "Helper program's name or path to the helper program.
+ The helper program helps Emacs communicate with Mozc server,
+ which doesn't understand S-expression.")
 @@ -1973,12 +1973,12 @@
    "Deactivate function `mozc-mode' via LEIM."
    (mozc-mode nil))
