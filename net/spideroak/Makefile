@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	5.1.6
-PORTREVISION=	1
+PORTVERSION=	5.1.8
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${PORTNAME}/ \
 		https://spideroak.com/getbuild?platform=slackware&arch=i386&dummy=/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-i686-1
+DISTNAME=	SpiderOak-${PORTVERSION}-i686-1
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	SpiderOak Client (Linux version)
@@ -38,7 +38,7 @@ SUB_FILES=	pkg-message
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-USES=		desktop-file-utils python:2
+USES=		desktop-file-utils python:2 tar:tgz
 
 .include <bsd.port.options.mk>
 
