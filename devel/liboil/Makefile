@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
+INSTALL_TARGET=	install-strip
 CFLAGS:=	${CFLAGS:N-O*} -O2
 
 post-patch:
