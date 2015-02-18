@@ -3,6 +3,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.8.2
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-gstreamer
@@ -11,6 +12,8 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GStreamer backend for Phonon
+
+LICENSE=	LGPL21
 
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
