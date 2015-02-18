@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-xml-parser=libxml --with-www=curl
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
