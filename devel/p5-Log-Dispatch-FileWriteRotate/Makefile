@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-FileWriteRotate
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-File-Write-Rotate>=0:${PORTSDIR}/devel/p5-File-Write-Rotate \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
 
 USE_PERL5=	configure
 USES=		perl5
