@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -20,8 +20,6 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ghostscript 7.x PostScript interpreter
 
 LICENSE=	GPLv2
-
-BROKEN=		Does not support modern png
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
