@@ -58,6 +58,7 @@
     SUBDIR += btc
     SUBDIR += calf
     SUBDIR += cam
+    SUBDIR += cantata
     SUBDIR += caps-plugins
     SUBDIR += ccaudio2
     SUBDIR += cd-console
