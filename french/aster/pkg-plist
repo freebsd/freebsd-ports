@@ -2572,6 +2572,8 @@ aster/%%VE%%/tests/erreu09a.mail
 aster/%%VE%%/tests/erreu09b.comm
 aster/%%VE%%/tests/erreu09b.export
 aster/%%VE%%/tests/erreu09b.mmed
+aster/%%VE%%/tests/erreu09c.comm
+aster/%%VE%%/tests/erreu09c.export
 aster/%%VE%%/tests/erreu10a.comm
 aster/%%VE%%/tests/erreu10a.datg
 aster/%%VE%%/tests/erreu10a.export
@@ -6249,6 +6251,7 @@ aster/%%VE%%/tests/sslv134h.comm
 aster/%%VE%%/tests/sslv134h.datg
 aster/%%VE%%/tests/sslv134h.export
 aster/%%VE%%/tests/sslv134h.mmed
+aster/%%VE%%/tests/sslv134i.com1
 aster/%%VE%%/tests/sslv134i.comm
 aster/%%VE%%/tests/sslv134i.export
 aster/%%VE%%/tests/sslv134i.mmed
@@ -11636,6 +11639,9 @@ aster/asrun/plugins/rsh_server.pyo
 aster/asrun/plugins/server.py
 aster/asrun/plugins/server.pyc
 aster/asrun/plugins/server.pyo
+aster/asrun/plugins/sftp_server.py
+aster/asrun/plugins/sftp_server.pyc
+aster/asrun/plugins/sftp_server.pyo
 aster/asrun/profil.py
 aster/asrun/profil.pyc
 aster/asrun/profil.pyo
