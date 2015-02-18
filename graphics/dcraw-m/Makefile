@@ -25,7 +25,7 @@ GH_COMMIT=	1392579
 
 USES=		pkgconfig
 
-CFLAGS += 	-Wall -Werror -I${LOCALBASE}/include \
+CFLAGS += 	-Wall -I${LOCALBASE}/include \
 		`MagickWand-config --cflags --cppflags` \
 		-DMAGICKCORE_HDRI_ENABLE=0 \
 		-DMAGICKCORE_QUANTUM_DEPTH=16
