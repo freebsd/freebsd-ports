@@ -9,7 +9,7 @@ lib/node_modules/npm/CONTRIBUTING.md
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
 lib/node_modules/npm/README.md
-lib/node_modules/npm/bin/node-gyp-bin/node-gyp
+@(,,755) lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
