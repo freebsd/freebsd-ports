@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	med
-DISTVERSION=	3.0.7
-PORTREVISION=	5
+DISTVERSION=	3.0.8
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org

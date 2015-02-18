@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astk
-DISTVERSION=	1.13.4-1
+DISTVERSION=	1.13.5-1
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -31,7 +31,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 
 .if !defined(CLIENT_SEUL)
-USES+=		tk:build gettext python
+USES+=		gettext python tk:build
 .else
 USES+=		tk
 .endif

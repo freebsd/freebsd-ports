@@ -3,7 +3,6 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	4
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -45,6 +44,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:${PORTSDIR}/math/py-gnuplot	\
 		astk-serveur>0:${PORTSDIR}/cad/astk-serveur
 
 USES=		bison fortran tk python:2
+USE_BINUTILS=	yes
 
 .if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas
@@ -165,6 +165,9 @@ INST_SH=	as_run parallel_cp
 PFX2FIX=	bin/as_run ${VE}/include/aster/asterc_config.h ${VE}/config.txt	\
 		${VE}/include/aster/asterf_config.h ${VE}/profile.sh		\
 		${VE}/lib/aster/aster_pkginfo.py
+V_HOMARD=	V11_2
+V_HOMARD0=	V10_6
+V_H2FIX=	${VE}/lib/aster/Cata/cata.py ${VE}/tests/zzzz121a.comm
 inst_dir=	${PREFIX}/${PORTNAME}
 tools_dir=	${PREFIX}/${PORTNAME}/outils
 tools=		kmetis onmetis pmetis gnuplot
@@ -343,6 +346,9 @@ post-install:
 	${MV} ${STAGEDIR}${inst_dir}/${VE}/share/aster/*	\
 		${STAGEDIR}${inst_dir}/${VE}/
 	${RM} -rf ${STAGEDIR}${inst_dir}/${VE}/share
+.for f in ${V_H2FIX}
+	${REINPLACE_CMD} -e 's|${V_HOMARD0}|${V_HOMARD}|' ${STAGEDIR}${inst_dir}/${f}
+.endfor
 .for f in ${PFX2FIX}
 	${REINPLACE_CMD} -e 's|${STAGEDIR}||g' ${STAGEDIR}${inst_dir}/${f}
 .endfor
@@ -378,7 +384,7 @@ regression-test:	install
 		--filter='"I" not in testlist' -o /tmp/list_seq )
 	(cd /tmp &&	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export) || ${TRUE}
-	@${ECHO_MSG} "Check /tmp/resu_test/*.erre"
+	@${ECHO_MSG} "Check /tmp/resu_test/NOOK"
 .endif
 
 .include <bsd.port.post.mk>
