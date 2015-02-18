@@ -98,6 +98,13 @@ PLIST_SUB+=	NO_NIS="@comment "
 PLIST_SUB+=	NO_NIS=""
 .endif
 
+### Fix build with LibreSSL (does not have RAND_egd)
+### PR195511, http://bugs.python.org/issue21356
+.if !EMPTY(WITH_OPENSSL_PORT)
+CONFIGURE_ARGS+=	CPPFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
+.endif
+### End PR195511
+
 post-patch:
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 	@${REINPLACE_CMD} -e 's/disabled_module_list =[^]]*/&, "nis"/' \

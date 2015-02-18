@@ -3,7 +3,7 @@
 
 PORTNAME=	python34
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -109,6 +109,13 @@ DISABLED_EXTENSIONS+=	nis
 .else
 PLIST_SUB+=	NO_NIS=""
 .endif
+
+### Fix build with LibreSSL (does not have RAND_egd)
+### PR195508, http://bugs.python.org/issue21356
+.if !EMPTY(WITH_OPENSSL_PORT)
+CONFIGURE_ARGS+=	CPPFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
+.endif
+### End PR195508
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
