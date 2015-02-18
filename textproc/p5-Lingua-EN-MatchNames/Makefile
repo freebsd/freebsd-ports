@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-MatchNames
-PORTVERSION=	1.23
+PORTVERSION=	1.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Smart matching for human names
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Lingua-EN-NameParse>=0:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
 		p5-Lingua-EN-Nickname>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Nickname \
