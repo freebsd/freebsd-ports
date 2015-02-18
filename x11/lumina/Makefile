@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.1.${GITVERSION}
+PORTVERSION=	0.8.2.${GITVERSION}
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
@@ -15,7 +15,7 @@ COMMENT=	Lumina Desktop Environment
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
-		fluxbox:${PORTSDIR}/x11-wm/fluxbox \
+		fluxbox>=0:${PORTSDIR}/x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:${PORTSDIR}/x11-themes/fluxbox-tenr-styles-pack \
 		kde4-icons-oxygen>=0:${PORTSDIR}/x11-themes/kde4-icons-oxygen \
 		xscreensaver:${PORTSDIR}/x11/xscreensaver \
@@ -23,9 +23,19 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 		xbrightness:${PORTSDIR}/x11/xbrightness \
 		numlockx:${PORTSDIR}/x11/numlockx
 
+OPTIONS_DEFINE=	MULTIMEDIA
+OPTIONS_DEFAULT=	MULTIMEDIA
+MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMULTIMEDIA}
+RUN_DEPENDS+=	gstreamer-plugins>=0:${PORTSDIR}/multimedia/gstreamer-plugins
+.endif
+
 MAKE_JOBS_UNSAFE=yes
 
-GITVERSION=	1421890927
+GITVERSION=	1424293520
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
