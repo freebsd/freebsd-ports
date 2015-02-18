@@ -233,11 +233,7 @@ share/applications/ibus-setup.desktop
 %%DATADIR%%/keymaps/us
 %%DATADIR%%/setup/engineabout.py
 %%DATADIR%%/setup/enginecombobox.py
-%%DATADIR%%/setup/enginecombobox.pyc
-%%DATADIR%%/setup/enginecombobox.pyo
 %%DATADIR%%/setup/enginedialog.py
-%%DATADIR%%/setup/enginedialog.pyc
-%%DATADIR%%/setup/enginedialog.pyo
 %%DATADIR%%/setup/enginetreeview.py
 %%DATADIR%%/setup/i18n.py
 %%DATADIR%%/setup/icon.py
