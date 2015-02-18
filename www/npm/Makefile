@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -17,7 +18,7 @@ NODE_DEVEL_DESC=Use www/node-devel instead of www/node
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe tar:xz
+USES=		cpe python:2 tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
@@ -29,11 +30,11 @@ NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'MANPATH ${MANPREFIX}/man' > ${WRKDIR}/npm.conf
+	@${ECHO_CMD} 'MANPATH ${PREFIX}/lib/node_modules/npm/man' > ${WRKDIR}/npm.conf
+	@${REINPLACE_CMD} -e 's|exec python|exec ${PYTHON_CMD}|' ${WRKSRC}/node_modules/node-gyp/gyp/gyp
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/npm.conf ${STAGEDIR}${PREFIX}/etc/man.d/npm.conf
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 
 # maintainer section:
 # require: bash, git, gmake, perl, node
