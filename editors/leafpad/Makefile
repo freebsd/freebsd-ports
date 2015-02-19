@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk20 intlhack
 USES=		desktop-file-utils gmake pkgconfig
 GNU_CONFIGURE=	yes
