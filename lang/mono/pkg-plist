@@ -3,6 +3,7 @@ bin/al2
 bin/caspol
 bin/cccheck
 bin/ccrewrite
+bin/cert-sync
 bin/cert2spc
 bin/certmgr
 bin/chktrust
@@ -614,6 +615,8 @@ lib/mono/4.5/cccheck.exe
 lib/mono/4.5/cccheck.exe.mdb
 lib/mono/4.5/ccrewrite.exe
 lib/mono/4.5/ccrewrite.exe.mdb
+lib/mono/4.5/cert-sync.exe
+lib/mono/4.5/cert-sync.exe.mdb
 lib/mono/4.5/cert2spc.exe
 lib/mono/4.5/cert2spc.exe.mdb
 lib/mono/4.5/certmgr.exe
