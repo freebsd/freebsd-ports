@@ -29,6 +29,10 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 .include <bsd.port.options.mk>
 
+.if ${SLAVE_PORT} == no
+CONFLICTS_INSTALL+=	trac-email2trac-postfix-[0-9]*
+.endif
+
 .if ${PORT_OPTIONS:MPOSTFIX}
 MTAUSER?=	nobody
 .else
@@ -38,14 +42,10 @@ MTAUSER?=	mailnull
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/delete_spam.py ${STAGEDIR}${PREFIX}/bin/delete_spam
 	@${INSTALL_SCRIPT} ${WRKSRC}/email2trac.py ${STAGEDIR}${PREFIX}/bin/email2trac
-	@${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m 4111 \
+	@${INSTALL_PROGRAM} \
 	    ${WRKSRC}/run_email2trac ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/email2trac.conf \
 	    ${STAGEDIR}${PREFIX}/etc/email2trac.conf.sample
-	@if [ ! -e ${STAGEDIR}${PREFIX}/etc/email2trac.conf ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/email2trac.conf.sample \
-		    ${STAGEDIR}${PREFIX}/etc/email2trac.conf ; \
-	fi
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
