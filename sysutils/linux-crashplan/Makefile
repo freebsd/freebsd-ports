@@ -11,7 +11,7 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Backs up data to remote servers or hard drives
 
 RUN_DEPENDS=	linux-sun-jre17>=0:${PORTSDIR}/java/linux-sun-jre17 \
-		bash>=0:${PORTSDIR}/shells/bash
+		bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/CrashPlan-install
 
