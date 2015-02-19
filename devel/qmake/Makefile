@@ -11,7 +11,7 @@ DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	The build utility of the Qt project
+COMMENT=	The build utility of the Qt 3 project
 
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
