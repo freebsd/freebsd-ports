@@ -12,6 +12,7 @@ bin/radsqlrelay
 bin/radtest
 bin/radwho
 bin/radzap
+bin/rbmonkey
 bin/rlm_ippool_tool
 bin/smbencrypt
 include/freeradius/attributes.h
@@ -244,6 +245,9 @@ include/freeradius/udpfromto.h
 %%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.a
 %%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.la
 %%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.so
+%%LIBDIR%%/rlm_test.a
+%%LIBDIR%%/rlm_test.la
+%%LIBDIR%%/rlm_test.so
 %%LIBDIR%%/rlm_unix.a
 %%LIBDIR%%/rlm_unix.la
 %%LIBDIR%%/rlm_unix.so
@@ -780,6 +784,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.packeteer
 %%DATADIR%%/dictionary.paloalto
 %%DATADIR%%/dictionary.patton
+%%DATADIR%%/dictionary.perle
 %%DATADIR%%/dictionary.propel
 %%DATADIR%%/dictionary.prosoft
 %%DATADIR%%/dictionary.proxim
@@ -821,6 +826,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.ruckus
+%%DATADIR%%/dictionary.ruggedcom
 %%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
@@ -838,6 +844,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.telkom
 %%DATADIR%%/dictionary.terena
 %%DATADIR%%/dictionary.trapeze
+%%DATADIR%%/dictionary.travelping
 %%DATADIR%%/dictionary.tropos
 %%DATADIR%%/dictionary.ukerna
 %%DATADIR%%/dictionary.unix
