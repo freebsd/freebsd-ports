@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
+USE_KDE4=	kdelibs kdeprefix libksane pimlibs \
 		automoc4 qimageblitz libkcddb
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USES=		cmake gettext shared-mime-info tar:bzip2

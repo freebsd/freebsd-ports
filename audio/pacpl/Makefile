@@ -37,7 +37,6 @@ FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
 FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
 FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 KDE4_DESC=		Konqueror/Dolphin integration
-KDE4_USE=		KDE4=kdehier
 LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 LAUDIO_DESC=		Laudio support
 LAUDIO_RUN_DEPENDS=	laudio:${PORTSDIR}/audio/linux-laudio

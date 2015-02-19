@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libktorrent.so:${PORTSDIR}/net-p2p/libktorrent
 
-USE_KDE4=	kdelibs kdehier kdeprefix automoc4 pimlibs workspace
+USE_KDE4=	kdelibs kdeprefix automoc4 pimlibs workspace
 USE_QT4=	corelib gui network qt3support qtestlib webkit \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake:outsource gettext tar:bzip2

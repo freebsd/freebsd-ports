@@ -72,10 +72,6 @@ DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop-file-utils"
 .endif
 
-.if defined(USE_KDE4) && ${USE_KDE4:Mkdehier}
-DEV_WARNING+=	"USE_KDE4=kdehier is deprecated, please use USE_KDE4=kdeprefix"
-.endif
-
 .if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
 DEV_ERROR+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
 .endif

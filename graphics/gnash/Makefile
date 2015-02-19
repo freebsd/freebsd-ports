@@ -107,9 +107,8 @@ CONFIGURE_ARGS+=	--disable-npapi
 .endif
 
 .if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MPLUGIN}
-PLIST_SUB+=	KPARTS4=""
-USE_LDCONFIG+=	${KDE4_PREFIX}/lib/kde4
-CONFIGURE_ARGS+=	--with-kde4_prefix=${PREFIX}/kde4
+PLIST_SUB+=	KPARTS4="${KDE4_PREFIX}"
+CONFIGURE_ARGS+=	--with-kde4_prefix=${KDE4_PREFIX}
 .else
 PLIST_SUB+=	KPARTS4="@comment "
 CONFIGURE_ARGS+=	--disable-kparts4
@@ -129,7 +128,7 @@ GNASH_GUIS+=	gtk
 GNASH_GUIS+=	kde4
 USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
-USE_KDE4=	kdehier kdelibs
+USE_KDE4=	kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
 .endif
 

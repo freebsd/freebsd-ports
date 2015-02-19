@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${POR
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
+USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
 USE_MYSQL=	embedded
 USE_QT4=	corelib dbus designer gui network opengl \
