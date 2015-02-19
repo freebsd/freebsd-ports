@@ -36,6 +36,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
+CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
+
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	www/source/examples.pl

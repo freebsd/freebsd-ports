@@ -13,6 +13,8 @@ LICENSE=	ISCL
 
 BUILD_DEPENDS=	skalibs>=2.2.1.0:${PORTSDIR}/devel/skalibs
 
+CONFLICTS_INSTALL=	ImageMagick-* # bin/import
+
 USES=		gmake
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
