@@ -144,8 +144,6 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 			strigi
 # Meta components
 _USE_KDE4_ALL+=		kdeprefix
-# Deprecated
-_USE_KDE4_ALL+=		kdehier
 
 baloo_PORT=		sysutils/baloo
 baloo_PATH=		${KDE4_PREFIX}/lib/libbaloocore.so

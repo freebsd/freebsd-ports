@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USES=		cmake:outsource pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	script/open-raw.pl script/kpa-backup.sh
-USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkipi automoc4
+USE_KDE4=	kdelibs kdeprefix libkdcraw libkipi automoc4
 USE_QT4=	phonon sql \
 		qmake_build moc_build rcc_build uic_build
 

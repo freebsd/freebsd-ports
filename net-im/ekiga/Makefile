@@ -51,7 +51,7 @@ LOUDMOUTH_DESC=	XMPP (jabber) support
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MKDE} || ${PORT_OPTIONS:MKAB}
-USE_KDE4=	kdehier kdelibs
+USE_KDE4=	kdelibs
 USE_QT4=	corelib
 CONFIGURE_ARGS+=--enable-kde
 #CONFIGURE_ENV+=KDE_CFLAGS="-I${KDE4_PREFIX}/include -I${QT_INCDIR} \
