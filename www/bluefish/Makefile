@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bluefish
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
@@ -31,53 +30,31 @@ CONFIGURE_ARGS=	--with-gtk2 \
 		--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--with-icon-path=${PREFIX}/share/pixmaps
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT DOCS
+OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT EXAMPLES
 
 DEBUG_DESC=	Enable debugging output
 TIDY_DESC=	Include Tidy HTML cleanup program
 WEBLINT_DESC=	Include Weblint syntax and style checker
 
-OPTIONS_DEFAULT=	WEBLINT
+OPTIONS_DEFAULT=WEBLINT
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--with-debugging-output
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
+DEBUG_CONFIGURE_ON=	--with-debugging-output
+LIBGNOME_USE=		GNOME=libgnomeui
+TIDY_RUN_DEPENDS=	tidy4:${PORTSDIR}/www/tidy
+WEBLINT_RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
-.if ${PORT_OPTIONS:MTIDY}
-RUN_DEPENDS+=	tidy4:${PORTSDIR}/www/tidy
-.endif
-
-.if ${PORT_OPTIONS:MWEBLINT}
-RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/^bflangsampledir = /s|$$(docdir)/bflang|${EXAMPLESDIR}|' \
+		${WRKSRC}/data/bflang/Makefile.in
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/bflang
-	${INSTALL_DATA} ${WRKSRC}/data/bflang/sample.bflang2 \
-		${STAGEDIR}${DOCSDIR}/bflang
-.endif
-	(cd ${STAGEDIR}${PREFIX}/lib/bluefish/ && \
-		${STRIP_CMD} *.so)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
