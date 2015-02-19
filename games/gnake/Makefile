@@ -15,6 +15,9 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	upstream gone, use games/bsdgames
+EXPIRATION_DATE=	2015-03-19
+
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 CFLAGS+=	-Wall
 
