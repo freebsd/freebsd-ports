@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bpython
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://bpython-interpreter.org/releases/
@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
 
-PORTEXAMPLES=	light.theme sample-config sample.theme
+PORTEXAMPLES=	light.theme sample.theme
 
 NLS_USES=		gettext
 
