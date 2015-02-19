@@ -1023,6 +1023,7 @@
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
     SUBDIR += rubygem-fog-atmos
+    SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
