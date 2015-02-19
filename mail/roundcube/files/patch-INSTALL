@@ -1,10 +1,10 @@
---- INSTALL.orig	2010-12-13 17:37:36.000000000 +0100
-+++ INSTALL	2010-12-13 17:37:44.000000000 +0100
-@@ -25,7 +25,6 @@
+--- INSTALL.orig	2015-02-08 13:43:29.000000000 +0000
++++ INSTALL	2015-02-19 12:22:34.259436291 +0000
+@@ -29,7 +29,6 @@
+    - memory_limit > 16MB (increase as suitable to support large attachments)
     - file_uploads enabled (for attachment upload features)
     - session.auto_start disabled
-    - zend.ze1_compatibility_mode disabled
 -   - suhosin.session.encrypt disabled
     - mbstring.func_overload disabled
- * PHP compiled with OpenSSL to connect to IMAPS and to use the spell checker
- * A MySQL (4.0.8 or newer), PostgreSQL, MSSQL database engine
+    - magic_quotes_runtime disabled
+    - magic_quotes_sybase disabled
