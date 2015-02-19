@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	1.5.2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -104,6 +103,9 @@ post-build:
 	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
 
 post-install:
+.if ${PORT_OPTIONS:MPYTHON}
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_unbound.so
+.endif
 .if ${PORT_OPTIONS:MMUNIN}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/munin/plugins
