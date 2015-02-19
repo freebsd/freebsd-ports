@@ -15,6 +15,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
+CONFLICTS_INSTALL?=	trac-email2trac-postfix-[0-9]*
+
 OPTIONS_DEFINE=	POSTFIX DOCS
 POSTFIX_DESC=	Configure suid script for postfix
 
@@ -28,10 +30,6 @@ USES=		python:2
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 .include <bsd.port.options.mk>
-
-.if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	trac-email2trac-postfix-[0-9]*
-.endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
 MTAUSER?=	nobody
