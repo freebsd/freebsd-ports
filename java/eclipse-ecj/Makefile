@@ -4,8 +4,7 @@
 PORTNAME=	ecj
 PORTVERSION=	3.8.2
 CATEGORIES=	java devel
-MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops/
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-${DROPDATE}
+MASTER_SITES=	http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops/R-${PORTVERSION}-${DROPDATE}/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	ecjsrc-${PORTVERSION}
 EXTRACT_SUFX=	.jar
