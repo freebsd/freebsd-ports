@@ -1028,6 +1028,7 @@
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-sakuracloud
+    SUBDIR += rubygem-fog-serverlove
     SUBDIR += rubygem-fog-softlayer
     SUBDIR += rubygem-fog-storm_on_demand
     SUBDIR += rubygem-fog-terremark
