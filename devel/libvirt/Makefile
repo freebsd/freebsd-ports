@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libssh2.so:${PORTSDIR}/security/libssh2
 BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
-RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
+RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
+		dmidecode:${PORTSDIR}/sysutils/dmidecode
 
 OPTIONS_DEFINE=	DOCS NLS QEMU SASL
 .if exists(/usr/sbin/bhyve)
