@@ -11,13 +11,10 @@ COMMENT=	Libraries and utilities to access smart cards
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
-OPTIONS_DEFINE=	SM DOCS
-OPTIONS_DEFAULT=PCSC SM
+OPTIONS_DEFINE=	SM DOCS MANPAGES
+OPTIONS_DEFAULT=PCSC SM MANPAGES
 
 PCSC_DESC=	Use PC/SC backend
 OPENCT_DESC=	Use OpenCT backend
@@ -32,14 +29,28 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	\
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
-		XSLTPROC="${LOCALBASE}/bin/xsltproc"
-
-CONFIGURE_ARGS=	--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+CONFIGURE_ENV+=	XSLTPROC="${LOCALBASE}/bin/xsltproc"
+CONFIGURE_ARGS+=--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
+.else
+CONFIGURE_ENV+=	XSLTPROC="${FALSE}"
+CONFIGURE_ARGS+=--without-xsl-stylesheetsdir
+.endif
+
+.if ${PORT_OPTIONS:MMANPAGES}
+PLIST_SUB+=	MANPAGES=""
+.else
+CONFIGURE_ARGS+=--disable-man
+PLIST_SUB+=	MANPAGES="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MOPENCT}
 LIB_DEPENDS+=	libopenct.so:${PORTSDIR}/security/openct
