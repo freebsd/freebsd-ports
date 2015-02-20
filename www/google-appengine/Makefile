@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTVERSION=	1.9.17
+PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -37,7 +37,7 @@ GAEDATADIR=	google lib new_project_template tools
 GAESCRIPTS=	_php_runtime.py _python_runtime.py api_server.py appcfg.py \
 		backends_conversion.py bulkload_client.py bulkloader.py \
 		dev_appserver.py download_appstats.py endpointscfg.py \
-		gen_protorpc.py google_sql.py old_dev_appserver.py php_cli.py \
+		gen_protorpc.py google_sql.py php_cli.py \
 		remote_api_shell.py run_tests.py wrapper_util.py
 
 .include <bsd.port.options.mk>
@@ -53,15 +53,14 @@ WANT_MYSQL_VER=	55
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for D in ${GAEDATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${STAGEDIR}${DATADIR})
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${GAEDATADIR}" ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
-.for S in ${GAESCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${S} ${STAGEDIR}${DATADIR}
-	${LN} ${LN_OPTS} ${DATADIR}/${S} ${STAGEDIR}${PREFIX}/bin/${S}
-.endfor
+	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${STAGEDIR}${PREFIX}/bin && \
+	for S in ${GAESCRIPTS}; do \
+	${INSTALL_SCRIPT} ${WRKSRC}/$${S} ${STAGEDIR}${DATADIR}; \
+	${LN} ${LN_OPTS} ../${DATADIR_REL}/$${S} $${S}; \
+	done)
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${STAGEDIR}${DATADIR}
 
 post-install:
