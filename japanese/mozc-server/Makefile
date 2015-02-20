@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	2.16.2051.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -142,7 +142,7 @@ EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
-		bin/mozc_emacs_helper
+		libexec/mozc_emacs_helper
 SUB_FILES+=	mozc
 
 post-extract-mozc_server:
@@ -163,8 +163,10 @@ do-build-mozc_server:
 do-install-mozc_server:
 	${INSTALL_PROGRAM} \
 	    ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
-	    ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
 	    ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} \
+	    ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
+	    ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} \
 	    ${WRKDIR}/mozc ${STAGEDIR}/${PREFIX}/bin
 .endif
@@ -294,6 +296,11 @@ post-extract-fcitx_mozc:
 	${RM} ${WRKSRC}/unix/fcitx/fcitx.gyp
 
 post-extract: post-extract-fcitx_mozc
+
+post-patch-fcitx_mozc:
+	cd ${PATCH_WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-unix_fcitx_fcitx_mozc.cc 
+
+post-patch: post-patch-fcitx_mozc
 
 do-build-fcitx_mozc:
 	${BUILD_MOZC_CMD_BUILD} unix/fcitx/fcitx.gyp:fcitx-mozc
