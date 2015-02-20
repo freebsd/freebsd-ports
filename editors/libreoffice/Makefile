@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	3
+PORTREVISION=	0
 
 COMMENT=	Full integrated office productivity suite
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
-		libcmis-0.4.so:${PORTSDIR}/net/libcmis \
+		libcmis-0.5.so:${PORTSDIR}/net/libcmis \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libmspub-0.1.so:${PORTSDIR}/print/libmspub01 \
 		libnss3.so:${PORTSDIR}/security/nss \
@@ -216,7 +216,7 @@ DEBUG_CONFIGURE_OFF=	--enable-release-build
 
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 GNOME_USE=	GNOME=gconf2
-GNOME_CONFIGURE_ENABLE=	dbus gconf gio lockdown
+GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
 
 GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3
@@ -303,7 +303,10 @@ CONFIGURE_ARGS+=	--disable-gtk
 
 .if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
 USES+=		desktop-file-utils
+CONFIGURE_ARGS+=	--enable-gio
 INSTALLS_ICONS=	yes
+.else
+CONFIGURE_ARGS+=	--disable-gio
 .endif
 
 .if empty(PORT_OPTIONS:MTEST)
