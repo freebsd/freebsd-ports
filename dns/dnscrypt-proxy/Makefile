@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -13,11 +13,10 @@ COMMENT=	Boost privacy and security of DNS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		execinfo gmake
 
 SUB_FILES=	pkg-message
 
