@@ -269,6 +269,7 @@
     SUBDIR += ruby19
     SUBDIR += ruby20
     SUBDIR += ruby21
+    SUBDIR += ruby22
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += s9fes
