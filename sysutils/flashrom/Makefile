@@ -49,6 +49,9 @@ FTDI_USES=		pkgconfig
 FTDI_LDFLAGS=		-lz
 FTDI_MAKE_ENV_OFF=	2_SPI=no
 
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,,g" ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
