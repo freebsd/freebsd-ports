@@ -131,8 +131,14 @@ RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
 THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
+.if ""${OPENSSL_PORT} != "security/libressl"
 TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
 TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
+.else
+# LibreSSL does not have SRP support making build fail on 10.0
+# this ugly hack works around that, see PR197865
+CONFIGURE_ARGS+= --disable-tls-srp
+.endif
 
 .include <bsd.port.options.mk>
 
