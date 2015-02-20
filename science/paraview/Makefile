@@ -11,6 +11,8 @@ DISTNAME=	ParaView-v${PORTVERSION}-source
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
 
+BROKEN=		Fails to build with latest libGL
+
 LICENSE=	ParaView_License_1.2
 LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
