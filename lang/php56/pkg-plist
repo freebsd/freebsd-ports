@@ -93,6 +93,7 @@ include/php/ext/ereg/regex/regex2.h
 include/php/ext/ereg/regex/utils.h
 include/php/ext/libxml/php_libxml.h
 include/php/ext/mysqlnd/config-win.h
+include/php/ext/mysqlnd/mysql_float_to_double.h
 include/php/ext/mysqlnd/mysqlnd.h
 include/php/ext/mysqlnd/mysqlnd_alloc.h
 include/php/ext/mysqlnd/mysqlnd_block_alloc.h

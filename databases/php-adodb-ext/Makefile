@@ -18,6 +18,8 @@ USES=		dos2unix zip
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	adodb
+PHP_DEFAULT=	55
+IGNORE_WITH_PHP=56
 
 SUB_FILES=	pkg-message
 
