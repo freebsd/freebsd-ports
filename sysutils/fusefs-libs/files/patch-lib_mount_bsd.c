@@ -9,6 +9,14 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
  #include <sys/sysctl.h>
+@@ -78,6 +80,7 @@ static const struct fuse_opt fuse_mount_
+ 	FUSE_DUAL_OPT_KEY("ro",			KEY_KERN),
+ 	FUSE_DUAL_OPT_KEY("rw",			KEY_KERN),
+ 	FUSE_DUAL_OPT_KEY("auto",		KEY_KERN),
++	FUSE_DUAL_OPT_KEY("automounted",	KEY_KERN),
+ 	/* options supported under both Linux and FBSD */
+ 	FUSE_DUAL_OPT_KEY("allow_other",	KEY_KERN),
+ 	FUSE_DUAL_OPT_KEY("default_permissions",KEY_KERN),
 @@ -192,56 +194,12 @@
  	free(umount_cmd);
  }
