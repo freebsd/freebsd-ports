@@ -11,10 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kitchetech@gmail.com
 COMMENT=	Python program for SSL stripping
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}twistedWeb>=0:${PORTSDIR}/www/py-twistedWeb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 
-USES=		python
+USES=		python twisted:web
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
