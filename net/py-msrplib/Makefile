@@ -17,14 +17,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:${PORTSDIR}/security/py-gnutls \
-		${PYTHON_PKGNAMEPREFIX}twistedCore>=8.1.0:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_PKGNAMEPREFIX}twistedNames>=8.1.0:${PORTSDIR}/dns/py-twistedNames \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.15:${PORTSDIR}/net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:${PORTSDIR}/devel/py-application \
-
+		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:${PORTSDIR}/devel/py-application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python
+USES=		python twisted:names
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
