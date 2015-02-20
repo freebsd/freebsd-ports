@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.11.5
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-111
@@ -30,7 +30,7 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--without-system-verto
+CONFIGURE_ARGS?=	--without-system-verto --disable-rpath
 CONFIGURE_ENV=		NSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
@@ -43,18 +43,28 @@ LDAP=			Enable LDAP support
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
-CFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
-LDFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
 .if ${KRB5_HOME} != ${LOCALBASE}
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
 .endif
 .endif
-LDFLAGS+=		-L${LOCALBASE}/lib
-CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
+CFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
 
 USE_OPENSSL=		yes
 
 .include <bsd.port.pre.mk>
+
+.if !empty(KRB5_HOME)
+_RPATH=		${KRB5_HOME}/lib:
+.else
+_RPATH=		${LOCALBASE}/lib:
+.endif
+.if !empty(LDFLAGS:M-Wl,-rpath,*)
+.for F in ${LDFLAGS:M-Wl,-rpath,*}
+LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
+		${LDFLAGS:N-Wl,-rpath,*}
+.endfor
+.endif
 
 .if ${PORT_OPTIONS:MDNS_FOR_REALM}
 CONFIGURE_ARGS+=	--enable-dns-for-realm
@@ -68,8 +78,6 @@ PLIST_SUB+=		LDAP=""
 PLIST_SUB+=		LDAP="@comment "
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
@@ -78,8 +86,6 @@ WRKSRC=			${WRKDIR}/krb5-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/krb5-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/krb5-${PORTVERSION}/doc/pdf
-
-CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB} -L${LOCALBASE}/include"
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/krb5-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions
