@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zetaback
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	https://labs.omniti.com/zetaback/tags/1.0/
+MASTER_SITES=	http://mirrors.omniti.com/zetaback/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Zetaback ZFS backup and recovery management system
