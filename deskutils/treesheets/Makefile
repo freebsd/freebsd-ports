@@ -56,7 +56,7 @@ post-patch: .SILENT
 		${BUILD_WRKSRC}/system.h
 
 do-build:
-	(cd ${BUILD_WRKSRC} && ${SH} build.sh)
+	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
