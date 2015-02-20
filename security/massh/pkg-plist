@@ -5,3 +5,4 @@ man/man1/massh.1.gz
 @dir %%MASSHDIR%%/pull
 @dir %%MASSHDIR%%/push
 @dir %%MASSHDIR%%/scripts
+@dir %%MASSHDIR%%
