@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-01-28 07:00:34.000000000 -0500
++++ configure.ac	2015-01-28 18:11:00.936172000 -0500
+@@ -7789,7 +7789,7 @@
+ dnl ===================================================================
+ # libcmis requires curl and we can't build curl for iOS
+ if test $_os != iOS; then
+-    libo_CHECK_SYSTEM_MODULE([libcmis],[CMIS],[libcmis-0.4 >= 0.4.0])
++    libo_CHECK_SYSTEM_MODULE([libcmis],[CMIS],[libcmis-0.5 >= 0.5.0])
+     ENABLE_CMIS=TRUE
+ else
+     ENABLE_CMIS=
