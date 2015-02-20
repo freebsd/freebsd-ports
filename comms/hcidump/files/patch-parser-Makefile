@@ -6,7 +6,7 @@
  WARNS?=		2
 -DEBUG_FLAGS=	-g
 -CFLAGS=		-O2
-+CWARNFLAGS+=	-Wno-unused
++NO_WERROR=	yes
 +CFLAGS?=	-O2
  
  NOPROFILE=	1
