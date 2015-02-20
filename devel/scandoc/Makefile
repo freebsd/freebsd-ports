@@ -13,7 +13,8 @@ COMMENT=	C/C++ documentation generator
 # the file COPYING should be removed from DOCSDIR installation and plist
 #LICENSE=	ARTPERL10
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 OPTIONS_DEFINE=	DOCS
 
