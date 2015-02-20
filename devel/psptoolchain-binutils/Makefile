@@ -18,7 +18,6 @@ USES=		gmake tar:bzip2 libtool
 USE_GCC=	4.8
 
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--target="psp" \
 		--enable-install-libbfd \
@@ -26,6 +25,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-nls \
 		--mandir=${PREFIX}/man
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
+
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
+.elif ${ARCH} == "armv6"
+CONFIGURE_TARGET=	${ARCH:S/armv6/arm/}-unknown-${OPSYS:tl}${OSREL}
+.endif
 
 # Disable installation of .info files and libiberty.
 post-patch:
@@ -38,4 +44,4 @@ post-patch:
 	@${REINPLACE_CMD} -E 's/^(install:)(.*)/\1#\2/' ${WRKSRC}/libiberty/Makefile.in
 	@${REINPLACE_CMD} -E 's,^(install.*:)(.*)install-info(.*),\1 \2 \3,' ${WRKSRC}/etc/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
