@@ -3,15 +3,13 @@
 
 PORTNAME=	paraview
 PORTVERSION=	4.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}-source
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
-
-BROKEN=		Fails to build with latest libGL
 
 LICENSE=	ParaView_License_1.2
 LICENSE_NAME=	ParaView_License
