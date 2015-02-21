@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdiskusage
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
