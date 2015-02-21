@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	riak
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.12
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
@@ -17,11 +17,13 @@ USES=		gmake readline
 USE_RC_SUBR=	riak
 
 PLIST=		${WRKDIR}/pkg-plist
-PLIST_SUB+=	RIAK_CONFDIR=${RIAK_CONFDIR} \
+PLIST_SUB+=	GROUPS=${GROUPS} \
+		RIAK_CONFDIR=${RIAK_CONFDIR} \
 		RIAK_DBDIR=${RIAK_DBDIR} \
 		RIAK_HOMEDIR=${RIAK_HOMEDIR} \
 		RIAK_LIBDIR=${RIAK_LIBDIR} \
-		RIAK_LOGDIR=${RIAK_LOGDIR}
+		RIAK_LOGDIR=${RIAK_LOGDIR} \
+		USERS=${USERS}
 
 USERS=		riak
 GROUPS=		riak
@@ -44,8 +46,6 @@ post-patch:
 pre-install:
 	${RM} -f ${PLIST}
 	${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
-	${ECHO} "@owner ${USERS}" >> ${PLIST}
-	${ECHO} "@group ${GROUPS}" >> ${PLIST}
 	(cd ${WRKSRC}/rel/${PORTNAME}; ${FIND} releases -type f \
 		| ${AWK} '{print length, $$0}' | ${SORT} -rn | ${SED} -e 's/^/lib\//' \
 		| ${AWK} '{print "lib/riak/"$$2 }' >> ${PLIST})
