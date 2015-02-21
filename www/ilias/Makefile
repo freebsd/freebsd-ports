@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	4.4.7
+PORTVERSION=	5.0.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/01.%20ILIAS%204.4/ILIAS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/ILIAS%205.0/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
@@ -52,7 +52,7 @@ pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${ECHO_CMD} "@mode 755" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ILIASDIR}?g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ILIASDIR}?g" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${ILIASDIR}?g" >> ${PLIST}
 	@${ECHO} @dir ${ILIASDATADIR} >> ${PLIST}
 	@${ECHO_CMD} "@mode" >> ${PLIST}

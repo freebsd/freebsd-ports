@@ -11,10 +11,11 @@ functionality, but to broaden it you will have to install
 third party software like Sun Java, HTMLdoc, LaTeX or
 some virus scanner by yourself.
 
-3 Add the following to your Apache configuration, and
-   restart the server:
+3 Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
 
-  ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   For Apache versions earlier than 2.4:
+
    Alias /ilias %%WWWDIR%%/
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
@@ -22,10 +23,14 @@ some virus scanner by yourself.
       Order Allow,Deny
       Allow from all
    </Directory>
-   <Directory %%PREFIX%%/%%ILIASDATADIR%%>
+
+   For Apache version 2.4.x or above:
+
+   Alias /ilias %%WWWDIR%%/
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%/>
       AllowOverride None
-      Order Allow,Deny
-      Deny from all
+      Require all granted
    </Directory>
 
 4 Then feel free to proceed to ILIAS web setup proccess.
@@ -34,4 +39,7 @@ some virus scanner by yourself.
 
 5 After the installation, you can login into the system 
 with username/root and password/homer as the administrator.
+
+For more information, see the INSTALL DOCUMENTATION:
+http://www.ilias.de/docu/goto.php?target=lm_367&client_id=docu
 =============================================
