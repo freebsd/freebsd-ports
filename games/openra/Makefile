@@ -2,7 +2,7 @@
 
 PORTNAME=	openra
 PORTVERSION=	20141029
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,6 +47,7 @@ ZENITY_DESC=	Use native crash dialog
 
 post-patch:
 	${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \
+		-e '/CP_R/s,hicolor/,hicolor,' \
 		-e 's/crashdialog/gamemonitor/' \
 		-e '/^mods:/s/$$/ version/' \
 		-e '/^docs:/s/$$/ all/' \
