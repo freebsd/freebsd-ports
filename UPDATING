@@ -76,7 +76,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you wish to update to the new default version, you need to first stop any
   running server instance. Then, you will need to follow these steps, depending
-  on intalled packages.
+  on installed packages.
 
   # pkg set -o databases/mysql55-client:databases/mysql56-client
   # pkg set -o databases/mysql55-server:databases/mysql56-server
