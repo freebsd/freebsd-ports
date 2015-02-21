@@ -30,6 +30,7 @@ share/kde4/services/kdevphpunitprovider.desktop
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevphp.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevphp.mo
