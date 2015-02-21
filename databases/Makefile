@@ -931,6 +931,7 @@
     SUBDIR += useracc
     SUBDIR += usogres
     SUBDIR += vfront
+    SUBDIR += virtualpg
     SUBDIR += virtuoso
     SUBDIR += vsqlite
     SUBDIR += wfb2sql
