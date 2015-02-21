@@ -25,25 +25,25 @@
  
  int board_late_init(void)
  {
-+	const char *imxname;
-+	uint cpurev, imxtype;
++	const char *fdt_soc;
++	uint cpurev;
 +
 +	cpurev = get_cpu_rev();
-+	imxtype = (cpurev & 0xFF000) >> 12;
 +
-+	switch (imxtype){
-+	case MXC_CPU_MX6SOLO:
-+		imxname = "imx6sx";	
-+		break;
-+	case MXC_CPU_MX6Q:
-+		imxname = "imx6q";	
-+		break;
-+	case MXC_CPU_MX6DL:
-+	default:
-+		imxname = "imx6dl";	
-+		break;	
-+	}
-+	setenv("soc", imxname);
++	/*
++	 * Note that Solo and DualLite are the same SoC with one core fused off
++	 * in the solo case.
++	 */
++	if (((cpurev & 0xFF000) >> 12) == MXC_CPU_MX6Q)
++		fdt_soc = "imx6q";
++	else
++		fdt_soc = "imx6dl";
++
++	if (getenv("fdt_soc") == NULL)
++		setenv("fdt_soc", fdt_soc);
++
++	if (getenv("fdt_board") == NULL)
++		setenv("fdt_board", "wandboard");
 +
  #ifdef CONFIG_CMD_BMODE
  	add_board_boot_modes(board_boot_modes);
