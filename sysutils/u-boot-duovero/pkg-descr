@@ -1,0 +1,21 @@
+U-Boot loader for Gumstix Duovero.
+
+To install this bootloader, copy the files MLO and u-boot.img to the FAT
+partition on an SD card. Normally this is partition 1, but different
+partitions can be set with U-Boot environment variables.
+
+This version is patched so that:
+ * ELF and API features are enabled.
+ * The default environment is trimmed to just what's needed to boot.
+ * The saveenv command writes to the file uboot.env on the FAT partition.
+ * The DTB file name is passed to ubldr using the fdtfile env variable.
+   The default is omap4-duovero-parlor.dtb for a Parlor expansion board.
+   ubldr loads the DTB from /boot/dtb/ on the FreeBSD partition.
+   (Not tested)
+ * By default, it loads ELF ubldr from file ubldr on the FAT partition
+   to address 0x88000000, and launches it.
+
+For information about running FreeBSD on Duovero, see
+ https://wiki.freebsd.org/FreeBSD/arm/Duovero
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
