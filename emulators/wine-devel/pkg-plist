@@ -820,8 +820,8 @@ lib/wine/api-ms-win-core-errorhandling-l1-1-2.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-fibers-l1-1-0.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-fibers-l1-1-1.dll.so
 lib/wine/api-ms-win-core-file-l1-2-0.dll.so
-lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-file-l2-1-0.dll.so
+lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 lib/wine/api-ms-win-core-handle-l1-1-0.dll.so
 lib/wine/api-ms-win-core-heap-l1-2-0.dll.so
 lib/wine/api-ms-win-core-heap-obsolete-l1-1-0.dll.so
@@ -1044,8 +1044,8 @@ lib/wine/fakedlls/api-ms-win-core-errorhandling-l1-1-2.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-0.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-file-l1-2-0.dll
-lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-file-l2-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-handle-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-obsolete-l1-1-0.dll
