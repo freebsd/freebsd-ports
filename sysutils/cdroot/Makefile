@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	cdroot
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	bsd
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/cdroot/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Scripts to automate setting up a bootable CD-ROM based FreeBSD system
+MAINTAINER=	portmaster@bsdforge.com
+COMMENT=	Scripts automating setup of a bootable CD-ROM based FreeBSD system
+
+LICENSE=	BSD2CLAUSE
+
+USES=	tar:xz
 
 .include <bsd.port.mk>
