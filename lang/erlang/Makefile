@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.3
-PORTREVISION=	3
+PORTVERSION=	17.4.1
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -34,7 +33,7 @@ PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	GCC DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
+OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
 
 GCC_DESC=	Use current GCC
 HIPE_DESC=	Build native HiPE compiler
@@ -45,9 +44,9 @@ WX_DESC=	Enable WX application
 GS_DESC=	Enable GS application (deprecated)
 DTRACE_DESC=	Enable DTrace support
 
-OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
+OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
 
-ERL_RELEASE=	${PORTVERSION}
+ERL_RELEASE=	17.4
 
 USES=		gmake perl5
 USE_AUTOTOOLS=	autoconf:env
@@ -56,8 +55,8 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.7.18
-TOOLS_VSN=	2.7
+EI_VSN=		3.7.20
+TOOLS_VSN=	2.7.1
 
 .include <bsd.port.options.mk>
 
@@ -182,6 +181,19 @@ MAKE_ARGS+=	ARCH=x86
 post-patch:
 	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/erlang/man" > ${WRKDIR}/erlang.conf
 
+pre-configure:
+.if ${PORT_OPTIONS:MDTRACE}
+	@if ! /sbin/kldstat | ${GREP} dtraceall >/dev/null 2>&1; then \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "DTRACE option requires kernel module \"dtraceall\" to be loaded."; \
+		${ECHO_CMD}; \
+		exit 1; \
+	fi
+.endif
+.if ! ${PORT_OPTIONS:MWX}
+	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/erlang.conf ${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
 	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
@@ -195,12 +207,39 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.4/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.5
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.4
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.3/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.3.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.3
+
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${STAGEDIR}/${DOCSDIR}
 .endfor
+.endif
+
+.if ! ${PORT_OPTIONS:MGS}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
+.endif
+.if ! ${PORT_OPTIONS:MJAVA}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/jinterface-*
+.endif
+.if ! ${PORT_OPTIONS:MODBC}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/odbc-*
+.endif
+.if ! ${PORT_OPTIONS:MOPENSSL}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/crypto-*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/ssh-*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/ssl-*
+.endif
+.if ! ${PORT_OPTIONS:MWX}
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 .endif
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
