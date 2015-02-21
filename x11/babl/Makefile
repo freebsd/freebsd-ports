@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	babl
-PORTVERSION=	0.1.10
-PORTREVISION=	2
+PORTVERSION=	0.1.12
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
@@ -13,7 +12,6 @@ COMMENT=	Dynamic pixel format conversion library
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-introspection
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SIMD
