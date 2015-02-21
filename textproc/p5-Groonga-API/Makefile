@@ -14,6 +14,8 @@ COMMENT=	Perl extension for raw interface to Groonga
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN=		Fails to build
+
 RUN_DEPENDS=	\
 	p5-JSON-XS>0:${PORTSDIR}/converters/p5-JSON-XS \
 	p5-Path-Extended>0:${PORTSDIR}/devel/p5-Path-Extended \
