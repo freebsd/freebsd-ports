@@ -49,13 +49,13 @@ post-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${WRKSRC}/man4 && ${LOCALBASE}/bin/doxygen .
+	cd ${WRKSRC}/docs/ && ${LOCALBASE}/bin/doxygen .
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/man4/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 regression-test test: build
