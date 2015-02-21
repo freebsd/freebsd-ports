@@ -1,4 +1,5 @@
 %%RCDIR_REL%%/plugins/contextmenu/CHANGELOG
+%%RCDIR_REL%%/plugins/contextmenu/MANUAL.md
 %%RCDIR_REL%%/plugins/contextmenu/README.md
 %%RCDIR_REL%%/plugins/contextmenu/composer.json
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.js
@@ -33,10 +34,3 @@
 %%RCDIR_REL%%/plugins/contextmenu/skins/larry/contextmenu.css
 %%RCDIR_REL%%/plugins/contextmenu/skins/larry/functions.js
 %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/contexticons.png
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/localization
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic/images
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins
-@dirrm %%RCDIR_REL%%/plugins/contextmenu
