@@ -12,6 +12,9 @@ DISTNAME=	htdig-3.2.0b6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW indexing and searching system
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf \
@@ -25,6 +28,7 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 USES=		libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
