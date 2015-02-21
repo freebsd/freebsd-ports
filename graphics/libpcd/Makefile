@@ -10,10 +10,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading PhotoCD images
 
+LICENSE=	GPLv2 # or later
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 USES=		gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpcd.so
 
 .include <bsd.port.mk>
