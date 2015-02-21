@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	contextmenu
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	mail
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	roundcube-
@@ -12,7 +12,7 @@ COMMENT=	RoundCube webmail contextmenu plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=1.1:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
@@ -20,7 +20,7 @@ USE_GITHUB=	YES
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-Context-Menu
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	9c8d29f
+GH_COMMIT=	42efb49
 
 PLUGINDIR=	${WWWDIR:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
 RCDIR_REL=	${WWWDIR_REL:S,/${PORTNAME}$$,,}/roundcube
