@@ -183,13 +183,4 @@
 %%WWWDIR%%/vertical.css
 %%WWWDIR%%/vertical_ie8.css
 %%WWWDIR%%/watermark.html
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images/icons
-@dirrm %%WWWDIR%%/images/googiespell
-@dirrm %%WWWDIR%%/images/display
-@dirrm %%WWWDIR%%/images/buttons
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/.settings
-@dirrm %%WWWDIR%%/.cache
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/.cache

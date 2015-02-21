@@ -101,11 +101,3 @@
 %%WWWDIR%%/templates/settingsedit.html
 %%WWWDIR%%/templates/showcontact.html
 %%WWWDIR%%/watermark.html
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images/icons
-@dirrm %%WWWDIR%%/images/googiespell
-@dirrm %%WWWDIR%%/images/display
-@dirrm %%WWWDIR%%/images/buttons
-@dirrm %%WWWDIR%%/images
-@dirrmtry %%WWWDIR%%
