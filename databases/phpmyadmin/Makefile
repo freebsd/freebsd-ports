@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.3.9
+DISTVERSION=	4.3.10
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -73,16 +73,14 @@ USE_PHP+=	${opt:tl}
 
 post-patch:
 	cd ${WRKSRC} ; \
-	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
-	    ${TOUCH} $${emptydir}/.keep-me ; \
-	done ; \
 	${CP} ${FILESDIR}/${CFG_FILE}.sample ${WRKSRC}/${CFG_FILE}.sample ; \
 	${FIND} . ! -type d ! -name ${CFG_FILE}.sample ! -name '*.bak' | \
 	    ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%,"   >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk	     >>${PLIST} ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-	    -e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-	    -e "s,^\.,@dirrm %%WWWDIR%%,"	     >>${PLIST}
+	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
+	    ${ECHO} "@dir(,,)$${emptydir}"	     >>${PLIST} ; \
+	done ; \
+
 
 do-install:
 	cd ${WRKSRC} ; \
