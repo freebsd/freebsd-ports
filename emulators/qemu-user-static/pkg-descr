@@ -13,7 +13,7 @@ cross-debugging.
 
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
 
-This is a slave port of emulators/qemu-devel to build only static
+This is a slave port of emulators/qemu-sbruno to build only static
 bsd-user targets named like qemu-mips-static.  While still being
 experimental people have already built quite a few armv6/mips/mips64
 packages using these and e.g. poudriere.  Some notes are also here:
