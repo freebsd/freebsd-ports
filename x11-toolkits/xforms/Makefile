@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface toolkit for X Window System
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
@@ -24,6 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 BROKEN_ia64=	Does not compile on ia64
 
