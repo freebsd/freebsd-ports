@@ -32,14 +32,14 @@ python_CMD=	${PYTHON_CMD}
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-unused-private-field
+CXXFLAGS+=	-Wno-nested-anon-types -Wno-unused-function -Wno-unused-private-field
 MAKE_ENV+=	LINK=clang++
-.if ${COMPILER_VERSION} >= 33
-CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .if ${COMPILER_VERSION} >= 34
-CFLAGS+=	-Wno-unused-const-variable
+CXXFLAGS+=	-Wno-unused-const-variable
 .if ${COMPILER_VERSION} >= 35
-CFLAGS+=	-Wno-tautological-undefined-compare
+CXXFLAGS+=	-Wno-tautological-undefined-compare
+.if ${COMPILER_VERSION} >= 36
+CXXFLAGS+=	-Wno-unused-local-typedef
 .endif
 .endif
 .endif
