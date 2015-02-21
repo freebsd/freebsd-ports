@@ -55,9 +55,11 @@
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += erlang
+    SUBDIR += erlang-java
     SUBDIR += erlang-runtime15
     SUBDIR += erlang-runtime16
     SUBDIR += erlang-runtime17
+    SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += f2c
