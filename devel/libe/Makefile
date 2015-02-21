@@ -11,6 +11,8 @@ COMMENT=	High-performance datastructures and utilities for C++
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
 
 GNU_CONFIGURE=	yes
