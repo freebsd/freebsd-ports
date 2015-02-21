@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
+BROKEN=		Fails to link, tries to use internal fltk symbols
+
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
