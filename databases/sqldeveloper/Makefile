@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	4.0.1.14.48
+PORTVERSION=	4.0.3.16.84
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
-MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
+MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
 DIST_SUBDIR=	oracle
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -27,14 +27,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
-PORTDOCS=	readme.html
-
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	Due to Oracle license restrictions, you must fetch the source \
+IGNORE=	due to Oracle license restrictions, you must fetch the source \
 distribution manually. Please access \
 http://www.oracle.com/technology/software/products/sql/index.html \
 with a web browser and follow the link for the ${DISTFILES}. You will be \
@@ -45,32 +41,28 @@ restart this installation
 .endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing scripts..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-	@${ECHO_MSG} " [ DONE ]"
+	${ECHO_MSG} -n ">> Installing scripts..."
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
+	${ECHO_MSG} " [ DONE ]"
 
 .for d in configuration dataminer dropins dvt equinox \
     external ide javavm jdbc jdev jlib jviews modules \
-    netbeans rdbms sleepycat sqldeveloper sqlj svnkit
-	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
-	@cd ${WRKSRC} && ${FIND} ${d} -type d \
+    lib netbeans rdbms sleepycat sqldeveloper sqlj svnkit
+	${ECHO_MSG} -n ">> Installing data directory '${d}'..."
+	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
-	@cd ${WRKSRC} && ${FIND} ${d} -type f \
+	cd ${WRKSRC} && ${FIND} ${d} -type f \
 		-not -name "*.orig" \
 		-not -name "*.exe" \
 		-not -name "*.bat" \
 		-not -name "*.bak" \
 		-not -name "*.dll" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}/${DATADIR}/\{} \;
-	@${ECHO_MSG} " [ DONE ]"
+	${ECHO_MSG} " [ DONE ]"
 .endfor
 
-	@${INSTALL_DATA} ${WRKSRC}/view-source-paths.lis ${STAGEDIR}/${DATADIR}/view-source-paths.lis
-	@${ECHO_MSG} -n ">> Installing icon ..."
-	@${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	@(cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${STAGEDIR}/${DOCSDIR})
+	${ECHO_MSG} -n ">> Installing icon ..."
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
+	${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>

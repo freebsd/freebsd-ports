@@ -1,5 +1,4 @@
 bin/sqldeveloper
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
 %%DATADIR%%/configuration/bundles.info
 %%DATADIR%%/configuration/oracle.datamodeler.bundles.info
 %%DATADIR%%/configuration/oracle.ide.sqldev.bundles.info
@@ -13,6 +12,7 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/createODMRSYST.sql
 %%DATADIR%%/dataminer/scripts/createuser.sql
 %%DATADIR%%/dataminer/scripts/createusersgrantbackup.sql
+%%DATADIR%%/dataminer/scripts/createxmlschemaindexes.sql
 %%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup.sql
 %%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup2.sql
 %%DATADIR%%/dataminer/scripts/dbHasSchema.sql
@@ -131,6 +131,7 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_1To12_1_0_1_2.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_2To12_1_0_1_3.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_3To12_1_0_1_4.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_4To12_1_0_1_5.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoFromORToBinary.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoWithNewTableSpace.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
@@ -177,7 +178,6 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.external.jline.jar
 %%DATADIR%%/external/oracle.external.jrf-api.jar
 %%DATADIR%%/external/oracle.external.js.jar
-%%DATADIR%%/external/oracle.external.jsch.jar
 %%DATADIR%%/external/oracle.external.jsp.jar
 %%DATADIR%%/external/oracle.external.jxlayer.jar
 %%DATADIR%%/external/oracle.external.ldap.jar
@@ -185,6 +185,7 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.external.logging.jar
 %%DATADIR%%/external/oracle.external.miglayout.jar
 %%DATADIR%%/external/oracle.external.nlsrtl.jar
+%%DATADIR%%/external/oracle.external.objectweb-asm.jar
 %%DATADIR%%/external/oracle.external.odl.jar
 %%DATADIR%%/external/oracle.external.ohj.jar
 %%DATADIR%%/external/oracle.external.ojmisc.jar
@@ -308,7 +309,9 @@ bin/sqldeveloper
 %%DATADIR%%/ide/lib/xml-factory.jar
 %%DATADIR%%/ide/macros/external-jdbc.properties
 %%DATADIR%%/ide/macros/external-nlsrtl.properties
+%%DATADIR%%/ide/macros/external-objectweb-asm.properties
 %%DATADIR%%/ide/macros/external-xdb.properties
+%%DATADIR%%/ide/macros/external-xmlparser.properties
 %%DATADIR%%/ide/macros/ide-boot.properties
 %%DATADIR%%/ide/src/javax-ide-src.zip
 %%DATADIR%%/ide/themes/creating_themes.html
@@ -359,7 +362,6 @@ bin/sqldeveloper
 %%DATADIR%%/jdev/lib/jdev-rt.jar
 %%DATADIR%%/jdev/lib/jdev.jar
 %%DATADIR%%/jdev/lib/jdkver.jar
-%%DATADIR%%/jdev/lib/jsch.jar
 %%DATADIR%%/jdev/lib/xmleditor.jar
 %%DATADIR%%/jdev/lib/xmlef-swing.jar
 %%DATADIR%%/jlib/dbui4.jar
@@ -377,6 +379,9 @@ bin/sqldeveloper
 %%DATADIR%%/jviews/jviews-diagrammer.jar
 %%DATADIR%%/jviews/jviews-framework-lib.jar
 %%DATADIR%%/jviews/jviews-fwk-support.jar
+%%DATADIR%%/lib/visualvm/platform/modules/locale/org-netbeans-modules-editor-mimelookup-impl_zh_CN.jar
+%%DATADIR%%/lib/visualvm/profiler/modules/locale/org-netbeans-modules-profiler-selector-api_zh_CN.jar
+%%DATADIR%%/modules/asm-3.1.jar
 %%DATADIR%%/modules/com.sun.xml.bind.jaxb-core_2.2.jar
 %%DATADIR%%/modules/com.sun.xml.bind.jaxb-impl_2.2.jar
 %%DATADIR%%/modules/com.sun.xml.bind.jaxb-jxc_2.2.jar
@@ -1713,6 +1718,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README.rtf
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README.txt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/README2.txt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/SQLDeveloperDataModelerScripting.docx
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/details.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/index.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/list.html
@@ -1814,4 +1820,3 @@ bin/sqldeveloper
 %%DATADIR%%/svnkit/svnjavahl.jar
 %%DATADIR%%/svnkit/svnkit.jar
 %%DATADIR%%/svnkit/trilead.jar
-%%DATADIR%%/view-source-paths.lis
