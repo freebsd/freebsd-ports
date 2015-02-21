@@ -1,15 +1,33 @@
---- lib/PatchReader/Raw.pm.orig	2014-09-20 06:54:09 UTC
+--- lib/PatchReader/Raw.pm.orig	2015-02-19 16:02:48 UTC
 +++ lib/PatchReader/Raw.pm
-@@ -41,7 +41,7 @@
+@@ -40,8 +40,25 @@ sub next_line {
+ 
    return if $line =~ /^\?/;
  
++  # FreeBSD bug #197607 - svn property changes are
++  # displayed as line additions in Bugzilla. We'll
++  # just ignore the whole property section.
++  if ($this->{in_prop} == 1) {
++      if ($line =~ /^Index:\s*([\S ]+)/) {
++          # End of property changes, continue normally.
++          $this->{in_prop} = 0;
++      } else {
++          # Ignore property lines
++          return;
++      }
++  } elsif ($line =~ /^Property changes on:.*$/) {
++      # SVN property changes, skip everything until the next index...
++      $this->{in_prop} = 1;
++      return;
++  }
++
    # patch header parsing
 -  if ($line =~ /^---\s*([\S ]+)\s*\t([^\t\r\n]*)\s*(\S*)/) {
 +  if ($line =~ /^---\s+([\S ]+)\s*?(?:\t([^\t\r\n]*)\s*(\S*))?/) {
      $this->_maybe_end_file();
  
      if ($1 eq "/dev/null") {
-@@ -54,9 +54,11 @@
+@@ -54,9 +71,11 @@ sub next_line {
  
      $this->{IN_HEADER} = 1;
  
