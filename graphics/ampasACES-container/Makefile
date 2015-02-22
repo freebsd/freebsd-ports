@@ -5,7 +5,7 @@ PORTNAME=	ampasACES-container
 PORTVERSION=	1.0.0
 CATEGORIES=	graphics devel
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACES Container Reference Implementation
 
 LICENSE=	AMPAS
