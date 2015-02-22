@@ -39,6 +39,7 @@ X11_CONFIGURE_ON=	--x-include=${LOCALBASE}/include \
 X11_CONFIGURE_OFF=	--X11lib=no
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rhtv-config
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rhtv-config \
+		${STAGEDIR}${PREFIX}/lib/librhtv.so
 
 .include <bsd.port.mk>
