@@ -1018,6 +1018,7 @@
     SUBDIR += virtualmin
     SUBDIR += vlogger
     SUBDIR += vmdktool
+    SUBDIR += vmtouch
     SUBDIR += vobcopy
     SUBDIR += volman
     SUBDIR += vordog
