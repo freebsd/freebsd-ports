@@ -5,8 +5,7 @@ PORTNAME=	phat
 PORTVERSION=	0.4.1
 PORTREVISION=	6
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	phat
+MASTER_SITES=	BERLIOS/phat
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of GTK+ widgets geared toward pro-audio apps
@@ -16,6 +15,7 @@ USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20 libgnomecanvas
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
