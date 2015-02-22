@@ -23,8 +23,6 @@ USE_XFCE=	configenv libmenu libutil xfconf
 INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
-CONFLICTS=	notification-daemon-[0-9]* xfce4-notification-daemon-[0-9]*
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
