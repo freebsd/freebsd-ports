@@ -27,4 +27,3 @@ lib/libpbc.a
 lib/libpbc.so
 lib/libpbc.so.1
 lib/libpbc.so.1.0.0
-@dirrm include/pbc
