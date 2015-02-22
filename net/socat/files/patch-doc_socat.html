@@ -1,0 +1,39 @@
+--- doc/socat.html.orig	2015-01-24 16:31:04 UTC
++++ doc/socat.html
+@@ -2781,10 +2781,6 @@ These options apply to the <a href="soca
+    Specifies the directory with the trusted (root) certificates. The directory
+    must contain certificates in PEM format and their hashes (see OpenSSL
+    documentation) 
+-<a name="OPTION_OPENSSL_EGD"></a><p><dt><strong><strong><code>egd=&lt;filename&gt;</code></strong></strong><dd>
+-   On some systems, openssl requires an explicit source of random data. Specify
+-   the socket name where an entropy gathering daemon like egd provides random
+-   data, e.g. /dev/egd-pool.
+ <a name="OPTION_OPENSSL_PSEUDO"></a><p><dt><strong><strong><code>pseudo</code></strong></strong><dd>
+    On systems where openssl cannot find an entropy source and where no entropy
+    gathering daemon can be utilized, this option activates a mechanism for
+@@ -3309,10 +3305,10 @@ connection, invokes a shell. This shell 
+ connected to the TCP socket (<a href="socat.html#OPTION_NOFORK">nofork</a>).  The shell starts filan and lets it print the socket addresses to
+ stderr (your terminal window).
+ <p>
+-<p><dt><strong><strong><code>echo -e "\0\14\0\0\c" |socat -u - file:/usr/bin/squid.exe,seek=0x00074420</code></strong></strong><dd>
++<p><dt><strong><strong><code>echo -e "\0\14\0\0\c" |socat -u - file:${LOCALBASE}/bin/squid.exe,seek=0x00074420</code></strong></strong><dd>
+ <p>
+ functions as primitive binary editor: it writes the 4 bytes 000 014 000 000 to
+-the executable /usr/bin/squid at offset 0x00074420 (this is a real world patch
++the executable ${LOCALBASE}/bin/squid at offset 0x00074420 (this is a real world patch
+ to make the squid executable from Cygwin run under Windows, actual per May 2004).
+ <p>
+ <p><dt><strong><strong><code>socat - tcp:www.blackhat.org:31337,readbytes=1000</code></strong></strong><dd>
+@@ -3430,9 +3426,9 @@ error. 
+ <a name="FILES"></a>
+ <h2>FILES</h2>
+ <p>
+-/usr/bin/socat <br>
+-/usr/bin/filan <br>
+-/usr/bin/procan
++${LOCALBASE}/bin/socat <br>
++${LOCALBASE}/bin/filan <br>
++${LOCALBASE}/bin/procan
+ <p>
+ <a name="ENVIRONMENT_VARIABLES"></a>
+ <h2>ENVIRONMENT VARIABLES</h2>

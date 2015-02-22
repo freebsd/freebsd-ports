@@ -1,0 +1,22 @@
+--- doc/xio.help.orig	2013-06-23 06:16:48 UTC
++++ doc/xio.help
+@@ -4566,19 +4566,6 @@ must contain certificates in PEM format 
+ documentation) 
+ 
+ 
+-Option: openssl-egd=file
+-Aliases: egd
+-
+-Type: FILENAME
+-Option group: OPENSSL
+-Phase: SPEC
+-Platforms: (depends on openssl installation)
+-
+-On some systems, openssl requires an explicit source of random data. Specify
+-the socket name where an entropy gathering daemon like egd provides random
+-data, e.g. /dev/egd-pool.
+-
+-
+ Option: openssl-pseudo
+ Aliases: pseudo
+ 
