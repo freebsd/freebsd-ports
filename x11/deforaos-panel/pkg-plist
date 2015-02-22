@@ -4,7 +4,12 @@ bin/panel-message
 bin/panel-notify
 bin/panelctl
 bin/run
+bin/wifibrowser
 include/Desktop/Panel.h
+lib/libPanel.a
+lib/libPanel.so
+lib/libPanel.so.0
+lib/libPanel.so.0.0
 lib/Panel/applets/battery.so
 lib/Panel/applets/bluetooth.so
 lib/Panel/applets/clock.so
@@ -15,12 +20,12 @@ lib/Panel/applets/desktop.so
 lib/Panel/applets/embed.so
 lib/Panel/applets/gps.so
 lib/Panel/applets/gsm.so
-lib/Panel/applets/keyboard.so
 lib/Panel/applets/lock.so
 lib/Panel/applets/logout.so
 lib/Panel/applets/main.so
 lib/Panel/applets/memory.so
 lib/Panel/applets/mixer.so
+lib/Panel/applets/network.so
 lib/Panel/applets/pager.so
 lib/Panel/applets/phone.so
 lib/Panel/applets/player.so
@@ -32,6 +37,7 @@ lib/Panel/applets/systray.so
 lib/Panel/applets/tasks.so
 lib/Panel/applets/title.so
 lib/Panel/applets/usb.so
+lib/Panel/applets/user.so
 lib/Panel/applets/volume.so
 lib/Panel/applets/wpa_supplicant.so
 libdata/pkgconfig/Panel.pc
@@ -40,7 +46,9 @@ man/man1/panel-message.1.gz
 man/man1/panel-notify.1.gz
 man/man1/panel.1.gz
 man/man1/panelctl.1.gz
-share/applications/panel-settings.desktop
+man/man1/wifibrowser.1.gz
+share/applications/deforaos-panel-settings.desktop
+share/applications/deforaos-wifibrowser.desktop
 share/icons/hicolor/16x16/apps/panel-applet-bluetooth.png
 share/icons/hicolor/16x16/apps/panel-applet-desktop.png
 share/icons/hicolor/16x16/apps/panel-applet-usb.png
@@ -60,3 +68,9 @@ share/icons/hicolor/48x48/apps/panel-applet-desktop.png
 share/icons/hicolor/48x48/apps/panel-settings.png
 share/icons/hicolor/scalable/apps/panel-applet-bluetooth.svg
 share/locale/fr/LC_MESSAGES/Panel.mo
+share/man/html1/panel-embed.html
+share/man/html1/panel-message.html
+share/man/html1/panel-notify.html
+share/man/html1/panel.html
+share/man/html1/panelctl.html
+share/man/html1/wifibrowser.html
