@@ -1,9 +1,8 @@
-widentd is a small ident/rfc1413 deamon which provides a fixed
-(and fake) auth reply regardless of the ip/port pair quoted.
+widentd is a small ident/rfc1413 deamon which provides a fixed (and fake)
+auth reply, regardless of the IP/port pair quoted.
 
-Its intended use is on firewalls and NAT machines - where you
-may want to simply syphon off auth-requests from for example
-irc servers.
+It's intended use is on firewalls, and NAT machines - where you may want
+to simply syphon off auth-requests from, for example, IRC servers.
 
 Author: Dirk-Willem van Gulik / dirkx@webweaving.org
-WWW: http://www.webweaving.org/widentd/
+WWW: http://BSDforge.com/projects/net/widentd/
