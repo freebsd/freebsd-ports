@@ -1,6 +1,6 @@
---- src/waffle/CMakeLists.txt.orig	2014-12-09 22:33:50.000000000 +0100
-+++ src/waffle/CMakeLists.txt	2015-01-14 10:00:50.216345455 +0100
-@@ -38,7 +38,7 @@
+--- src/waffle/CMakeLists.txt.orig	2015-01-22 20:00:17 UTC
++++ src/waffle/CMakeLists.txt
+@@ -38,7 +38,7 @@ list(APPEND waffle_libdeps
      ${THREADS_LIBRARIES}
      )
  
@@ -9,7 +9,7 @@
      if(waffle_has_wayland)
          list(APPEND waffle_libdeps
              ${wayland-client_LDFLAGS}
-@@ -114,15 +114,22 @@
+@@ -114,15 +114,22 @@ if(waffle_has_glx)
          )
  endif()
  

@@ -1,8 +1,6 @@
-diff --git examples/CMakeLists.txt examples/CMakeLists.txt
-index 48147f9..d6d1b5a 100644
---- examples/CMakeLists.txt
+--- examples/CMakeLists.txt.orig	2015-01-22 20:00:17 UTC
 +++ examples/CMakeLists.txt
-@@ -7,7 +7,7 @@ install(FILES Makefile.example
+@@ -11,7 +11,7 @@ install(
  # Target: simple-x11-egl (executable)
  # ----------------------------------------------------------------------------
  

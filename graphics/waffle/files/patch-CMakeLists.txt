@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-12-09 22:33:50.000000000 +0100
-+++ CMakeLists.txt	2015-01-02 15:27:40.696351276 +0100
-@@ -135,7 +135,7 @@
+--- CMakeLists.txt.orig	2015-01-22 20:00:17 UTC
++++ CMakeLists.txt
+@@ -136,7 +136,7 @@ configure_file(waffle.pc.in ${waffle_lib
  
  install(
      FILES ${CMAKE_BINARY_DIR}/${waffle_libname}.pc
