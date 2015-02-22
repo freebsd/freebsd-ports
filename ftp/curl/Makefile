@@ -131,7 +131,7 @@ RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
 THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
-.if ""${OPENSSL_PORT} != "security/libressl"
+.if "${OPENSSL_PORT}" != "security/libressl"
 TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
 TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
 .else
