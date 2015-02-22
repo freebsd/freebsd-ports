@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ecl
-PORTVERSION=	13.5.1
+PORTVERSION=	15.2.21
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/13.5/
+MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.2/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
-
-BROKEN=		Fails to link with new libgc
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
@@ -74,11 +72,9 @@ CONFIGURE_ARGS+=--with-dffi=no
 CONFIGURE_ARGS+=--enable-threads=yes
 LDFLAGS+=	${PTHREAD_LIBS}
 LIB_DEPENDS+=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
-PLIST_SUB+=	THREADS=""
 .else
 CONFIGURE_ARGS+=--enable-threads=no
 LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
-PLIST_SUB+=	THREADS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
