@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
 			--with-dbus-services=${PREFIX}/share/dbus-1/services
 
-CONFLICTS=	notification-daemon-[0-9]* xfce4-notifyd-[0-9]* notify-osd-[0-9]*
+CONFLICTS=	notify-osd-[0-9]*
 
 OPTIONS_DEFINE=	GRADIENT CLOSE NLS
 
