@@ -33,7 +33,7 @@ INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
-OPTIONS_DEFINE=	ESOUND IPV6 MIKMOD NLS SPEC VFILEINFO VORBIS #RUSXMMS_PATCHES
+OPTIONS_DEFINE=	ESOUND IPV6 MIKMOD NLS SPEC VFILEINFO VORBIS
 OPTIONS_DEFAULT=MIKMOD VORBIS
 OPTIONS_DEFINE_i386=	SIMD
 OPTIONS_DEFAULT_i386=	SIMD
@@ -62,27 +62,11 @@ VFILEINFO_CPPFLAGS=	-DALL_VORBIS_TAGS
 VORBIS_CONFIGURE_ENABLE=vorbis
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-#RUSXMMS_PATCHES_DESC=	Patches to handle broken non-Unicode ID3 tags
-
 .if !defined(WITH_DEBUG)
 INSTALL_TARGET=	install-strip
 .endif
 
 .include <bsd.port.options.mk>
-
-#.if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
-#ENC_PATCHLEVEL=	41
-#DISTFILES+=	RusXMMS2-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
-#MASTER_SITES+=	SF/rusxmms/rusxmms2/csa41%20%28${PORTVERSION}%29:enc
-#MASTER_SITE_SUBDIR+=	rusxmms/:enc
-#
-#LIB_DEPENDS+=	librcc.so:${PORTSDIR}/devel/librcc \
-#		librcd.so:${PORTSDIR}/devel/librcd
-#
-#USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
-#AUTOMAKE_ARGS=	-a -c -f
-#USE_OPENSSL=	yes
-#.endif
 
 .if ${PORT_OPTIONS:MESOUND}
 OUTPUT_PLUGINS+=	esd
@@ -100,31 +84,7 @@ INPUT_PLUGINS+=	vorbis
 VISUALIZATION_PLUGINS+=	opengl_spectrum
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-#.if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
-#	@${REINPLACE_CMD} -e 's/AM_PATH_ALSA.*/have_alsa=no/' \
-#		${WRKSRC}/configure.in
-#	@${REINPLACE_CMD} -e '/libtool/,$$d' \
-#		${WRKSRC}/acinclude.m4 ${WRKSRC}/libxmms/acinclude.m4
-#	@${CP} ${WRKDIR}/RusXMMS2/source/* ${WRKSRC}/libxmms/
-#	@${CAT} ${WRKDIR}/RusXMMS2/3rdparty/mpg123/*.patch | ${PATCH} -s -p1 -d ${WRKSRC}
-#.  for diff in xmms-ds-rusxmms.patch xmms-ds-rusxmms-charset.patch \
-#       xmms-ds-playlist.patch xmms-ds-shade.patch xmms-ds-textbox.patch
-#	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/RusXMMS2/patches/${diff}
-#.  endfor
-#.  for diff in xmms-ds-mpg123.patch xmms-ds-mpg123-editor.patch \
-#       xmms-ds-mpg123-editor-keys.patch xmms-ds-vorbis-editor.patch \
-#       xmms-ds-vorbis-editor-keys.patch
-#	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/RusXMMS2/patches/plugins/${diff}
-#.  endfor
-## If there is no esound installed, the autotools won't find a required macro
-#.if ${HAVE_GNOME:Mesound}==""
-#	@${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' \
-#		${WRKSRC}/configure.in
-#.endif
-#.endif
 	@${REINPLACE_CMD} -e 's/alsa_found=yes/alsa_found=no/' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,@mkdir_p@,${MKDIR},' \
@@ -138,4 +98,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${FILESDIR}/xmms.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
