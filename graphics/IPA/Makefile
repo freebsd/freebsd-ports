@@ -18,4 +18,9 @@ USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 MAKE_JOBS_UNSAFE=	yes
 
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IPA/IPA.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IPA/IPA.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IPA/IPA.so
+
 .include <bsd.port.mk>
