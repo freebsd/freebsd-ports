@@ -29,6 +29,7 @@ bin/widget
 %%PERL5_MAN3%%/Tk::DropSite.3.gz
 %%PERL5_MAN3%%/Tk::Entry.3.gz
 %%PERL5_MAN3%%/Tk::Error.3.gz
+%%PERL5_MAN3%%/Tk::ErrorDialog.3.gz
 %%PERL5_MAN3%%/Tk::Eventloop.3.gz
 %%PERL5_MAN3%%/Tk::FBox.3.gz
 %%PERL5_MAN3%%/Tk::FileSelect.3.gz
@@ -184,6 +185,7 @@ bin/widget
 %%SITE_ARCH%%/Tk/Entry.pod
 %%SITE_ARCH%%/Tk/Error.pod
 %%SITE_ARCH%%/Tk/ErrorDialog.pm
+%%SITE_ARCH%%/Tk/ErrorDialog.pod
 %%SITE_ARCH%%/Tk/Event.pm
 %%SITE_ARCH%%/Tk/Event/IO.pm
 %%SITE_ARCH%%/Tk/Eventloop.pod
