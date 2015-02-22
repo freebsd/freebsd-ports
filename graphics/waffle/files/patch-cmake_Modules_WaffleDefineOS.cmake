@@ -1,6 +1,4 @@
-diff --git cmake/Modules/WaffleDefineOS.cmake cmake/Modules/WaffleDefineOS.cmake
-index e437947..b1a3079 100644
---- cmake/Modules/WaffleDefineOS.cmake
+--- cmake/Modules/WaffleDefineOS.cmake.orig	2015-01-22 20:00:17 UTC
 +++ cmake/Modules/WaffleDefineOS.cmake
 @@ -25,6 +25,8 @@
  
@@ -10,4 +8,4 @@ index e437947..b1a3079 100644
 +    set(waffle_on_freebsd true)
  elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
      set(waffle_on_mac true)
- else()
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
