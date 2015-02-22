@@ -17,7 +17,7 @@
 -                    GLib.Path.get_dirname(GLib.FileUtils.read_link("/proc/self/exe"))+"/resources",
 -                    icon + ".svg"
 -                ));
-+                var file = GLib.File.new_for_path(GLib.Path.build_filename("%%DATADIR%%/resources", icon + ".svg"));
++                var file = GLib.File.new_for_path(GLib.Path.build_filename("%%PREFIX%%/share/icons/hicolor/scalable/apps/", icon + ".svg"));
  
                  if (!file.query_exists())
                    this.indicator.set_from_icon_name(icon);
