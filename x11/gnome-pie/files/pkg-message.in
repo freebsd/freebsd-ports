@@ -1,0 +1,10 @@
+***************************************************************
+
+If you do not see any pie, create keyboard shortcuts manually
+binding commands such as:
+
+  gnome-pie -o ID
+
+(Open Preferences to take the value of the pie ID)
+
+***************************************************************

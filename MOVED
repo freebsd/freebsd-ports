@@ -7191,7 +7191,6 @@ x11/gdesklets-tasklist||2014-11-19|Depends on removed x11-toolkits/py-gnome-extr
 x11/gnome-applets||2014-11-19|GNOME 2 was removed
 x11/gnome-panel||2014-11-19|GNOME 2 was removed
 x11/gnome-panel-reference||2014-11-19|GNOME 2 was removed
-x11/gnome-pie||2014-11-19|Is not compatible with updated gnome-menus
 x11/gnome-screensaver||2014-11-19|Is not compatible with updated gnome-desktop
 x11/gnome-swallow||2014-11-19|Removed, depends on removed gnome-panel
 x11/gnome2||2014-11-19|GNOME 2 was removed
