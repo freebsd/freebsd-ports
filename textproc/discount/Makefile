@@ -3,6 +3,7 @@
 
 PORTNAME=	discount
 DISTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 		LOCAL/jlaffaye
