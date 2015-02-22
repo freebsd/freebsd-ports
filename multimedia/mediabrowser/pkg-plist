@@ -27,6 +27,7 @@ lib/mediabrowser/Mono.Posix.dll
 lib/mediabrowser/MoreLinq.dll
 lib/mediabrowser/NLog.dll
 lib/mediabrowser/OpenSubtitlesHandler.dll
+lib/mediabrowser/Patterns.Logging.dll
 lib/mediabrowser/ServiceStack.Api.Swagger.dll
 lib/mediabrowser/ServiceStack.Client.dll
 lib/mediabrowser/ServiceStack.Common.dll
@@ -127,17 +128,6 @@ lib/mediabrowser/dashboard-ui/css/images/items/detail/game.png
 lib/mediabrowser/dashboard-ui/css/images/items/detail/person.png
 lib/mediabrowser/dashboard-ui/css/images/items/detail/tv.png
 lib/mediabrowser/dashboard-ui/css/images/items/detail/video.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/books.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/channels.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/folder.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/games.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/home.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/homevideos.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/movies.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/music.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/musicvideos.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/photos.png
-lib/mediabrowser/dashboard-ui/css/images/items/folders/tv.png
 lib/mediabrowser/dashboard-ui/css/images/items/list/audio.png
 lib/mediabrowser/dashboard-ui/css/images/items/list/audiocollection.png
 lib/mediabrowser/dashboard-ui/css/images/items/list/chapter.png
@@ -165,15 +155,15 @@ lib/mediabrowser/dashboard-ui/css/images/notifications/info.png
 lib/mediabrowser/dashboard-ui/css/images/rightarrow.png
 lib/mediabrowser/dashboard-ui/css/images/rotten.png
 lib/mediabrowser/dashboard-ui/css/images/server.png
+lib/mediabrowser/dashboard-ui/css/images/splash.jpg
 lib/mediabrowser/dashboard-ui/css/images/stars.png
-lib/mediabrowser/dashboard-ui/css/images/supporter/donatepaypal.png
 lib/mediabrowser/dashboard-ui/css/images/supporter/nonsupporterbadge.png
 lib/mediabrowser/dashboard-ui/css/images/supporter/premiumflag.png
-lib/mediabrowser/dashboard-ui/css/images/supporter/registerpaypal.png
 lib/mediabrowser/dashboard-ui/css/images/supporter/supporterbadge.png
 lib/mediabrowser/dashboard-ui/css/images/supporter/supporterflag.png
 lib/mediabrowser/dashboard-ui/css/images/touchicon.png
 lib/mediabrowser/dashboard-ui/css/images/touchicon114.png
+lib/mediabrowser/dashboard-ui/css/images/touchicon144.png
 lib/mediabrowser/dashboard-ui/css/images/touchicon72.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/chapters.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/cinemamode.png
@@ -184,6 +174,7 @@ lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/notifications.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/plugins.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/scheduledtasks.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/subtitles.png
+lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/sync.png
 lib/mediabrowser/dashboard-ui/css/images/tour/dashboard/users.png
 lib/mediabrowser/dashboard-ui/css/images/tour/enjoy.jpg
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourcollections.jpg
@@ -193,6 +184,7 @@ lib/mediabrowser/dashboard-ui/css/images/tour/web/tourmobile1.jpg
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourmobile2.png
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourmouseover.jpg
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourmovies.jpg
+lib/mediabrowser/dashboard-ui/css/images/tour/web/tourmysync.png
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourplaylist.png
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourtaphold.jpg
 lib/mediabrowser/dashboard-ui/css/images/tour/web/tourusersettings1.png
@@ -205,6 +197,7 @@ lib/mediabrowser/dashboard-ui/css/images/userflyoutdefault.png
 lib/mediabrowser/dashboard-ui/css/librarybrowser.css
 lib/mediabrowser/dashboard-ui/css/librarymenu.css
 lib/mediabrowser/dashboard-ui/css/livetv.css
+lib/mediabrowser/dashboard-ui/css/materialize.css
 lib/mediabrowser/dashboard-ui/css/mediaplayer-video.css
 lib/mediabrowser/dashboard-ui/css/mediaplayer.css
 lib/mediabrowser/dashboard-ui/css/metadataeditor.css
@@ -218,6 +211,7 @@ lib/mediabrowser/dashboard-ui/css/tileitem.css
 lib/mediabrowser/dashboard-ui/css/userimage.css
 lib/mediabrowser/dashboard-ui/dashboard.html
 lib/mediabrowser/dashboard-ui/dashboardgeneral.html
+lib/mediabrowser/dashboard-ui/dashboardhosting.html
 lib/mediabrowser/dashboard-ui/device.html
 lib/mediabrowser/dashboard-ui/devices.html
 lib/mediabrowser/dashboard-ui/devicesupload.html
@@ -245,7 +239,6 @@ lib/mediabrowser/dashboard-ui/homelatest.html
 lib/mediabrowser/dashboard-ui/index.html
 lib/mediabrowser/dashboard-ui/itembynamedetails.html
 lib/mediabrowser/dashboard-ui/itemdetails.html
-lib/mediabrowser/dashboard-ui/itemgallery.html
 lib/mediabrowser/dashboard-ui/itemlist.html
 lib/mediabrowser/dashboard-ui/library.html
 lib/mediabrowser/dashboard-ui/librarypathmapping.html
@@ -270,7 +263,7 @@ lib/mediabrowser/dashboard-ui/login.html
 lib/mediabrowser/dashboard-ui/metadata.html
 lib/mediabrowser/dashboard-ui/metadataadvanced.html
 lib/mediabrowser/dashboard-ui/metadataimages.html
-lib/mediabrowser/dashboard-ui/metadatakodi.html
+lib/mediabrowser/dashboard-ui/metadatanfo.html
 lib/mediabrowser/dashboard-ui/metadatasubtitles.html
 lib/mediabrowser/dashboard-ui/moviegenres.html
 lib/mediabrowser/dashboard-ui/moviepeople.html
@@ -319,6 +312,7 @@ lib/mediabrowser/dashboard-ui/scripts/chromecast.js
 lib/mediabrowser/dashboard-ui/scripts/cinemamodeconfiguration.js
 lib/mediabrowser/dashboard-ui/scripts/connectlogin.js
 lib/mediabrowser/dashboard-ui/scripts/dashboardgeneral.js
+lib/mediabrowser/dashboard-ui/scripts/dashboardhosting.js
 lib/mediabrowser/dashboard-ui/scripts/dashboardpage.js
 lib/mediabrowser/dashboard-ui/scripts/device.js
 lib/mediabrowser/dashboard-ui/scripts/devices.js
@@ -349,7 +343,6 @@ lib/mediabrowser/dashboard-ui/scripts/homelatest.js
 lib/mediabrowser/dashboard-ui/scripts/indexpage.js
 lib/mediabrowser/dashboard-ui/scripts/itembynamedetailpage.js
 lib/mediabrowser/dashboard-ui/scripts/itemdetailpage.js
-lib/mediabrowser/dashboard-ui/scripts/itemgallery.js
 lib/mediabrowser/dashboard-ui/scripts/itemlistpage.js
 lib/mediabrowser/dashboard-ui/scripts/librarybrowser.js
 lib/mediabrowser/dashboard-ui/scripts/librarylist.js
@@ -380,7 +373,7 @@ lib/mediabrowser/dashboard-ui/scripts/mediaplayer.js
 lib/mediabrowser/dashboard-ui/scripts/metadataadvanced.js
 lib/mediabrowser/dashboard-ui/scripts/metadataconfigurationpage.js
 lib/mediabrowser/dashboard-ui/scripts/metadataimagespage.js
-lib/mediabrowser/dashboard-ui/scripts/metadatakodi.js
+lib/mediabrowser/dashboard-ui/scripts/metadatanfo.js
 lib/mediabrowser/dashboard-ui/scripts/metadatasubtitles.js
 lib/mediabrowser/dashboard-ui/scripts/moviecollections.js
 lib/mediabrowser/dashboard-ui/scripts/moviegenres.js
@@ -429,6 +422,7 @@ lib/mediabrowser/dashboard-ui/scripts/sync.js
 lib/mediabrowser/dashboard-ui/scripts/syncactivity.js
 lib/mediabrowser/dashboard-ui/scripts/syncjob.js
 lib/mediabrowser/dashboard-ui/scripts/syncsettings.js
+lib/mediabrowser/dashboard-ui/scripts/taskbutton.js
 lib/mediabrowser/dashboard-ui/scripts/thememediaplayer.js
 lib/mediabrowser/dashboard-ui/scripts/tvgenres.js
 lib/mediabrowser/dashboard-ui/scripts/tvlatest.js
@@ -458,13 +452,19 @@ lib/mediabrowser/dashboard-ui/supporterkey.html
 lib/mediabrowser/dashboard-ui/syncactivity.html
 lib/mediabrowser/dashboard-ui/syncjob.html
 lib/mediabrowser/dashboard-ui/syncsettings.html
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/ajax.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/connectionmanager.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/connectservice.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/credentials.js
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/deferred.js
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/deferredAlt.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/device.js
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/events.js
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/logger.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/md5.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/mediabrowser.apiclient.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/network.js
+lib/mediabrowser/dashboard-ui/thirdparty/apiclient/serverdiscovery.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/sha1.js
 lib/mediabrowser/dashboard-ui/thirdparty/apiclient/store.js
 lib/mediabrowser/dashboard-ui/thirdparty/browser.js
