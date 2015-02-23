@@ -2,6 +2,7 @@
 
 PORTNAME=	seafdav
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,8 +10,6 @@ MAINTAINER=	yan_jingfeng@yahoo.com
 COMMENT=	Python library for accessing seafile data model
 
 LICENSE=	APACHE20
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WsgiDAV>=0.5:${PORTSDIR}/www/py-wsgidav
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
@@ -20,16 +19,31 @@ GH_COMMIT=	42dfd99
 USES=		python:2
 NO_BUILD=	yes
 
+HAIWENDIR=	www/haiwen
+SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
+SEAHUBDIR=	${SEAFILE_SERVER}/seahub
+SITEPACKAGEDIR=	${SEAHUBDIR}/thirdpart
+
+SEAFILE_USERNAME?=	www
+SEAFILE_GROUPNAME?=	${SEAFILE_USERNAME}
+
+PLIST_SUB=	SEAFILE_USERNAME=${SEAFILE_USERNAME} \
+		SEAFILE_GROUPNAME=${SEAFILE_GROUPNAME} \
+		SEAFILE_SERVER=${SEAFILE_SERVER} \
+		SEAHUBDIR=${SEAHUBDIR} \
+		HAIWENDIR=${HAIWENDIR} \
+		SITEPACKAGEDIR=${SITEPACKAGEDIR}
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/wsgidav/addons/seafile
-	(cd ${WRKSRC}/wsgidav/addons/seafile && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/wsgidav/addons/seafile)
-	(cd ${STAGEDIR}${PREFIX} && \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR}/wsgidav
+	(cd ${WRKSRC}/wsgidav && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-			-d ${PYTHONPREFIX_SITELIBDIR} \
-			-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
+			-d ${WRKSRC}/wsgidav \
+			-f ${WRKSRC}/wsgidav && \
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-			-d ${PYTHONPREFIX_SITELIBDIR} \
-			-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+			-d ${WRKSRC}/wsgidav \
+			-f ${WRKSRC}/wsgidav)
+	(cd ${WRKSRC}/wsgidav && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR}/wsgidav)
 
 .include <bsd.port.mk>
