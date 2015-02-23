@@ -4,7 +4,7 @@ man/man1/gpodder-migrate2tres.1.gz
 %%GTK2%%man/man1/gpodder.1.gz
 %%GTK2%%bin/gpodder
 bin/gpodder-migrate2tres
-%%PYTHON_SITELIBDIR%%/gpodder-3.8.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/gpodder-3.8.3-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.py
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyo
@@ -26,9 +26,15 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.py
 %%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.pyo
+%%PYTHON_SITELIBDIR%%/gpodder/directory.py
+%%PYTHON_SITELIBDIR%%/gpodder/directory.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/directory.pyo
 %%PYTHON_SITELIBDIR%%/gpodder/download.py
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyo
+%%PYTHON_SITELIBDIR%%/gpodder/escapist_videos.py
+%%PYTHON_SITELIBDIR%%/gpodder/escapist_videos.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/escapist_videos.pyo
 %%PYTHON_SITELIBDIR%%/gpodder/extensions.py
 %%PYTHON_SITELIBDIR%%/gpodder/extensions.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/extensions.pyo
@@ -101,6 +107,9 @@ bin/gpodder-migrate2tres
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/progress.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/progress.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/progress.pyo
+%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/tagcloud.py
+%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/tagcloud.pyc
+%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/tagcloud.pyo
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/macosx.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/macosx.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/macosx.pyo
@@ -110,9 +119,6 @@ bin/gpodder-migrate2tres
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.pyo
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.py
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.pyc
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.pyo
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.pyo
@@ -186,6 +192,7 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyo
 %%GTK2%%share/applications/gpodder.desktop
+%%GTK2%%share/applications/gpodder-url-handler.desktop
 %%GTK2%%share/dbus-1/services/org.gpodder.service
 %%DATADIR%%/credits.txt
 %%DATADIR%%/examples/gpodder_mark_played.py
@@ -193,6 +200,7 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/extensions/audio_converter.py
 %%DATADIR%%/extensions/concatenate_videos.py
 %%DATADIR%%/extensions/enqueue_in_mediaplayer.py
+%%DATADIR%%/extensions/episode_website_context_menu.py
 %%DATADIR%%/extensions/gtk_statusicon.py
 %%DATADIR%%/extensions/minimize_on_start.py
 %%DATADIR%%/extensions/mpris-listener.py
@@ -214,6 +222,13 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/images/button-flattr-grey.png
 %%DATADIR%%/images/button-flattr.png
 %%DATADIR%%/images/button-flattred.png
+%%DATADIR%%/images/directory-examples.png
+%%DATADIR%%/images/directory-gpodder.png
+%%DATADIR%%/images/directory-opml.png
+%%DATADIR%%/images/directory-soundcloud.png
+%%DATADIR%%/images/directory-tags.png
+%%DATADIR%%/images/directory-toplist.png
+%%DATADIR%%/images/directory-youtube.png
 %%DATADIR%%/images/podcast-0.png
 %%DATADIR%%/images/podcast-1.png
 %%DATADIR%%/images/podcast-2.png
