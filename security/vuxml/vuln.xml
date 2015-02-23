@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58033a95-bba8-11e4-88ae-d050992ecde8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind910</name>
+	<name>bind910-base</name>
+	<range><lt>9.10.1P2</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.6P2</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><lt>9.3_10</lt></range>
+	<range><gt>8.4</gt><lt>8.4_24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01235">
+	  <p>When configured to perform DNSSEC validation, named can
+	    crash when encountering a rare set of conditions in the
+	    managed trust anchors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1349</cvename>
+      <url>https://kb.isc.org/article/AA-01235</url>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="63527d0d-b9de-11e4-8a48-206a8a720317">
     <topic>krb5 1.12 -- New release/fix multiple vulnerabilities</topic>
     <affects>
