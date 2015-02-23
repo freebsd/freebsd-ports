@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -50,6 +50,9 @@ USE_GNOME=	pygtk2
 .else
 MAKE_ENV+=	GPODDER_INSTALL_UIS="cli"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
