@@ -3,6 +3,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.25
+PORTREVISION=	1
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
@@ -48,23 +49,23 @@ XMHTML_CONFIGURE_ENABLE=	xmhtml
 XMHTML_LIB_DEPENDS=	libXmHTML.so:${PORTSDIR}/x11-toolkits/xmhtml
 
 post-configure:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/SCRIPTS/s|INSTALL_PROGRAM|INSTALL_SCRIPT|' \
 		${WRKSRC}/auxiliary/Makefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/cd /!s|$$(GRACE_HOME)/doc|${DOCSDIR}| ; \
 		 /cd /s|$$(GRACE_HOME)/doc|$$(DESTDIR)$$(PREFIX)/man/man1| ; \
 		 /^install/s|$$(MANPAGES)||' \
 		${WRKSRC}/doc/Makefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|$$(GRACE_HOME)/examples|${EXAMPLESDIR}| ; \
 		 /DOTEST/s|INSTALL_PROGRAM|INSTALL_SCRIPT|' \
 		${WRKSRC}/examples/Makefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|$$(GRACE_HOME)/include|$$(PREFIX)/include| ; \
 		 s|$$(GRACE_HOME)/lib|$$(PREFIX)/lib|' \
 		${WRKSRC}/grace_np/Makefile
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(GRACE_HOME)/bin|$$(PREFIX)/bin|'
 
 post-install:
@@ -72,9 +73,9 @@ post-install:
 		${STAGEDIR}${MANPREFIX}/man/man1)
 	(cd ${FILESDIR} && ${INSTALL_MAN} mini-xmgr3.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps)
-	@${LN} -sf xmgrace ${STAGEDIR}${PREFIX}/bin/grace
-	@${LN} -sf xmgrace.1 ${STAGEDIR}${MANPREFIX}/man/man1/xmgrace.1
-	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
-	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
+	${LN} -sf xmgrace ${STAGEDIR}${PREFIX}/bin/grace
+	${LN} -sf grace.1 ${STAGEDIR}${MANPREFIX}/man/man1/xmgrace.1
+	${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
+	${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 
 .include <bsd.port.mk>
