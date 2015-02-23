@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-MatchNames
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,4 +22,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-Text-Soundex>=0:${PORTSDIR}/textproc/p5-Text-Soundex
+RUN_DEPENDS+=	p5-Text-Soundex>=0:${PORTSDIR}/textproc/p5-Text-Soundex
+.endif
+
+.include <bsd.port.post.mk>
