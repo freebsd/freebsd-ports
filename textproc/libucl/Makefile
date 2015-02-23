@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libucl
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	textproc devel
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -41,7 +41,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-silent-rules
 
 GH_ACCOUNT=	vstakhov
-GH_COMMIT=	15fd9b5
+GH_COMMIT=	518233b
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=		install-strip
