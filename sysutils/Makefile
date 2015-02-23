@@ -857,6 +857,7 @@
     SUBDIR += rundeck
     SUBDIR += runit
     SUBDIR += runwhen
+    SUBDIR += s6
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += samefile
