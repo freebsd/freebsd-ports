@@ -17,8 +17,8 @@ GH_COMMIT=	a54935b
 PLIST_FILES=	bin/vmtouch \
 		man/man8/vmtouch.8.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/^	gcc /	cc /' ${WRKSRC}/Makefile
+do-build:
+	${CC} ${CFLAGS} -o ${WRKSRC}/vmtouch ${WRKSRC}/vmtouch.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmtouch ${STAGEDIR}${PREFIX}/bin/
