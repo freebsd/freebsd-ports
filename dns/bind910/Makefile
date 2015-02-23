@@ -20,7 +20,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.1-P1
+ISCVERSION=	9.10.1-P2
 
 MAKE_JOBS_UNSAFE=	yes
 

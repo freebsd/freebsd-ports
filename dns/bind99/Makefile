@@ -14,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.6-P1
+ISCVERSION=	9.9.6-P2
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -109,8 +109,8 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZ_PATCH_PATCHFILES=	9.9.6-P1-rpz2+rl.14038.05.patch:vix
-RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
+RPZ_PATCH_PATCHFILES=	${ISCVERSION}-rpz2+rl.14038.05.patch.xz:vix
+RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix LOCAL/mat/bind:vix
 
 RRL_CONFIGURE_ENABLE=	rrl
 
