@@ -115,11 +115,11 @@ post-patch:
 		${WRKSRC}/lapack-netlib/lapacke/utils/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
+	-e 's+%%LDFLAGS%%+${LDFLAGS}+' \
 	-e 's+%%LOCALBASE%%+${LOCALBASE}+' \
 	-e 's+%%FIND%%+${FIND}+' \
 	-e 's+%%XARGS%%+${XARGS}+' \
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
-	-e 's+%%_GCC_VER%%+${_GCC_VER}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}
