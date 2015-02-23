@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiredis
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.1
 CATEGORIES=	databases
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -13,14 +13,18 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	redis
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	0fff0f1
+GH_COMMIT=	9be3a07
 
-USES=		gmake
-MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
-CFLAGS+=	-fPIC
+USES=		gmake:lite
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^REAL_/s/ \$$(ARCH)//' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e '/^REAL_/s/ \$$(ARCH)//' \
+		-e 's|\$$(INSTALL_LIBRARY_PATH)/\$$(PKGCONF_PATH)|\$$(DESTDIR)\$$(PREFIX)/libdata/\$$(PKGCONF_PATH)|' \
+		${WRKSRC}/Makefile
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/libhiredis.so
 
 .include <bsd.port.mk>
