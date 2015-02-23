@@ -47,7 +47,7 @@ lib/libexecline.so
 lib/libexecline.so.2
 lib/libexecline.so.2.0
 lib/libexecline.so.2.0.2
-lib/libexecline.so.2.0.2.0
+lib/libexecline.so.2.0.2.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
