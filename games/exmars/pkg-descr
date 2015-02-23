@@ -17,5 +17,4 @@ The resulting program has the following main features:
   Mars at the same time in the same program, it should also be thread save.
 * To get Ruby interface you can install games/ruby-exmars port.
 
-Author: Martin Ankerl
 WWW: http://corewar.co.uk/ankerl/exmars.htm
