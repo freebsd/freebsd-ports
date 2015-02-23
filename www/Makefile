@@ -652,6 +652,7 @@
     SUBDIR += p5-CGI-Expand
     SUBDIR += p5-CGI-ExtDirect
     SUBDIR += p5-CGI-FCKeditor
+    SUBDIR += p5-CGI-Fast
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-FormBuilder
     SUBDIR += p5-CGI-Framework

@@ -15,7 +15,7 @@ COMMENT=	Simple Common Gateway Interface Class for Perl
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS=	p5-CGI-[4-9]*
+CONFLICTS=	p5-CGI-[4-9]* p5-CGI-Fast-[0-9]*
 
 USES=		perl5
 USE_PERL5=	configure
