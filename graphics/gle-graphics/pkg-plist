@@ -5,6 +5,8 @@
 lib/libgle-graphics-4.2.4c.so
 libdata/pkgconfig/gle-graphics.pc
 man/man1/gle.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/gle-manual.pdf
 %%DATADIR%%/4.2.4c/font/arial8.fmt
 %%DATADIR%%/4.2.4c/font/arialbd8.fmt
 %%DATADIR%%/4.2.4c/font/arialbi8.fmt
