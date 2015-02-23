@@ -88,6 +88,7 @@
     SUBDIR += cln
     SUBDIR += cloog
     SUBDIR += clp
+    SUBDIR += cminpack
     SUBDIR += coinmp
     SUBDIR += concorde
     SUBDIR += convertall
