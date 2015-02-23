@@ -10,7 +10,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Solver of harmonic inversion
 
-USES=		fortran gmake libtool
+USES=		blaslapack fortran gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -19,12 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile \
-		libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
-
-post-patch:
-	${REINPLACE_CMD} -e 's#%%PKGDIR%%#${PREFIX}/libdata#g' \
-		${WRKSRC}/Makefile.in
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 
 .include <bsd.port.mk>
