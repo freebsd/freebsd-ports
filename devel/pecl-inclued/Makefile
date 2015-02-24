@@ -7,13 +7,13 @@ PORTEPOCH=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Inclued gives you a Clue for PHP inclusion check
 
 LICENSE=	PHP301
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP=	55 56
