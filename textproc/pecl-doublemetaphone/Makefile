@@ -6,12 +6,15 @@ PORTVERSION=	1.0.1
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension which implements the Double Metaphone algorithm
 
+LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
