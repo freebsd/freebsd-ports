@@ -35,7 +35,7 @@ xymon_precmd()
 
 	# Default settings for this client
 	MACHINEDOTS="`uname -n`"
-	SERVEROSTYPE="`uname -s | tr '[ABCDEFGHIJKLMNOPQRSTUVWXYZ/]' '[abcdefghijklmnopqrstuvwxyz_]'"`
+	SERVEROSTYPE="`uname -s | tr '[ABCDEFGHIJKLMNOPQRSTUVWXYZ/]' '[abcdefghijklmnopqrstuvwxyz_]'`"
 	XYMONOSSCRIPT="xymonclient-$SERVEROSTYPE.sh"
 	XYMONCLIENTHOME="%%WWWDIR%%/client"
 
