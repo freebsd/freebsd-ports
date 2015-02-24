@@ -82,3 +82,4 @@ lib/ocp/playxm.so
 %%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%DATADIR%%/data/ocp.hlp
 %%DATADIR%%/etc/ocp.ini
+@dir %%DATADIR%%/ultradir
