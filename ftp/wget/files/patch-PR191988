@@ -1,5 +1,5 @@
---- configure.orig      2014-11-10 11:35:18.904856824 +0100
-+++ configure   2014-11-10 11:37:05.321847905 +0100
+--- configure.orig      2014-10-27 09:57:51.000000000 +0100
++++ configure   2015-02-24 12:53:13.759762053 +0100
 @@ -38189,54 +38189,6 @@
 
 
@@ -52,8 +52,11 @@
 -
 -
 -fi
+
+
+
 --- src/init.c.orig     2014-10-27 09:18:13.000000000 +0100
-+++ src/init.c  2014-11-10 10:39:51.683089107 +0100
++++ src/init.c  2015-02-24 12:53:13.608766270 +0100
 @@ -170,9 +170,6 @@
    { "dotsinline",       &opt.dots_in_line,      cmd_number },
    { "dotspacing",       &opt.dot_spacing,       cmd_number },
@@ -64,22 +67,8 @@
    { "excludedirectories", &opt.excludes,        cmd_directory_vector },
    { "excludedomains",   &opt.exclude_domains,   cmd_vector },
    { "followftp",        &opt.follow_ftp,        cmd_boolean },
---- src/openssl.c.orig  2014-11-10 10:40:17.596091395 +0100
-+++ src/openssl.c       2014-11-10 10:41:08.186093629 +0100
-@@ -89,11 +89,6 @@
-   if (RAND_status ())
-     return;
-
--  /* Get random data from EGD if opt.egd_file was used.  */
--  if (opt.egd_file && *opt.egd_file)
--    RAND_egd (opt.egd_file);
--
--  if (RAND_status ())
-     return;
-
- #ifdef WINDOWS
 --- src/options.h.orig  2014-10-27 09:15:33.000000000 +0100
-+++ src/options.h       2014-11-10 10:39:21.587093055 +0100
++++ src/options.h       2015-02-24 12:53:13.631765400 +0100
 @@ -220,7 +220,6 @@
    char *ca_cert;                /* CA certificate file to use */
 
@@ -88,3 +77,19 @@
    bool https_only;              /* whether to follow HTTPS only */
  #endif /* HAVE_SSL */
 
+--- src/openssl.c.orig  2014-10-27 09:15:33.000000000 +0100
++++ src/openssl.c       2015-02-24 12:53:41.523761871 +0100
+@@ -89,13 +89,6 @@
+   if (RAND_status ())
+     return;
+
+-  /* Get random data from EGD if opt.egd_file was used.  */
+-  if (opt.egd_file && *opt.egd_file)
+-    RAND_egd (opt.egd_file);
+-
+-  if (RAND_status ())
+-    return;
+-
+ #ifdef WINDOWS
+   /* Under Windows, we can try to seed the PRNG using screen content.
+      This may or may not work, depending on whether we'll calling Wget
