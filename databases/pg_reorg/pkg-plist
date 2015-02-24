@@ -1,0 +1,6 @@
+bin/pg_reorg
+lib/postgresql/pg_reorg.so
+share/postgresql/extension/pg_reorg--1.1.11.sql
+share/postgresql/extension/pg_reorg.control
+share/postgresql/extension/pg_reorg.sql
+share/postgresql/extension/uninstall_pg_reorg.sql
