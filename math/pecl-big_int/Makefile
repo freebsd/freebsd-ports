@@ -6,12 +6,12 @@ PORTVERSION=	1.0.7
 CATEGORIES=	math devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
