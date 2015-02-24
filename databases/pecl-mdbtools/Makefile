@@ -14,14 +14,15 @@ COMMENT=	PECL extension for the mdbtools library
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
+RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
+
 USES=		pkgconfig tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
-DEFAULT_PHP_VER=53
+DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=5
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
-RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}
 
