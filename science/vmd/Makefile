@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 USES=		gmake perl5 python
 USE_PERL5=	build
 USE_GL=		glu
+USE_GCC=	any
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -74,6 +75,30 @@ post-patch:
 	${REINPLACE_CMD} "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" ${WRKSRC}/src/Orbital.C
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" ${WRKSRC}/configure
+	${REINPLACE_CMD} -E "s/(SHLD[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
+		${WRKDIR}/plugins/Make-arch
+	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)cc/\1${CC}/" \
+		${WRKSRC}/lib/stride/Makefile \
+		${WRKSRC}/lib/surf/Makefile \
+		${WRKSRC}/lib/tachyon/unix/Make-arch \
+		${WRKDIR}/plugins/cionize/mcudahacks/Makefile.specialbuilds \
+		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
+		${WRKDIR}/plugins/cionize/Makefile.mine \
+		${WRKDIR}/plugins/cionize/Makefile.testing \
+		${WRKDIR}/plugins/Make-arch
+	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
+		${WRKDIR}/plugins/Make-arch \
+		${WRKDIR}/plugins/cionize/Makefile.mine \
+		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
+		${WRKDIR}/plugins/molfile_plugin/f77/Makefile \
+		${WRKSRC}/lib/tachyon/unix/Make-arch
+	${REINPLACE_CMD} -E "s/(CXX[[:space:]]*=[[:space:]]*)g\+\+/\1${CXX}/" \
+		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
+		${WRKDIR}/plugins/fmtool/Makefile.specialbuilds \
+		${WRKDIR}/plugins/hesstrans/src/foo/Makefile \
+		${WRKDIR}/plugins/hesstrans/src/foo/nm_gnu.mak \
+		${WRKDIR}/plugins/Make-arch
 
 do-build:
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix \
