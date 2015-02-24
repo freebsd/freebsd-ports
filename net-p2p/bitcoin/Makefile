@@ -3,6 +3,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com
@@ -63,6 +64,8 @@ QRCODES_CONFIGURE_WITH=	qrencode
 QRCODES_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 
 WALLET_CONFIGURE_ENABLE=	wallet
+WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}
+WALLET_LIBS=			-L${BDB_LIB_DIR}
 WALLET_USE=			BDB=48
 
 GH_ACCOUNT=	bitcoin
