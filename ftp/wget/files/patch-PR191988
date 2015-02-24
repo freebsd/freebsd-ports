@@ -1,204 +1,95 @@
-Index: files/patch-configure
-===================================================================
---- files/patch-configure	(revision 0)
-+++ files/patch-configure	(working copy)
-@@ -0,0 +1,54 @@
-+--- configure.orig      2014-11-10 11:35:18.904856824 +0100
-++++ configure   2014-11-10 11:37:05.321847905 +0100
-+@@ -38189,54 +38189,6 @@
-+
-+
-+
-+-ac_fn_c_check_header_mongrel "$LINENO" "uuid/uuid.h" "ac_cv_header_uuid_uuid_h" "$ac_includes_default"
-+-if test "x$ac_cv_header_uuid_uuid_h" = xyes; then :
-+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -luuid" >&5
-+-$as_echo_n "checking for uuid_generate in -luuid... " >&6; }
-+-if ${ac_cv_lib_uuid_uuid_generate+:} false; then :
-+-  $as_echo_n "(cached) " >&6
-+-else
-+-  ac_check_lib_save_LIBS=$LIBS
-+-LIBS="-luuid  $LIBS"
-+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-+-/* end confdefs.h.  */
-+-
-+-/* Override any GCC internal prototype to avoid an error.
-+-   Use char because int might match the return type of a GCC
-+-   builtin and then its argument prototype would still apply.  */
-+-#ifdef __cplusplus
-+-extern "C"
-+-#endif
-+-char uuid_generate ();
-+-int
-+-main ()
-+-{
-+-return uuid_generate ();
-+-  ;
-+-  return 0;
-+-}
-+-_ACEOF
-+-if ac_fn_c_try_link "$LINENO"; then :
-+-  ac_cv_lib_uuid_uuid_generate=yes
-+-else
-+-  ac_cv_lib_uuid_uuid_generate=no
-+-fi
-+-rm -f core conftest.err conftest.$ac_objext \
-+-    conftest$ac_exeext conftest.$ac_ext
-+-LIBS=$ac_check_lib_save_LIBS
-+-fi
-+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_generate" >&5
-+-$as_echo "$ac_cv_lib_uuid_uuid_generate" >&6; }
-+-if test "x$ac_cv_lib_uuid_uuid_generate" = xyes; then :
-+-  LIBS="${LIBS} -luuid"
-+-
-+-$as_echo "#define HAVE_LIBUUID 1" >>confdefs.h
-+-
-+-
-+-fi
-+-
-+-
-+-fi
+--- configure.orig      2014-10-27 09:57:51.000000000 +0100
++++ configure   2015-02-24 12:53:13.759762053 +0100
+@@ -38189,54 +38189,6 @@
 
-Property changes on: files/patch-configure
-___________________________________________________________________
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Index: files/patch-src__init.c
-===================================================================
---- files/patch-src__init.c	(revision 0)
-+++ files/patch-src__init.c	(working copy)
-@@ -0,0 +1,12 @@
-+--- src/init.c.orig	2014-10-27 09:18:13.000000000 +0100
-++++ src/init.c	2014-11-10 10:39:51.683089107 +0100
-+@@ -170,9 +170,6 @@
-+   { "dotsinline",       &opt.dots_in_line,      cmd_number },
-+   { "dotspacing",       &opt.dot_spacing,       cmd_number },
-+   { "dotstyle",         &opt.dot_style,         cmd_string }, /* deprecated */
-+-#ifdef HAVE_SSL
-+-  { "egdfile",          &opt.egd_file,          cmd_file },
-+-#endif
-+   { "excludedirectories", &opt.excludes,        cmd_directory_vector },
-+   { "excludedomains",   &opt.exclude_domains,   cmd_vector },
-+   { "followftp",        &opt.follow_ftp,        cmd_boolean },
 
-Property changes on: files/patch-src__init.c
-___________________________________________________________________
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
-Index: files/patch-src__openssl.c
-===================================================================
---- files/patch-src__openssl.c	(revision 0)
-+++ files/patch-src__openssl.c	(working copy)
-@@ -0,0 +1,14 @@
-+--- src/openssl.c.orig	2014-11-10 10:40:17.596091395 +0100
-++++ src/openssl.c	2014-11-10 10:41:08.186093629 +0100
-+@@ -89,11 +89,6 @@
-+   if (RAND_status ())
-+     return;
-+ 
-+-  /* Get random data from EGD if opt.egd_file was used.  */
-+-  if (opt.egd_file && *opt.egd_file)
-+-    RAND_egd (opt.egd_file);
-+-
-+-  if (RAND_status ())
-+     return;
-+ 
-+ #ifdef WINDOWS
 
-Property changes on: files/patch-src__openssl.c
-___________________________________________________________________
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Index: files/patch-src__options.h
-===================================================================
---- files/patch-src__options.h	(revision 0)
-+++ files/patch-src__options.h	(working copy)
-@@ -0,0 +1,10 @@
-+--- src/options.h.orig	2014-10-27 09:15:33.000000000 +0100
-++++ src/options.h	2014-11-10 10:39:21.587093055 +0100
-+@@ -220,7 +220,6 @@
-+   char *ca_cert;                /* CA certificate file to use */
-+ 
-+   char *random_file;            /* file with random data to seed the PRNG */
-+-  char *egd_file;               /* file name of the egd daemon socket */
-+   bool https_only;              /* whether to follow HTTPS only */
-+ #endif /* HAVE_SSL */
-+ 
+-ac_fn_c_check_header_mongrel "$LINENO" "uuid/uuid.h" "ac_cv_header_uuid_uuid_h" "$ac_includes_default"
+-if test "x$ac_cv_header_uuid_uuid_h" = xyes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -luuid" >&5
+-$as_echo_n "checking for uuid_generate in -luuid... " >&6; }
+-if ${ac_cv_lib_uuid_uuid_generate+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-luuid  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char uuid_generate ();
+-int
+-main ()
+-{
+-return uuid_generate ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_uuid_uuid_generate=yes
+-else
+-  ac_cv_lib_uuid_uuid_generate=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_generate" >&5
+-$as_echo "$ac_cv_lib_uuid_uuid_generate" >&6; }
+-if test "x$ac_cv_lib_uuid_uuid_generate" = xyes; then :
+-  LIBS="${LIBS} -luuid"
+-
+-$as_echo "#define HAVE_LIBUUID 1" >>confdefs.h
+-
+-
+-fi
+-
+-
+-fi
 
-Property changes on: files/patch-src__options.h
-___________________________________________________________________
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Index: files/patch-src_openssl.c
-===================================================================
---- files/patch-src_openssl.c	(revision 0)
-+++ files/patch-src_openssl.c	(working copy)
-@@ -0,0 +1,14 @@
-+--- src/openssl.c.orig	2014-10-27 08:15:33 UTC
-++++ src/openssl.c
-+@@ -89,9 +89,11 @@ init_prng (void)
-+   if (RAND_status ())
-+     return;
-+ 
-++#ifdef HAVE_SSL_RAND_EGD
-+   /* Get random data from EGD if opt.egd_file was used.  */
-+   if (opt.egd_file && *opt.egd_file)
-+     RAND_egd (opt.egd_file);
-++#endif
-+ 
-+   if (RAND_status ())
-+     return;
 
-Property changes on: files/patch-src_openssl.c
-___________________________________________________________________
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
+
+--- src/init.c.orig     2014-10-27 09:18:13.000000000 +0100
++++ src/init.c  2015-02-24 12:53:13.608766270 +0100
+@@ -170,9 +170,6 @@
+   { "dotsinline",       &opt.dots_in_line,      cmd_number },
+   { "dotspacing",       &opt.dot_spacing,       cmd_number },
+   { "dotstyle",         &opt.dot_style,         cmd_string }, /* deprecated */
+-#ifdef HAVE_SSL
+-  { "egdfile",          &opt.egd_file,          cmd_file },
+-#endif
+   { "excludedirectories", &opt.excludes,        cmd_directory_vector },
+   { "excludedomains",   &opt.exclude_domains,   cmd_vector },
+   { "followftp",        &opt.follow_ftp,        cmd_boolean },
+--- src/options.h.orig  2014-10-27 09:15:33.000000000 +0100
++++ src/options.h       2015-02-24 12:53:13.631765400 +0100
+@@ -220,7 +220,6 @@
+   char *ca_cert;                /* CA certificate file to use */
+
+   char *random_file;            /* file with random data to seed the PRNG */
+-  char *egd_file;               /* file name of the egd daemon socket */
+   bool https_only;              /* whether to follow HTTPS only */
+ #endif /* HAVE_SSL */
+
+--- src/openssl.c.orig  2014-10-27 09:15:33.000000000 +0100
++++ src/openssl.c       2015-02-24 12:53:41.523761871 +0100
+@@ -89,13 +89,6 @@
+   if (RAND_status ())
+     return;
+
+-  /* Get random data from EGD if opt.egd_file was used.  */
+-  if (opt.egd_file && *opt.egd_file)
+-    RAND_egd (opt.egd_file);
+-
+-  if (RAND_status ())
+-    return;
+-
+ #ifdef WINDOWS
+   /* Under Windows, we can try to seed the PRNG using screen content.
+      This may or may not work, depending on whether we'll calling Wget
