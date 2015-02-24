@@ -7,22 +7,22 @@ PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL Extension for Interface the MCVE/Monetra API
 
-LIB_DEPENDS=	libmonetra.so:${PORTSDIR}/devel/libmonetra
-
 LICENSE=	PHP30
 
+LIB_DEPENDS=	libmonetra.so:${PORTSDIR}/devel/libmonetra
+
+USES=		tar:tgz
 USE_OPENSSL=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
-CONFIGURE_ARGS+=--with-mcve="${LOCALBASE}"
+DEFAULT_VERSIONS+=	php=53
+IGNORE_WITH_PHP=	5
+CONFIGURE_ARGS+=	--with-mcve="${LOCALBASE}"
 
 post-patch:
 	${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
