@@ -22,4 +22,7 @@ USE_PYTHON=	distutils autoplist
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ogg/_ogg.so
+
 .include <bsd.port.mk>

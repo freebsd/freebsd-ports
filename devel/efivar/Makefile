@@ -20,6 +20,9 @@ GH_COMMIT=	5776088
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
+NOT_FOR_ARCHS=	powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	specification only supports little-endian processors
+
 .include <bsd.port.pre.mk>
 
 post-patch:

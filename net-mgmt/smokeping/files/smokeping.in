@@ -20,13 +20,18 @@
 . /etc/rc.subr
 
 name=smokeping
-
 rcvar=smokeping_enable
 
-load_rc_config $name
+extra_commands="status configtest reload"
+
+status_cmd="smokeping_status"
+configtest_cmd="smokeping_configtest"
+reload_cmd="smokeping_reload"
+stop_cmd="smokeping_stop"
 
 : ${smokeping_enable:=NO}
-: ${smokeping_pidfile="%%PREFIX%%/var/smokeping/smokeping.pid"}
+# pidfile is hardcoded in Smokeping.pm, not configurable
+smokeping_pidfile="%%PREFIX%%/var/smokeping/pid"
 : ${smokeping_logfile=/var/log/smokeping.log}
 : ${smokeping_user="%%USERS%%"}
 : ${smokeping_group="%%GROUPS%%"}
@@ -36,9 +41,6 @@ command_args="--logfile=${smokeping_logfile}"
 pidfile="${smokeping_pidfile}"
 command_interpreter="%%PREFIX%%/bin/perl"
 
-extra_commands=reload
-reload_cmd="${command} --reload"
-
 smokeping_startprecmd()
 {
 	if [ ! -e ${smokeping_logfile} ];
@@ -46,5 +48,38 @@ smokeping_startprecmd()
 		install -o %%USERS%% -g %%GROUPS%% /dev/null ${smokeping_logfile} || echo "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
 	fi
 }
+
+smokeping_status()
+{
+	rc_pid=$(check_pidfile $pidfile $command)
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+	else
+		echo "${name} is running as pid $rc_pid"
+        fi
+}
+
+smokeping_configtest()
+{
+	/usr/local/bin/smokeping --check
+}
+
+smokeping_reload()
+{
+	/usr/local/bin/smokeping --reload
+}
+
+smokeping_stop()
+{
+	rc_pid=$(check_pidfile $pidfile $command)
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+	else
+		echo "Stopping ${name} (pid $rc_pid)."
+		kill -15 $rc_pid
+        fi
+}
+
+load_rc_config $name
 
 run_rc_command "$1"

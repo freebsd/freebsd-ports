@@ -11,7 +11,7 @@ COMMENT=	Stores, retrieves, generates, and synchronizes passwords securely
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		getopt>=0:${PORTSDIR}/misc/getopt \
 		gnupg>=2:${PORTSDIR}/security/gnupg \
 		pwgen>=0:${PORTSDIR}/sysutils/pwgen \

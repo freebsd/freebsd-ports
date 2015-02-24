@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard
-PORTVERSION=	2.11.1
+PORTVERSION=	2.12.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -24,6 +24,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/guard
+PLIST_FILES=	bin/guard \
+		bin/_guard-core
 
 .include <bsd.port.mk>

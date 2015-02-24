@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
-CONFLICTS=	xfce4-notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
-
 USE_GNOME=	gnomeprefix intlhack gtk30
 USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_XORG=	x11

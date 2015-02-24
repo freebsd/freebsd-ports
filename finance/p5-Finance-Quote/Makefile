@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTVERSION=	1.37
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +13,12 @@ COMMENT=	Get stock and mutual fund quotes from various exchanges
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww

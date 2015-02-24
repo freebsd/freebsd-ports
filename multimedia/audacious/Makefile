@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.5
+PORTVERSION=	3.5.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmcs.so:${PORTSDIR}/devel/libmcs \
 		libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake tar:bzip2 desktop-file-utils
+USES=		pkgconfig gmake tar:bzip2 desktop-file-utils gettext-tools
 USE_XORG=	x11 sm
 USE_GNOME=	gtk30 libxml2
 USE_LDCONFIG=	yes
@@ -49,7 +49,7 @@ USES+=		iconv
 .endif
 
 .if  ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext-runtime
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 .else

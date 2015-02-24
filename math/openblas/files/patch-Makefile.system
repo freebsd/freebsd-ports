@@ -1,16 +1,14 @@
---- Makefile.system.orig	2013-07-26 02:34:45.000000000 +0900
-+++ Makefile.system	2013-07-27 01:22:51.000000000 +0900
-@@ -142,6 +142,9 @@
+--- Makefile.system.orig	2014-12-04 00:14:21.000000000 +0900
++++ Makefile.system	2015-02-23 05:27:11.000000000 +0900
+@@ -199,6 +199,7 @@
  endif
  
  ifeq ($(OSNAME), FreeBSD)
-+EXTRALIB	+= -lm
-+CCOMMON_OPT     += -Wl,-rpath=%%_GCC_RUNTIME%%
-+FCOMMON_OPT	+= -Wl,-rpath=%%_GCC_RUNTIME%%
++EXTRALIB	+= -lm %%LDFLAGS%%
  MD5SUM = md5 -r
  endif
  
-@@ -856,15 +859,6 @@
+@@ -981,15 +982,6 @@
  LIBSUFFIX = a
  endif
  
@@ -26,7 +24,7 @@
  ifndef SMP
  LIBNAME		= $(LIBPREFIX)$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.$(LIBSUFFIX)
-@@ -872,7 +866,6 @@
+@@ -997,7 +989,6 @@
  LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
  endif
@@ -34,8 +32,8 @@
  
  
  LIBDLLNAME   = $(LIBPREFIX).dll
-@@ -886,7 +879,7 @@
- LIBS_P		= $(TOPDIR)/$(LIBNAME_P)
+@@ -1028,7 +1019,7 @@
+ endif
  
  export OSNAME
 -export ARCH

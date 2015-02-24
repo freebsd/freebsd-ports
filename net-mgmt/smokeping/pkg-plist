@@ -74,7 +74,9 @@ smokeping/lib/Smokeping/probes/FTPtransfer.pm
 smokeping/lib/Smokeping/probes/IOSPing.pm
 smokeping/lib/Smokeping/probes/LDAP.pm
 smokeping/lib/Smokeping/probes/NFSping.pm
+smokeping/lib/Smokeping/probes/OpenSSHEOSPing.pm
 smokeping/lib/Smokeping/probes/OpenSSHJunOSPing.pm
+smokeping/lib/Smokeping/probes/Qstat.pm
 smokeping/lib/Smokeping/probes/Radius.pm
 smokeping/lib/Smokeping/probes/RemoteFPing.pm
 smokeping/lib/Smokeping/probes/SSH.pm
@@ -130,7 +132,9 @@ man/man3/Smokeping_probes_FTPtransfer.3.gz
 man/man3/Smokeping_probes_IOSPing.3.gz
 man/man3/Smokeping_probes_LDAP.3.gz
 man/man3/Smokeping_probes_NFSping.3.gz
+man/man3/Smokeping_probes_OpenSSHEOSPing.3.gz
 man/man3/Smokeping_probes_OpenSSHJunOSPing.3.gz
+man/man3/Smokeping_probes_Qstat.3.gz
 man/man3/Smokeping_probes_Radius.3.gz
 man/man3/Smokeping_probes_RemoteFPing.3.gz
 man/man3/Smokeping_probes_SSH.3.gz
@@ -157,19 +161,8 @@ man/man7/smokeping_extend.7.gz
 man/man7/smokeping_install.7.gz
 man/man7/smokeping_master_slave.7.gz
 man/man7/smokeping_upgrade.7.gz
-@dirrm etc/smokeping
-@dirrm var/smokeping
-@dirrm var
-@dirrm smokeping/lib/Smokeping/sorters
-@dirrm smokeping/lib/Smokeping/probes
-@dirrm smokeping/lib/Smokeping/matchers
-@dirrm smokeping/lib/Smokeping
-@dirrm smokeping/lib
-@dirrm smokeping/htdocs/img
-@dirrm smokeping/htdocs/cropper/lib
-@dirrm smokeping/htdocs/cropper
-@dirrm smokeping/htdocs
-@dirrm smokeping
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dir smokeping/htdocs/img
+@dir var/smokeping
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
 @exec mkdir -p %D/var/smokeping; chown smokeping:smokeping %D/var/smokeping

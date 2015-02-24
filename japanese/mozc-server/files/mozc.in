@@ -19,8 +19,11 @@ cleanup_lock()
 check_lock()
 {
 	if [ -r "${MOZCDIR}/.server.lock" ]; then
-		pid=$(cat "${MOZCDIR}/mozc_server.pid")
-		printf "mozc_server is running (PID=%s).\n" "$pid" \
+		if [ -r "${MOZCDIR}/mozc_server.pid" ]; then
+			pid=$(cat "${MOZCDIR}/mozc_server.pid")
+			pid=" (PID=$pid)"
+		fi
+		printf "mozc_server is running%s.\n" "$pid" \
 		    > /dev/stderr
 		false
 	fi

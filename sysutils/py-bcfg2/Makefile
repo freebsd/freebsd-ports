@@ -12,45 +12,32 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Configuration management system written in Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
-		${PYTHON_PKGNAMEPREFIX}daemon>0:${PORTSDIR}/devel/py-daemon \
-		${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
+LICENSE=	BSD2CLAUSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}daemon>=0:${PORTSDIR}/devel/py-daemon \
+		${PYTHON_PKGNAMEPREFIX}gamin>=0:${PORTSDIR}/devel/py-gamin \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0:${PORTSDIR}/devel/py-lockfile \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
 
 OPTIONS_DEFINE=	CHEETAH GENSHI
 CHEETAH_DESC=	Support Cheetah Templates
 GENSHI_DESC=	Support Genshi Templates
 
-.include <bsd.port.options.mk>
-
 USES=		python
 USE_PYTHON=	distutils autoplist
-
 USE_RC_SUBR=	bcfg2
+
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
-
-.if ${PORT_OPTIONS:MCHEETAH}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
-.endif
-
-.if ${PORT_OPTIONS:MGENSHI}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>0:${PORTSDIR}/textproc/py-genshi
-.endif
-
 PORTDOCS=	COPYRIGHT README
+
+CHEETAH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=0:${PORTSDIR}/devel/py-cheetah
+GENSHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0:${PORTSDIR}/textproc/py-genshi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' ${WRKSRC}/src/sbin/*
-
-.for f in 'Options.py' 'Server/models.py'
-	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' ${WRKSRC}/src/lib/Bcfg2/$f
-.endfor
-
-.for f in 'Options.py'
-	@${REINPLACE_CMD} -i '' -e 's|DEFAULT_INSTALL_PREFIX = ./usr.|DEFAULT_INSTALL_PREFIX = "${PREFIX}"|' ${WRKSRC}/src/lib/Bcfg2/$f
-	@${REINPLACE_CMD} -i '' -e 's|/var/lock|/var/run|' ${WRKSRC}/src/lib/Bcfg2/$f
-.endfor
+	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' ${WRKSRC}/src/sbin/* ${WRKSRC}/src/lib/Bcfg2/Options.py ${WRKSRC}/src/lib/Bcfg2/Server/models.py
+	@${REINPLACE_CMD} -i '' -e 's|DEFAULT_INSTALL_PREFIX = ./usr.|DEFAULT_INSTALL_PREFIX = "${PREFIX}"|' ${WRKSRC}/src/lib/Bcfg2/Options.py
+	@${REINPLACE_CMD} -i '' -e 's|/var/lock|/var/run|' ${WRKSRC}/src/lib/Bcfg2/Options.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -6,12 +6,14 @@ PORTVERSION=	2.1.6
 CATEGORIES=	mail www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension to create and decode MIME messages
 
+LICENSE=	PHP202
+
+USES=		tar:tgz
 USE_PHP=	mbstring
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes

@@ -2,9 +2,9 @@
 
 PORTNAME=	libosmo-sccp
 PORTVERSION=	0.0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=   http://chaosophia.net/downloads/osmocom/${PORTNAME}/ \
+MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/ \
 		http://ns1.chaosophia.net/downloads/osmocom/${PORTNAME}/
 
 MAINTAINER=	koue@chaosophia.net
@@ -15,14 +15,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libosmocore.so:${PORTSDIR}/devel/libosmocore
 
-USES=		gmake pkgconfig
+CONFLICTS_INSTALL=libmtp-[0-9]* # lib/libmtp.a
 
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize
-AUTOMAKE_ARGS=	--gnu --add-missing --copy
+USES=		autoreconf gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=Makefile.am
+GNU_CONFIGURE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's,endian\.h,sys/endian.h,' \
+		-e 's,__BYTE_ORDER,BYTE_ORDER,' \
+		-e 's,__LITTLE_ENDIAN,LITTLE_ENDIAN,' \
+		-e 's,__BIG_ENDIAN,BIG_ENDIAN,' \
+		${WRKSRC}/include/mtp/mtp_level3.h \
+		${WRKSRC}/include/sccp/sccp_types.h
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 
 .include <bsd.port.mk>

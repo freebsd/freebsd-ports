@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fpart
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
@@ -21,7 +22,8 @@ PORTDOCS=	Changelog README TODO
 OPTIONS_DEFINE=	FPSYNC
 OPTIONS_DEFAULT=	FPSYNC
 FPSYNC_DESC=	Install fpsync tool
-FPSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+FPSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
+			sudo:${PORTSDIR}/security/sudo
 FPSYNC_PLIST_FILES=	bin/fpsync man/man1/fpsync.1.gz
 
 post-install:

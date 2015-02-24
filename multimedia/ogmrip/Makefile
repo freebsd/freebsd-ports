@@ -39,6 +39,7 @@ USE_GNOME=	glib20 intlhack libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

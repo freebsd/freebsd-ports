@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.2.0
+PORTVERSION=	2.5.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -11,29 +11,34 @@ COMMENT=	Node package manager
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	NODE_DEVEL
-NODE_DEVEL_DESC=Use www/node-devel instead of www/node
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	IOJS NODE NODE_DEVEL
+OPTIONS_DEFAULT=NODE
+IOJS_DESC=	Use www/iojs as backend
+NODE_DESC=	Use www/node as backend
+NODE_DEVEL_DESC=Use www/node-devel as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe tar:xz
+USES=		cpe python:2 tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
 
+IOJS_RUN_DEPENDS=	iojs>=1.0.0:${PORTSDIR}/www/iojs
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
-NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
+NODE_RUN_DEPENDS=	node>=0.8.0:${PORTSDIR}/www/node
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
-	@${ECHO_CMD} 'MANPATH ${MANPREFIX}/man' > ${WRKDIR}/npm.conf
+	@${ECHO_CMD} 'MANPATH ${PREFIX}/lib/node_modules/npm/man' > ${WRKDIR}/npm.conf
+	@${REINPLACE_CMD} -e 's|exec python|exec ${PYTHON_CMD}|' ${WRKSRC}/node_modules/node-gyp/gyp/gyp
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/npm.conf ${STAGEDIR}${PREFIX}/etc/man.d/npm.conf
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 
 # maintainer section:
 # require: bash, git, gmake, perl, node

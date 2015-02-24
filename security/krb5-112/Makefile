@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.12.2
-PORTREVISION=		2
+PORTVERSION=		1.12.3
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-112
@@ -12,7 +11,6 @@ EXTRACT_SUFX=		.tar
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
-PATCHFILES=		2015-001-patch-r112.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
@@ -30,7 +28,8 @@ USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 USES=			gettext gmake perl5 libtool:build
-CONFIGURE_ARGS?=	--enable-shared --without-system-verto
+CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
+			--disable-rpath
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
@@ -43,16 +42,27 @@ LDAP=			Enable LDAP support
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
-CFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
-LDFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
 .endif
-LDFLAGS+=		-L${LOCALBASE}/lib
-CFLAGS+=		-I${LOCALBASE}/include
+CPPFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
+LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_OPENSSL=		yes
 USE_RC_SUBR=		kpropd
 
 .include <bsd.port.pre.mk>
+
+# Fix up -Wl,-rpath in LDFLAGS
+.if !empty(KRB5_HOME)
+_RPATH=	${KRB5_HOME}/lib:
+.else
+_RPATH=	${LOCALBASE}/lib:
+.endif
+.if !empty(LDFLAGS:M-Wl,-rpath,*)
+.for F in ${LDFLAGS:M-Wl,-rpath,*}
+LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
+		${LDFLAGS:N-Wl,-rpath,*}
+.endfor
+.endif
 
 .if defined(KRB5_HOME) && ${KRB5_HOME} != ${LOCALBASE}
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
@@ -81,8 +91,6 @@ CONFIGURE_ARGS+=	--with-readline
 .endif
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
@@ -91,8 +99,6 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
-
-CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB} -L${LOCALBASE}/include"
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions

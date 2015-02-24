@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.12
-PORTREVISION=	2
+PORTVERSION=	1.9.13
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -92,7 +91,7 @@ x-generate-plist: stage
 	${SORT} pkg-plist.new -o pkg-plist.new.tmp
 	${MV} pkg-plist.new.tmp pkg-plist.new
 	${REINPLACE_CMD} -e 's,%%WWWDIR%%/docs,%%PORTDOCS%%&,' pkg-plist.new
-.for f in logs upload_area
+.for f in gui/templates_c logs upload_area
 	${ECHO} '@dir %%WWWDIR%%/${f}' >> pkg-plist.new
 .endfor
 	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new

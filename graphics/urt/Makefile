@@ -43,5 +43,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/img
 	@(cd ${WRKSRC}/img && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/img)
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librle.so
 
 .include <bsd.port.mk>

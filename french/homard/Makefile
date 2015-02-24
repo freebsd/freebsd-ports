@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homard
-DISTVERSION=	10.6-3
-PORTREVISION=	2
+DISTVERSION=	11.2-1
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -67,9 +66,6 @@ do-install:
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/Linux/CAS_TESTS && ${COPYTREE_SHARE} .	\
-		${STAGEDIR}${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.mk>

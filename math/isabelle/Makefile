@@ -9,7 +9,7 @@ MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
 DISTNAME=	Isabelle2009-2
 
-MAINTAINER=	beyert@cs.ucr.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic proof assistant
 
 LICENSE=	BSD3CLAUSE

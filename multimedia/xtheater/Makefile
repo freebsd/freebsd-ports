@@ -12,6 +12,9 @@ DISTNAME=	Xtheater-${PORTVERSION:S/.p/-pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
 USE_SDL=	sdl
@@ -35,5 +38,8 @@ post-patch:
 .for file in plugins/player/smpeg/glscreen.c plugins/player/wm/glscreen.c
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/${file}
 .endfor
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Xtheater/*/*.so
 
 .include <bsd.port.mk>

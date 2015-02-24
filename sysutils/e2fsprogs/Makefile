@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.42.12
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
-USES=		gmake pkgconfig tar:xz
+USES=		cpe gmake pkgconfig tar:xz
+CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

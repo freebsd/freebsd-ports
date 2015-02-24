@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nasm
-PORTVERSION=	2.11.06
+PORTVERSION=	2.11.08
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/

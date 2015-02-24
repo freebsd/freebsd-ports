@@ -37,6 +37,7 @@ do-configure:
 	${ECHO_CMD} "${STAGEDIR}${BGLIBS_LIB}"	> ${WRKSRC}/conf-lib
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/bglibs/*.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

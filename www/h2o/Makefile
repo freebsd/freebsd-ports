@@ -3,6 +3,7 @@
 
 PORTNAME=	h2o
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dch@skunkwerks.at

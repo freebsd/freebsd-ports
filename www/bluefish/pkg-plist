@@ -131,7 +131,7 @@ share/applications/bluefish.desktop
 %%DATADIR%%/templates/PHP
 %%DATADIR%%/templates/XHTML_1.0
 %%DATADIR%%/ui/bluefish_menu_ui.xml
-%%PORTDOCS%%%%DOCSDIR%%/bflang/sample.bflang2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.bflang2
 share/icons/hicolor/128x128/apps/bluefish.png
 share/icons/hicolor/128x128/mimetypes/application-x-bluefish-project.png
 share/icons/hicolor/16x16/apps/bluefish.png
@@ -425,27 +425,3 @@ share/pixmaps/application-x-bluefish-project.png
 share/pixmaps/bluefish.png
 share/xml/bluefish/2.0/bflang2.rng
 share/xml/bluefish/catalog.xml
-@dirrm lib/bluefish
-@dirrm %%DATADIR%%/bflang
-@dirrm %%DATADIR%%/bflib
-@dirrm %%DATADIR%%/jsbeautifier
-@dirrm %%DATADIR%%/jsbeautifier/unpackers
-@dirrm %%DATADIR%%/lipsum/data
-@dirrm %%DATADIR%%/lipsum
-@dirrm %%DATADIR%%/plugins/htmlbar/ui
-@dirrm %%DATADIR%%/plugins/htmlbar
-@dirrm %%DATADIR%%/plugins/zencoding/actions
-@dirrm %%DATADIR%%/plugins/zencoding/filters
-@dirrm %%DATADIR%%/plugins/zencoding/interface
-@dirrm %%DATADIR%%/plugins/zencoding/parser
-@dirrm %%DATADIR%%/plugins/zencoding
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/bflang
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrmtry share/mime/application
-@dirrm share/xml/bluefish/2.0
-@dirrm share/xml/bluefish

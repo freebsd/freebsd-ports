@@ -3,6 +3,7 @@
 
 PORTNAME=	openblas
 PORTVERSION=	0.2.13
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
 		NL:lapack_tmg
@@ -24,7 +25,6 @@ LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
 USES=		fortran gmake perl5
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
@@ -115,11 +115,11 @@ post-patch:
 		${WRKSRC}/lapack-netlib/lapacke/utils/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
+	-e 's+%%LDFLAGS%%+${LDFLAGS}+' \
 	-e 's+%%LOCALBASE%%+${LOCALBASE}+' \
 	-e 's+%%FIND%%+${FIND}+' \
 	-e 's+%%XARGS%%+${XARGS}+' \
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
-	-e 's+%%_GCC_RUNTIME%%+${_GCC_RUNTIME}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}

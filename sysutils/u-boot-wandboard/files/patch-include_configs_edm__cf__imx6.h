@@ -1,6 +1,6 @@
 --- include/configs/edm_cf_imx6.h.orig	2014-06-12 07:50:48 UTC
 +++ include/configs/edm_cf_imx6.h
-@@ -338,4 +338,64 @@
+@@ -338,4 +338,61 @@
  #define CONFIG_CMD_CACHE
  #endif
  
@@ -11,8 +11,6 @@
 +#define CONFIG_API
 +#define CONFIG_CMD_ELF
 +#define CONFIG_CMD_ENV_EXISTS
-+#define CONFIG_EFI_PARTITION
-+#define CONFIG_PREBOOT
 +
 +#undef  CONFIG_CMD_BMODE
 +#define CONFIG_CMD_BMODE
@@ -26,7 +24,6 @@
 +/* Create a small(ish) boot environment for FreeBSD. */
 +#undef  CONFIG_EXTRA_ENV_SETTINGS
 +#define CONFIG_EXTRA_ENV_SETTINGS \
-+	"board=wandboard\0" \
 +	"loadaddr=0x11000000\0" \
 +	\
 +	"Fatboot=" \
@@ -49,7 +46,7 @@
 +	  "env exists UserPreboot && run UserPreboot; " \
 +	"\0" \
 +	"SetupFdtfile=" \
-+	  "env set fdt_file ${soc}-${board}.dtb" \
++	  "env exists fdt_file || env set fdt_file ${fdt_soc}-${fdt_board}.dtb" \
 +	"\0" \
 +	"SetupFatdev=" \
 +	  "env exists fatdev || fatdev='mmc 0'; " \

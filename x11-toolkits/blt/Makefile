@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR}/generic \
 		-I${TK_INCLUDEDIR}/generic \
 		-I${TK_INCLUDEDIR}/unix
-MAKE_JOBS_UNSAFE=
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB+=	BLTVER=${PORTVERSION:R} \
     		BLTSHORTVER=${PORTVERSION:R:S/.//}
@@ -41,6 +41,10 @@ post-patch:
 	    ${REINPLACE_CMD} -e '/^INSTALL_ROOT/s|$$|$${DESTDIR}|'
 	${FIND} ${WRKSRC}/demos -name "*.tcl" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|../src/bltwish|${LOCALBASE}/bin/bltwish|'
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.pre.mk>
 

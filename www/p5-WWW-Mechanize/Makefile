@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is to help you automate interaction with a website
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-HTML-Form>=6:${PORTSDIR}/www/p5-HTML-Form \
 		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \

@@ -378,6 +378,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/plugins/server.py
 %%SERV%%%%ASTKDIR%%/asrun/plugins/server.pyc
 %%SERV%%%%ASTKDIR%%/asrun/plugins/server.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/sftp_server.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/sftp_server.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/sftp_server.pyo
 %%SERV%%%%ASTKDIR%%/asrun/profil.py
 %%SERV%%%%ASTKDIR%%/asrun/profil.pyc
 %%SERV%%%%ASTKDIR%%/asrun/profil.pyo

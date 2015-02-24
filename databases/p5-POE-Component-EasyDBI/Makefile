@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-DBI>=1.38:${PORTSDIR}/databases/p5-DBI \
 		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0.08:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	modbuild

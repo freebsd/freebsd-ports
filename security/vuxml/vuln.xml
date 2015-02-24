@@ -57,6 +57,172 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="996c219c-bbb1-11e4-88ae-d050992ecde8">
+    <topic>samba -- Unexpected code execution in smbd</topic>
+    <affects>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><lt>4.0.25</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.17</lt></range>
+      </package>
+      <package>
+	<name>samba36</name>
+	<range><ge>3.6.0</ge><lt>3.6.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba developement team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2015-0240">
+	  <p>All versions of Samba from 3.5.0 to 4.2.0rc4 are
+	    vulnerable to an unexpected code execution vulnerability
+	    in the smbd file server daemon.</p>
+	  <p>A malicious client could send packets that may set up the
+	    stack in such a way that the freeing of memory in a
+	    subsequent anonymous netlogon packet could allow execution
+	    of arbitrary code. This code would execute with root
+	    privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0240</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-0240</url>
+    </references>
+    <dates>
+      <discovery>2015-02-23</discovery>
+      <entry>2015-02-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0f488b7b-bbb9-11e4-903c-080027ef73ec">
+    <topic>e2fsprogs -- buffer overflow if s_first_meta_bg too big</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.42.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Ts'o reports:</p>
+	<blockquote cite="http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4">
+	  <p>If s_first_meta_bg is greater than the of number block group descriptor blocks, then reading or writing the block group descriptors will end up overruning the memory buffer allocated for the descriptors.</p>
+	  <p>The finding is credited to a vulnerability report from Jose Duart of Google Security Team &lt;jduart AT google.com&gt; and was reported through oCERT-2015-002.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4</url>
+      <url>http://www.ocert.org/advisories/ocert-2015-002.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1187032</url>
+      <cvename>CVE-2015-0247</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-09</discovery>
+      <entry>2015-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a4bcd7d-bbb8-11e4-903c-080027ef73ec">
+    <topic>e2fsprogs -- potential buffer overflow in closefs()</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.42.12_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Ts'o reports:</p>
+	<blockquote cite="http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&amp;id=49d0fe2a14f2a23da2fe299643379b8c1d37df73">
+	  <p>On a carefully crafted filesystem that gets modified through
+	    tune2fs or debugfs, it is possible to trigger a buffer overrun when
+	    the file system is closed via closefs().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&amp;id=49d0fe2a14f2a23da2fe299643379b8c1d37df73</url>
+      <cvename>CVE-2015-1572</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-06</discovery>
+      <entry>2015-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="58033a95-bba8-11e4-88ae-d050992ecde8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind910</name>
+	<name>bind910-base</name>
+	<range><lt>9.10.1P2</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.6P2</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><lt>9.3_10</lt></range>
+	<range><gt>8.4</gt><lt>8.4_24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01235">
+	  <p>When configured to perform DNSSEC validation, named can
+	    crash when encountering a rare set of conditions in the
+	    managed trust anchors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1349</cvename>
+      <url>https://kb.isc.org/article/AA-01235</url>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-02-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="63527d0d-b9de-11e4-8a48-206a8a720317">
+    <topic>krb5 1.12 -- New release/fix multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>krb5-112</name>
+	<range><lt>1.12.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT Kerberos team announces the availability of MIT Kerberos 5 Release 1.12.3:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt">
+	  <p>Fix multiple vulnerabilities in the LDAP KDC back end.
+	     [CVE-2014-5354] [CVE-2014-5353]</p>
+	  <p>Fix multiple kadmind vulnerabilities, some of which are based
+	     in the gssrpc library. [CVE-2014-5352 CVE-2014-5352
+	     CVE-2014-9421 CVE-2014-9422 CVE-2014-9423]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://web.mit.edu/kerberos/krb5-1.12/README-1.12.3.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-02-20</discovery>
+      <entry>2015-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3680b234-b6f0-11e4-b7cc-d050992ecde8">
     <topic>unzip -- heap based buffer overflow in iconv patch</topic>
     <affects>

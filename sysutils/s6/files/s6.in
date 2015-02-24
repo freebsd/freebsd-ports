@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: /service
+# BEFORE:  SERVERS
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `s6':
+#
+#s6_enable="YES"		(default: NO)
+#s6_path="/service"		(default: %%SERVICE_DIR%%)
+#
+
+. /etc/rc.subr
+
+name=s6
+rcvar=s6_enable
+
+load_rc_config s6
+
+: ${s6_enable:=NO}
+: ${s6_path:=%%SERVICE_DIR%%}
+
+s6_log=${s6_path}/s6-svscan-log
+s6_svc=${s6_path}/.s6-svscan
+
+command="%%PREFIX%%/bin/s6-svscanboot"
+start_cmd=s6_start
+stop_cmd="%%PREFIX%%/bin/s6-svscanctl -t ${s6_path}"
+stop_postcmd="%%PREFIX%%/bin/s6-svc -k ${s6_log}/"
+
+s6_start()
+{
+	/bin/test -d ${s6_path} || /bin/mkdir -p ${s6_path}
+	/bin/test -L ${s6_log} || /bin/ln -sh %%PREFIX%%/etc/s6/s6-svscan-log \
+		${s6_log}
+	/bin/test -L ${s6_svc} || /bin/ln -sh %%PREFIX%%/etc/s6/s6-svscan \
+		${s6_svc}
+	/usr/bin/env -i \
+	PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin \
+	/usr/sbin/daemon \
+	${command} ${s6_path}
+}
+
+s6_stop()
+{
+	${stop_cmd}
+}
+
+run_rc_command $1

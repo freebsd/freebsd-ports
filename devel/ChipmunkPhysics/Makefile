@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ChipmunkPhysics
-PORTVERSION=	6.2.1
-PORTREVISION=	1
+PORTVERSION=	7.0.0
+#PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://chipmunk-physics.net/release/Chipmunk-6.x/ \
-		http://files.slembcke.net/chipmunk/release/Chipmunk-6.x/ \
+MASTER_SITES=	http://chipmunk-physics.net/release/Chipmunk-7.x/ \
+		http://files.slembcke.net/chipmunk/release/Chipmunk-7.x/ \
 		http://files.libsiege.org/chipmunk/
 DISTNAME=	Chipmunk-${PORTVERSION}
 
@@ -20,21 +20,17 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES DEMOS
-DEMOS_DESC=	Install the demo program (requires GLFW and GLEW)
+OPTIONS_SUB=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*.c *.h
 
-.include <bsd.port.options.mk>
+DEMOS_DESC=	Install the demo program (requires GLFW and GLEW)
+DEMOS_USE=		GL=glew
+DEMOS_LIB_DEPENDS=	libglfw.so:${PORTSDIR}/graphics/glfw2
+DEMOS_CMAKE_OFF=	-DBUILD_DEMOS=OFF
 
-.if ${PORT_OPTIONS:MDEMOS}
-USE_GL=		glew
-LIB_DEPENDS+=	libglfw.so:${PORTSDIR}/graphics/glfw2
-PLIST_SUB+=	DEMOS=""
-.else
-CMAKE_ARGS=	-DBUILD_DEMOS=OFF
-PLIST_SUB+=	DEMOS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -45,11 +41,11 @@ post-install:
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/Demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "-name *\.c -or -name *\.h")
+	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "-name *\.c -or -name *\.h")
 .endif
 
 .if ${PORT_OPTIONS:MDEMOS}
-	${INSTALL_PROGRAM} ${WRKSRC}/Demo/chipmunk_demos ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/demo/chipmunk_demos ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .include <bsd.port.mk>

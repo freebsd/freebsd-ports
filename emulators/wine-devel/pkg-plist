@@ -328,6 +328,7 @@ include/wine/windows/gdiplusmetaheader.h
 include/wine/windows/gdipluspixelformats.h
 include/wine/windows/gdiplustypes.h
 include/wine/windows/guiddef.h
+include/wine/windows/hidusage.h
 include/wine/windows/highlevelmonitorconfigurationapi.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
@@ -438,6 +439,7 @@ include/wine/windows/mprerror.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
+include/wine/windows/msasn1.h
 include/wine/windows/mscat.h
 include/wine/windows/mscoree.h
 include/wine/windows/mscoree.idl
@@ -492,6 +494,7 @@ include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
+include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 %%COMPHOLIO%%include/wine/windows/ntifs.h
 include/wine/windows/ntquery.h
@@ -820,8 +823,8 @@ lib/wine/api-ms-win-core-errorhandling-l1-1-2.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-fibers-l1-1-0.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-fibers-l1-1-1.dll.so
 lib/wine/api-ms-win-core-file-l1-2-0.dll.so
-lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 %%COMPHOLIO%%lib/wine/api-ms-win-core-file-l2-1-0.dll.so
+lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 lib/wine/api-ms-win-core-handle-l1-1-0.dll.so
 lib/wine/api-ms-win-core-heap-l1-2-0.dll.so
 lib/wine/api-ms-win-core-heap-obsolete-l1-1-0.dll.so
@@ -910,6 +913,7 @@ lib/wine/compobj.dll16.so
 lib/wine/compstui.dll.so
 lib/wine/comsvcs.dll.so
 lib/wine/conhost.exe.so
+lib/wine/connect.dll.so
 lib/wine/control.exe.so
 lib/wine/credui.dll.so
 lib/wine/crtdll.dll.so
@@ -1022,6 +1026,7 @@ lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
 lib/wine/dxva2.dll.so
 lib/wine/eject.exe.so
+lib/wine/evr.dll.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
 lib/wine/explorerframe.dll.so
@@ -1044,8 +1049,8 @@ lib/wine/fakedlls/api-ms-win-core-errorhandling-l1-1-2.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-0.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-file-l1-2-0.dll
-lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 %%COMPHOLIO%%lib/wine/fakedlls/api-ms-win-core-file-l2-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-handle-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-obsolete-l1-1-0.dll
@@ -1134,6 +1139,7 @@ lib/wine/fakedlls/compobj.dll16
 lib/wine/fakedlls/compstui.dll
 lib/wine/fakedlls/comsvcs.dll
 lib/wine/fakedlls/conhost.exe
+lib/wine/fakedlls/connect.dll
 lib/wine/fakedlls/control.exe
 lib/wine/fakedlls/credui.dll
 lib/wine/fakedlls/crtdll.dll
@@ -1246,6 +1252,7 @@ lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
 lib/wine/fakedlls/dxva2.dll
 lib/wine/fakedlls/eject.exe
+lib/wine/fakedlls/evr.dll
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
 lib/wine/fakedlls/explorerframe.dll
@@ -1315,6 +1322,7 @@ lib/wine/fakedlls/mcicda.dll
 lib/wine/fakedlls/mciqtz32.dll
 lib/wine/fakedlls/mciseq.dll
 lib/wine/fakedlls/mciwave.dll
+lib/wine/fakedlls/mf.dll
 lib/wine/fakedlls/mfplat.dll
 lib/wine/fakedlls/mfreadwrite.dll
 lib/wine/fakedlls/mgmtapi.dll
@@ -1636,8 +1644,12 @@ lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
 lib/wine/fakedlls/wuaueng.dll
 lib/wine/fakedlls/wusa.exe
+lib/wine/fakedlls/x3daudio1_1.dll
 lib/wine/fakedlls/x3daudio1_7.dll
 lib/wine/fakedlls/xapofx1_1.dll
+lib/wine/fakedlls/xapofx1_3.dll
+lib/wine/fakedlls/xapofx1_4.dll
+lib/wine/fakedlls/xapofx1_5.dll
 lib/wine/fakedlls/xaudio2_7.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
@@ -1892,6 +1904,7 @@ lib/wine/mcicda.dll.so
 lib/wine/mciqtz32.dll.so
 lib/wine/mciseq.dll.so
 lib/wine/mciwave.dll.so
+lib/wine/mf.dll.so
 lib/wine/mfplat.dll.so
 lib/wine/mfreadwrite.dll.so
 lib/wine/mgmtapi.dll.so
@@ -2213,8 +2226,12 @@ lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
 lib/wine/wuaueng.dll.so
 lib/wine/wusa.exe.so
+lib/wine/x3daudio1_1.dll.so
 lib/wine/x3daudio1_7.dll.so
 lib/wine/xapofx1_1.dll.so
+lib/wine/xapofx1_3.dll.so
+lib/wine/xapofx1_4.dll.so
+lib/wine/xapofx1_5.dll.so
 lib/wine/xaudio2_7.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so

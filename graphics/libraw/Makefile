@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libraw
-PORTVERSION=	0.15.4
-PORTREVISION=	1
+PORTVERSION=	0.16.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}

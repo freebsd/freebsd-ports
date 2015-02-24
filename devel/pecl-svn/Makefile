@@ -6,7 +6,6 @@ PORTVERSION=	1.0.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +15,11 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion16
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>

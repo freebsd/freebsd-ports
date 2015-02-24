@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.1
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
@@ -35,6 +35,10 @@ HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; the
 .if !defined(HAVE_COMPAT_IA32_KERN)
 IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 
 do-install:

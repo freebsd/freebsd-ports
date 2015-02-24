@@ -1,5 +1,7 @@
 bin/go
 bin/gofmt
+go/.hgignore
+go/.hgtags
 go/AUTHORS
 go/CONTRIBUTORS
 go/LICENSE
@@ -4329,6 +4331,13 @@ go/test/fixedbugs/issue8947.go
 go/test/fixedbugs/issue8961.go
 go/test/fixedbugs/issue9006.go
 go/test/fixedbugs/issue9110.go
+go/test/fixedbugs/issue9321.go
+go/test/fixedbugs/issue9432.go
+go/test/fixedbugs/issue9537.dir/a.go
+go/test/fixedbugs/issue9537.dir/b.go
+go/test/fixedbugs/issue9537.go
+go/test/fixedbugs/issue9604.go
+go/test/fixedbugs/issue9634.go
 go/test/float_lit.go
 go/test/float_lit2.go
 go/test/float_lit3.go

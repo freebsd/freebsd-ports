@@ -180,13 +180,7 @@ RUBY_RELVERSION=	1.9.3
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	551
-
-#
-# PLIST_SUB helpers
-#
-RUBY19=			""
-RUBY20=			"@comment "
-RUBY21=			"@comment "
+RUBY19=			""	# PLIST_SUB helpers
 
 . elif ${RUBY_VER} == 2.0
 #
@@ -196,13 +190,7 @@ RUBY_RELVERSION=	2.0.0
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	598
-
-#
-# PLIST_SUB helpers
-#
-RUBY19=			"@comment "
-RUBY20=			""
-RUBY21=			"@comment "
+RUBY20=			""	# PLIST_SUB helpers
 
 . elif ${RUBY_VER} == 2.1
 #
@@ -212,21 +200,30 @@ RUBY_RELVERSION=	2.1.5
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
+RUBY21=			""	# PLIST_SUB helpers
 
+. elif ${RUBY_VER} == 2.2
 #
-# PLIST_SUB helpers
+# Ruby 2.2
 #
-RUBY19=			"@comment "
-RUBY20=			"@comment "
-RUBY21=			""
+RUBY_RELVERSION=	2.2.0
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY_PATCHLEVEL=	0
+RUBY22=			""	# PLIST_SUB helpers
 
 . else
 #
 # Other versions
 #
-IGNORE=	Only ruby 1.9, 2.0 and 2.1 are supported
+IGNORE=	Only ruby 1.9, 2.0, 2.1 and 2.2 are supported
 . endif
 .endif # defined(RUBY_VER)
+
+RUBY19?=		"@comment "
+RUBY20?=		"@comment "
+RUBY21?=		"@comment "
+RUBY22?=		"@comment "
 
 .if ${RUBY_PATCHLEVEL} == 0
 RUBY_VERSION?=		${RUBY_RELVERSION}
@@ -357,7 +354,8 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY19=${RUBY19} \
 			RUBY20=${RUBY20} \
-			RUBY21=${RUBY21}
+			RUBY21=${RUBY21} \
+			RUBY22=${RUBY22}
 
 .if defined(USE_RUBY_RDOC)
 MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}

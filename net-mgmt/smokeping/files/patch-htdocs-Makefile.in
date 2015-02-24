@@ -1,11 +1,11 @@
---- htdocs/Makefile.in.orig	2013-03-04 13:07:55.000000000 +0000
-+++ htdocs/Makefile.in	2014-07-19 10:42:00.470292529 +0000
-@@ -432,9 +432,9 @@
+--- htdocs/Makefile.in.orig	2014-11-04 23:50:59.000000000 +0100
++++ htdocs/Makefile.in	2015-02-12 19:30:27.000000000 +0100
+@@ -466,9 +466,9 @@
  
  install-data-local:
  	$(MKDIR) -p $(DESTDIR)$(HTDOCSDIR)
 -	$(ECHO)	"#!/bin/sh" > $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
--	$(ECHO)	"exec $(prefix)/bin/smokeping_cgi $(prefix)/etc/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
+-	$(ECHO)	"exec $(bindir)/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
 -	chmod +x $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
 +	$(ECHO)	"#!/bin/sh" > $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.sample
 +	$(ECHO)	"exec $(prefix)/bin/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.sample

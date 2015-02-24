@@ -8,7 +8,7 @@ MASTER_SITES=	http://lightless.org/files/ \
 		LOCAL/jgh/games/${PORTNAME}/
 DISTNAME=	Gnake.${PORTVERSION}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	chris@bsdjunk.com
 COMMENT=	Nibbles clone for GNU/Linux and *BSD
 
 LICENSE=	GPLv2

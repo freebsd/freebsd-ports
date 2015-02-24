@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eficas
-DISTVERSION=	7.4.0-1
-PORTREVISION=	1
+DISTVERSION=	7.5.0-1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org

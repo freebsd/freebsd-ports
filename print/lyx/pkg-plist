@@ -254,6 +254,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/ItemizeBullets.lyx
 %%DATADIR%%/examples/Literate.lyx
 %%DATADIR%%/examples/MultilingualCaptions.lyx
+%%DATADIR%%/examples/PDF-comment.lyx
 %%DATADIR%%/examples/R-S-statements.lyx
 %%DATADIR%%/examples/aa_sample.lyx
 %%DATADIR%%/examples/aas_sample.lyx
@@ -1963,6 +1964,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/IEEEtran-TransMag.layout
 %%DATADIR%%/layouts/IEEEtran.layout
 %%DATADIR%%/layouts/RJournal.layout
+%%DATADIR%%/layouts/a0poster.layout
 %%DATADIR%%/layouts/aa.layout
 %%DATADIR%%/layouts/aapaper.inc
 %%DATADIR%%/layouts/aapaper.layout
@@ -1992,6 +1994,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/article.layout
 %%DATADIR%%/layouts/basic.module
 %%DATADIR%%/layouts/beamer.layout
+%%DATADIR%%/layouts/beamerposter.layout
 %%DATADIR%%/layouts/bicaption.module
 %%DATADIR%%/layouts/book.layout
 %%DATADIR%%/layouts/braille.module
@@ -2084,6 +2087,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/numreport.inc
 %%DATADIR%%/layouts/numrevtex.inc
 %%DATADIR%%/layouts/paper.layout
+%%DATADIR%%/layouts/pdfcomment.module
 %%DATADIR%%/layouts/powerdot.layout
 %%DATADIR%%/layouts/recipebook.layout
 %%DATADIR%%/layouts/report.layout
@@ -2091,6 +2095,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/revtex4-1.layout
 %%DATADIR%%/layouts/revtex4.layout
 %%DATADIR%%/layouts/rsphrase.module
+%%DATADIR%%/layouts/sciposter.layout
 %%DATADIR%%/layouts/scrartcl.layout
 %%DATADIR%%/layouts/scrarticle-beamer.layout
 %%DATADIR%%/layouts/scrbook.layout
@@ -2098,6 +2103,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/scrlettr.layout
 %%DATADIR%%/layouts/scrlttr2.layout
 %%DATADIR%%/layouts/scrreprt.layout
+%%DATADIR%%/layouts/sectionbox.module
 %%DATADIR%%/layouts/seminar.layout
 %%DATADIR%%/layouts/shapepar.module
 %%DATADIR%%/layouts/siamltex.layout
@@ -2134,6 +2140,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/tabs-within-sections.module
 %%DATADIR%%/layouts/tarticle.layout
 %%DATADIR%%/layouts/tbook.layout
+%%DATADIR%%/layouts/tcolorbox.module
 %%DATADIR%%/layouts/theorems-ams-bytype.inc
 %%DATADIR%%/layouts/theorems-ams-bytype.module
 %%DATADIR%%/layouts/theorems-ams-extended-bytype.module
@@ -2303,6 +2310,10 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/letter.lyx
 %%DATADIR%%/templates/lettre.lyx
+%%DATADIR%%/templates/poster-a0poster-colored.lyx
+%%DATADIR%%/templates/poster-a0poster-simple.lyx
+%%DATADIR%%/templates/poster-beamerposter.lyx
+%%DATADIR%%/templates/poster-sciposter.lyx
 %%DATADIR%%/templates/revtex4-1.lyx
 %%DATADIR%%/templates/revtex4.lyx
 %%DATADIR%%/templates/slides.lyx

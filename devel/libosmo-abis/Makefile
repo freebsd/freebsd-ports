@@ -15,19 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libosmocore.so:${PORTSDIR}/devel/libosmocore \
 		libortp.so:${PORTSDIR}/net/ortp
 
-USES=		gmake libtool pkgconfig
-
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize autoheader
-AUTOMAKE_ARGS=	--gnu --add-missing --copy
+USES=		autoreconf gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=Makefile.am
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libosmoabis.so.4
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libosmotrau.so.0
 
 .include <bsd.port.mk>

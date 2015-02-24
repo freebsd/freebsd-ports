@@ -2,7 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	3.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
@@ -29,6 +29,7 @@ GH_TAGNAME=	v3.1.4
 GH_COMMIT=	ac58109
 
 USES=		autoreconf iconv libtool pathfix pkgconfig python:2 shebangfix
+SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
@@ -38,10 +39,21 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 
 CONFIGURE_ARGS=	--enable-server
 INSTALL_TARGET=	install-strip
-WWWDIR=		${PREFIX}/www/haiwen/seafile-server
-SEABIN=		${STAGEDIR}${WWWDIR}/seafile/bin
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+HAIWENDIR=	www/haiwen
+SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
+SEABIN=		${SEAFILE_SERVER}/seafile/bin
+SEALIB=		${SEAFILE_SERVER}/seafile/lib
+
+SEAFILE_USERNAME?=	www
+SEAFILE_GROUPNAME?=	${SEAFILE_USERNAME}
+
+PLIST_SUB=	SEAFILE_USERNAME=${SEAFILE_USERNAME} \
+		SEAFILE_GROUPNAME=${SEAFILE_GROUPNAME} \
+		SEAFILE_SERVER=${SEAFILE_SERVER} \
+		HAIWENDIR=${HAIWENDIR}
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -63,21 +75,25 @@ OPTIONS_DEFAULT=
 .endif
 
 post-install:
-	@${MKDIR} ${SEABIN} \
-		${STAGEDIR}${WWWDIR}/seafile/share/doc/seafile \
-		${STAGEDIR}${WWWDIR}/upgrade
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB}\
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade
 .for SERVPROG in fileserver seaf-fsck seafserv-gc seaf-fuse seaf-migrate \
 	seaf-server seaf-server-init seafile-controller seafserv-tool
 	if [ -e "${STAGEDIR}${PREFIX}/bin/${SERVPROG}" ]; then \
-		${LN} ${STAGEDIR}${PREFIX}/bin/${SERVPROG} ${SEABIN}; \
+		${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/${SERVPROG} ${STAGEDIR}${PREFIX}/${SEABIN}; \
+		${RM} ${STAGEDIR}${PREFIX}/bin/${SERVPROG}; \
 	fi
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${WWWDIR}
+	(cd ${STAGEDIR}${PREFIX}/lib && \
+		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upgrade/*.[ps][yh] \
-		${STAGEDIR}${WWWDIR}/upgrade
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade
 	${INSTALL_DATA} ${WRKSRC}/doc/seafile-tutorial.doc \
-		${STAGEDIR}${WWWDIR}/seafile/share/doc/seafile/
+		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile/
 	(cd ${WRKSRC}/scripts/upgrade && \
-		${COPYTREE_SHARE} sql ${STAGEDIR}${WWWDIR}/upgrade)
+		${COPYTREE_SHARE} sql ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade)
 
 .include <bsd.port.mk>

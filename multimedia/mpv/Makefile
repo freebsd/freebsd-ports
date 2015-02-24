@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -25,9 +24,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	79ca51d
+GH_COMMIT=	0c9f10e
 
-WAF_VERSION=	1.8.5
+WAF_VERSION=	1.8.6
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build
 USE_XORG=	x11 xv xxf86vm
@@ -45,8 +44,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-libmpv-shared \
 		--disable-mpg123 \
 		--disable-alsa \
-		--disable-portaudio \
-		--disable-pulse \
 		--disable-pdf
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH

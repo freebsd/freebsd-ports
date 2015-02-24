@@ -1,5 +1,5 @@
---- ./Makefile.orig	2012-06-07 06:51:30.000000000 +0200
-+++ ./Makefile	2012-11-07 09:01:50.707823595 +0100
+--- Makefile.orig	2012-06-07 04:51:30 UTC
++++ Makefile
 @@ -1,23 +1,21 @@
  UNAME = $(shell sh -c 'uname -s 2>/dev/null || echo not')
  DESTDIR =
@@ -16,7 +16,7 @@
 -OPTIM = -O3
 -CFLAGS += $(DEBUG) $(OPTIM) -Wall -std=c99 -pedantic -Wformat-security -Wno-format-zero-length -Werror -Wwrite-strings -Wformat -fdiagnostics-show-option -Wextra -Wsign-compare -Wcast-align -Wno-unused-parameter
 +CC ?= gcc
-+CFLAGS += -Wall -Wformat-security -Wno-format-zero-length -Werror -Wwrite-strings -Wformat -fdiagnostics-show-option -Wextra -Wsign-compare -Wcast-align -Wno-unused-parameter
++CFLAGS += -Wall -Wformat-security -Wno-format-zero-length -Wwrite-strings -Wformat -fdiagnostics-show-option -Wextra -Wsign-compare -Wcast-align -Wno-unused-parameter
  LDFLAGS += -shared
  LIBPATH += -L.
  
@@ -28,7 +28,7 @@
  LIBS = -lcrypt
  endif
  
-@@ -26,8 +24,9 @@
+@@ -26,8 +24,9 @@ all: $(LIB) clitest
  $(LIB): libcli.o
  	$(CC) -o $(LIB).$(MAJOR).$(MINOR).$(REVISION) $^ $(LDFLAGS) $(LIBS)
  	-rm -f $(LIB) $(LIB).$(MAJOR).$(MINOR)
@@ -40,7 +40,7 @@
  
  %.o: %.c
  	$(CC) $(CPPFLAGS) $(CFLAGS) -fPIC -o $@ -c $<
-@@ -48,8 +47,9 @@
+@@ -48,8 +47,9 @@ install: $(LIB)
  	install -m 0644 libcli.h $(DESTDIR)$(PREFIX)/include
  	install -m 0755 $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(DESTDIR)$(PREFIX)/lib
  	cd $(DESTDIR)$(PREFIX)/lib && \

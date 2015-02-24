@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedConch
-PORTVERSION=	14.0.0
+PORTVERSION=	15.0.0
 CATEGORIES=	security devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Conch/${PORTVERSION:R}/ \
 		LOCAL/sunpoet

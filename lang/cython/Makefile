@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cython
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
@@ -15,5 +15,9 @@ LICENSE=	APACHE20
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython \
+		-name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

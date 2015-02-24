@@ -11,4 +11,3 @@ libdata/pkgconfig/libgringotts.pc
 %%PORTDOCS%%share/doc/libgringotts/README
 %%PORTDOCS%%share/doc/libgringotts/TODO
 %%PORTDOCS%%share/doc/libgringotts/manual.htm
-%%PORTDOCS%%@dirrm share/doc/libgringotts

@@ -1,6 +1,6 @@
 --- cmddata.cpp.orig	2014-06-11 01:14:06.000000000 +0800
 +++ cmddata.cpp	2014-07-31 22:54:35.727051754 +0800
-@@ -178,6 +178,34 @@
+@@ -173,6 +173,34 @@
    // Suppress the copyright message and final end of line for 'lb' and 'vb'.
    if ((CmdChar=='L' || CmdChar=='V') && Command[1]=='B')
      BareOutput=true;
@@ -35,7 +35,7 @@
  }
  
  
-@@ -868,6 +896,22 @@
+@@ -881,6 +909,22 @@
        else
          wcsncpyz(CommentFile,Switch+1,ASIZE(CommentFile));
        break;
@@ -58,7 +58,7 @@
  #ifndef GUI
      case '?' :
        OutHelp(RARX_SUCCESS);
-@@ -946,7 +990,11 @@
+@@ -959,7 +1003,11 @@
      MCHelpSwAT,MCHelpSwAC,MCHelpSwAD,MCHelpSwAG,MCHelpSwAI,MCHelpSwAP,
      MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
      MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
@@ -68,7 +68,7 @@
 +    MCHelpSwLA,MCHelpSwLL,MCHelpSwLO,
 +#endif
 +    MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
-     MCHelpSwO,MCHelpSwOC,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
+     MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
      MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSL,MCHelpSwSM,
      MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,
 --- global.hpp.orig	2014-06-11 01:14:06.000000000 +0800

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python functions
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

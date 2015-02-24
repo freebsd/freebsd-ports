@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grab
-PORTVERSION=	0.4.13
+PORTVERSION=	0.5.2
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
