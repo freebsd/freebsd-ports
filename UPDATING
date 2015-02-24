@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20150224:
+  AFFECTS: Users of lang/ruby19
+
+  lang/ruby19 has reached its end-of-life and has been removed.  The
+  default version has been 2.0 for a while.  Other available versions
+  are Ruby 2.1 and Ruby 2.2.
+
+  Users who have DEFAULT_VERSIONS=ruby=1.9 in their /etc/make.conf are
+  encouraged to remove it or change it to an available version.
+
   AFFECTS: Users of net-p2p/bitcoin (cli utilities)
 
   The bitcoin-cli and bitcoin-tx utilities have been re-packaged into
