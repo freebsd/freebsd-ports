@@ -19,4 +19,7 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-vld
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
+
 .include <bsd.port.mk>
