@@ -3,6 +3,7 @@
 
 PORTNAME=	ttytter
 PORTVERSION=	2.1.00
+PORTREVISION=	1
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist2/:dist \
 		http://www.floodgap.com/software/ffsl/:license
