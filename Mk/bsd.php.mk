@@ -195,7 +195,7 @@ PHP_HEADER_DIRS?=	""
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/${PHP_MODNAME}.so \
+	@${INSTALL_LIB} ${WRKSRC}/modules/${PHP_MODNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 .	for header in . ${PHP_HEADER_DIRS}
 		@${MKDIR} ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
