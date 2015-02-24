@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	pecl-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to the Tokyo Tyrant client library
 
+LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 
 USES=		pkgconfig tar:tgz
