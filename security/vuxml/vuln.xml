@@ -57,6 +57,63 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f488b7b-bbb9-11e4-903c-080027ef73ec">
+    <topic>e2fsprogs -- buffer overflow if s_first_meta_bg too big</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.42.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Ts'o reports:</p>
+	<blockquote cite="http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4">
+	  <p>If s_first_meta_bg is greater than the of number block group descriptor blocks, then reading or writing the block group descriptors will end up overruning the memory buffer allocated for the descriptors.</p>
+	  <p>The finding is credited to a vulnerability report from Jose Duart of Google Security Team &lt;jduart AT google.com&gt; and was reported through oCERT-2015-002.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4</url>
+      <url>http://www.ocert.org/advisories/ocert-2015-002.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1187032</url>
+      <cvename>CVE-2015-0247</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-09</discovery>
+      <entry>2015-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a4bcd7d-bbb8-11e4-903c-080027ef73ec">
+    <topic>e2fsprogs -- potential buffer overflow in closefs()</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.42.12_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Ts'o reports:</p>
+	<blockquote cite="http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&amp;id=49d0fe2a14f2a23da2fe299643379b8c1d37df73">
+	  <p>On a carefully crafted filesystem that gets modified through
+	    tune2fs or debugfs, it is possible to trigger a buffer overrun when
+	    the file system is closed via closefs().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&amp;id=49d0fe2a14f2a23da2fe299643379b8c1d37df73</url>
+      <cvename>CVE-2015-1572</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-06</discovery>
+      <entry>2015-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58033a95-bba8-11e4-88ae-d050992ecde8">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
