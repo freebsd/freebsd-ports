@@ -1,0 +1,170 @@
+### Fix build with LibreSSL (does not have RAND_egd)
+### PR195508, http://bugs.python.org/issue21356
+### Backported from upstream patch by Victor Stinner
+
+--- Modules/_ssl.c.orig	2014-10-08 10:18:15.000000000 +0200
++++ Modules/_ssl.c	2014-11-29 21:34:04.608428552 +0100
+@@ -3339,6 +3339,9 @@
+ It is necessary to seed the PRNG with RAND_add() on some platforms before\n\
+ using the ssl() function.");
+ 
++/* ### Fix build with LibreSSL (does not have RAND_egd)
++   ### PR195508, http://bugs.python.org/issue21356 */
++#ifdef HAVE_RAND_EGD
+ static PyObject *
+ PySSL_RAND_egd(PyObject *self, PyObject *args)
+ {
+@@ -3366,6 +3369,8 @@
+ Queries the entropy gather daemon (EGD) on the socket named by 'path'.\n\
+ Returns number of bytes read.  Raises SSLError if connection to EGD\n\
+ fails or if it does not provide enough data to seed PRNG.");
++#endif /* HAVE_RAND_EGD */
++/* ### End PR195508  */
+ 
+ #endif /* HAVE_OPENSSL_RAND */
+ 
+@@ -3761,8 +3766,13 @@
+      PySSL_RAND_bytes_doc},
+     {"RAND_pseudo_bytes",   PySSL_RAND_pseudo_bytes, METH_VARARGS,
+      PySSL_RAND_pseudo_bytes_doc},
++/* ### Fix build with LibreSSL (does not have RAND_egd)
++   ### PR195508, http://bugs.python.org/issue21356 */
++#ifdef HAVE_RAND_EGD
+     {"RAND_egd",            PySSL_RAND_egd, METH_VARARGS,
+      PySSL_RAND_egd_doc},
++#endif /* HAVE_RAND_EGD */
++/* ### End PR195508 */
+     {"RAND_status",         (PyCFunction)PySSL_RAND_status, METH_NOARGS,
+      PySSL_RAND_status_doc},
+ #endif
+--- Lib/ssl.py.orig	2014-11-29 21:18:33.939556740 +0100
++++ Lib/ssl.py	2014-11-29 21:20:07.708639053 +0100
+@@ -106,7 +106,15 @@
+ from _ssl import (VERIFY_DEFAULT, VERIFY_CRL_CHECK_LEAF, VERIFY_CRL_CHECK_CHAIN,
+     VERIFY_X509_STRICT)
+ from _ssl import txt2obj as _txt2obj, nid2obj as _nid2obj
+-from _ssl import RAND_status, RAND_egd, RAND_add, RAND_bytes, RAND_pseudo_bytes
++### Fix build with LibreSSL (does not have RAND_egd)
++### PR195508, http://bugs.python.org/issue21356
++from _ssl import RAND_status, RAND_add, RAND_bytes, RAND_pseudo_bytes
++try:
++    from _ssl import RAND_egd
++except ImportError:
++    # LibreSSL does not provide RAND_egd
++    pass
++### End PR195508
+ 
+ def _import_symbols(prefix):
+     for n in dir(_ssl):
+--- Lib/test/test_ssl.py.orig	2014-10-08 10:18:14.000000000 +0200
++++ Lib/test/test_ssl.py	2014-11-29 21:23:04.210779898 +0100
+@@ -154,8 +154,12 @@
+         self.assertRaises(ValueError, ssl.RAND_bytes, -5)
+         self.assertRaises(ValueError, ssl.RAND_pseudo_bytes, -5)
+ 
+-        self.assertRaises(TypeError, ssl.RAND_egd, 1)
+-        self.assertRaises(TypeError, ssl.RAND_egd, 'foo', 1)
++### Fix build with LibreSSL (does not have RAND_egd)
++### PR195508, http://bugs.python.org/issue21356        
++        if hasattr(ssl, 'RAND_egd'):
++            self.assertRaises(TypeError, ssl.RAND_egd, 1)
++            self.assertRaises(TypeError, ssl.RAND_egd, 'foo', 1)
++### End PR195508
+         ssl.RAND_add("this is a random string", 75.0)
+ 
+     @unittest.skipUnless(os.name == 'posix', 'requires posix')
+--- configure.ac.orig	2014-11-29 21:00:35.658917000 +0100
++++ configure.ac	2014-11-29 21:25:03.538907705 +0100
+@@ -2239,6 +2239,13 @@
+ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
+ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+ 
++### Fix build with LibreSSL (does not have RAND_egd)
++### PR195508, http://bugs.python.org/issue21356
++AC_CHECK_LIB(crypto, RAND_egd,
++             AC_DEFINE(HAVE_RAND_EGD, 1,
++             [Define if the libcrypto has RAND_egd]))
++### PR195508
++
+ # only check for sem_init if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then
+     AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
+--- configure.orig	2014-11-29 21:00:35.669167000 +0100
++++ configure	2014-11-29 21:25:51.158824552 +0100
+@@ -8905,6 +8905,52 @@
+ fi
+ 	# Dynamic linking for HP-UX
+ 
++### Fix build with LibreSSL (does not have RAND_egd)
++### PR195508, http://bugs.python.org/issue21356
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for RAND_egd in -lcrypto" >&5
++$as_echo_n "checking for RAND_egd in -lcrypto... " >&6; }
++if ${ac_cv_lib_crypto_RAND_egd+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lcrypto  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char RAND_egd ();
++int
++main ()
++{
++return RAND_egd ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_crypto_RAND_egd=yes
++else
++  ac_cv_lib_crypto_RAND_egd=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypto_RAND_egd" >&5
++$as_echo "$ac_cv_lib_crypto_RAND_egd" >&6; }
++if test "x$ac_cv_lib_crypto_RAND_egd" = xyes; then :
++
++$as_echo "#define HAVE_RAND_EGD 1" >>confdefs.h
++
++fi
++
++### PR195508
++
+ # only check for sem_init if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing sem_init" >&5
+@@ -9318,6 +9364,8 @@
+ fi
+ 
+ 
++
++
+ # Check for use of the system expat library
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for --with-system-expat" >&5
+ $as_echo_n "checking for --with-system-expat... " >&6; }
+--- pyconfig.h.in.orig	2014-11-29 21:28:51.758403130 +0100
++++ pyconfig.h.in	2014-11-29 21:28:02.628402110 +0100
+@@ -672,6 +672,12 @@
+ /* Define to 1 if you have the `pwrite' function. */
+ #undef HAVE_PWRITE
+ 
++/* ### Fix build with LibreSSL (does not have RAND_egd)
++   ### PR195508, http://bugs.python.org/issue21356 */
++/* Define if the libcrypto has RAND_egd */
++#undef HAVE_RAND_EGD
++/* ### PR195508 */
++
+ /* Define to 1 if you have the `readlink' function. */
+ #undef HAVE_READLINK
+ 
