@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.7.0
+PORTVERSION=	8.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 
-PORTSCOUT=	limit:^8\.2
+PORTSCOUT=	limit:^8\.8
 PKGNAMESUFFIX=	8
 
 OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP SNMP
