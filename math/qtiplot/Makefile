@@ -34,8 +34,6 @@ OPTIONS_DEFAULT=	DOCS PYTHON NLS
 DOCS_DESC=	Install the QtiPlot Handbook
 PYTHON_DESC=	Python scripting support
 
-STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -55,7 +53,7 @@ USE_QT4+=	assistant-adp_run
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguist_build
+USE_QT4+=	linguisttools_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -99,7 +97,6 @@ pre-configure:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/qtiplot.png
 .if ${PORT_OPTIONS:MPYTHON}
 .for s in qtiplotrc.py qtiUtil.py
