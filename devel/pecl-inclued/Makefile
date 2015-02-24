@@ -16,8 +16,12 @@ LICENSE=	PHP301
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=	55 56
 
 CONFIGURE_ARGS=	--enable-inclued
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>
