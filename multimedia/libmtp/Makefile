@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21 # or any later version
@@ -25,7 +25,7 @@ USES=		iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
 CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
@@ -36,9 +36,9 @@ MTPZ_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 post-patch:
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
-	@${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -i .pkgconf.bak -e \
 		'/LIBUSB_REQUIRES/s|libusb-1.0||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -i .pkgconf.bak -e \
 		'/Libs.private/s|:|& @LIBUSB_LIBS@|' ${WRKSRC}/libmtp.pc.in
 .endif
 	@${REINPLACE_CMD} -e \
