@@ -495,3 +495,4 @@ bin/domination-SwingGUI
 %%DATADIR%%/run.sh
 %%DATADIR%%/todo.txt
 share/pixmaps/domination.png
+@dir %%DATADIR%%/saves
