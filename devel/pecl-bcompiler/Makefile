@@ -21,4 +21,7 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-bcompiler
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
+
 .include <bsd.port.mk>
