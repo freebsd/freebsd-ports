@@ -5,13 +5,14 @@ PORTNAME=	pvm
 PORTVERSION=	3.4.6
 PORTREVISION=	4
 CATEGORIES=	net parallel
-MASTER_SITES=	NL ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
-MASTER_SITE_SUBDIR=	pvm3
+MASTER_SITES=	NL/pvm3 ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 DISTNAME=	pvm${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Virtual Machine libraries and environment
+
+LICENSE=	MIT
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -68,7 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libfpvm3.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvmtrc.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvm3.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/FREEBSD/libpvm3.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/conf/FREEBSD.def ${STAGEDIR}${PVM_ROOT}/conf
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${PREFIX}/man/man1
