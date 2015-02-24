@@ -320,9 +320,12 @@ lib/ugene/ugenem
 lib/ugene/ugeneui
 man/man1/ugene.1.gz
 share/applications/ugene.desktop
+share/icons/application-x-ugene-ext.png
+share/mime/application-x-ugene.xml
 share/pixmaps/ugene.png
 share/pixmaps/ugene.xpm
 %%DATADIR%%/DBXRefRegistry.txt
+%%DATADIR%%/adapters/adapters.fasta
 %%DATADIR%%/back_translation/Bacteria/Arthrobacter_aurescens_TC1.cut
 %%DATADIR%%/back_translation/Bacteria/Bacillus_subtilis.cut
 %%DATADIR%%/back_translation/Bacteria/Escherichia_coli.cut
@@ -1416,6 +1419,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/consensus.uwl
 %%DATADIR%%/workflow_samples/NGS/extract_coverage.uwl
 %%DATADIR%%/workflow_samples/NGS/extract_transcript_seq.uwl
+%%DATADIR%%/workflow_samples/NGS/fastqc.uwl
 %%DATADIR%%/workflow_samples/NGS/raw_chip.uwl
 %%DATADIR%%/workflow_samples/NGS/raw_dna.uwl
 %%DATADIR%%/workflow_samples/NGS/raw_ngs/chipseq/chipseq_paired.uwl
@@ -1434,6 +1438,8 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset_paired.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo.uwl
+%%DATADIR%%/workflow_samples/NGS/variation_annotation.uwl
+%%DATADIR%%/workflow_samples/Sanger sequencing/trim-and-align.uwl
 %%DATADIR%%/workflow_samples/Scenarios/filter_matched.uwl
 %%DATADIR%%/workflow_samples/Scenarios/find_inverted_repeats.uwl
 %%DATADIR%%/workflow_samples/Scenarios/find_sequences.uwl
@@ -1450,3 +1456,4 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/users/Get the second half of sequence.usa
 %%DATADIR%%/workflow_samples/users/LinkData Fetch.usa
 %%DATADIR%%/workflow_samples/users/QualityFilter.usa
+%%DATADIR%%/workflow_samples/users/Read one sequence.usa
