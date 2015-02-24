@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="996c219c-bbb1-11e4-88ae-d050992ecde8">
+    <topic>samba -- Unexpected code execution in smbd</topic>
+    <affects>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><lt>4.0.25</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.17</lt></range>
+      </package>
+      <package>
+	<name>samba36</name>
+	<range><ge>3.6.0</ge><lt>3.6.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba developement team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2015-0240">
+	  <p>All versions of Samba from 3.5.0 to 4.2.0rc4 are
+	    vulnerable to an unexpected code execution vulnerability
+	    in the smbd file server daemon.</p>
+	  <p>A malicious client could send packets that may set up the
+	    stack in such a way that the freeing of memory in a
+	    subsequent anonymous netlogon packet could allow execution
+	    of arbitrary code. This code would execute with root
+	    privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0240</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-0240</url>
+    </references>
+    <dates>
+      <discovery>2015-02-23</discovery>
+      <entry>2015-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f488b7b-bbb9-11e4-903c-080027ef73ec">
     <topic>e2fsprogs -- buffer overflow if s_first_meta_bg too big</topic>
     <affects>
