@@ -17,8 +17,6 @@ USE_QT4=	gui sql network xml designer sql-sqlite3_run \
 		moc_build uic_build rcc_build
 USES=		qmake
 
-STRIP_FILES=	bin/${PORTNAME}
-
 DESKTOP_ENTRIES=	"QDevelop" \
 			"Qt 4 development environment" \
 			"${PREFIX}/share/pixmaps/qdevelop.png" \
@@ -29,10 +27,10 @@ DESKTOP_ENTRIES=	"QDevelop" \
 OPTIONS_DEFINE=	TOOLS DOCS NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
-NLS_USE=	QT4=linguist_build
+NLS_USE=	QT4=linguisttools_build
 TOOLS_DESC=	Install Qt 4 development tools (qmake, moc, etc.)
 TOOLS_USE=	${_TOOLS:C|.*|QT4=&_run|}
-_TOOLS=		assistant linguist moc qmake rcc uic
+_TOOLS=		assistant linguisttools moc qmake rcc uic
 
 .include <bsd.port.options.mk>
 
@@ -59,7 +57,6 @@ post-configure:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 	${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/qdevelop.png
 .if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations

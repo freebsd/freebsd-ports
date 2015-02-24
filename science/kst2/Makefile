@@ -13,7 +13,7 @@ COMMENT=	Data viewing and plotting tool
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 USES=		cmake:outsource pkgconfig
-_USE_QT4=	gui xml designer svg linguist_build \
+_USE_QT4=	gui xml designer svg linguisttools_build \
 		qmake_build moc_build rcc_build uic_build
 _USE_QT5=	concurrent network printsupport widgets xml \
 		buildtools_build linguisttools_build qmake_build

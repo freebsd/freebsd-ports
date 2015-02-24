@@ -13,7 +13,7 @@ RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
 USE_QT4=	designer gui network script svg xml \
 		qmake_build moc_build rcc_build uic_build \
-		linguist_build
+		linguisttools_build
 USES=		cmake
 CMAKE_ARGS+=	-DWITH_UseRPMTools:Bool=Off
 

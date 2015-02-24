@@ -33,7 +33,7 @@ CMAKE_ARGS+=	-DWITH_QT5=true
 .else
 # Qt 4 and KDE 4
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguist_build
+		linguisttools_build
 .endif
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt4"

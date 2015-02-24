@@ -17,15 +17,11 @@ DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 		"qtemu" "" true
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USE=	QT4=linguisttools_build
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-configure:
 .if ${PORT_OPTIONS:MNLS}
