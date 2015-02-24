@@ -4,10 +4,8 @@
  The following virus scanners are available in the FreeBSD ports
  collection:
  
- /usr/ports/security/vscan	McAfee VirusScan
  /usr/ports/security/clamav	Clam Antivirus
  /usr/ports/security/f-prot	F-Prot Antivirus
- /usr/ports/security/drweb	DrWeb antivirus suite
 
  Enable amavisd-new in /etc/rc.conf with the following line:
 
@@ -38,8 +36,7 @@
  amavis_p0fanalyzer_flags.
 
  Configuration templates are available in %%PREFIX%%/etc
- as amavisd.conf-dist, amavisd.conf-sample, amavisd.conf-default
- and amavisd-custom.conf-dist.
+ as amavisd.conf.sample, amavisd.conf-default and amavisd-custom.conf.sample
  Documentation is available in %%DOCSDIR%%.
 *******************************************************************
 
