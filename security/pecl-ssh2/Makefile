@@ -6,13 +6,15 @@ PORTVERSION=	0.12
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library
 
+LICENSE=	PHP301
+
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
