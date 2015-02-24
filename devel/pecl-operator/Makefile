@@ -6,8 +6,6 @@ PORTVERSION=	0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-DISTNAME=	operator-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,9 +13,10 @@ COMMENT=	PHP extension that provides operator overloading for PHP objects
 
 LICENSE=	PHP30
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER?=	53
+DEFAULT_VERSIONS+=	php=53
 PHP_MODNAME=	${PORTNAME}
 
 post-extract::
