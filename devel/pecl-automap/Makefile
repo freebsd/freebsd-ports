@@ -18,8 +18,12 @@ USE_PHP=	spl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	automap
+DEFAULT_VERSIONS+=	php=55
 IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS=	--enable-automap
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>
