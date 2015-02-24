@@ -4234,6 +4234,7 @@
     SUBDIR += qt4-help-tools
     SUBDIR += qt4-libqtassistantclient
     SUBDIR += qt4-linguist
+    SUBDIR += qt4-linguisttools
     SUBDIR += qt4-makeqpf
     SUBDIR += qt4-moc
     SUBDIR += qt4-porting
