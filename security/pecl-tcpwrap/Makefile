@@ -6,15 +6,17 @@ PORTVERSION=	1.1.3
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension which provides tcpwrappers binding
 
+LICENSE=	PHP202
+
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
+DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=5
 
 post-patch:
