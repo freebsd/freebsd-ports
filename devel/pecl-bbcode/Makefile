@@ -26,7 +26,4 @@ CONFIGURE_ARGS=	--enable-bbcode
 post-patch:
 	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/bbcode2.c
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-
 .include <bsd.port.mk>

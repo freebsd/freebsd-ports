@@ -19,7 +19,4 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-
 .include <bsd.port.mk>

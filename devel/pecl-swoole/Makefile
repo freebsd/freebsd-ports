@@ -20,7 +20,4 @@ PHP_MODNAME=	${PORTNAME}
 USE_PHP=	pcre
 USE_PHPEXT=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/swoole.so
-
 .include <bsd.port.mk>
