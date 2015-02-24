@@ -2,96 +2,96 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.10.0
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	http://vps.robbak.com/distfiles/ \
-		${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~swills/ \
-		GH
 
 MAINTAINER=	robbak@robbak.com
-COMMENT=	Virtual Peer-to-Peer Currency Client
+COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf \
-				pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
-OPTIONS_DEFINE=	GUI WALLET UPNP QRCODES
-OPTIONS_DEFAULT=	GUI WALLET QRCODES
-
-GUI_DESC=	Build and install the QT4 binary
-WALLET_DESC=	Build with support to create and manage a wallet
-UPNP_DESC=	Build with UPNP support
-QRCODES_DESC=	Build with QR code display
-
-AUTOMAKE_ARGS+=	--add-missing
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-#ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-CONFIGURE_ENV=	SSL_LIBS="-lssl" CRYPTO_LIBS="-lcrypto" SSL_CFLAGS="-I/usr/include" CRYPTO_CFLAGS="-I/usr/include"
-
+USES=		autoreconf gmake libtool pkgconfig
 USE_GITHUB=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+
+SLAVE_PORT?=	no
+
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+USES+=		desktop-file-utils
+USE_QT4=	corelib gui moc_build linguist_build network qmake_build \
+		rcc_build uic_build
+
+BUILD_DEPENDS+=	protoc:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS+=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+
+TESTS_USE=		QT4=testlib
+TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_bitcoin-qt \
+			bin/test_bitcoin
+.endif
+
+OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET
+OPTIONS_DEFAULT?=	HARDENING QRCODES TESTS WALLET
+OPTIONS_SUB=		yes
+
+HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
+QRCODES_DESC=	Display QR Codes
+TESTS_DESC=	Build test binary and unit tests
+WALLET_DESC=	Wallet Management Support
+
+DBUS_CONFIGURE_WITH=	qtdbus
+DBUS_USE=		QT4=dbus
+
+DEBUG_CONFIGURE_ENABLE=		debug
+DEBUG_INSTALL_TARGET_OFF=	install-strip
+
+HARDENING_CONFIGURE_ENABLE=	hardening
+
+TESTS_CONFIGURE_ENABLE=	tests
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "yes"
+TESTS_PLIST_FILES=	bin/test_bitcoin
+.endif
+
+UPNP_CONFIGURE_WITH=	miniupnpc
+UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_CPPFLAGS=		-I${LOCALBASE}/include
+UPNP_LIBS=		-L${LOCALBASE}/lib
+
+QRCODES_CONFIGURE_WITH=	qrencode
+QRCODES_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+
+WALLET_CONFIGURE_ENABLE=	wallet
+WALLET_USE=			BDB=48
+
 GH_ACCOUNT=	bitcoin
-GH_PROJECT=	bitcoin
-GH_COMMIT=		30a7357
+GH_COMMIT=	58810d2
 GH_TAGNAME=	v${PORTVERSION}
 
-USES=			gmake
-USE_OPENSSL=	yes
-USE_BDB=		yes
-WANT_BDB_VER=	48
+CONFIGURE_ARGS?=	--without-daemon \
+			--with-gui \
+			--without-libs \
+			--without-utils \
+			--disable-reduce-exports
 
-CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
-CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
-CXXFLAGS+=	-Wno-invalid-offsetof
+CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
+		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl"
+MAKE_ENV+=	V=1
 
-.include <bsd.port.options.mk>
+PLIST_FILES?=	bin/bitcoin-qt share/applications/bitcoin-qt.desktop \
+		share/pixmaps/bitcoin128.png
 
-CONFIGURE_ARGS+=--disable-tests
-
-.if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-USE_QT4=	corelib gui qmake_build linguist uic moc rcc qtestlib_build
-USES+=		desktop-file-utils
-PLIST_FILES=	%%QT_BINDIR%%/bitcoin-qt %%QT_BINDIR%%/bitcoind %%QT_BINDIR%%/bitcoin-cli
-PLIST_FILES+=	share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
-CONFIGURE_ARGS+=--with-gui
-.else
-PLIST_FILES=		bin/bitcoind bin/bitcoin-cli
-CONFIGURE_ARGS+=--without-gui
-.endif
-
-.if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
-CONFIGURE_ARGS+=--with-qrencode
-.else
-CONFIGURE_ARGS+=--without-qrencode
-.endif
-
-.if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
-CONFIGURE_ARGS+=--with-miniupnpc
-.else
-CONFIGURE_ARGS+=--without-miniupnpc
-.endif
-
-.if ${PORT_OPTIONS:MWALLET}
-CONFIGURE_ARGS+=--enable-wallet
-.else
-CONFIGURE_ARGS+=--disable-wallet
-.endif
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${MKDIR} ${WRKSRC}/src/build-aux
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-install:
-.if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-	${REINPLACE_CMD} -e 's,=/usr,=${PREFIX},' ${WRKSRC}/contrib/debian/bitcoin-qt.desktop
-	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL} ${WRKSRC}/share/pixmaps/bitcoin128.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${REINPLACE_CMD} -e 's,=/usr,=${PREFIX},' \
+		${WRKSRC}/contrib/debian/bitcoin-qt.desktop
+	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL} ${WRKSRC}/share/pixmaps/bitcoin128.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

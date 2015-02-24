@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150224:
+  AFFECTS: Users of net-p2p/bitcoin (cli utilities)
+
+  The bitcoin-cli and bitcoin-tx utilities have been re-packaged into
+  a seperate port. If you require these programs, or use the bitcoin-cli
+  program to access the daemon or the GUI, install net-p2p/bitcoin-utils
+  to reinstall them.
+
 20150220:
   AFFECTS: users of PHP
 
