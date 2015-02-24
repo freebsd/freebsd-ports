@@ -1,4 +1,6 @@
-pg_reorg allows you to reorganize your tables online,
-for example, do online vacuum full or cluster.
+pg_reorg can re-organize tables on a postgres database without any
+locks so that you can retrieve or update rows in tables being
+reorganized. The module is developed to be a better alternative of
+CLUSTER and VACUUM FULL.
 
 WWW: http://pgfoundry.org/projects/reorg/
