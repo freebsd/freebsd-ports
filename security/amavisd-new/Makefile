@@ -2,6 +2,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -19,7 +20,8 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
 		p5-Archive-Zip>=1.14:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Net-Server>=2.0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
+		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM \
+		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
