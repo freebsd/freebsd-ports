@@ -6,7 +6,6 @@ PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libgearman.so:${PORTSDIR}/devel/gearmand
 
+USES=		tar:tgz
 CONFIGURE_ARGS=	--with-gearman
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
