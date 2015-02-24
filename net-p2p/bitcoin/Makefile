@@ -97,4 +97,7 @@ post-install:
 
 .endif
 
+regression-test: build
+	@cd ${WRKSRC} && ${GMAKE} check
+
 .include <bsd.port.mk>
