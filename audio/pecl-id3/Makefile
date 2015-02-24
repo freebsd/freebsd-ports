@@ -6,15 +6,17 @@ PORTVERSION=	0.2
 CATEGORIES=	audio pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension to read and write ID3 tags in MP3 files
 
+LICENSE=	PHP30
+
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
+DEFAULT_VERSIONS=	php=53
 IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-id3
