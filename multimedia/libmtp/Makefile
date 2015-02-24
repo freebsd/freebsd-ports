@@ -12,6 +12,8 @@ COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21 # or any later version
 
+CONFLICTS_INSTALL=libosmo-sccp-[0-9]* # lib/libmtp.a
+
 OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices

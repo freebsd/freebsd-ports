@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libosmocore.so:${PORTSDIR}/devel/libosmocore
 
+CONFLICTS_INSTALL=libmtp-[0-9]* # lib/libmtp.a
+
 USES=		autoreconf gmake pathfix pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am
 GNU_CONFIGURE=	yes
