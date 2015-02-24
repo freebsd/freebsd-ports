@@ -28,7 +28,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' \
 	${WRKSRC}/hidef.c
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-
 .include <bsd.port.mk>

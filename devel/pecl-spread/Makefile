@@ -24,7 +24,4 @@ DEFAULT_VERSIONS+=	php=53
 
 CONFIGURE_ARGS+=	--with-spread=${LOCALBASE}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-
 .include <bsd.port.mk>
