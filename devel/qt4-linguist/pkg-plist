@@ -1,11 +1,5 @@
-%%QT_BINDIR%%/lconvert
-%%DEBUG%%%%QT_BINDIR%%/lconvert.debug
 %%QT_BINDIR%%/linguist-qt4
 %%DEBUG%%%%QT_BINDIR%%/linguist-qt4.debug
-%%QT_BINDIR%%/lrelease-qt4
-%%DEBUG%%%%QT_BINDIR%%/lrelease-qt4.debug
-%%QT_BINDIR%%/lupdate-qt4
-%%DEBUG%%%%QT_BINDIR%%/lupdate-qt4.debug
 share/pixmaps/linguist-qt4.png
 %%QT_DATADIR%%/phrasebooks/danish.qph
 %%QT_DATADIR%%/phrasebooks/dutch.qph

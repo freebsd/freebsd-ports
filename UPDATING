@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20150224:
+  AFFECTS: Users of devel/qt4-linguist
+  AUTHOR: makc@FreeBSD.org
+
+  Linguist tools have been moved from qt4-linguist port to new
+  devel/qt4-linguisttools port. Deinstall qt4-linguist before
+  upgrading.
+
+20150224:
   AFFECTS: Users of lang/ruby19
 
   lang/ruby19 has reached its end-of-life and has been removed.  The

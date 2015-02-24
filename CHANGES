@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150224:
+  AUTHOR: makc@FreeBSD.org
+
+  New USE_QT4 component has been introduced to reduce buildtime
+  dependencies for Qt 4 ports that use localization support. Instead
+  of USE_QT4=linguist you should now use USE_QT4=linguisttools_build.
+  Conversion of existing ports may require USE_QT4 adjustment for
+  missing components.
+
 20141217:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
