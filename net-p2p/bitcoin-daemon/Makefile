@@ -19,7 +19,4 @@ CONFIGURE_ARGS=	--with-daemon \
 
 PLIST_FILES=	bin/bitcoind
 
-regression-test: build
-	@cd ${WRKSRC} && ${GMAKE} check
-
 .include "${MASTERDIR}/Makefile"
