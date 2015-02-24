@@ -6,7 +6,6 @@ PORTVERSION=	0.4.2
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_VERSIONS+=	php=53
