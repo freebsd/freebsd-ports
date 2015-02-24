@@ -3,21 +3,28 @@
 
 PORTNAME=	mgdiff
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Graphical front end to the Unix diff command
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Graphical front end to the UNIX diff command
+
+LICENSE=	MIT
 
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xmu xp xt
-SUB_FILES=	pkg-message
+
+DESKTOP_ENTRIES=	"mgdiff" "GUI front end to the UNIX diff command" \
+			"mgdiff-48x48" \
+			"mgdiff" "GNOME;GTK;Motif;Development;System;" \
+			false
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
-	${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${FILESDIR}/mgdiff-48x48.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
