@@ -3,6 +3,7 @@
 
 PORTNAME=	rest
 PORTVERSION=	0.7.92
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	GNOME
 
@@ -34,5 +35,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librest-0.7.so.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librest-extras-0.7.so.0
+
+regression-test:
+	(cd ${WRKSRC}/tests &&  \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} check)
 
 .include <bsd.port.mk>
