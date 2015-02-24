@@ -40,7 +40,8 @@ SQL_PLUGINS_USE=sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
 		sql-sqlite3
 
 TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
-TOOLS_USE=	assistant help-tools linguist makeqpf moc pixeltool \
+TOOLS_USE=	assistant help-tools linguist linguisttools makeqpf \
+		moc pixeltool \
 		porting qdbusviewer qdoc3 qmake qmlviewer qtconfig \
 		qvfb rcc uic uic3 xmlpatterns-tool
 
