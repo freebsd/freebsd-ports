@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,10 +17,11 @@ LICENSE=	PHP301
 BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 RUN_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
+DEFAULT_VERSIONS+=	php=53
 
-CONFIGURE_ARGS+=--with-spread=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-spread=${LOCALBASE}
 
 .include <bsd.port.mk>
