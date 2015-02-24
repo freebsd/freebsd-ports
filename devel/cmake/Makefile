@@ -17,20 +17,22 @@ CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
 		--docdir="/${DOCSDIR_REL}" \
-		--sphinx-man \
 		--system-libs \
 		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${PATCHDIR}/InitialCache.cmake"
 
 .if !defined(CMAKE_MODULES)
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS MANPAGES
+OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 HAS_CONFIGURE=	yes
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:${PORTSDIR}/devel/cmake-modules
+
+MANPAGES_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+MANPAGES_CONFIGURE_ON=	--sphinx-man
 .endif
 
 .include <bsd.port.pre.mk>
