@@ -22,4 +22,7 @@ USE_PHPEXT=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR}
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
+
 .include <bsd.port.mk>
