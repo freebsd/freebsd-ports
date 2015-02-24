@@ -7,7 +7,7 @@ PORTREVISION=	28
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Convert bitmap to vector graphics
 
 LICENSE=	GPLv2 LGPL21
