@@ -29,6 +29,7 @@ USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	AVAHI NLS
 AVAHI_DESC=	Zeroconf support (Avahi)
