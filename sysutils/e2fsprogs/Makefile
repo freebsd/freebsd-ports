@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
-USES=		gmake pkgconfig tar:xz
+USES=		cpe gmake pkgconfig tar:xz
+CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
