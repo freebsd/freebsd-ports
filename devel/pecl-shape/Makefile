@@ -7,22 +7,24 @@ PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension that wraps libshape
 
+LICENSE=	PHP30
+
 LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	shp
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+DEFAULT_VERSIONS+=	php=53
+IGNORE_WITH_PHP=	5
 
-CONFIGURE_ARGS+=--with-shp=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-shp=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|include/libshp|include|g' ${WRKSRC}/config.m4
