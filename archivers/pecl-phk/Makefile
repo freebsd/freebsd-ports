@@ -6,7 +6,6 @@ PORTVERSION=	2.1.0
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +13,7 @@ COMMENT=	PHK is a PHP-oriented package/archive system
 
 LICENSE=	PHP301
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
