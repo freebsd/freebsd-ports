@@ -922,6 +922,7 @@
     SUBDIR += py-pcs
     SUBDIR += py-port-for
     SUBDIR += py-pybeanstalk
+    SUBDIR += py-pygeoip
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
