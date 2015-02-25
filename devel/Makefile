@@ -544,6 +544,7 @@
     SUBDIR += git
     SUBDIR += git-bzr-ng
     SUBDIR += git-extras
+    SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-review
