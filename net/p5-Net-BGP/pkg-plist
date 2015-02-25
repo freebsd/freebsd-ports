@@ -1,5 +1,10 @@
 %%SITE_PERL%%/Net/BGP.pm
 %%SITE_PERL%%/Net/BGP/ASPath.pm
+%%SITE_PERL%%/Net/BGP/ASPath/AS.pm
+%%SITE_PERL%%/Net/BGP/ASPath/AS_CONFED_SEQUENCE.pm
+%%SITE_PERL%%/Net/BGP/ASPath/AS_CONFED_SET.pm
+%%SITE_PERL%%/Net/BGP/ASPath/AS_SEQUENCE.pm
+%%SITE_PERL%%/Net/BGP/ASPath/AS_SET.pm
 %%SITE_PERL%%/Net/BGP/NLRI.pm
 %%SITE_PERL%%/Net/BGP/Notification.pm
 %%SITE_PERL%%/Net/BGP/Peer.pm

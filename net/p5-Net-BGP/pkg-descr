@@ -9,4 +9,4 @@ nor does it modify the kernel routing table of the host system.
 However, such operations could be implemented using the API provided by
 the module.
 
-WWW: http://search.cpan.org/dist/Net-BGP/
+WWW: https://metacpan.org/pod/Net::BGP
