@@ -3,15 +3,12 @@ $FreeBSD$
 
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -494,9 +494,9 @@
-   CONFIGURE_FILE(cmake/sagittarius.pc.in
-     ${PROJECT_BINARY_DIR}/sagittarius-${SAGITTARIUS_VERSION}.pc @ONLY)
-   INSTALL(FILES ${PROJECT_BINARY_DIR}/sagittarius.pc
--    DESTINATION lib/pkgconfig)
-+    DESTINATION libdata/pkgconfig)
-   INSTALL(FILES ${PROJECT_BINARY_DIR}/sagittarius-${SAGITTARIUS_VERSION}.pc
--    DESTINATION lib/pkgconfig)
-+    DESTINATION libdata/pkgconfig)
- ENDIF()
+@@ -30,7 +30,7 @@
+ GET_PARAMETER(SHARE_DIR      share)
+ # FreeBSD ports adds a patch for this directory
+ # so make it configurable
+-GET_PARAMETER(PKGCONFIG_DIR  lib/pkgconfig)
++GET_PARAMETER(PKGCONFIG_DIR  libdata/pkgconfig)
  
- # config, package so on
+ if (WATCOM)
+   message(STATUS "*CAUTION* open watcom is experimental")
