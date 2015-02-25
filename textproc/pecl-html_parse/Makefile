@@ -20,7 +20,6 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=	5
 
 CONFIGURE_ARGS=	--enable-html_parse
