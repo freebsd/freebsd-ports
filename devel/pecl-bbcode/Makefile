@@ -18,7 +18,7 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 56
 
 CONFIGURE_ARGS=	--enable-bbcode
 

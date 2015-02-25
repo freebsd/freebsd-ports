@@ -16,7 +16,7 @@ LICENSE=	PHP202
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 56
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -ldl,,' ${WRKSRC}/config.m4
