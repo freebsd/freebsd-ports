@@ -9,7 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sql Server exploit toolkit
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
