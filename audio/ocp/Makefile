@@ -3,6 +3,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.21
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencubicplayer/${DISTNAME} \
@@ -21,9 +22,8 @@ LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig desktop-file-utils compiler:nestedfct makeinfo tar:xz iconv
+USES=		ncurses gmake pkgconfig desktop-file-utils makeinfo tar:xz iconv
 USE_LDCONFIG=	yes
-USE_GCC=	any
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=	yes
