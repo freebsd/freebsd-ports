@@ -5,7 +5,7 @@
  #endif
  
 +#ifndef INADDR_LOOPBACK
-+#define INADDR_LOOPBACK                (long) 0x7F000001
++#define INADDR_LOOPBACK         (u_int32_t)0x7f000001
 +#endif
 +
  struct ip_addr{
