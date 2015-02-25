@@ -280,7 +280,7 @@ do-build:
 	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
 	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
 	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C LC_TIME=it_IT.ISO8859-15" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
