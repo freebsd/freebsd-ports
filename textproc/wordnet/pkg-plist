@@ -10,13 +10,11 @@ lib/libtclwn2.so
 lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
 %%DATADIR%%/adj.exc
 %%DATADIR%%/adv.exc
-%%DATADIR%%/cntlist
 %%DATADIR%%/cntlist.rev
 %%DATADIR%%/data.adj
 %%DATADIR%%/data.adv
 %%DATADIR%%/data.noun
 %%DATADIR%%/data.verb
-%%DATADIR%%/frames.vrb
 %%DATADIR%%/index.adj
 %%DATADIR%%/index.adv
 %%DATADIR%%/index.noun
@@ -26,7 +24,6 @@ lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
 %%DATADIR%%/sentidx.vrb
 %%DATADIR%%/sents.vrb
 %%DATADIR%%/verb.exc
-%%DATADIR%%/verb.Framestext
 %%DATADIR%%/wn.xbm
 man/man1/wn.1.gz
 man/man1/wnb.1.gz
