@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twirssi
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
@@ -39,11 +39,11 @@ PLIST_FILES=	%%DATADIR%%/${PORTNAME}.pl
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl \
+	${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_SCRIPT} -v ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} -v ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
