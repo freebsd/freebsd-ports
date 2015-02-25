@@ -107,6 +107,7 @@
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
+    SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += e169-stats

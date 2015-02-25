@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-02-04 22:30:21.000000000 +0900
++++ Makefile	2015-02-04 22:30:50.000000000 +0900
+@@ -15,7 +15,7 @@
+ initpy:
+ 	find $(PWD)/decoders -type d -not -path \*.svn\* -print -exec touch {}/__init__.py \;
+ 
+-pydoc:
++pydoc: rc
+ 	(cd $(PWD)/doc && ./generate-doc.sh $(PWD) ) 
+ 
+ clean: clean_pyc 
