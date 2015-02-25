@@ -11,6 +11,8 @@ DISTNAME=	rxvt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
+LICENSE=	GPLv2 # or later
+
 USE_XORG=	x11 xau xdmcp ice xpm xv
 GNU_CONFIGURE=	yes
 ALL_TARGET=	clock
@@ -22,5 +24,8 @@ CPPFLAGS+=	-DMAIL_SPOOL='\"/var/mail/\"'
 post-patch:
 	@${REINPLACE_CMD} \
 		's|^subdirs =.*$$|subdirs = rclock|g' ${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
