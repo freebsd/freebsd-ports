@@ -3,7 +3,7 @@
 
 PORTNAME=	libadplug
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/adplug/AdPlug%20core%20library/${PORTVERSION}
 DISTNAME=	adplug-${PORTVERSION}
@@ -23,6 +23,8 @@ USE_CSTD=	gnu89
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 INFO=		libadplug
+
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -E 's#<(binfile.h|binio.h|binstr.h)>#<libbinio/\1>#' \
