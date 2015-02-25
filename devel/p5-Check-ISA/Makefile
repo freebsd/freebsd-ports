@@ -3,7 +3,7 @@
 
 PORTNAME=	Check-ISA
 PORTVERSION=	0.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NUFFIN
@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DWIM, correct checking of an object's class
 
-RUN_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
-		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 USES=		perl5
 USE_PERL5=	configure
