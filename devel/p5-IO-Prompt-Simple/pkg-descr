@@ -1,0 +1,3 @@
+IO::Prompt::Simple replicates ExtUtils::MakeMaker's prompt() function.
+
+WWW: https://metacpan.org/pod/IO::Prompt::Simple
