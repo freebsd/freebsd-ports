@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nuoveXT2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 MASTER_SITES=	http://BSDforge.com/projects/source/x11-themes/kde-icons-nuovext2/
 DISTNAME=	nuoveXT-${PORTVERSION}_KDE
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	KDE nuoveXT 2 iconset
 
 LICENSE=	LGPL3
