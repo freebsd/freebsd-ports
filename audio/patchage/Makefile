@@ -42,13 +42,15 @@ post-patch:
 			${WRKSRC}/autowaf/autowaf.py
 
 do-configure:
-	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --prefix=${PREFIX} \
+	(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man --no-alsa --no-lash configure)
 
 do-build:
-	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
 
 .include <bsd.port.post.mk>
