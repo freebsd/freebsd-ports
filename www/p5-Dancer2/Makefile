@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.158000
+PORTVERSION=	0.159000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight yet powerful web application framework
 
 LICENSE=	ART10 GPLv1
@@ -28,7 +28,6 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 	p5-LWP-Protocol-PSGI>=0.06:${PORTSDIR}/www/p5-LWP-Protocol-PSGI \
 	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-Moo>=0.09014:${PORTSDIR}/devel/p5-Moo \
 	p5-MooX-Types-MooseLike-Numeric>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike-Numeric \
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
