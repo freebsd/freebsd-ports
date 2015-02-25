@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG
 MASTER_SITE_SUBDIR=	software/scm/git
@@ -17,13 +17,12 @@ COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
 
-CONFLICTS?=	git-subversion-[0-9]*
+CONFLICTS?=	git-subversion-[0-9]* git-lite-[0-9]*
 
-USERS=	git_daemon
-GROUPS=	git_daemon
+USERS=		git_daemon
+GROUPS=		git_daemon
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
 USES=		gmake shebangfix tar:xz
@@ -43,6 +42,7 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
 		ETCSHELLS NLS
 OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL ETCSHELLS NLS
+OPTIONS_SUB=	yes
 
 GITWEB_DESC=	Install gitweb
 CONTRIB_DESC=	Install contributed scripts
@@ -51,15 +51,47 @@ CVS_DESC=	Enable CVS support
 HTMLDOCS_DESC=	Install additional documentation
 ETCSHELLS_DESC=	Modify /etc/shells
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-MAKE_ARGS+=	NO_GETTEXT=yes
-.endif
+PERL_USES=		perl5
+PERL_MAKE_ENV=		PERL_PATH=${PERL}
+PERL_BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+PERL_RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+			p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
+			p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+PERL_MAKE_ARGS_OFF=	NO_PERL=1
+
+ICONV_USES=		iconv
+ICONV_MAKE_ARGS_OFF=	NO_ICONV=1
+
+CURL_MAKE_ENV=		CURLDIR=${LOCALBASE}
+CURL_BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
+
+HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
+
+GUI_USES=		tk
+GUI_MAKE_ARGS=		TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
+GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
+
+# While this port does not explicity honor WITH_SUBVERSION_VER knob it does
+# depend upon devel/p5-subversion, which does honor that knob. If you want
+# to have git use devel/subversion16 it will be brought in through
+# devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
+# devel/subversion will be brought in.
+SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+			p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+
+CONTRIB_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
+			asciidoc:${PORTSDIR}/textproc/asciidoc \
+			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+
+CVS_RUN_DEPENDS=	cvsps:${PORTSDIR}/devel/cvsps
+
+.include <bsd.port.options.mk>
 
 # This is intentionally not exposed as an option.
 .ifndef (WITH_DEBUG)
@@ -68,119 +100,30 @@ ALL_TARGET=	all strip
 
 .if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
 USES+=		python
-PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} PYTHON=""
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else
 CONFIGURE_ARGS+=	--without-python
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-MAKE_ENV+=	PERL_PATH=${PERL}
-BUILD_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
-RUN_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
-		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
-		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
-PLIST_SUB+=	PERLSUB=""
-.else
-MAKE_ARGS+=	NO_PERL=1
-PLIST_SUB+=	PERLSUB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-.else
-MAKE_ARGS+=	NO_ICONV=1
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-MAKE_ENV+=	CURLDIR=${LOCALBASE}
-BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-PLIST_SUB+=	CURL=""
-.else
-MAKE_ARGS+=	NO_CURL=1 \
-		NO_EXPAT=1
-PLIST_SUB+=	CURL="@comment "
-.endif
-
-# Always fetch the htmldocs distfile in maintainer mode.
-# Always include it when building distinfo (makesum)
-.if ${PORT_OPTIONS:MHTMLDOCS} || make(makesum) || (defined(MAINTAINER_MODE) && make(fetch))
-DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
-PLIST_SUB+=	HTMLDOCS=""
-.else
-PLIST_SUB+=	HTMLDOCS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-USES+=		tk
-PLIST_SUB+=	GUI=""
-MAKE_ARGS+=	TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
-.else
+.if empty(PORT_OPTIONS:MGUI)
 RMMAN1+=	git-citool.1 \
 		git-gui.1 \
 		gitk.1
-PLIST_SUB+=	GUI="@comment "
-MAKE_ARGS+=	NO_TCLTK=yes
 .endif
 
-# While this port does not explicity honor WITH_SUBVERSION_VER knob it does
-# depend upon devel/p5-subversion, which does honor that knob. If you want
-# to have git use devel/subversion16 it will be brought in through
-# devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
-# devel/subversion will be brought in.
-.if ${PORT_OPTIONS:MSVN}
-RUN_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
-PLIST_SUB+=	SVN=""
-.else
-PLIST_SUB+=	SVN="@comment "
+.if empty(PORT_OPTIONS:MSVN)
 RMMAN1+=	git-svn.1
-.endif
-
-.if ${PORT_OPTIONS:MGITWEB}
-PLIST_SUB+=	GITWEB=""
-.else
-PLIST_SUB+=	GITWEB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGITWEB} && empty(PORT_OPTIONS:MPERL)
 IGNORE=	using GITWEB support requires PERL support
 .endif
 
-.if ${PORT_OPTIONS:MCONTRIB}
-PLIST_SUB+=	CONTRIB=""
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
-		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
-.else
-PLIST_SUB+=	CONTRIB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MP4}
-PLIST_SUB+=	P4=""
-.else
-PLIST_SUB+=	P4="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCVS}
-PLIST_SUB+=	CVS=""
-RUN_DEPENDS+=	cvsps:${PORTSDIR}/devel/cvsps
-.else
-PLIST_SUB+=	CVS="@comment "
+.if empty(PORT_OPTIONS:MCVS)
 RMMAN1+=	git-cvsimport.1 \
 		git-cvsexportcommit.1 \
 		git-cvsserver.1
 RMMAN7+=	gitcvs-migration.7
-.endif
-
-.if ${PORT_OPTIONS:METCSHELLS}
-PLIST_SUB+=	ETCSHELLS=""
-.else
-PLIST_SUB+=	ETCSHELLS="@comment "
 .endif
 
 post-extract:
