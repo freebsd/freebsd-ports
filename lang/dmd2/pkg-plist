@@ -1,7 +1,8 @@
 bin/dmd
 lib/libphobos2.a
 @sample etc/dmd.conf.sample
-%%EXAMPLESDIR%%/dmd.conf
+%%EXAMPLESDIR%%/dmd32.conf
+%%EXAMPLESDIR%%/dmd64.conf
 %%EXAMPLESDIR%%/samples/d/all.sh
 %%EXAMPLESDIR%%/samples/d/build.bat
 %%EXAMPLESDIR%%/samples/d/chello.d
