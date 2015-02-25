@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		https://www.kernel.org/pub/software/scm/git/:git
@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PROJECTHOST=	git-core
-GIT_VERSION=	2.0.0
-USES=		gmake iconv shebangfix tar:bzip2
+GIT_VERSION=	2.3.0
+USES=		gmake iconv shebangfix tar:xz
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -41,7 +41,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${STRIP_CMD} ${STAGEDIR}${WWWDIR}/cgit.cgi
 
 .include <bsd.port.mk>
