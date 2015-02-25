@@ -12,10 +12,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail-queue replacement to filter mail traffic
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 USES=		qmail
 
@@ -93,6 +96,6 @@ do-install:
 	${INSTALL_DATA} ${CONTRIB:S,^,${WRKSRC}/contrib/,} ${STAGEDIR}${EXAMPLESDIR}/contrib
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${ETCFILES:S,^,${WRKSRC}/etc/,} ${STAGEDIR}${ETCDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/src/qsheff ${STAGEDIR}${PREFIX}/bin/qsheff
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qsheff ${STAGEDIR}${PREFIX}/bin/qsheff
 
 .include <bsd.port.mk>
