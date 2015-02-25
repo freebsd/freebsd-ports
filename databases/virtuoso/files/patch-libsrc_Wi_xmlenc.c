@@ -1,0 +1,145 @@
+--- libsrc/Wi/xmlenc.c.orig	2014-02-17 18:33:14.000000000 +0100
++++ libsrc/Wi/xmlenc.c	2015-02-25 22:01:09.359063574 +0100
+@@ -1775,7 +1775,7 @@
+   if (!algo)
+     len = 0;
+   else if (!strcmp (algo, XENC_TRIPLEDES_ALGO))
+-    len = 3 * sizeof (des_cblock);
++    len = 3 * sizeof (DES_cblock);
+   else if (!strcmp (algo, XENC_AES128_ALGO))
+     len = 128;
+   else if (!strcmp (algo, XENC_AES256_ALGO))
+@@ -1826,7 +1826,7 @@
+ {
+   xenc_key_t * key;
+   P_SHA1_CTX * psha1;
+-  des_cblock _key[5];
++  DES_cblock _key[5];
+   int key_len = 0;
+   caddr_t * utok_opts = (caddr_t *) xenc_get_option (ctx->wc_opts, "UsernameToken", NULL);
+   caddr_t key_algo = xenc_get_option (utok_opts, "keyAlgorithm", XENC_TRIPLEDES_ALGO);
+@@ -1859,8 +1859,8 @@
+ 	      des_set_key_unchecked(&_key[1], key->ki.triple_des.ks2);
+ 	      des_set_key_unchecked(&_key[2], key->ki.triple_des.ks3);
+ 
+-	      memcpy (key->ki.triple_des.k1, &_key[0], sizeof (des_cblock));
+-	      memcpy (key->ki.triple_des.k2, &_key[1], sizeof (des_cblock));
++	      memcpy (key->ki.triple_des.k1, &_key[0], sizeof (DES_cblock));
++	      memcpy (key->ki.triple_des.k2, &_key[1], sizeof (DES_cblock));
+ 	      memcpy (key->ki.triple_des.k3, &_key[2], sizeof (des_cblock));
+ 	      break;
+ 	    }
+@@ -2084,7 +2084,7 @@
+ int __xenc_key_3des_init (char *name, char *pwd, int lock)
+ {
+   char _key[KEYSIZB+1];
+-  des_cblock key[3];
++  DES_cblock key[3];
+ 
+   xenc_key_t * pkey = xenc_get_key_by_name (name, lock);
+   if (NULL == pkey)
+@@ -2108,9 +2108,9 @@
+   des_set_key_unchecked(&key[1], pkey->ki.triple_des.ks2);
+   des_set_key_unchecked(&key[2], pkey->ki.triple_des.ks3);
+ 
+-  memcpy (pkey->ki.triple_des.k1, &key[0], sizeof (des_cblock));
+-  memcpy (pkey->ki.triple_des.k2, &key[1], sizeof (des_cblock));
+-  memcpy (pkey->ki.triple_des.k3, &key[2], sizeof (des_cblock));
++  memcpy (pkey->ki.triple_des.k1, &key[0], sizeof (DES_cblock));
++  memcpy (pkey->ki.triple_des.k2, &key[1], sizeof (DES_cblock));
++  memcpy (pkey->ki.triple_des.k3, &key[2], sizeof (DES_cblock));
+ 
+   xenc_store_key (pkey, lock);
+   return 0;
+@@ -2118,9 +2118,9 @@
+ 
+ void xenc_key_3des_init (xenc_key_t * pkey, unsigned char * k1, unsigned char * k2, unsigned char * k3)
+ {
+-  memcpy (pkey->ki.triple_des.k1, k1, sizeof (des_cblock));
+-  memcpy (pkey->ki.triple_des.k2, k2, sizeof (des_cblock));
+-  memcpy (pkey->ki.triple_des.k3, k3, sizeof (des_cblock));
++  memcpy (pkey->ki.triple_des.k1, k1, sizeof (DES_cblock));
++  memcpy (pkey->ki.triple_des.k2, k2, sizeof (DES_cblock));
++  memcpy (pkey->ki.triple_des.k3, k3, sizeof (DES_cblock));
+ 
+   des_set_key_unchecked((const_des_cblock*) k1, pkey->ki.triple_des.ks1);
+   des_set_key_unchecked((const_des_cblock*) k2, pkey->ki.triple_des.ks2);
+@@ -2156,12 +2156,12 @@
+ {
+   caddr_t name = bif_key_name_arg (qst, args, 0, "xenc_key_3DES_rand_create");
+   xenc_key_t * k = 0;
+-  des_cblock k1;
+-  des_cblock k2;
+-  des_cblock k3;
+-  des_key_schedule ks1;
+-  des_key_schedule ks2;
+-  des_key_schedule ks3;
++  DES_cblock k1;
++  DES_cblock k2;
++  DES_cblock k3;
++  DES_key_schedule ks1;
++  DES_key_schedule ks2;
++  DES_key_schedule ks3;
+ 
+   des_random_key (&k1);
+   des_random_key (&k2);
+@@ -2180,13 +2180,13 @@
+       mutex_leave (xenc_keys_mtx);
+       SQLR_NEW_KEY_EXIST_ERROR (name);
+     }
+-  memcpy (&k->ki.triple_des.k1, &k1, sizeof (des_cblock));
+-  memcpy (&k->ki.triple_des.k2, &k2, sizeof (des_cblock));
+-  memcpy (&k->ki.triple_des.k3, &k3, sizeof (des_cblock));
+-
+-  memcpy (&k->ki.triple_des.ks1, &ks1, sizeof (des_key_schedule));
+-  memcpy (&k->ki.triple_des.ks2, &ks2, sizeof (des_key_schedule));
+-  memcpy (&k->ki.triple_des.ks3, &ks3, sizeof (des_key_schedule));
++  memcpy (&k->ki.triple_des.k1, &k1, sizeof (DES_cblock));
++  memcpy (&k->ki.triple_des.k2, &k2, sizeof (DES_cblock));
++  memcpy (&k->ki.triple_des.k3, &k3, sizeof (DES_cblock));
++
++  memcpy (&k->ki.triple_des.ks1, &ks1, sizeof (DES_key_schedule));
++  memcpy (&k->ki.triple_des.ks2, &ks2, sizeof (DES_key_schedule));
++  memcpy (&k->ki.triple_des.ks3, &ks3, sizeof (DES_key_schedule));
+ 
+   mutex_leave (xenc_keys_mtx);
+ 
+@@ -2594,9 +2594,9 @@
+ 
+   if (k->xek_type == DSIG_KEY_3DES)
+     {
+-      memcpy (in_buf, k->ki.triple_des.k1, sizeof (des_cblock));
+-      memcpy (in_buf + sizeof (des_cblock), k->ki.triple_des.k2, sizeof (des_cblock));
+-      memcpy (in_buf + 2*sizeof (des_cblock), k->ki.triple_des.k3, sizeof (des_cblock));
++      memcpy (in_buf, k->ki.triple_des.k1, sizeof (DES_cblock));
++      memcpy (in_buf + sizeof (DES_cblock), k->ki.triple_des.k2, sizeof (DES_cblock));
++      memcpy (in_buf + 2*sizeof (DES_cblock), k->ki.triple_des.k3, sizeof (DES_cblock));
+     }
+   else if (k->xek_type == DSIG_KEY_RSA)
+     {
+@@ -6018,7 +6018,7 @@
+       xenc_des3_decryptor (out, strses_length (out), in, key, &t);
+       key_data_2 = strses_string (in);
+ 
+-      if (memcmp (key_data, key_data_2, 3 * sizeof (des_cblock)))
++      if (memcmp (key_data, key_data_2, 3 * sizeof (DES_cblock)))
+ 	xenc_assert (0);
+       dk_free_box (key_data_2);
+       dk_free_box (key_data);
+@@ -6026,13 +6026,13 @@
+       new_key = xenc_build_encrypted_key ("virtdev_test_rest", in, XENC_TRIPLEDES_ALGO, &t);
+ 
+       if (memcmp (new_key->ki.triple_des.k1,
+-		  key->ki.triple_des.k1, sizeof (des_cblock)))
++		  key->ki.triple_des.k1, sizeof (DES_cblock)))
+ 	xenc_assert (0);
+       if (memcmp (new_key->ki.triple_des.k2,
+-		  key->ki.triple_des.k2, sizeof (des_cblock)))
++		  key->ki.triple_des.k2, sizeof (DES_cblock)))
+ 	xenc_assert (0);
+       if (memcmp (new_key->ki.triple_des.k3,
+-		  key->ki.triple_des.k3, sizeof (des_cblock)))
++		  key->ki.triple_des.k3, sizeof (DES_cblock)))
+ 	xenc_assert (0);
+ 
+       strses_flush (in);
