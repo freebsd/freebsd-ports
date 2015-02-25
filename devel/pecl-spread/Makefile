@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_VERSIONS+=	php=53
 
 CONFIGURE_ARGS+=	--with-spread=${LOCALBASE}
 
