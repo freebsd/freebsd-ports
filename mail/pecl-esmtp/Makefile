@@ -19,7 +19,6 @@ LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_VERSIONS+=	php=53
 
 OPTIONS_DEFINE=	RE2C
 OPTIONS_DEFAULT=	RE2C
