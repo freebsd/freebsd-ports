@@ -21,7 +21,6 @@ USES=		pkgconfig tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
-DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}

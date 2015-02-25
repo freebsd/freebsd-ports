@@ -18,7 +18,6 @@ LIB_DEPENDS=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_VERSIONS+=	php=53
 IGNORE_WITH_PHP=5
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
