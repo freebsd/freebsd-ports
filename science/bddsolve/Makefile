@@ -16,18 +16,14 @@ LIB_DEPENDS+=	libbdd.so:${PORTSDIR}/science/buddy \
 
 USES=		zip
 NO_WRKSUBDIR=	yes
+CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lbdd -lboost_program_options
+BROKEN_powerpc=	Does not compile due to running out of virtual memory
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: runs out of virtual memory
-.endif
-
 do-build:
-	${CXX} ${CFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include \
-		${LDFLAGS} -L${LOCALBASE}/lib -lbdd -lboost_program_options \
+	${SETENV} ${MAKE_ENV} ${CXX} ${CXXFLAGS} ${LDFLAGS} \
 		-o ${WRKSRC}/bddsolve ${WRKSRC}/src/bddsolve.cpp
 
 do-install:
@@ -36,4 +32,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example/reach.b ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/sat.b ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
