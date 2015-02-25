@@ -6,15 +6,20 @@ PORTVERSION=	1.0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides track progress of a file upload
 
+LICENSE=	PHP301
+
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-uploadprogress
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>

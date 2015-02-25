@@ -803,47 +803,6 @@ fbsd_thread_wait (struct target_ops *ops,
 }
 
 static void
-fbsd_lwp_fetch_registers (struct target_ops *ops,
-			  struct regcache *regcache, int regnum)
-{
-  gregset_t gregs;
-  fpregset_t fpregs;
-  lwpid_t lwp;
-#ifdef PT_GETXMMREGS
-  char xmmregs[512];
-#endif
-
-  if (!target_has_execution)
-    {
-      struct target_ops *beneath = find_target_beneath (ops);
-
-      beneath->to_fetch_registers (ops, regcache, regnum);
-      return;
-    }
-
-  lwp = GET_LWP (inferior_ptid);
-
-  if (ptrace (PT_GETREGS, lwp, (caddr_t) &gregs, 0) == -1)
-    error ("Cannot get lwp %d registers: %s\n", lwp, safe_strerror (errno));
-  supply_gregset (regcache, &gregs);
-
-#ifdef PT_GETXMMREGS
-  if (ptrace (PT_GETXMMREGS, lwp, xmmregs, 0) == 0)
-    {
-      i387_supply_fxsave (regcache, -1, xmmregs);
-    }
-  else
-    {
-#endif
-      if (ptrace (PT_GETFPREGS, lwp, (caddr_t) &fpregs, 0) == -1)
-	error ("Cannot get lwp %d registers: %s\n ", lwp, safe_strerror (errno));
-      supply_fpregset (regcache, &fpregs);
-#ifdef PT_GETXMMREGS
-    }
-#endif
-}
-
-static void
 fbsd_thread_fetch_registers (struct target_ops *ops,
 			     struct regcache *regcache, int regnum)
 {
@@ -857,7 +816,9 @@ fbsd_thread_fetch_registers (struct target_ops *ops,
 
   if (!IS_THREAD (inferior_ptid))
     {
-      fbsd_lwp_fetch_registers (ops, regcache, regnum);
+      struct target_ops *beneath = find_target_beneath (ops);
+
+      beneath->to_fetch_registers (ops, regcache, regnum);
       return;
     }
 
@@ -895,60 +856,6 @@ fbsd_thread_fetch_registers (struct target_ops *ops,
 }
 
 static void
-fbsd_lwp_store_registers (struct target_ops *ops,
-			  struct regcache *regcache, int regnum)
-{
-  gregset_t gregs;
-  fpregset_t fpregs;
-  lwpid_t lwp;
-#ifdef PT_GETXMMREGS
-  char xmmregs[512];
-#endif
-
-  /* FIXME, is it possible ? */
-  if (!IS_LWP (inferior_ptid))
-    {
-      struct target_ops *beneath = find_target_beneath (ops);
-
-      beneath->to_store_registers (ops, regcache, regnum);
-      return ;
-    }
-
-  lwp = GET_LWP (inferior_ptid);
-  if (regnum != -1)
-    if (ptrace (PT_GETREGS, lwp, (caddr_t) &gregs, 0) == -1)
-      error ("Cannot get lwp %d registers: %s\n", lwp, safe_strerror (errno));
-
-  fill_gregset (regcache, &gregs, regnum);
-  if (ptrace (PT_SETREGS, lwp, (caddr_t) &gregs, 0) == -1)
-      error ("Cannot set lwp %d registers: %s\n", lwp, safe_strerror (errno));
-
-#ifdef PT_GETXMMREGS
-  if (regnum != -1)
-    if (ptrace (PT_GETXMMREGS, lwp, xmmregs, 0) == -1)
-      goto noxmm;
-
-  i387_collect_fxsave (regcache, regnum, xmmregs);
-  if (ptrace (PT_SETXMMREGS, lwp, xmmregs, 0) == -1)
-    goto noxmm;
-
-  return;
-
-noxmm:
-#endif
-
-  if (regnum != -1)
-    if (ptrace (PT_GETFPREGS, lwp, (caddr_t) &fpregs, 0) == -1)
-      error ("Cannot get lwp %d float registers: %s\n", lwp,
-             safe_strerror (errno));
-
-  fill_fpregset (regcache, &fpregs, regnum);
-  if (ptrace (PT_SETFPREGS, lwp, (caddr_t) &fpregs, 0) == -1)
-     error ("Cannot set lwp %d float registers: %s\n", lwp,
-            safe_strerror (errno));
-}
-
-static void
 fbsd_thread_store_registers (struct target_ops *ops,
 			     struct regcache *regcache, int regnum)
 {
@@ -962,7 +869,9 @@ fbsd_thread_store_registers (struct target_ops *ops,
 
   if (!IS_THREAD (inferior_ptid))
     {
-      fbsd_lwp_store_registers (ops, regcache, regnum);
+      struct target_ops *beneath = find_target_beneath (ops);
+
+      beneath->to_store_registers (ops, regcache, regnum);
       return;
     }
 

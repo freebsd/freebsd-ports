@@ -54,6 +54,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/whiptail
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnewt.so
 .if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} datadir=${STAGEDIR}${PREFIX}/share \

@@ -1,4 +1,5 @@
 bin/gambit
+bin/gambit-convert
 bin/gambit-enummixed
 bin/gambit-enumpoly
 bin/gambit-enumpure
@@ -8,11 +9,19 @@ bin/gambit-lcp
 bin/gambit-liap
 bin/gambit-logit
 bin/gambit-lp
-bin/gambit-nfg-logitdyn
-bin/gambit-nfg2html
-bin/gambit-nfg2tex
 bin/gambit-simpdiv
+include/libagg/GrayComposition.h
+include/libagg/agg.h
+include/libagg/bagg.h
+include/libagg/gameagg.h
+include/libagg/gamebagg.h
+include/libagg/proj_func.h
+include/libagg/trie_map.h
+include/libagg/trie_map.imp
+include/libgambit/GrayComposition.h
+include/libgambit/agg.h
 include/libgambit/array.h
+include/libgambit/bagg.h
 include/libgambit/behav.h
 include/libgambit/behav.imp
 include/libgambit/behavitr.h
@@ -20,6 +29,8 @@ include/libgambit/behavspt.h
 include/libgambit/dvector.h
 include/libgambit/dvector.imp
 include/libgambit/game.h
+include/libgambit/gameagg.h
+include/libgambit/gamebagg.h
 include/libgambit/integer.h
 include/libgambit/libgambit.h
 include/libgambit/list.h
@@ -28,6 +39,7 @@ include/libgambit/matrix.imp
 include/libgambit/mixed.h
 include/libgambit/mixed.imp
 include/libgambit/number.h
+include/libgambit/proj_func.h
 include/libgambit/pvector.h
 include/libgambit/pvector.imp
 include/libgambit/rational.h
@@ -36,5 +48,9 @@ include/libgambit/sqmatrix.h
 include/libgambit/sqmatrix.imp
 include/libgambit/stratitr.h
 include/libgambit/stratspt.h
+include/libgambit/trie_map.h
+include/libgambit/trie_map.imp
 include/libgambit/vector.h
 include/libgambit/vector.imp
+share/applications/gambit.desktop
+share/pixmaps/gambit.xpm

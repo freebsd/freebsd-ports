@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.0-rc3
+DISTVERSION=	3.0.0-rc4
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/antirez/redis/archive/
 PKGNAMESUFFIX=	-devel

@@ -10,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eject(1) replacement
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -22,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-doc
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

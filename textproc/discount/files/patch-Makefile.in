@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2015-01-18 16:49:13 UTC
++++ Makefile.in
+@@ -39,13 +39,13 @@ install.man:
+ 	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man3
+ 	@INSTALL_DATA@ $(MAN3PAGES) $(DESTDIR)$(MANDIR)/man3
+ 	for x in mkd_line mkd_generateline; do \
+-	    ( echo '.\"' ; echo ".so man3/mkd-line.3" ) > $(DESTDIR)$(MANDIR)/man3/$$x.3;\
++	    ln -sf mkd-line.3 $(DESTDIR)$(MANDIR)/man3/$$x.3; \
+ 	done
+ 	for x in mkd_in mkd_string; do \
+-	    ( echo '.\"' ; echo ".so man3/markdown.3" ) > $(DESTDIR)$(MANDIR)/man3/$$x.3;\
++	    ln -sf markdown.3 $(DESTDIR)$(MANDIR)/man3/$$x.3; \
+ 	done
+ 	for x in mkd_compile mkd_css mkd_generatecss mkd_generatehtml mkd_cleanup mkd_doc_title mkd_doc_author mkd_doc_date; do \
+-	    ( echo '.\"' ; echo ".so man3/mkd-functions.3" ) > $(DESTDIR)$(MANDIR)/man3/$$x.3; \
++	    ln -sf mkd-functions.3 $(DESTDIR)$(MANDIR)/man3/$$x.3; \
+ 	done
+ 	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man7
+ 	@INSTALL_DATA@ markdown.7 mkd-extensions.7 $(DESTDIR)$(MANDIR)/man7

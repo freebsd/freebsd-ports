@@ -31,6 +31,8 @@ USE_GL=		gl glew glu
 USES=		dos2unix cmake iconv openal pkgconfig tar:tgz compiler:c++11-lib
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
+NOT_FOR_ARCHS=	armv6
+
 # Disable ALSA (emulated) and ao (buggy)
 CMAKE_ARGS+=	-DOPENMP:BOOL=OFF \
 		-DDISABLE_ALSA:BOOL=ON \

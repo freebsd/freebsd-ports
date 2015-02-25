@@ -1,0 +1,16 @@
+Soundex is a phonetic algorithm for indexing names by sound, as pronounced in
+English. The goal is for names with the same pronunciation to be encoded to the
+same representation so that they can be matched despite minor differences in
+spelling. Soundex is the most widely known of all phonetic algorithms and is
+often used (incorrectly) as a synonym for "phonetic algorithm". Improvements to
+Soundex are the basis for many modern phonetic algorithms. (Wikipedia, 2007)
+
+Text::Soundex implements the original soundex algorithm developed by Robert
+Russell and Margaret Odell, patented in 1918 and 1922, as well as a variation
+called "American Soundex" used for US census data, and current maintained by the
+National Archives and Records Administration (NARA).
+
+The soundex algorithm may be recognized from Donald Knuth's The Art of Computer
+Programming. The algorithm described by Knuth is the NARA algorithm.
+
+WWW: http://search.cpan.org/dist/Text-Soundex/

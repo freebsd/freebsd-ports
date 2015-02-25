@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.0
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -71,6 +71,8 @@ post-patch:
 		${WRKSRC}/src/plugins_3rdparty/ball/src/include/BALL/DATATYPE/string.h
 	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
+	@${REINPLACE_CMD} -e '/ifdef/s|Q_OS_LINUX|Q_OS_UNIX|' \
+		${WRKSRC}/src/corelibs/U2Test/src/gui_tests/GUITestLauncher.cpp
 .for x in ugenecl ugeneui plugins_checker
 	@${ECHO_CMD} 'LIBS += -lexecinfo' >> ${WRKSRC}/src/${x}/${x}.pro
 .endfor

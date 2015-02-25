@@ -7,9 +7,10 @@ include/libbluray/keys.h
 include/libbluray/log_control.h
 include/libbluray/meta_data.h
 include/libbluray/overlay.h
+include/libbluray/player_settings.h
 lib/libbluray.a
 lib/libbluray.so
 lib/libbluray.so.1
-lib/libbluray.so.1.5.0
+lib/libbluray.so.1.7.0
 libdata/pkgconfig/libbluray.pc
-%%JAVA%%lib/libbluray/libbluray.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-0.7.0.jar

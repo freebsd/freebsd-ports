@@ -6,8 +6,7 @@ PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+		LOCAL/miwi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of C modules potentially useful to any project
@@ -21,5 +20,8 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -Ee 's,"g?cc","${CC}",' \
 		${WRKSRC}/mktool.c
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmba.so
 
 .include <bsd.port.mk>

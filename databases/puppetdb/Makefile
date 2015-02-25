@@ -8,7 +8,7 @@ MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 MAINTAINER=	xaque208@gmail.com
 COMMENT=	PuppetDB storeconfigs backend
 
-RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		puppet>=0:${PORTSDIR}/sysutils/puppet
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake

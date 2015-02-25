@@ -3,7 +3,7 @@
 
 PORTNAME=	entangle
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 

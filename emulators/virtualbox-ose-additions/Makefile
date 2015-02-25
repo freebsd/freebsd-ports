@@ -106,7 +106,8 @@ KMK_ARCH=	freebsd.${ARCH}
 
 .if ${COMPILER_TYPE} == clang
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Config.kmk \
-		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk
+		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk \
+		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-x11include-xorg-server-1.17.1-compiler.h
 .if ${COMPILER_FEATURES:Mlibc++}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
 .endif

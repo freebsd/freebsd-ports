@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stfl
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/
 

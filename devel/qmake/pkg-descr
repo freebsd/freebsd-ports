@@ -1,8 +1,8 @@
-Qt is a C++ toolkit for application development.  It lets application
+Qt 3 is a C++ toolkit for application development.  It lets application
 developers target all major operating systems with a single application
 source code.
 
-Qmake is a project and makefile creating utility, that is part of Qt.
+Qmake is a project and makefile creating utility, that is part of Qt 3.
 For ease of maintenance it is split out into a port of its own.
 
-WWW: http://www.trolltech.com/products/qt/index.html
+WWW: http://doc.qt.digia.com/3.3/index.html

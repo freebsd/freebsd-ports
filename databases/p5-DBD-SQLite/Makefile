@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-DBI>=1.57:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
 USE_PERL5=	configure
 

@@ -3,5 +3,5 @@ on running processes and system utilization (CPU, memory) in a portable
 way by using Python, implementing many functionalities offered by tools
 like ps, top and Windows task manager. 
 
-WWW: http://code.google.com/p/psutil/
-WWW: http://pypi.python.org/pypi/psutil/
+WWW: https://github.com/giampaolo/psutil
+WWW: https://pypi.python.org/pypi/psutil/

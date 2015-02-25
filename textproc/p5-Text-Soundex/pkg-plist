@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Text/Soundex.pm
+%%SITE_ARCH%%/auto/Text/Soundex/Soundex.so
+%%PERL5_MAN3%%/Text::Soundex.3.gz

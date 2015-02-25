@@ -3,8 +3,7 @@
 #
 
 PORTNAME=	kamailio
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -15,7 +14,8 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USES=		gmake shebangfix readline
@@ -30,11 +30,12 @@ USE_RC_SUBR=	kamailio
 USERS=		kamailio
 GROUPS=		kamailio
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC
-OPTIONS_DEFAULT=	MYSQL RADIUS JABBER TLS
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC PRESENCE
+OPTIONS_DEFAULT=MYSQL RADIUS JABBER TLS PRESENCE
 OPTIONS_SUB=	YES
 
 JITSI_DESC=	VoIP Frontend GUI via Jitsi
+PRESENCE_DESC=	Presence support
 
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
@@ -49,12 +50,14 @@ TLS_USE=		OPENSSL=yes
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
 .endif
 
+DEFAULT_GROUP_INCLUDE=	standard standard-dep
+
 .if ${PORT_OPTIONS:MMYSQL}
-EXTRA_MODULES+=	db_mysql
+EXTRA_GROUPS+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-EXTRA_MODULES+=	db_postgres
+EXTRA_GROUPS+=	postgres
 .endif
 
 .if ${PORT_OPTIONS:MUNIXODBC}
@@ -62,7 +65,7 @@ EXTRA_MODULES+=	db_unixodbc
 .endif
 
 .if ${PORT_OPTIONS:MRADIUS}
-EXTRA_MODULES+=	auth_radius group_radius uri_radius
+EXTRA_GROUPS+=	radius
 .endif
 
 .if ${PORT_OPTIONS:MJABBER}
@@ -73,8 +76,12 @@ EXTRA_MODULES+=	jabber
 EXTRA_MODULES+=	tls
 .endif
 
+.if ${PORT_OPTIONS:MPRESENCE}
+EXTRA_GROUPS+=	presence
+.endif
+
 .if !empty (EXTRA_MODULES)
-MAKE_ARGS=	include_modules="${EXTRA_MODULES}"
+MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE} ${EXTRA_GROUPS}" include_modules="${EXTRA_MODULES}"
 .endif
 
 post-patch:
@@ -120,11 +127,17 @@ post-stage:
 	prefix_route speeddial registrar mtree uid_avp_db \
 	xlog sipt siptrace qos pdb xprint auth_radius \
 	sanity uid_gflags db_text sdpops sipcapture \
-	tsilo nosip rtpengine jsonrpc-s
+	tsilo nosip rtpengine jsonrpc-s \
+        presence presence_conference presence_dialog presence_dialoginfo \
+        presence_mwi \
+        presence_profile presence_reginfo presence_xml pua_bla \
+        pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
+        acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
 .endfor
+
 
 # Strip libraries in lib/kamailio
 	@${ECHO_CMD} "Stripping libraries in ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/"

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Add Catalyst-Style Config To Your Class
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 

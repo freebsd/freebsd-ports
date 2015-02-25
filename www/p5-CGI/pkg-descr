@@ -1,0 +1,15 @@
+This is the continuance of the classic perl CGI module, bundled with Perl until
+Perl 5.22. Development is continuing on p5-CGI and components of it are
+actively splitting to other modules.
+
+The older, everything-in-one-package module is still available in www/p5-CGI.pm.
+
+See also: https://metacpan.org/pod/CGI::Alternatives
+
+CGI.pm is a stable, complete and mature solution for processing and preparing
+HTTP requests and responses. Major features including processing form
+submissions, file uploads, reading and writing cookies, query string generation
+and manipulation, and processing and preparing HTTP headers. Some HTML
+generation utilities are included as well.
+
+WWW: https://metacpan.org/pod/CGI

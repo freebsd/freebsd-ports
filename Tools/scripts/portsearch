@@ -46,8 +46,11 @@ use vars qw/ $key @list %fields %list %opts /;
 my $osrel = `/usr/bin/uname -r`;
 $osrel =~ s/\..+$//s;
 
+my $portsdir = "/usr/ports";
+$portsdir = $ENV{PORTSDIR} if ( defined $ENV{'PORTSDIR'} );
+
 my $VERSION = "1.0";
-my $file = "/usr/ports/INDEX" . ($osrel <= 4 ? "" : "-$osrel");
+my $file = "$portsdir/INDEX" . ($osrel <= 4 ? "" : "-$osrel");
 my $match = 1;
 my $count = 0;
 my $fulldesc = 0;

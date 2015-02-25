@@ -1,9 +1,22 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-daemon
-COMMENT=	Virtual Peer-to-Peer Currency Client
 MASTERDIR=	${.CURDIR}/../bitcoin
-DESCR=		${MASTERDIR}/pkg-descr
+PKGNAMESUFFIX=	-daemon
+
+COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
+
 SLAVE_PORT=	yes
-OPTIONS_EXCLUDE=	GUI QRCODES
+
+OPTIONS_DEFINE=		DEBUG HARDENING TESTS UPNP WALLET
+OPTIONS_DEFAULT=	HARDENING TESTS WALLET
+
+CONFIGURE_ARGS=	--with-daemon \
+		--without-gui \
+		--without-libs \
+		--without-qrencode \
+		--without-utils \
+		--disable-reduce-exports
+
+PLIST_FILES=	bin/bitcoind
+
 .include "${MASTERDIR}/Makefile"

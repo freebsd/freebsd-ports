@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Mo
-PORTVERSION=	0.38
-PORTREVISION=	1
+PORTVERSION=	0.39
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:CARLOS
+MASTER_SITE_SUBDIR=	CPAN:INGY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -25,5 +24,8 @@ TEST_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-patch:
+	@${RM} ${WRKSRC}/ReadMe.pod
 
 .include <bsd.port.mk>

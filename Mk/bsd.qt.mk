@@ -88,7 +88,7 @@ MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodu
 DISTNAME=		${QT_DIST:S,^,qt,:S,$,-opensource-src-${_QT_VERSION},}
 DISTFILES=		${DISTNAME:S,$,${EXTRACT_SUFX},}
 DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
-USE_XZ=			yes
+USES+=			tar:xz
 
 .  if ${.TARGETS:Mmakesum} || ${.TARGETS:Mfetch} && \
 	defined(DISABLE_SIZE) && defined(NO_CHECKSUM)

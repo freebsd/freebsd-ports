@@ -78,6 +78,8 @@ post-patch:
 		'/^install:/s/install-am//' ${WRKSRC}/share/LaTeX/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|)/@PACKAGE@/@PKG_MAJOR@|)|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|luaL_checkint(|(int)luaL_checkinteger(|' ${WRKSRC}/term/lua.trm
 
 .if ${PORT_OPTIONS:MDOCS}
 post-build:

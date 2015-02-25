@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tellico
-PORTVERSION=	2.3.9
-PORTREVISION=	4
+PORTVERSION=	2.3.10
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -20,9 +19,9 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
-		automoc4 qimageblitz libkcddb
+USE_KDE4=	kdelibs kdeprefix libksane pimlibs \
+		automoc4 qimageblitz libkcddb libkcompactdisc
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USES=		cmake gettext shared-mime-info tar:bzip2
+USES=		cmake gettext pkgconfig shared-mime-info tar:bzip2
 
 .include <bsd.port.mk>

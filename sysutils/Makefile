@@ -859,6 +859,7 @@
     SUBDIR += rundeck
     SUBDIR += runit
     SUBDIR += runwhen
+    SUBDIR += s6
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += samefile
@@ -974,6 +975,9 @@
     SUBDIR += tw_cli
     SUBDIR += tzdialog
     SUBDIR += u-boot-beaglebone
+    SUBDIR += u-boot-cubox-hummingboard
+    SUBDIR += u-boot-duovero
+    SUBDIR += u-boot-pandaboard
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-wandboard
     SUBDIR += ua
@@ -1017,6 +1021,7 @@
     SUBDIR += virtualmin
     SUBDIR += vlogger
     SUBDIR += vmdktool
+    SUBDIR += vmtouch
     SUBDIR += vobcopy
     SUBDIR += volman
     SUBDIR += vordog

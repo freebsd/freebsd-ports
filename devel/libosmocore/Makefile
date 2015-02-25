@@ -2,6 +2,7 @@
 
 PORTNAME=	libosmocore
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -14,39 +15,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
-USES=		gmake libtool pkgconfig execinfo
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize autoheader
-AUTOMAKE_ARGS=	--gnu --add-missing --copy
+USES=		alias autoreconf execinfo gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=Makefile.am
+GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
-DOCS_DESC=	Build documentation
-OPTIONS_UNSET=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz
-.endif
+OPTIONS_DEFINE=	DOXYGEN
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
+			dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
-	${CP} ${WRKSRC}/Makefile.am.orig ${WRKSRC}/Makefile.am
-.endif
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in codec core gsm vty
-	${FIND} ${WRKSRC}/doc/${i}/html -not -type d | ${SED} \
-	  's,^${WRKSRC}/doc/${i}/html,${DOCSDIR_REL}/${i}/html,' >> ${TMPPLIST}
-.endfor
-.endif
 
 .include <bsd.port.mk>

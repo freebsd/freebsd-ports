@@ -3,6 +3,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.14
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
@@ -43,7 +44,7 @@ FORTRAN_CONFIGURE_ENV=	F9X=${FC}
 FORTRAN_CONFIGURE_OFF=	--disable-fortran --disable-fortran2003
 FORTRAN_CONFIGURE_ON=	--enable-fortran --enable-fortran2003
 FORTRAN_USES=		fortran
-SZIP_CONFIGURE_ARGS=	--with-szlib=${LOCALBASE}
+SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
 SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
 post-patch:

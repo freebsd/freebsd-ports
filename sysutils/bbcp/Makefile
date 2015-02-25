@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bbcp
-PORTVERSION=	20150113
+PORTVERSION=	20150116
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/bbcp/
 
@@ -10,6 +10,7 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Secure, fast, and IPv6 capable Copy utility
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/src/COPYING.LESSER
 
 USES=		tar:xz
 

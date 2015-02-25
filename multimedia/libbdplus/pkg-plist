@@ -1,0 +1,7 @@
+include/libbdplus/bdplus-version.h
+include/libbdplus/bdplus.h
+lib/libbdplus.a
+lib/libbdplus.so
+lib/libbdplus.so.0
+lib/libbdplus.so.0.1.0
+libdata/pkgconfig/libbdplus.pc

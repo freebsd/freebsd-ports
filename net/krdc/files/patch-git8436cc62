@@ -1,0 +1,317 @@
+--- rdp/rdpview.cpp
++++ rdp/rdpview.cpp
+@@ -146,102 +146,205 @@ bool RdpView::start()
+         }
+     }
+ 
++    // Check the version of FreeRDP so we can use pre-1.1 switches if needed
++    QProcess *xfreeRDPVersionCheck = new QProcess(this);
++    xfreeRDPVersionCheck->start("xfreerdp", QStringList("--version"));
++    xfreeRDPVersionCheck->waitForFinished();
++    QString versionOutput = xfreeRDPVersionCheck->readAllStandardOutput();
++    xfreeRDPVersionCheck->deleteLater();
++
+     m_process = new QProcess(m_container);
+ 
+     QStringList arguments;
+ 
+-    int width, height;
+-    if (m_hostPreferences->width() > 0) {
+-        width = m_hostPreferences->width();
+-        height = m_hostPreferences->height();
+-    } else {
+-        width = this->parentWidget()->size().width();
+-        height = this->parentWidget()->size().height();
+-    }
+-    arguments << "-g" << QString::number(width) + 'x' + QString::number(height);
+-
+-    arguments << "-k" << keymapToXfreerdp(m_hostPreferences->keyboardLayout());
++    if (versionOutput.contains(QLatin1String(" 1.0"))) {
++        kDebug(5012) << "Use FreeRDP 1.0 compatible arguments";
+ 
+-    if (!m_url.userName().isEmpty()) {
+-        // if username contains a domain, it needs to be set with another parameter
+-        if (m_url.userName().contains('\\')) {
+-            const QStringList splittedName = m_url.userName().split('\\');
+-            arguments << "-d" << splittedName.at(0);
+-            arguments << "-u" << splittedName.at(1);
++        int width, height;
++        if (m_hostPreferences->width() > 0) {
++            width = m_hostPreferences->width();
++            height = m_hostPreferences->height();
+         } else {
+-            arguments << "-u" << m_url.userName();
++            width = this->parentWidget()->size().width();
++            height = this->parentWidget()->size().height();
+         }
++        arguments << "-g" << QString::number(width) + 'x' + QString::number(height);
++
++        arguments << "-k" << keymapToXfreerdp(m_hostPreferences->keyboardLayout());
++
++        if (!m_url.userName().isEmpty()) {
++            // if username contains a domain, it needs to be set with another parameter
++            if (m_url.userName().contains('\\')) {
++                const QStringList splittedName = m_url.userName().split('\\');
++                arguments << "-d" << splittedName.at(0);
++                arguments << "-u" << splittedName.at(1);
++            } else {
++                arguments << "-u" << m_url.userName();
++            }
++        } else {
++            arguments << "-u" << "";
++        }
++
++        arguments << "-D";  // request the window has no decorations
++        arguments << "-X" << QString::number(m_container->winId());
++        arguments << "-a" << QString::number((m_hostPreferences->colorDepth() + 1) * 8);
++
++        switch (m_hostPreferences->sound()) {
++        case 1:
++            arguments << "-o";
++            break;
++        case 0:
++            arguments << "--plugin" << "rdpsnd";
++            break;
++        case 2:
++        default:
++            break;
++        }
++
++        if (!m_hostPreferences->shareMedia().isEmpty()) {
++            QStringList shareMedia;
++            shareMedia << "--plugin" << "rdpdr" << "--data" << "disk:media:" + m_hostPreferences->shareMedia() << "--";
++            arguments += shareMedia;
++        }
++
++        QString performance;
++        switch (m_hostPreferences->performance()) {
++        case 0:
++            performance = 'm';
++            break;
++        case 1:
++            performance = 'b';
++            break;
++        case 2:
++            performance = 'l';
++            break;
++        default:
++            break;
++        }
++
++        arguments << "-x" << performance;
++
++        if (m_hostPreferences->console()) {
++            arguments << "-0";
++        }
++
++        if (m_hostPreferences->remoteFX()) {
++            arguments << "--rfx";
++        }
++
++        if (!m_hostPreferences->extraOptions().isEmpty()) {
++            const QStringList additionalArguments = KShell::splitArgs(m_hostPreferences->extraOptions());
++            arguments += additionalArguments;
++        }
++
++        // krdc has no support for certificate management yet; it would not be possbile to connect to any host:
++        // "The host key for example.com has changed" ...
++        // "Add correct host key in ~/.freerdp/known_hosts to get rid of this message."
++        arguments << "--ignore-certificate";
++
++        // clipboard sharing is activated in KRDC; user can disable it at runtime
++        arguments << "--plugin" << "cliprdr";
++
++        arguments << "-t" << QString::number(m_port);
++        arguments << m_host;
++
++        kDebug(5012) << "Starting xfreerdp with arguments: " << arguments.join(" ");
++
++        arguments.removeLast(); // host must be last, remove and re-add it after the password
++        if (!m_url.password().isNull())
++            arguments << "-p" << m_url.password();
++        arguments << m_host;
++
+     } else {
+-        arguments << "-u" << "";
+-    }
++        kDebug(5012) << "Use FreeRDP 1.1+ compatible arguments";
+ 
+-    if (!m_url.password().isNull())
+-        arguments << "-p" << m_url.password();
+-
+-    arguments << "-D";  // request the window has no decorations
+-    arguments << "-X" << QString::number(m_container->winId());
+-    arguments << "-a" << QString::number((m_hostPreferences->colorDepth() + 1) * 8);
+-
+-    switch (m_hostPreferences->sound()) {
+-    case 1:
+-        arguments << "-o";
+-        break;
+-    case 0:
+-        arguments << "--plugin" << "rdpsnd";
+-        break;
+-    case 2:
+-    default:
+-        break;
+-    }
++        int width, height;
++        if (m_hostPreferences->width() > 0) {
++            width = m_hostPreferences->width();
++            height = m_hostPreferences->height();
++        } else {
++            width = this->parentWidget()->size().width();
++            height = this->parentWidget()->size().height();
++        }
++        arguments << "-decorations";
++        arguments << "/w:" + QString::number(width);
++        arguments << "/h:" + QString::number(height);
++
++        arguments << "/kbd:" + keymapToXfreerdp(m_hostPreferences->keyboardLayout());
++
++        if (!m_url.userName().isEmpty()) {
++            // if username contains a domain, it needs to be set with another parameter
++            if (m_url.userName().contains('\\')) {
++                const QStringList splittedName = m_url.userName().split('\\');
++                arguments << "/d:" + splittedName.at(0);
++                arguments << "/u:" + splittedName.at(1);
++            } else {
++                arguments << "/u:" + m_url.userName();
++            }
++        } else {
++            arguments << "/u:";
++        }
+ 
+-    if (!m_hostPreferences->shareMedia().isEmpty()) {
+-        QStringList shareMedia;
+-        shareMedia << "--plugin" << "rdpdr" << "--data" << "disk:media:" + m_hostPreferences->shareMedia() << "--";
+-        arguments += shareMedia;
+-    }
++        arguments << "/parent-window:" + QString::number(m_container->winId());
++        arguments << "/bpp:" + QString::number((m_hostPreferences->colorDepth() + 1) * 8);
++        arguments << "/audio-mode:" + QString::number(m_hostPreferences->sound());
+ 
+-    QString performance;
+-    switch (m_hostPreferences->performance()) {
+-    case 0:
+-        performance = 'm';
+-        break;
+-    case 1:
+-        performance = 'b';
+-        break;
+-    case 2:
+-        performance = 'l';
+-        break;
+-    default:
+-        break;
+-    }
++        if (!m_hostPreferences->shareMedia().isEmpty()) {
++            QStringList shareMedia;
++            shareMedia << "/drive:media," + m_hostPreferences->shareMedia();
++            arguments += shareMedia;
++        }
+ 
+-    arguments << "-x" << performance;
++        QString performance;
++        switch (m_hostPreferences->performance()) {
++        case 0:
++            performance = "modem";
++            break;
++        case 1:
++            performance = "broadband";
++            break;
++        case 2:
++            performance = "lan";
++            break;
++        default:
++            break;
++        }
+ 
+-    if (m_hostPreferences->console()) {
+-        arguments << "-0";
+-    }
++        arguments << "/network:" + performance;
+ 
+-    if (m_hostPreferences->remoteFX()) {
+-        arguments << "--rfx";
+-    }
++        if (m_hostPreferences->console()) {
++            arguments << "/admin";
++        }
+ 
+-    if (!m_hostPreferences->extraOptions().isEmpty()) {
+-        const QStringList additionalArguments = KShell::splitArgs(m_hostPreferences->extraOptions());
+-        arguments += additionalArguments;
+-    }
++        if (m_hostPreferences->remoteFX()) {
++            arguments << "/rfx";
++        }
++
++        if (!m_hostPreferences->extraOptions().isEmpty()) {
++            const QStringList additionalArguments = KShell::splitArgs(m_hostPreferences->extraOptions());
++            arguments += additionalArguments;
++        }
++
++        // krdc has no support for certificate management yet; it would not be possbile to connect to any host:
++        // "The host key for example.com has changed" ...
++        // "Add correct host key in ~/.freerdp/known_hosts to get rid of this message."
++        arguments << "/cert-ignore";
++
++        // clipboard sharing is activated in KRDC; user can disable it at runtime
++        arguments << "+clipboard";
+ 
+-    // krdc has no support for certificate management yet; it would not be possbile to connect to any host:
+-    // "The host key for example.com has changed" ...
+-    // "Add correct host key in ~/.freerdp/known_hosts to get rid of this message."
+-    arguments << "--ignore-certificate";
++        arguments << "/port:" + QString::number(m_port);
++        arguments << "/v:" + m_host;
+ 
+-    // clipboard sharing is activated in KRDC; user can disable it at runtime
+-    arguments << "--plugin" << "cliprdr";
++        kDebug(5012) << "Starting xfreerdp with arguments: " << arguments.join(" ");
+ 
+-    arguments << "-t" << QString::number(m_port);
+-    arguments << m_host;
++        //avoid printing the password in debug
++        if (!m_url.password().isNull()) {
++            arguments << "/p:" + m_url.password();
++        }
++        kDebug(5012) << "Starting xfreerdp with arguments: " << arguments.join(" ");
+ 
+-    kDebug(5012) << "Starting xfreerdp with arguments:" << arguments;
++    }
+ 
+     setStatus(Connecting);
+ 
+@@ -302,7 +405,7 @@ void RdpView::connectionError()
+ 
+ void RdpView::processError(QProcess::ProcessError error)
+ {
+-    kDebug(5012) << "processError:" << error;
++    kDebug(5012) << error;
+     if (m_quitFlag) // do not try to show error messages while quitting (prevent crashes)
+         return;
+ 
+@@ -319,11 +422,11 @@ void RdpView::processError(QProcess::ProcessError error)
+ void RdpView::receivedStandardError()
+ {
+     const QString output(m_process->readAllStandardError());
+-    kDebug(5012) << "receivedStandardError:" << output;
++    kDebug(5012) << output;
+     QString line;
+     int i = 0;
+     while (!(line = output.section('\n', i, i)).isEmpty()) {
+-        
++
+         // the following error is issued by freerdp because of a bug in freerdp 1.0.1 and below;
+         // see: https://github.com/FreeRDP/FreeRDP/pull/576
+         //"X Error of failed request:  BadWindow (invalid Window parameter)
+@@ -345,7 +448,7 @@ void RdpView::receivedStandardError()
+ void RdpView::receivedStandardOutput()
+ {
+     const QString output(m_process->readAllStandardOutput());
+-    kDebug(5012) << "receivedStandardOutput:" << output;
++    kDebug(5012) << output;
+     QString line;
+     int i = 0;
+     while (!(line = output.section('\n', i, i)).isEmpty()) {

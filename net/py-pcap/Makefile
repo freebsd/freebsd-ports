@@ -12,10 +12,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_pcapmodule.so
 
 .include <bsd.port.mk>

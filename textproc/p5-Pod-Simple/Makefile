@@ -14,7 +14,7 @@ COMMENT=	Framework for parsing Pod
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PORTSCOUT=	skipv:31337-0.02
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		perl5
 USE_PERL5=	configure

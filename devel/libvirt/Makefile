@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -18,11 +19,12 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libssh2.so:${PORTSDIR}/security/libssh2
 BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
-RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
+RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
+		dmidecode:${PORTSDIR}/sysutils/dmidecode
 
 OPTIONS_DEFINE=	DOCS NLS QEMU SASL
-OPTIONS_DEFINE_amd64=	BHYVE
 .if exists(/usr/sbin/bhyve)
+OPTIONS_DEFINE_amd64=	BHYVE
 OPTIONS_DEFAULT_amd64=	BHYVE
 .endif
 QEMU_DESC=	QEMU driver
@@ -35,8 +37,6 @@ QEMU_CFLAGS=	-I${LOCALBASE}/include
 QEMU_LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
 QEMU_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 			qemu-io:${PORTSDIR}/emulators/qemu-devel
-
-BHYVE_CONFIGURE_WITH=	bhyve
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -82,13 +82,15 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-#work around an options bug (thanks mat@)
-.if ${ARCH} != amd64
-PLIST_SUB+=	BHYVE="@comment "
+.if (exists(/usr/sbin/bhyve) && ${OSVERSION} >= 100051)
+CONFIGURE_ARGS+=	--with-bhyve
+.else
+CONFIGURE_ARGS+=	--without-bhyve
 .endif
 
 .if ${PORT_OPTIONS:MBHYVE}
-STRIP_FILES+=	libvirt/connection-driver/libvirt_driver_bhyve.so
+STRIP_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
+PLIST_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 .endif
 
 post-patch:
@@ -118,6 +120,12 @@ post-install:
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+.if ${PORT_OPTIONS:MBHYVE}
+.for strip in ${STRIP_FILES}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${strip}
+.endfor
+.endif
 
 .for dir in run/libvirt/network \
 	run/libvirt/qemu \

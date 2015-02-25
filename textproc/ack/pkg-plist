@@ -4,8 +4,8 @@ bin/ack
 %%SITE_PERL%%/App/Ack/ConfigFinder.pm
 %%SITE_PERL%%/App/Ack/ConfigLoader.pm
 %%SITE_PERL%%/App/Ack/Filter.pm
-%%SITE_PERL%%/App/Ack/Filter/Default.pm
 %%SITE_PERL%%/App/Ack/Filter/Collection.pm
+%%SITE_PERL%%/App/Ack/Filter/Default.pm
 %%SITE_PERL%%/App/Ack/Filter/Extension.pm
 %%SITE_PERL%%/App/Ack/Filter/ExtensionGroup.pm
 %%SITE_PERL%%/App/Ack/Filter/FirstLineMatch.pm

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Inline-C
-PORTVERSION=	0.73
+PORTVERSION=	0.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=7.00:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
-		p5-Inline>=0.78:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline>=0.79:${PORTSDIR}/devel/p5-Inline \
 		p5-Parse-RecDescent>=1.967.009:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Pegex>=0.58:${PORTSDIR}/devel/p5-Pegex
 RUN_DEPENDS:=	${BUILD_DEPENDS}

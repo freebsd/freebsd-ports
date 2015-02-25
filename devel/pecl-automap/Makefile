@@ -6,7 +6,6 @@ PORTVERSION=	2.1.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +13,17 @@ COMMENT=	PECL extension offering a fast map-based autoloader
 
 LICENSE=	PHP301
 
+USES=		tar:tgz
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	automap
+DEFAULT_VERSIONS+=	php=55
 IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS=	--enable-automap
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>

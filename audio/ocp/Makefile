@@ -41,16 +41,6 @@ INFO=		ocp
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
-PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
-		cpiface/cpiface.c cpiface/cpigraph.c cpiface/cpiinst.c \
-		cpiface/cpikube.c cpiface/cpilinks.c cpiface/cpimsg.c \
-		cpiface/cpiphase.c cpiface/cpiscope.c cpiface/cpitrack.c \
-		cpiface/mcpedit.c cpiface/volctrl.c filesel/cphlpfs.c \
-		filesel/pfilesel.c filesel/pfilesel.c.bak help/cphelper.c \
-		medialib/medialib.c playcda/cdapplay.c stuff/poutput-curses.c \
-		stuff/poutput-dga.c stuff/poutput-keyboard.c \
-		stuff/poutput-vcsa.c stuff/poutput-x11.c
-
 OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL DOCS
 
 ADPLUG_DESC=	adplug support

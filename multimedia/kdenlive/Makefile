@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmlt.so:${PORTSDIR}/multimedia/mlt \
 		libqjson.so:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix nepomuk-core
+USE_KDE4=	automoc4 kdelibs kdeprefix nepomuk-core
 USE_QT4=	corelib dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11

@@ -33,16 +33,13 @@ bash_CMD=	${SH}
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-unused-private-field -Wno-unused-variable
+CXXFLAGS+=	-Wno-nested-anon-types -Wno-unused-function -Wno-unused-private-field -Wno-unused-variable
 MAKE_ARGS+=	clang=on
 MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
-.if ${COMPILER_VERSION} >= 33
-CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .if ${COMPILER_VERSION} >= 34
-CFLAGS+=	-Wno-unused-const-variable
+CXXFLAGS+=	-Wno-unused-const-variable
 .if ${COMPILER_VERSION} >= 35
-CFLAGS+=	-Wno-tautological-undefined-compare
-.endif
+CXXFLAGS+=	-Wno-tautological-undefined-compare
 .endif
 .endif
 .else

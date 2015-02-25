@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.3
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -22,24 +21,21 @@ OPTIONS_DEFAULT=DAP SZIP
 DAP_DESC=	Build DAP client and remote testing
 SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 
-CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -fPIC -DPIC
-CMAKE_ARGS=	-DHDF5_INCLUDE_DIRS=${LOCALBASE} -DUSE_HDF5=ON -DZLIB_INCLUDE_DIRS=/usr
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-netcdf-4
+CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -fPIC -DPIC
+GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		cmake pathfix
+USES=		libtool pathfix
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-DAP_CMAKE_OFF=		-DENABLE_DAP=OFF -DENABLE_DAP_REMOTE_TESTS=OFF
-DAP_CMAKE_ON=		-DCURL_INCLUDE_DIRS=${LOCALBASE} -DENABLE_DAP=ON
+DAP_CONFIGURE_OFF=	--disable-dap
+DAP_CONFIGURE_ON=	--enable-dap
 DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN=OFF
-DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN=ON
-SZIP_CMAKE_OFF=		-DUSE_SZIP=OFF
-SZIP_CMAKE_ON=		-DSZIP_DIR=${LOCALBASE} -DSZIP_INCLUDE_DIRS=${LOCALBASE} -DUSE_SZIP=ON
-SZIP_LDFLAGS=		-lsz
+DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
+DOXYGEN_CONFIGURE_ON=	--enable-doxygen
 SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
+SZIP_LIBS=		-lsz
 
 .include <bsd.port.options.mk>
 
@@ -48,19 +44,18 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/man4/d; s|share/cmake|&/Modules|; s|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/libsrc/CMakeLists.txt ${WRKSRC}/ncdump/CMakeLists.txt ${WRKSRC}/ncgen/CMakeLists.txt ${WRKSRC}/ncgen3/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|-ldl ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|mmap|_&|g' ${WRKSRC}/nc_test/tst_diskless.c ${WRKSRC}/nc_test/tst_diskless3.c
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${WRKSRC}/man4 && ${LOCALBASE}/bin/doxygen .
+	cd ${WRKSRC}/docs/ && ${LOCALBASE}/bin/doxygen .
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/man4/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 regression-test test: build

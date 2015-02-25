@@ -18,7 +18,7 @@ PLIST_FILES=	lib/libeatmydata.so \
 		lib/libeatmydata.so.1.0
 
 post-patch:
-	${SED} -i '' -e 's/gcc/${CC}/' ${WRKSRC}/Makefile
+	${SED} -i '' -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib

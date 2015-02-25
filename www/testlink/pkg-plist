@@ -51,6 +51,7 @@
 %%WWWDIR%%/gui/templates/attachment404.tpl
 %%WWWDIR%%/gui/templates/attachmentdelete.tpl
 %%WWWDIR%%/gui/templates/attachments.inc.tpl
+%%WWWDIR%%/gui/templates/attachments_simple.inc.tpl
 %%WWWDIR%%/gui/templates/attachmentupload.tpl
 %%WWWDIR%%/gui/templates/cfields/cfieldsEdit.tpl
 %%WWWDIR%%/gui/templates/cfields/cfieldsExport.tpl
@@ -141,6 +142,7 @@
 %%WWWDIR%%/gui/templates/plan/planUrgency.tpl
 %%WWWDIR%%/gui/templates/plan/planView.tpl
 %%WWWDIR%%/gui/templates/plan/tc_exec_assignment.tpl
+%%WWWDIR%%/gui/templates/plan/tc_exec_assignment_flat.tpl
 %%WWWDIR%%/gui/templates/plan/tc_exec_unassign_all.tpl
 %%WWWDIR%%/gui/templates/platforms/platformsAssign.tpl
 %%WWWDIR%%/gui/templates/platforms/platformsEdit.tpl
@@ -201,6 +203,7 @@
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUser.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserGUI.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProject.tpl
+%%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProjectGUI.inc.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProjectGUI.tpl
 %%WWWDIR%%/gui/templates/results/tcNotRunAnyPlatform.tpl
 %%WWWDIR%%/gui/templates/results/testCasesWithCF.tpl
@@ -226,6 +229,8 @@
 %%WWWDIR%%/gui/templates/testcases/inc_tcbody.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_testsuite_viewer_ro.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_testsuite_viewer_rw.tpl
+%%WWWDIR%%/gui/templates/testcases/keywords.inc.tpl
+%%WWWDIR%%/gui/templates/testcases/quickexec.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/relations.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssign2Tplan.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssignedToUser.tpl
@@ -241,6 +246,7 @@
 %%WWWDIR%%/gui/templates/testcases/tcNew.tpl
 %%WWWDIR%%/gui/templates/testcases/tcReorder.tpl
 %%WWWDIR%%/gui/templates/testcases/tcSearchForm.tpl
+%%WWWDIR%%/gui/templates/testcases/tcSearchGUI.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/tcSearchResults.tpl
 %%WWWDIR%%/gui/templates/testcases/tcStepEdit.tpl
 %%WWWDIR%%/gui/templates/testcases/tcStepEditViewer.tpl
@@ -257,18 +263,6 @@
 %%WWWDIR%%/gui/templates/usermanagement/usersExport.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
-%%WWWDIR%%/gui/templates_c/0cecaa10af154fb91999d67b31ee1bd62670b449.file.inc_head.tpl.php
-%%WWWDIR%%/gui/templates_c/40700b087f1ffdbb79cb9922409b600c3e1d9bd5.file.login.tpl.php
-%%WWWDIR%%/gui/templates_c/4c9d7916023aae15dbf8c63a2b2d9a5752c59914.file.inc_jsCheckboxes.tpl.php
-%%WWWDIR%%/gui/templates_c/577de20af52bc50c0a7c7a26a4c46102a65d664e.file.inc_ext_js.tpl.php
-%%WWWDIR%%/gui/templates_c/88b6975c3d9979d01b0505771a86528f54906501.file.printDocOptions.tpl.php
-%%WWWDIR%%/gui/templates_c/8aebd5f95c4acaab3bf5e2e742933e13e93cced6.file.inc_jsCfieldsValidation.tpl.php
-%%WWWDIR%%/gui/templates_c/901775a80a539bbb238096b3626f5c0ca3148cba.file.eventviewer.tpl.php
-%%WWWDIR%%/gui/templates_c/cd15736a07867613ddfa27e2c5ac6d92b2cb884e.file.inc_login_title.tpl.php
-%%WWWDIR%%/gui/templates_c/d20d47d42e124c1d75750b7d0f12012f62aea0ec.file.inc_msg_from_array.tpl.php
-%%WWWDIR%%/gui/templates_c/d432c01e2e89e428cc05699aa561ac9116027027.input_dimensions.conf.config.php
-%%WWWDIR%%/gui/templates_c/e2b424f6f71d280f53be6aab5b0046985c6c0abf.file.inc_copyrightnotice.tpl.php
-%%WWWDIR%%/gui/templates_c/ff1b66806d4145964c03afc0eeb2e672352d9bee.file.inc_ext_table.tpl.php
 %%WWWDIR%%/gui/themes/default/css/custom.css.example
 %%WWWDIR%%/gui/themes/default/css/testlink.css
 %%WWWDIR%%/gui/themes/default/css/tl_documents.css
@@ -509,6 +503,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/mssql/DB.1.9.13/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/mssql/DB.1.9.13/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/mysql/DB.1.9.13/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/mysql/DB.1.9.13/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/postgres/DB.1.9.13/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.13/postgres/DB.1.9.13/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
@@ -580,6 +580,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/perl/clientGetProjects.pl
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/README.TXT
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddPlatformToTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddTestCaseKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddTestCaseToTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAssignRequirements.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAssignTestCaseExecutionTask.php
@@ -587,6 +588,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateBuild.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateNTestCases.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreatePlatform.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateScenario.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCaseSteps.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestPlan.php
@@ -600,6 +602,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetFirstLevelTestSuitesForTestProject.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetFullPath.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetLastExecutionResult.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectPlatforms.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectTestPlans.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjects.php
@@ -609,6 +612,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseBugs.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseIDByName.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestSuite.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesIDByName.php
@@ -621,6 +625,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetUserByID.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetUserByLogin.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemovePlatformFromTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemoveTestCaseKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResult.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultForcingTester.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITE.php
@@ -630,6 +635,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetupTicket-5451.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestLinkVersion.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUnassignTestCaseExecutionTask.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUploadTestCaseAttachment.php
@@ -773,10 +779,17 @@
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/gforge/test.gforgesoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/db/test.jiradbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/create.sh
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/createWithPriority.sh
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/createWithPriorityByName.sh
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/create_debug.txt
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/issue.json
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/issueWithPriority.json
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/curl/issueWithPriorityByName.json
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/jiraOnDemandCfg.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.addIssueComment.jiraOnDemand.jirarestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.createIssue.jiraOnDemand.jirarestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.getIssue.jiraOnDemand.jirarestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/rest/test.getMetaData.jiraOnDemand.jirarestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/config_string_jira_on_demand_full.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/config_string_jira_on_demand_mini.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/jiraOnDemandCfg.xml
@@ -1003,6 +1016,33 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/lostPassword.php
+%%WWWDIR%%/third_party/DataTables-1.10.4/Contributing.md
+%%WWWDIR%%/third_party/DataTables-1.10.4/Readme.md
+%%WWWDIR%%/third_party/DataTables-1.10.4/bower.json
+%%WWWDIR%%/third_party/DataTables-1.10.4/composer.json
+%%WWWDIR%%/third_party/DataTables-1.10.4/dataTables.jquery.json
+%%WWWDIR%%/third_party/DataTables-1.10.4/license.txt
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/css/jquery.dataTables.TestLink.css
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/css/jquery.dataTables.css
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/css/jquery.dataTables.min.css
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/css/jquery.dataTables_themeroller.css
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/Sorting icons.psd
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/back_disabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/back_enabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/back_enabled_hover.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/favicon.ico
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/forward_disabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/forward_enabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/forward_enabled_hover.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/sort_asc.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/sort_asc_disabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/sort_both.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/sort_desc.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/images/sort_desc_disabled.png
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/js/jquery.dataTables.js
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/js/jquery.dataTables.min.js
+%%WWWDIR%%/third_party/DataTables-1.10.4/media/js/jquery.js
+%%WWWDIR%%/third_party/DataTables-1.10.4/package.json
 %%WWWDIR%%/third_party/Slim/Environment.php
 %%WWWDIR%%/third_party/Slim/Exception/Pass.php
 %%WWWDIR%%/third_party/Slim/Exception/Stop.php
@@ -4939,6 +4979,7 @@
 %%WWWDIR%%/third_party/youtrackclient/test/YouTrackIssueTest.php
 %%WWWDIR%%/third_party/youtrackclient/test/issue.xml
 %%WWWDIR%%/third_party/youtrackclient/test/requirements.php
+@dir %%WWWDIR%%/gui/templates_c
 @dir %%WWWDIR%%/logs
 @dir %%WWWDIR%%/upload_area
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%

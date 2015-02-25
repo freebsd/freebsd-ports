@@ -10,6 +10,7 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	High-performance datastructures and utilities for C++
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
 

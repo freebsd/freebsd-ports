@@ -46,7 +46,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/${locale}/FoxitReader.mo ${STAGEDIR}${PREFIX}/share/locale/${locale}/LC_MESSAGES/
 .endfor
 .endif
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

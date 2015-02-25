@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Net/CLI/Interact/Role/Prompt.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Base.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Loopback.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Net_OpenSSH.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Unix.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Win32.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Role/ConnectCore.pm
@@ -49,6 +50,7 @@
 %%PERL5_MAN3%%/Net::CLI::Interact::Role::Prompt.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Base.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Loopback.3.gz
+%%PERL5_MAN3%%/Net::CLI::Interact::Transport::Net_OpenSSH.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::SSH.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Serial.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Telnet.3.gz

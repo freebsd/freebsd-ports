@@ -14,7 +14,7 @@ COMMENT=	Helpful CLI utilities for querying and connecting to EC2 instances
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:${PORTSDIR}/devel/py-boto \
-		bash>=0:${PORTSDIR}/shells/bash
+		bash:${PORTSDIR}/shells/bash
 
 USE_PYTHON=	distutils autoplist
 USES=		python shebangfix

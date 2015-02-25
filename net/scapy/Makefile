@@ -32,7 +32,7 @@ PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/securi
 PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
 GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick \
 			${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
-P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
+P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:${PORTSDIR}/net-mgmt/p0f
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:${PORTSDIR}/net/queso
 NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:${PORTSDIR}/security/nmap
 MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:${PORTSDIR}/net/wireshark

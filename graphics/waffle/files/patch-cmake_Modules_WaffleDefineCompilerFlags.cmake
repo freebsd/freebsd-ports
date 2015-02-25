@@ -1,6 +1,6 @@
---- cmake/Modules/WaffleDefineCompilerFlags.cmake.orig	2014-12-09 22:33:50.000000000 +0100
-+++ cmake/Modules/WaffleDefineCompilerFlags.cmake	2015-01-02 15:29:36.754344546 +0100
-@@ -50,7 +50,7 @@
+--- cmake/Modules/WaffleDefineCompilerFlags.cmake.orig	2015-01-22 20:00:17 UTC
++++ cmake/Modules/WaffleDefineCompilerFlags.cmake
+@@ -50,7 +50,7 @@ if (NOT MSVC)
      waffle_add_c_flag("-Werror=int-conversion" WERROR_INT_CONVERSION)
      waffle_add_c_flag("-fvisibility=hidden" WITH_VISIBILITY_HIDDEN)
  
@@ -9,7 +9,7 @@
          # On MacOS, the SSE2 headers trigger this error.
          waffle_add_c_flag("-Werror=missing-prototypes" WERROR_MISSING_PROTOTYPES)
      endif()
-@@ -97,7 +97,7 @@
+@@ -97,7 +97,7 @@ if(waffle_on_mac)
      add_definitions(-DWAFFLE_HAS_CGL)
  endif()
  

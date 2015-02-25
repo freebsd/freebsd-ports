@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 PORTREVISION=	4
 CATEGORIES=	graphics devel
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color Transformation Language interpreter
 
 LICENSE=	AMPAS

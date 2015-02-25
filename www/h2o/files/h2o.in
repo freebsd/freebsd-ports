@@ -33,7 +33,7 @@ rcvar=h2o_enable
 h2o_pidfile="%%H2O_PIDDIR%%${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args=" -f -c -r -p ${h2o_pidfile} ${procname} ${h2o_options}"
+command_args=" -f -c -p ${h2o_pidfile} ${procname} ${h2o_options}"
 start_precmd="h2o_precmd"
 
 h2o_precmd()

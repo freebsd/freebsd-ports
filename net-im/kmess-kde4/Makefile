@@ -15,7 +15,7 @@ LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdehier kdeprefix kdelibs libkonq automoc4
+USE_KDE4=	kdeprefix kdelibs libkonq automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USES=		cmake gettext tar:bzip2
 

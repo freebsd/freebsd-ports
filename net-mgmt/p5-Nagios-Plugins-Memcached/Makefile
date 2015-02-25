@@ -11,17 +11,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to check memcached via nagios
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-BUILD_DEPENDS+=	p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
+BUILD_DEPENDS=	p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
 		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTDOCS=	Changes README
 
 OPTIONS_DEFINE=	DOCS
+
+SHEBANG_FILES=	bin/check_memcached
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

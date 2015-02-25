@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	vde2-[0-9]*
 
@@ -19,5 +20,8 @@ USE_CSTD=	gnu89
 USES=		gmake tar:tgz
 
 CFLAGS+=	-fPIC
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvdetap.so
 
 .include <bsd.port.mk>

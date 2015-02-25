@@ -416,6 +416,7 @@
     SUBDIR += p5-MR-Tarantool
     SUBDIR += p5-Memcached-libmemcached
     SUBDIR += p5-Metadata
+    SUBDIR += p5-Mojo-Pg
     SUBDIR += p5-MongoDB
     SUBDIR += p5-MySQL-Diff
     SUBDIR += p5-Net-Async-CassandraCQL
@@ -931,6 +932,7 @@
     SUBDIR += useracc
     SUBDIR += usogres
     SUBDIR += vfront
+    SUBDIR += virtualpg
     SUBDIR += virtuoso
     SUBDIR += vsqlite
     SUBDIR += wfb2sql

@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 USES=		bison libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

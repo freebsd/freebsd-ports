@@ -676,6 +676,7 @@
     SUBDIR += hs-ReadArgs
     SUBDIR += hs-STMonadTrans
     SUBDIR += hs-SafeSemaphore
+    SUBDIR += hs-ShellCheck
     SUBDIR += hs-Stream
     SUBDIR += hs-TypeCompose
     SUBDIR += hs-abstract-deque
@@ -1111,6 +1112,7 @@
     SUBDIR += liborcus07
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
+    SUBDIR += libosmo-netif
     SUBDIR += libosmo-sccp
     SUBDIR += libosmocore
     SUBDIR += libowfat
@@ -2285,6 +2287,7 @@
     SUBDIR += p5-JQuery
     SUBDIR += p5-JSON-Hyper
     SUBDIR += p5-JSON-Path
+    SUBDIR += p5-JSON-Pointer
     SUBDIR += p5-JSON-RPC
     SUBDIR += p5-JSON-RPC-Common
     SUBDIR += p5-JSON-RPC-Dispatcher
@@ -2387,6 +2390,8 @@
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
+    SUBDIR += p5-Module-Build-Pluggable
+    SUBDIR += p5-Module-Build-Pluggable-ReadmeMarkdownFromPod
     SUBDIR += p5-Module-Build-Tiny
     SUBDIR += p5-Module-Build-XSUtil
     SUBDIR += p5-Module-CPANTS-Analyse
@@ -2883,6 +2888,7 @@
     SUBDIR += p5-TAP-SimpleOutput
     SUBDIR += p5-Taint-Runtime
     SUBDIR += p5-Taint-Util
+    SUBDIR += p5-Task-Tiny
     SUBDIR += p5-Task-Weaken
     SUBDIR += p5-Tee
     SUBDIR += p5-Template-Provider-Encode
@@ -2953,6 +2959,7 @@
     SUBDIR += p5-Test-Exception-LessClever
     SUBDIR += p5-Test-Expect
     SUBDIR += p5-Test-FailWarnings
+    SUBDIR += p5-Test-Fake-HTTPD
     SUBDIR += p5-Test-Fatal
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
@@ -3541,6 +3548,7 @@
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phptags
+    SUBDIR += phpunit
     SUBDIR += physfs
     SUBDIR += physfs-devel
     SUBDIR += picp

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Nmsg
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	net perl5
 MASTER_SITES=	https://tools.netsa.cert.org/confluence/download/attachments/12320770/ \
 		CPAN

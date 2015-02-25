@@ -34,7 +34,7 @@ include/mpd/version.h
 lib/libmpdclient.a
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.0.9
+lib/libmpdclient.so.2.0.10
 libdata/pkgconfig/libmpdclient.pc
 share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
