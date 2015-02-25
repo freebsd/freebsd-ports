@@ -65,7 +65,7 @@ ALL_TARGET=	core tools
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's/\["-O3"\]/"${CFLAGS}"/' \
+	@${REINPLACE_CMD} 's/\["-O3"\]/"${CXXFLAGS}"/' \
 		${WRKSRC}/SConstruct
 
 .if ${PORT_OPTIONS:MTEST}
