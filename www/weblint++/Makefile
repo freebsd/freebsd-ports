@@ -3,7 +3,7 @@
 
 PORTNAME=	weblint++
 PORTVERSION=	1.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BDFOY
@@ -19,13 +19,13 @@ BUILD_DEPENDS=	p5-ConfigReader-Simple>=1.15:${PORTSDIR}/devel/p5-ConfigReader-Si
 		p5-HTTP-SimpleLinkChecker>0:${PORTSDIR}/www/p5-HTTP-SimpleLinkChecker \
 		p5-HTTP-Size>=0.04:${PORTSDIR}/www/p5-HTTP-Size \
 		p5-Mail-Sendmail>0:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		p5-Test-Manifest>0.91:${PORTSDIR}/devel/p5-Test-Manifest \
-		p5-Test-Pod>=0.90:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Text-Diff>0:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-Text-Template>0:${PORTSDIR}/textproc/p5-Text-Template \
-		p5-Test-File>0:${PORTSDIR}/devel/p5-Test-File \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Manifest>0.91:${PORTSDIR}/devel/p5-Test-Manifest \
+		p5-Test-Pod>=0.90:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-File>0:${PORTSDIR}/devel/p5-Test-File
 
 USES=		perl5
 USE_PERL5=	configure
