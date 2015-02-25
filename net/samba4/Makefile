@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	samba/stable samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
 
 MAINTAINER?=		timur@FreeBSD.org
-COMMENT?=		A free SMB/CIFS and AD/DC server and client for UNIX
+COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
@@ -18,7 +18,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba41-4.1.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.0.23
+SAMBA4_VERSION=		4.0.25
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -64,7 +64,8 @@ DESTDIRNAME=		--destdir
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USES=			shebangfix compiler perl5 python:2 pkgconfig iconv readline execinfo cpe
+USES=			compiler cpe execinfo iconv perl5 pkgconfig \
+			python:2 readline shebangfix
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf
@@ -72,7 +73,8 @@ CONFIGURE_LOG=		bin/config.log
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
-# XXX: Unconditional dependencies which can't be switched off(if present in the system)
+# XXX: Unconditional dependencies which can't be switched off (if present
+# in the system)
 # popt
 LIB_DEPENDS+=		libpopt.so:${PORTSDIR}/devel/popt
 # inotify
@@ -108,20 +110,19 @@ SAMBA4_BUNDLED_LIBS+=	com_err
 ##############################################################################
 # Options
 OPTIONS_DEFINE=		ACL_SUPPORT AD_DC ADS AIO_SUPPORT CUPS DEBUG \
-			DNSUPDATE DOCS FAM_SUPPORT LDAP PAM_SMBPASS \
+			DNSUPDATE DOCS FAM LDAP PAM_SMBPASS \
 			PTHREADPOOL QUOTAS SWAT SYSLOG UTMP
 
-OPTIONS_DEFAULT:=	ACL_SUPPORT AD_DC ADS AIO_SUPPORT DEBUG \
-			DNSUPDATE DOCS FAM_SUPPORT LDAP PAM_SMBPASS \
+OPTIONS_DEFAULT=	ACL_SUPPORT AD_DC ADS AIO_SUPPORT DEBUG \
+			DNSUPDATE DOCS FAM LDAP PAM_SMBPASS \
 			PTHREADPOOL QUOTAS SWAT SYSLOG UTMP
 
 ACL_SUPPORT_DESC=	File system ACL support
 AD_DC_DESC=		Active Directory Domain Controller support
 ADS_DESC=		Active Directory client support
-AIO_SUPPORT_DESC=	Asyncronous IO support
-DNSUPDATE_DESC=		Dynamic DNS update(require ADS)
+AIO_SUPPORT_DESC=	Asynchronous IO support
+DNSUPDATE_DESC=		Dynamic DNS update (requires ADS)
 EXP_MODULES_DESC=	Experimental modules
-FAM_SUPPORT_DESC=	File Alteration Monitor support
 DEBUG_DESC=		With debug information in the binaries
 LDAP_DESC=		LDAP client support
 PAM_SMBPASS_DESC=	PAM authentication via passdb backends
@@ -136,10 +137,11 @@ DEVELOPER_DESC=		With development support
 MANPAGES_DESC=		Build manpages from DOCBOOK templates
 
 OPTIONS_RADIO=		DNS ZEROCONF
-OPTIONS_RADIO_DNS=	NSUPDATE BIND99
+OPTIONS_RADIO_DNS=	NSUPDATE BIND99 BIND910
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
- 
+
 BIND99_DESC=		Use bind99 as AD DC DNS server frontend
+BIND910_DESC=		Use bind910 as AD DC DNS server frontend
 NSUPDATE_DESC=		Use samba NSUPDATE utility for AD DC
 
 .include <bsd.port.options.mk>
@@ -160,6 +162,9 @@ CFLAGS+=		-fno-omit-frame-pointer
 
 .if ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
+SUB_LIST+=		NSUPDATE="@comment "
+.elif ${PORT_OPTIONS:MBIND910}
+RUN_DEPENDS+=		bind910>=9.10.0.0:${PORTSDIR}/dns/bind910
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
 RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
@@ -273,7 +278,7 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
-.if ${PORT_OPTIONS:MFAM_SUPPORT}
+.if ${PORT_OPTIONS:MFAM}
 USES+=			fam
 CONFIGURE_ARGS+=	--with-fam
 WANT_EXP_MODULES+=	vfs_notify_fam
