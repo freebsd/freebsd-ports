@@ -20,7 +20,7 @@ USES=		tar:tgz
 USE_OPENSSL=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=	5
+IGNORE_WITH_PHP=	5 56
 CONFIGURE_ARGS+=	--with-mcve="${LOCALBASE}"
 
 post-patch:
