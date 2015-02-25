@@ -6,7 +6,6 @@ PORTVERSION=	1.5.2
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libxdiff.so:${PORTSDIR}/textproc/libxdiff
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
