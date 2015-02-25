@@ -80,7 +80,7 @@ INSTALL_TARGET+=install-manpages
 .if ${PORT_OPTIONS:MGOST}
 . if ${OSVERSION} < 1000015
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
-CONFLICTS+=    libressl-*
+CONFLICTS+=	libressl-*
 . endif
 .else
 NO_GOST=	--disable-gost
