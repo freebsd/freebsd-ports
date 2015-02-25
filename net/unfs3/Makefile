@@ -10,8 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-space implementation of the NFSv3 server specification
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
 USES=		bison
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	sbin/unfsd man/man7/tags.7.gz man/man8/unfsd.8.gz
 
