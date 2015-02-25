@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT} 
 MASTER_SITE_SUBDIR=official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}/
@@ -24,7 +24,7 @@ QMAKE_ARGS+=	QTC_PREFIX=${PREFIX}
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
-# There seems to be only one file needing a sheebangfix (all the others
+# There seems to be only one file needing a shebangfix (all the others
 # do not get installed).
 SHEBANG_FILES= share/qtcreator/templates/wizards/scriptgeneratedproject/generate.pl
 
