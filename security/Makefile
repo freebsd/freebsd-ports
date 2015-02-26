@@ -423,6 +423,7 @@
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Authen-SASL
     SUBDIR += p5-Authen-SASL-Cyrus
+    SUBDIR += p5-Authen-SASL-SASLprep
     SUBDIR += p5-Authen-Simple
     SUBDIR += p5-Authen-Simple-DBI
     SUBDIR += p5-Authen-Simple-DBM
