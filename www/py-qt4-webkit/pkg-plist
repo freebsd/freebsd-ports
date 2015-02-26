@@ -15,5 +15,3 @@ share/py-sip/QtWebKit/qwebsecurityorigin.sip
 share/py-sip/QtWebKit/qwebsettings.sip
 share/py-sip/QtWebKit/qwebview.sip
 %%API%%share/qt4/qsci/api/python/QtWebKit.api
-@dirrm share/py-sip/QtWebKit
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

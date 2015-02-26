@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.20
-PORTREVISION=	9
+PORTVERSION=	0.1.21
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://stian.cubic.org/ocp/ \
+MASTER_SITES=	SF/opencubicplayer/${DISTNAME} \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	The legendary Open Cubic Player
+COMMENT=	Legendary Open Cubic Player
 
 LICENSE=	GPLv2
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig desktop-file-utils compiler:nestedfct makeinfo
+USES=		ncurses gmake pkgconfig desktop-file-utils makeinfo tar:xz iconv
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 

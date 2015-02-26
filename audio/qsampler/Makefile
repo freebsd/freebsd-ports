@@ -19,7 +19,7 @@ RUN_DEPENDS=	linuxsampler:${PORTSDIR}/audio/linuxsampler
 
 USES=		gmake shared-mime-info
 USE_QT4=	corelib gui \
-		linguist_build moc_build qmake_build rcc_build uic_build
+		linguisttools_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_qmake=${QMAKE} \

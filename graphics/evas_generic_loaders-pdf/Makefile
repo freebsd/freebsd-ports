@@ -26,9 +26,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 
 do-build:
-	${MAKE} ${MAKE_ARGS} -C ${BINSRC}
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} -C ${BINSRC}
 
 do-install:
-	${MAKE} ${MAKE_ARGS} -C ${BINSRC} install
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} -C ${BINSRC} install
 
 .include <bsd.port.mk>

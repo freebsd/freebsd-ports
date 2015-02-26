@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-LoadableClass
-PORTVERSION=	0.012
-PORTREVISION=	1
+PORTVERSION=	0.013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -14,20 +13,16 @@ COMMENT=	ClassName type constraint with coercion to load the class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
-		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+RUN_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.22:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-MooseX-Types>=0.42:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-
-TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
-
 USES=		perl5
-USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|warn <<|1 or warn <<|' ${WRKSRC}/Makefile.PL
+USE_PERL5=	modbuildtiny
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -40,6 +40,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Request.pm
 %%SITE_PERL%%/Dancer2/Core/Request/Upload.pm
 %%SITE_PERL%%/Dancer2/Core/Response.pm
+%%SITE_PERL%%/Dancer2/Core/Response/Delayed.pm
 %%SITE_PERL%%/Dancer2/Core/Role/ConfigReader.pm
 %%SITE_PERL%%/Dancer2/Core/Role/DSL.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Engine.pm
@@ -48,6 +49,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Role/Headers.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Hookable.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Logger.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Response.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Serializer.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory/File.pm
@@ -69,6 +71,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Logger/Note.pm
 %%SITE_PERL%%/Dancer2/Logger/Null.pm
 %%SITE_PERL%%/Dancer2/Manual.pod
+%%SITE_PERL%%/Dancer2/Manual/Deployment.pod
 %%SITE_PERL%%/Dancer2/Manual/Migration.pod
 %%SITE_PERL%%/Dancer2/Manual/Testing.pod
 %%SITE_PERL%%/Dancer2/Plugin.pm
@@ -105,6 +108,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Request.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Request::Upload.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Response.3.gz
+%%PERL5_MAN3%%/Dancer2::Core::Response::Delayed.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::ConfigReader.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::DSL.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Engine.3.gz
@@ -113,6 +117,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Role::Headers.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Hookable.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Logger.3.gz
+%%PERL5_MAN3%%/Dancer2::Core::Role::Response.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Serializer.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory::File.3.gz
@@ -134,6 +139,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Logger::Note.3.gz
 %%PERL5_MAN3%%/Dancer2::Logger::Null.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual.3.gz
+%%PERL5_MAN3%%/Dancer2::Manual::Deployment.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Migration.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Testing.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin.3.gz

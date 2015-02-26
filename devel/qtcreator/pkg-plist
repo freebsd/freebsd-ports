@@ -55,11 +55,11 @@ lib/qtcreator/libUtils.so.1.0.0
 lib/qtcreator/libqbscore.so
 lib/qtcreator/libqbscore.so.1
 lib/qtcreator/libqbscore.so.1.3
-lib/qtcreator/libqbscore.so.1.3.3
+lib/qtcreator/libqbscore.so.1.3.4
 lib/qtcreator/libqbsqtprofilesetup.so
 lib/qtcreator/libqbsqtprofilesetup.so.1
 lib/qtcreator/libqbsqtprofilesetup.so.1.3
-lib/qtcreator/libqbsqtprofilesetup.so.1.3.3
+lib/qtcreator/libqbsqtprofilesetup.so.1.3.4
 lib/qtcreator/plugins/libAnalyzerBase.so
 lib/qtcreator/plugins/libAndroid.so
 lib/qtcreator/plugins/libAutotoolsProjectManager.so

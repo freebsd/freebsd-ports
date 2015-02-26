@@ -2,7 +2,7 @@
 
 PORTNAME=	Crypt-SMIME
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	p5-ExtUtils-CChecker>=0:${PORTSDIR}/devel/p5-ExtUtils-CChecker \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		${LOCALBASE}/lib/libcrypto.so:${PORTSDIR}/security/openssl
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
 USE_OPENSSL=	yes

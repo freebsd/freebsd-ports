@@ -20,7 +20,4 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mongo
 SUB_FILES=	pkg-message
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/mongo.so
-
 .include <bsd.port.mk>

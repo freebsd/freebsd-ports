@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dbf9e66c-bd50-11e4-a7ba-206a8a720317">
+    <topic>krb5 1.11 -- New release/fix multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>krb5-111</name>
+	<range><lt>1.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT Kerberos team announces the availability of MIT Kerberos 5 Release 1.11.6:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/krb5-1.11/README-1.11.6.txt">
+	  <p>Handle certain invalid RFC 1964 GSS tokens correctly to avoid
+	     invalid memory reference vulnerabilities.  [CVE-2014-4341</p>
+	  <p>Fix memory management vulnerabilities in GSSAPI SPNEGO.
+	     [CVE-2014-4343 CVE-2014-4344]</p>
+	  <p>Fix buffer overflow vulnerability in LDAP KDB back end.
+	     [CVE-2014-4345]</p>
+	  <p>Fix multiple vulnerabilities in the LDAP KDC back end.
+	     [CVE-2014-5354 CVE-2014-5353]</p>
+	  <p>Fix multiple kadmind vulnerabilities, some of which are based
+	     in the gssrpc library. [CVE-2014-5352 CVE-2014-9421
+	     CVE-2014-9422 CVE-2014-9423]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://web.mit.edu/kerberos/krb5-1.11/README-1.11.6.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-02-25</discovery>
+      <entry>2015-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="996c219c-bbb1-11e4-88ae-d050992ecde8">
     <topic>samba -- Unexpected code execution in smbd</topic>
     <affects>

@@ -21,5 +21,3 @@ lib/libtomcrypt_prof.so
 lib/libtomcrypt_prof.so.0
 lib/libtomcrypt_prof.so.0.0.117
 %%PORTDOCS%%%%DOCSDIR%%/pdf/crypt.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,20 +6,20 @@ DISTVERSION=	1.1.0
 CATEGORIES=	textproc devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
+LICENSE=	PHP30
+
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
-CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
-
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	${PORTNAME}
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=	5 56
+CONFIGURE_ARGS+=	--with-enchant=${LOCALBASE}
 
 .include <bsd.port.mk>

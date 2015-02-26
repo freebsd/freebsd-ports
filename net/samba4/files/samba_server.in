@@ -27,15 +27,9 @@
 
 name="samba_server"
 rcvar=${name}_enable
-
 # Defaults
 samba_server_config_default="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
-samba_server_config=${samba_server_config=${samba_server_config_default}}
-samba_server_configfile_arg=${samba_server_config:+--configfile="${samba_server_config}"}			#"
-#testparm_command="%%PREFIX%%/bin/samba-tool testparm --suppress-prompt --verbose ${samba_server_configfile_arg}"
-testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba_server_config}"
 smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
-
 # Custom commands
 extra_commands="reload status"
 
@@ -47,7 +41,6 @@ stop_cmd="samba_server_cmd"
 status_cmd="samba_server_cmd"
 reload_cmd="samba_server_reload_cmd"
 rcvar_cmd="samba_server_rcvar_cmd"
-
 
 samba_server_checkconfig() {
     echo -n "Performing sanity check on Samba configuration: "
@@ -144,6 +137,14 @@ samba_server_cmd() {
 
 samba_server_config_init() {
     local name
+    # Load configuration
+    load_rc_config "${name}"
+    # Defaults
+    samba_server_enable=${samba_server_enable:=NO}
+    samba_server_config=${samba_server_config=${samba_server_config_default}}
+    samba_server_configfile_arg=${samba_server_config:+--configfile="${samba_server_config}"}			#"
+    #testparm_command="%%PREFIX%%/bin/samba-tool testparm --suppress-prompt --verbose ${samba_server_configfile_arg}"
+    testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba_server_config}"
     # Determine what daemons are necessary to run Samba in the current role
     samba_server_role=$(${testparm_command} --parameter-name='server role' 2>/dev/null)
     case "${samba_server_role}" in
@@ -154,38 +155,34 @@ samba_server_config_init() {
 	    samba_daemons="nmbd smbd winbindd"
 	    ;;
     esac
-    # Load configuration
-    load_rc_config "${name}"
+    # Load daemons configuration
     for name in ${samba_daemons}; do
 	load_rc_config "${name}"
-    done
-    # Defaults
-    samba_server_enable=${samba_server_enable:=NO}
-    # Setup dependent variables
-    if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
-	for name in ${samba_daemons}; do
-	    # Winbindd
-	    if [ "${name}" = "winbindd" ]; then
+	# If samba_server_enable is 'YES'
+	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
+	    if [ "${name}" != "winbindd" ]; then
+		# Set variable to 'YES' only if it is unset
+		eval ${name}_enable=\${${name}_enable-YES}
+	    else
+		# Winbindd
 		samba_server_idmap=$(${testparm_command} --parameter-name='idmap uid' 2>/dev/null)
 		if [ -n "${samba_server_idmap}" ]; then
 		    winbindd_enable="YES"
 		fi
 	    fi
-	    # Set variable to 'YES' only if it is unset
-	    eval ${name}_enable=\${${name}_enable-YES}
-	    # If variable is empty set it to 'NO'
-	    eval ${name}_enable=\${${name}_enable:-NO}
-	done
-    fi
+	fi
+	# If variable is empty, set it to 'NO'
+	eval ${name}_enable=\${${name}_enable:-NO}
+    done
+    # Fetch parameters from configuration file
+    samba_server_lockdir="$(${testparm_command} --parameter-name='lock directory' 2>/dev/null)"
+    samba_server_lockdir=${samba_server_lockdir:=%%SAMBA4_LOCKDIR%%}
+    samba_server_piddir="$(${testparm_command} --parameter-name='pid directory' 2>/dev/null)"
+    samba_server_piddir=${samba_server_piddir:=%%SAMBA4_RUNDIR%%}
 }
 
 # Load configuration variables
 samba_server_config_init
-# Fetch parameters from configuration file
-samba_server_lockdir=$(${testparm_command} --parameter-name='lock directory' 2>/dev/null)
-samba_server_lockdir=${samba_server_lockdir=%%SAMBA4_LOCKDIR%%}
-samba_server_piddir=$(${testparm_command} --parameter-name='pid directory' 2>/dev/null)
-samba_server_piddir=${samba_server_piddir=%%SAMBA4_RUNDIR%%}
 # Common flags
 command_args=${samba_server_configfile_arg}
 samba_flags=${samba_flags="--daemon"}

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	ecjsrc-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Java Compiler
 
 LICENSE=	EPL

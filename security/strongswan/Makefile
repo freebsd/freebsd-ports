@@ -3,6 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -12,7 +13,7 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		execinfo libtool:keepla tar:bzip2
+USES=		execinfo libtool:keepla tar:bzip2 pkgconfig
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
@@ -39,15 +40,17 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-group=wheel  \
 		--with-lib-prefix=${PREFIX}
 
-OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
-		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SQLITE \
-		TESTVECTOR UNBOUND XAUTH
+OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
+		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
+		SQLITE TESTVECTOR UNBOUND XAUTH
+OPTIONS_DEFAULT=	IKEv1
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
 EAPRADIUS_DESC=		Enable EAP Radius proxy authentication
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
+GCM_DESC=		Enable GCM AEAD wrapper crypto plugin
 IKEv1_DESC=	Enable IKEv1 support
 IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
@@ -55,6 +58,7 @@ LOADTESTER_DESC=	Enable load testing plugin
 TESTVECTOR_DESC=	Enable crypto test vectors
 PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
+SMP_DESC=	Enable XML-based management protocol
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 XAUTH_DESC=	Enable XAuth password verification
 
@@ -66,6 +70,7 @@ EAPAKA3GPP2_LIB_DEPENDS=libgmp.so:${PORTSDIR}/math/gmp
 EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
 EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
+GCM_CONFIGURE_ON=	--enable-gcm
 IKEv1_CONFIGURE_OFF=	--disable-ikev1
 IPSECKEY_CONFIGURE_ON=	--enable-ipseckey
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
@@ -74,6 +79,8 @@ LDAP_CONFIGURE_ON=	--enable-ldap
 LDAP_USE=		OPENLDAP=yes
 MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USE=		MYSQL=yes
+SMP_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+SMP_CONFIGURE_ON=	--enable-smp
 SQLITE_CONFIGURE_ON=	--enable-sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors

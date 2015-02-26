@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90083
+PORTVERSION=	5.90084
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Body>=1.06:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Body>=1.22:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-HTTP-Message>=5.814:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-HTTP-Request-AsCGI>=1.0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-Hash-MultiValue>=0:${PORTSDIR}/devel/p5-Hash-MultiValue \
@@ -41,7 +41,7 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Plack>=0.9991:${PORTSDIR}/www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0.09:${PORTSDIR}/www/p5-Plack-Middleware-FixMissingBodyInRedirect \
-		p5-Plack-Middleware-MethodOverride>=0:${PORTSDIR}/www/p5-Plack-Middleware-MethodOverride \
+		p5-Plack-Middleware-MethodOverride>=0.12:${PORTSDIR}/www/p5-Plack-Middleware-MethodOverride \
 		p5-Plack-Middleware-RemoveRedundantBody>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-RemoveRedundantBody \
 		p5-Plack-Middleware-ReverseProxy>=0.04:${PORTSDIR}/www/p5-Plack-Middleware-ReverseProxy \
 		p5-Plack-Test-ExternalServer>=0:${PORTSDIR}/www/p5-Plack-Test-ExternalServer \

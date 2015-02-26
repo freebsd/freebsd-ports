@@ -599,6 +599,7 @@
     SUBDIR += py-ao
     SUBDIR += py-apetag
     SUBDIR += py-cddb
+    SUBDIR += py-discid
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
     SUBDIR += py-fastaudio

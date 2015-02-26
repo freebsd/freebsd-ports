@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -20,11 +20,12 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
 		p5-Archive-Zip>=1.14:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Net-Server>=2.0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
+		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM \
+		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
-SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release
+SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl
 
 NO_BUILD=	yes
 
@@ -245,11 +246,9 @@ do-install:
 .for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf-dist
-	@${ECHO_CMD} "@exec if [ ! -f %D/etc/amavisd.conf ]; then ${INSTALL_SCRIPT} %D/etc/amavisd.conf-dist %D/etc/amavisd.conf; fi" >> ${TMPPLIST}
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf-dist
-	@${ECHO_CMD} "@exec if [ ! -f %D/etc/amavisd-custom.conf ]; then ${INSTALL_SCRIPT} %D/etc/amavisd-custom.conf-dist %D/etc/amavisd-custom.conf; fi" >> ${TMPPLIST}
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 .for i in ${DOCS}

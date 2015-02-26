@@ -17,7 +17,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 USES=		gmake tar:bzip2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls
+CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls \
+		--disable-werror
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo

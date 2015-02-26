@@ -9,6 +9,7 @@ lib/%%PORTNAME%%/filters/html-converters/resources/markdown.pl
 lib/%%PORTNAME%%/filters/html-converters/resources/rst-template.txt
 lib/%%PORTNAME%%/filters/html-converters/rst2html
 lib/%%PORTNAME%%/filters/html-converters/txt2html
+lib/%%PORTNAME%%/filters/owner-example.lua
 lib/%%PORTNAME%%/filters/simple-authentication.lua
 lib/%%PORTNAME%%/filters/syntax-highlighting.py
 lib/%%PORTNAME%%/filters/syntax-highlighting.sh
