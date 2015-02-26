@@ -126,7 +126,3 @@ libexec/dshell/pcapanon.py
 %%PORTDOCS%%%%DOCSDIR%%/xmlout.html
 %%PORTDOCS%%%%DOCSDIR%%/xor.html
 @dir %%DATADIR%%/GeoIP
-@dir %%DATADIR%%
-@dir %%PYTHON_SITELIBDIR%%/dshell
-@dir libexec/dshell
-@dir etc/dshell
