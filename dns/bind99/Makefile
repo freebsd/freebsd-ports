@@ -14,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.6-P2
+ISCVERSION=	9.9.7
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -32,7 +32,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
-		--with-libxml2=${LOCALBASE}
+		--with-libxml2=${LOCALBASE} \
+		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
@@ -166,7 +167,6 @@ SUB_FILES+=	named.conf
 WITH_OPENSSL_PORT=yes
 .endif
 .else
-ETCDIR=		${PREFIX}/etc
 PLIST_SUB+=	NOBASE="@comment " BASE=""
 SUB_LIST+=	NOBASE="@comment " BASE=""
 .if ${PORT_OPTIONS:MSSL}
@@ -175,9 +175,6 @@ WITH_OPENSSL_PORT=	yes
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--sysconfdir=${ETCDIR}
 
 PORTDOCS=	*
 
