@@ -10,6 +10,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover files and discs with damaged sectors
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/mergebad bin/recoverdm man/man1/${PORTNAME}.1.gz
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
