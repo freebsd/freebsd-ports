@@ -21,7 +21,7 @@ USES=		gettext gmake libtool:build readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZER=" "
 CONFIGURE_ARGS=	--disable-shared --enable-readline
-ALL_TARGET=
+ALL_TARGET=	# empty
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -45,5 +45,13 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} 's|$$(PKG_LOCALE_DIR)|$$(DESTDIR)&|' \
 		${WRKSRC}/include/buildmacros
+
+post-install:
+.for f in xfs_db xfs_growfs xfs_io xfs_logprint xfs_mdrestore xfs_quota xfs_rtcp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
+.for f in xfs_repair mkfs.xfs
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
+.endfor
 
 .include <bsd.port.mk>
