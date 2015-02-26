@@ -233,6 +233,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/rank_bg.png
 %%DATADIR%%/img/circles/rank_flat.png
 %%DATADIR%%/img/circles/rebuild.png
+%%DATADIR%%/img/circles/rebuild_multiple.png
 %%DATADIR%%/img/circles/redo.png
 %%DATADIR%%/img/circles/refresh.png
 %%DATADIR%%/img/circles/release.png
@@ -519,6 +520,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/rank_bg.png
 %%DATADIR%%/img/classic/rank_flat.png
 %%DATADIR%%/img/classic/rebuild.png
+%%DATADIR%%/img/classic/rebuild_multiple.png
 %%DATADIR%%/img/classic/redo.png
 %%DATADIR%%/img/classic/refresh.png
 %%DATADIR%%/img/classic/release.png
@@ -810,6 +812,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/rank_bg.png
 %%DATADIR%%/img/crazy-black/rank_flat.png
 %%DATADIR%%/img/crazy-black/rebuild.png
+%%DATADIR%%/img/crazy-black/rebuild_multiple.png
 %%DATADIR%%/img/crazy-black/redo.png
 %%DATADIR%%/img/crazy-black/refresh.png
 %%DATADIR%%/img/crazy-black/release.png
@@ -1095,6 +1098,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/rank_bg.png
 %%DATADIR%%/img/crazy/rank_flat.png
 %%DATADIR%%/img/crazy/rebuild.png
+%%DATADIR%%/img/crazy/rebuild_multiple.png
 %%DATADIR%%/img/crazy/redo.png
 %%DATADIR%%/img/crazy/refresh.png
 %%DATADIR%%/img/crazy/release.png
@@ -1380,6 +1384,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/rank_bg.png
 %%DATADIR%%/img/cubes/rank_flat.png
 %%DATADIR%%/img/cubes/rebuild.png
+%%DATADIR%%/img/cubes/rebuild_multiple.png
 %%DATADIR%%/img/cubes/redo.png
 %%DATADIR%%/img/cubes/refresh.png
 %%DATADIR%%/img/cubes/release.png
@@ -1641,6 +1646,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/rank_bg.png
 %%DATADIR%%/img/rank_flat.png
 %%DATADIR%%/img/rebuild.png
+%%DATADIR%%/img/rebuild_multiple.png
 %%DATADIR%%/img/redo.png
 %%DATADIR%%/img/refresh.png
 %%DATADIR%%/img/release.png
