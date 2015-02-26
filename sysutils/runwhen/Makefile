@@ -2,42 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	runwhen
-PORTVERSION=	2003.10.31
+PORTVERSION=	2015.02.24
 CATEGORIES=	sysutils
-MASTER_SITES=	http://code.dogmap.org./${PORTNAME}/releases/
+MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for running commands at particular times
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:${PORTSDIR}/devel/skalibs
 
 USES=		tar:bzip2
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
-ALL_TARGET=	default
 
-DOCS=		src/CHANGES src/TODO package/README
+PLIST_FILES=	bin/rw-add bin/rw-match bin/rw-max bin/rw-min	\
+		bin/rw-sleep bin/rw-sub bin/rw-touch
 
-OPTIONS_DEFINE=	DOCS
-
-BROKEN=		fails to build with skalibs-2.x
+CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!gcc -O2!${CC} ${CFLAGS}!' \
-		${WRKSRC}/conf-compile/host_compile.sh
+		${WRKSRC}/conf-compile/defaults/host_compile.sh
 	@${REINPLACE_CMD} 's!gcc!${CC} ${LDFLAGS} ${LIBS}!' \
-		${WRKSRC}/conf-compile/host_link.sh
+		${WRKSRC}/conf-compile/defaults/host_link.sh
+	@${REINPLACE_CMD} 's!-lskarnet!-L${LOCALBASE}/lib -lskarnet!' \
+		${WRKSRC}/package/compile
 
 do-configure:
-	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-compile/package_home
-	${ECHO_CMD} ${LOCALBASE} > ${WRKSRC}/conf-compile/depend_skalibs
+	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-compile/defaults/package_home
+	${ECHO_CMD} ${LOCALBASE} > ${WRKSRC}/conf-compile/defaults/depend_skalibs
+	${ECHO_CMD} ${LOCALBASE}/lib/skalibs/sysdeps > ${WRKSRC}/conf-compile/defaults/depend_skalibs_sysdeps
 
 do-build:
 	cd ${WRKSRC} && package/compile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
