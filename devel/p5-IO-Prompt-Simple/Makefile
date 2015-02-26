@@ -11,6 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface for user input
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires
+
 USES=		perl5
 USE_PERL5=	configure
 
