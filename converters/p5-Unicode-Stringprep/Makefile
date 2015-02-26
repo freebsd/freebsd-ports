@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Unicode-Normalize>=1:${PORTSDIR}/textproc/p5-Unicode-Normalize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
