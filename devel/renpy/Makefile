@@ -25,6 +25,8 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYGAME}
 
+PORTSCOUT=	skipv:6.99.0 # prerelease, missing style_common.pxi
+
 USES=		python:2.7 shebangfix tar:bz2
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl
