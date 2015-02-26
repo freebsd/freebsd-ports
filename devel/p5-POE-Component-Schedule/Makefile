@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Component-Schedule
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,11 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Schedule POE Events using a cron spec
 
-BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
-RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
