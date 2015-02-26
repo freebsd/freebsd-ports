@@ -6,11 +6,11 @@
 %%DATADIR%%/extension/pltclu--unpackaged--1.0.sql
 %%DOCSDIR%%/README-pltcl
 lib/postgresql/pltcl.so
-@dirrmtry lib/postgresql
+@dir lib/postgresql
 bin/pltcl_loadmod
 bin/pltcl_delmod
 bin/pltcl_listmod
-share/postgresql/unknown.pltcl
-@dirrmtry %%DATADIR%%/extension
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%
+%%DATADIR%%/unknown.pltcl
+@dir %%DATADIR%%/extension
+@dir %%DATADIR%%
+@dir %%DOCSDIR%%

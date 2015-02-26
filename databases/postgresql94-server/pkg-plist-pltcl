@@ -10,7 +10,7 @@ lib/postgresql/pltcl.so
 bin/pltcl_loadmod
 bin/pltcl_delmod
 bin/pltcl_listmod
-share/postgresql/unknown.pltcl
+%%DATADIR%%/unknown.pltcl
 @dir %%DATADIR%%/extension
 @dir %%DATADIR%%
 @dir %%DOCSDIR%%
