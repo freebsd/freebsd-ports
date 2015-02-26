@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	audex
-PORTVERSION=	0.78
-PORTREVISION=	2
+PORTVERSION=	0.79
 CATEGORIES=	audio kde
 MASTER_SITES=	http://kde.maniatek.com/${PORTNAME}/files/
 
