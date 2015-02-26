@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--disable-werror \
 		--without-axtls
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
+INSTALL_TARGET=	install-strip
 USE_PERL5=	build
 USES=		libtool pathfix perl5 tar:lzma
 
