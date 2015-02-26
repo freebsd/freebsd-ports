@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -50,11 +49,6 @@ CONFIGURE_ARGS+=	--disable-gpgsm-test
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-					${WRKSRC}/${CONFIGURE_SCRIPT} \
-					${WRKSRC}/src/Makefile.in \
-					${WRKSRC}/src/gpgme-config.in \
-					${WRKSRC}/tests/gpg/Makefile.in
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 					${WRKSRC}/lang/cl/Makefile.in
 
