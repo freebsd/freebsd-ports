@@ -11,8 +11,8 @@ MASTER_SITES=	http://download.drobilla.net/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular patch bay for Jack
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libraul.so:${PORTSDIR}/audio/raul \
@@ -52,5 +52,6 @@ do-build:
 do-install:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
