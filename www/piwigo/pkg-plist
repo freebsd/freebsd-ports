@@ -881,6 +881,7 @@
 %%WWWDIR%%/language/en_UK/install.lang.php
 %%WWWDIR%%/language/en_UK/iso.txt
 %%WWWDIR%%/language/en_UK/upgrade.lang.php
+%%WWWDIR%%/language/en_US/admin.lang.php
 %%WWWDIR%%/language/en_US/common.lang.php
 %%WWWDIR%%/language/en_US/en_US.jpg
 %%WWWDIR%%/language/en_US/index.php
@@ -935,6 +936,7 @@
 %%WWWDIR%%/language/es_ES/upgrade.lang.php
 %%WWWDIR%%/language/es_MX/common.lang.php
 %%WWWDIR%%/language/es_MX/es_MX.jpg
+%%WWWDIR%%/language/es_MX/install.lang.php
 %%WWWDIR%%/language/es_MX/iso.txt
 %%WWWDIR%%/language/et_EE/about.html
 %%WWWDIR%%/language/et_EE/admin.lang.php
@@ -1818,6 +1820,8 @@
 %%WWWDIR%%/plugins/AdminTools/language/it_IT/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/it_IT/index.php
 %%WWWDIR%%/plugins/AdminTools/language/it_IT/plugin.lang.php
+%%WWWDIR%%/plugins/AdminTools/language/ja_JP/index.php
+%%WWWDIR%%/plugins/AdminTools/language/ja_JP/plugin.lang.php
 %%WWWDIR%%/plugins/AdminTools/language/km_KH/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/km_KH/index.php
 %%WWWDIR%%/plugins/AdminTools/language/km_KH/plugin.lang.php
@@ -1875,6 +1879,7 @@
 %%WWWDIR%%/plugins/AdminTools/language/uk_UA/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/uk_UA/index.php
 %%WWWDIR%%/plugins/AdminTools/language/uk_UA/plugin.lang.php
+%%WWWDIR%%/plugins/AdminTools/language/vi_VN/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/vi_VN/index.php
 %%WWWDIR%%/plugins/AdminTools/language/vi_VN/plugin.lang.php
 %%WWWDIR%%/plugins/AdminTools/language/zh_CN/description.txt
@@ -2216,6 +2221,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/sk_SK/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sk_SK/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sk_SK/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/sk_SK/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sl_SI/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/sl_SI/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sl_SI/plugin.lang.php
@@ -2224,6 +2230,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/plugin.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_7_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/plugin.lang.php
@@ -2233,11 +2240,14 @@
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/index.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/index.php
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/tour_2_7_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/tour_first_contact.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/uk_UA/tour_privacy.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/vi_VN/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/vi_VN/index.php
 %%WWWDIR%%/plugins/TakeATour/language/vi_VN/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/vi_VN/tour_2_7_0.lang.php
@@ -2904,7 +2914,6 @@
 %%WWWDIR%%/themes/elegant/icon/none.png
 %%WWWDIR%%/themes/elegant/icon/rating-stars.png
 %%WWWDIR%%/themes/elegant/index.php
-%%WWWDIR%%/themes/elegant/js/jquery.jBreadCrumb.js
 %%WWWDIR%%/themes/elegant/language/ar_SA/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/bg_BG/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/br_FR/theme.lang.php
@@ -2970,6 +2979,8 @@
 %%WWWDIR%%/themes/elegant/language/gl_ES/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/ar_SA/index.php
 %%WWWDIR%%/themes/smartpocket/language/ar_SA/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/es_MX/index.php
+%%WWWDIR%%/themes/smartpocket/language/es_MX/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/gl_ES/index.php
 %%WWWDIR%%/themes/smartpocket/language/gl_ES/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/ja_JP/index.php
