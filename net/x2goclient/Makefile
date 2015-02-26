@@ -21,7 +21,7 @@ RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 USES=		qmake
 USE_XORG=	xpm
 USE_QT4=	gui network svg \
-		linguist_build moc_build rcc_build uic_build
+		linguisttools_build moc_build rcc_build uic_build
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 INSTALLS_ICONS=	yes
 
