@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7a9e415-bdca-11e4-970c-000c292ee6b8">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.38</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.22</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP Project reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>Use after free vulnerability in unserialize() with DateTimeZone.</p>
+	  <p>Mitigation for CVE-2015-0235 -- GHOST: glibc gethostbyname buffer
+	   overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0235</cvename>
+      <cvename>CVE-2015-0273</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.4.38</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.22</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.6</url>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dbf9e66c-bd50-11e4-a7ba-206a8a720317">
     <topic>krb5 1.11 -- New release/fix multiple vulnerabilities</topic>
     <affects>
