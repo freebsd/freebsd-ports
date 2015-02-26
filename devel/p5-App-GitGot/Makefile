@@ -3,6 +3,7 @@
 
 PORTNAME=	App-GitGot
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GENEHACK
@@ -14,10 +15,11 @@ COMMENT=	Tool to make it easier to manage multiple git repositories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
-		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
+BUILD_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
+		p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
+		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
 		p5-Git-Wrapper>=0.014:${PORTSDIR}/devel/p5-Git-Wrapper \
 		p5-IO-Prompt-Simple>=0:${PORTSDIR}/devel/p5-IO-Prompt-Simple \
 		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
