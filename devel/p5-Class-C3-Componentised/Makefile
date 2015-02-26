@@ -17,11 +17,9 @@ RUN_DEPENDS=	p5-Class-C3>=0.20:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,7 +13,6 @@ COMMENT=	Callback dispatch for session events
 
 RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure
