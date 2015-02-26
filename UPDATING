@@ -23,6 +23,7 @@ you update your ports collection, before attempting any port upgrades.
   Users who have DEFAULT_VERSIONS=ruby=1.9 in their /etc/make.conf are
   encouraged to remove it or change it to an available version.
 
+20150224:
   AFFECTS: Users of net-p2p/bitcoin (cli utilities)
 
   The bitcoin-cli and bitcoin-tx utilities have been re-packaged into
