@@ -7,6 +7,4 @@ man/man1/tlsdate.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/tlsdate/ca-roots
-@dirrmtry etc/tlsdate
+share/licenses/%%PKGNAME%%/LICENSE
