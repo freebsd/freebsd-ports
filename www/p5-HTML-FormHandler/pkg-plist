@@ -54,13 +54,14 @@
 %%SITE_PERL%%/HTML/FormHandler/Fields.pm
 %%SITE_PERL%%/HTML/FormHandler/Foo.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/ar_kw.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/bg_bg.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/cs_cz.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/de_de.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/hu_hu.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/it_it.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ja_jp.pm
-%%SITE_PERL%%/HTML/FormHandler/I18N/ar_kw.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/pt_br.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ru_ru.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/sv_se.pm
@@ -120,6 +121,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/CheckboxGroup.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Compound.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Hidden.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/HorizCheckboxGroup.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/NoRender.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Password.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/RadioGroup.pm
@@ -236,13 +238,14 @@
 %%PERL5_MAN3%%/HTML::FormHandler::Fields.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Foo.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::I18N::ar_kw.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::bg_bg.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::I18N::cs_cz.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::de_de.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::en_us.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::hu_hu.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::it_it.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ja_jp.3.gz
-%%PERL5_MAN3%%/HTML::FormHandler::I18N::ar_kw.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::pt_br.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ru_ru.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::sv_se.3.gz
@@ -302,6 +305,7 @@
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::CheckboxGroup.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::Compound.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::Hidden.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::HorizCheckboxGroup.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::NoRender.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::Password.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Field::RadioGroup.3.gz
