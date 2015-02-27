@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150227:
+  AFFECTS: Users of games/trigger
+  AUTHOR: makc@FreeBSD.org
+
+  games/trigger has been split and renamed to games/trigger-rally
+  and games/trigger-data ports. Deinstall previous version
+  before upgrading.
+
 20150224:
   AFFECTS: Users of devel/qt4-linguist
   AUTHOR: makc@FreeBSD.org
