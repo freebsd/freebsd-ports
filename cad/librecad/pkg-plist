@@ -20,6 +20,9 @@ share/applications/librecad.desktop
 %%DATADIR%%/fonts/italict.lff
 %%DATADIR%%/fonts/kochigothic.lff
 %%DATADIR%%/fonts/kochimincho.lff
+%%DATADIR%%/fonts/kst32b.lff
+%%DATADIR%%/fonts/lc_opengost-ar.lff
+%%DATADIR%%/fonts/lc_opengost-br.lff
 %%DATADIR%%/fonts/romanc.lff
 %%DATADIR%%/fonts/romancs.lff
 %%DATADIR%%/fonts/romand.lff
@@ -130,6 +133,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_et.qm
 %%DATADIR%%/qm/librecad_fi.qm
 %%DATADIR%%/qm/librecad_fr.qm
+%%DATADIR%%/qm/librecad_gl.qm
 %%DATADIR%%/qm/librecad_hi.qm
 %%DATADIR%%/qm/librecad_hu.qm
 %%DATADIR%%/qm/librecad_id_ID.qm
@@ -149,6 +153,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_sl.qm
 %%DATADIR%%/qm/librecad_sq_al.qm
 %%DATADIR%%/qm/librecad_sv.qm
+%%DATADIR%%/qm/librecad_ta.qm
 %%DATADIR%%/qm/librecad_tr.qm
 %%DATADIR%%/qm/librecad_uk.qm
 %%DATADIR%%/qm/librecad_zh_cn.qm
@@ -183,6 +188,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_et.qm
 %%DATADIR%%/qm/plugins_fi.qm
 %%DATADIR%%/qm/plugins_fr.qm
+%%DATADIR%%/qm/plugins_gl.qm
 %%DATADIR%%/qm/plugins_hi.qm
 %%DATADIR%%/qm/plugins_hu.qm
 %%DATADIR%%/qm/plugins_id_ID.qm
@@ -202,6 +208,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_sl.qm
 %%DATADIR%%/qm/plugins_sq_al.qm
 %%DATADIR%%/qm/plugins_sv.qm
+%%DATADIR%%/qm/plugins_ta.qm
 %%DATADIR%%/qm/plugins_tr.qm
 %%DATADIR%%/qm/plugins_uk.qm
 %%DATADIR%%/qm/plugins_zh_cn.qm
