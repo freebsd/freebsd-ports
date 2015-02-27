@@ -53,6 +53,8 @@ sbin/sc_serv
 %%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/config_builder.txt
 %%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/config_builder.js
 %%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/config_builder.css
+%%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/builder.sh
+%%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/setup.sh
 
 @dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/res
