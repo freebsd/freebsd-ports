@@ -37,7 +37,3 @@ lib/sdlCC/sounds/lemon.mod
 lib/sdlCC/sounds/marble.wav
 lib/sdlCC/sounds/woohoo.wav
 share/pixmaps/sdlCC.png
-@dirrm lib/sdlCC/images
-@dirrm lib/sdlCC/players
-@dirrm lib/sdlCC/sounds
-@dirrm lib/sdlCC
