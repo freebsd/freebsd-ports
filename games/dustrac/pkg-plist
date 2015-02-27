@@ -11,7 +11,7 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/fonts/UbuntuMono-B.ttf
 %%DATADIR%%/fonts/UbuntuMono-R.ttf
 %%DATADIR%%/images/about.png
-%%DATADIR%%/images/asphalt.jpg
+%%DATADIR%%/images/asphalt.png
 %%DATADIR%%/images/brake.png
 %%DATADIR%%/images/bridge.png
 %%DATADIR%%/images/bridgeEditor.png
@@ -101,6 +101,7 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/levels/monza.trk
 %%DATADIR%%/levels/ring.trk
 %%DATADIR%%/levels/straight.trk
+%%DATADIR%%/levels/suzuka.trk
 %%DATADIR%%/levels/triangle.trk
 %%DATADIR%%/levels/twister.trk
 %%DATADIR%%/meshes.conf
