@@ -1,8 +1,8 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-# $FreeBSD$
+# $FreeBSD: head/misc/mime-support/Makefile 357611 2014-06-12 16:03:01Z oliver $
 
 PORTNAME=	mime-support
-PORTVERSION=	3.56
+PORTVERSION=	3.58
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
