@@ -1555,19 +1555,19 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Project reports:</p>
 	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
-	  <p>MSFA-2015-01 Miscellaneous memory safety hazards (rv:35.0
+	  <p>MFSA-2015-01 Miscellaneous memory safety hazards (rv:35.0
 	    / rv:31.4)</p>
-	  <p>MSFA-2015-02 Uninitialized memory use during bitmap
+	  <p>MFSA-2015-02 Uninitialized memory use during bitmap
 	    rendering</p>
-	  <p>MSFA-2015-03 sendBeacon requests lack an Origin header</p>
-	  <p>MSFA-2015-04 Cookie injection through Proxy Authenticate
+	  <p>MFSA-2015-03 sendBeacon requests lack an Origin header</p>
+	  <p>MFSA-2015-04 Cookie injection through Proxy Authenticate
 	    responses</p>
-	  <p>MSFA-2015-05 Read of uninitialized memory in Web Audio</p>
-	  <p>MSFA-2015-06 Read-after-free in WebRTC</p>
-	  <p>MSFA-2015-07 Gecko Media Plugin sandbox escape</p>
-	  <p>MSFA-2015-08 Delegated OCSP responder certificates failure
+	  <p>MFSA-2015-05 Read of uninitialized memory in Web Audio</p>
+	  <p>MFSA-2015-06 Read-after-free in WebRTC</p>
+	  <p>MFSA-2015-07 Gecko Media Plugin sandbox escape</p>
+	  <p>MFSA-2015-08 Delegated OCSP responder certificates failure
 	    with id-pkix-ocsp-nocheck extension</p>
-	  <p>MSFA-2015-09 XrayWrapper bypass through DOM objects</p>
+	  <p>MFSA-2015-09 XrayWrapper bypass through DOM objects</p>
 	</blockquote>
       </body>
     </description>
@@ -2496,17 +2496,17 @@ Notes:
 	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
 	  <p>ASN.1 DER decoding of lengths is too permissive, allowing
 	    undetected smuggling of arbitrary data</p>
-	  <p>MSFA-2014-90 Apple CoreGraphics framework on OS X 10.10
+	  <p>MFSA-2014-90 Apple CoreGraphics framework on OS X 10.10
 	    logging input data to /tmp directory</p>
-	  <p>MSFA-2014-89 Bad casting from the BasicThebesLayer to
+	  <p>MFSA-2014-89 Bad casting from the BasicThebesLayer to
 	    BasicContainerLayer</p>
-	  <p>MSFA-2014-88 Buffer overflow while parsing media content</p>
-	  <p>MSFA-2014-87 Use-after-free during HTML5 parsing</p>
-	  <p>MSFA-2014-86 CSP leaks redirect data via violation reports</p>
-	  <p>MSFA-2014-85 XMLHttpRequest crashes with some input streams</p>
-	  <p>MSFA-2014-84 XBL bindings accessible via improper CSS
+	  <p>MFSA-2014-88 Buffer overflow while parsing media content</p>
+	  <p>MFSA-2014-87 Use-after-free during HTML5 parsing</p>
+	  <p>MFSA-2014-86 CSP leaks redirect data via violation reports</p>
+	  <p>MFSA-2014-85 XMLHttpRequest crashes with some input streams</p>
+	  <p>MFSA-2014-84 XBL bindings accessible via improper CSS
 	    declarations</p>
-	  <p>MSFA-2014-83 Miscellaneous memory safety hazards (rv:34.0
+	  <p>MFSA-2014-83 Miscellaneous memory safety hazards (rv:34.0
 	    / rv:31.3)</p>
 	</blockquote>
       </body>
