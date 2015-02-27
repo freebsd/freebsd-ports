@@ -445,6 +445,7 @@
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
     SUBDIR += valspeak
+    SUBDIR += vdmfec
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += viz
