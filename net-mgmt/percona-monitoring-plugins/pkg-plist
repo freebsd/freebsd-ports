@@ -18,7 +18,6 @@ bin/pmp-check-pt-table-checksum
 bin/pmp-check-unix-memory
 share/cacti/scripts/ss_get_by_ssh.php
 share/cacti/scripts/ss_get_mysql_stats.php
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%DATADIR%%/cacti/definitions/apache.def
 %%DATADIR%%/cacti/definitions/galera.def
 %%DATADIR%%/cacti/definitions/gnu_linux.def
@@ -42,9 +41,3 @@ share/cacti/scripts/ss_get_mysql_stats.php
 %%DATADIR%%/cacti/templates/cacti_host_template_percona_openvz_server_ht_0.8.6i-sver1.1.3.xml
 %%DATADIR%%/cacti/templates/cacti_host_template_percona_rds_server_ht_0.8.6i-sver1.1.3.xml
 %%DATADIR%%/cacti/templates/cacti_host_template_percona_redis_server_ht_0.8.6i-sver1.1.3.xml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/cacti/definitions
-@dirrmtry %%DATADIR%%/cacti/misc
-@dirrmtry %%DATADIR%%/cacti/templates
-@dirrmtry %%DATADIR%%/cacti
-@dirrmtry %%DATADIR%%
