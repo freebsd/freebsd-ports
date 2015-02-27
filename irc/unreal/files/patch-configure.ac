@@ -1,0 +1,11 @@
+--- configure.ac.orig	2014-07-26 17:42:10.000000000 +0200
++++ configure.ac	2015-02-22 18:05:11.071679127 +0100
+@@ -93,6 +93,8 @@
+ AC_CHECK_LIB(nsl, inet_ntoa,
+ 	[IRCDLIBS="$IRCDLIBS-lnsl "
+ 		INETLIB="-lnsl"])
++AC_CHECK_LIB(crypto, RAND_egd, 
++		AC_DEFINE(HAVE_RAND_EGD, 1, [Define if the libcrypto has RAND_egd]))
+ 
+ AC_SUBST(IRCDLIBS)
+ AC_SUBST(MKPASSWDLIBS)
