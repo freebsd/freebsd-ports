@@ -3,12 +3,6 @@ bin/bufralter.pl
 bin/bufrencode.pl
 bin/bufrread.pl
 bin/bufrresolve.pl
-%%PERL5_MAN3%%/Geo::BUFR.3.gz
-%%PERL5_MAN3%%/Geo::bufr_reencode.3.gz
-%%PERL5_MAN3%%/Geo::bufralter.3.gz
-%%PERL5_MAN3%%/Geo::bufrencode.3.gz
-%%PERL5_MAN3%%/Geo::bufrread.3.gz
-%%PERL5_MAN3%%/Geo::bufrresolve.3.gz
 %%SITE_ARCH%%/Geo/BUFR.pm
 %%SITE_ARCH%%/Geo/bufr_reencode.pl
 %%SITE_ARCH%%/Geo/bufralter.pl
@@ -16,6 +10,12 @@ bin/bufrresolve.pl
 %%SITE_ARCH%%/Geo/bufrread.pl
 %%SITE_ARCH%%/Geo/bufrresolve.pl
 %%SITE_ARCH%%/auto/Geo/BUFR/BUFR.so
+%%PERL5_MAN3%%/Geo::BUFR.3.gz
+%%PERL5_MAN3%%/Geo::bufr_reencode.3.gz
+%%PERL5_MAN3%%/Geo::bufralter.3.gz
+%%PERL5_MAN3%%/Geo::bufrencode.3.gz
+%%PERL5_MAN3%%/Geo::bufrread.3.gz
+%%PERL5_MAN3%%/Geo::bufrresolve.3.gz
 man/man1/bufr_reencode.pl.1.gz
 man/man1/bufralter.pl.1.gz
 man/man1/bufrencode.pl.1.gz
