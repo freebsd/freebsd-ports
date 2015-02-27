@@ -1,10 +1,11 @@
 --- configure
 +++ configure
-@@ -26,4 +26,6 @@
+@@ -26,4 +26,7 @@
  # make sure that is called using bash.
  
  this_script_dir=`dirname $0`
 -bash $this_script_dir/common/autoconf/configure "$@"
 +export CONFIG_SHELL=%%LOCALBASE%%/bin/bash
 +export MAKE=%%LOCALBASE%%/bin/gmake
++export OBJCOPY=%%OBJCOPY%%
 +%%LOCALBASE%%/bin/bash $this_script_dir/common/autoconf/configure "$@"
