@@ -423,6 +423,7 @@ lib/node_modules/npm/lib/utils/read-local-package.js
 lib/node_modules/npm/lib/utils/spawn.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/utils/umask.js
+lib/node_modules/npm/lib/utils/warn-deprecated.js
 lib/node_modules/npm/lib/version.js
 lib/node_modules/npm/lib/view.js
 lib/node_modules/npm/lib/visnup.js
@@ -2057,6 +2058,7 @@ lib/node_modules/npm/test/tap/optional-metadep-rollback-collision/deps/opdep/bad
 lib/node_modules/npm/test/tap/optional-metadep-rollback-collision/deps/opdep/package.json
 lib/node_modules/npm/test/tap/optional-metadep-rollback-collision/package.json
 lib/node_modules/npm/test/tap/outdated-color.js
+lib/node_modules/npm/test/tap/outdated-depth-deep.js
 lib/node_modules/npm/test/tap/outdated-depth.js
 lib/node_modules/npm/test/tap/outdated-depth/README.md
 lib/node_modules/npm/test/tap/outdated-depth/index.js
