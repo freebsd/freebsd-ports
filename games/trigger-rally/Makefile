@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trigger-rally
-PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-rally/trigger-${PORTVERSION}
 DISTVERSIONSUFFIX=	-src
@@ -23,7 +22,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-libAlut=${LOCALBASE} \
 		--with-libPhysFS=${LOCALBASE}
 
-DESKTOP_ENTRIES="Trigger" "" "" \
+DESKTOP_ENTRIES="Trigger" "" "trigger" \
 		"trigger" "" false
 
 PLIST_FILES=	bin/trigger
