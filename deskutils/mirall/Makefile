@@ -17,7 +17,7 @@ LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 
 USES=		cmake:outsource compiler:c++11-lib gmake pkgconfig tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib webkit xml \
-		linguist_build moc_build qmake_build rcc_build uic_build \
+		linguisttools_build moc_build qmake_build rcc_build uic_build \
 		sql-sqlite3_run
 USE_SQLITE=	3
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=ON \
