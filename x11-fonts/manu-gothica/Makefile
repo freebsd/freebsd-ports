@@ -24,6 +24,7 @@ EXTRACT_AFTER_ARGS=	${WRKSRC}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
