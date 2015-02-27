@@ -10,6 +10,7 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Serf HTTP client library
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 
