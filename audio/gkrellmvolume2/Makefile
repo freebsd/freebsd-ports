@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellmvolume
 PORTVERSION=	2.1.13
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 PKGNAMESUFFIX=	2

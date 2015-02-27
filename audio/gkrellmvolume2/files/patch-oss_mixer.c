@@ -1,7 +1,5 @@
-Index: oss_mixer.c
-diff -u -p oss_mixer.c.orig oss_mixer.c
---- oss_mixer.c.orig	Wed May 19 04:39:27 2004
-+++ oss_mixer.c	Wed May 19 04:39:43 2004
+--- oss_mixer.c.orig	2004-08-20 00:07:27.000000000 +0400
++++ oss_mixer.c	2015-02-01 20:21:32.000000000 +0300
 @@ -32,6 +32,9 @@
  #else
    #include <sys/soundcard.h>
@@ -12,3 +10,12 @@ diff -u -p oss_mixer.c.orig oss_mixer.c
  
  #include "mixer.h"
  #include "oss_mixer.h"
+@@ -126,7 +129,7 @@
+   long amount;
+   ioctl(OSSMIXER(mixer)->fd,MIXER_READ(OSSMIXER(mixer)->table[devid]),&amount);
+   *left = amount & 0xff;
+-  *right = amount >> 8;
++  *right = (amount >> 8) & 0xff;
+ }
+ 
+ static void  
