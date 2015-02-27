@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 USES=		cmake desktop-file-utils pkgconfig tar:bzip2
 USE_GL=		glu gl
 USE_QT4=	gui network opengl \
-		linguist_build moc_build qmake_build rcc_build uic_build
+		linguisttools_build moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DENABLE_GLSL=OFF \
 		-DQT_MKSPECS_RELATIVE=share/qt4/mkspecs
 USE_LDCONFIG=	yes
