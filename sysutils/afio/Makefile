@@ -6,12 +6,17 @@ PORTVERSION=	2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SUNSITE/system/backup
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Archiver and backup program with builtin compression
+
+LICENSE=	ART20 BSD2CLAUSE
+LICENSE_COMB=	multi
 
 USES=		tar:tgz
 
 ALL_TARGET=	${PORTNAME}
+
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/afio man/man1/afio.1.gz
 PORTDOCS=	HISTORY README SCRIPTS

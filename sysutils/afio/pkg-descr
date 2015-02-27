@@ -1,23 +1,9 @@
-Afio makes cpio-format archives.  It deals somewhat gracefully with
-input data corruption.  Supports multi-volume archives during
-interactive operation.  Afio can make compressed archives that are
-much safer than compressed tar or cpio archives.  Afio is best used as
-an `archive engine' in a backup script.
+Afio makes cpio-format archives. It deals fairly gracefully
+with potential input data corruption. Supports multi-volume
+archives  during  interactive  operation.  Afio  can  make
+compressed archives that are much safer than compressed tar,
+or cpio archives. Afio has a tremendous number of options.
+Afio might be best used as an `archive engine' in a backup
+script.
 
-Afio has far too many options and features (some of which are not even
-in the manual page).  Anything in afio that doesn't relate to reading
-or writing an archive from/to a simple file or pipe or backing up and
-restoring from floppies remains untested.
-
-Typical `tested' afio uses are
- ... | afio -o -v -f -b 1024 -s 1440x -F -Z /dev/fd0H1440
- ... | afio -o -v -s 1440k -F -V -Z -G1 /dev/fd0H1440
- afio -oZvx /tmp/pipe1 </tmp/pipe2
- afio -i -Z -k -v -x -n /tmp/pipe1
- ... | afio -s 512m -c 1024 -Z -T 20k -G 1 -E /backup/compressed -v -o \
-       -L /backup/LOG -z /dev/tape 2>/dev/tty8 >/var/adm/backup
-
-WARNING: the code for -F (and -f and -K) is a complete mess.  It will
-probably work in the normal case, but don't expect it to handle a
-write/verify error correctly.  If you get such an error, best thing is
-to restart afio completely.
+WWW: http://BSDforge.com/projects/sysutils/afio/
