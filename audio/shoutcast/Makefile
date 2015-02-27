@@ -3,7 +3,7 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	2.4.2.167
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
 DISTNAME=	sc_serv2_bsd-latest
@@ -11,13 +11,12 @@ DISTNAME=	sc_serv2_bsd-latest
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	SHOUTcast Distributed Network Audio Server
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
 USES=		dos2unix shebangfix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
+bash_CMD=	${SH}
 SHEBANG_FILES=	builder.sh setup.sh
 
 USE_RC_SUBR=	shoutcast
@@ -84,8 +83,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/builder.sh ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTLDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}
@@ -151,6 +148,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.txt ${STAGEDIR}${WWWDIR}/config_builder/config_builder.txt
 	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.js ${STAGEDIR}${WWWDIR}/config_builder/config_builder.js
 	${INSTALL_DATA} ${WRKSRC}/config_builder/config_builder.css ${STAGEDIR}${WWWDIR}/config_builder/config_builder.css
+	${INSTALL_DATA} ${WRKSRC}/builder.sh ${STAGEDIR}${WWWDIR}/config_builder/builder.sh
+	${INSTALL_DATA} ${WRKSRC}/setup.sh ${STAGEDIR}${WWWDIR}/config_builder/setup.sh
 .endif
 
 .include <bsd.port.mk>
