@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	jimtcl
-PORTVERSION=	0.75
+PORTVERSION=	0.76
 CATEGORIES=	lang tcl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Small footprint implementation of the Tcl programming language
 
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msteveb
-GH_COMMIT=	cffd1a5
+GH_COMMIT=	606f011
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--full \
@@ -21,6 +21,6 @@ CONFIGURE_ARGS=	--full \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jimsh \
-		${STAGEDIR}${PREFIX}/lib/libjim.so.0.75
+		${STAGEDIR}${PREFIX}/lib/libjim.so.0.76
 
 .include <bsd.port.mk>
