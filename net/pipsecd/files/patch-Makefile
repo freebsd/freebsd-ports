@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Sep 16 17:44:50 1999
-+++ Makefile	Sun Feb 20 20:41:18 2000
-@@ -6,10 +6,13 @@
+--- Makefile.orig	1999-09-16 21:44:50 UTC
++++ Makefile
+@@ -6,10 +6,13 @@ DISTFILES=	tunip.c defs.h Makefile pipse
  CLEANFILES=	*.core *.o pipsecd
  
  # Where your OpenSSL includes are located
@@ -16,7 +16,7 @@
  
  # Optional: use FreeBSD's libmd
  #OPTLIB += -lmd
-@@ -19,10 +22,10 @@
+@@ -19,10 +22,10 @@ LIBDIR=/usr/local/ssl/lib
  #OPTDEF += -DUSE_ETHERTAP
  
  pipsecd:	tunip.c defs.h
