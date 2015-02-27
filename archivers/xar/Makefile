@@ -18,7 +18,10 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
-
 GNU_CONFIGURE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 
 .include <bsd.port.mk>

@@ -59,9 +59,10 @@ INSTALLS_ICONS=	yes
 .endif
 
 do-build:
-	@(cd ${WRKSRC}/; unset PREFIX; ./drake ${_MAKE_JOBS})
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} ./drake ${_MAKE_JOBS})
 
 do-install:
-	@(cd ${WRKSRC}/; unset PREFIX;  ./drake ${_MAKE_JOBS} ${MAKE_ARGS} install)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} \
+		./drake ${_MAKE_JOBS} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	Catalyst-Controller-FormBuilder
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
@@ -20,9 +20,9 @@ RUN_DEPENDS=	p5-CGI-FormBuilder>=3.02:${PORTSDIR}/www/p5-CGI-FormBuilder \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Test-WWW-Mechanize-Catalyst>=0.37:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0.37:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
 USES=		perl5
 USE_PERL5=	configure

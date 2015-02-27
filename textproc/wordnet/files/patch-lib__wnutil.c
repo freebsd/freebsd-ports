@@ -83,7 +83,7 @@
 +	if (*ptype == '\0' &&
 +	    (*pstr == '\n' || *pstr == ' ' || *pstr == '\0')) {
 +	    if (end)
-+		*(const void **)end = pstr;
++		*end = __DECONST(char *, pstr);
  	    return(i);
 +	}
      }

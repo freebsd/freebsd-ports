@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.24
-PORTREVISION?=		2
+PORTVERSION=		3.6.25
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba samba/stable samba/pre
@@ -102,15 +102,30 @@ OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT AVAHI CUPS DNSUPDATE \
 			DOCS EXAMPLES EXP_MODULES FAM IPV6 LDAP \
 			MAX_DEBUG PAM_SMBPASS POPT PTHREADPOOL QUOTAS \
 			SMBTORTURE SWAT SYSLOG UTMP WINBIND
+OPTIONS_RADIO=		GSSAPI
+OPTIONS_RADIO_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 OPTIONS_DEFAULT=	ACL_SUPPORT AIO_SUPPORT CUPS LDAP POPT PTHREADPOOL \
-			WINBIND
+			WINBIND GSSAPI_NONE
 
 ACL_SUPPORT_DESC=	ACL support
+
 ADS_DESC=		Active Directory support
-AIO_SUPPORT_DESC=	Asynchronous IO support
-DNSUPDATE_DESC=		Dynamic DNS update (requires ADS)
+ADS_CONFIGURE_ON=	--with-ads --with-krb5="${GSSAPIBASEDIR}"
+ADS_CONFIGURE_OFF=	--without-ads --without-krb5
+
+AIO_SUPPORT_DESC=	Asyncronous IO support
+DNSUPDATE_DESC=		Dynamic DNS update(require ADS)
 EXP_MODULES_DESC=	Experimental modules
+
+GSSAPI_BASE_DESC=	Use Heimdal in base
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_DESC=	Use Heimdal from ports
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal,flags
+GSSAPI_MIT_DESC=	Use MIT Kerberos V5
+GSSAPI_MIT_USES=	gssapi:mit,flags
+GSSAPI_NONE_DESC=	No Kerberos support
+
 MAX_DEBUG_DESC=		Maximum debugging
 PAM_SMBPASS_DESC=	PAM authentication via passdb backends
 POPT_DESC=		System-wide POPT library
@@ -316,26 +331,11 @@ PLIST_SUB+=		SMBTORTURE="@comment "
 ###
 
 .if ${PORT_OPTIONS:MADS}
-SAMBA_WANT_LDAP=	yes
-SAMBA_WANT_KRB5=	yes
-CONFIGURE_ARGS+=	--with-ads
-.else
-CONFIGURE_ARGS+=	--without-ads
-.endif
+.	if ${PORT_OPTIONS:MGSSAPI_NONE}
 # Kerberos5 is necessary for ADS
-.if defined(SAMBA_WANT_KRB5)
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
-CONFIGURE_ARGS+=	--with-krb5="${KRB5_HOME}"
-.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.so)
-CONFIGURE_ARGS+=	--with-krb5="${HEIMDAL_HOME}"
-.elif exists(/usr/lib/libkrb5.so) && exists(/usr/bin/krb5-config)
-CONFIGURE_ARGS+=	--with-krb5="/usr"
-.else
-LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5="${LOCALBASE}"
-.endif
-.else
-CONFIGURE_ARGS+=	--without-krb5
+IGNORE=	ADS support requires GSSAPI_BASE, GSSAPI_HEIMDAL, or GSSAPI_MIT
+.	endif
+SAMBA_WANT_LDAP=	yes
 .endif
 
 .if defined(SAMBA_WANT_LDAP)

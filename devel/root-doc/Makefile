@@ -17,9 +17,6 @@ PLIST=		${WRKDIR}/pkg-plist
 pre-install:
 	cd ${WRKSRC} && ${FIND} . \( -type f -or -type l \) -exec ${ECHO_CMD} \
 		"%%DOCSDIR%%/{}" \; > ${PLIST}.tmp
-	cd ${WRKSRC} && ${FIND} -d . -mindepth 1 -type d -exec ${ECHO_CMD} \
-		"@dirrm %%DOCSDIR%%/{}" \; >> ${PLIST}.tmp
-	${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}.tmp
 	${SED} -e "s/\/\.\//\//" ${PLIST}.tmp > ${PLIST}
 
 do-install:

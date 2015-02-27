@@ -22,7 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/build/unix
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ARGS=	CC="${CXX}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/mkcpl bin/mkpkl bin/mkmap
 

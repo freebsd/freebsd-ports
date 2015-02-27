@@ -13,7 +13,7 @@ COMMENT=	Graphical font manager
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USES=		cmake
-USE_QT4=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
+USE_QT4=	gui svg network moc_build uic_build rcc_build qmake_build linguisttools_build
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	FONTFORGE
@@ -28,7 +28,7 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC}/src/messages && \
-		${LOCALBASE}/bin/lupdate-qt4 -noobsolete ../ -ts *.ts && \
-		${LOCALBASE}/bin/lrelease-qt4 *.ts
+		${LUPDATE} -noobsolete ../ -ts *.ts && \
+		${LRELEASE} *.ts
 
 .include <bsd.port.mk>

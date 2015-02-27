@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsprune
-PORTVERSION=	15.1
+PORTVERSION=	17.2
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,6 +12,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for viewing, editing, and converting GPS coordinate data
+
+LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

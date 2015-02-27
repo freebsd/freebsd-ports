@@ -1,3 +1,16 @@
-py.test is a simple and popular testing tool for Python.
+The pytest testing tool makes it easy to write small tests, yet scales to
+support complex functional testing.
+
+Features: 
+
+  * Auto-discovery of test modules and functions
+  * Detailed info on failing assert statements
+  * Modular fixtures for managing small or parametrized long-lived test
+    resources
+  * Multi-paradigm support: you can use pytest to run test suites based on
+    unittest (or trial), nose
+  * Single-source compatibility from Python2.6 all the way up to Python3.4,
+    PyPy-2.3, (jython-2.5 untested)
+  * Many external plugins
 
 WWW: http://pytest.org

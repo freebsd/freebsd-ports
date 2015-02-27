@@ -15,12 +15,16 @@ BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm
 # check configure for min version of qdbm.
 LIB_DEPENDS=	libqdbm.so.14:${PORTSDIR}/databases/qdbm
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	LZO MECAB
 LZO_DESC=	Enable lzo support
@@ -37,5 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 	${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libestraier.so
 
 .include <bsd.port.mk>

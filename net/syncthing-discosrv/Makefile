@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-discosrv
-PORTVERSION=	0.0.0.2014110101
-PORTREVISION=	5
+PORTVERSION=	0.0.0.2015022401
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	discosrv
-GH_COMMIT=	fcba610d30efa662d4435b3127300171aae7b0e9
+GH_COMMIT=	4e1240a610bcc2ef8772eb2641492822b4ec4f88
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.12
+SYNCTHING_VER=	0.10.23
 GROUPCACHE_COMMIT=	d2a1805
 
 WRKSRC=		${WRKDIR}/discosrv-${GH_COMMIT}
@@ -59,6 +59,8 @@ post-patch:
 		${WRKSRC}/src/golang.org/x
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER} \
 		${WRKSRC}/src/github.com/syncthing/syncthing
+	@${MV} ${WRKSRC}/src/github.com/syncthing/syncthing/Godeps/_workspace/src/github.com/syncthing/protocol \
+		${WRKSRC}/src/github.com/syncthing/protocol
 	@${MV} ${WRKDIR}/golang-groupcache-${GROUPCACHE_COMMIT} \
 		${WRKSRC}/src/github.com/golang/groupcache
 

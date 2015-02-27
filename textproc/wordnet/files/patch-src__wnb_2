@@ -12,7 +12,7 @@ dictionaries and the bitmap into ${PREFIX}/share/WordNet.
 
 --- src/wnb	Tue Jun  7 15:19:22 2005
 +++ src/wnb	Sun Jan 15 07:42:38 2006
-@@ -103,9 +100,15 @@
+@@ -103,9 +100,14 @@
  
  if {$tcl_platform(platform) == "unix"} {
 -   if {[lsearch -exact [array names env] WNHOME] == -1} {
@@ -20,8 +20,7 @@ dictionaries and the bitmap into ${PREFIX}/share/WordNet.
 -   } else {
 -	set resourcedir "$env(WNHOME)/lib/wnres"
 +   set resourcedirs {
-+	/usr/local/WordNet-3.0
-+	/usr/local/WordNet-3.0/lib/wnres
++	/usr/local/WordNet
 +   }
 +   if {[info exists env(WNHOME)]} {
 +	lappend resourcedirs $env(WNHOME) $env(WNHOME)/lib/wnres

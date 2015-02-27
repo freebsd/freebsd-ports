@@ -18,11 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 
-STRIP_FILES=	bin/minitube
-
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USE=	QT4=linguist_build
+NLS_USE=	QT4=linguisttools_build
 
 .include <bsd.port.options.mk>
 
@@ -31,8 +29,5 @@ pre-configure:
 .if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
 .endif
-
-post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
 .include <bsd.port.mk>

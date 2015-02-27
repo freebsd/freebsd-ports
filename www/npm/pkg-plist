@@ -77,6 +77,7 @@ lib/node_modules/npm/doc/cli/npm-help.md
 lib/node_modules/npm/doc/cli/npm-init.md
 lib/node_modules/npm/doc/cli/npm-install.md
 lib/node_modules/npm/doc/cli/npm-link.md
+lib/node_modules/npm/doc/cli/npm-logout.md
 lib/node_modules/npm/doc/cli/npm-ls.md
 lib/node_modules/npm/doc/cli/npm-outdated.md
 lib/node_modules/npm/doc/cli/npm-owner.md
@@ -179,6 +180,7 @@ lib/node_modules/npm/html/doc/cli/npm-help.html
 lib/node_modules/npm/html/doc/cli/npm-init.html
 lib/node_modules/npm/html/doc/cli/npm-install.html
 lib/node_modules/npm/html/doc/cli/npm-link.html
+lib/node_modules/npm/html/doc/cli/npm-logout.html
 lib/node_modules/npm/html/doc/cli/npm-ls.html
 lib/node_modules/npm/html/doc/cli/npm-outdated.html
 lib/node_modules/npm/html/doc/cli/npm-owner.html
@@ -288,6 +290,7 @@ lib/node_modules/npm/html/partial/doc/cli/npm-help.html
 lib/node_modules/npm/html/partial/doc/cli/npm-init.html
 lib/node_modules/npm/html/partial/doc/cli/npm-install.html
 lib/node_modules/npm/html/partial/doc/cli/npm-link.html
+lib/node_modules/npm/html/partial/doc/cli/npm-logout.html
 lib/node_modules/npm/html/partial/doc/cli/npm-ls.html
 lib/node_modules/npm/html/partial/doc/cli/npm-outdated.html
 lib/node_modules/npm/html/partial/doc/cli/npm-owner.html
@@ -352,6 +355,7 @@ lib/node_modules/npm/lib/cache/maybe-github.js
 lib/node_modules/npm/lib/cache/update-index.js
 lib/node_modules/npm/lib/completion.js
 lib/node_modules/npm/lib/config.js
+lib/node_modules/npm/lib/config/clear-credentials-by-uri.js
 lib/node_modules/npm/lib/config/core.js
 lib/node_modules/npm/lib/config/defaults.js
 lib/node_modules/npm/lib/config/find-prefix.js
@@ -375,6 +379,7 @@ lib/node_modules/npm/lib/help.js
 lib/node_modules/npm/lib/init.js
 lib/node_modules/npm/lib/install.js
 lib/node_modules/npm/lib/link.js
+lib/node_modules/npm/lib/logout.js
 lib/node_modules/npm/lib/ls.js
 lib/node_modules/npm/lib/npm.js
 lib/node_modules/npm/lib/outdated.js
@@ -445,6 +450,7 @@ lib/node_modules/npm/man/man1/npm-help.1.gz
 lib/node_modules/npm/man/man1/npm-init.1.gz
 lib/node_modules/npm/man/man1/npm-install.1.gz
 lib/node_modules/npm/man/man1/npm-link.1.gz
+lib/node_modules/npm/man/man1/npm-logout.1.gz
 lib/node_modules/npm/man/man1/npm-ls.1.gz
 lib/node_modules/npm/man/man1/npm-outdated.1.gz
 lib/node_modules/npm/man/man1/npm-owner.1.gz
@@ -1113,6 +1119,7 @@ lib/node_modules/npm/node_modules/npm-package-arg/package.json
 lib/node_modules/npm/node_modules/npm-package-arg/test/basic.js
 lib/node_modules/npm/node_modules/npm-package-arg/test/windows.js
 lib/node_modules/npm/node_modules/npm-registry-client/.npmignore
+lib/node_modules/npm/node_modules/npm-registry-client/.travis.yml
 lib/node_modules/npm/node_modules/npm-registry-client/LICENSE
 lib/node_modules/npm/node_modules/npm-registry-client/README.md
 lib/node_modules/npm/node_modules/npm-registry-client/index.js
@@ -1129,6 +1136,7 @@ lib/node_modules/npm/node_modules/npm-registry-client/lib/dist-tags/update.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/fetch.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/initialize.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/logout.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js
 lib/node_modules/npm/node_modules/npm-registry-client/lib/star.js
@@ -1233,6 +1241,7 @@ lib/node_modules/npm/node_modules/npm-registry-client/test/get-error-403.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/initialize.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/lib/common.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/lib/server.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/logout.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-again-scoped.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-again.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-failed-no-message.js
@@ -1335,8 +1344,13 @@ lib/node_modules/npm/node_modules/read-package-json/README.md
 lib/node_modules/npm/node_modules/read-package-json/package.json
 lib/node_modules/npm/node_modules/read-package-json/read-json.js
 lib/node_modules/npm/node_modules/read-package-json/test/basic.js
+lib/node_modules/npm/node_modules/read-package-json/test/bin.js
 lib/node_modules/npm/node_modules/read-package-json/test/bom.js
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/badbin.json
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/bin.json
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/bin/echo
 lib/node_modules/npm/node_modules/read-package-json/test/fixtures/bom.json
+lib/node_modules/npm/node_modules/read-package-json/test/fixtures/emptybin.json
 lib/node_modules/npm/node_modules/read-package-json/test/fixtures/nobom.json
 lib/node_modules/npm/node_modules/read-package-json/test/fixtures/not-json.css
 lib/node_modules/npm/node_modules/read-package-json/test/fixtures/readmes/README
@@ -1707,6 +1721,7 @@ lib/node_modules/npm/node_modules/semver/test/clean.js
 lib/node_modules/npm/node_modules/semver/test/gtr.js
 lib/node_modules/npm/node_modules/semver/test/index.js
 lib/node_modules/npm/node_modules/semver/test/ltr.js
+lib/node_modules/npm/node_modules/semver/test/major-minor-patch.js
 lib/node_modules/npm/node_modules/semver/test/no-module.js
 lib/node_modules/npm/node_modules/sha/.npmignore
 lib/node_modules/npm/node_modules/sha/LICENSE
@@ -1948,6 +1963,7 @@ lib/node_modules/npm/test/tap/config-basic.js
 lib/node_modules/npm/test/tap/config-builtin.js
 lib/node_modules/npm/test/tap/config-certfile.js
 lib/node_modules/npm/test/tap/config-credentials.js
+lib/node_modules/npm/test/tap/config-edit.js
 lib/node_modules/npm/test/tap/config-malformed.js
 lib/node_modules/npm/test/tap/config-meta.js
 lib/node_modules/npm/test/tap/config-private.js
@@ -1994,6 +2010,7 @@ lib/node_modules/npm/test/tap/install-from-local/package-local-dev-dependency/pa
 lib/node_modules/npm/test/tap/install-from-local/package-scoped-dependency/package.json
 lib/node_modules/npm/test/tap/install-from-local/package-with-local-paths/package.json
 lib/node_modules/npm/test/tap/install-from-local/package-with-scoped-paths/package.json
+lib/node_modules/npm/test/tap/install-man.js
 lib/node_modules/npm/test/tap/install-save-exact.js
 lib/node_modules/npm/test/tap/install-save-exact/README.md
 lib/node_modules/npm/test/tap/install-save-exact/index.js
@@ -2019,6 +2036,7 @@ lib/node_modules/npm/test/tap/lifecycle-signal.js
 lib/node_modules/npm/test/tap/lifecycle-signal/package.json
 lib/node_modules/npm/test/tap/lifecycle.js
 lib/node_modules/npm/test/tap/locker.js
+lib/node_modules/npm/test/tap/logout.js
 lib/node_modules/npm/test/tap/ls-depth-cli.js
 lib/node_modules/npm/test/tap/ls-depth-unmet.js
 lib/node_modules/npm/test/tap/ls-depth-unmet/package.json

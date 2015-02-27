@@ -7,11 +7,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Manage utmp/wtmp entries for non-init X clients
 
-BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
-
 XORG_CAT=	app
 USE_XORG=	x11
-CPP=		tradcpp
 
 PLIST_FILES=	bin/sessreg man/man1/sessreg.1.gz
 

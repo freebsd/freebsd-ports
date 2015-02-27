@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		scons iconv
 USE_QT4=	corelib gui network opengl script sql svg xml \
-		linguist_build moc_build qmake_build rcc_build uic_build
+		linguisttools_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu
 MAKE_ARGS=	qtdir="${QT_PREFIX}" optimize=0
 LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}

@@ -1,0 +1,5 @@
+Pure Python GeoIP API
+
+This library is based on Maxmind's GeoIP C API.
+
+WWW: https://github.com/appliedsec/pygeoip

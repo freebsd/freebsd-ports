@@ -6,15 +6,17 @@ PORTVERSION=	0.5.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swish-e bindings for PHP
 
+LICENSE=	PHP301
+
 BUILD_DEPENDS=	swish-config:${PORTSDIR}/www/swish-e
 RUN_DEPENDS:=	swish-config:${PORTSDIR}/www/swish-e
 
+USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

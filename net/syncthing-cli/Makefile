@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-cli
-PORTVERSION=	0.1.0.2014120201
-PORTREVISION=	1
+PORTVERSION=	0.1.0.2015022401
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	syncthing-cli
-GH_COMMIT=	66a2027ae9537b2967082a3070ee84f918bef32c
+GH_COMMIT=	80af98e740cc58f3fc96101afe50fbb3e9a80dc3
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.12
+SYNCTHING_VER=	0.10.23
 
 WRKSRC=		${WRKDIR}/syncthing-cli-${GH_COMMIT}
 
@@ -48,6 +48,8 @@ post-patch:
 		${WRKSRC}/src/github.com/calmh
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER} \
 		${WRKSRC}/src/github.com/syncthing/syncthing
+	@${MV} ${WRKSRC}/src/github.com/syncthing/syncthing/Godeps/_workspace/src/github.com/syncthing/protocol \
+		${WRKSRC}/src/github.com/syncthing/protocol
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build

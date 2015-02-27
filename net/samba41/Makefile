@@ -18,7 +18,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.1.16
+SAMBA4_VERSION=		4.1.17
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -102,8 +102,8 @@ BUILD_DEPENDS+=		tevent>=0.9.18:${PORTSDIR}/devel/tevent
 RUN_DEPENDS+=		tevent>=0.9.18:${PORTSDIR}/devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 # tdb
-BUILD_DEPENDS+=		tdb>=1.2.11:${PORTSDIR}/databases/tdb
-RUN_DEPENDS+=		tdb>=1.2.11:${PORTSDIR}/databases/tdb
+BUILD_DEPENDS+=		tdb>=1.2.12:${PORTSDIR}/databases/tdb
+RUN_DEPENDS+=		tdb>=1.2.12:${PORTSDIR}/databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
 # ntdb
 BUILD_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb

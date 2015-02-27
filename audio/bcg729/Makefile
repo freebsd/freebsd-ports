@@ -13,13 +13,29 @@ COMMENT=	Software G729A encoder and decoder library written in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
-		libortp.so:${PORTSDIR}/net/ortp
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-strict
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	MEDIASTREAMER
+OPTIONS_DEFAULT=	MEDIASTREAMER
+
+MEDIASTREAMER_DESC=	Mediastreamer(linphone) support
+
+OPTIONS_SUB=	yes
+MEDIASTREAMER_LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
+				libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MMEDIASTREAMER}
+# If the option is disabled, force it to not build mediastreamer interface even if
+# configure found the needed dependencies
+pre-configure:
+	@${REINPLACE_CMD} -e '/^@BUILD_MSBCG729_TRUE@/d' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>

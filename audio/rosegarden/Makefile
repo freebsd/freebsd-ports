@@ -24,7 +24,7 @@ RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 USES=		tar:bzip2 desktop-file-utils gmake pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
-USE_QT4=	gui network xml rcc_build moc_build uic_build linguist_build
+USE_QT4=	gui network xml rcc_build moc_build uic_build linguisttools_build
 INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include

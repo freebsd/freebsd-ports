@@ -1,4 +1,3 @@
-@unexec if cmp -s %%PREFIX%%/etc/amavisd-custom.conf %%PREFIX%%/etc/amavisd-custom.conf-dist; then rm %%PREFIX%%/etc/amavisd-custom.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
 %%PORTDOCS%%%%DOCSDIR%%/AMAVIS-MIB.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -62,14 +61,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/toc-plus.png
 %%PORTDOCS%%%%DOCSDIR%%/images/up.png
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-etc/amavisd-custom.conf-dist
+%%PORTDOCS%%@dir %%DOCSDIR%%/images/callouts
+%%PORTDOCS%%@dir %%DOCSDIR%%/images
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@sample etc/amavisd-custom.conf.sample
 etc/amavisd.conf-default
-@unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
-etc/amavisd.conf-dist
-@exec [ ! -f %B/amavisd.conf ] && cp %B/%f %B/amavisd.conf
+@sample etc/amavisd.conf.sample
 %%AMAVIS_NOP0F%%sbin/p0f-analyzer.pl
 sbin/amavisd
 sbin/amavisd-agent

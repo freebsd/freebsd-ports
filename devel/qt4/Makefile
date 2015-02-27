@@ -3,7 +3,7 @@
 
 PORTNAME=	qt4
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -17,8 +17,10 @@ USE_QT4=	accessible clucene corelib dbus declarative designer \
 		imageformats inputmethods multimedia network opengl \
 		phonon qt3support qtestlib script scripttools sql \
 		svg webkit xml xmlpatterns
+USE_QT4:=	${USE_QT4:S/$/_run/}
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 NO_MTREE=	yes
 
 OPTIONS_DEFINE=	CODECS DOCS EXAMPLES GSTREAMER NLS SQL_PLUGINS TOOLS
@@ -40,19 +42,13 @@ SQL_PLUGINS_USE=sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
 		sql-sqlite3
 
 TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
-TOOLS_USE=	assistant help-tools linguist makeqpf moc pixeltool \
+TOOLS_USE=	assistant help-tools linguist linguisttools makeqpf \
+		moc pixeltool \
 		porting qdbusviewer qdoc3 qmake qmlviewer qtconfig \
 		qvfb rcc uic uic3 xmlpatterns-tool
 
 .for opt in ${OPTIONS_DEFINE}
-${opt}_USE:=	${${opt}_USE:S/^/QT4=/}
+${opt}_USE:=	${${opt}_USE:S/^/QT4=/:S/$/_run/}
 .endfor
-
-.include <bsd.port.options.mk>
-
-USE_QT4:=	${USE_QT4:S/$/_run/}
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>

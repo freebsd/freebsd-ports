@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.11.5
-PORTREVISION=		6
+PORTVERSION=		1.11.6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-111
 DISTNAME=		krb5-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
+DEPRECATED=		EOLed by MIT in December 2014.
+EXPIRATION_DATE=	2015-08-31
+
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
-PATCHFILES=		2015-001-patch-r111.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV

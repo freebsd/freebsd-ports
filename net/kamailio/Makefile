@@ -4,6 +4,7 @@
 
 PORTNAME=	kamailio
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -80,13 +81,19 @@ EXTRA_MODULES+=	tls
 EXTRA_GROUPS+=	presence
 .endif
 
+.if !empty (EXTRA_GROUPS)
+MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE} ${EXTRA_GROUPS}"
+.else
+MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE}"
+.endif
+
 .if !empty (EXTRA_MODULES)
-MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE} ${EXTRA_GROUPS}" include_modules="${EXTRA_MODULES}"
+MAKE_ARGS+=	include_modules="${EXTRA_MODULES}"
 .endif
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's#install-doc install-man#install-man#'	\
+	${REINPLACE_CMD} -e 's#install-doc install-man#install-man#'	\
 		${WRKSRC}/Makefile
 .endif
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
@@ -128,16 +135,15 @@ post-stage:
 	xlog sipt siptrace qos pdb xprint auth_radius \
 	sanity uid_gflags db_text sdpops sipcapture \
 	tsilo nosip rtpengine jsonrpc-s \
-        presence presence_conference presence_dialog presence_dialoginfo \
-        presence_mwi \
-        presence_profile presence_reginfo presence_xml pua_bla \
-        pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
-        acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server
+	presence presence_conference presence_dialog presence_dialoginfo \
+	presence_mwi \
+	presence_profile presence_reginfo presence_xml pua_bla \
+	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
+	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
 .endfor
-
 
 # Strip libraries in lib/kamailio
 	@${ECHO_CMD} "Stripping libraries in ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/"

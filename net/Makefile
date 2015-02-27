@@ -27,6 +27,7 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
+    SUBDIR += asterisk-g72x
     SUBDIR += asterisk11
     SUBDIR += asterisk13
     SUBDIR += avahi
@@ -107,6 +108,7 @@
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
+    SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += e169-stats
@@ -922,6 +924,7 @@
     SUBDIR += py-pcs
     SUBDIR += py-port-for
     SUBDIR += py-pybeanstalk
+    SUBDIR += py-pygeoip
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile

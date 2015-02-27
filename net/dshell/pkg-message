@@ -1,0 +1,9 @@
+======================================================================
+
+To use the GeoIP Databases from DShell, please download GeoIP.dat,
+GeoIPv6.dat, GeoIPASNum.dat, GeoIPASNumv6.dat from the following URL
+and place them into ${PREFIX}/share/dshell/GeoIP.
+
+http://dev.maxmind.com/geoip/legacy/geolite/
+
+======================================================================

@@ -22,7 +22,7 @@ SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 USES+=		desktop-file-utils
-USE_QT4=	corelib gui moc_build linguist_build network qmake_build \
+USE_QT4=	corelib gui moc_build linguisttools_build network qmake_build \
 		rcc_build uic_build
 
 BUILD_DEPENDS+=	protoc:${PORTSDIR}/devel/protobuf

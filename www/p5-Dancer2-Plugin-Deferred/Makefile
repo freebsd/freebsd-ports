@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DELUXARAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dancer2 plugin to defer messages or data across redirections
 
 BUILD_DEPENDS=	p5-Dancer2>=0:${PORTSDIR}/www/p5-Dancer2 \
