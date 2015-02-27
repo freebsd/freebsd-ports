@@ -30,7 +30,7 @@ PORTDOCS=	ChangeLog
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Boxer" "" "${PORTNAME}" \
-		"${PORTNAME}" "Application;Graphics;" ""
+		"${PORTNAME}" "Graphics;" ""
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

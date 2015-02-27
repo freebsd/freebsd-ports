@@ -42,7 +42,7 @@ J3DLIB=		${JAVA_HOME}/jre/lib/ext/j3dcore.jar
 PLUGINDIR=	${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}
 
 DESKTOP_ENTRIES="Electric-NG" "${COMMENT}" "${PORTNAME}${PKGNAMESUFFIX}" \
-			"${PORTNAME}${PKGNAMESUFFIX}" "Development;Electronics;Engineering;" ${FALSE}
+			"${PORTNAME}${PKGNAMESUFFIX}" "Development;Electronics;Engineering;" false
 
 .include <bsd.port.options.mk>
 
