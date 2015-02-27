@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -31,9 +31,6 @@ XFT_USE=	XORG=xft
 
 .if ${OSVERSION} < 1000024
 USE_GCC=	yes
-.else
-CONFIGURE_ARGS+=	--disable-cxx-check
-CXXFLAGS+=	-std=c++11
 .endif
 
 .include <bsd.port.post.mk>
