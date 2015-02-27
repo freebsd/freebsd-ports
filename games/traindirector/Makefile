@@ -22,7 +22,7 @@ WX_COMPS=	wx:lib
 WX_UNICODE=	yes
 
 DESKTOP_ENTRIES="Train Director" "${COMMENT}" "" "traindir3" \
-		"Game;Simulation;StrategyGame;" ${FALSE}
+		"Game;Simulation;StrategyGame;" false
 
 PLIST_FILES=	bin/traindir3
 

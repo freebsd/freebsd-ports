@@ -12,7 +12,7 @@ COMMENT=	Vertically scrolling shoot'em up
 USES=		qmake
 USE_QT4=	multimedia network moc_build rcc_build
 
-DESKTOP_ENTRIES=	Flukz "" ${PORTNAME}.png \
+DESKTOP_ENTRIES=	Flukz "" ${PORTNAME} \
 			${PORTNAME} "Game;ArcadeGame;" true
 
 PLIST_FILES=	bin/flukz \

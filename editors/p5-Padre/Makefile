@@ -78,7 +78,7 @@ DESKTOP_ENTRIES="Padre" \
 		"The Perl IDE" \
 		"${PREFIX}/${SITE_PERL_REL}/auto/share/dist/Padre/icons/padre/64x64/logo.png" \
 		"padre" \
-		"Development;Perl;IDE;" \
+		"Development;IDE;" \
 		""
 
 WXSC_NAME=	Wx-Scintilla
