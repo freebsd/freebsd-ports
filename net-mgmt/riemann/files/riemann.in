@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: riemann
+# REQUIRE: LOGIN NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# riemann_enable    (bool):   Set to NO by default.
+# Set it to YES to enable riemann.
+#
+# riemann_config    (string): Optional full path for riemann config file
+# riemann_user      (user):   Set to riemann by default.
+# riemann_group     (group):  Set to riemann by default.
+# riemann_jarfile   (string): Optional path to a custom jarfile.
+# riemann_java_home (args):   Specify which JVM to use, if not default.
+# riemann_min_mem   (num):    Minumum JVM heap size, 256m by default.
+# riemann_max_mem   (num):    Maximum JVM heap size, 1g by default.
+# riemann_java_opts (args):   Additional JVM properties or arguments.
+. /etc/rc.subr
+
+name="riemann"
+rcvar=riemann_enable
+
+load_rc_config $name
+
+: ${riemann_enable="NO"}
+: ${riemann_user:="%%RIEMANN_USER%%"}
+: ${riemann_group:="%%RIEMANN_GROUP%%"}
+: ${riemann_config:="%%PREFIX%%/etc/riemann/riemann.config.sample"}
+: ${riemann_jarfile:="%%JAVAJARDIR%%/riemann.jar"}
+: ${riemann_java_home:="%%JAVA_HOME%%"}
+: ${riemann_min_mem:="256m"}
+: ${riemann_max_mem:="1g"}
+: ${riemann_java_opts:=" -server \
+        -Xms${riemann_min_mem} \
+        -Xmx${riemann_max_mem} \
+        -Xss256k \
+        -Djava.awt.headless=true \
+        -Djava.net.preferIPv4Stack=true \
+        -XX:+AggressiveOpts \
+        -XX:+CMSClassUnloadingEnabled \
+        -XX:+CMSParallelRemarkEnabled \
+        -XX:+DisableExplicitGC \
+        -XX:+HeapDumpOnOutOfMemoryError \
+        -XX:+UseCMSInitiatingOccupancyOnly \
+        -XX:+UseCompressedOops \
+        -XX:+UseConcMarkSweepGC \
+        -XX:+UseFastAccessorMethods \
+        -XX:+UseParNewGC \
+        -XX:CMSInitiatingOccupancyFraction=75 "}
+
+riemann_pidfile="%%RIEMANN_PIDDIR%%${name}.pid"
+command="/usr/sbin/daemon"
+procname="${riemann_java_home}/bin/java"
+command_args="-f -c -p ${riemann_pidfile} ${procname} ${riemann_java_opts} \
+    -jar ${riemann_jarfile} ${riemann_config}"
+required_files="${java_cmd} ${riemann_config}"
+
+riemann_prestart()
+{
+    	install -o ${riemann_user} /dev/null ${riemann_pidfile}
+}
+start_precmd=${name}_prestart
+
+run_rc_command "$1"
