@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # (or later)
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		qmake
-USE_QT4=	gui linguist_build moc_build rcc_build uic_build
+USE_QT4=	gui linguisttools_build moc_build rcc_build uic_build
 
 PORTDOCS=	changelog
 PLIST_FILES=	bin/darknock share/pixmaps/darknock.png
