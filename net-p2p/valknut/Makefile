@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdc.so:${PORTSDIR}/net-p2p/dclib \
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
 USE_QT4=	corelib gui network qt3support \
-		moc_build uic_build rcc_build linguist_build
+		moc_build uic_build rcc_build linguisttools_build
 USES=		gmake perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
