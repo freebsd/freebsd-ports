@@ -229,6 +229,7 @@ munin:*:842:
 dahdi:*:843:asterisk
 fossy:*:901:www
 scanlogd:*:902:
+riemann:*:908:
 proxy65:*:909:
 bacula:*:910:
 iserv:*:911:
