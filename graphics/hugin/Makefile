@@ -32,7 +32,7 @@ PANOMATIC_DESC=	Install graphics/panomatic
 AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 
 USES=		cmake gettext pkgconfig tar:bzip2 desktop-file-utils python \
-		shared-mime-info
+		shared-mime-info compiler:features
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 
@@ -42,6 +42,15 @@ WX_UNICODE=	yes
 USE_GL=		glew glut
 
 INSTALLS_ICONS=	yes
+
+.include <bsd.port.pre.mk>
+
+# If default compiler is GCC, upgrade it because
+# g++ 4.2 is too old. Basically, use the same compiler as graphics/OpenEXR
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197898
+.if ${COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.endif
 
 # work around a bug in cmake (?). Without this we get an error like:
 # cd /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx && /usr/bin/c++   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -D_THREAD_SAFE -O2 -fno-strict-aliasing -pipe -pthread;-D_THREAD_SAFE -O3 -DNDEBUG -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin_base -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign/vigra -I/usr/local/include -I/usr/local/include/OpenEXR -isystem /usr/local/lib/wx/include/gtk2-ansi-release-2.8 -isystem /usr/local/include/wx-2.8 -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1 -o CMakeFiles/huginbasewx.dir/ImageCache.o -c /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx/ImageCache.cpp
@@ -72,4 +81,4 @@ RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 RUN_DEPENDS+=	autopano:${PORTSDIR}/graphics/autopano-sift-c
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
