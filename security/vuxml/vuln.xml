@@ -57,6 +57,123 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="99029172-8253-407d-9d8b-2cfeab9abf81">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>36.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>36.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.33</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.33</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-11 Miscellaneous memory safety hazards (rv:36.0
+	    / rv:31.5)</p>
+	  <p>MFSA-2015-12 Invoking Mozilla updater will load locally
+	    stored DLL files</p>
+	  <p>MFSA-2015-13 Appended period to hostnames can bypass HPKP
+	    and HSTS protections</p>
+	  <p>MFSA-2015-14 Malicious WebGL content crash when writing
+	    strings</p>
+	  <p>MFSA-2015-15 TLS TURN and STUN connections silently fail
+	    to simple TCP connections</p>
+	  <p>MFSA-2015-16 Use-after-free in IndexedDB</p>
+	  <p>MFSA-2015-17 Buffer overflow in libstagefright during MP4
+	    video playback</p>
+	  <p>MFSA-2015-18 Double-free when using non-default memory
+	    allocators with a zero-length XHR</p>
+	  <p>MFSA-2015-19 Out-of-bounds read and write while rendering
+	    SVG content</p>
+	  <p>MFSA-2015-20 Buffer overflow during CSS restyling</p>
+	  <p>MFSA-2015-21 Buffer underflow during MP3 playback</p>
+	  <p>MFSA-2015-22 Crash using DrawTarget in Cairo graphics
+	    library</p>
+	  <p>MFSA-2015-23 Use-after-free in Developer Console date
+	    with OpenType Sanitiser</p>
+	  <p>MFSA-2015-24 Reading of local files through manipulation
+	    of form autocomplete</p>
+	  <p>MFSA-2015-25 Local files or privileged URLs in pages can
+	    be opened into new tabs</p>
+	  <p>MFSA-2015-26 UI Tour whitelisted sites in background tab
+	    can spoof foreground tabs</p>
+	  <p>MFSA-2015-27 Caja Compiler JavaScript sandbox bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0819</cvename>
+      <cvename>CVE-2015-0820</cvename>
+      <cvename>CVE-2015-0821</cvename>
+      <cvename>CVE-2015-0822</cvename>
+      <cvename>CVE-2015-0823</cvename>
+      <cvename>CVE-2015-0824</cvename>
+      <cvename>CVE-2015-0825</cvename>
+      <cvename>CVE-2015-0826</cvename>
+      <cvename>CVE-2015-0827</cvename>
+      <cvename>CVE-2015-0828</cvename>
+      <cvename>CVE-2015-0829</cvename>
+      <cvename>CVE-2015-0830</cvename>
+      <cvename>CVE-2015-0831</cvename>
+      <cvename>CVE-2015-0832</cvename>
+      <cvename>CVE-2015-0833</cvename>
+      <cvename>CVE-2015-0834</cvename>
+      <cvename>CVE-2015-0835</cvename>
+      <cvename>CVE-2015-0836</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-11/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-12/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-13/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-14/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-15/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-16/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-17/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-18/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-19/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-20/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-21/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-22/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-23/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-24/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-25/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-26/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-27/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-02-24</discovery>
+      <entry>2015-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7a9e415-bdca-11e4-970c-000c292ee6b8">
     <topic>php5 -- multiple vulnerabilities</topic>
     <affects>
