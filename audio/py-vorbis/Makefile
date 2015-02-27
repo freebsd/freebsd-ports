@@ -12,7 +12,7 @@ DISTNAME=	pyvorbis-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented Python bindings for the vorbis library
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
