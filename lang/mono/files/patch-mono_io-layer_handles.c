@@ -5,7 +5,7 @@
  	
  	_wapi_fd_reserve = getdtablesize();
 +	/* If the file number is over a million we tend to see SIGSEGV */
-+	if ( _wapi_fd_reserve > 5000000 )
++	if ( _wapi_fd_reserve > 500000 )
 +		_wapi_fd_reserve = 500000;
  
  	/* This is needed by the code in _wapi_handle_new_internal */
