@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -121,6 +121,7 @@ DEBUGFAST_DESC=		Build for debugging (with optimizations)
 RELEASE_DESC=		Build for release (default)
 TEST_DESC=		Run regression tests
 
+RELEASE_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/objcopy:${PORTSDIR}/devel/binutils
 RELEASE_CONFIGURE_ON=	--disable-debug-symbols
 TEST_ALL_TARGET=	test
 TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
@@ -138,6 +139,9 @@ JDK_BUILD_TYPE=	slowdebug
 JDK_BUILD_TYPE=	fastdebug
 .else
 JDK_BUILD_TYPE=	release
+.endif
+.if empty(PORT_OPTIONS:MRELEASE)
+OBJCOPY=	${LOCALBASE}/bin/objcopy
 .endif
 
 .include <bsd.port.pre.mk>
@@ -194,8 +198,9 @@ post-patch:
 	    ${FILESDIR}/bsd.fontconfig.properties.in > \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    ${WRKSRC}/common/autoconf/toolchain.m4 \
+	    -e 's|%%OBJCOPY%%|${OBJCOPY}|' \
 	    ${WRKSRC}/configure \
+	    ${WRKSRC}/common/autoconf/toolchain.m4 \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java
