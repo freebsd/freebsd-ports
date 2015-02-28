@@ -2,15 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://downloadmirror.intel.com/24290/eng/:intel \
+MASTER_SITES=	http://downloadmirror.intel.com/24661/eng/:intel \
 		http://www.amd64.org/microcode/:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	microcode-20140913.tgz:intel amd-ucode-latest.tar.bz2:amd
+DISTFILES=	microcode-20150121.tgz:intel amd-ucode-latest.tar.bz2:amd
 
 MAINTAINER=	clarkjc@runbox.com
 COMMENT=	Intel and AMD CPUs microcode updates
+
+LICENSE=	EULA
+LICENSE_NAME=	Intel Software License Agreement
+LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell
 
 NO_WRKSUBDIR=	yes
 
