@@ -111,8 +111,6 @@ do-install:
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/levels \
-		-type f >> ${TMPPLIST} && \
-		${FIND} ${DATADIR_REL}/levels -type d -o -type l | ${SORT} -r | \
-		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+		-type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>
