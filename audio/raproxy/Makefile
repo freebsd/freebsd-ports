@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Progressive Networks RealAudio Proxy Kit 3.0 beta 1
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-03-28
 
 ALL_TARGET=	raproxy
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
