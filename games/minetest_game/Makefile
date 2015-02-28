@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest_game
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	minetest:${PORTSDIR}/games/minetest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
-GH_COMMIT=	a9ac480
+GH_COMMIT=	03c00a8
 
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/minetest/games/${PORTNAME}
