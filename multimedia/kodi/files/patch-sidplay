@@ -1,0 +1,151 @@
+diff --git lib/libsidplay2/Makefile.in lib/libsidplay2/Makefile.in
+index 5dda4c9..14247e8 100644
+--- lib/libsidplay2/Makefile.in
++++ lib/libsidplay2/Makefile.in
+@@ -3,7 +3,7 @@ ARCH=@ARCH@
+ SIDFLAGS =-D_LINUX -DHAVE_UNIX -DHAVE_STRCASECMP -DHAVE_STRNCASECMP \
+          -DHAVE_IOS_OPENMODE -fPIC -Ilibsidplay/win/VC \
+          -Ibuilders/resid-builder/include/sidplay/builders \
+-         -Ilibsidplay/include/sidplay -Iresid -Ilibsidplay/include -fPIC
++         -Ilibsidplay/include/sidplay -Iresid -Ilibsidplay/include -I. -fPIC
+ CFLAGS += $(SIDFLAGS)
+ CXXFLAGS += $(SIDFLAGS)
+ ifeq ($(ARCH), powerpc-osx)
+@@ -54,13 +54,18 @@ SLIB=@abs_top_srcdir@/system/players/paplayer/libsidplay2-@ARCH@.so
+ 
+ $(SLIB): $(OBJS)
+ ifeq ($(findstring osx,$(ARCH)), osx)
+-	$(CXX) $(LDFLAGS) -Wl,-alias_list,@abs_top_srcdir@/xbmc/cores/DllLoader/exports/wrapper_mach_alias \
++	$(SILENT_CPP) $(CXX) $(LDFLAGS) -Wl,-alias_list,@abs_top_srcdir@/xbmc/cores/DllLoader/exports/wrapper_mach_alias \
+ 		-bundle -undefined dynamic_lookup -read_only_relocs suppress -o $@ \
+ 		@abs_top_srcdir@/xbmc/cores/DllLoader/exports/wrapper.o $(OBJS) $(BUNDLE1_O)
+ else
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $(OBJS) -Wl,--unresolved-symbols=ignore-all \
++	$(SILENT_CPP) $(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $(OBJS) -Wl,--unresolved-symbols=ignore-all \
+ 		`cat @abs_top_srcdir@/xbmc/cores/DllLoader/exports/wrapper.def` @abs_top_srcdir@/xbmc/cores/DllLoader/exports/wrapper.o
+ endif
+ 
+ include @abs_top_srcdir@/Makefile.include
+ 
++%.o: %.cpp
++	@rm -f $@
++	$(SILENT_CPP) $(CXX) -MF $*.d -MD -c $(CXXFLAGS) $< -o $@ \
++	&& $(GEN_DEPS)
++
+diff --git lib/libsidplay2/builders/resid-builder/include/sidplay/builders/resid.h lib/libsidplay2/builders/resid-builder/include/sidplay/builders/resid.h
+index 5a0f1d7..cd134dd 100644
+--- lib/libsidplay2/builders/resid-builder/include/sidplay/builders/resid.h
++++ lib/libsidplay2/builders/resid-builder/include/sidplay/builders/resid.h
+@@ -24,7 +24,7 @@
+ 
+ #include <vector>
+ #include "sidbuilder.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ 
+ /***************************************************************************
+diff --git lib/libsidplay2/libsidplay/include/sidplay/c64env.h lib/libsidplay2/libsidplay/include/sidplay/c64env.h
+index a33664d..3779609 100644
+--- lib/libsidplay2/libsidplay/include/sidplay/c64env.h
++++ lib/libsidplay2/libsidplay/include/sidplay/c64env.h
+@@ -19,7 +19,7 @@
+ #define _c64env_h_
+ 
+ #include "sidtypes.h"
+-#include "event.h"
++#include "sidplay/event.h"
+  
+ /* An implementation of of this class can be created to perform the C64
+    specifics.  A pointer to this child class can then be passed to
+diff --git lib/libsidplay2/libsidplay/include/sidplay/sid2types.h lib/libsidplay2/libsidplay/include/sidplay/sid2types.h
+index 0911012..30b0bfe 100644
+--- lib/libsidplay2/libsidplay/include/sidplay/sid2types.h
++++ lib/libsidplay2/libsidplay/include/sidplay/sid2types.h
+@@ -19,7 +19,7 @@
+ #define _sid2types_h_
+ 
+ #include "sidtypes.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ class   sidbuilder;
+ struct  SidTuneInfo;
+diff --git lib/libsidplay2/libsidplay/src/event.cpp lib/libsidplay2/libsidplay/src/event.cpp
+index bfa715c..218e1d6 100644
+--- lib/libsidplay2/libsidplay/src/event.cpp
++++ lib/libsidplay2/libsidplay/src/event.cpp
+@@ -50,7 +50,7 @@
+  ***************************************************************************/
+ 
+ #include <string.h>
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ #define EVENT_TIMEWARP_COUNT 0x0FFFFF
+ 
+diff --git lib/libsidplay2/libsidplay/src/mos6510/mos6510.h lib/libsidplay2/libsidplay/src/mos6510/mos6510.h
+index 9516df5..d5f94ba 100644
+--- lib/libsidplay2/libsidplay/src/mos6510/mos6510.h
++++ lib/libsidplay2/libsidplay/src/mos6510/mos6510.h
+@@ -36,7 +36,7 @@
+ #include "config.h"
+ #include "component.h"
+ #include "sidenv.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ #undef  MOS6510_VERSION
+ #undef  MOS6510_DATE
+diff --git lib/libsidplay2/libsidplay/src/mos6526/mos6526.h lib/libsidplay2/libsidplay/src/mos6526/mos6526.h
+index 1cb665c..e6c740f 100644
+--- lib/libsidplay2/libsidplay/src/mos6526/mos6526.h
++++ lib/libsidplay2/libsidplay/src/mos6526/mos6526.h
+@@ -85,7 +85,7 @@
+ #define _mos6526_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ class MOS6526: public component
+ {
+diff --git lib/libsidplay2/libsidplay/src/mos656x/mos656x.h lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
+index ef81202..00e4029 100644
+--- lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
++++ lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
+@@ -19,7 +19,7 @@
+ #define _mos656x_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ typedef enum
+ {
+diff --git lib/libsidplay2/libsidplay/src/sid6526/sid6526.h lib/libsidplay2/libsidplay/src/sid6526/sid6526.h
+index e1fb9c1..f2c0e2b 100644
+--- lib/libsidplay2/libsidplay/src/sid6526/sid6526.h
++++ lib/libsidplay2/libsidplay/src/sid6526/sid6526.h
+@@ -38,7 +38,7 @@
+ #define _sid6526_h_
+ 
+ #include "component.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ #include "c64env.h"
+ 
+ class SID6526: public component
+diff --git lib/libsidplay2/libsidplay/src/xsid/xsid.h lib/libsidplay2/libsidplay/src/xsid/xsid.h
+index 572b813..54313a2 100644
+--- lib/libsidplay2/libsidplay/src/xsid/xsid.h
++++ lib/libsidplay2/libsidplay/src/xsid/xsid.h
+@@ -106,7 +106,7 @@ programmed with.
+ 
+ #include "config.h"
+ #include "sidbuilder.h"
+-#include "event.h"
++#include "sidplay/event.h"
+ 
+ // XSID configuration settings
+ //#define XSID_DEBUG 1

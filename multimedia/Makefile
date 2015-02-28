@@ -161,6 +161,7 @@
     SUBDIR += kdenlive
     SUBDIR += kissdx
     SUBDIR += kmplayer-kde4
+    SUBDIR += kodi
     SUBDIR += kplayer-kde4
     SUBDIR += libaacs
     SUBDIR += libass
@@ -409,7 +410,6 @@
     SUBDIR += x265
     SUBDIR += xanim
     SUBDIR += xawtv
-    SUBDIR += xbmc
     SUBDIR += xbmc-addon-pvr
     SUBDIR += xfce4-parole
     SUBDIR += xine
