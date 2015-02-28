@@ -96,6 +96,7 @@ AIRTUNES_CONFIGURE_ENABLE=	airtunes
 AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
+CEC_BUILD_DEPENDS=	libcec>=2.2.0:${PORTSDIR}/multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
 CEC_CONFIGURE_ENABLE=	libcec
 
