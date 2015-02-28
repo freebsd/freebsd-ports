@@ -112,9 +112,7 @@ do-install:
 		${STAGEDIR}${DATADIR}/levels)
 
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/levels \
-		-type f >> ${TMPPLIST} && \
-		${FIND} ${DATADIR_REL}/levels -type d -o -type l | ${SORT} -r | \
-		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+		-type f >> ${TMPPLIST}
 
 # Symlink Levels which can use Rocks'n'Diamonds and R'n'D jue
 .if exists(${PREFIX}/share/rocksndiamonds) && ${PORT_OPTIONS:MRnD_jue}
