@@ -1,0 +1,13 @@
+Nessus is a security scanner that crawls across a network, looking
+for well-known vulnerabilities and common misconfiguration.
+
+It has a unique set of features, including automatic SSL discovery,
+services recognition (so it will catch, for instance, a FTP server
+running on a port different than 21) and its own scripting language.
+
+The Nessus Security Scanner is released under the GNU General Public
+Licence and aims to be easy to use while extremely powerful.
+
+WWW: http://www.nessus.org/
+
+PS: To install the lot in one operation, do nessus-plugins first.

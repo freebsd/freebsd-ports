@@ -1,0 +1,17 @@
+--- Makefile.orig	Tue Jan 21 11:45:03 2003
++++ Makefile	Thu Jul  3 08:41:17 2003
+@@ -10,14 +10,6 @@
+ 	touch $@
+ 
+ install: all $(CLIENT_INSTALL) install-bin install-man
+-	@echo
+-	@echo ' --------------------------------------------------------------'
+-	@echo ' nessus-core has been sucessfully installed. '
+-	@echo " Make sure that $(bindir) and $(sbindir) are in your PATH before"
+-	@echo " you continue."
+-	@echo " nessusd has been installed into $(sbindir)"
+-	@echo ' --------------------------------------------------------------'
+-	@echo
+ 
+ install-bin:
+ 	test -d $(DESTDIR)${sbindir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${sbindir}

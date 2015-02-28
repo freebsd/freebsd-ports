@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+ECHO_CMD=echo
+
+case $2 in
+POST-DEINSTALL)
+  ${ECHO_CMD}
+  ${ECHO_CMD} "The nessus server package has been deleted."
+  ${ECHO_CMD} "If you're *not* upgrading and won't be using"
+  ${ECHO_CMD} "it any longer, you may want to issue the"
+  ${ECHO_CMD} "following commands:"
+  ${ECHO_CMD}
+  if [ -d ${PKG_PREFIX}/var/nessus ]; then
+    ${ECHO_CMD} "- to delete the nessus server permanently (losing all data):"
+    ${ECHO_CMD} "  rm -Rf ${PKG_PREFIX}/var/nessus"
+    ${ECHO_CMD}
+  fi
+  rm_dir=""
+  if [ -d ${PKG_PREFIX}/com/CA ]; then
+    rm_dir=" ${PKG_PREFIX}/com/CA"
+  fi
+  if [ -d ${PKG_PREFIX}/var/CA ]; then
+    rm_dir="$rm_dir ${PKG_PREFIX}/var/CA"
+  fi
+  if [ "x$rm_dir" != "x" ]; then
+    ${ECHO_CMD} "- to remove the Certificate Authority associated with nessus:"
+    ${ECHO_CMD} "  rm -Rf$rm_dir"
+    ${ECHO_CMD}
+  fi
+  ${ECHO_CMD} "If you are upgrading, don't forget to restart"
+  ${ECHO_CMD} "nessusd and updating the plugins."
+  ${ECHO_CMD}
+  ;;
+esac
