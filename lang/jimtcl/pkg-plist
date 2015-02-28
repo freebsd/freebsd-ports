@@ -7,4 +7,5 @@ include/jim-subcmd.h
 include/jim-win32compat.h
 include/jim.h
 lib/jim/README.extensions
-lib/libjim.so.0.75
+lib/jim/tcltest.tcl
+lib/libjim.so.0.76
