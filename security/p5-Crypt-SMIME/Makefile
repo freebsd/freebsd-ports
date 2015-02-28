@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/security/p5-Crypt-SMIME/Makefile 379948 2015-02-25 19:07:59Z adamw $
 
 PORTNAME=	Crypt-SMIME
 PORTVERSION=	0.15
@@ -13,13 +13,13 @@ COMMENT=	S/MIME message signing, verification, encryption and decryption
 LICENSE=	ART10
 
 RUN_DEPENDS=	p5-ExtUtils-CChecker>=0:${PORTSDIR}/devel/p5-ExtUtils-CChecker \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		${LOCALBASE}/lib/libcrypto.so:${PORTSDIR}/security/openssl
+		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
 USE_PERL5=	configure
 
 post-stage:
