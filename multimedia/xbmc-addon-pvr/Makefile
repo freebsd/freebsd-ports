@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20140104
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	XBMC PVR addons for various backends
 
-BUILD_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc
-RUN_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc
+BUILD_DEPENDS+=	kodi:${PORTSDIR}/multimedia/kodi
+RUN_DEPENDS+=	kodi:${PORTSDIR}/multimedia/kodi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opdenkamp
@@ -29,6 +29,8 @@ REINPLACE_ARGS=	-i ''
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
+
+BROKEN=		fails to chase xbmc rename to kodi
 
 .include <bsd.port.pre.mk>
 
