@@ -51,7 +51,7 @@ BROKEN=	clang fails to link on 8.x
 LLSUF=	.llvm
 MAKE_ARGS+=	use_llvm=yes
 .else  # clang
-USE_GCC=	4.8+
+USE_GCC=	yes
 .if ${ARCH} == i386
 CXXFLAGS+=	-march=i586
 .endif
