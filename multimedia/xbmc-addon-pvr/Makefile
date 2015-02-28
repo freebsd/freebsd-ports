@@ -30,8 +30,6 @@ REINPLACE_ARGS=	-i ''
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-BROKEN=		fails to chase xbmc rename to kodi
-
 .include <bsd.port.pre.mk>
 
 post-patch:
