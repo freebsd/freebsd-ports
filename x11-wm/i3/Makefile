@@ -21,7 +21,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor \
-		libxkbcommon.so:${PORTSDOR}/x11/libxkbcommon
+		libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
