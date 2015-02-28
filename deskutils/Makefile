@@ -217,6 +217,7 @@
     SUBDIR += rubrica
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
+    SUBDIR += shutter
     SUBDIR += silence
     SUBDIR += simpleagenda
     SUBDIR += simplegroupware
