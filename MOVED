@@ -7428,3 +7428,11 @@ math/ruby-numru_units|math/rubygem-numru-units|2015-02-22|Long time broken. Plea
 lang/ruby19|lang/ruby20|2015-02-24|Upstream support ended February 23, 2015
 games/trigger|games/trigger-rally|2015-02-26|Follow upstream naming
 multimedia/xbmc|multimedia/kodi|2015-02-28|Project renamed
+finance/openerp-server||2015-03-01|Has expired: Broken for more than 6 months
+graphics/p5-Geo-KML||2015-03-01|Has expired
+mail/postfix-tls||2015-03-01|Has expired: TLS is now a default for postfix / postfix-current
+net/spserver||2015-03-01|Has expired: Broken for more than 6 months
+net/xrdesktop||2015-03-01|Has expired: Unmaintained upstream - please use net/xrdesktop2 instead
+www/mediawiki122||2015-03-01|Has expired: Deprecated by upstream, use www/mediawiki12{3,4} instead
+www/mod_cplusplus||2015-03-01|Has expired: written for apache 2.0, no longer maintained upstream
+www/py-django15||2015-03-01|Has expired: not supported by upstream
