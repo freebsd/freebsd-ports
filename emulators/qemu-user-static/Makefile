@@ -18,7 +18,12 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-img
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-io
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-nbd
+	@${MV} ${STAGEDIR}${PREFIX}/etc/rc.d ${WRKDIR}
 	@${RM} -r ${STAGEDIR}${PREFIX}/etc
+.if exists(/usr/sbin/binmiscctl)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
+	@${MV} ${WRKDIR}/rc.d ${STAGEDIR}${PREFIX}/etc
+.endif
 	@${RM} -r ${STAGEDIR}${PREFIX}/man
 	@${RM} -r ${STAGEDIR}${DATADIR}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
