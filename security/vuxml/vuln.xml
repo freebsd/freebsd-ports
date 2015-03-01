@@ -57,6 +57,79 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7480b6ac-adf1-443e-a33c-3a3c0becba1e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.600</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.580.3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kohsuke Kawaguchi from Jenkins team reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27">
+	  <h1>Description</h1>
+	  <h5>SECURITY-125 (Combination filter Groovy script unsecured)</h5>
+	  <p>This vulnerability allows users with the job configuration
+	    privilege to escalate his privileges, resulting in arbitrary code
+	    execution to the master.</p>
+	  <h5>SECURITY-162 (directory traversal from artifacts via symlink)</h5>
+	  <p>This vulnerability allows users with the job configuration
+	    privilege or users with commit access to the build script to
+	    access arbitrary files/directories on the master, resulting in
+	    the exposure of sensitive information, such as encryption keys.</p>
+	  <h5>SECURITY-163 (update center metadata retrieval DoS attack)</h5>
+	  <p>This vulnerability allows authenticated users to disrupt the
+	    operation of Jenkins by feeding malicious update center data into
+	    Jenkins, affecting plugin installation and tool installation.</p>
+	  <h5>SECURITY-165 (external entity injection via XPath)</h5>
+	  <p>This vulnerability allows users with the read access to Jenkins
+	    to retrieve arbitrary XML document on the server, resulting in
+	    the exposure of sensitive information inside/outside Jenkins.</p>
+	  <h5>SECURITY-166 (HudsonPrivateSecurityRealm allows creation of
+	    reserved names)</h5>
+	  <p>For users using "Jenkins' own user database" setting, Jenkins
+	    doesn't refuse reserved names, thus allowing privilege escalation.</p>
+	  <h5>SECURITY-167 (External entity processing in XML can reveal
+	    sensitive local files)</h5>
+	  <p>This vulnerability allows attackers to create malicious XML
+	    documents and feed that into Jenkins, which causes Jenkins to
+	    retrieve arbitrary XML document on the server, resulting in the
+	    exposure of sensitive information inside/outside Jenkins.</p>
+	  <h1>Severity</h1>
+	  <p>SECURITY-125 is rated <strong>critical</strong>. This attack can be
+	    only mounted by users with some trust, but it results in arbitrary
+	    code execution on the master.</p>
+	  <p>SECURITY-162 is rated <strong>critical</strong>. This attack can be
+	    only mounted by users with some trust, but it results in the
+	    exposure of sensitive information.</p>
+	  <p>SECURITY-163 is rated <strong>medium</strong>, as it results in the
+	    loss of functionality.</p>
+	  <p>SECURITY-165 is rated <strong>critical</strong>. This attack is
+	    easy to mount, and it results in the exposure of sensitive
+	    information.</p>
+	  <p>SECURITY-166 is rated <strong>critical</strong>. For users who use
+	    the affected feature, this attack results in arbitrary code
+	    execution on the master.</p>
+	  <p>SECURITY-167 is rated <strong>critical</strong>. This attack is
+	    easy to mount, and it results in the exposure of sensitive information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27</url>
+    </references>
+    <dates>
+      <discovery>2015-03-01</discovery>
+      <entry>2015-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99029172-8253-407d-9d8b-2cfeab9abf81">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
