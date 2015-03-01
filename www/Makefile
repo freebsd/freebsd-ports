@@ -397,7 +397,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mediawiki119
-    SUBDIR += mediawiki122
     SUBDIR += mediawiki123
     SUBDIR += mediawiki124
     SUBDIR += mergelog
@@ -444,7 +443,6 @@
     SUBDIR += mod_chroot
     SUBDIR += mod_clamav
     SUBDIR += mod_cloudflare
-    SUBDIR += mod_cplusplus
     SUBDIR += mod_cvs2
     SUBDIR += mod_dav_svn
     SUBDIR += mod_dnssd
@@ -1531,7 +1529,6 @@
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django14
-    SUBDIR += py-django15
     SUBDIR += py-django16
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox

@@ -486,7 +486,6 @@
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
-    SUBDIR += postfix-tls
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
