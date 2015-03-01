@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile
-PORTVERSION=	3.1.4
-PORTREVISION=	3
+PORTVERSION=	4.0.6
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
 		libcrypto.so:${PORTSDIR}/security/openssl \
 		libarchive.so.13:${PORTSDIR}/archivers/libarchive \
+		libcurl.so:${PORTSDIR}/ftp/curl \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo \
@@ -25,8 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v3.1.4
-GH_COMMIT=	ac58109
+GH_TAGNAME=	v${PORTVERSION}-server
+GH_COMMIT=	adf9a87
 
 USES=		autoreconf iconv libtool pathfix pkgconfig python:2 shebangfix
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh
@@ -78,8 +78,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB}\
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade
-.for SERVPROG in fileserver seaf-fsck seafserv-gc seaf-fuse seaf-migrate \
-	seaf-server seaf-server-init seafile-controller seafserv-tool
+.for SERVPROG in seaf-fsck seafserv-gc seaf-fuse seaf-migrate \
+	seaf-server seaf-server-init seafile-controller
 	if [ -e "${STAGEDIR}${PREFIX}/bin/${SERVPROG}" ]; then \
 		${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/${SERVPROG} ${STAGEDIR}${PREFIX}/${SEABIN}; \
 		${RM} ${STAGEDIR}${PREFIX}/bin/${SERVPROG}; \

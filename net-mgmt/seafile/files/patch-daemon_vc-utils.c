@@ -1,15 +1,15 @@
---- daemon/vc-utils.c.orig	2014-06-05 02:25:50.000000000 -0400
-+++ daemon/vc-utils.c	2014-07-27 01:10:00.000000000 -0400
-@@ -489,7 +489,7 @@
+--- daemon/vc-utils.c.orig	2015-01-28 02:24:19.000000000 -0500
++++ daemon/vc-utils.c	2015-01-28 02:30:05.000000000 -0500
+@@ -664,7 +664,7 @@
  
  #endif  /* defined WIN32 || defined __APPLE__ */
  
 -#ifdef __linux__
 +#if defined(__linux__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
  
- static char *
+ char *
  build_checkout_path (const char *worktree, const char *ce_name, int len)
-@@ -549,12 +549,12 @@
+@@ -724,13 +724,13 @@
      gboolean force_conflict = FALSE;
  
      path_in = g_build_path ("/", o->base, ce->name, NULL);
@@ -19,7 +19,8 @@
 +#else
      path = build_case_conflict_free_path (o->base, ce->name,
                                            conflict_hash, no_conflict_hash,
-                                           &case_conflict);
+                                           &case_conflict,
+                                           FALSE);
 -#else
 -    path = build_checkout_path (o->base, ce->name, ce_namelen(ce));
  #endif
