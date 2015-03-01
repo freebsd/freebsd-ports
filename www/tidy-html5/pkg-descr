@@ -1,0 +1,11 @@
+Tidy is a console application. It corrects and cleans up HTML and XML documents
+by fixing markup errors and upgrading legacy code to modern standards.
+
+TidyLib is a C static or dynamic library that developers can integrate into
+their applications in order to bring all of Tidy's power to your favorite tools.
+TidyLib is used today in desktop applications, web servers, and more.
+
+This is yet a development version. When it will become stable, it will
+supersedes the ports www/tidy-devel and www/tidy-lib.
+
+WWW: http://www.html-tidy.org/
