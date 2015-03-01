@@ -1,5 +1,5 @@
---- lib/utils.c.orig	2014-07-31 06:20:28.000000000 -0400
-+++ lib/utils.c	2014-11-21 23:06:33.789257323 -0500
+--- lib/utils.c.orig	2015-01-27 23:13:50.000000000 -0500
++++ lib/utils.c	2015-01-27 23:18:04.000000000 -0500
 @@ -43,6 +43,16 @@
  
  #include <event2/util.h>
@@ -17,11 +17,12 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -1465,14 +1475,19 @@
+@@ -1465,14 +1475,20 @@
  }
  #endif  /* ifdef WIN32 */
  
 -#ifdef __linux__
++
  /* read the link of /proc/123/exe and compare with `process_name' */
  static int
 -find_process_in_dirent(struct dirent *dir, const char *process_name)
@@ -39,7 +40,7 @@
          return -1;
      }
  
-@@ -1496,7 +1511,8 @@
+@@ -1496,7 +1512,8 @@
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -49,7 +50,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -1510,7 +1526,7 @@
+@@ -1510,7 +1527,7 @@
          /* /proc/[1-9][0-9]* */
          if (first > '9' || first < '1')
              continue;
@@ -58,7 +59,7 @@
          if (pid > 0) {
              closedir(proc_dir);
              return TRUE;
-@@ -1520,6 +1536,18 @@
+@@ -1520,6 +1537,18 @@
      closedir(proc_dir);
      return FALSE;
  }
@@ -77,7 +78,7 @@
  #endif
  
  #ifdef __APPLE__
-@@ -1530,6 +1558,108 @@
+@@ -1530,6 +1559,108 @@
  }
  #endif
  
