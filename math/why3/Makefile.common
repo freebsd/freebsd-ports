@@ -18,8 +18,6 @@ MAKE_JOBS_UNSAFE=	yes
 # with ocaml 4.01.  Leave the option commented out for future use.
 # There is something wrong with coq, it rebuilds itself in /usr/local.
 # Leave it for now with a TO-DO to fix coq
-# Isabelle is currently i386-only due to issues with polyml and default
-# reliance on i386-only sml-nj (also currently broke).  Disable for now.
 
 CONFIGURE_ARGS=	--enable-relocation \
 		--disable-doc \
@@ -30,7 +28,7 @@ CONFIGURE_ARGS=	--enable-relocation \
 		--disable-isabelle-libs
 
 .if defined(HAS_MANUAL)
-OPTIONS_DEFINE=	DOCS #ISABELLE COQ FRAMA_C
+OPTIONS_DEFINE=	DOCS #COQ FRAMA_C
 .endif
 
 COQ_CONFIGURE_ENABLE=		coq-tactic coq-libs
@@ -41,10 +39,6 @@ FRAMA_C_CONFIGURE_ENABLE=	frama_c
 FRAMA_C_DESC=			Build Frama-C plugin
 FRAMA_C_BUILD_DEPENDS=		frama-c:${PORTSDIR}/devel/frama-c
 FRAMA_C_RUN_DEPENDS=		frama-c:${PORTSDIR}/devel/frama-c
-ISABELLE_CONFIGURE_ENABLE=	isabelle-libs
-ISABELLE_DESC=			Enable Isabelle realizations
-ISABELLE_BUILD_DEPENDS=		isabelle:${PORTSDIR}/math/isabelle
-ISABELLE_RUN_DEPENDS=		isabelle:${PORTSDIR}/math/isabelle
 
 # The pdf is pre-built, but the makefile wants to build it again in order
 # to generate manual.bbl which is used to build the html documention.
