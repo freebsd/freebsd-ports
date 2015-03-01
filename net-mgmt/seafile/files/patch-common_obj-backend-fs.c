@@ -1,5 +1,5 @@
---- common/obj-backend-fs.c.orig	2014-08-30 10:00:33.108962525 -0400
-+++ common/obj-backend-fs.c	2014-08-30 10:03:02.405000733 -0400
+--- common/obj-backend-fs.c.orig	2015-01-28 02:14:45.000000000 -0500
++++ common/obj-backend-fs.c	2015-01-28 02:15:58.000000000 -0500
 @@ -101,7 +101,7 @@
  static int
  fsync_obj_contents (int fd)
