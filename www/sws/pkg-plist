@@ -1,0 +1,4 @@
+bin/sws
+%%ETCDIR%%.cfg
+man/man8/sws.8.gz
+@dir sws/docs
