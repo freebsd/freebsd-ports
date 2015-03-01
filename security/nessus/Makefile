@@ -1,5 +1,5 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
+# $FreeBSD: head/security/nessus/Makefile 361049 2014-07-07 10:29:17Z tijl $
 
 PORTNAME=	nessus
 PORTVERSION=	2.2.9
@@ -26,6 +26,8 @@ OPTIONS_DEFAULT=GTK2
 GTK2_CONFIGURE_ENABLE=	gtk
 GTK2_USES=	pkgconfig
 GTK2_USE=	GNOME=gtk20
+
+OPENSSL_USE=	yes
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
