@@ -10,9 +10,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
+BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
+
 OPTIONS_DEFINE=	DOCS NLS
 
 USES=		gmake libtool tar:bzip2
+CPP=		tradcpp
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
