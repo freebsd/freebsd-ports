@@ -373,6 +373,7 @@ include/wine/windows/gdiplusmetaheader.h
 include/wine/windows/gdipluspixelformats.h
 include/wine/windows/gdiplustypes.h
 include/wine/windows/guiddef.h
+include/wine/windows/hidusage.h
 include/wine/windows/highlevelmonitorconfigurationapi.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
@@ -486,6 +487,7 @@ include/wine/windows/mprerror.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
+include/wine/windows/msasn1.h
 include/wine/windows/mscat.h
 include/wine/windows/mscoree.h
 include/wine/windows/mscoree.idl
@@ -540,6 +542,7 @@ include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
+include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 %%OSREL8-COMPHOLIO%%include/wine/windows/ntifs.h
 %%OSREL9-COMPHOLIO%%include/wine/windows/ntifs.h
@@ -845,7 +848,7 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
-%%OSREL11%%lib32/libLLVM-3.4.so
+%%OSREL11%%lib32/libLLVM-3.5.so
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
@@ -1062,6 +1065,7 @@ lib32/wine/compobj.dll16.so
 lib32/wine/compstui.dll.so
 lib32/wine/comsvcs.dll.so
 lib32/wine/conhost.exe.so
+lib32/wine/connect.dll.so
 lib32/wine/control.exe.so
 lib32/wine/credui.dll.so
 lib32/wine/crtdll.dll.so
@@ -1174,6 +1178,7 @@ lib32/wine/dxdiagn.dll.so
 lib32/wine/dxgi.dll.so
 lib32/wine/dxva2.dll.so
 lib32/wine/eject.exe.so
+lib32/wine/evr.dll.so
 lib32/wine/expand.exe.so
 lib32/wine/explorer.exe.so
 lib32/wine/explorerframe.dll.so
@@ -1313,6 +1318,7 @@ lib32/wine/fakedlls/compobj.dll16
 lib32/wine/fakedlls/compstui.dll
 lib32/wine/fakedlls/comsvcs.dll
 lib32/wine/fakedlls/conhost.exe
+lib32/wine/fakedlls/connect.dll
 lib32/wine/fakedlls/control.exe
 lib32/wine/fakedlls/credui.dll
 lib32/wine/fakedlls/crtdll.dll
@@ -1425,6 +1431,7 @@ lib32/wine/fakedlls/dxdiagn.dll
 lib32/wine/fakedlls/dxgi.dll
 lib32/wine/fakedlls/dxva2.dll
 lib32/wine/fakedlls/eject.exe
+lib32/wine/fakedlls/evr.dll
 lib32/wine/fakedlls/expand.exe
 lib32/wine/fakedlls/explorer.exe
 lib32/wine/fakedlls/explorerframe.dll
@@ -1494,6 +1501,7 @@ lib32/wine/fakedlls/mcicda.dll
 lib32/wine/fakedlls/mciqtz32.dll
 lib32/wine/fakedlls/mciseq.dll
 lib32/wine/fakedlls/mciwave.dll
+lib32/wine/fakedlls/mf.dll
 lib32/wine/fakedlls/mfplat.dll
 lib32/wine/fakedlls/mfreadwrite.dll
 lib32/wine/fakedlls/mgmtapi.dll
@@ -1816,8 +1824,12 @@ lib32/wine/fakedlls/wtsapi32.dll
 lib32/wine/fakedlls/wuapi.dll
 lib32/wine/fakedlls/wuaueng.dll
 lib32/wine/fakedlls/wusa.exe
+lib32/wine/fakedlls/x3daudio1_1.dll
 lib32/wine/fakedlls/x3daudio1_7.dll
 lib32/wine/fakedlls/xapofx1_1.dll
+lib32/wine/fakedlls/xapofx1_3.dll
+lib32/wine/fakedlls/xapofx1_4.dll
+lib32/wine/fakedlls/xapofx1_5.dll
 lib32/wine/fakedlls/xaudio2_7.dll
 lib32/wine/fakedlls/xcopy.exe
 lib32/wine/fakedlls/xinput1_1.dll
@@ -2072,6 +2084,7 @@ lib32/wine/mcicda.dll.so
 lib32/wine/mciqtz32.dll.so
 lib32/wine/mciseq.dll.so
 lib32/wine/mciwave.dll.so
+lib32/wine/mf.dll.so
 lib32/wine/mfplat.dll.so
 lib32/wine/mfreadwrite.dll.so
 lib32/wine/mgmtapi.dll.so
@@ -2394,8 +2407,12 @@ lib32/wine/wtsapi32.dll.so
 lib32/wine/wuapi.dll.so
 lib32/wine/wuaueng.dll.so
 lib32/wine/wusa.exe.so
+lib32/wine/x3daudio1_1.dll.so
 lib32/wine/x3daudio1_7.dll.so
 lib32/wine/xapofx1_1.dll.so
+lib32/wine/xapofx1_3.dll.so
+lib32/wine/xapofx1_4.dll.so
+lib32/wine/xapofx1_5.dll.so
 lib32/wine/xaudio2_7.dll.so
 lib32/wine/xcopy.exe.so
 lib32/wine/xinput1_1.dll.so
