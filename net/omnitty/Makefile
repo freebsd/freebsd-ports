@@ -3,9 +3,9 @@
 
 PORTNAME=	omnitty
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/omnitty/omnitty/omnitty-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based SSH multiplexer
@@ -16,16 +16,14 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 LIBS+=		-lncurses
 
-ALL_TARGET=	${PORTNAME}
-
+ALL_TARGET=	omnitty
 PLIST_FILES=	bin/omnitty man/man1/omnitty.1.gz
 
 post-patch:
-	${REINPLACE_CMD} 's|<alloca.h>|<stdlib.h>|' \
-		${WRKSRC}/machmgr.c
+	${REINPLACE_CMD} 's|<alloca.h>|<stdlib.h>|' ${WRKSRC}/machmgr.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/omnitty ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/omnitty.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
