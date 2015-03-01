@@ -4,7 +4,6 @@ PORTNAME=	spiped
 PORTVERSION=	1.5.0
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Daemon for creating secure symmetric pipes
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # The spiped build only needs C99, but this will help to get us a compiler
 # which has support for AESNI on x86 systems
-USES=		compiler:c11
+USES=		compiler:c11 tar:tgz
 
 # Install into ${STAGEDIR}${PREFIX}
 MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin
@@ -32,6 +31,11 @@ PLIST_FILES=	bin/spipe \
 USE_RC_SUBR=	spiped
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+.if ${OSVERSION} < 900503
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-proto_proto__conn.c
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,62 @@
+# Created by: Dave Cottlehuber <dch@skunkwerks.at>
+# $FreeBSD$
+
+PORTNAME=	riemann
+PORTVERSION=	0.2.8
+CATEGORIES=	net-mgmt java
+MASTER_SITES=	http://aphyr.com/${PORTNAME}/
+
+MAINTAINER=	dch@skunkwerks.at
+COMMENT=	Monitors distributed systems
+
+LICENSE=	EPL
+
+USES=		tar:bzip2
+NO_BUILD=	yes
+NO_ARCH=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.7+
+
+SUB_FILES=	${PORTNAME}
+SUB_LIST+=	JAVA_HOME=${JAVA_HOME} \
+		RIEMANN_USER=${RIEMANN_USER} \
+		RIEMANN_GROUP=${RIEMANN_GROUP} \
+		RIEMANN_PIDDIR=${RIEMANN_PIDDIR} \
+		RIEMANN_LOGDIR=${RIEMANN_LOGDIR}
+
+PLIST_SUB=	JAVA_HOME=${JAVA_HOME} \
+		RIEMANN_USER=${RIEMANN_USER} \
+		RIEMANN_GROUP=${RIEMANN_GROUP} \
+		RIEMANN_PIDDIR=${RIEMANN_PIDDIR} \
+		RIEMANN_LOGDIR=${RIEMANN_LOGDIR}
+
+RIEMANN_USER?=	${PORTNAME}
+RIEMANN_GROUP?=	${PORTNAME}
+
+.if ${RIEMANN_USER} == "${PORTNAME}"
+USERS=	${PORTNAME}
+.endif
+.if ${RIEMANN_GROUP} == "${PORTNAME}"
+GROUPS=	${PORTNAME}
+.endif
+
+USE_RC_SUBR=	${PORTNAME}
+
+RIEMANN_LOGDIR=	/var/log/${PORTNAME}/
+RIEMANN_PIDDIR=	/var/run/${PORTNAME}/
+
+do-install:
+	${MKDIR} \
+		${STAGEDIR}${JAVAJARDIR} \
+		${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${RIEMANN_PIDDIR} \
+		${STAGEDIR}${RIEMANN_LOGDIR}
+	${INSTALL_DATA} \
+				${WRKSRC}/lib/${PORTNAME}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${SED} -i -e "s:riemann.log:${RIEMANN_LOGDIR}${PORTNAME}.log:g" \
+		${WRKSRC}/etc/${PORTNAME}.config
+	${CP} -p ${WRKSRC}/etc/${PORTNAME}.config \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.config.sample
+
+.include <bsd.port.mk>

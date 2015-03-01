@@ -4,7 +4,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
+		libtdb.so:${PORTSDIR}/databases/tdb
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
@@ -48,8 +48,11 @@ PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DAAP GRILO IPOD NOTIFY PYTHON LIRC MTP WEBKIT
-OPTIONS_DEFAULT=NOTIFY PYTHON WEBKIT
+OPTIONS_DEFINE=	BRASERO DAAP GRILO IPOD NOTIFY PYTHON LIRC MTP WEBKIT
+OPTIONS_DEFAULT=BRASERO NOTIFY PYTHON WEBKIT
+BRASERO_DESC=	Brasero disc burning support
+BRASERO_CONFIGURE_ENABLE=brasero
+BRASERO_LIB_DEPENDS=	libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
 DAAP_DESC=	DAAP support
 DAAP_CONFIGURE_ENABLE=	daap
 DAAP_LIB_DEPENDS=	libdmapsharing-3.0.so:${PORTSDIR}/net/libdmapsharing

@@ -11,8 +11,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unbreak XML with Doubly-Encoded Entities
 
-TEST_DEPENDS=	p5-Test-Simple>=0.64:${PORTSDIR}/devel/p5-Test-Simple
-
 USES=		perl5
 USE_PERL5=	configure
 

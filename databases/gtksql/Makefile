@@ -13,6 +13,8 @@ COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 LICENSE=	GPLv2 # (or later)
 
 BROKEN=		Fails to configure
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-03-28
 
 LIB_DEPENDS=	libscintilla.so:${PORTSDIR}/x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils

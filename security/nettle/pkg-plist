@@ -61,4 +61,3 @@ lib/libnettle.so.4
 lib/libnettle.so.4.7
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
-@dirrm include/nettle

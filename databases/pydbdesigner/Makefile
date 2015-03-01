@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Needs an unsupported version of wxWidgets
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-03-28
 
 EXTRACT_AFTER_ARGS=	--exclude CVS
 

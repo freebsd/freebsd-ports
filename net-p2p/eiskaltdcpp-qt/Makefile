@@ -19,7 +19,7 @@ MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 USES=		cmake gettext compiler:c++11-lib desktop-file-utils
 USE_OPENSSL=	yes
 USE_QT4=	gui xml network qmake_build uic_build \
-		moc_build rcc_build linguist_build
+		moc_build rcc_build linguisttools_build
 
 OPTIONS_DEFINE=	ASPELL FREE_SPACE DBUS_NOTIFY QTSCRIPT QML SQLITE
 OPTIONS_DEFAULT=	FREE_SPACE DBUS_NOTIFY

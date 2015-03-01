@@ -1145,7 +1145,6 @@
     SUBDIR += spread-j
     SUBDIR += spread4
     SUBDIR += sprinkle
-    SUBDIR += spserver
     SUBDIR += sqtop
     SUBDIR += ss5
     SUBDIR += ssldump
@@ -1291,7 +1290,6 @@
     SUBDIR += xorp
     SUBDIR += xprobe
     SUBDIR += xpvm
-    SUBDIR += xrdesktop
     SUBDIR += xrdesktop2
     SUBDIR += xrdp
     SUBDIR += xrdp-devel

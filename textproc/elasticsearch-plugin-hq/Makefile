@@ -10,7 +10,7 @@ COMMENT=	ElasticSearch HQ Plugin
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS:=	elasticsearch>=0.90.9:${PORTSDIR}/textproc/elasticsearch
+RUN_DEPENDS=	elasticsearch>=0.90.9:${PORTSDIR}/textproc/elasticsearch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	royrusso

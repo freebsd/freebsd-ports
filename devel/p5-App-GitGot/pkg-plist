@@ -22,9 +22,9 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Command/update.pm
 %%SITE_PERL%%/App/GitGot/Command/update_status.pm
 %%SITE_PERL%%/App/GitGot/Command/version.pm
-%%SITE_PERL%%/App/GitGot/Outputter/light.pm
-%%SITE_PERL%%/App/GitGot/Outputter/dark.pm
 %%SITE_PERL%%/App/GitGot/Outputter.pm
+%%SITE_PERL%%/App/GitGot/Outputter/dark.pm
+%%SITE_PERL%%/App/GitGot/Outputter/light.pm
 %%SITE_PERL%%/App/GitGot/Repo.pm
 %%SITE_PERL%%/App/GitGot/Repo/Git.pm
 %%SITE_PERL%%/App/GitGot/Repositories.pm

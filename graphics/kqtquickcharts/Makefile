@@ -6,7 +6,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtQuick plugin to render interactive charts
 
 USE_KDE4=	kdelibs kdeprefix automoc4

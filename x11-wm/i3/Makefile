@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.8
+DISTVERSION=	4.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/
 
@@ -20,12 +20,13 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor
+		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor \
+		libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
-USE_XORG=	x11 xcb
+USE_XORG=	xcb
 USES=		pkgconfig iconv gmake perl5 tar:bzip2
 USE_PERL5=	run
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bibtool
-PORTVERSION=	2.57
+PORTVERSION=	2.58
 CATEGORIES=	textproc print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	biblio/bibtex/utils/${PORTNAME}
@@ -18,6 +18,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 WRKSRC=		${WRKDIR}/BibTool
 
 MAKEFILE=	makefile
+EXTRACT_AFTER_ARGS=-k		# work around bad symlink in 2.58 tarfile
 INSTALL_TARGET=	install install.man
 
 PORTDOCS=	bibtool.pdf ref_card.pdf c_lib.pdf

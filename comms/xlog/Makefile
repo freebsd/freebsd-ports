@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${PORTNAME}.xpm" \
-	"${PORTNAME}" "Utility;" ${FALSE}
+DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${PORTNAME}" \
+	"${PORTNAME}" "Utility;" false
 
 .include <bsd.port.mk>

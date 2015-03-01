@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
 BROKEN=		Fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-03-28
 
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta

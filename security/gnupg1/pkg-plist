@@ -9,7 +9,7 @@ libexec/gnupg/gpgkeys_hkp
 man/man1/gpg-zip.1.gz
 man/man1/gpg.1.gz
 man/man1/gpgv.1.gz
-@comment man/man7/gnupg.7.gz
+%%DATADIR%%1/options.skel
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg.mo

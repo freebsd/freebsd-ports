@@ -129,6 +129,7 @@
     SUBDIR += p5-Gnome2
     SUBDIR += p5-Gnome2-Canvas
     SUBDIR += p5-Gnome2-VFS
+    SUBDIR += p5-Gnome2-Wnck
     SUBDIR += p5-Gtk
     SUBDIR += p5-Gtk2
     SUBDIR += p5-Gtk2-Chmod
@@ -142,6 +143,7 @@
     SUBDIR += p5-Gtk2-ImageView
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
+    SUBDIR += p5-Gtk2-Unique
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tk

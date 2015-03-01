@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Authen/SCRAM.pm
+%%SITE_PERL%%/Authen/SCRAM/Client.pm
+%%SITE_PERL%%/Authen/SCRAM/Role/Common.pm
+%%SITE_PERL%%/Authen/SCRAM/Server.pm
+%%PERL5_MAN3%%/Authen::SCRAM.3.gz
+%%PERL5_MAN3%%/Authen::SCRAM::Client.3.gz
+%%PERL5_MAN3%%/Authen::SCRAM::Role::Common.3.gz
+%%PERL5_MAN3%%/Authen::SCRAM::Server.3.gz

@@ -1,0 +1,89 @@
+--- configure.in.orig	2014-12-08 19:57:30.000000000 +0100
++++ configure.in	2014-12-16 15:55:58.000000000 +0100
+@@ -621,10 +621,12 @@
+   i386-*-freebsd*)
+      ARCH="x86-freebsd"
+      MAKE="gmake"
++     USE_STATIC_FFMPEG=1
+      ;;
+   amd64-*-freebsd*)
+      ARCH="x86_64-freebsd"
+      MAKE="gmake"
++     USE_STATIC_FFMPEG=1
+      ;;
+   arm-apple-darwin*)
+      use_joystick=no
+@@ -781,10 +783,16 @@
+ # platform specific flags
+ if echo "$ARCH" | grep -q "freebsd" ; then
+   LOCALBASE="${LOCALBASE:-/usr/local}"
+-  CFLAGS="$CFLAGS -I$LOCALBASE/include"
+-  CXXFLAGS="$CXXFLAGS -I$LOCALBASE/include"
+-  CPPFLAGS="$CPPFLAGS -I$LOCALBASE/include"
++  CFLAGS="$CFLAGS -idirafter$LOCALBASE/include"
++  CXXFLAGS="$CXXFLAGS -idirafter$LOCALBASE/include"
++  CPPFLAGS="$CPPFLAGS -idirafter$LOCALBASE/include"
+   LDFLAGS="$LDFLAGS -L$LOCALBASE/lib"
++  CC_FOR_BUILD="$CC"
++  CXX_FOR_BUILD="$CXX"
++  CFLAGS_FOR_BUILD="$CFLAGS"
++  CXXFLAGS_FOR_BUILD="$CXXFLAGS"
++  LDFLAGS_FOR_BUILD="$LDFLAGS"
++  FFMPEG_OPTS="--cc=$CC --cxx=$CXX"
+ fi
+ if test "$host_vendor" = "apple" ; then
+   # standard application paths
+@@ -1184,7 +1192,7 @@
+ )
+ 
+ #Check to see if libs are needed for functions that are often built-in to libc
+-AC_SEARCH_LIBS([iconv_open],iconv,,AC_SEARCH_LIBS([libiconv_open],iconv,,AC_MSG_ERROR($missing_library)))
++AC_CHECK_LIB([iconv],[libiconv_open],,AC_MSG_ERROR($missing_library))
+ AC_SEARCH_LIBS([dlopen],dl)
+ AC_SEARCH_LIBS([clock_gettime],rt)
+ AC_SEARCH_LIBS([dn_expand],  resolv)
+@@ -1699,7 +1707,7 @@
+ 
+   if test "$cross_compiling" != "yes"; then
+     if test "$use_debug" != "yes"; then
+-      FFMPEG_OPTS="-r"
++      FFMPEG_OPTS="${FFMPEG_OPTS} -r"
+     fi
+     if test "$use_optimizations" != "yes"; then
+       FFMPEG_OPTS="${FFMPEG_OPTS} --disable-optimizations"
+@@ -1710,7 +1718,7 @@
+       SAVE_LIBS="$LIBS"
+       # check for system installed ffmpeg. We require minimum versions.
+       PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
+-        [INCLUDES="$INCLUDES $FFMPEG_CFLAGS"; LIBS="$LIBS $FFMPEG_LIBS"; FFMPEG_FOUND="true"],
++        [INCLUDES="$FFMPEG_CFLAGS $INCLUDES"; LIBS="$FFMPEG_LIBS $LIBS"; FFMPEG_FOUND="true"],
+         [FFMPEG_FOUND="false"])
+ 
+       if test "${USE_STATIC_FFMPEG}" = "1" && test "$FFMPEG_FOUND" = "true"; then
+@@ -1737,7 +1745,7 @@
+     elif test "$with_ffmpeg" = "force"; then
+       # always build our ffmpeg
+       AC_MSG_NOTICE("FFmpeg installation forced by user - installing our version")
+-      CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" ${ffmpeg_build}/autobuild.sh ${FFMPEG_OPTS}
++      CC="$CC" CPP="$CPP" CXX="$CXX" CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" ${ffmpeg_build}/autobuild.sh ${FFMPEG_OPTS} || exit 1
+       export PKG_CONFIG_PATH="${ffmpeg_build}/ffmpeg-install/lib/pkgconfig:$PKG_CONFIG_PATH"
+ 
+     elif test "$with_ffmpeg" != "no"; then
+@@ -1750,7 +1758,7 @@
+ 
+ if test "$FFMPEG_FOUND" != "true"; then
+   PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
+-    [INCLUDES="$INCLUDES $FFMPEG_CFLAGS"; LIBS="$LIBS $FFMPEG_LIBS"; FFMPEG_FOUND="true"], 
++    [INCLUDES="$FFMPEG_CFLAGS $INCLUDES"; LIBS="$FFMPEG_LIBS $LIBS"; FFMPEG_FOUND="true"], 
+     [AC_MSG_ERROR("ffmpeg not found")])
+ fi
+ 
+@@ -2408,6 +2416,8 @@
+   LIBS="$LIBS -L\$(abs_top_srcdir)/lib/ffmpeg/libswscale -lswscale"
+ fi
+ 
++LIBS=$(echo "$LIBS" | tr "\n" " ")
++
+ USE_PVR_ADDONS=0
+ DISABLE_PVR_ADDON_CONFIG=1
+ if [[ -f "pvr-addons/Makefile.am" ]]; then

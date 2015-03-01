@@ -271,6 +271,7 @@
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
+    SUBDIR += riemann
     SUBDIR += rotorouter
     SUBDIR += routers2
     SUBDIR += routers2-extensions
