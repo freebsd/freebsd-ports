@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treesheets
-PORTVERSION=	0.0.20141225
+PORTVERSION=	0.0.20150117
 CATEGORIES=	deskutils
 
 MAINTAINER=	lightside@gmx.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_COMMIT=	6ff99fb
+GH_COMMIT=	0191b1f
 GH_TAGNAME=	${GH_COMMIT}
 
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -43,11 +43,6 @@ CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|c++|${CXX}|; \
-		s|-O3|${CXXFLAGS}| ; \
-		s|wx-config|${WX_CONFIG}| ; \
-		/^mv treesheets/d' \
-		${BUILD_WRKSRC}/build.sh
 	${REINPLACE_CMD} -e 's|sys->frame->exepath+L"|L"${DOCSDIR}|' \
 		${BUILD_WRKSRC}/document.h
 	${REINPLACE_CMD} -e 's|wxFileName(exename).GetPath()|L"${DATADIR}"|' \
@@ -56,7 +51,9 @@ post-patch: .SILENT
 		${BUILD_WRKSRC}/system.h
 
 do-build:
-	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build.sh)
+	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${CXX} -std=c++11 ${CXXFLAGS} \
+		-o ${PORTNAME} *.cpp `${WX_CONFIG} --cxxflags --libs all`)
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
