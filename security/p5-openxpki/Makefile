@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	0.25.0.1
-PORTREVISION=	1
+PORTVERSION=	0.26.1.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
-DIST_SUBDIR=	openxpki
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter for PKI: universal server building block
@@ -14,6 +13,7 @@ COMMENT=	Perl based trustcenter for PKI: universal server building block
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
+	p5-Math-BigInt>=1.9993:${PORTSDIR}/math/p5-Math-BigInt \
 	p5-Test-Prereq>=0:${PORTSDIR}/devel/p5-Test-Prereq \
 	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike \
 	p5-openxpki-i18n>=0.20.0.1:${PORTSDIR}/security/p5-openxpki-i18n \
@@ -72,10 +72,8 @@ CONFLICTS=	\
 	p5-openxpki-client-html-mason-[0-9]*
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	openxpki
-GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2f83048
+GH_COMMIT=	9bd1fea
 
 USE_OPENSSL=	yes
 USE_PERL5=	configure
@@ -101,13 +99,14 @@ post-patch:
 	@${RM} -f ${WRKSRC}/Makefile.PL.bak
 	@( \
 	cd ${WRKSRC}/../..; \
-	for f in `${FIND} config core/server doc qatest tools -type f ! -path "core/server/t/*"`; do \
-		${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' $${f}; \
-		${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' $${f}; \
-		${REINPLACE_CMD} -e 's|/var/openxpki/\([^\.]*\)\.log|/var/log/openxpki/\1\.log|g' $${f}; \
-		${RM} -f $${f}.bak; \
-	done \
+	${FIND} config core/server doc qatest tools -type f -print0 >filelist; \
+	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' "%"; \
+	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
+	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/var/openxpki/\([^\.]*\)\.log|/var/log/openxpki/\1\.log|g' "%"; \
+	${CAT} filelist | ${XARGS} -0 -I % ${RM} -f "%.bak"; \
+	${RM} filelist; \
 	)
+	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
 post-stage:
 	@${MKDIR} ${STAGEDIR}/var/openxpki
