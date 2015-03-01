@@ -3,7 +3,7 @@
 
 PORTNAME=	shutter
 PORTVERSION=	0.93.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://shutter-project.org/wp-content/uploads/releases/tars/
 
@@ -19,9 +19,11 @@ RUN_DEPENDS=	librsvg2>=2.40.6:${PORTSDIR}/graphics/librsvg2 \
 		p5-File-Spec-Native>=1.003_1:${PORTSDIR}/devel/p5-File-Spec-Native \
 		p5-File-Which>=1.09:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-Gnome2-VFS>=1.082:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
+		p5-Gnome2-Wnck>=0.16:${PORTSDIR}/x11-toolkits/p5-Gnome2-Wnck \
 		p5-Gnome2>=1.045:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
 		p5-Goo-Canvas>=0.06:${PORTSDIR}/devel/p5-Goo-Canvas \
 		p5-Gtk2-ImageView>=0.05:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
+		p5-Gtk2-Unique>=0.05:${PORTSDIR}/x11-toolkits/p5-Gtk2-Unique \
 		p5-Gtk2>=1.2491:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-JSON-XS>=3.01:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-JSON>=2.90:${PORTSDIR}/converters/p5-JSON \
