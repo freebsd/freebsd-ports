@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.3.3
+PORTVERSION=	4.3.3.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -24,6 +24,7 @@ SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 CONFIGURE_ARGS=	--enable-netcdf-4
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
