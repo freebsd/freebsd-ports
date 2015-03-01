@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-SSLeay
 PORTVERSION=	0.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-Path-Class>=0.26:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		p5-Try-Tiny>=0.19:${PORTSDIR}/lang/p5-Try-Tiny
+RUN_DEPENDS=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https
 
 CONFIGURE_ENV=	CRYPT_SSLEAY_LIVE_TEST_WANTED=0
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
