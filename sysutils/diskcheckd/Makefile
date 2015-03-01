@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diskcheckd
-PORTVERSION=	20110729
+PORTVERSION=	20150220
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
