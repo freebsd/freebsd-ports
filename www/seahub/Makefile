@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seahub
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	4.0.5
 CATEGORIES=	www
 MASTER_SITES=	GH:seahub \
 		https://pypi.python.org/packages/source/p/pip/:pip \
@@ -43,8 +42,8 @@ RUN_DEPENDS=	${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:${PO
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v3.1.3-server
-GH_COMMIT=	28de7da
+GH_TAGNAME=	v${PORTVERSION}-pro
+GH_COMMIT=	921c6ce
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	*.sh *.template
@@ -52,7 +51,7 @@ SHEBANG_FILES=	*.sh *.template
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=		SEAFOBJ SEAFDAV NLS SITEPACKAGES
-OPTIONS_DEFAULT=	SEAFOBJ SEAFDAV NLS SITEPACKAGES
+OPTIONS_DEFAULT=	SEAFOBJ SEAFDAV
 OPTIONS_SUB=		yes
 
 SEAFOBJ_DESC=		Enable Seafile file object modeling support
@@ -129,7 +128,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|##FIX_LOCALBASE##|${LOCALBASE}|' ${WRKSRC}/*.template
 	${FIND} ${WRKSRC} -name "*.bak" -exec ${RM} {} \;
 	${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} {} \;
-	(cd ${WRKSRC}; (for file in makemessages.sh.template run-seahub.sh.template \
+	(cd ${WRKSRC}; (for file in run-seahub.sh.template \
 				   send_user_notifications.sh.template setenv.sh.template; do \
 		cp $$file $${file%%.template}; \
 		done))
