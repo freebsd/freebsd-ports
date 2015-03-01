@@ -2,6 +2,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTNAME=	minecraft_server.${PORTVERSION}.jar
@@ -10,6 +11,10 @@ EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
 COMMENT=	Dedicated server for the game Minecraft
+
+OPTIONS_DEFINE=	DAEMON
+DAEMON_DESC=	Allows controlling via rc.d
+OPTIONS_SUB=	yes
 
 USERS=		mcserver
 GROUPS=		${USERS}
@@ -26,6 +31,13 @@ CONFIG_FILES=	banned-ips.json \
 		server.properties \
 		usercache.json \
 		whitelist.json
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDAEMON}
+USE_RC_SUBR+=	minecraft
+RUN_DEPENDS+=	tmux:${PORTSDIR}/sysutils/tmux
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
