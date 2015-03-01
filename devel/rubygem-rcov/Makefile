@@ -22,5 +22,7 @@ PLIST_FILES=	bin/rcov
 .if ${RUBY_VER} >= 2.0
 BROKEN=		Does not work with Ruby 2.x
 .endif
+DEPRECATED=	Does not work with Ruby 2.x
+EXPIRATION_DATE=	2015-03-28
 
 .include <bsd.port.post.mk>

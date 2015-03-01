@@ -34,5 +34,7 @@ post-install:
 .if ${RUBY_VER} >= 2.0
 BROKEN=		Does not build with Ruby 2.0 or Ruby 2.1
 .endif
+DEPRECATED=	Does not work with Ruby 2.x
+EXPIRATION_DATE=	2015-03-28
 
 .include <bsd.port.post.mk>
