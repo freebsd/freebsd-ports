@@ -53,7 +53,9 @@
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
 %%WWWDIR%%/classes/ttrssmailer.php
-%%WWWDIR%%/config.php-dist
+@mode 0400
+@sample %%WWWDIR%%/config.php.sample
+@mode
 %%WWWDIR%%/css/cdm.css
 %%WWWDIR%%/css/dijit.css
 %%WWWDIR%%/css/layout.css
@@ -2392,8 +2394,6 @@
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
 %%WWWDIR%%/themes/night.css
-@exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
-@unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 @mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
