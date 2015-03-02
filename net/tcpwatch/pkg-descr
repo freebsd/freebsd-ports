@@ -3,5 +3,4 @@ connections or HTTP proxy connections. It displays the sessions in a window
 with a history of past connections. It is useful for developing and debugging
 protocol implementations and web services.
 
-Author:	Shane Hathaway <shane@zope.com>
 WWW: http://hathawaymix.org/Software/TCPWatch/
