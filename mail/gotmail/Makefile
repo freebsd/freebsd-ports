@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to fetch mail from a Hotmail or MSN mailbox
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Net>=0:${PORTSDIR}/net/p5-Net
@@ -21,6 +24,9 @@ SHEBANG_FILES=	gotmail
 PORTDOCS=	ChangeLog README sample.gotmailrc
 
 OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	@${CHMOD} 755 ${WRKSRC}
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
