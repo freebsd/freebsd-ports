@@ -20,5 +20,3 @@ called version 1.0. Some of the most obvious of these are:
 - Testing should be done more thoroughly as there are many special cases
   in compression routines which get used very rarely.
 - Documentation of code and algorithms is totally missing.
-
-Author:	Harri Hirvola <harri.hirvola@vaisala.infonet.com>
