@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cx88d
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cx88d
+#
+# cx88d_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable cx88d.
+# cx88d_args (str):		Extra arguments to be passed to all cx88 instances (default "-p 0 -q -h -u dvb://")
+# cx88d_devs (str):		Whitespace-delimited list of devices on which
+#				to enable DVB capture (e.g. cx88d_devs="cx88mpeg0 cx88mpeg2").
+#				Defaults to all cx88mpeg devices under /dev.
+# cx88d_{dev}_args (str)	Extra arguments to be passed to cx88 instance for specific device
+#				(e.g. cx88d_cx88mpeg1_args="-u udp://127.0.0.1:8802") (default empty)
+#
+
+. /etc/rc.subr
+
+name="cx88d"
+rcvar=cx88d_enable
+
+load_rc_config $name
+
+: ${cx88d_enable:="NO"}
+: ${cx88d_args="-p 0 -q -h -u dvb://"}
+
+procname="%%PREFIX%%/bin/cx88"
+command="/usr/sbin/daemon"
+
+cx88d_showports() {
+   printf "PORT\tCMMMAND\n"
+   sockstat -l -P tcp | grep cx88 | while read line; do
+      command=""
+      port=""
+      for field in $line; do
+         if [ `expr "$field" : "[0-9]*"` -gt 0 -a "$command" = "" ]; then
+            command=`ps -o command= -p $field`
+         elif [ `expr "$field" : "\*:[0-9]*"` -gt 2 -a "$port" = "" ]; then
+            port=`echo $field | cut -c 3-`
+         fi
+      done
+      printf "$port\t$command\n"
+   done
+}
+
+extra_commands="showports"
+showports_cmd="${name}_showports"
+
+case $1 in
+   *showports)
+      run_rc_command "$1"
+      ;;
+   *rcvar)
+      run_rc_command "$1"
+      ;;
+   *)
+      if [ -z "${cx88d_devs}" ]; then
+         cx88d_devs=`ls /dev/cx88mpeg* | cut -c 6-`
+      fi
+      for devnode in ${cx88d_devs}; do
+         pidfile="/var/run/cx88d.${devnode}.pid"
+         eval cx88d_instance_flags=\$cx88d_${devnode}_args
+         command_args="-fp ${pidfile} ${procname} -d /dev/${devnode} ${cx88d_args} ${cx88d_instance_flags}"
+         run_rc_command "$1"
+      done
+      ;;
+esac
+
