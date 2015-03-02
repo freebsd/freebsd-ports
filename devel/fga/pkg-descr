@@ -10,5 +10,4 @@ General Public License, and it's easy to incorporate in other applications.
 A parallel version of the algorithm (using POSIX threads) is included in order
 to take advantage of multi-processor environments.
 
-Author:	Alessandro Presta <alessandro.presta@gmail.com>
 WWW: http://fga.sourceforge.net/

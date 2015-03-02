@@ -8,5 +8,4 @@ access to elements.
 There are also functors that allow the generation of similar modules
 which use different reallocation strategies.
 
-Author:	Markus Mottl <markus.mottl@gmail.com>
 WWW: https://bitbucket.org/mmottl/res
