@@ -471,6 +471,7 @@
 %%NLS%%%%MMDIR%%/messages/sl/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/sr/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/sr/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/sr/README.sr
 %%NLS%%%%MMDIR%%/messages/sv/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/sv/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/sv/README.sv
@@ -805,6 +806,7 @@
 %%NLS%%%%MMDIR%%/templates/el/verify.txt
 %%SUB_HTDIG%%%%MMDIR%%/templates/en/htdig.html
 %%SUB_HTDIG%%%%MMDIR%%/templates/en/TOC_htsearch.html
+%%MMDIR%%/templates/en/adminaddrchgack.txt
 %%MMDIR%%/templates/en/admindbdetails.html
 %%MMDIR%%/templates/en/admindbpreamble.html
 %%MMDIR%%/templates/en/admindbsummary.html
@@ -1259,6 +1261,7 @@
 %%NLS%%%%MMDIR%%/templates/hu/unsubauth.txt
 %%NLS%%%%MMDIR%%/templates/hu/userpass.txt
 %%NLS%%%%MMDIR%%/templates/hu/verify.txt
+%%NLS%%%%MMDIR%%/templates/ia/adminaddrchgack.txt
 %%NLS%%%%MMDIR%%/templates/ia/admindbdetails.html
 %%NLS%%%%MMDIR%%/templates/ia/admindbpreamble.html
 %%NLS%%%%MMDIR%%/templates/ia/admindbsummary.html
@@ -1723,6 +1726,7 @@
 %%NLS%%%%MMDIR%%/templates/ro/verify.txt
 %%NLS%%%%MMDIR%%/templates/ru/archtocnombox.html
 %%NLS%%%%MMDIR%%/templates/ru/probe.txt
+%%NLS%%%%MMDIR%%/templates/ru/adminaddrchgack.txt
 %%NLS%%%%MMDIR%%/templates/ru/admindbdetails.html
 %%NLS%%%%MMDIR%%/templates/ru/admindbpreamble.html
 %%NLS%%%%MMDIR%%/templates/ru/admindbsummary.html

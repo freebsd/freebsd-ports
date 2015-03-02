@@ -54,3 +54,14 @@ Refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
 You can also see the document in Japanese language in
 <http://www.python.jp/pipermail/mailman-users-jp/2004-August/001008.html>
 ----------------------------------------------------------------------------
+UPDATE INFORMATION FOR UPDATES TO VERSION 2.1.19:
+
+  Changed behavior
+
+    - Mailman's log files, request.pck files and heldmsg-* files are no
+      longer created world readable to protect against access by untrusted
+      local users.  Note that permissions on existing log files won't be
+      changed so if you are concerned about this and don't rotate logs or
+      have a logrotate process that creates new log files instead of letting
+      Mailman create them, you will need to address that.  (LP: #1327404)
+----------------------------------------------------------------------------
