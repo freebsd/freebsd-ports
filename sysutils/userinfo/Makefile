@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	userinfo
-PORTVERSION=	2.4
-PORTREVISION=	3
+PORTVERSION=	2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -15,5 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
