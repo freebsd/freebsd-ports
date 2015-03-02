@@ -1,9 +1,6 @@
 This is a port of pdftohtml, which converts pdf-files into nicely
 formatted html, combined with png images.
-The HTML generated uses frames to emulate the content listing from 
+The HTML generated uses frames to emulate the content listing from
 the pdf.
-
-Author:	Gueorgui Ovtcharov
-	Rainer Dorsch <pdftohtml-general@lists.sourceforge.net>
 
 WWW: http://sourceforge.net/projects/pdftohtml/
