@@ -5,5 +5,4 @@ and CGI/1.1 are implemented. Also supported are: chroot, setuid,
 basic authentication, SSL, IPv6, custom responses, aliases, and
 virtual hosts. The access log is written in standard CLF format.
 
-Author: Glocker Marcus <marcus@nazgul.ch>
 WWW: http://www.nazgul.ch/dev_nostromo.html
