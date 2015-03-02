@@ -12,5 +12,4 @@ It includes some built-in features;
 * Serving up web applications, with configuration based on
   paste.deploy.
 
-Author:	Ian Bicking <ianb at colorstudy com>
-WWW:	http://pythonpaste.org/script/
+WWW: http://pythonpaste.org/script/

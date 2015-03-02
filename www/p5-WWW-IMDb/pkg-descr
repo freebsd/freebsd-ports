@@ -1,4 +1,2 @@
 Internet Movie Database Perl library (IMDb.pm) is a Perl class that queries 
 the Internet Movie Database via a simple OO interface.
-
-Author: Olivier Poitrey <rs-freshmeat@rhapsodyk.net>

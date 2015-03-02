@@ -17,5 +17,4 @@ URIs; these URIs can refer to Python Eggs for INI-style configuration
 files. Paste Script provides commands to serve applications based on
 this configuration file.
 
-Author:	Ian Bicking <ianb at colorstudy com>
-WWW:	http://pythonpaste.org/deploy/
+WWW: http://pythonpaste.org/deploy/
