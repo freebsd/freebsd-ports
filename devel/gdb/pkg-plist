@@ -21,3 +21,17 @@ man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/strfns.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/printer/__init__.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/printer/bound_registers.py
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/boot.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/experimental.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/experimental.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/init.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/iterator.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/iterator.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/printing.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/printing.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/support.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/support.scm
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/types.go
+%%GUILE%%%%DATADIR%%%%VER%%/guile/gdb/types.scm
