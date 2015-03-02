@@ -1,16 +1,15 @@
-The seccure toolset implements a selection of asymmetric algorithms 
-based on elliptic curve cryptography (ECC). In particular it offers 
-public key encryption / decryption, signature  generation / 
+The seccure toolset implements a selection of asymmetric algorithms
+based on elliptic curve cryptography (ECC). In particular it offers
+public key encryption / decryption, signature  generation /
 verification and key establishment.
 
-ECC schemes offer a much better key size to security ratio than 
-classical systems (RSA, DSA). Keys are short enough to make direct 
-specification of keys on the command line possible (sometimes this 
+ECC schemes offer a much better key size to security ratio than
+classical systems (RSA, DSA). Keys are short enough to make direct
+specification of keys on the command line possible (sometimes this
 is more convenient than the management of PGP-like key rings).
-seccure builds on this feature and therefore is the tool of choice 
-whenever lightweight asymmetric cryptography -- independent of key 
-servers, revocation certificates, the Web of Trust or even 
-configuration files -- is required. 
+seccure builds on this feature and therefore is the tool of choice
+whenever lightweight asymmetric cryptography -- independent of key
+servers, revocation certificates, the Web of Trust or even
+configuration files -- is required.
 
-Author: B. Poettering
-WWW: http://point-at-infinity.org/seccure/ 
+WWW: http://point-at-infinity.org/seccure/
