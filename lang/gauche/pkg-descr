@@ -3,5 +3,4 @@ Algorithmic Language Scheme. It is designed for rapid development of
 daily tools like system management and text processing. It can handle
 multibyte character strings natively.
 
-Author: Shiro Kawai <shiro@acm.org>
 WWW: http://practical-scheme.net/gauche/

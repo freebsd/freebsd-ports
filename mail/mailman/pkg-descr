@@ -9,7 +9,7 @@ Paraphrasing the website:
   including web-based archiving (though it also has hooks for external
   archivers), mail-to-news gateways, bounce handling, spam prevention,
   Majordomo-style email-based list administration, direct SMTP delivery (with
-  fast bulk mailing), digest delivery, virtual domain support, and more. 
+  fast bulk mailing), digest delivery, virtual domain support, and more.
 
 Mailman is written mostly in Python (with a smattering of C where necessary
 for security purposes), and includes hooks to make it easily scriptable and
@@ -17,5 +17,4 @@ extensible.  It is compatible with most web servers and browsers, and most
 mail transfer agents (mail servers).  Mailman's documentation may be found on
 its website.
 
-Author: Barry Warsaw <barry@python.org> and the Mailman Cabal
 WWW: http://www.list.org/
