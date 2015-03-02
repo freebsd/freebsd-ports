@@ -7,5 +7,4 @@ Primary design goals are speed, portability and ease of use.  Msieve claims to
 be the fastest implementation for factoring general inputs between 40 and 100
 decimal digits, but can handle larger input as well.
 
-Author: Jason Papadopoulos <jasonp@boo.net>
 WWW: http://www.boo.net/~jasonp/qs.html

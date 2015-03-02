@@ -5,5 +5,4 @@ Features include finding abusers, sorting messages by sender/sender's IP,
 showing stats, requeue messages, queue consistency check, queue
 backup/restore, and others.
 
-Author: Jeremy Kister
 WWW: http://jeremy.kister.net/code/qmqtool/
