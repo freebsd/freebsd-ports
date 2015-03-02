@@ -1,4 +1,4 @@
-ipsvd is a set of internet protocol service daemons. 
+ipsvd is a set of internet protocol service daemons.
 It currently includes a TCP/IP service daemon, and a UDP/IP service daemon.
 
 An internet protocol service (ipsv) daemon waits for incoming connections
@@ -18,5 +18,4 @@ from the runit package, or supervise from the daemontools package.
 
 ipsvd can be used to run services normally run by inetd, xinetd, or tcpserver.
 
-Author:	Gerrit Pape <pape@smarden.org>
-WWW:	http://smarden.org/ipsvd/
+WWW: http://smarden.org/ipsvd/
