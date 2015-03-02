@@ -10,5 +10,4 @@ XRally is written in C using only the basic Xlib and Xpm libraries.
 It's a project aimed mainly at newbie X11/Game programmers like me
 (but any experienced help is appreciated! :) )
 
-Author: Ismael Orenstein <perdig@linuxbr.com.br>
 WWW: http://www.linuxgames.com/xrally/

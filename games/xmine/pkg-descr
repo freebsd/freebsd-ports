@@ -13,5 +13,3 @@ without OSF/Motif.
 
 Since the game itself has some 3D look, linking against the famous
 Xaw3d library is highly recommended.
-
-Author: Paul Falstad (pf@z-code.com)

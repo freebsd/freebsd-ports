@@ -1,6 +1,5 @@
-bitedit is a simple ncurses program for editing a file. It allows 
-you to directly edit of the individual bits of a binary file in a 
+bitedit is a simple ncurses program for editing a file. It allows
+you to directly edit of the individual bits of a binary file in a
 graphical fashion. It is useful for editing all sorts of binary files.
 
-Author:	Andrew McGill <andrew@ledge.co.za>
-WWW:	http://ledge.co.za/bitedit/
+WWW: http://ledge.co.za/bitedit/
