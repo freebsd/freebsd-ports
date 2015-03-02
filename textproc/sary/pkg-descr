@@ -3,5 +3,4 @@ search facilities for text files on the order of 10 to 100 MB using a
 data structure called a suffix array.  It can also search specific
 fields in a text file by assigning index points to those fields.
 
-Author:	Satoru Takabayashi <satoru@namazu.org>
 WWW: http://sary.sourceforge.net/index.html.en
