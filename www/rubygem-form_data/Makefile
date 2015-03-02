@@ -11,6 +11,9 @@ COMMENT=	Build form data request bodies
 
 LICENSE=	MIT
 
+DEPRECATED=	Use www/rubygem-http-form_data instead (renamed by upstream)
+EXPIRATION_DATE=2015-03-31
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
