@@ -1,5 +1,5 @@
 Aims:
-- To listen on a local UNIX socket and tunnel any incoming connections and 
+- To listen on a local UNIX socket and tunnel any incoming connections and
   traffic to a (remote) IP address/port
 
 What it does:
@@ -10,5 +10,4 @@ What it does:
 What it doesn't do (yet):
 - Doesn't limit number of concurrent connections
 
-Author: <dizzy@roedu.net>
 WWW: http://ahriman.bucharest.roedu.net/unix2tcp/

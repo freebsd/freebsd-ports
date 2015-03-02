@@ -1,7 +1,6 @@
-portell is a program that allows FreeBSD users to view the description as 
-given in its pkg-descr file for a specific port. If you want to know what 
-the program "Foo" is, then you can type "portell foo" and portell will 
-find its pkg-descr file and dump it on your display.  
+portell is a program that allows FreeBSD users to view the description as
+given in its pkg-descr file for a specific port. If you want to know what
+the program "Foo" is, then you can type "portell foo" and portell will
+find its pkg-descr file and dump it on your display.
 
-Author:	Ryan Kulla <toxicpulse@sbcglobal.net> 
 WWW: http://portell.sourceforge.net
