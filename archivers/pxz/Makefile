@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	delphij
 DISTNAME=	pxz-git-${PORTVERSION:S/0.//}
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel LZMA compressor using liblzma
 
 LICENSE=	GPLv2
