@@ -1,4 +1,4 @@
-%%WITH_BOT%%bin/botti
+%%BOT%%bin/botti
 bin/irssi
 @sample etc/irssi.conf.sample
 include/irssi/irssi-config.h
@@ -113,16 +113,16 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
-%%WITH_PERL%%%%SITE_ARCH%%/Irssi.pm
-%%WITH_PERL%%%%SITE_ARCH%%/Irssi/Irc.pm
-%%WITH_PERL%%%%SITE_ARCH%%/Irssi/TextUI.pm
-%%WITH_PERL%%%%SITE_ARCH%%/Irssi/UI.pm
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Irssi/Irc/Irc.so
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Irssi/Irssi.so
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Irssi/TextUI/TextUI.so
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
+%%PROXY%%lib/irssi/modules/libirc_proxy.a
+%%PROXY%%lib/irssi/modules/libirc_proxy.so
+%%PERL%%%%SITE_ARCH%%/Irssi.pm
+%%PERL%%%%SITE_ARCH%%/Irssi/Irc.pm
+%%PERL%%%%SITE_ARCH%%/Irssi/TextUI.pm
+%%PERL%%%%SITE_ARCH%%/Irssi/UI.pm
+%%PERL%%%%SITE_ARCH%%/auto/Irssi/Irc/Irc.so
+%%PERL%%%%SITE_ARCH%%/auto/Irssi/Irssi.so
+%%PERL%%%%SITE_ARCH%%/auto/Irssi/TextUI/TextUI.so
+%%PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
 man/man1/irssi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
