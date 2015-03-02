@@ -3,9 +3,8 @@ management system. It lists the local files that have been added,
 changed, or deleted. Content differences are summarized, i.e., the 
 number of lines of code that have been added, changed, and deleted. 
 It can also add, edit, and remove the appropriate files to/from 
-Perforce.    
+Perforce.
 
 Requires ruby.
 
-Author: Jeff Pace <jpace@incava.org>
 WWW: http://p4delta.sourceforge.net/
