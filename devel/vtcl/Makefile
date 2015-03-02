@@ -10,13 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.6.1.a1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application Development Environment for Tcl/Tk
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_BUILD=	yes
 
-USES+=		tk:84 dos2unix
+USES+=		dos2unix tk:84
 DOS2UNIX_FILES=	configure
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${PREFIX}
