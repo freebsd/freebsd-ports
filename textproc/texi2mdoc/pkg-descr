@@ -1,0 +1,4 @@
+The texi2mdoc utility is a converter from Texinfo into mdoc. It is a standalone
+ISC-licensed ISO C utility and should compile on any modern UNIX system.
+
+WWW: http://mdocml.bsd.lv/texi2mdoc/
