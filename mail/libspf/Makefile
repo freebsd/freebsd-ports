@@ -6,11 +6,13 @@ DISTVERSION=	1.0.0-p5
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/src/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
+		LOCAL/mnag/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -40,6 +42,9 @@ CONFIGURE_ARGS+=	--enable-logfile-stats
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+post-extract:
+	@${CHMOD} u+w ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

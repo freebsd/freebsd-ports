@@ -39,19 +39,6 @@ lib/libspf.so
 %%DATADIR%%/patches/qmail/1.05/netqmail-1.05-libspf-1.0.0-RC5.diff
 %%DATADIR%%/patches/qmail/1.05/netqmail-1.05-libspf-1.0.0-RC6.diff
 %%DATADIR%%/patches/qmail/README
-@dirrm %%DATADIR%%/patches/qmail/1.05
-@dirrm %%DATADIR%%/patches/qmail/1.03
-@dirrm %%DATADIR%%/patches/qmail
-@dirrm %%DATADIR%%/patches/Sendmail/8.13.x
-@dirrm %%DATADIR%%/patches/Sendmail/8.12.x
-@dirrm %%DATADIR%%/patches/Sendmail
-@dirrm %%DATADIR%%/patches/Postfix/2.1.x
-@dirrm %%DATADIR%%/patches/Postfix
-@dirrm %%DATADIR%%/patches/Courier-MTA
-@dirrm %%DATADIR%%/patches
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/qmail/control
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/qmail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/Sendmail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dir %%DOCSDIR%%/docs/qmail/1.04
+%%PORTDOCS%%@dir %%DOCSDIR%%/docs/qmail/1.03
+%%PORTDOCS%%@dir %%DOCSDIR%%/docs/Postfix/2.1.x
