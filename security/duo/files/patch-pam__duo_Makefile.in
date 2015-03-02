@@ -1,13 +1,8 @@
-
-$FreeBSD$
-
---- pam_duo/Makefile.in.orig
+--- pam_duo/Makefile.in.orig	2015-03-02 13:18:58 UTC
 +++ pam_duo/Makefile.in
-@@ -595,17 +595,7 @@
- 	tags uninstall uninstall-am uninstall-man uninstall-man8 \
- 	uninstall-pam_libLTLIBRARIES
+@@ -713,15 +713,6 @@ semodule-remove:
+ .PHONY: semodule semodule-remove
  
--
  install-data-local:
 -	$(MKDIR_P) $(DESTDIR)$(sysconfdir)
 -	-@if [ ! -f $(DESTDIR)$(sysconfdir)/pam_duo.conf ]; then \
