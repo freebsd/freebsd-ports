@@ -3,5 +3,4 @@ and Nvu that collects various information about Firefox/Thunderbird
 and saves it to a file. Currently it prints the list of installed
 extensions, themes and plugins.
 
-Author: Nickolay Ponomarev <asqueella@gmail.com>
 WWW: http://mozilla.doslash.org/infolister/
