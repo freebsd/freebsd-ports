@@ -14,7 +14,7 @@
 %%ETCDIR%%/mime.types-dist
 @exec if [ ! -f %D/%%ETCDIR%%/mime.types ] ; then cp -p %D/%F %B/mime.types  && chmod u+w %B/mime.types; fi
 @unexec if cmp -s %D/%%ETCDIR%%/nginx.conf-dist %D/%%ETCDIR%%/nginx.conf; then rm -f %D/%%ETCDIR%%/nginx.conf; fi
-@dirrmtry %%ETCDIR%%
+@dir %%ETCDIR%%
 %%ETCDIR%%/nginx.conf-dist
 @exec if [ ! -f %D/%%ETCDIR%%/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf && chmod u+w %B/nginx.conf; fi
 @exec if [ ! -d %%NGINX_TMPDIR%% ] ; then mkdir  %%NGINX_TMPDIR%%; fi
@@ -25,7 +25,7 @@
 %%WWWDATA%%www/nginx-dist/50x.html
 %%WWWDATA%%@exec chmod a-w %D/www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
-%%WWWDATA%%@dirrmtry www/nginx-dist
+%%WWWDATA%%@dir www/nginx-dist
 %%ETCDIR%%/include/ddebug.h
 %%ETCDIR%%/include/nginx.h
 %%ETCDIR%%/include/ngx_alloc.h
@@ -200,6 +200,6 @@ sbin/nginx
 sbin/dso_tool
 @unexec if [ -z ${UPGRADE_PORT} ] ; then rm -fr %%NGINX_TMPDIR%%; fi
 man/man8/nginx.8.gz
-@dirrmtry %%ETCDIR%%/modules
-@dirrmtry %%ETCDIR%%/include
-@dirrmtry %%NGINX_TMPDIR%%
+@dir %%ETCDIR%%/modules
+@dir %%ETCDIR%%/include
+@dir %%NGINX_TMPDIR%%
