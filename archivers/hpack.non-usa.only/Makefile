@@ -24,6 +24,6 @@ post-patch:
 .endfor
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/docs/hpack.cfg ${STAGEDIR}${PREFIX}/etc/hpack.cfg.dist
+	${INSTALL_DATA} ${WRKSRC}/docs/hpack.cfg ${STAGEDIR}${PREFIX}/etc/hpack.cfg.sample
 
 .include <bsd.port.mk>
