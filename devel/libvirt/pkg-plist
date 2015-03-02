@@ -130,6 +130,8 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/index.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/command.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/locking.html
+%%PORTDOCS%%%%DOCSDIR%%%%PORTVERSION%%/html/locking-lockd.html
+%%PORTDOCS%%%%DOCSDIR%%%%PORTVERSION%%/html/locking-sanlock.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/rpc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/intro.html
 %%DOCSDIR%%%%PORTVERSION%%/html/java.html
@@ -293,8 +295,6 @@ lib/libvirt/connection-driver/libvirt_driver_network.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
-lib/libvirt/connection-driver/libvirt_driver_vbox_network.so
-lib/libvirt/connection-driver/libvirt_driver_vbox_storage.so
 %%QEMU%%@unexec rmdir /var/run/libvirt/qemu
 %%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel
