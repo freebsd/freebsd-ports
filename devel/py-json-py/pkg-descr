@@ -5,5 +5,4 @@ Javascript, etc. JSON = Javascript Object Notation implies it is suitable for
 AJAX applications that exchange data from servers to Javascript applications
 running on web browser clients.
 
-Author:	<patrickdlogan@stardecisions.com>
 WWW: http://sourceforge.net/projects/json-py/
