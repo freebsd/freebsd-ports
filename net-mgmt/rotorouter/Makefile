@@ -3,7 +3,7 @@
 
 PORTNAME=	rotorouter
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# nada
 DISTFILES=	# nil
@@ -26,9 +26,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${FILESDIR}/rotorouter.conf-example \
-		${STAGEDIR}${PREFIX}/etc
-	${INSTALL_DATA} ${FILESDIR}/rotorouter.conf-example \
-		${STAGEDIR}${PREFIX}/etc/rotorouter.conf
+		${STAGEDIR}${PREFIX}/etc/rotorouter.conf.sample
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rotorouter ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
