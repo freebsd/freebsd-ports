@@ -1487,6 +1487,7 @@
     SUBDIR += tex2im
     SUBDIR += texi2db
     SUBDIR += texi2html
+    SUBDIR += texi2mdoc
     SUBDIR += textogif
     SUBDIR += the_silver_searcher
     SUBDIR += ti-hunspell
