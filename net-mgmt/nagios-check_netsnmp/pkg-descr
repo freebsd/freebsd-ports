@@ -5,5 +5,3 @@ A plugin for Nagios to query common NetSNMP-exported information:
 -- swap status;
 -- load averages;
 -- anything else exported via NetSNMP's exec or extend directives.
-
-Author: trtrmitya@gmail.com
