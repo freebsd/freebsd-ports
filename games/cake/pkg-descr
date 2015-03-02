@@ -15,5 +15,3 @@ for id Software's Quake III Arena maps.  It currently features:
     * Background music + 3D sounds (not under FreeBSD though)
     * Entities (with variable LOD)
     * ZIP compressed files (*.pk3)
-
-Author: Nicolas Crittin

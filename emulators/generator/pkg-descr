@@ -15,5 +15,4 @@ operand pre-calculation, endian pre-conversion etc. There are approximately
 that calculates flags and one that doesn't, so that unnecessary flag
 computation is avoided.
 
-Author: James Ponder
 WWW: http://www.squish.net/generator/
