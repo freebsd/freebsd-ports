@@ -1,0 +1,19 @@
+Obtained from:	https://github.com/httprb/http.rb/commit/64fc52ad7e1bf87bc7a19c89c90d41e42ab90edb
+
+--- http-0.7.1.gemspec.orig	2015-03-02 22:55:59.661280000 +0800
++++ http-0.7.1.gemspec	2015-03-02 22:56:42.052276400 +0800
+@@ -27,12 +27,12 @@
+       - !ruby/object:Gem::Version
+         version: 0.6.0
+ - !ruby/object:Gem::Dependency
+-  name: form_data
++  name: http-form_data
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: 0.1.0
++        version: 1.0.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
