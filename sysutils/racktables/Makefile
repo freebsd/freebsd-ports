@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racktables
-DISTVERSION=	0.20.8
+DISTVERSION=	0.20.10
 CATEGORIES?=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	RackTables-${DISTVERSION}
@@ -63,6 +63,6 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} wwwroot ${STAGEDIR}${WWWDIR})
 	(cd ${WRKSRC} && ${COPYTREE_BIN} gateways ${STAGEDIR}${WWWDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
