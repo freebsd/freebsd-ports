@@ -16,7 +16,4 @@ LZO implements a number of algorithms with the following features:
    + Algorithm is thread safe.
    + Algorithm is lossless.
 
-Author: Markus Franz Xaver Johannes Oberhumer
-        markus.oberhumer@jk.uni-linz.ac.at
-
 WWW: http://www.oberhumer.com/opensource/lzo/
