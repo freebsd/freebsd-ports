@@ -921,6 +921,7 @@
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
+    SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth
