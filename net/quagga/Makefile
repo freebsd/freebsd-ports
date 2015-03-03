@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.23.1
-PORTREVISION=	4
+PORTVERSION=	0.99.24
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 
@@ -19,17 +18,21 @@ CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exampledir=${PREFIX}/share/examples/quagga
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool makeinfo perl5 readline compiler:c11
+USES=		gmake libtool makeinfo perl5 readline compiler:c11 tar:xz autoreconf
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 INFO=		quagga
 
-OPTIONS_DEFINE=	ISISD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
-		NO_BGP_ANNOUNCE OSPF_NEXTHOP
+OPTIONS_DEFINE=	ISISD PIMD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
+		NO_BGP_ANNOUNCE OSPF_NEXTHOP IRDP ISIS_TOPOLOGY
+OPTIONS_DEFAULT=	ISISD PIMD RTADV OSPF_OPAQUE_LSA
 OPTIONS_SUB=	yes
 
-ISISD_DESC=		Enable experimental ISIS daemon
+PIMD_DESC=		PIM-SSM multicast routing
+IRDP_DESC=		Enable IRDP server support
+ISISD_DESC=		Enable ISIS daemon (beta)
+ISIS_TOPOLOGY_DESC=	Enable IS-IS topology generator
 PAM_DESC=		PAM authentication for vtysh
 OSPF_OPAQUE_LSA_DESC=	OSPF Opaque-LSA support (RFC2370)
 RTADV_DESC=		IPv6 Router Advertisements
@@ -58,6 +61,9 @@ CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
 .endif
 
 ISISD_CONFIGURE_ENABLE=	isisd
+ISIS_TOPOLOGY_CONFIGURE_ENABLE=	isis-topology
+PIMD_CONFIGURE_ENABLE=	pimd
+IRDP_CONFIGURE_ENABLE=	irdb
 PAM_CONFIGURE_WITH=	libpam
 OSPF_OPAQUE_LSA_CONFIGURE_ENABLE=	opaque-lsa
 RTADV_CONFIGURE_ENABLE=	rtadv
@@ -66,8 +72,8 @@ SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 TCPSOCKETS_CONFIGURE_ENABLE=	tcp-zebra
 DLMALLOC_LIB_DEPENDS=	libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
 DLMALLOC_LIBS=		-L${LOCALBASE}/lib -ldlmalloc
-NO_BGP_ANNOUNCE_CONFIGURE_ARGS+=--disable-bgp-announce
-OSPF_NEXTHOP_EXTRA_PATCH=	${PATCHDIR}/extra-patch-ospf-nexthop
+NO_BGP_ANNOUNCE_CONFIGURE_ENABLE=	bgp-announce
+OSPF_NEXTHOP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ospf-nexthop
 
 USE_RC_SUBR=	quagga watchquagga
 
