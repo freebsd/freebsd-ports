@@ -11,7 +11,7 @@ DIST_SUBDIR=	ccdoc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	MIT
 
 USES=		perl5
 
@@ -21,6 +21,8 @@ ALL_TARGET=	bld
 PLIST_FILES=	bin/ccdoc \
 		man/man1/ccdoc.1.gz
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-configure:
 	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
@@ -33,12 +35,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin_opt_gcc_/ccdoc.exe \
 		${STAGEDIR}${PREFIX}/bin/ccdoc
 	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${WRKSRC}/../doc \( -name '*.html' -o \
-		-name '*.htm' -o \
-		-name '*.gif' -o \
-		-name '*.txt' -o \
-		-name '*.jpg' \) -print | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
