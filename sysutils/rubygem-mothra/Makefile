@@ -3,7 +3,7 @@
 
 PORTNAME=	mothra
 PORTVERSION=	0.0.3
-CATEGORIES=	sysutils ruby
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	linpct@gmail.com
