@@ -1,0 +1,11 @@
+--- ./data/Makefile.am.orig	2014-07-07 08:38:31.000000000 +0000
++++ ./data/Makefile.am	2014-08-09 23:10:47.000000000 +0000
+@@ -2,7 +2,7 @@
+ SUBDIRS = symbolics
+ 
+ desktopdir = $(prefix)/share/applications
+-desktop_in_files = org.baedert.corebird.desktop.in
++desktop_in_files = corebird.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ @INTLTOOL_DESKTOP_RULE@
+ 

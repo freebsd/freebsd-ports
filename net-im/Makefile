@@ -13,6 +13,7 @@
     SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey
+    SUBDIR += corebird
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
