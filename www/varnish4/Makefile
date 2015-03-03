@@ -7,7 +7,7 @@ MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	The Varnish high-performance HTTP accelerator
+COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
 
