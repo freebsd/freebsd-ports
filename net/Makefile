@@ -948,6 +948,7 @@
     SUBDIR += py-twitter
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
+    SUBDIR += py-uritemplate
     SUBDIR += py-urllib3
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
