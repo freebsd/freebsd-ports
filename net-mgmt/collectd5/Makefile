@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.4.1
-PORTREVISION=	17
+PORTVERSION=	5.4.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 PKGNAMESUFFIX=	5
@@ -457,6 +456,8 @@ PLIST_SUB+=	XMMS=""
 CONFIGURE_ARGS+=--without-libxmms --disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
+
+INSTALL_TARGET=install-strip
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' \
