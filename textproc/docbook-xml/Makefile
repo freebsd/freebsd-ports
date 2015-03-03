@@ -11,7 +11,7 @@ DISTFILES=	${DBFILES:C,.*:(.*),\1.zip:\1,:C,:docbook-xml-([0-9]+).([0-9]+).?([0-
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook XML DTD
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:${PORTSDIR}/textproc/xmlcharent \
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:${PORTSDIR}/textproc/xmlcharent \
 		${XMLCATMGR_CMD}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_BUILD=	yes
