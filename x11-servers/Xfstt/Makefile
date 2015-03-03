@@ -5,7 +5,6 @@ PORTNAME=	xfstt
 PORTVERSION=	1.9.1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType font server for X11
