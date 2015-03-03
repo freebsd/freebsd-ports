@@ -14,6 +14,8 @@ LICENSE=	MIT
 DEPRECATED=	Use www/rubygem-http-form_data instead (renamed by upstream)
 EXPIRATION_DATE=2015-03-31
 
+PORTSCOUT=	ignore:1
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
