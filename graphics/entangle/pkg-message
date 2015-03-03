@@ -1,0 +1,6 @@
+To be able to access camera under normal user, you might want to add the
+following line:
+
+	add path 'usb/*' mode 0660
+
+to your local devfs.rules(5) configuration.
