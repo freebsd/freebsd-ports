@@ -1,8 +1,7 @@
-The sigrok project aims at creating a portable, cross-platform,
-Free/Libre/Open-Source signal analysis software suite that supports
-various device types, such as logic analyzers, MSOs, oscilloscopes,
-multimeters, LCR meters, sound level meters, thermometers, hygrometers,
-anemometers, light meters, DAQs, dataloggers, function generators,
-spectrum analyzers, power supplies, GPIB interfaces, and more.
+sigrok-firmware is a collection of firmware files required for some of the
+devices libsigrok supports (logic analyzers, oscilloscopes, or others).
+
+We only carry firmware files for which we have an explicit permission/license
+that allows at _least_ redistribution of the firmware.
 
 WWW: http://www.sigrok.org/wiki/Firmware
