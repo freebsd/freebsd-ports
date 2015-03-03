@@ -1,10 +1,11 @@
 --- lib/wnutil.c	Fri May  6 13:17:39 2005
 +++ lib/wnutil.c	Wed Dec 21 16:04:36 2005
-@@ -15,5 +15,5 @@
+@@ -15,5 +15,6 @@
  #ifdef __unix__
  #ifndef __MACH__
 -#include <malloc.h>
 +#include <stdlib.h>
++#include <stdint.h>
  #endif
  #endif
 @@ -25,5 +25,5 @@
