@@ -128,6 +128,7 @@
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-skype4py
+    SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
