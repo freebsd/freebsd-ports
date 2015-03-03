@@ -3,7 +3,7 @@
 
 PORTNAME=	pam_mount
 PORTVERSION=	2.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:S/_/-/}/${PORTNAME}/${PORTVERSION}/
 
@@ -15,8 +15,10 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libHX.so:${PORTSDIR}/lang/libhx
 
-USES=		pkgconfig perl5 tar:xz
+USES=		pkgconfig libtool perl5 tar:xz
 USE_GNOME=	libxml2
+
+INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \
@@ -31,5 +33,9 @@ post-patch:
 	   ${WRKSRC}/config/Makefile.am ${WRKSRC}/config/Makefile.in
 	${MV} ${WRKSRC}/config/pam_mount.conf.xml ${WRKSRC}/config/pam_mount.conf.xml.sample
 	${FIND} ${WRKSRC} -name "*.c" -exec ${REINPLACE_CMD} -e 's|HXformat2_aprintf|HXformat_aprintf|g' {} \;
+
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/dtd
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/
 
 .include <bsd.port.mk>
