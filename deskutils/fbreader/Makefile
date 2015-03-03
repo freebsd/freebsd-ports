@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fbreader
-PORTVERSION=	0.99.4
-DISTVERSIONPREFIX=	sources-
-PORTREVISION=	2
+PORTVERSION=	0.99.6
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.fbreader.org/files/desktop/ \
-		http://old.fbreader.org/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
@@ -17,14 +13,18 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libunibreak.so:${PORTSDIR}/textproc/libunibreak
 
-.if defined(WITH_GTK2)
-UI=		gtk
-USE_GNOME=	gtk20
-.else
-UI=		qt4
-USE_QT4=	gui corelib imageformats network moc_build
-LDFLAGS+=	-L${QT_LIBDIR}
-.endif
+OPTIONS_SINGLE=		GUI
+OPTIONS_SINGLE_GUI=	GTK2 QT4
+OPTIONS_DEFAULT=	QT4
+OPTIONS_SUB=		yes
+
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	geometer
+GH_PROJECT=	FBReader
+GH_COMMIT=	7abc80d
+GH_TAGNAME=	${PORTVERSION}-freebsdport
+
 
 .if defined(WITH_DEBUG)
 STATUS=		debug
@@ -32,17 +32,22 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		iconv gmake pkgconfig tar:tgz
-USE_SQLITE=	yes
+USES=		compiler iconv gmake pkgconfig tar:tgz
 USE_LDCONFIG=	yes
+USE_SQLITE=	yes
+
+GTK2_USE=	gnome=gtk20
+GTK2_MAKE_ENV=	UI_TYPE=gtk
+
+QT4_USE=	qt4=gui,corelib,imageformats,network,moc_build
+QT4_LDFLAGS=	-L${QT_LIBDIR}
+QT4_MAKE_ENV=	UI_TYPE=qt4
 
 INSTALL_TARGET=	do_install
-PLIST_SUB=	UI=${UI}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	TARGET_ARCH=desktop UI_TYPE=${UI} TARGET_STATUS=${STATUS} \
+MAKE_ENV+=	TARGET_ARCH=desktop TARGET_STATUS=${STATUS} \
 		ROOTDIR=${WRKSRC} INSTALLDIR=${PREFIX} LIBDIR=${PREFIX}/lib \
 		LD="${CXX}"
 MAKE_ARGS+=	MAKE=${MAKE_CMD} LIBDIR=${PREFIX}/lib
@@ -53,6 +58,8 @@ post-patch:
 		${WRKSRC}/makefiles/arch/desktop.mk
 	@${REINPLACE_CMD} -e 's,-O3,,;s,-ldl,${ICONV_LIB},' \
 		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
+	@${REINPLACE_CMD} -e 's/-llinebreak/-lunibreak/g' ${WRKSRC}/zlibrary/text/Makefile
+	@${REINPLACE_CMD} -e 's/-llinebreak/-lunibreak/g' ${WRKSRC}/makefiles/*.mk
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/fbreader/desktop/Makefile
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
 		-e 's,make ,gmake ,'
