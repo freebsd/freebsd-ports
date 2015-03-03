@@ -655,81 +655,13 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/templates.special/advanced_loop.php-sample
 %%WWWDIR%%/templates.special/loop.php-sample
 %%WWWDIR%%/templates.special/static.php-sample
-@dirrmtry %%ETCDIR%%/check_commands
-@dirrmtry %%ETCDIR%%/config.d
-@dirrmtry %%ETCDIR%%/pages
-@dirrmtry %%ETCDIR%%
-@dirrm lib/kohana/system/config
-@dirrm lib/kohana/system/controllers
-@dirrm lib/kohana/system/core/utf8
-@dirrm lib/kohana/system/core
-@dirrm lib/kohana/system/fonts
-@dirrm lib/kohana/system/helpers
-@dirrm lib/kohana/system/i18n/de_DE
-@dirrm lib/kohana/system/i18n/en_US
-@dirrm lib/kohana/system/i18n/es_ES
-@dirrm lib/kohana/system/i18n/fr_FR
-@dirrm lib/kohana/system/i18n/it_IT
-@dirrm lib/kohana/system/i18n/nl_NL
-@dirrm lib/kohana/system/i18n/ru_RU
-@dirrm lib/kohana/system/i18n
-@dirrm lib/kohana/system/libraries/drivers/Cache
-@dirrm lib/kohana/system/libraries/drivers/Captcha
-@dirrm lib/kohana/system/libraries/drivers/Database
-@dirrm lib/kohana/system/libraries/drivers/Image
-@dirrm lib/kohana/system/libraries/drivers/Session
-@dirrm lib/kohana/system/libraries/drivers
-@dirrm lib/kohana/system/libraries
-@dirrm lib/kohana/system/views/kohana
-@dirrm lib/kohana/system/views/pagination
-@dirrm lib/kohana/system/views
-@dirrm lib/kohana/system
-@dirrm lib/kohana
-@dirrm %%WWWDIR%%/application/cache
-@dirrm %%WWWDIR%%/application/config
-@dirrm %%WWWDIR%%/application/controllers
-@dirrm %%WWWDIR%%/application/helpers
-@dirrm %%WWWDIR%%/application/hooks
-@dirrm %%WWWDIR%%/application/i18n/de_DE
-@dirrm %%WWWDIR%%/application/i18n/en_US
-@dirrm %%WWWDIR%%/application/i18n/es_ES
-@dirrm %%WWWDIR%%/application/i18n/fr_FR
-@dirrm %%WWWDIR%%/application/i18n/ru_RU
-@dirrm %%WWWDIR%%/application/i18n
-@dirrm %%WWWDIR%%/application/lib
-@dirrm %%WWWDIR%%/application/models
-@dirrm %%WWWDIR%%/application/vendor/fpdf/filters
-@dirrm %%WWWDIR%%/application/vendor/fpdf/font
-@dirrm %%WWWDIR%%/application/vendor/fpdf
-@dirrm %%WWWDIR%%/application/vendor
-@dirrm %%WWWDIR%%/application/views
-@dirrm %%WWWDIR%%/application
-@dirrm %%WWWDIR%%/documents/_media
-@dirrm %%WWWDIR%%/documents/de_DE
-@dirrm %%WWWDIR%%/documents/en_US
-@dirrm %%WWWDIR%%/documents/images/smileys
-@dirrm %%WWWDIR%%/documents/images
-@dirrm %%WWWDIR%%/documents
-@dirrm %%WWWDIR%%/media/css/images
-@dirrm %%WWWDIR%%/media/css/ui-lightness/images
-@dirrm %%WWWDIR%%/media/css/ui-lightness
-@dirrm %%WWWDIR%%/media/css/ui-multisite/images
-@dirrm %%WWWDIR%%/media/css/ui-multisite
-@dirrm %%WWWDIR%%/media/css/ui-redmond/images
-@dirrm %%WWWDIR%%/media/css/ui-redmond
-@dirrm %%WWWDIR%%/media/css/ui-smoothness/images
-@dirrm %%WWWDIR%%/media/css/ui-smoothness
-@dirrm %%WWWDIR%%/media/css
-@dirrm %%WWWDIR%%/media/images
-@dirrm %%WWWDIR%%/media/js
-@dirrm %%WWWDIR%%/media
-@dirrmtry %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/templates.dist
-@dirrmtry %%WWWDIR%%/templates.special
-@dirrmtry %%WWWDIR%%
-@unexec rmdir "/var/log/kohana" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/stats" >/dev/null 2>&1 || :
-@unexec rmdir "%%NAGIOSDIR%%/pnp/perfspool" >/dev/null 2>&1 || :
-@unexec rmdir "%%NAGIOSDIR%%/pnp/rrd" >/dev/null 2>&1 || :
-@unexec rmdir "%%NAGIOSDIR%%/pnp" >/dev/null 2>&1 || :
-@unexec rmdir "%%NAGIOSDIR%%" >/dev/null 2>&1 || :
+@dir %%WWWDIR%%/application/cache
+@dir %%WWWDIR%%/application/hooks
+@dir %%ETCDIR%%/config.d
+@dir %%WWWDIR%%/templates
+@dir /var/log/kohana
+@dir /var/log/stats
+@dir %%NAGIOSDIR%%/pnp/perfspool
+@dir %%NAGIOSDIR%%/pnp/rrd
+@dir %%NAGIOSDIR%%/pnp
+@dir %%NAGIOSDIR%%
