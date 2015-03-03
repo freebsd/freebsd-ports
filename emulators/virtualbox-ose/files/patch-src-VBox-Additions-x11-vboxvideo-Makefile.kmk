@@ -1,5 +1,5 @@
---- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2015-02-12 11:08:13.000000000 -0500
-+++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2015-02-12 14:44:47.575613000 -0500
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2015-03-02 10:06:58.000000000 -0500
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2015-03-02 18:25:17.273964000 -0500
 @@ -26,7 +26,7 @@
  vboxvideo_13_DEFS := $(vboxvideo_70_DEFS) VBOXVIDEO_13
  vboxvideo_15_DEFS := \
@@ -12,7 +12,7 @@
 @@ -190,7 +190,7 @@
  vboxvideo_drv_15_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_15_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_15_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100503000
+ vboxvideo_drv_15_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=10503000
 -if1of ($(KBUILD_TARGET), linux solaris)
 +if1of ($(KBUILD_TARGET), freebsd linux solaris)
   vboxvideo_drv_15_DEFS += \
@@ -30,7 +30,7 @@
 @@ -212,7 +212,7 @@
  vboxvideo_drv_16_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_16_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_16_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100600000
+ vboxvideo_drv_16_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=10600000
 -if1of ($(KBUILD_TARGET), linux solaris)
 +if1of ($(KBUILD_TARGET), freebsd linux solaris)
   vboxvideo_drv_16_DEFS += \
@@ -39,7 +39,7 @@
 @@ -230,11 +230,19 @@
  vboxvideo_drv_17_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_17_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_17_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100699000
+ vboxvideo_drv_17_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=10699000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_17_DEFS += \
 + 	VBOX_DRI_OLD
@@ -59,7 +59,7 @@
 @@ -248,6 +256,10 @@
  vboxvideo_drv_18_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_18_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_18_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100800000
+ vboxvideo_drv_18_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=10800000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_18_DEFS += \
 + 	VBOX_DRI_OLD
@@ -70,7 +70,7 @@
 @@ -262,6 +274,10 @@
  vboxvideo_drv_19_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_19_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_19_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=100900000
+ vboxvideo_drv_19_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=10900000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_19_DEFS += \
 + 	VBOX_DRI_OLD
@@ -81,7 +81,7 @@
 @@ -276,6 +292,10 @@
  vboxvideo_drv_110_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_110_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_110_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101000000
+ vboxvideo_drv_110_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11000000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_110_DEFS += \
 + 	VBOX_DRI_OLD
@@ -92,7 +92,7 @@
 @@ -290,6 +310,10 @@
  vboxvideo_drv_111_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_111_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_111_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101100000
+ vboxvideo_drv_111_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11100000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_111_DEFS += \
 + 	VBOX_DRI_OLD
@@ -103,7 +103,7 @@
 @@ -304,6 +328,10 @@
  vboxvideo_drv_112_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_112_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_112_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101200000
+ vboxvideo_drv_112_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11200000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_112_DEFS += \
 + 	VBOX_DRI_OLD
@@ -114,7 +114,7 @@
 @@ -318,6 +346,10 @@
  vboxvideo_drv_113_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_113_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_113_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101300000
+ vboxvideo_drv_113_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11300000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_113_DEFS += \
 + 	VBOX_DRI_OLD
@@ -125,7 +125,7 @@
 @@ -332,6 +364,10 @@
  vboxvideo_drv_114_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_114_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_114_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101400000
+ vboxvideo_drv_114_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11400000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_114_DEFS += \
 + 	VBOX_DRI_OLD
@@ -136,7 +136,7 @@
 @@ -346,6 +382,10 @@
  vboxvideo_drv_115_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_115_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_115_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101500000
+ vboxvideo_drv_115_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11500000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_115_DEFS += \
 + 	VBOX_DRI_OLD
@@ -147,7 +147,7 @@
 @@ -360,6 +400,10 @@
  vboxvideo_drv_116_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_116_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_116_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101600000
+ vboxvideo_drv_116_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11600000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_116_DEFS += \
 + 	VBOX_DRI_OLD
@@ -158,7 +158,7 @@
 @@ -374,6 +418,10 @@
  vboxvideo_drv_117_TEMPLATE = VBOXGUESTR3XORGMOD
  vboxvideo_drv_117_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_117_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101700000
+ vboxvideo_drv_117_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=11700000
 +if1of ($(KBUILD_TARGET), freebsd)
 + vboxvideo_drv_117_DEFS += \
 + 	VBOX_DRI_OLD
