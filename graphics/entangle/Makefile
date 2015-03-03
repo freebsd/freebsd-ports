@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	0.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
@@ -14,6 +13,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/mate/scalable/devices/camera-photo-symbolic.svg:${PORTSDIR}/x11-themes/mate-icon-theme
 LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
 		libraw_r.so:${PORTSDIR}/graphics/libraw \
