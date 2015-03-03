@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	22
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
+CPE_VENDOR=	gnu
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
@@ -18,7 +19,7 @@ CONFLICTS=	cfengine-3* cfengine-devel-*
 
 USE_RC_SUBR=	cfexecd cfservd
 
-USES=		libtool makeinfo shebangfix
+USES=		cpe libtool makeinfo shebangfix
 SHEBANG_FILES=	contrib/cfdoc
 
 USE_BDB=	48+
