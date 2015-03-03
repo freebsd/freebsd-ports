@@ -11,10 +11,6 @@ man/man1/slack-diff.1.gz
 man/man5/slack.conf.5.gz
 man/man8/slack.8.gz
 sbin/slack
-@exec install -d -m 0700 /var/lib/slack
-@exec install -d -m 0700 /var/cache/slack
-@unexec rmdir /var/lib/slack 2>/dev/null || true
-@unexec rmdir /var/lib 2>/dev/null || true
-@unexec rmdir /var/cache/slack 2>/dev/null || true
-@dirrm lib/slack
-@dirrm libexec/slack
+@dir(,,0700) /var/lib/slack
+@dir /var/lib
+@dir(,,0700) /var/cache/slack
