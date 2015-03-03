@@ -43,10 +43,6 @@ H2O_PIDDIR=	/var/run/${PORTNAME}/
 
 USE_RC_SUBR=	${PORTNAME}
 
-.if ${OSVERSION} < 900000
-BROKEN=	fails to compile on 8.x
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${ETCDIR} \
@@ -58,4 +54,10 @@ do-install:
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/h2o ${STAGEDIR}${PREFIX}/bin/h2o
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=	fails to compile on 8.x
+.endif
+
+.include <bsd.port.post.mk>
