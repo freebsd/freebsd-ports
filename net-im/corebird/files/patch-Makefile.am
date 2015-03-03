@@ -1,0 +1,10 @@
+--- ./Makefile.am.orig	2014-07-07 08:38:31.000000000 +0000
++++ ./Makefile.am	2014-08-09 22:09:52.000000000 +0000
+@@ -1,6 +1,6 @@
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ 
+-SUBDIRS = src ui data assets po tests sql examples
++SUBDIRS = src ui data assets po sql
+ EXTRA_DIST = config.rpath  \
+ 						 intltool-extract.in \
+ 						 intltool-merge.in \

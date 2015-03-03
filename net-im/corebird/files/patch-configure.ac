@@ -1,0 +1,20 @@
+--- configure.ac.orig	2015-02-06 09:22:54.000000000 +0100
++++ configure.ac	2015-03-01 14:48:09.000000000 +0100
+@@ -93,8 +93,6 @@
+ GETTEXT_PACKAGE=corebird
+ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Gettext Package])
+ AC_SUBST(GETTEXT_PACKAGE)
+-AM_GNU_GETTEXT([external])
+-AM_GNU_GETTEXT_VERSION([0.18.3])
+ AM_GLIB_GNU_GETTEXT
+ 
+ 
+@@ -103,7 +101,7 @@
+                  src/Makefile
+                  ui/Makefile
+                  data/Makefile
+-                 data/org.baedert.corebird.desktop.in
++                 data/corebird.desktop.in
+                  data/symbolics/Makefile
+                  examples/Makefile
+                  assets/Makefile
