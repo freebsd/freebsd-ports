@@ -10,6 +10,9 @@ DISTNAME=	owpd300b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 NO_WRKSUBDIR=	yes
 USES=		uidfix zip
 

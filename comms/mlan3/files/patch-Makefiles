@@ -270,7 +270,7 @@
 +MLANLNK=	${.CURDIR}/Link
 +LIB=		mlan
 +CFLAGS=		-I. -Wall -I${MLANCOM}
-+NOPROFILE=	yes
++NO_PROFILE=	yes
 +PREFIX?=	/usr/local
 +LIBDIR=		${PREFIX}/lib
 +
