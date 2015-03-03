@@ -3,6 +3,7 @@
 
 PORTNAME=	yum
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://yum.baseurl.org/download/${PORTVERSION:R}/
 
