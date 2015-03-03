@@ -933,6 +933,7 @@
     SUBDIR += tali
     SUBDIR += tanglet
     SUBDIR += tank
+    SUBDIR += tanks-of-freedom
     SUBDIR += tbclock
     SUBDIR += tbe
     SUBDIR += tecnoballz
