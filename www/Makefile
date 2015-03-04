@@ -537,6 +537,7 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
+    SUBDIR += node010
     SUBDIR += node-devel
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
