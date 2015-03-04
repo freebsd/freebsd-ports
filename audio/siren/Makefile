@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	siren
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
@@ -22,25 +21,18 @@ USES=	ncurses pkgconfig
 HAS_CONFIGURE=	yes
 USE_CSTD=	c99
 
-OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_SINGLE=	SOUND
+OPTIONS_SINGLE_SOUND=	OSS PULSEAUDIO
+OPTIONS_DEFAULT=	OSS
+OSS_CONFIGURE_ON=	oss=yes pulse=no
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ON=	oss=no pulse=yes
+OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	sndfile=no \
 	alsa=no \
 	ao=no \
 	sndio=no \
 	sun=no
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=oss=no pulse=yes
-PLIST_SUB+=	OSS="@comment " \
-	PULSE=""
-.else
-CONFIGURE_ARGS+=oss=yes pulse=no
-PLIST_SUB+=	OSS="" \
-	PULSE="@comment "
-.endif
 
 .include <bsd.port.mk>
