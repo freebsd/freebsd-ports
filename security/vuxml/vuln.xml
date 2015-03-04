@@ -57,6 +57,101 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8505e013-c2b3-11e4-875d-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+      <package>
+	<name>chromium-npapi</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>51 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[456516] High CVE-2015-1212: Out-of-bounds write in media.
+	      Credit to anonymous.</li>
+	    <li>[448423] High CVE-2015-1213: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[445810] High CVE-2015-1214: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[445809] High CVE-2015-1215: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[454954] High CVE-2015-1216: Use-after-free in v8 bindings.
+	      Credit to anonymous.</li>
+	    <li>[456192] High CVE-2015-1217: Type confusion in v8 bindings.
+	      Credit to anonymous.</li>
+	    <li>[456059] High CVE-2015-1218: Use-after-free in dom.
+	      Credit to cloudfuzzer.</li>
+	    <li>[446164] High CVE-2015-1219: Integer overflow in webgl.
+	      Credit to Chen Zhang (demi6od) of NSFOCUS Security Team.</li>
+	    <li>[437651] High CVE-2015-1220: Use-after-free in gif decoder.
+	      Credit to Aki Helin of OUSPG.</li>
+	    <li>[455368] High CVE-2015-1221: Use-after-free in web databases.
+	      Credit to Collin Payne.</li>
+	    <li>[448082] High CVE-2015-1222: Use-after-free in service workers.
+	      Credit to Collin Payne.</li>
+	    <li>[454231] High CVE-2015-1223: Use-after-free in dom.
+	      Credit to Maksymillian Motyl.</li>
+	    <li>High CVE-2015-1230: Type confusion in v8.
+	      Credit to Skylined working with HP's Zero Day Initiative.</li>
+	    <li>[449958] Medium CVE-2015-1224: Out-of-bounds read in vpxdecoder.
+	      Credit to Aki Helin of OUSPG.</li>
+	    <li>[446033] Medium CVE-2015-1225: Out-of-bounds read in pdfium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[456841] Medium CVE-2015-1226: Validation issue in debugger.
+	      Credit to Rob Wu.</li>
+	    <li>[450389] Medium CVE-2015-1227: Uninitialized value in blink.
+	      Credit to Christoph Diehl.</li>
+	    <li>[444707] Medium CVE-2015-1228: Uninitialized value in rendering.
+	      Credit to miaubiz.</li>
+	    <li>[431504] Medium CVE-2015-1229: Cookie injection via proxies.
+	      Credit to iliwoy.</li>
+	    <li>[463349] CVE-2015-1231: Various fixes from internal audits,
+	      fuzzing, and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1212</cvename>
+      <cvename>CVE-2015-1213</cvename>
+      <cvename>CVE-2015-1214</cvename>
+      <cvename>CVE-2015-1215</cvename>
+      <cvename>CVE-2015-1216</cvename>
+      <cvename>CVE-2015-1217</cvename>
+      <cvename>CVE-2015-1218</cvename>
+      <cvename>CVE-2015-1219</cvename>
+      <cvename>CVE-2015-1220</cvename>
+      <cvename>CVE-2015-1221</cvename>
+      <cvename>CVE-2015-1222</cvename>
+      <cvename>CVE-2015-1223</cvename>
+      <cvename>CVE-2015-1224</cvename>
+      <cvename>CVE-2015-1225</cvename>
+      <cvename>CVE-2015-1226</cvename>
+      <cvename>CVE-2015-1227</cvename>
+      <cvename>CVE-2015-1228</cvename>
+      <cvename>CVE-2015-1229</cvename>
+      <cvename>CVE-2015-1230</cvename>
+      <cvename>CVE-2015-1231</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-03-03</discovery>
+      <entry>2015-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9c3374d-c2c1-11e4-b236-5453ed2e2b49">
     <topic>qt4-gui, qt5-gui -- DoS vulnerability in the BMP image handler</topic>
     <affects>
