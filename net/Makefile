@@ -1184,6 +1184,7 @@
     SUBDIR += tcpick
     SUBDIR += tcpillust
     SUBDIR += tcping
+    SUBDIR += tcpkali
     SUBDIR += tcpmssd
     SUBDIR += tcpproxy
     SUBDIR += tcpreen
