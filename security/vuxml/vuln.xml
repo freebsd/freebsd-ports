@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9c3374d-c2c1-11e4-b236-5453ed2e2b49">
+    <topic>qt4-gui, qt5-gui -- DoS vulnerability in the BMP image handler</topic>
+    <affects>
+      <package>
+	<name>qt4-gui</name>
+	<range><lt>4.8.6_4</lt></range>
+      </package>
+      <package>
+	<name>qt5-gui</name>
+	<range><lt>5.3.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2015-February/000059.html">
+	  <p>The builtin BMP decoder in QtGui prior to Qt 5.5 contained a bug
+	    that would lead to a divsion by zero when loading certain corrupt
+	    BMP files. This in turn would cause the application loading these
+	    hand crafted BMPs to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0295</cvename>
+      <mlist>http://lists.qt-project.org/pipermail/announce/2015-February/000059.html</mlist>
+    </references>
+    <dates>
+      <discovery>2015-02-22</discovery>
+      <entry>2015-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7480b6ac-adf1-443e-a33c-3a3c0becba1e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
