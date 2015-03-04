@@ -50,8 +50,8 @@
 %%QT_INCDIR%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR%%/libqscintilla2.so
 %%QT_LIBDIR%%/libqscintilla2.so.11
-%%QT_LIBDIR%%/libqscintilla2.so.11.2
-%%QT_LIBDIR%%/libqscintilla2.so.11.2.0
+%%QT_LIBDIR%%/libqscintilla2.so.11.3
+%%QT_LIBDIR%%/libqscintilla2.so.11.3.0
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 share/qt4/qsci/api/python/Python-2.4.api
 share/qt4/qsci/api/python/Python-2.5.api

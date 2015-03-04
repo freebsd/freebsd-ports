@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 
