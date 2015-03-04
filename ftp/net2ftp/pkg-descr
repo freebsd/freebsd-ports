@@ -1,20 +1,15 @@
 net2ftp is a web-based FTP client written in PHP
 
-User features
+Features
  - Navigate the FTP server
- - Upload files
- - Download files
- - Zip files
- - Unzip files
- - Install software
- - Copy, move and delete
- - Copy or move to a 2nd FTP server
- - Rename and chmod
+ - Upload and download files
+ - Edit files (WYSIWYG and syntax highlighting)
  - View code with syntax highlighting
- - Plain text editor
- - HTML editors
- - Code editor
+ - Copy, move, delete (also to 2nd FTP server)
+ - Rename and chmod (also recursive)
+ - Zip and unzip files
+ - Install software
  - Search for words or phrases
- - Calculate size
+ - Calculate the size of directories and files
 
 WWW: http://www.net2ftp.com/
