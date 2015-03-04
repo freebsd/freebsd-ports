@@ -3,7 +3,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		http://core.ring.gr.jp/archives/net/mail/qpopper/
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bc979@lafn.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
-USE_GCC=	any # -freg-struct-return only in GCC and clang-head
+USES=		compiler:features
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ENV=	OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-nonauth-file=${POPUSERS_FILE} \
@@ -58,7 +58,7 @@ U_OPTION_DESC=	include support for user .qpopper-options
 
 OPTIONS_DEFAULT=	APOP SSL U_OPTION
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MAPOP)
 QPOPAUTH=	"@comment "
@@ -128,6 +128,9 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
 post-patch:
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} -e 's|-freg-struct-return||' ${WRKSRC}/configure.in
+.endif
 	@${RM} -f ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
 	@${REINPLACE_CMD} -e \
@@ -183,4 +186,4 @@ post-install:
 	@${ECHO_MSG}	""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
