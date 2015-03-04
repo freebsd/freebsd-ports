@@ -3,7 +3,7 @@
 
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
@@ -17,10 +17,11 @@ LICENSE_NAME=	Open Market FastCGI license
 LICENSE_FILE=	${WRKSRC}/LICENSE.TERMS
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		libtool
+USES=		cpe libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
+CPE_VENDOR=	fastcgi
 
 OPTIONS_DEFINE=	DOCS
 
