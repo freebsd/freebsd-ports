@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 
