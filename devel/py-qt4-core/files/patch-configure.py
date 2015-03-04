@@ -195,26 +195,6 @@
  
          if opts.designer_plugin and "QtDesigner" in pyqt_modules:
              py_major = sipcfg.py_version >> 16
-@@ -975,9 +965,6 @@
-                     # include the ABI information.
-                     abi = ""
-                 else:
--                    dynamic_pylib = "--enable-shared" in config_args
--
--                if dynamic_pylib:
-                     if glob.glob("%s/lib/libpython%d.%d*" % (ducfg["exec_prefix"], py_major, py_minor)):
-                         lib_dir_flag = quote("-L%s/lib" % ducfg["exec_prefix"])
-                     elif 'MULTIARCH' in ducfg and glob.glob('%s/lib/%s/libpython%d.%d*' % (ducfg['exec_prefix'], ducfg['MULTIARCH'], py_major, py_minor)):
-@@ -990,9 +977,6 @@
-                         opts.designer_plugin = False
- 
-                     link = "%s -lpython%d.%d%s" % (lib_dir_flag, py_major, py_minor, abi)
--                else:
--                    sipconfig.inform("Qt Designer plugin disabled because Python library is static")
--                    opts.designer_plugin = False
- 
-                 pysh_lib = ducfg.get("LDLIBRARY", "")
- 
 @@ -2301,9 +2285,9 @@
      installs=[(pyqt.module_installs(), pyqt_modroot)]
  
