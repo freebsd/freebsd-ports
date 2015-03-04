@@ -11,7 +11,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
-LICENSE=	BSD
+LICENSE=	Ayam # similar to tcl/tk license
+LICENSE_NAME=	Ayam License
+LICENSE_FILE=	${WRKSRC}/../License.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libaqsis_util.so:${PORTSDIR}/graphics/aqsis \
 		libtiff.so:${PORTSDIR}/graphics/tiff
