@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-01-31 16:28:59.925702117 +0100
-+++ Makefile.in	2011-01-31 16:36:50.591377695 +0100
-@@ -709,19 +709,21 @@
+--- Makefile.in.orig	2014-06-29 08:53:20.000000000 +0200
++++ Makefile.in	2015-02-23 22:51:49.000000000 +0100
+@@ -796,31 +796,29 @@
  	    fi \
  	  done \
  	fi; \
@@ -28,4 +28,27 @@
 +	fi
  
  desktop-install:
- 	if test "$(datadir)" = "/usr/share"; then \
+-	if test "$(datadir)" = "/usr/share"; then \
+-	  desktopdir=/usr/share; \
+-	else \
+-	  desktopdir=/usr/local/share; \
+-	fi; \
++	desktopdir=$(pkgdatadir); \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/applications; \
+-	$(mkinstalldirs) $(DESTDIR)/usr/share/mimelnk/application; \
++	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
+@@ -828,7 +826,7 @@
+ 	fi; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \
+-	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)/usr/share/mimelnk/application; \
++	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	if test -z "$(DESTDIR)"; then \
+ 	  echo "Updating desktop, mime, and icon databases."; \
+ 	  update-desktop-database; \
