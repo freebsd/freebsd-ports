@@ -8,9 +8,9 @@ bin/ssi-cgi
 sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
-lib/hiawatha/libpolarssl.so
-lib/hiawatha/libpolarssl.so.1.3.9
-lib/hiawatha/libpolarssl.so.7
+lib/hiawatha/libmbedtls.so
+lib/hiawatha/libmbedtls.so.1.3.10
+lib/hiawatha/libmbedtls.so.8
 man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz
