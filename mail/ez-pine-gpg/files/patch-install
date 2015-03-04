@@ -1,0 +1,46 @@
+--- install.orig	2004-11-15 23:23:31.000000000 +0300
++++ install	2015-02-26 03:47:23.000000000 +0300
+@@ -60,18 +60,18 @@
+ 
+ #####################################################
+ ## make sure that "install_dir" really is a directory
+-if [ ! -d "${install_dir}" ]
++if [ ! -d "${DESTDIR}${install_dir}" ]
+ then
+-    echo "\"${install_dir}\" - That's not a directory!" 1>&2
++    echo "\"${DESTDIR}${install_dir}\" - That's not a directory!" 1>&2
+     echo "I can't install anything there!" 1>&2
+     exit 2
+ fi
+ 
+ #########################################################
+ ## make sure we have permission to write to "install_dir"
+-if [ ! -w "${install_dir}" ]
++if [ ! -w "${DESTDIR}${install_dir}" ]
+ then
+-    echo "I can't write to \"${install_dir}\"" 1>&2
++    echo "I can't write to \"${DESTDIR}${install_dir}\"" 1>&2
+     echo "I can't install anything there!" 1>&2
+     exit 3
+ fi
+@@ -86,15 +86,15 @@
+ for n in ez-pine-gpg-sign ez-pine-gpg-encrypt ez-pine-gpg-sign-and-encrypt ez-pine-gpg-symmetric ez-pine-gpg-incoming ez-pine-gpg-helper-recipient ez-pine-gpg-helper-sender
+ do
+     ## remove any file of the same name, if it exists
+-    rm -f ${install_dir}/${n}
++    rm -f ${DESTDIR}${install_dir}/${n}
+     ## make sure we can create a file there, by creating a file there
+-    echo > ${install_dir}/${n}
++    echo > ${DESTDIR}${install_dir}/${n}
+     ## while the file is still empty give it reasonable permissions
+-    chmod 0755 ${install_dir}/${n}
++    chmod 0755 ${DESTDIR}${install_dir}/${n}
+     ## place the script into the file while specifying the PATH
+-    sed "s!^PATH=.*\$!PATH=${path}!" $n > ${install_dir}/${n}
++    sed "s!^PATH=.*\$!PATH=${path}!" $n > ${DESTDIR}${install_dir}/${n}
+     ## notify user what just happened
+-    echo "installing:   ${install_dir}/${n}"
++    echo "installing:   ${DESTDIR}${install_dir}/${n}"
+ done
+ 
+ #############
