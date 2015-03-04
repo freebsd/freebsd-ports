@@ -22,7 +22,7 @@ LICENSE=	GPLv2
 DATADIR_NAME=	wireshark
 
 USE_PERL5=	build
-USES=		alias gettext gmake iconv libtool perl5 pkgconfig \
+USES=		alias cpe gettext gmake iconv libtool perl5 pkgconfig \
 		python:build tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
