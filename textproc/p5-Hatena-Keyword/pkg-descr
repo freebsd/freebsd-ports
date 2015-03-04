@@ -12,5 +12,4 @@ You can implement the same kind of feature outside Hatena using this module.
 
 It queries Hatena Keyword Link API internally for retrieving terms
 
-Author:	Naoya Ito <naoya@bloghackers.net>
-WWW:	http://search.cpan.org/dist/Hatena-Keyword/
+WWW: http://search.cpan.org/dist/Hatena-Keyword/

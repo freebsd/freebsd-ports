@@ -1,0 +1,11 @@
+--- authlogic-3.4.5.gemspec.orig	2015-03-02 20:23:43.949918000 +0800
++++ authlogic-3.4.5.gemspec	2015-03-02 20:24:10.343908474 +0800
+@@ -56,7 +56,7 @@
+   name: scrypt
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - ~>
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '1.2'
+   type: :runtime

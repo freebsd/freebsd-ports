@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/PerlIO::gzip.3.gz
 %%SITE_ARCH%%/PerlIO/gzip.pm
 %%SITE_ARCH%%/auto/PerlIO/gzip/gzip.so
+%%PERL5_MAN3%%/PerlIO::gzip.3.gz

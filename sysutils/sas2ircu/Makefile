@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sas2ircu
-PORTVERSION=	16.00.00.00
+PORTVERSION=	20.00.00.00
 CATEGORIES=	sysutils
-MASTER_SITES=	#http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P16/
-DISTNAME=	SAS2IRCU_P16
+MASTER_SITES=	#http://www.lsi.com/downloads/Public/Host%20Bus%20Adapters/Host%20Bus%20Adapters%20Common%20Files/SAS_SATA_6G_P20/
+DISTNAME=	SAS2IRCU_P20
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Tool for basic management of mps(4) based LSI RAID controllers
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\
 Please visit the following URL and accept the license agreement.\n\n\
-http://www.lsi.com/downloads/Public/Host%%20Bus%%20Adapters/Host%%20Bus%%20Adapters%%20Common%%20Files/SAS_SATA_6G_P16/SAS2IRCU_P16.zip\n\n\
+http://www.lsi.com/downloads/Public/Host%%20Bus%%20Adapters/Host%%20Bus%%20Adapters%%20Common%%20Files/SAS_SATA_6G_P20/SAS2IRCU_P20.zip\n\n\
 After the download has completed, please place ${DISTNAME}${EXTRACT_SUFX} in\n\
 ${DISTDIR}, then restart the build.\n\n
 .endif
@@ -48,8 +48,8 @@ pre-fetch:
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme_Release_Notes_SAS2IRCU_Phase_16.00.00.00.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/SAS2Flash_ReferenceGuide.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme_Release_Notes_SAS2IRCU_Phase_20.00.00.00.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/SAS2IRCU_Phase20.0-20.00.00.00.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${ARCH} == "amd64"
 	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_amd64_rel/sas2ircu ${STAGEDIR}${PREFIX}/sbin

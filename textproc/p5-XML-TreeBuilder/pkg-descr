@@ -5,5 +5,4 @@ who are used to the HTML::TreeBuilder / HTML::Element interface to
 document trees, and who don't want to learn some other document
 interface like XML::Twig or XML::DOM.
 
-Author: Sean M. Burke
 WWW: http://search.cpan.org/dist/XML-TreeBuilder/

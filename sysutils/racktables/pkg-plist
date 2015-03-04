@@ -55,6 +55,7 @@
 %%WWWDIR_REL%%/wwwroot/js/portinfo.js
 %%WWWDIR_REL%%/wwwroot/js/racktables.js
 %%WWWDIR_REL%%/wwwroot/js/slb_editor.js
+%%WWWDIR_REL%%/wwwroot/js/tabindex_auto.js
 %%WWWDIR_REL%%/wwwroot/js/tag-cb.js
 %%WWWDIR_REL%%/wwwroot/js/tag-it-local.js
 %%WWWDIR_REL%%/wwwroot/js/tag-it.js

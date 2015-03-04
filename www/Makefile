@@ -540,6 +540,7 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
+    SUBDIR += node010
     SUBDIR += node-devel
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
@@ -1832,6 +1833,7 @@
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
+    SUBDIR += rubygem-http-form_data
     SUBDIR += rubygem-http_router
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
@@ -1996,6 +1998,7 @@
     SUBDIR += swiggle
     SUBDIR += swish++
     SUBDIR += swish-e
+    SUBDIR += sws
     SUBDIR += syndigator
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
@@ -2013,6 +2016,7 @@
     SUBDIR += tickr
     SUBDIR += tidy
     SUBDIR += tidy-devel
+    SUBDIR += tidy-html5
     SUBDIR += tidy-lib
     SUBDIR += tikiwiki
     SUBDIR += tinymce
@@ -2136,6 +2140,7 @@
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish
+    SUBDIR += varnish4
     SUBDIR += varnish-libvmod-header
     SUBDIR += varnish-nagios
     SUBDIR += vdr-plugin-live

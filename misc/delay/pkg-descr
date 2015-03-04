@@ -17,5 +17,3 @@ It allows for short, long, and customized messages for the display of
 the time remaining. 
 - example of output : delay -v until 4 pm tomorrow
 		      Time Remaining: 1 days, 07:51:39.
-
-Author: Tom Rothamel <tom@onegeek.org>

@@ -2,21 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	firmware
-PORTVERSION=	20140418
+PORTVERSION=	20150123
 CATEGORIES=	science
-MASTER_SITES=	#none
 PKGNAMEPREFIX=	sigrok-
-DISTFILES=	#none
 
 MAINTAINER=	uffe@uffe.org
-COMMENT=	Meta package for sigrok firmware packages
+COMMENT=	Sigrok firmware
 
 RUN_DEPENDS=	parseelf.py:${PORTSDIR}/science/sigrok-firmware-utils \
 		${LOCALBASE}/share/sigrok-firmware/fx2lafw-cypress-fx2.fw:${PORTSDIR}/science/sigrok-firmware-fx2lafw
 
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
-NO_MTREE=	yes
-NO_INSTALL=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	uffejakobsen
+GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	2632d74
+
+GNU_CONFIGURE=yes
+
+USE_AUTOTOOLS=	libtoolize autoconf autoheader automake aclocal
+
+AUTOMAKE_ARGS=	--add-missing
+
+USES=	gmake
+
+FW_FILES=	\
+		LICENSE.Sigma asix-sigma-100.fw asix-sigma-200.fw asix-sigma-50.fw asix-sigma-50sync.fw \
+		LICENSE.LWLA sysclk-lwla1034-extneg.rbf sysclk-lwla1034-extpos.rbf sysclk-lwla1034-int.rbf sysclk-lwla1034-off.rbf
+
+PLIST_FILES=	\
+		${FW_FILES:S,^,share/sigrok-firmware/,} \
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/asix-sigma/LICENSE.Sigma ${STAGEDIR}${PREFIX}/share/sigrok-firmware
+	${INSTALL_DATA} ${WRKSRC}/sysclk-lwla/LICENSE.LWLA ${STAGEDIR}${PREFIX}/share/sigrok-firmware
 
 .include <bsd.port.mk>

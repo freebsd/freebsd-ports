@@ -1,21 +1,29 @@
---- lib/Makefile.am.orig	2014-11-11 10:47:33.631976054 -0500
-+++ lib/Makefile.am	2014-11-11 11:40:14.030311321 -0500
-@@ -55,7 +55,7 @@
+--- lib/Makefile.am.orig	2015-01-28 13:44:26.000000000 -0500
++++ lib/Makefile.am	2015-01-28 13:48:00.000000000 -0500
+@@ -53,6 +53,7 @@
  libseafile_common_la_LDFLAGS = -no-undefined
- libseafile_common_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl -lcrypto @LIB_GDI32@ \
+ libseafile_common_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ -lcrypto @LIB_GDI32@ \
  				     @LIB_UUID@ @LIB_WS32@ @LIB_PSAPI@ -lsqlite3 \
--					 -levent @SEARPC_LIBS@ @LIB_SHELL32@ \
-+					 -levent -lkvm @SEARPC_LIBS@ @LIB_SHELL32@ \
++				@LIB_KVM@ \
+ 					 @LIBEVENT_LIBS@ @SEARPC_LIBS@ @LIB_SHELL32@ \
  	@ZLIB_LIBS@
  
- searpc_gen = searpc-signature.h searpc-marshal.h
-@@ -72,8 +72,4 @@
- 	rm -f $(top_srcdir)/lib/rpc_table.pyc
+@@ -74,7 +75,7 @@
+ 	rm -f ${seafile_object_gen}
+ 	@rm -f vala.tmp
+ 	@touch vala.tmp
+-	valac -C --pkg posix $^
++	valac -C --pkg posix ${seafile_object_define}
+ 	@mv -f vala.tmp $@
  
- install-data-local:
--if MACOS
--	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
--else
--	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
--endif
-+	${SED} -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
+ ${seafile_object_gen}: vala.stamp
+@@ -90,5 +91,9 @@
+ if MACOS
+ 	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ else
++if BSD
++	sed -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
++else
+ 	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ endif
++endif

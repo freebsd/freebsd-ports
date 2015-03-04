@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet
-PORTVERSION=	3.1.4
-PORTREVISION=	4
+PORTVERSION=	4.0.6
+PORTREVISION=	5
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v3.1.4
-GH_COMMIT=	6b55658
+GH_TAGNAME=	v${PORTVERSION}-server
+GH_COMMIT=	1e1aeae
 
 USES=		autoreconf libtool pkgconfig pathfix python:2
 PATHFIX_MAKEFILEIN=	Makefile.am

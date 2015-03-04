@@ -3,18 +3,22 @@
 
 PORTNAME=	bib2html
 DISTVERSION=	5.1-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The BibTeX to HTML Translator
+COMMENT=	BibTeX to HTML Translator
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]$//}/src
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bib2html.pl bib2xml.pl
 USE_PERL5=	run
 NO_BUILD=	yes
 

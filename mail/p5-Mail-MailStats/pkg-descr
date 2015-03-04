@@ -1,4 +1,2 @@
 Mail::Stats is a perl module that tells how many new mail messages
 are in procmail-generated mailboxes.
-
-Author: Sean Dague <sean@dague.net>

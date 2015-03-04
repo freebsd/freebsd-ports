@@ -6,5 +6,4 @@ extremely fast, particularly for numerical code.  In a number of tests it
 has outperformed hand-written C, sometimes by a considerable margin.
 Stalin is intended for production use in generating an optimized executable.
 
-Author:	Jeffrey Mark Siskind
 WWW: http://cobweb.ecn.purdue.edu/~qobi/software.html

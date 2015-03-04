@@ -5,5 +5,4 @@ when porting Linux applications, which often use inotify interface.
 The IN_OPEN, IN_CLOSE_WRITE and IN_CLOSE_NOWRITE events are not yet
 implemented, so the relevant tests are known to fail.
 
-Author:	Dmitry Matveev <me@dmitrymatveev.co.uk>
 WWW: https://github.com/dmatveev/libinotify-kqueue

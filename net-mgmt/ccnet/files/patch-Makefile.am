@@ -1,0 +1,18 @@
+--- Makefile.am.orig	2015-01-27 22:28:22.000000000 -0500
++++ Makefile.am	2015-01-27 22:33:35.000000000 -0500
+@@ -24,9 +24,13 @@
+ install-data-local:
+ if MACOS
+ 	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
++else 
++if BSD
++	sed -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
+ else
+ 	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ endif
++endif
+ 
+ dist-hook:
+-	git log --format='%H' -1 > $(distdir)/latest_commit
+\ No newline at end of file
++	git log --format='%H' -1 > $(distdir)/latest_commit

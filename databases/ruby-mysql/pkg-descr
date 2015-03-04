@@ -1,5 +1,4 @@
 This is a Ruby module for accessing MySQL databases, which has the
 same functions as C API.
 
-Author:	TOMITA Masahiro <tommy@tmtm.org>
-WWW:	http://www.tmtm.org/en/mysql/ruby/
+WWW: http://www.tmtm.org/en/mysql/ruby/

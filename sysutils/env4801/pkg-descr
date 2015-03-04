@@ -11,6 +11,5 @@ Then, as often as you feel like, read out the measured values:
 
 	# env4801
 
-Author:		Poul-Henning Kamp (phk@freebsd.org)
-WWW:		http://phk.freebsd.dk/soekris/env4801/
-		http://www.soekris.com/
+WWW: http://phk.freebsd.dk/soekris/env4801/
+     http://www.soekris.com/

@@ -17,6 +17,7 @@ man/man1/pspp-dump-sav.1.gz
 %%GUI%%share/appdata/pspp.appdata.xml
 %%GUI%%share/applications/pspp.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pspp.xml
+share/emacs/site-lisp/pspp-mode.el
 %%GUI%%share/glade3/catalogs/psppire.xml
 %%GUI%%share/glade3/pixmaps/16x16/psppire-acr.png
 %%GUI%%share/glade3/pixmaps/16x16/psppire-dialog.png

@@ -3,6 +3,7 @@
 
 PORTNAME=	utcount
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,5 +16,9 @@ MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" \
 
 post-build:
 	${STRIP_CMD} ${WRKSRC}/bin/count_client
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/utcount.conf.default \
+		${STAGEDIR}${PREFIX}/etc/utcount.conf.sample
 
 .include <bsd.port.mk>

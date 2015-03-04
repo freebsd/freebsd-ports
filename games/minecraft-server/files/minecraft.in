@@ -1,0 +1,91 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# PROVIDE: minecraft
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# rc.conf variables:
+# minecraft_enable (Default: NO)
+# minecraft_mem (Default: 1024M)
+# minecraft_args (Default: "")
+. /etc/rc.subr
+
+name=minecraft
+rcvar=minecraft_enable
+desc="Dedicated server for the game Minecraft"
+
+load_rc_config $name
+
+minecraft_mem=${minecraft_mem:-"1024M"}
+minecraft_args=${minecraft_args:-""}
+
+extra_commands="console status"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+console_cmd="${name}_console"
+status_cmd="${name}_status"
+
+minecraft_start()
+{
+	pgrep -qu mcserver java
+	isrunning=$?
+	if [ ${isrunning} -eq 0 ]; then
+		echo "${name} already running."
+	else
+		echo "Starting ${name}."
+		cd %%PREFIX%%/minecraft-server
+		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_mem} -Xms${minecraft_mem} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.1.8.1.jar nogui'"
+	fi
+}
+
+minecraft_stop()
+{
+	pgrep -qu mcserver java
+	isrunning=$?
+	if [ ${isrunning} -eq 0 ]; then
+		echo "Stopping ${name}."
+		su mcserver -c "%%LOCALBASE%%/bin/tmux send-keys -t ${name} \"stop\" ENTER"
+
+		i=0
+		while [ $i -lt 10 ]; do
+			i=$(($i + 1))
+			pgrep -qu mcserver java
+			stillrunning=$?
+			if [ ${stillrunning} -eq 0 ]; then
+				sleep 1
+			else
+				echo "${name} stopped."
+				return
+			fi
+		done
+		echo "ERROR: ${name} could not be stopped."
+	else
+		echo "${name} not running."
+	fi
+}
+
+minecraft_console()
+{
+	pgrep -qu mcserver java
+	isrunning=$?
+	if [ ${isrunning} -ne 0 ]; then
+		echo "${name} not running."
+	else
+		export TERM=xterm
+		su mcserver -c "%%LOCALBASE%%/bin/tmux attach-session -t ${name}"
+	fi
+}
+
+minecraft_status()
+{
+	pgrep -qu mcserver java
+	isrunning=$?
+	if [ ${isrunning} -eq 0 ]; then
+		echo "${name} is running."
+	else
+		echo "${name} is not running."
+	fi
+}
+
+run_rc_command "$1"

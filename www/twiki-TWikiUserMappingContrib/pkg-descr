@@ -6,5 +6,4 @@ TWikiUserMapping in which user information is stored in TWiki topics -
 one per user, and then any mapping needed is done using the TWikiUsers
 topic in the Main.
 
-Author: Sven Dowideit
 WWW: http://twiki.org/cgi-bin/view/Plugins/TWikiUserMappingContrib

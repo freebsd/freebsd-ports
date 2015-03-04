@@ -1,7 +1,7 @@
 Logtool is a command line program that will parse ASCII logfiles into a more
-palatable format. It will take anything resembling a standard syslog file 
-(this includes syslog-ng, multilog, and probably most of the other variantse), 
-and crunch it into one of the following formats for your viewing pleasure: 
+palatable format. It will take anything resembling a standard syslog file
+(this includes syslog-ng, multilog, and probably most of the other variantse),
+and crunch it into one of the following formats for your viewing pleasure:
 
   - ANSI (colorized for easy "at a glance" viewing)
   - ASCII (for e-mail'ed reports, and term's that don't support color)
@@ -10,9 +10,8 @@ and crunch it into one of the following formats for your viewing pleasure:
   - RAW (for no good reason)
 
 It can be configured to parse the data any one of several ways, including
-suppressing duplicate messages, stripping the host, and/or program fields, 
+suppressing duplicate messages, stripping the host, and/or program fields,
 and modifying the time display format (supports TAI64 timestamps produced
 by DJB's multilog) of the log entries. 
 
-Author:	A.L.Lambert
-WWW:	http://xjack.org/logtool/
+WWW: http://xjack.org/logtool/

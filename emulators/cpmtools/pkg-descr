@@ -16,5 +16,3 @@ Ported & maintained by: J"org Wunsch <joerg@FreeBSD.org>, 1994
 Frequently asked question:
 
 No, FreeBSD's floppy-disk driver does not (yet) understand FM diskettes.
-
-Author: Helge Skrivervik, now (1994) helge@mellvik.no

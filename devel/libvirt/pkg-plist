@@ -130,6 +130,8 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/index.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/command.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/locking.html
+%%PORTDOCS%%%%DOCSDIR%%%%PORTVERSION%%/html/locking-lockd.html
+%%PORTDOCS%%%%DOCSDIR%%%%PORTVERSION%%/html/locking-sanlock.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/rpc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/intro.html
 %%DOCSDIR%%%%PORTVERSION%%/html/java.html
@@ -293,30 +295,28 @@ lib/libvirt/connection-driver/libvirt_driver_network.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
-lib/libvirt/connection-driver/libvirt_driver_vbox_network.so
-lib/libvirt/connection-driver/libvirt_driver_vbox_storage.so
-%%QEMU%%@unexec rmdir /var/run/libvirt/qemu
-%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel/target
-%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel
-%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu
-%%QEMU%%@unexec rmdir /var/cache/libvirt/qemu
-@unexec rmdir /var/cache/libvirt
-@unexec rmdir /var/cache
-@unexec rmdir /var/lib/libvirt/boot
-@unexec rmdir /var/lib/libvirt/dnsmasq
-@unexec rmdir /var/lib/libvirt/filesystems
-@unexec rmdir /var/lib/libvirt/images
-@unexec rmdir /var/lib/libvirt/lockd/files
-@unexec rmdir /var/lib/libvirt/lockd
-@unexec rmdir /var/lib/libvirt/network
-@unexec rmdir /var/lib/libvirt
-@unexec rmdir /var/lib
-@unexec rmdir /var/log/libvirt/lxc
-@unexec rmdir /var/log/libvirt/qemu
-@unexec rmdir /var/log/libvirt/uml
-@unexec rmdir /var/log/libvirt
-@unexec rmdir /var/log
-@unexec rmdir /var/run/libvirt/lockd
-@unexec rmdir /var/run/libvirt/network
-@unexec rmdir /var/run/libvirt
-@unexec rmdir /var/run
+%%QEMU%%@dir /var/run/libvirt/qemu
+%%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
+%%QEMU%%@dir /var/lib/libvirt/qemu/channel
+%%QEMU%%@dir /var/lib/libvirt/qemu
+%%QEMU%%@dir /var/cache/libvirt/qemu
+@dir /var/cache/libvirt
+@dir /var/cache
+@dir /var/lib/libvirt/boot
+@dir /var/lib/libvirt/dnsmasq
+@dir /var/lib/libvirt/filesystems
+@dir /var/lib/libvirt/images
+@dir /var/lib/libvirt/lockd/files
+@dir /var/lib/libvirt/lockd
+@dir /var/lib/libvirt/network
+@dir /var/lib/libvirt
+@dir /var/lib
+@dir /var/log/libvirt/lxc
+@dir /var/log/libvirt/qemu
+@dir /var/log/libvirt/uml
+@dir /var/log/libvirt
+@dir /var/log
+@dir /var/run/libvirt/lockd
+@dir /var/run/libvirt/network
+@dir /var/run/libvirt
+@dir /var/run

@@ -1,55 +1,10 @@
---- lib/Makefile.am.orig	2014-11-11 10:10:39.971972968 -0500
-+++ lib/Makefile.am	2014-11-11 10:37:36.712929368 -0500
-@@ -19,7 +19,6 @@
- 	peer-common.h \
- 	string-util.h \
- 	libccnet_utils.h \
--	ccnet-object.h \
- 	rpc-common.h \
- 	net.h \
- 	utils.h \
-@@ -60,12 +59,14 @@
- 
+--- lib/Makefile.am.orig	2015-01-27 22:48:22.000000000 -0500
++++ lib/Makefile.am	2015-01-27 22:49:06.000000000 -0500
+@@ -61,6 +61,7 @@
  libccnetd_la_LDFLAGS = -no-undefined
  libccnetd_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_GDI32@ \
--	                  -lsqlite3 -levent @LIB_WS32@ @LIB_UUID@ \
-+	                  -lsqlite3 -levent @LIB_WS32@ @LIB_UUID@ -lkvm \
+ 	                  -lsqlite3 @LIBEVENT_LIBS@ @LIB_WS32@ @LIB_UUID@ \
++			@LIB_KVM@ \
  					  @LIB_SHELL32@ @LIB_PSAPI@ @SEARPC_LIBS@
  
  
- ccnet_object_define = ccnetobj.vala
- 
-+valac_gen = ccnetobj.c ccnet-object.h
-+
- ccnet-client.c: ccnet-object.h
- 
- ccnet-object.h: ${ccnet_object_define}
-@@ -78,15 +79,23 @@
- 
- searpc_gen = searpc-signature.h searpc-marshal.h
- 
--gensource: ${searpc_gen}
-+gensource: ${searpc_gen} ${valac_gen}
- 
--${searpc_gen}: $(top_srcdir)/lib/rpc_table.py
-+rpc_table.stamp: ${top_srcdir}/lib/rpc_table.py
-+	@rm -f rpc_table.tmp
-+	@touch rpc_table.tmp
- 	@echo "[libsearpc]: generating rpc header files"
--	@PYTHON@ `which searpc-codegen.py` $(top_srcdir)/lib/rpc_table.py
-+	@PYTHON@ `which searpc-codegen.py` ${top_srcdir}/lib/rpc_table.py
- 	@echo "[libsearpc]: done"
-+	@mv -f rpc_table.tmp $@
-+
-+${searpc_gen}: rpc_table.stamp
- 
- clean-local:
- 	rm -f ${searpc_gen}
--	rm -f $(top_srcdir)/lib/rpc_table.pyc
-+	rm -f rpc_table.pyc
-+	rm -f rpc_table.stamp
-+	rm -f rpc_table.tmp
-+	rm -f ${valac_gen}
- 
--CLEANFILES = ${searpc_gen}
-+CLEANFILES = ${searpc_gen} ${valac_gen}

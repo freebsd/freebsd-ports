@@ -7,5 +7,4 @@ One instance has to run on one machine as a server process, another
 instance is used on another machine to perform the benchmark. When
 executed without arguments, the program will explain its usage.
 
-Author:	Kai Uwe Rommel
-WWW:	http://www.ars.de/ars/ars.nsf/docs/netio/
+WWW: http://www.ars.de/ars/ars.nsf/docs/netio/

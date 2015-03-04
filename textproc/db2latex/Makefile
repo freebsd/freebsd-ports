@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-xsl-${PORTVERSION:S/p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook to LaTeX XSL stylesheets
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
@@ -24,8 +27,6 @@ do-install:
 	${CP} -R ${WRKSRC}/xsl ${STAGEDIR}${DATADIR}
 	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
 

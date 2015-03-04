@@ -1,8 +1,8 @@
 Tagged Message Delivery Agent (TMDA) is designed to significantly reduce the
-amount of spam (junk-mail) you receive.  TMDA strives to be more effective, 
-yet less time-consuming than traditional spam filters. 
+amount of spam (junk-mail) you receive.  TMDA strives to be more effective,
+yet less time-consuming than traditional spam filters.
 
-The technical countermeasures used by TMDA to thwart spam include: 
+The technical countermeasures used by TMDA to thwart spam include:
 - whitelists: accept mail from known, trusted senders
 - blacklists: refuse mail from undesired senders
 - challenge/response: allows unknown senders which aren't on the whitelist or
@@ -15,5 +15,4 @@ The technical countermeasures used by TMDA to thwart spam include:
 TMDA can also be used as a general purpose local mail delivery agent to filter,
 sort, deliver and dispose of incoming mail.
 
-Author:	Jason R. Mastaler
 WWW: http://tmda.net/

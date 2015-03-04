@@ -5,5 +5,4 @@ space.  This is useful for applications which needs structured storage, such
 as embedding documents within documents, or management of configuration
 data or preferences.
 
-Author:	Palmsource, Inc. An Access Company
 WWW: http://www.nongnu.org/libsqlfs/

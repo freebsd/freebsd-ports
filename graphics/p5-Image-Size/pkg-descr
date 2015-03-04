@@ -16,8 +16,4 @@ that as part of the generated HTML. Or for any other utility that uses and
 manipulates graphics. The idea of the basic interface + wrappers is to not
 limit the programmer to a certain data format.
 
-Authors -- Perl module interface by Randy J. Ray <rjray@blackperl.com>,
-original image-sizing code by Alex Knowles <alex@ed.ac.uk> and Andrew Tong
-<werdna@ugcs.caltech.edu>.
-
 WWW: http://search.cpan.org/dist/Image-Size/

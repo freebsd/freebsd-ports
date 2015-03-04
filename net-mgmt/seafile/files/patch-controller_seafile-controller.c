@@ -1,6 +1,6 @@
---- controller/seafile-controller.c.orig	2014-08-05 01:28:35.000000000 -0400
-+++ controller/seafile-controller.c	2014-11-22 22:00:58.614945337 -0500
-@@ -18,10 +18,23 @@
+--- controller/seafile-controller.c.orig	2015-01-28 13:03:24.000000000 -0500
++++ controller/seafile-controller.c	2015-01-28 13:15:05.000000000 -0500
+@@ -17,6 +17,19 @@
  #include "log.h"
  #include "seafile-controller.h"
  
@@ -14,17 +14,13 @@
 +#define WITH_PROC_FS g_file_test("/proc/curproc", G_FILE_TEST_EXISTS)
 +#endif
 +
++static char *command_name = NULL;
 +#endif
 +
  #define CHECK_PROCESS_INTERVAL 10        /* every 10 seconds */
  
  SeafileController *ctl;
- 
-+static char *command_name = NULL;
- static char *controller_pidfile = NULL;
- 
- char *bin_dir = NULL;
-@@ -273,7 +286,20 @@
+@@ -247,7 +260,20 @@
  init_seafile_path ()
  {
      GError *error = NULL;
@@ -33,19 +29,19 @@
 +#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +    /*
 +     * seafile.sh starts the process using abs path
-+     */ 
++     */
 +    char executable[_POSIX_PATH_MAX];
 +    memset(executable, 0, _POSIX_PATH_MAX);
 +    char * rc = realpath(command_name, executable);
 +    if (!rc) {
 +        seaf_warning ("failed to readpath: %s\n", executable);
-+	return;
++        return;
 +    }
 +#endif
      char *tmp = NULL;
      if (error != NULL) {
          seaf_warning ("failed to readlink: %s\n", error->message);
-@@ -287,7 +313,9 @@
+@@ -261,7 +287,9 @@
  
      topdir = g_path_get_dirname (installpath);
  
@@ -55,7 +51,7 @@
      g_free (tmp);
  }
  
-@@ -427,12 +455,41 @@
+@@ -401,11 +429,40 @@
          return FALSE;
      } else {
          char buf[256];
@@ -73,7 +69,6 @@
              return FALSE;
          } else {
              return TRUE;
--        }
 +	}
 +
 +	} else {
@@ -94,15 +89,16 @@
 +#else
 +	return FALSE;
 +#endif
-+	}
+         }
      }
  }
- 
-@@ -892,6 +949,7 @@
+@@ -852,6 +909,9 @@
          exit (1);
      }
  
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +    command_name = argv[0];
++#endif
      char *config_dir = DEFAULT_CONFIG_DIR;
      char *seafile_dir = NULL;
      char *logdir = NULL;

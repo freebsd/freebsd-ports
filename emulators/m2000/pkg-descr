@@ -10,5 +10,4 @@ P2000 Emulator
 
 The tape files should be writable, otherwise the emulator won't load them.
 
-Author: Marcel de Kogel <dekogel@giganda.komkon.org>
 WWW: http://www.komkon.org/~dekogel/m2000.html

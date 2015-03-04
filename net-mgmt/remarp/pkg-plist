@@ -2,4 +2,4 @@ sbin/remarp
 etc/remarp.conf.sample
 %%SITE_PERL%%/remarp/config.pm
 %%SITE_PERL%%/remarp/configure.pm
-@unexec rmdir /var/spool/remarp || true
+@dir /var/spool/remarp

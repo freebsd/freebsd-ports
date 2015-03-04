@@ -1,6 +1,7 @@
 bin/cmus
 bin/cmus-remote
 lib/cmus/ip/wav.so
+lib/cmus/op/oss.so
 man/man1/cmus-remote.1.gz
 man/man1/cmus.1.gz
 man/man7/cmus-tutorial.7.gz
@@ -9,6 +10,7 @@ man/man7/cmus-tutorial.7.gz
 %%MODPLUG%%lib/cmus/ip/modplug.so
 %%MIKMOD%%lib/cmus/ip/mikmod.so
 %%MPC%%lib/cmus/ip/mpc.so
+%%OPUS%%lib/cmus/ip/opus.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
 %%MP4%%lib/cmus/ip/mp4.so
 %%AAC%%lib/cmus/ip/aac.so
@@ -16,15 +18,18 @@ man/man7/cmus-tutorial.7.gz
 %%FFMPEG%%lib/cmus/ip/ffmpeg.so
 %%CDIO%%lib/cmus/ip/cdio.so
 %%CUE%%lib/cmus/ip/cue.so
-lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
+%%JACK%%lib/cmus/op/jack.so
 %%PULSEAUDIO%%lib/cmus/op/pulse.so
 %%DATADIR%%/cyan.theme
 %%DATADIR%%/default.theme
 %%DATADIR%%/gray-88.theme
 %%DATADIR%%/green-mono-88.theme
 %%DATADIR%%/green.theme
+%%DATADIR%%/night.theme
 %%DATADIR%%/rc
+%%DATADIR%%/solarized-dark.theme
+%%DATADIR%%/solarized-light.theme
 %%DATADIR%%/xterm-white.theme
 %%DATADIR%%/zenburn.theme
 %%EXAMPLESDIR%%/cmus-status-display

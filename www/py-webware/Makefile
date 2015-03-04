@@ -49,8 +49,7 @@ do-install:
 	${SED} -e "s|%%WEBKIT_HOME_DIR%%|${WEBKIT_HOME_DIR}|g" \
 		< ${FILESDIR}/webkit.sh.tmpl \
 		> ${STAGEDIR}${PREFIX}/etc/rc.d/webkit.sh-dist
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/etc/rc.d/webkit.sh-dist && \
-	${CHOWN} root:wheel ${STAGEDIR}${PREFIX}/etc/rc.d/webkit.sh-dist
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/etc/rc.d/webkit.sh-dist
 
 post-install:
 	@ ${ECHO} '---> Compiling Python files and making webkit home directory'

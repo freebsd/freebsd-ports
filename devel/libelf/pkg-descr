@@ -5,5 +5,4 @@ From the libelf README file:
   that use libelf and work with the commercial (SVR4, Solaris)
   version but not with this one, please contact me.
 
-Author:		Michael Riepe <michael@stud.uni-hannover.de>
-WWW:		http://www.mr511.de/software/
+WWW: http://www.mr511.de/software/

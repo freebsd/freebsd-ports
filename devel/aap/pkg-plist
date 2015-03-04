@@ -83,6 +83,7 @@ lib/aap/Exec-%%PORTVERSION%%/aap.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.py
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapre.py
+lib/aap/Exec-%%PORTVERSION%%/aapre.pyc
 lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc
 lib/aap/Exec-%%PORTVERSION%%/import_re.py

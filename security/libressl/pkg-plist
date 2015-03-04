@@ -52,7 +52,6 @@ include/openssl/poly1305.h
 include/openssl/rand.h
 include/openssl/rc2.h
 include/openssl/rc4.h
-include/openssl/rc5.h
 include/openssl/ripemd.h
 include/openssl/rsa.h
 include/openssl/safestack.h
@@ -74,12 +73,12 @@ include/openssl/x509_vfy.h
 include/openssl/x509v3.h
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.30
-lib/libcrypto.so.30.0.3
+lib/libcrypto.so.32
+lib/libcrypto.so.32.0.0
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.30
-lib/libssl.so.30.0.0
+lib/libssl.so.32
+lib/libssl.so.32.0.0
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
@@ -1042,6 +1041,7 @@ man/man3/SSL_CTX_use_RSAPrivateKey_file.3.gz
 man/man3/SSL_CTX_use_certificate.3.gz
 man/man3/SSL_CTX_use_certificate_ASN1.3.gz
 man/man3/SSL_CTX_use_certificate_chain_file.3.gz
+man/man3/SSL_CTX_use_certificate_chain_mem.3.gz
 man/man3/SSL_CTX_use_certificate_file.3.gz
 man/man3/SSL_CTX_use_psk_identity_hint.3.gz
 man/man3/SSL_SESSION_free.3.gz
@@ -1382,4 +1382,4 @@ man/man3/ssl.3.gz
 man/man3/ui.3.gz
 man/man3/ui_compat.3.gz
 man/man3/x509.3.gz
-@dirrmtry include/openssl
+@dir include/openssl

@@ -9,3 +9,7 @@ lib/libozzi.a
 lib/libozzi.so
 lib/libozzi.so.0
 lib/libozzi.so.0.1.4
+lib/libtagdtor.a
+lib/libtagdtor.so
+lib/libtagdtor.so.0
+lib/libtagdtor.so.0.0.0

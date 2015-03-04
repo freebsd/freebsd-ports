@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.6.0rc4
+DISTVERSION=	3.6.0
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/pre-releases/3.6.0/rc4/
+MASTER_SITES=	http://llvm.org/releases/3.6.0/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 

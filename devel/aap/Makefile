@@ -3,6 +3,7 @@
 
 PORTNAME=	aap
 PORTVERSION=	1.093
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
 
@@ -10,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build tool alternative to make with internet access and CVS support
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
@@ -18,8 +20,6 @@ NO_BUILD=	yes
 
 USES=		python zip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-
-.include <bsd.port.options.mk>
 
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ./aap PREFIX="${STAGEDIR}/${PREFIX}" \

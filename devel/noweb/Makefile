@@ -3,9 +3,9 @@
 
 PORTNAME=	noweb
 PORTVERSION=	2.11b
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www.eecs.harvard.edu/pub/nr/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, extensible literate-programming tool
@@ -18,6 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 INSTALL_TARGET=	install-code install-man install-elisp
 MAKE_ENV+=	INSTALL_PREFIX=${STAGEDIR}${PREFIX}

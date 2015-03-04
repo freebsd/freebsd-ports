@@ -1,10 +1,11 @@
---- lib/utils.c.orig	2014-08-05 05:28:35 UTC
-+++ lib/utils.c
-@@ -46,6 +46,15 @@
+--- lib/utils.c.orig	2015-01-28 01:03:42.000000000 -0500
++++ lib/utils.c	2015-01-28 01:26:32.000000000 -0500
+@@ -56,6 +56,16 @@
  
  #include <zlib.h>
  
 +#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <netinet/in.h>
 +#include <stdlib.h>
 +#include <kvm.h>
 +#include <paths.h>
@@ -16,7 +17,7 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -1756,14 +1765,19 @@ wchar_from_utf8 (const char *utf8)
+@@ -2097,14 +2107,19 @@
  
  #endif  /* ifdef WIN32 */
  
@@ -27,17 +28,17 @@
  {
      char path[512];
      /* fisrst construct a path like /proc/123/exe */
-+#ifdef __linux__
++#if defined(__linux__)
      if (sprintf (path, "/proc/%s/exe", dir->d_name) < 0) {
 +#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__)
 +    if (sprintf (path, "/proc/%s/file", dir->d_name) < 0) {
 +#else
-+    if (TRUE) {
++    if (1) {
 +#endif
          return -1;
      }
  
-@@ -1787,7 +1801,8 @@ find_process_in_dirent(struct dirent *di
+@@ -2128,7 +2143,8 @@
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -47,7 +48,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -1812,7 +1827,8 @@ gboolean process_is_running (const char 
+@@ -2153,7 +2169,8 @@
      return FALSE;
  }
  
@@ -57,12 +58,12 @@
  {
      int count = 0;
      DIR *proc_dir = opendir("/proc");
-@@ -1836,6 +1852,14 @@ int count_process(const char *process_na
+@@ -2177,6 +2194,14 @@
      return count;
  }
  
 +#ifdef __linux__
-+gboolean process_is_running (const char *process_name) {
++gboolean process_is_running(const char *process_name) {
 +    return process_is_running_procfs(process_name);
 +}
 +
@@ -72,7 +73,7 @@
  #endif
  
  #ifdef __APPLE__
-@@ -1846,6 +1870,120 @@ gboolean process_is_running (const char 
+@@ -2187,6 +2212,119 @@
  }
  #endif
  
@@ -188,7 +189,6 @@
 +   return count_running_process_kvm(process_name);
 +}
 +#endif
-+
 +
  char*
  ccnet_object_type_from_id (const char *object_id)

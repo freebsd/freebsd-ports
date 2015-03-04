@@ -14,6 +14,4 @@ COMMENT=	Simple Chinese text Wrapper
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Lingua::ZH::Wrap.3
-
 .include <bsd.port.mk>

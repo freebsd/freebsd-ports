@@ -199,9 +199,18 @@ and this manual page were written by
 .An Ben Smithurst Aq ben@FreeBSD.org ,
 with input from
 .An Poul-Henning Kamp Aq phk@FreeBSD.org .
+The geom-aware version of the sector->partition translation code was added by
+.An Perry Hutchison Aq perryh@pluto.rain.com ,
+based on a mechanism suggested by
+.An Warner Losh Aq imp@bsdimp.com .
 .Sh BUGS
 .Nm
-assumes all disks have 512 byte sectors.
+Too much of the code assumes all disks have 512 byte sectors.
 .Pp
-The code that attempts to identify and report which slice and partition
-contain a detected error does not understand GPT partitions.
+There are two versions of the code that attempts to identify
+and report which slice and/or partition contain a detected error.
+The older version, used when the DIOCGDINFO ioctl is available
+(i.e. prior to
+.Fx 11.0 ),
+does not understand either GPT partitions or dedicated BSD disks
+(having the BSD disklabel in place of an MBR).

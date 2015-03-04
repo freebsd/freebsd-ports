@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ploy
-DISTVERSION=	1.0.3
+DISTVERSION=	1.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy>0:${PORTSDIR}/devel/py-lazy \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:${PORTSDIR}/security/py-paramiko
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- login_duo/Makefile.in.orig
+--- login_duo/Makefile.in.orig	2015-03-02 13:12:34 UTC
 +++ login_duo/Makefile.in
-@@ -607,16 +607,6 @@
+@@ -714,16 +714,6 @@ install-exec-hook:
  	 chmod 4755 $(DESTDIR)$(sbindir)/login_duo
  
  install-data-local:

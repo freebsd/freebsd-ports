@@ -5,5 +5,4 @@ certain fields be filled in.  All configuration is done with simple
 templates, all of the templates for a given form being within the same
 file.
 
-Author:	Andru Luvisi <luvisi@villainy.com>
-WWW:    http://www.villainy.com/developers.html
+WWW: http://www.villainy.com/developers.html

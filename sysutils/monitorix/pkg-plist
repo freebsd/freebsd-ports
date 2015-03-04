@@ -1,29 +1,21 @@
-@exec install -d -o %%WWW_OWNER%% -g %%WWW_GROUP%% %D/%%WWWDIR%%/imgs
-@unexec if cmp -s %D/etc/monitorix.conf %D/etc/monitorix.conf.sample; then rm -f %D/etc/monitorix.conf; fi
-etc/monitorix.conf.sample
-@exec if [ ! -f %D/etc/monitorix.conf ]; then cp %D/%F %B/monitorix.conf; fi
+@dir(%%WWW_OWNER%%,%%WWW_GROUP%%,) %%WWWDIR%%/imgs
+@sample etc/monitorix.conf.sample
 bin/monitorix
-@exec mkdir -p %D/%%WWWDIR%%/usage
-@dirrmtry %%WWWDIR%%/usage
+@dir %%WWWDIR%%/usage
 %%CGIDIR%%/monitorix.cgi
 man/man5/monitorix.conf.5.gz
 man/man8/monitorix.8.gz
-@unexec rm -f %B/monitorix.conf.path
-@dirrmtry %%CGIDIR%%
+@rmtry %B/monitorix.conf.path
 %%WWWDIR%%/reports/ca.html.sample
 %%WWWDIR%%/reports/de.html.sample
 %%WWWDIR%%/reports/en.html.sample
 %%WWWDIR%%/reports/it.html.sample
 %%WWWDIR%%/reports/pl.html.sample
-@dirrm %%WWWDIR%%/reports
 %%WWWDIR%%/logo_bot.png
 %%WWWDIR%%/logo_top.png
 %%WWWDIR%%/monitorixico.png
 %%WWWDIR%%/cgi
-@dirrmtry %%WWWDIR%%/imgs
-@dirrmtry %%WWWDIR%%
 @comment rrd files are now kept in /var/db/monitorix, we'll move
 @comment previous files over for the user
-@exec [ -d %%DBDIR%% ] || install -d -o %%WWW_OWNER%% -g %%WWW_GROUP%% %%DBDIR%%
+@dir(%%WWW_OWNER%%,%%WWW_GROUP%%,) %%DBDIR%%
 @exec [ -f %%DATADIR%%/fs.rrd ] && mv %%DATADIR%%/*.rrd %%DBDIR%% || true
-@unexec rmdir %%DBDIR%% 2>/dev/null || true

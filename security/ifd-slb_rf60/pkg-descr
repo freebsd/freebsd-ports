@@ -1,5 +1,4 @@
 This is a pcsc-lite driver for the Schlumberger Reflex 62/64
 serial smartcard reader.
 
-Author:	David Corcoran <corcoran@linuxnet.com>,
 WWW: http://www.linuxnet.com/sourcedrivers.html

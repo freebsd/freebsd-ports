@@ -13,6 +13,8 @@ COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3
 
+CPE_VENDOR=	gnu
+
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 LATEST_LINK=	cfengine36
@@ -28,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		cpe gmake libtool
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include

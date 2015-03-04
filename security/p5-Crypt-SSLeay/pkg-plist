@@ -1,6 +1,3 @@
-%%PERL5_MAN3%%/Crypt::SSLeay.3.gz
-%%PERL5_MAN3%%/Crypt::SSLeay::Version.3.gz
-%%PERL5_MAN3%%/Net::SSL.3.gz
 %%SITE_ARCH%%/Crypt/SSLeay.pm
 %%SITE_ARCH%%/Crypt/SSLeay/CTX.pm
 %%SITE_ARCH%%/Crypt/SSLeay/Conn.pm
@@ -10,3 +7,6 @@
 %%SITE_ARCH%%/Crypt/SSLeay/X509.pm
 %%SITE_ARCH%%/Net/SSL.pm
 %%SITE_ARCH%%/auto/Crypt/SSLeay/SSLeay.so
+%%PERL5_MAN3%%/Crypt::SSLeay.3.gz
+%%PERL5_MAN3%%/Crypt::SSLeay::Version.3.gz
+%%PERL5_MAN3%%/Net::SSL.3.gz

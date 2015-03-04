@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${BZR_SRC_REV}
-PORTREVISION=	8
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mr
@@ -86,8 +86,8 @@ do-fetch:
 	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
 	${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip
 	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
-	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
-		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
+#	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
+#		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
 	cd ${WRKDIR}; \
 	tar xvf master.zip; \
 	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \

@@ -1,5 +1,4 @@
 The peak.util.extremes module provides a production-quality implementation
 of the Min and Max objects from PEP 326.
 
-Author: Phillip J. Eby
 WWW: https://pypi.python.org/pypi/Extremes/

@@ -5,7 +5,6 @@ MySAR consists of two parts:
 
     * Command line utilities which import a squid log file in a
       MySQL database and maintain the databas.
-    * A web interface for accessing the reports. 
+    * A web interface for accessing the reports.
 
-Author: Giannis Stoilis <giannis@stoilis.gr>
 WWW: http://giannis.stoilis.gr/software/mysar/index.php?id=16

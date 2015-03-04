@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.5.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
@@ -12,6 +12,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3
+
+CPE_VENDOR=	gnu
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
@@ -25,7 +27,7 @@ CONFLICTS=	cfengine-[234]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
-USES=		gmake libtool
+USES=		cpe gmake libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
