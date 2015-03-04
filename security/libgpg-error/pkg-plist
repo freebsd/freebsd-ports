@@ -11,14 +11,10 @@ share/common-lisp/source/gpg-error/gpg-error.asd
 share/common-lisp/source/gpg-error/gpg-error-package.lisp
 share/common-lisp/source/gpg-error/gpg-error.lisp
 share/common-lisp/source/gpg-error/gpg-error-codes.lisp
-@dirrmtry share/common-lisp/source/gpg-error
-@dirrmtry share/common-lisp/source
-@dirrmtry share/common-lisp
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%share/locale/cs/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/da/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libgpg-error.mo
