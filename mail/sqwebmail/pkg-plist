@@ -1,8 +1,10 @@
-@unexec [ ! -f /var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
-@unexec if cmp -s %D/etc/sqwebmail/ldapaddressbook.dist %D/etc/sqwebmail/ldapaddressbook; then rm -f %D/etc/sqwebmail/ldapaddressbook; fi
-etc/sqwebmail/ldapaddressbook.dist
-@unexec if cmp -s %D/etc/sqwebmail/sqwebmaild.dist %D/etc/sqwebmail/sqwebmaild; then rm -f %D/etc/sqwebmail/sqwebmaild; fi
-etc/sqwebmail/sqwebmaild.dist
+@unexec if cmp %D/%%ETCDIR%%/ldapaddressbook %D/%%ETCDIR%%/ldapaddressbook.dist ; then rm -vf %D/%%ETCDIR%%/ldapaddressbook ; fi
+%%ETCDIR%%/ldapaddressbook.dist
+@exec [ -f %D/%%ETCDIR%%/ldapaddressbook ] || cp -v %D/%%ETCDIR%%/ldapaddressbook.dist %D/%%ETCDIR%%/ldapaddressbook
+@unexec if cmp %D/%%ETCDIR%%/sqwebmaild %D/%%ETCDIR%%/sqwebmaild.dist ; then rm -vf %D/%%ETCDIR%%/sqwebmaild ; fi
+%%ETCDIR%%/sqwebmaild.dist
+@exec [ -f %D/%%ETCDIR%%/sqwebmaild ] || cp -v %D/%%ETCDIR%%/sqwebmaild.dist %D/%%ETCDIR%%/sqwebmaild
+@unexec [ -f /var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
 libexec/sqwebmail/deliverquota
 libexec/sqwebmail/maildirmake
 libexec/sqwebmail/makemime
@@ -11,6 +13,8 @@ libexec/sqwebmail/reformime
 libexec/sqwebmail/sqwebmaild
 libexec/sqwebmail/sqwebpasswd
 libexec/sqwebmaild.rc
+man/man1/maildirmake.1.gz
+man/man8/deliverquota.8.gz
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
 sbin/sharedindexinstall.sqwebmail
 sbin/sharedindexsplit.sqwebmail
@@ -75,22 +79,22 @@ share/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/sqwebmail
-%%CACHE%%@unexec rmdir /var/sqwebmail/cache
-@unexec rmdir /var/sqwebmail/calendar/public
-@unexec rmdir /var/sqwebmail/calendar/private
-@unexec rmdir /var/sqwebmail/calendar/localcache
-@unexec rmdir /var/sqwebmail/calendar
-@unexec rmdir /var/sqwebmail/run
-@unexec rmdir /var/sqwebmail
-@dirrm share/sqwebmail/html/en-us
-@dirrm share/sqwebmail/html
-@dirrm share/sqwebmail
-@dirrm libexec/sqwebmail
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir etc/sqwebmail
+%%CACHE%%@dir /var/sqwebmail/cache
+@dir /var/sqwebmail/calendar/public
+@dir /var/sqwebmail/calendar/private
+@dir /var/sqwebmail/calendar/localcache
+@dir /var/sqwebmail/calendar
+@dir /var/sqwebmail/run
+@dir /var/sqwebmail
+@dir share/sqwebmail/html/en-us
+@dir share/sqwebmail/html
+@dir share/sqwebmail
+@dir libexec/sqwebmail
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
-@unexec rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
-@unexec rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
+@dir %%CGIBINDIR%%/%%CGIBINSUBDIR%%
+@dir %%CGIBINDIR%%
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bg.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomleft.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomright.png
@@ -138,5 +142,5 @@ share/sqwebmail/webgpg
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/trash2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/uncancel.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/wikifmt.html
-@unexec rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
-@unexec rmdir %D/%%WEBDATADIR%% 2> /dev/null || true
+@dir %%WEBDATADIR%%/%%WEBDATASUBDIR%%
+@dir %%WEBDATADIR%%

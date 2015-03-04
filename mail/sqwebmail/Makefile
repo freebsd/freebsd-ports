@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.7.2
+PORTVERSION=	5.8.1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -11,7 +11,8 @@ COMMENT=	CGI Webmail client for Maildirs
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libunicode.so:${PORTSDIR}/devel/courier-unicode
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
@@ -70,9 +71,6 @@ PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 		CGIBINSUBDIR=${CGIBINSUBDIR} \
 		WEBDATADIR=${WEBDATADIR} \
 		WEBDATASUBDIR=${WEBDATASUBDIR}
-
-MAN1=		maildirmake.1
-MAN8=		deliverquota.8
 
 EXTRA_DOCS=	README README.logindomainlist.html README.pam \
 		libs/sqwebmail/ChangeLog \
