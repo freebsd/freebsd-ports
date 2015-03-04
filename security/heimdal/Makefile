@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -21,7 +21,7 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
 
 USES=		gettext gssapi:bootstrap,heimdal libtool pathfix pkgconfig \
 		readline makeinfo
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${GSSAPILIBDIR}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -30,8 +30,8 @@ CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
 CONFIGURE_ARGS=	--with-libintl \
 		--with-libintl-include="${LOCALBASE}/include" \
 		--with-libintl-lib="${LOCALBASE}/lib" \
-		--libdir="${PREFIX}/lib/${PORTNAME}" \
-		--includedir="${PREFIX}/include/${PORTNAME}" \
+		--libdir="${GSSAPILIBDIR}" \
+		--includedir="${GSSAPIINCDIR}" \
 		--with-kcm \
 		--with-openssl \
 		--with-openssl-include="${OPENSSLINC}" \

@@ -1,0 +1,41 @@
+--- lib/roken/Makefile.in.orig	2012-12-10 07:09:39.000000000 +0900
++++ lib/roken/Makefile.in	2015-03-04 21:35:04.000000000 +0900
+@@ -150,8 +150,7 @@
+   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" \
+-	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)" \
+-	"$(DESTDIR)$(rokenincludedir)"
++	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libroken_la_DEPENDENCIES = @LTLIBOBJS@ $(am__DEPENDENCIES_1)
+@@ -305,8 +304,7 @@
+ am__dist_include_HEADERS_DIST = base64.h getarg.h hex.h parse_bytes.h \
+ 	parse_time.h parse_units.h resolve.h roken-common.h rtbl.h \
+ 	xdbm.h socket_wrapper.h
+-HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS) \
+-	$(nodist_rokeninclude_HEADERS)
++HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ am__tty_colors = \
+@@ -1721,7 +1719,7 @@
+ all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) \
+ 		all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(rokenincludedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -1777,8 +1775,7 @@
+ info-am:
+ 
+ install-data-am: install-dist_includeHEADERS install-man \
+-	install-nodist_includeHEADERS \
+-	install-nodist_rokenincludeHEADERS
++	install-nodist_includeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am
