@@ -43,37 +43,45 @@ printc () {
 #
 
 tempfile=$(mktemp)
-rm -f $tempfile
 trap "rm -f $tempfile" 0 1 2 3 15
 
 while [ $# -gt 0 ]
 do
     if [ -f "$1/Makefile" ]; then
+        # If the Makefile exists, continue and empty the tempfile
         echo -n > $tempfile
         revision=`grep "^PORTREVISION?\?=" "$1/Makefile"`
-	case $? in
-	0)
-	    # fixme: gsub fails massively if there are any special
-	    # characters inside PORTREVISION.  For now, we will only
-	    # catch this bug by checking the replace count, and if not
-	    # 1, bail out and complain.
-	    # The proper fix is to do a stricter check that PORTREVISION
-	    # is an integer.
-	    awk -F "\t+" '/^PORTREVISION\??=/{ rplc = gsub ($2,$2+1); if (rplc != 1) { exit 1 } };{ print }' "$1/Makefile" > $tempfile \
-            && { cat $tempfile > "$1/Makefile" ; printc "$1: $revision found, bumping it by 1." "green" ; } \
-	    || printc "$1: FAILED TO BUMP PORTREVISION" red
-	    ;;
-	1)
-	    awk '/^(PORT|DIST)VERSION\??=\t/{print;print "PORTREVISION=\t1";next} {print}' "$1/Makefile" > $tempfile \
-            && { cat $tempfile > "$1/Makefile" ;printc "$1: PORTREVISION not found, adding PORTREVISION=1" "green" ; } \
-	    || printc "$1: FAILED TO BUMP PORTREVISION" red
-	    ;;
-	*)
-	    printc "$1: grepping $1/Makefile failed!" red
-	    ;;
-	esac
+        if [ $? == 0 ]; then
+            # If the exit code is 0, then PORTREVISION line was found
+            if [ `echo "$revision" | wc -l` == 1 ]; then
+                # If the $revision variable has only 1 line, then proceed with processing it
+                case `echo "$revision" | awk -F "\t+" '{ print $2}'` in
+                    (*[^0-9]*|'')
+                        # If the value of PORTREVISION is not an integer, we cant bump its value
+                        printc "ERROR: $1 PORTREVISION value is not a number, unable to solve!" "red"
+                        ;;
+                    (*)
+                        # If the value of PORTREVISION is an integer, increase it by 1
+                        printc "INFO: $1 $revision found, bumping it by 1." "green"
+                        awk -F "\t+" '/^PORTREVISION\??=/{ gsub ($2,$2+1) };{ print }' "$1/Makefile" > $tempfile \
+                        && cat $tempfile > "$1/Makefile" \
+                        || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
+                        ;;
+                esac
+            else
+                # If the $revision variable had more than 1 line, we cant bump its value reliably
+                printc "ERROR: $1 PORTREVISION found more than once, unable to solve!" "red"
+            fi
+        else
+            # There was no PORTREVISION line, so we need to add one with value of 1
+            printc "INFO: $1 PORTREVISION not found, adding PORTREVISION=1" "green"
+            awk '/^(PORT|DIST)VERSION\??=\t/{print;print "PORTREVISION=\t1";next} {print}' "$1/Makefile" > $tempfile \
+            && cat $tempfile > "$1/Makefile" \
+            || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
+        fi
     else
-        printc "$1: might not be a port directory as $1/Makefile is missing!" "red"
+        # The directory specified had no Makefile, so it seems like a mistake
+        printc "ERROR: $1 might not be a port directory as $1/Makefile is missing!" "red"
     fi
     shift
 done
