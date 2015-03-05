@@ -18,13 +18,11 @@ OPTIONS_DEFINE=	EXAMPLES
 USES=		perl5 dos2unix
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
+PORTEXAMPLES=	*
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
