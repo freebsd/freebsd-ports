@@ -12,3 +12,4 @@ share/applications/pcmanx.desktop
 %%DATADIR%%/nancy_bot/example_usages.data
 %%DATADIR%%/sitelist
 share/pixmaps/pcmanx.svg
+@dir %%DATADIR%%/script
