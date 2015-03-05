@@ -2,10 +2,9 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	09.01.0200
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	odbc/versions/src
+MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
 DISTNAME=	psqlodbc-${PORTVERSION}
 DIST_SUBDIR=	postgresql
@@ -14,29 +13,31 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES+=		libtool pgsql
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+
+USES=		libtool pgsql
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
-PORTDOCS=	odbc/
-PORTEXAMPELS=	odbc/
+DOCSDIR=	${PREFIX}/share/doc/postgresql/odbc
+EXAMPLESDIR=	${PREFIX}/share/examples/postgresql/odbc
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 PLIST_FILES=	lib/psqlodbcw.so
-
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DATADIR_1=	${EXAMPLESDIR}/odbc
-DOCSDIR_1=	${DOCSDIR}/odbc
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR_1}
-	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${DATADIR_1}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR_1}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR_1}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
