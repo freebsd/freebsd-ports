@@ -10,6 +10,8 @@ MASTER_SITES=	http://loemu.pegueroles.com/dists/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple frontend for various game emulators
 
+LICENSE=	GPLv2 # or later
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
