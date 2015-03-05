@@ -8,6 +8,3 @@ share/examples/gracula/read.gcl.sample
 share/examples/gracula/space.gcl.sample
 share/examples/gracula/sec2000.gcl.sample
 share/examples/gracula/tri.gcl.sample
-@dirrm share/gracula/pix
-@dirrm share/gracula
-@dirrm share/examples/gracula
