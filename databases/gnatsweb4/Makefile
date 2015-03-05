@@ -3,12 +3,15 @@
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases devel www
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnatsweb, a GNATS web interface
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
@@ -25,7 +28,7 @@ PLIST_SUB=	CGI_DIR="${CGI_DIR:S,^${PREFIX}/,,}"
 PORTDOCS=	CUSTOMIZE CUSTOMIZE.cb CUSTOMIZE.vars \
 		ChangeLog INSTALL NEWS README TROUBLESHOOTING
 
-PORTEXAMPLESS=	gnatsweb-site-example.pl
+PORTEXAMPLES=	gnatsweb-site-example.pl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -40,7 +43,7 @@ do-install:
 	for doc in ${PORTDOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${doc} ${STAGEDIR}${DOCSDIR}; \
 	done
-	for example in ${EXAMPLEFILES}; do \
+	for example in ${PORTEXAMPLES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${example} \
 			${STAGEDIR}${EXAMPLESDIR}; \
 	done
