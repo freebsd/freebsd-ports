@@ -20,6 +20,7 @@ HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
 
+BROKEN=		Fails to build on our amd64 builders...
 
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.13-compatibility
 PURE_LIB_DEPENDS_OFF=	\
