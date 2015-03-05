@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2014-10-06 18:06:02.000000000 +0200
 +++ CMakeLists.txt	2014-10-18 16:20:43.311977761 +0200
-@@ -500,39 +500,17 @@
+@@ -468,40 +468,17 @@
  
  ADD_SUBDIRECTORY(extra)
  ADD_SUBDIRECTORY(client)
@@ -36,6 +36,7 @@
 -  ENDIF()
 -  ADD_SUBDIRECTORY(packaging/rpm-oel)
 -  ADD_SUBDIRECTORY(packaging/rpm-fedora)
+-  ADD_SUBDIRECTORY(packaging/rpm-sles)
 -ENDIF()
 -
  INCLUDE(cmake/abi_check.cmake)
