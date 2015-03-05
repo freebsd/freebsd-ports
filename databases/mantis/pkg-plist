@@ -193,12 +193,6 @@
 %%WWWDIR%%/doc/INSTALL
 %%WWWDIR%%/doc/LICENSE
 %%WWWDIR%%/doc/RELEASE
-%%WWWDIR%%/doc/en/administration_guide.html
-%%WWWDIR%%/doc/en/administration_guide.pdf
-%%WWWDIR%%/doc/en/administration_guide.txt
-%%WWWDIR%%/doc/en/developers.html
-%%WWWDIR%%/doc/en/developers.pdf
-%%WWWDIR%%/doc/en/developers.txt
 %%WWWDIR%%/excel_xml_export.php
 %%WWWDIR%%/file_download.php
 %%WWWDIR%%/history_inc.php
