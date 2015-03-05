@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-t
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
 PKGNAMESUFFIX?=	53-server
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	spil.oss@gmail.com
 COMMENT=	Database server - drop-in replacement for MySQL
 
 LICENSE=	GPLv2
@@ -49,7 +49,6 @@ OPTIONS_DEFAULT+=	SSL
 STATIC_DESC=	Statically link executables (not on 9.x)
 SSL_DESC=	Activate SSL support
 OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
-
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2

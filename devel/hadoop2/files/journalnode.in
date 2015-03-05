@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: journalnode
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# journalnode_enable (bool):     Set to NO by default.
+#                                Set it to YES to enable journalnode.
+
+. /etc/rc.subr
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=journalnode
+rcvar=journalnode_enable
+
+load_rc_config "${name}"
+
+: ${journalnode_enable:=NO}
+: ${journalnode_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start journalnode'
+
+stop_cmd=journalnode_stop
+
+journalnode_stop () {
+  su -m ${journalnode_user} -c "${command} --config %%ETCDIR%% stop journalnode"
+}
+
+run_rc_command "$1"

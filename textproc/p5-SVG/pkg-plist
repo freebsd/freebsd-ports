@@ -20,6 +20,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minsvg.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/starpath.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sun_text_sample.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg.psgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg2png.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg_dom_sample.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svgtest2.pl

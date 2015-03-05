@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wulf@cicgroup.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of the standard Ruby debugger
 
 LICENSE=	BSD2CLAUSE

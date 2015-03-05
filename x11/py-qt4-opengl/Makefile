@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	opengl
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11 devel python
 

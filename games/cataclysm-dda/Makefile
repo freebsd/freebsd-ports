@@ -10,7 +10,7 @@ MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:game
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	wulf@cicgroup.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork/variant of Cataclysm Roguelike by Whales
 
 LICENSE=	CCPL.BY-SA.30

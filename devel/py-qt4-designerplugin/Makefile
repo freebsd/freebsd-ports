@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	designerplugin
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 
@@ -22,6 +21,8 @@ USE_QT4=	gui xml designer moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace
+
+PLIST_FILES=	%%QT_PLUGINDIR%%/designer/libpyqt4.so
 
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wulf@cicgroup.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML interface for rubygem-debugger
 
 LICENSE=	MIT

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wget
-DISTVERSION=	1.16
+DISTVERSION=	1.16.2
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
 
@@ -45,7 +45,7 @@ PCRE_CONFIGURE_ENV_OFF=	ac_cv_header_pcre_h=no
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-ssl=openssl
+CONFIGURE_ARGS+=--with-ssl=openssl --with-libssl-prefix=${OPENSSLBASE}
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .elif ${PORT_OPTIONS:MGNUTLS}

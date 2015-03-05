@@ -32,4 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/dbus-object.h ${WRKSRC}/src/forward_declarations.h
 
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/locale
+
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	xml
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc devel python
 

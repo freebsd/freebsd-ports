@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	ninvaders-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
+COMMENT=	The nInvaders game is a Space Invaders clone for ncurses
 
 OPTIONS_DEFINE=	DOCS
 

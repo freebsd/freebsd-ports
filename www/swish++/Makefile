@@ -3,16 +3,21 @@
 
 PORTNAME=	swish++
 PORTVERSION=	6.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www textproc
 MASTER_SITES=	SF/swishplusplus/swishplusplus/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web Indexing System for Humans: C++ version
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/Copying
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	scripts/searchc.in scripts/splitmail.in scripts/httpindex.in
+perl_OLD_CMD=	%%PERL%%
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PERL="${PERL}"
 

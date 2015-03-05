@@ -3,7 +3,7 @@
 
 PORTNAME=		radicale
 PORTVERSION=		0.8
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -34,7 +34,7 @@ USES+=		python
 .endif
 
 .if ${PORT_OPTIONS:MHTTP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1	
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -47,6 +47,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
+	${MKDIR} ${STAGEDIR}/${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}/${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/logging ${STAGEDIR}/${ETCDIR}/logging.sample
 

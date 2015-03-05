@@ -25,9 +25,9 @@ printc () {
 # $1 - msg is obligatory, $2 - color (red/green)of the message, default if not passed
     if [ -t 1 ]; then
         if [ $# -eq 2 ]; then
-            if [ $2 == "red" ]; then
+            if [ $2 = "red" ]; then
                 echo -e "\033[1;31m$1\033[m"
-            elif [ $2 == "green" ]; then
+            elif [ $2 = "green" ]; then
                 echo -e "\033[1;32m$1\033[m"
             else
                 echo "$1"
@@ -48,40 +48,49 @@ trap "rm -f $tempfile" 0 1 2 3 15
 while [ $# -gt 0 ]
 do
     if [ -f "$1/Makefile" ]; then
-        # If the Makefile exists, continue and empty the tempfile
-        echo -n > $tempfile
-        revision=`grep "^PORTREVISION?\?=" "$1/Makefile"`
-        if [ $? == 0 ]; then
+        # If the Makefile exists, continue and empty the tempfile, set up variables
+	echo -n > $tempfile
+        revision_str=`grep "^PORTREVISION?\?=" "$1/Makefile"`
+	revision_num=`echo "$revision_str" | awk -F "\t+" '{ print $2 }'`
+
+        case $? in
+        0)
             # If the exit code is 0, then PORTREVISION line was found
-            if [ `echo "$revision" | wc -l` == 1 ]; then
-                # If the $revision variable has only 1 line, then proceed with processing it
-                case `echo "$revision" | awk -F "\t+" '{ print $2}'` in
+            if [ `echo "$revision_str" | wc -l` = 1 ]; then
+                # If the $revision_str variable has only 1 line, then proceed with processing it
+                case `echo "$revision_str" | awk -F "\t+" '{ print $2 }'` in
                     (*[^0-9]*|'')
-                        # If the value of PORTREVISION is not an integer, we cant bump its value
+                        # If the value of PORTREVISION is not an integer, we can't bump its value
                         printc "ERROR: $1 PORTREVISION value is not a number, unable to solve!" "red"
                         ;;
                     (*)
                         # If the value of PORTREVISION is an integer, increase it by 1
-                        printc "INFO: $1 $revision found, bumping it by 1." "green"
-                        awk -F "\t+" '/^PORTREVISION\??=/{ gsub ($2,$2+1) };{ print }' "$1/Makefile" > $tempfile \
+                        printc "INFO: $1 PORTREVISION= $revision_num found, bumping it by 1." "green"
+                        rm -f $tempfile && awk -F "\t+" '/^PORTREVISION\??=/{ gsub ($2, $2+1) }; { print }' "$1/Makefile" > $tempfile \
                         && cat $tempfile > "$1/Makefile" \
                         || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
                         ;;
                 esac
             else
-                # If the $revision variable had more than 1 line, we cant bump its value reliably
-                printc "ERROR: $1 PORTREVISION found more than once, unable to solve!" "red"
+                # If the $revision_str variable had more than 1 line, we can't bump its value safely
+                printc "ERROR: $1 PORTREVISION found more than once, unable to bump it reliably!" "red"
             fi
-        else
-            # There was no PORTREVISION line, so we need to add one with value of 1
-            printc "INFO: $1 PORTREVISION not found, adding PORTREVISION=1" "green"
-            awk '/^(PORT|DIST)VERSION\??=\t/{print;print "PORTREVISION=\t1";next} {print}' "$1/Makefile" > $tempfile \
+            ;;
+        1)
+            # If the exit code is 1 then PORTREVISION wasn't found, so we need to add one with value of 1
+            printc "INFO: $1 PORTREVISION not found, adding PORTREVISION= 1" "green"
+            rm -f $tempfile && awk '/^(PORT|DIST)VERSION\??=\t/{ print; print "PORTREVISION=\t1"; next } { print }' "$1/Makefile" > $tempfile \
             && cat $tempfile > "$1/Makefile" \
             || printc "ERROR: $1 PORTREVISION found but failed to bump it!" "red"
-        fi
+            ;;
+        *)
+            printc "ERROR: PORTREVISION grep for $1 exited with error!" "red"
+            ;;
+        esac
     else
         # The directory specified had no Makefile, so it seems like a mistake
-        printc "ERROR: $1 might not be a port directory as $1/Makefile is missing!" "red"
+        printc "ERROR: $1 might not be a port directory because $1/Makefile is missing!" "red"
     fi
     shift
 done
+

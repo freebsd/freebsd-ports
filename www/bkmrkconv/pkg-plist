@@ -5,6 +5,3 @@ bin/bkmrkconv
 %%DATADIR%%/src/contentspage.html
 %%DATADIR%%/src/linkspage.html
 %%DATADIR%%/src/rootpage.html
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
