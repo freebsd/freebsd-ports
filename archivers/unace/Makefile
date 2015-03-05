@@ -3,12 +3,12 @@
 
 PORTNAME=	unace
 PORTVERSION=	1.2b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
 
 MAKE_JOBS_UNSAFE=	yes
