@@ -3700,6 +3700,7 @@
     SUBDIR += py-astroid
     SUBDIR += py-async
     SUBDIR += py-asyncio
+    SUBDIR += py-atomicwrites
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
