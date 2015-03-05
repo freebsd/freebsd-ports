@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150305:
+  AUTHOR: olivierd@FreeBSD.org
+
+  Dependencies on the Xfce ports have been migrated to USES. Instead
+  of USE_XFCE= configenv, you should use USES= xfce.
+
 20150224:
   AUTHOR: makc@FreeBSD.org
 

@@ -1,4 +1,3 @@
-lib/xfce4/panel/plugins/libsmartbookmark.la
 lib/xfce4/panel/plugins/libsmartbookmark.so
 share/locale/ar/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-smartbookmark-plugin.mo

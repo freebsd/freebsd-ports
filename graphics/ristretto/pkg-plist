@@ -1,4 +1,5 @@
 bin/ristretto
+share/appdata/ristretto.appdata.xml
 share/applications/ristretto.desktop
 share/icons/hicolor/16x16/apps/ristretto.png
 share/icons/hicolor/48x48/apps/ristretto.png
@@ -11,6 +12,7 @@ share/locale/cs/LC_MESSAGES/ristretto.mo
 share/locale/da/LC_MESSAGES/ristretto.mo
 share/locale/de/LC_MESSAGES/ristretto.mo
 share/locale/el/LC_MESSAGES/ristretto.mo
+share/locale/en_AU/LC_MESSAGES/ristretto.mo
 share/locale/en_GB/LC_MESSAGES/ristretto.mo
 share/locale/es/LC_MESSAGES/ristretto.mo
 share/locale/eu/LC_MESSAGES/ristretto.mo
@@ -23,11 +25,14 @@ share/locale/id/LC_MESSAGES/ristretto.mo
 share/locale/is/LC_MESSAGES/ristretto.mo
 share/locale/it/LC_MESSAGES/ristretto.mo
 share/locale/ja/LC_MESSAGES/ristretto.mo
+share/locale/kk/LC_MESSAGES/ristretto.mo
 share/locale/ko/LC_MESSAGES/ristretto.mo
 share/locale/lt/LC_MESSAGES/ristretto.mo
 share/locale/lv/LC_MESSAGES/ristretto.mo
+share/locale/ms/LC_MESSAGES/ristretto.mo
 share/locale/nb/LC_MESSAGES/ristretto.mo
 share/locale/nl/LC_MESSAGES/ristretto.mo
+share/locale/oc/LC_MESSAGES/ristretto.mo
 share/locale/pl/LC_MESSAGES/ristretto.mo
 share/locale/pt/LC_MESSAGES/ristretto.mo
 share/locale/pt_BR/LC_MESSAGES/ristretto.mo
@@ -38,6 +43,7 @@ share/locale/sl/LC_MESSAGES/ristretto.mo
 share/locale/sr/LC_MESSAGES/ristretto.mo
 share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/te/LC_MESSAGES/ristretto.mo
+share/locale/th/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
 share/locale/ug/LC_MESSAGES/ristretto.mo
 share/locale/uk/LC_MESSAGES/ristretto.mo

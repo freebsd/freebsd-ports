@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -19,9 +20,9 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack libxml2
-USE_XFCE=	configenv libmenu libutil panel
+USE_XFCE=	panel
 
 OPTIONS_DEFINE=	UPOWER
 UPOWER_DESC=	Power management tasks

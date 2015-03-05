@@ -1,6 +1,6 @@
 bin/xfce4-accessibility-settings
 bin/xfce4-appearance-settings
-%%XRANDR%%bin/xfce4-display-settings
+bin/xfce4-display-settings
 bin/xfce4-keyboard-settings
 bin/xfce4-mime-settings
 bin/xfce4-mouse-settings
@@ -11,7 +11,7 @@ etc/xdg/autostart/xfsettingsd.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 etc/xdg/menus/xfce-settings-manager.menu
 lib/xfce4/settings/appearance-install-theme
-%%XRANDR%%share/applications/xfce-display-settings.desktop
+share/applications/xfce-display-settings.desktop
 share/applications/xfce-keyboard-settings.desktop
 share/applications/xfce4-mime-settings.desktop
 share/applications/xfce-mouse-settings.desktop
@@ -19,6 +19,10 @@ share/applications/xfce-settings-manager.desktop
 share/applications/xfce-ui-settings.desktop
 share/applications/xfce4-accessibility-settings.desktop
 share/applications/xfce4-settings-editor.desktop
+share/icons/hicolor/128x128/devices/xfce-display-extend.png
+share/icons/hicolor/128x128/devices/xfce-display-external.png
+share/icons/hicolor/128x128/devices/xfce-display-internal.png
+share/icons/hicolor/128x128/devices/xfce-display-mirror.png
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-settings.mo
@@ -28,6 +32,7 @@ share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-settings.mo
@@ -45,9 +50,11 @@ share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-settings.mo
@@ -56,13 +63,16 @@ share/applications/xfce4-settings-editor.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/te/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/th/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo

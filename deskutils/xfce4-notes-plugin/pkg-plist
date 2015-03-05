@@ -2,7 +2,6 @@ bin/xfce4-notes
 bin/xfce4-notes-settings
 bin/xfce4-popup-notes
 etc/xdg/autostart/xfce4-notes-autostart.desktop
-lib/xfce4/panel-plugins/libnotes.a
 lib/xfce4/panel-plugins/libnotes.so
 lib/xfce4/panel-plugins/libnotes.so.0
 lib/xfce4/panel-plugins/libnotes.so.0.0.0

@@ -3,7 +3,7 @@
 
 PORTNAME=	orage
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -20,12 +20,13 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gettext desktop-file-utils gmake tar:bzip2
+USES=		pkgconfig gettext desktop-file-utils gmake \
+	xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
-USE_XFCE=	configenv libmenu panel
+USE_XFCE=	panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes
-LDFLAGS+=	-L${LOCALBASE}/lib
+#LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	BDB ICAL NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
 

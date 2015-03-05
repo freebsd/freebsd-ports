@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150305:
+  AFFECTS: users of x11-wm/xfce4 and multimedia/xfce4-parole
+  AUTHOR: olivierd@FreeBSD.org
+
+  Xfce 4.12 has been imported. Please use the following instructions to
+  upgrade.
+
+  For package users:
+  # pkg upgrade
+
+  For ports users:
+  # portmaster -a
+  # portmaster x11-wm/xfce4
+
+  GStreamer 1.0 is enabled by default in Parole media player.
+
+  Xfce 4.12 now depends of Adwaita icon theme. If you are upgrading from
+  Xfce 4.10 you probably still have the Tango or GNOME theme selected.
+  Open the Settings Manager and select Appearance. Inside dialog box switch
+  to the Icons tag and select the "Adwaita" entry in the list.
+
 20150304:
   AFFECTS: users of security/libressl
   AUTHOR: vsevolod@highsecure.ru
