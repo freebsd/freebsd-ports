@@ -21,6 +21,9 @@ SUB_FILES=	pkg-message
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}
 
+post-extract:
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
