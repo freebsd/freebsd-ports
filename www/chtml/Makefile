@@ -11,6 +11,8 @@ DISTNAME=	chtml
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chunked HTML templating engine
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:${PORTSDIR}/lang/siod
 
 USES=		perl5 tar:tgz
