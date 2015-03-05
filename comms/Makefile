@@ -32,6 +32,7 @@
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
+    SUBDIR += dump1090
     SUBDIR += ebook2cw
     SUBDIR += ebook2cwgui
     SUBDIR += echolinux
