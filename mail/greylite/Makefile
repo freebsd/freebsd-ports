@@ -55,6 +55,7 @@ PLIST_SUB+=	UCSPI2SOCKET="@comment "
 post-patch:
 	${CP} ${WRKSRC}/Makefile.bsdmake ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|PREFIX\?=.*|PREFIX=${STAGEDIR}${PREFIX}|g' \
+		-e 's,logmsg.c logmsg.h ucspi2socket.c,logmsg.o ucspi2socket.c,' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
