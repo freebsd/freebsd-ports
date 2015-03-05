@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a simple interface on top of CouchDBs RESTful HTTP API
 
-RUN_DEPENDS=	rubygem-multi_json>=1.0.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-mime-types>=1.15:${PORTSDIR}/misc/rubygem-mime-types \
+LICENSE=	APACHE20
+
+RUN_DEPENDS=	rubygem-mime-types>=1.15:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-multi_json>=1.0.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rest-client>=1.6.1:${PORTSDIR}/www/rubygem-rest-client
 
 USE_RUBY=	yes
