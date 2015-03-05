@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -17,9 +17,9 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	intltool intlhack
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libmenu panel
+USE_XFCE=	panel
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-generic-slider
 PORTVERSION=	0.0.20100827
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/ehaupt/
 
@@ -12,8 +12,8 @@ COMMENT=	Slider plugin to adjust and/or monitor any numeric variable
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig
-USE_XFCE=	panel libutil libgui
+USES=		pkgconfig xfce
+USE_XFCE=	panel libgui
 
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`

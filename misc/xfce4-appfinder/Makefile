@@ -2,34 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-appfinder
-PORTVERSION=	4.10.1
-PORTREVISION=	1
+PORTVERSION=	4.12.0
 CATEGORIES=	misc xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application launcher and finder
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig tar:bzip2
-USE_GNOME=	gtk20 glib20 intltool intlhack
-USE_XFCE=	configenv garcon libmenu libutil xfconf
+USES=		gmake pkgconfig gettext-tools tar:bzip2
+USE_GNOME=	glib20 intltool intlhack
+USE_XFCE=	garcon
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	GTK3 NLS
+GTK3_USES=	xfce:gtk3
+GTK3_USE=	gnome=gtk30
+GTK3_CONFIGURE_ENABLE=	gtk3
+GTK3_USES_OFF=	xfce
+GTK3_USE_OFF=	gnome=gtk20
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-CONFIGURE_ARGS+=--enable-nls
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|=gtk-find|=system-search|' \

@@ -3,7 +3,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	LOCAL/ehaupt/
 PKGNAMEPREFIX=	xfce4-
@@ -22,10 +22,10 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libutil libgui
+USE_XFCE=	libgui
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
@@ -43,7 +43,7 @@ OPTIONS_DEFAULT=CLOSE NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext-runtime
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
