@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pony
-PORTVERSION=	1.6.2
+PORTVERSION=	1.11
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	The express way to send mail from Ruby
+COMMENT=	Express way to send mail from Ruby
 
 LICENSE=	MIT
 
