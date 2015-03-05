@@ -35,3 +35,6 @@ bin/loemu-builder
 share/locale/fr/LC_MESSAGES/loemu.mo
 share/locale/ca/LC_MESSAGES/loemu.mo
 share/locale/sv/LC_MESSAGES/loemu.mo
+@dir %%DATADIR%%/snaps
+@dir %%DATADIR%%/roms
+@dir %%DATADIR%%/flyers
