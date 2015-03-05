@@ -23,8 +23,9 @@ GSASL_DESC=	GSASL support (required for databases)
 GDBM_DESC=	GDBM backend
 SOCKS_DESC=	SOCKS proxy support
 
-USES=		charsetfix makeinfo pkgconfig shebangfix
+USES=		charsetfix cpe makeinfo pkgconfig shebangfix
 CHARSETFIX_MAKEFILEIN=	gnulib.mk
+CPE_VENDOR=	gnu
 SHEBANG_FILES=	contrib/msg2smtp.pl
 USE_RC_SUBR=	anubis
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
