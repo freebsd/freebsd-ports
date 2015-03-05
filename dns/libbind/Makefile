@@ -4,13 +4,15 @@ PORTNAME=	libbind
 PORTVERSION=	6.0
 PORTREVISION=	1
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR=	libbind/${PORTVERSION}
+MASTER_SITES=	ISC/libbind/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard C resolver library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -37,11 +39,9 @@ CONFIGURE_ARGS+=	--disable-threads
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-post-patch:
 .if ${OSVERSION} > 900007
-	${CP} ${WRKSRC}/irs/irpmarshall.c ${WRKSRC}/irs/irpmarshall.c.dist
-	${SED} -e 's/\#include \<utmp.h\>//' \
-		${WRKSRC}/irs/irpmarshall.c.dist > ${WRKSRC}/irs/irpmarshall.c
+post-patch:
+	${REINPLACE_CMD} -e '/#include <utmp.h>/ d' ${WRKSRC}/irs/*.c
 .endif
 
 .include <bsd.port.post.mk>
