@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 # or commit to this port without my prior approval.
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client
+
+LICENSE=	MIT
+LICENSE_FILE=	${FILESDIR}/LICENSE
 
 USES=		gmake pkgconfig
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
