@@ -43,6 +43,8 @@ OCIO_LIB_DEPENDS=	libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
 TEST_CMAKE_ON=		-DOIIO_BUILD_TESTS:BOOL=ON
 TEST_CMAKE_OFF=		-DOIIO_BUILD_TESTS:BOOL=OFF
 
+USE_OPENSSL=		yes
+
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
