@@ -24,7 +24,6 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/convdata/mapnames
 %%DATADIR%%/convdata/move.bmp
 %%DATADIR%%/convdata/reinf
-%%DATADIR%%/convdata/road2.bmp
 %%DATADIR%%/convdata/sea.wav
 %%DATADIR%%/convdata/select.wav
 %%DATADIR%%/convdata/select_frame.bmp
@@ -37,6 +36,9 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/gfx/terrain/pg/airfield.bmp
 %%DATADIR%%/gfx/terrain/pg/airfield_rain.bmp
 %%DATADIR%%/gfx/terrain/pg/airfield_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/bridge.bmp
+%%DATADIR%%/gfx/terrain/pg/bridge_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/bridge_snow.bmp
 %%DATADIR%%/gfx/terrain/pg/clear.bmp
 %%DATADIR%%/gfx/terrain/pg/clear_rain.bmp
 %%DATADIR%%/gfx/terrain/pg/clear_snow.bmp
@@ -216,6 +218,6 @@ share/applications/lgeneral.desktop
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
 share/pixmaps/lgeneral48.png
-@dir %%DATADIR%%/terrain
-@dir %%DATADIR%%/music
 @dir %%DATADIR%%/ai_modules
+@dir %%DATADIR%%/music
+@dir %%DATADIR%%/terrain
