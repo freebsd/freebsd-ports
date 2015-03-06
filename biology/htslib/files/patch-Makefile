@@ -1,35 +1,28 @@
---- Makefile.orig	2014-09-23 14:39:41 UTC
+--- Makefile.orig	2015-02-03 16:22:23 UTC
 +++ Makefile
-@@ -22,33 +22,27 @@
+@@ -22,16 +22,9 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE.
  
 -CC     = gcc
 -AR     = ar
 -RANLIB = ranlib
-+CC    ?= cc
-+AR     = /usr/bin/ar
-+RANLIB = /usr/bin/ranlib
- 
- # TODO: edit cram code to remove need for -DSAMTOOLS
--CPPFLAGS = -I. -DSAMTOOLS=1
-+CPPFLAGS += -I. -DSAMTOOLS=1 -Wno-unused-function -Wno-implicit-function-declaration
+-
+-CPPFLAGS = -I.
++CPPFLAGS += -I.
  # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
 -CFLAGS   = -g -Wall -O2
-+CFLAGS   += -Wall
  EXTRA_CFLAGS_PIC = -fpic
 -LDFLAGS  =
 -LDLIBS   =
-+LDFLAGS  +=
-+LDLIBS   +=
  
--prefix      = /usr/local
-+prefix      = ${STAGEDIR}${PREFIX}
- exec_prefix = $(prefix)
- bindir      = $(exec_prefix)/bin
+ # For now these don't work too well as samtools also needs to know to
+ # add -lbz2 and -llzma if linking against the static libhts.a library.
+@@ -57,16 +50,10 @@ bindir      = $(exec_prefix)/bin
  includedir  = $(prefix)/include
  libdir      = $(exec_prefix)/lib
--mandir      = $(prefix)/share/man
+ datarootdir = $(prefix)/share
+-mandir      = $(datarootdir)/man
 +mandir      = $(prefix)/man
  man1dir     = $(mandir)/man1
  man5dir     = $(mandir)/man5
@@ -44,7 +37,7 @@
  
  BUILT_PROGRAMS = \
  	bgzip \
-@@ -62,7 +56,7 @@ BUILT_TEST_PROGRAMS = \
+@@ -82,7 +69,7 @@ BUILT_TEST_PROGRAMS = \
  	test/test-vcf-api \
  	test/test-vcf-sweep
  
@@ -53,7 +46,7 @@
  
  HTSPREFIX =
  include htslib_vars.mk
-@@ -284,7 +278,7 @@ installdirs:
+@@ -332,7 +319,7 @@ installdirs:
  # and libhts.so.NN (used by client executables at runtime).
  
  install-so: libhts.so installdirs
