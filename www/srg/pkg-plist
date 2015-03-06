@@ -9,7 +9,4 @@ bin/srg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.daily
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.monthly
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/srg.weekly
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
 man/man1/srg.1.gz
-@dirrm %%ETCDIR%%
