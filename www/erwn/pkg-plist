@@ -11,6 +11,4 @@ share/erwin/h3.svg
 share/erwin/h33.svg
 share/erwin/small.svg
 share/pixmaps/erwin.xpm
-@dirrm share/erwin
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
