@@ -21,12 +21,11 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
 CXXFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 USE_LDCONFIG=	yes
+CONFLICTS_BUILD=libzrtpcppcore
 
 post-patch:
-	@cd ${WRKSRC}/src && \
-		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \; && \
-			${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<stdint.h>|<inttypes.h>|g" "{}" \;
-	@${REINPLACE_CMD} -e "s|int32_t dataLength);|int32_t dataLength)|g" \
-		${WRKSRC}/src/libzrtpcpp/crypto/gcrypt/gcryptAesCFB.cpp
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -i "" \
+		-e "s|<malloc.h>|<stdlib.h>|"	\
+		-e "s|<stdint.h>|<inttypes.h>|"
 
 .include <bsd.port.mk>
