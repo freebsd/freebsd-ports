@@ -7436,3 +7436,4 @@ www/mediawiki122||2015-03-01|Has expired: Deprecated by upstream, use www/mediaw
 www/mod_cplusplus||2015-03-01|Has expired: written for apache 2.0, no longer maintained upstream
 www/py-django15||2015-03-01|Has expired: not supported by upstream
 math/isabelle||2015-03-01|Has expired: Broken for more than 6 months
+net/rubygem-openid|net/rubygem-ruby-openid|2015-03-07|Rename to match our rubygems naming
