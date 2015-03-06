@@ -18,6 +18,6 @@ Currently it consists of these tools:
 - vipe: insert a text editor into a pipe
 - zrun: automatically uncompress arguments to command
 
-Note that the parallel utility is installed as moreutils-parallel.
+Note that parallel and ts utilities are installed with "moreutils-" prefix.
 
 WWW: http://joeyh.name/code/moreutils/
