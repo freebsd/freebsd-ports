@@ -19,5 +19,4 @@ Furthermore the package includes a wrapper for updatedd
 called `updatedd-wrapper'.  It provides support for
 configuration files and IP adddress caching.
 
-Author:	Philipp Benner <philipp_benner (at) gmx (dot) de>
-WWW:	http://updatedd.philipp-benner.de
+WWW: http://updatedd.philipp-benner.de

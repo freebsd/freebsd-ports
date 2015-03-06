@@ -6,5 +6,4 @@ Features:
 - Allows tuning of block size and display interval
 - Support for dd style block size specification
 
-Author:	Clint Byrum <cbyrum@spamaps.org>
 WWW: http://spamaps.org/pipemeter.php

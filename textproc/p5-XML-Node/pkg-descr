@@ -12,5 +12,4 @@ Paraphrasing the README:
   callback function.  The corresponding string found in an XML file will be
   automatically appended to your variable.
 
-Author: Chang Liu <liu@ics.uci.edu>
 WWW: http://search.cpan.org/dist/XML-Node/

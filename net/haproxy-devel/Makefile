@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 IGNORE=		No devel version available at this time
 
-USES=		gmake
+USES=		cpe gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
 SUB_FILES=	pkg-message

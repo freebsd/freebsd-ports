@@ -12,7 +12,7 @@ COMMENT=	C library for accessing databases with a single API
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool
+USES=		gmake libtool readline
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${WRKSRC}/lib -L${LOCALBASE}/lib

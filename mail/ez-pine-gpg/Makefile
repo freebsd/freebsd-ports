@@ -3,24 +3,26 @@
 
 PORTNAME=	ez-pine-gpg
 DISTVERSION=	0.4h
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://business-php.com/opensource/ez-pine-gpg/
 DISTNAME=	${PORTNAME}_v${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of scripts to use gpg with Pine
 
+LICENSE=	GPLv2 # or later
+
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+USES=		tar:tgz
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	(cd ${WRKSRC} && ./install ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${SETENV} DESTDIR="${STAGEDIR}" ./install ${PREFIX}/bin)
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

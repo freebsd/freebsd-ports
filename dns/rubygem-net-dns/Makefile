@@ -3,13 +3,12 @@
 
 PORTNAME=	net-dns
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby DNS library
-
-RUN_DEPENDS=	rubygem-rcov>=0:${PORTSDIR}/devel/rubygem-rcov
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

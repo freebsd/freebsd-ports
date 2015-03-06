@@ -3,7 +3,6 @@
 
 PORTNAME=	designerplugin
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -21,6 +20,8 @@ USE_QT4=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5
+
+PLIST_FILES=	%%QT_PLUGINDIR%%/designer/libqscintillaplugin.so
 
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 

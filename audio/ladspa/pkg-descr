@@ -7,5 +7,4 @@ For instance, this allows a developer to make a reverb program and
 bundle it into a LADSPA `plugin library.' Ordinary users can then use
 this reverb within any LADSPA-friendly audio application.
 
-Author: Richard Furse <richard@muse.demon.co.uk.>
 WWW: http://www.ladspa.org/

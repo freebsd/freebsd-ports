@@ -30,7 +30,7 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="XDG-Menu" "" ${PORTNAME} \
-		"${PORTNAME}" "Application;System;" ""
+		"${PORTNAME}" "System;" ""
 
 OPTIONS_DEFINE=	DOCS ROX
 ROX_DESC=	Enable ROX panel applet support

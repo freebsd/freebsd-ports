@@ -568,3 +568,9 @@ libdata/pkgconfig/nini-%%NINI_VERSION%%.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/BasicApp/MainForm.resx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/BasicApp/MainForm.vb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/VbExamples.sln
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/VbExamples/BasicApp/obj/Debug/temp
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/VbExamples/BasicApp/obj/Debug/TempPE
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/VbExamples/BasicApp/bin
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/NiniEdit/Bin/DotNet/Debug
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/CsExamples/BasicApp/obj/Debug/temp
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/CsExamples/BasicApp/obj/Debug/TempPE

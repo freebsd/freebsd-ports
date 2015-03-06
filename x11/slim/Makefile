@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		cmake pkgconfig
@@ -32,10 +31,11 @@ CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes \
 	-DBUILD_SLIMLOCK=no \
 	-DBUILD_SHARED_LIBS=yes
 
-OPTIONS_DEFINE=		PAM UTF8
-OPTIONS_DEFAULT=	PAM
+OPTIONS_DEFINE=		PAM UTF8 CONSOLEKIT
+OPTIONS_DEFAULT=	PAM CONSOLEKIT
 
 UTF8_DESC=	Support UTF-8 characters
+CONSOLEKIT_DESC=Enable support for consolekit
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
@@ -52,6 +52,13 @@ PLIST_SUB+=	PAM="@comment "
 .if ${PORT_OPTIONS:MUTF8}
 # patch taken from slim-unicode in Arch User Repository
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-utf8
+.endif
+
+.if ${PORT_OPTIONS:MCONSOLEKIT}
+CMAKE_ARGS+=	-DUSE_CONSOLEKIT=yes
+LIB_DEPENDS+=	libck-connector.so:${PORTSDIR}/sysutils/consolekit
+.else
+CMAKE_ARGS+=	-DUSE_CONSOLEKIT=no
 .endif
 
 post-patch:

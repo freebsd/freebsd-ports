@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.polhode.com/
 DISTNAME=	pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Purdue Compiler Construction Tool Set
+COMMENT=	Purdue Compiler Construction Tool Set
 
 CONFLICTS=	antlr*
 

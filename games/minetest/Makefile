@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	minetest
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Infiniminer/Minecraft inspired game
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
-GH_COMMIT=	be358c0
+GH_COMMIT=	7993a40
 
 USES=		cmake
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \

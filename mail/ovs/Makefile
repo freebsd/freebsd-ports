@@ -3,7 +3,7 @@
 
 PORTNAME=	ovs
 PORTVERSION=	1.05
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,11 +11,15 @@ MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for mail statistics
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	ovs.pl
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/ovs

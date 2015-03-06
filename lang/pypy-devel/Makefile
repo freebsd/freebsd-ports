@@ -39,6 +39,7 @@ OPTIONS_DEFAULT+=	PYPY_MINMEM
 
 CONFLICTS_INSTALL=	pypy-[0-9]*
 
+BROKEN=		Fails to build on our amd64 builders
 ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
 USES=		compiler:c11 gettext iconv tar:bzip2

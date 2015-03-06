@@ -40,7 +40,6 @@ LDFLAGS+=	-L${LOCALBASE}/llvm33/lib
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 DESKTOP_ENTRIES="FreeMat" "" "${PREFIX}/share/pixmaps/freemat.png"	\
 		"FreeMat" "Science;Math;NumericalAnalysis;" true
-PLIST_FILES=	bin/FreeMat bin/blas.ini share/pixmaps/freemat.png
 PORTDATA=	*
 
 post-install:

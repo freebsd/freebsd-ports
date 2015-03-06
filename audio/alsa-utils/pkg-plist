@@ -30,6 +30,7 @@ man/man1/iecset.1.gz
 man/man1/speaker-test.1.gz
 %%MANPAGES%%man/man7/alsactl_init.7.gz
 man/man8/alsaconf.8.gz
+sbin/alsa-info.sh
 sbin/alsaconf
 sbin/alsactl
 share/alsa/init/00main

@@ -14,6 +14,8 @@ LICENSE=	ARTPERL10
 RUN_DEPENDS=	p5-Term-Size>0:${PORTSDIR}/devel/p5-Term-Size \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
+PORTSCOUT=	skipv:3.0.7 # only debian/control changed
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		perl5 shebangfix

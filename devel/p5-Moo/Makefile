@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moo
-PORTVERSION=	1.007000
+PORTVERSION=	2.000000
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -17,10 +17,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.10:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 		p5-Devel-GlobalDestruction>=0.11:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
-		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Role-Tiny>=1.003.002:${PORTSDIR}/devel/p5-Role-Tiny \
-		p5-strictures>=1.004003:${PORTSDIR}/devel/p5-strictures \
-		p5-Import-Into>=1.002000:${PORTSDIR}/devel/p5-Import-Into
+		p5-Module-Runtime>=0.014:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Role-Tiny>=2:${PORTSDIR}/devel/p5-Role-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
@@ -31,7 +29,7 @@ OPTIONS_DEFINE=	XS
 XS_DESC=	Use XS libraries for speed boost
 
 XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:${PORTSDIR}/devel/p5-Class-XSAccessor \
-			p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
+			p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 XS_RUN_DEPENDS:=	${XS_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

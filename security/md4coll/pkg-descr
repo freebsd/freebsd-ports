@@ -6,5 +6,4 @@ Hash Functions MD4 and RIPEMD, by Xiaoyun Wang, et al.
 MD4 Collision Generator by Patrick Stach <pstach@stachliu.com>
 Implementation of paper by Xiaoyun Wang, et. al.
 
-Author: Patrick Stach <pstach@stachliu.com>
 WWW: http://www.stachliu.com/collisions.html

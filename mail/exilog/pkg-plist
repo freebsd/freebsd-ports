@@ -62,6 +62,3 @@ sbin/exilog_cleanup.pl
 %%EXILOGDIR%%/icons/stopwatch.png
 %%EXILOGDIR%%/icons/timerange.png
 %%EXILOGDIR%%/icons/unknown.png
-@dirrm %%EXILOGDIR%%/icons
-@dirrm %%EXILOGDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

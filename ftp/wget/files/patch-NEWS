@@ -1,12 +1,0 @@
---- NEWS.orig	2009-09-22 05:53:35.000000000 +0300
-+++ NEWS	2010-09-06 20:09:17.000000000 +0300
-@@ -6,6 +6,9 @@
- 
- Please send GNU Wget bug reports to <bug-wget@gnu.org>.
- 
-+** By default, on server redirects, use the original URL to get the
-+   local file name. Close CVE-2010-2252.
-+
- * Changes in Wget 1.12
- 
- ** Mailing list MOVED to bug-wget@gnu.org

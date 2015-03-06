@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 CONFLICTS=	haproxy-devel-[0-9]*
 
-USES=		gmake
+USES=		cpe gmake
 USE_RC_SUBR=	haproxy
 SUB_FILES=	pkg-message
 

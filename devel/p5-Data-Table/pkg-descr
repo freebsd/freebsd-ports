@@ -12,5 +12,4 @@ record matching via keywords or patterns, table merging, and web
 publishing. Data::Table class also provides a straightforward interface to 
 other popular Perl modules such as DBI and GD::Graph.
 
-Author: Yingyao Zhou & Guangzhou Zou <easydatabase@yahoo.com>
 WWW: http://search.cpan.org/dist/Data-Table/

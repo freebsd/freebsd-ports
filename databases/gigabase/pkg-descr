@@ -19,5 +19,4 @@ after system or application crash, you should not worry about it. The
 only thing you can have to do manually is stopping all database
 application if one of them is crashed leaving database blocked.
 
-Author: Konstantin Knizhnik <knizhnik@garret.ru>
 WWW: http://www.garret.ru/gigabase.html

@@ -3,5 +3,4 @@ features of ATA hard drives.  This includes standby timeouts, power
 (APM), write cache and acoustic (AAM) level settings, and it can show
 details about the installed devices.
 
-Author:	Bruce Cran <bruce@cran.org.uk>
 WWW: http://bluestop.org/ataidle/

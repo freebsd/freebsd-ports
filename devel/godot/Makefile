@@ -3,6 +3,7 @@
 
 PORTNAME=	godot
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -23,8 +24,6 @@ USES=		scons pkgconfig compiler
 USE_XORG=	x11 xcursor
 USE_GL=		glu
 USE_OPENSSL=	yes
-# uses pkg-config to find ssl - pkg-config only finds port version
-WITH_OPENSSL_PORT=	yes
 
 MAKE_ARGS+=	platform=x11
 
@@ -51,7 +50,7 @@ BROKEN=	clang fails to link on 8.x
 LLSUF=	.llvm
 MAKE_ARGS+=	use_llvm=yes
 .else  # clang
-USE_GCC=	4.8+
+USE_GCC=	yes
 .if ${ARCH} == i386
 CXXFLAGS+=	-march=i586
 .endif

@@ -2,5 +2,4 @@ Vobject parses iCalendar and vCard files into Python data structures,
 decoding the relevant encodings. Also serializes vobject data structures
 to iCalendar, vCard, or (expirementally) hCalendar unicode strings.
 
-Author: Jeffrey Harris <jeffrey@osafoundation.org>
 WWW: http://vobject.skyhouseconsulting.com/

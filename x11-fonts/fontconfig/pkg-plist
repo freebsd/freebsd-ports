@@ -67,5 +67,4 @@ man/man1/fc-match.1.gz
 man/man1/fc-query.1.gz
 man/man1/fc-scan.1.gz
 man/man5/fonts-conf.5.gz
-@unexec rmdir /var/db/fontconfig/* 2>/dev/null || true
 @dir /var/db/fontconfig

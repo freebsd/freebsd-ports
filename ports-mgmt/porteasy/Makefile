@@ -10,7 +10,7 @@ MAINTAINER=	des@FreeBSD.org
 COMMENT=	Tool for fetching and building ports
 
 DEPRECATED=	Does not support pkgng
-EXPIRATION_DATE=	2015-02-28
+EXPIRATION_DATE=	2015-03-31
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

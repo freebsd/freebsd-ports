@@ -3,6 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.18.3
 DISTVERSIONSUFFIX=-source
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
@@ -25,9 +26,12 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYGAME}
 
+PORTSCOUT=	skipv:6.99.0 # prerelease, missing style_common.pxi
+
 USES=		python:2.7 shebangfix tar:bz2
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl
+EXTRACT_AFTER_ARGS=--exclude gen
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}

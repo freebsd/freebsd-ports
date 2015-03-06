@@ -832,6 +832,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-kbd_input.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_active.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_inactive.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-message_corrected.png
 %%DATADIR%%/icons/hicolor/16x16/status/applications-internet.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-low.png

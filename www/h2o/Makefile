@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h2o
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	www
 
 MAINTAINER=	dch@skunkwerks.at
@@ -15,11 +14,11 @@ LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	h2o
-GH_TAGNAME=	v0.9.2
-GH_COMMIT=	5e20cff
+GH_TAGNAME=	v1.0.1
+GH_COMMIT=	c28f39e
 
 MAKE_JOBS_UNSAFE=	yes
-USES=	cmake:outsource
+USES=	cmake:outsource compiler:c11
 
 USE_OPENSSL=	yes
 
@@ -55,4 +54,10 @@ do-install:
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/h2o ${STAGEDIR}${PREFIX}/bin/h2o
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=	fails to compile on 8.x
+.endif
+
+.include <bsd.port.post.mk>

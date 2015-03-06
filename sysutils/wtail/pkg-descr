@@ -1,5 +1,4 @@
-wtail does the equivalent of tail -f on several files at once. The screen 
+wtail does the equivalent of tail -f on several files at once. The screen
 is split into as many parts as there are files to watch.
 
-Author:	Andre Majorel <amajorel@teaser.fr>
-WWW:	http://www.teaser.fr/~amajorel/wtail/
+WWW: http://www.teaser.fr/~amajorel/wtail/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	currtime
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.neelc.org/files/currtime/${PORTVERSION}/
 

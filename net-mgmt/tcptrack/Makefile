@@ -11,6 +11,8 @@ MAINTAINER=	squat@squat.no
 COMMENT=	Packet sniffer which displays TCP information like top(1)
 
 BROKEN=		binary segfaults
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-03-28
 
 GNU_CONFIGURE=	yes
 USE_GCC=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/rele
 DISTFILES=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm:1 Opus-22.rom:2
 EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm
 
-MAINTAINER=	wulf@cicgroup.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
 PORTSCOUT=	ignore:1

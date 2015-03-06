@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duo
-PORTVERSION=	1.9.13
-PORTREVISION=	1
+PORTVERSION=	1.9.14
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
@@ -27,8 +26,9 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/login_duo/login_duo.8
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pam_duo/pam_duo.8
+	@${REINPLACE_CMD} -e 's| /etc| ${PREFIX}/etc|g' \
+	    ${WRKSRC}/pam_duo/pam_duo.8 \
+	    ${WRKSRC}/login_duo/login_duo.8
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libduo.so.3

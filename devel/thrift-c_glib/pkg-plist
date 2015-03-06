@@ -1,3 +1,4 @@
+@comment bin/thrift
 include/thrift/c_glib/config.h
 include/thrift/c_glib/processor/thrift_processor.h
 include/thrift/c_glib/protocol/thrift_binary_protocol.h

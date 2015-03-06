@@ -3,7 +3,7 @@
 
 PORTNAME=	pygopherd
 PORTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/ \
 		http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/old/

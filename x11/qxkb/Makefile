@@ -14,7 +14,7 @@ LICENSE=	GPLv2 # (or later)
 LIB_DEPENDS=	libxkbfile.so:${PORTSDIR}/x11/libxkbfile
 
 USES=		cmake tar:bzip2
-USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
+USE_QT4=	linguisttools_build moc_build qmake_build rcc_build uic_build \
 		corelib gui svg
 
 LDFLAGS+=	-L${LOCALBASE}/lib

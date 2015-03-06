@@ -1,5 +1,4 @@
 Written in Scheme only, this adds input line editing feature to
 Gauche. Assumes VT100 compatible terminal capability.
 
-Author:	Julian Fondren
-WWW:	http://practical-scheme.net/gauche/packages.html
+WWW: http://practical-scheme.net/gauche/packages.html

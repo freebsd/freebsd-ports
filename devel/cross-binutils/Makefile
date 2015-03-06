@@ -142,7 +142,5 @@ post-install:
 #
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${OURTARGET} ! -type d | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${OURTARGET} -type d | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

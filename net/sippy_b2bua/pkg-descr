@@ -11,13 +11,13 @@ doesn't perform any media relaying or processing, therefore it doesn't
 introduce any additional packet loss, delay or jitter into the media path.
 
 Features:
- o Realtime calls control and call data records (CDRs) generation; 
- o Optional ability to use Sippy RTPproxy for media relaying; 
+ o Realtime calls control and call data records (CDRs) generation;
+ o Optional ability to use Sippy RTPproxy for media relaying;
  o Optional ability to perform Cisco-compatible RADIUS AAA (Authentication,
-   Authorization and Accounting); 
- o RFC3261 compliance; 
- o RFC3326 support; 
- o IPv6 support; 
+   Authorization and Accounting);
+ o RFC3261 compliance;
+ o RFC3326 support;
+ o IPv6 support;
  o Seamless compatibility with majority of popular SIP software and hardware
    on the market today;
  o Robustness and Resilience.

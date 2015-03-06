@@ -724,5 +724,7 @@
 %%WWWDIR%%/templates/title.tpl
 %%WWWDIR%%/templates/tree.tpl
 %%WWWDIR%%/templates/treelist.tpl
+@dir %%WWWDIR%%/templates_c
+@dir %%WWWDIR%%/cache
 @owner
 @group

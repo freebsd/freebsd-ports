@@ -100,6 +100,7 @@ CEC_DESC=	Control plexhometheater over HDMI with TV remote
 
 OPTIONS_DEFAULT=	CEC LIRC
 
+CEC_BUILD_DEPENDS=	libcec>=2.2.0:${PORTSDIR}/multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
 CEC_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_CEC:BOOL=true
 

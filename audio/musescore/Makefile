@@ -19,7 +19,7 @@ RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 
 USES=		tar:bzip2 cmake:outsource
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
-		linguist_build moc_build qmake_build rcc_build uic_build
+		linguisttools_build moc_build qmake_build rcc_build uic_build
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
 CMAKE_ARGS=	-DBUILD_ALSA:BOOL=OFF
 ALL_TARGET=	lrelease all

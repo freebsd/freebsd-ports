@@ -15,5 +15,4 @@ Newer Firefox versions have the ability to send DNS resolves through the
 socks proxy, and Torbutton will make use of this feature if it is
 available.
 
-Author: Scott Squires
 WWW: http://torbutton.torproject.org/dev/

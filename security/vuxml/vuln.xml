@@ -57,6 +57,363 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8505e013-c2b3-11e4-875d-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+      <package>
+	<name>chromium-npapi</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>41.0.2272.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>51 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[456516] High CVE-2015-1212: Out-of-bounds write in media.
+	      Credit to anonymous.</li>
+	    <li>[448423] High CVE-2015-1213: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[445810] High CVE-2015-1214: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[445809] High CVE-2015-1215: Out-of-bounds write in skia
+	      filters.  Credit to cloudfuzzer.</li>
+	    <li>[454954] High CVE-2015-1216: Use-after-free in v8 bindings.
+	      Credit to anonymous.</li>
+	    <li>[456192] High CVE-2015-1217: Type confusion in v8 bindings.
+	      Credit to anonymous.</li>
+	    <li>[456059] High CVE-2015-1218: Use-after-free in dom.
+	      Credit to cloudfuzzer.</li>
+	    <li>[446164] High CVE-2015-1219: Integer overflow in webgl.
+	      Credit to Chen Zhang (demi6od) of NSFOCUS Security Team.</li>
+	    <li>[437651] High CVE-2015-1220: Use-after-free in gif decoder.
+	      Credit to Aki Helin of OUSPG.</li>
+	    <li>[455368] High CVE-2015-1221: Use-after-free in web databases.
+	      Credit to Collin Payne.</li>
+	    <li>[448082] High CVE-2015-1222: Use-after-free in service workers.
+	      Credit to Collin Payne.</li>
+	    <li>[454231] High CVE-2015-1223: Use-after-free in dom.
+	      Credit to Maksymillian Motyl.</li>
+	    <li>High CVE-2015-1230: Type confusion in v8.
+	      Credit to Skylined working with HP's Zero Day Initiative.</li>
+	    <li>[449958] Medium CVE-2015-1224: Out-of-bounds read in vpxdecoder.
+	      Credit to Aki Helin of OUSPG.</li>
+	    <li>[446033] Medium CVE-2015-1225: Out-of-bounds read in pdfium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[456841] Medium CVE-2015-1226: Validation issue in debugger.
+	      Credit to Rob Wu.</li>
+	    <li>[450389] Medium CVE-2015-1227: Uninitialized value in blink.
+	      Credit to Christoph Diehl.</li>
+	    <li>[444707] Medium CVE-2015-1228: Uninitialized value in rendering.
+	      Credit to miaubiz.</li>
+	    <li>[431504] Medium CVE-2015-1229: Cookie injection via proxies.
+	      Credit to iliwoy.</li>
+	    <li>[463349] CVE-2015-1231: Various fixes from internal audits,
+	      fuzzing, and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1212</cvename>
+      <cvename>CVE-2015-1213</cvename>
+      <cvename>CVE-2015-1214</cvename>
+      <cvename>CVE-2015-1215</cvename>
+      <cvename>CVE-2015-1216</cvename>
+      <cvename>CVE-2015-1217</cvename>
+      <cvename>CVE-2015-1218</cvename>
+      <cvename>CVE-2015-1219</cvename>
+      <cvename>CVE-2015-1220</cvename>
+      <cvename>CVE-2015-1221</cvename>
+      <cvename>CVE-2015-1222</cvename>
+      <cvename>CVE-2015-1223</cvename>
+      <cvename>CVE-2015-1224</cvename>
+      <cvename>CVE-2015-1225</cvename>
+      <cvename>CVE-2015-1226</cvename>
+      <cvename>CVE-2015-1227</cvename>
+      <cvename>CVE-2015-1228</cvename>
+      <cvename>CVE-2015-1229</cvename>
+      <cvename>CVE-2015-1230</cvename>
+      <cvename>CVE-2015-1231</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-03-03</discovery>
+      <entry>2015-03-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9c3374d-c2c1-11e4-b236-5453ed2e2b49">
+    <topic>qt4-gui, qt5-gui -- DoS vulnerability in the BMP image handler</topic>
+    <affects>
+      <package>
+	<name>qt4-gui</name>
+	<range><lt>4.8.6_4</lt></range>
+      </package>
+      <package>
+	<name>qt5-gui</name>
+	<range><lt>5.3.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2015-February/000059.html">
+	  <p>The builtin BMP decoder in QtGui prior to Qt 5.5 contained a bug
+	    that would lead to a divsion by zero when loading certain corrupt
+	    BMP files. This in turn would cause the application loading these
+	    hand crafted BMPs to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0295</cvename>
+      <mlist>http://lists.qt-project.org/pipermail/announce/2015-February/000059.html</mlist>
+    </references>
+    <dates>
+      <discovery>2015-02-22</discovery>
+      <entry>2015-03-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7480b6ac-adf1-443e-a33c-3a3c0becba1e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.600</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.580.3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kohsuke Kawaguchi from Jenkins team reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27">
+	  <h1>Description</h1>
+	  <h5>SECURITY-125 (Combination filter Groovy script unsecured)</h5>
+	  <p>This vulnerability allows users with the job configuration
+	    privilege to escalate his privileges, resulting in arbitrary code
+	    execution to the master.</p>
+	  <h5>SECURITY-162 (directory traversal from artifacts via symlink)</h5>
+	  <p>This vulnerability allows users with the job configuration
+	    privilege or users with commit access to the build script to
+	    access arbitrary files/directories on the master, resulting in
+	    the exposure of sensitive information, such as encryption keys.</p>
+	  <h5>SECURITY-163 (update center metadata retrieval DoS attack)</h5>
+	  <p>This vulnerability allows authenticated users to disrupt the
+	    operation of Jenkins by feeding malicious update center data into
+	    Jenkins, affecting plugin installation and tool installation.</p>
+	  <h5>SECURITY-165 (external entity injection via XPath)</h5>
+	  <p>This vulnerability allows users with the read access to Jenkins
+	    to retrieve arbitrary XML document on the server, resulting in
+	    the exposure of sensitive information inside/outside Jenkins.</p>
+	  <h5>SECURITY-166 (HudsonPrivateSecurityRealm allows creation of
+	    reserved names)</h5>
+	  <p>For users using "Jenkins' own user database" setting, Jenkins
+	    doesn't refuse reserved names, thus allowing privilege escalation.</p>
+	  <h5>SECURITY-167 (External entity processing in XML can reveal
+	    sensitive local files)</h5>
+	  <p>This vulnerability allows attackers to create malicious XML
+	    documents and feed that into Jenkins, which causes Jenkins to
+	    retrieve arbitrary XML document on the server, resulting in the
+	    exposure of sensitive information inside/outside Jenkins.</p>
+	  <h1>Severity</h1>
+	  <p>SECURITY-125 is rated <strong>critical</strong>. This attack can be
+	    only mounted by users with some trust, but it results in arbitrary
+	    code execution on the master.</p>
+	  <p>SECURITY-162 is rated <strong>critical</strong>. This attack can be
+	    only mounted by users with some trust, but it results in the
+	    exposure of sensitive information.</p>
+	  <p>SECURITY-163 is rated <strong>medium</strong>, as it results in the
+	    loss of functionality.</p>
+	  <p>SECURITY-165 is rated <strong>critical</strong>. This attack is
+	    easy to mount, and it results in the exposure of sensitive
+	    information.</p>
+	  <p>SECURITY-166 is rated <strong>critical</strong>. For users who use
+	    the affected feature, this attack results in arbitrary code
+	    execution on the master.</p>
+	  <p>SECURITY-167 is rated <strong>critical</strong>. This attack is
+	    easy to mount, and it results in the exposure of sensitive information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27</url>
+    </references>
+    <dates>
+      <discovery>2015-03-01</discovery>
+      <entry>2015-03-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99029172-8253-407d-9d8b-2cfeab9abf81">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>36.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>36.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.33</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.33</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-11 Miscellaneous memory safety hazards (rv:36.0
+	    / rv:31.5)</p>
+	  <p>MFSA-2015-12 Invoking Mozilla updater will load locally
+	    stored DLL files</p>
+	  <p>MFSA-2015-13 Appended period to hostnames can bypass HPKP
+	    and HSTS protections</p>
+	  <p>MFSA-2015-14 Malicious WebGL content crash when writing
+	    strings</p>
+	  <p>MFSA-2015-15 TLS TURN and STUN connections silently fail
+	    to simple TCP connections</p>
+	  <p>MFSA-2015-16 Use-after-free in IndexedDB</p>
+	  <p>MFSA-2015-17 Buffer overflow in libstagefright during MP4
+	    video playback</p>
+	  <p>MFSA-2015-18 Double-free when using non-default memory
+	    allocators with a zero-length XHR</p>
+	  <p>MFSA-2015-19 Out-of-bounds read and write while rendering
+	    SVG content</p>
+	  <p>MFSA-2015-20 Buffer overflow during CSS restyling</p>
+	  <p>MFSA-2015-21 Buffer underflow during MP3 playback</p>
+	  <p>MFSA-2015-22 Crash using DrawTarget in Cairo graphics
+	    library</p>
+	  <p>MFSA-2015-23 Use-after-free in Developer Console date
+	    with OpenType Sanitiser</p>
+	  <p>MFSA-2015-24 Reading of local files through manipulation
+	    of form autocomplete</p>
+	  <p>MFSA-2015-25 Local files or privileged URLs in pages can
+	    be opened into new tabs</p>
+	  <p>MFSA-2015-26 UI Tour whitelisted sites in background tab
+	    can spoof foreground tabs</p>
+	  <p>MFSA-2015-27 Caja Compiler JavaScript sandbox bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0819</cvename>
+      <cvename>CVE-2015-0820</cvename>
+      <cvename>CVE-2015-0821</cvename>
+      <cvename>CVE-2015-0822</cvename>
+      <cvename>CVE-2015-0823</cvename>
+      <cvename>CVE-2015-0824</cvename>
+      <cvename>CVE-2015-0825</cvename>
+      <cvename>CVE-2015-0826</cvename>
+      <cvename>CVE-2015-0827</cvename>
+      <cvename>CVE-2015-0828</cvename>
+      <cvename>CVE-2015-0829</cvename>
+      <cvename>CVE-2015-0830</cvename>
+      <cvename>CVE-2015-0831</cvename>
+      <cvename>CVE-2015-0832</cvename>
+      <cvename>CVE-2015-0833</cvename>
+      <cvename>CVE-2015-0834</cvename>
+      <cvename>CVE-2015-0835</cvename>
+      <cvename>CVE-2015-0836</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-11/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-12/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-13/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-14/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-15/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-16/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-17/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-18/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-19/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-20/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-21/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-22/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-23/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-24/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-25/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-26/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-27/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-02-24</discovery>
+      <entry>2015-02-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f7a9e415-bdca-11e4-970c-000c292ee6b8">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.38</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.22</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP Project reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>Use after free vulnerability in unserialize() with DateTimeZone.</p>
+	  <p>Mitigation for CVE-2015-0235 -- GHOST: glibc gethostbyname buffer
+	   overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0235</cvename>
+      <cvename>CVE-2015-0273</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.4.38</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.22</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.6</url>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dbf9e66c-bd50-11e4-a7ba-206a8a720317">
     <topic>krb5 1.11 -- New release/fix multiple vulnerabilities</topic>
     <affects>
@@ -1399,19 +1756,19 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Project reports:</p>
 	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
-	  <p>MSFA-2015-01 Miscellaneous memory safety hazards (rv:35.0
+	  <p>MFSA-2015-01 Miscellaneous memory safety hazards (rv:35.0
 	    / rv:31.4)</p>
-	  <p>MSFA-2015-02 Uninitialized memory use during bitmap
+	  <p>MFSA-2015-02 Uninitialized memory use during bitmap
 	    rendering</p>
-	  <p>MSFA-2015-03 sendBeacon requests lack an Origin header</p>
-	  <p>MSFA-2015-04 Cookie injection through Proxy Authenticate
+	  <p>MFSA-2015-03 sendBeacon requests lack an Origin header</p>
+	  <p>MFSA-2015-04 Cookie injection through Proxy Authenticate
 	    responses</p>
-	  <p>MSFA-2015-05 Read of uninitialized memory in Web Audio</p>
-	  <p>MSFA-2015-06 Read-after-free in WebRTC</p>
-	  <p>MSFA-2015-07 Gecko Media Plugin sandbox escape</p>
-	  <p>MSFA-2015-08 Delegated OCSP responder certificates failure
+	  <p>MFSA-2015-05 Read of uninitialized memory in Web Audio</p>
+	  <p>MFSA-2015-06 Read-after-free in WebRTC</p>
+	  <p>MFSA-2015-07 Gecko Media Plugin sandbox escape</p>
+	  <p>MFSA-2015-08 Delegated OCSP responder certificates failure
 	    with id-pkix-ocsp-nocheck extension</p>
-	  <p>MSFA-2015-09 XrayWrapper bypass through DOM objects</p>
+	  <p>MFSA-2015-09 XrayWrapper bypass through DOM objects</p>
 	</blockquote>
       </body>
     </description>
@@ -2340,17 +2697,17 @@ Notes:
 	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
 	  <p>ASN.1 DER decoding of lengths is too permissive, allowing
 	    undetected smuggling of arbitrary data</p>
-	  <p>MSFA-2014-90 Apple CoreGraphics framework on OS X 10.10
+	  <p>MFSA-2014-90 Apple CoreGraphics framework on OS X 10.10
 	    logging input data to /tmp directory</p>
-	  <p>MSFA-2014-89 Bad casting from the BasicThebesLayer to
+	  <p>MFSA-2014-89 Bad casting from the BasicThebesLayer to
 	    BasicContainerLayer</p>
-	  <p>MSFA-2014-88 Buffer overflow while parsing media content</p>
-	  <p>MSFA-2014-87 Use-after-free during HTML5 parsing</p>
-	  <p>MSFA-2014-86 CSP leaks redirect data via violation reports</p>
-	  <p>MSFA-2014-85 XMLHttpRequest crashes with some input streams</p>
-	  <p>MSFA-2014-84 XBL bindings accessible via improper CSS
+	  <p>MFSA-2014-88 Buffer overflow while parsing media content</p>
+	  <p>MFSA-2014-87 Use-after-free during HTML5 parsing</p>
+	  <p>MFSA-2014-86 CSP leaks redirect data via violation reports</p>
+	  <p>MFSA-2014-85 XMLHttpRequest crashes with some input streams</p>
+	  <p>MFSA-2014-84 XBL bindings accessible via improper CSS
 	    declarations</p>
-	  <p>MSFA-2014-83 Miscellaneous memory safety hazards (rv:34.0
+	  <p>MFSA-2014-83 Miscellaneous memory safety hazards (rv:34.0
 	    / rv:31.3)</p>
 	</blockquote>
       </body>

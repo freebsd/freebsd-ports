@@ -17,10 +17,9 @@
 # e.g. 
 #       widentd_enable="YES"
 #
-# see the man page widentd(8) for some additional
-# options; such as flags to set the IP address
-# widentd is bound to, or how to set a differernt,
-# or fake user id being sent as a reply.
+# see the widentd(8) man page for some additional options;
+# such as flags to set the IP address widentd is bound to,
+# or how to set a differernt, or fake user id being sent as a reply.
 #
 # DO NOT CHANGE THE FOLLOWING DEFAULT VALUES HERE
 #

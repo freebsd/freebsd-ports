@@ -4,6 +4,7 @@
 PORTNAME=	snortsnarf
 PORTVERSION=	1.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Initial%20Release%20${PORTVERSION}
 DISTNAME=	SnortSnarf-${PORTVERSION}
@@ -11,9 +12,13 @@ DISTNAME=	SnortSnarf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML report summaries from snort incident alerts
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	snortsnarf.pl
 NO_BUILD=	yes
 USE_PERL5=	run
 

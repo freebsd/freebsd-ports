@@ -22,6 +22,9 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
+ *
+ * geom-aware portions of logreaderror() Copyright (c) 2015 Perry Hutchison
+ * <perryh@pluto.rain.com>, licensed on the same terms as above.
  */
 
 static const char rcsid[] =
@@ -57,6 +60,19 @@ static const char rcsid[] =
 #define	_PATH_SAVE	_PATH_VARDB"diskcheckd.offsets"
 
 #define	READ_SIZE (64 << 10)
+
+/*
+ * Customize format strings according to what printf et al. want for a quad_t.
+ *
+ * This should not be necessary -- the whole point of %qd is to match a quad_t
+ * -- but in LP64 a quad_t is the same size as a long and yet %qd is treated as
+ * equivalent to %lld (which is correct only if a long is 32 bits, as in ILP32).
+ */
+#ifdef	LP64
+#define QD "%ld"
+#else
+#define	QD "%qd"
+#endif
 
 struct disk {
 	int fd;
@@ -125,10 +141,11 @@ main(int argc, char *argv[]) {
 
 	initial_debug = debug;
 
-	openlog("diskcheckd", LOG_CONS|LOG_PID|(debug?LOG_PERROR:0), LOG_DAEMON);
+	openlog("diskcheckd", LOG_CONS|LOG_PID|(debug?LOG_PERROR:0),
+		LOG_DAEMON);
 
 	if (!debug && daemon(0, 0) < 0) {
-		syslog(LOG_NOTICE, "daemon failure: %m");
+		syslog(LOG_NOTICE, "daemon() failure: %m");
 		exit(EXIT_FAILURE);
 	}
 
@@ -309,26 +326,40 @@ void
 logreaderror(struct disk *dp, int nbytes) {
 	quad_t secno;
 	off_t saved_offset;
+	char newdev[512];
+
+#ifdef	DIOCGDINFO
 	int fd, slice, part;
 	struct dos_partition *dos;
 	struct disklabel label;
 	char buf[512];
-	char newdev[512];
+#else	/* DIOCGDINFO */
+	static size_t geomSize = 0;
+	static char * geomConf = NULL;
+	char * cp;
+	static size_t partLen = 31;
+	static char *part = NULL;
+	quad_t relsec = -1;
+	char *typefld = NULL;
+#endif	/* DIOCGDINFO */
 
 	saved_offset = dseek(dp, 0, SEEK_CUR);
 	secno = (quad_t)saved_offset / dp->secsize;
 	dp->errors++;
 
-	syslog(LOG_NOTICE, "error reading %d bytes from sector %qd on %s",
+	syslog(LOG_NOTICE, "error reading %d bytes from sector " QD " on %s",
 	    nbytes, secno, dp->device);
 
+#ifdef	DIOCGDINFO
 	/*
 	 * First, find out which slice it's in.  To do this, we seek to the
 	 * start of the disk, read the first sector, and go through the DOS
 	 * slice table.
 	 */
-	if (dseek(dp, 0, SEEK_SET) == -1)
+	if (dseek(dp, 0, SEEK_SET) == -1) {
+		syslog(LOG_NOTICE, "could not seek to start of disk: %m");
 		exit(EXIT_FAILURE);
+	}
 
 	if (read(dp->fd, buf, sizeof buf) != sizeof buf) {
 		dseek(dp, saved_offset, SEEK_SET);
@@ -336,9 +367,14 @@ logreaderror(struct disk *dp, int nbytes) {
 	}
 
 	/* seek back to where we were */
-	if (dseek(dp, saved_offset, SEEK_SET) == -1)
+	if (dseek(dp, saved_offset, SEEK_SET) == -1) {
+		syslog(LOG_NOTICE,
+		       "could not seek to previous position"
+		       "after reading first sector: %m");
 		exit(EXIT_FAILURE);
+	}
 
+	// TODO:  should validate DOS partition table (vs GPT or dedicated)
 	dos = (struct dos_partition *)&buf[DOSPARTOFF];
 	for (slice = 0; slice < NDOSPART; slice++)
 		if (dos[slice].dp_start <= secno &&
@@ -347,7 +383,7 @@ logreaderror(struct disk *dp, int nbytes) {
 
 	if (slice == NDOSPART) {
 		syslog(LOG_NOTICE,
-		  "sector %qd on %s doesn't appear "
+		  "sector " QD " on %s doesn't appear "
 		  "to be within any DOS slice", secno, dp->device);
 		return;
 	}
@@ -361,8 +397,8 @@ logreaderror(struct disk *dp, int nbytes) {
 	/* Check the type of that partition. */
 	if (dos[slice].dp_typ != DOSPTYP_386BSD) {
 		/* If not a BSD slice, we can't do much more. */
-		syslog(LOG_NOTICE, "last bad sector is sector %qd "
-		    "on device %s, type %02x", secno, newdev,
+		syslog(LOG_NOTICE, "last bad sector is sector " QD
+		    " on device %s, type %02x", secno, newdev,
 		    dos[slice].dp_typ);
 		return;
 	}
@@ -389,7 +425,7 @@ logreaderror(struct disk *dp, int nbytes) {
 
 	if (part == MAXPARTITIONS) {
 		syslog(LOG_NOTICE,
-		  "sector %qd on %s doesn't appear "
+		  "sector " QD " on %s doesn't appear "
 		  "to be within any BSD partition", secno, newdev);
 		return;
 	}
@@ -400,14 +436,100 @@ logreaderror(struct disk *dp, int nbytes) {
 	syslog(LOG_DEBUG, "bad sector seems to be within %s", newdev);
 	if (label.d_partitions[part].p_fstype != FS_BSDFFS) {
 		/* Again, if not a BSD partition, can't do much. */
-		syslog(LOG_NOTICE, "last bad sector is sector %qd "
-		    "on device %s, type %s", secno, newdev,
+		syslog(LOG_NOTICE, "last bad sector is sector " QD
+		    " on device %s, type %s", secno, newdev,
 		    fstypename(label.d_partitions[part].p_fstype));
 		return;
 	}
+#else	/* DIOCGDINFO */
+	if (geomSize == 0) {
+		sysctlbyname("kern.geom.conftxt", NULL, &geomSize, NULL, 0);
+		if (geomSize <= 0) {
+			printf("sysctlbyname() returned size = %d\n", geomSize);
+			geomSize = 0;
+			exit(EXIT_FAILURE);
+		}
+		geomConf = malloc(geomSize);
+		if (geomConf == NULL) {
+			printf("malloc(%d) returned NULL\n", geomSize);
+			geomSize = 0;
+			exit(EXIT_FAILURE);
+		}
+		if (sysctlbyname("kern.geom.conftxt", geomConf, &geomSize,
+				 NULL, 0) != 0) {
+			perror("sysctlbyname()");
+			geomSize = 0;
+			free(geomConf);
+			geomConf = NULL;
+			exit(EXIT_FAILURE);
+		}
+	}
+	if (part == NULL)
+		part = malloc(partLen + 1);
 
-	syslog(LOG_NOTICE, "last bad sector is sector %qd "
-	  "on 4.2BSD filesystem %s", secno, newdev);
+	for ( cp = geomConf ; *cp ; ++cp ) {
+		// find line "0 DISK " matching current disk, using
+		// strncmp because where cp points is not null-terminated
+		// (All DISK lines, and only DISK lines, are at level 0.)
+		// Magic numbers:  7 == strlen("0 DISK "); 5 == strlen("/dev/")
+		if (strncmp(cp, "0 DISK ", 7) == 0
+		 && strncmp(&cp[7], &dp->device[5], strlen(dp->device) - 5) == 0
+		 && cp[7 + strlen(dp->device) - 5] == ' ') {
+			for (;;) {
+				// scan to end of line
+				while (cp[1] && *cp != '\n')
+					++cp;
+				++cp;	// start of next line
+				// Find PART line containing the failed sector;
+				// must be on same disk => stop upon finding
+				// another DISK line.  If more than one matching
+				// PART -- due to nested geoms -- use the last
+				// (innermost).
+				if (*cp == '\0' || *cp == '0')
+					break;	// end of current DISK's entries
+				// scan to end of level number
+				while (cp[1] && *cp != ' ')
+					++cp;
+				if (strncmp(cp, " PART ", 6) == 0) {
+					char *pp = &cp[6];
+					int pl = strchr(pp, ' ') - pp;
+					quad_t mediasize, offset;
+					long secsize;
+
+					cp = pp + pl;	// cp -> mediasize
+					mediasize = strtoq(cp, &cp, 10);
+					secsize = strtol(cp, &cp, 10);
+					mediasize /= secsize;
+					cp = strchr(cp, 'o') + 1;
+					offset = strtoq(cp, &cp, 10) / secsize;
+					if (secno >= offset
+					 && (secno - offset) < mediasize) {
+						if (pl > partLen) {
+							part = realloc(part,
+									pl+1);
+							partLen = pl;
+						}
+						strncpy(part, pp, pl);
+						part[pl] = '\0';
+						relsec = secno - offset;
+						typefld = cp + 1;
+					}
+				}
+			}
+		}
+		// scan to end of line
+		while (cp[1] && *cp != '\n')
+			++cp;
+	}
+////	printf("part %s, relsec %qd, typefld %p: %.27s\n",
+////		part, relsec, typefld, typefld);
+	secno = relsec;
+	strncpy(newdev, part, sizeof(newdev) - 1);
+	newdev[sizeof(newdev) - 1] = '\0';		// paranoia
+#endif	/* DIOCGDINFO */
+
+	syslog(LOG_NOTICE, "last bad sector is sector " QD
+	  " on 4.2BSD filesystem %s", secno, newdev);
 
 	/*
 	 * XXX: todo: find out which file on the BSD filesystem uses this
@@ -472,12 +594,14 @@ writeoffsets(struct disk *disks, const char *save_file) {
 			"#\tposition/size\tdays\trate\terrors\tintvl\tnext\n");
 	for (dp = disks; dp->device != NULL; dp++)
 		if (strcmp(dp->device, "*") != 0) {
-			fprintf(fp, "%s %qd\n", dp->device,
+			fprintf(fp, "%s " QD "\n", dp->device,
 			    (quad_t)dseek(dp, 0, SEEK_CUR));
 			if (debug) {
-				fprintf(stderr, "%s %qd\n", dp->device,
+				fprintf(stderr, "%s " QD "\n", dp->device,
 					(quad_t)dseek(dp, 0, SEEK_CUR));
-				fprintf(stderr, "#\t%qd\t%d\t%d\t%d\t%qd\t%qd\n",
+				fprintf(stderr,
+					"#\t" QD "\t%d\t%d\t%d\t" QD "\t" QD
+					"\n",
 					(quad_t)dp->size, dp->days, dp->rate,
 					dp->errors, dp->interval, dp->next);
 			}

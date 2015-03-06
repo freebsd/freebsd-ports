@@ -6,5 +6,4 @@ weird.
 So Text::MeCab gives you a more natural, Perl-ish way to access
 libmecab!
 
-Author:	Daisuke Maki <dmaki@cpan.org>
 WWW: http://search.cpan.org/dist/Text-MeCab/

@@ -20,8 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
 
 USES=		ada tar:bzip2
 USE_MYSQL=	yes
-MYSQL_DEFAULT=	55
-IGNORE_MYSQL_VER=	56
 HAS_CONFIGURE=	yes
 WRKPATH=	${WRKDIR}/build
 CONFIGURE_ARGS= --prefix=${PREFIX} \
@@ -38,6 +36,12 @@ post-patch:
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-ws|-ws --autoconf=dummy.cgpr|' \
 		${WRKSRC}/scripts/buildutil.sh
+
+post-configure:
+	# The header generated with MySQL 5.6 comes with two instances of
+	# double underscore variables, which is illegal in Ada
+	${REINPLACE_CMD} -e 's|__|_|' \
+		${WRKDIR}/build/include/apq-mysql/apq-mysql.ads
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \

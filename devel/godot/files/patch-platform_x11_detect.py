@@ -1,6 +1,18 @@
---- platform/x11/detect.py.orig	2014-12-16 05:19:18.000000000 +1030
-+++ platform/x11/detect.py	2015-01-23 16:08:21.497280349 +1030
-@@ -72,17 +72,16 @@
+--- platform/x11/detect.py.orig	2014-12-15 21:49:18.000000000 +0300
++++ platform/x11/detect.py	2015-03-03 07:01:34.000000000 +0300
+@@ -29,11 +29,6 @@
+ 		print("X11 not found.. x11 disabled.")
+ 		return False
+ 
+-        ssl_error=os.system("pkg-config openssl --modversion > /dev/null ")
+-        if (ssl_error):
+-                print("OpenSSL not found.. x11 disabled.")
+-                return False
+-
+ 	x11_error=os.system("pkg-config xcursor --modversion > /dev/null ")
+ 	if (x11_error):
+ 		print("xcursor not found.. x11 disabled.")
+@@ -72,17 +67,16 @@
  
  	env.Append(CPPPATH=['#platform/x11'])
  	if (env["use_llvm"]=="yes"):
@@ -28,7 +40,16 @@
  
  
  	#if (env["tools"]=="no"):
-@@ -128,11 +127,6 @@
+@@ -105,7 +99,7 @@
+ 
+ 	env.ParseConfig('pkg-config x11 --cflags --libs')
+ 	env.ParseConfig('pkg-config xcursor --cflags --libs')
+-	env.ParseConfig('pkg-config openssl --cflags --libs')
++	env.ParseConfig('echo -lssl -lcrypto')
+ 
+ 
+ 	env.ParseConfig('pkg-config freetype2 --cflags --libs')
+@@ -128,11 +122,6 @@
  		env.Append(LINKFLAGS=['-m64','-L/usr/lib/i686-linux-gnu'])
  
  

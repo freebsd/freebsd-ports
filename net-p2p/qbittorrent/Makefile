@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar
 
 USES=		execinfo pkgconfig tar:xz
-USE_QT4=	corelib network qmake_build linguist_build moc_build \
+USE_QT4=	corelib network qmake_build linguisttools_build moc_build \
 		rcc_build uic_build
 QT_NONSTANDARD=	yes
 DESTDIRNAME=	INSTALL_ROOT

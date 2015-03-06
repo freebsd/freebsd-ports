@@ -132,6 +132,11 @@ share/alsa/smixer.conf
 share/alsa/sndo-mixer.alisp
 share/alsa/ucm/DAISY-I2S/DAISY-I2S.conf
 share/alsa/ucm/DAISY-I2S/HiFi.conf
+share/alsa/ucm/GoogleNyan/GoogleNyan.conf
+share/alsa/ucm/GoogleNyan/HiFi.conf
+share/alsa/ucm/PAZ00/HiFi.conf
+share/alsa/ucm/PAZ00/PAZ00.conf
+share/alsa/ucm/PAZ00/Record.conf
 share/alsa/ucm/PandaBoard/FMAnalog
 share/alsa/ucm/PandaBoard/PandaBoard.conf
 share/alsa/ucm/PandaBoard/hifi

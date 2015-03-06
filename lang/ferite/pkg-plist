@@ -144,6 +144,8 @@ share/aclocal/ferite.m4
 %%PORTDOCS%%%%DATADIR%%/doc/parser.fe
 %%PORTDOCS%%%%DATADIR%%/doc/structs.fe
 %%PORTDOCS%%%%DATADIR%%/doc/template.fe
+%%PORTDOCS%%@dir %%DOCSDIR%%/api
+%%PORTDOCS%%@dir %%DOCSDIR%%/capi
 %%DATADIR%%/farm/Actions.fe
 %%DATADIR%%/farm/Targets.fe
 %%DATADIR%%/farm/Yard.fe

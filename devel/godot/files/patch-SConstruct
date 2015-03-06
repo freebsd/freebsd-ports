@@ -1,5 +1,14 @@
---- SConstruct.orig	2014-12-16 05:19:18.000000000 +1030
-+++ SConstruct	2015-01-27 00:22:23.169373963 +1030
+--- SConstruct.orig	2014-12-15 21:49:18.000000000 +0300
++++ SConstruct	2015-03-03 08:24:01.000000000 +0300
+@@ -60,7 +60,7 @@
+     if (os.getenv("VSINSTALLDIR")==None):
+ 	custom_tools=['mingw']
+ 
+-env_base=Environment(tools=custom_tools,ENV = {'PATH' : os.environ['PATH']});
++env_base=Environment(tools=custom_tools,ENV = os.environ);
+ #env_base=Environment(tools=custom_tools);
+ env_base.global_defaults=global_defaults
+ env_base.android_source_modules=[]
 @@ -110,7 +110,8 @@
  opts.Add('builtin_zlib','Use built-in zlib (yes/no)','yes')
  opts.Add('openssl','Use OpenSSL (yes/no/builtin)','no')

@@ -4,5 +4,4 @@ mechanisms are not supported). The plugin is written in Perl, should work with
 the embedded Perl interpreter (not tested though) and requires Net::SSLeay and
 Date::Manip to be installed on the Nagios host.
 
-Author: Holger Weiss <holger@CIS.FU-Berlin.DE>
 WWW: http://www.jhweiss.de/software/nagios.html

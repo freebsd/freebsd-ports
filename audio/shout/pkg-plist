@@ -1,2 +1,3 @@
 bin/shout
 etc/icecast/shout.conf.dist
+@dir share/icecast/log

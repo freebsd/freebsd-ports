@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.8p1r2
+PORTVERSION=	4.3.3
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
-		http://archive.ntp.org/ntp4/ntp-4.2/ \
- 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
+MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
+		http://archive.ntp.org/ntp4/ntp-dev/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
+DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution

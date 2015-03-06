@@ -3,7 +3,7 @@
 
 PORTNAME=	CBOR-XS
 PORTVERSION=	1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
@@ -16,6 +16,10 @@ LICENSE=	GPLv3
 
 USES=		perl5
 USE_PERL5=	configure
+
+BUILD_DEPENDS=	p5-Types-Serialiser>=0:${PORTSDIR}/devel/p5-Types-Serialiser \
+		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CBOR/XS/XS.so

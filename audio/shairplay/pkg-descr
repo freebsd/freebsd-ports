@@ -1,0 +1,4 @@
+Shairplay is a free portable AirPlay server implementation similar to
+ShairPort. Currently only AirPort Express emulation is supported.
+
+WWW: https://github.com/juhovh/shairplay

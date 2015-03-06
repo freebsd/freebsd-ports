@@ -7,5 +7,4 @@ potential spam rather than just blocking it in case you loose
 legitimate messages.  Note that the X-RBL-Warning header is only set if
 the site was found to be an open-relay.
 
-Author: Jeremy Beker <gothmog@confusticate.com>
 WWW: http://opensource.confusticate.com/rbl-milter/

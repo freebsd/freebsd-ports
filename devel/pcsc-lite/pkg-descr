@@ -3,7 +3,4 @@ Allows easy porting of Windows smartcard software to other
 operating systems.  Supports many types of serial, PCMCIA,
 and USB smartcard readers and cryptographic tokens. 
 
-Authors:	David Corcoran <corcoran@linuxnet.com>,
-		Ludovic Rousseau <ludovic.rousseau@free.fr>
-
 WWW: http://alioth.debian.org/projects/pcsclite/

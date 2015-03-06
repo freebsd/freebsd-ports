@@ -6,6 +6,6 @@
 -export PYTHONPATH=/opt/lib/python2.6/site-packages:thirdpart:$PYTHONPATH
 +#! /bin/sh
 +
-+export CCNET_CONF_DIR=##FIX_HAIWENDIR##/ccnet
-+export SEAFILE_CONF_DIR=##FIX_HAIWENDIR##/seafile-data
++export CCNET_CONF_DIR=##FIX_WWWDIR##/ccnet
++export SEAFILE_CONF_DIR=##FIX_WWWDIR##/seafile-data
 +export PYTHONPATH=##FIX_LOCALBASE##/lib/##PYTHON_VERSION##/site-packages:##FIX_SEALIB##/##PYTHON_VERSION##/site-packages:##FIX_SITEPACKAGEDIR##:$PYTHONPATH

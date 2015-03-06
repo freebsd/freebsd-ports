@@ -652,7 +652,6 @@
     SUBDIR += p5-Geo-GDAL
     SUBDIR += p5-Geo-GML
     SUBDIR += p5-Geo-Gpx
-    SUBDIR += p5-Geo-KML
     SUBDIR += p5-Geo-Point
     SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-Geometry-Primitive

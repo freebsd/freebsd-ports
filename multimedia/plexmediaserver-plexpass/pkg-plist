@@ -1998,6 +1998,8 @@
 %%DATADIR%%/Resources/Profiles/Roku.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-3.1.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-5.1.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-5000X-6.x.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-6.x.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml

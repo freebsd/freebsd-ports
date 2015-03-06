@@ -4,7 +4,9 @@
 PORTNAME=	yasou-fpw
 PORTVERSION=	1.0.b0
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.jp/edict/fpw/dist/yasou/
+MASTER_SITES=	http://openlab.jp/edict/fpw/dist/yasou/ \
+		ftp://ftp.rediris.es/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.b0/beta0/}
 
 MAINTAINER=	ports@FreeBSD.org

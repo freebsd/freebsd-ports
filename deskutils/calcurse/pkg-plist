@@ -130,6 +130,7 @@ man/man1/calcurse.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/pt_BR/tab.txt
 %%PORTDOCS%%%%DOCSDIR%%/pt_BR/view.txt
 %%PORTDOCS%%%%DOCSDIR%%/pt_BR/vnote.txt
+%%PORTDOCS%%%%DOCSDIR%%/reload.txt
 %%PORTDOCS%%%%DOCSDIR%%/repeat.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/add.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/config.txt

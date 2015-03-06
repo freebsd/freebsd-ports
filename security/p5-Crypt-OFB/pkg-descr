@@ -1,5 +1,4 @@
 This module is a Perl-only implementation of the OFB mode.
 Where OFB stands for Output Feedback Block.
 
-Author: GUGOD <gugod@gugod.org>
 WWW: http://search.cpan.org/dist/Crypt-OFB/

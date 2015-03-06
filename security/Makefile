@@ -423,6 +423,8 @@
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Authen-SASL
     SUBDIR += p5-Authen-SASL-Cyrus
+    SUBDIR += p5-Authen-SASL-SASLprep
+    SUBDIR += p5-Authen-SCRAM
     SUBDIR += p5-Authen-Simple
     SUBDIR += p5-Authen-Simple-DBI
     SUBDIR += p5-Authen-Simple-DBM
@@ -619,6 +621,7 @@
     SUBDIR += p5-OpenCA-PKCS7
     SUBDIR += p5-OpenCA-REQ
     SUBDIR += p5-OpenCA-X509
+    SUBDIR += p5-PBKDF2-Tiny
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-POE-Component-SSLify
@@ -918,6 +921,7 @@
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
+    SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth

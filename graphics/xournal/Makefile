@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xournal
-PORTVERSION=	0.4.7
-PORTREVISION=	4
+PORTVERSION=	0.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -25,6 +24,44 @@ OPTIONS_DEFINE=		GHOSTSCRIPT DOCS
 GHOSTSCRIPT_DESC=	Install ghostscript (PS/PDF as bitmap bg)
 OPTIONS_DEFAULT=	GHOSTSCRIPT
 
+PORTDOCS_MAIN=	AUTHORS \
+		ChangeLog \
+		COPYING \
+		README
+PORTDOCS=	${PORTDOCS_MAIN} \
+		html-doc/screenshot.png \
+		html-doc/manual.html \
+		html-doc/pixmaps/lightgreen.png \
+		html-doc/pixmaps/medium.png \
+		html-doc/pixmaps/ruler.png \
+		html-doc/pixmaps/green.png \
+		html-doc/pixmaps/magenta.png \
+		html-doc/pixmaps/default-pen.png \
+		html-doc/pixmaps/lasso.png \
+		html-doc/pixmaps/highlighter.png \
+		html-doc/pixmaps/red.png \
+		html-doc/pixmaps/hand.png \
+		html-doc/pixmaps/fullscreen.png \
+		html-doc/pixmaps/white.png \
+		html-doc/pixmaps/xoj.svg \
+		html-doc/pixmaps/pencil.png \
+		html-doc/pixmaps/rect-select.png \
+		html-doc/pixmaps/stretch.png \
+		html-doc/pixmaps/blue.png \
+		html-doc/pixmaps/lightblue.png \
+		html-doc/pixmaps/orange.png \
+		html-doc/pixmaps/yellow.png \
+		html-doc/pixmaps/gray.png \
+		html-doc/pixmaps/xournal.svg \
+		html-doc/pixmaps/xournal.png \
+		html-doc/pixmaps/thin.png \
+		html-doc/pixmaps/thick.png \
+		html-doc/pixmaps/eraser.png \
+		html-doc/pixmaps/recycled.png \
+		html-doc/pixmaps/shapes.png \
+		html-doc/pixmaps/black.png \
+		html-doc/pixmaps/text-tool.png
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGHOSTSCRIPT}
@@ -34,11 +71,14 @@ USE_GHOSTSCRIPT_RUN=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|$$(DESTDIR)/usr/share/|$$(DESTDIR)$$$$desktopdir/|g' \
-		-e 's|/usr/local/share|"$$(datadir)"|' \
-		-e 's|ln -s $$(DESTDIR)$$(pkgdatadir)/pixmaps|ln -s $$(pkgdatadir)/pixmaps|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install-doc-local)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS_MAIN:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html-doc
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} html-doc/ ${STAGEDIR}${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>

@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Opinionated WYSIWYG editor for Rails based on CKEditor
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-jquery-rails>=0:${PORTSDIR}/www/rubygem-jquery-rails \
 		rubygem-kaminari>=0:${PORTSDIR}/www/rubygem-kaminari \
 		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \

@@ -948,6 +948,7 @@
     SUBDIR += py-twitter
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
+    SUBDIR += py-uritemplate
     SUBDIR += py-urllib3
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
@@ -1025,6 +1026,11 @@
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
+    SUBDIR += rubygem-epp-client-afnic
+    SUBDIR += rubygem-epp-client-base
+    SUBDIR += rubygem-epp-client-rgp
+    SUBDIR += rubygem-epp-client-secdns
+    SUBDIR += rubygem-epp-client-smallregistry
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-ecloud
@@ -1145,7 +1151,6 @@
     SUBDIR += spread-j
     SUBDIR += spread4
     SUBDIR += sprinkle
-    SUBDIR += spserver
     SUBDIR += sqtop
     SUBDIR += ss5
     SUBDIR += ssldump
@@ -1179,6 +1184,7 @@
     SUBDIR += tcpick
     SUBDIR += tcpillust
     SUBDIR += tcping
+    SUBDIR += tcpkali
     SUBDIR += tcpmssd
     SUBDIR += tcpproxy
     SUBDIR += tcpreen
@@ -1291,7 +1297,6 @@
     SUBDIR += xorp
     SUBDIR += xprobe
     SUBDIR += xpvm
-    SUBDIR += xrdesktop
     SUBDIR += xrdesktop2
     SUBDIR += xrdp
     SUBDIR += xrdp-devel

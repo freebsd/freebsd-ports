@@ -1,5 +1,5 @@
 minirsyslogd is a minimalistic, fast and secure (through lack of bloat)
-remote-only syslog receiver suitable for hardened log receiver hosts 
+remote-only syslog receiver suitable for hardened log receiver hosts
 and/or central log receivers that receive several gigabyte of logs each day.
 
 It will not deal with local syslog data. It does not have a multitude
@@ -8,5 +8,4 @@ automatically split inbound syslog data according to IP address,
 date and current hour, and do so as rapidly and (I hope) securely as
 possible.
 
-Author:	Mikael Olsson <mikael.olsson@clavister.com>
-WWW:	http://www.clueby4.org/minirsyslogd/
+WWW: http://www.clueby4.org/minirsyslogd/

@@ -34,6 +34,8 @@ PLIST_FILES=	${RUBY_ARCHLIBDIR:S,${PREFIX},,:S,^/,,}/iconv.so
 .if ${RUBY_VER} >= 2.0
 IGNORE=		Not needed with Ruby 2.0 or newer
 .endif
+DEPRECATED=	Not needed with Ruby 2.x
+EXPIRATION_DATE=	2015-03-28
 
 RUBY_WRKDIR!=	cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR
 

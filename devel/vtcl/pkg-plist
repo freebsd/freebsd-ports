@@ -368,3 +368,4 @@ lib/vtcl/lib/var.tcl
 lib/vtcl/lib/vtclib.tcl
 lib/vtcl/lib/widget.tcl
 lib/vtcl/vtcl.tcl
+@dir lib/vtcl/lib/Widgets/user

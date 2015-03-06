@@ -6132,7 +6132,7 @@
      MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libnpt/mapfile-vers, \
      LDFLAGS := $(LDFLAGS_JDKLIB) \
          $(call SET_SHARED_LIBRARY_ORIGIN), \
-+    LDFLAGS_bsd := , \
++    LDFLAGS_bsd := -liconv, \
      LDFLAGS_macosx := -liconv, \
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
@@ -6242,7 +6242,7 @@
      LDFLAGS_SUFFIX_solaris := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL) -lc, \
      LDFLAGS_SUFFIX_linux := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL), \
      LDFLAGS_SUFFIX_aix := $(LIBZ) -L$(JDK_OUTPUTDIR)/objs -ljli_static $(LIBDL),\
-+    LDFLAGS_SUFFIX_bsd :=  $(LIBZ), \
++    LDFLAGS_SUFFIX_bsd := -liconv $(LIBZ), \
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
      RC_FLAGS := $(RC_FLAGS) \
          -D "JDK_FNAME=instrument.dll" \
@@ -7457,48 +7457,6 @@
 +        return new KQueueSelectorImpl(this);
 +    }
 +}
---- ./jdk/src/bsd/doc/man/javah.1	Mon Dec 08 08:53:26 2014 -0800
-+++ ./jdk/src/bsd/doc/man/javah.1	Sun Feb 01 21:05:04 2015 -0800
-@@ -110,7 +110,7 @@
- 
- \&.:\fIyour-path\fR
- 
--Example: \f3\&.:/home/avh/classes:/usr/local/java/classes\fR
-+Example: \f3\&.:/home/avh/classes:/usr/local/share/java/classes\fR
- 
- \fIWindows\fR:
- 
---- ./jdk/src/bsd/doc/man/rmic.1	Mon Dec 08 08:53:26 2014 -0800
-+++ ./jdk/src/bsd/doc/man/rmic.1	Sun Feb 01 21:05:04 2015 -0800
-@@ -93,7 +93,7 @@
- .TP
- -classpath path
- .br
--Specifies the path the \f3rmic\fR command uses to look up classes\&. This option overrides the default or the \f3CLASSPATH\fR environment variable when it is set\&. Directories are separated by colons\&. The general format for path is: \f3\&.:<your_path>\fR, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Specifies the path the \f3rmic\fR command uses to look up classes\&. This option overrides the default or the \f3CLASSPATH\fR environment variable when it is set\&. Directories are separated by colons\&. The general format for path is: \f3\&.:<your_path>\fR, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .TP
- -d \fIdirectory\fR
- .br
-@@ -207,7 +207,7 @@
- .SH ENVIRONMENT\ VARIABLES    
- .TP     
- CLASSPATH
--Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .SH SEE\ ALSO    
- .TP 0.2i    
- \(bu
---- ./jdk/src/bsd/doc/man/rmid.1	Mon Dec 08 08:53:26 2014 -0800
-+++ ./jdk/src/bsd/doc/man/rmid.1	Sun Feb 01 21:05:04 2015 -0800
-@@ -301,7 +301,7 @@
- .SH ENVIRONMENT\ VARIABLES    
- .TP     
- CLASSPATH
--Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .SH SEE\ ALSO    
- .TP 0.2i    
- \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
 +++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Sun Feb 01 21:05:04 2015 -0800
 @@ -0,0 +1,171 @@

@@ -107,8 +107,8 @@ lib/python3.4/__future__.py
 lib/python3.4/__phello__.foo.py
 lib/python3.4/__pycache__/__future__.cpython-34.pyc
 lib/python3.4/__pycache__/__future__.cpython-34.pyo
-lib/python3.4/__pycache__/__phello__.cpython-34.pyc
-lib/python3.4/__pycache__/__phello__.cpython-34.pyo
+lib/python3.4/__pycache__/__phello__.foo.cpython-34.pyc
+lib/python3.4/__pycache__/__phello__.foo.cpython-34.pyo
 lib/python3.4/__pycache__/_bootlocale.cpython-34.pyc
 lib/python3.4/__pycache__/_bootlocale.cpython-34.pyo
 lib/python3.4/__pycache__/_collections_abc.cpython-34.pyc
@@ -478,6 +478,8 @@ lib/python3.4/asyncio/__pycache__/queues.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/queues.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/selector_events.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/selector_events.cpython-34.pyo
+lib/python3.4/asyncio/__pycache__/sslproto.cpython-34.pyc
+lib/python3.4/asyncio/__pycache__/sslproto.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/streams.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/streams.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/subprocess.cpython-34.pyc
@@ -506,6 +508,7 @@ lib/python3.4/asyncio/proactor_events.py
 lib/python3.4/asyncio/protocols.py
 lib/python3.4/asyncio/queues.py
 lib/python3.4/asyncio/selector_events.py
+lib/python3.4/asyncio/sslproto.py
 lib/python3.4/asyncio/streams.py
 lib/python3.4/asyncio/subprocess.py
 lib/python3.4/asyncio/tasks.py
@@ -1543,8 +1546,8 @@ lib/python3.4/ensurepip/__pycache__/__main__.cpython-34.pyc
 lib/python3.4/ensurepip/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyc
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyo
-lib/python3.4/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
-lib/python3.4/ensurepip/_bundled/setuptools-2.1-py2.py3-none-any.whl
+lib/python3.4/ensurepip/_bundled/pip-6.0.8-py2.py3-none-any.whl
+lib/python3.4/ensurepip/_bundled/setuptools-12.0.5-py2.py3-none-any.whl
 lib/python3.4/ensurepip/_uninstall.py
 lib/python3.4/enum.py
 lib/python3.4/filecmp.py
@@ -1768,8 +1771,6 @@ lib/python3.4/idlelib/__pycache__/run.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/run.cpython-34.pyo
 lib/python3.4/idlelib/__pycache__/tabbedpages.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/tabbedpages.cpython-34.pyo
-lib/python3.4/idlelib/__pycache__/testcode.cpython-34.pyc
-lib/python3.4/idlelib/__pycache__/testcode.cpython-34.pyo
 lib/python3.4/idlelib/__pycache__/textView.cpython-34.pyc
 lib/python3.4/idlelib/__pycache__/textView.cpython-34.pyo
 lib/python3.4/idlelib/aboutDialog.py
@@ -1863,7 +1864,6 @@ lib/python3.4/idlelib/macosxSupport.py
 lib/python3.4/idlelib/rpc.py
 lib/python3.4/idlelib/run.py
 lib/python3.4/idlelib/tabbedpages.py
-lib/python3.4/idlelib/testcode.py
 lib/python3.4/idlelib/textView.py
 lib/python3.4/imaplib.py
 lib/python3.4/imghdr.py
@@ -1963,9 +1963,9 @@ lib/python3.4/lib-dynload/unicodedata.so
 %%NO_DEBUG%%lib/python3.4/lib-dynload/xxlimited.so
 lib/python3.4/lib-dynload/zlib.so
 lib/python3.4/lib2to3/Grammar.txt
-lib/python3.4/lib2to3/Grammar3.4.2.final.0.pickle
+lib/python3.4/lib2to3/Grammar3.4.3.final.0.pickle
 lib/python3.4/lib2to3/PatternGrammar.txt
-lib/python3.4/lib2to3/PatternGrammar3.4.2.final.0.pickle
+lib/python3.4/lib2to3/PatternGrammar3.4.3.final.0.pickle
 lib/python3.4/lib2to3/__init__.py
 lib/python3.4/lib2to3/__main__.py
 lib/python3.4/lib2to3/__pycache__/__init__.cpython-34.pyc
@@ -2189,8 +2189,11 @@ lib/python3.4/lib2to3/pygram.py
 lib/python3.4/lib2to3/pytree.py
 lib/python3.4/lib2to3/refactor.py
 lib/python3.4/lib2to3/tests/__init__.py
+lib/python3.4/lib2to3/tests/__main__.py
 lib/python3.4/lib2to3/tests/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/lib2to3/tests/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/lib2to3/tests/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/lib2to3/tests/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/lib2to3/tests/__pycache__/pytree_idempotency.cpython-34.pyc
 lib/python3.4/lib2to3/tests/__pycache__/pytree_idempotency.cpython-34.pyo
 lib/python3.4/lib2to3/tests/__pycache__/support.cpython-34.pyc
@@ -3075,6 +3078,8 @@ lib/python3.4/test/__pycache__/test_sched.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_sched.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_scope.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_scope.cpython-34.pyo
+lib/python3.4/test/__pycache__/test_script_helper.cpython-34.pyc
+lib/python3.4/test/__pycache__/test_script_helper.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_select.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_select.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_selectors.cpython-34.pyc
@@ -3613,6 +3618,7 @@ lib/python3.4/test/sample_doctest.py
 lib/python3.4/test/sample_doctest_no_docstrings.py
 lib/python3.4/test/sample_doctest_no_doctests.py
 lib/python3.4/test/script_helper.py
+lib/python3.4/test/selfsigned_pythontestdotnet.pem
 lib/python3.4/test/seq_tests.py
 lib/python3.4/test/sgml_input.html
 lib/python3.4/test/sha256.pem
@@ -3688,6 +3694,8 @@ lib/python3.4/test/test_asyncio/__pycache__/test_queues.cpython-34.pyc
 lib/python3.4/test/test_asyncio/__pycache__/test_queues.cpython-34.pyo
 lib/python3.4/test/test_asyncio/__pycache__/test_selector_events.cpython-34.pyc
 lib/python3.4/test/test_asyncio/__pycache__/test_selector_events.cpython-34.pyo
+lib/python3.4/test/test_asyncio/__pycache__/test_sslproto.cpython-34.pyc
+lib/python3.4/test/test_asyncio/__pycache__/test_sslproto.cpython-34.pyo
 lib/python3.4/test/test_asyncio/__pycache__/test_streams.cpython-34.pyc
 lib/python3.4/test/test_asyncio/__pycache__/test_streams.cpython-34.pyo
 lib/python3.4/test/test_asyncio/__pycache__/test_subprocess.cpython-34.pyc
@@ -3716,6 +3724,7 @@ lib/python3.4/test/test_asyncio/test_locks.py
 lib/python3.4/test/test_asyncio/test_proactor_events.py
 lib/python3.4/test/test_asyncio/test_queues.py
 lib/python3.4/test/test_asyncio/test_selector_events.py
+lib/python3.4/test/test_asyncio/test_sslproto.py
 lib/python3.4/test/test_asyncio/test_streams.py
 lib/python3.4/test/test_asyncio/test_subprocess.py
 lib/python3.4/test/test_asyncio/test_tasks.py
@@ -4322,6 +4331,7 @@ lib/python3.4/test/test_runpy.py
 lib/python3.4/test/test_sax.py
 lib/python3.4/test/test_sched.py
 lib/python3.4/test/test_scope.py
+lib/python3.4/test/test_script_helper.py
 lib/python3.4/test/test_select.py
 lib/python3.4/test/test_selectors.py
 lib/python3.4/test/test_set.py

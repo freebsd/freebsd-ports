@@ -2,24 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	simsu
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3.1
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
-EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic Sudoku game
 
 LICENSE=	GPLv3 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
-USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
-		gui
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		compiler:c++11-lib qmake tar:bzip2
+USE_QT5=	buildtools_build widgets
 INSTALLS_ICONS=	yes
-
-PORTDOCS=	CREDITS ChangeLog
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -31,14 +28,13 @@ post-patch:
 	@${REINPLACE_CMD} -i '' '/qm.files/,/qm.path/s/^/#/' \
 		${WRKSRC}/${PORTNAME}.pro
 .endif
+	@${REINPLACE_CMD} -e \
+		's|c++0x|c++11| ; \
+		 s|share/man|man|' ${WRKSRC}/simsu.pro
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog NEWS README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

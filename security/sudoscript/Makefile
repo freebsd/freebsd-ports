@@ -12,9 +12,10 @@ COMMENT=	Audited shells in Perl with sudo(8) and script(1)
 USES=		perl5 gmake
 MAKE_ARGS=	PERLPATH=${PERL}
 MAKE_ENV=	SSRPM=yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX=|^PREFIX?=|g' \
-	${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

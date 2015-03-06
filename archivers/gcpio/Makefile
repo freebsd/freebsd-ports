@@ -2,7 +2,7 @@
 
 PORTNAME=	cpio
 PORTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -11,7 +11,12 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU cpio copies files to and from archives
 
-USES=		tar:bzip2
+LICENSE=	GPLv3
+
+USES=		cpe tar:bzip2
+
+CPE_VENDOR=	gnu
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules \

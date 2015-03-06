@@ -2,29 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	3.2.5
+PORTVERSION=	3.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, efficient background processing for Ruby
 
-RUN_DEPENDS=	rubygem-celluloid>=0.15.2:${PORTSDIR}/devel/rubygem-celluloid \
-		rubygem-connection_pool>=2.0.0:${PORTSDIR}/net/rubygem-connection_pool \
+LICENSE=	LGPL3
+
+RUN_DEPENDS=	rubygem-celluloid>=0.16.0:${PORTSDIR}/devel/rubygem-celluloid \
+		rubygem-connection_pool>=2.1.1:${PORTSDIR}/net/rubygem-connection_pool \
 		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-redis>=3.0.4:${PORTSDIR}/databases/rubygem-redis \
+		rubygem-redis>=3.0.6:${PORTSDIR}/databases/rubygem-redis \
 		rubygem-redis-namespace>=1.3.1:${PORTSDIR}/databases/rubygem-redis-namespace
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/sidekiqctl bin/sidekiq
+PLIST_FILES=	bin/sidekiq bin/sidekiqctl
 
-.include <bsd.port.pre.mk>
-
-.if (${RUBY_VER} == "1.9")
-BROKEN=		Infinite loop during install
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

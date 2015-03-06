@@ -1,5 +1,4 @@
 This command parses the output of tcpdump to display the dhcp-packets
 for easier checking and debugging.
 
-Author: Edwin Groothuis <edwin@mavetju.org>
 WWW: http://www.mavetju.org/unix/general.php

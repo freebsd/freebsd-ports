@@ -933,6 +933,7 @@
     SUBDIR += tali
     SUBDIR += tanglet
     SUBDIR += tank
+    SUBDIR += tanks-of-freedom
     SUBDIR += tbclock
     SUBDIR += tbe
     SUBDIR += tecnoballz
@@ -966,7 +967,8 @@
     SUBDIR += traindirector
     SUBDIR += traingame
     SUBDIR += tremulous
-    SUBDIR += trigger
+    SUBDIR += trigger-data
+    SUBDIR += trigger-rally
     SUBDIR += trimines
     SUBDIR += triplane
     SUBDIR += trojka

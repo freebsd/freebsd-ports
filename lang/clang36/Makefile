@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.6.0rc4
+DISTVERSION=	3.6.0
 CATEGORIES=	lang devel
-MASTER_SITES=   http://llvm.org/pre-releases/3.6.0/rc4/
+MASTER_SITES=   http://llvm.org/releases/3.6.0/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \

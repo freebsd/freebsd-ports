@@ -170,10 +170,10 @@ PLIST_SUB+=	FLACPLUGIN="@comment "
 
 .if ${PORT_OPTIONS:MFFAUDIO}
 LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=--enable-ffaudio
+CONFIGURE_ARGS+=--with-ffmpeg=ffmpeg
 PLIST_SUB+=	FFAUDIOPLUGIN=""
 .else
-CONFIGURE_ARGS+=--disable-ffaudio
+CONFIGURE_ARGS+=--with-ffmpeg=none
 PLIST_SUB+=	FFAUDIOPLUGIN="@comment "
 .endif
 
