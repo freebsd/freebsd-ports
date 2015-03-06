@@ -61,14 +61,14 @@ Index: mutt/init.h
    { "sidebar_width", DT_NUM, R_BOTH, UL &SidebarWidth, 0 },
    /*
    ** .pp
-+  ** Do not refresh sidebar in less than $sidebar_refresh seconds,
-+  ** (0 disables refreshing).
-+  */
+   ** The width of the sidebar.
+   */
 +  { "sidebar_refresh", DT_NUM, R_BOTH, UL &SidebarRefresh, 60 },
 +  /*
 +  ** .pp
-   ** The width of the sidebar.
-   */
++  ** Do not refresh sidebar in less than $sidebar_refresh seconds,
++  ** (0 disables refreshing).
++  */
    { "sidebar_shortpath", DT_BOOL, R_BOTH, OPTSIDEBARSHORTPATH, 0 },
 Index: mutt/sidebar.c
 ===================================================================
