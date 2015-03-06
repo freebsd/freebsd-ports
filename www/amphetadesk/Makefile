@@ -11,6 +11,11 @@ DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS client that serves HTTP to your local web browser
 
+LICENSE=	EULA
+LICENSE_NAME=	The Clarified Artistic License
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	\
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
@@ -19,11 +24,6 @@ RUN_DEPENDS=	\
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-
-LICENSE=	EULA
-LICENSE_NAME=	The Clarified Artistic License
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
 USES=		perl5
 USE_PERL5=	run
@@ -104,7 +104,7 @@ do-install:
 		${XARGS} -0 -x -n 10 -I {} \
 		${MKDIR} ${STAGEDIR}${DATADIR}/{})
 # files
-.for ext in gif html ico png pict 
+.for ext in gif html ico png pict
 	(cd ${WRKSRC} && \
 		${FIND} templates -type f -name "*.${ext}" -print0 | \
 		${XARGS} -0 -x -n 10 -I {} \
