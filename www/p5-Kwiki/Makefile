@@ -6,13 +6,15 @@ PORTVERSION=	0.39
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.kwiki.org/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	clsung/${PORTNAME}
+		LOCAL/clsung/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 DISTNAME=	kwiki-trunk-20070327
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	The Kwiki Wiki Building Framework
+COMMENT=	Kwiki Wiki Building Framework
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
