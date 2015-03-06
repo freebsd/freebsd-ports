@@ -1,0 +1,5 @@
+Theano is a Python library that allows you to define, optimize, and
+efficiently evaluate mathematical expressions involving multi-dimensional
+arrays.  It is built on top of NumPy.
+
+WWW: http://deeplearning.net/software/theano/
