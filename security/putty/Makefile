@@ -15,9 +15,11 @@ COMMENT=	Secure shell and telnet client
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/LICENSE
 
-USES=		gmake pkgconfig
+USES=		cpe gmake pkgconfig
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
+
+CPE_VENDOR=	simon_tatham
 
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 PLIST_FILES+=	man/man1/plink.1.gz man/man1/pscp.1.gz man/man1/psftp.1.gz man/man1/puttygen.1.gz
