@@ -18,7 +18,7 @@
 -	des_string_to_key(keybuf, &key_bin);
 -	des_set_key(&key_bin, sched);
 +	DES_string_to_key(keybuf, &key_bin);
-+	DES_set_key(&key_bin, sched);
++	DES_set_key(&key_bin, &sched);
  
  	count = (len == 32) ? 24 : 48;
  	for (i = 0, j = 0; i < count; i += 3, j += 4)
