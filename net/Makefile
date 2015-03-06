@@ -839,6 +839,7 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
+    SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
