@@ -1,4 +1,5 @@
 bin/bgzip
+bin/htsfile
 bin/tabix
 include/htslib/bgzf.h
 include/htslib/faidx.h
@@ -13,6 +14,7 @@ include/htslib/knetfile.h
 include/htslib/kseq.h
 include/htslib/ksort.h
 include/htslib/kstring.h
+include/htslib/regidx.h
 include/htslib/sam.h
 include/htslib/synced_bcf_reader.h
 include/htslib/tbx.h
@@ -24,6 +26,7 @@ lib/libhts.so
 lib/libhts.so.1
 lib/libhts.so.%%PORTVERSION%%
 libdata/pkgconfig/htslib.pc
+man/man1/htsfile.1.gz
 man/man1/tabix.1.gz
 man/man5/faidx.5.gz
 man/man5/sam.5.gz
