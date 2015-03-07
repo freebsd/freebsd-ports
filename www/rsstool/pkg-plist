@@ -19,9 +19,3 @@ bin/rsstool
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/config.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/sql.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rsstool_php_lite/htdocs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rsstool_php_lite
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
