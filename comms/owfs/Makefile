@@ -12,7 +12,7 @@ COMMENT=	OWFS -- 1-Wire file system
 
 LICENSE=	GPLv2
 
-USES=		autoreconf libtool gmake:lite
+USES=		autoreconf libtool gmake
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
