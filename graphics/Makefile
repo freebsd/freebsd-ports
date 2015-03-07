@@ -1003,6 +1003,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += variety
     SUBDIR += vcg
     SUBDIR += viewnior
     SUBDIR += vigra
