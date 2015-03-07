@@ -23,4 +23,10 @@ INFO=		cln
 
 BROKEN_sparc64=	Does not compile on sparc64
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == armv6
+CPPFLAGS+=	-DNO_ASM
+.endif
+
+.include <bsd.port.post.mk>
