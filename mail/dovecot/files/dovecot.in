@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/mail/dovecot/files/dovecot.in 359890 2014-06-30 17:33:21Z bdrewery $
 #
 
 # PROVIDE: dovecot
