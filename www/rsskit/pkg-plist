@@ -32,8 +32,3 @@ GNUstep/Local/Library/Headers/RSSKit
 GNUstep/Local/Library/Libraries/libRSSKit.so
 GNUstep/Local/Library/Libraries/libRSSKit.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libRSSKit.so.%%VERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/RSSKit.framework
