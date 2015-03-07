@@ -516,6 +516,7 @@
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
+    SUBDIR += p5-MaxMind-DB-Writer
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS
