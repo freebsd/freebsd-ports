@@ -15,4 +15,4 @@ unbiased estimates provides leave-one-out testing. SVMlight exploits
 that the results of most leave-one-outs (often more than 99%) are
 predetermined and need not be computed [Joachims, 2002a].
 
-WWW:	http://svmlight.joachims.org/
+WWW: http://svmlight.joachims.org/
