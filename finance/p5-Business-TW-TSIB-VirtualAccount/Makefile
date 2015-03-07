@@ -23,4 +23,6 @@ USE_PERL5=	configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/b//}
 
+PORTSCOUT=	skipv:0.04
+
 .include <bsd.port.mk>
