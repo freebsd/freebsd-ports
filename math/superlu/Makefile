@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu
 PORTVERSION=	${P_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -29,6 +29,8 @@ PLIST_SUB=	P_VERSION=${P_VERSION} P_VER=${P_VER}
 
 ARCH2FIX=	SRC/Makefile TESTING/MATGEN/Makefile CBLAS/Makefile make.inc	\
 		MAKE_INC/make.alpha MAKE_INC/make.inc
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -72,7 +74,7 @@ pre-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libsuperlu_${P_VERSION}.a \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu.a
-	${INSTALL_DATA} ${WRKSRC}/libsuperlu_${P_VERSION}.so \
+	${INSTALL_LIB} ${WRKSRC}/libsuperlu_${P_VERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu.so.${P_VER}
 	${LN} -fs libsuperlu.so.${PORTREVISION} \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu_${P_VERSION}.so
