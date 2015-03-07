@@ -21,7 +21,6 @@ BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:${PORTSDIR}/devel/p5-Data-Dumper-Concis
 		p5-MaxMind-DB-Common>=0.031003:${PORTSDIR}/net/p5-MaxMind-DB-Common \
 		p5-MaxMind-DB-Reader>=0:${PORTSDIR}/net/p5-MaxMind-DB-Reader \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Params-Validate>=0:${PORTSDIR}/devel/p5-MooseX-Params-Validate \
 		p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-Net-Works>=0.20:${PORTSDIR}/net/p5-Net-Works \
