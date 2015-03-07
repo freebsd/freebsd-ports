@@ -13,7 +13,7 @@ GH_TAGNAME=	${PORTVERSION}
 DISTNAME=	remmina-${PORTVERSION}
 
 
-MAINTAINER?=	fluffy@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
 .if defined(PKGNAMESUFFIX)
