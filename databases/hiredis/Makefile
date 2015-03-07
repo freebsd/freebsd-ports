@@ -15,7 +15,7 @@ GH_ACCOUNT=	redis
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	9be3a07
 
-USES=		gmake:lite
+USES=		gmake
 USE_LDCONFIG=	yes
 
 post-patch:
