@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0cae920-c4e9-11e4-898e-90e6ba741e35">
+    <topic>mono -- TLS bugs</topic>
+    <affects>
+      <package>
+	<name>mono</name>
+	<range><lt>3.10.1</lt></range>
+	<range><ge>3.12</ge><lt>3.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mono project reports:</p>
+	<blockquote cite="http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs">
+	  <p>Mono’s implementation of the SSL/TLS stack failed to check the order of the handshake messages. Which would allow various attacks on the protocol to succeed. Details of this vulnerability are discussed in <a href="https://www.smacktls.com/#skip">SKIP-TLS post</a>.</p>
+	  <p>Mono’s implementation of SSL/TLS also contained support for the weak EXPORT cyphers and was susceptible to the <a href="https://www.smacktls.com/#freak">FREAK</a> attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs</url>
+    </references>
+    <dates>
+      <discovery>2015-03-06</discovery>
+      <entry>2015-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92fc2e2b-c383-11e4-8ef7-080027ef73ec">
     <topic>PuTTY -- fails to scrub private keys from memory after use</topic>
     <affects>
