@@ -103,6 +103,7 @@
     SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gruler
+    SUBDIR += gsimplecal
     SUBDIR += gtg
     SUBDIR += gtimer
     SUBDIR += gtodo
