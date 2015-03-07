@@ -1,0 +1,4 @@
+bin/text_colorizer
+%%SITE_PERL%%/Text/Colorizer.pm
+%%PERL5_MAN3%%/Text::Colorizer.3.gz
+man/man1/text_colorizer.1.gz
