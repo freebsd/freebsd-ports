@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dhcp_probe
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable dhcp_probe:
+#
+# dhcp_probe_enable="YES"
+# dhcp_probe_flags="<interface>"
+
+. /etc/rc.subr
+
+name=dhcp_probe
+desc="Attempts to discover DHCP and BootP servers on a network."
+rcvar=dhcp_probe_enable
+
+load_rc_config $name
+
+: ${dhcp_probe_enable:="NO"}
+: ${dhcp_probe_config="%%PREFIX%%/etc/dhcp_probe.cf"}
+
+command=%%PREFIX%%/sbin/${name}
+
+start_precmd="${name}_prestart"
+
+dhcp_probe_prestart()
+{
+	# The interface (rc_flags) has to go after the config file argument
+	rc_flags="-c ${dhcp_probe_config} ${rc_flags}"
+	return 0
+}
+
+run_rc_command "$1"
