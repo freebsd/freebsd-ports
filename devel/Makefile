@@ -2334,6 +2334,7 @@
     SUBDIR += p5-Log-Any-Adapter-Log4perl
     SUBDIR += p5-Log-Any-Adapter-Syslog
     SUBDIR += p5-Log-Any-App
+    SUBDIR += p5-Log-Any-IfLOG
     SUBDIR += p5-Log-Contextual
     SUBDIR += p5-Log-Defer
     SUBDIR += p5-Log-Dispatch
