@@ -24,6 +24,12 @@ HAM_DOCS=	README INSTALL ChangeLog TODO AUTHORS CREDITS
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=	fails to compile on 8.x
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/unittests/Makefile.in
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
