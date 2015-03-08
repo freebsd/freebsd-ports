@@ -26,6 +26,7 @@
     SUBDIR += osh
     SUBDIR += p5-Bash-Completion
     SUBDIR += p5-Shell-Perl
+    SUBDIR += p5-Term-Bash-Completion-Generator
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
