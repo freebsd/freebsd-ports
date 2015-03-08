@@ -135,7 +135,9 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \
 	"*.ml *.png *.rgb *.xpm text ${EXAMPLES_SUBDIRS}" \
