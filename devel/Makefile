@@ -493,12 +493,15 @@
     SUBDIR += gdcm
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
+    SUBDIR += geany-plugin-autoclose
     SUBDIR += geany-plugin-codenav
     SUBDIR += geany-plugin-commander
     SUBDIR += geany-plugin-debugger
+    SUBDIR += geany-plugin-defineformat
     SUBDIR += geany-plugin-devhelp
     SUBDIR += geany-plugin-doc
     SUBDIR += geany-plugin-extrasel
+    SUBDIR += geany-plugin-geanypy
     SUBDIR += geany-plugin-gendoc
     SUBDIR += geany-plugin-geniuspaste
     SUBDIR += geany-plugin-gproject
@@ -510,7 +513,9 @@
     SUBDIR += geany-plugin-miniscript
     SUBDIR += geany-plugin-multiterm
     SUBDIR += geany-plugin-numberedbookmarks
+    SUBDIR += geany-plugin-pairtaghighlighter
     SUBDIR += geany-plugin-pg
+    SUBDIR += geany-plugin-pohelper
     SUBDIR += geany-plugin-pretty-printer
     SUBDIR += geany-plugin-prj
     SUBDIR += geany-plugin-scope
