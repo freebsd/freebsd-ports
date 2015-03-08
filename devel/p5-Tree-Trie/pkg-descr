@@ -1,0 +1,16 @@
+This module implements a trie data structure. The term "trie" comes from the
+word retrieval, but is generally pronounced like "try". A trie is a tree
+structure (or directed acyclic graph), the nodes of which represent letters
+in a word. For example, the final lookup for the word 'bob' would look
+something like $ref->{'b'}{'o'}{'b'}{'00'} (the 00 being an end marker).
+Only nodes which would represent words in the trie exist, making the structure
+slightly smaller than a hash of the same data set.
+
+The advantages of the trie over other data storage methods is that lookup times
+are O(1) WRT the size of the index. For sparse data sets, it is probably not as
+efficient as performing a binary search on a sorted list, and for small files,
+it has a lot of overhead. The main advantage (at least from my perspective) is
+that it provides a relatively cheap method for finding a list of words in a
+large, dense data set which begin with a certain string.
+
+WWW: http://search.cpan.org/dist/Tree-Trie/
