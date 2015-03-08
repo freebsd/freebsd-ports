@@ -3,7 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.31.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -15,14 +15,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}
 PATCH_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
-		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
 
 USES=			gmake makeinfo perl5 python:build tk:84+
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--with-posix-shell=${LOCALBASE}/bin/bash \
+			--with-posix-shell=/bin/sh \
 			--with-wish=${WISH} \
 			${LISPSELECT}
 
