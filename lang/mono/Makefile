@@ -3,10 +3,12 @@
 
 PORTNAME=	mono
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
-PATCHFILES=	fb3468e61c943790ddad0f8cfb3e0cb0e3a00d0d.patch
+PATCHFILES=	fb3468e61c943790ddad0f8cfb3e0cb0e3a00d0d.patch \
+		396d9dbeb1a93665ede08c0e24e3e051e2c3e1de.patch
 PATCH_SITES=	https://github.com/mono/mono/commit/
 PATCH_DIST_STRIP=-p1
 
