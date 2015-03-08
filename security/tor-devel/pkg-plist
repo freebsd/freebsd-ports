@@ -2,7 +2,7 @@ bin/tor
 bin/tor-gencert
 bin/tor-resolve
 bin/torify
-etc/tor/torrc.sample
+@sample etc/tor/torrc.sample
 man/man1/tor-gencert.1.gz
 man/man1/tor-resolve.1.gz
 man/man1/tor.1.gz
