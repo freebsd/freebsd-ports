@@ -1,5 +1,5 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD$
+# $FreeBSD: head/ftp/curl/Makefile 380032 2015-02-26 17:45:45Z sunpoet $
 
 PORTNAME=	curl
 PORTVERSION=	7.41.0
@@ -131,14 +131,8 @@ RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
 THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
-.if "${OPENSSL_PORT}" != "security/libressl"
 TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
 TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
-.else
-# LibreSSL does not have SRP support making build fail on 10.0
-# this ugly hack works around that, see PR197865
-CONFIGURE_ARGS+= --disable-tls-srp
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -148,6 +142,10 @@ IGNORE=		only supports CA bundle with OpenSSL
 
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
+.endif
+
+.if ${PORT_OPTIONS:MTLS_SRP} && "${OPENSSL_PORT:tl}" == "security/libressl"
+IGNORE=         TLS-SRP not supported in LibreSSL
 .endif
 
 .if !${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAPS}
@@ -164,6 +162,10 @@ IGNORE=		only supports LIBSSH2 with OpenSSL
 
 .if !${PORT_OPTIONS:MGSSAPI_BASE} && !${PORT_OPTIONS:MHEIMDAL_PORT} && !${PORT_OPTIONS:MKRB5_PORT}
 CONFIGURE_ARGS+=--without-gssapi
+.endif
+
+.if ${PORT_OPTIONS:MGSSAPI_BASE} && "${OPENSSL_PORT:tl}" == "security/libressl"
+IGNORE=		Base GSS-API conflicts with LibreSSL
 .endif
 
 post-patch:
