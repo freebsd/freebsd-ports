@@ -57,6 +57,52 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d08f6002-c588-11e4-8495-6805ca0b3d42">
+    <topic>rt -- Remote DoS, Information disclosure and Session Hijackingvulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.10</lt></range>
+      </package>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0.0</ge><lt>4.0.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html">
+	  <p>RT 3.0.0 and above, if running on Perl 5.14.0 or higher,
+	    are vulnerable to a remote denial-of-service via the email
+	    gateway; any installation which accepts mail from untrusted
+	    sources is vulnerable, regardless of the permissions
+	    configuration inside RT. This denial-of-service may
+	    encompass both CPU and disk usage, depending on RT's logging
+	    configuration. This vulnerability is assigned
+	    CVE-2014-9472.</p>
+	  <p>RT 3.8.8 and above are vulnerable to an information
+	    disclosure attack which may reveal RSS feeds URLs, and thus
+	    ticket data; this vulnerability is assigned
+	    CVE-2015-1165. RSS feed URLs can also be leveraged to
+	    perform session hijacking, allowing a user with the URL to
+	    log in as the user that created the feed; this vulnerability
+	    is assigned CVE-2015-1464.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html</url>
+      <cvename>CVE-2014-9472</cvename>
+      <cvename>CVE-2015-1165</cvename>
+      <cvename>CVE-2015-1464</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-26</discovery>
+      <entry>2015-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81b4c118-c586-11e4-8495-6805ca0b3d42">
     <topic>phpMyAdmin -- Risk of BREACH attack due to reflected parameter</topic>
     <affects>
