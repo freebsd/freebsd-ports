@@ -1,39 +1,80 @@
 # $FreeBSD$
 
 PORTNAME=	wildmidi
-PORTVERSION=	0.2.3.5
-PORTREVISION=	2
+PORTVERSION=	0.3.8
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Simple software midi player and core softsynth library
 
 # player: GPLv3, library: LGPL3
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	multi
+LICENSE=	LGPL3
 
-MAKE_JOBS_UNSAFE=	yes
-
-USES=		compiler gmake libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	Mindwerks
+GH_PROJECT=	wildmidi
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION:R}
+GH_COMMIT=	de35d7f
+USES=		gmake cmake:outsource
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=	yes
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	ALSA OSS OPENAL OPENALSOFT
+OPTIONS_DEFINE=	PLAYER PLAYERSTATIC STATIC
+OPTIONS_DEFAULT=	ALSA PLAYER
 
-.if ${COMPILER_TYPE} == clang
-CONFIGURE_ARGS+=	--disable-optimize
+STATIC_CMAKE_ON=	-DWANT_STATIC:BOOL=ON
+STATIC_CMAKE_OFF=	-DWANT_STATIC:BOOL=OFF
+
+PLAYER_DESC=	Simple player
+PLAYERSTATIC_DESC=	Simple player using STATIC libWildMidi
+BACKEND_DESC=	Sound system PLAYER and PLAYERSTATIC uses
+PLAYER_CMAKE_ON=	-DWANT_PLAYER:BOOL=ON
+PLAYER_CMAKE_OFF=	-DWANT_PLAYER:BOOL=OFF
+PLAYERSTATIC_CMAKE_ON=	-DWANT_PLAYERSTATIC:BOOL=ON
+PLAYERSTATIC_CMAKE_OFF=	-DWANT_PLAYERSTATIC:BOOL=OFF
+ALSA_CMAKE_ON=	-DWANT_ALSA:BOOL=ON
+ALSA_CMAKE_OFF=	-DWANT_ALSA:BOOL=OFF
+OSS_CMAKE_ON=	-DWANT_OSS:BOOL=ON
+OSS_CMAKE_OFF=	-DWANT_OSS:BOOL=OFF
+OPENALSOFT_DESC=	OpenAL support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPLAYER} || ${PORT_OPTIONS:MPLAYERSTATIC}
+LICENSE+=	GPLv3
+LICENSE_COMB=	multi
+CMAKE_ARGS+=	-DWANT_OPENAL:BOOL=OFF
+.  if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+.  elif ${PORT_OPTIONS:MOPENALSOFT}
+LIB_DEPENDS+=	libopenal.so:${PORTSDIR}/audio/openal-soft
+CMAKE_ARGS+=	-DWANT_OPENAL:BOOL=ON
+.  elif ${PORT_OPTIONS:MOPENAL}
+LIB_DEPENDS+=	libopenal.so:${PORTSDIR}/audio/openal
+CMAKE_ARGS+=	-DWANT_OPENAL:BOOL=ON
+.  endif
 .endif
 
 post-patch:
-		@${REINPLACE_CMD} -e 's@/etc/@${DATADIR}/@' \
-			${WRKSRC}/docs/wildmidi.1 \
-			${WRKSRC}/docs/wildmidi.cfg.5
-		@${REINPLACE_CMD} -e 's@/usr/local/share/wildmidi/@${DATADIR}/@' \
-			-e 's@default_timifityconf@default_wildmidiconf@' \
-			-e 's@$${\(.*\)-unset} = unset@x"$${\1}" = x@' \
-			${WRKSRC}/configure
-		@${REINPLACE_CMD} -e '/WM_MixerOptions/s/ \&\& / \& /' \
-			${WRKSRC}/src/wildmidi_lib.c
+	@${GREP} -L ${LOCALBASE} ${WRKSRC}/cfg/wildmidi.cfg | ${XARGS} \
+		${REINPLACE_CMD} -e "/^dir \/usr\/share\//{" \
+		-e "s|/usr/share/midi/freepats|${LOCALBASE}/share/freepats|;" \
+		-e "h; x; s|^|# |; s|freepats|guspat|; H; s|guspat|eawpats|; H;" \
+		-e "s|eawpats|eawplus|; H; x;}"
+	@${GREP} -L ${LOCALBASE} ${WRKSRC}/docs/man/man1/wildmidi.1 \
+		${WRKSRC}/docs/man/man5/wildmidi.cfg.5 \
+		${WRKSRC}/CMakeLists.txt | ${XARGS} \
+		${REINPLACE_CMD} -e 's@/etc/wildmidi/@${DATADIR}/@' \
+		-e 's@/etc/@${DATADIR}/@'
+	@${GREP} -l share/man ${WRKSRC}/src/CMakeLists.txt | ${XARGS} \
+		${REINPLACE_CMD} '/INSTALL/s@share/man@man@'
 
-.include <bsd.port.post.mk>
+pre-install:
+	@${RM} -f ${WRKSRC}/docs/man/man1/wildmidi.1${REINPLACE_ARGS:S/-i//} \
+		${WRKSRC}/docs/man/man5/wildmidi.cfg.5${REINPLACE_ARGS:S/-i//}
+	${MKDIR} ${STAGEDIR}${DATADIR} ; \
+	${CP} ${WRKSRC}/cfg/wildmidi.cfg ${STAGEDIR}${DATADIR}/wildmidi.cfg.sample
+
+.include <bsd.port.mk>
