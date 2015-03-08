@@ -1,0 +1,15 @@
+--- xdrvr.c	2015-03-05 06:26:17.000000000 -0500
++++ xdrvr.c	2015-03-08 18:19:13.000000000 -0400
+@@ -86,4 +86,6 @@
+    (StructureNotifyMask | ButtonPressMask | ExposureMask | KeyPressMask )
+ 
++static int def_colors(void);
++
+ static int            version   = 70607;
+ static int            lastevent = -1;
+@@ -104,4 +106,5 @@
+ Bool                  predproc(Display *display, XEvent *event, char *arg);
+ /***************************************************************************/
++int
+ xwin_(int *x, int *y, int * z, int *ind, char *buf) {
+   static Window        theWindow;		/* X stuff - some	*/
