@@ -1,0 +1,12 @@
+bin/hdr
+%%SITE_PERL%%/Data/HexDump/Range.pm
+%%SITE_PERL%%/Data/HexDump/Range/Format.pm
+%%SITE_PERL%%/Data/HexDump/Range/Gather.pm
+%%SITE_PERL%%/Data/HexDump/Range/Object.pm
+%%SITE_PERL%%/Data/HexDump/Range/Split.pm
+%%PERL5_MAN3%%/Data::HexDump::Range.3.gz
+%%PERL5_MAN3%%/Data::HexDump::Range::Format.3.gz
+%%PERL5_MAN3%%/Data::HexDump::Range::Gather.3.gz
+%%PERL5_MAN3%%/Data::HexDump::Range::Object.3.gz
+%%PERL5_MAN3%%/Data::HexDump::Range::Split.3.gz
+man/man1/hdr.1.gz
