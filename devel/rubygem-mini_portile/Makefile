@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mini_portile
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simplistic port-like solution for ruby gem developers
+
+LICENSE=	MIT
 
 # Depends on git-apply(1).
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
