@@ -473,6 +473,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.1.8/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.1.9/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.10/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.4/content
@@ -481,17 +482,18 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.7/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.8/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_transactions_table.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink-cgm-table
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink-transactions-table
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/split-out-cf-categories
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/switch-templates-to
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/time-worked-history.pl
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/time-worked-history
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-articles
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
 %%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_portlets.pod
 @dir %%DATADIR%%/etc
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
