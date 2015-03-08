@@ -3,7 +3,7 @@
 
 PORTNAME=	dashboard
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://xfdashboard.froevel.de/releases/
 PKGNAMEPREFIX=	xfce4-
@@ -27,5 +27,9 @@ USE_XFCE=	garcon
 USE_XORG=	x11 xcomposite xdamage
 USE_GL=	gl
 INSTALLS_ICONS=	yes
+
+post-patch:
+	${FIND} ${WRKSRC}/data/themes -type f -name '*.css' \
+		| ${XARGS} ${REINPLACE_CMD} -i "" 's|gtk-home|go-home|'
 
 .include <bsd.port.mk>
