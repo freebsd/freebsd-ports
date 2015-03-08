@@ -1,0 +1,6 @@
+AWS::SES is a Ruby library for Amazon's Simple Email Service's REST API [1].
+
+[1] https://aws.amazon.com/ses/
+
+WWW: https://github.com/drewblas/aws-ses
+RG:  https://rubygems.org/gems/aws-ses
