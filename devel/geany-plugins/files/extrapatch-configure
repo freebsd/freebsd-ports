@@ -1,6 +1,6 @@
---- ./configure.orig	2013-03-10 17:01:27.000000000 +0000
-+++ ./configure	2013-03-21 00:22:04.580741068 +0000
-@@ -21101,69 +21101,3 @@
+--- configure.orig	2014-04-13 17:12:39 UTC
++++ configure
+@@ -23223,69 +23223,3 @@ fi
      expanded_docdir=$(eval echo $expanded_docdir)
  
  
@@ -9,7 +9,7 @@
 -${PACKAGE}-${VERSION}
 -
 -  Build Environment:
--    Geany version:                ${GEANY_VERSION}
+-    Geany version:                ${GEANY_VERSION} (GTK${GP_GTK_VERSION_MAJOR})
 -    Install prefix:               ${prefix}
 -    Datadir:                      ${expanded_datadir}/${PACKAGE_TARNAME}
 -    Libdir:                       ${expanded_libdir}/${PACKAGE_TARNAME}

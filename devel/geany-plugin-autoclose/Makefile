@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugin-pretty-printer
+PORTNAME=	geany-plugin-autoclose
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
