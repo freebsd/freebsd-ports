@@ -128,6 +128,7 @@ include/embb/mtapi/action.h
 include/embb/mtapi/c/mtapi.h
 include/embb/mtapi/continuation.h
 include/embb/mtapi/execution_policy.h
+include/embb/mtapi/internal/cmake_config.h
 include/embb/mtapi/group.h
 include/embb/mtapi/mtapi.h
 include/embb/mtapi/node.h
@@ -234,7 +235,6 @@ lib/libembb_mtapi_cpp.a
 %%DOCS%%%%DOCSDIR%%/reference/DoxygenHTMLStyle.css
 %%DOCS%%%%DOCSDIR%%/reference/DoxygenLayout.xml
 %%DOCS%%%%DOCSDIR%%/reference/embb.dox
-%%DOCS%%%%DOCSDIR%%/reference/header.html
 %%DOCS%%%%DOCSDIR%%/reference/index.html
 %%DOCS%%%%DOCSDIR%%/tutorial/content/algorithms.tex
 %%DOCS%%%%DOCSDIR%%/tutorial/content/containers.tex
