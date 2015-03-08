@@ -3,12 +3,16 @@
 
 PORTNAME=	ucc
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	ucc160
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C Compiler Which Implements the ANSI C89 Standard
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 USES=		dos2unix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -25,5 +29,8 @@ post-patch:	.SILENT
 		${WRKSRC}/driver/Makefile \
 		${WRKSRC}/ucl/Makefile
 	${REINPLACE_CMD} -e 's#$${PREFIX}#${STAGEDIR}${PREFIX}#g' ${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
