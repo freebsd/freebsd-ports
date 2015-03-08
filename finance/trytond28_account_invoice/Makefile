@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	trytond28_account_invoice
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.8
 CATEGORIES=	finance python
-MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_account_invoice/ \
+MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_account_invoice-${PORTVERSION}
 

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	trytond28_analytic_account
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	finance python
-MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_analytic_account/ \
+MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_analytic_account-${PORTVERSION}
 

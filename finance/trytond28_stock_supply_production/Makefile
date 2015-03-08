@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	trytond28_stock_supply_production
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	finance python
-MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_stock_supply_production/ \
+MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_stock_supply_production-${PORTVERSION}
 
