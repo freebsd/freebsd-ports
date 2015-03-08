@@ -3,7 +3,7 @@
 
 PORTNAME=	qlogtools
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for processing logs from qmail and other packages
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	NEWS README
 
@@ -24,13 +25,8 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && ./installer
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
