@@ -4,17 +4,10 @@
 
 TARGET=	platon
 OBJS=	platon.o xdrvr.o
-FOPT=	${FFLAGS}
-COPT=	${CFLAGS} -I%%LOCALBASE%%/include
-LOPT=	-L%%LOCALBASE%%/lib -lX11
+CFLAGS+=-I${LOCALBASE}/include
+LDADD=	-L${LOCALBASE}/lib -lX11
 
 all:	${OBJS}
-	${FC} -o ${TARGET} ${OBJS} ${LOPT}
-
-platon.o:	platon.f
-	${FC} ${FOPT} -c $<
-
-xdrvr.o:	xdrvr.c
-	${CC} ${COPT} -c $<
+	${FC} -o ${TARGET} ${OBJS} ${LDADD}
 
 #f77 -o platon platon.f xdrvr.c -lX11
