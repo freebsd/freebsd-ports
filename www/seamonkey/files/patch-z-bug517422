@@ -154,7 +154,7 @@ index 87db361..7947626 100644
 +MOZ_NATIVE_VORBIS=)
 +
 +if test -n "$MOZ_NATIVE_VORBIS"; then
-+    PKG_CHECK_MODULES(MOZ_VORBIS, vorbis vorbisenc >= 1.3.4)
++    PKG_CHECK_MODULES(MOZ_VORBIS, vorbis vorbisenc >= 1.3.5)
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_VORBIS)
