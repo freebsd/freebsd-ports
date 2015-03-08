@@ -3,6 +3,7 @@
 
 PORTNAME=	seom
 PORTVERSION=	2010011201
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/bms
 
@@ -10,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time capture library for OpenGL applications
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything except i386 and amd64
@@ -28,6 +30,12 @@ BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 
 post-patch:
 	@${ECHO_CMD} 1.0-196 > ${WRKSRC}/VERSION
+
+post-install:
+.for f in seom-filter seom-server seom-player
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libseom.so
 
 #
 # To roll snapshot: as bms: make BOOTSTRAP=defined fetch
