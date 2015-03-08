@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	jailkit
-PORTVERSION=	2.15
-PORTREVISION=	3
+PORTVERSION=	2.17
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utilities to limit user account
+MAINTAINER=	woodsb02@gmail.com
+COMMENT=	Utilities to limit user accounts to specific files and/or commands
 
 LICENSE=	BSD3CLAUSE
 
