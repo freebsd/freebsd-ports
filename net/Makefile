@@ -1027,6 +1027,7 @@
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-bunny060
     SUBDIR += rubygem-connection_pool
+    SUBDIR += rubygem-dogapi
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
     SUBDIR += rubygem-epp-client-afnic
