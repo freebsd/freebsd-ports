@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81b4c118-c586-11e4-8495-6805ca0b3d42">
+    <topic>phpMyAdmin -- Risk of BREACH attack due to reflected parameter</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.3.0</ge><lt>4.3.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php">
+	  <p>Risk of BREACH attack due to reflected parameter.</p>
+	  <p>With a large number of crafted requests it was possible to infer
+	    the CSRF token by a BREACH attack.</p>
+	  <p>Mitigation factor: this vulnerability can only be exploited in
+	    the presence of another vulnerability that allows the attacker to
+	    inject JavaScript into victim's browser.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php</url>
+      <cvename>CVE-2015-2206</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-04</discovery>
+      <entry>2015-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0cae920-c4e9-11e4-898e-90e6ba741e35">
     <topic>mono -- TLS bugs</topic>
     <affects>
