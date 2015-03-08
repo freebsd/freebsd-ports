@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-credential
-PORTVERSION=	0.13.8
+PORTVERSION=	0.13.17
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-metasploit-concern>=0.3.0:${PORTSDIR}/security/rubygem-metasploit-concern \
-		rubygem-metasploit_data_models>=0.21.0:${PORTSDIR}/security/rubygem-metasploit_data_models \
+		rubygem-metasploit_data_models>=0.22.6:${PORTSDIR}/security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0.28.0:${PORTSDIR}/security/rubygem-metasploit-model \
 		rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \

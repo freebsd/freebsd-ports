@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recog
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
