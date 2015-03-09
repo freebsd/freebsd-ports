@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmogstored
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bogomips.org/cmogstored/files/
 
@@ -19,6 +19,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 		--mandir=${PREFIX}/man
 USE_RC_SUBR=	cmogstored
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/\(for ac_func in .*\)ppoll/\1/' \
+		${WRKSRC}/configure
 
 regression-test: build
 	${MAKE} -C ${WRKSRC} check
