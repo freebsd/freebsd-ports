@@ -33,10 +33,6 @@ PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-BROKEN=		Does not compile with clang (include <list>)
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		makeinfo
 INFO=		tora
