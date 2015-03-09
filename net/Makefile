@@ -514,6 +514,7 @@
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-JavaScript-RPC
+    SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
     SUBDIR += p5-MaxMind-DB-Writer
