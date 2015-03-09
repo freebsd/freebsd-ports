@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cutter
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,10 +18,9 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	intlhack glib20 gtk20
 USE_LDCONFIG=	yes
-WANT_GSTREAMER=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	GOFFICE GSTREAMER SOUP LCOV
+OPTIONS_DEFINE=	GOFFICE SOUP LCOV
 GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov
@@ -42,22 +40,13 @@ CONFIGURE_ARGS+=--disable-goffice
 PLIST_SUB+=	GOFFICE="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGSTREAMER}
-CONFIGURE_ARGS+=--enable-gstreamer
-USE_GSTREAMER=yes
-PLIST_SUB+=	GST="" GST_VERSION="${GST_VERSION}"
-.else
-CONFIGURE_ARGS+=--disable-gstreamer
-PLIST_SUB+=	GST="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MLCOV}
 RUN_DEPENDS+=	lcov:${PORTSDIR}/devel/lcov
 .endif
 
 .if ${PORT_OPTIONS:MSOUP}
 CONFIGURE_ARGS+=--enable-libsoup
-LIB_DEPENDS+=	libsoup-2.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 PLIST_SUB+=	SOUP=""
 .else
 CONFIGURE_ARGS+=--disable-libsoup
