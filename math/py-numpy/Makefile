@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
 		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
-		numpy-ref-${PORTVERSION}.pdf:doc \
-		numpy-user-${PORTVERSION}.pdf:doc
+		numpy-ref-${DOCVERSION}.pdf:doc \
+		numpy-user-${DOCVERSION}.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -35,6 +34,7 @@ PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
 
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
+DOCVERSION=	1.9.1
 
 ATLAS_LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
 ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
@@ -74,7 +74,7 @@ post-install:
 	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-user-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
