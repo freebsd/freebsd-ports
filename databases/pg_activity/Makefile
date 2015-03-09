@@ -22,7 +22,7 @@ GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	3b6b371
 
 USES=		python:2.6+
-USE_PYTHON=	autoplist autoplist noegginfo
+USE_PYTHON=	autoplist distutils noegginfo
 PYDISTUTILS_INSTALLARGS=	--with-man
 
 post-patch:
