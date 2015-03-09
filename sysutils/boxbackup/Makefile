@@ -3,7 +3,7 @@
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
@@ -20,7 +20,6 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader
 ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
-
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -101,6 +100,9 @@ post-configure:
 		${WRKSRC}/parcels/scripts/install-backup-*
 
 post-install:
+.for f in bbstoreaccounts bbackupctl bbstored bbackupd bbackupquery
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
+.endfor
 .if ${PORT_OPTIONS:MCLIENT}
 	@${MKDIR} -m 0700 ${STAGEDIR}/${PREFIX}/etc/boxbackup/bbackupd
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/periodic/monthly
@@ -109,7 +111,6 @@ post-install:
 .if ${PORT_OPTIONS:MSERVER}
 	@${MKDIR} -m 0700 ${STAGEDIR}/${PREFIX}/etc/boxbackup/bbstored
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 test:
 	 @${ECHO_CMD} "===> Running tests"
