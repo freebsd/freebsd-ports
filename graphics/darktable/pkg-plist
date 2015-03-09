@@ -154,7 +154,6 @@ share/applications/darktable.desktop
 %%DATADIR%%/kernels/soften.cl
 %%DATADIR%%/latex/photobook.cls
 %%LUA%%%%DATADIR%%/lua/darktable/debug.lua
-%%LUA%%%%DATADIR%%/lua/darktable/external/pygy_require/.gitignore
 %%LUA%%%%DATADIR%%/lua/darktable/external/pygy_require/README.md
 %%LUA%%%%DATADIR%%/lua/darktable/external/pygy_require/require.lua
 %%LUA%%%%DATADIR%%/lua/darktable/external/pygy_require/rockspecs/require-0.1.1-1.rockspec
