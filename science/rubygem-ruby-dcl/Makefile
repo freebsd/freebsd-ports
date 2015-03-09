@@ -3,7 +3,7 @@
 
 PORTNAME=	ruby-dcl
 PORTVERSION=	1.7.0.2
-CATEGORIES=	math rubygems
+CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	murashin@gfd-dennou.org
