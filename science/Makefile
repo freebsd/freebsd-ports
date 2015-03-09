@@ -161,6 +161,7 @@
     SUBDIR += rubygem-ai4r
     SUBDIR += rubygem-cdo
     SUBDIR += rubygem-netcdf
+    SUBDIR += rubygem-ruby-dcl
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware
     SUBDIR += sigrok-firmware-fx2lafw
