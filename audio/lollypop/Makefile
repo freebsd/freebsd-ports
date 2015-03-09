@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lollypop
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/${PORTVERSION}
@@ -35,7 +35,7 @@ python_CMD=	${PYTHON_CMD}
 GLIB_SCHEMAS=	org.gnome.Lollypop.gschema.xml
 
 OPTIONS_DEFINE=	PULSEAUDIO
-PULSEAUDIO_USE=	GSTREAMER1=pulse
+PULSEAUDIO_USE=	gstreamer1=pulse
 
 SUB_FILES=	pkg-message
 
