@@ -12,10 +12,6 @@ COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
 LICENSE=	GPLv2 # (or later)
 
-BROKEN=		Fails to configure
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-03-28
-
 LIB_DEPENDS=	libscintilla.so:${PORTSDIR}/x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -25,13 +21,14 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
 USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo glib20 pango
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include/scintilla -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lscintilla -lscintilla_lexers
+LDFLAGS+=	-lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo
 
 PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	postgresql
@@ -64,6 +61,8 @@ post-patch:
 		 /scintilla.a/s|^|#| ; \
 		 /\/scintilla\/include/s|^|#| ; \
 		 /ac_header/s|postgres.h|libpq-fe.h| ; \
+		 s|/usr/local|${PREFIX}| ; \
+		 s|-R|-Wl,-rpath=| ; \
 		 /^packagedatadir/s|=.*|=share/gtksql|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
