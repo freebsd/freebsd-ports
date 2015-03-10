@@ -203,6 +203,7 @@
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
     SUBDIR += py-spice-gtk
+    SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
