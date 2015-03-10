@@ -4,8 +4,8 @@
  #error __FreeBSD_version not defined!
  #endif
  
--#if defined(__FreeBSD_version) && __FreeBSD_version >= 1100000
-+#if defined(__FreeBSD_version) && __FreeBSD_version >= 1100000 && defined(PROC_REAP_ACQUIRE)
+-#if defined(__FreeBSD_version) && __FreeBSD_version >= 1001510
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1001510 && defined(PROC_REAP_ACQUIRE)
  
  #include <sys/procctl.h>
  
