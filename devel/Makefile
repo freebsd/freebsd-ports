@@ -897,6 +897,7 @@
     SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
+    SUBDIR += injeqt
     SUBDIR += insight
     SUBDIR += ioncube
     SUBDIR += ipython
