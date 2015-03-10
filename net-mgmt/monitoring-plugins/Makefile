@@ -3,7 +3,7 @@
 
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 
