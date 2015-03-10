@@ -3,13 +3,16 @@
 
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dock-like navigation bar
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
@@ -24,6 +27,7 @@ INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 AWN_DESKTOP?=	agnostic
 
