@@ -3,12 +3,15 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POV-Ray oriented modeller
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	lib3ds.so:${PORTSDIR}/graphics/lib3ds
 BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
@@ -34,6 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} '/DiscWithHoleFlag/d' ${WRKSRC}/src/tools/tool_disc.h
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/giram/0.3/modules/*.so
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${STAGEDIR}${EXAMPLESDIR}
 
