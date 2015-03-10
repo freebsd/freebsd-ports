@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-smartbookmark-plugin
-PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTVERSION=	0.4.6
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -19,6 +18,5 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USES=		pkgconfig gettext gmake libtool xfce tar:bzip2
 USE_XFCE=	panel
-USE_XORG=	ice
 
 .include <bsd.port.mk>
