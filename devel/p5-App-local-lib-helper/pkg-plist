@@ -1,0 +1,6 @@
+bin/local-lib-helper
+%%PERL5_MAN3%%/App::local::lib::helper.3.gz
+%%PERL5_MAN3%%/App::local::lib::helper::rationale.3.gz
+%%SITE_PERL%%/App/local/lib/helper.pm
+%%SITE_PERL%%/App/local/lib/helper/rationale.pod
+man/man1/local-lib-helper.1.gz
