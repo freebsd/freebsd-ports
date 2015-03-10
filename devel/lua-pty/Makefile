@@ -4,28 +4,26 @@
 PORTNAME=	pty
 PORTVERSION=	1.25
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://files.luaforge.net/releases/compat/Compat-5.1/Compat-5.1release5/:compat
-MASTER_SITE_SUBDIR= philip
+MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${GH_COMMIT}/src/lib/lua/pty/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
+DISTFILES=	pty.lua pty.c
+DIST_SUBDIR=	lua-${PORTNAME}-${GH_COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
-BROKEN=		doesn't fetch
-
 USES=		lua:51
+
+GH_COMMIT=	8323bb9
+MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ENV=	VPATH=${_DISTDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
 		%%LUA_MODLIBDIR%%/lpty.so
 
 do-extract:
-	@${MKDIR} ${WRKSRC}
-.for file in ${DISTFILES:C,:.*,,}
-	@${CP} ${DISTDIR}/${file} ${WRKSRC}/${file:C/\?.*$//}
-.endfor
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} -p ${_DISTFILES:S|^|${_DISTDIR}/|} ${WRKSRC}/
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
