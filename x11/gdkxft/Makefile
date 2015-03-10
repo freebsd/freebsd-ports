@@ -3,12 +3,15 @@
 
 PORTNAME=	gdkxft
 PORTVERSION=	1.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-aliased font support for gtk+
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 
@@ -32,6 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} 's/<regex\.h>/<gnuregex.h>/' ${WRKSRC}/src/gdkxft.c
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdkxft.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
