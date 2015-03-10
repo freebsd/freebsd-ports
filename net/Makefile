@@ -699,6 +699,7 @@
     SUBDIR += p5-Net-sFlow
     SUBDIR += p5-Net-uFTP
     SUBDIR += p5-NetAddr-IP-Count
+    SUBDIR += p5-NetAddr-MAC
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
     SUBDIR += p5-OurNet-BBS
