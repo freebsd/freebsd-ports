@@ -1510,6 +1510,7 @@
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
     SUBDIR += p5-App-cpanoutdated
+    SUBDIR += p5-App-local-lib-helper
     SUBDIR += p5-App-perlbrew
     SUBDIR += p5-App-scan_prereqs_cpanfile
     SUBDIR += p5-AppConfig
