@@ -25,12 +25,16 @@ USES=	pkgconfig gmake gettext-tools xfce tar:bzip2
 USE_XORG=	x11 sm
 
 CONFIGURE_ARGS+=--enable-gio-unix \
-	--enable-notifications \
-	--with-file-manager-fallback=Thunar
+	--enable-notifications
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		NLS THUNAR
+OPTIONS_DEFAULT=	THUNAR
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+THUNAR_USE=	xfce=thunar
+THUNAR_CONFIGURE_ENABLE=	thunarx
+THUNAR_CONFIGURE_WITH=	file-manager-fallback=Thunar
+THUNAR_DESC=	Thunar file manager support
 OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
