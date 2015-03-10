@@ -1,0 +1,10 @@
+The POSIX standard provides three functions for converting between integer
+epoch values and 6-component "broken-down" time representations.
+localtime and gmtime convert an epoch into the 6 components of seconds,
+minutes, hours, day of month, month and year, in either local timezone or UTC.
+The mktime function converts a local broken-down time into an epoch value.
+However, POSIX does not provide a UTC version of this.
+
+This module provides a function timegm which has this ability.
+
+WWW: https://metacpan.org/pod/Time::timegm
