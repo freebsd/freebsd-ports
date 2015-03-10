@@ -1,0 +1,11 @@
+%%SITE_ARCH%%/Barcode/ZBar.pm
+%%SITE_ARCH%%/Barcode/ZBar/Image.pod
+%%SITE_ARCH%%/Barcode/ZBar/ImageScanner.pod
+%%SITE_ARCH%%/Barcode/ZBar/Processor.pod
+%%SITE_ARCH%%/Barcode/ZBar/Symbol.pod
+%%SITE_ARCH%%/auto/Barcode/ZBar/ZBar.so
+%%PERL5_MAN3%%/Barcode::ZBar.3.gz
+%%PERL5_MAN3%%/Barcode::ZBar::Image.3.gz
+%%PERL5_MAN3%%/Barcode::ZBar::ImageScanner.3.gz
+%%PERL5_MAN3%%/Barcode::ZBar::Processor.3.gz
+%%PERL5_MAN3%%/Barcode::ZBar::Symbol.3.gz
