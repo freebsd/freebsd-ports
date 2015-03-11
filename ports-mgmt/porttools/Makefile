@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	porttools
-PORTVERSION=	1.03
+PORTVERSION=	1.03.1
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	xmj@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 LICENSE=	BSD2CLAUSE
@@ -17,7 +17,7 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xmj
-GH_COMMIT=	521bace
+GH_COMMIT=	a733b7c
 GH_TAGNAME=	${GH_COMMIT}
 
 # Make the version information of porttools itself
