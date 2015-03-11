@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.2.l.git20150204
+DISTVERSION=	0.2.o.git20150311
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	notsecure
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	621727d
+GH_COMMIT=	f24082d
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
@@ -36,6 +36,8 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_MAKE_ARGS_OFF=	DBUS=0
 
 post-install:
+	${MV} ${WRKSRC}/utox.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${RM} -rf ${STAGEDIR}${MAN1PREFIX}/share/man
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/utox
 
 .include <bsd.port.mk>
