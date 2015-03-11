@@ -36,8 +36,8 @@ PYDISTUTILS_PKGNAME=	xpra_all
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/xpra/xorg.conf \
-	    ${STAGEDIR}/${ETCDIR}/xorg.conf.sample
+	    ${STAGEDIR}${ETCDIR}/xorg.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/build/xpra.conf \
-	    ${STAGEDIR}/${ETCDIR}/xpra.conf.sample
+	    ${STAGEDIR}${ETCDIR}/xpra.conf.sample
 
 .include <bsd.port.mk>
