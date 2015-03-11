@@ -10,6 +10,3 @@ share/mime-info/parano.mime
 %%DATADIR%%/parano-icon.png
 %%DATADIR%%/parano.glade
 share/pixmaps/parano-icon.png
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
