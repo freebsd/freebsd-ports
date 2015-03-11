@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono-basic
-PORTVERSION=	2.10
+PORTVERSION=	3.8
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
