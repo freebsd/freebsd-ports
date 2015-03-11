@@ -90,9 +90,6 @@ CONFIGURE_ARGS+=	--enable-dtrace
 .else
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
-.if ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${FILESDIR}/extra-vm_dump.c
-.endif
 .endif
 
 CONFIGURE_ENV=	debugflags=

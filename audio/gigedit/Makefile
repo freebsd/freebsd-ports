@@ -3,12 +3,15 @@
 
 PORTNAME=	gigedit
 PORTVERSION=	0.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instrument editor for gig files
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libgig.so:${PORTSDIR}/audio/libgig \
@@ -24,6 +27,7 @@ USES=		gettext gmake pkgconfig libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	intltool
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 

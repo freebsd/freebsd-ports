@@ -622,6 +622,7 @@
     SUBDIR += osgearth
     SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
+    SUBDIR += p5-Barcode-ZBar
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
     SUBDIR += p5-Cairo
@@ -1003,6 +1004,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += variety
     SUBDIR += vcg
     SUBDIR += viewnior
     SUBDIR += vigra

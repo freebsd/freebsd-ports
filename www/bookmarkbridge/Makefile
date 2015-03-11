@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronize bookmarks between multiple browsers
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake perl5 pkgconfig shebangfix
 SHEBANG_FILES=	bookmarkbridge/docs/autodocs.pl
 USE_XORG=	x11 ice xext

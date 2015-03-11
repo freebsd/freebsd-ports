@@ -1778,3 +1778,4 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/util/WorkingGZIPInputStream.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/util/WorkingGZIPInputStream.java
 bin/act
 bin/art
+@dir artemis-%%PORTVERSION%%/uk/ac/sanger/ibatis

@@ -3,7 +3,7 @@
 
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 
@@ -19,6 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile-2.0.so:${PORTSDIR}/lang/guile2
 
 .include <bsd.port.mk>

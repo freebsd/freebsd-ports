@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmogstored
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bogomips.org/cmogstored/files/
 

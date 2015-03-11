@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -15,30 +15,19 @@ COMMENT=	Clipboard manager for the Xfce panel
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	QRCODE UNIQUE
+OPTIONS_DEFAULT=	UNIQUE
 QRCODE_DESC=	QR Code support
 UNIQUE_DESC=	Unique (single instance) support
+QRCODE_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+QRCODE_CONFIGURE_ENABLE=	libqrencode
+UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+UNIQUE_CONFIGURE_ENABLE=	unique
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack glib20
-USE_XFCE=	configenv libexo libmenu libutil panel xfconf
+USE_XFCE=	panel
 USE_XORG=	xtst xproto
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 INSTALLS_ICONS=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MUNIQUE}
-LIB_DEPENDS+=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-CONFIGURE_ARGS+=	--enable-unique
-.else
-CONFIGURE_ARGS+=	--disable-unique
-.endif
-
-.if ${PORT_OPTIONS:MQRCODE}
-LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
-CONFIGURE_ARGS+=	--enable-libqrencode
-.else
-CONFIGURE_ARGS+=	--disable-libqrencode
-.endif
 
 .include <bsd.port.mk>

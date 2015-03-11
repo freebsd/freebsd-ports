@@ -31,6 +31,7 @@
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += enscript
+    SUBDIR += eric6
     SUBDIR += eterm
     SUBDIR += fcitx
     SUBDIR += fcitx-chewing

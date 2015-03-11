@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.23.1
-PORTREVISION=	2
+PORTVERSION=	1.24.1
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -15,30 +14,23 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gtk20
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext-tools \
+		gmake libtool pathfix pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	VTE NLS DOCS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	VTE
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+
 VTE_DESC=	Embedded virtual terminal
+VTE_CONFIGURE_ENABLE=	vte
+VTE_USE=	GNOME=vte
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVTE}
-USE_GNOME+=	vte
-CONFIGURE_ARGS+=--enable-vte
-.else
-CONFIGURE_ARGS+=--disable-vte
-.endif
 
 post-patch:
 .if !${PORT_OPTIONS:MDOCS}
@@ -47,8 +39,5 @@ post-patch:
 .if !${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/geany.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>

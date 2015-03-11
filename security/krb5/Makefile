@@ -26,11 +26,15 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			gettext gmake perl5 libtool:build
+USES=			cpe gettext gmake perl5 libtool:build
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
+
+CPE_VENDOR=		mit
+CPE_VERSION=		5-${PORTVERSION}
+CPE_PRODUCT=		kerberos
 
 OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP READLINE
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML

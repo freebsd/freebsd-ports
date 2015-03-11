@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.12.6
-PORTREVISION=	2
+PORTVERSION=	0.14.20
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -22,19 +21,23 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
 		pulseaudio:${PORTSDIR}/audio/pulseaudio \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass
-LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264 \
+LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx
+		libvpx.so:${PORTSDIR}/multimedia/libvpx \
+		libx264.so:${PORTSDIR}/multimedia/libx264 \
+		libx265.so:${PORTSDIR}/multimedia/x265
 
-USES=		pkgconfig python tar:bzip2
+USES=		pkgconfig python tar:xz
 USE_PYTHON=	distutils
-USE_XORG=	x11 xtst xfixes xcomposite xdamage xrandr
+USE_XORG=	x11 xcomposite xdamage xfixes xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
 
 PYDISTUTILS_PKGNAME=	xpra_all
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/xpra/Xvfb/xpra.conf ${STAGEDIR}/${ETCDIR}/xpra.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/xpra/xorg.conf ${STAGEDIR}/${ETCDIR}/xorg.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/xpra/xorg.conf \
+	    ${STAGEDIR}${ETCDIR}/xorg.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/build/xpra.conf \
+	    ${STAGEDIR}${ETCDIR}/xpra.conf.sample
 
 .include <bsd.port.mk>

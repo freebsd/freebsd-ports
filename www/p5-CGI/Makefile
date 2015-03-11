@@ -16,6 +16,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	p5-CGI.pm-[1-3]*
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
 USE_PERL5=	configure
 

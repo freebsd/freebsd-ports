@@ -3,16 +3,16 @@
 
 PORTNAME=	bmpanel2
 DISTVERSION=	2.1pre1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	GOOGLE_CODE
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	danfe
+PATCH_SITES=	LOCAL/danfe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake pkgconfig
 USE_GNOME=	pango
@@ -35,5 +35,8 @@ post-patch:
 # Disable unused optional features (and thus unbreak "make clean")
 	@${REINPLACE_CMD} -e '/^OPTION/s, ON, OFF,' ${WRKSRC}/CMakeLists.txt
 	@${RM} -f ${WRKSRC}/themes/striped/theme.orig
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmpanel2
 
 .include <bsd.port.mk>

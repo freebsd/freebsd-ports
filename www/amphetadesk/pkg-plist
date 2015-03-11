@@ -39,9 +39,3 @@ bin/AmphetaDesk-real
 %%DATADIR%%/templates/default/popup.html
 %%DATADIR%%/templates/default/tpl_footer.html
 %%DATADIR%%/templates/default/tpl_header.html
-@dirrm %%DATADIR%%/lists
-@dirrm %%DATADIR%%/templates/default/gui
-@dirrm %%DATADIR%%/templates/default/images
-@dirrm %%DATADIR%%/templates/default
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%

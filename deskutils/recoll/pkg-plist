@@ -20,6 +20,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/fields
+%%DATADIR%%/examples/fragbuts.xml
 %%DATADIR%%/examples/mimeconf
 %%DATADIR%%/examples/mimemap
 %%DATADIR%%/examples/mimeview
@@ -53,6 +54,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/filters/rcllatinstops.zip
 %%DATADIR%%/filters/rcllyx
 %%DATADIR%%/filters/rclman
+%%DATADIR%%/filters/rclmpdf
 %%DATADIR%%/filters/rclnull
 %%DATADIR%%/filters/rclokulnote
 %%DATADIR%%/filters/rclopxml
@@ -113,6 +115,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
 %%DATADIR%%/translations/recoll_lt.qm
+%%DATADIR%%/translations/recoll_pl.qm
 %%DATADIR%%/translations/recoll_ru.qm
 %%DATADIR%%/translations/recoll_tr.qm
 %%DATADIR%%/translations/recoll_uk.qm

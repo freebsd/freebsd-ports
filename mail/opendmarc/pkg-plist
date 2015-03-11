@@ -10,7 +10,7 @@ etc/mail/opendmarc.conf.sample
 include/opendmarc/dmarc.h
 lib/libopendmarc.a
 lib/libopendmarc.so.2
-lib/libopendmarc.so.2.0.0
+lib/libopendmarc.so.2.0.1
 lib/libopendmarc.so
 sbin/opendmarc
 sbin/opendmarc-check

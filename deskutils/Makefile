@@ -103,6 +103,7 @@
     SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gruler
+    SUBDIR += gsimplecal
     SUBDIR += gtg
     SUBDIR += gtimer
     SUBDIR += gtodo
@@ -202,6 +203,7 @@
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
     SUBDIR += py-spice-gtk
+    SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel

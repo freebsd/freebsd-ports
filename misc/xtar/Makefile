@@ -3,10 +3,9 @@
 
 PORTNAME=	xtar
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	MASTER_SITE_XCONTRIB/utilities
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file
@@ -29,5 +28,8 @@ post-patch:
 		${WRKSRC}/Makefile.noimake
 	@${REINPLACE_CMD} -e 's/pipe\.c/& regexpr.c/' \
 		${WRKSRC}/common/Makefile.noimake
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

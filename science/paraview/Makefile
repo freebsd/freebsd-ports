@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paraview
-PORTVERSION=	4.1.0
-PORTREVISION=	9
+PORTVERSION=	4.3.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}-source
@@ -35,7 +34,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 CONFLICTS_BUILD=	protobuf*
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguist_build assistant_run qt3support \
+		linguisttools_build assistant_run qt3support \
 		dbus designer gui help-tools network script \
 		sql svg xml webkit assistantclient clucene \
 		xmlpatterns xmlpatterns-tool help
@@ -43,7 +42,8 @@ USE_GL=		yes
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
-USES=		alias cmake:outsource execinfo gmake python shebangfix
+USES=		alias desktop-file-utils cmake:outsource execinfo gmake python shebangfix
+INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
@@ -81,7 +81,7 @@ GL2PS_DESC=	Install support conversion OpenGL to PostScript
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 
 VERMAJORMINOR=	${PORTVERSION:R}
-WRKSRC=		${WRKDIR}/ParaView-v${PORTVERSION}
+WRKSRC=		${WRKDIR}/ParaView-v${PORTVERSION}-source
 
 .include <bsd.port.options.mk>
 
@@ -109,7 +109,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${PATCH_WRKSRC}/VTK/IO/Image/vtkPNGReader.cxx
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|'	\
-		${PATCH_WRKSRC}/VTK/Testing/Core/vtk_site_history.py
+		${PATCH_WRKSRC}/VTK/Utilities/Maintenance/vtk_site_history.py
 
 post-install:
 .for c2f in ${CMAKE2INST}

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	monitoring-plugins
-PORTVERSION=	2.0
-PORTREVISION=	7
+PORTVERSION=	2.1.1
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 

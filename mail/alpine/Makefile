@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-PORTVERSION=	2.11
-PORTREVISION?=	2
+PORTVERSION=	2.20
+PORTREVISION?=	0
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
 DIST_SUBDIR=	alpine-${PORTVERSION}
@@ -38,11 +38,12 @@ GNU_CONFIGURE=	yes
 .if !defined(PICO_ALPINE_SLAVE)
 
 PORTDOCSbase=	LICENSE NOTICE README
-PORTDOCSdoc=	brochure.txt tech-notes.txt
+PORTDOCSdoc=	brochure.txt
 PORTDOCShtml=	tech-notes/background.html tech-notes/cmd-line.html \
 		tech-notes/config-notes.html tech-notes/config.html \
 		tech-notes/index.html tech-notes/installation.html \
-		tech-notes/introduction.html tech-notes/low-level.html
+		tech-notes/introduction.html tech-notes/low-level.html \
+		tech-notes/tech-notes.txt
 PORTDOCS=	${PORTDOCSbase} ${PORTDOCSdoc} ${PORTDOCShtml}
 
 CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
@@ -113,7 +114,7 @@ CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 .endif
 
 .if ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-2.11/
+PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
 PATCHFILES+=		maildir.patch.gz
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
@@ -142,7 +143,9 @@ post-patch:
 	    ${WRKSRC}/imap/src/osdep/unix/Makefile.presed \
 	    > ${WRKSRC}/imap/src/osdep/unix/Makefile
 	@for i in ${WRKSRC}/README ${WRKSRC}/doc/alpine.1 \
-	    ${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
+	    ${WRKSRC}/doc/*.txt \
+	    ${WRKSRC}/doc/tech-notes/*.txt \
+	    ${WRKSRC}/doc/tech-notes/*.html \
 	    ${WRKSRC}/pith/pine.hlp ; do \
 		${CP} $$i $$i.presed ; \
 		${SED} -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \

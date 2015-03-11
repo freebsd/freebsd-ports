@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-fsguard-plugin
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -15,23 +14,17 @@ COMMENT=	Panel plugin which displays free space of mountpoint
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
-USE_XFCE=	configenv libmenu libutil panel
+USE_XFCE=	panel
 USE_XORG=	x11
 
 OPTIONS_DEFINE= NLS
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 .if empty(PORT_OPTIONS:MNLS)

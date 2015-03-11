@@ -3,7 +3,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	0.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	http://freenet.mcnabhosting.com/python/pybison/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-based parsing at the speed of C
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 
@@ -34,6 +35,7 @@ BROKEN=		Does not compile on ia64
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bison_.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

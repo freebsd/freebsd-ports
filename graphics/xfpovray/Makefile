@@ -3,7 +3,7 @@
 
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}
@@ -12,18 +12,20 @@ MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
-BROKEN=		Fails to link
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-03-28
-
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
-USES=		imake tar:tgz
+USES=		tar:tgz uidfix
 USE_XORG=	x11 xext xpm
-MAKE_JOBS_UNSAFE=	yes
+MAKEFILE=	${FILESDIR}/BSDmakefile
+MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	@${REINPLACE_CMD} -e "s|fl_drw_box|fl_draw_box|g;"	\
+		${WRKSRC}/flx/flx_return_button/flx_return_button.c
+
+post-install:
+	${MV} ${WRKSRC}/help ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

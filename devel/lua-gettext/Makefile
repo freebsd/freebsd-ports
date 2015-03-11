@@ -5,34 +5,32 @@ PORTNAME=	gettext
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= philip
+MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${GH_COMMIT}/src/lib/lua/gettext/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
+DISTFILES=	lua_gettext.c gettext.lua
+DIST_SUBDIR=	lua-${PORTNAME}-${GH_COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext binding for Lua 5
-
-BROKEN=		doesn't fetch
 
 USES=		gettext lua:51
 
 CVER=		1.15
 LVER=		${PORTVERSION}
+GH_COMMIT=	8323bb9
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
 		%%LUA_MODLIBDIR%%/lgettext.so
+MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ENV+=	VPATH=${_DISTDIR}
+NO_WRKSUBDIR=	yes
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-.for file in ${DISTFILES}
-	${CP} ${DISTDIR}/${file} ${WRKSRC}/${file:C/\?.*$//}
-.endfor
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	# Bulding straight from ${_DISTDIR}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_DATA} ${_DISTDIR}/gettext.lua ${STAGEDIR}${LUA_MODSHAREDIR}
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${STAGEDIR}${LUA_MODLIBDIR}
 

@@ -17,11 +17,12 @@ LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
 USE_CSTD=	c89
 GNU_CONFIGURE=	yes
 USE_XORG=	xau
-USES=		gmake shebangfix
+USES=		cpe gmake shebangfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		lsh
+CPE_VENDOR=	gnu
 
 SHEBANG_FILES=	src/lcp
 

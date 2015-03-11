@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	opendmarc
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			${PORTNAME}/Previous%20Releases
 
-MAINTAINER=	jaap@NLnetLabs.nl
+MAINTAINER=	freebsd@gushi.org
 COMMENT=	DMARC library and milter implementation
 
 LICENSE=		BSD3CLAUSE SENDMAIL

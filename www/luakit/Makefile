@@ -3,13 +3,14 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2012.09.13r1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, small, webkit based browser framework extensible by Lua
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
@@ -55,5 +56,8 @@ post-patch:
 		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \
 		${WRKSRC}/build-utils/gentokens.lua
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/luakit
 
 .include <bsd.port.mk>

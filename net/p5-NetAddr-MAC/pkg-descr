@@ -1,0 +1,10 @@
+This module provides an interface to deal with Media Access Control (or MAC)
+addresses. These are the addresses that uniquely identify a device on various
+layer 2 networks. Although the most common case is hardware addresses
+on Ethernet network cards, there are a variety of devices that use this
+system of addressing.
+
+This module supports both EUI-48 and EUI-64 addresses and implements an OO
+and a functional interface.
+
+WWW: http://search.cpan.org/dist/NetAddr-MAC/

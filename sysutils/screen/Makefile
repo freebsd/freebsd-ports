@@ -35,7 +35,9 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 
 OPTIONS_SUB=
 
-USES=		gmake
+USES=		gmake cpe
+
+CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 

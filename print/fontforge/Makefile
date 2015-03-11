@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-DISTVERSION=	20141230
+DISTVERSION=	20150228
 CATEGORIES=	print
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge
-GH_COMMIT=	eb11c93
+GH_COMMIT=	53e171b
 
 USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv libtool pkgconfig python shared-mime-info
 USE_XORG=	x11 xi ice xkbui

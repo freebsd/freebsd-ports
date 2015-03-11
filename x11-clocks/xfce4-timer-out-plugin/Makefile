@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-time-out-plugin
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -17,8 +16,9 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
-USE_XFCE=	configenv libmenu libutil panel
+USE_XFCE=	panel
+USE_XORG=	x11
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@ Date:   Fri Jan 4 13:49:22 2013 +0100
 
     Bug 826985 - Support more video formats for WebRTC via libv4l2 on Linux.
 ---
+ config/system-headers                                   |  1 +
  configure.in                                            |  7 +++++++
  media/webrtc/signaling/test/Makefile.in                 |  1 +
  .../modules/video_capture/linux/device_info_linux.cc    | 17 +++++++++++++++++
@@ -12,6 +13,18 @@ Date:   Fri Jan 4 13:49:22 2013 +0100
  toolkit/library/Makefile.in                             |  1 +
  6 files changed, 52 insertions(+), 1 deletion(-)
 
+diff --git config/system-headers config/system-headers
+index 55e4cd1..76567b3 100644
+--- config/system-headers
++++ config/system-headers
+@@ -635,6 +635,7 @@ libgnomevfs/gnome-vfs-mime-handlers.h
+ libgnomevfs/gnome-vfs-mime-utils.h
+ libgnomevfs/gnome-vfs-ops.h
+ libgnomevfs/gnome-vfs-standard-callbacks.h
++libv4l2.h
+ lib$routines.h
+ limits
+ limits.h
 diff --git configure.in configure.in
 index 55e4cd1..76567b3 100644
 --- configure.in

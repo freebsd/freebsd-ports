@@ -495,6 +495,7 @@ XKLAVIER_DESC?=		Keyboard layout settings
 XML_DESC?=		XML format or parser support
 XPM_DESC?=		XPM pixmap image format support
 XRANDR_DESC?=		X11 XRandR extension support
+XS_DESC?=		Use XS libraries for speed boost
 XSPF_DESC?=		XSPF playlist format support
 XVID_DESC?=		Xvid MPEG-4 video codec support
 XVIDEO_DESC?=		X11 Video extension library support

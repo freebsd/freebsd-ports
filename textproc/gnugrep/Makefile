@@ -14,12 +14,13 @@ LICENSE=	GPLv3
 
 CONFLICTS=	bsd-grep-[0-9]*
 
-USES=		charsetfix tar:xz
+USES=		cpe charsetfix tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		grep
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	PCRE NLS
 OPTIONS_DEFAULT=PCRE NLS

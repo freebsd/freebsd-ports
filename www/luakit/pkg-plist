@@ -54,9 +54,3 @@ share/luakit/lib/undoclose.lua
 share/luakit/lib/userscripts.lua
 share/luakit/lib/webinspector.lua
 share/pixmaps/luakit.png
-@dirrm share/luakit/lib/lousy/widget
-@dirrm share/luakit/lib/lousy
-@dirrm share/luakit/lib
-@dirrm share/luakit
-@dirrm share/doc/luakit
-@dirrmtry etc/xdg/luakit

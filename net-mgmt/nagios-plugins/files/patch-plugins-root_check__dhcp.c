@@ -10,3 +10,12 @@
          char                    *buf;
          unsigned char           *ptr;
          struct if_msghdr        *ifm;
+@@ -1185,7 +1186,7 @@ int call_getopt(int argc, char **argv){
+ 		        }
+ 	        }
+ 
+-	return i;
++	return i+1;
+         }
+ 
+ 

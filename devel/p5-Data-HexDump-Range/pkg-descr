@@ -1,0 +1,13 @@
+Creates a dump from binary data and user defined range descriptions.
+The goal of this module is to create an easy to understand dump of binary data.
+
+This achieved through:
+- Highlighted (colors) dump that is easier to understand than
+  a monochrome blob of hex data
+- Multiple rendering modes with different output formats
+- Bitfield rendering
+- Skipping uninterresting data
+- The possibility to describe complex structures
+
+
+WWW: http://search.cpan.org/dist/Data-HexDump-Range/

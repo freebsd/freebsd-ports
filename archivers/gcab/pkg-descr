@@ -1,0 +1,6 @@
+Gcab is a utility and library mainly made to create Cabinet files, using
+GObject/GIO API and provides GIR bindings.
+- creation supports plain and basic MSZIP compression
+- can open and list files from cabinet, no extraction
+
+WWW: https://wiki.gnome.org/msitools

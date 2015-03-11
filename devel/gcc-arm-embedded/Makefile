@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	4.9.20141203
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2014-q4-major/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
@@ -32,12 +32,12 @@ PURE_LIB_DEPENDS_OFF=	\
 			libcloog-isl.so:${PORTSDIR}/math/cloog \
 			libelf.so:${PORTSDIR}/devel/libelf
 
-PDF_USE=		TEX=base:build,tex:build
+PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 OPTIONS_SUB=		yes
 PYGDB_USES=		python:2
 
-USES=			bison compiler gmake iconv makeinfo tar:bzip2
+USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
 
@@ -49,6 +49,10 @@ GCC_VERSION=		4.9.3
 FULL_VERSION=		4_9-2014q4-20141203
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
+
+CPE_PRODUCT=	gcc
+CPE_VENDOR=	gnu
+CPE_VERSION=	${GCC_VERSION}
 
 INFO_PATH=	${PORTNAME}-${FULL_VERSION}/share/doc/gcc-${TARGET}/info
 INFO=		annotate as bfd binutils configure cpp cppinternals gcc \

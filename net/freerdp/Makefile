@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-beta+2013071101
 PORTREVISION=	2
 CATEGORIES=	net comms ipv6
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20

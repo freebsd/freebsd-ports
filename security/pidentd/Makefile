@@ -3,7 +3,7 @@
 
 PORTNAME=	pidentd
 PORTVERSION=	3.0.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/ident/servers/ \
 		ftp://ftp.stack.nl/pub/users/johans/pidentd/

@@ -1,8 +1,10 @@
-bin/wildmidi
+%%PLAYER%%bin/wildmidi
+%%PLAYERSTATIC%%bin/wildmidi-static
 include/wildmidi_lib.h
-lib/libWildMidi.so.1
-lib/libWildMidi.so.1.1.0
+%%STATIC%%lib/libWildMidi.a
 lib/libWildMidi.so
+lib/libWildMidi.so.1
+lib/libWildMidi.so.1.1.2
 man/man1/wildmidi.1.gz
 man/man3/WildMidi_Close.3.gz
 man/man3/WildMidi_FastSeek.3.gz
@@ -16,3 +18,4 @@ man/man3/WildMidi_OpenBuffer.3.gz
 man/man3/WildMidi_SetOption.3.gz
 man/man3/WildMidi_Shutdown.3.gz
 man/man5/wildmidi.cfg.5.gz
+%%DATADIR%%/wildmidi.cfg.sample

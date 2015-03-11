@@ -1,5 +1,5 @@
---- netselect.c.orig	2006-07-14 22:59:18.000000000 +0200
-+++ netselect.c	2006-07-14 22:57:22.000000000 +0200
+--- netselect.c	2001-08-29 05:18:57.000000000 -0400
++++ netselect.c	2015-03-09 02:31:02.000000000 -0400
 @@ -39,14 +39,13 @@
   * hey, great!  Let me know. -- apenwarr
   */
@@ -53,3 +53,18 @@
      ip->ip_ttl = ttl;
      ip->ip_v = IPVERSION;
      ip->ip_id = htons(ident + seq);
+@@ -771,12 +776,8 @@
+     int cc = 0;
+     time_t msec_used;
+     HostData *host;
+-    
+-#if !defined(__GLIBC__)
+-    int fromlen = sizeof(from);
+-#else				/* __GLIBC__ */
+-    size_t fromlen = sizeof(from);
+-#endif				/* __GLIBC__ */
++ 
++    socklen_t fromlen = sizeof(from);
+ 
+     FD_ZERO(&fds);
+     FD_SET(sock, &fds);

@@ -12,7 +12,7 @@ DISTNAME=	enscript-${PORTVERSION}
 MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
-USES=		shebangfix perl5
+USES=		cpe shebangfix perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-media=${PS}
 SHEBANG_FILES=	scripts/diffpp.in scripts/sliceprint.in
@@ -26,6 +26,7 @@ NLS_CONFIGURE_ENABLE=	nls
 CONFLICTS?=	enscript-a4-[0-9]* enscript-letterdj-[0-9]*
 
 INFO=		enscript
+CPE_VENDOR=	gnu
 
 PS?=		Letter
 PAPERSIZE?=	${PS:tl}

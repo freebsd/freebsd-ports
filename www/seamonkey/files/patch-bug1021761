@@ -2,7 +2,7 @@ diff --git configure.in configure.in
 index 48e60c0..ec08417 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5438,6 +5438,60 @@ fi
+@@ -5591,6 +5591,67 @@ fi
  AC_SUBST(MOZ_WEBM_ENCODER)
  
  dnl ==================================
@@ -16,33 +16,40 @@ index 48e60c0..ec08417 100644
 +    ;;
 +esac
 +
-+MOZ_ARG_DISABLE_BOOL(oss,
-+[  --disable-oss           Disable OpenSoundSystem support],
-+   MOZ_OSS=,
-+   MOZ_OSS=1)
++MOZ_ARG_WITH_STRING(oss,
++[  --with-oss[=PFX]        Enable OpenSoundSystem support [installed at prefix PFX]],
++   OSSPREFIX=$withval)
++
++if test -n "$OSSPREFIX"; then
++    if test "$OSSPREFIX" != "no"; then
++        MOZ_OSS=1
++    else
++        MOZ_OSS=
++    fi
++fi
 +
 +_SAVE_CFLAGS=$CFLAGS
 +_SAVE_LIBS=$LIBS
 +if test -n "$MOZ_OSS"; then
 +    dnl Prefer 4Front implementation
 +    AC_MSG_CHECKING([MOZ_OSS_CFLAGS])
-+    if test -z "$MOZ_OSS_CFLAGS"; then
-+        for oss_conf in /etc/oss.conf /usr/local/etc/oss.conf; do
-+            if test -e "$oss_conf"; then
-+                . "$oss_conf"
-+            fi
-+        done
++    if test "$OSSPREFIX" != "yes"; then
++        oss_conf=${OSSPREFIX%/usr}/etc/oss.conf
++        if test -f "$oss_conf"; then
++            . "$oss_conf"
++        else
++            OSSLIBDIR=$OSSPREFIX/lib/oss
++        fi
 +        if test -d "$OSSLIBDIR"; then
-+            MOZ_OSS_CFLAGS="-I$OSSLIBDIR/include"
++            MOZ_OSS_CFLAGS="$MOZ_OSS_CFLAGS -I$OSSLIBDIR/include"
 +        fi
 +    fi
 +    AC_MSG_RESULT([$MOZ_OSS_CFLAGS])
 +
 +    CFLAGS="$CFLAGS $MOZ_OSS_CFLAGS"
-+    MOZ_CHECK_HEADERS(sys/soundcard.h linux/soundcard.h soundcard.h)
++    MOZ_CHECK_HEADERS(sys/soundcard.h soundcard.h)
 +
 +    if test "$ac_cv_header_sys_soundcard_h" != "yes" -a \
-+            "$ac_cv_header_linux_soundcard_h" != "yes" -a \
 +            "$ac_cv_header_soundcard_h" != "yes"; then
 +        AC_MSG_ERROR([Need OSS for Ogg, Wave or WebM decoding on $OS_TARGET.  Disable with --disable-ogg --disable-wave --disable-webm.])
 +    fi
@@ -50,7 +57,7 @@ index 48e60c0..ec08417 100644
 +    dnl Assume NetBSD implementation over SunAudio
 +    AC_CHECK_LIB(ossaudio, _oss_ioctl,
 +        [AC_DEFINE_UNQUOTED(CUBEB_OSS_DEFAULT_OUTPUT, "/dev/sound")
-+         MOZ_OSS_LIBS="-lossaudio"])
++         MOZ_OSS_LIBS="$MOZ_OSS_LIBS -lossaudio"])
 +fi
 +CFLAGS=$_SAVE_CFLAGS
 +LIBS=$_SAVE_LIBS
@@ -63,30 +70,6 @@ index 48e60c0..ec08417 100644
  dnl = Check alsa availability on Linux
  dnl ==================================
  
-@@ -5451,12 +5505,23 @@ MOZ_ARG_ENABLE_BOOL(alsa,
-    MOZ_ALSA=1,
-    MOZ_ALSA=)
- 
-+MOZ_ARG_DISABLE_BOOL(alsa-dlopen,
-+[  --disable-alsa-dlopen   Disable runtime linking of libasound.so],
-+   DISABLE_LIBASOUND_DLOPEN=1,
-+   DISABLE_LIBASOUND_DLOPEN=)
-+
- if test -n "$MOZ_ALSA"; then
-     PKG_CHECK_MODULES(MOZ_ALSA, alsa, ,
-          [echo "$MOZ_ALSA_PKG_ERRORS"
-           AC_MSG_ERROR([Need alsa for Ogg, Wave or WebM decoding on Linux.  Disable with --disable-ogg --disable-wave --disable-webm.  (On Ubuntu, you might try installing the package libasound2-dev.)])])
- fi
- 
-+if test -n "$DISABLE_LIBASOUND_DLOPEN"; then
-+    AC_DEFINE(DISABLE_LIBASOUND_DLOPEN)
-+else
-+    MOZ_ALSA_LIBS=
-+fi
-+
- AC_SUBST(MOZ_ALSA)
- 
- dnl ========================================================
 diff --git media/libcubeb/AUTHORS media/libcubeb/AUTHORS
 index b441e8a..950d9e5 100644
 --- mozilla/media/libcubeb/AUTHORS
@@ -660,7 +643,7 @@ new file mode 100644
 index 0000000..5e38e27
 --- /dev/null
 +++ mozilla/media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,404 @@
+@@ -0,0 +1,402 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -669,8 +652,6 @@ index 0000000..5e38e27
 + */
 +#if defined(HAVE_SYS_SOUNDCARD_H)
 +#include <sys/soundcard.h>
-+#elif defined(HAVE_LINUX_SOUNDCARD_H)
-+#include <linux/soundcard.h>
 +#else
 +#include <soundcard.h>
 +#endif
@@ -1089,17 +1070,33 @@ index 8b7a0dd..31212ce 100644
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
+diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
+index 991f03f..3d99eb5 100644
+--- mozilla/media/webrtc/signaling/test/moz.build
++++ mozilla/media/webrtc/signaling/test/moz.build
+@@ -112,8 +112,8 @@ if CONFIG['JS_SHARED_LIBRARY']:
+ OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
+ OS_LIBS += CONFIG['REALTIME_LIBS']
+ 
+-if CONFIG['MOZ_ALSA']:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
++if CONFIG['MOZ_OSS']:
++    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
+ 
+ if CONFIG['MOZ_NATIVE_JPEG']:
+     OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index e191f13..4fb268a 100644
 --- mozilla/toolkit/library/moz.build
 +++ mozilla/toolkit/library/moz.build
-@@ -239,6 +239,9 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -234,8 +234,8 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
  if not CONFIG['MOZ_TREE_PIXMAN']:
      OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
+-if CONFIG['MOZ_ALSA']:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
 +if CONFIG['MOZ_OSS']:
 +    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
-+
- if CONFIG['MOZ_ALSA']:
-     OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
  
+ if CONFIG['HAVE_CLOCK_MONOTONIC']:
+     OS_LIBS += CONFIG['REALTIME_LIBS']
