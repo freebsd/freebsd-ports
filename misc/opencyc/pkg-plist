@@ -1292,3 +1292,8 @@ opencyc-%%PORTVERSION%%/doc/ooi.pdf
 opencyc-%%PORTVERSION%%/doc/README.win32
 opencyc-%%PORTVERSION%%/doc/toc.html
 opencyc-%%PORTVERSION%%/doc/README.linux
+@dir opencyc-%%PORTVERSION%%/scripts/win
+@dir opencyc-%%PORTVERSION%%/run/transcripts/0605
+@dir opencyc-%%PORTVERSION%%/run/preferences/users
+@dir opencyc-%%PORTVERSION%%/run/httpd/htdocs/cycdoc/ref/abbrev_files
+@dir opencyc-%%PORTVERSION%%/run/data
