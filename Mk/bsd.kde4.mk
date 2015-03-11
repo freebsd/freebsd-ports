@@ -75,9 +75,9 @@ Kde_Pre_Include=	bsd.kde4.mk
 #			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=		4.14.2
+KDE4_VERSION?=		4.14.3
 KDE4_ACTIVITES_VERSION=	4.13.3
-KDE4_WORKSPACE_VERSION=	4.11.13
+KDE4_WORKSPACE_VERSION=	4.11.14
 KDE4_BRANCH?=		stable
 KTP_VERSION?=		0.8.0
 KTP_BRANCH?=		stable
@@ -144,6 +144,8 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 			strigi
 # Meta components
 _USE_KDE4_ALL+=		kdeprefix
+# Deprecated
+_USE_KDE4_ALL+=		kdehier
 
 baloo_PORT=		sysutils/baloo
 baloo_PATH=		${KDE4_PREFIX}/lib/libbaloocore.so
