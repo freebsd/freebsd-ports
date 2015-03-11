@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
 
-USE_KDE4=	kdelibs kdeprefix okular pimlibs \
+USE_KDE4=	kdelibs kdeprefix nepomuk-core okular pimlibs \
 		akonadi automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build

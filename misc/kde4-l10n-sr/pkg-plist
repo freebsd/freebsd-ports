@@ -1332,6 +1332,7 @@ share/locale/sr/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr/LC_MESSAGES/nepomukwidgets.mo
 share/locale/sr/LC_MESSAGES/nsplugin.mo
 share/locale/sr/LC_MESSAGES/okteta-mobile.mo
+share/locale/sr/LC_MESSAGES/okteta.appdata.mo
 share/locale/sr/LC_MESSAGES/okteta.mo
 share/locale/sr/LC_MESSAGES/oktetapart.mo
 share/locale/sr/LC_MESSAGES/okular.mo
@@ -2034,6 +2035,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukwidgets.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nsplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/okteta-mobile.mo
+share/locale/sr@ijekavian/LC_MESSAGES/okteta.appdata.mo
 share/locale/sr@ijekavian/LC_MESSAGES/okteta.mo
 share/locale/sr@ijekavian/LC_MESSAGES/oktetapart.mo
 share/locale/sr@ijekavian/LC_MESSAGES/okular.mo
@@ -2736,6 +2738,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukwidgets.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nsplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/okteta-mobile.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/okteta.appdata.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/okteta.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/oktetapart.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/okular.mo
@@ -3438,6 +3441,7 @@ share/locale/sr@latin/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukwidgets.mo
 share/locale/sr@latin/LC_MESSAGES/nsplugin.mo
 share/locale/sr@latin/LC_MESSAGES/okteta-mobile.mo
+share/locale/sr@latin/LC_MESSAGES/okteta.appdata.mo
 share/locale/sr@latin/LC_MESSAGES/okteta.mo
 share/locale/sr@latin/LC_MESSAGES/oktetapart.mo
 share/locale/sr@latin/LC_MESSAGES/okular.mo

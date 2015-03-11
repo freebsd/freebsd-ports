@@ -20,7 +20,7 @@ USE_QT4=	gui phonon xml \
 OPTIONS_DEFINE=	ALSA PULSEAUDIO
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_EXTRA_PATCHES=	${FILESDIR}/extrapatch-no_alsa
+ALSA_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-no_alsa
 
 PULSEAUDIO_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra \
 			libpulse.so:${PORTSDIR}/audio/pulseaudio

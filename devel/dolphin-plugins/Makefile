@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	dolphin-plugins
