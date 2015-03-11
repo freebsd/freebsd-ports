@@ -25,7 +25,7 @@ LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx \
 		libx264.so:${PORTSDIR}/multimedia/libx264 \
-		libx265.so:${PORTSDIR}/multimedia/x265 \
+		libx265.so:${PORTSDIR}/multimedia/x265
 
 USES=		pkgconfig python tar:xz
 USE_PYTHON=	distutils
