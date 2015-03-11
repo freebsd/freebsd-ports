@@ -1,0 +1,13 @@
+--- Makefile.orig	2015-03-10 20:42:37 UTC
++++ Makefile
+@@ -42,8 +42,8 @@ else
+ 
+ 	CFLAGS += -fPIC
+ 
+-	INSTALL_LIB = mkdir -p ${LIBDIR} && cp -f ${STATIC} ${LIBDIR}/$(STATIC)
+-	INSTALL_INC = mkdir -p ${INCDIR} && cp -r include/* ${INCDIR}
++	INSTALL_LIB = mkdir -p ${DESTDIR}${LIBDIR} && cp -f ${STATIC} ${DESTDIR}${LIBDIR}/$(STATIC)
++	INSTALL_INC = mkdir -p ${DESTDIR}${INCDIR} && cp -r include/* ${DESTDIR}${INCDIR}
+ endif
+ 
+ ifeq ($(findstring clang,$(COMPILER)),clang)
