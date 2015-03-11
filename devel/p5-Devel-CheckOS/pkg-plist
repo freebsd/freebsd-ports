@@ -42,6 +42,7 @@ man/man1/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MachTen.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MicrosoftWindows.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MidnightBSD.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::Minix.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MirOSBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::NeXT.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::NetBSD.3.gz
@@ -69,6 +70,7 @@ man/man1/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS::VMESA.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::VMS.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::VOS.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::iOS.3.gz
 %%PERL5_MAN3%%/Devel::CheckOS.3.gz
 %%PERL5_MAN3%%/Devel::CheckOS::Families.3.gz
 %%SITE_PERL%%/Devel/AssertOS.pm
@@ -114,6 +116,7 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS/MachTen.pm
 %%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
 %%SITE_PERL%%/Devel/AssertOS/MidnightBSD.pm
+%%SITE_PERL%%/Devel/AssertOS/Minix.pm
 %%SITE_PERL%%/Devel/AssertOS/MirOSBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/NeXT.pm
 %%SITE_PERL%%/Devel/AssertOS/NetBSD.pm
@@ -141,5 +144,6 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS/VMESA.pm
 %%SITE_PERL%%/Devel/AssertOS/VMS.pm
 %%SITE_PERL%%/Devel/AssertOS/VOS.pm
+%%SITE_PERL%%/Devel/AssertOS/iOS.pm
 %%SITE_PERL%%/Devel/CheckOS.pm
 %%SITE_PERL%%/Devel/CheckOS/Families.pod
