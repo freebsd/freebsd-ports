@@ -6,7 +6,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
@@ -151,10 +151,12 @@ install-bin:
 	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
 
 install-docs:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 
 install-man:
 .for man in ${MAN1SRC}
