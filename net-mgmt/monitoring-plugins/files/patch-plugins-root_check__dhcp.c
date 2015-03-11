@@ -1,4 +1,4 @@
---- plugins-root/check_dhcp.c.orig	2014-07-06 17:55:03 UTC
+--- plugins-root/check_dhcp.c.orig	2014-11-30 10:36:26 UTC
 +++ plugins-root/check_dhcp.c
 @@ -323,7 +323,8 @@ int get_hardware_address(int sock,char *
  #elif defined(__bsd__)
