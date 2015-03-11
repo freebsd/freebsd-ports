@@ -851,6 +851,7 @@ lib/node_modules/npm/node_modules/init-package-json/package.json
 lib/node_modules/npm/node_modules/init-package-json/test/basic.input
 lib/node_modules/npm/node_modules/init-package-json/test/basic.js
 lib/node_modules/npm/node_modules/init-package-json/test/npm-defaults.js
+lib/node_modules/npm/node_modules/init-package-json/test/scope.js
 lib/node_modules/npm/node_modules/lockfile/LICENSE
 lib/node_modules/npm/node_modules/lockfile/README.md
 lib/node_modules/npm/node_modules/lockfile/lockfile.js
@@ -1862,10 +1863,6 @@ lib/node_modules/npm/test/disabled/change-bin-2/bin/bar
 lib/node_modules/npm/test/disabled/change-bin-2/package.json
 lib/node_modules/npm/test/disabled/failer/package.json
 lib/node_modules/npm/test/disabled/fast/package.json
-lib/node_modules/npm/test/disabled/outdated-depth-integer.js
-lib/node_modules/npm/test/disabled/outdated-depth-integer/README.md
-lib/node_modules/npm/test/disabled/outdated-depth-integer/index.js
-lib/node_modules/npm/test/disabled/outdated-depth-integer/package.json
 lib/node_modules/npm/test/disabled/package-bar/package.json
 lib/node_modules/npm/test/disabled/package-config/package.json
 lib/node_modules/npm/test/disabled/package-config/test.js
@@ -1947,6 +1944,7 @@ lib/node_modules/npm/test/tap/00-verify-ls-ok.js
 lib/node_modules/npm/test/tap/404-parent.js
 lib/node_modules/npm/test/tap/access.js
 lib/node_modules/npm/test/tap/add-remote-git-fake-windows.js
+lib/node_modules/npm/test/tap/add-remote-git-file.js
 lib/node_modules/npm/test/tap/add-remote-git.js
 lib/node_modules/npm/test/tap/adduser-always-auth.js
 lib/node_modules/npm/test/tap/adduser-legacy-auth.js
@@ -1986,6 +1984,7 @@ lib/node_modules/npm/test/tap/git-cache-locking.js
 lib/node_modules/npm/test/tap/git-cache-no-hooks.js
 lib/node_modules/npm/test/tap/git-npmignore.js
 lib/node_modules/npm/test/tap/global-prefix-set-in-userconfig.js
+lib/node_modules/npm/test/tap/graceful-restart.js
 lib/node_modules/npm/test/tap/ignore-install-link.js
 lib/node_modules/npm/test/tap/ignore-scripts.js
 lib/node_modules/npm/test/tap/ignore-scripts/binding.gyp
@@ -2042,6 +2041,7 @@ lib/node_modules/npm/test/tap/ls-depth-cli.js
 lib/node_modules/npm/test/tap/ls-depth-unmet.js
 lib/node_modules/npm/test/tap/ls-depth-unmet/package.json
 lib/node_modules/npm/test/tap/ls-depth/package.json
+lib/node_modules/npm/test/tap/ls-env.js
 lib/node_modules/npm/test/tap/ls-l-depth-0.js
 lib/node_modules/npm/test/tap/ls-no-results.js
 lib/node_modules/npm/test/tap/map-to-registry.js
@@ -2059,6 +2059,7 @@ lib/node_modules/npm/test/tap/optional-metadep-rollback-collision/deps/opdep/pac
 lib/node_modules/npm/test/tap/optional-metadep-rollback-collision/package.json
 lib/node_modules/npm/test/tap/outdated-color.js
 lib/node_modules/npm/test/tap/outdated-depth-deep.js
+lib/node_modules/npm/test/tap/outdated-depth-integer.js
 lib/node_modules/npm/test/tap/outdated-depth.js
 lib/node_modules/npm/test/tap/outdated-depth/README.md
 lib/node_modules/npm/test/tap/outdated-depth/index.js
@@ -2107,7 +2108,6 @@ lib/node_modules/npm/test/tap/referer.js
 lib/node_modules/npm/test/tap/registry.js
 lib/node_modules/npm/test/tap/repo.js
 lib/node_modules/npm/test/tap/run-script.js
-lib/node_modules/npm/test/tap/run-script/package.json
 lib/node_modules/npm/test/tap/scripts-whitespace-windows.js
 lib/node_modules/npm/test/tap/scripts-whitespace-windows/README.md
 lib/node_modules/npm/test/tap/scripts-whitespace-windows/dep/README.md
@@ -2142,6 +2142,7 @@ lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore-and-npmignore.tar
 lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore-and-npmignore.tgz
 lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore.tgz
 lib/node_modules/npm/test/tap/unpack-foreign-tarball/npmignore.tgz
+lib/node_modules/npm/test/tap/update-examples.js
 lib/node_modules/npm/test/tap/update-index.js
 lib/node_modules/npm/test/tap/update-save.js
 lib/node_modules/npm/test/tap/update-save/README.md
