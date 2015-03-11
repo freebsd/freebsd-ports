@@ -964,6 +964,7 @@
     SUBDIR += lemon
     SUBDIR += lfcbase
     SUBDIR += lfcxml
+    SUBDIR += libCello
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libafterbase
