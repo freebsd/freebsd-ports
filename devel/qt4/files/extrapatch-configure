@@ -1,6 +1,6 @@
---- ./configure.orig	2013-06-07 07:16:41.000000000 +0200
-+++ ./configure	2013-10-27 23:22:00.000000000 +0100
-@@ -916,7 +916,7 @@
+--- configure.orig	2014-04-10 18:37:08.000000000 +0000
++++ configure
+@@ -916,7 +916,7 @@ OPT_HELP=
  CFG_SILENT=no
  CFG_GRAPHICS_SYSTEM=default
  CFG_RUNTIME_SYSTEM=
@@ -9,7 +9,7 @@
  CFG_PULSEAUDIO=auto
  CFG_COREWLAN=auto
  CFG_ICD=auto
-@@ -2704,11 +2704,6 @@
+@@ -2704,11 +2704,6 @@ if [ "$OPT_SHADOW" = "yes" ]; then
          fi
      done
  
@@ -21,7 +21,7 @@
  
      ShadowMkspecs()
      {
-@@ -3019,6 +3014,7 @@
+@@ -3019,6 +3014,7 @@ else
      PLATFORMS=`find "$relpath/mkspecs/" -type f | grep -v qws | sed "s,$relpath/mkspecs/qws/,,"`
  fi
  
@@ -29,7 +29,7 @@
  [ -z "$XPLATFORM" ] && XPLATFORM="$PLATFORM"
  
  case `basename "$XPLATFORM"` in win32-g++*) XPLATFORM_MINGW=yes;; esac
-@@ -4908,7 +4904,7 @@
+@@ -4915,7 +4911,7 @@ setBootstrapVariable()
  }
  
  # build qmake
@@ -38,7 +38,7 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -6001,14 +5997,6 @@
+@@ -6041,14 +6037,6 @@ if [ "$PLATFORM_X11" = "yes" -a "$CFG_GU
          X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
      fi
  
@@ -53,3 +53,12 @@
  fi
  
  # X11/MINGW/SYMBIAN OpenGL
+@@ -7729,7 +7717,7 @@ case "$XPLATFORM" in
+     *-g++*)
+ 	# Check gcc's version
+ 	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
+-	    4*|3.4*)
++	    5*|4*|3.4*)
+ 		;;
+             3.3*)
+                 canBuildWebKit="no"
