@@ -1,0 +1,4 @@
+RapidJSON is a JSON parser and generator for C++.
+It supports both SAX and DOM style API.
+
+WWW: https://github.com/miloyip/rapidjson

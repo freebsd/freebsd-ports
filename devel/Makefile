@@ -4294,6 +4294,7 @@
     SUBDIR += radare2
     SUBDIR += ragel
     SUBDIR += raknet
+    SUBDIR += rapidjson
     SUBDIR += rapidsvn
     SUBDIR += rbenv
     SUBDIR += rbtools
