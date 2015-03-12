@@ -2,26 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	PAR
-PORTVERSION=	1.00.7
-PORTREVISION=	1
+PORTVERSION=	1.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Archive Toolkit
 
-RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-AutoLoader>=5.67:${PORTSDIR}/devel/p5-AutoLoader \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Archive-Zip>=1:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	configure
-
-
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
+USES=		perl5
 
 .include <bsd.port.mk>
