@@ -19,7 +19,7 @@ DISTFILES=	binutils-2.20.51.0.2-5.42.el6.i686.rpm \
 		gcc-c++-4.4.7-11.el6.i686.rpm \
 		gcc-gfortran-4.4.7-11.el6.i686.rpm
 
-MAINTAINER=	emulation@freebsd.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
 
 # LICENSE=	Various GNU

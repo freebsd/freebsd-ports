@@ -6,7 +6,7 @@ PORTVERSION=	2.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 
 LICENSE=	BSD3CLAUSE

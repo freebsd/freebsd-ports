@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://gdnsd.scaleengine.net/gdnsd/
 
-MAINTAINER=	allanjude@freebsd.org
+MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Authoritative-only GeoIP-aware DNS server
 
 LICENSE=	GPLv3
