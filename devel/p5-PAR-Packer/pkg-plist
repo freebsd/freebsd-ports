@@ -1,13 +1,8 @@
+bin/par.pl
 bin/parl
 bin/parldyn
 bin/pp
-bin/par.pl
 bin/tkpp
-man/man1/par.pl.1.gz
-man/man1/parl.1.gz
-man/man1/pp.1.gz
-man/man1/tkpp.1.gz
-%%SITE_PERL%%/pp.pm
 %%SITE_PERL%%/App/Packer/PAR.pm
 %%SITE_PERL%%/PAR/Filter.pm
 %%SITE_PERL%%/PAR/Filter/Bleach.pm
@@ -19,6 +14,7 @@ man/man1/tkpp.1.gz
 %%SITE_PERL%%/PAR/StrippedPARL/Base.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Static.pm
+%%SITE_PERL%%/pp.pm
 %%PERL5_MAN3%%/App::Packer::PAR.3.gz
 %%PERL5_MAN3%%/Dynamic.3.gz
 %%PERL5_MAN3%%/PAR::Filter.3.gz
@@ -31,3 +27,7 @@ man/man1/tkpp.1.gz
 %%PERL5_MAN3%%/PAR::StrippedPARL::Base.3.gz
 %%PERL5_MAN3%%/Static.3.gz
 %%PERL5_MAN3%%/pp.3.gz
+man/man1/par.pl.1.gz
+man/man1/parl.1.gz
+man/man1/pp.1.gz
+man/man1/tkpp.1.gz
