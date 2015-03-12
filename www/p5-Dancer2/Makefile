@@ -47,8 +47,7 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 	p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 	p5-LWP-Protocol-PSGI>=0.06:${PORTSDIR}/www/p5-LWP-Protocol-PSGI
 
-OPTIONS_DEFINE=	XS
-XS_DESC=	Use XS modules for speed boost
+OPTIONS_DEFINE=		XS
 
 XS_BUILD_DEPENDS=	p5-CGI-Deurl-XS>=0:${PORTSDIR}/www/p5-CGI-Deurl-XS \
 			p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
