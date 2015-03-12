@@ -22,15 +22,19 @@ NO_BUILD=	yes
 # highest select version number.  If no Cyrus IMAPd versions are
 # selected, use some generic IMAP modules
 
-OPTIONS_DEFINE=	CYRUS_IMAPD_23 CYRUS_IMAPD_24
-OPTIONS_DEFAULT=	CYRUS_IMAPD_23
+OPTIONS_DEFINE=	CYRUS_IMAPD_23 CYRUS_IMAPD_24 CYRUS_IMAPD_25
+OPTIONS_DEFAULT=	CYRUS_IMAPD_24
 
 CYRUS_IMAPD_23_DESC=	With Cyrus IMAPd version 2.3.x
 CYRUS_IMAPD_24_DESC=	With Cyrus IMAPd version 2.4.x
+CYRUS_IMAPD_25_DESC=	With Cyrus IMAPd version 2.5.x
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCYRUS_IMAPD_24}
+.if ${PORT_OPTIONS:MCYRUS_IMAPD_25}
+RUN_DEPENDS+=	cyradm:${PORTSDIR}/mail/cyrus-imapd25
+FUNCLIB_PL=	funclib.cyrus
+.elif ${PORT_OPTIONS:MCYRUS_IMAPD_24}
 RUN_DEPENDS+=	cyradm:${PORTSDIR}/mail/cyrus-imapd24
 FUNCLIB_PL=	funclib.cyrus
 .elif ${PORT_OPTIONS:MCYRUS_IMAPD_23}

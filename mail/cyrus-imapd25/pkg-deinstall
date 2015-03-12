@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+# Created by: hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=%%PREFIX%%}
+EXAMPLESDIR=${EXAMPLESDIR:=%%EXAMPLESDIR%%}
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+
+checkfile() {
+	diff -bBqw $1 $2 >/dev/null 2>&1
+	case $? in
+		0)	# config file exists, but is the same
+			rm $1
+			;;
+		1)	# config file exists and differs
+			;;
+		*)	# no config file exists
+			;;
+	esac
+}
+
+#
+# Modify the 'cyrus' user created from the cyrus-sasl port
+#
+
+modify_cyrus_user() {
+	USER=${CYRUS_USER}
+	PW=/usr/sbin/pw
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome=/nonexistent
+
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
+		echo "*** Failed to update user \`${USER}'."
+	else
+		echo "*** Updated user \`${USER}'."
+	fi
+}
+
+case $2 in
+	DEINSTALL)
+		cd ${PKG_PREFIX}
+		checkfile ${PKG_PREFIX}/etc/imapd.conf ${EXAMPLESDIR}/imapd.conf
+		checkfile ${PKG_PREFIX}/etc/cyrus.conf ${EXAMPLESDIR}/normal.conf
+		;;
+	POST-DEINSTALL)
+		modify_cyrus_user
+		;;
+
+esac
