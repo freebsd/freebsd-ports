@@ -25,16 +25,9 @@ OPTIONS_MULTI_GPG=	GPG1 GPG2
 GPG1_DESC=	Use GnuPG version 1
 GPG2_DESC=	Use GnuPG version 2
 
-.include <bsd.port.pre.mk>
+GPG1_BUILD_DEPENDS=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
+GPG1_RUN_DEPENDS=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
+GPG2_BUILD_DEPENDS=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
+GPG2_RUN_DEPENDS=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
 
-.if ${PORT_OPTIONS:MGPG1}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS+=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
-.endif
-
-.if ${PORT_OPTIONS:MGPG2}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=	${LOCALBASE}/bin/gpgv2:${PORTSDIR}/security/gnupg
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
