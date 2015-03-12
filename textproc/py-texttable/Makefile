@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module for creating simple ASCII tables
 
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python
 USE_PYTHON=	distutils
 
