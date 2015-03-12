@@ -4,7 +4,8 @@
 PORTNAME=	mono-basic
 PORTVERSION=	3.8
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/ \
+		http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	VisualBasic.NET support for Mono
