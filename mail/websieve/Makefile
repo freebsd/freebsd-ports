@@ -41,8 +41,8 @@ FUNCLIB_PL=	funclib.cyrus
 RUN_DEPENDS+=	cyradm:${PORTSDIR}/mail/cyrus-imapd23
 FUNCLIB_PL=	funclib.cyrus
 .else
-RUN_DEPENDS+=	p5-IMAP-Admin:${PORTSDIR}/mail/p5-IMAP-Admin \
-		p5-IMAP-Sieve:${PORTSDIR}/mail/p5-IMAP-Sieve
+RUN_DEPENDS+=	p5-IMAP-Admin>=0:${PORTSDIR}/mail/p5-IMAP-Admin \
+		p5-IMAP-Sieve>=0:${PORTSDIR}/mail/p5-IMAP-Sieve
 FUNCLIB_PL=	funclib.pl
 .endif
 
