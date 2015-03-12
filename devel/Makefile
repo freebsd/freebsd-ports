@@ -3763,6 +3763,7 @@
     SUBDIR += py-coverage
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
+    SUBDIR += py-curtsies
     SUBDIR += py-cxx
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
