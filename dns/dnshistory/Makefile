@@ -5,9 +5,10 @@ PORTNAME=	dnshistory
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	LOCAL/adamw
+MASTER_SITES=	http://www.stedee.id.au/files/ \
+		http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Store DNS lookups to a DB
 
 LICENSE=	GPLv2
