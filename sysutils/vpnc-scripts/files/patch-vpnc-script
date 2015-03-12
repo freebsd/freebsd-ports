@@ -1,0 +1,11 @@
+--- vpnc-script.orig	2014-08-05 13:38:58 UTC
++++ vpnc-script
+@@ -121,7 +121,7 @@ if [ -r /etc/openwrt_release ] && [ -n "
+ 	include /lib/network
+ 	MODIFYRESOLVCONF=modify_resolvconf_openwrt
+ 	RESTORERESOLVCONF=restore_resolvconf_openwrt
+-elif [ -x /sbin/resolvconf ] && [ "$OS" != "FreeBSD" ]; then # Optional tool on Debian, Ubuntu, Gentoo - but not FreeBSD, it seems to work different
++elif [ -x /sbin/resolvconf ]; then # Optional tool on Debian, Ubuntu, Gentoo and FreeBSD
+ 	MODIFYRESOLVCONF=modify_resolvconf_manager
+ 	RESTORERESOLVCONF=restore_resolvconf_manager
+ elif [ -x /sbin/netconfig ]; then # tool on Suse after 11.1
