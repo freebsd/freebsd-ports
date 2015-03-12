@@ -1,13 +1,4 @@
 bin/sqlrw
-%%PERL5_MAN3%%/SQL::ReservedWords.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::DB2.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::MySQL.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::ODBC.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::Oracle.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::PostgreSQL.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::SQLServer.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::SQLite.3.gz
-%%PERL5_MAN3%%/SQL::ReservedWords::Sybase.3.gz
 %%SITE_PERL%%/SQL/ReservedWords.pm
 %%SITE_PERL%%/SQL/ReservedWords/DB2.pm
 %%SITE_PERL%%/SQL/ReservedWords/MySQL.pm
@@ -17,4 +8,13 @@ bin/sqlrw
 %%SITE_PERL%%/SQL/ReservedWords/SQLServer.pm
 %%SITE_PERL%%/SQL/ReservedWords/SQLite.pm
 %%SITE_PERL%%/SQL/ReservedWords/Sybase.pm
+%%PERL5_MAN3%%/SQL::ReservedWords.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::DB2.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::MySQL.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::ODBC.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::Oracle.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::PostgreSQL.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::SQLServer.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::SQLite.3.gz
+%%PERL5_MAN3%%/SQL::ReservedWords::Sybase.3.gz
 man/man1/sqlrw.1.gz

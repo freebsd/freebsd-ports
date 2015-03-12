@@ -18,11 +18,6 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.113640:${PORTSDIR}/devel/p5-CPAN-Meta
-RUN_DEPENDS+=	p5-CPAN-Meta>=2.113640:${PORTSDIR}/devel/p5-CPAN-Meta
-.endif
-
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
 RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements

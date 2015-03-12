@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/DBD::Sybase.3.gz
 %%SITE_ARCH%%/DBD/Sybase.pm
 %%SITE_ARCH%%/DBD/dbd-sybase.pod
 %%SITE_ARCH%%/auto/DBD/Sybase/Sybase.so
+%%PERL5_MAN3%%/DBD::Sybase.3.gz

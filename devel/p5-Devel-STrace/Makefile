@@ -3,7 +3,7 @@
 
 PORTNAME=	Devel-STrace
 PORTVERSION=	0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	strace(1)-like runtime call trace for Perl applications
 
-RUN_DEPENDS=	p5-Devel-RingBuffer>=0:${PORTSDIR}/devel/p5-Devel-RingBuffer \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-Devel-RingBuffer>=0:${PORTSDIR}/devel/p5-Devel-RingBuffer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

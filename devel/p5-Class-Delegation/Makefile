@@ -13,9 +13,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented delegation
 
-BUILD_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 USES=		perl5
 USE_PERL5=	configure
 

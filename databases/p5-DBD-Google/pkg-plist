@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/DBD::Google.3.gz
-%%PERL5_MAN3%%/SQL::Dialects::Google.3.gz
 %%SITE_PERL%%/DBD/Google.pm
 %%SITE_PERL%%/DBD/Google/GetInfo.pm
 %%SITE_PERL%%/DBD/Google/db.pm
@@ -7,3 +5,5 @@
 %%SITE_PERL%%/DBD/Google/parser.pm
 %%SITE_PERL%%/DBD/Google/st.pm
 %%SITE_PERL%%/SQL/Dialects/Google.pm
+%%PERL5_MAN3%%/DBD::Google.3.gz
+%%PERL5_MAN3%%/SQL::Dialects::Google.3.gz

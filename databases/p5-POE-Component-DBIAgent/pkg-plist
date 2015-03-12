@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/POE::Component::DBIAgent.3.gz
-%%PERL5_MAN3%%/POE::Component::DBIAgent::Helper.3.gz
-%%PERL5_MAN3%%/POE::Component::DBIAgent::Queue.3.gz
 %%SITE_PERL%%/POE/Component/DBIAgent.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Helper.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Queue.pm
+%%PERL5_MAN3%%/POE::Component::DBIAgent.3.gz
+%%PERL5_MAN3%%/POE::Component::DBIAgent::Helper.3.gz
+%%PERL5_MAN3%%/POE::Component::DBIAgent::Queue.3.gz

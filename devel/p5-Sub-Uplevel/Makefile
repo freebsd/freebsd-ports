@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
+COMMENT=	Appear to run a function in a higher stack frame
 
 USES=		perl5
 USE_PERL5=	configure

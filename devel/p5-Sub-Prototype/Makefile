@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Set a subs prototype
+COMMENT=	Set a sub's prototype
 
 USES=		perl5
 USE_PERL5=	configure

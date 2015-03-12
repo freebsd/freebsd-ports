@@ -15,7 +15,7 @@ COMMENT=	Perl interface to Git repositories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
+BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		p5-System-Command>=1.103:${PORTSDIR}/devel/p5-System-Command
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod \

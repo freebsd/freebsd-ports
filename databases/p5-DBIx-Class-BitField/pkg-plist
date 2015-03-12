@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/DBIx::Class::BitField.3.gz
-%%PERL5_MAN3%%/DBIx::Class::ResultSet::BitField.3.gz
 %%SITE_PERL%%/DBIx/Class/BitField.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet/BitField.pm
+%%PERL5_MAN3%%/DBIx::Class::BitField.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSet::BitField.3.gz

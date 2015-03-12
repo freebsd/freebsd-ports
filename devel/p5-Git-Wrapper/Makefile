@@ -14,7 +14,7 @@ COMMENT=	Wrap git(7) command-line interface
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
+BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		p5-File-pushd>=1.005:${PORTSDIR}/devel/p5-File-pushd \
 		p5-Devel-CheckBin>=0:${PORTSDIR}/devel/p5-Devel-CheckBin \
 		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions

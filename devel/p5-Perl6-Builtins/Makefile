@@ -3,7 +3,7 @@
 
 PORTNAME=	Perl6-Builtins
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide Perl 5 versions of the new Perl 6 builtins
 
-BUILD_DEPENDS=	p5-Contextual-Return>=0:${PORTSDIR}/devel/p5-Contextual-Return \
-		p5-version>=0:${PORTSDIR}/devel/p5-version
+BUILD_DEPENDS=	p5-Contextual-Return>=0:${PORTSDIR}/devel/p5-Contextual-Return
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

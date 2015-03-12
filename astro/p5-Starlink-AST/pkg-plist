@@ -1,9 +1,9 @@
-%%PERL5_MAN3%%/Starlink::AST.3.gz
-%%PERL5_MAN3%%/Starlink::AST::PGPLOT.3.gz
-%%PERL5_MAN3%%/Starlink::AST::Tk.3.gz
-%%PERL5_MAN3%%/Starlink::AST::PLplot.3.gz
 %%SITE_ARCH%%/auto/Starlink/AST/AST.so
-%%SITE_ARCH%%/Starlink/AST/Tk.pm
 %%SITE_ARCH%%/Starlink/AST/PGPLOT.pm
 %%SITE_ARCH%%/Starlink/AST/PLplot.pm
+%%SITE_ARCH%%/Starlink/AST/Tk.pm
 %%SITE_ARCH%%/Starlink/AST.pm
+%%PERL5_MAN3%%/Starlink::AST.3.gz
+%%PERL5_MAN3%%/Starlink::AST::PGPLOT.3.gz
+%%PERL5_MAN3%%/Starlink::AST::PLplot.3.gz
+%%PERL5_MAN3%%/Starlink::AST::Tk.3.gz

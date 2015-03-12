@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/Algorithm::Dependency.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Item.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Ordered.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Source.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Source::File.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Source::HoA.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Source::Invert.3.gz
-%%PERL5_MAN3%%/Algorithm::Dependency::Weight.3.gz
 %%SITE_PERL%%/Algorithm/Dependency.pm
 %%SITE_PERL%%/Algorithm/Dependency/Item.pm
 %%SITE_PERL%%/Algorithm/Dependency/Ordered.pm
@@ -14,3 +6,11 @@
 %%SITE_PERL%%/Algorithm/Dependency/Source/HoA.pm
 %%SITE_PERL%%/Algorithm/Dependency/Source/Invert.pm
 %%SITE_PERL%%/Algorithm/Dependency/Weight.pm
+%%PERL5_MAN3%%/Algorithm::Dependency.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Item.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Ordered.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Source.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Source::File.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Source::HoA.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Source::Invert.3.gz
+%%PERL5_MAN3%%/Algorithm::Dependency::Weight.3.gz
