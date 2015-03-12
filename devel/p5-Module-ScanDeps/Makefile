@@ -8,20 +8,13 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSCHUPP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Recursively scan Perl code for dependencies
 
-LICENSE=	ARTPERL10
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
 USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl \
-		${WRKSRC}/Makefile.PL
-
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
+USES=		perl5
 
 .include <bsd.port.mk>
