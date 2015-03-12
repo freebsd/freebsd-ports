@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extended HTTP Support
 
 LICENSE=	BSD2CLAUSE
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-CONFLICTS=	pecl-http1-*
+CONFLICTS=	pecl-http1*
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \
