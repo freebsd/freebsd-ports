@@ -26,7 +26,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	XS
-XS_DESC=	Use XS libraries for speed boost
 
 XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:${PORTSDIR}/devel/p5-Class-XSAccessor \
 			p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
