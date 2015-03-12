@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.15
-PORTREVISION=	3
+PORTVERSION=	2.2.16
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
