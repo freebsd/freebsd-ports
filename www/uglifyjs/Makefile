@@ -7,7 +7,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	http://github.com/mishoo/UglifyJS/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	swills@freebsd.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	JavaScript parser/compressor/beautifier
 
 LICENSE=	BSD2CLAUSE

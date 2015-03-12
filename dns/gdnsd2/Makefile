@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}
 		http://gdnsd.scaleengine.net/gdnsd/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	zi@freebsd.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Authoritative-only GeoIP-aware DNS server
 
 LICENSE=	GPLv3

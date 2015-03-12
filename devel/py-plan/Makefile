@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	robak@freebsd.org
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python package for writing and deploying cron jobs
 
 LICENSE=	BSD3CLAUSE

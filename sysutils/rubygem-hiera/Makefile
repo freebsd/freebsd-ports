@@ -6,7 +6,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	robak@freebsd.org
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
