@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traditional and Simplified Chinese mappings
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
-
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
