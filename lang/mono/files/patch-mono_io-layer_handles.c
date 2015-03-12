@@ -6,7 +6,7 @@
  	_wapi_fd_reserve = wapi_getdtablesize ();
 +	/* This being very large causes SIGSEGV on FreeBSD */
 +	if ( _wapi_fd_reserve > 50000 )
-+		_wapi_fd_reserver = 50000;
++		_wapi_fd_reserve = 50000;
  
  	/* This is needed by the code in _wapi_handle_new_internal */
  	_wapi_fd_reserve = (_wapi_fd_reserve + (_WAPI_HANDLE_INITIAL_COUNT - 1)) & ~(_WAPI_HANDLE_INITIAL_COUNT - 1);
