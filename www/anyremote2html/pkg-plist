@@ -180,9 +180,3 @@ share/pixmaps/anyremote2html/64/up.png
 share/pixmaps/anyremote2html/64/vol_down.png
 share/pixmaps/anyremote2html/64/vol_up.png
 share/pixmaps/anyremote2html/anyRemote.png
-@dirrmtry share/pixmaps/anyremote2html/128
-@dirrmtry share/pixmaps/anyremote2html/16
-@dirrmtry share/pixmaps/anyremote2html/32
-@dirrmtry share/pixmaps/anyremote2html/48
-@dirrmtry share/pixmaps/anyremote2html/64
-@dirrmtry share/pixmaps/anyremote2html
