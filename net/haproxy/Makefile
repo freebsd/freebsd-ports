@@ -16,7 +16,6 @@ CONFLICTS=	haproxy-devel-[0-9]*
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
-SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS EXAMPLES OPENSSL
 OPTIONS_RADIO=		PCRE
