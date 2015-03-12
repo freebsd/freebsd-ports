@@ -25,18 +25,12 @@ PORTDOCS=	Changes
 
 SHEBANG_FILES=	dbixs_rev.pl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPROXY}
-BUILD_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
-RUN_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
-.endif
+PROXY_BUILD_DEPENDS=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
+PROXY_RUN_DEPENDS=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.mk>

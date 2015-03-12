@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/DBIx::NoSQL.3.gz
-%%PERL5_MAN3%%/DBIx::NoSQLite.3.gz
 %%SITE_PERL%%/DBIx/NoSQL.pm
 %%SITE_PERL%%/DBIx/NoSQL/Class.pm
 %%SITE_PERL%%/DBIx/NoSQL/ClassScaffold.pm
@@ -13,3 +11,5 @@
 %%SITE_PERL%%/DBIx/NoSQL/Store.pm
 %%SITE_PERL%%/DBIx/NoSQL/TypeMap.pm
 %%SITE_PERL%%/DBIx/NoSQLite.pm
+%%PERL5_MAN3%%/DBIx::NoSQL.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQLite.3.gz

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Set::Crontab - Expand crontab(5)-style integer lists
+COMMENT=	Expand crontab(5)-style integer lists
 
 USES=		perl5
 USE_PERL5=	configure

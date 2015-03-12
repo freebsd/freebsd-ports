@@ -1,7 +1,7 @@
 bin/cddb.pl
-%%PERL5_MAN3%%/CDDB_get.3.gz
 %%SITE_PERL%%/CDDB_cache.pm
 %%SITE_PERL%%/CDDB_get.pm
 %%SITE_PERL%%/auto/CDDB_cache/autosplit.ix
 %%SITE_PERL%%/auto/CDDB_get/autosplit.ix
 %%SITE_PERL%%/cddb.pl
+%%PERL5_MAN3%%/CDDB_get.3.gz

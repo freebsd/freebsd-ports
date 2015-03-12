@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/Search::InvertedIndex.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::AutoLoader.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::DB::DB_File_SplitHash.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::DB::Mysql.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::Query.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::Query::Leaf.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::Result.3.gz
-%%PERL5_MAN3%%/Search::InvertedIndex::Update.3.gz
 %%SITE_PERL%%/Search/InvertedIndex.pm
 %%SITE_PERL%%/Search/InvertedIndex/AutoLoader.pm
 %%SITE_PERL%%/Search/InvertedIndex/DB/DB_File_SplitHash.pm
@@ -14,3 +6,11 @@
 %%SITE_PERL%%/Search/InvertedIndex/Query/Leaf.pm
 %%SITE_PERL%%/Search/InvertedIndex/Result.pm
 %%SITE_PERL%%/Search/InvertedIndex/Update.pm
+%%PERL5_MAN3%%/Search::InvertedIndex.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::AutoLoader.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::DB::DB_File_SplitHash.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::DB::Mysql.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::Query.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::Query::Leaf.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::Result.3.gz
+%%PERL5_MAN3%%/Search::InvertedIndex::Update.3.gz

@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/MLDBM.3.gz
 %%SITE_PERL%%/MLDBM.pm
 %%SITE_PERL%%/MLDBM/Serializer/Data/Dumper.pm
 %%SITE_PERL%%/MLDBM/Serializer/FreezeThaw.pm
 %%SITE_PERL%%/MLDBM/Serializer/Storable.pm
+%%PERL5_MAN3%%/MLDBM.3.gz
