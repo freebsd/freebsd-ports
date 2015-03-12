@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/AutoLoader.3.gz
-%%PERL5_MAN3%%/AutoSplit.3.gz
 %%SITE_PERL%%/AutoLoader.pm
 %%SITE_PERL%%/AutoSplit.pm
+%%PERL5_MAN3%%/AutoLoader.3.gz
+%%PERL5_MAN3%%/AutoSplit.3.gz
