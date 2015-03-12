@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texttable
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	textproc python
 MASTER_SITES=	http://foutaise.org/code/texttable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
