@@ -3,7 +3,7 @@
 
 PORTNAME=	pycryptopp
 PORTVERSION=	0.5.29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}darcsver>0:${PORTSDIR}/devel/py-darcsver \
 		${PYTHON_PKGNAMEPREFIX}setuptools_darcs>0:${PORTSDIR}/devel/py-setuptools_darcs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GCC=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
-
-post-extract:
-	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' \
-		${WRKSRC}/embeddedcryptopp/rijndael.cpp \
-		${WRKSRC}/embeddedcryptopp/config.h \
-		${WRKSRC}/embeddedcryptopp/secblock.h
 
 .include <bsd.port.mk>
