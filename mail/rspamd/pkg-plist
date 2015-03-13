@@ -3,15 +3,16 @@ bin/rspamd
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
-etc/rspamd/lua/regexp/drugs.lua
-etc/rspamd/lua/regexp/fraud.lua
-etc/rspamd/lua/regexp/headers.lua
-etc/rspamd/lua/regexp/lotto.lua
-etc/rspamd/lua/rspamd.classifiers.lua
-etc/rspamd/lua/rspamd.lua
-etc/rspamd/lua/hfilter.lua
+%%ETCDIR%%/lua/regexp/drugs.lua
+%%ETCDIR%%/lua/regexp/fraud.lua
+%%ETCDIR%%/lua/regexp/headers.lua
+%%ETCDIR%%/lua/regexp/lotto.lua
+%%ETCDIR%%/lua/rspamd.classifiers.lua
+%%ETCDIR%%/lua/rspamd.lua
+%%ETCDIR%%/lua/hfilter.lua
 %%DATADIR%%/lua/emails.lua
 %%DATADIR%%/lua/forged_recipients.lua
+%%DATADIR%%/lua/fun.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
 %%DATADIR%%/lua/multimap.lua
@@ -31,16 +32,18 @@ etc/rspamd/lua/hfilter.lua
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/js/jquery.paginatetable.js
 %%DATADIR%%/www/css/rspamd.css
-@sample etc/rspamd/rspamd.conf.sample
-@sample etc/rspamd/2tld.inc.sample
-@sample etc/rspamd/composites.conf.sample
-@sample etc/rspamd/logging.conf.sample
-@sample etc/rspamd/metrics.conf.sample
-@sample etc/rspamd/modules.conf.sample
-@sample etc/rspamd/options.conf.sample
-@sample etc/rspamd/statistic.conf.sample
-@sample etc/rspamd/surbl-whitelist.inc.sample
-@sample etc/rspamd/workers.conf.sample
+@sample %%ETCDIR%%/common.conf.sample
+@sample %%ETCDIR%%/logging.inc.sample
+@sample %%ETCDIR%%/options.inc.sample
+@sample %%ETCDIR%%/worker-controller.inc.sample
+@sample %%ETCDIR%%/worker-normal.inc.sample
+@sample %%ETCDIR%%/rspamd.conf.sample
+@sample %%ETCDIR%%/2tld.inc.sample
+@sample %%ETCDIR%%/composites.conf.sample
+@sample %%ETCDIR%%/metrics.conf.sample
+@sample %%ETCDIR%%/modules.conf.sample
+@sample %%ETCDIR%%/statistic.conf.sample
+@sample %%ETCDIR%%/surbl-whitelist.inc.sample
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
 @dirrmtry %%DATADIR%%/lua
@@ -49,9 +52,9 @@ man/man8/rspamd.8.gz
 @dirrmtry %%DATADIR%%/www/img
 @dirrmtry %%DATADIR%%/www
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/rspamd/lua/regexp
-@dirrmtry etc/rspamd/lua
-@dirrmtry etc/rspamd
+@dirrmtry %%ETCDIR%%/lua/regexp
+@dirrmtry %%ETCDIR%%/lua
+@dirrmtry %%ETCDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @owner nobody
 @group nobody
