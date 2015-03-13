@@ -9,6 +9,4 @@ bin/edit.munger
 etc/rc.d/ephemera
 man/man8/ephemera.8.gz
 %%DATADIR%%/ephemera.css
-%%DATADIR%%/DroidSerif.ttf
-%%DATADIR%%/DroidSerif-Bold.ttf
 @sample etc/ephemera.config.sample
