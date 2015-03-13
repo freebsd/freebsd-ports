@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Runtime-Conflicts
-PORTVERSION=	0.001
+PORTVERSION=	0.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Provide information on conflicts for Module::Runtime
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>
