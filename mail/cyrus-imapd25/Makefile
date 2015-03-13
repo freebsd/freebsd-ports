@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -130,15 +130,16 @@ MAN_MAN1=	cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
 		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
 MAN_MAN3=	imclient.3
 MAN_MAN5=	cyrus.conf.5 imapd.conf.5 krb.equiv.5
-CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
+CYRUS_MAN3=	Cyrus::Annotator::Daemon.3 Cyrus::Annotator::Message.3 \
+		Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		ctl_mboxlist.8 cvt_cyrusdb.8 cyr_dbtool.8 cyr_df.8 \
-		cyr_expire.8 cyr_synclog.8 deliver.8 fud.8 idled.8 imapd.8 \
-		ipurge.8 lmtpd.8 master.8 mbexamine.8 mbpath.8 notifyd.8 \
-		pop3d.8 quota.8 reconstruct.8 rmnews.8 smmapd.8 squatter.8 \
-		sync_client.8 sync_reset.8 sync_server.8 timsieved.8 \
-		tls_prune.8 unexpunge.8
+		ctl_mboxlist.8 cvt_cyrusdb.8 cyr_dbtool.8 cyr_deny.8 cyr_df.8 \
+		cyr_expire.8 cyr_info.8 cyr_synclog.8 deliver.8 fud.8 idled.8 \
+		imapd.8 ipurge.8 lmtpd.8 master.8 mbexamine.8 mbpath.8 \
+		notifyd.8 pop3d.8 quota.8 reconstruct.8 rmnews.8 smmapd.8 \
+		squatter.8 sync_client.8 sync_reset.8 sync_server.8 \
+		timsieved.8 tls_prune.8 unexpunge.8
 .if ${PORT_OPTIONS:MHTTP}
 CYRUS_MAN8+=	ctl_zoneinfo.8 httpd.8
 .endif
@@ -183,7 +184,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 			  -e "s|/usr/sieve|/var/imap/sieve|g" \
 		${WRKSRC}/tools/masssievec
-	@${REINPLACE_CMD} -e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
+	${REINPLACE_CMD} \
+		-e 's|$$(libdir)/\(pkgconfig\)|${PREFIX}/libdata/\1|g' \
+		-e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
 		${WRKSRC}/Makefile.in
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
 		${FILESDIR}/cyrus-imapd-man.conf \
