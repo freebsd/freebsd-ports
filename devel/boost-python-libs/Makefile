@@ -27,7 +27,7 @@ LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 
 do-build:
-	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
+	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/src/site-config.jam
 # build the library
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} --with-python stage
