@@ -57,6 +57,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="451a6c79-c92b-11e4-a835-000c292ee6b8">
+    <topic>sympa -- Remote attackers can read arbitrary files</topic>
+    <affects>
+      <package>
+	<name>sympa</name>
+	<range><lt>6.1.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Sympa Project reports:</p>
+	<blockquote cite="https://www.sympa.org/security_advisories">
+	  <p>The newsletter posting area in the web interface in Sympa 6.0.x before 6.0.10 and 6.1.x before 6.1.24 allows remote attackers to read arbitrary files via unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.sympa.org/security_advisories</url>
+      <cvename>CVE-2015-1306</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d08f6002-c588-11e4-8495-6805ca0b3d42">
     <topic>rt -- Remote DoS, Information disclosure and Session Hijackingvulnerabilities</topic>
     <affects>
