@@ -3,7 +3,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	3.20141016.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/ \
@@ -41,13 +41,14 @@ USE_PERL5=	configure
 
 CONFIGURE_ARGS=	PERL=${PERL} FULLPERL=${PERL}
 
-OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES
-OPTIONS_DEFAULT=	PO4A SEARCH
+OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES MULTI
+OPTIONS_DEFAULT=	PO4A SEARCH MULTI
 OPTIONS_SUB=
 
 PO4A_DESC=	Install translated underlays
 SEARCH_DESC=	Install search backend
 W3M_DESC=	Install w3m CGI wrapper
+MULTI_DESC=	Install Text::MultiMarkdown
 
 PO4A_RUN_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
 PO4A_BUILD_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
@@ -55,6 +56,7 @@ SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
 		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
 W3M_MAKE_ENV=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
+MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:${PORTSDIR}/textproc/p5-Text-MultiMarkdown
 
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
