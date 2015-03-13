@@ -3,7 +3,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,5 +28,8 @@ post-patch:
 		 /"X11", "Xpm",/d ; \
 		 /"ttf", "freetype",/d' \
 		${WRKSRC}/${PYSETUP}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_gd.so
 
 .include <bsd.port.mk>
