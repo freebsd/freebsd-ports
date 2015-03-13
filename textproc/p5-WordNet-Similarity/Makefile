@@ -28,6 +28,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|; \
 		 /wnUnixPath/s|/usr/local/WordNet-3.0|${WNHOME}|; \
+		 /wnUnixPath/s|/cntlist|&.rev|; \
 		 /wnUnixPath/s|/dict||'
 
 .include <bsd.port.pre.mk>
