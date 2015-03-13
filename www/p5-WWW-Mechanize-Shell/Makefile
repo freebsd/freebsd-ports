@@ -31,18 +31,13 @@ USE_PERL5=	configure
 DOCS=		Changes README
 EXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/bin && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
-.endif
 
 .include <bsd.port.mk>

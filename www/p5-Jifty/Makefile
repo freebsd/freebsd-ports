@@ -3,7 +3,7 @@
 
 PORTNAME=	Jifty
 PORTVERSION=	1.10518
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -12,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
-BUILD_DEPENDS=	p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
+BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
 		p5-CGI-Cookie-Splitter>=0:${PORTSDIR}/www/p5-CGI-Cookie-Splitter \
 		p5-CGI-Emulate-PSGI>=0.06:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
 		p5-CSS-Squish>=0.05:${PORTSDIR}/textproc/p5-CSS-Squish \
@@ -86,8 +87,7 @@ BUILD_DEPENDS=	p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
 		p5-XML-XPath>0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML \
 		p5-YAML-Syck>=0.71:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-version>0:${PORTSDIR}/devel/p5-version
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \

@@ -22,11 +22,7 @@ OPTIONS_DEFINE=	IPV6
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
-RUN_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
-.endif
+IPV6_BUILD_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
+IPV6_RUN_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 
 .include <bsd.port.mk>

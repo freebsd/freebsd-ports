@@ -14,7 +14,7 @@ COMMENT=	HTML form generator
 USES=		perl5
 USE_PERL5=	configure
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
 	@${RM} ${WRKSRC}/lib/HTML/SuperForm.pm.orig

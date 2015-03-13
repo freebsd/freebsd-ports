@@ -27,8 +27,8 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 post-extract:
 .for ICONVPORT in iconv iconv-extra
 	@${LN} -sfh \
-	`cd ${PORTSDIR}/converters/${ICONVPORT} && ${MAKE} -V WRKSRC`/ccs \
-	${WRKSRC}/${ICONVPORT}
+		`cd ${PORTSDIR}/converters/${ICONVPORT} && ${MAKE} -V WRKSRC`/ccs \
+		${WRKSRC}/${ICONVPORT}
 .endfor
 
 do-configure:
@@ -47,7 +47,7 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/XML/Parser/Encodings
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/XML/Parser/Encodings
 	${INSTALL_DATA} ${WRKSRC}/*.enc \
 		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/XML/Parser/Encodings
 
