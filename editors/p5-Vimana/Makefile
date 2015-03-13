@@ -25,10 +25,10 @@ RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim \
 		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
 		p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
+		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure
