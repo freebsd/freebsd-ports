@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Component-Client-HTTP
 PORTVERSION=	0.9480
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -19,8 +19,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-POE>=1.312:${PORTSDIR}/devel/p5-POE \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
-		p5-POE-Component-Client-Keepalive>=0.2710:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
-		p5-Socket>=2.001:${PORTSDIR}/net/p5-Socket
+		p5-POE-Component-Client-Keepalive>=0.2710:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-POE-Server-TCP>=1.14:${PORTSDIR}/devel/p5-Test-POE-Server-TCP
 

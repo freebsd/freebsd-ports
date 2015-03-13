@@ -3,7 +3,7 @@
 
 PORTNAME=	Data-FormValidator
 PORTVERSION=	4.81
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validates user input (usually from an HTML form) based
 
-BUILD_DEPENDS=	p5-CGI.pm>=3.48:${PORTSDIR}/www/p5-CGI.pm \
+BUILD_DEPENDS=	p5-CGI>=3.48:${PORTSDIR}/www/p5-CGI \
 		p5-Date-Calc>=5.0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-MMagic>=1.17:${PORTSDIR}/devel/p5-File-MMagic \

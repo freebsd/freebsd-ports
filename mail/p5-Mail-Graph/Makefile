@@ -26,6 +26,8 @@ EXAMPLEARCHIVE=	samples/archive/*.gz
 
 SHEBANG_FILES=	samples/*.pl
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/archive \
 		${STAGEDIR}${EXAMPLESDIR}/index ${STAGEDIR}${EXAMPLESDIR}/output

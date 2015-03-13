@@ -17,13 +17,4 @@ USES=		perl5 shebangfix
 USE_PERL5=	modbuild
 SHEBANG_FILES=	bin/getaddrinfo bin/getnameinfo
 
-.include <bsd.port.pre.mk>
-
-# It only needs to compile stuff on perl older than 5.16.
-.if ${PERL_LEVEL} < 501600
-PLIST_SUB+=	OLD_PERL="" NEW_PERL="@comment "
-.else
-PLIST_SUB+=	OLD_PERL="@comment " NEW_PERL=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

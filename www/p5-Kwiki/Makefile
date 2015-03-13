@@ -22,6 +22,6 @@ PLIST_SUB=	KWIKIDIR=${KWIKIDIR}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${KWIKIDIR}
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${KWIKIDIR}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${KWIKIDIR})
 
 .include <bsd.port.mk>
