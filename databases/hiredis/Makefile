@@ -3,6 +3,7 @@
 
 PORTNAME=	hiredis
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gblach@FreeBSD.org
