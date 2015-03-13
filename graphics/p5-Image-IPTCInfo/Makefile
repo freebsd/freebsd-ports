@@ -15,7 +15,7 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	demo.pl
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${RM} -f ${WRKSRC}/._*
