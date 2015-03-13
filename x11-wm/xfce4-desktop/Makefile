@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libwnck
-USE_XFCE=	garcon thunar
+USE_XFCE=	garcon
 USES=	pkgconfig gmake gettext-tools xfce tar:bzip2
 USE_XORG=	x11 sm
 
