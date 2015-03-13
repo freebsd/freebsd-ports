@@ -8,15 +8,6 @@
  
  set(GMSH_MAJOR_VERSION 2)
  set(GMSH_MINOR_VERSION 8)
-@@ -1017,7 +1018,7 @@
-       # ModelingData
-       TKBRep TKGeomBase TKG3d TKG2d
-       # FoundationClasses
--      TKAdvTools TKMath TKernel)
-+      TKMath TKernel)
-   if(ENABLE_SGEOM)
-     set(OCC_LIBS_REQUIRED ${OCC_LIBS_REQUIRED}
-       # For SGEOM
 @@ -1450,7 +1451,7 @@
      set(GMSH_BIN bin)
      set(GMSH_LIB lib)
