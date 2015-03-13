@@ -27,4 +27,4 @@ USE_PERL5=	configure
 CACHE_BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 CACHE_RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
