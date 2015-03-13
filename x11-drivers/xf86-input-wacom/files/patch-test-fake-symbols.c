@@ -48,7 +48,7 @@
 @@ -506,6 +518,7 @@ xf86UnblockSIGIO (int wasset)
  
  /* This is not the same as the X server one, but it'll do for the tests */
- #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 14
+ #if HAVE_XF86OPTIONPTR
 +#define InputOption InputOption_custom
  typedef struct _InputOption {
      struct _InputOption *next;
