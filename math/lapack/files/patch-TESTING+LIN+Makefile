@@ -1,5 +1,5 @@
---- TESTING/LIN/Makefile~	2011-11-01 07:21:11.000000000 +0900
-+++ TESTING/LIN/Makefile	2011-11-18 23:32:05.000000000 +0900
+--- TESTING/LIN/Makefile.orig	2015-01-15 16:35:28.000000000 +0100
++++ TESTING/LIN/Makefile	2015-01-15 16:36:26.000000000 +0100
 @@ -34,11 +34,6 @@
  #
  #######################################################################
@@ -14,78 +14,69 @@
     alasum.o alasvm.o chkxer.o icopy.o ilaenv.o xlaenv.o xerbla.o
 @@ -76,13 +71,13 @@
     strt02.o strt03.o strt05.o strt06.o \
-    stzt01.o stzt02.o sgennd.o
+    stzt01.o stzt02.o sgennd.o sqrt04.o sqrt05.o schkqrt.o serrqrt.o schkqrtp.o serrqrtp.o
  
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
  SLINTST += serrvxx.o sdrvgex.o sdrvsyx.o serrgex.o sdrvgbx.o sdrvpox.o \
- 	sebchvxx.o serrsyx.o serrpox.o
+            sebchvxx.o serrsyx.o serrpox.o
 -else
 +.else
  SLINTST += serrvx.o sdrvge.o sdrvsy.o serrge.o sdrvgb.o sdrvpo.o \
- 	serrsy.o serrpo.o
+            serrsy.o serrpo.o
 -endif
 +.endif
  
  CLINTST = cchkaa.o \
     cchkeq.o cchkgb.o cchkge.o cchkgt.o \
-@@ -116,13 +111,13 @@
-    ctrt02.o ctrt03.o ctrt05.o ctrt06.o \
-    ctzt01.o ctzt02.o sget06.o cgennd.o
+@@ -117,13 +112,13 @@
+    ctzt01.o ctzt02.o sget06.o cgennd.o \
+    cqrt04.o cqrt05.o cchkqrt.o cerrqrt.o cchkqrtp.o cerrqrtp.o
  
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
- CLINTST += cerrvxx.o cdrvgex.o cdrvsyx.o cdrvgbx.o cerrgex.o cdrvpox.o cdrvhex.o \
- 	cerrpox.o cebchvxx.o cerrsyx.o cerrhex.o
+ CLINTST += cerrvxx.o cdrvgex.o cdrvsyx.o cdrvgbx.o cerrgex.o cdrvpox.o \
+            cdrvhex.o cerrpox.o cebchvxx.o cerrsyx.o cerrhex.o
 -else
 +.else
- CLINTST += cerrvx.o cdrvge.o cdrvsy.o cdrvgb.o cerrge.o cdrvpo.o cdrvhe.o \
- 	cerrpo.o cerrsy.o cerrhe.o
+ CLINTST += cerrvx.o cdrvge.o cdrvsy.o cdrvgb.o cerrge.o cdrvpo.o \
+            cdrvhe.o cerrpo.o cerrsy.o cerrhe.o
 -endif
 +.endif
  
  DLINTST = dchkaa.o \
     dchkeq.o dchkgb.o dchkge.o dchkgt.o \
-@@ -153,13 +148,13 @@
-    dtrt02.o dtrt03.o dtrt05.o dtrt06.o \
-    dtzt01.o dtzt02.o dgennd.o
+@@ -155,13 +150,13 @@
+    dtzt01.o dtzt02.o dgennd.o \
+    dqrt04.o dqrt05.o dchkqrt.o derrqrt.o dchkqrtp.o derrqrtp.o
  
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
  DLINTST += derrvxx.o ddrvgex.o ddrvsyx.o ddrvgbx.o derrgex.o ddrvpox.o derrpox.o \
- 	debchvxx.o derrsyx.o
+            debchvxx.o derrsyx.o
 -else
 +.else
  DLINTST += derrvx.o ddrvge.o ddrvsy.o ddrvgb.o derrge.o ddrvpo.o derrpo.o \
- 	derrsy.o
+            derrsy.o
 -endif
 +.endif
  
  ZLINTST = zchkaa.o \
     zchkeq.o zchkgb.o zchkge.o zchkgt.o \
-@@ -193,13 +188,13 @@
-    ztrt02.o ztrt03.o ztrt05.o ztrt06.o \
-    ztzt01.o ztzt02.o dget06.o zgennd.o
+@@ -196,13 +191,13 @@
+    ztzt01.o ztzt02.o dget06.o zgennd.o \
+    zqrt04.o zqrt05.o zchkqrt.o zerrqrt.o zchkqrtp.o zerrqrtp.o
  
 -ifdef USEXBLAS
 +.ifdef USEXBLAS
  ZLINTST += zerrvxx.o zdrvgex.o zdrvsyx.o zdrvgbx.o zerrgex.o zdrvpox.o zdrvhex.o \
- 	zerrpox.o zebchvxx.o zerrsyx.o zerrhex.o
+            zerrpox.o zebchvxx.o zerrsyx.o zerrhex.o
 -else
 +.else
- ZLINTST += zerrvx.o zdrvge.o zdrvsy.o zdrvgb.o zerrge.o zdrvpo.o zdrvhe.o \
- 	zerrpo.o zerrsy.o zerrhe.o
+ ZLINTST += zerrvx.o zdrvge.o zdrvsy.o zdrvgb.o zerrge.o zdrvpo.o \
+            zdrvhe.o zerrpo.o zerrsy.o zerrhe.o
 -endif
 +.endif
  
  DSLINTST = dchkab.o \
  	ddrvab.o ddrvac.o derrab.o derrac.o dget08.o          \
-@@ -250,7 +245,7 @@
-         ../../$(TMGLIB) ../../$(LAPACKLIB) $(XBLASLIB)  $(BLASLIB) -o $@
-  
- xlintstd : $(ALINTST) $(DLINTST) $(DZLNTST) ../../$(LAPACKLIB)
--	$(LOADER) $(LOADOPTS) $^ \
-+	$(LOADER) $(LOADOPTS) $(ALINTST) $(DLINTST) $(DZLNTST) \
-         ../../$(TMGLIB) ../../$(LAPACKLIB) $(XBLASLIB) $(BLASLIB) -o $@
-  
- xlintstz : $(ALINTST) $(ZLINTST) $(DZLNTST) ../../$(LAPACKLIB)
