@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Git-Wrapper
-PORTVERSION=	0.038
-PORTREVISION=	1
+PORTVERSION=	0.040
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Path-Class>=0.26:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
