@@ -11,7 +11,6 @@ COMMENT=	RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RUBY_FEATURES=	racc-runtime
 RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.mk>
