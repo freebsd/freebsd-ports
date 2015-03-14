@@ -147,6 +147,7 @@
     SUBDIR += libmongo-client
     SUBDIR += libodbc++
     SUBDIR += libpbl
+    SUBDIR += libpqtypes
     SUBDIR += libsdb
     SUBDIR += libzdb
     SUBDIR += linux-c6-sqlite3
