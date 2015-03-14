@@ -6,7 +6,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	http://kristaps.bsd.lv/kcgi/snapshots/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Minimal CGI library in C
+COMMENT=	Minimal sandboxed CGI library in C
 
 LICENSE=	ISCL
 
