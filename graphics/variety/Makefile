@@ -3,7 +3,7 @@
 
 PORTNAME=	variety
 PORTVERSION=	0.5.3
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/variety/trunk/${PORTVERSION}/+download/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:${PORTSDIR}/www/py-beau
 		${PYTHON_PKGNAMEPREFIX}curl>=7.19.5.1:${PORTSDIR}/ftp/py-curl \
 		${PYTHON_PKGNAMEPREFIX}dbus>=1.1.1_1:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}exiv2>=0.3.2_3:${PORTSDIR}/graphics/py-exiv2 \
+		${PYTHON_PKGNAMEPREFIX}gobject3>=3.14.0:${PORTSDIR}/devel/py-gobject3 \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.9:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.6.0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4.1_1:${PORTSDIR}/devel/py-lxml \
