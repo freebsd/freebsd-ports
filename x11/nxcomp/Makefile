@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nxcomp
-PORTVERSION=	3.5.0.28
+PORTVERSION=	3.5.0.29
 PORTREVISION=	1
 MASTER_SITES=	http://code.x2go.org/releases/source/nx-libs/
 CATEGORIES=	x11 devel
