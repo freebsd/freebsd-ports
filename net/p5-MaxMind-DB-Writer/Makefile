@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Writer
-PORTVERSION=	0.080000
+PORTVERSION=	0.100001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 		p5-Data-IEEE754>=0:${PORTSDIR}/devel/p5-Data-IEEE754 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Math-Int128>=0.06:${PORTSDIR}/math/p5-Math-Int128 \
+		p5-Math-Int128>=0.21:${PORTSDIR}/math/p5-Math-Int128 \
+		p5-Math-Int64>=0.51:${PORTSDIR}/math/p5-Math-Int64 \
 		p5-MaxMind-DB-Common>=0.031003:${PORTSDIR}/net/p5-MaxMind-DB-Common \
 		p5-MaxMind-DB-Reader>=0:${PORTSDIR}/net/p5-MaxMind-DB-Reader \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
