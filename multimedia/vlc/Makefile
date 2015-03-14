@@ -3,6 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -18,8 +19,10 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libidn.so:${PORTSDIR}/dns/libidn
-BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libminizip.so:${PORTSDIR}/archivers/minizip
+BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg \
+		yasm:${PORTSDIR}/devel/yasm
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		compiler:c11 desktop-file-utils gmake iconv libtool pathfix \
