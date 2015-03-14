@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 IGNORE=		due to sigtramp-armdroid.c, ARMv7 is the minimum required CPU
 DEPRECATED=	Nobody cares enough to fix sigtramp-android.c for ARMv5
-EXPIRATION_DATE=	2014-03-31
+EXPIRATION_DATE=	2015-03-31
 
 NO_LICENSES_INSTALL= yes
 
