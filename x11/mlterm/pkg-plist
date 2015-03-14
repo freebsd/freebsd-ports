@@ -26,10 +26,10 @@ lib/libmkf.so.16
 lib/libmkf.so.16.0.0
 lib/libmlterm_core.a
 lib/libmlterm_core.so
-lib/libvte-mlterm.a
-lib/libvte-mlterm.so
-lib/libvte-mlterm.so.9
-lib/libvte-mlterm.so.9.0.0
+lib/libvte-mlterm-2.91.a
+lib/libvte-mlterm-2.91.so
+lib/libvte-mlterm-2.91.so.9
+lib/libvte-mlterm-2.91.so.9.0.0
 lib/mkf/libmkf_8bits.a
 lib/mkf/libmkf_8bits.so
 lib/mkf/libmkf_jajp.a
