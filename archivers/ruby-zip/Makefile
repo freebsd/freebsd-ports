@@ -14,7 +14,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for reading and writing ZIP files
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	zlib
 
 WRKSRC=		${WRKDIR}/rubyzip-${PORTVERSION}
 NO_BUILD=	yes

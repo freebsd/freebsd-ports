@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-activesupport>=3.2:${PORTSDIR}/devel/rubygem-activesupport
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-USE_RUBY_FEATURES=	iconv
 
 .include <bsd.port.mk>

@@ -15,7 +15,6 @@ COMMENT=	Collect WWW resources and generate TSV data
 USES=		shebangfix
 SHEBANG_FILES=	wgettsv
 USE_RUBY=		yes
-USE_RUBY_FEATURES=	iconv
 NO_WRKSUBDIR=	yes
 
 NO_BUILD=		yes
