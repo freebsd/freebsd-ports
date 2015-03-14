@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.1.5
-PORTREVISION=	18
+DISTVERSION=	2.2.0
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -52,17 +51,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNOMEVFS2 GNUTLS \
+		DVDNAV FAAD FLAC FLUID FRIBIDI GME GNOMEVFS2 GNUTLS \
 		GOOM HTTPD JACK KATE LIBBLURAY LIBRSVG2 LIBSSH2 LIRC \
 		LIVEMEDIA LUA MAD MATROSKA MODPLUG \
 		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OGG OPTIMIZED_CFLAGS \
-		OPUS PNG PULSEAUDIO QT4 REALRTSP RUNROOT SAMPLERATE \
+		OPUS PNG PULSEAUDIO QT5 REALRTSP RUNROOT SAMPLERATE \
 		SCHROEDINGER SDL SHOUTCAST SIDPLAY SKINS SMB STREAM SPEEX \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VDPAU VORBIS \
-		X11 X264 ZVBI
+		X11 X264 X265 ZVBI
 OPTIONS_DEFAULT=A52 AVAHI DBUS DCA DVDREAD DVDNAV FAAD FLAC GNUTLS \
 		HTTPD LIVEMEDIA LUA MAD MATROSKA MPEG2 OGG OPTIMIZED_CFLAGS \
-		OPUS PNG QT4 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
+		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
 		VCD VORBIS X11
 OPTIONS_SUB=	yes
 
@@ -126,8 +125,10 @@ FLAC_CONFIGURE_ENABLE=	flac
 FLUID_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 FLUID_CONFIGURE_ENABLE=	fluidsynth
 
-FREERDP_LIB_DEPENDS=	libfreerdp-core.so:${PORTSDIR}/net/freerdp
-FREERDP_CONFIGURE_ENABLE=	libfreerdp
+# XXX vlc doesn't seem to like the freerdp version in ports
+#FREERDP_LIB_DEPENDS=	libfreerdp-core.so:${PORTSDIR}/net/freerdp
+#FREERDP_CONFIGURE_ENABLE=	libfreerdp
+CONFIGURE_ARGS+=	-disable-freerdp
 
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
@@ -228,8 +229,8 @@ PNG_CONFIGURE_ENABLE=	png
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-QT4_CONFIGURE_ENABLE=	qt
-QT4_USE=		QT4=gui,corelib,moc_build,rcc_build,uic_build
+QT5_CONFIGURE_ENABLE=	qt
+QT5_USE=		QT5=gui,core,widgets,x11extras,buildtools
 
 REALRTSP_CONFIGURE_ENABLE=	realrtsp
 
@@ -294,6 +295,9 @@ X11_CONFIGURE_WITH=	x
 X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 X264_CONFIGURE_ENABLE=	x264
 
+X265_LIB_DEPENDS=	libx265.so:${PORTSDIR}/multimedia/x265
+X265_CONFIGURE_ENABLE=	x265
+
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
@@ -311,13 +315,13 @@ INSTALLS_ICONS=	yes
 .endif
 
 .if ${PORT_OPTIONS:MSKINS}
-.if ${PORT_OPTIONS:MQT4}
+.if ${PORT_OPTIONS:MQT5}
 LIB_DEPENDS+=	libminizip.so:${PORTSDIR}/archivers/minizip \
 		libtar.so:${PORTSDIR}/devel/libtar
 USE_XORG+=	xext xinerama xpm
 CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
 .else
-IGNORE=	SKINS option requires QT4 option
+IGNORE=	SKINS option requires QT5 option
 .endif
 .else
 CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
@@ -342,9 +346,12 @@ post-patch:
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/src/libvlc-module.c
 	@${RM} -rf ${WRKSRC}/modules/access/v4l2/linux
+# XXX FreeBSD doesn't have strerror_l() - use the android version of error.c
+	@${CP} ${WRKSRC}/src/android/error.c ${WRKSRC}/src/posix
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s lib/vlc -not -name '*.la' \
 		-type f -o -type l >> ${TMPPLIST})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vlc/plugins/*/*.so
 
 .include <bsd.port.mk>
