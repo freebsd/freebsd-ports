@@ -7439,3 +7439,4 @@ math/isabelle||2015-03-01|Has expired: Broken for more than 6 months
 net/rubygem-openid|net/rubygem-ruby-openid|2015-03-07|Rename to match our rubygems naming
 devel/p5-Errno||2015-03-09|Errno is part of Perl 
 devel/p5-Class-XSAccessor-Array||2015-03-09|Has been a part of devel/p5-Class-XSAccessor for >5 years. Use that port instead
+multimedia/ffmpeg25|multimedia/ffmpeg26|2015-03-14|ffmpeg upstream now points to 2.6.x series

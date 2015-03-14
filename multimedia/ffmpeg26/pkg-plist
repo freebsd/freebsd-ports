@@ -8,6 +8,7 @@ include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/avfft.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/dv_profile.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/dxva2.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/old_codec_ids.h
+include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/qsv.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/vaapi.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/vda.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec/vdpau.h
@@ -43,6 +44,7 @@ include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/blowfish.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/bprint.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/bswap.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/buffer.h
+include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/camellia.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/channel_layout.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/common.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/cpu.h
@@ -88,6 +90,7 @@ include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/time.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/timecode.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/timestamp.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/threadmessage.h
+include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/twofish.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/version.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libavutil/xtea.h
 include/ffmpeg%%FFMPEG_SUFFIX%%/libpostproc/postprocess.h
@@ -99,19 +102,19 @@ include/ffmpeg%%FFMPEG_SUFFIX%%/libswscale/version.h
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec%%FFMPEG_SUFFIX%%.so.56
-lib/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec%%FFMPEG_SUFFIX%%.so.56.13.100
+lib/ffmpeg%%FFMPEG_SUFFIX%%/libavcodec%%FFMPEG_SUFFIX%%.so.56.26.100
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavdevice%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavdevice%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavdevice%%FFMPEG_SUFFIX%%.so.56
-lib/ffmpeg%%FFMPEG_SUFFIX%%/libavdevice%%FFMPEG_SUFFIX%%.so.56.3.100
+lib/ffmpeg%%FFMPEG_SUFFIX%%/libavdevice%%FFMPEG_SUFFIX%%.so.56.4.100
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavfilter%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavfilter%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavfilter%%FFMPEG_SUFFIX%%.so.5
-lib/ffmpeg%%FFMPEG_SUFFIX%%/libavfilter%%FFMPEG_SUFFIX%%.so.5.2.103
+lib/ffmpeg%%FFMPEG_SUFFIX%%/libavfilter%%FFMPEG_SUFFIX%%.so.5.11.102
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavformat%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavformat%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavformat%%FFMPEG_SUFFIX%%.so.56
-lib/ffmpeg%%FFMPEG_SUFFIX%%/libavformat%%FFMPEG_SUFFIX%%.so.56.15.102
+lib/ffmpeg%%FFMPEG_SUFFIX%%/libavformat%%FFMPEG_SUFFIX%%.so.56.25.101
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavresample%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavresample%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavresample%%FFMPEG_SUFFIX%%.so.2
@@ -119,7 +122,7 @@ lib/ffmpeg%%FFMPEG_SUFFIX%%/libavresample%%FFMPEG_SUFFIX%%.so.2.1.0
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavutil%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavutil%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libavutil%%FFMPEG_SUFFIX%%.so.54
-lib/ffmpeg%%FFMPEG_SUFFIX%%/libavutil%%FFMPEG_SUFFIX%%.so.54.15.100
+lib/ffmpeg%%FFMPEG_SUFFIX%%/libavutil%%FFMPEG_SUFFIX%%.so.54.20.100
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libpostproc%%FFMPEG_SUFFIX%%.a
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libpostproc%%FFMPEG_SUFFIX%%.so
 lib/ffmpeg%%FFMPEG_SUFFIX%%/libpostproc%%FFMPEG_SUFFIX%%.so.53
@@ -156,6 +159,7 @@ man/man1/ffprobe%%FFMPEG_SUFFIX%%.1.gz
 %%DATADIR%%/examples/filtering_video.c
 %%DATADIR%%/examples/metadata.c
 %%DATADIR%%/examples/muxing.c
+%%DATADIR%%/examples/qsvdec.c
 %%DATADIR%%/examples/remuxing.c
 %%DATADIR%%/examples/resampling_audio.c
 %%DATADIR%%/examples/scaling_video.c

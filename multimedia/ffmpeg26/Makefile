@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
-PKGNAMESUFFIX=	25
+PKGNAMESUFFIX=	26
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
@@ -27,7 +26,7 @@ USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
 WANT_SDL=	yes
 
-FFMPEG_SUFFIX=	25
+FFMPEG_SUFFIX=	26
 PLIST_SUB+=	FFMPEG_SUFFIX="${FFMPEG_SUFFIX}"
 CONFIGURE_ENV+=	EXESUF="${FFMPEG_SUFFIX}"
 MAKE_ARGS+=	EXESUF="${FFMPEG_SUFFIX}"
@@ -269,6 +268,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-avresample \
 		--enable-pthreads \
 		--enable-memalign-hack \
+		--disable-libmfx \
 		--disable-libstagefright-h264 \
 		--disable-libutvideo \
 		--disable-libsoxr \
