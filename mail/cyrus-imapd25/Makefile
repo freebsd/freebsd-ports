@@ -39,10 +39,10 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		AUTOCREATE BDB CLAMAV HTTP IDLED LDAP MURDER MYSQL \
+OPTIONS_DEFINE=		AUTOCREATE BDB HTTP IDLED LDAP MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP SQLITE DOCS \
 			EXAMPLES
-#OPTIONS_DEFINE+=	DRAC
+#OPTIONS_DEFINE+=	CLAMAV DRAC
 OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
@@ -51,17 +51,18 @@ BDB_USE=		BDB=yes
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
-CLAMAV_CONFIGURE_ON=	--with-clamav=${LOCALBASE}
-CLAMAV_CONFIGURE_OFF=	--with-clamav=no
+CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
 DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-HTTP_DESC=		Enable HTTP
+# XXX: Does not install vzic for now.
+# Only vzic depends upon glib.
+HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 			libical.so:${PORTSDIR}/devel/libical
-HTTP_USE=		GNOME=libxml2 SQLITE=yes
+HTTP_USE=		GNOME=libxml2,glib20 SQLITE=yes
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
@@ -100,10 +101,7 @@ BDB_LIB_NAME=	no
 .if ${PORT_OPTIONS:MCLAMAV}
 IGNORE=		CLAMAV is not available yet
 .endif
-
-.if ${PORT_OPTIONS:MHTTP}
-IGNORE=		HTTP is not available yet
-.endif
+PLIST_SUB+=	CLAMAV="@comment "
 
 .if ${PORT_OPTIONS:MDRAC}
 IGNORE=		DRAC is not available
