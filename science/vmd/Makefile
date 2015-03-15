@@ -3,7 +3,7 @@
 
 PORTNAME=	vmd
 DISTVERSION=	1.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
 		http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
@@ -78,7 +78,7 @@ post-patch:
 	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" ${WRKSRC}/configure
 	${REINPLACE_CMD} -E "s/(SHLD[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
 		${WRKDIR}/plugins/Make-arch
-	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)cc/\1${CC}/" \
+	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)(gcc|cc)/\1${CC}/" \
 		${WRKSRC}/lib/stride/Makefile \
 		${WRKSRC}/lib/surf/Makefile \
 		${WRKSRC}/lib/tachyon/unix/Make-arch \
@@ -86,13 +86,8 @@ post-patch:
 		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
 		${WRKDIR}/plugins/cionize/Makefile.mine \
 		${WRKDIR}/plugins/cionize/Makefile.testing \
-		${WRKDIR}/plugins/Make-arch
-	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
 		${WRKDIR}/plugins/Make-arch \
-		${WRKDIR}/plugins/cionize/Makefile.mine \
-		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
-		${WRKDIR}/plugins/molfile_plugin/f77/Makefile \
-		${WRKSRC}/lib/tachyon/unix/Make-arch
+		${WRKDIR}/plugins/molfile_plugin/f77/Makefile
 	${REINPLACE_CMD} -E "s/(CXX[[:space:]]*=[[:space:]]*)g\+\+/\1${CXX}/" \
 		${WRKDIR}/plugins/cionize/Makefile.specialbuilds \
 		${WRKDIR}/plugins/fmtool/Makefile.specialbuilds \
