@@ -3,7 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	124
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki119-[0-9]* mediawiki12[23]-[0-9]*
 
-USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom json
+USE_PHP=	ctype hash iconv mbstring pcre session xml zlib readline dom json
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
