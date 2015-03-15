@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doomlegacy
-DISTVERSION=	1.45_beta1
-PORTREVISION=	2
+PORTVERSION=	1.45.2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:S,_,%20,}/
@@ -11,7 +10,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}_source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_${DISTVERSION}_common.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Improved and extended version of Doom
 
 LICENSE=	GPLv2
@@ -20,9 +19,7 @@ USES=		gmake tar:bzip2
 USE_GL=		glu
 USE_SDL=	mixer sdl
 
-CFLAGS+=	-DSVN_REV=\\\"1107\\\"
-WRKSRC=		${WRKDIR}/${DISTNAME:S,_beta1,,}/src
-MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-DSVN_REV=\\\"1139\\\"
 
 PLIST_FILES=	bin/${PORTNAME} share/doom/legacy.wad
 PORTDOCS=	*
@@ -42,32 +39,31 @@ ASM_MAKE_ENV=		USEASM=1 OLD_DEPENDENCIES=1
 
 post-patch: .SILENT
 # Adjust default WAD search path
-	${REINPLACE_CMD} -e '/DEFWADS1/s|/.*|${DMDIR}"|' ${WRKSRC}/doomdef.h
+	${REINPLACE_CMD} -e '/DEFWADS1/s|/.*|${DMDIR}"|' \
+		${WRKSRC}/src/doomdef.h
 # Provide better support for relative paths (for `-iwad' switch)
 	${REINPLACE_CMD} -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
-		${WRKSRC}/d_main.c
-# Unbreak on big-endian architectures
-	${REINPLACE_CMD} -e '150s|^|#include "m_swap.h"|' \
-		${WRKSRC}/p_spec.c
-	${REINPLACE_CMD} -e '60s|^|#include "m_swap.h"|' \
-		${WRKSRC}/p_switch.c
+		${WRKSRC}/src/d_main.c
+# Unbreak against Clang (https://llvm.org/bugs/show_bug.cgi?id=10365)
+	${REINPLACE_CMD} -e 's,%cc,cc,' ${WRKSRC}/src/m_fixed.h
 .if ! ${PORT_OPTIONS:MIPX}
-	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/doomdef.h
+	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/src/doomdef.h
 	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/Makefile
 .endif
 
 pre-build:
-	${ECHO_CMD} MAKE_OPTIONS_PRESENT=1 HAVE_MIXER=1 | ${XARGS} -n 1 \
-		> ${BUILD_WRKSRC}/../make_options
+	${ECHO_CMD} CC_ENVIRONMENT=1 MAKE_OPTIONS_PRESENT=1 HAVE_MIXER=1 | \
+		${XARGS} -n 1 > ${BUILD_WRKSRC}/make_options
 	${MAKE_CMD} -C ${BUILD_WRKSRC} dirs
+	${MAKE_CMD} -C ${BUILD_WRKSRC} depend
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/doomlegacy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/doomlegacy ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DMDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_1.45/legacy.wad \
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${PORTVERSION}/legacy.wad \
 		${STAGEDIR}${DMDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/../docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 .include <bsd.port.mk>
