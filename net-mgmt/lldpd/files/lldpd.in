@@ -27,6 +27,4 @@ load_rc_config $name
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
-command_args=${lldpd_flags}
-
 run_rc_command "$1"
