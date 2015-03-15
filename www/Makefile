@@ -1980,7 +1980,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid33
     SUBDIR += squid_radius_auth
     SUBDIR += squidclamav
     SUBDIR += squidguard
