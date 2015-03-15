@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tanks-of-freedom
-PORTVERSION=	git20150303
+PORTVERSION=	git20150306
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	w84death
 GH_PROJECT=	Tanks-of-Freedom
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	df489ca
+GH_COMMIT=	56699f4
 
 DESKTOP_ENTRIES="Tanks of Freedom" \
 		"" \
