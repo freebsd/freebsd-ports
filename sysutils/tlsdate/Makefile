@@ -5,7 +5,7 @@ PORTVERSION=	0.0.11
 CATEGORIES=	sysutils
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure parasitic rdate replacement
 
 LICENSE=	BSD3CLAUSE
