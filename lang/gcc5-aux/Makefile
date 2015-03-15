@@ -149,9 +149,8 @@ EXTRA_CONFIG+=		--with-stage1-ldflags=-static
 EXTRA_CONFIG+=		--disable-shared --disable-lto
 EXTRA_CONFIG+=		--with-boot-ldflags=-static
 .else
-.  if ${OPSYS} == DragonFly
-EXTRA_CONFIG+=		--disable-bootstrap
-.  endif
+# For some reason, libcc1.a can't be build with bootstrap (only) in poudriere
+#EXTRA_CONFIG+=		--disable-bootstrap
 .endif
 
 # Establish Ada-aware compiler for use
