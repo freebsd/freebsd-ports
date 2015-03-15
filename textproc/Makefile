@@ -418,6 +418,7 @@
     SUBDIR += luaexpat
     SUBDIR += lucene
     SUBDIR += lucene4
+    SUBDIR += lucene5
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
     SUBDIR += m17n-im-config
