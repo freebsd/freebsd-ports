@@ -3,6 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	1.15.3.150311
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -44,7 +45,7 @@ DB=		pgsql
 MYSQL=		"\#"
 PGSQL=
 .else
-USE_PHP+=	mysql
+USE_PHP+=	mysqli
 DB=		mysql
 MYSQL=
 PGSQL=		"\#"
