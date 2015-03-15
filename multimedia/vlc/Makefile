@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -233,7 +233,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 QT5_CONFIGURE_ENABLE=	qt
-QT5_USE=		QT5=gui,core,widgets,x11extras,buildtools
+QT5_USE=		QT5=gui,core,widgets,x11extras,buildtools_build
 
 REALRTSP_CONFIGURE_ENABLE=	realrtsp
 
