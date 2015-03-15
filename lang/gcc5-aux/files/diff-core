@@ -327,7 +327,7 @@
  	    ( cd $(DESTDIR)$(bindir) && \
  	      $(LN) $(GCC_INSTALL_NAME)$(exeext) $(FULL_DRIVER_NAME) ); \
  	  fi; \
-+	  -if [ -f gnat1$(exeext) ] ; then \
++	  if [ -f gnat1$(exeext) ] ; then \
 +	    ( cd $(DESTDIR)$(bindir) && $(LN) $(GCC_INSTALL_NAME)$(exeext) ada$(exeext) ) \
 +	  fi; \
  	  if [ ! -f gcc-cross$(exeext) ] \
