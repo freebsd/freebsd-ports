@@ -301,3 +301,12 @@ bin/zmx10.pl
 @dir(%%WEB_USER%%,%%WEB_GROUP%%,0700) %%ZM_TMPDIR%%
 @dir(%%WEB_USER%%,%%WEB_GROUP%%,0755) %%ZM_RUNDIR%%
 @dir(%%WEB_USER%%,%%WEB_GROUP%%,0755) %%ZM_LOGDIR%%
+@dir %%WWWDIR%%/data/temp
+@dir %%WWWDIR%%/data/sounds
+@dir %%WWWDIR%%/data/skins/mobile/lang
+@dir %%WWWDIR%%/data/skins/mobile/graphics
+@dir %%WWWDIR%%/data/skins/mobile/ajax
+@dir %%WWWDIR%%/data/skins/classic/lang
+@dir %%WWWDIR%%/data/skins/classic/ajax
+@dir %%WWWDIR%%/data/images
+@dir %%WWWDIR%%/data/events
