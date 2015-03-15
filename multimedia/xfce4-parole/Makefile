@@ -33,8 +33,6 @@ USES=		desktop-file-utils pkgconfig gmake libtool gettext-tools \
 		xfce:gtk3 tar:bzip2
 
 OPTIONS_DEFINE=	CLUTTER NLS
-# With some video cards, Parole displays a purple/pink overlay on the video 
-OPTIONS_EXCLUDE=	CLUTTER
 OPTIONS_SINGLE=	GSTREAMER
 # GST01 (GStreamer 0.10), GST10 (GStreamer 1.0)
 OPTIONS_SINGLE_GSTREAMER=	GST01 GST10
