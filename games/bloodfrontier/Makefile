@@ -3,7 +3,7 @@
 
 PORTNAME=	bloodfrontier
 DISTVERSION=	B2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blood%20Frontier%20Beta%202
 DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
@@ -18,11 +18,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_XORG=	x11
 
-ALL_TARGET=	libenet ${BINARIES}
+ALL_TARGET=	libenet
 
-SUB_FILES=	bfclient bfserver
+SUB_FILES=	${PLIST_FILES:Mbin/*:T}
 
 PORTDATA=	*
 
@@ -32,7 +31,15 @@ OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS
 
 CLIENT_DESC=	Build client
+CLIENT_USE=			GL=gl SDL=image,mixer,sdl XORG=x11
+CLIENT_ALL_TARGET=		client
+CLIENT_PLIST_FILES=		bin/bfclient libexec/bfclient \
+				share/pixmaps/${PORTNAME}.ico
 DEDICATED_DESC= Build dedicated server
+DEDICATED_PLIST_FILES=		bin/bfserver libexec/bfserver
+DEDICATED_ALL_TARGET=		server
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer
+OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -fomit-frame-pointer
 
 .include <bsd.port.options.mk>
 
@@ -41,11 +48,6 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_GL=		yes
-USE_SDL=	image mixer sdl
-PLIST_FILES+=	bin/bfclient libexec/bfclient share/pixmaps/${PORTNAME}.ico
-BINARIES+=	client
-
 DESKTOP_ENTRIES="Blood Frontier" \
 		"${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
@@ -54,25 +56,17 @@ DESKTOP_ENTRIES="Blood Frontier" \
 		""
 .endif
 
-.if ${PORT_OPTIONS:MDEDICATED}
-PLIST_FILES+=	bin/bfserver libexec/bfserver
-BINARIES+=	server
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -fomit-frame-pointer
-CXXFLAGS+=	-O3 -fomit-frame-pointer
-.endif
-
 do-install:
-.for f in ${BINARIES}
-	${INSTALL_SCRIPT} ${WRKDIR}/bf${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bf${f} ${STAGEDIR}${PREFIX}/libexec
+.for f in ${PLIST_FILES:Mbin/*}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f:T} ${STAGEDIR}${PREFIX}/${f}
+.endfor
+.for f in ${PLIST_FILES:Mlibexec/*}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f:T} ${STAGEDIR}${PREFIX}/${f:H}
 .endfor
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "." ${STAGEDIR}${DATADIR}/
+	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "." ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
