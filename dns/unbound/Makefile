@@ -29,7 +29,7 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		ietf67-design-02.pdf requirements.txt
 PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT FILTER_AAA
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT FILTER_AAAA
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Build against libevent
@@ -100,7 +100,7 @@ post-patch:
 		s|$$(configfile); fi|$$(configfile).sample|' \
 		${WRKSRC}/Makefile.in
 .if ${PORT_OPTIONS:MFILTER_AAAA}
-	cat ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1
+	cat ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1 -s
 .endif
 
 post-build:
