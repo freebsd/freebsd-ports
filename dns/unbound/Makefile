@@ -3,6 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -28,7 +29,7 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		ietf67-design-02.pdf requirements.txt
 PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT FILTER_AAA
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Build against libevent
@@ -98,6 +99,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \
 		s|$$(configfile); fi|$$(configfile).sample|' \
 		${WRKSRC}/Makefile.in
+.if ${PORT_OPTIONS:MFILTER_AAAA}
+	at ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1
+.endif
 
 post-build:
 	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
