@@ -1275,6 +1275,8 @@
     SUBDIR += lua-cjson
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
+    SUBDIR += lua-lpeg
+    SUBDIR += lua-lpeg51
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
