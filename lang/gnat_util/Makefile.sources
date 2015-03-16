@@ -53,8 +53,6 @@ GNAT_SRCS= \
 	mlib-fil.ads \
 	mlib-tgt-specific.adb \
 	mlib-tgt-specific.ads \
-	mlib-tgt-vms_common.adb \
-	mlib-tgt-vms_common.ads \
 	mlib-tgt.adb \
 	mlib-tgt.ads \
 	mlib-utl.adb \
