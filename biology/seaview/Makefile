@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.2
-PORTREVISION=	1
+PORTVERSION=	4.5.3.4
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \
@@ -13,9 +12,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
-BROKEN=		Fails to link, tries to use internal fltk symbols
+LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libpdf.so:${PORTSDIR}/print/pdflib \
+		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -35,15 +36,8 @@ PLIST_FILES=	bin/seaview man/man1/seaview.1.gz %%DATADIR%%/seaview.html \
 DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
 		"Biology;Science;" true
 
-OPTIONS_DEFINE=		PDFLIB
-OPTIONS_DEFAULT=	PDFLIB
-PDFLIB_DESC=		PDFlib support
-PDFLIB_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
-PDFLIB_MAKE_ENV=	LPDF='-L${LOCALBASE}/lib -lpdf'
-PDFLIB_MAKE_ENV_OFF=	PDF_PS_FLAGS='-DNO_PDF'
-
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|^\(PDF_PS_FLAGS\) |#\1 | ; \
 		 s|^\(FLTK\) |#\1 | ; \
 		 s|^\(USE_XFT\) |#\1 | ; \
@@ -58,7 +52,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} seaview.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1)
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.html \
 		${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} seaview.xpm \
