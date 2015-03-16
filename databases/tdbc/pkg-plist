@@ -1,8 +1,8 @@
 include/tdbc.h
 include/tdbcDecls.h
 include/tdbcInt.h
-lib/tdbc%%VERSION%%/libtdbc1.0.1.so
-lib/tdbc%%VERSION%%/libtdbcstub1.0.1.a
+lib/tdbc%%VERSION%%/libtdbc%%VERSION%%.so
+lib/tdbc%%VERSION%%/libtdbcstub%%VERSION%%.a
 lib/tdbc%%VERSION%%/pkgIndex.tcl
 lib/tdbc%%VERSION%%/tdbc.tcl
 lib/tdbc%%VERSION%%/tdbcConfig.sh
@@ -16,21 +16,21 @@ man/mann/tdbc_tokenize.n.gz
 @comment MySQL
 %%MYSQL%%include/fakemysql.h
 %%MYSQL%%include/mysqlStubs.h
-%%MYSQL%%lib/tdbcmysql%%VERSION%%/libtdbcmysql1.0.1.so
+%%MYSQL%%lib/tdbcmysql%%VERSION%%/libtdbcmysql%%VERSION%%.so
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/tdbcmysql.tcl
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/pkgIndex.tcl
 %%MYSQL%%man/mann/tdbc_mysql.n.gz
 @comment ODBC
 %%ODBC%%include/fakesql.h
 %%ODBC%%include/odbcStubs.h
-%%ODBC%%lib/tdbcodbc%%VERSION%%/libtdbcodbc1.0.1.so
+%%ODBC%%lib/tdbcodbc%%VERSION%%/libtdbcodbc%%VERSION%%.so
 %%ODBC%%lib/tdbcodbc%%VERSION%%/tdbcodbc.tcl
 %%ODBC%%lib/tdbcodbc%%VERSION%%/pkgIndex.tcl
 %%ODBC%%man/mann/tdbc_odbc.n.gz
 @comment PGSQL
 %%PGSQL%%include/fakepq.h
 %%PGSQL%%include/pqStubs.h
-%%PGSQL%%lib/tdbcpostgres%%VERSION%%/libtdbcpostgres1.0.1.so
+%%PGSQL%%lib/tdbcpostgres%%VERSION%%/libtdbcpostgres%%VERSION%%.so
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/tdbcpostgres.tcl
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/pkgIndex.tcl
 @comment SQLITE
