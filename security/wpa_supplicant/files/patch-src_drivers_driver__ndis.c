@@ -1,4 +1,4 @@
---- src/drivers/driver_ndis.c.orig	2014-10-09 14:41:31 UTC
+--- src/drivers/driver_ndis.c.orig	2015-03-15 17:30:39 UTC
 +++ src/drivers/driver_ndis.c
 @@ -2110,7 +2110,11 @@ static int wpa_driver_ndis_get_names(str
  		dlen = dpos - desc;
