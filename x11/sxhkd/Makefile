@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sxhkd
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	x11
 
 MAINTAINER=	antont@inbox.lv
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
-GH_COMMIT=	eaf83e9
+GH_COMMIT=	7e895ad
 
 USES=		gmake
 
