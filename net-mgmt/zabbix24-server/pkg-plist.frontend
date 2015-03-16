@@ -433,6 +433,8 @@
 %%WWWDIR%%/include/classes/validators/CStringValidator.php
 %%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
+%%WWWDIR%%/include/classes/validators/CIPRangeValidator.php
+%%WWWDIR%%/include/classes/validators/CIPValidator.php
 %%WWWDIR%%/include/classes/validators/event/CEventSourceObjectValidator.php
 %%WWWDIR%%/include/classes/validators/host/CHostNormalValidator.php
 %%WWWDIR%%/include/classes/validators/hostgroup/CHostGroupNormalValidator.php
