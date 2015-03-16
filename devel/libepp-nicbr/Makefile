@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
@@ -14,11 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
-OPTIONS_DEFINE=	READLINE
-OPTIONS_DEFAULT=READLINE
-OPTIONS_SUB=	yes
-READLINE_DESC=	Enable readline support
-
+USES=		gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_cppunit_TestRunner_h=no
@@ -29,21 +25,18 @@ DATADIR=	${PREFIX}/share/${PORTNAME:S/-/_/}
 
 PLIST_SUB=	VER="${PORTVERSION}"
 
-USES=		gmake
+OPTIONS_DEFINE=		READLINE
+OPTIONS_DEFAULT=	READLINE
+OPTIONS_SUB=		yes
+
+READLINE_USES=		ncurses readline
+READLINE_CONFIGURE_ENV_OFF=\
+			ac_cv_lib_readline_readline=no
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-.  if !exists(/usr/lib/libreadline.so)
+.if ${PORT_OPTIONS:MREADLINE} && !exists(/usr/lib/libreadline.so)
 CONFIGURE_ARGS+=--with-readline-includes=${LOCALBASE}/include
-.  endif
-.else
-CONFIGURE_ENV+=	ac_cv_lib_readline_readline=no
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|ncurses|curses|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
