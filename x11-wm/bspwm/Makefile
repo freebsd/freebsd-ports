@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bspwm
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9
 CATEGORIES=	x11-wm
 
 MAINTAINER=	antont@inbox.lv
@@ -13,11 +13,12 @@ RUN_DEPENDS=	sxhkd:${PORTSDIR}/x11/sxhkd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
-GH_COMMIT=	1c5c3a1
+GH_COMMIT=	cbaf43e
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	contrib/freedesktop/bspwm-session
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
