@@ -57,6 +57,64 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b3ecff5-c9b2-11e4-b71f-00bd5af88c00">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.442</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.442</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-05.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux. These updates address vulnerabilities
+	    that could potentially allow an attacker to take control of the
+	    affected system.
+	    These updates resolve memory corruption vulnerabilities that could
+	    lead to code execution (CVE-2015-0332, CVE-2015-0333, CVE-2015-0335,
+	    CVE-2015-0339).
+	    These updates resolve type confusion vulnerabilities that could lead
+	    to code execution (CVE-2015-0334, CVE-2015-0336).
+	    These updates resolve a vulnerability that could lead to a
+	    cross-domain policy bypass (CVE-2015-0337).
+	    These updates resolve a vulnerability that could lead to a file
+	    upload restriction bypass (CVE-2015-0340).
+	    These updates resolve an integer overflow vulnerability that could
+	    lead to code execution (CVE-2015-0338).
+	    These updates resolve use-after-free vulnerabilities that could lead
+	    to code execution (CVE-2015-0341, CVE-2015-0342).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-05.html</url>
+      <cvename>CVE-2015-0332</cvename>
+      <cvename>CVE-2015-0333</cvename>
+      <cvename>CVE-2015-0334</cvename>
+      <cvename>CVE-2015-0335</cvename>
+      <cvename>CVE-2015-0336</cvename>
+      <cvename>CVE-2015-0337</cvename>
+      <cvename>CVE-2015-0338</cvename>
+      <cvename>CVE-2015-0339</cvename>
+      <cvename>CVE-2015-0340</cvename>
+      <cvename>CVE-2015-0341</cvename>
+      <cvename>CVE-2015-0342</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-12</discovery>
+      <entry>2015-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="451a6c79-c92b-11e4-a835-000c292ee6b8">
     <topic>sympa -- Remote attackers can read arbitrary files</topic>
     <affects>
