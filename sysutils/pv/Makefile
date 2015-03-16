@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pv
-PORTVERSION=	1.5.7
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ivarch.com/programs/sources/
 
