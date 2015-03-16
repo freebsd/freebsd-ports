@@ -2,133 +2,96 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	1.3.3
-PORTREVISION=	3
-CATEGORIES=	net-mgmt www
-MASTER_SITES=	SF
+PORTVERSION=	2.031012
+CATEGORIES=	net-mgmt perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OLIVER
+DISTNAME=	App-Netdisco-${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	Web-based network management tool for moderate to large networks
+COMMENT=	Network discovery/management tool with web console
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-SNMP-Info>=3.01:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
-		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
-		p5-DB_File-Lock>=0:${PORTSDIR}/devel/p5-DB_File-Lock \
-		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session \
-		p5-Net-NBName>=0:${PORTSDIR}/net/p5-Net-NBName \
-		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
+BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-Net-SNMP>=6.0.1:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-Algorithm-Cron>=0.07:${PORTSDIR}/devel/p5-Algorithm-Cron \
+		p5-AnyEvent>=7.05:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-AnyEvent-DNS-EtcHosts>=0.0103:${PORTSDIR}/dns/p5-AnyEvent-DNS-EtcHosts \
+		p5-App-cpanminus>=1.6108:${PORTSDIR}/devel/p5-App-cpanminus \
+		p5-App-local-lib-helper>=0.07:${PORTSDIR}/devel/p5-App-local-lib-helper \
+		p5-CGI-Expand>=2.05:${PORTSDIR}/www/p5-CGI-Expand \
+		p5-Data-Printer>=0:${PORTSDIR}/devel/p5-Data-Printer \
+		p5-DBIx-Class-Helpers>=2.023007:${PORTSDIR}/databases/p5-DBIx-Class-Helpers \
+		p5-Daemon-Control>=0.001.005:${PORTSDIR}/devel/p5-Daemon-Control \
+		p5-Dancer>=1.3132:${PORTSDIR}/www/p5-Dancer \
+		p5-Dancer-Plugin-DBIC>=0.2001:${PORTSDIR}/databases/p5-Dancer-Plugin-DBIC \
+		p5-Dancer-Plugin-Auth-Extensible>=0.30:${PORTSDIR}/security/p5-Dancer-Plugin-Auth-Extensible \
+		p5-Dancer-Plugin-Passphrase>=2.0.1:${PORTSDIR}/security/p5-Dancer-Plugin-Passphrase \
+		p5-File-ShareDir>=1.03:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-File-Slurp>=9999.19:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Guard>=1.022:${PORTSDIR}/devel/p5-Guard \
+		p5-HTML-Parser>=3.70:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTTP-Tiny>=0.029:${PORTSDIR}/www/p5-HTTP-Tiny \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-List-MoreUtils>=0.33:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Module-Find>=0.12:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Module-Load>=0.32:${PORTSDIR}/devel/p5-Module-Load \
+		p5-Moo>=1.001000:${PORTSDIR}/devel/p5-Moo \
+		p5-MCE>=1.515:${PORTSDIR}/devel/p5-MCE \
+		p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-NetAddr-MAC>=0:${PORTSDIR}/net/p5-NetAddr-MAC \
+		p5-NetAddr-IP>=4.068:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Path-Class>=0.32:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Plack>=1.0023:${PORTSDIR}/www/p5-Plack \
+		p5-Plack-Middleware-Expires>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-Expires \
+		p5-Plack-Middleware-ReverseProxy>=0.15:${PORTSDIR}/www/p5-Plack-Middleware-ReverseProxy \
+		p5-Role-Tiny>=1.002005:${PORTSDIR}/devel/p5-Role-Tiny \
+		p5-Sereal>=0:${PORTSDIR}/converters/p5-Sereal \
+		p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6 \
+		p5-Starman>=0.4008:${PORTSDIR}/www/p5-Starman \
+		p5-SNMP-Info>=3.18:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
+		p5-SQL-Translator>=0.11018:${PORTSDIR}/databases/p5-SQL-Translator \
+		p5-Template-Toolkit>=2.24:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Template-Plugin-CSV>=0.04:${PORTSDIR}/textproc/p5-Template-Plugin-CSV \
+		p5-Template-Plugin-Number-Format>=1.02:${PORTSDIR}/www/p5-Template-Plugin-Number-Format \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-URL-Encode>=0.01:${PORTSDIR}/www/p5-URL-Encode \
+		p5-YAML>=0.84:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML-LibYAML>=0.41:${PORTSDIR}/textproc/p5-YAML-LibYAML \
+		p5-Env-Path>=0:${PORTSDIR}/devel/p5-Env-Path \
+		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-Net-OpenSSH>=0:${PORTSDIR}/net/p5-Net-OpenSSH
 
-OPTIONS_DEFINE=	DOCS GRAPHVIZ MIBS WEBUI
-OPTIONS_DEFAULT=DOCS GRAPHVIZ MIBS WEBUI
-OPTIONS_SUB=	WEBUI
-MIBS_DESC=	Depend on net-mgmt/netdisco-mibs
-GRAPHVIZ_DESC=	Install GraphViz for network map support
-WEBUI_DESC=	With web interface (mod_perl2+apache22)
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-GRAPHVIZ_RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
-			p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
-WEBUI_RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
-			p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
-			p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
-			p5-MasonX-Request-WithApacheSession>=0:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession
-WEBUI_USE=		APACHE_RUN=22+
+USERS=		netdisco
+GROUPS=		netdisco
 
-USES=		perl5 pgsql shebangfix
-SHEBANG_FILES=	bin/parse_kismet_ap netdisco
-USE_PERL5=	run build
+SUB_FILES=	pkg-message netdiscologs.conf.sample localenv
+SUB_LIST=	SITE_PERL=${STAGEDIR}${SITE_PERL} \
+		NETDISCO_USER=${USERS} \
+		NETDISCO_GROUP=${GROUPS} \
+		ETCDIR=${ETCDIR} \
+		ETCDIR_REL=${ETCDIR_REL}
+PLIST_SUB+=	ETCDIR=${ETCDIR}
+
+USES=		perl5
+USE_PERL5=	configure
+USE_PGSQL=	yes
 
 USE_RC_SUBR=	netdisco
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-NETDISCO_USER=	netdisco
-NETDISCO_GROUP=	netdisco
-NETDISCO_RUNDIR=/var/run
-NETDISCO_DBDIR=	/var/db/netdisco
-
-USERS=		${NETDISCO_USER}
-GROUPS=		${NETDISCO_GROUP}
-
-SUB_FILES=	pkg-message
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
-		NETDISCO_USER=${NETDISCO_USER} \
-		NETDISCO_GROUP=${NETDISCO_GROUP}
-SUB_LIST=	NETDISCO_USER=${NETDISCO_USER} \
-		NETDISCO_GROUP=${NETDISCO_GROUP} \
-		NETDISCO_DBDIR=${NETDISCO_DBDIR}
-
-ALTER_FILES=	netdisco netdisco.conf netdisco_apache.conf \
-		netdisco_apache_dir.conf netdisco.crontab sql/pg
-CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
-		netdisco_apache.conf netdisco_apache_dir.conf
-DOCFILES=	ChangeLog doc/*.pod INSTALL README* UPGRADE
-
-.include <bsd.port.options.mk>
-
-MIBSDIR=	${PREFIX}/share/netdisco-mibs
-.if ${PORT_OPTIONS:MMIBS}
-RUN_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
-BUILD_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
-. include	"${.CURDIR}/../netdisco-mibs/bsd.port.netdisco.mk"
-MIBINCLUDES!=${ECHO} \"${MIBDIRS:S/^/${MIBSDIR}\//}\"
-MIBINCLUDES:=${MIBINCLUDES:S/ /:/g:S/"//g}
-.else
-MIBINCLUDES="#please add here mibs dirs list (at least snmp and rfc ones)"
-.endif
-
-post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} \
-		-e 's#%%WWWDIR%%#${WWWDIR}#g'		\
-		-e 's#%%PREFIX%%#${PREFIX}#g'		\
-		-e 's#%%DATADIR%%#${DATADIR}#g'		\
-		-e 's#%%DOCSDIR%%#${DOCSDIR}#g'		\
-		-e 's#%%NETDISCO_RUNDIR%%#${NETDISCO_RUNDIR}#g'	\
-		-e 's#%%NETDISCO_USER%%#${USERS}#g'		\
-		-e 's#%%NETDISCO_GROUP%%#${GROUPS}#g'		\
-		-e 's#%%NETDISCO_DBDIR%%#${NETDISCO_DBDIR}#g'	\
-		-e 's#%%ETCDIR%%#${ETCDIR}#g'		\
-		-e 's#%%SITE_PERL%%#${PREFIX}/${SITE_PERL_REL}#g'	\
-		-e 's#%%APACHEMODDIR%%#${APACHEMODDIR}#g'	\
-		-e 's#%%APACHEETCDIR%%#${APACHEETCDIR}#g'	\
-		-e 's#%%MIBINCLUDES%%#${MIBINCLUDES}#g'	\
-		${ALTER_FILES})
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} \
-		${STAGEDIR}${DATADIR}/sql \
-		${STAGEDIR}${DOCSDIR} \
-		${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} netdisco bin/parse_mac \
-		bin/port_control bin/parse_kismet_ap ${STAGEDIR}${PREFIX}/bin)
-	${INSTALL_DATA} ${WRKSRC}/netdisco.pm \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-.	if ${PORT_OPTIONS:MWEBUI}
-		@${MKDIR} ${STAGEDIR}${WWWDIR}/mason
-		(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-		(cd ${STAGEDIR}${WWWDIR} && ${RM} -r doc/autohandler svg)
-.	endif
-.	for i in ${CONFIG_FILES}
-	    ${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
-.	endfor
-	(cd ${WRKSRC}/sql && \
-		${INSTALL_DATA} *.sql pg ${STAGEDIR}${DATADIR}/sql)
-	${INSTALL_DATA} ${WRKSRC}/Makefile ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${DOCFILES} ${STAGEDIR}${DOCSDIR})
-
-#	This violates STAGEDIR, comment out the entire block
-#.	if !defined(PACKAGE_BUILDING)
-#		@(if [ -d ${PREFIX}/${APACHEETCDIR}/Includes ] ; then \
-#			${ECHO_MSG} "===> Adding config in ${PREFIX}/${APACHEETCDIR}/Includes..."; \
-#			test -L ${PREFIX}/${APACHEETCDIR}/Includes/netdisco_apache.conf || \
-#				${LN} -s ${ETCDIR}/netdisco_apache.conf ${PREFIX}/${APACHEETCDIR}/Includes/netdisco_apache.conf; \
-#			test -L ${PREFIX}/${APACHEETCDIR}/Includes/netdisco_apache_dir.conf || \
-#				${LN} -s ${ETCDIR}/netdisco_apache_dir.conf ${PREFIX}/${APACHEETCDIR}/Includes/netdisco_apache_dir.conf; \
-#		fi)
-#.	endif
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}/perl5/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/localenv ${STAGEDIR}${ETCDIR}/perl5/bin
+	${INSTALL_DATA} ${WRKDIR}/netdiscologs.conf.sample ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/environments
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/auto/share/dist/App-Netdisco/environments/deployment.yml \
+		${STAGEDIR}${ETCDIR}/environments/deployment.yml.sample
 
 .include <bsd.port.mk>
