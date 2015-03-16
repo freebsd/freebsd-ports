@@ -13,6 +13,16 @@ you update your ports collection, before attempting any port upgrades.
   unchecked "Keep library automatically updated" with 1.5 (as recommended
   in the 20150206 entry) you can enable it again.
 
+20150309:
+  AFFECTS: users of net-mgmt/netdisco
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  netdisco version has been upgraded to netdisco2
+
+  After upgrading, you will need to review all your configuration, as
+  this new version won't read old config files.
+  You'll be able to keep your data though netdisco-deploy command
+
 20150305:
   AFFECTS: users of x11-wm/xfce4 and multimedia/xfce4-parole
   AUTHOR: olivierd@FreeBSD.org
