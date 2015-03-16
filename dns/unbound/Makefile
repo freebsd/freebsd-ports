@@ -100,7 +100,7 @@ post-patch:
 		s|$$(configfile); fi|$$(configfile).sample|' \
 		${WRKSRC}/Makefile.in
 .if ${PORT_OPTIONS:MFILTER_AAAA}
-	at ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1
+	cat ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1
 .endif
 
 post-build:
