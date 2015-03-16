@@ -19,7 +19,7 @@ MINOR_VERSION=	rel.1
 
 CONFLICTS=	lynx-2.* ja-lynx-2.8.8.*
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-ipv6 \
