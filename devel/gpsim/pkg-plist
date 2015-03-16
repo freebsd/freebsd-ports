@@ -44,7 +44,6 @@ include/gpsim/ioports.h
 include/gpsim/lxt_write.h
 include/gpsim/modules.h
 include/gpsim/operator.h
-include/gpsim/p12f182x.h
 include/gpsim/p12f6xx.h
 include/gpsim/p12x.h
 include/gpsim/p16f62x.h
@@ -57,6 +56,7 @@ include/gpsim/p16x7x.h
 include/gpsim/p16x8x.h
 include/gpsim/p17c75x.h
 include/gpsim/p18x.h
+include/gpsim/p1xf1xxx.h
 include/gpsim/packages.h
 include/gpsim/pic-instructions.h
 include/gpsim/pic-ioports.h
@@ -75,6 +75,7 @@ include/gpsim/pthread-wrap.h
 include/gpsim/rcon.h
 include/gpsim/registers.h
 include/gpsim/sim_context.h
+include/gpsim/spp.h
 include/gpsim/ssp.h
 include/gpsim/stimuli.h
 include/gpsim/symbol.h
@@ -91,6 +92,10 @@ lib/libgpsim.a
 lib/libgpsim.so
 lib/libgpsim.so.0
 lib/libgpsim.so.0.0.0
+lib/libgpsim_dht11.a
+lib/libgpsim_dht11.so
+lib/libgpsim_dht11.so.0
+lib/libgpsim_dht11.so.0.0.0
 lib/libgpsim_ds1307.a
 lib/libgpsim_ds1307.so
 lib/libgpsim_ds1307.so.0
