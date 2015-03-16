@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.2
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		https://www.kernel.org/pub/software/scm/git/:git
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PROJECTHOST=	git-core
-GIT_VERSION=	2.3.0
+GIT_VERSION=	2.3.3
 USES=		gmake iconv shebangfix tar:xz
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 
