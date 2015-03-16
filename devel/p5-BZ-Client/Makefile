@@ -2,7 +2,7 @@
 
 PORTNAME=	BZ-Client
 PORTVERSION=	1.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWIED
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
