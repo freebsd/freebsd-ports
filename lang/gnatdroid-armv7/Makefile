@@ -24,7 +24,7 @@ NO_LICENSES_INSTALL= yes
 
 .include "${.CURDIR}/../gcc-aux/Makefile.common"
 
-USES+=		ada gmake
+USES+=		ada:49 gmake
 LANGS=		c c++ ada
 APPLY_DIFFS=	core ada cxx ada-testsuite
 NO_MTREE=	YES
