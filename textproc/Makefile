@@ -612,6 +612,7 @@
     SUBDIR += p5-Markapl
     SUBDIR += p5-Marpa-HTML
     SUBDIR += p5-MathML-Entities
+    SUBDIR += p5-Net-Groonga-HTTP
     SUBDIR += p5-Net-IDN-Encode
     SUBDIR += p5-Net-Snort-Parser
     SUBDIR += p5-Net-YASA
