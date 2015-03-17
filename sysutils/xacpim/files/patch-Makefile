@@ -9,7 +9,7 @@
  
  all::	${OBJS}
 -	${CC} -o xacpim *.o -lX11 -L/usr/X11R6/lib -I/usr/X11R6/include 
-+	${CC} -o xacpim *.o -lX11 -L${LOCALBASE}/lib -I${LOCALBASE}/include 
++	${CC} -o xacpim ${OBJS} -lX11 -L${LOCALBASE}/lib -I${LOCALBASE}/include 
  
  install:: xacpim 
  	strip xacpim 
