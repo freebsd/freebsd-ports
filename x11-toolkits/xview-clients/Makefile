@@ -18,18 +18,22 @@ COMMENT=	OpenLook applications and man pages
 CONFLICTS=	props-1.0
 
 MAKE_JOBS_UNSAFE=	yes
-PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:patch
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:patch
 CONFIGURE_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:configure
 LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 USES=		imake
 USE_XORG=	x11 xext
-WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
+
+BROKEN=		conflicts with its depends
 
 .include <bsd.port.pre.mk>
 
 IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
+
+post-extract:
+	${LN} -sf $$(${MAKE} -C ${PORTSDIR}/x11-toolkits/xview -V WRKDIR)/${DISTNAME} ${WRKSRC}
 
 do-install:
 	@cd ${WRKSRC}/clients; ${MAKE} install install.man
