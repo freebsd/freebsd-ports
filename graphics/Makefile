@@ -838,6 +838,7 @@
     SUBDIR += py-paint
     SUBDIR += py-pillow
     SUBDIR += py-pivy
+    SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-poppler
     SUBDIR += py-poppler-qt4
