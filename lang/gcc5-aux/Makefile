@@ -171,6 +171,7 @@ ADA_CONFIG_ARGS+=	--with-mpc=${PREFIX}
 ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
 ADA_CONFIG_ARGS+=	--enable-shared
 ADA_CONFIG_ARGS+=	--enable-threads=posix
+ADA_CONFIG_ARGS+=	--enable-checking=release
 ADA_CONFIG_ARGS+=	--disable-libmudflap
 ADA_CONFIG_ARGS+=	--disable-libgomp
 ADA_CONFIG_ARGS+=	--disable-libssp
