@@ -1,0 +1,6 @@
+Net::Groonga::HTTP is a client library for Groonga http server.
+
+Groonga is a fast full text search engine. Please look
+http://groonga.org/.
+
+WWW: http://search.cpan.org/dist/Net-Groonga-HTTP/
