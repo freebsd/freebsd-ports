@@ -1,6 +1,14 @@
---- solenv/gbuild/platform/freebsd.mk	2012-10-31 10:39:44.000000000 +0900
-+++ solenv/gbuild/platform/freebsd.mk	2012-10-31 17:40:48.000000000 +0900
-@@ -121,6 +121,7 @@
+--- solenv/gbuild/platform/freebsd.mk.orig	2014-09-19 18:16:41 UTC
++++ solenv/gbuild/platform/freebsd.mk
+@@ -96,6 +96,7 @@ gb_CXXFLAGS := \
+ 	-fvisibility-inlines-hidden \
+ 	-fvisibility=hidden \
+ 	-pipe \
++	%%HAVE_STL_INCLUDE_PATH%% \
+ 
+ ifneq ($(EXTERNAL_WARNINGS_NOT_ERRORS),TRUE)
+ gb_CFLAGS_WERROR := -Werror
+@@ -121,6 +122,7 @@ gb_LinkTarget_LDFLAGS += \
  	-Wl,-z,combreloc \
  	-Wl,-z,defs \
  	$(subst -L../lib , ,$(SOLARLIB)) \
