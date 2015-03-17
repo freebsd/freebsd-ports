@@ -18,6 +18,7 @@ man/man1/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS::GNUkFreeBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::HPUX.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Haiku.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::Hurd.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Interix.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Irix.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Linux.3.gz
@@ -92,6 +93,7 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS/GNUkFreeBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/HPUX.pm
 %%SITE_PERL%%/Devel/AssertOS/Haiku.pm
+%%SITE_PERL%%/Devel/AssertOS/Hurd.pm
 %%SITE_PERL%%/Devel/AssertOS/Interix.pm
 %%SITE_PERL%%/Devel/AssertOS/Irix.pm
 %%SITE_PERL%%/Devel/AssertOS/Linux.pm
