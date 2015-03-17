@@ -1,9 +1,9 @@
-Apache OpenOffice Build %%OOOTAG%% Personal Install How-To
+Apache OpenOffice Build %%AOOTAG%% Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 		and Maho Nakata <maho@FreeBSD.org>
 
-Apache OpenOffice %%OOOTAG%% will soon been installed in
+Apache OpenOffice %%AOOTAG%% will soon be installed in
 %%PREFIX%%/%%EXECBASE%%
 
 1. User installation
@@ -11,7 +11,7 @@ Apache OpenOffice %%OOOTAG%% will soon been installed in
 
 Just type "%%EXECBASE%%" after you have successfully
 installed the package. If there is no installed OO.org dir
-in your homedir, the setup installs ".%%OOODIR%%" folder.
+in your homedir, the setup installs "%%AOOUDIR%%" folder.
 
 2. Starting OO.org
 ------------------
@@ -35,5 +35,5 @@ OO.org does need $LANG to be set to a suitable value.
 3. If you run into problems
 --------------------------------------------------
 If you somehow run into problems, please remove the already
-installed ".%%OOODIR%%" dir in your homedir. Redo the user
+installed "%%AOOUDIR%%" dir in your homedir. Redo the user
 installation and the problems should go away.
