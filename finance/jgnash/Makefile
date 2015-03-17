@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jgnash
-PORTVERSION=	2.13.5
+PORTVERSION=	2.15.2
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x
 DISTNAME=	jgnash-${PORTVERSION}-bin
