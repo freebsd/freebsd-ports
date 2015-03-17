@@ -1,14 +1,5 @@
 --- CMakeLists.txt.orig	2014-12-18 20:47:08.000000000 +0300
 +++ CMakeLists.txt	2015-01-24 21:51:57.000000000 +0300
-@@ -629,7 +629,7 @@
-     FIND_PACKAGE(LibVNCServer)
-     FIND_PACKAGE(OurDCMTK)
-     FIND_PACKAGE(FFmpeg)
--    FIND_PACKAGE(GStreamer COMPONENTS gstreamer-app gstreamer-pbutils)
-+    FIND_PACKAGE(GStreamer COMPONENTS app pbutils)
-     FIND_PACKAGE(GLIB COMPONENTS gobject)
-     FIND_PACKAGE(DirectShow)
-     FIND_PACKAGE(SDL2)
 @@ -805,7 +805,7 @@
  
  IF(UNIX AND NOT WIN32 AND NOT APPLE)
