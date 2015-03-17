@@ -264,6 +264,7 @@ include/osgDB/Archive
 include/osgDB/AuthenticationMap
 include/osgDB/Callbacks
 include/osgDB/ClassInterface
+include/osgDB/ConvertBase64
 include/osgDB/ConvertUTF
 include/osgDB/DataTypes
 include/osgDB/DatabasePager
