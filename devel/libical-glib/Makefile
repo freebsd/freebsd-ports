@@ -11,7 +11,7 @@ COMMENT=	Introspection bindings for libical
 
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
