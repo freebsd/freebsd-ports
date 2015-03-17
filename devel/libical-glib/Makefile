@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libical-glib
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
-#MASTER_SITES=	GNOME
-MASTER_SITES=	LOCAL/kwm
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Introspection bindings for libical
