@@ -29,7 +29,7 @@ ADAXX=	gcc
 .  endif
 . endif
 
-BUILD_DEPENDS+=	${LOCALBASE}/gcc47-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux
+BUILD_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux
 MAKE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
 		ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
