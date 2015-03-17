@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	lynx-2.8.[8-9]d*
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8
 GNU_CONFIGURE=	yes
@@ -24,6 +24,8 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-nested-tables --enable-gzip-help \
 		--with-screen=ncursesw
+CPE_VERSION=	${PORTVERSION:R}
+CPE_UPDATE=	rel.${PORTVERSION:E}
 
 MAKE_JOBS_UNSAFE=	yes
 
