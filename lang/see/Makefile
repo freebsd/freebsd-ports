@@ -3,6 +3,7 @@
 
 PORTNAME=	see
 PORTVERSION=	3.1.1424
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
 		http://lil.fr.distfiles.macports.org/see/ \
@@ -12,10 +13,12 @@ MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
-OPTIONS_DEFINE=	GC SEE_DEBUG DOCS
+LICENSE=	BSD
+
+OPTIONS_DEFINE=	GC DEBUG DOCS
 OPTIONS_DEFAULT=	GC
 GC_DESC=	Use Boehm-Weiser garbage collection package
-SEE_DEBUG_DESC=	Internal SEE library debugging
+DEBUG_DESC=	Internal SEE library debugging
 
 CONFLICTS=	see-devel-[0-9]*
 
@@ -27,11 +30,11 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-CFLAGS+=	-O3 -fomit-frame-pointer
+CFLAGS+=	-O3
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-SEE_DEBUG_CFLAGS_OFF=	-DNDEBUG
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 GC_LIB_DEPENDS=		libgc.so:${PORTSDIR}/devel/boehm-gc
 GC_CONFIGURE_WITH=	boehm-gc
 
