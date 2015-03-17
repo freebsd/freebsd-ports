@@ -10,6 +10,8 @@ DISTNAME=	jgnash-${PORTVERSION}-bin
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Free personal finance manager
 
+LICENSE=	GPLv3
+
 WRKSRC=		${WRKDIR}/jgnash-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jgnash.desktop
