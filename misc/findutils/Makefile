@@ -12,13 +12,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	aehlig@linta.de
 COMMENT=	GNU find utilities
 
-USES+=		charsetfix gmake
+USES+=		charsetfix cpe gmake
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
