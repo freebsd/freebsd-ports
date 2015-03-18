@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious
 RUN_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
 
 post-patch:

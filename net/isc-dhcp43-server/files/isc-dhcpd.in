@@ -43,6 +43,7 @@ eval ": \${${name}_withgroup:=dhcpd}"			# group name to run as
 eval ": \${${name}_chroot_enable:=\"NO\"}"		# runs chrooted?
 eval ": \${${name}_devfs_enable:=\"YES\"}"		# devfs if available?
 eval ": \${${name}_rootdir:=/var/db/${name}}"		# directory to run in
+eval ": \${${name}_chrootdir:=${name}_rootdir}"		# automatically set _chrootdir for syslogd compatibility
 # dhcpd_includedir=""			# directory for included config files
 
 safe_run ()	# rc command [args...]

@@ -7,8 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The compressed ROM filesystem
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Linux Compressed ROM FileSystem
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 

@@ -27,8 +27,6 @@ LIBXML_DESC=	Use libxml instead of REXML
 
 .if ${PORT_OPTIONS:MLIBXML}
 RUN_DEPENDS+=	rubygem-libxml-ruby>=0.5.2:${PORTSDIR}/textproc/rubygem-libxml-ruby
-.else
-USE_RUBY_FEATURES=	rexml
 .endif
 
 .include <bsd.port.mk>

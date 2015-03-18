@@ -42,7 +42,7 @@ RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 
-USES=		gmake perl5
+USES=		gmake perl5 cpe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

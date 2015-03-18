@@ -3,6 +3,7 @@
 
 PORTNAME=	omniorb
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libomniORB4.so.1:${PORTSDIR}/devel/omniORB-4.1
 # parts of omniORB4 source tree is required to build omniORBpy;
@@ -47,6 +49,7 @@ pre-configure:
 	cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/*.so
 	${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming/__init__.py',None,'CosNaming/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming__POA/__init__.py',None,'CosNaming__POA/__init__.pyc',True)"

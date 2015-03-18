@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Compress::LZO.3.gz
 %%SITE_ARCH%%/Compress/LZO.pm
 %%SITE_ARCH%%/auto/Compress/LZO/LZO.so
 %%SITE_ARCH%%/auto/Compress/LZO/autosplit.ix
+%%PERL5_MAN3%%/Compress::LZO.3.gz

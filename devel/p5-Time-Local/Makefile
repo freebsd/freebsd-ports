@@ -22,12 +22,8 @@ USE_PERL5=	configure
 
 PORTDOCS=	Changes
 
-.include <bsd.port.pre.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

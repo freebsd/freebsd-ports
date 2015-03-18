@@ -3,7 +3,7 @@
 
 PORTNAME=	ZConf-Runner
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
 		p5-String-ShellQuote>=1.04:${PORTSDIR}/textproc/p5-String-ShellQuote
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/zcrunner
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

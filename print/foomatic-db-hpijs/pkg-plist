@@ -11,3 +11,4 @@ share/foomatic/db/source/opt/hpijs-rss-InputSlot.xml
 share/foomatic/db/source/opt/hpijs-rss-Model.xml
 share/foomatic/db/source/opt/hpijs-rss-PageSize.xml
 share/foomatic/db/source/opt/hpijs-rss-Resolution.xml
+@dir share/foomatic/db/source/printer

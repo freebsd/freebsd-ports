@@ -19,3 +19,4 @@ share/idl/gnome-speech-1.0/GNOME_Speech.idl
 share/idl/gnome-speech-1.0/GNOME_Speech_Speaker.idl
 share/idl/gnome-speech-1.0/GNOME_Speech_SpeechCallback.idl
 share/idl/gnome-speech-1.0/GNOME_Speech_SynthesisDriver.idl
+@dir libdata/bonobo/servers

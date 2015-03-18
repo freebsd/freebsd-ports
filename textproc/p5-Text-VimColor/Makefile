@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-VimColor
-PORTVERSION=	0.14
-PORTREVISION=	2
+PORTVERSION=	0.25
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,5 +23,8 @@ RUN_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${REINPLACE_CMD} -e '/use inc::VimCommand/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

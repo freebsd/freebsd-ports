@@ -28,11 +28,14 @@ GH_COMMIT=	46e691c
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_ENV+=	PYTHON_CMD=${PYTHON_CMD}
+
 .include <bsd.port.options.mk>
 
 post-patch:
 .for f in bin/generate-dshellrc.py doc/generate-doc.sh
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/${f}
+	${REINPLACE_CMD} -e 's|pydoc|${LOCALBASE}/bin/pydoc${PYTHON_VER}|' ${WRKSRC}/${f}
 .endfor
 
 post-build:

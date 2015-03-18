@@ -11,3 +11,8 @@ into xorg.conf and add the following lines to ServerLayout section
 	InputDevice	"wacom eraser"
 	InputDevice	"wacom touch"
 	InputDevice	"wacom pad"
+
+If moused(8) interferes with tablet input try adding the following
+line to /etc/rc.conf
+
+  wacom_enable="YES"

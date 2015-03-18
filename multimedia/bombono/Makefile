@@ -37,7 +37,7 @@ MAKE_ARGS=	DVDREAD_INCLUDE=${LOCALBASE}/include \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 BROKEN=		does not build on 10.x+
 .endif
 

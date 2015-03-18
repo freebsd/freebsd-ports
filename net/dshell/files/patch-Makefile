@@ -1,5 +1,14 @@
---- Makefile.orig	2015-02-04 22:30:21.000000000 +0900
-+++ Makefile	2015-02-04 22:30:50.000000000 +0900
+--- Makefile.orig	2015-02-20 03:44:33.000000000 +0900
++++ Makefile	2015-03-12 23:44:40.000000000 +0900
+@@ -6,7 +6,7 @@
+ 
+ rc:
+ 	# Generating .dshellrc and dshell files 
+-	python $(PWD)/bin/generate-dshellrc.py $(PWD)
++	$(PYTHON_CMD) $(PWD)/bin/generate-dshellrc.py $(PWD)
+ 	chmod 755 $(PWD)/dshell
+ 	chmod 755 $(PWD)/dshell-decode
+ 	chmod 755 $(PWD)/bin/decode.py
 @@ -15,7 +15,7 @@
  initpy:
  	find $(PWD)/decoders -type d -not -path \*.svn\* -print -exec touch {}/__init__.py \;

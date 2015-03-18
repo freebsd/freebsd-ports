@@ -5,7 +5,7 @@ PORTNAME=	libpciaccess
 PORTVERSION=	0.13.3
 CATEGORIES=	devel
 
-MAINTAINER=	emulation@freebsd.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Generic PCI access library (CentOS ${LINUX_DIST_VER})
 
 # LICENSE=	Various GNU

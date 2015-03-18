@@ -2,14 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	fusefs
-DISTVERSION=	0.2.1
+PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/fuse/fuse-python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	fuse-python-${DISTVERSION}
+DISTNAME=	fuse-python-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse pkgconfig python iconv
 USE_PYTHON=	distutils autoplist
@@ -25,6 +29,7 @@ post-patch:
 		${WRKSRC}/setup.py
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fuseparts/_fusemodule.so
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/

@@ -595,8 +595,8 @@
     SUBDIR += p5-GSSAPI
     SUBDIR += p5-GnuPG
     SUBDIR += p5-GnuPG-Interface
-    SUBDIR += p5-Heimdal-Kadm5
     SUBDIR += p5-HTML-Email-Obfuscate
+    SUBDIR += p5-Heimdal-Kadm5
     SUBDIR += p5-IO-Async-SSL
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
@@ -886,6 +886,7 @@
     SUBDIR += retranslator
     SUBDIR += revealrk
     SUBDIR += revelation
+    SUBDIR += rhash
     SUBDIR += rifiuti2
     SUBDIR += rkhunter
     SUBDIR += rndpassw

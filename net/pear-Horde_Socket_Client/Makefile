@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Socket_Client
-PORTVERSION=	1.1.2
+PORTVERSION=	2.0.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

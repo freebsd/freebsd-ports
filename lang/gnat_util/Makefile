@@ -17,12 +17,14 @@ LICENSE_COMB=	multi
 
 USES=		ada tar:bzip2
 NO_MTREE=	yes
-DISTINFO_FILE=	${.CURDIR}/../gcc-aux/distinfo
+DISTINFO_FILE=	${.CURDIR}/../${ADAXX}-aux/distinfo
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .include "${.CURDIR}/Makefile.sources"
-.include "${.CURDIR}/../gcc-aux/Makefile.version"
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../${ADAXX}-aux/Makefile.version"
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj
@@ -41,4 +43,4 @@ post-install:
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 		${SORT} >> ${TMPPLIST})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

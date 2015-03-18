@@ -19,10 +19,3 @@
 %%LIBDIR%%/lib/Tivoka/Server/MethodWrapper.php
 %%LIBDIR%%/lib/Tivoka/Server/Server.php
 %%LIBDIR%%/lib/Tivoka/Tivoka.php
-@dirrm %%LIBDIR%%/lib/Tivoka/Server
-@dirrm %%LIBDIR%%/lib/Tivoka/Exception
-@dirrm %%LIBDIR%%/lib/Tivoka/Client/Connection
-@dirrm %%LIBDIR%%/lib/Tivoka/Client
-@dirrm %%LIBDIR%%/lib/Tivoka
-@dirrm %%LIBDIR%%/lib
-@dirrm %%LIBDIR%%

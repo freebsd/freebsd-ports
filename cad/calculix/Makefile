@@ -39,8 +39,18 @@ USE_GL=	glut
 BROWSER?=	firefox
 PSVIEWER?=	gv
 
-OPTIONS_DEFINE=	ATLAS METIS METIS_EDF DOCS EXAMPLES
+OPTIONS_DEFINE=	METIS METIS_EDF DOCS EXAMPLES
 OPTIONS_DEFAULT=METIS
+
+OPTIONS_RADIO=  BLAS
+OPTIONS_RADIO_BLAS=     REFERENCE OBLAS
+OPTIONS_DEFAULT=        REFERENCE
+
+REFERENCE_DESC= Blas / Lapack
+REFERENCE_USES= blaslapack:netlib
+
+OBLAS_DESC=     Openblas
+OBLAS_USES=     blaslapack:openblas
 
 .include <bsd.port.options.mk>
 
@@ -59,12 +69,6 @@ LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4
 .endif
 .if ${PORT_OPTIONS:MMETIS_EDF}
 LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis-edf
-.endif
-
-.if ${PORT_OPTIONS:MATLAS}
-USES+=		blaslapack:atlas
-.else
-USES+=		blaslapack
 .endif
 
 .if ${ARCH} == "sparc64"

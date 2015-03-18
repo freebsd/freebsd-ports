@@ -3,7 +3,7 @@
 
 PORTNAME=	REST-Google
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EJS
@@ -13,7 +13,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access Google REST (aka AJAX) API from Perl
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-    		p5-version>=0.50:${PORTSDIR}/devel/p5-version \
     		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
     		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \

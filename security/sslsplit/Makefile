@@ -6,7 +6,7 @@ PORTVERSION=	0.4.8
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 
-MAINTAINER=	swills@freebsd.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2

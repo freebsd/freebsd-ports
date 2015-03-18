@@ -16,7 +16,9 @@ LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
-USES=		makeinfo
+USES=		cpe makeinfo
+
+CPE_VENDOR=	gnu
 
 # distfile version
 FLIM_VER=	${FLIM_TRUNK}.9

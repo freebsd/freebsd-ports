@@ -20,6 +20,7 @@ bin/openxpkictl
 %%SITE_ARCH%%/OpenXPKI/Client/UI/Profile.pm
 %%SITE_ARCH%%/OpenXPKI/Client/UI/Result.pm
 %%SITE_ARCH%%/OpenXPKI/Client/UI/Secret.pm
+%%SITE_ARCH%%/OpenXPKI/Client/UI/Source.pm
 %%SITE_ARCH%%/OpenXPKI/Client/UI/Workflow.pm
 %%SITE_ARCH%%/OpenXPKI/Config.pm
 %%SITE_ARCH%%/OpenXPKI/Config/Backend.pm
@@ -344,6 +345,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Home.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Information.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Result.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Source.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config::Backend.3.gz
@@ -727,6 +729,7 @@ man/man1/openxpkictl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/def/change_metadata.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/def/crl_issuance.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/def/enrollment.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/cancel.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/check_for_revocation.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/disconnect.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/nice_fetch_certificate.yaml
@@ -736,9 +739,13 @@ man/man1/openxpkictl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/noop.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/noop2.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/action/skip.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/condition/is_batch_mode.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/cert_identifier.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/cert_subject.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/cert_subject_alt_name.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/comment.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/email.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/flag_batch_mode.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/invalidity_time.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/notafter.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/workflow/global/field/notbefore.yaml

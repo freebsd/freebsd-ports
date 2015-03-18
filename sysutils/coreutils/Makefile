@@ -24,17 +24,18 @@ CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=		gmake iconv perl5 charsetfix tar:xz
+USES=		cpe gmake iconv perl5 charsetfix tar:xz
 USE_PERL5=	build	# build - required for tests and man page generation
 USE_LDCONFIG=	yes
 
 INFO=		coreutils
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	GMP NLS
 OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=   nls
+NLS_CONFIGURE_ENABLE=	nls
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 GMP_CONFIGURE_WITH=	gmp
 

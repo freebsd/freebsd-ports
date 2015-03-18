@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rose-HTML-Objects
-PORTVERSION=	0.621
-PORTREVISION=	1
+PORTVERSION=	0.623
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,11 +32,4 @@ PORTSCOUT=	skipv:0.6061
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base
-RUN_DEPENDS+=	p5-base>=2.18:${PORTSDIR}/devel/p5-base
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

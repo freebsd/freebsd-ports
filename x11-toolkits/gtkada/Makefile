@@ -52,6 +52,11 @@ ALL_TARGET+= docs
 ALL_TARGET+= tests
 .endif
 
+post-patch:
+	# fix for gcc-5
+	@${REINPLACE_CMD} -e 's|inline gint roundint|gint roundint|' \
+		${WRKSRC}/src/gtkextra/gtkplot*
+
 do-build:
 #	This target is recreated because -j cannot be set, but
 #	MAKE_JOBS_SAFE=yes is needed for PROCESSORS value

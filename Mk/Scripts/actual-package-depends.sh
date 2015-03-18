@@ -61,7 +61,6 @@ find_dep() {
 		;;
 	esac
 	if [ -n "${searchfile}" ]; then
-		echo $(resolv_symlink ${searchfile}) >&2
 		${PKG_BIN} which -q ${searchfile} || ${PKG_BIN} which -q "$(resolv_symlink ${searchfile} 2>/dev/null)" ||
 			echo "actual-package-depends: dependency on ${searchfile} not registered (normal if it belongs to base)" >&2
 	fi

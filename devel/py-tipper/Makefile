@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alfred@freebsd.org
+MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Tracebacks for python via SIGUSR1
 
 LICENSE=	MIT

@@ -50,8 +50,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/programming.methods.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/what.is.html
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

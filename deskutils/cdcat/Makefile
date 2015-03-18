@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based tool for offline CD/DVD/disk catalogs
 
+BROKEN=		Fails to build with new p7zip
+
 LICENSE=	GPLv2 MPL
 LICENSE_COMB=	multi
 

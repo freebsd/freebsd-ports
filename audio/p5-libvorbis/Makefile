@@ -15,7 +15,6 @@ COMMENT=	Perl extension for Ogg Vorbis streams
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-
 USES=		perl5
 USE_PERL5=	configure
 

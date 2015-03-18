@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.5.0
-CATEGORIES=	net
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/
+DISTVERSION=	1.6-dev1
+CATEGORIES=	net www
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.6/src/devel/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	demon@FreeBSD.org
@@ -13,14 +13,11 @@ COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-IGNORE=		No devel version available at this time
-
 USES=		cpe gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
-SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		OPENSSL
+OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL
 OPTIONS_RADIO=		PCRE
 OPTIONS_RADIO_PCRE=	DPCRE SPCRE
 DPCRE_DESC=		Link dynamically
@@ -44,6 +41,11 @@ MAKE_ARGS+=	USE_STATIC_PCRE=1 USE_PCRE_JIT=1
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 MAKE_ARGS+=	USE_OPENSSL=1
+.endif
+
+.if ${PORT_OPTIONS:MLUA}
+USES+=		lua:53
+MAKE_ARGS+=	USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NAME=lua-${LUA_VER}
 .endif
 
 do-install:

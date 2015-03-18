@@ -3,6 +3,7 @@ lib/%%PORTNAME%%/filters/commit-links.sh
 lib/%%PORTNAME%%/filters/email-gravatar.lua
 lib/%%PORTNAME%%/filters/email-gravatar.py
 lib/%%PORTNAME%%/filters/email-libravatar.lua
+lib/%%PORTNAME%%/filters/gentoo-ldap-authentication.lua
 lib/%%PORTNAME%%/filters/html-converters/man2html
 lib/%%PORTNAME%%/filters/html-converters/md2html
 lib/%%PORTNAME%%/filters/html-converters/resources/markdown.pl

@@ -16,6 +16,9 @@ COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	GCC 4.7 branch closed June 2014, move to lang/gcc-aux
+EXPIRATION_DATE=	2015-05-31
+
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c

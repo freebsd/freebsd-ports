@@ -1,4 +1,4 @@
---- src/utils/os_unix.c.orig	2014-10-09 14:41:31 UTC
+--- src/utils/os_unix.c.orig	2015-03-15 17:30:39 UTC
 +++ src/utils/os_unix.c
 @@ -190,17 +190,42 @@ static int os_daemon(int nochdir, int no
  #define os_daemon daemon
@@ -51,7 +51,7 @@
  
  	return -0;
  #endif /* defined(__uClinux__) || defined(__sun__) */
-@@ -360,7 +386,7 @@ int os_setenv(const char *name, const ch
+@@ -357,7 +383,7 @@ int os_setenv(const char *name, const ch
  
  int os_unsetenv(const char *name)
  {

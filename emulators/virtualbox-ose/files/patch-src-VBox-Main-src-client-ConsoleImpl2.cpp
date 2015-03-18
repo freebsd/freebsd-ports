@@ -1,36 +1,34 @@
---- src/VBox/Main/src-client/ConsoleImpl2.cpp.orig	2013-09-06 08:30:10.000000000 -0400
-+++ src/VBox/Main/src-client/ConsoleImpl2.cpp	2013-09-12 13:03:34.000000000 -0400
-@@ -4031,12 +4031,13 @@
+--- src/VBox/Main/src-client/ConsoleImpl2.cpp.orig	2015-03-02 10:09:53.000000000 -0500
++++ src/VBox/Main/src-client/ConsoleImpl2.cpp	2015-03-13 12:49:53.780376000 -0400
+@@ -4447,12 +4447,12 @@
                      }
                  }
  
 -                Assert((int)maTapFD[uInstance] >= 0);
 -                if ((int)maTapFD[uInstance] >= 0)
-+                const int fd = (int)(uintptr_t)maTapFD[uInstance];
-+                Assert(fd >= 0);
-+                if (fd >= 0)
++                Assert((intptr_t)maTapFD[uInstance] >= 0);
++                if ((intptr_t)maTapFD[uInstance] >= 0)
                  {
                      InsertConfigString(pLunL0, "Driver", "HostInterface");
                      InsertConfigNode(pLunL0, "Config", &pCfg);
 -                    InsertConfigInteger(pCfg, "FileHandle", maTapFD[uInstance]);
-+                    InsertConfigInteger(pCfg, "FileHandle", fd);
++                    InsertConfigInteger(pCfg, "FileHandle", (intptr_t)maTapFD[uInstance]);
                  }
  
  #elif defined(VBOX_WITH_NETFLT)
-@@ -4230,12 +4231,13 @@
+@@ -4646,12 +4646,12 @@
                          }
                      }
  
 -                    Assert((int)maTapFD[uInstance] >= 0);
 -                    if ((int)maTapFD[uInstance] >= 0)
-+                    const int fd = (int)(uintptr_t)maTapFD[uInstance];
-+                    Assert(fd >= 0);
-+                    if (fd >= 0)
++                    Assert((intptr_t)maTapFD[uInstance] >= 0);
++                    if ((intptr_t)maTapFD[uInstance] >= 0)
                      {
                          InsertConfigString(pLunL0, "Driver", "HostInterface");
                          InsertConfigNode(pLunL0, "Config", &pCfg);
 -                        InsertConfigInteger(pCfg, "FileHandle", maTapFD[uInstance]);
-+                        InsertConfigInteger(pCfg, "FileHandle", fd);
++                        InsertConfigInteger(pCfg, "FileHandle", (intptr_t)maTapFD[uInstance]);
                      }
                      break;
                  }

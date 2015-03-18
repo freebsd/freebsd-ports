@@ -1,0 +1,12 @@
+--- libstdc++-v3/configure.host.orig
++++ libstdc++-v3/configure.host
+@@ -268,6 +268,9 @@
+   dragonfly*)
+     os_include_dir="os/bsd/dragonfly"
+     ;;
++  linux-androideabi)
++    os_include_dir="os/bionic"
++    ;;
+   freebsd*)
+     os_include_dir="os/bsd/freebsd"
+     ;;

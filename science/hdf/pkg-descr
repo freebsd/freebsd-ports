@@ -1,22 +1,16 @@
-From HDF's manpage:
+HDF4 (originally known as HDF) is a file format for storing scientific data and
+a software library that provides high-level APIs and a low-level data interface.
 
-       hdf - Hierarchical Data Format library
-
-Description:
-       HDF  is	a  multi-object  file format that facilitates the
-       transfer of  various  types  of	scientific  data  between
-       machines  and  operating systems.  Machines currently sup-
-       ported  include	the  Cray,  Convex,  HP,  Vax,	Sun,  IBM
-       RS/6000,  Silicon  Graphics, Macintosh, and IBM PC comput-
-       ers.  HDF allows self-definitions of data content and easy
-       extensibility  for  future  enhancements  or compatibility
-       with other standard formats. HDF includes  Fortran  and	C
-       calling	interfaces,and	utilities to prepare raw image of
-       data files or for use with other NCSA software.	 The  HDF
-       library	contains  interfaces  for  storing and retrieving
-       compressed or uncompressed 8-bit and 24-bit raster  images
-       with   palettes,  n-Dimensional	scientific  datasets  and
-       binary tables. An interface is also included  that  allows
-       arbitray grouping of other HDF objects.
+HDF technologies at present include two data management formats (HDF4 and HDF5)
+and libraries, a modular data browser/editor, associated tools and utilities,
+and a conversion library. Both HDF4 and HDF5 were designed to be a general
+scientific format, adaptable to virtually any scientific or engineering
+application, and also have been used successfully in non-technical areas. The
+Open Source format is a key technological foundation for HDF core technologies.
+It allows users to collaborate with The HDF Group regarding functionality
+requirements and permits users' experience and knowledge to be incorporated into
+the HDF product when appropriate. It also permits users and organizations
+without adequate technology resources to use a sophisticated and robust data
+management tool for no charge.
 
 WWW: http://www.hdfgroup.org/products/hdf4/

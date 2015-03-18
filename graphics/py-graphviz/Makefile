@@ -3,6 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP \
 		http://networkx.lanl.gov/download/pygraphviz/
@@ -24,5 +25,8 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \
 		s+^docdirbase.*=.*+docdirbase = "${DOCSDIR:S/${PREFIX}\///}"+' ${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pygraphviz/_graphviz.so
 
 .include <bsd.port.mk>

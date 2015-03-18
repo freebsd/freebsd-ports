@@ -31,6 +31,7 @@ share/gtk-doc/html/gcab/right.png
 share/gtk-doc/html/gcab/style.css
 share/gtk-doc/html/gcab/up-insensitive.png
 share/gtk-doc/html/gcab/up.png
+share/locale/bs/LC_MESSAGES/gcab.mo
 share/locale/cs/LC_MESSAGES/gcab.mo
 share/locale/de/LC_MESSAGES/gcab.mo
 share/locale/el/LC_MESSAGES/gcab.mo

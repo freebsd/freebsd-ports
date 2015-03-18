@@ -3,10 +3,9 @@
 
 PORTNAME=	AcePerl
 PORTVERSION=	1.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology databases perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Ace
+MASTER_SITES=	CPAN/Ace
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,5 +28,12 @@ CFLAGS+=	-fPIC
 post-patch:
 	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
+
+post-install:
+.for f in Freesubs/Freesubs.so RPC/RPC.so
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
+.endfor
 
 .include <bsd.port.post.mk>

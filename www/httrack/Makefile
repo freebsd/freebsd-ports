@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.48.20
-PORTREVISION=	1
+PORTVERSION=	3.48.21
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/ \
@@ -24,9 +23,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias execinfo gmake iconv libtool shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 USE_OPENSSL=	yes
+USES=		alias execinfo gmake iconv libtool shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*

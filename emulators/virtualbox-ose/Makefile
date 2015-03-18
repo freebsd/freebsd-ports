@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.24
+DISTVERSION=	4.3.26
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -87,6 +87,7 @@ MANUAL_CONFIGURE_OFF=	--disable-docs
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PYTHON_CONFIGURE_OFF=	--disable-python
 QT4_CONFIGURE_OFF=	--disable-qt4
+UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VDE_CONFIGURE_ON=	--enable-vde
 VNC_CONFIGURE_ON=	--enable-vnc
 VPX_CONFIGURE_OFF=	--disable-libvpx
@@ -153,6 +154,9 @@ USE_QT4+=	gui network opengl
 INSTALLS_ICONS=	yes
 VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
+VBOX_WITH_QT4=	1
+.else
+VBOX_WITH_QT4=
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
@@ -226,13 +230,8 @@ post-patch:
 	@${ECHO} 'SDK_VBOX_LIBPNG_INCS = ${PREFIX}/include/libpng' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'SDK_VBOX_LIBPNG_LIBS = png' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_QT4}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if ${PORT_OPTIONS:MUDPTUNNEL}
-	@${ECHO} 'VBOX_WITH_UDPTUNNEL = 1' >> ${WRKSRC}/LocalConfig.kmk
-.endif
-.if ${PORT_OPTIONS:MVNC}
-	@${ECHO} 'VBOX_WITH_EXTPACK_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${PORT_OPTIONS:MWEBSERVICE}
 	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GSOAP_INSTALLED = 1' >> ${WRKSRC}/LocalConfig.kmk

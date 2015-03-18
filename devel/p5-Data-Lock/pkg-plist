@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Attribute/Constant.pm
+%%SITE_PERL%%/Data/Lock.pm
+%%PERL5_MAN3%%/Attribute::Constant.3.gz
+%%PERL5_MAN3%%/Data::Lock.3.gz

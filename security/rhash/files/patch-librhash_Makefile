@@ -1,0 +1,37 @@
+--- librhash/Makefile.orig	2014-08-01 10:53:45 UTC
++++ librhash/Makefile
+@@ -1,11 +1,11 @@
+ # Makefile for LibRHash
+-CC      = gcc
+-AR      = ar
++CC      ?= gcc
++AR      ?= ar
+ #NOTE: NDEBUG turns off asserts
+-OPTFLAGS   = -O2 -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
++OPTFLAGS   = $(CFLAGS) -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
+ OPTLDFLAGS =
+-CFLAGS     = $(OPTFLAGS)
+-LDFLAGS    = $(OPTLDFLAGS)
++#CFLAGS     = $(OPTFLAGS)
++LDFLAGS    += $(OPTLDFLAGS)
+ ADDCFLAGS  =
+ LIBCFLAGS  =
+ ADDLDFLAGS =
+@@ -24,7 +24,7 @@ LEGACY_LIB_HEADERS = rhash_timing.h
+ SO_HEADERS = $(LIB_HEADERS) $(LEGACY_LIB_HEADERS)
+ # installation directories and names
+ DESTDIR =
+-PREFIX  = /usr/local
++PREFIX  ?= /usr/local
+ INCDIR  = $(PREFIX)/include
+ LIBDIR  = $(PREFIX)/lib
+ LIBRARY = librhash.a
+@@ -182,7 +182,7 @@ test-dll: $(DLLNAME) test_hashes.o
+ 
+ # shared and static libraries
+ $(SONAME): $(SOURCES)
+-	sed -n '1s/.*/{ global:/p; s/^RHASH_API.* \([a-z0-9_]\+\)(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
++	sed -nE '1s/.*/{ global:/p; s/^RHASH_API.* ([a-z0-9_]+)\(.*/  \1;/p; $$s/.*/local: *; };/p' $(SO_HEADERS) > exports.sym
+ 	$(CC) -fpic $(ALLCFLAGS) -shared $(SOURCES) -Wl,--version-script,exports.sym,-soname,$(SONAME) $(LIBLDFLAGS) -o $@
+ 	ln -s $(SONAME) $(SOLINK)
+ # use 'nm -Cg --defined-only $@' to view exported symbols

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20140815
+PORTVERSION=	3.20141016.1
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		LOCAL/mat/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Wiki compiler
 
 LICENSE=	GPLv2
@@ -36,16 +36,19 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gettext perl5 gmake
+USES=		gettext perl5 gmake cpe
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES
-OPTIONS_DEFAULT=	PO4A SEARCH
+CONFIGURE_ARGS=	PERL=${PERL} FULLPERL=${PERL}
+
+OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES MULTI
+OPTIONS_DEFAULT=	PO4A SEARCH MULTI
 OPTIONS_SUB=
 
 PO4A_DESC=	Install translated underlays
 SEARCH_DESC=	Install search backend
 W3M_DESC=	Install w3m CGI wrapper
+MULTI_DESC=	Install Text::MultiMarkdown
 
 PO4A_RUN_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
 PO4A_BUILD_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
@@ -53,6 +56,7 @@ SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
 		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
 W3M_MAKE_ENV=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
+MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:${PORTSDIR}/textproc/p5-Text-MultiMarkdown
 
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*

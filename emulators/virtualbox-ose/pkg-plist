@@ -353,6 +353,7 @@ lib/virtualbox/VBoxDDGC.gc
 lib/virtualbox/VBoxDDR0.r0
 lib/virtualbox/VBoxDDU.so
 %%QT4%%lib/virtualbox/VBoxDbg.so
+%%QT4%%lib/virtualbox/VBoxDragAndDropSvc.so
 lib/virtualbox/VBoxEFI32.fd
 lib/virtualbox/VBoxEFI64.fd
 lib/virtualbox/VBoxExtPackHelperApp

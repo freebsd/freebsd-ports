@@ -12,8 +12,9 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
 
-USES=		iconv gmake libtool tar:xz
+USES=		cpe iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \

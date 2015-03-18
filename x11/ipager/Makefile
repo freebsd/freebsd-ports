@@ -35,7 +35,7 @@ post-patch:
 
 pre-build:
 	# scons is too stupid to create DESTDIR by itself
-	@${MKDIR} ${WRKDIR}/stage
+	@${MKDIR} ${STAGEDIR}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

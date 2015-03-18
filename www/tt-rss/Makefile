@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.15.3.150208
+PORTVERSION=	1.15.3.150311
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gothfox
 GH_PROJECT=	Tiny-Tiny-RSS
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	4ca621a
+GH_COMMIT=	96ab1bd
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -44,7 +45,7 @@ DB=		pgsql
 MYSQL=		"\#"
 PGSQL=
 .else
-USE_PHP+=	mysql
+USE_PHP+=	mysqli
 DB=		mysql
 MYSQL=
 PGSQL=		"\#"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	astro geography
 MASTER_SITES=	https://secure.ohos.nl/downloads/ \
 		LOCAL/glebius
@@ -25,5 +25,8 @@ USE_GNOME=	glib20
 PLIST_FILES=	bin/gpsbabel
 
 CONFLICTS=	gpsbabel14-[0-9]*
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gpsbabel
 
 .include <bsd.port.mk>

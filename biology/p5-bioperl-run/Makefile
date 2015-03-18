@@ -41,13 +41,13 @@ SHEBANG_FILES=	scripts/bioperl_application_installer.PLS \
 OPTIONS_DEFINE=	DOCS
 
 post-build:
-	cd ${WRKSRC} && ${PERL} ./Build manifest
+	(cd ${WRKSRC} && ${PERL} ./Build manifest)
 
 post-install:
 .for i in bioperl_application_installer multi_hmmsearch panalysis papplmaker run_neighbor run_protdist
 	${CP} ${WRKSRC}/scripts/${i}.PLS ${STAGEDIR}${PREFIX}/bin/bp_${i}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS Changes INSTALL.PROGRAMS README
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor

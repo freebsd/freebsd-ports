@@ -6,7 +6,7 @@ PORTVERSION=	1.9.s20140622
 MASTER_SITES=	LOCAL/mat/lg GH GHC
 CATEGORIES=	net-mgmt perl5
 
-MAINTAINER=	mat@freebsd.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Looking Glass written in Perl as a CGI script
 
 LICENSE=	GPLv2

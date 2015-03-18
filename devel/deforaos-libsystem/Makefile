@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libsystem
-PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.defora.org/os/download/download/3527/
-DISTNAME=	libSystem-${PORTVERSION}
+MASTER_SITES=	http://www.defora.org/os/download/download/4330/
 PKGNAMEPREFIX=	deforaos-
+DISTNAME=	libSystem-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	DeforaOS core system library
@@ -21,10 +20,22 @@ CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
+OPTIONS_DEFAULT=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
+	${REINPLACE_CMD} 's|CFLAGS=|CFLAGS+=|' \
+		${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} 's|CPPFLAGS=|CPPFLAGS+=|' \
 		${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} 's|data doc include|data include|' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|_fail "python.sh"|#_fail "python.sh"|' \
+		${WRKSRC}/tests/tests.sh
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/configctl \
+		${STAGEDIR}${PREFIX}/lib/libSystem.so.0.0
 
 .include <bsd.port.mk>

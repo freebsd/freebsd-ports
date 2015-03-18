@@ -10,6 +10,7 @@
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qrawwebview_p.h
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qrawwebview_p_p.h
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qtwebsecurityorigin_p.h
+%%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qwebchannelwebkittransport_p.h
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qwebdatabase_p.h
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qwebdownloaditem_p.h
 %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private/qwebdownloaditem_p_p.h

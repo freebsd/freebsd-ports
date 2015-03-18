@@ -3,7 +3,7 @@
 
 PORTNAME=	redeclipse
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION:C/^([0-9]+\.[0-9]+)\..*/\1/}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_nix
@@ -25,9 +25,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ALL_TARGET=	libenet
 
-SUB_FILES=	${PORTNAME} ${PORTNAME}_server
+SUB_FILES=	${PLIST_FILES:Mbin/*:T}
 
-PORTDATA=	*
+PORTDATA=	game data
 PORTDOCS=	*
 PLIST_DIRS=	%%DATADIR%%/data/brush
 
@@ -37,7 +37,15 @@ OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=CLIENT DEDICATED OPTIMIZED_CFLAGS
 
 CLIENT_DESC=	Build client
+CLIENT_USE=			GL=gl SDL=image,mixer,sdl XORG=x11
+CLIENT_ALL_TARGET=		client
+CLIENT_PLIST_FILES=		bin/${PORTNAME} libexec/${PORTNAME} \
+				share/pixmaps/${PORTNAME}.ico
 DEDICATED_DESC=	Build dedicated server
+DEDICATED_ALL_TARGET=		server
+DEDICATED_PLIST_FILES=		bin/${PORTNAME}_server libexec/${PORTNAME}_server
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer
+OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -fomit-frame-pointer
 
 .include <bsd.port.options.mk>
 
@@ -46,12 +54,6 @@ BROKEN=		does not build on sparc64
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_GL=		yes
-USE_SDL=	image mixer sdl
-PLIST_FILES+=	bin/${PORTNAME} libexec/${PORTNAME} share/pixmaps/${PORTNAME}.ico
-BINARIES+=	${PORTNAME}
-ALL_TARGET+=	client
-
 DESKTOP_ENTRIES="Red Eclipse" \
 		"${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
@@ -60,28 +62,19 @@ DESKTOP_ENTRIES="Red Eclipse" \
 		""
 .endif
 
-.if ${PORT_OPTIONS:MDEDICATED}
-PLIST_FILES+=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
-BINARIES+=	${PORTNAME}_server
-ALL_TARGET+=	server
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -fomit-frame-pointer
-CXXFLAGS+=	-O3 -fomit-frame-pointer
-.endif
-
 do-install:
-.for f in ${BINARIES}
-	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/libexec
+.for f in ${PLIST_FILES:Mbin/*}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f:T} ${STAGEDIR}${PREFIX}/${f}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "game data" ${STAGEDIR}${DATADIR}/
+.for f in ${PLIST_FILES:Mlibexec/*}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f:T} \
+		${STAGEDIR}${PREFIX}/${f:H}
+.endfor
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

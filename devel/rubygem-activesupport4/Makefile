@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-i18n>=0.6.9:${PORTSDIR}/devel/rubygem-i18n \
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RUBY_FEATURES=	iconv
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

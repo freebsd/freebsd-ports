@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/JSON::DWIW.3.gz
-%%PERL5_MAN3%%/JSON::DWIW::Boolean.3.gz
-%%PERL5_MAN3%%/JSON::DWIW::Changes.3.gz
 %%SITE_ARCH%%/JSON/DWIW.pm
 %%SITE_ARCH%%/JSON/DWIW/Boolean.pm
 %%SITE_ARCH%%/JSON/DWIW/Changes.pm
 %%SITE_ARCH%%/auto/JSON/DWIW/DWIW.so
+%%PERL5_MAN3%%/JSON::DWIW.3.gz
+%%PERL5_MAN3%%/JSON::DWIW::Boolean.3.gz
+%%PERL5_MAN3%%/JSON::DWIW::Changes.3.gz

@@ -1,6 +1,6 @@
 bin/binhex.pl
 bin/debinhex.pl
-%%PERL5_MAN3%%/Convert::BinHex.3.gz
 %%SITE_PERL%%/Convert/BinHex.pm
+%%PERL5_MAN3%%/Convert::BinHex.3.gz
 man/man1/binhex.pl.1.gz
 man/man1/debinhex.pl.1.gz

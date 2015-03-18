@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,11 @@ DISTNAME=	pyncurses-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses binding for Python
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USES=		python
 USE_PYTHON=	distutils autoplist
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .for f in _curses_wrap.c _panel_wrap.c _menu_wrap.c _form_wrap.c
@@ -25,4 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^extern int define_key(/d' \
 		${WRKSRC}/ncurses/_curses_wrap.c
 
-.include <bsd.port.post.mk>
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ncurses/*.so
+
+.include <bsd.port.mk>

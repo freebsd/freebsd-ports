@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake-fedora
-PORTVERSION=	1.3.0
+PORTVERSION=	2.3.4
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/c/m/cmake-fedora/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-modules-only
@@ -17,7 +17,8 @@ NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|date --utc|date -u|' ${WRKSRC}/DateTimeFormat.cmake
+	@${REINPLACE_CMD} -e 's|-printf .*$$|-exec basename "{}" ";"|' \
+		${WRKSRC}/ManageTranslation.cmake
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cmake/Modules

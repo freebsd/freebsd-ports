@@ -58,6 +58,7 @@ do-extract:
 		${FIND} -H -s * ! -type d | \
 		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF}; \
 	done
+	${ECHO} "@dir %%XPI_LIBDIR%%/symlinks/firefox" >> ${PLISTF}
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 
 do-install:

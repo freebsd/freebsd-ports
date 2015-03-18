@@ -87,8 +87,3 @@
 %%DATADIR%%/plugins/prefilter.showinfoheader.php
 %%DATADIR%%/plugins/shared.escape_chars.php
 %%DATADIR%%/plugins/shared.make_timestamp.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/internal
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%

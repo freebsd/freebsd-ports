@@ -3,7 +3,7 @@
 
 PORTNAME=	pyxmpp
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im python
 MASTER_SITES=	GHC
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python XMPP library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.18.2:${PORTSDIR}/security/py-m2crypto \
@@ -31,5 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		"/include_dirs =/s|\[.*|['${LOCALBASE}/include/libxml2','${LOCALBASE}/include']| ; \
 		 /library_dirs =/s|\[.*|['${LOCALBASE}/lib']|" ${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyxmpp/_xmlextra.so
 
 .include <bsd.port.mk>
