@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7d79fac-cd49-11e4-898f-bcaec565249c">
+    <topic>libXfont -- BDF parsing issues</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+      <package>
+	<name>libXfont</name>
+	<range><ge>1.4.99</ge><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2015-March/002550.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered an issue in the parsing of BDF font files by libXfont.
+	    Additional testing by Alan Coopersmith and William Robinet with
+	    the American Fuzzy Lop (afl) tool uncovered two more issues in
+	    the parsing of BDF font files.</p>
+
+	  <p>As libXfont is used by the X server to read font files, and an
+	    unprivileged user with access to the X server can tell the X
+	    server to read a given font file from a path of their choosing,
+	    these vulnerabilities have the potential to allow unprivileged
+	    users to run code with the privileges of the X server
+	    (often root access).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.x.org/archives/xorg-announce/2015-March/002550.html</url>
+      <cvename>CVE-2015-1802</cvename>
+      <cvename>CVE-2015-1803</cvename>
+      <cvename>CVE-2015-1804</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-17</discovery>
+      <entry>2015-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b3ecff5-c9b2-11e4-b71f-00bd5af88c00">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
