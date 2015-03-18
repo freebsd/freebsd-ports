@@ -62,7 +62,7 @@ HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 			libical.so:${PORTSDIR}/devel/libical
-HTTP_USE=		GNOME=libxml2,glib20 SQLITE=yes
+HTTP_USE=		GNOME=libxml2,glib20
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
@@ -87,7 +87,6 @@ REPLICATION_CONFIGURE_ENABLE=replication
 SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
-SQLITE_USE=		SQLITE=yes
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
@@ -109,6 +108,10 @@ IGNORE=		DRAC is not available
 # EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
 # .endif
 # USE_AUTOTOOLS=	autoconf autoheader
+.endif
+
+.if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=yes
 .endif
 
 .if ${OSVERSION} >= 900022
