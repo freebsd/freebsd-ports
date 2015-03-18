@@ -13,9 +13,11 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=	yes
-USES=		gmake makeinfo
+USES=		cpe gmake makeinfo
 USE_GCC=	any
 USERS=		gnats
+
+CPE_VENDOR=	gnu
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
