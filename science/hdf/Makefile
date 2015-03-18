@@ -14,7 +14,9 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libsz.so:${PORTSDIR}/science/szip
 
-CONFLICTS=	netcdf-*
+CONFLICTS_INSTALL=	netcdf-4.[0-9]*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} --with-szlib=${LOCALBASE}
