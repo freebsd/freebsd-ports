@@ -3,7 +3,7 @@
 
 PORTNAME=	Test-Warn
 PORTVERSION=	0.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ COMMENT=	Perl extension to test methods for warnings
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp \
-		p5-Sub-Uplevel>=0.12:${PORTSDIR}/devel/p5-Sub-Uplevel
+BUILD_DEPENDS=	p5-Sub-Uplevel>=0.12:${PORTSDIR}/devel/p5-Sub-Uplevel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
