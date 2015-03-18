@@ -17,8 +17,7 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-MORE_WRKSRCS=	src/plugins/accessible/${PORTNAME} \
-		src/tools/uic
+MORE_WRKSRCS=	src/tools/uic
 
 QT_DEFINES=	ACCESSIBILITY WIDGETS XSYNC
 QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
@@ -42,11 +41,6 @@ QT_CONFIG+=	-gtkstyle
 
 pre-build:
 	@cd ${WRKSRC}/src/tools/uic && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
-
-post-build:
-	@cd ${WRKSRC}/src/plugins/accessible/${PORTNAME} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 
