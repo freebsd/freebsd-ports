@@ -28,8 +28,10 @@ USE_RC_SUBR=	unrealircd
 
 USERS=		ircd
 GROUPS=		ircd
+CPE_VENDOR=	unrealircd
+CPE_PRODUCT=	unrealircd
 
-USES=		pkgconfig
+USES=		pkgconfig cpe
 
 SUB_LIST+=	RUNDIR=${RUNDIR}
 SUB_LIST+=	USERS=${USERS}

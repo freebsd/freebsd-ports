@@ -20,6 +20,10 @@ LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:xz
 
+.if !defined(_BUILDING_LIGHTTPD_MODULE)
+USES+=	cpe
+.endif
+
 USE_AUTOTOOLS=	autoconf autoheader aclocal automake
 AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
