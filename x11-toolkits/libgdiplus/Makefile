@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgdiplus
-PORTVERSION=	3.8
-PORTREVISION=	3
+PORTVERSION=	3.12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
