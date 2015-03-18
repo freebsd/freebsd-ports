@@ -18,7 +18,6 @@ USES=		gettext gmake libtool makeinfo pathfix perl5 pkgconfig tar:xz
 USE_GNOME=	gnomeprefix glib20 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H -D_WANT_IFADDR
 LDFLAGS+=	-L${LOCALBASE}/lib -lutil
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection
