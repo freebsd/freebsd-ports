@@ -970,6 +970,7 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
+    SUBDIR += quagga23
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted

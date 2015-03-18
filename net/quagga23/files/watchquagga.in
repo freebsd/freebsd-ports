@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: watchquagga
+# REQUIRE: NETWORKING quagga
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable watchquagga:
+# watchquagga_enable="YES"
+#
+# You may also wish to use the following variables to fine-tune startup:
+# watchquagga_flags
+
+. /etc/rc.subr
+
+name=watchquagga
+rcvar=watchquagga_enable
+
+load_rc_config $name
+
+stop_postcmd="rm -f $pidfile"
+
+watchquagga_enable=${watchquagga_enable:-"NO"}
+
+command=%%PREFIX%%/sbin/watchquagga
+pidfile=%%LOCALSTATE_DIR%%/watchquagga.pid
+
+run_rc_command "$1"
