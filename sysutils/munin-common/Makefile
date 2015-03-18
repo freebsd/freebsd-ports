@@ -15,7 +15,7 @@ BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 
-USES=		gmake perl5
+USES=		gmake perl5 cpe
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 .include "${.CURDIR}/../munin-common/munin.mk"
