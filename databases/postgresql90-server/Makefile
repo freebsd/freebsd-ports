@@ -7,6 +7,8 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
+USES+=	cpe
+
 ICU_PATCHFILE?=	pg-9017-icu-2014-06-09.diff.gz
 BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs \
 		src/backend/snowball src/backend/replication/libpqwalreceiver \
