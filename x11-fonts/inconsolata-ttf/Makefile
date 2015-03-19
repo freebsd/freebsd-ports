@@ -3,6 +3,7 @@
 
 PORTNAME=	inconsolata-ttf
 PORTVERSION=	20090215
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.levien.com/type/myfonts/
 DISTNAME=	Inconsolata
@@ -12,18 +13,14 @@ EXTRACT_ONLY=
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Monospaced truetype font
 
+USES=		fonts
+FONTNAME=	inconsolata
 USE_XORG=	x11
-INSTALLS_TTF=	yes
-XORG_CAT=	font
-FONTDIR=	OTF
-PLIST_FILES=	lib/X11/fonts/${FONTDIR}/${DISTNAME}${EXTRACT_SUFX}
-
-do-configure:
-
-do-build:
+PLIST_FILES=	${FONTSDIR}/${DISTNAME}${EXTRACT_SUFX}
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
