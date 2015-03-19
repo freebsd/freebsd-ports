@@ -13,6 +13,14 @@ All ports committers are allowed to commit to this file.
 20150319:
   AUTHOR: bdrewery@FreeBSD.org
 
+  MASTER_SITE GHR (GITHUB_RELEASE) has been removed.  The same functionality
+  can be achieved with just USE_GITHUB/GH_ACCOUNT/GH_PROJECT. GH_TAGNAME
+  defaults to DISTVERSION. If the tag needs to be adjusted then change
+  GH_TAGNAME. No GH_COMMIT is needed.
+
+20150319:
+  AUTHOR: bdrewery@FreeBSD.org
+
   USE_GITHUB has been updated to make GH_COMMIT optional.  Using this new
   scheme allows only setting the _tag_ or _commit hash_ in GH_TAGNAME and
   not having to know the hash for a tag.  This scheme will download a tarball

@@ -4,7 +4,6 @@
 PORTNAME=	gogglesmm
 PORTVERSION=	0.14.2
 CATEGORIES=	audio
-MASTER_SITES=	GHR
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Music collection manager and player

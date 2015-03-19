@@ -3,7 +3,6 @@
 PORTNAME=	editline
 PORTVERSION=	1.14.2
 CATEGORIES=	devel
-MASTER_SITES=	GHR
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Minix editline: A free readline() for UNIX

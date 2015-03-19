@@ -4,7 +4,6 @@
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.2.1
 CATEGORIES=	astro
-MASTER_SITES=	GHR
 USE_GITHUB=	yes
 GH_ACCOUNT=	glebius
 
