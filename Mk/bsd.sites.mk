@@ -559,7 +559,7 @@ DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
 GH_ACCOUNT?=	${PORTNAME}
 GH_PROJECT?=	${PORTNAME}
-.  if defined(DH_COMMIT)
+.  if defined(GH_COMMIT)
 # Use the old style for safety for now.
 GH_TAGNAME?=	${DISTVERSION}
 .  else
