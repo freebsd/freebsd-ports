@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -24,9 +24,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	7fe9126
+GH_COMMIT=	ff4c1cc
 
-WAF_VERSION=	1.8.6
+WAF_VERSION=	1.8.7
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build
 USE_XORG=	x11 xv xxf86vm
