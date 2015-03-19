@@ -24,9 +24,9 @@ OPTIONS_DEFINE=	NLS
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=		NLS=""
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=		NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
