@@ -30,5 +30,6 @@ sbin/openvasd
 @dir /var/lib/openvas/logs
 @dir /var/lib/openvas/jobs
 @dir /var/lib/openvas/CA
+@dir /var/lib/openvas
 @dir /var/lib
 @dir /var/cache/openvas
