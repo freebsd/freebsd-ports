@@ -1,0 +1,27 @@
+--- Makefile.x11.orig	2015-03-19 18:46:41 UTC
++++ Makefile.x11
+@@ -9,14 +9,8 @@
+ #
+ #--------------------------------------------------------------------------
+ 
+-#LIBS    = -lm -lX11 -lpthreads
+ LIBS    = -lm -lX11 -lpthread
+-#LIBS    = -lm -lX11
+-LDFLAGS = -s -L/usr/X11R6/lib
+-INCL    = -I/usr/X11R6/include
+-
+-#CFLAGS  = -O2 -I. $(INCL) -Wall -Wshadow -Wpointer-arith -Wmissing-prototypes 
+-CFLAGS  = -O2 -I. $(INCL)
++CFLAGS+= -I.
+ 
+ OBJS    = main.o window_x11.o init.o trace.o charset.o dump.o \
+           device.o channel.o cpu.o pp.o float.o shift.o operator.o \
+@@ -26,7 +20,7 @@ OBJS    = main.o window_x11.o init.o tra
+ dtcyber: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+-all: clean dtcyber
++all: dtcyber
+ 
+ clean:
+ 	rm -f *.o
