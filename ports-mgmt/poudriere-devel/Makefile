@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_TAGNAME}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
@@ -19,8 +19,7 @@ CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_COMMIT=	80b7167
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	80b7167
 
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
