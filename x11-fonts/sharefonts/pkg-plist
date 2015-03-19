@@ -41,6 +41,3 @@
 %%FONTDIR%%/upperwes.shareware
 %%FONTDIR%%/westslnt.pfb
 %%FONTDIR%%/westslnt.shareware
-@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
-@dirrm %%FONTDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTDIR%% || true
