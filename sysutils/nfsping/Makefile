@@ -3,7 +3,7 @@
 PORTNAME=	nfsping
 PORTVERSION=	0.1.20131017
 CATEGORIES=	sysutils net-mgmt
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		LOCAL/bdrewery/${PORTNAME}/
 
 MAINTAINER=	bdrewery@FreeBSD.org

@@ -4,7 +4,7 @@ PORTNAME=	fcgiwrap
 PORTVERSION=	1.1.0
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
 MAINTAINER=	freebsd@skysmurf.nl

@@ -4,7 +4,7 @@
 PORTNAME=	cclib
 PORTVERSION=	1.2
 CATEGORIES=	devel python
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Parsers And Algorithms For Computational Chemistry

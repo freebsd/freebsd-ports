@@ -4,7 +4,7 @@
 PORTNAME=	mod_realdoc
 PORTVERSION=	20130701
 CATEGORIES=	www
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		http://freebsd.cs.nctu.edu.tw/~gslin/files/
 
 MAINTAINER=	ports@FreeBSD.org

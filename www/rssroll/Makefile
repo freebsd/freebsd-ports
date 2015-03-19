@@ -3,7 +3,7 @@
 PORTNAME=	rssroll
 PORTVERSION=	0.4.1
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C

@@ -524,22 +524,29 @@ MASTER_SITE_GENTOO+= \
 #
 # GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
 #                 (man git-describe(1))
-#                 default: not set, mandatory
+#                 if this is not set, archive corresponding to tag is fetched
+#                 default: not set
 #
 .if defined(USE_GITHUB)
-.if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
+.  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		Must use a tag or commit hash so the upstream does \
 		not "reroll" as soon as the branch is updated
-.endif
-MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR% \
-				http://codeload.github.com/%SUBDIR%
+.  endif
+MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
+MASTER_SITE_GITHUB_LEGACY+=	https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_RELEASE+=	https://github.com/%SUBDIR%
 
-.if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${MASTER_SITES:MGHR}
-MASTER_SITES+=	GH GHC GHR
-.endif
+.  if defined(GH_COMMIT)
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGHL}
+MASTER_SITES+=	GHL
+.    endif
+.  else
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${MASTER_SITES:MGHR}
+MASTER_SITES+=	GH
+.    endif
+.  endif
 GH_ACCOUNT?=	${PORTNAME}
 GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
@@ -1486,6 +1493,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
+			GHL:GITHUB_LEGACY \
 			GHR:GITHUB_RELEASE \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
@@ -1499,8 +1507,9 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
-			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
+			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
+			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_RELEASE:${GH_ACCOUNT}/${GH_PROJECT}/archive/${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GIMP:${PORTNAME}/${PORTVERSION:R}/ \

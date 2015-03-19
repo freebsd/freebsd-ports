@@ -4,7 +4,7 @@
 PORTNAME=	mod_cloudflare
 PORTVERSION=	0.0.20140409
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Cloudflare fork of mod_remoteip

@@ -4,7 +4,7 @@
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
 CATEGORIES=	graphics
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Library with functionalities for geometries

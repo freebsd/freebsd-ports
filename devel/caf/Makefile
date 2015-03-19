@@ -4,7 +4,7 @@
 PORTNAME=	actor-framework
 PORTVERSION=	0.13
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	vallentin@icir.org
 COMMENT=	C++ actor framework

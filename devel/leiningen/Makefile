@@ -3,7 +3,7 @@
 PORTNAME=	leiningen
 PORTVERSION=	2.5.1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	GITHUB:source1 \
+MASTER_SITES=	GITHUB_LEGACY:source1 \
 		https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:source2
 DISTFILES=	leiningen-${PORTVERSION}.tar.gz:source1 \
 		leiningen-${PORTVERSION}-standalone.zip:source2

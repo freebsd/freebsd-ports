@@ -4,7 +4,7 @@
 PORTNAME=	soundkonverter
 DISTVERSION=	2.1.2
 CATEGORIES=	audio kde
-MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
+MASTER_SITES=	GHL LOCAL/dbn/${PORTNAME}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)

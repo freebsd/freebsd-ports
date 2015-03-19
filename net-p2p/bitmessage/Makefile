@@ -5,7 +5,7 @@ PORTNAME=	bitmessage
 PORTVERSION=	0.4.4
 PORTREVISION=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Secure P2P communications client

@@ -3,7 +3,7 @@
 PORTNAME=	jna
 PORTVERSION=	4.1.0
 CATEGORIES=	devel java
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries

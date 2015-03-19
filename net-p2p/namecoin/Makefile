@@ -5,7 +5,7 @@ PORTNAME=	namecoin
 PORTVERSION=	Q.3.72
 PORTREVISION=	3
 CATEGORIES=	net-p2p dns
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	milios@ccsys.com
 COMMENT=	Decentralized, open DNS system and general purpose key/value store

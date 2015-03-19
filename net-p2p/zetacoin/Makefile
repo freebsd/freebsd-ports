@@ -4,7 +4,7 @@
 PORTNAME=	zetacoin
 PORTVERSION=	0.9.2.4
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Peer-to-Peer crypto currency with quick transactions

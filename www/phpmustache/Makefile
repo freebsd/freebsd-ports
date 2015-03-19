@@ -4,7 +4,7 @@
 PORTNAME=	phpmustache
 PORTVERSION=	2.6.0
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	steve.polyack@intermedix.com
 COMMENT=	PHP5 code for Mustache

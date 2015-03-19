@@ -4,7 +4,7 @@ PORTNAME=	xcftools
 PORTVERSION=	1.0.8.20130212
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		http://freeheimdall.spdns.org/files/
 
 MAINTAINER=	kalten@gmx.at

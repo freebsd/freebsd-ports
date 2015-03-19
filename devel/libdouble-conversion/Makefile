@@ -5,7 +5,7 @@ PORTNAME=	libdouble-conversion
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
