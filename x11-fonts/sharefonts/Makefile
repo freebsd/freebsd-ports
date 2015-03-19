@@ -20,7 +20,6 @@ NO_BUILD=	yes
 
 USES=		fonts
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=	FONTDIR="${FONTSDIR}"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
