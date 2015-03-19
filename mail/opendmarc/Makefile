@@ -19,6 +19,11 @@ LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+.if !exists( /usr/include/libmilter/mfapi.h )
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+CFLAGS+=	-I${LOCALBASE}/include
+.endif
+
 USES=		libtool shebangfix
 SHEBANG_FILES=	reports/opendmarc-expire.in \
 		reports/opendmarc-import.in \
