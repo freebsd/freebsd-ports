@@ -19,6 +19,9 @@ All ports committers are allowed to commit to this file.
   that has a different checksum than before due to a changed directory name
   for extraction.
 
+  GH_TAGNAME can now be any length of the hash as long as it is unique.  There
+  is no longer a 7-character requirement.
+
   The following MASTER_SITES are provided to retain the old checksum and
   directory structure (that require GH_COMMIT):
     GH -> GHL

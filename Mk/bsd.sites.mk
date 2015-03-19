@@ -519,13 +519,15 @@ MASTER_SITE_GENTOO+= \
 #
 # GH_TAGNAME    - name of the tag to download (2.0.1, hash, ...)
 #                 Using the name of a branch here is incorrect. It is
-#                 possible to do GH_TAGNAME=${GH_COMMIT} to do a snapshot
+#                 possible to do GH_TAGNAME= GIT_HASH to do a snapshot.
 #                 default: ${DISTVERSION}
 #
 # GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
 #                 (man git-describe(1))
 #                 if this is not set, archive corresponding to tag is fetched
 #                 default: not set
+#                 This is a deprecated option. Just set the hash in GH_TAGNAME
+#                 instead.
 #
 .if defined(USE_GITHUB)
 .  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
