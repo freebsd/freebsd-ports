@@ -1,4 +1,3 @@
-@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
 %%FONTSDIR%%/lohit_bn.ttf
 %%FONTSDIR%%/lohit_gu.ttf
 %%FONTSDIR%%/lohit_hi.ttf
@@ -8,4 +7,3 @@
 %%FONTSDIR%%/lohit_pa.ttf
 %%FONTSDIR%%/lohit_ta.ttf
 %%FONTSDIR%%/lohit_te.ttf
-@dirrm %%FONTSDIR%%
