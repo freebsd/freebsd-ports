@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	createrepo
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://createrepo.baseurl.org/download/
 
