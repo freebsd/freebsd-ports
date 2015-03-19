@@ -72,26 +72,33 @@ Notes:
 	<name>linux-c6-openssl</name>
 	<range><gt>0</gt></range>
       </package>
+      <package>
+	<name>libressl</name>
+	<range><le>2.1.5_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OpenSSL project reports:</p>
 	<blockquote cite="https://www.openssl.org/news/secadv_20150319.txt">
-	  <p>Reclassified: RSA silently downgrades to EXPORT_RSA
-	    [Client] (CVE-2015-0204)</p>
-	  <p>Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)</p>
-	  <p>ASN.1 structure reuse memory corruption (CVE-2015-0287)</p>
-	  <p>PKCS7 NULL pointer dereferences (CVE-2015-0289)</p>
-	  <p>Base64 decode (CVE-2015-0292)</p>
-	  <p>DoS via reachable assert in SSLv2 servers
-	    (CVE-2015-0293)</p>
-	  <p>Use After Free following d2i_ECPrivatekey error
-	    (CVE-2015-0209)</p>
-	  <p>X509_to_X509_REQ NULL pointer deref (CVE-2015-0288)</p>
+	  <ul>
+	    <li>Reclassified: RSA silently downgrades to EXPORT_RSA
+	      [Client] (CVE-2015-0204).  OpenSSL only.</li>
+	    <li>Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)</li>
+	    <li>ASN.1 structure reuse memory corruption (CVE-2015-0287)</li>
+	    <li>PKCS7 NULL pointer dereferences (CVE-2015-0289)</li>
+	    <li>Base64 decode (CVE-2015-0292).  OpenSSL only.</li>
+	    <li>DoS via reachable assert in SSLv2 servers
+	      (CVE-2015-0293).  OpenSSL only.</li>
+	    <li>Use After Free following d2i_ECPrivatekey error
+	      (CVE-2015-0209)</li>
+	    <li>X509_to_X509_REQ NULL pointer deref (CVE-2015-0288)</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
     <references>
+      <freebsdpr>ports/198681</freebsdpr>
       <cvename>CVE-2015-0204</cvename>
       <cvename>CVE-2015-0286</cvename>
       <cvename>CVE-2015-0287</cvename>
@@ -105,6 +112,7 @@ Notes:
     <dates>
       <discovery>2015-03-19</discovery>
       <entry>2015-03-19</entry>
+      <modified>2015-03-19</modified>
     </dates>
   </vuln>
 
