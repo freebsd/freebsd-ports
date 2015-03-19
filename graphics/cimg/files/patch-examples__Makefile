@@ -1,17 +1,17 @@
---- examples/Makefile.orig	2015-02-06 11:10:43.000000000 +0100
-+++ examples/Makefile	2015-02-07 19:42:00.000000000 +0100
-@@ -85,8 +85,8 @@
+--- examples/Makefile.orig	2015-03-16 09:57:24 UTC
++++ examples/Makefile
+@@ -85,8 +85,8 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.6.0
+ CIMG_VERSION = 1.6.1
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = $(X11PATH)
 +CC           = $(CXX)
  EXEPFX       =
  CCVER       = $(CC)
- ifeq ($(CC),g++)
-@@ -100,7 +100,7 @@
+ ifeq ($(notdir $(CC)),g++)
+@@ -100,7 +100,7 @@ CCVER        = "icpc \( `$(CC) -v 2>&1`\
  CFLAGS       = -I..
  LIBS         =
  else
@@ -20,14 +20,14 @@
  LIBS         = -lm
  endif
  
-@@ -124,12 +124,12 @@
+@@ -124,12 +124,12 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
- ifeq ($(CC),g++)
+ ifeq ($(notdir $(CC)),g++)
 -CIMG_OPT_CFLAGS = -O2 -mtune=generic
 +CIMG_OPT_CFLAGS = -mtune=generic
  else
- ifeq ($(CC),icpc)
+ ifeq ($(notdir $(CC)),icpc)
  CIMG_OPT_CFLAGS = -fast
  else
 -CIMG_OPT_CFLAGS = -O2
@@ -35,7 +35,7 @@
  endif
  endif
  
-@@ -141,7 +141,7 @@
+@@ -141,7 +141,7 @@ CIMG_OPENMP_CFLAGS = -Dcimg_use_openmp -
  endif
  
  # Flags to enable OpenCV support.
@@ -44,7 +44,7 @@
  CIMG_OPENCV_LIBS = -lopencv_core -lopencv_highgui
  #CIMG_OPENCV_LIBS = -lcv -lhighgui    #-> Use this for OpenCV < 2.2.0
  
-@@ -152,7 +152,7 @@
+@@ -152,7 +152,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
  # (X11 is used by CImg to handle display windows)
  # !!! For 64bits systems : replace -L$(X11PATH)/lib by -L$(X11PATH)/lib64 !!!
  CIMG_X11_CFLAGS = -I$(X11PATH)/include
@@ -53,7 +53,7 @@
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
  # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -182,7 +182,7 @@
+@@ -182,7 +182,7 @@ CIMG_JPEG_LIBS = -ljpeg
  # Flags to enable native support for TIFF image files, using the TIFF library.
  # ( http://www.libtiff.org/ )
  CIMG_TIFF_CFLAGS = -Dcimg_use_tiff
@@ -62,7 +62,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -191,12 +191,12 @@
+@@ -191,12 +191,12 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
  
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
@@ -77,9 +77,9 @@
  CIMG_FFMPEG_LIBS = -lavcodec -lavformat -lswscale
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
-@@ -204,10 +204,10 @@
- CIMG_ZLIB_CFLAGS = -Dcimg_use_zlib
- CIMG_ZLIB_LIBS = -lz
+@@ -209,10 +209,10 @@ CIMG_ZLIB_LIBS = -lz
+ CIMG_CURL_CFLAGS = -Dcimg_use_curl
+ CIMG_CURL_LIBS = -lcurl
  
 -# Flags to enable native support of most classical image file formats, using the Magick++ library.
 +# Flags to enable native support of most classical image file formats, using the GraphicsMagick++ library.
@@ -91,7 +91,7 @@
  
  # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
  # ( http://www.fftw.org/ )
-@@ -220,14 +220,17 @@
+@@ -225,14 +225,17 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -112,18 +112,28 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -372,6 +375,7 @@
- $(CIMG_ZLIB_CFLAGS) \
+@@ -335,7 +338,8 @@ $(CIMG_X11_CFLAGS) \
+ $(CIMG_XSHM_CFLAGS)" \
+ "CONF_LIBS = \
+ $(CIMG_X11_LIBS) \
+-$(CIMG_XSHM_LIBS)" \
++$(CIMG_XSHM_LIBS) \
++$(PTHREAD_LIBS)" \
+ all
+ 
+ olinux:
+@@ -378,6 +382,7 @@ $(CIMG_ZLIB_CFLAGS) \
+ $(CIMG_CURL_CFLAGS) \
  $(CIMG_OPENCV_CFLAGS) \
  $(CIMG_MAGICK_CFLAGS) \
 +$(CIMG_LAPACK_CFLAGS) \
  $(CIMG_FFTW3_CFLAGS)" \
  "CONF_LIBS = \
  $(CIMG_X11_LIBS) \
-@@ -382,6 +386,7 @@
- $(CIMG_PNG_LIBS) \
+@@ -389,6 +394,7 @@ $(CIMG_PNG_LIBS) \
  $(CIMG_JPEG_LIBS) \
  $(CIMG_ZLIB_LIBS) \
+ $(CIMG_CURL_LIBS) \
 +$(CIMG_LAPACK_LIBS) \
  $(CIMG_OPENCV_LIBS) \
  $(CIMG_MAGICK_LIBS) \
