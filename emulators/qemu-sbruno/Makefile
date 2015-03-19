@@ -5,7 +5,7 @@ PORTNAME=	qemu
 PORTVERSION=	2.2.50.g20150310
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	GH GHC \
+MASTER_SITES=	GHL \
 		LOCAL/nox \
 		LOCAL/nox:dtc \
 		http://people.freebsd.org/~nox/tmp/distfiles/ \

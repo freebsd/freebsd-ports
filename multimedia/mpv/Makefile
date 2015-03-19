@@ -5,7 +5,7 @@ PORTNAME=	mpv
 PORTVERSION=	0.8.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
+MASTER_SITES=	GHL:0 http://ftp.waf.io/pub/release/:1 \
 		http://www.freehackers.org/~tnagy/release/:1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 waf-${WAF_VERSION}:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

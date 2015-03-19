@@ -4,7 +4,7 @@
 PORTNAME=	lastpass-cli
 PORTVERSION=	0.4.0
 CATEGORIES=	security
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	tom@hur.st
 COMMENT=	LastPass command line interface tool

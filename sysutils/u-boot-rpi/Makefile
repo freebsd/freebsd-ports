@@ -4,7 +4,7 @@ PORTNAME=	u-boot
 PORTVERSION=	2013.01
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GH:uboot \
+MASTER_SITES=	GHL:uboot \
 		http://distcache.FreeBSD.org/local-distfiles/ian/:bootfiles \
 		http://distcache.us-east.FreeBSD.org/local-distfiles/ian/:bootfiles \
 		http://distcache.eu.FreeBSD.org/local-distfiles/ian/:bootfiles \

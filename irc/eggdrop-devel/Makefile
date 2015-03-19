@@ -5,7 +5,7 @@ PORTNAME=	eggdrop
 PORTVERSION=	1.8.0.20141008
 PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 PKGNAMESUFFIX=	-devel
 

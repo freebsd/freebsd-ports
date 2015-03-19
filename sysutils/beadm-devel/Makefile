@@ -4,7 +4,7 @@ PORTNAME=	beadm
 PORTVERSION=	1.1.99.20140315
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 

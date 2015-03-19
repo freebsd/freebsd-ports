@@ -4,7 +4,7 @@
 PORTNAME=	pg_activity
 PORTVERSION=	1.2.0
 CATEGORIES=	databases python
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Htop like application for PostgreSQL server activity monitoring

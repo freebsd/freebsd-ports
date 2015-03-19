@@ -4,7 +4,7 @@
 PORTNAME=	vanitygen
 PORTVERSION=	0.22
 CATEGORIES=	finance
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone vanity address generator for bitcoin

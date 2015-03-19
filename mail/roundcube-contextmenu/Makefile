@@ -4,7 +4,7 @@
 PORTNAME=	contextmenu
 PORTVERSION=	2.1
 CATEGORIES=	mail
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 PKGNAMEPREFIX=	roundcube-
 
 MAINTAINER=	moiseev@mezonplus.ru

@@ -4,7 +4,7 @@
 PORTNAME=	speedcrunch
 DISTVERSION=	0.11
 CATEGORIES=	math
-MASTER_SITES=	GITHUB
+MASTER_SITES=	GITHUB_LEGACY
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Keyboard-oriented desktop scientific calculator

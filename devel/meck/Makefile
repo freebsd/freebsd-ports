@@ -3,7 +3,7 @@
 PORTNAME=	meck
 PORTVERSION=	0.8.2
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building mock modules

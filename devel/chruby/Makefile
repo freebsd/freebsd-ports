@@ -4,7 +4,7 @@
 PORTNAME=	chruby
 PORTVERSION=	0.3.8
 CATEGORIES=	devel ruby
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ross@rosstimson.com
 COMMENT=	Changes the current Ruby

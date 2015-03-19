@@ -1550,7 +1550,11 @@ _POSTMKINCLUDED=	yes
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
+.  if defined(GH_COMMIT)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+.  else
+WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
+.  endif
 .endif
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}

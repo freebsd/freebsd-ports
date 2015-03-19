@@ -4,7 +4,7 @@
 PORTNAME=	libfortuna
 PORTVERSION=	0.1.0
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Fortuna PRNG Library

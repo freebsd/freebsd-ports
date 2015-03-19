@@ -3,7 +3,7 @@
 PORTNAME=	mochiweb
 PORTVERSION=	2.10.0
 CATEGORIES=	www devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building lightweight HTTP servers

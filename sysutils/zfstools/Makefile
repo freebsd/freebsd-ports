@@ -4,7 +4,7 @@ PORTNAME=	zfstools
 PORTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	sysutils ruby
-MASTER_SITES=	GH \
+MASTER_SITES=	GHL \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
 MAINTAINER=	bdrewery@FreeBSD.org

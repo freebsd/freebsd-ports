@@ -4,7 +4,7 @@
 PORTNAME=	foreman-proxy
 PORTVERSION=	1.7.1
 CATEGORIES=	net
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Foreman Proxy Agent

@@ -6,7 +6,7 @@ PORTVERSION=	0.8.6.2
 PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
-		GH
+		GHL
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Software

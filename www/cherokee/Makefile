@@ -4,7 +4,7 @@
 PORTNAME=	cherokee
 PORTVERSION=	1.2.104
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and flexible web server

@@ -4,7 +4,7 @@
 PORTNAME=	iocage
 PORTVERSION=	1.4.6
 CATEGORIES=	sysutils
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Full featured, no dependency Jail container manager

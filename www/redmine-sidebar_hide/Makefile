@@ -4,7 +4,7 @@
 PORTNAME=	sidebar_hide
 PORTVERSION=	0.0.5
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Adds simple hide button for sidebar of Redmine

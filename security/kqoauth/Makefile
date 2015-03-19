@@ -4,7 +4,7 @@
 PORTNAME=	kqoauth
 PORTVERSION=	0.98
 CATEGORIES=	security
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implimentation of OAuth 1.0 in C++ for Qt

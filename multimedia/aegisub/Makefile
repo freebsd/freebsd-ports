@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp2.aegisub.org/pub/archives/releases/source/:aegisub \
-		GH
+		GHL
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org

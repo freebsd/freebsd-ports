@@ -4,7 +4,7 @@ PORTNAME=	lysdr
 PORTVERSION=	0.0.6
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Lysdr SDR program for Unix

@@ -4,7 +4,7 @@
 PORTNAME=	uthash
 PORTVERSION=	1.9.8p2
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	hash table for C structures

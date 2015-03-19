@@ -4,7 +4,7 @@
 PORTNAME=	libcec
 PORTVERSION=	2.2.0
 CATEGORIES=	multimedia
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
