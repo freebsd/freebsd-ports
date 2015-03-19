@@ -5,8 +5,6 @@
 
 Please note that everything has been installed in %%WWWDIR%%.
 
-Read %%WWWDIR%%/README.
-
 You will probably want to add an alias to your httpd.conf file, something
 like this:
 
