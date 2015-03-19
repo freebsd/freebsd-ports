@@ -1,7 +1,11 @@
---- data/Makefile.orig	2005-03-13 22:30:54.000000000 +0800
-+++ data/Makefile	2014-06-08 20:56:18.860668685 +0800
-@@ -4,20 +4,22 @@ catch:
- all: clean spec config
+--- data/Makefile.orig	2005-03-13 14:30:54 UTC
++++ data/Makefile
+@@ -1,23 +1,25 @@
+ catch:
+ 	$(MAKE) -C .. all
+ 
+-all: clean spec config
++all: spec config
  
  clean: 
 -	rm -f $(BIN)-$(VER).spec gnarwl.cfg
@@ -23,13 +27,13 @@
 -	install -m 600 gnarwl.cfg $(CONFDIR)
 -	cat badheaders.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/badheaders.db
 -	cat blacklist.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/blacklist.db
-+	mkdir -m 755 -p  $(DESTDIR)$(HOMEDIR)/block $(DESTDIR)$(HOMEDIR)/bin $(DESTDIR)$(CONFDIR)
++	mkdir -p  $(DESTDIR)$(HOMEDIR)/block $(DESTDIR)$(HOMEDIR)/bin $(DESTDIR)$(CONFDIR)
 +	echo \|$(BINDIR)/$(BIN) > $(DESTDIR)$(HOMEDIR)/.forward
-+	install -m 644 header.txt $(DESTDIR)$(HOMEDIR)/header.txt.sample
-+	install -m 644 footer.txt $(DESTDIR)$(HOMEDIR)/footer.txt.sample
-+	install -m 644 badheaders.txt $(DESTDIR)$(HOMEDIR)/badheaders.txt.sample
-+	install -m 644 blacklist.txt $(DESTDIR)$(HOMEDIR)/blacklist.txt.sample
-+	install -m 600 gnarwl.cfg.sample $(DESTDIR)$(CONFDIR)
++	$(BSD_INSTALL_DATA) header.txt $(DESTDIR)$(HOMEDIR)/header.txt.sample
++	$(BSD_INSTALL_DATA) footer.txt $(DESTDIR)$(HOMEDIR)/footer.txt.sample
++	$(BSD_INSTALL_DATA) badheaders.txt $(DESTDIR)$(HOMEDIR)/badheaders.txt.sample
++	$(BSD_INSTALL_DATA) blacklist.txt $(DESTDIR)$(HOMEDIR)/blacklist.txt.sample
++	$(BSD_INSTALL_DATA) gnarwl.cfg.sample $(DESTDIR)$(CONFDIR)
 +	cat badheaders.txt | $(DESTDIR)$(SBINDIR)/$(SBIN) -a $(DESTDIR)$(HOMEDIR)/badheaders.db.sample
 +	cat blacklist.txt | $(DESTDIR)$(SBINDIR)/$(SBIN) -a $(DESTDIR)$(HOMEDIR)/blacklist.db.sample
  
