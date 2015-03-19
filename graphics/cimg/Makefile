@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -122,8 +122,7 @@ pre-configure:
 		-e 's|CIMG_XSHM_LDFLAGS = #|CIMG_XSHM_LDFLAGS =|'		\
 		${BUILD_WRKSRC}/Makefile
 . endif
-	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|'			\
-		-e 's|-lpthread|${PTHREAD_LIBS}|' ${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${STAGEDIR}${PREFIX}/include
