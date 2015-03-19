@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filter_audio
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.150317
 CATEGORIES=	audio
 DIST_SUBDIR=	${PORTNAME}-${GH_COMMIT}
 
@@ -16,15 +15,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	filter_audio
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9feb646
+GH_COMMIT=	2ebc753
 
 USES=		gmake
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	include/filter_audio.h lib/libfilteraudio.so lib/libfilteraudio.so.0
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/lib/libfilteraudio.so ${STAGEDIR}${PREFIX}/lib/libfilteraudio.so.0 && \
-	${LN} -sf libfilteraudio.so.0 ${STAGEDIR}${PREFIX}/lib/libfilteraudio.so
+post-patch:
+	@${REINPLACE_CMD} -e 's|LIBDIR)/pkgconfig|LIBDIR)data/pkgconfig|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
