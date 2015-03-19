@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lcms2
-PORTVERSION=	2.6
-PORTREVISION=	3
+PORTVERSION=	2.7
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
-		http://www.littlecms.com/
+MASTER_SITES=	SF/lcms/lcms/${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Accurate, fast, and small-footprint color management engine
