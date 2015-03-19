@@ -10,6 +10,3 @@
 %%FONTSDIR%%/ComicNeue-Light.ttf
 %%FONTSDIR%%/ComicNeue-Regular-Oblique.ttf
 %%FONTSDIR%%/ComicNeue-Regular.ttf
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTSDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
