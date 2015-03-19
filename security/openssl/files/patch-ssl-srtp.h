@@ -1,10 +1,10 @@
---- ssl/srtp.h.orig	2012-04-26 22:40:38.000000000 -0500
-+++ ssl/srtp.h	2012-04-26 22:40:51.000000000 -0500
-@@ -135,7 +135,6 @@
+--- ssl/srtp.h.orig	2015-03-19 13:37:10 UTC
++++ ssl/srtp.h
+@@ -137,7 +137,6 @@ int SSL_set_tlsext_use_srtp(SSL *ctx, co
  SRTP_PROTECTION_PROFILE *SSL_get_selected_srtp_profile(SSL *s);
  
  STACK_OF(SRTP_PROTECTION_PROFILE) *SSL_get_srtp_profiles(SSL *ssl);
 -SRTP_PROTECTION_PROFILE *SSL_get_selected_srtp_profile(SSL *s);
  
- #ifdef  __cplusplus
- }
+ # endif
+ 
