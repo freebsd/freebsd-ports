@@ -1,6 +1,7 @@
 bin/rancid-cvs
 bin/rancid-run
 lib/rancid/arbor.pm
+lib/rancid/ciscowlc.pm
 lib/rancid/dell.pm
 lib/rancid/eos.pm
 lib/rancid/foundry.pm
@@ -8,11 +9,12 @@ lib/rancid/ios.pm
 lib/rancid/iosxr.pm
 lib/rancid/junos.pm
 lib/rancid/mrv.pm
+lib/rancid/nxos.pm
+lib/rancid/panos.pm
 lib/rancid/rancid.pm
 libexec/rancid/alogin
 libexec/rancid/anlogin
 libexec/rancid/arancid
-libexec/rancid/anrancid
 libexec/rancid/arrancid
 libexec/rancid/avologin
 libexec/rancid/avorancid
@@ -47,11 +49,11 @@ libexec/rancid/mtlogin
 libexec/rancid/mtrancid
 libexec/rancid/nlogin
 libexec/rancid/nrancid
-libexec/rancid/nxrancid
 libexec/rancid/nslogin
 libexec/rancid/nsrancid
 libexec/rancid/par
-libexec/rancid/prancid
+libexec/rancid/panlogin
+libexec/rancid/plogin
 libexec/rancid/rancid
 libexec/rancid/rancid-cvs
 libexec/rancid/rancid-fe
@@ -62,8 +64,7 @@ libexec/rancid/rrancid
 libexec/rancid/srancid
 libexec/rancid/tlogin
 libexec/rancid/trancid
-libexec/rancid/tntlogin
-libexec/rancid/tntrancid
+libexec/rancid/wlogin
 libexec/rancid/xilogin
 libexec/rancid/xirancid
 libexec/rancid/xrancid
@@ -108,6 +109,8 @@ man/man1/nrancid.1.gz
 man/man1/nslogin.1.gz
 man/man1/nsrancid.1.gz
 man/man1/nxrancid.1.gz
+man/man1/panlogin.1.gz
+man/man1/plogin.1.gz
 man/man1/prancid.1.gz
 man/man1/rancid-cvs.1.gz
 man/man1/rancid-par.1.gz
@@ -119,9 +122,8 @@ man/man1/rivrancid.1.gz
 man/man1/rrancid.1.gz
 man/man1/srancid.1.gz
 man/man1/tlogin.1.gz
-man/man1/tntlogin.1.gz
-man/man1/tntrancid.1.gz
 man/man1/trancid.1.gz
+man/man1/wlogin.1.gz
 man/man1/xilogin.1.gz
 man/man1/xirancid.1.gz
 man/man1/xrancid.1.gz
