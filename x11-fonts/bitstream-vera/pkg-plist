@@ -1,5 +1,4 @@
 %%FONTSDIR%%/COPYRIGHT.TXT
-%%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/Vera.ttf
 %%FONTSDIR%%/VeraBI.ttf
 %%FONTSDIR%%/VeraBd.ttf
@@ -12,7 +11,3 @@
 %%FONTSDIR%%/VeraSeBd.ttf
 %%PORTDOCS%%%%DOCSDIR%%/README.TXT
 %%PORTDOCS%%%%DOCSDIR%%/RELEASENOTES.TXT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTSDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
