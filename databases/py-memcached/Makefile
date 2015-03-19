@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.53
-PORTREVISION=	1
+PORTVERSION=	1.54
 CATEGORIES=	databases python
 MASTER_SITES=	http://ftp.tummy.com/pub/python-memcached/ \
 		http://ftp.tummy.com/pub/python-memcached/old-releases/ \
-		ftp://ftp.tummy.com/pub/python-memcached/ \
-		ftp://ftp.tummy.com/pub/python-memcached/old-releases/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
