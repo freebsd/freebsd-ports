@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	LibreSSL
@@ -16,6 +17,7 @@ CPE_VENDOR=	openbsd
 CONFLICTS?=	openssl-*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-libtls
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
