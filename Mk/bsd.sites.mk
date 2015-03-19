@@ -538,14 +538,13 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
 MASTER_SITE_GITHUB_LEGACY+=	https://codeload.github.com/%SUBDIR%
-MASTER_SITE_GITHUB_RELEASE+=	https://github.com/%SUBDIR%
 
 .  if defined(GH_COMMIT)
 .    if !defined(MASTER_SITES) || !${MASTER_SITES:MGHL}
 MASTER_SITES+=	GHL
 .    endif
 .  else
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${MASTER_SITES:MGHR}
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
 MASTER_SITES+=	GH
 .    endif
 .  endif
@@ -1496,7 +1495,6 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
 			GHL:GITHUB_LEGACY \
-			GHR:GITHUB_RELEASE \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			SF:SOURCEFORGE \
@@ -1512,7 +1510,6 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
 			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
-			GITHUB_RELEASE:${GH_ACCOUNT}/${GH_PROJECT}/archive/${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \

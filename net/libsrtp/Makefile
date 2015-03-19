@@ -6,7 +6,6 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	GHR
 
 MAINTAINER=	alexander@brovikov.ru
 COMMENT=	Secure RTP (SRTP) Reference Implementation
