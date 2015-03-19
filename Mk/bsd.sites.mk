@@ -512,7 +512,7 @@ MASTER_SITE_GENTOO+= \
 # variables:
 #
 # GH_ACCOUNT    - account name of the GitHub user hosting the project
-#                 default: not set, mandatory
+#                 default: ${PORTNAME}
 #
 # GH_PROJECT    - name of the project on GitHub
 #                 default: ${PORTNAME}
