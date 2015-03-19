@@ -57,6 +57,57 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9d15355b-ce7c-11e4-9db0-d050992ecde8">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_19</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1m</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150319.txt">
+	  <p>Reclassified: RSA silently downgrades to EXPORT_RSA
+	    [Client] (CVE-2015-0204)</p>
+	  <p>Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)</p>
+	  <p>ASN.1 structure reuse memory corruption (CVE-2015-0287)</p>
+	  <p>PKCS7 NULL pointer dereferences (CVE-2015-0289)</p>
+	  <p>Base64 decode (CVE-2015-0292)</p>
+	  <p>DoS via reachable assert in SSLv2 servers
+	    (CVE-2015-0293)</p>
+	  <p>Use After Free following d2i_ECPrivatekey error
+	    (CVE-2015-0209)</p>
+	  <p>X509_to_X509_REQ NULL pointer deref (CVE-2015-0288)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0204</cvename>
+      <cvename>CVE-2015-0286</cvename>
+      <cvename>CVE-2015-0287</cvename>
+      <cvename>CVE-2015-0289</cvename>
+      <cvename>CVE-2015-0292</cvename>
+      <cvename>CVE-2015-0293</cvename>
+      <cvename>CVE-2015-0209</cvename>
+      <cvename>CVE-2015-0288</cvename>
+      <url>https://www.openssl.org/news/secadv_20150319.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-03-19</discovery>
+      <entry>2015-03-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7d79fac-cd49-11e4-898f-bcaec565249c">
     <topic>libXfont -- BDF parsing issues</topic>
     <affects>
