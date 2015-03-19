@@ -1,9 +1,9 @@
 --- qtox.pro
 +++ qtox.pro
-@@ -223,3 +223,15 @@
-     src/misc/serialize.cpp \
-     src/widget/form/settings/advancedform.cpp \
-     src/audio.cpp
+@@ -451,3 +451,15 @@
+     src/widget/gui.h \
+     src/toxme.h \
+     src/misc/qrwidget.h
 +
 +unix {
 +    target.path  = $$PREFIX/bin
