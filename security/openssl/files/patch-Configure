@@ -20,7 +20,7 @@
 -"BSD-sparcv8",	"gcc:-DB_ENDIAN -O3 -mv8 -Wall::${BSDthreads}:::BN_LLONG RC2_CHAR RC4_INDEX DES_INT DES_UNROLL:${sparcv8_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
 +"BSD-generic32","$ENV{'FREEBSDCC'}:-O3 -fomit-frame-pointer -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG RC2_CHAR RC4_INDEX DES_INT DES_UNROLL:${no_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
 +"BSD-x86",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -O3 -fomit-frame-pointer -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_asm}:a.out:dlfcn:bsd-shared:-fPIC::.so.\$(SHLIBVER)",
-+"BSD-x86-elf",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -O3 -fomit-frame-pointer -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIBVER)",
++"BSD-x86-elf",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -O3 -fomit-frame-pointer -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-shared:-fPIC::.so.\$(SHLIBVER)",
 +"debug-BSD-x86-elf",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -O3 -Wall -g $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-shared:-fPIC::.so.\$(SHLIBVER)",
 +"BSD-sparcv8",	"$ENV{'FREEBSDCC'}:-DB_ENDIAN -O3 -mv8 -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG RC2_CHAR RC4_INDEX DES_INT DES_UNROLL:${sparcv8_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
  
