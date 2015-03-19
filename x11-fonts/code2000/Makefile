@@ -3,6 +3,7 @@
 
 PORTNAME=	code2000
 PORTVERSION=	1.171
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry/${DIST_SUBDIR}
@@ -12,24 +13,13 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Shareware demo Unicode TrueType font
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip
-
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+USES=		fonts zip
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_LIST=	FONTSDIR=${FONTSDIR}
 
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
+NO_BUILD=	yes
 
 post-extract: move-fonts rename-license
 
@@ -39,10 +29,6 @@ move-fonts:
 
 rename-license:
 	${MV} ${WRKDIR}/CODE2000.HTM ${WRKSRC}/${FONTNAME}.html
-
-do-build:
-	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
-	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
