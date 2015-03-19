@@ -4,23 +4,23 @@
 手動で行わなければならないことを，かんな辞書のマニュアルから抜粋したものです．
 
 
-1) 辞書登録ファイルの %%LOCALBASE%%/share/canna/dic/canna/dics.dir に、
-   %%LOCALBASE%%/share/canna/dic/canna/dics.dir.gpl_canna の内容を追加します。
+1) 辞書登録ファイルの %%PREFIX%%/share/canna/dic/canna/dics.dir に、
+   %%PREFIX%%/share/canna/dic/canna/dics.dir.gpl_canna の内容を追加します。
 
-# cd %%LOCALBASE%%/share/canna/dic/canna
+# cd %%PREFIX%%/share/canna/dic/canna
 # cp dics.dir dics.dir.orig
 # cat dics.dir.gpl_canna >> dics.dir
 
 2) cannaserver を停止，起動します。
 
 (かんなサーバ停止)
-# %%LOCALBASE%%/etc/rc.d/canna stop
+# %%PREFIX%%/etc/rc.d/canna stop
 
 (cannaserverが停止していることを確認してください。停止していなければ
  killコマンドでプロセスを停止させてください)
 
 (かんなサーバ起動)
-# %%LOCALBASE%%/etc/rc.d/canna start
+# %%PREFIX%%/etc/rc.d/canna start
 
 3) ユーザ権限に戻って、ホームディレクトリに存在する各ユーザの .canna の
    (use-dictionary ...) の部分に "gcanna" "gcannaf" の二行を付け足して

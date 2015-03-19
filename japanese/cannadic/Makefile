@@ -3,7 +3,7 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.95c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
@@ -20,15 +20,15 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DICS=		gcanna.cbd gcanna.cld gcannaf.ctd
 DICSFILE=	dics.dir.gpl_canna
-DICDIR=		${LOCALBASE}/share/canna/dic/canna
+DICDIR=		share/canna/dic/canna
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DICDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DICDIR}
 	cd ${WRKSRC} && \
-	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${STAGEDIR}${DICDIR}
+		${INSTALL_DATA} ${DICS} ${DICSFILE} ${STAGEDIR}${PREFIX}/${DICDIR}
 	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${WRKSRC}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
