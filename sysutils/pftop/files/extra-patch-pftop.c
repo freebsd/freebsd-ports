@@ -321,7 +321,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
 -		print_fld_rate(FLD_SA, (s->creation > 0) ?
 -			       ((double)sz/(double)s->creation) : -1);
 +		print_fld_rate(FLD_SA, (s->creation) ?
-+			       ((double)sz/PF_TSTAMP((double)s->creation)) : -1);
++			       ((double)sz/PF_TSTAMP(s->creation)) : -1);
  	}
  #else
  	print_fld_size(FLD_PKTS, s->packets);
@@ -329,7 +329,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
 -	print_fld_rate(FLD_SA, (s->creation > 0) ?
 -		       ((double)s->bytes/(double)s->creation) : -1);
 +	print_fld_rate(FLD_SA, (s->creation) ?
-+		       ((double)s->bytes/PF_TSTAMP((double)s->creation)) : -1);
++		       ((double)s->bytes/PF_TSTAMP(s->creation)) : -1);
  
  #endif
  #ifdef HAVE_PFSYNC_STATE
