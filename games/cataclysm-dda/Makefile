@@ -59,6 +59,10 @@ LUA_MAKE_ARGS=	LUA=1
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+CXXFLAGS+=	-Wno-inconsistent-missing-override
+.endif
+
 .if ${PORT_OPTIONS:MSOUND}
 .if ${PORT_OPTIONS:MSDL}
 MAKE_ARGS+=	SOUND=1
