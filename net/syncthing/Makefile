@@ -19,8 +19,6 @@ PORTDOCS=	*
 USERS=		syncthing
 GROUPS=		syncthing
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 STRIP=		# stripping can break go binaries
 
 post-patch:
