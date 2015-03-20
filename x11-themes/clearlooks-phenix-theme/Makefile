@@ -4,7 +4,7 @@
 PORTNAME=	clearlooks-phenix
 PORTVERSION=	6.0.3
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	olivierd@FreeBSD.org

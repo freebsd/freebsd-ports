@@ -1,6 +1,6 @@
---- doc/Makefile.orig	2005-03-13 22:30:53.000000000 +0800
-+++ doc/Makefile	2014-06-08 20:53:49.623678413 +0800
-@@ -8,24 +8,24 @@ clean: 
+--- doc/Makefile.orig	2005-03-13 14:30:53 UTC
++++ doc/Makefile
+@@ -8,24 +8,22 @@ clean: 
  
  manpage:
  	@echo Generating manpage...
@@ -27,19 +27,17 @@
 -	gzip -f -9 $(DOCDIR)/HISTORY
 -	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(BIN).$(MAN_SEC)
 -	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(SBIN).$(MAN_SEC)
-+	mkdir -m 755 -p $(DESTDIR)$(DOCDIR) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
-+	install -m 644 $(BIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
-+	install -m 644 $(SBIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
-+	install -m 644 FAQ $(DESTDIR)$(DOCDIR)
-+	install -m 644 LICENSE $(DESTDIR)$(DOCDIR)
-+	install -m 644 AUTHORS $(DESTDIR)$(DOCDIR)
-+	install -m 644 INSTALL $(DESTDIR)$(DOCDIR)
-+	install -m 644 ISPEnv.schema $(DESTDIR)$(DOCDIR)
-+	install -m 644 ISPEnv2.schema $(DESTDIR)$(DOCDIR)
-+	install -m 644 example.ldif $(DESTDIR)$(DOCDIR)
-+	install -m 644 HISTORY $(DESTDIR)$(DOCDIR)
-+	install -m 644 README $(DESTDIR)$(DOCDIR)
-+	gzip -f -9 $(DESTDIR)$(DOCDIR)/FAQ
-+	gzip -f -9 $(DESTDIR)$(DOCDIR)/HISTORY
-+	gzip -f -9 $(DESTDIR)$(MANDIR)/man$(MAN_SEC)/$(BIN).$(MAN_SEC)
-+	gzip -f -9 $(DESTDIR)$(MANDIR)/man$(MAN_SEC)/$(SBIN).$(MAN_SEC)
++	mkdir -p $(DESTDIR)$(DOCDIR) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	$(BSD_INSTALL_MAN) $(BIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	$(BSD_INSTALL_MAN) $(SBIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	gzip -f -9 FAQ
++	gzip -f -9 HISTORY
++	$(BSD_INSTALL_DATA) FAQ.gz $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) HISTORY.gz $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) LICENSE $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) AUTHORS $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) INSTALL $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) ISPEnv.schema $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) ISPEnv2.schema $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) example.ldif $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) README $(DESTDIR)$(DOCDIR)

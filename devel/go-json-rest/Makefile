@@ -5,7 +5,7 @@ PORTNAME=	go-json-rest
 PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH GHC \
+MASTER_SITES=	GHL \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com

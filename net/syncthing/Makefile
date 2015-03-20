@@ -4,7 +4,6 @@
 PORTNAME=	syncthing
 PORTVERSION=	0.10.23
 CATEGORIES=	net
-MASTER_SITES=	GHR
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	swills@FreeBSD.org
@@ -19,8 +18,6 @@ PORTDOCS=	*
 
 USERS=		syncthing
 GROUPS=		syncthing
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 STRIP=		# stripping can break go binaries
 

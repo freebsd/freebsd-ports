@@ -12,7 +12,7 @@ MASTER_SITES=	http://ocaml-extlib.googlecode.com/files/:extlib \
 		https://gforge.inria.fr/frs/download.php/file/33677/:dose \
 		http://erratique.ch/software/uutf/releases/:uutf \
 		http://erratique.ch/software/jsonm/releases/:jsonm \
-		GH:gh
+		GHL:gh
 PKGNAMEPREFIX=	ocaml-
 DISTFILES=	${OPAM_EXT_DIST} \
 		${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}.tar.gz:gh

@@ -3,6 +3,7 @@
 
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.7.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}-2
@@ -14,24 +15,21 @@ COMMENT=	Linux Libertine Open Fonts
 LICENSE=	GPLv2 LINUXLIBERTINE OFL10
 LICENSE_COMB=	multi
 
-OPTIONS_DEFINE=	DOCS
+USES=		fonts
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+OPTIONS_DEFINE=	DOCS
 
 LICENSE_NAME_LINUXLIBERTINE=	LinuxLibertine License
 LICENSE_FILE_LINUXLIBERTINE=	${WRKSRC}/LICENCE.txt
-LICENSE_PERMS_LINUXLIBERTINE=	auto-accept
+LICENSE_PERMS_LINUXLIBERTINE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LICENSE_NAME_OFL=	Open Fonts License
 LICENSE_FILE_OFL=	${WRKSRC}/OFL.txt
-LICENSE_PERMS_OFL=	auto-accept
+LICENSE_PERMS_OFL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-deinstall
-SUB_LIST=	FONTSDIR=${FONTSDIR}
 WRKSRC=		${WRKDIR}/LinLibertine
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 NO_BUILD=	yes
 
 PORTDOCS=	Bugs.txt \

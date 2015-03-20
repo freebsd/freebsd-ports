@@ -3,7 +3,7 @@
 PORTNAME=	seahub
 PORTVERSION=	4.0.5
 CATEGORIES=	www
-MASTER_SITES=	GH:seahub \
+MASTER_SITES=	GHL:seahub \
 		https://pypi.python.org/packages/source/p/pip/:pip \
 		https://pypi.python.org/packages/source/p/pbr/:pbr \
 		https://pypi.python.org/packages/source/l/lockfile/:lockfile \

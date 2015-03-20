@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !exists(/usr/lib/libmilter.so)
 LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 PYPORTNAME=	${PKGNAMEPREFIX:C/[0-9]+-//}${PORTNAME}

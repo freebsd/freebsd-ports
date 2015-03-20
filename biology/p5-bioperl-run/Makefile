@@ -23,20 +23,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*
 
-USES=		perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	bioperl
-GH_COMMIT=	96ccd93
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	96ccd93
 
 USES=		perl5 shebangfix
 USE_PERL5=	modbuild
-SHEBANG_FILES=	scripts/bioperl_application_installer.PLS \
-		scripts/multi_hmmsearch.PLS \
-		scripts/panalysis.PLS \
-		scripts/papplmaker.PLS \
-		scripts/run_neighbor.PLS \
-		scripts/run_protdist.PLS \
+SHEBANG_FILES=	scripts/*
 
 OPTIONS_DEFINE=	DOCS
 

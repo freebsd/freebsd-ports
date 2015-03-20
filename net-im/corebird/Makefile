@@ -4,7 +4,7 @@
 PORTNAME=	corebird
 PORTVERSION=	0.9
 CATEGORIES=	net-im
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL GHC
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	GTK3 Twitter client written in Vala

@@ -3,7 +3,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	gimp/fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of ATM fonts (not all free) from the CICA archives
+
+USES=	fonts
 
 BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
@@ -26,15 +28,14 @@ RESTRICTED=	License prohibits redistribution; see individual .license files
 
 NO_WRKSUBDIR=	yes
 
-FONTDIR?=	${PREFIX}/lib/X11/fonts/freefont
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+FONTSDIR?=	${PREFIX}/lib/X11/fonts/freefont
 
 do-build:
 	@cd ${WRKSRC}/freefont && ${LOCALBASE}/bin/type1inst -silent -quiet -nolog >/dev/null 2>&1
 	@${RM} ${WRKSRC}/freefont/Fontmap.bak
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/freefont/* ${STAGEDIR}${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/freefont/* ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

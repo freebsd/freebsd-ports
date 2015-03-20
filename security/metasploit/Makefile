@@ -4,7 +4,7 @@
 PORTNAME=	metasploit
 PORTVERSION=	4.11.1
 CATEGORIES=	security
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing

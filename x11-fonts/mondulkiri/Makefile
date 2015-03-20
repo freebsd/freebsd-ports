@@ -3,6 +3,7 @@
 
 PORTNAME=	mondulkiri
 PORTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/khmer/Fonts%20-%20Mondulkiri/Mondulkiri%20Unicode%20Fonts%20v2E3s/
 DISTNAME=	Mondulkiri_Unicode_fonts_V2E3s
@@ -10,13 +11,10 @@ DISTNAME=	Mondulkiri_Unicode_fonts_V2E3s
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Mondulkiri Khmer fonts
 
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip
+USES=		fonts zip
 NO_BUILD=	yes
 
 FONTSDIR=	lib/X11/fonts/Khmer
-PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
 WRKSRC=		${WRKDIR}/Opentype\ only\ fonts
 

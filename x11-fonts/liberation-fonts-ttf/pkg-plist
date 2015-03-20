@@ -1,17 +1,13 @@
-%%FONTDIR%%/AUTHORS
-%%FONTDIR%%/LiberationMono-Bold.ttf
-%%FONTDIR%%/LiberationMono-BoldItalic.ttf
-%%FONTDIR%%/LiberationMono-Italic.ttf
-%%FONTDIR%%/LiberationMono-Regular.ttf
-%%FONTDIR%%/LiberationSans-Bold.ttf
-%%FONTDIR%%/LiberationSans-BoldItalic.ttf
-%%FONTDIR%%/LiberationSans-Italic.ttf
-%%FONTDIR%%/LiberationSans-Regular.ttf
-%%FONTDIR%%/LiberationSerif-Bold.ttf
-%%FONTDIR%%/LiberationSerif-BoldItalic.ttf
-%%FONTDIR%%/LiberationSerif-Italic.ttf
-%%FONTDIR%%/LiberationSerif-Regular.ttf
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
-@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTDIR%%
+%%FONTSDIR%%/AUTHORS
+%%FONTSDIR%%/LiberationMono-Bold.ttf
+%%FONTSDIR%%/LiberationMono-BoldItalic.ttf
+%%FONTSDIR%%/LiberationMono-Italic.ttf
+%%FONTSDIR%%/LiberationMono-Regular.ttf
+%%FONTSDIR%%/LiberationSans-Bold.ttf
+%%FONTSDIR%%/LiberationSans-BoldItalic.ttf
+%%FONTSDIR%%/LiberationSans-Italic.ttf
+%%FONTSDIR%%/LiberationSans-Regular.ttf
+%%FONTSDIR%%/LiberationSerif-Bold.ttf
+%%FONTSDIR%%/LiberationSerif-BoldItalic.ttf
+%%FONTSDIR%%/LiberationSerif-Italic.ttf
+%%FONTSDIR%%/LiberationSerif-Regular.ttf

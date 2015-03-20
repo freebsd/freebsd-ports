@@ -4,7 +4,7 @@
 PORTNAME=	qxmpp
 PORTVERSION=	0.8.0
 CATEGORIES=	net-im
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	QXmpp is an xmpp client library based on Qt & C++

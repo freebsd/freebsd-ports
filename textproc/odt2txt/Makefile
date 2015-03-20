@@ -5,7 +5,7 @@ PORTNAME=	odt2txt
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple converter from OpenDocument Text to plain text

@@ -3,14 +3,14 @@
 
 PORTNAME=	xview-clients
 PORTVERSION=	3.2.1.4.19c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.physionet.org/physiotools/xview/src/ \
 		http://komquats.com/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cy
 DISTNAME=	xview-3.2p1.4-19c
-EXTRACT_ONLY=	# empty
+# EXTRACT_ONLY=	# empty
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
@@ -18,24 +18,48 @@ COMMENT=	OpenLook applications and man pages
 CONFLICTS=	props-1.0
 
 MAKE_JOBS_UNSAFE=	yes
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:patch
-CONFIGURE_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:configure
+PATCHDIR=	${PORTSDIR}/x11-toolkits/xview/files
 LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 USES=		imake
 USE_XORG=	x11 xext
 ALL_TARGET=	Clients
 
-BROKEN=		conflicts with its depends
+X11BASE2FIX=	clients/olwmslave/help_file.c lib/libxview/help/help_file.c \
+		lib/libxview/misc/gettext.h lib/libxview/textsw/txt_e_menu.c
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800089
+CFLAGS+=	-DCOMPAT_43TTY
+.endif
 
 IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
 
 post-extract:
-	${LN} -sf $$(${MAKE} -C ${PORTSDIR}/x11-toolkits/xview -V WRKDIR)/${DISTNAME} ${WRKSRC}
+	@${MV} ${WRKSRC}/xview.man ${WRKSRC}/XView.man
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \
+	  ${WRKSRC}/config/XView.cf
+	@${REINPLACE_CMD} -e "s,CcCmd cc,CcCmd ${CC}," \
+	  ${WRKSRC}/config/XView.tmpl
+.if ${OSVERSION} < 800090
+	@${REINPLACE_CMD} -e "s/-DCOMPAT_43TTY//" \
+	  ${WRKSRC}/config/XView.tmpl
+.endif
+	@${REINPLACE_CMD} -e 's+/usr/X11/+${PREFIX}/+g;' \
+	  ${WRKSRC}/clients/olwm/screen.c
+	${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+'	\
+		${X11BASE2FIX:C|^|${WRKSRC}/|}
+	@${REINPLACE_CMD} -e "s,^MSG_UTIL,#MSG_UTIL," \
+	  ${WRKSRC}/util/Imakefile
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\
+	s|^/\*\*/#*|XCOMM |'
 
 do-install:
 	@cd ${WRKSRC}/clients; ${MAKE} install install.man
+	@${INSTALL_DATA} ${WRKSRC}/misc/support/textedit.info ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 
 .include <bsd.port.post.mk>

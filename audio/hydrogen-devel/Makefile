@@ -5,7 +5,7 @@ PORTNAME=	hydrogen-devel
 PORTVERSION=	0.9.6r2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine

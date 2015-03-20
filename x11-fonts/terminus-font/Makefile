@@ -9,12 +9,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:tl}/${PORTNAME}-${
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font
 
-BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
-USES=		gmake perl5
+USES=		gmake fonts perl5
 USE_PERL5=	build
 
 OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2 TD1
@@ -34,8 +31,6 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	pcf
-FONTDIR=	lib/X11/fonts/${PORTNAME}
-PLIST_SUB+=	FONTDIR=${FONTDIR}
 
 post-extract:
 .if ${PORT_OPTIONS:MAO2}
@@ -76,7 +71,7 @@ post-build:
 	@${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${PREFIX}/${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	6.00
+PORTVERSION=	7.06
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -19,9 +19,9 @@ RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--without-liboath --without-openssl-version-check \
-		--without-stoken
+		--without-stoken --without-openssl-version-check
 USES=		gmake libtool pkgconfig python:build
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
@@ -39,6 +39,5 @@ GNUTLS_USE_OFF=		OPENSSL=yes
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenconnect.so.3.3.0
 
 .include <bsd.port.mk>

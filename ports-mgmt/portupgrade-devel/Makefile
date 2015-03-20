@@ -9,7 +9,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/pkgtools/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_TAGNAME}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
@@ -23,8 +23,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	portupgrade
-GH_COMMIT=	2161660
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	2161660
 
 DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes

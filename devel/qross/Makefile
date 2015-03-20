@@ -5,7 +5,7 @@ PORTNAME=	qross
 PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Qt-only fork of Kross, the KDE scripting framework

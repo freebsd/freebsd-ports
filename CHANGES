@@ -10,6 +10,31 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150319:
+  AUTHOR: bdrewery@FreeBSD.org
+
+  MASTER_SITE GHR (GITHUB_RELEASE) has been removed.  The same functionality
+  can be achieved with just USE_GITHUB/GH_ACCOUNT/GH_PROJECT. GH_TAGNAME
+  defaults to DISTVERSION. If the tag needs to be adjusted then change
+  GH_TAGNAME. No GH_COMMIT is needed.
+
+20150319:
+  AUTHOR: bdrewery@FreeBSD.org
+
+  USE_GITHUB has been updated to make GH_COMMIT optional.  Using this new
+  scheme allows only setting the _tag_ or _commit hash_ in GH_TAGNAME and
+  not having to know the hash for a tag.  This scheme will download a tarball
+  that has a different checksum than before due to a changed directory name
+  for extraction.
+
+  GH_TAGNAME can now be any length of the hash as long as it is unique.  There
+  is no longer a 7-character requirement.
+
+  The following MASTER_SITES are provided to retain the old checksum and
+  directory structure (that require GH_COMMIT):
+    GH -> GHL
+    GITHUB -> GITHUB_LEGACY
+
 20150305:
   AUTHOR: olivierd@FreeBSD.org
 

@@ -3,7 +3,7 @@
 PORTNAME=	rofi
 PORTVERSION=	0.14.12
 CATEGORIES=	x11
-MASTER_SITES=	GH GHC
+MASTER_SITES=	GHL
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement

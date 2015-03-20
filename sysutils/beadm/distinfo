@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 SHA256 (beadm-1.5.2.tar.gz) = f74000b3656b0a6de2b935b847fb25a848c6722a9accd2dfc5e674b2b64f5cff
 SIZE (beadm-1.5.2.tar.gz) = 17034
+=======
+SHA256 (beadm-1.1_GH0.tar.gz) = 36d300efcdf48a4ec01364fa7e3de8b532843b9e081938cf0fc734ea6068f140
+SIZE (beadm-1.1_GH0.tar.gz) = 14631
+>>>>>>> 55877d5349dcf43c506a3dcf61633bd10785f47b

@@ -5,5 +5,5 @@
 
  Add the following line to the "Files" section and restart XFree86.
 
- FontPath "%%PREFIX%%/lib/X11/fonts/ae_fonts_mono"
+ FontPath "%%FONTSDIR%%"
 ------------------------------------------------------------------

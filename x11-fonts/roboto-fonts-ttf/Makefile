@@ -3,6 +3,7 @@
 
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://developer.android.com/downloads/design/
@@ -13,29 +14,17 @@ COMMENT=	The Roboto typeface family
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip:infozip
+USES=		fonts zip:infozip
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 
-FONTDIR=	lib/X11/fonts/Roboto
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_SUB=	FONTDIR=${FONTDIR}
+FONTSDIR=	${PREFIX}/lib/X11/fonts/Roboto
 SUB_FILES=	pkg-message
-SUB_LIST=	FONTDIR=${FONTDIR}
 
 do-build:
 	@${MV} ${WRKSRC}/Roboto/*.ttf ${WRKSRC}/RobotoCondensed/*.ttf ${WRKSRC}
-	@cd ${WRKSRC} && \
-		${LOCALBASE}/bin/mkfontscale && \
-		${LOCALBASE}/bin/mkfontdir
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.dir fonts.scale \
-		 ${STAGEDIR}${PREFIX}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	exaddos
 PORTVERSION=	0.4.0
 CATEGORIES=	net
-MASTER_SITES=	GH GHC \
+MASTER_SITES=	GHL \
 		http://mirrors.rit.edu/zi/
 EXTRACT_SUFX=	.tgz
 

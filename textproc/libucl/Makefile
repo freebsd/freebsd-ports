@@ -3,6 +3,7 @@
 
 PORTNAME=	libucl
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	koobs@FreeBSD.org

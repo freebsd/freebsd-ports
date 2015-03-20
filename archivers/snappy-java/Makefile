@@ -9,7 +9,7 @@ PORTNAME=	snappy
 PORTVERSION=	1.0.4.1
 PORTREVISION=	1
 CATEGORIES=	archivers java
-MASTER_SITES=	GITHUB:source1 \
+MASTER_SITES=	GITHUB_LEGACY:source1 \
 		http://snappy.googlecode.com/files/:source2 \
 		LOCAL/jgh/archivers/${PORTNAME}/:source3
 PKGNAMESUFFIX=	java

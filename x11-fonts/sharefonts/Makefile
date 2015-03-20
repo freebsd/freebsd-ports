@@ -3,7 +3,7 @@
 
 PORTNAME=	sharefonts
 PORTVERSION=	0.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
@@ -18,11 +18,11 @@ RESTRICTED=	Shareware: cannot be distributed without prior authorization
 
 NO_BUILD=	yes
 
-FONTDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+USES=		fonts
+FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/sharefont/* ${STAGEDIR}${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/sharefont/* ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

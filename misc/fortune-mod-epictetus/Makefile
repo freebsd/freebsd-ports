@@ -4,7 +4,7 @@
 PORTNAME=	fortune-mod-epictetus
 PORTVERSION=	0.2
 CATEGORIES=	misc
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Quotes from Epictetus

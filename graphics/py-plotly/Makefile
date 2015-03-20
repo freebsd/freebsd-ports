@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Plotting library for collaborative, interactive, publication-quality graphs
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	MIT
 
 # Python3 ready
 USES=		python

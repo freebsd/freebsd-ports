@@ -2,7 +2,7 @@
 
 PORTNAME=	yahoo
 DISTVERSION=	2.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://yuilibrary.com/downloads/yui2/:main \
 		http://yuilibrary.com/support/20121030-vulnerability/dropin_patches/:patch
@@ -66,15 +66,8 @@ post-patch: .SILENT
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "assets build index.html \
 		tests" ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 .if ${PORT_OPTIONS:MAPACHE}
@@ -90,7 +83,6 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-	@${CAT} ${PKGMESSAGE}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}

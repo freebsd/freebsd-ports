@@ -5,7 +5,7 @@ PORTNAME=	tty-clock
 PORTVERSION=	2.0.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal based clock

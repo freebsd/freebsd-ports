@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
+BROKEN=		Unfetchable
+
 USES=		imake:env motif
 
 USE_XORG=	x11 ice sm xext xpm xt xxf86vm

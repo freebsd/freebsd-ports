@@ -2,6 +2,7 @@
 
 PORTNAME=	Lohit
 PORTVERSION=	20130612
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/o/lohit/
 DISTNAME=	lohit-ttf-${PORTVERSION}
@@ -11,37 +12,28 @@ COMMENT=	Lohit fonts
 
 LICENSE=	OFL11
 
-EXTRACT_SUFX=	.tar.gz
-XORG_CAT=	font
-
-FONTLIBPATH=	lib/X11/fonts
-FONTROOTDIR=	${PREFIX}/${FONTLIBPATH}
-INSTALLS_TTF=	yes
+USES=		fonts
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S,.orig,,:S,_,-,}
 
-PLIST_FILES=	${FONTLIBPATH}/${FONTDIR}/Lohit-Assamese.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Bengali.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Devanagari.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Gujarati.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Kannada.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Malayalam.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Marathi.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Nepali.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Oriya.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Punjabi.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Tamil-Classical.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Tamil.ttf \
-		${FONTLIBPATH}/${FONTDIR}/Lohit-Telugu.ttf
+PLIST_FILES=	${FONTSDIR}/Lohit-Assamese.ttf \
+		${FONTSDIR}/Lohit-Bengali.ttf \
+		${FONTSDIR}/Lohit-Devanagari.ttf \
+		${FONTSDIR}/Lohit-Gujarati.ttf \
+		${FONTSDIR}/Lohit-Kannada.ttf \
+		${FONTSDIR}/Lohit-Malayalam.ttf \
+		${FONTSDIR}/Lohit-Marathi.ttf \
+		${FONTSDIR}/Lohit-Nepali.ttf \
+		${FONTSDIR}/Lohit-Oriya.ttf \
+		${FONTSDIR}/Lohit-Punjabi.ttf \
+		${FONTSDIR}/Lohit-Tamil-Classical.ttf \
+		${FONTSDIR}/Lohit-Tamil.ttf \
+		${FONTSDIR}/Lohit-Telugu.ttf
 
-SUB_LIST=	"FONTPATH=${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-do-configure:
-	${DO_NADA}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

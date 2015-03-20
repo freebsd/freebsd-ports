@@ -6,7 +6,7 @@ PORTVERSION=	3.6.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:tl}/ \
-		GH
+		GHL
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Bash Screenshot Information Tool

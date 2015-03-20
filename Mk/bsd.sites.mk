@@ -512,37 +512,60 @@ MASTER_SITE_GENTOO+= \
 # variables:
 #
 # GH_ACCOUNT    - account name of the GitHub user hosting the project
-#                 default: not set, mandatory
+#                 default: ${PORTNAME}
 #
 # GH_PROJECT    - name of the project on GitHub
 #                 default: ${PORTNAME}
 #
 # GH_TAGNAME    - name of the tag to download (2.0.1, hash, ...)
 #                 Using the name of a branch here is incorrect. It is
-#                 possible to do GH_TAGNAME=${GH_COMMIT} to do a snapshot
+#                 possible to do GH_TAGNAME= GIT_HASH to do a snapshot.
 #                 default: ${DISTVERSION}
 #
 # GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
 #                 (man git-describe(1))
-#                 default: not set, mandatory
+#                 if this is not set, archive corresponding to tag is fetched
+#                 default: not set
+#                 This is a deprecated option. Just set the hash in GH_TAGNAME
+#                 instead.
 #
 .if defined(USE_GITHUB)
-.if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
+.  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		Must use a tag or commit hash so the upstream does \
 		not "reroll" as soon as the branch is updated
-.endif
-MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR% \
-				http://codeload.github.com/%SUBDIR%
+.  endif
+# We are cheating and using backend URLS for Github here. See ports/194898
+# comment #15 for explanation as to why and how to deal with it if it breaks.
+MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
-MASTER_SITE_GITHUB_RELEASE+=	https://github.com/%SUBDIR%
+MASTER_SITE_GITHUB_LEGACY+=	https://codeload.github.com/%SUBDIR%
 
-.if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${MASTER_SITES:MGHR}
-MASTER_SITES+=	GH GHC GHR
-.endif
+.  if defined(GH_COMMIT)
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGHL}
+MASTER_SITES+=	GHL
+.    endif
+.  else
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
+MASTER_SITES+=	GH
+.    endif
+# This new scheme rerolls distfiles. Also ensure they are renamed to avoid
+# conflicts. Use _GITHUB_REV in case github changes their zipping or structure
+# which has happened before.
+_GITHUB_REV=	0
+.    if ${MASTER_SITES:MGH}
+DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
+.    endif
+.  endif
 GH_ACCOUNT?=	${PORTNAME}
 GH_PROJECT?=	${PORTNAME}
+.  if defined(GH_COMMIT)
+# Use the old style for safety for now.
 GH_TAGNAME?=	${DISTVERSION}
+.  else
+# Use full PREFIX/SUFFIX and converted DISTVERSION
+GH_TAGNAME?=	${DISTVERSIONFULL}
+.  endif
 .endif
 .endif
 
@@ -1486,7 +1509,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
-			GHR:GITHUB_RELEASE \
+			GHL:GITHUB_LEGACY \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			SF:SOURCEFORGE \
@@ -1499,9 +1522,9 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
-			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
+			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
-			GITHUB_RELEASE:${GH_ACCOUNT}/${GH_PROJECT}/archive/${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}?dummy=/ \
+			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \

@@ -4,7 +4,7 @@
 PORTNAME=	exabgp
 PORTVERSION=	3.4.8
 CATEGORIES=	net
-MASTER_SITES=	GH GHC \
+MASTER_SITES=	GHL \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
