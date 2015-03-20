@@ -18,8 +18,7 @@ RUN_DEPENDS=	xorg-fonts-100dpi>=0:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
 		xorg-fonts-cyrillic>=0:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \
 		xorg-fonts-miscbitmaps>=0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
 		xorg-fonts-truetype>=0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		xorg-fonts-type1>=0:${PORTSDIR}/x11-fonts/xorg-fonts-type1 \
-		${FONTSDIR}/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
+		xorg-fonts-type1>=0:${PORTSDIR}/x11-fonts/xorg-fonts-type1
 
 NO_BUILD=	yes
 

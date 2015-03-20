@@ -3,44 +3,33 @@
 
 PORTNAME=	DoulosSIL
 PORTVERSION=	4.112
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=${MEDIA_ID}&filename=/ \
 		LOCAL/bf
-MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection
 
 LICENSE=	OFL11
 
-USES=		zip
-XORG_CAT=	font
+USES=		fonts zip
 
-FONTROOTDIR=	${PREFIX}/lib/X11/fonts
-INSTALLS_TTF=	yes
 MEDIA_ID=	${DISTNAME}${EXTRACT_SUFX}
 NO_BUILD=	yes
 
-PLIST_FILES=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-R.ttf
+PLIST_FILES=	${FONTSDIR}/${PORTNAME}-R.ttf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt
 
-SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-do-configure:
-	@${DO_NADA}
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR})
-.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
