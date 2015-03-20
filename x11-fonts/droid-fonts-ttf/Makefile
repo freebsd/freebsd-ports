@@ -3,7 +3,7 @@
 
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20131024
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,15 +12,15 @@ COMMENT=	The Droid typeface family
 
 LICENSE=	APACHE20
 
+FONTNAME=	Droid
 NO_BUILD=	yes
 USES=		fonts tar:xz
 
-FONTSDIR=	lib/X11/fonts/Droid
 SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}/
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}/
 
 # maintainer section:
 # https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/
