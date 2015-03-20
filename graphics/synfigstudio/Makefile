@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	synfigstudio
-PORTVERSION=	0.64.2
+PORTVERSION=	0.64.3
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source/
+MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
@@ -33,6 +33,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
+		 s|"GNU strip"|"strip"| ; \
+		 /DATADIRNAME/s|lib|share| ; \
 		 s|<tr1/|<| ; \
 		 s|::tr1||' \
 		${WRKSRC}/configure
@@ -43,9 +45,6 @@ post-patch:
 		 s|pl_PL|pl| ; \
 		 s|sk_SK|sk| ; \
 		 s|sv_SE|sv|' ${WRKSRC}/po/LINGUAS
-#	@${REINPLACE_CMD} -e \
-#		's|<synfig/string_decl.h>|<synfig/string.h>|' \
-#		${WRKSRC}/src/gui/preview.cpp
 
 pre-build:
 # FIX LC_MESSAGES
