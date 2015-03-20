@@ -54,7 +54,6 @@ AES_THREADED_DESC=	Threaded AES-CTR
 NONECIPHER_DESC=	NONE Cipher support
 
 OPTIONS_SUB=		yes
-PLIST_SUB+=		MANPREFIX=${MANPREFIX}
 
 TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
@@ -189,24 +188,13 @@ EMPTYDIR=		/var/empty
 
 .if ${PORT_OPTIONS:MOVERWRITE_BASE} || defined(OPENSSH_OVERWRITE_BASE)
 IGNORE=	Overwrite base option is no longer supported.
-WITH_OPENSSL_BASE=	yes
-CONFIGURE_ARGS+=	--localstatedir=/var
-PREFIX=			/usr
-NO_MTREE=		yes
-ETCSSH=			/etc/ssh
-USE_RCORDER=		openssh
-PLIST_SUB+=		NOTBASE="@comment "
-.else
-ETCSSH=			${PREFIX}/etc/ssh
-USE_RC_SUBR=		openssh
-PLIST_SUB+=		NOTBASE=""
 .endif
 
+USE_RC_SUBR=		openssh
 PLIST_SUB+=		BASEPREFIX="${PREFIX}"
 
 # After all
-SUB_LIST+=		ETCSSH="${ETCSSH}"
-CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
+CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
 .if !empty(CONFIGURE_LIBS)
 CONFIGURE_ARGS+=	--with-libs='${CONFIGURE_LIBS}'
 .endif
@@ -238,8 +226,10 @@ post-patch:
 .endif
 
 post-install:
-	${MV} ${STAGEDIR}${ETCSSH}/ssh_config ${STAGEDIR}${ETCSSH}/ssh_config.sample
-	${MV} ${STAGEDIR}${ETCSSH}/sshd_config ${STAGEDIR}${ETCSSH}/sshd_config.sample
+	${MV} ${STAGEDIR}${ETCDIR}/ssh_config \
+	    ${STAGEDIR}${ETCDIR}//ssh_config.sample
+	${MV} ${STAGEDIR}${ETCDIR}/sshd_config \
+	    ${STAGEDIR}${ETCDIR}/sshd_config.sample
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HPN-README ${STAGEDIR}${DOCSDIR}
