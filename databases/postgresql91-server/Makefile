@@ -12,6 +12,8 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
+USES+=	cpe
+
 #CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 #		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
 #		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
