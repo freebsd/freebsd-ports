@@ -10,21 +10,15 @@ MASTER_SITES=	CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Tibetan Machine Uni font
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		tar:bzip2
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+USES=		fonts tar:bzip2
 NO_BUILD=	yes
+PLIST_FILES=	${FONTSDIR}/tmu.ttf
 
 post-extract:
 	@cd ${WRKSRC}/&&${MV} TibMachUni-${DISTVERSION}.ttf tmu.ttf
 
 do-install:
 	@${INSTALL} -d ${STAGEDIR}${FONTSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/tmu.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/tmu.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
