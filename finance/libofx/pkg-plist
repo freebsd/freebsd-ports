@@ -9,12 +9,6 @@ lib/libofx.so.6.0.0
 libdata/pkgconfig/libofx.pc
 man/man1/ofxconnect.1.gz
 man/man1/ofxdump.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/totest.txt
 %%DATADIR%%/dtd/ofc.dtd
 %%DATADIR%%/dtd/ofx160.dtd
 %%DATADIR%%/dtd/ofx201.dtd

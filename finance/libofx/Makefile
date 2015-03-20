@@ -3,6 +3,7 @@
 
 PORTNAME=	libofx
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
@@ -22,21 +23,14 @@ CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS DOXYGEN
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${RM} -f ${STAGEDIR}${DOCSDIR}/COPYING
-.if ${PORT_OPTIONS:MDOXYGEN}
-	@${FIND} -P ${STAGEDIR}${DOCSDIR}/html -type f 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-	@${FIND} -P -d ${STAGEDIR}${DOCSDIR}/ -type d -empty 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dir |p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
