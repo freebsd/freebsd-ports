@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synfig
-PORTVERSION=	0.64.2
-PORTREVISION=	2
+PORTVERSION=	0.64.3
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
@@ -38,6 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
+		 s|"GNU strip"|"strip"| ; \
 		 s|el_GR|el| ; \
 		 s|ja_JP|ja| ; \
 		 s|no_NO|no| ; \
