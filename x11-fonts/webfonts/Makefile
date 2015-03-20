@@ -3,7 +3,7 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
@@ -18,9 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
 
 EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
+USES=		fonts
 NO_BUILD=	yes
 RESTRICTED=	Restrictive license - cannot sell for profit or distribute in modified form
 
@@ -28,69 +27,29 @@ EXTRACT_CMD=		${LOCALBASE}/bin/cabextract
 EXTRACT_BEFORE_ARGS=	-qLF '*.ttf' -d ${WRKSRC}
 EXTRACT_AFTER_ARGS=
 
+OPTIONS_DEFINE=	EXTRAFONTS
+OPTIONS_SUB=	yes
+EXTRAFONTS=	Fonts licensed under MS Windows license
+EXTRAFONTS_DISTFILES=	ielpkth.cab:group2
+
 #
 # Local variables
 #
-FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTFONTSDIR?=	${LOCALBASE}/lib/X11/fonts/TrueType
 
-PLIST_SUB=	FONTNAME="${FONTNAME}" \
-		FONTSDIR="${FONTSDIR:S|${PREFIX}/||}" \
-		TTFONTSDIR="${TTFONTSDIR:S|${LOCALBASE}/||}"
+PLIST_SUB=	FONTNAME="${FONTNAME}"
 
-SUB_LIST=	FONTSDIR="${FONTSDIR}"
 SUB_FILES=	pkg-message
-
-FONTS_FILE=	${WRKDIR}/fonts.dir
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MSWINDOWS_LICENSE)
-DISTFILES+=	ielpkth.cab:group2
-.endif
-
-.SILENT:
-
-#
-# Post-extract
-#
 post-extract:
 	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} ${_DISTDIR}/webdin32.exe
 
-#
-# Post-patch
-#
-post-patch:
-.if defined(WITH_MSWINDOWS_LICENSE)
-	${SORT} ${FILESDIR}/fonts.dir ${FILESDIR}/tahoma.dir > ${FONTS_FILE}
-.else
-	${CP} ${FILESDIR}/fonts.dir ${FONTS_FILE}
-.endif
-	${PRINTF} "1i\n%u\n.\nwq\n" `wc -l < ${FONTS_FILE}` | \
-		ed -s ${FONTS_FILE}
-
-#
-# Pre-install
-#
-pre-install:
-.if defined(WITH_MSWINDOWS_LICENSE)
-PLIST_SUB+=	EXTRAFONTS=""
-.else
-PLIST_SUB+=	EXTRAFONTS="@comment "
-.endif
-
-#
-# Install
-#
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${FONTS_FILE} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${FONTS_FILE} ${STAGEDIR}${FONTSDIR}/fonts.scale
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/licen.txt ${STAGEDIR}${DOCSDIR}/LICENSE
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
