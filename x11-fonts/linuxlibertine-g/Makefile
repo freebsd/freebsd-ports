@@ -14,7 +14,6 @@ USES=		fonts zip
 SUB_FILES=	pkg-message
 
 FONTNAME=	LinLibertineG
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 NO_BUILD=	yes
 
 WRKSRC=	${WRKDIR}/${FONTNAME}
