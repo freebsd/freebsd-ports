@@ -191,7 +191,7 @@ IGNORE=	Overwrite base option is no longer supported.
 .endif
 
 USE_RC_SUBR=		openssh
-PLIST_SUB+=		BASEPREFIX="${PREFIX}"
+ETCDIR=			${PREFIX}/etc/ssh
 
 # After all
 CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
