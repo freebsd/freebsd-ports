@@ -20,7 +20,6 @@ USE_XORG=	x11
 SUB_FILES=	pkg-message
 
 FONTNAME=	Liberation
-FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 INSTDAT=	AUTHORS
 NO_BUILD=	yes
 
