@@ -1,5 +1,5 @@
-%%FONTSDIR%%/olcursor.pcf.gz
-%%FONTSDIR%%/olgl10.pcf.gz
-%%FONTSDIR%%/olgl12.pcf.gz
-%%FONTSDIR%%/olgl14.pcf.gz
-%%FONTSDIR%%/olgl19.pcf.gz
+lib/X11/fonts/misc/olcursor.pcf.gz
+lib/X11/fonts/misc/olgl10.pcf.gz
+lib/X11/fonts/misc/olgl12.pcf.gz
+lib/X11/fonts/misc/olgl14.pcf.gz
+lib/X11/fonts/misc/olgl19.pcf.gz
