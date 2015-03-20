@@ -9,7 +9,6 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/pkgtools/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_TAGNAME}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
