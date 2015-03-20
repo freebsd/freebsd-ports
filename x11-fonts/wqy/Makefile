@@ -3,7 +3,7 @@
 
 PORTNAME=	wqy-fonts
 PORTVERSION=	20100803
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/wqy/wqy-bitmapfont/1.0.0-RC1:bitmapfont \
@@ -20,24 +20,19 @@ DISTFILES=	wqy-bitmapsong-pcf-1.0.0-RC1.tar.gz:bitmapfont \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 USE_XORG=	x11
-USES=		perl5
+USES=		fonts perl5
 USE_PERL5=	build
 
-FONTSDIR=	lib/X11/fonts/wqy
 CONFDDIR=	etc/fonts/conf.d
 CONFAVAILDIR=	etc/fonts/conf.avail
 
-PLIST_SUB=	FONTSDIR=${FONTSDIR} \
-		CONFDDIR=${CONFDDIR} \
+PLIST_SUB=	CONFDDIR=${CONFDDIR} \
 		CONFAVAILDIR=${CONFAVAILDIR}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	FONTSDIR=${PREFIX}/${FONTSDIR}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -66,17 +61,17 @@ do-build:
 	${CP} ${WRKDIR}/wqy-microhei/README.txt ${WRKDIR}/wqy-microhei/README.microhei
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR} ${STAGEDIR}${PREFIX}/${CONFDDIR} ${STAGEDIR}${PREFIX}/${CONFAVAILDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR} ${STAGEDIR}${PREFIX}/${CONFDDIR} ${STAGEDIR}${PREFIX}/${CONFAVAILDIR}
 # WQY Bitmap Song
-	${INSTALL_DATA} ${WRKDIR}/wqy-bitmapsong/*.pcf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/wqy-bitmapsong/*.pcf ${STAGEDIR}${FONTSDIR}
 # WQY Bitmap Song
-	${INSTALL_DATA} ${WRKDIR}/wqy-unibit/wqy-unibit.pcf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/wqy-unibit/wqy-unibit.pcf ${STAGEDIR}${FONTSDIR}
 # WQY TrueType Zenhei
-	${INSTALL_DATA} ${WRKDIR}/wqy-zenhei/wqy-zenhei.ttc ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/wqy-zenhei/wqy-zenhei.ttc ${STAGEDIR}${FONTSDIR}
 # WQY TrueType MicroHei Lite
-	${INSTALL_DATA} ${WRKDIR}/wqy-microhei-lite/wqy-microhei-lite.ttc ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/wqy-microhei-lite/wqy-microhei-lite.ttc ${STAGEDIR}${FONTSDIR}
 # WQY TrueType MicroHei
-	${INSTALL_DATA} ${WRKDIR}/wqy-microhei/wqy-microhei.ttc ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/wqy-microhei/wqy-microhei.ttc ${STAGEDIR}${FONTSDIR}
 
 	${INSTALL_DATA} ${FILESDIR}/85-wqy.conf ${STAGEDIR}${PREFIX}/${CONFAVAILDIR}
 	${LN} -sf ${PREFIX}/${CONFAVAILDIR}/85-wqy.conf ${STAGEDIR}${PREFIX}/${CONFDDIR}/85-wqy.conf
@@ -100,9 +95,5 @@ do-install:
 		${WRKDIR}/wqy-microhei/LICENSE_Apache2.txt \
 		${WRKDIR}/wqy-microhei/LICENSE_GPLv3.txt \
 			${STAGEDIR}${DOCSDIR}
-
-post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/${FONTSDIR}/fonts.dir
-	@${RM} -f ${STAGEDIR}${PREFIX}/${FONTSDIR}/fonts.scale
 
 .include <bsd.port.mk>
