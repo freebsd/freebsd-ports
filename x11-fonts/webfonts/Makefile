@@ -3,18 +3,18 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
 		http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/:group2
-DISTFILES=	andale32.exe:group1  arial32.exe:group1 arialb32.exe:group1 \
+DISTFILES=	andale32.exe:group1 arial32.exe:group1 arialb32.exe:group1 \
 		comic32.exe:group1 courie32.exe:group1 georgi32.exe:group1 \
-		impact32.exe:group1  times32.exe:group1 trebuc32.exe:group1 \
+		impact32.exe:group1 times32.exe:group1 trebuc32.exe:group1 \
 		verdan32.exe:group1 webdin32.exe:group1
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
 
 EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
@@ -29,19 +29,17 @@ EXTRACT_AFTER_ARGS=
 
 OPTIONS_DEFINE=	EXTRAFONTS
 OPTIONS_SUB=	yes
-EXTRAFONTS=	Fonts licensed under MS Windows license
+
+EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
 EXTRAFONTS_DISTFILES=	ielpkth.cab:group2
 
-#
-# Local variables
-#
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
 PLIST_SUB=	FONTNAME="${FONTNAME}"
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
+.include <bsd.port.options.mk>
 
 post-extract:
 	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} ${_DISTDIR}/webdin32.exe
