@@ -1554,7 +1554,11 @@ WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .  if defined(GH_COMMIT)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 .  else
+.    if defined(GH_TAGNAME)
 WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
+.    else
+WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
+.    endif
 .  endif
 .endif
 .if defined(NO_WRKSUBDIR)

@@ -15,7 +15,6 @@ CONFLICTS=	ilbc-r[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TimothyGu
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
 
 USES=		cmake
 USE_LDCONFIG=	yes
