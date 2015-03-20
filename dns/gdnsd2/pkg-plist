@@ -1,8 +1,10 @@
 bin/gdnsd_geoip_test
 include/gdnsd/alloc.h
+include/gdnsd/bopts.h
 include/gdnsd/compiler.h
 include/gdnsd/dmn.h
 include/gdnsd/dname.h
+include/gdnsd/file.h
 include/gdnsd/log.h
 include/gdnsd/misc.h
 include/gdnsd/mon.h
@@ -10,6 +12,7 @@ include/gdnsd/net.h
 include/gdnsd/paths.h
 include/gdnsd/plugapi.h
 include/gdnsd/plugin.h
+include/gdnsd/prcu.h
 include/gdnsd/stats.h
 include/gdnsd/vscf.h
 lib/gdnsd/libgdnsd.so

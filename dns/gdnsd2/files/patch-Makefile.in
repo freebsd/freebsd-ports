@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-11-07 15:38:17 UTC
+--- Makefile.in.orig	2015-03-02 14:36:56 UTC
 +++ Makefile.in
-@@ -939,12 +939,6 @@
+@@ -2552,12 +2552,6 @@ install-exec-hook-top:
  	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_CONFIG)/geoip";
  	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_RUN)";
  	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_STATE)";
@@ -10,6 +10,6 @@
 -		echo The default user \"gdnsd\" \(for privdrop when executed as root\) does not seem to exist yet!; \
 -		echo; \
 -	fi
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ src/zscan_rfc1035.c: src/zscan_rfc1035.rl
+ 	$(AM_V_GEN)$(RAGEL) -G2 -o $@ $(srcdir)/src/zscan_rfc1035.rl
+ libgdnsd/bopts.h: Makefile
