@@ -65,7 +65,7 @@ DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
 .endif
 
 .if defined(USE_GITHUB) && defined(GH_COMMIT)
-DEV_WARNING+=	"GH_COMMIT is deprecated, please convert GH-\>GHL in MASTER_SITES and set GH_TAGNAME to tag or commit hash and remove GH_COMMIT"
+DEV_WARNING+=	"GH_COMMIT is deprecated, please convert GHL-\>GH in MASTER_SITES and set GH_TAGNAME to tag or commit hash and remove GH_COMMIT"
 .endif
 
 .if defined(USE_GNOME) && ${USE_GNOME:Mgnomehack}
