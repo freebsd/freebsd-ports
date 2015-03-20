@@ -1,14 +1,16 @@
 etc/fonts/conf.avail/42-luxi-mono.conf
 etc/fonts/conf.d/42-luxi-mono.conf
-lib/X11/fonts/TTF/luximb.ttf
-lib/X11/fonts/TTF/luximbi.ttf
-lib/X11/fonts/TTF/luximr.ttf
-lib/X11/fonts/TTF/luximri.ttf
-lib/X11/fonts/TTF/luxirb.ttf
-lib/X11/fonts/TTF/luxirbi.ttf
-lib/X11/fonts/TTF/luxirr.ttf
-lib/X11/fonts/TTF/luxirri.ttf
-lib/X11/fonts/TTF/luxisb.ttf
-lib/X11/fonts/TTF/luxisbi.ttf
-lib/X11/fonts/TTF/luxisr.ttf
-lib/X11/fonts/TTF/luxisri.ttf
+%%FONTSDIR%%/luximb.ttf
+%%FONTSDIR%%/luximbi.ttf
+%%FONTSDIR%%/luximr.ttf
+%%FONTSDIR%%/luximri.ttf
+%%FONTSDIR%%/luxirb.ttf
+%%FONTSDIR%%/luxirbi.ttf
+%%FONTSDIR%%/luxirr.ttf
+%%FONTSDIR%%/luxirri.ttf
+%%FONTSDIR%%/luxisb.ttf
+%%FONTSDIR%%/luxisbi.ttf
+%%FONTSDIR%%/luxisr.ttf
+%%FONTSDIR%%/luxisri.ttf
+@comment %%FONTSDIR%%/fonts.dir
+@comment %%FONTSDIR%%/fonts.scale
