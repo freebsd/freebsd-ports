@@ -72,10 +72,12 @@ USES+=		libtool
 FONTNAME?=	${PORTNAME:C/.*-//g:S/type/Type/:S/ttf/TTF/:S/speedo/Speedo/}
 CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/lib/X11/fonts
 CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/lib/X11/fonts
+.    if !defined(NOFONT)
 USES+=	fonts
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 				bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-.endif
+.    endif
+.  endif
 
 . if ${XORG_CAT} == "lib"
 USES+=		pathfix libtool:keepla

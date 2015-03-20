@@ -47,6 +47,7 @@
     SUBDIR += font-adobe-utopia-100dpi
     SUBDIR += font-adobe-utopia-75dpi
     SUBDIR += font-adobe-utopia-type1
+    SUBDIR += font-alias
     SUBDIR += font-arabic-misc
     SUBDIR += font-bh-100dpi
     SUBDIR += font-bh-75dpi
