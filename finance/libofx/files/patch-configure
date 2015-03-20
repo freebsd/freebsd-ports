@@ -1,0 +1,11 @@
+--- configure.orig	2014-09-12 19:48:15 UTC
++++ configure
+@@ -3791,7 +3791,7 @@ $as_echo "#define HAVE_GCC_VISIBILITY_EX
+ 
+ 	VISIBILITY_FLAGS="-fvisibility=hidden"
+ 	CFLAGS="$VISIBILITY_FLAGS $CFLAGS"
+-	CXXFLAGS="$VISIBILITY_FLAGS -fvisibility-inlines-hidden $CFLAGS"
++	CXXFLAGS="$VISIBILITY_FLAGS -fvisibility-inlines-hidden $CXXFLAGS"
+ fi
+ 
+ ## Pass -DIN_LIBOFX to the compiler so we can detect it and include config.h
