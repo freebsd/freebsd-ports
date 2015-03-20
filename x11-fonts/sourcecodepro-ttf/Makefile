@@ -24,6 +24,6 @@ USE_GITHUB=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
-	cd ${WRKSRC}/TTF/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
