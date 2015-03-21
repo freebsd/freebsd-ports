@@ -3,8 +3,8 @@
 
 PORTNAME=	EBook-Tools
 PORTVERSION=	0.4.9
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32 \
 		txt2html>=0:${PORTSDIR}/textproc/txt2html \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
