@@ -4,8 +4,7 @@
 PORTNAME=	libquvi-scripts
 PORTVERSION=	0.4.21
 CATEGORIES=	multimedia devel
-MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
-		GOOGLE_CODE
+MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
@@ -21,8 +20,6 @@ NSFW_DESC=	Enable adult website support
 
 GNU_CONFIGURE=	yes
 USES=		pathfix tar:xz
-
-PROJECTHOST=	quvi
 
 NSFW_CONFIGURE_WITH=	nsfw
 
