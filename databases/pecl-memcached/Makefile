@@ -14,7 +14,6 @@ COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 
 LICENSE=	PHP30
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
 OPTIONS_DEFINE=	IGBINARY SASL
@@ -25,7 +24,7 @@ USE_PHP=	json session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
-USES=		tar:tgz
+USES=		pkgconfig tar:tgz
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary
