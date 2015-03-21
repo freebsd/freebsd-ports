@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-extensions
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
 
 PHP_DEFAULT=	53
