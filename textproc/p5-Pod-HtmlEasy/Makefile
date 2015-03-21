@@ -3,7 +3,7 @@
 
 PORTNAME=	Pod-HtmlEasy
 PORTVERSION=	1.0108
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate personalized HTML from PODs
 
-BUILD_DEPENDS=	p5-version>=0.72:${PORTSDIR}/devel/p5-version \
-		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-IPC-Run>=0.8:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Exporter-Easy>=0:${PORTSDIR}/devel/p5-Exporter-Easy \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
