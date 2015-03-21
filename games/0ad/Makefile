@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.17
-PORTREVISION=	4
+PORTVERSION=	0.0.18
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -28,7 +27,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		compiler:c++11-lang dos2unix gmake iconv openal:al \
+USES=		compiler:c++11-lib dos2unix gmake iconv openal:al \
 		pkgconfig tar:xz
 USE_SDL=	sdl
 USE_GNOME=	libxml2 gtk20
@@ -41,26 +40,25 @@ WX_COMPS=	wx:lib
 WX_UNICODE=	yes
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
-OPTIONS_DEFINE=	PORTSSM
-PORTSSM_DESC=	Use lang/spidermonkey24 instead of bundled one
-
-OPTIONS_SUB=	yes
-PORTSSM_LIB_DEPENDS=	libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24
-
 MANUAL_PACKAGE_BUILD=	huge
 
 PORTDATA=	*
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPORTSSM}
-SMOPT=		--with-system-mozjs24
+.if ${OSVERSION} < 900044
+BROKEN=	Fails to build on FreeBSD 8.x
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%CC%%|${CC}|' \
 		${WRKSRC}/build/premake/premake4.lua
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc
+	@${REINPLACE_CMD} -e '1055,1251s/-rdynamic/-lssp_nonshared &/' \
+			-e '1441s/"execinfo",/& "ssp_nonshared",/' \
+		${WRKSRC}/build/premake/premake4.lua
+.endif
 	@${REINPLACE_CMD} 's,^\(Exec=\)/usr/local,\1${PREFIX},' \
 		${WRKSRC}/build/resources/0ad.desktop
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
@@ -75,9 +73,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-.if ! ${PORT_OPTIONS:MPORTSSM}
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs24-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-.endif
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs31-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -86,4 +82,4 @@ do-install:
 	${TAR} xf ${WRKSRC}/binaries/data/mods/public/public.zip -C ${STAGEDIR}${DATADIR}/mods/public --no-same-permissions
 	${TAR} xf ${WRKSRC}/binaries/data/mods/mod/mod.zip -C ${STAGEDIR}${DATADIR}/mods/mod --no-same-permissions
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
