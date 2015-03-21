@@ -6,8 +6,10 @@ PORTVERSION=	1.4.4
 CATEGORIES=	dns
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool for checking DNS zones
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Tool for checking, and diagnosing DNS zones
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
