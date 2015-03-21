@@ -1,4 +1,7 @@
--------------------------------------------------
+============================================================
+
 Before you can run "sleuth" you will need to copy
-etc/sleuth.conf.sample to etc/sleuth.conf
--------------------------------------------------
+
+${PREFIX}etc/sleuth.conf.sample to ${PREFIX}etc/sleuth.conf
+
+============================================================
