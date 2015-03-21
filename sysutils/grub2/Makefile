@@ -41,7 +41,7 @@ FUSE_DESC=	Build grub-mount (require FUSE)
 
 MKFONT_CONFIGURE_ENABLE=	grub-mkfont
 MKFONT_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
-MKFONT_BUILD_DEPENDS=		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+MKFONT_BUILD_DEPENDS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 FUSE_CONFIGURE_ENABLE=		grub-mount
 FUSE_LIB_DEPENDS=		libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
@@ -55,7 +55,7 @@ PLIST_SUB+=	EFIEMU=""
 .endif
 
 post-patch:
-	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
+	@${LN} -s ${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
 post-configure:

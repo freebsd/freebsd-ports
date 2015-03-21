@@ -3,7 +3,7 @@
 
 PORTNAME=	cyberbit-ttfonts
 PORTVERSION=	2.0.20050220
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://ftp.netscape.com/pub/communicator/extras/fonts/windows/ \
 		http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/ \
@@ -21,8 +21,6 @@ RESTRICTED=	Redistribution not permitted; single user license only.
 
 USES=		fonts zip
 
-FONTSDIR=	lib/X11/fonts/Cyberbit
-
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}
@@ -34,8 +32,8 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Cyberbit.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Cyberbit.ttf ${STAGEDIR}${FONTSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${doc} ${STAGEDIR}${DOCSDIR}

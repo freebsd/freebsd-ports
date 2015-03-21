@@ -3,6 +3,7 @@
 
 PORTNAME=	Inconsolata-LGC
 PORTVERSION=	20131024
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	rum1cro@yandex.ru
@@ -15,25 +16,19 @@ GH_ACCOUNT=	DeLaGuardo
 GH_COMMIT=	16e2c94
 GH_TAGNAME=	${GH_COMMIT}
 
+USES=		fonts
 USE_XORG=	x11
-INSTALLS_TTF=	yes
 NO_BUILD=	yes
-FONTDIR=	TTF
+FONTNAME=	TTF
 
-PLIST_FILES=	lib/X11/fonts/${FONTDIR}/inconsolatalgc.ttf \
-		lib/X11/fonts/${FONTDIR}/inconsolatalgcbold.ttf \
-		lib/X11/fonts/${FONTDIR}/inconsolatalgcbolditalic.ttf \
-		lib/X11/fonts/${FONTDIR}/inconsolatalgcitalic.ttf
+PLIST_FILES=	${FONTSDIR}/inconsolatalgc.ttf \
+		${FONTSDIR}/inconsolatalgcbold.ttf \
+		${FONTSDIR}/inconsolatalgcbolditalic.ttf \
+		${FONTSDIR}/inconsolatalgcitalic.ttf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/inconsolatalgc.ttf \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/inconsolatalgcbold.ttf \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/inconsolatalgcbolditalic.ttf \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/inconsolatalgcitalic.ttf \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf \
+		${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	rlvm
 PORTVERSION=	0.14.0.20150223
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
 		libguichan.so:${PORTSDIR}/devel/guichan \
 		libGLEW.so:${PORTSDIR}/graphics/glew
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
@@ -43,11 +44,11 @@ OPTIONS_SUB=	yes
 
 JAPANESE_FONT_DESC=msgothic.ttc alternatives with verified metrics (unless --font)
 KOCHI_DESC=	kochi-gothic-subst.ttf from japanese/font-kochi
-KOCHI_RUN_DEPENDS=${LOCALBASE}/lib/X11/fonts/TTF/kochi-gothic-subst.ttf:${PORTSDIR}/japanese/font-kochi
+KOCHI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/kochi-gothic-subst.ttf:${PORTSDIR}/japanese/font-kochi
 MONA_DESC=	mona.ttf from japanese/monafonts-ttf
-MONA_RUN_DEPENDS=${LOCALBASE}/lib/X11/fonts/TrueType/mona.ttf:${PORTSDIR}/japanese/monafonts-ttf
+MONA_RUN_DEPENDS=${LOCALBASE}/share/fonts/TrueType/mona.ttf:${PORTSDIR}/japanese/monafonts-ttf
 SAZANAMI_DESC=	sazanami-gothic.ttf from japanese/font-sazanami
-SAZANAMI_RUN_DEPENDS=${LOCALBASE}/lib/X11/fonts/TTF/sazanami-gothic.ttf:${PORTSDIR}/japanese/font-sazanami
+SAZANAMI_RUN_DEPENDS=${LOCALBASE}/share/fonts/TTF/sazanami-gothic.ttf:${PORTSDIR}/japanese/font-sazanami
 
 DEBUG_MAKE_ARGS_OFF=--release
 NLS_USES=	gettext
@@ -67,7 +68,6 @@ post-patch:
 	@${GREP} -Flr '/usr/share' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-i .bak.paths \
 		-e 's,/usr/share,${PREFIX}/share,' \
-		-e 's,share/fonts,lib/X11/fonts,' \
 		-e 's,truetype/ttf-dejavu,dejavu,' \
 		-e 's,truetype/mona,TrueType,' \
 		-e 's,truetype/[^/"]*,TTF,'

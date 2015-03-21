@@ -1,4 +1,2 @@
-%%FONTDIR%%/HanaMinA.ttf
-%%FONTDIR%%/HanaMinB.ttf
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
+%%FONTSDIR%%/HanaMinA.ttf
+%%FONTSDIR%%/HanaMinB.ttf

@@ -2,7 +2,7 @@
 
 PORTNAME=	encodings
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 MASTER_SITES=	XORG/individual/font
 CATEGORIES=	x11-fonts
@@ -14,6 +14,6 @@ USES=		tar:bzip2
 USE_XORG=	fontutil
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/lib/X11/fonts
+CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/share/fonts
 
 .include <bsd.port.mk>

@@ -18,6 +18,6 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 .include "${MASTERDIR}/Makefile"

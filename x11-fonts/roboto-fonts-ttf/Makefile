@@ -3,7 +3,7 @@
 
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://developer.android.com/downloads/design/
@@ -17,7 +17,6 @@ LICENSE=	APACHE20
 USES=		fonts zip:infozip
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 
-FONTSDIR=	${PREFIX}/lib/X11/fonts/Roboto
 SUB_FILES=	pkg-message
 
 do-build:

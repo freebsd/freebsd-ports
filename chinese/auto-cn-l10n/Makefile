@@ -28,7 +28,7 @@ RELAXCONF_DESC=		A set of utilities for FreeBSD LiveCD
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MWQY}
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/wqy/wenquanyi_10pt.pcf:${PORTSDIR}/x11-fonts/wqy
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/wqy/wenquanyi_10pt.pcf:${PORTSDIR}/x11-fonts/wqy
 .endif
 
 .if ${PORT_OPTIONS:MFIREFLYTTF}

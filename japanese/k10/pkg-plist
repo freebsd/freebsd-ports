@@ -11,6 +11,3 @@
 %%FONTSDIR%%/knj10Bi.pcf.gz
 %%FONTSDIR%%/5x10rkbi.pcf.gz
 %%PORTDOCS%%share/doc/naga10/README
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi

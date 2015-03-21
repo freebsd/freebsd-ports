@@ -12,7 +12,6 @@ COMMENT=	X.org fonts meta-port
 
 USE_XORG=	fontutil
 
-FONTSDIR=	${PREFIX}/lib/X11/fonts
 RUN_DEPENDS=	xorg-fonts-100dpi>=0:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
 		xorg-fonts-75dpi>=0:${PORTSDIR}/x11-fonts/xorg-fonts-75dpi \
 		xorg-fonts-cyrillic>=0:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \

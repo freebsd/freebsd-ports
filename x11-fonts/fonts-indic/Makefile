@@ -3,7 +3,7 @@
 
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gentoo.osuosl.org/distfiles/
 
@@ -15,10 +15,8 @@ USES=		fonts
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-FONTSDIR=	lib/X11/fonts/${PORTNAME}
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*/*/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*/*/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

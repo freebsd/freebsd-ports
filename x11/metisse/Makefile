@@ -3,7 +3,7 @@
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 
@@ -34,7 +34,7 @@ SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
 		${WRKSRC}/fvwm-insitu/modules/FvwmWindowMenu/FvwmWindowMenu.in
 perl_OLD_CMD=	@PERL@
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
+CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/share/fonts
 USE_LDCONFIG=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
 WANT_GNOME=	yes

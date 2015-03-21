@@ -3,6 +3,7 @@
 
 PORTNAME=	xorg-vfbserver
 PORTVERSION=	1.14.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG
@@ -39,7 +40,9 @@ CONFIGURE_ARGS=	--disable-dmx \
 		--disable-glx-tls \
 		--disable-vbe \
 		--disable-vgahw \
-		--enable-xvfb
+		--enable-xvfb \
+		--with-fontrootdir=${PREFIX}/share/fonts \
+		--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
 
 USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 		bigreqsproto randrproto renderproto xextproto inputproto \

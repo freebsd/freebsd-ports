@@ -12,15 +12,14 @@ COMMENT=	Monospace font created for programming, text editors and terminal-use
 
 LICENSE=	OFL11
 
-USES=		zip
+USES=		fonts zip
 
-FONTDIR=	lib/X11/fonts/ConsolaMono
+FONTNAME=	ConsolaMono
 NO_BUILD=	yes
-PLIST_SUB=	FONTDIR=${FONTDIR}
 WRKSRC=		${WRKDIR}/Consola\ Mono
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${PREFIX}/${FONTDIR}/
+	${MKDIR} ${STAGEDIR}${FONTSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>

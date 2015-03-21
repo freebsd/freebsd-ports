@@ -2,7 +2,7 @@
 
 PORTNAME=	comic-neue
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://comicneue.com/
 
@@ -17,7 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		fonts zip
 NO_BUILD=	yes
 
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

@@ -2,6 +2,4 @@ bin/xfstt
 man/man1/xfstt.1x.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-@rmtry lib/X11/fonts/TrueType/ttname.dir
-@rmtry lib/X11/fonts/TrueType/ttinfo.dir
-@dir lib/X11/fonts/TrueType
+@dir share/fonts/TrueType

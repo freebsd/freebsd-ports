@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02p
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -54,8 +54,8 @@ PLIST_SUB+=	EFIEMU=${EFIEMU}
 
 .if ${PORT_OPTIONS:MMKFONT}
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
+BUILD_DEPENDS+=	${LOCALBASE}//fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
 MAN1+=		grub-mkfont.1
 CONFIGURE_ARGS+=	--enable-grub-mkfont
 .else

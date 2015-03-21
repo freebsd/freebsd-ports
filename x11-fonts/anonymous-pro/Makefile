@@ -3,7 +3,7 @@
 
 PORTNAME=	anonymous-pro
 PORTVERSION=	1.002
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.marksimonson.com/assets/content/fonts/
 DISTNAME=	AnonymousPro-${PORTVERSION}
@@ -16,9 +16,6 @@ LICENSE=	OFL11
 USES=		fonts zip
 NO_BUILD=	yes
 
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-SUB_LIST=	FONTSDIR=${FONTSDIR}
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${DISTNAME}.001

@@ -3,7 +3,7 @@
 
 PORTNAME=	bitstream-vera
 PORTVERSION=	1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
@@ -16,8 +16,6 @@ COMMENT=	Bitstream Vera TrueType font collection
 USES=	fonts tar:bzip2
 NO_BUILD=	yes
 
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

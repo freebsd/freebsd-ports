@@ -2,9 +2,6 @@
 .SUFFIXES:
 .SUFFIXES: .bdf .pcf
 
-.if defined(STAGEDIR) && !empty(STAGEDIR)
-PREFIX:=	${STAGEDIR}${PREFIX}
-.endif
 LOCALBASE?=	/usr/local
 GZIP_CMD?=	/usr/bin/gzip
 MKBOLD_CMD?=	${LOCALBASE}/bin/mkbold
@@ -64,8 +61,8 @@ CLEANFILES+=	${B}i.bdf ${B}bi.bdf \
 .endfor
 
 install::
-	mkdir -p ${PREFIX}/${FONTDIR}
-	${BSD_INSTALL_DATA} ${TARGETS} ${PREFIX}/${FONTDIR}
+	mkdir -p ${DESTDIR}${FONTSDIR}
+	${BSD_INSTALL_DATA} ${TARGETS} ${DESTDIR}${FONTSDIR}
 
 clean::
 	rm -f ${TARGETS} ${CLEANFILES}

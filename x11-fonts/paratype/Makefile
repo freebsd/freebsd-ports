@@ -3,7 +3,7 @@
 
 PORTNAME=	paratype
 PORTVERSION=	2.004
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://paratype.0xdc.ru/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
@@ -19,7 +19,6 @@ NO_WRKSUBDIR=	yes
 USES=		fonts zip
 
 FONTNAME=	ParaType
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 SUB_FILES=	pkg-message
 
 do-install:

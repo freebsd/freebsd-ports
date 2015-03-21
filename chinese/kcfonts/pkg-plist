@@ -1,9 +1,5 @@
-lib/X11/fonts/local/kc8x15.pcf.gz
-lib/X11/fonts/local/kc12x24.pcf.gz
-lib/X11/fonts/local/kc15f.pcf.gz
-lib/X11/fonts/local/kc24f.pcf.gz
-lib/X11/fonts/local/kc_fonts.alias
-@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
-@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
-@unexec if [ `\head -1 %D/lib/X11/fonts/local/fonts.dir` = 0 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
-@unexec if [ ! -s %D/lib/X11/fonts/local/fonts.alias ]; then rm -f %D/lib/X11/fonts/local/fonts.alias; fi
+%%FONTSDIR%%/kc8x15.pcf.gz
+%%FONTSDIR%%/kc12x24.pcf.gz
+%%FONTSDIR%%/kc15f.pcf.gz
+%%FONTSDIR%%/kc24f.pcf.gz
+%%FONTSDIR%%/kc_fonts.alias

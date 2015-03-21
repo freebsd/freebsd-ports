@@ -3,7 +3,7 @@
 
 PORTNAME=	kacst_fonts
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	arabic
 MASTER_SITES=	SF/arabeyes/${PORTNAME} \
 		http://www.c-s.li/ports/

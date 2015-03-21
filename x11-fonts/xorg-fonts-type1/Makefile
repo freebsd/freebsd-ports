@@ -20,10 +20,9 @@ RUN_DEPENDS=	${FONTDIR}/Type1/UTBI____.afm:${PORTSDIR}/x11-fonts/font-adobe-utop
 
 CONFLICTS=	XFree86-fontScalable-*
 
-do-install:	# empty
-
-NO_BUILD=	# none
+NO_BUILD=	yes
+NO_INSTALL=	yes
 NO_MTREE=	yes
-FONTDIR=	${LOCALBASE}/lib/X11/fonts
+FONTDIR=	${LOCALBASE}/share/fonts
 
 .include <bsd.port.mk>

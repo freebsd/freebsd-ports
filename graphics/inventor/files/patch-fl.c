@@ -7,7 +7,7 @@
   };
   
 + #ifdef __FreeBSD__
-+ static char *fontPath = IVPREFIX "/lib/X11/fonts/TTF";
++ static char *fontPath = IVPREFIX "/share/fonts/TTF";
 + #else
   static char *fontPath = IVPREFIX "/share/data/fonts";
 + #endif

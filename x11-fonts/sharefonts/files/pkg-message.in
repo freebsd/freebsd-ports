@@ -1,8 +1,8 @@
 ============================================================
-You'll have to add /usr/local/lib/X11/fonts/sharefont
+You'll have to add %%FONTSDIR%%
 to your X font path by either:
 
-$ xset fp+ /usr/local/lib/X11/fonts/sharefont
+$ xset fp+ %%FONTSDIR%%
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually

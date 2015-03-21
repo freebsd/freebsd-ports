@@ -3,6 +3,7 @@
 
 PORTNAME=	sourcecodepro-ttf
 PORTVERSION=	1.017
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	sunpoet@FreeBSD.org

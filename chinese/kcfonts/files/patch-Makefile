@@ -13,8 +13,8 @@
  
 -CFONTDIR=/usr/X11R6/lib/X11/fonts/chinese
 -EFONTDIR=/usr/X11R6/lib/X11/fonts/misc
-+CFONTDIR=${PREFIX}/lib/X11/fonts/local
-+EFONTDIR=${PREFIX}/lib/X11/fonts/local
++CFONTDIR=${PREFIX}/share/fonts/chinese
++EFONTDIR=${PREFIX}/share/fonts/misc
  FONTS	=kc24f.pcf.gz kc15f.pcf.gz kc8x15.pcf.gz kc12x24.pcf.gz
  PROGS	=kc24f kc15f kc8x15 kc12x24 kca2et
  OBJS	=tran.o kc24f.o kc15f.o kc8x15.o kc12x24.o kca2et.o

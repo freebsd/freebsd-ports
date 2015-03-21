@@ -15,10 +15,8 @@ FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 NO_BUILD=	yes
 USES=		fonts zip
 
-FONTSDIR=	lib/X11/fonts/Myanmar
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

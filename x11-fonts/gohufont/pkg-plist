@@ -1,8 +1,8 @@
-%%FONTDIR%%/gohufont-11.pcf.gz
-%%FONTDIR%%/gohufont-11b.pcf.gz
-%%FONTDIR%%/gohufont-14.pcf.gz
-%%FONTDIR%%/gohufont-14b.pcf.gz
-%%FONTDIR%%/gohufont-uni-11.pcf.gz
-%%FONTDIR%%/gohufont-uni-11b.pcf.gz
-%%FONTDIR%%/gohufont-uni-14.pcf.gz
-%%FONTDIR%%/gohufont-uni-14b.pcf.gz
+%%FONTSDIR%%/gohufont-11.pcf.gz
+%%FONTSDIR%%/gohufont-11b.pcf.gz
+%%FONTSDIR%%/gohufont-14.pcf.gz
+%%FONTSDIR%%/gohufont-14b.pcf.gz
+%%FONTSDIR%%/gohufont-uni-11.pcf.gz
+%%FONTSDIR%%/gohufont-uni-11b.pcf.gz
+%%FONTSDIR%%/gohufont-uni-14.pcf.gz
+%%FONTSDIR%%/gohufont-uni-14b.pcf.gz

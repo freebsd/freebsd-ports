@@ -3,7 +3,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
@@ -27,8 +27,6 @@ BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 RESTRICTED=	License prohibits redistribution; see individual .license files
 
 NO_WRKSUBDIR=	yes
-
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/freefont
 
 do-build:
 	@cd ${WRKSRC}/freefont && ${LOCALBASE}/bin/type1inst -silent -quiet -nolog >/dev/null 2>&1
