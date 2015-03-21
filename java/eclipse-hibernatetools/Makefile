@@ -16,6 +16,10 @@ COMMENT=	Hibernate3 Tools for the Eclipse IDE
 LICENSE=	EPL LGPL3
 LICENSE_COMB=	multi
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 ## XXX - Notify the maintainer if the dependencies on either
 ## java/eclipse-gef of java/eclipse-webtools change
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \

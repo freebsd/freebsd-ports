@@ -14,6 +14,10 @@ DISTNAME=	com.aptana.ide.feature.studio-${PORTVERSION}-5-7857HJ97CFF61HN1HZHtem5
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Studio 2 Web Development Tools (Eclipse plugin)
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS_INSTALL=	eclipse-aptana-1*
