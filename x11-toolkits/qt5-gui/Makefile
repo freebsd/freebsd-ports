@@ -64,7 +64,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:${PORTSDIR}/x11-f
 
 CFLAGS_powerpc64=	-mminimal-toc
 
-post-build
+post-build:
 .for d in ${MORE_WRKSRCS}
 	@cd ${WRKSRC}/${d} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
