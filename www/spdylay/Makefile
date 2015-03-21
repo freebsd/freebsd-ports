@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdylay
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
