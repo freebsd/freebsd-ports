@@ -12,8 +12,7 @@ check_freebsd_mak ()
   cp -p "$1" "${d}/make_freebsd.mak"
 }
 
-for d in ${WRKSRC}/eclipse.platform.resources/bundles/org.eclipse.core.filesystem.linux.x* \
-	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.linux.x* \
+for d in \
 	${WRKSRC}/eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.linux.x* \
 	${WRKSRC}/eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/linux \
 	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/linux \
@@ -25,6 +24,20 @@ do
   mkdir -p `echo $d | sed -e 's/linux/freebsd/'`
   [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `echo $d | sed -e 's/linux/freebsd/'`; tar xf - )
 done
+# "fragments" pieces
+for d in \
+	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.linux.x*
+do
+  mkdir -p `echo $d | sed -e 's/linux/freebsd/'`
+  [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `echo $d | sed -e 's/linux/freebsd/'`; tar xf - )
+done
+for d in \
+	${WRKSRC}/eclipse.platform.resources/bundles/org.eclipse.core.filesystem.linux.x*
+do
+  mkdir -p `dirname $d`/`basename $d | sed -e 's/\.linux.*$//'`/fragments/`basename $d | sed -e 's/linux/freebsd/'`
+  [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `dirname $d`/`basename $d | sed -e 's/\.linux.*$//'`/fragments/`basename $d | sed -e 's/linux/freebsd/'`; tar xf - )
+done
+
 
 for d in `find ${WRKSRC} -type d -name \*freebsd\*`
 do
