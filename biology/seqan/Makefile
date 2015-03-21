@@ -23,7 +23,7 @@ MAKE_JOB_SAFE=	yes
 SUB_FILES=	pkg-message
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 
-USE_GCC=	yes
+USE_GCC=	4.8
 
 # unsafe workaround because FreeBSD lacks logl and expl
 # see "BUGS" in `man 3 math`
