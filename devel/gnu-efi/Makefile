@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:${PORTSDIR}/devel/binutils
 
 USES=		gmake tar:bz2
-USE_GCC=	4.8+
+USE_GCC=	yes
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	"-fPIC"
 CPPFLAGS+=	"-fPIC"
