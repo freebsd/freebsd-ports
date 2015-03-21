@@ -2,20 +2,29 @@ diff --git a/eclipse-platform-parent/pom.xml b/eclipse-platform-parent/pom.xml
 index ce98be7..fa2d1e1 100644
 --- a/eclipse-platform-parent/pom.xml
 +++ b/eclipse-platform-parent/pom.xml
-@@ -155,6 +155,12 @@
+@@ -62,7 +62,7 @@
+       The tycho-eclipserun-plugin will create its instance of Eclipse from this
+       'eclipiserun-repo' repository, such as for computing .api-descriptions.
+     -->
+-    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.4-M-builds/M-4.4.2RC2-201501281000/</eclipserun-repo>
++    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.4/R-4.4.2-201502041700/</eclipserun-repo>
+ 
+     <comparator.repo>http://download.eclipse.org/eclipse/updates/4.4-M-builds</comparator.repo>
+ 
+@@ -201,6 +201,12 @@
+             </artifact>
            </target>
            <environments>
-             <environment>
++            <environment>
 +              <os>freebsd</os>
 +              <ws>gtk</ws>
 +              <arch>%%ECLIPSE_ARCH%%</arch>
 +            </environment>
 +<!--
-+            <environment>
+             <environment>
                <os>linux</os>
                <ws>gtk</ws>
-               <arch>x86</arch>
-@@ -229,6 +235,7 @@
+@@ -281,6 +287,7 @@
                <ws>gtk</ws>
                <arch>ppc64</arch>
              </environment>
@@ -23,7 +32,7 @@ index ce98be7..fa2d1e1 100644
            </environments>
          </configuration>
        </plugin>
-@@ -308,11 +315,11 @@
+@@ -360,11 +367,11 @@
            <artifactId>tycho-packaging-plugin</artifactId>
            <version>${tycho.version}</version>
            <dependencies>
@@ -37,14 +46,14 @@ index ce98be7..fa2d1e1 100644
              <dependency>
                <groupId>org.eclipse.tycho.extras</groupId>
                <artifactId>tycho-sourceref-jgit</artifactId>
-@@ -322,14 +329,14 @@
+@@ -374,14 +381,14 @@
            <configuration>
              <strictBinIncludes>false</strictBinIncludes>
              <format>'v'yyyyMMdd-HHmm</format>
 -            <timestampProvider>jgit</timestampProvider>
 +            <!--timestampProvider>jgit</timestampProvider-->
              <jgit.ignore>
- 		pom.xml
+               pom.xml
              </jgit.ignore>
              <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree}</jgit.dirtyWorkingTree>
 -            <sourceReferences>
@@ -53,13 +62,13 @@ index ce98be7..fa2d1e1 100644
 -            </sourceReferences>
 +            </sourceReferences-->
              <archive>
-                <addMavenDescriptor>false</addMavenDescriptor>
+               <addMavenDescriptor>false</addMavenDescriptor>
              </archive>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
-index 81a82e1..dc2fdd9 100644
+index 7e6fd26..f1773e0 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
-@@ -121,6 +121,12 @@
+@@ -139,6 +139,12 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -72,7 +81,7 @@ index 81a82e1..dc2fdd9 100644
                <os>linux</os>
                <ws>gtk</ws>
                <arch>x86</arch>
-@@ -145,6 +156,7 @@
+@@ -163,6 +169,7 @@
                <ws>cocoa</ws>
                <arch>x86_64</arch>
              </environment>
@@ -81,137 +90,101 @@ index 81a82e1..dc2fdd9 100644
          </configuration>
        </plugin>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml
-index 60e4299..4c9106e 100644
+index c7f7ca9..1387a12 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml
-@@ -112,6 +112,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -44,6 +44,12 @@
+           <resolver>p2</resolver>
+           <environments>
+             <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>%%ECLIPSE_ARCH%%</arch>
++            </environment>
++<!--
++            <environment>
+               <os>linux</os>
+               <ws>gtk</ws>
+               <arch>x86</arch>
+@@ -68,6 +74,7 @@
+               <ws>cocoa</ws>
+               <arch>x86_64</arch>
+             </environment>
++-->
+           </environments>
+         </configuration>
+       </plugin>
+@@ -99,6 +106,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml b/eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml
-index 14b8336..0b97442 100644
+index 2bc2ddf..96b6c41 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml
 @@ -15,6 +15,8 @@
- 		<property name="archiveRoot" value="launchers" />
- 		<buildRepos os="win32" ws="win32" arch="x86" archiveName="${archiveRoot}-win32.win32.x86.${buildId}.zip" />
- 		<buildRepos os="win32" ws="win32" arch="x86_64" archiveName="${archiveRoot}-win32.win32.x86_64.${buildId}.zip" />		
-+		<buildRepos os="freebsd" ws="gtk" arch="x86" archiveName="${archiveRoot}-freebsd.gtk.x86.${buildId}.tar.gz" />
-+		<buildRepos os="freebsd" ws="gtk" arch="x86_64" archiveName="${archiveRoot}-freebsd.gtk.x86_64.${buildId}.tar.gz" />	
- 		<buildRepos os="linux" ws="gtk" arch="x86" archiveName="${archiveRoot}-linux.gtk.x86.${buildId}.tar.gz" />
- 		<buildRepos os="linux" ws="gtk" arch="x86_64" archiveName="${archiveRoot}-linux.gtk.x86_64.${buildId}.tar.gz" />	
- 	    <buildRepos os="linux" ws="gtk" arch="ppc" archiveName="${archiveRoot}-linux.gtk.ppc.${buildId}.tar.gz" />
+     <property name="archiveRoot" value="launchers" />
+     <buildRepos os="win32" ws="win32" arch="x86" archiveName="${archiveRoot}-win32.win32.x86.${buildId}.zip" />
+     <buildRepos os="win32" ws="win32" arch="x86_64" archiveName="${archiveRoot}-win32.win32.x86_64.${buildId}.zip" />
++    <buildRepos os="freebsd" ws="gtk" arch="x86" archiveName="${archiveRoot}-freebsd.gtk.x86.${buildId}.tar.gz" />
++    <buildRepos os="freebsd" ws="gtk" arch="x86_64" archiveName="${archiveRoot}-freebsd.gtk.x86_64.${buildId}.tar.gz" />
+     <buildRepos os="linux" ws="gtk" arch="x86" archiveName="${archiveRoot}-linux.gtk.x86.${buildId}.tar.gz" />
+     <buildRepos os="linux" ws="gtk" arch="x86_64" archiveName="${archiveRoot}-linux.gtk.x86_64.${buildId}.tar.gz" />
+       <buildRepos os="linux" ws="gtk" arch="ppc" archiveName="${archiveRoot}-linux.gtk.ppc.${buildId}.tar.gz" />
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/equinox/publishingFiles/testManifest.xml b/eclipse.platform.releng.tychoeclipsebuilder/equinox/publishingFiles/testManifest.xml
 index 129d0a6..a8f76b6 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/equinox/publishingFiles/testManifest.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/equinox/publishingFiles/testManifest.xml
 @@ -278,6 +278,16 @@
-                 fileName="launchers-win32.win32.x86_64.${BUILD_ID}.zip" />
-             <platform
-                 format="equinox"
-+                id="SFG2"
-+                name="FreeBSD (x86/GTK 2)"
-+                fileName="launchers-freebsd.gtk.x86.${BUILD_ID}.tar.gz" />
-+            <platform
-+                format="equinox"
-+                id="SFG264"
-+                name="FreeBSD (x86_64/GTK 2)"
-+                fileName="launchers-freebsd.gtk.x86_64.${BUILD_ID}.tar.gz" />
-+            <platform
-+                format="equinox"
-                 id="SLG2"
-                 name="Linux (x86/GTK 2)"
-                 fileName="launchers-linux.gtk.x86.${BUILD_ID}.tar.gz" />
+         fileName="launchers-win32.win32.x86_64.${BUILD_ID}.zip" />
+       <platform
+         format="equinox"
++        id="SFG2"
++        name="FreeBSD (x86/GTK+)"
++        fileName="launchers-freebsd.gtk.x86.${BUILD_ID}.tar.gz" />
++      <platform
++        format="equinox"
++        id="SFG264"
++        name="FreeBSD (x86_64/GTK+)"
++        fileName="launchers-freebsd.gtk.x86_64.${BUILD_ID}.tar.gz" />
++      <platform
++        format="equinox"
+         id="SLG2"
+         name="Linux (x86/GTK+)"
+         fileName="launchers-linux.gtk.x86.${BUILD_ID}.tar.gz" />
 @@ -346,6 +356,16 @@
-                 fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-win32-win32-x86_64.zip" />
-             <platform
-                 format="equinox"
-+                id="ESFG2"
-+                name="FreeBSD (x86/GTK 2)"
-+                fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-freebsd-gtk-x86.tar.gz" />
-+            <platform
-+                format="equinox"
-+                id="ESFG264"
-+                name="FreeBSD (x86_64/GTK 2)"
-+                fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-freebsd-gtk-x86_64.tar.gz" />
-+            <platform
-+                format="equinox"
-                 id="ESLG2"
-                 name="Linux (x86/GTK 2)"
-                 fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-linux-gtk-x86.tar.gz" />
-diff --git a/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/build.properties b/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/build.properties
-index 80a32e4..fcb7ed5 100644
---- a/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/build.properties
-+++ b/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/build.properties
-@@ -27,6 +27,11 @@ root.solaris.gtk.sparc.permissions.755=eclipse
- root.solaris.gtk.x86=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/x86
- root.solaris.gtk.x86.permissions.755=eclipse
- 
-+root.freebsd.gtk.x86=rootfiles/freebsd.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/x86
-+root.freebsd.gtk.x86.permissions.755=libcairo-swt.so,eclipse
-+root.freebsd.gtk.x86_64=rootfiles/freebsd.gtk.x86_64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/x86_64
-+root.freebsd.gtk.x86_64.permissions.755=libcairo-swt.so,eclipse
-+
- root.linux.gtk.x86=rootfiles/linux.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86
- root.linux.gtk.x86.permissions.755=libcairo-swt.so,eclipse
- root.linux.gtk.ppc=rootfiles/linux.gtk.ppc64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/ppc
-@@ -69,10 +74,3 @@ root.macosx.cocoa.x86_64.permissions.755=Eclipse.app/Contents/MacOS/eclipse
- root.macosx.cocoa.x86_64.link=Eclipse.app/Contents/MacOS/eclipse,eclipse
- 
- bin.includes = feature.properties
--
--
--
--
--
--
--
-diff --git a/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/pom.xml
-index 2c342a3..5e27062 100644
---- a/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/pom.xml
-+++ b/eclipse.platform.releng.tychoeclipsebuilder/osgistarter.config.launcher/pom.xml
-@@ -20,6 +20,25 @@
-                 <version>2.6</version>
-                 <executions>
-                     <execution>
-+                        <id>copy-resources-gtk.freebsd.%%ECLIPSE_ARCH%%</id>
-+                        <phase>validate</phase>
-+                        <goals>
-+                            <goal>copy-resources</goal>
-+                        </goals>
-+                        <configuration>
-+                            <outputDirectory>${basedir}/rootfiles/freebsd.gtk.%%ECLIPSE_ARCH%%</outputDirectory>
-+                            <resources>
-+                                <resource>
-+                                    <directory>../../eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%</directory>
-+                                    <includes>
-+                                        <include>about_files/*</include>
-+                                        <include>about.html</include>
-+                                    </includes>
-+                                </resource>
-+                            </resources>
-+                        </configuration>
-+                    </execution>
-+                    <execution>
-                         <id>copy-resources-gtk.linux.x86</id>
-                         <phase>validate</phase>
-                         <goals>
+         fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-win32-win32-x86_64.zip" />
+       <platform
+         format="equinox"
++        id="ESFG2"
++        name="FreeBSD (x86/GTK+)"
++        fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-freebsd-gtk-x86.tar.gz" />
++      <platform
++        format="equinox"
++        id="ESFG264"
++        name="FreeBSD (x86_64/GTK+)"
++        fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-freebsd-gtk-x86_64.tar.gz" />
++      <platform
++        format="equinox"
+         id="ESLG2"
+         name="Linux (x86/GTK+)"
+         fileName="EclipseRT-OSGi-StarterKit-${BUILD_ID}-linux-gtk-x86.tar.gz" />
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/pom.xml
-index bc261f9..88e8522 100644
+index 0025a72..df900e7 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/pom.xml
-@@ -91,6 +91,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -68,6 +68,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/platform/platform.p2.inf b/eclipse.platform.releng.tychoeclipsebuilder/platform/platform.p2.inf
 index c2f679b..742fe0b 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/platform/platform.p2.inf
@@ -241,110 +214,168 @@ index c2f679b..742fe0b 100644
  update.id = org.eclipse.platform.ide
  update.range = [4.0,$version$)
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml
-index d8468e6..b6c77d5 100644
+index 502b599..5b885e5 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml
-@@ -92,6 +92,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -76,6 +76,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
-index 80a32e4..fcb7ed5 100644
+index 01c7934..c34148c 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
-@@ -27,6 +27,11 @@ root.solaris.gtk.sparc.permissions.755=eclipse
- root.solaris.gtk.x86=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/x86
- root.solaris.gtk.x86.permissions.755=eclipse
+@@ -10,58 +10,9 @@
+ ###############################################################################
  
-+root.freebsd.gtk.x86=rootfiles/freebsd.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/x86
-+root.freebsd.gtk.x86.permissions.755=libcairo-swt.so,eclipse
-+root.freebsd.gtk.x86_64=rootfiles/freebsd.gtk.x86_64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/x86_64
-+root.freebsd.gtk.x86_64.permissions.755=libcairo-swt.so,eclipse
-+
- root.linux.gtk.x86=rootfiles/linux.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86
- root.linux.gtk.x86.permissions.755=libcairo-swt.so,eclipse
- root.linux.gtk.ppc=rootfiles/linux.gtk.ppc64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/ppc
-@@ -69,10 +74,3 @@ root.macosx.cocoa.x86_64.permissions.755=Eclipse.app/Contents/MacOS/eclipse
- root.macosx.cocoa.x86_64.link=Eclipse.app/Contents/MacOS/eclipse,eclipse
+ #root.permissions.755=eclipse
+-root.win32.win32.x86=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/win32/win32/x86
+-root.win32.win32.x86.permissions.755=eclipse.exe
+-root.win32.win32.x86_64=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/win32/win32/x86_64
+-root.win32.win32.x86_64.permissions.755=eclipse.exe
+-
+-# Care is need there, for "macosx", as several forms will appear to work, but end up
+-# having wrong value in the CFBundleIdentifier field, in the Info.plist, resulting 
+-# in "application requires Java 6" (see bug 445026, and bug 457071)
+-# These are not required at all, for our "product build", but are to get 
+-# configuration_roots complete (see bug 457071).
+-root.macosx.cocoa.x86_64=rootfiles/macosx.cocoa.x86_64
+-root.macosx.cocoa.x86_64.permissions.755=Eclipse.app/Contents/MacOS/eclipse
+-root.macosx.cocoa.x86_64.link=Eclipse.app/Contents/MacOS/eclipse,eclipse
+-
+-root.macosx.cocoa.x86=rootfiles/macosx.cocoa.x86
+-root.macosx.cocoa.x86.permissions.755=Eclipse.app/Contents/MacOS/eclipse
+-root.macosx.cocoa.x86.link=Eclipse.app/Contents/MacOS/eclipse,eclipse
+-
+-# from org.eclipse.equinox.core.feature
+-#root.win32.win32.x86=file:executables/win32.win32.x86/eclipsec.exe
+-#root.win32.win32.x86_64=file:executables/win32.win32.x86_64/eclipsec.exe
+-
+-root.aix.gtk.ppc=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/aix/ppc
+-root.aix.gtk.ppc.permissions.755=eclipse
+-root.aix.gtk.ppc64=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/aix/ppc64
+-root.aix.gtk.ppc64.permissions.755=eclipse
+-
+-root.linux.gtk.ppc64le=rootfiles/linux.gtk.ppc64le,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/ppc64le
+-root.linux.gtk.ppc64le.permissions.755=eclipse
+-
+-root.hpux.gtk.ia64=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/hpux/ia64
+-root.hpux.gtk.ia64.permissions.755=eclipse
+-
+-root.solaris.gtk.sparc=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/sparc
+-root.solaris.gtk.sparc.permissions.755=eclipse
+-root.solaris.gtk.x86=../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/solaris/x86
+-root.solaris.gtk.x86.permissions.755=eclipse
+-
+-root.linux.gtk.x86=rootfiles/linux.gtk.x86,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86
+-root.linux.gtk.x86.permissions.755=libcairo-swt.so,eclipse
+-root.linux.gtk.ppc=rootfiles/linux.gtk.ppc64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/ppc
+-root.linux.gtk.ppc.permissions.755=eclipse
+-root.linux.gtk.ppc64=rootfiles/linux.gtk.ppc64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/ppc64
+-root.linux.gtk.ppc64.permissions.755=eclipse
+-root.linux.gtk.x86_64=rootfiles/linux.gtk.x86_64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86_64
+-root.linux.gtk.x86_64.permissions.755=libcairo-swt.so,eclipse
+-
+-root.linux.gtk.s390x=rootfiles/linux.gtk.s390x,../../rt.equinox.binaries/org.eclipse.equinox.executable/contributed/gtk/linux/s390x
+-root.linux.gtk.s390x.permissions.755=eclipse
+-root.linux.gtk.s390=rootfiles/linux.gtk.s390,../../rt.equinox.binaries/org.eclipse.equinox.executable/contributed/gtk/linux/s390
+-root.linux.gtk.s390.permissions.755=eclipse
+ 
++root.freebsd.gtk.%%ECLIPSE_ARCH%%=rootfiles/freebsd.gtk.%%ECLIPSE_ARCH%%,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/%%ECLIPSE_ARCH%%
++root.freebsd.gtk.%%ECLIPSE_ARCH%%.permissions.755=libcairo-swt.so,eclipse
  
  bin.includes = feature.properties
--
--
--
--
--
--
--
+ 
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/pom.xml
-index bb03da8..75632a0 100644
+index ead6cd7..550bf70 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/rcp.config/pom.xml
-@@ -20,6 +20,25 @@
-                 <version>2.6</version>
-                 <executions>
-                     <execution>
-+                        <id>copy-resources-gtk.freebsd.%%ECLIPSE_ARCH%%</id>
-+                        <phase>validate</phase>
-+                        <goals>
-+                            <goal>copy-resources</goal>
-+                        </goals>
-+                        <configuration>
-+                            <outputDirectory>${basedir}/rootfiles/freebsd.gtk.%%ECLIPSE_ARCH%%</outputDirectory>
-+                            <resources>
-+                                <resource>
-+                                    <directory>../../eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%</directory>
-+                                    <includes>
-+                                        <include>about_files/*</include>
-+                                        <include>about.html</include>
-+                                    </includes>
-+                                </resource>
-+                            </resources>
-+                        </configuration>
-+                    </execution>
-+                    <execution>
-                         <id>copy-resources-gtk.linux.x86</id>
-                         <phase>validate</phase>
-                         <goals>
+@@ -34,6 +34,45 @@
+         <version>2.6</version>
+         <executions>
+           <execution>
++            <id>copy-resources-gtk.freebsd.x86</id>
++            <phase>validate</phase>
++            <goals>
++              <goal>copy-resources</goal>
++            </goals>
++            <configuration>
++              <outputDirectory>${basedir}/rootfiles/freebsd.gtk.x86</outputDirectory>
++              <resources>
++                <resource>
++                  <directory>../../eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86</directory>
++                  <includes>
++                    <include>about_files/*</include>
++                    <include>about.html</include>
++                  </includes>
++                </resource>
++              </resources>
++            </configuration>
++          </execution>
++          <execution>
++            <id>copy-resources-gtk.freebsd.x86_64</id>
++            <phase>validate</phase>
++            <goals>
++              <goal>copy-resources</goal>
++            </goals>
++            <configuration>
++              <outputDirectory>${basedir}/rootfiles/freebsd.gtk.x86_64</outputDirectory>
++              <resources>
++                <resource>
++                  <directory>../../eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86_64
++                  </directory>
++                  <includes>
++                    <include>about_files/*</include>
++                    <include>about.html</include>
++                  </includes>
++                </resource>
++              </resources>
++            </configuration>
++          </execution>
++          <execution>
+             <id>copy-resources-gtk.linux.x86</id>
+             <phase>validate</phase>
+             <goals>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/pom.xml
-index 0ea4fd3..5bd93db 100644
+index a849a55..ea72ce5 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/pom.xml
-@@ -91,6 +91,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -61,6 +61,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/rcp/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/rcp/pom.xml
-index ce76451..3b40705 100644
+index 10b9b9f..b5a238b 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/rcp/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/rcp/pom.xml
-@@ -91,6 +91,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -61,6 +61,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
-index bf2f66a..5a37141 100644
+index 29be78c..207a934 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
-@@ -91,6 +91,7 @@
-                         <configuration>
-                             <formats>
-                                 <win32>zip</win32>
-+                                <freebsd>tar.gz</freebsd>
-                                 <linux>tar.gz</linux>
-                                 <macosx>tar.gz</macosx>
-                             </formats>
+@@ -72,6 +72,7 @@
+             <configuration>
+               <formats>
+                 <win32>zip</win32>
++                <freebsd>tar.gz</freebsd>
+                 <linux>tar.gz</linux>
+                 <macosx>tar.gz</macosx>
+               </formats>
 diff --git a/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf b/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf
 index 6b59ed2..64975ba 100644
 --- a/eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.p2.inf
@@ -373,13 +404,14 @@ index 6b59ed2..64975ba 100644
  # Restrict range so we are not an automatic update for 3.x.
  update.id= org.eclipse.sdk.ide
  update.range = [4.0,$version$)
---- a/pom.xml.orig	2014-06-05 16:00:15.000000000 -0500
-+++ a/pom.xml	2014-06-19 18:03:47.000000000 -0500
-@@ -50,6 +50,6 @@
- 
-     <module>eclipse.platform.releng</module>
-     <module>eclipse.platform.releng.tychoeclipsebuilder</module>
+diff --git a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml b/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
+--- a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
++++ b/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
+@@ -35,6 +35,6 @@
+     <module>platform.sdk</module>
+     <module>sdk</module>
+     <module>eclipse-junit-tests</module>
 -    <module>eclipse.platform.repository</module>
-+<!--    <module>eclipse.platform.repository</module> -->
++    <!-- module>eclipse.platform.repository</module -->
    </modules>
  </project>

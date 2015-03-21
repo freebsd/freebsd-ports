@@ -153,39 +153,32 @@ index 436c5b0..dd4b3fc 100644
  				if (images != null) {
  					if (icons.length() > 0)
 diff --git a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/IArgumentsInfo.java b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/IArgumentsInfo.java
-index c007fe1..47d93ec 100644
+index 617304c..e2a6a31 100644
 --- a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/IArgumentsInfo.java
 +++ b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/IArgumentsInfo.java
-@@ -13,22 +13,25 @@ package org.eclipse.pde.internal.core.iproduct;
- public interface IArgumentsInfo extends IProductObject {
- 
- 	public static final String P_PROG_ARGS = "programArgs"; //$NON-NLS-1$
-+	public static final String P_PROG_ARGS_FRE = "programArgsFre"; //$NON-NLS-1$
- 	public static final String P_PROG_ARGS_LIN = "programArgsLin"; //$NON-NLS-1$
+@@ -17,12 +17,14 @@ public interface IArgumentsInfo extends IProductObject {
  	public static final String P_PROG_ARGS_MAC = "programArgsMac"; //$NON-NLS-1$
  	public static final String P_PROG_ARGS_SOL = "programArgsSol"; //$NON-NLS-1$
  	public static final String P_PROG_ARGS_WIN = "programArgsWin"; //$NON-NLS-1$
++	public static final String P_PROG_ARGS_FRE = "programArgsFre"; //$NON-NLS-1$
  
  	public static final String P_VM_ARGS = "vmArgs"; //$NON-NLS-1$
-+	public static final String P_VM_ARGS_FRE = "vmArgsFre"; //$NON-NLS-1$
  	public static final String P_VM_ARGS_LIN = "vmArgsLin"; //$NON-NLS-1$
  	public static final String P_VM_ARGS_MAC = "vmArgsMac"; //$NON-NLS-1$
  	public static final String P_VM_ARGS_SOL = "vmArgsSol"; //$NON-NLS-1$
  	public static final String P_VM_ARGS_WIN = "vmArgsWin"; //$NON-NLS-1$
++	public static final String P_VM_ARGS_FRE = "vmArgsFre"; //$NON-NLS-1$
  
- 	public static final int L_ARGS_ALL = 0;
--	public static final int L_ARGS_LINUX = 1;
--	public static final int L_ARGS_MACOS = 2;
--	public static final int L_ARGS_SOLAR = 3;
--	public static final int L_ARGS_WIN32 = 4;
-+	public static final int L_ARGS_FRBSD = 1;
-+	public static final int L_ARGS_LINUX = 2;
-+	public static final int L_ARGS_MACOS = 3;
-+	public static final int L_ARGS_SOLAR = 4;
-+	public static final int L_ARGS_WIN32 = 5;
+ 	public static final String P_ARGS_ARCH_X86 = "argsX86"; //$NON-NLS-1$
+ 	public static final String P_ARGS_ARCH_X86_64 = "argsX86_64"; //$NON-NLS-1$
+@@ -37,6 +39,7 @@ public interface IArgumentsInfo extends IProductObject {
+ 	public static final int L_ARGS_MACOS = 2;
+ 	public static final int L_ARGS_SOLAR = 3;
+ 	public static final int L_ARGS_WIN32 = 4;
++	public static final int L_ARGS_FRBSD = 5;
  
- 	void setProgramArguments(String args, int platform);
- 
+ 	public static final int L_ARGS_ARCH_ALL = 0;
+ 	public static final int L_ARGS_ARCH_X86 = 1;
 diff --git a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/ILauncherInfo.java b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/ILauncherInfo.java
 index e88ee99..40628dc 100644
 --- a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/ILauncherInfo.java
@@ -200,124 +193,154 @@ index e88ee99..40628dc 100644
  
  	public static final String MACOSX_ICON = "macosxIcon"; //$NON-NLS-1$
 diff --git a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java
-index 66dedcb..0f82bad 100644
+index 5dcda32..437aab8 100644
 --- a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java
 +++ b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java
 @@ -20,12 +20,14 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  
  	private static final long serialVersionUID = 1L;
- 	private String fProgramArgs = ""; //$NON-NLS-1$
-+	private String fProgramArgsFre = ""; //$NON-NLS-1$
- 	private String fProgramArgsLin = ""; //$NON-NLS-1$
- 	private String fProgramArgsMac = ""; //$NON-NLS-1$
- 	private String fProgramArgsSol = ""; //$NON-NLS-1$
- 	private String fProgramArgsWin = ""; //$NON-NLS-1$
+ 	private String[] fProgramArgs = new String[8];
++	private String[] fProgramArgsFre = new String[8];
+ 	private String[] fProgramArgsLin = new String[8];
+ 	private String[] fProgramArgsMac = new String[8];
+ 	private String[] fProgramArgsSol = new String[8];
+ 	private String[] fProgramArgsWin = new String[8];
  
- 	private String fVMArgs = ""; //$NON-NLS-1$
-+	private String fVMArgsFre = ""; //$NON-NLS-1$
- 	private String fVMArgsLin = ""; //$NON-NLS-1$
- 	private String fVMArgsMac = ""; //$NON-NLS-1$
- 	private String fVMArgsSol = ""; //$NON-NLS-1$
-@@ -46,6 +48,12 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 	private String[] fVMArgs = new String[8];
++	private String[] fVMArgsFre = new String[8];
+ 	private String[] fVMArgsLin = new String[8];
+ 	private String[] fVMArgsMac = new String[8];
+ 	private String[] fVMArgsSol = new String[8];
+@@ -34,11 +36,13 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 	public ArgumentsInfo(IProductModel model) {
+ 		super(model);
+ 		this.initializeArgs(fProgramArgs);
++		this.initializeArgs(fProgramArgsFre);
+ 		this.initializeArgs(fProgramArgsLin);
+ 		this.initializeArgs(fProgramArgsMac);
+ 		this.initializeArgs(fProgramArgsSol);
+ 		this.initializeArgs(fProgramArgsWin);
+ 		this.initializeArgs(fVMArgs);
++		this.initializeArgs(fVMArgsFre);
+ 		this.initializeArgs(fVMArgsLin);
+ 		this.initializeArgs(fVMArgsMac);
+ 		this.initializeArgs(fVMArgsSol);
+@@ -66,6 +70,12 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  				if (isEditable())
- 					firePropertyChanged(P_PROG_ARGS, old, fProgramArgs);
+ 					firePropertyChanged(P_PROG_ARGS, old, fProgramArgs[arch]);
  				break;
 +			case L_ARGS_FRBSD :
-+				old = fProgramArgsFre;
-+				fProgramArgsFre = args;
++				old = fProgramArgsFre[arch];
++				fProgramArgsFre[arch] = args;
 +				if (isEditable())
-+					firePropertyChanged(P_PROG_ARGS_FRE, old, fProgramArgsFre);
++					firePropertyChanged(P_PROG_ARGS_FRE, old, fProgramArgsFre[arch]);
 +				break;
  			case L_ARGS_LINUX :
- 				old = fProgramArgsLin;
- 				fProgramArgsLin = args;
-@@ -77,6 +85,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 				old = fProgramArgsLin[arch];
+ 				fProgramArgsLin[arch] = args;
+@@ -101,6 +111,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  		switch (platform) {
  			case L_ARGS_ALL :
- 				return fProgramArgs;
+ 				return fProgramArgs[arch];
 +			case L_ARGS_FRBSD :
-+				return fProgramArgsFre;
++				return fProgramArgsFre[arch];
  			case L_ARGS_LINUX :
- 				return fProgramArgsLin;
+ 				return fProgramArgsLin[arch];
  			case L_ARGS_MACOS :
-@@ -98,6 +108,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 			return getCompleteArgs(getProgramArguments(L_ARGS_MACOS), fProgramArgs);
+@@ -150,6 +162,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  		} else if (Platform.OS_SOLARIS.equals(os)) {
- 			return getCompleteArgs(getProgramArguments(L_ARGS_SOLAR), fProgramArgs);
+ 			archArgs = archIndex > 0 ? getProgramArguments(L_ARGS_SOLAR, archIndex) + " " + archArgsAllPlatforms : archArgsAllPlatforms; //$NON-NLS-1$
+ 			return getCompleteArgs(archArgs, getProgramArguments(L_ARGS_SOLAR), fProgramArgs[L_ARGS_ARCH_ALL]);
 +		} else if (Platform.OS_FREEBSD.equals(os)) {
-+			return getCompleteArgs(getProgramArguments(L_ARGS_FRBSD), fProgramArgs);
++			archArgs = archIndex > 0 ? getProgramArguments(L_ARGS_FRBSD, archIndex) + " " + archArgsAllPlatforms : archArgsAllPlatforms; //$NON-NLS-1$
++			return getCompleteArgs(archArgs, getProgramArguments(L_ARGS_FRBSD), fProgramArgs[L_ARGS_ARCH_ALL]);
  		} else {
- 			return getProgramArguments(L_ARGS_ALL);
+ 			return getCompleteArgs(archArgsAllPlatforms, "", fProgramArgs[L_ARGS_ALL]); //$NON-NLS-1$
  		}
-@@ -114,6 +126,12 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+@@ -170,6 +185,12 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  				if (isEditable())
- 					firePropertyChanged(P_VM_ARGS, old, fVMArgs);
+ 					firePropertyChanged(P_VM_ARGS, old, fVMArgs[arch]);
  				break;
 +			case L_ARGS_FRBSD :
-+				old = fVMArgsFre;
-+				fVMArgsFre = args;
++				old = fVMArgsFre[arch];
++				fVMArgsFre[arch] = args;
 +				if (isEditable())
-+					firePropertyChanged(P_VM_ARGS_FRE, old, fVMArgsFre);
++					firePropertyChanged(P_VM_ARGS_FRE, old, fVMArgsFre[arch]);
 +				break;
  			case L_ARGS_LINUX :
- 				old = fVMArgsLin;
- 				fVMArgsLin = args;
-@@ -145,6 +163,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 				old = fVMArgsLin[arch];
+ 				fVMArgsLin[arch] = args;
+@@ -205,6 +226,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  		switch (platform) {
  			case L_ARGS_ALL :
- 				return fVMArgs;
+ 				return fVMArgs[arch];
 +			case L_ARGS_FRBSD :
-+				return fVMArgsFre;
++				return fVMArgsFre[arch];
  			case L_ARGS_LINUX :
- 				return fVMArgsLin;
+ 				return fVMArgsLin[arch];
  			case L_ARGS_MACOS :
-@@ -166,6 +186,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 			return getCompleteArgs(getVMArguments(L_ARGS_MACOS), fVMArgs);
+@@ -255,6 +278,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  		} else if (Platform.OS_SOLARIS.equals(os)) {
- 			return getCompleteArgs(getVMArguments(L_ARGS_SOLAR), fVMArgs);
+ 			archArgs = archIndex > 0 ? getVMArguments(L_ARGS_SOLAR, archIndex) + " " + archArgsAllPlatforms : archArgsAllPlatforms; //$NON-NLS-1$
+ 			return getCompleteArgs(archArgs, getVMArguments(L_ARGS_SOLAR), fVMArgs[L_ARGS_ARCH_ALL]);
 +		} else if (Platform.OS_FREEBSD.equals(os)) {
-+			return getCompleteArgs(getVMArguments(L_ARGS_FRBSD), fVMArgs);
++			archArgs = archIndex > 0 ? getVMArguments(L_ARGS_FRBSD, archIndex) + " " + archArgsAllPlatforms : archArgsAllPlatforms; //$NON-NLS-1$
++			return getCompleteArgs(archArgs, getVMArguments(L_ARGS_FRBSD), fVMArgs[L_ARGS_ARCH_ALL]);
  		} else {
- 			return getVMArguments(L_ARGS_ALL);
+ 			return getCompleteArgs(archArgsAllPlatforms, "", fVMArgs[L_ARGS_ARCH_ALL]); //$NON-NLS-1$
  		}
-@@ -193,6 +215,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 					fProgramArgsSol = getText(child);
- 				} else if (child.getNodeName().equals(P_PROG_ARGS_WIN)) {
- 					fProgramArgsWin = getText(child);
+@@ -278,6 +304,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 				if (child.getNodeName().equals(P_PROG_ARGS)) {
+ 					parentArgs = fProgramArgs;
+ 					fProgramArgs[L_ARGS_ARCH_ALL] = getText(child).trim();
 +				} else if (child.getNodeName().equals(P_PROG_ARGS_FRE)) {
-+					fProgramArgsFre = getText(child);
++					parentArgs = fProgramArgsFre;
++					fProgramArgsFre[L_ARGS_ARCH_ALL] = getText(child).trim();
+ 				} else if (child.getNodeName().equals(P_PROG_ARGS_LIN)) {
+ 					parentArgs = fProgramArgsLin;
+ 					fProgramArgsLin[L_ARGS_ARCH_ALL] = getText(child).trim();
+@@ -293,6 +322,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
  				} else if (child.getNodeName().equals(P_VM_ARGS)) {
- 					fVMArgs = getText(child);
- 				} else if (child.getNodeName().equals(P_VM_ARGS_LIN)) {
-@@ -203,6 +227,8 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 					fVMArgsSol = getText(child);
- 				} else if (child.getNodeName().equals(P_VM_ARGS_WIN)) {
- 					fVMArgsWin = getText(child);
+ 					parentArgs = fVMArgs;
+ 					fVMArgs[L_ARGS_ARCH_ALL] = getText(child).trim();
 +				} else if (child.getNodeName().equals(P_VM_ARGS_FRE)) {
-+					fVMArgsFre = getText(child);
- 				}
- 			}
++					parentArgs = fVMArgsFre;
++					fVMArgsFre[L_ARGS_ARCH_ALL] = getText(child).trim();
+ 				} else if (child.getNodeName().equals(P_VM_ARGS_LIN)) {
+ 					parentArgs = fVMArgsLin;
+ 					fVMArgsLin[L_ARGS_ARCH_ALL] = getText(child).trim();
+@@ -353,6 +385,15 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 			writeArchArgs(fProgramArgs, subIndent, writer);
+ 			writer.println(subIndent + "</" + P_PROG_ARGS + ">"); //$NON-NLS-1$ //$NON-NLS-2$
  		}
-@@ -234,6 +260,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 		if (fProgramArgsWin.length() > 0) {
- 			writer.println(indent + "   " + "<" + P_PROG_ARGS_WIN + ">" + getWritableString(fProgramArgsWin) + "</" + P_PROG_ARGS_WIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
- 		}
-+		if (fProgramArgsFre.length() > 0) {
-+			writer.println(indent + "   " + "<" + P_PROG_ARGS_FRE + ">" + getWritableString(fProgramArgsFre) + "</" + P_PROG_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
++		if (hasArgs(fProgramArgsFre)) {
++			writer.print(subIndent + "<" + P_PROG_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
++			if (fProgramArgsFre[L_ARGS_ARCH_ALL].length() > 0) {
++				writer.print(getWritableString(fProgramArgsFre[L_ARGS_ARCH_ALL]));
++			}
++			writer.println();
++			writeArchArgs(fProgramArgsFre, subIndent, writer);
++			writer.println(subIndent + "</" + P_PROG_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
 +		}
- 		if (fVMArgs.length() > 0) {
- 			writer.println(indent + "   " + "<" + P_VM_ARGS + ">" + getWritableString(fVMArgs) + "</" + P_VM_ARGS + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+ 		if (hasArgs(fProgramArgsLin)) {
+ 			writer.print(subIndent + "<" + P_PROG_ARGS_LIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$
+ 			if (fProgramArgsLin[L_ARGS_ARCH_ALL].length() > 0) {
+@@ -398,6 +439,15 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
+ 			writeArchArgs(fVMArgs, subIndent, writer);
+ 			writer.println(subIndent + "</" + P_VM_ARGS + ">"); //$NON-NLS-1$ //$NON-NLS-2$
  		}
-@@ -249,6 +278,9 @@ public class ArgumentsInfo extends ProductObject implements IArgumentsInfo {
- 		if (fVMArgsWin.length() > 0) {
- 			writer.println(indent + "   " + "<" + P_VM_ARGS_WIN + ">" + getWritableString(fVMArgsWin) + "</" + P_VM_ARGS_WIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
- 		}
-+		if (fVMArgsFre.length() > 0) {
-+			writer.println(indent + "   " + "<" + P_VM_ARGS_FRE + ">" + getWritableString(fVMArgsFre) + "</" + P_VM_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
++		if (hasArgs(fVMArgsFre)) {
++			writer.print(subIndent + "<" + P_VM_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
++			if (fVMArgsFre[L_ARGS_ARCH_ALL].length() > 0) {
++				writer.print(getWritableString(fVMArgsFre[L_ARGS_ARCH_ALL]));
++			}
++			writer.println();
++			writeArchArgs(fVMArgsFre, subIndent, writer);
++			writer.println(subIndent + "</" + P_VM_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
 +		}
- 		writer.println(indent + "</launcherArgs>"); //$NON-NLS-1$
- 	}
- 
+ 		if (hasArgs(fVMArgsLin)) {
+ 			writer.print(subIndent + "<" + P_VM_ARGS_LIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$
+ 			if (fVMArgsLin[L_ARGS_ARCH_ALL].length() > 0) {
 diff --git a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ConfigurationFileInfo.java b/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ConfigurationFileInfo.java
 index c3c286b..ab12da0 100644
 --- a/eclipse.pde.ui/ui/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ConfigurationFileInfo.java
@@ -737,10 +760,10 @@ index 3c8c426..fa46f72 100644
  		presentation.add(implementation);
  
 diff --git a/eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml b/eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml
-index 4be88a5..27e2cd3 100644
+index 7e7e8ac..72c8597 100644
 --- a/eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml
 +++ b/eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml
-@@ -59,6 +59,7 @@
+@@ -60,6 +60,7 @@
                  <plugin id="org.eclipse.core.filesystem.aix.ppc"/>
                  <plugin id="org.eclipse.core.filesystem.aix.ppc64"/>
                  <plugin id="org.eclipse.core.filesystem.hpux.ia64"/>
@@ -748,32 +771,40 @@ index 4be88a5..27e2cd3 100644
                  <plugin id="org.eclipse.core.filesystem.linux.x86"/>
                  <plugin id="org.eclipse.core.filesystem.linux.x86_64"/>
                  <plugin id="org.eclipse.core.filesystem.solaris.sparc"/>
-@@ -73,9 +75,13 @@
+@@ -70,11 +72,16 @@
+                 <plugin id="org.eclipse.core.filesystem.linux.ppc64"/>
+                 <plugin id="org.eclipse.core.resources.win32.x86"/>
+                 <plugin id="org.eclipse.core.resources.win32.x86_64"/>
++                <plugin id="org.eclipse.core.net.freebsd.%%ECLIPSE_ARCH%%"/>
+                 <plugin id="org.eclipse.core.net.linux.x86"/>
                  <plugin id="org.eclipse.core.net.linux.x86_64"/>
                  <plugin id="org.eclipse.core.net.win32.x86"/>
                  <plugin id="org.eclipse.core.net.win32.x86_64"/>
-+                <plugin id="org.eclipse.compare.win32"/>
-+                <plugin id="org.eclipse.ui.win32"/>
-                 <plugin id="org.eclipse.update.core.linux"/>
-                 <plugin id="org.eclipse.update.core.win32"/>
                  <plugin id="org.eclipse.equinox.security.macosx"/>
 +                <plugin id="org.eclipse.equinox.security.win32.x86"/>
 +                <plugin id="org.eclipse.equinox.security.win32.x86_64"/>
++                <plugin id="org.eclipse.compare.win32"/>
++                <plugin id="org.eclipse.ui.win32"/>
                </excludes>
              </configuration>
            </execution>
 diff --git a/eclipse.platform.releng/features/org.eclipse.sdk.examples-feature/pom.xml b/eclipse.platform.releng/features/org.eclipse.sdk.examples-feature/pom.xml
-index c949520..11ee54a 100644
+index d8c8edf..886e7d8 100644
 --- a/eclipse.platform.releng/features/org.eclipse.sdk.examples-feature/pom.xml
 +++ b/eclipse.platform.releng/features/org.eclipse.sdk.examples-feature/pom.xml
-@@ -36,6 +36,7 @@
-             <configuration>
+@@ -39,11 +39,9 @@
+               <features>
+                 <feature id="org.eclipse.sdk.examples"/>
+               </features>
+-              <!-- 
                <excludes>
-                 <plugin id="org.eclipse.sdk.examples"/>
+-                <plugin id="org.eclipse.sdk.examples"/>
 +                <plugin id="org.eclipse.swt.examples.ole.win32"/>
-                 <feature id="org.eclipse.sdk.examples.source"/>
                </excludes>
+-               -->
              </configuration>
+           </execution>
+         </executions>
 diff --git a/eclipse.platform.resources/bundles/org.eclipse.core.filesystem/src/org/eclipse/core/internal/filesystem/local/LocalFileSystem.java b/eclipse.platform.resources/bundles/org.eclipse.core.filesystem/src/org/eclipse/core/internal/filesystem/local/LocalFileSystem.java
 index a335001..003e20a 100644
 --- a/eclipse.platform.resources/bundles/org.eclipse.core.filesystem/src/org/eclipse/core/internal/filesystem/local/LocalFileSystem.java
@@ -795,7 +826,7 @@ index 4b33285..6b6fcc7 100644
  
    <modules>
      <module>bundles/org.eclipse.core.filesystem</module>
-+    <module>bundles/org.eclipse.core.filesystem.freebsd.%%ECLIPSE_ARCH%%</module>
++    <module>bundles/org.eclipse.core.filesystem/fragments/org.eclipse.core.filesystem.freebsd.%%ECLIPSE_ARCH%%</module>
      <module>bundles/org.eclipse.core.filesystem.hpux.ia64</module>
      <module>bundles/org.eclipse.core.filesystem.hpux.PA_RISC</module>
      <module>bundles/org.eclipse.core.filesystem.linux.ppc</module>
@@ -909,20 +940,6 @@ diff --git a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/lib
 index 689616e..86afdfe 100644
 --- a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	
 +++ b/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	
-@@ -12,12 +12,12 @@
- #     Tom Tromey (Red Hat, Inc.)
- #*******************************************************************************
- 
-+COMPONENTS_DIR=`pwd`/../../components
- cd `dirname $0`
- 
- MAKE_TYPE=make
- 
- # Check if we have to compile external.xpt from external.idl
--COMPONENTS_DIR=`pwd`/../../components
- if test ! -f ${COMPONENTS_DIR}/external.xpt; then
- 	if test ! -f ${COMPONENTS_DIR}/external.idl; then
- 		echo "Can't find ${COMPONENTS_DIR}/external.idl"
 @@ -64,6 +64,8 @@ case $OS in
  	"FreeBSD")
  		SWT_OS=freebsd
@@ -1014,9 +1031,16 @@ index 689616e..86afdfe 100644
 +	${MAKE_TYPE} -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA $MAKE_WEBKIT ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
  fi
 diff --git a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak b/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak
-index 0bf9416..e955aa9 100644
+index d2da90e..51989f8 100644
 --- a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	
 +++ b/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	
+@@ -1,5 +1,5 @@
+ #*******************************************************************************
+-# Copyright (c) 2000, 2011 IBM Corporation and others.
++# Copyright (c) 2000, 2012 IBM Corporation and others.
+ # All rights reserved. This program and the accompanying materials
+ # are made available under the terms of the Eclipse Public License v1.0
+ # which accompanies this distribution, and is available at
 @@ -9,7 +9,7 @@
  #     IBM Corporation - initial API and implementation
  #*******************************************************************************
@@ -1026,166 +1050,192 @@ index 0bf9416..e955aa9 100644
  
  include make_common.mak
  
-@@ -27,6 +27,7 @@ GNOME_PREFIX = swt-gnome
+@@ -21,13 +21,19 @@ WS_PREFIX = gtk
+ SWT_PREFIX = swt
+ CDE_PREFIX = swt-cde
+ AWT_PREFIX = swt-awt
++ifeq ($(GTK_VERSION), 3.0)
++SWTPI_PREFIX = swt-pi3
++else
+ SWTPI_PREFIX = swt-pi
++endif
+ CAIRO_PREFIX = swt-cairo
+ ATK_PREFIX = swt-atk
+ GNOME_PREFIX = swt-gnome
  MOZILLA_PREFIX = swt-mozilla$(GCC_VERSION)
  XULRUNNER_PREFIX = swt-xulrunner
++XULRUNNER24_PREFIX = swt-xulrunner24
  XPCOMINIT_PREFIX = swt-xpcominit
 +WEBKIT_PREFIX = swt-webkit
  GLX_PREFIX = swt-glx
  
  SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
-@@ -39,6 +40,7 @@ GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+@@ -39,28 +45,36 @@ ATK_LIB = lib$(ATK_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
  MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
  XULRUNNER_LIB = lib$(XULRUNNER_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
++XULRUNNER24_LIB = lib$(XULRUNNER24_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
  XPCOMINIT_LIB = lib$(XPCOMINIT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 +WEBKIT_LIB = lib$(WEBKIT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
  GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
  
  CAIROCFLAGS = `pkg-config --cflags cairo`
-@@ -46,7 +48,7 @@ CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
+ CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
  
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
- GTKCFLAGS = `pkg-config --cflags gtk+-2.0`
+-GTKCFLAGS = `pkg-config --cflags gtk+-2.0 gtk+-unix-print-$(GTK_VERSION)`
 -GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L/usr/X11R6/lib $(XLIB64) -lXtst
-+GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L/usr/local/lib $(XLIB64) -lXtst
++GTKCFLAGS = `pkg-config --cflags gtk+-$(GTK_VERSION) gtk+-unix-print-$(GTK_VERSION)`
++ifeq ($(GTK_VERSION), 3.0)
++GTKLIBS = `pkg-config --libs-only-L gtk+-$(GTK_VERSION) gthread-2.0` $(XLIB64) -L/usr/X11R6/lib -lgtk-3 -lgdk-3 -lcairo -lgthread-2.0 -lXtst
++else
++GTKLIBS = `pkg-config --libs-only-L gtk+-$(GTK_VERSION) gthread-2.0` $(XLIB64) -L/usr/X11R6/lib -lgtk-x11-$(GTK_VERSION) -lgthread-2.0 -lXtst
++endif
  
  CDE_LIBS = -L$(CDE_HOME)/lib -R$(CDE_HOME)/lib -lXt -lX11 -lDtSvc
  
-@@ -59,7 +61,8 @@ ATKLIBS = `pkg-config --libs-only-L atk gtk+-2.0` -latk-1.0 -lgtk-x11-2.0
+-AWT_LFLAGS = -shared
++AWT_LFLAGS = -shared ${SWT_LFLAGS} 
+ AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
+ 
+-ATKCFLAGS = `pkg-config --cflags atk gtk+-2.0 gtk+-unix-print-$(GTK_VERSION)`
+-ATKLIBS = `pkg-config --libs-only-L atk gtk+-2.0` -latk-1.0 -lgtk-x11-2.0
++ATKCFLAGS = `pkg-config --cflags atk gtk+-$(GTK_VERSION) gtk+-unix-print-$(GTK_VERSION)`
++ATKLIBS = `pkg-config --libs-only-L atk` -latk-1.0 
+ 
  GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
  GNOMELIBS = `pkg-config --libs-only-L gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0` -lgnomevfs-2 -lgnome-2 -lgnomeui-2
  
 -GLXLIBS = -L/usr/X11R6/lib -lGL -lGLU -lm
-+GLXCFLAGS = -I/usr/local/include
-+GLXLIBS = -L/usr/local/lib -lGL -lGLU -lm
++GLXLIBS = -lGL -lGLU -lm
++
++SWT_LFLAGS = -L/usr/local/lib
  
  # Uncomment for Native Stats tool
  #NATIVE_STATS = -DNATIVE_STATS
-@@ -76,9 +79,22 @@ MOZILLACFLAGS = -O \
+@@ -75,11 +89,24 @@ MOZILLACFLAGS = -O \
+ 	-Wno-non-virtual-dtor \
+ 	-fPIC \
  	-I. \
++	-I/usr/local/include \
  	-I$(JAVA_HOME)/include \
  	-I$(JAVA_HOME)/include/freebsd \
-+	-std=c++11 \
  	${SWT_PTR_CFLAGS}
- MOZILLALFLAGS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
-+XULRUNNER_EXCLUDES =-DNO__1XPCOMGlueShutdown
+-MOZILLALFLAGS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
+-	
++MOZILLALFLAGS = -shared ${SWT_LFLAGS} -Wl,--version-script=mozilla_exports -Bsymbolic
++MOZILLAEXCLUDES = -DNO__1XPCOMGlueShutdown \
++	-DNO__1XPCOMGlueStartup \
++	-DNO__1XPCOMGlueLoadXULFunctions \
++	-DNO_memmove__ILorg_eclipse_swt_internal_mozilla_nsDynamicFunctionLoad_2I \
++	-DNO_memmove__JLorg_eclipse_swt_internal_mozilla_nsDynamicFunctionLoad_2J \
++	-DNO_nsDynamicFunctionLoad_1sizeof \
++	-DNO__1Call__IIIIII \
++	-DNO__1Call__JJJJJI \
++	-DNO_nsDynamicFunctionLoad
++XULRUNNEREXCLUDES = -DNO__1NS_1InitXPCOM2
 +
-+WEBKITCFLAGS = `pkg-config --cflags glib-2.0`
-+
-+SWT_OBJECTS = swt.o c.o c_stats.o callback.o
-+CDE_OBJECTS = swt.o cde.o cde_structs.o cde_stats.o
-+AWT_OBJECTS = swt_awt.o
-+SWTPI_OBJECTS = swt.o os.o os_structs.o os_custom.o os_stats.o
-+CAIRO_OBJECTS = swt.o cairo.o cairo_structs.o cairo_stats.o
-+ATK_OBJECTS = swt.o atk.o atk_structs.o atk_custom.o atk_stats.o
- 	
 +WEBKITCFLAGS = `pkg-config --cflags glib-2.0`
 +
  SWT_OBJECTS = swt.o c.o c_stats.o callback.o
  CDE_OBJECTS = swt.o cde.o cde_structs.o cde_stats.o
  AWT_OBJECTS = swt_awt.o
-@@ -87,8 +103,9 @@ CAIRO_OBJECTS = swt.o cairo.o cairo_structs.o cairo_stats.o
+@@ -88,19 +115,22 @@ CAIRO_OBJECTS = swt.o cairo.o cairo_structs.o cairo_stats.o
  ATK_OBJECTS = swt.o atk.o atk_structs.o atk_custom.o atk_stats.o
  GNOME_OBJECTS = swt.o gnome.o gnome_structs.o gnome_stats.o
  MOZILLA_OBJECTS = swt.o xpcom.o xpcom_custom.o xpcom_structs.o xpcom_stats.o
 -XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o xpcomxulglue.o xpcomxulglue_stats.o
 +XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o
++XULRUNNER24_OBJECTS = swt.o xpcom24_custom.o
  XPCOMINIT_OBJECTS = swt.o xpcominit.o xpcominit_structs.o xpcominit_stats.o
 +WEBKIT_OBJECTS = swt.o webkit.o webkit_structs.o webkit_stats.o
  GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
  
  CFLAGS = -O -Wall \
-@@ -101,13 +118,16 @@ CFLAGS = -O -Wall \
+ 		-DSWT_VERSION=$(SWT_VERSION) \
+ 		$(NATIVE_STATS) \
+ 		-DFREEBSD -DGTK \
++		-I/usr/local/include \
+ 		-I$(JAVA_HOME)/include \
+ 		-I$(JAVA_HOME)/include/freebsd \
+ 		-fPIC \
  		${SWT_PTR_CFLAGS}
- LFLAGS = -shared -fPIC
+-LFLAGS = -shared -fPIC
++LFLAGS = -shared -fPIC ${SWT_LFLAGS}
  
-+CFLAGS := $(CFLAGS) -I/usr/local/include
-+LDFLAGS := $(LDFLAGS) -L/usr/local/lib
-+
  ifndef NO_STRIP
  	AWT_LFLAGS := $(AWT_LFLAGS) -s
- 	MOZILLALFLAGS := $(MOZILLALFLAGS) -s
+@@ -108,7 +138,7 @@ ifndef NO_STRIP
  	LFLAGS := $(LFLAGS) -s
  endif
  
 -all: make_swt make_atk make_gnome make_glx
-+all: make_swt make_atk make_glx
++all: make_swt make_atk make_glx make_webkit
  
  #
  # SWT libs
-@@ -164,7 +184,7 @@ $(CDE_LIB): $(CDE_OBJECTS)
- make_awt:$(AWT_LIB)
+@@ -210,42 +240,47 @@ $(MOZILLA_LIB): $(MOZILLA_OBJECTS)
+ 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALFLAGS) ${MOZILLA_LIBS}
  
- $(AWT_LIB): $(AWT_OBJECTS)
--	$(CC) $(AWT_LFLAGS) -o $(AWT_LIB) $(AWT_OBJECTS) $(AWT_LIBS)
-+	$(CC) $(CFLAGS) $(LDFLAGS) $(AWT_LFLAGS) -o $(AWT_LIB) $(AWT_OBJECTS) $(AWT_LIBS)
- 
- #
- # Atk lib
-@@ -203,22 +223,22 @@ gnome_stats.o: gnome_stats.c gnome_stats.h
- #
- # Mozilla lib
- #
--make_mozilla:$(MOZILLA_LIB)
-+##make_mozilla:$(MOZILLA_LIB)
- 
--$(MOZILLA_LIB): $(MOZILLA_OBJECTS)
--	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALFLAGS) ${MOZILLA_LIBS}
-+##$(MOZILLA_LIB): $(MOZILLA_OBJECTS)
-+##	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALFLAGS) ${MOZILLA_LIBS}
- 
--xpcom.o: xpcom.cpp
+ xpcom.o: xpcom.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom.cpp
-+##xpcom.o: xpcom.cpp
-+##	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom.cpp
++	$(CXX) $(MOZILLACFLAGS) $(MOZILLAEXCLUDES) ${MOZILLA_INCLUDES} -c xpcom.cpp
  
--xpcom_structs.o: xpcom_structs.cpp
+ xpcom_structs.o: xpcom_structs.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_structs.cpp
-+##xpcom_structs.o: xpcom_structs.cpp
-+##	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_structs.cpp
++	$(CXX) $(MOZILLACFLAGS) $(MOZILLAEXCLUDES) ${MOZILLA_INCLUDES} -c xpcom_structs.cpp
  	
--xpcom_custom.o: xpcom_custom.cpp
+ xpcom_custom.o: xpcom_custom.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_custom.cpp
-+##xpcom_custom.o: xpcom_custom.cpp
-+##	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_custom.cpp
++	$(CXX) $(MOZILLACFLAGS) $(MOZILLAEXCLUDES) ${MOZILLA_INCLUDES} -c xpcom_custom.cpp
  
--xpcom_stats.o: xpcom_stats.cpp
+ xpcom_stats.o: xpcom_stats.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_stats.cpp
-+##xpcom_stats.o: xpcom_stats.cpp
-+##	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom_stats.cpp
++	$(CXX) $(MOZILLACFLAGS) $(MOZILLAEXCLUDES) ${MOZILLA_INCLUDES} -c xpcom_stats.cpp
  
  #
- # XULRunner lib
-@@ -229,22 +249,22 @@ $(XULRUNNER_LIB): $(XULRUNNER_OBJECTS)
+-# XULRunner lib
++# XULRunner libs
+ #
+ make_xulrunner:$(XULRUNNER_LIB)
+ 
+ $(XULRUNNER_LIB): $(XULRUNNER_OBJECTS)
++	echo -e "#include<stdlib.h>\nsize_t je_malloc_usable_size_in_advance(size_t n) {\nreturn n;\n}" | $(CXX) $(LFLAGS) $(CFLAGS) -xc - -o libswt-xulrunner-fix10.so
  	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALFLAGS) ${XULRUNNER_LIBS}
  
  xpcomxul.o: xpcom.cpp
 -	$(CXX) -o xpcomxul.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom.cpp
-+	$(CXX) -o xpcomxul.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcom.cpp
++	$(CXX) -o xpcomxul.o $(MOZILLACFLAGS) $(XULRUNNEREXCLUDES) ${XULRUNNER_INCLUDES} -c xpcom.cpp
  
  xpcomxul_structs.o: xpcom_structs.cpp
 -	$(CXX) -o xpcomxul_structs.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom_structs.cpp
-+	$(CXX) -o xpcomxul_structs.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcom_structs.cpp
++	$(CXX) -o xpcomxul_structs.o $(MOZILLACFLAGS) $(XULRUNNEREXCLUDES) ${XULRUNNER_INCLUDES} -c xpcom_structs.cpp
  	
  xpcomxul_custom.o: xpcom_custom.cpp
 -	$(CXX) -o xpcomxul_custom.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom_custom.cpp
-+	$(CXX) -o xpcomxul_custom.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcom_custom.cpp
++	$(CXX) -o xpcomxul_custom.o $(MOZILLACFLAGS) $(XULRUNNEREXCLUDES) ${XULRUNNER_INCLUDES} -c xpcom_custom.cpp
  
  xpcomxul_stats.o: xpcom_stats.cpp
 -	$(CXX) -o xpcomxul_stats.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom_stats.cpp
-+	$(CXX) -o xpcomxul_stats.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcom_stats.cpp
++	$(CXX) -o xpcomxul_stats.o $(MOZILLACFLAGS) $(XULRUNNEREXCLUDES) ${XULRUNNER_INCLUDES} -c xpcom_stats.cpp
++
++
++make_xulrunner24:$(XULRUNNER24_LIB)
  
- xpcomxulglue.o: xpcomglue.cpp
+-xpcomxulglue.o: xpcomglue.cpp
 -	$(CXX) -o xpcomxulglue.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcomglue.cpp
-+	$(CXX) -o xpcomxulglue.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcomglue.cpp
++$(XULRUNNER24_LIB): $(XULRUNNER24_OBJECTS)
++	echo -e "#include<stdlib.h>\nsize_t je_malloc_usable_size_in_advance(size_t n) {\nreturn n;\n}" | $(CXX) $(LFLAGS) $(CFLAGS) -L${XULRUNNER24_SDK}/lib -Wl,--whole-archive -lmozglue -Wl,--no-whole-archive -xc - -o libswt-xulrunner-fix24.so
++	$(CXX) -o $(XULRUNNER24_LIB) $(XULRUNNER24_OBJECTS) $(MOZILLALFLAGS) -L${XULRUNNER24_SDK}/lib -lxpcomglue
  
- xpcomxulglue_stats.o: xpcomglue_stats.cpp
+-xpcomxulglue_stats.o: xpcomglue_stats.cpp
 -	$(CXX) -o xpcomxulglue_stats.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcomglue_stats.cpp
-+	$(CXX) -o xpcomxulglue_stats.o $(MOZILLACFLAGS) ${XULRUNNER_EXCLUDES} ${XULRUNNER_INCLUDES} -c xpcomglue_stats.cpp
++xpcom24_custom.o: xpcom24_custom.cpp
++	$(CXX) $(MOZILLACFLAGS) -c xpcom24_custom.cpp
  
  #
  # XPCOMInit lib
-@@ -264,6 +284,23 @@ xpcominit_stats.o: xpcominit_stats.cpp
+@@ -265,6 +300,23 @@ xpcominit_stats.o: xpcominit_stats.cpp
  	$(CXX) $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcominit_stats.cpp
  
  #
@@ -1232,17 +1282,17 @@ index 8392189..f02a5ef 100644
  #endif
  
 diff --git a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java b/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java
-index 7e282a9..59f36c5 100644
+index cc81dd1..fa992cd 100644
 --- a/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	
 +++ b/eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	
-@@ -33,18 +33,19 @@ public class OS extends C {
+@@ -47,18 +47,19 @@ public class OS extends C {
  	}
- 	
+ 
  	/** OS Constants */
 -	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX, BIG_ENDIAN;
 +	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX, IsFreeBSD, BIG_ENDIAN;
  	static {
- 		
+ 
  		/* Initialize the OS flags and locale constants */
  		String osName = System.getProperty ("os.name");
 -		boolean isAIX = false, isSunOS = false, isLinux = false, isHPUX = false;
@@ -1254,15 +1304,15 @@ index 7e282a9..59f36c5 100644
  		if (osName.equals ("HP-UX")) isHPUX = true;
 -		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX;
 +		if (osName.equals ("FreeBSD")) isFreeBSD = true;
-+		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX; IsFreeBSD = isFreeBSD;
- 		
++		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX;  IsFreeBSD = isFreeBSD;
+ 
  		byte[] buffer = new byte[4];
  		long /*int*/ ptr = OS.malloc(4);
 diff --git a/eclipse.platform.swt.binaries/pom.xml b/eclipse.platform.swt.binaries/pom.xml
-index 7dd0536..fc0d72c 100644
+index cc8d6f7..46c8f5a 100644
 --- a/eclipse.platform.swt.binaries/pom.xml
 +++ b/eclipse.platform.swt.binaries/pom.xml
-@@ -55,6 +55,7 @@
+@@ -55,7 +56,8 @@
      <module>bundles/org.eclipse.swt.gtk.linux.s390x</module>
      <module>bundles/org.eclipse.swt.gtk.linux.x86</module>
      <module>bundles/org.eclipse.swt.gtk.linux.x86_64</module>
@@ -1270,6 +1320,7 @@ index 7dd0536..fc0d72c 100644
      <module>bundles/org.eclipse.swt.gtk.solaris.sparc</module>
      <module>bundles/org.eclipse.swt.gtk.solaris.x86</module>
      <module>bundles/org.eclipse.swt.win32.win32.x86</module>
+     <module>bundles/org.eclipse.swt.win32.win32.x86_64</module>
 diff --git a/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c b/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c
 index 2417b4e..c665afe 100644
 --- a/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c
@@ -1284,7 +1335,7 @@ index 2417b4e..c665afe 100644
  #else
  #include <strings.h>
 diff --git a/eclipse.platform.team/pom.xml b/eclipse.platform.team/pom.xml
-index 8637ed3..7623ba6 100644
+index d192566..3b590cd 100644
 --- a/eclipse.platform.team/pom.xml
 +++ b/eclipse.platform.team/pom.xml
 @@ -63,6 +63,7 @@
@@ -1336,10 +1387,10 @@ index dec7f54..859167c 100644
  		}
  		if (!tested) {
 diff --git a/eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml b/eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml
-index 242e712..a6ade82 100644
+index 966c283..fdde997 100644
 --- a/eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml
 +++ b/eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml
-@@ -459,6 +469,16 @@
+@@ -455,6 +465,16 @@
           fragment="true"/>
  
     <plugin
@@ -1356,7 +1407,7 @@ index 242e712..a6ade82 100644
           id="org.eclipse.equinox.launcher.gtk.linux.x86_64"
           os="linux"
           ws="gtk"
-@@ -625,6 +656,17 @@
+@@ -621,6 +652,17 @@
           unpack="false"/>
  
     <plugin
@@ -1375,74 +1426,77 @@ index 242e712..a6ade82 100644
           os="linux"
           ws="gtk"
 diff --git a/eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml b/eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml
-index 63b62c4..6523ad9 100644
+index 918a8ff..ceb1b3e 100644
 --- a/eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml
 +++ b/eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml
-@@ -45,6 +45,7 @@
-                 <plugin id="org.eclipse.equinox.launcher.cocoa.macosx"/>
-                 <plugin id="org.eclipse.equinox.launcher.cocoa.macosx"/>
-                 <plugin id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64"/>
-+                <plugin id="org.eclipse.equinox.launcher.gtk.freebsd.%%ECLIPSE_ARCH%%"/>
-                 <plugin id="org.eclipse.equinox.launcher.gtk.linux.ppc"/>
-                 <plugin id="org.eclipse.equinox.launcher.gtk.linux.ppc64"/>
-                 <plugin id="org.eclipse.equinox.launcher.gtk.linux.x86"/>
-@@ -57,6 +59,8 @@
-                 <plugin id="org.eclipse.equinox.launcher.win32.win32.x86"/>
-                 <plugin id="org.eclipse.equinox.launcher.win32.win32.x86_64"/>
+@@ -38,7 +38,26 @@
+               <excludes>
+                 <plugin id="javax.xml"/>
                  <plugin id="org.eclipse.swt"/>
-+                <plugin id="org.eclipse.swt.gtk.linux.x86"/>
-+                <plugin id="org.eclipse.swt.gtk.linux.x86_64"/>
-                 <plugin id="org.eclipse.swt.gtk.linux.s390x"/>
-                 <plugin id="org.eclipse.swt.gtk.linux.s390"/>
-                 <plugin id="org.eclipse.swt.gtk.solaris.sparc"/>
-@@ -64,10 +68,13 @@
-                 <plugin id="org.eclipse.swt.gtk.linux.ppc"/>
-                 <plugin id="org.eclipse.swt.gtk.linux.ppc64"/>
-                 <plugin id="org.eclipse.swt.cocoa.macosx"/>
--                <plugin id="org.eclipse.swt.cocoa.macosx"/>
++                <plugin id="org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%"/>
++                <plugin id="org.eclipse.swt.gtk.solaris.sparc"/>
++                <plugin id="org.eclipse.swt.gtk.solaris.x86"/>
++                <plugin id="org.eclipse.swt.cocoa.macosx"/>
 +                <plugin id="org.eclipse.swt.cocoa.macosx.x86_64"/>
-                 <plugin id="org.eclipse.swt.gtk.aix.ppc"/>
-                 <plugin id="org.eclipse.swt.gtk.aix.ppc64"/>
-                 <plugin id="org.eclipse.swt.gtk.hpux.ia64"/>
++                <plugin id="org.eclipse.swt.gtk.linux.ppc"/>
++                <plugin id="org.eclipse.swt.gtk.linux.ppc64"/>
++                <plugin id="org.eclipse.swt.gtk.linux.ppc64le"/>
++                <plugin id="org.eclipse.swt.gtk.linux.x86"/>
++                <plugin id="org.eclipse.swt.gtk.linux.s390x"/>
++                <plugin id="org.eclipse.swt.gtk.linux.s390"/>
++                <plugin id="org.eclipse.swt.gtk.linux.x86_64"/>
++                <plugin id="org.eclipse.swt.gtk.aix.ppc"/>
++                <plugin id="org.eclipse.swt.gtk.aix.ppc64"/>
++                <plugin id="org.eclipse.swt.gtk.hpux.ia64"/>
 +                <plugin id="org.eclipse.swt.win32.win32.x86"/>
 +                <plugin id="org.eclipse.swt.win32.win32.x86_64"/>
 +                <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa"/>
-                 <plugin id="org.w3c.css.sac"/>
-                 <plugin id="org.w3c.dom.smil"/>
-                 <plugin id="org.w3c.dom.svg"/>
-diff --git a/rt.equinox.bundles/features/org.eclipse.equinox.starterkit.product.feature/pom.xml b/rt.equinox.bundles/features/org.eclipse.equinox.starterkit.product.feature/pom.xml
-index 661fd6c..2363b60 100644
---- a/rt.equinox.bundles/features/org.eclipse.equinox.starterkit.product.feature/pom.xml
-+++ b/rt.equinox.bundles/features/org.eclipse.equinox.starterkit.product.feature/pom.xml
-@@ -31,6 +31,12 @@
-           <resolver>p2</resolver>
-           <environments>
-             <environment>
-+              <os>freebsd</os>
-+              <ws>gtk</ws>
-+              <arch>%%ECLIPSE_ARCH%%</arch>
-+            </environment>
-+<!--
-+            <environment>
-               <os>linux</os>
-               <ws>gtk</ws>
-               <arch>x86</arch>
-@@ -55,6 +66,7 @@
-               <ws>cocoa</ws>
-               <arch>x86_64</arch>
-             </environment>
-+-->
-           </environments>
-         </configuration>
-       </plugin>
+                 <plugin id="org.eclipse.equinox.launcher"/>
++                <plugin id="org.eclipse.equinox.launcher.gtk.freebsd.%%ECLIPSE_ARCH%%"/>
+                 <plugin id="org.eclipse.equinox.launcher.gtk.solaris.sparc"/>
+                 <plugin id="org.eclipse.equinox.launcher.gtk.solaris.x86"/>
+                 <plugin id="org.eclipse.equinox.launcher.cocoa.macosx"/>
 diff --git a/rt.equinox.framework/bundles/org.eclipse.equinox.launcher/pom.xml b/rt.equinox.framework/bundles/org.eclipse.equinox.launcher/pom.xml
-index 659d332..e06e120 100644
+index 32968af..6610342 100644
 --- a/rt.equinox.framework/bundles/org.eclipse.equinox.launcher/pom.xml
 +++ b/rt.equinox.framework/bundles/org.eclipse.equinox.launcher/pom.xml
-@@ -21,4 +21,411 @@
+@@ -21,4 +21,70 @@
    <artifactId>org.eclipse.equinox.launcher</artifactId>
    <version>1.3.0-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
++
++  <build>
++    <pluginManagement>
++      <plugins>
++        <plugin>
++          <artifactId>maven-antrun-plugin</artifactId>
++          <version>1.7</version>
++          <dependencies>
++            <dependency>
++              <groupId>bsf</groupId>
++              <artifactId>bsf</artifactId>
++              <version>2.4.0</version>
++            </dependency>
++            <dependency>
++              <groupId>rhino</groupId>
++              <artifactId>js</artifactId>
++              <version>1.7R2</version>
++            </dependency>
++            <dependency>
++              <groupId>org.apache.ant</groupId>
++              <artifactId>ant-apache-bsf</artifactId>
++              <version>1.8.3</version>
++            </dependency>
++            <dependency>
++              <groupId>org.apache.ant</groupId>
++              <artifactId>ant-nodeps</artifactId>
++              <version>1.8.1</version>
++            </dependency>
++          </dependencies>
++        </plugin>
++      </plugins>
++    </pluginManagement>
++  </build>
 +
 +  <profiles>
 +    <profile>
@@ -1457,7 +1511,6 @@ index 659d332..e06e120 100644
 +        <plugins>
 +          <plugin>
 +            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
 +            <executions>
 +              <execution>
 +                <id>compile-executable-natives</id>
@@ -1472,379 +1525,6 @@ index 659d332..e06e120 100644
 +                </goals>
 +              </execution>
 +            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>build-native-launchers-gtk.linux.x86_64</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>gtk.linux.x86_64</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="../../features/org.eclipse.equinox.executable.feature/library/gtk/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>build-native-launchers-gtk.linux.x86</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>gtk.linux.x86</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="../../features/org.eclipse.equinox.executable.feature/library/gtk/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>build-native-launchers-win32.win32.x86_64</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>win32.win32.x86_64</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="../../features/org.eclipse.equinox.executable.feature/library/win32/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>build-native-launchers-win32.win32.x86</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>win32.win32.x86</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="../../features/org.eclipse.equinox.executable.feature/library/win32/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>build-native-launchers-cocoa.macosx.x86_64</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>cocoa.macosx.x86_64</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="../../features/org.eclipse.equinox.executable.feature/library/carbon/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-+      <id>assemble-launchers</id>
-+      <activation>
-+        <property>
-+          <!-- workaround. activeByDefault is disabled when another profile is 
-+            selected. -->
-+          <name>!longnotexistingproperty</name>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>copy-executable-natives</id>
-+                <phase>process-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <!-- We need to get binary bits from binary repo -->
-+                    <!-- If local binaries had been built, copy will not overwrite 
-+                      them -->
-+                    <copy todir="bin">
-+                      <fileset dir="../../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/">
-+                        <include name="**/*"/>
-+                      </fileset>
-+                    </copy>
-+                    <copy todir="contributed">
-+                      <fileset dir="../../../rt.equinox.binaries/org.eclipse.equinox.executable/contributed/">
-+                        <include name="**/*"/>
-+                      </fileset>
-+                    </copy>
-+
-+                    <!-- Things below were copied from custombuildCallbacks.xml, as 
-+                      Tycho does not support that -->
-+                    <copy includeEmptyDirs="false" todir="tempBin">
-+                      <fileset dir="bin"/>
-+                    </copy>
-+                    <delete dir="bin"/>
-+                    <move todir="bin">
-+                      <fileset dir="tempBin"/>
-+                    </move>
-+
-+                    <!-- rename eclipse launchers to "launcher" -->
-+                    <move todir="bin" verbose="true">
-+                      <fileset dir="bin"/>
-+                      <regexpmapper from="^(.*[/\\])eclipse(.exe)?$" to="\1launcher\2"/>
-+                    </move>
-+                    <move todir="contributed" verbose="true">
-+                      <fileset dir="contributed"/>
-+                      <regexpmapper from="^(.*[/\\])eclipse(.exe)?$" to="\1launcher\2"/>
-+                    </move>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
 +          </plugin>
 +        </plugins>
 +      </build>
@@ -1903,10 +1583,10 @@ index 85417f6..5448261 100644
  		return Constants.OS_UNKNOWN;
  	}
  
-diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi/core/adaptor/org/eclipse/osgi/util/TextProcessor.java b/rt.equinox.framework/bundles/org.eclipse.osgi/core/adaptor/org/eclipse/osgi/util/TextProcessor.java
+diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java b/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java
 index 6f2b039..7feb9b6 100644
---- a/rt.equinox.framework/bundles/org.eclipse.osgi/core/adaptor/org/eclipse/osgi/util/TextProcessor.java
-+++ b/rt.equinox.framework/bundles/org.eclipse.osgi/core/adaptor/org/eclipse/osgi/util/TextProcessor.java
+--- a/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java
++++ b/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java
 @@ -77,7 +77,7 @@ public class TextProcessor {
  
  		if ("iw".equals(lang) || "he".equals(lang) || "ar".equals(lang) || "fa".equals(lang) || "ur".equals(lang)) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -1916,18 +1596,18 @@ index 6f2b039..7feb9b6 100644
  				IS_PROCESSING_NEEDED = true;
  			}
  		}
-diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/EclipseEnvironmentInfo.java b/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/EclipseEnvironmentInfo.java
+diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java b/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java
 index 0d091d7..5acffe0 100644
---- a/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/EclipseEnvironmentInfo.java
-+++ b/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/EclipseEnvironmentInfo.java
+--- a/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java
++++ b/rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java
 @@ -40,6 +40,7 @@ public class EclipseEnvironmentInfo implements EnvironmentInfo {
  	private static final String INTERNAL_OS_OS400 = "OS/400"; //$NON-NLS-1$
  	private static final String INTERNAL_OS_OS390 = "OS/390"; //$NON-NLS-1$
  	private static final String INTERNAL_OS_ZOS = "z/OS"; //$NON-NLS-1$
 +	private static final String INTERNAL_OS_FREEBSD = "FreeBSD"; //$NON-NLS-1$
- 
  	// While we recognize the i386 architecture, we change
  	// this internally to be x86.
+	private static final String INTERNAL_ARCH_I386 = "i386"; //$NON-NLS-1$
 @@ -202,6 +203,8 @@ public class EclipseEnvironmentInfo implements EnvironmentInfo {
  			return Constants.WS_GTK;
  		if (osName.equals(Constants.OS_QNX))
@@ -1946,10 +1626,10 @@ index 0d091d7..5acffe0 100644
  		return Constants.OS_UNKNOWN;
  	}
  
-diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/PluginConverterImpl.java b/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/PluginConverterImpl.java
+diff --git a/rt.equinox.framework/bundles/org.eclipse.osgi.compatibility.plugins/src/org/eclipse/osgi/compatibility/plugins/PluginConverterImpl.java b/rt.equinox.framework/bundles/org.eclipse.osgi.compatibility.plugins/src/org/eclipse/osgi/compatibility/plugins/PluginConverterImpl.java
 index fe1447f..3160fd5 100644
---- a/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/PluginConverterImpl.java
-+++ b/rt.equinox.framework/bundles/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/internal/adaptor/PluginConverterImpl.java
+--- a/rt.equinox.framework/bundles/org.eclipse.osgi.compatibility.plugins/src/org/eclipse/osgi/compatibility/plugins/PluginConverterImpl.java
++++ b/rt.equinox.framework/bundles/org.eclipse.osgi.compatibility.plugins/src/org/eclipse/osgi/compatibility/plugins/PluginConverterImpl.java
 @@ -68,7 +68,7 @@ public class PluginConverterImpl implements PluginConverter {
  	static public final String FRAGMENT_MANIFEST = "fragment.xml"; //$NON-NLS-1$
  	static public final String GENERATED_FROM = "Generated-from"; //$NON-NLS-1$
@@ -2061,85 +1741,18 @@ index 29d3871..0ca7ccd 100644
  	fi
  else
 diff --git a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/pom.xml b/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/pom.xml
-index 939c8b5..c2491a5 100644
+index 156de22..7353724 100644
 --- a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/pom.xml
 +++ b/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/pom.xml
-@@ -101,6 +101,7 @@
-   </build>
- 
-   <profiles>
-+<!--
-     <profile>
-       <id>build-native-launchers-gtk.linux.x86_64</id>
-       <activation>
-@@ -208,6 +209,59 @@
-       </build>
-     </profile>
-     <profile>
-+      <id>build-native-launchers-gtk.freebsd.%%ECLIPSE_ARCH%%</id>
-+      <activation>
-+        <property>
-+          <name>native</name>
-+          <value>gtk.freebsd.%%ECLIPSE_ARCH%%</value>
-+        </property>
-+      </activation>
-+      <build>
-+        <plugins>
-+          <plugin>
-+            <artifactId>maven-antrun-plugin</artifactId>
-+            <version> 1.7 </version>
-+            <executions>
-+              <execution>
-+                <id>compile-executable-natives</id>
-+                <phase>generate-resources</phase>
-+                <configuration>
-+                  <target>
-+                    <ant antfile="build.xml" dir="library/gtk/" target="build_eclipse"/>
-+                  </target>
-+                </configuration>
-+                <goals>
-+                  <goal>run</goal>
-+                </goals>
-+              </execution>
-+            </executions>
-+            <dependencies>
-+              <dependency>
-+                <groupId>bsf</groupId>
-+                <artifactId>bsf</artifactId>
-+                <version>2.4.0</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>rhino</groupId>
-+                <artifactId>js</artifactId>
-+                <version>1.7R2</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-apache-bsf</artifactId>
-+                <version>1.8.3</version>
-+              </dependency>
-+              <dependency>
-+                <groupId>org.apache.ant</groupId>
-+                <artifactId>ant-nodeps</artifactId>
-+                <version>1.8.1</version>
-+              </dependency>
-+            </dependencies>
-+          </plugin>
-+        </plugins>
-+      </build>
-+    </profile>
-+    <profile>
-       <id>build-native-launchers-win32.win32.x86_64</id>
-       <activation>
-         <property>
-@@ -366,6 +473,7 @@
-         </plugins>
-       </build>
-     </profile>
-+-->
-     <profile>
-       <id>assemble-launchers</id>
-       <activation>
+@@ -343,6 +343,8 @@
+                         <include name="gtk/linux/ppc64/**/*" />
+                         <include name="gtk/linux/x86/**/*" />
+                         <include name="gtk/linux/x86_64/**/*" />
++                        <include name="gtk/freebsd/x86/**/*" />
++                        <include name="gtk/freebsd/x86_64/**/*" />
+                         <include name="gtk/solaris/sparc/**/*" />
+                         <include name="gtk/solaris/x86/**/*" />
+                         <include name="win32/win32/x86/**/*" />
 diff --git a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties b/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties
 index 0f30a87..36382de 100644
 --- a/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.properties
@@ -2183,7 +1796,7 @@ index cdded03..a2a0af3 100644
  	<target name="rootFileslinux_gtk_x86">
  		<mkdir dir="${feature.base}/linux.gtk.x86/${collectingFolder}"/>
  		<copy todir="${feature.base}/linux.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
-@@ -278,6 +294,8 @@
+@@ -243,6 +259,8 @@
  		<antcall target="rootFilesmacosx_carbon_x86"/>
  		<antcall target="rootFilesmacosx_cocoa_ppc"/>
  		<antcall target="rootFilesmacosx_cocoa_x86"/>
@@ -2192,7 +1805,7 @@ index cdded03..a2a0af3 100644
  		<antcall target="rootFileslinux_gtk_x86"/>
  		<antcall target="rootFileslinux_gtk_ppc"/>
  		<antcall target="rootFileslinux_gtk_ppc64"/>
-@@ -319,4 +337,4 @@
+@@ -279,4 +297,4 @@
  	<target name="gather.logs" depends="init">
  	</target>
  
@@ -2240,10 +1853,10 @@ index 3cf2fe1..53f82b3 100644
  		//Initially the files are in: <root>/Eclipse.app/ 
  		//and they must appear in <root>/MyAppName.app/
 diff --git a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java
-index 324c94f..f1b0d14 100644
+index 73fd078..89299b2 100644
 --- a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java
 +++ b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java
-@@ -58,11 +58,13 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -68,11 +68,13 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  	private final static SAXParserFactory parserFactory = SAXParserFactory.newInstance();
  
  	private static final String PROGRAM_ARGS = "programArgs"; //$NON-NLS-1$
@@ -2257,52 +1870,29 @@ index 324c94f..f1b0d14 100644
  	private static final String VM_ARGS_LINUX = "vmArgsLin"; //$NON-NLS-1$
  	private static final String VM_ARGS_MAC = "vmArgsMac"; //$NON-NLS-1$
  	private static final String VM_ARGS_SOLARIS = "vmArgsSol"; //$NON-NLS-1$
-@@ -85,6 +87,7 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -95,6 +97,7 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  	private static final String OS_LINUX = "linux";//$NON-NLS-1$
  	private static final String OS_SOLARIS = "solaris";//$NON-NLS-1$
  	private static final String OS_MACOSX = "macosx";//$NON-NLS-1$
 +	private static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
  
- 	//element names
- 	private static final String EL_FEATURES = "features"; //$NON-NLS-1$
-@@ -110,20 +113,22 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+ 	// These must match Platform constant values
+ 	private static final String ARCH_X86 = "x86"; //$NON-NLS-1$
+@@ -138,11 +141,13 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  	private static final int STATE_PLUGINS = 4;
  	private static final int STATE_FEATURES = 5;
  	private static final int STATE_PROGRAM_ARGS = 6;
--	private static final int STATE_PROGRAM_ARGS_LINUX = 7;
--	private static final int STATE_PROGRAM_ARGS_MAC = 8;
--	private static final int STATE_PROGRAM_ARGS_SOLARIS = 9;
--	private static final int STATE_PROGRAM_ARGS_WIN = 10;
--	private static final int STATE_VM_ARGS = 11;
--	private static final int STATE_VM_ARGS_LINUX = 12;
--	private static final int STATE_VM_ARGS_MAC = 13;
--	private static final int STATE_VM_ARGS_SOLARIS = 14;
--	private static final int STATE_VM_ARGS_WIN = 15;
--	private static final int STATE_CONFIG_INI = 16;
--	private static final int STATE_CONFIGURATIONS = 17;
--	private static final int STATE_LICENSE = 18;
--	private static final int STATE_LICENSE_URL = 19;
--	private static final int STATE_LICENSE_TEXT = 20;
-+	private static final int STATE_PROGRAM_ARGS_FREEBSD = 7;
-+	private static final int STATE_PROGRAM_ARGS_LINUX = 8;
-+	private static final int STATE_PROGRAM_ARGS_MAC = 9;
-+	private static final int STATE_PROGRAM_ARGS_SOLARIS = 10;
-+	private static final int STATE_PROGRAM_ARGS_WIN = 11;
-+	private static final int STATE_VM_ARGS = 12;
-+	private static final int STATE_VM_ARGS_FREEBSD = 13;
-+	private static final int STATE_VM_ARGS_LINUX = 14;
-+	private static final int STATE_VM_ARGS_MAC = 15;
-+	private static final int STATE_VM_ARGS_SOLARIS = 16;
-+	private static final int STATE_VM_ARGS_WIN = 17;
-+	private static final int STATE_CONFIG_INI = 18;
-+	private static final int STATE_CONFIGURATIONS = 19;
-+	private static final int STATE_LICENSE = 20;
-+	private static final int STATE_LICENSE_URL = 21;
-+	private static final int STATE_LICENSE_TEXT = 22;
- 
- 	private static final String PI_PDEBUILD = "org.eclipse.pde.build"; //$NON-NLS-1$
- 	private final static int EXCEPTION_PRODUCT_FORMAT = 23;
-@@ -437,6 +442,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
++	private static final int STATE_PROGRAM_ARGS_FREEBSD = 100;
+ 	private static final int STATE_PROGRAM_ARGS_LINUX = 7;
+ 	private static final int STATE_PROGRAM_ARGS_MAC = 8;
+ 	private static final int STATE_PROGRAM_ARGS_SOLARIS = 9;
+ 	private static final int STATE_PROGRAM_ARGS_WIN = 10;
+ 	private static final int STATE_VM_ARGS = 11;
++	private static final int STATE_VM_ARGS_FREEBSD = 101;
+ 	private static final int STATE_VM_ARGS_LINUX = 12;
+ 	private static final int STATE_VM_ARGS_MAC = 13;
+ 	private static final int STATE_VM_ARGS_SOLARIS = 14;
+@@ -532,6 +537,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  			key = VM_ARGS_MAC;
  		} else if (os.equals(OS_SOLARIS)) {
  			key = VM_ARGS_SOLARIS;
@@ -2310,8 +1900,8 @@ index 324c94f..f1b0d14 100644
 +			key = VM_ARGS_FREEBSD;
  		}
  
- 		String prefix = launcherArgs.getProperty(VM_ARGS);
-@@ -466,6 +473,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+ 		arch = arch == null ? "" : arch; //$NON-NLS-1$
+@@ -611,6 +618,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  			key = PROGRAM_ARGS_MAC;
  		} else if (os.equals(OS_SOLARIS)) {
  			key = PROGRAM_ARGS_SOLARIS;
@@ -2319,8 +1909,8 @@ index 324c94f..f1b0d14 100644
 +			key = PROGRAM_ARGS_FREEBSD;
  		}
  
- 		String prefix = launcherArgs.getProperty(PROGRAM_ARGS);
-@@ -532,6 +541,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+ 		arch = arch == null ? "" : arch; //$NON-NLS-1$
+@@ -724,6 +733,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  					processLinux(attributes);
  				} else if (OS_MACOSX.equals(localName)) {
  					processMac(attributes);
@@ -2329,7 +1919,7 @@ index 324c94f..f1b0d14 100644
  				}
  				if ("ico".equals(localName)) { //$NON-NLS-1$
  					processIco(attributes);
-@@ -543,6 +554,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -735,6 +746,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  			case STATE_LAUNCHER_ARGS :
  				if (PROGRAM_ARGS.equals(localName)) {
  					state = STATE_PROGRAM_ARGS;
@@ -2338,7 +1928,7 @@ index 324c94f..f1b0d14 100644
  				} else if (PROGRAM_ARGS_LINUX.equals(localName)) {
  					state = STATE_PROGRAM_ARGS_LINUX;
  				} else if (PROGRAM_ARGS_MAC.equals(localName)) {
-@@ -553,6 +566,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -745,6 +758,8 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  					state = STATE_PROGRAM_ARGS_WIN;
  				} else if (VM_ARGS.equals(localName)) {
  					state = STATE_VM_ARGS;
@@ -2347,7 +1937,31 @@ index 324c94f..f1b0d14 100644
  				} else if (VM_ARGS_LINUX.equals(localName)) {
  					state = STATE_VM_ARGS_LINUX;
  				} else if (VM_ARGS_MAC.equals(localName)) {
-@@ -658,11 +673,13 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -764,6 +779,11 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+ 				setArchState(localName);
+ 				break;
+ 
++			case STATE_PROGRAM_ARGS_FREEBSD :
++				platformKeyPrefix = PROGRAM_ARGS_FREEBSD;
++				setArchState(localName);
++				break;
++
+ 			case STATE_PROGRAM_ARGS_LINUX :
+ 				platformKeyPrefix = PROGRAM_ARGS_LINUX;
+ 				setArchState(localName);
+@@ -789,6 +809,11 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+ 				setArchState(localName);
+ 				break;
+ 
++			case STATE_VM_ARGS_FREEBSD :
++				platformKeyPrefix = VM_ARGS_FREEBSD;
++				setArchState(localName);
++				break;
++
+ 			case STATE_VM_ARGS_LINUX :
+ 				platformKeyPrefix = VM_ARGS_LINUX;
+ 				setArchState(localName);
+@@ -961,11 +986,13 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  				break;
  
  			case STATE_PROGRAM_ARGS :
@@ -2361,7 +1975,7 @@ index 324c94f..f1b0d14 100644
  			case STATE_VM_ARGS_LINUX :
  			case STATE_VM_ARGS_MAC :
  			case STATE_VM_ARGS_SOLARIS :
-@@ -689,6 +706,9 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -1008,6 +1035,9 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  			case STATE_PROGRAM_ARGS :
  				addLaunchArgumentToMap(PROGRAM_ARGS, String.valueOf(ch, start, length));
  				break;
@@ -2371,7 +1985,7 @@ index 324c94f..f1b0d14 100644
  			case STATE_PROGRAM_ARGS_LINUX :
  				addLaunchArgumentToMap(PROGRAM_ARGS_LINUX, String.valueOf(ch, start, length));
  				break;
-@@ -704,6 +724,9 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -1023,6 +1053,9 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  			case STATE_VM_ARGS :
  				addLaunchArgumentToMap(VM_ARGS, String.valueOf(ch, start, length));
  				break;
@@ -2381,7 +1995,7 @@ index 324c94f..f1b0d14 100644
  			case STATE_VM_ARGS_LINUX :
  				addLaunchArgumentToMap(VM_ARGS_LINUX, String.valueOf(ch, start, length));
  				break;
-@@ -867,6 +890,10 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
+@@ -1206,6 +1239,10 @@ public class ProductFile extends DefaultHandler implements IProductDescriptor {
  		addIcon(OS_WIN32, attributes.getValue(WIN32_256_HIGH));
  	}
  
@@ -2402,7 +2016,7 @@ index d8e85b5..10e1c66 100644
  configs = win32, win32, x86 & \
 -    linux, gtk, x86 &
 +	linux, gtk, x86 & \
-+	freebsd, gtk, %%ECLIPSE_ARCH%%
++	freebsd, gtk, x86
  #configs=win32, win32, x86 & \
  #	linux, gtk, ppc &\
  # linux, gtk, x86 & \
@@ -2416,7 +2030,7 @@ index 4be192c..10e1c66 100644
  configs = win32, win32, x86 & \
 -    linux, gtk, x86
 +	linux, gtk, x86 & \
-+	freebsd, gtk, %%ECLIPSE_ARCH%%
++	freebsd, gtk, x86
  #configs=win32, win32, x86 & \
  #	linux, gtk, ppc &\
  # linux, gtk, x86 & \
@@ -2434,46 +2048,10 @@ index 70fdde5..d9807d9 100644
                </excludes>
              </configuration>
            </execution>
-diff --git a/rt.equinox.p2/org.eclipse.equinox.p2.releng/org.eclipse.equinox.p2-parent/pom.xml b/rt.equinox.p2/org.eclipse.equinox.p2.releng/org.eclipse.equinox.p2-parent/pom.xml
-index b3ed6f8..7544d34 100644
---- a/rt.equinox.p2/org.eclipse.equinox.p2.releng/org.eclipse.equinox.p2-parent/pom.xml
-+++ b/rt.equinox.p2/org.eclipse.equinox.p2.releng/org.eclipse.equinox.p2-parent/pom.xml
-@@ -54,18 +54,6 @@
-           <executionEnvironment>J2SE-1.5</executionEnvironment>
-         </configuration>
-       </plugin>
--      <plugin>
--        <groupId>org.eclipse.tycho</groupId>
--        <artifactId>tycho-compiler-plugin</artifactId>
--        <configuration>
--          <!--
--          Many (all?) bundles use java 5 generics, do not compile against libraries
--          of their respective execution environments and we force compilation against
--          SYSTEM JRE libraries that are guaranteed to be java5+
--          -->
--          <useJDK>BREE</useJDK>
--        </configuration>
--      </plugin>
-     </plugins>
-   </build>
- 
---- a/eclipse.platform/platform/org.eclipse.platform/plugin.xml.orig	2014-06-05 16:12:04.000000000 -0500
-+++ b/eclipse.platform/platform/org.eclipse.platform/plugin.xml	2014-08-01 17:23:26.000000000 -0500
-@@ -141,6 +141,12 @@
-             basestylesheeturi="css/e4_default_gtk.css"
-             id="org.eclipse.e4.ui.css.theme.e4_default"
-             label="%theme.gtk"
-+            os="freebsd">
-+      </theme>
-+      <theme
-+            basestylesheeturi="css/e4_default_gtk.css"
-+            id="org.eclipse.e4.ui.css.theme.e4_default"
-+            label="%theme.gtk"
-             os="linux">
-       </theme>
-       <theme
---- a/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml.orig	2014-06-05 17:05:18.000000000 -0500
-+++ b/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml	2014-08-01 19:39:25.000000000 -0500
+diff --git a/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml b/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml
+index e9f8e1d..35b3df6 100644
+--- a/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml
++++ b/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml
 @@ -46,7 +46,7 @@
              <implementation
                    style="themes/shared/html/shared.css,$theme$/html/shared.css,$theme$/html/font-$fontStyle$.css,$theme$/html/$direction$.css"
@@ -2483,37 +2061,151 @@ index b3ed6f8..7544d34 100644
              </implementation>
              <implementation
                    kind="swt">
---- a/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml.orig	2014-06-05 17:09:12.000000000 -0500
-+++ b/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml	2014-08-01 19:58:51.000000000 -0500
-@@ -83,6 +83,17 @@
- 
-    <!-- Web Browsers -->
-    <extension point="org.eclipse.ui.browser.browsers">
-+      <!-- FreeBSD -->
-+      <browser
-+         id="org.eclipse.ui.browser.firefox"
-+         name="%browserFirefox"
-+         os="freebsd"
-+         executable="firefox"
-+         factoryclass="org.eclipse.ui.internal.browser.browsers.MozillaFactory">
-+         <location>
-+            usr/local/bin/firefox
-+         </location>
-+      </browser>
-       <!-- Linux -->
+diff --git a/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml b/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml
+index 7ed3896..84af871 100644
+--- a/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml
++++ b/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml
+@@ -87,7 +87,7 @@
        <browser
           id="org.eclipse.ui.browser.firefox"
---- a/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml.orig	2014-06-05 17:04:42.000000000 -0500
-+++ b/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	2014-08-01 20:03:04.000000000 -0500
-@@ -1184,6 +1184,11 @@
+          name="%browserFirefox"
+-         os="linux,aix,hpux,solaris"
++         os="freebsd,linux,aix,hpux,solaris"
+          executable="firefox"
+          factoryclass="org.eclipse.ui.internal.browser.browsers.MozillaFactory">
+          <location>
+diff --git a/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml b/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml
+index 46672cb..86bfcd5 100644
+--- a/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml
++++ b/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml
+@@ -1184,7 +1184,7 @@
              %blockSelectionModeFont.description
           </description>
           <fontValue
-+               os="freebsd"
-+               value="Monospace-regular-10"
-+               ws="gtk">
-+         </fontValue>
-+         <fontValue
-                os="linux"
+-               os="linux"
++               os="freebsd,linux"
                 value="Monospace-regular-10"
                 ws="gtk">
+          </fontValue>
+diff --git a/eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml b/eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml
+index 5334aec..0f27c9b 100644
+--- a/eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml
++++ b/eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml
+@@ -21,6 +21,12 @@
+         os="linux">
+     </theme>
+     <theme
++        basestylesheeturi="css/e4-dark.css"
++        id="org.eclipse.e4.ui.css.theme.e4_dark"
++        label="%theme.dark"
++        os="freebsd">
++    </theme>
++    <theme
+         basestylesheeturi="css/e4-dark_win.css"
+         id="org.eclipse.e4.ui.css.theme.e4_dark"
+         label="%theme.dark"
+@@ -38,6 +44,12 @@
+             label="%theme.gtk"
+             os="linux">
+       </theme>
++      <theme
++            basestylesheeturi="css/e4_default_gtk.css"
++            id="org.eclipse.e4.ui.css.theme.e4_default"
++            label="%theme.gtk"
++            os="freebsd">
++      </theme>
+    <theme
+          basestylesheeturi="css/e4_classic_winxp.css"
+          id="org.eclipse.e4.ui.css.theme.e4_default"
+diff --git a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/pom.xml b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/pom.xml
+index 9b2fce9..68e15bc 100644
+--- a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/pom.xml
++++ b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/pom.xml
+@@ -38,6 +38,7 @@
+ 						</goals>
+ 						<configuration>
+ 							<formats>
++								<freebsd>tar.gz</freebsd>
+ 								<linux>tar.gz</linux>
+ 							</formats>
+ 						</configuration>
+diff --git a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/reconciler.product b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/reconciler.product
+index 92973d3..b492f25 100644
+--- a/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/reconciler.product
++++ b/rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/reconciler.product
+@@ -43,7 +43,10 @@
+       <plugin id="org.eclipse.core.expressions"/>
+       <plugin id="org.eclipse.core.jobs"/>
+       <plugin id="org.eclipse.core.net"/>
++      <plugin id="org.eclipse.core.net.freebsd.%%ECLIPSE_ARCH%%" fragment="true"/>
++<!--
+       <plugin id="org.eclipse.core.net.linux.x86_64" fragment="true"/>
++-->
+       <plugin id="org.eclipse.core.runtime"/>
+       <plugin id="org.eclipse.core.runtime.compatibility"/>
+       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+@@ -128,11 +131,14 @@
+       <plugin id="org.eclipse.osgi.services"/>
+       <plugin id="org.eclipse.osgi.util"/>
+       <plugin id="org.eclipse.swt"/>
++      <plugin id="org.eclipse.swt.gtk.freebsd.%%ECLIPSE_ARCH%%" fragment="true"/>
++<!--
+       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
+       <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+       <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
++-->
+       <plugin id="org.eclipse.ui"/>
+       <plugin id="org.eclipse.ui.workbench"/>
+       <plugin id="org.eclipse.update.configurator"/>
+diff --git a/eclipse.platform.releng/features/org.eclipse.rcp/pom.xml b/eclipse.platform.releng/features/org.eclipse.rcp/pom.xml
+index dde92d3..09ab2ae 100644
+--- a/eclipse.platform.releng/features/org.eclipse.rcp/pom.xml
++++ b/eclipse.platform.releng/features/org.eclipse.rcp/pom.xml
+@@ -37,6 +37,7 @@
+             <configuration>
+               <excludes>
+                 <plugin id="org.eclipse.rcp"/>
++                <plugin id="org.eclipse.ui.cocoa"/>
+               </excludes>
+             </configuration>
+           </execution>
+diff --git a/eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml b/eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml
+index 35144a0..5492b95 100644
+--- a/eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml
++++ b/eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml
+@@ -106,6 +106,16 @@
+          unpack="false"/>
+ 
+    <plugin
++         id="org.eclipse.core.net.freebsd.%%ECLIPSE_ARCH%%"
++         os="freebsd"
++         arch="%%ECLIPSE_ARCH%%"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"
++         unpack="false"/>
++
++   <plugin
+          id="org.eclipse.core.net.linux.x86_64"
+          os="linux"
+          arch="x86_64"
+@@ -397,6 +417,16 @@
+          unpack="false"/>
+ 
+    <plugin
++         id="org.eclipse.core.filesystem.freebsd.%%ECLIPSE_ARCH%%"
++         os="freebsd"
++         arch="%%ECLIPSE_ARCH%%"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"
++         unpack="false"/>
++
++   <plugin
+          id="org.eclipse.core.filesystem.linux.x86"
+          os="linux"
+          arch="x86"
