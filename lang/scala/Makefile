@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.11.5
+PORTVERSION=	2.11.6
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 
