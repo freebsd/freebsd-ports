@@ -12,11 +12,13 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Implements encoding and decoding of AMF and AMF3 messages
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
+IGNORE_WITH_PHP=5 55 56
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	amf
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-amf
 CPPFLAGS+=	-I${LOCALBASE}/include/php/ext/standard

@@ -13,12 +13,14 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	PECL extension if imlib2
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
 LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 55 56
 
 # libImlib2 may or may not depend on X, however,
 # imlib2 extension doesn't need X related functions in libImlib2

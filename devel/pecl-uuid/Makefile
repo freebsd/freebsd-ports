@@ -12,13 +12,15 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	UUID extension
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
 LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--with-uuid=${LOCALBASE} CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 55 56
 
 .include <bsd.port.mk>
