@@ -1,6 +1,6 @@
---- crypto/evp/openbsd_hw.c.orig	2015-03-19 13:19:00 UTC
-+++ crypto/evp/openbsd_hw.c
-@@ -108,7 +108,10 @@ static int dev_crypto_init(session_op *s
+--- crypto/evp/openbsd_hw.c.orig	2015-01-22 15:58:32.000000000 +0100
++++ crypto/evp/openbsd_hw.c	2015-03-10 07:08:45.000000000 +0100
+@@ -108,7 +108,10 @@
              dev_failed = 1;
              return 0;
          }
