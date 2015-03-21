@@ -12,6 +12,9 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
+DEPRECATED=	depends on deprecated java/eclipse-gef
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef
 
