@@ -1,6 +1,6 @@
---- crypto/md5/md5.c.orig	2015-03-19 13:19:00 UTC
-+++ crypto/md5/md5.c
-@@ -83,7 +83,7 @@ int main(int argc, char **argv)
+--- crypto/md5/md5.c.orig	2015-01-22 15:58:32.000000000 +0100
++++ crypto/md5/md5.c	2015-03-10 07:02:19.000000000 +0100
+@@ -83,7 +83,7 @@
                  err++;
                  continue;
              }
