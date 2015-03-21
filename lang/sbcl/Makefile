@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sbcl
-PORTVERSION=	1.1.12
+PORTVERSION=	1.2.9
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-DISTFILES=	\
-	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
+DISTFILES=	sbcl-${PORTVERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
@@ -22,7 +21,6 @@ SBCL_DESC=	Bootstrap with installed SBCL binary, if available
 THREADS_DESC=	Experimental threading support
 
 CONTRIB_MODULES=	asdf			\
-			asdf-install		\
 			sb-aclrepl		\
 			sb-bsd-sockets		\
 			sb-cltl2		\
@@ -33,16 +31,17 @@ CONTRIB_MODULES=	asdf			\
 			sb-grovel		\
 			sb-introspect		\
 			sb-md5			\
+			sb-mpfr			\
 			sb-posix		\
 			sb-queue		\
 			sb-rotate-byte		\
 			sb-rt			\
 			sb-simple-streams	\
 			sb-sprof
-NEWBOOTNAME=	${PORTNAME}-${PORTVERSION}-${ARCH}-freebsd${OSREL:R}
+NEWBOOTNAME=	sbcl-${PORTVERSION}-${ARCH}-freebsd${OSREL:R}
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to\
-this architecture yet
+			this architecture yet
 SBCL_HOME=	${PREFIX}/lib/sbcl
 
 .include <bsd.port.options.mk>
@@ -60,17 +59,17 @@ PLIST_SUB+=	I386_ONLY="@comment " AMD64_ONLY=""
 SBCLCONFIG=	Config.x86-64-freebsd
 .endif
 
-MAKE_SH_ARGS?=	--prefix=${PREFIX} --dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
---with-sb-core-compression --with-sb-qshow
-NM?=	/usr/bin/nm
+MAKE_SH_ARGS?=	--prefix=${PREFIX} \
+		--dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
+		--with-sb-core-compression \
+		--with-sb-qshow
+NM?=		/usr/bin/nm
 NMFLAGS?=	-gp
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	\
-	${PORTNAME}-${PORTVERSION}-documentation-html${EXTRACT_SUFX}
+DISTFILES+=	sbcl-${PORTVERSION}-documentation-html${EXTRACT_SUFX}
 MANUALS=	asdf.html sbcl.html
 MODULESDOCS=	asdf/README asdf/README.SBCL	\
-		asdf-install/README 		\
 		sb-aclrepl/README		\
 		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
 		sb-md5/README			\
@@ -96,14 +95,16 @@ BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSREL:R}
 . endif
 
 . for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
-BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
+BOOT_DISTNAME=	sbcl-${BOOT_VERSION}-${BOOT_ARCH_OS}
 DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
 . endfor
 
-XC_HOST?=	${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core \
-${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core \
---dynamic-space-size ${DYNAMIC_SPACE_SIZE} \
---disable-debugger --userinit /dev/null --sysinit /dev/null
+XC_HOST?=	${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl \
+		--core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core \
+		--dynamic-space-size ${DYNAMIC_SPACE_SIZE} \
+		--disable-debugger \
+		--userinit /dev/null \
+		--sysinit /dev/null
 MAKE_SH_ARGS+=	--xc-host='${XC_HOST}'
 
 .endif # SBCL
@@ -123,8 +124,10 @@ MAKE_SH_ARGS+=	--with-sb-safepoint-strictly
 MAKE_SH_ARGS+=	--without-sb-safepoint-strictly
 .endif
 .else
-MAKE_SH_ARGS+=	--without-sb-safepoint --without-sb-safepoint-strictly \
-		--without-sb-thruption --without-sb-wtimer
+MAKE_SH_ARGS+=	--without-sb-safepoint \
+		--without-sb-safepoint-strictly \
+		--without-sb-thruption \
+		--without-sb-wtimer
 .endif
 .else
 MAKE_SH_ARGS+=	--without-sb-thread
@@ -195,13 +198,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${SBCL_HOME}/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${STAGEDIR}${SBCL_HOME}/
-.for MOD in ${CONTRIB_MODULES}
-	${MKDIR} ${STAGEDIR}${SBCL_HOME}/${MOD}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp ${STAGEDIR}${SBCL_HOME}/${MOD}/
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl ${STAGEDIR}${SBCL_HOME}/${MOD}/
-	(if test -f ${WRKSRC}/contrib/${MOD}/${MOD}.asd; then ${INSTALL_DATA} \
-	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${STAGEDIR}${SBCL_HOME}/${MOD}/; fi)
-.endfor
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/contrib
+	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.fasl ${STAGEDIR}${SBCL_HOME}/contrib/
+	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.asd ${STAGEDIR}${SBCL_HOME}/contrib/
+#.for MOD in ${CONTRIB_MODULES}
+#	(if test -f ${WRKSRC}/contrib/${MOD}/${MOD}.asd; then ${INSTALL_DATA} \
+#	    ${WRKSRC}/contrib/${MOD}/*.lisp ${STAGEDIR}${SBCL_HOME}/contrib/; fi)
+#.endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${STAGEDIR}${DOCSDIR}/
