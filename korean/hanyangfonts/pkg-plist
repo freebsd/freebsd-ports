@@ -1,15 +1,12 @@
-lib/X11/fonts/local/hmm10.pcf.gz
-lib/X11/fonts/local/hmm12.pcf.gz
-lib/X11/fonts/local/hmm14.pcf.gz
-lib/X11/fonts/local/hmm16.pcf.gz
-lib/X11/fonts/local/hmm18.pcf.gz
-lib/X11/fonts/local/hmm20.pcf.gz
-lib/X11/fonts/local/hgm10.pcf.gz
-lib/X11/fonts/local/hgm12.pcf.gz
-lib/X11/fonts/local/hgm14.pcf.gz
-lib/X11/fonts/local/hgm16.pcf.gz
-lib/X11/fonts/local/hgm18.pcf.gz
-lib/X11/fonts/local/hgm20.pcf.gz
-@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
-@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
-@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
+%%FONTSDIR%%/hmm10.pcf.gz
+%%FONTSDIR%%/hmm12.pcf.gz
+%%FONTSDIR%%/hmm14.pcf.gz
+%%FONTSDIR%%/hmm16.pcf.gz
+%%FONTSDIR%%/hmm18.pcf.gz
+%%FONTSDIR%%/hmm20.pcf.gz
+%%FONTSDIR%%/hgm10.pcf.gz
+%%FONTSDIR%%/hgm12.pcf.gz
+%%FONTSDIR%%/hgm14.pcf.gz
+%%FONTSDIR%%/hgm16.pcf.gz
+%%FONTSDIR%%/hgm18.pcf.gz
+%%FONTSDIR%%/hgm20.pcf.gz

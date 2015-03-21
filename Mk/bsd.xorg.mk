@@ -70,12 +70,14 @@ USES+=		libtool
 
 . if ${XORG_CAT} == "font"
 FONTNAME?=	${PORTNAME:C/.*-//g:S/type/Type/:S/ttf/TTF/:S/speedo/Speedo/}
-CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/lib/X11/fonts
-CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/lib/X11/fonts
+CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/share/fonts
+CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/share/fonts
 .    if !defined(NOFONT)
 USES+=	fonts
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 				bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+PLIST_FILES+=	"@comment ${FONTSDIR}/fonts.dir" \
+				"@comment ${FONTSDIR}/fonts.scale"
 .    endif
 .  endif
 
@@ -93,7 +95,9 @@ USES+=	pathfix
 DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
 USES+=	pathfix
-CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb
+CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
+					--with-fontrootdir=${LOCALBASE}/share/fonts \
+					--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
 
 LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
 USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto fontutil:build

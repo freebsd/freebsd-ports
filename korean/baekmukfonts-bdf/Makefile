@@ -3,7 +3,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
@@ -32,12 +32,9 @@ FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 FONTLIST_MANUAL=	batang10 batang10b gulim10 gulim10b
 
 BDFTOPCF=	${PREFIX}/bin/bdftopcf
-MKFONTDIR=	${PREFIX}/bin/mkfontdir
 CHARSETSUB=	s/ksx1001.1997/ksc5601.1987/g
-FONTSDIR=	lib/X11/fonts/local
-MAKE_ENV=	FONTSDIR=${FONTSDIR}
-PLIST_SUB=	FONTSDIR=${FONTSDIR}
-USES=		perl5
+MAKE_ENV=	FONTSDIR=${FONTSDIR:S,${PREFIX},,}
+USES=		fonts perl5
 USE_PERL5=	build
 
 # manually install hinted fonts
@@ -56,10 +53,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for FONTNAME in ${FONTLIST}
 	${INSTALL_DATA} ${WRKDIR}/${FONTNAME}.pcf.gz \
-			${STAGEDIR}${PREFIX}/${FONTSDIR}
+			${STAGEDIR}${FONTSDIR}
 .endfor
 
 .include <bsd.port.mk>

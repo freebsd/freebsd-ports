@@ -3,7 +3,7 @@
 
 PORTNAME=	mgopen
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://pub.ellak.gr/fonts/${PORTNAME}/files/
 DISTNAME=	MgOpen
@@ -14,8 +14,6 @@ COMMENT=	MgOpen greek fonts collection
 USES=		fonts
 
 NO_BUILD=	yes
-
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 SUB_FILES=	pkg-message
 

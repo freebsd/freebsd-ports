@@ -539,7 +539,7 @@
 +	  --with-mesa-source=$SRCDIR/Mesa-6.5 \
 +	  --disable-dmx \
 +	  --enable-xprint=no \
-+	  --with-fontdir=%%LOCALBASE%%/lib/X11/fonts \
++	  --with-fontdir=%%LOCALBASE%%/share/fonts \
 +	  --with-xkb-path=%%LOCALBASE%%/share/X11/xkb
 +  find . -name Makefile|xargs sed -i".bak" -e "s|-I%%LOCALBASE%%/include||g"
    if ! test $? -eq 0

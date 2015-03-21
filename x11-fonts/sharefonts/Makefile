@@ -19,7 +19,7 @@ RESTRICTED=	Shareware: cannot be distributed without prior authorization
 NO_BUILD=	yes
 
 USES=		fonts
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

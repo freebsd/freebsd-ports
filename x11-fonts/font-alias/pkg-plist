@@ -1,4 +1,4 @@
-lib/X11/fonts/100dpi/fonts.alias
-lib/X11/fonts/75dpi/fonts.alias
-lib/X11/fonts/cyrillic/fonts.alias
-lib/X11/fonts/misc/fonts.alias
+share/fonts/100dpi/fonts.alias
+share/fonts/75dpi/fonts.alias
+share/fonts/cyrillic/fonts.alias
+share/fonts/misc/fonts.alias

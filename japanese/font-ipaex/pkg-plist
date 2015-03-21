@@ -1,11 +1,8 @@
 %%DATADIR%%/ipaexg.otf
 %%DATADIR%%/ipaexm.otf
-%%LOCAL_FONTSDIR%%/OTF/ipaexg.otf
-%%LOCAL_FONTSDIR%%/OTF/ipaexm.otf
 etc/fonts/conf.avail/20-unhint-ipaex.conf
 etc/fonts/conf.avail/62-fonts-ipaex.conf
 etc/fonts/conf.d/20-unhint-ipaex.conf
 etc/fonts/conf.d/62-fonts-ipaex.conf
-%%X_FONTSDIR%%/OTF/ipaexg.otf
-%%X_FONTSDIR%%/OTF/ipaexm.otf
-@fc %%X_FONTSDIR%%/OTF
+%%FONTSDIR%%/ipaexg.otf
+%%FONTSDIR%%/ipaexm.otf

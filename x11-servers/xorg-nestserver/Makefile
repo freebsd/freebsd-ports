@@ -3,6 +3,7 @@
 
 PORTNAME=	xorg-nestserver
 PORTVERSION=	1.14.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG
@@ -39,7 +40,9 @@ CONFIGURE_ARGS= --disable-dmx \
 		--disable-glx-tls \
 		--disable-vbe \
 		--disable-vgahw \
-		--disable-xvfb
+		--disable-xvfb \
+		--with-fontrootdir=${PREFIX}/share/fonts \
+		--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
 
 USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		damageproto xcmiscproto xextproto xf86miscproto inputproto \

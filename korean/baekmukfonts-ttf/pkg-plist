@@ -3,10 +3,6 @@
 %%FONTSDIR%%/README
 %%FONTSDIR%%/batang.ttf
 %%FONTSDIR%%/dotum.ttf
-%%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/gulim.ttf
 %%FONTSDIR%%/hconfig.ps
 %%FONTSDIR%%/hline.ttf
-@exec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true
-@unexec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true

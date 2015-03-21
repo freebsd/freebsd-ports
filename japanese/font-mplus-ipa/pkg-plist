@@ -60,20 +60,13 @@
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/COPYING
 %%DATADIR%%/AUTHORS
-%%LOCAL_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG.ttf
-%%LOCAL_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TTF/M+1VM+IPAG-circle.ttf
-%%LOCAL_FONTSDIR%%/TTF/M+1P+IPAG.ttf
-%%LOCAL_FONTSDIR%%/TTF/M+1P+IPAG-circle.ttf
 etc/fonts/conf.avail/20-unhint-mplus-ipa.conf
 etc/fonts/conf.avail/62-fonts-mplus-ipa.conf
 etc/fonts/conf.d/20-unhint-mplus-ipa.conf
 etc/fonts/conf.d/62-fonts-mplus-ipa.conf
-%%X_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
-%%X_FONTSDIR%%/TTF/M+2P+IPAG.ttf
-%%X_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf
-%%X_FONTSDIR%%/TTF/M+1VM+IPAG-circle.ttf
-%%X_FONTSDIR%%/TTF/M+1P+IPAG.ttf
-%%X_FONTSDIR%%/TTF/M+1P+IPAG-circle.ttf
-@fc %%X_FONTSDIR%%/TTF
+%%FONTSDIR%%/M+2VM+IPAG-circle.ttf
+%%FONTSDIR%%/M+2P+IPAG.ttf
+%%FONTSDIR%%/M+2P+IPAG-circle.ttf
+%%FONTSDIR%%/M+1VM+IPAG-circle.ttf
+%%FONTSDIR%%/M+1P+IPAG.ttf
+%%FONTSDIR%%/M+1P+IPAG-circle.ttf

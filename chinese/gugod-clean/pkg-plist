@@ -1,6 +1,4 @@
-lib/X11/fonts/local/gugod16.bdf
-lib/X11/fonts/local/gugod18.bdf
-lib/X11/fonts/local/gugod20.bdf
-lib/X11/fonts/local/gugod22.bdf
-@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
-@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+%%FONTSDIR%%/gugod16.bdf
+%%FONTSDIR%%/gugod18.bdf
+%%FONTSDIR%%/gugod20.bdf
+%%FONTSDIR%%/gugod22.bdf

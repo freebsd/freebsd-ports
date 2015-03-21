@@ -3,6 +3,7 @@
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
@@ -29,7 +30,7 @@ PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 
 LOCAL_FONTSDIR=	share/fonts
-X_FONTSDIR=	lib/X11/fonts
+X_FONTSDIR=	share/fonts
 
 .if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=	DISCORD DOCS
@@ -62,7 +63,6 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF
-	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 .if !defined(PKGNAMESUFFIX)

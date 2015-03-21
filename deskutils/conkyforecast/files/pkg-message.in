@@ -5,7 +5,7 @@ line to the "Modules" section of your X Windows configuration file:
 
 Add the following line to the "Files" section of X Windows configuration file:
 
-        FontPath "%%PREFIX%%/%%FONTSDIR%%/"
+        FontPath "%%FONTSDIR%%/"
 
 For a working script you must define, in a user specific config file, a partner
 id and registration code for the weather.com xoap service. For this purpose

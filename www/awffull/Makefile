@@ -3,7 +3,7 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES?=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
@@ -12,7 +12,7 @@ COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libpcre.so:${PORTSDIR}/devel/pcre
@@ -20,8 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-awffull-[0-9]*
 
-FONTDEFAULT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraBd.ttf
-FONTLABEL?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+FONTDEFAULT?=	${LOCALBASE}/share/fonts/bitstream-vera/VeraBd.ttf
+FONTLABEL?=	${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf
 
 OPTIONS_DEFINE=	GEOIP DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes

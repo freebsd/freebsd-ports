@@ -3,6 +3,7 @@
 
 PORTNAME=	conkyforecast
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
 		LOCAL/vg
@@ -13,17 +14,12 @@ COMMENT=	Weather forecast script for conky
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
-		pidof:${PORTSDIR}/sysutils/pidof \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+		pidof:${PORTSDIR}/sysutils/pidof
 
-USES=		gettext python
+USES=		gettext python fonts
 USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
-SUB_LIST+=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/src
 

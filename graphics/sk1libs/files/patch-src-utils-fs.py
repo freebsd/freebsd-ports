@@ -5,7 +5,7 @@
  	system type.
  	"""
 +	if system.get_os_family()==system.FREEBSD:
-+		return ['/usr/local/lib/X11/fonts', os.path.join(gethome(),'.fonts')]
++		return ['/usr/local/lib/X11/fonts', '/usr/local/share/fonts', os.path.join(gethome(),'.fonts')]
  	if system.get_os_family()==system.LINUX:
  		return ['/usr/share/fonts', os.path.join(gethome(),'.fonts')]
 -	if  system.get_os_family()==system.WINDOWS:

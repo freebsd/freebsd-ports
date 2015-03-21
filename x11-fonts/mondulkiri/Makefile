@@ -3,7 +3,7 @@
 
 PORTNAME=	mondulkiri
 PORTVERSION=	2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/khmer/Fonts%20-%20Mondulkiri/Mondulkiri%20Unicode%20Fonts%20v2E3s/
 DISTNAME=	Mondulkiri_Unicode_fonts_V2E3s
@@ -14,12 +14,12 @@ COMMENT=	Mondulkiri Khmer fonts
 USES=		fonts zip
 NO_BUILD=	yes
 
-FONTSDIR=	lib/X11/fonts/Khmer
+FONTNAME=	Khmer
 
 WRKSRC=		${WRKDIR}/Opentype\ only\ fonts
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

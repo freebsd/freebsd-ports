@@ -5,4 +5,4 @@ the following line is in the "Modules" section of xorg.conf:
 
 Then append the following to xorg.conf's "Files" section:
 
-	FontPath "%%ECOFONTDIR%%/"
+	FontPath "%%FONTSDIR%%"

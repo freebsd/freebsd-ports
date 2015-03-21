@@ -5,7 +5,7 @@ if [ $2 != "POST-INSTALL" ]; then
   exit 0
 fi
 
-dir="${PKG_PREFIX}/lib/X11/fonts/local";
+dir="${PKG_PREFIX}/share/fonts/local";
 to="$dir/fonts.alias";
 from="$to.orig";
 

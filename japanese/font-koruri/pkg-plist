@@ -3,18 +3,12 @@
 %%DATADIR%%/Koruri-Light.ttf
 %%DATADIR%%/Koruri-Semibold.ttf
 %%DATADIR%%/Koruri-Regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Koruri-Bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Koruri-Extrabold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Koruri-Light.ttf
-%%LOCAL_FONTSDIR%%/TTF/Koruri-Semibold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Koruri-Regular.ttf
 etc/fonts/conf.avail/20-unhint-koruri.conf
 etc/fonts/conf.avail/62-fonts-koruri.conf
 etc/fonts/conf.d/20-unhint-koruri.conf
 etc/fonts/conf.d/62-fonts-koruri.conf
-%%X_FONTSDIR%%/TTF/Koruri-Bold.ttf
-%%X_FONTSDIR%%/TTF/Koruri-Extrabold.ttf
-%%X_FONTSDIR%%/TTF/Koruri-Light.ttf
-%%X_FONTSDIR%%/TTF/Koruri-Semibold.ttf
-%%X_FONTSDIR%%/TTF/Koruri-Regular.ttf
-@fc %%X_FONTSDIR%%/TTF
+%%FONTSDIR%%/Koruri-Bold.ttf
+%%FONTSDIR%%/Koruri-Extrabold.ttf
+%%FONTSDIR%%/Koruri-Light.ttf
+%%FONTSDIR%%/Koruri-Semibold.ttf
+%%FONTSDIR%%/Koruri-Regular.ttf

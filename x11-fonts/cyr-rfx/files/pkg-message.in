@@ -1,10 +1,10 @@
 
 This port provides Cyrillic replacements for most of the standard
-	%%PREFIX%%/lib/X11/fonts/misc
+	%%PREFIX%%/share/fonts/misc
 and
-	%%PREFIX%%/lib/X11/fonts/75dpi
+	%%PREFIX%%/share/fonts/75dpi
 fonts.
 
 You may want to make sure, the
-	%%PREFIX%%/lib/X11/fonts/cyr-rfx-%%CYR_RFX_ENCODING%%
+	%%FONTSDIR%%
 is listed in your fontpath before those two paths.

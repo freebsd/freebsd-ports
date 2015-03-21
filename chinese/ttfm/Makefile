@@ -3,15 +3,13 @@
 
 PORTNAME=	ttfm
 PORTVERSION=	0.9.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese print
 MASTER_SITES=	LOCAL/rafan/chinese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5/GB enhanced TrueType Font Manager
 
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q} CC="${CC}"
@@ -19,8 +17,6 @@ MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q} CC="${CC}"
 PORTDOCS=	README USAGE
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \

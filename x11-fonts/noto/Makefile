@@ -2,7 +2,7 @@
 
 PORTNAME=	noto
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.google.com/get/noto/pkgs/
 

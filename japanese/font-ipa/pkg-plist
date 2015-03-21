@@ -2,16 +2,11 @@
 %%DATADIR%%/ipam.otf
 %%DATADIR%%/ipagp.otf
 %%DATADIR%%/ipag.otf
-%%LOCAL_FONTSDIR%%/OTF/ipag.otf
-%%LOCAL_FONTSDIR%%/OTF/ipagp.otf
-%%LOCAL_FONTSDIR%%/OTF/ipam.otf
-%%LOCAL_FONTSDIR%%/OTF/ipamp.otf
 etc/fonts/conf.avail/20-unhint-ipa.conf
 etc/fonts/conf.avail/62-fonts-ipa.conf
 etc/fonts/conf.d/20-unhint-ipa.conf
 etc/fonts/conf.d/62-fonts-ipa.conf
-%%X_FONTSDIR%%/OTF/ipag.otf
-%%X_FONTSDIR%%/OTF/ipagp.otf
-%%X_FONTSDIR%%/OTF/ipam.otf
-%%X_FONTSDIR%%/OTF/ipamp.otf
-@fc %%X_FONTSDIR%%/OTF
+%%FONTSDIR%%/ipag.otf
+%%FONTSDIR%%/ipagp.otf
+%%FONTSDIR%%/ipam.otf
+%%FONTSDIR%%/ipamp.otf

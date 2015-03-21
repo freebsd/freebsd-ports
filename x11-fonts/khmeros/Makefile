@@ -14,14 +14,13 @@ COMMENT=	Khmer OS fonts
 USES=		fonts zip
 NO_BUILD=	yes
 
-FONTSDIR=	lib/X11/fonts/Khmer
-PLIST_SUB+=	FONTSDIR=${FONTSDIR}
+FONTNAME=	Khmer
 
 post-patch:
 	${MV} "${WRKSRC}/KhmerOS .ttf" ${WRKSRC}/KhmerOS.ttf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

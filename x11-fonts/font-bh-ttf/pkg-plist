@@ -12,5 +12,3 @@ etc/fonts/conf.d/42-luxi-mono.conf
 %%FONTSDIR%%/luxisbi.ttf
 %%FONTSDIR%%/luxisr.ttf
 %%FONTSDIR%%/luxisri.ttf
-@comment %%FONTSDIR%%/fonts.dir
-@comment %%FONTSDIR%%/fonts.scale

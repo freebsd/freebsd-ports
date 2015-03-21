@@ -14,7 +14,7 @@ RUN_DEPENDS+=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 FONTNAME?=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+FONTSDIR?=	${PREFIX}/share/fonts/${FONTNAME}
 PLIST_FILES+=	"@fcfontsdir ${FONTSDIR}"
 SUB_LIST+=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB+=	FONTSDIR="${FONTSDIR}"

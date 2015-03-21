@@ -3,7 +3,7 @@
 
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}-2
@@ -29,7 +29,6 @@ LICENSE_PERMS_OFL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-deinstall
 WRKSRC=		${WRKDIR}/LinLibertine
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 NO_BUILD=	yes
 
 PORTDOCS=	Bugs.txt \

@@ -1,8 +1,8 @@
-lib/X11/fonts/Type1/cour.afm
-lib/X11/fonts/Type1/cour.pfa
-lib/X11/fonts/Type1/courb.afm
-lib/X11/fonts/Type1/courb.pfa
-lib/X11/fonts/Type1/courbi.afm
-lib/X11/fonts/Type1/courbi.pfa
-lib/X11/fonts/Type1/couri.afm
-lib/X11/fonts/Type1/couri.pfa
+%%FONTSDIR%%/cour.afm
+%%FONTSDIR%%/cour.pfa
+%%FONTSDIR%%/courb.afm
+%%FONTSDIR%%/courb.pfa
+%%FONTSDIR%%/courbi.afm
+%%FONTSDIR%%/courbi.pfa
+%%FONTSDIR%%/couri.afm
+%%FONTSDIR%%/couri.pfa
