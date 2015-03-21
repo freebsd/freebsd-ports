@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	14.12
+PORTVERSION=	15.02
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/%SUBDIR%/:deps \
@@ -26,9 +26,10 @@ USERS=		ejabberd
 GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		cpe gmake pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
+CPE_VENDOR=	process-one
 
 OPTIONS_DEFINE=	ODBC PAM DOCS JSON MYSQL PGSQL LAGER ICONV RIAK
 OPTIONS_DEFAULT=	LAGER ICONV
