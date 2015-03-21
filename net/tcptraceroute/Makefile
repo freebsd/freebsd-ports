@@ -19,10 +19,9 @@ USES=		gmake
 
 PORTDOCS=	*
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	mct
-GH_COMMIT=	1ec970e
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
