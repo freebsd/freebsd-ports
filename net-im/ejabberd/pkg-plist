@@ -3,7 +3,7 @@
 %%ETCDIR%%/inetrc.example
 @unexec if cmp -s %D/%%ETCDIR%%/%%PORTNAME%%.defaults.example %D/%%ETCDIR%%/%%PORTNAME%%.defaults; then rm -f %D/%%ETCDIR%%/%%PORTNAME%%.defaults; fi
 @unexec if cmp -s %D/%%ETCDIR%%/inetrc.example %D/%%ETCDIR%%/inetrc; then rm -f %D/%%ETCDIR%%/inetrc; fi
-@exec [ ! -f %D/%%ETCDIR%%/inetrc ] && cp %D/%%ETCDIR%%/inetrc.example %D/%%ETCDIR%%/inetrc
+@exec [ ! -f %D/%%ETCDIR%%/inetrc ] && cp %D/%%ETCDIR%%/inetrc.example %D/%%ETCDIR%%/inetrc || /usr/bin/true
 %%PAM%%etc/pam.d/%%PORTNAME%%
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
@@ -396,15 +396,6 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/spool/ejabberd
-@dirrmtry /var/run/ejabberdctl
-@dirrmtry /var/log/ejabberd
+@dir /var/spool/ejabberd
+@dir /var/run/ejabberdctl
+@dir /var/log/ejabberd
