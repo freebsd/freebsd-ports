@@ -89,6 +89,24 @@ SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
+OPTIONS_RADIO=			GSSAPI
+OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
+.if exists(/usr/lib/libkrb5.a)
+OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
+OPTIONS_DEFAULT+=		GSSAPI_BASE
+.endif
+GSSAPI_BASE_DESC=		Use Heimdal in base
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi --with-gss_impl=heimdal
+GSSAPI_HEIMDAL_DESC=		Use Heimdal from ports
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_MIT_DESC=		Use MIT Kerberos V5
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=mit
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -114,14 +132,15 @@ IGNORE=		DRAC is not available
 USE_SQLITE=yes
 .endif
 
+.if !${PORT_OPTIONS:MGSSAPI_BASE} && !${PORT_OPTIONS:MGSSAPI_HEIMDAL} && \
+    !${PORT_OPTIONS:MGSSAPI_MIT}
+CONFIGURE_ARGS+=--disable-gssapi
+.endif
+
 .if ${OSVERSION} >= 900022
 PLIST_SUB+=	MANCONF=""
 .else
 PLIST_SUB+=	MANCONF="@comment "
-.endif
-
-.if !exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
 CYRUS_USER?=	cyrus
@@ -185,7 +204,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 			  -e "s|/usr/sieve|/var/imap/sieve|g" \
 		${WRKSRC}/tools/masssievec
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|$$(libdir)/\(pkgconfig\)|${PREFIX}/libdata/\1|g' \
 		-e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
 		${WRKSRC}/Makefile.in
