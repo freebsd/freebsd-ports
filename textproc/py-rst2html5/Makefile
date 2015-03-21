@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rst2html5
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	textproc python
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -18,11 +18,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:${PORTSDIR}/textproc/py-genshi \
 
 USES=	python
 USE_PYTHON=	distutils autoplist
-
-BB_ACCOUNT=	andre_felipe_dias
-BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	ab882b53331c
-
-WRKSRC=	${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
 .include <bsd.port.mk>
