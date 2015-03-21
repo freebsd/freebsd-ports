@@ -14,6 +14,10 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Editing Framework for the Eclipse IDE (examples)
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 USES=		zip

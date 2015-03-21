@@ -13,6 +13,10 @@ DISTNAME=	aptana_update_${PORTVERSION:E}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Web Development Tools (Eclipse plugin)
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 CONFLICTS_INSTALL=	eclipse-aptana-[2-9]*

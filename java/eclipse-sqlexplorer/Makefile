@@ -13,6 +13,10 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual database query tool for Eclipse
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef
 
