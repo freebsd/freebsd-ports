@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ettercap
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 
