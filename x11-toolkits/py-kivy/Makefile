@@ -72,8 +72,6 @@ TEST_USES=		display:build
 X11_MAKE_ENV=		USE_X11=1
 X11_USE=		XORG=x11
 
-BROKEN=		fails to build with cython-0.22
-
 .if !defined(ARCH)
 ARCH!=		uname -p
 .endif
