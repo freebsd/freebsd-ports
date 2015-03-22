@@ -15,3 +15,12 @@
    s.add_dependency "hashicorp-checkpoint", "~> 0.1.1"
    s.add_dependency "log4r", "~> 1.1.9", "< 1.1.11"
    s.add_dependency "net-ssh", ">= 2.6.6", "< 2.10.0"
+@@ -29,7 +29,7 @@
+   s.add_dependency "winrm", "~> 1.1.3"
+ 
+   # We lock this down to avoid compilation issues.
+-  s.add_dependency "nokogiri", "= 1.6.3.1"
++  s.add_dependency "nokogiri", ">= 1.6.3.1"
+ 
+   s.add_development_dependency "rake"
+   s.add_development_dependency "contest", ">= 0.1.2"
