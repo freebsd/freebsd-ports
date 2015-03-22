@@ -12,10 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   All fonts ports have been modified to respect XDG and install in
   share/fonts
 
-  The Xorg servers now are looking there by default, and have been
-  modified to also look into etc/X11/fontpath.d (see Xserver(1) for more
-  details) adding a symlink in that directory pointing to a font directory
-  will automatically add the later into Xorg FontPath
+  The Xorg servers now are looking there by default
 
 20150317:
   AFFECTS: users of editors/openoffice-4 and editors/openoffice-devel
