@@ -10,5 +10,8 @@ COMMENT=	The FS library
 
 XORG_CAT=	lib
 USE_XORG=	fontsproto:both xproto:both xtrans
+USES+=	cpe
+CPE_PRODUCT=	libfs
+CPE_VENDOR=	x
 
 .include <bsd.port.mk>
