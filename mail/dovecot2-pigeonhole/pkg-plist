@@ -10,6 +10,7 @@ include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-version.h
 include/dovecot-2.2-pigeonhole/sieve/program-client-private.h
 include/dovecot-2.2-pigeonhole/sieve/program-client.h
+include/dovecot-2.2-pigeonhole/sieve/realpath.h
 include/dovecot-2.2-pigeonhole/sieve/rfc2822.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-actions.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-address-parts.h
@@ -74,6 +75,7 @@ lib/dovecot/sieve/lib90_sieve_extprograms_plugin.a
 lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
+man/man1/doveadm-sieve.1.gz
 man/man1/sieve-dump.1.gz
 man/man1/sieve-filter.1.gz
 man/man1/sieve-test.1.gz
