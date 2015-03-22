@@ -150,6 +150,7 @@ LDFLAGS+=	-lldap
 . if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}/sbin/sendmail
+LDFLAGS+=	-L${LOCALBASE}/lib
 . else
 CONFIGURE_ARGS+=--with-sendmail=/usr/sbin/sendmail
 . endif

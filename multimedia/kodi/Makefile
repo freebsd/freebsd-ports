@@ -5,7 +5,7 @@ DISTVERSION=	14.0
 PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.kodi.tv/releases/source/ \
-		GH:ffmpeg
+		GHL:ffmpeg
 DISTFILES=	${DISTVERSION}-Helix${EXTRACT_SUFX} \
 		${GH_PROJECT}-${GH_TAGNAME}.tar.gz:ffmpeg
 EXTRACT_ONLY=	${DISTVERSION}-Helix${EXTRACT_SUFX}

@@ -5,7 +5,7 @@ PORTVERSION=	0.9.0.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=		SAVANNAH
 
-MAINTAINER=	hamradio@freebsd.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Simple Qt-based amateur radio logger
 
 USES=		qmake

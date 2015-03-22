@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	4.0.59
+PORTVERSION=	5.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -83,7 +83,7 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		204,206s!true!false!' \
+		210,212s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
@@ -120,7 +120,7 @@ post-build:
 post-install:
 	( cd ${WRKSRC} && \
 	${COPYTREE_SHARE} buildout ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION} )
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/buildout/agents/*
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/buildout/support-binaries/*
 .if ${PORT_OPTIONS:MSYMLINK}
 	${LN} -s ${PREFIX}/${GEM_LIB_DIR} ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}
 .endif

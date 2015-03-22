@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-perftools
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/ \
 		${MASTER_SITE_LOCAL}
@@ -64,6 +64,9 @@ post-build:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
+
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 # four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
 #regression-test: check

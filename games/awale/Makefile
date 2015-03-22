@@ -2,35 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	awale
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		tk:wrapper
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils tk
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
+PORTDATA=	*
+PORTDOCS=	*
+PLIST_FILES=	bin/awale \
+		bin/xawale \
+		man/man6/awale.6.gz \
+		man/man6/xawale.6.gz \
+		share/applications/awale.desktop
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/src/x${PORTNAME}
-	@${ECHO_CMD} "${DATADIR}/xawale.tcl" >> ${WRKSRC}/src/x${PORTNAME}
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh| ; \
-		s|exec wish|exec ${WISH}|' \
-		${WRKSRC}/src/xawale.tcl
-	@${REINPLACE_CMD} -e 's|share/man|man|' \
-		${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^mandir/s|=.*|= @mandir@|' ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|/bin/bash|/bin/sh|' ${WRKSRC}/src/xawale.tcl
+
+post-build:
+	@${ECHO_CMD} -n > ${WRKSRC}/src/xawale
+	@${ECHO_CMD} "#!/bin/sh" >> ${WRKSRC}/src/xawale
+	@${ECHO_CMD} "${DATADIR}/xawale.tcl" >> ${WRKSRC}/src/xawale
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS README THANKS
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>

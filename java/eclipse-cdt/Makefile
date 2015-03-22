@@ -13,6 +13,8 @@ DISTNAME=	${PLUGIN}-master-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ plugin for Eclipse IDE
 
+IGNORE=		plugin malfunctions, but an upgrade is planned
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 USES=		zip

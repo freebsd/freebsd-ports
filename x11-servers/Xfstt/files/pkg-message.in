@@ -1,7 +1,7 @@
 ******************************************************************
 You will have to install your TrueType fonts in
 
-	%%PREFIX%%/lib/X11/fonts/TrueType
+	%%PREFIX%%/share/fonts/TrueType
 
 Remember to run the "xfstt --sync" command if you
 add fonts while the font server is running.

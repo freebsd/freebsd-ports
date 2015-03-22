@@ -404,6 +404,7 @@
     SUBDIR += epm
     SUBDIR += epydoc
     SUBDIR += eric4
+    SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += esdl
     SUBDIR += etcd
@@ -492,12 +493,15 @@
     SUBDIR += gdcm
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
+    SUBDIR += geany-plugin-autoclose
     SUBDIR += geany-plugin-codenav
     SUBDIR += geany-plugin-commander
     SUBDIR += geany-plugin-debugger
+    SUBDIR += geany-plugin-defineformat
     SUBDIR += geany-plugin-devhelp
     SUBDIR += geany-plugin-doc
     SUBDIR += geany-plugin-extrasel
+    SUBDIR += geany-plugin-geanypy
     SUBDIR += geany-plugin-gendoc
     SUBDIR += geany-plugin-geniuspaste
     SUBDIR += geany-plugin-gproject
@@ -509,7 +513,9 @@
     SUBDIR += geany-plugin-miniscript
     SUBDIR += geany-plugin-multiterm
     SUBDIR += geany-plugin-numberedbookmarks
+    SUBDIR += geany-plugin-pairtaghighlighter
     SUBDIR += geany-plugin-pg
+    SUBDIR += geany-plugin-pohelper
     SUBDIR += geany-plugin-pretty-printer
     SUBDIR += geany-plugin-prj
     SUBDIR += geany-plugin-scope
@@ -626,6 +632,7 @@
     SUBDIR += gtgt
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
+    SUBDIR += gumbo
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += guile-lib
@@ -891,6 +898,7 @@
     SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
+    SUBDIR += injeqt
     SUBDIR += insight
     SUBDIR += ioncube
     SUBDIR += ipython
@@ -957,6 +965,7 @@
     SUBDIR += lemon
     SUBDIR += lfcbase
     SUBDIR += lfcxml
+    SUBDIR += libCello
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libafterbase
@@ -1266,6 +1275,8 @@
     SUBDIR += lua-cjson
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
+    SUBDIR += lua-lpeg
+    SUBDIR += lua-lpeg51
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
@@ -1446,6 +1457,7 @@
     SUBDIR += p5-Algorithm-C3
     SUBDIR += p5-Algorithm-ChooseSubsets
     SUBDIR += p5-Algorithm-Cluster
+    SUBDIR += p5-Algorithm-Cron
     SUBDIR += p5-Algorithm-Dependency
     SUBDIR += p5-Algorithm-Dependency-Objects
     SUBDIR += p5-Algorithm-Diff
@@ -1503,6 +1515,7 @@
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
     SUBDIR += p5-App-cpanoutdated
+    SUBDIR += p5-App-local-lib-helper
     SUBDIR += p5-App-perlbrew
     SUBDIR += p5-App-scan_prereqs_cpanfile
     SUBDIR += p5-AppConfig
@@ -1690,7 +1703,6 @@
     SUBDIR += p5-Class-Workflow
     SUBDIR += p5-Class-XPath
     SUBDIR += p5-Class-XSAccessor
-    SUBDIR += p5-Class-XSAccessor-Array
     SUBDIR += p5-Clone
     SUBDIR += p5-Clone-Fast
     SUBDIR += p5-Clone-More
@@ -1730,6 +1742,7 @@
     SUBDIR += p5-Config-Simple
     SUBDIR += p5-Config-Std
     SUBDIR += p5-Config-Tiny
+    SUBDIR += p5-Config-Validator
     SUBDIR += p5-Config-Versioned
     SUBDIR += p5-Config-Wrest
     SUBDIR += p5-Config-YAML
@@ -1774,6 +1787,7 @@
     SUBDIR += p5-Data-Grouper
     SUBDIR += p5-Data-HashArray
     SUBDIR += p5-Data-HexDump
+    SUBDIR += p5-Data-HexDump-Range
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hexify
     SUBDIR += p5-Data-Hierarchy
@@ -1784,6 +1798,7 @@
     SUBDIR += p5-Data-JavaScript-Anon
     SUBDIR += p5-Data-Lazy
     SUBDIR += p5-Data-Localize
+    SUBDIR += p5-Data-Lock
     SUBDIR += p5-Data-MessagePack
     SUBDIR += p5-Data-MessagePack-Stream
     SUBDIR += p5-Data-Miscellany
@@ -2008,7 +2023,6 @@
     SUBDIR += p5-EV
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Env-Path
-    SUBDIR += p5-Errno
     SUBDIR += p5-Error-Helper
     SUBDIR += p5-Eval-Closure
     SUBDIR += p5-Eval-Context
@@ -2334,6 +2348,7 @@
     SUBDIR += p5-Log-Any-Adapter-Log4perl
     SUBDIR += p5-Log-Any-Adapter-Syslog
     SUBDIR += p5-Log-Any-App
+    SUBDIR += p5-Log-Any-IfLOG
     SUBDIR += p5-Log-Contextual
     SUBDIR += p5-Log-Defer
     SUBDIR += p5-Log-Dispatch
@@ -2359,6 +2374,7 @@
     SUBDIR += p5-Log-Handler
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Log4perl-Appender-RabbitMQ
+    SUBDIR += p5-Log-Log4perl-Tiny
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
     SUBDIR += p5-Log-Minimal
@@ -2385,6 +2401,7 @@
     SUBDIR += p5-Metabase-Fact
     SUBDIR += p5-Method-Alias
     SUBDIR += p5-Method-Signatures-Simple
+    SUBDIR += p5-Minion
     SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
     SUBDIR += p5-Mo
@@ -2792,6 +2809,7 @@
     SUBDIR += p5-Scalar-Listify
     SUBDIR += p5-Scalar-String
     SUBDIR += p5-Scalar-Util-LooksLikeNumber
+    SUBDIR += p5-Scalar-Util-Numeric
     SUBDIR += p5-Scope-Guard
     SUBDIR += p5-Scope-Upper
     SUBDIR += p5-Script-isAperlScript
@@ -3133,6 +3151,7 @@
     SUBDIR += p5-Time-Stopwatch
     SUBDIR += p5-Time-Warp
     SUBDIR += p5-Time-modules
+    SUBDIR += p5-Time-timegm
     SUBDIR += p5-TimeDate
     SUBDIR += p5-ToolSet
     SUBDIR += p5-TraceFuncs
@@ -3146,6 +3165,7 @@
     SUBDIR += p5-Tree-Simple
     SUBDIR += p5-Tree-Simple-View
     SUBDIR += p5-Tree-Simple-VisitorFactory
+    SUBDIR += p5-Tree-Trie
     SUBDIR += p5-Type-Tie
     SUBDIR += p5-Type-Tiny
     SUBDIR += p5-Type-Tiny-XS
@@ -3747,6 +3767,7 @@
     SUBDIR += py-coverage
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
+    SUBDIR += py-curtsies
     SUBDIR += py-cxx
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
@@ -3860,6 +3881,7 @@
     SUBDIR += py-jsonpointer
     SUBDIR += py-jsonrpclib
     SUBDIR += py-jsonschema
+    SUBDIR += py-kaptan
     SUBDIR += py-kazoo
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
@@ -4278,6 +4300,7 @@
     SUBDIR += radare2
     SUBDIR += ragel
     SUBDIR += raknet
+    SUBDIR += rapidjson
     SUBDIR += rapidsvn
     SUBDIR += rbenv
     SUBDIR += rbtools

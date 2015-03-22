@@ -1,0 +1,4 @@
+bin/generate_perl_completion_script
+%%SITE_PERL%%/Term/Bash/Completion/Generator.pm
+%%PERL5_MAN3%%/Term::Bash::Completion::Generator.3.gz
+man/man1/generate_perl_completion_script.1.gz

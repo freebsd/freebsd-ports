@@ -114,6 +114,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
+%%SITE_PERL%%/Image/ExifTool/MOI.pm
 %%SITE_PERL%%/Image/ExifTool/MPC.pm
 %%SITE_PERL%%/Image/ExifTool/MPEG.pm
 %%SITE_PERL%%/Image/ExifTool/MPF.pm
@@ -275,6 +276,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::MIEUnits.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MNG.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::MOI.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPEG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPF.3.gz

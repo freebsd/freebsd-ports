@@ -3,6 +3,3 @@ bandwidthd/bandwidthd
 bandwidthd/htdocs/legend.gif
 bandwidthd/htdocs/logo.gif
 etc/rc.d/bandwidthd.sh.sample
-@dirrmtry bandwidthd/etc
-@dirrmtry bandwidthd/htdocs
-@unexec rmdir %D/bandwidthd 2> /dev/null || echo "If you do not plan on reinstalling bandwidthd, you can safely remove %D/bandwidthd"

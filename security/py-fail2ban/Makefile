@@ -18,8 +18,8 @@ GH_PROJECT=	${PORTNAME}
 GH_COMMIT=	2ab2bd8
 GH_TAGNAME=	${PORTVERSION}
 
-USES=		python:2
-USE_PYTHON=	distutils
+USES=		python
+USE_PYTHON=	distutils py3kplist
 
 USE_RC_SUBR=	fail2ban
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
@@ -50,8 +50,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .for file in fail2ban-client fail2ban-regex fail2ban-server fail2ban
-	@${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
-	@${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
+	${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
 
 .include <bsd.port.mk>

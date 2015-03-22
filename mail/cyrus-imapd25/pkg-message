@@ -1,0 +1,8 @@
+****************************************************************************
+
+To setup mail spool, modify /usr/local/etc/imapd.conf appropriately,
+then run /usr/local/cyrus/bin/mkimap.
+To run Cyrus IMAPd from startup, add cyrus_imapd_enable="YES" in your
+/etc/rc.conf.
+
+****************************************************************************

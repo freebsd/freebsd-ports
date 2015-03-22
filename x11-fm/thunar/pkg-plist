@@ -1,7 +1,7 @@
 bin/Thunar
 bin/thunar
 bin/thunar-settings
-%%PLUGIN_UCA%%etc/xdg/Thunar/uca.xml
+%%PLUG_UCA%%etc/xdg/Thunar/uca.xml
 include/thunarx-2/thunarx/thunarx-config.h
 include/thunarx-2/thunarx/thunarx-file-info.h
 include/thunarx-2/thunarx/thunarx-menu-provider.h
@@ -18,11 +18,11 @@ lib/Thunar/thunar-sendto-email
 lib/libthunarx-2.so
 lib/libthunarx-2.so.0
 lib/libthunarx-2.so.0.0.0
-%%PLUGIN_APR%%lib/thunarx-2/thunar-apr.so
-%%PLUGIN_SBR%%lib/thunarx-2/thunar-sbr.so
-%%PLUGIN_UCA%%lib/thunarx-2/thunar-uca.so
-%%PLUGIN_WALL%%lib/thunarx-2/thunar-wallpaper-plugin.so
-%%PLUGIN_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.so
+%%PLUG_APR%%lib/thunarx-2/thunar-apr.so
+%%PLUG_SBR%%lib/thunarx-2/thunar-sbr.so
+%%PLUG_UCA%%lib/thunarx-2/thunar-uca.so
+%%PLUG_WALL%%lib/thunarx-2/thunar-wallpaper-plugin.so
+%%PLUG_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.so
 libdata/pkgconfig/thunarx-2.pc
 man/man1/Thunar.1.gz
 share/Thunar/sendto/thunar-sendto-email.desktop
@@ -106,4 +106,4 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/Thunar.mo
 share/pixmaps/Thunar/Thunar-about-logo.png
 share/polkit-1/actions/org.xfce.thunar.policy
-%%PLUGIN_TPA%%share/xfce4/panel-plugins/thunar-tpa.desktop
+%%PLUG_TPA%%share/xfce4/panel/plugins/thunar-tpa.desktop

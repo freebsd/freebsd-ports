@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-volumed-pulse
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	https://launchpadlibrarian.net/133628016/ \
 	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
@@ -18,10 +19,10 @@ LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
 	libnotify.so:${PORTSDIR}/devel/libnotify \
 	libkeybinder.so:${PORTSDIR}/x11/keybinder
 
-USES=	pkgconfig gmake tar:bz2
+USES=	pkgconfig gmake xfce tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
-USE_XFCE=	configenv xfconf
+USE_XFCE=	xfconf
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=--enable-libnotify

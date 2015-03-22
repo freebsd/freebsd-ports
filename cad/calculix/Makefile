@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.7
-PORTREVISION=	4
+PORTVERSION=	2.8
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -32,7 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CCX_VER=	ccx_${PORTVERSION}
 CGX_VER=	cgx_${PORTVERSION}
 
-USES=		fortran gmake tar:bzip2
+USES=		compiler:openmp fortran gmake tar:bzip2
 USE_GCC=	yes
 USE_XORG=	xmu
 USE_GL=	glut
@@ -40,8 +39,18 @@ USE_GL=	glut
 BROWSER?=	firefox
 PSVIEWER?=	gv
 
-OPTIONS_DEFINE=	ATLAS METIS METIS_EDF DOCS EXAMPLES
+OPTIONS_DEFINE=	METIS METIS_EDF DOCS EXAMPLES
 OPTIONS_DEFAULT=METIS
+
+OPTIONS_RADIO=  BLAS
+OPTIONS_RADIO_BLAS=     REFERENCE OBLAS
+OPTIONS_DEFAULT=        REFERENCE
+
+REFERENCE_DESC= Blas / Lapack
+REFERENCE_USES= blaslapack:netlib
+
+OBLAS_DESC=     Openblas
+OBLAS_USES=     blaslapack:openblas
 
 .include <bsd.port.options.mk>
 
@@ -60,12 +69,6 @@ LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis4
 .endif
 .if ${PORT_OPTIONS:MMETIS_EDF}
 LIB_DEPENDS+=	libmetis.so:${PORTSDIR}/math/metis-edf
-.endif
-
-.if ${PORT_OPTIONS:MATLAS}
-USES+=		blaslapack:atlas
-.else
-USES+=		blaslapack
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -101,9 +104,9 @@ do-build:
 	@(cd ${WRKSRC}/${CGX_VER}/src; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${CCX_VER}/src/${CCX_VER} \
+	${INSTALL_PROGRAM} ${WRKSRC}/${CCX_VER}/src/${CCX_VER} \
 	  ${STAGEDIR}${PREFIX}/bin/ccx
-	@${INSTALL_PROGRAM} ${WRKSRC}/${CGX_VER}/src/cgx \
+	${INSTALL_PROGRAM} ${WRKSRC}/${CGX_VER}/src/cgx \
 	  ${STAGEDIR}${PREFIX}/bin/cgx
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ccx
@@ -112,9 +115,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cgx
 	@(cd ${WRKSRC}/${CGX_VER}/doc/cgx && ${COPYTREE_SHARE} . \
 	  ${STAGEDIR}${DOCSDIR}/cgx)
-	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/${CCX_VER}.ps ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/${CCX_VER}.ps ${STAGEDIR}${DOCSDIR}
 	@${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/${CCX_VER}.ps
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.pdf \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.pdf \
 	  ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}

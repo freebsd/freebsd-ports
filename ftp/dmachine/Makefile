@@ -17,7 +17,6 @@ SUB_FILES=	dmachine.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/dmachine.sh ${STAGEDIR}${PREFIX}/bin/dmachine
-	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/dmachine-${PORTVERSION}.jar ${STAGEDIR}${PREFIX}/share/java/classes/dmachine.jar
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

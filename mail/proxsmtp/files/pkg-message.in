@@ -3,8 +3,16 @@ Edit /etc/rc.conf and set
 
 proxsmtpd_enable="YES"
 
-to enable proxsmtpd. 
+to enable proxsmtpd.
 
-To make it work with Postfix, see: 
+To make it work with Postfix, see:
 http://memberwebs.com/stef/software/proxsmtp/postfix.html
+
+You can also specify the following make variables:
+
+     PROXSMTP_BANNER="220 smtp.passthru"
+     PROXSMTP_HELO_RSP="250 smtp.passthru"
+     PROXSMTP_SMTP_EHLO_RSP="250-smtp.passthru"
+
+to define default values (or to override the defaults).
 /* ================================================================= */

@@ -34,7 +34,7 @@ missing dependencies.
  qtHaveModule(dbus): SUBDIRS += qdbus
 -
 -win32|winrt:SUBDIRS += windeployqt
--winrt:SUBDIRS += winrtrunner qtd3dservice
+-winrt:SUBDIRS += winrtrunner
 -qtHaveModule(gui):!android:!ios:!qnx:!wince*:!winrt*:SUBDIRS += qtdiag
 -
 -qtNomakeTools( \

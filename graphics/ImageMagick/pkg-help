@@ -1,8 +1,0 @@
-What is meant with half support for the 16BIT_PIXEL option and HDRI
-option is that either by disabling 16BIT_PIXEL or enabling HDRI the
-library names change. The ImageMagick port works fine and package
-correctly. But ports that depend on ImageMagick might not be able to
-find ImageMagick libraries anymore via the port framework.
-
-So please keep that in mind if you need a port that ImageMagick and
-you want to change these options.

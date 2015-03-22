@@ -1,17 +1,25 @@
 bin/chirpw
 man/man1/chirpw.1.gz
 share/applications/chirp.desktop
-share/chirp/chirp.xsd
-share/chirp/chirp_banks.xsd
-share/chirp/chirp_memory.xsd
-share/chirp/stock_configs/EU LPD and PMR Channels.csv
-share/chirp/stock_configs/Marine VHF Channels.csv
-share/chirp/stock_configs/NOAA Weather Alert.csv
-share/chirp/stock_configs/US FRS and GMRS Channels.csv
-share/chirp/stock_configs/US MURS Channels.csv
-share/chirp/stock_configs/US 60 meter channels (Center).csv
-share/chirp/stock_configs/US 60 meter channels (Dial).csv
-share/chirp/stock_configs/US Calling Frequencies.csv
+%%DATADIR%%/chirp.xsd
+%%DATADIR%%/chirp_banks.xsd
+%%DATADIR%%/chirp_memory.xsd
+%%DATADIR%%/locale/de/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/en_US/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/hu/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/it/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/nl/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/pt_BR/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/CHIRP.mo
+%%DATADIR%%/stock_configs/EU LPD and PMR Channels.csv
+%%DATADIR%%/stock_configs/Marine VHF Channels.csv
+%%DATADIR%%/stock_configs/NOAA Weather Alert.csv
+%%DATADIR%%/stock_configs/US FRS and GMRS Channels.csv
+%%DATADIR%%/stock_configs/US MURS Channels.csv
+%%DATADIR%%/stock_configs/US 60 meter channels (Center).csv
+%%DATADIR%%/stock_configs/US 60 meter channels (Dial).csv
+%%DATADIR%%/stock_configs/US Calling Frequencies.csv
 share/pixmaps/chirp.png
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PYTHON_SITELIBDIR%%/chirp/__init__.py
@@ -20,6 +28,27 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/alinco.py
 %%PYTHON_SITELIBDIR%%/chirp/alinco.pyc
 %%PYTHON_SITELIBDIR%%/chirp/alinco.pyo
+%%PYTHON_SITELIBDIR%%/chirp/anytone.py
+%%PYTHON_SITELIBDIR%%/chirp/anytone.pyc
+%%PYTHON_SITELIBDIR%%/chirp/anytone.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_au.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_au.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_au.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r1.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r1.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r1.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r2.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r2.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r2.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r3.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r3.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_iaru_r3.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_na.py
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_na.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bandplan_na.pyo
 %%PYTHON_SITELIBDIR%%/chirp/baofeng_uv3r.py
 %%PYTHON_SITELIBDIR%%/chirp/baofeng_uv3r.pyc
 %%PYTHON_SITELIBDIR%%/chirp/baofeng_uv3r.pyo
@@ -29,6 +58,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/bitwise_grammar.py
 %%PYTHON_SITELIBDIR%%/chirp/bitwise_grammar.pyc
 %%PYTHON_SITELIBDIR%%/chirp/bitwise_grammar.pyo
+%%PYTHON_SITELIBDIR%%/chirp/bjuv55.py
+%%PYTHON_SITELIBDIR%%/chirp/bjuv55.pyc
+%%PYTHON_SITELIBDIR%%/chirp/bjuv55.pyo
 %%PYTHON_SITELIBDIR%%/chirp/chirp_common.py
 %%PYTHON_SITELIBDIR%%/chirp/chirp_common.pyc
 %%PYTHON_SITELIBDIR%%/chirp/chirp_common.pyo
@@ -38,6 +70,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/directory.py
 %%PYTHON_SITELIBDIR%%/chirp/directory.pyc
 %%PYTHON_SITELIBDIR%%/chirp/directory.pyo
+%%PYTHON_SITELIBDIR%%/chirp/elib_intl.py
+%%PYTHON_SITELIBDIR%%/chirp/elib_intl.pyc
+%%PYTHON_SITELIBDIR%%/chirp/elib_intl.pyo
 %%PYTHON_SITELIBDIR%%/chirp/errors.py
 %%PYTHON_SITELIBDIR%%/chirp/errors.pyc
 %%PYTHON_SITELIBDIR%%/chirp/errors.pyo
@@ -65,6 +100,12 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/ft857.py
 %%PYTHON_SITELIBDIR%%/chirp/ft857.pyc
 %%PYTHON_SITELIBDIR%%/chirp/ft857.pyo
+%%PYTHON_SITELIBDIR%%/chirp/ft90.py
+%%PYTHON_SITELIBDIR%%/chirp/ft90.pyc
+%%PYTHON_SITELIBDIR%%/chirp/ft90.pyo
+%%PYTHON_SITELIBDIR%%/chirp/ftm350.py
+%%PYTHON_SITELIBDIR%%/chirp/ftm350.pyc
+%%PYTHON_SITELIBDIR%%/chirp/ftm350.pyo
 %%PYTHON_SITELIBDIR%%/chirp/generic_csv.py
 %%PYTHON_SITELIBDIR%%/chirp/generic_csv.pyc
 %%PYTHON_SITELIBDIR%%/chirp/generic_csv.pyo
@@ -74,6 +115,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/generic_xml.py
 %%PYTHON_SITELIBDIR%%/chirp/generic_xml.pyc
 %%PYTHON_SITELIBDIR%%/chirp/generic_xml.pyo
+%%PYTHON_SITELIBDIR%%/chirp/h777.py
+%%PYTHON_SITELIBDIR%%/chirp/h777.pyc
+%%PYTHON_SITELIBDIR%%/chirp/h777.pyo
 %%PYTHON_SITELIBDIR%%/chirp/ic208.py
 %%PYTHON_SITELIBDIR%%/chirp/ic208.pyc
 %%PYTHON_SITELIBDIR%%/chirp/ic208.pyo
@@ -131,6 +175,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/id31.py
 %%PYTHON_SITELIBDIR%%/chirp/id31.pyc
 %%PYTHON_SITELIBDIR%%/chirp/id31.pyo
+%%PYTHON_SITELIBDIR%%/chirp/id51.py
+%%PYTHON_SITELIBDIR%%/chirp/id51.pyc
+%%PYTHON_SITELIBDIR%%/chirp/id51.pyo
 %%PYTHON_SITELIBDIR%%/chirp/id800.py
 %%PYTHON_SITELIBDIR%%/chirp/id800.pyc
 %%PYTHON_SITELIBDIR%%/chirp/id800.pyo
@@ -146,6 +193,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_hmk.py
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_hmk.pyc
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_hmk.pyo
+%%PYTHON_SITELIBDIR%%/chirp/kenwood_itm.py
+%%PYTHON_SITELIBDIR%%/chirp/kenwood_itm.pyc
+%%PYTHON_SITELIBDIR%%/chirp/kenwood_itm.pyo
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_live.py
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_live.pyc
 %%PYTHON_SITELIBDIR%%/chirp/kenwood_live.pyo
@@ -176,12 +226,18 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/th_uv3r.py
 %%PYTHON_SITELIBDIR%%/chirp/th_uv3r.pyc
 %%PYTHON_SITELIBDIR%%/chirp/th_uv3r.pyo
+%%PYTHON_SITELIBDIR%%/chirp/th_uvf8d.py
+%%PYTHON_SITELIBDIR%%/chirp/th_uvf8d.pyc
+%%PYTHON_SITELIBDIR%%/chirp/th_uvf8d.pyo
 %%PYTHON_SITELIBDIR%%/chirp/thd72.py
 %%PYTHON_SITELIBDIR%%/chirp/thd72.pyc
 %%PYTHON_SITELIBDIR%%/chirp/thd72.pyo
 %%PYTHON_SITELIBDIR%%/chirp/thuv1f.py
 %%PYTHON_SITELIBDIR%%/chirp/thuv1f.pyc
 %%PYTHON_SITELIBDIR%%/chirp/thuv1f.pyo
+%%PYTHON_SITELIBDIR%%/chirp/tk8102.py
+%%PYTHON_SITELIBDIR%%/chirp/tk8102.pyc
+%%PYTHON_SITELIBDIR%%/chirp/tk8102.pyo
 %%PYTHON_SITELIBDIR%%/chirp/tmv71.py
 %%PYTHON_SITELIBDIR%%/chirp/tmv71.pyc
 %%PYTHON_SITELIBDIR%%/chirp/tmv71.pyo
@@ -194,12 +250,21 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirp/uv5r.py
 %%PYTHON_SITELIBDIR%%/chirp/uv5r.pyc
 %%PYTHON_SITELIBDIR%%/chirp/uv5r.pyo
+%%PYTHON_SITELIBDIR%%/chirp/uvb5.py
+%%PYTHON_SITELIBDIR%%/chirp/uvb5.pyc
+%%PYTHON_SITELIBDIR%%/chirp/uvb5.pyo
+%%PYTHON_SITELIBDIR%%/chirp/vx2.py
+%%PYTHON_SITELIBDIR%%/chirp/vx2.pyc
+%%PYTHON_SITELIBDIR%%/chirp/vx2.pyo
 %%PYTHON_SITELIBDIR%%/chirp/vx3.py
 %%PYTHON_SITELIBDIR%%/chirp/vx3.pyc
 %%PYTHON_SITELIBDIR%%/chirp/vx3.pyo
 %%PYTHON_SITELIBDIR%%/chirp/vx5.py
 %%PYTHON_SITELIBDIR%%/chirp/vx5.pyc
 %%PYTHON_SITELIBDIR%%/chirp/vx5.pyo
+%%PYTHON_SITELIBDIR%%/chirp/vx510.py
+%%PYTHON_SITELIBDIR%%/chirp/vx510.pyc
+%%PYTHON_SITELIBDIR%%/chirp/vx510.pyo
 %%PYTHON_SITELIBDIR%%/chirp/vx6.py
 %%PYTHON_SITELIBDIR%%/chirp/vx6.pyc
 %%PYTHON_SITELIBDIR%%/chirp/vx6.pyo
@@ -227,6 +292,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirpui/__init__.py
 %%PYTHON_SITELIBDIR%%/chirpui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/chirpui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/chirpui/bandplans.py
+%%PYTHON_SITELIBDIR%%/chirpui/bandplans.pyc
+%%PYTHON_SITELIBDIR%%/chirpui/bandplans.pyo
 %%PYTHON_SITELIBDIR%%/chirpui/bankedit.py
 %%PYTHON_SITELIBDIR%%/chirpui/bankedit.pyc
 %%PYTHON_SITELIBDIR%%/chirpui/bankedit.pyo
@@ -269,6 +337,9 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirpui/miscwidgets.py
 %%PYTHON_SITELIBDIR%%/chirpui/miscwidgets.pyc
 %%PYTHON_SITELIBDIR%%/chirpui/miscwidgets.pyo
+%%PYTHON_SITELIBDIR%%/chirpui/radiobrowser.py
+%%PYTHON_SITELIBDIR%%/chirpui/radiobrowser.pyc
+%%PYTHON_SITELIBDIR%%/chirpui/radiobrowser.pyo
 %%PYTHON_SITELIBDIR%%/chirpui/reporting.py
 %%PYTHON_SITELIBDIR%%/chirpui/reporting.pyc
 %%PYTHON_SITELIBDIR%%/chirpui/reporting.pyo

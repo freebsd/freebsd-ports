@@ -36,12 +36,13 @@ PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
-OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX
+OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX AVX2
 
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
+AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT=	DYNAMIC_ARCH
@@ -74,6 +75,7 @@ BUILDFLAGS+=	INTERFACE64=1
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
+USES+=		compiler:openmp
 BUILDFLAGS+=	USE_OPENMP=1
 .endif
 
@@ -84,6 +86,10 @@ BUILDFLAGS+=	QUAD_PRECISION=1
 
 .if ! ${PORT_OPTIONS:MAVX}
 BUILDFLAGS+=	NO_AVX=1
+.endif
+
+.if ! ${PORT_OPTIONS:MAVX2}
+BUILDFLAGS+=	NO_AVX2=1
 .endif
 
 post-extract:

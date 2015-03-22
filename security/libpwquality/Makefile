@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for generating random passwords and quality checking
 
 LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib

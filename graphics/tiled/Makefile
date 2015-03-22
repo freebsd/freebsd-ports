@@ -11,7 +11,7 @@ COMMENT=	General purpose tile map editor
 
 USES=		desktop-file-utils shared-mime-info qmake
 USE_QT4=	corelib gui opengl \
-		linguist_build moc_build uic_build rcc_build
+		linguisttools_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

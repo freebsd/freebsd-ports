@@ -22,24 +22,14 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	PGSQL MYSQL SQLITE DOCS
 
-.include <bsd.port.options.mk>
+MYSQL_RUN_DEPENDS=	p5-Class-DBI-mysql>=0:${PORTSDIR}/databases/p5-Class-DBI-mysql
+PGSQL_RUN_DEPENDS=	p5-Class-DBI-Pg>=0:${PORTSDIR}/databases/p5-Class-DBI-Pg
+SQLITE_RUN_DEPENDS=	p5-Class-DBI-SQLite>=0:${PORTSDIR}/databases/p5-Class-DBI-SQLite
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-Class-DBI-Pg>=0:${PORTSDIR}/databases/p5-Class-DBI-Pg
-.endif
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-Class-DBI-mysql>=0:${PORTSDIR}/databases/p5-Class-DBI-mysql
-.endif
-.if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	p5-Class-DBI-SQLite>=0:${PORTSDIR}/databases/p5-Class-DBI-SQLite
-.endif
 
 .include <bsd.port.mk>

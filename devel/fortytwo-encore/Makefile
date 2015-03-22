@@ -2,7 +2,7 @@
 
 PORTNAME=	encore
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnustep
 MASTER_SITES=	SF/fortytwo/Encore/${PORTVERSION}
 PKGNAMEPREFIX=	fortytwo-
@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes for GNUstep
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
@@ -31,5 +32,6 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/Encore-${PORTVERSION}-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Frameworks/Encore.framework/Versions/0/libEncore.so
 
 .include <bsd.port.mk>

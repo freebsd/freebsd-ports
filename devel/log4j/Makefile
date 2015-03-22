@@ -4,16 +4,16 @@
 PORTNAME=	log4j
 PORTVERSION=	1.2.17
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	APACHE/logging/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and flexible logging library for Java
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_JAVA=	YES
-NO_BUILD=	YES
+USE_JAVA=	yes
+NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
 
@@ -24,18 +24,9 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/log4j-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing documentation in ${STAGEDIR}${DOCSDIR}/..."
-	@cd ${WRKSRC}/site \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing examples in ${STAGEDIR}${EXAMPLESDIR}/..."
-	@cd ${WRKSRC}/examples \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/log4j-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	cd ${WRKSRC}/site && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
+	${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/lf5/OpeningLogFiles
 
 .include <bsd.port.mk>

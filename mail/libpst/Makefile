@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.63
-PORTREVISION=	2
+PORTVERSION=	0.6.64
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
-		http://fossies.org/unix/privat/
+		http://fossies.org/unix/privat/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for converting Outlook .pst files to mbox and other formats

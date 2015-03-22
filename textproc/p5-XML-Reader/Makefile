@@ -21,7 +21,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	PP
-PP_DESC=	Use XML::Parsepp
+PP_DESC=	Use Pure Perl XML Parser (instead of compiled)
 
 PP_RUN_DEPENDS=		p5-XML-Parsepp>=0:${PORTSDIR}/textproc/p5-XML-Parsepp
 PP_RUN_DEPENDS_OFF=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser

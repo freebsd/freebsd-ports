@@ -16,9 +16,17 @@ LIB_DEPENDS=	libstrophe.so:${PORTSDIR}/net-im/libstrophe \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libotr.so:${PORTSDIR}/security/libotr3
 
-USES=		ncurses pkgconfig
+OPTIONS_DEFINE=NOTIFY
+USES=		ncurses pkgconfig autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=	--enable-notifications
+.endif
 
 .include <bsd.port.mk>

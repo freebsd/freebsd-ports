@@ -21,6 +21,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	Changes
 
 post-install:

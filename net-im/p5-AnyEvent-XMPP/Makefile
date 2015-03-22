@@ -26,10 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-# One of it's dependency is p5-GSSAPI which is marked broken for 7.X
-.if ${OSVERSION} < 800000
-BROKEN=	Does not work on FreeBSD 7.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

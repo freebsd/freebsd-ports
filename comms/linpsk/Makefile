@@ -6,7 +6,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	hamradio@freebsd.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Simple Qt PSK31, RTTY, and MSK31 client
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \

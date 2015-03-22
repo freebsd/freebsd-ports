@@ -3,7 +3,7 @@
 
 PORTNAME=	fonts-te
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -11,14 +11,10 @@ MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telugu fonts for te_IN
 
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		tar:bzip2
+USES=		fonts tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	MANUAL.PDF
 PKGMESSAGE=	${PKGDIR}/pkg-message
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=	FONTSDIR=${FONTSDIR:S|^${PREFIX}/||}
 OPTIONS_DEFINE=	DOCS
 
 do-install:

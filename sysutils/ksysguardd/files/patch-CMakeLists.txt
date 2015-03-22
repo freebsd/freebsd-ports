@@ -1,6 +1,11 @@
---- ./CMakeLists.txt.orig	2011-02-25 22:54:48.000000000 +0100
-+++ ./CMakeLists.txt	2011-03-05 16:31:50.557158447 +0100
-@@ -9,12 +9,15 @@
+--- CMakeLists.txt.orig	2014-10-10 07:47:23 UTC
++++ CMakeLists.txt
+@@ -7,16 +7,19 @@ include_directories( ${CMAKE_CURRENT_SOU
+ # Laurent: Verify that we install it into (kdeprefix)/etc/ and not into /etc
+ # otherwise it's necessary to change it.
+ # into kde 3.x it was installed into /etc/
+-add_definitions( -DKSYSGUARDDRCFILE="\\"${SYSCONF_INSTALL_DIR}/ksysguarddrc\\"" )
++add_definitions( -DKSYSGUARDDRCFILE=\"${SYSCONF_INSTALL_DIR}/ksysguarddrc\" )
  
  add_definitions(-DOSTYPE_${CMAKE_SYSTEM_NAME})
  
@@ -21,7 +26,7 @@
  
  configure_file(config-ksysguardd.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguardd.h)
  
-@@ -67,4 +70,5 @@
+@@ -69,4 +72,5 @@ if( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS"
    target_link_libraries(ksysguardd socket nsl)
  endif( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" )
  

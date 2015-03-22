@@ -1,0 +1,8 @@
+Log::Any::IfLOG will load Log::Any only when LOG environment variable is true.
+Otherwise, the module is not loaded and if user imports $log, a dumb object will
+be returned instead that will accept any method but return false.
+
+This is a quick-hack solution to avoid the cost of loading Log::Any under
+"normal condition" (when LOG is not set to true).
+
+WWW: http://search.cpan.org/dist/Log-Any-IfLOG/

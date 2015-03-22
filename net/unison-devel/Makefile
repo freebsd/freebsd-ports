@@ -18,6 +18,8 @@ IGNORE=		No devel release available. \
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
 WANT_GNOME=	yes
@@ -39,18 +41,13 @@ ALL_TARGET=	unison all
 .if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
 PLIST_SUB+=	TEXT=""
-BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
+BUILD_DEPENDS+= lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		icotool:${PORTSDIR}/graphics/icoutils
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-PATCH_DEPENDS+=	${BUILD_DEPENDS}
-CONFLICTS+=	ocaml-nox11*
 SUB_FILES+=	${PORTNAME}.desktop
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
-BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
-PATCH_DEPENDS+=	${BUILD_DEPENDS}
 PKGMESSAGE=	${PKGDIR}/pkg-message.nox11
 .endif
 

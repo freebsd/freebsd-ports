@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		gmake iconv perl5
+USES=		gmake iconv perl5 cpe
 USE_PERL5=	build
 USE_PHP=	xml
 USE_RC_SUBR=	nagios

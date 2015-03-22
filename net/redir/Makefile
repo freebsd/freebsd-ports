@@ -10,6 +10,7 @@ MASTER_SITES=	http://sammy.net/~sammy/hacks/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP connection redirection utility
 
+USES=		gmake
 USE_RC_SUBR=	redir
 
 PLIST_FILES=	bin/redir man/man1/redir.1.gz

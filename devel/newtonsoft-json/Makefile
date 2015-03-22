@@ -25,15 +25,15 @@ PLIST_FILES=	lib/mono/Newtonsoft.Json/Newtonsoft.Json.dll \
 		libdata/pkgconfig/Newtonsoft.Json.pc
 
 do-build:
-	(cd ${WRKSRC}/Src/Newtonsoft.Json && xbuild Newtonsoft.Json.csproj \
+	(cd ${WRKSRC}/Src/Newtonsoft.Json && ${SETENV} ${MAKE_ENV} xbuild Newtonsoft.Json.csproj \
 		/property:SignAssembly=true \
 		/property:AssemblyOriginatorKeyFile=Dynamic.snk \
 		/property:Configuration=Release \
 		/property:DefineConstants='SIGNED NET45 TRACE')
 	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \
-		monodis Newtonsoft.Json.dll --output=Newtonsoft.Json.il)
+		${SETENV} ${MAKE_ENV} monodis Newtonsoft.Json.dll --output=Newtonsoft.Json.il)
 	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \
-		ilasm /dll /key:../../../Dynamic.snk Newtonsoft.Json.il)
+		${SETENV} ${MAKE_ENV} ilasm /dll /key:../../../Dynamic.snk Newtonsoft.Json.il)
 
 do-install:
 	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \

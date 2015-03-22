@@ -3,6 +3,7 @@
 
 PORTNAME=	syck
 PORTVERSION=	0.61.2
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://pyyaml.org/download/pysyck/ \
 		LOCAL/avl
@@ -20,5 +21,8 @@ USE_PYTHON=	distutils autoplist
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include|include|g ; s|#library_dirs|library_dirs|g ; \
 		s|/usr/local|${LOCALBASE}|g ' ${WRKSRC}/setup.cfg
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_syck.so
 
 .include <bsd.port.mk>

@@ -5,12 +5,14 @@ bin/nghttp
 bin/nghttpd
 bin/nghttpx
 include/nghttp2/asio_http2.h
+include/nghttp2/asio_http2_client.h
+include/nghttp2/asio_http2_server.h
 include/nghttp2/nghttp2.h
 include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
 lib/libnghttp2.so.5
-lib/libnghttp2.so.5.6.0
+lib/libnghttp2.so.5.7.0
 %%ASIO%%lib/libnghttp2_asio.a
 %%ASIO%%lib/libnghttp2_asio.so
 %%ASIO%%lib/libnghttp2_asio.so.0

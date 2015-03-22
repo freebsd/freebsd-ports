@@ -18,6 +18,7 @@ bin/fdreserve
 bin/fdswap
 bin/forbacktickx
 bin/foreground
+bin/forstdin
 bin/forx
 bin/getpid
 bin/heredoc
@@ -45,9 +46,9 @@ include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2
-lib/libexecline.so.2.0
-lib/libexecline.so.2.0.2
-lib/libexecline.so.2.0.2.1
+lib/libexecline.so.2.1
+lib/libexecline.so.2.1.1
+lib/libexecline.so.2.1.1.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -71,6 +72,7 @@ lib/libexecline.so.2.0.2.1
 %%PORTDOCS%%%%DOCSDIR%%/execline-startup.html
 %%PORTDOCS%%%%DOCSDIR%%/execlineb.html
 %%PORTDOCS%%%%DOCSDIR%%/exit.html
+%%PORTDOCS%%%%DOCSDIR%%/exitcodes.html
 %%PORTDOCS%%%%DOCSDIR%%/export.html
 %%PORTDOCS%%%%DOCSDIR%%/fdblock.html
 %%PORTDOCS%%%%DOCSDIR%%/fdclose.html
@@ -79,6 +81,7 @@ lib/libexecline.so.2.0.2.1
 %%PORTDOCS%%%%DOCSDIR%%/fdswap.html
 %%PORTDOCS%%%%DOCSDIR%%/forbacktickx.html
 %%PORTDOCS%%%%DOCSDIR%%/foreground.html
+%%PORTDOCS%%%%DOCSDIR%%/forstdin.html
 %%PORTDOCS%%%%DOCSDIR%%/forx.html
 %%PORTDOCS%%%%DOCSDIR%%/getpid.html
 %%PORTDOCS%%%%DOCSDIR%%/grammar.html

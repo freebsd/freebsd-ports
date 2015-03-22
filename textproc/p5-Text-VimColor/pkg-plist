@@ -1,6 +1,7 @@
 bin/text-vimcolor
 %%PERL5_MAN3%%/Text::VimColor.3.gz
 %%SITE_PERL%%/Text/VimColor.pm
+%%SITE_PERL%%/auto/share/dist/Text-VimColor/define_all.vim
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/light.css
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/light.xsl
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/mark.vim

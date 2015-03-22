@@ -26,9 +26,12 @@ USE_GCC=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison gettext gmake python tar:xz
+USES=		bison cpe gettext gmake python tar:xz
 ONLY_FOR_ARCHS=	amd64
 MAKE_JOBS_UNSAFE=	yes
+
+CPE_PRODUCT=	grub
+CPE_VENDOR=	gnu
 
 CONFIGURE_ARGS=	--with-platform=efi --disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
@@ -37,7 +40,7 @@ CONFIGURE_ENV=	CPP="${CC} -E" \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
+	@${LN} -s ${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
 pre-configure:

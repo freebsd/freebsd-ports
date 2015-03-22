@@ -1,3 +1,7 @@
+include/simgear/3rdparty/utf8/utf8.h
+include/simgear/3rdparty/utf8/utf8/checked.h
+include/simgear/3rdparty/utf8/utf8/core.h
+include/simgear/3rdparty/utf8/utf8/unchecked.h
 include/simgear/bucket/newbucket.hxx
 include/simgear/bvh/BVHBoundingBoxVisitor.hxx
 include/simgear/bvh/BVHGroup.hxx
@@ -43,7 +47,10 @@ include/simgear/canvas/elements/CanvasPath.hxx
 include/simgear/canvas/elements/CanvasText.hxx
 include/simgear/canvas/elements/detail/add_segment_variadic.hxx
 include/simgear/canvas/events/CustomEvent.hxx
+include/simgear/canvas/events/DeviceEvent.hxx
+include/simgear/canvas/events/KeyboardEvent.hxx
 include/simgear/canvas/events/MouseEvent.hxx
+include/simgear/canvas/layout/AlignFlag_values.hxx
 include/simgear/canvas/layout/BoxLayout.hxx
 include/simgear/canvas/layout/Layout.hxx
 include/simgear/canvas/layout/LayoutItem.hxx
@@ -145,6 +152,7 @@ include/simgear/nasal/cppbind/NasalHash.hxx
 include/simgear/nasal/cppbind/NasalObject.hxx
 include/simgear/nasal/cppbind/NasalObjectHolder.hxx
 include/simgear/nasal/cppbind/NasalString.hxx
+include/simgear/nasal/cppbind/detail/NasalObject_callMethod_templates.hxx
 include/simgear/nasal/cppbind/detail/from_nasal_function_templates.hxx
 include/simgear/nasal/cppbind/detail/from_nasal_helper.hxx
 include/simgear/nasal/cppbind/detail/functor_templates.hxx
@@ -226,9 +234,12 @@ include/simgear/scene/tgdb/SGBuildingBin.hxx
 include/simgear/scene/tgdb/SGDirectionalLightBin.hxx
 include/simgear/scene/tgdb/SGLightBin.hxx
 include/simgear/scene/tgdb/SGModelBin.hxx
+include/simgear/scene/tgdb/SGNodeTriangles.hxx
 include/simgear/scene/tgdb/SGOceanTile.hxx
 include/simgear/scene/tgdb/SGReaderWriterBTG.hxx
 include/simgear/scene/tgdb/SGTexturedTriangleBin.hxx
+include/simgear/scene/tgdb/SGTileDetailsCallback.hxx
+include/simgear/scene/tgdb/SGTileGeometryBin.hxx
 include/simgear/scene/tgdb/SGTriangleBin.hxx
 include/simgear/scene/tgdb/SGVasiDrawable.hxx
 include/simgear/scene/tgdb/SGVertexArrayBin.hxx

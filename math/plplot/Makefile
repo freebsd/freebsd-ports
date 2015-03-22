@@ -37,7 +37,7 @@ CMAKE_ARGS=	-DENABLE_java:BOOL=OFF -DENABLE_octave:BOOL=OFF \
 CFLAGS+=	-D_IS_BUILDING_PLPLOT_PORT_
 USE_LDCONFIG=	yes
 
-FREEFONT_DIR=	${LOCALBASE}/lib/X11/fonts/freefont-ttf
+FREEFONT_DIR=	${LOCALBASE}/share/fonts/freefont-ttf
 
 .include <bsd.port.options.mk>
 

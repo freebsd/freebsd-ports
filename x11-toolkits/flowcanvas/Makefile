@@ -3,7 +3,7 @@
 
 PORTNAME=	flowcanvas
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -45,5 +45,6 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 
 .include <bsd.port.post.mk>

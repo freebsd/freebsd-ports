@@ -3,7 +3,7 @@
 
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://patches.sgi.com/pub/linux/ProPack1.4/SRPMS/
 DISTNAME=	sgi-fonts-1.0-1.src
@@ -14,17 +14,17 @@ COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
+USES=		fonts
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	lib/X11/fonts/local/sgi/fonts.alias \
-		lib/X11/fonts/local/sgi/fonts.dir \
-		${FONTS:S!^!lib/X11/fonts/local/sgi/!:S!$!.pcf.gz!}
+FONTNAME=	sgi
+PLIST_FILES=	${FONTS:S!^!${FONTSDIR}/!:S!$!.pcf.gz!} \
+		${FONTSDIR}/fonts.alias
 
 FONTS=		Scr7 Scr8 Scr9 Scr10 Scr11 Scr12 \
 		Scr13 Scr14 Scr15 Scr16 Scr18 \
@@ -51,11 +51,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC}/sgi-fonts/sgi && ${INSTALL_DATA} fonts.alias \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi)
+		${STAGEDIR}${FONTSDIR})
 	(cd ${WRKSRC}/sgi-fonts/sgi && ${INSTALL_DATA} *.pcf.gz \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi)
-	(cd ${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi && mkfontdir)
+		${STAGEDIR}${FONTSDIR})
 
 .include <bsd.port.mk>

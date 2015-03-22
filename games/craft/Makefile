@@ -5,7 +5,7 @@ PORTNAME=	craft
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple Minecraft clone written in C using modern OpenGL

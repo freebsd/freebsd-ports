@@ -10,8 +10,10 @@ DISTNAME=	SQLiteManager-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual web based tool to manage SQLite database
 
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
+IGNORE_WITH_PHP=5 55 56
 NO_BUILD=	yes
 PLIST_SUB+=	WWWDIR_REL="${WWWDIR_REL}"
 USE_PHP=	sqlite

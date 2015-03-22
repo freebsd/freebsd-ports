@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lollypop
-PORTVERSION=	0.8.20
+PORTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/${PORTVERSION}
@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.26:${PORTSDIR}/audio/py-mutagen \
-	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.8:${PORTSDIR}/databases/py-sqlite3
+	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.8:${PORTSDIR}/databases/py-sqlite3 \
+	${PYTHON_PKGNAMEPREFIX}dbus>=1.1.1:${PORTSDIR}/devel/py3-dbus
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	gnome-icon-theme>=3.6.2:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic
 
@@ -34,7 +35,7 @@ python_CMD=	${PYTHON_CMD}
 GLIB_SCHEMAS=	org.gnome.Lollypop.gschema.xml
 
 OPTIONS_DEFINE=	PULSEAUDIO
-PULSEAUDIO_USE=	GSTREAMER1=pulse
+PULSEAUDIO_USE=	gstreamer1=pulse
 
 SUB_FILES=	pkg-message
 

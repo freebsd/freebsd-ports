@@ -766,6 +766,7 @@
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
     SUBDIR += voipong
+    SUBDIR += volumeicon
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound

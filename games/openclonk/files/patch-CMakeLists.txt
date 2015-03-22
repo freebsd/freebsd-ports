@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2015-03-15 19:33:38 UTC
++++ CMakeLists.txt
+@@ -912,7 +912,6 @@ if(USE_SDL_MAINLOOP OR (Audio_TK STREQUA
+ 	find_package(SDL)
+ 	SET(HAVE_SDL ${SDL_FOUND})
+ 	include_directories(${SDL_INCLUDE_DIR})
+-	target_link_libraries(openclonk ${SDL_LIBRARY})
+ endif()
+ 
+ ############################################################################
+@@ -1094,6 +1093,10 @@ target_link_libraries(openclonk
+ 	libmisc
+ )
+ 
++if (SDL_FOUND)
++	target_link_libraries(openclonk ${SDL_LIBRARY})
++endif()
++
+ if(Audio_FOUND)
+ 	target_link_libraries(openclonk ${Audio_LIBRARIES})
+ 	include_directories(${Audio_INCLUDE_DIRS})

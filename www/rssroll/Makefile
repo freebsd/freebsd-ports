@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rssroll
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.4.1
 CATEGORIES=	www
-MASTER_SITES=	http://chaosophia.net/downloads/rssroll/ \
-		http://ns1.chaosophia.net/downloads/rssroll/
+MASTER_SITES=	GHL
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C
@@ -15,6 +13,11 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	koue
+GH_COMMIT=	bd71bc8
+GH_PROJECT=	rssroll
 
 GNU_CONFIGURE=	yes
 

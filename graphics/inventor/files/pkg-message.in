@@ -14,7 +14,7 @@ Open Inventor (TM) needs the following TrueType fonts:
 You should make symbolic links of the TrueType fonts to the OpenInventor (TM)
 font names if they are not available:
 
-    # cd %%PREFIX%%/lib/X11/fonts/TTF
+    # cd %%PREFIX%%/share/fonts/TTF
     # ln -s times.ttf Times-Roman
     # ln -s arial.ttf Helvetica
     # ln -s cour.ttf Utopia-Regular

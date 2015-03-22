@@ -14,12 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 KAIST font(ksc5601.1987-0 encoding) collection
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USES=		gmake
+USES=		fonts gmake
 NO_WRKSUBDIR=	yes
-MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}"
+MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}" FONTSDIR="${FONTSDIR}"
 
 do-extract:
 	@${RM} -fr ${WRKDIR} && \

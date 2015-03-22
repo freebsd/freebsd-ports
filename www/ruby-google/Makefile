@@ -13,7 +13,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Google's SOAP-driven Web API
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	soap
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 

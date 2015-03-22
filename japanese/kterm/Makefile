@@ -37,6 +37,7 @@ COMMENT=	Xterm variant with Japanese support
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 USES=		imake
+VGAFONT_USES=	fonts
 USE_XORG=	xaw
 CFLAGS+=	-Wno-return-type
 PORTDOCS=	README.kt README.wallpaper.ja dot.termcap
@@ -76,9 +77,9 @@ post-extract:
 	cd ${WRKDIR}/pcemu1.01alpha && \
 	    ${LOCALBASE}/bin/bdftopcf vga.bdf | ${GZIP_CMD} > vga.pcf.gz
 post-install-vgafont:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/misc
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKDIR}/pcemu1.01alpha/vga.pcf.gz \
-	    ${STAGEDIR}${PREFIX}/lib/X11/fonts/misc
+	    ${STAGEDIR}${FONTSDIR}
 post-install: post-install-vgafont
 .endif
 

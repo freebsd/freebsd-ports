@@ -29,3 +29,5 @@ MAKE_ARGS=	${MUNIN_DIRS} \
 USERS=		munin
 GROUPS=		munin
 PLIST_SUB=	${MUNIN_DIRS} USER=${USERS} GROUP=${GROUPS}
+
+CPE_VENDOR=	munin-monitoring

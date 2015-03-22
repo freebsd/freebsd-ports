@@ -2,7 +2,7 @@
 
 PORTNAME=	preview
 PORTVERSION=	0.8.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
@@ -11,7 +11,8 @@ DISTNAME=	Preview-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
@@ -19,5 +20,8 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Preview
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Preview.app/Preview
 
 .include <bsd.port.mk>

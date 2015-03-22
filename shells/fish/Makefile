@@ -12,8 +12,10 @@ COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2
 
-USES=		gmake iconv
+USES=		cpe gmake iconv
 USE_AUTOTOOLS=	autoconf
+
+CPE_VENDOR=	fishshell
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread ${ICONV_LIB}

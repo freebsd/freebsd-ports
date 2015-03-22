@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	skins
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	mplayer-skins
 
-MAINTAINER=	riggs@freebsd.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
 
 #

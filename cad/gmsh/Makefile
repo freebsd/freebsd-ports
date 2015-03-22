@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.8.5
-PORTREVISION=	2
+PORTVERSION=	2.9.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		liblapack.so:${PORTSDIR}/math/lapack
+RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 

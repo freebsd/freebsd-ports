@@ -9,6 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Milter for BATV (Bounce Address Tag Validation)
 
+.if !exists( /usr/include/libmilter/mfapi.h )
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+.endif
+
 USE_RC_SUBR=	milter-batv
 USE_OPENSSL=	TRUE
 
@@ -33,6 +37,11 @@ SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'
 .endif
 
 pre-configure:
+.if !exists( /usr/include/libmilter/mfapi.h )
+	${REINPLACE_CMD} -e '/sendmail/ s|dnl ||; \
+		s|/usr/local/sendmail|${LOCALBASE}|' \
+		${WRKSRC}/batv-filter/Makefile.m4
+.endif
 	${SED} ${SITE_SUB} -e '\|^dnl |d' -e '/^dnl$$/d' \
 		${SITE} > ${WCONF}/site.config.m4
 

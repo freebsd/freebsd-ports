@@ -1,8 +1,9 @@
-bin/AppBroker
-include/System.h
-include/System/appclient.h
-include/System/appserver.h
+bin/configctl
 include/System/array.h
+include/System/license.h
+include/System/mutator.h
+include/System/variable.h
+include/System.h
 include/System/buffer.h
 include/System/config.h
 include/System/error.h
@@ -19,3 +20,4 @@ lib/libSystem.so
 lib/libSystem.so.0
 lib/libSystem.so.0.0
 libdata/pkgconfig/libSystem.pc
+share/doc/libSystem/README.md

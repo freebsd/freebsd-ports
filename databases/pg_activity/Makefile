@@ -4,10 +4,10 @@
 PORTNAME=	pg_activity
 PORTVERSION=	1.2.0
 CATEGORIES=	databases python
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	jgh@FreeBSD.org
-COMMENT=	Top like utility for PostgreSQL activity monitoring
+COMMENT=	Htop like application for PostgreSQL server activity monitoring
 
 LICENSE=	BSD3CLAUSE
 
@@ -21,8 +21,8 @@ GH_ACCOUNT=	julmon
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	3b6b371
 
-USES=		python
-USE_PYTHON=	distutils autoplist noegginfo
+USES=		python:2.6+
+USE_PYTHON=	autoplist distutils noegginfo
 PYDISTUTILS_INSTALLARGS=	--with-man
 
 post-patch:

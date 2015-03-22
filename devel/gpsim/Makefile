@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gpsim
-PORTVERSION=	0.27.0
+PORTVERSION=	0.28.1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software simulator for Microchip PIC microcontrollers
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 
-USES=		libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig readline
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

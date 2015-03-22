@@ -8,9 +8,10 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_auth_xradius/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	mwlucas@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Enables RADIUS authentication
 
+LICENSE=	APACHE20
 
 USE_APACHE=	22+
 USES=	tar:bzip2

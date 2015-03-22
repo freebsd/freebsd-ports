@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/MIME::Base64.3.gz
-%%PERL5_MAN3%%/MIME::QuotedPrint.3.gz
 %%SITE_ARCH%%/MIME/Base64.pm
 %%SITE_ARCH%%/MIME/QuotedPrint.pm
 %%SITE_ARCH%%/auto/MIME/Base64/Base64.so
+%%PERL5_MAN3%%/MIME::Base64.3.gz
+%%PERL5_MAN3%%/MIME::QuotedPrint.3.gz

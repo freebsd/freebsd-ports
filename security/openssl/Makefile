@@ -2,9 +2,9 @@
 # $FreeBSD: head/security/openssl/Makefile 350548 2014-04-07 21:46:40Z bdrewery $
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.1
-DISTVERSIONSUFFIX=	l
-PORTREVISION=	18
+PORTVERSION=	1.0.2
+DISTVERSIONSUFFIX=	a
+PORTREVISION=	0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -22,7 +22,7 @@ COMMENT=	SSL and crypto library
 CONFLICTS?=	libressl-*
 
 OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS
-OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM ZLIB SCTP SSL2 SSL3 MD2
+OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM SCTP SSL2 SSL3 MD2
 .for a in amd64 ia64
 OPTIONS_DEFINE_${a}=	EC
 OPTIONS_DEFAULT_${a}=	EC
@@ -63,26 +63,6 @@ MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
 
 CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
-
-FIX_POD=apps/cms.pod \
-	apps/smime.pod \
-	ssl/SSL_COMP_add_compression_method.pod \
-	ssl/SSL_CTX_add_session.pod \
-	ssl/SSL_CTX_load_verify_locations.pod \
-	ssl/SSL_CTX_set_client_CA_list.pod \
-	ssl/SSL_CTX_set_session_id_context.pod \
-	ssl/SSL_CTX_set_ssl_version.pod \
-	ssl/SSL_CTX_use_psk_identity_hint.pod \
-	ssl/SSL_accept.pod \
-	ssl/SSL_clear.pod \
-	ssl/SSL_connect.pod \
-	ssl/SSL_do_handshake.pod \
-	ssl/SSL_read.pod \
-	ssl/SSL_session_reused.pod \
-	ssl/SSL_set_fd.pod \
-	ssl/SSL_set_session.pod \
-	ssl/SSL_shutdown.pod \
-	ssl/SSL_write.pod
 
 .include <bsd.port.pre.mk>
 
@@ -167,10 +147,10 @@ EXTRACONFIGURE+=	no-rc5
 .if ${PORT_OPTIONS:MPADLOCK}
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
-PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-		0002-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
-		0003-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-		0004-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+PATCHFILES+=	0009-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
+		0010-backport-changes-from-upstream-padlock-module.patch:padlock \
+		0011-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		0012-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
@@ -204,12 +184,12 @@ pre-everything::
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -E -e 's|^=item ([0-9])[[:blank:]]*$$|=item Z<>\1|' \
-		${FIX_POD:S,^,${WRKSRC}/doc/,}
 	${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
 		${WRKSRC}/crypto/des/Makefile
 	${REINPLACE_CMD} -e 's|SHLIB_VERSION_NUMBER "1.0.0"|SHLIB_VERSION_NUMBER "${OPENSSL_SHLIBVER}"|' \
 		${WRKSRC}/crypto/opensslv.h
+	${REINPLACE_CMD} -e 's|ERR_R_MALLOC_ERROR|ERR_R_MALLOC_FAILURE|' \
+		${WRKSRC}/crypto/bio/bss_dgram.c
 .if ${PORT_OPTIONS:MEXPCIPHERS}
 	${REINPLACE_CMD} -e 's|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	0|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	1|' \
 		${WRKSRC}/ssl/tls1.h

@@ -3,12 +3,15 @@
 
 PORTNAME=	advancemess
 PORTVERSION=	0.102.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL MESS port with advanced TV and monitor video support
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
@@ -38,5 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '/pkgdocdir/d' \
 		-e 's,(bin|man|pkg)dir),DESTDIR)$$(&,' \
 		${WRKSRC}/advance/advance.mak
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/advmess
 
 .include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.730
+PORTVERSION=	1.740
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf

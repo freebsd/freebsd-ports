@@ -23,12 +23,3 @@
  LDFLAGS = -s
  
  # solaris, and others, may also need these libraries to link
-@@ -49,7 +48,7 @@
- 	rm -f $(OBJS) redir core
- 
- redir:		${OBJS}
--	${CC} ${LDFLAGS} -o redir ${OBJS} ${LIBS}
-+	${CC} ${LDFLAGS} -o redir redir.o getopt.o getopt1.o ${LIBS}
- 
- 
- 

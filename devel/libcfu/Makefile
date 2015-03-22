@@ -4,7 +4,7 @@ PORTNAME=	libcfu
 DISTVERSION=	0.04a
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Simple library of tools for developing multithreaded software

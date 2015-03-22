@@ -1,24 +1,4 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/cp949codetbl_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-buffer-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-buffer.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-dump.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-external.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gdef-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gdef.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-global.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gpos-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gpos.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gsub-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-gsub.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-impl.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-open-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-open.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-shape.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-shaper-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-shaper.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-stream-private.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz-stream.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/harfbuzz.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractanimation_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstracteventdispatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractfileengine_p.h
@@ -75,6 +55,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qgb18030codec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qharfbuzz_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhistorystate_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhooks_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qiconvcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qicucodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qiodevice_p.h
@@ -94,7 +75,6 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_tools_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlockfile_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qloggingcategory_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qloggingregistry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmachparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_moc_p.h
@@ -139,6 +119,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsjiscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstatemachine_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstorageinfo_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringiterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemerror_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemlibrary_p.h
@@ -163,6 +144,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qutfcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariant_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariantanimation_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qversionnumber_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipereader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipewriter_p.h
@@ -197,6 +179,8 @@
 %%QT_INCDIR%%/QtCore/QByteArray
 %%QT_INCDIR%%/QtCore/QByteArrayData
 %%QT_INCDIR%%/QtCore/QByteArrayDataPtr
+%%QT_INCDIR%%/QtCore/QByteArrayList
+%%QT_INCDIR%%/QtCore/QByteArrayListIterator
 %%QT_INCDIR%%/QtCore/QByteArrayMatcher
 %%QT_INCDIR%%/QtCore/QByteRef
 %%QT_INCDIR%%/QtCore/QCache
@@ -223,6 +207,7 @@
 %%QT_INCDIR%%/QtCore/QDynamicPropertyChangeEvent
 %%QT_INCDIR%%/QtCore/QEasingCurve
 %%QT_INCDIR%%/QtCore/QElapsedTimer
+%%QT_INCDIR%%/QtCore/QEnableSharedFromThis
 %%QT_INCDIR%%/QtCore/QEvent
 %%QT_INCDIR%%/QtCore/QEventLoop
 %%QT_INCDIR%%/QtCore/QEventLoopLocker
@@ -253,7 +238,6 @@
 %%QT_INCDIR%%/QtCore/QGlobalStatic
 %%QT_INCDIR%%/QtCore/QHash
 %%QT_INCDIR%%/QtCore/QHashData
-%%QT_INCDIR%%/QtCore/QHashDummyNode
 %%QT_INCDIR%%/QtCore/QHashDummyValue
 %%QT_INCDIR%%/QtCore/QHashIterator
 %%QT_INCDIR%%/QtCore/QHashNode
@@ -271,7 +255,9 @@
 %%QT_INCDIR%%/QtCore/QJsonObject
 %%QT_INCDIR%%/QtCore/QJsonParseError
 %%QT_INCDIR%%/QtCore/QJsonValue
+%%QT_INCDIR%%/QtCore/QJsonValuePtr
 %%QT_INCDIR%%/QtCore/QJsonValueRef
+%%QT_INCDIR%%/QtCore/QJsonValueRefPtr
 %%QT_INCDIR%%/QtCore/QLatin1Char
 %%QT_INCDIR%%/QtCore/QLatin1Literal
 %%QT_INCDIR%%/QtCore/QLatin1String
@@ -286,6 +272,7 @@
 %%QT_INCDIR%%/QtCore/QList
 %%QT_INCDIR%%/QtCore/QListData
 %%QT_INCDIR%%/QtCore/QListIterator
+%%QT_INCDIR%%/QtCore/QListSpecialMethods
 %%QT_INCDIR%%/QtCore/QLocale
 %%QT_INCDIR%%/QtCore/QLockFile
 %%QT_INCDIR%%/QtCore/QLoggingCategory
@@ -316,6 +303,7 @@
 %%QT_INCDIR%%/QtCore/QModelIndexList
 %%QT_INCDIR%%/QtCore/QMultiHash
 %%QT_INCDIR%%/QtCore/QMultiMap
+%%QT_INCDIR%%/QtCore/QMutableByteArrayListIterator
 %%QT_INCDIR%%/QtCore/QMutableFutureIterator
 %%QT_INCDIR%%/QtCore/QMutableHashIterator
 %%QT_INCDIR%%/QtCore/QMutableLinkedListIterator
@@ -390,6 +378,7 @@
 %%QT_INCDIR%%/QtCore/QStaticByteArrayData
 %%QT_INCDIR%%/QtCore/QStaticPlugin
 %%QT_INCDIR%%/QtCore/QStaticStringData
+%%QT_INCDIR%%/QtCore/QStorageInfo
 %%QT_INCDIR%%/QtCore/QString
 %%QT_INCDIR%%/QtCore/QStringBuilder
 %%QT_INCDIR%%/QtCore/QStringData
@@ -500,6 +489,7 @@
 %%QT_INCDIR%%/QtCore/qbitarray.h
 %%QT_INCDIR%%/QtCore/qbuffer.h
 %%QT_INCDIR%%/QtCore/qbytearray.h
+%%QT_INCDIR%%/QtCore/qbytearraylist.h
 %%QT_INCDIR%%/QtCore/qbytearraymatcher.h
 %%QT_INCDIR%%/QtCore/qcache.h
 %%QT_INCDIR%%/QtCore/qchar.h
@@ -627,6 +617,7 @@
 %%QT_INCDIR%%/QtCore/qstandardpaths.h
 %%QT_INCDIR%%/QtCore/qstate.h
 %%QT_INCDIR%%/QtCore/qstatemachine.h
+%%QT_INCDIR%%/QtCore/qstorageinfo.h
 %%QT_INCDIR%%/QtCore/qstring.h
 %%QT_INCDIR%%/QtCore/qstringbuilder.h
 %%QT_INCDIR%%/QtCore/qstringlist.h

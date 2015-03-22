@@ -5,4 +5,5 @@
 %%SITE_ARCH%%/Math/UInt64.pm
 %%PERL5_MAN3%%/Math::Int64.3.gz
 %%PERL5_MAN3%%/Math::Int64::die_on_overflow.3.gz
+%%PERL5_MAN3%%/Math::Int64::native_if_available.3.gz
 %%PERL5_MAN3%%/Math::UInt64.3.gz

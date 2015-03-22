@@ -15,10 +15,4 @@ COMMENT=	Perl extension providing access to the GSSAPIv2 library
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		Does not work on FreeBSD 7.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

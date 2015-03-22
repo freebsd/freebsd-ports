@@ -4,7 +4,7 @@
 PORTNAME=	Class-DBI
 PORTVERSION=	3.0.17
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,12 @@ COMMENT=	Simple Database Abstraction
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
-		p5-UNIVERSAL-moniker>=0:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
+		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
-		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger
+		p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
+		p5-UNIVERSAL-moniker>=0:${PORTSDIR}/devel/p5-UNIVERSAL-moniker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure

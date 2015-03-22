@@ -2,14 +2,13 @@
 
 PORTNAME=	font-misc-meltho
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Meltho font
 
 XORG_CAT=	font
-INSTALLS_TTF=	yes
-FONTDIR=	OTF
+FONTNAME=	OTF
 
 .include <bsd.port.mk>

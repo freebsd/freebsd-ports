@@ -1,6 +1,6 @@
 @owner www
 @group www
-%%WWWDIR%%/protovis-d3.2.js
-%%WWWDIR%%/protovis-r3.2.js
+%%WWWDIR%%/protovis.js
+%%WWWDIR%%/protovis.min.js
 @owner
 @group

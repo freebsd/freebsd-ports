@@ -4,7 +4,6 @@
 PORTNAME=	google-startup-scripts
 PORTVERSION=	1.2.1
 CATEGORIES=	net
-MASTER_SITES=	GHR
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Startup scripts that interact with Google Compute Engine VMs

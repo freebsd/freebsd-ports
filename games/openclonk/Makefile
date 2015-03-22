@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	openclonk
-PORTVERSION=	5.1
-DISTVERSIONPREFIX=	5.
+PORTVERSION=	6.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multiplayer action game involving small and nimble humanoids
 
-LICENSE=	ISCL
+LICENSE=	ISCL CC0-1.0
+LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
@@ -22,13 +21,14 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		compiler:c++11-lib cmake iconv pkgconfig tar:bzip2
+USES=		compiler:c++11-lib cmake desktop-file-utils iconv pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk20
 USE_SDL=	sdl mixer
 USE_XORG=	x11 xpm
+INSTALLS_ICONS=	yes
 
-WRKSRC=		${WRKDIR}/openclonk-release-${DISTVERSIONPREFIX}${DISTVERSION}-src
+WRKSRC=		${WRKDIR}/openclonk-release-${DISTVERSION}-src
 
 .include <bsd.port.pre.mk>
 

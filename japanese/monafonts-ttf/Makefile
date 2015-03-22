@@ -11,15 +11,14 @@ DISTNAME=	monafont-ttf-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 TrueType Kanji fonts
 
-USES=		zip
+USES=		fonts zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-FONTSDIR=	lib/X11/fonts/TrueType
-MAKE_ENV=	FONTSDIR=${FONTSDIR}
-PLIST_SUB=	FONTSDIR=${FONTSDIR}
+FONTNAME=	TrueType
+MAKE_ENV=	FONTSDIR=${FONTSDIR:S,${PREFIX},,}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/mona.ttf ${FILESDIR}/fonts.dir.mona ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/mona.ttf ${FILESDIR}/fonts.dir.mona ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

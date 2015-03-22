@@ -3,6 +3,7 @@
 
 PORTNAME=	x3270
 PORTVERSION=	3.3.15
+PORTREVISION=	1
 CATEGORIES=	x11 net
 MASTER_SITES=	http://x3270.bgp.nu/download/current/
 EXTRACT_SUFX=	ga7-src.tgz
@@ -17,10 +18,10 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 # Conflict due to x3270if
 CONFLICTS=	c3270-*
 
-USES=		iconv imake:env
+USES=		iconv fonts imake:env
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/lib/X11/fonts/${PORTNAME} \
+CONFIGURE_ARGS+=	--with-fontdir=${FONTSDIR} \
 			--disable-dbcs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

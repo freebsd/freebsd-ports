@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.in.orig
-+++ Makefile.in
-@@ -15,7 +15,7 @@
+--- Makefile.in.orig	2015-02-12 00:14:57.000000000 +0100
++++ Makefile.in	2015-03-14 23:50:41.000000000 +0100
+@@ -18,7 +18,7 @@
  SBINDIR = $(DESTDIR)@sbindir@
  
  # /lib/ejabberd/
@@ -12,7 +9,7 @@ $FreeBSD$
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -41,10 +41,10 @@
+@@ -44,10 +44,10 @@
  MSGSDIR = $(PRIVDIR)/msgs
  
  # /var/lib/ejabberd/
@@ -26,7 +23,7 @@ $FreeBSD$
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -113,25 +113,22 @@
+@@ -116,9 +116,7 @@
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -36,7 +33,8 @@ $FreeBSD$
 +	$(INSTALL) -m 640 $(G_USER) ejabberd.yml.example $(ETCDIR)
  	$(SED) -e "s*{{rootdir}}*@prefix@*" \
  		-e "s*{{installuser}}*@INSTALLUSER@*" \
- 		-e "s*{{libdir}}*@libdir@*" \
+ 		-e "s*{{bindir}}*@bindir@*" \
+@@ -126,16 +124,15 @@
  		-e "s*{{sysconfdir}}*@sysconfdir@*" \
  		-e "s*{{localstatedir}}*@localstatedir@*" \
  		-e "s*{{docdir}}*@docdir@*" \
@@ -47,7 +45,7 @@ $FreeBSD$
 -		|| $(INSTALL) -b -m 640 $(G_USER) ejabberdctl.cfg.example $(ETCDIR)/ejabberdctl.cfg
 -	$(INSTALL) -b -m 644 $(G_USER) inetrc $(ETCDIR)/inetrc
 +		-e "s*{{erl}}*@ERL@*" \
-+ 		-e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" \
++		-e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" \
 +		ejabberdctl.template > ejabberdctl.example
 +	$(INSTALL) -m 640 $(G_USER) ejabberdctl.cfg.example $(ETCDIR)
 +	$(INSTALL) -b -m 644 $(G_USER) inetrc $(ETCDIR)/inetrc.example
@@ -56,10 +54,10 @@ $FreeBSD$
  	[ -d $(SBINDIR) ] || $(INSTALL) -d -m 755 $(SBINDIR)
 -	$(INSTALL) -m 550 $(G_USER) ejabberdctl.example $(SBINDIR)/ejabberdctl
 +	$(INSTALL) -m 555 $(G_USER) ejabberdctl.example $(SBINDIR)/ejabberdctl
- 	#
- 	# Init script
- 	$(SED) -e "s*@ctlscriptpath@*$(SBINDIR)*" \
-@@ -184,6 +181,7 @@
+ 	# Elixir binaries
+ 	[ -d $(BINDIR) ] || $(INSTALL) -d -m 755 $(BINDIR)
+ 	-[ -f deps/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) deps/elixir/bin/iex $(BINDIR)/iex
+@@ -196,6 +193,7 @@
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation
@@ -67,7 +65,7 @@ $FreeBSD$
  	$(INSTALL) -d $(DOCDIR)
  	[ -f doc/dev.html ] \
  		&& $(INSTALL) -m 644 doc/dev.html $(DOCDIR) \
-@@ -196,6 +194,7 @@
+@@ -208,6 +206,7 @@
  		|| echo "No doc/guide.pdf was built"
  	$(INSTALL) -m 644 doc/*.png $(DOCDIR)
  	$(INSTALL) -m 644 COPYING $(DOCDIR)

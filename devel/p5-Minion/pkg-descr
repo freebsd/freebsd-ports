@@ -1,0 +1,10 @@
+Minion is a job queue for the Mojolicious real-time web framework with support
+for multiple backends, such as DBM::Deep and PostgreSQL.
+
+A job queue allows you to process time and/or computationally intensive tasks
+in background processes, outside of the request/response lifecycle. Among those
+tasks you'll commonly find image resizing, spam filtering, HTTP downloads,
+building tarballs, warming caches and basically everything else you can imagine
+that's not super fast.
+
+WWW: https://metacpan.org/pod/Minion

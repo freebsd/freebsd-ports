@@ -3,7 +3,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -31,6 +31,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
+INSTALL_TARGET=	install-strip
 
 DOCSDIR=	${PREFIX}/share/${PORTNAME:tu}/doc
 DATADIR=	${PREFIX}/share/${PORTNAME:tu}
@@ -54,6 +55,5 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${CONFIG_FILE} ${STAGEDIR}${DATADIR}
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/emboss.default.template
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.18.3
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
@@ -66,6 +66,10 @@ post-patch:
 		${WRKSRC}/launcher/game/project.rpy
 # Avoid having to add -I/usr/include -L/usr/lib
 	@${REINPLACE_CMD} '/library("z")/d' ${BUILD_WRKSRC}/${PYSETUP}
+
+post-build:
+	@${PYTHON_CMD} -m compileall -d ${DATADIR} ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall -d ${DATADIR} ${WRKSRC}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \

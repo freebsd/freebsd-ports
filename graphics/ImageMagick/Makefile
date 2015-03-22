@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.0-4
+DISTVERSION=	6.9.0-10
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -39,7 +39,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:xz
+USES=		gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix tar:xz
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
@@ -294,7 +294,6 @@ CONFIGURE_ARGS+=	--without-lcms2
 # Freetype (TrueType Font) support
 .if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2
-USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
@@ -329,7 +328,6 @@ LIB_DEPENDS+=		libwmf.so:${PORTSDIR}/graphics/libwmf
 LIB_DEPENDS+=		libwmf.so:${PORTSDIR}/graphics/libwmf-nox11
 . endif
 CONFIGURE_ARGS+=	--with-wmf=yes
-CFLAGS+=		-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=		WMF=""
 .else
 CONFIGURE_ARGS+=	--without-wmf

@@ -1,6 +1,6 @@
---- wpa_supplicant/Makefile.orig	2014-10-09 14:41:31 UTC
+--- wpa_supplicant/Makefile.orig	2015-03-15 17:30:39 UTC
 +++ wpa_supplicant/Makefile
-@@ -97,6 +97,14 @@ OBJS += ../src/utils/os_$(CONFIG_OS).o
+@@ -99,6 +99,14 @@ OBJS += ../src/utils/os_$(CONFIG_OS).o
  OBJS_p += ../src/utils/os_$(CONFIG_OS).o
  OBJS_c += ../src/utils/os_$(CONFIG_OS).o
  

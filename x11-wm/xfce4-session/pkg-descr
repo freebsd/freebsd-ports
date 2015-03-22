@@ -1,4 +1,5 @@
-The session manager controls all aspects of the startup and the 
-shutdown of the user session.
+The Xfce session manager controls the loading of applications when
+Xfce is started. It also handles logging out, shutting down, and
+rebooting.
 
-WWW: http://docs.xfce.org/xfce/xfce4-session/start
+WWW: http://www.xfce.org/

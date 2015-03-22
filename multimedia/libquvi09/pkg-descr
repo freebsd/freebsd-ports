@@ -11,7 +11,5 @@ libquvi originates from the idea of allowing users to view the videos without
 having to install or use flash. It is a "workaround", not an "alternative" to
 flash.
 
-git repo: http://repo.or.cz/w/libquvi.git
-
 WWW: http://quvi.sourceforge.net/
-WWW: http://quvi.googlecode.com/
+WWW: http://repo.or.cz/w/libquvi.git

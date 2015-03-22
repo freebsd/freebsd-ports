@@ -1,131 +1,524 @@
-bin/netdisco
-bin/parse_kismet_ap
-bin/parse_mac
-bin/port_control
-%%SITE_PERL%%/netdisco.pm
-%%DATADIR%%/sql/admin.sql
-%%DATADIR%%/sql/device.sql
-%%DATADIR%%/sql/device_ip.sql
-%%DATADIR%%/sql/device_module.sql
-%%DATADIR%%/sql/device_port.sql
-%%DATADIR%%/sql/device_port_log.sql
-%%DATADIR%%/sql/device_port_power.sql
-%%DATADIR%%/sql/device_port_ssid.sql
-%%DATADIR%%/sql/device_port_vlan.sql
-%%DATADIR%%/sql/device_port_wireless.sql
-%%DATADIR%%/sql/device_power.sql
-%%DATADIR%%/sql/device_vlan.sql
-%%DATADIR%%/sql/log.sql
-%%DATADIR%%/sql/node.sql
-%%DATADIR%%/sql/node_ip.sql
-%%DATADIR%%/sql/node_monitor.sql
-%%DATADIR%%/sql/node_nbt.sql
-%%DATADIR%%/sql/node_vlan.sql
-%%DATADIR%%/sql/node_wireless.sql
-%%DATADIR%%/sql/node_wireless_ssid.sql
-%%DATADIR%%/sql/oui.sql
-%%DATADIR%%/sql/pg
-%%DATADIR%%/sql/process.sql
-%%DATADIR%%/sql/sessions.sql
-%%DATADIR%%/sql/subnets.sql
-%%DATADIR%%/sql/topology.sql
-%%DATADIR%%/sql/upgrade-0.92-to-0.93.sql
-%%DATADIR%%/sql/upgrade-0.93-to-0.94.sql
-%%DATADIR%%/sql/upgrade-0.94-to-0.95.sql
-%%DATADIR%%/sql/upgrade-0.95-to-1.0.sql
-%%DATADIR%%/sql/upgrade-1.0-to-1.1.sql
-%%DATADIR%%/sql/upgrade-1.1-to-1.2.sql
-%%DATADIR%%/sql/upgrade-1.2-to-1.3.sql
-%%DATADIR%%/sql/user_log.sql
-%%DATADIR%%/sql/users.sql
-%%DATADIR%%/Makefile
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-%%WEBUI%%%%WWWDIR%%/admin.html
-%%WEBUI%%%%WWWDIR%%/admin_chimp.gif
-%%WEBUI%%%%WWWDIR%%/admin_dev.html
-%%WEBUI%%%%WWWDIR%%/admin_plug.gif
-%%WEBUI%%%%WWWDIR%%/admin_reconfig.html
-%%WEBUI%%%%WWWDIR%%/admin_user.html
-%%WEBUI%%%%WWWDIR%%/apache_login.html
-%%WEBUI%%%%WWWDIR%%/autohandler
-%%WEBUI%%%%WWWDIR%%/bullet.gif
-%%WEBUI%%%%WWWDIR%%/change_pw.html
-%%WEBUI%%%%WWWDIR%%/corner-bl.png
-%%WEBUI%%%%WWWDIR%%/corner-br.png
-%%WEBUI%%%%WWWDIR%%/corner-tl.png
-%%WEBUI%%%%WWWDIR%%/corner-tr.png
-%%WEBUI%%%%WWWDIR%%/device.html
-%%WEBUI%%%%WWWDIR%%/device_inv.html
-%%WEBUI%%%%WWWDIR%%/device_module.html
-%%WEBUI%%%%WWWDIR%%/device_module_search.html
-%%WEBUI%%%%WWWDIR%%/device_search.html
-%%WEBUI%%%%WWWDIR%%/discoball2.gif
-%%WEBUI%%%%WWWDIR%%/doc/index.html
-%%WEBUI%%%%WWWDIR%%/doc/netdisco-api-backend.html
-%%WEBUI%%%%WWWDIR%%/doc/netdisco-api-shared.html
-%%WEBUI%%%%WWWDIR%%/duplex.html
-%%WEBUI%%%%WWWDIR%%/frontpanel.html
-%%WEBUI%%%%WWWDIR%%/icon_down.gif
-%%WEBUI%%%%WWWDIR%%/icon_info.gif
-%%WEBUI%%%%WWWDIR%%/icon_lock.gif
-%%WEBUI%%%%WWWDIR%%/icon_note.gif
-%%WEBUI%%%%WWWDIR%%/icon_up.gif
-%%WEBUI%%%%WWWDIR%%/icon_v.gif
-%%WEBUI%%%%WWWDIR%%/index.html
-%%WEBUI%%%%WWWDIR%%/ip_search.html
-%%WEBUI%%%%WWWDIR%%/jack_search.html
-%%WEBUI%%%%WWWDIR%%/log.html
-%%WEBUI%%%%WWWDIR%%/login.html
-%%WEBUI%%%%WWWDIR%%/logout.html
-%%WEBUI%%%%WWWDIR%%/minus.gif
-%%WEBUI%%%%WWWDIR%%/mktree.css
-%%WEBUI%%%%WWWDIR%%/mktree.js
-%%WEBUI%%%%WWWDIR%%/netdisco.css
-%%WEBUI%%%%WWWDIR%%/netdisco.ico
-%%WEBUI%%%%WWWDIR%%/netdiscoball.gif
-%%WEBUI%%%%WWWDIR%%/netmap.html
-%%WEBUI%%%%WWWDIR%%/node.html
-%%WEBUI%%%%WWWDIR%%/plus.gif
-%%WEBUI%%%%WWWDIR%%/port_info.html
-%%WEBUI%%%%WWWDIR%%/port_report.html
-%%WEBUI%%%%WWWDIR%%/portcontrol.html
-%%WEBUI%%%%WWWDIR%%/powered_by_mason.jpg
-%%WEBUI%%%%WWWDIR%%/public_debugging.html
-%%WEBUI%%%%WWWDIR%%/reports.html
-%%WEBUI%%%%WWWDIR%%/search.html
-%%WEBUI%%%%WWWDIR%%/sidebar.html
-%%WEBUI%%%%WWWDIR%%/stats.html
-%%WEBUI%%%%WWWDIR%%/traceroute.html
-%%WEBUI%%%%WWWDIR%%/valid-html401.png
-%%WEBUI%%%%WWWDIR%%/vcss.gif
-%%WEBUI%%%%WWWDIR%%/port_usage.html
-%%WEBUI%%%%WWWDIR%%/traffic.png
-%%WEBUI%%%%WWWDIR%%/graphs_sample.mas
-%%WEBUI%%%%WWWDIR%%/port_search.html
-%%WEBUI%%@dir %%WWWDIR%%/mason
-@owner
-@group
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/DiscoveryDatabase.pod
-%%DOCSDIR%%/INSTALL.pod
-%%DOCSDIR%%/IPv6ArpNip.pod
-%%DOCSDIR%%/README.pod
-%%DOCSDIR%%/UPGRADE.pod
-%%DOCSDIR%%/WISHLIST.pod
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README-API-BACKEND
-%%DOCSDIR%%/README-API-SHARED
-%%DOCSDIR%%/UPGRADE
-@owner %%NETDISCO_USER%%
-@group %%NETDISCO_GROUP%%
-@sample %%ETCDIR%%/netdisco.conf.sample
-@sample %%ETCDIR%%/netdisco-topology.txt.sample
-@sample %%ETCDIR%%/netdisco.crontab.sample
-@sample %%ETCDIR%%/netdisco_apache.conf.sample
-@sample %%ETCDIR%%/netdisco_apache_dir.conf.sample
-@unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf; fi
-@unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache.conf; fi
-@owner
-@group
+bin/nd-import-topology
+bin/netdisco-daemon
+bin/netdisco-daemon-fg
+bin/netdisco-db-deploy
+bin/netdisco-deploy
+bin/netdisco-do
+bin/netdisco-rancid-export
+bin/netdisco-sshcollector
+bin/netdisco-web
+bin/netdisco-web-fg
+@sample %%ETCDIR%%/netdiscologs.conf.sample
+@sample %%ETCDIR%%/environments/deployment.yml.sample
+%%PERL5_MAN3%%/App::Netdisco.3.gz
+%%PERL5_MAN3%%/App::Netdisco::AnyEvent::Nbtstat.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Core::Arpnip.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Core::Discover.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Core::Macsuck.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Core::Nbtstat.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ExplicitLocking.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::Admin.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::Device.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DeviceIp.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DeviceModule.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePort.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortLog.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortPower.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortSsid.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortVlan.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortWireless.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePower.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DeviceVlan.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::Node.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::NodeIp.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::NodeNbt.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::NodeWireless.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::Admin.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::Device.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::DeviceModule.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::DevicePort.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::DevicePortLog.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::DevicePortSsid.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::DevicePower.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::Node.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::NodeIp.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::ResultSet::NodeNbt.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Daemon::Job.3.gz
+%%PERL5_MAN3%%/App::Netdisco::JobQueue.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::BSDInstall.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::Configuration.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::Deployment.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::Developing.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::ReleaseNotes.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::Troubleshooting.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Manual::WritingPlugins.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::ACE.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::ASA.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::BigIP.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::IOS.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::IOSXR.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::Linux.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::PaloAlto.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::DNS.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Device.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::ExpandParams.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Graph.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Node.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Permission.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Port.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::PortMAC.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::SNMP.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Web.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Web::Plugin.3.gz
+%%SITE_PERL%%/App/Netdisco.pm
+%%SITE_PERL%%/App/Netdisco/AnyEvent/Nbtstat.pm
+%%SITE_PERL%%/App/Netdisco/Configuration.pm
+%%SITE_PERL%%/App/Netdisco/Core/Arpnip.pm
+%%SITE_PERL%%/App/Netdisco/Core/Discover.pm
+%%SITE_PERL%%/App/Netdisco/Core/Macsuck.pm
+%%SITE_PERL%%/App/Netdisco/Core/Nbtstat.pm
+%%SITE_PERL%%/App/Netdisco/DB.pm
+%%SITE_PERL%%/App/Netdisco/DB/ExplicitLocking.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Admin.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Community.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Device.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DeviceIp.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DeviceModule.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePort.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortLog.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortPower.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortSsid.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortVlan.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortWireless.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePower.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DeviceRoute.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DeviceVlan.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Log.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Node.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/NodeIp.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/NodeMonitor.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/NodeNbt.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/NodeWireless.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Oui.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Process.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Session.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Subnet.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Topology.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/User.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/UserLog.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/ActiveNode.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/ActiveNodeWithAge.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/ApRadioChannelPower.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/CidrIps.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DeviceDnsMismatch.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DeviceLinks.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DevicePoeStatus.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DuplexMismatch.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/GenericReport.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeMonitor.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeWithAge.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodesDiscovered.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/OrphanedDevices.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PollerPerformance.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PortUtilization.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/SlowDevices.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/SubnetUtilization.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UnDirEdgesAgg.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UndiscoveredNeighbors.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UserRole.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/Admin.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/Device.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/DeviceModule.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/DevicePort.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/DevicePortLog.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/DevicePortSsid.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/DevicePower.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/Node.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/NodeIp.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/NodeNbt.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/NodeWireless.pm
+%%SITE_PERL%%/App/Netdisco/DB/ResultSet/Subnet.pm
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-1-2-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-10-11-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-11-12-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-12-13-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-13-14-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-14-15-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-15-16-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-16-17-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-17-18-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-18-19-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-19-20-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-2-3-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-20-21-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-21-22-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-22-23-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-23-24-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-24-25-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-25-26-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-26-27-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-27-28-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-28-29-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-29-30-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-3-4-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-30-31-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-31-32-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-32-33-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-33-34-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-34-35-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-35-36-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-36-37-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-37-38-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-38-39-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-39-40-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-4-5-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-5-6-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-6-7-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-7-8-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-8-9-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/DB/schema_versions/App-Netdisco-DB-9-10-PostgreSQL.sql
+%%SITE_PERL%%/App/Netdisco/Daemon/Job.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Util.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Common.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Interactive/DeviceActions.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Interactive/PortActions.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Manager.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Arpnip.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Common.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Device.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Expiry.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Macsuck.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Nbtstat.pm
+%%SITE_PERL%%/App/Netdisco/Daemon/Worker/Scheduler.pm
+%%SITE_PERL%%/App/Netdisco/Environment.pm
+%%SITE_PERL%%/App/Netdisco/JobQueue.pm
+%%SITE_PERL%%/App/Netdisco/JobQueue/PostgreSQL.pm
+%%SITE_PERL%%/App/Netdisco/Manual/BSDInstall.pod
+%%SITE_PERL%%/App/Netdisco/Manual/Configuration.pod
+%%SITE_PERL%%/App/Netdisco/Manual/Deployment.pod
+%%SITE_PERL%%/App/Netdisco/Manual/Developing.pod
+%%SITE_PERL%%/App/Netdisco/Manual/ReleaseNotes.pod
+%%SITE_PERL%%/App/Netdisco/Manual/Troubleshooting.pod
+%%SITE_PERL%%/App/Netdisco/Manual/WritingPlugins.pod
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/ACE.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/ASA.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/BigIP.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/IOS.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/IOSXR.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/Linux.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/PaloAlto.pm
+%%SITE_PERL%%/App/Netdisco/Util/DNS.pm
+%%SITE_PERL%%/App/Netdisco/Util/Daemon.pm
+%%SITE_PERL%%/App/Netdisco/Util/Device.pm
+%%SITE_PERL%%/App/Netdisco/Util/ExpandParams.pm
+%%SITE_PERL%%/App/Netdisco/Util/Graph.pm
+%%SITE_PERL%%/App/Netdisco/Util/Node.pm
+%%SITE_PERL%%/App/Netdisco/Util/NodeMonitor.pm
+%%SITE_PERL%%/App/Netdisco/Util/Noop.pm
+%%SITE_PERL%%/App/Netdisco/Util/Permission.pm
+%%SITE_PERL%%/App/Netdisco/Util/Port.pm
+%%SITE_PERL%%/App/Netdisco/Util/PortMAC.pm
+%%SITE_PERL%%/App/Netdisco/Util/SNMP.pm
+%%SITE_PERL%%/App/Netdisco/Util/Web.pm
+%%SITE_PERL%%/App/Netdisco/Web.pm
+%%SITE_PERL%%/App/Netdisco/Web/AdminTask.pm
+%%SITE_PERL%%/App/Netdisco/Web/Auth/Provider/DBIC.pm
+%%SITE_PERL%%/App/Netdisco/Web/AuthN.pm
+%%SITE_PERL%%/App/Netdisco/Web/Device.pm
+%%SITE_PERL%%/App/Netdisco/Web/GenericReport.pm
+%%SITE_PERL%%/App/Netdisco/Web/Password.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/JobQueue.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/NodeMonitor.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/OrphanedDevices.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/PollerPerformance.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/PseudoDevice.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/SlowDevices.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/Topology.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/UndiscoveredNeighbors.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/UserLog.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask/Users.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Addresses.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Details.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Modules.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Neighbors.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Ports.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Inventory.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ApChannelDist.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ApClients.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ApRadioChannelPower.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/DeviceAddrNoDNS.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/DeviceByLocation.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/DeviceDnsMismatch.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/DevicePoeStatus.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/DuplexMismatch.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/HalfDuplex.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/InventoryByModelByOS.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/IpInventory.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ModuleInventory.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/Netbios.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/NodeMultiIPs.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/NodeVendor.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/NodesDiscovered.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortAdminDown.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortBlocking.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortLog.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortMultiNodes.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortSsid.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/PortUtilization.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/SsidInventory.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/SubnetUtilization.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/VlanInventory.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Search/Device.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Search/Node.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Search/Port.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Search/VLAN.pm
+%%SITE_PERL%%/App/Netdisco/Web/PortControl.pm
+%%SITE_PERL%%/App/Netdisco/Web/Report.pm
+%%SITE_PERL%%/App/Netdisco/Web/Search.pm
+%%SITE_PERL%%/App/Netdisco/Web/Static.pm
+%%SITE_PERL%%/App/Netdisco/Web/Statistics.pm
+%%SITE_PERL%%/App/Netdisco/Web/TypeAhead.pm
+%%SITE_PERL%%/Dancer/Template/NetdiscoTemplateToolkit.pm
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/config.yml
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/environments/deployment.yml
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/500.html
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/bootstrap-tree.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/bootstrap.min.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/dataTables.bootstrap.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/daterangepicker-bs2.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/font-awesome.min.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/jquery.qtip.min.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/nd_print.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/netdisco.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/animated-overlay.gif
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-icons_222222_256x240.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-icons_2e83ff_256x240.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-icons_454545_256x240.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-icons_888888_256x240.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/jquery-ui.custom.min.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/toastr.css
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/dispatch.cgi
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/dispatch.fcgi
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font/FontAwesome.otf
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font/fontawesome-webfont.eot
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font/fontawesome-webfont.svg
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font/fontawesome-webfont.ttf
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font/fontawesome-webfont.woff
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/crystalclear_mag.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/diagona_settings.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/dusseldorf_settings.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/glyphicons_072_bookmark.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/matte_basic_pin.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/navbar_disco.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/sort_asc.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/sort_asc_disabled.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/sort_both.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/sort_desc.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/sort_desc_disabled.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/splashyfish_left.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/splashyfish_right.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/tango_sweep.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images/vaga_copy.png
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/bootstrap.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/d3.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/dataTables.bootstrap.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/dataTables.ip-address-detect.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/dataTables.ip-address-sort.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/daterangepicker.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/he.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery-deserialize.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery-history.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery-latest.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery-ui.custom.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery.cookie.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery.dataTables.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery.floatThead.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/jquery.qtip.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/moment.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/natural.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/netdisco.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/netdisco_portcontrol.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/portsort.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/toastr.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/underscore.min.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/admintask.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/jobqueue.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/nodemonitor.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/orphaned.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/orphaned_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/performance.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/pseudodevice.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/slowdevices.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/topology.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/undiscoveredneighbors.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/undiscoveredneighbors_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/userlog.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/users.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/datatabledefaults.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/addresses.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/addresses_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/details.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/modules.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/netmap.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/ports.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/ports_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apchanneldist.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apchanneldist_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apclients.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apclients_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apradiochannelpower.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apradiochannelpower_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/deviceaddrnodns.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/deviceaddrnodns_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicebylocation.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicebylocation_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicednsmismatch.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicednsmismatch_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicepoestatus.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/devicepoestatus_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/duplexmismatch.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/duplexmismatch_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/generic_report.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/generic_report_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/halfduplex.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/halfduplex_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/inventorybymodelbyos.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/ipinventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/ipinventory_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/moduleinventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/moduleinventory_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/netbios.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/netbios_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodemultiips.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodemultiips_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodevendor.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodevendor_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodesdiscovered.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/nodesdiscovered_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portadmindown.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portadmindown_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portblocking.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portblocking_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portlog.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portmultinodes.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portmultinodes_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portssid.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portssid_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portutilization.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/portutilization_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/subnets.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/subnets_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/vlaninventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/vlaninventory_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/device.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/device_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/node_by_ip.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/node_by_mac.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/port.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/port_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/vlan.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/vlan_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/generic_report.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/nodesdiscovered.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/statistics.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/device.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/index.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/inventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/admintask.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/bootstrap-tree.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/common.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/device.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/report.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/search.js
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/layouts/main.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/password.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/plugin.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/report.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/search.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/device/netmap.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/device/ports.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/ipinventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/moduleinventory.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/netbios.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/nodevendor.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portlog.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portssid.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/subnets.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/device.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/node.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/port.tt
+man/man1/nd-import-topology.1.gz
+man/man1/netdisco-daemon-fg.1.gz
+man/man1/netdisco-daemon.1.gz
+man/man1/netdisco-db-deploy.1.gz
+man/man1/netdisco-deploy.1.gz
+man/man1/netdisco-do.1.gz
+man/man1/netdisco-rancid-export.1.gz
+man/man1/netdisco-sshcollector.1.gz
+man/man1/netdisco-web-fg.1.gz
+man/man1/netdisco-web.1.gz
+@dir %%SITE_PERL%%/App/Netdisco/AnyEvent
+@dir %%SITE_PERL%%/App/Netdisco/Core
+@dir %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual
+@dir %%SITE_PERL%%/App/Netdisco/DB/Result
+@dir %%SITE_PERL%%/App/Netdisco/DB/ResultSet
+@dir %%SITE_PERL%%/App/Netdisco/DB/schema_versions
+@dir %%SITE_PERL%%/App/Netdisco/DB
+@dir %%SITE_PERL%%/App/Netdisco/Daemon/Worker/Interactive
+@dir %%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller
+@dir %%SITE_PERL%%/App/Netdisco/Daemon/Worker
+@dir %%SITE_PERL%%/App/Netdisco/Daemon
+@dir %%SITE_PERL%%/App/Netdisco/JobQueue
+@dir %%SITE_PERL%%/App/Netdisco/Manual
+@dir %%SITE_PERL%%/App/Netdisco/Util
+@dir %%SITE_PERL%%/App/Netdisco/Web/Auth/Provider
+@dir %%SITE_PERL%%/App/Netdisco/Web/Auth
+@dir %%SITE_PERL%%/App/Netdisco/Web/Plugin/AdminTask
+@dir %%SITE_PERL%%/App/Netdisco/Web/Plugin/Device
+@dir %%SITE_PERL%%/App/Netdisco/Web/Plugin/Report
+@dir %%SITE_PERL%%/App/Netdisco/Web/Plugin/Search
+@dir %%SITE_PERL%%/App/Netdisco/Web/Plugin
+@dir %%SITE_PERL%%/App/Netdisco/Web
+@dir %%SITE_PERL%%/App/Netdisco
+@dir %%SITE_PERL%%/App
+@dir %%SITE_PERL%%/Dancer/Template
+@dir %%SITE_PERL%%/Dancer
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/environments
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness/images
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css/smoothness
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/css
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/font
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/images
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/public
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/layouts
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/device
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco/views
+@dir %%SITE_PERL%%/auto/share/dist/App-Netdisco
+@dir %%SITE_PERL%%/auto/share/dist
+@dir %%SITE_PERL%%/auto/share
+@owner netdisco
+@mode 0750
+%%ETCDIR%%/perl5/bin/localenv

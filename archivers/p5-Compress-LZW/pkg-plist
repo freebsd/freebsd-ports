@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Compress::LZW.3.gz
-%%PERL5_MAN3%%/Compress::LZW::Compressor.3.gz
-%%PERL5_MAN3%%/Compress::LZW::Decompressor.3.gz
 %%SITE_PERL%%/Compress/LZW.pm
 %%SITE_PERL%%/Compress/LZW/Compressor.pm
 %%SITE_PERL%%/Compress/LZW/Decompressor.pm
+%%PERL5_MAN3%%/Compress::LZW.3.gz
+%%PERL5_MAN3%%/Compress::LZW::Compressor.3.gz
+%%PERL5_MAN3%%/Compress::LZW::Decompressor.3.gz

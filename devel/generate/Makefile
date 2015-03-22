@@ -3,6 +3,7 @@
 
 PORTNAME=	generate
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.druid.net/darcy/
 
@@ -19,5 +20,8 @@ PLIST_FILES=	bin/generate bin/rgenerate man/man1/generate.1.gz
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS *=,CFLAGS +=,' \
 		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

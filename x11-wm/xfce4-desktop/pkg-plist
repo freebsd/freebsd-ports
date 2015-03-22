@@ -3,6 +3,7 @@ bin/xfdesktop-settings
 man/man1/xfdesktop.1.gz
 share/applications/xfce-backdrop-settings.desktop
 share/backgrounds/xfce/xfce-blue.jpg
+share/backgrounds/xfce/xfce-teal.jpg
 share/icons/hicolor/32x32/apps/xfce4-backdrop.png
 share/icons/hicolor/32x32/apps/xfce4-menueditor.png
 share/icons/hicolor/48x48/apps/xfce4-backdrop.png
@@ -26,6 +27,7 @@ share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
 %%NLS%%share/locale/es/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfdesktop.mo

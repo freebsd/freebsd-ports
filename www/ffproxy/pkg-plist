@@ -21,6 +21,3 @@ man/man8/ffproxy.8.gz
 %%DATADIR%%/html/post
 %%DATADIR%%/html/resolve
 %%DATADIR%%/sample.config
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%

@@ -1,0 +1,20 @@
+--- hdf/src/Makefile.in.orig	2015-02-10 00:43:49.000000000 +0800
++++ hdf/src/Makefile.in	2015-03-16 23:48:46.316696873 +0800
+@@ -296,7 +296,7 @@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -version-number 2
+ LEX = @LEX@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -408,8 +408,6 @@
+ LIBMFHDF = $(top_builddir)/mfhdf/libsrc/libmfhdf.la
+ H4CC = ${DESTDIR}$(bindir)/h4cc
+ H4FC = ${DESTDIR}$(bindir)/h4fc
+-@HDF_BUILD_XDR_TRUE@XDR_ADD = -R$(abs_top_builddir)/mfhdf/xdr/.libs
+-@HDF_BUILD_SHARED_TRUE@AM_LDFLAGS = -R$(abs_top_builddir)/mfhdf/libsrc/.libs -R$(abs_top_builddir)/hdf/src/.libs $(XDR_ADD)
+ ACLOCAL_AMFLAGS = "-I m4"
+ 
+ # .chkexe files are used to mark tests that have run successfully.

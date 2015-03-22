@@ -3,7 +3,7 @@
 
 PORTNAME=	libdbi-drivers
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
@@ -15,11 +15,18 @@ LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
-		--with-dbi-incdir=${LOCALBASE}/include
+		--with-dbi-incdir=${LOCALBASE}/include \
+		--with-dbi-dbdir=/var/lib/libdbi
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
+
+PLIST_DIRS=	/var/lib/libdbi/firebird \
+		/var/lib/libdbi/sqlite \
+		/var/lib/libdbi/sqlite3 \
+		/var/lib/libdbi \
+		/var/lib
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_MULTI=	DRIVER

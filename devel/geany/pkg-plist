@@ -7,6 +7,7 @@ include/geany/filetypes.h
 include/geany/geany.h
 include/geany/geanyfunctions.h
 include/geany/geanyplugin.h
+include/geany/gtkcompat.h
 include/geany/highlighting.h
 include/geany/keybindings.h
 include/geany/msgwindow.h
@@ -21,6 +22,7 @@ include/geany/search.h
 include/geany/stash.h
 include/geany/support.h
 include/geany/tagmanager/tm_file_entry.h
+include/geany/tagmanager/tm_parser.h
 include/geany/tagmanager/tm_project.h
 include/geany/tagmanager/tm_source_file.h
 include/geany/tagmanager/tm_symbol.h
@@ -39,7 +41,7 @@ lib/geany/htmlchars.so
 lib/geany/saveactions.so
 lib/geany/splitwindow.so
 libdata/pkgconfig/geany.pc
-man/man1/geany.1.gz
+%%PORTDOCS%%man/man1/geany.1.gz
 share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -76,9 +78,12 @@ share/applications/geany.desktop
 %%DATADIR%%/c99.tags
 %%DATADIR%%/colorschemes/alt.conf
 %%DATADIR%%/filetype_extensions.conf
+%%DATADIR%%/filetypes.CUDA.conf
+%%DATADIR%%/filetypes.Clojure.conf
 %%DATADIR%%/filetypes.Cython.conf
 %%DATADIR%%/filetypes.Genie.conf
 %%DATADIR%%/filetypes.Go.conf
+%%DATADIR%%/filetypes.Graphviz.conf
 %%DATADIR%%/filetypes.Scala.conf
 %%DATADIR%%/filetypes.abaqus
 %%DATADIR%%/filetypes.abc
@@ -86,6 +91,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.ada
 %%DATADIR%%/filetypes.asciidoc
 %%DATADIR%%/filetypes.asm
+%%DATADIR%%/filetypes.batch
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
 %%DATADIR%%/filetypes.cmake
@@ -122,10 +128,12 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.perl
 %%DATADIR%%/filetypes.php
 %%DATADIR%%/filetypes.po
+%%DATADIR%%/filetypes.powershell
 %%DATADIR%%/filetypes.python
 %%DATADIR%%/filetypes.r
 %%DATADIR%%/filetypes.restructuredtext
 %%DATADIR%%/filetypes.ruby
+%%DATADIR%%/filetypes.rust
 %%DATADIR%%/filetypes.sh
 %%DATADIR%%/filetypes.sql
 %%DATADIR%%/filetypes.tcl
@@ -135,6 +143,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.vhdl
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/filetypes.yaml
+%%DATADIR%%/geany.css
 %%DATADIR%%/geany.glade
 %%DATADIR%%/geany.gtkrc
 %%DATADIR%%/html_entities.tags
@@ -155,6 +164,7 @@ share/applications/geany.desktop
 %%DATADIR%%/templates/files/main.java
 %%DATADIR%%/templates/files/main.py
 %%DATADIR%%/templates/files/main.vala
+%%DATADIR%%/templates/files/module.erl
 %%DATADIR%%/templates/files/program.pas
 %%DATADIR%%/templates/function
 %%DATADIR%%/templates/gpl

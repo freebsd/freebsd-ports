@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.2.12
-PORTREVISION=	1
+PORTVERSION=	1.2.13
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
-MASTER_SITES=	http://polarssl.org/download/
+MASTER_SITES=	https://polarssl.org/download/
 
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 ALL_TARGET=	no_test
 
-USES=	cpe gmake tar:tgz
+USES=		cpe gmake tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

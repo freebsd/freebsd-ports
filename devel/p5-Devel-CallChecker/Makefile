@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-CallChecker
-PORTVERSION=	0.006
-PORTREVISION=	1
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Custom op checking attached to subroutines
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DynaLoader-Functions>=0.001:${PORTSDIR}/devel/p5-DynaLoader-Functions
 RUN_DEPENDS:=	${BUILD_DEPENDS}

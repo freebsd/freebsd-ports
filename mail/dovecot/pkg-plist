@@ -122,12 +122,5 @@ sbin/dovecotpw
 %%EXAMPLESDIR%%/dovecot.conf
 @exec if [ ! -f %D/etc/dovecot.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot.conf %D/etc/dovecot.conf; fi
 %%EXAMPLESDIR%%/mkcert.sh
-@dirrmtry include/dovecot
-@dirrmtry lib/dovecot/auth
-@dirrmtry lib/dovecot/imap
-@dirrmtry lib/dovecot/lda
-@dirrmtry lib/dovecot/pop3
-@dirrmtry lib/dovecot
-@dirrmtry libexec/dovecot
-@dirrm %%EXAMPLESDIR%%
-@exec install -o root -g wheel -m 0755 -d %D/lib/dovecot/auth
+@dir include/dovecot
+@dir lib/dovecot/auth

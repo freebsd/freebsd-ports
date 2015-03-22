@@ -8,14 +8,7 @@ MASTER_SITES=	http://www.ndesk.org/archive/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Callback-based program option parser for C\#
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+USES=		gmake mono pathfix pkgconfig
 
 .include <bsd.port.mk>

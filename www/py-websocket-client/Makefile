@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alfred@freebsd.org
+MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Websocket client for python
 
 LICENSE=	ISCL

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xfce
-PORTVERSION=	4.10
-PORTREVISION=	9
+PORTVERSION=	4.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +36,7 @@ NO_MTREE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONS}
-RUN_DEPENDS+=	gnome-icon-theme>=3.12.0:${PORTSDIR}/misc/gnome-icon-theme
+RUN_DEPENDS+=	adwaita-icon-theme>=3.14.0:${PORTSDIR}/x11-themes/adwaita-icon-theme
 .endif
 
 .if ${PORT_OPTIONS:MORAGE}

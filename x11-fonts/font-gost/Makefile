@@ -3,6 +3,7 @@
 
 PORTNAME=	gost
 PORTVERSION=	0.2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 		LOCAL/vg
@@ -12,14 +13,9 @@ DISTNAME=	TTF_FON
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	GOST TrueType fonts
 
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip
+USES=		fonts zip
 NO_BUILD=	yes
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-FONTSDIR=	${PREFIX}/lib/X11/fonts/gost
 SUB_FILES=	pkg-message
-SUB_LIST=	FONTSDIR=${FONTSDIR}
 WRKSRC=		${WRKDIR}/Fonts
 
 do-install:

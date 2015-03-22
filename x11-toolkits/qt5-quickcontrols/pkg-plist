@@ -15,6 +15,9 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Private/ColumnMenuContent.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/ContentItem.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/Control.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu_base.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu_ios.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/FastGlow.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/FocusFrame.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/HoverButton.qml
@@ -31,7 +34,10 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Private/SystemPaletteSingleton.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/TabBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/TableViewSelection.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/TextHandle.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/TextInputWithHandles.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/TextSingleton.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Private/ToolMenuButton.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Private/style.js
 %%QT_QMLDIR%%/QtQuick/Controls/ProgressBar.qml
@@ -44,6 +50,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls/StackViewDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls/StackViewTransition.qml
 %%QT_QMLDIR%%/QtQuick/Controls/StatusBar.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/ApplicationWindowStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/BusyIndicatorStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/ButtonStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/CalendarStyle.qml
@@ -95,6 +102,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/images/spinner_small.png
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/images/tab.png
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/images/tab_selected.png
+%%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/ApplicationWindowStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/BusyIndicatorStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/ButtonStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/CalendarStyle.qml
@@ -152,17 +160,18 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/copy.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/critical.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/crosshairs.png
-%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/folder.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/information.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/question.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/slider_handle.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/sunken_frame.png
-%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/up.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/warning.png
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/images/window_border.png
 %%QT_QMLDIR%%/QtQuick/Dialogs/plugins.qmltypes
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/ColorSlider.qml
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/DefaultWindowDecoration.qml
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/IconButtonStyle.qml
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/IconGlyph.qml
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/icons.ttf
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/qmldir
 %%QT_QMLDIR%%/QtQuick/Dialogs/qmldir
 %%QT_QMLDIR%%/QtQuick/Layouts/libqquicklayoutsplugin.so

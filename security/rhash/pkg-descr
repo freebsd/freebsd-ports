@@ -1,0 +1,15 @@
+RHash is a console utility and library for computing and verifying hash sums
+of files.  It supports CRC32, MD4, MD5, SHA1, SHA256, SHA512, SHA3, Tiger,
+TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R
+256/512, Whirlpool, and Snefru-128/256 hash sums.  Its features are:
+
+  * Can calculate Magnet links
+  * Output in a predefined (SFV, BSD-like) or a user-defined format
+  * Ability to process directories recursively
+  * Updating existing hash-files (adding hash sums of files missing in a
+    hash-file)
+  * Portable, written in pure C, small in size, open source (MIT license)
+
+Perl wrapper is available as `security/p5-Crypt-RHash' port.
+
+WWW: http://rhash.anz.ru/

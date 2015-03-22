@@ -31,6 +31,7 @@ libexec/firebird/intl/fbintl.conf
 @rmtry /%%LOCALSTATEDIR%%/isc_event1.`hostname`
 @rmtry /%%LOCALSTATEDIR%%/isc_init1.`hostname`
 @rmtry /%%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@dir /%%LOCALSTATEDIR%%/help
 @dir /%%LOCALSTATEDIR%%
 @owner
 @group

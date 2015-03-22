@@ -15,8 +15,10 @@ COMMENT=	"Classic" Gnu Chess
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 INFO=		gnuchess
-USES=		shebangfix
+USES=		cpe shebangfix
 SHEBANG_FILES=	doc/quotes.rb
+CPE_PRODUCT=	chess
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=		OPENING_BOOK DOCS NLS
 OPTIONS_DEFAULT=	OPENING_BOOK

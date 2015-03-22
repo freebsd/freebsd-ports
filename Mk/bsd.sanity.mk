@@ -64,6 +64,10 @@ DEV_ERROR+=	"USE_GNOME=pkgconfig is unsupported, please use USES=pkgconfig"
 DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
 .endif
 
+.if defined(USE_GITHUB) && defined(GH_COMMIT)
+DEV_WARNING+=	"GH_COMMIT is deprecated, please convert GHL-\>GH in MASTER_SITES and set GH_TAGNAME to tag or commit hash and remove GH_COMMIT"
+.endif
+
 .if defined(USE_GNOME) && ${USE_GNOME:Mgnomehack}
 DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 .endif
@@ -73,7 +77,7 @@ DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop
 .endif
 
 .if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
-DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  (libfoo.so vs foo.so)"
+DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  \(libfoo.so vs foo.so\)"
 .endif
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \

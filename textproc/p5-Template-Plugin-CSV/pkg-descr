@@ -1,0 +1,7 @@
+This is a very simple TT2 Plugin for generating CSV.
+
+A CSV object will be instantiated via the following directive:
+
+[% USE CSV %]
+
+WWW: http://search.cpan.org/dist/Template-Plugin-CSV/

@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USE_GCC=	4.8+
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 GH_COMMIT=	5776088

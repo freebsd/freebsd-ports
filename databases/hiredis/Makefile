@@ -3,6 +3,7 @@
 
 PORTNAME=	hiredis
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -15,7 +16,7 @@ GH_ACCOUNT=	redis
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	9be3a07
 
-USES=		gmake:lite
+USES=		gmake
 USE_LDCONFIG=	yes
 
 post-patch:

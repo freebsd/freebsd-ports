@@ -62,6 +62,7 @@ dahdi_start()
 	devfs rule apply path 'dahdi/*' mode 0664 user root group dahdi
 
 	# run configuration utilities
+	/bin/sleep 5
 	%%PREFIX%%/sbin/dahdi_cfg
 	if [ -r %%PREFIX%%/etc/fxotune.conf ]; then
 		echo "Starting fxotune."

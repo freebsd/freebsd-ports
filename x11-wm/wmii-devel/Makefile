@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wmii
-DISTVERSION=	3.9.2
+PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/ GOOGLE_CODE
-DISTNAME=	${PORTNAME}+ixp-${DISTVERSION}
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}+ixp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic, minimalist window manager for X11
@@ -14,9 +15,9 @@ COMMENT=	Dynamic, minimalist window manager for X11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	wmii-3.6*
-
 LIB_DEPENDS=	libixp.so:${PORTSDIR}/devel/libixp
+
+CONFLICTS=	wmii-3.6*
 
 USES=		pkgconfig tar:tbz
 USE_XORG=	x11 xext xrandr xrender xinerama xft
@@ -33,5 +34,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/libixp/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib, ; /^CFLAGS +=/d' \
 		${WRKSRC}/config.mk
+
+post-install:
+.for f in bin/wimenu bin/wmii bin/wmii9menu bin/wmiir lib/libwmii_hack.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+.endfor
 
 .include <bsd.port.mk>

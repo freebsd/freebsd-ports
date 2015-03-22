@@ -3,7 +3,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python
 #MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${DISTNAME}
@@ -12,6 +12,9 @@ DISTNAME=	pyFltk-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to FLTK window toolkit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
@@ -35,6 +38,7 @@ post-build:
 	${REINPLACE_CMD} -e "s|\.\./docs|${DOCSDIR}/html|g" ${WRKSRC}/fltk/test/help.py
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fltk/_fltk.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/fltk/docs/*.html ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/fltk/docs/*.jpg ${STAGEDIR}${DOCSDIR}/html

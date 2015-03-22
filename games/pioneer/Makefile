@@ -30,7 +30,8 @@ LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:${PORTSDIR}/graphics/libGLU
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -38,7 +39,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 GH_ACCOUNT=	pioneerspacesim
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	20150201
+GH_TAGNAME=	20150314
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 

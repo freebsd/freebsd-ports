@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/dbus_minimal_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbus_symbols_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusabstractadaptor_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusabstractinterface_p.h

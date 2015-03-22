@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype imap openssl pgsql pcre posix session tokenizer xml zlib
 .endif

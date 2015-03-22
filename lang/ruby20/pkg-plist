@@ -711,6 +711,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
@@ -1631,6 +1633,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2b/ossl__x509store_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2b/parse_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2b/parse_8h_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2d/structmethod__entry__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2f/syslog_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2f/syslog_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d32/nkf-utf8_2nkf_8c__incl.map

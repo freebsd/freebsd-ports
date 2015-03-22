@@ -64,6 +64,8 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/profile-thread/init.lua
 %%DATADIR%%/game/thirdparty/Json2.lua
 %%DATADIR%%/game/thirdparty/cef3/cef.pak
+%%DATADIR%%/game/thirdparty/jit/bcname.lua
+%%DATADIR%%/game/thirdparty/jit/vmdef.lua
 %%DATADIR%%/game/thirdparty/cef3/locales/am.pak
 %%DATADIR%%/game/thirdparty/cef3/locales/ar.pak
 %%DATADIR%%/game/thirdparty/cef3/locales/bg.pak

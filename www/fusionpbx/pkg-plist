@@ -1352,5 +1352,10 @@
 %%WWWDIR%%/themes/enhanced/menu_background.png
 %%WWWDIR%%/themes/enhanced/root.php
 %%WWWDIR%%/themes/enhanced/template.php
+@dir %%WWWDIR%%/includes/templates/provision/grandstream
+@dir %%WWWDIR%%/includes/templates/provision/cisco/7960
+@dir %%WWWDIR%%/includes/templates/provision/cisco/7940
+@dir %%WWWDIR%%/app/voicemails/resources/switch/scripts
+@dir %%WWWDIR%%/app/park
 @dir %%WWWDIR%%
 @dir(,,755) /var/db/fusionpbx

@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
-X_FONTSDIR=%%X_FONTSDIR%%/TTF
+FONTSDIR=%%FONTSDIR%%/TTF
 
 catfontsdir ()
 {
@@ -72,7 +72,7 @@ nfonts ()
 
 case "$2" in
 POST-INSTALL)
-	cd ${X_FONTSDIR}
+	cd ${FONTSDIR}
 	touch fonts.dir
 	(catfontsdir < fonts.dir; addentries) > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
@@ -80,7 +80,7 @@ POST-INSTALL)
 	rm -f fonts.dir.tmp
 	;;
 DEINSTALL)
-	cd ${X_FONTSDIR}
+	cd ${FONTSDIR}
 	catfontsdir < fonts.dir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir

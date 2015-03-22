@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf-fortran
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,12 +19,12 @@ MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		fortran libtool makeinfo pathfix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	Unidata
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	1d024df
+USE_GITHUB=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdff.so.6.0.1

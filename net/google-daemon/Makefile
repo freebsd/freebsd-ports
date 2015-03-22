@@ -5,7 +5,6 @@ PORTNAME=	google-daemon
 PORTVERSION=	1.2.1
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	GHR
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google daemon for use with Google Cloud Compute Engine

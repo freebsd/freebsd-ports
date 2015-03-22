@@ -4,7 +4,7 @@
 PORTNAME=	faup
 PORTVERSION=	1.4.20150118
 CATEGORIES=	www devel
-MASTER_SITES=	GH LOCAL/antoine
+MASTER_SITES=	GHL LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Fast URL decoder library

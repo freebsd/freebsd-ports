@@ -1,5 +1,4 @@
-%%PERL5_MAN3%%/Class::Contract.3.gz
-%%PERL5_MAN3%%/Class::Contract::Production.3.gz
 %%SITE_PERL%%/Class/Contract.pm
 %%SITE_PERL%%/Class/Contract/Production.pm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.pl
+%%PERL5_MAN3%%/Class::Contract.3.gz
+%%PERL5_MAN3%%/Class::Contract::Production.3.gz

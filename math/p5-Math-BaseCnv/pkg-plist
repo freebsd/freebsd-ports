@@ -1,2 +1,3 @@
+bin/cnv
 %%SITE_PERL%%/Math/BaseCnv.pm
 %%PERL5_MAN3%%/Math::BaseCnv.3.gz

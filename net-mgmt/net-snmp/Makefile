@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -155,8 +155,12 @@ NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
 CONFIGURE_ARGS+=	--with-libs="-lssp_nonshared"
 .endif
 
-.if ${OSVERSION} >= 1000000
+.if ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100062
 CFLAGS+=	-D_WANT_IFADDR
+.endif
+
+.if ${OSVERSION} >= 1100062
+CONFIGURE_ARGS+=	--with-out-mib-modules="mibII/ipv6"
 .endif
 
 .if ${PORT_OPTIONS:MMFD_REWRITES}

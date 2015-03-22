@@ -69,51 +69,17 @@ USES+=		libtool
 . endif
 
 . if ${XORG_CAT} == "font"
-FONTDIR?=	${PORTNAME:C/.*-//g:S/type/Type/:S/ttf/TTF/:S/speedo/Speedo/}
-CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/lib/X11/fonts
-CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/lib/X11/fonts
-NEED_MKFONTFOO=	yes
-
-.  if ${PORTNAME:M*type1*}x != x
-INSTALLS_TTF?=	yes
-.  elif ${PORTNAME:M*ttf*}x != x
-INSTALLS_TTF?=	yes
-.  elif ${PORTNAME:M*encodings*}x != x
-# This is terrific, we want mkfontscale at build time, but don't use it like for the other ports.
-NEED_MKFONTFOO=	no
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-INSTALLS_TTF?=	no
-.  else
-INSTALLS_TTF?=	no
-.  endif
-
-.  if ${PORTNAME:M*font-util*}x != x
-USES+=	pathfix
-NEED_MKFONTFOO=	no
-.  elif ${INSTALLS_TTF} == "yes"
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
-.  else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-.  endif
-
-.  if ${NEED_MKFONTFOO} == "yes"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-				${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-				${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-.  endif
-
-.  for _fontdir in ${FONTDIR}
-.    if ${INSTALLS_TTF} == yes && ${NEED_MKFONTFOO} == yes
-PLIST_FILES+=	"@fcfontsdir ${PREFIX}/lib/X11/fonts/${_fontdir}"
-.    elif ${INSTALLS_TTF} == yes && ${NEED_MKFONTFOO} == no
-PLIST_FILES+=	"@fc ${PREFIX}/lib/X11/fonts/${_fontdir}"
-.    elif ${NEED_MKFONTFOO} == yes
-PLIST_FILES+=	"@fontsdir ${PREFIX}/lib/X11/fonts/${_fontdir}"
+FONTNAME?=	${PORTNAME:C/.*-//g:S/type/Type/:S/ttf/TTF/:S/speedo/Speedo/}
+CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/share/fonts
+CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/share/fonts
+.    if !defined(NOFONT)
+USES+=	fonts
+BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+				bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+PLIST_FILES+=	"@comment ${FONTSDIR}/fonts.dir" \
+				"@comment ${FONTSDIR}/fonts.scale"
 .    endif
-.  endfor
-.endif
+.  endif
 
 . if ${XORG_CAT} == "lib"
 USES+=		pathfix libtool:keepla
@@ -129,7 +95,9 @@ USES+=	pathfix
 DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
 USES+=	pathfix
-CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb
+CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
+					--with-fontrootdir=${LOCALBASE}/share/fonts \
+					--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
 
 LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
 USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto fontutil:build

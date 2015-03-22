@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		tar:bzip2 pkgconfig gmake libtool
+USES=		cpe tar:bzip2 pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 USE_GCC=	any
@@ -29,6 +29,7 @@ USE_GNOME=	libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 INSTALLS_ICONS=	yes
 SYSCONFIGDIR=	${PREFIX}/etc
+CPE_VENDOR=	gnu
 
 # jemalloc leads to infinite recursion on FreeBSD
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \

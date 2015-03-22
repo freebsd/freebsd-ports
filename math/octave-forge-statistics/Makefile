@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-statistics
-PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 

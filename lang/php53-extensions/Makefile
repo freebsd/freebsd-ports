@@ -8,8 +8,11 @@ PKGNAMESUFFIX=	-extensions
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
+
+DEPRECATED=	security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
 
 PHP_DEFAULT=	53
 IGNORE_WITH_PHP=5 52 55

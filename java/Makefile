@@ -141,6 +141,8 @@
     SUBDIR += visualvm
     SUBDIR += wildfly80
     SUBDIR += wildfly81
+    SUBDIR += wildfly82
+    SUBDIR += wildfly90
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>

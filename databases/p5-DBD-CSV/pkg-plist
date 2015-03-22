@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/Bundle::DBD::CSV.3.gz
-%%PERL5_MAN3%%/DBD::CSV.3.gz
 %%SITE_PERL%%/Bundle/DBD/CSV.pm
 %%SITE_PERL%%/DBD/CSV.pm
 %%SITE_PERL%%/DBD/CSV/GetInfo.pm
@@ -10,3 +8,5 @@
 %%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t85_error.pm
 %%SITE_PERL%%/DBI/Test/DBD/CSV/Conf.pm
 %%SITE_PERL%%/DBI/Test/DBD/CSV/List.pm
+%%PERL5_MAN3%%/Bundle::DBD::CSV.3.gz
+%%PERL5_MAN3%%/DBD::CSV.3.gz

@@ -3,15 +3,19 @@
 
 PORTNAME=	libdynamite
 PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Dynamite/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

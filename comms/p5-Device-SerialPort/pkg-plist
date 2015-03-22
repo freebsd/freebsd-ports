@@ -1,5 +1,5 @@
 bin/modemtest
-%%PERL5_MAN3%%/Device::SerialPort.3.gz
 %%SITE_ARCH%%/Device/SerialPort.pm
 %%SITE_ARCH%%/auto/Device/SerialPort/SerialPort.so
+%%PERL5_MAN3%%/Device::SerialPort.3.gz
 man/man1/modemtest.1.gz

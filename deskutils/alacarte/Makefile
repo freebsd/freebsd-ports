@@ -9,7 +9,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Freedesktop compliant menu editor for GNOME
 
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl

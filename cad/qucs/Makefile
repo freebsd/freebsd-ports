@@ -11,7 +11,7 @@ COMMENT=	Graphical circuit design and simulation tool
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_QT4=	moc_build uic_build rcc_build linguist_build \
+USE_QT4=	moc_build uic_build rcc_build linguisttools_build \
 		corelib gui xml svg script qt3support
 USES=		bison gmake libtool shebangfix
 SHEBANG_FILES=	contrib/ps2sp

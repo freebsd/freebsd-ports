@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/1.x%20%28Old%20Stable%29/v${PORTVERSION} \
 PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
 USE_MYSQL=	yes

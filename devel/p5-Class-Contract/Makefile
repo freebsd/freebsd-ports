@@ -13,12 +13,13 @@ COMMENT=	Design-by-Contract OO in Perl
 
 USES=		perl5 dos2unix
 USE_PERL5=	configure
-PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 OPTIONS_DEFINE=	EXAMPLES
 
+PORTEXAMPLES=	demo.pl
+
 pre-configure:
-	${MKDIR} ${WRKSRC}/examples
+	@${MKDIR} ${WRKSRC}/examples
 	${MV} ${WRKSRC}/demo.pl ${WRKSRC}/examples
 
 post-install:

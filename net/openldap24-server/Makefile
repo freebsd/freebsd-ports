@@ -431,6 +431,7 @@ CONFIGURE_ARGS+=	--enable-spasswd
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
 LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
+LDFLAGS+=		-L${LOCALBASE}/lib
 .else
 PLIST_SUB+=		BACK_SQL="@comment "
 .endif

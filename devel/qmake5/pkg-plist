@@ -48,6 +48,7 @@
 %%QT_MKSPECDIR%%/common/qcc-base-qnx-x86.conf
 %%QT_MKSPECDIR%%/common/qcc-base-qnx.conf
 %%QT_MKSPECDIR%%/common/qcc-base.conf
+%%QT_MKSPECDIR%%/common/qnx/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/shell-unix.conf
 %%QT_MKSPECDIR%%/common/shell-win32.conf
 %%QT_MKSPECDIR%%/common/unix.conf
@@ -99,8 +100,6 @@
 %%QT_MKSPECDIR%%/devices/linux-imx6-g++/qeglfshooks_imx6.cpp
 %%QT_MKSPECDIR%%/devices/linux-imx6-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-imx6-g++/qplatformdefs.h
-%%QT_MKSPECDIR%%/devices/linux-maemo-n9-g++/qmake.conf
-%%QT_MKSPECDIR%%/devices/linux-maemo-n9-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-mipsel-broadcom-97425-g++/qdirectfbeglhooks_bcm97425.cpp
 %%QT_MKSPECDIR%%/devices/linux-mipsel-broadcom-97425-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-mipsel-broadcom-97425-g++/qplatformdefs.h
@@ -119,6 +118,7 @@
 %%QT_MKSPECDIR%%/features/android/android_deployment_settings.prf
 %%QT_MKSPECDIR%%/features/build_pass.prf
 %%QT_MKSPECDIR%%/features/c++11.prf
+%%QT_MKSPECDIR%%/features/c++14.prf
 %%QT_MKSPECDIR%%/features/cmake_functions.prf
 %%QT_MKSPECDIR%%/features/configure.prf
 %%QT_MKSPECDIR%%/features/create_cmake.prf
@@ -150,6 +150,8 @@
 %%QT_MKSPECDIR%%/features/java.prf
 %%QT_MKSPECDIR%%/features/lex.prf
 %%QT_MKSPECDIR%%/features/link_pkgconfig.prf
+%%QT_MKSPECDIR%%/features/link_ltcg.prf
+%%QT_MKSPECDIR%%/features/ltcg.prf
 %%QT_MKSPECDIR%%/features/mac/default_post.prf
 %%QT_MKSPECDIR%%/features/mac/default_pre.prf
 %%QT_MKSPECDIR%%/features/mac/objective_c.prf
@@ -222,7 +224,6 @@
 %%QT_MKSPECDIR%%/features/win32/default_pre.prf
 %%QT_MKSPECDIR%%/features/win32/dumpcpp.prf
 %%QT_MKSPECDIR%%/features/win32/idcidl.prf
-%%QT_MKSPECDIR%%/features/win32/ltcg.prf
 %%QT_MKSPECDIR%%/features/win32/msvc_mp.prf
 %%QT_MKSPECDIR%%/features/win32/opengl.prf
 %%QT_MKSPECDIR%%/features/win32/openvg.prf
@@ -282,8 +283,6 @@
 %%QT_MKSPECDIR%%/linux-g++-32/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/linux-g++-64/qplatformdefs.h
-%%QT_MKSPECDIR%%/linux-g++-maemo/qmake.conf
-%%QT_MKSPECDIR%%/linux-g++-maemo/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-g++/qmake.conf
 %%QT_MKSPECDIR%%/linux-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-icc-32/qmake.conf
@@ -333,11 +332,13 @@
 %%QT_MKSPECDIR%%/macx-ios-clang/Default-568h@2x.png
 %%QT_MKSPECDIR%%/macx-ios-clang/Info.plist.app
 %%QT_MKSPECDIR%%/macx-ios-clang/Info.plist.lib
+%%QT_MKSPECDIR%%/macx-ios-clang/LaunchScreen.xib
 %%QT_MKSPECDIR%%/macx-ios-clang/features/default_post.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/default_pre.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/qt.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/qt_config.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/qt_parts.prf
+%%QT_MKSPECDIR%%/macx-ios-clang/features/sdk.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/qmake.conf
 %%QT_MKSPECDIR%%/macx-ios-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/macx-ios-clang/rename_main.sh
@@ -394,8 +395,6 @@
 %%QT_MKSPECDIR%%/unsupported/linux-armcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/linux-host-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/linux-host-g++/qplatformdefs.h
-%%QT_MKSPECDIR%%/unsupported/linux-libc++-clang/qmake.conf
-%%QT_MKSPECDIR%%/unsupported/linux-libc++-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/nacl-g++/qmake.conf

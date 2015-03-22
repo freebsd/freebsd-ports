@@ -27,7 +27,7 @@
 %%XPI_XPIDIR%%/chrome/content/ui/sidebar.js
 %%XPI_XPIDIR%%/chrome/content/ui/sidebar.xul
 %%XPI_XPIDIR%%/chrome/content/ui/sidebarDetached.xul
-%%XPI_XPIDIR%%/chrome/content/ui/skin/abp-icon-big.png
+%%XPI_XPIDIR%%/chrome/content/ui/skin/abp-128.png
 %%XPI_XPIDIR%%/chrome/content/ui/skin/ajax-loader.gif
 %%XPI_XPIDIR%%/chrome/content/ui/skin/background-main.png
 %%XPI_XPIDIR%%/chrome/content/ui/skin/background-share.png

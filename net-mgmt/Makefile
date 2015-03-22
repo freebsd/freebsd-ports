@@ -49,6 +49,7 @@
     SUBDIR += devmon
     SUBDIR += devmon-templates
     SUBDIR += dhcdrop
+    SUBDIR += dhcp_probe
     SUBDIR += disco
     SUBDIR += docsis
     SUBDIR += driftnet

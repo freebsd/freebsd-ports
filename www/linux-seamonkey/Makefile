@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/linux-seamonkey/Makefile 363978 2014-08-04 09:11:25Z bapt $
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.33b1
+DISTVERSION=	2.33.1
 CATEGORIES=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 

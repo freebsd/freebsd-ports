@@ -23,31 +23,24 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*
 
-USES=		perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	bioperl
-GH_COMMIT=	96ccd93
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	96ccd93
 
 USES=		perl5 shebangfix
 USE_PERL5=	modbuild
-SHEBANG_FILES=	scripts/bioperl_application_installer.PLS \
-		scripts/multi_hmmsearch.PLS \
-		scripts/panalysis.PLS \
-		scripts/papplmaker.PLS \
-		scripts/run_neighbor.PLS \
-		scripts/run_protdist.PLS \
+SHEBANG_FILES=	scripts/*
 
 OPTIONS_DEFINE=	DOCS
 
 post-build:
-	cd ${WRKSRC} && ${PERL} ./Build manifest
+	(cd ${WRKSRC} && ${PERL} ./Build manifest)
 
 post-install:
 .for i in bioperl_application_installer multi_hmmsearch panalysis papplmaker run_neighbor run_protdist
 	${CP} ${WRKSRC}/scripts/${i}.PLS ${STAGEDIR}${PREFIX}/bin/bp_${i}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS Changes INSTALL.PROGRAMS README
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor

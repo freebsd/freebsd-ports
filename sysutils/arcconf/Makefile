@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v1_6_21062
+DISTVERSION=	v1_7_21229
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/

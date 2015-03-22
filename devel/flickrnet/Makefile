@@ -15,7 +15,7 @@ USES=		gmake zip mono
 WRKSRC=		${WRKDIR}/FlickrNet
 
 do-build:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/gmcs -t:library -out:FlickrNet.dll -r:System.Data -r:System.Web -r:System.Drawing *.cs
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gmcs -t:library -out:FlickrNet.dll -r:System.Data -r:System.Web -r:System.Drawing *.cs
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mono/flickrnet

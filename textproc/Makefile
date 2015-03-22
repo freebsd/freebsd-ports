@@ -418,6 +418,7 @@
     SUBDIR += luaexpat
     SUBDIR += lucene
     SUBDIR += lucene4
+    SUBDIR += lucene5
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
     SUBDIR += m17n-im-config
@@ -527,6 +528,7 @@
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-EscapeEvil
     SUBDIR += p5-HTML-Format
+    SUBDIR += p5-HTML-FormatExternal
     SUBDIR += p5-HTML-FormatText-WithLinks
     SUBDIR += p5-HTML-FormatText-WithLinks-AndTables
     SUBDIR += p5-HTML-Fraction
@@ -610,6 +612,7 @@
     SUBDIR += p5-Markapl
     SUBDIR += p5-Marpa-HTML
     SUBDIR += p5-MathML-Entities
+    SUBDIR += p5-Net-Groonga-HTTP
     SUBDIR += p5-Net-IDN-Encode
     SUBDIR += p5-Net-Snort-Parser
     SUBDIR += p5-Net-YASA
@@ -753,6 +756,7 @@
     SUBDIR += p5-Template-Extract
     SUBDIR += p5-Template-Magic
     SUBDIR += p5-Template-Plugin-Autoformat
+    SUBDIR += p5-Template-Plugin-CSV
     SUBDIR += p5-Template-Plugin-Filter-Minify-CSS
     SUBDIR += p5-Template-Plugin-Filter-Minify-CSS-XS
     SUBDIR += p5-Template-Plugin-Filter-Minify-JavaScript
@@ -763,6 +767,7 @@
     SUBDIR += p5-Template-Semantic
     SUBDIR += p5-Template-Tiny
     SUBDIR += p5-Term-QRCode
+    SUBDIR += p5-Test-Groonga
     SUBDIR += p5-Test-Perl-Critic
     SUBDIR += p5-Text-ASCIIMathML
     SUBDIR += p5-Text-ASCIITable
@@ -784,6 +789,7 @@
     SUBDIR += p5-Text-CharWidth
     SUBDIR += p5-Text-Chomp
     SUBDIR += p5-Text-ClearSilver
+    SUBDIR += p5-Text-Colorizer
     SUBDIR += p5-Text-Context
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-DHCPLeases
@@ -1315,6 +1321,7 @@
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-augeas
+    SUBDIR += rubygem-autoprefixer-rails
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-coderay
     SUBDIR += rubygem-colorator

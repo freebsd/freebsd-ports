@@ -25,10 +25,8 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTEXAMPLES=	*
 SHEBANG_FILES=	examples/*.pl
 
-.include <bsd.port.options.mk>
-
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

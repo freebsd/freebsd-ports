@@ -3,6 +3,7 @@
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.4
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
@@ -10,11 +11,12 @@ MAINTAINER?=	meta+ports@vmeta.jp
 COMMENT?=	Ricty - fonts for programming
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-BUILD_DEPENDS=	${LOCALBASE}/${X_FONTSDIR}/OTF/Inconsolata.otf:${PORTSDIR}/x11-fonts/inconsolata-ttf \
-		${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-regular.ttf:${PORTSDIR}/japanese/font-migu \
-		${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-bold.ttf:${PORTSDIR}/japanese/font-migu \
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/inconsolata/Inconsolata.otf:${PORTSDIR}/x11-fonts/inconsolata-ttf \
+		${LOCALBASE}/share/fonts/TTF/migu-1m-regular.ttf:${PORTSDIR}/japanese/font-migu \
+		${LOCALBASE}/share/fonts/TTF/migu-1m-bold.ttf:${PORTSDIR}/japanese/font-migu \
 		fontforge:${PORTSDIR}/print/fontforge
 
+USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	yascentur
 GH_PROJECT=	Ricty
@@ -24,12 +26,8 @@ NO_PACKAGE=	redistribution is not allowed
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
-SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
-PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
-		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 
-LOCAL_FONTSDIR=	share/fonts
-X_FONTSDIR=	lib/X11/fonts
+FONTNAME=	TTF
 
 .if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=	DISCORD DOCS
@@ -55,22 +53,19 @@ RUN_DEPENDS+=	${DATADIR}/RictyDiscord-Regular.ttf:${PORTSDIR}/japanese/font-rict
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${SH} ${WRKSRC}/ricty_generator.sh \
-			${PREFIX}/${X_FONTSDIR}/OTF/Inconsolata.otf \
-			${PREFIX}/${X_FONTSDIR}/TTF/migu-1m-regular.ttf \
-			${PREFIX}/${X_FONTSDIR}/TTF/migu-1m-bold.ttf
+			${PREFIX}/share/fonts/inconsolata/Inconsolata.otf \
+			${PREFIX}/share/fonts/TTF/migu-1m-regular.ttf \
+			${PREFIX}/share/fonts/TTF/migu-1m-bold.ttf
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF
-	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 .if !defined(PKGNAMESUFFIX)
 	${INSTALL_DATA} ${WRKSRC}/Ricty-*.ttf ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF && ${LN} -s -f \
-	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/Ricty-*.ttf .
-	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF && ${LN} -s -f \
-	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/Ricty-*.ttf .
+	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
+	    ../../../${DATADIR_REL}/Ricty-*.ttf .
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
 	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
@@ -80,10 +75,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
 .else
 	${INSTALL_DATA} ${WRKSRC}/RictyDiscord-*.ttf ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF && ${LN} -s -f \
-	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/RictyDiscord-*.ttf .
-	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF && ${LN} -s -f \
-	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/RictyDiscord-*.ttf .
+	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
+	    ../../../${DATADIR_REL}/RictyDiscord-*.ttf .
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}discord.conf \
 	    ${FILESDIR}/62-fonts-${PORTNAME}discord.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail

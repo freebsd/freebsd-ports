@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.55:${PORTSDIR}/databases/p5-SQL-Abstract
-RUN_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
-		p5-SQL-Abstract>=1.55:${PORTSDIR}/databases/p5-SQL-Abstract
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

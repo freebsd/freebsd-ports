@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	7.0.1
+PORTVERSION=	7.1.2
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
@@ -14,7 +14,6 @@ LICENSE_NAME=	TINKER license agreement
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	auto-accept
 
-BROKEN=		Checksum and size mismatch
 RESTRICTED=	author requests no distribution except from his FTP site
 
 OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DOCS EXAMPLES
@@ -29,8 +28,7 @@ MAKE_ENV=	HAVE_G2C=yes
 MAKEFILE=	${WRKSRC}/make/Makefile
 ALL_TARGET=	all
 INSTALL_TARGET=	rename
-
-MAKE_JOBS_UNSAFE=yes
+EXTRACT_AFTER_ARGS=--exclude fftw --exclude windows --exclude macosx
 
 SUB_FILES=	pkg-message
 

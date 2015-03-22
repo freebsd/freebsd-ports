@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcsvbenchmarklogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qplaintestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qsignaldumper_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestblacklist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcoreelement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcorelist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestelement_p.h

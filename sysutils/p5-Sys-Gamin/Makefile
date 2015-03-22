@@ -3,7 +3,7 @@
 
 PORTNAME=	Sys-Gamin
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +21,10 @@ pre-configure:
 	${PERL} -pi -e 's/qw.monitor./qw(gamin-monitor)/' ${WRKSRC}/Makefile.PL
 	${PERL} -pi -e 's/^monitor$$/gamin-monitor/' ${WRKSRC}/MANIFEST
 	${MV} ${WRKSRC}/monitor ${WRKSRC}/gamin-monitor
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
 
 .include <bsd.port.mk>

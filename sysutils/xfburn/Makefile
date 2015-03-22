@@ -3,7 +3,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -20,24 +20,17 @@ RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool intlhack glib20 gtk20
-USE_XFCE=	configenv libexo libmenu
-USES=		pkgconfig gmake desktop-file-utils tar:bzip2
+USE_XFCE=	libexo
+USES=		pkgconfig gmake desktop-file-utils gettext-tools xfce tar:bzip2
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=--disable-gudev
 
 OPTIONS_DEFINE=	GSTREAMER NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
-CONFIGURE_ARGS+=--enable-gstreamer
-.else
-CONFIGURE_ARGS+=--disable-gstreamer
-.endif
+GSTREAMER_USE=	gstreamer=yes
+GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	comical
 PORTVERSION=	0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,7 +12,8 @@ COMMENT=	Sequential image viewer
 
 LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -48,5 +49,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|frame->SetIcon|//frame->SetIcon|' \
 		${WRKSRC}/src/ComicalApp.cpp
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>

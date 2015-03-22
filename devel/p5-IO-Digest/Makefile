@@ -3,19 +3,21 @@
 
 PORTNAME=	IO-Digest
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate digests while reading or writing
 
-BUILD_DEPENDS=	p5-PerlIO-via-dynamic>=0:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
-		p5-Digest>=0:${PORTSDIR}/security/p5-Digest
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-PerlIO-via-dynamic>=0:${PORTSDIR}/devel/p5-PerlIO-via-dynamic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

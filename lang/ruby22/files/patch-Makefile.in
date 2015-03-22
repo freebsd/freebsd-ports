@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-10-01 13:48:32.240448887 +0000
-+++ Makefile.in	2014-10-01 13:49:42.263443819 +0000
-@@ -347,7 +347,7 @@
+--- Makefile.in.orig	2015-02-22 17:12:34.000000000 +0900
++++ Makefile.in	2015-03-06 07:19:45.957608168 +0900
+@@ -376,7 +376,7 @@
  
  .d.h:
  	@$(ECHO) translating probes $<
@@ -9,12 +9,12 @@
  	$(Q) sed -e 's/RUBY_/RUBY_DTRACE_/g' -e 's/PROBES_H_TMP/PROBES_H/g' -e 's/(char \*/(const char */g' -e 's/, char \*/, const char */g' $@.tmp > $@
  	$(Q) $(RM) $@.tmp
  
-@@ -367,7 +367,7 @@
- 	fi; \
- 	touch "$$stamp"
- 	$(RM) $@
--	$(Q) $(DTRACE) -G -C $(INCFLAGS) -s $(srcdir)/probes.d -o $@ $(DTRACE_DEPENDENT_OBJS)
-+	$(Q) $(DTRACE) -xnolibs -G -C $(INCFLAGS) -s $(srcdir)/probes.d -o $@ $(DTRACE_DEPENDENT_OBJS)
+@@ -395,7 +395,7 @@
+ probes.@OBJEXT@: $(srcdir)/probes.d probes.stamp
+ 	@$(ECHO) processing probes in object files
+ 	$(Q) $(RM) $@
+-	$(Q) $(DTRACE) -G -C $(INCFLAGS) -s $(srcdir)/probes.d -o $@ $(DTRACE_REBUILD_OBJS)
++	$(Q) $(DTRACE) -xnolibs -G -C $(INCFLAGS) -s $(srcdir)/probes.d -o $@ $(DTRACE_REBUILD_OBJS)
  
  # DTrace static library hacks described here:
  # http://mail.opensolaris.org/pipermail/dtrace-discuss/2005-August/000207.html

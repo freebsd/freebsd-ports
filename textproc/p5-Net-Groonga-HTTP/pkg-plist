@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Net::Groonga::HTTP.3.gz
+%%PERL5_MAN3%%/Net::Groonga::HTTP::Response.3.gz
+%%PERL5_MAN3%%/Net::Groonga::Pager.3.gz
+%%SITE_PERL%%/Net/Groonga/HTTP.pm
+%%SITE_PERL%%/Net/Groonga/HTTP/Response.pm
+%%SITE_PERL%%/Net/Groonga/Pager.pm

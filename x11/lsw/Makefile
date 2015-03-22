@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsw
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 

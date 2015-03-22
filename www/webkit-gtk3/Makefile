@@ -80,9 +80,6 @@ DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
 
 .include <bsd.port.options.mk>
 
-# Shutup warning spam
-CXXFLAGS+=	-Wno-c++11-extensions
-
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc
 .endif
@@ -104,6 +101,7 @@ CFLAGS+=	-march=i586
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-c++11-extensions	# Shutup warning spam
 CXXFLAGS+=	-Qunused-arguments
 .endif
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -33,6 +33,7 @@ USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 ACLOCAL_ARGS=	-I aclocal
 AUTOMAKE_ARGS=	--copy --force-missing --foreign --add-missing
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

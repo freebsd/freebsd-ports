@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	2.0.4
-DISTVERSIONSUFFIX=	-4585
+PORTVERSION=	2.0.5
+DISTVERSIONSUFFIX=	-4735
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/ LOCAL/mat/yadifa
 
@@ -22,7 +22,7 @@ MESSAGES_DESC=	Use messages instead of send (if many ip aliases)
 NSID_DESC=	Name Server Identifier Option
 
 GNU_CONFIGURE=	yes
-USES=		libtool compiler:c11
+USES=		libtool compiler:c11 tar:tgz
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 

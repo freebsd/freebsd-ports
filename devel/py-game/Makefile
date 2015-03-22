@@ -3,7 +3,7 @@
 
 PORTNAME=	game
 PORTVERSION=	1.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,9 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		dos2unix python
+DOS2UNIX_FILES=	src/scale_mmx64.c
 USE_SDL=	ttf image mixer sdl
-USE_GCC=	any
 USE_PYTHON=	autoplist distutils
 
 SDLNOX11=	sdl-nox11-[0-9]*

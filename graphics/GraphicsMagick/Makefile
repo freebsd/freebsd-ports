@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.20
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -95,7 +95,7 @@ LIBWMF_PORT=	libwmf-nox11
 
 .if !defined(WINDOWS_FONT_DIR)
 # Use fonts installed by x11-fonts/webfonts by default
-WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
+WINDOWS_FONT_DIR=${LOCALBASE}/share/fonts/webfonts
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}

@@ -4,7 +4,7 @@
 PORTNAME=	id3ren
 PORTVERSION=	1.1b0
 CATEGORIES=	audio
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Rename MP3 files, edit tags, search, etc

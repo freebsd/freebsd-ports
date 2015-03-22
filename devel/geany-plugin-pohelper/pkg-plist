@@ -1,0 +1,7 @@
+lib/geany/pohelper.so
+%%DOCSDIR%%/pohelper/AUTHORS
+%%DOCSDIR%%/pohelper/COPYING
+%%DOCSDIR%%/pohelper/ChangeLog
+%%DOCSDIR%%/pohelper/NEWS
+%%DOCSDIR%%/pohelper/README
+%%DATADIR%%/pohelper/menus.ui

@@ -3,7 +3,7 @@
 
 PORTNAME=	libeio
 PORTVERSION=	4.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -13,13 +13,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	e1a62ab
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-USES=		alias libtool
+USES=		alias autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	include/eio.h lib/libeio.a lib/libeio.so \
 		lib/libeio.so.1 lib/libeio.so.1.0.0

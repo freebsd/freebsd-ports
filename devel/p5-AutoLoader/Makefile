@@ -7,13 +7,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load subroutines only on demand
 
-USES=		perl5
-USE_PERL5=	configure
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
+USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

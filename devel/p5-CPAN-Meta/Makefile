@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.143240
-PORTREVISION=	1
+PORTVERSION=	2.150001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	The distribution metadata for a CPAN dist
+COMMENT=	Distribution metadata for a CPAN dist
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

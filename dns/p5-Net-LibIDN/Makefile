@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,5 +19,10 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE}/lib \
 		--with-libidn-inc=${LOCALBASE}/include
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/LibIDN/LibIDN.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/LibIDN/LibIDN.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/LibIDN/LibIDN.so
 
 .include <bsd.port.mk>

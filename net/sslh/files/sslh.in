@@ -53,6 +53,6 @@ for value in listening openvpntarget sshtarget sshtimeout ssltarget \
 done
 
 command="%%PREFIX%%/sbin/${name}-${sslh_mode}"
-command_args="-F %%PREFIX%%/etc/${name}.conf"
+command_args="-F%%PREFIX%%/etc/${name}.conf"
 
 run_rc_command "$1"

@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -19,34 +19,20 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
-USE_XFCE=	configenv libmenu libutil panel xfconf
+USE_XFCE=	panel
 USE_GSTREAMER=	good
 
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	KEYBIND NLS
-
 KEYBIND_DESC=	Multimedia keyboard shortcuts
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKEYBIND}
-LIB_DEPENDS+=	libkeybinder.so:${PORTSDIR}/x11/keybinder
-CONFIGURE_ARGS+=--enable-keybinder
-.else
-CONFIGURE_ARGS+=--disable-keybinder
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=  gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=     NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=     NLS="@comment "
-.endif
+KEYBIND_LIB_DEPENDS=	libkeybinder.so:${PORTSDIR}/x11/keybinder
+KEYBIND_CONFIGURE_ENABLE=	keybinder
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+OPTIONS_SUB=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' -or -name 'xfce-mixer-track.c' \

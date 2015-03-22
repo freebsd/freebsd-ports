@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Unicode::CharName.3.gz
-%%PERL5_MAN3%%/Unicode::String.3.gz
 %%SITE_ARCH%%/Unicode/CharName.pm
 %%SITE_ARCH%%/Unicode/String.pm
 %%SITE_ARCH%%/auto/Unicode/String/String.so
+%%PERL5_MAN3%%/Unicode::CharName.3.gz
+%%PERL5_MAN3%%/Unicode::String.3.gz

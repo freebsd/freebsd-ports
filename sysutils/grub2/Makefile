@@ -22,10 +22,13 @@ USE_GCC=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison gettext gmake tar:xz
+USES=		bison cpe gettext gmake tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
+
+CPE_PRODUCT=	grub
+CPE_VENDOR=	gnu
 
 CONFIGURE_ARGS=	--disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
@@ -38,7 +41,7 @@ FUSE_DESC=	Build grub-mount (require FUSE)
 
 MKFONT_CONFIGURE_ENABLE=	grub-mkfont
 MKFONT_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
-MKFONT_BUILD_DEPENDS=		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+MKFONT_BUILD_DEPENDS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 FUSE_CONFIGURE_ENABLE=		grub-mount
 FUSE_LIB_DEPENDS=		libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
@@ -52,7 +55,7 @@ PLIST_SUB+=	EFIEMU=""
 .endif
 
 post-patch:
-	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
+	@${LN} -s ${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
 post-configure:

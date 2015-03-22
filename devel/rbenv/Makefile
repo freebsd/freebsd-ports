@@ -4,7 +4,7 @@ PORTNAME=	rbenv
 PORTVERSION=	0.4.0
 PORTREVISION=	2
 CATEGORIES=	devel ruby
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Manage multiple versions of ruby

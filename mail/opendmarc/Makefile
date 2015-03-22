@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	opendmarc
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			${PORTNAME}/Previous%20Releases
 
-MAINTAINER=	jaap@NLnetLabs.nl
+MAINTAINER=	freebsd@gushi.org
 COMMENT=	DMARC library and milter implementation
 
 LICENSE=		BSD3CLAUSE SENDMAIL
@@ -19,6 +18,11 @@ LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+.if !exists( /usr/include/libmilter/mfapi.h )
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+CFLAGS+=	-I${LOCALBASE}/include
+.endif
 
 USES=		libtool shebangfix
 SHEBANG_FILES=	reports/opendmarc-expire.in \

@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Test::File::ShareDir.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Dist.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Module.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Object::Dist.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Object::Inc.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Object::Module.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::TempDirObject.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::Utils.3.gz
 %%SITE_PERL%%/Test/File/ShareDir.pm
 %%SITE_PERL%%/Test/File/ShareDir/Dist.pm
 %%SITE_PERL%%/Test/File/ShareDir/Module.pm
@@ -5,5 +13,4 @@
 %%SITE_PERL%%/Test/File/ShareDir/Object/Inc.pm
 %%SITE_PERL%%/Test/File/ShareDir/Object/Module.pm
 %%SITE_PERL%%/Test/File/ShareDir/TempDirObject.pm
-%%PERL5_MAN3%%/Test::File::ShareDir.3.gz
-%%PERL5_MAN3%%/Test::File::ShareDir::TempDirObject.3.gz
+%%SITE_PERL%%/Test/File/ShareDir/Utils.pm

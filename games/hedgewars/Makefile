@@ -24,7 +24,7 @@ USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl libpng
 USE_QT4=	corelib gui moc_build network \
 		qmake_build rcc_build svg xml \
-		uic_build linguist_build
+		uic_build linguisttools_build
 CMAKE_ARGS=	-DNOVIDEOREC=1
 USE_LDCONFIG=	yes
 

@@ -20,9 +20,11 @@ LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
 CONFLICTS=	ja-mailman-2.1.*
 
-USES=		python:2 tar:tgz
+USES=		cpe python:2 tar:tgz
 USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	mailman
+
+CPE_VENDOR=	gnu
 
 GNU_CONFIGURE_PREFIX=	${MAILMANDIR}
 CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \

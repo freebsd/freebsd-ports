@@ -15,7 +15,6 @@ COMMENT=	Ruby module for easy handling of XML configuration files
 OPTIONS_DEFINE=	DOCS
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	rexml
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 

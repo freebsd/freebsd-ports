@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.3
 PORTEPOCH=	2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
@@ -12,7 +12,7 @@ COMMENT=	Ruby email handler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mime-types>=2.3:${PORTSDIR}/misc/rubygem-mime-types
+RUN_DEPENDS=	rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

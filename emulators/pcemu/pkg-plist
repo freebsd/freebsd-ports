@@ -13,4 +13,4 @@ lib/pcemu/C/dumpdisk.exe
 lib/pcemu/C/lredir.exe
 lib/pcemu/C/emufs.sys
 lib/pcemu/DriveA
-@fontsdir lib/pcemu/font
+@fcfontsdir lib/pcemu/font

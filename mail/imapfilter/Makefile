@@ -6,7 +6,7 @@ PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gegenunendlich.de/distfiles/ \
-		GH
+		GHL
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility

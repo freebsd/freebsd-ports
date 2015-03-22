@@ -1,15 +1,3 @@
-%%PERL5_MAN3%%/Mail::LMLM.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Object.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Render.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Render::HTML.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Base.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Egroups.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Ezmlm.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::GoogleGroups.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Listar.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Listserv.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Mailman.3.gz
-%%PERL5_MAN3%%/Mail::LMLM::Types::Majordomo.3.gz
 %%SITE_PERL%%/Mail/LMLM.pm
 %%SITE_PERL%%/Mail/LMLM/Object.pm
 %%SITE_PERL%%/Mail/LMLM/Render.pm
@@ -23,18 +11,24 @@
 %%SITE_PERL%%/Mail/LMLM/Types/Mailman.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Majordomo.pm
 %%SITE_PERL%%/Mail/get-version.pl
+%%PERL5_MAN3%%/Mail::LMLM.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Object.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Render.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Render::HTML.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Base.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Egroups.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Ezmlm.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::GoogleGroups.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Listar.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Listserv.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Mailman.3.gz
+%%PERL5_MAN3%%/Mail::LMLM::Types::Majordomo.3.gz
 %%DATADIR%%/COPYING
-%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
-%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm
-%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Ivrix.pm
-%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Linuxology.pm
-%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Perl_IL.pm
-%%EXAMPLESDIR%%/Iglu/make-dist.sh
-%%EXAMPLESDIR%%/Iglu/test.pl
-%%EXAMPLESDIR%%/Iglu/upload.sh
-@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types
-@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu/LMLM
-@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu
-@dirrmtry %%EXAMPLESDIR%%/Iglu
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Ivrix.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Linuxology.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Perl_IL.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/make-dist.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/test.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/upload.sh

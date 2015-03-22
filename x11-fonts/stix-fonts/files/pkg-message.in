@@ -7,4 +7,4 @@ line to the "Modules" section of your X11 / x.org configuration file:
 
 Add the following line to the "Files" section:
 
-	FontPath "%%FONTDIR%%/"
+	FontPath "%%FONTSDIR%%/"

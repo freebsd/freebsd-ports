@@ -27,6 +27,7 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediacontrol_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmedianetworkplaylistprovider_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaobject_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaopenglhelper_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaplaylist_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaplaylistcontrol_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaplaylistioplugin_p.h
@@ -68,6 +69,7 @@
 %%QT_INCDIR%%/QtMultimedia/QAudioInputSelectorControl
 %%QT_INCDIR%%/QtMultimedia/QAudioOutput
 %%QT_INCDIR%%/QtMultimedia/QAudioOutputSelectorControl
+%%QT_INCDIR%%/QtMultimedia/QAbstractPlanarVideoBuffer
 %%QT_INCDIR%%/QtMultimedia/QAudioProbe
 %%QT_INCDIR%%/QtMultimedia/QAudioRecorder
 %%QT_INCDIR%%/QtMultimedia/QAudioSystemFactoryInterface

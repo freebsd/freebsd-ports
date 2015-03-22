@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.32.1
+PORTVERSION=	2.33.1
 CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -58,6 +58,7 @@ do-extract:
 		${FIND} -H -s * ! -type d | \
 		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF}; \
 	done
+	${ECHO} "@dir %%XPI_LIBDIR%%/symlinks/firefox" >> ${PLISTF}
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 
 do-install:

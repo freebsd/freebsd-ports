@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlrpc-epi
 PORTVERSION=	0.54.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}/
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose implementation of the xmlrpc specification in C
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
@@ -20,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

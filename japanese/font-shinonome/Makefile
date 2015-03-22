@@ -3,7 +3,7 @@
 
 PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -14,25 +14,17 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		tar:bzip2
+USES=		fonts tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
-PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
-		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 SUB_FILES=	pkg-install
-SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR} \
-		FONTSALIAS=${DATADIR}/fonts.alias
+SUB_LIST=	FONTSALIAS=${DATADIR}/fonts.alias
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 
 PORTDOCS=	AUTHORS BUGS ChangeLog ChangeLog.0 DESIGN.12 DESIGN.14	\
 		DESIGN.16 DESIGN.18 INSTALL README THANKS TODO LICENSE
-
-LOCAL_FONTSDIR=	share/fonts
-X_FONTSDIR=	lib/X11/fonts
 
 FONTNAMES=\
 	shnm6x12a    shnm6x12ab   shnm6x12ai   shnm6x12abi   \
@@ -52,6 +44,7 @@ FONTNAMES=\
 	shnmk16      shnmk16b     shnmk16i     shnmk16bi     \
 	shnmk16min   shnmk16minb  shnmk16mini  shnmk16minbi
 
+FONTNAME=	shinonome
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -69,14 +62,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias \
 	    ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/shinonome
-	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/shinonome && ${LN} -s -f \
-	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
-	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc
-	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc && ${LN} -s -f \
-	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
-
-post-install:
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
+	    ../../../${DATADIR_REL}/*.pcf.gz .
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

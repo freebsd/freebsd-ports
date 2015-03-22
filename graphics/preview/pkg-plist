@@ -34,3 +34,6 @@ GNUstep/Local/Applications/Preview.app/Resources/hand.tiff
 GNUstep/Local/Applications/Preview.app/Resources/last_page.tiff
 GNUstep/Local/Applications/Preview.app/stamp.make
 GNUstep/Local/Tools/Preview
+@dir GNUstep/Local/Applications/Preview.app/Resources/English.lproj/Preview.help
+@dir GNUstep/Local/Applications/Preview.app/Resources/French.lproj/Preview.gorm
+@dir GNUstep/Local/Applications/Preview.app/Resources/French.lproj/Preview.help

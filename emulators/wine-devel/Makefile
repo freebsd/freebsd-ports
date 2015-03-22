@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.37
+DISTVERSION=	1.7.39
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -68,7 +68,7 @@ CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.34-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.36-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
@@ -82,7 +82,7 @@ LDAP_USE=		OPENLDAP=yes
 LIBXSLT_CONFIGURE_WITH=	xslt
 LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
 
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.4.msi:${PORTSDIR}/emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono-devel
 
 MPG123_CONFIGURE_WITH=	mpg123
 MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123

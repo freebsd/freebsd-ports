@@ -163,7 +163,7 @@ include/ImageMagick-6/wand/pixel-iterator.h
 include/ImageMagick-6/wand/pixel-wand.h
 include/ImageMagick-6/wand/stream.h
 include/ImageMagick-6/wand/wand-view.h
-lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
+lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/aai.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/aai.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/art.la
@@ -402,6 +402,8 @@ lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xpm.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xps.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xps.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xtrn.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xtrn.so
 %%X11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xwd.la
 %%X11%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/xwd.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ycbcr.la
@@ -413,8 +415,8 @@ lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 lib/libMagick++-6.a
 lib/libMagick++-6.la
 lib/libMagick++-6.so
-lib/libMagick++-6.so.5
-lib/libMagick++-6.so.5.0.0
+lib/libMagick++-6.so.6
+lib/libMagick++-6.so.6.0.0
 lib/libMagickCore-6.a
 lib/libMagickCore-6.la
 lib/libMagickCore-6.so

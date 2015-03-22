@@ -2,52 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.10.1
-PORTREVISION=	3
+PORTVERSION=	4.12.1
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's session manager
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
-LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtk20 glib20 intltool intlhack
-USES=		pathfix pkgconfig gmake tar:bzip2 libtool
+USE_GNOME=	gtk20 glib20 intltool intlhack libwnck
+USES=		pathfix pkgconfig gmake libtool gettext-tools xfce tar:bzip2
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libmenu libutil xfconf
+USE_XFCE=	libmenu
 USE_XORG=	x11 sm ice
 
 CONFIGURE_ARGS+=--enable-legacy-sm \
-		--disable-systemd \
 		--with-xsession-prefix=${PREFIX}
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	NLS
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+OPTIONS_SUB=	yes
 
 PLIST_SUB=	VERSION="4.6"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 .include <bsd.port.mk>

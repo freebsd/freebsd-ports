@@ -5,17 +5,6 @@
 # adds hyperv labels in loader.conf 
 #
 
-#Check poudriere workdirs
-POD_WRK_HOME=/wrkdirs
-if [ ! -d ${POD_WRK_HOME} ]; then
-      POD_WRK_HOME=/
-fi
-
-WRKDIRS=${POD_WRK_HOME}$(pwd |awk '{print $1}')/work/stage
-if [ ! -d ${WRKDIRS} ]; then
-   WRKDIRS=/
-fi
-
 if [ "$2" = "PRE-INSTALL" ]; then
 echo "===> Pre-install Check"
 

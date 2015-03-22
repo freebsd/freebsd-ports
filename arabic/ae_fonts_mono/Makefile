@@ -3,7 +3,7 @@
 
 PORTNAME=	ae_fonts_mono
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	arabic x11-fonts
 MASTER_SITES=	SF/arabeyes/Fonts/ae_fonts
 DISTNAME=	${PORTNAME}
@@ -11,20 +11,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of PCF fonts that include Arabic glyphs
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-
-USE_XORG=	x11
-USES=		tar:bzip2
+USES=		fonts tar:bzip2
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
-
-do-build:
-	@mkfontdir ${WRKSRC}
+PLIST_FILES=	${FONTSDIR}/10x21.pcf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/X11/fonts/ae_fonts_mono
-	${INSTALL_DATA} ${WRKSRC}/*.pcf ${WRKSRC}/fonts.dir \
-		${STAGEDIR}/${PREFIX}/lib/X11/fonts/ae_fonts_mono
+	@${MKDIR} ${STAGEDIR}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf ${STAGEDIR}/${FONTSDIR}
 
 .include <bsd.port.mk>

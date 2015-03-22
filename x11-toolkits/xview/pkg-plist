@@ -523,10 +523,6 @@ lib/.ttyswrc
 lib/text_extras_menu
 lib/textswrc
 lib/ttyswrc
-lib/help/clock.info
-lib/help/olwm.info
-lib/help/props.info
-lib/help/textedit.info
 lib/help/textsw.info
 lib/help/ttysw.info
 lib/help/xview.info

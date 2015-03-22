@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.73
-PORTREVISION=	1
+PORTVERSION=	1.76
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Perl5 module to check currently running OS
+COMMENT=	Check currently running OS
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

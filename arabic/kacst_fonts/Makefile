@@ -3,6 +3,7 @@
 
 PORTNAME=	kacst_fonts
 PORTVERSION=	2.01
+PORTREVISION=	2
 CATEGORIES=	arabic
 MASTER_SITES=	SF/arabeyes/${PORTNAME} \
 		http://www.c-s.li/ports/
@@ -13,20 +14,14 @@ COMMENT=	Truetype Arabic fonts created by KACST
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
-
-USES=		tar:bzip2
+USES=		fonts tar:bzip2
 WRKSRC=		${WRKDIR}/KacstArabicFonts-${PORTVERSION}
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PORTNAME="${PORTNAME}"
-
-do-build:
-	(cd ${WRKDIR} && ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir)
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/X11/fonts/kacst_fonts
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.dir \
-		${STAGEDIR}/${PREFIX}/lib/X11/fonts/kacst_fonts
+	@${MKDIR} ${STAGEDIR}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}/${FONTSDIR}
 
 .include <bsd.port.mk>

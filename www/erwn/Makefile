@@ -11,21 +11,21 @@ DISTNAME=	erwin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+-2 HTML editor
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		pathfix pkgconfig gmake
 USE_GNOME=	gnomeprefix gtksourceview gtkhtml3
 GNU_CONFIGURE=	yes
-OPTIONS_DEFINE= DOCS
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE= DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|gtkhtml-3.6|gtkhtml-3.14|g" \
 		${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

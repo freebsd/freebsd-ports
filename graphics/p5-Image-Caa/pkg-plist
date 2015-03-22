@@ -1,4 +1,3 @@
-%%PERL5_MAN3%%/Image::Caa.3.gz
 %%SITE_PERL%%/Image/Caa.pm
 %%SITE_PERL%%/Image/Caa/DitherNone.pm
 %%SITE_PERL%%/Image/Caa/DitherOrdered2.pm
@@ -8,10 +7,11 @@
 %%SITE_PERL%%/Image/Caa/DriverANSI.pm
 %%SITE_PERL%%/Image/Caa/DriverCurses.pm
 %%SITE_PERL%%/Image/Caa/DriverTest.pm
-%%EXAMPLESDIR%%/curses.pl
-%%EXAMPLESDIR%%/kitten.jpg
-%%EXAMPLESDIR%%/kitten.pl
-%%EXAMPLESDIR%%/portrait.jpg
-%%EXAMPLESDIR%%/portrait.pl
-%%EXAMPLESDIR%%/sunset.jpg
-%%EXAMPLESDIR%%/sunset.pl
+%%PERL5_MAN3%%/Image::Caa.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curses.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitten.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitten.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portrait.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portrait.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sunset.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sunset.pl

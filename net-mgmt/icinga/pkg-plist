@@ -1264,9 +1264,9 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/logos/equipment/workstation.gif
 %%ICINGAWWWDIR%%/images/logos/equipment/workstation.png
 %%ICINGAWWWDIR%%/images/logos/equipment/workstation_locked.png
-%%ICINGAWWWDIR%%/images/logos/equipment/%%WWWGRP%%_server.gd2
-%%ICINGAWWWDIR%%/images/logos/equipment/%%WWWGRP%%_server.gif
-%%ICINGAWWWDIR%%/images/logos/equipment/%%WWWGRP%%_server.png
+%%ICINGAWWWDIR%%/images/logos/equipment/www_server.gd2
+%%ICINGAWWWDIR%%/images/logos/equipment/www_server.gif
+%%ICINGAWWWDIR%%/images/logos/equipment/www_server.png
 %%ICINGAWWWDIR%%/images/logos/hardware/3ComSS2h500.gif
 %%ICINGAWWWDIR%%/images/logos/hardware/3ComSS2h500.jpg
 %%ICINGAWWWDIR%%/images/logos/hardware/3ComSS2h500.png

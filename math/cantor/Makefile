@@ -24,6 +24,7 @@ OPTIONS_SUB=	yes # R LUAJIT
 
 LUAJIT_DESC=	Build LuaJIT backend and install LuaJIT
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_CMAKE_OFF=	-DWITH_LuaJIT:BOOL=FALSE
 
 MAXIMA_DESC=	Install Maxima
 MAXIMA_RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima

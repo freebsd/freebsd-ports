@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.5
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/

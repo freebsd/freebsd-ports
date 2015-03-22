@@ -1,0 +1,36 @@
+bin/volumeicon
+%%NLS%%share/locale/fr/LC_MESSAGES/volumeicon.mo
+%%DATADIR%%/gui/appicon.svg
+%%DATADIR%%/gui/preferences.ui
+%%DATADIR%%/icons/Black Gnome/1.png
+%%DATADIR%%/icons/Black Gnome/2.png
+%%DATADIR%%/icons/Black Gnome/3.png
+%%DATADIR%%/icons/Black Gnome/4.png
+%%DATADIR%%/icons/Black Gnome/5.png
+%%DATADIR%%/icons/Black Gnome/6.png
+%%DATADIR%%/icons/Black Gnome/7.png
+%%DATADIR%%/icons/Black Gnome/8.png
+%%DATADIR%%/icons/Blue Bar/1.png
+%%DATADIR%%/icons/Blue Bar/2.png
+%%DATADIR%%/icons/Blue Bar/3.png
+%%DATADIR%%/icons/Blue Bar/4.png
+%%DATADIR%%/icons/Blue Bar/5.png
+%%DATADIR%%/icons/Blue Bar/6.png
+%%DATADIR%%/icons/Blue Bar/7.png
+%%DATADIR%%/icons/Blue Bar/8.png
+%%DATADIR%%/icons/White Gnome/1.png
+%%DATADIR%%/icons/White Gnome/2.png
+%%DATADIR%%/icons/White Gnome/3.png
+%%DATADIR%%/icons/White Gnome/4.png
+%%DATADIR%%/icons/White Gnome/5.png
+%%DATADIR%%/icons/White Gnome/6.png
+%%DATADIR%%/icons/White Gnome/7.png
+%%DATADIR%%/icons/White Gnome/8.png
+%%DATADIR%%/icons/tango/1.png
+%%DATADIR%%/icons/tango/2.png
+%%DATADIR%%/icons/tango/3.png
+%%DATADIR%%/icons/tango/4.png
+%%DATADIR%%/icons/tango/5.png
+%%DATADIR%%/icons/tango/6.png
+%%DATADIR%%/icons/tango/7.png
+%%DATADIR%%/icons/tango/8.png

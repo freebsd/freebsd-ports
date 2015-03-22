@@ -19,5 +19,3 @@ man/man1/fgjs.1.gz
 man/man1/fgpanel.1.gz
 man/man1/js_demo.1.gz
 man/man1/terrasync.1.gz
-%%DATADIR%%/positions.txt
-%%DATADIR%%/special_frequencies.txt

@@ -2,28 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	garcon
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 essential utilities and scripts
+COMMENT=	Freedesktop compliant menu library
+
+# garcon's source code is licensed under GPLv2, while its
+# documentation is under GFDL 1.1.
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
-USE_GNOME=	glib20 intltool intlhack
-USE_XFCE=	configenv libutil
+USES=	gmake libtool pathfix pkgconfig gettext-tools xfce tar:bzip2
+USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_XFCE=	libmenu
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
+CONFIGURE_ARGS=--without-html-dir
 
-DOCS_CONFIGURE_ENABLE=	gtk-doc-html
-
+OPTIONS_DEFINE=		NLS
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

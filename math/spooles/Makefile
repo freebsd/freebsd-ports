@@ -98,6 +98,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles/${i}
 	${INSTALL_DATA} ${WRKSRC}/${i}/*.h ${STAGEDIR}${PREFIX}/include/spooles/${i}
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/AllInOne.ps.gz	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Eigen.ps.gz		${STAGEDIR}${DOCSDIR}
@@ -106,5 +107,6 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Ordering.ps.gz	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/PP99.ps.gz		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ReferenceManual.ps.gz	${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

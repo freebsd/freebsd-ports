@@ -5,16 +5,17 @@ PORTNAME=	dnshistory
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.stedee.id.au/files/
+MASTER_SITES=	http://www.stedee.id.au/files/ \
+		http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Store DNS lookups to a DB
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BDB=	42+
+USE_BDB=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

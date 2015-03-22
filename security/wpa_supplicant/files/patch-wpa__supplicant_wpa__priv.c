@@ -1,15 +1,6 @@
---- wpa_supplicant/wpa_priv.c.orig	2014-10-09 14:41:31 UTC
+--- wpa_supplicant/wpa_priv.c.orig	2015-03-15 17:30:39 UTC
 +++ wpa_supplicant/wpa_priv.c
-@@ -202,7 +202,7 @@ static void wpa_priv_cmd_associate(struc
- 	if (assoc->ssid_len > 32)
- 		return;
- 	params.ssid_len = assoc->ssid_len;
--	params.freq = assoc->freq;
-+	params.freq.freq = assoc->freq;
- 	if (assoc->wpa_ie_len) {
- 		params.wpa_ie = (u8 *) (assoc + 1);
- 		params.wpa_ie_len = assoc->wpa_ie_len;
-@@ -947,6 +947,7 @@ static void usage(void)
+@@ -952,6 +952,7 @@ static void usage(void)
  int main(int argc, char *argv[])
  {
  	int c, i;
@@ -17,7 +8,7 @@
  	int ret = -1;
  	char *pid_file = NULL;
  	int daemonize = 0;
-@@ -992,6 +993,7 @@ int main(int argc, char *argv[])
+@@ -997,6 +998,7 @@ int main(int argc, char *argv[])
  		wpa_printf(MSG_ERROR, "Failed to initialize event loop");
  		goto out;
  	}
@@ -25,7 +16,7 @@
  
  	for (i = optind; i < argc; i++) {
  		wpa_printf(MSG_DEBUG, "Adding driver:interface %s", argv[i]);
-@@ -1018,7 +1020,8 @@ out:
+@@ -1023,7 +1025,8 @@ out:
  		wpa_priv_interface_deinit(prev);
  	}
  

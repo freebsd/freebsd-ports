@@ -31,6 +31,9 @@ SHOWENC_DESC=		Show encoding on the status line
 
 OPTIONS_SUB=
 
+USES=		cpe
+CPE_VENDOR=	gnu
+
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes

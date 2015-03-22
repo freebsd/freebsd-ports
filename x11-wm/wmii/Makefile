@@ -3,18 +3,18 @@
 
 PORTNAME=	wmii
 DISTVERSION=	3.6	# this is stable version; for 3.9.x, use -devel port
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic, minimalist window manager for X11
 
-LIB_DEPENDS=	libixp.so:${PORTSDIR}/devel/libixp
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libixp.so:${PORTSDIR}/devel/libixp
+RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 CONFLICTS=	wmii-3.9*
 
@@ -48,5 +48,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/wmii_strlcat/d' ${WRKSRC}/include/util.h
 	${REINPLACE_CMD} -e 's|strlcat|wmii_&|' ${WRKSRC}/include/util.h \
 		${WRKSRC}/cmd/util.c ${WRKSRC}/cmd/wmii/client.c
+
+post-install:
+.for f in wmii wmii9menu wmiir
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	code2001
 PORTVERSION=	0.919
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	CENKES/myports/${DIST_SUBDIR}
 DISTFILES=	CODE2001.ZIP
@@ -11,25 +12,13 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Plane 1 Unicode-based Font
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
+USES=		fonts zip
+NO_BUILD=	yes
+PLIST_FILES=	${FONTSDIR}/${FONTNAME}.ttf
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	@${MV} ${WRKDIR}/CODE2001.TTF ${WRKSRC}/${FONTNAME}.ttf
-
-do-build:
-	@cd ${WRKSRC} && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

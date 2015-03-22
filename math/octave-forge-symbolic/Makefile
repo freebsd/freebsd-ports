@@ -2,25 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-symbolic
-PORTVERSION=	1.1.0
-PORTREVISION=	8
+PORTVERSION=	2.1.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+
+BUILD_DEPENDS+=	isympy:${PORTSDIR}/math/py-sympy
+RUN_DEPENDS+=	isympy:${PORTSDIR}/math/py-sympy
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
-
-LIB_DEPENDS+=	libginac.so:${PORTSDIR}/math/GiNaC
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
+do-build:
+	${DO_NADA}
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure

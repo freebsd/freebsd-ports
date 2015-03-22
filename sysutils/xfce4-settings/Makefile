@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.10.1
-PORTREVISION=	5
+PORTVERSION=	4.12.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -16,79 +14,37 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
-USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
-USE_XORG=	inputproto x11 xi
-USES=		libtool pkgconfig gmake tar:bzip2
+USE_XFCE=	garcon libexo
+USE_XORG=	inputproto x11 xcursor xi xrandr
+USES=		libtool pkgconfig gmake gettext-tools xfce tar:bzip2
 
-CONFIGURE_ARGS=	--enable-pluggable-dialogs \
-		--enable-gio-unix
+CONFIGURE_ARGS=--enable-debug=yes \
+		--disable-xorg-libinput
 
-OPTIONS_DEFINE=		XKLAVIER XCURSOR XRANDR NOTIFY NLS SOUND
-OPTIONS_DEFAULT=	XKLAVIER XCURSOR XRANDR NOTIFY NLS
-SOUND_DESC=		Enable sound control
+OPTIONS_DEFINE=		NOTIFY NLS UPOWER
+OPTIONS_DEFAULT=	NOTIFY NLS
 
-.include <bsd.port.options.mk>
+UPOWER_DESC=	Power management tasks
 
-.if ${PORT_OPTIONS:MXKLAVIER}
-LIB_DEPENDS+=	libxklavier.so:${PORTSDIR}/x11/libxklavier
-CONFIGURE_ARGS+=--enable-libxklavier
-.else
-CONFIGURE_ARGS+=--disable-libxklavier
-.endif
-
-.if ${PORT_OPTIONS:MXCURSOR}
-USE_XORG+=	xcursor
-CONFIGURE_ARGS+=--enable-xcursor
-.else
-CONFIGURE_ARGS+=--disable-xcursor
-.endif
-
-.if ${PORT_OPTIONS:MXRANDR}
-USE_XORG+=	xrandr
-CONFIGURE_ARGS+=--enable-xrandr
-PLIST_SUB+=	XRANDR=""
-.else
-CONFIGURE_ARGS+=--disable-xrandr
-PLIST_SUB+=	XRANDR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-libnotify
-.else
-CONFIGURE_ARGS+=--disable-libnotify
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSOUND}
-LIB_DEPENDS+=	libcanberra.so:${PORTSDIR}/audio/libcanberra
-CONFIGURE_ARGS+=--enable-sound-settings
-.else
-CONFIGURE_ARGS+=--disable-sound-settings
-.endif
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=	libnotify
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
+UPOWER_LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
+UPOWER_CONFIGURE_ENABLE=	upower-glib
+OPTIONS_SUB=	yes
 
 post-patch:
-# GNOME is default icon theme
-	@${REINPLACE_CMD} -e 's|Rodent|gnome|g' \
+	@${REINPLACE_CMD} -e 's|Rodent|Adwaita|g' \
 		${WRKSRC}/dialogs/appearance-settings/main.c
-	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="gnome|; \
+	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="Adwaita|; \
 		s|"ThemeName" type="empty|"ThemeName" type="string" value="Xfce|' \
 		${WRKSRC}/xfsettingsd/xsettings.xml
-	@${REINPLACE_CMD} -e 's|xkl_config_registry_load (settings->priv->xkl_registry)|xkl_config_registry_load (settings->priv->xkl_registry, FALSE)|g; \
-		s|xkl_engine_stop_listen (settings->priv->xkl_engine)|xkl_engine_stop_listen (settings->priv->xkl_engine, FALSE)|g' \
-		${WRKSRC}/dialogs/keyboard-settings/xfce-keyboard-settings.c
 
 .include <bsd.port.mk>

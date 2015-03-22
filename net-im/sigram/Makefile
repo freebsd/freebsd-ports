@@ -6,7 +6,7 @@ PORTVERSION=	0.11182014
 PORTREVISION=	2
 CATEGORIES=	net-im
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Qt5 based telegram client
 
 LICENSE=	GPLv3

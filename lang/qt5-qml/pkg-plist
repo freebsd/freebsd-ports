@@ -178,6 +178,7 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4regalloc_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4regexp_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4regexpobject_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4registerinfo_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4runtime_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4scopedvalue_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4script_p.h
@@ -188,6 +189,7 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4ssa_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4string_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4stringobject_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4targetplatform_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4unop_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4util_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4value_inl_p.h

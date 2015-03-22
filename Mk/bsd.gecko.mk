@@ -284,6 +284,10 @@ MOZ_OPTIONS+=	--enable-optimize
 MOZ_OPTIONS+=	--disable-optimize
 .endif
 
+.if ${PORT_OPTIONS:MCANBERRA}
+RUN_DEPENDS+=	libcanberra>0:${PORTSDIR}/audio/libcanberra
+.endif
+
 .if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	libnotify>0:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \

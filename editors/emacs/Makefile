@@ -26,11 +26,12 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 
 EMACS_VER=	24.4
 GNU_CONFIGURE=	yes
-USES=		gmake makeinfo ncurses pkgconfig shebangfix tar:xz
+USES=		cpe gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CPE_VENDOR=	gnu
 
 SUB_FILES=	pkg-install
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}

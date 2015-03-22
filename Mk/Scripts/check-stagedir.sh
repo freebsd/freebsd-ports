@@ -152,8 +152,8 @@ check_orphans_from_plist() {
 		*/.svnignore) ;;
 		*/CVS/*|'@dir '*/CVS) ;;
 		*/info/dir|info/dir) ;;
-		lib/X11/fonts/*/fonts.dir) ;;
-		lib/X11/fonts/*/fonts.scale) ;;
+		share/fonts/*/fonts.dir) ;;
+		share/fonts/*/fonts.scale) ;;
 		share/applications/mimeinfo.cache) ;;
 		share/mime/XMLnamespaces) ;;
 		share/mime/aliases) ;;

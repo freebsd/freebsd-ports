@@ -11,9 +11,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-php
 MAINTAINER=	mbowie@buzmo.com
 COMMENT=	PHP extension for TrustCommerce credit card processing
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
+IGNORE_WITH_PHP=5 55 56
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_OPENSSL=	yes
-DEFAULT_PHP_VER=53
 
 .include <bsd.port.mk>

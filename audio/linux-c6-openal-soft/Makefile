@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio linux
 MASTER_SITES=	EPEL
 
-MAINTAINER=	emulation@freebsd.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux CentOS ${LINUX_DIST_VER})
 
 ONLY_FOR_ARCHS=	i386 amd64

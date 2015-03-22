@@ -1,9 +1,3 @@
-%%PERL5_MAN3%%/Date::Calc.3.gz
-%%PERL5_MAN3%%/Date::Calc::Object.3.gz
-%%PERL5_MAN3%%/Date::Calc::PP.3.gz
-%%PERL5_MAN3%%/Date::Calendar.3.gz
-%%PERL5_MAN3%%/Date::Calendar::Profiles.3.gz
-%%PERL5_MAN3%%/Date::Calendar::Year.3.gz
 %%SITE_PERL%%/Date/Calc.pm
 %%SITE_PERL%%/Date/Calc.pod
 %%SITE_PERL%%/Date/Calc/Object.pm
@@ -16,3 +10,9 @@
 %%SITE_PERL%%/Date/Calendar/Profiles.pod
 %%SITE_PERL%%/Date/Calendar/Year.pm
 %%SITE_PERL%%/Date/Calendar/Year.pod
+%%PERL5_MAN3%%/Date::Calc.3.gz
+%%PERL5_MAN3%%/Date::Calc::Object.3.gz
+%%PERL5_MAN3%%/Date::Calc::PP.3.gz
+%%PERL5_MAN3%%/Date::Calendar.3.gz
+%%PERL5_MAN3%%/Date::Calendar::Profiles.3.gz
+%%PERL5_MAN3%%/Date::Calendar::Year.3.gz

@@ -5,7 +5,7 @@ PORTNAME=	dcraw-m
 PORTVERSION=	9.22
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Modified Decoder for RAW files from digital cameras

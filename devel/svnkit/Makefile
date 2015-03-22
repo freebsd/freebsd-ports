@@ -45,9 +45,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvnlook.sh ${STAGEDIR}${PREFIX}/bin/jsvnlook
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvnversion.sh ${STAGEDIR}${PREFIX}/bin/jsvnversion
 	${INSTALL_SCRIPT} ${WRKDIR}/jsvndumpfilter.sh ${STAGEDIR}${PREFIX}/bin/jsvndumpfilter
-	cd ${WRKSRC}/doc/javadoc && \
-		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
-	cd ${WRKSRC}/doc/javadoc && \
-		${FIND} . -not -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	cd ${WRKSRC}/doc/javadoc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/org/tmatesoft/svn/core/io/doc-files
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 
@@ -11,16 +11,12 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Number of fonts which are useful for TV applications
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-USES=		gmake tar:bzip2
+USES=		gmake fonts tar:bzip2
+MAKE_JOBS_UNSAFE=	yes
 
-FONTSDIR=	${PREFIX}/lib/X11/fonts/misc
+FONTNAME=	misc
 FONTS=		caption.pcf.gz captioni.pcf.gz led-iso10646-1.pcf.gz \
 		led-iso8859-1.pcf.gz led-iso8859-10.pcf.gz led-iso8859-13.pcf.gz \
 		led-iso8859-14.pcf.gz led-iso8859-15.pcf.gz led-iso8859-2.pcf.gz \

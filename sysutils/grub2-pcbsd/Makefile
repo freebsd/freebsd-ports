@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02p
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -25,10 +25,13 @@ USE_GCC=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison gettext gmake makeinfo python tar:xz
+USES=		bison cpe gettext gmake makeinfo python tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
+
+CPE_PRODUCT=	grub
+CPE_VENDOR=	gnu
 
 CONFIGURE_ARGS=	--disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
@@ -51,8 +54,8 @@ PLIST_SUB+=	EFIEMU=${EFIEMU}
 
 .if ${PORT_OPTIONS:MMKFONT}
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
+BUILD_DEPENDS+=	${LOCALBASE}//fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
 MAN1+=		grub-mkfont.1
 CONFIGURE_ARGS+=	--enable-grub-mkfont
 .else

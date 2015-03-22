@@ -6,7 +6,7 @@ PORTVERSION=	2.1.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Nested set implementation for Active Record
 
 LICENSE=	MIT

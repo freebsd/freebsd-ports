@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chk4mail
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/chk4mail/ \
 		ftp://mud.stack.nl/pub/chk4mail/

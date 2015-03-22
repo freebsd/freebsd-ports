@@ -3,7 +3,7 @@
 
 PORTNAME=	unfonts
 PORTVERSION?=	1.0.2.080608
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES?=	http://kldp.net/frs/download.php/4695/
 PKGNAMESUFFIX=	-${FONTCAT}
@@ -15,13 +15,13 @@ COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi (${FONTCAT})
 LICENSE=	GPLv2
 LICENSE_FILE=	${FILESDIR}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+USES=		fonts
+NO_BUILD=	yes
 
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTCAT}-ttf
 
 WRKSRC=		${WRKDIR}/un-fonts
-FONTSDIR=	lib/X11/fonts/${PORTNAME}-${FONTCAT}
+FONTNAME=	${PORTNAME}-${FONTCAT}
 FONTCAT?=	core
 FONTLIST?=	UnBatang \
 		UnBatangBold \
@@ -35,20 +35,12 @@ FONTLIST?=	UnBatang \
 		UnGungseo \
 		UnPilgi \
 		UnPilgiBold
-FONTFILES=	${FONTLIST:S/$/.ttf/} fonts.dir fonts.scale
+FONTFILES=	${FONTLIST:S/$/.ttf/}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
-do-build:
-	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
-	${LOCALBASE}/bin/mkfontdir ${WRKSRC}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-
-post-install:
-	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

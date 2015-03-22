@@ -67,7 +67,6 @@
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feed-icons/index.html
 %%WWWDIR%%/icons/.empty
-%%WWWDIR%%/image.php
 %%WWWDIR%%/images/alert.png
 %%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/blank_icon.gif
@@ -2004,6 +2003,8 @@
 %%WWWDIR%%/locale/.htaccess
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/bg_BG/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/bg_BG/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
@@ -2082,6 +2083,7 @@
 %%WWWDIR%%/plugins/af_zz_imgsetsizes/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
+%%WWWDIR%%/plugins/auto_assign_labels/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
 %%WWWDIR%%/plugins/cache_starred_images/init.php
 %%WWWDIR%%/plugins/close_button/button.png

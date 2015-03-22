@@ -5,6 +5,71 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150321:
+  AFFECTS: Users of x11-servers/xorg-server and other X servers
+  AUTHOR: bapt@FreeBSD.org
+
+  All fonts ports have been modified to respect XDG and install in
+  share/fonts
+
+  The Xorg servers now are looking there by default, and have been
+  modified to also look into etc/X11/fontpath.d (see Xserver(1) for more
+  details) adding a symlink in that directory pointing to a font directory
+  will automatically add the later into Xorg FontPath
+
+20150317:
+  AFFECTS: users of editors/openoffice-4 and editors/openoffice-devel
+  AUTHOR: truckman@FreeBSD.org
+
+  Contrary to what is stated in pkg-message, openoffice-4 and
+  openoffice-devel have stored user settings in ~/.openoffice.org-devel/4
+  since r325370 (2013-08-25). This update expects user settings to reside
+  in the more standard ~/.openoffice.org/4.
+
+  To preserve your user settings, rename or copy them from
+  ~/.openoffice.org-devel/4 to ~/.openoffice.org/4. when installing this
+  update to apache-openoffice-4.1.1_7 or
+  apache-openoffice-devel-4.2.1652526_2,3.
+
+20150313:
+  AFFECTS: users of net/serviio
+  AUTHOR: netchild@FreeBSD.org
+
+  The Java Polling Watch Service used in Serviio 1.5.1 is fixed. If you
+  unchecked "Keep library automatically updated" with 1.5 (as recommended
+  in the 20150206 entry) you can enable it again.
+
+20150309:
+  AFFECTS: users of net-mgmt/netdisco
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  netdisco version has been upgraded to netdisco2
+
+  After upgrading, you will need to review all your configuration, as
+  this new version won't read old config files.
+  You'll be able to keep your data though netdisco-deploy command
+
+20150305:
+  AFFECTS: users of x11-wm/xfce4 and multimedia/xfce4-parole
+  AUTHOR: olivierd@FreeBSD.org
+
+  Xfce 4.12 has been imported. Please use the following instructions to
+  upgrade.
+
+  For package users:
+  # pkg upgrade
+
+  For ports users:
+  # portmaster -a
+  # portmaster x11-wm/xfce4
+
+  GStreamer 1.0 is enabled by default in Parole media player.
+
+  Xfce 4.12 now depends of Adwaita icon theme. If you are upgrading from
+  Xfce 4.10 you probably still have the Tango or GNOME theme selected.
+  Open the Settings Manager and select Appearance. Inside dialog box switch
+  to the Icons tag and select the "Adwaita" entry in the list.
+
 20150304:
   AFFECTS: users of security/libressl
   AUTHOR: vsevolod@highsecure.ru

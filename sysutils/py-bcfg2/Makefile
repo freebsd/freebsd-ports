@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bcfg2
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	sysutils python
-MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
-		http://mirror.opensysadmin.com/bcfg/
+MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -27,7 +25,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	bcfg2
 
-SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 PORTDOCS=	COPYRIGHT README
 
 CHEETAH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=0:${PORTSDIR}/devel/py-cheetah

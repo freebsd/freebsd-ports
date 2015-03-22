@@ -1,7 +1,7 @@
 diff -N -u -r publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
 --- publicfile-0.52.orig/Makefile	Mon Nov  8 23:23:46 1999
 +++ publicfile-0.52/Makefile	Wed Aug 29 20:27:09 2001
-@@ -234,21 +234,43 @@
+@@ -234,21 +234,44 @@
  compile hier.c auto_home.h
  	./compile hier.c
  
@@ -33,22 +33,23 @@ diff -N -u -r publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
 +	error.a open.a sig.a env.a str.a fs.a cdb.a byte.a seek_set.o \
 +	readclose.o openreadclose.o `cat socket.lib`
 +
-+cdb:
-+	(cd /usr/ports/databases/cdb/work/cdb-0.75 && \
-+	 make && \
-+	 cp -p cdb_make.h buffer.h cdb.h uint32.h cdb.a byte.a seek_set.o \
-+	 cdb_make.o error.c buffer.a unix.a /usr/ports/www/publicfile/work/publicfile-0.52/)
++.cdb:
++	(cd cdb && \
++	 ${MAKE} && \
++	 cp -vp cdb_make.h buffer.h cdb.h uint32.h cdb.a byte.a seek_set.o \
++	 cdb_make.o error.c buffer.a unix.a ${PWD}/ && touch ${PWD}/.cdb)
++cdb buffer.h cdb_make.h cdb.h uint32.h cdb.a byte.a seek_set.o cdb_make.o error.c buffer.a unix.a: .cdb
  
  httpd.o: \
  compile httpd.c pathdecode.h stralloc.h gen_alloc.h file.h tai.h \
  uint64.h filetype.h stralloc.h percent.h stralloc.h stralloc.h sig.h \
  exit.h fmt.h case.h str.h tai.h httpdate.h stralloc.h tai.h \
 -timeoutread.h timeoutwrite.h substdio.h error.h getln.h
-+timeoutread.h timeoutwrite.h substdio.h error.h getln.h byte.h
++timeoutread.h timeoutwrite.h substdio.h error.h getln.h byte.h cdb.h
  	./compile httpd.c
  
  httpdate.o: \
-@@ -358,6 +380,11 @@
+@@ -358,6 +381,11 @@
  compile open_trunc.c open.h
  	./compile open_trunc.c
  
@@ -60,7 +61,7 @@ diff -N -u -r publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
  pathdecode.o: \
  compile pathdecode.c pathdecode.h stralloc.h gen_alloc.h
  	./compile pathdecode.c
-@@ -367,7 +394,7 @@
+@@ -367,7 +395,7 @@
  	./compile percent.c
  
  prog: \
@@ -69,7 +70,6 @@ diff -N -u -r publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
  
  prot.o: \
  compile prot.c hasshsgr.h prot.h
-diff -N -u -r publicfile-0.52.orig/README.basicauth publicfile-0.52/README.basicauth
 --- publicfile-0.52.orig/README.basicauth	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/README.basicauth	Wed Aug 29 22:16:02 2001
 @@ -0,0 +1,100 @@
@@ -173,7 +173,6 @@ diff -N -u -r publicfile-0.52.orig/README.basicauth publicfile-0.52/README.basic
 +
 +Jay Soffian <jay@soffian.org> 29 Aug 2001
 +
-diff -N -u -r publicfile-0.52.orig/base64.c publicfile-0.52/base64.c
 --- publicfile-0.52.orig/base64.c	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/base64.c	Wed Aug 22 22:17:39 2001
 @@ -0,0 +1,90 @@
@@ -267,7 +266,6 @@ diff -N -u -r publicfile-0.52.orig/base64.c publicfile-0.52/base64.c
 +  out->len = s - out->s;
 +  return 0;
 +}
-diff -N -u -r publicfile-0.52.orig/base64.h publicfile-0.52/base64.h
 --- publicfile-0.52.orig/base64.h	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/base64.h	Wed Aug 22 22:17:39 2001
 @@ -0,0 +1,7 @@
@@ -278,7 +276,6 @@ diff -N -u -r publicfile-0.52.orig/base64.h publicfile-0.52/base64.h
 +extern int b64encode();
 +
 +#endif
-diff -N -u -r publicfile-0.52.orig/hier.c publicfile-0.52/hier.c
 --- publicfile-0.52.orig/hier.c	Mon Nov  8 23:23:46 1999
 +++ publicfile-0.52/hier.c	Wed Aug 22 22:17:39 2001
 @@ -7,6 +7,7 @@
@@ -289,7 +286,6 @@ diff -N -u -r publicfile-0.52.orig/hier.c publicfile-0.52/hier.c
    c(auto_home,"bin","httpd",-1,-1,0755);
    c(auto_home,"bin","ftpd",-1,-1,0755);
  }
-diff -N -u -r publicfile-0.52.orig/htrules.c publicfile-0.52/htrules.c
 --- publicfile-0.52.orig/htrules.c	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/htrules.c	Wed Aug 29 21:27:42 2001
 @@ -0,0 +1,117 @@
@@ -410,7 +406,6 @@ diff -N -u -r publicfile-0.52.orig/htrules.c publicfile-0.52/htrules.c
 +
 +  _exit(0);
 +}
-diff -N -u -r publicfile-0.52.orig/httpd.c publicfile-0.52/httpd.c
 --- publicfile-0.52.orig/httpd.c	Mon Nov  8 23:23:46 1999
 +++ publicfile-0.52/httpd.c	Wed Aug 29 21:30:34 2001
 @@ -15,6 +15,10 @@
@@ -558,7 +553,6 @@ diff -N -u -r publicfile-0.52.orig/httpd.c publicfile-0.52/httpd.c
            field.len = 0;
          }
          if (!line.len) break;
-diff -N -u -r publicfile-0.52.orig/openreadclose.c publicfile-0.52/openreadclose.c
 --- publicfile-0.52.orig/openreadclose.c	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/openreadclose.c	Wed Aug 29 14:24:21 2001
 @@ -0,0 +1,18 @@
@@ -580,7 +574,6 @@ diff -N -u -r publicfile-0.52.orig/openreadclose.c publicfile-0.52/openreadclose
 +  if (readclose(fd,sa,bufsize) == -1) return -1;
 +  return 1;
 +}
-diff -N -u -r publicfile-0.52.orig/openreadclose.h publicfile-0.52/openreadclose.h
 --- publicfile-0.52.orig/openreadclose.h	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/openreadclose.h	Wed Aug 29 14:24:21 2001
 @@ -0,0 +1,10 @@
@@ -594,7 +587,6 @@ diff -N -u -r publicfile-0.52.orig/openreadclose.h publicfile-0.52/openreadclose
 +extern int openreadclose(const char *,stralloc *,unsigned int);
 +
 +#endif
-diff -N -u -r publicfile-0.52.orig/readclose.c publicfile-0.52/readclose.c
 --- publicfile-0.52.orig/readclose.c	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/readclose.c	Wed Aug 29 14:30:52 2001
 @@ -0,0 +1,23 @@
@@ -621,7 +613,6 @@ diff -N -u -r publicfile-0.52.orig/readclose.c publicfile-0.52/readclose.c
 +  if (!stralloc_copys(sa,"")) { close(fd); return -1; }
 +  return readclose_append(fd,sa,bufsize);
 +}
-diff -N -u -r publicfile-0.52.orig/readclose.h publicfile-0.52/readclose.h
 --- publicfile-0.52.orig/readclose.h	Wed Dec 31 16:00:00 1969
 +++ publicfile-0.52/readclose.h	Wed Aug 29 14:30:52 2001
 @@ -0,0 +1,11 @@

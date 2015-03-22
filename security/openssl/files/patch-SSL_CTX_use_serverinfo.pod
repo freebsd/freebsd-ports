@@ -1,0 +1,11 @@
+--- doc/ssl/SSL_CTX_use_serverinfo.pod.orig	2015-01-22 15:58:06.000000000 +0100
++++ doc/ssl/SSL_CTX_use_serverinfo.pod	2015-03-10 21:47:25.000000000 +0100
+@@ -2,7 +2,7 @@
+ 
+ =head1 NAME
+ 
+-SSL_CTX_use_serverinfo, SSL_CTX_use_serverinfo_file
++SSL_CTX_use_serverinfo, SSL_CTX_use_serverinfo_file - loads one or more serverinfo extensions
+ 
+ =head1 SYNOPSIS
+ 

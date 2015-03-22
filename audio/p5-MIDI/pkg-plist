@@ -1,10 +1,3 @@
-%%PERL5_MAN3%%/MIDI.3.gz
-%%PERL5_MAN3%%/MIDI::Event.3.gz
-%%PERL5_MAN3%%/MIDI::Filespec.3.gz
-%%PERL5_MAN3%%/MIDI::Opus.3.gz
-%%PERL5_MAN3%%/MIDI::Score.3.gz
-%%PERL5_MAN3%%/MIDI::Simple.3.gz
-%%PERL5_MAN3%%/MIDI::Track.3.gz
 %%SITE_PERL%%/MIDI.pm
 %%SITE_PERL%%/MIDI/Event.pm
 %%SITE_PERL%%/MIDI/Filespec.pod
@@ -12,3 +5,10 @@
 %%SITE_PERL%%/MIDI/Score.pm
 %%SITE_PERL%%/MIDI/Simple.pm
 %%SITE_PERL%%/MIDI/Track.pm
+%%PERL5_MAN3%%/MIDI.3.gz
+%%PERL5_MAN3%%/MIDI::Event.3.gz
+%%PERL5_MAN3%%/MIDI::Filespec.3.gz
+%%PERL5_MAN3%%/MIDI::Opus.3.gz
+%%PERL5_MAN3%%/MIDI::Score.3.gz
+%%PERL5_MAN3%%/MIDI::Simple.3.gz
+%%PERL5_MAN3%%/MIDI::Track.3.gz

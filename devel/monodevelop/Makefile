@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 
 USE_GNOME=	gtksharp20 gnomesharp20
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix shared-mime-info tar:bzip2
+USES=		desktop-file-utils gettext gmake mono pathfix shared-mime-info tar:bzip2
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	MONOEXT GIT SVN

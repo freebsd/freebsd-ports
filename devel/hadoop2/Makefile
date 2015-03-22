@@ -9,7 +9,7 @@ PORTNAME=	hadoop
 PORTVERSION=	2.6.0
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
-		LOCAL/demon/ \
+		LOCAL/demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 MASTER_SITE_SUBDIR=${PORTNAME}/common/stable

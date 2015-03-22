@@ -46,18 +46,24 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 		LOCALSTATEDIR="${DBDIR}/spamassassin" \
 		BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=		AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
-OPTIONS_GROUP=		DATABASE PLUGINS
+OPTIONS_DEFINE=		AS_ROOT SSL UPDATE_AND_COMPILE
+OPTIONS_GROUP=		DATABASE GPG PLUGINS
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
+OPTIONS_SINGLE=		GPG
+OPTIONS_SINGLE_GPG=	GNUPG_NONE GNUPG GNUPG2
 OPTIONS_DEFAULT=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
-GNUPG_DESC=		Install GnuPG (for sa-update, optional)
 SSL_DESC=		Build spamd/spamc with SSL support
 UPDATE_AND_COMPILE_DESC=Download and compile rulesets (recommended)
 
 DATABASE_DESC=		Optional user-config/bayes database backends
+
+GPG_DESC=		GnuPG (for sa-update, optional)
+GNUPG_NONE_DESC=	Do not use GnuPG
+GNUPG_DESC=		GnuPG 1 (security/gnupg1)
+GNUPG2_DESC=		GnuPG 2 (security/gnupg)
 
 PLUGINS_DESC=		Optional SpamAssassin plugins
 DCC_DESC=		DCC digest list support (mail/dcc-dccd)
@@ -77,6 +83,7 @@ DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 			p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM \
 			p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:${PORTSDIR}/security/gnupg1
+GNUPG2_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 PYZOR_RUN_DEPENDS=	pyzor:${PORTSDIR}/mail/pyzor

@@ -5,4 +5,4 @@ version will not return directory names as being executables
 and that by default it will expand a leading "./" and "~/" to
 its full path on output.
 
-WWW: http://www.xs4all.nl/~carlo17/which/index.html
+WWW: https://savannah.gnu.org/projects/which/

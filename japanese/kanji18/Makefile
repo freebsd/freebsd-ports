@@ -3,7 +3,7 @@
 
 PORTNAME=	kanji
 PORTVERSION?=	1.0
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
@@ -14,15 +14,12 @@ DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	X11 ${PKGNAMESUFFIX}-dot Kanji font
 
+USES=		fonts
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 DIST_SUBDIR=	${DISTNAME}
-FONTSDIR=	lib/X11/fonts/local
 NO_WRKSUBDIR=	yes
 
 EXTRACT_CMD=		${GZCAT}
@@ -31,8 +28,7 @@ EXTRACT_AFTER_ARGS=	| ${AWK} '/bin\/sh/{P=1} {if (P==1) print;}' | \
 			${LOCALBASE}/bin/gunshar -d $(WRKDIR)
 PKGINSTALL=	${WRKSRC}/INSTALL
 PKGDEINSTALL=	${WRKSRC}/DEINSTALL
-MAKE_ENV=	FONTSDIR=${FONTSDIR}
-PLIST_SUB=	FONTSDIR=${FONTSDIR}
+MAKE_ENV=	FONTSDIR=${FONTSDIR:S,${PREFIX},,}
 README_FILE?=	573.z
 RESIZESED_FILE?=	18to16.sed
 RESIZED_ALIAS_FILE?=	kanji16.alias

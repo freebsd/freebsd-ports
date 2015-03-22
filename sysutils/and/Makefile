@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Auto Nice Daemon
 
 USES=		gmake

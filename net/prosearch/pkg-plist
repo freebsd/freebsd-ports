@@ -110,5 +110,6 @@
 %%SEARCHDIR%%/COPYING
 %%SEARCHDIR%%/crawler.pl
 %%SEARCHDIR%%/confdef.pl
+@dir %%SEARCHDIR%%/example
 @group
 @owner

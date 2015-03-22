@@ -9,8 +9,6 @@ COMMENT=	Mono framework to create extensible applications
 
 LICENSE=	MIT
 
-USES=		mono
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 GH_TAGNAME=	${DISTNAME}
@@ -20,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake
 ACLOCAL_ARGS=	-I .
 AUTOMAKE_ARGS+=	--gnu --add-missing
-USES=		gmake pkgconfig
+USES=		gmake mono pkgconfig
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	GTK2

@@ -1,5 +1,5 @@
 --- app.cpp.orig	2013-10-01 18:38:05.000000000 -0400
-+++ app.cpp	2014-12-18 00:18:29.000000000 -0500
++++ app.cpp	2015-03-08 14:34:54.992147000 -0400
 @@ -14,6 +14,7 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -52,6 +52,17 @@
  #ifdef USE_PAM
  App::App(int argc, char** argv)
    : pam(conv, static_cast<void*>(&LoginPanel)),
+@@ -596,8 +627,8 @@
+ 
+ 		n++;
+ 
+-		child_env = static_cast<char**>(malloc(sizeof(char*)*n));
+-		memcpy(child_env, old_env, sizeof(char*)*n+1);
++		child_env = static_cast<char**>(malloc(sizeof(char*)*(n+1)));
++		memcpy(child_env, old_env, sizeof(char*)*n);
+ 		child_env[n - 1] = StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
+ 		child_env[n] = NULL;
+ # endif /* USE_CONSOLEKIT */
 @@ -627,6 +658,17 @@
  
  #endif

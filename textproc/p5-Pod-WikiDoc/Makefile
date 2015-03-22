@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd \
 		p5-Parse-RecDescent>=1.967.006:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Probe-Perl>=0.01:${PORTSDIR}/sysutils/p5-Probe-Perl
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

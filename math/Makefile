@@ -582,6 +582,7 @@
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
     SUBDIR += py-sympy
+    SUBDIR += py-theano
     SUBDIR += py-ufl
     SUBDIR += py-viper
     SUBDIR += qalculate

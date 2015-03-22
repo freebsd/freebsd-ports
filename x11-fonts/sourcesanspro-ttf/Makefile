@@ -2,34 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.050
-PORTREVISION=	1
+PORTVERSION=	1.065
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/sourcesans.adobe
-DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for user interfaces
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+USE_GITHUB=	yes
+GH_ACCOUNT=	adobe-fonts
+GH_PROJECT=	source-sans-pro
+GH_TAGNAME=	2.010R-ro/1.065R-it
 
 NO_BUILD=	yes
-USES=		zip
+USES=		fonts
 USE_XORG=	x11
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_SUB=	FONTDIR=${FONTDIR}
+FONTNAME=	SourceSansPro
 SUB_FILES=	pkg-message
-SUB_LIST=	FONTDIR=${FONTDIR}
-
-FONTDIR=	lib/X11/fonts/SourceSansPro
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
-	cd ${WRKSRC}/ && ${INSTALL_DATA} TTF/*.ttf ${STAGEDIR}${PREFIX}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/xfce4-screenshooter/${PORTVERSION:R}
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libxml2
-USE_XFCE=	configenv libexo libmenu libutil panel
-USES=		pkgconfig gmake libtool tar:bzip2
+USE_XFCE=	panel
+USES=		pkgconfig gmake libtool xfce tar:bzip2
 USE_XORG=	xfixes xext
 
 OPTIONS_DEFINE=	NLS

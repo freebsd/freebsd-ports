@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-geoip
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-CONFIGURE_ARGS+=        --enable-redis
+CONFIGURE_ARGS+=        --enable-redis --with-libhiredis=${LOCALBASE}/lib
 LIB_DEPENDS+=           libhiredis.so:${PORTSDIR}/databases/hiredis
 PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else

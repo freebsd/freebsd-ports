@@ -3,12 +3,15 @@
 
 PORTNAME=	castget
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SAVANNAH CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line podcast downloader
+
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -20,6 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/castget include/libcastget.h \
 		lib/libcastget.so lib/libcastget.so.0 lib/libcastget.so.0.0.0 \

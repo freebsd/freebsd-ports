@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	znc
-PORTVERSION=	1.4
+PORTVERSION=	1.6.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/
 
@@ -13,11 +13,11 @@ LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
-USES=		pkgconfig iconv gmake
+USES=		pkgconfig iconv gmake compiler:c++11-lib
 
 NO_OPTIONS_SORT=	yes
 
-OPTIONS_DEFINE=	DEBUG IPV6 OPENSSL CYRUS PERL PYTHON TCL DOCS
+OPTIONS_DEFINE=	DEBUG IPV6 OPENSSL CYRUS PERL PYTHON TCL CHARSET DOCS
 OPTIONS_DEFAULT=	OPENSSL PERL
 OPTIONS_SUB=	yes
 
@@ -25,6 +25,7 @@ CYRUS_DESC=	Cyrus SASL module
 DEBUG_DESC=	Debugging support
 PERL_DESC=	Perl scripting module
 PYTHON_DESC=	Python scripting module
+CHARSET_DESC=	Character encoding support via ICU
 TCL_DESC=	Tcl scripting module
 
 CYRUS_CONFIGURE_ON=	--enable-cyrus
@@ -32,17 +33,24 @@ CYRUS_LDFLAGS=	-L${LOCALBASE}/lib
 CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 DEBUG_CONFIGURE_ON=	--enable-debug
 IPV6_CONFIGURE_OFF=	--disable-ipv6
-PERL_BUILD_DEPENDS=	swig>=2.0.11:${PORTSDIR}/devel/swig20
+PERL_BUILD_DEPENDS=	swig30>=3.0.0:${PORTSDIR}/devel/swig30
 PERL_CONFIGURE_ENABLE=	perl
 PERL_CONFIGURE_ON=	--enable-swig
 PERL_USES=	perl5
-PYTHON_BUILD_DEPENDS=	swig>=2.0.11:${PORTSDIR}/devel/swig20
+PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:${PORTSDIR}/devel/swig30
 PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
 PYTHON_USES=	perl5 python:3
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
+CHARSET_CONFIGURE_OFF=	--disable-charset
+CHARSET_LIB_DEPENDS=	libicuuc.so.53:${PORTSDIR}/devel/icu \
+			libicudata.so.53:${PORTSDIR}/devel/icu
 TCL_CONFIGURE_ENABLE=	tcl
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900014
+CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
+.endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"

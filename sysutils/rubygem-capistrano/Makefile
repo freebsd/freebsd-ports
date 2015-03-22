@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capistrano
-PORTVERSION=	3.2.1
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

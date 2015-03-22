@@ -3,6 +3,7 @@
 
 PORTNAME=	gigolo
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=		gmake fuse pkgconfig tar:bzip2
+USES=		gmake fuse pkgconfig gettext-tools xfce tar:bzip2
 USE_GNOME=	cairo gtk20 gvfs intlhack
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Does not compile

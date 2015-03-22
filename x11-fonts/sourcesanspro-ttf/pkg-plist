@@ -1,13 +1,12 @@
-%%FONTDIR%%/SourceSansPro-Black.ttf
-%%FONTDIR%%/SourceSansPro-BlackIt.ttf
-%%FONTDIR%%/SourceSansPro-Bold.ttf
-%%FONTDIR%%/SourceSansPro-BoldIt.ttf
-%%FONTDIR%%/SourceSansPro-ExtraLight.ttf
-%%FONTDIR%%/SourceSansPro-ExtraLightIt.ttf
-%%FONTDIR%%/SourceSansPro-It.ttf
-%%FONTDIR%%/SourceSansPro-Light.ttf
-%%FONTDIR%%/SourceSansPro-LightIt.ttf
-%%FONTDIR%%/SourceSansPro-Regular.ttf
-%%FONTDIR%%/SourceSansPro-Semibold.ttf
-%%FONTDIR%%/SourceSansPro-SemiboldIt.ttf
-@fcfontsdir %%FONTDIR%%
+%%FONTSDIR%%/SourceSansPro-Black.ttf
+%%FONTSDIR%%/SourceSansPro-BlackIt.ttf
+%%FONTSDIR%%/SourceSansPro-Bold.ttf
+%%FONTSDIR%%/SourceSansPro-BoldIt.ttf
+%%FONTSDIR%%/SourceSansPro-ExtraLight.ttf
+%%FONTSDIR%%/SourceSansPro-ExtraLightIt.ttf
+%%FONTSDIR%%/SourceSansPro-It.ttf
+%%FONTSDIR%%/SourceSansPro-Light.ttf
+%%FONTSDIR%%/SourceSansPro-LightIt.ttf
+%%FONTSDIR%%/SourceSansPro-Regular.ttf
+%%FONTSDIR%%/SourceSansPro-Semibold.ttf
+%%FONTSDIR%%/SourceSansPro-SemiboldIt.ttf

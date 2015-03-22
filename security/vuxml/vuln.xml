@@ -57,6 +57,385 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76ff65f4-17ca-4d3f-864a-a3d6026194fb">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>36.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.5.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>36.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.33.1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.33.1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-28 Privilege escalation through SVG navigation</p>
+	  <p>MFSA-2015-29 Code execution through incorrect JavaScript
+	    bounds checking elimination</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0817</cvename>
+      <cvename>CVE-2015-0818</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-28/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-29/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-03-20</discovery>
+      <entry>2015-03-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9d15355b-ce7c-11e4-9db0-d050992ecde8">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_19</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1m</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>libressl</name>
+	<range><le>2.1.5_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150319.txt">
+	  <ul>
+	    <li>Reclassified: RSA silently downgrades to EXPORT_RSA
+	      [Client] (CVE-2015-0204).  OpenSSL only.</li>
+	    <li>Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)</li>
+	    <li>ASN.1 structure reuse memory corruption (CVE-2015-0287)</li>
+	    <li>PKCS7 NULL pointer dereferences (CVE-2015-0289)</li>
+	    <li>Base64 decode (CVE-2015-0292).  OpenSSL only.</li>
+	    <li>DoS via reachable assert in SSLv2 servers
+	      (CVE-2015-0293).  OpenSSL only.</li>
+	    <li>Use After Free following d2i_ECPrivatekey error
+	      (CVE-2015-0209)</li>
+	    <li>X509_to_X509_REQ NULL pointer deref (CVE-2015-0288)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/198681</freebsdpr>
+      <cvename>CVE-2015-0204</cvename>
+      <cvename>CVE-2015-0286</cvename>
+      <cvename>CVE-2015-0287</cvename>
+      <cvename>CVE-2015-0289</cvename>
+      <cvename>CVE-2015-0292</cvename>
+      <cvename>CVE-2015-0293</cvename>
+      <cvename>CVE-2015-0209</cvename>
+      <cvename>CVE-2015-0288</cvename>
+      <url>https://www.openssl.org/news/secadv_20150319.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-03-19</discovery>
+      <entry>2015-03-19</entry>
+      <modified>2015-03-19</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f7d79fac-cd49-11e4-898f-bcaec565249c">
+    <topic>libXfont -- BDF parsing issues</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+      <package>
+	<name>libXfont</name>
+	<range><ge>1.4.99</ge><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2015-March/002550.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered an issue in the parsing of BDF font files by libXfont.
+	    Additional testing by Alan Coopersmith and William Robinet with
+	    the American Fuzzy Lop (afl) tool uncovered two more issues in
+	    the parsing of BDF font files.</p>
+
+	  <p>As libXfont is used by the X server to read font files, and an
+	    unprivileged user with access to the X server can tell the X
+	    server to read a given font file from a path of their choosing,
+	    these vulnerabilities have the potential to allow unprivileged
+	    users to run code with the privileges of the X server
+	    (often root access).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.x.org/archives/xorg-announce/2015-March/002550.html</url>
+      <cvename>CVE-2015-1802</cvename>
+      <cvename>CVE-2015-1803</cvename>
+      <cvename>CVE-2015-1804</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-17</discovery>
+      <entry>2015-03-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8b3ecff5-c9b2-11e4-b71f-00bd5af88c00">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.442</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.442</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-05.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux. These updates address vulnerabilities
+	    that could potentially allow an attacker to take control of the
+	    affected system.
+	    These updates resolve memory corruption vulnerabilities that could
+	    lead to code execution (CVE-2015-0332, CVE-2015-0333, CVE-2015-0335,
+	    CVE-2015-0339).
+	    These updates resolve type confusion vulnerabilities that could lead
+	    to code execution (CVE-2015-0334, CVE-2015-0336).
+	    These updates resolve a vulnerability that could lead to a
+	    cross-domain policy bypass (CVE-2015-0337).
+	    These updates resolve a vulnerability that could lead to a file
+	    upload restriction bypass (CVE-2015-0340).
+	    These updates resolve an integer overflow vulnerability that could
+	    lead to code execution (CVE-2015-0338).
+	    These updates resolve use-after-free vulnerabilities that could lead
+	    to code execution (CVE-2015-0341, CVE-2015-0342).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-05.html</url>
+      <cvename>CVE-2015-0332</cvename>
+      <cvename>CVE-2015-0333</cvename>
+      <cvename>CVE-2015-0334</cvename>
+      <cvename>CVE-2015-0335</cvename>
+      <cvename>CVE-2015-0336</cvename>
+      <cvename>CVE-2015-0337</cvename>
+      <cvename>CVE-2015-0338</cvename>
+      <cvename>CVE-2015-0339</cvename>
+      <cvename>CVE-2015-0340</cvename>
+      <cvename>CVE-2015-0341</cvename>
+      <cvename>CVE-2015-0342</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-12</discovery>
+      <entry>2015-03-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="451a6c79-c92b-11e4-a835-000c292ee6b8">
+    <topic>sympa -- Remote attackers can read arbitrary files</topic>
+    <affects>
+      <package>
+	<name>sympa</name>
+	<range><lt>6.1.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Sympa Project reports:</p>
+	<blockquote cite="https://www.sympa.org/security_advisories">
+	  <p>The newsletter posting area in the web interface in Sympa 6.0.x before 6.0.10 and 6.1.x before 6.1.24 allows remote attackers to read arbitrary files via unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.sympa.org/security_advisories</url>
+      <cvename>CVE-2015-1306</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-13</discovery>
+      <entry>2015-03-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d08f6002-c588-11e4-8495-6805ca0b3d42">
+    <topic>rt -- Remote DoS, Information disclosure and Session Hijackingvulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.10</lt></range>
+      </package>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0.0</ge><lt>4.0.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html">
+	  <p>RT 3.0.0 and above, if running on Perl 5.14.0 or higher,
+	    are vulnerable to a remote denial-of-service via the email
+	    gateway; any installation which accepts mail from untrusted
+	    sources is vulnerable, regardless of the permissions
+	    configuration inside RT. This denial-of-service may
+	    encompass both CPU and disk usage, depending on RT's logging
+	    configuration. This vulnerability is assigned
+	    CVE-2014-9472.</p>
+	  <p>RT 3.8.8 and above are vulnerable to an information
+	    disclosure attack which may reveal RSS feeds URLs, and thus
+	    ticket data; this vulnerability is assigned
+	    CVE-2015-1165. RSS feed URLs can also be leveraged to
+	    perform session hijacking, allowing a user with the URL to
+	    log in as the user that created the feed; this vulnerability
+	    is assigned CVE-2015-1464.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html</url>
+      <cvename>CVE-2014-9472</cvename>
+      <cvename>CVE-2015-1165</cvename>
+      <cvename>CVE-2015-1464</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-26</discovery>
+      <entry>2015-03-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81b4c118-c586-11e4-8495-6805ca0b3d42">
+    <topic>phpMyAdmin -- Risk of BREACH attack due to reflected parameter</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.3.0</ge><lt>4.3.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php">
+	  <p>Risk of BREACH attack due to reflected parameter.</p>
+	  <p>With a large number of crafted requests it was possible to infer
+	    the CSRF token by a BREACH attack.</p>
+	  <p>Mitigation factor: this vulnerability can only be exploited in
+	    the presence of another vulnerability that allows the attacker to
+	    inject JavaScript into victim's browser.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php</url>
+      <cvename>CVE-2015-2206</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-04</discovery>
+      <entry>2015-03-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0cae920-c4e9-11e4-898e-90e6ba741e35">
+    <topic>mono -- TLS bugs</topic>
+    <affects>
+      <package>
+	<name>mono</name>
+	<range><lt>3.10.1</lt></range>
+	<range><ge>3.12</ge><lt>3.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mono project reports:</p>
+	<blockquote cite="http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs">
+	  <p>Mono’s implementation of the SSL/TLS stack failed to check the order of the handshake messages. Which would allow various attacks on the protocol to succeed. Details of this vulnerability are discussed in <a href="https://www.smacktls.com/#skip">SKIP-TLS post</a>.</p>
+	  <p>Mono’s implementation of SSL/TLS also contained support for the weak EXPORT cyphers and was susceptible to the <a href="https://www.smacktls.com/#freak">FREAK</a> attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs</url>
+    </references>
+    <dates>
+      <discovery>2015-03-06</discovery>
+      <entry>2015-03-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="92fc2e2b-c383-11e4-8ef7-080027ef73ec">
+    <topic>PuTTY -- fails to scrub private keys from memory after use</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><lt>0.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped-2.html">
+	  <p>When PuTTY has sensitive data in memory and has no further need for
+	    it, it should wipe the data out of its memory, in case malware later
+	    gains access to the PuTTY process or the memory is swapped out to
+	    disk or written into a crash dump file. An obvious example of this
+	    is the password typed during SSH login; other examples include
+	    obsolete session keys, public-key passphrases, and the private
+	    halves of public keys.</p>
+	    <p>PuTTY 0.63 and earlier versions, after loading a private key
+	      from a disk file, mistakenly leak a memory buffer containing a
+	      copy of the private key, in the function ssh2_load_userkey. The
+	      companion function ssh2_save_userkey (only called by PuTTYgen) can
+	      also leak a copy, but only in the case where the file it tried to
+	      save to could not be created.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped-2.html</url>
+      <cvename>CVE-2015-2157</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-28</discovery>
+      <entry>2015-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8505e013-c2b3-11e4-875d-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>

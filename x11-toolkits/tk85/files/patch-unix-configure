@@ -1,43 +1,28 @@
---- configure.orig	2014-10-22 12:32:42.000000000 +0000
-+++ configure	2014-11-15 10:50:06.000000000 +0000
-@@ -3538,6 +3538,7 @@
- # Threads support - this auto-enables if Tcl was compiled threaded
- #------------------------------------------------------------------------
+--- configure.orig	2015-03-06 15:14:59.000000000 +0000
++++ configure	2015-03-07 10:23:19.000000000 +0000
+@@ -3547,6 +3547,7 @@
+ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCLVERSION}
  
-     # Check whether --enable-threads or --disable-threads was given.
- if test "${enable_threads+set}" = set; then
-@@ -5835,7 +5836,7 @@
- 	    SHLIB_SUFFIX=".so"
- 	    DL_OBJS="tclLoadDl.o"
- 	    DL_LIBS=""
--	    LDFLAGS="$LDFLAGS -export-dynamic"
-+	    LDFLAGS=""
- 	    if test $doRpath = yes; then
- 
- 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -5857,10 +5858,14 @@
- 	    SHLIB_CFLAGS="-fPIC"
- 	    SHLIB_LD="${CC} -shared"
- 	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
--	    SHLIB_SUFFIX=".so"
-+	    SHLIB_SUFFIX=".so.${SHLIB_VERSION}"
- 	    DL_OBJS="tclLoadDl.o"
- 	    DL_LIBS=""
- 	    LDFLAGS=""
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for grep that handles long lines and -e" >&5
+ $as_echo_n "checking for grep that handles long lines and -e... " >&6; }
+@@ -5467,6 +5468,10 @@
+ 	    ;;
+ 	FreeBSD-*)
+ 	    # This configuration from FreeBSD Ports.
 +	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
 +	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
 +	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
 +	    TCL_LIB_VERSIONS_OK=nodots
- 	    if test $doRpath = yes; then
- 
- 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -5874,16 +5879,6 @@
+ 	    SHLIB_CFLAGS="-fPIC"
+ 	    SHLIB_LD="${CC} -shared"
+ 	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
+@@ -5486,15 +5491,6 @@
  		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
  		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
  fi
--
 -	    case $system in
 -	    FreeBSD-3.*)
 -		# Version numbers are dot-stripped by system policy.

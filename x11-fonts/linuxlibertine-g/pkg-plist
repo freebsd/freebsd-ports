@@ -1,15 +1,10 @@
-%%FONTDIR%%/LinBiolinum_RB_G.ttf
-%%FONTDIR%%/LinLibertine_DR_G.ttf
-%%FONTDIR%%/LinLibertine_RI_G.ttf
-%%FONTDIR%%/LinLibertine_R_G.ttf
-%%FONTDIR%%/LinBiolinum_RI_G.ttf
-%%FONTDIR%%/LinLibertine_RBI_G.ttf
-%%FONTDIR%%/LinLibertine_RZI_G.ttf
-%%FONTDIR%%/LinBiolinum_R_G.ttf
-%%FONTDIR%%/LinLibertine_RB_G.ttf
-%%FONTDIR%%/LinLibertine_RZ_G.ttf
-%%FONTDIR%%/fonts.scale
-%%FONTDIR%%/fonts.dir
-@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTDIR%% || /usr/bin/true
+%%FONTSDIR%%/LinBiolinum_RB_G.ttf
+%%FONTSDIR%%/LinLibertine_DR_G.ttf
+%%FONTSDIR%%/LinLibertine_RI_G.ttf
+%%FONTSDIR%%/LinLibertine_R_G.ttf
+%%FONTSDIR%%/LinBiolinum_RI_G.ttf
+%%FONTSDIR%%/LinLibertine_RBI_G.ttf
+%%FONTSDIR%%/LinLibertine_RZI_G.ttf
+%%FONTSDIR%%/LinBiolinum_R_G.ttf
+%%FONTSDIR%%/LinLibertine_RB_G.ttf
+%%FONTSDIR%%/LinLibertine_RZ_G.ttf

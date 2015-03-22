@@ -3,6 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.40.128
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	240
@@ -14,6 +15,8 @@ MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	User-level file synchronization tool
 
 LICENSE=	GPLv3
+
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
@@ -36,18 +39,13 @@ OPTIONS_DEFAULT?=        DOCS X11
 .if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
 PLIST_SUB+=	TEXT=""
-BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
+BUILD_DEPENDS+= lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		icotool:${PORTSDIR}/graphics/icoutils
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-PATCH_DEPENDS+=	${BUILD_DEPENDS}
-CONFLICTS+=	ocaml-nox11*
 SUB_FILES+=	${PORTNAME}.desktop
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
-BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
-PATCH_DEPENDS+=	${BUILD_DEPENDS}
 PKGMESSAGE=	${PKGDIR}/pkg-message.nox11
 .endif
 

@@ -2,23 +2,22 @@
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
+@dir(root,rt,0750) %%RT_ETC_DIR%%
 @mode 0440
-etc/rt40/RT_Config.pm
-@unexec if cmp -s %D/etc/rt40/RT_SiteConfig.pm-dist %D/etc/rt40/RT_SiteConfig.pm ; then rm -f %D/etc/rt40/RT_SiteConfig.pm; fi
-etc/rt40/RT_SiteConfig.pm-dist
+%%RT_ETC_DIR%%/RT_Config.pm
+@unexec if cmp -s %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm ; then rm -f %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm; fi
+%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist
 @exec [ -f %B/RT_SiteConfig.pm ] || cp -p %D/%F %B/RT_SiteConfig.pm
-@mode
-etc/rt40/acl.Oracle
-etc/rt40/acl.Pg
-etc/rt40/acl.mysql
-etc/rt40/initialdata
-etc/rt40/schema.Oracle
-etc/rt40/schema.Pg
-etc/rt40/schema.SQLite
-etc/rt40/schema.mysql
-@exec chmod 0750 %D/etc/rt40
-@exec chgrp rt %D/etc/rt40
+%%RT_ETC_DIR%%/acl.Oracle
+%%RT_ETC_DIR%%/acl.Pg
+%%RT_ETC_DIR%%/acl.mysql
+%%RT_ETC_DIR%%/initialdata
+%%RT_ETC_DIR%%/schema.Oracle
+%%RT_ETC_DIR%%/schema.Pg
+%%RT_ETC_DIR%%/schema.SQLite
+%%RT_ETC_DIR%%/schema.mysql
 @group wheel
+@mode
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
@@ -267,6 +266,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
 %%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_portlets.pod
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.SQLite
@@ -375,6 +375,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/upgrade-mysql-schema.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
+@dir %%DATADIR%%/etc
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
 %%DATADIR%%/fonts/DroidSansFallback.ttf
@@ -1424,6 +1425,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/m/ticket/select_create_queue
 %%DATADIR%%/html/m/ticket/show
 %%DATADIR%%/html/m/tickets/search
+@dir %%DATADIR%%/lib
+@dir %%DATADIR%%/plugins
 %%DATADIR%%/po/ar.po
 %%DATADIR%%/po/bg.po
 %%DATADIR%%/po/ca.po
@@ -1463,273 +1466,9 @@ sbin/standalone_httpd
 %%DATADIR%%/po/tr.po
 %%DATADIR%%/po/zh_CN.po
 %%DATADIR%%/po/zh_TW.po
-@exec mkdir -p /var/run/rt40/session_data
-@exec mkdir -p /var/run/rt40/mason_data/obj
-@exec mkdir -p /var/run/rt40/mason_data/etc
-@exec mkdir -p /var/run/rt40/mason_data/cache
-@exec chmod -R 0750 /var/run/rt40/session_data /var/run/rt40/mason_data
-@exec chown -R www:www /var/run/rt40/session_data /var/run/rt40/mason_data
-@unexec rmdir "/var/run/rt40/session_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt40/mason_data/obj" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt40/mason_data/etc" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt40/mason_data/cache" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt40/mason_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt40" >/dev/null 2>&1 || :
-@dirrmtry www/rt40
-@dirrm %%DATADIR%%/po
-@exec mkdir -p %D/%%DATADIR%%/etc
-@exec mkdir -p %D/%%DATADIR%%/lib
-@exec mkdir -p %D/%%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/html/m/tickets
-@dirrmtry %%DATADIR%%/html/m/ticket
-@dirrmtry %%DATADIR%%/html/m/_elements
-@dirrmtry %%DATADIR%%/html/m
-@dirrmtry %%DATADIR%%/html/Widgets/Form
-@dirrmtry %%DATADIR%%/html/Widgets
-@dirrmtry %%DATADIR%%/html/User
-@dirrmtry %%DATADIR%%/html/Tools
-@dirrmtry %%DATADIR%%/html/Ticket/Graphs/Elements
-@dirrmtry %%DATADIR%%/html/Ticket/Graphs
-@dirrmtry %%DATADIR%%/html/Ticket/Elements
-@dirrmtry %%DATADIR%%/html/Ticket/Attachment/WithHeaders
-@dirrmtry %%DATADIR%%/html/Ticket/Attachment
-@dirrmtry %%DATADIR%%/html/Ticket
-@dirrmtry %%DATADIR%%/html/SelfService/Elements
-@dirrmtry %%DATADIR%%/html/SelfService/Attachment
-@dirrmtry %%DATADIR%%/html/SelfService/Article
-@dirrmtry %%DATADIR%%/html/SelfService
-@dirrmtry %%DATADIR%%/html/Search/Elements
-@dirrmtry %%DATADIR%%/html/Search
-@dirrmtry %%DATADIR%%/html/REST/1.0/ticket
-@dirrmtry %%DATADIR%%/html/REST/1.0/search
-@dirrmtry %%DATADIR%%/html/REST/1.0/NoAuth
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/user
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/transaction
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/ticket
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/queue
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/group
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/attachment
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms
-@dirrmtry %%DATADIR%%/html/REST/1.0
-@dirrmtry %%DATADIR%%/html/REST
-@dirrmtry %%DATADIR%%/html/Prefs
-@dirrmtry %%DATADIR%%/html/NoAuth/rss
-@dirrmtry %%DATADIR%%/html/NoAuth/js
-@dirrmtry %%DATADIR%%/html/NoAuth/images/tablesorter
-@dirrmtry %%DATADIR%%/html/NoAuth/images/jquery_ui
-@dirrmtry %%DATADIR%%/html/NoAuth/images/farbtastic
-@dirrmtry %%DATADIR%%/html/NoAuth/images/css
-@dirrmtry %%DATADIR%%/html/NoAuth/images
-@dirrmtry %%DATADIR%%/html/NoAuth/iCal
-@dirrmtry %%DATADIR%%/html/NoAuth/css/web2/images/source
-@dirrmtry %%DATADIR%%/html/NoAuth/css/web2/images
-@dirrmtry %%DATADIR%%/html/NoAuth/css/web2
-@dirrmtry %%DATADIR%%/html/NoAuth/css/images
-@dirrmtry %%DATADIR%%/html/NoAuth/css/base
-@dirrmtry %%DATADIR%%/html/NoAuth/css/ballard/images/source
-@dirrmtry %%DATADIR%%/html/NoAuth/css/ballard/images
-@dirrmtry %%DATADIR%%/html/NoAuth/css/ballard
-@dirrmtry %%DATADIR%%/html/NoAuth/css/aileron/images/source
-@dirrmtry %%DATADIR%%/html/NoAuth/css/aileron/images
-@dirrmtry %%DATADIR%%/html/NoAuth/css/aileron
-@dirrmtry %%DATADIR%%/html/NoAuth/css
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/themes/default
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/themes
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/v2/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/v2
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/office2003/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/office2003
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/kama/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins/kama
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/skins
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/xml
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/wsc/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/wsc
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/uicolor
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/templates/templates
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/templates/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/templates
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/tabletools/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/tabletools
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/tableresize
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/table/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/table
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/stylesheetparser
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/styles/styles
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/styles
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/specialchar
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/smiley/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/smiley/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/smiley
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/showblocks/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/showblocks
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/scayt/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/scayt
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/preview
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/placeholder/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/placeholder/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/placeholder
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pastetext/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pastetext
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pastefromword/filter
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pastefromword
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pagebreak/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/pagebreak
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/liststyle/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/liststyle
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/link/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/link/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/link
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/image/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/image
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/iframedialog
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/iframe/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/iframe/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/iframe
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/forms/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/forms/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/forms
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/flash/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/flash/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/flash
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/find/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/find
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/docprops/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/docprops
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/div/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/div
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/dialog
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/devtools/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/devtools
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/colordialog/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/colordialog
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/clipboard/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/clipboard
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/bbcode
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/autogrow
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/ajax
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/adobeair
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/about/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/about
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/a11yhelp/dialogs
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins/a11yhelp
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/plugins
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/lang
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/images
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor/adapters
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText/ckeditor
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText
-@dirrmtry %%DATADIR%%/html/NoAuth/Helpers/CustomLogo
-@dirrmtry %%DATADIR%%/html/NoAuth/Helpers
-@dirrmtry %%DATADIR%%/html/NoAuth
-@dirrmtry %%DATADIR%%/html/Install/Elements
-@dirrmtry %%DATADIR%%/html/Install
-@dirrmtry %%DATADIR%%/html/Helpers/Toggle
-@dirrmtry %%DATADIR%%/html/Helpers/Autocomplete
-@dirrmtry %%DATADIR%%/html/Helpers
-@dirrmtry %%DATADIR%%/html/Elements/RT__User
-@dirrmtry %%DATADIR%%/html/Elements/RT__Ticket
-@dirrmtry %%DATADIR%%/html/Elements/RT__Template
-@dirrmtry %%DATADIR%%/html/Elements/RT__Scrip
-@dirrmtry %%DATADIR%%/html/Elements/RT__SavedSearch
-@dirrmtry %%DATADIR%%/html/Elements/RT__Queue
-@dirrmtry %%DATADIR%%/html/Elements/RT__Group
-@dirrmtry %%DATADIR%%/html/Elements/RT__Dashboard
-@dirrmtry %%DATADIR%%/html/Elements/RT__CustomField
-@dirrmtry %%DATADIR%%/html/Elements/RT__Class
-@dirrmtry %%DATADIR%%/html/Elements/RT__Article
-@dirrmtry %%DATADIR%%/html/Elements/GnuPG
-@dirrmtry %%DATADIR%%/html/Elements/CollectionAsTable
-@dirrmtry %%DATADIR%%/html/Elements
-@dirrmtry %%DATADIR%%/html/Download/CustomFieldValue
-@dirrmtry %%DATADIR%%/html/Download
-@dirrmtry %%DATADIR%%/html/Dashboards/Elements/ShowPortlet
-@dirrmtry %%DATADIR%%/html/Dashboards/Elements
-@dirrmtry %%DATADIR%%/html/Dashboards
-@dirrmtry %%DATADIR%%/html/Articles/Elements
-@dirrmtry %%DATADIR%%/html/Articles/Article/Elements
-@dirrmtry %%DATADIR%%/html/Articles/Article
-@dirrmtry %%DATADIR%%/html/Articles
-@dirrmtry %%DATADIR%%/html/Approvals/Elements
-@dirrmtry %%DATADIR%%/html/Approvals
-@dirrmtry %%DATADIR%%/html/Admin/Users
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Dumps
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder
-@dirrmtry %%DATADIR%%/html/Admin/Tools
-@dirrmtry %%DATADIR%%/html/Admin/Queues
-@dirrmtry %%DATADIR%%/html/Admin/Groups
-@dirrmtry %%DATADIR%%/html/Admin/Global/CustomFields
-@dirrmtry %%DATADIR%%/html/Admin/Global
-@dirrmtry %%DATADIR%%/html/Admin/Elements
-@dirrmtry %%DATADIR%%/html/Admin/CustomFields
-@dirrmtry %%DATADIR%%/html/Admin/Articles/Elements
-@dirrmtry %%DATADIR%%/html/Admin/Articles/Classes
-@dirrmtry %%DATADIR%%/html/Admin/Articles
-@dirrmtry %%DATADIR%%/html/Admin
-@dirrmtry %%DATADIR%%/html
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/etc
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.19
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.18
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.13
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.12
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.9
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc7
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.7
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.5
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.9
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.87
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.86
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.85
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.82
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.81
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.19
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.15
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.10
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.5.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.11
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.17
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.15
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/extending
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/customizing
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/rt40
-
+@dir(www,www,755) /var/run/rt40/mason_data/cache
+@dir(www,www,755) /var/run/rt40/mason_data/etc
+@dir(www,www,755) /var/run/rt40/mason_data/obj
+@dir(www,www,755) /var/run/rt40/mason_data
+@dir(www,www,755) /var/run/rt40/session_data
+@dir /var/run/rt40

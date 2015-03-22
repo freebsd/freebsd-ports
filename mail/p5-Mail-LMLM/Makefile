@@ -17,10 +17,12 @@ LICENSE=	MIT
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

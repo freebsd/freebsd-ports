@@ -1,6 +1,6 @@
 bin/cvlc
 %%NCURSES%%bin/nvlc
-%%QT4%%bin/qvlc
+%%QT5%%bin/qvlc
 bin/rvlc
 %%SKINS%%bin/svlc
 bin/vlc
@@ -19,10 +19,10 @@ include/vlc/libvlc_version.h
 include/vlc/libvlc_vlm.h
 include/vlc/plugins/vlc_about.h
 include/vlc/plugins/vlc_access.h
+include/vlc/plugins/vlc_addons.h
 include/vlc/plugins/vlc_aout.h
 include/vlc/plugins/vlc_aout_volume.h
 include/vlc/plugins/vlc_arrays.h
-include/vlc/plugins/vlc_art_finder.h
 include/vlc/plugins/vlc_atomic.h
 include/vlc/plugins/vlc_avcodec.h
 include/vlc/plugins/vlc_bits.h
@@ -55,6 +55,7 @@ include/vlc/plugins/vlc_input_item.h
 include/vlc/plugins/vlc_keys.h
 include/vlc/plugins/vlc_main.h
 include/vlc/plugins/vlc_md5.h
+include/vlc/plugins/vlc_meta_fetcher.h
 include/vlc/plugins/vlc_media_library.h
 include/vlc/plugins/vlc_messages.h
 include/vlc/plugins/vlc_meta.h
@@ -94,10 +95,10 @@ include/vlc/plugins/vlc_xml.h
 include/vlc/vlc.h
 lib/libvlc.so
 lib/libvlc.so.5
-lib/libvlc.so.5.4.0
+lib/libvlc.so.5.5.0
 lib/libvlccore.so
-lib/libvlccore.so.7
-lib/libvlccore.so.7.0.0
+lib/libvlccore.so.8
+lib/libvlccore.so.8.0.0
 libdata/pkgconfig/libvlc.pc
 libdata/pkgconfig/vlc-plugin.pc
 man/man1/vlc-wrapper.1.gz
@@ -141,6 +142,7 @@ share/apps/solid/actions/vlc-openvcd.desktop
 %%NLS%%share/locale/el/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vlc.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/et/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/vlc.mo

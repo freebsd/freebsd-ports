@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Convert::Bencode_XS.3.gz
 %%SITE_ARCH%%/Convert/Bencode_XS.pm
 %%SITE_ARCH%%/auto/Convert/Bencode_XS/Bencode_XS.so
-%%EXAMPLESDIR%%/bench_decode.pl
-%%EXAMPLESDIR%%/bench_encode.pl
+%%PERL5_MAN3%%/Convert::Bencode_XS.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench_decode.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench_encode.pl

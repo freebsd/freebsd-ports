@@ -827,6 +827,7 @@
     SUBDIR += p5-Dancer2
     SUBDIR += p5-Dancer2-Plugin-Ajax
     SUBDIR += p5-Dancer2-Plugin-Deferred
+    SUBDIR += p5-Dancer2-Plugin-Path-Class
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-Emplacken
@@ -1219,6 +1220,7 @@
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-URI-Title
     SUBDIR += p5-URI-ToDisk
+    SUBDIR += p5-URL-Encode
     SUBDIR += p5-URL-Encode-XS
     SUBDIR += p5-VUser-Google-ProvisioningAPI
     SUBDIR += p5-W3C-LinkChecker
@@ -1981,7 +1983,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid33
     SUBDIR += squid_radius_auth
     SUBDIR += squidclamav
     SUBDIR += squidguard

@@ -31,26 +31,26 @@ rcvar=pureftpd_enable
 load_rc_config $name
 
 command=%%PREFIX%%/sbin/pure-config.pl
-pidfile=/var/run/pure-ftpd.pid
+pidfile=${pidfile:-"/var/run/pure-ftpd.pid"}
 procname=pure-ftpd
 pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
 pureftpd_enable=${pureftpd_enable:-"no"}
 required_files=${pureftpd_config}
 # authd
 command_authd=%%PREFIX%%/sbin/pure-authd
-pidfile_authd=/var/run/pure-authd.pid
+pidfile_authd=${pidfile_authd:-"/var/run/pure-authd.pid"}
 pureftpd_authd_enable=${pureftpd_authd_enable:-"no"}
 pureftpd_authdscript=${pureftpd_authdscript:-"%%PREFIX%%/sbin/pure-alwaysfail"}
 pureftpd_authsocket=${pureftpd_authsocket:-"/var/run/ftpd.sock"}
 # uploadscript
 command_upload=%%PREFIX%%/sbin/pure-uploadscript
-pidfile_uploadscript=/var/run/pure-uploadscript.pid
+pidfile_uploadscript=${pidfile_uploadscript:-"/var/run/pure-uploadscript.pid"}
 pureftpd_upload_enable=${pureftpd_upload_enable:-"no"}
 pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
 # command_args
 command_args="${pureftpd_config} -g${pidfile}"
-command_authd_args="-B -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
-command_upload_args="-B -r ${pureftpd_uploadscript}"
+command_authd_args="-B -p ${pidfile_authd} -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
+command_upload_args="-B -p ${pidfile_uploadscript} -r ${pureftpd_uploadscript}"
 
 start_precmd=start_precmd
 start_postcmd=start_postcmd

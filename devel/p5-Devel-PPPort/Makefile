@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-PPPort
-PORTVERSION=	3.28
+PORTVERSION=	3.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +15,5 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	Changes README HACKERS TODO
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

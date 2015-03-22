@@ -1,12 +1,9 @@
 bin/pushmi
 %%SITE_PERL%%/Pushmi.pm
-%%SITE_PERL%%/Pushmi/Command.pm
-%%SITE_PERL%%/Pushmi/Config.pm
-%%SITE_PERL%%/Pushmi/Mirror.pm
-%%SITE_PERL%%/Pushmi/Test.pm
 %%SITE_PERL%%/Pushmi/Apache/AuthCache.pm
 %%SITE_PERL%%/Pushmi/Apache/AuthCommit.pm
 %%SITE_PERL%%/Pushmi/Apache/RelayProvider.pm
+%%SITE_PERL%%/Pushmi/Command.pm
 %%SITE_PERL%%/Pushmi/Command/Help.pm
 %%SITE_PERL%%/Pushmi/Command/Mirror.pm
 %%SITE_PERL%%/Pushmi/Command/Runhook.pm
@@ -14,7 +11,10 @@ bin/pushmi
 %%SITE_PERL%%/Pushmi/Command/Tryauth.pm
 %%SITE_PERL%%/Pushmi/Command/Unlock.pm
 %%SITE_PERL%%/Pushmi/Command/Verify.pm
+%%SITE_PERL%%/Pushmi/Config.pm
 %%SITE_PERL%%/Pushmi/Editor/Locker.pm
+%%SITE_PERL%%/Pushmi/Mirror.pm
+%%SITE_PERL%%/Pushmi/Test.pm
 %%PERL5_MAN3%%/Pushmi.3.gz
 %%PERL5_MAN3%%/Pushmi::Command::Mirror.3.gz
 %%PERL5_MAN3%%/Pushmi::Command::Runhook.3.gz

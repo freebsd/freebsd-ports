@@ -20,8 +20,6 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 PORTDOCS=	AUTHORS Changes README
 
 post-install:

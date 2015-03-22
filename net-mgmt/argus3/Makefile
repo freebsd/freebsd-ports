@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	bofh@freebsd.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic IP network transaction auditing tool
 
 LICENSE=	GPLv3

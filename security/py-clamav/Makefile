@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security python
 MASTER_SITES=	http://xael.org/norman/python/pyclamav/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding to libclamav written in C
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 
@@ -26,6 +29,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyclamav.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

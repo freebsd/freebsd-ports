@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.7.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -17,9 +17,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
-USE_XFCE=	configenv libgui libutil panel xfconf
+USE_XFCE=	libgui panel
 INSTALLS_ICONS=	yes
+
+CONFIGURE_ARGS=--disable-static
 
 .include <bsd.port.mk>

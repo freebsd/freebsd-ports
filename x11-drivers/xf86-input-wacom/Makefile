@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-wacom
-PORTVERSION=	0.27.0
-PORTREVISION=	1
+PORTVERSION=	0.29.0
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 
@@ -17,6 +16,7 @@ RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USES=		tar:bzip2 pathfix pkgconfig libtool
 USE_XORG=	xrandr xinerama
 XORG_CAT=	driver
+USE_RC_SUBR=	wacom
 SUB_FILES=	pkg-message
 CONFIGURE_ARGS=	--without-systemd-unit-dir \
 		--without-udev-rules-dir \

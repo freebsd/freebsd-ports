@@ -4,7 +4,7 @@
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.2.0
 CATEGORIES=	www
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	PHP script for displaying system information

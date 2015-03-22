@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.3.2
-PORTREVISION=	3
+PORTVERSION=	4.4.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
@@ -11,7 +10,7 @@ DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ljboiler@gmail.com
-COMMENT=	Eclipse Kepler SR-2
+COMMENT=	Eclipse Luna SR-2
 
 LICENSE=	EPL
 
@@ -27,11 +26,13 @@ USE_GL=		glu
 USE_GNOME=	gconf2 gtk20 gnomevfs2 libgnome libgnomeui
 USE_JAVA=	yes
 JAVA_OS=	native
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
+OPTIONS_DEFINE=		SWT_GTK3_SUPPORT
+SWT_GTK3_SUPPORT_DESC=	Enable GTK3 support in SWT (GUI)
 OPTIONS_SINGLE=			INSTALLPKG
 OPTIONS_SINGLE_INSTALLPKG=	FULL_SDK PLATFORM_SDK PLATFORM
 FULL_SDK_DESC=		Full SDK (JDT, PDE, source, API docs)
@@ -48,6 +49,12 @@ PATCH=		gpatch
 .endif
 PATCH_STRIP=	-p1
 
+.if ${PORT_OPTIONS:MSWT_GTK3_SUPPORT}
+USE_GNOME+=	gtk30
+LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+MVN_SETTINGS+=	-Dmachine_gtk3=1
+.endif
+
 WRKSRC=${WRKDIR}/eclipse.platform.releng.aggregator-${PORTVERSION}
 GITCLONE=${DISTDIR}/eclipse/eclipse-gitclone/eclipse.platform.releng.aggregator
 
@@ -57,7 +64,7 @@ MVN_SETTINGS+=	--offline
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
 E_SHORTARCH=	${ARCH:C/^i.86//:C/^amd//}
-ECLIPSE_BUILDID=M20140224-0627
+ECLIPSE_BUILDID=M20150204-1700
 SCRIPTS_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		E_SHORTARCH=${E_SHORTARCH}
 PORTDESTDIR=	${PREFIX}/lib/eclipse
@@ -88,7 +95,7 @@ post-patch:
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} M2_HOME=${LOCALBASE}/share/java/maven31 ${MVN_OPTS} \
 		mvn ${MVN_SETTINGS} ${MVN_TEST_FLAG} ${MVN_LOCAL_REPO} clean verify -Dnative=${ECLIPSE_WS}.freebsd.${ECLIPSE_ARCH} \
-		-DbuildId=${ECLIPSE_BUILDID} -Pupdate-branding-plugins)
+		-DbuildId=${ECLIPSE_BUILDID})
 
 do-install:
 	@${RM} -rf ${STAGEDIR}${PORTDESTDIR}

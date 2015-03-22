@@ -87,10 +87,14 @@ share/config.kcfg/sagebackend.kcfg
 share/config.kcfg/scilabbackend.kcfg
 share/config/cantor.knsrc
 share/config/cantor_kalgebra.knsrc
+share/config/cantor_lua.knsrc
 share/config/cantor_maxima.knsrc
+share/config/cantor_octave.knsrc
 share/config/cantor_python2.knsrc
+share/config/cantor_qalculate.knsrc
 %%R%%share/config/cantor_r.knsrc
 share/config/cantor_sage.knsrc
+share/config/cantor_scilab.knsrc
 share/doc/HTML/en/cantor/common
 share/doc/HTML/en/cantor/index.cache.bz2
 share/doc/HTML/en/cantor/index.docbook

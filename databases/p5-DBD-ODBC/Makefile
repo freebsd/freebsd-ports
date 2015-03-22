@@ -36,7 +36,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|-lodbc|& -pthread|g' ${WRKSRC}/Makefile
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/ODBC/ODBC.so
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

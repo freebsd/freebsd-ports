@@ -3,7 +3,7 @@
 
 PORTNAME=	j
 PORTVERSION=	504b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang linux java
 MASTER_SITES=	http://www.jsoftware.com/download/
 PKGNAMEPREFIX=	linux-

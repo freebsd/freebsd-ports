@@ -1,4 +1,4 @@
---- wpa_supplicant/main.c.orig	2014-10-09 14:41:31 UTC
+--- wpa_supplicant/main.c.orig	2015-03-15 17:30:39 UTC
 +++ wpa_supplicant/main.c
 @@ -173,6 +173,11 @@ int main(int argc, char *argv[])
  

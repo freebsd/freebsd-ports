@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-Devel-Events>=0:${PORTSDIR}/devel/p5-Devel-Events \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Tie-RefHash-Weak>=0:${PORTSDIR}/devel/p5-Tie-RefHash-Weak \
 		p5-Variable-Magic>=0:${PORTSDIR}/devel/p5-Variable-Magic
-RUN_DEPENDS:=	p5-Devel-Events>=0:${PORTSDIR}/devel/p5-Devel-Events \
-		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
-		p5-Tie-RefHash-Weak>=0:${PORTSDIR}/devel/p5-Tie-RefHash-Weak \
-		p5-Variable-Magic>=0:${PORTSDIR}/devel/p5-Variable-Magic
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 USES=		perl5

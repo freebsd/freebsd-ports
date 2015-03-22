@@ -1,0 +1,13 @@
+Volume Icon aims to be a lightweight volume control that sits in your systray.
+It is often used in conjuction with the lightweight tint2 panel/taskbar.
+
+Features
+
+- Change volume by scrolling on the systray icon
+- Ability to choose which channel to control
+- Several icon themes (with gtk theme as default)
+- Configurable external mixer
+- Volume Slider
+- Hotkey support
+
+WWW: http://softwarebakery.com/maato/volumeicon.html

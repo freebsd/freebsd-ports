@@ -1,6 +1,15 @@
---- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2014-02-25 12:00:25.000000000 -0500
-+++ src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c	2014-03-01 03:23:16.000000000 -0500
-@@ -89,8 +89,7 @@
+--- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2015-03-02 10:06:54.000000000 -0500
++++ src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c	2015-03-09 18:02:36.502945000 -0400
+@@ -80,8 +80,6 @@
+     struct resource   *pIrqRes;
+     /** Pointer to the IRQ handler. */
+     void              *pfnIrqHandler;
+-    /** VMMDev version */
+-    uint32_t           u32Version;
+ };
+ 
+ static MALLOC_DEFINE(M_VBOXDEV, "vboxdev_pci", "VirtualBox Guest driver PCI");
+@@ -89,8 +87,7 @@
  /*
   * Character device file handlers.
   */
@@ -10,7 +19,21 @@
  static d_ioctl_t  VBoxGuestFreeBSDIOCtl;
  static d_write_t  VBoxGuestFreeBSDWrite;
  static d_read_t   VBoxGuestFreeBSDRead;
-@@ -121,8 +120,7 @@
+@@ -103,13 +100,6 @@
+ static int  VBoxGuestFreeBSDAddIRQ(device_t pDevice, void *pvState);
+ static int  VBoxGuestFreeBSDISR(void *pvState);
+ 
+-/*
+- * Available functions for kernel drivers.
+- */
+-DECLVBGL(int)    VBoxGuestFreeBSDServiceCall(void *pvSession, unsigned uCmd, void *pvData, size_t cbData, size_t *pcbDataReturned);
+-DECLVBGL(void *) VBoxGuestFreeBSDServiceOpen(uint32_t *pu32Version);
+-DECLVBGL(int)    VBoxGuestFreeBSDServiceClose(void *pvSession);
+-
+ #ifndef D_NEEDMINOR
+ # define D_NEEDMINOR 0
+ #endif
+@@ -121,8 +111,7 @@
  {
      .d_version =        D_VERSION,
      .d_flags =          D_TRACKCLOSE | D_NEEDMINOR,
@@ -20,7 +43,7 @@
      .d_ioctl =          VBoxGuestFreeBSDIOCtl,
      .d_read =           VBoxGuestFreeBSDRead,
      .d_write =          VBoxGuestFreeBSDWrite,
-@@ -130,106 +128,45 @@
+@@ -130,106 +119,45 @@
      .d_name =           DEVICE_NAME
  };
  
@@ -141,7 +164,7 @@
      }
  
      LogRel((DEVICE_NAME ":VBoxGuestFreeBSDOpen: failed. rc=%d\n", rc));
-@@ -237,47 +174,19 @@
+@@ -237,47 +165,19 @@
  }
  
  /**
@@ -195,7 +218,84 @@
  
      /*
       * Validate the request wrapper.
-@@ -361,12 +270,14 @@
+@@ -294,43 +194,46 @@
+         Log((DEVICE_NAME ": VBoxGuestFreeBSDIOCtl: bad magic %#x; pArg=%p Cmd=%lu.\n", ReqWrap->u32Magic, pvData, ulCmd));
+         return EINVAL;
+     }
+-    if (RT_UNLIKELY(   ReqWrap->cbData == 0
+-                    || ReqWrap->cbData > _1M*16))
++
++    if (RT_UNLIKELY(ReqWrap->cbData > _1M*16))
+     {
+         printf(DEVICE_NAME ": VBoxGuestFreeBSDIOCtl: bad size %#x; pArg=%p Cmd=%lu.\n", ReqWrap->cbData, pvData, ulCmd);
+         return EINVAL;
+     }
+ 
+     /*
+-     * Read the request.
++     * Read the request payload if any; requests like VBOXGUEST_IOCTL_CANCEL_ALL_WAITEVENTS have no data payload.
+      */
+-    void *pvBuf = RTMemTmpAlloc(ReqWrap->cbData);
+-    if (RT_UNLIKELY(!pvBuf))
++    void *pvBuf = NULL;
++    if (RT_LIKELY(ReqWrap->cbData > 0))
+     {
+-        Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: RTMemTmpAlloc failed to alloc %d bytes.\n", ReqWrap->cbData));
+-        return ENOMEM;
+-    }
++        pvBuf = RTMemTmpAlloc(ReqWrap->cbData);
++        if (RT_UNLIKELY(!pvBuf))
++        {
++            Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: RTMemTmpAlloc failed to alloc %d bytes.\n", ReqWrap->cbData));
++            return ENOMEM;
++        }
+ 
+-    rc = copyin((void *)(uintptr_t)ReqWrap->pvDataR3, pvBuf, ReqWrap->cbData);
+-    if (RT_UNLIKELY(rc))
+-    {
+-        RTMemTmpFree(pvBuf);
+-        Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: copyin failed; pvBuf=%p pArg=%p Cmd=%lu. rc=%d\n", pvBuf, pvData, ulCmd, rc));
+-        return EFAULT;
+-    }
+-    if (RT_UNLIKELY(   ReqWrap->cbData != 0
+-                    && !VALID_PTR(pvBuf)))
+-    {
+-        RTMemTmpFree(pvBuf);
+-        Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: pvBuf invalid pointer %p\n", pvBuf));
+-        return EINVAL;
++        rc = copyin((void *)(uintptr_t)ReqWrap->pvDataR3, pvBuf, ReqWrap->cbData);
++        if (RT_UNLIKELY(rc))
++        {
++            RTMemTmpFree(pvBuf);
++            Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: copyin failed; pvBuf=%p pArg=%p Cmd=%lu. rc=%d\n", pvBuf, pvData, ulCmd, rc));
++            return EFAULT;
++        }
++        if (RT_UNLIKELY(!VALID_PTR(pvBuf)))
++        {
++            RTMemTmpFree(pvBuf);
++            Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: pvBuf invalid pointer %p\n", pvBuf));
++            return EINVAL;
++        }
+     }
+     Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: pSession=%p pid=%d.\n", pSession, (int)RTProcSelf()));
+ 
+     /*
+      * Process the IOCtl.
+      */
+-    size_t cbDataReturned;
++    size_t cbDataReturned = 0;
+     rc = VBoxGuestCommonIOCtl(ulCmd, &g_DevExt, pSession, pvBuf, ReqWrap->cbData, &cbDataReturned);
+     if (RT_SUCCESS(rc))
+     {
+@@ -355,18 +258,21 @@
+         Log((DEVICE_NAME ":VBoxGuestFreeBSDIOCtl: VBoxGuestCommonIOCtl failed. rc=%d\n", rc));
+         rc = EFAULT;
+     }
+-    RTMemTmpFree(pvBuf);
++    if (pvBuf)
++        RTMemTmpFree(pvBuf);
+     return rc;
+ }
  
  static int VBoxGuestFreeBSDPoll (struct cdev *pDev, int fEvents, struct thread *td)
  {
@@ -213,7 +313,7 @@
          Log((DEVICE_NAME "::Poll: no state data for %s\n", devtoname(pDev)));
          return (fEvents & (POLLHUP|POLLIN|POLLRDNORM|POLLOUT|POLLWRNORM));
      }
-@@ -407,10 +318,7 @@
+@@ -407,10 +313,7 @@
      /*
       * Reverse what we did in VBoxGuestFreeBSDAttach.
       */
@@ -225,7 +325,7 @@
  
      VBoxGuestFreeBSDRemoveIRQ(pDevice, pState);
  
-@@ -562,18 +470,21 @@
+@@ -562,18 +465,21 @@
                  if (RT_SUCCESS(rc))
                  {
                      /*

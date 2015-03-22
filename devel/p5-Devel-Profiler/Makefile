@@ -20,7 +20,7 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} > 501600
-IGNORE=	Devel::DProf has been removed from the Perl core, use Devel::NYTProf instead
+IGNORE=	Devel::DProf has been removed from the Perl core; use Devel::NYTProf instead
 .endif
 
 .include <bsd.port.post.mk>

@@ -3,14 +3,15 @@
 
 PORTNAME=	algae
 PORTVERSION=	4.3.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programming language for numerical analysis
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_ia64=	does not compile
 BROKEN_powerpc=	does not compile
@@ -24,5 +25,8 @@ CONFIGURE_ARGS=	--disable-dlmalloc --without-fftw --without-blas \
 PLIST_SUB=	ALGAE_VERSION=${PORTVERSION}
 
 INFO=		${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

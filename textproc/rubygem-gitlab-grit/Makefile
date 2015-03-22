@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for extracting information from a git repository
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.9:${PORTSDIR}/textproc/rubygem-charlock_holmes \
 		rubygem-diff-lcs>=1.1:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		rubygem-mime-types>=1.15:${PORTSDIR}/misc/rubygem-mime-types \

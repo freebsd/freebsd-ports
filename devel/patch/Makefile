@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	patch
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,9 +11,10 @@ COMMENT=	GNU patch utility
 
 LICENSE=	GPLv3
 
-USES=		charsetfix gmake tar:xz
+USES=		cpe charsetfix gmake tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-silent-rules
+CPE_VENDOR=	gnu
 
 PLIST_FILES=	bin/gpatch man/man1/gpatch.1.gz
 

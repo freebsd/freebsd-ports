@@ -27,4 +27,3 @@ bin/bookmarkbridge
 %%DATADIR%%/viewing_your_bookmarks.html
 %%DATADIR%%/where_to_find_bookmarkbridge.html
 %%DATADIR%%/why_bookmarkbridge_is_free.html
-@dirrm %%DATADIR%%

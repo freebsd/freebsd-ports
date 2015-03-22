@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -66,11 +66,13 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
+		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
+# From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
+AOOTAG=		AOO420m1\(Build:9800\)
 SVNREVISION=	1652526
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150118.tar.gz
@@ -80,7 +82,7 @@ AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 .if defined(AOORC)
 AOOSUFFIX=	${AOOVERSION}-${AOORC}
 OOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-AOODISTTAG=	
+AOODISTTAG=
 .else
 AOOSUFFIX=	${PORTVERSION}
 OOOSRC=		apache-openoffice-r${SVNREVISION}-src${EXTRACT_SUFX}
@@ -88,6 +90,7 @@ AOODISTTAG=	:snap
 .endif
 
 OOODIR=			openoffice${AOOVERSION1}
+AOOUDIR=		.openoffice.org\/${AOOVERSION1}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 EXECBASE?=		openoffice-${AOOSUFFIX}
 DIST_SUBDIR=		openoffice
@@ -96,39 +99,54 @@ NO_LATEST_LINK=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-BROKEN=		Fails to compile in PC-BSD poudriere
+USE_AUTOTOOLS=	autoconf
+USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
+USE_GSTREAMER=	yes
+USE_JAVA=	yes
+JAVA_BUILD=	jdk
+JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6+
+USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
-USE_GL=		gl glu
-USE_GSTREAMER=	yes
-USE_GCC=	yes
-USES+=		bison desktop-file-utils gmake perl5 pkgconfig python tar:xz
-USE_PERL5=	build
+USES=		bison compiler desktop-file-utils gmake perl5 pkgconfig python \
+		tar:xz
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	GCONF GNOMEVFS CCACHE
-OPTIONS_DEFAULT=GCONF GNOMEVFS
-GNOMEVFS_DESC=	Enable GNOME Virtual File System
-CCACHE_DESC=	Mimimize compile time of C/C++ programs
+OPTIONS_DEFINE=			CUPS GCONF GNOMEVFS CCACHE
+OPTIONS_DEFAULT=		CUPS GCONF GNOMEVFS
+GNOMEVFS_DESC=			Enable GNOME Virtual File System
+CCACHE_DESC=			Mimimize compile time of C/C++ programs
 
-GCONF_USE=	GNOME=gconf2
-GCONF_CONFIGURE_OFF=--disable-gconf
+CUPS_CONFIGURE_ENABLE=		cups
+CUPS_LIB_DEPENDS=		libcups.so:${PORTSDIR}/print/cups-client
 
-GNOMEVFS_USE=	GNOME=gnomevfs2
-GNOMEVFS_CONFIGURE_OFF=--disable-gnome-vfs
+GCONF_USE=			GNOME=gconf2
+GCONF_CONFIGURE_ENABLE=		gconf
 
-.include <bsd.port.options.mk>
+GNOMEVFS_USE=			GNOME=gnomevfs2
+GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
 
 .include <bsd.port.pre.mk>
 
 .include <${FILESDIR}/Makefile.localized>
 
-USE_JAVA=	yes
-JAVA_BUILD=	jdk
-JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6+
+.if ${COMPILER_TYPE} == clang
+. if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
+BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
+CPP=			${LOCALBASE}/bin/clang-cpp35
+CC=			${LOCALBASE}/bin/clang35
+CXX=			${LOCALBASE}/bin/clang++35
+. endif
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-I${LOCALBASE}/lib
+SUBST=			s+%%RPATH%%++;s/%%HAVE_STL_INCLUDE_PATH%%/-DHAVE_STL_INCLUDE_PATH/;s/-fno-enforce-eh-specs//
+.else
+USE_GCC=		yes
+SUBST=			s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+;s/%%HAVE_STL_INCLUDE_PATH%%//
+.endif
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
@@ -155,16 +173,16 @@ OOOCXX=		${CCACHE_PREFIX} ${CXX}
 OOOCC=		${CC}
 OOOCXX=		${CXX}
 .endif
+
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
 BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
-SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
+SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
 
 .if defined(DISABLE_MAKE_JOBS)
 MAKE_JOBS_NUMBER=	4
@@ -220,8 +238,6 @@ CONFIGURE_ARGS+=							\
 			--enable-verbose				\
 			--with-system-vigra				\
 			--enable-wiki-publisher				\
-			--x-includes={LOCALBASE}/include		\
-			--x-libraries=${LOCALBASE}lib			\
 			--with-system-zlib
 # system-graphite causes breakage when compiled with clang and linked
 # with libc++ because aoo is compiled with gcc and linked with libstdc++.
@@ -260,17 +276,14 @@ post-extract:
 	${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
-.if defined (USE_GCC)
-	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/inc/unxfbsd.mk
+.if defined (USE_GCC) && ${ARCH} == i386
 	# g++49 -Os sometimes leaves inline class methods undefined
 	if [ ${CXX} = g++49 ]; then \
 		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
 		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
-.else
-	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
 
 pre-configure:
@@ -294,7 +307,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
 	cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
 	${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
-	${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/${AOOVERSION1}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
+	${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/${AOOUDIR}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
 	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}

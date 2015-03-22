@@ -236,21 +236,4 @@ etc/prewikka/prewikka.conf-dist
 %%DATADIR%%/htdocs/images/table_order_up.gif
 %%DATADIR%%/htdocs/js/functions.js
 %%DATADIR%%/htdocs/js/jquery.js
-@exec mkdir -p %%DATADIR%%/htdocs/generated_images
-@dirrm %%DATADIR%%/htdocs/js
-@dirrm %%DATADIR%%/htdocs/images
-@dirrm %%DATADIR%%/htdocs/generated_images
-@dirrm %%DATADIR%%/htdocs/css
-@dirrm %%DATADIR%%/htdocs
-@dirrm %%DATADIR%%/database
-@dirrm %%DATADIR%%/cgi-bin
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/views
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/templates
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/cgi
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/modules/auth
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka/modules
-@dirrm %%PYTHON_SITELIBDIR%%/prewikka
-@dirrm etc/prewikka
+@dir %%DATADIR%%/htdocs/generated_images

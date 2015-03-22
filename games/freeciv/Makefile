@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -23,11 +22,13 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
 		--enable-aimodules --enable-shared \
 		--enable-fcdb=sqlite3
 
+PORTDATA=	*
+
 OPTIONS_DEFINE?=	NLS X11 SDL MYSQL IPV6 DOCS
 OPTIONS_DEFAULT?=	NLS X11 IPV6
 OPTIONS_SUB=		yes
 SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
-SDL_USE=		SDL=sdl,image,ttf
+SDL_USE=		SDL=sdl,image,ttf,gfx
 MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
 MYSQL_USE=		MYSQL=yes
 IPV6_CONFIGURE_EANBALE=	ipv6
@@ -55,7 +56,7 @@ CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
 PLIST_SUB+=	GTK=""
 .else
-CONFIGURE_ARGS+=--enable-client=no
+CONFIGURE_ARGS+=--enable-client=no --enable-fcmp=no
 CONFLICTS=	freeciv-[0-9]*
 PLIST_SUB+=	GTK="@comment "
 .endif
@@ -64,6 +65,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e \
 		'/pkgdatadir/s|[(]datadir)/@PACKAGE@|(prefix)/${DATADIR_REL}|'
 	${REINPLACE_CMD} 's/minor=99/minor=0/' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/(LIB_GGZMOD)/& $$(LIB_GGZ_GTK)/' \
+		${WRKSRC}/client/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MX11}
@@ -71,7 +74,6 @@ post-install:
 	cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
 .endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
-	-${RMDIR} ${STAGEDIR}${PREFIX}/lib/fcai
 	${RM} ${STAGEDIR}${PREFIX}/etc/ggz.modules
 
 .include <bsd.port.mk>

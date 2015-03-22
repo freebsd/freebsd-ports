@@ -514,8 +514,10 @@
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-JavaScript-RPC
+    SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
+    SUBDIR += p5-MaxMind-DB-Writer
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS
@@ -697,6 +699,7 @@
     SUBDIR += p5-Net-sFlow
     SUBDIR += p5-Net-uFTP
     SUBDIR += p5-NetAddr-IP-Count
+    SUBDIR += p5-NetAddr-MAC
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
     SUBDIR += p5-OurNet-BBS
@@ -839,6 +842,7 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
+    SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
@@ -928,6 +932,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pysocks
     SUBDIR += py-pysphere
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
@@ -966,6 +971,7 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
+    SUBDIR += quagga23
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted
@@ -1021,9 +1027,11 @@
     SUBDIR += rubygem-amqp-utils
     SUBDIR += rubygem-amqp067
     SUBDIR += rubygem-aws-s3
+    SUBDIR += rubygem-aws-ses
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-bunny060
     SUBDIR += rubygem-connection_pool
+    SUBDIR += rubygem-dogapi
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
     SUBDIR += rubygem-epp-client-afnic
@@ -1067,7 +1075,6 @@
     SUBDIR += rubygem-omniauth-openid
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
-    SUBDIR += rubygem-openid
     SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
@@ -1079,6 +1086,7 @@
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-ruby-growl
+    SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter

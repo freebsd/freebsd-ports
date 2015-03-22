@@ -25,7 +25,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/eulers-method-exp-run.gel
 %%DATADIR%%/examples/eulers-method-graphs-exp.gel
 %%DATADIR%%/examples/fourier-series-animation.gel
-%%DATADIR%%/examples/fourier-series-half-sawtooth.gel
+%%DATADIR%%/examples/fourier-series-plotting.gel
 %%DATADIR%%/examples/laplace-fdm.gel
 %%DATADIR%%/examples/linapprox.gel
 %%DATADIR%%/examples/lorenz.gel
@@ -147,10 +147,16 @@ share/gnome/help/genius/ru/figures/parametric.png
 share/gnome/help/genius/ru/figures/parametric_graph.png
 share/gnome/help/genius/ru/figures/surface_graph.png
 share/gnome/help/genius/ru/genius.xml
+share/icons/hicolor/16x16/apps/gnome-genius.png
+share/icons/hicolor/22x22/apps/gnome-genius.png
+share/icons/hicolor/24x24/apps/gnome-genius.png
+share/icons/hicolor/256x256/apps/gnome-genius.png
 share/icons/hicolor/32x32/apps/genius-stock-plot.png
 share/icons/hicolor/32x32/apps/gnome-genius.png
 share/icons/hicolor/48x48/apps/genius-stock-plot.png
 share/icons/hicolor/48x48/apps/gnome-genius.png
+share/icons/hicolor/8x8/apps/gnome-genius.png
+share/icons/hicolor/scalable/apps/gnome-genius.svg
 share/locale/ar/LC_MESSAGES/genius.mo
 share/locale/az/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
@@ -180,7 +186,6 @@ share/locale/ne/LC_MESSAGES/genius.mo
 share/locale/nl/LC_MESSAGES/genius.mo
 share/locale/oc/LC_MESSAGES/genius.mo
 share/locale/pa/LC_MESSAGES/genius.mo
-share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/pt_BR/LC_MESSAGES/genius.mo
 share/locale/ro/LC_MESSAGES/genius.mo
@@ -193,9 +198,9 @@ share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 share/locale/zh_CN/LC_MESSAGES/genius.mo
 share/locale/zh_TW/LC_MESSAGES/genius.mo
-share/mime/packages/genius.xml
 share/mime-info/genius.keys
 share/mime-info/genius.mime
+share/mime/packages/genius.xml
 share/omf/genius/genius-C.omf
 share/omf/genius/genius-cs.omf
 share/omf/genius/genius-de.omf

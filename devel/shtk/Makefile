@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
 
-MAINTAINER=	jmmv@freebsd.org
+MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Application toolkit for POSIX-compliant shell scripts
 
 LICENSE=	BSD3CLAUSE

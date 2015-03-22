@@ -3,7 +3,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	1.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} ${MASTER_SITE_PERL_CPAN:S/$/:wxsc/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT Wx/:wxsc
@@ -50,7 +50,6 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-MockObject>=1.09:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-NoWarnings>=0.084:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Script>=1.07:${PORTSDIR}/devel/p5-Test-Script \
-		p5-version>=0.80:${PORTSDIR}/devel/p5-version \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-Pod-POM>=0.17:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-POD2-Base>=0.043:${PORTSDIR}/textproc/p5-POD2-Base \

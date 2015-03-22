@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.7.0
+PORTVERSION=	2.9.7.2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -107,8 +107,8 @@ CONFIGURE_ARGS+=--enable-reload \
 		--with-dnet-libraries=${LIBNET_LIBDIR}
 
 post-patch:
-	@${FIND} ${WRKSRC} \( -name 'Makefile.in' -o -name snort.conf \) -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
+#@${FIND} ${WRKSRC} \( -name 'Makefile.in' -o -name snort.conf \) -print0 | \
+#${XARGS} -0 ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
 
 	@${REINPLACE_CMD} "s,/etc/snort.conf,${ETCDIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8

@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch-api
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby API for Elasticsearch
+
+LICENSE=	APACHE20
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

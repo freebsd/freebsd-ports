@@ -6,6 +6,7 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstructure_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstyle_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgtinydocument_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qtsvgglobal_p.h
 %%QT_INCDIR%%/QtSvg/QGraphicsSvgItem
 %%QT_INCDIR%%/QtSvg/QSvgGenerator
 %%QT_INCDIR%%/QtSvg/QSvgRenderer

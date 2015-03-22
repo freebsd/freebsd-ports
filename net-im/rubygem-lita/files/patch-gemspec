@@ -1,5 +1,5 @@
---- lita-3.3.1.gemspec.orig	2014-09-08 22:00:06 UTC
-+++ lita-3.3.1.gemspec
+--- lita-4.3.0.gemspec.orig	2014-09-08 22:00:06 UTC
++++ lita-4.3.0.gemspec
 @@ -123,20 +123,6 @@
        - !ruby/object:Gem::Version
          version: 1.5.2

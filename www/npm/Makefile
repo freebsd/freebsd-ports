@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,11 +12,12 @@ COMMENT=	Node package manager
 LICENSE=	MIT
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	IOJS NODE NODE_DEVEL
+OPTIONS_SINGLE_BACKEND=	IOJS NODE NODE_DEVEL NODE010
 OPTIONS_DEFAULT=NODE
 IOJS_DESC=	Use www/iojs as backend
 NODE_DESC=	Use www/node as backend
 NODE_DEVEL_DESC=Use www/node-devel as backend
+NODE010_DESC=	Use www/node010 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 NO_BUILD=	yes
@@ -31,6 +32,7 @@ CPE_PRODUCT=	node_packaged_modules
 IOJS_RUN_DEPENDS=	iojs>=1.0.0:${PORTSDIR}/www/iojs
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_RUN_DEPENDS=	node>=0.8.0:${PORTSDIR}/www/node
+NODE010_RUN_DEPENDS=	node010>=0.8.0:${PORTSDIR}/www/node010
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
@@ -50,9 +52,9 @@ MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
 
 GITHUB_PROJECT=	${PORTNAME}
-GITHUB_RELEASES=https://github.com/npm/npm/releases/latest
+GITHUB_RELEASES=https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/releases/latest
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
-GITHUB_USER=	npm
+GITHUB_USER=	${PORTNAME}
 GITHUB_VERSION=	v${MS_VERSION}
 
 maketar: do-clean

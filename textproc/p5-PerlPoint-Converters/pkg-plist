@@ -1,12 +1,12 @@
 bin/pp2html
 bin/pp2latex
-%%PERL5_MAN3%%/Bundle::PerlPoint.3.gz
-%%PERL5_MAN3%%/PerlPoint::Converters.3.gz
-%%PERL5_MAN3%%/PerlPoint::Tags::HTML.3.gz
-%%PERL5_MAN3%%/PerlPoint::Tags::LaTeX.3.gz
 %%SITE_PERL%%/Bundle/PerlPoint.pm
 %%SITE_PERL%%/PerlPoint/Converters.pm
 %%SITE_PERL%%/PerlPoint/Tags/HTML.pm
 %%SITE_PERL%%/PerlPoint/Tags/LaTeX.pm
+%%PERL5_MAN3%%/Bundle::PerlPoint.3.gz
+%%PERL5_MAN3%%/PerlPoint::Converters.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::HTML.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::LaTeX.3.gz
 man/man1/pp2html.1.gz
 man/man1/pp2latex.1.gz

@@ -2,7 +2,6 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -36,10 +35,7 @@ SHEBANG_FILES=	khelpcenter/searchhandlers/*.pl \
 		khelpcenter/searchhandlers/*.pl.cmake \
 		kioslave/info/kde-info2html
 
-OPTIONS_DEFINE=	NEPOMUK PULSEAUDIO ZEITGEIST
-
-NEPOMUK_DESC=	Nepomuk semantic desktop via Virtuoso
-NEPOMUK_RUN_DEPENDS=	virtuoso-t:${PORTSDIR}/databases/virtuoso
+OPTIONS_DEFINE=	PULSEAUDIO ZEITGEIST
 
 PULSEAUDIO_DESC=Audio configuration via PulseAudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \

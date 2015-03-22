@@ -57,11 +57,6 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp
-RUN_DEPENDS+=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp
-.endif
-
 .if ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils

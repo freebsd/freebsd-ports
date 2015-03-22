@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mousepad
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	editors xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -14,21 +15,19 @@ COMMENT=	Simple text editor for the Xfce Desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=	desktop-file-utils gettext gmake pathfix pkgconfig perl5 tar:bzip2
-USE_GNOME=	glib20 gtk20 intltool intlhack gtksourceview2
-USE_XFCE=	configenv
-
-OPTIONS_DEFINE=	DBUS
-OPTIONS_DEFAULT=	DBUS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-dbus
-.else
-CONFIGURE_ARGS+=--disable-dbus
-.endif
+
+GNU_CONFIGURE=	yes
+USES=	desktop-file-utils gettext gmake libtool pkgconfig perl5 tar:bzip2
+USE_GNOME=	glib20 intltool intlhack
+
+OPTIONS_DEFINE=	GTK3
+GTK3_CONFIGURE_ENABLE=	gtk3
+GTK3_USE=	gnome=gtk30,gtksourceview3
+GTK3_USES=	xfce:gtk3
+GTK3_USE_OFF=	gnome=gtk20,gtksourceview2
+GTK3_USES_OFF=	xfce
+
+GLIB_SCHEMAS=	org.xfce.mousepad.gschema.xml
 
 .include <bsd.port.mk>

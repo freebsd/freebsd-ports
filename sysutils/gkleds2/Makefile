@@ -3,13 +3,16 @@
 
 PORTNAME=	gkleds2
 PORTVERSION=	0.8.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://heim.ifi.uio.no/~oyvinha/files/files/
 DISTNAME=	gkleds-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
+
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
@@ -29,7 +32,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/gkleds.so \
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/gkleds.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>

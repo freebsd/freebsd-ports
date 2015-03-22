@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tig
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 

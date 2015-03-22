@@ -6,6 +6,5 @@ library, and format support the creation, access, and sharing of
 scientific data. The netCDF software was developed at the Unidata
 Program Center in Boulder, Colorado.
 
-Git repository: https://github.com/Unidata/netcdf-c
-
 WWW: http://www.unidata.ucar.edu/software/netcdf/
+WWW: https://github.com/Unidata/netcdf-c

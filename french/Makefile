@@ -11,6 +11,7 @@
     SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += eric4
+    SUBDIR += eric6
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext
     SUBDIR += gimp-help

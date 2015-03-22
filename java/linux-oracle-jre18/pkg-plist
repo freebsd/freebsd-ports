@@ -48,6 +48,7 @@
 %%T%%/lib/deploy/messages_zh_TW.properties
 %%T%%/lib/deploy/mixcode_s.png
 %%T%%/lib/deploy/splash.gif
+%%T%%/lib/deploy/splash@2x.gif
 %%T%%/lib/desktop/applications/sun-java.desktop
 %%T%%/lib/desktop/applications/sun-javaws.desktop
 %%T%%/lib/desktop/applications/sun_java.desktop
@@ -139,10 +140,12 @@
 %%T%%/lib/i386/client/libjvm.so
 %%T%%/lib/i386/jli/libjli.so
 %%T%%/lib/i386/jvm.cfg
-%%T%%/lib/i386/libavplugin.so
+%%T%%/lib/i386/libavplugin-53.so
+%%T%%/lib/i386/libavplugin-54.so
 %%T%%/lib/i386/libawt.so
 %%T%%/lib/i386/libawt_headless.so
 %%T%%/lib/i386/libawt_xawt.so
+%%T%%/lib/i386/libbci.so
 %%T%%/lib/i386/libdcpr.so
 %%T%%/lib/i386/libdecora_sse.so
 %%T%%/lib/i386/libdeploy.so
@@ -185,6 +188,7 @@
 %%T%%/lib/i386/libprism_common.so
 %%T%%/lib/i386/libprism_es2.so
 %%T%%/lib/i386/libprism_sw.so
+%%T%%/lib/i386/libresource.so
 %%T%%/lib/i386/libsctp.so
 %%T%%/lib/i386/libsplashscreen.so
 %%T%%/lib/i386/libsunec.so

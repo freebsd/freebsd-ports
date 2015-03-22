@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ski
-PORTVERSION=	6.8
+PORTVERSION=	6.9
 CATEGORIES=	games python
 MASTER_SITES=	http://catb.org/~esr/ski/
 
@@ -17,22 +17,21 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
 		share/applications/${PORTNAME}.desktop \
+		share/appdata/${PORTNAME}.xml \
 		share/pixmaps/${PORTNAME}.png
 
-PORTDOCS=	README
+PORTDOCS=	NEWS README
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|; \
+		s|/usr/share/man|${PREFIX}/man|; \
+		s|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 		${WRKSRC}/${PORTNAME}
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/man/man6/
-
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

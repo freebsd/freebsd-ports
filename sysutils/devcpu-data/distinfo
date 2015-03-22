@@ -1,4 +1,4 @@
 SHA256 (microcode-20150121.tgz) = 23353b93bb421971496cea5e9f9d390ce0ed22580a8cc45ae7b3b322dcd8f6b3
 SIZE (microcode-20150121.tgz) = 850761
-SHA256 (amd-ucode-latest.tar.bz2) = 4bcf9258c5d9e631828a28ae013ae487cb90940661e56af22894d1f87f6bc2f6
-SIZE (amd-ucode-latest.tar.bz2) = 18303
+SHA256 (amd-ucode-2014-12-01.tar.bz2) = e8f37ed12955585a625ee7cd48d89f9a04ceb2afa36081b52cc59d08a3bb8293
+SIZE (amd-ucode-2014-12-01.tar.bz2) = 20585

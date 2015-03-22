@@ -19,8 +19,8 @@ BUILD_DEPENDS=	p5-Audio-MPD-Common>=0:${PORTSDIR}/audio/p5-Audio-MPD-Common \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
 		p5-MooseX-SemiAffordanceAccessor>=0:${PORTSDIR}/devel/p5-MooseX-SemiAffordanceAccessor \
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Corpus-Audio-MPD>=1.113282:${PORTSDIR}/audio/p5-Test-Corpus-Audio-MPD
 

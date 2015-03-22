@@ -3,6 +3,7 @@
 
 PORTNAME=	croscorefonts
 PORTVERSION=	1.23.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
 		LOCAL/sunpoet
@@ -15,32 +16,16 @@ COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 #LICENSE_FILE=	${WRKSRC}/LICENSE
 #LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-
+USES=		fonts
 USE_XORG=	x11
 
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
-
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	ChromeOS
-FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=	fonts.dir fonts.scale
-
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-
-do-build:
-	cd ${WRKSRC} && ${MKFONTSCL_CMD}
-	${REINPLACE_CMD} -e 's|-misc-|-google-|' ${WRKSRC}/fonts.scale
-	cd ${WRKSRC} && ${MKFONTDIR_CMD}
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTDIR}
-	cd ${WRKSRC} &&	\
-	${INSTALL_DATA} ${INSTDAT} *.ttf ${STAGEDIR}${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

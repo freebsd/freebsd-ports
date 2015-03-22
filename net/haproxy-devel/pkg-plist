@@ -53,6 +53,12 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/todo.cttproxy
+%%PORTDOCS%%%%DOCSDIR%%/lua-api/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/lua-api/_static/channel.fig
+%%PORTDOCS%%%%DOCSDIR%%/lua-api/_static/channel.png
+%%PORTDOCS%%%%DOCSDIR%%/lua-api/conf.py
+%%PORTDOCS%%%%DOCSDIR%%/lua-api/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/network-namespaces.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.cfg

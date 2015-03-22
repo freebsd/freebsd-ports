@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.082810
+PORTVERSION=	0.082820
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:${PORTSDIR}/devel/p5-Class-Acc
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Find>=0.07:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Moo>=1.006001:${PORTSDIR}/devel/p5-Moo \
+		p5-Moo>=2:${PORTSDIR}/devel/p5-Moo \
 		p5-Path-Class>=0.18:${PORTSDIR}/devel/p5-Path-Class \
 		p5-SQL-Abstract>=1.81:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
@@ -61,6 +61,8 @@ TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5
 
 OPTIONS_DEFINE=	SQLT
 SQLT_DESC=	SQL::Translator (generate DDL from schema)
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		perl5
 USE_PERL5=	configure

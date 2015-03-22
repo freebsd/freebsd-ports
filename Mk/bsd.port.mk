@@ -1352,7 +1352,12 @@ _SUF2=	,${PORTEPOCH}
 
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
-DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
+DISTVERSIONFULL=	${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
+.if defined(USE_GITHUB) && defined(GH_TAGNAME) && !defined(GH_COMMIT)
+DISTNAME?=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
+.else
+DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
+.endif
 
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 
@@ -1468,10 +1473,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
-.if defined(USE_XFCE)
-.include "${PORTSDIR}/Mk/bsd.xfce.mk"
-.endif
-
 .if defined(USE_KDE4) || defined(KDE4_BUILDENV)
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
@@ -1554,7 +1555,15 @@ _POSTMKINCLUDED=	yes
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
+.  if defined(GH_COMMIT)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+.  else
+.    if defined(GH_TAGNAME)
+WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
+.    else
+WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
+.    endif
+.  endif
 .endif
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}
@@ -1903,10 +1912,6 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 
 .if defined(USE_MATE)
 .include "${PORTSDIR}/Mk/bsd.mate.mk"
-.endif
-
-.if defined(USE_XFCE)
-.include "${PORTSDIR}/Mk/bsd.xfce.mk"
 .endif
 
 .if defined(USE_KDE4)

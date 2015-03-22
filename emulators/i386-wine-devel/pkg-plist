@@ -838,6 +838,7 @@ include/wine/windows/xmllite.idl
 include/wine/windows/zmouse.h
 lib32/.libGL/dri/i915_dri.so
 lib32/.libGL/dri/i965_dri.so
+%%OSREL10%%lib32/.libGL/dri/kms_swrast_dri.so
 %%OSREL11%%lib32/.libGL/dri/kms_swrast_dri.so
 lib32/.libGL/dri/r200_dri.so
 lib32/.libGL/dri/r300_dri.so
@@ -848,6 +849,7 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
+%%OSREL10%%lib32/libLLVM-3.5.so
 %%OSREL11%%lib32/libLLVM-3.5.so
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
@@ -862,10 +864,10 @@ lib32/libXi.so.6
 lib32/libXrandr.so.2
 lib32/libXrender.so.1
 lib32/libXxf86vm.so.1
+%%OSREL10%%lib32/libdevq.so.0
 %%OSREL11%%lib32/libdevq.so.0
 %%OSREL8%%lib32/libdricore9.1.7.so.1
 %%OSREL9%%lib32/libdricore9.1.7.so.1
-%%OSREL10%%lib32/libdricore9.1.7.so.1
 lib32/libdrm.so.2
 lib32/libdrm_intel.so.1
 lib32/libdrm_radeon.so.1
@@ -900,7 +902,6 @@ lib32/libjpeg.so.8
 lib32/liblcms2.so.2
 %%OSREL8%%lib32/libllvmradeon9.1.7.so
 %%OSREL9%%lib32/libllvmradeon9.1.7.so
-%%OSREL10%%lib32/libllvmradeon9.1.7.so
 %%OSREL8-COMPHOLIO%%lib32/libnettle.so.4
 %%OSREL9-COMPHOLIO%%lib32/libnettle.so.4
 %%OSREL10-COMPHOLIO%%lib32/libnettle.so.4
@@ -1825,6 +1826,11 @@ lib32/wine/fakedlls/wuapi.dll
 lib32/wine/fakedlls/wuaueng.dll
 lib32/wine/fakedlls/wusa.exe
 lib32/wine/fakedlls/x3daudio1_1.dll
+lib32/wine/fakedlls/x3daudio1_2.dll
+lib32/wine/fakedlls/x3daudio1_3.dll
+lib32/wine/fakedlls/x3daudio1_4.dll
+lib32/wine/fakedlls/x3daudio1_5.dll
+lib32/wine/fakedlls/x3daudio1_6.dll
 lib32/wine/fakedlls/x3daudio1_7.dll
 lib32/wine/fakedlls/xapofx1_1.dll
 lib32/wine/fakedlls/xapofx1_3.dll
@@ -2408,6 +2414,11 @@ lib32/wine/wuapi.dll.so
 lib32/wine/wuaueng.dll.so
 lib32/wine/wusa.exe.so
 lib32/wine/x3daudio1_1.dll.so
+lib32/wine/x3daudio1_2.dll.so
+lib32/wine/x3daudio1_3.dll.so
+lib32/wine/x3daudio1_4.dll.so
+lib32/wine/x3daudio1_5.dll.so
+lib32/wine/x3daudio1_6.dll.so
 lib32/wine/x3daudio1_7.dll.so
 lib32/wine/xapofx1_1.dll.so
 lib32/wine/xapofx1_3.dll.so

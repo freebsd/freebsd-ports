@@ -3,7 +3,7 @@
 
 PORTNAME=	sauerbraten
 PORTVERSION=	20130203
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2013_01_04
 DISTNAME=	${PORTNAME}_2013_02_03_collect_edition_linux
@@ -30,35 +30,27 @@ PLIST_DIRS=	%%DATADIR%%/packages/brush
 OPTIONS_MULTI=	BUILD
 OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
 OPTIONS_DEFAULT=	CLIENT DEDICATED
-CLIENT_DESC=	Build client
-DEDICATED_DESC=	Build dedicated server
-MASTER_DESC=	Build master server
 
-SUB_FILES=	sauer_client sauer_master sauer_server pkg-message
+SUB_FILES=	pkg-message ${PLIST_FILES:Mbin/*:T}
 
 OPTIONS_DEFINE=	DOCS
+
+CLIENT_DESC=	Build client
+CLIENT_USE=		GL=gl SDL=image,mixer,sdl XORG=x11
+CLIENT_ALL_TARGET=	client
+CLIENT_PLIST_FILES=	bin/sauer_client libexec/sauer_client
+DEDICATED_DESC=	Build dedicated server
+DEDICATED_ALL_TARGET=	server
+DEDICATED_PLIST_FILES=	bin/sauer_server libexec/sauer_server
+MASTER_DESC=	Build master server
+MASTER_ALL_TARGET=	master
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_GL=		yes
-USE_SDL=	image mixer sdl
-ALL_TARGET+=	client
-SAUER_BIN+=	client
-
 DESKTOP_ENTRIES="Sauerbraten" "${COMMENT}" \
 			"${PREFIX}/share/${PORTNAME}/data/cube.png" "sauer_client" \
 				"Game;" false
-.endif
-
-.if ${PORT_OPTIONS:MDEDICATED}
-ALL_TARGET+=	server
-SAUER_BIN+=	server
-.endif
-
-.if ${PORT_OPTIONS:MMASTER}
-ALL_TARGET+=	master
-SAUER_BIN+=	master
 .endif
 
 post-extract:
@@ -70,19 +62,13 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-.for f in ${SAUER_BIN}
-	${INSTALL_SCRIPT} ${WRKDIR}/sauer_${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${STAGEDIR}${PREFIX}/libexec
+.for f in ${PLIST_FILES:Mbin/*}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f:T} ${STAGEDIR}${PREFIX}/${f}
 .endfor
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-
-post-install:
-.for f in ${SAUER_BIN}
-	@${ECHO_CMD} bin/sauer_${f} >> ${TMPPLIST}
-	@${ECHO_CMD} libexec/sauer_${f} >> ${TMPPLIST}
+.for f in ${PLIST_FILES:Mlibexec/*}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f:T} ${STAGEDIR}${PREFIX}/${f:H}
 .endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

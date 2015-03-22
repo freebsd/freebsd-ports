@@ -1,0 +1,24 @@
+--- libstdc++-v3/testsuite/lib/libstdc++.exp.orig
++++ libstdc++-v3/testsuite/lib/libstdc++.exp
+@@ -898,17 +898,18 @@
+       set f [open $src "w"]
+       puts $f "#include <locale>"
+       puts $f "#include <cstdio>"
+-      puts $f "using namespace std;"	
++      puts $f "using namespace std;"
+       puts $f "int main (int argc, char** argv)"
+       puts $f "{"
++      puts $f "  const char* mlx = *(argv + 1);"
+       puts $f "  try"	
+       puts $f "  {"
+-      puts $f "    locale(*(argv + 1));"
++      puts $f "    locale((char*)(mlx));"
+       puts $f "    return 0;"
+       puts $f "  }"
+       puts $f "  catch(...)"
+       puts $f "  {"
+-      puts $f "    printf(\"locale '%s' not supported\\n\", *(argv + 1));"
++      puts $f "    printf(\"locale '%s' not supported\\n\", mlx);"
+       puts $f "    return 1;"
+       puts $f "  }"	
+       puts $f "}"

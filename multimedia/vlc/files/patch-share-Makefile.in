@@ -1,6 +1,6 @@
 --- share/Makefile.in.orig
 +++ share/Makefile.in
-@@ -1742,7 +1742,7 @@ uninstall-am: uninstall-appdataDATA unin
+@@ -1699,7 +1699,7 @@ skins2/default.vlt: $(skins2_default_vlt
  	mkdir -p skins2
  	(cd "$(srcdir)/skins2"; find default -print0 | \
  		LC_ALL=C sort -z | \

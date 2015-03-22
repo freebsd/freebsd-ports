@@ -3,6 +3,7 @@
 
 PORTNAME=	khmeros
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/khmer/Fonts%20-%20KhmerOS/KhmerOS%20Fonts%205.0-%20LGPL%20Licence
 DISTNAME=	All_KhmerOS_5.0
@@ -10,19 +11,16 @@ DISTNAME=	All_KhmerOS_5.0
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Khmer OS fonts
 
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USES=		zip
+USES=		fonts zip
 NO_BUILD=	yes
 
-FONTSDIR=	lib/X11/fonts/Khmer
-PLIST_SUB+=	FONTSDIR=${FONTSDIR}
+FONTNAME=	Khmer
 
 post-patch:
 	${MV} "${WRKSRC}/KhmerOS .ttf" ${WRKSRC}/KhmerOS.ttf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

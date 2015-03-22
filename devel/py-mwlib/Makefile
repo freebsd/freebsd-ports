@@ -3,7 +3,7 @@
 
 PORTNAME=	mwlib
 PORTVERSION=	0.15.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,5 +43,9 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|lockfile==|lockfile>=|' \
 		${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mwlib/_uscan.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mwlib/templ/*.so
 
 .include <bsd.port.mk>

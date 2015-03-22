@@ -20,9 +20,6 @@ USES=		perl5
 USE_PERL5=	configure patch
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	# suck all DOCSDIR
 
 post-patch:
@@ -35,6 +32,5 @@ post-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

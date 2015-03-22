@@ -3,7 +3,7 @@
 
 PORTNAME=	Audio-CD
 PORTVERSION=	0.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,10 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include " \
 		LIBS="-L${LOCALBASE}/lib -lcdaudio"
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/CD/CD.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/CD/CD.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/CD/CD.so
 
 .include <bsd.port.mk>

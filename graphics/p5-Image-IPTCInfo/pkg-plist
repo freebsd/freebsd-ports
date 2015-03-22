@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Image::IPTCInfo.3.gz
 %%SITE_PERL%%/Image/IPTCInfo.pm
 %%SITE_PERL%%/Image/demo.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/burger_van.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/dog.jpg
+%%PERL5_MAN3%%/Image::IPTCInfo.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/burger_van.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dog.jpg

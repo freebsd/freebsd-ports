@@ -11,5 +11,3 @@
 %%FONTSDIR%%/PWTVerdeTST.ttf
 %%FONTSDIR%%/PWTVerdeTSTBold.ttf
 %%FONTSDIR%%/PWTVerdeTSTItalic.ttf
-@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
-@dirrm %%FONTSDIR%%

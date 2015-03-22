@@ -3,7 +3,7 @@
 
 PORTNAME=	B-OPCheck
 PORTVERSION=	0.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	B
@@ -13,8 +13,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PL_check hacks using Perl callbacks
 
 RUN_DEPENDS=	p5-B-Utils>=0:${PORTSDIR}/devel/p5-B-Utils \
-		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-XSLoader>=0:${PORTSDIR}/devel/p5-XSLoader
+		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard
 BUILD_DEPENDS:=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 

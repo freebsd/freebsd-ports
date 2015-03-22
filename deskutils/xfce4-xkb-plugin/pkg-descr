@@ -7,6 +7,6 @@ label for that layout.
 
 This plugin is used along with the XKB extension. For now the keyboard
 layouts cannot be configured from the plugin itself, they should be
-set in the XF86Config file or some other way (e.g. setxkbmap).
+set in the Xorg file or some other way (e.g. setxkbmap).
 
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin

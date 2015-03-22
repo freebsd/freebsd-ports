@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	5
 CATEGORIES=	net gnome
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GTK+ Remote Desktop Client
 
 LICENSE=	GPLv2

@@ -42,9 +42,6 @@ regression-test check test: build
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-EXTRA_PATCHES+=	${FILESDIR}/bug-1201.patch
-.endif
 .if ${ARCH} == "arm"
 BROKEN=		Does not configure on arm
 .endif

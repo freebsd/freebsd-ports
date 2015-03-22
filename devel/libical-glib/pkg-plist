@@ -68,7 +68,6 @@ share/gtk-doc/html/libical-glib/deprecated-api-index.html
 share/gtk-doc/html/libical-glib/home.png
 share/gtk-doc/html/libical-glib/index.html
 share/gtk-doc/html/libical-glib/index.sgml
-share/gtk-doc/html/libical-glib/left-insensitive.png
 share/gtk-doc/html/libical-glib/left.png
 share/gtk-doc/html/libical-glib/libical-glib-i-cal-derived-parameter.html
 share/gtk-doc/html/libical-glib/libical-glib-i-cal-derived-property.html
@@ -84,8 +83,6 @@ share/gtk-doc/html/libical-glib/libical-glib-i-cal-time.html
 share/gtk-doc/html/libical-glib/libical-glib-i-cal-unknowntokenhandling.html
 share/gtk-doc/html/libical-glib/libical-glib.devhelp2
 share/gtk-doc/html/libical-glib/object-tree.html
-share/gtk-doc/html/libical-glib/right-insensitive.png
 share/gtk-doc/html/libical-glib/right.png
 share/gtk-doc/html/libical-glib/style.css
-share/gtk-doc/html/libical-glib/up-insensitive.png
 share/gtk-doc/html/libical-glib/up.png

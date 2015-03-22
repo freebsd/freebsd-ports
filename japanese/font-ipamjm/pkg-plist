@@ -1,8 +1,6 @@
 %%DATADIR%%/ipamjm.ttf
-%%LOCAL_FONTSDIR%%/OTF/ipamjm.ttf
 etc/fonts/conf.avail/20-unhint-ipamjm.conf
 etc/fonts/conf.avail/62-fonts-ipamjm.conf
 etc/fonts/conf.d/20-unhint-ipamjm.conf
 etc/fonts/conf.d/62-fonts-ipamjm.conf
-%%X_FONTSDIR%%/OTF/ipamjm.ttf
-@fc %%X_FONTSDIR%%/OTF
+%%FONTSDIR%%/ipamjm.ttf

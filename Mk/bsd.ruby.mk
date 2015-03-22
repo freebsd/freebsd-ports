@@ -46,9 +46,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  (default: setup.rb).
 # USE_RUBY_RDTOOL	- Says that the port uses rdtool to generate documents.
 # USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
-# USE_RUBY_FEATURES	- Says that the port requires some of the following
-#			  features for building and/or running (default: none):
-#			  iconv
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
 #			  the port.  The constant "Ruby" is set to the integer
 #			  version number of ruby, and the result of the
@@ -110,13 +107,11 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_RDTOOL_PORT	- Port path of rdtool without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
-# RUBY_ICONV_PORT	- Port path of ruby-iconv without PORTSDIR.
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
 # DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
-# DEPEND_RUBY_ICONV	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-iconv.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent
 #			  libraries.
@@ -177,9 +172,9 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 # Ruby 2.0
 #
 RUBY_RELVERSION=	2.0.0
-RUBY_PORTREVISION=	2
+RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	598
+RUBY_PATCHLEVEL=	643
 RUBY20=			""	# PLIST_SUB helpers
 
 . elif ${RUBY_VER} == 2.1
@@ -196,7 +191,7 @@ RUBY21=			""	# PLIST_SUB helpers
 #
 # Ruby 2.2
 #
-RUBY_RELVERSION=	2.2.0
+RUBY_RELVERSION=	2.2.1
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
@@ -294,14 +289,11 @@ RUBY_RDOC?=		${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//}
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
-RUBY_RDOC_PORT?=	textproc/ruby-rdoc
-RUBY_ICONV_PORT?=	converters/ruby-iconv
 
 # Depends
 DEPEND_LIBRUBY?=	lib${RUBY_NAME}.so.${RUBY_SHLIBVER}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY_RDTOOL?=	${RUBY_RD2}:${PORTSDIR}/${RUBY_RDTOOL_PORT}
-DEPEND_RUBY_ICONV=	${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/${RUBY_ICONV_PORT}
 
 # Directories
 RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}

@@ -10,5 +10,3 @@
 %%FONTSDIR%%/KhmerOS_muolpali.ttf
 %%FONTSDIR%%/KhmerOS_siemreap.ttf
 %%FONTSDIR%%/KhmerOS_sys.ttf
-@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
-@dirrm %%FONTSDIR%%

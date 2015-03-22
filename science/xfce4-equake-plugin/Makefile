@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-equake-plugin
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	science xfce
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -15,9 +16,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=	gettext pkgconfig gmake tar:bzip2
+USES=	gettext pkgconfig gmake xfce tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
-USE_XFCE=	configenv libexo libmenu libutil panel
+USE_XFCE=	panel
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 

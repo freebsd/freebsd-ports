@@ -3,13 +3,15 @@
 
 PORTNAME=	elf
 PORTVERSION=	0.5.4p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	linux/reverse-engineering
+MASTER_SITES=	PACKETSTORM/linux/reverse-engineering
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline based ELF header analyzer
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake readline
 GNU_CONFIGURE=	yes
@@ -20,5 +22,8 @@ post-patch:
 
 do-build:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/src
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

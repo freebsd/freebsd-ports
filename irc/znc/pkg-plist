@@ -16,6 +16,7 @@ include/znc/Modules.h
 include/znc/Nick.h
 include/znc/Query.h
 include/znc/SHA256.h
+include/znc/SSLVerifyHost.h
 include/znc/Server.h
 include/znc/Socket.h
 include/znc/SSLVerifyHost.h
@@ -44,6 +45,7 @@ lib/znc/blockuser.so
 lib/znc/bouncedcc.so
 lib/znc/buffextras.so
 lib/znc/chansaver.so
+%%CHARSET%%lib/znc/charset.so
 lib/znc/clearbufferonmsg.so
 lib/znc/clientnotify.so
 lib/znc/controlpanel.so

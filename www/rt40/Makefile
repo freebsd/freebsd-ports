@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.22
-PORTREVISION=	1
+PORTVERSION=	4.0.23
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	40
@@ -61,10 +60,11 @@ RUN_DEPENDS+=	${CORE_DEPS}       \
 USES=		cpe perl5
 CPE_VENDOR=	bestpractical
 
-RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 RT_LAYOUT=	FreeBSD
+RT_ETC_DIR?=	etc/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+RT_ETC_PATH=	${PREFIX}/${RT_ETC_DIR}
 
 AP_MODPERL_DESC=		Deploy with apache and mod_perl
 AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
@@ -173,6 +173,7 @@ CONFIGURE_ENV+=	PERL=${LOCALBASE}/bin/perl
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
+PLIST_SUB=	RT_ETC_DIR=${RT_ETC_DIR}
 
 pre-fetch:
 	@${ECHO} ""
@@ -202,6 +203,7 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
+	@${RM} -rf ${STAGEDIR}/${WWWDIR}${PKGNAMESUFFIX}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")

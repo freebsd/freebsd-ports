@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-BUFR
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	science perl5 geography
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PSANNES
@@ -12,9 +12,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for handling of WMO BUFR files
 
 LICENSE=	GPLv2
-
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

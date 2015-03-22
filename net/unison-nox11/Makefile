@@ -1,7 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	bsam@FreeBSD.org

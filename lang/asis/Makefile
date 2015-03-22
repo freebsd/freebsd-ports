@@ -3,6 +3,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	2014
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -28,6 +29,15 @@ post-extract:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Makefile.stub \
 		${WRKSRC}/common.gpr
+	@${REINPLACE_CMD} -e 's|Hostparm.OpenVMS|False|' \
+		${WRKSRC}/asis/a4g-a_types.adb \
+		${WRKSRC}/tools/gnatmetric/asis_ul-env* \
+		${WRKSRC}/tools/tool_utils/asis_ul-environment.adb \
+		${WRKSRC}/tools/tool_utils/asis_ul-projects.adb \
+		${WRKSRC}/tools/tool_utils/asis_ul-common.adb \
+		${WRKSRC}/tools/gnatpp/gnatpp-processing.adb \
+		${WRKSRC}/tools/gnatpp/gnatpp-output.ad[sb]
+
 	@${RM} -rf ${WRKSRC}/gnat
 
 do-build:

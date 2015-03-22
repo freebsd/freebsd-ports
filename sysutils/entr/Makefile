@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	entr
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/ \
 		https://bitbucket.org/eradman/entr/get/
@@ -13,7 +13,7 @@ COMMENT=	Runs arbitrary commands when files change
 # All the code used in FreeBSD is under ISCL license.
 LICENSE=	ISCL
 
-WRKSRC=		${WRKDIR}/eradman-entr-d69fc3f5af94
+WRKSRC=		${WRKDIR}/eradman-entr-fb68d8f869d5
 
 MAKEFILE=	Makefile.bsd
 MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man

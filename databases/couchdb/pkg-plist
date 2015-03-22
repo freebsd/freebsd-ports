@@ -2,7 +2,7 @@ bin/couch-config
 bin/couchdb
 bin/couchjs
 etc/couchdb/default.ini
-@sample etc/couchdb/local.ini.sample
+@sample(couchdb,,) etc/couchdb/local.ini.sample
 etc/logrotate.d/couchdb
 lib/couchdb/bin/couchjs
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch.app

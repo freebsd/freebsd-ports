@@ -1,7 +1,4 @@
-%%FONTDIR%%/Carlito-Bold.ttf
-%%FONTDIR%%/Carlito-BoldItalic.ttf
-%%FONTDIR%%/Carlito-Italic.ttf
-%%FONTDIR%%/Carlito-Regular.ttf
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
-@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+%%FONTSDIR%%/Carlito-Bold.ttf
+%%FONTSDIR%%/Carlito-BoldItalic.ttf
+%%FONTSDIR%%/Carlito-Italic.ttf
+%%FONTSDIR%%/Carlito-Regular.ttf

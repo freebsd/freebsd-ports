@@ -8,4 +8,4 @@ provides features like...
 * Failed-node marking to avoid downed nodes for a period
 * Optional automatic retrying of failed requests
 
-WWW: https://github.com/erikrose/pyelasticsearch
+WWW: https://github.com/pyelasticsearch/pyelasticsearch

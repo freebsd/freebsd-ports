@@ -3,7 +3,7 @@
 
 PORTNAME=	numeric
 PORTVERSION=	24.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		SF/numpy/Old%20Numeric/${PORTVERSION}:source
@@ -43,6 +43,8 @@ post-extract:
 		${WRKSRC}/setup.py
 
 post-install:
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Numeric -name "*.so" -exec \
+		${STRIP_CMD} {} \;
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/NumTut

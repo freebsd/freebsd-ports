@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.32.1
+DISTVERSION=	2.33.1
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -13,16 +13,16 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
-		nss>=3.17.2:${PORTSDIR}/security/nss \
+		nss>=3.17.4:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.25:${PORTSDIR}/print/harfbuzz \
+		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
-		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
+		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.6:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.8.7.4:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
@@ -31,8 +31,8 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-EM_VERSION=	1.7.2
-L_VERSION=	3.7
+EM_VERSION=	1.8
+L_VERSION=	3.8
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
@@ -53,7 +53,7 @@ MOZ_PKGCONFIG_FILES=
 NOT_FOR_ARCHS=	ia64
 
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CANBERRA CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module

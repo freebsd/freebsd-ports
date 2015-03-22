@@ -17,6 +17,5 @@ USE_PERL5=	configure
 
 post-extract:
 		@${RM} ${WRKSRC}/benchmark.pl
-		@${REINPLACE_CMD} -i '' '/benchmark.pl/d' ${WRKSRC}/MANIFEST
 
 .include <bsd.port.mk>

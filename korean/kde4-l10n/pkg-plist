@@ -54,6 +54,7 @@ share/locale/ko/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ko/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/ko/LC_MESSAGES/akonadicontact.mo
 share/locale/ko/LC_MESSAGES/akonadinotes.mo
 share/locale/ko/LC_MESSAGES/akonaditray.mo
 share/locale/ko/LC_MESSAGES/akregator.mo
@@ -545,6 +546,7 @@ share/locale/ko/LC_MESSAGES/nepomukwidgets.mo
 share/locale/ko/LC_MESSAGES/notes-mobile.mo
 share/locale/ko/LC_MESSAGES/nsplugin.mo
 share/locale/ko/LC_MESSAGES/okteta-mobile.mo
+share/locale/ko/LC_MESSAGES/okteta.appdata.mo
 share/locale/ko/LC_MESSAGES/okteta.mo
 share/locale/ko/LC_MESSAGES/oktetapart.mo
 share/locale/ko/LC_MESSAGES/okular.mo

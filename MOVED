@@ -7436,3 +7436,8 @@ www/mediawiki122||2015-03-01|Has expired: Deprecated by upstream, use www/mediaw
 www/mod_cplusplus||2015-03-01|Has expired: written for apache 2.0, no longer maintained upstream
 www/py-django15||2015-03-01|Has expired: not supported by upstream
 math/isabelle||2015-03-01|Has expired: Broken for more than 6 months
+net/rubygem-openid|net/rubygem-ruby-openid|2015-03-07|Rename to match our rubygems naming
+devel/p5-Errno||2015-03-09|Errno is part of Perl 
+devel/p5-Class-XSAccessor-Array||2015-03-09|Has been a part of devel/p5-Class-XSAccessor for >5 years. Use that port instead
+multimedia/ffmpeg25|multimedia/ffmpeg26|2015-03-14|ffmpeg upstream now points to 2.6.x series
+www/squid33|www/squid|2015-03-15|Has expired: Reached EOL on 28 August 2014, use www/squid (v3.4) instead

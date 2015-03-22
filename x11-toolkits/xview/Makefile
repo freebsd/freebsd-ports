@@ -3,7 +3,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1.4.19c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.physionet.org/physiotools/xview/src/ \
 		http://komquats.com/distfiles/ \

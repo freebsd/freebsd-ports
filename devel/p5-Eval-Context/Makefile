@@ -3,7 +3,7 @@
 
 PORTNAME=	Eval-Context
 PORTVERSION=	0.09.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NKH
@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Evaluate Perl code in context wrapper
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Package-Generator>=0:${PORTSDIR}/devel/p5-Package-Generator \
@@ -21,7 +24,6 @@ BUILD_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Dependencies>=0:${PORTSDIR}/devel/p5-Test-Dependencies \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		p5-Test-Strict>=0:${PORTSDIR}/devel/p5-Test-Strict \
 		p5-Directory-Scratch-Structured>=0:${PORTSDIR}/devel/p5-Directory-Scratch-Structured \
 		p5-Data-TreeDumper>=0:${PORTSDIR}/devel/p5-Data-TreeDumper \

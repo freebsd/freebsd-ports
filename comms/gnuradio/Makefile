@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -38,6 +38,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		iconv cmake:outsource perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
+CMAKE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1" 
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
@@ -63,6 +64,8 @@ USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+VP=		${GCC_DEFAULT:S/.//}
+GCC_LIBS=	${LOCALBASE}/lib/gcc${VP}
 
 .include <bsd.port.pre.mk>
 
@@ -80,7 +83,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf
+		freefont-ttf>0:${PORTSDIR}/x11-fonts/freefont-ttf
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"

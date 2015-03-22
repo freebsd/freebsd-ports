@@ -30,7 +30,7 @@ GROUPS=		mediabrowser
 
 do-build:
 	(cd ${WRKSRC} && \
-		${LOCALBASE}/bin/xbuild /t:build /p:Configuration="Release Mono" \
+		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/xbuild /t:build /p:Configuration="Release Mono" \
 			/p:Platform="Any CPU" MediaBrowser.Mono.sln)
 
 do-install:

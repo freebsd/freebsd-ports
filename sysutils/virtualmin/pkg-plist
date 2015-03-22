@@ -572,6 +572,7 @@ lib/webmin/virtual-server/help/config_generics.html
 lib/webmin/virtual-server/help/config_generics.nl.html
 lib/webmin/virtual-server/help/config_groupsame.html
 lib/webmin/virtual-server/help/config_groupsame.nl.html
+lib/webmin/virtual-server/help/config_gzip_mysql.html
 lib/webmin/virtual-server/help/config_ham_trap_white.html
 lib/webmin/virtual-server/help/config_ham_trap_white.nl.html
 lib/webmin/virtual-server/help/config_hide_alias.html
@@ -1101,6 +1102,7 @@ lib/webmin/virtual-server/help/realname.nl.html
 lib/webmin/virtual-server/help/records.fr.html
 lib/webmin/virtual-server/help/records.html
 lib/webmin/virtual-server/help/records.nl.html
+lib/webmin/virtual-server/help/recovery.html
 lib/webmin/virtual-server/help/redirect_dest.fr.html
 lib/webmin/virtual-server/help/redirect_dest.html
 lib/webmin/virtual-server/help/redirect_dest.nl.html
@@ -1709,6 +1711,7 @@ lib/webmin/virtual-server/install_dkim.cgi
 lib/webmin/virtual-server/install_postgrey.cgi
 lib/webmin/virtual-server/install_ratelimit.cgi
 lib/webmin/virtual-server/json-lib.pl
+lib/webmin/virtual-server/kill_running.cgi
 lib/webmin/virtual-server/lang/cz
 lib/webmin/virtual-server/lang/cz.UTF-8
 lib/webmin/virtual-server/lang/de
@@ -1767,6 +1770,7 @@ lib/webmin/virtual-server/list_clouds.cgi
 lib/webmin/virtual-server/list_databases.cgi
 lib/webmin/virtual-server/list_records.cgi
 lib/webmin/virtual-server/list_redirects.cgi
+lib/webmin/virtual-server/list_running.cgi
 lib/webmin/virtual-server/list_sched.cgi
 lib/webmin/virtual-server/list_scripts.cgi
 lib/webmin/virtual-server/list_users.cgi
@@ -1926,6 +1930,8 @@ lib/webmin/virtual-server/newfeatures-all/4.13/1-logrotate
 lib/webmin/virtual-server/newfeatures-all/4.13/2-perms
 lib/webmin/virtual-server/newfeatures-all/4.13/3-assoc
 lib/webmin/virtual-server/newfeatures-all/4.14/1-dmarc
+lib/webmin/virtual-server/newfeatures-all/4.15/1-running
+lib/webmin/virtual-server/newfeatures-all/4.15/2-recovery
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1963,6 +1969,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.11/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.12/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.13/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.14/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.15/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -1982,6 +1989,8 @@ lib/webmin/virtual-server/quotacheck.cgi
 lib/webmin/virtual-server/rate_script.cgi
 lib/webmin/virtual-server/ratelimit-lib.pl
 lib/webmin/virtual-server/ratelimit.cgi
+lib/webmin/virtual-server/recollect.cgi
+lib/webmin/virtual-server/recovery.cgi
 lib/webmin/virtual-server/redirects-lib.pl
 lib/webmin/virtual-server/reemail.cgi
 lib/webmin/virtual-server/remote.cgi

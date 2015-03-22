@@ -5,7 +5,7 @@ PORTNAME=	irssi-otr
 PORTVERSION=	1.0.0
 PORTREVISION=	3
 CATEGORIES=	irc
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Plugin for irssi for Off-the-Record (OTR) messaging

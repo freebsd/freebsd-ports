@@ -29,10 +29,8 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

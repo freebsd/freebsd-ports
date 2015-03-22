@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
@@ -45,7 +46,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/services.db.sample ${STAGEDIR}${PREFIX}/etc/dhis/services.db.sample
 	@${ECHO_CMD} "etc/dhis/services.db.sample" >> ${TMPPLIST}
 	@${CHMOD} 600 ${STAGEDIR}${PREFIX}/etc/dhis/*
-	@${ECHO_CMD} "@dirrm etc/dhis" >> ${TMPPLIST}
 .if !exists(${STAGEDIR}${PREFIX}/etc/rc.d/dhisd.sh)
 	@${ECHO_MSG} "===>   Installing ${STAGEDIR}${PREFIX}/etc/rc.d/dhid.sh startup file."
 	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/dhisd.sh ${STAGEDIR}${PREFIX}/etc/rc.d/dhisd.sh
@@ -58,7 +58,6 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/INSTALL.bsd ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} "share/doc/${PORTNAME}/INSTALL.bsd" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
 .endif
 	@${ECHO} "--------------------------------------------------------------------------"
 	@${ECHO} "Before dhisd can run, you will need configure BIND."

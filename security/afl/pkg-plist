@@ -535,7 +535,7 @@ lib/afl/as
 %%DATADIR%%/archives/common/compress/small_archive.Z
 %%DATADIR%%/archives/common/cpio/small_archive.cpio
 %%DATADIR%%/archives/common/gzip/small_archive.gz
-%%DATADIR%%/archives/common/lzo/small_achive.lzo
+%%DATADIR%%/archives/common/lzo/small_archive.lzo
 %%DATADIR%%/archives/common/rar/small_archive.rar
 %%DATADIR%%/archives/common/tar/small_archive.tar
 %%DATADIR%%/archives/common/xz/small_archive.xz
@@ -573,9 +573,10 @@ lib/afl/as
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/env_variables.txt
+%%PORTDOCS%%%%DOCSDIR%%/historical_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/notes_for_asan.txt
 %%PORTDOCS%%%%DOCSDIR%%/parallel_fuzzing.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_tips.txt
-%%PORTDOCS%%%%DOCSDIR%%/related_work.txt
+%%PORTDOCS%%%%DOCSDIR%%/sister_projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/status_screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/technical_details.txt

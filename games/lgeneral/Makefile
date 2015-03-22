@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -53,6 +52,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
 
 post-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/flags
+	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/units/
+	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/terrain/pg/
 	${STAGEDIR}${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data -d ${STAGEDIR}${DATADIR}
 	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}

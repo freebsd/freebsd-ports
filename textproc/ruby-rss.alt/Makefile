@@ -20,7 +20,6 @@ CONFLICTS=	ruby-rss-*
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-USE_RUBY_FEATURES=	rexml
 SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 DOCS_EN=	README.en Tutorial.en

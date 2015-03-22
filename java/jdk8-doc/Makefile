@@ -5,7 +5,7 @@ PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMESUFFIX=	${JDK_VERSION}-doc
-DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VER}-apidocs
+DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VER}-docs-all
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -15,7 +15,7 @@ RESTRICTED=	This documentation is under license and export control.
 
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	8
-JDK_UPDATE_VER=	5
+JDK_UPDATE_VER=	40
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB
 
-USES=		dos2unix zip
+USES=		dos2unix gmake zip
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${WRKSRC}/Makefile.linux
@@ -27,7 +27,6 @@ post-extract: .SILENT
 			${WRKSRC}/dzip.h ${WRKSRC}/conmain.c
 	${REINPLACE_CMD} -e '4s,^,#include <machine/endian.h>,' \
 		${WRKSRC}/dzip.h
-	${REINPLACE_CMD} -e 's/) $$(OBJECTS/&:T/' ${MAKEFILE}
 	${REINPLACE_CMD} -e '21d;23d' ${WRKSRC}/dzipcon.h
 
 do-install:

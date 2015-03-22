@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.85.1
+PORTVERSION=	0.85.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \

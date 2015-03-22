@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Libpurple plugin for Telegram messenger
 
 LICENSE=	GPLv3

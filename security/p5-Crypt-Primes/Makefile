@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-Primes
 PORTVERSION=	0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Provable Prime Number Generator suitable for Cryptographic Applications
 
 BUILD_DEPENDS=	p5-Crypt-Random>=0:${PORTSDIR}/security/p5-Crypt-Random \
 		p5-Math-Pari>=0:${PORTSDIR}/math/p5-Math-Pari
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

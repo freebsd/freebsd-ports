@@ -3,7 +3,7 @@
 
 PORTNAME=	adacurses
 PORTVERSION=	20110404
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Ada95 bindings for ncurses
 
 LICENSE=	MIT
 
-USES=		ada gmake ncurses:port tar:tgz
+USES=		ada gmake ncurses tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 		--with-ada-objects=${PREFIX}/lib/adacurses \
@@ -21,6 +21,8 @@ CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 		--enable-widec
 
 OPTIONS_DEFINE=	DOCS
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 

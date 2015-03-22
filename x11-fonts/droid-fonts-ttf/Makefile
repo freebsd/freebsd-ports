@@ -3,7 +3,7 @@
 
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20131024
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,22 +12,15 @@ COMMENT=	The Droid typeface family
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
-		${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-
+FONTNAME=	Droid
 NO_BUILD=	yes
-USES=		tar:xz
+USES=		fonts tar:xz
 
-FONTDIR=	lib/X11/fonts/Droid
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
-SUB_LIST=	FONTDIR=${FONTDIR}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${PREFIX}/${FONTDIR}/
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}/
 
 # maintainer section:
 # https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/
@@ -51,10 +44,10 @@ maketar: do-clean extract
 	cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 	${ECHO_MSG} '*** Update from ${PORTVERSION} to ${MS_VERSION} ***'
 # genplist
-	${SED} 's|^|%%FONTDIR%%/|' ${MS_FONTS} > ${MS_PLIST}
-	${ECHO_CMD} "%%FONTDIR%%/fonts.dir" >> ${MS_PLIST}
-	${ECHO_CMD} "%%FONTDIR%%/fonts.scale" >> ${MS_PLIST}
-	${ECHO_CMD} "@dirrm %%FONTDIR%%" >> ${MS_PLIST}
+	${SED} 's|^|%%FONTSDIR%%/|' ${MS_FONTS} > ${MS_PLIST}
+	${ECHO_CMD} "%%FONTSDIR%%/fonts.dir" >> ${MS_PLIST}
+	${ECHO_CMD} "%%FONTSDIR%%/fonts.scale" >> ${MS_PLIST}
+	${ECHO_CMD} "@dirrm %%FONTSDIR%%" >> ${MS_PLIST}
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>

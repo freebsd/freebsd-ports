@@ -3,15 +3,18 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.4.35
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -123,5 +126,8 @@ post-patch:
 		s,^(SUBDIRS.*)calculator,\1,' \
 		${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

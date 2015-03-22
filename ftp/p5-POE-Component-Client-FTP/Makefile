@@ -25,7 +25,7 @@ PORTEXAMPLES=	dotfer.pl list.pl sync.pl
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	cdplayer
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnustep
 MASTER_SITES=	SF/gsburn/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	gnustep-
@@ -10,9 +10,10 @@ PKGNAMEPREFIX=	gnustep-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep CD player with CDDB support
 
-LIB_DEPENDS+=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LICENSE=	GPLv2
+LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
 USES=		tar:bzip2
 USE_GNUSTEP=	yes
@@ -27,5 +28,11 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 CDDB_BUNDLE_PORT?=	audio/cddb-bundle
 PREFERENCES_PORT?=	deskutils/preferences
+
+post-install:
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Bundles/AudioCD.bundle/AudioCD \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Bundles/AudioCD.prefs/AudioCD \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/CDPlayer.app/CDPlayer
 
 .include <bsd.port.mk>

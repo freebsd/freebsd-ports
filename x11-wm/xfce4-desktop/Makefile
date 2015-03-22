@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.10.3
-PORTREVISION=	2
+PORTVERSION=	4.12.1
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/xfce/xfdesktop/${PORTVERSION:R}/
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -22,41 +20,28 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libwnck
-USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
-USES=	pkgconfig gmake tar:bzip2
+USE_XFCE=	garcon
+USES=	pkgconfig gmake gettext-tools xfce tar:bzip2
 USE_XORG=	x11 sm
-
-# Prevent build error, with macro 'g_return_val_if_fail ()'
-CFLAGS+=	-Wno-return-type
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 	--enable-notifications
 
-OPTIONS_DEFINE=		THUNAR NLS
-OPTIONS_DEFAULT=	THUNAR NLS
-THUNAR_DESC=	Enable thunar support
+OPTIONS_DEFINE=		NLS THUNAR
+OPTIONS_DEFAULT=	THUNAR
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+THUNAR_USE=	xfce=thunar
+THUNAR_CONFIGURE_ENABLE=	thunarx
+THUNAR_CONFIGURE_WITH=	file-manager-fallback=Thunar
+THUNAR_DESC=	Thunar file manager support
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTHUNAR}
-CONFIGURE_ARGS+=--enable-thunarx --with-file-manager-fallback=Thunar
-USE_XFCE+=	thunar
-.else
-CONFIGURE_ARGS+=--disable-thunarx --without-file-manager-fallback
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 .if !${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|po ||' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

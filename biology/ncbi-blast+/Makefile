@@ -3,7 +3,7 @@
 
 PORTNAME=	blast+
 PORTVERSION=	2.2.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
 PKGNAMEPREFIX=	ncbi-
@@ -19,6 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libbz2.so:${PORTSDIR}/archivers/bzip2
+RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 

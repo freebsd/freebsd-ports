@@ -14,7 +14,7 @@ BUILD_DEPENDS=	sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pathfix gettext gmake pkgconfig
+USES=		tar:bzip2 pathfix gettext gmake mono pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include

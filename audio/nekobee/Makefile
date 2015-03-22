@@ -5,7 +5,7 @@ PORTNAME=	nekobee
 PORTVERSION=	0.1.8
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	GH
+MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse ISO8601 formats
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-DateTime>=0.18:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Builder>=0.77:${PORTSDIR}/devel/p5-DateTime-Format-Builder
 RUN_DEPENDS:=	${BUILD_DEPENDS}

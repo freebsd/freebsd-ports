@@ -1,5 +1,5 @@
---- sdl/i_system.c.orig	2014-05-16 20:11:49 UTC
-+++ sdl/i_system.c
+--- src/sdl/i_system.c.orig	2014-05-16 20:11:49 UTC
++++ src/sdl/i_system.c
 @@ -508,6 +508,8 @@ void I_SysInit(void)
  
    // Enable unicode key conversion

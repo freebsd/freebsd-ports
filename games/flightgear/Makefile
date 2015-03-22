@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Source/ \
@@ -32,6 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 USE_XORG=	ice sm x11 xext xft xi xinerama xt xmu
 USE_GL=		gl glu glut
 USE_SQLITE=	3
+USE_QT5=	core buildtools qmake widgets
 
 USES=		tar:bzip2 dos2unix cmake compiler openal:al,alut
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	textproc
 MASTER_SITES=	https://codeload.github.com/fletcher/MultiMarkdown-4/legacy.tar.gz/${MM4_COMMIT}?dummy=/:MM4 \
 		https://codeload.github.com/fletcher/MMD-Support/legacy.tar.gz/${SUPPORT_COMMIT}?dummy=/:support \
@@ -12,15 +12,15 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:MM4 \
 		greg-${GREG_COMMIT}${EXTRACT_SUFX}:greg
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-MM4_COMMIT=	ad9595b
+MM4_COMMIT=	90c7ddf
 SUPPORT_COMMIT=	685c95c
 CHEAT_COMMIT=	199dae8
-GREG_COMMIT=	3f11f56
+GREG_COMMIT=	98ecf13
 
 WRKSRC=		${WRKDIR}/fletcher-MultiMarkdown-4-${MM4_COMMIT}
 
@@ -42,7 +42,7 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${MV} ${WRKDIR}/nddrylliog-greg-${GREG_COMMIT}/* ${WRKSRC}/greg
+	@${MV} ${WRKDIR}/fasterthanlime-greg-${GREG_COMMIT}/* ${WRKSRC}/greg
 .if ${PORT_OPTIONS:MCHEAT_SHEET}
 	@${MV} ${WRKDIR}/fletcher-human-markdown-reference-${CHEAT_COMMIT}/* ${WRKSRC}/cheat-sheet
 .endif

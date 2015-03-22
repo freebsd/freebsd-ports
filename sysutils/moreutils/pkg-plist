@@ -9,7 +9,7 @@ bin/mispipe
 bin/moreutils-parallel
 bin/pee
 bin/sponge
-bin/ts
+bin/moreutils-ts
 bin/vidir
 bin/vipe
 bin/zrun
@@ -24,7 +24,7 @@ bin/zrun
 %%MANPAGES%%man/man1/moreutils-parallel.1.gz
 %%MANPAGES%%man/man1/pee.1.gz
 %%MANPAGES%%man/man1/sponge.1.gz
-%%MANPAGES%%man/man1/ts.1.gz
+%%MANPAGES%%man/man1/moreutils-ts.1.gz
 %%MANPAGES%%man/man1/vidir.1.gz
 %%MANPAGES%%man/man1/vipe.1.gz
 %%MANPAGES%%man/man1/zrun.1.gz

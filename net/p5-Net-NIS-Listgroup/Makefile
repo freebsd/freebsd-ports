@@ -19,7 +19,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	${MKDIR} ${WRKSRC}/lib
+	@${MKDIR} ${WRKSRC}/lib
 	${MV} ${WRKSRC}/Net ${WRKSRC}/lib
 
 .include <bsd.port.mk>

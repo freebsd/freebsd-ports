@@ -3,7 +3,7 @@
 
 PORTNAME=	File-Monitor
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Monitor files and directories for changes
 
-BUILD_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
