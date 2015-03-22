@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpenc
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	http://highsecure.ru/distfiles/
 
@@ -17,9 +16,10 @@ PLIST_FILES=	bin/hpenc
 
 MAKE_ARGS+=	"ARCH=${ARCH:S/amd64/x86/:S/i386/x86/}"
 CXXFLAGS+=	-std=c++11 \
-			-I${WRKSRC}/chacha-opt/app/include \
-			-I${WRKSRC}/poly1305-opt/app/include
-LDFLAGS+=	-pthread -lcrypto
+		-I${WRKSRC}/chacha-opt/app/include \
+		-I${WRKSRC}/poly1305-opt/app/include \
+		-I${OPENSSLINC}
+LDFLAGS+=	-pthread -lcrypto -L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
