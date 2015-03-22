@@ -57,6 +57,57 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76ff65f4-17ca-4d3f-864a-a3d6026194fb">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>36.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.5.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>36.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.33.1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.33.1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-28 Privilege escalation through SVG navigation</p>
+	  <p>MFSA-2015-29 Code execution through incorrect JavaScript
+	    bounds checking elimination</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0817</cvename>
+      <cvename>CVE-2015-0818</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-28/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-29/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-03-20</discovery>
+      <entry>2015-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d15355b-ce7c-11e4-9db0-d050992ecde8">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
