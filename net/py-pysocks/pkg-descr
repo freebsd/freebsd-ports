@@ -1,0 +1,7 @@
+Derived from SocksiPy - a Python SOCKS module.
+
+- UDP support
+- SocksiPyHandler, courtesy e000, was also added as an example of how
+  this module can be used with urllib2. See example code in sockshandler.py.
+- urllib3, which powers the requests module, is working on integrating SOCKS
+  proxy support based on this branch
