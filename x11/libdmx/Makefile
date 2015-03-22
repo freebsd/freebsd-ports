@@ -11,5 +11,7 @@ COMMENT=	DMX extension library
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto dmxproto:both
+USES+=	cpe
+CPE_VENDOR=	x
 
 .include <bsd.port.mk>
