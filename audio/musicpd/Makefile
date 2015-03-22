@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.18.11
-PORTREVISION=	5
+PORTVERSION=	0.18.23
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
