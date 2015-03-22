@@ -10,6 +10,9 @@ MASTER_SITES=	SUNSITE/apps/sound/players/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Wav player and recorder
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 ONLY_FOR_ARCHS=	armv6 i386 amd64
 
 INSTALL_TARGET=	install PREFIX="${STAGEDIR}${PREFIX}"
