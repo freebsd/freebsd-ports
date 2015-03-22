@@ -391,6 +391,7 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += madsonic
+    SUBDIR += madsonic-standalone
     SUBDIR += magento
     SUBDIR += mahara
     SUBDIR += man2web
