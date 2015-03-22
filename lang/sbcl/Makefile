@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USES=		gmake tar:bzip2
 
-OPTIONS_DEFINE=		SBCL THREADS
+OPTIONS_DEFINE=		SBCL #THREADS (don't build, see PR 184425)
 
 SBCL_DESC=	Bootstrap with installed SBCL binary, if available
 THREADS_DESC=	Experimental threading support
