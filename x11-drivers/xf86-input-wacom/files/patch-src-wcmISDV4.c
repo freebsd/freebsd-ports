@@ -1,6 +1,6 @@
 --- src/wcmISDV4.c~
 +++ src/wcmISDV4.c
-@@ -24,11 +24,16 @@
+@@ -24,14 +24,19 @@
  #include "xf86Wacom.h"
  #include <xf86_OSproc.h>
  #include "wcmFilter.h"
@@ -8,16 +8,20 @@
  #include "isdv4.h"
  #include <unistd.h>
  #include <fcntl.h>
-+
+-#include <libudev.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
 +#ifdef __linux__
 +#include <linux/serial.h>
- #include <libudev.h>
++#include <libudev.h>
 +#else
 +#include <termios.h>
 +#endif
- 
++
  #define RESET_RELATIVE(ds) do { (ds).relwheel = 0; } while (0)
  
+ /* resolution in points/m */
 @@ -192,10 +197,15 @@ static int wcmSerialValidate(InputInfoPt
  
  static Bool isdv4Detect(InputInfoPtr pInfo)
