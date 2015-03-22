@@ -3,10 +3,9 @@
 
 PORTNAME=	simplesoap
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net www python
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PySimpleSOAP-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Simple SOAP Library
@@ -14,8 +13,11 @@ COMMENT=	Python Simple SOAP Library
 LICENSE=	LGPL3
 
 USE_PYTHON=	autoplist distutils
-USES=		python zip
+USES=		python
 
-PROJECTHOST=	py${PORTNAME}
+GH_ACCOUNT=	py${PORTNAME}
+GH_PROJECT=	py${PORTNAME}
+GH_TAGNAME=	${PORTVERSION}
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
