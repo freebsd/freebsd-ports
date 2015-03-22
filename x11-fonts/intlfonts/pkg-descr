@@ -15,7 +15,3 @@ Ethiopic -- Ethiopic fonts
 Misc -- fonts for the other regions/scripts
 TrueType -- Truetype fonts
 Type1 -- Postscript Type1 fonts
-
-If you want to use TrueType fonts on X, you should run X-TT or xfsft.
-Then you had better use mkttfdir in perlftlib or ttmkfdir to create
-fonts.dir or fonts.scale.
