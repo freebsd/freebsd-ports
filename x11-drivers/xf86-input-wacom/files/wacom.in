@@ -22,11 +22,11 @@ load_rc_config "$name"
 
 start_precmd="wacom_prepare"
 start_cmd="wacom_start"
-stop_cmd=":"
+stop_cmd="wacom_stop"
 
 wacom_prepare()
 {
-	kldload -n usb_quirk
+	load_kld -e usb_quirk usb_quirk
 }
 
 wacom_start()
@@ -34,6 +34,12 @@ wacom_start()
 	# Prevent moused(8) from picking up bogus /dev/umsN
 	usbconfig add_dev_quirk_vplh 0x056a 0 0 0xffff UQ_MATCH_VENDOR_ONLY
 	usbconfig add_dev_quirk_vplh 0x056a 0 0 0xffff UQ_UMS_IGNORE
+}
+
+wacom_stop()
+{
+	usbconfig remove_dev_quirk_vplh 0x056a 0 0 0xffff UQ_MATCH_VENDOR_ONLY
+	usbconfig remove_dev_quirk_vplh 0x056a 0 0 0xffff UQ_UMS_IGNORE
 }
 
 run_rc_command "$1"
