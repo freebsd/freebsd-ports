@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.5.11
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -34,7 +33,7 @@ LAZARUS_VER=	1.2.6
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
-HELPVERSION=	0.5.5
+HELPVERSION=	0.6.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-help-${HELPVERSION}
 
@@ -49,8 +48,8 @@ WLX_DESC=	Lister plugins
 DSX_DESC=	Search plugins
 OPTIONS_GROUP_WCX=	WCX_CPIO \
 			WCX_DEB \
-			WCX_LZMA \
 			WCX_RPM \
+			WCX_UNBZ2 \
 			WCX_UNRAR \
 			WCX_ZIP
 OPTIONS_GROUP_WDX=	WDX_RPM \
@@ -66,7 +65,6 @@ OPTIONS_GROUP_DSX=	DSX_LOCATE
 OPTIONS_DEFAULT=	GTK2 \
 			WCX_CPIO \
 			WCX_DEB \
-			WCX_LZMA \
 			WCX_RPM \
 			WCX_UNRAR \
 			WCX_ZIP \
@@ -139,9 +137,9 @@ do-build:
 	@cd ${WRKSRC}/plugins && \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/deb/src/deb.lpi"
 .endif
-.if ${PORT_OPTIONS:MWCX_LZMA}
+.if ${PORT_OPTIONS:MWCX_UNBZ2}
 	@cd ${WRKSRC}/plugins && \
-		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/lzma/src/lzma.lpi"
+		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/unbz2/src/unbz2.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_RPM}
 	@cd ${WRKSRC}/plugins && \
@@ -201,17 +199,23 @@ post-build:
 pre-install:
 	@${RM} -f ${PLIST}
 
+	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wcx" >> ${PLIST}
+	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wdx" >> ${PLIST}
+	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wfx" >> ${PLIST}
+	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wlx" >> ${PLIST}
+	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/dsx" >> ${PLIST}
+
 .if ${PORT_OPTIONS:MWCX_CPIO}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/cpio/cpio.wcx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_DEB}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/deb/deb.wcx" >> ${PLIST}
 .endif
-.if ${PORT_OPTIONS:MWCX_LZMA}
-	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/lzma/lzma.wcx" >> ${PLIST}
-.endif
 .if ${PORT_OPTIONS:MWCX_RPM}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/rpm/rpm.wcx" >> ${PLIST}
+.endif
+.if ${PORT_OPTIONS:MWCX_UNBZ2}
+	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/unbz2/unbz2.wcx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_UNRAR}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/unrar/unrar.wcx" >> ${PLIST}
@@ -285,13 +289,13 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/deb
 	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/deb/lib/deb.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/deb/
 .endif
-.if ${PORT_OPTIONS:MWCX_LZMA}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/lzma/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/lzma/lib/lzma.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/lzma/
-.endif
 .if ${PORT_OPTIONS:MWCX_RPM}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/rpm/
 	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/rpm/lib/rpm.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/rpm/
+.endif
+.if ${PORT_OPTIONS:MWCX_UNBZ2}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/unbz2/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/unbz2/lib/unbz2.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/unbz2/
 .endif
 .if ${PORT_OPTIONS:MWCX_UNRAR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/unrar/
