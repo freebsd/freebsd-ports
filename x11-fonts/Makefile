@@ -162,7 +162,6 @@
     SUBDIR += tkfont
     SUBDIR += tlwg-ttf
     SUBDIR += tmu
-    SUBDIR += ttmkfdir
     SUBDIR += tv-fonts
     SUBDIR += ubuntu-font
     SUBDIR += urwfonts
