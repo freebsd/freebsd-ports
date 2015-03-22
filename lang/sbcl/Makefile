@@ -2,6 +2,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} LOCAL/marino:binaries
@@ -18,9 +19,11 @@ USES=		gmake tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 SBCL_HOME=	${PREFIX}/lib/sbcl
 MANUALS=	asdf.html sbcl.html
-MODULESDOCS=	asdf/README asdf/README.SBCL	\
+MODULESDOCS=	asdf/README 			\
+		asdf/README.SBCL		\
 		sb-aclrepl/README		\
-		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
+		sb-bsd-sockets/FAQ 		\
+		sb-bsd-sockets/NEWS 		\
 		sb-md5/README			\
 		sb-posix/README			\
 		sb-rotate-byte/README		\
@@ -28,6 +31,10 @@ MODULESDOCS=	asdf/README asdf/README.SBCL	\
 TEXTDOCS=	BUGS CREDITS COPYING NEWS PRINCIPLES TLA TODO
 CFLAGS+=	-fno-omit-frame-pointer
 CPPFLAGS+=	-I. -DSBCL_PREFIX=\\\"\$$(SBCL_PREFIX)\\\"
+CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency \
+		sb-cover sb-executable sb-gmp sb-grovel sb-introspect \
+		sb-md5 sb-mpfr sb-posix sb-queue sb-rotate-byte sb-rt \
+		sb-simple-streams sb-sprof
 
 MAKE_SH_ARGS?=	--prefix=${PREFIX} \
 		--dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
@@ -170,23 +177,35 @@ do-build:
 		${WRKSRC}/doc/sbcl.1
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SBCL_HOME}/contrib
-	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${STAGEDIR}${SBCL_HOME}/
-	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.fasl ${STAGEDIR}${SBCL_HOME}/contrib/
-	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.asd ${STAGEDIR}${SBCL_HOME}/contrib/
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/contrib \
+		${STAGEDIR}${SBCL_HOME}/site-systems
+	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${STAGEDIR}${SBCL_HOME}
+	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.fasl \
+		${STAGEDIR}${SBCL_HOME}/contrib/
+	${INSTALL_DATA} ${WRKSRC}/obj/sbcl-home/contrib/*.asd \
+		${STAGEDIR}${SBCL_HOME}/contrib/
+.for MOD in ${CONMODULES}
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/${MOD}
+	- ${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp \
+		${STAGEDIR}${SBCL_HOME}/${MOD}
+	- ${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl \
+		${STAGEDIR}${SBCL_HOME}/${MOD}
+	- ${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/${MOD}.asd \
+		${STAGEDIR}${SBCL_HOME}/${MOD}
+.endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} \
+		${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${TEXTDOCS:S,^,${WRKSRC}/,g} ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${MODULESDOCS:C,/[^/]+$,,g:u:S,^,${STAGEDIR}${DOCSDIR}/,g}
 . for MODDOC in ${MODULESDOCS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MODDOC} ${STAGEDIR}${DOCSDIR}/${MODDOC}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${MODDOC} \
+		${STAGEDIR}${DOCSDIR}/${MODDOC}
 . endfor
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/sbcl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${SBCL_HOME}/site-systems
-	@${TOUCH} ${STAGEDIR}${SBCL_HOME}/site-systems/.keep_me
 
 check regression-test test: build
 	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" ${SH} run-tests.sh)
