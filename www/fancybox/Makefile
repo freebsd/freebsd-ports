@@ -9,10 +9,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript library for image/html/multimedia content display
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/fancyBox-${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fancyapps
-GH_COMMIT=	18d1712
 GH_PROJECT=	fancyBox
 GH_TAGNAME=	v${PORTVERSION}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	code2000
 PORTVERSION=	1.171
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry/${DIST_SUBDIR}
@@ -17,17 +17,11 @@ USES=		fonts zip
 
 SUB_FILES=	pkg-message
 
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 NO_BUILD=	yes
 
-post-extract: move-fonts rename-license
-
-move-fonts:
+post-extract:
 	${MKDIR} ${WRKSRC}
 	${MV} ${WRKDIR}/CODE2000.TTF ${WRKSRC}/${FONTNAME}.ttf
-
-rename-license:
 	${MV} ${WRKDIR}/CODE2000.HTM ${WRKSRC}/${FONTNAME}.html
 
 do-install:

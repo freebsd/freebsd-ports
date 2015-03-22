@@ -3,6 +3,7 @@
 
 PORTNAME=	phoronix-test-suite
 PORTVERSION=	5.4.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -43,7 +44,7 @@ post-patch:
 		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml \
 		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
 		${WRKSRC}/pts-core/objects/client/pts_client.php
-	@${SED} -i '' -e "s|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts| ; \
+	@${SED} -i '' -e "s|/usr/share/fonts|${LOCALBASE}/share/fonts| ; \
 		s|/usr/X11/lib|${LOCALBASE}/lib|" \
 		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php
 	@${SED} -i '' -e "/fpdf.php/s|/usr/share/php|${PREFIX}/share|" \

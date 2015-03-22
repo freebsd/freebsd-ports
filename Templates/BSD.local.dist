@@ -33,10 +33,6 @@
         X11
             app-defaults
             ..
-            fonts
-                local
-                ..
-            ..
         ..
     ..
     libdata

@@ -23,8 +23,8 @@ MONO_DESC=	Install Arabic PCF fonts
 AEFONTS_DESC=	Install Arabeyes project TrueType fonts
 KACST_DESC=	Install King AbdulAziz University fonts
 
-MONO_RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono
-AEFONTS_RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/ae_fonts1/AAHS/fonts.dir:${PORTSDIR}/arabic/ae_fonts_ttf
-KACST_RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabic/kacst_fonts
+MONO_RUN_DEPENDS=	ae_fonts_mono>0:${PORTSDIR}/arabic/ae_fonts_mono
+AEFONTS_RUN_DEPENDS=	ae_fonts_ttf>0:${PORTSDIR}/arabic/ae_fonts_ttf
+KACST_RUN_DEPENDS=	kacst_fonts>0:${PORTSDIR}/arabic/kacst_fonts
 
 .include <bsd.port.mk>

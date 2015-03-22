@@ -3,10 +3,9 @@ lib/libdockapp.a
 lib/libdockapp.so
 lib/libdockapp.so.2
 lib/libdockapp.so.2.0.0
-lib/X11/fonts/dockapp/fonts.alias
-lib/X11/fonts/dockapp/fonts.dir
-lib/X11/fonts/dockapp/luxel-ascii-06x09.pcf.gz
-lib/X11/fonts/dockapp/seg7-ascii-05x07.pcf.gz
+%%FONTSDIR%%/fonts.alias
+%%FONTSDIR%%/luxel-ascii-06x09.pcf.gz
+%%FONTSDIR%%/seg7-ascii-05x07.pcf.gz
 %%EXAMPLES%%%%EXAMPLESDIR%%/README
 %%EXAMPLES%%%%EXAMPLESDIR%%/basic/Imakefile
 %%EXAMPLES%%%%EXAMPLESDIR%%/basic/README

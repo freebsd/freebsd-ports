@@ -21,8 +21,7 @@ CONFLICTS=	XFree86-fontCyrillic-*
 
 NO_BUILD=	# none
 NO_MTREE=	yes
-FONTDIR=	${LOCALBASE}/lib/X11/fonts
-
-do-install:	# empty
+NO_INSTALL=	yes
+FONTDIR=	${LOCALBASE}/share/fonts
 
 .include <bsd.port.mk>

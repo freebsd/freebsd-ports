@@ -3,7 +3,7 @@
 
 PORTNAME=	Acme-6502
 PORTVERSION=	0.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Pure Perl 65C02 simulator
 
-RUN_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-version>=0.98:${PORTSDIR}/devel/p5-version
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

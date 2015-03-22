@@ -19,11 +19,9 @@ COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 USES=		fonts
 USE_XORG=	x11
 
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 SUB_FILES=	pkg-message
 
 FONTNAME=	ChromeOS
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 NO_BUILD=	yes
 
 do-install:

@@ -28,7 +28,7 @@ RUN_DEPENDS?=	dconf-editor:${PORTSDIR}/devel/dconf-editor \
 		gnome-tweak-tool:${PORTSDIR}/deskutils/gnome-tweak-tool \
 		sushi>=0:${PORTSDIR}/x11-fm/sushi \
 		nautilus>=3.0.0:${PORTSDIR}/x11-fm/nautilus \
-		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
+		${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:${PORTSDIR}/sysutils/hal-info \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp \
 		zenity>=3.0.0:${PORTSDIR}/x11/zenity \

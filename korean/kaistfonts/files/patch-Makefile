@@ -10,9 +10,9 @@
 +all:	${PCF}
 +
 +install:
-+	-mkdir -p ${DESTDIR}${PREFIX}/lib/X11/fonts/local
++	-mkdir -p ${DESTDIR}${FONTSDIR}
 +	for i in ${PCF}; do \
-+		gzip -c < $$i > ${DESTDIR}${PREFIX}/lib/X11/fonts/local/$$i.gz; \
++		gzip -c < $$i > ${DESTDIR}${FONTSDIR}/$$i.gz; \
 +	done
 +
 +.bdf.pcf:

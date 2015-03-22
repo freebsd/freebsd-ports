@@ -3,6 +3,7 @@
 
 PORTNAME=	x11rdp
 PORTVERSION=	0.5.0.${X11RDPREVISION}
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/:x11rdp
 DISTNAME=	${PORTNAME}_xorg71

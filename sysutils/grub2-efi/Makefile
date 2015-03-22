@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPP="${CC} -E" \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
+	@${LN} -s ${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
 pre-configure:

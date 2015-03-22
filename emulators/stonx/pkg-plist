@@ -9,12 +9,12 @@ bin/stonx
 %%DATADIR%%/gemdos_c/final.tos
 %%DATADIR%%/gemdos_c/mint/stonx.xfs
 %%DATADIR%%/tos.img
-lib/X11/fonts/misc/System0-iso.pcf.gz
-lib/X11/fonts/misc/System0.pcf.gz
-lib/X11/fonts/misc/System1-iso.pcf.gz
-lib/X11/fonts/misc/System1.pcf.gz
-lib/X11/fonts/misc/System2-iso.pcf.gz
-lib/X11/fonts/misc/System2.pcf.gz
+%%FONTSDIR%%/misc/System0-iso.pcf.gz
+%%FONTSDIR%%/misc/System0.pcf.gz
+%%FONTSDIR%%/misc/System1-iso.pcf.gz
+%%FONTSDIR%%/misc/System1.pcf.gz
+%%FONTSDIR%%/misc/System2-iso.pcf.gz
+%%FONTSDIR%%/misc/System2.pcf.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/DEBUGGING
@@ -24,6 +24,3 @@ lib/X11/fonts/misc/System2.pcf.gz
 %%PORTDOCS%%%%DOCSDIR%%/TOS-VERSIONS
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.pas
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.prg
-@exec mkfontdir %D/lib/X11/fonts/misc
-@exec xset fp+ %D/lib/X11/fonts/misc
-@exec xset fp rehash

@@ -3,6 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.6.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-IO-Pty-Easy>=0:${PORTSDIR}/devel/p5-IO-Pty-Easy \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
 		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI \
 		p5-Config-Grammar>=0:${PORTSDIR}/devel/p5-Config-Grammar \
 		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \

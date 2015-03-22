@@ -4,7 +4,5 @@ many websites including YouTube and Dailymotion.
 Starting from 0.4.0, the quvi distribution has split into libquvi-scripts,
 libquvi and quvi.
 
-git repo: http://repo.or.cz/w/quvi-tool.git
-
 WWW: http://quvi.sourceforge.net/
-WWW: http://quvi.googlecode.com/
+WWW: http://repo.or.cz/w/quvi-tool.git

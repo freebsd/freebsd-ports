@@ -1,14 +1,14 @@
---- contrib/sb-sprof/test.lisp.orig	2013-02-26 06:42:18.000000000 -0500
-+++ contrib/sb-sprof/test.lisp	2013-03-22 14:29:52.000000000 -0400
-@@ -1,9 +1,9 @@
- (in-package :cl-user)
- (require :sb-sprof)
+--- contrib/sb-sprof/test.lisp.orig	2015-02-27 19:49:46.000000000 +0900
++++ contrib/sb-sprof/test.lisp	2015-03-07 18:19:20.000000000 +0900
+@@ -41,9 +41,9 @@
+       (loop while (< (get-universal-time) target)
+             do (consalot)))))
  
 -#-(or win32 darwin)                    ;not yet
 +#-(or win32 darwin freebsd)                    ;not yet
- (sb-sprof::test)
+ (test)
 -#-(or win32 darwin)                    ;not yet
 +#-(or win32 darwin freebsd)                    ;not yet
- (sb-sprof::consing-test)
+ (consing-test)
  
  ;; For debugging purposes, print output for visual inspection to see if

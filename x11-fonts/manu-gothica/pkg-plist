@@ -1,6 +1,0 @@
-lib/X11/fonts/TTF/manugot19.ttf
-%%DATADIR%%/manugot19.ttf
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/lib/X11/fonts/TTF 2>/dev/null || true
-@unexec rm %D/lib/X11/fonts/TTF/fonts.cache-1 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/lib/X11/fonts/TTF 2>/dev/null || true
-@unexec if [ -e %D/lib/X11/fonts/TTF/fonts.cache-1 -a ! -s %D/lib/X11/fonts/TTF/fonts.cache-1 ]; then rm %D/lib/X11/fonts/TTF/fonts.cache-1; fi

@@ -14,6 +14,10 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ljboiler@gmail.com
 COMMENT=	Data Tools Platform for the Eclipse IDE
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
 		eclipse-emf>0:${PORTSDIR}/java/eclipse-emf \
 		eclipse-gef>0:${PORTSDIR}/java/eclipse-gef

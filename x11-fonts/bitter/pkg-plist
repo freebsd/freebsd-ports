@@ -1,4 +1,4 @@
-lib/X11/fonts/bitter/Bitter-Bold.otf
-lib/X11/fonts/bitter/Bitter-BoldItalic.otf
-lib/X11/fonts/bitter/Bitter-Italic.otf
-lib/X11/fonts/bitter/Bitter-Regular.otf
+%%FONTSDIR%%/Bitter-Bold.otf
+%%FONTSDIR%%/Bitter-BoldItalic.otf
+%%FONTSDIR%%/Bitter-Italic.otf
+%%FONTSDIR%%/Bitter-Regular.otf

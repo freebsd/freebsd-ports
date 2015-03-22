@@ -5,7 +5,7 @@
  
  #ifdef DefaultFontPath
 -DEFAULTFONTPATH = DefaultFontPath
-+DEFAULTFONTPATH = ${PREFIX}/lib/X11/fonts/misc
++DEFAULTFONTPATH = ${PREFIX}/share/fonts/misc
  SITE_FONT_PATH = -DCOMPILEDDEFAULTFONTPATH=\"$(DEFAULTFONTPATH)\"
  #endif
  

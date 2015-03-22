@@ -3,7 +3,7 @@
 
 PORTNAME=	manu-gothica
 DISTVERSION=	0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.bryld.dk/filer/ \
 		http://www.kswla.org/KATG%20Page%20Files/
@@ -13,11 +13,11 @@ EXTRACT_SUFX=	.ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old German blackletter handwriting (Suetterlin)
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+USES=		fonts
 
 RESTRICTED=	The font is free for personal use
 
+FONTNAME=	TTF
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}
@@ -25,13 +25,11 @@ EXTRACT_AFTER_ARGS=	${WRKSRC}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
+PLIST_FILES=	${FONTSDIR}/manugot19.ttf
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} manugot19.ttf \
-		${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/TTF
-	@${LN} -sf ${DATADIR}/manugot19.ttf \
-		${STAGEDIR}${PREFIX}/lib/X11/fonts/TTF
+		${STAGEDIR}${FONTSDIR})
 
 .include <bsd.port.mk>

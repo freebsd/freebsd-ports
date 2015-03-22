@@ -13,13 +13,16 @@ COMMENT=	PHP5-Extension for Redis
 
 LICENSE=	PHP301
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
 GITVERSION=	g882c7dc
 WRKSRC=		${WRKDIR}/nicolasff-phpredis-250e81b
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5 55 56
 
 PHP_MODNAME=	redis
 

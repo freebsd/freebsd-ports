@@ -3,7 +3,7 @@
 
 PORTNAME=	elisa8x8
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10
@@ -11,18 +11,13 @@ DISTNAME=	elisat10
 MAINTAINER=	toshi@tea.forus.or.jp
 COMMENT=	X11 8-dot Kanji font 'elisa font'
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
+USES=		fonts
 NO_WRKSUBDIR=	yes
 
 BDFTOPCF_CMD=	${PREFIX}/bin/bdftopcf
-MKFONTDIR_CMD=	${PREFIX}/bin/mkfontdir
-FONTSDIR=	lib/X11/fonts/local
-INSTALLDIR=	${PREFIX}/${FONTSDIR}
 MYPORTDOCS=	elisa100.doc elisat10.doc elisat10.html
-PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,11 +29,11 @@ do-build:
 	)
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC} ;\
-	${INSTALL_DATA} elisat10.pcf.gz ${STAGEDIR}${INSTALLDIR} ;\
-	${INSTALL_DATA} jpnhn4-jis.pcf.gz ${STAGEDIR}${INSTALLDIR} ;\
-	${INSTALL_DATA} jpnhn4-iso.pcf.gz ${STAGEDIR}${INSTALLDIR} ;\
+	${INSTALL_DATA} elisat10.pcf.gz ${STAGEDIR}${FONTSDIR} ; \
+	${INSTALL_DATA} jpnhn4-jis.pcf.gz ${STAGEDIR}${FONTSDIR} ; \
+	${INSTALL_DATA} jpnhn4-iso.pcf.gz ${STAGEDIR}${FONTSDIR} ; \
 	)
 
 post-install:

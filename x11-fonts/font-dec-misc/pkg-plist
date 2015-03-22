@@ -1,2 +1,2 @@
-lib/X11/fonts/misc/deccurs.pcf.gz
-lib/X11/fonts/misc/decsess.pcf.gz
+%%FONTSDIR%%/deccurs.pcf.gz
+%%FONTSDIR%%/decsess.pcf.gz

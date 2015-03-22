@@ -56,7 +56,7 @@ MAKE_ARGS=	AR='ar rc'
 
 RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
 		xorg-fonts-miscbitmaps>0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
-		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
+		${LOCALBASE}/share/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \

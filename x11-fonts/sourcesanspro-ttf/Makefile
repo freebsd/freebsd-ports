@@ -14,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	adobe-fonts
 GH_PROJECT=	source-sans-pro
 GH_TAGNAME=	2.010R-ro/1.065R-it
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S,/,-,}
 
 NO_BUILD=	yes
 USES=		fonts

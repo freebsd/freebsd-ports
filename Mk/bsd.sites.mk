@@ -549,13 +549,6 @@ MASTER_SITES+=	GHL
 .    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
 MASTER_SITES+=	GH
 .    endif
-# This new scheme rerolls distfiles. Also ensure they are renamed to avoid
-# conflicts. Use _GITHUB_REV in case github changes their zipping or structure
-# which has happened before.
-_GITHUB_REV=	0
-.    if ${MASTER_SITES:MGH}
-DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
-.    endif
 .  endif
 GH_ACCOUNT?=	${PORTNAME}
 GH_PROJECT?=	${PORTNAME}
@@ -565,6 +558,16 @@ GH_TAGNAME?=	${DISTVERSION}
 .  else
 # Use full PREFIX/SUFFIX and converted DISTVERSION
 GH_TAGNAME?=	${DISTVERSIONFULL}
+# This new scheme rerolls distfiles. Also ensure they are renamed to avoid
+# conflicts. Use _GITHUB_REV in case github changes their zipping or structure
+# which has happened before.
+_GITHUB_REV=	0
+.    if ${MASTER_SITES:MGH}
+DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
+.    endif
+.  endif
+.  if defined(GH_TAGNAME)
+GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 .  endif
 .endif
 .endif

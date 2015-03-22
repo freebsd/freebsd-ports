@@ -1,0 +1,24 @@
+--- configure.orig	2012-01-19 06:30:12 UTC
++++ configure
+@@ -2039,12 +2039,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ ac_config_headers="$ac_config_headers include/SDL_config.h"
+ 
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define _GNU_SOURCE 1
+-_ACEOF
+-
+-
+ ac_aux_dir=
+ for ac_dir in $srcdir/build-scripts; do
+   if test -f "$ac_dir/install-sh"; then
+@@ -15826,7 +15820,7 @@ case "$host" in
+         BASE_LDFLAGS="-mno-cygwin"
+         ;;
+     *)
+-        BASE_CFLAGS="-D_GNU_SOURCE=1"
++        BASE_CFLAGS=""
+         BASE_LDFLAGS=""
+         ;;
+ esac

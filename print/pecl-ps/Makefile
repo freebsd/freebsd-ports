@@ -14,13 +14,15 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	alan@fromorbit.com
 COMMENT=	PHP extension for pslib to generate postscript
 
+DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
+EXPIRATION_DATE=	2015-04-15
+
 LIB_DEPENDS=	libps.so:${PORTSDIR}/print/pslib
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	${PORTNAME}
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 55 56
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl|-lintl|g' ${WRKSRC}/config.m4

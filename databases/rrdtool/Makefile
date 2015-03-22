@@ -93,7 +93,7 @@ USE_GNOME+=	intltool
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || ${PORT_OPTIONS:MDEJAVU}
+.if exists(${LOCALBASE}/share/fonts/dejavu) || ${PORT_OPTIONS:MDEJAVU}
 RUN_DEPENDS+=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 .endif
 

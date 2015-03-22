@@ -67,18 +67,12 @@
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/COPYING
 %%DATADIR%%/AUTHORS
-%%LOCAL_FONTSDIR%%/TTF/ipag-mona.ttf
-%%LOCAL_FONTSDIR%%/TTF/ipagp-mona.ttf
-%%LOCAL_FONTSDIR%%/TTF/ipagui-mona.ttf
-%%LOCAL_FONTSDIR%%/TTF/ipam-mona.ttf
-%%LOCAL_FONTSDIR%%/TTF/ipamp-mona.ttf
 etc/fonts/conf.avail/20-unhint-mona-ipa.conf
 etc/fonts/conf.avail/62-fonts-mona-ipa.conf
 etc/fonts/conf.d/20-unhint-mona-ipa.conf
 etc/fonts/conf.d/62-fonts-mona-ipa.conf
-%%X_FONTSDIR%%/TTF/ipag-mona.ttf
-%%X_FONTSDIR%%/TTF/ipagp-mona.ttf
-%%X_FONTSDIR%%/TTF/ipagui-mona.ttf
-%%X_FONTSDIR%%/TTF/ipam-mona.ttf
-%%X_FONTSDIR%%/TTF/ipamp-mona.ttf
-@fc %%X_FONTSDIR%%/TTF
+%%FONTSDIR%%/ipag-mona.ttf
+%%FONTSDIR%%/ipagp-mona.ttf
+%%FONTSDIR%%/ipagui-mona.ttf
+%%FONTSDIR%%/ipam-mona.ttf
+%%FONTSDIR%%/ipamp-mona.ttf

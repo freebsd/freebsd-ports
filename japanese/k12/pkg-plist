@@ -5,7 +5,6 @@
 %%FONTSDIR%%/knmhn12x.pcf.gz
 %%FONTSDIR%%/knmzn12x.pcf.gz
 %%FONTSDIR%%/knmzn12xb.pcf.gz
-@fontsdir %%FONTSDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/gijutsu-siryou.doc
 %%PORTDOCS%%%%DOCSDIR%%/kaname.doc
 %%PORTDOCS%%%%DOCSDIR%%/readme

@@ -3,7 +3,7 @@
 
 PORTNAME=	gost
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 		LOCAL/vg
@@ -15,7 +15,6 @@ COMMENT=	GOST TrueType fonts
 
 USES=		fonts zip
 NO_BUILD=	yes
-FONTSDIR=	${PREFIX}/lib/X11/fonts/gost
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/Fonts
 

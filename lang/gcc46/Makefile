@@ -26,13 +26,16 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	gcc
+
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
 DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
-USES=		gmake iconv libtool makeinfo perl5 tar:bzip2
+USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes

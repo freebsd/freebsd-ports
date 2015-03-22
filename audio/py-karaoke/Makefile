@@ -3,7 +3,7 @@
 
 PORTNAME=	karaoke
 PORTVERSION=	0.7.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,7 +52,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts
 .for i in DejaVuSans.ttf DejaVuSansCondensed-Bold.ttf DejaVuSansCondensed.ttf
-	@${LN} -sf ${LOCALBASE}/lib/X11/fonts/dejavu/${i} \
+	@${LN} -sf ${LOCALBASE}/share/fonts/dejavu/${i} \
 		${STAGEDIR}${DATADIR}/fonts
 .endfor
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pycdgAux.so

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libpsiconv.so:${PORTSDIR}/converters/psiconv \
 		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

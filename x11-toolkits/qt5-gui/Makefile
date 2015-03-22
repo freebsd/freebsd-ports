@@ -58,7 +58,7 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge dbus \
 
 # Inherited from Qt 4.
 .if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings \
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings \
 		xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 .endif
 

@@ -5,7 +5,6 @@ PORTNAME=	curlpp
 PORTVERSION=	0.7.3
 PORTREVISION=	3
 CATEGORIES=	ftp
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ wrapper for libcurl
@@ -22,7 +21,18 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		autoreconf libtool pathfix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+GH_ACCOUNT=	jpbarrette
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	v${PORTVERSION}
+USE_GITHUB=	yes
+
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 BOOST_BUILD_DEPENDS=	boost-libs>=1.20.0:${PORTSDIR}/devel/boost-libs
 BOOST_RUN_DEPENDS=	${BOOST_BUILD_DEPENDS}
@@ -30,7 +40,7 @@ BOOST_CONFIGURE_ON=	--with-boost=${LOCALBASE}
 BOOST_CONFIGURE_OFF=	--without-boost
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/configure.ac
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

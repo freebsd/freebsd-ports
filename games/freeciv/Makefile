@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
 PLIST_SUB+=	GTK=""
 .else
-CONFIGURE_ARGS+=--enable-client=no
+CONFIGURE_ARGS+=--enable-client=no --enable-fcmp=no
 CONFLICTS=	freeciv-[0-9]*
 PLIST_SUB+=	GTK="@comment "
 .endif

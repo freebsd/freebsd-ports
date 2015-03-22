@@ -4,8 +4,7 @@
 PORTNAME=	ut2003-demo
 PORTVERSION=	2206
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	GENTOO/distfiles
 PKGNAMEPREFIX=	linux-
 DISTNAME=	ut2003demo-lnx-${PORTVERSION}
 EXTRACT_SUFX=	.sh.bin
@@ -56,9 +55,7 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} ${LIBDIRS} -type f | ${SORT} \
-		| ${SED} -e 's|^|${UTDIR_REL}/|' >> ${PLIST} && \
-	${FIND} ${LIBDIRS} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm ${UTDIR_REL}/|' >> ${PLIST}
+		| ${SED} -e 's|^|${UTDIR_REL}/|' >> ${PLIST}
 
 	# This fix an error with the libSDL included in the ut2003 package
 	@${ECHO_CMD} "@exec cp ${LINUXBASE}/usr/lib/libSDL-1.2.so.0 ${UTDIR}/System/" \

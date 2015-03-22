@@ -14,6 +14,9 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	vj562001@yahoo.de
 COMMENT=	Implementation of the OCL OMG standard for EMF-based models
 
+DEPRECATED=	depends on deprecated java/eclipse-emf
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		eclipse-emf>0:${PORTSDIR}/java/eclipse-emf
 

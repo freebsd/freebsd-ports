@@ -3,7 +3,7 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
@@ -32,10 +32,6 @@ OPTIONS_SUB=	yes
 
 EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
 EXTRAFONTS_DISTFILES=	ielpkth.cab:group2
-
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-
-PLIST_SUB=	FONTNAME="${FONTNAME}"
 
 SUB_FILES=	pkg-message
 

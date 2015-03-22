@@ -3,7 +3,7 @@
 
 PORTNAME=	wqy-fonts
 PORTVERSION=	20100803
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/wqy/wqy-bitmapfont/1.0.0-RC1:bitmapfont \
@@ -26,6 +26,7 @@ USE_XORG=	x11
 USES=		fonts perl5
 USE_PERL5=	build
 
+FONTNAME=	wqy
 CONFDDIR=	etc/fonts/conf.d
 CONFAVAILDIR=	etc/fonts/conf.avail
 

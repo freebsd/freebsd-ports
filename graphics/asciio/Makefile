@@ -3,7 +3,7 @@
 
 PORTNAME=	asciio
 PORTVERSION=	1.02.71
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 		LOCAL/ehaupt
@@ -11,6 +11,9 @@ DISTNAME=	App-Asciio-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl/GTK application that lets you draw ASCII charts using a GUI
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
@@ -23,7 +26,6 @@ BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
 		p5-Test-Strict>=0:${PORTSDIR}/devel/p5-Test-Strict \
 		p5-Test-Dependencies>=0:${PORTSDIR}/devel/p5-Test-Dependencies \
 		p5-Test-Spelling>=0:${PORTSDIR}/devel/p5-Test-Spelling \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		p5-Data-TreeDumper-Renderer-GTK>=0:${PORTSDIR}/devel/p5-Data-TreeDumper-Renderer-GTK \
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare \

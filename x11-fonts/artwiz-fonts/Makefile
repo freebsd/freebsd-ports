@@ -3,7 +3,7 @@
 
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://kobyla.info/soft/distfiles/ \
 		LOCAL/garga/artwiz/
@@ -13,21 +13,17 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Set of free fonts for X11 desktops
 
 NO_BUILD=	yes
-USES=		tar:bzip2
+USES=		fonts tar:bzip2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 
 FONTS=		anorexia aqui cure cursor drift edges gelly glisp-bold \
 		glisp lime mints-mild mints-strong nu snap
-FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 
 SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${FONTDIR}
-.for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/${f}.pcf.gz ${STAGEDIR}${FONTDIR}
-.endfor
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${STAGEDIR}${FONTDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	sourcecodepro-ttf
 PORTVERSION=	1.017
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +25,6 @@ USE_GITHUB=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
-	cd ${WRKSRC}/TTF/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>

@@ -932,6 +932,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pysocks
     SUBDIR += py-pysphere
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq

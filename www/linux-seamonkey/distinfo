@@ -1,5 +1,5 @@
-SHA256 (seamonkey-2.33.tar.bz2) = 1c78a3ddfe6b8ec52789834cb8f6b0a852f40f14f0d8b1c95fd75da514b557d0
-SIZE (seamonkey-2.33.tar.bz2) = 41449095
+SHA256 (seamonkey-2.33.1.tar.bz2) = f52b597a938f2980fc438a96ac38b9d23cb403a7319bb5d60d862f96efc54926
+SIZE (seamonkey-2.33.1.tar.bz2) = 41382431
 SHA256 (glib2-2.22.2-2.fc12.i686.rpm) = e3b459c245ec14e7248e9de4b506963a4773407f3e58835db5070d0ed02ecc99
 SIZE (glib2-2.22.2-2.fc12.i686.rpm) = 1162908
 SHA256 (gtk2-2.18.3-19.fc12.i686.rpm) = aea9cf7ffe9c8dae0faa2bf3d2aa1b2117c55dce03da72dcce8c268279ec0a4b

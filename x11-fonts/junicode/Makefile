@@ -3,7 +3,7 @@
 
 PORTNAME=	junicode
 PORTVERSION=	0.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S|.|-|g} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -18,11 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USES=		fonts zip
 
-FONTSDIR?=	lib/X11/fonts/${PORTNAME}
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${STAGEDIR}${FONTSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 

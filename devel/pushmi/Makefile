@@ -3,7 +3,7 @@
 
 PORTNAME=	pushmi
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CLKAO
@@ -12,12 +12,13 @@ DISTNAME=	Pushmi-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository replication tool
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-App-CLI>=0.06:${PORTSDIR}/devel/p5-App-CLI \
 		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		svk>=2.0.0:${PORTSDIR}/devel/svk
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \

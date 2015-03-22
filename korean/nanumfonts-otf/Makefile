@@ -2,6 +2,7 @@
 
 PORTNAME=	nanumfonts
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://cdn.naver.com/naver/NanumFont/fontfiles/ \
 		LOCAL
@@ -17,18 +18,16 @@ COMMENT=	Nanum family Hangul fonts (${FONTFORMAT})
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTTYPE}
 
 NO_WRKSUBDIR=	yes
-USES=		zip
+NO_BUILD=	yes
+USES=		fonts zip
 
 FONTTYPE?=	otf
 FONTFORMAT?=	OpenType
 
-FONTSDIR=	lib/X11/fonts/nanum-${FONTTYPE}
+FONTNAME=	nanum-${FONTTYPE}
 FONTLIST=	NanumBrush \
 		NanumGothic \
 		NanumGothicBold \
@@ -44,20 +43,12 @@ FONTLIST=	NanumBrush \
 		NanumMyeongjoEcoExtraBold \
 		NanumMyeongjoExtraBold \
 		NanumPen
-FONTFILES=	${FONTLIST:S/$/.${FONTTYPE}/} fonts.dir fonts.scale
+FONTFILES=	${FONTLIST:S/$/.${FONTTYPE}/}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
-do-build:
-	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
-	${LOCALBASE}/bin/mkfontdir ${WRKSRC}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-
-post-install:
-	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

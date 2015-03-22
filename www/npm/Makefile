@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -52,9 +52,9 @@ MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
 
 GITHUB_PROJECT=	${PORTNAME}
-GITHUB_RELEASES=https://github.com/npm/npm/releases/latest
+GITHUB_RELEASES=https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/releases/latest
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
-GITHUB_USER=	npm
+GITHUB_USER=	${PORTNAME}
 GITHUB_VERSION=	v${MS_VERSION}
 
 maketar: do-clean

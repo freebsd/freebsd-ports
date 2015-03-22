@@ -3,7 +3,7 @@
 
 PORTNAME=	pingwi
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.pingwinsoft.ru/system/uploads/16/original/ \
 		http://fbsd.zlonet.ru/distfiles/
@@ -15,7 +15,6 @@ COMMENT=	PingWi Typography fonts
 
 USES=		fonts zip
 NO_BUILD=	yes
-FONTSDIR=	${PREFIX}/lib/X11/fonts/pingwi
 SUB_FILES=	pkg-message
 
 do-install:

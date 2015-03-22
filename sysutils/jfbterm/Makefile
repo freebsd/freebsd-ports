@@ -90,7 +90,7 @@ TERMCAP_DEL_RECORD=	${DO_NADA}
 .endif
 
 .if ${PORT_OPTIONS:MUNIFONT}
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
 .endif
 
 post-extract:	.SILENT

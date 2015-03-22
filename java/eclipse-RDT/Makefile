@@ -12,6 +12,10 @@ DISTNAME=	${RDT}-${RDTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDT adds Ruby support to the Eclipse IDE Framework
 
+BROKEN=		plugin is obsolete or malfunctioning with latest eclipse
+DEPRECATED=	evaluation recommendation is to remove rather than update
+EXPIRATION_DATE=	2015-04-18
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes

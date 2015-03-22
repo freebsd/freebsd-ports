@@ -2,6 +2,7 @@
 
 PORTNAME=	nanumcoding
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://dev.naver.com/frs/download.php/441/ \
 		LOCAL
@@ -14,15 +15,13 @@ COMMENT=	NanumGothic Coding Hangul font (TrueType)
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-
 NO_WRKSUBDIR=	yes
-USES=		zip
-FONTSDIR=	lib/X11/fonts/nanum-coding${PKGNAMESUFFIX}
+NO_BUILD=	yes
+USES=		fonts zip
+FONTNAME=	nanum-coding${PKGNAMESUFFIX}
 FONTLIST=	NanumGothicCoding \
 		NanumGothicCoding-Bold
-FONTFILES=	${FONTLIST:S/$/.ttf/} fonts.dir fonts.scale
+FONTFILES=	${FONTLIST:S/$/.ttf/}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
@@ -32,16 +31,8 @@ post-extract:
 	${MV} ${WRKSRC}/*.ttf ${WRKSRC}/NanumGothicCoding.ttf
 	${MV} ${WRKSRC}/*-Bold.tmp ${WRKSRC}/NanumGothicCoding-Bold.ttf
 
-do-build:
-	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
-	${LOCALBASE}/bin/mkfontdir ${WRKSRC}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/${FONTSDIR}
-
-post-install:
-	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

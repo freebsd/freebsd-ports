@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -83,7 +83,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf
+		freefont-ttf>0:${PORTSDIR}/x11-fonts/freefont-ttf
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"

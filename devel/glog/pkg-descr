@@ -3,4 +3,4 @@ The glog library implements application-level logging.
 This library provides logging APIs based on C++-style streams
 and various helper macros. 
 
-WWW: http://code.google.com/p/google-glog/
+WWW: https://github.com/google/glog

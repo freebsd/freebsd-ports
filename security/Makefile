@@ -354,6 +354,7 @@
     SUBDIR += netpgp
     SUBDIR += nettle
     SUBDIR += nikto
+    SUBDIR += nist-kat
     SUBDIR += nmap
     SUBDIR += nmapsi4
     SUBDIR += nss

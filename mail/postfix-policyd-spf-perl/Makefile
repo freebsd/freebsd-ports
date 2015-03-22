@@ -3,16 +3,18 @@
 
 PORTNAME=	postfix-policyd-spf-perl
 PORTVERSION=	2.010
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://launchpadlibrarian.net/107864701/
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	SPF policy service for Postfix written in Perl
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	p5-Mail-SPF>=2.006:${PORTSDIR}/mail/p5-Mail-SPF \
 		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-		p5-version>=0:${PORTSDIR}/devel/p5-version
+		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

@@ -5,7 +5,7 @@
  # set the path where dot can find it.
  
 -DOT_FONTPATH           =
-+DOT_FONTPATH           =	%%PREFIX%%/lib/X11/fonts/freefont-ttf
++DOT_FONTPATH           =	%%PREFIX%%/share/fonts/freefont-ttf
  
  # If the CLASS_GRAPH and HAVE_DOT tags are set to YES then doxygen
  # will generate a graph for each documented class showing the direct and
