@@ -17,6 +17,8 @@ GH_ACCOUNT=	madeye
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:keepla
+# Help solve building error since the integrated libsodium enables this option.
+CFLAGS+=	-fstack-protector
 
 USE_RC_SUBR=	shadowsocks_libev
 
