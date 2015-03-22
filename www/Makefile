@@ -1988,6 +1988,7 @@
     SUBDIR += squidview
     SUBDIR += srg
     SUBDIR += subsonic
+    SUBDIR += subsonic-standalone
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
