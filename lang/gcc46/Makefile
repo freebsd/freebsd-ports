@@ -1,14 +1,14 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gcc46
+PORTNAME=	gcc
 PORTVERSION=	4.6.4
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
-DISTNAME=	gcc-${DISTVERSION}
+PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
@@ -27,7 +27,6 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
 CPE_VENDOR=	gnu
-CPE_PRODUCT=	gcc
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
