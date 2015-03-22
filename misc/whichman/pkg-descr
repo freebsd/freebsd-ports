@@ -14,6 +14,6 @@ This package holds THREE little search utilities:
 * ftwhich -- a fault tolerant "which" command
 
   ftwhich finds files (programs) which are in one of the directories in
-  your PATH and uses a fault tolerant search algorithem.
+  your PATH and uses a fault tolerant search algorithm.
 
 WWW: http://main.linuxfocus.org/~guido/#whichman
