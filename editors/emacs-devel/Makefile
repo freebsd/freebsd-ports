@@ -22,14 +22,16 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	25.0.50
-EMACS_REV=	20150206.5c9ad35f
+EMACS_REV=	20150321.4a50af93
 GNU_CONFIGURE=	yes
-USES=		gmake makeinfo ncurses pkgconfig shebangfix tar:xz
+USES=		cpe gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env autoheader:env
+CPE_VENDOR=	gnu
+CPE_VERSION=	${EMACS_VER}
 
 SUB_FILES=	pkg-install
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
@@ -53,7 +55,7 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
 OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SCROLLBARS \
-		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY
+		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY LLDB
 
 OPTIONS_SINGLE=	X11 SOUND
 
@@ -69,6 +71,7 @@ M17N_DESC=		M17N support for text-shaping
 OTF_DESC=		Opentype fonts suport
 FILENOTIFY_DESC=	File notification support
 LTO_DESC=		Enable link-time optimization (requires GCC 4.6+)
+LLDB_DESC=		Enable lldb support for GUD (from llvm.org) 
 
 OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
 OPTIONS_SINGLE_SOUND=		ALSA OSS
@@ -77,6 +80,8 @@ OPTIONS_DEFAULT=ACL DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF
 		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS FILENOTIFY OSS X11
 
 OPTIONS_SUB=		SOURCES
+
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 
 SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=		--with-sound=alsa
