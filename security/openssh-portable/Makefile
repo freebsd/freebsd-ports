@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.7p1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -200,6 +200,8 @@ CONFIGURE_ARGS+=	--with-libs='${CONFIGURE_LIBS}'
 .endif
 
 RC_SCRIPT_NAME=		openssh
+VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
+VERSION_ADDENDUM_SERVCONF_GREP=	"		options->version_addendum = xstrdup"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
@@ -212,18 +214,21 @@ post-patch:
 			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
-		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
-	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
+# Making this a patch conflicts with the X509 option. Use grep to force failure.
+	@${ECHO_CMD} "===> Applying VersionAddendum patch to servconf.c" && \
+	    ${GREP} -q ${VERSION_ADDENDUM_SERVCONF_GREP} \
+	    ${WRKSRC}/servconf.c && \
+	    ${REINPLACE_CMD} \
+	    -e 's|\(		${VERSION_ADDENDUM_SERVCONF_GREP}\).*);|\1(SSH_VERSION_FREEBSD_PORT);|' \
+	    ${WRKSRC}/servconf.c
+	@${REINPLACE_CMD} \
+	    -e 's|\(VersionAddendum\) none|\1 ${VERSION_ADDENDUM_DEFAULT}|' \
+	    ${WRKSRC}/sshd_config
+	@${REINPLACE_CMD} \
+	    -e 's|%%SSH_VERSION_FREEBSD_PORT%%|${VERSION_ADDENDUM_DEFAULT}|' \
+	    ${WRKSRC}/sshd_config.5
+	@${ECHO_CMD} '#define SSH_VERSION_FREEBSD_PORT	"${VERSION_ADDENDUM_DEFAULT}"' >> \
 		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_VERSION	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
-.if ${PORT_OPTIONS:MHPN}
-	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
-		${WRKSRC}/version.h
-.endif
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ssh_config \
