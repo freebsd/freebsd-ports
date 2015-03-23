@@ -19,6 +19,11 @@ you update your ports collection, before attempting any port upgrades.
   asterisk13 it is also needed to enable the EXTSRTP option in the
   pjsip port.
 
+  If the CURL option is enabled also make sure the ftp/curl port
+  is using one of the HEIMDAL_PORT or KRB5_PORT options, otherwise
+  the curl module will cause asterisk to fail on startup due to
+  mixing calls to OpenSSL from base and from ports.
+
 20150322:
   AFFECTS: Users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
