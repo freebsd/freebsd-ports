@@ -3,7 +3,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.95a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -26,8 +26,9 @@ SUB_LIST=	BGPDARGS=${BGPDARGS} \
 		ZEBRAARGS=${ZEBRAARGS}
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		readline
+USES=		cpe readline
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
+CPU_VENDOR=	gnu
 
 PORTSCOUT=	ignore:1
 
