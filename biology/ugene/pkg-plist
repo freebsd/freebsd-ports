@@ -1438,6 +1438,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset_paired.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo.uwl
+%%DATADIR%%/workflow_samples/NGS/unmapped_reads.uwl
 %%DATADIR%%/workflow_samples/NGS/variation_annotation.uwl
 %%DATADIR%%/workflow_samples/Sanger sequencing/trim-and-align.uwl
 %%DATADIR%%/workflow_samples/Scenarios/filter_matched.uwl

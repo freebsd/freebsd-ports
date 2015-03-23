@@ -1,0 +1,8 @@
+madsonic-standalone/LICENSE.TXT
+madsonic-standalone/README.TXT
+madsonic-standalone/madsonic.war
+madsonic-standalone/madsonic-booter.jar
+madsonic-standalone/madsonic.sh
+@unexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information and database saved." && echo "If you you are permanently uninstalling this package" && echo "please remove %%SUBSONIC_HOME%% and its contents manually.")
+@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%/transcode
+@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%

@@ -19,7 +19,7 @@ USE_PERL5=	build
 USE_XORG=	pixman
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
-MAKE_ENV+=	BSD_MAKE="${MAKE}"
+MAKE_ENV+=	BSD_MAKE="${BSDMAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \

@@ -1,5 +1,5 @@
---- Makefile.orig	2008-02-27 00:31:08.000000000 +0100
-+++ Makefile	2015-02-28 20:52:02.668523748 +0100
+--- Makefile.orig	2008-02-26 23:31:08 UTC
++++ Makefile
 @@ -5,7 +5,7 @@
  CC ?= cc
  CFLAGS ?= -Wall -O2 -ggdb
@@ -9,12 +9,19 @@
  
  # Comment on non-gnu systems
  OPTFLAGS += -DHAVE_GETOPT_LONG
-@@ -46,6 +46,8 @@
- endif
- LDFLAGS += $(SSL_LIBS)
+@@ -38,13 +38,14 @@ OPTFLAGS += -DSO_REUSEPORT
+ # END system dependant block
  
-+LDFLAGS += -lmd
-+
+ SSL_LIBS := $(shell pkg-config --libs libssl 2>/dev/null)
++CRYPTO_LIBS := $(shell pkg-config --libs libcrypto 2>/dev/null)
+ ifeq ($(SSL_LIBS),)
+ SSL_LIBS := $(shell pkg-config --libs openssl 2>/dev/null)
+ endif
+ ifeq ($(SSL_LIBS),)
+ SSL_LIBS := -lssl -lcrypto
+ endif
+-LDFLAGS += $(SSL_LIBS)
++LDFLAGS += $(SSL_LIBS) $(CRYPTO_LIBS)
+ 
  PREFIX =/usr/local
  BINDIR = $(PREFIX)/bin
- DATADIR = $(PREFIX)/share

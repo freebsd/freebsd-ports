@@ -2019,7 +2019,7 @@ DISTINFO_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
-MAKE_CMD?=		/usr/bin/make
+MAKE_CMD?=		${BSDMAKE}
 MAKE_ENV+=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} \
 			LIBDIR="${LIBDIR}" \

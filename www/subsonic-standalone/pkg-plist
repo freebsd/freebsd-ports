@@ -1,0 +1,8 @@
+subsonic-standalone/LICENSE.TXT
+subsonic-standalone/README.TXT
+subsonic-standalone/subsonic.war
+subsonic-standalone/subsonic-booter-jar-with-dependencies.jar
+subsonic-standalone/subsonic.sh
+@unexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information and database saved." && echo "If you you are permanently uninstalling this package" && echo "please remove %%SUBSONIC_HOME%% and its contents manually.")
+@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%/transcode
+@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%
