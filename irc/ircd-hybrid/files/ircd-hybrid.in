@@ -16,7 +16,7 @@
 name="ircd_hybrid"
 rcvar=ircd_hybrid_enable
 
-command=/usr/local/sbin/ircd
+command=/usr/local/bin/ircd
 
 start_precmd=pid_touch
 stop_postcmd=pid_rm
