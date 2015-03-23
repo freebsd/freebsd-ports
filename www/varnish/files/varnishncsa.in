@@ -21,7 +21,11 @@
 #	default: "/var/log/varnishncsa.log"
 #
 # varnishncsa_flags - command line arguments.
-#	default: "-D -P ${varnishncsa_pidfile} -a -c -w ${varnishncsa_file}"
+#	default: "-D -P ${varnishncsa_pidfile} -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -P \"$varnishncsa_logformat\""
+#
+# varnishncsa_logformat - log file format.
+#       default: "" (uses varnishncsa's default format)
+#       example: "%h %l %u %t %r %s %b %{Referer}i %{User-agent}i"
 #
 # Add the following line to /etc/newsyslog.conf to rotate the log file
 # once a day:
@@ -43,7 +47,8 @@ load_rc_config ${name}
 : ${varnishncsa_enable:="NO"}
 : ${varnishncsa_pidfile:="/var/run/${name}.pid"}
 : ${varnishncsa_file:="/var/log/${name}.log"}
-: ${varnishncsa_flags:="-P ${varnishncsa_pidfile} -D -a -c -w ${varnishncsa_file}"}
+: ${varnishncsa_logformat:=""}
+: ${varnishncsa_flags:="-P ${varnishncsa_pidfile} -D -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
 
 pidfile=${varnishncsa_pidfile}
 run_rc_command "$1"
