@@ -1,0 +1,55 @@
+Ruby 2.x #includes <math.h>, which declares a function named
+remainder(). We must rename our variable to avoid name-conflict
+and allow this code to compile with Ruby-2.x
+
+	-mi
+
+--- ext/slide.c	2006-09-17 13:45:51.000000000 -0400
++++ ext/slide.c	2015-03-23 10:27:10.000000000 -0400
+@@ -88,5 +88,5 @@
+ static unsigned int txtsiz;
+ static unsigned long dicsiz;
+-static unsigned int remainder;
++static unsigned int iremainder;
+ 
+ struct matchdata {
+@@ -163,5 +163,5 @@
+     n = fread_crc(crc, &text[txtsiz - dicsiz], dicsiz, infile);
+ 
+-    remainder += n;
++    iremainder += n;
+ 
+     *pos -= dicsiz;
+@@ -271,5 +271,5 @@
+         search_dict_1(token, pos, 0, off+2, m);
+ 
+-    if (m->len > remainder) m->len = remainder;
++    if (m->len > iremainder) m->len = iremainder;
+ }
+ 
+@@ -281,5 +281,5 @@
+     unsigned int *crc;
+ {
+-    remainder--;
++    iremainder--;
+     if (++*pos >= txtsiz - maxmatch) {
+         update_dict(pos, crc);
+@@ -317,9 +317,9 @@
+     memset(text, ' ', TXTSIZ);
+ 
+-    remainder = fread_crc(&crc, &text[dicsiz], txtsiz-dicsiz, infile);
++    iremainder = fread_crc(&crc, &text[dicsiz], txtsiz-dicsiz, infile);
+ 
+     match.len = THRESHOLD - 1;
+     match.off = 0;
+-    if (match.len > remainder) match.len = remainder;
++    if (match.len > iremainder) match.len = iremainder;
+ 
+     pos = dicsiz;
+@@ -327,5 +327,5 @@
+     insert_hash(token, pos);     /* associate token and pos */
+ 
+-    while (remainder > 0 && ! unpackable) {
++    while (iremainder > 0 && ! unpackable) {
+         last = match;
+ 
