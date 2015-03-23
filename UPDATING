@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150323:
+  AFFECTS: Users of net/asterisk* and net/pjsip ports
+  AUTHOR: madpilot@FreeBSD.org
+
+  Due to conflicts between base OpenSSL and ports provided OpenSSL
+  library, which is required by net/libsrtp, the srtp support has
+  to be removed from the default asterisk13 port configuration,
+  otherwise a a not working binary would be generated.
+
+  To get SRTP support working in the asterisk ports it is needed
+  to build all other required ports with WITH_OPENSSL_PORT=yes. For
+  asterisk13 it is also needed to enable the EXTSRTP option in the
+  pjsip port.
+
 20150322:
   AFFECTS: Users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
