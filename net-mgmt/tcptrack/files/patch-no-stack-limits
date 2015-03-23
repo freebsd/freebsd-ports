@@ -1,0 +1,160 @@
+Remove attempts to set arbitrary limits on stack-sizes for different
+threads, which cause segfaults (due, presumably, to the limits being
+too low).
+
+	-mi
+
+--- src/defs.h	2010-09-27 19:02:01.000000000 -0400
++++ src/defs.h	2015-03-23 16:39:53.000000000 -0400
+@@ -30,8 +30,2 @@
+ //#define FASTMODE_INTERVAL 250000000 // one quarter of a second
+ #define FASTMODE_INTERVAL 100000000 // one tenth of a second
+-
+-// stack sizes for the different threads
+-#define SS_PB  2048 // PacketBuffer
+-#define SS_S   4096 // Sniffer 2048 -> segfault on freebsd
+-#define SS_TCC 4096 // TCContainer
+-#define SS_TUI 5120 // TextUI. 4096 -> segfault on solaris
+--- src/PacketBuffer.cc	2010-09-27 19:02:01.000000000 -0400
++++ src/PacketBuffer.cc	2015-03-23 16:23:36.000000000 -0400
+@@ -53,14 +53,6 @@
+ 	// Start up maintenence thread
+ 	//
+-	pthread_attr_t attr;
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	// TODO: there is no man page for this call on linux. Not sure what it
+-	// may return. On some systems it may not be supported at all 
+-	// (should return ENOSYS). Should be safe to ignore return val.
+-	pthread_attr_setstacksize( &attr, SS_PB );
+ 
+-	if( pthread_create(&maint_thread_tid,&attr,pbmaint_thread_func,this) != 0 )
++	if (pthread_create(&maint_thread_tid, NULL, pbmaint_thread_func, this) != 0)
+ 		throw GenericError("pthread_create() returned an error");
+ 
+--- src/Sniffer.cc	2010-09-27 19:02:22.000000000 -0400
++++ src/Sniffer.cc	2015-03-23 16:25:10.000000000 -0400
+@@ -55,5 +66,5 @@
+ }
+ 
+-void Sniffer::init(char *iface, char *fexp, char *test_file)
++void Sniffer::init(const char *iface, const char *fexp, const char *test_file)
+ {
+ 	assert(pcap_initted==false);
+@@ -89,6 +102,4 @@
+ 	// prepare the filter	
+ 	//
+-	struct bpf_program filter; // the filter for the sniffer
+-	char *filter_app = fexp;  // The filter expression
+ 	bpf_u_int32 mask;  // The netmask of our sniffing device
+ 	bpf_u_int32 net;    // The IP of our sniffing device
+@@ -102,28 +113,23 @@
+ 		mask = 0;
+ 	}
+-	if( pcap_compile(handle, &filter, filter_app, 0, net) == -1 )
+-	{
+-		pcap_close(handle);
+-		throw PcapError("pcap_compile",pcap_geterr(handle));
+-	}
+-	if( pcap_setfilter(handle, &filter) ) // apply filter to sniffer
+-	{
+-		pcap_freecode(&filter);
+-		pcap_close(handle);
+-		throw PcapError("pcap_setfilter",pcap_geterr(handle));
++	if (fexp != NULL && fexp[0] != '\0') {
++		struct bpf_program filter; // the filter for the sniffer
++		if (pcap_compile(handle, &filter, fexp, 0, net) == -1)
++		{
++			pcap_close(handle);
++			throw PcapError("pcap_compile", pcap_geterr(handle));
++		}
++		if (pcap_setfilter(handle, &filter)) // apply filter to sniffer
++		{
++			pcap_freecode(&filter);
++			pcap_close(handle);
++			throw PcapError("pcap_setfilter", pcap_geterr(handle));
++		}
++		pcap_freecode(&filter); // filter code not needed after setfilter
+ 	}
+-	pcap_freecode(&filter); // filter code not needed after setfilter
+-	
+-	pcap_initted=true;
+-
+ 
+-	pthread_attr_t attr;
+-
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	pthread_attr_setstacksize( &attr, SS_S );
++	pcap_initted=true;
+ 
+-	if( pthread_create(&sniffer_tid,&attr,sniffer_thread_func,this) != 0 )
++	if (pthread_create(&sniffer_tid, NULL, sniffer_thread_func, this) != 0)
+ 		throw GenericError("pthread_create() failed.");
+ 
+@@ -163,9 +170,11 @@
+ void Sniffer::processPacket( const pcap_pkthdr *header, const u_char *packet )
+ {
+-	assert( pthread_mutex_lock(&pb_mutex)==0 );
++
++	if (pthread_mutex_lock(&pb_mutex) != 0)
++		return;
+ 
+ 	if( pb==NULL ) 
+ 	{
+-		assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++		pthread_mutex_unlock(&pb_mutex);
+ 		return;
+ 	}
+@@ -193,5 +202,5 @@
+ 	pb->pushPacket(n);
+ 	
+-	assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++	pthread_mutex_unlock(&pb_mutex);
+ }
+ 
+--- src/Sniffer.h	2010-09-27 19:02:22.000000000 -0400
++++ src/Sniffer.h	2015-03-23 15:07:57.000000000 -0400
+@@ -43,5 +43,5 @@
+ 	// init performs some constructor-like activity. It is separate
+ 	// so that exceptions don't have to be thrown in the constructor.
+-	void init(char *iface, char *fexp, char *test_file);
++	void init(const char *iface, const char *fexp, const char *test_file);
+ 
+ 	// set the place where sniffed packets are sent for further 
+--- src/TCContainer.cc	2010-09-27 19:02:01.000000000 -0400
++++ src/TCContainer.cc	2015-03-23 16:23:05.000000000 -0400
+@@ -47,15 +47,8 @@
+ 	state=TSTATE_IDLE;
+ 
+-	pthread_attr_t attr;
+-
+ 	pthread_mutex_init( &conlist_lock, NULL );
+ 	pthread_mutex_init( &state_mutex, NULL );
+ 
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	pthread_attr_setstacksize( &attr, SS_TCC );
+-
+-	if( pthread_create(&maint_thread_tid,&attr,maint_thread_func,this) != 0 )
++	if( pthread_create(&maint_thread_tid, NULL, maint_thread_func, this) != 0 )
+ 		throw GenericError("pthread_create() failed.");
+ 
+--- src/TextUI.cc	2011-08-03 13:34:45.000000000 -0400
++++ src/TextUI.cc	2015-03-23 16:24:20.000000000 -0400
+@@ -80,11 +80,5 @@
+ 	run_displayer = true;
+ 
+-	pthread_attr_t attr;
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	pthread_attr_setstacksize( &attr, SS_TUI );
+-
+-	if( pthread_create(&displayer_tid,&attr,displayer_thread_func,this) != 0 )
++	if (pthread_create(&displayer_tid, NULL, displayer_thread_func, this) != 0)
+ 		throw GenericError("pthread_create() returned an error.");
+ 
