@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150322:
+  AUTHOR: bdrewery@FreeBSD.org
+
+  There is now a BSDMAKE that can be overriden for the location of
+  /usr/bin/make. It is a safer alternative to overriding MAKE_CMD which
+  will be force reset for gmake/fmake/scons ports.
+
 20150319:
   AUTHOR: bdrewery@FreeBSD.org
 
