@@ -4,6 +4,7 @@
 PORTNAME=	valgrind
 DISTVERSIONPREFIX=	freebsd-
 PORTVERSION=	3.10.0.20150126
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
@@ -30,9 +31,9 @@ BUILD_DEPENDS+=		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 
 OPTIONS_DEFINE=		MPI DOCS
 OPTIONS_DEFINE_amd64=	32BIT
-#.if exists(${LIB32_PATH})
-#OPTIONS_DEFAULT_amd64=	32BIT
-#.endif
+.if exists(${LIB32_PATH})
+OPTIONS_DEFAULT_amd64=	32BIT
+.endif
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
 
@@ -52,11 +53,9 @@ WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
-.include <bsd.port.options.mk>
+USE_GCC=	yes
 
-.if ${PORT_OPTIONS:M32BIT}
-BROKEN=	Currently does not build with 32bit support
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64="" ARCH=amd64
@@ -80,9 +79,7 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/docs/html
 .endif
 
-do-build: do-man-pages
-
-do-man-pages:
+post-build:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man-pages
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html-docs
