@@ -135,10 +135,10 @@ post-patch:
 
 .if ${PORT_OPTIONS:MTESTS}
 TEST_CMD=		@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
-post-build:
+check regression-test test: build
 	${TEST_CMD}
-regression-test test: build
-	${TEST_CMD}
+
+pre-install: regression-test
 .endif
 
 .include <bsd.port.post.mk>
