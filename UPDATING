@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150322:
+  AFFECTS: Users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  The port now uses VersionAddendum for the port version string. Setting
+  the value to "none" in your sshd_config and restarting openssh will allow
+  removing the version from the banner.
+
 20150321:
   AFFECTS: Users of x11-servers/xorg-server and other X servers
   AUTHOR: bapt@FreeBSD.org
