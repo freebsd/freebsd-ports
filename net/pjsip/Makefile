@@ -2,7 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -12,12 +12,10 @@ COMMENT=	Multimedia communication library written in C language
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
-		libsrtp.so:${PORTSDIR}/net/libsrtp
+LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
-		--with-external-srtp \
 		--disable-silk
 USES=		gmake tar:bz2
 USE_LDCONFIG=	yes
@@ -27,7 +25,7 @@ CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	FFMPEG G711 G722 G7221 GSM ILBC L16 OPENH264 RESAMPLE RESAMPLEDLL \
-		SAMPLERATE SDL SHARED SPEEX SPEEXAEC V4L IPV6 SOUND VIDEO AMR
+		SAMPLERATE SDL SHARED SPEEX SPEEXAEC V4L IPV6 SOUND VIDEO AMR EXTSRTP
 OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 SHARED SPEEX SPEEXAEC
 
 G711_DESC=	G.711 codec support
@@ -42,6 +40,7 @@ SHARED_DESC=	Build shared libraries (other ports may depend on this)
 SPEEXAEC_DESC=	Speex Acoustic Echo Canceller/AEC
 V4L_DESC=	Video4Linux2 support
 YUV_DESC=	Libyuv support
+EXTSRTP_DESC=	Use libsrtp port (needs all ports compiled with WITH_OPENSSL_PORT=yes)
 
 OPTIONS_SUB=	yes
 
@@ -77,6 +76,8 @@ VIDEO_CONFIGURE_ENABLE=		video
 AMR_CONFIGURE_WITH=		opencore-amr
 AMR_LIB_DEPENDS=		libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr \
 				libvo-amrwbenc.so:${PORTSDIR}/audio/vo-amrwbenc
+EXTSRTP_CONFIGURE_WITH=		external-srtp
+EXTSRTP_LIB_DEPENDS=		libsrtp.so:${PORTSDIR}/net/libsrtp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
