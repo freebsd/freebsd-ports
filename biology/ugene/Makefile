@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.16.0
+DISTVERSION=	1.16.1
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -19,9 +19,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		execinfo qmake
 USE_GL=		glu
-USE_QT4=	gui webkit xml svg linguist_build moc_build qmake_build \
-		qtestlib_build rcc_build uic_build imageformats_run \
-		scripttools_build
+USE_QT4=	corelib gui network script webkit xml \
+		linguist_build moc_build qmake_build qtestlib_build \
+		rcc_build scripttools_build uic_build \
+		imageformats_run
 USE_XORG=	xtst
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -67,8 +68,6 @@ post-patch:
 		${WRKSRC}/installer/_common_data/ugene
 	@${REINPLACE_CMD} -e '/readproc\.h/d' \
 		${WRKSRC}/src/corelibs/U2Core/src/globals/AppResources.cpp
-	@${REINPLACE_CMD} -e '1000d' \
-		${WRKSRC}/src/plugins_3rdparty/ball/src/include/BALL/DATATYPE/string.h
 	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
 	@${REINPLACE_CMD} -e '/ifdef/s|Q_OS_LINUX|Q_OS_UNIX|' \
