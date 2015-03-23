@@ -2,6 +2,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 
