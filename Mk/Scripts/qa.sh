@@ -142,7 +142,7 @@ stripped() {
 	# Split file and result into 2 lines and read separately to ensure
 	# files with spaces are kept intact.
 	find ${STAGEDIR} -type f \
-	    -exec /usr/bin/file -nNF "${LF}" {} + |
+	    -exec /usr/bin/file --exclude ascii -nNF "${LF}" {} + |
 	    while read f; do
 		    read output
 		case "${output}" in
