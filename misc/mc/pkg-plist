@@ -279,6 +279,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/povray.syntax
 %%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/properties.syntax
+%%EDITOR%%%%DATADIR%%/syntax/puppet.syntax
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sh.syntax
