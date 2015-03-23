@@ -20,7 +20,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
+	@${REINPLACE_CMD} -e 's,/usr/share/fonts/ttf/,${PREFIX}/share/fonts/TrueType/,g' \
 	    ${WRKSRC}/gb2312-bg5ps.conf ${WRKSRC}/bg5ps.conf
 
 do-install:
