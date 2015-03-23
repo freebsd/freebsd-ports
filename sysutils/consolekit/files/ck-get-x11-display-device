@@ -26,6 +26,11 @@ pid=$(${CAT} "/tmp/.X${dispnum}-lock")
 
 device=$(${FSTAT} -p ${pid} | ${GREP} ttyv | ${AWK} '{print $8}')
 
+if [ -z "${device}" -a -f "/var/log/Xorg.$dispnum.log" ]; then
+	device=$(awk '/using VT number/ { print "ttyv" ($7 - 1); }' \
+	    "/var/log/Xorg.$dispnum.log")
+fi
+
 if [ -z "${device}" ]; then
     echo "ERROR: Failed to find TTY device for X server on display ${dispnum}"
     exit 1

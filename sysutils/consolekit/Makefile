@@ -1,10 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/consolekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	consolekit
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 DISTFILES=	ConsoleKit-${PORTVERSION}${EXTRACT_SUFX}
@@ -33,7 +32,7 @@ post-install:
 	    	${STAGEDIR}${PREFIX}/libexec/ck-get-x11-display-device
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-server-pid \
 	    	${STAGEDIR}${PREFIX}/libexec/ck-get-x11-server-pid
-	${MKDIR} ${STAGEDIR}/var/log/ConsoleKit
+	@${MKDIR} ${STAGEDIR}/var/log/ConsoleKit
 	${TOUCH} ${STAGEDIR}/var/log/ConsoleKit/history
 
 .include <bsd.port.mk>
