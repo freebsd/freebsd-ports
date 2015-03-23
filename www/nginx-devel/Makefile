@@ -957,11 +957,11 @@ pre-configure:
 .if ${PORT_OPTIONS:MMODSECURITY}
 	( cd ${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION} && \
 		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
-		${MAKE} )
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
 .endif
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
