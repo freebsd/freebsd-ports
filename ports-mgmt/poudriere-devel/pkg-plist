@@ -65,6 +65,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/html/robots.txt
 %%DATADIR%%/include/common.sh.dragonfly
 %%DATADIR%%/include/common.sh.freebsd
+%%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
 %%DATADIR%%/include/display.sh
 %%DATADIR%%/include/fs.sh
