@@ -16,6 +16,8 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
+FORBIDDEN=	it fails to run
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_TAGNAME=	3.1.1-33-gbf2a55b
