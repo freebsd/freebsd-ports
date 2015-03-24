@@ -252,9 +252,9 @@ pre-configure:
 	${ECHO_CMD} "F90='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm -lkvm'"		\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic -lutil ${PTHREAD_LIBS} -lz'"	\
+	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic -lutil -lpthread -lz'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='${PTHREAD_LIBS} -lz'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-lpthread -lz'"			>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MPI)
 	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "MPIRUN = 'mpirun'"				>> ${WRKSRC}/setup.cfg
@@ -285,18 +285,18 @@ pre-configure:
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${FLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH} -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${FLAGARCH} -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
 	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -fno-tree-dse ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH}'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH}'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
 .for is in ${INTERACTIVE_SCRIPTS}

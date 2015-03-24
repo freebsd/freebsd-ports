@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 SUB_FILES=	Makefile
 PLIST_FILES=	bin/${PORTNAME} man/man1/pixz.1.gz
 USES=		uidfix
-MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-extract: apply-slist
 	${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}
