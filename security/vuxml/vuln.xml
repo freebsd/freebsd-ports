@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="996bce94-d23d-11e4-9463-9cb654ea3e1c">
+    <topic>libuv -- incorrect revocation order while relinquishing privileges</topic>
+    <affects>
+      <package>
+	<name>node010</name>
+	<range><lt>0.10.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nodejs releases reports:</p>
+	<blockquote cite="http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable">
+	  <h5>CVE-2015-0278</h5>
+	  <p>This may potentially allow an attacker to gain elevated privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable</url>
+      <freebsdpr>ports/198861</freebsdpr>
+      <cvename>CVE-2015-0278</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-14</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22dc4a22-d1e5-11e4-879c-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
