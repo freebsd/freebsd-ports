@@ -3,7 +3,7 @@
 
 PORTNAME=	inconsolata-ttf
 PORTVERSION=	20090215
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.levien.com/type/myfonts/
 DISTNAME=	Inconsolata
