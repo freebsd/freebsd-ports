@@ -13,6 +13,9 @@ COMMENT=	X Toolkit library
 XORG_CAT=	lib
 USE_XORG=	x11 sm xproto:both kbproto
 CONFIGURE_ARGS=	--disable-specs
+USES+=	cpe
+CPE_PRODUCT=	libxt
+CPE_VENDOR=	x
 
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
