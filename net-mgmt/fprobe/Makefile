@@ -19,9 +19,6 @@ PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog README

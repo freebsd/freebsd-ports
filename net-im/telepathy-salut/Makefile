@@ -21,8 +21,7 @@ USE_GNOME=	glib20 libxslt:build
 USE_OPENSSL=	yes
 USE_SQLITE=	3
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
