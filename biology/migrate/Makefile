@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.6.6
+PORTVERSION=	3.6.7
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 PORTEXAMPLES=	*
+EXTRACT_AFTER_ARGS=--exclude zlib
 
 # XXX should be converted to OptionsNG
 .if defined(WITH_THREAD_PRETTY)
