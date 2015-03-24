@@ -34,7 +34,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
-		--without-shadow
+		--without-shadow \
+		--with-docs
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 INSTALL_TARGET=	install-strip
@@ -59,8 +60,6 @@ GSSAPI_NONE_DESC=	Build without GSSAPI support
 GSSAPI_BASE_DESC=	Use GSSAPI from base
 GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
-
-DOCS_CONFIGURE_WITH=	docs
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 GSSAPI_BASE_USES=		gssapi
