@@ -43,7 +43,7 @@ extra_commands="keygen"
 
 quasselcore_keygen()
 {
-	openssl req -x509 -nodes -days 365 -newkey rsa:1024 \
+	openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
 	    -keyout "${quasselcore_data}/quasselCert.pem" \
 	    -out "${quasselcore_data}/quasselCert.pem"
 	chown ${quasselcore_user}:${quasselcore_group} "${quasselcore_data}/quasselCert.pem"
