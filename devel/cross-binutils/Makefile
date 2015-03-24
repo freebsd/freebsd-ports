@@ -12,8 +12,12 @@ PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER= 	brooks@FreeBSD.org
+MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	GNU binutils port for cross-target development
+
+FORBIDDEN=	Multiple vulnerbilities parsing PE and ihex files
+DEPRECATED=	Obsolete.  Migrate to devel/binutils based ports
+EXPIRATION_DATE=	2015-04-15
 
 USES=		gmake makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
