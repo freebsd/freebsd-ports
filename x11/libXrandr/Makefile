@@ -13,5 +13,8 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 randrproto:both xext xextproto xrender renderproto xproto:both
+USES+=	cpe
+CPE_PRODUCT=	libxrandr
+CPE_VENDOR=	x
 
 .include <bsd.port.mk>
