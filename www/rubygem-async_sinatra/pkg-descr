@@ -4,4 +4,4 @@ properly utilise this package, some knowledge of EventMachine and/or
 asynchronous patterns is recommended. Currently, supporting servers include
 Thin, Rainbows, Zbatery.
 
-WWW: http://github.com/raggi/async_sinatra
+WWW: https://github.com/raggi/async_sinatra
