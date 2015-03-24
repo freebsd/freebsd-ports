@@ -1,4 +1,3 @@
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README.html
@@ -2989,6 +2988,7 @@
 %%DEMO%%%%T%%/sample/webservices/EbayServer/src/ebay/server/Main.java
 %%T%%/src.zip
 @exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%DEMO%%@dir %%T%%/demo/db/programs/localcal/lib
 @dir %%T%%/jre/lib/applet
 @dir %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.data
