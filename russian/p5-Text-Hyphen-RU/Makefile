@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	anes@anes.su
 COMMENT=	Determine positions for hyphens inside russian words
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	p5-Text-Hyphen>=0:${PORTSDIR}/textproc/p5-Text-Hyphen
 RUN_DEPENDS:=	${BUILD_DEPENDS}
