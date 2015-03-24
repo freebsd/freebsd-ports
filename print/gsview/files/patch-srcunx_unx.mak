@@ -1,5 +1,5 @@
---- srcunx/unx.mak.orig	2008-07-13 07:39:58.254461217 -0400
-+++ srcunx/unx.mak	2008-07-14 09:22:24.652938045 -0400
+--- srcunx/unx.mak.orig	2004-11-27 05:51:26 UTC
++++ srcunx/unx.mak
 @@ -19,8 +19,8 @@
  #
  # WARNING: Doesn't install pstotext
@@ -11,7 +11,7 @@
  GSVIEW_BASE=$(prefix)$(GSVIEW_ROOT)
  
  
-@@ -38,8 +38,6 @@
+@@ -38,8 +38,6 @@ GSVIEW_DOCPATH=$(GSVIEW_BASE)/share/doc
  # GSview printer.ini and system wide gsview.ini
  GSVIEW_ETCPATH=$(prefix)/etc
  
@@ -20,18 +20,16 @@
  OBJ=o
  INSTALL=install -m 644
  INSTALL_EXE=install -m 755
-@@ -50,8 +48,8 @@
- 
+@@ -51,7 +49,7 @@ LDEBUG=
  # Linux
  XINCLUDE=
--PFLAGS=-DMULTITHREAD
+ PFLAGS=-DMULTITHREAD
 -PLINK=-lpthread -lrt
-+PFLAGS=-DMULTITHREAD ${PTHREAD_CFLAGS}
-+PLINK=${PTHREAD_LIBS}
++PLINK=-lpthread
  
  # SunOS 5.7
  #XINCLUDE=-I/usr/openwin/share/lib
-@@ -77,7 +75,8 @@
+@@ -77,7 +75,8 @@ PLINK=-lpthread -lrt
  
  # Other possible options are -Wtraditional
  # Compiler flags for C and C++ files.
@@ -41,7 +39,7 @@
  
  # Linker flags
  LFLAGS=$(LDEBUG) $(PLINK) `gtk-config --libs`
-@@ -152,7 +151,7 @@
+@@ -152,7 +151,7 @@ OBJS=$(OBJCOM1) $(OBJCOM2) $(OBJPLAT1)
  #all: gsview html pstotext
  all: $(BD)gsview$(EXE) html
  

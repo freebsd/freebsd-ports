@@ -14,8 +14,7 @@ LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
 
 USES=		gmake
 ALL_TARGET=	${PORTNAME} nvram_export
-MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	dynamips-community-[0-9]* dynamips-devel-[0-9]*

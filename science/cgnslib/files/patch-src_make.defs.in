@@ -5,7 +5,7 @@
  CEOUT   = @CEOUT@
  LDFLAGS = @LDFLAGS@
 -CLIBS   = @LIBS@
-+CLIBS   = @LIBS@ $(PTHREAD_LIBS)
++CLIBS   = @LIBS@ -lpthread
  
  #------------------------------------------------------------------------
  # SPACE  - used to force a space in the compiler executable output flag
@@ -14,7 +14,7 @@
  FFLAGS = @FFLAGS@ @SYSFFLAGS@
  FEOUT  = @FEOUT@
 -FLIBS  = @FLIBS@
-+FLIBS  = @FLIBS@ $(PTHREAD_LIBS)
++FLIBS  = @FLIBS@ -lpthread
  
  #------------------------------------------------------------------------
  # strip command for executables - set to true if not used

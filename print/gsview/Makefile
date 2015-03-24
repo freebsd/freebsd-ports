@@ -20,8 +20,6 @@ RUN_DEPENDS+=	epstool:${PORTSDIR}/graphics/epstool \
 
 NO_CDROM=	Can only be distributed for free
 
-MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
-
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/gsview \

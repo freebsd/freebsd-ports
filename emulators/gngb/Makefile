@@ -36,8 +36,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|"$$SDL_CONFIG" = yes|-n "$$SDL_CONFIG"|g ; \
+	@${REINPLACE_CMD} -e \
+		's|"$$SDL_CONFIG" = yes|-n "$$SDL_CONFIG"|g ; \
 		 s|sdl-config |$$SDL_CONFIG |g ; \
 		 s|$$OPT||g' ${WRKSRC}/configure
 

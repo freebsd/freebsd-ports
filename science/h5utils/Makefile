@@ -15,8 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	YES
-CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include \
-		${PTHREAD_LIBS}
+CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include -lpthread
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5 \
