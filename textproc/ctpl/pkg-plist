@@ -14,7 +14,7 @@ include/ctpl/ctpl.h
 lib/libctpl.a
 lib/libctpl.so
 lib/libctpl.so.2
-lib/libctpl.so.2.2.1
+lib/libctpl.so.2.2.2
 libdata/pkgconfig/ctpl.pc
 man/man1/ctpl.1.gz
 share/gtk-doc/html/ctpl/annotation-glossary.html
@@ -36,13 +36,17 @@ share/gtk-doc/html/ctpl/ctpl-CtplToken.html
 share/gtk-doc/html/ctpl/ctpl-CtplValue.html
 share/gtk-doc/html/ctpl/ctpl-Generic-IO.html
 share/gtk-doc/html/ctpl/ctpl-Version-information.html
-share/gtk-doc/html/ctpl/ctpl.devhelp
 share/gtk-doc/html/ctpl/ctpl.devhelp2
 share/gtk-doc/html/ctpl/environment-description-syntax.html
 share/gtk-doc/html/ctpl/home.png
 share/gtk-doc/html/ctpl/index.html
 share/gtk-doc/html/ctpl/index.sgml
+share/gtk-doc/html/ctpl/left-insensitive.png
 share/gtk-doc/html/ctpl/left.png
+share/gtk-doc/html/ctpl/right-insensitive.png
 share/gtk-doc/html/ctpl/right.png
 share/gtk-doc/html/ctpl/style.css
+share/gtk-doc/html/ctpl/up-insensitive.png
 share/gtk-doc/html/ctpl/up.png
+%%NLS%%share/locale/fr/LC_MESSAGES/ctpl.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ctpl.mo
