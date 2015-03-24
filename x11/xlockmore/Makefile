@@ -4,7 +4,8 @@
 PORTNAME=	xlockmore
 PORTVERSION=	5.46
 CATEGORIES?=	x11
-MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/
+MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/ \
+		LOCAL/jgh/x11/${PORTNAME}/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
