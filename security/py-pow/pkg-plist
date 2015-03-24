@@ -17,4 +17,3 @@
 %%PYTHON_SITELIBDIR%%/POW/_oids.pyo
 %%PYTHON_SITELIBDIR%%/POW/_simpledb.pyo
 %%PYTHON_SITELIBDIR%%/POW/pkix.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/POW
