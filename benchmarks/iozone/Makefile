@@ -31,17 +31,16 @@ THREADS_DESC=	Enable threading (uses pthreads)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 .else
 CFLAGS+=	-DNO_THREADS
 .endif
 
 post-patch:
 .if ${PORT_OPTIONS:MSSH}
-	@${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' ${WRKSRC}/iozone.c
+	@${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' \
+		${WRKSRC}/iozone.c
 .endif
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${STAGEDIR}${PREFIX}/bin

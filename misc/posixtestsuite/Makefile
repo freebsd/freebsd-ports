@@ -31,9 +31,9 @@ THEPIPE=	| tee 2>&1
 .endif
 
 .if defined(WITH_THRLIB)
-THRLIB=${WITH_THRLIB}
+THRLIB=	${WITH_THRLIB}
 .else
-THRLIB=	${PTHREAD_LIBS}
+THRLIB=	-lpthread
 .endif
 
 pre-everything::
@@ -48,7 +48,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "  * QUIET - don't print progress messages while running"
 	@${ECHO} "  * WITH_THRLIB - choose thread library to run test against"
-	@${ECHO} "    (NB: by default '"${PTHREAD_LIBS}"' is used)"
+	@${ECHO} "    (NB: by default '"-lpthread"' is used)"
 	@${ECHO} ""
 	@${ECHO} "Examples:"
 	@${ECHO} ""

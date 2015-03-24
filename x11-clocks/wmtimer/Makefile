@@ -20,14 +20,12 @@ USE_CSTD=	gnu89
 USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext xfixes xi \
 		xinerama xpm xrandr xrender
 USE_GNOME=	gtk20
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmtimer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmtimer ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
