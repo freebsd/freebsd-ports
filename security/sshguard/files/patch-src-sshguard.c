@@ -1,6 +1,6 @@
---- src/sshguard.c.orig	2010-08-09 08:44:15.000000000 +0200
-+++ src/sshguard.c	2011-03-28 11:42:42.000000000 +0200
-@@ -566,9 +566,13 @@
+--- src/sshguard.c.orig	2011-02-09 12:01:47 UTC
++++ src/sshguard.c
+@@ -567,9 +567,13 @@ static void process_blacklisted_addresse
          /* terminate array list */
          addresses[i] = NULL;
          /* do block addresses of this kind */
@@ -17,5 +17,3 @@
      }
      /* free temporary arrays */
      free(addresses);
-
-
