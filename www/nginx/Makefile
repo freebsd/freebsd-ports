@@ -922,9 +922,6 @@ post-patch:
 		s!-leio!!; \
 		s!-Iext/libeio!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
-	@${REINPLACE_CMD} \
-		's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/cxx_portability.rb
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \

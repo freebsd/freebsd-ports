@@ -16,10 +16,6 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	README
 PLIST_FILES=	sbin/iftop man/man8/iftop.8.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		 ${WRKSRC}/configure
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8

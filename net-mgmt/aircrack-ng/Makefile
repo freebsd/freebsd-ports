@@ -50,9 +50,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-E 's/air(driver|mon)-ng\.1 //' \
 			${WRKSRC}/manpages/Makefile
-	@${REINPLACE_CMD} \
-		-e 's|-lpthread|${PTHREAD_LIBS}|' \
-			${WRKSRC}/src/Makefile
 
 post-install:
 	@${STRIP_CMD} ${BIN_FILES:S,^,${STAGEDIR}${PREFIX}/bin/,} \
