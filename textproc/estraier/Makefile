@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \
 		--enable-devel
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/include ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/include
 
 CHASEN_LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
 CHASEN_CONFIGURE_ENABLE=	chasen
@@ -46,8 +46,8 @@ post-patch:
 		's|-O2|@CFLAGS@|g ; \
 		 s|HOME|LOCALBASE|g ; \
 		 s|:/usr/local/lib||g ; \
-		 s|-I/usr/local/include|${PTHREAD_CFLAGS}|g ; \
-		 s|-L/usr/local/lib|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile.in
+		 s|-I/usr/local/include||g ; \
+		 s|-L/usr/local/lib|-lpthread|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .for file in estindex estmbtomh estserver estsiutil estxview
