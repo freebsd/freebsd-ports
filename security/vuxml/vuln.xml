@@ -160,7 +160,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.1e_4</lt></range>
       </package>
       <package>
 	<name>libressl</name>
@@ -202,7 +202,7 @@ Notes:
     <dates>
       <discovery>2015-03-19</discovery>
       <entry>2015-03-19</entry>
-      <modified>2015-03-19</modified>
+      <modified>2015-03-24</modified>
     </dates>
   </vuln>
 
