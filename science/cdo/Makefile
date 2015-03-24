@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_SUB=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-cgribex \
 		--disable-data \
 		--disable-extra \
@@ -29,7 +28,6 @@ CONFIGURE_ARGS=	--disable-cgribex \
 		--with-zlib=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix
 
