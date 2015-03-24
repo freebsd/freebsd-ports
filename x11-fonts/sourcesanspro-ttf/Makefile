@@ -3,6 +3,7 @@
 
 PORTNAME=	sourcesanspro-ttf
 PORTVERSION=	1.065
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	office@FreeBSD.org
