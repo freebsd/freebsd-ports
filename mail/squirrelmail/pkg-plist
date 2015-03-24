@@ -21,9 +21,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/class/mime/SMimeMessage.class.php
 %%SQUIRRELDIR%%/class/mime/index.php
 %%SQUIRRELDIR%%/config/.htaccess
-@mode 755
-%%SQUIRRELDIR%%/config/conf.pl
-@mode
+@(,,755) %%SQUIRRELDIR%%/config/conf.pl
 %%SQUIRRELDIR%%/config/config_default.php
 @sample %%SQUIRRELDIR%%/config/config_local.php.sample
 %%SQUIRRELDIR%%/config/index.php
@@ -464,22 +462,5 @@ etc/periodic/daily/111.clean-squirrelmail
 %%PORTDOCS%%%%DOCSDIR%%/security.txt
 %%PORTDOCS%%%%DOCSDIR%%/translating.txt
 %%PORTDOCS%%%%DOCSDIR%%/translating_help.txt
-@owner %%SMUSER%%
-@group %%SMGROUP%%
-@mode 0750
-@dir %%SQUIRRELDIR%%/data
-@group
-@owner
-@mode 0755
-@dir %%SQUIRRELDIR%%/config
-@dir %%SQUIRRELDIR%%/class/mime
-@dir %%SQUIRRELDIR%%/class/helper
-@dir %%SQUIRRELDIR%%/class/deliver
-@dir %%SQUIRRELDIR%%/class
-@owner %%SMUSER%%
-@group %%SMGROUP%%
-@mode 0730
-@dir %%SQUIRRELDIR%%/attach
-@mode
-@group
-@owner
+@dir(%%SMUSER%%,%%SMGROUP%%,0750) %%SQUIRRELDIR%%/data
+@dir(%%SMUSER%%,%%SMGROUP%%,0730) %%SQUIRRELDIR%%/attach
