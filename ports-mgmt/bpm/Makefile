@@ -25,8 +25,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-lintl|-lintl -L${LOCALBASE}/lib|g"
 # GnomeVFS needs pthread; bpm may use GnomeVFS (via GtkFileChooser)
-	@${REINPLACE_CMD} -e 's|^CFLAGS+=|& ${PTHREAD_CFLAGS}|; \
-		s|^LDLIBS+=|& ${PTHREAD_LIBS}|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|^LDLIBS+=|& -lpthread|' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|<glib/.*.h>|<glib.h>|g' \
 		${WRKSRC}/src/*.h
 
