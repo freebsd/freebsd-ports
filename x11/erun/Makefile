@@ -19,8 +19,8 @@ PLIST_FILES=	bin/E-Run.epplet
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=	gl
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lepplet -lImlib2 -lGL
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \

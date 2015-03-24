@@ -13,7 +13,7 @@
                  ;;
            *-*-freebsd*)
 -                                                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
-+                                                THREAD_OPTS="${PTHREAD_LIBS}"
++                                                THREAD_OPTS="-pthread"
                  ;;
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""

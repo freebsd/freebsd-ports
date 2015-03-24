@@ -4,7 +4,7 @@
  	test-menu-spec.c
  
  gnome_menu_spec_test_LDADD = \
-+	%%PTHREAD_LIBS%% \
++	-lpthread \
  	$(GIO_UNIX_LIBS)		\
  	../libmenu/libgnome-menu-3.la
  

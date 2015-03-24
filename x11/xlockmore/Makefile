@@ -62,7 +62,7 @@ KRB5LIB=	-L${KRB5_HOME}/lib
 
 .if ${PORT_OPTIONS:MMESAGL}
 CONFIGURE_ARGS+=	--with-mesa
-MESALIB=${PTHREAD_LIBS}
+MESALIB=	-lpthread
 USE_GL=	yes
 CFLAGS+=	-I${LOCALBASE}/include/FTGL
 .else
