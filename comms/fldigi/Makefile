@@ -107,8 +107,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
-		-e 's|^CPPFLAGS|#CPPFLAGS|' \
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS|#CPPFLAGS|' \
 		${WRKSRC}/src/Makefile
 # force rebuild of man pages
 	${RM} ${WRKSRC}/doc/*.1

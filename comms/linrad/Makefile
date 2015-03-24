@@ -47,8 +47,7 @@ post-patch:
 # These extensions seem to be Windows only
 #	@${CP} ${WRKSRC}/extra_w3sz.c ${WRKSRC}/users_extra.c
 #	@${CP} ${WRKSRC}/users_tr.c ${WRKSRC}/users_hwaredriver.c
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g'\
- 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		 ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|' \
 		${WRKSRC}/help.c
