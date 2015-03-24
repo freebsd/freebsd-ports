@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--with-libs="-lsvml"
 
 .if ${PORT_OPTIONS:MMPICH}
 CONFIGURE_ARGS+=--enable-always-use-mpi
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	PTHREAD_LIBS=-lpthread
 .endif
 
 .if ${PORT_OPTIONS:MOPTIFLAGS}

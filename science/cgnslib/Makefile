@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	HDF5 SZIP TESTS TOOLS

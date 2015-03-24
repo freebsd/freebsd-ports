@@ -24,10 +24,6 @@ PLIST_FILES=	bin/flpsed \
 		share/icons/flpsed.svg
 PORTDOCS=	README
 
-post-configure:
-	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} \
-	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

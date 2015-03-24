@@ -32,7 +32,7 @@ CONFIGURE_ENV=	MPI_LIBS="${MPI_LIBS}" \
 		PYEXE="${PYTHON_CMD}"
 CONFIGURE_ARGS=	--with-blas-libs="${BLASLIB} ${LAPACKLIB}"
 MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
-		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}	\
+		PTHREAD_LIBS=-lpthread TERM=${TERM}	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 USE_LDCONFIG=	yes
 
@@ -88,7 +88,7 @@ MPI_LIBS=	-lmpi -lorte -lopal
 MPI_HOME=	${LOCALBASE}
 BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:${PORTSDIR}/net/mpich2
-MPI_LIBS=	-lmpich -lmpl ${PTHREAD_LIBS}
+MPI_LIBS=	-lmpich -lmpl -lpthread
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

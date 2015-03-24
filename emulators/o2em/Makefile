@@ -18,7 +18,7 @@ LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
 WRKSRC=		${WRKDIR}/o2em117src
 MAKEFILE=	Makefile.freebsd
 USES=		gmake zip
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	DOCS
 
