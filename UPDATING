@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150324:
+  AFFECTS: Users of dns/bind9*
+  AUTHOR: mat@FreeBSD.org
+
+  This is only for FreeBSD 10.0+.
+
+  BIND auto chroot has been added back to the named rc script.  As enabling it
+  by default would most certainly break people's setup, it is not.  To enable
+  it, and chroot it in /var/named, add the following line to your rc.conf file:
+
+  named_chrootdir="/var/named"
+
+  On first launch, the rc script will move the /usr/local/etc/namedb directory
+  into the chroot, and create a symlink to it.
+
+  Note that, if you're running from within a jail, you need to have a
+  /var/named/dev devfs created beforehand, with the null and random devices.
+
 20150323:
   AFFECTS: Users of net/asterisk* and net/pjsip ports
   AUTHOR: madpilot@FreeBSD.org
