@@ -2,11 +2,12 @@ bin/lz4
 bin/lz4c
 bin/lz4cat
 include/lz4.h
+include/lz4frame.h
 include/lz4hc.h
 lib/liblz4.a
 lib/liblz4.so
-lib/liblz4.so.1
-lib/liblz4.so.1.3.1
+lib/liblz4.so.%%SO_VER_MAJ%%
+lib/liblz4.so.%%SO_VER%%
 libdata/pkgconfig/liblz4.pc
 man/man1/lz4.1.gz
 man/man1/lz4c.1.gz
