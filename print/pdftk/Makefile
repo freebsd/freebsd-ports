@@ -5,7 +5,7 @@ PORTNAME=	pdftk
 PORTVERSION=	2.02
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ LOCAL/mat/pdftk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	mat@FreeBSD.org
@@ -42,11 +42,10 @@ pre-configure:
 	fi
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=${CSUFF}|g" ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib ${LDFLAGS} -w|g" ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e "s|LDLIBS= -lgcj|LDLIBS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} ${ICONV_LIB} -lz -L${LOCALBASE}/lib ${LDFLAGS} -w|g" \
-			${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g; \
+		s|VERSUFF=|VERSUFF=${CSUFF}|g; s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib ${LDFLAGS} -w|g; \
+		s|LDLIBS= -lgcj|LDLIBS= -lgcj -pthread ${ICONV_LIB} -lz -L${LOCALBASE}/lib ${LDFLAGS} -w|g" \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
