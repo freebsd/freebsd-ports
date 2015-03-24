@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lollypop
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/${PORTVERSION}
