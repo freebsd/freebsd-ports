@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ctpl
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://download.tuxfamily.org/ctpl/releases/
 
@@ -13,5 +12,12 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USES=		pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
 
 .include <bsd.port.mk>
