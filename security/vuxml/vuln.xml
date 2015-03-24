@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="22dc4a22-d1e5-11e4-879c-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.605</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.596.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-03-23">
+	  <h1>Description</h1>
+	  <h5>SECURITY-171, SECURITY-177 (Reflective XSS vulnerability)</h5>
+	  <p>An attacker without any access to Jenkins can navigate the user
+	    to a carefully crafted URL and have the user execute unintended
+	    actions. This vulnerability can be used to attack Jenkins inside
+	    firewalls from outside so long as the location of Jenkins is known
+	    to the attacker.</p>
+	  <h5>SECURITY-180 (forced API token change)</h5>
+	  <p>The part of Jenkins that issues a new API token was not
+	    adequately protected against anonymous attackers. This allows an
+	    attacker to escalate privileges on Jenkins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-03-23</url>
+    </references>
+    <dates>
+      <discovery>2015-03-23</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76ff65f4-17ca-4d3f-864a-a3d6026194fb">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
