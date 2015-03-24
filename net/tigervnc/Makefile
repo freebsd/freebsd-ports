@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tigervnc
-PORTVERSION=	1.3.1
-PORTREVISION=	9
+PORTVERSION=	1.4.3
 CATEGORIES=	net x11-servers
-MASTER_SITES=	SF:tigervnc
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:tigervnc
+MASTER_SITES=	https://github.com/TigerVNC/tigervnc/archive/v${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	High-performance, platform-neutral implementation of VNC
@@ -79,7 +76,7 @@ CMAKE_ARGS+=	-DBUILD_VIEWER=1
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 # ImageMagick is required to generate icons during build process
-BUILD_DEPENDS+= ${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 USE_XORG+=	xcursor xfixes xft xinerama
 PLIST_SUB+=	VIEWER=""
 INSTALLS_ICONS=	yes
@@ -118,9 +115,10 @@ TIGERVNC_XORG_PATCH_VER=	114
 
 # import from x11-server/xorg-server/Makefile
 .ifdef WITH_OPENSSL_BASE
-# The reason why I use this is cause openssl from base doesn't install a .pc file
-# and configure will fail trying to find it. Setting both of those variables to
-# a *non-empty* value by-passes the pkg-config check.
+# The reason why I use this is cause openssl from base doesn't
+# install a .pc file and configure will fail trying to find it.
+# Setting both of those variables to a *non-empty* value by-passes
+# the pkg-config check.
 CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 

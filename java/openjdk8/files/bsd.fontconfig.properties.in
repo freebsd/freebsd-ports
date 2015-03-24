@@ -166,26 +166,26 @@ sequence.fallback=chinese-big5,chinese-gb18030,japanese-x0208,korean
 
 # Font File Names
 
-filename.DejaVu_Sans=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSans.ttf
-filename.DejaVu_Sans_Bold=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf
-filename.DejaVu_Sans_Oblique=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSans-Oblique.ttf
-filename.DejaVu_Sans_Bold_Oblique=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSans-BoldOblique.ttf
+filename.DejaVu_Sans=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSans.ttf
+filename.DejaVu_Sans_Bold=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSans-Bold.ttf
+filename.DejaVu_Sans_Oblique=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSans-Oblique.ttf
+filename.DejaVu_Sans_Bold_Oblique=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSans-BoldOblique.ttf
 
-filename.DejaVu_Sans_Mono=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSansMono.ttf
-filename.DejaVu_Sans_Mono_Bold=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSansMono-Bold.ttf
-filename.DejaVu_Sans_Mono_Oblique=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSansMono-Oblique.ttf
-filename.DejaVu_Sans_Mono_Bold_Oblique=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf
+filename.DejaVu_Sans_Mono=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSansMono.ttf
+filename.DejaVu_Sans_Mono_Bold=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSansMono-Bold.ttf
+filename.DejaVu_Sans_Mono_Oblique=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSansMono-Oblique.ttf
+filename.DejaVu_Sans_Mono_Bold_Oblique=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf
 
-filename.DejaVu_Serif=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSerif.ttf
-filename.DejaVu_Serif_Bold=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSerif-Bold.ttf
-filename.DejaVu_Serif_Italic=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSerif-Italic.ttf
-filename.DejaVu_Serif_Bold_Italic=%%LOCALBASE%%/lib/X11/fonts/dejavu/DejaVuSerif-BoldItalic.ttf
+filename.DejaVu_Serif=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSerif.ttf
+filename.DejaVu_Serif_Bold=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSerif-Bold.ttf
+filename.DejaVu_Serif_Italic=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSerif-Italic.ttf
+filename.DejaVu_Serif_Bold_Italic=%%LOCALBASE%%/share/fonts/dejavu/DejaVuSerif-BoldItalic.ttf
 
 filename.Sazanami_Gothic=%%LOCALBASE%%/share/font-sazanami/sazanami-gothic.ttf
 filename.Sazanami_Mincho=%%LOCALBASE%%/share/font-sazanami/sazanami-mincho.ttf
 filename.AR_PL_ShanHeiSun_Uni=%%LOCALBASE%%/share/fonts/TrueType/uming.ttc
 filename.AR_PL_ZenKai_Uni=%%LOCALBASE%%/share/fonts/TrueType/ukai.ttc
-filename.NanumGothic=%%LOCALBASE%%/lib/X11/fonts/nanum-ttf/NanumGothic.ttf
-filename.NanumGothic_Bold=%%LOCALBASE%%/lib/X11/fonts/nanum-ttf/NanumGothicBold.ttf
-filename.NanumMyeongjo=%%LOCALBASE%%/lib/X11/fonts/nanum-ttf/NanumMyeongjo.ttf
-filename.NanumMyeongjo_Bold=%%LOCALBASE%%/lib/X11/fonts/nanum-ttf/NanumMyeongjoBold.ttf
+filename.NanumGothic=%%LOCALBASE%%/share/fonts/nanum-ttf/NanumGothic.ttf
+filename.NanumGothic_Bold=%%LOCALBASE%%/share/fonts/nanum-ttf/NanumGothicBold.ttf
+filename.NanumMyeongjo=%%LOCALBASE%%/share/fonts/nanum-ttf/NanumMyeongjo.ttf
+filename.NanumMyeongjo_Bold=%%LOCALBASE%%/share/fonts/nanum-ttf/NanumMyeongjoBold.ttf

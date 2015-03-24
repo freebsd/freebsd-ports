@@ -1,0 +1,22 @@
+Const is good...
+
+	-mi
+
+--- src/Guesser.h	2010-09-27 19:02:01.000000000 -0400
++++ src/Guesser.h	2015-03-23 11:42:51.000000000 -0400
+@@ -20,5 +20,5 @@
+ {
+ public:
+-	bool operator()( const SocketPair &sp1, const SocketPair & sp2 )
++	bool operator()( const SocketPair &sp1, const SocketPair & sp2 ) const
+ 	{
+ 		if( sp1==sp2 )
+--- src/TCContainer.h	2010-09-27 19:02:01.000000000 -0400
++++ src/TCContainer.h	2015-03-23 11:40:43.000000000 -0400
+@@ -58,5 +58,5 @@
+ {
+ public:
+-	bool operator()( const SocketPair &sp1, const SocketPair &sp2 ) 
++	bool operator()( const SocketPair &sp1, const SocketPair &sp2 ) const
+ 	{
+ 		if( sp1==sp2 )

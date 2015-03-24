@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.13
-PORTREVISION=	3
+PORTVERSION=	4.8.14
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
@@ -12,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 LICENSE=	GPLv3
@@ -60,8 +59,6 @@ SMB_CONFIGURE_ON=	--with-smb-configdir=${LOCALBASE}/etc \
 SUBSHELL_CONFIGURE_WITH=	subshell
 
 X11_CONFIGURE_ENABLE=	x
-
-SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 

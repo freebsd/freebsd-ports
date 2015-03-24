@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USES=		scons gmake iconv pkgconfig tar:xz
+USES=		gmake scons iconv pkgconfig tar:xz
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 INSTALL_TARGET=	install --install-sandbox=${STAGEDIR}
 

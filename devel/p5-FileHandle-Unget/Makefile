@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	FileHandle-Unget
-PORTVERSION=	0.1623
-PORTREVISION=	1
+PORTVERSION=	0.1624
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FileHandle which supports ungetting of multiple bytes
+
+LICENSE=	GPLv2
 
 USES=		perl5
 USE_PERL5=	configure

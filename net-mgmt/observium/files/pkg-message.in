@@ -7,11 +7,11 @@ with the following notes:
 - $config['fping'] should be set to '%%LOCALBASE%%/sbin/fping'
 - The following lines should be added to /etc/crontab:
 
-33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all > /dev/null 2>&1
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new > /dev/null 2>&1
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% poller.php -h all > /dev/null 2>&1
+33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all
+*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new
+*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% poller.php -h all
 
 Notes:
-- Setting $config['snmp']['intenal'] to true is not recommended. The
+- Setting $config['snmp']['internal'] to true is not recommended. The
   php function snmp_set_quick_print() used by Observium leaves units like
   kB in the value and Observium currently does not deal with that correctly.

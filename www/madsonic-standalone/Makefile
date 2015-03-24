@@ -59,7 +59,6 @@ PLIST_SUB+=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 		USER="${USERS}" \
 		GROUP="${GROUPS}"
 SUB_FILES= 	pkg-message \
-		message-common \
 		message-transcoding \
 		madsonic
 SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}" \

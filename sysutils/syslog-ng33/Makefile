@@ -12,6 +12,9 @@ DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=	No longer supported by Balabit cince November 2014.
+EXPIRATION_DATE=	2015-08-31
+
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \

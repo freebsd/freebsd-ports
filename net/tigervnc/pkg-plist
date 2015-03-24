@@ -17,6 +17,12 @@ man/man1/Xvnc.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/it/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/tigervnc.mo
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
 %%VIEWER%%share/icons/hicolor/16x16/apps/tigervnc.png

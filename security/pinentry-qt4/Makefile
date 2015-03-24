@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Qt 4 version of the GnuPG password dialog
 
