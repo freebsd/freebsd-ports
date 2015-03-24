@@ -1,0 +1,23 @@
+From 68420e59f12cf9c9fc14db0c493426150dd9ed95 Mon Sep 17 00:00:00 2001
+From: Sascha Wildner <saw@online.de>
+Date: Thu, 8 Jan 2015 10:17:46 +0100
+Subject: [PATCH 1/1] Fix some typos in messages/manpages.
+
+---
+ games/canfield/canfield/canfield.c | 2 +-
+ share/man/man4/km.4                | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git canfield/canfield/canfield.c canfield/canfield/canfield.c
+index de63fc1..ec6de9d 100644
+--- canfield/canfield/canfield.c
++++ canfield/canfield/canfield.c
+@@ -1543,7 +1543,7 @@ movecard(void)
+ }
+ 
+ const char *const basicinstructions[] = {
+-	"Here are brief instuctions to the game of Canfield:\n\n",
++	"Here are brief instructions to the game of Canfield:\n\n",
+ 	"     If you have never played solitaire before, it is recom-\n",
+ 	"mended  that  you  consult  a solitaire instruction book. In\n",
+ 	"Canfield, tableau cards may be built on each other  downward\n",
