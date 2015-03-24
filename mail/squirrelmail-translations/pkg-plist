@@ -2785,6 +2785,3 @@
 %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/zh_TW/setup.php
-@dir %%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES/extra
-@dir %%SQUIRRELDIR%%/locale/tl_PH/LC_MESSAGES/plugins
-@dir %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/extra
