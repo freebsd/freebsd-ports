@@ -20,7 +20,6 @@ INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 USE_LDCONFIG=	yes
 USES=		execinfo libtool pathfix
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
