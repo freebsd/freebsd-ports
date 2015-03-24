@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sinatra based gem hosting app
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-faraday>=0:${PORTSDIR}/www/rubygem-faraday \
 		rubygem-httpclient>=2.2.7:${PORTSDIR}/www/rubygem-httpclient \
