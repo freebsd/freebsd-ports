@@ -19,7 +19,7 @@ OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
 
 CONFLICTS_INSTALL?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
-LDFLAGS+=	-pthread
+LDFLAGS+=	-lpthread
 MAKE_ARGS=	CXX=${CXX} LDFLAGS="${LDFLAGS}" STRIP=${STRIP_CMD}
 MAKEFILE=	makefile
 USES+=		gmake
