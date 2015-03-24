@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Curses version of the GnuPG password dialog
 
