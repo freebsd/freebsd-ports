@@ -632,12 +632,12 @@
     SUBDIR += gtgt
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
-    SUBDIR += gumbo
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += guiloader
     SUBDIR += guiloader-c++
+    SUBDIR += gumbo
     SUBDIR += gvfs
     SUBDIR += gwenhywfar
     SUBDIR += gwenhywfar-fox16
@@ -2601,7 +2601,6 @@
     SUBDIR += p5-PAR-Dist
     SUBDIR += p5-PAR-Packer
     SUBDIR += p5-PCSC-Card
-    SUBDIR += p5-PerlX-Maybe
     SUBDIR += p5-PHP-Serialization
     SUBDIR += p5-POE
     SUBDIR += p5-POE-API-Hooks
@@ -2715,6 +2714,7 @@
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
+    SUBDIR += p5-PerlX-Maybe
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pithub
@@ -4225,6 +4225,7 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
+    SUBDIR += pyinstaller
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
