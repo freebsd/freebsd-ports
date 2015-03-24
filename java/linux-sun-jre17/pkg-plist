@@ -1,4 +1,3 @@
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/.systemPrefs/.system.lock
 %%T%%/.systemPrefs/.systemRootModFile
 %%T%%/COPYRIGHT
@@ -690,4 +689,5 @@
 %%T%%/plugin/i386/ns7/libjavaplugin_oji.so
 %%T%%/release
 @exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JRE%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dir %%T%%/lib/applet
