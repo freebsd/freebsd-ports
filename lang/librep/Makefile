@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	librep
-PORTVERSION=	0.92.4
+PORTVERSION=	0.92.5
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	http://download.tuxfamily.org/librep/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Emacs Lisp like runtime library
 
 LICENSE=	GPLv2
