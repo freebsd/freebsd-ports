@@ -76,7 +76,6 @@ post-patch:
 	@cd ${WRKSRC}/src && ${CP} ${FILESDIR}/makefile.unix Makefile
 	@${REINPLACE_CMD} \
 		-e 's|^USE_UPNP.*$$|USE_UPNP=${QMAKE_USE_UPNP}|' \
-		-e 's|-l pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/src/Makefile
 .endif
 

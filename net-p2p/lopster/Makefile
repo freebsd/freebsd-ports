@@ -43,8 +43,6 @@ CONFIGURE_ARGS+=	--without-zlib
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s/www.naplist.com/www.gotnap.com/" \
 		${WRKSRC}/src/lopster.h
 

@@ -39,9 +39,6 @@ USE_OPENSSL=	yes
 MAKE_FLAGS+=	NO_HASH_CHECK=1
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/BSDmakefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
