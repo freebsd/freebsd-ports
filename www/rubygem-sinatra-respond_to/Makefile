@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Respond_to style Rails block for Sinatra
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-sinatra>=1.3:${PORTSDIR}/www/rubygem-sinatra
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
