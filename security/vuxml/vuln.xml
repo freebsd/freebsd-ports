@@ -65,7 +65,7 @@ Notes:
 	<range><lt>2.25</lt></range>
       </package>
       <package>
-	<name>mingw64-binutils</name>
+	<name>x86_64-pc-mingw32-binutils</name>
 	<range><lt>2.25</lt></range>
       </package>
     </affects>
