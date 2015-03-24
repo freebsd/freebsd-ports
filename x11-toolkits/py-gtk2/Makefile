@@ -52,8 +52,7 @@ CONFIGURE_ARGS+=--disable-numpy
 #
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-thread
-CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_LIBS}
+LDFLAGS+=		-lpthread
 .else
 CONFIGURE_ARGS+=	--disable-thread
 .endif

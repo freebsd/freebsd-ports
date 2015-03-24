@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -lgnuregex -L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g ; \

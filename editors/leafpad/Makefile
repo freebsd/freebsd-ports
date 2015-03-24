@@ -18,8 +18,8 @@ USES=		desktop-file-utils gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
