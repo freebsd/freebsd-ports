@@ -16,8 +16,8 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 
 USES=		pathfix pkgconfig iconv tar:bzip2 libtool
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
 
 USE_LDCONFIG=	yes
