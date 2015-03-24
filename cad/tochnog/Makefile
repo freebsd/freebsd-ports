@@ -22,7 +22,6 @@ ATLAS_DESC=	Use ATLAS instead of BLAS/LAPACK
 
 WRKSRC=		${WRKDIR}/Sources/Tochnog-Latest-jan-2014
 MAKEFILE=	makefile
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 USES=		fortran zip dos2unix
 DOS2UNIX_FILES=	time.cc time.h tnlapack.h tnsuplu.h
 

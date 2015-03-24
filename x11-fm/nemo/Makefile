@@ -30,7 +30,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-static --disable-packagekit
 

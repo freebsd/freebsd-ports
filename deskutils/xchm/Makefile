@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_WX=		2.8+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
