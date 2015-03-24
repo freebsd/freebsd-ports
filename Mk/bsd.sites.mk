@@ -568,6 +568,9 @@ DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
+# Github silently converts tags starting with v to not have v in the filename
+# and extraction directory.
+GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:S/^v//}
 .  endif
 .endif
 .endif
