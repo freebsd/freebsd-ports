@@ -431,4 +431,8 @@
 @dir %%JAVASHAREDIR%%/unifi/webapps/ROOT/lib/4.6.0/js/libs/bower-components/retina.js
 @dir %%JAVASHAREDIR%%/unifi/webapps/ROOT/lib/4.6.0/js/libs/bower-components/string_score
 @dir %%JAVASHAREDIR%%/unifi/webapps/ROOT/lib/4.6.0/js/libs/bower-components/underscore
-@exec chown -R unifi:unifi %D/%%JAVASHAREDIR%%/unifi
+@dir(root,wheel,755) %%JAVASHAREDIR%%/unifi
+@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/data
+@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/logs
+@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/run
+@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/work
