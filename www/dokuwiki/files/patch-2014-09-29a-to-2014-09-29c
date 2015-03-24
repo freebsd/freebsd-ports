@@ -1,0 +1,87 @@
+diff -u -r -N VERSION VERSION
+--- VERSION	2014-10-08 00:59:23.000000000 -0700
++++ VERSION	2015-02-24 12:01:05.000000000 -0800
+@@ -1 +1 @@
+-2014-09-29a "Hrun"
++2014-09-29c "Hrun"
+diff -u -r -N conf/mime.conf conf/mime.conf
+--- conf/mime.conf	2014-10-08 00:59:23.000000000 -0700
++++ conf/mime.conf	2015-02-24 12:01:05.000000000 -0800
+@@ -9,7 +9,6 @@
+ png     image/png
+ ico     image/vnd.microsoft.icon
+ 
+-swf     application/x-shockwave-flash
+ mp3     audio/mpeg
+ ogg     audio/ogg
+ wav     audio/wav
+@@ -66,3 +65,7 @@
+ #xml     text/xml
+ #csv     text/csv
+ 
++# Also flash may be able to execute arbitrary scripts in the website's
++# context
++#swf     application/x-shockwave-flash
++
+diff -u -r -N data/pages/playground/playground.txt data/pages/playground/playground.txt
+--- data/pages/playground/playground.txt	1969-12-31 16:00:00.000000000 -0800
++++ data/pages/playground/playground.txt	2015-02-24 12:33:06.000000000 -0800
+@@ -0,0 +1 @@
++====== PlayGround ======
+diff -u -r -N doku.php doku.php
+--- doku.php	2014-10-08 00:59:23.000000000 -0700
++++ doku.php	2015-02-24 12:01:05.000000000 -0800
+@@ -9,7 +9,7 @@
+  */
+ 
+ // update message version
+-$updateVersion = 46.1;
++$updateVersion = 46.3;
+ 
+ //  xdebug_start_profiling();
+ 
+diff -u -r -N lib/plugins/acl/remote.php lib/plugins/acl/remote.php
+--- lib/plugins/acl/remote.php	2014-10-08 00:59:23.000000000 -0700
++++ lib/plugins/acl/remote.php	2015-02-24 12:01:05.000000000 -0800
+@@ -17,12 +17,39 @@
+         );
+     }
+ 
+-    function addAcl($scope, $user, $level){
++    /**
++     * Add a new entry to ACL config
++     *
++     * @param string $scope
++     * @param string $user
++     * @param int    $level see also inc/auth.php
++     * @throws RemoteAccessDeniedException
++     * @return bool
++     */
++    public function addAcl($scope, $user, $level){
++        if(!auth_isadmin()) {
++            throw new RemoteAccessDeniedException('You are not allowed to access ACLs, superuser permission is required', 114);
++        }
++
++        /** @var admin_plugin_acl $apa */
+         $apa = plugin_load('admin', 'acl');
+         return $apa->_acl_add($scope, $user, $level);
+     }
+ 
+-    function delAcl($scope, $user){
++    /**
++     * Remove an entry from ACL config
++     *
++     * @param string $scope
++     * @param string $user
++     * @throws RemoteAccessDeniedException
++     * @return bool
++     */
++    public function delAcl($scope, $user){
++        if(!auth_isadmin()) {
++            throw new RemoteAccessDeniedException('You are not allowed to access ACLs, superuser permission is required', 114);
++        }
++
++        /** @var admin_plugin_acl $apa */
+         $apa = plugin_load('admin', 'acl');
+         return $apa->_acl_del($scope, $user);
+     }

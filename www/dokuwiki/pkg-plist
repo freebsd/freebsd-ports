@@ -36,6 +36,7 @@
 %%WWWDIR%%/data/media_attic/_dummy
 %%WWWDIR%%/data/media_meta/_dummy
 %%WWWDIR%%/data/meta/_dummy
+%%WWWDIR%%/data/pages/playground/playground.txt
 %%WWWDIR%%/data/pages/wiki/dokuwiki.txt
 %%WWWDIR%%/data/pages/wiki/syntax.txt
 %%WWWDIR%%/data/pages/wiki/welcome.txt
