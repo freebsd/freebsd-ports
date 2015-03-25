@@ -14,7 +14,6 @@ COMMENT=	3-D network tank game that uses OpenGL/Mesa
 BUILD_DEPENDS=	libaux>=1.0:${PORTSDIR}/graphics/libaux
 
 USES=		gmake
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf
 
 do-install:

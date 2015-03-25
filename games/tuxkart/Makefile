@@ -34,11 +34,10 @@ DESKTOP_ENTRIES="TuxKart" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;SportsGame;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O6|${PTHREAD_CFLAGS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|datadir/games|datadir|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(prefix)/games|@bindir@|g ; \
+	@${REINPLACE_CMD} -e 's|-O6||g ; s|datadir/games|datadir|g' \
+		${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|$$(prefix)/games|@bindir@|g ; \
 		 s|$$(datadir)/games|$$(datadir)|g'
 	@${REINPLACE_CMD} -e 's|doc contrib| contrib|' \
 		${WRKSRC}/Makefile.in

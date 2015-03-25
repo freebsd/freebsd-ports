@@ -16,7 +16,7 @@ USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES=	"GL-117" \
 			"Action flight simulator" \

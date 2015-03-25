@@ -72,11 +72,11 @@
  
  X11LIBS = -lXext -lX11
 -GLLIBS  = -lSDL -lpthread
-+GLLIBS  = `${SDL_CONFIG} --libs` ${PTHREAD_LIBS}
++GLLIBS  = `${SDL_CONFIG} --libs` -lpthread
  GGILIBS = -lggi -lm
  VGALIBS = -lvga
 -SDLLIBS = -lSDL -lpthread 
-+SDLLIBS = `${SDL_CONFIG} --libs` ${PTHREAD_LIBS}
++SDLLIBS = `${SDL_CONFIG} --libs` -lpthread
  
  OBJS =	am_map.o ct_chat.o d_main.o d_net.o f_finale.o g_game.o \
  	p_ceilng.o p_doors.o p_enemy.o p_floor.o p_inter.o p_lights.o \
