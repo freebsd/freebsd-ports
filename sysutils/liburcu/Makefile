@@ -18,8 +18,8 @@ PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 USES=		pathfix libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+INSTALL_TARGET=	install-strip
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
