@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
-PORTVERSION=	1.56
+PORTVERSION=	1.57
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -13,7 +13,7 @@ MAINTAINER=	vivek@khera.org
 COMMENT=	Interface to MaxMind minFraud service
 
 RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww \
-		p5-Crypt-SSLeay>0.0:${PORTSDIR}/security/p5-Crypt-SSLeay
+		p5-LWP-Protocol-https>0.0:${PORTSDIR}/www/p5-LWP-Protocol-https
 BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 
 USES=		perl5
