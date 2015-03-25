@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=--with-dffi=no
 
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads=yes
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 LIB_DEPENDS+=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 .else
 CONFIGURE_ARGS+=--enable-threads=no
@@ -79,8 +79,7 @@ LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 .if ${PORT_OPTIONS:MTHREADS}
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' \
- 		-e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/configure
+	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' ${WRKSRC}/src/configure
 .endif
 
 .include <bsd.port.post.mk>

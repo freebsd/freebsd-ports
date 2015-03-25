@@ -64,8 +64,7 @@ SEM_CONFIGURE_ENV=	ac_cv_posix_semaphores_enabled=yes
 SEM_CONFIGURE_ENV_OFF=	ac_cv_posix_semaphores_enabled=no
 
 THREADS_CONFIGURE_WITH=	threads
-THREADS_CFLAGS=		${PTHREAD_CFLAGS}
-THREADS_LDFLAGS=	${PTHREAD_LIBS}
+THREADS_LDFLAGS=	-lpthread
 
 UCS2_CONFIGURE_ON=	--enable-unicode=ucs2
 UCS4_CONFIGURE_ON=	--enable-unicode=ucs4

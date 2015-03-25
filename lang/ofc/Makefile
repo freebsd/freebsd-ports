@@ -20,8 +20,8 @@ USE_SDL=	sdl
 USES=		libtool objc pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GDBM GMP

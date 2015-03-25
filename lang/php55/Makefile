@@ -143,7 +143,7 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		lt_cv_path_SED="sed"
 
 .if ${PORT_OPTIONS:MLINKTHR}
-LIBS+=		${PTHREAD_LIBS}
+LIBS+=		-lpthread
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
