@@ -9,6 +9,9 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
+USES+=	cpe
+CPE_VENDOR=	gnu
+
 USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 
