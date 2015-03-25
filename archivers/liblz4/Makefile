@@ -22,6 +22,7 @@ CONFLICTS=	lz4-*
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
+ALL_TARGET=	default		# don't remove this
 SO_VER=		1.5.0
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_MAJ=${SO_VER:R:R}
 
