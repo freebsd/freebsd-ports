@@ -174,8 +174,6 @@ CFLAGS+=		${OPENMP_CFLAGS}
 LDFLAGS+=		${OPENMP_CFLAGS}
 CONFIGURE_ARGS+=	--enable-multithreading=openmp
 .elif ${PORT_OPTIONS:MTHREADS}
-CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--enable-multithreading=pthreads
 .else
 CONFIGURE_ARGS+=	--enable-multithreading=no
@@ -243,7 +241,6 @@ post-patch:
 	-e 's@(#!)(/bin/bash)@\1${LOCALBASE}\2@'
 	@${FIND} ${WRKSRC} -type f \( -name 'makefile' -o -name 'config.mk.in' \) | \
 	${XARGS} ${REINPLACE_CMD} \
-	-e 's@-lpthread@${PTHREAD_LIBS}@g' \
 	-e 's@-fPIC@${PICFLAG}@g'
 	@${REINPLACE_CMD} \
 	-e '\@MK_INCL_DIR_INST_W_ARCH_VERS[[:blank:]]*:=@ \

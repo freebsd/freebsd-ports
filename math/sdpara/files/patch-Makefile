@@ -1,6 +1,6 @@
---- Makefile.orig	2009-01-09 02:26:29.000000000 +0000
+--- Makefile.orig	2009-01-09 02:26:29 UTC
 +++ Makefile
-@@ -4,20 +4,20 @@
+@@ -4,19 +4,19 @@
  # you edit here along your environment
  ############################################################
  
@@ -17,7 +17,6 @@
 -SCALAPACK_LIBS  = /usr/local/scalapack/lib/libscalapack.a /usr/local/BLACS/LIB/blacs_MPI-LINUX-0.a /usr/local/BLACS/LIB/blacsCinit_MPI-LINUX-0.a /usr/local/BLACS/LIB/blacs_MPI-LINUX-0.a
 -
 -FORTRAN_LIBS = -lgfortran
--PTHERAD_LIBS = -lpthread
 +CC       = %%MPICC%%
 +CXX      = %%MPICXX%%
 +F77      = %%MPIF77%%
@@ -31,11 +30,10 @@
 +SCALAPACK_LIBS  = %%SCALAPACK%%
 +  
 +FORTRAN_LIBS = %%FORTRAN_LIBS%%
-+PTHERAD_LIBS = %%PTHREAD_LIBS%%
+ PTHERAD_LIBS = -lpthread
  
  # F77_FUNC 
- DEF_F77_FUNC = -DF77_FUNC\(name,NAME\)=name\ \#\#\ _ 
-@@ -82,10 +82,10 @@ cleanall: clean mumps-clean
+@@ -82,10 +82,10 @@ cleanall: clean mumps-clean 
  force: cleanall all
  
  mumps:

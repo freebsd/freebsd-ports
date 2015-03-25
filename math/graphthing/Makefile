@@ -22,9 +22,7 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/graphthing bin/gt
-
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 post-patch:
 	@${REINPLACE_CMD} -e \

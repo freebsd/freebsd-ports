@@ -64,7 +64,6 @@ post-patch:
 				s|%%BLAS%%|${BLAS}|g ; \
 				s|%%LAPACK%%|${LAPACK}|g ; \
 				s|%%SCALAPACK%%|${SCALAPACK}|g ; \
-				s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
 				s|%%FORTRAN_LIBS%%|${GCCLIBDIR} ${FORTRAN_LIBS}|g '  ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
 				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \
