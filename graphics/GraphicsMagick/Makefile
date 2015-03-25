@@ -27,7 +27,7 @@ USES=		iconv libtool tar:bzip2
 USE_GNOME=	libxml2
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-quantum-depth="${QD}" \
 		--with-windows-font-dir="${WINDOWS_FONT_DIR}"

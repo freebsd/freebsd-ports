@@ -19,11 +19,9 @@ USES=		gmake pkgconfig zip
 USE_GL=		glut
 ALL_TARGET=	${PORTNAME}
 
-CXXFLAGS+=	$$(pkg-config --cflags libpng) \
-		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	$$(pkg-config --libs libpng) \
-		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm -lz -llzma \
-		${PTHREAD_LIBS}
+CXXFLAGS+=	$$(pkg-config --cflags libpng) -I${LOCALBASE}/include
+LDFLAGS+=	$$(pkg-config --libs libpng) -L${LOCALBASE}/lib -lglut \
+		-lGLU -lGL -lbz2 -lm -lz -llzma -lpthread
 
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}

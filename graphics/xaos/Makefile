@@ -40,7 +40,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 THREADS_DESC=	Enable SMP support (experimental)
 THREADS_CONFIGURE_WITH=	pthread
-THREADS_LIBS=	${PTHREAD_LIBS}
+THREADS_LIBS=	-lpthread
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

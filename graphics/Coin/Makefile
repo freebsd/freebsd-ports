@@ -26,11 +26,14 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} \( -name \*.cpp -o -name \*.h -a \! -name expat.h \) -a -print0 | ${XARGS} -0 ${REINPLACE_CMD} 's/<stdlib.h>/<cstdlib>/g'
+	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' \
+		${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} \( -name \*.cpp -o -name \*.h -a \! \
+		-name expat.h \) -a -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} 's/<stdlib.h>/<cstdlib>/g'
 
 post-build:
-	@${REINPLACE_CMD} -e '/^ldflags=/s|-R|-Wl,-rpath,|' ${WRKSRC}/coin-default.cfg
+	${REINPLACE_CMD} -e '/^ldflags=/s|-R|-Wl,-rpath,|' \
+		${WRKSRC}/coin-default.cfg
 
 .include <bsd.port.mk>

@@ -26,7 +26,6 @@ A4SIZE_DESC=	Set default paper size to A4
 USES=		imake
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.options.mk>
 

@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gtk30 introspection
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

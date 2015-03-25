@@ -22,7 +22,6 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH=freebsd
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -75,8 +74,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
-	@${REINPLACE_CMD} -e "s;-lpthread;${PTHREAD_LIBS};g"	\
-		-e "s;/usr/X11R6;${LOCALBASE};g"			\
+	@${REINPLACE_CMD} -e "s;/usr/X11R6;${LOCALBASE};g" \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|startserver.bat||" \
 		${WRKSRC}/src/uipp/java/server/Makefile.in

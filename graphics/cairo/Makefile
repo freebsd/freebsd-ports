@@ -65,7 +65,7 @@ post-patch:
 		-e '/LIBS/s/-lrt//'  -e '/LIBS/s|-ldld||' \
 		-e '/LIBS/s|-ldl||' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo ${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo -lpthread|' \
 		${WRKSRC}/src/*.pc.in
 	@${REINPLACE_CMD} -e '/@CAIRO_HAS_PNG_FUNCTIONS_TRUE@.*=/d' \
 		${WRKSRC}/Makefile.in
