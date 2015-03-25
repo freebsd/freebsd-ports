@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	GHL
+MASTER_SITES=	GH
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Full featured, no dependency Jail container manager
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	41f9863
 
 PLIST_FILES=	etc/rc.d/iocage \
 		sbin/iocage \
