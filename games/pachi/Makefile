@@ -15,7 +15,7 @@ USE_SDL=	mixer sdl
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/Pachi

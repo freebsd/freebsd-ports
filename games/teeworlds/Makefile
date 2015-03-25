@@ -54,7 +54,7 @@ DESKTOP_ENTRIES="Teeworlds" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|"python "|"${PYTHON_CMD} "|' \
 		${WRKSRC}/bam.lua
-	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
+	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|-pthread|; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
 		${BAM_WRKSRC}/make_unix.sh
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.lua
 	@${REINPLACE_CMD} -e '/aDirs\[\]/,/}/ s|"/.*"|"${DATADIR}"|' \
