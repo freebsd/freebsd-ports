@@ -1,14 +1,16 @@
 --- extensions/spellcheck/hunspell/src/mozHunspell.cpp~
 +++ extensions/spellcheck/hunspell/src/mozHunspell.cpp
-@@ -400,6 +400,12 @@ mozHunspell::LoadDictionaryList()
+@@ -400,6 +400,14 @@ mozHunspell::LoadDictionaryList(bool aNo
      }
    }
  
 +  // load system hunspell dictionaries
-+  nsIFile* hunDir;
++  nsCOMPtr<nsIFile> hunDir;
 +  NS_NewNativeLocalFile(NS_LITERAL_CSTRING("%%LOCALBASE%%/share/hunspell"),
-+			true, &hunDir);
-+  LoadDictionariesFromDir(hunDir);
++                        true, getter_AddRefs(hunDir));
++  if (hunDir) {
++      LoadDictionariesFromDir(hunDir);
++  }
 +
    // find dictionaries from extensions requiring restart
    nsCOMPtr<nsISimpleEnumerator> dictDirs;

@@ -88,7 +88,6 @@ lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libldap60.so
 lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/libmozalloc.so
-lib/%%APP_NAME%%/libmozsandbox.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
@@ -105,7 +104,6 @@ lib/%%APP_NAME%%/libsoftokn3.so
 lib/%%APP_NAME%%/libssl3.so
 lib/%%APP_NAME%%/libxul.so
 lib/%%APP_NAME%%/license.txt
-lib/%%APP_NAME%%/mozilla-xremote-client
 lib/%%APP_NAME%%/omni.ja
 lib/%%APP_NAME%%/platform.ini
 lib/%%APP_NAME%%/plugin-container
@@ -115,7 +113,6 @@ lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/seamonkey
 lib/%%APP_NAME%%/seamonkey-bin
-lib/%%APP_NAME%%/searchplugins/creativecommons.xml
 lib/%%APP_NAME%%/searchplugins/google.xml
 lib/%%APP_NAME%%/searchplugins/wikipedia.xml
 lib/%%APP_NAME%%/searchplugins/yahoo.xml

@@ -146,7 +146,7 @@ event_MOZ_OPTIONS=	--with-system-libevent
 ffi_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 ffi_MOZ_OPTIONS=	--enable-system-ffi
 
-.if exists(${FILESDIR}/patch-bug847568) || exists(${FILESDIR}/patch-z-bug847568)
+.if exists(${FILESDIR}/patch-bug847568)
 graphite_LIB_DEPENDS=	libgraphite2.so:${PORTSDIR}/graphics/graphite2
 graphite_MOZ_OPTIONS=	--with-system-graphite2
 
@@ -172,7 +172,7 @@ nspr_MOZ_OPTIONS=	--with-system-nspr
 nss_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
 
-.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+.if exists(${FILESDIR}/patch-z-bug517422)
 opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 opus_MOZ_OPTIONS=	--with-system-opus
 .endif
@@ -183,7 +183,7 @@ pixman_MOZ_OPTIONS=	--enable-system-pixman
 png_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 
-.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+.if exists(${FILESDIR}/patch-z-bug517422)
 soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
 
@@ -195,7 +195,7 @@ speex_MOZ_OPTIONS=	--with-system-speex
 sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 
-.if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
+.if exists(${FILESDIR}/patch-z-bug517422)
 # XXX disabled: update to 1.2.x or review backported fixes
 theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora

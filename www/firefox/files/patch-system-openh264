@@ -1,9 +1,9 @@
 # Revert bug 1045209 to allow using absolute path
 
-diff --git content/media/gmp/GMPChild.cpp content/media/gmp/GMPChild.cpp
+diff --git dom/media/gmp/GMPChild.cpp dom/media/gmp/GMPChild.cpp
 index 1dde3ac..12c88cf 100644
---- content/media/gmp/GMPChild.cpp
-+++ content/media/gmp/GMPChild.cpp
+--- dom/media/gmp/GMPChild.cpp
++++ dom/media/gmp/GMPChild.cpp
 @@ -76,21 +76,14 @@ GetFileBase(const std::string& aPluginPa
    }
  #endif
@@ -30,10 +30,10 @@ index 1dde3ac..12c88cf 100644
    return true;
  }
  
-diff --git content/media/gmp/GMPParent.cpp content/media/gmp/GMPParent.cpp
+diff --git dom/media/gmp/GMPParent.cpp dom/media/gmp/GMPParent.cpp
 index aa60acf..90878ca 100644
---- content/media/gmp/GMPParent.cpp
-+++ content/media/gmp/GMPParent.cpp
+--- dom/media/gmp/GMPParent.cpp
++++ dom/media/gmp/GMPParent.cpp
 @@ -90,23 +90,16 @@
    mService = aService;
    mDirectory = aPluginDir;

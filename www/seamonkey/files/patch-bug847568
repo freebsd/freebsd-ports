@@ -83,10 +83,10 @@ index ac38f40..87536b7 100644
  dnl Check for pixman and cairo
  dnl ========================================================
  
-diff --git content/base/src/moz.build content/base/src/moz.build
+diff --git dom/base/moz.build dom/base/moz.build
 index a660ba4..6b2f602 100644
---- mozilla/content/base/src/moz.build
-+++ mozilla/content/base/src/moz.build
+--- mozilla/dom/base/moz.build
++++ mozilla/dom/base/moz.build
 @@ -196,6 +196,9 @@ SOURCES += [
      'nsObjectLoadingContent.cpp',
  ]
@@ -237,6 +237,6 @@ index 67f0db9..d42137a 100644
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
 +
- if CONFIG['MOZ_ALSA']:
-     OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
+ if CONFIG['MOZ_OSS']:
+     OS_LIBS += CONFIG['MOZ_OSS_LIBS']
  
