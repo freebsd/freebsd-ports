@@ -34,7 +34,6 @@ SUB_LIST+=	CLAMD=
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS}," ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s,/var/run/clamav/clamd,/var/run/clamav/clamd.sock," \
 		${WRKSRC}/doc/clamsmtpd.conf \
 		${WRKSRC}/doc/clamsmtpd.conf.5 \
