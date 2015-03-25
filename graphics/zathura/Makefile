@@ -48,7 +48,6 @@ post-patch:	.SILENT
 		${WRKSRC}/Makefile
 .endif
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
-		-e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc//' \
 		-e 's/DL_LIB /#&/' \
 		${WRKSRC}/config.mk

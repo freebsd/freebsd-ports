@@ -163,7 +163,7 @@
 +#AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
 -#AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
-+AQSISRI2RIB = $(AQSISLIBDIR)/libaqsis_ri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
++AQSISRI2RIB = $(AQSISLIBDIR)/libaqsis_ri2rib.so -L${AQSISLIBDIR} -lstdc++ -lpthread
  
  
  # BMRT

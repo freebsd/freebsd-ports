@@ -59,7 +59,6 @@ post-patch:
 		'/^RM/s|/usr|${PREFIX}| ; \
 		 /^OPENGL/s|/usr|${LOCALBASE}| ; \
 		 /^X11/s|/usr/X11R6|${LOCALBASE}| ; \
-		 /^X11/s|-lpthread|${PTHREAD_LIBS}| ; \
 		 /^OPT/s|-g|| ; \
 		 /^ARCH/s|-m32|| ; \
 		 /^JPEG/s|/usr|${LOCALBASE}|' ${DEMO_WRKSRC}/makeinclude

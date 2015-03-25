@@ -38,8 +38,7 @@ THREADS_DESC=	Threaded Tcl/Tk (must match lang/ocaml)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
-THR_CPP=	${PTHREAD_CFLAGS}
-THR_LD=		${PTHREAD_LIBS}
+THR_LD=		-lpthread
 .endif
 
 post-extract:
@@ -53,7 +52,7 @@ post-patch:
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${STAGEDIR}${PREFIX}/lib/ocaml/stublibs,g" \
 		-e "s,^#\(INSTALLDIR[ \t]*=\).*,\1${STAGEDIR}${PREFIX}/lib/ocaml/lablGL,g" \
-		-e "s!^#\(COPTS[ \t]*=\).*!\1-c ${CFLAGS} ${THR_CPP}!g" \
+		-e "s!^#\(COPTS[ \t]*=\).*!\1-c ${CFLAGS}!g" \
 		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
 		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_SHLIB_VER}\
 		-ltcl${TCL_SHLIB_VER} ${THR_LD}," \

@@ -28,7 +28,6 @@ USE_LDCONFIG=	${PREFIX}/lib/ayam
 USES=		gmake tk:84
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_JOBS_UNSAFE=	yes
 
 AYAM_PLUGINS=	csphere mfio

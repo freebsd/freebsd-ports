@@ -15,8 +15,8 @@ USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GL=		glu glut glew
 USE_XORG=	glproto x11 xext xi xxf86vm xdamage xfixes dri2proto
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-egl --disable-gles2 --disable-wayland \
 		--disable-gbm --disable-vg --disable-osmesa

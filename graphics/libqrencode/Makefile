@@ -32,6 +32,6 @@ PLIST_FILES=	bin/qrencode \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,libpng12,libpng,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '9s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/libqrencode.pc.in
+	@${REINPLACE_CMD} -e '9s|$$| -lpthread|' ${WRKSRC}/libqrencode.pc.in
 
 .include <bsd.port.mk>
