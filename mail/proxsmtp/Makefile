@@ -33,7 +33,7 @@ post-patch:
 		-e 's|250-smtp.passthru|${PROXSMTP_SMTP_EHLO_RSP}|g' \
 		${WRKSRC}/common/smtppass.c
 	@${REINPLACE_CMD} -e \
-		'/^acx_pthread_flags/s|=.*|="${PTHREAD_LIBS}"|' \
+		'/^acx_pthread_flags/s|=.*|="-lpthread"|' \
 		${WRKSRC}/configure
 
 post-install:

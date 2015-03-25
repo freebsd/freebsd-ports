@@ -20,8 +20,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
 
-CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 BINFILES=	spamilter-system-report spamilter-user-report

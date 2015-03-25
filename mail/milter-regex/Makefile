@@ -33,8 +33,7 @@ post-patch:
 	    "s:/etc/milter-regex.conf:${PREFIX}/etc/milter-regex.conf:g; \
 	    s:/var/spool/milter-regex:${SPOOLDIR}:g; \
 	    s:mailstats 1:mailstats 8:;" ${WRKSRC}/milter-regex.8
-	${REINPLACE_CMD} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
-	    s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
+	${REINPLACE_CMD} -e "s:-I/usr/src/gnu/usr.sbin/sendmail/include::g; \
 	    s:-L/usr/local/lib:-L${LOCALBASE}/lib:g; \
 	    s/-Werror//g"  ${WRKSRC}/Makefile
 

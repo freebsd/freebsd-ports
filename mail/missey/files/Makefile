@@ -15,7 +15,7 @@ all:		$(MPS) $(BENT)
 $(MPS):	$(OBJS_M)
 	$(CC) ${CFLAGS} -o $(MPS) $(OBJS_M) $(LDFLAGS)
 $(BENT):	$(OBJS_B)
-	$(CC) ${CFLAGS} ${PTHREAD_CFLAGS} -o $(BENT) $(SRCS_B) ${PTHREAD_LIBS}
+	$(CC) ${CFLAGS} -o $(BENT) $(SRCS_B) -lpthread
 install:
 	@${MKDIR} -p $(DESTDIR)$(PREFIX)/etc/mps/
 	${INSTALL_DATA} $(WRKSRC)/pop3d.conf $(DESTDIR)$(PREFIX)/etc/mps/pop3d.conf-dist

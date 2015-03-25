@@ -19,8 +19,8 @@ LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
 LDFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\" ${PTHREAD_CFLAGS}" \
-		LIBS="-lmilter ${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\"" \
+		LIBS="-lmilter -lpthread" LDFLAGS="${LDFLAGS}"
 
 USE_RC_SUBR=	milter-bogom
 SUB_FILES=	pkg-message

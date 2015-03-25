@@ -6,8 +6,8 @@
  LDFLAGS="$LDFLAGS -L$SENDMAIL_OBJ/libmilter -L$SENDMAIL_OBJ/libsm -L$SENDMAIL_OBJ/libsmutil -L$SENDMAIL_OBJ/lib";
 -CFLAGS="$CFLAGS -Wall -Werror"
 -LIBS="$LIBS -pthread -lpthread"
-+CFLAGS="$CFLAGS $PTHREAD_CFLAGS -Wall -Werror"
-+LIBS="$LIBS $PTHREAD_LIBS"
++CFLAGS="$CFLAGS -Wall"
++LIBS="$LIBS -lpthread"
  
  
  echo $ac_n "checking for socket in -lsocket""... $ac_c" 1>&6

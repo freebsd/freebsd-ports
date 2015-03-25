@@ -95,9 +95,7 @@ SITE_SUB+=	-e 's|%%OPENSSL%%||g' \
 
 .include	"${.CURDIR}/Makefile.features"
 pre-configure:
-	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
-		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e "s|\`-O'|\`${CFLAGS}'|g" \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} ${SITE_SUB} -e '\|^dnl |d' -e '/^dnl$$/d' \
