@@ -22,8 +22,8 @@
 -$config['snmpbulkwalk']   = "/usr/bin/snmpbulkwalk";
 -$config['snmptranslate']  = "/usr/bin/snmptranslate";
 +$config['rrdtool']        = "/usr/local/bin/rrdtool";
-+$config['fping']          = "/usr/local/bin/fping";
-+$config['fping6']         = "/usr/local/bin/fping6";
++$config['fping']          = "/usr/local/sbin/fping";
++$config['fping6']         = "/usr/local/sbin/fping6";
 +$config['snmpwalk']       = "/usr/local/bin/snmpwalk";
 +$config['snmpget']        = "/usr/local/bin/snmpget";
 +$config['snmpbulkget']    = "/usr/local/bin/snmpbulkget";
