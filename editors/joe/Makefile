@@ -26,6 +26,9 @@ LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 ALL_TARGET=	${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|docs/README.old ||' ${WRKSRC}/Makefile.in
+
 post-install:
 	for rc in jmacsrc joerc jpicorc jstarrc rjoerc; do \
 		${MV} ${STAGEDIR}${ETCDIR}/$${rc} ${STAGEDIR}${ETCDIR}/$${rc}.dist ; \
