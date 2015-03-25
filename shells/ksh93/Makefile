@@ -35,10 +35,6 @@ KSHVERSION=	2012-08-01
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' \
-		${WRKSRC}/bin/package ${WRKSRC}/src/cmd/INIT/package.sh
-
 do-build:
 	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
