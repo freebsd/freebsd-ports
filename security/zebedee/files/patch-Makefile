@@ -72,7 +72,7 @@
  
 -CFLAGS = $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
 +CFLAGS ?= -03
-+CFLAGS += $(PTHREAD_CFLAGS) $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
++CFLAGS += $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
  
  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
  
@@ -93,7 +93,7 @@
  
  zebedee$(EXE) : $(OBJS)
 -	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS)
-+	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS) $(PTHREAD_LIBS)
++	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS) -lpthread
  
  huge.o : huge.h
  

@@ -13,7 +13,7 @@ USES=		gmake
 ALL_TARGET=	library_g++
 
 MAKE_ENV+=	COMPILER_GCC="${CXX}" OPT="${CXXFLAGS}" \
-		PTHREAD_FLAG="${PTHREAD_LIBS}"
+		PTHREAD_FLAG="-lpthread"
 
 PORTDOCS=	*
 

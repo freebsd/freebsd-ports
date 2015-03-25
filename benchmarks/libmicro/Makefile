@@ -12,22 +12,16 @@ COMMENT=	Set of utilities to benchmark productivity of system calls
 
 LICENSE=	CDDL
 
-WRKSRC=		${WRKDIR}/libMicro-${PORTVERSION}
-
 USES=		gmake
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-CFLAGS+=	${PTHREAD_CFLAGS}
-
+WRKSRC=		${WRKDIR}/libMicro-${PORTVERSION}
 STRIP=		 # Do not strip binaries
-
 PLIST_SUB=	ARCH="${ARCH}"
-
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 
 post-build:
-	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
-	@${ECHO_CMD} '(cd ${PKGLIBDIR} && ./bench $$1)' >> ${WRKDIR}/libmicro-bench.sh
+	${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
+	${ECHO_CMD} '(cd ${PKGLIBDIR} && ./bench $$1)' \
+		>> ${WRKDIR}/libmicro-bench.sh
 
 do-install:
 	(cd ${WRKDIR} && ${INSTALL_SCRIPT} libmicro-bench.sh \

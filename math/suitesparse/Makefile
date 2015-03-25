@@ -40,7 +40,6 @@ RESTRICTED=	GPL and METIS licenses are contradictory
 
 CONFLICTS=	umfpack-*
 
-CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>

@@ -17,8 +17,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|/usr/local|${PREFIX}|g; s|pthread_detach|pthread_create|g'\
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
+		s|pthread_detach|pthread_create|g'\
 		${WRKSRC}/configure
 
 post-install:

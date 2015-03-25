@@ -57,6 +57,87 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f6a014cd-d268-11e4-8339-001e679db764">
+    <topic>GNU binutils -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cross-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>x86_64-pc-mingw32-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8501">
+	  <p>The _bfd_XXi_swap_aouthdr_in function in bfd/peXXigen.c in GNU
+	    binutils 2.24 and earlier allows remote attackers to cause a
+	    denial of service (out-of-bounds write) and possibly have other
+	    unspecified impact via a crafted NumberOfRvaAndSizes field in the
+	    AOUT header in a PE executable.</p>
+	</blockquote>
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8502">
+	  <p>Heap-based buffer overflow in the pe_print_edata function in
+	    bfd/peXXigen.c in GNU binutils 2.24 and earlier allows remote
+	    attackers to cause a denial of service (crash) and possibly have
+	    other unspecified impact via a truncated export table in a PE
+	    file.</p>
+	</blockquote>
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8503">
+	  <p>Stack-based buffer overflow in the ihex_scan function in
+	    bfd/ihex.c in GNU binutils 2.24 and earlier allows remote
+	    attackers to cause a denial of service (crash) and possibly have
+	    other unspecified impact via a crafted ihex file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8501</cvename>
+      <cvename>CVE-2014-8502</cvename>
+      <cvename>CVE-2014-8503</cvename>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8501</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8502</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8503</url>
+    </references>
+    <dates>
+      <discovery>2014-12-09</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="996bce94-d23d-11e4-9463-9cb654ea3e1c">
+    <topic>libuv -- incorrect revocation order while relinquishing privileges</topic>
+    <affects>
+      <package>
+	<name>node010</name>
+	<range><lt>0.10.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nodejs releases reports:</p>
+	<blockquote cite="http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable">
+	  <h5>CVE-2015-0278</h5>
+	  <p>This may potentially allow an attacker to gain elevated privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable</url>
+      <freebsdpr>ports/198861</freebsdpr>
+      <cvename>CVE-2015-0278</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-14</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22dc4a22-d1e5-11e4-879c-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>

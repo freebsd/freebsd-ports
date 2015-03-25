@@ -16,10 +16,6 @@ PLIST_FILES=	sbin/pftpd \
 		man/man1/pftpd.1.gz \
 		man/man1/rpad.1.gz
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
-
 do-install:
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} pftpd ${STAGEDIR}${PREFIX}/sbin)
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1)

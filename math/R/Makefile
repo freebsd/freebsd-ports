@@ -316,9 +316,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
 		${WRKSRC}/src/unix/Makefile.in
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure \
-		${WRKSRC}/src/scripts/javareconf.in
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/library/profile/Rprofile.unix \

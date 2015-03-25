@@ -46,8 +46,7 @@ USE_LDCONFIG=		yes
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
-CXXFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_LIBS}
+LDFLAGS+=		-lpthread
 .endif
 
 do-install:

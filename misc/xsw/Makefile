@@ -19,7 +19,7 @@ USE_SDL=	sdl ttf image gfx
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 DOCS=		AUTHORS \
 		COPYING \

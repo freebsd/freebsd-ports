@@ -12,3 +12,4 @@ etc/rc.d/aprsd
 %%PORTDOCS%%%%DOCSDIR%%/ports.html
 %%PORTDOCS%%%%DOCSDIR%%/q.html
 %%PORTDOCS%%%%DOCSDIR%%/qalgorithm.html
+@dir /var/log/aprsd

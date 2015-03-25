@@ -3,7 +3,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.007
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHM
@@ -26,7 +26,7 @@ PORTSCOUT=	limit:^[0-9\.]*$$
 USES=		gmake perl5
 USE_PERL5=	configure
 MAKE_ENV=	PERL5LIB=${WRKSRC}/blib/lib
-PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
+PLIST_FILES=	bin/pdl bin/pdl2 bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_ARCH_REL}/Inline/Pdlpp.pm \
 		${SITE_ARCH_REL}/Inline/MakePdlppInstallable.pm
 MAKE_JOBS_UNSAFE=	yes
@@ -71,7 +71,7 @@ SINK_RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 post-patch:
 	@${GREP} -lR '#!/.*bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/.*bin/perl|#!${PERL}|' -i ''
 	@${GREP} -lR 'x86_64' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|x86_64|amd64|g' -i ''
-	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'${PTHREAD_LIBS}'|" \
+	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'-lpthread'|" \
 		${WRKSRC}/perldl.conf
 
 # autogen plist
@@ -84,7 +84,8 @@ post-install:
 	  ${FIND} *.1 | ${SED} "s,^,man/man1/,;s/1$$/1.gz/" >> ${TMPPLIST})
 	@(${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/PDL* -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST} ; \
-	  ${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -type f | \
-		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST})
+	  ${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -type f \
+	  	-name "[A-Z]*" | ${SED} "s,^${STAGEDIR}${PREFIX}/,," \
+	  	>> ${TMPPLIST})
 
 .include <bsd.port.mk>

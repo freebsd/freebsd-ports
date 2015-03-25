@@ -47,11 +47,9 @@ CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 		--with-includes=${PREFIX}/include \
 		--enable-thread-safety
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_LIBS="-lpthread" \
 		LDFLAGS_SL="${LDFLAGS_SL}"
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 PLIST=		${PKGDIR}/pkg-plist${COMPONENT}
 

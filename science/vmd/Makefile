@@ -65,17 +65,20 @@ do-extract:
 	${TAR} -xzf ${DISTDIR}/${STRIDE_DIST} -C ${WRKSRC}/lib/stride
 
 post-patch:
-	${REINPLACE_CMD} "s/-lpthread/${PTHREAD_LIBS}/" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/-ltk8.5/-ltk85/" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/-ltcl8.5/-ltcl85/" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s%\$$python_dir/lib_\$$config_arch%${PREFIX}%" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/python2.5/${PYTHON_VERSION}/" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
+	${REINPLACE_CMD} \
+		-e "s|-ltk8.5|-ltk85|" \
+		-e "s|-ltcl8.5|-ltcl85|" \
+		-e "s%\$$python_dir/lib_\$$config_arch%${PREFIX}%" \
+		-e "s|python2.5|${PYTHON_VERSION}|" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" \
+		-e "s|/usr/local|${LOCALBASE}|g"  \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
 	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/*/Makefile
-	${REINPLACE_CMD} "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" ${WRKSRC}/src/Orbital.C
-	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" \
+		${WRKSRC}/src/Orbital.C
 	${REINPLACE_CMD} -E "s/(SHLD[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
 		${WRKDIR}/plugins/Make-arch
 	${REINPLACE_CMD} -E "s/(CC[[:space:]]*=[[:space:]]*)(gcc|cc)/\1${CC}/" \

@@ -16,7 +16,7 @@ USES=		gmake zip
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	clean libocas.so.1 svmocas msvmocas linclassif
-CLIBS=		-lm ${PTHREAD_LIBS}
+CLIBS=		-lm -lpthread
 MAKE_ENV=	CLIBS="${CLIBS}" MEXDETECTED=no
 
 PLIST_FILES=	bin/linclassif bin/msvmocas bin/svmocas lib/libocas.so \
@@ -30,7 +30,7 @@ PICFLAG=	-fPIC
 PICFLAG=	-fpic
 .endif
 
-CFLAGS+=	${PICFLAG} ${PTHREAD_CFLAGS}
+CFLAGS+=	${PICFLAG}
 
 post-patch:
 	@${REINPLACE_CMD} \

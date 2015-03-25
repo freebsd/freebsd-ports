@@ -27,7 +27,4 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 LIBS+=		`${CAT} ${ORACLE_HOME}/lib/sysliblist`
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-lclntst8 -lcompat -lpthread -lm/-lclntst8 -lcompat ${PTHREAD_LIBS} -lm/' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

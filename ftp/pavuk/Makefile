@@ -39,10 +39,6 @@ DANTE_CONFIGURE_ON=	--with-socks-includes=${LOCALBASE}/include \
 DANTE_LIB_DEPENDS=	libsocks.so:${PORTSDIR}/net/dante
 
 pre-patch:
-	@${REINPLACE_CMD} -e \
-		's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g ; \
-		 s|-lpthreads|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND}  ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(datadir)/icons|$$(pkgdatadir)/icons|g'
 

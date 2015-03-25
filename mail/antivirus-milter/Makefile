@@ -12,8 +12,8 @@ COMMENT=	Sendmail milter wich uses McAfee Virus Scan or clamav
 
 LICENSE=	BSD2CLAUSE
 
-CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
-LIBS+=		-lmilter ${PTHREAD_LIBS}
+CFLAGS+=	-Wall
+LIBS+=		-lmilter -lpthread
 PLIST_SUB+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SUB_LIST+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SED_SCRIPT=	-e 's|%%ANTIVIRUS%%|${ANTIVIRUS_DIR}|g' \

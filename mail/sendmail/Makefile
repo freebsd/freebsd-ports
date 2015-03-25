@@ -122,8 +122,7 @@ PLIST_SUB+=	MILTER_SHARED="@comment "
 .endif
 .endif
 
-SED_SCRIPT=	-e "s|\`-pthread\'|\`${PTHREAD_LIBS}\'|" \
-		-e "s|\`-O\'|\`${CFLAGS}\'|" \
+SED_SCRIPT=	-e "s|\`-O\'|\`${CFLAGS}\'|" \
 		-e 's|%%CC%%|${CC}|' -e 's|%%LD%%|${LD}|'
 
 .if ! ${PORT_OPTIONS:MNIS}

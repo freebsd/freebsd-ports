@@ -31,7 +31,7 @@ GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
 THREADS_DESC=		Build threaded perl
-PTHREAD_DESC=		Build with -pthread
+PTHREAD_DESC=		Build with -lpthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 USE_PERL_DESC=		Rewrite links in /usr/bin
@@ -188,12 +188,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
 .if ${PORT_OPTIONS:MPTHREAD}
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
-		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
 		${WRKSRC}/hints/freebsd.sh
 .else
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
-		-e 's|%%PTHREAD_CFLAGS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
 .endif
 

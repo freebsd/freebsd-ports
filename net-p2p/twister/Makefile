@@ -35,8 +35,6 @@ CONFIGURE_WRKSRC=${WRKSRC}/libtorrent
 CONFIGURE_ARGS=	--with-libiconv			\
 		--with-boost=${LOCALBASE}	\
 		--with-boost-system=boost_system
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	makefile.freebsd
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKE_ENV=	BOOST_INCLUDE_PATH=${LOCALBASE}/include	\

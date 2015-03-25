@@ -73,8 +73,7 @@ CFLAGS+=	-O0
 
 DOS2UNIX_FILES=	hacks/glx/topblock.c
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-	    	s|malloc.h|stdlib.h|g ; \
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 .if ${PORT_OPTIONS:MPAM}

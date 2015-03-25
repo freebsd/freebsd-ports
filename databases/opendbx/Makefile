@@ -14,8 +14,8 @@ LICENSE=	LGPL21
 
 USES=		gmake libtool readline
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${WRKSRC}/lib -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${WRKSRC}/lib -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-backends="${CONFIGURE_MODULES}"
 

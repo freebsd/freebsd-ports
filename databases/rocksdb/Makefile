@@ -30,9 +30,8 @@ PROGRAMS=	blob_store_bench db_bench db_repl_stress db_sanity_test \
 		table_reader_bench
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' \
-		          -e 's| -Werror||' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|; s| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||; s| -Werror||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e 's| -pg||' ${WRKSRC}/Makefile

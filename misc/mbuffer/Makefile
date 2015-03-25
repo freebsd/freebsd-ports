@@ -41,9 +41,6 @@ CONFIGURE_ARGS+=ac_cv_search_sendfile=no
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' ${WRKSRC}/configure
-
 post-configure:
 	# Rename variables to make sure they aren't redefined through mhash.h
 	@${REINPLACE_CMD} -E -e 's@(PACKAGE|VERSION)@MBUFFER_\1@' \

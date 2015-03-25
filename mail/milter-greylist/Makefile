@@ -69,8 +69,7 @@ LDFLAGS+=	${SENDMAIL_LDFLAGS}
 LIBS+=		${SENDMAIL_LDADD}
 .endif
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-LIBS+=		${PTHREAD_LIBS}
+LIBS+=		-lpthread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-user=mailnull \

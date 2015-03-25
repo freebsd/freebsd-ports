@@ -3,6 +3,7 @@
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.39
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}|}
 
@@ -25,7 +26,6 @@ HI2_DESC=	Higher uppercase letters, for size 18
 LL2_DESC=	Variant with more distinctive 'l' (ell)
 TD1_DESC=	Variant with centered '~'
 
-SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>

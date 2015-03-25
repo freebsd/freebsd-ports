@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	123
+PORTVERSION=	127
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
 
@@ -16,36 +16,30 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cyan4973
 GH_PROJECT=	lz4
 GH_TAGNAME=	r${PORTVERSION}
-GH_COMMIT=	c0054ca
 
 CONFLICTS=	lz4-*
 
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-ALL_TARGET=	default liblz4.pc
-SO_VER=		1.3.1
+ALL_TARGET=	default		# don't remove this
+SO_VER=		1.5.0
+PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_MAJ=${SO_VER:R:R}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|kFreeBSD|& FreeBSD|' \
-		${WRKSRC}/Makefile ${WRKSRC}/programs/Makefile
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-e 's/LIBDIR?=/LOCALLIBDIR=/; s/$$(LIBDIR)/$$(LOCALLIBDIR)/g' \
+		-e 's|$$(LOCALLIBDIR)/pkgconfig|$$(PREFIX)/libdata/pkgconfig|' \
+		-e '/^MANDIR=/s|share/||' \
+		-e 's/kFreeBSD/& FreeBSD/' \
+		-e 's|$$(MAKE)|${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}|'
+	${REINPLACE_CMD} -e '/^all:/s/$$/ liblz4.pc/' \
+		${WRKSRC}/lib/Makefile
 	${REINPLACE_CMD} -e '/^all:/s|fullbench.*||' \
 		${WRKSRC}/programs/Makefile
 
-do-install:
-	${INSTALL_LIB} ${WRKSRC}/liblz4.so.${SO_VER} ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf liblz4.so.${SO_VER} ${STAGEDIR}${PREFIX}/lib/liblz4.so.${SO_VER:R:R}
-	${LN} -sf liblz4.so.${SO_VER:R:R} ${STAGEDIR}${PREFIX}/lib/liblz4.so
-	${INSTALL_LIB} ${WRKSRC}/liblz4.a ${STAGEDIR}${PREFIX}/lib
-
-	${INSTALL_DATA} ${WRKSRC}/liblz4.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/lz4.h ${WRKSRC}/lz4hc.h ${STAGEDIR}${PREFIX}/include
-
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/lz4 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/lz4c ${STAGEDIR}${PREFIX}/bin
-	${LN} -sf lz4 ${STAGEDIR}${PREFIX}/bin/lz4cat
-	${INSTALL_MAN} ${WRKSRC}/programs/lz4.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/programs/lz4c.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/programs/lz4cat.1 ${STAGEDIR}${MANPREFIX}/man/man1
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lz4*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblz4.so.${SO_VER}
 
 .include <bsd.port.mk>

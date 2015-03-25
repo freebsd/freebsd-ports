@@ -47,7 +47,6 @@ post-patch:
 		-e 's|-DMEDIAINFO_LIBMMS_FROMSOURCE||g' \
 		-e 's|with_libmms/pkgconfig/|with_libmms/libdata/pkgconfig/|' \
 		-e 's|src/.libs|lib|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/libmediainfo.pc.in
 	@${REINPLACE_CMD} -e '1 s|bin/bash|bin/sh|' ${WRKSRC}/libmediainfo-config.in
 
 post-install:

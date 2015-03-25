@@ -19,8 +19,8 @@ USE_GL=		glu
 GNU_CONFIGURE=	yes
 
 CXXFLAGS+=	-fPIC
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-js-jsBSD.cxx
 

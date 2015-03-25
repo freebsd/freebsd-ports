@@ -20,8 +20,7 @@ PLIST_FILES=	sbin/oftpd man/man8/oftpd.8.gz
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-D_THREAD_SAFE||g' ${WRKSRC}/configure
 .if defined(MAX_NUM_CLIENTS)
 	${REINPLACE_CMD} -e 's|MAX_NUM_CLIENTS 300|MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}|g' ${WRKSRC}/src/oftpd.h
 .endif

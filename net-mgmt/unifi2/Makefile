@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi2
 PORTVERSION=	2.4.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -45,5 +45,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
 	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
+# Create directories that will be writable by unifi
+.for i in data logs run work
+	${MKDIR} ${STAGEDIR}/${JAVASHAREDIR}/unifi/${i}
+.endfor
 
 .include <bsd.port.mk>

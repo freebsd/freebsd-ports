@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.23.1
+PORTVERSION=	1.23.2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD

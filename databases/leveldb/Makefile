@@ -16,7 +16,6 @@ OPTIONS_DEFAULT=SNAPPY
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		compiler:c++0x gmake
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 		SHLIB_MINOR=${SHLIB_MINOR}
@@ -44,7 +43,6 @@ SNAPPY=		0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' ${WRKSRC}/build_detect_platform
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
 .if !${PORT_OPTIONS:MGPERFTOOLS}
 	@${REINPLACE_CMD} -e 's| -ltcmalloc||' ${WRKSRC}/build_detect_platform

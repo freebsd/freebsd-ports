@@ -33,14 +33,14 @@ ${DISTFILES}:
 upload-tarball: build-tarball
 	scp ${DISTFILES} freefall.freebsd.org:public_distfiles/
 
-mycflags=	-shared -fPIC -DPIC ${PTHREAD_CFLAGS} \
+mycflags=	-shared -fPIC -DPIC \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpurple \
 		-I${LOCALBASE}/include/pidgin \
 		-I${LOCALBASE}/include/glib-2.0 \
 		-I${LOCALBASE}/lib/glib-2.0/include \
 		-DPURPLE_PLUGINS
-mylibs=		${PTHREAD_LIBS}
+mylibs=		-lpthread
 
 # DBUS: No DBUS here, does not work with Skype 2.1 beta
 # NLS: While the build works and enables translations,

@@ -51,10 +51,7 @@ PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
 CONFIGURE_ARGS+=	--enable-compile-warnings=no
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		 's|-lpthread|${PTHREAD_LIBS}|g'
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
-	    	s|-ldl"$$|"|g' \
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|-ldl"$$|"|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

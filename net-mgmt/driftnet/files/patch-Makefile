@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jul  9 12:26:41 2002
-+++ Makefile	Sat Sep 28 22:19:21 2002
+--- Makefile.orig	2002-07-09 19:26:41 UTC
++++ Makefile
 @@ -16,23 +16,23 @@
  #CC = gcc
  
@@ -19,19 +19,18 @@
 +#CFLAGS += -D_BSD_SOURCE
  
  # We always need the pcap and pthread libraries.
--LDLIBS += -lpcap -lpthread
-+LDLIBS += -lpcap ${PTHREAD_LIBS}
+ LDLIBS += -lpcap -lpthread
  
  # Optional C compiler and linker flags. Typical driftnet builds have support
  # for displaying captured images in an X window, and need the following flags:
 -CFLAGS  += `gtk-config --cflags`
 -LDLIBS  += -ljpeg -lungif `gtk-config --libs`
-+CFLAGS  += ${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags`
++CFLAGS  += `${GTK_CONFIG} --cflags`
 +LDLIBS  += -ljpeg -lgif `${GTK_CONFIG} --libs`
  
  # Alternatively, you can build a version of driftnet which can only be used
  # in `adjunct' mode as the back end for some other image-processing program. To
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,7 @@ LDLIBS  += -ljpeg -lungif `gtk-config --
  # On systems with a C99 compiler, driftnet will use <stdint.h> for the
  # definitions of types such as uint8_t. On other systems like Solaris, these
  # are in <sys/types.h>, and you should uncomment this line.
@@ -40,7 +39,7 @@
  
  # On Solaris, it is necessary to link against -lposix4 for the definition of
  # nanosleep; uncomment the below.
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,7 @@ LDLIBS  += -ljpeg -lungif `gtk-config --
  
  # added 20020604 edobbs
  # On BSD systems, may need to use /usr/local/include

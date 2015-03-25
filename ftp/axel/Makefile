@@ -25,7 +25,6 @@ NLS_CONFIGURE_OFF=	--i18n=0
 DEBUG_CONFIGURE_ON=--debug=1 --strip=0
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
-		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.mk>

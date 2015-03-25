@@ -2,7 +2,7 @@
 
 PORTNAME=	Lohit
 PORTVERSION=	20130612
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/o/lohit/
 DISTNAME=	lohit-ttf-${PORTVERSION}

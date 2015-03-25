@@ -2,7 +2,7 @@
 
 PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.proggyfonts.com/download/
 DISTFILES=	ProggyClean.ttf.zip ProggySquare.ttf.zip \

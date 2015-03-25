@@ -25,12 +25,11 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CFLAGS+=	-I${QT_INCDIR}
 LDFLAGS+=	-L${QT_LIBDIR}
-QTCFGLIBS+=	${PTHREAD_LIBS}
+QTCFGLIBS+=	-lpthread
 CONFIGURE_ENV+=	DCLIB_CFLAGS=-I${LOCALBASE}/include
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
-	    s|-D_XOPEN_SOURCE=500||g' \
+	${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=500||g' \
 	    ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

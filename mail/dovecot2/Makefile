@@ -3,6 +3,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.2.16
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -33,7 +34,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
-		--without-shadow
+		--without-shadow \
+		--with-docs
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 INSTALL_TARGET=	install-strip
@@ -58,8 +60,6 @@ GSSAPI_NONE_DESC=	Build without GSSAPI support
 GSSAPI_BASE_DESC=	Use GSSAPI from base
 GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
-
-DOCS_CONFIGURE_WITH=	docs
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 GSSAPI_BASE_USES=		gssapi
@@ -128,11 +128,15 @@ post-patch:
 		${WRKSRC}/doc/example-config/*.conf ${WRKSRC}/doc/example-config/conf.d/*
 	@${REINPLACE_CMD} -e '/^LIBS =/s/$$/ @LTLIBICONV@/' \
 		${WRKSRC}/src/lib-mail/Makefile.in
+	# Install the sample config files into ETCDIR/example-config/
+	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
+		${WRKSRC}/doc/example-config/Makefile.in \
+		${WRKSRC}/doc/example-config/conf.d/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${DOCSDIR}/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${DOCSDIR}/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

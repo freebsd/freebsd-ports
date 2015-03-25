@@ -63,14 +63,12 @@ LDFLAGS+=		-lwrap
 
 .if ${PORT_OPTIONS:MUCONTEXT}
 CONFIGURE_ARGS+=--with-threads=ucontext
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 .elif ${PORT_OPTIONS:MFORK}
 CONFIGURE_ARGS+=--with-threads=fork
 .else
 CONFIGURE_ARGS+=--with-threads=pthread
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 .endif
 
 post-patch:

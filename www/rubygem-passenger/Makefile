@@ -101,9 +101,6 @@ pre-patch:
 		s!/usr/include/libeio!${LOCALBASE}/include!; \
 		s!-leio!-L${LOCALBASE}/lib -leio!' \
 		${WRKSRC}/build/common_library.rb
-	@${REINPLACE_CMD} \
-		's!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKSRC}/lib/phusion_passenger/platform_info/cxx_portability.rb
 
 post-build:
 .if ${PORT_OPTIONS:MAPACHE22}

@@ -207,7 +207,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 	    -e 's|install: \(.*\) host-key check-config|install: \1|g' \
-	    -e 's|-lpthread|${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \

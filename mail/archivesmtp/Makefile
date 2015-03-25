@@ -6,12 +6,10 @@ PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP mail archiver
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-LIBS+=		${PTHREAD_LIBS}\
-		-lmilter
+LIBS+=		-lmilter -lpthread
 MAKE_ENV+=	LDADD="${LIBS}"
 
 USE_RC_SUBR=	archivesmtp

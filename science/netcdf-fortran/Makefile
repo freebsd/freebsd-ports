@@ -19,7 +19,6 @@ MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		fortran libtool makeinfo pathfix
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GH_ACCOUNT=	Unidata
 GH_PROJECT=	${PORTNAME}

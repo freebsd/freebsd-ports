@@ -34,8 +34,8 @@ CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
 		-DNCURSESDIR:STRING="/usr"		\
 		-DMPICH:BOOL=NO				\
 		-DMAGICK:BOOL=NO
-CPPFLAGS+=	${CFLAGS} -fno-inline ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CPPFLAGS+=	${CFLAGS} -fno-inline
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 

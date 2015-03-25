@@ -28,11 +28,8 @@ USEMAILERTABLE_DESC=	Use mailertable to map domains to backends
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 LDFLAGS+=	${SENDMAIL_LDFLAGS}
-LIBS+=		-lmilter
+LIBS+=		-lmilter -lpthread
 LIBS+=		${SENDMAIL_LDADD}
-
-CFLAGS+=	${PTHREAD_CFLAGS}
-LIBS+=		${PTHREAD_LIBS}
 
 .if ${PORT_OPTIONS:MALLDOMAINS}
 CFLAGS+=	-DALLDOMAINS

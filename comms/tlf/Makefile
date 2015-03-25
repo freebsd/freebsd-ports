@@ -21,7 +21,7 @@ USES=		libtool
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Use hamlib

@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-clamav-config=${LOCALBASE}/bin \
 		--with-courier-config=${LOCALBASE}/bin
 CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PLIST_DIRS=	etc/courier/clamcour
 PLIST_FILES=	libexec/filters/clamcour man/man1/clamcour.1.gz

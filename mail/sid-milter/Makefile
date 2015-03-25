@@ -46,9 +46,7 @@ PLIST_FILES+=	include/libar.h lib/libar.a man/man3/ar.3.gz
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
-		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
-		-e "s|\`-O'|\`${CFLAGS}'|g" \
+	${REINPLACE_CMD} -e "s|\`-O'|\`${CFLAGS}'|g" \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \

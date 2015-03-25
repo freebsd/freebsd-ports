@@ -17,8 +17,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
 CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --altdir "${PREFIX}" \
 			--shrdir "${PREFIX}/share" --compiler clang++
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PORTDOCS=	*
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
