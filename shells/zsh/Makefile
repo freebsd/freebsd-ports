@@ -3,7 +3,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	5.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -25,7 +25,7 @@ USES=		iconv ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
@@ -65,16 +65,11 @@ STATIC_LDFLAGS=		-static
 STATIC_CONFIGURE_ON=	--disable-dynamic
 STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
-DOCS_USES=		makeinfo
 
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-INFO=	zsh
 .endif
 
 post-patch:
@@ -104,11 +99,6 @@ post-build:
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	cd ${WRKSRC} && ${SOELIM} -r ${WRKSRC}/Doc/zshall.1.source > \
 		${WRKSRC}/Doc/zshall.1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/info
-	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
-		${WRKSRC}/Doc/zsh.texi
-.endif
 
 post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/zsh ${STAGEDIR}${PREFIX}/bin/rzsh
@@ -119,7 +109,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${STAGEDIR}${PREFIX}/info/zsh.info
 .endif
 	${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
