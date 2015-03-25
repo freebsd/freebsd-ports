@@ -121,7 +121,7 @@
  RANLIB=ranlib
  
 -THREAD_LDFLAGS=-lpthread
-+THREAD_LDFLAGS=$(PTHREAD_LIBS)
++THREAD_LDFLAGS=-lpthread
  # don't need -ldl (FreeBSD)
 -LDFLAGS=-lm
 +LDFLAGS+=-lm
