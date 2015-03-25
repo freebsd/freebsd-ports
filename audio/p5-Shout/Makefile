@@ -25,7 +25,8 @@ post-patch:
 	${REINPLACE_CMD} -i '' -e 's/CCFLAGS/INC/' ${WRKSRC}/Makefile.PL
 
 post-configure:
-	@${PERL} -i -pe '$$_ .= " ${PTHREAD_LIBS}" if /^LDDLFLAGS/;' ${WRKSRC}/Makefile
+	@${PERL} -i -pe '$$_ .= " -lpthread" if /^LDDLFLAGS/;' \
+		${WRKSRC}/Makefile
 
 OPTIONS_DEFINE=	DOCS
 

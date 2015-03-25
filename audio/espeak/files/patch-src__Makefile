@@ -1,5 +1,5 @@
---- ./src/Makefile.orig	2011-11-22 22:46:08.000000000 +0100
-+++ ./src/Makefile	2012-05-03 16:00:55.000000000 +0200
+--- src/Makefile.orig	2014-02-02 10:58:11 UTC
++++ src/Makefile
 @@ -1,8 +1,8 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -11,7 +11,7 @@
  BINDIR=$(PREFIX)/bin
  INCDIR=$(PREFIX)/include/espeak
  LIBDIR=$(PREFIX)/lib
-@@ -27,7 +27,7 @@
+@@ -27,7 +27,7 @@ MKDIR = mkdir -p
  
  # 'runtime' uses pulseaudio if it is running, else uses portaudio
  #AUDIO = runtime
@@ -20,7 +20,7 @@
  #AUDIO = portaudio0
  #AUDIO = portaudio2
  #AUDIO = pulseaudio
-@@ -35,17 +35,17 @@
+@@ -35,17 +35,17 @@ AUDIO = portaudio
  
  ifeq ($(AUDIO),runtime)
  WAVE=wave.cpp wave_pulse.cpp
@@ -41,36 +41,19 @@
  USE_AUDIO=-DUSE_PORTAUDIO
  else
  ifeq ($(AUDIO),portaudio0)
-@@ -83,23 +83,23 @@
- 
- SRCS1=$(speak_SOURCES)
- OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
--LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
-+LIBS1=-lstdc++ $(LIB_AUDIO) $(PTHREAD_LIBS) $(EXTRA_LIBS)
- 
- SRCS2=$(libespeak_SOURCES)
- OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
--LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
-+LIBS2=-lstdc++ $(LIB_AUDIO) $(PTHREAD_LIBS)
+@@ -91,9 +91,9 @@ LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
 -LIBS3=-lstdc++ -L . -lespeak
-+LIBS3=-lstdc++ -L . -lespeak $(PTHREAD_LIBS)
++LIBS3=-lstdc++ -L . -lespeak -lpthread
  
 -CXXFLAGS=-O2
 +CXXFLAGS?=-O2
  
  
  all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
- 
- .cpp.o:
--	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
-+	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
- 
- $(BIN_NAME): $(OBJS1)
- 	$(CXX) $(LDFLAGS) -o $@ $(OBJS1) $(LIBS1)
-@@ -133,7 +133,7 @@
+@@ -133,7 +133,7 @@ distclean: clean
  
  install: all
  	# Create directories
@@ -79,7 +62,7 @@
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -149,5 +149,5 @@
+@@ -149,5 +149,5 @@ install: all
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files

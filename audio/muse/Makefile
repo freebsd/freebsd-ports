@@ -22,8 +22,8 @@ USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_SYS_UIO_H ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_SYS_UIO_H
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lintl
 
 PORTDOCS=	AUTHORS ChangeLog NEWS KNOWN-BUGS README TODO USAGE
 PLIST_FILES=	bin/muse man/man1/muse.1.gz

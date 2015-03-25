@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" 
+MAKE_ENV=	PTHREAD_LIBS="-lpthread" 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PLIST_FILES=	bin/SpiralLoops
@@ -36,7 +36,7 @@ post-patch:
 		s:-O3::g; \
 		s:CFLAGS =:CFLAGS +=:g; \
 		s:CXXFLAGS=:CXXFLAGS+=:g; \
-		s:-lm:${PTHREAD_LIBS} -lm:g; \
+		s:-lm:-lpthread -lm:g; \
 		s:/usr/X11R6:${LOCALBASE}:g; \
 		s:gcc:${CC}:; s:g\+\+:${CXX}:" \
 		< ${WRKSRC}/Makefile.in.orig > ${WRKSRC}/Makefile.in

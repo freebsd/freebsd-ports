@@ -22,8 +22,8 @@ CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
 
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_OFF=		-Denable-jack:BOOL=FALSE

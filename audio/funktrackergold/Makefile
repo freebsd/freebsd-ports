@@ -19,8 +19,7 @@ LICENSE=	GPLv2
 USES=		compiler:nestedfct tar:tgz
 
 WRKSRC=		${WRKDIR}/funkgold
-MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
-		EXTRA_LDFLAGS="${PTHREAD_LIBS}"
+MAKE_ARGS=	EXTRA_LDFLAGS="-lpthread"
 
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/funkgold

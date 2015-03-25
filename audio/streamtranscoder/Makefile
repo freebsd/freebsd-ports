@@ -28,9 +28,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|g; \
-		s|-pthread|${PTHREAD_LIBS}|g; s|-O20|$$CFLAGS|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O20|$$CFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
 		${WRKSRC}/aclocal.m4 ${WRKSRC}/configure \
 		${WRKSRC}/src/libtranscoder/transcurl.cpp

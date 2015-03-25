@@ -113,10 +113,12 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 .include <bsd.port.pre.mk>
 
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf ${PTHREAD_CFLAGS}
-CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf ${PTHREAD_CFLAGS}
-CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${WRKSRC}/lib-src/lame -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf
+CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf
+CFLAGS+=	-I${WRKSRC}/lib-src/portsmf \
+		-I${WRKSRC}/lib-src/portaudio-v19/include \
+		-I${WRKSRC}/lib-src/lame -I${LOCALBASE}/include
 
 post-patch:
 .if ! ${PORT_OPTIONS:MPORTMIXER}

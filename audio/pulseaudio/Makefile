@@ -30,8 +30,7 @@ USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
 USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
 		LIBS="-lm -lintl" \

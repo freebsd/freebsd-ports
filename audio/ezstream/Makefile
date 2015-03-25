@@ -32,8 +32,8 @@ PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml \
 		man/man1/ezstream-file.sh.1.gz man/man1/ezstream.1.gz
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 TAGLIB_CONFIGURE_OFF=	--without-taglib
 TAGLIB_LIB_DEPENDS=		libtag.so:${PORTSDIR}/audio/taglib
