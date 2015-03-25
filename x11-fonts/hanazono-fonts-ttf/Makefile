@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hanazono-fonts-ttf
-PORTVERSION=	20131208
-PORTREVISION=	2
+PORTVERSION=	20141012
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	hanazono-font/60001
+MASTER_SITE_SUBDIR=	hanazono-font/62072
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
@@ -23,7 +22,6 @@ SUB_FILES=	pkg-message
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC}/ && \
-		${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
