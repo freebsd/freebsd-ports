@@ -85,28 +85,23 @@
  
      for (;;) {
  
---- tls.c.orig	2008-03-19 23:06:13.000000000 +0100
-+++ tls.c	2013-10-22 14:32:14.000000000 +0200
-@@ -468,7 +468,7 @@
- 	"ssl2",	"ssl3",	"tls1",	NULL
+--- tls.c	2014-12-08 14:10:28.000000000 -0500
++++ tls.c	2015-03-25 18:22:52.000000000 -0400
+@@ -514,5 +514,5 @@
      };
      enum protocol {
--	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_NONE
-+	TLS_SSL2, TLS_SSL3, TLS_TLS1
+-	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_TLS1_1, TLS_TLS1_2, TLS_NONE
++	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_TLS1_1, TLS_TLS1_2,
      };
      Tcl_Obj *objPtr;
-     SSL_CTX *ctx = NULL;
-@@ -1225,7 +1225,7 @@
-     Tcl_Obj	*CONST objv[];
+@@ -1361,5 +1361,5 @@
  {
-     CONST84 char *commands [] = { "req", NULL };
+     static CONST84 char *commands [] = { "req", NULL };
 -    enum command { C_REQ, C_DUMMY };
 +    enum command { C_REQ };
      int cmd;
  
-     if (objc < 2) {
-@@ -1329,13 +1329,13 @@
- 		
+@@ -1465,11 +1465,11 @@
  		name=X509_get_subject_name(cert);
  
 -		X509_NAME_add_entry_by_txt(name,"C", MBSTRING_ASC, k_C, -1, -1, 0);
@@ -125,4 +120,12 @@
 +		X509_NAME_add_entry_by_txt(name,"Email", MBSTRING_ASC, (const unsigned char *)k_Email, -1, -1, 0);
  
  		X509_set_subject_name(cert,name);
+--- tlsInt.h	2014-12-08 14:10:28.000000000 -0500
++++ tlsInt.h	2015-03-25 18:29:34.000000000 -0400
+@@ -18,5 +18,5 @@
+  *
+  */
+-#ifndef _TSLINT_H
++#ifndef _TLSINT_H
+ #define _TLSINT_H
  
