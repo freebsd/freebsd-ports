@@ -82,7 +82,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure

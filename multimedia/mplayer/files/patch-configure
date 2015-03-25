@@ -91,7 +91,7 @@
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
 -  THREAD_CFLAGS=-D_THREAD_SAFE
-+  THREAD_CFLAGS=${PTHREAD_CFLAGS}
++  THREAD_CFLAGS=
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
@@ -100,7 +100,7 @@
  _pthreads=no
  if ! hpux ; then
 -  for ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
-+  for ld_tmp in ${PTHREAD_LIBS} ; do
++  for ld_tmp in "-lpthread" "-pthread" ; do
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done

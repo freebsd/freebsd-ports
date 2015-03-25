@@ -24,7 +24,7 @@ USE_QT4=	# empty
 WANT_SDL=	yes
 USES=		cmake:outsource pkgconfig iconv gmake compiler:features
 CMAKE_USE_PTHREAD=yes
-CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
+CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="-lpthread"
 CFLAGS+=	-Wno-return-type
 MAKE_JOBS_UNSAFE=	yes
 
@@ -232,7 +232,6 @@ post-extract:
 		${WRKSRC}/avidemux/ADM_libraries/ADM_mplex/ADM_mplexout.cpp
 
 post-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
 	@${REINPLACE_CMD} '/--enable-shared/s,,& --cc=${CC},' ${WRKSRC}/cmake/admFFmpegBuild.cmake
 	@${REINPLACE_CMD} '/sub $$1/s,sub,subl,' ${WRKSRC}/plugins/ADM_videoFilters/FluxSmooth/ADM_vidFlux.cpp
 	@${CP} ${FILESDIR}/execinfo.cpp ${WRKSRC}/cmake_compile_check/
