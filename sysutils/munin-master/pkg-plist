@@ -81,4 +81,4 @@ www/cgi-bin/munin-cgi-html
 @dir %%ETCDIR%%/munin-conf.d
 @dir(%%USER%%,%%GROUP%%,) %%WWWDIR%%
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%DBDIR%%/cgi-tmp
-@dir %%DBDIR%%
+@dir(%%USER%%,%%GROUP%%,) %%DBDIR%%

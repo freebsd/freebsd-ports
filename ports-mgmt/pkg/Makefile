@@ -9,7 +9,7 @@ MASTER_SITES=	\
 		LOCAL/portmgr \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE

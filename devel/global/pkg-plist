@@ -26,13 +26,11 @@ share/gtags/PLUGIN_HOWTO
 share/gtags/PLUGIN_HOWTO.pygments
 share/gtags/README.PATCHES
 share/gtags/SERVERSIDE_HOWTO
-share/gtags/bless.sh.tmpl
 share/gtags/completion.cgi.tmpl
 share/gtags/ctags-5.8.patch
 share/gtags/elvis-2.2_0.patch
 share/gtags/elvis.rc
 share/gtags/geco.rc
-share/gtags/ghtml.cgi.tmpl
 share/gtags/global.cgi.tmpl
 share/gtags/globash.rc
 share/gtags/gtags-cscope.vim
@@ -89,4 +87,4 @@ share/gtags/script/less-global
 share/gtags/script/pygments_parser.py
 share/gtags/style.css.tmpl
 share/gtags/vim74-gtags-cscope.patch
-@dir var/gtags/sitekeys
+@dir var/gtags
