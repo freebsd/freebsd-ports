@@ -19,12 +19,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PORTSCOUT=	skipv:1.801
 
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-pthread
-USE_BDB=	43+
+LDFLAGS+=	-lpthread
+USE_BDB=	yes
 USE_PERL5=	configure
 USES=		perl5
 
 post-patch:
-	@${REINPLACE_CMD} -e '18 s|-lpthread -ldb|-l${BDB_LIB_NAME} -pthread|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '18 s|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
