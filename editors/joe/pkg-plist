@@ -5,11 +5,9 @@ bin/jstar
 bin/rjoe
 bin/termidx
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/HINTS
-%%PORTDOCS%%%%DOCSDIR%%/LIST
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/hacking.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%ETCDIR%%/ftyperc
 %%ETCDIR%%/jicerc.ru
 @unexec if cmp -s %D/%%ETCDIR%%/jmacsrc.dist %D/%%ETCDIR%%/jmacsrc; then rm -f %D/%%ETCDIR%%/jmacsrc; fi
