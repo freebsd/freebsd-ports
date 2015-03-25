@@ -829,6 +829,7 @@
     SUBDIR += r1q2
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
+    SUBDIR += redeclipse-data
     SUBDIR += reminiscence
     SUBDIR += rescue
     SUBDIR += residualvm
