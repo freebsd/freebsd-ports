@@ -61,8 +61,8 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
-	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html \
-		${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
+	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
 
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
