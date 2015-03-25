@@ -703,6 +703,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/eventlog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/eventlog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/eventlog.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.pyo
@@ -880,6 +883,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090700.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090700.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090800.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1348,15 +1354,36 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_lassobuiltins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_lassobuiltins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_lassobuiltins.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_luabuiltins.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_luabuiltins.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_luabuiltins.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_mapping.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_mapping.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_mapping.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_openedgebuiltins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_openedgebuiltins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_openedgebuiltins.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_phpbuiltins.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_phpbuiltins.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_phpbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_postgres_builtins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_postgres_builtins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_postgres_builtins.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_robotframeworklexer.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_robotframeworklexer.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_robotframeworklexer.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_scilab_builtins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_scilab_builtins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_scilab_builtins.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_sourcemodbuiltins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_sourcemodbuiltins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_sourcemodbuiltins.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_stan_builtins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_stan_builtins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_stan_builtins.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_vimbuiltins.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_vimbuiltins.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_vimbuiltins.pyo
@@ -1369,15 +1396,24 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/compiled.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/compiled.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/compiled.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dalvik.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dalvik.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dalvik.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dotnet.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dotnet.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/dotnet.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/foxpro.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/foxpro.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/foxpro.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/functional.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/functional.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/functional.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/hdl.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/hdl.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/hdl.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/jvm.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/jvm.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/jvm.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/math.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/math.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/math.pyo
@@ -1387,9 +1423,15 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/parsers.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/parsers.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/parsers.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/shell.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/shell.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/shell.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/special.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/special.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/special.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/sql.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/sql.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/sql.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/templates.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/templates.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/templates.pyo
@@ -1453,6 +1495,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/perldoc.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/perldoc.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/perldoc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/rrt.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/rrt.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/rrt.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/tango.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/tango.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/tango.pyo
@@ -1523,6 +1568,7 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/sessions.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/sessions.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/testtools.py
+@comment %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/testtools.pycj
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/testtools.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/testtools.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib/wrappers.py
@@ -1693,6 +1739,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/abuse.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/abuse.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/abuse.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.pyo
@@ -2684,659 +2733,466 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.py
 %%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyc
 %%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyo
-share/moin/config/logging/README
-share/moin/config/logging/logfile
-share/moin/config/logging/logfile_debug_auth
-share/moin/config/logging/stderr
-share/moin/config/more_samples/README
-share/moin/config/more_samples/auth_session_wikiconfig_snippet
-share/moin/config/more_samples/auth_wikiconfig_snippet
-share/moin/config/more_samples/dicts_wikiconfig_snippet
-share/moin/config/more_samples/groups_wikiconfig_snippet
-share/moin/config/more_samples/jabber_wikiconfig_snippet
-share/moin/config/more_samples/ldap_2servers_wikiconfig_snippet
-share/moin/config/more_samples/ldap_wikiconfig_snippet
-share/moin/config/more_samples/mail_wikiconfig_snippet
-share/moin/config/more_samples/mailimportconf.py
-share/moin/config/more_samples/openid_sreg_wikiconfig_snippet
-share/moin/config/more_samples/openid_teams_wikiconfig_snippet
-share/moin/config/more_samples/secrets_wikiconfig_snippet
-share/moin/config/more_samples/security_wikiconfig_snippet
-share/moin/config/more_samples/smb_wikiconfig_snippet
-share/moin/config/more_samples/ui_wikiconfig_snippet
-share/moin/config/more_samples/user_wikiconfig_snippet
-share/moin/config/more_samples/xapian_wikiconfig_snippet
-share/moin/config/wikiconfig.py
-share/moin/config/wikifarm/farmconfig.py
-share/moin/config/wikifarm/mywiki.py
-share/moin/data/cache/README
-share/moin/data/dict/dummy_dict
-share/moin/data/edit-log
-share/moin/data/event-log
-share/moin/data/intermap.txt
-share/moin/data/meta
-share/moin/data/pages/BadContent/current
-share/moin/data/pages/BadContent/revisions/00000001
-share/moin/data/plugin/__init__.py
-share/moin/data/plugin/action/__init__.py
-share/moin/data/plugin/converter/__init__.py
-share/moin/data/plugin/events/__init__.py
-share/moin/data/plugin/filter/__init__.py
-share/moin/data/plugin/formatter/__init__.py
-share/moin/data/plugin/macro/__init__.py
-share/moin/data/plugin/parser/__init__.py
-share/moin/data/plugin/theme/__init__.py
-share/moin/data/plugin/userprefs/__init__.py
-share/moin/data/plugin/xmlrpc/__init__.py
-share/moin/data/user/README
-share/moin/server/moin
-share/moin/server/moin.ajp
-share/moin/server/moin.cgi
-share/moin/server/moin.fcgi
-share/moin/server/moin.scgi
-share/moin/server/moin.wsgi
-share/moin/server/test.wsgi
-share/moin/server/wikiserverconfig.py
-share/moin/underlay/pages/BadContent/current
-share/moin/underlay/pages/BadContent/revisions/00000001
-share/moin/underlay/pages/LanguageSetup/attachments/00_needs_fixing.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Croatian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Czech--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Danish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Dutch--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--course_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--not_translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/English--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Finnish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/French--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Galician--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Galician--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Galician--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Galician--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Galician--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--course_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/German--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hebrew--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hebrew--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hebrew--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hebrew--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hebrew--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hindi--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hindi--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hindi--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hindi--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hindi--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Hungarian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Indonesian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--course_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Italian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Japanese--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Korean--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Latvian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Lithuanian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Mongolian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--course_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Persian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Polish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Portuguese--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Romanian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--course_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Russian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Serbian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--essential_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovak--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Slovenian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Spanish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--admin_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--all_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--essential_category_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Swedish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Turkish--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--all_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--all_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--all_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--all_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_help_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_template_pages.zip
-share/moin/underlay/pages/LanguageSetup/attachments/Ukrainian--translated_system_pages.zip
-share/moin/underlay/pages/LanguageSetup/current
-share/moin/underlay/pages/LanguageSetup/revisions/00000001
-@dirrm share/moin/underlay/pages/LanguageSetup/revisions
-@dirrm share/moin/underlay/pages/LanguageSetup/attachments
-@dirrm share/moin/underlay/pages/LanguageSetup
-@dirrm share/moin/underlay/pages/BadContent/revisions
-@dirrm share/moin/underlay/pages/BadContent
-@dirrm share/moin/underlay/pages
-@dirrm share/moin/underlay
-@dirrm share/moin/server
-@dirrm share/moin/data/user
-@dirrm share/moin/data/plugin/xmlrpc
-@dirrm share/moin/data/plugin/userprefs
-@dirrm share/moin/data/plugin/theme
-@dirrm share/moin/data/plugin/parser
-@dirrm share/moin/data/plugin/macro
-@dirrm share/moin/data/plugin/formatter
-@dirrm share/moin/data/plugin/filter
-@dirrm share/moin/data/plugin/events
-@dirrm share/moin/data/plugin/converter
-@dirrm share/moin/data/plugin/action
-@dirrm share/moin/data/plugin
-@dirrm share/moin/data/pages/BadContent/revisions
-@dirrm share/moin/data/pages/BadContent
-@dirrm share/moin/data/pages
-@dirrm share/moin/data/dict
-@dirrm share/moin/data/cache
-@dirrm share/moin/data
-@dirrm share/moin/config/wikifarm
-@dirrm share/moin/config/more_samples
-@dirrm share/moin/config/logging
-@dirrm share/moin/config
-@dirrm share/moin
-@dirrm %%PYTHON_SITELIBDIR%%/jabberbot
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/wikixml
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/widget
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/rightsidebar/img
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/rightsidebar/css
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/rightsidebar
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modernized/img
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modernized/css
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modernized
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modern/img
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modern/css
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/modern
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/common/js
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/common
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/classic/img
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/classic/css
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/classic
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/smiley
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/selection
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/restrict_actions
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/placeholder/lang
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/placeholder
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinunlink
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinlink
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinimage
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinformat
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinbehaviour
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/moinattachment
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/macro/lang
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins/macro
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/moinFCKplugins
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/anywikidraw/lib
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/anywikidraw
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/TWikiDrawPlugin
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/wsc
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/silver/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/silver
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/office2003/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/office2003
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/default/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins/default
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/skins
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/tablecommands
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/simplecommands
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/placeholder
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/dragresizetable
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/bbcode/_sample
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/bbcode
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins/autogrow
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/lang
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/js
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/images/smiley/msn
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/images/smiley
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/py
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/php
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/lasso
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/aspx
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/connectors
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser/default/js
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser/default
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager/browser
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/filemanager
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dtd
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_template/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_template
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_link
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_image
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_flash
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_docprops
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_about/sponsors
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_about
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/common/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/common
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/css/images
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/css/behaviors
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/css
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/commandclasses
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/classes
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/util
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userprefs
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userform
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/theme
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/xappy
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/debug
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/werkzeug
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/formatters
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/filters
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/utils/_blowfish
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/utils
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/ext/django
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/ext
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib/_setup
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/passlib
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/flup/server
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/flup/client
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/flup
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/stats
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/security
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/search/queryparser
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/search/Xapian
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/search
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/server
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/index
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/import
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/export
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/account
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/parser
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/mail
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/macro
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/logfile
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/formatter
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/filter
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/events
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/datastruct/backends
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/datastruct
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/converter
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/config
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp_ext
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/auth
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/action
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin
+%%DATADIR%%/config/logging/README
+%%DATADIR%%/config/logging/abuse
+%%DATADIR%%/config/logging/logfile
+%%DATADIR%%/config/logging/logfile_debug_auth
+%%DATADIR%%/config/logging/stderr
+%%DATADIR%%/config/more_samples/README
+%%DATADIR%%/config/more_samples/auth_session_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/auth_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/dicts_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/groups_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/jabber_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/ldap_2servers_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/ldap_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/mail_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/mailimportconf.py
+%%DATADIR%%/config/more_samples/openid_sreg_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/openid_teams_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/secrets_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/security_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/smb_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/ui_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/user_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/xapian_wikiconfig_snippet
+%%DATADIR%%/config/wikiconfig.py
+%%DATADIR%%/config/wikifarm/farmconfig.py
+%%DATADIR%%/config/wikifarm/mywiki.py
+%%DATADIR%%/data/cache/README
+%%DATADIR%%/data/dict/dummy_dict
+%%DATADIR%%/data/edit-log
+%%DATADIR%%/data/event-log
+%%DATADIR%%/data/intermap.txt
+%%DATADIR%%/data/meta
+%%DATADIR%%/data/pages/BadContent/current
+%%DATADIR%%/data/pages/BadContent/revisions/00000001
+%%DATADIR%%/data/plugin/__init__.py
+%%DATADIR%%/data/plugin/action/__init__.py
+%%DATADIR%%/data/plugin/converter/__init__.py
+%%DATADIR%%/data/plugin/events/__init__.py
+%%DATADIR%%/data/plugin/filter/__init__.py
+%%DATADIR%%/data/plugin/formatter/__init__.py
+%%DATADIR%%/data/plugin/macro/__init__.py
+%%DATADIR%%/data/plugin/parser/__init__.py
+%%DATADIR%%/data/plugin/theme/__init__.py
+%%DATADIR%%/data/plugin/userprefs/__init__.py
+%%DATADIR%%/data/plugin/xmlrpc/__init__.py
+%%DATADIR%%/data/user/README
+%%DATADIR%%/server/moin
+%%DATADIR%%/server/moin.ajp
+%%DATADIR%%/server/moin.cgi
+%%DATADIR%%/server/moin.fcgi
+%%DATADIR%%/server/moin.scgi
+%%DATADIR%%/server/moin.wsgi
+%%DATADIR%%/server/test.wsgi
+%%DATADIR%%/server/wikiserverconfig.py
+%%DATADIR%%/underlay/pages/BadContent/current
+%%DATADIR%%/underlay/pages/BadContent/revisions/00000001
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/00_needs_fixing.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Bulgarian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Chinese_Taiwan--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Croatian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Czech--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Danish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Dutch--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--course_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--not_translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/English--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Finnish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/French--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Galician--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Galician--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Galician--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Galician--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Galician--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--course_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/German--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hebrew--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hebrew--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hebrew--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hebrew--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hebrew--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hindi--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hindi--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hindi--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hindi--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hindi--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Hungarian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Indonesian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--course_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Italian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Japanese--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Korean--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Latvian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Lithuanian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Mongolian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--course_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Norwegian_Bokmal--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Persian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Polish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Portuguese--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Romanian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--course_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Russian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Serbian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Simplified_Chinese--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--essential_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovak--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Slovenian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Spanish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--admin_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--all_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--essential_category_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Swedish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Turkish--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--all_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--all_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--all_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--all_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--essential_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_help_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--optional_template_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/attachments/Ukrainian--translated_system_pages.zip
+%%DATADIR%%/underlay/pages/LanguageSetup/current
+%%DATADIR%%/underlay/pages/LanguageSetup/revisions/00000001
