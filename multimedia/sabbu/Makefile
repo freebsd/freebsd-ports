@@ -16,9 +16,9 @@ USES=		tar:bzip2 gmake pkgconfig iconv
 GNU_CONFIGURE=	yes
 
 USE_GNOME=	gtk20
-CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 ${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale0
-LDFLAGS+=	-lgmodule-2.0
+CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib 
+LDFLAGS+=	-lswscale0 -lgmodule-2.0
 
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=GTKSPELL

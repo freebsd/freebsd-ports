@@ -55,8 +55,4 @@ post-patch:	.SILENT
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 
-post-configure:	.SILENT
-	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \
-		${WRKSRC}/test/putsurface/Makefile
-
 .include <bsd.port.post.mk>

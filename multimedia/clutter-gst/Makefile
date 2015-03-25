@@ -23,8 +23,8 @@ USE_XORG=	xp x11
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
