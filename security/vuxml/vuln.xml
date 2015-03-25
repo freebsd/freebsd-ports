@@ -504,8 +504,8 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mono project reports:</p>
 	<blockquote cite="http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs">
-	  <p>Mono’s implementation of the SSL/TLS stack failed to check the order of the handshake messages. Which would allow various attacks on the protocol to succeed. Details of this vulnerability are discussed in <a href="https://www.smacktls.com/#skip">SKIP-TLS post</a>.</p>
-	  <p>Mono’s implementation of SSL/TLS also contained support for the weak EXPORT cyphers and was susceptible to the <a href="https://www.smacktls.com/#freak">FREAK</a> attack.</p>
+	  <p>Mono's implementation of the SSL/TLS stack failed to check the order of the handshake messages. Which would allow various attacks on the protocol to succeed. Details of this vulnerability are discussed in <a href="https://www.smacktls.com/#skip">SKIP-TLS post</a>.</p>
+	  <p>Mono's implementation of SSL/TLS also contained support for the weak EXPORT cyphers and was susceptible to the <a href="https://www.smacktls.com/#freak">FREAK</a> attack.</p>
 	</blockquote>
       </body>
     </description>
