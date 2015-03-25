@@ -109,8 +109,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-configure:
-	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		"s|-lpthread|${PTHREAD_LIBS}|g"
 	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
 		${WRKSRC}/Makefile
 

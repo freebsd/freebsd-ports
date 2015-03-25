@@ -201,7 +201,6 @@ do-configure:
 .if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		--install_prefix=${STAGEDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}

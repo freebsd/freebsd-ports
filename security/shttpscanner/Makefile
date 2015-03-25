@@ -13,17 +13,22 @@ COMMENT=	Simple HTTP scanner
 
 USES=		dos2unix
 
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/requests.txt %%DATADIR%%/subdomains.txt
+PLIST_FILES=	bin/${PORTNAME} \
+		%%DATADIR%%/requests.txt \
+		%%DATADIR%%/subdomains.txt
 
 post-patch:
-	@${REINPLACE_CMD} -E '/^#define/s!([a-z]*\.txt)!${DATADIR}/\1!' ${WRKSRC}/${DISTNAME:tl}.c
+	@${REINPLACE_CMD} -E '/^#define/s!([a-z]*\.txt)!${DATADIR}/\1!' \
+		${WRKSRC}/${DISTNAME:tl}.c
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -o ${PORTNAME} ${DISTNAME:tl}.c ${PTHREAD_LIBS}
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${CC} ${CFLAGS} -o ${PORTNAME} ${DISTNAME:tl}.c -lpthread)
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	@${INSTALL} -d ${STAGEDIR}${DATADIR}/
-	${INSTALL} ${WRKSRC}/requests.txt ${WRKSRC}/subdomains.txt ${STAGEDIR}${DATADIR}/
+	${INSTALL} ${WRKSRC}/requests.txt ${WRKSRC}/subdomains.txt \
+		${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

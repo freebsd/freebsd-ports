@@ -106,7 +106,6 @@ LIB_DEPENDS+=		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
-CFLAGS+=		${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
@@ -127,8 +126,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-configure:
-	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		"s|-lpthread|${PTHREAD_LIBS}|g"
 	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
 		${WRKSRC}/Makefile
 

@@ -8,11 +8,11 @@ CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.cs.tut.fi/~rammer/
 
-
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
 
 LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash
+
 USES=		bison gmake
 
 USE_AUTOTOOLS=	autoconf
@@ -22,7 +22,7 @@ CONFIGURE_ARGS+=--with-mhash \
 		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
 
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message

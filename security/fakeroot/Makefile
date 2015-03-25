@@ -21,12 +21,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-pre-configure:
-	 @${REINPLACE_CMD} -e '/LIBS=.*-lpthread/s/-lpthread/${PTHREAD_LIBS}/g' \
-	 	${WRKSRC}/${CONFIGURE_SCRIPT}
-
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libfakeroot-0.so ${STAGEDIR}${PREFIX}/lib/libfakeroot.so.0
-	@${LN} -sf ${PREFIX}/lib/libfakeroot.so.0 ${STAGEDIR}${PREFIX}/lib/libfakeroot-0.so
+	${MV} ${STAGEDIR}${PREFIX}/lib/libfakeroot-0.so \
+		${STAGEDIR}${PREFIX}/lib/libfakeroot.so.0
+	${LN} -sf ${PREFIX}/lib/libfakeroot.so.0 \
+		${STAGEDIR}${PREFIX}/lib/libfakeroot-0.so
 
 .include <bsd.port.mk>

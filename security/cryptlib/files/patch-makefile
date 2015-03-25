@@ -5,7 +5,7 @@
  		./tools/buildasm.sh $(AS) $(OBJPATH) ; \
  		make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
 -			-fomit-frame-pointer -pthread" ; \
-+			%%CFLAGS%% %%PTHREAD_CFLAGS%%" ; \
++			%%CFLAGS%%" ; \
  	else \
  		make $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread" ; \
  	fi

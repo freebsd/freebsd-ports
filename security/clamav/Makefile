@@ -76,14 +76,11 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-gethostbyname_r \
 		--disable-dependency-tracking \
 		--enable-clamdtop
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib \
-		${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
-PTHREAD_LIBS=	-lthr
+LDFLAGS+=	-lthr -L${LOCALBASE}/lib
 
 CONFLICTS?=	clamav-milter-[0-9]*
 
@@ -167,7 +164,7 @@ CFLAGS+=	-march=i486
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lthr|g' \
 			  -e 's|LC_REVISION=22|LC_REVISION=24|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \

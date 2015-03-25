@@ -21,9 +21,10 @@ PLIST_FILES=	bin/gnome-ssh-askpass2
 USES=		pkgconfig
 USE_GNOME=	gtk20
 
-CFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	-lpthread
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gnome-ssh-askpass2 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gnome-ssh-askpass2 \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
