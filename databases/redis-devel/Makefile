@@ -48,7 +48,7 @@ USES+=		tcl:build
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lm -lexecinfo
 
 CONFLICTS?=	redis-2.*
 

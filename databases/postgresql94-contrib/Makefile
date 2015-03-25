@@ -20,7 +20,7 @@ INSTALL_DIRS=	contrib
 SLAVE_ONLY=	yes
 COMPONENT=	-contrib
 CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls --with-uuid=bsd
-LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
+LDFLAGS+=	-lpthread -L${PREFIX}/lib
 
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/extension/README

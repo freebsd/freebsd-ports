@@ -9,7 +9,7 @@ $FreeBSD$
 -CPPFLAGS = $(INCLUDES) -L  /usr/local/BerkeleyDB.3.1/lib/
 +CC ?= gcc -g 
 +INCLUDES = -I %%BDB_INCLUDE_DIR%% -I expat/xmltok -I expat/xmlparse
-+LIBS     = -l%%BDB_LIB_NAME%% %%PTHREAD_LIBS%%
++LIBS     = -l%%BDB_LIB_NAME%% -lpthread
 +CPPFLAGS += ${CFLAGS} $(INCLUDES) -L  %%LOCALBASE%%/lib
  
  OBJS =  utils/hash.o \

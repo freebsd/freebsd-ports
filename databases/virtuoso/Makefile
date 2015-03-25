@@ -3,7 +3,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	7.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
@@ -52,9 +52,7 @@ CHECK_PORT=	nc -z localhost $$\1 2>\&1
 OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
 
 post-patch:
-	${REINPLACE_CMD}\
-		-e 's,-lpthreads,${PTHREAD_LIBS},g'\
-		-e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
+	${REINPLACE_CMD} -e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
 			${WRKSRC}/configure
 	${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${GREP} -l 'netstat -an.*grep LISTEN' |\
 	    ${XARGS} ${REINPLACE_CMD}\
@@ -63,7 +61,8 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
-	${RMDIR} ${STAGEDIR}/${PREFIX}/virtuoso/doc/html
+	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html \
+		${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
 
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
