@@ -25,6 +25,9 @@ USE_XORG=	glproto \
 		xrender \
 		xvmc
 
+USES+=		cpe
+CPE_VENDOR=	x
+
 CONFIGURE_ENV+=	xorg_cv_cc_flag__Wno_maybe_uninitialized=no
 CONFIGURE_ARGS+=	--enable-sna
 CONFIGURE_ARGS+=	--disable-glamor
