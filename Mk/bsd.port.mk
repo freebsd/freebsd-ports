@@ -145,11 +145,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default:
 #				  http://distcache.FreeBSD.org/ports-distfiles/${DIST_SUBDIR}/
 # MASTER_SITE_OVERRIDE
-#				- If set, override the MASTER_SITES setting with this
-#				  value.
+#				- If set, prepend the MASTER_SITES setting with this value.
 # MASTER_SITE_FREEBSD
-#				- If set, only use ${MASTER_SITE_BACKUP} for
-#				  MASTER_SITES.
+#				- If set, prepend ${MASTER_SITE_BACKUP} in MASTER_SITES.
 # CD_MOUNTPTS	- List of CDROM mountpoints to look for distfiles under.
 #				  This variable supercedes CD_MOUNTPT, which is
 #				  obsolete.
