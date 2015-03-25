@@ -60,8 +60,7 @@ NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 PYMALLOC_CONFIGURE_WITH=	pymalloc
 
 THREADS_CONFIGURE_WITH=	threads
-THREADS_CFLAGS=		${PTHREAD_CFLAGS}
-THREADS_LDFLAGS=	${PTHREAD_LIBS}
+THREADS_LDFLAGS=	-lpthread
 
 TSC_CONFIGURE_WITH=	tsc
 

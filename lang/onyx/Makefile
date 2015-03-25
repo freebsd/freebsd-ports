@@ -29,8 +29,6 @@ PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
 BROKEN_ia64=	Coredump during build on ia64
 
 .include <bsd.port.options.mk>
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
