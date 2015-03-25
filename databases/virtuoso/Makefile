@@ -3,7 +3,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	7.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -59,11 +59,6 @@ post-patch:
 		-e 's,expr \$$,expr -- $$,'\
 		-e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
 
-post-install:
-	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
-	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
-
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
 
@@ -100,6 +95,13 @@ CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
 USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=--disable-openldap
+.endif
+
+post-install:
+	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
+	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html
+.if ! ${PORT_OPTIONS:MIMAGEMAGICK}
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
 .endif
 
 .include <bsd.port.mk>
