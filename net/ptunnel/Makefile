@@ -18,8 +18,7 @@ USES=		gmake
 PLIST_FILES=	bin/ptunnel man/man8/ptunnel.8.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d;s/-lpthread/${PTHREAD_LIBS}/' \
-		-e "/^CFLAGS/d" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/^CC/d' -e "/^CFLAGS/d" ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's/stdint.h/inttypes.h/' ${WRKSRC}/ptunnel.h
 
 do-install:

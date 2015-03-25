@@ -5,7 +5,7 @@
  #    (Where to find X11 libraries, etc)
  #
 -SYSTEM_INCLUDES =  
-+SYSTEM_INCLUDES = %%PTHREAD_CFLAGS%% 
++SYSTEM_INCLUDES =
  SYSTEM_LDFLAGS = 
 -SYSTEM_LIBS = -lc_r
 +SYSTEM_LIBS =

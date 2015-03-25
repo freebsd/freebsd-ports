@@ -61,8 +61,7 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 # Support staging
 DESTDIRNAME=		--destdir
 # Flags
-CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=		PTHREAD_LDFLAGS="-lpthread"
 
 USES=			compiler cpe execinfo iconv perl5 pkgconfig \
 			python:2 readline shebangfix

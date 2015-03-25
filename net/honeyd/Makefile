@@ -43,7 +43,7 @@ pre-everything::
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|LIBS = |LIBS = ${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|LIBS = |LIBS = -lpthread|' \
 		${WRKSRC}/Makefile
 
 # Have to make this directory, the Makefile is stupid and tries to

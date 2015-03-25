@@ -50,9 +50,6 @@ CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector
 .endif
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
-
 post-patch:
 	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
 	@${MV} ${WRKSRC}/etc/routers ${WRKSRC}/etc/routers.sample
