@@ -73,9 +73,7 @@ post-patch:
 			s+%%CFLAGS%%+${CFLAGS}+; \
 			s+%%FFLAGS%%+${FFLAGS}+; \
 			s+%%LDFLAGS%%+${LDFLAGS}+; \
-			s+%%FPIC%%++; \
-	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
-	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
+			s+%%FPIC%%++ ' \
 		${WRKSRC}/make.inc
 
 	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
@@ -84,9 +82,7 @@ post-patch:
 			s+%%CFLAGS%%+${CFLAGS} ${FPIC}+; \
 			s+%%FFLAGS%%+${FFLAGS} ${FPIC}+; \
 			s+%%LDFLAGS%%+${LDFLAGS}+; \
-			s+%%FPIC%%+${FPIC}+; \
-	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
-	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
+			s+%%FPIC%%+${FPIC}+ ' \
 		${WRKSRC_SHARED}/make.inc
 
 do-build:

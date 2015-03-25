@@ -60,8 +60,12 @@ do-extract:
 
 post-patch:
 	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' -e 's+%%CFLAGS%%+${PTHREAD_CFLAGS} ${CFLAGS}+g;' -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' -e 's+%%CC%%+${CC}+g;' ${WRKSRC}/Make.inc
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' -e 's+%%CFLAGS%%+${CFLAGS} ${PTHREAD_CFLAGS} ${PICFLAG}+g;' -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' -e 's+%%CC%%+${CC}+g;' ${WRKSRC}_SHARED/Make.inc
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' \
+		-e 's+%%CFLAGS%%+${CFLAGS}+g;' \
+		-e 's+%%CC%%+${CC}+g;' ${WRKSRC}/Make.inc
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' \
+		-e 's+%%CFLAGS%%+${CFLAGS} ${PICFLAG}+g;' \
+		-e 's+%%CC%%+${CC}+g;' ${WRKSRC}_SHARED/Make.inc
 
 do-build:
 .if defined(WITH_MPI)

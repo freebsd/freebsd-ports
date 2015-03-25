@@ -54,7 +54,7 @@ LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 MAKE_ARGS+=	ARCH="${AR}"
 
 post-patch:
-	${REINPLACE_CMD} 's/$$MAKE $$gettext/$$MAKE PTHREAD_LIBS=${PTHREAD_LIBS} $$gettext/' ${WRKSRC}/build/pkgs/git/spkg-install
+	${REINPLACE_CMD} 's/$$MAKE $$gettext/$$MAKE PTHREAD_LIBS=-lpthread $$gettext/' ${WRKSRC}/build/pkgs/git/spkg-install
 
 # Create wrapper for invocation of make.
 	@${MKDIR} ${WRKSRC}/local/bin

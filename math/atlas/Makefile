@@ -86,9 +86,8 @@ PLIST_SUB+=	${opt}="@comment "
 .endfor
 
 EXTRA_FLAGS?=	-Wl,-rpath=${_GCC_RUNTIME}
-SHARED_FLAGS=	${PTHREAD_CFLAGS} ${PICFLAG} -DPIC
+SHARED_FLAGS=	${PICFLAG} -DPIC
 SHARED_LAPACK_WRKSRC=	WRKSRC_SHARED
-STATIC_FLAGS=	${PTHREAD_CFLAGS}
 STATIC_LAPACK_WRKSRC=	WRKSRC
 
 post-patch:
@@ -109,8 +108,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "\|OS=ALL|{N; s|'gcc'|'${CC}'|; \
 		s|'gfortran'|'${FC}'|; s|-mavx|-msse3|;s|'| ${EXTRA_FLAGS}'|4;}" \
 		${WRKSRC}/CONFIG/src/atlcomp.txt
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		-e "s|%%CC%%|${CC}|" \
+	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|" \
 		${WRKSRC}/CONFIG/src/SpewMakeInc.c
 	@${REINPLACE_CMD} -E -e \
 	"\|(#define ATL_MaxMalloc[[:blank:]]+)([[:digit:]]+)|s||\1${ATLAS_MAXMALLOC}|" \
@@ -188,7 +186,7 @@ do-build:
 
 L1=	${FC} $${F77FLAGS} ${SHARED_FLAGS} ${LDFLAGS} -shared -Wl,-x \
 	-Wl,--whole-archive -Wl,-soname,
-L2=	-Wl,--no-whole-archive -Wl,--as-needed ${PTHREAD_LIBS}
+L2=	-Wl,--no-whole-archive -Wl,--as-needed -lpthread
 
 post-build:
 .for opt in shared static
