@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	autoconf
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include/speex -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -71,7 +71,7 @@ CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|speex|no_&|'
 
 post-patch:
 	@${REINPLACE_CMD} ${CONFIGURE_REPLACES:C/.*/-e &/} \
-		-e 's|-lpthread|${PTHREAD_LIBS}|' \
+		-e 's|-lpthread|-pthread|' \
 		${WRKSRC}/configure.in
 
 post-install:

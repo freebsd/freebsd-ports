@@ -19,7 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(PLATFORM_LINK_FLAGS =\).*|\1 ${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|^\(PLATFORM_LINK_FLAGS =\).*|\1 -pthread|' \
 		${WRKSRC}/Makefile.GnuLinux
 	@${REINPLACE_CMD} -e 's|"graphics"|"${DATADIR}/graphics"|' \
 		${WRKSRC}/common.cpp
