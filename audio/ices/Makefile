@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	ALSA
 CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread
 USE_GNOME=	libxml2
 USES=		gmake iconv pkgconfig tar:bzip2
 
