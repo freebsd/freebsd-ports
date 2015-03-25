@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake
 WRKSRC=		${WRKDIR}/tt/src
 
@@ -35,9 +35,6 @@ PORTDOCS=	${DOCS:T}
 SLAVEDIRS=	chinese/tintin++
 
 BIG5_CONFIGURE_ON=	--enable-big5
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${STAGEDIR}${PREFIX}/bin/
