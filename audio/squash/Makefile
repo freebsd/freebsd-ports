@@ -29,9 +29,9 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|--std=gnu99|--std=gnu99 ${CFLAGS} ${PTHREAD_CFLAGS}|; \
+	@${REINPLACE_CMD} -e "s|--std=gnu99|--std=gnu99 ${CFLAGS}|; \
 		s|-Iinclude|-Iinclude -I${LOCALBASE}/include|; \
-		s|-lpthread|${PTHREAD_LIBS}|; s|-ldl|-L${LOCALBASE}/lib|" ${WRKSRC}/Makefile
+		s|-ldl|-L${LOCALBASE}/lib|" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/bin/ruby,${RUBY}," \
 		${WRKSRC}/extra/*.rb
 	@${REINPLACE_CMD} -e "s,/etc/squash.conf,${PREFIX}/etc/squash.conf," \

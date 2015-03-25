@@ -25,8 +25,8 @@ CONFIGURE_ARGS+=PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
 USES=		dos2unix gmake libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

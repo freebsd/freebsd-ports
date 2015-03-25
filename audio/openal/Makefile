@@ -47,16 +47,13 @@ NOT_FOR_ARCHS_REASON_ia64=	does not compile
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/; \
-		s/x86_64\*/amd64\* | \*ia64\*/g; \
+	@${REINPLACE_CMD} -e 's/x86_64\*/amd64\* | \*ia64\*/g; \
 		/CPPFLAGS=/ d; s/ \*linux\*)/ \*bsd\*)/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/#include/ s|SDL/||' \
 		${WRKSRC}/src/extensions/al_ext_mp3.c
 	@${REINPLACE_CMD} -e 's|"mixaudio16_mmx_prk.h"|"arch/i386/mixaudio16_mmx_prk.h"|' \
 		${WRKSRC}/src/mixaudio16.h
-	@${REINPLACE_CMD} -e 's|@requirements@||; \
-		s|Libs: |&${PTHREAD_LIBS} |;\
-		s|Cflags: |&${PTHREAD_CFLAGS} |' \
+	@${REINPLACE_CMD} -e 's|@requirements@||' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
 .if ! ${PORT_OPTIONS:MASM}
 	@${REINPLACE_CMD} -e '/^NASM=/ s|=.*|=no|' ${WRKSRC}/configure

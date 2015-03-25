@@ -36,10 +36,6 @@ DESKTOP_ENTRIES="GNUitar" \
 pre-fetch:
 	@${CAT} pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure ${WRKSRC}/src/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gnuitar ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/gnuitar.xpm ${STAGEDIR}${PREFIX}/share/pixmaps

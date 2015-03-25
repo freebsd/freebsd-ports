@@ -56,19 +56,19 @@ post-extract:
 	${MV} ${WRKDIR}/cdk-${CDK_VERSION} ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/if test/s|==|=|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
 
 pre-configure:
-	@cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} CC="${CC}" \
-		CFLAGS="${CFLAGS}" ${SH} ./configure
+	(cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} CC="${CC}" \
+		CFLAGS="${CFLAGS}" ${SH} ./configure)
 
 pre-build:
-	@cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
+	(cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/streamripper.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/streamripper.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

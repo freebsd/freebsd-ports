@@ -38,8 +38,7 @@ CONFIGURE_ENV+=	HAVE_PKGCONFIG=no
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=		-lpthread
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
