@@ -8,11 +8,11 @@ MASTER_SITES=	https://codeload.github.com/jgraph/jgraphx/tar.gz/v${PORTVERSION}?
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
 
-LICENSE=	jgraph
-LICENSE_PERMS=	# none
-LICENSE_NAME=	JGraph Ltd License
-LICENSE_FILE=	${WRKSRC}/license.txt
-MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
+#LICENSE=	jgraph
+#LICENSE_PERMS=	# none
+#LICENSE_NAME=	JGraph Ltd License
+#LICENSE_FILE=	${WRKSRC}/license.txt
+#MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
 OPTIONS_DEFINE=	COMPILE DOCS
 
