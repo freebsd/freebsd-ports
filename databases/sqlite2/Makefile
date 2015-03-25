@@ -65,7 +65,7 @@ post-patch:
 	@${ECHO} "" > ${WRKSRC}/freebsd.hints
 .endif
 .if ${PORT_OPTIONS:MTHREADS}
-	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 ${PTHREAD_LIBS}\"" \
+	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -lpthread\"" \
 		>> ${WRKSRC}/freebsd.hints
 .endif
 

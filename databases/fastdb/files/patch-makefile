@@ -23,8 +23,8 @@
  else
 -TFLAGS=-pthread
 -THRLIBS=-pthread
-+TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
-+THRLIBS=${PTHREAD_LIBS}
++TFLAGS=-D_REENTRANT
++THRLIBS=-lpthread
  SUFF=_r
  endif
  
