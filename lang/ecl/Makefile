@@ -3,6 +3,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	15.2.21
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.2/
 
@@ -28,6 +29,7 @@ CLX_DESC=	Enable X11 interface
 SOCKETS_DESC=	Enable socket interface
 DFFI_DESC=	Dynamic foreign-function support
 
+OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
@@ -38,27 +40,21 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if ${PORT_OPTIONS:MASDF}
 CONFIGURE_ARGS+=--with-asdf=yes
-PLIST_SUB+=	ASDF=""
 .else
 CONFIGURE_ARGS+=--with-asdf=no
-PLIST_SUB+=	ASDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLX}
 USE_XORG=	x11
 CONFIGURE_ARGS+=--with-clx=yes
-PLIST_SUB+=	CLX=""
 .else
 CONFIGURE_ARGS+=--with-clx=no
-PLIST_SUB+=	CLX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOCKETS}
 CONFIGURE_ARGS+=--with-tcp=yes
-PLIST_SUB+=	SOCKETS=""
 .else
 CONFIGURE_ARGS+=--with-tcp=no
-PLIST_SUB+=	SOCKETS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDFFI}
