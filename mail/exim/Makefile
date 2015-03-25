@@ -447,7 +447,7 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 
 .if ${PORT_OPTIONS:MSPF}
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
-		-e 's,XX_SPF_LIBS_XX,-L${LOCALBASE}/lib -lspf2 ${PTHREAD_LIBS:S/,/\\,/g},' \
+		-e 's,XX_SPF_LIBS_XX,-L${LOCALBASE}/lib -lspf2 -lpthread,' \
 		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
 .else
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \

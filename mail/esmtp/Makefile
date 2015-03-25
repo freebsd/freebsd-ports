@@ -24,8 +24,8 @@ PLIST_FILES=	bin/esmtp etc/esmtprc.sample man/man1/esmtp.1.gz \
 
 SUB_FILES=	pkg-message
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 

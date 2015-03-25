@@ -59,8 +59,8 @@ LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
-MURDER_CFLAGS=		${PTHREAD_CFLAGS}
-MURDER_MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+MURDER_CFLAGS=
+MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=yes \
 			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
@@ -183,8 +183,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 			  -e "s|/usr/sieve|/var/imap/sieve|g" \
 		${WRKSRC}/tools/masssievec
-	@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
-		${WRKSRC}/imap/Makefile.in
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
 		${FILESDIR}/cyrus-imapd-man.conf \
 		> ${WRKDIR}/cyrus-imapd-man.conf

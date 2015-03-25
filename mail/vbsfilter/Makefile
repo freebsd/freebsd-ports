@@ -17,9 +17,8 @@ USE_RC_SUBR=	vbsfilter
 PLIST_FILES=	libexec/vbsfilter
 
 CTARGETS+=	vbsfilter-${PORTVERSION}
-LIBS+=		${PTHREAD_LIBS}
-LIBS+=		-lmilter
-CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
+LIBS+=		-lpthread -lmilter
+CFLAGS+=	-Wall
 
 .include <bsd.port.pre.mk>
 

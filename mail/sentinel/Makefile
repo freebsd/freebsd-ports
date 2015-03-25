@@ -28,10 +28,9 @@ CFLAGS+=	-DDO_NOT_DECODE_SUBJECT
 .endif
 
 do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} ${PTHREAD_CFLAGS} \
-		-o ${PORTNAME} ${PORTNAME}.c ${LDFLAGS} \
-		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS}
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${CC} ${CFLAGS} -o ${PORTNAME} sentinel.c ${LDFLAGS} \
+		-lmilter -lpcre -lpcreposix -lpthread)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${STAGEDIR}${PREFIX}/sbin/
