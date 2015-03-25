@@ -37,8 +37,6 @@ AVAHI_CONFIGURE_OFF=	--without-avahi
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|include_HEADERS = |noinst_HEADERS = |' \
 		-e 's|am__include_HEADERS_DIST|am__noinst_HEADERS_DIST|' \
 		-e 's|/include/rfb|/include|' ${WRKSRC}/Makefile.in

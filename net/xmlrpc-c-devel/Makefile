@@ -54,8 +54,6 @@ post-extract:
 	@${FIND} ${WRKSRC} -type l -name srcdir -delete
 
 post-patch:
-	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e '/#include.*features.h/ s/features.h/sys\/cdefs.h/' \
 		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
 	@${REINPLACE_CMD} -e '/define _XOPEN_SOURCE 600/ s,^,//,' \

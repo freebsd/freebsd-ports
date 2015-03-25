@@ -14,10 +14,11 @@ LICENSE=	GPLv2
 USES=		cmake gmake pkgconfig
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -Wl,-rpath -Wl,${LOCALBASE}/lib -lX11 \
-		-lgio-2.0 -lgobject-2.0 -lgthread-2.0 -lgmodule-2.0 -lgtk-x11-2.0
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib  -Wl,-rpath -Wl,${LOCALBASE}/lib \
+		-lX11 -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -lgmodule-2.0 \
+		-lgtk-x11-2.0
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include -fPIC
 SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP

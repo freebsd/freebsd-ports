@@ -26,12 +26,8 @@ PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/unix/Makefile.common \
-		${WRKSRC}/protolib/unix/Makefile.common
-
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g; \
-		s|g++|${CXX}|; s|gcc|${CC}|; /CFLAGS =/s|$$|${CFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|gcc|${CC}|; \
+		/CFLAGS =/s|$$|${CFLAGS}|' \
 		${WRKSRC}/unix/Makefile.freebsd \
 		${WRKSRC}/protolib/unix/Makefile.freebsd
 

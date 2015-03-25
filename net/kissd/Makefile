@@ -14,9 +14,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/kissd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^AM_CFLAGS/ s|-Werror|${PTHREAD_CFLAGS}|' \
+	@${REINPLACE_CMD} -e '/^AM_CFLAGS/ s|-Werror||' \
 		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

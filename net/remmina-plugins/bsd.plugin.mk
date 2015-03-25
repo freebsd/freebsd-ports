@@ -11,9 +11,9 @@ RUN_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 USES+=		cmake gmake pkgconfig desktop-file-utils
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include -fPIC
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Remmina-${GH_COMMIT}
 
 # disable appindicator as it is new feature of gnome 3

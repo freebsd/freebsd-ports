@@ -30,8 +30,7 @@ USE_LDCONFIG=	yes
 USES=		bison cpe gmake iconv
 CPE_VENDOR=	digium
 USE_RC_SUBR=	asterisk
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
