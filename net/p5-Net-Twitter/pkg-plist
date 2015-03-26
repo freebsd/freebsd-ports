@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Identica.pm
 %%SITE_PERL%%/Net/Twitter.pm
+%%SITE_PERL%%/Net/Twitter.pod
 %%SITE_PERL%%/Net/Twitter/API.pm
 %%SITE_PERL%%/Net/Twitter/Core.pm
 %%SITE_PERL%%/Net/Twitter/Error.pm
