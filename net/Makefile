@@ -987,6 +987,7 @@
     SUBDIR += radvd
     SUBDIR += raggle
     SUBDIR += ranch
+    SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += recvnet

@@ -1,0 +1,8 @@
+rdapper is a command-line client for the Registration Data Access
+Protocol (RDAP), as described in the RDAP RFCs (7480 - 7485).
+
+This tool will send an RDAP query to an RDAP server over HTTP or
+HTTPS, parse the JSON response, and display it in human-readable
+form.
+
+WWW: https://github.com/jodrell/rdapper
