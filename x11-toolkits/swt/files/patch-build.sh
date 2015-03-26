@@ -1,6 +1,16 @@
---- build.sh.orig	2009-06-11 16:10:54.000000000 -0500
-+++ build.sh	2009-12-01 14:42:09.000000000 -0600
-@@ -44,6 +44,9 @@
+--- build.sh.orig	2010-02-12 17:49:56 UTC
++++ build.sh
+@@ -41,9 +41,19 @@ case $OS in
+ 			MAKE_TYPE=gmake
+ 		fi
+ 		;;
++	"DragonFly")
++		SWT_OS=dragonfly
++		MAKEFILE=make_dragonfly.mak
++		if uname -p > /dev/null 2>&1; then
++			MODEL=`uname -p`
++		fi
++		;;
  	"FreeBSD")
  		SWT_OS=freebsd
  		MAKEFILE=make_freebsd.mak
@@ -10,7 +20,7 @@
  		;;
  	*)
  		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
-@@ -75,15 +78,16 @@
+@@ -75,15 +85,16 @@ case $MODEL in
  esac
  
  # For 64-bit CPUs, we have a switch
@@ -29,7 +39,7 @@
  if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
  	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
  	MAKE_GNOME=make_gnome
-@@ -91,7 +95,9 @@
+@@ -91,7 +102,9 @@ else
  	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
  	echo "    *** SWT Program support for GNOME will not be compiled."
  fi
@@ -39,7 +49,7 @@
  if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
  	echo "Cairo found, compiling SWT support for the cairo graphics library."
  	MAKE_CAIRO=make_cairo
-@@ -99,30 +105,17 @@
+@@ -99,30 +112,17 @@ else
  	echo "Cairo not found:"
  	echo "    *** Advanced graphics support using cairo will not be compiled."
  fi
