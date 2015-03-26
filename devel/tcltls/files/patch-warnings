@@ -91,9 +91,16 @@
      };
      enum protocol {
 -	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_TLS1_1, TLS_TLS1_2, TLS_NONE
-+	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_TLS1_1, TLS_TLS1_2,
++	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_TLS1_1, TLS_TLS1_2
      };
      Tcl_Obj *objPtr;
+@@ -1040,5 +1040,5 @@
+     Tcl_DString ds1;
+     int off = 0;
+-    const SSL_METHOD *method;
++    SSL_METHOD *method;
+ 
+     if (!proto) {
 @@ -1361,5 +1361,5 @@
  {
      static CONST84 char *commands [] = { "req", NULL };

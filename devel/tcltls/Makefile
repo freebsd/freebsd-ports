@@ -36,7 +36,7 @@ PORTDOCS=	*
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's,package require tls.*,load ${WRKSRC}/lib${TCLPKG}.so;\
+		's,package require tls.*,load ${WRKSRC}/libtls.so.1;\
 			source ${WRKSRC}/tls.tcl,' \
 		${WRKSRC}/tests/*.test
 	# The tests in ciphers.test are meaningless so far:
@@ -48,7 +48,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${STAGEDIR}${DOCSDIR}
 .endif
 
-regression-test:
+xregression-test test check: build
 	cd ${WRKSRC}/tests && ${SETENV} TCL_LIBRARY="${WRKSRC}" \
 		tclsh${TCL_VER} all.tcl
 
