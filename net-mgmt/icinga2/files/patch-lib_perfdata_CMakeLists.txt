@@ -1,0 +1,29 @@
+--- lib/perfdata/CMakeLists.txt.orig	2015-03-26 22:24:35.550156000 +0100
++++ lib/perfdata/CMakeLists.txt	2015-03-26 22:24:49.596242000 +0100
+@@ -41,22 +41,22 @@ set_target_properties (
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/gelf.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/gelf.conf.sample
+   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/graphite.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/graphite.conf.sample
+   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/opentsdb.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/opentsdb.conf.sample
+   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/perfdata.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/perfdata.conf.sample
+   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+ )
+ 
