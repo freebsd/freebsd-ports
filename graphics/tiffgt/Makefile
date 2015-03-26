@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	tiffgt
-PORTVERSION=	4.0.3
-PORTREVISION=	3
+DISTVERSION=	4.0.4beta
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
-DISTNAME=	tiff-${PORTVERSION}
+DISTNAME=	tiff-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Tools for working with TIFF images
@@ -18,7 +17,10 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libtiff.so:${PORTSDIR}/${PKGCATEGORY}/tiff
 
-USES=		libtool
+USES=		cpe libtool
+CPE_PRODUCT=	libtiff
+CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
+CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
 USE_XORG=	sm ice xmu xi x11
 USE_GL=		glut glu gl
 USE_LDCONFIG=	yes

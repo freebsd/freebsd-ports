@@ -30,11 +30,11 @@ lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.4
 lib/libtiff.so.5
-lib/libtiff.so.5.2.0
+lib/libtiff.so.5.2.1
 lib/libtiffxx.a
 lib/libtiffxx.so
 lib/libtiffxx.so.5
-lib/libtiffxx.so.5.2.0
+lib/libtiffxx.so.5.2.1
 libdata/pkgconfig/libtiff-4.pc
 man/man1/bmp2tiff.1.gz
 man/man1/fax2ps.1.gz
@@ -301,3 +301,5 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.0.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.1.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.2.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.3.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.4beta.html
