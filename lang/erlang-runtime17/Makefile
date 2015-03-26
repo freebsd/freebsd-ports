@@ -40,6 +40,7 @@ GS_DESC=	Enable GS application (deprecated)
 DTRACE_DESC=	Enable DTrace support
 
 OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
+OPTIONS_EXCLUDE_DragonFly=	SCTP
 
 ERL_RELEASE=	17.4
 
