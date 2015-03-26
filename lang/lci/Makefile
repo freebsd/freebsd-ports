@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	justinmeza
-GH_COMMIT=	2464d0c
 GH_TAGNAME=	v${PORTVERSION}
 
-USES=		cmake
+USES=		cmake readline
 PLIST_FILES=	bin/lci
 
 .include <bsd.port.mk>
