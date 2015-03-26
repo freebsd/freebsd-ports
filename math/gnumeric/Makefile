@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgoffice-0.10.so:${PORTSDIR}/devel/goffice010 \
 		libpsiconv.so:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+USES=		cpe desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 shebangfix tar:xz
 USE_GNOME=	intlhack libgsf pygobject3
 INSTALLS_OMF=	yes
@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	--disable-compile-warnings \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 		org.gnome.gnumeric.gschema.xml \
