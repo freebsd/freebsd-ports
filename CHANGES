@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150326:
+AUTHOR: bdrewery@FreeBSD.org
+
+  PTHREAD_CLFAGS and PTHREAD_LIBS have been removed.  Please see entry
+  20130207 for more information.
+
 20150319:
   AUTHOR: bdrewery@FreeBSD.org
 
