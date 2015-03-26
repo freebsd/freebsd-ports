@@ -26,6 +26,8 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
