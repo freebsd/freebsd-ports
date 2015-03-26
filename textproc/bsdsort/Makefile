@@ -19,6 +19,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls" \
+		NO_WERROR="defined" \
 		MK_GNU_SORT="no"
 USES=		uidfix
 
