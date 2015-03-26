@@ -79,6 +79,7 @@
     SUBDIR += colordiff
     SUBDIR += confetti
     SUBDIR += confget
+    SUBDIR += consul-template
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += cs-mythes
