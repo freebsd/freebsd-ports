@@ -13,6 +13,9 @@ COMMENT=	2d biplane dogfight game
 
 LICENSE=	GPLv2
 
+DEPRECATED=	never completed, alpha quality, dev site and repo do not resolve
+EXPIRATION_DATE=	2015-04-10
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-pre6a-src
 
 USES=		gmake
