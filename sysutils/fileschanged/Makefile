@@ -20,18 +20,18 @@ LIBS+=		-L${LOCALBASE}/lib -largp
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
 INFO=		fileschanged
-DOCS=		AUTHORS ChangeLog INSTALL NEWS README
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
+PLIST_FILES=	bin/fileschanged man/man1/fileschanged.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's| -Werror||' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for DOCFILE in ${DOCS}
+.for DOCFILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
