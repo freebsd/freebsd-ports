@@ -2,7 +2,7 @@
 
 PORTNAME=	mariadb
 PORTVERSION=	5.3.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -28,7 +28,8 @@ CONFLICTS?=	mariadb5[4-9]-server-* \
 		percona*-server-*
 
 GNU_CONFIGURE=	yes
-USES+=		libtool
+USES+=		libtool shebangfix
+SHEBANG_FILES=	scripts/*
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 USE_MYSQL=	yes
@@ -86,10 +87,6 @@ OPTIONS_DEFAULT+=	ARIADB ARCHIVE BLACKHOLE SPHINX FEDX XTRADB HANDLERSOCKET
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1000000
-BROKEN=		Does not build under FreeBSD 10
-.endif
 
 .if ${OSVERSION} > 900000 && ${PORT_OPTIONS:MSTATIC}
 BROKEN=	WITH_STATIC is not functional on 9-current
@@ -281,6 +278,60 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^\(pkginclude_HEADERS =\).*|\1|" ${WRKSRC}/cmd-line-utils/libedit/Makefile.in
 	@${REINPLACE_CMD} -e "s|^\(install-data-am:\) install-pkgincludeHEADERS|\1|g" ${WRKSRC}/extra/Makefile.in ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|^\(install-exec-am:\) install-pkglibLTLIBRARIES|\1|g" ${WRKSRC}/libmysql/Makefile.in
+	@${REINPLACE_CMD} -e "s|-fno-implicit-templates||g" ${WRKSRC}/configure
+
+post-stage:
+	# Delete files that should only be installed by client
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_convert_table_format
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_find_rows
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_fix_extensions
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_secure_installation
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_setpermission
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysql_zap
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysqlaccess
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysqld_multi
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysqldumpslow
+	@${RM} ${STAGEDIR}/${PREFIX}/bin/mysqlhotcopy
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/client_plugin.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/decimal.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/errmsg.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/keycache.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/m_ctype.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/m_string.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/ma_dyncol.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_alloc.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_attribute.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_compiler.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_config.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_dbug.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_decimal_limits.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_dir.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_getopt.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_global.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_list.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_net.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_no_pthread.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_pthread.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_sys.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_valgrind.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/my_xml.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/mysql.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/mysql_com.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/mysql_embed.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/mysql_time.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/mysql_version.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/plugin.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/plugin_auth.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/plugin_auth_common.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/service_my_snprintf.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/service_progress_report.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/service_thd_alloc.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/services.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/sql_common.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/sslopt-case.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/sslopt-longopts.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/sslopt-vars.h
+	@${RM} ${STAGEDIR}/${PREFIX}/include/mysql/typelib.h
 
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
 .endif	# .if !defined(MARIADB_SCRIPTS_SLAVE)
