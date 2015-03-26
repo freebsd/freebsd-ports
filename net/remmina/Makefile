@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net gnome
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GTK+ Remote Desktop Client
+COMMENT=	GTK+ Remote Desktop Client
 
 LICENSE=	GPLv2
 
@@ -50,9 +50,7 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MSSH}
 LIB_DEPENDS+=	libssh_threads.so:${PORTSDIR}/security/libssh
-.if ${OSVERSION} >= 800040
 LDFLAGS+=	-fstack-protector
-.endif
 .else
 CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
 .endif
