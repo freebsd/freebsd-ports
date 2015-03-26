@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsite
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/armon/statsite/archive/
 DISTNAME=	v${PORTVERSION}
