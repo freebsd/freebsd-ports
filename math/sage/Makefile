@@ -26,7 +26,9 @@ LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-BROKEN=		https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198893 but try "make -DTRYBROKEN" because it might work for you
+.if OSVERSION>=1000000 && OSVERSION<1000717
+BROKEN=		https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198893
+.endif
 
 pre-extract:
 	@${ECHO_MSG}
