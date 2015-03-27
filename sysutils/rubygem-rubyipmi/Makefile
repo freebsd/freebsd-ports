@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubyipmi
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
