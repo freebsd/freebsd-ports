@@ -3,7 +3,7 @@
 
 PORTNAME=	Plugtools
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
 		p5-Config-IniHash>=0:${PORTSDIR}/devel/p5-Config-IniHash
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/*
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
