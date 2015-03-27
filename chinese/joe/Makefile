@@ -1,7 +1,6 @@
 # Created by: Shen Chuan-Hsing <statue@mail.elife.idv.tw>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	chinese
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
@@ -13,7 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LATEST_LINK=	${PKGNAMEPREFIX}joe
 
+DEPRECATED=	The difference with editors/joe is too trivial to warrant a separate port
+EXPIRATION_DATE=2015-09-27
+
 MASTERDIR=	${.CURDIR}/../../editors/joe
-DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"
