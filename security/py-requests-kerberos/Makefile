@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Kerberos authentication handler for python-requests
 
-LISENSE=	ISCL
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>1.1.0:${PORTSDIR}/www/py-requests \
