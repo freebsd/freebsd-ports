@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL jigsaw puzzle game
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/GPL.txt
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
@@ -31,8 +34,6 @@ DESKTOP_ENTRIES="Jigzo" \
 		false
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|int_p_NULL|NULL|g" \
