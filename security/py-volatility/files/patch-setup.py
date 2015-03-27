@@ -1,6 +1,6 @@
---- setup.py.orig	2014-08-03 18:09:32 +0000
+--- setup.py.orig	2014-08-03 18:09:32 UTC
 +++ setup.py
-@@ -44,7 +44,10 @@
+@@ -44,7 +44,10 @@ def find_files(topdirs, py = False):
      ret = []
      for topdir in topdirs:
          for r, _ds, fs in os.walk(topdir):
