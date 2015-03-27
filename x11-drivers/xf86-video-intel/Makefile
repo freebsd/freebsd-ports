@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-intel
 PORTVERSION=	2.21.15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -32,5 +32,15 @@ CONFIGURE_ENV+=	xorg_cv_cc_flag__Wno_maybe_uninitialized=no
 CONFIGURE_ARGS+=	--enable-sna
 CONFIGURE_ARGS+=	--disable-glamor
 INSTALL_TARGET=	install-strip
+
+.include <bsd.port.options.mk>
+
+.if (${OSVERSION} >= 903000 && ${OSVERSION} < 1000000)
+RUN_DEPENDS+=	drm-kmod>=9:${PORTSDIR}/x11-drivers/drm-kmod
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"i915kms"|"i915kms_port"|g' \
+		${WRKSRC}/src/intel_device.c
+.endif
 
 .include <bsd.port.mk>
