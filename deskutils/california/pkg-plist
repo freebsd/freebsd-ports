@@ -40,6 +40,7 @@ share/help/ca/california/index.page
 share/help/ca/california/legal.xml
 share/help/ca/california/media/california-screenshot.png
 share/help/ca/california/media/x-office-calendar.png
+share/locale/bs/LC_MESSAGES/california.mo
 share/locale/ca/LC_MESSAGES/california.mo
 share/locale/cs/LC_MESSAGES/california.mo
 share/locale/de/LC_MESSAGES/california.mo
@@ -61,3 +62,4 @@ share/locale/sr@latin/LC_MESSAGES/california.mo
 share/locale/sv/LC_MESSAGES/california.mo
 share/locale/tr/LC_MESSAGES/california.mo
 share/locale/uk/LC_MESSAGES/california.mo
+share/locale/zh_TW/LC_MESSAGES/california.mo

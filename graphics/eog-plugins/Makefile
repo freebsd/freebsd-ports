@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/eog-plugins/Makefile 20061 2014-11-10 21:57:05Z gusi $
 
 PORTNAME=	eog-plugins
-PORTVERSION=	3.14.1
-PORTREVISION=	1
+PORTVERSION=	3.14.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

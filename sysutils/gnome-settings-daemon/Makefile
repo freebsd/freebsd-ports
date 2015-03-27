@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/sysutils/gnome-settings-daemon/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

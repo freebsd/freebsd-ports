@@ -53,6 +53,7 @@ share/locale/as/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/bg/LC_MESSAGES/eog-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/eog-plugins.mo
+share/locale/bs/LC_MESSAGES/eog-plugins.mo
 share/locale/ca/LC_MESSAGES/eog-plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/eog-plugins.mo
 share/locale/cs/LC_MESSAGES/eog-plugins.mo
@@ -94,6 +95,7 @@ share/locale/sr@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo
 share/locale/ta/LC_MESSAGES/eog-plugins.mo
 share/locale/te/LC_MESSAGES/eog-plugins.mo
+share/locale/tr/LC_MESSAGES/eog-plugins.mo
 share/locale/uk/LC_MESSAGES/eog-plugins.mo
 share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
