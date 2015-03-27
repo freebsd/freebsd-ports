@@ -5,13 +5,19 @@ PORTNAME=	freevrrpd
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://opensource.kewego.com/freevrrpd/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
 
-MAINTAINER=	spe@phear.org
-COMMENT=	VRRP RFC2338 Compliant implementation under FreeBSD
+MAINTAINER=	gnn@freebsd.org
+COMMENT=	RFC 2338 compliant VRRP implementation
 
-MAKE_ENV=	PTHREAD_LIBS="-lpthread"
+LICENSE=	BSD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gvnn3
+GH_PROJECT=	FreeVRRPd
+DISTVERSIONPREFIX=	v
+
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${STAGEDIR}${PREFIX}/sbin
