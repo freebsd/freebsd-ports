@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/libsigc++20/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ USES=		gmake libtool pathfix perl5 tar:xz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
+PLIST_SUB=	API_VERSION="2.0"
 
 OPTIONS_DEFINE=	DOCS
 
