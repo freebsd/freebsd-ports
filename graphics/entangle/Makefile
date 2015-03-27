@@ -3,6 +3,7 @@
 
 PORTNAME=	entangle
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
 		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
 		libraw_r.so:${PORTSDIR}/graphics/libraw \
 		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS:Nitstool*}
 
 USES=		gettext-tools gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
