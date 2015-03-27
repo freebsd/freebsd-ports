@@ -19,7 +19,10 @@ NO_PACKAGE=	yes
 
 SNAPDATE=	20140626144503
 
-USES=			tar:xz iconv perl5 pathfix libtool python:2,build
+USES=			cpe tar:xz iconv perl5 pathfix libtool python:2,build
+CPE_PRODUCT=	apr-util
+CPE_VENDOR=	apache
+CPE_VERSION=	${PORTVERSION:S|.${SNAPDATE}||}
 USE_AUTOTOOLS=		automake:env autoconf:env libtoolize:env
 USE_PERL5=		build
 USE_LDCONFIG=		yes
