@@ -34,6 +34,7 @@ NLS_CONFIGURE_ENABLE=	nls
 THUNAR_USE=	xfce=thunar
 THUNAR_CONFIGURE_ENABLE=	thunarx
 THUNAR_CONFIGURE_WITH=	file-manager-fallback=Thunar
+THUNAR_USE_OFF=	xfce=libexo
 THUNAR_DESC=	Thunar file manager support
 OPTIONS_SUB=	yes
 
