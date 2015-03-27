@@ -18,7 +18,6 @@ share/java/zi/Africa/Tunis
 share/java/zi/Africa/Windhoek
 share/java/zi/America/Adak
 share/java/zi/America/Anchorage
-share/java/zi/America/Antigua
 share/java/zi/America/Araguaina
 share/java/zi/America/Argentina/Buenos_Aires
 share/java/zi/America/Argentina/Catamarca
@@ -48,7 +47,6 @@ share/java/zi/America/Campo_Grande
 share/java/zi/America/Cancun
 share/java/zi/America/Caracas
 share/java/zi/America/Cayenne
-share/java/zi/America/Cayman
 share/java/zi/America/Chicago
 share/java/zi/America/Chihuahua
 share/java/zi/America/Costa_Rica
@@ -362,7 +360,6 @@ share/java/zi/Pacific/Kosrae
 share/java/zi/Pacific/Kwajalein
 share/java/zi/Pacific/Majuro
 share/java/zi/Pacific/Marquesas
-share/java/zi/Pacific/Midway
 share/java/zi/Pacific/Nauru
 share/java/zi/Pacific/Niue
 share/java/zi/Pacific/Norfolk
@@ -373,7 +370,6 @@ share/java/zi/Pacific/Pitcairn
 share/java/zi/Pacific/Pohnpei
 share/java/zi/Pacific/Port_Moresby
 share/java/zi/Pacific/Rarotonga
-share/java/zi/Pacific/Saipan
 share/java/zi/Pacific/Tahiti
 share/java/zi/Pacific/Tarawa
 share/java/zi/Pacific/Tongatapu
