@@ -16,6 +16,10 @@ COMMENT=	The "meta-port" for The Gimp
 
 RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
 
+USES+=	cpe
+CPE_PRODUCT=	gimp
+CPE_VENDOR=	gnu
+
 OPTIONS_DEFINE=	PYTHON PRINT HELP
 OPTIONS_DEFAULT=PYTHON PRINT HELP
 PYTHON_DESC=	Python-fu support
