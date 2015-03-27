@@ -1,6 +1,14 @@
---- src/main.cxx.orig	2013-09-14 02:26:08.857226185 +0400
-+++ src/main.cxx	2013-09-14 02:28:44.311226803 +0400
-@@ -56,6 +56,7 @@
+--- src/main.cxx.orig	2008-05-09 02:39:02.000000000 +0400
++++ src/main.cxx	2015-03-27 17:21:48.934373000 +0300
+@@ -47,6 +47,7 @@
+ #include <fstream>
+ #include <string>
+ #include <sstream>
++#include <algorithm>
+ 
+ #ifdef WIN32
+ #include <io.h>
+@@ -56,6 +57,7 @@
  #include <sys/types.h>
  #endif
  #include <dirent.h>
@@ -8,7 +16,7 @@
  
  #include "Screen.hxx"
  #include "Sprite.hxx"
-@@ -1540,7 +1541,7 @@
+@@ -1540,7 +1542,7 @@
  		int i;
  		Uint8 *keys = SDL_GetKeyState(&i);
  		SDL_Event event;
@@ -17,7 +25,7 @@
  			//static Uint32 mark = 0;
  			SDL_Delay(10);
  			while (SDL_PollEvent(&event)) {
-@@ -1579,7 +1580,7 @@
+@@ -1579,7 +1581,7 @@
  				if (clickLeave)
  				{
  					if (mode == intro)
@@ -26,7 +34,7 @@
  					else if (mode == browse) {
  						FadeOutTo(end_browse,start_intro);
  					} else {
-@@ -1587,7 +1588,7 @@
+@@ -1587,7 +1589,7 @@
  					}
  				}
  				if (event.type == SDL_QUIT) {
