@@ -4058,6 +4058,7 @@
     SUBDIR += py-smmap
     SUBDIR += py-snack
     SUBDIR += py-snackwich
+    SUBDIR += py-sortedcontainers
     SUBDIR += py-spark
     SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
