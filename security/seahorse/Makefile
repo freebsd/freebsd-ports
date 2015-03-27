@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/security/seahorse/Makefile 19992 2014-10-18 19:48:08Z gusi $
 
 PORTNAME=	seahorse
-PORTVERSION=	3.14.0
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

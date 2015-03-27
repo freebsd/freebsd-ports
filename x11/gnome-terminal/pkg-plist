@@ -454,3 +454,13 @@ share/locale/xh/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
+@dir share/help/cs/gnome-terminal/figures
+@dir share/help/de/gnome-terminal/figures
+@dir share/help/el/gnome-terminal/figures
+@dir share/help/es/gnome-terminal/figures
+@dir share/help/fi/gnome-terminal/figures
+@dir share/help/fr/gnome-terminal/figures
+@dir share/help/gl/gnome-terminal/figures
+@dir share/help/hu/gnome-terminal/figures
+@dir share/help/pt_BR/gnome-terminal/figures
+@dir share/help/ru/gnome-terminal/figures

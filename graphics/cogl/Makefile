@@ -3,8 +3,7 @@
 #  $MCom: ports/trunk/graphics/cogl/Makefile 20024 2014-10-27 12:59:06Z gusi $
 
 PORTNAME=	cogl
-PORTVERSION=	1.18.2
-PORTREVISION=	1
+PORTVERSION=	1.20.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -28,6 +27,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	LIBVER=20 LIBVERSION=20.2.0
+PLIST_SUB=	LIBVER=20 LIBVERSION=20.3.0
 
 .include <bsd.port.mk>

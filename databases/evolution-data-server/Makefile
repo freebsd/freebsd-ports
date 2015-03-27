@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/databases/evolution-data-server/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.12.10
+PORTVERSION=	3.12.11
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
