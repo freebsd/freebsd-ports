@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-TransactionalMethods
-PORTVERSION=	0.008
-PORTREVISION=	1
+PORTVERSION=	0.009
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Moose>=1.21:${PORTSDIR}/devel/p5-Moose \
+		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
