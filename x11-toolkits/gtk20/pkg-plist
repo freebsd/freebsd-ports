@@ -570,15 +570,9 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
 @unexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
 @exec %D/bin/gtk-query-immodules-2.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
-@exec /bin/mkdir -p %D/lib/gtk-2.0/modules
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/modules
 @dir lib/gtk-2.0/modules
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/modules
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/loaders
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/immodules
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dir lib/gtk-2.0/%%GTK2_VERSION%%
-@dir lib/gtk-2.0
