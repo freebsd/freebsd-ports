@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/devel/json-glib/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	json-glib
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
