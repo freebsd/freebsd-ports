@@ -28,7 +28,8 @@ GROUPS=		couchdb
 USE_RC_SUBR=	couchdb
 SUB_FILES=	pkg-message
 PLIST_SUB=	VERSION=${PORTVERSION}
-USES=		gmake libtool
+USES=		cpe gmake libtool
+CPE_VENDOR=	apache
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
