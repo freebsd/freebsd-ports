@@ -524,7 +524,7 @@ gecko-post-patch:
 			${WRKSRC}/configure; do \
 		if [ -f $$f ] ; then \
 			${REINPLACE_CMD} -Ee 's|-lc_r|-pthread|g ; \
-				s|-l?pthread|-pthread}|g ; \
+				s|-l?pthread|-pthread|g ; \
 				s|echo aout|echo elf|g ; \
 				s|/usr/X11R6|${LOCALBASE}|g' \
 				$$f; \
