@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -32,7 +33,7 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations \
 		cinnamon-screensaver:${PORTSDIR}/x11/cinnamon-screensaver \
 		nemo:${PORTSDIR}/x11-fm/nemo \
-		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		py*-pillow>=0:${PORTSDIR}/graphics/py-pillow \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
