@@ -57,6 +57,74 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="62287f51-d43d-11e4-879c-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/mar/18/security-releases/">
+	  <p>In accordance with our security release policy, the Django team
+	    is issuing multiple releases -- Django 1.4.20, 1.6.11, 1.7.7 and
+	    1.8c1. These releases are now available on PyPI and our download
+	    page. These releases address several security issues detailed
+	    below. We encourage all users of Django to upgrade as soon as
+	    possible. The Django master branch has also been updated.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/mar/18/security-releases/</url>
+      <cvename>CVE-2015-2316</cvename>
+      <cvename>CVE-2015-2317</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6a014cd-d268-11e4-8339-001e679db764">
     <topic>GNU binutils -- multiple vulnerabilities</topic>
     <affects>
