@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.30
-PORTREVISION=	1
+PORTVERSION=	1.14.32
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,8 +18,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgsf-1.so.114.0.30
 
 .include <bsd.port.mk>
