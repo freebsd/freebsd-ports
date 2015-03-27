@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	gnn@freebsd.org
+MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	RFC 2338 compliant VRRP implementation
 
 LICENSE=	BSD
