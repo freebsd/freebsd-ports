@@ -999,6 +999,7 @@
     SUBDIR += p5-XML-Parsepp
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
+    SUBDIR += p5-XML-Parser-Lite
     SUBDIR += p5-XML-Parser-Lite-Tree
     SUBDIR += p5-XML-Parser-Style-EasyTree
     SUBDIR += p5-XML-Parser-Style-Elemental
