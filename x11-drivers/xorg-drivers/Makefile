@@ -4,9 +4,6 @@ PORTNAME=	xorg-drivers
 PORTVERSION=	7.7
 PORTREVISION=	3
 CATEGORIES=	x11-drivers
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
@@ -14,9 +11,7 @@ COMMENT=	X.org drivers meta-port
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 INPUT_DRIVERS=		mouse \
 			keyboard \
