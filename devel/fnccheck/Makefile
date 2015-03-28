@@ -15,9 +15,8 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libbfd.so:${PORTSDIR}/devel/libbfd
 
-USES=		libtool
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-AUTOMAKE_ARGS=	--force-missing --add-missing --foreign
+USES=		autoreconf libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
