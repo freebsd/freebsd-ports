@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for interacting with the Bugzilla bug tracking system
 
-USES=		python
+LICENSE=	GPL3
+
+USES=		python:2
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
