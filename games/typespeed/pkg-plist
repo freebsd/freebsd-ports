@@ -1,17 +1,14 @@
-@group games
-@mode 2555
-bin/typespeed
-@mode
-@group
+@(,games,2555) bin/typespeed
 bin/typespeed-hs-conv
-@unexec if cmp -s %D/etc/typespeedrc %D/etc/typespeedrc.dist; then rm -f %D/etc/typespeedrc; fi
-etc/typespeedrc.dist
-@exec [ -f %B/typespeedrc ] || cp %B/%f %B/typespeedrc
+@sample etc/typespeedrc.sample
 man/man6/typespeed.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/de_DE/LC_MESSAGES/typespeed.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/typespeed.mo
 %%NLS%%share/locale/it/LC_MESSAGES/typespeed.mo
-%%DATADIR%%/typespeed.score.default
+%%DATADIR%%/rules/rule.classic
+%%DATADIR%%/rules/rule.training
+%%DATADIR%%/rules/template
 %%DATADIR%%/words/words.csharp
 %%DATADIR%%/words/words.csharp_with_operators
 %%DATADIR%%/words/words.dos
@@ -26,7 +23,5 @@ man/man6/typespeed.6.gz
 %%DATADIR%%/words/words.prog
 %%DATADIR%%/words/words.tha
 %%DATADIR%%/words/words.unix
-@dirrm  %%DATADIR%%/words
-@dirrm  %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
+@sample(,games,664) /var/games/typespeed/typespeed.score.sample
+@dir(,games,775) /var/games/typespeed
