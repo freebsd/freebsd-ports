@@ -2,7 +2,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,6 +15,8 @@ VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 INPUT_DRIVERS=		mouse \
 			keyboard \
@@ -113,9 +115,5 @@ RUN_DEPENDS+=	${${type:tu}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-
 .  endif
 . endfor
 .endfor
-
-do-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/libdata/xorg
-		${TOUCH} ${STAGEDIR}${PREFIX}/libdata/xorg/drivers
 
 .include <bsd.port.mk>
