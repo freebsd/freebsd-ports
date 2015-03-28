@@ -158,6 +158,15 @@ IGNORE=		only supports LDAPS with SSL
 IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
+.if ${PORT_OPTIONS:MOPENSSL} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
+.if ${PORT_OPTIONS:MGSSAPI_BASE}
+IGNORE=		with GSSAPI_BASE, configure failed to detect OpenSSL/LibreSSL from ports and link against base OpenSSL
+.endif
+.if ${PORT_OPTIONS:MTLS_SRP}
+IGNORE=		unsupported TLS-SRP in LibreSSL
+.endif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
