@@ -14,6 +14,9 @@ COMMENT=	Cross-platform lobby client for the Spring RTS project
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring games/spring
+EXPIRATION_DATE=	2015-04-30
+
 RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
