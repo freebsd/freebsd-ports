@@ -7446,3 +7446,4 @@ audio/raproxy||2015-03-28|Has expired: Broken for more than 6 months
 converters/ruby-iconv||2015-03-28|Has expired: Not needed with Ruby 2.x
 databases/pydbdesigner||2015-03-28|Has expired: Broken for more than 6 months
 security/cyassl|security/wolfssl|2015-03-28|Renamed upstream
+devel/rubygem-rcov||2015-03-28|Has expired: Does not work with Ruby 2.x
