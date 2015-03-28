@@ -3,7 +3,7 @@
 
 PORTNAME=	fam
 PORTVERSION=	2.6.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DIST_SUBDIR=	${PORTNAME}
@@ -13,11 +13,10 @@ COMMENT=	File alteration monitor
 
 CFLAGS+=	-Wno-deprecated
 
-USES=		gmake libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 #CONFLICTS_INSTALL=	gamin-[0-9]*
