@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Regexp/Lexer.pm
+%%SITE_PERL%%/Regexp/Lexer/TokenType.pm
+%%PERL5_MAN3%%/Regexp::Lexer.3.gz
+%%PERL5_MAN3%%/Regexp::Lexer::TokenType.3.gz
