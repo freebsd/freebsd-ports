@@ -14,7 +14,9 @@ XORG_CAT=	app
 USE_XORG=	xmu x11 xau xinerama xpm xdmcp xt xext xaw
 CONFIGURE_ARGS+=	--with-xdmconfigdir=${PREFIX}/lib/X11/xdm \
 			--with-xdmscriptdir=${PREFIX}/lib/X11/xdm
-USES=		libtool
+USES=		cpe libtool
+CPE_PRODUCT=	x_display_manager
+CPE_VENDOR=	x
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
