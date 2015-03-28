@@ -205,7 +205,6 @@ quake4-linux-*		games/linux-quake4-demo	Redistribution is limited; see the licen
 Radiator/*		net/radiator		Commercial software
 RakNet-*		devel/raknet		Special authorization granted to distribute version 3.x under GPLv3
 rapid-*			math/rapid		For any commercial purpose, you must request a license from http://www.cs.unc.edu/~geom/OBB/OBBT.html
-raproxy*.tar.gz		audio/raproxy		License allows only use in a firewall, or with RA products
 rarbsd-*		archivers/rar		only unmodified original package can be distributed
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 ricty-*			japanese/font-ricty	Redistribution not allowed
