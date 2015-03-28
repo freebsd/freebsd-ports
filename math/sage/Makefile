@@ -97,6 +97,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 701106
+BROKEN=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
+.endif
+
 MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
 
 .ifdef MAINTAINER_MODE
