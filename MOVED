@@ -7445,3 +7445,4 @@ x11-fonts/ttmkfdir|x11-fonts/mkfontdir|2015-03-22|Has been replaced by mkfontdir
 audio/raproxy||2015-03-28|Has expired: Broken for more than 6 months
 converters/ruby-iconv||2015-03-28|Has expired: Not needed with Ruby 2.x
 databases/pydbdesigner||2015-03-28|Has expired: Broken for more than 6 months
+security/cyassl|security/wolfssl|2015-03-28|Renamed upstream

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	cyassl
-PORTVERSION=	3.3.0
+PORTNAME=	wolfssl
+PORTVERSION=	3.4.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -28,11 +28,8 @@ post-configure:
 		-e 's|$${prefix}/cyassl/lib|$${prefix}/lib/cyassl|' \
 		-e '/^pkgconfigdir/s|(libdir)|&data|' \
 		${WRKSRC}/Makefile
-	# i386 assembly is broken: do not use
-	@${REINPLACE_CMD} -e 's/(TFM_X86)/(TFM_X86_BROKEN)/' \
-		${WRKSRC}/ctaocrypt/src/asm.c
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcyassl.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwolfssl.so
 
 .include <bsd.port.mk>
