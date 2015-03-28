@@ -3830,6 +3830,7 @@
     SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-game
+    SUBDIR += py-game_sdl2
     SUBDIR += py-gamin
     SUBDIR += py-gdata
     SUBDIR += py-gearman
