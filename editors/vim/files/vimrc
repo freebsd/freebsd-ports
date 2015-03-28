@@ -2,6 +2,7 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
 	set fileencodings=ucs-bom,utf-8,latin1
 endif
 
+let g:is_posix = 1
 set nocompatible
 set bs=indent,eol,start
 set history=50
