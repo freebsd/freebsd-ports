@@ -16,7 +16,7 @@ CONFLICTS=	fvwm-1.* fvwm-2.*
 
 LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
 		libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	xorg-fonts:${PORTSDIR}/x11-fonts/xorg-fonts
+RUN_DEPENDS=	xorg-fonts>0:${PORTSDIR}/x11-fonts/xorg-fonts
 
 USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
