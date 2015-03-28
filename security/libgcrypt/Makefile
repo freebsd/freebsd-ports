@@ -15,7 +15,8 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
-USES=		libtool makeinfo tar:bzip2
+USES=		cpe libtool makeinfo tar:bzip2
+CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-drng-support
