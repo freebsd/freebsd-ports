@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 PKGNAMESUFFIX=	5
@@ -25,7 +26,8 @@ OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
 OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MONGODB MYSQL \
 			NUTUPS PERL PGSQL PING PYTHON RABBITMQ REDIS \
-			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT XML XMMS
+			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT VARNISH \
+			XML XMMS
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
 CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
@@ -53,6 +55,7 @@ SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
 STATGRAB_DESC=		Enable statgrab-based plugins (disk, interface, etc)
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
+VARNISH_DESC=		Enable varnish 3.x cache statistics
 VIRT_DESC=		Enable libvirt plugin (requires XML)
 XML_DESC=		Enable XML plugins
 XMMS_DESC=		Enable xmms plugin
@@ -86,7 +89,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libowcapi \
 		--without-libperfstat \
 		--without-libsensors \
-		--without-libvarnish \
 		--without-lvm \
 		--without-mic \
 		--without-oracle
@@ -428,6 +430,15 @@ PLIST_SUB+=	TOKYOTYRANT=""
 .else
 CONFIGURE_ARGS+=--without-libtokyotyrant --disable-tokyotyrant
 PLIST_SUB+=	TOKYOTYRANT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVARNISH}
+LIB_DEPENDS+=	libvarnishapi.so:${PORTSDIR}/www/varnish
+CONFIGURE_ARGS+=--with-libvarnish=${LOCALBASE} --enable-varnish
+PLIST_SUB+=	VARNISH=""
+.else
+CONFIGURE_ARGS+=--without-libvarnish
+PLIST_SUB+=	VARNISH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVIRT}
