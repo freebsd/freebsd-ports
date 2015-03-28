@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-binary-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
+USES=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
