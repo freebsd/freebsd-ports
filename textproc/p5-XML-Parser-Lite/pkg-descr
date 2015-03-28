@@ -1,0 +1,10 @@
+This Perl module implements an XML parser with a interface similar to
+XML::Parser. Though not all callbacks are supported, you should be able
+to use it in the same way you use XML::Parser. Due to using experimental
+regexp features it'll work only on Perl 5.6 and above and may behave
+differently on different platforms.
+Note that you cannot use regular expressions or split in callbacks. This
+is due to a limitation of perl's regular expression implementation
+(which is not re-entrant).
+
+WWW: http://search.cpan.org/dist/XML-Parser-Lite/
