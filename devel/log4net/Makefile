@@ -13,7 +13,8 @@ COMMENT=	Port for .NET of the Apache Logging Services project
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		mono zip
+USES=		cpe mono zip
+CPE_VENDOR=	apache
 NO_BUILD=	yes
 SUB_FILES=	log4net.pc
 SUB_LIST+=	PORTVERSION=${PORTVERSION}
