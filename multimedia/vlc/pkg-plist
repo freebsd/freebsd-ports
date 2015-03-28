@@ -1,6 +1,7 @@
 bin/cvlc
 %%NCURSES%%bin/nvlc
 %%QT5%%bin/qvlc
+%%QT4%%bin/qvlc
 bin/rvlc
 %%SKINS%%bin/svlc
 bin/vlc
