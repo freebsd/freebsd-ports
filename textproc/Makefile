@@ -696,6 +696,7 @@
     SUBDIR += p5-Regexp-Common-net-CIDR
     SUBDIR += p5-Regexp-Common-profanity_us
     SUBDIR += p5-Regexp-Copy
+    SUBDIR += p5-Regexp-Debugger
     SUBDIR += p5-Regexp-DefaultFlags
     SUBDIR += p5-Regexp-IPv6
     SUBDIR += p5-Regexp-Log
