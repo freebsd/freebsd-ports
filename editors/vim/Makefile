@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -149,7 +149,7 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 post-patch:
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g' ${WRKSRC}/src/auto/configure
-	@${FIND} ${WRKSRC}/runtime/ -name menu\*.vim -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's,ctags -R \\.,${CTAGS_CMD},g'
+	@${FIND} ${WRKSRC}/runtime/ -name menu\*.vim -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g'
 .for p in ${POSTPONED_PATCHES}
 	@${ECHO_MSG} "===>   Applying distribution patch ${p}"
 	@${PATCH} ${PATCH_DIST_ARGS} -i ${_DISTDIR}/${PORTVERSION:R}.${p}
