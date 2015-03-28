@@ -17,10 +17,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
-
-USES=		iconv gettext libtool pkgconfig
+USES=		autoreconf iconv gettext libtool pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
