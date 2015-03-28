@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="264749ae-d565-11e4-b545-00269ee29e57">
+    <topic>libzip -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>libzip</name>
+	<range><lt>0.11.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libzip developers report:</p>
+	<blockquote cite="http://hg.nih.at/libzip/rev/9f11d54f692e">
+	  <p>Avoid integer overflow. Fixed similarly to patch used in PHP copy of libzip.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69253</url>
+      <url>https://github.com/php/php-src/commit/ef8fc4b53d92fbfcd8ef1abbd6f2f5fe2c4a11e5</url>
+      <url>http://hg.nih.at/libzip/rev/9f11d54f692e</url>
+      <cvename>CVE-2015-2331</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62287f51-d43d-11e4-879c-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
