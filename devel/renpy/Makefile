@@ -3,7 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.18.3
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
@@ -38,6 +38,7 @@ python_CMD=	${PYTHON_CMD}
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}"
+PYDISTUTILS_BUILDPATH=${BUILD_WRKSRC}/build/lib.${OPSYS:tl}-${UNAMER}-${ARCH}-${PYTHON_VER}
 PORTDATA=	launcher renpy renpy.py templates
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
@@ -70,6 +71,12 @@ post-patch:
 post-build:
 	@${PYTHON_CMD} -m compileall -d ${DATADIR} ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall -d ${DATADIR} ${WRKSRC}
+# XXX Replace WRKSRC with DATADIR in bytecode
+	@(cd ${WRKSRC} && for d in */game templates/*; do \
+		${SETENV} HOME=${WRKDIR} \
+		PYTHONPATH="${PYTHONPATH}:${PYDISTUTILS_BUILDPATH}" \
+		${PYTHON_CMD} ${WRKSRC}/renpy.py $$d compile; \
+	done)
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \
@@ -78,7 +85,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR} \
-		"! -name *.orig ! -name *.bak")
+		"! -name *.orig ! -name *.bak ! -name saves")
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/renpy.py
 	${CHMOD} -R u+w ${STAGEDIR}${DATADIR}/templates
 .if ${PORT_OPTIONS:MDOCS}
