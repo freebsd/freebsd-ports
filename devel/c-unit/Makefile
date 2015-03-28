@@ -3,7 +3,7 @@
 
 PORTNAME=	c-unit
 DISTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -15,14 +15,13 @@ LICENSE=	LGPL20
 CONFLICTS=	cunit-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
+USES=		autoreconf gmake libtool pathfix
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 DATADIR=	${PREFIX}/share/CUnit
 EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
-AUTOMAKE_ARGS=	--add-missing
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=		AUT BAS CON CUR DEB EXA ITE MEM
