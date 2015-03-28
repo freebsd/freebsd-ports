@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Scope-Upper
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VPIT
@@ -18,6 +18,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scope/Upper/Upper.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scope/Upper/Upper.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scope/Upper/Upper.so
 
 .include <bsd.port.mk>
