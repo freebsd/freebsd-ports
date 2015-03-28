@@ -26,5 +26,8 @@ pre-configure:
 .if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
 .endif
+# Remove BOM
+	${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
+		 ${WRKSRC}/src/aggregatevideosource.cpp
 
 .include <bsd.port.mk>
