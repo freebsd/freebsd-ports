@@ -1,0 +1,7 @@
+Pygame_sdl2 is a reimplementation of the Pygame API using SDL2 and
+related libraries. The initial goal of this project are to allow games
+written using the pygame API to run on SDL2 on desktop and mobile
+platforms. We will then evolve the API to expose SDL2-provided
+functionality in a pythonic manner.
+
+WWW: https://github.com/renpy/pygame_sdl2
