@@ -88,7 +88,6 @@
     SUBDIR += cryptopp
     SUBDIR += cryptstring
     SUBDIR += cvm
-    SUBDIR += cyassl
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
@@ -1049,6 +1048,7 @@
     SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += wpa_supplicant
+    SUBDIR += wolfssl
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xml-security
