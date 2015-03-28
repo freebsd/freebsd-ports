@@ -11,6 +11,8 @@ COMMENT=	Companion to Applied Regression for R
 
 LICENSE=	GPLv2
 
+BROKEN=		Missing dependency
+
 USES=	cran:auto-plist
 
 .include <bsd.port.mk>
