@@ -1,5 +1,5 @@
---- src/camera/CameraTable.vala.orig	2014-09-28 18:49:39.000000000 +0200
-+++ src/camera/CameraTable.vala	2014-09-28 19:10:01.000000000 +0200
+--- src/camera/CameraTable.vala.orig	2015-03-28 15:15:28.000000000 +0100
++++ src/camera/CameraTable.vala	2015-03-28 15:20:51.000000000 +0100
 @@ -26,7 +26,6 @@
      
      private static CameraTable instance = null;
@@ -16,10 +16,16 @@
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -111,31 +109,7 @@
+@@ -107,36 +105,10 @@
+         do_op(GPhoto.CameraAbilitiesList.create(out abilities_list), "create camera abilities list");
+         do_op(abilities_list.load(null_context), "load camera abilities list");
+     }
+-    
++
++    // dummy stub - the original requires udev
      private string[] get_all_usb_cameras() {
-         string[] cameras = new string[0];
-         
+-        string[] cameras = new string[0];
+-        
 -        GLib.List<GUdev.Device> device_list = client.query_by_subsystem(null);
 -        foreach (GUdev.Device device in device_list) {
 -            string device_file = device.get_device_file();
@@ -45,14 +51,16 @@
 -            }
 -        }
 -        
-+        // this would require udev, so we'll just return an empty array
-         return cameras;
+-        return cameras;
++        return new string[0];
      }
      
-@@ -212,23 +186,7 @@
+     // USB (or libusb) is a funny beast; if only one USB device is present (i.e. the camera),
+@@ -211,24 +183,8 @@
+         return port.has_prefix("usb:") ? 
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
-     
+-    
 -    private string? get_name_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
 -            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
@@ -62,19 +70,20 @@
 -        return null;
 -    }
 -    
--    private GLib.Icon? get_icon_for_uuid(string uuid) {
+-    private string? get_icon_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
 -            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
--                return volume.get_icon();
+-                return volume.get_icon().to_string();
 -            }
 -        }
 -        return null;
 -    }
++ 
 +    // get_name_for_uuid() and get_icon_for_uuid() are not used (udev removal)
  
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
-@@ -334,22 +292,7 @@
+@@ -334,22 +290,7 @@
              }
              
              // Get display name for camera.
@@ -94,14 +103,15 @@
 -                    display_name = device.get_property("ID_MODEL");
 -                }
 -            }
-+            // we use a default name, as everything else requires udev
++            // in absence of udev, we fall back to the GPhoto name
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -394,13 +337,7 @@
+@@ -393,14 +334,8 @@
+             camera_added(camera);
          }
      }
-     
+-    
 -    private void on_udev_event(string action, GUdev.Device device) {
 -        debug("udev event: %s on %s", action, device.get_name());
 -        
@@ -109,7 +119,8 @@
 -        // update to occur when they come in all at once
 -        camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);
 -    }
-+    // on_udev_event() removed as "udev related"
++
++    // on_udev_event() removed - we do not have udev
      
      public void on_volume_changed(Volume volume) {
          camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);

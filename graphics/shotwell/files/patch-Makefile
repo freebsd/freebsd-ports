@@ -1,6 +1,15 @@
---- Makefile.orig	2014-09-28 18:41:10.000000000 +0200
-+++ Makefile	2014-09-28 18:43:30.000000000 +0200
-@@ -261,7 +261,6 @@
+--- Makefile.orig	2015-03-28 15:11:25.000000000 +0100
++++ Makefile	2015-03-28 15:14:57.000000000 +0100
+@@ -13,7 +13,7 @@
+ VALAC := $(shell which $(VALAC))
+ endif
+ 
+-VALAC_VERSION := `$(VALAC) --version | awk '{print $$2}'`
++VALAC_VERSION := `$(VALAC) --version | cut -d' ' -f2`
+ MIN_VALAC_VERSION := 0.20.1
+ INSTALL_PROGRAM := install
+ INSTALL_DATA := install -m 644
+@@ -263,7 +263,6 @@
  	gstreamer-base-1.0 \
  	gstreamer-pbutils-1.0 \
  	gtk+-3.0 \
@@ -8,15 +17,15 @@
  	libexif \
  	libgphoto2 \
  	json-glib-1.0 \
-@@ -293,7 +292,6 @@
+@@ -295,7 +294,6 @@
  	gstreamer-plugins-base-1.0 >= 1.0.0 \
  	gstreamer-pbutils-1.0 >= 1.0.0 \
- 	gtk+-3.0 >= 3.6.0 \
+ 	gtk+-3.0 >= 3.12.2 \
 -	gudev-1.0 >= 145 \
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libraw >= 0.13.2 \
-@@ -543,8 +541,8 @@
+@@ -544,8 +542,8 @@
  	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
