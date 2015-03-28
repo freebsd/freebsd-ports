@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee6-${DISTVERSION}-bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
 
+USES=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
