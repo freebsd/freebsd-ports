@@ -15,10 +15,11 @@ RUN_DEPENDS=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 
 BUILD_VERSION=	1.15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USES=		makeinfo perl5 tar:xz
+USES=		cpe makeinfo perl5 tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
 MAKE_ENV+=	MAKEINFOFLAGS=--no-split
 INFO=		automake
+CPE_VENDOR=	gnu
 
 .include <bsd.port.mk>
