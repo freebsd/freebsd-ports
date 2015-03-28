@@ -15,10 +15,8 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		autoreconf libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
-AUTOMAKE_ARGS=	-a -c -f
 
 OPTIONS_DEFINE=	EXAMPLES DOCS
 
