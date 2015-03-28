@@ -1,0 +1,5 @@
+Reply is a lightweight, extensible REPL for Perl. It is plugin-based (see
+Reply::Plugin), and through plugins supports many advanced features such as
+coloring and pretty printing, readline support, and pluggable commands.
+
+WWW: https://metacpan.org/pod/Reply
