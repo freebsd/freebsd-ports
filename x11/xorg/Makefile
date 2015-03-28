@@ -5,16 +5,11 @@ PORTNAME=	xorg
 PORTVERSION=	7.7
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org complete distribution metaport
 
-NO_BUILD=	yes
-NO_MTREE=	yes
-NO_INSTALL=	yes
+USES=		metaport
 
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
 
