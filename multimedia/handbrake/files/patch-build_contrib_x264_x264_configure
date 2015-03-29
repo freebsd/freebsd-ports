@@ -26,29 +26,6 @@
          [ ${arg#-L} != $arg ] && arg=-libpath:${arg#-L}
          [ $arg = -Wl,--large-address-aware ] && arg=-largeaddressaware
          [ $arg = -s ] && arg=
-@@ -396,10 +396,10 @@
- host_os="${host#*-}"
- 
- # test for use of Intel Compiler
--if [[ $host_os = mingw* || $host_os = cygwin* ]]; then
--    if [[ `basename "$CC"` = icl* ]]; then
-+if [ -z "${host_os%%mingw*}" -o -z "${host_os%%cygwin*}" ]; then
-+    if [ "${CC%%icl*}" != "${CC}" ]; then
-         # Windows Intel Compiler creates dependency generation with absolute Windows paths, Cygwin's make does not support Windows paths.
--        [[ $host_os = cygwin* ]] && die "Windows Intel Compiler support requires MSYS"
-+        [ -z "${host_os%%cygwin*}" ] && die "Windows Intel Compiler support requires MSYS"
-         compiler=ICL
-         CFLAGS="$CFLAGS -Qstd=c99 -nologo -Qms0 -DHAVE_STRING_H -Iextras"
-         QPRE="-Q"
-@@ -408,7 +408,7 @@
-         cpp_check "" "" "_MSC_VER >= 1400" || die "Windows Intel Compiler support requires Visual Studio 2005 or newer"
-     fi
- else
--    if [[ `basename "$CC"` = icc* ]]; then
-+    if [ "${CC%%icc*}" != "${CC}" ]; then
-         AR="xiar"
-         compiler=ICC
-         QPRE="-"
 @@ -496,11 +496,15 @@
          AS="yasm"
          ASFLAGS="$ASFLAGS -O2"
