@@ -14,9 +14,7 @@ GH_COMMIT=	85e913e
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
