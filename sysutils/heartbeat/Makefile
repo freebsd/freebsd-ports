@@ -24,10 +24,8 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
-AUTOMAKE_ARGS=	--add-missing --include-deps --copy
-
-USES=		gettext gmake libtool pkgconfig python tar:bzip2 shebangfix
+USES=		autoreconf gettext gmake libtool pkgconfig python tar:bzip2 \
+		shebangfix
 SHEBANG_FILES=	ldirectord/ldirectord.in
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
