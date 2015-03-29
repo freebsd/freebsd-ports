@@ -3,6 +3,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://launchpad.net/terminator/trunk/0.97/+download/
 
@@ -15,38 +16,32 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:${PORTSDIR}/x11/keybinder \
 		${PYTHON_PKGNAMEPREFIX}vte>=0:${PORTSDIR}/x11-toolkits/py-vte
 
-OPTIONS_DEFINE=	NLS GCONF
-GCONF_DESC=	Use GNOME Terminal settings
-OPTIONS_DEFAULT=	NLS GCONF
-
 USES=		python
+USE=		GNOME=pygtk2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Terminator
 
 INSTALLS_ICONS=	yes
 
-WANT_GNOME=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-PYSETUP+=	--without-gettext
-.endif
+OPTIONS_DEFINE=		NLS GCONF
+OPTIONS_DEFAULT=	NLS GCONF
+OPTIONS_SUB=		yes
+GCONF_DESC=		Use GNOME Terminal settings
+GCONF_USE=		GNOME=pygnome2
+NLS_USES=		gettext
 
 .include <bsd.port.pre.mk>
 
+.if !${PORT_OPTIONS:MNLS}
+PYDISTUTILS_SETUP+=	--without-gettext
+post-patch:
+	${CP} ${WRKSRC}/data/terminator.desktop.in ${WRKSRC}/data/terminator.desktop
+	${REINPLACE_CMD} -e 's/^_//' ${WRKSRC}/data/terminator.desktop
+.endif
+
 PYDISTUTILS_SETUP+=	--without-icon-cache
 
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	pygnome2
-.endif
-USE_GNOME+=	pygtk2
-
-MAN1=	terminator.1
-MAN5=	terminator_config.5
+pre-patch:
+	${REINPLACE_CMD} -e 's/libc\.so/libc.so.7/' ${WRKSRC}/terminatorlib/freebsd.py
 
 .include <bsd.port.post.mk>
