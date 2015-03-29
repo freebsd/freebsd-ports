@@ -21,6 +21,8 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
+PORTSCOUT=	ignore:1
+
 USES=		gettext libtool pathfix pkgconfig gmake tar:bzip2
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
