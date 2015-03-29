@@ -5863,9 +5863,9 @@ archivers/ruby-libarchive|archivers/rubygem-libarchive|2014-04-08|Use the rubyge
 java/j2sdkee13||2014-04-10|EOLed long ago
 astro/glunarclock||2014-04-11|gnome-panel will be updated to the 3.x version which is not compatible with 2.x
 databases/libgda2||2014-04-11|Ancient version, consider using newer versions
-databases/libgda2-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda2-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3||2014-04-11|Ancient version, consider using newer versions
-databases/libgda3-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda3-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-firebird||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-freetds||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-ldap||2014-04-11|Ancient version, consider using newer versions
