@@ -3,7 +3,7 @@
 PKGNAME=$1
 TARGET=$2
 
-if [ "$TARGET" = POST-INSTALL ]; then
+if [ "$TARGET" = POST-INSTALL -a -z "%%MAILERCONF%%" ]; then
 	sed -e '/^[^#]/s/^/### smtpd: /g' -i '' /etc/mail/mailer.conf
 	cat >>/etc/mail/mailer.conf <<EOF
 sendmail        %%PREFIX%%/sbin/smtpctl
