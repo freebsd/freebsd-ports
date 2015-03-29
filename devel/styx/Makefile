@@ -10,9 +10,7 @@ MASTER_SITES=	http://www.speculate.de/styx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scanner/parser generator
 
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize
-AUTOMAKE_ARGS=	--add-missing
-USES=		gmake iconv libtool
+USES=		autoreconf gmake iconv libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
