@@ -36,7 +36,7 @@ pre-extract:
 	@sleep 10
 
 PLIST_FILES=	bin/sage
-USE_TEX=	latex:build
+USE_TEX=	latex:build dvipsk:build
 USES=		gmake iconv tk
 MAKE_JOBS_SAFE=	yes
 
