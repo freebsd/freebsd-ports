@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	201502012312
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -12,19 +12,20 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}p1
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	OpenSMTPD is a free MTA (development snapshot)
+COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
-OPTIONS_DEFINE=	CA_BUNDLE LIBASR
+OPTIONS_DEFINE=	CA_BUNDLE LIBASR MAILERCONF
 
 OPTIONS_DEFAULT=	CA_BUNDLE PAM
 
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 LIBASR_DESC=	Use stable version of libasr
+MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
@@ -37,6 +38,8 @@ CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-[0-9]*
 
 USERS=		_smtpd _smtpq
 GROUPS=		_smtpd
+
+OPTIONS_SUB=		yes
 
 LIBASR_LIB_DEPENDS_OFF=	libasr.so:${PORTSDIR}/dns/libasr-devel
 LIBASR_LIB_DEPENDS=	libasr.so:${PORTSDIR}/dns/libasr

@@ -11,18 +11,20 @@ MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}p1
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	OpenSMTPD is a free MTA
+COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 
 LICENSE=	ISCL
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
-OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS LIBASRDEVEL
+OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS LIBASRDEVEL \
+		MAILERCONF
 
 OPTIONS_DEFAULT=	CA_BUNDLE PAM
 
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 LIBASRDEVEL_DESC=	Use development version of libasr
+MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 
 USES=		libtool
 USE_OPENSSL=	yes
