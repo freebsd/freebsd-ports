@@ -1,12 +1,11 @@
---- Gemfile.orig	2014-04-14 12:20:52.000000000 +0200
-+++ Gemfile	2014-04-14 12:21:07.000000000 +0200
-@@ -9,6 +9,9 @@
+--- Gemfile.orig        2014-04-14 12:20:52.000000000 +0200
++++ Gemfile     2014-04-14 12:21:07.000000000 +0200
+@@ -9,5 +9,8 @@
  gem "mime-types"
- gem "awesome_nested_set", "2.1.6"
- 
+ gem "rbpdf", "~> 1.18.5"
+
 +# Thin webserver
 +gem "thin", "~> 1.6.2"
 +
+ 
  # Optional gem for LDAP authentication
- group :ldap do
-   gem "net-ldap", "~> 0.3.1"
