@@ -2,6 +2,7 @@
 
 PORTNAME=	renpy
 PORTVERSION=	6.99.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-source
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
@@ -58,10 +59,6 @@ TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py
 .if ${PORT_OPTIONS:MEXAMPLES}
 PORTDATA+=	the_question tutorial
 .endif
-
-post-extract:
-# https://github.com/renpy/renpy/issues/594
-	${CP} -n ${FILESDIR}/style_common.pxi ${BUILD_WRKSRC}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
