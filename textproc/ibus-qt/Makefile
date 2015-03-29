@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-qt
-PORTVERSION=	1.3.2
-PORTREVISION=	3
+PORTVERSION=	1.3.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/ \
+		http://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	IBus input method module for Qt4
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ibus-1.0.pc:${PORTSDIR}/textproc/ibus \
-	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
-	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu \
-	doxygen:${PORTSDIR}/devel/doxygen
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ibus-1.0.pc:${PORTSDIR}/textproc/ibus \
-	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
-	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	ibus>=1.3.7:${PORTSDIR}/textproc/ibus
+RUN_DEPENDS=	ibus>=1.3.7:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+	libicuuc.so:${PORTSDIR}/devel/icu
+
+GH_ACCOUNT=	ibus
 
 USE_QT4=	gui dbus moc_build qmake_build moc_build uic_build rcc_build
 USES=		cmake pkgconfig
@@ -30,7 +30,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PROJECTHOST=	ibus
 WRKSRC=			${WRKDIR}/${DISTNAME}
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
