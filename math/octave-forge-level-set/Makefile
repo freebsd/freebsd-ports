@@ -27,7 +27,7 @@ post-build:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 900000
+.if ${OSVERSION} < 1000000
 BROKEN=		Doesn't build on FreeBSD 9 or older
 .endif
 
