@@ -1061,30 +1061,6 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
-PKG_ENV+=		PORTSDIR=${PORTSDIR}
-CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
-				XDG_CONFIG_HOME=${WRKDIR} \
-				HOME=${WRKDIR}
-MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
-				XDG_CONFIG_HOME=${WRKDIR} \
-				HOME=${WRKDIR}
-QA_ENV+=	STAGEDIR=${STAGEDIR} \
-			PREFIX=${PREFIX} \
-			LINUXBASE=${LINUXBASE} \
-			LOCALBASE=${LOCALBASE} \
-			"STRIP=${STRIP}" \
-			TMPPLIST=${TMPPLIST}
-CO_ENV+=	STAGEDIR=${STAGEDIR} \
-			PREFIX=${PREFIX} \
-			LOCALBASE=${LOCALBASE} \
-			WRKDIR=${WRKDIR} \
-			WRKSRC=${WRKSRC} \
-			MTREE_FILE=${MTREE_FILE} \
-			TMPPLIST=${TMPPLIST} \
-			SCRIPTSDIR=${SCRIPTSDIR} \
-			PLIST_SUB_SED="${PLIST_SUB_SED}" \
-			PORT_OPTIONS="${PORT_OPTIONS}" \
-			PORTSDIR="${PORTSDIR}"
 MINIMAL_PKG_VERSION=	1.3.8
 
 # make sure bmake treats -V as expected
@@ -1102,7 +1078,6 @@ EXPIRATION_DATE?=	2014-08-31
 .if !defined(.PARSEDIR)
 IGNORE=	Cross building can only be done when using bmake(1) as make(1)
 .endif
-BUILD_DEPENDS=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
 # Do not define CPP on purpose
 .if !defined(HCC)
 HCC:=	${CC}
@@ -1115,11 +1090,8 @@ X_SYSROOT=	/usr/${X_BUILD_FOR}
 .endif
 CC=		${X_SYSROOT}/usr/bin/cc
 CXX=	${X_SYSROOT}/usr/bin/c++
-PKG_ENV+=	ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
 NM=		${X_BUILD_FOR}-nm
 STRIP_CMD=	${X_BUILD_FOR}-strip
-MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
-CONFIGURE_ENV+=	PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 # only bmake support the below
 STRIPBIN=	${STRIP_CMD}
 .export.env STRIPBIN
@@ -1307,13 +1279,6 @@ UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 TMPDIR?=	/tmp
 .endif # defined(PACKAGE_BUILDING)
 
-# Respect TMPDIR passed via make.conf or similar and pass it down
-# to configure and make.
-.if defined(TMPDIR)
-MAKE_ENV+=	TMPDIR="${TMPDIR}"
-CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
-.endif # defined(TMPDIR)
-
 .if defined(WITH_DEBUG_PORTS)
 .if ${WITH_DEBUG_PORTS:M${PKGORIGIN}}
 WITH_DEBUG=	yes
@@ -1481,16 +1446,6 @@ UID!=	${ID} -u
 
 DESTDIRNAME?=	DESTDIR
 
-.if !empty(USES:Mdesktop-file-utils)
-QA_ENV+=	USESDESKTOPFILEUTILS=yes
-.endif
-.if !empty(USES:Mlibtool*)
-QA_ENV+=	USESLIBTOOL=yes
-.endif
-.if !empty(USES:Mshared-mime-info)
-QA_ENV+=	USESSHAREDMIMEINFO=yes
-.endif
-
 # Loading features
 .for f in ${USES}
 _f:=		${f:C/\:.*//}
@@ -1533,11 +1488,6 @@ PKGNG_ORIGIN=	${PKG_ORIGIN}
 WITH_PKGNG?=	yes
 WITH_PKG?=	${WITH_PKGNG}
 
-.if defined(BUNDLE_LIBS)
-PKG_NOTES+=	no_provide_shlib
-PKG_NOTE_no_provide_shlib=	yes
-.endif
-
 .endif
 # End of pre-makefile section.
 
@@ -1550,6 +1500,62 @@ DEV_ERROR+=	"${PKGNAME}: Makefile error: you cannot include bsd.port[.post].mk t
 .endif
 
 _POSTMKINCLUDED=	yes
+
+.if defined(BUNDLE_LIBS)
+PKG_NOTES+=	no_provide_shlib
+PKG_NOTE_no_provide_shlib=	yes
+.endif
+
+PKG_ENV+=		PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
+MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
+# Respect TMPDIR passed via make.conf or similar and pass it down
+# to configure and make.
+.if defined(TMPDIR)
+MAKE_ENV+=		TMPDIR="${TMPDIR}"
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
+.endif # defined(TMPDIR)
+
+QA_ENV+=		STAGEDIR=${STAGEDIR} \
+				PREFIX=${PREFIX} \
+				LINUXBASE=${LINUXBASE} \
+				LOCALBASE=${LOCALBASE} \
+				"STRIP=${STRIP}" \
+				TMPPLIST=${TMPPLIST}
+.if !empty(USES:Mdesktop-file-utils)
+QA_ENV+=		USESDESKTOPFILEUTILS=yes
+.endif
+.if !empty(USES:Mlibtool*)
+QA_ENV+=		USESLIBTOOL=yes
+.endif
+.if !empty(USES:Mshared-mime-info)
+QA_ENV+=		USESSHAREDMIMEINFO=yes
+.endif
+
+CO_ENV+=		STAGEDIR=${STAGEDIR} \
+				PREFIX=${PREFIX} \
+				LOCALBASE=${LOCALBASE} \
+				WRKDIR=${WRKDIR} \
+				WRKSRC=${WRKSRC} \
+				MTREE_FILE=${MTREE_FILE} \
+				TMPPLIST=${TMPPLIST} \
+				SCRIPTSDIR=${SCRIPTSDIR} \
+				PLIST_SUB_SED="${PLIST_SUB_SED}" \
+				PORT_OPTIONS="${PORT_OPTIONS}" \
+				PORTSDIR="${PORTSDIR}"
+
+.if defined(X_BUILD_FOR)
+BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
+PKG_ENV+=		ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
+MAKE_ENV+=		NM=${NM} \
+				STRIPBIN=${X_BUILD_FOR}-strip \
+				PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+CONFIGURE_ENV+=	PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+.endif
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
