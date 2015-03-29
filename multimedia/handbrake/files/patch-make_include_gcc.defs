@@ -9,12 +9,3 @@
  GCC.args.sysroot   = --sysroot=$(1)
  GCC.args.ldsysroot = -syslibroot $(1)
  GCC.args.minver    = -mmacosx-version-min=$(1)
-@@ -85,7 +85,7 @@
- 
- define import.GCC
-     $(1).GCC.gcc = $$(GCC.gcc)
--    $(1).GCC.gxx = $$(dir $$($(1).GCC.gcc))$$(subst gcc,g++,$$(notdir $$($(1).GCC.gcc)))
-+    $(1).GCC.gxx = $$(if $$(filter ./,$$(dir $$($(1).GCC.gcc))),,$$(dir $$($(1).GCC.gcc)))$$(subst gcc,g++,$$(notdir $$($(1).GCC.gcc)))
- 
-     $(1).GCC.pipe    = $$(GCC.pipe)
-     $(1).GCC.strip   = $$(if $$(filter none,$$($(1).GCC.g)),1)

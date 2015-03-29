@@ -1,6 +1,15 @@
---- ./make/include/main.defs.orig	2012-06-09 05:45:19.000000000 +0800
-+++ ./make/include/main.defs	2012-08-23 16:08:07.000000000 +0800
-@@ -88,6 +88,11 @@
+--- make/include/main.defs.orig	2014-10-16 01:32:41.000000000 +0200
++++ make/include/main.defs	2015-03-29 17:09:49.690928000 +0200
+@@ -62,7 +62,7 @@
+ endif
+ 
+ MODULES += contrib/ffmpeg
+-MODULES += contrib/libvpx
++#MODULES += contrib/libvpx
+ MODULES += contrib/libdvdread
+ MODULES += contrib/libdvdnav
+ MODULES += contrib/libbluray
+@@ -125,6 +125,11 @@
      MODULES += gtk
  endif
  
