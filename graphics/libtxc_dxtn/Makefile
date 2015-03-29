@@ -18,10 +18,8 @@ GH_PROJECT=	s2tc
 GH_COMMIT=	3d644da
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		libtool pathfix pkgconfig
+USES=		autoreconf libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am
-USE_AUTOTOOLS=	aclocal autoconf libtoolize automake
-AUTOMAKE_ARGS=	--add-missing --copy
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
