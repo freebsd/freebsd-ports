@@ -1,30 +1,30 @@
 # $FreeBSD$
 
 PORTNAME=	vimb
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	www
+PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	mike.d.ft402@gmail.com
-COMMENT=	The vim like browser
+COMMENT=	Vim like browser
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+
+CONFLICTS_INSTALL=	vimb-gtk3-*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
-GH_COMMIT=	c642901
+GH_TAGNAME=	cd61814
 PLIST_FILES=	bin/vimb man/man1/vimb.1.gz
 
+MAKE_ENV=	GTK="2"
 USES=		gmake pkgconfig
+USE_GNOME=	gtk20
 
-OPTIONS_SINGLE=		GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK3
-
-GTK2_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-GTK2_USE=		GNOME=gtk20
-GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
-GTK3_USE=		GNOME=gtk30
-GTK3_MAKE_ENV=		GTK="3"
+post-extract:
+	${MV}	${WRKSRC}/src/config.def.h ${WRKSRC}/src/config.h
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vimb.1 ${STAGEDIR}${MANPREFIX}/man/man1/
