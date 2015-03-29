@@ -12,7 +12,8 @@ COMMENT=	GNU gettext meta package
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 
-USES=		gettext-runtime:run gettext-tools:run
+USES=		cpe gettext-runtime:run gettext-tools:run
+CPE_VENDOR=	gnu
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
