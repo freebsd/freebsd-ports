@@ -3,7 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	6.1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-ide
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	gprbuild>=20140417:${PORTSDIR}/devel/gprbuild \
 		templates_parser>11:${PORTSDIR}/textproc/templates_parser
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
+RUN_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2   # See note
 
 GNU_CONFIGURE=		yes
 USES=			ada gmake perl5 pkgconfig python tar:bzip2
@@ -30,6 +31,12 @@ AWKREVDATE=		'/Last Changed Date/ {print "\"s|unknown date|" $$4 "|\""}'
 GPSVER=			GPS_VERSION=${PORTVERSION}
 ALL_TARGET=		default
 NO_MTREE=		yes
+
+# note: librsvg2 is needed to display the svg icons in the menu.  Actually
+# needed is lib/gdk-pixbuf-2.0/%%GTK2_VER%%/loaders/libpixbufloader-svg.so ,
+# but it's a variable library needed only at runtime, which is obnoxious so
+# we just request the sole binary to pull in the package which effectively
+# accomplishes what is desired.
 
 OPTIONS_DEFINE=		READLINE SYSLOG PGSQL DEBUG DOCS EXAMPLES
 OPTIONS_DEFAULT=	READLINE SYSLOG
@@ -121,8 +128,7 @@ post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gps/html/tutorial/_sources
 	echo "This is the GPS GPL Edition for the FreeBSD Ports Collection." \
 		> ${STAGEDIR}${PREFIX}/share/gps/about.txt
-	@(cd ${STAGEDIR}${PREFIX} ; \
-		${FIND} * -type d -empty -print | ${XARGS} ${RMDIR})
+	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 	@(cd ${STAGEDIR}${PREFIX} ; \
 		${FIND} * \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST})
 
