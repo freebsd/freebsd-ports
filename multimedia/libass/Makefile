@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.11.2
-PORTREVISION=	4
+PORTVERSION=	0.12.1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -15,12 +14,10 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	03a9c6c
 
-USES=		iconv libtool pathfix pkgconfig tar:xz
+USES=		autoreconf iconv libtool pathfix pkgconfig tar:xz
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-AUTOMAKE_ARGS=	--add-missing
 PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 
