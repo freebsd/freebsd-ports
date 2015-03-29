@@ -2,8 +2,8 @@
 
 PORTNAME=	renpy
 PORTVERSION=	6.99.1
-PORTREVISION=	1
 DISTVERSIONSUFFIX=-source
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
