@@ -1,16 +1,14 @@
-diff --git a/clamp-0.6.4.gemspec b/clamp-0.6.4.gemspec
-index 8f51cc3..acab485 100644
---- clamp-0.6.4.gemspec
-+++ clamp-0.6.4.gemspec
-@@ -43,6 +43,7 @@
- - lib/clamp/command.rb
- - lib/clamp/errors.rb
- - lib/clamp/help.rb
-+- lib/clamp/messages.rb
- - lib/clamp/option/declaration.rb
- - lib/clamp/option/definition.rb
- - lib/clamp/option/parsing.rb
-
+--- clamp.gemspec.orig	2015-02-28 19:33:22.833353000 +0000
++++ clamp.gemspec	2015-02-28 19:33:51.000931000 +0000
+@@ -11,7 +11,7 @@
+   s.date = "2015-02-26"
+   s.description = "Clamp provides an object-model for command-line utilities.\nIt handles parsing of command-line options, and generation of usage help.\n"
+   s.email = "mdub@dogbiscuit.org"
+-  s.files = [".autotest", ".gitignore", ".rspec", ".travis.yml", "CHANGES.md", "Gemfile", "LICENSE", "README.md", "Rakefile", "clamp.gemspec", "examples/admin", "examples/flipflop", "examples/fubar", "examples/gitdown", "examples/scoop", "examples/speak", "lib/clamp.rb", "lib/clamp/attribute/declaration.rb", "lib/clamp/attribute/definition.rb", "lib/clamp/attribute/instance.rb", "lib/clamp/command.rb", "lib/clamp/errors.rb", "lib/clamp/help.rb", "lib/clamp/option/declaration.rb", "lib/clamp/option/definition.rb", "lib/clamp/option/parsing.rb", "lib/clamp/parameter/declaration.rb", "lib/clamp/parameter/definition.rb", "lib/clamp/parameter/parsing.rb", "lib/clamp/subcommand/declaration.rb", "lib/clamp/subcommand/definition.rb", "lib/clamp/subcommand/execution.rb", "lib/clamp/subcommand/parsing.rb", "lib/clamp/truthy.rb", "lib/clamp/version.rb", "spec/clamp/command_group_spec.rb", "spec/clamp/command_spec.rb", "spec/clamp/option/definition_spec.rb", "spec/clamp/option_module_spec.rb", "spec/clamp/parameter/definition_spec.rb", "spec/spec_helper.rb"]
++  s.files = [".autotest", ".gitignore", ".rspec", ".travis.yml", "CHANGES.md", "Gemfile", "LICENSE", "README.md", "Rakefile", "clamp.gemspec", "examples/admin", "examples/flipflop", "examples/fubar", "examples/gitdown", "examples/scoop", "examples/speak", "lib/clamp.rb", "lib/clamp/attribute/declaration.rb", "lib/clamp/attribute/definition.rb", "lib/clamp/attribute/instance.rb", "lib/clamp/command.rb", "lib/clamp/errors.rb", "lib/clamp/help.rb", "lib/clamp/messages.rb", "lib/clamp/option/declaration.rb", "lib/clamp/option/definition.rb", "lib/clamp/option/parsing.rb", "lib/clamp/parameter/declaration.rb", "lib/clamp/parameter/definition.rb", "lib/clamp/parameter/parsing.rb", "lib/clamp/subcommand/declaration.rb", "lib/clamp/subcommand/definition.rb", "lib/clamp/subcommand/execution.rb", "lib/clamp/subcommand/parsing.rb", "lib/clamp/truthy.rb", "lib/clamp/version.rb", "spec/clamp/command_group_spec.rb", "spec/clamp/command_spec.rb", "spec/clamp/option/definition_spec.rb", "spec/clamp/option_module_spec.rb", "spec/clamp/parameter/definition_spec.rb", "spec/spec_helper.rb"]
+   s.homepage = "http://github.com/mdub/clamp"
+   s.licenses = ["MIT"]
+   s.rubygems_version = "2.4.5"
 diff --git a/lib/clamp/attribute/instance.rb b/lib/clamp/attribute/instance.rb
 index 8f51cc3..acab485 100644
 --- lib/clamp/attribute/instance.rb
