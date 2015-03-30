@@ -100,10 +100,12 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
-USES=		bison compiler desktop-file-utils gmake perl5 pkgconfig python \
+USES=		bison compiler cpe desktop-file-utils gmake perl5 pkgconfig python \
 		tar:bzip2
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
+CPE_PRODUCT=	${PORTNAME:S|apache-||}
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=			CUPS GCONF GNOMEVFS CCACHE
 OPTIONS_DEFAULT=		CUPS GCONF GNOMEVFS
