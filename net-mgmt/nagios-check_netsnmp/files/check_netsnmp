@@ -22,7 +22,7 @@ my $proc = '.1.3.6.1.4.1.2021.2.1.';
 my $disk = '.1.3.6.1.4.1.2021.9.1.';
 my $file = '.1.3.6.1.4.1.2021.15.1.';
 my $swap = '.1.3.6.1.4.1.2021.4.';
-my $exec = '.1.3.6.1.4.1.2021.8.';
+my $exec = '.1.3.6.1.4.1.2021.8.1.';
 my $errorFlag = '100';
 my $errorMsg = '101';
 my $TotalSwap = '.1.3.6.1.4.1.2021.4.3.0';
@@ -32,13 +32,15 @@ my $laLoad5 = '.1.3.6.1.4.1.2021.10.1.3.2';
 my $laLoad15 = '.1.3.6.1.4.1.2021.10.1.3.3';
 
 my $errflag = $ERRORS{'OK'};
+my $execMode = 0;
 
-my ($opt_h, $opt_C, $opt_H, $opt_o, $opt_p, $opt_t);
+my ($opt_h, $opt_d, $opt_C, $opt_H, $opt_o, $opt_p, $opt_t);
 Getopt::Long::Configure('bundling');
 GetOptions(
 	   "h"   => \$opt_h, "help"  => \$opt_h,
 	   "C=s" => \$opt_C, "community=s" => \$opt_C,
 	   "H=s" => \$opt_H, "hostname=s" => \$opt_H,
+	   "d=s" => \$opt_d, "domain=s" => \$opt_d,
 	   "o=s" => \$opt_o, "oid=s" => \$opt_o,
 	   "p=i" => \$opt_p, "port=i" => \$opt_p,
 	   "t=i" => \$opt_t, "timeout=i" => \$opt_t
@@ -68,9 +70,14 @@ $SIG{'ALRM'} = sub {
 };
 alarm($TIMEOUT * 6);	# 1.5 minutes
 
+if (!defined($opt_d)) {
+    my @addrv4 = gethostbyname($opt_H) or $opt_d = 'udp/ipv6';
+};
+
 my ($session, $error) = Net::SNMP->session(
     -timeout => $opt_t || $TIMEOUT,
     -hostname  => $opt_H,
+    -domain => $opt_d || 'udp/ipv4',
     -community => $opt_C || 'public',
     -port => $opt_p || 161
 );
@@ -119,7 +126,9 @@ sub checkOID {
         $baseOID = $file;
     } else {
 	    if ($_[0] =~ /^\d+$/) {
-            $baseOID = $exec . $_[0] . '.';
+            $execMode = 1;
+            $baseOID = $exec;
+            $i = $_[0];
 	    } else {
             $baseOID = $_[0];
 	    }
@@ -143,6 +152,7 @@ sub checkOID {
             $first_error = 0;
         }
         $first_query = 0;
+        last if $execMode > 0;
         $i++; $tmpOID = $baseOID . $errorFlag . ".$i";
         $res = getOID($tmpOID);
     }
@@ -195,7 +205,12 @@ sub checkOID {
                 print "Error obtaining OID $AvailSwap!";
             }
         } else {
-            my $tmp = getOID("$baseOID$errorMsg.1");
+            my $tmp;
+            if ($execMode > 0) {
+                $tmp = getOID("$baseOID$errorMsg.$_[0]");
+            } else {
+                $tmp = getOID("$baseOID$errorMsg.1");
+            }
             if (defined($tmp)) {
                 print $tmp;
             } else {
