@@ -888,18 +888,12 @@ MASTER_SITE_NETBSD+= \
 
 .if !defined(IGNORE_MASTER_SITE_NETLIB)
 MASTER_SITE_NETLIB+= \
-	ftp://ftp.netlib.org/%SUBDIR%/ \
 	http://www.netlib.org/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
-	ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
 	http://www.netlib.no/netlib/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
-	http://artfiles.org/netlib.org/%SUBDIR%/ \
-	http://netlib.amss.ac.cn/%SUBDIR%/ \
-	http://netlib.caspur.it/%SUBDIR%/ \
-	http://netlib.sandia.gov/%SUBDIR%/ \
-	http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
+	http://netlib.sandia.gov/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_NVIDIA)
