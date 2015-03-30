@@ -47,6 +47,8 @@ post-install:
 	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN1} ${STAGEDIR}${PREFIX}/man/man1/
 	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN8} ${STAGEDIR}${PREFIX}/man/man8/
 	cd ${WRKSRC}/mDNSPosix/build/prod/ && ${INSTALL_PROGRAM} ${EXTRA_SBIN} ${STAGEDIR}${PREFIX}/sbin/
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1 ${STAGEDIR}${PREFIX}/sbin/*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1 ${STAGEDIR}${PREFIX}/sbin/*
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1 ${STAGEDIR}${PREFIX}/sbin/*
 
 .include <bsd.port.post.mk>
