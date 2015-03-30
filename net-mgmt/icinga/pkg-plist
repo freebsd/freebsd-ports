@@ -8,6 +8,10 @@ bin/icingastats
 @sample %%IDOUTILS%%%%ETCDIR%%/ido2db.cfg.sample
 @sample %%IDOUTILS%%%%ETCDIR%%/idomod.cfg.sample
 @sample %%IDOUTILS%%%%ETCDIR%%/modules/idoutils.cfg.sample
+@sample %%ETCDIR%%/modules/flapjack.cfg.sample
+@sample %%ETCDIR%%/modules/livestatus.cfg.sample
+@sample %%ETCDIR%%/modules/mod_gearman.cfg.sample
+@sample %%ETCDIR%%/modules/pnp4nagios.cfg.sample
 @sample %%ETCDIR%%/objects/commands.cfg.sample
 @sample %%ETCDIR%%/objects/contacts.cfg.sample
 @sample %%IDOUTILS%%%%ETCDIR%%/objects/ido2db_check_proc.cfg.sample
@@ -37,6 +41,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idomod.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.12_to_1.13.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.7_to_1.8.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.8_to_1.9.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.9_to_1.10.cfg
@@ -54,9 +59,11 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.0rc.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.10.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.6.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.12.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.13.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
@@ -64,9 +71,8 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.9.0.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-delete.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-drop.sql
@@ -81,6 +87,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.6.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.12.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.13.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
@@ -101,6 +108,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.6.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.12.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.13.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
