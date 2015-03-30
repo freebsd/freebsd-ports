@@ -41,39 +41,20 @@ PASSWDAUTH_CONFIGURE_ENABLE=	auth-passwd
 MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
 
 DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+GDBMAUTH_CPPFLAGS=		-I${LOCALBASE}/include
 GDBMAUTH_LIB_DEPENDS=		libgdbm.so:${PORTSDIR}/databases/gdbm
-
-.include <bsd.port.options.mk>
-
-# MySQL authentication
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-auth-mysql \
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ON=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=			pgsql
-DEFAULT_PGSQL_VER=	80
-CONFIGURE_ARGS+=	--enable-auth-pgsql \
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--enable-auth-pgsql \
 			--with-pgsql-lib-dir=${LOCALBASE}/lib \
 			--with-pgsql-include-dir=${LOCALBASE}/include
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
-.endif
-
-# Perl authentication
-.if ${PORT_OPTIONS:MPERLAUTH}
-USES+=			perl5
-.endif
-
-.if ${PORT_OPTIONS:MFIX_PERLAUTH}
-EXTRA_PATCHES+=${PATCHDIR}/extra-patch-auth_perl.c
-.endif
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_ON=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
+PERLAUTH_USES=		perl5
+FIX_PERLAUTH_EXTRA_PATCHES=${PATCHDIR}/extra-patch-auth_perl.c
 
 USE_RC_SUBR=	tpop3d
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.sample
@@ -82,7 +63,7 @@ PORTDOCS=	CHANGES CREDITS FAQ HACKING INSTALL PORTABILITY \
        		README README.POP-before-SMTP README.auth_mysql TODO
 
 post-patch:
-	@${REINPLACE_CMD} 's,^CFLAGS =, CFLAGS = \@CFLAGS\@,' \
+	@${REINPLACE_CMD} '/^CFLAGS/ s, -g -O2,,' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's,/etc/tpop3d,${PREFIX}/etc/tpop3d,g' \
 		${WRKSRC}/tpop3d.conf.5 ${WRKSRC}/tpop3d.8
@@ -93,9 +74,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/tpop3d.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/tpop3d.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/tpop3d ${STAGEDIR}${PREFIX}/sbin
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
