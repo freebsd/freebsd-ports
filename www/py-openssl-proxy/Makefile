@@ -11,6 +11,8 @@ DISTNAME=	pyOpenSSLProxy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTPS proxy support
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
 
 USES=		python:2
