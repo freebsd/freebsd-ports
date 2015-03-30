@@ -4,7 +4,7 @@
 PORTNAME=	htx
 DISTVERSION=	0.7.8
 CATEGORIES=	converters www
-MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CENKES
+MASTER_SITES=	http://stuff.myrealm.co.uk/htx/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to XHTML converter
