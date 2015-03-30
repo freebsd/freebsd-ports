@@ -1429,31 +1429,6 @@ MASTER_SITE_XCONTRIB+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,}
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_XEMACS)
-MASTER_SITE_XEMACS+= \
-	http://ftp.it.xemacs.org/%SUBDIR%/ \
-	http://ftp.pt.xemacs.org/%SUBDIR%/ \
-	http://xemacsftp.hkmirror.org/%SUBDIR%/ \
-	http://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
-	http://ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.be.xemacs.org/xemacs/%SUBDIR%/ \
-	ftp://ftp.ch.xemacs.org/mirror/xemacs/%SUBDIR%/ \
-	ftp://ftp.de.xemacs.org/pub/ftp.xemacs.org/tux/xemacs/%SUBDIR%/ \
-	ftp://ftp.fi.xemacs.org/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/%SUBDIR%/ \
-	ftp://ftp.fr.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.gr.xemacs.org/mirrors/XEmacs/ftp/%SUBDIR%/ \
-	ftp://ftp.heanet.ie/mirrors/ftp.xemacs.org/%SUBDIR%/ \
-	ftp://ftp.ie.xemacs.org/mirrors/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.no.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.pasteur.fr/pub/computing/xemacs/%SUBDIR%/ \
-	ftp://ftp.sa.xemacs.org/pub/xemacs.org/%SUBDIR%/ \
-	ftp://ftp.se.xemacs.org/pub/gnu/xemacs/%SUBDIR%/ \
-	ftp://ftp.tw.xemacs.org/Unix/Editors/XEmacs/%SUBDIR%/ \
-	ftp://ftp.uk.xemacs.org/sites/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.yz.yamagata-u.ac.jp/pub/misc/xemacs/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_XFCE)
 MASTER_SITE_XFCE+= \
 	http://mirror.perldude.de/archive.xfce.org/%SUBDIR%/ \
