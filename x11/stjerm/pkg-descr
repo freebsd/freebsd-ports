@@ -1,5 +1,4 @@
-Stjerm is a quake-like terminal emulator. Its window is shown with a key
-shortcut. Stjerm is very minimalistic and works well with Compiz window
-manager.
+Stjerm is a roll-down, quake-like terminal emulator that shows up on keyboard
+shortcut, and hides away when not needed.
 
-WWW: https://code.google.com/p/stjerm-terminal/
+WWW: https://github.com/stjerm/stjerm
