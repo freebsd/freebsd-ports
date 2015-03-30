@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mined
-PORTVERSION=	2014.24.2
+PORTVERSION=	2015.25
 CATEGORIES=	editors
-MASTER_SITES=	http://towo.net/mined/download/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
