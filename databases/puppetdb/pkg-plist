@@ -24,4 +24,4 @@ sbin/puppetdb
 @dir /var/db/puppetdb/mq
 @dir /var/db/puppetdb
 @mode
-@dir(puppetdb,,) /var/log/puppetdb
+@dir(puppetdb,puppetdb,) /var/log/puppetdb
