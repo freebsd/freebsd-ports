@@ -4,7 +4,7 @@
 PORTNAME=	bsnmptools
 PORTVERSION=	0.0.20100516
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://people.freebsd.org/~syrinx/snmp/ CENKES
+MASTER_SITES=	http://people.freebsd.org/~syrinx/snmp/
 DISTNAME=	bsnmptools-20100516-01
 EXTRACT_SUFX=	.tar
 
