@@ -12,6 +12,8 @@ DISTNAME=	aqualightblue-gtk2-default
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Port of the GTK+ AquaLightBlue theme to GTK+ 2.0
 
+BROKEN=		No public distfiles
+
 WRKSRC=		${WRKDIR}/AquaLightBlue
 
 NO_BUILD=	yes
