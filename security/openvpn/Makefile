@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.3.6
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
@@ -25,7 +25,7 @@ SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME ENGINEFIX
 OPTIONS_DEFAULT=	EASYRSA OPENSSL
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
@@ -34,6 +34,7 @@ PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 POLARSSL_DESC=		SSL/TLS support via PolarSSL
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
+ENGINEFIX_DESC=		EXPERIMENTAL patch to fix SSL engine use
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
@@ -45,6 +46,10 @@ PW_SAVE_CONFIGURE_ENABLE=	password-save
 X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MENGINEFIX}
+EXTRA_PATCHES+=		${FILESDIR}/150322-Reload-OpenSSL-engines-after-forking.patch:-p1
+.endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
 . if ${PORT_OPTIONS:MX509ALTUSERNAME}
