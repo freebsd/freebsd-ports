@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level XML tools for Python
 
+BROKEN=		LOGILAB has gone
 RUN_DEPENDS=	${PYXML}
 
 USE_GNOME=	pygtk2

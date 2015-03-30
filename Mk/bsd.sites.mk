@@ -767,14 +767,6 @@ MASTER_SITE_LIBREOFFICE_DEV+= \
 	http://dev-www.libreoffice.org/src/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_LOGILAB)
-MASTER_SITE_LOGILAB+= \
-	http://download.logilab.org/pub/%SUBDIR%/ \
-	http://ftp.logilab.org/pub/%SUBDIR%/ \
-	ftp://ftp.logilab.org/pub/%SUBDIR%/ \
-	ftp://ftp.logilab.fr/pub/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_MATE)
 MASTER_SITE_MATE+= \
 	http://pub.mate-desktop.org/releases/%SUBDIR%/
@@ -1370,7 +1362,6 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			GNU:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
-			LOGILAB:${PORTNAME} \
 			LIBREOFFICE_DEV:${PORTNAME} \
 			MATE:${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			MOZDEV:${PORTNAME:tl} \
