@@ -4,8 +4,7 @@
 PORTNAME=	tree
 PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ \
-		CENKES
+MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
