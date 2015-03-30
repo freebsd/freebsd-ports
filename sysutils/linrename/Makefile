@@ -7,8 +7,7 @@ CATEGORIES=	sysutils
 #MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}
 MASTER_SITES=	http://ftp.ntu.edu.tw/ftp/linux/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/Linux/kernel.org/linux/%SUBDIR%/ \
-		http://kernel.org/pub/linux/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,linux/kernel.org/&,}
+		http://kernel.org/pub/linux/%SUBDIR%/
 MASTER_SITE_SUBDIR=	utils/util-linux/v${PORTVERSION:R}
 DISTNAME=	util-linux-${PORTVERSION}
 

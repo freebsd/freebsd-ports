@@ -3,8 +3,7 @@
 PORTNAME=	sendmail
 PORTVERSION=	8.15.1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
+MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 

@@ -24,8 +24,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 USE_LDCONFIG=	yes
 
 MASTER_SITE_IMAGEMAGICK=	\
-	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
+	ftp://ftp.imagemagick.org/pub/%SUBDIR%/
 
 OPTIONS_DEFINE= OPENGL UUID DOCS
 UUID_DESC=	UUID support (required by GDAL)

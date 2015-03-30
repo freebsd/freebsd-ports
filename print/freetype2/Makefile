@@ -9,7 +9,6 @@ MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
 		ftp://ftp.freetype.org/freetype/freetype2/
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 

@@ -5,8 +5,7 @@ PORTNAME=	skk-tools
 PORTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	japanese
-MASTER_SITES=	RINGSERVER/elisp/skk/tools \
-		http://openlab.ring.gr.jp/skk/tools/
+MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/
 DISTNAME=	skktools-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

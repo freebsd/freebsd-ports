@@ -67,7 +67,6 @@ MASTER_SITE_APACHE+= \
 	ftp://ftp.forthnet.gr/pub/www/apache/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/&,} \
 	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/ \
 	http://mirrors.ircam.fr/pub/apache/%SUBDIR%/
 .endif
@@ -147,7 +146,6 @@ MASTER_SITE_DEBIAN_NON_US+= \
 	ftp://ftp.is.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.it.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.jp.debian.org/debian-non-US/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,linux/debian/debian-non-US/&,} \
 	ftp://ftp.nl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.no.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.pl.debian.org/debian-non-US/%SUBDIR%/ \
@@ -577,7 +575,6 @@ MASTER_SITE_GNOME+= \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://linorg.usp.br/gnome/%SUBDIR%/ \
 	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/%SUBDIR%/ \
@@ -603,7 +600,6 @@ MASTER_SITE_GNU+= \
 	http://mirrors.kernel.org/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
@@ -762,7 +758,6 @@ MASTER_SITE_KDE+= \
 	http://kde-mirror.freenux.org/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
@@ -821,7 +816,6 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/
 .endif
 
@@ -888,7 +882,6 @@ MASTER_SITE_NETBSD+= \
 	ftp://sunsite.uio.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.demon.co.uk/pub/mirrors/NetBSD/packages/distfiles/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,NetBSD/packages/distfiles/&,} \
 	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/
 .endif
@@ -1037,8 +1030,7 @@ MASTER_SITE_PHP+= \
 	http://uk3.php.net/%SUBDIR%/ \
 	http://us2.php.net/%SUBDIR%/ \
 	http://br.php.net/%SUBDIR%/ \
-	http://cn.php.net/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/php/&,}
+	http://cn.php.net/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
@@ -1083,31 +1075,6 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/
 .endif
 
-#
-# RingServers in Japan
-#
-#
-# Note: If you know which of the RingServers is nearest to you,
-# please specify it in your /etc/make.conf. (The server list is
-# available at http://www.ring.gr.jp/)
-#
-# You can choose either http or ftp to access to a server:
-#
-#	http://<server>/archives/%SUBDIR%/
-#	ftp://<server>/pub/%SUBDIR%/
-#
-# {www,ftp}.dnsbalance.ring.gr.jp redirects requests to one of the
-# least busy servers at the moment at the DNS lookup level. (safe to
-# use with "fetch -A")
-#
-# {www,ftp}.t.ring.gr.jp redirects requests to one of the nearest
-# servers at the DNS lookup level. (safe to use with "fetch -A")
-#
-.if !defined(IGNORE_MASTER_SITE_RINGSERVER)
-MASTER_SITE_RINGSERVER+= \
-	http://ring.nict.go.jp/archives/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_RUBY)
 MASTER_SITE_RUBY+= \
 	http://cache.ruby-lang.org/pub/ruby/%SUBDIR%/ \
@@ -1115,7 +1082,6 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.SpringDaemons.com/pub/ruby/ruby/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
 	ftp://xyz.lcs.mit.edu/pub/ruby/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/ruby/&,} \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
@@ -1136,8 +1102,7 @@ MASTER_SITE_SAMBA+= \
 	http://ftp.samba.org/pub/%SUBDIR%/ \
 	ftp://ca.samba.org/pub/%SUBDIR%/ \
 	ftp://de.samba.org/pub/%SUBDIR%/ \
-	ftp://ftp.easynet.be/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
+	ftp://ftp.easynet.be/%SUBDIR%/
 .endif
 
 # List:	http://download.savannah.gnu.org/mirmon/
@@ -1241,7 +1206,6 @@ MASTER_SITE_TEX_CTAN+= \
 	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/CTAN/&,} \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://mirror.macomnet.net/pub/CTAN/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/
@@ -1339,8 +1303,7 @@ MASTER_SITE_XCONTRIB+= \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/XFree86/mirror/X.Org/contrib/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,}
+	ftp://ftp2.x.org/contrib/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)

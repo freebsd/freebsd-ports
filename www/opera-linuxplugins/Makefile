@@ -10,8 +10,7 @@ MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.ftp.fu-berlin.de/${MASTER_SITES_VER_PATH}/ \
 		http://ftp.ntua.gr/pub/www/Opera/${MASTER_SITES_VER_PATH}/ \
 		http://mirrors.dedipower.com/opera/${MASTER_SITES_VER_PATH}/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/${MASTER_SITES_VER_PATH}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/${MASTER_SITES_VER_PATH}/
 PKGNAMESUFFIX=	-linuxplugins
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
