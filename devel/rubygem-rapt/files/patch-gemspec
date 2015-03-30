@@ -1,14 +1,11 @@
---- rapt-0.2.2.gemspec.orig	2013-02-26 02:37:18.000000000 +0000
-+++ rapt-0.2.2.gemspec	2013-02-26 02:38:04.000000000 +0000
-@@ -56,11 +56,9 @@
- - test/sandbox/rails_app
- - test/sandbox/rails_app/config
- - test/sandbox/rails_app/script
--- test/sandbox/rails_app/vendor
- - test/sandbox/rails_app/config/boot.rb
- - test/sandbox/rails_app/config/environment.rb
- - test/sandbox/rails_app/script/plugin
--- test/sandbox/rails_app/vendor/plugins
- test_files: []
- 
- rdoc_options: []
+--- rapt.gemspec.orig	2014-11-30 03:53:13.000000000 +0000
++++ rapt.gemspec	2014-11-30 03:53:38.000000000 +0000
+@@ -12,7 +12,7 @@
+   s.description = "Install, remove, and discover new plugins for your Ruby on Rails app."
+   s.email = "boss@topfunky.com"
+   s.executables = ["rapt"]
+-  s.files = ["CHANGELOG", "MIT-LICENSE", "README", "Rakefile", "bin/rapt", "lib/commands", "lib/commands/plugin", "lib/commands/plugin.rb", "lib/commands/plugin/commands.rb", "lib/commands/plugin/plugin.rb", "lib/commands/plugin/plugin_pack.rb", "lib/commands/plugin/rails_environment.rb", "lib/commands/plugin/recursive_http_fetcher.rb", "lib/commands/plugin/repositories.rb", "lib/commands/plugin/repository.rb", "test/commands", "test/commands/plugin", "test/commands/plugin/plugin_test.rb", "test/commands/plugin/repository_test.rb", "test/commands/plugin_test.rb", "test/mocks", "test/mocks/rails_environment.rb", "test/sandbox", "test/sandbox/rails_app", "test/sandbox/rails_app/config", "test/sandbox/rails_app/config/boot.rb", "test/sandbox/rails_app/config/environment.rb", "test/sandbox/rails_app/script", "test/sandbox/rails_app/script/plugin", "test/sandbox/rails_app/vendor", "test/sandbox/rails_app/vendor/plugins"]
++  s.files = ["CHANGELOG", "MIT-LICENSE", "README", "Rakefile", "bin/rapt", "lib/commands", "lib/commands/plugin", "lib/commands/plugin.rb", "lib/commands/plugin/commands.rb", "lib/commands/plugin/plugin.rb", "lib/commands/plugin/plugin_pack.rb", "lib/commands/plugin/rails_environment.rb", "lib/commands/plugin/recursive_http_fetcher.rb", "lib/commands/plugin/repositories.rb", "lib/commands/plugin/repository.rb", "test/commands", "test/commands/plugin", "test/commands/plugin/plugin_test.rb", "test/commands/plugin/repository_test.rb", "test/commands/plugin_test.rb", "test/mocks", "test/mocks/rails_environment.rb", "test/sandbox", "test/sandbox/rails_app", "test/sandbox/rails_app/config", "test/sandbox/rails_app/config/boot.rb", "test/sandbox/rails_app/config/environment.rb", "test/sandbox/rails_app/script", "test/sandbox/rails_app/script/plugin"]
+   s.homepage = "http://rapt.rubyforge.org"
+   s.required_ruby_version = Gem::Requirement.new("> 0.0.0")
+   s.requirements = ["none"]
