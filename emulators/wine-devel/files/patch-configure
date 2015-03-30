@@ -1,0 +1,70 @@
+commit 1625bb8e07d1dee8f0b6c98466e0185c7c7431be
+Author: David Naylor <naylor.b.david@gmail.com>
+Date:   Tue Jan 20 21:55:03 2015 +0200
+
+    configure: explicitly set host_cpu for 'amd64'.
+    
+    In the case of host starting with 'amd64', the host_cpu variable will not be
+    set to the correct CPU value of 'x86_64'.  Set it explicitly to the correct
+    value.
+
+diff --git a/configure b/configure
+index bc2f434..62b2ca3 100755
+--- configure
++++ configure
+@@ -4912,6 +4912,7 @@ $as_echo "no" >&6; }
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+       fi
++      host_cpu="x86_64"
+       TARGETFLAGS="-m64"
+ 
+     fi
+diff --git a/configure.ac b/configure.ac
+index db26333..9579245 100644
+--- configure.ac
++++ configure.ac
+@@ -165,6 +165,7 @@ case $host in
+                           [AC_MSG_RESULT([no])
+                            AC_MSG_ERROR([You need gcc >= 4.4 to build Wine as 64-bit.])])
+       fi
++      host_cpu="x86_64"
+       AC_SUBST(TARGETFLAGS,"-m64")
+     fi
+     ;;
+
+commit 0d268d62ad93ca1d1cf1c2fead43e2143b5529b3
+Author: David Naylor <naylor.b.david@gmail.com>
+Date:   Tue Jan 20 17:54:38 2015 +0200
+
+    configure: recognise host starting in 'amd64'.
+    
+    FreeBSD uses amd64 to identify a CPU architecture based on AMD's 64-bit
+    instruction set.
+
+diff --git a/configure b/configure
+index 0431209..bc2f434 100755
+--- configure
++++ configure
+@@ -4852,7 +4852,7 @@ case $host in
+     fi
+     with_fontconfig=${with_fontconfig:-no}
+     ;;
+-  x86_64*)
++  x86_64*|amd64*)
+     if test "x$enable_win64" != "xyes" -a "$cross_compiling" != "yes"
+     then
+       CC="$CC -m32"
+diff --git a/configure.ac b/configure.ac
+index a931730..db26333 100644
+--- configure.ac
++++ configure.ac
+@@ -143,7 +143,7 @@ case $host in
+     fi
+     with_fontconfig=${with_fontconfig:-no}
+     ;;
+-  x86_64*)
++  x86_64*|amd64*)
+     if test "x$enable_win64" != "xyes" -a "$cross_compiling" != "yes"
+     then
+       CC="$CC -m32"

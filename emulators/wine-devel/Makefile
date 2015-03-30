@@ -42,7 +42,7 @@ WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:bzip2
 SHEBANG_FILES=	tools/make_requests tools/winemaker \
 		tools/winedump/function_grep.pl
@@ -103,7 +103,37 @@ X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 			libpng.so:${PORTSDIR}/graphics/png
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+# Wine is composed of three parts:
+#  - wine (aka this port) is the 32-bit component and runs 32-bit programs (on FreeBSD/i386)
+#  - wine64 (aka this part of this port) is the 64-bit component and runs 64-bit programs
+#    (on FreeBSD/amd64)
+#  - wow64 (a subset of emulators/i386-wine-devel) is a part of the 64-bit component that runs
+#    32-bit programs (on FreeBSD/amd64)
+# We also currently have:
+#  - "wine32" (aka emulators/i386-wine-devel) is the 32-bit component and runs 32-bit programs
+#    (on FreeBSD/amd64).  This will be superseded by wow64.
+
+# --libdir is required since Wine defaults to "${PREFIX}/lib64" on amd64.
+CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
+PLIST_SUB+=		WINE32="@comment " WINE64=""
+
+.if ${COMPILER_TYPE} == clang
+CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
+			-D__builtin_ms_va_start=__builtin_va_start \
+			-D__builtin_ms_va_end=__builtin_va_end \
+			-D__builtin_ms_va_copy=__builtin_va_copy
+.endif
+
+# Wine assumes a WoW64 package is available however WoW64 is not yet available on FreeBSD.
+post-patch:
+	${REINPLACE_CMD} 's|/wine|/wine64|g' ${WRKSRC}/tools/wineapploader.in
+
+.else 
+PLIST_SUB+=		WINE32="" WINE64="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MCOMPHOLIO}
 MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
@@ -135,4 +165,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
