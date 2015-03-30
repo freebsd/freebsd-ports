@@ -1,23 +1,10 @@
---- ./kafo_parsers-0.0.3.gemspec.orig	2014-07-03 18:41:59.959584274 +0300
-+++ ./kafo_parsers-0.0.3.gemspec	2014-07-03 18:41:59.998583732 +0300
-@@ -81,20 +81,6 @@
-       - !ruby/object:Gem::Version
-         version: '0'
- - !ruby/object:Gem::Dependency
--  name: puppet
--  requirement: !ruby/object:Gem::Requirement
--    requirements:
--    - - '>='
--      - !ruby/object:Gem::Version
--        version: '0'
--  type: :runtime
--  prerelease: false
--  version_requirements: !ruby/object:Gem::Requirement
--    requirements:
--    - - '>='
--      - !ruby/object:Gem::Version
--        version: '0'
--- !ruby/object:Gem::Dependency
-   name: rdoc
-   requirement: !ruby/object:Gem::Requirement
-     requirements:
+--- kafo_parsers.gemspec.orig	2014-11-30 03:36:12.000000000 +0000
++++ kafo_parsers.gemspec	2014-11-30 03:37:06.000000000 +0000
+@@ -26,7 +26,6 @@
+       s.add_development_dependency(%q<minitest>, ["~> 4.0"])
+       s.add_development_dependency(%q<simplecov>, [">= 0"])
+       s.add_development_dependency(%q<ci_reporter>, [">= 0"])
+-      s.add_runtime_dependency(%q<puppet>, [">= 0"])
+       s.add_runtime_dependency(%q<rdoc>, [">= 3.9.0"])
+     else
+       s.add_dependency(%q<bundler>, ["~> 1.5"])
