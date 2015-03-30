@@ -31,8 +31,8 @@ MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
 RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins-core \
-		gstreamer-plugins-ogg>=0:${PORTSDIR}/multimedia/gstreamer-plugins-ogg \
-		gstreamer-plugins-vorbis>=0:${PORTSDIR}/multimedia/gstreamer-plugins-vorbis
+		gstreamer-plugins-ogg>=0:${PORTSDIR}/audio/gstreamer-plugins-ogg \
+		gstreamer-plugins-vorbis>=0:${PORTSDIR}/audio/gstreamer-plugins-vorbis
 .endif
 
 MAKE_JOBS_UNSAFE=yes
