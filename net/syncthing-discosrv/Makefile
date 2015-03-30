@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2015022401
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -22,7 +22,7 @@ GH_PROJECT=	discosrv
 GH_COMMIT=	4e1240a610bcc2ef8772eb2641492822b4ec4f88
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.23
+SYNCTHING_VER=	0.10.30
 GROUPCACHE_COMMIT=	d2a1805
 
 WRKSRC=		${WRKDIR}/discosrv-${GH_COMMIT}
