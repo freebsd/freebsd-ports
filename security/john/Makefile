@@ -70,6 +70,14 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/run/*.rb
 	@${REINPLACE_CMD} -e '/_XOPEN_SOURCE/d' ${WRKSRC}/src/recovery.c
+# Replace methods and types that were marked deprecated by OpenSSL 0.9.7
+# and will be removed in OpenSSL 1.1.0
+	@${REINPLACE_CMD} -e 's|des_string_to_key|DES_string_to_key|' \
+		${WRKSRC}/src/KRB4_fmt_plug.c
+	@${REINPLACE_CMD} -e 's|des_set_odd_parity|DES_set_odd_parity|' \
+		${WRKSRC}/src/KRB4_std_plug.c
+	@${REINPLACE_CMD} -e 's|C_Block|DES_cblock|' \
+		${WRKSRC}/src/keychain_fmt_plug.c
 
 pre-build:
 	@${ECHO_CMD}
