@@ -17,7 +17,4 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '18 s|~>|>=|' ${WRKSRC}/${GEM_NAME}.gemspec
-
 .include <bsd.port.mk>

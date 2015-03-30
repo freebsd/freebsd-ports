@@ -21,8 +21,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/bones
 
-post-patch:
-# adjust gemspec for "rdoc ~> 3.0"
-	@${REINPLACE_CMD} -e '27,40 d' ${WRKSRC}/${GEM_NAME}.gemspec
-
 .include <bsd.port.mk>

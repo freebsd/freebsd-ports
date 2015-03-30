@@ -1,0 +1,10 @@
+--- launchy.gemspec.orig	2014-11-30 03:43:33.000000000 +0000
++++ launchy.gemspec	2014-11-30 03:43:39.000000000 +0000
+@@ -11,7 +11,6 @@
+   s.date = "2013-02-06"
+   s.description = "Launchy is helper class for launching cross-platform applications in a fire and forget manner. There are application concepts (browser, email client, etc) that are common across all platforms, and they may be launched differently on each platform. Launchy is here to make a common approach to launching external application from within ruby programs."
+   s.email = "jeremy@copiousfreetime.org"
+-  s.executables = ["launchy"]
+   s.extra_rdoc_files = ["HISTORY.rdoc", "Manifest.txt", "README.rdoc"]
+   s.files = ["CONTRIBUTING.md", "HISTORY.rdoc", "LICENSE", "Manifest.txt", "README.rdoc", "Rakefile", "bin/launchy", "lib/launchy.rb", "lib/launchy/application.rb", "lib/launchy/applications/browser.rb", "lib/launchy/cli.rb", "lib/launchy/deprecated.rb", "lib/launchy/descendant_tracker.rb", "lib/launchy/detect.rb", "lib/launchy/detect/host_os.rb", "lib/launchy/detect/host_os_family.rb", "lib/launchy/detect/nix_desktop_environment.rb", "lib/launchy/detect/ruby_engine.rb", "lib/launchy/detect/runner.rb", "lib/launchy/error.rb", "lib/launchy/os_family.rb", "lib/launchy/version.rb", "spec/application_spec.rb", "spec/applications/browser_spec.rb", "spec/cli_spec.rb", "spec/detect/host_os_family_spec.rb", "spec/detect/host_os_spec.rb", "spec/detect/nix_desktop_environment_spec.rb", "spec/detect/ruby_engine_spec.rb", "spec/detect/runner_spec.rb", "spec/launchy_spec.rb", "spec/mock_application.rb", "spec/spec_helper.rb", "spec/tattle-host-os.yaml", "spec/version_spec.rb", "tasks/default.rake", "tasks/this.rb"]
+   s.homepage = "http://github.com/copiousfreetime/launchy"
