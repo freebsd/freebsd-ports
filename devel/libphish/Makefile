@@ -13,6 +13,8 @@ COMMENT=	Cross-platform library to interact with the Open Phishing Database
 
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
 
+BROKEN=		No public distfiles
+
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
