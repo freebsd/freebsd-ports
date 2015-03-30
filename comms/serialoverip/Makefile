@@ -9,6 +9,7 @@ MASTER_SITES=	CSME
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transport of serial interfaces over UDP/IP
 
+BROKEN=		No public distfiles
 PLIST_FILES=	sbin/${PORTNAME}
 
 do-build:
