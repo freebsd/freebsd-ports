@@ -5,10 +5,12 @@ PORTNAME=	gx
 PORTVERSION=	0.4.0
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://perticone.homelinux.net/sergio/c++/gx/src/ CENKES
+MASTER_SITES=	http://perticone.homelinux.net/sergio/c++/gx/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight image viewer
+
+BROKEN=		No public distfiles
 
 LIB_DEPENDS=	libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
 
