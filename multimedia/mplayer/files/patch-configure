@@ -113,7 +113,23 @@
      cc_check $ld_tmp && extra_ldflags="$extra_ldflags $ld_tmp" &&
        ld_iconv="$ld_tmp" && _iconv=yes && break
    done
-@@ -6046,7 +6056,7 @@
+@@ -5474,15 +5484,6 @@
+       break
+     fi
+   done
+-  if test "$_x11" = yes && cc_check -DGL_EGL_X11 -lEGL ; then
+-    _gl=yes
+-    _gl_egl_x11=yes
+-    libs_mplayer="$libs_mplayer -lEGL $ld_dl"
+-  elif cc_check -DGL_EGL_ANDROID -lEGL ; then
+-    _gl=yes
+-    _gl_egl_android=yes
+-    libs_mplayer="$libs_mplayer -lEGL $ld_dl"
+-  fi
+   if win32 && cc_check -DGL_WIN32 -lopengl32 ; then
+     _gl=yes
+     _gl_win32=yes
+@@ -6046,7 +6047,7 @@
  elif dragonfly ; then
    default_cdrom_device="/dev/cd0"
  elif freebsd ; then
@@ -122,7 +138,7 @@
  elif openbsd ; then
    default_cdrom_device="/dev/rcd0c"
  elif sunos ; then
-@@ -6059,7 +6069,7 @@
+@@ -6059,7 +6060,7 @@
    default_cdrom_device="/dev/cdrom"
  fi
  
@@ -131,7 +147,7 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
-@@ -6566,7 +6576,7 @@
+@@ -6566,7 +6567,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -140,7 +156,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -7051,6 +7061,16 @@
+@@ -7051,6 +7052,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -157,7 +173,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7450,7 +7470,7 @@
+@@ -7450,7 +7461,7 @@
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -166,7 +182,7 @@
  fi
  echores "$_mencoder"
  
-@@ -8329,7 +8349,7 @@
+@@ -8329,7 +8340,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
