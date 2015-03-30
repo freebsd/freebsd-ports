@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.6.3-alpha
+DISTVERSION=	0.2.6.6
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake
 CPE_VENDOR=	torproject
-CPE_VERSION=	${DISTVERSION:C/-.*//}
-CPE_UPDATE=	${DISTVERSION:C/.*-//}
+#CPE_VERSION=	${DISTVERSION:C/-.*//}
+#CPE_UPDATE=	${DISTVERSION:C/.*-//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
