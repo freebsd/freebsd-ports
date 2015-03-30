@@ -4,7 +4,7 @@
 PORTNAME=	laudio
 PORTVERSION=	0.4
 CATEGORIES=	audio linux
-MASTER_SITES=	http://www.lossless-audio.com/ CENKES
+MASTER_SITES=	http://www.lossless-audio.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	la04
 

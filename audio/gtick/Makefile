@@ -4,7 +4,7 @@
 PORTNAME=	gtick
 PORTVERSION=	0.5.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
+MASTER_SITES=	http://www.antcom.de/gtick/download/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Metronome application
