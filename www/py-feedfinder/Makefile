@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra-liberal feed finder
 
+BROKEN=		No public distfiles
+
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
