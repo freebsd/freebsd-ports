@@ -1,7 +1,7 @@
---- makefile.orig	2013-06-12 17:39:26.000000000 +0200
-+++ makefile	2013-09-12 15:09:05.000000000 +0200
-@@ -27,7 +27,7 @@
- 	./makemined clean
+--- makefile.orig	2015-03-23 23:00:00 UTC
++++ makefile
+@@ -30,7 +30,7 @@ clean:
+ 	sh ./makemined clean
  
  manual:
 -	cd man; make
