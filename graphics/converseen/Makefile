@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.9/
 
