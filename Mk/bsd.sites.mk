@@ -1369,15 +1369,8 @@ MASTER_SITE_TOR+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_TUCOWS)
-.for mirror in ankara blueyonder casemanl chariot clix dataphone dialog epix \
-	fastweb genotec hellasonline iinets inspirenet latvia mclink netvisao \
-	ns-linux nyi otenet personainternet pl-task ukms
 MASTER_SITE_TUCOWS+= \
-	http://${mirror}.linux.tucows.com/files/%SUBDIR%/
-.endfor
-MASTER_SITE_TUCOWS+= \
-	http://www12.tucows.com/linux/files/%SUBDIR%/ \
-	http://linux.tucows.gunadarma.ac.id/files/%SUBDIR%/
+	http://iinets.linux.tucows.com/files/%SUBDIR%/
 .endif
 
 # List:		http://www.vim.org/mirrors.php
