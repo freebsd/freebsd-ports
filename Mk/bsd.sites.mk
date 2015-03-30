@@ -113,12 +113,6 @@ MASTER_SITE_CHEESESHOP+= \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
-MASTER_SITE_COMP_SOURCES+= \
-	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
-	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
 	http://cdn.debian.net/debian/%SUBDIR%/ \
