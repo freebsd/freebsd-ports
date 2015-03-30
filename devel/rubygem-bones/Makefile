@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bones
-PORTVERSION=	3.8.2
+PORTVERSION=	3.8.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-little-plugger>=1.1:${PORTSDIR}/devel/rubygem-little-plugger \
 		rubygem-loquacious>=1.9:${PORTSDIR}/devel/rubygem-loquacious \
-		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake
+		rubygem-rake>=10.0:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
