@@ -11,6 +11,8 @@ MASTER_SITES=	CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access X selection from command line
 
+BROKEN=		No public distfiles
+
 CONFLICTS=	xsel-conrad-[0-9]*
 USES=	tar:bzip2
 USE_XORG=	xmu xaw xt xproto xkbfile
