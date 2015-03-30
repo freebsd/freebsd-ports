@@ -33,7 +33,7 @@
 #   Group for data file ownership.
 #
 # puppetdb_log_file (str):
-#   Set to "%%PUPPETDB_LOG_FILE%%" by default.
+#   Set to "/var/log/puppetdb/puppetdb.log" by default.
 #   Log file location.
 #
 
@@ -49,7 +49,7 @@ load_rc_config "${name}"
 : ${puppetdb_java_home="%%JAVA_HOME%%"}
 : ${puppetdb_user="puppetdb"}
 : ${puppetdb_group="puppetdb"}
-: ${puppetdb_log_file="%%PUPPETDB_LOG_FILE%%"}
+: ${puppetdb_log_file="/var/log/puppetdb/puppetdb.log"}
 
 pidfile="/var/run/puppetdb/puppetdb.pid"
 command="/usr/sbin/daemon"
