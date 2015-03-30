@@ -3,6 +3,7 @@
 
 PORTNAME=	PyInstaller
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,3 +36,5 @@ post-install:
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
+EXTRACT_AFTER_ARGS+=	--exclude doc/source
