@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-PORTVERSION=	0.15.2
+PORTVERSION=	0.16.0
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 TEST_DEPENDS:=	${RUN_DEPENDS} \
-		nosetests:${PORTSDIR}/devel/py-nose \
+		nosetests-${PYTHON_VER}:${PORTSDIR}/devel/py-nose \
 		cython:${PORTSDIR}/lang/cython \
 		${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
@@ -97,7 +97,7 @@ regression-test: build
 	@(cd ${WRKSRC} && \
 		${PYTHON_CMD} ${PYSETUP} build_ext --inplace && \
 		${PYTHON_CMD} -c 'import pandas.util.print_versions as pv; pv.show_versions()' && \
-		( ${SETENV} ${NOSE_ENV} nosetests ${NOSE_ARGS} || ${TRUE} ) && \
+		( ${SETENV} ${NOSE_ENV} nosetests-${PYTHON_VER} ${NOSE_ARGS} || ${TRUE} ) && \
 		${PYTHON_CMD} ${SCRIPTDIR}/print_skipped.py ${XUNITFILE} \
 	)
 
