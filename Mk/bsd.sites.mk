@@ -630,11 +630,6 @@ MASTER_SITE_GNUSTEP+= \
 	http://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_GNUSTEP_CH)
-MASTER_SITE_GNUSTEP_CH+= \
-	http://io.debian.net/~tar/ports/distfiles/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_GNU_ALPHA)
 MASTER_SITE_GNU_ALPHA+= \
 	http://alpha.gnu.org/gnu/%SUBDIR%/ \
