@@ -4,12 +4,14 @@
 PORTNAME=	libgtkembedmoz
 PORTVERSION=	0.0.20100806
 CATEGORIES=	www
-MASTER_SITES=	http://cvs.nvu.com/download/ CSME
+MASTER_SITES=	http://cvs.nvu.com/download/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	nvu-1.0-pc-linux2.6.10-gnu
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	HTML rendering library
+
+BROKEN=		No public distfiles
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
