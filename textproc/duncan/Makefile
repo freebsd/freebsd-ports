@@ -5,8 +5,7 @@ PORTNAME=	duncan
 PORTVERSION=	0.1
 PORTREVISION=	5
 CATEGORIES=	textproc gnustep
-MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
-		GNUSTEP_CH
+MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/
 DISTNAME=	Duncan-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

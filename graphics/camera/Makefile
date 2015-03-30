@@ -5,8 +5,7 @@ PORTNAME=	camera
 PORTVERSION=	0.8
 PORTREVISION=	6
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://download.gna.org/gsimageapps/ \
-		GNUSTEP_CH
+MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Camera-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
