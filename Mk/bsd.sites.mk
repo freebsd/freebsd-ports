@@ -1414,8 +1414,7 @@ MASTER_SITE_VIM+= \
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.info/pub/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/window-managers/windowmaker/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
+	ftp://ftp.uvsq.fr/pub/X11/window-managers/windowmaker/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XCONTRIB)
