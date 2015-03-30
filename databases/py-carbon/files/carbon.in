@@ -12,6 +12,8 @@
 #
 # carbon_enable (bool):	Set to NO by default.
 #			Set it to YES to enable it.
+# carbon_instances:	Empty by default (start single instance).
+#			Space-separated list of instances to start.
 # carbon_conf:		File where carbon configuration resides
 #			Default: %%PREFIX%%/etc/carbon/carbon.conf
 # carbon_user:		The user account carbon daemon runs as what
@@ -35,26 +37,61 @@ rcvar=carbon_enable
 load_rc_config ${name}
 
 : ${carbon_enable:=NO}
+: ${carbon_instances:=""}
 : ${carbon_user:=root}
 : ${carbon_group:=wheel}
 : ${carbon_conf:=%%PREFIX%%/etc/carbon/carbon.conf}
 : ${carbon_debug:=NO}
 : ${carbon_logdir:=/var/db/carbon/log/}
-: ${pidfile:=/var/run/carbon.pid}
+: ${carbon_pidfile:=/var/run/carbon.pid}
+
+is_carbon_instance() {
+    local instance
+    for instance in ${carbon_instances}; do
+        if [ "${instance}" = "$1" ]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+if [ -n "${carbon_instances}" ]; then
+    if [ -n "$2" ]; then
+        instance="$2"
+        if ! is_carbon_instance ${instance}; then
+            echo "$0: no such instance defined in carbon_instances."
+            exit 1
+        fi
+        instance_arg="--instance=${instance}"
+        eval carbon_user=\${carbon_${instance}_user:-"${carbon_user}"}
+        eval carbon_group=\${carbon_${instance}_group:-"${carbon_group}"}
+        eval carbon_conf=\${carbon_${instance}_conf:-"${carbon_conf}"}
+        eval carbon_debug=\${carbon_${instance}_debug:-"${carbon_debug}"}
+        eval carbon_logdir=\${carbon_${instance}_logdir:-"${carbon_logdir}"}
+        eval carbon_pidfile=\${carbon_${instance}_pidfile:-"/var/run/carbon-${instance}.pid"}
+    elif [ -n "$1" ]; then
+        for instance in ${carbon_instances}; do
+            echo "Processing carbon instance: ${instance}"
+            /usr/local/etc/rc.d/carbon $1 ${instance}
+        done
+        exit 0
+    fi
+fi
 
 stop_cmd="${name}_stop"
 required_files="${carbon_conf} %%PREFIX%%/etc/carbon/storage-schemas.conf"
 
+pidfile=${carbon_pidfile}
 command_interpreter="%%PREFIX%%/bin/python2.7"
 command="%%PREFIX%%/bin/carbon-cache.py"
-command_args="--config=${carbon_conf} --logdir ${carbon_logdir} --pidfile ${pidfile} start"
+command_args="--config=${carbon_conf} ${instance_arg} --logdir ${carbon_logdir} --pidfile ${pidfile} start"
 
 carbon_stop()
 {
     echo "Stopping $name"
     pids=`check_pidfile ${pidfile} ${command} ${command_interpreter}`
 
-    %%PREFIX%%/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${pidfile} stop
+    %%PREFIX%%/bin/carbon-cache.py --config=${carbon_conf} ${instance_arg} --pidfile ${pidfile} stop
     wait_for_pids ${pids}
 }
 
