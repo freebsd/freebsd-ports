@@ -11,6 +11,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Displays a mini-command line on the xfce4-panel
 
+BROKEN=		No public distfiles
+
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
