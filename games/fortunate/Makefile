@@ -9,6 +9,8 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP_CH}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front-end to the command-line BSD fortune
 
+BROKEN=		No public distfiles
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
