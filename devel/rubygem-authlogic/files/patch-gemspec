@@ -1,11 +1,11 @@
---- authlogic-3.4.5.gemspec.orig	2015-03-02 20:23:43.949918000 +0800
-+++ authlogic-3.4.5.gemspec	2015-03-02 20:24:10.343908474 +0800
-@@ -56,7 +56,7 @@
-   name: scrypt
-   requirement: !ruby/object:Gem::Requirement
-     requirements:
--    - - ~>
-+    - - ">="
-       - !ruby/object:Gem::Version
-         version: '1.2'
-   type: :runtime
+--- authlogic.gemspec.orig	2015-03-29 21:40:25.479751000 +0000
++++ authlogic.gemspec	2015-03-29 21:40:47.969488000 +0000
+@@ -25,7 +25,7 @@
+       s.add_runtime_dependency(%q<activerecord>, [">= 3.2"])
+       s.add_runtime_dependency(%q<activesupport>, [">= 3.2"])
+       s.add_runtime_dependency(%q<request_store>, ["~> 1.0"])
+-      s.add_runtime_dependency(%q<scrypt>, ["~> 1.2"])
++      s.add_runtime_dependency(%q<scrypt>, [">= 1.2"])
+       s.add_development_dependency(%q<bcrypt>, ["~> 3.1"])
+       s.add_development_dependency(%q<timecop>, ["~> 0.7"])
+     else
