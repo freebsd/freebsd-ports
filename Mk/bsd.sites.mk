@@ -107,12 +107,6 @@ MASTER_SITE_BERLIOS+= \
 	${MASTER_SITE_SOURCEFORGE}
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_CENKES)
-MASTER_SITE_CENKES+= \
-	http://bsd2.cenkes.org/%SUBDIR%/ \
-	http://bsd3.cenkes.org/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
 MASTER_SITE_CHEESESHOP+= \
 	http://pypi.python.org/packages/%SUBDIR%/ \
@@ -124,10 +118,6 @@ MASTER_SITE_CHEESESHOP+= \
 MASTER_SITE_COMP_SOURCES+= \
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
 	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_CSME)
-MASTER_SITE_CSME+=	${MASTER_SITE_CENKES}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
@@ -1523,9 +1513,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			RG:RUBYGEMS
 MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:tl}.berlios \
-			CENKES:myports \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
-			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
