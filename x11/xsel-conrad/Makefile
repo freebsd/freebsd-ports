@@ -4,8 +4,7 @@
 PORTNAME=	xsel
 PORTVERSION=	1.2.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/ \
-		CENKES
+MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/
 PKGNAMESUFFIX=	-conrad
 
 MAINTAINER=	code@apotheon.net
