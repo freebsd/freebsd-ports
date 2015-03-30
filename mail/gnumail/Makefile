@@ -13,6 +13,9 @@ COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2
 
+USES+=	cpe
+CPE_VENDOR=	gnu
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
