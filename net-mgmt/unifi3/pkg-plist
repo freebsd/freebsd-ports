@@ -243,8 +243,8 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/waiting.jsp
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/wizard.jsp
 @dir %%JAVASHAREDIR%%/unifi/conf
-@dir(root,wheel,755) %%JAVASHAREDIR%%/unifi
-@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/data
-@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/logs
-@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/run
-@dir(unifi,wheel,755) %%JAVASHAREDIR%%/unifi/work
+@dir %%JAVASHAREDIR%%/unifi
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/data
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/logs
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/run
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/work
