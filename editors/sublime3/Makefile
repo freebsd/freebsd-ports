@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sublime
-PORTVERSION=	3.0.65
-PORTREVISION=	3
+PORTVERSION=	3.0.83
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	sublime_text_3_build_3065_x32
+DISTNAME=	sublime_text_3_build_3083_x32
 
 MAINTAINER=	miguelmclara@gmail.com
-COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
+COMMENT=	Sophisticated text editor for code, markup and prose
 
 USES=		tar:bzip2 desktop-file-utils
 INSTALLS_ICONS=	yes
