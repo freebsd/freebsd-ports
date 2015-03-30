@@ -10,6 +10,8 @@ MASTER_SITES=	CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Tibetan Machine Uni font
 
+BROKEN=		No public distfiles
+
 USES=		fonts tar:bzip2
 NO_BUILD=	yes
 PLIST_FILES=	${FONTSDIR}/tmu.ttf
