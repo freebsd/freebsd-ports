@@ -5,7 +5,7 @@ PORTNAME=	sipsak
 PORTVERSION=	0.9.6
 DISTFILES=	sipsak-0.9.6-1.tar.gz
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/sipsak/
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	jesusr@FreeBSD.org
 COMMENT=	Small command line tool for SIP testing
