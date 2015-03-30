@@ -4,7 +4,7 @@
 PORTNAME=	mtail
 PORTVERSION=	1.1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://matt.immute.net/src/mtail/ CENKES
+MASTER_SITES=	http://matt.immute.net/src/mtail/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
