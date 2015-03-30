@@ -1319,12 +1319,6 @@ MASTER_SITE_TEX_CTAN+= \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_THEMES)
-MASTER_SITE_THEMES+= \
-	http://download.freshmeat.net/themes/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
-.endif
-
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en
 .if !defined(IGNORE_MASTER_SITE_TOR)
 MASTER_SITE_TOR+= \
