@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	31.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-EM_VERSION=	1.8
+EM_VERSION=	1.8.1
 L_VERSION=	3.3.5
 
 SSP_UNSAFE=	yes
