@@ -5,8 +5,7 @@ PORTNAME=	winefish
 DISTVERSION=	1.3.3
 PORTREVISION=	15
 CATEGORIES=	editors print
-MASTER_SITES=	http://download.berlios.de/winefish/ \
-		http://nivi.interfree.it/distfiles/winefish/
+MASTER_SITES=	SF/winefish.berlios
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
