@@ -33,8 +33,8 @@ RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 
 post-patch:
 .if empty(PORT_OPTIONS:MZFS_FACTS)
-	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zfs_version.rb/d' ${WRKSRC}/${GEM_NAME}.gemspec
-	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zpool_version.rb/d' ${WRKSRC}/${GEM_NAME}.gemspec
+	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zfs_version.rb/d' ${WRKSRC}/${PORTNAME}.gemspec
+	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zpool_version.rb/d' ${WRKSRC}/${PORTNAME}.gemspec
 .endif
 
 .include <bsd.port.post.mk>
