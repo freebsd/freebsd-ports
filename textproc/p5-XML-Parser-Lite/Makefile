@@ -16,6 +16,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-#pre-install:	test
+PORTSCOUT=	skipv:0.717,0.718,0.719
 
 .include <bsd.port.mk>
