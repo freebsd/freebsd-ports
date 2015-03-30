@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 CONFLICT=	apache-solr-3.6.*
 
-USES=	shebangfix tar:tgz
+USES=		cpe shebangfix tar:tgz
 SHEBANG_FILES=	example/etc/create-solrtest.keystore.sh
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes
@@ -25,6 +25,9 @@ USE_JAVA=	yes
 PORTEXAMPLES=	*
 LATEST_LINK=	apache-solr
 USE_RC_SUBR=	solr
+
+CPE_PRODUCT=	solr
+CPE_VENDOR=	apache
 
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${JAVAJARDIR}
