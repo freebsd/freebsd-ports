@@ -8,10 +8,5 @@ lib/uqm/uqm
 %%REMIX2%%%%DATADIR%%/content/addons/uqm-remix-disc2.uqm
 %%REMIX3%%%%DATADIR%%/content/addons/uqm-remix-disc3.uqm
 %%REMIX4%%%%DATADIR%%/content/addons/uqm-remix-disc4.uqm
-@dirrm %%DATADIR%%/content/packages
-@dirrm %%DATADIR%%/content/addons
-@dirrm %%DATADIR%%/content
-@dirrm %%DATADIR%%
-@dirrm lib/uqm
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%DATADIR%%/content/addons
