@@ -6,7 +6,6 @@ PORTVERSION=	20000706
 PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://plamo.linet.gr.jp/pub/Plamo-src/contrib/Sound/timidity/ \
-		RINGSERVER/linux/Plamo/Plamo-src/contrib/Sound/timidity \
 		LOCAL/nork
 DISTFILES=	${PORTNAME}-${PORTVERSION}-required${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-optional${EXTRACT_SUFX}

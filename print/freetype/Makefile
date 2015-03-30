@@ -9,7 +9,6 @@ MASTER_SITES=	SF \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype1/ \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype1/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype1/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
 		ftp://ftp.freetype.org/freetype/freetupe1/
 
 MAINTAINER=	doceng@FreeBSD.org

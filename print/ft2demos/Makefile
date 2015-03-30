@@ -4,8 +4,7 @@
 PORTNAME=	ft2demos
 PORTVERSION=	2.5.5
 CATEGORIES=	print
-MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
-		RINGSERVER/graphics/freetype/freetype2
+MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Demo programs for FreeType2
