@@ -21,6 +21,7 @@ share/icons/hicolor/scalable/apps/latexila.svg
 %%DATADIR%%/templates/report.xml
 %%DATADIR%%/ui/preferences_dialog.ui
 %%DATADIR%%/ui/ui.xml
+share/locale/bs/LC_MESSAGES/latexila.mo
 share/locale/ca/LC_MESSAGES/latexila.mo
 share/locale/cs/LC_MESSAGES/latexila.mo
 share/locale/de/LC_MESSAGES/latexila.mo
