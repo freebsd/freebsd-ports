@@ -6,8 +6,7 @@ PORTVERSION=	0.1.9
 PORTREVISION=	7
 DISTVERSIONPREFIX=	python-
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ \
-		CENKES
+MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	horia@racoviceanu.com
