@@ -1,8 +1,0 @@
---- ./data/fprintd.pod.orig	2014-09-20 01:55:30.860796233 +0400
-+++ ./data/fprintd.pod	2014-09-20 01:55:49.300794976 +0400
-@@ -100,3 +100,5 @@
- =over 8
- 
- =item B<dbus-daemon>, B<gnome-about-me>
-+
-+=back
