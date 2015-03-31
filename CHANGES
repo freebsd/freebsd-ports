@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150331:
+AUTHOR: ohauer@FreeBSD.org
+
+  Subversion modules are no longer activated in httpd.conf!
+  To activate the subversion apache modules a dedicated file
+  will be installed as modules.d/220_subversion.conf
+
 20150326:
 AUTHOR: bdrewery@FreeBSD.org
 
