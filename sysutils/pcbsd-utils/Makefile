@@ -21,17 +21,12 @@ CONFLICTS?=	pbi-manager-[0-9]*
 USE_QT5=	core network buildtools qmake
 USES=		pkgconfig tar:xz
 NO_BUILD=	yes
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
 IGNORE=		requires FreeBSD 10 or later
 .endif
-
-do-install:
-	cd ${WRKSRC} && make install PREFIX=${STAGEDIR}${PREFIX}
-
-post-install:
-	PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
