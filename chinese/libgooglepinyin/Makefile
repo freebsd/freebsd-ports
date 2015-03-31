@@ -9,6 +9,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fork of Google Pinyin IME on Android
 
+LICENSE=	APACHE20
+
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake
 

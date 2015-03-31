@@ -1,0 +1,78 @@
+--- ./data/script/fcitx4-config.in.orig	2013-09-28 17:33:14.000000000 +0900
++++ ./data/script/fcitx4-config.in	2014-03-19 13:45:08.000000000 +0900
+@@ -1,14 +1,26 @@
+ #! /bin/sh
+ 
++## cmake does not handle \$\{.PREFIX\:\-\@prefix\@\} syntax (even in comments).
++if [ -z "$PREFIX" ]; then
++  PREFIX=@prefix@
++fi
++if [ -z "$DATADIR" ]; then
++  DATADIR=$PREFIX/share/fcitx
++fi
++
+ package=@package@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ includedir=@includedir@
+ libdir=@libdir@
+ addondir=@addondir@
++addondestdir=@addondestdir@
+ imconfigdir=@imconfigdir@
++imconfigdestdir=@imconfigdestdir@
+ configdescdir=@configdescdir@
++configdescdestdir=@configdescdestdir@
+ addonconfigdir=@addonconfigdir@
++addonconfigdestdir=@addonconfigdestdir@
+ 
+ usage()
+ {
+@@ -23,9 +35,13 @@
+   --libdir              Fcitx Library Prefix
+   --includedir          Fcitx Include Prefix
+   --addondir            Fcitx Addon Library Dir
++  --addondestdir        Fcitx Addon Library DestDir
+   --configdescdir       Fcitx Configure Description File Dir
++  --configdescdestdir   Fcitx Configure Description File DestDir
+   --addonconfigdir      Fcitx Addon Config File Dir
++  --addonconfigdestdir  Fcitx Addon Config File DestDir
+   --imconfigdir         Fcitx Input Method Config File Dir
++  --imconfigdestdir     Fcitx Input Method Config File DestDir
+   --help                display this help and exit
+   --version             output version information
+ EOF
+@@ -72,18 +88,34 @@
+       echo $addondir
+       ;;
+ 
++    --addondestdir)
++      echo $addondestdir
++      ;;
++
+     --configdescdir)
+       echo $configdescdir
+       ;;
+ 
++    --configdescdestdir)
++      echo $configdescdestdir
++      ;;
++
+     --addonconfigdir)
+       echo $addonconfigdir
+       ;;
+ 
++    --addonconfigdestdir)
++      echo $addonconfigdestdir
++      ;;
++
+     --imconfigdir)
+       echo $imconfigdir
+       ;;
+ 
++    --imconfigdestdir)
++      echo $imconfigdestdir
++      ;;
++
+     --version)
+         echo @version@
+         exit 0

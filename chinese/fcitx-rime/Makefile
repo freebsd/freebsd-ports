@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-rime
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	chinese
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	RIME support for Fcitx
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		librime.so:${PORTSDIR}/chinese/librime
+RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:${PORTSDIR}/chinese/brise
 
-USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 USES=		tar:xz cmake gettext
-USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
-PROJECTHOST=	fcitx
+CMAKE_ARGS+=	-DBRISE_DIR=${LOCALBASE}/share/brise
 
 .include <bsd.port.mk>

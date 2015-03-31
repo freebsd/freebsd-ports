@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	2014-06-05 14:21:55.000000000 +0800
++++ data/Makefile.in	2014-06-05 14:22:17.000000000 +0800
+@@ -288,7 +288,7 @@
+ libpinyin_db_DATA = $(binary_model_data) \
+                           table.conf
+ 
+-libpinyin_dbdir = $(libdir)/libpinyin/data
++libpinyin_dbdir = $(datadir)/libpinyin/data
+ CLEANFILES = $(binary_model_data)
+ all: all-am
+ 

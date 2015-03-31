@@ -58,6 +58,7 @@
     SUBDIR += eterm
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
+    SUBDIR += fcitx-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += font-ipa

@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-anthy
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lichray@gmail.com
 COMMENT=	Anthy support for Fcitx
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libanthy.so:${PORTSDIR}/japanese/anthy
 
 USES=		cmake gettext pkgconfig tar:xz
-USE_GNOME=	intltool
-
-PROJECTHOST=	fcitx
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

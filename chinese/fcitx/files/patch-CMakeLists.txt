@@ -1,11 +1,44 @@
---- CMakeLists.txt~	2011-10-02 05:43:11.000000000 -0500
-+++ CMakeLists.txt	2011-11-09 07:51:31.801020675 -0600
-@@ -93,7 +93,7 @@ if (ENABLE_OPENCC)
- endif (ENABLE_OPENCC)
+--- ./CMakeLists.txt.orig	2013-09-28 17:33:14.000000000 +0900
++++ ./CMakeLists.txt	2014-03-19 13:45:08.000000000 +0900
+@@ -207,16 +207,21 @@
+     set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "sys config directory [default=PREFIX/etc/]")
+ endif()
  
- if(ENABLE_DEBUG)
--    set(_DEBUG)
-+    set(_DEBUG ON)
- endif(ENABLE_DEBUG)
+-set(includedir "${CMAKE_INSTALL_PREFIX}/include")
+-set(libdir ${LIB_INSTALL_DIR})
+-set(pkgconfdir ${LIBDATA_INSTALL_DIR}/pkgconfig)
+-set(mandir ${MAN_INSTALL_DIR})
++set(includedir "${PREFIX}/include")
++set(libdir ${PREFIX}/lib)
++set(pkgconfdir ${PREFIX}/libdata/pkgconfig)
++set(mandir ${MANPREFIX}/man)
+ set(addondir ${libdir}/${package} )
+-set(pkgdatadir ${prefix}/share/${package})
++set(addondestdir "\${PREFIX}/lib/${package}" )
++set(pkgdatadir ${DATADIR})
++set(pkgdatadestdir "\${DATADIR}")
+ set(configdescdir ${pkgdatadir}/configdesc)
++set(configdescdestdir ${pkgdatadestdir}/configdesc)
+ set(addonconfigdir ${pkgdatadir}/addon)
++set(addonconfigdestdir ${pkgdatadestdir}/addon)
+ set(imconfigdir ${pkgdatadir}/inputmethod)
+-set(localedir ${CMAKE_INSTALL_PREFIX}/share/locale)
++set(imconfigdestdir ${pkgdatadestdir}/inputmethod)
++set(localedir ${PREFIX}/share/locale)
  
- set(package     fcitx)
+ list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemPlatformLibDir)
+ list(FIND CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "${LIB_INSTALL_DIR}" _isSystemCxxLibDir)
+@@ -229,9 +234,13 @@
+ 
+ # For FcitxMacro
+ set(FCITX4_ADDON_INSTALL_DIR ${addondir})
++set(FCITX4_ADDON_INSTALL_DESTDIR ${addondestdir})
+ set(FCITX4_CONFIGDESC_INSTALL_DIR ${configdescdir})
++set(FCITX4_CONFIGDESC_INSTALL_DESTDIR ${configdescdir})
+ set(FCITX4_ADDON_CONFIG_INSTALL_DIR ${addonconfigdir})
++set(FCITX4_ADDON_CONFIG_INSTALL_DESTDIR ${addonconfigdir})
+ set(FCITX4_INPUTMETHOD_CONFIG_INSTALL_DIR ${imconfigdir})
++set(FCITX4_INPUTMETHOD_CONFIG_INSTALL_DESTDIR ${imconfigdir})
+ set(FCITX4_PACKAGE_NAME ${package})
+ 
+ function(_RESOLVE_LIBRARY_PATH _FILE_NAME _LIBRARY_PATH)

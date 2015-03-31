@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.5.2
+PORTVERSION=	0.4.8
 CATEGORIES=	chinese x11
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	fcitx
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fcitx IM framework configuration tool
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 
 USE_GNOME=	intltool
 USES=		cmake gettext pkgconfig tar:xz
+LDFLAGS+=	-lintl
 
 OPTIONS_SINGLE=	UI
 UI_DESC=	Gtk version to use

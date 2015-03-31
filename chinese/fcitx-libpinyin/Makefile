@@ -2,29 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-libpinyin
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.1
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://cloud.github.com/downloads/fcitx/fcitx-libpinyin/:libpinyin
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} model.text.${MDVER}.tar.gz:libpinyin
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/:body \
+		http://download.fcitx-im.org/data/:data
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:body \
+		model.text.${_MODEL_VER}.tar.gz:data
 DIST_SUBDIR=	fcitx
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	The libpinyin support for Fcitx
+COMMENT=	Libpinyin support for Fcitx
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
-USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 USES=		tar:xz cmake gettext pkgconfig
-USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
-post-patch:
-	@${LN} -s ${_DISTDIR}/model.text.${MDVER}.tar.gz ${WRKSRC}/data
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+_MODEL_VER=	20130308
 
-PROJECTHOST=	fcitx
-MDVER=		20120921
+OPTIONS_DEFINE=	QT4
+OPTIONS_DEFAULT=QT4
+QT4_DESC=	Enable Qt4 for dictmanager
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui webkit
+USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
+PLIST_SUB+=	QT4=""
+.else
+CMAKE_ARGS+=	-DENABLE_QT=OFF
+PLIST_SUB+=	QT4="@comment "
+.endif
+
+post-patch:
+	@${CP} ${_DISTDIR}/model.text.${_MODEL_VER}.tar.gz ${WRKSRC}/data/.
 
 .include <bsd.port.mk>
