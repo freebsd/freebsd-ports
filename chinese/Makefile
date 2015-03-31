@@ -56,6 +56,7 @@
     SUBDIR += gugod-clean
     SUBDIR += hc
     SUBDIR += ibus-chewing
+    SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin
     SUBDIR += ibus-table-chinese
     SUBDIR += irssi
