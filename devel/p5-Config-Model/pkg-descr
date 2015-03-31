@@ -1,11 +1,5 @@
-Using Config::Model, a typical configuration validation tool will be made of
-3 parts :
-   1. The user interface
-   2. The validation engine which is in charge of validating all the
-      configuration information provided by the user.
-   3. The storage facility that store the configuration information
+Config::Model will generate interactive configuration editors (with integrated
+help and data validation). These editors can be graphical, curses based, or
+based on ReadLine.
 
-Config::Model provides a validation engine according to a set of rules.
-
-WWW: http://search.cpan.org/dist/Config-Model/
-WWW: http://config-model.sourceforge.net/
+WWW: https://metacpan.org/pod/Config::Model
