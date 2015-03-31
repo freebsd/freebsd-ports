@@ -158,14 +158,6 @@ BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base He
 IGNORE=		you have selected HEIMDAL_BASE but do not have heimdal installed in base
 .endif
 
-.if ${PORT_OPTIONS:MPAM} && !exists(/usr/include/security/pam_modules.h)
-IGNORE=		PAM must be installed in base
-.endif
-
-.if ${PORT_OPTIONS:MTCP_WRAPPERS} && !exists(/usr/include/tcpd.h)
-IGNORE=		required /usr/include/tcpd.h missing
-.endif
-
 .if ${PORT_OPTIONS:MMIT} || ${PORT_OPTIONS:MHEIMDAL} || ${PORT_OPTIONS:MHEIMDAL_BASE}
 .	if ${PORT_OPTIONS:MHEIMDAL_BASE}
 CONFIGURE_LIBS+=	-lgssapi_krb5
