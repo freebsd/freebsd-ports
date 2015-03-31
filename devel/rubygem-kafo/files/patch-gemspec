@@ -1,33 +1,14 @@
---- kafo-0.6.6.gemspec.orig	2015-03-24 16:25:54.028958000 +0100
-+++ kafo-0.6.6.gemspec	2015-03-24 16:26:19.397486000 +0100
-@@ -95,20 +95,6 @@
-       - !ruby/object:Gem::Version
-         version: '0'
- - !ruby/object:Gem::Dependency
--  name: puppet
--  requirement: !ruby/object:Gem::Requirement
--    requirements:
--    - - '>='
--      - !ruby/object:Gem::Version
--        version: '0'
--  type: :runtime
--  prerelease: false
--  version_requirements: !ruby/object:Gem::Requirement
--    requirements:
--    - - '>='
--      - !ruby/object:Gem::Version
--        version: '0'
--- !ruby/object:Gem::Dependency
-   name: logging
-   requirement: !ruby/object:Gem::Requirement
-     requirements:
-@@ -143,9 +129,6 @@
-     - - '>='
-       - !ruby/object:Gem::Version
-         version: 1.6.21
--    - - <
--      - !ruby/object:Gem::Version
--        version: '1.7'
-   type: :runtime
-   prerelease: false
-   version_requirements: !ruby/object:Gem::Requirement
+--- kafo.gemspec.orig	2015-03-31 12:06:49.412864000 +0000
++++ kafo.gemspec	2015-03-31 12:08:23.986697000 +0000
+@@ -28,10 +28,9 @@
+       s.add_development_dependency(%q<simplecov>, ["< 0.9"])
+       s.add_development_dependency(%q<ci_reporter>, ["~> 1.9.0"])
+       s.add_runtime_dependency(%q<kafo_parsers>, [">= 0"])
+-      s.add_runtime_dependency(%q<puppet>, [">= 0"])
+       s.add_runtime_dependency(%q<logging>, [">= 0"])
+       s.add_runtime_dependency(%q<clamp>, [">= 0.6.2"])
+-      s.add_runtime_dependency(%q<highline>, ["< 1.7", ">= 1.6.21"])
++      s.add_runtime_dependency(%q<highline>, [">= 1.6.21"])
+       s.add_runtime_dependency(%q<powerbar>, [">= 0"])
+     else
+       s.add_dependency(%q<bundler>, ["~> 1.3"])
