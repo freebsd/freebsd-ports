@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72ee9707-d7b2-11e4-8d8e-f8b156b6dcc8">
+    <topic>cpio -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gcpio</name>
+	<range><lt>2.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Debian Security Team:</p>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2014-9112">
+	  <p>Heap-based buffer overflow in the process_copy_in
+	    function in GNU Cpio 2.11 allows remote attackers to cause
+	    a denial of service via a large block value in a cpio
+	    archive.</p>
+	</blockquote>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2015-1197">
+	  <p>cpio 2.11, when using the --no-absolute-filenames
+	    option, allows local users to write to arbitrary files
+	    via a symlink attack on a file in an archive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9112</cvename>
+      <url>https://security-tracker.debian.org/tracker/CVE-2014-9112</url>
+      <cvename>CVE-2015-1197</cvename>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=658010</url>
+    </references>
+    <dates>
+      <discovery>2015-03-27</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="264749ae-d565-11e4-b545-00269ee29e57">
     <topic>libzip -- integer overflow</topic>
     <affects>
