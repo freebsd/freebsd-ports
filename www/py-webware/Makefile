@@ -14,6 +14,8 @@ COMMENT=	Versatile web application server written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base
 
+BROKEN=		Too creative
+
 USES=		python:2
 NO_BUILD=	yes
 
