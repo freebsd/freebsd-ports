@@ -7450,3 +7450,4 @@ devel/rubygem-rcov||2015-03-28|Has expired: Does not work with Ruby 2.x
 emulators/linux_dist-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
 emulators/linux_base-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
 www/vimb|www/vimb-gtk3|2015-03-29|Split into www/vimb-gtk2 and www/vimb-gtk3 (former default)
+ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome by changed in the Ports Collection
