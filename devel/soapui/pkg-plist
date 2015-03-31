@@ -50,11 +50,18 @@ bin/soapui.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/Sample-SOAP-Project-soapui-project.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/sample-service.wadl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL/sample-service.wsdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Amazon-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Facebook-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Flickr-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Google-Maps-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Twitter-soapui-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/YouTube-soapui-project.xml
 %%DATADIR%%/bin/ext/readme.txt
+%%DATADIR%%/bin/installationcomplete.sh
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-5.0.0.jar
+%%DATADIR%%/bin/soapui-5.1.2.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
 %%DATADIR%%/bin/soapui-splash.png
@@ -63,13 +70,16 @@ bin/soapui.sh
 %%DATADIR%%/bin/starter-page.html
 %%DATADIR%%/bin/testrunner.sh
 %%DATADIR%%/bin/toolrunner.sh
+%%DATADIR%%/bin/uninstallactiontrack.sh
+%%DATADIR%%/bin/updateinstallation.sh
 %%DATADIR%%/bin/wargenerator.sh
 %%DATADIR%%/lib/activation-1.1.jar
+%%DATADIR%%/lib/analytics-core-5.1.2-os.jar
 %%DATADIR%%/lib/bcprov-jdk15-144.jar
 %%DATADIR%%/lib/binding-2.0.1.jar
 %%DATADIR%%/lib/cajo-1.142.jar
 %%DATADIR%%/lib/commons-beanutils-1.7.0.jar
-%%DATADIR%%/lib/commons-cli-1.0.jar
+%%DATADIR%%/lib/commons-cli-1.2.jar
 %%DATADIR%%/lib/commons-codec-1.3.jar
 %%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-httpclient-3.1.jar
@@ -87,7 +97,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/forms-1.0.7.jar
 %%DATADIR%%/lib/groovy-all-2.1.7.jar
 %%DATADIR%%/lib/guava-14.0.jar
-%%DATADIR%%/lib/hamcrest-core-1.1.jar
+%%DATADIR%%/lib/hamcrest-core-1.3.jar
 %%DATADIR%%/lib/hermes-1.14.jar
 %%DATADIR%%/lib/htmlunit-2.7.jar
 %%DATADIR%%/lib/htmlunit-core-js-2.7.jar
@@ -96,6 +106,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/httpcore-4.1.1.jar
 %%DATADIR%%/lib/httpcore-nio-4.1.1.jar
 %%DATADIR%%/lib/httpmime-4.1.1.jar
+%%DATADIR%%/lib/i4jruntime-5.1.14.jar
 %%DATADIR%%/lib/jaxen-1.1-beta-8.jar
 %%DATADIR%%/lib/jcifs-1.2.9.jar
 %%DATADIR%%/lib/jdom-1.0.jar
@@ -106,9 +117,11 @@ bin/soapui.sh
 %%DATADIR%%/lib/joda-time-1.6.2.jar
 %%DATADIR%%/lib/js-1.7R2.jar
 %%DATADIR%%/lib/json-lib-2.2.2-jdk15.jar
+%%DATADIR%%/lib/json-path-0.9.1.jar
+%%DATADIR%%/lib/json-smart-1.2.jar
 %%DATADIR%%/lib/jsr173_api-1.0.jar
 %%DATADIR%%/lib/jtidy-r872-jdk15.jar
-%%DATADIR%%/lib/junit-4.10.jar
+%%DATADIR%%/lib/junit-4.11.jar
 %%DATADIR%%/lib/l2fprod-common-directorychooser-7.3.jar
 %%DATADIR%%/lib/l2fprod-common-fontchooser-7.3.jar
 %%DATADIR%%/lib/log4j-1.2.14.jar
@@ -122,6 +135,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/org.apache.oltu.oauth2.client-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.common-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.httpclient4-0.31.jar
+%%DATADIR%%/lib/out-app-analytics-provider-5.1.2-os.jar
 %%DATADIR%%/lib/proxy-vole-20131209.jar
 %%DATADIR%%/lib/rsyntaxtextarea-2.5.0.jar
 %%DATADIR%%/lib/sac-1.3.jar
@@ -133,7 +147,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/swingx-soapui.jar
 %%DATADIR%%/lib/ws-commons-util-1.0.2.jar
 %%DATADIR%%/lib/wsdl4j-1.6.2-fixed.jar
-%%DATADIR%%/lib/wss4j-1.6.14.jar
+%%DATADIR%%/lib/wss4j-1.6.16.jar
 %%DATADIR%%/lib/xalan-2.7.1.jar
 %%DATADIR%%/lib/xbean-fixed-2.4.0.jar
 %%DATADIR%%/lib/xbean_xpath-2.4.0.jar
@@ -147,3 +161,5 @@ bin/soapui.sh
 %%DATADIR%%/lib/xmlunit-1.2.jar
 %%DATADIR%%/lib/xom-1.1.jar
 %%DATADIR%%/lib/xstream-1.3.1.jar
+@dir %%DATADIR%%/bin/actions
+@dir %%DATADIR%%/bin/listeners
