@@ -1548,6 +1548,7 @@
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
     SUBDIR += py-flask-admin
+    SUBDIR += py-flask-bootstrap
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-oauthlib
