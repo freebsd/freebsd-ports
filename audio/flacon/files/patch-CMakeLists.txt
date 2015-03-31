@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2014-08-19 17:05:30 UTC
++++ CMakeLists.txt
+@@ -204,6 +204,7 @@ include(translations/translatorsinfo.cma
+ create_translatorsinfo_qrc(TRANSLATORS_INFO_QRC translations)
+ set(LIBRARIES ${LIBRARIES} ${UCHARDET_LIBRARIES})
+ include_directories(${UCHARDET_INCLUDE_DIRS})
++link_directories(${UCHARDET_LIBRARY_DIRS})
+ 
+ 
+ add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES} ${MOC_SOURCES} ${QM_FILES} ${QRC_SOURCES} ${UI_HEADERS} ${ENGINES_CPP} ${ENGINES_H} ${TRANSLATORS_INFO_QRC})
+@@ -271,7 +272,7 @@ configure_file(
+ add_custom_command(TARGET ${PROJECT_NAME}
+     COMMAND gzip -c ${CMAKE_CURRENT_BINARY_DIR}/flacon.1 > ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz
+ )
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION share/man/man1)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION man/man1)
+ 
+ # Add make dist target **************************
+ if(NOT CPACK_PACKAGE_VERSION)

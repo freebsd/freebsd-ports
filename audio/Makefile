@@ -49,9 +49,9 @@
     SUBDIR += autozen
     SUBDIR += baresip
     SUBDIR += baudline
+    SUBDIR += bcg729
     SUBDIR += beast
     SUBDIR += beets
-    SUBDIR += bcg729
     SUBDIR += blop
     SUBDIR += boodler
     SUBDIR += bristol
@@ -152,6 +152,7 @@
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
+    SUBDIR += flacon
     SUBDIR += flake
     SUBDIR += flite
     SUBDIR += fluidsynth

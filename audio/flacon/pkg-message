@@ -1,0 +1,8 @@
+  Flacon uses external programs to perform audio conversion.  Install
+  them manually, depending on your needs, from the following ports:
+
+		autio/faac		audio/flac
+		audio/lame		audio/mac
+		audio/mp3gain		audio/shntool
+		audio/tta		audio/vorbisgain
+		audio/vorbis-tools	audio/wavpack
