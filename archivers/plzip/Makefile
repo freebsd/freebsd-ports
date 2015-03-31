@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plzip
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	archivers
-MASTER_SITES=	SAVANNAH/lzip
+MASTER_SITES=	SAVANNAH/lzip/${PORTNAME}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel, lossless data compressor based on the LZMA algorithm
