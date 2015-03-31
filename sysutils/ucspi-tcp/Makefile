@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	garga/ucspi-tcp
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for building TCP client-server applications
 
 OPTIONS_DEFINE=	RSS_DIFF RBL2SMTPD IPV6 SSL LIMITS
