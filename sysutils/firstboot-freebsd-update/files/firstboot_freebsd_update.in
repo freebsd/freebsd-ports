@@ -9,10 +9,18 @@
 # image, since this only runs on the first boot) to enable this:
 #
 # firstboot_freebsd_update_enable="YES"
+#
+# By default this script will only run on *-BETA*, *-RC*, and *-RELEASE*
+# systems, since those are the only ones for which updates are provided by
+# the FreeBSD project; to run freebsd-update anyway (e.g., on a custom
+# release for which you are providing your own update bits), set:
+#
+# firstboot_freebsd_update_nonstandard="YES"
 
 . /etc/rc.subr
 
 : ${firstboot_freebsd_update_enable:="NO"}
+: ${firstboot_freebsd_update_nonstandard:="NO"}
 
 name="firstboot_freebsd_update"
 rcvar=firstboot_freebsd_update_enable
@@ -21,6 +29,17 @@ stop_cmd=":"
 
 firstboot_freebsd_update_run()
 {
+
+	if ! checkyesno firstboot_freebsd_update_nonstandard; then
+		case "`uname -r`" in
+		*-BETA* | *-RC* | *-RELEASE*)
+			;;
+		*)
+			echo "Firstboot freebsd-update disabled on `uname -r`"
+			return 0
+		;;
+		esac
+	fi
 
 	freebsd-update fetch
 	if [ -e /var/db/freebsd-update/`echo / | sha256`-install ]; then
