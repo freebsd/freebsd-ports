@@ -509,11 +509,10 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/aiff.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/alac.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/ape.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/avs.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/cdda.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_digital.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_pro.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_truehd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dolbydigital.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dolbypro.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dts.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/dtshd_ma.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/eac3.png
@@ -527,12 +526,12 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/pcm.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/ra.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/shn.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/vc1.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/vorbis.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wav.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wave.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wma.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wmahd.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wmapro.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wmav2.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Audio Codec/wv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Content Rating/G.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Content Rating/NC-17.png
@@ -590,691 +589,546 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Content Rating/nl/9.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Content Rating/nl/AL.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Content Rating/nl/Alle Leeftijden.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Media/bluray.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Media/dvd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Media/hddvd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/4AD.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/5 Minute Walk.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/AM Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/AM.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Aftermath.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Alfa Matrix.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Alternative Tentacles.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Amphetamine Reptile.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Arista.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Astralwerks.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Atlantic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/BMG International.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/BMG.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/BadBoy.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Beggars Banquet.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Blanco y Negro.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Bluenote Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Bluenote.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Brainwashed.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/CBS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/CZ.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Capitol Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Capitol.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Cash Money.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Cheeky Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Cheeky.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Chrysalis.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Columbia.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Creation.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Death Row.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Decca.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Def American.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Def Jam.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Dischord.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Dreamworks.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Drive-Thru.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/EMI.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Elektra.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Elite.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Epic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Epitaph.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/FFss.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Factory.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Fiction.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Fueled by Ramen.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/G-Unit.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Geffen.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Grand Central.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Grand Royal.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/GrandHuslte.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Homestead.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Hut.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/IRS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Indigo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Interscope.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Ipecac.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Island.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/J-Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/JBO.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Jive.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Koch.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Konvict.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Kung Fu.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/LaFace.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Labrador.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/London.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/MCA.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Mammoth.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Matador.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Maverick.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Mercury.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Merge.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Metropolis.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Motown.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Mute.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Nettwerk.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Off Beat.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/One Little Indian.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/PIAS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Parlophone.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Play It Again Sam.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Polydor.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Polygram.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/RCA.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Radioactive.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Rap-A-Lot.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Reprise.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Rhino.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Roadrunner.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Roc-A-Fella.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Rough Trade.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Rykodisc.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/SPV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/SRC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Saddle Creek.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Shady.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sire.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Slip-N-Slide.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sony BMG.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sony International.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sony Music.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sony.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Sub Pop.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/TVT.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Too Pure.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Tooth Nail.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Touch and Go.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Universal Records.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Universal Republic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Universal.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/UpFront.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/V2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Vertigo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Victory.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Virgin.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/WEA.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Warner Bros..png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Warner Music.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Warner.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Warp.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Wax Trax!.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/XL Recordings.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/XL.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Zomba.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Record Label/Zyx.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/1492_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/20th_Century_Fox.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/1492_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/20th_century_fox.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/2929.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/360_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/40_Acres.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/57 irving.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/777_Film_Corp.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ABC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ABC_Australia.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/AFI.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/A_and_E.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/A_and_M.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Aardman.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Adult_Swim.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/After_Dark.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Alcon_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Alfred_Hitchcock_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Alliance_Atlantis.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Alloy.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Alphaville.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Amblin_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/American_Masters.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/American_Zoetrope.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Anchor_Bay_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Animal_Planet.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Antena-3.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Apatow_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Arte.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Artisan_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Aspen_Film_Society.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Atom_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Australian_Film_Commission.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Avalanche_Studios.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC America.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC Four.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC One.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC Three.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC Two.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BBC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/BET.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Bad_Boy_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Bad_Robot.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Baltimore_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Batjac.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Beacon.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Becker_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Belair_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Biography_Channel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Blind_Ambition_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Blue_Sky.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Blue_Underground.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Boomerang.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Bravo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Brightlight.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Bristol_Bay.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Broken_Lizard.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Brooklyn_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Buena_Vista.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Bulletproof.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/C2_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CBC Television.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CBC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CBS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CMT.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CNC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CPFilms.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CW.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/CanalPlus.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Cannon_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Capitol_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Caravan_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Carnaby.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Casablanca_Filmes.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Cascade_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Casey_Silver_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Castle_Rock_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Cat_In_The_Hat.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Centropolis_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Channel Nine.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Channel Seven.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Channel Ten.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Channel5.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Cinemax.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Columbia_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Constantin_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Constellation.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Cookie_Jar.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Criterion.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/DC_Comics.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/DMAX.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/DNA.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Damselfly.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Danjaq.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dark_Castle_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dark_Horse.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Davis_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/De_Laurentiis.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Destination_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dickhouse_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Digital_Factory.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dimension_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Disney XD.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Distant_Horizon.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dolores_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Don_Simpson-Jerry_Bruckheimer_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Donners.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Dreamworks.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Ealing.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Eclectic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Edmonds_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Electric_Enterteinment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Electric_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Eleven_Eleven.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Encore.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Endgame_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Entara.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Eon_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Escape_Artists.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/EuroSport.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Europa_Corp.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Eyekiss_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/FX.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Film_Colony.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Film_Four.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Film_Institut.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Film_Media.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Film_TV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Filmauro.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Filmax_Animation.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Filmforderung_Hamburg.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Filmstiftung_Nordrhein-Westfalen.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Finos_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fireworks_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/First_Look_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Flower_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Focus_Features.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Forte_Cinema.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fourhands_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fox.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fox_Atomic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fox_Searchlight_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/France 2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/France 3.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/France 4.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Franchise_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Fuji-TV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Future_Flix.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/G4.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Gaumont.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Geffen.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Ghost_House.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Glass_Eye_Pix.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Global-TV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Glue_Works_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Gold_Circle_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Goldwyn.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Gracie_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Gramercy_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Grandhustle.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Green_Street.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Greentree_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Grub_Street_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Guinea_Pig_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/HBO.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/HGTV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hallucination_On_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hand_Made_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Happy_Madison.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hasbro.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hemus_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Heyday_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hollywood_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hustler_Video.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Hyde_Park_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Icon_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Illumination_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Image.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Image_Movers.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Imagi_Studios.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Imaginary_Forces.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Imagine.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Imperial_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Independent_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Industrial_Light_And_Magic.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Ingenious_Film_Partners.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Ingenius_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Inside_Track.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Interactual.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Intermedia.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Interscope-Shady-Aftermath.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Intrepid_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Island_World.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Janus.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Jarowskij.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Jerry_Bruckheimer_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Jersey_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Jim_Henson.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kadokawa_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kanal 5.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kid_Rhino.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Killer_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kinepolis.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/King_World.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kinowelt.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Kopelson.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lakeshore_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Latham.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lawrence_Bender_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Legendary_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Liberty_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lifetime.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lift.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lightstorm_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lions_Gate_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Little_Chicken.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/London_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lookout.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lucasfilm.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Lucky_7.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/MGM.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/MPCA.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/MTV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/MTV3.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Magnolia_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mandalay_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mandate_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Marc_Dorcel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Marvel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Maverick.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Max.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Maya_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Meridian_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Midway_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mike_Zoss_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Milkshake.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Millenium.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Minds_Eye_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mirage.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Miramax.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Momentum_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Monarch_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Monolith.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Montecito_Picture_Company.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Morgan_Creek.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mosaic_Media.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Musashi_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Mutual_Film_Company.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/NBC Universal.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/NBC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nat Geo Wild.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/National_General_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nelvana.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Netflix.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Network Ten.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/New_Deal_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/New_Line_Cinema.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/New_Zealand_Film_Commission.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Newmarket.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nick Jr.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nick-at-Nite.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nickelodeon.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nicktoons.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nine Network.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nord-Ouest.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Nordisk Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Northern_Lights_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/O2_Filmes.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ORF.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ORF1 HD.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Oddlot.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Only_Vegas.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Orion.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Overturefilms.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/PBS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pan Vision.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pandora_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Paramount_Classics.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Paramount_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Paramount_Vantage.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Participant.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pathe.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Peacearch.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Peters_Entertainment2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pheonix.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Picturehouse.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pixar.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Plan_B.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Platinum_Dunes.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Play_UK.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Playtone.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Polygram.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Porchlight.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Portman_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Private_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Pro7.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Profilm_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Promotion_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/RTL II.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/RTL.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Radical_Media.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Rai_Cinema.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Red_Hour.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Red_Wagon_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Redrum.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Reel_Dog_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Regency.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Relativity_Media.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Renaissance_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Republic_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Resident_Evil.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Revere_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Revision3.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Revolution_Studios.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Rick_Mill.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Rickety_Shack_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/River_Road_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Roadside_Attractions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Rogue_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Romar.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Rysher_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SBS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SMC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SNL_Studios.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SVT.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SVT1.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/SVT2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Salter_Street_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Sat1.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Saturn_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Scifi.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Scott_Free.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Screen Australia.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Screen_Gems.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Selznick_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Seven Network.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Shady_Acres_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Shangri-La_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Shout_Factory.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Showcase.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Showtime.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Sidney_Kimmel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Silver_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Sky 1.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Slim_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Sobini_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Sony.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Spelling_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Spike.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Spitfire_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Splendid.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Spyglass_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Stage6.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Starbucks_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Starz.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Studio_Canal.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Studio_Ghibli.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Summit.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Svensk_Filmindustri.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TBS.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TLC.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV 2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV Tokyo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV2.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV3.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV4.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TV_Land.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Tandem.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Taurus_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Telecinco.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Telemundo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Ten.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/The_Entertainment_Group.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/The_Film_Foundry.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/The_Independent_Film_Channel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/The_WB_Television_Network.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Thierry_Mugler.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Think_Film.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/This_Is_That.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Touchstone.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Tristar_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/TruTV.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Twisted_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/UK_Film_Council.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/UPN.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/United_Artists.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Universal.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Univision.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/VOX.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Vertigo.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Viacom.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/View_Askew.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Village_Roadshow_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Virtual_Studios.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Vital_Film_Works.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Viz.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Vortex_Entertainment.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Walden_Media.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Walt_Disney_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Warner_Bros.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Warner_Bros_Animation.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Warner_Independent_Pictures.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Water_Walk_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Weinstein_Company.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Wild_Bunch.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Wild_Side.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Working_Title_Films.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/XXX_Productions.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Yari_Film_Group.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Zaloom_Mayfield.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/Zomba.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/360_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/40_acres.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/57_irving.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/777_film_corp.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/a_and_e.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/aardman.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/abandon.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/abcfamily.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/abc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/abc_australia.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/abc_family.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/adult_swim.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/afi.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/after_dark.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/alcon_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/alfred_hitchcock_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/alliance_atlantis.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/alloy.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/alphaville.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/amazon_studios.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ambience.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/amblin_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/amc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/american_masters.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/american_zoetrope.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/anchor_bay_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/animal_planet.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/antena_3.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/apatow_productions.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/apple.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ard.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ark.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avnet kerner.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/arte.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/artisan_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/aspen_film_society.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/atom_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/australian_film_commission.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avalanche_studios.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avnet_kerner.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/babylonian.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bandai visual.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bad_boy_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bad_robot.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/baltimore_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bandai.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bandai_visual.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bandapart.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/batjac.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bazmark.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc prime.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_america.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_four.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_one.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_prime.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_three.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bbc_two.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/beacon.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/becker_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/belair_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bet.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bigtalk.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/biography_channel.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/blackdog.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/blind_ambition_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/blue_sky.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/blue_underground.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bnn.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/canal+.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/boomerang.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bravo.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/brightlight.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bristol_bay.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/broken_lizard.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/brooklyn_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/buena_vista.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/bulletproof.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/c2_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/canalplus.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cannon_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/capcom.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/capitol_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/caravan_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/carnaby.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/carolco.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cartoonnetwork.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/casablanca_filmes.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cascade_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/casey_silver_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/castle_rock_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cat_in_the_hat.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cbbc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cbc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cbs.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/celador.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ceska televize.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel4uk.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/centropolis_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ceska_televize.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel4.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel5.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel_nine.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel_seven.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/channel_ten.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cheyenne.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/comedycentral.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cinemax.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cmt.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cnc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/columbia_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/comedy_central.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/concorde.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/condemned.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/constantin_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/constellation.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cookie_jar.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cpfilms.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/criterion.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ctv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/cw.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/czolowka.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/damselfly.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/danjaq.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dark_castle_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dark_horse.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/davis_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dc_comics.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/de_laurentiis.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/destination_films.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dfi.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/digital playground.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/discoverychannel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/disneychannel.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/e!.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dickhouse_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/digital_factory.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/digital_playground.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dimension_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/discovery_channel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/disney_channel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/disney_xd.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/distant_horizon.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dmax.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dna.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dolores_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/don_simpson_jerry_bruckheimer_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/donners.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/dreamworks.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/e4.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ealing.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eclectic.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/edmonds_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/electric_enterteinment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/electric_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eleven_eleven.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/emmedia.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/encore.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/endgame_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/entara.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/entertainment_television.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eon_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/escape_artists.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/espn.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eurimages.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/europa_corp.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eurosport.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/excel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/eyekiss_films.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fact.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/figaro.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film polski.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_colony.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_four.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_institut.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_media.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_polski.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/film_tv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/filmauro.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/filmax_animation.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/filmforderung_hamburg.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/filmoteka narodowa.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/filmstiftung_nordrhein-westfalen.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/finos_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fireworks_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/first_look_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/five.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/foodnetwork.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/flower_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/focus_features.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/food_network.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/forte_cinema.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fourhands_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fox.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fox_atomic.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fox_searchlight_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/france_2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/france_3.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/france_4.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/franchise_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fuji_tv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/future_flix.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/fx.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/g4.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gaumont.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/geffen.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ghost_house.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gk_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/glass_eye_pix.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/global_tv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/glue_works_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gofilms.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gold_circle_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/goldwyn.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gracie_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gramercy_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/grandhustle.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/green_street.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/greentree_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/grub_street_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/guinea_pig_films.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/gutek.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/halestorm.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/historychannel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hallucination_on_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hand_made_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/happy_madison.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hasbro.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hbo.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hemus_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/heyday_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hgtv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/history_channel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hollywood_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hustler_video.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/hyde_park_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/icon_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ifc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/illumination_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/image.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/image_movers.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/imagi_studios.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/imaginary_forces.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/imagine.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/imax.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/imperial_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/independent_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/industrial_light_and_magic.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/infilm.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ingenious_film_partners.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ingenius_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/inside_track.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/interactual.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/intermedia.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/interscope_shady_aftermath.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/intrepid_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/island_world.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/itv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/itv1.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/itv2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/janus.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/jarowskij.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/jawa.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/jerry_bruckheimer_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/jersey_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/jim_henson.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kadokawa_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kadr.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kamera.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kanal_5.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kennedymarshall.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kid_rhino.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/killer_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kinepolis.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/king_world.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kinowelt.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/kopelson.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ladd.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lakeshore_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/latham.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lawrence_bender_productions.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/league of noble peers.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/legendary_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/liberty_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lifetime.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lift.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lightstorm_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lionsgate.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/little_chicken.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/london_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lookout.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lucasfilm.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/lucky_7.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/madman.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/magnolia_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mandalay_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mandate_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/manga.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/marc_dorcel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/marvel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/maverick.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/maya_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/media8.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mediapro.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/meridian_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mgm.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mibac.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/midway_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mike_zoss_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/milkshake.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/millenium.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/minds_eye_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mirage.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/miramax.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/momentum_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/monarch_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/monolith.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/montecito_picture_company.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/morgan_creek.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mosaic_media.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mosfilm.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mpca.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/msnbc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mtv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mtv3.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/musashi_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mutual_film_company.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/myriad.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/mytv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nala.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nat_geo_wild.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/national_general_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nbc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nbc_universal.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nelvana.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/netflix.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/new_deal_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/new_line_cinema.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/new_zealand_film_commission.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/newmarket.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ngc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nick_at_nite.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nick_jr.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nickelodeon.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nicktoons.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nine network.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nord_ouest.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nordisk film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/northern_lights_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nothing.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/nuimage.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/o2_filmes.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/oddlot.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/oko.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/only_vegas.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/orf.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/orion.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/overturefilms.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pan_vision.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pandora_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/paramount_classics.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/paramount_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/paramount_vantage.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/participant.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pathe.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pbs.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/peacearch.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pecf.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/peters_entertainment2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pheonix.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/picturehouse.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pisf.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pixar.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/plan_b.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/platige.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/platinum_dunes.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/play_uk.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/playtone.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/polsat.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/polygram.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/porchlight.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/portman_film.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/premiere direkt.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/premiere.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/private_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/pro7.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/profilm_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/promotion_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/prosieben.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/radical_media.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rai_cinema.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rankin.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/red_hour.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/red_wagon_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/redrum.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/reel_dog_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/regency.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/relativity_media.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/renaissance_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/republic_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/resident_evil.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/revere_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/revision3.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/revolution_studios.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rhombus.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rick_mill.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rickety_shack_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/river_road_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/roadside_attractions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rogue_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/romar.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl4.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl5.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl7.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl8.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rtl_ii.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/rysher_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/salter_street_films.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sandrew.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/saul zaentz.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sat1.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/saturn_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/saul_zaentz.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sbs.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/scifi.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/scott_free.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/screen australia.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/screen_gems.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/selznick_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/semafor.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/seven network.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sfi.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/shady_acres_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/shangri-la_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/shout_factory.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/showcase.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/showtime.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sidney_kimmel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/silver_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sky.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sky_1.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/slim_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/smc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/snl_studios.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sobini_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/sony.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/space.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/spelling_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/spike.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/spitfire_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/splendid.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/spyglass_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/squareenix.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/stage6.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/starbucks_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/starz.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/steele.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/storyline.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/studio_canal.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/studio_ghibli.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/summit.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/svensk_filmindustri.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/svt.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/svt1.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/svt2.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/syfy.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/syndicated.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/syrena.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tandem.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/taurus_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tbs.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/telecinco.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/telemundo.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/telos.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tf1.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_cw.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_entertainment_group.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_film_foundry.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_hub.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/thecw.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/thewb.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_independent_film_channel.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_wb.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/the_wb_television_network.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/thierry_mugler.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/think_film.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/this_is_that.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tlc.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tnt.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/toho.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tor.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/touchstone.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tristar_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/trutv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/turner.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv3.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv4.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv_2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv_land.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tv_tokyo.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tvn.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tvnz.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/tvp.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/twisted_pictures.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/ugc.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/usanetwork.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/uk_film_council.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/united_artists.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/universal.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/univision.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/upn.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/usa_network.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vara.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/versus.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vertigo.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vh1.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/viacom.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/view_askew.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/village_roadshow_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/virtual_studios.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vital_film_works.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/viz.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vortex_entertainment.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vox.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vpro.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/vtm.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/walden_media.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/walt_disney_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/warner_bros.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/warner_bros_animation.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/warner_independent_pictures.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/water_walk_productions.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/wdr.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/weinstein_company.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/wfdif.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/wgn.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/wild_bunch.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/wild_side.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/working_title_films.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/xfilme.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/xxx_productions.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/yari_film_group.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/zaloom_mayfield.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/zdf.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/zebra.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/zentropa.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/avc1.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/divx.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/dvd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/flv.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/zomba.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/h264.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/hd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/hdtv.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mkv.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mp4.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mpeg.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mpeg2.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/hevc.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mpeg1video.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mpeg2video.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/mpeg4.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/quicktime.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/sdtv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/vc1.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/wmv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/wmvhd.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Codec/xvid.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Frame Rate/24p.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Frame Rate/25p.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Frame Rate/50p.png
@@ -1295,7 +1149,6 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/576i.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/720.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/8k.png
-%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/dolbydigital.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/hdtv.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/sd.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/blank.png
@@ -1314,6 +1167,7 @@
 %%DATADIR%%/Resources/Plug-ins/OpenSubtitles.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/OpenSubtitles.bundle/Contents/Strings/en.json
 %%DATADIR%%/Resources/Plug-ins/OpenSubtitles.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/OpenSubtitles.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/Resources/icon-default.png
@@ -1478,8 +1332,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.funnyordie/URL/FunnyOrDie/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxguidetv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxguidetv/URL/fxguidetv/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxuk/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxuk/URL/FXUK/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/URL/G4TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/ServiceInfo.plist
@@ -1616,8 +1468,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/URL/Schweizer Fernsehen/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.showmedo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.showmedo/URL/ShowMeDo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.skysports/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.skysports/URL/SkySports/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL/Slice/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snotr/ServiceInfo.plist
@@ -1650,8 +1500,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ted/URL/TED Talks/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tested/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tested/URL/Tested/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.the-big-picture/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.the-big-picture/URL/The Big Picture/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/URL/The Berrics/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecolbertreport/ServiceInfo.plist
@@ -1676,6 +1524,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.triplem/URL/TripleM/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/URL/Tubi TV/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tudou/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tudou/URL/Tudou/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/Shared Code/tv4play.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServiceCode.pys
@@ -1720,8 +1570,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videomega/URL/Videomega/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/URL/Videostrip/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/URL/videovideo/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/URL/Vimcasts/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/ServiceInfo.plist
@@ -1745,8 +1593,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/xHamster/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.yahoo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.yahoo/URL/Yahoo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youku/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youku/URL/Youku/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/URL/YouTube/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.youtube/URL/YouTube/ServicePrefs.json
@@ -1810,7 +1656,7 @@
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/Frameworks/EKSpinner/Resources/small_black_7.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/css/main-desktop.css
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/css/main.css
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.eot
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.svg
@@ -2141,6 +1987,7 @@
 %%DATADIR%%/Resources/Profiles/Mystery 4.xml
 %%DATADIR%%/Resources/Profiles/Mystery 5.xml
 %%DATADIR%%/Resources/Profiles/Mystery.xml
+%%DATADIR%%/Resources/Profiles/Opera TV App.xml
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
 %%DATADIR%%/Resources/Profiles/PlayStation 3.xml
@@ -2152,6 +1999,8 @@
 %%DATADIR%%/Resources/Profiles/Roku.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-3.1.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-5.1.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-5000X-6.x.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-6.x.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml
@@ -2192,6 +2041,12 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,3.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,5.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,6.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,7.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,8.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,9.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-5,3.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-5,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-2,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-3,2.xml
@@ -2205,6 +2060,8 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-5,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-6,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-6,2.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPhone-7,1.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPhone-7,2.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-5,1.xml
@@ -3044,9 +2901,9 @@
 %%DATADIR%%/Resources/server.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
-%%DATADIR%%/libavcodec.so.55
-%%DATADIR%%/libavformat.so.55
-%%DATADIR%%/libavutil.so.52
+%%DATADIR%%/libavcodec.so.56
+%%DATADIR%%/libavformat.so.56
+%%DATADIR%%/libavutil.so.54
 %%DATADIR%%/libboost_chrono.so.1.56.0
 %%DATADIR%%/libboost_filesystem.so.1.56.0
 %%DATADIR%%/libboost_iostreams.so.1.56.0
@@ -3074,7 +2931,7 @@
 %%DATADIR%%/libsoci_sqlite3.so.3.0.0
 %%DATADIR%%/libsqlite3.so.8
 %%DATADIR%%/libssl.so.1.0.0
-%%DATADIR%%/libswscale.so.2
+%%DATADIR%%/libswscale.so.3
 %%DATADIR%%/libvo-aacenc.so.0
 %%DATADIR%%/libxml2.so.9
 %%DATADIR%%/libxslt.so.2
