@@ -12,7 +12,7 @@ MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		nss>=3.17.4:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo \
