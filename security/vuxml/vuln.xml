@@ -57,6 +57,57 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8e887b71-d769-11e4-b1c2-20cf30e32f6d">
+    <topic>subversion -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.5.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+      <package>
+	<name>subversion16</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Subversion HTTP servers with FSFS repositories are vulnerable to a remotely
+	   triggerable excessive memory use with certain REPORT requests.</p>
+	  <p>Subversion mod_dav_svn and svnserve are vulnerable to a remotely triggerable
+	    assertion DoS vulnerability for certain requests with dynamically evaluated
+	    revision numbers.</p>
+	  <p>Subversion HTTP servers allow spoofing svn:author property values for new
+	    revisions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://subversion.apache.org/security/</url>
+      <cvename>CVE-2015-0202</cvename>
+      <cvename>CVE-2015-0248</cvename>
+      <cvename>CVE-2015-0251</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-0202-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0248-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0251-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d0c97697-df2c-4b8b-bff2-cec24dc35af8">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
