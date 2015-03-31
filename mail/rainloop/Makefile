@@ -18,9 +18,6 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 RHASH=		3cd56183a7425a8750c19bc688aedd81
 RBUILD=		291
 
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
-
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -31,6 +28,7 @@ PLIST_SUB=	VER="${RVER}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+BROKEN=		You must select one and only one option from the DB single
 
 .include <bsd.port.options.mk>
 
