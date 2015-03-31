@@ -18,7 +18,9 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_AUTOTOOLS=	autoheader
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		cpe gmake libtool pathfix pkgconfig
+
+CPE_VENDOR=	json-c_project
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Werror||g' ${WRKSRC}/Makefile.in
