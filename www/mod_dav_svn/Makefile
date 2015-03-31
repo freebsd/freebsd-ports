@@ -22,12 +22,15 @@ CONFIGURE_ARGS+=	--with-apxs=${APXS} \
 			--with-apache-libexecdir \
 			--without-gnome-keyring \
 			--without-kwallet
-
-SUB_FILES=	pkg-install
+SUB_FILES+=	220_subversion.conf.sample
 
 PLIST_SUB+=	SED=${SED}
 
 ALL_TARGET=	apache-mod
 INSTALL_TARGET=	install-mods-shared
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${CP} ${WRKDIR}/220_subversion.conf.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 .include <bsd.port.post.mk>
