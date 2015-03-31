@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	2010-03-25 22:34:54.000000000 +0100
-+++ doc/Makefile.in	2010-03-25 22:35:08.000000000 +0100
+--- doc/Makefile.in.orig	2010-03-10 13:00:35 UTC
++++ doc/Makefile.in
 @@ -813,7 +813,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
