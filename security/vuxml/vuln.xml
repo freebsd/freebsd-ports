@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f450587b-d7bd-11e4-b5a4-14dae9d5a9d2">
+    <topic>osc -- shell command injection via crafted _service files</topic>
+    <affects>
+      <package>
+	<name>osc</name>
+	<range><lt>0.151.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SUSE Security Update reports:</p>
+	<blockquote cite="https://www.suse.com/security/cve/CVE-2015-0778.html">
+	  <p>osc before 0.151.0 allows remote attackers to execute
+	    arbitrary commands via shell metacharacters in a _service
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0778</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2015-0778.html</url>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=901643</url>
+      <url>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00012.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-16</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72ee9707-d7b2-11e4-8d8e-f8b156b6dcc8">
     <topic>cpio -- multiple vulnerabilities</topic>
     <affects>
