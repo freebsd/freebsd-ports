@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	2.11.2
+PORTVERSION=	2.12.1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
