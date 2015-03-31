@@ -17,8 +17,8 @@
 +endif
  
  all :
--	$(CC) $(CFLAGS) $(CFLAGS_OPT) -o apngdis apngdis.cpp -s $(LIBS)
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o apngdis apngdis.cpp -s $(LIBS) $(LDFLAGS)
+-	$(CC) $(CFLAGS) $(CFLAGS_OPT) -o $(PACKAGE) $(PACKAGE).cpp -s $(LIBS)
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $(PACKAGE) $(PACKAGE).cpp -s $(LIBS) $(LDFLAGS)
  
  .PHONY : clean
 
