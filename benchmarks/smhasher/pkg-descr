@@ -1,0 +1,4 @@
+SMHasher is a test suite designed to test the distribution, collision,
+and performance properties of non-cryptographic hash functions - it
+aims to be the "DieHarder" of hash testing, and does a pretty good job
+of finding flaws with a number of popular hashes.
