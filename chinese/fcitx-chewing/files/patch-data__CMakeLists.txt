@@ -1,0 +1,12 @@
+--- ./data/CMakeLists.txt.orig	2013-06-04 03:02:38.000000000 +0900
++++ ./data/CMakeLists.txt	2014-03-19 14:07:16.000000000 +0900
+@@ -1,5 +1,5 @@
+-install(FILES chewing.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/imicon/)
++install(FILES chewing.png DESTINATION share/fcitx/imicon/)
+ install(FILES chewing.png DESTINATION share/icons/hicolor/48x48/apps/ RENAME fcitx-chewing.png)
+-install(FILES default/chewing.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin/default)
+-install(FILES dark/chewing.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin/dark)
+-install(FILES classic/chewing.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin/classic)
++install(FILES default/chewing.png DESTINATION share/fcitx/skin/default)
++install(FILES dark/chewing.png DESTINATION share/fcitx/skin/dark)
++install(FILES classic/chewing.png DESTINATION share/fcitx/skin/classic)

@@ -2,16 +2,7 @@ bin/rime_deployer
 bin/rime_dict_manager
 include/rime_api.h
 lib/librime.so
-lib/librime.so.0
 lib/librime.so.%%VER%%
+lib/librime.so.1
 libdata/pkgconfig/rime.pc
 share/cmake/rime/RimeConfig.cmake
-%%DATADIR%%/data/cangjie5.prism.bin
-%%DATADIR%%/data/cangjie5.reverse.bin
-%%DATADIR%%/data/cangjie5.table.bin
-%%DATADIR%%/data/essay.kct
-%%DATADIR%%/data/luna_pinyin.prism.bin
-%%DATADIR%%/data/luna_pinyin.reverse.bin
-%%DATADIR%%/data/luna_pinyin.table.bin
-%%DATADIR%%/data/luna_pinyin_fluency.prism.bin
-%%DATADIR%%/data/luna_pinyin_simp.prism.bin

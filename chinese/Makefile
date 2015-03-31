@@ -16,6 +16,7 @@
     SUBDIR += bg5ps
     SUBDIR += big5width
     SUBDIR += bitchx
+    SUBDIR += brise
     SUBDIR += bsdconv-opencc
     SUBDIR += bug5
     SUBDIR += c2t

@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-sunpinyin
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.1
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lichray@gmail.com
 COMMENT=	SunPinyin support for Fcitx
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
-BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
-RUN_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
+		libsunpinyin.so:${PORTSDIR}/chinese/sunpinyin
 
 USES=		cmake gettext pkgconfig tar:xz
-USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
-
-PROJECTHOST=	fcitx
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- ./data/CMakeLists.txt.orig	2013-07-01 06:07:48.000000000 +0900
++++ ./data/CMakeLists.txt	2014-03-20 13:22:18.000000000 +0900
+@@ -1,5 +1,5 @@
+-install(FILES symbol.txt DESTINATION ${FCITX4_PREFIX}/share/fcitx/hangul/)
+-install(FILES hangul.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/imicon/)
++install(FILES symbol.txt DESTINATION share/fcitx/hangul/)
++install(FILES hangul.png DESTINATION share/fcitx/imicon/)
+ install(FILES hangul.png RENAME fcitx-hangul.png DESTINATION share/icons/hicolor/64x64/apps/)
+ install(FILES hanja_active.png RENAME fcitx-hanja-active.png DESTINATION share/icons/hicolor/48x48/status/)
+ install(FILES hanja_inactive.png RENAME fcitx-hanja-inactive.png DESTINATION share/icons/hicolor/48x48/status/)

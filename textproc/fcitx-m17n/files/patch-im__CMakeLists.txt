@@ -1,0 +1,8 @@
+--- ./im/CMakeLists.txt.orig	2013-11-03 20:33:26.000000000 +0900
++++ ./im/CMakeLists.txt	2014-03-20 13:05:01.000000000 +0900
+@@ -31,4 +31,4 @@
+     LINK_LIBS ${M17N_LIBRARIES}
+ )
+ 
+-install(FILES default DESTINATION ${FCITX4_PREFIX}/share/fcitx/m17n)
++install(FILES default DESTINATION share/fcitx/m17n)

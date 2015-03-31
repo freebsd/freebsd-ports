@@ -1,0 +1,11 @@
+--- libpinyin.pc.in.orig	2014-06-05 14:28:26.000000000 +0800
++++ libpinyin.pc.in	2014-06-05 14:28:35.000000000 +0800
+@@ -2,7 +2,7 @@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+-pkgdatadir=@libdir@/libpinyin
++pkgdatadir=@datadir@/libpinyin
+ 
+ libpinyinincludedir=${includedir}/libpinyin-@VERSION@
+ libpinyin_binary_version=@LIBPINYIN_BINARY_VERSION@

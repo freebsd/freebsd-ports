@@ -1,0 +1,20 @@
+--- ./data/CMakeLists.txt.orig	2013-11-10 22:11:24.000000000 +0900
++++ ./data/CMakeLists.txt	2014-03-20 00:20:01.000000000 +0900
+@@ -1,8 +1,8 @@
+ # for im icon
+-install(FILES rime.png RENAME rime.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/imicon)
++install(FILES rime.png RENAME rime.png DESTINATION share/fcitx/imicon)
+ 
+ # for skin
+-install(DIRECTORY default DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin)
++install(DIRECTORY default DESTINATION share/fcitx/skin)
+ 
+ # with prefix
+ foreach(svg rime rime-deploy rime-sync)
+@@ -14,4 +14,4 @@
+ foreach(svg rime-im rime-latin rime-disable)
+ install(FILES ${svg}.png DESTINATION share/icons/hicolor/48x48/apps)
+ install(FILES ${svg}.svg DESTINATION share/icons/hicolor/scalable/status)
+-endforeach()
+\ No newline at end of file
++endforeach()

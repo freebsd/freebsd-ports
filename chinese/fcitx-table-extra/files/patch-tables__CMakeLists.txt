@@ -1,0 +1,10 @@
+--- ./tables/CMakeLists.txt.orig	2013-09-02 08:32:18.000000000 +0900
++++ ./tables/CMakeLists.txt	2014-03-20 12:40:01.000000000 +0900
+@@ -22,5 +22,5 @@
+ endforeach()
+ add_custom_target(table_data ALL DEPENDS ${MB_FILE})
+ 
+-install(FILES ${CONF_FILE} DESTINATION ${FCITX4_PREFIX}/share/fcitx/table)
+-install(FILES ${MB_FILE} DESTINATION ${FCITX4_PREFIX}/share/fcitx/table)
++install(FILES ${CONF_FILE} DESTINATION share/fcitx/table)
++install(FILES ${MB_FILE} DESTINATION share/fcitx/table)
