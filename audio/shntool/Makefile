@@ -7,31 +7,32 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Multi-purpose .wav processing utility
+COMMENT=	Multi-purpose WAVE data processing and reporting utility
 
 GNU_CONFIGURE=	yes
-SHN_ALIASES=	tool len fix hash pad join split cat cmp cue conv info strip gen trim
+SHN_ALIASES=	cat cmp conv cue fix gen hash info join len pad split \
+		strip tool trim
+
 PLIST_FILES=	${SHN_ALIASES:S|^|bin/shn|} \
 		man/man1/shntool.1.gz
 
-OPTIONS_DEFINE=	AIFF SHN FLAC APE OFR LPAC WV ALAC LA TTA BONK KXS
-AIFF_DESC=	AIFF support via sox
-SHN_DESC=	Shorten support
-OFR_DESC=	OptimFROG support
-LPAC_DESC=	LPAC support
-WV_DESC=	WavPack support
-ALAC_DESC=	Apple Lossless Audio support
-LA_DESC=	Laudio support
-BONK_DESC=	Bonk lossy/lossless audio support
-KXS_DESC=	Kexis support
+OPTIONS_DEFINE=	AIFF ALAC APE FLAC KXS LA LPAC OFR SHN TTA WAVPACK
 
-RDEP=	AIFF:sox SHN:shorten FLAC APE:mac OFR:ofr:optimfrog LPAC WV:wavpack \
-	ALAC:alac LA:linux-laudio TTA:ttaenc:tta BONK KXS:kexis
+AIFF_DESC=	AIFF audio format support (via SoX)
+KXS_DESC=	Kexis audio format support
+LA_DESC=	Laudio audio format support
+LPAC_DESC=	LPAC audio format support
+OFR_DESC=	OptimFROG audio format support
+SHN_DESC=	Shorten audio compressor support
+
+RDEP_MAPPING=	AIFF:sox ALAC:alac APE:mac FLAC KXS:kexis \
+		LA:laudio:linux-laudio LPAC OFR:ofr:optimfrog \
+		SHN:shorten TTA:ttaenc:tta WAVPACK
 
 .include <bsd.port.options.mk>
 
 .for o in ${PORT_OPTIONS}
-m=	${RDEP:M${o}*}
+m=	${RDEP_MAPPING:M${o}*}
 .if ${m}
 b=	${m:C/^[A-Z]*://:C/:.*//:tl}
 p=	${m:C/^[A-Z]*://:C/.*://:tl}
