@@ -1,6 +1,3 @@
 sbin/dnrd
 %%ETCDIR%%/master.sample
 man/man8/dnrd.8.gz
-@unexec echo ""
-@unexec echo "If you are permanently removing dnrd, remove user/group 'dnrd'" | /usr/bin/fmt
-@unexec echo ""
