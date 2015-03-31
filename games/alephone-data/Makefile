@@ -13,6 +13,8 @@ DIST_SUBDIR=	alephone
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Released Marathon data files for the Aleph One port
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
 USES=		zip
