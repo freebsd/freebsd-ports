@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -32,7 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		gmake iconv libtool perl5 pgsql shebangfix
+USES=		gmake iconv:wchar_t libtool perl5 pgsql shebangfix
 WANT_PGSQL=	server
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
