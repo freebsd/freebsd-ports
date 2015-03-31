@@ -5,13 +5,12 @@ PORTNAME=	mac
 PORTVERSION=	3.99.4.5
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://supermmx.org/resources/linux/mac/
+MASTER_SITES=	http://etree.org/shnutils/shntool/support/formats/ape/unix/3.99-u4-b5/ \
+		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}-3.99-u4-b5
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
-
-BROKEN=		No public distfiles
 
 USES=		libtool
 GNU_CONFIGURE=	yes
