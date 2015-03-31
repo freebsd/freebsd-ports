@@ -3,7 +3,7 @@
 
 PORTNAME=	lensfun
 DISTVERSION=	0.2.4-dev
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
@@ -38,6 +38,8 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|gimptool-2.0|${LOCALBASE}/bin/gimptool-2.0|' \
 		${WRKSRC}/Makefile
+# CCI support has been removed from recent versions of lensfun
+	@${REINPLACE_CMD} -e '/CCI/d' ${WRKSRC}/src/gimplensfun.cpp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}
