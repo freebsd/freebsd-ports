@@ -1,7 +1,6 @@
 lib/webmin/virtual-server/CHANGELOG
 lib/webmin/virtual-server/IDNA/Punycode.pm
 lib/webmin/virtual-server/PHP/Serialization.pm
-lib/webmin/virtual-server/RELEASE
 lib/webmin/virtual-server/S3.pm
 lib/webmin/virtual-server/S3/AWSAuthConnection.pm
 lib/webmin/virtual-server/S3/GetResponse.pm
@@ -492,6 +491,7 @@ lib/webmin/virtual-server/help/config_avail_webalizer.html
 lib/webmin/virtual-server/help/config_avail_webalizer.nl.html
 lib/webmin/virtual-server/help/config_avail_webminlog.html
 lib/webmin/virtual-server/help/config_avail_webminlog.nl.html
+lib/webmin/virtual-server/help/config_aws_cmd.html
 lib/webmin/virtual-server/help/config_backuplog_days.html
 lib/webmin/virtual-server/help/config_backuplog_days.nl.html
 lib/webmin/virtual-server/help/config_batch_create.html
@@ -752,6 +752,7 @@ lib/webmin/virtual-server/help/config_show_nf.html
 lib/webmin/virtual-server/help/config_show_nf.nl.html
 lib/webmin/virtual-server/help/config_show_pass.html
 lib/webmin/virtual-server/help/config_show_pass.nl.html
+lib/webmin/virtual-server/help/config_show_preview.html
 lib/webmin/virtual-server/help/config_show_sysinfo.html
 lib/webmin/virtual-server/help/config_show_sysinfo.nl.html
 lib/webmin/virtual-server/help/config_show_tabs.html
@@ -1932,6 +1933,7 @@ lib/webmin/virtual-server/newfeatures-all/4.13/3-assoc
 lib/webmin/virtual-server/newfeatures-all/4.14/1-dmarc
 lib/webmin/virtual-server/newfeatures-all/4.15/1-running
 lib/webmin/virtual-server/newfeatures-all/4.15/2-recovery
+lib/webmin/virtual-server/newfeatures-all/4.16/1-aws
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1970,6 +1972,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.12/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.13/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.14/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.15/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.16/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -2109,6 +2112,7 @@ lib/webmin/virtual-server/update-template
 lib/webmin/virtual-server/upgrade.cgi
 lib/webmin/virtual-server/upload-rs-file.pl
 lib/webmin/virtual-server/upload-s3-file.pl
+lib/webmin/virtual-server/usage.cgi
 lib/webmin/virtual-server/user-template
 lib/webmin/virtual-server/useradmin_update.pl
 lib/webmin/virtual-server/validate-domains.pl
