@@ -20,7 +20,8 @@ LICENSE=	APACHE20
 CONFLICTS_INSTALL=	ap2[24]-mod_python3[^5]*
 
 USE_APACHE=	22+
-USES=		python tar:tgz
+USES=		cpe python tar:tgz
+CPE_VENDOR=	apache
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-apxs="${APXS}"		\
