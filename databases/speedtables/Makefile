@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.0
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,8 @@ COMMENT=	High-performance memory-resident database
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libtclx8.4.so:${PORTSDIR}/lang/tclX
+LIB_DEPENDS=	libtclx8.4.so:${PORTSDIR}/lang/tclX \
+		libboost_graph.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	DOCS PGSQL
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
@@ -24,10 +25,11 @@ USE_AUTOTOOLS=	autoconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	09c623c
+GH_COMMIT=	26b4b13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
+		--with-boost=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR}
 
 pre-configure:
