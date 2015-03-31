@@ -19,6 +19,9 @@ share/warden/scripts/backend/cronsnap.sh
 share/warden/scripts/backend/setupusers.sh
 share/warden/scripts/backend/checkstatus.sh
 share/warden/scripts/backend/functions.sh
+share/warden/scripts/backend/fbsdupdate.sh
+share/warden/scripts/backend/fbsdupgrade.sh
+share/warden/scripts/backend/pkgupdate.sh
 share/warden/scripts/backend/importjail.sh
 share/warden/scripts/backend/stopjail.sh
 share/warden/scripts/backend/zfsrmsnap.sh
