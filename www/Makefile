@@ -155,6 +155,7 @@
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += e107
+    SUBDIR += e2guardian
     SUBDIR += eaccelerator
     SUBDIR += edbrowse
     SUBDIR += efront

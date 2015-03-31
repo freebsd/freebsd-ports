@@ -1,0 +1,250 @@
+%%DNS%%@sample %%ETCDIR%%/authplugins/dnsauth.conf.sample
+@sample %%ETCDIR%%/authplugins/ident.conf.sample
+@sample %%ETCDIR%%/authplugins/ip.conf.sample
+@sample %%ETCDIR%%/authplugins/port.conf.sample
+@sample %%ETCDIR%%/authplugins/proxy-basic.conf.sample
+@sample %%ETCDIR%%/authplugins/proxy-digest.conf.sample
+%%TRICKLE%%@sample %%ETCDIR%%/downloadmanagers/trickle.conf.sample
+%%NTLM%%@sample %%ETCDIR%%/authplugins/proxy-ntlm.conf.sample
+%%CLAMD%%@sample %%ETCDIR%%/contentscanners/clamdscan.conf.sample
+%%ICAP%%@sample %%ETCDIR%%/contentscanners/icapscan.conf.sample
+%%CLISCAN%%@sample %%ETCDIR%%/contentscanners/commandlinescan.conf.sample
+%%KAV%%@sample %%ETCDIR%%/contentscanners/kavdscan.conf.sample
+@sample %%ETCDIR%%/downloadmanagers/default.conf.sample
+@sample %%ETCDIR%%/downloadmanagers/fancy.conf.sample
+@sample %%ETCDIR%%/e2guardian.conf.sample
+@sample %%ETCDIR%%/e2guardianf1.conf.sample
+%%ETCDIR%%/installation_or_migration_from_dg.sh
+@sample %%ETCDIR%%/lists/addheaderregexplist.sample
+@sample %%ETCDIR%%/lists/authexceptionsitelist.sample
+@sample %%ETCDIR%%/lists/authexceptionurllist.sample
+@sample %%ETCDIR%%/lists/authplugins/ipgroups.sample
+@sample %%ETCDIR%%/lists/authplugins/portgroups.sample
+@sample %%ETCDIR%%/lists/bannedextensionlist.sample
+@sample %%ETCDIR%%/lists/bannediplist.sample
+@sample %%ETCDIR%%/lists/bannedmimetypelist.sample
+@sample %%ETCDIR%%/lists/bannedphraselist.sample
+@sample %%ETCDIR%%/lists/bannedregexpheaderlist.sample
+@sample %%ETCDIR%%/lists/bannedregexpurllist.sample
+@sample %%ETCDIR%%/lists/bannedrooms/default.sample
+@sample %%ETCDIR%%/lists/bannedsearchlist.sample
+@sample %%ETCDIR%%/lists/bannedsitelist.sample
+@sample %%ETCDIR%%/lists/bannedsslsitelist.sample
+@sample %%ETCDIR%%/lists/bannedurllist.sample
+%%ETCDIR%%/lists/blacklists/ads/domains
+%%ETCDIR%%/lists/blacklists/ads/urls
+@sample %%ETCDIR%%/lists/contentregexplist.sample
+%%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusextensionlist.sample
+%%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusmimetypelist.sample
+%%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirussitelist.sample
+%%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusurllist.sample
+@sample %%ETCDIR%%/lists/downloadmanagers/managedextensionlist.sample
+@sample %%ETCDIR%%/lists/downloadmanagers/managedmimetypelist.sample
+@sample %%ETCDIR%%/lists/embededreferersitelist.sample
+@sample %%ETCDIR%%/lists/embededrefererurllist.sample
+@sample %%ETCDIR%%/lists/exceptionextensionlist.sample
+@sample %%ETCDIR%%/lists/exceptionfilesitelist.sample
+@sample %%ETCDIR%%/lists/exceptionfileurllist.sample
+@sample %%ETCDIR%%/lists/exceptioniplist.sample
+@sample %%ETCDIR%%/lists/exceptionmimetypelist.sample
+@sample %%ETCDIR%%/lists/exceptionphraselist.sample
+@sample %%ETCDIR%%/lists/exceptionregexpurllist.sample
+@sample %%ETCDIR%%/lists/exceptionsitelist.sample
+@sample %%ETCDIR%%/lists/exceptionurllist.sample
+@sample %%ETCDIR%%/lists/filtergroupslist.sample
+@sample %%ETCDIR%%/lists/greysitelist.sample
+@sample %%ETCDIR%%/lists/greysslsitelist.sample
+@sample %%ETCDIR%%/lists/greyurllist.sample
+@sample %%ETCDIR%%/lists/headerregexplist.sample
+@sample %%ETCDIR%%/lists/localbannedsearchlist.sample
+@sample %%ETCDIR%%/lists/localbannedsitelist.sample
+@sample %%ETCDIR%%/lists/localbannedsslsitelist.sample
+@sample %%ETCDIR%%/lists/localbannedurllist.sample
+@sample %%ETCDIR%%/lists/localexceptionsitelist.sample
+@sample %%ETCDIR%%/lists/localexceptionurllist.sample
+@sample %%ETCDIR%%/lists/localgreysitelist.sample
+@sample %%ETCDIR%%/lists/localgreysslsitelist.sample
+@sample %%ETCDIR%%/lists/localgreyurllist.sample
+@sample %%ETCDIR%%/lists/logregexpurllist.sample
+@sample %%ETCDIR%%/lists/logsitelist.sample
+@sample %%ETCDIR%%/lists/logurllist.sample
+%%ETCDIR%%/lists/phraselists/badwords/weighted_dutch
+%%ETCDIR%%/lists/phraselists/badwords/weighted_french
+%%ETCDIR%%/lists/phraselists/badwords/weighted_german
+%%ETCDIR%%/lists/phraselists/badwords/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/badwords/weighted_spanish
+%%ETCDIR%%/lists/phraselists/chat/weighted
+%%ETCDIR%%/lists/phraselists/chat/weighted_italian
+%%ETCDIR%%/lists/phraselists/conspiracy/weighted
+%%ETCDIR%%/lists/phraselists/domainsforsale/weighted
+%%ETCDIR%%/lists/phraselists/drugadvocacy/weighted
+%%ETCDIR%%/lists/phraselists/forums/weighted
+%%ETCDIR%%/lists/phraselists/gambling/banned
+%%ETCDIR%%/lists/phraselists/gambling/banned_portuguese
+%%ETCDIR%%/lists/phraselists/gambling/weighted
+%%ETCDIR%%/lists/phraselists/gambling/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/games/weighted
+%%ETCDIR%%/lists/phraselists/goodphrases/exception
+%%ETCDIR%%/lists/phraselists/goodphrases/exception_email
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_danish
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_dutch
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_malay
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_polish
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_portuguese
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_general_swedish
+%%ETCDIR%%/lists/phraselists/goodphrases/weighted_news
+%%ETCDIR%%/lists/phraselists/googlesearches/banned
+%%ETCDIR%%/lists/phraselists/gore/weighted
+%%ETCDIR%%/lists/phraselists/gore/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/idtheft/weighted
+%%ETCDIR%%/lists/phraselists/illegaldrugs/banned
+%%ETCDIR%%/lists/phraselists/illegaldrugs/weighted
+%%ETCDIR%%/lists/phraselists/illegaldrugs/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/intolerance/banned_portuguese
+%%ETCDIR%%/lists/phraselists/intolerance/weighted
+%%ETCDIR%%/lists/phraselists/intolerance/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/legaldrugs/weighted
+%%ETCDIR%%/lists/phraselists/malware/weighted
+%%ETCDIR%%/lists/phraselists/music/weighted
+%%ETCDIR%%/lists/phraselists/news/weighted
+%%ETCDIR%%/lists/phraselists/nudism/weighted
+%%ETCDIR%%/lists/phraselists/peer2peer/weighted
+%%ETCDIR%%/lists/phraselists/personals/weighted
+%%ETCDIR%%/lists/phraselists/personals/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/pornography/banned
+%%ETCDIR%%/lists/phraselists/pornography/banned_portuguese
+%%ETCDIR%%/lists/phraselists/pornography/weighted
+%%ETCDIR%%/lists/phraselists/pornography/weighted_chinese
+%%ETCDIR%%/lists/phraselists/pornography/weighted_danish
+%%ETCDIR%%/lists/phraselists/pornography/weighted_dutch
+%%ETCDIR%%/lists/phraselists/pornography/weighted_french
+%%ETCDIR%%/lists/phraselists/pornography/weighted_german
+%%ETCDIR%%/lists/phraselists/pornography/weighted_italian
+%%ETCDIR%%/lists/phraselists/pornography/weighted_japanese
+%%ETCDIR%%/lists/phraselists/pornography/weighted_malay
+%%ETCDIR%%/lists/phraselists/pornography/weighted_norwegian
+%%ETCDIR%%/lists/phraselists/pornography/weighted_polish
+%%ETCDIR%%/lists/phraselists/pornography/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/pornography/weighted_russian
+%%ETCDIR%%/lists/phraselists/pornography/weighted_russian_utf8
+%%ETCDIR%%/lists/phraselists/pornography/weighted_spanish
+%%ETCDIR%%/lists/phraselists/pornography/weighted_swedish
+%%ETCDIR%%/lists/phraselists/proxies/weighted
+%%ETCDIR%%/lists/phraselists/rta/banned
+%%ETCDIR%%/lists/phraselists/safelabel/banned
+%%ETCDIR%%/lists/phraselists/secretsocieties/weighted
+%%ETCDIR%%/lists/phraselists/sport/weighted
+%%ETCDIR%%/lists/phraselists/translation/weighted
+%%ETCDIR%%/lists/phraselists/travel/weighted
+%%ETCDIR%%/lists/phraselists/upstreamfilter/weighted
+%%ETCDIR%%/lists/phraselists/violence/weighted
+%%ETCDIR%%/lists/phraselists/violence/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/warezhacking/weighted
+%%ETCDIR%%/lists/phraselists/weapons/weighted
+%%ETCDIR%%/lists/phraselists/weapons/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/webmail/weighted
+%%ETCDIR%%/lists/pics
+@sample %%ETCDIR%%/lists/refererexceptionsitelist.sample
+@sample %%ETCDIR%%/lists/refererexceptionurllist.sample
+@sample %%ETCDIR%%/lists/searchregexplist.sample
+@sample %%ETCDIR%%/lists/urlredirectregexplist.sample
+@sample %%ETCDIR%%/lists/urlregexplist.sample
+@sample %%ETCDIR%%/lists/weightedphraselist.sample
+man/man8/e2guardian.8.gz
+sbin/e2guardian
+%%PORTDOCS%%%%DOCSDIR%%/AuthPlugins
+%%PORTDOCS%%%%DOCSDIR%%/ContentScanners
+%%PORTDOCS%%%%DOCSDIR%%/DownloadManagers
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/Plugins
+%%DATADIR%%/e2guardian.pl
+%%DATADIR%%/languages/arspanish/fancydmtemplate.html
+%%DATADIR%%/languages/arspanish/messages
+%%DATADIR%%/languages/arspanish/template.html
+%%DATADIR%%/languages/bulgarian/fancydmtemplate.html
+%%DATADIR%%/languages/bulgarian/messages
+%%DATADIR%%/languages/bulgarian/template.html
+%%DATADIR%%/languages/chinesebig5/fancydmtemplate.html
+%%DATADIR%%/languages/chinesebig5/messages
+%%DATADIR%%/languages/chinesebig5/template.html
+%%DATADIR%%/languages/chinesegb2312/fancydmtemplate.html
+%%DATADIR%%/languages/chinesegb2312/messages
+%%DATADIR%%/languages/chinesegb2312/template.html
+%%DATADIR%%/languages/czech/fancydmtemplate.html
+%%DATADIR%%/languages/czech/messages
+%%DATADIR%%/languages/czech/template.html
+%%DATADIR%%/languages/danish/fancydmtemplate.html
+%%DATADIR%%/languages/danish/messages
+%%DATADIR%%/languages/danish/template.html
+%%DATADIR%%/languages/dutch/fancydmtemplate.html
+%%DATADIR%%/languages/dutch/messages
+%%DATADIR%%/languages/dutch/template.html
+%%DATADIR%%/languages/french/fancydmtemplate.html
+%%DATADIR%%/languages/french/messages
+%%DATADIR%%/languages/french/template.html
+%%DATADIR%%/languages/german/fancydmtemplate.html
+%%DATADIR%%/languages/german/messages
+%%DATADIR%%/languages/german/template.html
+%%DATADIR%%/languages/hebrew/fancydmtemplate.html
+%%DATADIR%%/languages/hebrew/messages
+%%DATADIR%%/languages/hebrew/template.html
+%%DATADIR%%/languages/hungarian/fancydmtemplate.html
+%%DATADIR%%/languages/hungarian/messages
+%%DATADIR%%/languages/hungarian/template.html
+%%DATADIR%%/languages/indonesian/fancydmtemplate.html
+%%DATADIR%%/languages/indonesian/messages
+%%DATADIR%%/languages/indonesian/template.html
+%%DATADIR%%/languages/italian/fancydmtemplate.html
+%%DATADIR%%/languages/italian/messages
+%%DATADIR%%/languages/italian/template.html
+%%DATADIR%%/languages/japanese/fancydmtemplate.html
+%%DATADIR%%/languages/japanese/messages
+%%DATADIR%%/languages/japanese/template.html
+%%DATADIR%%/languages/lithuanian/fancydmtemplate.html
+%%DATADIR%%/languages/lithuanian/messages
+%%DATADIR%%/languages/lithuanian/template.html
+%%DATADIR%%/languages/malay/fancydmtemplate.html
+%%DATADIR%%/languages/malay/messages
+%%DATADIR%%/languages/malay/template.html
+%%DATADIR%%/languages/mxspanish/fancydmtemplate.html
+%%DATADIR%%/languages/mxspanish/messages
+%%DATADIR%%/languages/mxspanish/template.html
+%%DATADIR%%/languages/polish/fancydmtemplate.html
+%%DATADIR%%/languages/polish/messages
+%%DATADIR%%/languages/polish/template.html
+%%DATADIR%%/languages/portuguese/fancydmtemplate.html
+%%DATADIR%%/languages/portuguese/messages
+%%DATADIR%%/languages/portuguese/template.html
+%%DATADIR%%/languages/ptbrazilian/fancydmtemplate.html
+%%DATADIR%%/languages/ptbrazilian/messages
+%%DATADIR%%/languages/ptbrazilian/template.html
+%%DATADIR%%/languages/russian-1251/fancydmtemplate.html
+%%DATADIR%%/languages/russian-1251/messages
+%%DATADIR%%/languages/russian-1251/template.html
+%%DATADIR%%/languages/russian-koi8-r/fancydmtemplate.html
+%%DATADIR%%/languages/russian-koi8-r/messages
+%%DATADIR%%/languages/russian-koi8-r/template.html
+%%DATADIR%%/languages/slovak/fancydmtemplate.html
+%%DATADIR%%/languages/slovak/messages
+%%DATADIR%%/languages/slovak/template.html
+%%DATADIR%%/languages/spanish/fancydmtemplate.html
+%%DATADIR%%/languages/spanish/messages
+%%DATADIR%%/languages/spanish/template.html
+%%DATADIR%%/languages/swedish/fancydmtemplate.html
+%%DATADIR%%/languages/swedish/messages
+%%DATADIR%%/languages/swedish/template.html
+%%DATADIR%%/languages/turkish/fancydmtemplate.html
+%%DATADIR%%/languages/turkish/messages
+%%DATADIR%%/languages/turkish/template.html
+%%DATADIR%%/languages/ukenglish/fancydmtemplate.html
+%%DATADIR%%/languages/ukenglish/messages
+%%DATADIR%%/languages/ukenglish/template.html
+%%DATADIR%%/scripts/bsd-init
+%%DATADIR%%/scripts/e2guardian
+%%DATADIR%%/scripts/logrotation
+%%DATADIR%%/scripts/solaris-init
+%%DATADIR%%/scripts/systemv-init
+%%DATADIR%%/transparent1x1.gif
+%%DATADIR%%/blockedflash.swf
