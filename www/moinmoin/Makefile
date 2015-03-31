@@ -56,12 +56,6 @@ pre-everything::
 	@${ECHO} "per default it is set to www:www."
 	@${ECHO}
 
-post-install:
-#	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
-#	@${FIND} ${PREFIX}/share/moin/underlay -type d | ${SED} -e 's,${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
-#	@${ECHO_CMD} "@dirrm share/moin" >> ${TMPPLIST}
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 instance: pre-everything apply-slist
 	@${ECHO_CMD} "Creating a new wiki instance in ${MOINDEST}."; \
 	if [ -f ${MOINDIR}/config/wikiconfig.py ]; then \
