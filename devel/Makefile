@@ -4822,7 +4822,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-static
-    SUBDIR += subversion16
     SUBDIR += subversion17
     SUBDIR += subversive
     SUBDIR += svk
