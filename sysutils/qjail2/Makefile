@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	qjail@a1poweruser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to quickly deploy and manage jails
 
 USES=		tar:bzip2
@@ -37,7 +37,7 @@ do-install:
 
 # note examples are mandatory. qjail will not function without them
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples/			\
+	(cd ${WRKSRC}/examples/			\
 	&& ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
