@@ -45,6 +45,7 @@ BZIP2_DESC?=		bzip2 compression support
 CACA_DESC?=		libcaca graphics library support
 CAIRO_DESC?=		Cairo graphics library support
 CARES_DESC?=		Asynchronous DNS resolution via c-ares
+CDDA_DESC?=		Digital Audio CD support
 CDDA2WAV_DESC?=		CD ripping support (via cdda2wav)
 CDDB_DESC?=		CDDB (compact disc database) support
 CDIO_DESC?=		CDIO support via libcdio
