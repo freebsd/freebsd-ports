@@ -2,42 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	gottet
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.1
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
-MASTER_SITES=	http://gottcode.org/${PORTNAME}/
-EXTRACT_SUFX=	-src.tar.bz2
+MASTER_SITES=	http://gottcode.org/gottet/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris clone
 
-LICENSE=	GPLv3 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3 # (or later)
 
-USES=		qmake tar:bzip2
-USE_QT4=	moc_build rcc_build iconengines_run imageformats_run \
-		gui
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		compiler:c++11-lib qmake tar:bzip2
+USE_QT5=	buildtools_build widgets
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	CREDITS ChangeLog NEWS README
-
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -i '' '/qm.files/,/qm.path/s/^/#/' \
-		${WRKSRC}/${PORTNAME}.pro
-.endif
+	@${REINPLACE_CMD} -e \
+		's|share/man|man|' ${WRKSRC}/gottet.pro
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		    ${STAGEDIR}${PREFIX}/share/pixmaps/
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog NEWS README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
