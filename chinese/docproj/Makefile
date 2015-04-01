@@ -7,6 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 # Note: Updates from intron@intron.ac should also be
 # considered as maintainer updates.
@@ -25,9 +26,6 @@ SRC=		${.CURDIR}/src
 MAKE_ARGS+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 PLIST_FILES=	bin/cjktexsty
-
-do-fetch:
-	@${DO_NADA}
 
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
