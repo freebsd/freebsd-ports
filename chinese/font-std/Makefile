@@ -6,6 +6,7 @@ PORTVERSION=	0.0.20090602
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese Standard Fonts
@@ -21,9 +22,6 @@ PLIST_FILES=	${FONTSDIR}/std.zh_CN/STHeiti-Regular \
 		${FONTSDIR}/std.zh_CN/MSung-Light \
 		${FONTSDIR}/std.zh_CN/MHei-Medium
 FONTSDIR=	share/fonts
-
-do-fetch:
-	@${DO_NADA}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}/std.zh_CN
