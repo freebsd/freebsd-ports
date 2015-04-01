@@ -19,7 +19,6 @@ RUN_DEPENDS=	\
 
 NO_BUILD=	yes
 NO_MTREE=	yes
-
-do-install:	# empty
+NO_INSTALL=	yes
 
 .include <bsd.port.mk>
