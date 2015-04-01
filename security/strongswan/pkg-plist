@@ -142,7 +142,6 @@ lib/ipsec/plugins/libstrongswan-xcbc.la
 lib/ipsec/plugins/libstrongswan-xcbc.so
 libexec/ipsec/_copyright
 libexec/ipsec/_updown
-libexec/ipsec/_updown_espmark
 libexec/ipsec/charon
 libexec/ipsec/starter
 libexec/ipsec/stroke
@@ -200,8 +199,6 @@ man/man5/ipsec.conf.5.gz
 man/man5/ipsec.secrets.5.gz
 man/man8/ipsec.8.gz
 man/man8/charon-cmd.8.gz
-man/man8/_updown.8.gz
-man/man8/_updown_espmark.8.gz
 %%EAPRADIUS%%lib/ipsec/libradius.a
 %%EAPRADIUS%%lib/ipsec/libradius.la
 %%EAPRADIUS%%lib/ipsec/libradius.so
@@ -345,6 +342,11 @@ man/man8/_updown_espmark.8.gz
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
 %%UNBOUND%%%%DATADIR%%/templates/config/plugins/unbound.conf
 %%UNBOUND%%@sample %%ETCDIR%%.d/charon/unbound.conf.sample
+%%UNITY%%%%DATADIR%%/templates/config/plugins/unity.conf
+%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.a
+%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.la
+%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.so
+%%UNITY%%@sample %%ETCDIR%%.d/charon/unity.conf.sample
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.a
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
