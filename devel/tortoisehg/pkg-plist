@@ -198,6 +198,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/reporegistry.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/reporegistry.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/reporegistry.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotab.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotab.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotab.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotreeitem.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotreeitem.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/repotreeitem.pyo
@@ -556,6 +559,7 @@ share/pixmaps/tortoisehg/icons/scalable/status/hg-merged-p2.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-applied.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-guarded.svg
 share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-unguarded.svg
+share/pixmaps/tortoisehg/icons/scalable/status/hg-sharedrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-added-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-error.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3.2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
@@ -28,8 +28,7 @@ OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
 OPTIONS_SUB=	yes
 
-USES=		python
-NLS_USES=	gettext
+USES=		gettext python
 
 INSTALLS_ICONS=	yes
 
