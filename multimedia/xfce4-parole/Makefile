@@ -40,7 +40,6 @@ OPTIONS_GROUP=	GST_PLUG
 OPTIONS_GROUP_GST_PLUG=	CDDA HTTP
 # Since 0.5.91 release, GStreamer 1.0 is enabled by default
 OPTIONS_DEFAULT=	GST10 HTTP NLS
-CDDA_DESC=	CD audio (cdparanoia)
 HTTP_DESC=	HTTP streaming (libsoup)
 GST01_DESC=	GStreamer 0.10
 GST10_DESC=	GStreamer 1.0
