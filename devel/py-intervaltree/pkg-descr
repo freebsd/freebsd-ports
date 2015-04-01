@@ -1,0 +1,6 @@
+A mutable, self-balancing interval tree for Python 2 and 3.  Queries may be by
+point, by range overlap, or by range envelopment.  This library was designed to
+allow tagging text and time intervals, where the intervals include the lower
+bound but not the upper bound.
+
+WWW: https://github.com/chaimleib/intervaltree

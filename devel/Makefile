@@ -3862,6 +3862,7 @@
     SUBDIR += py-initgroups
     SUBDIR += py-instant
     SUBDIR += py-interface
+    SUBDIR += py-intervaltree
     SUBDIR += py-ioflo
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
