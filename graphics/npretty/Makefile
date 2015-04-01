@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	npretty
-PORTVERSION=	0.9.3
-PORTREVISION=	10
+PORTVERSION=	0.9.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
-		${MASTER_SITE_LOCAL:S@%SUBDIR%@gabor@}
 
 MAINTAINER=	peter@pean.org
 COMMENT=	Simple web-gallery generator written in perl
@@ -16,6 +13,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		p5-forks>=0:${PORTSDIR}/devel/p5-forks
 LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gammy
+GH_TAGNAME=	n0.9.3-1
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix
