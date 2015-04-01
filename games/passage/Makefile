@@ -13,27 +13,25 @@ COMMENT=	Experimental video game by Jason Rohrer
 
 USE_SDL=	sdl
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/gamma256/gameSource
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/gamma256/gameSource
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(PLATFORM_LINK_FLAGS =\).*|\1 -pthread|' \
-		${WRKSRC}/Makefile.GnuLinux
 	@${REINPLACE_CMD} -e 's|"graphics"|"${DATADIR}/graphics"|' \
-		${WRKSRC}/common.cpp
+		${WRKSRC}/gamma256/gameSource/common.cpp
 	@${REINPLACE_CMD} -e 's|"music"|"${DATADIR}/music"|' \
-		${WRKSRC}/musicPlayer.cpp
+		${WRKSRC}/gamma256/gameSource/musicPlayer.cpp
 	@${REINPLACE_CMD} -e 's|"settings"|"${DATADIR}/settings"|' \
-		${WRKDIR}/${DISTNAME}/minorGems/util/SettingsManager.cpp
+		${WRKSRC}/minorGems/util/SettingsManager.cpp
 
 do-configure:
-	cd ${WRKSRC} && ${CAT} Makefile.GnuLinux Makefile.all > Makefile
+	cd ${BUILD_WRKSRC} && ${CAT} Makefile.GnuLinux Makefile.all > Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Passage ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/Passage ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music settings" ${STAGEDIR}${DATADIR}/
+	cd ${BUILD_WRKSRC} && ${COPYTREE_SHARE} "graphics music settings" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
