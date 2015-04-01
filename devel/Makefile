@@ -2948,6 +2948,7 @@
     SUBDIR += p5-Term-VT102
     SUBDIR += p5-Term-VT102-Boundless
     SUBDIR += p5-Term-Visual
+    SUBDIR += p5-Test-API
     SUBDIR += p5-Test-Able
     SUBDIR += p5-Test-Able-Runner
     SUBDIR += p5-Test-Aggregate
