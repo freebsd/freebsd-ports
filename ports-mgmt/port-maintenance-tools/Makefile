@@ -2,7 +2,7 @@
 
 PORTNAME=	port-maintenance-tools
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -16,7 +16,6 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/ports-mgmt/pkg_cutleaves \
 		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/ports-mgmt/pkg_tree \
 		${LOCALBASE}/bin/porteasy:${PORTSDIR}/ports-mgmt/porteasy \
-		${LOCALBASE}/bin/portell:${PORTSDIR}/ports-mgmt/portell \
 		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/ports-mgmt/portdowngrade
 
 .include <bsd.port.mk>
