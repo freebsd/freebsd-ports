@@ -36,6 +36,7 @@ TOPOLOGY_DESC=	Topology support
 SFCGAL_DESC=	Enable sfcgal
 LOADERGUI_CONFIGURE_WITH=	gui
 LOADERGUI_USE=	GNOME=gtk20
+RASTER_USES=	alias
 RASTER_CONFIGURE_WITH=	raster
 RASTER_LIB_DEPENDS=		libgdal.so:${PORTSDIR}/graphics/gdal
 RASTER_CONFIGURE_ON=	--with-gdalconfig=${LOCALBASE}/bin/gdal-config
