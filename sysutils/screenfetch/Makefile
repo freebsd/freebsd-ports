@@ -22,7 +22,6 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KittyKatt
 GH_TAGNAME=	0fb5733
-GH_COMMIT=	${GH_TAGNAME}
 
 PLIST_FILES=	bin/screenFetch bin/screenfetch man/man1/screenfetch.1.gz
 PORTDOCS=	CHANGELOG README.mkdn TODO
