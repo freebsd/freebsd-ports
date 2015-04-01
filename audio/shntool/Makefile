@@ -3,10 +3,11 @@
 
 PORTNAME=	shntool
 PORTVERSION=	3.0.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multi-purpose WAVE data processing and reporting utility
 
 GNU_CONFIGURE=	yes
