@@ -20,9 +20,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
 USES=		shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	mkitalic
-
-do-build:
-	@${DO_NADA}
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${STAGEDIR}${PREFIX}/bin
