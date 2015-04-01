@@ -21,4 +21,6 @@ USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
+BROKEN=		Does not build with new devel/ruby-gems
+
 .include <bsd.port.mk>
