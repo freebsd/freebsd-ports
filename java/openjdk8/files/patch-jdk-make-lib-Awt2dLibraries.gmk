@@ -1,6 +1,14 @@
---- jdk/make/lib/Awt2dLibraries.gmk.orig	2014-11-08 19:54:51.000000000 -0800
-+++ jdk/make/lib/Awt2dLibraries.gmk	2014-11-08 19:56:30.000000000 -0800
-@@ -1257,7 +1257,7 @@
+--- jdk/make/lib/Awt2dLibraries.gmk.orig	2015-03-25 15:50:52.527704000 -0400
++++ jdk/make/lib/Awt2dLibraries.gmk	2015-03-25 17:59:54.197133000 -0400
+@@ -664,6 +664,7 @@
+             -R/usr/dt/lib$(OPENJDK_TARGET_CPU_ISADIR) \
+             $(call SET_SHARED_LIBRARY_ORIGIN) \
+             $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
++        LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN), \
+         LDFLAGS_SUFFIX := $(LIBAWT_XAWT_LDFLAGS_SUFFIX), \
+         VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
+         RC_FLAGS := $(RC_FLAGS) \
+@@ -1257,7 +1258,7 @@
    else ifeq ($(OPENJDK_TARGET_OS), solaris)
      LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
    else ifeq ($(OPENJDK_TARGET_OS), bsd)
@@ -9,7 +17,7 @@
    else
      LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS)
    endif
-@@ -1282,7 +1282,7 @@
+@@ -1282,7 +1283,7 @@
      # Solaris still uses OPENWIN_LIB ..
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR) -lX11 -lXext $(LIBM) -lpthread
    else ifeq ($(OPENJDK_TARGET_OS), bsd)
