@@ -1,0 +1,13 @@
+Test::Modern provides the best features of Test::More, Test::Fatal,
+Test::Warnings, Test::API, Test::LongString, and Test::Deep, as well as ideas
+from Test::Requires, Test::DescribeMe, Test::Moose, and Test::CleanNamespaces.
+
+Test::Modern also automatically imposes strict and warnings on your script, and
+loads IO::File. (Much of the same stuff Modern::Perl does.)
+
+Although Test::Modern is a modern testing framework, it should run fine on
+pre-modern versions of Perl. It should be easy to install on Perl 5.8.9 and
+above; and if you can persuade its dependencies to install (not necessarily
+easy!), should be OK on anything back to Perl 5.6.1.
+
+WWW: http://search.cpan.org/dist/Test-Modern/
