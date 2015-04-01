@@ -22,13 +22,16 @@ diff --git config/external/moz.build config/external/moz.build
 index f67c5c7..eb909ce 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -16,13 +16,19 @@ if CONFIG['MOZ_UPDATER']:
-     if not CONFIG['MOZ_NATIVE_BZ2']:
-         external_dirs += ['modules/libbz2']
+@@ -19,10 +19,19 @@ if CONFIG['MOZ_UPDATER']:
+ # There's no "native brotli" yet, but probably in the future...
+ external_dirs += ['modules/brotli']
  
 -if CONFIG['MOZ_VORBIS']:
 +if not CONFIG['MOZ_NATIVE_OGG']:
 +    external_dirs += ['media/libogg']
++
++if not CONFIG['MOZ_NATIVE_OPUS']:
++    external_dirs += ['media/libopus']
 +
 +if not CONFIG['MOZ_NATIVE_THEORA']:
 +    external_dirs += ['media/libtheora']
@@ -40,12 +43,8 @@ index f67c5c7..eb909ce 100644
 +if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
      external_dirs += ['media/libtremor']
  
--if CONFIG['MOZ_OPUS']:
-+if CONFIG['MOZ_OPUS'] and not CONFIG['MOZ_NATIVE_OPUS']:
-     external_dirs += ['media/libopus']
- 
  if CONFIG['MOZ_WEBM']:
-@@ -37,14 +43,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -37,15 +46,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
  
@@ -59,6 +58,7 @@ index f67c5c7..eb909ce 100644
      'media/kiss_fft',
      'media/libcubeb',
 -    'media/libogg',
+-    'media/libopus',
 -    'media/libtheora',
 -    'media/libspeex_resampler',
      'media/libstagefright',
@@ -120,7 +120,7 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- configure.in
 +++ configure.in
-@@ -5056,6 +5056,57 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+@@ -5223,6 +5223,140 @@ if test "${ac_cv_c_attribute_aligned}" !
  fi
  
  dnl ========================================================
@@ -175,13 +175,6 @@ index 87db361..7947626 100644
 +AC_SUBST(MOZ_NATIVE_TREMOR)
 +
 +dnl ========================================================
- dnl = Disable Opus audio codec support
- dnl ========================================================
- MOZ_ARG_DISABLE_BOOL(opus,
-@@ -5064,6 +5115,89 @@ MOZ_ARG_DISABLE_BOOL(opus,
-     MOZ_OPUS=1)
- 
- dnl ========================================================
 +dnl Check for libopus
 +dnl ========================================================
 +

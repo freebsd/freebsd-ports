@@ -2,6 +2,7 @@
 
 PORTNAME=	openh264
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
