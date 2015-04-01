@@ -3,7 +3,7 @@
 
 PORTNAME=	einstein
 PORTVERSION=	2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://games.flowix.com/files/einstein/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,5 +19,8 @@ post-patch:
 		-e "s,@@STAGEDIR@@,${STAGEDIR}," \
 		-e "s,@@PREFIX@@,${PREFIX}," \
 		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/einstein
 
 .include <bsd.port.mk>
