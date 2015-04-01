@@ -5,7 +5,9 @@ PORTNAME=	xtris
 PORTVERSION=	1.15
 PORTREVISION=	2
 CATEGORIES=	games ipv6
-MASTER_SITES=	http://www.iagora.com/~espel/xtris/ \
+MASTER_SITES=	http://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
+		http://ftp.uni-erlangen.de/mirrors/gentoo/distfiles/ \
+		http://www.iagora.com/~espel/xtris/ \
 		ftp://quatramaran.ens.fr/pub/orabidoo/
 
 PATCH_SITES=	ftp://ftp.42.org/pub/orphan/
@@ -16,8 +18,6 @@ MAINTAINER=	sec@42.org
 COMMENT=	Multi-player version of a popular game for the X Window system
 
 LICENSE=	GPLv2
-
-BROKEN=		Does not fetch
 
 RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris
