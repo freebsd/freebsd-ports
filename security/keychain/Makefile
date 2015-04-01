@@ -3,6 +3,7 @@
 
 PORTNAME=	keychain
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		GENTOO/distfiles
