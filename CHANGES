@@ -17,6 +17,22 @@ AUTHOR: ohauer@FreeBSD.org
   To activate the subversion apache modules a dedicated file
   will be installed as modules.d/220_subversion.conf
 
+20150328:
+AUTHOR: bapt@FreeBSD.org
+
+  New "metaport" USES to take care of predefining correctly the needed
+  macros as expected by meta ports.
+
+20150323:
+AUTHOR: bapt@FreeBSD.org
+
+  Remove "@fc" and "@fontsdir". All fonts should always use @fcfontsdir which
+  Properly takes care of the fonts.dir and fonts.scale cache files as well
+  as ensure to properly update the fontconfig cache
+
+  New "fonts" USES. It defines the default variables needed for fonts and also
+  takes care of the run time dependencies
+
 20150326:
 AUTHOR: bdrewery@FreeBSD.org
 
