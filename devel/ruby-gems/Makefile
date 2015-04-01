@@ -49,16 +49,14 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-RUBY_SETUP_OPTIONS=	--ri --rdoc --destdir=${STAGEDIR}
-GEM_ENV+=		GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
-.else
-RUBY_SETUP_OPTIONS=	--no-ri --no-rdoc --destdir=${STAGEDIR}
+RUBY_SETUP_OPTIONS=	--destdir=${STAGEDIR}
+GEM_ENV=		GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
+
+.if !${PORT_OPTIONS:MDOCS}
+RUBY_SETUP_OPTIONS+=	--no-ri --no-rdoc
 .endif
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_DOC_BASE_DIR}/
-	@${TOUCH} ${STAGEDIR}${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
 	cd ${WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
 post-install:
