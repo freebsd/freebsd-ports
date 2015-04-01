@@ -11,7 +11,7 @@ DISTNAME=	wpa_supplicant-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		wpa-gui-icons.tar.gz:icons
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based frontend for wpa_supplicant
 
 PLIST_FILES=	sbin/wpa_gui \
