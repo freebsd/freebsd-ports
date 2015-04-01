@@ -14,8 +14,7 @@ COMMENT=	MIDI-capable synthesizer for X
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+MAKE_ENV=	PTHREAD_LIBS="-lpthread"
 PLIST=		${WRKDIR}/pkg-plist
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -40,13 +39,13 @@ post-patch:
 	SpiralSound/_SynthInfo.C \
 	Synth.h
 	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
-	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+	${SED} -e 's|-O3||g ; \
 			s|CC	=|CC?	=|g ; \
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXX	=|CXX?	=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|LINK	=	g++|LINK	=	${CXX}|g ; \
-			s|-lm|${PTHREAD_LIBS} -lm|g ; \
+			s|-lm|-lpthread -lm|g ; \
 			s|/usr/X11R6|${LOCALBASE}|g ; \
 			s|iostream.h|iostream|g ;\
 			s|fstream.h|fstream|g ;\

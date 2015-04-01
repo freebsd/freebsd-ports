@@ -40,7 +40,7 @@ USE_PYTHON=	distutils
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

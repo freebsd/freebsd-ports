@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@timit.nl
 COMMENT=	Parallel coordinates plotter
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 

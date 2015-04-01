@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	configatron
-PORTVERSION=	4.2.0
+PORTVERSION=	4.5.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 

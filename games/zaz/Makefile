@@ -21,7 +21,7 @@ USE_SDL=	sdl image
 USE_GL=		gl glu
 
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*

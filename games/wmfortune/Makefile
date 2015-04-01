@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that outputs fortune messages
 
 BROKEN=		No public disfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-04-30
 
 PLIST_FILES=	bin/wmfortune
 USES=		gmake

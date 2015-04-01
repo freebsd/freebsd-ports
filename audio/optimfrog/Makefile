@@ -12,6 +12,8 @@ COMMENT=	Lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+BROKEN=		No public distfiles
+
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
 USES=		zip

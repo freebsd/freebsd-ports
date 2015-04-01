@@ -1,2 +1,4 @@
 SHA256 (joe-4.0.tar.gz) = c556adff77fd97bf1b86198de6cb82e0b92cda18579c4fef6c83b608d2ed2915
 SIZE (joe-4.0.tar.gz) = 838783
+SHA256 (zh-joe-3.7.diff) = 15e17361e7560558cc91b1bdef05dc8b8951413c7d7c5a01482514d71eba4e0b
+SIZE (zh-joe-3.7.diff) = 834

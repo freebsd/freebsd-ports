@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbear
-PORTVERSION=	2014.66
-PORTREVISION=	1
+PORTVERSION=	2015.67
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 

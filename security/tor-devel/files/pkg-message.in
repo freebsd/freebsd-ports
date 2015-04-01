@@ -16,4 +16,6 @@ before starting the tor server. Tor users are strongly advised to prevent traffi
 analysis that exploits sequential IP IDs by setting:
 
 sysctl net.inet.ip.random_id=1
+
+(see sysctl.conf(5)).
 ================================================================================

@@ -13,8 +13,8 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
 USES=		autoreconf dos2unix gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 post-extract:

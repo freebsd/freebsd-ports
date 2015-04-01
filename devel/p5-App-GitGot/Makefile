@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.25
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GENEHACK
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-Git-Wrapper>=0.014:${PORTSDIR}/devel/p5-Git-Wrapper \
 		p5-IO-Prompt-Simple>=0:${PORTSDIR}/devel/p5-IO-Prompt-Simple \
 		p5-List-AllUtils>=0.09:${PORTSDIR}/devel/p5-List-AllUtils \
-		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
+		p5-Moo>=2:${PORTSDIR}/devel/p5-Moo \
 		p5-MooX-HandlesVia>=0:${PORTSDIR}/devel/p5-MooX-HandlesVia \
 		p5-Net-GitHub>=0:${PORTSDIR}/net/p5-Net-GitHub \
 		p5-Path-Tiny>=0:${PORTSDIR}/devel/p5-Path-Tiny \

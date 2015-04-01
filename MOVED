@@ -5863,9 +5863,9 @@ archivers/ruby-libarchive|archivers/rubygem-libarchive|2014-04-08|Use the rubyge
 java/j2sdkee13||2014-04-10|EOLed long ago
 astro/glunarclock||2014-04-11|gnome-panel will be updated to the 3.x version which is not compatible with 2.x
 databases/libgda2||2014-04-11|Ancient version, consider using newer versions
-databases/libgda2-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda2-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3||2014-04-11|Ancient version, consider using newer versions
-databases/libgda3-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda3-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-firebird||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-freetds||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-ldap||2014-04-11|Ancient version, consider using newer versions
@@ -7442,3 +7442,13 @@ devel/p5-Class-XSAccessor-Array||2015-03-09|Has been a part of devel/p5-Class-XS
 multimedia/ffmpeg25|multimedia/ffmpeg26|2015-03-14|ffmpeg upstream now points to 2.6.x series
 www/squid33|www/squid|2015-03-15|Has expired: Reached EOL on 28 August 2014, use www/squid (v3.4) instead
 x11-fonts/ttmkfdir|x11-fonts/mkfontdir|2015-03-22|Has been replaced by mkfontdir/mkfontscale long ago
+audio/raproxy||2015-03-28|Has expired: Broken for more than 6 months
+converters/ruby-iconv||2015-03-28|Has expired: Not needed with Ruby 2.x
+databases/pydbdesigner||2015-03-28|Has expired: Broken for more than 6 months
+security/cyassl|security/wolfssl|2015-03-28|Renamed upstream
+devel/rubygem-rcov||2015-03-28|Has expired: Does not work with Ruby 2.x
+emulators/linux_dist-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
+emulators/linux_base-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
+www/vimb|www/vimb-gtk3|2015-03-29|Split into www/vimb-gtk2 and www/vimb-gtk3 (former default)
+ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome by changed in the Ports Collection
+devel/subversion16|devel/subversion|2015-03-31|Has expired: EoL, use devel/subversion

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	stjerm
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	x11
-MASTER_SITES=	http://stjerm-terminal.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	GTK+-based quake-like terminal emulator
@@ -12,11 +11,12 @@ COMMENT=	GTK+-based quake-like terminal emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_GITHUB=	yes
+GH_TAGNAME=	v${DISTVERSION}
+
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lXinerama
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	aclocal autoheader automake
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf gmake pkgconfig
 USE_GNOME=	vte gtk20
 USE_XORG=	xinerama
 

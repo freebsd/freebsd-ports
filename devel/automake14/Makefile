@@ -7,8 +7,8 @@ PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
-DISTNAME=	automake-1.4-p6
 PKGNAMESUFFIX=	14
+DISTNAME=	automake-1.4-p6
 
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
@@ -22,11 +22,12 @@ RUN_DEPENDS=	${AUTOCONF_DEPENDS} \
 USE_AUTOTOOLS=	autoconf:env
 BUILD_VERSION=	1.4
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USES=		makeinfo perl5
+USES=		cpe makeinfo perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
 INFO=		automake-${BUILD_VERSION}
+CPE_VENDOR=	gnu
 
 STRIP=		# none
 

@@ -13,6 +13,9 @@ COMMENT=	Better pager utility
 
 LICENSE=	GPLv3
 
+USES+=	cpe
+CPE_VENDOR=	gnu
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/less bin/lesskey bin/lessecho \

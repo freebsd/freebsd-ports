@@ -610,7 +610,7 @@ share/cinnamon/theme/cinnamon.css
 share/cinnamon/theme/close-window.svg
 share/cinnamon/theme/close.svg
 share/cinnamon/theme/corner-ripple.png
-share/cinnamon/theme/menu.svg
+share/cinnamon/theme/menu-symbolic.svg
 share/cinnamon/theme/overview-hover.png
 share/cinnamon/theme/overview.png
 share/cinnamon/theme/player-paused.svg
@@ -628,6 +628,7 @@ share/cinnamon/theme/toggle-off-us.svg
 share/cinnamon/theme/toggle-on-intl.svg
 share/cinnamon/theme/toggle-on-us.svg
 share/cinnamon/theme/trash-icon.png
+share/cinnamon/thumbnails/cinnamon/unknown.png
 share/cinnamon/thumbnails/cursors/Adwaita.png
 share/cinnamon/thumbnails/cursors/DMZ-Black.png
 share/cinnamon/thumbnails/cursors/DMZ-White.png

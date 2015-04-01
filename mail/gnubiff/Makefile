@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	NLS
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 USE_GNOME=	intlhack libglade2 esound
-USES=		fam gmake pathfix pkgconfig
+USES=		cpe fam gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
@@ -25,6 +25,7 @@ LIBS+=		-L${LOCALBASE}/lib -lX11
 CXXFLAGS+=	"-Wno-long-long"
 
 INFO=		gnubiff
+CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 

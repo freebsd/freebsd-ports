@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.155
+PORTVERSION=	1.3.156
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
-		http://www.rhyolite.com/anti-spam/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
-		ftp://ftp.rhyolite.com/src/dcc/old/
+		LOCAL/mat/${PORTNAME}
 DISTNAME=	dcc-${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Distributed Checksum Clearinghouse bulk email detector
@@ -23,7 +21,7 @@ LICENSE_PERMS=	no-pkg-sell no-dist-mirror no-pkg-mirror no-dist-sell
 
 HAS_CONFIGURE=	yes
 
-USES=	gmake
+USES=	gmake tar:Z
 
 OPTIONS_DEFINE=	DCCIFD DCCD DCCGREY IPV6 ALT_HOME
 OPTIONS_DEFAULT=	DCCIFD DCCM DCCD DCCGREY

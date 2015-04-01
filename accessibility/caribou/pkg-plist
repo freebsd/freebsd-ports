@@ -53,6 +53,7 @@ share/antler/style.css
 share/caribou/layouts/fullscale/us.xml
 share/caribou/layouts/scan/us.xml
 share/caribou/layouts/touch/ara.xml
+share/caribou/layouts/touch/fr.xml
 share/caribou/layouts/touch/il.xml
 share/caribou/layouts/touch/us.xml
 share/dbus-1/services/org.gnome.Caribou.Antler.service
@@ -65,6 +66,7 @@ share/locale/ast/LC_MESSAGES/caribou.mo
 share/locale/be/LC_MESSAGES/caribou.mo
 share/locale/bg/LC_MESSAGES/caribou.mo
 share/locale/bn_IN/LC_MESSAGES/caribou.mo
+share/locale/bs/LC_MESSAGES/caribou.mo
 share/locale/ca/LC_MESSAGES/caribou.mo
 share/locale/ca@valencia/LC_MESSAGES/caribou.mo
 share/locale/cs/LC_MESSAGES/caribou.mo

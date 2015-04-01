@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 USES=		gmake perl5 compiler:features
 USE_PERL5=	build
 PATCH_STRIP=	-p1
-MAKE_ENV+=	BSD_MAKE="${BSDMAKE}"
+MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-devel-[0-9]* qemu-sbruno-[0-9]*
 

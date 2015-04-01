@@ -4,7 +4,7 @@
 PORTNAME=	tbclock
 PORTVERSION=	1.10
 CATEGORIES=	games
-MASTER_SITES=	http://tamentis.com/projects/tbclock/files/ CENKES
+MASTER_SITES=	http://tamentis.com/projects/tbclock/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary clock in curses

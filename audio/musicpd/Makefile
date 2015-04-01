@@ -48,7 +48,6 @@ SIDPLAY2_DESC=	Sidplay support (C64 mono and stereo files)
 TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
-WAVPACK_DESC=	WavPack support
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
 
 OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL

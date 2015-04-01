@@ -14,7 +14,6 @@ COMMENT=	Unix source-port of the famous Heretic game by id Software
 
 USES=		gmake
 USE_XORG=	x11 xi xpm xau
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 OPTIONS_DEFINE=	WAD DOCS
 OPTIONS_SINGLE=	SG1

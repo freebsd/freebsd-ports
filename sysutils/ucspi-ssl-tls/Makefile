@@ -4,7 +4,7 @@ PORTREVISION=	4
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-tls
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UCSPI tools for building SSL client-server applications w/ TLS support
 
 CONFLICTS=	ucspi-ssl-[0-9]*

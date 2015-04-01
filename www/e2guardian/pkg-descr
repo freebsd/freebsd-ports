@@ -1,0 +1,23 @@
+e2guardian is a content filtering proxy that works in conjunction with another
+caching proxy such as Squid or Oops. More information can be found in the 
+e2guardian man page, the "doc" subdirectory and the in the configuration files.
+ 
+e2guardian is a fork of DansGuardian and the maintainers fully acknowledge the 
+work carried out by and the copyright of Daniel Baron and other contributors to 
+the Dansguardian project.
+
+E2Guardian Main features:
+Built-in content scanner plugin system which includes AV scanning.
+Can be configured to have multiple filter configurations including groups
+SSL Inspection and Blanket SSL blocking
+NTLM, Digest, Basic, IP and DNS authentication
+Header analysis and manipulation - you can also manipulate cookies -
+Large file (2GB+) download & scanning support
+Blacklist, Greylist domains
+Deny regular Expressions on urls, body content, and headers
+Deep URL scanning to spot URLs in URLs
+Advanced advert blocking
+Updates to handle all current web technology trends
+Time Based Blocking
+
+WWW: http://e2guardian.org

@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g \
 		--without-guile
 
-USES=		makeinfo tar:bzip2
+USES=		cpe makeinfo tar:bzip2
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

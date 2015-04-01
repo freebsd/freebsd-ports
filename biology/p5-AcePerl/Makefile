@@ -11,11 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to the ACEDB genome database system
 
-RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-MAKE_JOBS_UNSAFE=  yes
+BUILD_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
@@ -26,7 +28,7 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
+	@${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
 
 post-install:

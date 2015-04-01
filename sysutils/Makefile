@@ -146,6 +146,7 @@
     SUBDIR += conky-awesome
     SUBDIR += consolehm
     SUBDIR += consolekit
+    SUBDIR += consul
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils

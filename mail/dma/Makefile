@@ -26,7 +26,7 @@ CFLAGS+=	-I${OPENSSLINC} \
 		-DDMA_GROUP='\"mail\"'
 LDFLAGS+=	-L${OPENSSLLIB}
 
-MAKE_ENV=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV=	__MAKE_CONF=/dev/null SRCCONF=/dev/null NO_WERROR=defined
 
 USE_RC_SUBR=	dma_flushq
 SUB_FILES=	pkg-message

@@ -1,0 +1,90 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for subversion
+##
+## PROVIDE: mod_dav_svn mod_authz_svn mod_dontdothat
+## REQUIRE: mod_dav
+
+## make sure the following module is activated (httpd.conf or here)
+##  LoadModule dav_module %%APACHEMODDIR%%/mod_dav.so
+
+
+## ==========================================================================
+## Subversion modules
+## ==========================================================================
+#LoadModule dav_svn_module     %%APACHEMODDIR%%/mod_dav_svn.so
+#LoadModule authz_svn_module   %%APACHEMODDIR%%/mod_authz_svn.so
+#LoadModule dontdothat_module  %%APACHEMODDIR%%/mod_dontdothat.so
+
+
+## ==========================================================================
+## Example multi repo configuration from
+##   http://svnbook.red-bean.com/
+##
+## The Printed book can be ordered from
+##   http://svnbook.red-bean.com/buy/
+##
+## ==========================================================================
+## Required apache24 modules for the example below:
+##	mod_alias mod_auth_digest, mod_authn_core, mod_authn_file,
+##	mod_authz_core, mod_authz_user, mod_dav
+##
+## ==========================================================================
+##
+## The trailing '/' in /svn/ is needed to browse repos with standart browser!
+##	RedirectMatch ^(/svn)$ $1/
+##
+## Tuning:
+##	KeepAlive on
+##	MaxKeepAliveRequests 1000
+##
+## Multiple Repos with Digest auth:
+## - AuthName is an arbitrary name that you choose for the authentication
+##   domain. Most browsers display this name in the dialog box when prompting
+##   for username and password.
+## - AuthType specifies the type of authentication to use.
+## - AuthUserFile specifies the location of the password file to use.
+##
+##<IfModule dav_module>
+##<Location /svn/>
+##	# Enable Subversion
+##	DAV svn
+##
+##	# Directory containing all repository for this path
+##	SVNParentPath /space/svn/
+##
+##	# List repositories collection
+##	SVNListParentPath on
+##
+##	# Disable WebDAV automatic versioning
+##	SVNAutoversioning off
+##
+##	# Return a descriptive name for the repository.
+##	SVNReposName "Project XYZ repo"
+##
+##	# Anonymous access
+##	AuthzSVNAnonymous off
+##
+##	# XSL to display files
+##	SVNIndexXSLT "/style/svnindex.xsl"
+##
+##	# Authentication: Digest
+##	AuthType Digest
+##	AuthName "SVN-repo"
+##	AuthDigestDomain /svn/ http://mirror.my.dom/svn2/
+##
+##	# You can use the htdigest program to create the password database:
+##	#   htdigest -c "%%APACHEETCDIR%%/svn-auth.passwd" SVN-repo admin
+##	AuthDigestProvider file
+##	AuthUserFile %%APACHEETCDIR%%/svn-auth.passwd
+##
+##	# Authorization: Authenticated users only
+##	Require valid-user
+##
+##	# Do not limit large update requests
+##	LimitXMLRequestBody 0
+##</Location>
+##</IfModule>
+## ==========================================================================
+

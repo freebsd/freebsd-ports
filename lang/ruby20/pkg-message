@@ -9,8 +9,6 @@ And some of the standard libraries are provided as separate ports
 since they require extra dependencies:
 
 	databases/ruby-gdbm:	GDBM module
-	x11-toolkits/ruby-tk:	Tcl/Tk modules
-	japanese/ruby-tk:	Tcl/Tk modules for Japanized Tcl/Tk
 
 Install them as occasion demands.
 ====

@@ -17,11 +17,12 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GHOSTSCRIPT=yes
-USES=		gmake perl5 shebangfix
+USES=		cpe gmake perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
 CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
 
+CPE_VENDOR=	gnu
 SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
 		contrib/mm/mmroff.pl \
 

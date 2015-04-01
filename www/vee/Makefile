@@ -4,7 +4,7 @@
 PORTNAME=	vee
 DISTVERSION=	0.9.9-zeta
 CATEGORIES=	www
-MASTER_SITES=	http://www.0x743.com/vee/ CENKES
+MASTER_SITES=	http://www.0x743.com/vee/
 # Also here: http://code.google.com/p/vee/
 EXTRACT_SUFX=	.tgz
 

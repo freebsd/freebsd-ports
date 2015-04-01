@@ -28,9 +28,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/300.statistics \
 		${STAGEDIR}${PREFIX}/etc/periodic/monthly
 
-post-install:
-.if ! defined(BATCH) && ! defined(PACKAGE_BUILDING)
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-
 .include <bsd.port.post.mk>

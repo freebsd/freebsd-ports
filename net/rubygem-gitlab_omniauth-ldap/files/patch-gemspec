@@ -1,11 +1,11 @@
---- gitlab_omniauth-ldap-1.1.0.gemspec.orig	2013-10-25 02:24:55.456068284 +0000
-+++ gitlab_omniauth-ldap-1.1.0.gemspec	2013-10-25 02:25:06.863067558 +0000
-@@ -58,7 +58,7 @@
-     requirements:
-     - - ~>
-       - !ruby/object:Gem::Version
--        version: 0.1.1
-+        version: 0.4.0
-   type: :runtime
-   prerelease: false
-   version_requirements: !ruby/object:Gem::Requirement
+--- gitlab_omniauth-ldap.gemspec.orig	2014-12-01 04:29:00.000000000 +0000
++++ gitlab_omniauth-ldap.gemspec	2014-12-01 04:29:29.000000000 +0000
+@@ -25,7 +25,7 @@
+       s.add_runtime_dependency(%q<omniauth>, ["~> 1.0"])
+       s.add_runtime_dependency(%q<net-ldap>, ["~> 0.7.0"])
+       s.add_runtime_dependency(%q<pyu-ruby-sasl>, ["~> 0.0.3.1"])
+-      s.add_runtime_dependency(%q<rubyntlm>, ["~> 0.1.1"])
++      s.add_runtime_dependency(%q<rubyntlm>, ["~> 0.4.0"])
+     else
+       s.add_dependency(%q<omniauth>, ["~> 1.0"])
+       s.add_dependency(%q<net-ldap>, ["~> 0.7.0"])

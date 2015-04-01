@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.7p1
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -132,6 +132,9 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
 
+# Keep this last
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
+
 .if ${PORT_OPTIONS:MX509}
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		X509 patch and HPN patch do not apply cleanly together
@@ -153,14 +156,6 @@ BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base He
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
 IGNORE=		you have selected HEIMDAL_BASE but do not have heimdal installed in base
-.endif
-
-.if ${PORT_OPTIONS:MPAM} && !exists(/usr/include/security/pam_modules.h)
-IGNORE=		PAM must be installed in base
-.endif
-
-.if ${PORT_OPTIONS:MTCP_WRAPPERS} && !exists(/usr/include/tcpd.h)
-IGNORE=		required /usr/include/tcpd.h missing
 .endif
 
 .if ${PORT_OPTIONS:MMIT} || ${PORT_OPTIONS:MHEIMDAL} || ${PORT_OPTIONS:MHEIMDAL_BASE}
@@ -201,7 +196,6 @@ CONFIGURE_ARGS+=	--with-libs='${CONFIGURE_LIBS}'
 
 RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
-VERSION_ADDENDUM_SERVCONF_GREP=	"		options->version_addendum = xstrdup"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
@@ -213,13 +207,6 @@ post-patch:
 			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-# Making this a patch conflicts with the X509 option. Use grep to force failure.
-	@${ECHO_CMD} "===> Applying VersionAddendum patch to servconf.c" && \
-	    ${GREP} -q ${VERSION_ADDENDUM_SERVCONF_GREP} \
-	    ${WRKSRC}/servconf.c && \
-	    ${REINPLACE_CMD} \
-	    -e 's|\(		${VERSION_ADDENDUM_SERVCONF_GREP}\).*);|\1(SSH_VERSION_FREEBSD_PORT);|' \
-	    ${WRKSRC}/servconf.c
 	@${REINPLACE_CMD} \
 	    -e 's|\(VersionAddendum\) none|\1 ${VERSION_ADDENDUM_DEFAULT}|' \
 	    ${WRKSRC}/sshd_config

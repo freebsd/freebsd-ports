@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel
+LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod -lpthread -lncurses -lpanel
 DEFINES=	-D_REENTRANT
 
 PLIST_FILES=	bin/mp-player

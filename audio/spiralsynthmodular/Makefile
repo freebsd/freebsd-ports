@@ -34,8 +34,8 @@ OPTIMIZED_CFLAGS_CFLAGS=-O3 -ffast-math
 post-patch:
 	@${REINPLACE_CMD} -E -e 's@(-O3|-ffast-math)@@g; \
 		s|-Wall||; \
-		s|CFLAGS="-pipe|CFLAGS="\$$\{CFLAGS\} ${PTHREAD_CFLAGS}|; \
-		s|CXXFLAGS="-pipe|CXXFLAGS="\$$\{CXXFLAGS\} ${PTHREAD_CFLAGS}|; \
+		s|CFLAGS="-pipe|CFLAGS="\$$\{CFLAGS\}|; \
+		s|CXXFLAGS="-pipe|CXXFLAGS="\$$\{CXXFLAGS\}|; \
 		s|^SpiralSound/Plugins/MidiPlugin/Makefile||; \
 		s|MidiPlugin||' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -53,7 +53,7 @@ post-patch:
 		${WRKSRC}/SpiralSound/Sample.h
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's,-l(dl|rt),,; s|g\+\+|$$(CXX)|; \
-		/^(CC|CXX)[[:space:]]*=.+$$/d; s|-lpthread|${PTHREAD_LIBS}|g; \
+		/^(CC|CXX)[[:space:]]*=.+$$/d; \
 		s,@FLTK_(C|CXX)FLAGS@,-I${LOCALBASE}/include,; \
 		s,(bin|lib)dir),DESTDIR)$$(&,'
 	@${FIND} ${WRKSRC} -type f -name "*.C" -o -name "*.cpp" -o -name "*.h" \

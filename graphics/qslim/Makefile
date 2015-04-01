@@ -5,8 +5,7 @@ PORTNAME=	qslim
 PORTVERSION=	2.1
 PORTREVISION=	10
 CATEGORIES=	graphics
-MASTER_SITES=	http://mgarland.org/files/dist/ \
-		CENKES
+MASTER_SITES=	http://mgarland.org/files/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlimKit surface modeling tools

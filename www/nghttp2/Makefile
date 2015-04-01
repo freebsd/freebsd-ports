@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.9
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -66,6 +66,5 @@ CONFIGURE_ARGS+=--with-jemalloc
 
 post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^DEFAULT_INCLUDES = |&-I${WRKSRC}/src/includes |' ${WRKSRC}/examples/Makefile.in ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>

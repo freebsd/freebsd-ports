@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2010, 2011, 2012, 2013 David Naylor <naylor.b.david@gmail.com>.
+# Copyright 2010 to 2015 David Naylor <dbn@FreeBSD.org>
 # Copyright 2012 Jan Beich <jbeich@tormail.org>
 #       All rights reserved.
 #
@@ -68,6 +68,10 @@
 # Version 1.14 - 2014/12/26
 #  - gracefully handle a corrupt nVidia tarball
 #  - provide checksum and size information for nVidia tarball
+# Version 1.15 - 2015/03/10
+#  - handle nvidia-driver with package name suffix
+#  - handle i386-wine with arbitary package name suffix
+#  - remove support for old pkg_ tools
 
 set -e
 
@@ -129,15 +133,11 @@ version() {
   local ret pkg="$1"
   if [ -f "/usr/local/sbin/pkg" ]
   then
-    ret=`pkg query -g '%v' $pkg || true`
+    ret=`pkg query -g '%v' "$pkg" || true`
   fi
 
-  if [ -z "$ret" ]
-  then
-    ret=`pkg_info -E $pkg'*' | cut -f 3 -d - || true`
-  fi
   # installed manually or failed to register
-  if [ -z "$ret" ] && [ "$pkg" = "nvidia-driver" ]
+  if [ -z "$ret" ] && [ "$pkg" = "nvidia-driver*" ]
   then
     ret=`sed -n "s/.*Version: //p" 2> /dev/null \
       $PREFIX/share/doc/NVIDIA_GLX-1.0/README || true`
@@ -152,13 +152,13 @@ echo "===> Patching i386-wine to work with x11/nvidia-driver:"
 
 if [ -z "${WINE}" ]
 then
-  WINE=`version i386-wine; version i386-wine-devel; version i386-wine-compholio`
+  WINE=`version 'i386-wine*'`
 fi
 [ -n "$WINE" ] \
   || terminate 255 "Unable to detect i386-wine, please install first"
 echo "=> Detected i386-wine: ${WINE}"
 
-NV=`version nvidia-driver`
+NV=`version 'nvidia-driver*'`
 [ -n "$NV" ] \
   || terminate 1 "Unable to detect nvidia-driver, please install first"
 echo "=> Detected nvidia-driver: ${NV}"

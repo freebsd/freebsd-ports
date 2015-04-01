@@ -177,6 +177,7 @@ courier:*:465:
 condor:*:466:
 netmon:*:467:
 slurm:*:468:
+consul:*:469:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
@@ -306,6 +307,7 @@ puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
 mediabrowser:*:989:
+oozie:*:990:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

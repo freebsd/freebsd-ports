@@ -25,6 +25,7 @@ share/icons/hicolor/scalable/status/fcitx-anthy-period-latin.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-wide-japanese.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-wide-latin.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-symbol.svg
+share/locale/de/LC_MESSAGES/fcitx-anthy.mo
 share/locale/ja/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-anthy.mo

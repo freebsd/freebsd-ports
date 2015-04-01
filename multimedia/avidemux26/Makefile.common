@@ -258,10 +258,10 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
 	@${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/avidemux_core/CMakeLists.txt
 
 post-configure-common:
-	@${FIND} ${CONFIGURE_WRKSRC} -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||g'
+	@${FIND} ${CONFIGURE_WRKSRC} -name link.txt -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||g'

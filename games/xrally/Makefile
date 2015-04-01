@@ -16,8 +16,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_XORG=	x11 xi xpm
 USES=		gmake tar:bzip2
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 MAKE_ENV=	INCLUDES="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

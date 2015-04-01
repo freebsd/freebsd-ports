@@ -1,0 +1,10 @@
+--- ./tools/gui/wrapper/CMakeLists.txt.orig	2013-09-28 17:33:14.000000000 +0900
++++ ./tools/gui/wrapper/CMakeLists.txt	2014-03-19 13:45:08.000000000 +0900
+@@ -14,6 +14,7 @@
+   ${QT_QTCORE_INCLUDE_DIR}
+   ${QT_QTGUI_INCLUDE_DIR}
+   ${CMAKE_CURRENT_BINARY_DIR}
++  ${LIBINTL_INCLUDE_DIR}
+   )
+ 
+ qt4_wrap_ui(QT_WRAPPER_SRCS mainwindow.ui)

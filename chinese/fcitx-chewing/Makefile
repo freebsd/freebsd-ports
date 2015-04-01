@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-chewing
-PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	fcitx
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Chewing support for Fcitx
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libchewing.so:${PORTSDIR}/chinese/libchewing
 
 USES=		tar:xz cmake gettext pkgconfig
-USE_GNOME=	intltool
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

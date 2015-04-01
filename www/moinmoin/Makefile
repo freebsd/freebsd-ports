@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
@@ -20,13 +20,14 @@ PYDISTUTILS_PKGNAME=	moin
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
 		DATADIR=share/moin
 SUB_FILES=	pkg-install
-SUB_LIST=	MOINDIR=${MOINDIR} MOINDEST=${MOINDEST} \
+SUB_LIST=	MOINDIR=${MOINDIR} MOINDEST=${MOINDEST} MOINVER=${MOINVER} \
 		HTDOCS=${PYTHON_SITELIBDIR}/MoinMoin/web/static/htdocs
 
 CGIUSER?=	www
 CGIGROUP?=	www
 MOINDIR=	${PREFIX}/share/moin
 MOINDEST?=	${PREFIX}/www/wiki
+MOINVER?=	${PORTVERSION:S|.||g}
 MOINTYPE?=	CGI
 
 PKGDEINSTALL=	${PKGINSTALL}
@@ -54,12 +55,6 @@ pre-everything::
 	@${ECHO} "To get correct permissions, please set CGIUSER, CGIGROUP"
 	@${ECHO} "per default it is set to www:www."
 	@${ECHO}
-
-post-install:
-#	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
-#	@${FIND} ${PREFIX}/share/moin/underlay -type d | ${SED} -e 's,${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
-#	@${ECHO_CMD} "@dirrm share/moin" >> ${TMPPLIST}
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 instance: pre-everything apply-slist
 	@${ECHO_CMD} "Creating a new wiki instance in ${MOINDEST}."; \

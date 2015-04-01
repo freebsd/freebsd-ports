@@ -57,6 +57,323 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8e887b71-d769-11e4-b1c2-20cf30e32f6d">
+    <topic>subversion -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.5.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+      <package>
+	<name>subversion16</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Subversion HTTP servers with FSFS repositories are vulnerable to a remotely
+	   triggerable excessive memory use with certain REPORT requests.</p>
+	  <p>Subversion mod_dav_svn and svnserve are vulnerable to a remotely triggerable
+	    assertion DoS vulnerability for certain requests with dynamically evaluated
+	    revision numbers.</p>
+	  <p>Subversion HTTP servers allow spoofing svn:author property values for new
+	    revisions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://subversion.apache.org/security/</url>
+      <cvename>CVE-2015-0202</cvename>
+      <cvename>CVE-2015-0248</cvename>
+      <cvename>CVE-2015-0251</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-0202-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0248-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0251-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d0c97697-df2c-4b8b-bff2-cec24dc35af8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>37.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>37.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.34</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.34</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-30 Miscellaneous memory safety hazards (rv:37.0
+	    / rv:31.6)</p>
+	  <p>MFSA-2015-31 Use-after-free when using the Fluendo MP3
+	    GStreamer plugin</p>
+	  <p>MFSA-2015-32 Add-on lightweight theme installation
+	    approval bypassed through MITM attack</p>
+	  <p>MFSA-2015-33 resource:// documents can load privileged
+	    pages</p>
+	  <p>MFSA-2015-34 Out of bounds read in QCMS library</p>
+	  <p>MFSA-2015-35 Cursor clickjacking with flash and images</p>
+	  <p>MFSA-2015-36 Incorrect memory management for simple-type
+	    arrays in WebRTC</p>
+	  <p>MFSA-2015-37 CORS requests should not follow 30x
+	    redirections after preflight</p>
+	  <p>MFSA-2015-38 Memory corruption crashes in Off Main Thread
+	    Compositing</p>
+	  <p>MFSA-2015-39 Use-after-free due to type confusion flaws</p>
+	  <p>MFSA-2015-40 Same-origin bypass through anchor navigation</p>
+	  <p>MFSA-2015-41 PRNG weakness allows for DNS poisoning on
+	    Android</p>
+	  <p>MFSA-2015-42 Windows can retain access to privileged
+	    content on navigation to unprivileged pages</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2808</cvename>
+      <cvename>CVE-2015-0800</cvename>
+      <cvename>CVE-2015-0801</cvename>
+      <cvename>CVE-2015-0802</cvename>
+      <cvename>CVE-2015-0803</cvename>
+      <cvename>CVE-2015-0804</cvename>
+      <cvename>CVE-2015-0805</cvename>
+      <cvename>CVE-2015-0806</cvename>
+      <cvename>CVE-2015-0807</cvename>
+      <cvename>CVE-2015-0808</cvename>
+      <cvename>CVE-2015-0810</cvename>
+      <cvename>CVE-2015-0811</cvename>
+      <cvename>CVE-2015-0812</cvename>
+      <cvename>CVE-2015-0813</cvename>
+      <cvename>CVE-2015-0814</cvename>
+      <cvename>CVE-2015-0815</cvename>
+      <cvename>CVE-2015-0816</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-30/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-31/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-32/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-33/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-34/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-35/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-36/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-37/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-38/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-39/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-40/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-41/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-42/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f450587b-d7bd-11e4-b5a4-14dae9d5a9d2">
+    <topic>osc -- shell command injection via crafted _service files</topic>
+    <affects>
+      <package>
+	<name>osc</name>
+	<range><lt>0.151.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SUSE Security Update reports:</p>
+	<blockquote cite="https://www.suse.com/security/cve/CVE-2015-0778.html">
+	  <p>osc before 0.151.0 allows remote attackers to execute
+	    arbitrary commands via shell metacharacters in a _service
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0778</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2015-0778.html</url>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=901643</url>
+      <url>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00012.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-16</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72ee9707-d7b2-11e4-8d8e-f8b156b6dcc8">
+    <topic>cpio -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gcpio</name>
+	<range><lt>2.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Debian Security Team:</p>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2014-9112">
+	  <p>Heap-based buffer overflow in the process_copy_in
+	    function in GNU Cpio 2.11 allows remote attackers to cause
+	    a denial of service via a large block value in a cpio
+	    archive.</p>
+	</blockquote>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2015-1197">
+	  <p>cpio 2.11, when using the --no-absolute-filenames
+	    option, allows local users to write to arbitrary files
+	    via a symlink attack on a file in an archive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9112</cvename>
+      <url>https://security-tracker.debian.org/tracker/CVE-2014-9112</url>
+      <cvename>CVE-2015-1197</cvename>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=658010</url>
+    </references>
+    <dates>
+      <discovery>2015-03-27</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="264749ae-d565-11e4-b545-00269ee29e57">
+    <topic>libzip -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>libzip</name>
+	<range><lt>0.11.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libzip developers report:</p>
+	<blockquote cite="http://hg.nih.at/libzip/rev/9f11d54f692e">
+	  <p>Avoid integer overflow. Fixed similarly to patch used in PHP copy of libzip.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69253</url>
+      <url>https://github.com/php/php-src/commit/ef8fc4b53d92fbfcd8ef1abbd6f2f5fe2c4a11e5</url>
+      <url>http://hg.nih.at/libzip/rev/9f11d54f692e</url>
+      <cvename>CVE-2015-2331</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62287f51-d43d-11e4-879c-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/mar/18/security-releases/">
+	  <p>In accordance with our security release policy, the Django team
+	    is issuing multiple releases -- Django 1.4.20, 1.6.11, 1.7.7 and
+	    1.8c1. These releases are now available on PyPI and our download
+	    page. These releases address several security issues detailed
+	    below. We encourage all users of Django to upgrade as soon as
+	    possible. The Django master branch has also been updated.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/mar/18/security-releases/</url>
+      <cvename>CVE-2015-2316</cvename>
+      <cvename>CVE-2015-2317</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6a014cd-d268-11e4-8339-001e679db764">
     <topic>GNU binutils -- multiple vulnerabilities</topic>
     <affects>

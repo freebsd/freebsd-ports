@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.5.10
-PORTREVISION=	2
+DISTVERSION=	0.2.6.6
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -13,20 +12,19 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}" \
 
-OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS INSTR_DOWNLOADS MEMPOOLS \
-		STATIC_TOR TCMALLOC THREADS TOR2WEB TRANSPARENT
+OPTIONS_DEFINE=	BUFFEREVENTS INSTR_DOWNLOADS \
+		STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
 
 BUFFEREVENTS_DESC=	Use libevent's buffered IO
-BUFFREELISTS_DESC=	Freelists for buffer RAM
 INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
-MEMPOOLS_DESC=		Mempools for relay cells
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		Faster but non-anonymous hidden services
@@ -64,22 +62,10 @@ CONFIGURE_ARGS+=	--enable-bufferevents
 CONFIGURE_ARGS+=	--disable-bufferevents
 .endif
 
-.if ${PORT_OPTIONS:MBUFFREELISTS}
-CONFIGURE_ARGS+=	--enable-buf-freelists
-.else
-CONFIGURE_ARGS+=	--disable-buf-freelists
-.endif
-
 .if ${PORT_OPTIONS:MINSTR_DOWNLOADS}
 CONFIGURE_ARGS+=	--enable-instrument-downloads
 .else
 CONFIGURE_ARGS+=	--disable-instrument-downloads
-.endif
-
-.if ${PORT_OPTIONS:MMEMPOOLS}
-CONFIGURE_ARGS+=	--enable-mempools
-.else
-CONFIGURE_ARGS+=	--disable-mempools
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
@@ -106,12 +92,6 @@ BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perfto
 .else
 LIB_DEPENDS+=		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--enable-threads
-.else
-CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 .if ${PORT_OPTIONS:MTOR2WEB}

@@ -31,10 +31,6 @@ pre-patch:
 post-patch:
 	@${SED} -e "s;@PREFIX@;${STAGDIR}${PREFIX};g" ${WRKSRC}/xmcd_d/XMcd.ad.in \
 		> ${WRKSRC}/xmcd_d/XMcd.ad
-	@${FIND} ${WRKSRC} -name Makefile -o -name Imakefile | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e 's|_CFLAGS= -pthread|_CFLAGS= ${PTHREAD_CFLAGS}|g; \
-		s|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_LIBS}|g'
 
 post-configure:
 	@${REINPLACE_CMD} \
@@ -50,27 +46,27 @@ post-configure:
 		${WRKSRC}/install.sh
 
 post-install:
-	@${STRIP_CMD} ${LIBBINDIR}/cda
-	@${STRIP_CMD} ${LIBBINDIR}/gobrowser
-	@${STRIP_CMD} ${LIBBINDIR}/has_alsa
-	@${STRIP_CMD} ${LIBBINDIR}/xmcd
-	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XMcd
-	@${RM} ${STAGEDIR}${PREFIX}/bin/xmcd
-	@${RM} ${STAGEDIR}${PREFIX}/bin/cda
-	@${LN} -sf .xmcd_start ${STAGEDIR}${PREFIX}/bin/xmcd
-	@${LN} -sf .xmcd_start ${STAGEDIR}${PREFIX}/bin/cda
-	@${REINPLACE_CMD} \
+	${STRIP_CMD} ${LIBBINDIR}/cda ${LIBBINDIR}/gobrowser \
+		${LIBBINDIR}/has_alsa ${LIBBINDIR}/xmcd
+	${INSTALL_DATA} ${WRKSRC}/xmcd_d/XMcd.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XMcd
+	${RM} ${STAGEDIR}${PREFIX}/bin/xmcd
+	${RM} ${STAGEDIR}${PREFIX}/bin/cda
+	${LN} -sf .xmcd_start ${STAGEDIR}${PREFIX}/bin/xmcd
+	${LN} -sf .xmcd_start ${STAGEDIR}${PREFIX}/bin/cda
+	${REINPLACE_CMD} \
 		-e 's:^BINDIR=.*:XMCDLIB=${PREFIX}/bin:' \
 		-e 's:^XMCDLIB=.*:XMCDLIB=${PREFIX}/lib/X11/xmcd:' \
 		-e 's:^DISCOGDIR=.*:DISCOGDIR=${PREFIX}/lib/X11/xmcd/discog:' \
 		-e 's:XMCD_LIBDIR=.*:XMCD_LIBDIR=${PREFIX}/lib/X11/xmcd:' \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/scripts/genidx \
 		${STAGEDIR}${PREFIX}/bin/.xmcd_start
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e 's:${STAGEDIR}::' \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/discog/discog.html \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/config/config.sh \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}/README
-	@${FIND} ${STAGEDIR} -name \*.bak -delete
+	${FIND} ${STAGEDIR}${PREFIX} -name \*.bak -delete
+	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 
 .include <bsd.port.mk>

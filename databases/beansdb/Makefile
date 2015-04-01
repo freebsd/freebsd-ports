@@ -11,7 +11,7 @@ COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
-CFLAGS+=	-lpthread
+LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/beansdb \
 		man/man1/beansdb.1.gz

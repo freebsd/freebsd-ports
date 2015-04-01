@@ -12,10 +12,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic module to run web-applications
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-App-Control>=0:${PORTSDIR}/devel/p5-App-Control \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-	
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

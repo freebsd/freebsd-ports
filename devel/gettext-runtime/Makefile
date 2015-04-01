@@ -20,11 +20,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-gettext \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
-USES=		charsetfix iconv libtool tar:xz
+USES=		charsetfix cpe iconv libtool tar:xz
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-runtime
 
 INFO=		autosprintf
+CPE_PRODUCT=	gettext
+CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 

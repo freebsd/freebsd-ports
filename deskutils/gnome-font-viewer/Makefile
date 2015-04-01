@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/deskutils/gnome-font-viewer/Makefile 19966 2014-10-16 06:32:52Z gusi $
 
 PORTNAME=	gnome-font-viewer
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

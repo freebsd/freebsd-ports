@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		libtool gmake
+USES=		autoreconf libtool gmake
 
-USE_AUTOTOOLS=	aclocal libtoolize autoconf automake autoheader
-AUTOMAKE_ARGS=	--add-missing --copy --force
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=yes

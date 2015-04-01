@@ -43,15 +43,15 @@ CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--with-python="${PYTHON_CMD}"
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 		MPI_CFLAGS="-I${LOCALBASE}/include" \
-		PACKAGE=${PORTNAME} \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PACKAGE="${PORTNAME}" \
+		PTHREAD_LIBS="-lpthread"
 
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
 .endif
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lexecinfo
 
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
 NOCCACHE=	yes
@@ -133,7 +133,6 @@ PLIST_SUB+=	X11=${PLX11}
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
 	${FIND} ${WRKSRC} -name configure | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|doc/$${PACKAGE}|doc/${PORTNAME}|'

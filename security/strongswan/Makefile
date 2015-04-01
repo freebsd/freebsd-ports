@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTVERSION=	5.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -42,7 +41,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
-		SQLITE TESTVECTOR UNBOUND XAUTH
+		SQLITE TESTVECTOR UNBOUND UNITY XAUTH
 OPTIONS_DEFAULT=	IKEv1
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
@@ -60,6 +59,7 @@ PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
 SMP_DESC=	Enable XML-based management protocol
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
+UNITY_DESC=	Enable Cisco Unity extension plugin
 XAUTH_DESC=	Enable XAuth password verification
 
 # Extra options
@@ -88,6 +88,7 @@ PKI_CONFIGURE_OFF=	--disable-pki
 SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
+UNITY_CONFIGURE_ON=	--enable-unity
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 
 .include <bsd.port.options.mk>

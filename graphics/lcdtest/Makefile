@@ -21,7 +21,7 @@ RUN_DEPENDS=	liberation-fonts-ttf>0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 USE_SDL=	sdl image ttf
 
 CFLAGS+=	-I${LOCALBASE}/include -DRELEASE=1.18
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lSDL -lSDL_image -lSDL_ttf
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lSDL -lSDL_image -lSDL_ttf
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \

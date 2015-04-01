@@ -112,7 +112,10 @@
 %%WWWDIR%%/app/models/enabled_module.rb
 %%WWWDIR%%/app/models/enumeration.rb
 %%WWWDIR%%/app/models/group.rb
+%%WWWDIR%%/app/models/group_anonymous.rb
+%%WWWDIR%%/app/models/group_builtin.rb
 %%WWWDIR%%/app/models/group_custom_field.rb
+%%WWWDIR%%/app/models/group_non_member.rb
 %%WWWDIR%%/app/models/issue.rb
 %%WWWDIR%%/app/models/issue_category.rb
 %%WWWDIR%%/app/models/issue_custom_field.rb
@@ -374,6 +377,7 @@
 %%WWWDIR%%/app/views/projects/_edit.html.erb
 %%WWWDIR%%/app/views/projects/_form.html.erb
 %%WWWDIR%%/app/views/projects/_members_box.html.erb
+%%WWWDIR%%/app/views/projects/_sidebar.html.erb
 %%WWWDIR%%/app/views/projects/copy.html.erb
 %%WWWDIR%%/app/views/projects/destroy.html.erb
 %%WWWDIR%%/app/views/projects/index.api.rsb
@@ -825,6 +829,8 @@
 %%WWWDIR%%/db/migrate/20131215104612_store_relation_type_in_journal_details.rb
 %%WWWDIR%%/db/migrate/20131218183023_delete_orphan_time_entries_custom_values.rb
 %%WWWDIR%%/db/migrate/20140228130325_change_changesets_comments_limit.rb
+%%WWWDIR%%/db/migrate/20140903143914_add_password_changed_at_to_user.rb
+%%WWWDIR%%/db/migrate/20140920094058_insert_builtin_groups.rb
 %%WWWDIR%%/doc/CHANGELOG
 %%WWWDIR%%/doc/COPYING
 %%WWWDIR%%/doc/INSTALL
@@ -929,6 +935,47 @@
 %%WWWDIR%%/lib/plugins/acts_as_versioned/test/versioned_test.rb
 %%WWWDIR%%/lib/plugins/acts_as_watchable/init.rb
 %%WWWDIR%%/lib/plugins/acts_as_watchable/lib/acts_as_watchable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/.autotest
+%%WWWDIR%%/lib/plugins/awesome_nested_set/.gitignore
+%%WWWDIR%%/lib/plugins/awesome_nested_set/.travis.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/CHANGELOG
+%%WWWDIR%%/lib/plugins/awesome_nested_set/CONTRIBUTING.md
+%%WWWDIR%%/lib/plugins/awesome_nested_set/Gemfile
+%%WWWDIR%%/lib/plugins/awesome_nested_set/MIT-LICENSE
+%%WWWDIR%%/lib/plugins/awesome_nested_set/README.md
+%%WWWDIR%%/lib/plugins/awesome_nested_set/Rakefile
+%%WWWDIR%%/lib/plugins/awesome_nested_set/awesome_nested_set.gemspec
+%%WWWDIR%%/lib/plugins/awesome_nested_set/gemfiles/Gemfile.rails-3.0.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/gemfiles/Gemfile.rails-3.1.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/gemfiles/Gemfile.rails-3.2.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/init.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/awesome_nested_set.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/columns.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/helper.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/iterator.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/movable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/prunable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/rebuildable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/relatable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/transactable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/model/validatable.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/move.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/set_validator.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/tree.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/lib/awesome_nested_set/version.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/awesome_nested_set/helper_spec.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/awesome_nested_set_spec.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/db/database.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/db/schema.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/fixtures/brokens.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/fixtures/categories.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/fixtures/departments.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/fixtures/notes.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/fixtures/things.yml
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/spec_helper.rb
+%%WWWDIR%%/lib/plugins/awesome_nested_set/spec/support/models.rb
 %%WWWDIR%%/lib/plugins/gravatar/.gitignore
 %%WWWDIR%%/lib/plugins/gravatar/MIT-LICENSE
 %%WWWDIR%%/lib/plugins/gravatar/README.rdoc
@@ -958,104 +1005,6 @@
 %%WWWDIR%%/lib/plugins/open_id_authentication/test/open_id_authentication_test.rb
 %%WWWDIR%%/lib/plugins/open_id_authentication/test/status_test.rb
 %%WWWDIR%%/lib/plugins/open_id_authentication/test/test_helper.rb
-%%WWWDIR%%/lib/plugins/rfpdf/CHANGELOG
-%%WWWDIR%%/lib/plugins/rfpdf/MIT-LICENSE
-%%WWWDIR%%/lib/plugins/rfpdf/README
-%%WWWDIR%%/lib/plugins/rfpdf/init.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/config/lang/eng.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/core/image_science.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/core/rfpdf.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/core/rmagick.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/.noencode
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-Bold.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-Bold.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-BoldOblique.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-BoldOblique.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-Oblique.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans-Oblique.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/DejaVuSans.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSans.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSans.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansBold.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansBold.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansBoldOblique.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansBoldOblique.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansOblique.ctg.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/FreeSansOblique.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/README.z
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/AUTHORS
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/BUGS
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/LICENSE
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/NEWS
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/README
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/langcover.txt
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/status.txt
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/unicover.txt
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavusans.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavusansb.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavusansi.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont/AUTHORS
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont/CREDITS
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont/ChangeLog
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont/INSTALL
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont/README
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freesans.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freesansb.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freesansbi.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freesansi.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/helvetica.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/helveticab.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/helveticabi.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/helveticai.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/.noencode
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1250.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1251.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1252.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1253.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1254.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1255.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1257.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp1258.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/cp874.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-1.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-11.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-15.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-16.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-2.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-4.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-5.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-7.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/iso-8859-9.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/koi8-r.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/koi8-u.map
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont/makefont.php
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf-bitstream-vera-1.10/COPYRIGHT.TXT
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf-bitstream-vera-1.10/README.TXT
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf-bitstream-vera-1.10/RELEASENOTES.TXT
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf-bitstream-vera-1.10/local.conf
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf2ufm/README.TXT
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf2ufm/makefontuni_ruby.php
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf2ufm/ttf2ufm
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf2ufm/ttf2ufm.exe
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf/bookmark.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf/chinese.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf/japanese.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf/korean.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf/makefont.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/action_controller.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/action_view.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/errors.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/fpdf.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/math.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/template_handler/compile_support.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/template_handlers/base.rb
-%%WWWDIR%%/lib/plugins/rfpdf/lib/tcpdf.rb
-%%WWWDIR%%/lib/plugins/rfpdf/logo_example.png
-%%WWWDIR%%/lib/plugins/rfpdf/test/test_helper.rb
-%%WWWDIR%%/lib/plugins/rfpdf/test_unicode.rfpdf
-%%WWWDIR%%/lib/plugins/rfpdf/utf8test.txt
 %%WWWDIR%%/lib/redcloth3.rb
 %%WWWDIR%%/lib/redmine.rb
 %%WWWDIR%%/lib/redmine/access_control.rb
@@ -1376,52 +1325,52 @@
 %%WWWDIR%%/public/javascripts/context_menu.js
 %%WWWDIR%%/public/javascripts/datepicker.js
 %%WWWDIR%%/public/javascripts/gantt.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ar.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-az.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-bg.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-bs.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ca.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-cs.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-da.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-de.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-el.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-en-GB.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-es.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-et.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-eu.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-fa.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-fi.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-fr.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-gl.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-he.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-hr.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-hu.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-id.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-it.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ja.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ko.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-lt.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-lv.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-mk.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-nl.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-no.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-pl.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-pt-BR.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-pt.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ro.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-ru.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-sk.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-sl.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-sq.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-sr.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-sv.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-th.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-tr.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-uk.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-vi.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-zh-CN.js
-%%WWWDIR%%/public/javascripts/i18n/jquery.ui.datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ar.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-az.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-bg.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-bs.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ca.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-cs.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-da.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-de.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-el.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-en-GB.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-es.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-et.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-eu.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-fa.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-fi.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-fr.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-gl.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-he.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-hr.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-hu.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-id.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-it.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ja.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ko.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-lt.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-lv.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-mk.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-nl.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-no.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-pl.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-pt-BR.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-pt.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ro.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-ru.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-sk.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-sl.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-sq.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-sr.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-sv.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-th.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-tr.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-uk.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
+%%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
+%%WWWDIR%%/public/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.1.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar-textile.min.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
@@ -1478,9 +1427,11 @@
 %%WWWDIR%%/public/javascripts/repository_navigation.js
 %%WWWDIR%%/public/javascripts/revision_graph.js
 %%WWWDIR%%/public/javascripts/select_list_move.js
+%%WWWDIR%%/public/plugin_assets/empty
 %%WWWDIR%%/public/stylesheets/application.css
 %%WWWDIR%%/public/stylesheets/context_menu.css
 %%WWWDIR%%/public/stylesheets/context_menu_rtl.css
+%%WWWDIR%%/public/stylesheets/jquery/images/animated-overlay.gif
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-bg_diagonals-thick_20_666666_40x40.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-bg_flat_10_000000_40x100.png
@@ -1494,7 +1445,7 @@
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_759fcf_256x240.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_ffd27a_256x240.png
 %%WWWDIR%%/public/stylesheets/jquery/images/ui-icons_ffffff_256x240.png
-%%WWWDIR%%/public/stylesheets/jquery/jquery-ui-1.9.2.css
+%%WWWDIR%%/public/stylesheets/jquery/jquery-ui-1.11.0.css
 %%WWWDIR%%/public/stylesheets/jstoolbar.css
 %%WWWDIR%%/public/stylesheets/rtl.css
 %%WWWDIR%%/public/stylesheets/scm.css
@@ -1557,6 +1508,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/apple_mail_with_attachment.eml
 %%WWWDIR%%/test/fixtures/mail_handler/body_ks_c_5601-1987.eml
 %%WWWDIR%%/test/fixtures/mail_handler/fullname_of_sender_as_utf8_encoded.eml
+%%WWWDIR%%/test/fixtures/mail_handler/gmail-iso8859-2.eml
 %%WWWDIR%%/test/fixtures/mail_handler/gmail_with_attachment_iso-8859-1.eml
 %%WWWDIR%%/test/fixtures/mail_handler/gmail_with_attachment_ja.eml
 %%WWWDIR%%/test/fixtures/mail_handler/issue_update_with_multiple_quoted_reply_above.eml
@@ -1566,6 +1518,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/message_reply_by_subject.eml
 %%WWWDIR%%/test/fixtures/mail_handler/multiple_text_parts.eml
 %%WWWDIR%%/test/fixtures/mail_handler/no_subject_header.eml
+%%WWWDIR%%/test/fixtures/mail_handler/quoted_printable_utf8.eml
 %%WWWDIR%%/test/fixtures/mail_handler/subject_as_iso-8859-1.eml
 %%WWWDIR%%/test/fixtures/mail_handler/subject_japanese_1.eml
 %%WWWDIR%%/test/fixtures/mail_handler/subject_japanese_2.eml
@@ -1582,7 +1535,9 @@
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_cc.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_custom_fields.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_duplicate_keyword.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_invalid_attributes.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_keyword_after_delimiter.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_localized_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_long_subject.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_spaces_between_attribute_and_separator.eml
@@ -1786,9 +1741,11 @@
 %%WWWDIR%%/test/unit/helpers/issues_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/projects_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/queries_helper_test.rb
+%%WWWDIR%%/test/unit/helpers/routes_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/search_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/sort_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/timelog_helper_test.rb
+%%WWWDIR%%/test/unit/helpers/version_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/watchers_helper_test.rb
 %%WWWDIR%%/test/unit/initializers/patches_test.rb
 %%WWWDIR%%/test/unit/issue_category_test.rb
@@ -1796,6 +1753,7 @@
 %%WWWDIR%%/test/unit/issue_nested_set_test.rb
 %%WWWDIR%%/test/unit/issue_priority_test.rb
 %%WWWDIR%%/test/unit/issue_relation_test.rb
+%%WWWDIR%%/test/unit/issue_scopes_test.rb
 %%WWWDIR%%/test/unit/issue_status_test.rb
 %%WWWDIR%%/test/unit/issue_test.rb
 %%WWWDIR%%/test/unit/issue_transaction_test.rb
@@ -1883,304 +1841,20 @@
 %%WWWDIR%%/test/unit/wiki_redirect_test.rb
 %%WWWDIR%%/test/unit/wiki_test.rb
 %%WWWDIR%%/test/unit/workflow_test.rb
+%%WWWDIR%%/test/unit/workflow_transition_test.rb
 %%WWWDIR%%/tmp/pdf/empty
 %%WWWDIR%%/tmp/test/empty
 %%WWWDIR%%/tmp/thumbnails/empty
-@dirrmtry %%WWWDIR%%/vendor
-@dirrmtry %%WWWDIR%%/tmp/thumbnails
-@dirrmtry %%WWWDIR%%/tmp/test
-@dirrmtry %%WWWDIR%%/tmp/sockets
-@dirrmtry %%WWWDIR%%/tmp/sessions
-@dirrmtry %%WWWDIR%%/tmp/pids
-@dirrmtry %%WWWDIR%%/tmp/pdf
-@dirrmtry %%WWWDIR%%/tmp/cache
-@dirrmtry %%WWWDIR%%/tmp
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/views/builders
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/views
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/utils
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/scm/adapters
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/scm
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/menu_manager
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/helpers
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/field_format
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine/export
-@dirrmtry %%WWWDIR%%/test/unit/lib/redmine
-@dirrmtry %%WWWDIR%%/test/unit/lib
-@dirrmtry %%WWWDIR%%/test/unit/initializers
-@dirrmtry %%WWWDIR%%/test/unit/helpers
-@dirrmtry %%WWWDIR%%/test/unit
-@dirrmtry %%WWWDIR%%/test/ui
-@dirrmtry %%WWWDIR%%/test/mocks/test
-@dirrmtry %%WWWDIR%%/test/mocks/development
-@dirrmtry %%WWWDIR%%/test/mocks
-@dirrmtry %%WWWDIR%%/test/integration/routing
-@dirrmtry %%WWWDIR%%/test/integration/lib/redmine
-@dirrmtry %%WWWDIR%%/test/integration/lib
-@dirrmtry %%WWWDIR%%/test/integration/api_test
-@dirrmtry %%WWWDIR%%/test/integration
-@dirrmtry %%WWWDIR%%/test/functional
-@dirrmtry %%WWWDIR%%/test/fixtures/repositories
-@dirrmtry %%WWWDIR%%/test/fixtures/plugins/foo_plugin
-@dirrmtry %%WWWDIR%%/test/fixtures/plugins
-@dirrmtry %%WWWDIR%%/test/fixtures/mailer
-@dirrmtry %%WWWDIR%%/test/fixtures/mail_handler
-@dirrmtry %%WWWDIR%%/test/fixtures/ldap
-@dirrmtry %%WWWDIR%%/test/fixtures/files/2010/12
-@dirrmtry %%WWWDIR%%/test/fixtures/files/2010/11
-@dirrmtry %%WWWDIR%%/test/fixtures/files/2010
-@dirrmtry %%WWWDIR%%/test/fixtures/files/2006/07
-@dirrmtry %%WWWDIR%%/test/fixtures/files/2006
-@dirrmtry %%WWWDIR%%/test/fixtures/files
-@dirrmtry %%WWWDIR%%/test/fixtures/encoding
-@dirrmtry %%WWWDIR%%/test/fixtures/diffs
-@dirrmtry %%WWWDIR%%/test/fixtures/configuration
-@dirrmtry %%WWWDIR%%/test/fixtures
-@dirrmtry %%WWWDIR%%/test/extra/redmine_pm
-@dirrmtry %%WWWDIR%%/test/extra
-@dirrmtry %%WWWDIR%%/test
-@dirrmtry %%WWWDIR%%/script
-@dirrmtry %%WWWDIR%%/public/themes/classic/stylesheets
-@dirrmtry %%WWWDIR%%/public/themes/classic/images
-@dirrmtry %%WWWDIR%%/public/themes/classic
-@dirrmtry %%WWWDIR%%/public/themes/alternate/stylesheets
-@dirrmtry %%WWWDIR%%/public/themes/alternate
-@dirrmtry %%WWWDIR%%/public/themes
-@dirrmtry %%WWWDIR%%/public/stylesheets/jquery/images
-@dirrmtry %%WWWDIR%%/public/stylesheets/jquery
-@dirrmtry %%WWWDIR%%/public/stylesheets
-@dirrmtry %%WWWDIR%%/public/plugin_assets
-@dirrmtry %%WWWDIR%%/public/javascripts/jstoolbar/lang
-@dirrmtry %%WWWDIR%%/public/javascripts/jstoolbar
-@dirrmtry %%WWWDIR%%/public/javascripts/i18n
-@dirrmtry %%WWWDIR%%/public/javascripts
-@dirrmtry %%WWWDIR%%/public/images/jstoolbar
-@dirrmtry %%WWWDIR%%/public/images/files
-@dirrmtry %%WWWDIR%%/public/images
-@dirrmtry %%WWWDIR%%/public/help/zh-tw
-@dirrmtry %%WWWDIR%%/public/help/zh
-@dirrmtry %%WWWDIR%%/public/help/vi
-@dirrmtry %%WWWDIR%%/public/help/uk
-@dirrmtry %%WWWDIR%%/public/help/tr
-@dirrmtry %%WWWDIR%%/public/help/th
-@dirrmtry %%WWWDIR%%/public/help/sv
-@dirrmtry %%WWWDIR%%/public/help/sr-yu
-@dirrmtry %%WWWDIR%%/public/help/sr
-@dirrmtry %%WWWDIR%%/public/help/sq
-@dirrmtry %%WWWDIR%%/public/help/sl
-@dirrmtry %%WWWDIR%%/public/help/sk
-@dirrmtry %%WWWDIR%%/public/help/ru
-@dirrmtry %%WWWDIR%%/public/help/ro
-@dirrmtry %%WWWDIR%%/public/help/pt-br
-@dirrmtry %%WWWDIR%%/public/help/pt
-@dirrmtry %%WWWDIR%%/public/help/pl
-@dirrmtry %%WWWDIR%%/public/help/no
-@dirrmtry %%WWWDIR%%/public/help/nl
-@dirrmtry %%WWWDIR%%/public/help/mn
-@dirrmtry %%WWWDIR%%/public/help/mk
-@dirrmtry %%WWWDIR%%/public/help/lv
-@dirrmtry %%WWWDIR%%/public/help/lt
-@dirrmtry %%WWWDIR%%/public/help/ko
-@dirrmtry %%WWWDIR%%/public/help/ja
-@dirrmtry %%WWWDIR%%/public/help/it
-@dirrmtry %%WWWDIR%%/public/help/id
-@dirrmtry %%WWWDIR%%/public/help/hu
-@dirrmtry %%WWWDIR%%/public/help/hr
-@dirrmtry %%WWWDIR%%/public/help/he
-@dirrmtry %%WWWDIR%%/public/help/gl
-@dirrmtry %%WWWDIR%%/public/help/fr
-@dirrmtry %%WWWDIR%%/public/help/fi
-@dirrmtry %%WWWDIR%%/public/help/fa
-@dirrmtry %%WWWDIR%%/public/help/eu
-@dirrmtry %%WWWDIR%%/public/help/et
-@dirrmtry %%WWWDIR%%/public/help/es
-@dirrmtry %%WWWDIR%%/public/help/en-gb
-@dirrmtry %%WWWDIR%%/public/help/en
-@dirrmtry %%WWWDIR%%/public/help/el
-@dirrmtry %%WWWDIR%%/public/help/de
-@dirrmtry %%WWWDIR%%/public/help/da
-@dirrmtry %%WWWDIR%%/public/help/cs
-@dirrmtry %%WWWDIR%%/public/help/ca
-@dirrmtry %%WWWDIR%%/public/help/bs
-@dirrmtry %%WWWDIR%%/public/help/bg
-@dirrmtry %%WWWDIR%%/public/help/az
-@dirrmtry %%WWWDIR%%/public/help/ar
-@dirrmtry %%WWWDIR%%/public/help
-@dirrmtry %%WWWDIR%%/public
-@dirrmtry %%WWWDIR%%/plugins
-@dirrmtry %%WWWDIR%%/log
-@dirrmtry %%WWWDIR%%/lib/vendor
-@dirrmtry %%WWWDIR%%/lib/tasks
-@dirrmtry %%WWWDIR%%/lib/redmine/wiki_formatting/textile
-@dirrmtry %%WWWDIR%%/lib/redmine/wiki_formatting/markdown
-@dirrmtry %%WWWDIR%%/lib/redmine/wiki_formatting
-@dirrmtry %%WWWDIR%%/lib/redmine/views/my_page
-@dirrmtry %%WWWDIR%%/lib/redmine/views/builders
-@dirrmtry %%WWWDIR%%/lib/redmine/views
-@dirrmtry %%WWWDIR%%/lib/redmine/scm/adapters/mercurial
-@dirrmtry %%WWWDIR%%/lib/redmine/scm/adapters
-@dirrmtry %%WWWDIR%%/lib/redmine/scm
-@dirrmtry %%WWWDIR%%/lib/redmine/helpers
-@dirrmtry %%WWWDIR%%/lib/redmine/export
-@dirrmtry %%WWWDIR%%/lib/redmine/default_data
-@dirrmtry %%WWWDIR%%/lib/redmine/core_ext/string
-@dirrmtry %%WWWDIR%%/lib/redmine/core_ext/date
-@dirrmtry %%WWWDIR%%/lib/redmine/core_ext
-@dirrmtry %%WWWDIR%%/lib/redmine/activity
-@dirrmtry %%WWWDIR%%/lib/redmine
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/test
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/template_handlers
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf/template_handler
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/rfpdf
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fpdf
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf2ufm
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/ttf-bitstream-vera-1.10
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old/makefont
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/old
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/freefont
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/fonts
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/core
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/config/lang
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib/config
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/rfpdf
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/test
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/lib/tasks
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/lib/open_id_authentication
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/generators/upgrade_open_id_authentication_tables/templates
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/generators/upgrade_open_id_authentication_tables
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/generators/open_id_authentication_tables/templates
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/generators/open_id_authentication_tables
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication/generators
-@dirrmtry %%WWWDIR%%/lib/plugins/open_id_authentication
-@dirrmtry %%WWWDIR%%/lib/plugins/gravatar/spec
-@dirrmtry %%WWWDIR%%/lib/plugins/gravatar/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/gravatar
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_watchable/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_watchable
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_versioned/test/fixtures/migrations
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_versioned/test/fixtures
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_versioned/test
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_versioned/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_versioned
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree/test/fixtures
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree/test
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree/lib/active_record/acts
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree/lib/active_record
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_tree
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_searchable/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_searchable
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_list/test
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_list/lib/active_record/acts
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_list/lib/active_record
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_list/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_list
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_event/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_event
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_customizable/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_customizable
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_attachable/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_attachable
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_activity_provider/lib
-@dirrmtry %%WWWDIR%%/lib/plugins/acts_as_activity_provider
-@dirrmtry %%WWWDIR%%/lib/plugins
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin_model/templates
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin_model
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin_controller/templates
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin_controller
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin/templates
-@dirrmtry %%WWWDIR%%/lib/generators/redmine_plugin
-@dirrmtry %%WWWDIR%%/lib/generators
-@dirrmtry %%WWWDIR%%/lib/SVG/Graph
-@dirrmtry %%WWWDIR%%/lib/SVG
-@dirrmtry %%WWWDIR%%/lib
-@dirrmtry %%WWWDIR%%/files
-@dirrmtry %%WWWDIR%%/extra/svn
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/test/integration
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/test
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/db/migrate
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/db
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/config/locales
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/config
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/assets/stylesheets
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/assets/images
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/assets
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/views/settings
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/views/my/blocks
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/views/my
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/views/example
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/views
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/models
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app/controllers
-@dirrmtry %%WWWDIR%%/extra/sample_plugin/app
-@dirrmtry %%WWWDIR%%/extra/sample_plugin
-@dirrmtry %%WWWDIR%%/extra/mail_handler
-@dirrmtry %%WWWDIR%%/extra
-@dirrmtry %%WWWDIR%%/doc
-@dirrmtry %%WWWDIR%%/db/migrate
-@dirrmtry %%WWWDIR%%/db
-@dirrmtry %%WWWDIR%%/config/locales
-@dirrmtry %%WWWDIR%%/config/initializers
-@dirrmtry %%WWWDIR%%/config/environments
-@dirrmtry %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%/app/views/workflows
-@dirrmtry %%WWWDIR%%/app/views/wikis
-@dirrmtry %%WWWDIR%%/app/views/wiki
-@dirrmtry %%WWWDIR%%/app/views/welcome
-@dirrmtry %%WWWDIR%%/app/views/watchers
-@dirrmtry %%WWWDIR%%/app/views/versions
-@dirrmtry %%WWWDIR%%/app/views/users
-@dirrmtry %%WWWDIR%%/app/views/trackers
-@dirrmtry %%WWWDIR%%/app/views/timelog
-@dirrmtry %%WWWDIR%%/app/views/settings
-@dirrmtry %%WWWDIR%%/app/views/search
-@dirrmtry %%WWWDIR%%/app/views/roles
-@dirrmtry %%WWWDIR%%/app/views/repositories
-@dirrmtry %%WWWDIR%%/app/views/reports
-@dirrmtry %%WWWDIR%%/app/views/queries
-@dirrmtry %%WWWDIR%%/app/views/projects/settings
-@dirrmtry %%WWWDIR%%/app/views/projects
-@dirrmtry %%WWWDIR%%/app/views/previews
-@dirrmtry %%WWWDIR%%/app/views/news
-@dirrmtry %%WWWDIR%%/app/views/my/blocks
-@dirrmtry %%WWWDIR%%/app/views/my
-@dirrmtry %%WWWDIR%%/app/views/messages
-@dirrmtry %%WWWDIR%%/app/views/members
-@dirrmtry %%WWWDIR%%/app/views/mailer
-@dirrmtry %%WWWDIR%%/app/views/layouts
-@dirrmtry %%WWWDIR%%/app/views/journals
-@dirrmtry %%WWWDIR%%/app/views/issues
-@dirrmtry %%WWWDIR%%/app/views/issue_statuses
-@dirrmtry %%WWWDIR%%/app/views/issue_relations
-@dirrmtry %%WWWDIR%%/app/views/issue_categories
-@dirrmtry %%WWWDIR%%/app/views/groups
-@dirrmtry %%WWWDIR%%/app/views/gantts
-@dirrmtry %%WWWDIR%%/app/views/files
-@dirrmtry %%WWWDIR%%/app/views/enumerations
-@dirrmtry %%WWWDIR%%/app/views/documents
-@dirrmtry %%WWWDIR%%/app/views/custom_fields/formats
-@dirrmtry %%WWWDIR%%/app/views/custom_fields
-@dirrmtry %%WWWDIR%%/app/views/context_menus
-@dirrmtry %%WWWDIR%%/app/views/common
-@dirrmtry %%WWWDIR%%/app/views/calendars
-@dirrmtry %%WWWDIR%%/app/views/boards
-@dirrmtry %%WWWDIR%%/app/views/auto_completes
-@dirrmtry %%WWWDIR%%/app/views/auth_sources
-@dirrmtry %%WWWDIR%%/app/views/attachments
-@dirrmtry %%WWWDIR%%/app/views/admin
-@dirrmtry %%WWWDIR%%/app/views/activities
-@dirrmtry %%WWWDIR%%/app/views/account
-@dirrmtry %%WWWDIR%%/app/views
-@dirrmtry %%WWWDIR%%/app/sweepers
-@dirrmtry %%WWWDIR%%/app/models/repository
-@dirrmtry %%WWWDIR%%/app/models
-@dirrmtry %%WWWDIR%%/app/helpers
-@dirrmtry %%WWWDIR%%/app/controllers
-@dirrmtry %%WWWDIR%%/app
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/app/sweepers
+@dir %%WWWDIR%%/lib/vendor
+@dir %%WWWDIR%%/test/fixtures/mailer
+@dir %%WWWDIR%%/test/mocks/development
+@dir %%WWWDIR%%/test/mocks/test
+@dir %%WWWDIR%%/tmp/cache
+@dir %%WWWDIR%%/tmp/pids
+@dir %%WWWDIR%%/tmp/sessions
+@dir %%WWWDIR%%/tmp/sockets
+@dir %%WWWDIR%%/vendor
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/files
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/log
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/public/plugin_assets

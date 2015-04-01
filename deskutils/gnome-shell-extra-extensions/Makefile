@@ -5,12 +5,11 @@
 PORTNAME=	gnome-shell-extra-extensions
 PORTVERSION=	3.14.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome shell extra extensions metaport
+
+USES=		metaport
 
 RUN_DEPENDS=	gnome-shell-extension-weather>=0:${PORTSDIR}/deskutils/gnome-shell-extension-weather \
 		gnome-shell-extension-openweather>=0:${PORTSDIR}/deskutils/gnome-shell-extension-openweather \
@@ -25,9 +24,5 @@ RUN_DEPENDS=	gnome-shell-extension-weather>=0:${PORTSDIR}/deskutils/gnome-shell-
 		gnome-shell-extension-dashtodock>=0:${PORTSDIR}/deskutils/gnome-shell-extension-dashtodock \
 		gnome-shell-extension-audio-output-switcher>=0:${PORTSDIR}/deskutils/gnome-shell-extension-audio-output-switcher \
 		gnome-shell-extension-recent-items>=0:${PORTSDIR}/deskutils/gnome-shell-extension-recent-items
-
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
 
 .include <bsd.port.mk>

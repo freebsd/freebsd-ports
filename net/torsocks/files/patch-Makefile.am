@@ -1,9 +1,0 @@
---- Makefile.am.orig	2011-03-05 18:38:11.000000000 +0200
-+++ Makefile.am	2013-03-20 10:13:28.517831100 +0200
-@@ -2,4 +2,6 @@
- # have all needed files, that a GNU package needs
- AUTOMAKE_OPTIONS = foreign 1.4
- 
-+ACLOCAL_AMFLAGS= -I m4
-+
- SUBDIRS = src doc test

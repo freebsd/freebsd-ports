@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 VER=		-0.4
 PLIST_SUB=	VER=${VER}

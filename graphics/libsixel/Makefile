@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.4.8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.10
 PORTEPOCH=	1
 CATEGORIES=	graphics
+MASTER_SITES=	GH
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
@@ -13,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	saitoha
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	7efd9a4
 
 USE_LDCONFIG=	yes
 USES=		libtool pkgconfig

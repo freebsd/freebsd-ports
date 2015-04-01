@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	gettext-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
 
+BROKEN=		No public distfiles
+
 NO_BUILD=	yes
 USES=		python tar:bzip2
 PLIST_FILES=	bin/${PORTNAME}

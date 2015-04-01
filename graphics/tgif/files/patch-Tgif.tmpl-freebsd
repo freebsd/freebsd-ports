@@ -5,6 +5,6 @@
  XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
  XCOMM SYS_LIBRARIES	= -ldl -lm -lz
 -SYS_LIBRARIES	= -lm -lz
-+SYS_LIBRARIES	= -lm -lz ${PTHREAD_LIBS}
++SYS_LIBRARIES	= -lm -lz -lpthread
 +
 +#include "Tgif.tmpl-freebsdports"

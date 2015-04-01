@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.19
-PORTREVISION?=	1
+PORTVERSION=	1.7.20
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
@@ -114,7 +114,7 @@ post-patch:
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
-	${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
+	${CP} ${FILESDIR}/build-outputs.mk.addons ${WRKSRC}
 .endif
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h

@@ -1,8 +1,8 @@
 bin/empathy
 bin/empathy-accounts
 bin/empathy-debugger
-lib/empathy/libempathy-3.12.7.so
-lib/empathy/libempathy-gtk-3.12.7.so
+lib/empathy/libempathy-3.12.8.so
+lib/empathy/libempathy-gtk-3.12.8.so
 lib/empathy/libempathy-gtk.a
 lib/empathy/libempathy-gtk.so
 lib/empathy/libempathy.a
@@ -29,6 +29,7 @@ share/locale/bn_IN/LC_MESSAGES/empathy-tpaw.mo
 share/locale/bn_IN/LC_MESSAGES/empathy.mo
 share/locale/br/LC_MESSAGES/empathy-tpaw.mo
 share/locale/br/LC_MESSAGES/empathy.mo
+share/locale/bs/LC_MESSAGES/empathy.mo
 share/locale/ca/LC_MESSAGES/empathy-tpaw.mo
 share/locale/ca/LC_MESSAGES/empathy.mo
 share/locale/ca@valencia/LC_MESSAGES/empathy-tpaw.mo

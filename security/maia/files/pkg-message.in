@@ -12,7 +12,7 @@
 
     maiad_enable="YES"
 
- Configuration templates are available in %%PREFIX%%/etc
+ Configuration templates are available in %%ETCDIR%%
  as maia.conf.dist and maiad.conf.dist.
 *******************************************************************
 

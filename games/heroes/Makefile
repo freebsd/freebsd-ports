@@ -42,8 +42,8 @@ OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
 
 INFO=		heroes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg -lm ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lsmpeg -lm
 
 post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \

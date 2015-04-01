@@ -415,6 +415,7 @@
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-MR-Tarantool
+    SUBDIR += p5-Mango
     SUBDIR += p5-Memcached-libmemcached
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mojo-Pg
@@ -784,7 +785,6 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
-    SUBDIR += pydbdesigner
     SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pyspatialite

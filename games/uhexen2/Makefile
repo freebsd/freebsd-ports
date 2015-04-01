@@ -110,8 +110,7 @@ post-patch:
 		'/^USE_X86_ASM/s|^|#| ; \
 		 /^CPU_X86/s|^|#| ; \
 		 /^CFLAGS/s| -g | | ; \
-		 /^CFLAGS/s| -O2 | | ; \
-		 /^PTHREAD_LIBS/s|-lpthread|-pthread|' ${WRKSRC}/${f}
+		 /^CFLAGS/s| -O2 | | ;' ${WRKSRC}/${f}
 .endfor
 .for f in engine/h2shared/cd_bsd.c
 	@${REINPLACE_CMD} -e \

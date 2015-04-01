@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.gz?format=raw
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Web application templating system, based on the Twisted Woven
 
+BROKEN=		Unfetchable
+
 USE_PYTHON=	distutils autoplist
 USES=		gettext python twisted:web
 

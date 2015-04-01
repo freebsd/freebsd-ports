@@ -20,10 +20,9 @@ OPTIONS_DEFINE=	SDL VIDIO
 SDL_DESC=	Enable SDL for graphical debugging
 VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
-USES=		libtool python:build tar:tgz
+USES=		autoreconf libtool python:build tar:tgz
 USE_GCC=	any
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

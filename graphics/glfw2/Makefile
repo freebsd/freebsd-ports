@@ -60,11 +60,8 @@ post-extract:
 	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/X11R6|${LOCALBASE}|; \
-		 /SOFLAGS/s|-soname |-Wl,-soname,|; \
-		 /CFLAGS_THREAD/s|"-pthread"|"${PTHREAD_CFLAGS}"|; \
-		 /LFLAGS_THREAD/s|"-pthread"|"${PTHREAD_LIBS}"|' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|; \
+		 /SOFLAGS/s|-soname |-Wl,-soname,|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
 		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \

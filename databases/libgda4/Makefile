@@ -14,6 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Provides uniform access to different kinds of data sources
 
 CONFLICTS=	libgda5-ui-[0-9]*
+PORTSCOUT=	ignore:1
 
 USES=		tar:xz
 LIBGDA4_SLAVE?=	no

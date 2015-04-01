@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/linux-firefox/Makefile 363978 2014-08-04 09:11:25Z bapt $
 
 PORTNAME=	firefox
-DISTVERSION=	36.0.4
+DISTVERSION=	37.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US

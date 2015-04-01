@@ -184,6 +184,7 @@ courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
 slurm:*:468:468::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin
+consul:*:469:469::0:0:Consul Daemon:/var/tmp/consul:/usr/sbin/nologin
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
@@ -315,5 +316,6 @@ kamailio:*:986:986::0:0:kamailio daemon:/nonexistent:/usr/sbin/nologin
 spark:*:987:987::0:0:Apache Spark user:/nonexistent:/usr/sbin/nologin
 toxdht:*:988:65534::0:0:Tox DHT bootstrap user:/nonexistent:/usr/sbin/nologin
 mediabrowser:*:989:989::0:0:MediaBrowser:/nonexistent:/usr/sbin/nologin
+oozie:*:990:990::0:0:Apache Oozie user:/nonexistent:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

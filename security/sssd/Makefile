@@ -3,6 +3,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.11.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -50,12 +51,12 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
-USES=		gettext gmake iconv libtool pathfix pkgconfig python:2 shebangfix
+USES=		autoreconf gettext gmake iconv libtool pathfix pkgconfig \
+		python:2 shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.am
+INSTALL_TARGET=	install-strip
 
 python_CMD=   ${SETENV} python2
 SHEBANG_FILES=	src/tools/sss_obfuscate \

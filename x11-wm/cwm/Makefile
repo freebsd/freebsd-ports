@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cwm
-PORTVERSION=	5.5
+PORTVERSION=	5.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://chneukirchen.org/releases/ \
 		http://github.com/chneukirchen/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
@@ -21,8 +21,8 @@ PLIST_FILES=	bin/cwm \
 		man/man5/cwmrc.5.gz
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cwm ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/cwm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/cwmrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/cwm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cwm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cwmrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>

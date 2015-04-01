@@ -4,9 +4,8 @@
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:old_themes/g} \
-		http://slim.berlios.de/themes/:new_themes
-MASTER_SITE_SUBDIR=	slim/:old_themes
+MASTER_SITES=	http://slim.berlios.de/themes/:new_themes \
+		SF/slim.berlios/:old_themes
 DISTFILES=
 
 MAINTAINER=	rea@FreeBSD.org

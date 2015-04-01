@@ -4,9 +4,6 @@ PORTNAME=	xorg-apps
 PORTVERSION=	7.7
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org apps meta-port
@@ -24,9 +21,7 @@ COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
 # These three are added for convenience purposes only.
 COMPONENTS+=	x11-wm/twm:twm x11-clocks/xclock:xclock xinit xterm
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=	metaport
 
 .for comp in ${COMPONENTS}
 OPTIONS_DEFINE+=	${comp:C/:.*//:C/.*\///:tu}

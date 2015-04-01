@@ -1,6 +1,112 @@
---- configure.orig	Mon Sep 20 01:16:48 2004
-+++ configure	Sat Apr 22 01:18:43 2006
-@@ -18984,6 +18984,10 @@
+--- configure.orig	2004-09-20 06:16:48 UTC
++++ configure
+@@ -3022,13 +3022,13 @@ darwin* | rhapsody*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+-freebsd* | kfreebsd*-gnu)
++dragonfly* | freebsd* | kfreebsd*-gnu)
+   if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
+     case $host_cpu in
+     i*86 )
+       # Not sure whether the presence of OpenBSD here was a mistake.
+       # Let's accept both of them until this is cleared up.
+-      lt_cv_deplibs_check_method='file_magic (FreeBSD|OpenBSD)/i[3-9]86 (compact )?demand paged shared library'
++      lt_cv_deplibs_check_method='file_magic (FreeBSD|DragonFly|OpenBSD)/i[3-9]86 (compact )?demand paged shared library'
+       lt_cv_file_magic_cmd=/usr/bin/file
+       lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+       ;;
+@@ -6599,7 +6599,7 @@ if test -z "$aix_libpath"; then aix_libp
+       ;;
+ 
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-    freebsd* | kfreebsd*-gnu)
++    dragonfly* | freebsd* | kfreebsd*-gnu)
+       archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes
+@@ -7177,7 +7177,7 @@ kfreebsd*-gnu)
+   dynamic_linker='GNU ld.so'
+   ;;
+ 
+-freebsd*)
++dragonfly*|freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case $version_type in
+@@ -9557,7 +9557,7 @@ if test -z "$aix_libpath"; then aix_libp
+   freebsd-elf*)
+     archive_cmds_need_lc_CXX=no
+     ;;
+-  freebsd* | kfreebsd*-gnu)
++  dragonfly* | freebsd* | kfreebsd*-gnu)
+     # FreeBSD 3 and later use GNU C++ and GNU ld with standard ELF
+     # conventions
+     ld_shlibs_CXX=yes
+@@ -10264,7 +10264,7 @@ echo $ECHO_N "checking for $compiler opt
+ 	    ;;
+ 	esac
+ 	;;
+-      freebsd* | kfreebsd*-gnu)
++      dragonfly* | freebsd* | kfreebsd*-gnu)
+ 	# FreeBSD uses GNU C++
+ 	;;
+       hpux9* | hpux10* | hpux11*)
+@@ -10875,7 +10875,7 @@ kfreebsd*-gnu)
+   dynamic_linker='GNU ld.so'
+   ;;
+ 
+-freebsd*)
++dragonfly*|freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case $version_type in
+@@ -13446,7 +13446,7 @@ if test -z "$aix_libpath"; then aix_libp
+       ;;
+ 
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-    freebsd* | kfreebsd*-gnu)
++    dragonfly* | freebsd* | kfreebsd*-gnu)
+       archive_cmds_F77='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec_F77='-R$libdir'
+       hardcode_direct_F77=yes
+@@ -14024,7 +14024,7 @@ kfreebsd*-gnu)
+   dynamic_linker='GNU ld.so'
+   ;;
+ 
+-freebsd*)
++dragonfly*|freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case $version_type in
+@@ -15793,7 +15793,7 @@ if test -z "$aix_libpath"; then aix_libp
+       ;;
+ 
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-    freebsd* | kfreebsd*-gnu)
++    dragonfly* | freebsd* | kfreebsd*-gnu)
+       archive_cmds_GCJ='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec_GCJ='-R$libdir'
+       hardcode_direct_GCJ=yes
+@@ -16371,7 +16371,7 @@ kfreebsd*-gnu)
+   dynamic_linker='GNU ld.so'
+   ;;
+ 
+-freebsd*)
++dragonfly*|freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case $version_type in
+@@ -18854,7 +18854,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+         ;;
+-    freebsd*)
++    dragonfly*|freebsd*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define FREEBSD 1
+@@ -18984,6 +18984,10 @@ if eval "test \"\${$as_ac_Lib+set}\" = s
  else
    ac_check_lib_save_LIBS=$LIBS
  LIBS="-l$dbname  $LIBS"
@@ -11,7 +117,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -18997,11 +19001,11 @@
+@@ -18997,11 +19001,11 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -25,7 +131,7 @@
    ;
    return 0;
  }
-@@ -19253,7 +19257,9 @@
+@@ -19253,7 +19257,9 @@ errno = db_open("foo.db", DB_BTREE, DB_C
  #endif
  if(errno) return errno;
  
@@ -36,7 +142,7 @@
  errno = dbp->stat(dbp, &sp, 0);
  #else
  errno = dbp->stat(dbp, &sp, NULL, 0);
-@@ -20833,6 +20839,7 @@
+@@ -20833,6 +20839,7 @@ s,@INSTALL@,$INSTALL,;t t
  s,@with_db_inc@,$with_db_inc,;t t
  s,@with_db_lib@,$with_db_lib,;t t
  s,@with_db_bin@,$with_db_bin,;t t

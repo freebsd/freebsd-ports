@@ -35,7 +35,7 @@ GSM_DESC=	Use libgsm from ports (else use bundled lib)
 PNG_DESC=	PNG spectrogram creation
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}" \
 			--with-gsm

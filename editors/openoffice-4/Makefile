@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -100,10 +100,12 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
-USES=		bison compiler desktop-file-utils gmake perl5 pkgconfig python \
+USES=		bison compiler cpe desktop-file-utils gmake perl5 pkgconfig python \
 		tar:bzip2
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
+CPE_PRODUCT=	${PORTNAME:S|apache-||}
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=			CUPS GCONF GNOMEVFS CCACHE
 OPTIONS_DEFAULT=		CUPS GCONF GNOMEVFS
@@ -126,16 +128,14 @@ GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
 .if ${COMPILER_TYPE} == clang
 . if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
 BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
-CPP=			${LOCALBASE}/bin/clang-cpp35
-CC=			${LOCALBASE}/bin/clang35
-CXX=			${LOCALBASE}/bin/clang++35
+CPP=			clang-cpp35
+CC=			clang35
+CXX=			clang++35
 . endif
 CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-I${LOCALBASE}/lib
-SUBST=			s+%%RPATH%%++;s/%%HAVE_STL_INCLUDE_PATH%%/-DHAVE_STL_INCLUDE_PATH/;s/-fno-enforce-eh-specs//
 .else
 USE_GCC=		yes
-SUBST=			s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+;s/%%HAVE_STL_INCLUDE_PATH%%//
+SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH//"
 .endif
 
 .if ${ARCH} == amd64
@@ -194,6 +194,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-curl				\
 			--enable-crashdump				\
 			--enable-dbus					\
+			--with-system-dicts				\
 			--with-epm=${LOCALBASE}/bin/epm			\
 			--with-system-expat				\
 			--disable-fetch-external			\
@@ -202,7 +203,9 @@ CONFIGURE_ARGS+=							\
 			--with-gperf=${LOCALBASE}/bin/gperf		\
 			--enable-gstreamer				\
 			--with-system-hunspell				\
+			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 			--with-system-hyphen				\
+			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 			--with-system-jpeg				\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-system-libtextcat			\
@@ -213,6 +216,7 @@ CONFIGURE_ARGS+=							\
 			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
 			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
 			--with-system-mythes				\
+			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
 			--enable-opengl					\
 			--with-system-openssl				\
@@ -266,11 +270,15 @@ post-extract:
 	${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
-	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/inc/unxfbsd.mk
-.if defined (USE_GCC) && ${ARCH} == i386
+.if defined (USE_GCC)
+	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/inc/unxfbsd.mk
+.endif
+.if ${ARCH} == i386
 	# g++49 -Os sometimes leaves inline class methods undefined
-	if [ ${CXX} = g++49 ]; then \
+	# autodoc core dumps when built with with -Os clang 3.6 on i386
+	if [ ${CXX} = g++49 -o \
+	     ${COMPILER_TYPE} = clang -a ${COMPILER_VERSION} = 36 ]; then \
 		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
 		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
@@ -284,7 +292,7 @@ do-build:
 	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
 	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
 	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" FBSD_LDFLAGS="${LDFLAGS}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES

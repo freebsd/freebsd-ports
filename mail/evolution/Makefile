@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/mail/evolution/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	3.12.10
-PORTREVISION=	1
+PORTVERSION=	3.12.11
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -987,6 +987,7 @@
     SUBDIR += radvd
     SUBDIR += raggle
     SUBDIR += ranch
+    SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += recvnet
@@ -1044,6 +1045,7 @@
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
+    SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-serverlove
     SUBDIR += rubygem-fog-softlayer

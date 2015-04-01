@@ -3,7 +3,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		iconv libtool gmake pkgconfig
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--with-jpeg=yes
 
@@ -56,12 +57,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|^pkgconfigdir = .*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} '/^install-data-am: /s/install-dist_docDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	# make check-plist happy
+	${RMDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

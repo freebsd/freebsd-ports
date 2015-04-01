@@ -37,12 +37,12 @@ RUN_DEPENDS+=	libxul>=31:${PORTSDIR}/www/libxul
 .elif ${gecko_ARGS:Mfirefox}
 
 _GECKO_DEFAULT_VERSION=	31
-_GECKO_VERSIONS=		31 36
+_GECKO_VERSIONS=		31 37
 _GECKO_TYPE=	firefox
 
 # Dependence lines for different Firefox versions
 31_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-36_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+37_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 .if exists(${LOCALBASE}/bin/firefox)
 _GECKO_INSTALLED_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null

@@ -5,7 +5,7 @@
  include ../make.inc
  
 -LDFLAGS+=-lm -lz
-+LDFLAGS+=-lm -lz $(PTHREAD_LIBS)
++LDFLAGS+=-lm -lz -lpthread
  
  ifeq ($(shell uname),Linux)
  LDFLAGS+=-ldl

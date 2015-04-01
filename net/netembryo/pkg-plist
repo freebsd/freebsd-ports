@@ -7,4 +7,4 @@ lib/libnetembryo.so
 lib/libnetembryo.so.9
 lib/libnetembryo.so.9.0.0
 libdata/pkgconfig/libnetembryo.pc
-libdata/pkgconfig/libnetembryo-sctp.pc
+%%SCTP%%libdata/pkgconfig/libnetembryo-sctp.pc

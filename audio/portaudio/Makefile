@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SHLIB_VERSION=	0
@@ -43,10 +43,10 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#include <malloc.h>|#include <stdlib.h>|' ${WRKSRC}/pa_unix_oss/pa_unix.h
-	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/pa_unix_oss/pa_unix_oss.c
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure ${WRKSRC}/configure.in \
-		${WRKSRC}/pa_unix_oss/Makefile
+	@${REINPLACE_CMD} -e 's|#include <malloc.h>|#include <stdlib.h>|' \
+		${WRKSRC}/pa_unix_oss/pa_unix.h
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
+		${WRKSRC}/pa_unix_oss/pa_unix_oss.c
 
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure

@@ -1,0 +1,11 @@
+--- toml.gemspec.orig	2015-01-21 20:38:16.000000000 +0000
++++ toml.gemspec	2015-01-21 20:38:37.000000000 +0000
+@@ -30,7 +30,7 @@
+       s.add_dependency(%q<rake>, [">= 0"])
+     end
+   else
+-    s.add_dependency(%q<parslet>, ["~> 1.5.0"])
++    s.add_dependency(%q<parslet>, [">= 1.5.0"])
+     s.add_dependency(%q<rake>, [">= 0"])
+   end
+ end

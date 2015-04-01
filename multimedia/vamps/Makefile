@@ -14,20 +14,16 @@ LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 USES=		gmake
 
-CFLAGS+=	-DHAVE_BUILTIN_EXPECT \
-		-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib \
-		${PTHREAD_LIBS}
+CFLAGS+=	-DHAVE_BUILTIN_EXPECT -I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
-PROGRAM_FILES=	\
-		play_cell/play_cell \
+PROGRAM_FILES=	play_cell/play_cell \
 		vamps/vamps
 
 PLIST_FILES=	${PROGRAM_FILES:H:S,^,bin/,}
 
 do-install:
-	cd ${WRKSRC}; \
-		${INSTALL_PROGRAM} ${PROGRAM_FILES} ${STAGEDIR}${PREFIX}/bin/
+	(cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} ${PROGRAM_FILES} ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>

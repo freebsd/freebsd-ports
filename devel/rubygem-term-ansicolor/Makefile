@@ -22,11 +22,6 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/colortab bin/term_display bin/term_mandel
 PORTEXAMPLES=	cdiff decolor
 
-post-patch:
-# Chop out the cdiff and decolor binaries; these should be installed to
-# EXAMPLESDIR
-	@${REINPLACE_CMD} -e '/^- [cd][de][ic][fo][fl]o*r*$$/d' ${WRKSRC}/${GEM_NAME}.gemspec
-
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/bin/ && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/

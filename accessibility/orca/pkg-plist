@@ -358,9 +358,12 @@ man/man1/orca.1.gz
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/__init__.cpython-%%PYVER%%.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/formatting.cpython-%%PYVER%%.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/formatting.cpython-%%PYVER%%.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/script_utilities.cpython-%%PYVER%%.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/script_utilities.cpython-%%PYVER%%.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/script.cpython-%%PYVER%%.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/__pycache__/script.cpython-%%PYVER%%.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/script_utilities.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-shell/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-terminal/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-terminal/__pycache__/__init__.cpython-%%PYVER%%.pyc
@@ -1088,6 +1091,7 @@ share/locale/be/LC_MESSAGES/orca.mo
 share/locale/bg/LC_MESSAGES/orca.mo
 share/locale/bn/LC_MESSAGES/orca.mo
 share/locale/bn_IN/LC_MESSAGES/orca.mo
+share/locale/bs/LC_MESSAGES/orca.mo
 share/locale/ca/LC_MESSAGES/orca.mo
 share/locale/ca@valencia/LC_MESSAGES/orca.mo
 share/locale/cs/LC_MESSAGES/orca.mo

@@ -49,9 +49,9 @@
     SUBDIR += autozen
     SUBDIR += baresip
     SUBDIR += baudline
+    SUBDIR += bcg729
     SUBDIR += beast
     SUBDIR += beets
-    SUBDIR += bcg729
     SUBDIR += blop
     SUBDIR += boodler
     SUBDIR += bristol
@@ -152,6 +152,7 @@
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
+    SUBDIR += flacon
     SUBDIR += flake
     SUBDIR += flite
     SUBDIR += fluidsynth
@@ -631,7 +632,6 @@
     SUBDIR += qsynth
     SUBDIR += quimup
     SUBDIR += raop_play
-    SUBDIR += raproxy
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
@@ -792,6 +792,7 @@
     SUBDIR += xcdplayer
     SUBDIR += xfce4-mixer
     SUBDIR += xfce4-mpc-plugin
+    SUBDIR += xfce4-pulseaudio-plugin
     SUBDIR += xfmpc
     SUBDIR += xhippo
     SUBDIR += ximp3

@@ -44,6 +44,7 @@ share/contractor/geary-attach.contract
 %%DATADIR%%/ui/password-dialog.glade
 %%DATADIR%%/ui/preferences.glade
 %%DATADIR%%/ui/remove_confirm.glade
+%%DATADIR%%/ui/toolbar_empty_menu.ui
 %%DATADIR%%/ui/toolbar_mark_menu.ui
 %%DATADIR%%/ui/toolbar_menu.ui
 %%DATADIR%%/ui/upgrade_dialog.glade

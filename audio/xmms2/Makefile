@@ -33,7 +33,6 @@ OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS MDNS_APPLE VORBIS
 
 AIRPLAY_DESC=	Support output via Airport Express
 AVCODEC_DESC=	Avcodevc playback support
-CDDA_DESC=	AudioCD support
 ET_DESC=	Install usage feedback reporting client
 FAM_DESC=	Support to update Media Library on file change
 GME_DESC=	Video game music files support
@@ -47,7 +46,6 @@ SAMBA_DESC=	Playback files via SMB
 SID_DESC=	Playback SID files
 VISUAL_DESC=	Visualization plugins support
 VOCODER_DESC=	Phase Vocoder effect plugin
-WAVPACK_DESC=	Playback WV files
 XML_DESC=	Support XML based playlists (XSPF, RSS)
 
 .endif # !XMMS_SLAVE

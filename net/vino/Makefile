@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/net/vino/Makefile 20063 2014-11-10 22:11:39Z gusi $
 
 PORTNAME=	vino
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

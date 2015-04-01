@@ -5,7 +5,7 @@ PORTNAME=	egypt
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.gson.org/egypt/download/ CENKES
+MASTER_SITES=	http://www.gson.org/egypt/download/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Create call graphs of C programs

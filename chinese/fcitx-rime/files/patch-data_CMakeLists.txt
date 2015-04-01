@@ -1,7 +1,0 @@
---- data/CMakeLists.txt~	2012-10-04 07:34:39.000000000 -0500
-+++ data/CMakeLists.txt	2012-10-15 21:46:56.932232905 -0500
-@@ -2,3 +2,4 @@ install(FILES zhung.png RENAME rime.png 
- install(FILES zhung.png RENAME rime.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin/dark)
- install(FILES zhung.png RENAME rime.png DESTINATION ${FCITX4_PREFIX}/share/fcitx/skin/classic)
- install(FILES zhung.png RENAME fcitx-rime.png DESTINATION share/icons/hicolor/48x48/apps)
-+install(FILES zhung.png RENAME rime.png DESTINATION share/fcitx/imicon)

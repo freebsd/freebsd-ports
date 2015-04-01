@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
 		--disable-debug \
 		--disable-nasm \
 		--disable-tremor
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	VORBIS MP3 PNG FLAC FLUIDSYNTH MT32EMU DOCS
 FLUIDSYNTH_DESC=	FluidSynth MIDI synthesizer

@@ -3,6 +3,7 @@
 
 PORTNAME=	dnrd
 PORTVERSION=	2.20.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF
 
@@ -26,42 +27,20 @@ RANDOM_DESC=	Random source port
 
 USERS=		dnrd
 GROUPS=		dnrd
-DNRD_DIR?=	${ETCDIR}
 
-SUB_FILES=	pkg-install
-SUB_LIST+=	DNRD_DIR=${DNRD_DIR}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCP}
-CONFIGURE_ARGS+=	--enable-tcp
-.endif
-
-.if ${PORT_OPTIONS:MMASTER}
-CONFIGURE_ARGS+=	--disable-master
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MRANDOM}
-CONFIGURE_ARGS+=	--enable-random-src
-.endif
+TCP_CONFIGURE_ENABLE=		tcp
+MASTER_CONFIGURE_ENABLE=	master
+DEBUG_CONFIGURE_ENABLE=		enable-debug
+RANDOM_CONFIGURE_ENABLE=	random-src
 
 do-install:
-	@${ECHO} "==>  Creating dnrd directory"
-	@${SETENV} DESTDIR="${STAGEDIR}" PKG_PREFIX="${STAGEDIR}${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/dnrd ${STAGEDIR}${PREFIX}/sbin/
-	@${INSTALL_MAN} ${WRKSRC}/doc/dnrd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
-	@${INSTALL_DATA} ${WRKSRC}/doc/master.sample ${STAGEDIR}${ETCDIR}/
-.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/dnrd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/doc/dnrd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/doc/master.sample ${STAGEDIR}${ETCDIR}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${EXAMPLESDIR}/
-.endif
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

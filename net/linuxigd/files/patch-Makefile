@@ -9,7 +9,7 @@
 -CC=gcc
  INCLUDES= -I$(LIBUPNP_PREFIX)/include -I../include
 -LIBS= -lpthread -lupnp -lixml -lthreadutil -L$(LIBUPNP_PREFIX)/lib -L../libs
-+LIBS= $(PTHREAD_LIBS) -lupnp -lixml -lthreadutil -L$(LIBUPNP_PREFIX)/lib -L../libs
++LIBS= -lpthread -lupnp -lixml -lthreadutil -L$(LIBUPNP_PREFIX)/lib -L../libs
  FILES= main.o gatedevice.o pmlist.o util.o config.o
  
  CFLAGS += -Wall -g -O2

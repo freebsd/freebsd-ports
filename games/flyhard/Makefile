@@ -19,7 +19,7 @@ USES=		gmake
 USE_SDL=	sdl mixer
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*

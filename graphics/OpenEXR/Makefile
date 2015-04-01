@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I. -I../IlmImf
 
 # must be linked with -l{thr|pthread} explicitly
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

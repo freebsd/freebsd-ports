@@ -1,0 +1,12 @@
+Mango is a pure-Perl non-blocking I/O MongoDB driver, optimized for use with
+the Mojolicious real-time web framework, and with multiple event loop support.
+Since MongoDB is still changing rapidly, only the latest stable version is
+supported.
+
+Many arguments passed to methods as well as values of attributes get serialized
+to BSON with Mango::BSON, which provides many helper functions you can use to
+generate data types that are not available natively in Perl. All connections
+will be reset automatically if a new process has been forked, this allows
+multiple processes to share the same Mango object safely.
+
+WWW: https://metacpan.org/pod/Mango

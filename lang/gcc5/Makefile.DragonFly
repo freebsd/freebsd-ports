@@ -1,7 +1,5 @@
 # $FreeBSD$
 
-OPTIONS_EXCLUDE= JAVA
-
 # The following modification to CXXFLAGS is needed in the case of DragonFly
 # 4.1+ building lang/gcc5 with the gcc50 base compiler when the system
 # libraries were built by the gcc47 base compiler.  The sys.mk file

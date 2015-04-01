@@ -5,8 +5,7 @@ PORTNAME=	jishyo
 PORTVERSION=	0.1
 PORTREVISION=	4
 CATEGORIES=	japanese gnustep
-MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/
 DISTNAME=	Jishyo-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

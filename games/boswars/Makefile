@@ -34,7 +34,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
-		s|-pthread|${PTHREAD_LIBS}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|lua51|lua-${LUA_VER}|g;' \
 	${WRKSRC}/SConstruct

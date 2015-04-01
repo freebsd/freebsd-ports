@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tiff
-PORTVERSION=	4.0.3
-PORTREVISION=	5
+DISTVERSION=	4.0.4beta
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
@@ -17,7 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
-USES=		libtool
+USES=		cpe libtool
+CPE_PRODUCT=	libtiff
+CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
+CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \

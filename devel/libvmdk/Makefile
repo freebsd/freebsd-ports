@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvmdk
-PORTVERSION=	20150105
+PORTVERSION=	20150325
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvmdk/releases/download/${PORTVERSION}/ \
@@ -14,8 +14,8 @@ COMMENT=	Library and tools to access the VMware Virtual Disk (VMDK) format
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		fuse gettext iconv libtool pathfix pkgconfig python
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
+USES=		fuse gettext libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

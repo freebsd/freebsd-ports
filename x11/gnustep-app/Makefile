@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -64,7 +64,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Zipper:archivers/zipper \
 	Camera:graphics/camera \
 	Ladder:games/gnustep-ladder \
-	Charmap:deskutils/charmap \
 	GTAMSAnalyzer:science/gtamsanalyzer \
 	Paje:science/paje \
 	AClock:x11-clocks/aclock \

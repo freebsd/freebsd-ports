@@ -401,6 +401,7 @@
     SUBDIR += vic
     SUBDIR += vid.stab
     SUBDIR += vlc
+    SUBDIR += vlc-qt4
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan

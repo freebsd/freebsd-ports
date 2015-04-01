@@ -3,7 +3,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -36,5 +36,8 @@ LIBS+=		`pkg-config --libs gthread-2.0`
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, libssl,,' ${WRKSRC}/configure
+# lensfun 0.3.0 had removed support for LF_MODIFY_CCI
+	@${REINPLACE_CMD} -e 's, | LF_MODIFY_CCI,,' \
+		${WRKSRC}/plugins/lensfun/lensfun.c
 
 .include <bsd.port.mk>

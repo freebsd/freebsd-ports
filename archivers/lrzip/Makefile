@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lrzip
-PORTVERSION=	0.616
-PORTREVISION=	1
+PORTVERSION=	0.621
 CATEGORIES=	archivers
 MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 		http://files.gslin.org/Software/
@@ -24,5 +23,8 @@ USES=		tar:bzip2 gmake pathfix perl5 libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/lrztar
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblrzip.so.0.0.0
 
 .include <bsd.port.mk>

@@ -39,7 +39,6 @@
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
-    SUBDIR += portbuilder
     SUBDIR += portconf
     SUBDIR += portdowngrade
     SUBDIR += porteasy

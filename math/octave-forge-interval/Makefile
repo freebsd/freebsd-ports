@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-interval
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+
+USES=		compiler:c++11-lang
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

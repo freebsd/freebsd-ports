@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.27.0
+PORTVERSION=	1.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-fog-atmos>=0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json \
 		rubygem-fog-profitbricks>=0:${PORTSDIR}/net/rubygem-fog-profitbricks \
 		rubygem-fog-radosgw>=0.0.2:${PORTSDIR}/net/rubygem-fog-radosgw \
+		rubygem-fog-riakcs>=0:${PORTSDIR}/net/rubygem-fog-riakcs \
 		rubygem-fog-sakuracloud>=0.0.4:${PORTSDIR}/net/rubygem-fog-sakuracloud \
 		rubygem-fog-serverlove>=0:${PORTSDIR}/net/rubygem-fog-serverlove \
 		rubygem-fog-softlayer>=0:${PORTSDIR}/net/rubygem-fog-softlayer \

@@ -1,18 +1,11 @@
---- clio-0.3.0.gemspec.orig	2013-02-26 02:53:17.000000000 +0000
-+++ clio-0.3.0.gemspec	2013-02-26 02:53:49.000000000 +0000
-@@ -27,7 +27,6 @@
- - VERSION
- - COPYING
- files: 
--- bin
- - lib
- - meta
- - spec
-@@ -76,7 +75,6 @@
- - spec/usage
- - spec/commandline
- - spec/string
--- spec/commandable
- - spec/usage/define.rd
- - spec/usage/parse.rd
- - spec/commandline/bracket.rd
+--- clio.gemspec.orig	2014-11-29 13:47:58.000000000 +0000
++++ clio.gemspec	2014-11-29 13:48:17.000000000 +0000
+@@ -12,7 +12,7 @@
+   s.description = "Clio makes commandline interfaces easy. It provides both commandline parsing as well as console output routines."
+   s.email = "transfire@gmail.com"
+   s.extra_rdoc_files = ["README", "MANIFEST", "CHANGES", "RELEASE", "VERSION", "COPYING"]
+-  s.files = ["CHANGES", "COPYING", "MANIFEST", "README", "RELEASE", "VERSION", "bin", "lib", "lib/clio", "lib/clio/ansicode.rb", "lib/clio/buffer.rb", "lib/clio/commandable.rb", "lib/clio/commandline.rb", "lib/clio/consoleutils.rb", "lib/clio/errors.rb", "lib/clio/facets", "lib/clio/facets/kernel.rb", "lib/clio/facets/string.rb", "lib/clio/layout", "lib/clio/layout.rb", "lib/clio/layout/flow.rb", "lib/clio/layout/line.rb", "lib/clio/layout/list.rb", "lib/clio/layout/split.rb", "lib/clio/layout/stack.rb", "lib/clio/layout/table.rb", "lib/clio/progressbar.rb", "lib/clio/string.rb", "lib/clio/usage", "lib/clio/usage.rb", "lib/clio/usage/argument.rb", "lib/clio/usage/command.rb", "lib/clio/usage/interface.rb", "lib/clio/usage/option.rb", "lib/clio/usage/parser.rb", "lib/clio/usage/signature.rb", "lib/clio/usage/subcommand.rb", "meta", "meta/abstract", "meta/authors", "meta/created", "meta/homepage", "meta/license", "meta/repository", "meta/summary", "spec", "spec/commandable", "spec/commandline", "spec/commandline/autousage.rd", "spec/commandline/bracket.rd", "spec/commandline/completion.rd", "spec/commandline/define.rd", "spec/commandline/method.rd", "spec/commandline/parse.rd", "spec/commandline/scenario.rd", "spec/commandline/subclass.rd", "spec/string", "spec/string/unit.rd", "spec/usage", "spec/usage/define.rd", "spec/usage/parse.rd"]
++  s.files = ["CHANGES", "COPYING", "MANIFEST", "README", "RELEASE", "VERSION", "lib", "lib/clio", "lib/clio/ansicode.rb", "lib/clio/buffer.rb", "lib/clio/commandable.rb", "lib/clio/commandline.rb", "lib/clio/consoleutils.rb", "lib/clio/errors.rb", "lib/clio/facets", "lib/clio/facets/kernel.rb", "lib/clio/facets/string.rb", "lib/clio/layout", "lib/clio/layout.rb", "lib/clio/layout/flow.rb", "lib/clio/layout/line.rb", "lib/clio/layout/list.rb", "lib/clio/layout/split.rb", "lib/clio/layout/stack.rb", "lib/clio/layout/table.rb", "lib/clio/progressbar.rb", "lib/clio/string.rb", "lib/clio/usage", "lib/clio/usage.rb", "lib/clio/usage/argument.rb", "lib/clio/usage/command.rb", "lib/clio/usage/interface.rb", "lib/clio/usage/option.rb", "lib/clio/usage/parser.rb", "lib/clio/usage/signature.rb", "lib/clio/usage/subcommand.rb", "meta", "meta/abstract", "meta/authors", "meta/created", "meta/homepage", "meta/license", "meta/repository", "meta/summary", "spec", "spec/commandline", "spec/commandline/autousage.rd", "spec/commandline/bracket.rd", "spec/commandline/completion.rd", "spec/commandline/define.rd", "spec/commandline/method.rd", "spec/commandline/parse.rd", "spec/commandline/scenario.rd", "spec/commandline/subclass.rd", "spec/string", "spec/string/unit.rd", "spec/usage", "spec/usage/define.rd", "spec/usage/parse.rd"]
+   s.homepage = "http://clio.rubyforge.org"
+   s.rdoc_options = ["--inline-source", "--title", "clio api", "--main", "README"]
+   s.rubyforge_project = "clio"

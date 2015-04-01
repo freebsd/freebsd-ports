@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.8.2
+PORTVERSION=	3.8.8.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:S|.|0|g}

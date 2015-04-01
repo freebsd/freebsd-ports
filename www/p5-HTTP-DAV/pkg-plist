@@ -1,9 +1,4 @@
 bin/dave
-%%PERL5_MAN3%%/HTTP::DAV.3.gz
-%%PERL5_MAN3%%/HTTP::DAV::Changes.3.gz
-%%PERL5_MAN3%%/HTTP::DAV::Lock.3.gz
-%%PERL5_MAN3%%/HTTP::DAV::Resource.3.gz
-%%PERL5_MAN3%%/HTTP::DAV::Response.3.gz
 %%SITE_PERL%%/HTTP/DAV.pm
 %%SITE_PERL%%/HTTP/DAV/Changes.pod
 %%SITE_PERL%%/HTTP/DAV/Comms.pm
@@ -12,4 +7,9 @@ bin/dave
 %%SITE_PERL%%/HTTP/DAV/ResourceList.pm
 %%SITE_PERL%%/HTTP/DAV/Response.pm
 %%SITE_PERL%%/HTTP/DAV/Utils.pm
+%%PERL5_MAN3%%/HTTP::DAV.3.gz
+%%PERL5_MAN3%%/HTTP::DAV::Changes.3.gz
+%%PERL5_MAN3%%/HTTP::DAV::Lock.3.gz
+%%PERL5_MAN3%%/HTTP::DAV::Resource.3.gz
+%%PERL5_MAN3%%/HTTP::DAV::Response.3.gz
 man/man1/dave.1.gz

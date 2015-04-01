@@ -130,11 +130,12 @@ chroot_autoupdate()
 		    -c ${named_chrootdir}/dev/random ]; then
 			info "named chroot: using pre-mounted devfs."
 		else
-			err 1 "named chroot: devfs cannot be mounted from" \
-			    "within a jail. Thus a chrooted named cannot" \
-			    "be run from within a jail." \
-			    "To run named without chrooting it, set" \
-			    "named_chrootdir=\"\" in /etc/rc.conf."
+			err 1 "named chroot: devfs cannot be mounted from " \
+				"within a jail. Thus a chrooted named cannot " \
+				"be run from within a jail.  Either mount the " \
+				"devfs with null and random from the host, or " \
+				"run named without chrooting it, set" \
+				"named_chrootdir=\"\" in /etc/rc.conf."
 		fi
 	fi
 

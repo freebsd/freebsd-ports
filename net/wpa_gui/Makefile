@@ -5,7 +5,7 @@ PORTNAME=	wpa_gui
 PORTVERSION=	0.7.3
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/ \
-		SF/partmedia.u/freebsd-ports/:icons \
+		http://partmedia.users.sourceforge.net/dist/:icons \
 		LOCAL/jgh/net/${PORTNAME}/:icons
 DISTNAME=	wpa_supplicant-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \

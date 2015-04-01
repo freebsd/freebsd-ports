@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.18
+PORTVERSION=	1.12.21
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgoffice-0.10.so:${PORTSDIR}/devel/goffice010 \
 		libpsiconv.so:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+USES=		cpe desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 shebangfix tar:xz
 USE_GNOME=	intlhack libgsf pygobject3
 INSTALLS_OMF=	yes
@@ -32,6 +32,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
+CPE_VENDOR=	gnome
+
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 		org.gnome.gnumeric.gschema.xml \
 		org.gnome.gnumeric.plugin.gschema.xml
@@ -42,29 +44,17 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 		GOFFICE=0.10 \
 		SHORT_VER=${PORTVERSION:R}
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	PERL GDA
 OPTIONS_DEFAULT=PERL
 GDA_DESC=	Gnome Database Access plugin
 PERL_DESC=	Support Perl as extension language
 
-.include <bsd.port.options.mk>
+PERL_USES=	perl5
+PERL_CONFIGURE_WITH=	perl
 
-.if ${PORT_OPTIONS:MPERL}
-USES+=			perl5
-PLIST_SUB+=		PERL=""
-.else
-CONFIGURE_ARGS+=	--without-perl
-PLIST_SUB+=		PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGDA}
-USE_GNOME+=		libgda5-ui
-CONFIGURE_ARGS+=	--with-gda
-PLIST_SUB+=		GDA=""
-.else
-CONFIGURE_ARGS+=	--without-gda
-PLIST_SUB+=		GDA="@comment "
-.endif
+GDA_CONFIGURE_WITH=	gda
+GDA_USE=	GNOME=libgda5-ui
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^GETTEXT_PACKAGE=gnumeric-$${VERSION}|GETTEXT_PACKAGE=gnumeric|g' \

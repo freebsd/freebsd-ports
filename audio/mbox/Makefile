@@ -5,7 +5,7 @@ PORTNAME=	mbox
 PORTVERSION=	0.7.2
 PORTREVISION=	12
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mbox.wz.cz/src/ CENKES
+MASTER_SITES=	http://www.mbox.wz.cz/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program intended to help with organizing your music files

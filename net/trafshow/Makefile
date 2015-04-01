@@ -16,7 +16,7 @@ COMMENT=	Full screen visualization of network traffic
 CONFLICTS=	trafshow-4.* trafshow3-*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 ALL_TARGET=	trafshow
 
 OPTIONS_DEFINE=	IPV6

@@ -18,9 +18,8 @@ GH_PROJECT=	vsqlite--
 GH_TAGNAME=	1bc5a98
 GH_COMMIT=	1bc5a98
 
-USES=		compiler:c++0x libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf compiler:c++0x libtool
+GNU_CONFIGURE=	yes
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

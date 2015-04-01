@@ -1,8 +1,7 @@
---- doc/cpio.1.orig	2009-02-14 19:15:50.000000000 +0100
-+++ doc/cpio.1	2010-03-25 22:35:50.000000000 +0100
+--- doc/cpio.1.orig	2009-02-14 18:15:50 UTC
++++ doc/cpio.1
 @@ -1,8 +1,8 @@
--.TH CPIO 1L \" -*- nroff -*-
-+.TH GCPIO 1L \" -*- nroff -*-
+ .TH CPIO 1L \" -*- nroff -*-
  .SH NAME
 -cpio \- copy files to and from archives
 +gcpio \- copy files to and from archives
@@ -21,8 +20,11 @@
  {\-i|\-\-extract} [\-bcdfmnrtsuvBSV] [\-C bytes] [\-E file] [\-H format]
  [\-M message] [\-R [user][:.][group]] [\-I [[user@]host:]archive]
  [\-F [[user@]host:]archive] [\-\-file=[[user@]host:]archive]
-@@ -24,7 +24,7 @@ cpio \- copy files to and from archives
+@@ -22,9 +22,10 @@ cpio \- copy files to and from archives
+ [\-\-owner=[user][:.][group]] [\-\-no-preserve-owner] [\-\-message=message]
+ [\-\-force\-local] [\-\-no\-absolute\-filenames] [\-\-sparse]
  [\-\-only\-verify\-crc] [\-\-to\-stdout] [\-\-quiet] [\-\-rsh-command=command]
++[\-\-extract\-over\-symlinks]
  [\-\-help] [\-\-version] [pattern...] [< archive]
  
 -.B cpio

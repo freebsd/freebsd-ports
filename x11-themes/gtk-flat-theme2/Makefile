@@ -12,6 +12,8 @@ DISTNAME=	gtk2flat-default
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Port of the Flat GTK+ engine to GTK+ 2.0
 
+BROKEN=		No public distfiles
+
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 
 GNU_CONFIGURE=	yes

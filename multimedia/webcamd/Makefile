@@ -39,11 +39,11 @@ GROUPS=		webcamd
 
 .include <bsd.port.pre.mk>
 
-MAKE_ARGS+=	"HAVE_MAN=YES"
-MAKE_ARGS+=	"PTHREAD_LIBS=${PTHREAD_LIBS}"
+MAKE_ARGS+=	HAVE_MAN="YES"
+MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
 
 .if ${PORT_OPTIONS:MCUSE}
-MAKE_ARGS+=	"HAVE_CUSE=YES"
+MAKE_ARGS+=	HAVE_CUSE="YES"
 LIBCUSE=	/usr/lib/libcuse.so
 .else
 BUILD_DEPENDS+=	cuse4bsd-kmod>=0.1.31:${PORTSDIR}/multimedia/cuse4bsd-kmod
@@ -52,23 +52,23 @@ LIBCUSE=	${LIBDIR}/libcuse4bsd.so
 .endif
 
 .if ${PORT_OPTIONS:MDVB}
-MAKE_ARGS+=	"HAVE_DVB_DRV=YES"
+MAKE_ARGS+=	HAVE_DVB_DRV="YES"
 .endif
 
 .if ${PORT_OPTIONS:MINPUT}
-MAKE_ARGS+=	"HAVE_INPUT_DRV=YES"
+MAKE_ARGS+=	HAVE_INPUT_DRV="YES"
 .endif
 
 .if ${PORT_OPTIONS:MRADIO}
-MAKE_ARGS+=	"HAVE_RADIO_DRV=YES"
+MAKE_ARGS+=	HAVE_RADIO_DRV="YES"
 .endif
 
 .if ${PORT_OPTIONS:MWEBCAM}
-MAKE_ARGS+=	"HAVE_WEBCAM_DRV=YES"
+MAKE_ARGS+=	HAVE_WEBCAM_DRV="YES"
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-MAKE_ARGS+=	"HAVE_HAL=YES"
+MAKE_ARGS+=	HAVE_HAL="YES"
 LIBHAL=		${LIBDIR}/libhal.so:${LIBDIR}/libdbus-1.so:
 LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
@@ -77,19 +77,15 @@ LIBHAL=
 .endif
 
 .if ${PORT_OPTIONS:MVT_CLIENT}
-MAKE_ARGS+=	"HAVE_VTUNER_CLIENT=YES"
+MAKE_ARGS+=	HAVE_VTUNER_CLIENT="YES"
 .endif
 
 .if ${PORT_OPTIONS:MVT_SERVER}
-MAKE_ARGS+=	"HAVE_VTUNER_SERVER=YES"
+MAKE_ARGS+=	HAVE_VTUNER_SERVER="YES"
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	"HAVE_DEBUG=YES"
-.endif
-
-.if ${OSVERSION} < 800000
-IGNORE=		requires FreeBSD 8.0-RELEASE or later
+MAKE_ARGS+=	HAVE_DEBUG="YES"
 .endif
 
 #
@@ -100,10 +96,10 @@ do-configure:
 	${MAKE} ${MAKE_ARGS} configure -C${WRKSRC}
 
 post-patch:
-	@cd ${WRKSRC}/patches; ${SH} ./do_patch.sh
+	@(cd ${WRKSRC}/patches && ${SH} ./do_patch.sh)
 
 pre-install:
-	@${SED} -i .orig \
+	${SED} -i .orig \
 		-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LIBHAL%%|${LIBHAL}|g" \
 		-e "s|%%LIBCUSE%%|${LIBCUSE}|g" \
@@ -111,7 +107,7 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
+	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/webcamd.conf.in > ${WRKDIR}/webcamd.conf
 	${INSTALL_DATA} "${WRKDIR}/webcamd.conf" ${STAGEDIR}${PREFIX}/etc/devd
 

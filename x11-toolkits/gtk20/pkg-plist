@@ -296,7 +296,6 @@ libdata/pkgconfig/gdk-x11-2.0.pc
 libdata/pkgconfig/gtk+-2.0.pc
 libdata/pkgconfig/gtk+-unix-print-2.0.pc
 libdata/pkgconfig/gtk+-x11-2.0.pc
-man/man1/gtk-query-immodules-2.0.1.gz
 share/aclocal/gtk-2.0.m4
 share/gir-1.0/Gdk-2.0.gir
 share/gir-1.0/GdkX11-2.0.gir
@@ -569,103 +568,11 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/gtk-2.0/gtkrc
 @exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
 @unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
-@dirrm share/themes/Raleigh/gtk-2.0
-@dirrmtry share/themes/Raleigh
-@dirrm share/themes/Emacs/gtk-2.0-key
-@dirrmtry share/themes/Emacs
-@dirrm share/themes/Default/gtk-2.0-key
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
-@dirrm share/gtk-2.0/demo
-@dirrm share/gtk-2.0
-@dirrm include/gtk-unix-print-2.0/gtk
-@dirrm include/gtk-unix-print-2.0
-@dirrm include/gtk-2.0/gtk
-@dirrm include/gtk-2.0/gdk
-@dirrm include/gtk-2.0
-@dirrm include/gail-1.0/libgail-util
-@dirrm include/gail-1.0/gail
-@dirrm include/gail-1.0
-@dirrm etc/gtk-2.0
 @unexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
 @exec %D/bin/gtk-query-immodules-2.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
-@exec /bin/mkdir -p %D/lib/gtk-2.0/modules
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/modules
-@dirrmtry lib/gtk-2.0/modules
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/modules
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/loaders
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/immodules
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrmtry lib/gtk-2.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/az_IR/LC_MESSAGES
-@dirrmtry share/locale/az_IR
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/ang/LC_MESSAGES
-@dirrmtry share/locale/ang
+@dir lib/gtk-2.0/modules
+@dir lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
+@dir lib/gtk-2.0/%%GTK2_VERSION%%/modules
+@dir lib/gtk-2.0/%%GTK2_VERSION%%/loaders
+@dir lib/gtk-2.0/%%GTK2_VERSION%%/immodules
+@dir lib/gtk-2.0/%%GTK2_VERSION%%/engines
