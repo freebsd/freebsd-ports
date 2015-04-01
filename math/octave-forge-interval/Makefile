@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 
+USES=		compiler:c++11-lang
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
