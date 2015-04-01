@@ -3,13 +3,16 @@
 
 PORTNAME=	ftgl
 DISTVERSION=	2.1.3-rc5
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/FTGL%20Source/2.1.3%7Erc5
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL FreeType fonts rendering library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
@@ -19,7 +22,6 @@ CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
 USES=		pathfix gmake libtool
 USE_GL=		gl glu
 USE_XORG=	x11 xext xmu
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-/~/}
@@ -27,5 +29,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-/~/}
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s|docs||; /SUBDIRS/ s|demo||' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libftgl.so
 
 .include <bsd.port.mk>
