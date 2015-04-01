@@ -14,9 +14,9 @@
 ;
 
 set mainmenu_caption[7]="Disable [X]en"
-set toggled_text[7]="Disabling [X]en..."
+set maintoggled_text[7]="Disabling [X]en..."
 set mainansi_caption[7]="Disable [1mX[37men"
-set toggled_ansi[7]="Disabling [1mX[37men..."
+set maintoggled_ansi[7]="Disabling [1mX[37men..."
 set mainmenu_keycode[7]=120
 set mainmenu_command[7]="boot_xen_disabled"
 
