@@ -1,6 +1,6 @@
 --- dccsight/Makefile.in.orig	2014-08-06 14:43:42 UTC
 +++ dccsight/Makefile.in
-@@ -46,7 +46,5 @@
+@@ -46,7 +46,5 @@ DCC_BINDIR=@installroot@@libexecdir@
  
  @MAKE_DOT@ifndef NO_SUID
  # dccsight needs to be SUID to read the server passwords
