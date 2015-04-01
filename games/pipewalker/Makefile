@@ -3,7 +3,7 @@
 
 PORTNAME=	pipewalker
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -11,6 +11,10 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the NetWalk game
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		desktop-file-utils
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl glu
