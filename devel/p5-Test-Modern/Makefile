@@ -27,7 +27,4 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 USES=		perl5
 USE_PERL5=	configure
 
-test:
-	cd ${WRKSRC} && ${MAKE} test
-
 .include <bsd.port.mk>
