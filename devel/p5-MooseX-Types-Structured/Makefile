@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-Structured
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	p5-Devel-PartialDump>=0.13:${PORTSDIR}/devel/p5-Devel-PartialDump
 		p5-Moose>=1.08:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.22:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Sub-Exporter-ForMethods>=0:${PORTSDIR}/devel/p5-Sub-Exporter-ForMethods \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
