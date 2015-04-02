@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-hike>=1.2:${PORTSDIR}/devel/rubygem-hike \
 		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-tilt1>=1.1:${PORTSDIR}/devel/rubygem-tilt1
 
-CONFLICTS_INSTALL=	rubygem-sprockets211-[0-9]* rubygem-sprockets-[0-9]*
+CONFLICTS_INSTALL=	rubygem-sprockets211-[0-9]*
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
