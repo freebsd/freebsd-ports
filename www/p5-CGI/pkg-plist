@@ -1,4 +1,5 @@
 %%SITE_PERL%%/CGI.pm
+%%SITE_PERL%%/CGI.pod
 %%SITE_PERL%%/CGI/Carp.pm
 %%SITE_PERL%%/CGI/Cookie.pm
 %%SITE_PERL%%/CGI/File/Temp.pm
