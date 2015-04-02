@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	3.2.19
-PORTREVISION=	3
+PORTVERSION=	3.2.21
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -24,7 +23,9 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 		rubygem-i18n>=0.6.1:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-jquery-rails>=3.1.0:${PORTSDIR}/www/rubygem-jquery-rails \
 		rubygem-json>=1.7.6:${PORTSDIR}/devel/rubygem-json \
+		rubygem-sprockets22>=2.2.2:${PORTSDIR}/devel/rubygem-sprockets22 \
 		rubygem-rack>=1.4.4:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rdoc3>=3.4:${PORTSDIR}/devel/rubygem-rdoc3 \
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-rake>=10.1.1:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
@@ -43,6 +44,8 @@ USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_DIRS=	${GEM_LIB_DIR}
 
 USES=		cpe
 
