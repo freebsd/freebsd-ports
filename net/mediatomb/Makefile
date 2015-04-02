@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 MAINTAINER=	leo@mediatomb.cc
 COMMENT=	UPnP AV MediaServer
 
+BROKEN=		Fails to configure, does not use USERS/GROUPS
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
