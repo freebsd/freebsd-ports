@@ -57,7 +57,7 @@ CAIRO_CONFIGURE_WITH=	cairo
 .if ${PORT_OPTIONS:MFREETYPE}
 MASTER_SITES+=	http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/:freetype \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/:freetype \
-		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype
+		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
 		ftp://ftp.freetype.org/freetype/freetype2/:freetype
 FREETYPE_VERSION=	2.5.5
 FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
