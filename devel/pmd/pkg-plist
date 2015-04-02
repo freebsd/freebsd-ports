@@ -13,14 +13,18 @@ bin/pmd
 %%DATADIR%%/pmd-java-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-javascript-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-jsp-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-matlab-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-objectivec-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-php-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-plsql-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-python-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-ruby-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-scala-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7R4.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar
 %%DATADIR%%/saxon-9.1.0.8.jar
-%%DATADIR%%/xercesImpl-2.11.0.jar
-%%DATADIR%%/xml-apis-1.4.01.jar
-@dir %%DATADIR%%
+%%DATADIR%%/scala-compiler-2.10.4.jar
+%%DATADIR%%/scala-library-2.10.4.jar
+%%DATADIR%%/scala-reflect-2.10.4.jar
