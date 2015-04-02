@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.156
+PORTVERSION=	1.3.157
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
