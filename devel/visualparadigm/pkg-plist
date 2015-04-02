@@ -3929,6 +3929,7 @@ visualparadigm/Application/resources/vpuml.png
 visualparadigm/Application/resources/vpumlproject.ico
 visualparadigm/Application/resources/vpupdateinfo.xml
 visualparadigm/Application/samples/HelloWorldOnlineLearning.vpp
+visualparadigm/Application/samples/VP-Sample-Project.vpp
 visualparadigm/Application/scripts/CommitTeamworkProject.sh
 visualparadigm/Application/scripts/ConvertProjectToLatestVersion.sh
 visualparadigm/Application/scripts/ExportDiagramImage.sh
