@@ -12,6 +12,8 @@ COMMENT=	PC-BSD Command-Line Utilities
 
 LICENSE=	BSD
 
+BROKEN=		Fails to stage, has both build dependencies and NO_BUILD=yes
+
 RUN_DEPENDS=	sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
 		eject:${PORTSDIR}/sysutils/eject \
 		unzip:${PORTSDIR}/archivers/unzip
