@@ -5,7 +5,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://softwarebakery.com/maato/files/volumeicon/
 
-MAINTAINER=	lme@FfreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight volume control for the systray
 
 LICENSE=	GPLv3
