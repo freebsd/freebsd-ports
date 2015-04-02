@@ -1,12 +1,12 @@
-# Created by: Joe Barbish <qchroot@a1poweruser.com>
+# Created by: Joe Barbish <qchroot1@a1poweruser.com>
 # $FreeBSD$
 
 PORTNAME=	qchroot
-PORTVERSION=	0.0
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	qchroot@a1poweruser.com
+MAINTAINER=	qchroot1@a1poweruser.com
 COMMENT=	Utility for deployment of chroot environments
 
 LICENSE=	BSD2CLAUSE
