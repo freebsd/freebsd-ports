@@ -815,6 +815,7 @@
     SUBDIR += py-plone.session
     SUBDIR += py-potr
     SUBDIR += py-pow
+    SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
