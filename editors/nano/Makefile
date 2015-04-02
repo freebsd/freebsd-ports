@@ -4,9 +4,7 @@
 PORTNAME=	nano
 PORTVERSION=	2.4.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v2.4/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
