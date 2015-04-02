@@ -29,6 +29,8 @@ COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
