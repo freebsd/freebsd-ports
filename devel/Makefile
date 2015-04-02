@@ -2624,6 +2624,7 @@
     SUBDIR += p5-POE-Component-Syndicator
     SUBDIR += p5-POE-Component-TSTP
     SUBDIR += p5-POE-Devel-Profiler
+    SUBDIR += p5-POE-Loop-AnyEvent
     SUBDIR += p5-POE-Loop-Glib
     SUBDIR += p5-POE-Loop-Tk
     SUBDIR += p5-POE-Quickie

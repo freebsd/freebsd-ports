@@ -1,0 +1,9 @@
+POE::Loop::AnyEvent replaces POE's default select() event loop with AnyEvent.
+This allows POE programs to transparently use most of the event loops AnyEvent
+can provide.
+
+POE::Loop::AnyEvent changes POE's internal implementation without altering its
+APIs. By design, nearly all software that are already uses POE should continue
+to work normally without any changes.
+
+WWW: http://search.cpan.org/dist/POE-Loop-AnyEvent/
