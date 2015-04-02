@@ -1,6 +1,4 @@
 bin/poe-gen-tests
-man/man1/poe-gen-tests.1.gz
-%%PERL5_MAN3%%/POE::Test::Loops.3.gz
 %%SITE_PERL%%/POE/Test/DondeEstan.pm
 %%SITE_PERL%%/POE/Test/Loops.pm
 %%SITE_PERL%%/POE/Test/Loops/00_info.pm
@@ -38,3 +36,5 @@ man/man1/poe-gen-tests.1.gz
 %%SITE_PERL%%/POE/Test/Loops/z_rt53302_fh_watchers.pm
 %%SITE_PERL%%/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
 %%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
+%%PERL5_MAN3%%/POE::Test::Loops.3.gz
+man/man1/poe-gen-tests.1.gz
