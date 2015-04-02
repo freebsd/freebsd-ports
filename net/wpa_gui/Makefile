@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wpa_gui
-PORTVERSION=	0.7.3
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
