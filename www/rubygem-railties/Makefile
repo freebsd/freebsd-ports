@@ -2,6 +2,7 @@
 
 PORTNAME=	railties
 PORTVERSION=	3.2.21
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,8 @@ RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpa
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-thor>=0.19.0:${PORTSDIR}/devel/rubygem-thor \
 		rubygem-rack-ssl>=1.3.2:${PORTSDIR}/www/rubygem-rack-ssl \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
+		rubygem-rdoc3>=3.4:${PORTSDIR}/devel/rubygem-rdoc3
 
 CONFLICTS_INSTALL=	rubygem-railties4-[0-9]*
 
