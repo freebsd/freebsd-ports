@@ -55,7 +55,7 @@ create_user() {
 			uid=`expr ${uid} + 1`
 		done
 		if ! ${PW} add user ${USER} -u ${uid} -g ${gid} -d "${uhome}" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
+				-c "the cyrus mail server" -s "${shell}" -w no \
 				; then
 			e=$?
 			echo "*** Failed to add user \`${USER}'. Please add it manually."
