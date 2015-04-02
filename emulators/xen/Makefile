@@ -37,6 +37,7 @@ IGNORE=		Only supported on recent FreeBSD 11
 do-install:
 	${MKDIR} ${STAGEDIR}/boot
 	${INSTALL_PROGRAM} ${WRKSRC}/xen ${STAGEDIR}/boot
+	${INSTALL_DATA} ${FILESDIR}/xen.4th ${STAGEDIR}/boot
 
 .include <bsd.port.mk>
 
