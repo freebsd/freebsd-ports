@@ -3,7 +3,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	1.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} ${MASTER_SITE_PERL_CPAN:S/$/:wxsc/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT Wx/:wxsc
@@ -126,6 +126,8 @@ pre-install:
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Wx/Scintilla && \
-		${STRIP_CMD} libwx_gtk2u_scintilla.so)
+		${CHMOD} u+w libwx_gtk2u_scintilla.so && \
+		${STRIP_CMD} libwx_gtk2u_scintilla.so && \
+		${CHMOD} u-w libwx_gtk2u_scintilla.so)
 
 .include <bsd.port.post.mk>
