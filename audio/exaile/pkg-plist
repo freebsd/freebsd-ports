@@ -1112,6 +1112,7 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/az/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/be/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/be@latin/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/exaile.mo
@@ -1162,6 +1163,7 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/sc/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/si/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/exaile.mo
@@ -1182,4 +1184,4 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/exaile.png
-@dir share/man/man1
+man/man1/exaile.1.gz
