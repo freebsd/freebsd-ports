@@ -12,7 +12,7 @@ COMMENT=	Fast, lightweight source control management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	python:2
+USES=	cpe python:2
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS FREEBSD
