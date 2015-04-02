@@ -627,6 +627,7 @@
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
     SUBDIR += p5-PDF-Table
+    SUBDIR += p5-PDF-WebKit
     SUBDIR += p5-PDF-Writer
     SUBDIR += p5-POD2-Base
     SUBDIR += p5-POE-Filter-XML

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/PDF/WebKit.pm
+%%SITE_PERL%%/PDF/WebKit/Configuration.pm
+%%SITE_PERL%%/PDF/WebKit/Source.pm
+%%PERL5_MAN3%%/PDF::WebKit.3.gz
