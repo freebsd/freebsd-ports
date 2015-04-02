@@ -29,9 +29,11 @@ include/groonga/groonga/groonga.h
 include/groonga/groonga/ii.h
 include/groonga/groonga/nfkc.h
 include/groonga/groonga/normalizer.h
+include/groonga/groonga/obj.h
 include/groonga/groonga/output.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/request_canceler.h
+include/groonga/groonga/scorer.h
 include/groonga/groonga/token.h
 include/groonga/groonga/token_filter.h
 include/groonga/groonga/tokenizer.h
