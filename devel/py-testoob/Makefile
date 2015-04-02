@@ -10,18 +10,16 @@ MASTER_SITES=	SF \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Testoob is an advanced unit testing framework for PyUnit
+COMMENT=	Advanced unit testing framework for PyUnit
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE-2.0.txt
 
 OPTIONS_DEFINE=	TWISTED
+TWISTED_USES=	twisted
 TWISTED_DESC=	enable running in threads
 
 USES=		python tar:bzip2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MTWISTED}
-USES+=		twisted
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
