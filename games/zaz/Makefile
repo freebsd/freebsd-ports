@@ -3,25 +3,28 @@
 
 PORTNAME=	zaz
 PORTVERSION=	1.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game where the player has to arrange balls in triplets
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libftgl.so:${PORTSDIR}/graphics/ftgl
 
-USES=		tar:bzip2 pkgconfig
+USES=		desktop-file-utils pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_GL=		gl glu
 
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
