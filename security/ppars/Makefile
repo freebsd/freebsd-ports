@@ -1,12 +1,12 @@
-# Created by: Joe Barbish <joeb1@a1poweruser.com>
+# Created by: Joe Barbish <ppars1@a1poweruser.com>
 # $FreeBSD$
 
 PORTNAME=	ppars
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	joeb1@a1poweruser.com
+MAINTAINER=	ppars1@a1poweruser.com
 COMMENT=	Proactive Probing Abuse Reporting System
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
