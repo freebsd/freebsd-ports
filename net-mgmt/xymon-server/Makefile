@@ -30,8 +30,6 @@ XYMONHOSTNAME?=	xymon.example.com
 XYMONHOSTIP?=	127.0.0.1
 
 USES=		cpe gmake shebangfix
-CPE_VENDOR=	xymon
-CPE_PRODUCT=	xymon
 SHEBANG_FILES=	${WRKSRC}/xymond/xymonreports.sh.DIST ${WRKSRC}/build/upgrade430.sh
 USE_OPENSSL=	yes
 MAKE_JOBS_UNSAFE=	yes
