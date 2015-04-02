@@ -1348,6 +1348,7 @@
     SUBDIR += msp430mcu
     SUBDIR += mspdebug
     SUBDIR += msrc0
+    SUBDIR += mtbl
     SUBDIR += nana
     SUBDIR += nant
     SUBDIR += nasm
