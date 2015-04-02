@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	3.2.19
+PORTVERSION=	3.2.21
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
