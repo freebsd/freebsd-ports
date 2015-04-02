@@ -54,10 +54,6 @@ MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		fails to extract on FreeBSD 7.X
-.endif
-
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not link on powerpc
 .endif
@@ -81,8 +77,5 @@ post-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
 		${ALL_TARGET}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
