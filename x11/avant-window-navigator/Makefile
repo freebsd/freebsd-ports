@@ -14,6 +14,8 @@ COMMENT=	Dock-like navigation bar
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
