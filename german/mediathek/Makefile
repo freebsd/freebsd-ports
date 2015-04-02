@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathek
-PORTVERSION=	8
+PORTVERSION=	9
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
