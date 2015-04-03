@@ -18,7 +18,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
 
-USES=		python
+CPE_VENDOR=	suse
+CPE_PRODUCT=	opensuse_osc
+
+USES=		cpe python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=${PORTVERSION:C/^([0-9]+\.[0-9]+)\.[0-9]+/\1/}
 
