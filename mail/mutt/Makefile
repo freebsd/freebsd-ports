@@ -240,7 +240,7 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USES+=			iconv
+USES+=			iconv:translit
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .else
 CONFIGURE_ARGS+=	--disable-iconv
