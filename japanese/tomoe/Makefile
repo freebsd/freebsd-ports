@@ -55,12 +55,7 @@ BROKEN=		Broken with gem version of glib2
 .endif
 
 .if ${PORT_OPTIONS:MUNIHAN}
-.if ${OSVERSION} >= 700042
 BROKEN=		Broken with Unihan with gcc 4.2
-.endif
-.if ${ARCH} == "sparc64"
-BROKEN=	Not buildable with Unihan on sparc64
-.endif
 MASTER_SITES+=	ftp://ftp.unicode.org/Public/UNIDATA/:unihan
 DISTFILES+=	Unihan.zip:unihan
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip

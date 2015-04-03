@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.12.3
-PORTREVISION=	1
+PORTVERSION=	1.13.0
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/
 
@@ -23,6 +22,8 @@ CONFIGURE_ARGS=	--enable-pthread --with-netcdf=${LOCALBASE} --with-png-support
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix
+
+PORTDATA=	*
 
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper

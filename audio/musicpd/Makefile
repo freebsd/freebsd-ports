@@ -201,12 +201,6 @@ post-patch:
 		-e 's#^mpd.conf#${PORTNAME}.conf#' \
 		-e 's#^mpd(1)#musicpd(1)#' \
 		${WRKSRC}/doc/mpd.1 ${WRKSRC}/doc/mpd.conf.5
-.if (${OSVERSION} < 800000)
-	${REINPLACE_CMD} -e 's/nan[f]*(\"\")/NAN/g' \
-		${WRKSRC}/src/crossfade.c \
-		${WRKSRC}/src/player_thread.c \
-		${WRKSRC}/src/player_control.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \

@@ -24,19 +24,12 @@ CONFIGURE_ARGS=	--disable-stlport
 PORTDOCS=	README
 PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ( ${OSVERSION} >= 800501 && ${OSVERSION} < 900000 ) || ( ${OSVERSION} >= 900006 )
 	@${REINPLACE_CMD} -e '/my_alphasort/s#const void\*#const struct dirent**#g' \
 		${WRKSRC}/src/gtkcompletionline.cc
-.else
-	@${REINPLACE_CMD} -e '/select_executables_only(const /s#const ##' \
-		${WRKSRC}/src/gtkcompletionline.cc
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

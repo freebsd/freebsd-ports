@@ -1,0 +1,10 @@
+--- sprockets.gemspec.orig	2015-01-24 20:05:48.000000000 +0000
++++ sprockets.gemspec	2015-01-24 20:05:51.000000000 +0000
+@@ -11,7 +11,6 @@
+   s.date = "2014-10-28"
+   s.description = "Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS."
+   s.email = ["sstephenson@gmail.com", "josh@joshpeek.com"]
+-  s.executables = ["sprockets"]
+   s.files = ["LICENSE", "README.md", "bin/sprockets", "lib/rake/sprocketstask.rb", "lib/sprockets.rb", "lib/sprockets/asset.rb", "lib/sprockets/asset_attributes.rb", "lib/sprockets/base.rb", "lib/sprockets/bundled_asset.rb", "lib/sprockets/cache/file_store.rb", "lib/sprockets/caching.rb", "lib/sprockets/charset_normalizer.rb", "lib/sprockets/context.rb", "lib/sprockets/directive_processor.rb", "lib/sprockets/eco_template.rb", "lib/sprockets/ejs_template.rb", "lib/sprockets/engines.rb", "lib/sprockets/environment.rb", "lib/sprockets/errors.rb", "lib/sprockets/index.rb", "lib/sprockets/jst_processor.rb", "lib/sprockets/manifest.rb", "lib/sprockets/mime.rb", "lib/sprockets/processed_asset.rb", "lib/sprockets/processing.rb", "lib/sprockets/processor.rb", "lib/sprockets/safety_colons.rb", "lib/sprockets/server.rb", "lib/sprockets/static_asset.rb", "lib/sprockets/trail.rb", "lib/sprockets/utils.rb", "lib/sprockets/version.rb"]
+   s.homepage = "http://getsprockets.org/"
+   s.rubyforge_project = "sprockets"

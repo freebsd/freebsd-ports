@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-PORTVERSION=	8.0.1
+PORTVERSION=	8.0.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201408251540
+DISTNAME=	netbeans-${PORTVERSION}-201411181905
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Modular, standards-based integrated development environment

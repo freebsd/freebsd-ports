@@ -16,6 +16,8 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/portell
 PORTDOCS=	README.txt
 
+BROKEN=	does not fetch, https://lists.freebsd.org/pipermail/freebsd-ports/2015-March/098494.html
+
 post-extract:
 	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/portell.py
 	${REINPLACE_CMD} -e 's/free/freebsd/' ${WRKSRC}/portell.py

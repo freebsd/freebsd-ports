@@ -17,10 +17,4 @@ PLIST_FILES=	bin/jaildaemon \
 
 MAKE_ENV=	DESTDIR=${STAGEDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		requires jail_get function from FreeBSD 8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

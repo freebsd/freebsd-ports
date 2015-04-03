@@ -23,3 +23,16 @@
 %%XLAPACK%%%%SHARED%%lib/libxtmglib.so
 %%XLAPACK%%%%SHARED%%lib/libxtmglib.so.%%SVERSION%%
 %%XLAPACK%%%%PROFILE%%lib/libxtmglib_p.a
+%%LAPACKE%%include/lapacke.h
+%%LAPACKE%%include/lapacke_utils.h
+%%LAPACKE%%include/lapacke_mangling.h
+%%LAPACKE%%%%STATIC%%lib/liblapacke.a
+%%LAPACKE%%%%SHARED%%lib/liblapacke_pic.a
+%%LAPACKE%%%%SHARED%%lib/liblapacke.so
+%%LAPACKE%%%%SHARED%%lib/liblapacke.so.%%SVERSION%%
+%%LAPACKE%%%%PROFILE%%lib/liblapacke_p.a
+%%LAPACKE%%%%STATIC%%lib/liblapacke_tmg.a
+%%LAPACKE%%%%SHARED%%lib/liblapacke_tmg_pic.a
+%%LAPACKE%%%%SHARED%%lib/liblapacke_tmg.so
+%%LAPACKE%%%%SHARED%%lib/liblapacke_tmg.so.%%SVERSION%%
+%%LAPACKE%%%%PROFILE%%lib/liblapacke_tmg_p.a

@@ -18,9 +18,6 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 LIBS+=		-lcompat
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
-
 pre-install:
 	${MKDIR} ${STAGEDIR}/var/games/${PORTNAME}
 

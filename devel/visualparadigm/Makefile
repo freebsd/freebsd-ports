@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	12.0
+PORTVERSION=	12.0.20150401
 CATEGORIES=	devel
-MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.0/20150203/
-DISTNAME=	Visual_Paradigm_CE_12_0_20150203_Unix_InstallFree
+MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.0/20150401/
+DISTNAME=	Visual_Paradigm_CE_12_0_20150401_Unix_InstallFree
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 
-EXTRACT_NAME=	Visual_Paradigm_CE_${PORTVERSION}
+EXTRACT_NAME=	Visual_Paradigm_CE_12.0
 
 FETCH_ARGS=	-Fpr
 

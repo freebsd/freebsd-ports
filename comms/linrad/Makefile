@@ -55,10 +55,8 @@ post-patch:
 		${WRKSRC}/libfind1.c
 # NOTE: The code that actually does anything in users.c is currently
 #       #ifdef'd out because it's just a non-working example
-.if	${OSVERSION} >= 800000
 	@${REINPLACE_CMD} -e "s|ttyd|ttyu|" \
 	    ${WRKSRC}/lxsys.c
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

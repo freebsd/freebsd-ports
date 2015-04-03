@@ -142,18 +142,6 @@ MODULES+=	mod_ban \
 		mod_wrap2_file \
 		mod_wrap2_sql
 
-# FreeBSD-SA-11:07.chroot
-.if ${OSVERSION} < 800000
-CHROOT_TEST !=	${GREP} __FreeBSD_libc_enter_restricted_mode \
-	/usr/include/unistd.h > /dev/null || ${ECHO_CMD} error
-. if ${CHROOT_TEST} == "error"
-BROKEN=__FreeBSD_libc_enter_restricted_mode is not supported
-. endif
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-7-src-fsio.c
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-8-src-fsio.c
-.endif
-
 .if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else

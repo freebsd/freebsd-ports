@@ -123,9 +123,7 @@ PLIST_SUB+=	CLAMAV="@comment "
 
 .if ${PORT_OPTIONS:MDRAC}
 IGNORE=		DRAC is not available
-# .if ${OSVERSION} >= 800037
 # EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
-# .endif
 # USE_AUTOTOOLS=	autoconf autoheader
 .endif
 

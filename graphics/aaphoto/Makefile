@@ -30,8 +30,7 @@ PLIST_FILES=	bin/aaphoto
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "amd64" || ${ARCH} == "i386") && ${OSVERSION} >= 700000 && \
-	${COMPILER_TYPE} == gcc
+.if (${ARCH} == "amd64" || ${ARCH} == "i386") && ${COMPILER_TYPE} == gcc
 CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
 

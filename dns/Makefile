@@ -157,6 +157,7 @@
     SUBDIR += py-ldns
     SUBDIR += py-namebench
     SUBDIR += py-publicsuffix
+    SUBDIR += py-pywdns
     SUBDIR += py-twistedNames
     SUBDIR += radns
     SUBDIR += rbldnsd

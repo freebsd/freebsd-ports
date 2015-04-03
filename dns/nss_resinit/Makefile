@@ -20,9 +20,7 @@ PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_COMPAT5X)
-.if ${OSVERSION} > 700017
 BROKEN=		7.X and later do not have compat syms for the old resolver
-.endif
 MAKE_ARGS+=	CC="${CC} -DWITH_COMPAT5X"
 .endif
 

@@ -55,7 +55,7 @@ man/man8/dccifd.8.gz
 man/man8/dccm.8.gz
 man/man8/dccproc.8.gz
 man/man8/dccsight.8.gz
-%%ALT_HOME%%@dirrmtry dcc
+%%ALT_HOME%%@dir dcc
 %%ALT_HOME%%@cwd /var
 @owner %%DCCUSER%%
 @group %%DCCGROUP%%
@@ -78,9 +78,9 @@ man/man8/dccsight.8.gz
 %%DCCGREY%%@unexec [ -e %D/dcc/grey_db.hash ] && rm -f %D/dcc/grey_db.hash || true
 %%DCCGREY%%@unexec [ -e %D/dcc/grey_flod.map ] && rm -f %D/dcc/grey_flod.map || true
 %%DCCGREY%%@unexec [ -e %D/dcc/grey_clients ] && rm -f %D/dcc/grey_clients || true
-@dirrmtry dcc/log
+@dir dcc/log
 %%NO_ALT_HOME%%@group wheel
 %%NO_ALT_HOME%%@owner root
-@dirrmtry dcc
+@dir dcc
 %%ALT_HOME%%@group wheel
 %%ALT_HOME%%@owner root

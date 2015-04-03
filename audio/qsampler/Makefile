@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsampler
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://download.linuxsampler.org/packages/

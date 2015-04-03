@@ -13,6 +13,7 @@ COMMENT=	Strigi desktop search (meta port)
 USE_KDE4=	strigi_run
 NO_BUILD=	yes
 NO_MTREE=	yes
+NO_INSTALL=	yes
 
 OPTIONS_DEFINE=	CLIENT DAEMON UTILITIES
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
@@ -31,8 +32,5 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/strigidaemon:${PORTSDIR}/deskutils/strigidaemon
 .if ${PORT_OPTIONS:MUTILITIES}
 RUN_DEPENDS+=	${LOCALBASE}/bin/xmlindexer:${PORTSDIR}/deskutils/strigiutils
 .endif
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>

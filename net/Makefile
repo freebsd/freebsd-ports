@@ -363,6 +363,7 @@
     SUBDIR += mad_fcl
     SUBDIR += malo-firmware-kmod
     SUBDIR += mcast-tools
+    SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += megatools
@@ -433,6 +434,7 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
+    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -929,6 +931,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-pybeanstalk
     SUBDIR += py-pygeoip
+    SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile

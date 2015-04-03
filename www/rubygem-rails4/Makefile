@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -33,12 +33,12 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 		rubygem-jquery-rails4>=3.1.2:${PORTSDIR}/www/rubygem-jquery-rails4 \
 		rubygem-jbuilder>=2.1.3:${PORTSDIR}/devel/rubygem-jbuilder \
 		rubygem-uglifier>=2.5.0:${PORTSDIR}/www/rubygem-uglifier \
-		rubygem-sprockets211>=2.11.0:${PORTSDIR}/devel/rubygem-sprockets211 \
-		rubygem-rdoc>=0:${PORTSDIR}/devel/rubygem-rdoc \
+		rubygem-sprockets>=2.12.3:${PORTSDIR}/devel/rubygem-sprockets \
 		rubygem-thread_safe>=0.3.4:${PORTSDIR}/devel/rubygem-thread_safe \
 		rubygem-turbolinks>=2.3.0:${PORTSDIR}/www/rubygem-turbolinks \
 		rubygem-sass>=3.4.1:${PORTSDIR}/textproc/rubygem-sass \
-		rubygem-sdoc>=0.4.1:${PORTSDIR}/devel/rubygem-sdoc
+		rubygem-sdoc>=0.4.1:${PORTSDIR}/devel/rubygem-sdoc \
+		rubygem-rdoc>=4.0.2:${PORTSDIR}/devel/rubygem-rdoc
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

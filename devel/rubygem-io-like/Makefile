@@ -14,8 +14,7 @@ COMMENT=	The interface of IO objects to classes providing a few simple methods
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems \
-		rdoc:${PORTSDIR}/devel/rubygem-rdoc
+BUILD_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 RUN_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 
 USE_RUBY=	yes

@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+CONFLICTS=	ntp-[0-9].* ntp-rc-*
+
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
 USES=		pathfix shebangfix libtool

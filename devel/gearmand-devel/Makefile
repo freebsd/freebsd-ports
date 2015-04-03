@@ -47,12 +47,6 @@ TOKYOCAB_DESC=	Tokyo Cabinet support for persistent queue
 
 .include <bsd.port.options.mk>
 
-# Workaround for missing sigignore that wasn't introduced until
-# FreeBSD 8.0
-.if ${OSVERSION} < 800041
-BROKEN=	Does not compile without POSIX spawn() support
-.endif
-
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=		libdrizzleso:${PORTSDIR}/databases/libdrizzle
 CONFIGURE_ARGS+=	--enable-libdrizzle

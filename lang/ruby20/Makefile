@@ -212,7 +212,7 @@ post-install:
 #
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 . for FILE in ${INSTALLED_SCRIPTS}
-	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
+	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 .endif
 

@@ -1,9 +1,9 @@
 --- configure.orig	2014-08-06 14:43:42 UTC
 +++ configure
-@@ -1955,7 +1955,7 @@ case "$TARGET_SYS" in
+@@ -1961,7 +1961,7 @@ case "$TARGET_SYS" in
  	#   compressed via /usr/share/mk
  	mancat=man
- 	MAN='$(MAN8)'
+ 	MANX='$(MAN8)'
 -	USE_DCCMANINSTALL='# USE_DCCMANINSTALL=no'
 +	USE_DCCMANINSTALL='USE_DCCMANINSTALL=yes'
  	;;

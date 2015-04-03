@@ -49,7 +49,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKR_ARGS} doc
 .else
-	${DO_NADA}
+	${TRUE}
 .endif
 
 regression-test:

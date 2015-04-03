@@ -219,11 +219,9 @@ WANT_EXP_MODULES=	idmap_ad vfs_cacheprime gpext_scripts gpext_security gpext_reg
 .endif
 
 .if ${PORT_OPTIONS:MACL_SUPPORT}
-.	if ${OSVERSION} > 800000
 LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 WANT_EXP_MODULES+=	vfs_zfsacl
 SAMBA4_MODULES+=	vfs_zfsacl
-.	endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
 CONFIGURE_ARGS+=	--without-acl-support

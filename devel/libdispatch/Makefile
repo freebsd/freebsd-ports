@@ -84,10 +84,6 @@ OPTIONS_DEFAULT=	CLANG
 CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
 .endif
 
-.if ${OSVERSION} <= 800107 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900002)
-IGNORE=	is not supported on this OS version
-.endif
-
 .if ((${OSVERSION} > 900000) && (${OSVERSION} < 1000706))
 .if ${ARCH} == "powerpc
 BROKEN=		Does not configure on powerpc-9

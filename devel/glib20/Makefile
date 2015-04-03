@@ -56,13 +56,7 @@ GDB_DESC=	Install python gdb scripts
 .include <bsd.port.pre.mk>
 
 # doesn't build yet
-#.if (${OSVERSION} < 800000) \
-#	|| (${OSVERSION} >= 800000 && ${OSVERSION} < 802000)
-#	|| (${OSVERSION} >= 900000 && ${OSVERSION} < 900021)
 CONFIGURE_ARGS+=--disable-dtrace
-#.else
-#CONFIGURE_ARGS+=--enable-dtrace
-#.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=	--with-libiconv=native

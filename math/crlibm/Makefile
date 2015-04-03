@@ -31,13 +31,6 @@ DISTFILES+=	crlibm-1.0beta3.pdf:2,4 tripledoubleprocedures-1.0beta3.pdf:3,4
 .endif
 
 post-patch:
-#7-STABLE has log2() in libm after r226457 on 17 Oct 2011, but
-#there was no accompanying __FreeBSD_version bump
-.if ${OSVERSION} < 802502 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900027)
-	@${REINPLACE_CMD} \
-	-e '/testfun_libm[[:blank:]]*=[[:blank:]]*log2;/s/log2/NULL/' \
-		${WRKSRC}/tests/test_common.c
-.endif
 	@${REINPLACE_CMD} -e 's/\($$(AM_CFLAGS)\) \($$(CFLAGS)\)/\2 \1/' \
 		${WRKSRC}/tests/Makefile.in
 

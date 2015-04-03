@@ -536,7 +536,7 @@ gst_twolame_DIST=		ugly
 
 # gst_v4l2
 gst_gst_v4l2_LIB_DEPENDS+=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 800000
+.if ${OPSYS} == FreeBSD
 gst_gst_v4l2_RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
 .endif
 gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.la \

@@ -57,6 +57,62 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="742563d4-d776-11e4-b595-4061861086c1">
+    <topic>Several vulnerabilities found in PHP</topic>
+    <affects>
+      <package>
+	<name>php53</name>
+	<range><le>5.3.29_5</le></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.39</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.23</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/archive/2015.php#id2015-03-20-2">
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.6.7. Several bugs have been
+	    fixed as well as CVE-2015-0231, CVE-2015-2305 and
+	    CVE-2015-2331. All PHP 5.6 users are encouraged to
+	    upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.5.23. Several bugs have been
+	    fixed as well as CVE-2015-0231, CVE-2015-2305 and
+	    CVE-2015-2331. All PHP 5.5 users are encouraged
+	    to upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.4.39. Six security-related
+	    bugs were fixed in this release, including
+	    CVE-2015-0231, CVE-2015-2305 and CVE-2015-2331.
+	    All PHP 5.4 users are encouraged to upgrade to
+	    this version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/archive/2015.php#id2015-03-20-2</url>
+      <cvename>CVE-2015-0231</cvename>
+      <cvename>CVE-2015-2305</cvename>
+      <cvename>CVE-2015-2311</cvename>
+      <freebsdpr>ports/198739</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2015-03-19</discovery>
+      <entry>2015-04-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e887b71-d769-11e4-b1c2-20cf30e32f6d">
     <topic>subversion -- DoS vulnerabilities</topic>
     <affects>

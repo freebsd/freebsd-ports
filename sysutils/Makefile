@@ -477,6 +477,7 @@
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += lmon
+    SUBDIR += lnav
     SUBDIR += log_analysis
     SUBDIR += loganalyzer
     SUBDIR += logrotate

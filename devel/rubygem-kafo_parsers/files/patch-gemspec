@@ -1,9 +1,9 @@
---- kafo_parsers.gemspec.orig	2014-11-30 03:36:12.000000000 +0000
-+++ kafo_parsers.gemspec	2014-11-30 03:37:06.000000000 +0000
-@@ -26,7 +26,6 @@
+--- kafo_parsers.gemspec.orig	2015-03-31 21:08:02.502929000 +0200
++++ kafo_parsers.gemspec	2015-03-31 21:08:10.957192000 +0200
+@@ -25,7 +25,6 @@
        s.add_development_dependency(%q<minitest>, ["~> 4.0"])
-       s.add_development_dependency(%q<simplecov>, [">= 0"])
-       s.add_development_dependency(%q<ci_reporter>, [">= 0"])
+       s.add_development_dependency(%q<simplecov>, ["< 0.9"])
+       s.add_development_dependency(%q<ci_reporter>, ["~> 1.9.0"])
 -      s.add_runtime_dependency(%q<puppet>, [">= 0"])
        s.add_runtime_dependency(%q<rdoc>, [">= 3.9.0"])
      else

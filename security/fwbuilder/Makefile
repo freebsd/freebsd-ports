@@ -58,17 +58,13 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR} \
 		--prefix=${PREFIX}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}
+MAKE_ENV=	INSTALL_ROOT=${STAGEDIR} CCACHE_DISABLE=yes
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800107
-MAKE_ENV+=	CCACHE_DISABLE=yes
-.endif
 
 .if  ${OSVERSION} >= 1000055
 # IMPORTANT: Newer versions of rcs will NOT work with fwbuilder.

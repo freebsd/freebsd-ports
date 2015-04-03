@@ -27,10 +27,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
-
 NOT_FOR_ARCHS=		powerpc
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 

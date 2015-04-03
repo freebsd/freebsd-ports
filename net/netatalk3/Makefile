@@ -139,12 +139,6 @@ CONFIGURE_ARGS+=--enable-tcp-wrappers
 CONFIGURE_ARGS+=--disable-tcp-wrappers
 .endif
 
-.if ${OSVERSION} < 800031
-PLIST_SUB+=	ATFUNCS="@comment "
-.else
-PLIST_SUB+=	ATFUNCS=""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \

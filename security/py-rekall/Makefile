@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}acora>=1.8:${PORTSDIR}/textproc/py-acora \
+		${PYTHON_PKGNAMEPREFIX}PyAFF4>=0.12:${PORTSDIR}/security/py-pyaff4 \
 		${PYTHON_PKGNAMEPREFIX}capstone>=0:${PORTSDIR}/devel/py-capstone \
 		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:${PORTSDIR}/devel/py-codegen \
 		${PYTHON_PKGNAMEPREFIX}distorm>=0:${PORTSDIR}/devel/py-distorm \
@@ -38,9 +39,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${CHMOD} -R a+rX ${WRKSRC}
-	@${REINPLACE_CMD} '/argparse/d' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} 's,styles.NumberFormat(,, ; s,format_code=\(.*\)),\1,' \
-		${WRKSRC}/rekall/plugins/renderers/xls.py
+	@${REINPLACE_CMD} '/argparse/d ; /ipython/s/3.0.0/2.0.0/ ; /DateTime/d' ${WRKSRC}/setup.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

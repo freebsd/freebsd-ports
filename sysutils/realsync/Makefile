@@ -24,16 +24,10 @@ PLIST_FILES=	sbin/realsync \
 		etc/realsync.cfg.example \
 		man/man8/realsync.8.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 804000
-IGNORE=	does not work on FreeBSD < 8.4
-.endif
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/realsync ${STAGEDIR}${PREFIX}/sbin/realsync
 	${INSTALL_MAN} ${WRKSRC}/man8/realsync.8 ${STAGEDIR}${PREFIX}/man/man8/realsync.8
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/realsync ${STAGEDIR}${PREFIX}/etc/rc.d/realsync
 	${INSTALL_DATA} ${WRKSRC}/config/${PORTNAME}.cfg.example ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.example
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

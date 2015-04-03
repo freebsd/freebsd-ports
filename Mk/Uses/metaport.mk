@@ -16,5 +16,6 @@ EXTRACT_ONLY=	#
 NO_BUILD=	yes
 NO_INSTALL=	yes
 NO_MTREE=	yes
+NO_ARCH=	yes
 
 .endif

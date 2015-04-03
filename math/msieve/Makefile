@@ -46,7 +46,7 @@ CFLAGS+=	-DHAS_SSE
 CFLAGS+=	-DHAS_SSE2
 .endif
 
-.if ${OSVERSION} >= 700042 && ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 

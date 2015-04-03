@@ -22,12 +22,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-EXTRA_PATCHES=	${FILESDIR}/extra-strnlen
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/../include/linux/videodev2.h
 	@${REINPLACE_CMD} -e 's|#include <sys/klog.h>||g' \
@@ -39,4 +33,4 @@ post-patch:
 		${WRKSRC}/v4l2-ctl/ivtv-ctl.c \
 		${WRKSRC}/../include/linux/ivtv.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
