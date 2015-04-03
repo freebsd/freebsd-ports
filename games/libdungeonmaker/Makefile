@@ -20,12 +20,6 @@ MAKEFILE=	Makefile.bsd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024 && ${OSVERSION} < 1000705
-BROKEN=		doesn't build with clang 3.3 (e.g. on FreeBSD 10.0)
-.endif
-
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libdungeonmaker.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libdungeonmaker.so ${STAGEDIR}${PREFIX}/lib
@@ -37,4 +31,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/design* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/main.cpp ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
