@@ -34,10 +34,6 @@ OPTIONS_DEFAULT=	SKEM_NETINET
 BROKEN=		Does not compile on powerpc
 .endif
 
-.if ${OSVERSION} >= 700011
-EXTRA_PATCHES=  files/timet.patch
-.endif
-
 MAKE_ENV+=	PTHREAD_LIBS="-lpthread"
 
 .for o in ${PORT_OPTIONS:MSKEM_*}

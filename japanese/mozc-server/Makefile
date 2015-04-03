@@ -61,10 +61,6 @@ _CCTYPE=	gcc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800107
-BROKEN=		Does not compile on FreeBSD 7.X
-.endif
-
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile: segfault
 .endif

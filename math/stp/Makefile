@@ -28,8 +28,4 @@ CMAKE_ARGS+=	-DFL_LIBRARY=${LOCALBASE}/lib/libfl.a \
 		-DFLEX_EXECUTABLE=${LOCALBASE}/bin/flex
 .endif
 
-.if (${OSVERSION} < 802502)
-IGNORE=	stp needs log2(3)
-.endif
-
 .include <bsd.port.post.mk>

@@ -29,13 +29,7 @@ PLIST_FILES+=	bin/pam_fprint_enroll \
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-IGNORE=		dependency libfprint will not compile on FreeBsd < 8
-.endif
-
 pre-configure:
 	cd ${WRKDIR} && ${ACLOCAL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

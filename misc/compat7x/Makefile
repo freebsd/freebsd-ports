@@ -23,10 +23,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-IGNORE=		is for FreeBSD 7.x and newer
-.endif
-
 .if ${ARCH} == amd64
 PLIST_SUB+=	LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=	${TARGET32_DIR}

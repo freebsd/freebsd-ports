@@ -14,9 +14,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/posix-spawn-benchmark
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800000
-IGNORE=		missing posix_spawnp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

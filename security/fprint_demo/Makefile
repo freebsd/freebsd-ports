@@ -17,17 +17,11 @@ LIB_DEPENDS=	libfprint.so:${PORTSDIR}/security/libfprint
 USE_AUTOTOOLS=	autoconf automake
 AUTOMAKE_ARGS=	-a
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig desktop-file-utils
 USE_GNOME=	atk glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 
 WRKSRC=	${WRKDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-IGNORE=		libfprint will not compile on FreeBSD < 8
-.endif
 
 CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
 		CRYPTO_LIBS=-lcrypto
@@ -36,14 +30,4 @@ CFLAGS+=	-DHAVE_MEMMEM
 pre-configure:
 	cd ${WRKDIR} && ${ACLOCAL}
 
-post-install:
-	@-update-desktop-database
-	@${ECHO}
-	@${ECHO} =========================================================================
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-	@${ECHO} =========================================================================
-	@${ECHO}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

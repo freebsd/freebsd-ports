@@ -31,13 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
 CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
 		YELP_LZMA_LIBS="-L/usr/lib -llzma"
-.else
-LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

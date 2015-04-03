@@ -21,11 +21,7 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800045
-GPSMAN_DEFAULT_PORT?=	/dev/cuad0
-.else
 GPSMAN_DEFAULT_PORT?=	/dev/cuau0
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 SUB_FILES=	pkg-message

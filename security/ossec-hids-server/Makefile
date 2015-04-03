@@ -37,10 +37,6 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 PORTDOCS=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800067
-# Add string function that didn't exist until 8.x
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__os_csyslogd__csyslogd.c
-.endif
 
 .if !defined(CLIENT_ONLY)
 .if ${PORT_OPTIONS:MMYSQL}

@@ -32,14 +32,10 @@ VARAUDIT=	/var/audit
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 902000 && ${OSVERSION} >= 800000
+.if ${OSVERSION} < 902000
 NEEDVARDIRS=	""
 .else
 NEEDVARDIRS=	"@comment "
-.endif
-
-.if ${OSVERSION} <= 800000
-IGNORE=		requires FreeBSD 8.x or above
 .endif
 
 .if ${OSVERSION} >= 1000000
@@ -50,7 +46,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libauditd.so.0.0.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbsm.so.0.0.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/auditfilter_noop.so.0.0.0
-.if ${OSVERSION} < 902000 && ${OSVERSION} >= 800000
+.if ${OSVERSION} < 902000
 	@${MKDIR} -m 0770 \
 		${STAGEDIR}${VARAUDIT}/dist ${STAGEDIR}${VARAUDIT}/remote
 .endif

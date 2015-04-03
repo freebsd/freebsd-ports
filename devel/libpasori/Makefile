@@ -21,11 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib ${WRKSRC}/lpdump ${WRKSRC}/lptest
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
-.if ${OSVERSION} < 800069
-	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/lib/Makefile
-.else
 	@${CP} ${FILESDIR}/Makefile.lib.usb20 ${WRKSRC}/lib/Makefile
-.endif
 	@${CP} ${FILESDIR}/Makefile.lpdump ${WRKSRC}/lpdump/Makefile
 	@${CP} ${FILESDIR}/Makefile.lptest ${WRKSRC}/lptest/Makefile
 

@@ -113,10 +113,5 @@ post-patch:
 	@${CP} ${_DISTDIR}/py_stroke-${_PYSTROKE_VER}.tar.gz ${WRKSRC}/src/module/pinyin-enhance/data/.
 	@${CP} ${_DISTDIR}/py_table-${_PYTABLE_VER}.tar.gz ${WRKSRC}/src/module/pinyin-enhance/data/.
 	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/src/im/table/data/.
-.if ${OSVERSION} < 800067
-# getline() is GNU extension which FreeBSD only recently adopted
-EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \
-		${FILESDIR}/getline-src_lib_fcitx-utils_utils.h
-.endif
 
 .include <bsd.port.mk>

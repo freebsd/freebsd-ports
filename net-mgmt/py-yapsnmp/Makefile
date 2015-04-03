@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--enable-site-packages-prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 800000) && (${ARCH} == "i386")
+.if (${ARCH} == "i386")
 CPPFLAGS+=	-fstack-protector -I${LOCALBASE}/include
 .endif
 

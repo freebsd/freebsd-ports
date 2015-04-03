@@ -20,10 +20,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/a3load.hex ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/xilinx.conf ${STAGEDIR}${PREFIX}/etc/devd
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 800069)
-BROKEN=	doesn't build on FreeBSD prior libusb(8) integration to base system
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

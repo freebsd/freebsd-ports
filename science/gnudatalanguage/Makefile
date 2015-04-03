@@ -97,12 +97,6 @@ PLIST=		pkg-plist.pymod
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=NO
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800503
-BROKEN=	Does not build with ancient binutils
-.endif
-
 .if defined(BUILD_PYTHON_MODULE)
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
@@ -129,4 +123,4 @@ regression-test:	install
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
