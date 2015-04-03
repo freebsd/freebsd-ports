@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
