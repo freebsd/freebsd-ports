@@ -18,4 +18,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+DEPRECATED=	Unneeded port
+EXPIRATION=	2015-05-03
+
 .include <bsd.port.mk>
