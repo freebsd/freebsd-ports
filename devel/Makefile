@@ -1417,6 +1417,7 @@
     SUBDIR += oniguruma5
     SUBDIR += onscripter
     SUBDIR += onscripter-1byte
+    SUBDIR += oozie
     SUBDIR += open-beagle
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
