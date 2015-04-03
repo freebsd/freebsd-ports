@@ -3,6 +3,7 @@
 
 PORTNAME=	pligg
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -24,7 +25,6 @@ USE_PHP=	mysql
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
@@ -37,20 +37,20 @@ post-install:
 		${STAGEDIR}${WWWDIR}/libs/dbconnect.php; fi
 
 	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/settings.php
-	@${ECHO_CMD} '@exec ${CHMOD} 666 ${STAGEDIR}${WWWDIR}/settings.php' \
+	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/settings.php' \
 		>> ${TMPPLIST}
 
 	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/libs/dbconnect.php
-	@${ECHO_CMD} '@exec ${CHMOD} 666 ${STAGEDIR}${WWWDIR}/libs/dbconnect.php' \
+	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/libs/dbconnect.php' \
 		>> ${TMPPLIST}
 
 	@${CHMOD} 655 ${STAGEDIR}${WWWDIR}/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 655 ${STAGEDIR}${WWWDIR}/config.php' \
+	@${ECHO_CMD} '@exec ${CHMOD} 655 ${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
 
 .for d in admin/backup cache avatars/groups_uploaded avatars/user_uploaded languages
 	@${CHMOD} -R 777 ${STAGEDIR}${WWWDIR}/${d}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 ${STAGEDIR}${WWWDIR}/${d}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 777 ${WWWDIR}/${d}' >> ${TMPPLIST}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
