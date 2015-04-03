@@ -19,8 +19,8 @@ RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 2.1
-BROKEN=		Does not build with Ruby 2.1
+.if ${RUBY_VER} >= 2.1
+BROKEN=		Does not build
 .endif
 
 .include <bsd.port.post.mk>
