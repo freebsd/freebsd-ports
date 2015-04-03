@@ -9,8 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Create rdoc html with javascript search index
 
-RUN_DEPENDS=	rubygem-rdoc>=4.0:${PORTSDIR}/devel/rubygem-rdoc \
-		rubygem-json>=1.7.7:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=1.7.7:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
