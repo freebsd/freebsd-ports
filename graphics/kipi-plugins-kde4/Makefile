@@ -4,14 +4,11 @@ PORTNAME=	kipi-plugins
 PORTVERSION=	${DIGIKAM_VER}
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
-DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 kipi graphics plugins (meta port)
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
