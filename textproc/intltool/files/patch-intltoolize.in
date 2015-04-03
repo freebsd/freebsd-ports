@@ -1,0 +1,12 @@
+--- intltoolize.in.orig	2011-10-08 06:16:58 UTC
++++ intltoolize.in
+@@ -233,7 +233,8 @@ exit $status
+ # will be used to pull in the macro.
+ m4dir=`cat "$configure" | grep '^AC_CONFIG_MACRO_DIR' | sed -n -e 's/AC_CONFIG_MACRO_DIR(\([^()]*\))/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
+ if test -n "$m4dir"; then
+-  rm -f $m4dir/intltool.m4
++  $mkdir -p $m4dir
++  $rm $m4dir/intltool.m4
+   if test -n "$ln_s" && $ln_s $intltool_m4 $m4dir/intltool.m4; then :
+   elif $cp $intltool_m4 $m4dir/intltool.m4; then :
+   else
