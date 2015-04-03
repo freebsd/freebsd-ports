@@ -3317,7 +3317,6 @@
 %%LANG_RU%%%%DATADIR%%/mt-static/styles_ru.css
 @owner
 @group
-%%APACHE%%%%APACHEETCDIR%%/Includes/MT.conf
 @dir %%CGIDIR%%/alt-tmpl
 @dir %%CGIDIR%%/extlib/MT/L10N
 @dir %%CGIDIR%%/import
@@ -3325,4 +3324,3 @@
 @dir %%CGIDIR%%/php/plugins
 @dir %%DATADIR%%/mt-static/support
 %%MYSQL%%@dir(mysql,mysql,) %%DB_DIR%%
-%%MYSQL%%@dir(mysql,mysql,) /var/db/mysql
