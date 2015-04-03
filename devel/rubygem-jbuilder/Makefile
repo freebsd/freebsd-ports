@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbuilder
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
