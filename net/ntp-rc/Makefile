@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.3.11
+PORTVERSION=	4.2.8p2.r2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
-		http://archive.ntp.org/ntp4/ntp-dev/
-PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
+MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
+		http://archive.ntp.org/ntp4/ntp-4.2/ \
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
+PKGNAMESUFFIX=  -rc
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-CONFLICTS	ntp-[0-9].* ntp-rc-*
+CONFLICTS       ntp-[0-9].* ntp-devel-*
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
