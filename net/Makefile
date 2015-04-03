@@ -363,6 +363,7 @@
     SUBDIR += mad_fcl
     SUBDIR += malo-firmware-kmod
     SUBDIR += mcast-tools
+    SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += megatools
