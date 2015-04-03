@@ -2,7 +2,7 @@
 +++ install.sh
 @@ -15,39 +15,14 @@
      "--help"|"-h"|"help"|"h")
-       echo "Nimrod installation script"
+       echo "Nim installation script"
        echo "Usage: [sudo] sh install.sh DIR"
 -      echo "Where DIR may be:"
 -      echo "  /usr/bin"
@@ -16,32 +16,32 @@
 -    "/usr/bin")
 -      bindir=/usr/bin
 -      configdir=/etc
--      libdir=/usr/lib/nimrod
--      docdir=/usr/share/nimrod/doc
--      datadir=/usr/share/nimrod/data
+-      libdir=/usr/lib/nim
+-      docdir=/usr/share/nim/doc
+-      datadir=/usr/share/nim/data
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
 -      configdir=/etc
--      libdir=/usr/local/lib/nimrod
--      docdir=/usr/local/share/nimrod/doc
--      datadir=/usr/local/share/nimrod/data
+-      libdir=/usr/local/lib/nim
+-      docdir=/usr/local/share/nim/doc
+-      datadir=/usr/local/share/nim/data
 -      ;;
      *)
--      bindir="$1/nimrod/bin"
--      configdir="$1/nimrod/config"
--      libdir="$1/nimrod/lib"
--      docdir="$1/nimrod/doc"
--      datadir="$1/nimrod/data"
+-      bindir="$1/nim/bin"
+-      configdir="$1/nim/config"
+-      libdir="$1/nim/lib"
+-      docdir="$1/nim/doc"
+-      datadir="$1/nim/data"
 -      
--      mkdir -p $1/nimrod
+-      mkdir -p $1/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir
-+      bindir=$1/bin
-+      configdir=$1/etc
-+      libdir=$1/lib/nimrod
-+      docdir=$1/share/doc/nimrod
-+      datadir=$1/share/nimrod
++      bindir="$1/bin"
++      configdir="$1/etc"
++      libdir="$1/lib/nim"
++      docdir="$1/share/doc/nim"
++      datadir="$1/share/nim"
        ;;
    esac
    mkdir -p $libdir
