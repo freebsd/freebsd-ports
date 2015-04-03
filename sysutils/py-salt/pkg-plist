@@ -88,8 +88,6 @@
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/libcloud_aws.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/linode.py
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/linode.pyc
-%%PYTHON_SITELIBDIR%%/salt/cloud/clouds/linodepy.py
-%%PYTHON_SITELIBDIR%%/salt/cloud/clouds/linodepy.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/lxc.py
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/lxc.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/msazure.py
