@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	astroid
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,13 +13,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}logilab-common>0:${PORTSDIR}/devel/py-logilab-common
 
-USES=		python zip
-MAKE_ENV=	NO_SETUPTOOLS=1
+USES=		python
 USE_PYTHON=	distutils
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${CHMOD} a+r ${WRKSRC}/brain/*.py
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
