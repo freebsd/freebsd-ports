@@ -180,6 +180,7 @@
     SUBDIR += uTox
     SUBDIR += vacuum-im
     SUBDIR += vqcc-gtk
+    SUBDIR += xmpp-client
     SUBDIR += yoono
     SUBDIR += zephyr
 
