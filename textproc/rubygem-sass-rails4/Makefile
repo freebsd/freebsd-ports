@@ -3,6 +3,7 @@
 
 PORTNAME=	sass-rails
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -14,7 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-railties4>=4.0.0:${PORTSDIR}/www/rubygem-railties4 \
 		rubygem-sass32>=3.2.0:${PORTSDIR}/textproc/rubygem-sass32 \
-		rubygem-sprockets211>=2.11:${PORTSDIR}/devel/rubygem-sprockets211 \
+		rubygem-sprockets>=2.12.3:${PORTSDIR}/devel/rubygem-sprockets \
 		rubygem-sprockets-rails>=2.0:${PORTSDIR}/devel/rubygem-sprockets-rails
 
 USE_RUBY=	yes
