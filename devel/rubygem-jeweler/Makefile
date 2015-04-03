@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-highline>=1.6.15:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-github_api>=0.10.1:${PORTSDIR}/devel/rubygem-github_api \
 		rubygem-nokogiri>=1.6.0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-rdoc>=0:${PORTSDIR}/devel/rubygem-rdoc
+		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
