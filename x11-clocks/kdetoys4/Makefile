@@ -3,15 +3,12 @@
 PORTNAME=	kdetoys
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11-clocks kde
-DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE miscellaneous applications (meta port)
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	AMOR KTEATIME KTUX
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

@@ -3,15 +3,12 @@
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
-DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE bindings (meta port)
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	PERL PYTHON RUBY
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

@@ -3,15 +3,12 @@
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	sysutils kde
-DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Administration applications (meta port)
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	KCRON KSYSTEMLOG KUSER
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
