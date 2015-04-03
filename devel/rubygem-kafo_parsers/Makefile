@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo_parsers
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
