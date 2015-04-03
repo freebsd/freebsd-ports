@@ -1,0 +1,11 @@
+dnstable implements an encoding format for passive DNS data. It consists of a
+C library, libdnstable, and several command line utilities for creating,
+querying, and merging dnstable data files.
+
+It stores key-value records in Sorted String Table (SSTable) files and provides
+high-level interfaces for querying or iterating over the stored records.
+dnstable encodes individual records using a format tailored for efficiently
+storing passive DNS data and can quickly perform both "forward" and "inverse"
+searches.
+
+WWW: https://github.com/farsightsec/dnstable
