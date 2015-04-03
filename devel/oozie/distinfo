@@ -6,5 +6,5 @@ SHA256 (hadoop/apache-tomcat-6.0.41.tar.gz) = 2eb2812b42f3559690542fcb9ea0c1f43d
 SIZE (hadoop/apache-tomcat-6.0.41.tar.gz) = 7176167
 SHA256 (hadoop/ext-2.2.zip) = c463e298c7cc6fe3c5c863424a688b53a452bfe8f136bf20002e15b2bd201369
 SIZE (hadoop/ext-2.2.zip) = 6800612
-SHA256 (hadoop/hadoop-client-2.4.1.jar) = df937fb505930a91961427fcb174bea0069d97b95a84e19e756392c775a7cf0b
-SIZE (hadoop/hadoop-client-2.4.1.jar) = 2560
+SHA256 (hadoop/hadoop-client-2.6.0.jar) = e05887af8d943969273f0cf48edafcaefa79519d9193f8337e68b5e05e62d1da
+SIZE (hadoop/hadoop-client-2.6.0.jar) = 2556
