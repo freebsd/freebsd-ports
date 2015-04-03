@@ -11,8 +11,7 @@ COMMENT=	Parser for puppet modules
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet \
-		rubygem-rdoc>=3.9.0:${PORTSDIR}/devel/rubygem-rdoc
+RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
