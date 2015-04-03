@@ -6,6 +6,8 @@ PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
+USES+=	cpe
+
 INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \
 		src/backend/snowball src/backend/replication/libpqwalreceiver \
