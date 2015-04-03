@@ -1,15 +1,14 @@
 # Created by: Neal Nelson <ports@nicandneal.net>
 # $FreeBSD$
 
-PORTNAME=	nimrod
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTNAME=	nim
+PORTVERSION=	0.10.2
+PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://nimrod-code.org/download/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://nim-lang.org/download/
 
 MAINTAINER=	ports@nicandneal.net
-COMMENT=	The Nimrod programming language
+COMMENT=	The Nim programming language
 
 LICENSE=	MIT
 
@@ -17,20 +16,19 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		compiler zip
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e '/cc =/s/gcc/clang/' ${WRKSRC}/config/nimrod.cfg
+	@${REINPLACE_CMD} -e '/cc =/s/gcc/clang/' ${WRKSRC}/config/nim.cfg
 .endif
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
 		COMP_FLAGS="${CPPFLAGS} ${CFLAGS}" LINK_FLAGS="${LDFLAGS}" \
 		${SH} build.sh
-	cd ${WRKSRC} && bin/nimrod c --parallelBuild=${MAKE_JOBS_NUMBER} koch
+	cd ${WRKSRC} && bin/nim c --parallelBuild=${MAKE_JOBS_NUMBER} koch
 	cd ${WRKSRC} && ./koch boot --parallelBuild=${MAKE_JOBS_NUMBER} \
 		-d:release
 
