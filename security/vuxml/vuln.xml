@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f75141c-da1d-11e4-8d32-5404a68ad561">
+    <topic>Several vulnerabilities in libav</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><lt>11.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libav project reports:</p>
+	<blockquote cite="https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.3">
+	  <p>utvideodec: Handle slice_height being zero (CVE-2014-9604)</p>
+	  <p>tiff: Check that there is no aliasing in pixel format selection (CVE-2014-8544)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.3</url>
+      <cvename>CVE-2014-8544</cvename>
+      <cvename>CVE-2014-9604</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="742563d4-d776-11e4-b595-4061861086c1">
     <topic>Several vulnerabilities found in PHP</topic>
     <affects>
