@@ -168,7 +168,7 @@
     SUBDIR += newlisp-devel
     SUBDIR += nhc98
     SUBDIR += nickle
-    SUBDIR += nimrod
+    SUBDIR += nim
     SUBDIR += nml
     SUBDIR += nqc
     SUBDIR += nwcc
