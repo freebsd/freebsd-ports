@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-CONFLICTS       ntp-rc-* ntp-devel-*
+CONFLICTS=	ntp-rc-* ntp-devel-*
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
