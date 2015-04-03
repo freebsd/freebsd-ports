@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.73a
+PORTVERSION=	2.74
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -31,7 +31,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
 
-BL_VERSION=	2.73
+BL_VERSION=	2.74
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
 
