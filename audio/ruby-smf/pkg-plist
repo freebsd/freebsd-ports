@@ -19,6 +19,7 @@
 %%RUBY_SITELIBDIR%%/smf/toy/velcomp.rb
 %%RUBY_SITELIBDIR%%/smf/toy/virtual.rb
 %%RUBY_SITELIBDIR%%/smf/toy/xml.rb
+%%RUBY_MODEXAMPLESDIR%%/xml2smf.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/en/MANUAL.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/en/MANUAL.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/en/MANUAL.en.rd
