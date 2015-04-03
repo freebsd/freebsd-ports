@@ -27,10 +27,6 @@ OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 803000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd__rdnssd.h
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-lintl

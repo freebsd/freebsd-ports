@@ -115,9 +115,7 @@ BDB_LIB_NAME=	no
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
 		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4
-.if ${OSVERSION} >= 800037
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
-.endif
 USE_AUTOTOOLS=	autoconf autoheader
 .endif
 
@@ -129,10 +127,6 @@ PLIST_SUB+=	MANCONF="@comment "
 
 .if !exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=--disable-gssapi
-.endif
-
-.if ${OSVERSION} >= 800037
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
 
 CYRUS_USER?=	cyrus

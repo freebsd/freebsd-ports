@@ -46,10 +46,9 @@ PYTHON_CONFIGURE_WITH=	python
 
 PORTDOCS=	ChangeLog NEWS README*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIMOBILE} && (${OSVERSION} > 900002 || \
-	${OSVERSION} < 900000 && ${OSVERSION} > 800107)
+.if ${PORT_OPTIONS:MIMOBILE}
 COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 LIB_DEPENDS+=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
 CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
@@ -65,4 +64,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

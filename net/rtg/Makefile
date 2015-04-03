@@ -43,15 +43,11 @@ WANT_PHP_WEB=	yes
 USE_PHP=	mysqli spl
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 800040 )
 CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector
-.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
 	@${MV} ${WRKSRC}/etc/routers ${WRKSRC}/etc/routers.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

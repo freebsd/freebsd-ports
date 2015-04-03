@@ -75,10 +75,6 @@ CONFLICTS=	mplayer-1.*
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} < 803000
-CONFIGURE_ARGS+=	--disable-ssse3
-.endif
-
 WITH_CDROM_DEVICE?=	/dev/cd0
 
 #On i386, gcc runs out of general purpose registers when

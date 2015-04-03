@@ -24,10 +24,6 @@ USE_ASDF=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000 && ${OSVERSION} < 800000
-MANUAL_PACKAGE_BUILD=yes
-.endif
-
 .if ${ARCH} == "i386"
 LISP_ARCH=	x8632
 FX86CL=		fx86cl

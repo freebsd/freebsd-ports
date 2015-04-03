@@ -23,9 +23,9 @@ PLIST_FILES+=	man/man${man:E}/${man}.gz
 .endfor
 USE_CSTD=	gnu89
 
-OPTIONS_DEFINE=	IPV6 MASQ
-OPTIONS_DEFAULT=	MASQ
-MASQ_DESC=	Enable NAT/IP masq support
+OPTIONS_DEFINE=	IPV6
+
+CONFIGURE_ARGS=--disable-masq
 
 .include <bsd.port.options.mk>
 
@@ -33,10 +33,6 @@ MASQ_DESC=	Enable NAT/IP masq support
 CONFIGURE_ARGS+=--disable-ipv6
 .else
 CATEGORIES+=	ipv6
-.endif
-
-.if ! ${PORT_OPTIONS:MMASQ} || ${OSVERSION} >= 800000
-CONFIGURE_ARGS+=--disable-masq
 .endif
 
 post-patch:

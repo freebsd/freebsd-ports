@@ -14,16 +14,6 @@ USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/wmwlmon man/man1/wmwlmon.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700052
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-wl.c ${PATCHDIR}/extra-patch-wmwlmon.1
-pre-everything::
-	@${ECHO_CMD} "==========================================================="
-	@${ECHO_CMD} "On FreeBSD > 700052 there is no wi(4) support in ${PORTNAME}"
-	@${ECHO_CMD} "==========================================================="
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/X11R6#${LOCALBASE}#g' \
 		-e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
@@ -32,4 +22,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmwlmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

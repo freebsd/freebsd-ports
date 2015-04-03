@@ -21,10 +21,6 @@ do-install:
 	${LN} -sf pam_jail.so.1 ${STAGEDIR}${PREFIX}/lib/pam_jail.so
 	${INSTALL_MAN} ${WRKSRC}/pam_jail.8 ${STAGEDIR}${PREFIX}/man/man8/
 
-.if ${OSVERSION} < 800000
-BROKEN=		jail version not supported
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif

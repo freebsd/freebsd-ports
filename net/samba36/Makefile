@@ -260,18 +260,13 @@ CONFIGURE_ARGS+=	--disable-fam
 
 .if ${PORT_OPTIONS:MACL_SUPPORT}
 CONFIGURE_ARGS+=	--with-acl-support
-.	if ${OSVERSION} > 800000
 WANT_EXP_MODULES+=	vfs_zfsacl
 LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
-.	endif
 .else
 CONFIGURE_ARGS+=	--without-acl-support
 .endif
 
 .if ${PORT_OPTIONS:MAIO_SUPPORT}
-.if ${OSVERSION} < 700055
-IGNORE=			an AIO support requires 7.0-RELEASE or later. Disable AIO support
-.endif
 CONFIGURE_ARGS+=	--with-aio-support
 .else
 CONFIGURE_ARGS+=	--without-aio-support

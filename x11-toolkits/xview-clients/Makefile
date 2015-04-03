@@ -28,11 +28,7 @@ ALL_TARGET=	Clients
 X11BASE2FIX=	clients/olwmslave/help_file.c lib/libxview/help/help_file.c \
 		lib/libxview/misc/gettext.h lib/libxview/textsw/txt_e_menu.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 800089
 CFLAGS+=	-DCOMPAT_43TTY
-.endif
 
 IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
 
@@ -44,10 +40,6 @@ pre-configure:
 	  ${WRKSRC}/config/XView.cf
 	@${REINPLACE_CMD} -e "s,CcCmd cc,CcCmd ${CC}," \
 	  ${WRKSRC}/config/XView.tmpl
-.if ${OSVERSION} < 800090
-	@${REINPLACE_CMD} -e "s/-DCOMPAT_43TTY//" \
-	  ${WRKSRC}/config/XView.tmpl
-.endif
 	@${REINPLACE_CMD} -e 's+/usr/X11/+${PREFIX}/+g;' \
 	  ${WRKSRC}/clients/olwm/screen.c
 	${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+'	\
@@ -62,4 +54,4 @@ do-install:
 	@cd ${WRKSRC}/clients; ${MAKE} install install.man
 	@${INSTALL_DATA} ${WRKSRC}/misc/support/textedit.info ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -40,14 +40,8 @@ WRKSRC=		${WRKDIR}/amishHammer-sigar-${GH_COMMIT}
 PLATFORM_VER=	1
 .  elif ${OSVERSION} >= 900000
 PLATFORM_VER=	9
-.  elif ${OSVERSION} >= 800000
-PLATFORM_VER=	8
-.  elif ${OSVERSION} >= 700000
-PLATFORM_VER=	7
-.  elif ${OSVERSION} >= 600000
-PLATFORM_VER=	6
 .  else
-BROKEN=		Unsupported FreeBSD version
+PLATFORM_VER=	8
 .  endif
 .else
 BROKEN=		${OPSYS} platform is not supported

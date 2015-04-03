@@ -1,4 +1,4 @@
-%%ATFUNCS%%bin/ad
+bin/ad
 bin/afpldaptest
 bin/afppasswd
 %%DBUS%%bin/afpstats

@@ -38,10 +38,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	readme.html
 .endif
 
-.if ${OSVERSION} < 802514
-IGNORE=		tarball will not extract
-.endif
-
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	due to Oracle license restrictions, you must fetch the source \
 distribution manually. Please access \
