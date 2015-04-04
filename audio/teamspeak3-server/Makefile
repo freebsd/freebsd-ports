@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.11
+PORTVERSION=	3.0.11.2
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
@@ -45,7 +45,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${ARCH} ==	"i386"
 TEAMSPEAK_ARCH=	x86
-WRKSRC=	${WRKDIR}/${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}
+WRKSRC=	${WRKDIR}/${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}
 .endif
 .if ${ARCH} ==	"amd64"
 TEAMSPEAK_ARCH=	amd64
