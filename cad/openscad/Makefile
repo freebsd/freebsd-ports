@@ -3,6 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2015.03
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libopencsg.so:${PORTSDIR}/graphics/opencsg
 
-USES=		gettext-tools bison desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lang gettext-tools bison desktop-file-utils pkgconfig qmake
 USE_GL=		glu glew
 USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
