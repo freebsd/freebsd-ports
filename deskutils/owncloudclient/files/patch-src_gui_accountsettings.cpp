@@ -1,6 +1,6 @@
---- src/mirall/accountsettings.cpp.orig
-+++ src/mirall/accountsettings.cpp
-@@ -29,7 +29,8 @@
+--- src/gui/accountsettings.cpp.orig	2015-03-16 14:28:58 UTC
++++ src/gui/accountsettings.cpp
+@@ -30,7 +30,8 @@
  #include "selectivesyncdialog.h"
  #include "creds/abstractcredentials.h"
  
