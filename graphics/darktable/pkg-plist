@@ -174,6 +174,8 @@ share/applications/darktable.desktop
 %%DATADIR%%/pixmaps/idbutton-1.svg
 %%DATADIR%%/pixmaps/idbutton-2.png
 %%DATADIR%%/pixmaps/idbutton-2.svg
+%%DATADIR%%/pixmaps/idbutton-3.png
+%%DATADIR%%/pixmaps/idbutton-3.svg
 %%DATADIR%%/pixmaps/idbutton.png
 %%DATADIR%%/pixmaps/idbutton.svg
 %%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
@@ -308,6 +310,7 @@ share/icons/hicolor/48x48/apps/darktable.png
 share/icons/hicolor/64x64/apps/darktable.png
 share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
+share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/darktable.mo
