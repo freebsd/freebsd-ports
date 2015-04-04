@@ -2,21 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.15
-PORTREVISION=	2
+PORTVERSION=	20150311
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	irc ruby
-MASTER_SITES=	http://ruby-rbot.org/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
-		rubygem-gettext>=1.93.0:${PORTSDIR}/devel/rubygem-gettext
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:${PORTSDIR}/databases/ruby-tokyocabinet \
+		rubygem-mechanize>=0:${PORTSDIR}/www/rubygem-mechanize \
+		rubygem-tzinfo>=0:${PORTSDIR}/devel/rubygem-tzinfo \
+		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
+		rubygem-oauth2>=0:${PORTSDIR}/net/rubygem-oauth2
+LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ruby-${PORTNAME}
+GH_TAGNAME=	545f21791ad804a52f6b7470403a1fa5a3976f5f
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -25,15 +32,8 @@ PORTDOCS=	REQUIREMENTS ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-pre-install:
-	${RM} ${WRKSRC}/bin/svnwatch-postcommit-hook
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

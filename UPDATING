@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150403:
+  AFFECTS: Users of irc/rbot
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Ruby Bot now has a new upstream maintainer.  The project has been updated
+  to work with Ruby 2.0+.  Some migration is needed to move away from
+  BDB regristry files.  The guide for that is at
+  https://github.com/ruby-rbot/rbot/wiki/MigrationGuide
+
+  rbotdb can be used to backup a BDB database and then restore it to a working
+  format for the new rbot. Update your conf.yaml after with 'core.db: tc'
+  once converted.
+
 20150324:
   AFFECTS: Users of dns/bind9*
   AUTHOR: mat@FreeBSD.org
