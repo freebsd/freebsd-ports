@@ -13,12 +13,11 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	nonstop
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
-GH_COMMIT=	9f035e6
 
 USES=		cmake lua pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf2 vte
 
-CFLAGS+=	-I${LOCALBASE}/include/vte-0.0
+CPPFLAGS+=	-I${LOCALBASE}/include/vte-0.0
 
 TERMIT_ETC=	${STAGEDIR}${PREFIX}/etc/xdg/${PORTNAME}
 
