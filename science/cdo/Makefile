@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	1.6.8
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/9444/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/10030/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -71,6 +70,7 @@ CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|unsigned32 |uint32_t |' ${WRKSRC}/libcdi/src/cdilib.c ${WRKSRC}/libcdi/src/util.c
 
 regression-test test: build
 .if ${PORT_OPTIONS:MNETCDF}
