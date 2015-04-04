@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
-GH_COMMIT=	159eb7f
 
 USES=		autoreconf gmake iconv libtool
 GNU_CONFIGURE=	yes
