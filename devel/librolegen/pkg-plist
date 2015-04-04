@@ -1,0 +1,9 @@
+webos/usr/include/rolegen.h
+webos/usr/lib/librolegen.so
+webos/usr/lib/librolegen.so.2
+webos/usr/lib/librolegen.so.2.1.0
+webos/usr/share/pkgconfig/rolegen.pc
+webos/usr/share/rolegen/templates/NDK.prv
+webos/usr/share/rolegen/templates/NDK.pub
+webos/usr/share/rolegen/templates/Triton.prv
+webos/usr/share/rolegen/templates/Triton.pub
