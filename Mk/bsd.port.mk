@@ -1295,7 +1295,9 @@ WITH_DEBUG=	yes
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
 
+.if defined(PORTNAME)
 .include "${PORTSDIR}/Mk/bsd.sanity.mk"
+.endif
 
 _PREMKINCLUDED=	yes
 
