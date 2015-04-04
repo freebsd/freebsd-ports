@@ -7,11 +7,11 @@ r226103 | des | 2011-10-07 08:10:16 -0500 (Fri, 07 Oct 2011) | 5 lines
 Add a -x option that causes ssh-agent(1) to exit when all clients have
 disconnected.
 
---- ssh-agent.c.orig	2014-07-29 21:32:46.000000000 -0500
-+++ ssh-agent.c	2014-11-03 16:48:03.930786112 -0600
-@@ -142,15 +142,34 @@ extern char *__progname;
- /* Default lifetime in seconds (0 == forever) */
- static long lifetime = 0;
+--- ssh-agent.c.orig	2015-03-17 00:49:20.000000000 -0500
++++ ssh-agent.c	2015-03-20 00:00:48.800352000 -0500
+@@ -150,15 +150,34 @@ static long lifetime = 0;
+ 
+ static int fingerprint_hash = SSH_FP_HASH_DEFAULT;
  
 +/*
 + * Client connection count; incremented in new_socket() and decremented in
@@ -36,15 +36,15 @@ disconnected.
  	close(e->fd);
  	e->fd = -1;
  	e->type = AUTH_UNUSED;
- 	buffer_free(&e->input);
- 	buffer_free(&e->output);
- 	buffer_free(&e->request);
+ 	sshbuf_free(e->input);
+ 	sshbuf_free(e->output);
+ 	sshbuf_free(e->request);
 +	if (last)
 +		cleanup_exit(0);
  }
  
  static void
-@@ -810,6 +829,10 @@ new_socket(sock_type type, int fd)
+@@ -910,6 +929,10 @@ new_socket(sock_type type, int fd)
  {
  	u_int i, old_alloc, new_alloc;
  
@@ -55,16 +55,16 @@ disconnected.
  	set_nonblock(fd);
  
  	if (fd > max_fd)
-@@ -1026,7 +1049,7 @@ usage(void)
+@@ -1138,7 +1161,7 @@ usage(void)
  {
  	fprintf(stderr,
- 	    "usage: ssh-agent [-c | -s] [-d] [-a bind_address] [-t life]\n"
--	    "                 [command [arg ...]]\n"
-+	    "                 [-x] [command [arg ...]]\n"
+ 	    "usage: ssh-agent [-c | -s] [-d] [-a bind_address] [-E fingerprint_hash]\n"
+-	    "                 [-t life] [command [arg ...]]\n"
++	    "                 [-t life] [-x] [command [arg ...]]\n"
  	    "       ssh-agent [-c | -s] -k\n");
  	exit(1);
  }
-@@ -1056,6 +1079,7 @@ main(int ac, char **av)
+@@ -1168,6 +1191,7 @@ main(int ac, char **av)
  	/* drop */
  	setegid(getgid());
  	setgid(getgid());
@@ -72,16 +72,16 @@ disconnected.
  
  #if defined(HAVE_PRCTL) && defined(PR_SET_DUMPABLE)
  	/* Disable ptrace on Linux without sgid bit */
-@@ -1069,7 +1093,7 @@ main(int ac, char **av)
+@@ -1181,7 +1205,7 @@ main(int ac, char **av)
  	__progname = ssh_get_progname(av[0]);
  	seed_rng();
  
--	while ((ch = getopt(ac, av, "cdksa:t:")) != -1) {
-+	while ((ch = getopt(ac, av, "cdksa:t:x")) != -1) {
+-	while ((ch = getopt(ac, av, "cdksE:a:t:")) != -1) {
++	while ((ch = getopt(ac, av, "cdksE:a:t:x")) != -1) {
  		switch (ch) {
- 		case 'c':
- 			if (s_flag)
-@@ -1098,6 +1122,9 @@ main(int ac, char **av)
+ 		case 'E':
+ 			fingerprint_hash = ssh_digest_alg_by_name(optarg);
+@@ -1215,6 +1239,9 @@ main(int ac, char **av)
  				usage();
  			}
  			break;

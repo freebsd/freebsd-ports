@@ -15,21 +15,21 @@ Submitted by:   Bruce Cran <bruce@cran.org.uk>
 
 Index: sshd.c
 ===================================================================
---- sshd.c	(revision 184121)
-+++ sshd.c	(revision 184122)
+--- sshd.c.orig	2015-04-04 11:40:24.175508000 -0500
++++ sshd.c	2015-04-04 11:40:38.082324000 -0500
 @@ -72,6 +72,7 @@
- #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
+ #include <limits.h>
 +#include <utmp.h>
  
+ #ifdef WITH_OPENSSL
  #include <openssl/dh.h>
- #include <openssl/bn.h>
-@@ -238,7 +239,7 @@
+@@ -229,7 +230,7 @@ u_char *session_id2 = NULL;
  u_int session_id2_len = 0;
  
  /* record remote hostname or ip */
--u_int utmp_len = MAXHOSTNAMELEN;
+-u_int utmp_len = HOST_NAME_MAX+1;
 +u_int utmp_len = UT_HOSTSIZE;
  
  /* options.max_startup sized array of fd ints */
