@@ -15,14 +15,9 @@ WARNING+=	"WITH_NEW_XORG and WITHOUT_NEW_XORG knobs were removed and have no eff
 WARNING+=	"WITH_KMS was removed and has no effect"
 .endif
 
-#.if defined(PKGORIGIN)
-#.for _c in ${CATEGORIES}
-#_CAT?=	${_c}
-#.endfor
-#.if ${.CURDIR:H:T} != ${_CAT}
-#DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
-#.endif
-#.endif
+.if ${.CURDIR:H:T} != ${PKGCATEGORY}
+DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
+.endif
 
 #.if defined(WITHOUT_X11)
 #WARNING+=	"WITHOUT_X11 is deprecated use X11 option instead"
