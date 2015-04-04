@@ -154,7 +154,6 @@
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
-    SUBDIR += mirall
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += mrundlg
@@ -174,6 +173,7 @@
     SUBDIR += orage
     SUBDIR += osmo
     SUBDIR += osynctool
+    SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
     SUBDIR += p5-ZConf-BGSet

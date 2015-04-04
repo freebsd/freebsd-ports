@@ -1,6 +1,6 @@
---- src/mirall/generalsettings.cpp.orig
-+++ src/mirall/generalsettings.cpp
-@@ -76,6 +76,7 @@
+--- src/gui/generalsettings.cpp.orig	2015-03-16 14:28:58 UTC
++++ src/gui/generalsettings.cpp
+@@ -85,6 +85,7 @@ void GeneralSettings::loadMiscSettings()
  
  void GeneralSettings::slotUpdateInfo()
  {
@@ -8,7 +8,7 @@
      if (OCUpdater *updater = dynamic_cast<OCUpdater*>(Updater::instance()))
      {
          connect(updater, SIGNAL(downloadStateChanged()), SLOT(slotUpdateInfo()), Qt::UniqueConnection);
-@@ -84,9 +85,12 @@
+@@ -93,9 +94,12 @@ void GeneralSettings::slotUpdateInfo()
          _ui->updateStateLabel->setText(updater->statusString());
          _ui->restartButton->setVisible(updater->downloadState() == OCUpdater::DownloadComplete);
      } else {

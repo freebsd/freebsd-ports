@@ -1,6 +1,6 @@
---- src/mirall/mirallconfigfile.cpp.orig
-+++ src/mirall/mirallconfigfile.cpp
-@@ -359,11 +359,22 @@
+--- src/libsync/configfile.cpp.orig	2015-03-16 14:28:58 UTC
++++ src/libsync/configfile.cpp
+@@ -383,11 +383,22 @@ bool ConfigFile::skipUpdateCheck( const 
      QString con( connection );
      if( connection.isEmpty() ) con = defaultConnection();
  
@@ -22,4 +22,4 @@
 +#endif
  }
  
- void MirallConfigFile::setSkipUpdateCheck( bool skip, const QString& connection )
+ void ConfigFile::setSkipUpdateCheck( bool skip, const QString& connection )
