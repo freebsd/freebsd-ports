@@ -20,8 +20,8 @@ oozie/lib/hadoop-auth-%%HADOOP_VERSION%%.jar
 oozie/lib/hawtbuf-1.9.jar
 oozie/lib/httpclient-4.2.5.jar
 oozie/lib/httpcore-4.2.4.jar
-oozie/lib/jackson-core-asl-1.9.13.jar
-oozie/lib/jackson-mapper-asl-1.9.13.jar
+oozie/lib/jackson-core-asl-1.8.8.jar
+oozie/lib/jackson-mapper-asl-1.8.8.jar
 oozie/lib/json-simple-1.1.jar
 oozie/lib/jsr305-1.3.9.jar
 oozie/lib/oozie-client-4.1.0.jar
@@ -63,8 +63,8 @@ oozie/libext/hadoop-yarn-common-%%HADOOP_VERSION%%.jar
 oozie/libext/hadoop-yarn-server-common-%%HADOOP_VERSION%%.jar
 oozie/libext/httpclient-4.2.5.jar
 oozie/libext/httpcore-4.2.5.jar
-oozie/libext/jackson-core-asl-1.8.8.jar
-oozie/libext/jackson-mapper-asl-1.8.8.jar
+oozie/libext/jackson-core-asl-1.9.13.jar
+oozie/libext/jackson-mapper-asl-1.9.13.jar
 oozie/libext/jaxb-api-2.2.2.jar
 oozie/libext/jersey-core-1.9.jar
 oozie/libext/jetty-util-6.1.14.jar
