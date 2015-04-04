@@ -16,9 +16,7 @@ COMMENT=	Scientific tools for Python
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		fortran python
