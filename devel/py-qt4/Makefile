@@ -6,12 +6,17 @@ PORTVERSION=	${PYQT4_VERSION}
 CATEGORIES=	devel python
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	# none
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
 USES=		python
-USES=		metaport
+
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 OPTIONS_DEFINE=	ALL ${PYQT4_COMPONENTS}
 OPTIONS_DEFAULT=	ALL
