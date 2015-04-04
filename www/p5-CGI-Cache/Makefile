@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Cache
-PORTVERSION=	1.4202
+PORTVERSION=	1.4203
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Tie-Restore>=0:${PORTSDIR}/devel/p5-Tie-Restore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Module-Install>=1.14:${PORTSDIR}/devel/p5-Module-Install
 
 USES=		perl5
 USE_PERL5=	configure
