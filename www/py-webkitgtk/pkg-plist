@@ -6,6 +6,3 @@ share/pywebkitgtk/defs/webkit-1.0.2.defs
 share/pywebkitgtk/defs/webkit-1.1-types.defs
 share/pywebkitgtk/defs/webkit-1.1.defs
 share/pywebkitgtk/defs/webkit-base-types.defs
-@dirrm share/pywebkitgtk/defs
-@dirrm share/pywebkitgtk
-@dirrm %%PYTHON_SITELIBDIR%%/webkit

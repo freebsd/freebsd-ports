@@ -3,14 +3,14 @@
 
 PORTNAME=	webkitgtk
 PORTVERSION=	1.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	pywebkitgtk
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the WebKit GTK+ port
 
 LICENSE=	GPLv2
@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python tar:bzip2
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	glib20 libxslt pygtk2
 
 .include <bsd.port.mk>
