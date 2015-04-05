@@ -10,6 +10,8 @@ COMMENT=	Minimalistic Murmur (Mumble server)
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Checksum and size mismatch
+
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
