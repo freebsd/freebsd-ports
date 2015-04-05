@@ -10,8 +10,8 @@ COMMENT=	Template language whose goal is reduce the syntax to essential parts
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-tilt>=1.3.3:${PORTSDIR}/devel/rubygem-tilt \
-		rubygem-temple>=0.6.6:${PORTSDIR}/devel/rubygem-temple
+RUN_DEPENDS=	rubygem-temple>=0.7.3:${PORTSDIR}/devel/rubygem-temple \
+		rubygem-tilt>=1.3.3:${PORTSDIR}/devel/rubygem-tilt
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
