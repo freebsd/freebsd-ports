@@ -12,6 +12,8 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
 
+BROKEN=		Checksum and size mismatch
+
 CONFLICTS_INSTALL=	wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*
 
 NO_BUILD=	yes
