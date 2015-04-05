@@ -9,6 +9,7 @@ MASTER_SITES=	http://web.mit.edu/tbaran/www/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time pitch correction plugin for LADSPA
 
+BROKEN=		Distfile size mismatch
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

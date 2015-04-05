@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		no public distfiles
 USES=		gmake zip
 MAKEFILE=	makefiles/unix.mak
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"

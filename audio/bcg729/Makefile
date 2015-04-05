@@ -10,6 +10,7 @@ MASTER_SITES=	SAVANNAH/linphone/plugins/sources
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software G729A encoder and decoder library written in C
 
+BROKEN=		Distfile size mismatch
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
