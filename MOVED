@@ -7453,3 +7453,6 @@ ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome
 devel/subversion16|devel/subversion|2015-03-31|Has expired: EoL, use devel/subversion
 lang/nimrod|lang/nim|2015-04-03|Renamed by upstream
 deskutils/mirall|deskutils/owncloudclient|2015-04-04|Renamed upstream
+mail/rubygem-qmail|mail/rubygem-ruby-qmail|2015-04-05|Rename to match our rubygems naming
+devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rename to match our rubygems naming
+print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygems naming
