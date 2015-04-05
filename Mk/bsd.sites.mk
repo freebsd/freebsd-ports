@@ -1099,7 +1099,7 @@ MASTER_SITE_SAVANNAH+= \
 MASTER_SITE_SOURCEFORGE+= http://downloads.sourceforge.net/project/%SUBDIR%/
 .for mirror in heanet sunet iweb switch freefr garr aarnet jaist master \
 	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet \
-	netcologne ignum kent kaz
+	netcologne ignum kent
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
