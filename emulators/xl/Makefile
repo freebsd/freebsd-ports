@@ -3,7 +3,7 @@
 PORTNAME=	xl
 PORTVERSION=	4.5.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/ \
+MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
 
 MAINTAINER=	bapt@FreeBSD.org
