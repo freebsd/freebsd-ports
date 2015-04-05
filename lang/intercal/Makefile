@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	intercal
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
+COMMENT=	C-INTERCAL compiler, ick, and supporting libraries
 
 GNU_CONFIGURE=	yes
 USES=		gmake
