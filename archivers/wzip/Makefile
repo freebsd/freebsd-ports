@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Preprocessor for lossy data compression
 
+BROKEN=		No public distfiles
+
 ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/${PORTNAME} \

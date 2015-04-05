@@ -9,6 +9,8 @@ MASTER_SITES=	SF/nova/catalogs/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary representation of the Sky2000 star catalog
 
+BROKEN=		No public distfiles
+
 GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/nova

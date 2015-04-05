@@ -10,6 +10,8 @@ MASTER_SITES=	http://hamete.org/static/wmg/
 MAINTAINER=	will@FreeBSD.org
 COMMENT=	Neat xearth-like WindowMaker dockapp
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libwraster.so:${PORTSDIR}/x11-wm/libwraster
 
 PLIST_FILES=	bin/wmglobe \
