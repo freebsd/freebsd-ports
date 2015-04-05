@@ -1,22 +1,22 @@
 # $FreeBSD$
 
-PORTNAME=	pdfwriter
+PORTNAME=	pdf-writer
 PORTVERSION=	1.1.8
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
-DISTNAME=	pdf-writer-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby PDF document creation library
 
-RUN_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
-		rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple
+LICENSE=	MIT
 
-GEM_NAME=	${DISTNAME}
+RUN_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
+		rubygem-transaction-simple>=1.3:${PORTSDIR}/devel/rubygem-transaction-simple
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/techbook
 
 .include <bsd.port.mk>
