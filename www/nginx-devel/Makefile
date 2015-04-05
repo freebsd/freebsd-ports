@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.7.10
+PORTVERSION=	1.7.11
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -502,6 +502,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
+IGNORE=	UPLOAD: update require
 NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
