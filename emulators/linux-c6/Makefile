@@ -4,20 +4,14 @@
 PORTNAME=	linux-c6
 PORTVERSION=	0.2
 CATEGORIES=	emulators linux
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Meta-port for all things CentOS ${LINUX_DIST_VER}
 
-NO_BUILD=	yes
-NO_MTREE=	yes
-NO_INSTALL=	yes
+USES=	metaport
 
 # base
 USE_LINUX=	c6
-#RUN_DEPENDS+=	linux_base-c6>0:${PORTSDIR}/emulators/linux_base-c6
 
 # non-base
 
