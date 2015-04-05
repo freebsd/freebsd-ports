@@ -1,11 +1,11 @@
---- vowpalwabbit/Makefile.in.orig	2015-01-11 21:54:22.000000000 +0300
-+++ vowpalwabbit/Makefile.in	2015-01-15 15:48:29.000000000 +0300
-@@ -85,7 +85,7 @@ bin_PROGRAMS = vw$(EXEEXT) active_intera
+--- vowpalwabbit/Makefile.in.orig	2015-04-05 15:33:41.243264000 +0300
++++ vowpalwabbit/Makefile.in	2015-04-05 15:33:56.962316000 +0300
+@@ -87,7 +87,7 @@
  @NITPICK_TRUE@	-Wmissing-format-attribute -Wredundant-decls \
  @NITPICK_TRUE@	-ansi -Wmissing-noreturn
- @PARALLELIZE_TRUE@am__append_2 = -Wno-strict-aliasing -fopenmp
--@FREEBSD_TRUE@am__append_3 = -l compat -Wall
-+@FREEBSD_TRUE@am__append_3 = -lcompat -Wall
- @FREEBSD_FALSE@am__append_4 = -Wall -pedantic
+ @PARALLELIZE_TRUE@am__append_4 = -Wno-strict-aliasing -fopenmp
+-@FREEBSD_TRUE@am__append_5 = -l compat
++@FREEBSD_TRUE@am__append_5 = -lcompat
+ @FREEBSD_FALSE@am__append_6 = -pedantic
+ @CLANG_LIBCXX_TRUE@am__append_7 = -stdlib=libc++
  subdir = vowpalwabbit
- DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
