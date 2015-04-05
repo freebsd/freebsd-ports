@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.qsl.net/pg4i/download/
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	gtk psk31 client
 
+BROKEN=		Unfetchable
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

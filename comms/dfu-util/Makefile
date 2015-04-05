@@ -11,6 +11,7 @@ COMMENT=	Device firmware update (DFU) USB programmer
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	USE_LIBS="-lusb" \
 		ac_cv_lib_usbpath_usb_path2devnum=no

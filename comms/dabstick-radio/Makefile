@@ -12,6 +12,8 @@ COMMENT=	DAB/DAB+ and wideband FM receiver for RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS+=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
 		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \

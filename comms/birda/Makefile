@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
+BROKEN=		Unfetchable
 USES=		uidfix
 
 .include <bsd.port.mk>
