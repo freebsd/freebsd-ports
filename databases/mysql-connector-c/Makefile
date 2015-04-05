@@ -13,6 +13,8 @@ COMMENT=	MySQL database connector for C
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 USE_MYSQL=	51+
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=yes
