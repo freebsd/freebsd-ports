@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	WIDECHAR
 OPTIONS_DEFAULT=WIDECHAR
 WIDECHAR_DESC=	Enable wide-character support (UTF-8)
 
+BROKEN=		Unfetchable
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
