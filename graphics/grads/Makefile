@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
 
+BROKEN=		Checksum and size mismatch
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \

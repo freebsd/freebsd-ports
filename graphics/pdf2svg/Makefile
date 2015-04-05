@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.cityinthesky.co.uk/_media/opensource/
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Convert PDF to SVG
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
 USES=		pkgconfig

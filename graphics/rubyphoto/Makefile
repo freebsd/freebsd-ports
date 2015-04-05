@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.markhj.com/rubyphoto/files/
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	program for creating web image galleries
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${RUBY_SITELIBDIR}/image_size.rb:${PORTSDIR}/graphics/ruby-image_size \

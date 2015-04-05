@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.mox.net/downloads/ \
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Small utility to convert Windows icon files into .xpm and .png files
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 MAKE_ARGS=	CC="${CC}"
