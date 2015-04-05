@@ -1,16 +1,16 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	filemagic
-PORTVERSION=	0.6.1
+PORTNAME=	ruby-filemagic
+PORTVERSION=	0.6.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding to libmagic(3)
 
-GEM_NAME=	${DISTNAME}
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
