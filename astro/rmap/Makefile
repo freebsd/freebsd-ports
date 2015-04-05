@@ -13,6 +13,8 @@ COMMENT=	Generates images of the Earth centered at a particular location
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 USES=		gmake
