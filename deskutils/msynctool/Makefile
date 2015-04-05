@@ -14,6 +14,7 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	osynctool-[0-9]*
 
+BROKEN=		Unfetchable
 USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 

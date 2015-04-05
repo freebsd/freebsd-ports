@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Python plugin for the OpenSync framework
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	libopensync-plugin-python-devel-[0-9]*

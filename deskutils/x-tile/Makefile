@@ -12,6 +12,7 @@ COMMENT=	GNOME applet to tile the opened windows
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 USE_GNOME=	pygtk2
 USES=		python
 USE_PYTHON=	distutils

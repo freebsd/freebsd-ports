@@ -12,6 +12,7 @@ COMMENT=	File-Sync plugin for the opensync framework
 
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
+BROKEN=		Unfetchable
 USES=		pkgconfig tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 

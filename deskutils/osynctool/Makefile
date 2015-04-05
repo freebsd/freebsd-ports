@@ -13,6 +13,7 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	msynctool-0.2*
 
+BROKEN=		Unfetchable
 USES=		cmake:outsource pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME} \

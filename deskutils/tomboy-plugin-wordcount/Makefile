@@ -14,6 +14,7 @@ COMMENT=	Counts lines, words, and characters in your notes
 BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
+BROKEN=		Unfetchable
 ALL_TARGET=	Wordcount.dll
 
 ADDINS_DIR=	lib/tomboy/addins

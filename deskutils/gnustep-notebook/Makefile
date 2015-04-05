@@ -14,6 +14,7 @@ COMMENT=	Place to store notes in an organized manner
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

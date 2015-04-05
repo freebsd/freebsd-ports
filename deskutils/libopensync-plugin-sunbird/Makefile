@@ -13,6 +13,7 @@ COMMENT=	Sunbird plugin for the OpenSync framework
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022 \
 		libneon.so:${PORTSDIR}/www/neon
 
+BROKEN=		Unfetchable
 USES=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2
