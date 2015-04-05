@@ -15,13 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libwdns.so:${PORTSDIR}/dns/wdns
 
 USE_PYTHON=	distutils autoplist
-
 USES=		pkgconfig python
 
 post-patch:
 	${REINPLACE_CMD} -e "1s+ python+ ${PYTHON_CMD}+" ${WRKSRC}/gen_pywdns_constants
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/python2.7/site-packages/wdns.so
+	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/wdns.so
 
 .include <bsd.port.mk>
