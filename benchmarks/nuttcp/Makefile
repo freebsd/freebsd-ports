@@ -12,6 +12,7 @@ WRKSRC=		${WRKDIR}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	TCP/UDP network testing tool
 
+BROKEN=		Unfetchable
 USES=		shebangfix
 SHEBANG_FILES=	nuttscp
 

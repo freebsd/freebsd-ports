@@ -12,6 +12,7 @@ COMMENT=	Self-scaling network benchmark
 # The default port builds and installs only the TCP version of
 # netpipe(1).  The sources support many other variants.
 
+BROKEN=		Unfetchable
 PORTDOCS=	README netpipe_paper.ps
 PLIST_FILES=	bin/NPtcp bin/NPtcp6 man/man1/netpipe.1.gz
 

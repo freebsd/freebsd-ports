@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Pipebench shows current throughput/amount of data through a pipe
 
+BROKEN=		Unfetchable
 PLIST_FILES=	bin/pipebench \
 		man/man1/pipebench.1.gz
 
