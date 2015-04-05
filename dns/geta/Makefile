@@ -11,6 +11,7 @@ DISTNAME=	pping-${PORTVERSION}
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Geta(GET Address) - Simple IPv4/IPv6 address resolving tool
 
+BROKEN=		Unfetchable
 WRKSRC=		${WRKDIR}/pping
 GNU_CONFIGURE=	yes
 USES=		perl5

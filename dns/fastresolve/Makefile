@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.djmnet.org/sw/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
 RUN_DEPENDS=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 

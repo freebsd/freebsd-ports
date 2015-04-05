@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 #IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
+BROKEN=		Size mismatch
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
