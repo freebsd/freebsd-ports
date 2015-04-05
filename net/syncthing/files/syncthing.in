@@ -16,7 +16,7 @@
 # syncthing_group (group):      Set group to run syncthing.
 #                               Default is "syncthing".
 # syncthing_dir (dir):          Set dir to run syncthing in.
-#                               Default is "/var/tmp/syncthing".
+#                               Default is "/var/db/syncthing".
 
 . /etc/rc.subr
 
