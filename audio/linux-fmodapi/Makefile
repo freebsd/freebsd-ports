@@ -12,6 +12,7 @@ DISTNAME=	fmodapi42416linux
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Music & Sound effects system
 
+BROKEN=		Unfetchable
 ONLY_FOR_ARCHS=	i386 amd64
 INSTALL_SHLIB=	yes
 USE_LDCONFIG=	yes

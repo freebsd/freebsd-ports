@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	joris@vandalon.nl
 COMMENT=	CD to mp3c converter with a console frontend
 
+BROKEN=		Unfetchable
 RUN_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 

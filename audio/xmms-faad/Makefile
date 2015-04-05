@@ -8,4 +8,5 @@ COMMENT=	XMMS plugin for faad
 
 MASTERDIR=	${.CURDIR}
 
+BROKEN=		No MASTER_SITES
 .include "${MASTERDIR}/Makefile.inc"

@@ -10,6 +10,7 @@ MASTER_SITES=	http://ampache.org/downloads/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web-based Audio file manager
 
+BROKEN=		Unfetchable
 USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 

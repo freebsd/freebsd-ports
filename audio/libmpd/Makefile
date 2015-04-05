@@ -10,6 +10,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/11.8.16/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20

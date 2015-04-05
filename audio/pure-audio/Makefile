@@ -13,6 +13,7 @@ COMMENT=	Digital audio interface for the Pure language
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \

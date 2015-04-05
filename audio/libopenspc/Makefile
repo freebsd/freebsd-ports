@@ -11,6 +11,7 @@ MASTER_SITE_SUBDIR=	kwm
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for playing SPC (SNES audio) files
 
+BROKEN=		Unfetchable
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
