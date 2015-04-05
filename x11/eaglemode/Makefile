@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.87.0
-PORTREVISION=	1
+PORTVERSION=	0.88.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic zoomable user environment
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
