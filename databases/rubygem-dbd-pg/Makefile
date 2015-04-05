@@ -8,7 +8,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
-RUN_DEPENDS=	rubygem-dbi>=0:${PORTSDIR}/databases/rubygem-dbi \
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	rubygem-dbi>=0.4.0:${PORTSDIR}/databases/rubygem-dbi \
 		rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 
 USE_RUBY=	yes
