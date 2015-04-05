@@ -13,6 +13,8 @@ EXTRACT_ONLY=	ortep.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 
+BROKEN=		Unfetchable
+
 PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
 
 USES=		fortran
