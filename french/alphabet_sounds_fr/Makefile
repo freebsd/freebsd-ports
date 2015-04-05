@@ -11,6 +11,8 @@ DISTNAME=	alphabet_sounds_fr
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	Educative games for children. Alphabet sounds package (french)
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	${LOCALBASE}/bin/childsplay:${PORTSDIR}/games/childsplay
 
 USES=		python
