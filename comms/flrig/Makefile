@@ -13,6 +13,7 @@ COMMENT=	Ham Radio rig control program, cooperates with fldigi
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 USES=		gmake
