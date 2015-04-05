@@ -420,6 +420,7 @@ include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
 include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
+include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
@@ -1815,6 +1816,7 @@ lib/wine/libmsdmo.def
 lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
+lib/wine/libmspatcha.def
 lib/wine/libmsvcr100.def
 lib/wine/libmsvcr110.def
 lib/wine/libmsvcr120.def

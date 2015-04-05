@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.39
+DISTVERSION=	1.7.40
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -131,7 +131,7 @@ CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 post-patch:
 	${REINPLACE_CMD} 's|/wine|/wine64|g' ${WRKSRC}/tools/wineapploader.in
 
-.else 
+.else
 PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
