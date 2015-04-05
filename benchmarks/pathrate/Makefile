@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measurement tool for capacity estimation of network paths
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 USES=		gmake
 

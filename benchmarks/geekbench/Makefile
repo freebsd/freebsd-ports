@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform benchmark suite
 
+BROKEN=		Unfetchable
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
