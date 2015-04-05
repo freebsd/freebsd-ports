@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
+BROKEN=		Unfetchable
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
