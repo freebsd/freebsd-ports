@@ -5,8 +5,7 @@ PORTNAME=	autozen
 PORTVERSION=	2.1
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.springdaemons.com/soft/ \
-		http://www.sourcefiles.org/Miscellaneous/
+MASTER_SITES=	http://www.sourcefiles.org/Miscellaneous/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
