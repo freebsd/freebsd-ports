@@ -12,6 +12,8 @@ MASTER_SITES=	https://alioth.debian.org/frs/download.php/3015/ \
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Download accelerator
 
+BROKEN=		No public distfiles
+
 USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man

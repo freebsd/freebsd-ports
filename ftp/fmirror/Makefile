@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/ \
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Program for mirroring files and directories from a remote FTP server
 
+BROKEN=		No public distfiles
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
