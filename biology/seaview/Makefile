@@ -14,6 +14,8 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libpng.so:${PORTSDIR}/graphics/png
 
