@@ -701,7 +701,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.1.6
+NGINX_RTMP_VERSION=	1.1.7
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
