@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	FTP replacement with advanced user interface
 
+BROKEN=		Unfetchable
 OPTIONS_DEFINE=	AS_NCFTP
 AS_NCFTP_DESC=	Install binary as ncftp instead of ncftp1
 
