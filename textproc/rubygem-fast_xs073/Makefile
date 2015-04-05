@@ -6,19 +6,19 @@ PORTVERSION=	0.7.3
 PORTEPOCH=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	073
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Systems integration framework. Expander
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-hoe>=2.3.2:${PORTSDIR}/devel/rubygem-hoe
 
-NO_LATEST_LINK=	yes
 PORTSCOUT=	limit:^0.7
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-PKGNAMESUFFIX=	073
 
 .include <bsd.port.mk>
