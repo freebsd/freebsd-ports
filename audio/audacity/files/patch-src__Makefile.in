@@ -1,6 +1,6 @@
 --- src/Makefile.in.orig	2014-09-22 20:38:13 UTC
 +++ src/Makefile.in
-@@ -1131,8 +1131,7 @@
+@@ -1055,8 +1055,7 @@
  #  /usr/local/include/wx-2.8/wx/buffer.h:289:9: note: in expansion of macro 'wxCHECK_RET'
  #           wxCHECK_RET( m_bufdata->m_data, wxT("invalid wxMemoryBuffer") );
  #           ^

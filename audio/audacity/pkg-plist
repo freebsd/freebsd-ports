@@ -3,6 +3,14 @@ man/man1/audacity.1.gz
 share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
+%%DATADIR%%/include/audacity/ConfigInterface.h
+%%DATADIR%%/include/audacity/EffectAutomationParameters.h
+%%DATADIR%%/include/audacity/EffectInterface.h
+%%DATADIR%%/include/audacity/IdentInterface.h
+%%DATADIR%%/include/audacity/ImporterInterface.h
+%%DATADIR%%/include/audacity/ModuleInterface.h
+%%DATADIR%%/include/audacity/PluginInterface.h
+%%DATADIR%%/include/audacity/Types.h
 %%DATADIR%%/nyquist/bug.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
@@ -50,8 +58,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/beat.ny
 %%DATADIR%%/plug-ins/clicktrack.ny
 %%DATADIR%%/plug-ins/clipfix.ny
-%%DATADIR%%/plug-ins/crossfadein.ny
-%%DATADIR%%/plug-ins/crossfadeout.ny
+%%DATADIR%%/plug-ins/crossfadetracks.ny
 %%DATADIR%%/plug-ins/delay.ny
 %%DATADIR%%/plug-ins/equalabel.ny
 %%DATADIR%%/plug-ins/highpass.ny
@@ -94,6 +101,7 @@ share/locale/he/LC_MESSAGES/audacity.mo
 share/locale/hi/LC_MESSAGES/audacity.mo
 share/locale/hr/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
+share/locale/hy/LC_MESSAGES/audacity.mo
 share/locale/id/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
 share/locale/ja/LC_MESSAGES/audacity.mo
