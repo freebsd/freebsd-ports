@@ -10,6 +10,8 @@ DISTNAME=	fh${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Hierarchy Viewer for magic/CIF/GDSII/PCSTR/GED/TeX
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/fh man/man1/fh.1.gz
 
