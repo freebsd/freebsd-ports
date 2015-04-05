@@ -3996,6 +3996,7 @@
     SUBDIR += py-pyke
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
+    SUBDIR += py-pymtbl
     SUBDIR += py-pyparsing15
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
