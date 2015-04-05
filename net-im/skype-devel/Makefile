@@ -14,11 +14,10 @@ COMMENT=	P2P VoIP software, development version
 
 CONFLICTS=	skype-[0-9]*
 
-OPTIONS_DEFINE=	VIDEO NVIDIA_GL
-VIDEO_DESC=	[broken] Video support
-NVIDIA_GL_DESC=	libGL provided by NVidia binary drivers
-
+OPTIONS_DEFINE=	NVIDIA_GL VIDEO
 OPTIONS_DEFAULT=	VIDEO
+VIDEO_DESC=	[broken] Video support
+
 
 CONFLICTS=	skype-1* skype-2.0* skype-2.1*
 

@@ -91,7 +91,6 @@ RUN_DEPENDS+=	linux-f10-libasyncns>0:${PORTSDIR}/dns/linux-f10-libasyncns \
 # don't pull in graphics/linux-f10-libGLU -- conflicts with graphics/linux-f10-dri
 
 OPTIONS_DEFINE=	NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
 NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 NVIDIA_GL_RUN_DEPENDS_OFF=	linux-f10-dri>0:${PORTSDIR}/graphics/linux-f10-dri
