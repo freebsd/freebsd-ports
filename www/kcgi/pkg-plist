@@ -1,13 +1,16 @@
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
+include/kcgixml.h
 lib/libkcgi.a
 lib/libkcgihtml.a
 lib/libkcgijson.a
+lib/libkcgixml.a
 man/man3/kcgi.3.gz
 man/man3/kcgi_regress.3.gz
 man/man3/kcgihtml.3.gz
 man/man3/kcgijson.3.gz
+man/man3/kcgixml.3.gz
 man/man3/khttp_body.3.gz
 man/man3/khttp_free.3.gz
 man/man3/khttp_head.3.gz
