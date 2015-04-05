@@ -13,6 +13,8 @@ COMMENT=	Tool for encoding data on paper
 
 LICENSE=	GPLv2
 
+BROKEN=		Checksum and size mismatch
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

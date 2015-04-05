@@ -13,6 +13,8 @@ COMMENT=	Lightweight PDF document viewer
 
 LICENSE=	GPLv2
 
+BROKEN=		No public distfiles
+
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 

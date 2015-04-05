@@ -11,6 +11,8 @@ MASTER_SITES=	http://mirror.mcx2.org/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Simple image viewer
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	p5-Prima>=1.21:${PORTSDIR}/x11-toolkits/p5-Prima \
 		IPA>=1.03:${PORTSDIR}/graphics/IPA
 

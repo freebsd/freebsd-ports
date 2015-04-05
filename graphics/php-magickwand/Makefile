@@ -12,6 +12,8 @@ DISTNAME=	MagickWandForPHP-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension to manipulate images
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 
 USES=		pkgconfig
