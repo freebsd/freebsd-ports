@@ -12,6 +12,7 @@ COMMENT=	Multiple Streaming Engine
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 

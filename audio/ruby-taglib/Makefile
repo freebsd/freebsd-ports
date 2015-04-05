@@ -15,6 +15,7 @@ COMMENT=	Ruby library wrapping the Taglib library
 
 LIB_DEPENDS=    libtag.so:${PORTSDIR}/audio/taglib
 
+BROKEN=		Unfetchable
 USE_RUBY=	yes
 USES=		tar:bzip2
 

@@ -11,6 +11,7 @@ COMMENT=	Extra taglib features for Amarok 2.2
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
+BROKEN=		Unfetchable
 USES=		cmake
 
 post-extract:

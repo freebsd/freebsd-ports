@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.oddsock.org/tools/streamTranscoder/
 MAINTAINER=	mark@mkproductions.org
 COMMENT=	Transcode and stream audio to a SHOUTcast/Icecast/Peercast server
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libmad.so:${PORTSDIR}/audio/libmad \

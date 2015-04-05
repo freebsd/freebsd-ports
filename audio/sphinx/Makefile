@@ -11,6 +11,7 @@ DISTNAME=	sphinx2-0.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

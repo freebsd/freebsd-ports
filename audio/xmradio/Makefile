@@ -10,6 +10,7 @@ MASTER_SITES=	http://core.de/~coto/radio/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif based FM tuner (for use with bt848 driver)
 
+BROKEN=		Unfetchable
 USES=		imake motif
 USE_XORG=	xpm
 ONLY_FOR_ARCHS=	i386 amd64

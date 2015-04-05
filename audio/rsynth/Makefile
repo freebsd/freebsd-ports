@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech synthesizer
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libaudio.so:${PORTSDIR}/audio/nas
 

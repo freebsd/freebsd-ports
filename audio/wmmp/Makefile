@@ -10,6 +10,7 @@ MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	Window Maker Dockapp for MusicPD
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
 

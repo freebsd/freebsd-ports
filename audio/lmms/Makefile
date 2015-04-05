@@ -13,6 +13,7 @@ COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \

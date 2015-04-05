@@ -10,6 +10,8 @@ MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libFLAC.so:${PORTSDIR}/audio/flac \
