@@ -1,0 +1,22 @@
+spatialite-tools is a collection of open source Command Line Interface (CLI)
+ tools supporting SpatiaLite.
+
+* spatialite: a complete CLI front-end, more or less equivalent to the well
+ known sqlite3 front-end, but fully supporting SpatiaLite
+* spatialite_tool: a tool supporting import/export of Shapefiles and DBF-files
+* shp_doctor: a diagnostic tool to check anomalous shapefiles
+* exif_loader: an import tool for EXIF or EXIF-GPS (JPEG) pictures
+* spatialite_network: a tool creating a VirtualNetwork (supporting
+ shortest path / routing SQL queries)
+* spatialite_gml: a tool importing GML files
+* spatialite_convert: a tool converting DB-files from different versions
+ of SpatiaLite
+* spatialite_dxf: an tool importing DXF files
+* OSM-tools: spatialite_osm_raw, spatialite_osm_filter, spatialite_osm_map,
+ spatialite_osm_net, spatialite_osm_overpass: tools supporting
+ OpenStreetMap datasets
+* XML-tools: spatialite_xml_load, spatialite_xml_collapse,
+ spatialite_xml_print, spatialite_xml_validator: tools supporting XML files
+ processing
+
+WWW: http://www.gaia-gis.it/fossil/spatialite-tools/index

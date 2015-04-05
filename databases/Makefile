@@ -898,6 +898,7 @@
     SUBDIR += slony1v2
     SUBDIR += soci
     SUBDIR += spatialite
+    SUBDIR += spatialite-tools
     SUBDIR += spatialite_gui
     SUBDIR += speedtables
     SUBDIR += sqlbuddy

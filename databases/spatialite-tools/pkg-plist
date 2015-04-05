@@ -1,0 +1,15 @@
+bin/exif_loader
+bin/shp_doctor
+bin/spatialite
+bin/spatialite_convert
+bin/spatialite_dxf
+bin/spatialite_gml
+bin/spatialite_network
+bin/spatialite_osm_filter
+bin/spatialite_osm_map
+bin/spatialite_osm_net
+bin/spatialite_osm_raw
+bin/spatialite_tool
+bin/spatialite_xml_collapse
+bin/spatialite_xml_load
+bin/spatialite_xml_print
