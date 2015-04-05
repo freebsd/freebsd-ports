@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	reki@reki.ru
 COMMENT=	Perl module to manipulate internal UTF-8 flag on strings
 
+BROKEN=		Unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 
