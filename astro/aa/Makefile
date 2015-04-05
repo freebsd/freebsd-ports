@@ -10,6 +10,8 @@ MASTER_SITES=	http://moshier.net/
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	Self-contained ephemeris calculator
 
+BROKEN=		Checksum mismatch
+
 MAKEFILE=	makefile
 USES=		dos2unix zip
 ALL_TARGET=	aa
