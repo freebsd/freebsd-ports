@@ -14,6 +14,7 @@ EXTRACT_ONLY=	nedit-5.6-src.tar.gz
 MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
 
+BROKEN=		Unfetchable
 LICENSE=	GPLv1
 
 USES=		motif perl5

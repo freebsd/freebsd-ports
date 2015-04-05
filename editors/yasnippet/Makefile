@@ -11,6 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	YASnippet is a template system for Emacs
 
+BROKEN=		Unfetchable
 USES=		tar:bzip2
 USE_EMACS=	yes
 NO_BUILD=	yes

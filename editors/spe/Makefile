@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-wx2.6.1.0
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Stani's Python Editor
 
+BROKEN=		Unfetchable
 NO_BUILD=	yes
 
 USES=		python
