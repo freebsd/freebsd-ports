@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	C library for handling asynchronous DNS queries
 
+BROKEN=		Unfetchable
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 
 USES=		tar:bzip2
