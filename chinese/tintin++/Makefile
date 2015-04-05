@@ -11,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../../net/tintin++
 
 OPTIONS_SLAVE=	BIG5
 
+BROKEN=		Unfetchable
 .include "${MASTERDIR}/Makefile"

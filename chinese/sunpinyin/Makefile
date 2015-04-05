@@ -18,6 +18,7 @@ COMMENT=	Statistical language model based input method engine
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
