@@ -12,8 +12,6 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-USES+=	cpe
-
 CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
 		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
@@ -31,7 +29,7 @@ UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
 .endif
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
-USES+=		tar:bzip2
+USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
 USES+=	gmake
 GNU_CONFIGURE=	yes
