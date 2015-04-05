@@ -10,6 +10,7 @@ MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
 
+BROKEN=		Fails to fetch
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

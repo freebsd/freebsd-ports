@@ -26,6 +26,8 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
+BROKEN=		debian patches fails to fetch
+
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
