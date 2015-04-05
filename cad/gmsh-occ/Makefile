@@ -10,6 +10,7 @@ COMMENT=	Automatic 3D finite element mesh generator with OpenCascade support
 
 MASTERDIR=	${.CURDIR}/../../cad/gmsh
 
+BROKEN=		Unfetchable
 WITH_OCC=	yes
 
 .include "${MASTERDIR}/Makefile"

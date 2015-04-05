@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes

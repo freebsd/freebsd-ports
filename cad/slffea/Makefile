@@ -14,6 +14,7 @@ COMMENT=	San Le's Free Finite Element Analysis
 
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
 
+BROKEN=		Unfetchable
 LICENSE=	GPLv2
 
 USE_XORG=	xmu xt
