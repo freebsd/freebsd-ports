@@ -1,17 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=	transactionsimple
+PORTNAME=	transaction-simple
 PORTVERSION=	1.4.0.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-DISTNAME=	transaction-simple-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple object transaction support
 
-RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
-
-GEM_NAME=	${DISTNAME}
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
