@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool ssl
+USES=		gmake libtool
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
