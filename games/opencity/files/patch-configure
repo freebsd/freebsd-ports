@@ -1,0 +1,11 @@
+--- configure.orig	2015-03-16 00:38:20.000000000 +0300
++++ configure	2015-04-05 17:24:15.263362000 +0300
+@@ -16115,7 +16115,7 @@
+ fi
+ 
+ 
+-CPPFLAGS="-Wall -Wmissing-braces -Wparentheses -pedantic-errors $CPPFLAGS"
++CPPFLAGS="-Wall -Wmissing-braces -Wparentheses $CPPFLAGS"
+ 
+ CPPFLAGS="-I$with_gl_prefix/include $enable_gprof $enable_debug $CPPFLAGS"
+ 
