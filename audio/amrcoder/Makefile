@@ -10,6 +10,8 @@ MASTER_SITES=	http://ftp.us.sinuspl.net/pub/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
+BROKEN=		No public distfiles
+
 USES=		uidfix tar:tgz
 
 post-extract:

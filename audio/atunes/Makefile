@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Full-featured audio player and manager developed in Java
 
+BROKEN=		No public distfiles
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
