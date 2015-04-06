@@ -1,11 +1,10 @@
 # Created by: Aaron Hurt <ahurt@anbcs.com>
 # $FreeBSD$
 
-PORTNAME=	protobuf-c
-PORTVERSION=	1.1.0
-CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		LOCAL/truckman/farsight
+PORTNAME=		protobuf-c
+PORTVERSION=		1.1.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=		devel
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Code generator and libraries to use Protocol Buffers from pure C
@@ -15,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,9 +33,6 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "bin/ld"|g' ${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 post-install:
