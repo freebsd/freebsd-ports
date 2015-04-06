@@ -3,14 +3,13 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 MASTER_SITES=	http://files.opencascade.com/OCCT/OCC_${PORTVERSION}_release/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
 
-BROKEN=		Unfetchable
 LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
