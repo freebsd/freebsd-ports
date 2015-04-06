@@ -2,14 +2,15 @@
 
 PORTNAME=	wrapsrv
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/wrapsrv/ \
-		LOCAL/truckman/farsight
+MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	DNS SRV record command line wrapper
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	docbook2mdoc:${PORTSDIR}/textproc/docbook2mdoc
 
