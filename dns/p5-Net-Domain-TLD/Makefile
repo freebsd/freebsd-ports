@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Domain-TLD
-PORTVERSION=	1.72
-PORTREVISION=	1
+PORTVERSION=	1.73
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	vivek@khera.org
 COMMENT=	Look up and validate TLDs
 
 USES=		perl5
