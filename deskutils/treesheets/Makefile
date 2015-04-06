@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	treesheets
-PORTVERSION=	0.0.20150117
+PORTVERSION=	0.0.20150405
 CATEGORIES=	deskutils
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Free form data organizer
@@ -13,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_COMMIT=	0191b1f
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	b994c63
 
 BUILD_WRKSRC=	${WRKSRC}/src
 EXTRACT_AFTER_ARGS=	--exclude .gitignore
@@ -43,17 +43,12 @@ CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|sys->frame->exepath+L"|L"${DOCSDIR}|' \
+	${REINPLACE_CMD} -e 's|sys->frame->GetPath(L"|(L"${DOCSDIR}/|' \
 		${BUILD_WRKSRC}/document.h
 	${REINPLACE_CMD} -e 's|wxFileName(exename).GetPath()|L"${DATADIR}"|' \
 		${BUILD_WRKSRC}/myframe.h
-	${REINPLACE_CMD} -e 's|frame->exepath+L"/examples|L"${EXAMPLESDIR}|' \
+	${REINPLACE_CMD} -e 's|frame->GetPath(L"examples|(L"${EXAMPLESDIR}|' \
 		${BUILD_WRKSRC}/system.h
-
-do-build:
-	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${CXX} -std=c++11 ${CXXFLAGS} \
-		-o ${PORTNAME} *.cpp `${WX_CONFIG} --cxxflags --libs all`)
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
