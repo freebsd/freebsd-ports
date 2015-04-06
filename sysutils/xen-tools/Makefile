@@ -1,6 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	xl
+PORTNAME=	xen
+PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
@@ -24,7 +25,7 @@ RUN_DEPENDS=	/boot/xen:${PORTSDIR}/emulators/xen
 CONFIGURE_ARGS=	--disable-xen
 
 SEABIOSVERSION=	1.8.1
-DISTFILES+=	xen-${PORTVERSION}.tar.gz \
+DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		seabios-${SEABIOSVERSION}.tar.gz:seabios
 
 WRKSRC=		${WRKDIR}/xen-${PORTVERSION}
