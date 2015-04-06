@@ -3,7 +3,7 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	PHP PYTHON RUBY
 OPTIONS_SUB=	yes
