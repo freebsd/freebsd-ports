@@ -7457,3 +7457,4 @@ mail/rubygem-qmail|mail/rubygem-ruby-qmail|2015-04-05|Rename to match our rubyge
 devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rename to match our rubygems naming
 print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygems naming
 devel/rubygem-filemagic|devel/rubygem-ruby-filemagic|2015-04-05|Rename to match our rubygems naming
+emulators/xl|sysutils/xen-tools|2015-04-06|Renamed into xen-tools
