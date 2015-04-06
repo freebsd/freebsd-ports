@@ -165,7 +165,6 @@
     SUBDIR += xcpc
     SUBDIR += xen
     SUBDIR += xhomer
-    SUBDIR += xl
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yabause
