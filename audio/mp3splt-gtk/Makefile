@@ -11,8 +11,6 @@ COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 
 LICENSE=	GPLv2
 
-BROKEN=		Fails to configure
-
 LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libogg.so:${PORTSDIR}/audio/libogg \
@@ -21,18 +19,16 @@ LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
 INSTALLS_OMF=	yes
-USE_GSTREAMER=	yes
-USE_GNOME=	gnomedocutils gtk20
+USE_GSTREAMER1=	yes
+USE_GNOME=	gnomedocutils gtk30
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-# disable audacious, because gtk 3 is required to enable it for this program...
 CONFIGURE_ARGS+=	--disable-audacious --with-mp3splt=${LOCALBASE} \
 		--with-mp3splt-includes=${LOCALBASE}/include \
-		--with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest \
-		--disable-gtk3
+		--with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest
 
 #PORTDOCS=	*
 
