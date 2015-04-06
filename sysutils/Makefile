@@ -1066,7 +1066,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xe-guest-utilities
-    SUBDIR += xen-tools
+    SUBDIR += xen-guest-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
     SUBDIR += xfce4-bsdcpufreq-plugin
