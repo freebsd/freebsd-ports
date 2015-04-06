@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-09-09 00:53:46.000000000 +0900
++++ Makefile	2012-09-09 00:53:57.000000000 +0900
+@@ -23,7 +23,7 @@
+ lapacklib:	lapack_install
+ 	( cd SRC; $(MAKE) )
+ 
+-lapackelib: lapacklib
++lapackelib: 
+ 	( cd lapacke; $(MAKE) )
+ 
+ lapacke_example: lapackelib

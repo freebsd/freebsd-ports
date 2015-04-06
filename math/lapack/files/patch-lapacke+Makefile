@@ -1,0 +1,30 @@
+--- lapacke/Makefile.orig	2012-09-09 00:48:05.000000000 +0900
++++ lapacke/Makefile	2012-09-09 00:48:54.000000000 +0900
+@@ -45,20 +45,20 @@
+ all: lapacke 
+ 
+ lapacke:
+-	cd include && cp lapacke_mangling_with_flags.h lapacke_mangling.h
+-	cd src && $(MAKE)
+-	cd utils && $(MAKE)
++	cd ${.CURDIR}/include && cp lapacke_mangling_with_flags.h lapacke_mangling.h
++	cd ${.CURDIR}/src && $(MAKE)
++	cd ${.CURDIR}/utils && $(MAKE)
+ 
+ lapacke_example:
+-	cd example && $(MAKE)
++	cd ${.CURDIR}/example && $(MAKE)
+ 	
+ clean: cleanlib
+ 
+ cleanlib:
+-	cd src && $(MAKE) clean
+-	cd utils && $(MAKE) clean
++	cd ${.CURDIR}/src && $(MAKE) clean
++	cd ${.CURDIR}/utils && $(MAKE) clean
+ 
+ cleanall: clean
+ 	rm -f $(LAPACKE)
+-	cd example && $(MAKE) clean
++	cd ${.CURDIR}/example && $(MAKE) clean
+ 

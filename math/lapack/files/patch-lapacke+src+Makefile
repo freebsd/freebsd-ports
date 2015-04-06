@@ -1,0 +1,29 @@
+--- lapacke/src/Makefile.orig	2012-04-03 05:16:32.000000000 +0900
++++ lapacke/src/Makefile	2012-09-09 01:28:00.000000000 +0900
+@@ -2042,19 +2042,23 @@
+ 
+ ALLOBJ = $(SRC_OBJ) $(MATGEN_OBJ) 
+ 
+-ifdef USEXBLAS
++.ifdef USEXBLAS
+ ALLXOBJ = $(SXLASRC) $(DXLASRC) $(CXLASRC) $(ZXLASRC)
+-endif
++.endif
+ 
+ 
+ OBJ_FILES := $(C_FILES:.o=.o)
+ 
+-all: ../../$(LAPACKELIB)
++all: ../../$(LAPACKELIB) ../../$(LAPACKETMGLIB)
+ 
+ ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ)
+ 	$(ARCH) $(ARCHFLAGS) ../../$(LAPACKELIB) $(ALLOBJ) $(ALLXOBJ)
+ 	$(RANLIB) ../../$(LAPACKELIB)
+ 
++../../$(LAPACKETMGLIB): $(MATGEN_OBJ)
++	$(ARCH) $(ARCHFLAGS) ../../$(LAPACKETMGLIB) $(MATGEN_OBJ)
++	$(RANLIB) ../../$(LAPACKETMGLIB)
++
+ .c.o:
+ 	$(CC) -c $(CFLAGS) -I ../include -o $@ $<
+ 
