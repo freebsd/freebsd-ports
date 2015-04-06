@@ -1,7 +1,7 @@
 # Created by: Evan Sarmiento <esarmiento@wayfair.com>
 # $FreeBSD$
 
-PORTNAME=	xen-tools
+PORTNAME=	xen-guest-tools
 PORTVERSION=	4.2.2
 PORTREVISION=	0
 CATEGORIES=	sysutils
