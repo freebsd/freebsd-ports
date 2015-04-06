@@ -1,0 +1,17 @@
+# $FreeBSD$
+
+PORTNAME=	xen
+PORTVERSION=	4.5.0
+CATEGORIES=	emulators
+
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Xen Hyvervisor meta port
+
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	/boot/xen:${PORTSDIR}/emulators/xen-kernel \
+		xl:${PORTSDIR}/sysutils/xen-tools
+
+USES=		metaport
+
+.include <bsd.port.mk>
