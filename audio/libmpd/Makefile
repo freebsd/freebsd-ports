@@ -5,15 +5,16 @@ PORTNAME=	libmpd
 PORTVERSION=	11.8.17
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/11.8.16/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
-BROKEN=		Unfetchable
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2 # (or later)
+
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
