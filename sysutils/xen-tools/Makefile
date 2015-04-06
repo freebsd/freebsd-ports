@@ -3,6 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -20,7 +21,6 @@ ONLY_FOR_ARCH=	amd64
 LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	/boot/xen:${PORTSDIR}/emulators/xen
 
 CONFIGURE_ARGS=	--disable-xen
 
