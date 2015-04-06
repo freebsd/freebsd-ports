@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
 LICENSE=	GPLv3 LGPL3
