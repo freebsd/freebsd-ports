@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150406:
+  AFFECTS: User of emulators/xen emulators/xl and sysutils/xen-tools
+  AUTHOR: bapt@FreeBSD.org
+
+  sysutils/xen-tools has been renamed sysutils/xen-guest-tools
+  emulators/xl has been renamed sysutils/xen-tools
+  emulators/xen has been renamed emulators/xen-kernel
+  A new emulators/xen has been introduced, it is a metaport that depends on
+  emulators/xen-kernel and sysutils/xen-tools
+
 20150403:
   AFFECTS: Users of irc/rbot
   AUTHOR: bdrewery@FreeBSD.org
