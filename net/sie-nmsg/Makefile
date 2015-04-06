@@ -2,15 +2,15 @@
 
 PORTNAME=	sie-nmsg
 PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net dns
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/sie-nmsg/ \
-		LOCAL/truckman/farsight
+MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	SIE message module plugin for libnmsg
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 		libnmsg.so:${PORTSDIR}/net/nmsg \
