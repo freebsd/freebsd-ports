@@ -82,6 +82,15 @@ you update your ports collection, before attempting any port upgrades.
 
   The Xorg servers now are looking there by default
 
+  If you experience font related issues, view the output of
+
+  # fc-list
+
+  If the list appears incomplete or has fonts still pointing to
+  /usr/local/lib/X11/fonts you may forcibly update the font cache:
+
+  # fc-cache -fs
+
 20150317:
   AFFECTS: users of editors/openoffice-4 and editors/openoffice-devel
   AUTHOR: truckman@FreeBSD.org
