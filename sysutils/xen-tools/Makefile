@@ -16,11 +16,12 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS
 
-ONLY_FOR_ARCH=	amd64
-
 LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386"
 
 CONFIGURE_ARGS=	--disable-xen
 
@@ -47,10 +48,6 @@ INSTALL_TARGET=	install-tools install-docs
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		Only supported on FreeBSD
-.endif
-
-.if ${OSVERSION} < 1100055
-IGNORE=		Only supported on recent FreeBSD 11
 .endif
 
 post-extract:
