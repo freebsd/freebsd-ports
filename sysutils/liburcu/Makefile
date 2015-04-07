@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liburcu
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.7.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
