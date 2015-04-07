@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}b
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Automatic Flic to animated GIF converter
 
+DEPRECATED=	No public distfiles
+EXPIRATION_DATE=	2015-07-07
+
 BROKEN=		No public distfiles
 
 NO_WRKSUBDIR=	yes
