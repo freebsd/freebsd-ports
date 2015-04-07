@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	flrig
-PORTVERSION=	1.3.19
+PORTVERSION=	1.3.21
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/flrig/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shurd
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio rig control program, cooperates with fldigi
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 USES=		gmake
