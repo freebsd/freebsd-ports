@@ -75,3 +75,6 @@ share/locale/wa/LC_MESSAGES/accounts-service.mo
 share/locale/zh_CN/LC_MESSAGES/accounts-service.mo
 share/locale/zh_TW/LC_MESSAGES/accounts-service.mo
 share/polkit-1/actions/org.freedesktop.accounts.policy
+@dir /var/db/AccountsService/icons
+@dir /var/db/AccountsService/users
+@dir /var/db/AccountsService
