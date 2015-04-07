@@ -11,6 +11,9 @@ MAINTAINER=	webmaster@kibab.com
 COMMENT=	Python plugin for the OpenSync framework
 
 BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable, devices are not produced anymore
+EXPIRATION_DATE=	2015-05-07
+
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	libopensync-plugin-python-devel-[0-9]*
