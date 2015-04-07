@@ -1019,7 +1019,7 @@ post-install:
 	${ECHO_CMD} ${SITE_ARCH_REL}/nginx.pm >> ${TMPPLIST}
 	${ECHO_CMD} @dirrm ${SITE_ARCH_REL}/auto/nginx >> ${TMPPLIST}
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
