@@ -32,8 +32,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # MYSQL_VER
 #			- Detected MySQL version.
 ##
-# USE_PGSQL		- Do not use this-- instead use USES=pgsql
-##
 # USE_BDB	- Add Berkeley DB library dependency.
 #			  If no version is given (by the maintainer via the port or
 #			  by the user via defined variable), try to find the
@@ -97,10 +95,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 
 .if defined(DEFAULT_MYSQL_VER)
 WARNING+=	"DEFAULT_MYSQL_VER is defined, consider using DEFAULT_VERSIONS=mysql=${DEFAULT_MYSQL_VER} instead"
-.endif
-
-.if defined(DEFAULT_PGSQL_VER)
-WARNING+=	"DEFAULT_PGSQL_VER is defined, consider using DEFAULT_VERSIONS=pgsql=${DEFAULT_PGSQL_VER} instead"
 .endif
 
 .if defined(USE_MYSQL)
