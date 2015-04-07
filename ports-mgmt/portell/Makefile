@@ -5,7 +5,7 @@ PORTNAME=	portell
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Quick display of FreeBSD port descriptions
@@ -15,8 +15,6 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/portell
 PORTDOCS=	README.txt
-
-BROKEN=	does not fetch, https://lists.freebsd.org/pipermail/freebsd-ports/2015-March/098494.html
 
 post-extract:
 	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/portell.py
