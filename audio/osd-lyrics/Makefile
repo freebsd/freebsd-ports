@@ -8,7 +8,7 @@ CATEGORIES=	audio deskutils
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	osd-lyrics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
