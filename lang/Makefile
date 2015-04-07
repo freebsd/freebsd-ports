@@ -93,7 +93,6 @@
     SUBDIR += ghc
     SUBDIR += gjs
     SUBDIR += gnat_util
-    SUBDIR += gnatdroid-armv5
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-sysroot

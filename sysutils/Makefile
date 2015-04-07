@@ -729,7 +729,6 @@
     SUBDIR += puppet
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
-    SUBDIR += puppet27
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen

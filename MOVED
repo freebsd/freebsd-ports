@@ -7458,3 +7458,7 @@ devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rena
 print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygems naming
 devel/rubygem-filemagic|devel/rubygem-ruby-filemagic|2015-04-05|Rename to match our rubygems naming
 emulators/xl|sysutils/xen-tools|2015-04-06|Renamed into xen-tools
+lang/gnatdroid-armv5||2015-04-07|Has expired: Nobody cares enough to fix sigtramp-android.c for ARMv5
+sysutils/puppet27||2015-04-07|Has expired: Does not work with Ruby 2.x
+www/rubygem-form_data|www/rubygem-http-form_data|2015-04-07|Has expired: Use www/rubygem-http-form_data instead (renamed by upstream)
+www/typo345||2015-04-07|Has expired: Upgrade to www/typo3 or www/typo3-lts
