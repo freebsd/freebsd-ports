@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+DISTVERSION=	1.5.0
 CATEGORIES=	games
-MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
-		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${DISTVERSION}/ \
+		http://us.binaries.openttd.org/binaries/releases/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
@@ -27,7 +26,7 @@ CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
 MAKE_ARGS=	VERBOSE=1
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CXXFLAGS=	# Set to empty as OpenTTD treats it as an addition to CFLAGS
 
 SUB_FILES=	pkg-message
@@ -92,8 +91,6 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/config.lib
-	@${REINPLACE_CMD} -e '/FS_NORMAL/s,max(1,&U,' \
-		${WRKSRC}/src/fontcache.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
