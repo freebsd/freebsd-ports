@@ -1,23 +1,21 @@
---- SConstruct.orig	2012-07-18 12:25:59.000000000 +0800
-+++ SConstruct	2013-09-14 14:44:54.603035259 +0800
-@@ -176,10 +176,12 @@
- 
-     libln_builder = Builder(action='ln -s ${SOURCE.name} ${TARGET.name}',
-                             chdir=True)
--    env = Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS=cflags,
--                      TAR=tar, MAKE=make, WGET=wget,
+--- SConstruct.orig	2014-11-14 09:17:48.000000000 -0500
++++ SConstruct	2015-04-01 16:11:27.540297600 -0400
+@@ -215,10 +215,11 @@ def CreateEnvironment():
+         make = 'gmake'
+         tar = 'gtar'
+     libln_builder = Builder(action='cd ${TARGET.dir} && ln -s ${SOURCE.name} ${TARGET.name}')
+-    env = Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS='',
++    env = Environment(ENV=os.environ,
+                       MAKE=make, WGET=wget, W3M=w3m, TAR=tar,
 -                      CPPPATH=['.'] + allinc(),
 -                      tools=['default', 'textfile'])
-+    env = Environment(tools=['default', 'textfile'], **ARGUMENTS)
-+    env['ENV'] = os.environ
-+    env['TAR'] = tar
-+    env['MAKE'] = make
++                      tools=['default', 'textfile'],
++                      **ARGUMENTS)
 +    env['CPPPATH'] = ['.'] + allinc()
-+
      env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
+     env['ENDIANNESS'] = "be" if sys.byteorder == "big" else "le"
      return env
- 
-@@ -324,7 +326,6 @@
+@@ -375,7 +376,6 @@ def DoConfigure():
      conf.CheckFunc('getopt_long')
      conf.CheckFunc('getpagesize')
      conf.CheckFunc('get_opt')
@@ -25,12 +23,12 @@
      conf.CheckCHeader('inttypes.h')
      conf.CheckCHeader('locale.h')
      conf.CheckCHeader('libintl.h')
-@@ -420,7 +421,7 @@
+@@ -463,7 +463,7 @@ def DoInstall():
                                   lib_target_bin),
              ]
  
 -    lib_pkgconfig_target = env.Install(os.path.join(libdir, 'pkgconfig'),
 +    lib_pkgconfig_target = env.Install(os.path.join(env['PREFIX'], 'libdata/pkgconfig'),
                                         ['sunpinyin-2.0.pc'])
-     libdata_target = env.Install(libdatadir,
-                                  ['data/lm_sc.t3g',
+     bin_target = env.Install(bindir, bins)
+     man1_target = env.Install(man1dir, man1s)
