@@ -1069,12 +1069,6 @@ MINIMAL_PKG_VERSION=	1.3.8
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-.if defined(NO_STAGE)
-BROKEN=				Not staged.
-DEPRECATED?=		Not staged. See http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-May/000080.html
-EXPIRATION_DATE?=	2014-08-31
-.endif
-
 .if defined(X_BUILD_FOR)
 .if !defined(.PARSEDIR)
 IGNORE=	Cross building can only be done when using bmake(1) as make(1)
