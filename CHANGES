@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150407:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_XZ and USE_BZIP2 are not supported anymore, they have been replaced by
+  USES=tar:bzip2 and tar:xz
+
 20150328:
 AUTHOR: bapt@FreeBSD.org
 
