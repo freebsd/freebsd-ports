@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 
-MAINTAINER=	liangtai.s4@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
 
 BROKEN=		Unfetchable
