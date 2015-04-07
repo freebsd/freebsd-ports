@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.14
+PORTVERSION=	0.2.13
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
 		NL:lapack_tmg
@@ -19,7 +20,7 @@ DIST_SUBDIR=	openblas
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	d0c51c4
+GH_COMMIT=	51ce5ef
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
