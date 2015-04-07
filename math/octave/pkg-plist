@@ -824,6 +824,7 @@ share/applications/www.octave.org-octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
+%%DATADIR%%/imagelib
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/CITATION
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/NEWS
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/built-in-docstrings
