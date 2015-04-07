@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env perl -w
 #-
 # Copyright (c) 2000-2011 Dag-Erling Coïdan Smørgrav
 # All rights reserved.
