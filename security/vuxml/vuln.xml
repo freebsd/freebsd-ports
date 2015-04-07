@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ebd84c96-dd7e-11e4-854e-3c970e169bc2">
+    <topic>ntp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p2</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://archive.ntp.org/ntp4/ChangeLog-stable">
+	  <ul>
+	    <li>[Sec 2779] ntpd accepts unauthenticated packets
+	      with symmetric key crypto.</li>
+	    <li>[Sec 2781] Authentication doesn't protect symmetric
+	      associations against DoS attacks.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1798</cvename>
+      <cvename>CVE-2015-1799</cvename>
+      <url>http://archive.ntp.org/ntp4/ChangeLog-stable</url>
+    </references>
+    <dates>
+      <discovery>2015-04-07</discovery>
+      <entry>2015-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8321d76-24e7-4b72-a01d-d12c4445d826">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
