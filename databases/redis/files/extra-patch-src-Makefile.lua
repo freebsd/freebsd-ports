@@ -1,5 +1,5 @@
---- src/Makefile.orig	2014-09-10 02:02:41.000000000 +0400
-+++ src/Makefile	2014-09-10 02:05:34.000000000 +0400
+--- src/Makefile.orig	2014-05-26 20:06:48.000000000 +0400
++++ src/Makefile	2014-06-02 00:19:36.000000000 +0400
 @@ -15,7 +15,7 @@
  release_hdr := $(shell sh -c './mkreleasehdr.sh')
  uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
@@ -17,8 +17,8 @@
 +FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS)
  FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
  FINAL_LIBS=-lm
- #DEBUG=-g -ggdb
-@@ -98,6 +98,9 @@
+ DEBUG=-g -ggdb
+@@ -88,6 +88,9 @@
  	FINAL_LIBS+= ../deps/jemalloc/lib/libjemalloc.a -ldl
  endif
  
@@ -28,15 +28,15 @@
  REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
  REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
  REDIS_INSTALL=$(QUIET_INSTALL)$(INSTALL)
-@@ -118,6 +121,7 @@
+@@ -108,6 +111,7 @@
  REDIS_SERVER_NAME=redis-server
  REDIS_SENTINEL_NAME=redis-sentinel
- REDIS_SERVER_OBJ=adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o migrate.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o hyperloglog.o latency.o sparkline.o
-+REDIS_SERVER_OBJ+= lua_bit.o lua_cjson.o lua_cmsgpack.o lua_struct.o strbuf.o fpconv.o
+ REDIS_SERVER_OBJ=adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o pubsub.o multi.o debug.o sort.o intset.o syncio.o cluster.o crc16.o endianconv.o slowlog.o scripting.o bio.o rio.o rand.o memtest.o crc64.o bitops.o sentinel.o notify.o setproctitle.o blocked.o hyperloglog.o latency.o sparkline.o
++REDIS_SERVER_OBJ+=fpconv.o lua_bit.o lua_cjson.o lua_cmsgpack.o lua_struct.o strbuf.o
  REDIS_CLI_NAME=redis-cli
  REDIS_CLI_OBJ=anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o anet.o ae.o crc64.o
  REDIS_BENCHMARK_NAME=redis-benchmark
-@@ -172,7 +176,7 @@
+@@ -162,7 +166,7 @@
  
  # redis-server
  $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
