@@ -20,7 +20,8 @@ COMMENT=	Workflow scheduler for Hadoop
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
-		yarn:${PORTSDIR}/devel/hadoop2
+		yarn:${PORTSDIR}/devel/hadoop2 \
+		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
 
