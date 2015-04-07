@@ -1,7 +1,7 @@
 %%WWWDIR_REL%%/CHANGES
 %%WWWDIR_REL%%/INSTALL
-%%WWWDIR_REL%%/LICENCE
-%%WWWDIR_REL%%/TODO
+%%WWWDIR_REL%%/LICENSE
+@comment %%WWWDIR_REL%%/TODO
 %%WWWDIR_REL%%/favicon.ico
 %%WWWDIR_REL%%/include/JSCookMenu.js
 %%WWWDIR_REL%%/include/ParsingQuery.class.php
@@ -34,9 +34,9 @@
 %%WWWDIR_REL%%/include/sql.class.php
 %%WWWDIR_REL%%/include/sql.php
 %%WWWDIR_REL%%/include/sqlite.class.php
-%%WWWDIR_REL%%/include/sqlite2.class.php
+%%WWWDIR_REL%%/include/sqlite_2.class.php
 %%WWWDIR_REL%%/include/sqlite2.inc.php
-%%WWWDIR_REL%%/include/sqlite3.class.php
+%%WWWDIR_REL%%/include/sqlite_3.class.php
 %%WWWDIR_REL%%/include/sqlite3.inc.php
 %%WWWDIR_REL%%/include/sqlite_fulltextsearch.class.php
 %%WWWDIR_REL%%/include/sqlite_fulltextsearchex.class.php
