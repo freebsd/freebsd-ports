@@ -21,7 +21,6 @@ PNAME=		core
 .endif
 FWDIR?=		${WWWDIR}
 .else
-USE_BZIP2=	yes
 PKGNAMEPREFIX?=	foswiki-
 PNAME=		${PORTNAME}
 FILESDIR?=	${.CURDIR}/../foswiki/files
