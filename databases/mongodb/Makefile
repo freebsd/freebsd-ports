@@ -55,7 +55,8 @@ LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
-BUILD_DEPENDS=	pymongo>=2.5:${PORTSDIR}/databases/pymongo
+USES+=		python:build
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.5:${PORTSDIR}/databases/pymongo
 TEST_TARGET=	smokeAll smokeCppUnittests
 .	if ${PORT_OPTIONS:MSSL}
 TEST_TARGET+=	smokeSsl
