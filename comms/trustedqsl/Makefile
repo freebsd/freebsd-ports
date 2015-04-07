@@ -10,7 +10,6 @@ DISTNAME=	tqsl-${PORTVERSION}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-BROKEN=		Unfetchable
 LICENSE=	ARRL
 LICENSE_NAME=	American Radio Relay League, Inc. All rights reserved.
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
