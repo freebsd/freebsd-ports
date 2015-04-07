@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	0.6.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -20,7 +20,5 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-
-BROKEN=		Does not build with new devel/ruby-gems
 
 .include <bsd.port.mk>
