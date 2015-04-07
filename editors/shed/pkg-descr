@@ -1,0 +1,6 @@
+SHED (Simple Hex EDitor) is a hex editor written for Unix-like systems using
+ncurses, with a friendly pico-style interface.  It shows data in ASCII, hex,
+dec, oct and binary, and allows editing in all of these bases.  Its features
+also include searching and dumping.
+
+WWW: https://sourceforge.net/projects/shed/
