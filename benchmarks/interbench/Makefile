@@ -6,7 +6,7 @@ DISTVERSION=	0.31
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://ck.kolivas.org/apps/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Interactivity benchmark for Unix-like systems
 
 LICENSE=	GPLv2
