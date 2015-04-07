@@ -2,24 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitemanager
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	databases www
 MASTER_SITES=	SF
-DISTNAME=	SQLiteManager-${PORTVERSION}
+DISTNAME=	SQliteManager-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual web based tool to manage SQLite database
 
-DEPRECATED=	requires php53, security EOL reached 14 Aug 2014
-EXPIRATION_DATE=	2015-04-15
+LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=5 55 56
+WRKSRC=		${WRKDIR}/SQLiteManager-${PORTVERSION}
+USES=		dos2unix
 NO_BUILD=	yes
 PLIST_SUB+=	WWWDIR_REL="${WWWDIR_REL}"
-USE_PHP=	sqlite
+USE_PHP=	sqlite${PHP_VER:S/^53$$//:C/^.+$$/3/}
+EXTRACT_AFTER_ARGS=--exclude TODO
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	${CP} -Rp ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
