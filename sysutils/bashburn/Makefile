@@ -14,6 +14,8 @@ COMMENT=	CD burning bash script
 
 LICENSE=	GPLv2
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
