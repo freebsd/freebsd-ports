@@ -1,6 +1,6 @@
---- Makefile.orig	2014-10-16 10:54:58.000000000 -0700
-+++ Makefile	2015-04-01 17:21:49.000000000 -0700
-@@ -4,8 +4,6 @@
+--- Makefile.orig	2014-10-16 17:54:58 UTC
++++ Makefile
+@@ -4,21 +4,19 @@
  #
  PROGNAME=dump1090
  
@@ -9,7 +9,12 @@
  PREFIX=/usr
  
  ifdef PREFIX
-@@ -17,8 +15,8 @@
+ BINDIR=$(PREFIX)/bin
+-SHAREDIR=$(PREFIX)/share/$(PROGNAME)
++SHAREDIR=$(PREFIX)/share/$(PROGNAME)_mr
+ HTMLDIR=$(SHAREDIR)/public_html
+ EXTRACFLAGS=-DHTMLPATH=\"$(HTMLDIR)\"
+ endif
  
  #CFLAGS=-O2 -g -Wall -W `pkg-config --cflags librtlsdr`
  CFLAGS+= `pkg-config --cflags librtlsdr`

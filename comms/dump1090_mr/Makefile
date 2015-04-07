@@ -2,6 +2,7 @@
 
 PORTNAME=	dump1090_mr
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	rpaulo@FreeBSD.org
@@ -20,7 +21,7 @@ MAKE_FLAGS+=	PREFIX="${PREFIX}"
 
 CONFLICTS=	dump1090-*
 
-USES=	gmake
+USES=	gmake pkgconfig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dump1090 ${STAGEDIR}${PREFIX}/bin
