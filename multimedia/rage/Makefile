@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rage
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -16,6 +16,6 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pkgconfig tar:bzip2
+USES=		desktop-file-utils pkgconfig tar:xz
 
 .include <bsd.port.mk>
