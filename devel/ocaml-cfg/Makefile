@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cfg
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/cfg/downloads/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,6 +14,10 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
+GH_TAGNAME=	v${PORTVERSION}
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
