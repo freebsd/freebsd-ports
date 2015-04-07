@@ -5,26 +5,23 @@ PORTNAME=	nec2c
 PORTVERSION=	.9
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/ \
-		http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/
+MASTER_SITES=	http://nec-archives.pa3kj.com/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 DISTNAME=	nec2c
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 
-BROKEN=		Unfetchable
 LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	${CP} ${FILESDIR}/carg.c  ${WRKSRC}
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${STAGEDIR}${EXAMPLESDIR}
 .include <bsd.port.mk>
