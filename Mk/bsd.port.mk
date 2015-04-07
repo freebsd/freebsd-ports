@@ -93,8 +93,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${DISTNAME}${EXTRACT_SUFX}
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
-#				  Default: .tar.bz2 if USE_BZIP2 is set, .tar.xz if USE_XZ is set,
-#				  .tar.gz otherwise).
+#				  Default: .tar.bz2 if USES=tar:bzip2 is set, .tar.xz if
+#				  USES=tar:xz USE_XZ is set, .tar.gz otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -324,10 +324,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if a port breaks with it (it should be
 #				  extremely rare).
 #
-# USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
-#				  compression.
-# USE_XZ		- If set, this port tarballs use xz (or lzma)
-#				  for compression
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
