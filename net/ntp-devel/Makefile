@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.3.13
+PORTVERSION=	4.3.14
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 USES=		pathfix shebangfix libtool
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
-NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
+NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace sbin/update-leap
 
 .include "Makefile.inc"
 
