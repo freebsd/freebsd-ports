@@ -7462,3 +7462,4 @@ lang/gnatdroid-armv5||2015-04-07|Has expired: Nobody cares enough to fix sigtram
 sysutils/puppet27||2015-04-07|Has expired: Does not work with Ruby 2.x
 www/rubygem-form_data|www/rubygem-http-form_data|2015-04-07|Has expired: Use www/rubygem-http-form_data instead (renamed by upstream)
 www/typo345||2015-04-07|Has expired: Upgrade to www/typo3 or www/typo3-lts
+multimedia/mediabrowser|multimedia/emby-server|2015-04-08|Project renamed
