@@ -73,7 +73,7 @@ post-configure:
 	    ${SET_LATE_CONFIGURE_ARGS} \
 	    if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL="/usr/bin/install -c" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_LIB="${INSTALL_LIB}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
