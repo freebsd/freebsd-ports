@@ -52,22 +52,9 @@ lib/rivet/rivet-tcl/parray_table.tcl
 lib/rivet/rivet-tcl/putsnnl.tcl
 lib/rivet/rivet-tcl/random.tcl
 lib/rivet/rivet-tcl/read_file.tcl
+lib/rivet/rivet-tcl/redirect.tcl
 lib/rivet/rivet-tcl/rivet_command_document.tcl
 lib/rivet/rivet-tcl/tclIndex
 lib/rivet/rivet-tcl/wrap.tcl
 lib/rivet/rivet-tcl/xml.tcl
 %%APACHEMODDIR%%/mod_rivet.so
-@dirrm lib/rivet/rivet-tcl
-@dirrm lib/rivet/packages/tclrivet
-@dirrm lib/rivet/packages/simpledb
-@dirrm lib/rivet/packages/session
-@dirrm lib/rivet/packages/rivet_ncgi
-@dirrm lib/rivet/packages/form
-@dirrm lib/rivet/packages/entities
-@dirrm lib/rivet/packages/dtcl
-@dirrm lib/rivet/packages/dio
-@dirrm lib/rivet/packages/commserver
-@dirrm lib/rivet/packages/calendar
-@dirrm lib/rivet/packages
-@dirrm lib/rivet
-@dirrmtry %%APACHEMODDIR%%
