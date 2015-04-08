@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	mediabrowser
-PORTVERSION=	3.0.5518.7
+PORTNAME=	emby-server
+PORTVERSION=	3.0.5572.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -10,23 +10,23 @@ COMMENT=	Home media server built using mono and other open source technologies
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libgdiplus.so:${PORTSDIR}/x11-toolkits/libgdiplus \
 		libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libwebp.so:${PORTSDIR}/graphics/webp
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick-nox11
+
+CONFLICTS_INSTALL=	mediabrowser
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MediaBrowser
 GH_PROJECT=	MediaBrowser
-GH_COMMIT=	bece87a
-GH_TAGNAME=	${PORTVERSION}
 
 USES=		mono pkgconfig
 
-USE_RC_SUBR=	mediabrowser
-SUB_LIST=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS}
-USERS=		mediabrowser
-GROUPS=		mediabrowser
+USE_RC_SUBR=	${PORTNAME}
+RC_NAME=	emby_server
+SUB_LIST=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS} RC_NAME=${RC_NAME}
+USERS=		emby
+GROUPS=		emby
 
 do-build:
 	(cd ${WRKSRC} && \
@@ -34,11 +34,11 @@ do-build:
 			/p:Platform="Any CPU" MediaBrowser.Mono.sln)
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mediabrowser
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server
 	(cd ${WRKSRC}/MediaBrowser.Server.Mono/bin/Release\ Mono && \
 		${ECHO_MSG} "Deleting the following non-FreeBSD library files:" && \
 		${FIND} -E . -iregex '(.*\.dylib|.*libwebp.*|.*sqlite3.*|.*.dylib.*|MediaInfo\.dll)' -print -delete && \
 		${FIND} . -type d -empty -print -delete && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/mediabrowser)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server)
 
 .include <bsd.port.mk>
