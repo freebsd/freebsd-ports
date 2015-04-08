@@ -10,7 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX rewrite of a game originally based on "Drug Wars"
 
-USES=		gmake gettext
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe gmake gettext
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
