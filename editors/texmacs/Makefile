@@ -13,10 +13,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USES=		gmake shared-mime-info desktop-file-utils python shebangfix
+USES=		cpe gmake shared-mime-info desktop-file-utils python shebangfix
 USE_TEX=	tex
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
