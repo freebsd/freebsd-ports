@@ -13,7 +13,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python 3 bindings for Cairo
 
-USES=		pkgconfig python:3 shebangfix tar:bzip2
+USES=		pkgconfig python:3 shebangfix tar:bzip2 waf
 USE_GNOME=	cairo
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -28,20 +28,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python %s|${PYTHON_CMD} %s|g' \
 		${WRKSRC}/test/examples_test.py
 
-do-configure:
+pre-configure:
 # Run waf configure twice, once to extract waflib and patch and then actual configure
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
-		./waf configure || :
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} || :
 	@cd ${WRKSRC}/.waf3-1.6.4-e3c1e08604b18a10567cfcd2d02eb6e6/ && \
 		${PATCH} -p1 < ${FILESDIR}/pycairo-1.10.0-waf-py3_4.patch
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
-		./waf configure
-
-do-build:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ./waf
-
-do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ./waf install --destdir=${STAGEDIR}
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/cairo/__init__.py[co]

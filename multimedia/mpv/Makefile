@@ -28,7 +28,7 @@ GH_COMMIT=	ff4c1cc
 
 WAF_VERSION=	1.8.7
 
-USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build
+USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
 USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -126,8 +126,6 @@ JACK_CONFIGURE_ENABLE=		jack
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf
 	@${CHMOD} +x ${WRKSRC}/waf
@@ -137,18 +135,6 @@ post-patch:
 		${WRKSRC}/wscript_build.py
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		waf configure ${_MAKE_JOBS} ${CONFIGURE_ARGS}
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		waf build ${_MAKE_JOBS}
-
-do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		waf install --destdir=${STAGEDIR}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv

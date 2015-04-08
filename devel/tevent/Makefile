@@ -15,20 +15,17 @@ LICENSE=		LGPL3
 
 CONFLICTS=
 
-USES=			compiler pkgconfig
+USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
-WAF_TOOL=		buildtools/bin/waf
+WAF_CMD=		buildtools/bin/waf
 CONFIGURE_LOG=		bin/config.log
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
 			--without-gettext
-# Support staging
-DESTDIRNAME=		--destdir
 
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
@@ -40,7 +37,6 @@ RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 .if defined(NO_PYTHON)
 CONFIGURE_ARGS+=	--disable-python
-USES+=			python:2,build
 .else
 USES+=			python:2
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
@@ -72,15 +68,6 @@ CFLAGS+=		-fno-color-diagnostics
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
-.if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
-CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
-_MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
-.endif
-
-CONFIGURE_TARGET=	configure
-ALL_TARGET=		build
-INSTALL_TARGET=		install
-
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-patch:
@@ -96,38 +83,8 @@ pre-configure:
 				${FALSE}; \
 			fi
 
-do-configure:
-			@(cd ${CONFIGURE_WRKSRC} && \
-			    ${SET_LATE_CONFIGURE_ARGS} \
-				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
-					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-					LDFLAGS="${LDFLAGS}" \
-					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
-					INSTALL_DATA="${INSTALL_DATA}" \
-					INSTALL_LIB="${INSTALL_LIB}" \
-					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
-						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-						${FALSE}; \
-				fi)
-
-do-build:
-			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
-				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
-					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-				fi; \
-			${FALSE}; \
-			fi)
-
 post-build:
 			${PYTHON_CMD} -m py_compile ${BUILD_WRKSRC}/tevent.py
 			${PYTHON_CMD} -O -m py_compile ${BUILD_WRKSRC}/tevent.py
-
-do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>

@@ -20,23 +20,14 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib  \
 		libsword.so:${PORTSDIR}/misc/sword
 
-USES=		gettext pkgconfig python:build
+USES=		gettext pkgconfig waf
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtkhtml4 intlhack gtk30 gconf2 libgsf
 
 OPTIONS_DEFINE=	DOCS
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure \
-		--prefix=${PREFIX} --destdir=${STAGEDIR} \
-		${WAF_CONFIGURE_ARGS}
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build --prefix=${PREFIX} --destdir=${STAGEDIR}
-
-do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --prefix=${PREFIX} --destdir=${STAGEDIR}
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/share/icons/hicolor/icon-theme.cache
 
 .include <bsd.port.mk>
