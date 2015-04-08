@@ -10,6 +10,26 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150408:
+AUTHOR: bapt@FreeBSD.org
+
+  Add a new USES=waf to handle the waf building system, allowing to factorise
+  code. Plug waf into MAKE_CMD and CONFIGURE_CMD so the regular defined targets
+  can be reused.
+
+  Always define _MAKE_JOBS so that when bsd.port.mk will stop overwritting
+  _MAKE_JOBS when parallel jobs are disabled we can enforce -j1 (which is needed
+  to really disable parallelisation with waf
+
+  WAF_CMD has been created to allow one to override the location of the waf
+  script relatively to WRKSRC
+
+  CONFIGURE_TARGET is by default defined to "configure"
+  ALL_TARGET is by default defined to "build"
+  INSTALL_TARGET is by default defined to "install"
+
+  USES=waf is by default stagedir safe
+
 20150407:
 AUTHOR: bapt@FreeBSD.org
 
