@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	GNUTLS
 
