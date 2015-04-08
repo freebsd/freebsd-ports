@@ -13,6 +13,9 @@ COMMENT=	Fast compressor using LZ4 algorithm
 USES=		gmake
 ALL_TARGET=	lz4c
 
+DEPRECATED=	Superseded by archivers/liblz4; use that instead
+EXPIRATION_DATE=2014-05-08
+
 CONFLICTS=	liblz4-*
 
 PLIST_FILES=	bin/lz4c
