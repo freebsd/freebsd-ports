@@ -7,6 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 # Note: Updates from intron@intron.ac should also be
 # considered as maintainer updates.
@@ -19,9 +20,6 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 USES=		uidfix
 WRKSRC=		${WRKDIR}/src
 SRC=		${.CURDIR}/src
-
-do-fetch:
-	@${DO_NADA}
 
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
