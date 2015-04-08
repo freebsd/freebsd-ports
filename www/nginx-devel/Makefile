@@ -52,7 +52,6 @@ OPTIONS_DEFINE=	\
 	MAIL_SMTP \
 	MAIL_SSL \
 	SPDY \
-	THREADS \
 	WWW \
 	CACHE_PURGE \
 	CTPP2 \
@@ -141,7 +140,6 @@ MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 SPDY_DESC=			Enable SPDY protocol support (SSL req.)
-THREADS_DESC=			Enable thread pool support
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CTPP2_DESC=			3rd party CT++ module
@@ -337,7 +335,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-IGNORE=	ECHO: update require
 NGINX_ECHO_VERSION=	0.51
 GIT_ECHO_VERSION=	0-g44c92a5
 MASTER_SITES+=	https://github.com/openresty/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
@@ -346,7 +343,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-echo-nginx-module-${GIT_ECHO_VE
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-IGNORE=	HEADERS_MORE: update require
 NGINX_HEADERS_MORE_VERSION=	0.25
 GIT_HEADERS_MORE_VERSION=	0-g0c6e05d
 MASTER_SITES+=	https://github.com/openresty/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
@@ -419,7 +415,6 @@ CONFIGURE_ARGS+=--with-http_mp4_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_MOGILEFS}
-IGNORE=	HTTP_MOGILEFS: update require
 NGINX_MOGILEFS_VERSION=	1.0.4
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
 DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_VERSION}.tar.gz:mogilefs
@@ -553,7 +548,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-IGNORE=	DRIZZLE: update require
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.8
 GIT_DRIZZLE_VERSION=	0-gfba80cf
@@ -572,7 +566,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
-IGNORE=	ENCRYPTSESSION: update require
 NGINX_ENCRYPTSESSION_VERSION=	0.03
 GIT_ENCRYPTSESSION_VERSION=	0-g49d741b
 MASTER_SITES+=	https://github.com/openresty/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_VERSION}/:encryptsession
@@ -593,7 +586,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION
 .endif
 
 .if ${PORT_OPTIONS:MLET}
-IGNORE=	LET: update require
 NGINX_LET_VERSION=	0.0.4
 GIT_LET_VERSION=	0-ga5e1dc5
 MASTER_SITES+=	https://github.com/arut/nginx-let-module/tarball/v${NGINX_LET_VERSION}/:let
@@ -602,7 +594,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-IGNORE=	LUA: update require
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
@@ -614,7 +605,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERS
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-IGNORE=	MEMC: update require
 NGINX_MEMC_VERSION=	0.14
 GIT_MEMC_VERSION=	0-gde4cf86
 MASTER_SITES+=	https://github.com/openresty/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
@@ -623,7 +613,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VE
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-IGNORE=	MODSECURITY: update require
 NGINX_MODSECURITY_VERSION=	2.9.0
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libapr-1.so:${PORTSDIR}/devel/apr1 \
@@ -676,7 +665,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
-IGNORE=	RDS_CSV: update require
 NGINX_RDS_CSV_VERSION=	0.05
 GIT_RDS_CSV_VERSION=	0-g607e26b
 MASTER_SITES+=	https://github.com/openresty/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_VERSION}/:rdscsv
@@ -685,7 +673,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-csv-nginx-module-${GIT_RDS_
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
-IGNORE=	RDS_JSON: update require
 NGINX_RDS_JSON_VERSION=	0.13
 GIT_RDS_JSON_VERSION=	0-g8292070
 MASTER_SITES+=	https://github.com/openresty/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
@@ -694,7 +681,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-json-nginx-module-${GIT_RDS
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
-IGNORE=	REDIS2: update require
 NGINX_REDIS2_VERSION=	0.10
 GIT_REDIS2_VERSION=	0-g78a7622
 MASTER_SITES+=	https://github.com/openresty/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
@@ -710,7 +696,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-IGNORE=	SET_MISC: update require
 NGINX_SET_MISC_VERSION=	0.24
 GIT_SET_MISC_VERSION=	0-g36fd035
 MASTER_SITES+=	https://github.com/openresty/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
@@ -720,7 +705,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
-IGNORE=	SFLOW: update require
 NGINX_SFLOW_VERSION=	0.9.7
 MASTER_SITES+=	http://nginx-sflow-module.googlecode.com/files/:sflow
 DISTFILES+=	nginx-sflow-module-${NGINX_SFLOW_VERSION}.tar.gz:sflow
@@ -737,7 +721,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-IGNORE=	SRCACHE: update require
 NGINX_SRCACHE_VERSION=	0.25
 GIT_SRCACHE_VERSION=	0-gf25fe90
 MASTER_SITES+=	https://github.com/openresty/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
@@ -778,7 +761,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 .if ${PORT_OPTIONS:MXRID_HEADER}
-IGNORE=	XRID_HEADER: update require
 GIT_XRID_VERSION=	0daa3cc
 MASTER_SITES+=	https://github.com/gabor/nginx-x-rid-header/tarball/master/:xrid
 DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_VERSION}.tar.gz:xrid
@@ -786,7 +768,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MXSS}
-IGNORE=	XSS: update require
 NGINX_XSS_VERSION=	0.04
 GIT_XSS_VERSION=	0-g7e37038
 MASTER_SITES+=	https://github.com/openresty/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
@@ -798,10 +779,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-xss-nginx-module-${GIT_XSS_VERS
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_spdy_module
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--with-threads
 .endif
 
 .if ${PORT_OPTIONS:MWWW}
@@ -838,7 +815,6 @@ CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR}
-IGNORE=	ARRAYVAR: update require
 NGINX_ARRAYVAR_VERSION=	0.03
 GIT_ARRAYVAR_VERSION=	0-g4676747
 MASTER_SITES+=	https://github.com/openresty/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_VERSION}/:arrayvar
@@ -847,7 +823,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-array-var-nginx-module-${GIT_AR
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
-IGNORE=	FORMINPUT: update require
 NGINX_FORMINPUT_VERSION=	0.07
 GIT_FORMINPUT_VERSION=	0-g78de845
 MASTER_SITES+=	https://github.com/calio/form-input-nginx-module/tarball/v${NGINX_FORMINPUT_VERSION}/:forminput
@@ -856,7 +831,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMI
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-IGNORE=	ICONV: update require
 USES+=		iconv
 NGINX_ICONV_VERSION=	0.10
 GIT_ICONV_VERSION=	0-gb37efb5
