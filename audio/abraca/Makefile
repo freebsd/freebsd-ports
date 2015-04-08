@@ -15,10 +15,12 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
 RUN_DEPENDS=	gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-standard \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		pkgconfig python:build tar:bzip2
+USES=		pkgconfig waf tar:bzip2
 USE_GNOME=	gtk30
 
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--mandir=${PREFIX}/man
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=	NLS
@@ -34,15 +36,7 @@ post-patch:
 		-e '/recurse/s/ po//' ${WRKSRC}/wscript
 .endif
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf configure ${_MAKE_JOBS} \
-		--prefix=${PREFIX} --mandir=${PREFIX}/man
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf build ${_MAKE_JOBS}
-
-do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install --destdir=${STAGEDIR}
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

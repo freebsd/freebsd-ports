@@ -16,7 +16,8 @@ USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_QT4=	corelib gui linguist_build svg webkit xml \
 		moc_build qmake_build uic_build
-USES=		pkgconfig python shebangfix tar:bzip2
+USES=		pkgconfig python shebangfix tar:bzip2 waf
+QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
 		PATH="${KDE4_PREFIX}/bin:$$PATH" \
 		WAF_HOME="${WRKSRC}"
@@ -44,17 +45,7 @@ post-patch:
 		${WRKSRC}/wscript
 .endif
 
-do-configure:
-	@cd ${WRKSRC}; \
-		${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} waf configure --prefix=${PREFIX}
-
-do-build:
-	@cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf build ${_MAKE_JOBS}
-
-do-install:
-	@cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

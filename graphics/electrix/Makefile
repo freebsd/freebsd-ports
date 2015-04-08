@@ -11,7 +11,7 @@ COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils pkgconfig python:2 tar:bzip2
+USES=		desktop-file-utils pkgconfig python:2 tar:bzip2 waf
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
 MAKE_ENV=	DESTDIR="${STAGEDIR}" \
@@ -34,15 +34,7 @@ PDF_CONFIGURE_OFF=	--disable-pdf
 PS_LIB_DEPENDS=		libspectre.so:${PORTSDIR}/print/libspectre
 PS_CONFIGURE_OFF=	--disable-ps
 
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf configure \
-		${CONFIGURE_ARGS} && ${TRUE})
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf build && ${TRUE})
-
-do-install:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install && ${TRUE})
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/electrix
 
 .include <bsd.port.mk>

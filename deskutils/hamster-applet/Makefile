@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
-USES=		gettext gmake pkgconfig python tar:bzip2
+USES=		gettext gmake pkgconfig python tar:bzip2 waf
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix intlhack pygnomedesktop \
 		gnomecontrolcenter2 gnomedocutils
@@ -30,22 +30,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	hamster-applet.schemas
 
-.include <bsd.port.pre.mk>
-
-# WAF needs that
-CONFIGURE_ENV+=	CC="${CC}"
-
-do-configure:
-	@cd ${WRKSRC} && ./waf --prefix=${PREFIX} configure
-
-do-build:
-	@cd ${WRKSRC} && ./waf build
-
-do-install:
-	@cd ${WRKSRC} && DESTDIR=${STAGEDIR} dbus-launch ./waf install
+post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
