@@ -14,7 +14,7 @@ USES=		gmake
 ALL_TARGET=	lz4c
 
 DEPRECATED=	Superseded by archivers/liblz4; use that instead
-EXPIRATION_DATE=2014-05-08
+EXPIRATION_DATE=2015-05-08
 
 CONFLICTS=	liblz4-*
 
