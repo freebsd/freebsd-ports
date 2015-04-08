@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.secnetix.de/~olli/scripts/Generic-utilities/
 DISTFILES=	vils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
 LICENSE=	BSD2CLAUSE
