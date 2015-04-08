@@ -94,7 +94,7 @@ CACTI_LINKS=	dbstats
 .include <bsd.port.options.mk>
 
 post-patch:
-	${SED} -i.bak -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/check_postgres.pl
+	${REINPLACE_CMD} -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/check_postgres.pl
 
 post-install:
 .if ${PORT_OPTIONS:MNAGIOS}
