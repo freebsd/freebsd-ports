@@ -3,4 +3,7 @@ compression (and decompression) ratio and time.  Monkey's Audio Codec can
 be used for personal, educational and non-commercial purposes.  Commercial
 usage requires prior written permission from Monkey's Audio author.
 
+This is community-maintained Unix port of earlier Monkey's Audio sources;
+it does not correspond to current official SDK releases (4.x).
+
 WWW: http://www.monkeysaudio.com/
