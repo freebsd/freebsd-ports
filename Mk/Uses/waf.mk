@@ -44,6 +44,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 DESTDIRNAME=	--destdir
 
 # Set a minimal job of 1
-_MAKE_JOBS=	-j${MAKE_JOBS_NUMVER}
+_MAKE_JOBS=	-j${MAKE_JOBS_NUMBER}
 
 .endif
