@@ -57,6 +57,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5fee3f02-de37-11e4-b7c3-001999f8d30b">
+    <topic>asterisk -- TLS Certificate Common name NULL byte exploit</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.17.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>When Asterisk registers to a SIP TLS device and and
+	  verifies the server, Asterisk will accept signed certificates
+	  that match a common name other than the one Asterisk is
+	  expecting if the signed certificate has a common name
+	  containing a null byte after the portion of the common
+	  name that Asterisk expected. For example, if Asterisk is
+	  trying to register to www.domain.com, Asterisk will accept
+	  certificates of the form
+	  www.domain.com\x00www.someotherdomain.com</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-003.html</url>
+      <cvename>CVE-2015-3008</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-04</discovery>
+      <entry>2015-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ebd84c96-dd7e-11e4-854e-3c970e169bc2">
     <topic>ntp -- multiple vulnerabilities</topic>
     <affects>
