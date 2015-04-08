@@ -6,6 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintenance utility for sgml catalog files
@@ -17,9 +18,6 @@ SCRIPTS_ENV=	CONFIGURE_TARGETS=${CONFIGURE_TARGETS}
 
 SRC=			${.CURDIR}/src
 CONFIGURE_TARGETS=	mkcatalog
-
-do-fetch:
-	@${DO_NADA}
 
 pre-configure:
 .for f in ${CONFIGURE_TARGETS}
