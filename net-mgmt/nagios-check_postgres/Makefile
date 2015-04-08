@@ -3,7 +3,7 @@
 
 PORTNAME=	check_postgres
 PORTVERSION=	2.21.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/
 PKGNAMEPREFIX=	nagios-
@@ -92,6 +92,9 @@ CACTI_SCRIPTS=	${PREFIX}/share/cacti/scripts
 CACTI_LINKS=	dbstats
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	${SED} -i.bak -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/check_postgres.pl
 
 post-install:
 .if ${PORT_OPTIONS:MNAGIOS}
