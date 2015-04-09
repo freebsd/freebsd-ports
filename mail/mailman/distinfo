@@ -1,2 +1,4 @@
-SHA256 (mailman/mailman-2.1.19.tgz) = cb33429797f7b8b3b3f86bd528192ebc9de9df990257df8d482384c687e22014
-SIZE (mailman/mailman-2.1.19.tgz) = 9185697
+SHA256 (mailman/mailman-2.1.20.tgz) = 522c2b5c5ab91398fdf949a8961162c314f6323cd1bfeb907e0fb2d88277711f
+SIZE (mailman/mailman-2.1.20.tgz) = 9204867
+SHA256 (mailman/index_htdig.patch.2.1.20) = 6b47c01b3d65b280829adc8d937e0e8b42d175cceb2a5bc7518e46819f960ac2
+SIZE (mailman/index_htdig.patch.2.1.20) = 324328
