@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.8p1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -187,6 +187,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
 CONFIGURE_ARGS+=	--with-libs='${CONFIGURE_LIBS}'
 .endif
 
+CONFIGURE_ARGS+=	--with-xauth=${LOCALBASE}/bin/xauth
+
 RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
 
@@ -195,9 +197,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|install: \(.*\) host-key check-config|install: \1|g' \
 	    ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
-			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \
-			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
 	@${REINPLACE_CMD} \
