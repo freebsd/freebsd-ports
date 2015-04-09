@@ -198,7 +198,6 @@
     SUBDIR += plasma-applet-teacooker
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
-    SUBDIR += preferencepanes
     SUBDIR += preferences
     SUBDIR += py-khal
     SUBDIR += py-pycarddav
