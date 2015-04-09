@@ -5,12 +5,12 @@ PORTNAME=	freealut
 PORTVERSION=	1.1.0
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	freealut_${PORTVERSION}.orig
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
 
-BROKEN=		Fails to fetch
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
