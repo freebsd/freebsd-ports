@@ -15,6 +15,10 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
+DEPRECATED=	Old revision of software, depends on old version of llvm
+EXPIRATION_DATE=	2015-05-14
+
 LLVM_VERSION=	33
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
