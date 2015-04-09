@@ -14,6 +14,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 IGNORE=		VuXML ebd84c96-dd7e-11e4-854e-3c970e169bc2
+DEPRECATED=	Upline no longer has RC branch.
+EXPIRATION_DATE=	2015-04-30
 
 CONFLICTS=	ntp-[0-9].* ntp-devel-*
 
