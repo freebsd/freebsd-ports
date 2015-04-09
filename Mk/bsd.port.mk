@@ -389,10 +389,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_RUBY		- If set, this port relies on the Ruby language.
 #				  Implies inclusion of bsd.ruby.mk.  (Also see
 #				  that file for more information on USE_RUBY_*).
-# USE_GNUSTEP	- If set, this port relies on the GNUstep system.
-#				  Implies the inclusion of bsd.gnustep.mk.
-#				  (Also see that file for more information on
-#				  USE_GNUSTEP_*).
 ##
 # USE_GECKO		- If set, this port uses the Gecko/Mozilla product.
 #				  See bsd.gecko.mk for more details.
@@ -1371,10 +1367,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_EMACS)
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
-.endif
-
-.if defined(USE_GNUSTEP)
-.include "${PORTSDIR}/Mk/bsd.gnustep.mk"
 .endif
 
 .if defined(USE_PHP)
