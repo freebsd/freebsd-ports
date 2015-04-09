@@ -9,10 +9,7 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/displaycalibrator/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to xgamma
 
-BROKEN=		Unfetchable
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 .include <bsd.port.mk>

@@ -14,10 +14,7 @@ COMMENT=	Place to store notes in an organized manner
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 .include <bsd.port.mk>

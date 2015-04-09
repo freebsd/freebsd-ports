@@ -38,13 +38,8 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/lib
 
-USES=		pkgconfig
-USE_GNUSTEP=	yes
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_BASE=	yes
-USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+USES=		gnustep pkgconfig
+USE_GNUSTEP=	base build
 USE_XORG=	x11 xt
 
 EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.patch
@@ -52,16 +47,15 @@ EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.speech.patch
 EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
-BREAKS_IF_PEDANTIC=	yes
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
-
-ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/libpng15
 
 CUPS_CONFIGURE_ENABLE=		cups
 CUPS_LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_CONFIGURE_ENABLE=	aspell
+
+USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 post-patch:
 	${REINPLACE_CMD} -e "s|libpng/png.h|png.h|" ${WRKSRC}/configure

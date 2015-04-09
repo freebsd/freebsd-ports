@@ -13,11 +13,8 @@ COMMENT=	Graphics editing software for small-scale pictures for GNUstep
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		tar:bzip2
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		tar:bzip2 gnustep
+USE_GNUSTEP=	back build
 
 ADDITIONAL_OBJCFLAGS+=	-Dlog2=logb
 

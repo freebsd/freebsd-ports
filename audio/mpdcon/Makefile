@@ -13,13 +13,11 @@ COMMENT=	MPD client for GNUstep
 
 LICENSE=	GPLv2
 
-USE_GNUSTEP=		yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	SQLClient:databases/sqlclient
+USES=		gnustep
+USE_GNUSTEP=	base gui back build
 
-LIB_DEPENDS+=   libmpdclient.so.2:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libmpdclient.so.2:${PORTSDIR}/audio/libmpdclient \
+		libSQLClient.so:${PORTSDIR}/databases/sqlclient
 
 post-patch:
 	${REINPLACE_CMD} -e \

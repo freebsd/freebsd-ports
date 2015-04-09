@@ -13,12 +13,8 @@ COMMENT=	GNUstep news reader
 
 LICENSE=	GPLv2
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
-
-PANTOMIME_PORT?=	mail/pantomime
+USES=		gnustep
+USE_GNUSTEP=	back build
+LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime
 
 .include <bsd.port.mk>
