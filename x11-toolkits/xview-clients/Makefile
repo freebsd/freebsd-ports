@@ -52,6 +52,7 @@ pre-configure:
 
 do-install:
 	@cd ${WRKSRC}/clients; ${MAKE} install install.man
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/help
 	@${INSTALL_DATA} ${WRKSRC}/misc/support/textedit.info ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 
 .include <bsd.port.mk>
