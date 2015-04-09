@@ -1,11 +1,26 @@
---- compat.c.orig	2015-04-08 21:02:53.327154000 -0500
-+++ compat.c	2015-04-08 21:03:58.915062000 -0500
-@@ -167,6 +167,8 @@
+Workaround TTSSH client crash with hostkeys-00@openssh.com messages in
+OpenSSH 6.8p1.
+
+  http://en.sourceforge.jp/ticket/browse.php?group_id=1412&tid=35010
+  http://en.sourceforge.jp/projects/ttssh2/scm/svn/commits/5829
+
+--- compat.c.orig	2015-03-17 00:49:20.000000000 -0500
++++ compat.c	2015-04-09 15:13:35.061239000 -0500
+@@ -167,6 +167,17 @@ compat_datafellows(const char *version)
  					SSH_BUG_SCANNER },
  		{ "Probe-*",
  					SSH_BUG_PROBE },
-+		{ "TTSSH/*",
-+					SSH_BUG_HOSTKEYS },
++		{ "TTSSH/1.5.*,"
++		  "TeraTerm SSH*,"
++		  "TTSSH/2.1*,"
++		  "TTSSH/2.2*,"
++		  "TTSSH/2.3*,"
++		  "TTSSH/2.4*,"
++		  "TTSSH/2.5*,"
++		  "TTSSH/2.6*,"
++		  "TTSSH/2.70*,"
++		  "TTSSH/2.71*,"
++		  "TTSSH/2.72*",	SSH_BUG_HOSTKEYS },
  		{ NULL,			0 }
  	};
  
