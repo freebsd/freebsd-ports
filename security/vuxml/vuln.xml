@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5f160fa-deee-11e4-99f8-080027ef73ec">
+    <topic>mailman -- path traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.20</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://mail.python.org/pipermail/mailman-announce/2015-March/000209.html">
+	  <p>A path traversal vulnerability has been discovered and fixed.  This
+	    vulnerability is only exploitable by a local user on a Mailman
+	    server where the suggested Exim transport, the Postfix
+	    postfix_to_mailman.py transport or some other programmatic MTA
+	    delivery not using aliases is employed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.python.org/pipermail/mailman-announce/2015-March/000209.html</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1437145</url>
+      <cvename>CVE-2015-2775</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-27</discovery>
+      <entry>2015-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5fee3f02-de37-11e4-b7c3-001999f8d30b">
     <topic>asterisk -- TLS Certificate Common name NULL byte exploit</topic>
     <affects>
