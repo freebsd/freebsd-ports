@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://getdnsapi.net/dist/ \
     		http://mirrors.rit.edu/zi/
@@ -56,6 +56,6 @@ post-install:
 	(cd ${WRKDIR}/examples && ${TAR} --strip-components=1 -xf ${PORTNAME}.tgz)
 	(cd ${WRKDIR}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.1.0.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.*
 
 .include <bsd.port.mk>
