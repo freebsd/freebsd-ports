@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150409:
+AUTHOR: bapt@FreeBSD.org
+
+  Add a new USES=gnustep to handle the GNUstep ports. Now the dependencies on
+  GNUstep libraries is done via the regular LIB_DEPENDS
+
+  USE_GNUSTEP is now a macro that accept many arguments: back, build, gui, back
+  Depending on the feature needed for a given port
+
+  Reuse USES=objc to avoid duplicating code
+
 20150408:
 AUTHOR: bapt@FreeBSD.org
 

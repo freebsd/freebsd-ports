@@ -16,11 +16,8 @@ LICENSE_FILE=	${WRKSRC}/Documentation/COPYING
 
 LIB_DEPENDS=	libgphoto2_port.so:${PORTSDIR}/graphics/libgphoto2
 
-USES=		tar:bzip2
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		tar:bzip2 gnustep
+USE_GNUSTEP=	back build
 
 WRKSRC=		${WRKDIR}/Camera
 

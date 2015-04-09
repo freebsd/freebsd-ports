@@ -3,17 +3,16 @@
 
 PORTNAME=	gnustep-make
 PORTVERSION=	2.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnustep
-MASTER_SITES=	${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	core
+MASTER_SITES=	GNUSTEP/core
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep makefile package
 
 LICENSE=	GPLv3
 
-USE_GNUSTEP=	yes
+USES=		gnustep
 GNU_CONFIGURE=	yes
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
@@ -22,13 +21,7 @@ CONFIGURE_ARGS+=	--with-thread-lib=-pthread
 CONFIGURE_ARGS+=	--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf
 CONFIGURE_ARGS+=	--with-layout=gnustep
 CONFIGURE_ARGS+=	--enable-objc-nonfragile-abi --enable-native-objc-exceptions
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE_PREFIX=	${GNUSTEP_PREFIX}
-LIB_DEPENDS+=		libobjc.so:${PORTSDIR}/lang/libobjc2
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|' \
-		${WRKSRC}/configure
 
 post-install:
 	${LN} -s Library/Makefiles ${STAGEDIR}${GNUSTEP_PREFIX}/System/

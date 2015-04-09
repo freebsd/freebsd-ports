@@ -13,11 +13,8 @@ COMMENT=	Simple FTP client for GNUstep
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:tgz
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		tar:tgz gnustep
+USE_GNUSTEP=	back build
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Waiho.app/Waiho

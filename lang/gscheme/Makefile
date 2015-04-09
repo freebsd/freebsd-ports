@@ -15,10 +15,8 @@ COMMENT=	GNUstep-aware scheme interpreter
 
 LICENSE=	GPLv2 # or later
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
