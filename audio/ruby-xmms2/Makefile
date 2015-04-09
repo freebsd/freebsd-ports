@@ -12,6 +12,7 @@ LIB_DEPENDS+=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
+CONFIGURE_TARGET=	configure
 USE_RUBY=	yes
 USE_GNOME=	glib20
 
