@@ -1,0 +1,15 @@
+bin/fstrm_capture
+bin/fstrm_dump
+include/fstrm.h
+include/fstrm/control.h
+include/fstrm/file.h
+include/fstrm/iothr.h
+include/fstrm/rdwr.h
+include/fstrm/reader.h
+include/fstrm/unix_writer.h
+include/fstrm/writer.h
+lib/libfstrm.a
+lib/libfstrm.so
+lib/libfstrm.so.0
+lib/libfstrm.so.0.0.0
+libdata/pkgconfig/libfstrm.pc
