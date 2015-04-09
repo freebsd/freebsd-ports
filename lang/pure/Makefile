@@ -3,7 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
@@ -15,16 +15,12 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LLVM_VERSION=	32
-
-BROKEN=		Depends on deleted devel/llvm32
-DEPRECATED=	Old revision of software, depends on deleted version of llvm
-EXPIRATION_DATE=	2015-05-14
+LLVM_VERSION=	33
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
-#BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message
@@ -73,25 +69,27 @@ SUB_LIST+=	NOCLANG="@comment "
 CONFIGURE_ARGS+=	--without-readline
 .endif
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd
-.endif
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}
 
 post-install:
 .if ${PORT_OPTIONS:METC}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/etc/
-	@(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${RM} -f etc/*.in && \
+		${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${RM} -f Makefile && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && \
+		${RM} -f Makefile && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/docs
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
