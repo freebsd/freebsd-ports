@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Mixin::Linewise.3.gz
-%%PERL5_MAN3%%/Mixin::Linewise::Readers.3.gz
-%%PERL5_MAN3%%/Mixin::Linewise::Writers.3.gz
 %%SITE_PERL%%/Mixin/Linewise.pm
 %%SITE_PERL%%/Mixin/Linewise/Readers.pm
 %%SITE_PERL%%/Mixin/Linewise/Writers.pm
+%%PERL5_MAN3%%/Mixin::Linewise.3.gz
+%%PERL5_MAN3%%/Mixin::Linewise::Readers.3.gz
+%%PERL5_MAN3%%/Mixin::Linewise::Writers.3.gz
