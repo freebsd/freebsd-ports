@@ -48,7 +48,6 @@ absolute_path() {
 
 find_dep() {
 	pattern=$1
-	echo $pattern >&2
 	case ${pattern} in
 	*\>*|*\<*|*=*)
 		${PKG_BIN} info -Eg "${pattern}" 2>/dev/null
