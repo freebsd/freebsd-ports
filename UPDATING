@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150409:
+  AFFECTS: User of security/sguil
+  AUTHOR: feld@FreeBSD.org
+
+  security/sguil was erroneously provisioned a UID that conflicted with
+  the dns/dnscrypt-proxy port. A new UID and GID of 991 has been issued.
+
+  Existing users will be able to upgrade the sguil packages without
+  issue. The existing UID will continue to be used. If you do a clean
+  install of security/sguil on a new server and migrate files or
+  intentionally delete the sguil user and group and reinstall you may
+  run into permissions issues.
+
+  Examples include the /var/run/sguild and /usr/local/etc/sguild directories.
+
 20150406:
   AFFECTS: User of emulators/xen emulators/xl and sysutils/xen-tools
   AUTHOR: bapt@FreeBSD.org
