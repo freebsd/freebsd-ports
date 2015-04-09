@@ -5,7 +5,7 @@ PORTNAME=	pure
 PORTVERSION=	0.58
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	pure
 
@@ -14,10 +14,6 @@ COMMENT=	Modern-style functional programming language
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
-
-BROKEN=		Unfetchable
-DEPRECATED=	Old revision of software, depends on old version of llvm
-EXPIRATION_DATE=	2015-05-14
 
 LLVM_VERSION=	33
 
