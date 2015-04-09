@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/File::Find::Object.3.gz
-%%PERL5_MAN3%%/File::Find::Object::Base.3.gz
-%%PERL5_MAN3%%/File::Find::Object::PathComp.3.gz
-%%PERL5_MAN3%%/File::Find::Object::Result.3.gz
 %%SITE_PERL%%/File/Find/Object.pm
 %%SITE_PERL%%/File/Find/Object/Base.pm
 %%SITE_PERL%%/File/Find/Object/PathComp.pm
 %%SITE_PERL%%/File/Find/Object/Result.pm
+%%PERL5_MAN3%%/File::Find::Object.3.gz
+%%PERL5_MAN3%%/File::Find::Object::Base.3.gz
+%%PERL5_MAN3%%/File::Find::Object::PathComp.3.gz
+%%PERL5_MAN3%%/File::Find::Object::Result.3.gz
