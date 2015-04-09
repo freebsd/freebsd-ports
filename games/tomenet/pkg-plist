@@ -1,5 +1,4 @@
 bin/accedit
-bin/evilmeta
 bin/tomenet
 bin/tomenet.server
 %%ETCDIR%%/tomenetrc
@@ -7,7 +6,7 @@ bin/tomenet.server
 %%DATADIR%%/lib/config/nonswearing.txt
 %%DATADIR%%/lib/config/swearing.txt
 %%DATADIR%%/lib/config/tomenet.cfg
-%%DATADIR%%/lib/data/tomenet.log
+%%DATADIR%%/lib/data/delete.me
 %%DATADIR%%/lib/game/a_info.txt
 %%DATADIR%%/lib/game/ba_info.txt
 %%DATADIR%%/lib/game/d_info.txt
@@ -15,6 +14,7 @@ bin/tomenet.server
 %%DATADIR%%/lib/game/f_info.txt
 %%DATADIR%%/lib/game/k_info.txt
 %%DATADIR%%/lib/game/ow_info.txt
+%%DATADIR%%/lib/game/q_info.txt
 %%DATADIR%%/lib/game/r_info.txt
 %%DATADIR%%/lib/game/re_info.txt
 %%DATADIR%%/lib/game/renumber.pl
@@ -34,6 +34,7 @@ bin/tomenet.server
 %%DATADIR%%/lib/game/t_nargothrond.txt
 %%DATADIR%%/lib/game/t_pref.txt
 %%DATADIR%%/lib/game/t_valinor.txt
+%%DATADIR%%/lib/game/tq_testcastle.txt
 %%DATADIR%%/lib/game/tr_info.txt
 %%DATADIR%%/lib/game/v_info.txt
 %%DATADIR%%/lib/save/delete.me

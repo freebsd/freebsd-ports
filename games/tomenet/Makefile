@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tomenet
-PORTVERSION=	4.5.6
+PORTVERSION=	4.5.9
 CATEGORIES=	games
-MASTER_SITES=	http://tomenet.net/downloads/
+MASTER_SITES=	http://tomenet.eu/downloads/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Online multiplayer rogue-like role-playing game
@@ -19,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 do-install:
-.for f in tomenet tomenet.server accedit evilmeta
+.for f in tomenet tomenet.server accedit
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
