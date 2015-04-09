@@ -5,8 +5,7 @@ PORTNAME=	fireflyttf
 PORTVERSION=	1.3.0
 PORTREVISION=	5
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES?=	http://firefly.idv.tw/apt/firefly-font/ \
-		http://www.study-area.org/apt/firefly-font/
+MASTER_SITES?=	LOCAL/chinsan/fonts
 DISTNAME?=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,7 +13,6 @@ COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
 
 CONFLICTS=	zh-opendesktop-fonts-*
 
-BROKEN=		Unfetchable
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -30,7 +28,7 @@ LGJ_FONT_DESC=	Patch for Taiwan horn
 
 .if ${PORT_OPTIONS:MLGJ_FONT}
 PKGNAMESUFFIX+=	-LGJ
-MASTER_SITES=	http://edt1023.sayya.org/fonts/
+MASTER_SITES=	LOCAL/chinsan/fonts
 DISTNAME=	fireflysung-1.3.0p1
 .endif
 
