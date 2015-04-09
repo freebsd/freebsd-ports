@@ -304,7 +304,6 @@ unifi:*:975:975::0:0:Unifi Wireless Controller:/nonexistent:/usr/sbin/nologin
 minetest:*:976:976::0:0:& server:/nonexistent:/usr/sbin/nologin
 tests:*:977:65534::0:0:Unprivileged user for tests:/nonexistent:/usr/sbin/nologin
 _dnscrypt-proxy:*:978:65534::0:0:dnscrypt-proxy user:/var/empty:/usr/sbin/nologin
-sguil:*:978:978::0:0:Sguil:/nonexistent:/usr/sbin/nologin
 ums:*:979:979::0:0:Universal Media Server:/nonexistent:/usr/sbin/nologin
 hbase:*:980:980::0:0:HBase user:/nonexistent:/usr/sbin/nologin
 uvncrep:*:981:981::0:0:UltraVNC Repeater daemon:/nonexistent:/usr/sbin/nologin
@@ -317,5 +316,6 @@ spark:*:987:987::0:0:Apache Spark user:/nonexistent:/usr/sbin/nologin
 toxdht:*:988:65534::0:0:Tox DHT bootstrap user:/nonexistent:/usr/sbin/nologin
 emby:*:989:989::0:0:Emby:/nonexistent:/usr/sbin/nologin
 oozie:*:990:990::0:0:Apache Oozie user:/nonexistent:/usr/sbin/nologin
+sguil:*:991:991::0:0:Sguil:/nonexistent:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
