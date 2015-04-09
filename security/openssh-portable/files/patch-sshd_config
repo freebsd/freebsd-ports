@@ -68,12 +68,3 @@
  #X11DisplayOffset 10
  #X11UseLocalhost yes
  #PermitTTY yes
-@@ -107,7 +109,7 @@
- #PrintLastLog yes
- #TCPKeepAlive yes
- #UseLogin no
--UsePrivilegeSeparation sandbox		# Default for new installations.
-+#UsePrivilegeSeparation sandbox
- #PermitUserEnvironment no
- #Compression delayed
- #ClientAliveInterval 0
