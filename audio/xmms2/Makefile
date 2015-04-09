@@ -15,6 +15,7 @@ USES+=		pkgconfig tar:bzip2 waf
 
 CONFIGURE_ARGS+=	--conf-prefix=${LOCALBASE} \
 		--mandir=${MANPREFIX}/man
+INSTALL_TARGET=	install --without-ldconfig
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
