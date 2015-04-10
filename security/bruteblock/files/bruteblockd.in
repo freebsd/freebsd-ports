@@ -4,6 +4,7 @@
 #
 # PROVIDE: bruteblockd
 # REQUIRE: NETWORKING syslogd ldconfig
+# BEFORE: syslogd
 # KEYWORD: nojail
 
 . /etc/rc.subr
