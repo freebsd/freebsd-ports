@@ -28,10 +28,10 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 X11_CONFIGURE_WITH=	gtk
 X11_USE=		GNOME=gtk20
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MX11}
-PKGNAMESUFFIX+=	-nox11
+.if defined(PKGNAMESUFFIX)
+CONFLICTS=	mtr-0*
+.else
+CONFLICTS=	mtr-nox11-0*
 .endif
 
 post-patch:
