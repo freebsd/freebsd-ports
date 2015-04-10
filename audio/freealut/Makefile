@@ -17,6 +17,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake libtool openal:al pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@CFLAGS@/& -lopenal -lpthread/g' \
