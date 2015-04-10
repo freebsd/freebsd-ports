@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	2014-10-14 16:46:21 UTC
++++ src/Makefile.in
+@@ -497,7 +497,7 @@ am__relativize = \
+   reldir="$$dir2"
+ 
+ # we use common include directory for all headers
+-pkgincludedir = $(includedir)/@PACKAGE@-@FMLIBVER@
++pkgincludedir = $(includedir)/@PACKAGE@
+ ACLOCAL = @ACLOCAL@
+ ACTIONS_SUBDIR = @ACTIONS_SUBDIR@
+ ALL_LINGUAS = @ALL_LINGUAS@
+@@ -3079,7 +3079,6 @@ install-data-local:
+ 		rm -rf "$(DESTDIR)$(includedir)/@PACKAGE@"; \
+ 	fi
+ 	test -z "$(includedir)" || $(MKDIR_P) "$(DESTDIR)$(includedir)"
+-	@LN_S@ @PACKAGE@-@FMLIBVER@ "$(DESTDIR)$(includedir)/@PACKAGE@"
+ 
+ uninstall-local:
+ 	@if test -L "$(DESTDIR)$(includedir)/@PACKAGE@"; then \
