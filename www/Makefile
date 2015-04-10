@@ -96,6 +96,7 @@
     SUBDIR += coppermine
     SUBDIR += cowboy
     SUBDIR += cplanet
+    SUBDIR += cppcms
     SUBDIR += crawl
     SUBDIR += crp
     SUBDIR += css-mode.el
