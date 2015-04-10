@@ -78,8 +78,8 @@ include/rhythmbox/widgets/rb-uri-dialog.h
 lib/girepository-1.0/MPID-3.0.typelib
 lib/girepository-1.0/RB-3.0.typelib
 lib/librhythmbox-core.so
-lib/librhythmbox-core.so.8
-lib/librhythmbox-core.so.8.0.0
+lib/librhythmbox-core.so.9
+lib/librhythmbox-core.so.9.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/artsearch.plugin
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/artsearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/embedded.py
@@ -87,6 +87,7 @@ lib/librhythmbox-core.so.8.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/local.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/musicbrainz.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/oldcache.py
+%%PYTHON%%lib/rhythmbox/plugins/artsearch/songinfo.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/artsearch.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/artsearch.cpython-%%PYTVER%%.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/embedded.cpython-%%PYTVER%%.pyc
@@ -99,6 +100,8 @@ lib/librhythmbox-core.so.8.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/musicbrainz.cpython-%%PYTVER%%.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/oldcache.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/oldcache.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/songinfo.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/songinfo.cpython-%%PYTVER%%.pyo
 lib/rhythmbox/plugins/audiocd/audiocd.plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
@@ -256,6 +259,10 @@ lib/rhythmbox/sample-plugins/sample-vala/sample-vala.plugin
 %%PYTHON%%lib/rhythmbox/sample-plugins/sample-python/sample-python.py
 %%PYTHON%%lib/rhythmbox/sample-plugins/sample-python/__pycache__/sample-python.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/sample-plugins/sample-python/__pycache__/sample-python.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/soundcloud/__pycache__/soundcloud.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/soundcloud/__pycache__/soundcloud.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/soundcloud/soundcloud.plugin
+%%PYTHON%%lib/rhythmbox/plugins/soundcloud/soundcloud.py
 libdata/pkgconfig/rhythmbox.pc
 libexec/rhythmbox-metadata
 man/man1/rhythmbox-client.1.gz
@@ -704,6 +711,7 @@ share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
 share/locale/bn_IN/LC_MESSAGES/rhythmbox.mo
 share/locale/br/LC_MESSAGES/rhythmbox.mo
+share/locale/bs/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/ca@valencia/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
@@ -733,6 +741,7 @@ share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/is/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
+share/locale/kk/LC_MESSAGES/rhythmbox.mo
 share/locale/kn/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
 share/locale/lt/LC_MESSAGES/rhythmbox.mo
@@ -797,9 +806,9 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 %%DATADIR%%/playlists.xml
 %%DATADIR%%/plugins/audiocd/album-info.ui
 %%DATADIR%%/plugins/audiocd/audiocd-toolbar.ui
-%%DATADIR%%/plugins/audioscrobbler/Last.fm-symbolic.svg
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-preferences.ui
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-profile.ui
+%%DATADIR%%/plugins/audioscrobbler/icons/hicolor/scalable/places/Last.fm-symbolic.svg
 %%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Allmusic16x16.png
 %%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Discogs16x16.png
 %%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Wikipedia16x16.png
@@ -826,16 +835,19 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 %%DATADIR%%/plugins/iradio/iradio-toolbar.ui
 %%LIRC%%%%DATADIR%%/plugins/rblirc/rhythmbox_lirc_default
 %%DATADIR%%/plugins/iradio/station-properties.ui
+%%PYTHON%%%%DATADIR%%/plugins/magnatune/icons/hicolor/scalable/places/magnatune-symbolic.svg
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune-loading.ui
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune-popup.ui
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune-prefs.ui
-%%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune-symbolic.svg
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune-toolbar.ui
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune_logo_color_small.png
 %%PYTHON%%%%DATADIR%%/plugins/magnatune/magnatune_logo_color_tiny.png
 %%MTP%%%%DATADIR%%/plugins/mtpdevice/mtp-info.ui
 %%MTP%%%%DATADIR%%/plugins/mtpdevice/mtp-toolbar.ui
 %%PYTHON%%%%DATADIR%%/plugins/replaygain/replaygain-prefs.ui
+%%PYTHON%%%%DATADIR%%/plugins/soundcloud/icons/hicolor/scalable/places/soundcloud-symbolic.svg
+%%PYTHON%%%%DATADIR%%/plugins/soundcloud/powered-by-soundcloud.png
+%%PYTHON%%%%DATADIR%%/plugins/soundcloud/soundcloud.ui
 %%DATADIR%%/podcast-add-dialog.ui
 %%DATADIR%%/podcast-feed-properties.ui
 %%DATADIR%%/podcast-prefs.ui

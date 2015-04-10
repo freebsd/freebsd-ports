@@ -38,6 +38,7 @@ share/contractor/geary-attach.contract
 %%DATADIR%%/ui/certificate_warning_dialog.glade
 %%DATADIR%%/ui/composer.glade
 %%DATADIR%%/ui/composer_accelerators.ui
+%%DATADIR%%/ui/edit_alternate_emails.glade
 %%DATADIR%%/ui/find_bar.glade
 %%DATADIR%%/ui/login.glade
 %%DATADIR%%/ui/message.glade
@@ -46,7 +47,6 @@ share/contractor/geary-attach.contract
 %%DATADIR%%/ui/remove_confirm.glade
 %%DATADIR%%/ui/toolbar_empty_menu.ui
 %%DATADIR%%/ui/toolbar_mark_menu.ui
-%%DATADIR%%/ui/toolbar_menu.ui
 %%DATADIR%%/ui/upgrade_dialog.glade
 share/gnome/help/geary/C/accounts.page
 share/gnome/help/geary/C/archive.page
@@ -161,6 +161,7 @@ share/icons/hicolor/scalable/actions/tag-rtl-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
 share/locale/ar/LC_MESSAGES/geary.mo
+share/locale/bs/LC_MESSAGES/geary.mo
 share/locale/ca/LC_MESSAGES/geary.mo
 share/locale/cs/LC_MESSAGES/geary.mo
 share/locale/da/LC_MESSAGES/geary.mo
