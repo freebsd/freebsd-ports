@@ -12,10 +12,8 @@ COMMENT=	Distributed computing project
 
 LICENSE=	BSD
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

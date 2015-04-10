@@ -17,6 +17,7 @@ FFTW3_DESC=	Use FFTW
 GSL_DESC=	Use GNU Scientific Library
 S7_DESC=	Use S7 as the extension language
 
+BROKEN=		Unfetchable
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-float-samples

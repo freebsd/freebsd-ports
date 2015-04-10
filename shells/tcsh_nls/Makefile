@@ -6,6 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	shells
 MASTER_SITES=	# none
 DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Misc NLS catalogs for tcsh which requires libiconv
@@ -56,9 +57,6 @@ NLS_CATALOGS=	de_DE.ISO8859-1:de_AT.UTF-8 \
 		ru_RU.KOI8-R:ru_RU.UTF-8 \
 		uk_UA.KOI8-U:uk_UA.ISO8859-5 \
 		uk_UA.KOI8-U:uk_UA.UTF-8 \
-
-do-fetch:
-	@${DO_NADA}
 
 do-install:
 	@for i in ${NLS_CATALOGS}; do \

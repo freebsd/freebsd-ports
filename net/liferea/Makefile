@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liferea
-PORTVERSION=	1.10.12
+PORTVERSION=	1.10.14
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION}/
 

@@ -15,6 +15,3 @@ If your host is running 9.3-RELEASE or 10.0-RELEASE, please verify that
                 devfs_load_rulesets="YES"
 
 ########################################################################
-
-
-

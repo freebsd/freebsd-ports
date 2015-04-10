@@ -13,6 +13,7 @@ COMMENT=	Simple, but fun, physics engine prototype
 
 RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 
+BROKEN=		Unfetchable
 USES=		gmake pkgconfig
 USE_GNOME=	gconf2 gtk20
 GCONF_SCHEMAS=	kiba.schemas

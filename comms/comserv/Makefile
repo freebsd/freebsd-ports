@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	comserv
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	comms net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	bsd
+MASTER_SITES=	http://BSDforge.com/projects/source/comms/comserv/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Provide network access to local serial ports and make remote ports appear local
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Access local serial ports via network connections
+
+LICENSE=	BSD2CLAUSE
+
+USES=		tar:xz
 
 PLIST_FILES=	sbin/comservd etc/comservd.conf.sample \
 		etc/rc.d/comservd.sh.sample man/man8/comservd.8.gz
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e '/(INSTALL_|gzip)/ s,(BIN|CONF|MAN|RC)DIR,DESTDIR}$${&,g' \
-		-e 's,-o root -g wheel,,' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

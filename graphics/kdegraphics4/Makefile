@@ -4,15 +4,12 @@
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	graphics kde
-DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for KDE 4 (meta port)
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	GPHOTO \
 		GWENVIEW \

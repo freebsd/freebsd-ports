@@ -227,6 +227,7 @@
     SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
+    SUBDIR += shed
     SUBDIR += slime
     SUBDIR += spe
     SUBDIR += ssam

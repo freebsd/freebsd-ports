@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	theano
-DISTVERSION=	0.7.0rc2
+PORTVERSION=	0.7.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=source/T/Theano
@@ -15,7 +15,10 @@ COMMENT=	Optimizing compiler for evaluating math expressions on CPUs and GPUs
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.8.0:${PORTSDIR}/science/py-scipy
 
-USES=		python
+USES=		compiler:openmp python
 USE_PYTHON=	concurrent distutils autoplist
+
+SUB_FILES=	pkg-message
+SUB_LIST=	CXX=${CXX}
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ post-install: <<EOD
   /*) fontsdir="%@" ;;
   *) fontsdir="%D/%@" ;;
   esac
-  fc-cache -s ${fontsdir} 2>/dev/null || true
+  fc-cache -fs ${fontsdir} 2>/dev/null || true
   mkfontscale ${fontsdir} 2>/dev/null || true
   mkfontdir ${fontsdir} 2>/dev/null || true
 EOD
@@ -17,7 +17,7 @@ post-deinstall: <<EOD
   /*) fontsdir="%@" ;;
   *) fontsdir="%D/%@" ;;
   esac
-  fc-cache -s ${fontsdir} 2>/dev/null || true
+  fc-cache -fs ${fontsdir} 2>/dev/null || true
   mkfontscale ${fontsdir} 2>/dev/null || true
   if [ -e ${fontsdir}/fonts.scale -a "`stat -f '%%z' ${fontsdir}/fonts.scale 2>/dev/null`" = '2' ]; then
     rm ${fontsdir}/fonts.scale

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-X_FONTSDIR=%%X_FONTSDIR%%/TTF
-
 catfontsdir ()
 {
     while read _IN
@@ -86,7 +84,7 @@ nfonts ()
 
 case "$2" in
 POST-INSTALL)
-	cd ${X_FONTSDIR}
+	cd ${FONTSDIR}
 	touch fonts.dir
 	(sed 1d fonts.dir | catfontsdir; addentries) > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
@@ -94,7 +92,7 @@ POST-INSTALL)
 	rm -f fonts.dir.tmp
 	;;
 POST-DEINSTALL)
-	cd ${X_FONTSDIR}
+	cd ${FONTSDIR}
 	sed 1d fonts.dir | catfontsdir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir
@@ -102,6 +100,5 @@ POST-DEINSTALL)
 	if [ -r fonts.dir -a `wc -l < fonts.dir` = 1 ]; then
 		rm -f fonts.dir
 	fi
-	rmdir ${X_FONTSDIR} > /dev/null 2>&1 || true
 	;;
 esac

@@ -12,6 +12,7 @@ COMMENT=	Musicpd last.fm client
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 LIB_DEPENDS+=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 USES=		pkgconfig tar:bzip2

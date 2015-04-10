@@ -13,6 +13,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's examples
 
+BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/geda

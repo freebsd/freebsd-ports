@@ -581,8 +581,8 @@
     SUBDIR += rubygem-mail25
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
-    SUBDIR += rubygem-qmail
     SUBDIR += rubygem-rmail
+    SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-tmail
     SUBDIR += rubygem-vmail
     SUBDIR += sa-stats

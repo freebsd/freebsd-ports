@@ -11,6 +11,8 @@ DISTNAME=	le_dico
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive dictionary in french
 
+BROKEN=		No public distfiles
+
 BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -11,19 +11,17 @@
 name="ovs_vswitchd"
 rcvar=ovs_vswitchd_enable
 
-command="%%PREFIX%%/sbin/ovs-vswitchd"
-pidfile="%%PREFIX%%/var/run/ovs-vswitchd.pid"
+command="/usr/local/sbin/ovs-vswitchd"
 start_precmd="ovs_vswitchd_precmd"
 
 load_rc_config $name
 
 : ${ovs_vswitchd_enable="NO"}
-: ${ovsdb_server_sock="%%PREFIX%%/var/run/openvswitch/db.sock"}
 
 ovs_vswitchd_precmd() {
 	load_kld if_tap || return 1
 }
 
-command_args="--detach --pidfile=$pidfile unix:$ovsdb_server_sock"
+command_args="--detach --pidfile"
 
 run_rc_command "$1"

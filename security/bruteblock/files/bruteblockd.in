@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: bruteblockd
-# REQUIRE: NETWORKING syslogd
+# REQUIRE: NETWORKING syslogd ldconfig
+# BEFORE: syslogd
 # KEYWORD: nojail
 
 . /etc/rc.subr

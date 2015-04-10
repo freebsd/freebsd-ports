@@ -12,7 +12,7 @@ COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	pymongo>=2.5:${PORTSDIR}/databases/pymongo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.5:${PORTSDIR}/databases/pymongo
 
 USES=		python
 USE_PYTHON=	autoplist distutils

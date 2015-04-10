@@ -11,6 +11,8 @@ COMMENT=	3D Scene Description Translator
 
 LICENSE=	GPLv3
 
+BROKEN=		Checksum and size mismatch
+
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 MAKEFILE=	makefile

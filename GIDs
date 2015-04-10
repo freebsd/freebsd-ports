@@ -296,7 +296,6 @@ boinc:*:973:
 radicale:*:974:
 unifi:*:975:
 minetest:*:976:
-sguil:*:978:
 ums:*:979:
 hbase:*:980:
 uvncrep:*:981:
@@ -306,8 +305,9 @@ tvheadend:*:984:
 puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
-mediabrowser:*:989:
+emby:*:989:
 oozie:*:990:
+sguil:*:991:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

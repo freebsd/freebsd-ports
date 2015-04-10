@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
+BROKEN=		Unfetchable
 USE_RC_SUBR=	qpage
 GNU_CONFIGURE=	yes
 

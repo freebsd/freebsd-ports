@@ -15,6 +15,7 @@ COMMENT=	Compact Finite Element Analysis System
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
+BROKEN=		Unfetchable
 NO_WRKSUBDIR=	yes
 USES=		pkgconfig
 USE_GL=		glu

@@ -14,6 +14,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
+BROKEN=		No public distfiles
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}

@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	XnView Multi Platform, graphics viewer and converter
 
+BROKEN=		No public distfiles
+
 NO_CDROM=	For commercial use and distribution, it is necessary to register
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes

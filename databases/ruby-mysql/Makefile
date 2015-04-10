@@ -36,4 +36,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README_ja.html ${STAGEDIR}${DOCSDIR}/ja/
 	${LN} -fs ../tommy.css ${STAGEDIR}${DOCSDIR}/ja/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.2
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>

@@ -37,15 +37,15 @@ lib/girepository-%%TRACKER_VER%%/TrackerMiner-1.0.typelib
 lib/libtracker-control-%%TRACKER_VER%%.a
 lib/libtracker-control-%%TRACKER_VER%%.so
 lib/libtracker-control-%%TRACKER_VER%%.so.0
-lib/libtracker-control-%%TRACKER_VER%%.so.0.202.3
+lib/libtracker-control-%%TRACKER_VER%%.so.0.203.3
 lib/libtracker-miner-%%TRACKER_VER%%.a
 lib/libtracker-miner-%%TRACKER_VER%%.so
 lib/libtracker-miner-%%TRACKER_VER%%.so.0
-lib/libtracker-miner-%%TRACKER_VER%%.so.0.202.3
+lib/libtracker-miner-%%TRACKER_VER%%.so.0.203.3
 lib/libtracker-sparql-%%TRACKER_VER%%.a
 lib/libtracker-sparql-%%TRACKER_VER%%.so
 lib/libtracker-sparql-%%TRACKER_VER%%.so.0
-lib/libtracker-sparql-%%TRACKER_VER%%.so.0.202.3
+lib/libtracker-sparql-%%TRACKER_VER%%.so.0.203.3
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.a
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.so
 %%GRAPHIC_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-bmp.a
@@ -230,6 +230,7 @@ share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
 share/locale/as/LC_MESSAGES/tracker.mo
 share/locale/be@latin/LC_MESSAGES/tracker.mo
+share/locale/bs/LC_MESSAGES/tracker.mo
 share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/ca@valencia/LC_MESSAGES/tracker.mo
 share/locale/cs/LC_MESSAGES/tracker.mo

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	abcmidi
-PORTVERSION=	2011.04.29
+DISTVERSION=	2015-03-27
 CATEGORIES=	audio
-MASTER_SITES=	http://ifdo.ca/~seymour/runabc/
-DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
+MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
+DISTNAME=	abcMIDI-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
@@ -14,26 +14,30 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake zip
-MAKEFILE=	makefiles/unix.mak
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
+USES=		zip
+GNU_CONFIGURE=	yes
 
-MANPAGES=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 midicopy.1 yaps.1
+PORTDOCS=	*
+PLIST_FILES=	${EXECUTABLES:S,^,bin/,} \
+		${EXECUTABLES:S,^,man/man1/,:S,$,.1.gz,}
 
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-.for FILE in abc2abc abc2midi abcmatch mftext midi2abc midicopy yaps
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for FILE in ${MANPAGES}
-	${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${STAGEDIR}${DOCSDIR}
+EXECUTABLES=	abc2abc abc2midi abcmatch mftext midi2abc midicopy yaps
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's| -O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^docdir/s|= .*|= $${datadir}/doc/abcmidi| ; \
+		 s|$${prefix}/||g ; \
+		 s|$$(INSTALL) -m 755|$$(INSTALL_PROGRAM)| ; \
+		 s|$$(INSTALL) -m 644|$$(INSTALL_DATA)|' \
+		${WRKSRC}/Makefile.in
+
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/programming
-	${INSTALL_DATA} ${WRKSRC}/doc/programming/*.abc ${STAGEDIR}${DOCSDIR}/programming
-	${INSTALL_DATA} ${WRKSRC}/doc/programming/*.txt ${STAGEDIR}${DOCSDIR}/programming
+	(cd ${WRKSRC}/doc/programming && ${INSTALL_DATA} *.abc *.txt \
+		${STAGEDIR}${DOCSDIR}/programming)
 
 .include <bsd.port.mk>

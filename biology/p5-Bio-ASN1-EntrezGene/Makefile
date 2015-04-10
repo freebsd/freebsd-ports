@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Regular expression-based Perl Parser for NCBI Entrez Gene
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/Bio-ASN1-EntrezGene-1.09
 
 USES=		perl5 tar:tgz

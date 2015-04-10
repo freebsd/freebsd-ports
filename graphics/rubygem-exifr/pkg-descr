@@ -1,4 +1,4 @@
-    Exifr is a pure ruby library to extract EXIF info from
+Exifr is a pure ruby library to extract EXIF info from
 image files. Both JPEG and TIFF formats are supported.
 
-WWW: https://github.com/remvee/exifr/
+WWW: https://github.com/remvee/exifr

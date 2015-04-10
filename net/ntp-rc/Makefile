@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.8p2.r2
+PORTVERSION=	4.2.8p2.r3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/ \
@@ -12,6 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
+
+IGNORE=		VuXML ebd84c96-dd7e-11e4-854e-3c970e169bc2
+DEPRECATED=	Upline no longer has RC branch.
+EXPIRATION_DATE=	2015-04-30
 
 CONFLICTS=	ntp-[0-9].* ntp-devel-*
 

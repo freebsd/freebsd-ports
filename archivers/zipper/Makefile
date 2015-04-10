@@ -12,10 +12,8 @@ DISTNAME=	Zipper-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool for inspecting the contents of a compressed archive
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 post-patch:
 	cd ${WRKSRC} && ${FIND} . -name "*#*" -exec ${RM} -f -v "{}" ";"

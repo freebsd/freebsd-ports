@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		Unfetchable
 USES=		gmake tcl tar:tgz
 USE_XORG=	x11 xinerama
 MAKE_ARGS=	PREFIX="${PREFIX}" \

@@ -12,6 +12,7 @@ DISTNAME=	cwtex-ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five Chinese Big5 TrueType fonts made by cwTeX
 
+BROKEN=		Unfetchable
 USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/texmf/fonts/truetype/cwTeX

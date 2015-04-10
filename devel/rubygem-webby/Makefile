@@ -24,10 +24,4 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/webby bin/webby-gen
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 2.1
-BROKEN=		Does not build with Ruby 2.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

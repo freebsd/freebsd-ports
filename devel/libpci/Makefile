@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libpci
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
+MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
+		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet
 DISTNAME=	pciutils-${PORTVERSION}
 
@@ -19,7 +20,7 @@ ALL_TARGET=	lib/libpci.a
 CPPFLAGS+=	-fPIC
 MAKE_ENV=	LANG=C
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake tar:xz
 
 PLIST_FILES=	${LIBPCI_FILES} \
 		lib/libpci.so

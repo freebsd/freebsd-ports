@@ -29,15 +29,10 @@ SUB_FILES=	doom3-demo
 SUB_LIST=	DOOMDIR="${DOOMDIR}"
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
-.include <bsd.port.options.mk>
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_USE_OFF=	linux_apps=dri
 
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-USE_LINUX_APPS+=dri
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

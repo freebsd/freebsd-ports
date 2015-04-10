@@ -14,8 +14,7 @@ COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
-USES=		gmake perl5
-USE_BZIP2=	yes
+USES=		gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl

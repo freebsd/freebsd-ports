@@ -13,6 +13,8 @@ COMMENT=	Medical image viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
 
 USES=		desktop-file-utils gettext libtool pkgconfig

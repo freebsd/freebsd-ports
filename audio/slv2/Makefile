@@ -16,16 +16,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		librdf.so:${PORTSDIR}/textproc/redland
 
-USES=		pkgconfig python:build tar:bzip2
+USES=		pkgconfig tar:bzip2 waf
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-WAF_VERBOSE=	--verbose
+MAKE_ARGS=	--verbose
 .endif
-
-WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -37,19 +33,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#define _XOPEN_SOURCE .*||' ${WRKSRC}/src/plugin.c
 
-do-configure:
-	(cd ${WRKSRC} && ${PYTHON_CMD} \
-		waf ${WAF_VERBOSE} --prefix=${PREFIX} configure)
-
-do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		waf ${WAF_VERBOSE} ${WAF_JOBS} build)
-
-do-install:
-	(cd ${WRKSRC} && ${PYTHON_CMD} \
-		waf ${WAF_VERBOSE} --destdir=${STAGEDIR} install)
+post-install:
 .for file in lv2_inspect lv2_jack_host lv2_list lv2_simple_jack_host
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

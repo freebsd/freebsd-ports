@@ -17,6 +17,7 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console CJK Environment
 
+BROKEN=		Unfetchable
 LICENSE=	GPLv2
 
 USES=		tar:tgz

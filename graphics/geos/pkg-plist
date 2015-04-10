@@ -388,3 +388,4 @@ lib/libgeos_c.so.1.8.2
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/geos.so
+@dir lib/geos

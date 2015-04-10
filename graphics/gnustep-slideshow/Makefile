@@ -13,15 +13,10 @@ COMMENT=	SlideShow Viewer
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	SlideShow:${SLIDESHOWKIT_PORT}
+USES=		tar:bzip2 gnustep
+USE_GNUSTEP=	back build
+LIB_DEPENDS=	libSlideShow.so:${PORTSDIR}/graphics/gnustep-slideshowkit
 
 OBJCFLAGS+=	-Dsel_eq=sel_isEqual
-
-SLIDESHOWKIT_PORT?=	graphics/gnustep-slideshowkit
 
 .include <bsd.port.mk>

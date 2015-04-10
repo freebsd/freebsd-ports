@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pciutils
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
+MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
+		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +20,7 @@ ALL_TARGET=	lspci lspci.8 setpci setpci.8
 CPPFLAGS+=	-fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lpci
 MAKE_ENV=	LANG=C
-USES=		gmake
+USES=		gmake tar:xz
 
 PLIST_FILES=	bin/lspci \
 		bin/setpci \

@@ -1,64 +1,66 @@
-# Created by: Evan Sarmiento <esarmiento@wayfair.com>
 # $FreeBSD$
 
-PORTNAME=	xen-tools
-PORTVERSION=	4.2.2
-PORTREVISION=	0
-CATEGORIES=	sysutils
-DISTNAME=	xen-${PORTVERSION}
+PORTNAME=	xen
+PKGNAMESUFFIX=	-tools
+PORTVERSION=	4.5.0
+PORTREVISION=	1
+CATEGORIES=	sysutils emulators
+MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
+		http://code.coreboot.org/p/seabios/downloads/get/:seabios
 
-MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Xen tools within FreeBSD domU
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Xen management tool, based on LibXenlight
 
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
-DISTFILES=	xen-${PORTVERSION}.tar.gz
+LICENSE=	GPLv2 LGPL3
+LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/lib/libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		${LOCALBASE}/lib/libyajl.so:${PORTSDIR}/devel/yajl
+OPTIONS_DEFINE=	DOCS
 
-USES=		gmake python:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
-USE_PERL5=	build
+LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386"
+
+CONFIGURE_ARGS=	--disable-xen
+
+SEABIOSVERSION=	1.8.1
+DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		seabios-${SEABIOSVERSION}.tar.gz:seabios
+
+WRKSRC=		${WRKDIR}/xen-${PORTVERSION}
+
+USES=		gmake perl5 python shebangfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD} PYTHON_PATH=${PYTHON_CMD}
-CONFIGURE_ENV+=	APPEND_LIB="${LOCALBASE}/lib"
-USE_LDCONFIG=	yes
+CONFIGURE_ENV=	HOSTCC="${CC}" CC="${CC}" \
+		ac_cv_path_BASH=${TRUE} \
+		ac_cv_path_XGETTEXT=${TRUE} \
+		glib_CFLAGS=" " glib_LIBS=" "
+MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}"
+SHEBANG_FILES=	tools/misc/xencov_split \
+		tools/misc/xen-ringwatch
+USE_GCC=	yes
+ALL_TARGET=	tools docs
+INSTALL_TARGET=	install-tools install-docs
 
-ONLY_FOR_ARCHS=		amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
+.include <bsd.port.options.mk>
 
-PLIST_FILES=	lib/libxenstore.so.3.0 \
-		bin/xen-detect \
-		bin/xenstore \
-		bin/xenstore-control \
-		bin/xenstore-chmod \
-		bin/xenstore-exists \
-		bin/xenstore-list \
-		bin/xenstore-ls \
-		bin/xenstore-read \
-		bin/xenstore-rm \
-		bin/xenstore-write
+.if ${OPSYS} != FreeBSD
+IGNORE=		Only supported on FreeBSD
+.endif
+
+post-extract:
+	${MV} ${WRKDIR}/seabios-${SEABIOSVERSION} ${WRKSRC}/tools/firmware/seabios-dir
 
 post-patch:
-	${REINPLACE_CMD} -e 's;86|x86_64;86no|x86_64no;' \
-		${WRKSRC}/tools/configure
-
-do-build:
-	cd ${WRKSRC}/tools && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C include
-	cd ${WRKSRC}/tools/misc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} xen-detect
-	cd ${WRKSRC}/tools/xenstore && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clients
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/xen-detect ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/xenstore ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/xenstore-control ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/libxenstore.so.3.0 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-chmod
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-exists
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-list
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-ls
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-read
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-rm
-	${LN} -sf ${PREFIX}/bin/xenstore ${STAGEDIR}${PREFIX}/bin/xenstore-write
+	@${REINPLACE_CMD} -e "s,/var/lib,/var/db,g" \
+		${WRKSRC}/tools/Makefile \
+		${WRKSRC}/tools/libxc/include/xenguest.h \
+		${WRKSRC}/tools/libxl/libxl_dom.c \
+		${WRKSRC}/tools/libxl/libxl_dm.c \
+		${WRKSRC}/tools/qemu-xen-traditional/i386-dm/helper2.c \
+		${WRKSRC}/docs/man/*
 
 .include <bsd.port.mk>
+RUN_DEPENDS:=	${RUN_DEPENDS:N*gcc*}

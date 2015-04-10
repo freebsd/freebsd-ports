@@ -6,6 +6,6 @@
  @LINK_BOX_FALSE@	fi
 -@LINK_BOX_FALSE@	ln -s $(DESTDIR)$(bindir)/tbdcmd $(DESTDIR)$(bindir)/tbdchat
 +@LINK_BOX_FALSE@	ln -s tbdcmd $(DESTDIR)$(bindir)/tbdchat
-
+ 
  @LINK_BOX_FALSE@uninstall-hook:
  @LINK_BOX_FALSE@	rm $(DESTDIR)$(bindir)/tbdchat

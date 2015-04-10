@@ -420,6 +420,7 @@ include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
 include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
+include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
@@ -1268,6 +1269,7 @@ lib/wine/fakedlls/extrac32.exe
 lib/wine/fakedlls/faultrep.dll
 lib/wine/fakedlls/findstr.exe
 lib/wine/fakedlls/fltlib.dll
+%%COMPHOLIO%%lib/wine/fakedlls/fltmgr.sys
 lib/wine/fakedlls/fntcache.dll
 lib/wine/fakedlls/fontsub.dll
 lib/wine/fakedlls/fusion.dll
@@ -1682,6 +1684,7 @@ lib/wine/fakedlls/xpssvcs.dll
 lib/wine/faultrep.dll.so
 lib/wine/findstr.exe.so
 lib/wine/fltlib.dll.so
+%%COMPHOLIO%%lib/wine/fltmgr.sys.so
 lib/wine/fntcache.dll.so
 lib/wine/fontsub.dll.so
 lib/wine/fusion.dll.so
@@ -1815,6 +1818,7 @@ lib/wine/libmsdmo.def
 lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
+lib/wine/libmspatcha.def
 lib/wine/libmsvcr100.def
 lib/wine/libmsvcr110.def
 lib/wine/libmsvcr120.def

@@ -1,7 +1,7 @@
 bin/qjail
 bin/qjail.vnet.be
 bin/qjail.vnet.ng
-etc/qjail.portsnap.conf
+@sample etc/qjail.portsnap.conf.sample
 etc/rc.d/qjail.bootime
 man/man8/qjail.8.gz
 man/man8/qjail-intro.8.gz

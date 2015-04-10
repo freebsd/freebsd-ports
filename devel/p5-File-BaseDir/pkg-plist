@@ -1,2 +1,6 @@
 %%SITE_PERL%%/File/BaseDir.pm
+%%SITE_PERL%%/File/IconTheme.pm
+%%SITE_PERL%%/File/UserDirs.pm
 %%PERL5_MAN3%%/File::BaseDir.3.gz
+%%PERL5_MAN3%%/File::IconTheme.3.gz
+%%PERL5_MAN3%%/File::UserDirs.3.gz

@@ -16,6 +16,11 @@ USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr
 
+OPTIONS_DEFINE= SSL
+SSL_DESC= 	Build with OpenSSL support (non-crypt()ish MD5 hash)
+SSL_CONFIGURE_WITH= openssl
+
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

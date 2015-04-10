@@ -17,7 +17,9 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		python:2,build
+CPE_VERSION=	${PORTVERSION:C/^0\.//}
+
+USES=		cpe python:2,build
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release

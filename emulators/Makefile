@@ -164,8 +164,8 @@
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xen
+    SUBDIR += xen-kernel
     SUBDIR += xhomer
-    SUBDIR += xl
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yabause

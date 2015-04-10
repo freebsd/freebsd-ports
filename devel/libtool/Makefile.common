@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 PORTREVISION?=	0 # Leave this zero. Set in Makefile instead.
 CATEGORIES=	devel
 MASTER_SITES=	GNU/libtool
@@ -9,4 +9,7 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	autotools@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../libtool/distinfo
-USES=		tar:xz
+USES=		cpe gmake tar:xz
+
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	libtool

@@ -4,7 +4,7 @@
 PORTNAME=	taglib-extras
 PORTVERSION=	1.0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.kollide.net/~jefferai/
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra taglib features for Amarok 2.2

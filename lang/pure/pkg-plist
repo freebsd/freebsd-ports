@@ -6,7 +6,6 @@ lib/libpure.so.8.0
 lib/pure/array.pure
 lib/pure/avltrees.pure
 lib/pure/dict.pure
-lib/pure/docs
 lib/pure/enum.pure
 lib/pure/faustui.pure
 lib/pure/getopt.pure

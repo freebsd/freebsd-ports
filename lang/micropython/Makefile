@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micropython
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	lang python
 
 MAINTAINER=	mva@FreeBSD.org
@@ -11,29 +11,39 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USES=		gmake pkgconfig python:build readline shebangfix
+USES=		gmake pkgconfig python:3,build readline shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	micropython
 GH_PROJECT=	micropython
-GH_TAGNAME=	v1.3.1
-GH_COMMIT=	0f6d298
+GH_TAGNAME=	v1.4
 
 PLIST_FILES=	bin/micropython
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.4/unix
 
 SHEBANG_FILES=	../py/py-version.sh
 bash_CMD?=	/bin/sh
 MAKE_ARGS+=	V=1
 MAKE_ENV+=	PYTHON=${PYTHON_CMD} CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000024
+# Our default GCC 4.2.1 build can't handle some quirks correctly.
+# Use an up to date version for FreeBSD releases, which use GCC
+# as default compiler
+USE_GCC=	yes
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wno-error=cpp||;s|-Werror||;/^COPT =/d' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-Werror||;/^COPT =/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|AS =|AS ?=|;s|LD =|LD ?=|; \
 		s|CC =|CC ?=|;s|PYTHON =|PYTHON ?=|' \
 		${WRKSRC}/../py/mkenv.mk
+	@${REINPLACE_CMD} -e 's|libc\.so\.6|libc\.so\.7|;' \
+		${WRKSRC}/../tests/unix/ffi_callback.py \
+		${WRKSRC}/../tests/unix/ffi_float.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/micropython ${STAGEDIR}${PREFIX}/bin
@@ -42,4 +52,4 @@ regression-test: build
 	${RM} ${WRKSRC}/../tests/basics/memoryerror.py
 	cd ${WRKSRC} && ${MAKE_CMD} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

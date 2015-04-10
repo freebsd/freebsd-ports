@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpc
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 

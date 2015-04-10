@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.39
+DISTVERSION=	1.7.40
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -131,7 +131,7 @@ CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 post-patch:
 	${REINPLACE_CMD} 's|/wine|/wine64|g' ${WRKSRC}/tools/wineapploader.in
 
-.else 
+.else
 PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
@@ -146,7 +146,7 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
 
-pre-configure:
+post-extract:
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 .endif

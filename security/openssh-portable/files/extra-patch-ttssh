@@ -1,0 +1,47 @@
+Workaround TTSSH client crash with hostkeys-00@openssh.com messages in
+OpenSSH 6.8p1.
+
+  http://en.sourceforge.jp/ticket/browse.php?group_id=1412&tid=35010
+  http://en.sourceforge.jp/projects/ttssh2/scm/svn/commits/5829
+
+--- compat.c.orig	2015-03-17 00:49:20.000000000 -0500
++++ compat.c	2015-04-09 15:13:35.061239000 -0500
+@@ -167,6 +167,17 @@ compat_datafellows(const char *version)
+ 					SSH_BUG_SCANNER },
+ 		{ "Probe-*",
+ 					SSH_BUG_PROBE },
++		{ "TTSSH/1.5.*,"
++		  "TeraTerm SSH*,"
++		  "TTSSH/2.1*,"
++		  "TTSSH/2.2*,"
++		  "TTSSH/2.3*,"
++		  "TTSSH/2.4*,"
++		  "TTSSH/2.5*,"
++		  "TTSSH/2.6*,"
++		  "TTSSH/2.70*,"
++		  "TTSSH/2.71*,"
++		  "TTSSH/2.72*",	SSH_BUG_HOSTKEYS },
+ 		{ NULL,			0 }
+ 	};
+ 
+--- compat.h.orig	2015-04-08 21:02:42.865971000 -0500
++++ compat.h	2015-04-08 21:04:06.865029000 -0500
+@@ -60,6 +60,7 @@
+ #define SSH_NEW_OPENSSH		0x04000000
+ #define SSH_BUG_DYNAMIC_RPORT	0x08000000
+ #define SSH_BUG_CURVE25519PAD	0x10000000
++#define SSH_BUG_HOSTKEYS	0x20000000
+ 
+ void     enable_compat13(void);
+ void     enable_compat20(void);
+--- sshd.c.orig	2015-04-08 21:01:02.944936000 -0500
++++ sshd.c	2015-04-08 21:03:55.086137000 -0500
+@@ -2321,7 +2321,7 @@
+ 	    options.client_alive_count_max);
+ 
+ 	/* Try to send all our hostkeys to the client */
+-	if (compat20)
++	if (compat20 && (datafellows & SSH_BUG_HOSTKEYS) == 0)
+ 		notify_hostkeys(active_state);
+ 
+ 	/* Start session. */

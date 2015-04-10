@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating bass tablature
 
+BROKEN=		Ftp time out
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/btc

@@ -4,7 +4,7 @@ etc/periodic/daily/490.status-pkg-changes
 etc/periodic/security/410.pkg-audit
 etc/periodic/security/460.pkg-checksum
 etc/periodic/weekly/400.status-pkg
-etc/pkg.conf.sample
+@sample etc/pkg.conf.sample
 include/pkg.h
 lib/libpkg.a
 lib/libpkg.so

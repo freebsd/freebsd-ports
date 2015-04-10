@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudio
 PORTVERSION=	18.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -12,6 +12,7 @@ MAINTAINER=	koalative@gmail.com
 COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gmake dos2unix zip
 GNU_CONFIGURE=	yes
@@ -25,13 +26,6 @@ PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SHLIB_VERSION=	0
 
 PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	README.txt index.html
-
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*.html *.txt *.pdf
 
 OPTIONS_DEFINE=		DOCS PATEST
 OPTIONS_DEFAULT=	PATEST
@@ -54,14 +48,12 @@ pre-configure:
 post-install:
 	@${LN} -sf libportaudio.so \
 		${STAGEDIR}${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
-
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libportaudio.so
 .if ${PORT_OPTIONS:MPATEST}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin/
 .endif
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "README.txt index.html \
+		docs/*.html docs/*.txt docs/*.pdf" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

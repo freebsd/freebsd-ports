@@ -349,6 +349,7 @@ NOTIFY_DESC?=		Desktop notification support
 NSS_DESC?=		SSL/TLS support via NSS
 NTLM_DESC?=		NTLM authentication support
 NUMPY_DESC?=		NumPy mathematical computing support
+NVIDIA_GL_DESC?=	libGL support via nvidia-driver
 OBJC_DESC?=		Objective-C language support
 ODBC_DESC?=		ODBC database backend
 ODF_DESC?=		Open Document Format (ODF) file support

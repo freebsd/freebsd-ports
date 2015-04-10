@@ -5,15 +5,15 @@ PORTNAME=	MuSE
 PORTVERSION=	0.9.2
 PORTREVISION=	14
 CATEGORIES=	audio
-MASTER_SITES=	http://files.dyne.org/.xsend.php?file=muse/releases/
+MASTER_SITES=	https://files.dyne.org/muse/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11
@@ -31,13 +31,11 @@ PLIST_FILES=	bin/muse man/man1/muse.1.gz
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
 .endfor
 
-X11_USE=		GNOME=gtk20
-X11_CONFIGURE_OFF=	--without-x --with-rubik
-
 LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 LAME_CONFIGURE_ENV=	ac_cv_header_lame_lame_h=no
-
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+X11_USE=		GNOME=gtk20
+X11_CONFIGURE_OFF=	--without-x --with-rubik
 
 .include <bsd.port.options.mk>
 
@@ -51,6 +49,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

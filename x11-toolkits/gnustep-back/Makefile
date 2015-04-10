@@ -4,9 +4,7 @@ PORTNAME=	gnustep-back
 PORTVERSION=	0.24.0
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits gnustep
-MASTER_SITES=	${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	core
-PKGNAMESUFFIX?=	${BACK_SUFFIX}${PKGNAMESUFFIX2}
+MASTER_SITES=	GNUSTEP/core
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep GUI backend
@@ -32,24 +30,19 @@ CONFIGURE_ARGS=	--with-tiff-library=${LOCALBASE}/lib \
 		--enable-graphics=cairo \
 		--disable-glitz
 
-USES=			pkgconfig
-USE_GNUSTEP=		yes
-USE_GNUSTEP_GUI=	yes
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_XORG=		xft xrender xmu xext x11 xcursor xfixes xmu 
-USE_GL=			yes
+USES=		gnustep pkgconfig
+USE_GNUSTEP=	base gui build
+USE_XORG=	xft xrender xmu xext x11 xcursor xfixes xmu
+USE_GL=		yes
+USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
-MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${LOCALBASE}/include"
-MAKE_ENV+=		GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
-BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
-BREAKS_IF_PEDANTIC=	yes
+MAKE_FLAGS+=	OPTFLAG="${CFLAGS} -I${LOCALBASE}/include"
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
+BACKVERSION=	${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
-CFLAGS+=		-I${LOCALBASE}/include/freetype2
-PLIST_SUB+=		BACK=back-${BACKVERSION}
-
-PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
+CFLAGS+=	-I${LOCALBASE}/include/freetype2
+PLIST_SUB+=	BACK=back-${BACKVERSION}
+PLIST_SUB+=	BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 pre-configure:
 .for file in config.guess config.sub install-sh

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	embb
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -13,8 +13,7 @@ LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	siemens
-GH_COMMIT=	6d3c6d0
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	5abeb06
 
 USES=		cmake:outsource compiler:c11
 

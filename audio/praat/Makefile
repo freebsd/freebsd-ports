@@ -12,6 +12,7 @@ COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 DOS2UNIX_REGEX=	.*Makefile
 USES=		dos2unix iconv motif pkgconfig
 USE_GNOME=	gtk20

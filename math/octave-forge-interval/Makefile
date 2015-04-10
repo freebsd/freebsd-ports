@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-interval
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -27,4 +27,10 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+BROKEN=		Doesn't build on FreeBSD 9 or older
+.endif
+
+.include <bsd.port.post.mk>

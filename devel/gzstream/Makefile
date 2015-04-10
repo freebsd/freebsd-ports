@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Provides zlib functionality in an iostream
 
-BROKEN=		No public distfiles
-
 LICENSE=	LGPL21
 
 USE_LDCONFIG=	yes

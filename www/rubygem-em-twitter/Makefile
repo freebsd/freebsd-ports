@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	em-twitter
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

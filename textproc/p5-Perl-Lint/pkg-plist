@@ -142,6 +142,7 @@
 %%SITE_PERL%%/Perl/Lint/Policy/Variables/RequireLexicalLoopIterators.pm
 %%SITE_PERL%%/Perl/Lint/Policy/Variables/RequireLocalizedPunctuationVars.pm
 %%SITE_PERL%%/Perl/Lint/Policy/Variables/RequireNegativeIndices.pm
+%%SITE_PERL%%/Test/Perl/Lint.pm
 %%PERL5_MAN3%%/Perl::Lint.3.gz
 %%PERL5_MAN3%%/Perl::Lint::Constants::Kind.3.gz
 %%PERL5_MAN3%%/Perl::Lint::Constants::Type.3.gz
@@ -286,3 +287,4 @@
 %%PERL5_MAN3%%/Perl::Lint::Policy::Variables::RequireLexicalLoopIterators.3.gz
 %%PERL5_MAN3%%/Perl::Lint::Policy::Variables::RequireLocalizedPunctuationVars.3.gz
 %%PERL5_MAN3%%/Perl::Lint::Policy::Variables::RequireNegativeIndices.3.gz
+%%PERL5_MAN3%%/Test::Perl::Lint.3.gz

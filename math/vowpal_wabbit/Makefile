@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vowpal_wabbit
-PORTVERSION=	7.9
+PORTVERSION=	7.10
 CATEGORIES=	math
 MASTER_SITES=	http://github.com/JohnLangford/vowpal_wabbit/archive/
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX}

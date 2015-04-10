@@ -6,9 +6,9 @@ appending of data to ISO9660 volumes residing on random-access media such as
 DVD+RW, DVD-RAM, plain files, hard disk partitions.  In the course of
 development general purpose DVD recording support was implemented, and as of
 now growisofs supports not only random-access media, but even mastering of
-multi-session DVD media such as DVD+R and DVD-R/-RW. In addition growisofs
+multi-session DVD media such as DVD+R and DVD-R/-RW.  In addition growisofs
 supports first-/single-session recording of arbitrary pre-mastered image
-(formatted as UDF, ISO9660 or any other file system, if formatted at all) to
-all supported DVD media types.
- 
+(formatted as UDF, ISO9660, or any other file system, if formatted at all)
+to all supported DVD media types.
+
 WWW: http://fy.chalmers.se/~appro/linux/DVD+RW/

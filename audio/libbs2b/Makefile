@@ -7,8 +7,10 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 
-MAINTAINER=	liangtai.s4@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
+
+BROKEN=		Unfetchable
 
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libogg.so:${PORTSDIR}/audio/libogg \

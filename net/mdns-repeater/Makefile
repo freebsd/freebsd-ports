@@ -3,6 +3,7 @@
 
 PORTNAME=	mdns-repeater
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -10,6 +11,8 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multicast DNS repeater to re-broadcast mDNS packets across interfaces
 
 LICENSE=	GPLv2
+
+USE_RC_SUBR=	mdns-repeater
 
 CFLAGS+=	-DHGVERSION="\"${PORTVERSION}\""
 

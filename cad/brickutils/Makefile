@@ -19,6 +19,8 @@ COMMENT=	Utility for building models with LEGO
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYXML}

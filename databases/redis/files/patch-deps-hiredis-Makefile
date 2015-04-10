@@ -1,5 +1,5 @@
---- deps/hiredis/Makefile.orig	2014-06-27 05:00:12.000000000 +0400
-+++ deps/hiredis/Makefile	2014-06-27 05:02:00.000000000 +0400
+--- deps/hiredis/Makefile.orig	2014-07-29 12:17:48.000000000 +0400
++++ deps/hiredis/Makefile	2014-09-10 02:32:25.000000000 +0400
 @@ -25,10 +25,10 @@
  
  # Fallback to gcc when $CC is not in $PATH.

@@ -1,6 +1,15 @@
---- src/mkinclud.gcc.orig	2011-07-20 00:00:00.000000000 +0200
-+++ src/mkinclud.gcc	2011-11-20 18:44:14.000000000 +0100
-@@ -48,7 +48,7 @@
+--- src/mkinclud.gcc.orig	2015-03-08 23:00:00 UTC
++++ src/mkinclud.gcc
+@@ -48,7 +48,7 @@ GFLAGS= -ansi -Waggregate-return -Winlin
+ 
+ GCC3FLAGS=-Wdeclaration-after-statement -Wno-pragmas
+ # -Wunreachable-code deprecated
+-GCC4FLAGS=$(GCC3FLAGS) -Wno-pointer-sign -Wtype-limits
++GCC4FLAGS=$(GCC3FLAGS) -Wno-pointer-sign
+ 
+ # Warning options for newer gcc versions:
+ # (additional grep for the sake of MSys sed failing on CRLF from MinGW gcc)
+@@ -71,7 +71,7 @@ PROTOFLAGS=	-Wmissing-prototypes -Wretur
  # compilation mode options (optimisation and debug)
  
  # Optimization flag/level:

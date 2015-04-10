@@ -12,6 +12,7 @@ COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 USES=		desthack uidfix
 
+BROKEN=		Unfetchable
 USE_RC_SUBR=	totd
 GNU_CONFIGURE=	yes
 

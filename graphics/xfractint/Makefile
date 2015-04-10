@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.fractint.org/ftp/current/linux/	\
 MAINTAINER=	onemda@gmail.com
 COMMENT=	The Unix port of fractint
 
+BROKEN=		No public distfiles
+
 USES=		gmake
 USE_XORG=	x11 xft
 

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.7p1
-PORTREVISION=	5
+DISTVERSION=	6.8p1
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -27,13 +27,10 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 			--without-zlib-version-check --with-ssl-engine
 ETCOLD=			${PREFIX}/etc
 
-SUDO?=		# empty
-MAKE_ENV+=	SUDO="${SUDO}"
-
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
-			OVERWRITE_BASE SCTP AES_THREADED LDNS NONECIPHER
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN LDNS NONECIPHER
+			OVERWRITE_BASE SCTP LDNS NONECIPHER
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN LDNS
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
@@ -47,11 +44,11 @@ OVERWRITE_BASE_DESC=	EOL, No longer supported.
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
-AES_THREADED_DESC=	Threaded AES-CTR
 NONECIPHER_DESC=	NONE Cipher support
 
 OPTIONS_SUB=		yes
 
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-ttssh
 TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
 LDNS_CONFIGURE_WITH=	ldns
@@ -61,18 +58,17 @@ LDNS_CFLAGS=		-I${LOCALBASE}/include
 LDNS_CONFIGURE_ON=	--with-ldflags='-L${LOCALBASE}/lib'
 
 # http://www.psc.edu/index.php/hpn-ssh
-HPN_EXTRA_PATCHES=	${FILESDIR}/extra-patch-hpn-window-size
 HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
-AES_THREADED_CONFIGURE_WITH=	aes-threaded
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		8.2
+X509_VERSION=		8.3
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	${PORTNAME}-6.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-6.8p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
-SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
+# and https://bugzilla.mindrot.org/show_bug.cgi?id=1604
+SCTP_PATCHFILES=	${PORTNAME}-6.8p1-sctp-2573.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
@@ -93,19 +89,15 @@ PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gs
 EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 .endif
 
-# http://www.psc.edu/index.php/hpn-ssh
-.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
+# http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
+.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v5
 HPN_DISTVERSION=	6.7p1
 #PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
 #PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
-PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-build-options
-# Remove HPN if only AES requested
-.  if !${PORT_OPTIONS:MHPN}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-no-hpn
-.  endif
+#PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn:-p2
 .endif
 
 # Must add this patch after HPN due to conflicts
@@ -133,7 +125,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
 
 .if ${PORT_OPTIONS:MX509}
-.  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
+.  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		X509 patch and HPN patch do not apply cleanly together
 .  endif
 
@@ -146,6 +138,10 @@ BROKEN=		X509 patch incompatible with KERB_GSSAPI patch
 .  endif
 
 .endif
+
+.  if ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		Does not apply to 6.8
+.  endif
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && ${PORT_OPTIONS:MKERB_GSSAPI}
 BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base Heimdal currently
@@ -191,6 +187,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
 CONFIGURE_ARGS+=	--with-libs='${CONFIGURE_LIBS}'
 .endif
 
+CONFIGURE_ARGS+=	--with-xauth=${LOCALBASE}/bin/xauth
+
 RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
 
@@ -199,9 +197,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|install: \(.*\) host-key check-config|install: \1|g' \
 	    ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
-			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \
-			${WRKSRC}/ssh_config.5
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
 	@${REINPLACE_CMD} \
@@ -218,14 +213,17 @@ post-install:
 	    ${STAGEDIR}${ETCDIR}//ssh_config.sample
 	${MV} ${STAGEDIR}${ETCDIR}/sshd_config \
 	    ${STAGEDIR}${ETCDIR}/sshd_config.sample
-.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
+.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HPN-README ${STAGEDIR}${DOCSDIR}
 .endif
 
-test:	build
-	(cd ${WRKSRC}/regress && ${SETENV} OBJ=${WRKDIR} ${MAKE_ENV} TEST_SHELL=/bin/sh \
+test: build
+	cd ${WRKSRC} && ${SETENV} -i \
+		OBJ=${WRKDIR} ${MAKE_ENV} \
+		TEST_SHELL=${SH} \
+		SUDO="${SUDO}" \
 		PATH=${WRKSRC}:${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} tests
 
 .include <bsd.port.post.mk>

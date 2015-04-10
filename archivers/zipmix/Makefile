@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 
+BROKEN=		Checksum and size mismatch
+
 USES=		dos2unix zip
 NO_WRKSUBDIR=	yes
 

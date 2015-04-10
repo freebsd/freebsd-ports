@@ -14,6 +14,9 @@ COMMENT=	Java components implementing an advanced HTTP client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES+=	cpe
+CPE_PRODUCT=	commons-httpclient
+CPE_VENDOR=	apache
 RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore \
 		${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec

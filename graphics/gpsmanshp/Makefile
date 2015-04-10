@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
 LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib \
 		libtcl${TCLVERSION:S/.//}.so:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}

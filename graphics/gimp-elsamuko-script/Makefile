@@ -15,6 +15,8 @@ COMMENT=	Gimp scripts by elsamuko
 
 LICENSE=	GPLv3
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 
 OPTIONS_DEFINE=	DOCS

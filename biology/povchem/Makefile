@@ -17,6 +17,7 @@ COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
+BROKEN=		Unfetchable
 NO_WRKSUBDIR=	yes
 
 USES=		dos2unix

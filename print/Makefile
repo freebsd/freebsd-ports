@@ -211,7 +211,7 @@
     SUBDIR += rubygem-colortools
     SUBDIR += rubygem-pdf-core
     SUBDIR += rubygem-pdf-reader
-    SUBDIR += rubygem-pdfwriter
+    SUBDIR += rubygem-pdf-writer
     SUBDIR += rubygem-prawn
     SUBDIR += rubygem-prawn-core
     SUBDIR += rubygem-prawn-flexible-table

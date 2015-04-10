@@ -15,6 +15,7 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
+BROKEN=		Fails to fetch
 USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	cd2mp3

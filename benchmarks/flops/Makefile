@@ -11,6 +11,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Floating point benchmark to give your MFLOPS rating
 
+BROKEN=		Unfetchable
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes

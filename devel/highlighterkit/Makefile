@@ -10,11 +10,8 @@ DISTNAME=	HighlighterKit-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework needed by Project Manager
 
-USES=	tar:bzip2
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+USES=	tar:bzip2 gnustep
+USE_GNUSTEP=	back build
+USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 .include <bsd.port.mk>

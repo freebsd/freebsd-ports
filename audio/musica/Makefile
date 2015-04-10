@@ -12,6 +12,7 @@ COMMENT=	GTK based midi player
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
 USE_GNOME=	gtk12
 
 GNU_CONFIGURE=	yes

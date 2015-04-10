@@ -11,6 +11,8 @@ DISTNAME=	belote
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un jeu de belote coinchée contre l'ordinateur ou en réseau
 
+BROKEN=		Checksum and size mismatch
+
 USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

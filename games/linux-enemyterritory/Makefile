@@ -23,15 +23,11 @@ ETDIR=		${PREFIX}/lib/${PORTNAME}
 PATCH_260B_DIR=	Enemy Territory 2.60b
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
+
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_USE_OFF=	linux_apps=dri
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-USE_LINUX_APPS+=	dri
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

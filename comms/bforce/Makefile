@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://fido.kuzbass.ru/pub/fileecho/DALLAS.SOFT/
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
+BROKEN=		Unfetchable
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 

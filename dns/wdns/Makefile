@@ -2,14 +2,15 @@
 
 PORTNAME=	wdns
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/wdns/ \
-		LOCAL/truckman/farsight
+MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Low-level DNS library
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
