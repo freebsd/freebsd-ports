@@ -12,6 +12,7 @@ MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Frontend and .dmod installer for GNU FreeDink
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake shared-mime-info
+USE_CXXSTD=	c++11
 USE_WX=		3.0
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
