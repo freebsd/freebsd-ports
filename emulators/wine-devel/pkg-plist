@@ -1269,6 +1269,7 @@ lib/wine/fakedlls/extrac32.exe
 lib/wine/fakedlls/faultrep.dll
 lib/wine/fakedlls/findstr.exe
 lib/wine/fakedlls/fltlib.dll
+%%COMPHOLIO%%lib/wine/fakedlls/fltmgr.sys
 lib/wine/fakedlls/fntcache.dll
 lib/wine/fakedlls/fontsub.dll
 lib/wine/fakedlls/fusion.dll
@@ -1683,6 +1684,7 @@ lib/wine/fakedlls/xpssvcs.dll
 lib/wine/faultrep.dll.so
 lib/wine/findstr.exe.so
 lib/wine/fltlib.dll.so
+%%COMPHOLIO%%lib/wine/fltmgr.sys.so
 lib/wine/fntcache.dll.so
 lib/wine/fontsub.dll.so
 lib/wine/fusion.dll.so

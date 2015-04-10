@@ -53,7 +53,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDATA=	l_intl.nls wine.inf
 
 OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFAULT=X11 COMPHOLIO
 OPTIONS_SUB=	yes
 
 COMPHOLIO_DESC=	Include the Compholio patchset, needed for Pipelight support
@@ -146,7 +146,7 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
 
-pre-configure:
+post-extract:
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 .endif
