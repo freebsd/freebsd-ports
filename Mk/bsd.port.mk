@@ -513,7 +513,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # BUNDLE_LIBS	  Teach pkg(8) to not automatically add all shared libraries
 # 				  installed by a port as a "provided" shared libraries provided
 # 				  for other packages (prevent them from being exposed in the
-# 				  solver). This has to be used for ports that bundles third
+# 				  solver). This has to be used for ports that bundle third
 # 				  party libraries for internal usage.
 # MASTERDIR		- Where the port finds patches, package files, etc.  Define
 #				  this is you have two or more ports that share most of the
