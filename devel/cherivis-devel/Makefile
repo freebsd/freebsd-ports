@@ -10,6 +10,7 @@ COMMENT=	Visualisation tool for CHERI / BERI streamtraces
 
 LICENSE=	MIT
 
+USES=		gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	CheriVis
@@ -21,10 +22,7 @@ BUILD_DEPENDS+=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 LIB_DEPENDS+=	libdispatch.so:${PORTSDIR}/devel/libdispatch
 
 MAKE_FLAGS+=		LLVM_CONFIG=llvm-config${LLVM_VERSION}
-USE_GNUSTEP=		yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+USE_GNUSTEP=		back build
+USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 .include <bsd.port.mk>
