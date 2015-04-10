@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.7
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
@@ -11,17 +11,14 @@ COMMENT=	PHP5-Extension for Redis
 
 LICENSE=	PHP301
 
-GITVERSION=	0f0661e
-
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 DEFAULT_VERSIONS+=php=5
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	nicolasff
+GH_ACCOUNT=	phpredis
 GH_PROJECT=	phpredis
-GH_COMMIT=	8dac89e
 
 PHP_MODNAME=	redis
 
