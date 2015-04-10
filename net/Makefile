@@ -392,6 +392,7 @@
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += nakenchat
+    SUBDIR += nanomsg
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
@@ -860,8 +861,8 @@
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
     SUBDIR += php55-xmlrpc
-    SUBDIR += php56-ldap  
-    SUBDIR += php56-soap  
+    SUBDIR += php56-ldap
+    SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
