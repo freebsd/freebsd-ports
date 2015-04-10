@@ -161,6 +161,7 @@
     SUBDIR += libdnd
     SUBDIR += libexo
     SUBDIR += libfm
+    SUBDIR += libfm-extra
     SUBDIR += libgnome
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
