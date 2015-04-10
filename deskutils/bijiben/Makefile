@@ -28,4 +28,7 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+# needed for webkit
+USES+=		compiler:c++11-lib
+
 .include <bsd.port.mk>
