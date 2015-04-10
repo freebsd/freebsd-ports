@@ -10,7 +10,7 @@
 
 # Add the following line to /etc/rc.conf to enable `%%NAME%%':
 #
-#%%NAME%%_enable="YES"
+# %%NAME%%_enable="YES"
 #
 # and be sure to configure %%PREFIX%%/etc/%%NAME%%.conf
 
