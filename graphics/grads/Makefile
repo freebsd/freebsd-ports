@@ -6,15 +6,15 @@ PORTVERSION=	1.9b4
 PORTREVISION=	10
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
-		ftp://grads.iges.org/grads/:other
+		ftp://cola.gmu.edu/grads/1.9/:src \
+		ftp://grads.iges.org/grads/:other \
+		ftp://cola.gmu.edu/grads/:other
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}:src \
 		example.tar.gz:other
 EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
-
-BROKEN=		Checksum and size mismatch
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
