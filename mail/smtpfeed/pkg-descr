@@ -6,7 +6,7 @@ recipients of huge number.
 
 This delay of delivery by sendmail causes by the fact that implementation
 of SMTP delivery routine in sendmail processes all delivery in a series.
-By this reason,  when it takes long time for delivery to one recipient
+For this reason, when it takes long time for delivery to one recipient
 which is in a huge list, delivery to following recipients is greatly
 influenced.
 
