@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk-g72x
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 
@@ -12,7 +13,7 @@ LIB_DEPENDS=	libbcg729.so:${PORTSDIR}/audio/bcg729
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bcg729
-USES=		autoreconf libtool tar:bzip2
+USES=		autoreconf compiler libtool tar:bzip2
 NO_OPTIONS_SORT=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -38,7 +39,13 @@ ASTERISK13_BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk13
 ASTERISK13_RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk13
 ASTERISK13_CONFIGURE_ON=	--with-asterisk130
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=	-fblocks
+.endif
+
 post-build:
 	${STRIP_CMD} ${WRKSRC}/.libs/codec_g729.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
