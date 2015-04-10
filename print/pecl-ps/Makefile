@@ -6,11 +6,12 @@ PORTVERSION=	1.3.7
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-DISTNAME=	ps-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	alan@fromorbit.com
 COMMENT=	PHP extension for pslib to generate postscript
+
+LICENSE=	PHP202
 
 LIB_DEPENDS=	libps.so:${PORTSDIR}/print/pslib
 
