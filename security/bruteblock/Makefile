@@ -3,7 +3,7 @@
 
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 		http://mirror.amdmi3.ru/distfiles/
