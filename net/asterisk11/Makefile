@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.16.0
+PORTVERSION=	11.17.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -25,6 +25,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 USES=		bison cpe gmake
 CPE_VENDOR=	digium
 USE_RC_SUBR=	asterisk
@@ -141,6 +142,8 @@ post-patch:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts

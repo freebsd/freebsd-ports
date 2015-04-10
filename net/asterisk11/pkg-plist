@@ -265,6 +265,7 @@ lib/asterisk/modules/bridge_simple.so
 lib/asterisk/modules/bridge_softmix.so
 %%ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
 lib/asterisk/modules/chan_bridge.so
+lib/asterisk/modules/chan_mgcp.so
 %%XMPP%%lib/asterisk/modules/chan_motif.so
 lib/asterisk/modules/chan_unistim.so
 lib/asterisk/modules/codec_g722.so
@@ -305,6 +306,7 @@ lib/asterisk/modules/res_format_attr_h264.so
 lib/asterisk/modules/res_format_attr_silk.so
 lib/asterisk/modules/res_http_websocket.so
 lib/asterisk/modules/res_limit.so
+lib/asterisk/modules/res_pktccops.so
 lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_realtime.so
 %%SRTP%%lib/asterisk/modules/res_srtp.so
