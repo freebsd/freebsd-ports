@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 USES=		compiler:c++11-lib
 USE_GNOME=	gtk20
 USE_WX=		3.0
+USE_CXXSTD=	c+=11
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
