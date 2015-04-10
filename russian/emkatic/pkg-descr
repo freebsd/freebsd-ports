@@ -1,6 +1,6 @@
-Cross-platform emulator of Elektronika RPN programmable calculator
-series (MK-152, MK-152M, MK-1152, MK-161).
+eMKatic is a cross-platform emulator of Elektronika RPN programmable
+calculator series (MK-152, MK-152M, MK-1152, MK-161).
 
-Only supports cyrillic user interface.
+Only Cyrillic user interface is supported.
 
 WWW: http://sourceforge.net/projects/emkatic/
