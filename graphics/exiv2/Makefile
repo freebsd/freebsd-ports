@@ -18,6 +18,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv libtool
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
