@@ -10,6 +10,8 @@ COMMENT=	Cisco implementation of H.264 codec
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to fetch with a checksum mismatch
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 GH_PROJECT=	${PORTNAME}
