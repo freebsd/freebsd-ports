@@ -12,7 +12,7 @@ COMMENT=	GNUstep makefile package
 
 LICENSE=	GPLv3
 
-USES=		gnustep
+USES=		gnustep objc
 GNU_CONFIGURE=	yes
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
