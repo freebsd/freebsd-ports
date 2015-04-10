@@ -15,9 +15,6 @@ LICENSE=	GPLv2
 
 BROKEN=		Newer version does not work with recent objective C
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP=	back build
 
 .include <bsd.port.mk>
