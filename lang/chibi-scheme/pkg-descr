@@ -1,0 +1,8 @@
+Chibi-Scheme is a very small library intended for use as an extension
+and scripting language in C programs.  In addition to support for
+lightweight VM-based threads, each VM itself runs in an isolated heap
+allowing multiple VMs to run simultaneously in different OS threads.
+
+The default language is the R7RS (scheme base) library.
+
+WWW: https://github.com/norton/chibi-scheme

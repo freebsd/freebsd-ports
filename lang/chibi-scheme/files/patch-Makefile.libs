@@ -1,0 +1,12 @@
+--- Makefile.libs.orig	2014-11-24 02:25:56 UTC
++++ Makefile.libs
+@@ -31,7 +31,8 @@ SOLIBDIR  ?= $(PREFIX)/lib
+ INCDIR    ?= $(PREFIX)/include/chibi
+ MODDIR    ?= $(PREFIX)/share/chibi
+ BINMODDIR ?= $(PREFIX)/lib/chibi
+-MANDIR    ?= $(PREFIX)/share/man/man1
++PKGCONFDIR ?= $(PREFIX)/lib/pkgconfig
++MANDIR    ?= $(PREFIX)/man/man1
+ 
+ DESTDIR   ?=
+ 
