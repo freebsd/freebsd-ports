@@ -11,12 +11,9 @@ DISTNAME=	Grr-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rss reader for GNUstep
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	RSSKit:${RSSKIT_PORT}
+LIB_DEPENDS=	libRSSKit.so:${PORTSDIR}/www/rsskit
 
-RSSKIT_PORT?=	www/rsskit
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 .include <bsd.port.mk>
