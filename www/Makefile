@@ -2039,7 +2039,6 @@
     SUBDIR += trac-advancedticketworkflow
     SUBDIR += trac-attachmentpolicy
     SUBDIR += trac-autocomplete
-    SUBDIR += trac-batchmodify
     SUBDIR += trac-bzr
     SUBDIR += trac-ccselector
     SUBDIR += trac-childtickets
