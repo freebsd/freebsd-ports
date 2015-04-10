@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -17,13 +17,12 @@ LICENSE_COMB=	multi
 OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libpixman-1.so:${PORTSDIR}/x11/pixman
+BUILD_DEPENDS=	dev86>0:${PORTSDIR}/devel/dev86
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386"
-
-CONFIGURE_ARGS=	--disable-xen
 
 SEABIOSVERSION=	1.8.1
 DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
@@ -31,13 +30,13 @@ DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
 
 WRKSRC=		${WRKDIR}/xen-${PORTVERSION}
 
-USES=		gmake perl5 python shebangfix
+USES=		gmake perl5 python shebangfix libtool pkgconfig
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	HOSTCC="${CC}" CC="${CC}" \
 		ac_cv_path_BASH=${TRUE} \
-		ac_cv_path_XGETTEXT=${TRUE} \
-		glib_CFLAGS=" " glib_LIBS=" "
-MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}"
+		ac_cv_path_XGETTEXT=${TRUE}
+MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}" GCC="${GCC}" cc="${GCC}"
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/misc/xen-ringwatch
 USE_GCC=	yes
@@ -54,6 +53,7 @@ post-extract:
 	${MV} ${WRKDIR}/seabios-${SEABIOSVERSION} ${WRKSRC}/tools/firmware/seabios-dir
 
 post-patch:
+	@${REINPLACE_CMD} "s,x86_64,amd64,g" ${WRKSRC}/tools/configure
 	@${REINPLACE_CMD} -e "s,/var/lib,/var/db,g" \
 		${WRKSRC}/tools/Makefile \
 		${WRKSRC}/tools/libxc/include/xenguest.h \
