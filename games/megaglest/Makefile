@@ -27,6 +27,7 @@ USES=		cmake compiler:c++11-lib display:build dos2unix lua openal:al,alut pkgcon
 USE_GL=		glew gl glu
 USE_SDL=	yes
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_UNICODE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

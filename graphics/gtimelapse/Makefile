@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		pkgconfig
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
