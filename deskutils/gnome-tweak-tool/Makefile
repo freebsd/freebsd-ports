@@ -3,7 +3,7 @@
 #    $MCom: ports/trunk/deskutils/gnome-tweak-tool/Makefile 20080 2014-11-16 08:42:43Z gusi $
 
 PORTNAME=	gnome-tweak-tool
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 

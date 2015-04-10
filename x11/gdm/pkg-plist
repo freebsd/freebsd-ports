@@ -201,8 +201,10 @@ share/pixmaps/nohost.png
 @mode
 @unexec rm -rf %D/etc/gdm/home/.gconf*
 @dir %%ETCDIR%%/Sessions
+@dir %%ETCDIR%%/home/.local/share/applications
 @dir etc/dm
 @dir etc/dm/Sessions
+@dir share/xsessions
 @dir /var/cache/gdm/
 @dir /var/run/gdm/greeter
 @dir /var/run/gdm/
