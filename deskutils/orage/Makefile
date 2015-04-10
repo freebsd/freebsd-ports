@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orage
-PORTVERSION=	4.12.0
+PORTVERSION=	4.12.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gettext desktop-file-utils gmake \
+USES=		pkgconfig libtool gettext desktop-file-utils gmake \
 	xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	panel
