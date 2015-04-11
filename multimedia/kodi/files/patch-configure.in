@@ -1,6 +1,6 @@
---- configure.in.orig	2014-12-08 19:57:30.000000000 +0100
-+++ configure.in	2014-12-16 15:55:58.000000000 +0100
-@@ -621,10 +621,12 @@
+--- configure.in.orig	2015-03-26 19:25:20.000000000 +0100
++++ configure.in	2015-04-08 15:23:22.000000000 +0200
+@@ -628,10 +628,12 @@
    i386-*-freebsd*)
       ARCH="x86-freebsd"
       MAKE="gmake"
@@ -13,7 +13,7 @@
       ;;
    arm-apple-darwin*)
       use_joystick=no
-@@ -781,10 +783,16 @@
+@@ -788,10 +790,16 @@
  # platform specific flags
  if echo "$ARCH" | grep -q "freebsd" ; then
    LOCALBASE="${LOCALBASE:-/usr/local}"
@@ -33,7 +33,15 @@
  fi
  if test "$host_vendor" = "apple" ; then
    # standard application paths
-@@ -1184,7 +1192,7 @@
+@@ -924,6 +932,7 @@
+ 
+ # Check inotify availability
+ AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
++AC_CHECK_LIB([inotify], [main],,)
+ 
+ # Checks for boost headers using CXX instead of CC
+ AC_LANG_PUSH([C++])
+@@ -1191,7 +1200,7 @@
  )
  
  #Check to see if libs are needed for functions that are often built-in to libc
@@ -42,7 +50,7 @@
  AC_SEARCH_LIBS([dlopen],dl)
  AC_SEARCH_LIBS([clock_gettime],rt)
  AC_SEARCH_LIBS([dn_expand],  resolv)
-@@ -1699,7 +1707,7 @@
+@@ -1706,7 +1715,7 @@
  
    if test "$cross_compiling" != "yes"; then
      if test "$use_debug" != "yes"; then
@@ -51,7 +59,7 @@
      fi
      if test "$use_optimizations" != "yes"; then
        FFMPEG_OPTS="${FFMPEG_OPTS} --disable-optimizations"
-@@ -1710,7 +1718,7 @@
+@@ -1717,7 +1726,7 @@
        SAVE_LIBS="$LIBS"
        # check for system installed ffmpeg. We require minimum versions.
        PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -60,7 +68,7 @@
          [FFMPEG_FOUND="false"])
  
        if test "${USE_STATIC_FFMPEG}" = "1" && test "$FFMPEG_FOUND" = "true"; then
-@@ -1737,7 +1745,7 @@
+@@ -1744,7 +1753,7 @@
      elif test "$with_ffmpeg" = "force"; then
        # always build our ffmpeg
        AC_MSG_NOTICE("FFmpeg installation forced by user - installing our version")
@@ -69,7 +77,7 @@
        export PKG_CONFIG_PATH="${ffmpeg_build}/ffmpeg-install/lib/pkgconfig:$PKG_CONFIG_PATH"
  
      elif test "$with_ffmpeg" != "no"; then
-@@ -1750,7 +1758,7 @@
+@@ -1757,7 +1766,7 @@
  
  if test "$FFMPEG_FOUND" != "true"; then
    PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -78,7 +86,7 @@
      [AC_MSG_ERROR("ffmpeg not found")])
  fi
  
-@@ -2408,6 +2416,8 @@
+@@ -2415,6 +2424,8 @@
    LIBS="$LIBS -L\$(abs_top_srcdir)/lib/ffmpeg/libswscale -lswscale"
  fi
  

@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	14.0
-PORTREVISION=	0
+DISTVERSION=	14.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirrors.kodi.tv/releases/source/ \
+MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${DISTVERSION}-Helix?dummy=/ \
 		GHL:ffmpeg
 DISTFILES=	${DISTVERSION}-Helix${EXTRACT_SUFX} \
 		${GH_PROJECT}-${GH_TAGNAME}.tar.gz:ffmpeg
@@ -60,13 +59,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	ffmpeg
-GH_COMMIT=	8865ab5
-GH_TAGNAME=	2.4.4-Helix
+GH_TAGNAME=	2.4.6-Helix
 
 USES=		gettext gmake iconv:wchar_t libtool:build pkgconfig python:2
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
-USE_XORG=	xt xmu xtst
+USE_XORG=	xt xmu xtst xrandr
 USE_GL=		glu
 USE_SDL=	image sdl2
 USE_JAVA=	yes
@@ -79,8 +77,8 @@ WRKSRC=		${WRKDIR}/xbmc-${DISTVERSION}-Helix
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC DOCS \
-		LIBBLURAY LIRC MYSQL NONFREE RTMP SFTP \
-		SMB VAAPI VDPAU WEBSERVER XRANDR
+		LIBBLURAY LIRC MYSQL NFS NONFREE RTMP \
+		SFTP SMB VAAPI VDPAU WEBSERVER
 AIRPLAY_DESC=	AirPlay support via libplist
 AIRTUNES_DESC=	AirTunes support via libshairplay
 CEC_DESC=	CEC adapter support
@@ -88,7 +86,7 @@ NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 SFTP_DESC=	SSH SFTP support via libssh
 
 OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI CEC LIBBLURAY LIRC MYSQL \
-			RTMP SFTP SMB VAAPI VDPAU WEBSERVER XRANDR
+			NFS RTMP SFTP SMB VAAPI VDPAU WEBSERVER
 
 AIRPLAY_LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
 AIRPLAY_CONFIGURE_ENABLE=	airplay
@@ -110,6 +108,9 @@ LIRC_RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
 
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql
+
+NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
+NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
 
@@ -133,10 +134,7 @@ SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
-XRANDR_USE=	XORG=xrandr
-XRANDR_CONFIGURE_ENABLE=	xrandr
-
-CONFIGURE_ARGS+=	--disable-debug --disable-nfs --disable-alsa --disable-pulse
+CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-pulse
 
 .include <bsd.port.options.mk>
 
@@ -185,8 +183,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kodi/kodi.bin
 	${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -name '*.so' -or -name '*.xbs' -or -name '*.vis' \
 		| ${XARGS} ${STRIP_CMD}
-.if ${PORT_OPTIONS:MXRANDR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kodi/kodi-xrandr
-.endif
 
 .include <bsd.port.mk>
