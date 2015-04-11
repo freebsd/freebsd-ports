@@ -169,10 +169,6 @@ PLIST_SUB+=	MANCONF=""
 PLIST_SUB+=	MANCONF="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-WITH_PTHREAD=		yes
-.endif
-
 .if ${PORT_OPTIONS:MUSE_PERL}
 LINK_USRBIN=	yes
 .else

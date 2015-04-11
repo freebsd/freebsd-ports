@@ -173,10 +173,6 @@ PLIST_SUB+=	MANCONF=""
 PLIST_SUB+=	MANCONF="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-WITH_PTHREAD=		yes
-.endif
-
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
 post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
