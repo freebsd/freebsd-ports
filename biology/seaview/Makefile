@@ -5,16 +5,13 @@ PORTNAME=	seaview
 PORTVERSION=	4.5.4
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \
-		ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
+MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libpng.so:${PORTSDIR}/graphics/png
