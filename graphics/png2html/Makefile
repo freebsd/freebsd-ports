@@ -5,15 +5,12 @@ PORTNAME=	png2html
 PORTVERSION=	1.1
 PORTREVISION=	10
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geoffholden.com/content/projects/png2html/
+MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Takes a PNG image and transforms it into HTML
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		No public distfiles
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libgd.so:${PORTSDIR}/graphics/gd
