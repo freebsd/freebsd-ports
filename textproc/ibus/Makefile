@@ -53,6 +53,7 @@ ISOCODES_RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/m
 ISOCODES_CONFIGURE_OFF=	--disable-iso-codes-check
 
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_WITH=	nls
 
 GTK2_USE=		GNOME=gtk20

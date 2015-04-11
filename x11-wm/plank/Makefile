@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--enable-gee-0.8 \
 	--disable-apport
 
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 
 DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu
