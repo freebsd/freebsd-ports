@@ -22,6 +22,6 @@ BUILD_DEPENDS=	p5-Compress-Snappy>0:${PORTSDIR}/archivers/p5-Compress-Snappy \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
