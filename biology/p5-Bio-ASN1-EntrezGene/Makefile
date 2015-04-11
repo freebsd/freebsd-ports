@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Bio-ASN1-EntrezGene
-PORTVERSION=	1.091
-PORTREVISION=	1
+PORTVERSION=	1.70
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mauricio@arareko.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regular expression-based Perl Parser for NCBI Entrez Gene
 
-BROKEN=		Unfetchable
+WRKSRC=		${WRKDIR}/Bio-ASN1-EntrezGene-${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/Bio-ASN1-EntrezGene-1.09
-
-USES=		perl5 tar:tgz
+USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
