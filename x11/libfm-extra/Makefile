@@ -12,7 +12,7 @@ COMMENT=	Core library of PCManFM file manager
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz gettext-tools
 USE_GNOME=	glib20 intltool intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
