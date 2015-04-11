@@ -5,8 +5,8 @@ PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/ \
-		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/:docs \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/ \
+		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/:docs \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	BrickUtils-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
@@ -18,8 +18,6 @@ MAINTAINER=	koalative@gmail.com
 COMMENT=	Utility for building models with LEGO
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable
 
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
