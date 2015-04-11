@@ -2,7 +2,8 @@
 
 PORTNAME=	openh264
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=v
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -10,13 +11,8 @@ COMMENT=	Cisco implementation of H.264 codec
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		fails to fetch with a checksum mismatch
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3a75956
 
 USES=		gmake
 USE_LDCONFIG=	yes
