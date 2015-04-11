@@ -22,6 +22,7 @@
     SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
+    SUBDIR += c
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
