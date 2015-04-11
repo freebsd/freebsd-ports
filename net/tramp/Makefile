@@ -14,8 +14,9 @@ COMMENT=	Transparent remote file access tool for emacsen
 
 USE_EMACS=	yes
 
-USES=		gmake makeinfo
+USES=		cpe gmake makeinfo
 USE_AUTOTOOLS=	autoconf
+CPE_VENDOR=	gnu
 
 TRAMP_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 PLIST_SUB+=	TRAMP_LISPDIR=${TRAMP_LISPDIR}
