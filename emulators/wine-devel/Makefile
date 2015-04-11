@@ -140,7 +140,7 @@ MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
+EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git
 
 CONFIGURE_ARGS+=--without-pulse
