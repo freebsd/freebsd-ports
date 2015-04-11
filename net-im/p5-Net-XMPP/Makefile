@@ -21,6 +21,6 @@ TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 		p5-YAML-Tiny>=1.41:${PORTSDIR}/textproc/p5-YAML-Tiny
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
