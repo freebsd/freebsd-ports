@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	MUSIC XVID
 MUSIC_DESC=	Install extra music files
 
 USES=		compiler:c++11-lib gmake libtool lua:51 perl5 pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 USE_SDL=	image mixer sound sdl
 USE_WX=		3.0
 WX_UNICODE=	yes
