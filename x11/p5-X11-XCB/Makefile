@@ -1,4 +1,3 @@
-# Created by: Kurt Jaeger <pi@f10.opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	X11-XCB
@@ -18,7 +17,6 @@ LIB_DEPENDS=	libxcb.so:${PORTSDIR}/x11/libxcb \
 		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm
 BUILD_DEPENDS=	\
 		${LOCALBASE}/share/xcb/xcb.xsd:${PORTSDIR}/x11/xcb-proto \
-		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-MouseX-NativeTraits>=0:${PORTSDIR}/devel/p5-MouseX-NativeTraits \
