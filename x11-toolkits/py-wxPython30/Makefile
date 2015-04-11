@@ -2,7 +2,7 @@
 
 PORTNAME=	wxPython
 PORTVERSION=	3.0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	python
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
-USES=		python tar:bzip2
+USES=		compiler:c++11-lib python tar:bzip2
 
 .if defined(WITH_WXVERSION_ONLY)
 
