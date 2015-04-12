@@ -22,6 +22,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
 
+USES+=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 
