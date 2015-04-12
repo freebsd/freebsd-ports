@@ -16,6 +16,6 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
