@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2015-03-11 14:02:12 UTC
++++ Makefile.in
+@@ -84,12 +84,11 @@ pkgconfig_DATA = libsrtp.pc
+ endif
+ 
+ SHAREDLIBVERSION = 1
+-ifeq (linux,$(findstring linux,@host@))
+ SHAREDLIB_DIR = $(libdir)
+ SHAREDLIB_LDFLAGS = -shared -Wl,-soname,$@
+ SHAREDLIBSUFFIXNOVER = so
+ SHAREDLIBSUFFIX = $(SHAREDLIBSUFFIXNOVER).$(SHAREDLIBVERSION)
+-else ifeq (mingw,$(findstring mingw,@host@))
++ifeq (mingw,$(findstring mingw,@host@))
+ SHAREDLIB_DIR = $(bindir)
+ SHAREDLIB_LDFLAGS = -shared -Wl,--out-implib,libsrtp.dll.a
+ SHAREDLIBVERSION =
