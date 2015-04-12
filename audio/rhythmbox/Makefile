@@ -4,6 +4,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,7 +28,8 @@ LIB_DEPENDS=	libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build
+USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build \
+		py3gobject3
 USE_XORG=	ice xproto
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	flac lame jpeg cdparanoia vorbis
