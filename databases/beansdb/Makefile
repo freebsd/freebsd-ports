@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 LDFLAGS+=	-lpthread

@@ -12,6 +12,8 @@ COMMENT=	Collection of essential command-line utilities for MySQL
 LICENSE=	ARTPERL10 GPLv2
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		p5-DBD-mysql>=3:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \

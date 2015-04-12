@@ -11,6 +11,8 @@ COMMENT=	Database Abstraction Layer for MySQL using PHP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Unfetchable
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	nbari
 GH_PROJECT=	${PORTNAME:tu}

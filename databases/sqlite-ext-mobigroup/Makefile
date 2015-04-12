@@ -12,6 +12,8 @@ DISTNAME=	sqlite3_${PORTVERSION:R}-mobigroup.${PORTVERSION:E}
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Mobigroup functions library for SQLite
 
+BROKEN=		Unfetchable
+
 USE_SQLITE=	yes
 
 DIST_SUBDIR=	sqlite-ext
