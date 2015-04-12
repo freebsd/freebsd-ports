@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.73rc3
+DISTVERSION=	2.73rc4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 #IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
-BROKEN=		Size mismatch
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
