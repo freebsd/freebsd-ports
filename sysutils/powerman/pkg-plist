@@ -5,6 +5,7 @@ bin/powerman
 %%ETCDIR%%/apc7900.dev
 %%ETCDIR%%/apc7900v3.dev
 %%ETCDIR%%/apc7920.dev
+%%ETCDIR%%/apc8941.dev
 %%ETCDIR%%/apcnew.dev
 %%ETCDIR%%/apcold.dev
 %%ETCDIR%%/apcpdu.dev
@@ -59,10 +60,6 @@ lib/libpowerman.so.0
 lib/libpowerman.so.0.0.0
 lib/stonith/plugins/external/powerman
 libdata/pkgconfig/libpowerman.pc
-sbin/httppower
-sbin/plmpower
-sbin/powermand
-sbin/vpcd
 man/man1/pm.1.gz
 man/man1/powerman.1.gz
 man/man3/libpowerman.3.gz
@@ -72,4 +69,8 @@ man/man8/httppower.8.gz
 man/man8/plmpower.8.gz
 man/man8/powermand.8.gz
 man/man8/vpcd.8.gz
+sbin/httppower
+sbin/plmpower
+sbin/powermand
+sbin/vpcd
 @dir /var/run/powerman
