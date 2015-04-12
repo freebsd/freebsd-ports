@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.21.0
+PORTVERSION=	2.21.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
 		liblfcxml.so:${PORTSDIR}/devel/lfcxml
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
