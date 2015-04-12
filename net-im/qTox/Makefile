@@ -10,6 +10,8 @@ COMMENT=	Qt 5 based Tox client
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core \
