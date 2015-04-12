@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	lang
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -17,7 +16,6 @@ RUN_DEPENDS=	erlang>=17:${PORTSDIR}/lang/erlang
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	34df817
 
 USES=	gmake
 
