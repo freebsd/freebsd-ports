@@ -30,29 +30,25 @@ PLIST_FILES=	etc/rc.d/boa.sh.sample \
 		sbin/boa \
 		sbin/boa_indexer \
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/examples/boa.conf ${WRKSRC}/src/defines.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/boa ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/boa_indexer ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/docs/boa.8 ${STAGEDIR}${PREFIX}/man/man8
-	@${INSTALL_DATA} ${WRKSRC}/docs/boa.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
-	@${INSTALL_SCRIPT} ${FILESDIR}/boa.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/boa ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/boa_indexer ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/docs/boa.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/docs/boa.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_SCRIPT} ${FILESDIR}/boa.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
