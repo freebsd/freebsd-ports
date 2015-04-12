@@ -1,10 +1,9 @@
 --- source/libs/paragui/src/widgets/pgbutton.cpp.orig	2015-04-11 02:43:58.716405000 +0300
 +++ source/libs/paragui/src/widgets/pgbutton.cpp	2015-04-11 02:44:38.509415000 +0300
-@@ -101,32 +101,33 @@
+@@ -101,32 +101,32 @@
  	t->GetColor(widgettype, objectname, PG_PropStr::textcolor, fontcolor);
  	SetFontColor(fontcolor);
  
-+	printf("%d\n", GetID());
  	switch (GetID()) {
 -		case OK:
 +		case (int)OK:
