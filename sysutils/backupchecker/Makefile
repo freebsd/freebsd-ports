@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backupchecker
-PORTVERSION=	1.3
+PORTVERSION=	1.7
 CATEGORIES=	sysutils archivers
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -13,8 +13,6 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	b3e9d16
-GH_TAGNAME=	${PORTVERSION}
 
 USES=	python:3.3+
 USE_PYTHON=	distutils noegginfo
