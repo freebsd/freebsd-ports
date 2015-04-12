@@ -1,0 +1,11 @@
+--- pandora_agent_installer.orig	2015-04-12 22:14:02 UTC
++++ pandora_agent_installer
+@@ -89,7 +89,7 @@ fi
+ [ "$4" ] && PANDORA_PERL_PATH=$4
+ 
+ # Check for Perl 5.6.x or higher available
+-PERL_VERSION=`$PANDORA_PERL_PATH -v | egrep 'v5.6|v5.7|v5.8|v5.9|v5.1[0-9]' | grep perl`
++PERL_VERSION=`$PANDORA_PERL_PATH -v | egrep 'v5.6|v5.7|v5.8|v5.9|v5.1[0-9]|v5.2[0-9]' | grep perl`
+ 
+ if [ -z "$PERL_VERSION" ]
+ then
