@@ -15,6 +15,8 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		cmake:${PORTSDIR}/devel/cmake \
