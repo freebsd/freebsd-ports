@@ -672,6 +672,7 @@
     SUBDIR += openarena-oax
     SUBDIR += openarena-server
     SUBDIR += openastromenace
+    SUBDIR += openbor
     SUBDIR += openbubbles
     SUBDIR += opencity
     SUBDIR += openclonk
