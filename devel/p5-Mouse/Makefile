@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -22,15 +22,12 @@ TEST_DEPENDS=	p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Cons
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception-LessClever>=0:${PORTSDIR}/devel/p5-Test-Exception-LessClever \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires 
 
-MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
