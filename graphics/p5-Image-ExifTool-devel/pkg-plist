@@ -8,6 +8,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::APP12.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ASF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Apple.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Audible.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BZZ.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BigTIFF.3.gz
@@ -144,6 +145,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Theora.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Torrent.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Unknown.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::VCard.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Vorbis.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteCanonRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteExif.3.gz
@@ -171,6 +173,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/ASF.pm
 %%SITE_PERL%%/Image/ExifTool/Apple.pm
+%%SITE_PERL%%/Image/ExifTool/Audible.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
@@ -338,6 +341,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Theora.pm
 %%SITE_PERL%%/Image/ExifTool/Torrent.pm
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
+%%SITE_PERL%%/Image/ExifTool/VCard.pm
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
