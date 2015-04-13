@@ -25,7 +25,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 AFS_DISTVERSION=	1.6.10
 DBVERSION=	2013-01-28
 
-USES=		kmod tar:bzip2
+USES=		cpe kmod tar:bzip2
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	_XCFLAGS="${CFLAGS} -fPIC" \
@@ -44,6 +44,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
 MAKE_ENV=	COMPILER_TYPE=${COMPILER_TYPE}
 USE_RC_SUBR=	afsd afsserver
+
+CPE_VERSION=	${AFS_DISTVERSION}
 
 CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
