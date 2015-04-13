@@ -1,11 +1,17 @@
-####################################################################
-#
-# To start using Knot DNS, you should complete the following tasks:
-#
-# cp %%ETCDIR%%/knot.sample.conf %%ETCDIR%%/knot.conf
-# $EDITOR %%ETCDIR%%/knot.conf
-# echo knot_enable=\"YES\" >> /etc/rc.conf
-# echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
-# %%PREFIX%%/etc/rc.d/knot start
-#
-####################################################################
+######################################################################
+
+  To start using Knot DNS, you should complete the following tasks:
+
+    cp %%ETCDIR%%/knot.conf.sample %%ETCDIR%%/knot.conf
+    $EDITOR %%ETCDIR%%/knot.conf
+    sysrc knot_enable=YES
+    sysrc knot_config=%%ETCDIR%%/knot.conf
+    service knot start
+
+  Traditional (pre-FreeBSD 9.2) method, for last three commands:
+
+    echo knot_enable=\"YES\" >> /etc/rc.conf
+    echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
+    %%PREFIX%%/etc/rc.d/knot start
+
+######################################################################
