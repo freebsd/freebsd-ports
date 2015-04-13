@@ -11,8 +11,6 @@ COMMENT=	Fully automated backup checker
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_PROJECT=	${PORTNAME}
 
 USES=	python:3.3+
 USE_PYTHON=	distutils noegginfo
