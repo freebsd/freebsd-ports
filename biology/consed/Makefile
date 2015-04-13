@@ -78,7 +78,7 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${LN} -sf ../../bin ${STAGEDIR}${DATADIR}/bin
-	(cd ${WRKSRC}; ${ENV} CC=${CC} ./installConsed.perl consed_linux32bit ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}; ${SETENV} CC=${CC} ./installConsed.perl consed_linux32bit ${STAGEDIR}${DATADIR})
 	${LN} -sf ../../../etc/PhredPar/phredpar.dat ${STAGEDIR}${DATADIR}/lib/phredpar.dat
 	cd ${STAGEDIR}${PREFIX} && ${ECHO_CMD} ${MYSHEBANG} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 
