@@ -3,9 +3,9 @@ bin/xml_merge
 bin/xml_pp
 bin/xml_spellcheck
 bin/xml_split
-%%PERL5_MAN3%%/XML::Twig.3.gz
 %%SITE_PERL%%/XML/Twig.pm
 %%SITE_PERL%%/XML/Twig/XPath.pm
+%%PERL5_MAN3%%/XML::Twig.3.gz
 man/man1/xml_grep.1.gz
 man/man1/xml_merge.1.gz
 man/man1/xml_pp.1.gz
