@@ -17,8 +17,9 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../../gpl.txt
 
-MANUAL_PACKAGE_BUILD=   huge
+MANUAL_PACKAGE_BUILD=	huge (880MiB)
 
 USES=		zip:infozip
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
