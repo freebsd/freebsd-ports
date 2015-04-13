@@ -42,7 +42,9 @@ CONFIGURE_ARGS=	--localstatedir=/var --sysconfdir=${PREFIX}/etc \
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
 USE_RC_SUBR=	pure-ftpd
-USES=		perl5 shebangfix tar:bzip2
+USES=		cpe perl5 shebangfix tar:bzip2
+
+CPE_VENDOR=	pureftpd
 
 PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS README \
 		README.Authentication-Modules README.Configuration-File \
