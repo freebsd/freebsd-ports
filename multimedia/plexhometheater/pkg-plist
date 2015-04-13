@@ -1,5 +1,6 @@
 bin/plexhometheater
 bin/plexhometheater.sh
+bin/xbmc-xrandr
 lib/plexhometheater/system/ImageLib-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/libcpluff-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/avcodec-53-%%ARCH%%-freebsd.so
@@ -9,7 +10,6 @@ lib/plexhometheater/system/players/dvdplayer/avutil-51-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/postproc-52-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/swresample-0-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/swscale-2-%%ARCH%%-freebsd.so
-lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/Credits.html
 %%DATADIR%%/addons/repository.pvr-android.xbmc.org/addon.xml
 %%DATADIR%%/addons/repository.pvr-android.xbmc.org/icon.png
@@ -107,6 +107,7 @@ lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/addons/skin.plex/720p/DialogPeripheralSettings.xml
 %%DATADIR%%/addons/skin.plex/720p/DialogPictureInfo.xml
 %%DATADIR%%/addons/skin.plex/720p/DialogPlexExtras.xml
+%%DATADIR%%/addons/skin.plex/720p/DialogPlexUserSelect.xml
 %%DATADIR%%/addons/skin.plex/720p/DialogPluginSettings.xml
 %%DATADIR%%/addons/skin.plex/720p/DialogProgress.xml
 %%DATADIR%%/addons/skin.plex/720p/DialogRating.xml
@@ -140,17 +141,18 @@ lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/addons/skin.plex/720p/MyMusicSongs.xml
 %%DATADIR%%/addons/skin.plex/720p/MyPics.xml
 %%DATADIR%%/addons/skin.plex/720p/MyPlexLogin.xml
-%%DATADIR%%/addons/skin.plex/720p/MyPlexLoginStartup.xml
 %%DATADIR%%/addons/skin.plex/720p/MyPrograms.xml
 %%DATADIR%%/addons/skin.plex/720p/MySharedContent.xml
 %%DATADIR%%/addons/skin.plex/720p/MyVideoNav.xml
 %%DATADIR%%/addons/skin.plex/720p/MyVideoPlaylist.xml
 %%DATADIR%%/addons/skin.plex/720p/NowPlaying.xml
 %%DATADIR%%/addons/skin.plex/720p/PlayerControls.xml
+%%DATADIR%%/addons/skin.plex/720p/PlexPlayListSelection.xml
 %%DATADIR%%/addons/skin.plex/720p/PlexPlayQueue.xml
 %%DATADIR%%/addons/skin.plex/720p/PlexPreplayVideo.xml
 %%DATADIR%%/addons/skin.plex/720p/PlexSearch.xml
 %%DATADIR%%/addons/skin.plex/720p/PlexStartupHelper.xml
+%%DATADIR%%/addons/skin.plex/720p/PlexUserSelect.xml
 %%DATADIR%%/addons/skin.plex/720p/Pointer.xml
 %%DATADIR%%/addons/skin.plex/720p/ProfileSettings.xml
 %%DATADIR%%/addons/skin.plex/720p/Settings.xml
@@ -178,11 +180,12 @@ lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/addons/skin.plex/720p/ViewsMusic.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsOSD.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsPhoto.xml
-%%DATADIR%%/addons/skin.plex/720p/ViewsPlayQueue.xml
+%%DATADIR%%/addons/skin.plex/720p/ViewsPlayListSelection.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsPreplay.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsSearch.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsSettings.xml
 %%DATADIR%%/addons/skin.plex/720p/ViewsSharedContent.xml
+%%DATADIR%%/addons/skin.plex/720p/ViewsUserSwitchLogin.xml
 %%DATADIR%%/addons/skin.plex/720p/VisualisationPresetList.xml
 %%DATADIR%%/addons/skin.plex/Colors/Defaults.xml
 %%DATADIR%%/addons/skin.plex/Media/Textures.xbt
@@ -689,6 +692,7 @@ lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/system/Lircmap.xml
 %%DATADIR%%/system/X10-Lola-IRSSmap.xml
 %%DATADIR%%/system/asound.conf
+%%DATADIR%%/system/cacert.pem
 %%DATADIR%%/system/colors.xml
 %%DATADIR%%/system/keymaps/appcommand.xml
 %%DATADIR%%/system/keymaps/gamepad.xml
@@ -793,6 +797,7 @@ lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/conf.d/90-synthetic.conf
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/fonts.conf
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/fonts.dtd
+%%DATADIR%%/system/plexca.pem
 %%DATADIR%%/system/shaders/convolution-4x4.glsl
 %%DATADIR%%/system/shaders/convolution-4x4_d3d.fx
 %%DATADIR%%/system/shaders/convolution-6x6.glsl
