@@ -29,9 +29,9 @@ X11_CONFIGURE_WITH=	gtk
 X11_USE=		GNOME=gtk20
 
 .if defined(PKGNAMESUFFIX)
-CONFLICTS=	mtr-0*
+CONFLICTS_INSTALL=	mtr-0*
 .else
-CONFLICTS=	mtr-nox11-0*
+CONFLICTS_INSTALL=	mtr-nox11-0*
 .endif
 
 post-patch:
