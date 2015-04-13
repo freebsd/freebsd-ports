@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.350 2015/02/04 17:07:25 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.354 2015/04/13 04:48:55 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 2;
+my $micro = 3;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -923,6 +923,13 @@ sub checkpatch {
 	$whole = '';
 	while (<IN>) {
 		$whole .= $_;
+		if (/^--- /) {
+			if ($_ !~ /UTC\s*$/) {
+				&perror("WARN", $file, -1, "patch was not generated using ".
+					"``make makepatch''.  It is recommended to use ".
+					"``make makepatch'' to ensure proper patch format.");
+			}
+		}
 	}
 
 	if ($committer && $whole =~ /\wjavavm\w/) {
@@ -3278,6 +3285,9 @@ sub get_makevar {
 	chomp $result;
 
 	$result =~ s/\n\n/\n\0\n/g;
+	if (${^CHILD_ERROR_NATIVE} != 0) {
+        die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
+	}
 
 	return $result;
 }
@@ -3290,6 +3300,9 @@ sub get_makevar_raw {
 	chomp $result;
 
 	$result =~ s/\n\n/\n\0\n/g;
+	if (${^CHILD_ERROR_NATIVE} != 0) {
+        die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
+	}
 
 	return $result;
 }
