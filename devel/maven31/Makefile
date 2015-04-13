@@ -16,6 +16,10 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
 
+USES=		cpe
+CPE_PRODUCT=	maven
+CPE_VENDOR=	apache
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
