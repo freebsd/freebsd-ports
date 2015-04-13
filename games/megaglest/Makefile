@@ -3,7 +3,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.9.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_3.9.0/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -23,11 +23,8 @@ RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSD
 
 SUB_FILES=	pkg-message
 
-# Clang catches a c++11 violation that older GCC misses, so until the
-# code is fixed, remove USES+=compiler:c++11-lib and set USE_GCC=yes
-USES=		cmake display:build dos2unix lua openal:al,alut pkgconfig \
-		tar:xz
-USE_GCC=	yes
+USES=		cmake compiler:c++11-lib display:build dos2unix lua \
+		openal:al,alut pkgconfig tar:xz
 USE_GL=		glew gl glu
 USE_SDL=	yes
 USE_WX=		3.0
