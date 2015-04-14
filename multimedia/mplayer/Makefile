@@ -3,7 +3,6 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
 
 COMMENT=	High performance media player supporting many formats
 
