@@ -1,5 +1,5 @@
---- tool/rbinstall.rb.orig	2014-12-26 15:44:52.000000000 +0900
-+++ tool/rbinstall.rb	2015-03-06 07:28:12.508424655 +0900
+--- tool/rbinstall.rb.orig	2015-03-25 03:33:14.000000000 +0000
++++ tool/rbinstall.rb	2015-04-13 18:16:00.160952000 +0000
 @@ -311,6 +311,7 @@
  libdir = CONFIG[CONFIG.fetch("libdirname", "libdir"), true]
  rubyhdrdir = CONFIG["rubyhdrdir", true]
@@ -79,7 +79,7 @@
 -install?(:ext, :comm, :gem) do
 -  begin
 -    require "zlib"
--  rescue LoadErroe
+-  rescue LoadError
 -  end
 -  if defined?(Zlib)
 -    require 'pathname'
