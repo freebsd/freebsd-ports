@@ -4,6 +4,7 @@
 PORTNAME=	libsrtp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	alexander@brovikov.ru
@@ -39,5 +40,8 @@ post-patch:
 post-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} shared_library)
+
+check test runtest regression-test: build
+	${SETENV} LD_LIBRARY_PATH=${WRKSRC} ${MAKE_CMD} -C ${WRKSRC} runtest
 
 .include <bsd.port.mk>
