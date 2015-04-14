@@ -13,8 +13,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-USES=		charsetfix gmake tar:bzip2
+USES=		charsetfix cpe gmake tar:bzip2
 GNU_CONFIGURE=	YES
+CPE_VENDOR=	gnupg
 .if ${MACHINE_CPU:Mi586}
 MACHINE_ARCH=	i586
 .endif
