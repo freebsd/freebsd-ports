@@ -118,8 +118,8 @@ post-patch:
 		{} \;
 .endif
 
-pre-configure:
 .if ${LIBGDA5_SLAVE} == jdbc
+pre-configure:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/javac getsp.java
 .endif	
 
