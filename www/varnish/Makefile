@@ -31,6 +31,7 @@ EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 .endif
 
 DEPRECATED=	Varnish 3.0.7 is the last release of Varnish 3.0. Please upgrade to www/varnish4
+EXPIRATION_DATE=	2015-06-15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
