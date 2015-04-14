@@ -1,0 +1,41 @@
+--- src/auth/User.cc.orig	2015-03-18 13:22:42.134592000 +0300
++++ src/auth/User.cc	2015-03-18 13:26:48.850592000 +0300
+@@ -309,10 +309,7 @@
+ Auth::User::BuildUserKey(const char *username, const char *realm)
+ {
+     SBuf key;
+-    if (realm)
+-        key.Printf("%s:%s", username, realm);
+-    else
+-        key.append(username, strlen(username));
++    key.Printf("%s:%s", username, realm);
+     return key;
+ }
+ 
+@@ -368,11 +365,11 @@
+     if (aString) {
+         assert(!username_);
+         username_ = xstrdup(aString);
+-        // NP: param #2 is working around a c_str() data-copy performance regression
+-        userKey_ = BuildUserKey(username_, (!requestRealm_.isEmpty() ? requestRealm_.c_str() : NULL));
++        if (!requestRealm_.isEmpty())
++            userKey_ = BuildUserKey(username_, requestRealm_.c_str());
++
+     } else {
+         safe_free(username_);
+-        userKey_.clear();
+     }
+ }
+ 
+--- src/auth/User.h.orig	2015-03-18 13:27:30.809059000 +0300
++++ src/auth/User.h	2015-03-18 13:28:22.078121000 +0300
+@@ -65,8 +65,7 @@
+     char const *username() const { return username_; }
+     void username(char const *); ///< set stored username and userKey
+ 
+-    // NP: key is set at the same time as username_. Until then both are empty/NULL.
+-    const char *userKey() {return !userKey_.isEmpty() ? userKey_.c_str() : NULL;}
++    const char *userKey() {return !userKey_.isEmpty() ? userKey_.c_str() : username_;}
+ 
+     /**
+      * How long these credentials are still valid for.
