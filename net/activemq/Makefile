@@ -12,6 +12,8 @@ COMMENT=	Messaging and Integration Patterns provider
 
 LICENSE=	APACHE20
 
+USES+=		cpe
+CPE_VENDOR=	apache
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
