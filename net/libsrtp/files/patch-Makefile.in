@@ -1,6 +1,15 @@
---- Makefile.in.orig	2015-03-11 14:02:12 UTC
-+++ Makefile.in
-@@ -84,12 +84,11 @@ pkgconfig_DATA = libsrtp.pc
+--- Makefile.in	2015-03-11 14:02:12 UTC
++++ Makefile.in	2015-04-14 17:56:33 -0400
+@@ -44,7 +44,7 @@
+ CC	= @CC@
+ INCDIR	= -Icrypto/include -I$(srcdir)/include -I$(srcdir)/crypto/include
+ DEFS	= @DEFS@
+-CPPFLAGS= -fPIC @CPPFLAGS@
++CPPFLAGS= @CPPFLAGS@
+ CFLAGS	= @CFLAGS@
+ LIBS	= @LIBS@
+ LDFLAGS	= -L. @LDFLAGS@
+@@ -84,12 +84,11 @@
  endif
  
  SHAREDLIBVERSION = 1
@@ -14,3 +23,22 @@
  SHAREDLIB_DIR = $(bindir)
  SHAREDLIB_LDFLAGS = -shared -Wl,--out-implib,libsrtp.dll.a
  SHAREDLIBVERSION =
+@@ -108,6 +107,9 @@
+ %.o: %.c
+ 	$(COMPILE) -c $< -o $@
+ 
++%.So: %.c
++	$(COMPILE) -DPIC -fPIC -c $< -o $@
++
+ %$(EXE): %.c
+ 	$(COMPILE) $(LDFLAGS) $< -o $@ $(SRTPLIB) $(LIBS)
+ 
+@@ -143,7 +145,7 @@
+ 	ar cr libsrtp.a $^
+ 	$(RANLIB) libsrtp.a
+ 
+-libsrtp.$(SHAREDLIBSUFFIX): $(srtpobj) $(cryptobj) $(gdoi)
++libsrtp.$(SHAREDLIBSUFFIX): $(srtpobj:.o=.So) $(cryptobj:.o=.So) $(gdoi:.o=.So)
+ 	$(CC) -shared -o $@ $(SHAREDLIB_LDFLAGS) \
+                 $^ $(LDFLAGS) $(LIBS)
+ 	if [ -n "$(SHAREDLIBVERSION)" ]; then \
