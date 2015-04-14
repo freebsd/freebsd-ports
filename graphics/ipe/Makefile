@@ -1,27 +1,27 @@
-# Created by: bremner@unb.ca
+# Created by: David Bremner <bremner@unb.ca>
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.1.6
+PORTVERSION=	7.1.7
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}${PORTVERSION:R:R}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extensible vector graphics editor with Latex text support
+COMMENT=	Extensible vector graphics editor with LaTeX support
 
 LICENSE=	GPLv3 # (or later)
 
-LIB_DEPENDS=	liblua-5.2.so:${PORTSDIR}/lang/lua52
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USES=		dos2unix gmake iconv pkgconfig
+USES=		dos2unix gmake iconv lua:52 pkgconfig
 DOS2UNIX_FILES=	ipelib/Makefile
 USE_GNOME=	cairo
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
-USE_TEX=	latex
+USE_TEX=	pdftex
 MAKE_ENV=	DL_LIBS="" \
 		DLL_CFLAGS="-fPIC" \
 		ICONV_CFLAGS="-I${ICONV_PREFIX}/include" \
@@ -37,8 +37,8 @@ MAKE_ENV=	DL_LIBS="" \
 		IPEPREFIX="${PREFIX}" \
 		JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
-		LUA_CFLAGS="-I${LOCALBASE}/include/lua52" \
-		LUA_LIBS="-L${LOCALBASE}/lib -llua-5.2" \
+		LUA_CFLAGS="-I${LUA_INCDIR}" \
+		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
 		MOC="${MOC}"
 USE_LDCONFIG=	yes
 
