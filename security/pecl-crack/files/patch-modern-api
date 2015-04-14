@@ -1,5 +1,5 @@
 --- crack.c	2005-09-21 05:00:06.000000000 -0400
-+++ crack.c	2015-04-13 20:41:24.000000000 -0400
++++ crack.c	2015-04-14 12:19:37.774605000 -0400
 @@ -32,5 +32,5 @@
  
  #include "php_crack.h"
@@ -115,49 +115,7 @@
 +	PWDICT *pwdict;
  	int id = -1;
  	
-@@ -327,10 +291,36 @@
- 	}
- 	
--	if (zend_parse_parameters_ex(ZEND_PARSE_PARAMS_QUIET, ZEND_NUM_ARGS() TSRMLS_CC, "rs", &dictionary, &password, &password_len) == FAILURE) {
--		if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s|ssr", &password, &password_len, &username, &username_len, &gecos, &gecos_len, &dictionary) == FAILURE) {
--			RETURN_FALSE;
--		}
-+	switch (ZEND_NUM_ARGS()) {
-+	case 1:
-+		id = zend_parse_parameters(1 TSRMLS_CC, "s",
-+		    &password, &password_len);
-+		dictionary = NULL;
-+		break;
-+	case 2:
-+		id = zend_parse_parameters(2 TSRMLS_CC, "rs",
-+		    &dictionary,
-+		    &password, &password_len);
-+		break;
-+	case 3:
-+		id = zend_parse_parameters(3 TSRMLS_CC, "sss",
-+		    &password, &password_len,
-+		    &username, &username_len,
-+		    &gecos, &gecos_len);
-+		dictionary = NULL;
-+		break;
-+	case 4:
-+		id = zend_parse_parameters(4 TSRMLS_CC, "sssr",
-+		    &password, &password_len,
-+		    &username, &username_len,
-+		    &gecos, &gecos_len,
-+		    &dictionary);
-+		break;
-+	default:
-+		WRONG_PARAM_COUNT;
- 	}
--	
-+
-+	if (id == FAILURE)
-+		RETURN_FALSE;
-+
- 	if (NULL == dictionary) {
- 		id = php_crack_get_default_dict(INTERNAL_FUNCTION_PARAM_PASSTHRU);
-@@ -344,7 +334,7 @@
+@@ -344,7 +337,7 @@
  		}
  	}
 -	ZEND_FETCH_RESOURCE(pwdict, CRACKLIB_PWDICT *, &dictionary, id, "crack dictionary", le_crack);
