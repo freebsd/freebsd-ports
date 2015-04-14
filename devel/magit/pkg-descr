@@ -1,7 +1,9 @@
-With Magit, you can inspect and modify your Git repositories with
-Emacs.  You can review and commit the changes you have made to the
-tracked files, for example, and you can browse the history of past
-changes.  There is support for cherry picking, reverting, merging,
-rebasing, and other common Git operations.
+Magit is an interface to the version control system Git, implemented
+as an Emacs extension.
 
-WWW: http://magit.github.io/magit/
+Unlike Emacs' native Version Control package which strives to provide
+a unified interface to various version control systems, Magit only
+supports Git and can therefore better take advantage of its native
+features.
+
+WWW: http://magit.vc/
