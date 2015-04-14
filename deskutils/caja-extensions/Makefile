@@ -3,7 +3,7 @@
 
 PORTNAME=	caja-extensions
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,5 +23,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+GLIB_SCHEMAS=	org.mate.Caja.Sendto.gschema.xml \
+		org.mate.caja-open-terminal.gschema.xml
 
 .include <bsd.port.mk>
