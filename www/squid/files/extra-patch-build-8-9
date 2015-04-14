@@ -1,0 +1,11 @@
+--- helpers/negotiate_auth/kerberos/negotiate_kerberos.h.orig	2015-04-04 11:08:51.000000000 +0400
++++ helpers/negotiate_auth/kerberos/negotiate_kerberos.h	2015-04-04 11:11:10.000000000 +0400
+@@ -135,7 +135,7 @@
+ 
+ char *gethost_name(void);
+ 
+-#if (HAVE_GSSKRB5_EXTRACT_AUTHZ_DATA_FROM_SEC_CONTEXT || HAVE_GSS_MAP_NAME_TO_ANY) && HAVE_KRB5_PAC
++#if (HAVE_GSSKRB5_EXTRACT_AUTHZ_DATA_FROM_SEC_CONTEXT || HAVE_GSS_MAP_NAME_TO_ANY) && HAVE_KRB5_PAC && __FreeBSD__ >= 10
+ #define HAVE_PAC_SUPPORT 1
+ #define MAX_PAC_GROUP_SIZE 200*60
+ typedef struct {
