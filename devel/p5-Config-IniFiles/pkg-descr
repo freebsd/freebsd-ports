@@ -19,4 +19,4 @@ section name in square brackets. Parameters are specified in each section
 as Name=Value. Any spaces around the equals sign will be ignored, and the
 value extends to the end of the line.
 
-WWW: http://search.cpan.org/dist/Config-IniFiles/
+WWW: https://metacpan.org/release/Config-IniFiles
