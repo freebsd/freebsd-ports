@@ -20,8 +20,8 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 # don't use if ccache already set in CC
 .if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
   !defined(NO_BUILD) && !defined(NOCCACHE)
-# Avoid depends loops between pkg and ccache
-.	if !${.CURDIR:M*/devel/ccache} && !${.CURDIR:M*/ports-mgmt/pkg}
+# Avoid depends loops between ccache and pkg
+.	if ${PKGORIGIN} != devel/ccache && ${PKGORIGIN} != ${PKG_ORIGIN}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
 .	endif
 

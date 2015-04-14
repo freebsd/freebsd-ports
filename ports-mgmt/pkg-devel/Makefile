@@ -16,9 +16,6 @@ COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-# Disable CCACHE support because of the chicken/egg problem pkg should always
-# With no dependency at all
-NO_CCACHE=	yes
 WITH_DEBUG=	yes
 CFLAGS+=	-O0 -g -Wno-error
 USE_LDCONFIG=	yes
