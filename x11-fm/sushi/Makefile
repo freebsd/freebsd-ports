@@ -4,6 +4,7 @@
 
 PORTNAME=	sushi
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -28,5 +29,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+GLIB_SCHEMAS=	org.gnome.sushi.gschema.xml
 
 .include <bsd.port.mk>

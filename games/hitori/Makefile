@@ -4,6 +4,7 @@
 
 PORTNAME=	hitori
 PORTVERSION=	3.14.3
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,5 +20,7 @@ INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+GLIB_SCHEMAS=	org.gnome.hitori.gschema.xml
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
 bin/hitori
 share/appdata/hitori.appdata.xml
 share/applications/hitori.desktop
-share/glib-2.0/schemas/org.gnome.hitori.gschema.xml
 share/help/C/hitori/customization.page
 share/help/C/hitori/figures/hitori_main_window.png
 share/help/C/hitori/game.page
