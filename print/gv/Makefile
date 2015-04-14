@@ -14,7 +14,7 @@ LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_XORG=	xpm ice sm xext xmu x11
 USE_GHOSTSCRIPT=	yes
-USES=		iconv gmake perl5 shebangfix
+USES=		cpe iconv gmake perl5 shebangfix
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
 SHEBANG_FILES=	${WRKSRC}/src/gv-update-userconfig.in
 
 INFO=		gv
+CPE_VENDOR=	gnu
 PLIST_FILES=	bin/gv \
 		bin/gv-update-userconfig \
 		%%DATADIR%%/gv_system.ad \
