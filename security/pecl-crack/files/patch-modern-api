@@ -141,7 +141,7 @@
 +		dictionary = NULL;
 +		break;
 +	case 4:
-+		id = zend_parse_parameters(3 TSRMLS_CC, "sssr",
++		id = zend_parse_parameters(4 TSRMLS_CC, "sssr",
 +		    &password, &password_len,
 +		    &username, &username_len,
 +		    &gecos, &gecos_len,
