@@ -14,9 +14,6 @@ COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-# Disable CCACHE support because of the chicken/egg problem pkg should always
-# With no dependency at all
-NO_CCACHE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
