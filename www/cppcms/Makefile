@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		cmake python tar:bzip2
+USES=		cmake python:2 tar:bzip2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
