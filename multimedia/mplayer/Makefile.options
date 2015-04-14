@@ -84,6 +84,11 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 # Build system handling (including OPTIONS)
 # =========================================
 
+# Support for aligned_alloc
+.if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aligned_alloc
+.endif
+
 # Supported architectures for runtime CPU detection
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ppc"
 MPLAYER_RTCPU_SUPPORTED_ARCH=	yes
