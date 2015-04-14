@@ -67,7 +67,7 @@ MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 
 OPTIONS_DEFINE=	X11
-X11_DESC=	Build GTK3 based GUI program
+X11_DESC=	Build GTK+3 based GUI program
 OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
