@@ -11,6 +11,7 @@ DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	Easy graphics viewer / converter
 
+USES=		cpe
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XnView-${PORTVERSION}-x86-unknown-FreeBSD5.x-static
