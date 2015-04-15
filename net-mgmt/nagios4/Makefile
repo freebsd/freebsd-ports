@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	4.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		gmake iconv perl5 cpe
+USES=		cpe gmake perl5
 USE_PERL5=	build
 USE_PHP=	xml
 USE_RC_SUBR=	nagios
@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-httpd-conf=${PREFIX}/etc \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl \
-		--enable-event-broker
+		--enable-event-broker \
+		ac_cv_lib_iconv_main=no
 CONFIGURE_ENV=	PERL=${PERL}
 
 CPPFLAGS+=	-I${LOCALBASE}/include

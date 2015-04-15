@@ -3,7 +3,7 @@
 
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
 
@@ -17,6 +17,8 @@ USES=		iconv gmake tar:tgz
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 OPTIONS_DEFINE=	DOCS
 

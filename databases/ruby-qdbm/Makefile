@@ -1,13 +1,17 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	2
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 COMMENT=	Ruby API for QDBM
 
 SLAVEPORT=	ruby
 
+USES=		shebangfix
+SHEBANG_FILES=	curia/rbcrtest depot/rbdptest myrbdoc villa/rbvltest
 USE_RUBY=	yes
+
 MASTERDIR=	${.CURDIR}/../../databases/qdbm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ruby
 PLIST=		${.CURDIR}/pkg-plist

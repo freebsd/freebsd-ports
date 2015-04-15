@@ -711,18 +711,6 @@ diff -u -r1.1.1.5 -r1.8
                 LOG_ERROR_STR(*buf);
              close(f);
              remove(buf);
-@@ -818,7 +846,11 @@
- const char *cCharSetConv::Convert(const char *From, char *To, size_t ToLength)
- {
-   if (cd != (iconv_t)-1 && From && *From) {
-+#ifdef __FreeBSD__
-+     const char *FromPtr = (char *)From;
-+#else
-      char *FromPtr = (char *)From;
-+#endif
-      size_t FromLength = strlen(From);
-      char *ToPtr = To;
-      if (!ToPtr) {
 @@ -920,7 +952,11 @@
    return cString(buffer, true);
  }
@@ -1003,18 +991,6 @@ diff -u -r1.1.1.4 -r1.7
  #include <stdlib.h> // for broadcaster stupidity workaround
  #include <string.h>
  #include "descriptor.h"
-@@ -381,7 +383,11 @@
-   if (SystemCharacterTable) {
-      iconv_t cd = iconv_open(SystemCharacterTable, fromCode);
-      if (cd != (iconv_t)-1) {
-+#ifdef __FreeBSD__
-+        const char *fromPtr = from;
-+#else
-         char *fromPtr = (char *)from;
-+#endif
-         while (fromLength > 0 && toLength > 1) {
-            if (iconv(cd, &fromPtr, &fromLength, &to, &toLength) == size_t(-1)) {
-               if (errno == EILSEQ) {
 --- PLUGINS/src/dvbsddevice/Makefile.orig
 +++ PLUGINS/src/dvbsddevice/Makefile
 @@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)

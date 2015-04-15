@@ -10,15 +10,3 @@
  #include <stdlib.h> // for broadcaster stupidity workaround
  #include <string.h>
  #include "descriptor.h"
-@@ -381,7 +383,11 @@ bool convertCharacterTable(const char *f
-   if (SystemCharacterTable) {
-      iconv_t cd = iconv_open(SystemCharacterTable, fromCode);
-      if (cd != (iconv_t)-1) {
-+#ifdef __FreeBSD__
-+        const char *fromPtr = from;
-+#else
-         char *fromPtr = (char *)from;
-+#endif
-         while (fromLength > 0 && toLength > 1) {
-            if (iconv(cd, &fromPtr, &fromLength, &to, &toLength) == size_t(-1)) {
-               if (errno == EILSEQ) {

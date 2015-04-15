@@ -21,6 +21,7 @@ USE_PERL5=	run
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
 
 SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl
