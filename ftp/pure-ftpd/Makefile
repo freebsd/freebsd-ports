@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.37
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -87,6 +88,13 @@ UTF8_CONFIGURE_WITH=	rfc2640
 UTF8_USES=		iconv
 VIRTUALCHROOT_CONFIGURE_WITH=	virtualchroot
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
+		ac_cv_lib_iconv_libiconv_open=no
+.endif
+
 pre-fetch:
 	@${ECHO_MSG} "You can use the following additional options:"
 	@${ECHO_MSG} ""
@@ -118,4 +126,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PAM_DIR}/
 	${INSTALL_DATA} ${PAM_TEMPL} ${STAGEDIR}${PAM_DIR}/${PAM_TARGET}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

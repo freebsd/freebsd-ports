@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -171,6 +171,7 @@ CONFIGURE_ARGS+=	--disable-video-x11 \
 .endif
 
 post-patch:
-	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' ${WRKSRC}/configure
+	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
+		-e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

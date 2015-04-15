@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \
 		--enable-image-png --disable-debug \
 		--disable-pedantic
-CFLAGS+=	-DICONV_CONST -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 .include <bsd.port.mk>

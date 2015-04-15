@@ -3,7 +3,7 @@
 
 PORTNAME=	gv
 PORTVERSION=	3.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	GNU/${PORTNAME}
 
@@ -18,7 +18,7 @@ USES=		cpe iconv gmake perl5 shebangfix
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
 			--enable-setenv-code \
 			--enable-SIGCHLD-fallback
@@ -34,4 +34,10 @@ PLIST_FILES=	bin/gv \
 		man/man1/gv-update-userconfig.1.gz
 PLIST_DIRS=	%%DATADIR%%/safe-gs-workdir
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no
+.endif
+
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	gale
 PORTVERSION=	0.99f
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
@@ -22,14 +22,13 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
+CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/w3c-libwww
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
-# cheesy hack - test-oop doesn't build, but we don't care.
-pre-configure:
-	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
+post-patch:
+	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
 		${WRKSRC}/liboop/Makefile.in
 
 .include <bsd.port.mk>

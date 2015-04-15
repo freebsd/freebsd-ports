@@ -3,6 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.64
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -97,6 +98,12 @@ SUB_LIST+=	NOCLANG="@comment "
 CONFIGURE_ARGS+=	--without-readline
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_libiconv=no ac_cv_lib_iconv_iconv=no
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pure	\
 		${STAGEDIR}${PREFIX}/lib/libpure.so.*.*
@@ -119,4 +126,4 @@ post-install:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

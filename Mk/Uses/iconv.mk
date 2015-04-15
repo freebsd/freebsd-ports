@@ -37,7 +37,9 @@ ICONV_PREFIX=	/usr
 ICONV_CONFIGURE_ARG=
 ICONV_CONFIGURE_BASE=
 
-.if exists(${LOCALBASE}/include/iconv.h)
+.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 1100069) \
+ || exists(${LOCALBASE}/include/iconv.h)
+BUILD_DEPENDS+=	libiconv>=1.14_7:${PORTSDIR}/converters/libiconv
 CPPFLAGS+=	-DLIBICONV_PLUG
 CFLAGS+=	-DLIBICONV_PLUG
 CXXFLAGS+=	-DLIBICONV_PLUG

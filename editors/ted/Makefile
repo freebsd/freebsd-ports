@@ -3,7 +3,7 @@
 
 PORTNAME=	ted
 PORTVERSION=	2.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
 		http://fossies.org/linux/misc/
@@ -34,7 +34,8 @@ MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\"" \
 		DEF_PSSCRIPT_DIR="-DPSSCRIPT_DIR=\"\\\"${DATADIR}/\\\"\""
 ALL_TARGET=	compile.shared
-CONFIGURE_ARGS+=--datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
+		ac_iconv_includes=${LOCALBASE}/include
 
 DATADIR=	${PREFIX}/share/Ted
 DOCSDIR=	${PREFIX}/share/doc/Ted
@@ -52,6 +53,8 @@ USES+=		motif
 CONFIGURE_ARGS+=--with-MOTIF
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@cd ${WRKSRC}/tedPackage && ${TAR} xf TedDatadir.tar
 	@${INSTALL_SCRIPT} ${FILESDIR}/configure ${WRKSRC}
@@ -62,8 +65,11 @@ post-patch:
 		's|/usr/X11R6|${LOCALBASE}|g ; \
 		 s|/usr/local|${LOCALBASE}|g ; \
 		 /paper.h/s|/usr/include|${LOCALBASE}/include|g ; \
-		 /paper.h/s|/usr/lib|${LOCALBASE}/lib|g ; \
-		 s|/iconv.so|/libiconv.so|g'
+		 /paper.h/s|/usr/lib|${LOCALBASE}/lib|g'
+.if ! empty(ICONV_LIB)
+	@${REINPLACE_CMD} 's|/iconv\.so|/libiconv.so|' \
+		${WRKSRC}/Ted/configure ${WRKSRC}/textEncoding/configure
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Ted/Ted ${STAGEDIR}${PREFIX}/bin
@@ -81,4 +87,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/TedDocument-en_US.rtf ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

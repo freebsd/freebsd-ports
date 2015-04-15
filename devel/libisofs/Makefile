@@ -3,7 +3,7 @@
 
 PORTNAME=	libisofs
 PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
@@ -18,5 +18,8 @@ LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn
 GNU_CONFIGURE=	yes
 USES=		iconv libtool
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

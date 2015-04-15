@@ -150,8 +150,8 @@
 +    static size_t inbytesleft, outbytesleft;
 +    inbytesleft = strlen(Src)+1;
 +    outbytesleft = NM;
-+    ret = iconv(h_I2E, &Src, &inbytesleft, &Dest, &outbytesleft);
-+    Dest[outbytesleft-inbytesleft]=NULL;
++    ret = iconv(h_I2E, (char **)&Src, &inbytesleft, &Dest, &outbytesleft);
++    Dest[outbytesleft-inbytesleft]=0;
 +  }
 +  if (ret == (size_t)(-1))
 +    strncpyz(Dest,Src,DestSize);
