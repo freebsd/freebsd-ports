@@ -1,6 +1,6 @@
---- src/cryptography/hazmat/bindings/openssl/ssl.py.orig	2015-01-16 14:26:59.000000000 +0100
-+++ src/cryptography/hazmat/bindings/openssl/ssl.py	2015-01-24 14:26:01.143880230 +0100
-@@ -189,10 +189,6 @@
+--- src/cryptography/hazmat/bindings/openssl/ssl.py.orig	2015-01-16 13:26:59 UTC
++++ src/cryptography/hazmat/bindings/openssl/ssl.py
+@@ -189,10 +189,6 @@ int SSL_shutdown(SSL *);
  const char *SSL_get_cipher_list(const SSL *, int);
  Cryptography_STACK_OF_SSL_CIPHER *SSL_get_ciphers(const SSL *);
  
@@ -11,7 +11,7 @@
  /*  context */
  void SSL_CTX_free(SSL_CTX *);
  long SSL_CTX_set_timeout(SSL_CTX *, long);
-@@ -415,6 +411,16 @@
+@@ -415,6 +411,16 @@ static const long Cryptography_HAS_RELEA
  const long SSL_MODE_RELEASE_BUFFERS = 0;
  #endif
  
@@ -28,12 +28,12 @@
  #ifdef SSL_OP_NO_COMPRESSION
  static const long Cryptography_HAS_OP_NO_COMPRESSION = 1;
  #else
-@@ -524,7 +530,7 @@
+@@ -524,7 +530,7 @@ static const long Cryptography_HAS_NEXTP
  #endif
  
  /* ALPN was added in OpenSSL 1.0.2. */
 -#if OPENSSL_VERSION_NUMBER < 0x10002001L
-+#if OPENSSL_VERSION_NUMBER < 0x10002001l && !defined (LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10002001L && !defined(LIBRESSL_VERSION_NUMBER)
  int (*SSL_CTX_set_alpn_protos)(SSL_CTX *,
                                 const unsigned char *,
                                 unsigned) = NULL;
