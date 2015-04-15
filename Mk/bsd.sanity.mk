@@ -20,7 +20,7 @@ WARNING+=	"WITH_KMS was removed and has no effect"
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
 .endif
 .else
-WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
+DEV_WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
 .endif
 
 #.if defined(WITHOUT_X11)
