@@ -38,7 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
 		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \
 		 s|/usr/X11R6|${LOCALBASE}|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}| ; \
 		 s|^XLIBS.*|XLIBS=-L${LOCALBASE}/lib -lX11|g" \
 		${WRKSRC}/config/${ARCH_NAME}/Makedefs
 	@${REINPLACE_CMD} -e 's|/opt/icon|${ICONDIR}|g' ${WRKSRC}/ipl/BuildBin

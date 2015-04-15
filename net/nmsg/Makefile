@@ -2,15 +2,15 @@
 
 PORTNAME=	nmsg
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/ \
-		LOCAL/truckman/farsight
+MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Network message encapsulation system
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 		libxs.so:${PORTSDIR}/devel/libxs \

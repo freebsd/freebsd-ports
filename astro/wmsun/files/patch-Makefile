@@ -1,19 +1,17 @@
 --- Makefile.orig	Wed Jan  6 11:28:39 1999
 +++ Makefile	Thu Aug  3 21:28:34 2000
-@@ -22,14 +22,14 @@
- 
+@@ -18,12 +18,12 @@
+ OBJS   = wmSun.o SunRise.o ../wmgeneral/wmgeneral.o
  
  .c.o:
 -	$(CC) $(COPTS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
 +	$(CC) $(CFLAGS) -D$(OPSYS) -c $< -o $@ $(INCDIR)
  
- 
  all:	wmSun.o wmSun
  
- wmSun.o: wmSun_master.xpm wmSun_mask.xbm 
- wmSun:	$(OBJS) 
--	$(CC) $(COPTS) $(SYSTEM) -lm -o wmSun $^ $(INCDIR) $(LIBDIR) $(LIBS)
-+	$(CC) $(CFLAGS) $(SYSTEM) -lm -o wmSun $(OBJS) $(LIBDIR) $(LIBS)
+ wmSun:	$(OBJS)
+-	$(CC) $(COPTS) $(SYSTEM) -o wmSun $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) $(SYSTEM) -o wmSun $(OBJS) $(LIBDIR) $(LIBS)
  
  clean:
- 	for i in $(OBJS) ; do \
+ 	for i in $(OBJS) ; do rm -f $$i; done

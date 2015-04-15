@@ -3,8 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.066.1
-PORTREVISION=	1
+PORTVERSION=	2.067.0
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -27,10 +26,6 @@ LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-ac
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
 
 NOT_FOR_ARCHS=		powerpc
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture

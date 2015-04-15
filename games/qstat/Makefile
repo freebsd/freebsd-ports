@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line program to query game servers on the net
 
 CONFLICTS_INSTALL=	torque-[0-9]*

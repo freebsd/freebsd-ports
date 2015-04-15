@@ -4,7 +4,7 @@
 PORTNAME=	pipebench
 PORTVERSION=	0.40
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
+MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Pipebench shows current throughput/amount of data through a pipe

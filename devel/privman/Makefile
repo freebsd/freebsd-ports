@@ -3,7 +3,7 @@
 
 PORTNAME=	privman
 PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel security
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,11 +13,10 @@ COMMENT=	Library that makes it easy for programs to use privilege separation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
-USES=		libtool
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -13,13 +13,14 @@ COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:mail/pantomime
-USE_GNUSTEP_LOCAL_LIBS+=	Addresses:mail/addresses
-USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+USES+=	cpe
+CPE_VENDOR=	gnu
+
+USES=		gnustep
+USE_GNUSTEP=	back build
+LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime \
+		libAddresses.so:${PORTSDIR}/mail/addresses
+USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 

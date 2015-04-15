@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/exaile/exaile/archive/
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	exaile
+MASTER_SITES=	https://github.com/exaile/exaile/releases/download/${PORTVERSION}/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Full featured python-based music player for GTK+
@@ -36,8 +34,7 @@ NLS_INSTALL_TARGET_OFF=	install_no_locale
 SEXY_DESC=		UI enchancements
 SEXY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
 
-# Disable manpage building for now - it's too expensive
 post-patch:
-	@${REINPLACE_CMD} -e 's|compile locale manpage|compile locale|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

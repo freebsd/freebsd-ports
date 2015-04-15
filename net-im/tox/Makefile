@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.150317
+PORTVERSION=	0.150401
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,8 +19,7 @@ LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	4ad7649
+GH_TAGNAME=	a47fad1
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
@@ -54,7 +53,7 @@ DAEMON_LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 USE_GCC=	yes
-BROKEN_i386=	'__stack_chk_fail_local' isn't defined
+BROKEN_i386=	'__stack_chk_fail_local' is not defined
 .endif
 
 .if ${PORT_OPTIONS:MDAEMON}

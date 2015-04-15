@@ -3,7 +3,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -67,5 +67,9 @@ CONFIGURE_ARGS+=--enable-gio-unix \
 post-patch:
 	${REINPLACE_CMD} -e 's|internet-mail|mail-send|' \
 		${WRKSRC}/plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in
+# Workaround for missing 'inode/directory' content-type icon.
+# https://bugs.freedesktop.org/show_bug.cgi?id=89150
+	${FIND} ${WRKSRC} -type f -name '*.c' \
+		| ${XARGS} ${REINPLACE_CMD} -e 's|inode/directory|folder|'
 
 .include <bsd.port.mk>

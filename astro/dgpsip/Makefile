@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.madbavarian.org/ftp/
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Differential GPS over IP communication device
 
+BROKEN=		No public distfiles
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dgpsip \

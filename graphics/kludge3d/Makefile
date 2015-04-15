@@ -21,10 +21,8 @@ CONFIGURE_ARGS=	--with-lib-GL
 
 PLIST_FILES=	bin/kludge3d
 
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		-I${PYTHON_INCLUDEDIR} ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib \
-		-L${PYTHON_LIBDIR}/config -lm ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${PYTHON_LIBDIR}/config -lpthread -lm
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

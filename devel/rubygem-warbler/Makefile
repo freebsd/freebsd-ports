@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	warbler
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-jruby-jars>=1.5.6:${PORTSDIR}/devel/rubygem-jruby-jars \
-		rubygem-jruby-rack>=1.0.0:${PORTSDIR}/www/rubygem-jruby-rack \
+		rubygem-jruby-rack>=1.1.1:${PORTSDIR}/www/rubygem-jruby-rack \
 		rubygem-rake>=0.9.6:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rubyzip>=0.9:${PORTSDIR}/archivers/rubygem-rubyzip
 

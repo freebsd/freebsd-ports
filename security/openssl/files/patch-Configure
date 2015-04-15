@@ -1,15 +1,6 @@
---- Configure.orig	2015-03-19 14:30:36.000000000 +0100
-+++ Configure	2015-03-19 21:12:51.000000000 +0100
-@@ -153,7 +153,7 @@
- # which has to be accompanied by explicit -D_THREAD_SAFE and
- # sometimes -D_REENTRANT. FreeBSD 5.x expands it as -lc_r, which
- # seems to be sufficient?
--my $BSDthreads="-pthread -D_THREAD_SAFE -D_REENTRANT";
-+my $BSDthreads="$ENV{'PTHREAD_LIBS'} -D_REENTRANT $ENV{'PTHREAD_CFLAGS'}";
- 
- #config-string	$cc : $cflags : $unistd : $thread_cflag : $sys_id : $lflags : $bn_ops : $cpuid_obj : $bn_obj : $ec_obj : $des_obj : $aes_obj : $bf_obj : $md5_obj : $sha1_obj : $cast_obj : $rc4_obj : $rmd160_obj : $rc5_obj : $wp_obj : $cmll_obj : $modes_obj : $engines_obj : $dso_scheme : $shared_target : $shared_cflag : $shared_ldflag : $shared_extension : $ranlib : $arflags : $multilib
- 
-@@ -450,19 +450,20 @@
+--- Configure.orig	2015-03-19 13:30:36 UTC
++++ Configure
+@@ -450,19 +450,20 @@ my %table=(
  "android-mips","gcc:-mandroid -I\$(ANDROID_DEV)/include -B\$(ANDROID_DEV)/lib -O3 -Wall::-D_REENTRANT::-ldl:BN_LLONG RC4_CHAR RC4_CHUNK DES_INT DES_UNROLL BF_PTR:${mips32_asm}:o32:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
  
  #### *BSD [do see comment about ${BSDthreads} above!]
@@ -39,7 +30,7 @@
  
  "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -march=i486 -Wall::(unknown)::-ldl:BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
  
-@@ -1992,10 +1993,12 @@
+@@ -1992,10 +1993,12 @@ EOF
  	if ( $perl =~ m@^/@) {
  	    &dofile("tools/c_rehash",$perl,'^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";', '^my \$prefix;$', 'my $prefix = "' . $prefix . '";');
  	    &dofile("apps/CA.pl",$perl,'^#!/', '#!%s');

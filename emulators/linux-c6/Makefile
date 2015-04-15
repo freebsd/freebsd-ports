@@ -4,20 +4,14 @@
 PORTNAME=	linux-c6
 PORTVERSION=	0.2
 CATEGORIES=	emulators linux
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Meta-port for all things CentOS ${LINUX_DIST_VER}
 
-NO_BUILD=	yes
-NO_MTREE=	yes
-NO_INSTALL=	yes
+USES=	metaport
 
 # base
 USE_LINUX=	c6
-#RUN_DEPENDS+=	linux_base-c6>0:${PORTSDIR}/emulators/linux_base-c6
 
 # non-base
 
@@ -91,7 +85,6 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo
 
 OPTIONS_DEFINE=	NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
 NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 			linux-c6-libGLU>0:${PORTSDIR}/graphics/linux-c6-libGLU

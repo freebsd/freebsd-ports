@@ -2,29 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-vnsiserver
-PORTVERSION=	12.0
-PORTREVISION=	1
+PORTVERSION=	14.0.20150330
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
-DISTNAME=	xbmc-pvr-addons-${PORTVERSION}-20140104
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - VNSI server plugin
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	opdenkamp
-GH_PROJECT=	xbmc-pvr-addons
-GH_COMMIT=	9021115
-GH_TAGNAME=	9021115
+GH_ACCOUNT=	FernetMenta
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	36e2b61
 
 USES=		pkgconfig
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-WRKSRC=		${WRKDIR}/opdenkamp-xbmc-pvr-addons-${GH_COMMIT}/addons/pvr.vdr.vnsi/${PORTNAME}
 
 MAKE_ARGS+=	LIBDIR=${WRKDIR}/lib \
-		LOCDIR=${WRKDIR}/locale \
+		LOCDIR=${PREFIX}/share/locale \
 		VDRSRC=${LOCALBASE}/include/vdr \
 		INCLUDES=-I${LOCALBASE}/include
 
@@ -34,11 +29,13 @@ post-patch: post-patch-plugin
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/de_DE/LC_MESSAGES \
+		${STAGEDIR}${PREFIX}/share/locale/lt_LT/LC_MESSAGES
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}5
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
 	${INSTALL_DATA} ${WRKSRC}/${PLUGIN}/allowed_hosts.conf \
-		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}5/allowed_hosts.conf.sample
+		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

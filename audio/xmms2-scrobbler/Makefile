@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gmake pkgconfig
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/xmms2-scrobbler
 PORTDOCS=	README

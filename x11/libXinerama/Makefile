@@ -14,5 +14,8 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xineramaproto:both
+USES+=	cpe
+CPE_PRODUCT=	libxinerama
+CPE_VENDOR=	x
 
 .include <bsd.port.mk>

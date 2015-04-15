@@ -4,8 +4,8 @@
 PORTNAME=	undms
 PORTVERSION=	1.3
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://de.aminet.net/misc/unix/ \
-		ftp://us.aminet.net/misc/unix/
+MASTER_SITES=	http://de.aminet.net/pub/aminet/misc/unix/ \
+		http://se2.aminet.net/pub/aminet/misc/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.c
 EXTRACT_SUFX=	.Z
 

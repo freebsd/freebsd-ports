@@ -16,8 +16,7 @@ CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
 USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--libdir=${PREFIX}/mysql2odbc
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread
 INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coffee-script-source
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

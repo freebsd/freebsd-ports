@@ -1,10 +1,6 @@
 @unexec echo "You should stop the dhcpd and dhcpd6 daemons if you are permanently removing this port."
-@unexec if cmp -s %D/etc/dhcpd.conf.example %D/etc/dhcpd.conf; then rm -f %D/etc/dhcpd.conf; fi
-etc/dhcpd.conf.example
-@exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
-%%IPV6%%@unexec if cmp -s %D/etc/dhcpd6.conf.example %D/etc/dhcpd6.conf; then rm -f %D/etc/dhcpd6.conf; fi
-%%IPV6%%etc/dhcpd6.conf.example
-%%IPV6%%@exec if [ ! -f %D/etc/dhcpd6.conf ] ; then cp -p %D/%F %B/dhcpd6.conf; fi
+@sample etc/dhcpd.conf.sample
+%%IPV6%%@sample etc/dhcpd6.conf.sample
 %%IPV6%%etc/rc.d/isc-dhcpd6
 sbin/dhcpd
 bin/omshell

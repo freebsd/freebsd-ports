@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jeweler
-PORTVERSION=	1.8.8
+PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,14 +11,13 @@ COMMENT=	Simple and opinionated helper for creating Rubygem projects
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
+RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-git>=1.2.5:${PORTSDIR}/devel/rubygem-git \
+		rubygem-github_api>=0:${PORTSDIR}/devel/rubygem-github_api \
 		rubygem-highline>=1.6.15:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-github_api>=0.10.1:${PORTSDIR}/devel/rubygem-github_api \
-		rubygem-nokogiri>=1.6.0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-rdoc>=0:${PORTSDIR}/devel/rubygem-rdoc
+		rubygem-nokogiri>=1.5.10:${PORTSDIR}/textproc/rubygem-nokogiri \
+		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

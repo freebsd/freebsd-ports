@@ -333,6 +333,7 @@ lib/asterisk/modules/bridge_softmix.so
 %%ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
 %%XMPP%%lib/asterisk/modules/chan_motif.so
 lib/asterisk/modules/chan_bridge_media.so
+lib/asterisk/modules/chan_mgcp.so
 %%OOH323%%lib/asterisk/modules/chan_ooh323.so
 %%PJSIP%%lib/asterisk/modules/chan_pjsip.so
 lib/asterisk/modules/chan_unistim.so
@@ -445,6 +446,7 @@ lib/asterisk/modules/res_phoneprov.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_t38.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_transport_websocket.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
+lib/asterisk/modules/res_pktccops.so
 lib/asterisk/modules/res_realtime.so
 lib/asterisk/modules/res_sorcery_astdb.so
 lib/asterisk/modules/res_sorcery_config.so

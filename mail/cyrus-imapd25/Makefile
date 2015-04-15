@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -23,7 +23,7 @@ PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 
 USE_RC_SUBR=	imapd
 
-USES=		perl5 libtool
+USES=		cpe libtool perl5
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -38,6 +38,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
+
+CPE_VENDOR=	cmu
+CPE_PRODUCT=	cyrus_imap_server
 
 OPTIONS_DEFINE=		AUTOCREATE BDB HTTP IDLED LDAP MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP SQLITE DOCS \
@@ -70,8 +73,8 @@ LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
-MURDER_CFLAGS=		${PTHREAD_CFLAGS}
-MURDER_MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+MURDER_CFLAGS=
+MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=yes \
 			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
@@ -97,7 +100,8 @@ OPTIONS_DEFAULT+=		GSSAPI_BASE
 .endif
 GSSAPI_BASE_DESC=		Use Heimdal in base
 GSSAPI_BASE_USES=		gssapi
-GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi --with-gss_impl=heimdal
+GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
 GSSAPI_HEIMDAL_DESC=		Use Heimdal from ports
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
@@ -122,9 +126,7 @@ PLIST_SUB+=	CLAMAV="@comment "
 
 .if ${PORT_OPTIONS:MDRAC}
 IGNORE=		DRAC is not available
-# .if ${OSVERSION} >= 800037
 # EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
-# .endif
 # USE_AUTOTOOLS=	autoconf autoheader
 .endif
 

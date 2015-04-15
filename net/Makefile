@@ -363,6 +363,7 @@
     SUBDIR += mad_fcl
     SUBDIR += malo-firmware-kmod
     SUBDIR += mcast-tools
+    SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += megatools
@@ -391,6 +392,7 @@
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += nakenchat
+    SUBDIR += nanomsg
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
@@ -433,6 +435,7 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
+    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -858,8 +861,8 @@
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
     SUBDIR += php55-xmlrpc
-    SUBDIR += php56-ldap  
-    SUBDIR += php56-soap  
+    SUBDIR += php56-ldap
+    SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
@@ -929,6 +932,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-pybeanstalk
     SUBDIR += py-pygeoip
+    SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
@@ -987,6 +991,7 @@
     SUBDIR += radvd
     SUBDIR += raggle
     SUBDIR += ranch
+    SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += recvnet
@@ -1042,8 +1047,11 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-ecloud
+    SUBDIR += rubygem-fog-local
+    SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
+    SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-serverlove
     SUBDIR += rubygem-fog-softlayer

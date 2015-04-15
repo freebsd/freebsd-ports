@@ -5863,9 +5863,9 @@ archivers/ruby-libarchive|archivers/rubygem-libarchive|2014-04-08|Use the rubyge
 java/j2sdkee13||2014-04-10|EOLed long ago
 astro/glunarclock||2014-04-11|gnome-panel will be updated to the 3.x version which is not compatible with 2.x
 databases/libgda2||2014-04-11|Ancient version, consider using newer versions
-databases/libgda2-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda2-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3||2014-04-11|Ancient version, consider using newer versions
-databases/libgda3-references||2014-04-11|Ancient version, consider using newer versions
+databases/libgda3-reference||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-firebird||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-freetds||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-ldap||2014-04-11|Ancient version, consider using newer versions
@@ -7301,7 +7301,6 @@ ports-mgmt/pib||2014-12-06|Has expired: Does not work with tcl/tk 8.4+, does not
 editors/texmakerx|editors/texstudio|2014-12-06|The project has been renamed
 databases/postgresql93-plv8js|databases/postgresql-plv8js|2014-12-07|Breaks index when PGSQL_DEFAULT=9.3 and master port can be used for pgsql 9.3
 www/twig-php||2014-12-08|Removed, as it was replaced and conflicting with www/pear-twig and www/pecl-twig
-net/ntp-rc|net/ntp-devel|2014-12-11|Upline uses devel and release candidate interchangably
 textproc/xerces-c2|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
 textproc/xerces-c2-devel|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
 games/empire|games/vms-empire|2014-12-15|Moved to match upstream name
@@ -7441,3 +7440,27 @@ devel/p5-Errno||2015-03-09|Errno is part of Perl
 devel/p5-Class-XSAccessor-Array||2015-03-09|Has been a part of devel/p5-Class-XSAccessor for >5 years. Use that port instead
 multimedia/ffmpeg25|multimedia/ffmpeg26|2015-03-14|ffmpeg upstream now points to 2.6.x series
 www/squid33|www/squid|2015-03-15|Has expired: Reached EOL on 28 August 2014, use www/squid (v3.4) instead
+x11-fonts/ttmkfdir|x11-fonts/mkfontdir|2015-03-22|Has been replaced by mkfontdir/mkfontscale long ago
+audio/raproxy||2015-03-28|Has expired: Broken for more than 6 months
+converters/ruby-iconv||2015-03-28|Has expired: Not needed with Ruby 2.x
+databases/pydbdesigner||2015-03-28|Has expired: Broken for more than 6 months
+security/cyassl|security/wolfssl|2015-03-28|Renamed upstream
+devel/rubygem-rcov||2015-03-28|Has expired: Does not work with Ruby 2.x
+emulators/linux_dist-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
+emulators/linux_base-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
+www/vimb|www/vimb-gtk3|2015-03-29|Split into www/vimb-gtk2 and www/vimb-gtk3 (former default)
+ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome by changed in the Ports Collection
+devel/subversion16|devel/subversion|2015-03-31|Has expired: EoL, use devel/subversion
+lang/nimrod|lang/nim|2015-04-03|Renamed by upstream
+deskutils/mirall|deskutils/owncloudclient|2015-04-04|Renamed upstream
+mail/rubygem-qmail|mail/rubygem-ruby-qmail|2015-04-05|Rename to match our rubygems naming
+devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rename to match our rubygems naming
+print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygems naming
+devel/rubygem-filemagic|devel/rubygem-ruby-filemagic|2015-04-05|Rename to match our rubygems naming
+emulators/xl|sysutils/xen-tools|2015-04-06|Renamed into xen-tools
+lang/gnatdroid-armv5||2015-04-07|Has expired: Nobody cares enough to fix sigtramp-android.c for ARMv5
+sysutils/puppet27||2015-04-07|Has expired: Does not work with Ruby 2.x
+www/rubygem-form_data|www/rubygem-http-form_data|2015-04-07|Has expired: Use www/rubygem-http-form_data instead (renamed by upstream)
+www/typo345||2015-04-07|Has expired: Upgrade to www/typo3 or www/typo3-lts
+multimedia/mediabrowser|multimedia/emby-server|2015-04-08|Project renamed
+deskutils/preferencepanes|deskutils/systempreferences|2015-04-08|preferencepanes merged into systempreferences

@@ -1,5 +1,5 @@
---- makefile.orig	2013-01-13 17:58:32.000000000 +0100
-+++ makefile	2014-02-12 10:16:43.223223949 +0100
+--- makefile.orig	2015-02-01 11:19:25.000000000 +0100
++++ makefile	2015-04-08 15:13:59.866757474 +0200
 @@ -203,7 +203,7 @@
  #
  # This is my compiler of choice, it seems to work most everywhere
@@ -13,9 +13,9 @@
  # attempt to "guess" at many of these flags based on your system.
  #
  ## With SDL
--CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags`
+-CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
 -LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
-+#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags`
++#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
 +#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
  ##
  ## Without SDL
@@ -27,7 +27,7 @@
 -#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
 -#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm
 +CFLAGS += -g -pipe -Wall -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
-+LIBS += -lncurses -lcrypt -lm
++LIBS += -lncurses -lcrypt -lm -lexecinfo
  
  
  ## Added by thaler, 6/28/97

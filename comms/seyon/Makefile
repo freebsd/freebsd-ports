@@ -12,6 +12,7 @@ EXTRACT_SUFX=	-tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Communications package for the X Window system
 
+BROKEN=		Unfetchable
 WRKSRC=		${WRKDIR}/seyon
 USES=		imake
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice

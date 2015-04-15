@@ -25,9 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib|' \
-		-e 's|-lpthread|${PTHREAD_LIBS}|' \
-		-e 's|(-fPIC)|\1 ${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include|' \
+		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} -lpthread -L${LOCALBASE}/lib|' \
+		-e 's|(-fPIC)|\1 ${CFLAGS} -I${LOCALBASE}/include|' \
 		${WRKSRC}/Makefile.in
 
 do-install:

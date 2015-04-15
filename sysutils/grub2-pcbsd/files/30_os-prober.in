@@ -58,6 +58,13 @@ menuentry "Chainload Disk (hd${hdnum} - $1)" {
 EOF
 }
 
+if [ -e "/usr/local/etc/default/grub" ] ; then
+  . /usr/local/etc/default/grub
+fi
+if [ -n "$GRUB_NODUALBOOT" ] ; then
+   exit 0
+fi
+
 # Look for file-systems on the zpool disk
 for disk in `zpool status | grep ONLINE | grep -v "state:" | awk '{print $1}'`
 do

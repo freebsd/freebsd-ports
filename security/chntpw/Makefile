@@ -3,7 +3,7 @@
 
 PORTNAME=	chntpw
 PORTVERSION=	110511
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://pogostick.net/~pnh/ntpasswd/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}

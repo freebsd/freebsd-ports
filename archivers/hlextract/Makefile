@@ -12,6 +12,8 @@ COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
 
+BROKEN=		Checksum and size mismatch
+
 LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
 
 USES=		dos2unix zip

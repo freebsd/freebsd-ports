@@ -46,8 +46,7 @@ post-patch:
 		-e 's|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|' \
 		-e 's|CMAKE_INSTALL_DIR}|CMAKE_INSTALL_DIR}/libssh|' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|-lssh_threads|-lssh_threads ${PTHREAD_LIBS}|' \
-		-e 's|$${INCLUDE_INSTALL_DIR}|$${INCLUDE_INSTALL_DIR} ${PTHREAD_CFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|-lssh_threads|-lssh_threads -lpthread|' \
 		${WRKSRC}/libssh_threads.pc.cmake
 	@${REINPLACE_CMD} -e 's| -pedantic-errors||' \
 		${WRKSRC}/cmake/Modules/DefineCompilerFlags.cmake

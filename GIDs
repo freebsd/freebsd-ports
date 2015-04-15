@@ -177,6 +177,7 @@ courier:*:465:
 condor:*:466:
 netmon:*:467:
 slurm:*:468:
+consul:*:469:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
@@ -227,6 +228,7 @@ netdisco:*:840:
 tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
+subsonic:*:844:
 fossy:*:901:www
 scanlogd:*:902:
 riemann:*:908:
@@ -294,7 +296,6 @@ boinc:*:973:
 radicale:*:974:
 unifi:*:975:
 minetest:*:976:
-sguil:*:978:
 ums:*:979:
 hbase:*:980:
 uvncrep:*:981:
@@ -304,7 +305,9 @@ tvheadend:*:984:
 puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
-mediabrowser:*:989:
+emby:*:989:
+oozie:*:990:
+sguil:*:991:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

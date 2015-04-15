@@ -34,9 +34,6 @@ LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing
 LDFLAGS+=	-lmissing
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/${MAKEFILE}
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

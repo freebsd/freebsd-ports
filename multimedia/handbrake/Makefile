@@ -2,31 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	handbrake
-PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTVERSION=	0.10.1
+#PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION} \
-		http://download.handbrake.fr/handbrake/contrib/:contrib
+MASTER_SITES=	http://download.handbrake.fr/releases/${PORTVERSION}/ \
+		http://download.handbrake.fr/handbrake/contrib/:contrib \
+		http://download.handbrake.fr/contrib/:contrib
 DISTFILES=	HandBrake-${PORTVERSION}.tar.bz2 \
 		a52dec-0.7.4.tar.gz:contrib \
 		faac-1.28.tar.gz:contrib \
 		faad2-2.7.tar.gz:contrib \
-		libav-v9.6.tar.bz2:contrib \
+		fdk-aac-v0.1.1-6-gbae4553.tar.bz2:contrib \
+		libav-v10.1.tar.bz2:contrib \
 		lame-3.98.tar.gz:contrib \
-		libbluray-0.2.3.tar.bz2:contrib \
+		libbluray-0.5.0.tar.bz2:contrib \
 		libdca-r81-strapped.tar.gz:contrib \
-		libdvdnav-svn1168.tar.gz:contrib \
-		libdvdread-svn1168.tar.gz:contrib \
-		libmkv-0.6.5-0-g82075ae.tar.gz:contrib \
-		mp4v2-trunk-r355.tar.bz2:contrib \
-		mpeg2dec-0.5.1.tar.gz:contrib \
-		x264-r2273-b3065e6.tar.gz:contrib
+		libdvdnav-5.0.1-0-gaa3659d.tar.gz:contrib \
+		libdvdread-5.0.0-6-gcb1ae87.tar.gz:contrib \
+		libvpx-v1.3.0.tar.bz2:contrib \
+		x264-r2479-dd79a61.tar.gz:contrib \
+		x265-9329-0d30d2641875-1.5.tar.bz2:contrib
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
+
+BROKEN=		Fails to build
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
@@ -39,7 +42,9 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libvorbisenc.so:${PORTSDIR}/audio/libvorbis \
 		libtheoradec.so:${PORTSDIR}/multimedia/libtheora \
 		libtheoraenc.so:${PORTSDIR}/multimedia/libtheora \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libvpx.so:${PORTSDIR}/multimedia/libvpx \
+		libx264.so:${PORTSDIR}/multimedia/libx264
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
 LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
@@ -69,12 +74,13 @@ OPTIONS_DEFAULT=	X11
 
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and
 # to support --exclude-libs option for ld(1) when building GUI program
-.if ${PORT_OPTIONS:MX11} || ${OSVERSION} < 802509 || \
-	${OSVERSION} >= 900000 && ${OSVERSION} < 900033
+.if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
+CC!=/usr/bin/which ${CC}
+MAKE_ENV+=ACLOCAL=${LOCALBASE}/bin/aclocal
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
@@ -83,7 +89,7 @@ LIBS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 USES+=		gettext
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk30
 PLIST_FILES+=	bin/HandBrake
 .else
 CONFIGURE_ARGS+=	--disable-gtk
@@ -100,43 +106,52 @@ LDFLAGS+=	-lstdc++
 # considered good in FreeBSD.  Instead, we will prepare everything manually.
 post-extract: .SILENT
 # Unversioned directories can be copied in a loop
-.for d in a52dec lame libdca libdvdnav libdvdread mpeg2dec x264
+.for d in a52dec lame libdca x264
 	${MKDIR} ${BUILD_WRKSRC}/contrib/${d}
 	${MV} ${WRKDIR}/${d} ${BUILD_WRKSRC}/contrib/${d}
 .endfor
 # Others had to be processed one by one due to irregular (versioned) names
-	cd ${BUILD_WRKSRC}/contrib && ${MKDIR} faac faad2 ffmpeg libbluray libmkv mp4v2
+	cd ${BUILD_WRKSRC}/contrib && ${MKDIR} faac faad2 fdkaac ffmpeg libbluray libdvdnav \
+	    libdvdread libvpx x265
 	${MV} ${WRKDIR}/faac-1.28 ${BUILD_WRKSRC}/contrib/faac
 	${MV} ${WRKDIR}/faad2-2.7 ${BUILD_WRKSRC}/contrib/faad2
-	${MV} ${WRKDIR}/libav-v9.6 ${BUILD_WRKSRC}/contrib/ffmpeg/libav-v9.6
-	${MV} ${WRKDIR}/libbluray-0.2.3 ${BUILD_WRKSRC}/contrib/libbluray
-	${MV} ${WRKDIR}/libmkv-0.6.5-0-g82075ae ${BUILD_WRKSRC}/contrib/libmkv
-	${MV} ${WRKDIR}/mp4v2-trunk-r355 ${BUILD_WRKSRC}/contrib/mp4v2
+	${MV} ${WRKDIR}/fdk-aac-v0.1.1-6-gbae4553 ${BUILD_WRKSRC}/contrib/fdkaac
+	${MV} ${WRKDIR}/libav-v10.1 ${BUILD_WRKSRC}/contrib/ffmpeg/libav-v10.1
+	${MV} ${WRKDIR}/libbluray-0.5.0 ${BUILD_WRKSRC}/contrib/libbluray
+	${MV} ${WRKDIR}/libdvdnav-5.0.1-0-gaa3659d ${BUILD_WRKSRC}/contrib/libdvdnav
+	${MV} ${WRKDIR}/libdvdread-5.0.0-6-gcb1ae87 ${BUILD_WRKSRC}/contrib/libdvdread
+	${MV} ${WRKDIR}/libvpx-v1.3.0 ${BUILD_WRKSRC}/contrib/libvpx
+	${MV} ${WRKDIR}/x265-9329-0d30d2641875-1.5 ${BUILD_WRKSRC}/contrib/x265
 # Avoid conflict with `print/harfbuzz' (also installs "hb.h")
 	${MV} ${WRKSRC}/libhb/hb.h ${WRKSRC}/libhb/hb-of-handbrake.h
 # Mark all bundled dependencies as extracted
 	${TOUCH} ${BUILD_WRKSRC}/contrib/a52dec/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/faac/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/faad2/.stamp.extract
+	${TOUCH} ${BUILD_WRKSRC}/contrib/fdkaac/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/ffmpeg/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/lame/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libbluray/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libdca/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libdvdnav/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libdvdread/.stamp.extract
-	${TOUCH} ${BUILD_WRKSRC}/contrib/libmkv/.stamp.extract
-	${TOUCH} ${BUILD_WRKSRC}/contrib/mp4v2/.stamp.extract
-	${TOUCH} ${BUILD_WRKSRC}/contrib/mpeg2dec/.stamp.extract
+	${TOUCH} ${BUILD_WRKSRC}/contrib/libvpx/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/x264/.stamp.extract
+	${TOUCH} ${BUILD_WRKSRC}/contrib/x265/.stamp.extract
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard|sys/soundcard|' \
 		${BUILD_WRKSRC}/contrib/a52dec/a52dec/libao/audio_out_oss.c
-	@${REINPLACE_CMD} -e 's|-ldl|-lc| ; s|\[dl\]|[c]|' \
-		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.2.3/configure.ac
+	@${REINPLACE_CMD} -e 's|-ldl|-lc| ; s|\[dl\]|[c]| ; s|ACLOCAL=.*|ACLOCAL=aclocal|g' \
+		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.5.0/configure
+	@${REINPLACE_CMD} -e 's|ACLOCAL = @ACLOCAL@|ACLOCAL = ${LOCALBASE}/bin/aclocal|g' \
+		-e 's|-D_ISOC99_SOURCE -D_POSIX_C_SOURCE=200112L -D_REENTRANT||g' \
+		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.5.0/Makefile.in \
+		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.5.0/src/Makefile.in
 	@${REINPLACE_CMD} \
 		-e '/GHB_PACKAGES=/s/gthread-2.0/& gmodule-2.0/' \
 		-e 's/-lhb/& ${ICONV_LIB}/' \
+		-e 's:-lxml2:& ../../contrib/lib/libx265.a ../../contrib/lib/libfdk-aac.a:g' \
 		${WRKSRC}/gtk/configure.ac
 	@${REINPLACE_CMD} -e 's|<malloc|<stdlib|' ${WRKSRC}/libhb/fifo.c
 	@${FIND} ${WRKSRC} -type f -name '*.[ch]' -print0 | ${XARGS} -0 \
@@ -145,8 +160,9 @@ post-patch:
 		${WRKSRC}/make/configure.py
 	@${REINPLACE_CMD} -e 's|avcodec avformat avutil avresample|avformat avcodec avresample avutil|' \
 		${WRKSRC}/libhb/module.defs ${WRKSRC}/test/module.defs
-	${TR} -d '\r' < ${WRKSRC}/contrib/mpeg2dec/A02-gwluserdata.patch > ${WRKDIR}/A02-gwluserdata.patch
-	${MV} ${WRKDIR}/A02-gwluserdata.patch ${WRKSRC}/contrib/mpeg2dec/
+	@${TR} -d '\r' < ${WRKSRC}/contrib/ffmpeg/A06-frame-threading-state.patch > ${WRKDIR}/A06-frame-threading-state.patch
+	@${MV} ${WRKDIR}/A06-frame-threading-state.patch ${WRKSRC}/contrib/ffmpeg/
+	@${REINPLACE_CMD} -e 's:/lib/cpp:${CPP}:g' ${BUILD_WRKSRC}/contrib/fdkaac/fdk-aac-v0.1.1-6-gbae4553/configure
 	@${REINPLACE_CMD} -E \
 		-e 's|%%REP_CC%%|${CC}|g' \
 		-e 's|%%REP_CXX%%|${CXX}|g' \

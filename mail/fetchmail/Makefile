@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		gmake shebangfix tar:xz
+USES=		cpe gmake shebangfix tar:xz
 SHEBANG_FILES=	fetchmailconf.py
 python_OLD_CMD=	/usr/bin/env python
 

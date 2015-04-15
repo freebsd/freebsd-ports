@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.2.o.git20150311
+DISTVERSION=	0.2.o.20150402
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	notsecure
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	f24082d
+GH_COMMIT=	15b1ad9
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender

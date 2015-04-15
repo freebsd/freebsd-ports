@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.9.1
+PORTVERSION=	3.10
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,17 +22,20 @@ USES=		compiler:c++11-lib gmake
 
 GH_ACCOUNT=	facebook
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+GH_TAGNAME=	v${PORTVERSION}
 USE_GITHUB=	yes
 
-PROGRAMS=	blob_store_bench db_bench db_repl_stress db_sanity_test \
-		db_stress ldb log_and_apply_bench signal_test sst_dump \
-		table_reader_bench
+PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb log_and_apply_bench signal_test sst_dump table_reader_bench
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+CXXFLAGS+=	-Wno-inconsistent-missing-override
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' \
-		          -e 's| -Werror||' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|; s| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e 's| -pg||' ${WRKSRC}/Makefile
@@ -45,9 +48,9 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.so ${STAGEDIR}${PREFIX}/lib/librocksdb.so.0
 	${LN} -fs librocksdb.so.0 ${STAGEDIR}${PREFIX}/lib/librocksdb.so
-	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

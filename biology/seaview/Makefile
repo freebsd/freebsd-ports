@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.3.4
+PORTVERSION=	4.5.4
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \
@@ -14,8 +14,9 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libpdf.so:${PORTSDIR}/print/pdflib \
 		libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -38,14 +39,8 @@ DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's|^\(PDF_PS_FLAGS\) |#\1 | ; \
-		 s|^\(FLTK\) |#\1 | ; \
-		 s|^\(USE_XFT\) |#\1 | ; \
-		 s| -ldl|| ; \
-		 s|^\(CC\) |#\1 | ; \
-		 s|^\(CXX\) |#\1 | ; \
-		 s|^\(OPT\) |#\1 | ; \
-		 s|-lpthread|-pthread|' ${WRKSRC}/Makefile
+		's|^\(CC\) |#\1 | ; \
+		 s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview \

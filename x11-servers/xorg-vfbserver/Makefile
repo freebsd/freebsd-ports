@@ -41,8 +41,7 @@ CONFIGURE_ARGS=	--disable-dmx \
 		--disable-vbe \
 		--disable-vgahw \
 		--enable-xvfb \
-		--with-fontrootdir=${PREFIX}/share/fonts \
-		--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
+		--with-fontrootdir=${PREFIX}/share/fonts
 
 USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 		bigreqsproto randrproto renderproto xextproto inputproto \

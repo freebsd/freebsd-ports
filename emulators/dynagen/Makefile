@@ -42,8 +42,23 @@ PORTEXAMPLES=	*
 PORTDATA=	*
 
 USES=		dos2unix python
+
+USES+=		shebangfix
+SHEBANG_FILES=	*.py dynagen pemu-start.sh
+SHEBANG_LANG=	python_env python_bol python_cnf
+python_CMD=	${PYTHON_CMD}
+python_env_OLD_CMD=/usr/bin/env[[:space:]]*python
+python_env_CMD=	${PYTHON_CMD}
+python_bol_OLD_CMD=the an incredible combination
+python_bol_CMD=|;9s|^python|${PYTHON_CMD}
+python_cnf_OLD_CMD=the an incredible combination
+python_cnf_CMD=|;s|^CONFIGSPECPATH.*|CONFIGSPECPATH = ['${PREFIX}/share/dynagen']
+
 USE_PYTHON=	distutils
 ALL_TARGET=	# empty
+
+post-extract:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${STAGEDIR}${PREFIX}/bin

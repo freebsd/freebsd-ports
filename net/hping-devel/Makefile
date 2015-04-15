@@ -29,9 +29,6 @@ PORTEXAMPLES=	README apd.htcl apd2.htcl ciscoios.htcl ciscoios0.htcl \
 		passivets.htcl ping.htcl raw.htcl show-tcpseq.htcl \
 		showled.htcl
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping3 ${STAGEDIR}${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping3.8 ${STAGEDIR}${PREFIX}/man/man8/hping.8

@@ -1,5 +1,5 @@
---- make.inc	Fri Jan 18 05:53:51 2008
-+++ make.inc	Thu Jul  3 12:47:55 2008
+--- make.inc.orig	2008-02-22 22:45:36 UTC
++++ make.inc
 @@ -16,13 +16,13 @@
  #
  #  The machine (platform) identifier to append to the library names
@@ -17,7 +17,7 @@
  
  # 
  # If you don't have ESSL, you can use the following blaslib instead:
-@@ -30,10 +30,10 @@
+@@ -30,7 +30,7 @@ SUPERLULIB   = libsuperlu_mt$(PLAT).a
  # which may be slower than ESSL
  #
  BLASDEF	  = -DUSE_VENDOR_BLAS
@@ -25,12 +25,17 @@
 +BLASLIB   = %%BLAS%%
  #BLASLIB   = ../lib/libblas$(PLAT).a
  MATHLIB	  = -lm 
--MPLIB	  = -lpthread
-+MPLIB	  = %%PTHREAD_LIBS%%
- 
+ MPLIB	  = -lpthread
+@@ -38,7 +38,7 @@ MPLIB	  = -lpthread
  #  The archiver and the flag(s) to use when building archive (library)
  #  If your system has no ranlib, set RANLIB = echo.
-@@ -46,16 +46,17 @@
+ #
+-ARCH         = ar
++ARCMD        = ar
+ ARCHFLAGS    = cr
+ RANLIB       = ranlib
+ 
+@@ -46,16 +46,17 @@ RANLIB       = ranlib
  PREDEFS      	= -D_PTHREAD
  #
  
@@ -41,7 +46,7 @@
 -LOADER       = xlc_r
 -LOADOPTS     = -bmaxdata:0x80000000
 +CC           = %%CC%%
-+CFLAGS       = $(PREDEFS) %%CPPFLAGS%% %%CFLAGS%% %%PTHREAD_CFLAGS%%
++CFLAGS       = $(PREDEFS) %%CPPFLAGS%% %%CFLAGS%%
 +FORTRAN      = %%FC%%
 +FFLAGS       = %%FFLAGS%%
 +LOADER       = %%CC%%

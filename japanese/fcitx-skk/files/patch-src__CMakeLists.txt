@@ -1,0 +1,8 @@
+--- ./src/CMakeLists.txt.orig	2013-10-28 01:07:26.000000000 +0900
++++ ./src/CMakeLists.txt	2014-03-20 13:45:23.000000000 +0900
+@@ -15,4 +15,4 @@
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dictionary_list.in ${CMAKE_CURRENT_BINARY_DIR}/dictionary_list @ONLY)
+ 
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dictionary_list rule DESTINATION "${FCITX4_PREFIX}/share/fcitx/skk")
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dictionary_list rule DESTINATION "share/fcitx/skk")

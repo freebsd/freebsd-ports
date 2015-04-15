@@ -30,17 +30,18 @@ CONFLICTS_INSTALL=	exult-[0-9]* ucc-[0-9]*
 # Patch files.
 PATCH436FILES=	unreal.tournament_436-multilanguage.run:p436 \
 		unreal.tournament.official.bonus.pack.collection.run:p436
-.if defined(WITH_451PATCH)
-PATCH451FILES=	UTPGPatch451.tar.bz2:p451
-UTVERSION=	451
-PLIST_SUB+=	451PATCH=""
-.else
-PATCH451FILES=	# Empty
-UTVERSION=	436
-PLIST_SUB+=	451PATCH="@comment "
-.endif
 
 CDDIRS=		Help Logs Maps Music Sounds System Textures Web
+
+# Checks
+#   - Verify path to CD content.
+#   - Verify CD was correctly mounted by checking for incorrect NetGamesUSA.com.
+#     -b option may be needed to mount it.
+.if !defined(CDROM_MOUNT)
+IGNORE= 	requires CDROM_MOUNT set to mount point of CD
+.elif exists(${CDROM_MOUNT}/netgam~1.com)
+IGNORE= 	requires CD mounting with -b option
+.endif
 
 # Anthology install.
 .if exists(${CDROM_MOUNT}/Disk1/data1.cab)
@@ -55,14 +56,29 @@ RELEASE_MSG=	"original/GOTY"
 PLIST_SUB+=	ANTHOLOGY="@comment " ORIGINAL=""
 .endif
 
-# Maps.
-.if defined(WITHOUT_MAPS)
-PLIST_SUB+=	MAPS="@comment "
+OPTIONS_DEFINE=	MAPS V451PATCH
+OPTIONS_DEFAULT=MAPS
+OPTIONS_SUB=	yes
+MAPS_DES=	Install additional maps
+V451PATCH=	With version 451 patch
+
+.include <bsd.port.options.mk>
+
+# Maps
+.if ${PORT_OPTIONS:MMAPS}
+MAPS_EXCLUDE=	# Empty
+.else
 MAPS_EXCLUDE=	--exclude 'AS*' --exclude 'CTF*' --exclude 'DM*'\
 		--exclude 'DOM*' --exclude 'EOL*'
+.endif
+
+# Patch
+.if ${PORT_OPTIONS:MV451PATCH}
+PATCH451FILES=	UTPGPatch451.tar.bz2:p451
+UTVERSION=	451
 .else
-PLIST_SUB+=	MAPS=""
-MAPS_EXCLUDE=	# Empty
+PATCH451FILES=	# Empty
+UTVERSION=	436
 .endif
 
 do-extract:
@@ -82,9 +98,6 @@ post-patch:
 		-e "/ll=/{N;d;}" ${WRKSRC}/bin/ut
 
 # Installation steps performed:
-#   - Verify path to CD content.
-#   - Verify CD was correctly mounted by checking for incorrect NetGamesUSA.com.
-#     -b option may be needed to mount it.
 #   - Copy desired content off of CD to drive.  Windows files left behind.
 #   - Extract files from Linux patch minus various language files (necessary?).
 #   - Extract bonus pack.
@@ -94,15 +107,6 @@ post-patch:
 #   - Install scripts and README's.
 #   - Set permissions on files and directories.
 do-install:
-.if !defined(CDROM_MOUNT)
-	@${ECHO_CMD} "${PKGNAME} requires CDROM_MOUNT set to mount point of CD"
-	@${FALSE}
-.endif
-.if exists(${CDROM_MOUNT}/netgam~1.com)
-	@${ECHO_CMD} \
-		"This CD requires mounting with the -b option"
-	@${FALSE}
-.endif
 	@${ECHO_CMD} "Detected ${RELEASE_MSG} release"
 	@${ECHO_CMD} "Installing data from CD"
 	@${MKDIR} ${STAGEDIR}${DATADIR}

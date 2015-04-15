@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/rdfdb
 USES=		gmake
 MAKEFILE=	makefile
 ALL_TARGET=
-CFLAGS+=	${PTHREAD_CFLAGS} -Wno-return-type
+CFLAGS+=	-Wno-return-type
 SUB_LIST+=	RDFDB_PORT="${RDFDB_PORT}" RDFDB_DIR="${RDFDB_DIR}"
 USE_RC_SUBR=	rdfdb-server
 
@@ -31,7 +31,6 @@ PLIST_FILES=	bin/rdfdb
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS:S/"//g},g' \
 		-e 's,%%BDB_INCLUDE_DIR%%,${BDB_INCLUDE_DIR},g'\
 		-e 's,%%BDB_LIB_NAME%%,${BDB_LIB_NAME},g' \
 		${WRKSRC}/makefile

@@ -41,7 +41,7 @@ lib/gnote/addins/%%VERSION%%/webdavsyncservice.desktop
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.so
 lib/libgnote.so
 lib/libgnote-3.14.so.0
-lib/libgnote-3.14.so.0.0.0
+lib/libgnote-3.14.so.0.0.1
 man/man1/gnote.1.gz
 share/appdata/gnote.appdata.xml
 share/applications/gnote.desktop

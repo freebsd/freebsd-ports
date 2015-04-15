@@ -1,6 +1,6 @@
 --- Gemfile.orig	2014-03-30 21:39:22.047223369 +0000
 +++ Gemfile	2014-03-30 21:39:43.309222769 +0000
-@@ -21,14 +21,6 @@
+@@ -25,14 +25,6 @@
  end
  
  platforms :mri, :mingw do
@@ -9,7 +9,7 @@
 -    # RMagick 2 supports ruby 1.9
 -    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
 -    # different requirements for the same gem on different platforms
--    gem "rmagick", ">= 2.0.0"
+-    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : ">= 2.0.0")
 -  end
 -
    # Optional Markdown support, not for JRuby

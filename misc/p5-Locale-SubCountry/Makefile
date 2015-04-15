@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Locale-SubCountry
-PORTVERSION=	1.63
-PORTREVISION=	1
+PORTVERSION=	1.64
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +14,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

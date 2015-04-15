@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.pdflib.com/fileadmin/pdflib/products/more/jpeg2ps/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converter for JPEG compressed images to PostScript Level 2
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
 OPTIONS_DEFINE=	DOCS

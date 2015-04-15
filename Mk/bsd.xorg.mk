@@ -29,8 +29,8 @@ Xorg_Pre_Include=		bsd.xorg.mk
 
 .if defined(XORG_CAT)
 # Default variables, common to all new modular xorg ports.
-.if !defined(USE_TGZ) && !defined(USE_XZ)
-USE_BZIP2=    	yes
+.if !defined(USES) || ! ${USES:Mtar*}
+USES+=		tar:bzip2
 .endif
 GNU_CONFIGURE= 	yes
 DIST_SUBDIR=	xorg/${XORG_CAT}
@@ -96,8 +96,7 @@ DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
 USES+=	pathfix
 CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
-					--with-fontrootdir=${LOCALBASE}/share/fonts \
-					--with-default-font-path="catalogue:${LOCALBASE}/etc/X11/fontpath.d,built-ins"
+					--with-fontrootdir=${LOCALBASE}/share/fonts
 
 LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
 USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto fontutil:build

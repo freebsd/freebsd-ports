@@ -67,6 +67,7 @@ man/man8/xymond_sample.8
 man/man8/xymonfetch.8
 man/man8/xymonlaunch.8
 man/man8/xymonproxy.8
+%%WWWDIR%%/cgi-bin/acknowledgements.sh
 %%WWWDIR%%/cgi-bin/appfeed-critical.sh
 %%WWWDIR%%/cgi-bin/appfeed.sh
 %%WWWDIR%%/cgi-bin/certreport.sh
@@ -99,6 +100,7 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/cgi-secure/useradm.sh
 %%WWWDIR%%/server/bin/ackinfo.cgi
 %%WWWDIR%%/server/bin/acknowledge.cgi
+%%WWWDIR%%/server/bin/acknowledgements.cgi
 %%WWWDIR%%/server/bin/appfeed.cgi
 %%WWWDIR%%/server/bin/bb
 %%WWWDIR%%/server/bin/bbcmd
@@ -187,6 +189,9 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/web/acknowledge_footer
 %%WWWDIR%%/server/web/acknowledge_form
 %%WWWDIR%%/server/web/acknowledge_header
+%%WWWDIR%%/server/web/acknowledgements_footer
+%%WWWDIR%%/server/web/acknowledgements_form
+%%WWWDIR%%/server/web/acknowledgements_header
 %%WWWDIR%%/server/web/columndoc_footer
 %%WWWDIR%%/server/web/columndoc_header
 %%WWWDIR%%/server/web/confreport_back

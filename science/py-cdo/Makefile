@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/cdo:${PORTSDIR}/science/cdo
 
 USE_PYTHON=	autoplist distutils
-USES=		python:2
+USES=		python
 
 .include <bsd.port.mk>

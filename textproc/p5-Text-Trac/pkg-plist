@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Text::Trac.3.gz
+bin/trac2html
 %%SITE_PERL%%/Text/Trac.pm
 %%SITE_PERL%%/Text/Trac/BlockNode.pm
 %%SITE_PERL%%/Text/Trac/Blockquote.pm
@@ -27,3 +27,4 @@
 %%SITE_PERL%%/Text/Trac/Table.pm
 %%SITE_PERL%%/Text/Trac/Text.pm
 %%SITE_PERL%%/Text/Trac/Ul.pm
+%%PERL5_MAN3%%/Text::Trac.3.gz

@@ -6,6 +6,7 @@
     SUBDIR += 0ad
     SUBDIR += 0verkill
     SUBDIR += 2048
+    SUBDIR += 2048-qt
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += 3omns
@@ -829,6 +830,7 @@
     SUBDIR += r1q2
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
+    SUBDIR += redeclipse-data
     SUBDIR += reminiscence
     SUBDIR += rescue
     SUBDIR += residualvm

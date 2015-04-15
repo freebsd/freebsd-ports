@@ -14,7 +14,6 @@ LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 
 USE_RC_SUBR=	linuxigd
 USES=		gmake
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-extract:
 	@${RM} ${WRKSRC}/iptc.?

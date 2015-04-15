@@ -1,23 +1,10 @@
---- ./nokogiri-1.6.3.1.gemspec.orig	2014-08-23 23:55:51.304817727 +0000
-+++ ./nokogiri-1.6.3.1.gemspec	2014-08-23 23:56:09.655816514 +0000
-@@ -15,20 +15,6 @@
- date: 2014-07-22 00:00:00.000000000 Z
- dependencies:
- - !ruby/object:Gem::Dependency
--  name: mini_portile
--  requirement: !ruby/object:Gem::Requirement
--    requirements:
--    - - '='
--      - !ruby/object:Gem::Version
--        version: 0.6.0
--  type: :runtime
--  prerelease: false
--  version_requirements: !ruby/object:Gem::Requirement
--    requirements:
--    - - '='
--      - !ruby/object:Gem::Version
--        version: 0.6.0
--- !ruby/object:Gem::Dependency
-   name: rdoc
-   requirement: !ruby/object:Gem::Requirement
-     requirements:
+--- nokogiri.gemspec.orig	2015-03-29 12:13:17.677851000 +0000
++++ nokogiri.gemspec	2015-03-29 13:06:46.232040000 +0000
+@@ -28,7 +28,6 @@
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<mini_portile>, ["~> 0.6.0"])
+       s.add_development_dependency(%q<rdoc>, ["~> 4.0"])
+       s.add_development_dependency(%q<hoe-bundler>, [">= 1.1"])
+       s.add_development_dependency(%q<hoe-debugging>, ["~> 1.2.0"])

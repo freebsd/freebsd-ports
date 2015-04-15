@@ -17,7 +17,9 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		python:2,build
+CPE_VERSION=	${PORTVERSION:C/^0\.//}
+
+USES=		cpe python:2,build
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
@@ -54,7 +56,7 @@ DESKTOP_ENTRIES="Teeworlds" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|"python "|"${PYTHON_CMD} "|' \
 		${WRKSRC}/bam.lua
-	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
+	@${REINPLACE_CMD} -e 's|-O.||; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
 		${BAM_WRKSRC}/make_unix.sh
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.lua
 	@${REINPLACE_CMD} -e '/aDirs\[\]/,/}/ s|"/.*"|"${DATADIR}"|' \

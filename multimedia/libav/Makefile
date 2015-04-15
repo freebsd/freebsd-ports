@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.2
+PORTVERSION=	11.3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -55,7 +55,8 @@ AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
 
 BZIP2_CONFIGURE_ENABLE=		bzlib
 
-CDIO_LIB_DEPENDS=		libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_LIB_DEPENDS=		libcdio.so:${PORTSDIR}/sysutils/libcdio \
+				libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CONFIGURE_ENABLE=		libcdio
 
 # --enable-libdc1394

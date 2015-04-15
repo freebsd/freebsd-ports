@@ -17,7 +17,3 @@ share/webware/Component/MANIFEST.in
 share/webware/Component/PKG-INFO
 share/webware/Component/setup.py
 share/webware/Component/setup.pyc
-@dirrm share/webware/Component/Component/Docs
-@dirrm share/webware/Component/Component.egg-info
-@dirrm share/webware/Component/Component
-@dirrm share/webware/Component

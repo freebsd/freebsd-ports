@@ -71,11 +71,9 @@ CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS}"
 
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
-THR_CPP=	${PTHREAD_CFLAGS}
-THR_LD=		${PTHREAD_LIBS}
+THR_LD=		-lpthread
 .else
 PLIST_SUB+=	THREADS="@comment "
-THR_CPP=	#empty
 THR_LD=		#empty
 CONFIGURE_ARGS+=-no-pthread
 .endif
@@ -102,7 +100,7 @@ IGNORE=requires X11 support to build TK bindings
 USES+=		tk:84+
 PLIST_SUB+=	TK=""
 CONFIGURE_ARGS+=	-tkdefs \
-			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} ${THR_CPP}" \
+			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
 			-tklibs "-L${LOCALBASE}/lib -ltk${TK_VER:S|.||} \
 			-ltcl${TCL_VER:S|.||} ${THR_LD}"
 .else
@@ -159,8 +157,8 @@ post-patch:
 post-configure:
 # CFLAGS safeness
 	@${REINPLACE_CMD} -E \
-		-e 's|(BYTECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
-		-e 's|(NATIVECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
+		-e 's|(BYTECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS}|' \
+		-e 's|(NATIVECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS}|' \
 		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
 		${WRKSRC}/config/Makefile
 

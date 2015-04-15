@@ -7,10 +7,11 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpadlibrarian.net/57215122/ \
 		http://spamaps.org/files/pipemeter/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool for displaying pipe status information
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 

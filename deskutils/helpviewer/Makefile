@@ -13,10 +13,8 @@ COMMENT=	Online help viewer for GNUstep programs
 
 LICENSE=	GPLv2
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 FIXME=	HandlerStructureXLP.h TextFormatterXLP.h
 

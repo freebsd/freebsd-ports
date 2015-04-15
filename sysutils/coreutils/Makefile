@@ -39,12 +39,6 @@ NLS_CONFIGURE_ENABLE=	nls
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 GMP_CONFIGURE_WITH=	gmp
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 800039
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
-.endif
-
 post-build:
 	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
 	@${TOUCH} ${WRKSRC}/doc/coreutils.info

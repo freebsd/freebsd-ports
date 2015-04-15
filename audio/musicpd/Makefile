@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.18.11
-PORTREVISION=	5
+PORTVERSION=	0.18.23
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -49,7 +48,6 @@ SIDPLAY2_DESC=	Sidplay support (C64 mono and stereo files)
 TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
-WAVPACK_DESC=	WavPack support
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
 
 OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
@@ -203,12 +201,6 @@ post-patch:
 		-e 's#^mpd.conf#${PORTNAME}.conf#' \
 		-e 's#^mpd(1)#musicpd(1)#' \
 		${WRKSRC}/doc/mpd.1 ${WRKSRC}/doc/mpd.conf.5
-.if (${OSVERSION} < 800000)
-	${REINPLACE_CMD} -e 's/nan[f]*(\"\")/NAN/g' \
-		${WRKSRC}/src/crossfade.c \
-		${WRKSRC}/src/player_thread.c \
-		${WRKSRC}/src/player_control.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \

@@ -26,8 +26,8 @@ PLIST_SUB+=	VER=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's/-mthreads/${PTHREAD_LIBS}/' \
-		-e 's/-mt/${PTHREAD_LIBS}/' \
+		-e 's/-mthreads/-lpthread/' \
+		-e 's/-mt/-lpthread/' \
 		-e 's/-munaligned-double//' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} \

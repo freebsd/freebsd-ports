@@ -83,7 +83,7 @@ _SUF1=	_${PORTREVISION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 # Keep this, else ruby will fail to load libraries dependent op libpthread.
-LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LIBS+=		-lpthread -L${LOCALBASE}/lib
 
 .if ${OPSYS} == "FreeBSD"
 .if exists(/usr/sbin/dtrace) && (${OSVERSION} > 1100032) && (${ARCH} == "amd64" || ${ARCH} == "i386")
@@ -137,7 +137,7 @@ RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's,-l$$pthread_lib,${PTHREAD_LIBS},g' \
+		-e 's,-l$$pthread_lib,-lpthread,g' \
 		-e '/^RUBY_LIB_PATH/s,\.\$$\{TEENY\},,' \
 		-e '/^RUBY_SITE_LIB_PATH2/s,\.\$$\{TEENY\},,' \
 		-e '/^RUBY_VENDOR_LIB_PATH2/s,\.\$$\{TEENY\},,' \
@@ -212,7 +212,7 @@ post-install:
 #
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 . for FILE in ${INSTALLED_SCRIPTS}
-	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
+	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 .endif
 

@@ -102,7 +102,7 @@ post-patch:
 # CXXFLAGS safeness
 	@${REINPLACE_CMD} -E -e \
 		's|-O2|${CXXFLAGS}|g ; \
-		 s|-lc_r|${PTHREAD_LIBS}|g' \
+		 s|-lc_r|-lpthread|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # doc prefix safeness
 	@${REINPLACE_CMD} -E -e \

@@ -36,10 +36,6 @@ USRP2_DESC=	Build Ettus USRP2 firmware
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-IGNORE=	needs libusb 1.0
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"

@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.vortex.prodigynet.co.uk/${PORTNAME}/
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Command line CD ripper/encoder wrapper with cddb support
 
+BROKEN=		Fails to fetch
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 

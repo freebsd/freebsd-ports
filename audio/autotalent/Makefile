@@ -4,10 +4,14 @@
 PORTNAME=	autotalent
 PORTVERSION=	0.2
 CATEGORIES=	audio
-MASTER_SITES=	http://web.mit.edu/tbaran/www/
+MASTER_SITES=	http://tombaran.info/
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time pitch correction plugin for LADSPA
+
+LICENSE=	BSD3CLAUSE GPLv2
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}

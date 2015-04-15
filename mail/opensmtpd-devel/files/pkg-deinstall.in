@@ -5,7 +5,7 @@ TARGET=$2
 
 PREFIX=$(echo %%PREFIX%% |sed -e 's,/,\\/,g')
 
-if [ "$TARGET" = POST-DEINSTALL ]; then
+if [ "$TARGET" = POST-DEINSTALL -a -z "%%MAILERCONF%%" ]; then
 	sed -e '/[[:space:]]'$PREFIX'\/sbin\/smtpctl/d' \
 	    -e '/[[:space:]]'$PREFIX'\/libexec\/opensmtpd\/makemap/d' \
 	    -e 's/^### opensmtpd: //g' -i '' /etc/mail/mailer.conf

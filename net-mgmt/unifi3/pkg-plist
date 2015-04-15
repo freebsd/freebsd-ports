@@ -243,4 +243,8 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/waiting.jsp
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/wizard.jsp
 @dir %%JAVASHAREDIR%%/unifi/conf
-@exec chown -R unifi:unifi %D/%%JAVASHAREDIR%%/unifi
+@dir %%JAVASHAREDIR%%/unifi
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/data
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/logs
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/run
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/work

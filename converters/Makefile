@@ -148,7 +148,6 @@
     SUBDIR += rcctools
     SUBDIR += recode
     SUBDIR += ruby-dump.rb
-    SUBDIR += ruby-iconv
     SUBDIR += rubygem-bsdconv
     SUBDIR += shftool
     SUBDIR += showkey

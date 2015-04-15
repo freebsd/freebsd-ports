@@ -38,8 +38,7 @@ SAMBA4_INCLUDEDIR=	${PREFIX}/include/${SAMBA4_PORTNAME}
 SAMBA4_CONFDIR=		${PREFIX}/etc
 SAMBA4_CONFIG=		smb4.conf
 
-CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
-			--exec-prefix="${PREFIX}" \
+CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--mandir="${MANPREFIX}/man" \
 			--sysconfdir="${SAMBA4_CONFDIR}" \
 			--includedir="${SAMBA4_INCLUDEDIR}" \
@@ -58,17 +57,14 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--with-cachedir="${SAMBA4_LOCKDIR}" \
 			--with-privatedir="${SAMBA4_PRIVATEDIR}" \
 			--with-logfilebase="${SAMBA4_LOGDIR}"
-# Support staging
-DESTDIRNAME=		--destdir
 # Flags
-CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=		PTHREAD_LDFLAGS="-lpthread"
 
 USES=			compiler cpe execinfo iconv perl5 pkgconfig \
-			python:2 readline shebangfix
+			python:2 readline shebangfix waf
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
-WAF_TOOL=		buildtools/bin/waf
+WAF_CMD=		buildtools/bin/waf
 CONFIGURE_LOG=		bin/config.log
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
@@ -227,11 +223,9 @@ WANT_EXP_MODULES=	idmap_ad vfs_cacheprime gpext_scripts gpext_security gpext_reg
 .endif
 
 .if ${PORT_OPTIONS:MACL_SUPPORT}
-.	if ${OSVERSION} > 800000
 LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 WANT_EXP_MODULES+=	vfs_zfsacl
 SAMBA4_MODULES+=	vfs_zfsacl
-.	endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
 CONFIGURE_ARGS+=	--without-acl-support
@@ -409,11 +403,6 @@ CFLAGS+=		-fno-color-diagnostics
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
-.if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
-CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
-_MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
-.endif
-
 SAMBA_MAN1+=		dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
 			log2pcap.1 masktest.1 ndrdump.1 nmblookup.1 \
 			nmblookup4.1 ntlm_auth.1 oLschema2ldif.1 \
@@ -448,10 +437,6 @@ SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 
 PORTDOCS=		README.FreeBSD
 
-CONFIGURE_TARGET=	configure
-ALL_TARGET=		build
-INSTALL_TARGET=		install
-
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-extract:
@@ -476,23 +461,6 @@ pre-configure:
 				${ECHO_CMD}; \
 				${FALSE}; \
 			fi
-
-do-configure:
-			@(cd ${CONFIGURE_WRKSRC} && \
-			    ${SET_LATE_CONFIGURE_ARGS} \
-				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
-					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-					LDFLAGS="${LDFLAGS}" \
-					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
-					INSTALL_DATA="${INSTALL_DATA}" \
-					INSTALL_LIB="${INSTALL_LIB}" \
-					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
-						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-						${FALSE}; \
-				fi)
 
 # XXX: Gross hack to allow build newer Samba while old one is installed.
 # This implies that LINKFLAGS_PYEMBED contains flags which are already
@@ -524,19 +492,6 @@ pre-build:
 .	endfor
 .endif
 
-do-build:
-			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
-				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
-					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-				fi; \
-			${FALSE}; \
-			fi)
-
-do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
-
 post-install:
 			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .if ${PORT_OPTIONS:MDOCS}
@@ -555,7 +510,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MDEVELOPER}
 test: build
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} $@)
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_CMD} ${MAKE_ARGS} $@)
 .endif
 
 # !SAMBA4_SUBPORT

@@ -2,6 +2,7 @@ bin/DHT_bootstrap
 %%DAEMON%%bin/tox-bootstrapd
 %%DAEMON%%@sample etc/tox-bootstrapd.conf.sample
 include/tox/tox.h
+include/tox/tox_old.h
 include/tox/toxav.h
 include/tox/toxdns.h
 include/tox/toxencryptsave.h

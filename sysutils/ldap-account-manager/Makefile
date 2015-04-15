@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -23,8 +23,7 @@ SHORTNAME=	lam
 PORTDOCS=	docs HISTORY README copyright
 LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html .htaccess
 WWWDIR=		${PREFIX}/www/${SHORTNAME}
-SUB_FILES=	pkg-message
-CONFIGS=	config.cfg lam.conf
+CONFIGS=	config.cfg addressbook.conf samba3.conf unix.conf windows_samba4.conf
 WRITEABLES=	config sess tmp
 
 OPTIONS_DEFINE=	DOCS

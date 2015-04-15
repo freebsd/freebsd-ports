@@ -14,10 +14,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP=	yes
-USE_GNUSTEP_GUI=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+GNU_CONFIGURE=	yes
+USE_GNUSTEP=	build gui
 
 .include <bsd.port.mk>

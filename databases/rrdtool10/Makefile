@@ -17,9 +17,7 @@ MAKE_ENV=	PERL=${PERL}
 
 CONFLICTS=	rrdtool12-1.* rrdtool-1.*
 
-USES=		pkgconfig perl5 libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf pkgconfig perl5 libtool
 USE_PERL5=	build run
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

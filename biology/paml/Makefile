@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
+BROKEN=		Unfetchable
+
 USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

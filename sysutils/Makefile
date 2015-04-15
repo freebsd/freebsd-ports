@@ -146,6 +146,7 @@
     SUBDIR += conky-awesome
     SUBDIR += consolehm
     SUBDIR += consolekit
+    SUBDIR += consul
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
@@ -476,6 +477,7 @@
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += lmon
+    SUBDIR += lnav
     SUBDIR += log_analysis
     SUBDIR += loganalyzer
     SUBDIR += logrotate
@@ -698,6 +700,7 @@
     SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
     SUBDIR += php56-posix
+    SUBDIR += pick
     SUBDIR += pidof
     SUBDIR += pipemeter
     SUBDIR += plasma-applet-apcups
@@ -728,7 +731,6 @@
     SUBDIR += puppet
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
-    SUBDIR += puppet27
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
@@ -1065,6 +1067,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xe-guest-utilities
+    SUBDIR += xen-guest-tools
     SUBDIR += xen-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin

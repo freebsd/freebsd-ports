@@ -1208,7 +1208,6 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-cache.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nntp.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnagent.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/rfc2104.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-demon.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-agent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/mml-smime.elc
@@ -1353,7 +1352,6 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/score-mode.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/smiley.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-msg.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/rfc2104.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-icalendar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/rfc2045.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-salt.elc
@@ -2752,6 +2750,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/socks.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/ldap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/shr.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/rfc2104.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/rfc2104.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rcirc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/newsticker.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/net-utils.el
@@ -2770,6 +2770,7 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/network-stream.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/mairix.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-cram.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-rfc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rlogin.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el
@@ -2831,6 +2832,7 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/goto-addr.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/telnet.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-cram.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-rfc.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/netrc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/secrets.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/newst-treeview.el
@@ -3787,6 +3789,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/advice.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/seq.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/seq.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generator.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generator.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/informat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/wdired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.el

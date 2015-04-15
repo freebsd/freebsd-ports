@@ -3,7 +3,7 @@
 
 PORTNAME=	postal
 PORTVERSION=	0.73
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 

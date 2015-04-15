@@ -21,25 +21,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
 GH_COMMIT=	3f4737f
 
-USES=		pkgconfig
+USES=		pkgconfig waf
 USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
+LDFLAGS+=	-lm
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/LINKFLAGS/s|^|#|' ${WRKSRC}/wscript
 
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" LINKFLAGS="-lm" \
-		 ./waf configure --prefix=${PREFIX})
-
-do-build:
-	@(cd ${WRKSRC} && ./waf build -vvv -j${MAKE_JOBS_NUMBER})
-
-do-install:
-	@(cd ${WRKSRC} && ./waf install --destdir=${STAGEDIR})
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/nekobee.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/nekobee/nekobee_gtk
 

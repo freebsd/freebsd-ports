@@ -33,11 +33,11 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	GTK based Gnutella client
 
 LICENSE=	GPLv2 # (or later)

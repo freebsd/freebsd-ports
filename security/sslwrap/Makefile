@@ -3,7 +3,7 @@
 
 PORTNAME=	sslwrap
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.rickk.com/sslwrap/
 DISTNAME=	${PORTNAME}

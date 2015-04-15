@@ -1,11 +1,11 @@
---- ffmpeg/libavcodec/Makefile.orig	2012-07-20 19:20:04.000000000 +0200
-+++ ffmpeg/libavcodec/Makefile	2012-07-21 18:25:12.582670118 +0200
-@@ -788,7 +788,7 @@
-                                           codec_names.h                 \
-                                           fft-internal.h                \
+--- ffmpeg/libavcodec/Makefile.orig	2015-04-02 19:20:07.000000000 +0200
++++ ffmpeg/libavcodec/Makefile	2015-04-03 13:25:18.741269686 +0200
+@@ -865,7 +865,7 @@
+                                           old_codec_ids.h               \
                                            tableprint.h                  \
+                                           tableprint_vlc.h              \
 -                                          $(ARCH)/vp56_arith.h          \
-+                                          $(MPLAYER_ARCH)/vp56_arith.h  \
++                                          $(MPLAYER_ARCH)/vp56_arith.h          \
  
  SKIPHEADERS-$(CONFIG_DXVA2)            += dxva2.h dxva2_internal.h
  SKIPHEADERS-$(CONFIG_LIBSCHROEDINGER)  += libschroedinger.h

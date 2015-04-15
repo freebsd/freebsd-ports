@@ -12,8 +12,7 @@ COMMENT=	Real time, isometric view, tank multiplayer strategy game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LDFLAGS+=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-lpthreads
 
 USES=		scons tar:bzip2
 USE_SDL=	sdl mixer image

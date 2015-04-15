@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	2
+#PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -51,6 +51,7 @@ LIB_DEPENDS=								\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg			\
 		libpng.so:${PORTSDIR}/graphics/png			\
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
 		libCoinMP.so:${PORTSDIR}/math/coinmp			\
 		libfreetype.so:${PORTSDIR}/print/freetype2		\
 		libnss3.so:${PORTSDIR}/security/nss			\
@@ -61,7 +62,6 @@ LIB_DEPENDS=								\
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes		\
 		librdf.so:${PORTSDIR}/textproc/redland			\
 		libserf-1.so:${PORTSDIR}/www/serf
-#		libgraphite.so:${PORTSDIR}/graphics/silgraphite
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
@@ -73,7 +73,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1652526
+SVNREVISION=	1667428
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150118.tar.gz
 
@@ -83,10 +83,12 @@ AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 AOOSUFFIX=	${AOOVERSION}-${AOORC}
 OOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=
+TARTYPE=	bzip2
 .else
 AOOSUFFIX=	${PORTVERSION}
 OOOSRC=		apache-openoffice-r${SVNREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=	:snap
+TARTYPE=	xz
 .endif
 
 OOODIR=			openoffice${AOOVERSION1}
@@ -110,10 +112,12 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
-USES=		bison compiler desktop-file-utils gmake perl5 pkgconfig python \
-		tar:xz
+USES=		bison compiler cpe desktop-file-utils gmake perl5 pkgconfig python \
+		tar:${TARTYPE}
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
+CPE_PRODUCT=	${PORTNAME:S|apache-||}
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=			CUPS GCONF GNOMEVFS CCACHE
 OPTIONS_DEFAULT=		CUPS GCONF GNOMEVFS
@@ -136,16 +140,16 @@ GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
 .if ${COMPILER_TYPE} == clang
 . if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
 BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
-CPP=			${LOCALBASE}/bin/clang-cpp35
-CC=			${LOCALBASE}/bin/clang35
-CXX=			${LOCALBASE}/bin/clang++35
+CPP=			clang-cpp35
+CC=			clang35
+CXX=			clang++35
 . endif
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+CONFIGURE_ARGS+=	--with-system-boost
 CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-I${LOCALBASE}/lib
-SUBST=			s+%%RPATH%%++;s/%%HAVE_STL_INCLUDE_PATH%%/-DHAVE_STL_INCLUDE_PATH/;s/-fno-enforce-eh-specs//
 .else
 USE_GCC=		yes
-SUBST=			s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+;s/%%HAVE_STL_INCLUDE_PATH%%//
+SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH//"
 .endif
 
 .if ${ARCH} == amd64
@@ -204,15 +208,19 @@ CONFIGURE_ARGS+=							\
 			--with-system-curl				\
 			--enable-crashdump				\
 			--enable-dbus					\
+			--with-system-dicts				\
 			--with-epm=${LOCALBASE}/bin/epm			\
 			--with-system-expat				\
 			--disable-fetch-external			\
 			--without-fonts					\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--with-gperf=${LOCALBASE}/bin/gperf		\
+			--with-system-graphite				\
 			--enable-gstreamer				\
 			--with-system-hunspell				\
+			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 			--with-system-hyphen				\
+			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 			--with-system-jpeg				\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-system-libtextcat			\
@@ -223,6 +231,7 @@ CONFIGURE_ARGS+=							\
 			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
 			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
 			--with-system-mythes				\
+			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
 			--enable-opengl					\
 			--with-system-openssl				\
@@ -239,9 +248,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-vigra				\
 			--enable-wiki-publisher				\
 			--with-system-zlib
-# system-graphite causes breakage when compiled with clang and linked
-# with libc++ because aoo is compiled with gcc and linked with libstdc++.
-#			--with-system-graphite
 
 #OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 #OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -276,11 +282,15 @@ post-extract:
 	${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
-	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-	${REINPLACE_CMD} -e "${SUBST}" ${WRKSRC}/solenv/inc/unxfbsd.mk
-.if defined (USE_GCC) && ${ARCH} == i386
+.if defined (USE_GCC)
+	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/inc/unxfbsd.mk
+.endif
+.if ${ARCH} == i386
 	# g++49 -Os sometimes leaves inline class methods undefined
-	if [ ${CXX} = g++49 ]; then \
+	# autodoc core dumps when built with with -Os clang 3.6 on i386
+	if [ ${CXX} = g++49 -o \
+	     ${COMPILER_TYPE} = clang -a ${COMPILER_VERSION} = 36 ]; then \
 		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
 		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
@@ -294,7 +304,7 @@ do-build:
 	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
 	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
 	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" FBSD_LDFLAGS="${LDFLAGS}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES

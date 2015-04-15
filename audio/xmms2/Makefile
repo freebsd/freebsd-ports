@@ -11,7 +11,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
-USES+=		pkgconfig python:build tar:bzip2
+USES+=		pkgconfig tar:bzip2 waf
+
+CONFIGURE_ARGS+=	--conf-prefix=${LOCALBASE} \
+		--mandir=${MANPREFIX}/man
+INSTALL_TARGET=	install --without-ldconfig
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
@@ -33,7 +37,6 @@ OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS MDNS_APPLE VORBIS
 
 AIRPLAY_DESC=	Support output via Airport Express
 AVCODEC_DESC=	Avcodevc playback support
-CDDA_DESC=	AudioCD support
 ET_DESC=	Install usage feedback reporting client
 FAM_DESC=	Support to update Media Library on file change
 GME_DESC=	Video game music files support
@@ -47,7 +50,6 @@ SAMBA_DESC=	Playback files via SMB
 SID_DESC=	Playback SID files
 VISUAL_DESC=	Visualization plugins support
 VOCODER_DESC=	Phase Vocoder effect plugin
-WAVPACK_DESC=	Playback WV files
 XML_DESC=	Support XML based playlists (XSPF, RSS)
 
 .endif # !XMMS_SLAVE
@@ -55,23 +57,23 @@ XML_DESC=	Support XML based playlists (XSPF, RSS)
 .include <bsd.port.options.mk>
 
 .if defined(XMMS2_SLAVE)
-EXCLUDE+=	--without-xmms2d
+CONFIGURE_ARGS+=	--without-xmms2d
 
 .if   ${XMMS2_SLAVE} == "python"
-EXCLUDE+=	--with-optionals="python"
+CONFIGURE_ARGS+=	--with-optionals="python"
 .elif ${XMMS2_SLAVE} == "ruby"
-EXCLUDE+=	--with-optionals="ruby"
+CONFIGURE_ARGS+=	--with-optionals="ruby"
 .elif ${XMMS2_SLAVE} == "perl"
-EXCLUDE+=	--with-optionals="perl"
+CONFIGURE_ARGS+=	--with-optionals="perl"
 .elif ${XMMS2_SLAVE} == "ruby-ecore"
-EXCLUDE+=	--with-optionals="ruby" --with-optionals="xmmsclient-ecore"
+CONFIGURE_ARGS+=	--with-optionals="ruby" --with-optionals="xmmsclient-ecore"
 .elif ${XMMS2_SLAVE} == "cpp"
-EXCLUDE+=	--with-optionals="xmmsclient++" \
+CONFIGURE_ARGS+=	--with-optionals="xmmsclient++" \
 		--with-optionals="xmmsclient++-glib"
 .endif
 
 .else # XMMS2_SLAVE
-EXCLUDE+=	--without-optionals="python" \
+CONFIGURE_ARGS+=	--without-optionals="python" \
 		--without-optionals="ruby" \
 		--without-optionals="xmmsclient-ecore" \
 		--without-optionals="xmmsclient++" \
@@ -85,7 +87,7 @@ EXCLUDE+=	--without-optionals="python" \
 USE_OPENSSL=	yes
 PLIST_SUB+=	AIRPLAY=""
 .else
-EXCLUDE+=	--without-plugins="airplay"
+CONFIGURE_ARGS+=	--without-plugins="airplay"
 PLIST_SUB+=	AIRPLAY="@comment "
 .endif
 
@@ -93,7 +95,7 @@ PLIST_SUB+=	AIRPLAY="@comment "
 LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
 PLIST_SUB+=	AO=""
 .else
-EXCLUDE+=	--without-plugins="ao"
+CONFIGURE_ARGS+=	--without-plugins="ao"
 PLIST_SUB+=	AO="@comment "
 .endif
 
@@ -101,7 +103,7 @@ PLIST_SUB+=	AO="@comment "
 LIB_DEPENDS+=	libmac.so:${PORTSDIR}/audio/mac
 PLIST_SUB+=	MAC=""
 .else
-EXCLUDE+=	--without-plugins="mac"
+CONFIGURE_ARGS+=	--without-plugins="mac"
 PLIST_SUB+=	MAC="@comment "
 .endif
 
@@ -109,7 +111,7 @@ PLIST_SUB+=	MAC="@comment "
 LIB_DEPENDS+=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	AVCODEC=""
 .else
-EXCLUDE+=	--without-plugins="avcodec"
+CONFIGURE_ARGS+=	--without-plugins="avcodec"
 PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
@@ -119,7 +121,7 @@ LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
 		libdiscid.so:${PORTSDIR}/audio/libdiscid
 PLIST_SUB+=	CDDA=""
 .else
-EXCLUDE+=	--without-plugins="cdda"
+CONFIGURE_ARGS+=	--without-plugins="cdda"
 PLIST_SUB+=	CDDA="@comment "
 .endif
 
@@ -127,7 +129,7 @@ PLIST_SUB+=	CDDA="@comment "
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
-EXCLUDE+=	--without-plugins="curl" --without-plugins="icymetaint"
+CONFIGURE_ARGS+=	--without-plugins="curl" --without-plugins="icymetaint"
 PLIST_SUB+=	CURL="@comment "
 .endif
 
@@ -135,7 +137,7 @@ PLIST_SUB+=	CURL="@comment "
 LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 .else
-EXCLUDE+=	--without-plugins="faad" --without-plugins="mp4"
+CONFIGURE_ARGS+=	--without-plugins="faad" --without-plugins="mp4"
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
@@ -143,7 +145,7 @@ PLIST_SUB+=	FAAD="@comment "
 USES+=		fam:gamin
 PLIST_SUB+=	FAM=""
 .else
-EXCLUDE+=	--without-optionals="medialib-updater"
+CONFIGURE_ARGS+=	--without-optionals="medialib-updater"
 PLIST_SUB+=	FAM="@comment "
 .endif
 
@@ -151,7 +153,7 @@ PLIST_SUB+=	FAM="@comment "
 LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
-EXCLUDE+=	--without-plugins="flac"
+CONFIGURE_ARGS+=	--without-plugins="flac"
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
@@ -159,7 +161,7 @@ PLIST_SUB+=	FLAC="@comment "
 LIB_DEPENDS+=	libgme.so:${PORTSDIR}/audio/libgme
 PLIST_SUB+=	GME=""
 .else
-EXCLUDE+=	--without-plugins="gme"
+CONFIGURE_ARGS+=	--without-plugins="gme"
 PLIST_SUB+=	GME="@comment "
 .endif
 
@@ -167,7 +169,7 @@ PLIST_SUB+=	GME="@comment "
 USE_GNOME+=	gvfs
 PLIST_SUB+=	GVFS=""
 .else
-EXCLUDE+=	--without-plugins="gvfs"
+CONFIGURE_ARGS+=	--without-plugins="gvfs"
 PLIST_SUB+=	GVFS="@comment "
 .endif
 
@@ -175,7 +177,7 @@ PLIST_SUB+=	GVFS="@comment "
 LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout
 PLIST_SUB+=	ICES=""
 .else
-EXCLUDE+=	--without-plugins="ices"
+CONFIGURE_ARGS+=	--without-plugins="ices"
 PLIST_SUB+=	ICES="@comment "
 .endif
 
@@ -183,7 +185,7 @@ PLIST_SUB+=	ICES="@comment "
 LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
-EXCLUDE+=	--without-plugins="jack"
+CONFIGURE_ARGS+=	--without-plugins="jack"
 PLIST_SUB+=	JACK="@comment "
 .endif
 
@@ -191,16 +193,16 @@ PLIST_SUB+=	JACK="@comment "
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 PLIST_SUB+=	MAD=""
 .else
-EXCLUDE+=	--without-plugins="mad"
+CONFIGURE_ARGS+=	--without-plugins="mad"
 PLIST_SUB+=	MAD="@comment "
 .endif
 
 .if empty(PORT_OPTIONS:MMDNS)
-EXCLUDE+=	--without-optionals="mdns"
+CONFIGURE_ARGS+=	--without-optionals="mdns"
 .endif
 
 .if ${PORT_OPTIONS:MMDNS_APPLE}
-EXCLUDE+=	--with-mdns-backend="dns_sd"
+CONFIGURE_ARGS+=	--with-mdns-backend="dns_sd"
 LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
@@ -208,7 +210,7 @@ PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMDNS_AVAHI}
-EXCLUDE+=	--with-mdns-backend="avahi"
+CONFIGURE_ARGS+=	--with-mdns-backend="avahi"
 LIB_DEPENDS+=	libavahi-core.so:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	MDNS_AVAHI=""
 MAN1+=		xmms2-mdns-avahi.1
@@ -220,7 +222,7 @@ PLIST_SUB+=	MDNS_AVAHI="@comment "
 LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
 PLIST_SUB+=	MMS=""
 .else
-EXCLUDE+=	--without-plugins="mms"
+CONFIGURE_ARGS+=	--without-plugins="mms"
 PLIST_SUB+=	MMS="@comment "
 .endif
 
@@ -228,7 +230,7 @@ PLIST_SUB+=	MMS="@comment "
 LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 .else
-EXCLUDE+=	--without-plugins="modplug"
+CONFIGURE_ARGS+=	--without-plugins="modplug"
 PLIST_SUB+=	MODPLUG="@comment "
 .endif
 
@@ -236,7 +238,7 @@ PLIST_SUB+=	MODPLUG="@comment "
 LIB_DEPENDS+=	libmpg123.so:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
-EXCLUDE+=	--without-plugins="mpg123"
+CONFIGURE_ARGS+=	--without-plugins="mpg123"
 PLIST_SUB+=	MPG123="@comment "
 .endif
 
@@ -244,7 +246,7 @@ PLIST_SUB+=	MPG123="@comment "
 LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
 PLIST_SUB+=	MUSEPACK=""
 .else
-EXCLUDE+=	--without-plugins="musepack"
+CONFIGURE_ARGS+=	--without-plugins="musepack"
 PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
@@ -252,7 +254,7 @@ PLIST_SUB+=	MUSEPACK="@comment "
 LIB_DEPENDS+=	libofa.so:${PORTSDIR}/audio/libofa
 PLIST_SUB+=	OFA=""
 .else
-EXCLUDE+=	--without-plugins="ofa"
+CONFIGURE_ARGS+=	--without-plugins="ofa"
 PLIST_SUB+=	OFA="@comment "
 .endif
 
@@ -260,7 +262,7 @@ PLIST_SUB+=	OFA="@comment "
 LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
-EXCLUDE+=	--without-plugins="pulse"
+CONFIGURE_ARGS+=	--without-plugins="pulse"
 PLIST_SUB+=	PULSE="@comment "
 .endif
 
@@ -268,7 +270,7 @@ PLIST_SUB+=	PULSE="@comment "
 LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
-EXCLUDE+=	--without-plugins="samba"
+CONFIGURE_ARGS+=	--without-plugins="samba"
 PLIST_SUB+=	SAMBA="@comment "
 .endif
 
@@ -276,7 +278,7 @@ PLIST_SUB+=	SAMBA="@comment "
 LIB_DEPENDS+=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 PLIST_SUB+=	SID=""
 .else
-EXCLUDE+=	--without-plugins="sid"
+CONFIGURE_ARGS+=	--without-plugins="sid"
 PLIST_SUB+=	SID="@comment "
 .endif
 
@@ -284,7 +286,7 @@ PLIST_SUB+=	SID="@comment "
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 PLIST_SUB+=	SNDFILE=""
 .else
-EXCLUDE+=	--without-plugins="sndfile"
+CONFIGURE_ARGS+=	--without-plugins="sndfile"
 PLIST_SUB+=	SNDFILE="@comment "
 .endif
 
@@ -292,7 +294,7 @@ PLIST_SUB+=	SNDFILE="@comment "
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
 PLIST_SUB+=	SPEEX=""
 .else
-EXCLUDE+=	--without-plugins="speex"
+CONFIGURE_ARGS+=	--without-plugins="speex"
 PLIST_SUB+=	SPEEX="@comment "
 .endif
 
@@ -300,7 +302,7 @@ PLIST_SUB+=	SPEEX="@comment "
 LIB_DEPENDS+=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
 PLIST_SUB+=	TREMOR=""
 .else
-EXCLUDE+=	--without-plugins="tremor"
+CONFIGURE_ARGS+=	--without-plugins="tremor"
 PLIST_SUB+=	TREMOR="@comment "
 .endif
 
@@ -316,10 +318,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-clients-vistest-wscript
 USE_SDL=	yes
 LIB_DEPENDS+=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
 .else
-EXCLUDE+=	--without-optionals="vistest"
+CONFIGURE_ARGS+=	--without-optionals="vistest"
 .endif
 
-.if ${PORT_OPTIONS:MVISUAL} && ${EXCLUDE:M--with-vis-reference-clients}
+.if ${PORT_OPTIONS:MVISUAL} && ${CONFIGURE_ARGS:M--with-vis-reference-clients}
 PLIST_SUB+=	VISUAL=""
 .else
 PLIST_SUB+=	VISUAL="@comment "
@@ -330,7 +332,7 @@ LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 PLIST_SUB+=	VOCODER=""
 .else
-EXCLUDE+=	--without-plugins="vocoder"
+CONFIGURE_ARGS+=	--without-plugins="vocoder"
 PLIST_SUB+=	VOCODER="@comment "
 .endif
 
@@ -338,7 +340,7 @@ PLIST_SUB+=	VOCODER="@comment "
 LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
-EXCLUDE+=	--without-plugins="vorbis"
+CONFIGURE_ARGS+=	--without-plugins="vorbis"
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
@@ -346,7 +348,7 @@ PLIST_SUB+=	VORBIS="@comment "
 LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAVPACK=""
 .else
-EXCLUDE+=	--without-plugins="wavpack"
+CONFIGURE_ARGS+=	--without-plugins="wavpack"
 PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
@@ -354,7 +356,7 @@ PLIST_SUB+=	WAVPACK="@comment "
 USE_GNOME+=	libxml2
 PLIST_SUB+=	XML=""
 .else
-EXCLUDE+=	--without-plugins="xml" --without-plugins="rss" \
+CONFIGURE_ARGS+=	--without-plugins="xml" --without-plugins="rss" \
 		--without-plugins="xspf"
 PLIST_SUB+=	XML="@comment "
 .endif
@@ -363,7 +365,7 @@ PLIST_SUB+=	XML="@comment "
 PLIST_SUB+=	ET=""
 MAN1+=		xmms2-et.1
 .else
-EXCLUDE+=	--without-optionals="et"
+CONFIGURE_ARGS+=	--without-optionals="et"
 PLIST_SUB+=	ET="@comment "
 .endif
 
@@ -376,20 +378,9 @@ post-patch:
 		${WRKSRC}/src/clients/vistest/wscript
 .endif
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf ${_MAKE_JOBS} configure \
-		--conf-prefix=${LOCALBASE} --prefix=${PREFIX} \
-		--mandir=${PREFIX}/man ${EXCLUDE}
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf ${_MAKE_JOBS} build
-
-do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install --destdir=${STAGEDIR} --without-ldconfig
+post-install:
 .if !defined(XMMS2_SLAVE)
-	if [ ! -d ${STAGEDIR}${DATADIR}/scripts/startup.d ]; then \
-		${MKDIR} ${STAGEDIR}${DATADIR}/scripts/startup.d; \
-	fi
+	${MKDIR} ${STAGEDIR}${DATADIR}/scripts/startup.d
 .endif
 
 .include <bsd.port.mk>

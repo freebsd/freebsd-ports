@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.19
+DISTVERSION=	2.1.20
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -109,10 +109,8 @@ MAIL_GID?=	_smtpd
 .endif
 
 .if ${PORT_OPTIONS:MHTDIG}
-PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
-		http://www.openinfo.co.uk/mm/patches/444884/:patch2
-PATCHFILES+=	indexing-2.1.12-0.1.patch.gz:patch1 \
-		htdig-2.1.12-0.1.patch.gz:patch2
+PATCH_SITES+=	http://www.msapiro.net/mm/
+PATCHFILES+=	index_htdig.patch.2.1.20
 PKGNAMESUFFIX+=	-with-htdig
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""

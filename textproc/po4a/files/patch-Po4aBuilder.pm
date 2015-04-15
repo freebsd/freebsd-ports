@@ -1,6 +1,13 @@
---- Po4aBuilder.pm.orig	2014-03-25 01:47:00.000000000 -0300
-+++ Po4aBuilder.pm	2014-03-25 01:47:32.000000000 -0300
-@@ -138,7 +138,7 @@
+--- Po4aBuilder.pm.orig	2013-08-21 15:11:04.000000000 -0500
++++ Po4aBuilder.pm	2015-04-06 11:57:21.938813000 -0500
+@@ -132,13 +132,13 @@
+ 
+     require ExtUtils::Install;
+ #    $self->depends_on('build');
+-    my $mandir = $self->install_sets($self->installdirs)->{'bindoc'};
++    my $mandir = $self->install_path->{'bindoc'};
+     $mandir =~ s,/man1$,,;
+     $self->install_path(man => $mandir);
      $self->install_path(manl10n => $mandir);
  
      my $localedir = $mandir;

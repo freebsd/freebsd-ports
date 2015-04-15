@@ -13,5 +13,8 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 fixesproto:both xproto:both xextproto
+USES+=	cpe
+CPE_PRODUCT=	libxfixes
+CPE_VENDOR=	x
 
 .include <bsd.port.mk>

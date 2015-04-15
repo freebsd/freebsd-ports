@@ -36,8 +36,7 @@ INSTALL_TARGET=	install-strip
 .endif
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e '/LIBS/{ s/-ldl//; \
-		s/-lrt//; s/-lpthread/${PTHREAD_LIBS}/; }' \
+	${REINPLACE_CMD} -e '/LIBS/{ s/-ldl//; s/-lrt//; }' \
 		-e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
 		-e '/\^vdpau_version/s|$$CC -E|& ${CPPFLAGS}|' \
 		 ${WRKSRC}/configure

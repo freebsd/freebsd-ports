@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Interactive terminal-based astronomical ephemeris program
 
+BROKEN=		No public distfiles
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 

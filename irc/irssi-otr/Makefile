@@ -3,7 +3,7 @@
 
 PORTNAME=	irssi-otr
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	GHL
 
@@ -32,7 +32,9 @@ USE_AUTOTOOLS=	autoconf aclocal libtoolize automake
 ACLOCAL_ARGS=	-I config
 AUTOMAKE_ARGS=	--add-missing --no-force
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} --with-libotr-inc-prefix=${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/irssi/modules/libotr.so \
 		share/irssi/help/otr

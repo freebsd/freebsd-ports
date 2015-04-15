@@ -5,8 +5,7 @@ PORTNAME=	gzstream
 DISTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	CENKES \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
 MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Provides zlib functionality in an iostream

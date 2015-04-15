@@ -14,6 +14,8 @@ COMMENT=	Free open source JavaServer(tm) Faces implementation
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+USES=		cpe
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	DOCS
 

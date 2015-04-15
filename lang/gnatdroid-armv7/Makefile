@@ -60,6 +60,10 @@ CROSS=			gnat gnatbind gnatchop gnatclean gnatfind gnatkr \
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSREL:R:M8}
+BROKEN=	multiple definition of __x86.get_pc_thunk.cx on FreeBSD 8
+.endif
+
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran

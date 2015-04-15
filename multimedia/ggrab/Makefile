@@ -18,10 +18,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
-		${WRKSRC}/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ggrab ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/sserver ${STAGEDIR}${PREFIX}/bin

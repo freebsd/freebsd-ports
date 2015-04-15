@@ -317,9 +317,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
-		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} $$LIBDL|-lsilc -lsilcclient ${PTHREAD_LIBS} ${ICONV_LIB}|' \
-			${WRKSRC}/configure
+		-e 's|-lpthread $$LIBDL|-lpthread ${ICONV_LIB}|' \
+		${WRKSRC}/configure
 .if defined(PIDGIN_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(top_builddir)/libpurple/libpurple.la|-lpurple|'

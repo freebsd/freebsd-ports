@@ -90,5 +90,6 @@ sbin/visudo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 etc/sudoers.d/.keep-me
+@dir /var/db/sudo/lectured
 @dir /var/db/sudo
 @dir /var/run/sudo

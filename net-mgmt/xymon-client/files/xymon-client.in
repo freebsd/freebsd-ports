@@ -20,8 +20,6 @@ pidfile="%%WWWDIR%%/client/logs/clientlaunch.`hostname`.pid"
 command=%%WWWDIR%%/client/bin/xymonlaunch
 command_args="--config=%%WWWDIR%%/client/etc/clientlaunch.cfg --log=%%WWWDIR%%/client/logs/clientlaunch.log --pidfile=${pidfile}"
 start_precmd=xymon_precmd
-# Clean up leftover children
-stop_postcmd="pkill -U ${xymon_client_user} vmstat"
 
 xymon_precmd()
 {

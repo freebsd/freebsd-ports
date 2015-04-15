@@ -5,9 +5,6 @@ PORTNAME=	qt4
 DISTVERSION=	${QT4_VERSION}
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	# empty
-DISTFILES=	# none
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (metaport)
@@ -18,10 +15,7 @@ USE_QT4=	accessible clucene corelib dbus declarative designer \
 		phonon qt3support qtestlib script scripttools sql \
 		svg webkit xml xmlpatterns
 USE_QT4:=	${USE_QT4:S/$/_run/}
-
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	CODECS DOCS EXAMPLES GSTREAMER NLS SQL_PLUGINS TOOLS
 OPTIONS_DEFAULT=${OPTIONS_DEFINE}

@@ -1,12 +1,12 @@
---- Gemfile.orig	2014-04-14 12:20:52.000000000 +0200
-+++ Gemfile	2014-04-14 12:21:07.000000000 +0200
-@@ -9,6 +9,9 @@
- gem "mime-types"
- gem "awesome_nested_set", "2.1.6"
+--- Gemfile.orig	2015-04-02 19:40:25.929698000 +0000
++++ Gemfile	2015-04-02 19:41:11.539003000 +0000
+@@ -16,6 +16,9 @@
+   gem "net-ldap", "~> 0.3.1"
+ end
  
 +# Thin webserver
 +gem "thin", "~> 1.6.2"
 +
- # Optional gem for LDAP authentication
- group :ldap do
-   gem "net-ldap", "~> 0.3.1"
+ # Optional gem for OpenID authentication
+ group :openid do
+   gem "ruby-openid", "~> 2.3.0", :require => "openid"

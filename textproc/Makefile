@@ -79,6 +79,7 @@
     SUBDIR += colordiff
     SUBDIR += confetti
     SUBDIR += confget
+    SUBDIR += consul-template
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += cs-mythes
@@ -626,6 +627,7 @@
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
     SUBDIR += p5-PDF-Table
+    SUBDIR += p5-PDF-WebKit
     SUBDIR += p5-PDF-Writer
     SUBDIR += p5-POD2-Base
     SUBDIR += p5-POE-Filter-XML
@@ -644,6 +646,7 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Perl-Critic
     SUBDIR += p5-Perl-Critic-Bangs
+    SUBDIR += p5-Perl-Lint
     SUBDIR += p5-Perl-MinimumVersion
     SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package
@@ -695,6 +698,7 @@
     SUBDIR += p5-Regexp-Common-net-CIDR
     SUBDIR += p5-Regexp-Common-profanity_us
     SUBDIR += p5-Regexp-Copy
+    SUBDIR += p5-Regexp-Debugger
     SUBDIR += p5-Regexp-DefaultFlags
     SUBDIR += p5-Regexp-IPv6
     SUBDIR += p5-Regexp-Log
@@ -998,6 +1002,7 @@
     SUBDIR += p5-XML-Parsepp
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
+    SUBDIR += p5-XML-Parser-Lite
     SUBDIR += p5-XML-Parser-Lite-Tree
     SUBDIR += p5-XML-Parser-Style-EasyTree
     SUBDIR += p5-XML-Parser-Style-Elemental
@@ -1228,6 +1233,7 @@
     SUBDIR += py-sgrep
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
+    SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket

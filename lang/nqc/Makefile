@@ -22,7 +22,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 800064
+.if ${OPSYS} == FreeBSD
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rcxlib-RCX_USBTowerPipe_fbsd.cpp
 .endif
 

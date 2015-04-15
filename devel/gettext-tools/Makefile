@@ -24,9 +24,12 @@ CONFIGURE_ARGS=	--disable-csharp --disable-java --disable-openmp \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		charsetfix gettext-runtime iconv libtool tar:xz
+USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-tools
+
+CPE_PRODUCT=	gettext
+CPE_VENDOR=	gun
 
 OPTIONS_DEFINE=	DOCS
 

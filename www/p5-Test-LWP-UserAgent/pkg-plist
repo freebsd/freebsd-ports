@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Test/LWP/UserAgent.pm
-%%SITE_PERL%%/Test/LWP/advent_2012.pod
 %%PERL5_MAN3%%/Test::LWP::UserAgent.3.gz
-%%PERL5_MAN3%%/Test::LWP::advent_2012.3.gz

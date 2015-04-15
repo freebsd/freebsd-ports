@@ -10,11 +10,14 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Libgooglepinyin support for Fcitx
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libgooglepinyin.so:${PORTSDIR}/chinese/libgooglepinyin
 
 USES=		tar:xz cmake gettext pkgconfig iconv
 USE_GNOME=	intltool
+INSTALLS_ICONS=	yes
 
 PROJECTHOST=	fcitx
 

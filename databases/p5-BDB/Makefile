@@ -13,18 +13,21 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous Berkeley DB access
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.801
 
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-pthread
-USE_BDB=	43+
+LDFLAGS+=	-lpthread
+USE_BDB=	yes
 USE_PERL5=	configure
 USES=		perl5
 
 post-patch:
-	@${REINPLACE_CMD} -e '18 s|-lpthread -ldb|-l${BDB_LIB_NAME} -pthread|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '18 s|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

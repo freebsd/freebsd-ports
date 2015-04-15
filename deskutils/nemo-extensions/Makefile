@@ -3,6 +3,7 @@
 
 PORTNAME=	nemo-extensions
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 

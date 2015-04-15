@@ -19,7 +19,7 @@ COMMENT=	Open source FPS game inspired by the Padman comic strip
 MANUAL_PACKAGE_BUILD=	huge (~600MB)
 
 USES=		gmake makeself
-MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="-lpthread"
 ALL_TARGET=	release
 
 SRC_FILE=	${PORTNAME}-${PORTVERSION}

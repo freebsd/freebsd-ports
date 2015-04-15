@@ -1,7 +1,6 @@
---- ./data/Makefile.am.orig	2014-07-07 08:38:31.000000000 +0000
-+++ ./data/Makefile.am	2014-08-09 23:10:47.000000000 +0000
-@@ -2,7 +2,7 @@
- SUBDIRS = symbolics
+--- data/Makefile.am.orig	2015-03-19 18:38:24.000000000 +0100
++++ data/Makefile.am	2015-03-30 18:12:15.956014000 +0200
+@@ -1,6 +1,6 @@
  
  desktopdir = $(prefix)/share/applications
 -desktop_in_files = org.baedert.corebird.desktop.in

@@ -5,7 +5,7 @@ PORTNAME=	rmap
 PORTVERSION=	1.2
 PORTREVISION=	12
 CATEGORIES=	astro geography
-MASTER_SITES=	http://reza.net/rmap/
+MASTER_SITES=	http://rmap.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location

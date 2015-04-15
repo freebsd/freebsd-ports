@@ -6,9 +6,8 @@ PORTVERSION=	22
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://arthur.barton.de/pub/%SUBDIR%/ \
-		http://ngircd.mirror.3rz.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
+		http://ngircd.mirror.3rz.org/pub/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
@@ -16,10 +15,13 @@ COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		cpe tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules # --docdir=${WRKDIR}/tmproot
 USE_RC_SUBR=	ngircd
+
+CPE_VENDOR=	barton
+CPE_VERSION=	${PORTVERSION:C/^([0-9]+)$/\1.0/}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -17,8 +17,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 INFO=		sharutils
-USES=		charsetfix perl5 tar:xz
+USES=		charsetfix cpe perl5 tar:xz
 OPTIONS_SUB=	yes
+CPE_VENDOR=	gnu
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ON=	--with-libintl-prefix="${LOCALBASE}"

@@ -13,17 +13,8 @@ PLIST_FILES=	bin/tcpdump398 man/man1/tcpdump398.1.gz
 
 USES=		tar:bzip2
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		comes with the base OS, only applicable for 8.0 and higher
-.endif
-
-post-build:
-	${GUNZIP_CMD} ${WRKSRC}/tcpdump.1.gz
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${STAGEDIR}${PREFIX}/bin/tcpdump398
-	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/tcpdump398.1
+	${INSTALL_MAN} ${WRKSRC}/tcpdump.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/tcpdump398.1.gz
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

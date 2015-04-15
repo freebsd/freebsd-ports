@@ -24,6 +24,6 @@ _GMAKE_EXT=	-lite
 
 BUILD_DEPENDS+=		gmake${_GMAKE_EXT}:${PORTSDIR}/devel/gmake${_GMAKE_EXT}
 CONFIGURE_ENV+=		MAKE=gmake${_GMAKE_EXT}
-MAKE_CMD?=		gmake${_GMAKE_EXT}
+MAKE_CMD=		gmake${_GMAKE_EXT}
 
 .endif

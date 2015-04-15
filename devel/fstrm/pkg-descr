@@ -1,0 +1,10 @@
+fstrm is an optimized C implementation of Frame Streams that
+includes a fast, lockless circular queue implementation
+and exposes library interfaces for setting up a dedicated
+Frame Streams I/O thread and asynchronously submitting data
+frames for transport from worker threads. It was originally
+written to facilitate the addition of high speed binary
+logging to DNS servers written in C using the dnstap
+log format.
+
+WWW: https://github.com/farsightsec/fstrm

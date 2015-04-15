@@ -1,15 +1,9 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
-@unexec if cmp -s %D/etc/scl.conf %D/etc/scl.conf.dist; then rm -f %D/etc/scl.conf; fi
-etc/scl.conf.dist
-@exec test -f %B/scl.conf || cp %B/%f %B/scl.conf
-@unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.dist; then rm -f %D/etc/syslog-ng.conf; fi
-etc/syslog-ng.conf.dist
-@exec test -f %B/syslog-ng.conf || cp %B/%f %B/syslog-ng.conf
-etc/syslog-ng.conf.sample
+@sample etc/syslog-ng.conf.sample
 bin/loggen
 bin/pdbtool
 bin/update-patterndb
-etc/scl.conf
+@sample etc/scl.conf.sample
 %%ETCDIR%%.conf
 include/syslog-ng/afinter.h
 include/syslog-ng/alarms.h

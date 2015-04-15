@@ -16,7 +16,7 @@
 -libsfml-system.so: $(OBJ)
 -	$(CPP) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) -lpthread
 +libsfml1-system.so: $(OBJ)
-+	$(CXX) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) -pthread
++	$(CXX) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) -lpthread
  
  $(OBJ): %.o: %.cpp
 -	$(CPP) -o $@ -c $< $(CFLAGS)

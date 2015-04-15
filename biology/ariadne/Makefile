@@ -21,9 +21,9 @@ OPTIONS_DEFINE=	DOCS
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}| ; \
-		s|CFLAGS =|CFLAGS +=| ; \
-		s|-c $(OPTIMISE)|-c $(CFLAGS) $(OPTIMIZE)|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=| ; \
+		s|-c $(OPTIMISE)|-c $(CFLAGS) $(OPTIMIZE)|g' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/ariadne ${STAGEDIR}${PREFIX}/bin

@@ -104,10 +104,10 @@ do-install:
 post-install:
 .ifndef WITHOUT_ACTIVATE
 	@${ECHO_CMD} \
-		'@exec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
+		'@exec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl -a -z "$$PACKAGE_BUILDING" ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} \
-		'@unexec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --remove-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
+		'@unexec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl -a -z "$$PACKAGE_BUILDING" ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --remove-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
 		>> ${TMPPLIST}
 .else
 	@${ECHO_CMD} \

@@ -4,7 +4,7 @@
 PORTNAME=	dfu-util
 PORTVERSION=	0.8
 CATEGORIES=	comms
-MASTER_SITES=	http://dfu-util.gnumonks.org/releases/
+MASTER_SITES=	http://dfu-util.sourceforge.net/releases/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Device firmware update (DFU) USB programmer

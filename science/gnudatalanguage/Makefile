@@ -34,8 +34,8 @@ CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
 		-DNCURSESDIR:STRING="/usr"		\
 		-DMPICH:BOOL=NO				\
 		-DMAGICK:BOOL=NO
-CPPFLAGS+=	${CFLAGS} -fno-inline ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CPPFLAGS+=	${CFLAGS} -fno-inline
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
@@ -97,12 +97,6 @@ PLIST=		pkg-plist.pymod
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=NO
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800503
-BROKEN=	Does not build with ancient binutils
-.endif
-
 .if defined(BUILD_PYTHON_MODULE)
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
@@ -129,4 +123,4 @@ regression-test:	install
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

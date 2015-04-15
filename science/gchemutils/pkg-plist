@@ -77,6 +77,12 @@ man/man1/gchempaint.1.gz
 man/man1/gchemtable.1.gz
 man/man1/gcrystal.1.gz
 man/man1/gspectrum.1.gz
+share/appdata/gchem3d.appdata.xml
+share/appdata/gchemcalc.appdata.xml
+share/appdata/gchempaint.appdata.xml
+share/appdata/gchemtable.appdata.xml
+share/appdata/gcrystal.appdata.xml
+share/appdata/gspectrum.appdata.xml
 share/applications/gchem3d-%%VER%%.desktop
 share/applications/gchemcalc-%%VER%%.desktop
 share/applications/gcrystal-%%VER%%.desktop

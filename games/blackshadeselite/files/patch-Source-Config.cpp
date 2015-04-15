@@ -1,6 +1,17 @@
 --- Source/Config.cpp.orig	2007-11-22 01:14:16.000000000 +0300
-+++ Source/Config.cpp	2008-01-28 00:13:47.000000000 +0300
-@@ -44,8 +44,10 @@
++++ Source/Config.cpp	2015-03-27 01:33:20.608154000 +0300
+@@ -19,6 +19,10 @@
+  */
+ #include <fstream>
+ #include <iostream>
++#include <cstdlib>
++#include <cstring>
++
++#include <limits.h>
+ 
+ #include "Config.h"
+ 
+@@ -44,8 +48,10 @@
    customlevels = 0;
    musictoggle = 1;
    azertykeyboard = 0;

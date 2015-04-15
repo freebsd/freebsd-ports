@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	3.8.2
-PORTREVISION=	4
+PORTVERSION=	4.0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
-# Fetched from git://git.dragonflybsd.org/dragonfly.git, v${PORTVERSION}, /games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	adamw
+MASTER_SITES=	LOCAL/adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
@@ -84,5 +82,12 @@ post-install:
 
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
+
+dist:
+	fetch -o- https://github.com/DragonFlyBSD/DragonFlyBSD/archive/v${PORTVERSION}.zip | \
+		unzip - DragonFlyBSD-${PORTVERSION}/games/\*
+	mv DragonFlyBSD-${PORTVERSION}/games bsdgames-${PORTVERSION}
+	tar -cvf bsdgames-${PORTVERSION}.tar bsdgames-${PORTVERSION}
+	xz -v bsdgames-${PORTVERSION}.tar
 
 .include <bsd.port.mk>

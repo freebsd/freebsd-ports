@@ -9,8 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Services for ircu P10 protocol networks
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-getopt
 

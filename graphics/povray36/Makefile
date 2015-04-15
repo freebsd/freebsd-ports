@@ -6,8 +6,7 @@ PORTVERSION=	3.6.1
 PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
+		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/
 MASTER_SITE_SUBDIR=	Official/Unix
 PKGNAMESUFFIX=	36
 DIST_SUBDIR=	povray36

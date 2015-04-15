@@ -4,9 +4,6 @@ PORTNAME=	kde-telepathy
 PORTVERSION=	${KTP_VERSION}
 PORTREVISION=	3
 CATEGORIES=	net-im kde
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE integrated instant messaging framework
@@ -21,8 +18,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kcm_ktp_accounts.so:${PORTSDIR}/net-im/ktp-
 		${KDE4_PREFIX}/lib/kde4/libexec/ktp-text-ui:${PORTSDIR}/net-im/ktp-text-ui
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	PLASMA SEND_FILE
 OPTIONS_DEFAULT=PLASMA SEND_FILE

@@ -61,7 +61,7 @@ ENHANCED_KEYWORD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-enhanced-keyword
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
 
-SUB_FILES=	pkg-install
+SUB_FILES=	pkg-message 220_subversion.conf.sample
 
 .if !${PORT_OPTIONS:MMAINTAINER_DEBUG}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
@@ -215,6 +215,8 @@ post-install:	${MKREPOS_TARGET}
 
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/*.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${CP} ${WRKDIR}/220_subversion.conf.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 .endif
 
 .if !${PORT_OPTIONS:MSTATIC}

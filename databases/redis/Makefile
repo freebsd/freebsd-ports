@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.8.19
+DISTVERSION=	3.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -42,9 +42,9 @@ USES+=		tcl:build
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-devel-2.*
+CONFLICTS?=	redis-devel-3.*
 
 USES+=		gmake
 MAKE_ENV=	"V=yo"

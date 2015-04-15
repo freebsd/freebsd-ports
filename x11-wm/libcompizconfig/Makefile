@@ -18,7 +18,7 @@ USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	intltool libxml2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread
 
 OPTIONS_DEFINE=	INOTIFY
 OPTIONS_DEFAULT=	INOTIFY

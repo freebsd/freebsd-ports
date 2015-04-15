@@ -13,7 +13,7 @@ etc/ssh/moduli
 @sample etc/ssh/ssh_config.sample
 @sample etc/ssh/sshd_config.sample
 %%X509%%@dir etc/ssh/ca
-@exec if [ -f %D/etc/ssh_host_ecdsa_key ] && grep -q DSA %D/etc/ssh_host_ecdsa_key; then echo; echo "\!/ Warning \!/"; echo; echo "Your %D/etc/ssh_host_ecdsa_key is not a valid ECDSA key. It is incorrectly"; echo "a DSA key due to a bug fixed in 2012 in the security/openssh-portable port."; echo; echo "Regenerate a proper one with: rm -f %D/etc/ssh_host_ecdsa_key*; service openssh restart"; echo; echo "Clients should not see any key change warning since the ECDSA was not valid and was not actually"; echo "used by the server."; echo; echo "\!/ Warning \!/"; fi
+@exec if [ -f %D/%%ETCDIR%%/ssh_host_ecdsa_key ] && grep -q DSA %D/%%ETCDIR%%/ssh_host_ecdsa_key; then echo; echo "\!/ Warning \!/"; echo; echo "Your %D/%%ETCDIR%%/ssh_host_ecdsa_key is not a valid ECDSA key. It is incorrectly"; echo "a DSA key due to a bug fixed in 2012 in the security/openssh-portable port."; echo; echo "Regenerate a proper one with: rm -f %D/%%ETCDIR%%/ssh_host_ecdsa_key*; service openssh restart"; echo; echo "Clients should not see any key change warning since the ECDSA was not valid and was not actually"; echo "used by the server."; echo; echo "\!/ Warning \!/"; fi
 sbin/sshd
 libexec/sftp-server
 libexec/ssh-keysign

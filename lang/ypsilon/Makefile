@@ -13,8 +13,7 @@ COMMENT=	Scheme implementation for real-time applications
 
 USES=		gmake
 
-MAKE_ARGS=	DATADIR="${DATADIR}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ARGS=	DATADIR="${DATADIR}"
 
 ONLY_FOR_ARCHS=	i386 amd64
 

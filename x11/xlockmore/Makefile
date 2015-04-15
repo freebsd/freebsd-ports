@@ -4,7 +4,8 @@
 PORTNAME=	xlockmore
 PORTVERSION=	5.46
 CATEGORIES?=	x11
-MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/
+MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/ \
+		LOCAL/jgh/x11/${PORTNAME}/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
@@ -61,7 +62,7 @@ KRB5LIB=	-L${KRB5_HOME}/lib
 
 .if ${PORT_OPTIONS:MMESAGL}
 CONFIGURE_ARGS+=	--with-mesa
-MESALIB=${PTHREAD_LIBS}
+MESALIB=	-lpthread
 USE_GL=	yes
 CFLAGS+=	-I${LOCALBASE}/include/FTGL
 .else

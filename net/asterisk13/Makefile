@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.2.0
+PORTVERSION=	13.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -29,8 +29,7 @@ USE_LDCONFIG=	yes
 USES=		bison cpe gmake iconv
 CPE_VENDOR=	digium
 USE_RC_SUBR=	asterisk
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
@@ -47,7 +46,7 @@ CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
-		XMPP GSM SQLITE3 CURL SRTP LUA PJSIP SPEEX
+		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX
 
 OPTIONS_DEFINE_i386=	DAHDI
 OPTIONS_DEFINE_amd64=	DAHDI
@@ -59,7 +58,7 @@ OPTIONS_DEFAULT_sparc64=	DAHDI
 
 EXCHANGE_DESC?=	Exchange calendar support
 NEWG711_DESC?=	New G711 Codec
-SRTP_DESC?=	SecureRTP support
+SRTP_DESC?=	SecureRTP support (Needs all ports build with WITH_OPENSSL_PORT=yes)
 OOH323_DESC?=	ooh323 support
 DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
@@ -151,6 +150,8 @@ post-patch:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts

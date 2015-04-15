@@ -1,6 +1,6 @@
---- cnf/mak/afnix-clg4.mak.orig	2015-01-09 13:27:16.000000000 +0100
-+++ cnf/mak/afnix-clg4.mak	2015-01-09 13:28:08.000000000 +0100
-@@ -19,23 +19,23 @@
+--- cnf/mak/afnix-clg4.mak.orig	2015-01-03 13:34:32 UTC
++++ cnf/mak/afnix-clg4.mak
+@@ -19,18 +19,18 @@
  # - compiler and linker section                                              -
  # ----------------------------------------------------------------------------
  
@@ -24,9 +24,3 @@
  PFLCCFLAGS      =
  COVCCFLAGS      =
  CPPCCFLAGS      = -nostdinc -nostdinc++
- CXXCCFLAGS      = 
--STDDEFINES      =
-+STDDEFINES      = $(PTHREAD_CFLAGS)
- DBGDEFINES      = -DAFNIX_DEBUG
- OPTDEFINES      =
- PFLDEFINES	=

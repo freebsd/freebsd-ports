@@ -34,7 +34,6 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/shell ldconfig/s|^|#| ; \
-		 s|-lpthread|${PTHREAD_LIBS}| ; \
 		 /-O2/s| = | ?= |' ${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e \
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c

@@ -3,7 +3,7 @@
 
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://developer.android.com/downloads/design/

@@ -39,9 +39,20 @@ WRKSRC_STATIC=		${WRKSRC}
 ALL_TARGET=		blaslib
 BLASLIB=		../../libblas.a
 LIBS=			blas
-PLIST_SUB+=		BLAS="" LAPACK="@comment " XLAPACK="@comment "
+PLIST_SUB+=		BLAS="" LAPACK="@comment " XLAPACK="@comment " LAPACKE="@comment "
 SVERSION=		2
 TEST_TARGET=		blas_testing
+.elif defined(LAPACKE_SLAVEPORT)
+ALL_TARGET=		lapackelib
+LAPACKELIB=		liblapacke.a
+LAPACKETMGLIB=		liblapacke_tmg.a
+MAKE_ENV+=	LAPACKELIB="${LAPACKELIB}" LAPACKETMGLIB="${LAPACKETMGLIB}"
+LIB_DEPENDS+=		libblas.so:${PORTSDIR}/math/blas \
+			liblapack.so:${PORTSDIR}/math/lapack
+LIBS=			lapacke lapacke_tmg
+INCLS=			lapacke lapacke_utils lapacke_mangling
+PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK="@comment " LAPACKE=""
+SVERSION=		1
 .else
 ALL_TARGET=		lib
 BLASLIB?=		-L${LOCALBASE}/lib -lblas
@@ -59,11 +70,11 @@ S=			\#
 LIB_DEPENDS+=		libxblas.so:${PORTSDIR}/math/xblas
 MAKE_ENV+=		USEXBLAS=yes XBLASLIB="${XBLASLIB}"
 P=			x
-PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK=""
+PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK="" LAPACKE="@comment "
 XBLASLIB?=		-L${LOCALBASE}/lib -lxblas
 .else
 PLIST_FILES+=		${MAN3L:S|^|man/man3/|:S|$|.gz|}
-PLIST_SUB+=		BLAS="@comment " LAPACK="" XLAPACK="@comment "
+PLIST_SUB+=		BLAS="@comment " LAPACK="" XLAPACK="@comment " LAPACKE="@comment "
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
 MAN_TARGET=		build-manpages
@@ -79,6 +90,10 @@ PICFLAG?=	-fpic
 
 FFLAGS_PROFILE?=	-pg
 FFLAGS_SHARED ?=	${PICFLAG}
+
+.if ${PORT_OPTIONS:MPROFILE}
+LDFLAGS+= -static
+.endif
 
 .if ${PORT_OPTIONS:MPROFILE} && !exists(/usr/lib/libc_p.a)
 IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
@@ -103,7 +118,9 @@ post-patch:
 		s@^(OPTS[[:blank:]]*=)(.*)@\1 $${FFLAGS} $${EXTRAFLAGS}@; \
 		s@^NOOPT[[:blank:]]*=.*@& $${EXTRAFLAGS}@; \
 		s@^(LOADOPTS[[:blank:]]*=)(.*)@\1 $${LDFLAGS} $${EXTRAFLAGS}@; \
-		\@(BLAS|RAN)LIB[[:blank:]]*=@d;' \
+		s@^(CC[[:blank:]]*=)(.*)@@; \
+		s@^(CFLAGS[[:blank:]]*)(=)(.*)@\1 += $${EXTRAFLAGS}@; \
+		\@(BLAS|LAPACKE|RAN)LIB[[:blank:]]*=@d;' \
 			${WRKSRC}/make.inc.example > ${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's@\./lapack_testing\.py@${S} &@' \
 		${WRKSRC}/Makefile
@@ -149,8 +166,8 @@ TESTS ?=	test-static
 TESTS ?=	test-profile
 .endif
 
+.if !defined(LAPACKE_SLAVEPORT)
 check regression-test test: ${TESTS}
-
 .for o in PROFILE SHARED STATIC
 test-${o:tl}: build-${o:tl}
 .if ${PORT_OPTIONS:M${o}}
@@ -160,9 +177,9 @@ test-${o:tl}: build-${o:tl}
 .if defined(BLAS_SLAVEPORT)
 	@${CAT} ${WRKSRC_${o}}/BLAS/*.out
 .endif
-
 .endif
 .endfor
+.endif
 
 do-install:
 .for L in ${LIBS}
@@ -178,10 +195,15 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${L}.a ${STAGEDIR}${PREFIX}/lib/lib${P}${L}_p.a
 .endif
 .endfor
+.if defined(LAPACKE_SLAVEPORT)
+.for I in ${INCLS}
+	@${INSTALL_DATA} ${WRKSRC}/lapacke/include/${I}.h ${STAGEDIR}${PREFIX}/include
+.endfor
+.endif
 
 .include  <bsd.port.pre.mk>
 
-.if !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
+.if !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
 
 .include "${FILESDIR}/manpages"
 

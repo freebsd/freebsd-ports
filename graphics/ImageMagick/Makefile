@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.0-10
+DISTVERSION=	6.9.1-1
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -39,7 +39,9 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix tar:xz
+USES=		cpe gmake libtool:keepla pathfix perl5 pkgconfig:both shebangfix tar:xz
+CPE_PRODUCT=	imagemagick
+CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
@@ -48,6 +50,8 @@ CONFIGURE_ARGS=	--without-dps \
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
+# make sure LOCALBASE is placed at the end of the compiler lookup so the configure
+# script can find openjpeg2 headers before the openjpeg15 headers
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Y${LOCALBASE}/lib
 
@@ -125,9 +129,8 @@ PLIST_SUB+=		WITH_PERL='@comment '
 
 .if ${_IMAGEMAGICK_THREADS} == "yes"
 CONFIGURE_ARGS+=	--with-threads
-CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LIBS="${PTHREAD_LIBS}"
-LDFLAGS+=		${PTHREAD_LIBS}
+CONFIGURE_ENV+=		PTHREAD_LIBS="-lpthread"
+LDFLAGS+=		-lpthread
 .else
 CONFIGURE_ARGS+=	--without-threads
 _IMAGEMAGICK_THREADS=no
@@ -313,9 +316,6 @@ PLIST_SUB+=		WEBP="@comment "
 .if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--with-fontconfig
-CONFIGURE_ENV+=		FONTCONFIG_CFLAGS="-I${LOCALBASE}/include" \
-			FONTCONFIG_LIBS="-L${LOCALBASE}/lib"
-MAKE_ENV+=		FONTCONFIG_CFLAGS="-I${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=	--without-fontconfig
 .endif

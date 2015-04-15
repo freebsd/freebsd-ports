@@ -88,7 +88,6 @@
     SUBDIR += cryptopp
     SUBDIR += cryptstring
     SUBDIR += cvm
-    SUBDIR += cyassl
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
@@ -790,6 +789,7 @@
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
+    SUBDIR += py-flask-httpauth
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-htpasswd
@@ -816,6 +816,7 @@
     SUBDIR += py-plone.session
     SUBDIR += py-potr
     SUBDIR += py-pow
+    SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
@@ -826,6 +827,7 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
+    SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
     SUBDIR += py-service_identity
     SUBDIR += py-slowaes
@@ -1048,6 +1050,7 @@
     SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += wpa_supplicant
+    SUBDIR += wolfssl
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xml-security

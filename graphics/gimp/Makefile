@@ -7,14 +7,13 @@ DISTVERSION?=	2.8.14
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
-MASTER_SITES?=	# empty
-DISTFILES?=	# empty
-EXTRACT_ONLY?=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for The Gimp
 
 RUN_DEPENDS=	gimp-2.8:${PORTSDIR}/graphics/gimp-app
+
+USES+=	metaport
 
 OPTIONS_DEFINE=	PYTHON PRINT HELP
 OPTIONS_DEFAULT=PYTHON PRINT HELP
@@ -22,23 +21,9 @@ PYTHON_DESC=	Python-fu support
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 HELP_DESC=	Gimp-Help (50+MB distfile)
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHELP}
-RUN_DEPENDS+=	en-gimp-help-html>=0:${PORTSDIR}/misc/gimp-help-en
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
-.endif
-
-.if ${PORT_OPTIONS:MPRINT}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
-RUN_DEPENDS+=	gutenprint>0:${PORTSDIR}/print/gutenprint
-.endif
+HELP_RUN_DEPENDS+=	en-gimp-help-html>=0:${PORTSDIR}/misc/gimp-help-en
+PYTHON_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graphics/py-gimp
+PRINT_RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
+PRINT_RUN_DEPENDS+=	gutenprint>0:${PORTSDIR}/print/gutenprint
 
 .include <bsd.port.mk>

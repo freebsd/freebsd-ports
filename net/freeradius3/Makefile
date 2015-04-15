@@ -296,10 +296,6 @@ WITH_OPENSSL_PORT=yes
 # if we're installing, place sample configs into ${EXAMPLESDIR}
 MAKE_ARGS+=	raddbdir="${EXAMPLESDIR}/raddb" R=${STAGEDIR}
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
-.endif
-
 FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
 PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
 USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}

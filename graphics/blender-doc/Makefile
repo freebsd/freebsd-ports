@@ -4,8 +4,7 @@
 PORTNAME=	blender
 PORTVERSION=	2.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.blender.org/documentation/ \
-			CENKES
+MASTER_SITES=	http://download.blender.org/documentation/
 PKGNAMESUFFIX=	-doc
 DISTFILES=	BlenderManualIen.23.html.tar.gz BlenderManualIIen.23.html.tar.gz
 

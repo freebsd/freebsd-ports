@@ -83,6 +83,10 @@ post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
 
+post-patch:
+	${SED} -e 's|freebsd|dragonfly|g' ${WRKSRC}/make_freebsd.mak \
+		> ${WRKSRC}/make_dragonfly.mak
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_LIB} ${WRKSRC}/libswt-*.so ${STAGEDIR}${PREFIX}/lib

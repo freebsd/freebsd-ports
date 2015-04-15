@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pastebin web application to upload and read text on a webserver
 
+BROKEN=		No public distfiles
+
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	ruby18

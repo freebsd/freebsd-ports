@@ -3,6 +3,7 @@
 
 PORTNAME=	check_netsnmp
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	nagios-

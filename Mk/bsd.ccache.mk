@@ -6,10 +6,8 @@ COMMANDS_Include_MAINTAINER=	portmgr@FreeBSD.org
 
 _CCACHEMKINCLUDED=	yes
 
-# Try to set a default CCACHE_DIR to workaround HOME=/dev/null and
-# HOME=${WRKDIR}/* staging fixes
-.if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR) && \
-    (!defined(HOME) || ${HOME} == /dev/null || ${HOME:S/^${WRKDIR}//} != ${HOME})
+# HOME is always set to ${WRKDIR} now. Try to use /root/.ccache as default.
+.if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR)
 .  if defined(USER) && ${USER} == root
 CCACHE_DIR=	/root/.ccache
 .  else

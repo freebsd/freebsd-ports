@@ -89,8 +89,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-irrlichtdepend
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/src/CMakeLists.txt
 .if ! ${PORT_OPTIONS:MLUAJIT}
 	@${REINPLACE_CMD} -e '/find_/ s|LUA_|NO&|g' \
 		${WRKSRC}/src/CMakeLists.txt

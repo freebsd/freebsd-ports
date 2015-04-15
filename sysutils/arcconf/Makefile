@@ -30,7 +30,7 @@ IGNORE=		installs incompatible binaries for FreeBSD
 
 .if ${OSVERSION} >= 900000
 DIST_OSVER=	9
-.elif ${OSVERSION} >= 800000
+.else
 DIST_OSVER=	8
 .endif
 

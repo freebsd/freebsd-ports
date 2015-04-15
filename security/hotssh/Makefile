@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
 
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20
-USES=		gettext python tar:bzip2
+USES=		gettext python tar:bzip2 waf
 INSTALLS_ICONS=	yes
 
 B64DECODE?=	/usr/bin/b64decode
@@ -36,14 +36,5 @@ post-extract:
 	@${MV} ${WRKSRC}/waf ${WRKSRC}/waf.beforepatch
 	@cd ${WRKSRC} && ${B64DECODE} -o waf.diff ${FILESDIR}/waf.diff && ${BSPATCH} waf.beforepatch waf waf.diff && ${CHMOD} 755 waf
 	@${GREP} -Rl '%%LOCALBASE%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"
-
-do-configure:
-	@cd ${WRKSRC} && ./waf configure --prefix=${PREFIX}
-
-do-build:
-	@cd ${WRKSRC} && ./waf
-
-do-install:
-	@cd ${WRKSRC} && ./waf install --destdir=${STAGEDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
-This OCaml-library consists of a set of modules which implement functions
-for manipulating context-free grammars (CFGs) in a purely functional way.
+This OCaml-library consists of a set of modules which implement functions for
+analyzing and manipulating context-free grammars (CFGs) in a purely functional
+way.
 
-WWW: https://bitbucket.org/mmottl/cfg
+WWW: http://mmottl.github.io/cfg/

@@ -22,6 +22,8 @@ RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-c
 
 OPTIONS_DEFINE=	DOCS
 
+USES+=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

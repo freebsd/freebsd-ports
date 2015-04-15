@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 MAINTAINER=	gugod@gugod.org
 COMMENT=	Pretty font modifyed from X11 schumacher-clean that match kcfonts
 
+BROKEN=		Unfetchable
 USES=		fonts
 RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 

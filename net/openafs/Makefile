@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openafs
+PORTREVISION=	1
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
 CATEGORIES=	net
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -29,7 +30,7 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	_XCFLAGS="${CFLAGS} -fPIC" \
 		_PAM_CFLAGS="${CFLAGS} -fPIC" \
-		_MT_LIBS="${PTHREAD_LIBS}"
+		_MT_LIBS="-lpthread"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=/var \
 		--mandir=${MANPREFIX}/man \

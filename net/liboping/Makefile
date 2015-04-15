@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	liboping
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	net
-MASTER_SITES=	http://verplant.org/liboping/files/ \
-		http://matt.peterson.org/FreeBSD/ports/
+MASTER_SITES=	http://noping.cc/files/
 
-MAINTAINER=	matt@peterson.org
-COMMENT=	C library to generate ICMP echo requests
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Liboping, a C library, and utility to generate ICMP echo requests
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		libtool
+LICENSE=	GPLv2
+
+USES=		libtool pathfix ncurses perl5 shebangfix
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Oping/Oping.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liboping.so.0.2.11
 
 .include <bsd.port.mk>

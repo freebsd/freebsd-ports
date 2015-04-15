@@ -207,7 +207,8 @@ lib/valgrind/default.supp
 %%X86%%lib/valgrind/helgrind-x86-freebsd
 lib/valgrind/i386-coresse-valgrind.xml
 lib/valgrind/i386-linux-valgrind.xml
-lib/valgrind/getoff-%%ARCH%%-freebsd
+%%X86%%lib/valgrind/getoff-x86-freebsd
+%%AMD64%%lib/valgrind/getoff-amd64-freebsd
 %%AMD64%%lib/valgrind/lackey-amd64-freebsd
 %%X86%%lib/valgrind/lackey-x86-freebsd
 %%AMD64%%lib/valgrind/libcoregrind-amd64-freebsd.a

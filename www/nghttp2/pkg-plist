@@ -12,11 +12,11 @@ include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
 lib/libnghttp2.so.5
-lib/libnghttp2.so.5.7.0
+lib/libnghttp2.so.5.7.2
 %%ASIO%%lib/libnghttp2_asio.a
 %%ASIO%%lib/libnghttp2_asio.so
-%%ASIO%%lib/libnghttp2_asio.so.0
-%%ASIO%%lib/libnghttp2_asio.so.0.0.0
+%%ASIO%%lib/libnghttp2_asio.so.1
+%%ASIO%%lib/libnghttp2_asio.so.1.0.0
 libdata/pkgconfig/libnghttp2.pc
 %%ASIO%%libdata/pkgconfig/libnghttp2_asio.pc
 man/man1/h2load.1.gz

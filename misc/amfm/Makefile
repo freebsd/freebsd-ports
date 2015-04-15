@@ -17,18 +17,12 @@ LIB_DEPENDS=	libhid.so:${PORTSDIR}/devel/libhid
 
 NO_WRKSUBDIR=   yes
 
-.include <bsd.port.pre.mk>
-
 EXTRACT_CMD=            ${CP}
 EXTRACT_BEFORE_ARGS=    -p
 EXTRACT_AFTER_ARGS=     ${WRKDIR}
-
-.if ${OSVERSION} <= 800097
-BROKEN=		does not build
-.endif
 
 do-install:
 	@${INSTALL} ${WRKSRC}/amfm ${STAGEDIR}${PREFIX}/bin/amfm
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/amfm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

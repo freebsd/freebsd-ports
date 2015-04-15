@@ -5,7 +5,7 @@ PORTNAME=	psybnc
 DISTVERSION=	2.3.2-9
 PORTREVISION=	2
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://www.psybnc.at/download/beta/ CENKES
+MASTER_SITES=	http://www.psybnc.at/download/beta/
 DISTNAME=	psyBNC-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -3,111 +3,87 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11 gnustep
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Metaport for GNUstep applications
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BASE=	yes
-USE_GNUSTEP_GUI=	yes
-USE_GNUSTEP_BACK=	yes
+USES=		metaport gnustep
+USE_GNUSTEP=	back base gui
 
-USE_GNUSTEP_SYSTEM_LIBS+=	\
-	PreferencePanes:deskutils/preferencepanes \
-
-USE_GNUSTEP_LOCAL_LIBS+=	\
-	Pantomime:mail/pantomime \
-	Addresses:mail/addresses \
-	BioCocoa:biology/biococoa \
-	SlideShow:graphics/gnustep-slideshowkit \
-	WizardKit:devel/wizardkit \
-	HighlighterKit:devel/highlighterkit \
-	GSKrab:x11/gskrab \
-	Encore:devel/fortytwo-encore \
-	BDB:databases/fortytwo-bdb \
-	FT:graphics/fortytwo \
-	CameraKit:graphics/camerakit \
-	Toolbox:deskutils/toolboxkit \
-
-USE_GNUSTEP_LOCAL_BUNDLES+=	\
-	Cddb:audio/cddb-bundle	\
-
-USE_GNUSTEP_SYSTEM_APPS+=	\
-	Gorm:devel/gorm \
-	GShisen:games/gshisen \
-	GWorkspace:deskutils/gworkspace \
-	Terminal:x11/terminal.app \
-	GSPdf:print/gspdf \
-	SystemPreferences:deskutils/systempreferences \
-	WrapperFactory:deskutils/gnustep-wrapper \
-	GRubik:games/grubik \
-	MDFinder:deskutils/gworkspace-gwmetadata \
-
-USE_GNUSTEP_LOCAL_APPS+=	\
-	GNUMail:mail/gnumail \
-	EasyDiff:textproc/easydiff \
-	ImageViewer:graphics/imageviewer \
-	SlideShow:graphics/gnustep-slideshow \
-	Preview:graphics/preview \
-	TimeMon:sysutils/timemon \
-	Cenon:graphics/cenon \
-	PRICE:graphics/price \
-	EdenMath:math/edenmath \
-	Zipper:archivers/zipper \
-	Camera:graphics/camera \
-	Ladder:games/gnustep-ladder \
-	Charmap:deskutils/charmap \
-	GTAMSAnalyzer:science/gtamsanalyzer \
-	Paje:science/paje \
-	AClock:x11-clocks/aclock \
-	LapisPuzzle:games/lapispuzzle \
-	Waiho:ftp/waiho \
-	Affiche:deskutils/affiche \
-	GMastermind:games/gmastermind \
-	Jigsaw:games/jigsaw \
-	NoteBook:deskutils/gnustep-notebook \
-	HelpViewer:deskutils/helpviewer \
-	Duncan:textproc/duncan \
-	Jishyo:japanese/jishyo \
-	GMines:games/gmines \
-	InnerSpace:x11/innerspace \
-	FTP:ftp/gnustep-ftp \
-	batmon:sysutils/batmon \
-	RemoteDesk:net/remotedesk \
-	DisplayCalibrator:deskutils/displaycalibrator \
-	Poe:multimedia/poe \
-	MPDCon:audio/mpdcon \
-	PlopFolio:deskutils/plopfolio \
-	CDPlayer:audio/gnustep-cdplayer \
-	GScheme:lang/gscheme \
-	NeXTGo:games/nextgo \
-	Expense:finance/expense \
-	FreeTar:archivers/freetar \
-	Localize:textproc/localize \
-	AppWrapper:deskutils/appwrapper \
-	Pixen:graphics/pixen \
-	Cartotheque:deskutils/cartotheque \
-	LuserNET:news/lusernet \
-	Popup:textproc/popup \
-	Fortunate:games/fortunate \
-	Sudoku:games/gnustep-sudoku \
-	LaternaMagica:graphics/laternamagica \
-	SimpleAgenda:deskutils/simpleagenda \
-
-USE_GNUSTEP_LOCAL_TOOLS+=	\
-	zillion:net/zillion \
-	adtool:mail/addresses-goodies \
-
-
-USE_GNUSTEP_LOCAL_SERVICES+=	\
-	LaTeX:textproc/latex-service \
+RUN_DEPENDS=	aclock>0:${PORTSDIR}/x11-clocks/aclock \
+		addresses>0:${PORTSDIR}/mail/addresses \
+		addresses-goodies>0:${PORTSDIR}/mail/addresses-goodies \
+		affiche>0:${PORTSDIR}/deskutils/affiche \
+		appwrapper>0:${PORTSDIR}/deskutils/appwrapper \
+		batmon>0:${PORTSDIR}/sysutils/batmon \
+		biococoa>0:${PORTSDIR}/biology/biococoa \
+		camera>0:${PORTSDIR}/graphics/camera \
+		camerakit>0:${PORTSDIR}/graphics/camerakit \
+		cartotheque>0:${PORTSDIR}/deskutils/cartotheque \
+		cddb-bundle>0:${PORTSDIR}/audio/cddb-bundle \
+		gnustep-cdplayer>0:${PORTSDIR}/audio/gnustep-cdplayer \
+		cenon>0:${PORTSDIR}/graphics/cenon \
+		displaycalibrator>0:${PORTSDIR}/deskutils/displaycalibrator \
+		duncan>0:${PORTSDIR}/textproc/duncan \
+		easydiff>0:${PORTSDIR}/textproc/easydiff \
+		edenmath>0:${PORTSDIR}/math/edenmath \
+		expense>0:${PORTSDIR}/finance/expense \
+		fortunate>0:${PORTSDIR}/games/fortunate \
+		fortytwo-bdb>0:${PORTSDIR}/databases/fortytwo-bdb \
+		fortytwo-encore>0:${PORTSDIR}/devel/fortytwo-encore \
+		fortytwo>0:${PORTSDIR}/graphics/fortytwo \
+		freetar>0:${PORTSDIR}/archivers/freetar \
+		gmastermind>0:${PORTSDIR}/games/gmastermind \
+		gmines>0:${PORTSDIR}/games/gmines \
+		gnumail>0:${PORTSDIR}/mail/gnumail \
+		gnustep-ftp>0:${PORTSDIR}/ftp/gnustep-ftp \
+		gnustep-ladder>0:${PORTSDIR}/games/gnustep-ladder \
+		gnustep-slideshowkit>0:${PORTSDIR}/graphics/gnustep-slideshowkit \
+		gnustep-slideshow>0:${PORTSDIR}/graphics/gnustep-slideshow \
+		gnustep-sudoku>0:${PORTSDIR}/games/gnustep-sudoku \
+		gnustep-wrapper>0:${PORTSDIR}/deskutils/gnustep-wrapper \
+		gorm>0:${PORTSDIR}/devel/gorm \
+		grubik>0:${PORTSDIR}/games/grubik \
+		gscheme>0:${PORTSDIR}/lang/gscheme \
+		gshisen>0:${PORTSDIR}/games/gshisen \
+		gskrab>0:${PORTSDIR}/x11/gskrab \
+		gspdf>0:${PORTSDIR}/print/gspdf \
+		gtamsanalyzer>0:${PORTSDIR}/science/gtamsanalyzer \
+		gworkspace-gwmetadata>0:${PORTSDIR}/deskutils/gworkspace-gwmetadata \
+		gworkspace>0:${PORTSDIR}/deskutils/gworkspace \
+		helpviewer>0:${PORTSDIR}/deskutils/helpviewer \
+		highlighterkit>0:${PORTSDIR}/devel/highlighterkit \
+		imageviewer>0:${PORTSDIR}/graphics/imageviewer \
+		innerspace>0:${PORTSDIR}/x11/innerspace \
+		jigsaw>0:${PORTSDIR}/games/jigsaw \
+		ja-jishyo>0:${PORTSDIR}/japanese/jishyo \
+		lapispuzzle>0:${PORTSDIR}/games/lapispuzzle \
+		laternamagica>0:${PORTSDIR}/graphics/laternamagica \
+		latex-service>0:${PORTSDIR}/textproc/latex-service \
+		localize>0:${PORTSDIR}/textproc/localize \
+		lusernet>0:${PORTSDIR}/news/lusernet \
+		mpdcon>0:${PORTSDIR}/audio/mpdcon \
+		nextgo>0:${PORTSDIR}/games/nextgo \
+		gnustep-notebook>0:${PORTSDIR}/deskutils/gnustep-notebook \
+		paje>0:${PORTSDIR}/science/paje \
+		pantomime>0:${PORTSDIR}/mail/pantomime \
+		pixen>0:${PORTSDIR}/graphics/pixen \
+		plopfolio>0:${PORTSDIR}/deskutils/plopfolio \
+		poe>0:${PORTSDIR}/multimedia/poe \
+		popup>0:${PORTSDIR}/textproc/popup \
+		gnustep-preview>0:${PORTSDIR}/graphics/preview \
+		price>0:${PORTSDIR}/graphics/price \
+		remotedesk>0:${PORTSDIR}/net/remotedesk \
+		simpleagenda>0:${PORTSDIR}/deskutils/simpleagenda \
+		systempreferences>0:${PORTSDIR}/deskutils/systempreferences \
+		terminal.app>0:${PORTSDIR}/x11/terminal.app \
+		timemon>0:${PORTSDIR}/sysutils/timemon \
+		toolboxkit>0:${PORTSDIR}/deskutils/toolboxkit \
+		waiho>0:${PORTSDIR}/ftp/waiho \
+		wizardkit>0:${PORTSDIR}/devel/wizardkit \
+		zillion>0:${PORTSDIR}/net/zillion \
+		zipper>0:${PORTSDIR}/archivers/zipper
 
 .include <bsd.port.mk>

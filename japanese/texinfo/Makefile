@@ -18,9 +18,10 @@ COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/tex-ptex
 
-USES=		gettext gmake
+USES=		cpe gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j
+CPE_VENDOR=	gnu
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
 INSTALL_TARGET=	install install-tex

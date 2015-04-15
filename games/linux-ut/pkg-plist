@@ -208,7 +208,7 @@ bin/ut
 %%DATADIR%%/System/MultiMesh.int
 %%DATADIR%%/System/MultiMesh.u
 %%DATADIR%%/System/NullDrv.so
-%%451PATCH%%%%DATADIR%%/System/NullNetDriver.so
+%%V451PATCH%%%%DATADIR%%/System/NullNetDriver.so
 %%DATADIR%%/System/NullRender.so
 %%DATADIR%%/System/OpenGLDrv.so
 %%DATADIR%%/System/OpenGlDrv.ini
@@ -422,14 +422,14 @@ bin/ut
 %%DATADIR%%/Web/images/m3-1.gif
 %%DATADIR%%/Web/images/m3-2.gif
 %%DATADIR%%/Web/images/right.gif
-%%451PATCH%%%%DATADIR%%/Web/inc/content_footer_tables.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/content_header_tables.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/footer.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/header.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/menu_footer.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/menu_header.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/top_begin.inc
-%%451PATCH%%%%DATADIR%%/Web/inc/top_end.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/content_footer_tables.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/content_header_tables.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/footer.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/header.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/menu_footer.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/menu_header.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/top_begin.inc
+%%V451PATCH%%%%DATADIR%%/Web/inc/top_end.inc
 %%DATADIR%%/Web/menu.uhtm
 %%DATADIR%%/Web/message.uhtm
 %%DATADIR%%/Web/plaintext/current.uhtm
@@ -450,23 +450,10 @@ bin/ut
 %%DATADIR%%/Web/plaintext/defaults_rules.uhtm
 %%DATADIR%%/Web/plaintext/defaults_server.uhtm
 %%DATADIR%%/Web/plaintext/defaults_settings.uhtm
-%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/footer.inc
-%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/header.inc
-%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/whiteheader.inc
+%%V451PATCH%%%%DATADIR%%/Web/plaintext/inc/footer.inc
+%%V451PATCH%%%%DATADIR%%/Web/plaintext/inc/header.inc
+%%V451PATCH%%%%DATADIR%%/Web/plaintext/inc/whiteheader.inc
 %%DATADIR%%/Web/plaintext/menu.uhtm
 %%DATADIR%%/Web/plaintext/message.uhtm
 %%DATADIR%%/Web/plaintext/root.uhtm
 %%DATADIR%%/Web/root.uhtm
-@dirrm %%DATADIR%%/Help
-%%ANTHOLOGY%%@dirrm %%DATADIR%%/Manual
-@dirrm %%DATADIR%%/Maps
-@dirrm %%DATADIR%%/Music
-@dirrm %%DATADIR%%/Sounds
-@dirrm %%DATADIR%%/System
-@dirrm %%DATADIR%%/Textures
-@dirrm %%DATADIR%%/Web/images
-%%451PATCH%%@dirrm %%DATADIR%%/Web/inc
-%%451PATCH%%@dirrm %%DATADIR%%/Web/plaintext/inc
-@dirrm %%DATADIR%%/Web/plaintext
-@dirrm %%DATADIR%%/Web
-@dirrm %%DATADIR%%

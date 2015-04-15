@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	wmsun
-PORTVERSION=	1.03
-PORTREVISION=	2
+PORTVERSION=	1.12
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://dockapps.windowmaker.org/download.php/id/23/
-DISTNAME=	wmSun-1.03
+MASTER_SITES=	http://linux-bsd-unix.strefa.pl/
+DISTNAME=	wmSun-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the rise and set times of the Sun
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
+WRKSRC_SUBDIR=	wmSun
 
 USE_XORG=	xext xpm x11
-ALL_TARGET=	clean all
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes

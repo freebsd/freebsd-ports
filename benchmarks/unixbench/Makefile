@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 
+BROKEN=		Unfetchable
 SUB_FILES=	unixbench
 MAKE_JOBS_UNSAFE=	yes
 

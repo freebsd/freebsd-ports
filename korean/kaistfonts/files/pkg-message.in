@@ -1,0 +1,20 @@
+KAIST Font(KSC5601)
+===================
+
+Please note:
+
+ This package installed fonts in %%FONTSDIR%% directory.
+ If you are using XFree86 3.3.2 or older, please upgrade to a new version
+ or add this directory to your /etc/XF86Config:
+
+ Section "Files"
+     ...
+     FontPath   "%%FONTSDIR%%"
+     ...
+
+ Or, run this command at your X desktop:
+
+ # xset +fp %%FONTSDIR%% && xset fp rehash
+
+ Don't forget to add the directory to your /etc/XF86Config, for
+ add the correct font path after you reboots X.

@@ -27,9 +27,9 @@ USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils dos2unix t
 DOS2UNIX_REGEX=	.*\.(cc|h)
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
-CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include -fPIC
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CMAKE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \

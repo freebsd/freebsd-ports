@@ -3,7 +3,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	7.1.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
@@ -52,18 +52,12 @@ CHECK_PORT=	nc -z localhost $$\1 2>\&1
 OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
 
 post-patch:
-	${REINPLACE_CMD}\
-		-e 's,-lpthreads,${PTHREAD_LIBS},g'\
-		-e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
+	${REINPLACE_CMD} -e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
 			${WRKSRC}/configure
 	${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${GREP} -l 'netstat -an.*grep LISTEN' |\
 	    ${XARGS} ${REINPLACE_CMD}\
 		-e 's,expr \$$,expr -- $$,'\
 		-e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
-
-post-install:
-	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
-	${RMDIR} ${STAGEDIR}/${PREFIX}/virtuoso/doc/html
 
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
@@ -101,6 +95,13 @@ CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
 USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=--disable-openldap
+.endif
+
+post-install:
+	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
+	${RMDIR} ${STAGEDIR}${PREFIX}/virtuoso/doc/html
+.if ! ${PORT_OPTIONS:MIMAGEMAGICK}
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/virtuoso/hosting
 .endif
 
 .include <bsd.port.mk>

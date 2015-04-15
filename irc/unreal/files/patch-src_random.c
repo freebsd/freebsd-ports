@@ -1,6 +1,6 @@
---- src/random.c.orig	2014-07-26 17:42:10.000000000 +0200
-+++ src/random.c	2015-02-25 20:49:36.769099626 +0100
-@@ -163,7 +163,7 @@
+--- src/random.c.orig	2014-07-26 15:42:10 UTC
++++ src/random.c
+@@ -163,7 +163,7 @@ unsigned char mdbuf[16];
  void init_random()
  {
  struct {
@@ -9,7 +9,7 @@
  	char egd[32];			/* from EGD */
  #endif
  #ifndef _WIN32
-@@ -187,7 +187,7 @@
+@@ -187,7 +187,7 @@ MEMORYSTATUS mstat;
  
  	/* Grab non-OS specific "random" data */
  #ifdef USE_SSL

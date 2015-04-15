@@ -1,0 +1,14 @@
+PyInstaller is a program that converts (packages) Python programs into stand-
+alone executables, under Windows, Mac OS X, and Unix-like operating systems.
+
+Its main advantages over similar tools are that PyInstaller works with any
+version of Python since 2.4, it builds smaller executables thanks to
+transparent compression, it is fully multi-platform, and uses the OS support
+to load the dynamic libraries, thus ensuring full compatibility.
+
+The main goal of PyInstaller is to be compatible with third-party packages
+out-of-the-box.  This means that, with PyInstaller, all the required tricks
+to make external packages work are already integrated within PyInstaller
+itself so that there is no user intervention required.
+
+WWW: https://pypi.python.org/pypi/PyInstaller/

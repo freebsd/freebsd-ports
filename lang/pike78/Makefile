@@ -38,9 +38,9 @@ PGSQL_CONFIGURE_WITH=	pgsql
 CFLAGS+=	-ffast-math -fomit-frame-pointer
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS} M4="/usr/bin/m4 -g"
+CONFIGURE_ENV=	M4="/usr/bin/m4 -g"
 CONFIGURE_ARGS+=	--without-debug \
-		 --with-thread-library=${PTHREAD_LIBS} \
+		 --with-thread-library="-lpthread" \
 		 --with-double-precision \
 		 --with-long-double-precision \
 		 --disable-rpath \
@@ -94,8 +94,8 @@ post-patch:
 		${WRKSRC}/src/modules/Gmp/configure ${WRKSRC}/src/modules/_Image_XFace/configure
 	@${REINPLACE_CMD} -e '/memchr_memcmp.*needle/s/^/static /' \
 		${WRKSRC}/src/pike_search_engine2.c
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
-		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%||' \
+		-e 's|%%PTHREAD_LIBS%%|-lpthread|' \
 		-e 's|,-Bshareable|& -shared|' \
 		${WRKSRC}/src/configure
 	@${REINPLACE_CMD} -e '/install.*MANDIR/s|^|//|' \

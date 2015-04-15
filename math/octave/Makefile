@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -61,14 +62,11 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 OPTIONS_DEFINE=	DOCS
 
 OPTIONS_RADIO=	BLAS
-OPTIONS_RADIO_BLAS=	REFERENCE ATLAS OBLAS
+OPTIONS_RADIO_BLAS=	REFERENCE OBLAS
 OPTIONS_DEFAULT=	REFERENCE
 
 REFERENCE_DESC=	Blas / Lapack
 REFERENCE_USES=	blaslapack:netlib
-
-ATLAS_DESC=	ATLAS
-ATLAS_USES=	blaslapack:atlas
 
 OBLAS_DESC=	Openblas
 OBLAS_USES=	blaslapack:openblas
@@ -86,6 +84,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/icons/octave.desktop \
 		${STAGEDIR}${DESKTOPDIR}/www.octave.org-octave.desktop
+	(cd ${STAGEDIR}${DATADIR} && ln -s ${PORTVERSION}/imagelib  .)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for file in liboctave/liboctave.ps \

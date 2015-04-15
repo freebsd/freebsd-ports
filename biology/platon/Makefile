@@ -16,6 +16,7 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # There is a charge of US$ 5000 for commercial users.
 NO_CDROM=	free for academic, US$ 5000 for commercial users
 
+BROKEN=		Unfetchable
 USES=		fortran
 USE_XORG=	x11
 

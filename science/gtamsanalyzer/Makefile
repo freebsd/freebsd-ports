@@ -13,10 +13,8 @@ COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
 LICENSE=	GPLv2
 
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		gnustep
+USE_GNUSTEP=	back build
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/Source
 

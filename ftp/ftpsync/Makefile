@@ -11,6 +11,8 @@ MASTER_SITES=	http://ftpsync.sourceforge.net/ \
 MAINTAINER=	rodrigO@FreeBSD.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
 
+BROKEN=		No public distfiles
+
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
 
 USES=		perl5 tar:bzip2 shebangfix

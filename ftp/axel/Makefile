@@ -12,6 +12,8 @@ MASTER_SITES=	https://alioth.debian.org/frs/download.php/3015/ \
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Download accelerator
 
+BROKEN=		No public distfiles
+
 USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
@@ -25,7 +27,6 @@ NLS_CONFIGURE_OFF=	--i18n=0
 DEBUG_CONFIGURE_ON=--debug=1 --strip=0
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
-		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	GOOGLE_CODE
 PATCH_SITES=	LOCAL/danfe
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
 
 LICENSE=	MIT

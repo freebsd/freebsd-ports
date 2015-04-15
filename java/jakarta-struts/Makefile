@@ -15,7 +15,8 @@ COMMENT=	Apache Struts framework
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	apache
 
 JAVASHAREDIR=	share/java
 TDIR=		${JAVASHAREDIR}/${PKGNAME}

@@ -1,5 +1,5 @@
---- src/ck-sysdeps-freebsd.c.orig	2008-04-03 20:36:21.000000000 -0400
-+++ src/ck-sysdeps-freebsd.c	2009-04-18 18:04:39.000000000 -0400
+--- src/ck-sysdeps-freebsd.c.orig	2010-09-03 15:54:31.000000000 +0200
++++ src/ck-sysdeps-freebsd.c	2015-03-23 09:28:20.476513000 +0100
 @@ -27,6 +27,7 @@
  #include <unistd.h>
  #include <string.h>
@@ -57,7 +57,17 @@
          }
  
          hash = g_hash_table_new_full (g_str_hash,
-@@ -270,6 +273,7 @@ ck_unix_pid_get_env_hash (pid_t pid)
+@@ -261,6 +264,9 @@ ck_unix_pid_get_env_hash (pid_t pid)
+         for (i = 0; penv[i] != NULL; i++) {
+                 char **vals;
+ 
++	        if (!penv[i][0])
++	                continue;
++
+                 vals = g_strsplit (penv[i], "=", 2);
+                 if (vals != NULL) {
+                         g_hash_table_insert (hash,
+@@ -270,6 +276,7 @@ ck_unix_pid_get_env_hash (pid_t pid)
                  }
          }
  
@@ -65,7 +75,7 @@
          kvm_close (kd);
  
          return hash;
-@@ -280,7 +284,7 @@ ck_unix_pid_get_env (pid_t       pid,
+@@ -280,7 +287,7 @@ ck_unix_pid_get_env (pid_t       pid,
                       const char *var)
  {
          GHashTable *hash;
@@ -74,7 +84,7 @@
  
          /*
           * Would probably be more efficient to just loop through the
-@@ -288,6 +292,8 @@ ck_unix_pid_get_env (pid_t       pid,
+@@ -288,6 +295,8 @@ ck_unix_pid_get_env (pid_t       pid,
           * table, but this works for now.
           */
          hash = ck_unix_pid_get_env_hash (pid);
@@ -83,7 +93,7 @@
          val  = g_strdup (g_hash_table_lookup (hash, var));
          g_hash_table_destroy (hash);
  
-@@ -327,38 +333,38 @@ gboolean
+@@ -327,38 +336,38 @@ gboolean
  ck_get_max_num_consoles (guint *num)
  {
          int      max_consoles;
@@ -138,8 +148,8 @@
 +        return TRUE;
  }
  
- char *
-@@ -369,7 +375,12 @@ ck_get_console_device_for_num (guint num
+ gboolean
+@@ -375,7 +384,12 @@ ck_get_console_device_for_num (guint num
          /* The device number is always one less than the VT number. */
          num--;
  
@@ -153,7 +163,7 @@
  
          return device;
  }
-@@ -379,6 +390,7 @@ ck_get_console_num_from_device (const ch
+@@ -385,6 +399,7 @@ ck_get_console_num_from_device (const ch
                                  guint      *num)
  {
          guint    n;
@@ -161,7 +171,7 @@
          gboolean ret;
  
          n = 0;
-@@ -388,7 +400,11 @@ ck_get_console_num_from_device (const ch
+@@ -394,7 +409,11 @@ ck_get_console_num_from_device (const ch
                  return FALSE;
          }
  
@@ -174,7 +184,7 @@
                  /* The VT number is always one more than the device number. */
                  n++;
                  ret = TRUE;
-@@ -408,6 +424,7 @@ ck_get_active_console_num (int    consol
+@@ -414,6 +433,7 @@ ck_get_active_console_num (int    consol
          gboolean ret;
          int      res;
          int      active;
@@ -182,7 +192,7 @@
  
          g_assert (console_fd != -1);
  
-@@ -420,7 +437,12 @@ ck_get_active_console_num (int    consol
+@@ -426,7 +446,12 @@ ck_get_active_console_num (int    consol
                  goto out;
          }
  

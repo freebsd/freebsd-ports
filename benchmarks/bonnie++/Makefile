@@ -26,8 +26,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/share/|${PREFIX}/share/|g' ${WRKSRC}/bonnie++.8
-	@${REINPLACE_CMD} \
-		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

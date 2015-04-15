@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	borja@pexego.es
 COMMENT=	OpenERP Web Client
 
+BROKEN=		No public distfiles
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}Babel>0:${PORTSDIR}/devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}beaker>0:${PORTSDIR}/www/py-beaker \

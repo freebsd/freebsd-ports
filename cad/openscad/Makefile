@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	openscad
-PORTVERSION=	2014.03
-PORTREVISION=	2
+PORTVERSION=	2015.03
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src
 
 MAINTAINER=	mr@FreeBSD.org
-COMMENT=	The programmer's solid 3D CAD modeller
+COMMENT=	Programmer's solid 3D CAD modeller
 
 LICENSE=	GPLv2
 
@@ -19,9 +19,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libCGAL.so:${PORTSDIR}/math/cgal \
+		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
+		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libopencsg.so:${PORTSDIR}/graphics/opencsg
 
-USES=		bison desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lang gettext-tools bison desktop-file-utils pkgconfig qmake
 USE_GL=		glu glew
 USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

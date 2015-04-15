@@ -41,6 +41,7 @@
     SUBDIR += dnsperf
     SUBDIR += dnsproxy
     SUBDIR += dnsreflector
+    SUBDIR += dnstable
     SUBDIR += dnstop
     SUBDIR += dnstracer
     SUBDIR += dnsutl
@@ -157,6 +158,8 @@
     SUBDIR += py-ldns
     SUBDIR += py-namebench
     SUBDIR += py-publicsuffix
+    SUBDIR += py-pydnstable
+    SUBDIR += py-pywdns
     SUBDIR += py-twistedNames
     SUBDIR += radns
     SUBDIR += rbldnsd

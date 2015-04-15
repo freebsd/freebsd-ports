@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^ZenLib_LIBS/ s|$$(pwd)[^ ]*|${LOCALBASE}/lib|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread -lstdc++|-pthread|g' ${WRKSRC}/configure ${WRKSRC}/libzen.pc.in
+	@${REINPLACE_CMD} -e 's| -lstdc++||g' ${WRKSRC}/configure ${WRKSRC}/libzen.pc.in
 	@${REINPLACE_CMD} -e '1 s|bin/bash|bin/sh|' ${WRKSRC}/libzen-config.in
 
 post-install:

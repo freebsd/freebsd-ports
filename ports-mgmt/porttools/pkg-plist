@@ -1,6 +1,10 @@
 bin/port
 man/man1/port.1.gz
 man/man5/porttools.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/cmd_commit
 %%DATADIR%%/cmd_create
 %%DATADIR%%/cmd_diff
@@ -12,8 +16,11 @@ man/man5/porttools.5.gz
 %%DATADIR%%/cmd_submit
 %%DATADIR%%/cmd_test
 %%DATADIR%%/cmd_upgrade
+%%DATADIR%%/tmpl/R-cran/Makefile.tmpl
+%%DATADIR%%/tmpl/common/pkg-descr.tmpl
+%%DATADIR%%/tmpl/common/pkg-plist.tmpl
+%%DATADIR%%/tmpl/default/Makefile.tmpl
+%%DATADIR%%/tmpl/p5/Makefile.tmpl
+%%DATADIR%%/tmpl/pear/Makefile.tmpl
+%%DATADIR%%/tmpl/py/Makefile.tmpl
 %%DATADIR%%/util_diff
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/THANKS

@@ -12,11 +12,8 @@ COMMENT=	Virtual 3D Rubiks cube for GNUstep
 
 LICENSE=	GPLv2 # or later
 
-USES=		tar:tgz tar:tgz
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
+USES=		tar:tgz gnustep
+USE_GNUSTEP=	back build
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 

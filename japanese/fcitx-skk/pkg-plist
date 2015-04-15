@@ -1,0 +1,13 @@
+share/fcitx/imicon/skk.png
+share/icons/hicolor/64x64/apps/fcitx-skk.png
+share/locale/de/LC_MESSAGES/fcitx-skk.mo
+share/locale/ja/LC_MESSAGES/fcitx-skk.mo
+share/locale/vi/LC_MESSAGES/fcitx-skk.mo
+share/locale/zh_CN/LC_MESSAGES/fcitx-skk.mo
+lib/fcitx/fcitx-skk.so
+%%QT4%%lib/fcitx/qt/libfcitx-skk-config.so
+share/fcitx/addon/fcitx-skk.conf
+share/fcitx/configdesc/fcitx-skk.desc
+share/fcitx/inputmethod/skk.conf
+share/fcitx/skk/dictionary_list
+share/fcitx/skk/rule

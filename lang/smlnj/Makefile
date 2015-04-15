@@ -43,7 +43,7 @@ ML_RECOMPILE_OPTIONS=	RECOMPILE POSITION64
 
 .if (${ARCH} == "amd64") && (${OSVERSION} >= 1000029)
 ONLY_FOR_ARCHS=	i386 amd64
-.elif (${ARCH} == "amd64") && (${OSVERSION} >= 800000)
+.elif (${ARCH} == "amd64")
 ONLY_FOR_ARCHS=	i386 amd64
 # Compilation of the i386 runtime source on older amd64 systems requires
 # i386 system headers from the respective FreeBSD Version, taken from
@@ -181,7 +181,7 @@ RECOMPILEDIR=	base/system
 RECOMPILEDIR=
 .endif
 
-.if (${ARCH} == "amd64") && (${OSVERSION} >= 800000) && (${OSVERSION} < 1000029)
+.if (${ARCH} == "amd64") && (${OSVERSION} < 1000029)
 MLRUNTIMEPATCHES_CMD=	cd ${FILESDIR} && \
 			( ${LS} do-patch-base_runtime_* extra-patch-base_runtime_* 2>&- || \
 			  ${TRUE} )

@@ -10,15 +10,15 @@ MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 MAINTAINER=	leo@mediatomb.cc
 COMMENT=	UPnP AV MediaServer
 
+BROKEN=		Fails to configure, does not use USERS/GROUPS
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-lpthread
 CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 		--disable-inotify
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 USES=		iconv
 USE_RC_SUBR=	mediatomb
 

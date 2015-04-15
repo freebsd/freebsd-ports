@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.2.6
+PORTVERSION=	2.4.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
@@ -22,7 +20,7 @@ MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext

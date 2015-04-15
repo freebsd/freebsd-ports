@@ -49,10 +49,6 @@ CONFIGURE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
 MAKE_ENV+=	JAVACFLAGS="${JAVACFLAGS}"
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
-	    ${WRKSRC}/configure ${WRKSRC}/src/mm/boehm-gc/configure
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cacao/cacao \

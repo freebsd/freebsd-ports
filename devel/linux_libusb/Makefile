@@ -10,7 +10,6 @@ MASTER_SITES=	LOCAL/nox
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility libusb
 
-#BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux-c6-devtools
 
 USES=		tar:bzip2

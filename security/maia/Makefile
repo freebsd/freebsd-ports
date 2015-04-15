@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maia
-DISTVERSION=	1.0.3-${SVNREVISION}
-PORTREVISION=	5
+DISTVERSION=	1.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -24,27 +23,27 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Template-Toolkit>=2.13:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
 
-# SVN source: https://www.maiamailguard.com/svn/branches/1.0
-SVNREVISION=	r1575
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-${SVNREVISION}
-USES=		perl5
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 
-DOCS=	LICENSE README maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
+DOCS=	LICENSE.txt README.md maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
 
 USERS=	vscan
 GROUPS=	vscan
 MAIAHOME=	/var/maiad
 MAIAQUARANTINE?=	/var/maiad/virusmails
+
 PEAR_DIR?=	${LOCALBASE}/share/pear
 PLIST_SUB+=	USERS="${USERS}" GROUPS="${GROUPS}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-OPTIONS_DEFINE=	APACHE LIGHTTPD WEBHOST MYSQL MYSQLSERVER PGSQL PGSQLSERVER DOVECOT \
+OPTIONS_DEFINE=	APACHE LIGHTTPD WEBHOST MYSQL MYSQLSERVER PGSQL PGSQLSERVER DOVECOT DOVECOT2 \
 		POSTFIX PFA FUZZYOCR CLAMAV SPAMASSASSIN BDB ALTERMIME CRYPT \
 		IPCOUNTRY DOMAINKEYS SPF DKIM FILE RAR ARJ UNARJ LHA ARC NOMARCH CAB \
 		RPM ZOO UNZOO LZOP FREEZE P7ZIP TNEF DOCS
-OPTIONS_DEFAULT=	MYSQL MYSQLSERVER DOVECOT POSTFIX CLAMAV SPAMASSASSIN BDB IPCOUNTRY \
+
+OPTIONS_DEFAULT=	MYSQL CLAMAV SPAMASSASSIN BDB IPCOUNTRY \
 			DOMAINKEYS SPF DKIM FILE UNRAR ARJ LHA ARC CAB RPM ZOO FREEZE P7ZIP
 APACHE_DESC=		Use Apache web server
 LIGHTTPD_DESC=		Use LighTTPD web server
@@ -53,7 +52,8 @@ MYSQL_DESC=		Use MySQL datebase
 MYSQLSERVER_DESC=	Install MySQL Server
 PGSQL_DESC=		Use PgSQL database
 PGSQLSERVER_DESC=	Install PGSQL Server
-DOVECOT_DESC=		Use Dovecot IMAP/POP3
+DOVECOT_DESC=		Use Dovecot 1.x IMAP/POP3
+DOVECOT2_DESC=		Use Dovecot 2.x IMAP/POP3
 POSTFIX_DESC=		Use Postfix MTA
 PFA_DESC=		Use Postfixadmin
 FUZZYOCR_DESC=		Use FuzzyOcr
@@ -84,6 +84,7 @@ P7ZIP_DESC=		P7ZIP support with archivers/p7zip
 TNEF_DESC=		Add external tnef decoder
 
 SUB_FILES=	maiad pkg-message
+SHEBANG_FILES=	maiad
 SUB_LIST+=	USERS=${USERS} \
 		GROUPS=${GROUPS} \
 		MAIAHOME=${MAIAHOME} \
@@ -105,6 +106,7 @@ USE_APACHE_RUN=	22+
 USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
+
 RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
 		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
@@ -121,7 +123,10 @@ RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
 		${PEAR_DIR}/Numbers/Roman.php:${PORTSDIR}/textproc/pear-Numbers_Roman \
 		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words \
-		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
+		${PEAR_DIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
+		${PEAR_DIR}/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql \
+		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2 \
+		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/scrypt.so:${PORTSDIR}/security/pecl-scrypt
 PLIST_SUB+=     WEBHOST=""
 .else
 PLIST_SUB+=     WEBHOST="@comment "
@@ -129,11 +134,15 @@ PLIST_SUB+=     WEBHOST="@comment "
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
+.endif
+.if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MWEBHOST}
 USE_PHP+=	mysql mysqli
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
+.endif
+.if ${PORT_OPTIONS:MPGSQL} && ${PORT_OPTIONS:MWEBHOST}
 USE_PHP+=	pgsql
 .endif
 
@@ -158,8 +167,16 @@ USES:=		${USES:Npgsql} pgsql
 WANT_PGSQL=	server
 .endif
 
+.if ${PORT_OPTIONS:MDOVECOT} && ${PORT_OPTIONS:MDOVECOT2}
+BROKEN=Please run 'make config' again and choose only one version of Dovecot. Both version 1.x and 2.x cannot co-exist.
+.endif
+
 .if ${PORT_OPTIONS:MDOVECOT}
 RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot
+.endif
+
+.if ${PORT_OPTIONS:MDOVECOT2}
+RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot2
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
@@ -286,7 +303,7 @@ RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 
 post-patch:
 .for m in scripts/configtest.pl scripts/expire-quarantine-cache.pl \
-	scripts/generate-key.pl scripts/load-sa-rules.pl scripts/maiadbtool.pl \
+	scripts/load-sa-rules.pl scripts/maiadbtool.pl \
 	scripts/process-quarantine.pl scripts/resend.pl scripts/send-quarantine-digests.pl \
 	scripts/send-quarantine-reminders.pl scripts/stats-snapshot.pl
 		@${REINPLACE_CMD} -e "s|/etc/maia/maia.conf|${ETCDIR}/maia.conf|" \
@@ -299,13 +316,14 @@ post-patch:
 
 	@${REINPLACE_CMD} -e "s|daemon_user  = 'maia'|daemon_user  = '${USERS}'|" \
 		-e "s|daemon_group = 'maia'|daemon_group = '${GROUPS}'|" \
-		-e "s|/var/lib/maia|${MAIAHOME}|" ${WRKSRC}/maiad.conf.dist
+		-e "s|/var/lib/maia|${MAIAHOME}|" \
+		-e "s|DO_SYSLOG = 0|DO_SYSLOG = 1|" ${WRKSRC}/maiad.conf.dist
 
 	@${REINPLACE_CMD} -e "s|/etc/maia.conf|${ETCDIR}/maia.conf|" \
 		-e "s|username = 'maia'|username = '${USERS}'|" \
 		-e "s|/var/lib/maia|${DATADIR}|" \
 		-e "s|/usr/bin/sa-learn|${PREFIX}/bin/sa-learn|" \
-		-e "s|local_cf_dir = undef|local_cf_dir = '${ETCDIR}/mail/spamassassin'|" \
+		-e "s|local_cf_dir = undef|local_cf_dir = '${PREFIX}/etc/mail/spamassassin'|" \
 		-e "s|system_rules_dir = undef|system_rules_dir = '/var/db/spamassassin'|" \
 		-e "s|user_rules_dir = undef|user_rules_dir = '${MAIAHOME}/.spamassassin'|" \
 		-e "s|template_dir = '/etc/maia/templates/'|template_dir = '${ETCDIR}/templates/'|" \
@@ -318,12 +336,10 @@ post-patch:
 	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 
 do-install:
-.if ${PORT_OPTIONS:MWEBHOST}
-	${MKDIR} -p ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC}/php && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/themes/*/compiled
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
 	${LN} -s ${PREFIX}/share/smarty ${STAGEDIR}${WWWDIR}/libs/Smarty
-.endif
 	${MKDIR} -p ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripts
 	${MKDIR} -p ${STAGEDIR}${ETCDIR}/templates
@@ -331,8 +347,8 @@ do-install:
 	${INSTALL} -m 644 ${WRKSRC}/templates/${i}.dist ${STAGEDIR}${ETCDIR}/templates
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/maiad ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL} -m 644 ${WRKSRC}/maiad.conf.dist ${STAGEDIR}${ETCDIR}/maiad.conf.dist
-	${INSTALL} -m 644 ${WRKSRC}/maia.conf.dist ${STAGEDIR}${ETCDIR}/maia.conf.dist
+	${INSTALL} -m 640 ${WRKSRC}/maiad.conf.dist ${STAGEDIR}${ETCDIR}/maiad.conf.dist
+	${INSTALL} -m 640 ${WRKSRC}/maia.conf.dist ${STAGEDIR}${ETCDIR}/maia.conf.dist
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -340,8 +356,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

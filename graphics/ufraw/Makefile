@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
 USES=		gettext pkgconfig gmake desktop-file-utils
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 PC_FALSE=	cinepaint
 
 OPTIONS_DEFINE=	CONTRAST DST EXIV2 LENSFUN FITS GIMP GTK2 GNOME

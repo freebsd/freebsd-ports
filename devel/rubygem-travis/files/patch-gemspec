@@ -1,0 +1,11 @@
+--- travis.gemspec.orig	2015-03-29 23:54:08.316179000 +0000
++++ travis.gemspec	2015-03-29 23:55:01.636016000 +0000
+@@ -28,7 +28,7 @@
+       s.add_runtime_dependency(%q<backports>, [">= 0"])
+       s.add_runtime_dependency(%q<gh>, ["~> 0.13"])
+       s.add_runtime_dependency(%q<launchy>, ["~> 2.1"])
+-      s.add_runtime_dependency(%q<pry>, ["< 0.10", "~> 0.9"])
++      s.add_runtime_dependency(%q<pry>, ["~> 0.9"])
+       s.add_runtime_dependency(%q<typhoeus>, [">= 0.6.8", "~> 0.6"])
+       s.add_runtime_dependency(%q<pusher-client>, ["~> 0.4"])
+       s.add_runtime_dependency(%q<addressable>, ["~> 2.3"])

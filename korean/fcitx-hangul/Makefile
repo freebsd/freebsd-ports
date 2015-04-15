@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-hangul
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	korean
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	fcitx
+MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
@@ -17,7 +16,6 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libhangul.so:${PORTSDIR}/korean/libhangul
 
 USES=		cmake gettext pkgconfig tar:xz
-USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

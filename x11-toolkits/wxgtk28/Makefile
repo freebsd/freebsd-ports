@@ -33,8 +33,7 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--enable-mediactrl\
 		--disable-backtrace\
 		--enable-graphics_ctx
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"\
-		X11BASE="${LOCALBASE}"
+CONFIGURE_ENV=	X11BASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 PLIST=		${.CURDIR}/pkg-plist

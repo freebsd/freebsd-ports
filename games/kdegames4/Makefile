@@ -3,15 +3,12 @@
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	games kde
-DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for KDE 4 (meta port)
 
 USE_KDE4=	kdeprefix
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	ALL ${KDE4_GAMES_ALL}
 OPTIONS_DEFAULT=	ALL

@@ -1,6 +1,14 @@
---- Makefile.orig	2004-10-01 04:51:05.000000000 +0800
-+++ Makefile	2014-06-15 11:03:09.564113068 +0800
-@@ -44,6 +44,12 @@ docs:
+--- Makefile.orig	2014-12-07 00:03:44.000000000 -0500
++++ Makefile	2015-03-30 08:28:03.000000000 -0400
+@@ -17,6 +17,7 @@
+ 	@echo "Please specify target:"
+ 	@echo "(For example, type \"make linux\" for a Linux system.)"
+ 	@(cd makefiles && ls -C Makefile* | sed -e 's/Makefile.//g')
++	@(cd doc; $(MAKE) man)
+ 
+ .DEFAULT:
+ 	@- (cd Microline/XmL;   if [ -f ../../makefiles/Makefile.$@ -a ! -f ./Makefile.$@ ];\
+@@ -44,6 +45,12 @@
  # that doesn't work since we require the user to specify the target.  More
  # thought is needed
  

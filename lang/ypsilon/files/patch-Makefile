@@ -33,15 +33,6 @@
    ifeq ($(DATAMODEL), ILP32)  
      CPPFLAGS += -DDEFAULT_HEAP_LIMIT=32
      CXXFLAGS += -m32
-@@ -82,7 +71,7 @@
-     ASFLAGS = --64
-     SRCS += ffi_stub_freebsd64.s
-   endif
--  LDLIBS = -pthread
-+  LDLIBS = ${PTHREAD_LIBS}
- endif
- 
- ifneq (, $(findstring OpenBSD, $(UNAME)))
 @@ -123,7 +112,6 @@
  .PHONY: all install uninstall sitelib stdlib check bench clean distclean
  

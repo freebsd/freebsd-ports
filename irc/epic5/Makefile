@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--without-perl
 .if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	--with-ruby
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=		-lpthread
 .else
 CONFIGURE_ARGS+=	--without-ruby
 .endif

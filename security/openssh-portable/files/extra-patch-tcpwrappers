@@ -83,25 +83,6 @@ index 0ade557..045f149 100644
  
  	/* Log the connection. */
  	verbose("Connection from %s port %d on %s port %d",
-commit f9696566fb41320820f3b257ab564fa321bb3751
-Author: Darren Tucker <dtucker@zip.com.au>
-Date:   Fri Jun 13 11:06:04 2014 +1000
-
-     - (dtucker) [configure.ac] Remove tcpwrappers support, support has already
-       been removed from sshd.c.
-
-diff --git ChangeLog ChangeLog
-index f4c6ea6..1c043ae 100644
---- ChangeLog
-+++ ChangeLog
-@@ -1,7 +1,3 @@
--20140612
-- - (dtucker) [configure.ac] Remove tcpwrappers support, support has already
--   been removed from sshd.c.
--
- 20140611
-  - (dtucker) [defines.h] Add va_copy if we don't already have it, taken from
-    openbsd-compat/bsd-asprintf.c.
 diff --git configure.ac configure.ac
 index f48ba4a..66fbe82 100644
 --- configure.ac

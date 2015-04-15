@@ -26,7 +26,7 @@ USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libgnomeui pygtk2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

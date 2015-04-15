@@ -1,0 +1,3 @@
+
+Oozie was installed into %%PREFIX%%/oozie directory.  Consider adding
+%%PREFIX%%/oozie/bin to your $PATH.

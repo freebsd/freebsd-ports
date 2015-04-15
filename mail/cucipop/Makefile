@@ -21,4 +21,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cubic Circle POP3 daemon (fully RFC1939 compliant)
 
+BROKEN=		Dead patch site
+
 .include <bsd.port.mk>

@@ -27,7 +27,6 @@ PORTSCOUT=	skipv:1.41-3
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
 .include <bsd.port.options.mk>
 

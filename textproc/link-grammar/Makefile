@@ -28,10 +28,6 @@ INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure ${WRKSRC}/${PORTNAME}/Makefile.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}

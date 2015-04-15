@@ -12,6 +12,7 @@ COMMENT=	Toolkit for developing GPS applications
 
 LICENSE=	LGPL3
 
+BROKEN=		Distfile size mismatch
 USES=		cmake python:run
 USE_GCC=	yes
 USE_LDCONFIG=	yes

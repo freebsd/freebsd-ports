@@ -3,6 +3,7 @@
 
 PORTNAME=	randlm
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -16,13 +17,13 @@ RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:${PORTSDIR}/devel/googl
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-USES=		libtool compiler:c++11-lang
+USES=		autoreconf libtool compiler:c++11-lang
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	cd ${WRKSRC}/hadoop && ${MV} strings.cpp strings.cc && ${MV} strings.h s.h

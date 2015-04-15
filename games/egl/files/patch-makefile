@@ -60,7 +60,7 @@
 +SHARED_FLAGS+=	-I$(LOCALBASE)/include \
 +		-DDATADIR='\"$(Q2DIR)\"' -DLIBDIR='\"$(LIBDIR)\"'
 +LDFLAGS+=	-L$(LOCALBASE)/lib
-+X11_LDFLAGS+=	$(PTHREAD_LIBS)
++X11_LDFLAGS+=	-lpthread
 +endif
  
  ifeq ($(strip $(BUILD_CLIENT)),YES)

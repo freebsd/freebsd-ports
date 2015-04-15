@@ -40,11 +40,10 @@ BROKEN=		Does not install on sparc64: depends on thread-local storage
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-	                  -e 's|^MANDIR = .*$$|MANDIR = $$(MANPREFIX)/man/man1|' \
-	                  -e 's|^PREFIX = .*$$||' \
-	                  -e 's|^CC = .*$$||' \
-	                  -e 's|^CFLAGS = .*$$||' \
+	@${REINPLACE_CMD} -e 's|^PREFIX = .*$$||' \
+		-e 's|^MANDIR = .*$$|MANDIR = $$(MANPREFIX)/man/man1|' \
+		-e 's|^CC = .*$$||' \
+		-e 's|^CFLAGS = .*$$||' \
 		${BUILD_WRKSRC}/Makefile
 
 do-install:

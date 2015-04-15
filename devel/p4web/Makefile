@@ -14,6 +14,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
+BROKEN=		No public distfiles
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
@@ -40,19 +42,9 @@ LIB_DEPENDS+=	libstdc++.so.6:${PORTSDIR}/misc/compat9x
 
 # Figure out what to install
 .if ${ARCH} == amd64
-. if ${OSVERSION} >= 700043
 PLATFORM=	freebsd70x86_64
-. else
-IGNORE=		unsupported OS release, sorry
-. endif
-
 .elif ${ARCH} == i386
-. if ${OSVERSION} >= 700043
 PLATFORM=	freebsd70x86
-. else
-IGNORE=		unsupported OS release, sorry
-. endif
-
 .else
 IGNORE=		unsupported OS release, sorry
 .endif

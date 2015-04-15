@@ -13,9 +13,6 @@ USES=		perl5
 USE_OPENSSL=	yes
 USE_PERL5=	build
 
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
-
 EXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
 		client2.key clients.id
 DOCS=		README.txt LICENCE.txt CHANGES.txt zebedee.html ftpgw.tcl.html

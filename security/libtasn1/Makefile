@@ -11,9 +11,10 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
 USE_LDCONFIG=	yes
-USES=		pkgconfig pathfix gmake libtool
+USES=		cpe pkgconfig pathfix gmake libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	DOCS
 

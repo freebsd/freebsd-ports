@@ -8,8 +8,8 @@ CATEGORIES=	devel
 MASTER_SITES=	http://files.etoilebsd.net/libc++/ \
 		LOCAL/bapt
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	Llvm's C++ standard library with c++11 support
+MAINTAINER=	dim@FreeBSD.org
+COMMENT?=	LLVM C++ standard library with c++11 support
 
 USES=		tar:xz
 
@@ -56,6 +56,10 @@ SVN_REV!=       LC_ALL=C svn info http://llvm.org/svn/llvm-project/ | ${GREP} Re
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+
+post-patch:
+	# remove .orig files because they can get installed in stagedir
+	@${FIND} ${WRKSRC} -name "*.orig" -type f -delete
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

@@ -17,7 +17,6 @@ CONFLICTS=	pl-ekg-1.[0-6]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojtekka
-GH_COMMIT=	bee8ba0
 
 USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
 PATHFIX_MAKEFILEIN=	Makefile.am

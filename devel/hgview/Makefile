@@ -10,6 +10,8 @@ MASTER_SITES=	LOGILAB
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mercurial log navigator written in pyqt4
 
+BROKEN=		Logilab mirrors have gone
+
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>0:${PORTSDIR}/devel/py-qt4-qscintilla2 \

@@ -5,10 +5,12 @@ PORTNAME=	streamanalyze
 PORTVERSION=	0.4
 PORTREVISION=	7
 CATEGORIES=	multimedia
-MASTER_SITES=	CENKES LOCAL/beech
+MASTER_SITES=	LOCAL/beech
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shrink-factor calculator for StreamDVD
+
+BROKEN=		No public distfiles
 
 LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 

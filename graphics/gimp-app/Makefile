@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
-USES+=		desktop-file-utils gettext gmake libtool pathfix \
+USES+=	cpe	desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:bzip2
 USE_XORG=	xpm xmu xext
 USE_GNOME+=	intlhack gtk20
@@ -44,9 +44,11 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary
-CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+CPE_PRODUCT=	gimp
+CPE_VENDOR=	gnu
 
 PLIST_SUB+=	LIBVER=0.800.14
 

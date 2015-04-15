@@ -10,6 +10,9 @@ MASTER_SITES=	http://home.kde.org/~seli/numlockx/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turns on numlock in X
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_XORG=	x11 xext xtst
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

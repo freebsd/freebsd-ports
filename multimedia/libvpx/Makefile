@@ -89,7 +89,5 @@ post-patch:
 	       	${WRKSRC}/build/make/Makefile ${WRKSRC}/libs.mk
 	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,#!/bin/bash,#!/usr/bin/env bash,g'
-	@${GREP} -Rl -- '-l\?pthread' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -E \
-		-e 's/-l?pthread/${PTHREAD_LIBS}/g'
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Plane 1 Unicode-based Font
 
+BROKEN=		No public distfiles
+
 USES=		fonts zip
 NO_BUILD=	yes
 PLIST_FILES=	${FONTSDIR}/${FONTNAME}.ttf

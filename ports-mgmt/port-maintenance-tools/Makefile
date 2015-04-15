@@ -2,14 +2,13 @@
 
 PORTNAME=	port-maintenance-tools
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Meta-port for administrative tools to maintain ports
+
+USES=	metaport
 
 RUN_DEPENDS=	\
 		${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
@@ -17,12 +16,6 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/ports-mgmt/pkg_cutleaves \
 		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/ports-mgmt/pkg_tree \
 		${LOCALBASE}/bin/porteasy:${PORTSDIR}/ports-mgmt/porteasy \
-		${LOCALBASE}/bin/portell:${PORTSDIR}/ports-mgmt/portell \
 		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/ports-mgmt/portdowngrade
-
-NO_BUILD=	yes
-NO_MTREE=	yes
-
-do-install:	# empty
 
 .include <bsd.port.mk>

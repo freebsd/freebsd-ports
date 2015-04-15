@@ -43,7 +43,7 @@ post-patch:
 		${WRKSRC}/data/minimal/Makefile.in \
 		${WRKSRC}/data/mars/Makefile.in \
 		${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lpython|${PTHREAD_LIBS} &|' \
+	@${REINPLACE_CMD} -e 's|-lpython|-lpthread &|' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g ; \

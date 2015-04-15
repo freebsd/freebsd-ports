@@ -25,8 +25,8 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog.txt README.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CC = g++,CXX ?= g++, ; s,CFLAGS =,CXXFLAGS +=, ; \
-		s,-lpthread,${PTHREAD_LIBS}, ; s,CC,CXX, ; s,CFLAGS,CXXFLAGS,' \
+	@${REINPLACE_CMD} -e 's,CC = g++,CXX ?= g++, ; \
+		s,CFLAGS =,CXXFLAGS +=, ; s,CC,CXX, ; s,CFLAGS,CXXFLAGS,' \
 		${WRKSRC}/Makefile
 
 do-install:

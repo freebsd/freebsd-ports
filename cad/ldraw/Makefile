@@ -12,6 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	koalative@gmail.com
 COMMENT=	LDraw parts library
 
+BROKEN=		Unfetchable
 LICENSE=	CDDL CCbyNCSA2
 LICENSE_COMB=	dual
 LICENSE_NAME_CCbyNCSA2=Attribution-NonCommercial-ShareAlike 2.0 Unported

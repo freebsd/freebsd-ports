@@ -3,7 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
 RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \

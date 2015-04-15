@@ -1,0 +1,11 @@
+--- build/pkgs/git/spkg-install.bak	2015-02-17 00:15:08.000000000 +0000
++++ build/pkgs/git/spkg-install	2015-03-27 02:33:07.652231000 +0000
+@@ -77,7 +77,7 @@
+ 
+ 
+ echo "Building git..."
+-$MAKE $gettext
++$MAKE PTHREAD_LIBS=-lpthread $gettext
+ if [ $? -ne 0 ]; then
+     echo >&2 "Error building git."
+     exit 1

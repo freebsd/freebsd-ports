@@ -2,6 +2,7 @@
 
 destdir=%%MOINDEST%%
 htdocs=%%HTDOCS%%
+moinver=%%MOINVER%%
 
 case "x$2" in
 
@@ -17,7 +18,7 @@ case "x$2" in
 		echo "add something like that to your Apache configuration."
 		echo ""
 		echo ",-----"
-		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " Alias /moin_static$moinver/ \"$htdocs/\""
 		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
@@ -42,7 +43,7 @@ case "x$2" in
 		echo ""
 
 		echo ",-----"
-		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " Alias /moin_static$moinver/ \"$htdocs/\""
 		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
@@ -64,7 +65,7 @@ case "x$2" in
 		echo ""
 
 		echo ",-----"
-		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " Alias /moin_static$moinver/ \"$htdocs/\""
 		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"

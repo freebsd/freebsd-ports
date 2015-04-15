@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/glib20/Makefile 20052 2014-11-10 10:21:14Z gusi $
 
 PORTNAME=	glib
-PORTVERSION=	2.42.1
+PORTVERSION=	2.42.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,7 +40,7 @@ INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl
 
-LIBVERSION=	0.4200.1
+LIBVERSION=	0.4200.2
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 glib_MAN=	gtester.1 gtester-report.1 glib-gettextize.1
@@ -56,13 +56,7 @@ GDB_DESC=	Install python gdb scripts
 .include <bsd.port.pre.mk>
 
 # doesn't build yet
-#.if (${OSVERSION} < 800000) \
-#	|| (${OSVERSION} >= 800000 && ${OSVERSION} < 802000)
-#	|| (${OSVERSION} >= 900000 && ${OSVERSION} < 900021)
 CONFIGURE_ARGS+=--disable-dtrace
-#.else
-#CONFIGURE_ARGS+=--enable-dtrace
-#.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=	--with-libiconv=native

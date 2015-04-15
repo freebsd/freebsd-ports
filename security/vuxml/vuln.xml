@@ -57,6 +57,676 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5f160fa-deee-11e4-99f8-080027ef73ec">
+    <topic>mailman -- path traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.20</lt></range>
+      </package>
+      <package>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Sapiro reports:</p>
+	<blockquote cite="https://mail.python.org/pipermail/mailman-announce/2015-March/000209.html">
+	  <p>A path traversal vulnerability has been discovered and fixed.  This
+	    vulnerability is only exploitable by a local user on a Mailman
+	    server where the suggested Exim transport, the Postfix
+	    postfix_to_mailman.py transport or some other programmatic MTA
+	    delivery not using aliases is employed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.python.org/pipermail/mailman-announce/2015-March/000209.html</url>
+      <url>https://bugs.launchpad.net/mailman/+bug/1437145</url>
+      <cvename>CVE-2015-2775</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-27</discovery>
+      <entry>2015-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5fee3f02-de37-11e4-b7c3-001999f8d30b">
+    <topic>asterisk -- TLS Certificate Common name NULL byte exploit</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.17.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>When Asterisk registers to a SIP TLS device and and
+	  verifies the server, Asterisk will accept signed certificates
+	  that match a common name other than the one Asterisk is
+	  expecting if the signed certificate has a common name
+	  containing a null byte after the portion of the common
+	  name that Asterisk expected. For example, if Asterisk is
+	  trying to register to www.domain.com, Asterisk will accept
+	  certificates of the form
+	  www.domain.com\x00www.someotherdomain.com</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2015-003.html</url>
+      <cvename>CVE-2015-3008</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-04</discovery>
+      <entry>2015-04-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ebd84c96-dd7e-11e4-854e-3c970e169bc2">
+    <topic>ntp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p2</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://archive.ntp.org/ntp4/ChangeLog-stable">
+	  <ul>
+	    <li>[Sec 2779] ntpd accepts unauthenticated packets
+	      with symmetric key crypto.</li>
+	    <li>[Sec 2781] Authentication doesn't protect symmetric
+	      associations against DoS attacks.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1798</cvename>
+      <cvename>CVE-2015-1799</cvename>
+      <url>http://archive.ntp.org/ntp4/ChangeLog-stable</url>
+    </references>
+    <dates>
+      <discovery>2015-04-07</discovery>
+      <entry>2015-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b8321d76-24e7-4b72-a01d-d12c4445d826">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>37.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>37.0.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA 2015-44 Certificate verification bypass through the
+	    HTTP/2 Alt-Svc header</p>
+	  <p>MFSA 2015-43 Loading privileged content through Reader
+	    mode</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0798</cvename>
+      <cvename>CVE-2015-0799</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-43/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-44/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-03</discovery>
+      <entry>2015-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2f75141c-da1d-11e4-8d32-5404a68ad561">
+    <topic>Several vulnerabilities in libav</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><lt>11.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libav project reports:</p>
+	<blockquote cite="https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.3">
+	  <p>utvideodec: Handle slice_height being zero (CVE-2014-9604)</p>
+	  <p>tiff: Check that there is no aliasing in pixel format selection (CVE-2014-8544)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.3</url>
+      <cvename>CVE-2014-8544</cvename>
+      <cvename>CVE-2014-9604</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="742563d4-d776-11e4-b595-4061861086c1">
+    <topic>Several vulnerabilities found in PHP</topic>
+    <affects>
+      <package>
+	<name>php53</name>
+	<range><le>5.3.29_5</le></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.39</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.23</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/archive/2015.php#id2015-03-20-2">
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.6.7. Several bugs have been
+	    fixed as well as CVE-2015-0231, CVE-2015-2305 and
+	    CVE-2015-2331. All PHP 5.6 users are encouraged to
+	    upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.5.23. Several bugs have been
+	    fixed as well as CVE-2015-0231, CVE-2015-2305 and
+	    CVE-2015-2331. All PHP 5.5 users are encouraged
+	    to upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.4.39. Six security-related
+	    bugs were fixed in this release, including
+	    CVE-2015-0231, CVE-2015-2305 and CVE-2015-2331.
+	    All PHP 5.4 users are encouraged to upgrade to
+	    this version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/archive/2015.php#id2015-03-20-2</url>
+      <cvename>CVE-2015-0231</cvename>
+      <cvename>CVE-2015-2305</cvename>
+      <cvename>CVE-2015-2311</cvename>
+      <freebsdpr>ports/198739</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2015-03-19</discovery>
+      <entry>2015-04-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8e887b71-d769-11e4-b1c2-20cf30e32f6d">
+    <topic>subversion -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.5.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+      <package>
+	<name>subversion16</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.0.0</ge><lt>1.7.20</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Subversion HTTP servers with FSFS repositories are vulnerable to a remotely
+	   triggerable excessive memory use with certain REPORT requests.</p>
+	  <p>Subversion mod_dav_svn and svnserve are vulnerable to a remotely triggerable
+	    assertion DoS vulnerability for certain requests with dynamically evaluated
+	    revision numbers.</p>
+	  <p>Subversion HTTP servers allow spoofing svn:author property values for new
+	    revisions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://subversion.apache.org/security/</url>
+      <cvename>CVE-2015-0202</cvename>
+      <cvename>CVE-2015-0248</cvename>
+      <cvename>CVE-2015-0251</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-0202-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0248-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2015-0251-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d0c97697-df2c-4b8b-bff2-cec24dc35af8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>37.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>37.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.34</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.34</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA-2015-30 Miscellaneous memory safety hazards (rv:37.0
+	    / rv:31.6)</p>
+	  <p>MFSA-2015-31 Use-after-free when using the Fluendo MP3
+	    GStreamer plugin</p>
+	  <p>MFSA-2015-32 Add-on lightweight theme installation
+	    approval bypassed through MITM attack</p>
+	  <p>MFSA-2015-33 resource:// documents can load privileged
+	    pages</p>
+	  <p>MFSA-2015-34 Out of bounds read in QCMS library</p>
+	  <p>MFSA-2015-35 Cursor clickjacking with flash and images</p>
+	  <p>MFSA-2015-36 Incorrect memory management for simple-type
+	    arrays in WebRTC</p>
+	  <p>MFSA-2015-37 CORS requests should not follow 30x
+	    redirections after preflight</p>
+	  <p>MFSA-2015-38 Memory corruption crashes in Off Main Thread
+	    Compositing</p>
+	  <p>MFSA-2015-39 Use-after-free due to type confusion flaws</p>
+	  <p>MFSA-2015-40 Same-origin bypass through anchor navigation</p>
+	  <p>MFSA-2015-41 PRNG weakness allows for DNS poisoning on
+	    Android</p>
+	  <p>MFSA-2015-42 Windows can retain access to privileged
+	    content on navigation to unprivileged pages</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2808</cvename>
+      <cvename>CVE-2015-0800</cvename>
+      <cvename>CVE-2015-0801</cvename>
+      <cvename>CVE-2015-0802</cvename>
+      <cvename>CVE-2015-0803</cvename>
+      <cvename>CVE-2015-0804</cvename>
+      <cvename>CVE-2015-0805</cvename>
+      <cvename>CVE-2015-0806</cvename>
+      <cvename>CVE-2015-0807</cvename>
+      <cvename>CVE-2015-0808</cvename>
+      <cvename>CVE-2015-0810</cvename>
+      <cvename>CVE-2015-0811</cvename>
+      <cvename>CVE-2015-0812</cvename>
+      <cvename>CVE-2015-0813</cvename>
+      <cvename>CVE-2015-0814</cvename>
+      <cvename>CVE-2015-0815</cvename>
+      <cvename>CVE-2015-0816</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-30/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-31/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-32/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-33/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-34/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-35/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-36/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-37/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-38/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-39/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-40/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-41/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-42/</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f450587b-d7bd-11e4-b5a4-14dae9d5a9d2">
+    <topic>osc -- shell command injection via crafted _service files</topic>
+    <affects>
+      <package>
+	<name>osc</name>
+	<range><lt>0.151.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SUSE Security Update reports:</p>
+	<blockquote cite="https://www.suse.com/security/cve/CVE-2015-0778.html">
+	  <p>osc before 0.151.0 allows remote attackers to execute
+	    arbitrary commands via shell metacharacters in a _service
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0778</cvename>
+      <url>https://www.suse.com/security/cve/CVE-2015-0778.html</url>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=901643</url>
+      <url>http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00012.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-16</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72ee9707-d7b2-11e4-8d8e-f8b156b6dcc8">
+    <topic>cpio -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gcpio</name>
+	<range><lt>2.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Debian Security Team:</p>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2014-9112">
+	  <p>Heap-based buffer overflow in the process_copy_in
+	    function in GNU Cpio 2.11 allows remote attackers to cause
+	    a denial of service via a large block value in a cpio
+	    archive.</p>
+	</blockquote>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2015-1197">
+	  <p>cpio 2.11, when using the --no-absolute-filenames
+	    option, allows local users to write to arbitrary files
+	    via a symlink attack on a file in an archive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9112</cvename>
+      <url>https://security-tracker.debian.org/tracker/CVE-2014-9112</url>
+      <cvename>CVE-2015-1197</cvename>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=658010</url>
+    </references>
+    <dates>
+      <discovery>2015-03-27</discovery>
+      <entry>2015-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="264749ae-d565-11e4-b545-00269ee29e57">
+    <topic>libzip -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>libzip</name>
+	<range><lt>0.11.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libzip developers report:</p>
+	<blockquote cite="http://hg.nih.at/libzip/rev/9f11d54f692e">
+	  <p>Avoid integer overflow. Fixed similarly to patch used in PHP copy of libzip.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69253</url>
+      <url>https://github.com/php/php-src/commit/ef8fc4b53d92fbfcd8ef1abbd6f2f5fe2c4a11e5</url>
+      <url>http://hg.nih.at/libzip/rev/9f11d54f692e</url>
+      <cvename>CVE-2015-2331</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62287f51-d43d-11e4-879c-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4</ge><lt>1.4.20</lt></range>
+	<range><ge>1.6</ge><lt>1.6.11</lt></range>
+	<range><ge>1.7</ge><lt>1.7.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150326,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/mar/18/security-releases/">
+	  <p>In accordance with our security release policy, the Django team
+	    is issuing multiple releases -- Django 1.4.20, 1.6.11, 1.7.7 and
+	    1.8c1. These releases are now available on PyPI and our download
+	    page. These releases address several security issues detailed
+	    below. We encourage all users of Django to upgrade as soon as
+	    possible. The Django master branch has also been updated.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/mar/18/security-releases/</url>
+      <cvename>CVE-2015-2316</cvename>
+      <cvename>CVE-2015-2317</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-18</discovery>
+      <entry>2015-03-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f6a014cd-d268-11e4-8339-001e679db764">
+    <topic>GNU binutils -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cross-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
+      <package>
+	<name>x86_64-pc-mingw32-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8501">
+	  <p>The _bfd_XXi_swap_aouthdr_in function in bfd/peXXigen.c in GNU
+	    binutils 2.24 and earlier allows remote attackers to cause a
+	    denial of service (out-of-bounds write) and possibly have other
+	    unspecified impact via a crafted NumberOfRvaAndSizes field in the
+	    AOUT header in a PE executable.</p>
+	</blockquote>
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8502">
+	  <p>Heap-based buffer overflow in the pe_print_edata function in
+	    bfd/peXXigen.c in GNU binutils 2.24 and earlier allows remote
+	    attackers to cause a denial of service (crash) and possibly have
+	    other unspecified impact via a truncated export table in a PE
+	    file.</p>
+	</blockquote>
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8503">
+	  <p>Stack-based buffer overflow in the ihex_scan function in
+	    bfd/ihex.c in GNU binutils 2.24 and earlier allows remote
+	    attackers to cause a denial of service (crash) and possibly have
+	    other unspecified impact via a crafted ihex file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8501</cvename>
+      <cvename>CVE-2014-8502</cvename>
+      <cvename>CVE-2014-8503</cvename>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8501</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8502</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8503</url>
+    </references>
+    <dates>
+      <discovery>2014-12-09</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="996bce94-d23d-11e4-9463-9cb654ea3e1c">
+    <topic>libuv -- incorrect revocation order while relinquishing privileges</topic>
+    <affects>
+      <package>
+	<name>node010</name>
+	<range><lt>0.10.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nodejs releases reports:</p>
+	<blockquote cite="http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable">
+	  <h5>CVE-2015-0278</h5>
+	  <p>This may potentially allow an attacker to gain elevated privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.nodejs.org/2015/03/14/node-v0-10-37-stable</url>
+      <freebsdpr>ports/198861</freebsdpr>
+      <cvename>CVE-2015-0278</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-14</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="22dc4a22-d1e5-11e4-879c-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.605</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.596.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-03-23">
+	  <h1>Description</h1>
+	  <h5>SECURITY-171, SECURITY-177 (Reflective XSS vulnerability)</h5>
+	  <p>An attacker without any access to Jenkins can navigate the user
+	    to a carefully crafted URL and have the user execute unintended
+	    actions. This vulnerability can be used to attack Jenkins inside
+	    firewalls from outside so long as the location of Jenkins is known
+	    to the attacker.</p>
+	  <h5>SECURITY-180 (forced API token change)</h5>
+	  <p>The part of Jenkins that issues a new API token was not
+	    adequately protected against anonymous attackers. This allows an
+	    attacker to escalate privileges on Jenkins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-03-23</url>
+    </references>
+    <dates>
+      <discovery>2015-03-23</discovery>
+      <entry>2015-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76ff65f4-17ca-4d3f-864a-a3d6026194fb">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -121,7 +791,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.1e_4</lt></range>
       </package>
       <package>
 	<name>libressl</name>
@@ -163,7 +833,7 @@ Notes:
     <dates>
       <discovery>2015-03-19</discovery>
       <entry>2015-03-19</entry>
-      <modified>2015-03-19</modified>
+      <modified>2015-03-24</modified>
     </dates>
   </vuln>
 

@@ -5,7 +5,7 @@ PORTNAME=	intclock
 PORTVERSION=	2.13
 PORTREVISION=	2
 CATEGORIES=	x11-clocks perl5
-MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
+MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-timezone clock

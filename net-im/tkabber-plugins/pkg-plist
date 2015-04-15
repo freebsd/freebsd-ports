@@ -130,6 +130,7 @@
 %%DATADIR%%/ctcomp/ctcomp.tcl
 %%DATADIR%%/ctcomp/license.terms
 %%DATADIR%%/ctcomp/msgs/de.msg
+%%DATADIR%%/ctcomp/msgs/ru.msg
 %%DATADIR%%/custom-urls/custom-urls.tcl
 %%DATADIR%%/custom-urls/msgs/pl.msg
 %%DATADIR%%/custom-urls/msgs/ru.msg

@@ -3,6 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../src
@@ -30,7 +31,7 @@ GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
 THREADS_DESC=		Build threaded perl
-PTHREAD_DESC=		Build with -pthread
+PTHREAD_DESC=		Build with -lpthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 
@@ -83,7 +84,9 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsiteman3dir=${SITE_MAN3} \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
-	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none
+	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
+	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
+	-Dcf_time="`env LANG=C ${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -184,12 +187,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
 .if ${PORT_OPTIONS:MPTHREAD}
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
-		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
 		${WRKSRC}/hints/freebsd.sh
 .else
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
-		-e 's|%%PTHREAD_CFLAGS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
 .endif
 

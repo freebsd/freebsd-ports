@@ -220,52 +220,8 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/upnp.jsp
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/waiting.jsp
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/wizard.jsp
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/temp
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/pages
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/wizard
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/settings
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/global
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/p2N
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7P
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7O
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U7E
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U5O
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2S48
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2O
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2M
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2L48
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog/U2HSR
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/dialog
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/data-table
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media/alerts
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/media
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/swf
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/flex
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/library
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/tabs
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/settings
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/panels
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes/dialogs
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/includes
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT/META-INF
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT
-@dirrmtry %%JAVASHAREDIR%%/unifi/webapps
-@dirrmtry %%JAVASHAREDIR%%/unifi/lib
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/2.4.6.2178
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E/2.4.6.2178
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/2.4.6.2178
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/2.4.6.2178
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl
-@dirrmtry %%JAVASHAREDIR%%/unifi/data
-@dirrmtry %%JAVASHAREDIR%%/unifi/conf
-@dirrmtry %%JAVASHAREDIR%%/unifi/bin
-@dirrmtry %%JAVASHAREDIR%%/unifi
-@exec chown -R unifi:unifi %D/%%JAVASHAREDIR%%/unifi
+@dir %%JAVASHAREDIR%%/unifi
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/data
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/logs
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/run
+@dir(unifi,,) %%JAVASHAREDIR%%/unifi/work

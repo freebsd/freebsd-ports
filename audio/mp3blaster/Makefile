@@ -15,8 +15,8 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	LIRC SIDPLAY VORBIS DOCS
 OPTIONS_DEFAULT=	SIDPLAY VORBIS
@@ -69,9 +69,8 @@ CONFIGURE_ARGS+=	--without-esd
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/mp3blaster/win2koi.tbl|${DATADIR}/charmap/win2koi.tbl|' \
-				${WRKSRC}/doc/sample.mp3blasterrc
+		${WRKSRC}/doc/sample.mp3blasterrc
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

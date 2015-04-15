@@ -203,6 +203,7 @@ man/zh_CN/man1/mkvpropedit.1.gz
 %%WXGTK%%share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/sr/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo

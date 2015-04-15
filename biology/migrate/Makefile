@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.6.6
+PORTVERSION=	3.6.7
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to estimate population sizes and migration rates
+
+BROKEN=		unfetchable
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
@@ -20,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 PORTEXAMPLES=	*
+EXTRACT_AFTER_ARGS=--exclude zlib
 
 # XXX should be converted to OptionsNG
 .if defined(WITH_THREAD_PRETTY)
@@ -37,8 +40,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/PRETTY$$/d' ${WRKSRC}/definitions.h
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/haru/makefile.gcc
 

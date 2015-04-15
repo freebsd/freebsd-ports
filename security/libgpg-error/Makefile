@@ -16,6 +16,7 @@ USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
+CPP+=			-P
 
 .include <bsd.port.options.mk>
 

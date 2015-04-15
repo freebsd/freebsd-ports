@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	wpa_gui
-PORTVERSION=	0.7.3
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/ \
-		SF/partmedia.u/freebsd-ports/:icons \
+		http://partmedia.users.sourceforge.net/dist/:icons \
 		LOCAL/jgh/net/${PORTNAME}/:icons
 DISTNAME=	wpa_supplicant-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		wpa-gui-icons.tar.gz:icons
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based frontend for wpa_supplicant
 
 PLIST_FILES=	sbin/wpa_gui \

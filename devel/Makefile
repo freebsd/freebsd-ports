@@ -91,6 +91,7 @@
     SUBDIR += atf
     SUBDIR += atlas
     SUBDIR += atlas-devel
+    SUBDIR += atlassian-plugin-sdk
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf-archive
@@ -470,6 +471,7 @@
     SUBDIR += frama-c
     SUBDIR += freeocl
     SUBDIR += frink
+    SUBDIR += fstrm
     SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += fuel
@@ -632,12 +634,12 @@
     SUBDIR += gtgt
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
-    SUBDIR += gumbo
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += guiloader
     SUBDIR += guiloader-c++
+    SUBDIR += gumbo
     SUBDIR += gvfs
     SUBDIR += gwenhywfar
     SUBDIR += gwenhywfar-fox16
@@ -1155,6 +1157,7 @@
     SUBDIR += librevisa
     SUBDIR += librevisa-vish
     SUBDIR += librevisa-vxi
+    SUBDIR += librolegen
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libsearpc
@@ -1348,6 +1351,7 @@
     SUBDIR += msp430mcu
     SUBDIR += mspdebug
     SUBDIR += msrc0
+    SUBDIR += mtbl
     SUBDIR += nana
     SUBDIR += nant
     SUBDIR += nasm
@@ -1416,6 +1420,7 @@
     SUBDIR += oniguruma5
     SUBDIR += onscripter
     SUBDIR += onscripter-1byte
+    SUBDIR += oozie
     SUBDIR += open-beagle
     SUBDIR += open-usp-tukubai
     SUBDIR += opencl
@@ -1720,6 +1725,7 @@
     SUBDIR += p5-Config-GitLike
     SUBDIR += p5-Config-Grammar
     SUBDIR += p5-Config-INI
+    SUBDIR += p5-Config-INI-Reader-Ordered
     SUBDIR += p5-Config-INI-Simple
     SUBDIR += p5-Config-Identity
     SUBDIR += p5-Config-IniFiles
@@ -2320,6 +2326,7 @@
     SUBDIR += p5-Lingua-Translit
     SUBDIR += p5-List-AllUtils
     SUBDIR += p5-List-Cycle
+    SUBDIR += p5-List-Flatten
     SUBDIR += p5-List-Gen
     SUBDIR += p5-List-Group
     SUBDIR += p5-List-Permutor
@@ -2601,7 +2608,6 @@
     SUBDIR += p5-PAR-Dist
     SUBDIR += p5-PAR-Packer
     SUBDIR += p5-PCSC-Card
-    SUBDIR += p5-PerlX-Maybe
     SUBDIR += p5-PHP-Serialization
     SUBDIR += p5-POE
     SUBDIR += p5-POE-API-Hooks
@@ -2623,6 +2629,7 @@
     SUBDIR += p5-POE-Component-Syndicator
     SUBDIR += p5-POE-Component-TSTP
     SUBDIR += p5-POE-Devel-Profiler
+    SUBDIR += p5-POE-Loop-AnyEvent
     SUBDIR += p5-POE-Loop-Glib
     SUBDIR += p5-POE-Loop-Tk
     SUBDIR += p5-POE-Quickie
@@ -2715,6 +2722,7 @@
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
+    SUBDIR += p5-PerlX-Maybe
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pithub
@@ -2758,10 +2766,12 @@
     SUBDIR += p5-Regexp-Bind
     SUBDIR += p5-Regexp-Compare
     SUBDIR += p5-Regexp-Grammars
+    SUBDIR += p5-Regexp-Lexer
     SUBDIR += p5-Regexp-RegGrp
     SUBDIR += p5-Regexp-Shellish
     SUBDIR += p5-Regexp-Subst-Parallel
     SUBDIR += p5-Religion
+    SUBDIR += p5-Reply
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
     SUBDIR += p5-Return-MultiLevel
@@ -2944,6 +2954,7 @@
     SUBDIR += p5-Term-VT102
     SUBDIR += p5-Term-VT102-Boundless
     SUBDIR += p5-Term-Visual
+    SUBDIR += p5-Test-API
     SUBDIR += p5-Test-Able
     SUBDIR += p5-Test-Able-Runner
     SUBDIR += p5-Test-Aggregate
@@ -3019,6 +3030,7 @@
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-MockRandom
     SUBDIR += p5-Test-MockTime
+    SUBDIR += p5-Test-Modern
     SUBDIR += p5-Test-Module-Used
     SUBDIR += p5-Test-Moose-More
     SUBDIR += p5-Test-More-UTF8
@@ -3826,6 +3838,7 @@
     SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-game
+    SUBDIR += py-game_sdl2
     SUBDIR += py-gamin
     SUBDIR += py-gdata
     SUBDIR += py-gearman
@@ -3857,6 +3870,7 @@
     SUBDIR += py-initgroups
     SUBDIR += py-instant
     SUBDIR += py-interface
+    SUBDIR += py-intervaltree
     SUBDIR += py-ioflo
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
@@ -3976,12 +3990,14 @@
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
+    SUBDIR += py-pygitup
     SUBDIR += py-pygpx
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
+    SUBDIR += py-pymtbl
     SUBDIR += py-pyparsing15
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4058,6 +4074,7 @@
     SUBDIR += py-smmap
     SUBDIR += py-snack
     SUBDIR += py-snackwich
+    SUBDIR += py-sortedcontainers
     SUBDIR += py-spark
     SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
@@ -4225,6 +4242,7 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
+    SUBDIR += pyinstaller
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
@@ -4467,7 +4485,6 @@
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-yajl
     SUBDIR += rubygem-file-tail
-    SUBDIR += rubygem-filemagic
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-brightbox
@@ -4621,8 +4638,8 @@
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rbtrace
-    SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
+    SUBDIR += rubygem-rdoc3
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-redis-activesupport
     SUBDIR += rubygem-redis-store
@@ -4643,6 +4660,7 @@
     SUBDIR += rubygem-rspec-support
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-bugzilla
+    SUBDIR += rubygem-ruby-filemagic
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-sdl-ffi
@@ -4677,6 +4695,7 @@
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-rails
     SUBDIR += rubygem-sprockets211
+    SUBDIR += rubygem-sprockets22
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-statsd
@@ -4711,7 +4730,7 @@
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-tins0
     SUBDIR += rubygem-toml
-    SUBDIR += rubygem-transactionsimple
+    SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
@@ -4816,7 +4835,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-static
-    SUBDIR += subversion16
     SUBDIR += subversion17
     SUBDIR += subversive
     SUBDIR += svk

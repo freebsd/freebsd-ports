@@ -19,7 +19,9 @@ USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -lncurses `xmms-config --cflags --libs` -o xmms-curses *.c
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${CC} ${CFLAGS} -lpthread -lncurses \
+		`xmms-config --cflags --libs` -o xmms-curses *.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmms-curses ${STAGEDIR}${PREFIX}/bin

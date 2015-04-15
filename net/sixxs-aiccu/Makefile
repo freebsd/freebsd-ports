@@ -12,23 +12,32 @@ DISTNAME=	aiccu_20070115
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
-LIB_DEPENDS=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USE_RC_SUBR=	sixxs-aiccu
 USES=		gmake
 
-CFLAGS+=	${PTHREAD_CFLAGS} -D_REENTRANT -DAICCU_GNUTLS -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgnutls
+CFLAGS+=	-D_REENTRANT -I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 MAKE_ARGS+=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	LOG_DAEMON DOCS
+OPTIONS_DEFINE=	GNUTLS LOG_DAEMON DOCS
+GNUTLS_DESC=	Use gnutls to secure TIC supporting starttls
 LOG_DAEMON_DESC=Log to LOG_DAEMON instead to LOG_LOCAL7
+
+OPTIONS_DEFAULT+=	GNUTLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
+CFLAGS+=	-DAICCU_GNUTLS
+LDFLAGS+=	-lgnutls
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -39,8 +48,6 @@ post-patch:
 		-e 's:ipv4_interface eth0:ipv4_interface sis0:' \
 		-e 's:ipv6_interface sixxs:ipv6_interface gif0:' \
 		${WRKSRC}/doc/aiccu.conf
-
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOG_DAEMON}
 do-configure:

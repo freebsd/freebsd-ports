@@ -14,11 +14,11 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libggz.so:${PORTSDIR}/games/libggz
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USES=		gettext
 
-LDFLAGS+=	-lz ${PTHREAD_LIBS}
+LDFLAGS+=	-lz -lpthread
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls -lintl
 
 do-install:

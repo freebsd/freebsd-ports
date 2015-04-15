@@ -1,0 +1,5 @@
+This is pywdns, a Python extension module implemented in Cython for
+the wdns C library.
+
+
+WWW: https://github.com/farsightsec/pywdns

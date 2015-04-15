@@ -24,11 +24,6 @@ OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	Nvidia support
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800076
-BROKEN=		does not build
-.endif
 
 .if ${PORT_OPTIONS:MNVIDIA}
 .	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
@@ -57,4 +52,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/lib
 	${LN} -s ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}/libopenal.so ${STAGEDIR}${PREFIX}/${DATADIR}/lib/libopenal.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

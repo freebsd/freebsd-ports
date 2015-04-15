@@ -20,4 +20,13 @@ USES=		zip
 USE_RUBY=		yes
 USE_RUBY_SETUP=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-build:
+	${RM} -r ${WRKSRC}/lib/deplate/themes/navbar-right.html
+
+.if ${RUBY_VER} >= 2.2
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>

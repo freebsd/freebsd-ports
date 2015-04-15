@@ -2,7 +2,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	4
@@ -12,11 +12,13 @@ COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libedit.so.0:${PORTSDIR}/devel/libedit
 
 CONFLICTS=	varnish-2.* varnish-3.*
 
 USES=		autoreconf gmake libtool readline pkgconfig python:build
+CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests
 CONFIGURE_ENV=	RST2MAN=true

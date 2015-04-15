@@ -5,10 +5,12 @@ PORTNAME=	monitord
 PORTVERSION=	0.4.1
 PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/ CENKES
+MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service that restarts other standalone services
+
+BROKEN=		No public distfiles
 
 USE_RC_SUBR=	monitord
 

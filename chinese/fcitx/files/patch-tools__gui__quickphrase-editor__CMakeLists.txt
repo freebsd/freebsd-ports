@@ -1,0 +1,10 @@
+--- ./tools/gui/quickphrase-editor/CMakeLists.txt.orig	2013-09-28 17:33:14.000000000 +0900
++++ ./tools/gui/quickphrase-editor/CMakeLists.txt	2014-03-19 13:45:08.000000000 +0900
+@@ -17,6 +17,7 @@
+   ${QT_QTCORE_INCLUDE_DIR}
+   ${QT_QTGUI_INCLUDE_DIR}
+   ${CMAKE_CURRENT_BINARY_DIR}
++  ${LIBINTL_INCLUDE_DIR}
+   )
+ qt4_wrap_ui(QUICKPHRASE_EDITOR_SRCS editordialog.ui batchdialog.ui editor.ui)
+ add_library(fcitx-quickphrase-editor

@@ -18,3 +18,5 @@ bin/zkCli.sh
 %%PORTNAME%%/lib/slf4j-api-1.6.1.jar
 %%PORTNAME%%/lib/slf4j-log4j12-1.6.1.jar
 %%PORTNAME%%/%%PORTNAME%%-%%PORTVERSION%%.jar
+@dir /var/log/%%PORTNAME%%
+@dir /var/run/%%PORTNAME%%

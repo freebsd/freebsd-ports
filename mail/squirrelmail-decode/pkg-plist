@@ -35,4 +35,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.decode
 %%PORTDOCS%%%%DOCSDIR%%/README.decode
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.decode
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

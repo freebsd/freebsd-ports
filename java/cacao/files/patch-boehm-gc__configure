@@ -4,7 +4,7 @@
  	$as_echo "#define GC_FREEBSD_THREADS 1" >>confdefs.h
  
  	INCLUDES="$INCLUDES -pthread"
-+	THREADDLLIBS=%%PTHREAD_LIBS%%
++	THREADDLLIBS=-lpthread
        	;;
       *-*-kfreebsd*-gnu)
  	$as_echo "#define GC_FREEBSD_THREADS 1" >>confdefs.h

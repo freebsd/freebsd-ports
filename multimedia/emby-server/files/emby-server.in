@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%RC_NAME%%_enable:	Set to YES to enable the %%PORTNAME%% service.
+#			Default: NO
+# %%RC_NAME%%_user:	The user account used to run the %%PORTNAME%% daemon.
+#			This is optional, however do not specifically set this to an
+#			empty string as this will cause the daemon to run as root.
+#			Default: %%USER%% (or mediabrowser with UID 989 if it exists)
+# %%RC_NAME%%_group:	The group account used to run the %%PORTNAME%% daemon.
+#			This is optional, however do not specifically set this to an
+#			empty string as this will cause the daemon to run with group wheel.
+#			Default: %%GROUP%% (or mediabrowser with GID 989 if it exists)
+# %%RC_NAME%%_data_dir:	Directory where %%PORTNAME%% configuration
+#			data is stored.
+#			Default: /var/db/%%PORTNAME%% (or /var/db/mediabrowser if it exists)
+
+. /etc/rc.subr
+name=%%RC_NAME%%
+rcvar=${name}_enable
+load_rc_config $name
+
+if [ "$(id -u mediabrowser 2>&1)" = "989" ] && ! [ -n "${emby_server_user}" ]; then
+	%%RC_NAME%%_user=mediabrowser;
+	%%RC_NAME%%_group=mediabrowser;
+fi
+
+if [ -d "/var/db/mediabrowser" ] && ! [ -n "${emby_server_data_dir}" ]; then
+	%%RC_NAME%%_data_dir="/var/db/mediabrowser";
+fi
+
+: ${%%RC_NAME%%_enable:="NO"}
+: ${%%RC_NAME%%_user:="%%USER%%"}
+: ${%%RC_NAME%%_group:="%%GROUP%%"}
+: ${%%RC_NAME%%_data_dir:="/var/db/%%PORTNAME%%"}
+
+pidfile="/var/run/%%PORTNAME%%.pid"
+command="/usr/sbin/daemon"
+procname="%%LOCALBASE%%/bin/mono"
+command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/MediaBrowser.Server.Mono.exe -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${%%RC_NAME%%_data_dir}"
+
+start_precmd=%%RC_NAME%%_precmd
+%%RC_NAME%%_precmd()
+{
+	: ${LC_ALL:="C"}
+	: ${LANG:="C"}
+	: ${TZ:="UTC"}
+	export LC_ALL
+	export LANG
+	export TZ
+
+	if [ ! -e "${pidfile}" ]; then
+		install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- /dev/null "${pidfile}";
+	fi
+
+	if [ ! -d "${%%RC_NAME%%_data_dir}" ]; then
+		install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- "${%%RC_NAME%%_data_dir}";
+	fi
+}
+
+stop_postcmd=%%RC_NAME%%_postcmd
+%%RC_NAME%%_postcmd()
+{
+	rm -f -- "${pidfile}"
+}
+
+run_rc_command "$1"

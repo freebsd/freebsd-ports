@@ -172,7 +172,7 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 # Ruby 2.0
 #
 RUBY_RELVERSION=	2.0.0
-RUBY_PORTREVISION=	0
+RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	643
 RUBY20=			""	# PLIST_SUB helpers
@@ -182,7 +182,7 @@ RUBY20=			""	# PLIST_SUB helpers
 # Ruby 2.1
 #
 RUBY_RELVERSION=	2.1.5
-RUBY_PORTREVISION=	2
+RUBY_PORTREVISION=	4
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
 RUBY21=			""	# PLIST_SUB helpers
@@ -192,7 +192,7 @@ RUBY21=			""	# PLIST_SUB helpers
 # Ruby 2.2
 #
 RUBY_RELVERSION=	2.2.1
-RUBY_PORTREVISION=	0
+RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
 RUBY22=			""	# PLIST_SUB helpers
@@ -202,8 +202,11 @@ RUBY22=			""	# PLIST_SUB helpers
 # Other versions
 #
 IGNORE=	Only ruby 2.0, 2.1 and 2.2 are supported
+_INVALID_RUBY_VER=	1
 . endif
 .endif # defined(RUBY_VER)
+
+.if !defined(_INVALID_RUBY_VER)
 
 RUBY20?=		"@comment "
 RUBY21?=		"@comment "
@@ -233,7 +236,10 @@ _RUBY_SYSLIBDIR?=	${PREFIX}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 _RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
 .endif
+.endif
 #      defined(RUBY)
+
+.if !defined(_INVALID_RUBY_VER)
 
 .if defined(LANG) && !empty(LANG)
 GEM_ENV+=		LANG=${LANG}
@@ -412,6 +418,7 @@ GEMS_DIR=	${GEMS_BASE_DIR}/gems
 DOC_DIR=	${GEMS_BASE_DIR}/doc
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
 SPEC_DIR=	${GEMS_BASE_DIR}/specifications
+EXT_DIR=	${GEMS_BASE_DIR}/extensions
 GEM_NAME?=	${PORTNAME}-${PORTVERSION}
 GEM_LIB_DIR?=	${GEMS_DIR}/${GEM_NAME}
 GEM_DOC_DIR?=	${DOC_DIR}/${GEM_NAME}
@@ -425,6 +432,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		DOC_DIR="${DOC_DIR}" \
 		CACHE_DIR="${CACHE_DIR}" \
 		SPEC_DIR="${SPEC_DIR}" \
+		EXT_DIR="${EXT_DIR}" \
 		PORT="${PORTNAME}-${PORTVERSION}" \
 		GEM_NAME="${GEM_NAME}" \
 		GEM_LIB_DIR="${GEM_LIB_DIR}" \
@@ -441,18 +449,28 @@ GEMFILES=	${DISTFILES:C/:[^:]+$//}
 GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
 . endif
 
-RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
+GEMSPEC=	${PORTNAME}.gemspec
+
+RUBYGEM_ARGS=-l --no-update-sources --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 GEM_ENV+=	RB_USER_INSTALL=yes
 .if defined(NOPORTDOCS)
-RUBYGEM_ARGS+=	--no-rdoc
+RUBYGEM_ARGS+=	--no-rdoc --no-ri
+.else
+RUBYGEM_ARGS+=	--rdoc --ri
 .endif
 
 do-extract:
 	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES}
-	@${TAR} -xOzf ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} metadata.gz | ${GZCAT} > ${BUILD_WRKSRC}/${GEMFILES}spec
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
+		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
+			${ECHO_MSG} "===> Extraction failed unexpectedly."; \
+			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			fi; \
+		${FALSE}; \
+		fi)
 
 do-build:
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${GEMFILES}spec ; then \
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
@@ -461,7 +479,12 @@ do-build:
 		fi)
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info/
+	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
+.if defined(NOPORTDOCS)
+	-@${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
+.endif
 
 . if defined(RUBYGEM_AUTOPLIST)
 .  if !target(post-install-script)
@@ -469,24 +492,15 @@ post-install-script:
 	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_DOC_DIR} -type f -print | ${SED} -E -e \
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_DOC_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 .endif
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${ECHO_CMD} "@unexec rmdir %D/${DOC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-.endif
-	@${ECHO_CMD} "@unexec rmdir %D/${CACHE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${SPEC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_BASE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
+	@if [ -d ${STAGEDIR}${PREFIX}/${EXT_DIR} ]; then \
+		${FIND} -ds ${STAGEDIR}${PREFIX}/${EXT_DIR} -type f -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
+	fi
 .  endif
 . endif
 
@@ -609,4 +623,5 @@ PLIST_SUB+=		RUBY_RD_HTML_FILES="@comment "
 BUILD_DEPENDS+=		${DEPEND_RUBY_RDTOOL}
 .endif
 
+.endif # _INVALID_RUBY_VER
 .endif

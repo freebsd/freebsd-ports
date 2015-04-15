@@ -14,6 +14,10 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	osynctool-[0-9]*
 
+BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable, devices are not produced anymore
+EXPIRATION_DATE=	2015-05-07
+
 USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 

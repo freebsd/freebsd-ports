@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.0-rc4
+DISTVERSION=	3.0.0
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/antirez/redis/archive/
+MASTER_SITES=	http://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
@@ -22,9 +20,6 @@ OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
-
-FETCH_ARGS=	-Fpr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.options.mk>
 
@@ -48,9 +43,9 @@ USES+=		tcl:build
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-2.*
+CONFLICTS?=	redis-3.*
 
 USES+=		gmake
 MAKE_ENV=	"V=yo"

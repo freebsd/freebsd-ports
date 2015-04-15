@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -112,7 +112,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-xvdr.so.${PORTVERSION}:${PORTSDIR}/mul
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-eepg.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-eepg
 .endif
 .if ${PORT_OPTIONS:MVNSISERVER}
-RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vnsiserver5.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vnsiserver
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vnsiserver.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vnsiserver
 .endif
 .if ${PORT_OPTIONS:MMARKAD}
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-markad.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-markad

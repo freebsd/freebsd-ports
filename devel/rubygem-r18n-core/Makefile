@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	r18n-core
-PORTVERSION=	1.1.11
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	i18n tool to translate your Ruby application
+
+LICENSE=	LGPL3
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

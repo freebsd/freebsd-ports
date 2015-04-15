@@ -1,0 +1,11 @@
+--- ./dictmanager/CMakeLists.txt.orig	2013-07-16 05:34:05.000000000 +0900
++++ ./dictmanager/CMakeLists.txt	2014-03-19 15:52:24.000000000 +0900
+@@ -60,6 +60,7 @@
+ ${FCITX_QT_LIBRARIES}
+ ${FCITX4_FCITX_UTILS_LIBRARIES}
+ ${FCITX4_FCITX_CONFIG_LIBRARIES}
++${LIBINTL_LIBRARIES}
+ )
+ 
+-install(TARGETS fcitx-libpinyin-dictmanager DESTINATION ${FCITX4_ADDON_INSTALL_DIR}/qt)
++install(TARGETS fcitx-libpinyin-dictmanager DESTINATION ${FCITX4_ADDON_INSTALL_DESTDIR}/qt)

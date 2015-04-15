@@ -17,7 +17,7 @@ LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
 CONFLICTS=	njs-[0-9]*
 
 MAKE_ARGS+=	JS_THREADSAFE=YES \
-		PROG_LIBS="-lreadline -ltermcap -lm ${PTHREAD_LIBS}" \
+		PROG_LIBS="-lreadline -ltermcap -lm -lpthread" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 

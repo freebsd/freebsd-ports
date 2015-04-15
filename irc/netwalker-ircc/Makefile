@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		tar:tgz
 
-LDFLAGS+=	-lncurses ${PTHREAD_LIBS}
+LDFLAGS+=	-lncurses -lpthread
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \

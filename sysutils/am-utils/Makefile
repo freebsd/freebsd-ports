@@ -7,8 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 		ftp://ftp.cs.umn.edu/pub/am-utils/ \
-		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/ \
-		RINGSERVER/net/am-utils
+		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities

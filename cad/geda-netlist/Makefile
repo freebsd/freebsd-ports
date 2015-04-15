@@ -14,6 +14,7 @@ DISTNAME=	${PKGNAMEPREFIX}g${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's netlister
 
+BROKEN=		Unfetchable
 LIB_DEPENDS=	libgeda.so:${PORTSDIR}/cad/libgeda
 RUN_DEPENDS=	geda-symbols>0:${PORTSDIR}/cad/geda-symbols
 

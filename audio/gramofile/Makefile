@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 
+BROKEN=		Debian patches unfetchable
+
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
 ALL_TARGET=	gramofile

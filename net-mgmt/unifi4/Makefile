@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unifi4
-PORTVERSION=	4.2.0
+PORTVERSION=	4.6.3
+PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -14,6 +15,7 @@ COMMENT=	UniFi Controller
 RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 USES=		cpe zip
 CPE_VENDOR=	ubnt
@@ -40,5 +42,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
 	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
+# Create directories that will be writable by unifi
+.for i in data logs run work
+	${MKDIR} ${STAGEDIR}/${JAVASHAREDIR}/unifi/${i}
+.endfor
 
 .include <bsd.port.mk>

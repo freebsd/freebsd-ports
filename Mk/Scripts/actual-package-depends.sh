@@ -50,7 +50,8 @@ find_dep() {
 	pattern=$1
 	case ${pattern} in
 	*\>*|*\<*|*=*)
-		${PKG_BIN} info -Eg "${pattern}" 2>/dev/null
+		${PKG_BIN} info -Eg "${pattern}" 2>/dev/null ||
+			echo "actual-package-depends: dependency on ${pattern} not registered" >&2
 		return
 		;;
 	/*)

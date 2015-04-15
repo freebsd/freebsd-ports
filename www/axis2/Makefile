@@ -13,7 +13,8 @@ COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	APACHE20
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	apache
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 

@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 PLIST_FILES=	bin/pengupop
 

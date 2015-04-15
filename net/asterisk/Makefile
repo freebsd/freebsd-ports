@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.32.2
+PORTVERSION=	1.8.32.3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -34,8 +34,7 @@ SHEBANG_FILES=	agi/agi-test.agi \
 STRIP=
 
 USE_RC_SUBR=	asterisk
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \

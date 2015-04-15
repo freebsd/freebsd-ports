@@ -1,11 +1,14 @@
---- s_server.c.orig	2015-02-27 23:01:56.212257000 +0100
-+++ s_server.c	2015-02-27 23:04:52.209584264 +0100
-@@ -137,6 +137,9 @@
+--- s_server.c.orig	2000-11-11 22:11:18 UTC
++++ s_server.c
+@@ -137,6 +137,12 @@ static RSA MS_CALLBACK *tmp_rsa_cb(SSL *
  , int keylen
  #endif
  );
 +#if defined(OPENSSL_NO_SSL2)
 +#define NO_SSL2
++#endif
++#if defined(OPENSSL_NO_SSL3)
++#define NO_SSL3
 +#endif
  static int sv_body(char *hostname, int sin, int sout);
  static void close_accept_socket(void );

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	wmoran@collaborativefusion.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension to cracklib
 
 DEPRECATED=	requires php53, security EOL reached 14 Aug 2014

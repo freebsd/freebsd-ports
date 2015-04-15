@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lzlib
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	archivers
-MASTER_SITES=	SAVANNAH/lzip
+MASTER_SITES=	SAVANNAH/lzip/lzlib
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	In-memory LZMA compression and decompression library

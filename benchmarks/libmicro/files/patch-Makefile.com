@@ -1,6 +1,6 @@
---- Makefile.com.orig	Sat Aug  6 14:02:15 2005
-+++ Makefile.com	Sat Aug  6 14:05:15 2005
-@@ -44,7 +44,7 @@
+--- Makefile.com.orig	2011-05-11 00:58:23 UTC
++++ Makefile.com
+@@ -42,7 +42,7 @@ COMPILER_VERSION_CMD_cc=cc -V 2>&1 | egr
  COMPILER_VERSION_CMD_gcc=gcc -dumpversion
  COMPILER_VERSION_CMD=$(COMPILER_VERSION_CMD_$(CC))
  
@@ -9,32 +9,25 @@
  
  cstyle:	
  	for file in $(ALL:%=../%.c) $(EXTRA_CFILES:%=../%) ; \
-@@ -56,10 +56,10 @@
+@@ -54,10 +54,10 @@ lint:	libmicro.ln $(ALL:%=%.lint) $(EXTR
  
  
  $(EXTRA_CFILES:%.c=%.lint):
 -	$(LINT) ../$(@:%.lint=%.c) -I. -mu -lc libmicro.ln -lm
-+	$(LINT) ../$(@:%.lint=%.c) -I. -mu -lc libmicro.ln -lm $(PTHREAD_LIBS)
++	$(LINT) ../$(@:%.lint=%.c) -I. -mu -lc libmicro.ln -lm -lpthread
  
  %.lint:	../%.c libmicro.ln
 -	$(LINT) -mu $(CPPFLAGS) $< libmicro.ln -lpthread -lsocket -lnsl -lm
-+	$(LINT) -mu $(CPPFLAGS) $< libmicro.ln -lm $(PTHREAD_LIBS)
++	$(LINT) -mu $(CPPFLAGS) $< libmicro.ln -lpthread -lm
  
  %.o:	../%.c
  	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
-@@ -109,13 +109,13 @@
+@@ -107,7 +107,7 @@ tattle:		../tattle.c	libmicro.a
  	echo "char * compiler_version = \""`$(COMPILER_VERSION_CMD)`"\";" > tattle.h
  	echo "char * CC = \""$(CC)"\";" >> tattle.h
  	echo "char * extra_compiler_flags = \""$(extra_CFLAGS)"\";" >> tattle.h
 -	$(CC) -o tattle $(CFLAGS) -I. ../tattle.c libmicro.a -lrt -lm
-+	$(CC) -o tattle $(CFLAGS) -I. ../tattle.c libmicro.a -lm $(PTHREAD_LIBS)
++	$(CC) -o tattle $(CFLAGS) -I. ../tattle.c libmicro.a -lpthread -lm
  
  $(ELIDED_BENCHMARKS):	../elided.c
  	$(CC) -o $(@) ../elided.c
- 
- %: libmicro.a %.o 
--	$(CC) -o $(@) $(@).o $($(@)_EXTRA_DEPS) $(CFLAGS) libmicro.a $($(@)_EXTRA_LIBS) $(EXTRA_LIBS) -lpthread -lm
-+	$(CC) -o $(@) $(@).o $($(@)_EXTRA_DEPS) $(CFLAGS) libmicro.a $($(@)_EXTRA_LIBS) $(EXTRA_LIBS) -lm $(PTHREAD_LIBS)
- 
- exec:	exec_bin
- 

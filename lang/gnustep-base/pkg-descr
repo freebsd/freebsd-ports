@@ -7,7 +7,4 @@ including collections, operating system interfaces, and so on.
 Please contact the GNUstep maintainers at <discuss-gnustep@gnu.org> in
 case of questions and offers of help.
 
-LICENSE: LGPL2 or later (framework)
-LICENSE: GPL3 or later (tools, docs)
-
 WWW: http://www.gnustep.org/

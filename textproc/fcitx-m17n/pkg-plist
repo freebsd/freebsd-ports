@@ -2,5 +2,7 @@ lib/fcitx/fcitx-m17n.so
 share/fcitx/addon/fcitx-m17n.conf
 share/fcitx/configdesc/fcitx-m17n.desc
 share/fcitx/m17n/default
+share/locale/de/LC_MESSAGES/fcitx-m17n.mo
+share/locale/ja/LC_MESSAGES/fcitx-m17n.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-m17n.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-m17n.mo

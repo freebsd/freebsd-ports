@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpcap
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -130,9 +130,7 @@ post-install:
 # package will be run on a system that does not have cloning (7.x).
 # Always use bpf device, but specify CFLAGS if we have cloning.
 CONFIGURE_ARGS+=	--with-pcap=bpf
-.if ${OSVERSION} > 800043
 CFLAGS+=	-DHAVE_DEVICE_CLONING=1
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC

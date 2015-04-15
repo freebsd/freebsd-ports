@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Send and receive files via ZMODEM protocol (unrestrictive)
 
+BROKEN=		Unfetchable
 USE_CSTD=	gnu89
 
 MAKEFILE=	makefile

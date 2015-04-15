@@ -99,8 +99,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s:/etc/gnokiirc:${PREFIX}/etc/gnokiirc:g" \
 		${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e "s:%%PTHREAD_LIBS%%:${PTHREAD_LIBS}:; \
-		s:%%PTHREAD_CFLAGS%%:${PTHREAD_CFLAGS}:" ${WRKSRC}/configure
 .for f in common/data/virtmodem.c utils/mgnokiidev.c
 	@${REINPLACE_CMD} -E -e "s:^(#ifdef.*)__OpenBSD__:\1__FreeBSD__:" \
 		${WRKSRC}/${f}

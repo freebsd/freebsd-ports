@@ -27,8 +27,6 @@ CONFLICTS=	sysutils/lbl-hf-1.*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
-	    ${WRKSRC}/hfkernel/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/util/reffreq.c ${WRKSRC}/scripts/Makefile
 
@@ -36,7 +34,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for d in ${WRKSRC}/doc/hf-examplefiles/fix.[0-1]*[0-9]* \
 	${WRKSRC}/doc/hf-examplefiles/gag
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 	@${ECHO} "If examples are installed they will be found in ${EXAMPLESDIR}" >> ${WRKDIR}/pkg-message
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -49,7 +47,7 @@ post-install:
 	${WRKSRC}/doc/lfconv.jpg ${WRKSRC}/doc/mt63.txt \
 	${WRKSRC}/doc/pactor.ps ${WRKSRC}/doc/pactor.txt \
 	${WRKSRC}/doc/pactor_statediag.fig
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${ECHO} "If docs are installed they will be found in ${DOCSDIR}" >> ${WRKDIR}/pkg-message
 
