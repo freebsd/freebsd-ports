@@ -1,9 +1,0 @@
---- Makefile.orig	2012-01-21 05:30:07 UTC
-+++ Makefile
-@@ -1,5 +1,5 @@
- # $FreeBSD: head/gnu/usr.bin/cvs/Makefile 175384 2008-01-16 17:16:36Z obrien $
- 
--SUBDIR = lib libdiff cvs contrib cvsbug doc
-+SUBDIR = lib libdiff cvs contrib cvsbug
- 
- .include <bsd.subdir.mk>
