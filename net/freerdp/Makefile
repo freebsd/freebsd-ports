@@ -15,12 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		alias cmake:outsource pkgconfig compiler:c++11-lib
+USES=		alias cmake:outsource cpe pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	FreeRDP
 GH_COMMIT=	780d451
 GH_TAGNAME=	${GH_COMMIT}
+
+CPE_VENDOR=	freerdp_project
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
