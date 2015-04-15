@@ -33,12 +33,10 @@ do_spam_manpath()
 
 
 if [ "$2" = "POST-INSTALL" ] ; then
-	if [ "${OSVERSION}" -lt 900022 ] ; then
-		do_cleanup_manpath
-		do_spam_manpath
-	fi
+	do_cleanup_manpath
+	do_spam_manpath
 elif [ "$2" = "POST-DEINSTALL" ] ; then
-	[ "${OSVERSION}" -lt 900022 ] && do_cleanup_manpath
+	do_cleanup_manpath
 fi
 
 exit 0
