@@ -10,15 +10,18 @@ MASTER_SITES=	http://releases.0x539.de/net6/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network access framework for IPv4/IPv6
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20 # or later (COPYING is LGPL21)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	armin_burgmeier
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
