@@ -12,10 +12,7 @@ COMMENT=	Horde Web-based File Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	cpe horde
-CPE_PRODUCT=	groupware
-CPE_VENDOR=	horde
-CPE_EDITION=	webmail
+USES=	horde
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
