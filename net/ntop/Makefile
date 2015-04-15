@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libevent.so:${PORTSDIR}/devel/libevent2
@@ -22,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		autoreconf:build gmake libtool python
+USES=		autoreconf:build cpe gmake libtool python
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
