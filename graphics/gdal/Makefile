@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-threads=yes \
 		--without-libtool
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE} -lpthread
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
