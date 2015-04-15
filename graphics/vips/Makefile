@@ -10,6 +10,7 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free image processing system
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		liborc-0.4.so:${PORTSDIR}/devel/orc \
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix
+USES=		cpe gettext gmake libtool pathfix pkgconfig shebangfix
 SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
 USE_GNOME=	glib20 libgsf libxml2 pango
 GNU_CONFIGURE=	yes
