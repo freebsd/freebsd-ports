@@ -511,10 +511,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				    - PREFIX can't have a trailing slash.
 #
 # BUNDLE_LIBS	  Teach pkg(8) to not automatically add all shared libraries
-# 				  installed by a port as a "provided" shared libraries provided
-# 				  for other packages (prevent them from being exposed in the
-# 				  solver). This has to be used for ports that bundle third
-# 				  party libraries for internal usage.
+# 				  installed by a port as shared libraries "provided" for
+#				  other packages (i.e., do not expose them in the solver).
+#				  This has to be used for ports that bundle third party
+#				  libraries for internal usage.
 # MASTERDIR		- Where the port finds patches, package files, etc.  Define
 #				  this is you have two or more ports that share most of the
 #				  files.

@@ -12,6 +12,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Libraries historically supplied with Perl 4
 
 USES=	perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

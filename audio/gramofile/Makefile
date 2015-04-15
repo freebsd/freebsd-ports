@@ -7,15 +7,12 @@ PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensourcepartners.nl/~costar/gramofile/
 
-PATCH_SITES=	${MASTER_SITE_DEBIAN}
-PATCH_SITE_SUBDIR=	pool/main/g/${PORTNAME}
+PATCH_SITES=	LOCAL/nox/
 PATCHFILES=	${PORTNAME}_1.6-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
-
-BROKEN=		Debian patches unfetchable
 
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 

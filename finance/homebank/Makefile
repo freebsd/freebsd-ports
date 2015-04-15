@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	homebank
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -18,7 +18,7 @@ USE_GNOME=	gtk30
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
@@ -28,9 +28,6 @@ OPTIONS_DEFAULT=OFX
 
 OFX_CONFIGURE_WITH=	ofx
 OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
-
-post-extract:
-	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

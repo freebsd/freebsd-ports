@@ -12,6 +12,8 @@ COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Checksum and size mismatch
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	libgldi.so:${PORTSDIR}/deskutils/cairo-dock
 

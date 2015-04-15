@@ -759,6 +759,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem

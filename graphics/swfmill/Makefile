@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 USES=		dos2unix iconv gmake pkgconfig libtool
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 DOS2UNIX_FILES=	src/swft/swft_import_ttf.cpp
 
 PLIST_FILES=	bin/swfmill

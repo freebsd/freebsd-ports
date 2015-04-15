@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_encoding
 PORTVERSION=	20021209
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -39,10 +39,17 @@ EXTRA_PATCHES+=	${PATCHDIR}/iconv_hook-20040430.patch
 EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch22
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ENV+=	ac_cv_lib_iconv_iconv=no \
+		ac_cv_lib_iconv_libiconv=no
+.endif
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	$(APXS) -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
 		-i -n ${MODULENAME} ${WRKSRC}/${MODULENAME}.la
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,10 +3,9 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../src
+MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
 
 MAINTAINER=	perl@FreeBSD.org
@@ -111,25 +110,9 @@ SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		SITEMAN3PREFIX=${SITE_MAN3_PREFIX} \
 		PERL_ARCH=${PERL_ARCH}
 
-SUB_FILES=	perl5_version use.perl perl-man.conf
+SUB_FILES=	perl5_version
 
-PKGINSTALL=	${WRKDIR}/use.perl
-PKGDEINSTALL=	${WRKDIR}/use.perl
 INSTALL_TARGET=	install-strip
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-
-# if this port is default due PERL5_DEFAULT
-# change PKGNAME to reflect this
-.if ${PERL_VER} == ${PERL5_DEFAULT}
-PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
-.else
-# make PKGNAME unique among other lang/perl5.x
-PKGNAMESUFFIX=	${PERL_VER}
-# always add default perl5 pkgname to conflicts
-CONFLICTS_INSTALL+=	perl5-*
-.endif
 
 .if defined(PERL_VENDOR_PREFIX)
 CONFIGURE_ARGS+=	\
@@ -163,19 +146,34 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		ARCH_LIB=${_ARCH_LIB}
 
-.if ${PORT_OPTIONS:MDEBUG}
-STRIP=
-STRIP_CMD=	${TRUE}
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+# if this port is default due PERL5_DEFAULT
+# change PKGNAME to reflect this
+.if ${PERL_VER} == ${PERL5_DEFAULT}
+PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
+.else
+# make PKGNAME unique among other lang/perl5.x
+PKGNAMESUFFIX=	${PERL_VER}
+# always add default perl5 pkgname to conflicts
+CONFLICTS_INSTALL+=	perl5-*
 .endif
 
 .if ${OSVERSION} >= 900022
+SUB_FILES+=	perl-man.conf
 PLIST_SUB+=	MANCONF=""
 .else
+# FIXME when 8.4 goes out, remove this
+SUB_FILES+=	use.perl
 PLIST_SUB+=	MANCONF="@comment "
+PKGINSTALL=	${WRKDIR}/use.perl
+PKGDEINSTALL=	${WRKDIR}/use.perl
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-WITH_PTHREAD=		yes
+.if ${PORT_OPTIONS:MDEBUG}
+STRIP=
+STRIP_CMD=	${TRUE}
 .endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.

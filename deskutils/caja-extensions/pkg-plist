@@ -19,8 +19,6 @@ share/MateConf/gsettings/caja-sendto-convert
 %%DATADIR%%/caja-image-rotate.ui
 %%DATADIR%%/caja-sendto.ui
 %%DATADIR%%/share-dialog.ui
-share/glib-2.0/schemas/org.mate.Caja.Sendto.gschema.xml
-share/glib-2.0/schemas/org.mate.caja-open-terminal.gschema.xml
 share/gtk-doc/html/caja-sendto/api-index-full.html
 share/gtk-doc/html/caja-sendto/caja-sendto-caja-sendto-plugin.html
 share/gtk-doc/html/caja-sendto/caja-sendto.devhelp2

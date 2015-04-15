@@ -11,6 +11,8 @@ DISTNAME=	sdb-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple database library
 
+BROKEN=		Unfetchable
+
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes

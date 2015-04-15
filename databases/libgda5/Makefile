@@ -107,12 +107,21 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<db\.h>|<db${BDB_VER}/db.h>|' \
 	    	${WRKSRC}/providers/bdb/gda-bdb-provider.c \
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
+.if ${LIBGDA5_SLAVE} == jdbc
+	@${REINPLACE_CMD} -e 's|lib/amd64|lib/${ARCH}|g' \
+		${WRKSRC}/getsp.java
+.endif
 .if ${LIBGDA5_SLAVE}!="no"
 	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
 		-e 's|$$(top_builddir)/libgda/libgda-5.0.la|-lgda-5.0|g' \
 		-e 's|../libgda/libgda-5.0.la|-lgda-5.0|g' \
 		{} \;
 .endif
+
+.if ${LIBGDA5_SLAVE} == jdbc
+pre-configure:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/javac getsp.java
+.endif	
 
 pre-build:
 .if ${LIBGDA5_SLAVE}==postgresql

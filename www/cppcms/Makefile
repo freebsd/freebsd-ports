@@ -2,6 +2,7 @@
 
 PORTNAME=	cppcms
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
@@ -12,12 +13,12 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		cmake tar:bzip2
+USES=		cmake python:2 tar:bzip2
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		EXAMPLES GCRYPT ICU
 OPTIONS_DEFAULT=	ICU
-GCRYPT_DESC=		libgcrypt support
 ICU_DESC=		ICU unicode support
 
 .include <bsd.port.options.mk>
@@ -32,9 +33,8 @@ CMAKE_ARGS+=	-DDISABLE_ICU_LOCALE:BOOL=ON
 
 .if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-CMAKE_ARGS+=	-DDISABLE_OPENSSL:BOOL=ON
+CMAKE_ARGS+=	-DDISABLE_GCRYPT:BOOL=OFF
 .else
-USE_OPENSSL=	yes
 CMAKE_ARGS+=	-DDISABLE_GCRYPT:BOOL=ON
 .endif
 

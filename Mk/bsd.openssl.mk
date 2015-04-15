@@ -4,20 +4,20 @@
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
-# the user/port can now set this options in the makefiles.
+# The user/port can now set these options in the Makefiles.
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
-# WITH_OPENSSL_PORT=yes	- Use the OpenSSL port, even if base is up to date
+# WITH_OPENSSL_PORT=yes	- Use the OpenSSL port, even if base is up to date.
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
-#			  needed for ports who don't use LDFLAGS
+#			  needed for ports who don't use LDFLAGS.
 #
 # Overrideable defaults:
 #
 # OPENSSL_SHLIBVER=	8
 # OPENSSL_PORT=		security/openssl
 #
-# The makefile sets this variables:
+# The Makefile sets these variables:
 # OPENSSLBASE		- "/usr" or ${LOCALBASE}
 # OPENSSLDIR		- path to openssl
 # OPENSSLLIB		- path to the libs
@@ -31,7 +31,7 @@
 
 OpenSSL_Include_MAINTAINER=	dinoex@FreeBSD.org
 
-#	if no preference was set, check for an installed base version
+#	If no preference was set, check for an installed base version
 #	but give an installed port preference over it.
 .if	!defined(WITH_OPENSSL_BASE) && \
 	!defined(WITH_OPENSSL_PORT) && \
@@ -46,8 +46,8 @@ OPENSSLDIR?=		/etc/ssl
 
 .if !exists(${DESTDIR}/usr/lib/libcrypto.so)
 check-depends::
-	@${ECHO_CMD} "Dependency error: this port requires the OpenSSL library, which is part of"
-	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
+	@${ECHO_CMD} "Dependency error: This port requires the OpenSSL library, which is part of"
+	@${ECHO_CMD} "the FreeBSD crypto distribution, but not installed on your"
 	@${ECHO_CMD} "machine. Please see the \"OpenSSL\" section in the handbook"
 	@${ECHO_CMD} "(at \"http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/openssl.html\", for instance)"
 	@${ECHO_CMD} "for instructions on how to obtain and install the FreeBSD"
@@ -56,7 +56,7 @@ check-depends::
 .endif
 .if exists(${LOCALBASE}/lib/libcrypto.so)
 check-depends::
-	@${ECHO_CMD} "Dependency error: this port wants the OpenSSL library from the FreeBSD"
+	@${ECHO_CMD} "Dependency error: This port wants the OpenSSL library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
 	@${ECHO_CMD} "version is installed by a port."
 	@${ECHO_CMD} "Please deinstall the port or undefine WITH_OPENSSL_BASE."
@@ -133,7 +133,8 @@ OPENSSL_LDFLAGS+=	-Wl,-rpath,${OPENSSLRPATH}
 LDFLAGS+=${OPENSSL_LDFLAGS}
 
 MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-			OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+			OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR} \
+			OPENSSLRPATH=${OPENSSLRPATH}
 
 ### crypto
 #RESTRICTED=		"Contains cryptography."

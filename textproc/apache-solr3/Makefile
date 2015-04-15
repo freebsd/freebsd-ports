@@ -7,7 +7,6 @@ CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}/
 PKGNAMESUFFIX=	3
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
@@ -21,6 +20,9 @@ NO_BUILD=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes
 PORTEXAMPLES=	*
+USES=		cpe tar:tgz
+CPE_PRODUCT=	solr
+CPE_VENDOR=	apache
 
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${JAVAJARDIR}

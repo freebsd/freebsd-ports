@@ -97,6 +97,7 @@
     SUBDIR += opendnssec
     SUBDIR += opendnssec13
     SUBDIR += openresolv
+    SUBDIR += p5-AnyEvent-CacheDNS
     SUBDIR += p5-AnyEvent-DNS-EtcHosts
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-BIND-Config-Parser

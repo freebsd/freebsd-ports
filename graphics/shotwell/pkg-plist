@@ -33,7 +33,6 @@ share/GConf/gsettings/shotwell.convert
 share/appdata/shotwell.appdata.xml
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
-share/glib-2.0/schemas/gschemas.compiled
 share/gnome/help/shotwell/C/edit-adjustments.page
 share/gnome/help/shotwell/C/edit-crop.page
 share/gnome/help/shotwell/C/edit-enhance.page

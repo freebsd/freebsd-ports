@@ -89,6 +89,11 @@ RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 502100
+BUILD_DEPENDS+=	p5-CGI-Fast>=0:${PORTSDIR}/www/p5-CGI-Fast
+RUN_DEPENDS+=	p5-CGI-Fast>=0:${PORTSDIR}/www/p5-CGI-Fast
+.endif
+
 # We will take these from CPAN instead
 post-extract:
 	cd ${WRKSRC}/lib ; ${RM} BER.pm SNMP_util.pm SNMP_Session.pm

@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	SSL SASL TEST
 OPTIONS_DEFAULT=SSL
 TEST_DESC=	Add support for running regression test
 
-USES=		execinfo scons
+USES=		cpe execinfo scons
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --cc=${CC} --cxx=${CXX} \
 		--use-system-pcre --use-system-snappy --use-system-v8
 

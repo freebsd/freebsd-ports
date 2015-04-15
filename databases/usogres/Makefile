@@ -9,6 +9,8 @@ MASTER_SITES=	http://usogres.good-day.net/download/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Real-time backup utility for PostgreSQL
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2
 SUB_FILES=	pkg-message

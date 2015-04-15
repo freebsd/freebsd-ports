@@ -1,11 +1,35 @@
---- cmake/FindIconv.cmake.orig	2014-06-30 22:48:42.000000000 +0200
-+++ cmake/FindIconv.cmake	2014-07-22 12:50:55.000000000 +0200
-@@ -18,7 +18,7 @@
- IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
- 	FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c HINTS "/opt/local/lib")
- ELSE()
--	FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c)
-+	FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv c libiconv libiconv-2)
- ENDIF()
+--- cmake/FindIconv.cmake.orig	2014-06-30 20:48:42 UTC
++++ cmake/FindIconv.cmake
+@@ -7,6 +7,7 @@
+ #  ICONV_SECOND_ARGUMENT_IS_CONST - the second argument for iconv() is const
+ #
+ include(CheckCXXSourceCompiles)
++include(CheckFunctionExists)
  
- IF(ICONV_INCLUDE_DIR AND ICONV_LIBRARIES)
+ IF (ICONV_INCLUDE_DIR AND ICONV_LIBRARIES)
+   # Already in cache, be silent
+@@ -15,15 +16,15 @@ ENDIF (ICONV_INCLUDE_DIR AND ICONV_LIBRA
+ 
+ FIND_PATH(ICONV_INCLUDE_DIR iconv.h)
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+-	FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c HINTS "/opt/local/lib")
+-ELSE()
+-	FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2 c)
+-ENDIF()
+-
+-IF(ICONV_INCLUDE_DIR AND ICONV_LIBRARIES)
+-   SET(ICONV_FOUND TRUE)
+-ENDIF(ICONV_INCLUDE_DIR AND ICONV_LIBRARIES)
++IF(ICONV_INCLUDE_DIR)
++  CHECK_FUNCTION_EXISTS(iconv ICONV_FOUND)
++  IF(NOT ICONV_FOUND)
++    FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv libiconv libiconv-2)
++    IF(ICONV_LIBRARIES)
++      SET(ICONV_FOUND TRUE)
++    ENDIF(ICONV_LIBRARIES)
++  ENDIF(NOT ICONV_FOUND)
++ENDIF(ICONV_INCLUDE_DIR)
+ 
+ set(CMAKE_REQUIRED_INCLUDES ${ICONV_INCLUDE_DIR})
+ set(CMAKE_REQUIRED_LIBRARIES ${ICONV_LIBRARIES})

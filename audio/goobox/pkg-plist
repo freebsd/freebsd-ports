@@ -2,7 +2,6 @@ bin/goobox
 share/GConf/gsettings/goobox.convert
 share/appdata/goobox.appdata.xml
 share/applications/goobox.desktop
-share/glib-2.0/schemas/org.gnome.Goobox.gschema.xml
 share/help/C/goobox/index.page
 share/help/C/goobox/legal.xml
 share/help/C/goobox/preferences.page

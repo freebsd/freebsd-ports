@@ -11,7 +11,7 @@ COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
 
-USES=		gmake libtool perl5 pkgconfig python
+USES=		cpe gmake libtool perl5 pkgconfig python
 USE_OPENSSL=	yes
 USE_LDCONFIG=   yes
 GNU_CONFIGURE=	yes

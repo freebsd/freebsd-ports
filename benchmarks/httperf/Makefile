@@ -19,6 +19,8 @@ MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 
 PLIST_FILES=	bin/httperf \
 		man/man1/httperf.1.gz
+
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	ChangeLog NEWS README TODO
 
 do-install:

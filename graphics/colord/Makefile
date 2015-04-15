@@ -4,6 +4,7 @@
 
 PORTNAME=	colord
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -24,6 +25,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--disable-udev \
+		--localstatedir=/var \
 		--enable-gtk-doc-html=no \
 		--disable-bash-completion \
 		--disable-gusb \

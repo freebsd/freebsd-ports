@@ -12,6 +12,7 @@ MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libtalloc.so:${PORTSDIR}/devel/talloc \
@@ -53,10 +54,11 @@ SUB_FILES=	pkg-message
 
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
-USES=		autoreconf gettext gmake iconv libtool pathfix pkgconfig \
+USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
 		python:2 shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	fedoraproject
 
 python_CMD=   ${SETENV} python2
 SHEBANG_FILES=	src/tools/sss_obfuscate \

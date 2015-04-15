@@ -57,6 +57,88 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5713bfda-e27d-11e4-b2ce-5453ed2e2b49">
+    <topic>qt4-imageformats, qt4-gui, qt5-gui -- Multiple Vulnerabilities in Qt Image Format Handling</topic>
+    <affects>
+      <package>
+	<name>qt4-imageformats</name>
+	<range><lt>4.8.6_3</lt></range>
+      </package>
+      <package>
+	<name>qt4-gui</name>
+	<range><lt>4.8.6_5</lt></range>
+      </package>
+      <package>
+	<name>qt5-gui</name>
+	<range><lt>5.4.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2015-April/000067.html">
+	  <p>Due to two recent vulnerabilities identified in the built-in image
+	  format handling code, it was decided that this area required further
+	  testing to determine if further issues remained. Fuzzing using
+	  afl-fuzz located a number of issues in the handling of BMP, ICO and
+	  GIF files. The issues exposed included denial of service and buffer
+	  overflows leading to heap corruption. It is possible the latter could
+	  be used to perform remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://lists.qt-project.org/pipermail/announce/2015-April/000067.html</mlist>
+      <cvename>CVE-2015-1858</cvename>
+      <cvename>CVE-2015-1859</cvename>
+      <cvename>CVE-2015-1860</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-12</discovery>
+      <entry>2015-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d4379f59-3e9b-49eb-933b-61de4d0b0fdb">
+    <topic>Ruby -- OpenSSL Hostname Verification Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby20</name>
+	<range><lt>2.0.0.645,1</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><lt>2.1.6,1</lt></range>
+      </package>
+      <package>
+	<name>ruby22</name>
+	<range><lt>2.2.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Developers report:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2015/04/13/ruby-openssl-hostname-matching-vulnerability/">
+	  <p>After reviewing RFC 6125 and RFC 5280, we found multiple violations
+	    of matching hostnames and particularly wildcard certificates.</p>
+	  <p>Ruby’s OpenSSL extension will now provide a string-based matching
+	    algorithm which follows more strict behavior, as recommended by
+	    these RFCs. In particular, matching of more than one wildcard per
+	    subject/SAN is no-longer allowed. As well, comparison of these
+	    values are now case-insensitive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.ruby-lang.org/en/news/2015/04/13/ruby-openssl-hostname-matching-vulnerability/</url>
+      <cvename>CVE-2015-1855</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-13</discovery>
+      <entry>2015-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5f160fa-deee-11e4-99f8-080027ef73ec">
     <topic>mailman -- path traversal vulnerability</topic>
     <affects>

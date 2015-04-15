@@ -14,6 +14,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

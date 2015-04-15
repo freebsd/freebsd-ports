@@ -31,6 +31,12 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

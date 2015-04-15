@@ -53,10 +53,6 @@ XPS_DESC=	XPS support
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build
-.endif
-
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
 USE_TEX=	latex
 

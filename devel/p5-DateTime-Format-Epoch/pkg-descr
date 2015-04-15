@@ -2,4 +2,5 @@ This module can convert a DateTime object (or any object that can be converted
 to a DateTime object) to the number of seconds since a given epoch. It can also
 do the reverse.
 
+WWW: https://metacpan.org/pod/DateTime::Format::Epoch
 WWW: http://datetime.perl.org/

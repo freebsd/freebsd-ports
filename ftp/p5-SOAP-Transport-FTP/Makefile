@@ -14,7 +14,7 @@ COMMENT=	FTP Client support for SOAP::Lite
 BUILD_DEPENDS=	p5-SOAP-Lite>=0.711:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 USES=		perl5
 
 .include <bsd.port.mk>

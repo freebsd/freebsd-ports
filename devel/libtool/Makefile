@@ -17,8 +17,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 MAKE_ARGS=	MAKEINFOFLAGS=--no-split
-USES+=		cpe makeinfo
-CPE_VENDOR=	gnu
+USES+=		makeinfo
 
 INFO=		libtool
 

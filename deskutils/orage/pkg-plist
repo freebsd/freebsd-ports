@@ -1,8 +1,7 @@
 bin/globaltime
 bin/orage
 bin/tz_convert
-lib/xfce4/panel/plugins/orageclock.la
-lib/xfce4/panel/plugins/orageclock.so
+lib/xfce4/panel/plugins/liborageclock.so
 man/man1/globaltime.1.gz
 man/man1/orage.1.gz
 man/man1/tz_convert.1.gz

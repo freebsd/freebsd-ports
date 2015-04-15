@@ -1,5 +1,5 @@
---- Makefile.orig	2015-03-28 15:11:25.000000000 +0100
-+++ Makefile	2015-03-28 15:14:57.000000000 +0100
+--- Makefile.orig	2015-03-24 01:38:31.000000000 +0100
++++ Makefile	2015-04-14 13:06:36.396704000 +0200
 @@ -13,7 +13,7 @@
  VALAC := $(shell which $(VALAC))
  endif
@@ -25,8 +25,12 @@
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libraw >= 0.13.2 \
-@@ -544,8 +542,8 @@
- 	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+@@ -541,11 +539,11 @@
+ 	$(INSTALL_DATA) misc/org.yorba.shotwell.gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ 	$(INSTALL_DATA) misc/org.yorba.shotwell-extras.gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ ifndef DISABLE_SCHEMAS_COMPILE
+-	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
++#	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
 -	mkdir -p $(DESTDIR)/usr/share/GConf/gsettings

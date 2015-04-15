@@ -1,3 +1,6 @@
-Xfdashboard is GNOME shell like for the Xfce desktop
+Xfdashboard provides a GNOME shell dashboard like interface for use with
+the Xfce desktop. It can be configured to run any keyboard shortcut and
+when executed provides an overview of applications currently open enabling
+the user to switch between different applications.
 
-WWW: http://xfdashboard.froevel.de/
+WWW: http://goodies.xfce.org/projects/applications/xfdashboard/

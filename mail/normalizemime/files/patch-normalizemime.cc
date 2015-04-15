@@ -9,15 +9,6 @@
  #include <string.h>
  #include <stdlib.h>
  #include <regex.h>
-@@ -500,7 +502,7 @@
-   char *obuf = buf;
-   memcpy (icopy, message.c_str(), in_left);
-   message.erase ();
--  char *ibuf = icopy;
-+  const char *ibuf = icopy;
- 
-   while (in_left > 0) {
-     if ((size_t)(-1) == iconv (ic, &ibuf, &in_left, &obuf, &out_left)) {
 @@ -1493,6 +1495,7 @@
        "X-Spam-",           // Added by SpamAssasin for example
        "X-CRM114-",         // Added by CRM114

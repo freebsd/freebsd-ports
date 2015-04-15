@@ -236,5 +236,6 @@ scripts/mkaliasdir
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
 @unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\"' >> /etc/rc.conf" | /usr/bin/fmt
 @cwd %%LOCALBASE%%
+@dir etc/man.d
 etc/man.d/qmail.conf
 @cwd %%QMAIL_PREFIX%%

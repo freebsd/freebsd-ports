@@ -1032,10 +1032,11 @@
     SUBDIR += vpnc-scripts
     SUBDIR += vstrip
     SUBDIR += vttest
-    SUBDIR += warden
     SUBDIR += wait_on
+    SUBDIR += warden
     SUBDIR += watchdog
     SUBDIR += watchfolder
+    SUBDIR += watchman
     SUBDIR += watchmen
     SUBDIR += webjob
     SUBDIR += webmin

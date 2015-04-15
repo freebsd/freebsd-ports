@@ -3,13 +3,14 @@
 
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME:S/-//g}/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Puzzle game based on hexagonal tiles
 
+USES=		iconv
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 

@@ -9,14 +9,14 @@
 +#elif defined(linux)
  #include <linux/bttv.h>
  #include <sys/soundcard.h>
--#else
 +#elif defined(__FreeBSD__)
 +#include <sys/soundcard.h>
- #include <machine/ioctl_bt848.h>
++#include <dev/bktr/ioctl_bt848.h>
+ #else
+-#include <machine/ioctl_bt848.h>
 -#ifdef JUHA_DRIVER
 -#include <machine/ioctl_tuner.h>
 -#endif
-+#else
  #include <machine/soundcard.h>
  #endif
 +#ifdef JUHA_DRIVER

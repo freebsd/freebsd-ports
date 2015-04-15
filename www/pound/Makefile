@@ -3,7 +3,7 @@
 
 PORTNAME=	pound
 PORTVERSION=	2.7
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -17,18 +17,11 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}
-
-OPTIONS_DEFINE=	DOCS MSDAV PCRE
-OPTIONS_DEFAULT=PCRE
-MSDAV_DESC=	Microsoft WebDAV extension support
-
-PCRE_CONFIGUE_ENABLE=	pcreposix
-MSDAV_CONFIGURE_ENABLE=	msdav
-CONFIGURE_ARGS=		--disable-tcmalloc --disable-hoard
 
 PLIST_FILES=	sbin/pound \
 		sbin/poundctl \
@@ -36,13 +29,17 @@ PLIST_FILES=	sbin/pound \
 		man/man8/poundctl.8.gz
 PORTDOCS=	README FAQ CHANGELOG
 
+OPTIONS_DEFINE=	DOCS PCRE
+OPTIONS_DEFAULT=PCRE
+
+PCRE_CONFIGURE_ENABLE=	pcreposix
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
-CFLAGS+=		-I${LOCALBASE}/include
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 do-install:
@@ -50,9 +47,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pound.8 ${WRKSRC}/poundctl.8 \
 		${STAGEDIR}${MANPREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

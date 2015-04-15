@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/X11/Xlib.pm
+%%SITE_ARCH%%/X11/Xlib/Window.pm
+%%SITE_ARCH%%/auto/X11/Xlib/Xlib.so
+%%PERL5_MAN3%%/X11::Xlib.3.gz
+%%PERL5_MAN3%%/X11::Xlib::Window.3.gz

@@ -7,7 +7,7 @@ PORTVERSION=	3.14.1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
 
 LICENSE=	GPLv2

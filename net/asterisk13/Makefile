@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.3.2
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -129,6 +130,11 @@ LIB_DEPENDS+=		libsrtp.so:${PORTSDIR}/net/libsrtp
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
+		ac_cv_lib_iconv_libiconv_open=no
+.endif
 
 .if ${PREFIX} == ${LOCALBASE}
 VARDIR=/var

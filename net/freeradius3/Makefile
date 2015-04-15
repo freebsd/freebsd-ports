@@ -221,7 +221,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREST}
-LIB_DEPENDS+=	libjson.so:${PORTSDIR}/devel/json-c \
+LIB_DEPENDS+=	libjson-c.so:${PORTSDIR}/devel/json-c \
     		libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
 		--with-libcurl=${LOCALBASE} \

@@ -6,6 +6,7 @@ share/apps/subtitlecomposer/pics/hi128-app-subtitlecomposer.png
 share/apps/subtitlecomposer/pics/hi16-action-select-stream.png
 share/apps/subtitlecomposer/pics/hi16-action-time-from-video.png
 share/apps/subtitlecomposer/pics/hi16-app-subtitlecomposer.png
+share/apps/subtitlecomposer/pics/hi256-app-subtitlecomposer.png
 share/apps/subtitlecomposer/pics/hi32-app-subtitlecomposer.png
 share/apps/subtitlecomposer/pics/hi48-action-audio-extract.png
 share/apps/subtitlecomposer/pics/hi48-action-set-hide-time.png
@@ -49,6 +50,7 @@ share/icons/hicolor/128x128/apps/subtitlecomposer.png
 share/icons/hicolor/16x16/actions/select-stream.png
 share/icons/hicolor/16x16/actions/time-from-video.png
 share/icons/hicolor/16x16/apps/subtitlecomposer.png
+share/icons/hicolor/256x256/apps/subtitlecomposer.png
 share/icons/hicolor/32x32/apps/subtitlecomposer.png
 share/icons/hicolor/48x48/actions/audio-extract.png
 share/icons/hicolor/48x48/actions/set-hide-time.png
@@ -66,6 +68,7 @@ share/locale/de/LC_MESSAGES/subtitlecomposer.mo
 share/locale/el/LC_MESSAGES/subtitlecomposer.mo
 share/locale/es/LC_MESSAGES/subtitlecomposer.mo
 share/locale/fr/LC_MESSAGES/subtitlecomposer.mo
+share/locale/hr/LC_MESSAGES/subtitlecomposer.mo
 share/locale/hu/LC_MESSAGES/subtitlecomposer.mo
 share/locale/pl/LC_MESSAGES/subtitlecomposer.mo
 share/locale/pt_BR/LC_MESSAGES/subtitlecomposer.mo

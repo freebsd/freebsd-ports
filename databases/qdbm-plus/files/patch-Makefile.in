@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-03-07 02:44:50 UTC
++++ Makefile.in
+@@ -44,7 +44,7 @@ CPPFLAGS = @CPPFLAGS@ -I$(srcdir) -I$(sr
+   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
+   -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
+   -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 -DNDEBUG
+-CXXFLAGS = -Wall -ansi -pedantic -fsigned-char -fPIC -O2 -fno-strict-aliasing @MYOPTS@
++CXXFLAGS = @CXXFLAGS@ -Wall -ansi -pedantic -fsigned-char -fPIC -fno-strict-aliasing
+ LD = @LD@
+ LIBS = -lqdbm @LIBS@
+ LIBLDFLAGS = @LDFLAGS@ -L. -L$(srcdir)/.. -L$(MYLIBDIR) \

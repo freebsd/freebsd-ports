@@ -1,0 +1,12 @@
+--- configure.orig	2015-03-11 10:22:50.000000000 +0400
++++ configure	2015-03-11 10:27:05.000000000 +0400
+@@ -31858,8 +31858,7 @@
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-else
+-  BUILD_HELPER=""
++  BUILD_HELPER="NIS"
+ fi
+ 
+ done

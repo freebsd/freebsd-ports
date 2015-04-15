@@ -749,6 +749,10 @@ sbin/yarn-daemons.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-log4j.properties
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-signature.secret
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-site.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/kms-acls.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/kms-env.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/kms-log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/kms-site.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/log4j.properties
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mapred-env.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mapred-queues.xml.template

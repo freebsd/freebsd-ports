@@ -3,7 +3,7 @@
 
 PORTNAME=	jikes
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	SF/${PORTNAME}/Jikes/${PORTVERSION}
 
@@ -12,6 +12,7 @@ COMMENT=	Java source to byte-code compiler made available by IBM
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_search_libiconv_open=no
 USES=		iconv gmake tar:bzip2
 
 CPPFLAGS+=	-I${LOCALBASE}/include

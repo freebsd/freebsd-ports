@@ -14,6 +14,9 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LGPL
+
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libspeexdsp.so:${PORTSDIR}/audio/speexdsp \
@@ -28,7 +31,7 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 USE_GNOME=	glib20 intltool
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread" \
 		OPENSSL_CFLAGS="-I/usr/include" \

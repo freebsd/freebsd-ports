@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	signatures
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:KAPPA
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Subroutine signatures for Perl with no source filter
 
 BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0.18:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \

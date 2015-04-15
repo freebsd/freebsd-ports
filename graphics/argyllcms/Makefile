@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/Argyll_V${PORTVERSION}
 
-USES=		zip
+USES=		cpe zip
 USE_XORG=	x11 xau xdmcp xext xinerama xrandr xscrnsaver xxf86vm 
 
 post-patch:

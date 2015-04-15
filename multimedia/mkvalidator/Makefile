@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvalidator
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
@@ -11,23 +11,35 @@ COMMENT=	Command line tool to verify Matroska and WebM files
 LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-HAS_CONFIGURE=	yes
-
-USES=		iconv gmake tar:bzip2
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-
-MAKE_ENV+=	"LFLAGS=${LDFLAGS}"
-MAKEFILE=	GNUmakefile
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-PLIST_FILES=	bin/mkvalidator
+USES=		gmake iconv tar:bzip2
+HAS_CONFIGURE=	yes
+MAKE_ENV=	V=1
+MAKEFILE=	GNUmakefile
 
-BROKEN_sparc64=	Does not install on sparc64: gmake: GNUmakefile: No such file or directory
+CFLAGS+=	-I${ICONV_PREFIX}/include
+LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
-post-extract:
-	@${REINPLACE_CMD} -e 's,/usr/local,$$(DESTDIR)$$(PREFIX),g' ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
-	@${RM} ${WRKSRC}/libmatroska2/test/test.proj
+PLIST_FILES=	bin/mkvalidator bin/mkvtree
+
+BROKEN_sparc64=	Build broken on big endian architectures
+
+MAKE_JOBS_UNSAFE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		'/STRIP/s|strip|${STRIP_CMD:T}| ; \
+		 /CCFLAGS/s|-O3 .* -W|-W|' \
+		${WRKSRC}/corec/tools/coremake/gcc_linux*.build
+	${REINPLACE_CMD} -e \
+		's|/usr/local|$$(DESTDIR)$$(PREFIX)|g' \
+		${WRKSRC}/corec/tools/coremake/gcc_mak.inc
+	${REINPLACE_CMD} -e \
+		's|arm-none-linux-gnueabi-gcc|${CC}| ; \
+		 s|arm-none-linux-gnueabi-g++|${CXX}| ; \
+		 s|arm-none-linux-gnueabi-ar|${AR}| ; \
+		 s|arm-none-linux-gnueabi-strip|${STRIP_CMD}|' \
+		${WRKSRC}/corec/tools/coremake/gcc_linux_arm.build
 
 .include <bsd.port.mk>
