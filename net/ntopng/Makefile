@@ -11,6 +11,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Fails to link
 
@@ -23,8 +24,10 @@ USE_AUTOTOOLS=	autoheader aclocal libtoolize
 USE_SQLITE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=	 	gmake libtool pathfix pkgconfig tar:tgz
+USES=	 	cpe gmake libtool pathfix pkgconfig tar:tgz
 SUB_FILES=	ntopng-geoipupdate.sh
+
+CPE_VENDOR=	ntop
 
 OPTIONS_DEFINE=	GEOIP NLS
 OPTIONS_DEFAULT=	GEOIP
