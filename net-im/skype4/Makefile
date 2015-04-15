@@ -30,7 +30,7 @@ PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
-#BROKEN=		Skype 4.3 is missing several Linux syscalls.
+BROKEN=		Skype 4.3 is missing several Linux syscalls.
 
 #NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 #NVIDIA_GL_USE=		LINUX_APPS=xorglibs
