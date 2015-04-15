@@ -11,10 +11,17 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library and tools to read, create, and modify mp4 files
 
 CONFLICTS=	mpeg4ip-libmp4v2-[0-9.]*
-USES=		gmake libtool tar:bzip2
+USES=		compiler gmake libtool tar:bzip2
 MAKEFILE=	GNUmakefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	"FOUND_HELP2MAN=no"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+CONFIGURE_ARGS=	--disable-gch
+.endif
+
+.include <bsd.port.post.mk>
