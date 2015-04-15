@@ -17,10 +17,12 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libnet.so:${PORTSDIR}/net/libnet \
 		libyaml.so:${PORTSDIR}/textproc/libyaml
 
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	openinfosecfoundation
 
 INSTALL_TARGET=		install-strip
 PATHFIX_MAKEFILEIN=	Makefile.am
