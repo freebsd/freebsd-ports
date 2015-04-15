@@ -1,0 +1,5 @@
+include/bzrtp/bzrtp.h
+lib/libbzrtp.so
+lib/libbzrtp.so.0
+lib/libbzrtp.so.0.0.0
+libdata/pkgconfig/libbzrtp.pc
