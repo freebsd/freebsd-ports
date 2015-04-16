@@ -25,7 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/phantomjs
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm
+	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm \
+		--qt-config '-no-pch'
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/
