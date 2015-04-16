@@ -22,8 +22,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
-USES=		compiler:c++11-lang pkgconfig gmake
+USES=		cpe compiler:c++11-lang pkgconfig gmake
 USE_XORG=	x11 xext
+
+CPE_VENDOR=	artifex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
