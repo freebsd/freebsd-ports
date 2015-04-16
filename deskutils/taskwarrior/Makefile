@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	taskwarrior
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
