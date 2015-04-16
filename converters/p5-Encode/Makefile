@@ -17,7 +17,16 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502101
+PLIST_FILES+=	bin/encguess man/man1/encguess.1.gz
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/enc2xs||; s|bin/piconv||' ${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL} >= 502101
+	@${REINPLACE_CMD} -e 's|bin/encguess||' ${WRKSRC}/Makefile.PL
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
