@@ -31,4 +31,4 @@ Features:
   bitrate based on received RTCP feedback
 * Can use plugins to add new codecs, new sound input/output backends,...
 
-WWW: http://www.linphone.org/eng/documentation/dev/mediastreamer2.html
+WWW: https://www.linphone.org/technical-corner/mediastreamer2.html
