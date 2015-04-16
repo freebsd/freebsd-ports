@@ -19,12 +19,14 @@ OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
 PLUGINS_DESC=	Install bundled plugins
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
 DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7
+
+CPE_VENDOR=	igniterealtime
 
 ALL_TARGET=	openfire
 USE_RC_SUBR=	openfire
