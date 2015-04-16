@@ -1,0 +1,4 @@
+This library provides support for ZRTP (RFC 6189), a media path key
+agreement protocol for unicast secure RTP.
+
+WWW: https://www.linphone.org

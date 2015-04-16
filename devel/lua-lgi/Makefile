@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	lua@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua bindings to libraries using GObject-Introspection
 
 USE_GITHUB=	yes

@@ -11,20 +11,27 @@ bin/pasuspender
 bin/pax11publish
 bin/pulseaudio
 bin/qpaeq
-bin/start-pulseaudio-kde
 bin/start-pulseaudio-x11
-etc/bash_completion.d/pulseaudio-bash-completion.sh
+%%BASH%%etc/bash_completion.d/pacat
+%%BASH%%etc/bash_completion.d/pacmd
+%%BASH%%etc/bash_completion.d/pactl
+%%BASH%%etc/bash_completion.d/padsp
+%%BASH%%etc/bash_completion.d/paplay
+%%BASH%%etc/bash_completion.d/parec
+%%BASH%%etc/bash_completion.d/parecord
+%%BASH%%etc/bash_completion.d/pasuspender
+%%BASH%%etc/bash_completion.d/pulseaudio
 etc/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
 @sample etc/pulse/default.pa.sample
 @sample etc/pulse/system.pa.sample
 etc/xdg/autostart/pulseaudio.desktop
-etc/xdg/autostart/pulseaudio-kde.desktop
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
 include/pulse/def.h
+include/pulse/direction.h
 include/pulse/error.h
 include/pulse/ext-device-manager.h
 include/pulse/ext-device-restore.h
@@ -62,7 +69,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.0
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.17.3
+lib/libpulse.so.0.18.0
 lib/libpulsecore-%%PULSE_VERSION%%.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
@@ -167,7 +174,6 @@ man/man1/paplay.1.gz
 man/man1/pasuspender.1.gz
 man/man1/pax11publish.1.gz
 man/man1/pulseaudio.1.gz
-man/man1/start-pulseaudio-kde.1.gz
 man/man1/start-pulseaudio-x11.1.gz
 man/man5/default.pa.5.gz
 man/man5/pulse-cli-syntax.5.gz
@@ -190,7 +196,6 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-video.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input.conf.common
-%%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-desktop-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones-2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf
@@ -203,9 +208,12 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-1.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-3.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-4.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-5.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-6.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-7.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/iec958-stereo-output.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/default.conf
-%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/extra-hdmi.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker-and-int-mic.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/kinect-audio.conf
@@ -217,6 +225,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio6.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktorkontrol-s4.conf
+%%ZSH%%share/zsh/site-functions/_pulseaudio
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
@@ -244,15 +253,19 @@ share/locale/pl/LC_MESSAGES/pulseaudio.mo
 share/locale/pt/LC_MESSAGES/pulseaudio.mo
 share/locale/pt_BR/LC_MESSAGES/pulseaudio.mo
 share/locale/ru/LC_MESSAGES/pulseaudio.mo
+share/locale/sk/LC_MESSAGES/pulseaudio.mo
 share/locale/sr/LC_MESSAGES/pulseaudio.mo
 share/locale/sr@latin/LC_MESSAGES/pulseaudio.mo
 share/locale/sv/LC_MESSAGES/pulseaudio.mo
 share/locale/ta/LC_MESSAGES/pulseaudio.mo
 share/locale/te/LC_MESSAGES/pulseaudio.mo
+share/locale/tr/LC_MESSAGES/pulseaudio.mo
 share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_TW/LC_MESSAGES/pulseaudio.mo
 share/vala/vapi/libpulse-mainloop-glib.deps
 share/vala/vapi/libpulse-mainloop-glib.vapi
+share/vala/vapi/libpulse-simple.deps
+share/vala/vapi/libpulse-simple.vapi
 share/vala/vapi/libpulse.deps
 share/vala/vapi/libpulse.vapi

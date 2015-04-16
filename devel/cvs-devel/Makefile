@@ -3,7 +3,7 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.12.13
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	non-gnu/${PORTNAME}/source/feature/${PORTVERSION}
@@ -14,8 +14,8 @@ COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
 CONFLICTS=	cvsnt-[12]* cvs+ipv6-[12]*
 
+USES=		makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
-USES=	tar:bzip2
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Block-sorting file compressor
 
+USES=		cpe
+CPE_VENDOR=	bzip
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p3
 

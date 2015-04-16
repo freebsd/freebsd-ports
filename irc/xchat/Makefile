@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		cpe gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

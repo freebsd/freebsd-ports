@@ -11,8 +11,9 @@ COMMENT=	GObject library to create cabinet files
 
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intlhack introspection:build
+CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>

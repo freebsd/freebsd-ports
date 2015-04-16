@@ -192,6 +192,11 @@ CONFIGURE_ENV=	LIBCXX="-lc++"
 .endif
 .endif
 
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
+.endif
+
 .if empty(ICONV_LIB)
 ICONV_CPPFLAGS=	-DLIBICONV_PLUG
 .else

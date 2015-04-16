@@ -29,7 +29,7 @@ SASL_DESC=	Enable SASL Authentication
 USE_RC_SUBR=	memcached
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-USES=		shebangfix
+USES=		cpe shebangfix
 SHEBANG_FILES=	scripts/memcached-tool
 
 USE_CSTD=	c99

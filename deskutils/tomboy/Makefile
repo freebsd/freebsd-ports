@@ -10,19 +10,23 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Personal note taking system for the GNOME desktop
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
 
-USES=		gettext gmake libtool mono pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake libtool mono pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gnomedocutils gnomesharp20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	tomboy.schemas
+CPE_VENDOR=	gnome
 
 MAKE_JOBS_UNSAFE=yes
 

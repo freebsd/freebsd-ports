@@ -1,9 +1,9 @@
---- examples/Makefile.orig	2015-03-16 09:57:24 UTC
+--- examples/Makefile.orig	2015-04-15 07:50:13 UTC
 +++ examples/Makefile
 @@ -85,8 +85,8 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.6.1
+ CIMG_VERSION = 1.6.2
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = $(X11PATH)
