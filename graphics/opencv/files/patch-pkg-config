@@ -1,0 +1,50 @@
+Description: pkg-config is broken in OpenCV-2.4.x
+Bug: http://code.opencv.org/issues/1925
+Bug-Debian: http://bugs.debian.org/721894, http://bugs.debian.org/678222 
+Author: Ray Rashif
+Last-Update: 2013-11-23
+
+diff --git a/cmake/OpenCVGenPkgconfig.cmake b/cmake/OpenCVGenPkgconfig.cmake
+index a36b70e..a3733bc 100644
+--- cmake/OpenCVGenPkgconfig.cmake
++++ cmake/OpenCVGenPkgconfig.cmake
+@@ -10,7 +10,7 @@
+ # -------------------------------------------------------------------------------------------
+ set(prefix      "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+-set(libdir      "") #TODO: need link paths for OpenCV_EXTRA_COMPONENTS
++set(libdir      "\${prefix}/${OPENCV_LIB_INSTALL_PATH}")
+ set(includedir  "\${prefix}/${OPENCV_INCLUDE_INSTALL_PATH}")
+ 
+ if(CMAKE_BUILD_TYPE MATCHES "Release")
+@@ -35,10 +35,11 @@ ocv_list_reverse(OpenCV_LIB_COMPONENTS)
+ ocv_list_reverse(OpenCV_EXTRA_COMPONENTS)
+ 
+ #build the list of components
+-set(OpenCV_LIB_COMPONENTS_ "")
++set(OpenCV_LIB_COMPONENTS_ "-L\${libdir}")
+ foreach(CVLib ${OpenCV_LIB_COMPONENTS})
+   get_target_property(libpath ${CVLib} LOCATION_${CMAKE_BUILD_TYPE})
+   get_filename_component(libname "${libpath}" NAME)
++  get_filename_component(lname "${libpath}" NAME_WE)
+ 
+   if(INSTALL_TO_MANGLED_PATHS)
+     set(libname "${libname}.${OPENCV_VERSION}")
+@@ -52,6 +53,8 @@ foreach(CVLib ${OpenCV_LIB_COMPONENTS})
+   endif()
+ 
+   set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} \${exec_prefix}/${installDir}/${libname}")
++  string(REPLACE "libopencv" "-lopencv" lname "${lname}")
++  set(OpenCV_LIB_COMPONENTS_ "${OpenCV_LIB_COMPONENTS_} ${lname}")
+ endforeach()
+ 
+ # add extra dependencies required for OpenCV
+@@ -67,6 +70,8 @@ if(OpenCV_EXTRA_COMPONENTS)
+ 
+     set(OpenCV_LIB_COMPONENTS "${OpenCV_LIB_COMPONENTS} ${maybe_l_prefix}${extra_component}")
+ 
++
++
+   endforeach()
+ endif()
+ 
