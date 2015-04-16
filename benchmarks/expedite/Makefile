@@ -6,7 +6,7 @@ PORTVERSION=	1.7.10
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Expedite is a benchmark suite for Evas
 
 LICENSE=	BSD2CLAUSE
