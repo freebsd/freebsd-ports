@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	3
+#PORTVERSION=	${PERL_VERSION} # XXX
+PORTVERSION=	${GH_TAGNAME:C/^v//:C/-(.*)-.*/.\1/}
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN/../../src/5.0
+# XXX
+MASTER_SITES=	LOCAL/mat/perl GH CPAN/../../src/5.0
+# XXX Use this naming so that portscout works a bit
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 DIST_SUBDIR=	perl
 
-MAINTAINER=	perl@FreeBSD.org
+# XXX
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1
@@ -17,6 +22,12 @@ LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 CONFLICTS_INSTALL=	perl5.*-*
+
+# XXX
+USE_GITHUB=	yes
+GH_ACCOUNT=	Perl
+GH_PROJECT=	perl5
+GH_TAGNAME=	v5.21.10-72-gc7f317a
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -49,11 +60,12 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
-# For the older Perl ports, this should be:
-PORTSCOUT=	limit:^${PERL_VER}.
+# XXX
+# For the "release" Perl ports, this should be:
+#PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.20.2
+PERL_VERSION=	5.21.11
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -67,7 +79,9 @@ SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
 _PRIV_LIB=	lib/perl5/${PERL_VER}
 _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
-USES=	tar:bzip2 cpe
+# XXX releases use tar:bzip2 tar:xz
+USES=	cpe
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
@@ -90,9 +104,9 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 CONFIGURE_ARGS+= \
 	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
 	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-Wl,-rpath=${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL:R)'
-# When upgrading to 5.22+ remove this.
-CONFIGURE_ARGS+= \
-	-Dotherlibdirs=${PREFIX}/lib/perl5/site_perl/${PERL_VER}:${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+
+# XXX
+CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
 
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
@@ -172,6 +186,26 @@ PKGDEINSTALL=	${WRKDIR}/use.perl
 .if ${PORT_OPTIONS:MDEBUG}
 STRIP=
 STRIP_CMD=	${TRUE}
+.endif
+
+# XXX
+# No need to spam logs, or make me wait
+.if !defined(PACKAGE_BUILDING) && !defined(PERL_DEV_SHUT_UP)
+pre-everything::
+	@${ECHO_MSG} "########################################"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "This is a DEVELOPER only version of Perl"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "             DO NOT USE IT"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " Things ARE going to be broken with it"
+	@${ECHO_MSG} "       and it WILL eat your data"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "         You have been warned !"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "########################################"
+	@sleep 30
 .endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
