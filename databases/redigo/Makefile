@@ -6,7 +6,7 @@ PORTVERSION=	20140714
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go client for the Redis database
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/redis

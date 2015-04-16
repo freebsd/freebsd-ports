@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ario is a GTK2 client for MPD
 
 LICENSE=	GPLv2

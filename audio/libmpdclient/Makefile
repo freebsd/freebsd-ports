@@ -6,7 +6,7 @@ PORTVERSION=	2.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
 GNU_CONFIGURE=	yes

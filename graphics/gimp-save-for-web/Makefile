@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP Save For Web plugin
 
 LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app

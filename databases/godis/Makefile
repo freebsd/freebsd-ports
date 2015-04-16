@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/jlaffaye
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redis client library written in Go
 
 GO_PKGNAME=	github.com/simonz05/${PORTNAME}
