@@ -1,10 +1,16 @@
+bin/auto_answer
 bin/linphone
 bin/linphonec
 bin/linphonecsh
 bin/lp-gen-wrappers
 bin/lpc2xml_test
 bin/xml2lpc_test
+include/linphone/buffer.h
+include/linphone/call_log.h
+include/linphone/call_params.h
+include/linphone/content.h
 include/linphone/event.h
+include/linphone/linphone_tunnel.h
 include/linphone/linphonecore.h
 include/linphone/linphonecore_utils.h
 include/linphone/linphonefriend.h
@@ -24,9 +30,13 @@ man/man1/linphone.1.gz
 man/man1/linphonec.1.gz
 man/man1/linphonecsh.1.gz
 man/man1/sipomatic.1.gz
+share/appdata/linphone.appdata.xml
+share/applications/audio-assistant.desktop
 share/applications/linphone.desktop
+share/icons/hicolor/48x48/apps/linphone.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/about.ui
+%%DATADIR%%/audio_assistant.ui
 %%DATADIR%%/buddylookup.ui
 %%DATADIR%%/call_logs.ui
 %%DATADIR%%/call_statistics.ui
@@ -45,6 +55,7 @@ share/applications/linphone.desktop
 %%DATADIR%%/stock_people.png
 %%DATADIR%%/tunnel_config.ui
 %%DATADIR%%/waiting.ui
+%%NLS%%share/locale/ar/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/de/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/es/LC_MESSAGES/linphone.mo
@@ -60,6 +71,7 @@ share/applications/linphone.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/linphone.mo
 share/pixmaps/linphone/active_chat.png
@@ -99,6 +111,7 @@ share/pixmaps/linphone/stopcall-red.png
 share/pixmaps/linphone/stopcall-small.png
 share/sounds/linphone/hello16000.wav
 share/sounds/linphone/hello8000.wav
+share/sounds/linphone/incoming_chat.wav
 share/sounds/linphone/ringback.wav
 share/sounds/linphone/rings/bigben.wav
 share/sounds/linphone/rings/oldphone-mono-30s.caf

@@ -1,9 +1,9 @@
---- ortp.pc.in.orig	2010-02-08 14:38:31 UTC
+--- ortp.pc.in.orig	2015-01-30 09:36:41 UTC
 +++ ortp.pc.in
 @@ -6,5 +6,6 @@ includedir=@includedir@
  Name: oRTP 
- Description: Implement the RFC3550 (RTP) with a easy to use API with high and low level access. 
- Version: @ORTP_PKGCONFIG_VERSION@                           
+ Description: Implement the RFC3550 (RTP) with a easy to use API with high and low level access.
+ Version: @ORTP_PKGCONFIG_VERSION@
 -Libs: -L@libdir@ -lortp @ORTPDEPS_LIBS@
 +Libs: -L@libdir@ -lortp
 +Libs.private: @ORTPDEPS_LIBS@
