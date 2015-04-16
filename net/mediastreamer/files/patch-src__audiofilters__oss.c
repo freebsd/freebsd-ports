@@ -1,22 +1,21 @@
---- src/audiofilters/oss.c.orig
+--- src/audiofilters/oss.c.orig	2015-01-30 09:36:13 UTC
 +++ src/audiofilters/oss.c
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ static int configure_fd(int fd, int bits
  {
  	int p=0,cond=0;
  	int i=0;
 -	int min_size=0,blocksize=512;
 +	int min_size=0, blocksize=0;
  	int err;
- 	
+ 
  	//g_message("opening sound device");
-@@ -77,54 +77,18 @@
- 	if (err<0){
+@@ -78,54 +78,17 @@ static int configure_fd(int fd, int bits
  		ms_warning("oss_open: can't set mono/stereo mode:%s.",strerror(errno));
  	}
--	
+ 
 -	if (rate==16000) blocksize=4096;	/* oss emulation is not very good at 16khz */
 -	else blocksize=blocksize*(rate/8000);
- 
+-
  	ioctl(fd, SNDCTL_DSP_GETBLKSIZE, &min_size);
  
 -	/**
@@ -24,8 +23,9 @@
 -	 */
 -	if (min_size>blocksize) {
 -		int size_selector=0;
+-		int frag;
 -		while ((blocksize >> size_selector) != 1)size_selector++; /*compute selector blocksize = 1<< size_selector*/
--		int frag = (2 << 16) | (size_selector);
+-		frag = (2 << 16) | (size_selector);
 -		if (ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &frag) == -1) {
 -			ms_warning("This OSS driver does not support trying SNDCTL_DSP_SETFRAGMENT");
 -			ioctl(fd, SNDCTL_DSP_GETBLKSIZE, &min_size);
@@ -68,19 +68,19 @@
  	ms_message("/dev/dsp opened: rate=%i,bits=%i,stereo=%i blocksize=%i.",
 -			rate,bits,stereo,min_size);
 +			rate,bits,stereo,blocksize);
- 	
+ 
  	/* start recording !!! Alex */
  	{
-@@ -134,7 +98,7 @@
+@@ -135,7 +98,7 @@ static int configure_fd(int fd, int bits
  		res=ioctl(fd, SNDCTL_DSP_SETTRIGGER, &fl);
  		if (res<0) ms_warning("OSS_TRIGGER: %s",strerror(errno));
- 	} 
+ 	}
 -	*minsz=min_size;
 +	*minsz=blocksize;
  	return fd;
  }
  
-@@ -364,7 +328,11 @@
+@@ -365,7 +328,11 @@ static void * oss_thread(void *p){
  			}
  		}
  		if (d->pcmfd_write>=0){
