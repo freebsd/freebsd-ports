@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Collection of Enlightenment dock applications
 
 BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16
