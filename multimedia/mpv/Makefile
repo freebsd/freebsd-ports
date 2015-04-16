@@ -10,7 +10,7 @@ MASTER_SITES=	GHL:0 http://ftp.waf.io/pub/release/:1 \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 waf-${WAF_VERSION}:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@bsdjunk.com
 COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
