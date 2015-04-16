@@ -73,7 +73,7 @@ ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
-ZSH_CONFIGURE_DISABLE=	--without-zsh-completion-dir
+ZSH_CONFIGURE_OFF=	--without-zsh-completion-dir
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
