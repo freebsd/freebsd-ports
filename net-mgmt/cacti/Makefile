@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
 PATCH_STRIP=	-p1
-USES=		shebangfix
+USES=		cpe shebangfix
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre session sockets snmp xml
 WANT_PHP_WEB=	yes
