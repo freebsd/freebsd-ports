@@ -6,7 +6,7 @@ PORTVERSION=	20130911
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go package for manipulating paragraphs of text
 
 LICENSE=	MIT

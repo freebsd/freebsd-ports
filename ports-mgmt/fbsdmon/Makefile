@@ -6,7 +6,7 @@ PORTVERSION=	1.01
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Submit system and ports statistics to fbsdmon.org
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

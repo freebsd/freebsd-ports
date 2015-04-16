@@ -6,7 +6,7 @@ PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
