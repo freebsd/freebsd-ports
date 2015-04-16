@@ -196,7 +196,6 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-video.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input.conf.common
-%%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-desktop-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones-2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf
@@ -209,9 +208,12 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-1.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-3.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-4.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-5.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-6.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-7.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/iec958-stereo-output.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/default.conf
-%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/extra-hdmi.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker-and-int-mic.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/kinect-audio.conf
