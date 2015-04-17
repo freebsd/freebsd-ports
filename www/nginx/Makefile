@@ -348,8 +348,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-echo-nginx-module-${GIT_ECHO_VE
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.25
-GIT_HEADERS_MORE_VERSION=	0-g0c6e05d
+NGINX_HEADERS_MORE_VERSION=	0.26
+GIT_HEADERS_MORE_VERSION=	0-gd20bf26
 MASTER_SITES+=	https://github.com/openresty/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
 DISTFILES+=	openresty-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
