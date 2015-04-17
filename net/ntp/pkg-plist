@@ -8,6 +8,7 @@ man/man8/ntpq.8.gz
 %%PERL_UTILS%%man/man8/ntptrace.8.gz
 %%NTPSNMPD%%man/man8/ntpsnmpd.8.gz
 man/man8/sntp.8.gz
+man/man8/update-leap.8.gz
 %%SSL%%sbin/ntp-keygen
 %%PERL_UTILS%%sbin/ntp-wait
 sbin/ntpd
@@ -18,6 +19,7 @@ sbin/ntpq
 sbin/ntptime
 %%PERL_UTILS%%sbin/ntptrace
 sbin/sntp
+sbin/update-leap
 %%PERL_UTILS%%share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/access.html
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
@@ -484,6 +486,7 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/sntp.html
 %%PORTDOCS%%%%DOCSDIR%%/stats.html
 %%PORTDOCS%%%%DOCSDIR%%/tickadj.html
+%%PORTDOCS%%%%DOCSDIR%%/update-leap.html
 %%PORTDOCS%%%%DOCSDIR%%/warp.html
 %%PORTDOCS%%%%DOCSDIR%%/xleave.html
 %%PORTDOCS%%share/doc/sntp/sntp.html
