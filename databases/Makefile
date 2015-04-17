@@ -585,7 +585,6 @@
     SUBDIR += php5-sqlite3
     SUBDIR += php5-sybase_ct
     SUBDIR += php5-tarantool
-    SUBDIR += php53-pdo_sqlite
     SUBDIR += php55-dba
     SUBDIR += php55-interbase
     SUBDIR += php55-mssql
