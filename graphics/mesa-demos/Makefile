@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-demos
 PORTVERSION=	8.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/demos/${PORTVERSION}/
 DISTFILES=	mesa-demos-${PORTVERSION}${EXTRACT_SUFX}
@@ -19,7 +19,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-egl --disable-gles2 --disable-wayland \
-		--disable-gbm --disable-vg --disable-osmesa
+		--disable-gbm --disable-vg --disable-osmesa \
+		--with-system-data-files
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
