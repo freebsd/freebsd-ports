@@ -24,7 +24,6 @@
     SUBDIR += libreoffice
     SUBDIR += mediathek
     SUBDIR += mythes
-    SUBDIR += pecl-konto_check
     SUBDIR += phone
     SUBDIR += php_doc
     SUBDIR += schwobifyer

@@ -516,7 +516,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle26
     SUBDIR += moodle27
     SUBDIR += moodle28
     SUBDIR += mozplugger
@@ -1418,8 +1417,6 @@
     SUBDIR += php-templates
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += php53-session
-    SUBDIR += php53-tidy
     SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy

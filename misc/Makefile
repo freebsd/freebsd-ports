@@ -356,7 +356,6 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += pfm
     SUBDIR += php5-calendar
-    SUBDIR += php53-calendar
     SUBDIR += php55-calendar
     SUBDIR += php56-calendar
     SUBDIR += phraze

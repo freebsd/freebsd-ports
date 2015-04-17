@@ -278,7 +278,6 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += critcl
-    SUBDIR += cross-binutils
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -1325,7 +1324,6 @@
     SUBDIR += mingw32-pdcurses
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
-    SUBDIR += mingw64-binutils
     SUBDIR += mips-binutils
     SUBDIR += mips64-binutils
     SUBDIR += mk
@@ -3521,7 +3519,6 @@
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-uri_template
-    SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
@@ -3553,15 +3550,6 @@
     SUBDIR += php5-sysvshm
     SUBDIR += php5-thrift
     SUBDIR += php5-tokenizer
-    SUBDIR += php53-gettext
-    SUBDIR += php53-json
-    SUBDIR += php53-pcntl
-    SUBDIR += php53-readline
-    SUBDIR += php53-shmop
-    SUBDIR += php53-sysvmsg
-    SUBDIR += php53-sysvsem
-    SUBDIR += php53-sysvshm
-    SUBDIR += php53-tokenizer
     SUBDIR += php55-gettext
     SUBDIR += php55-json
     SUBDIR += php55-pcntl
