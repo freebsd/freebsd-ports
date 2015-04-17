@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e426eda9-dae1-11e4-8107-94de806b0af9">
+    <topic>Dulwich -- Remote code execution</topic>
+    <affects>
+      <package>
+	<name>py27-dulwich</name>
+	<range><lt>0.9.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0838">
+	  <p>Buffer overflow in the C implementation of the apply_delta
+	    function in _pack.c in Dulwich before 0.9.9 allows remote
+	    attackers to execute arbitrary code via a crafted pack file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0838</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-07</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3364d497-e4e6-11e4-a265-c485083ca99c">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
