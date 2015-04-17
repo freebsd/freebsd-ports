@@ -22,7 +22,7 @@
  #endif
  
 -#ifdef _LIBICONV_H
-+#if defined(_LIBICONV_H) && _LIBICONV_VERSION < 0x010B
++#if defined(_LIBICONV_VERSION) && _LIBICONV_VERSION < 0x010B
  #define	ICONV_INPUT_CAST
  #else
  /* older versions of iconv() were broken in regard to the
