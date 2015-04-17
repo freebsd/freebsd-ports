@@ -7466,3 +7466,4 @@ multimedia/mediabrowser|multimedia/emby-server|2015-04-08|Project renamed
 deskutils/preferencepanes|deskutils/systempreferences|2015-04-08|preferencepanes merged into systempreferences
 games/airstrike||2015-04-10|Has expired: never completed, alpha quality, dev site and repo do not resolve
 www/trac-batchmodify||2015-04-10|Has expired: This functionality was merged into Trac since version 1.0
+net/quagga23|net/quagga|2015-04-17|The regression on 8 and 9 has been patched, go back to the regular quagga
