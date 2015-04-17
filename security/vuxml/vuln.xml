@@ -57,6 +57,97 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3364d497-e4e6-11e4-a265-c485083ca99c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.451</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.451</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-06.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux.  These updates address vulnerabilities
+	    that could potentially allow an attacker to take control of the
+	    affected system. Adobe is aware of a report that an exploit for
+	    CVE-2015-3043 exists in the wild, and recommends users update their
+	    product installations to the latest versions.
+	  </p>
+	  <ul>
+	  <li>
+	    These updates resolve memory corruption vulnerabilities that could
+	    lead to code execution (CVE-2015-0347, CVE-2015-0350, CVE-2015-0352,
+	    CVE-2015-0353, CVE-2015-0354, CVE-2015-0355, CVE-2015-0360,
+	    CVE-2015-3038, CVE-2015-3041, CVE-2015-3042, CVE-2015-3043).
+	  </li>
+	  <li>
+	    These updates resolve a type confusion vulnerability that could lead
+	    to code execution (CVE-2015-0356).
+	  </li>
+	  <li>
+	    These updates resolve a buffer overflow vulnerability that could
+	    lead to code execution (CVE-2015-0348).
+	  </li>
+	  <li>
+	    These updates resolve use-after-free vulnerabilities that could lead
+	    to code execution (CVE-2015-0349, CVE-2015-0351, CVE-2015-0358,
+	    CVE-2015-3039).
+	  </li>
+	  <li>
+	    These updates resolve double-free vulnerabilities that could lead to
+	    code execution (CVE-2015-0346, CVE-2015-0359).
+	  </li>
+	  <li>
+	    These updates resolve memory leak vulnerabilities that could be used
+	    to bypass ASLR (CVE-2015-0357, CVE-2015-3040).
+	  </li>
+	  <li>
+	    These updates resolve a security bypass vulnerability that could
+	    lead to information disclosure (CVE-2015-3044).
+	  </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-06.html</url>
+      <cvename>CVE-2015-3038</cvename>
+      <cvename>CVE-2015-3039</cvename>
+      <cvename>CVE-2015-3040</cvename>
+      <cvename>CVE-2015-3041</cvename>
+      <cvename>CVE-2015-3042</cvename>
+      <cvename>CVE-2015-3043</cvename>
+      <cvename>CVE-2015-3044</cvename>
+      <cvename>CVE-2015-0346</cvename>
+      <cvename>CVE-2015-0347</cvename>
+      <cvename>CVE-2015-0348</cvename>
+      <cvename>CVE-2015-0349</cvename>
+      <cvename>CVE-2015-0350</cvename>
+      <cvename>CVE-2015-0351</cvename>
+      <cvename>CVE-2015-0352</cvename>
+      <cvename>CVE-2015-0353</cvename>
+      <cvename>CVE-2015-0354</cvename>
+      <cvename>CVE-2015-0355</cvename>
+      <cvename>CVE-2015-0356</cvename>
+      <cvename>CVE-2015-0357</cvename>
+      <cvename>CVE-2015-0358</cvename>
+      <cvename>CVE-2015-0359</cvename>
+      <cvename>CVE-2015-0360</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba326a36-5f02-452d-a215-31e7b06d5edf">
     <topic>Wesnoth -- Remote information disclosure</topic>
     <affects>
