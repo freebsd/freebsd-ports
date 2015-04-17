@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1403
+PORTVERSION=	2.1404
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -26,11 +26,13 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Module-Runtime-Conflicts>=0.002:${PORTSDIR}/devel/p5-Module-Runtime-Conflicts \
 		p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 		p5-Package-Stash>=0.32:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:${PORTSDIR}/devel/p5-Package-Stash-XS \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Sub-Identify>=0:${PORTSDIR}/devel/p5-Sub-Identify \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.17:${PORTSDIR}/lang/p5-Try-Tiny
@@ -58,8 +60,8 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.35:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.35:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>
