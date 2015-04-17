@@ -1,6 +1,6 @@
---- ./dulwich.egg-info/SOURCES.txt.orig	2014-06-08 23:46:09.000000000 +0200
-+++ ./dulwich.egg-info/SOURCES.txt	2014-06-14 11:14:45.857674868 +0200
-@@ -61,118 +61,6 @@
+--- dulwich.egg-info/SOURCES.txt.orig	2015-03-25 01:54:03 UTC
++++ dulwich.egg-info/SOURCES.txt
+@@ -61,118 +61,6 @@ dulwich/contrib/__init__.py
  dulwich/contrib/swift.py
  dulwich/contrib/test_swift.py
  dulwich/contrib/test_swift_smoke.py
