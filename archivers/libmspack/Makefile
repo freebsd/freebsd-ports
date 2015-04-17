@@ -15,7 +15,8 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
+CPE_VENDOR=	libmspack_project
 INSTALL_TARGET=	install-strip
 
 post-patch:
