@@ -18,6 +18,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}
 RCUBECOMP=	SQL config index.php installer logs plugins program robots.txt skins temp vendor
 PORTDOCS=	CHANGELOG INSTALL README.md UPGRADING
 
+USES=		cpe
+CPE_PRODUCT=	webmail
+CPE_VENDOR=	roundcube
+
 WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
 IGNORE_WITH_PHP=52
