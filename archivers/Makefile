@@ -145,10 +145,6 @@
     SUBDIR += php5-snappy
     SUBDIR += php5-zip
     SUBDIR += php5-zlib
-    SUBDIR += php53-bz2
-    SUBDIR += php53-phar
-    SUBDIR += php53-zip
-    SUBDIR += php53-zlib
     SUBDIR += php55-bz2
     SUBDIR += php55-phar
     SUBDIR += php55-zip

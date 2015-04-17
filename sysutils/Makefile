@@ -693,8 +693,6 @@
     SUBDIR += phantom
     SUBDIR += php5-fileinfo
     SUBDIR += php5-posix
-    SUBDIR += php53-fileinfo
-    SUBDIR += php53-posix
     SUBDIR += php55-fileinfo
     SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
