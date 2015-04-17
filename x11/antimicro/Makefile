@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	antimicro
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	x11
 
 MAINTAINER=	antont@inbox.lv
@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ryochan7
-GH_COMMIT=	2d4218e
 
 USE_XORG=	x11 xtst
 USE_QT5=	linguisttools_build qmake_build buildtools_build widgets network
