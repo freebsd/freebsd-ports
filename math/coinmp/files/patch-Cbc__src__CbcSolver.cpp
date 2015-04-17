@@ -1,7 +1,6 @@
-This looks like a gcc 4.2.1 bug.
---- Cbc/src/CbcSolver.cpp.orig	2011-12-23 10:36:33.000000000 -0500
-+++ Cbc/src/CbcSolver.cpp	2011-12-23 10:41:57.000000000 -0500
-@@ -1665,10 +1665,6 @@
+--- Cbc/src/CbcSolver.cpp.orig	2011-12-23 05:36:33 UTC
++++ Cbc/src/CbcSolver.cpp
+@@ -1876,10 +1876,6 @@ int CbcMain1 (int argc, const char *argv
  	    }
  	    sprintf(generalPrint + strlen(generalPrint),
  		    "Build Date: %s \n", __DATE__);
