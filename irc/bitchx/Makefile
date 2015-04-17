@@ -11,6 +11,9 @@ MAINTAINER=	dan.mashal@gmail.com
 # Co-maintainer: Chris Petrik <chris@bsdjunk.com> (PR/181627)
 COMMENT=	Feature-rich scriptable IRC client
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USES=		cpe gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
