@@ -7,4 +7,6 @@ It can be executed on many platforms, including both ARM and x86 with very
 decent performances. libbcg729 supports concurrent channel encoding/decoding
 for multi-call applications such as conferencing.
 
+This package provides a plugin for Mediastreamer.
+
 WWW: https://www.linphone.org/technical-corner/bcg729.html

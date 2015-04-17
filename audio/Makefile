@@ -498,6 +498,7 @@
     SUBDIR += mpg321
     SUBDIR += mpiosh
     SUBDIR += mps
+    SUBDIR += msbcg729
     SUBDIR += msilbc
     SUBDIR += mumble
     SUBDIR += murmur
