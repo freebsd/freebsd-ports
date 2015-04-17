@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
-PORTVERSION=	2.001002
+PORTVERSION=	2.001003
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -15,9 +15,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Validate-IP>=0.19:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-MaxMind-DB-Common>=0:${PORTSDIR}/net/p5-MaxMind-DB-Common \
 		p5-MaxMind-DB-Reader>=0:${PORTSDIR}/net/p5-MaxMind-DB-Reader \
 		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
