@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
-		libpolarssl.so:${PORTSDIR}/security/polarssl
+		libpolarssl.so.5:${PORTSDIR}/security/polarssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}

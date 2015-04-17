@@ -160,7 +160,7 @@ MODULES+=	opendbx
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
-LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so.8:${PORTSDIR}/security/polarssl13
 .endif
 
 post-install:

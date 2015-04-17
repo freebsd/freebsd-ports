@@ -48,7 +48,7 @@ PW_SAVE_CONFIGURE_ENABLE=	password-save
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	libpolarssl.so:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
 CONFIGURE_ARGS+=--with-crypto-library=polarssl
 .else
 USE_OPENSSL=	yes

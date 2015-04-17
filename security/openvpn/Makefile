@@ -55,7 +55,7 @@ EXTRA_PATCHES+=		${FILESDIR}/150322-Reload-OpenSSL-engines-after-forking.patch:-
 . if ${PORT_OPTIONS:MX509ALTUSERNAME}
 BROKEN=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. Disable X509ALTUSERNAME, or use OpenSSL instead
 . else
-LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so.5:${PORTSDIR}/security/polarssl
 CONFIGURE_ARGS+=	--with-crypto-library=polarssl
 . endif
 .else
