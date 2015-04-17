@@ -2,6 +2,7 @@
 
 PORTNAME=	libbzrtp
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SAVANNAH/linphone/bzrtp
 DISTNAME=	bzrtp-${DISTVERSION}
@@ -12,10 +13,11 @@ COMMENT=	ZRTP support library (RFC 6189)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl
+LIB_DEPENDS=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-strict --with-polarssl=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-silent-rules --disable-strict \
+		--with-polarssl=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	libxml2
