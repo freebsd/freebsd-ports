@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ba326a36-5f02-452d-a215-31e7b06d5edf">
+    <topic>Wesnoth -- Remote information disclosure</topic>
+    <affects>
+      <package>
+	<name>wesnoth</name>
+	<name>wesnoth-devel</name>
+	<range><ge>1.7.0</ge><lt>1.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0844">
+	  <p>The WML/Lua API in Battle for Wesnoth 1.7.x through
+	    1.11.x and 1.12.x before 1.12.2 allows remote attackers to
+	    read arbitrary files via a crafted (1) campaign or (2) map
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0844</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5713bfda-e27d-11e4-b2ce-5453ed2e2b49">
     <topic>qt4-imageformats, qt4-gui, qt5-gui -- Multiple Vulnerabilities in Qt Image Format Handling</topic>
     <affects>
