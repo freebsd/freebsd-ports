@@ -17,7 +17,7 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2 perl5
+USES=		cpe tar:bzip2 perl5
 USE_PERL5=	run
 
 # Exim build system is job unsafe atm
