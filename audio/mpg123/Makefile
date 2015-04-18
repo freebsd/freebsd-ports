@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-optimization=0 \
 		--with-audio=oss \
 		--with-default-audio=oss \
 		--with-module-suffix=.so
-CONFIGURE_ENV=	CONFIG_SHELL=${SH}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

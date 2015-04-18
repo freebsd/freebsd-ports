@@ -29,8 +29,6 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| pg_config| ${LOCALBASE}/bin/pg_config|g' \
 	${WRKSRC}/sql/pgpool-recovery/Makefile
 

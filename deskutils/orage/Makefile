@@ -34,7 +34,6 @@ CFLAGS+=	-I${LOCALBASE}/include/libical
 CONFIGURE_ARGS=	--enable-dbus
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(datadir)/orage/doc/C|(datadir)/doc/orage/C|' \
 		${WRKSRC}/doc/C/Makefile.in \
 		${WRKSRC}/doc/C/images/Makefile.in

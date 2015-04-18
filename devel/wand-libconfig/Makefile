@@ -24,8 +24,4 @@ PLIST_FILES=	include/libconfig.h lib/libconfig.a \
 		lib/libconfig.so lib/libconfig.so.1 \
 		lib/libconfig.so.1.0.4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
-
 .include <bsd.port.mk>

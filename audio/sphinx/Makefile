@@ -28,8 +28,6 @@ post-patch:
 		${WRKSRC}/src/libsphinx2/hash.c	\
 		${WRKSRC}/src/libsphinx2/list.c	\
 		${WRKSRC}/src/libsphinx2/salloc.c
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-		${WRKSRC}/configure
 
 post-build:
 	${ECHO_CMD} "*** WARNING ***"				 > ${PKGMESSAGE}
