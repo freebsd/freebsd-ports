@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-util-cursor
-PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTVERSION=	0.1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -11,8 +10,7 @@ COMMENT=	XCB cursor library
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util \
 		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil \
-		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:${PORTSDIR}/x11/xcb-util-image \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
+		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:${PORTSDIR}/x11/xcb-util-image
 		
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util \
 		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil \
@@ -20,9 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util
 
 XORG_CAT=	lib
 USE_XORG=	xcb
-USES=		gmake
-
-CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
+USES=		gmake gperf
 
 post-patch:
 	@${REINPLACE_CMD} -e \

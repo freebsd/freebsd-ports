@@ -1,11 +1,9 @@
 include/X11/extensions/XvMClib.h
 lib/libXvMC.a
-lib/libXvMC.la
 lib/libXvMC.so
 lib/libXvMC.so.1
 lib/libXvMC.so.1.0.0
 lib/libXvMCW.a
-lib/libXvMCW.la
 lib/libXvMCW.so
 lib/libXvMCW.so.1
 lib/libXvMCW.so.1.0.0

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfs
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
@@ -25,6 +24,8 @@ post-build:
 	@cd ${WRKSRC}/config/ && ${MAKE_CMD} config
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/config/config ${STAGEDIR}${PREFIX}/etc/X11/fs/config.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/fs
+	${INSTALL_SCRIPT} ${WRKSRC}/config/config \
+		${STAGEDIR}${PREFIX}/etc/X11/fs/config.sample
 
 .include <bsd.port.mk>

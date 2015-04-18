@@ -1,6 +1,5 @@
 include/X11/extensions/Xrandr.h
 lib/libXrandr.a
-lib/libXrandr.la
 lib/libXrandr.so
 lib/libXrandr.so.2
 lib/libXrandr.so.2.2.0

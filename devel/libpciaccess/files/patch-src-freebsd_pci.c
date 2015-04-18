@@ -1,5 +1,5 @@
---- src/freebsd_pci.c.orig	2013-08-14 12:31:57.519923558 +0200
-+++ src/freebsd_pci.c	2013-08-14 12:31:36.809923955 +0200
+--- src/freebsd_pci.c.orig	2015-02-03 23:59:14 UTC
++++ src/freebsd_pci.c
 @@ -39,6 +39,11 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -23,7 +23,7 @@
  /**
   * FreeBSD private pci_system structure that extends the base pci_system
   * structure.
-@@ -105,12 +114,18 @@
+@@ -105,12 +114,18 @@ pci_device_freebsd_map_range(struct pci_
  {
      const int prot = ((map->flags & PCI_DEV_MAP_FLAG_WRITABLE) != 0)
          ? (PROT_READ | PROT_WRITE) : PROT_READ;
@@ -42,7 +42,7 @@
      if (fd == -1)
  	return errno;
  
-@@ -120,6 +135,7 @@
+@@ -120,6 +135,7 @@ pci_device_freebsd_map_range(struct pci_
  	err = errno;
      }
  
@@ -50,7 +50,7 @@
      mrd.mr_base = map->base;
      mrd.mr_len = map->size;
      strncpy(mrd.mr_owner, "pciaccess", sizeof(mrd.mr_owner));
-@@ -140,6 +156,7 @@
+@@ -140,6 +156,7 @@ pci_device_freebsd_map_range(struct pci_
      }
  
      close(fd);
@@ -58,7 +58,7 @@
  
      return err;
  }
-@@ -148,6 +165,7 @@
+@@ -148,6 +165,7 @@ static int
  pci_device_freebsd_unmap_range( struct pci_device *dev,
  				struct pci_device_mapping *map )
  {
@@ -66,7 +66,7 @@
      struct mem_range_desc mrd;
      struct mem_range_op mro;
      int fd;
-@@ -173,6 +191,7 @@
+@@ -173,6 +191,7 @@ pci_device_freebsd_unmap_range( struct p
  	    fprintf(stderr, "Failed to open /dev/mem\n");
  	}
      }
@@ -74,7 +74,7 @@
  
      return pci_device_generic_unmap_range(dev, map);
  }
-@@ -295,7 +314,11 @@
+@@ -295,7 +314,11 @@ pci_device_freebsd_read_rom( struct pci_
      }
  
      printf("Using rom_base = 0x%lx\n", (long)rom_base);
@@ -86,7 +86,7 @@
      if ( memfd == -1 )
  	return errno;
  
-@@ -308,7 +331,9 @@
+@@ -308,7 +331,9 @@ pci_device_freebsd_read_rom( struct pci_
      memcpy( buffer, bios, dev->rom_size );
  
      munmap( bios, dev->rom_size );
@@ -96,7 +96,7 @@
  
      if (pci_rom) {
  	pci_device_cfg_write_u32( dev, PCIR_BIOS, rom );
-@@ -343,7 +368,6 @@
+@@ -343,7 +368,6 @@ pci_device_freebsd_get_num_regions( stru
  static int
  pci_device_freebsd_probe( struct pci_device * dev )
  {
@@ -104,7 +104,7 @@
      struct pci_bar_io bar;
      uint8_t irq;
      int err, i;
-@@ -563,136 +587,152 @@
+@@ -563,138 +587,153 @@ pci_system_freebsd_destroy(void)
      freebsd_pci_sys = NULL;
  }
  
@@ -115,7 +115,10 @@
  static struct pci_io_handle *
 -pci_device_freebsd_open_legacy_io(struct pci_io_handle *ret,
 -    struct pci_device *dev, pciaddr_t base, pciaddr_t size)
--{
++pci_device_freebsd_open_legacy_io( struct pci_io_handle *ret,
++				   struct pci_device *dev, pciaddr_t base,
++				   pciaddr_t size )
+ {
 -#if defined(__i386__) || defined(__amd64__)
 -	ret->fd = open("/dev/io", O_RDWR | O_CLOEXEC);
 -
@@ -124,6 +127,7 @@
 -
 -	ret->base = base;
 -	ret->size = size;
+-	ret->is_legacy = 1;
 -	return ret;
 -#elif defined(PCI_MAGIC_IO_RANGE)
 -	ret->memory = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED,
@@ -133,11 +137,8 @@
 -
 -	ret->base = base;
 -	ret->size = size;
+-	ret->is_legacy = 1;
 -	return ret;
-+pci_device_freebsd_open_legacy_io( struct pci_io_handle *ret,
-+				   struct pci_device *dev, pciaddr_t base,
-+				   pciaddr_t size )
-+{
 +#if defined(__sparc64__)
 +    ret->memory = mmap( NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED,
 +	screenfd, base );
@@ -150,6 +151,7 @@
  #endif
 +    ret->base = base;
 +    ret->size = size;
++    ret->is_legacy = 1;
 +    return ret;
  }
  
@@ -333,7 +335,7 @@
  }
  
  static const struct pci_system_methods freebsd_pci_methods = {
-@@ -706,9 +746,7 @@
+@@ -708,9 +747,7 @@ static const struct pci_system_methods f
      .write = pci_device_freebsd_write,
      .fill_capabilities = pci_fill_capabilities_generic,
      .open_legacy_io = pci_device_freebsd_open_legacy_io,
@@ -343,7 +345,7 @@
      .read32 = pci_device_freebsd_read32,
      .read16 = pci_device_freebsd_read16,
      .read8 = pci_device_freebsd_read8,
-@@ -790,3 +828,11 @@
+@@ -792,3 +829,11 @@ pci_system_freebsd_create( void )
  
      return 0;
  }
