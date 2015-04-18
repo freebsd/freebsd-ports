@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dec3164f-3121-45ef-af18-bb113ac5082f">
+    <topic>sqlite -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.8.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Full Disclosure reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2015/Apr/31">
+	  <p>use of uninitialized memory when parsing collation sequences</p>
+	  <p>bad free()</p>
+	  <p>stack buffer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.sqlite.org/src/info/eddc05e7bb31fae7</url>
+      <url>https://www.sqlite.org/src/info/02e3c88fbf6abdcf</url>
+      <url>https://www.sqlite.org/src/info/c494171f77dc2e5e</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Apr/31</mlist>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4571ca8-053d-44c9-ab3c-89b1372ad0a5">
     <topic>chrony -- multiple vulnerabilities</topic>
     <affects>
