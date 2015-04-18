@@ -3,7 +3,7 @@
 
 PORTNAME=	tora
 PORTVERSION=	2.1.3
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	PGSQL MYSQL
 
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtoolize
 USE_QT4=	gui corelib sql xml network linguist moc_build uic_build rcc_build
-USES=		compiler:features gmake libtool makeinfo
+USES=		gmake libtool makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,11 +31,7 @@ INSTALL_TARGET=	install-strip
 
 PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 36
-USE_GCC=	yes
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		makeinfo
@@ -70,4 +66,4 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
