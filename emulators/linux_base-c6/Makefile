@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
 		http://mirror.centos.org/centos/6/updates/i386/Packages/
@@ -52,6 +52,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		less-436-13.el6.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
+		libblkid-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
 		libcom_err-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		libcap-2.16-5.5.el6.${LINUX_RPM_ARCH}.rpm \
 		libgcc-4.4.7-11.el6.${LINUX_RPM_ARCH}.rpm \
