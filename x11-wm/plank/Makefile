@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/195786947/ \
+MASTER_SITES=	https://launchpadlibrarian.net/202964163/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -41,5 +41,9 @@ NLS_CONFIGURE_ENABLE=	nls
 
 DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu
 DBUSMENU_CONFIGURE_ENABLE=	dbusmenu
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/lib/Widgets/PreferencesWindow.vala
 
 .include <bsd.port.mk>
