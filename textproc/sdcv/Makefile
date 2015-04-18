@@ -12,11 +12,9 @@ COMMENT=	Text-based utility for work with dictionaries in StarDict's format
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		gettext pkgconfig readline tar:bzip2
+GNU_CONFIGURE=	yes
+USES=		autoreconf gettext pkgconfig readline tar:bzip2
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I m4
-AUTOMAKE_ARGS=	--add-missing --copy
 
 SUB_FILES=	pkg-message
 

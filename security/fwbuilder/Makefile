@@ -48,8 +48,8 @@ USE_QT4=	corelib \
 QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
-USES=		gmake libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf
+USES=		autoreconf gmake libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		INSTALL_ROOT=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include

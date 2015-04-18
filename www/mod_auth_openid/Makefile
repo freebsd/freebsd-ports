@@ -20,9 +20,7 @@ GH_COMMIT=	22d1719
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
 USE_APACHE=	22+
-USES=		gmake pkgconfig libtool
-USE_AUTOTOOLS=	aclocal libtoolize autoconf automake autoheader
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 

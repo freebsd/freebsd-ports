@@ -15,11 +15,9 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		alias gmake iconv libtool pkgconfig
+USES=		alias autoreconf gmake iconv libtool pkgconfig
 USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
-USE_AUTOTOOLS= 	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	-a -c -f
 USE_RC_SUBR=	tcsd
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	YES
