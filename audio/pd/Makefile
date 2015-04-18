@@ -70,12 +70,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/libpthread/s|_ERROR|_WARN|' ${WRKSRC}/portaudio/configure.in
 
-pre-configure:
-	@(cd ${WRKSRC}/portaudio \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} ${LIBTOOLIZE_ARGS} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF})
-
 do-install:
 .for i in src man tcl po extra
 	@(cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
