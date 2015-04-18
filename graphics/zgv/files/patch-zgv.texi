@@ -1,0 +1,11 @@
+--- doc/zgv.texi.orig	2005-01-28 13:05:10 UTC
++++ doc/zgv.texi
+@@ -1526,7 +1526,7 @@ and which proportion of the list is curr
+ when mouse support is enabled can be used to move around the list.
+ 
+ @kindex S (Selector)
+-@itemx S
++@item S
+ Toggle shuffling (randomising) of slideshows. @xref{Slideshows}.
+ 
+ @kindex L (Selector)
