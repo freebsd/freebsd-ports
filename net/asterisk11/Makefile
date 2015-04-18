@@ -43,7 +43,7 @@ CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-13*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
-		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 UUID
+		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 UUID SYSINFO
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
 		XMPP GSM SQLITE CURL LUA UUID
 
@@ -62,6 +62,7 @@ OOH323_DESC?=	ooh323 support
 DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
 UUID_DESC?=	libuuid support (required for ICE and TURN in RTP)
+SYSINFO_DESC?=	Use devel/libsysinfo to get system information
 
 OPTIONS_SUB=	yes
 OOH323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
@@ -114,6 +115,7 @@ UUID_LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 UUID_CONFIGURE_ON=	--with-uuid=${LOCALBASE}
 UUID_CONFIGURE_OFF=	--disable-uuid
 UUID_CONFLICTS=		ossp-uuid-[0-9]*
+SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -135,10 +137,16 @@ PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 PLIST_SUB+=	VARDIR=${VARDIR}
 
 post-extract:
-	${FIND} ${WRKSRC} -name '*.d' -delete
+	@${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+.if ${PORT_OPTIONS:MSYSINFO}
+	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
+.else
+	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
+.endif
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
