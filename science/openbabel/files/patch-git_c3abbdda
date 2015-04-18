@@ -1,6 +1,8 @@
 This is the git commit below, with the change to include/openbabel/shared_ptr.h
 properly adapted since it originally depends on commit ce178cbb.
 
+The include/openbabel/shared_ptr.h patch was moved to patch-gcc5-support
+
 commit c3abbddae78e654df9322ad1020ff79dd6332946
 Author: Matt Swain <m.swain@me.com>
 Date:   Thu Oct 31 15:25:53 2013 +0000
@@ -32,30 +34,6 @@ index 46ec724..c004313 100644
  #elif (__GNUC__ == 4 && __GNUC_MINOR__ >= 1 && !defined(__APPLE_CC__)) || defined (USE_BOOST)
    typedef std::tr1::unordered_map<std::string, unsigned> NameIndexType;
  #else
-diff --git a/include/openbabel/shared_ptr.h b/include/openbabel/shared_ptr.h
-index 5d20254..378856a 100644
---- include/openbabel/shared_ptr.h
-+++ include/openbabel/shared_ptr.h
-@@ -22,9 +22,17 @@ GNU General Public License for more details.
- #else
-   #include <memory>
-   #if __GNUC__ == 4  //&& __GNUC_MINOR__ < 3  removed at the suggestion of Konstantin Tokarev
--    #include <tr1/memory>
-+    #ifdef _LIBCPP_VERSION
-+      #include <memory>
-+    #else
-+      #include <tr1/memory>
-+    #endif
-+  #endif
-+  #ifdef _LIBCPP_VERSION
-+    using std::shared_ptr;
-+  #else
-+    using std::tr1::shared_ptr;
-   #endif
--  using std::tr1::shared_ptr;
- #endif
- 
- #endif // OB_SHARED_PTR_H
 diff --git a/src/ops/unique.cpp b/src/ops/unique.cpp
 index 5f7714f..8527fba 100644
 --- src/ops/unique.cpp
