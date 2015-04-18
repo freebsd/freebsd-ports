@@ -7538,3 +7538,30 @@ lang/php53-extensions||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 german/pecl-konto_check||2015-04-17|Has expired: requires php53, security EOL reached 14 Aug 2014
 www/moodle26|www/moodle27|2015-04-17|Has expired: Deprecated by upstream, use www/moodle2{7,8} instead
 databases/php53-pdo_sqlite||2015-04-17|Has expired: security EOL reached 14 Aug 2014
+java/eclipse-ocl||2015-04-18|Has expired: depends on deprecated java/eclipse-emf
+java/eclipse-quantum||2015-04-18|Has expired: depends on deprecated java/eclipse-gef
+java/eclipse-propedit||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-aptana||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+devel/subclipse||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+devel/scala-ide||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-webtools||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-RDT||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-aptana-radrails||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-jad||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-vep-examples||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-gef-examples||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-gef||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-sysdeo-tomcat||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/commonclipse||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-sqlexplorer||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-viplugin||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-vep||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-checkstyle||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-aptana2||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-examples||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-hibernatetools||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-langpack||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-uml||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-datatools||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-emf||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
+java/eclipse-pmd||2015-04-18|Has expired: evaluation recommendation is to remove rather than update

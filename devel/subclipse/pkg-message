@@ -1,3 +1,0 @@
-Subclipse has a bundeled version of JavaSVN, a pure Java subversion library.
-If you dont have subversion compiled with java support choose JavaSVN as backend
-in Preferences > Team > SVN
