@@ -5,9 +5,10 @@ bin/out123
 include/mpg123.h
 lib/libmpg123.so
 lib/libmpg123.so.0
-lib/libmpg123.so.0.40.3
+lib/libmpg123.so.0.41.0
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
 man/man1/out123.1.gz
 man/man1/mpg123.1.gz
+@dirrm lib/mpg123
