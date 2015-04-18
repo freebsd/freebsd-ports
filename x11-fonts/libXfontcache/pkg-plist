@@ -1,5 +1,4 @@
 lib/libXfontcache.a
-lib/libXfontcache.la
 lib/libXfontcache.so
 lib/libXfontcache.so.1
 lib/libXfontcache.so.1.0.0

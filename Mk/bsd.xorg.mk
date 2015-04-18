@@ -33,6 +33,8 @@ Xorg_Pre_Include=		bsd.xorg.mk
 USES+=		tar:bzip2
 .endif
 GNU_CONFIGURE= 	yes
+# for some reason this makes mkfontscale and others fail in the install target
+#INSTALL_TARGET=	install-strip
 DIST_SUBDIR=	xorg/${XORG_CAT}
 
 MASTER_SITES?=	${MASTER_SITE_XORG}
@@ -82,7 +84,7 @@ PLIST_FILES+=	"@comment ${FONTSDIR}/fonts.dir" \
 .  endif
 
 . if ${XORG_CAT} == "lib"
-USES+=		pathfix libtool:keepla
+USES+=		pathfix libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--enable-malloc0returnsnull
 . endif

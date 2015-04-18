@@ -73,12 +73,10 @@ lib/libXaw.so
 lib/libXaw.so.6
 lib/libXaw.so.7
 lib/libXaw6.a
-lib/libXaw6.la
 lib/libXaw6.so
 lib/libXaw6.so.6
 lib/libXaw6.so.6.0.1
 lib/libXaw7.a
-lib/libXaw7.la
 lib/libXaw7.so
 lib/libXaw7.so.7
 lib/libXaw7.so.7.0.0
