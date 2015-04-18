@@ -3,7 +3,7 @@
 
 PORTNAME=	netradiant
 PORTVERSION=	20130630
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games cad
 MASTER_SITES=	http://ingar.satgnu.net/gtkradiant/files/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -48,7 +48,7 @@ pre-install:
 # Fix permissions of some files (drop bogus execute bit)
 	@${FIND} ${WRKSRC}/install/osirion.game -type f | ${XARGS} ${CHMOD} a-x
 	@${CHMOD} a-x ${WRKSRC}/install/games/osirion.game
-# Remove extra copy of GNU GPL from what we install
+# Remove a copy of GNU GPL from what we are going to install
 	@${RM} ${WRKSRC}/install/GPL.txt
 
 do-install:
