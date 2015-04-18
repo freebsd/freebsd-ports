@@ -16,13 +16,11 @@ GH_ACCOUNT=	divVerent
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	ff1ce7e
 
-USES=		libtool
+USES=		autoreconf libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	--add-missing
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0

@@ -16,10 +16,8 @@ LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libraptor2.so:${PORTSDIR}/textproc/raptor2
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	--add-missing --copy --force
 GNU_CONFIGURE=	yes
-USES=		iconv libtool pathfix pkgconfig
+USES=		autoreconf iconv libtool pathfix pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

@@ -16,11 +16,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
-USES=		pkgconfig iconv
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
+USES=		autoreconf iconv pkgconfig
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run \
