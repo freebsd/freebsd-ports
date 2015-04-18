@@ -15,6 +15,7 @@ NOT_FOR_ARCHS=	ia64
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
 NEED_ROOT=	yes
+USES=		libtool
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -106,20 +107,16 @@ IGNORE=		Option SASL2AUTHD needs option SASL2
 TLS_SUFFIX?=	-notls
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
-		${WRKSRC}/db-4.3.28.NC/dist/configure
-
 post-configure:
 	@${CP} ${WRKSRC}/misc/sm.check.sh ${WRKSRC}/misc/sm.setup.sh \
 		${WRKDIR}/
-	 @${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
+	@${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
 		-e 's|$${SD}/misc|${PREFIX}/bin|' \
 		-e 's|$${SD}/libcheck|${PREFIX}/sbin|' \
 		-e 's|$${SD}/libmta|${PREFIX}/sbin|' \
 		-e 's|$${SD}/checks|${PREFIX}/sbin|' \
 		${WRKDIR}/sm.check.sh
-	 @${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
+	@${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
 		-e 's|[.]/misc|${PREFIX}/bin|' \
 		-e 's|$${S}/libconf|${PREFIX}/sbin|' \
 		-e 's|[.]/libmta|${PREFIX}/sbin|' \
@@ -129,7 +126,7 @@ post-configure:
 
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 #fails on bento
 #regression-test:	test

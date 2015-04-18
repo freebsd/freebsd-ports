@@ -16,7 +16,4 @@ USE_LDCONFIG=	yes
 USES=		perl5 libtool
 USE_PERL5=	build
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

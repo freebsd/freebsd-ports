@@ -17,7 +17,4 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cpu --with-ldap=${LOCALBASE}
 CPPFLAGS+=	-DLDAP_DEPRECATED
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>
