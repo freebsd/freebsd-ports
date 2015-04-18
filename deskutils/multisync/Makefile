@@ -11,16 +11,14 @@ DISTNAME=	multisync-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-pre-configure:
+post-patch:
 	@${FIND} ${WRKDIR} -type l -delete
 
 .include <bsd.port.mk>

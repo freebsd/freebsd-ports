@@ -19,11 +19,11 @@ NO_PACKAGE=	yes
 
 SNAPDATE=	20140626144503
 
-USES=			cpe tar:xz iconv perl5 pathfix libtool python:2,build
+USES=		autoreconf:build cpe iconv libtool pathfix perl5 \
+		python:2,build tar:xz
 CPE_PRODUCT=	apr-util
 CPE_VENDOR=	apache
 CPE_VERSION=	${PORTVERSION:S|.${SNAPDATE}||}
-USE_AUTOTOOLS=		automake:env autoconf:env libtoolize:env
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
@@ -113,7 +113,7 @@ post-patch:
 		-e 's|python -c|${PYTHON_VERSION} -c|' \
 		${WRKSRC}/build/buildcheck.sh
 
-run-autotools:
+pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf)
 
 pre-install:
@@ -128,18 +128,5 @@ test:	build
 	@-make test -C ${WRKSRC}
 
 #regression-test:	test
-
-debug_autoconf:
-	@${ECHO} "LIBTOOL: ${LIBTOOL_VERSION}"
-	@${ECHO} "AUTOCONF: dev ${dev_acver} cur ${cur_acver} use ${use_acver}"
-	@${ECHO} "AUTOMAKE: dev ${dev_amver} cur ${cur_amver} use ${use_amver}"
-	@${ECHO} "AUTOCONF_DIR: ${AUTOCONF_DIR}"
-	@${ECHO} "BUILD_DEPENDS: ${BUILD_DEPENDS}"
-	@${ECHO} "ACLOCAL_DIR: ${ACLOCAL_DIR}"
-	@${ECHO} "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}"
-	@${ECHO} "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}"
-	@${ECHO} "LIBTOOL_M4: ${LIBTOOL_M4}"
-	@${ECHO} "==================="
-	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS}" | ${TR} -s ' ' '\n'
 
 .include <bsd.port.mk>

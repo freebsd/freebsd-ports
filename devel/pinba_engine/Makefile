@@ -30,11 +30,9 @@ MYSQL_WRKSRC=	$$(cd ${PORTSDIR}/${_MYSQL_SERVER} && ${MAKE} -V WRKSRC)
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+USES=		autoreconf gmake libtool
 USE_LDCONFIG=	${PREFIX}/lib/mysql/plugin
 
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--disable-static \
 		--with-mysql=${MYSQL_WRKSRC} \
 		--libdir=${PREFIX}/lib/mysql/plugin
