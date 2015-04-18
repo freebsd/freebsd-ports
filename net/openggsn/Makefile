@@ -12,10 +12,8 @@ COMMENT=	Implementation of the Gateway GPRS Support Node element
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
-
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize autoheader
-AUTOMAKE_ARGS=	--gnu --add-missing --copy
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool
 
 post-patch:
 	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \

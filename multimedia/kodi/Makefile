@@ -61,8 +61,8 @@ GH_ACCOUNT=	xbmc
 GH_PROJECT=	ffmpeg
 GH_TAGNAME=	2.4.6-Helix
 
-USES=		gettext gmake iconv:wchar_t libtool:build pkgconfig python:2
-USE_AUTOTOOLS=	autoconf:env automake:env
+USES=		autoreconf:build gettext gmake iconv:wchar_t libtool \
+		pkgconfig python:2
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst xrandr
 USE_GL=		glu
@@ -172,9 +172,8 @@ post-patch:
 		${WRKSRC}/xbmc/Makefile.in \
 		${WRKSRC}/tools/TexturePacker/Makefile.in
 	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
-	${REINPLACE_CMD} '/^autopoint/d' ${WRKSRC}/lib/cpluff/autogen.sh
 
-run-autotools:
+pre-configure:
 	cd ${WRKSRC} && ${SH} ./bootstrap
 
 post-install:

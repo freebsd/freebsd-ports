@@ -25,10 +25,8 @@ CONFLICTS=	rabbitmq-c-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool python tar:bzip2
+USES=		autoreconf gmake libtool python tar:bzip2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtoolize
-AUTOMAKE_ARGS=	-i --add-missing
 
 OPTIONS_DEFINE=	64BIT POPT
 64BIT_DESC=	Produce 64-bit library

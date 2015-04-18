@@ -17,12 +17,10 @@ GH_ACCOUNT=	Pulse-Eight
 GH_COMMIT=	2a80b46
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}-repack
 
-USES=		alias pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
+USES=		alias autoreconf pathfix pkgconfig libtool
 PATHFIX_MAKEFILEIN=Makefile.am
 USE_XORG=	x11 xproto xrandr
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

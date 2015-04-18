@@ -24,10 +24,8 @@ CONFIGURE_ARGS=	--enable-berkeley-db
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LIBS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
 PATHFIX_MAKEFILEIN=	Makefile.am
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
 USE_BDB=	yes
 USE_LDCONFIG=	yes
 
