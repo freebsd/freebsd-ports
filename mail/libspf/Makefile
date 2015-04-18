@@ -18,9 +18,7 @@ MAKE_JOBS_UNSAFE=yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:bzip2
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

@@ -15,11 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		compiler:c11 gmake libtool pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+USES=		autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2
 USE_GL=		gl
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include

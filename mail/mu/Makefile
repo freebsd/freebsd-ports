@@ -20,10 +20,9 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
 GH_COMMIT=	7888ba3
 
-USES=		gmake libtool makeinfo pkgconfig
+USES=		autoreconf gmake libtool makeinfo pkgconfig
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk
 INSTALL_TARGET=	install-strip
 
