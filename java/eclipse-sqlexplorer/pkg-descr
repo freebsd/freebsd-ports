@@ -1,7 +1,0 @@
-Eclipse IDE plugin for database query/schema viewer for nearly any kind of
-JDBC database. It supports plugins for specialized functionality for
-individual databases (Oracle and data tools ( like Hibernate, Oracle
-or Sybase )
-
-WWW: http://sourceforge.net/projects/eclipsesql/
-

@@ -4749,7 +4749,6 @@
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += sbt
-    SUBDIR += scala-ide
     SUBDIR += scalatest
     SUBDIR += scandoc
     SUBDIR += scons
@@ -4818,7 +4817,6 @@
     SUBDIR += stringencoders
     SUBDIR += stxxl
     SUBDIR += styx
-    SUBDIR += subclipse
     SUBDIR += subcommander2
     SUBDIR += subversion
     SUBDIR += subversion-book
