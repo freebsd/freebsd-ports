@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4571ca8-053d-44c9-ab3c-89b1372ad0a5">
+    <topic>chrony -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chrony</name>
+	<range><lt>1.31.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrony News reports:</p>
+	<blockquote cite="http://chrony.tuxfamily.org/News.html">
+	  <p>CVE-2015-1853: DoS attack on authenticated symmetric NTP
+	    associations</p>
+	  <p>CVE-2015-1821: Heap-based buffer overflow in access
+	    configuration</p>
+	  <p>CVE-2015-1822: Use of uninitialized pointer in command
+	    processing</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://chrony.tuxfamily.org/News.html</url>
+      <cvename>CVE-2015-1821</cvename>
+      <cvename>CVE-2015-1822</cvename>
+      <cvename>CVE-2015-1853</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-17</discovery>
+      <entry>2015-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e426eda9-dae1-11e4-8107-94de806b0af9">
     <topic>Dulwich -- Remote code execution</topic>
     <affects>
