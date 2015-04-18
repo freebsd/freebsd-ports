@@ -15,6 +15,8 @@ DISTNAME=	xview-3.2p1.4-19c
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
+BROKEN=		Fails to package
+
 CONFLICTS=	props-1.0
 
 MAKE_JOBS_UNSAFE=	yes
