@@ -18,10 +18,8 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		txt2man:${PORTSDIR}/textproc/txt2man
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
-USES=		bison iconv libtool pathfix pkgconfig
+USES=		autoreconf bison iconv libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.am
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 WANT_GNOME=	yes

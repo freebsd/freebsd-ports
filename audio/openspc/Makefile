@@ -15,9 +15,7 @@ COMMENT=	Command-line player for .spc and .zst files
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf libtool
 USE_GCC=	any
 USE_LDCONFIG=	yes
 
