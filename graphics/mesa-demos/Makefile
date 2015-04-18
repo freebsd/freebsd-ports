@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-demos
 PORTVERSION=	8.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/demos/${PORTVERSION}/
 
@@ -12,13 +12,13 @@ COMMENT=	OpenGL demos distributed with Mesa
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig tar:bzip2
-USE_GL=		egl glew glu glut
+USE_GL=		glew glu glut
 USE_XORG=	dri2proto glproto x11 xdamage xext xfixes xi xxf86vm
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS+=--disable-gles2 \
+CONFIGURE_ARGS+=--disable-egl --disable-gbm --disable-gles2 \
 		--disable-osmesa --disable-vg --disable-wayland \
 		--with-system-data-files
 
