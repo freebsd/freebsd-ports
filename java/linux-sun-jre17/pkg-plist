@@ -418,7 +418,6 @@
 %%T%%/lib/zi/Antarctica/Syowa
 %%T%%/lib/zi/Antarctica/Troll
 %%T%%/lib/zi/Antarctica/Vostok
-%%T%%/lib/zi/Asia/Aden
 %%T%%/lib/zi/Asia/Almaty
 %%T%%/lib/zi/Asia/Amman
 %%T%%/lib/zi/Asia/Anadyr
@@ -426,7 +425,6 @@
 %%T%%/lib/zi/Asia/Aqtobe
 %%T%%/lib/zi/Asia/Ashgabat
 %%T%%/lib/zi/Asia/Baghdad
-%%T%%/lib/zi/Asia/Bahrain
 %%T%%/lib/zi/Asia/Baku
 %%T%%/lib/zi/Asia/Bangkok
 %%T%%/lib/zi/Asia/Beirut
@@ -458,12 +456,10 @@
 %%T%%/lib/zi/Asia/Krasnoyarsk
 %%T%%/lib/zi/Asia/Kuala_Lumpur
 %%T%%/lib/zi/Asia/Kuching
-%%T%%/lib/zi/Asia/Kuwait
 %%T%%/lib/zi/Asia/Macau
 %%T%%/lib/zi/Asia/Magadan
 %%T%%/lib/zi/Asia/Makassar
 %%T%%/lib/zi/Asia/Manila
-%%T%%/lib/zi/Asia/Muscat
 %%T%%/lib/zi/Asia/Nicosia
 %%T%%/lib/zi/Asia/Novokuznetsk
 %%T%%/lib/zi/Asia/Novosibirsk
