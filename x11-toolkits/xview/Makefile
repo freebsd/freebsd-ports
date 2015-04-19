@@ -3,7 +3,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1.4.19c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.physionet.org/physiotools/xview/src/ \
 		http://komquats.com/distfiles/ \
@@ -64,6 +64,10 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc; ${MAKE} install)
 .endif
+	@${RM} ${STAGEDIR}${PREFIX}/lib/help/clock.info
+	@${RM} ${STAGEDIR}${PREFIX}/lib/help/olwm.info
+	@${RM} ${STAGEDIR}${PREFIX}/lib/help/props.info
+	@${RM} ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
