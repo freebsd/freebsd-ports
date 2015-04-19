@@ -2,6 +2,7 @@ bin/caff
 bin/gpg-key2latex
 bin/gpg-key2ps
 bin/gpg-mailkeys
+bin/gpgdir
 bin/gpglist
 bin/gpgparticipants
 bin/gpgsigs
@@ -18,6 +19,7 @@ man/man1/caff.1.gz
 man/man1/gpg-key2latex.1.gz
 man/man1/gpg-key2ps.1.gz
 man/man1/gpg-mailkeys.1.gz
+man/man1/gpgdir.1.gz
 man/man1/gpglist.1.gz
 man/man1/gpgparticipants.1.gz
 man/man1/gpgsigs.1.gz
