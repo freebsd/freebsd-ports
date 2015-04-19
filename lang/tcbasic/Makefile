@@ -3,15 +3,12 @@
 PORTNAME=	tcbasic
 PORTVERSION=	2.0.0
 CATEGORIES=	lang
+MASTER_SITES=	https://github.com/tcort/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	linuxgeek@gmail.com
 COMMENT=	Small BASIC Interpreter written in C
 
 LICENSE=	GPLv3
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	tcort
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 
