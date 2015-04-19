@@ -84,6 +84,9 @@ UWSGI_RUN_DEPENDS=	uwsgi:${PORTSDIR}/www/uwsgi
 
 .include <bsd.port.options.mk>
 
+post-patch:
+	@${RM} ${WRKSRC}/INSTALL
+
 pre-configure:
 	@(cd ${WRKSRC}/po/admin && ${PYTHON_CMD} generate_POTFILESin.py \
 		> POTFILES.in)
