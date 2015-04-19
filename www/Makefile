@@ -353,6 +353,7 @@
     SUBDIR += kplaylist
     SUBDIR += kwebkitpart
     SUBDIR += larbin
+    SUBDIR += lessc
     SUBDIR += libapreq2
     SUBDIR += libecap
     SUBDIR += libepc
