@@ -27,7 +27,7 @@ GH_TAGNAME=	v${PORTVERSION}
 USE_BDB=	yes
 WANT_BDB_VER=	48
 USE_OPENSSL=	yes
-USES=		autoreconf gmake iconv libtool
+USES=		autoreconf:build gmake iconv libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/libtorrent
@@ -54,6 +54,9 @@ WITH_OPENSSL_PORT=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|'	\
 		${WRKSRC}/share/genbuild.sh
+
+pre-configure:
+	(cd ${WRKSRC} && ./autotool.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
