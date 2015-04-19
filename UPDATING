@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150419
+  AFFECTS: Users of emulators/wine-devel
+  AUTHOR: gerald@FreeBSD.org
+
+
+  The COMPHOLIO option in emulators/wine-devel has been renamed to
+  STAGING to align with the upstream evolution of that project.
+
 20150417:
   AFFECTS: Users of audio/bcg729
   AUTHOR: tijl@FreeBSD.org
