@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 
 MAINTAINER=	cpm@fbsd.es
-COMMENT=	Optimization library with support for COIN-OR, CLP, CBC and CGL
+COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License, Version 1.0
@@ -62,7 +62,7 @@ post-install:
 .endfor
 
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test)
+	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} test -C ${WRKSRC}
 
 .include <bsd.port.mk>
