@@ -22,4 +22,9 @@ USE_LDCONFIG=	yes
 
 INFO=		sdts++
 
+post-patch:
+.for f in AUTHORS ChangeLog NEWS README
+	@${TOUCH} ${WRKSRC}/sysutils/${f}
+.endfor
+
 .include <bsd.port.mk>
