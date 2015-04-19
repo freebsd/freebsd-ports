@@ -12,6 +12,8 @@ OPTIONS_SET=	COMPHOLIO LIBXSLT MPG123 GNUTLS HAL V4L X11
 
 MASTERDIR=	${.CURDIR}/../wine-devel
 PLIST=		${MASTERDIR}/pkg-plist
+USE_AUTOTOOLS=	autoconf:env
+EXTRA_PATCHES=	${.CURDIR}/files/patch-scheduler
 
 .include "${MASTERDIR}/Makefile"
 
