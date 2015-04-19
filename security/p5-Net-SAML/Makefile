@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SAML
-PORTVERSION=	1.22
+PORTVERSION=	1.30
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/ \
 		CPAN
