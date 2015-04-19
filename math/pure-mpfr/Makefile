@@ -20,6 +20,8 @@ PORTDOCS=	README
 PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+CFLAGS_amd64=	-fPIC
+
 PLIST_FILES=	lib/pure/mpfr.pure \
 		lib/pure/mpfr.so
 
