@@ -46,6 +46,9 @@ AP24=		""
 .  endif
 .endif
 
+post-patch:
+	@${MV} ${WRKSRC}/m4/acinclude.m4 ${WRKSRC}
+
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/sams2 ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_DATA} ${WRKDIR}/sams2.conf.sample ${STAGEDIR}${PREFIX}/etc
