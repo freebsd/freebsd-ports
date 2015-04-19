@@ -30,7 +30,7 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
-# Y.2.s20140817 results in values of Y-20140817, Y.2.0, and Y
+# Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
 DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
