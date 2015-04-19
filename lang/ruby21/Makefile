@@ -92,6 +92,10 @@ CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .endif
 
+.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
+.endif
+
 CONFIGURE_ENV=	debugflags=
 
 .if ${PORT_OPTIONS:MCAPIDOCS}
