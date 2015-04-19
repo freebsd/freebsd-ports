@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150419:
+AUTHOR: tijl@FreeBSD.org
+
+  USE_AUTOTOOLS has been deprecated.  It can be replaced with USES=autoreconf
+  and GNU_CONFIGURE=yes.
+
+  Support for USE_AUTOTOOLS=libtoolize has been removed.  It can be replaced
+  with "USES=autoreconf libtool".
+
 20150409:
 AUTHOR: bapt@FreeBSD.org
 

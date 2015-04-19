@@ -15,7 +15,6 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # 'tool' can currently be one of the following:
 #	autoconf, autoheader
 #	automake, aclocal
-#	libtoolize
 #
 # ':env' is used to specify that the environmental variables are needed
 #	but the relevant tool should NOT be run as part of the
@@ -36,9 +35,6 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # AUTOHEADER_ARGS=...
 #	- Extra arguments passed to autoheader during configure step
 #
-# LIBTOOLIZE_ARGS=...
-#	- Extra arguments passed to libtoolize during configure step
-#
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
@@ -47,8 +43,7 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 
 # Known autotools components
 _AUTOTOOLS_ALL=	autoconf autoheader \
-		automake aclocal \
-		libtoolize
+		automake aclocal
 
 #---------------------------------------------------------------------------
 # Primary magic to break out the USE_AUTOTOOLS stanza into something
@@ -180,36 +175,10 @@ BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
 .endif
 
 #---------------------------------------------------------------------------
-# libtoolize
-#---------------------------------------------------------------------------
-
-.if defined(_AUTOTOOL_libtoolize)
-LIBTOOL_VERSION=	2.4
-LIBTOOL_PORT=		devel/libtool
-
-. if defined(_AUTOTOOL_libtoolize) && ${_AUTOTOOL_libtoolize} == "yes"
-_AUTOTOOL_rule_libtoolize=	yes
-GNU_CONFIGURE?=			yes
-. endif
-
-.endif
-
-.if defined(LIBTOOL_VERSION)
-LIBTOOLIZE=		${LOCALBASE}/bin/libtoolize
-
-LIBTOOL_VARS=		LIBTOOLIZE=${LIBTOOLIZE}
-
-LIBTOOLIZE_ARGS?=	-i -c -f
-
-LIBTOOL_DEPENDS=	libtool>=2.4:${PORTSDIR}/${LIBTOOL_PORT}
-BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
-.endif
-
-#---------------------------------------------------------------------------
 # Add to the environment
 #---------------------------------------------------------------------------
 
-AUTOTOOLS_VARS=		${AUTOMAKE_VARS} ${AUTOCONF_VARS} ${LIBTOOL_VARS}
+AUTOTOOLS_VARS=		${AUTOMAKE_VARS} ${AUTOCONF_VARS}
 
 .if defined(AUTOTOOLS_VARS) && !empty(AUTOTOOLS_VARS)
 . for var in AUTOTOOLS CONFIGURE MAKE SCRIPTS
@@ -222,11 +191,11 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 #---------------------------------------------------------------------------
 
 .if !target(run-autotools)
-.ORDER:		run-autotools run-autotools-libtoolize run-autotools-aclocal \
+.ORDER:		run-autotools run-autotools-aclocal \
 		run-autotools-autoconf run-autotools-autoheader \
 		run-autotools-automake
 
-run-autotools::	run-autotools-libtoolize run-autotools-aclocal \
+run-autotools::	run-autotools-aclocal \
 		run-autotools-autoconf run-autotools-autoheader \
 		run-autotools-automake
 .endif
@@ -266,16 +235,6 @@ run-autotools-autoheader:
 . if defined(_AUTOTOOL_rule_autoheader)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
-. else
-	@${DO_NADA}
-. endif
-.endif
-
-.if !target(run-autotools-libtoolize)
-run-autotools-libtoolize:
-. if defined(_AUTOTOOL_rule_libtoolize)
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
-		${LIBTOOLIZE_ARGS})
 . else
 	@${DO_NADA}
 . endif
