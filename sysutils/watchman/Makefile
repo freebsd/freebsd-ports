@@ -18,6 +18,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_prog_HAVE_ARC=false
 CONFIGURE_ARGS=	--with-pcre
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
