@@ -1,6 +1,7 @@
 %%SITE_PERL%%/IO/Async.pm
 %%SITE_PERL%%/IO/Async/Channel.pm
 %%SITE_PERL%%/IO/Async/ChildManager.pm
+%%SITE_PERL%%/IO/Async/Debug.pm
 %%SITE_PERL%%/IO/Async/File.pm
 %%SITE_PERL%%/IO/Async/FileStream.pm
 %%SITE_PERL%%/IO/Async/Function.pm
@@ -37,6 +38,7 @@
 %%PERL5_MAN3%%/IO::Async.3.gz
 %%PERL5_MAN3%%/IO::Async::Channel.3.gz
 %%PERL5_MAN3%%/IO::Async::ChildManager.3.gz
+%%PERL5_MAN3%%/IO::Async::Debug.3.gz
 %%PERL5_MAN3%%/IO::Async::File.3.gz
 %%PERL5_MAN3%%/IO::Async::FileStream.3.gz
 %%PERL5_MAN3%%/IO::Async::Function.3.gz
