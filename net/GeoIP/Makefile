@@ -3,6 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -13,8 +14,6 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-c
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	fd1d4fa
 
 USES=		autoreconf libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am
