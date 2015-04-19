@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTVERSION=	1.9.20140519
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news mail
 
 .if ${PORTNAME} == "husky-smapi"
