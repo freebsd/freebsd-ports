@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
-USES=		autoreconf iconv pkgconfig
+USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
@@ -70,11 +70,7 @@ DEBUG_CONFIGURE_WITH=		dgdebug
 SSL_LDFLAGS=			-lssl -lcrypto
 SSL_CFLAGS=			-D__SSLMITM -D__SSLCERT
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|.lresolv||g' \
-		${WRKSRC}/configure.ac
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLAMD} || ${PORT_OPTIONS:MICAP} || \
     ${PORT_OPTIONS:MKAV} || ${PORT_OPTIONS:MCLISCAN}
@@ -93,4 +89,4 @@ post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/bannedrooms/default \
 		${STAGEDIR}${ETCDIR}/lists/bannedrooms/default.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
