@@ -3,7 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -29,13 +29,6 @@ CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release \
 		--with-tool-prefix=${LOCALBASE}/llvm${LLVM_VERSION}/bin
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude texmacs
 USE_LDCONFIG=	yes
-
-MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/man \
-		CC=${CC} CFLAGS="${CFLAGS}" \
-		PIC="-fPIC -DPIC" \
-		CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS+=-I${LOCALBASE}/include \
-		LDFLAGS+=-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
