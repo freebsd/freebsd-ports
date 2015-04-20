@@ -28,7 +28,7 @@ USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 USES=			cpe gettext gmake perl5 libtool:build
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
-			--disable-rpath
+			--disable-rpath --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 

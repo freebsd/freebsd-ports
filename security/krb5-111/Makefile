@@ -32,7 +32,8 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--without-system-verto --disable-rpath
+CONFIGURE_ARGS?=	--without-system-verto --disable-rpath \
+			--localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		NSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 

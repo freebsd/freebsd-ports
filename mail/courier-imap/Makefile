@@ -49,6 +49,7 @@ PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
+		--localstatedir="${PREFIX}/var" \
 		--datadir=${DATADIR} \
 		--libexecdir=${LIBEXECDIR} \
 		--enable-workarounds-for-imap-client-bugs \

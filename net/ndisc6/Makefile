@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 USES=		tar:bzip2 perl5
 USE_GCC=	any
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-suid-install
+CONFIGURE_ARGS=	--disable-suid-install --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl
 MAKE_ENV=	CHOWNPROG=:
 

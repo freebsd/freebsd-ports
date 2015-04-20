@@ -255,7 +255,13 @@ libperl() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl"
+prefixvar() {
+	if test -d ${STAGEDIR}${PREFIX}/var; then
+		warn "port uses ${PREFIX}/var instead of /var"
+	fi
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar"
 
 ret=0
 cd ${STAGEDIR}
