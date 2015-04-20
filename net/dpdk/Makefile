@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-PORTVERSION=	1.8.0
+PORTVERSION=	2.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dpdk.org/browse/dpdk/snapshot/
 
@@ -21,14 +21,11 @@ WRKBUILD=	${WRKSRC}/${RTE_TARGET}
 ALL_TARGET=	install T=${RTE_TARGET}
 
 # build up the list of files in the compiled directory that should be executable
-EXEC_FILES=	hostapp/testhost \
-		app/cmdline_test \
+EXEC_FILES=	app/cmdline_test \
 		app/testpipeline \
 		app/testpmd \
+		app/testacl \
 		app/test
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/-fdirectives-only//' ${WRKSRC}/mk/rte.sdkconfig.mk
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/${RTE_TARGET}/app \
