@@ -36,6 +36,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
 CONFIGURE_ARGS+=	\
 		--sysconfdir=${ETCDIR} \
+		--localstatedir="${PREFIX}/var" \
 		--with-htdocs-dir=${PREFIX}/smokeping/htdocs \
 		--libdir=${PREFIX}/smokeping/lib
 HTDOCSDIR=	${PREFIX}/smokeping/htdocs

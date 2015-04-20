@@ -17,8 +17,7 @@ USES=		gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 BINDIR=		${PREFIX}/lib/${PORTNAME}
-VARDIR=		${PREFIX}/var/${PORTNAME}
-CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
+CONFIGURE_ARGS=	--bindir=${BINDIR} --sbindir=${BINDIR} --localstatedir="${PREFIX}/var"
 
 CONFLICTS_INSTALL=	empire-[0-9]*
 
