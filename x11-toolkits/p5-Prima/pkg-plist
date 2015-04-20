@@ -152,6 +152,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/StdDlg.pm
 %%SITE_ARCH%%/Prima/Stress.pm
 %%SITE_ARCH%%/Prima/Terminals.pm
+%%SITE_ARCH%%/Prima/Test.pm
 %%SITE_ARCH%%/Prima/TextView.pm
 %%SITE_ARCH%%/Prima/Themes.pm
 %%SITE_ARCH%%/Prima/Tie.pm
@@ -317,6 +318,7 @@ bin/tmlink
 %%PERL5_MAN3%%/Prima::StdDlg.3.gz
 %%PERL5_MAN3%%/Prima::Stress.3.gz
 %%PERL5_MAN3%%/Prima::Terminals.3.gz
+%%PERL5_MAN3%%/Prima::Test.3.gz
 %%PERL5_MAN3%%/Prima::TextView.3.gz
 %%PERL5_MAN3%%/Prima::Themes.3.gz
 %%PERL5_MAN3%%/Prima::Tie.3.gz
