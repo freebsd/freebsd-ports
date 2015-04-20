@@ -608,8 +608,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.9.4
-GIT_LUA_VERSION=	0-g6169a19
+NGINX_LUA_VERSION=	0.9.15
+GIT_LUA_VERSION=	0-g4388b1e
 MASTER_SITES+=	https://github.com/openresty/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	openresty-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}
