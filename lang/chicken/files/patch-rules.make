@@ -1,6 +1,6 @@
---- rules.make.orig	2012-07-07 11:34:54.000000000 +0300
-+++ rules.make	2012-07-07 11:38:18.000000000 +0300
-@@ -242,8 +242,8 @@
+--- rules.make.orig	2014-06-07 12:24:41 UTC
++++ rules.make
+@@ -243,8 +243,8 @@ lib$(PROGRAM_PREFIX)chicken$(PROGRAM_SUF
  
  # import libraries and extensions
  
