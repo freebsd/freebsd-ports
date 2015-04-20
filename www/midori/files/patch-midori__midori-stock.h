@@ -1,6 +1,11 @@
---- ./midori/midori-stock.h.orig	2013-02-05 23:28:05.000000000 +0000
-+++ ./midori/midori-stock.h	2013-02-08 09:07:30.000000000 +0000
-@@ -25,7 +25,7 @@
+--- midori/midori-stock.h.orig	2015-04-19 23:50:25 UTC
++++ midori/midori-stock.h
+@@ -21,11 +21,11 @@
+ #define STOCK_NEWS_FEED          "internet-news-reader"
+ #define STOCK_STYLE              "preferences-desktop-theme"
+ #define MIDORI_STOCK_TRANSFER    "package"
+-#define MIDORI_STOCK_PLUGINS     "application-x-shockwave-flash"
++#define MIDORI_STOCK_PLUGINS     "application-x-addon"
  #define STOCK_BOOKMARK_ADD       "bookmark-new"
  #define STOCK_IMAGE              "image-x-generic"
  #define STOCK_NETWORK_OFFLINE    "network-offline"
