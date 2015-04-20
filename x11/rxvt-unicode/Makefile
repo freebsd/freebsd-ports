@@ -17,7 +17,7 @@ BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
-USES=			pkgconfig shebangfix tar:bzip2
+USES=			cpe pkgconfig shebangfix tar:bzip2
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -25,6 +25,7 @@ LIBS+=			-lutil
 CONFIGURE_ENV=		TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
+CPE_VENDOR=		marc_lehmann
 
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
