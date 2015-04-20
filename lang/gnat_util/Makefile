@@ -23,8 +23,11 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .include "${.CURDIR}/Makefile.sources"
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../${ADAXX}-aux/Makefile.version"
+.if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 5
+.include "${.CURDIR}/../gcc5-aux/Makefile.version"
+.else
+.include "${.CURDIR}/../gcc-aux/Makefile.version"
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj
@@ -40,7 +43,11 @@ post-install:
 	# impunit is needed for GPS menus, just provide the source files
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/gcc/ada/impunit.* \
 		${STAGEDIR}${PREFIX}/include/gnat_util
+	# gnat_ugn.texi is used to generate gnat_switches.py for GPS
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/gcc/ada/gnat_ugn.texi \
+		${STAGEDIR}${DATADIR}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 		${SORT} >> ${TMPPLIST})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
