@@ -13,10 +13,8 @@ COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		pathfix gmake libtool
+USES=		autoreconf gmake libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 

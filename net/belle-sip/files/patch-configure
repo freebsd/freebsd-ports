@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2015-03-11 16:44:12 UTC
 +++ configure
-@@ -15655,10 +15655,10 @@
+@@ -16787,10 +16787,10 @@ libresolv_have_res_get_servers=no
  resolv_h_hav_res_ndestroy=no
  LIBS_save=$LIBS
  
@@ -12,17 +12,17 @@
  #include <resolv.h>
  int
  main ()
-@@ -15683,7 +15683,8 @@
+@@ -16814,7 +16814,8 @@ fi
+ rm -f core conftest.err conftest.$ac_objext \
      conftest$ac_exeext conftest.$ac_ext
  
- ac_fn_c_check_decl "$LINENO" "res_ndestroy
--		" "ac_cv_have_decl_res_ndestroy___" "#include <resolv.h>
-+		" "ac_cv_have_decl_res_ndestroy___" "#include <netinet/in.h>
+-ac_fn_c_check_decl "$LINENO" "res_ndestroy" "ac_cv_have_decl_res_ndestroy" "#include <resolv.h>
++ac_fn_c_check_decl "$LINENO" "res_ndestroy" "ac_cv_have_decl_res_ndestroy" "#include <netinet/in.h>
 +#include <resolv.h>
  "
- if test "x$ac_cv_have_decl_res_ndestroy___" = xyes; then :
+ if test "x$ac_cv_have_decl_res_ndestroy" = xyes; then :
    resolv_h_hav_res_ndestroy=yes
-@@ -15748,17 +15749,11 @@
+@@ -16877,17 +16878,11 @@ fi
  
  
  if test $ANTLR = "no" ; then

@@ -24,6 +24,8 @@ SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 OPTIONS_DEFINE=	AVFS HAL INOTIFY LUA XFT
 OPTIONS_DEFAULT=	AVFS INOTIFY
 
+OPTIONS_EXCLUDE_DragonFly=	AVFS
+
 INOTIFY_DESC=	Monitor directory changes via libinotify
 AVFS_DESC=	Use AVFS library to access an archives
 

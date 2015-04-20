@@ -1,0 +1,17 @@
+NLTK is a leading platform for building Python programs to work with human
+language data.  It provides easy-to-use interfaces to over 50 corpora and
+lexical resources such as WordNet, along with a suite of text processing
+libraries for classification, tokenization, stemming, tagging, parsing,
+and semantic reasoning, and an active discussion forum.
+
+Thanks to a hands-on guide introducing programming fundamentals alongside
+topics in computational linguistics, NLTK is suitable for linguists,
+engineers, students, educators, researchers, and industry users alike.
+NLTK is available for Windows, Mac OS X, and Linux.  Best of all, NLTK is
+a free, open source, community-driven project.
+
+NLTK has been called "a wonderful tool for teaching, and working in,
+computational linguistics using Python" and "an amazing library to play
+with natural language".
+
+WWW: http://www.nltk.org/

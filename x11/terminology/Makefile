@@ -6,7 +6,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE

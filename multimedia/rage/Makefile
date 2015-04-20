@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL video and audio player with some extra bells and whistles
 
 LICENSE=	BSD2CLAUSE

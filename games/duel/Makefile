@@ -27,9 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-sh
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec

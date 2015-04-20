@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=	--disable-x86opts
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|Player::||' ${WRKSRC}/base/include/player.h
 
 post-install:

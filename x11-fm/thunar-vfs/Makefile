@@ -45,7 +45,4 @@ GCONF_USE=	gnome=gconf2
 GCONF_CONFIGURE_ENABLE=	gnome-thumbnailers
 OPTIONS_SUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

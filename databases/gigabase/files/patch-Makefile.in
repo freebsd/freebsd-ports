@@ -1,15 +1,5 @@
 --- Makefile.in.orig	2012-05-14 15:11:18.000000000 +0600
 +++ Makefile.in 2012-05-14 15:14:15.000000000 +0600
-@@ -6,7 +6,8 @@
- exec_prefix = @exec_prefix@
- VPATH = @srcdir@
- LIBTOOL = ./libtool
--INSTALL = @INSTALL@
-+INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_DATA = @INSTALL_DATA@
- 
- # Coment this for AIX/xlC 5.0
- LIBEXT=la
 @@ -41,7 +42,7 @@
  SUFF=@SUFF@
  
@@ -28,24 +18,6 @@
  CXXFLAGS = @CXXFLAGS@ $(DEFS)
  CFLAGS = @CFLAGS@ $(DEFS)
  LD = $(CXX)
-@@ -70,7 +71,7 @@
- 
- $(GB_LIB): $(OBJS)
- # Coment this for AIX/xlC 5.0
--	$(LIBTOOL) --mode=link $(CXX) -o $@ $(OBJS) $(LDFLAGS) @LTHREADSLIB@ -rpath $(libdir) -version-info $(VERSION)
-+	$(LIBTOOL) --mode=link $(CXX) -o $@ $(OBJS) $(LDFLAGS) -rpath $(libdir) -version-info $(VERSION)
- # Uncoment this for AIX/xlC 5.0
- #	mkdir .libs
- #	xlC_r -qmkshrobj=-10 -o .libs/gigabase.so $(OBJS)
-@@ -80,7 +81,7 @@
- 
- $(CLI_LIB): $(CLI_OBJS)
- # Coment this for AIX/xlC 5.0
--	$(LIBTOOL) --mode=link $(CXX) -o $@ $(CLI_OBJS) $(LDFLAGS) @LTHREADSLIB@ -rpath $(libdir) -version-info $(VERSION)
-+	$(LIBTOOL) --mode=link $(CXX) -o $@ $(CLI_OBJS) $(LDFLAGS) -rpath $(libdir) -version-info $(VERSION)
- # Uncoment this for AIX/xlC 5.0
- #	xlC_r -qmkshrobj=-10 -o .libs/cli.so $(CLI_OBJS)
- #	ar rv .libs/libcli_r.a .libs/cli.so
 @@ -154,15 +155,15 @@
  	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o testleak testleak.o $(GB_LIB) $(SLHACK)
  
@@ -56,16 +28,16 @@
 -	$(LIBTOOL) --mode=install $(INSTALL) $(GB_LIB) $(CLI_LIB) $(libdir)
 -	mkdir -p $(bindir)
 +	mkdir -p $(DESTDIR)$(includedir)
-+	$(INSTALL_DATA) $(INCS) $(CLI_INCS) $(DESTDIR)$(includedir)
++	$(BSD_INSTALL_DATA) $(INCS) $(CLI_INCS) $(DESTDIR)$(includedir)
 +	mkdir -p $(DESTDIR)$(libdir)
-+	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(GB_LIB) $(CLI_LIB) $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) $(GB_LIB) $(CLI_LIB) $(DESTDIR)$(libdir)
 +	mkdir -p $(DESTDIR)$(bindir)
  	if test -x .libs/subsql ; then \
 -		cp .libs/subsql $(bindir); \
-+		$(INSTALL_PROGRAM) .libs/subsql $(DESTDIR)$(bindir)/subsql_gb; \
++		$(BSD_INSTALL_PROGRAM) .libs/subsql $(DESTDIR)$(bindir)/subsql_gb; \
  	else \
 -		cp subsql $(bindir); \
-+		$(INSTALL_PROGRAM) subsql $(DESTDIR)$(bindir)/subsql_gb; \
++		$(BSD_INSTALL_PROGRAM) subsql $(DESTDIR)$(bindir)/subsql_gb; \
  	fi
  #	strip $(bindir)/subsql
  

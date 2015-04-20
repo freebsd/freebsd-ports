@@ -2645,6 +2645,7 @@ PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .endif
+WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
@@ -3538,8 +3539,8 @@ do-package: ${TMPPLIST}
 	@${MKDIR} ${WRKDIR}/pkg
 	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -f ${PKG_SUFX:S/.//} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
-				|| ${CP} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+			${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}; \
 			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
@@ -3561,7 +3562,7 @@ do-package: ${TMPPLIST}
 delete-package:
 	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
 # When staging, the package may only be in the workdir if not root
-	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
+	@${RM} -f ${PKGFILE} ${WRKDIR_PKGFILE} 2>/dev/null || :
 .endif
 
 .if !target(delete-package-list)
@@ -3580,7 +3581,7 @@ _INSTALL_PKG_ARGS+=	-A
 .endif
 install-package:
 	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
-	    _pkgfile="${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}"; \
+	    _pkgfile="${WRKDIR_PKGFILE}"; \
 	else \
 	    _pkgfile="${PKGFILE}"; \
 	fi; \

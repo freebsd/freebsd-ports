@@ -34,8 +34,7 @@ CONFIGURE_ARGS+=--enable-static=yes \
 		--enable-escaping-using-cdata
 GNU_CONFIGURE_PREFIX=	"${PREFIX}/lib/erlang/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
-USES=		libtool pkgconfig
+USES=		autoreconf libtool pkgconfig
 USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
@@ -48,11 +47,8 @@ CONFIGURE_ARGS+=	--disable-documentation
 
 MAKE_JOBS_UNSAFE=	yes
 
-pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF} -ivf
-
 post-configure:
-	${MAKE} clean -C ${WRKSRC}
+	${MAKE_CMD} clean -C ${WRKSRC}
 
 post-install:
 .for _file in exmpp_xml_expat_legacy.so exmpp_compress_zlib.so		\

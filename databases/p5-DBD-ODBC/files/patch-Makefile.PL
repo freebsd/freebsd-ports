@@ -1,6 +1,6 @@
---- Makefile.PL-orig	2014-07-25 15:03:49.000000000 +0200
-+++ Makefile.PL	2014-07-25 15:04:03.000000000 +0200
-@@ -206,7 +206,7 @@
+--- Makefile.PL.orig	2013-12-17 09:40:52 UTC
++++ Makefile.PL
+@@ -206,7 +206,7 @@ EOT
      }
      # see rt 46944 for why the following was suggested to be commented
      # out which I rejected as PERL_MM_USE_DEFAULT can be used

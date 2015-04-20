@@ -6,7 +6,7 @@ PORTVERSION=	1.13.2
 CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple widget toolkit using EFL
 
 LICENSE=	LGPL21

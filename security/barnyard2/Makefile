@@ -32,10 +32,7 @@ OPTIONS_DESC=	Enable tcl support for sguil
 OPTIONS_DEFAULT+=	TCL
 .endif
 
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
-ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
-
+USES=		autoreconf libtool
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
 

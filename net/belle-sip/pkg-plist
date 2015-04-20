@@ -1,6 +1,7 @@
 include/belle-sip/auth-helper.h
 include/belle-sip/belle-sdp.h
 include/belle-sip/belle-sip.h
+include/belle-sip/bodyhandler.h
 include/belle-sip/defs.h
 include/belle-sip/dialog.h
 include/belle-sip/dict.h

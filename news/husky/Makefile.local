@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTVERSION=	1.9.20140519
+PORTREVISION=	2
 CATEGORIES=	news mail
-PKGNAMESUFFIX=	-devel
 
 .if ${PORTNAME} == "husky-smapi"
 PORTEPOCH=	1
@@ -14,7 +14,6 @@ MAINTAINER=	osharoiko@gmail.com
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	husky/husky/1.9-current/2014.05.19
 DISTNAME=	husky-all-1.9-source-20140519
-EXTRACT_SUFX=	.tgz
 
 HUSKY_ROOTDIR=	${WRKDIR}/husky
 PATCH_WRKSRC=	${HUSKY_ROOTDIR}
@@ -26,7 +25,7 @@ CONFLICTS=	${PORTNAME}-[0-9]*
 USERS=		fido
 GROUPS=		fido
 
-USES+=		alias gmake
+USES+=		alias gmake tar:tgz
 
 pre-build:
 	${LN} -sf ${HUSKY_ROOTDIR}/huskybse/huskymak.cfg ${HUSKY_ROOTDIR}

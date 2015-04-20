@@ -18,9 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool makeinfo
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-AUTOMAKE_ARGS=	-a -c
+USES=		autoreconf libtool makeinfo
 
 INFO=	socket++
 

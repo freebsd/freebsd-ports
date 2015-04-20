@@ -20,10 +20,8 @@ GH_ACCOUNT=	tgraf
 GH_COMMIT=	ad62e66
 GH_TAGNAME=	v${PORTVERSION}
 
-USES=		ncurses pkgconfig:build
-USE_AUTOTOOLS=	libtoolize autoheader automake aclocal
-AUTOMAKE_ARGS+=	--add-missing
 GNU_CONFIGURE=	yes
+USES=		autoreconf ncurses pkgconfig:build
 
 OPTIONS_DEFINE=	DOCS
 

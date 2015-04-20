@@ -3,6 +3,7 @@
 
 PORTNAME=	gawk
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	japanese lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +17,9 @@ COMMENT=	GNU awk + multi-byte extension
 
 LICENSE=	GPLv2
 
-USES=		makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 MAKE_JOBS_UNSAFE=	yes
-
-INFO=		gawk
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 

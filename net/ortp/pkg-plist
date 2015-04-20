@@ -2,7 +2,6 @@ include/ortp/b64.h
 include/ortp/event.h
 include/ortp/logging.h
 include/ortp/ortp.h
-include/ortp/ortp_srtp.h
 include/ortp/payloadtype.h
 include/ortp/port.h
 include/ortp/rtcp.h
@@ -12,10 +11,7 @@ include/ortp/rtpsession.h
 include/ortp/rtpsignaltable.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
-include/ortp/stun.h
-include/ortp/stun_udp.h
 include/ortp/telephonyevents.h
-include/ortp/zrtp.h
 lib/libortp.so
 lib/libortp.so.9
 lib/libortp.so.9.0.0

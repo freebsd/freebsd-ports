@@ -12,8 +12,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
-USES=		dos2unix libtool pkgconfig tar:xz
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
+USES=		autoreconf dos2unix libtool pkgconfig tar:xz
 USE_GNOME=	gtk20
 
 DOS2UNIX_FILES=	common/src/datafile.cpp common/src/logbase.cpp \
@@ -27,8 +26,5 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	@${REINPLACE_CMD} -e '/svn_revision/d' -e '/SUBDIRS/s/xpi//' \
 		${WRKSRC}/Makefile.am ${WRKSRC}/configure.ac
-
-pre-configure:
-	@(cd ${WRKSRC} && ${AUTORECONF} -i -f)
 
 .include <bsd.port.mk>

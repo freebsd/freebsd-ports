@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libfst.so:${PORTSDIR}/math/openfst
 
-USES=		python
+USES=		compiler:c++11-lib python
 USE_PYTHON=	distutils autoplist
 CPPFLAGS+=	-I${LOCALBASE}/include
 

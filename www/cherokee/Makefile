@@ -17,8 +17,8 @@ GH_PROJECT=	webserver
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
 GH_COMMIT=	e5583c6
 
-USES=		gettext gmake libtool pathfix pkgconfig python:2,build \
-		shebangfix
+USES=		autoreconf gettext gmake libtool pathfix pkgconfig \
+		python:2,build shebangfix
 SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 		admin/upgrade_config.py cherokee/cherokee-admin-launcher \
 		cherokee/cherokee-tweak contrib/tracelor.py \
@@ -29,8 +29,7 @@ SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 python_CMD=	${PYTHON_CMD}
 USE_RC_SUBR=	cherokee
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-static \
 		--localstatedir=${CHEROKEE_VARDIR} \
@@ -84,6 +83,9 @@ UWSGI_DESC=		uWSGI support
 UWSGI_RUN_DEPENDS=	uwsgi:${PORTSDIR}/www/uwsgi
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${RM} ${WRKSRC}/INSTALL
 
 pre-configure:
 	@(cd ${WRKSRC}/po/admin && ${PYTHON_CMD} generate_POTFILESin.py \

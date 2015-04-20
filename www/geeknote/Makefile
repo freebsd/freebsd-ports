@@ -3,6 +3,7 @@
 
 PORTNAME=	geeknote
 DISTVERSION=	0.2a
+PORTREVISION=	1
 CATEGORIES=	www python
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -17,12 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evernote>=1.17:${PORTSDIR}/www/py-evernote \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift
 
-USES=		dos2unix python:-2.7
+USES=		python:-2.7
 USE_GITHUB=	yes
 USE_PYTHON=     autoplist distutils
+
 GH_ACCOUNT=	VitaliyRodnenko
-GH_COMMIT=	192a0c5
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	7ea2255
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

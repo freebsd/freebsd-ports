@@ -12,8 +12,10 @@ COMMENT=	Online multiplayer rogue-like role-playing game
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
-USES=		gmake ncurses tar:bzip2
-CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\""
+USES=		execinfo gmake ncurses tar:bzip2
+CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\"" \
+		${EXECINFO_CPPFLAGS}
+LDFLAGS+=	${EXECINFO_LDFLAGS}
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
@@ -30,12 +32,6 @@ do-install:
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-CFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

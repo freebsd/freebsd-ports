@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cracklib
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.4
 CATEGORIES=	security
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python

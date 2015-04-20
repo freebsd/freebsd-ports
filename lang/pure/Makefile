@@ -3,7 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.64
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -14,8 +14,7 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgmp.so:${PORTSDIR}/math/gmp \
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libpcreposix.so:${PORTSDIR}/devel/pcre \
 		libLLVM-${LLVM_VERSION:C/./&./}.so:${PORTSDIR}/devel/llvm${LLVM_VERSION}
@@ -29,13 +28,6 @@ CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release \
 		--with-tool-prefix=${LOCALBASE}/llvm${LLVM_VERSION}/bin
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude texmacs
 USE_LDCONFIG=	yes
-
-MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/man \
-		CC=${CC} CFLAGS="${CFLAGS}" \
-		PIC="-fPIC -DPIC" \
-		CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS+=-I${LOCALBASE}/include \
-		LDFLAGS+=-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -54,8 +46,8 @@ LLVM_VERSION=	$v
 .endif
 LLVM_VERSION?=	35	# Pure does not build with llvm36. Yet?
 SUB_LIST+=	LLVM_VERSION=${LLVM_VERSION}
-.if ${LLVM_VERSION} > 34
-CXXFLAGS+=	-std=c++11
+.if ${LLVM_VERSION} >= 35
+USES+=		compiler:c++11-lib
 .endif
 
 OPTIONS_DEFAULT=	ETC

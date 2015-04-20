@@ -66,7 +66,7 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Wx-Perl-ProcessStream>=0.25:${PORTSDIR}/x11-toolkits/p5-Wx-Perl-ProcessStream
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext perl5
+USES=		compiler:c++11-lib gettext perl5
 USE_PERL5=	configure
 USE_WX=		3.0
 WX_COMPS=	wx
@@ -101,6 +101,7 @@ IGNORE=		needs a threaded Perl, build with enabling THREADS option and try again
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/my /s|wx-config|${WX_CONFIG:T}|g' \
+		-e '/ret/ s|urn .flags;|urn $$flags . " -std=c++11";|' \
 		${WRKDIR}/${WXSC_DISTNAME}/inc/Module/Build/Scintilla.pm
 	@${REINPLACE_CMD} -e \
 		's|_scintilla-|_scintilla| ; \
@@ -109,6 +110,7 @@ post-patch:
 		 s|-lgtk-x11-2.0.*-lpangoft2-1.0|-lm| ; \
 		 /-lgobject-2.0/d ; \
 		 /-lglib-2.0/d ; \
+		 s|{ccflags}|{ccflags} . " -std=c++11"| ; \
 		 s|\\$$ORIGIN|${SITE_ARCH}/auto/Wx/Scintilla|' \
 		${WRKDIR}/${WXSC_DISTNAME}/inc/Module/Build/Scintilla/GTK.pm
 

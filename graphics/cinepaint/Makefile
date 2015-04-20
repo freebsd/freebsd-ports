@@ -25,13 +25,12 @@ OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 
-USES=		desktop-file-utils gettext gmake libtool pkgconfig python
+GNU_CONFIGURE=	yes
+USES=		autoreconf desktop-file-utils gettext gmake libtool \
+		pkgconfig python
 USE_XORG=	xmu
 USE_GNOME=	gtk20
 USE_GHOSTSCRIPT_RUN=yes
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-ACLOCAL_ARGS=	-I aclocal
-AUTOMAKE_ARGS=	--copy --force-missing --foreign --add-missing
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

@@ -1,5 +1,5 @@
---- src/sna/kgem.c.orig	2013-08-04 11:10:59.000000000 +0200
-+++ src/sna/kgem.c	2013-08-14 11:59:14.787060294 +0200
+--- src/sna/kgem.c.orig	2013-08-20 20:26:26 UTC
++++ src/sna/kgem.c
 @@ -25,6 +25,7 @@
   *
   */
@@ -8,7 +8,7 @@
  #ifdef HAVE_CONFIG_H
  #include "config.h"
  #endif
-@@ -1890,7 +1891,8 @@
+@@ -1873,7 +1874,8 @@ static void kgem_bo_move_to_snoop(struct
  static struct kgem_bo *
  search_snoop_cache(struct kgem *kgem, unsigned int num_pages, unsigned flags)
  {
@@ -18,7 +18,7 @@
  
  	DBG(("%s: num_pages=%d, flags=%x\n", __FUNCTION__, num_pages, flags));
  
-@@ -2104,7 +2106,8 @@
+@@ -2087,7 +2089,8 @@ static bool kgem_retire__buffers(struct 
  
  static bool kgem_retire__flushing(struct kgem *kgem)
  {
@@ -28,7 +28,7 @@
  	bool retired = false;
  
  	list_for_each_entry_safe(bo, next, &kgem->flushing, request) {
-@@ -2309,7 +2312,8 @@
+@@ -2292,7 +2295,8 @@ bool __kgem_ring_is_idle(struct kgem *kg
  static void kgem_commit(struct kgem *kgem)
  {
  	struct kgem_request *rq = kgem->next_request;
@@ -38,7 +38,7 @@
  
  	list_for_each_entry_safe(bo, next, &rq->buffers, request) {
  		assert(next->request.prev == &bo->request);
-@@ -2390,7 +2394,8 @@
+@@ -2373,7 +2377,8 @@ static void kgem_close_inactive(struct k
  
  static void kgem_finish_buffers(struct kgem *kgem)
  {
@@ -48,7 +48,7 @@
  
  	list_for_each_entry_safe(bo, next, &kgem->batch_buffers, base.list) {
  		DBG(("%s: buffer handle=%d, used=%d, exec?=%d, write=%d, mmapped=%s\n",
-@@ -3252,7 +3257,8 @@
+@@ -3254,7 +3259,8 @@ void kgem_cleanup_cache(struct kgem *kge
  static struct kgem_bo *
  search_linear_cache(struct kgem *kgem, unsigned int num_pages, unsigned flags)
  {
@@ -58,7 +58,7 @@
  	bool use_active = (flags & CREATE_INACTIVE) == 0;
  	struct list *cache;
  
-@@ -3855,7 +3861,7 @@
+@@ -3867,7 +3873,7 @@ struct kgem_bo *kgem_create_2d(struct kg
  			       uint32_t flags)
  {
  	struct list *cache;
@@ -67,7 +67,7 @@
  	uint32_t pitch, tiled_height, size;
  	uint32_t handle;
  	int i, bucket, retry;
-@@ -5302,7 +5308,7 @@
+@@ -5337,7 +5343,7 @@ void kgem_bo_sync__gtt(struct kgem *kgem
  void kgem_clear_dirty(struct kgem *kgem)
  {
  	struct list * const buffers = &kgem->next_request->buffers;
@@ -76,7 +76,7 @@
  
  	list_for_each_entry(bo, buffers, request) {
  		if (!bo->gpu_dirty)
-@@ -5578,7 +5584,7 @@
+@@ -5613,7 +5619,7 @@ struct kgem_bo *kgem_create_buffer(struc
  				   uint32_t size, uint32_t flags,
  				   void **ret)
  {

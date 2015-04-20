@@ -1,5 +1,4 @@
 lib/libxcb-util.a
-lib/libxcb-util.la
 lib/libxcb-util.so
 lib/libxcb-util.so.1
 lib/libxcb-util.so.1.0.0

@@ -6,7 +6,7 @@ PORTVERSION=	20140911
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment module to manage disk volumes
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

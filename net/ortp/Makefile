@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ortp
-PORTVERSION=	0.23.0
-PORTREVISION=	2
+PORTVERSION=	0.24.1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/ortp/sources
 
@@ -13,14 +12,10 @@ COMMENT=	Real-time Transport Protocol (RTP) library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsrtp.so:${PORTSDIR}/net/libsrtp \
-		libzrtpcppcore.so:${PORTSDIR}/security/libzrtpcppcore
-
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules --disable-strict \
-		--enable-zrtp --with-srtp
+CONFIGURE_ARGS=	--disable-silent-rules --disable-strict
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

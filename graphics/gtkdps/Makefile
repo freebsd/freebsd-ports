@@ -29,8 +29,6 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|gnulocaledir)|DESTDIR)$$(&|' \
 		${WRKSRC}/po/Makefile.in.in
 

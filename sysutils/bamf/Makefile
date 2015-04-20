@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bamf
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://launchpadlibrarian.net/148968286/ \
+MASTER_SITES=	https://launchpadlibrarian.net/203290162/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -24,8 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 glib20 introspection:build libwnck3
 USE_XORG=	x11
 
-CONFIGURE_ARGS+=--disable-webapps \
-	--disable-headless-tests \
+CONFIGURE_ARGS+=--disable-headless-tests \
 	--disable-gtktest \
 	--disable-gtk-doc-html \
 	--without-html-dir

@@ -6,7 +6,7 @@ PORTVERSION=	1.5.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ninja is a small build system closest in spirit to Make
 
 LICENSE=	APACHE20

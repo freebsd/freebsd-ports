@@ -6,7 +6,7 @@ PORTVERSION=	0.12.1
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic C client library for the Redis database
 
 LICENSE=	BSD3CLAUSE

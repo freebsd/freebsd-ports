@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IRONCAMEL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple email handling for Dancer applications
 
 LICENSE=	ART10 GPLv1

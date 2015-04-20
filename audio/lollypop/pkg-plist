@@ -1,4 +1,7 @@
 bin/lollypop
+%%PYTHON_SITELIBDIR%%/lollypop/album_widgets.py
+%%PYTHON_SITELIBDIR%%/lollypop/album_widgets.pyc
+%%PYTHON_SITELIBDIR%%/lollypop/album_widgets.pyo
 %%PYTHON_SITELIBDIR%%/lollypop/albumart.py
 %%PYTHON_SITELIBDIR%%/lollypop/albumart.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/albumart.pyo
@@ -8,6 +11,9 @@ bin/lollypop
 %%PYTHON_SITELIBDIR%%/lollypop/collectionscanner.py
 %%PYTHON_SITELIBDIR%%/lollypop/collectionscanner.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/collectionscanner.pyo
+%%PYTHON_SITELIBDIR%%/lollypop/container.py
+%%PYTHON_SITELIBDIR%%/lollypop/container.pyc
+%%PYTHON_SITELIBDIR%%/lollypop/container.pyo
 %%PYTHON_SITELIBDIR%%/lollypop/database.py
 %%PYTHON_SITELIBDIR%%/lollypop/database.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/database.pyo
@@ -23,9 +29,6 @@ bin/lollypop
 %%PYTHON_SITELIBDIR%%/lollypop/database_tracks.py
 %%PYTHON_SITELIBDIR%%/lollypop/database_tracks.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/database_tracks.pyo
-%%PYTHON_SITELIBDIR%%/lollypop/database_upgrade.py
-%%PYTHON_SITELIBDIR%%/lollypop/database_upgrade.pyc
-%%PYTHON_SITELIBDIR%%/lollypop/database_upgrade.pyo
 %%PYTHON_SITELIBDIR%%/lollypop/devicemanager.py
 %%PYTHON_SITELIBDIR%%/lollypop/devicemanager.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/devicemanager.pyo
@@ -44,6 +47,9 @@ bin/lollypop
 %%PYTHON_SITELIBDIR%%/lollypop/player.py
 %%PYTHON_SITELIBDIR%%/lollypop/player.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/player.pyo
+%%PYTHON_SITELIBDIR%%/lollypop/playlist_widgets.py
+%%PYTHON_SITELIBDIR%%/lollypop/playlist_widgets.pyc
+%%PYTHON_SITELIBDIR%%/lollypop/playlist_widgets.pyo
 %%PYTHON_SITELIBDIR%%/lollypop/playlists.py
 %%PYTHON_SITELIBDIR%%/lollypop/playlists.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/playlists.pyo
@@ -80,9 +86,6 @@ bin/lollypop
 %%PYTHON_SITELIBDIR%%/lollypop/view.py
 %%PYTHON_SITELIBDIR%%/lollypop/view.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/view.pyo
-%%PYTHON_SITELIBDIR%%/lollypop/view_widgets.py
-%%PYTHON_SITELIBDIR%%/lollypop/view_widgets.pyc
-%%PYTHON_SITELIBDIR%%/lollypop/view_widgets.pyo
 %%PYTHON_SITELIBDIR%%/lollypop/window.py
 %%PYTHON_SITELIBDIR%%/lollypop/window.pyc
 %%PYTHON_SITELIBDIR%%/lollypop/window.pyo
@@ -99,7 +102,10 @@ share/locale/de/LC_MESSAGES/lollypop.mo
 share/locale/es/LC_MESSAGES/lollypop.mo
 share/locale/fr/LC_MESSAGES/lollypop.mo
 share/locale/fi/LC_MESSAGES/lollypop.mo
+share/locale/he/LC_MESSAGES/lollypop.mo
 share/locale/it/LC_MESSAGES/lollypop.mo
 share/locale/nl/LC_MESSAGES/lollypop.mo
 share/locale/pl/LC_MESSAGES/lollypop.mo
+share/locale/pt_BR/LC_MESSAGES/lollypop.mo
+share/locale/sk/LC_MESSAGES/lollypop.mo
 %%DATADIR%%/lollypop.gresource

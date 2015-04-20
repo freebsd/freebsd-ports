@@ -3,7 +3,7 @@
 
 PORTNAME=	rodent
 PORTVERSION=	5.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/rodent/
 
@@ -12,7 +12,7 @@ COMMENT=	Fast, small and powerful file manager
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk \
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		bash:${PORTSDIR}/shells/bash \
 		intltoolize:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \

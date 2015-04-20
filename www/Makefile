@@ -356,6 +356,7 @@
     SUBDIR += kplaylist
     SUBDIR += kwebkitpart
     SUBDIR += larbin
+    SUBDIR += lessc
     SUBDIR += libapreq2
     SUBDIR += libecap
     SUBDIR += libepc
@@ -519,7 +520,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle26
     SUBDIR += moodle27
     SUBDIR += moodle28
     SUBDIR += mozplugger
@@ -1421,8 +1421,6 @@
     SUBDIR += php-templates
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += php53-session
-    SUBDIR += php53-tidy
     SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy
@@ -1576,6 +1574,7 @@
     SUBDIR += py-html5lib
     SUBDIR += py-http-parser
     SUBDIR += py-httplib2
+    SUBDIR += py-hyper
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
     SUBDIR += py-jswebkit

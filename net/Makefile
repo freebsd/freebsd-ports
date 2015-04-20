@@ -855,10 +855,6 @@
     SUBDIR += php5-soap
     SUBDIR += php5-sockets
     SUBDIR += php5-xmlrpc
-    SUBDIR += php53-ldap
-    SUBDIR += php53-soap
-    SUBDIR += php53-sockets
-    SUBDIR += php53-xmlrpc
     SUBDIR += php55-ldap
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
@@ -977,7 +973,6 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
-    SUBDIR += quagga23
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted

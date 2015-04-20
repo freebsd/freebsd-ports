@@ -3,6 +3,7 @@
 
 PORTNAME=	sooperlooper
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
 
-USES=		compiler:c++0x gmake ncurses pkgconfig
+USES=		gmake ncurses pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -37,7 +38,7 @@ OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_ENV_OFF=	ac_cv_header_alsa_asoundlib_h=no
-WXGTK_USE=		WX=3.0
+WXGTK_USE=		WX=2.8
 WXGTK_CONFIGURE_ON=	--with-wxconfig-path=${WX_CONFIG}
 WXGTK_CONFIGURE_OFF=	--without-gui
 

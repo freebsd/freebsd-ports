@@ -20,11 +20,7 @@ GH_COMMIT=	2632d74
 
 GNU_CONFIGURE=yes
 
-USE_AUTOTOOLS=	libtoolize autoconf autoheader automake aclocal
-
-AUTOMAKE_ARGS=	--add-missing
-
-USES=	gmake
+USES=		autoreconf gmake
 
 FW_FILES=	\
 		LICENSE.Sigma asix-sigma-100.fw asix-sigma-200.fw asix-sigma-50.fw asix-sigma-50sync.fw \

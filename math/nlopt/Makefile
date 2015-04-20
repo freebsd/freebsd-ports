@@ -20,12 +20,12 @@ BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30 \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:${PORTSDIR}/math/py-numpy
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 
 USES=		autoreconf compiler:features libtool pathfix \
 		pkgconfig python:2
-USE_AUTOTOOLS=	libtoolize
 USE_LDCONFIG=	yes
 
 PATHFIX_MAKEFILEIN=	Makefile.am

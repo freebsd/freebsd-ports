@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 
-USES=		qmail tar:tgz
+USES=		cpe qmail tar:tgz
 
 GNU_CONFIGURE=	yes
 

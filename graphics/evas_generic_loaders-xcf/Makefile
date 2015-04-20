@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
 DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Additional loader for Evas (xcf)
 
 LICENSE=	GPLv2

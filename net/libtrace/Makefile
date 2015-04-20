@@ -20,8 +20,4 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
-
 .include <bsd.port.mk>

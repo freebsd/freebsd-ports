@@ -1,5 +1,4 @@
 lib/libXTrap.a
-lib/libXTrap.la
 lib/libXTrap.so
 lib/libXTrap.so.6
 lib/libXTrap.so.6.4.0

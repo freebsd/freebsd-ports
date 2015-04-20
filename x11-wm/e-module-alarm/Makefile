@@ -6,7 +6,7 @@ PORTVERSION=	20140911
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Module to set Alarms in Enlightenment
 
 LICENSE=	GPLv2

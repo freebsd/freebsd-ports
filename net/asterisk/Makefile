@@ -48,7 +48,7 @@ CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-11* asterisk*-13*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP H323 FREETDS JABBER SQLITE GSM \
-		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323
+		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 SYSINFO
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP H323 FREETDS JABBER GSM \
 		SQLITE CURL LUA
 
@@ -65,6 +65,7 @@ NEWG711_DESC?=	New G711 Codec
 SRTP_DESC?=	SecureRTP support
 OOH323_DESC?=	ooh323 support
 DAHDI_DESC?=	DAHDI support
+SYSINFO_DESC?=	Use devel/libsysinfo to get system information
 
 OPTIONS_SUB=	yes
 H323_CONFIGURE_WITH=	h323
@@ -116,6 +117,7 @@ LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
+SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
 PORTSCOUT=	limit:^1\.8\.
 
@@ -139,10 +141,16 @@ PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 PLIST_SUB+=	VARDIR=${VARDIR}
 
 post-extract:
-	${FIND} ${WRKSRC} -name '*.d' -delete
+	@${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+.if ${PORT_OPTIONS:MSYSINFO}
+	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
+.else
+	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
+.endif
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts

@@ -1,5 +1,5 @@
---- ./CMakeLists.txt.orig	2013-12-26 17:37:25.000000000 +0900
-+++ ./CMakeLists.txt	2014-03-26 13:02:33.000000000 +0900
+--- CMakeLists.txt.orig	2013-12-26 08:37:25 UTC
++++ CMakeLists.txt
 @@ -1,5 +1,5 @@
 -set(CMAKE_USER_MAKE_RULES_OVERRIDE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/c_flag_overrides.cmake)
 -set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX ${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxx_flag_overrides.cmake)
@@ -8,7 +8,7 @@
  
  project(rime)
  cmake_minimum_required(VERSION 2.8)
-@@ -21,6 +21,20 @@
+@@ -21,6 +21,20 @@ endif(WIN32)
  
  set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
  
@@ -29,7 +29,7 @@
  set(Boost_USE_STATIC_LIBS ${BUILD_STATIC})
  set(Gflags_STATIC ${BUILD_STATIC})
  set(Glog_STATIC ${BUILD_STATIC})
-@@ -82,20 +96,6 @@
+@@ -82,20 +96,6 @@ else(X11Keysym)
    message(WARNING "X11/keysym.h not found.")
  endif(X11Keysym)
  
@@ -50,16 +50,16 @@
  if(NOT DEFINED LIB_INSTALL_DIR)
      set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
  endif()
-@@ -104,7 +104,7 @@
+@@ -104,7 +104,7 @@ if(NOT DEFINED BIN_INSTALL_DIR)
      set(BIN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/bin)
  endif()
  
 -if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++if(${CMAKE_SYSTEM_NAME} MATCHES "(FreeBSD|DragonFly)")
    # uninstall target
    configure_file(
      "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
-@@ -120,7 +120,7 @@
+@@ -120,7 +120,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
    set(includedir "${CMAKE_INSTALL_PREFIX}/include")
    configure_file(${PROJECT_SOURCE_DIR}/rime.pc.in ${PROJECT_BINARY_DIR}/rime.pc)
    install(FILES include/rime_api.h DESTINATION include)
@@ -68,12 +68,12 @@
    install(FILES cmake/RimeConfig.cmake DESTINATION share/cmake/rime)
    if(BUILD_DATA)
      install(FILES ${PROJECT_SOURCE_DIR}/data/default.yaml DESTINATION ${pkgdatadir})
-@@ -131,7 +131,7 @@
+@@ -131,7 +131,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
      file(GLOB supplement_schema ${PROJECT_SOURCE_DIR}/data/supplement/*.yaml)
      install(FILES ${supplement_schema} DESTINATION ${pkgdatadir})
    endif(BUILD_DATA)
 -endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+endif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++endif(${CMAKE_SYSTEM_NAME} MATCHES "(FreeBSD|DragonFly)")
  
  if(BUILD_SHARED_LIBS)
    set(RIME_LIBRARY rime)

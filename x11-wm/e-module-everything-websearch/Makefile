@@ -6,7 +6,7 @@ PORTVERSION=	20140818
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment websearch plugin for the "everything" module
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

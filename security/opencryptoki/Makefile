@@ -17,11 +17,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
-USES=		alias gmake libtool tar:bzip2
+USES=		alias autoreconf gmake libtool tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	-a -c -f
 INSTALL_TARGET=	install-strip
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--disable-crtok --disable-aeptok \
 		--disable-ccatok --disable-bcomtok \

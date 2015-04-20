@@ -15,11 +15,9 @@ LICENSE=	LGPL21
 TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pkgconfig readline
 USE_GNOME=	libxml2
-USES=		gmake libtool pkgconfig readline
-USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtoolize:env
-ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

@@ -21,4 +21,4 @@ Features:
   sender report or receiver report + SDES)
 * Includes an API to parse incoming RTCP packets
 
-WWW: http://www.linphone.org/eng/documentation/dev/ortp.html
+WWW: https://www.linphone.org/technical-corner/ortp.html

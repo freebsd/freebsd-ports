@@ -1,8 +1,8 @@
---- configure.orig
+--- configure.orig	2015-04-02 09:04:58 UTC
 +++ configure
-@@ -19486,12 +19486,6 @@
-         ;;
- esac
+@@ -20382,12 +20382,6 @@ $as_echo "#define HAVE_NOTIFY1 1" >>conf
+ 	fi
+ fi
  
 -case "$host_os" in
 -	*freebsd*)
@@ -13,12 +13,12 @@
  case "$host_cpu" in
  	*arm*)
  
-@@ -20993,7 +20987,7 @@
-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
+@@ -22149,7 +22143,7 @@ fi
  
+ 	fi
+ 	if test "$found_sqlite" = "yes"; then
 -		SQLITE3_CFLAGS+="-DMSG_STORAGE_ENABLED"
 +		SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DMSG_STORAGE_ENABLED"
- 
- 
- 		enable_msg_storage=true
+ 		if test "$build_macos" = "yes" -o "$ios_found" = "yes"; then
+ 			SQLITE3_LIBS+=" -liconv"
+ 		fi

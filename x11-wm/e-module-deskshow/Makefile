@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e-module-
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment module that minimizes windows to show the desktop
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

@@ -18,9 +18,8 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		farsightsec
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		automake autoconf:env libtoolize
+USES=			autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=		yes
-USES=			libtool gmake pkgconfig
 
 OPTIONS_DEFINE=		DOXYGEN
 DOXYGEN_DESC=		Use doxygen for docs
@@ -28,8 +27,5 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
 PORTDOCS=		*
-
-run-autotools:
-	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh
 
 .include <bsd.port.mk>

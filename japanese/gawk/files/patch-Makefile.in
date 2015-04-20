@@ -1,9 +1,19 @@
---- Makefile.in.orig	Mon Jul 16 20:42:58 2001
-+++ Makefile.in	Mon Jul 16 20:48:25 2001
-@@ -194,14 +194,8 @@
+--- Makefile.in.orig	2015-04-18 06:35:02 UTC
++++ Makefile.in
+@@ -102,7 +102,7 @@ COPIES = missing/system.c missing/tzset.
+ 	missing/strerror.c missing/strtod.c \
+ 	missing/strftime.c missing/strftime.3 
+ 
+-DOCS= doc/gawk.1 doc/gawk.texi doc/texinfo.tex
++DOCS= doc/gawk.1
+ 
+ TEXFILES= doc/gawk.aux doc/gawk.cp doc/gawk.cps doc/gawk.fn doc/gawk.fns \
+ 	  doc/gawk.ky doc/gawk.kys doc/gawk.pg doc/gawk.pgs doc/gawk.toc \
+@@ -193,21 +193,15 @@ alloca.o:	alloca.c
+ 
  mbc.o: Makefile
  
- install:	gawk info installdirs
+-install:	gawk info installdirs
 -	-rm -f $(bindir)/gawk
 -	fullname=gawk-$(REL).`./gawk '{print $$3}' $(srcdir)/patchlevel.h`+mb$(MBREL) ; \
 -	$(INSTALL_PROGRAM) gawk $(bindir)/$$fullname ; \
@@ -12,8 +22,16 @@
 -	if [ ! -f awk ]; \
 -	then	$(LN_S) gawk awk; \
 -	fi; exit 0)
++install:	gawk installdirs
 +	$(INSTALL_PROGRAM) gawk \
 +		$(bindir)/$(binprefix)gawk$(exec_suffix)
  	cd doc && $(MAKE) install
  	cd awklib && $(MAKE) install
  
+ installdirs: mkinstalldirs
+ 	$(srcdir)/mkinstalldirs $(bindir) $(datadir) \
+-		$(libdir) $(infodir) $(mandir) $(libexecdir)
++		$(libdir) $(mandir) $(libexecdir)
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install

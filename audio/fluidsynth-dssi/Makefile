@@ -20,8 +20,4 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
 USE_GNOME=	gtk20
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
-
 .include <bsd.port.mk>

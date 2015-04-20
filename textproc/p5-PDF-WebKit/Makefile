@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PDF-WebKit
-PORTVERSION=	0.92
+PORTVERSION=	1.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML
+		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
+		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		wkhtmltopdf:${PORTSDIR}/converters/wkhtmltopdf
 TEST_DEPENDS=	p5-Test-Spec:${PORTSDIR}/devel/p5-Test-Spec

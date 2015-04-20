@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/ \
@@ -23,7 +23,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango
-USES=		cmake pkgconfig tar:bzip2
+USES=		cmake cpe pkgconfig tar:bzip2
+CPE_VENDOR=	${PORTNAME}
+CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
 
 PORTDOCS=	*
@@ -51,6 +53,7 @@ NOTIFY_DESC=	Desktop notifications
 NOTIFY_LIB_DEPENDS=libdbus-1.so:${PORTSDIR}/devel/dbus
 NOTIFY_CMAKE_OFF=-DENABLE_NOTIFICATIONS=off
 OPENMP_DESC=	OpenMP support
+OPENMP_USES=	compiler:openmp
 OPENMP_CMAKE_ON=-DENABLE_OMP=on
 RAWSOCKETS_DESC=	Use raw receiving sockets in multiplayer
 RAWSOCKETS_CFLAGS=-DNETWORK_USE_RAW_SOCKETS

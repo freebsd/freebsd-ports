@@ -17,9 +17,7 @@ GH_ACCOUNT=	dgoulet
 GH_PROJECT=	torsocks
 GH_TAGNAME=	96f7a0d
 
-USE_AUTOTOOLS=	aclocal autoconf libtoolize
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-
+GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

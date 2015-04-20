@@ -23,6 +23,7 @@ include/libdrm/radeon_drm.h
 %%RADEON_DRIVERS%%include/libdrm/radeon_surface.h
 include/libdrm/savage_drm.h
 include/libdrm/sis_drm.h
+include/libdrm/tegra_drm.h
 include/libdrm/via_drm.h
 %%KMS%%include/libkms/libkms.h
 include/xf86drm.h

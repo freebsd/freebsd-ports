@@ -21,10 +21,9 @@ GH_ACCOUNT=	irungentoo
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	a47fad1
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests
-USES=		libtool openal:soft pathfix pkgconfig
+USES=		autoreconf libtool openal:soft pathfix pkgconfig
 USE_SDL=	yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
@@ -66,8 +65,8 @@ PID_DIR=	/var/run/tox-bootstrapd
 PKGMESSAGE=	${PKGDIR}/pkg-message.daemon
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
 
 post-install:
 .if ${PORT_OPTIONS:MDAEMON}

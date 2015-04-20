@@ -28,8 +28,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 SUB_FILES=	pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
-
 .include <bsd.port.mk>

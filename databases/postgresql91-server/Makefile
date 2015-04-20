@@ -20,7 +20,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-ICU_PATCHFILE?=	pg-928-icu-2014-06-09.diff.gz
+ICU_PATCHFILE?=	pg-929-icu-2015-04-18.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
@@ -61,6 +61,7 @@ BUILD_DIRS?=	src/port ${INSTALL_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 COMPONENT=	-server
+PORTREVISION=	1
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USES+=		pgsql:${DISTVERSION:C/([0-9][0-9]*\.[0-9][0-9]*).*/\1/g}

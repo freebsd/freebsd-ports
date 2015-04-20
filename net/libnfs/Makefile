@@ -14,10 +14,8 @@ LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig gmake libtool
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:

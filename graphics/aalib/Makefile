@@ -38,8 +38,7 @@ post-extract:
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g ; \
-		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 		-e 's|AC_DEFUN(AM_PATH_AALIB|AC_DEFUN([AM_PATH_AALIB]|g' \

@@ -73,15 +73,6 @@
     
    def useGtkGLExt(self):
      self['CXXFLAGS'] += '`pkg-config gtkglext-1.0 --cflags` '
-@@ -269,6 +265,8 @@
-   def usePThread(self):
-     if ( OS == 'Darwin' ):
-       self['LINKFLAGS'] += '-lpthread -Wl,-stack_size,0x400000 '
-+    elif ( OS == 'FreeBSD' ):
-+      self['LINKFLAGS'] += '-pthread '
-     else:
-       self['LINKFLAGS'] += '-lpthread '
- 
 @@ -278,7 +276,7 @@
          print('ERROR: CheckLDD: target %s not found\n' % target[0])
          Exit(1)
@@ -91,3 +82,18 @@
      stdout_lines = ldd.fromchild.readlines()
      stderr_lines = ldd.childerr.readlines()
      ldd_ret = ldd.wait()
+@@ -317,7 +313,13 @@
+ # export the globals
+ GLOBALS = 'g_env INSTALL SETUP g_cpu'
+ 
+-radiant_makeversion('\\ngcc version: %s.%s.%s' % ( ver_cc[0], ver_cc[1], ver_cc[2] ) )
++def get_compiler_info(cxx):
++  ret = commands.getstatusoutput('%s -v' % cxx)
++  if (ret[0] != 0): return None
++  info = re.search('(gcc|clang) version [0-9.]+', ret[1])
++  return info.group(0) if info else None
++
++radiant_makeversion('\\n%s' % get_compiler_info(CXX))
+ 
+ # end general configuration ----------------------
+ 
