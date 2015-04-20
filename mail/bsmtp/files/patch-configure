@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	2013-11-01 19:55:42.000000000 +0100
-+++ configure	2013-11-01 19:55:42.000000000 +0100
+--- configure.orig	2015-04-20 17:10:57 UTC
++++ configure
 @@ -41,6 +41,11 @@ if ($#ARGV == 0) {
    "batcher",
    "batcher.c",
@@ -15,6 +12,24 @@ $FreeBSD$
    "bsmtp.m4.8.9",
    "bsmtp.m4.8.8",
    "bsmtp.m4.8.7",
+@@ -146,7 +151,7 @@ if (! $redo) {
+           }
+         }
+       } elsif ($macro eq "\@DAEMONUID\@") {
+-        if (! defined @getpwnam) {
++        if (! @getpwnam) {
+           if (! defined $value{'@DAEMONUSER@'}) {
+             die "\@DAEMONUSER\@ must be defined before \@DAEMONUID\@\n";
+           }
+@@ -158,7 +163,7 @@ if (! $redo) {
+         ($name, $_, $uid, $_, $_, $_, $_, $_, $_) = @getpwnam;
+         $default[$i] = $uid;
+       } elsif ($macro eq "\@DAEMONGID\@") {
+-        if (! defined @getpwnam) {
++        if (! @getpwnam) {
+           if (! defined $value{'@DAEMONUSER@'}) {
+             die "\@DAEMONUSER\@ must be defined before \@DAEMONUID\@\n";
+           }
 @@ -198,6 +203,16 @@ if (! $redo) {
  	    $default[$i] = '8.8';
  	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.9(\..*)?\s*$/) {
