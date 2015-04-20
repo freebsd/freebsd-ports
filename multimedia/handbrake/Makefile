@@ -43,7 +43,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libx264.so:${PORTSDIR}/multimedia/libx264 \
 		libmp3lame.so:${PORTSDIR}/audio/lame
-
+CONFLICTS_BUILD=	x265
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
