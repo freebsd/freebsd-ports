@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.7.7
-PORTREVISION=	6
+PORTVERSION=	1.8.0
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -19,9 +17,8 @@ LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
-USE_XFCE=	libgui panel
+USE_XFCE=	panel
 INSTALLS_ICONS=	yes
-
-CONFIGURE_ARGS=--disable-static
+USE_XORG=	x11
 
 .include <bsd.port.mk>
