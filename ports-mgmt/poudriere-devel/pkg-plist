@@ -8,10 +8,12 @@ libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
 libexec/poudriere/jexecd
+libexec/poudriere/locked_mkdir
 libexec/poudriere/nc
 libexec/poudriere/poudriered
 libexec/poudriere/rename
 libexec/poudriere/rexec
+libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
 libexec/poudriere/tsort
@@ -25,6 +27,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/awk/json_top.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/clean.sh
 %%DATADIR%%/common.sh
