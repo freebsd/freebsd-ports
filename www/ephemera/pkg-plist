@@ -4,7 +4,6 @@ bin/create.munger
 bin/delete.munger
 bin/extract.munger
 bin/replace.munger
-bin/upgrade.munger
 bin/edit.munger
 etc/rc.d/ephemera
 man/man8/ephemera.8.gz
