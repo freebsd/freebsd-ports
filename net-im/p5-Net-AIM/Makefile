@@ -17,4 +17,7 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
+post-extract:
+	@${RM} -f ${WRKSRC}/Net
+
 .include <bsd.port.mk>
