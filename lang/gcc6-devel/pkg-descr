@@ -1,0 +1,7 @@
+GCC, the GNU Compiler Collection, supports a number of languages.  This
+port installs the C, C++, Fortran and Java front ends as gcc6, g++6,
+gfortran6, and gcj6, respectively.
+
+WWW: http://gcc.gnu.org/
+
+Gerald Pfeifer <gerald@FreeBSD.org>

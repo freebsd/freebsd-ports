@@ -90,6 +90,7 @@
     SUBDIR += gcc49
     SUBDIR += gcc5
     SUBDIR += gcc5-aux
+    SUBDIR += gcc6-devel
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
