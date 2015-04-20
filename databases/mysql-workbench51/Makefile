@@ -60,7 +60,7 @@ post-patch:
 		${WRKSRC}/plugins/db.mysql/backend/db_plugin_be.cpp
 
 pre-configure:
-	(cd ${WRKSRC}/ext/yassl && ${LOCALBASE}/bin/autoreconf -f -i)
 	(cd ${WRKSRC}/ext/yassl/taocrypt && ${LOCALBASE}/bin/autoreconf -f -i)
+	(cd ${WRKSRC}/ext/yassl && ${LOCALBASE}/bin/autoreconf -f -i)
 
 .include <bsd.port.mk>
