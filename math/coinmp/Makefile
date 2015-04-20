@@ -63,6 +63,6 @@ post-install:
 
 check regression-test test: build
 	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test -C ${WRKSRC}
+		${MAKE_ARGS} test -C ${WRKSRC}
 
 .include <bsd.port.mk>
