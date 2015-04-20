@@ -11,6 +11,8 @@ COMMENT=	Library to analyze DWARF debugging information in ELF files
 
 INSTALL_CONFLICT=	bsdlibdwarf*
 
+MAKE_JOBS_UNSAFE=	yes
+
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/libdwarf
 
 GNU_CONFIGURE=	yes
