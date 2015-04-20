@@ -27,7 +27,7 @@ DESKTOP_ENTRIES="Bitefusion" \
 		""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
+	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-${OPSYS:tl}|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
