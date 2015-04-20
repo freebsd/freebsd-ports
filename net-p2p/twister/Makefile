@@ -56,7 +56,7 @@ post-patch:
 		${WRKSRC}/share/genbuild.sh
 
 pre-configure:
-	(cd ${WRKSRC} && ./autotool.sh)
+	(cd ${CONFIGURE_WRKSRC} && ./autotool.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
