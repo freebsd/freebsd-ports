@@ -11,7 +11,7 @@ COMMENT=	Embed Font Awesome glyphs in Qt-applications
 LICENSE=	MIT
 
 USE_GITHUB=	yes
-USES=		uidfix qmake
+USES=		qmake
 
 GH_ACCOUNT=	gamecreature
 GH_PROJECT=	QtAwesome
