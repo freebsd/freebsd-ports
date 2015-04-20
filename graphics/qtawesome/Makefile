@@ -32,7 +32,7 @@ EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions	\
 PLIST_FILES=	lib/libQtAwesome.so.1.0.0 lib/libQtAwesome.so.1.0 \
 		lib/libQtAwesome.so.1 lib/libQtAwesome.so	\
 		include/QtAwesome.h
-USE_LDCONFIG=	yep...
+USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,staticlib,sharedlib,'	\
