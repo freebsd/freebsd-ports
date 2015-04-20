@@ -19,9 +19,10 @@ BUILD_DEPENDS=	p5-Alien-wxWidgets>=0.25:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidg
 		p5-ExtUtils-XSpp>=0.16.03:${PORTSDIR}/devel/p5-ExtUtils-XSpp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 compiler:c++11-lib
 USE_PERL5=	configure
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_COMPS=	wx
 WX_UNICODE=	1
 CC=		${CXX}
@@ -38,6 +39,6 @@ RUN_DEPENDS+=	p5-ExtUtils-ParseXS>=3.15:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
 post-configure:
 	@${FIND} ${WRKSRC} -name "Makefile" -type f | ${XARGS} \
-		${REINPLACE_CMD} -e 's/^CCFLAGS = .*$$/CCFLAGS = ${CFLAGS}/'
+		${REINPLACE_CMD} -e 's|^CCFLAGS = .*$$|CCFLAGS = ${CXXFLAGS}|'
 
 .include <bsd.port.post.mk>
