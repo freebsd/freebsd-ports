@@ -5,7 +5,8 @@ PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	3
 CATEGORIES=	net java
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
+MASTER_SITES=	http://www.klop.ws/distfiles/ \
+		http://freebsd.nsu.ru/distfiles/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/ldap/ \
 		ftp://ftp.gtrgrenoble.fr/TpRes/Ldap/ \
 		ftp://ftp.uni-duisburg.de/Unix/networking/LDAP/frontends/
