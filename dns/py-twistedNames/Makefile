@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedNames
-PORTVERSION=	15.0.0
+PORTVERSION=	15.1.0
 CATEGORIES=	dns devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Names/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
