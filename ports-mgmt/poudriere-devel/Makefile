@@ -2,7 +2,7 @@
 
 PORTNAME=	poudriere
 DISTVERSION=	3.1.99.20150421
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -25,8 +25,6 @@ ETCDIR=		${PREFIX}/etc/poudriere.d
 
 OPTIONS_DEFINE=	ZSH QEMU EXAMPLES
 OPTIONS_SUB=	yes
-
-RUN_DEPENDS+=	portmaster:${PORTSDIR}/ports-mgmt/portmaster
 
 QEMU_DESC=	Add qemu-user-static to compile ports for non-x86 architectures
 QEMU_RUN_DEPENDS=	qemu-user-static>0:${PORTSDIR}/emulators/qemu-user-static
