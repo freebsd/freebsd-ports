@@ -696,8 +696,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.24
-GIT_SET_MISC_VERSION=	0-g36fd035
+NGINX_SET_MISC_VERSION=	0.28
+GIT_SET_MISC_VERSION=	0-gf72abf1
 MASTER_SITES+=	https://github.com/openresty/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
 DISTFILES+=	openresty-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
