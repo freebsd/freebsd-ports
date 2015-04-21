@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.12
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
 		libspdylay.so:${PORTSDIR}/www/spdylay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	ASIO HPACK
+OPTIONS_DEFINE=	ASIO DOCS HPACK
 OPTIONS_DEFAULT=HPACK
 OPTIONS_SUB=	yes
 
@@ -44,6 +44,7 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
 
+PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
 
 ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
