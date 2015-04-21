@@ -5,15 +5,15 @@ PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	3
 CATEGORIES=	net java
-MASTER_SITES=	http://web.talf.org/software/ \
-		http://freebsd.nsu.ru/distfiles/ \
-		http://www.klop.ws/distfiles/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
+		ftp://ftp.nstu.ru/pub/sources/nettools/ldap/ \
+		ftp://ftp.gtrgrenoble.fr/TpRes/Ldap/ \
+		ftp://ftp.uni-duisburg.de/Unix/networking/LDAP/frontends/
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Java/Swing-based LDAP browser and editor
 
-BROKEN=		Unfetchable
 RESTRICTED=	No reply from author regarding redistribution licensing
 
 USE_JAVA=	yes
