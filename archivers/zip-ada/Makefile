@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip-ada
-PORTVERSION=	48
+PORTVERSION=	49
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
 DISTNAME=	zipada${PORTVERSION}
@@ -16,13 +16,14 @@ USES=		ada perl5 dos2unix zip
 USE_PERL5=	build
 WRKSRC=		${WRKDIR}/zip-ada
 MAKE_ENV+=	Build_Mode=Optimize
-ZTOOLS=		zipada comp_zip find_zip rezip bunzip lz
-DEMOS=		demo_zip demo_unzip ziptest demo_csv_into_zip test_extract \
-		test_extract_tb test_unz_streams za_gnat test_chunk \
-		zip_with_many_files
+ZTOOLS=		bunzip comp_zip find_zip lz lzma_dec random_data rezip zipada
+DEMOS=		demo_csv_into_zip demo_unzip demo_zip test_chunk \
+		test_extract test_extract_tb test_lz_scramble \
+		test_stream_performance test_unz_streams \
+		test_zip_info_timing za_gnat zip_with_many_files ziptest
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin \
@@ -40,12 +41,13 @@ do-install:
 	${MV} ${WRKSRC}/obj_opt/${F}.* ${WRKSRC}/obj_demos/
 .endfor
 	(cd ${WRKSRC}/obj_opt && ${AR} rcs libzip-ada.a *.o)
-	${MV} ${STAGEDIR}${PREFIX}/bin/bunzip ${STAGEDIR}${PREFIX}/bin/debzip2
+	${MV} ${STAGEDIR}${PREFIX}/bin/bunzip \
+		${STAGEDIR}${PREFIX}/bin/debzip2
 	${INSTALL_DATA} ${WRKSRC}/zip_lib/*.ad[sb] \
 		${STAGEDIR}${PREFIX}/include/zip-ada/
 	${INSTALL_DATA} ${WRKSRC}/obj_opt/*.ali \
 		${STAGEDIR}${PREFIX}/lib/zip-ada/
-	${INSTALL_LIB} ${WRKSRC}/obj_opt/*.a ${STAGEDIR}${PREFIX}/lib/zip-ada/
+	${INSTALL_DATA} ${WRKSRC}/obj_opt/*.a ${STAGEDIR}${PREFIX}/lib/zip-ada/
 	${INSTALL_DATA} ${FILESDIR}/zip-ada.gpr ${STAGEDIR}${PREFIX}/lib/gnat/
 
 .include <bsd.port.mk>
