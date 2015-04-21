@@ -1325,7 +1325,11 @@
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
     SUBDIR += mips-binutils
+    SUBDIR += mips-gcc
+    SUBDIR += mips-xtoolchain-gcc
     SUBDIR += mips64-binutils
+    SUBDIR += mips64-gcc
+    SUBDIR += mips64-xtoolchain-gcc
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
