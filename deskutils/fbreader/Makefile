@@ -3,6 +3,7 @@
 
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	fluffy@FreeBSD.org
