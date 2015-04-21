@@ -681,8 +681,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-json-nginx-module-${GIT_RDS
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
-NGINX_REDIS2_VERSION=	0.10
-GIT_REDIS2_VERSION=	0-g78a7622
+NGINX_REDIS2_VERSION=	0.11
+GIT_REDIS2_VERSION=	0-g828803d
 MASTER_SITES+=	https://github.com/openresty/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
 DISTFILES+=	openresty-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS2_VERSION:S/^0-g//}
