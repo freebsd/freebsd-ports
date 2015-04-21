@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.6.3
+PORTVERSION=	1.8.0
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	\
 	GOOGLE_PERFTOOLS \
 	HTTP \
 	HTTP_ADDITION \
+	HTTP_AUTH_REQ \
 	HTTP_CACHE \
 	HTTP_DAV \
 	HTTP_FLV \
@@ -51,6 +52,7 @@ OPTIONS_DEFINE=	\
 	MAIL_SMTP \
 	MAIL_SSL \
 	SPDY \
+	THREADS \
 	WWW \
 	CACHE_PURGE \
 	CTPP2 \
@@ -61,7 +63,6 @@ OPTIONS_DEFINE=	\
 	HTTP_AUTH_DIGEST \
 	HTTP_AUTH_LDAP \
 	HTTP_AUTH_PAM \
-	HTTP_AUTH_REQ \
 	HTTP_DAV_EXT \
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
@@ -76,7 +77,6 @@ OPTIONS_DEFINE=	\
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_HASH \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
@@ -117,6 +117,7 @@ FILE_AIO_DESC=			Enable file aio
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 HTTP_DESC=			Enable HTTP module
 HTTP_ADDITION_DESC=		Enable http_addition module
+HTTP_AUTH_REQ_DESC=		Enable http_auth_request module
 HTTP_CACHE_DESC=		Enable http_cache module
 HTTP_DAV_DESC=			Enable http_webdav module
 HTTP_FLV_DESC=			Enable http_flv module
@@ -140,6 +141,7 @@ MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 SPDY_DESC=			Enable SPDY protocol support (SSL req.)
+THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CTPP2_DESC=			3rd party CT++ module
@@ -150,7 +152,6 @@ HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
 HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
-HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
@@ -166,7 +167,6 @@ HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
-HTTP_UPSTREAM_HASH_DESC=	3rd party upstream hash module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
@@ -313,10 +313,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
-NGINX_AUTH_REQ_VERSION=	0.2
-MASTER_SITES+=	http://mdounin.ru/files/:auth_request
-DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}.tar.gz:auth_request
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}
+CONFIGURE_ARGS+=--with-http_auth_request_module
 .endif
 
 .if empty(PORT_OPTIONS:MHTTP_CACHE)
@@ -424,6 +421,7 @@ NGINX_MOGILEFS_VERSION=	1.0.4
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
 DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_VERSION}.tar.gz:mogilefs
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_mogilefs_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_MP4_H264}
@@ -507,6 +505,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
+IGNORE=	UPLOAD: update require
 NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
@@ -528,14 +527,6 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MHTTP_UPSTREAM_HASH}
-NGINX_UPSTREAM_HASH_VERSION=	0.3.1
-MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
-DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
@@ -613,6 +604,7 @@ GIT_LUA_VERSION=	0-g4388b1e
 MASTER_SITES+=	https://github.com/openresty/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	openresty-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_socket_udp.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
@@ -634,7 +626,7 @@ USE_GNOME=	libxml2
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-nginx-modsecurity-configure
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
@@ -721,7 +713,8 @@ MASTER_SITES+=	http://nginx-sflow-module.googlecode.com/files/:sflow
 DISTFILES+=	nginx-sflow-module-${NGINX_SFLOW_VERSION}.tar.gz:sflow
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
-		${PATCHDIR}/extra-patch-ngx_http_sflow_config.h
+		${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
+		${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 .endif
 
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
@@ -740,6 +733,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCA
 .endif
 
 .if ${PORT_OPTIONS:MSUPERVISORD}
+IGNORE=	SUPERVISORD: update require
 NGINX_SUPERVISORD_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_VERSION}.tar.gz:supervisord
@@ -747,11 +741,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
-#GIT_SYSLOG_PATCH_VERSION=3ca5ba65541637f74467038aa032e2586321d0cb
-GIT_SYSLOG_PATCH_VERSION=3ca5ba6
-MASTER_SITES+=	https://github.com/yaoweibin/nginx_syslog_patch/tarball/${GIT_SYSLOG_PATCH_VERSION}/:syslog_patch
-DISTFILES+=	nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}.tar.gz:syslog_patch
-CONFIGURE_ARGS+=	--add-module=${WRKDIR}/yaoweibin-nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}
+IGNORE=	SYSLOG: update require
 .endif
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
@@ -790,6 +780,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-xss-nginx-module-${GIT_XSS_VERS
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_spdy_module
+.endif
+
+.if ${PORT_OPTIONS:MTHREADS}
+CONFIGURE_ARGS+=--with-threads
 .endif
 
 .if ${PORT_OPTIONS:MWWW}
@@ -933,10 +927,6 @@ post-patch:
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
 .endif
 .if ${PORT_OPTIONS:MSPDY}
-.if ${PORT_OPTIONS:MDRIZZLE}
-	@${REINPLACE_CMD} '589d' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
-.endif
 .if ${PORT_OPTIONS:MLUA}
 	@${REINPLACE_CMD} '464d' \
 		${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
@@ -954,11 +944,6 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p1 < \
 			${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}/tcp.patch )
-.endif
-.if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
-	( cd ${WRKSRC} && \
-		${PATCH} -p1 < \
-			${WRKDIR}/yaoweibin-nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}/syslog-1.5.6.patch )
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
