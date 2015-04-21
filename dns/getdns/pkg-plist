@@ -4,8 +4,8 @@ include/getdns/getdns_extra.h
 %%LIBEVENT%%include/getdns/getdns_ext_libevent.h
 %%LIBUV%%include/getdns/getdns_ext_libuv.h
 lib/libgetdns.so
-lib/libgetdns.so.0
-lib/libgetdns.so.0.1.2
+lib/libgetdns.so.1
+lib/libgetdns.so.1.0.3
 lib/libgetdns.a
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so.0
