@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMEPREFIX=	arm-none-eabi-
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 GCC_TARGET=	arm-none-eabi
