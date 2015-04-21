@@ -335,8 +335,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-NGINX_ECHO_VERSION=	0.51
-GIT_ECHO_VERSION=	0-g44c92a5
+NGINX_ECHO_VERSION=	0.57
+GIT_ECHO_VERSION=	0-g91ee9a8
 MASTER_SITES+=	https://github.com/openresty/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
 DISTFILES+=	openresty-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
@@ -605,8 +605,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERS
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-NGINX_MEMC_VERSION=	0.14
-GIT_MEMC_VERSION=	0-gde4cf86
+NGINX_MEMC_VERSION=	0.15
+GIT_MEMC_VERSION=	0-g1518da4
 MASTER_SITES+=	https://github.com/openresty/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
 DISTFILES+=	openresty-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
@@ -721,8 +721,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.25
-GIT_SRCACHE_VERSION=	0-gf25fe90
+NGINX_SRCACHE_VERSION=	0.29
+GIT_SRCACHE_VERSION=	0-gc521830
 MASTER_SITES+=	https://github.com/openresty/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	openresty-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
