@@ -3,19 +3,21 @@
 
 PORTNAME=	image_science
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that generates thumbnails
 
-RUN_DEPENDS=	rubygem-inline>=3.9:${PORTSDIR}/devel/rubygem-inline
+LICENSE=	MIT
 
-LICENSE=		MIT
+RUN_DEPENDS=	rubygem-rubyinline>=3.9:${PORTSDIR}/devel/rubygem-rubyinline
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/image_science_thumb
 
 .include <bsd.port.mk>
