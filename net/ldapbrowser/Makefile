@@ -13,6 +13,7 @@ DISTNAME=	Browser282b2
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Java/Swing-based LDAP browser and editor
 
+BROKEN=		Unfetchable
 RESTRICTED=	No reply from author regarding redistribution licensing
 
 USE_JAVA=	yes
