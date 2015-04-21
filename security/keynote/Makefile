@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trust-Management System
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKWRC}/LICENSE
 
 USES=		gmake		# required to support parallel (-jX) builds
 USE_OPENSSL=	yes
