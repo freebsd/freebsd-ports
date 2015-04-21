@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		cpe gmake openal:al,alut shebangfix tar:bzip2
+USES=		alias cpe gmake openal:al,alut shebangfix tar:bzip2
 CPE_VENDOR=	bernhard_wymann
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
