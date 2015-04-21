@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ COMMENT=	Almost-pure-ruby PNG library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hoe>=2.3.0:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	rubygem-rubyinline>=3.9:${PORTSDIR}/devel/rubygem-rubyinline
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
