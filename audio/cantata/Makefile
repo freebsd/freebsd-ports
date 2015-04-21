@@ -2,6 +2,7 @@
 
 PORTNAME=		cantata
 PORTVERSION=		1.5.1
+PORTREVISION=		1
 CATEGORIES=		audio kde
 MASTER_SITES=		https://drive.google.com/uc?export=download&id=0Bzghs6gQWi60UktwaTRMTjRIUW8&dummy=
 
