@@ -21,4 +21,4 @@ scanned by Clamav antivirus, this control operate at 3 different levels:
 - At HTTP header level, where you can disable virus scanning following
   the content type or file size.
 
-WWW: http://squidclamav.darold.net
+WWW: http://squidclamav.darold.net/
