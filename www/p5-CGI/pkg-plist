@@ -3,6 +3,8 @@
 %%SITE_PERL%%/CGI/Carp.pm
 %%SITE_PERL%%/CGI/Cookie.pm
 %%SITE_PERL%%/CGI/File/Temp.pm
+%%SITE_PERL%%/CGI/HTML/Functions.pm
+%%SITE_PERL%%/CGI/HTML/Functions.pod
 %%SITE_PERL%%/CGI/Pretty.pm
 %%SITE_PERL%%/CGI/Push.pm
 %%SITE_PERL%%/CGI/Util.pm
@@ -10,6 +12,7 @@
 %%PERL5_MAN3%%/CGI.3.gz
 %%PERL5_MAN3%%/CGI::Carp.3.gz
 %%PERL5_MAN3%%/CGI::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::HTML::Functions.3.gz
 %%PERL5_MAN3%%/CGI::Pretty.3.gz
 %%PERL5_MAN3%%/CGI::Push.3.gz
 %%PERL5_MAN3%%/CGI::Util.3.gz
