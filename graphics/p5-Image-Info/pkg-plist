@@ -25,6 +25,7 @@
 %%PERL5_MAN3%%/Bundle::Image::Info::XPM.3.gz
 %%PERL5_MAN3%%/Image::Info.3.gz
 %%PERL5_MAN3%%/Image::Info::BMP.3.gz
+%%PERL5_MAN3%%/Image::Info::GIF.3.gz
 %%PERL5_MAN3%%/Image::Info::ICO.3.gz
 %%PERL5_MAN3%%/Image::Info::PPM.3.gz
 %%PERL5_MAN3%%/Image::Info::SVG.3.gz
