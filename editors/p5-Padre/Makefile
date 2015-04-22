@@ -5,8 +5,7 @@ PORTNAME=	Padre
 PORTVERSION=	1.00
 PORTREVISION=	4
 CATEGORIES=	editors perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} ${MASTER_SITE_PERL_CPAN:S/$/:wxsc/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT Wx/:wxsc
+MASTER_SITES=	CPAN/${PORTNAME}/:DEFAULT CPAN/Wx/:wxsc
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WXSC_DISTFILE}:wxsc
 
@@ -65,6 +64,7 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Wx>=0.97:${PORTSDIR}/x11-toolkits/p5-Wx \
 		p5-Wx-Perl-ProcessStream>=0.25:${PORTSDIR}/x11-toolkits/p5-Wx-Perl-ProcessStream
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Module-Build>=0.36:${PORTSDIR}/devel/p5-Module-Build
 
 USES=		compiler:c++11-lib gettext perl5
 USE_PERL5=	configure
@@ -87,11 +87,15 @@ WXSC_DISTFILE=	${WXSC_DISTNAME}.tar.gz
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 502100
+BUILD_DEPENDS+=	p5-CGI>0:${PORTSDIR}/www/p5-CGI
+RUN_DEPENDS+=	p5-CGI>0:${PORTSDIR}/www/p5-CGI
+.endif
+
 .if exists(${PERL})
 PERL_THREADS!=	${PERL} -V::useithreads
 .endif
 
-post-extract:
 .if exists(${PERL})
 .if ${PERL_THREADS} != "'define';"
 IGNORE=		needs a threaded Perl, build with enabling THREADS option and try again
