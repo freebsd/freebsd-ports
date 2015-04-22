@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="82595123-e8b8-11e4-a008-047d7b492d07">
+    <topic>libtasn1 -- stack-based buffer overflow in asn1_der_decoding</topic>
+    <affects>
+      <package>
+	<name>libtasn1</name>
+	<range><lt>4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://www.debian.org/security/2015/dsa-3220.en.html">
+	  <p>Hanno Boeck discovered a stack-based buffer overflow in
+	    the asn1_der_decoding function in Libtasn1, a library to
+	    manage ASN.1 structures. A remote attacker could take advantage
+	    of this flaw to cause an application using the Libtasn1 library
+	    to crash, or potentially to execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2806</cvename>
+      <url>https://www.debian.org/security/2015/dsa-3220.en.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="738fc80d-5f13-4ccb-aa9a-7965699e5a10">
     <topic>mozilla -- use after free</topic>
     <affects>
