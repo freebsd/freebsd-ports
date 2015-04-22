@@ -1,0 +1,201 @@
+diff -ruN ../squidGuard-1.4.orig/doc/authentication.html ./doc/authentication.html
+--- ../squidGuard-1.4.orig/doc/authentication.html	2015-04-22 12:42:14.937955000 -0500
++++ ./doc/authentication.html	2015-04-22 12:42:54.745042000 -0500
+@@ -345,10 +345,43 @@
+ </div>
+ <br>
+ 
+-
+-
+-
+-
++<li> <b>Stripping NT domain name or Kerberos Realm from user name </b><br><br>
++ 
++(You need squidGuard version 1.5 or higher to use user name stripping.)<br>
++If the authentication is made with NTLM or Kerberos, it contains NT domain
++or Kerberos realm. The following tags exist :
++<br><br>
++<table border=0 cellpadding=2 cellspacing=2>
++	<tr>
++		<td valign=top>stripntdomain</td><td> Strip NT domain name component from
++			      user names (/ or \ separated).
++			</tr><tr>
++			<td valign=top>striprealm</td><td> Strip Kerberos Realm component from
++				      user names (@ separated).
++				</tr><tr>
++				</tr><tr>
++				</tr>
++			</table>
++		
++		<br><br>
++		Example configuration:<br>
++		<br>
++		<div style=width:700px;overflow:auto>
++			<table width="75%" cellpadding="0" cellspacing="0" style="background-color:
++				#f2fff0; border: solid 1px #4455bb;">
++				<tr>
++					<td style="background-color: #223499; border-bottom: 1px solid #888;">
++						<font size="-1" color=white>Stripping NT domain name or Kerberos Realm from user name </font>
++						</td></tr>
++				<tr>
++					<td>
++						<pre> stripntdomain true
++ striprealm true
++</pre>
++					</td></tr>
++			</table>
++		</div>
++	<br> 
+ 
+ </td></tr></table>
+ 
+diff -ruN ../squidGuard-1.4.orig/src/sg.h.in ./src/sg.h.in
+--- ../squidGuard-1.4.orig/src/sg.h.in	2015-04-22 12:42:14.931469000 -0500
++++ ./src/sg.h.in	2015-04-22 12:42:54.738534000 -0500
+@@ -82,6 +82,8 @@
+ #define DEFAULT_CONFIGFILE "@prefix@/squidGuard/squidGuard.conf"
+ #define DEFAULT_LOGDIR "@prefix@/squidGuard/log"
+ #define DEFAULT_DBHOME "@prefix@/squidGuard/db"
++#define DEFAULT_STRIPNTDOMAIN "false"
++#define DEFAULT_STRIPREALM "false"
+ #define EXEC_PROGRAM "@prefix@/bin/squidGuard"
+ 
+ #ifdef ACCONFIG
+diff -ruN ../squidGuard-1.4.orig/src/sg.l ./src/sg.l
+--- ../squidGuard-1.4.orig/src/sg.l	2015-04-22 12:42:14.932909000 -0500
++++ ./src/sg.l	2015-04-22 12:42:54.740080000 -0500
+@@ -105,6 +105,8 @@
+ ^acl         return ACL;
+ ^dbhome                return DBHOME;
+ ^logdir                return LOGDIR;
++^stripntdomain return STRIPNTDOMAIN;
++^striprealm    return STRIPREALM;
+ ^ldapcachetime return LDAPCACHETIME;
+ ^ldapprotover  return LDAPPROTOVER;
+ ^ldapbinddn    { BEGIN LDAPDN_STATE; return LDAPBINDDN; }
+diff -ruN ../squidGuard-1.4.orig/src/sg.y.in ./src/sg.y.in
+--- ../squidGuard-1.4.orig/src/sg.y.in	2015-04-22 12:42:14.932264000 -0500
++++ ./src/sg.y.in	2015-04-22 12:44:41.473988000 -0500
+@@ -116,6 +117,7 @@
+ %type <string> tval
+ %type <string> date
+ %type <string> ttime
++%type <string> STRIPNTDOMAIN STRIPREALM
+ %%
+ 
+ start: statements
+@@ -127,6 +129,12 @@
+ logdir:    LOGDIR WORD { sgSetting("logdir",$2); }
+          ;
+ 
++stripntdomain: STRIPNTDOMAIN WORD { sgSetting("stripntdomain",$2); }
++         ;
++
++striprealm: STRIPREALM WORD { sgSetting("striprealm",$2); }
++         ;
++ 
+ ldapcachetime: LDAPCACHETIME NUMBER { sgSetting("ldapcachetime",$2); }
+          ;
+ 
+@@ -352,6 +360,8 @@
+ 	     | destination_block
+              | dbhome
+ 	     | logdir
++             | stripntdomain
++             | striprealm 
+             | ldapprotover
+             | ldapbinddn
+             | ldapbindpass
+diff -ruN ../squidGuard-1.4.orig/src/sgDiv.c ./src/sgDiv.c
+--- ../squidGuard-1.4.orig/src/sgDiv.c	2015-04-22 12:42:14.931973000 -0500
++++ ./src/sgDiv.c	2015-04-22 12:49:24.400088000 -0500
+@@ -223,11 +223,34 @@
+       break;
+     case 1: /* ident */
+       if(strcmp(p,"-")){
+-	strcpy(s->ident,p);
+-	for(p=s->ident; *p != '\0'; p++) /* convert ident to lowercase chars */
+-	  *p = tolower(*p);
++        char *stripntdomain = NULL, *striprealm = NULL;
++        HTUnEscape(p);
++        stripntdomain = sgSettingGetValue("stripntdomain");
++        if(stripntdomain == NULL)
++          stripntdomain = DEFAULT_STRIPNTDOMAIN;
++        striprealm = sgSettingGetValue("striprealm");
++        if(striprealm == NULL)
++	  striprealm = DEFAULT_STRIPREALM;
++        if (strcmp(stripntdomain,"false")) {
++           char *u = strrchr(p, '\\');
++           if (!u)
++              u = strrchr(p, '/');
++           if (!u)
++              u = strrchr(p, '+');
++           if (u && u[1])
++              p = u + 1;
++        }
++        if (strcmp(striprealm,"false")) {
++           char *u = strchr(p, '@');
++           if (u != NULL) {
++              *u = '\0';
++           }
++        }
++        strcpy(s->ident,p);
++        for(p=s->ident; *p != '\0'; p++) /* convert ident to lowercase chars */
++           *p = tolower(*p);
+       } else
+-	s->ident[0] = '\0';
++        s->ident[0] = '\0';
+       break;
+     case 2: /* method */
+       strcpy(s->method,p);
+@@ -734,7 +757,7 @@
+       p++;
+       break;
+     case 'u': /* Requested URL */
+-      strcat(buf, req->orig);
++      strncat(buf, req->orig, 2048);
+       p++;
+       break;
+     default:
+diff -ruN ../squidGuard-1.4.orig/src/sgDiv.c.in ./src/sgDiv.c.in
+--- ../squidGuard-1.4.orig/src/sgDiv.c.in	2015-04-22 12:42:14.932693000 -0500
++++ ./src/sgDiv.c.in	2015-04-22 12:48:38.406521000 -0500
+@@ -234,11 +234,34 @@
+       break;
+     case 1: /* ident */
+       if(strcmp(p,"-")){
+-	strcpy(s->ident,p);
+-	for(p=s->ident; *p != '\0'; p++) /* convert ident to lowercase chars */
+-	  *p = tolower(*p);
++        char *stripntdomain = NULL, *striprealm = NULL;
++        HTUnEscape(p);
++        stripntdomain = sgSettingGetValue("stripntdomain");
++        if (stripntdomain == NULL)
++           stripntdomain = DEFAULT_STRIPNTDOMAIN;
++        striprealm = sgSettingGetValue("striprealm");
++        if (striprealm == NULL)
++           striprealm = DEFAULT_STRIPREALM;
++        if (strcmp(stripntdomain,"false")) {
++           char *u = strrchr(p, '\\');
++           if (!u)
++              u = strrchr(p, '/');
++           if (!u)
++              u = strrchr(p, '+');
++           if (u && u[1])
++              p = u + 1;
++        }
++        if (strcmp(striprealm,"false")) {
++           char *u = strchr(p, '@');
++           if (u != NULL) {
++              *u = '\0';
++           }
++        }
++        strcpy(s->ident,p);
++        for(p=s->ident; *p != '\0'; p++) /* convert ident to lowercase chars */
++           *p = tolower(*p);
+       } else
+-	s->ident[0] = '\0';
++        s->ident[0] = '\0';
+       break;
+     case 2: /* method */
+       strcpy(s->method,p);
