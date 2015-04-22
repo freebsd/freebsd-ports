@@ -10,8 +10,6 @@ MASTER_SITES=	http://code.call-cc.org/releases/4.9.0/
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme-to-C compiler
 
-LICENSE=	BSD3CLAUSE
-
 USES=		gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
