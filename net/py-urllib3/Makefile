@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urllib3
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.3
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,7 @@ USE_PYTHON=	distutils autoplist
 
 # ndg_httpclient is only available for Python 2
 .if ${PYTHON_REL} < 300
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>=0.3.2:${PORTSDIR}/net/py-ndg_httpsclient
-PLIST_SUB+=	SSL=""
-.else
-PLIST_SUB+=	SSL="@comment "
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>=0.3.3:${PORTSDIR}/net/py-ndg_httpsclient
 .endif
 
 post-extract:
