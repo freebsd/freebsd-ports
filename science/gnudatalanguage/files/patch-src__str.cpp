@@ -1,6 +1,6 @@
---- ./src/str.cpp.orig	2014-04-08 16:53:53.954118000 +0200
-+++ ./src/str.cpp	2014-04-08 16:58:59.524163473 +0200
-@@ -180,7 +180,7 @@
+--- src/str.cpp.orig	2015-04-22 19:37:22 UTC
++++ src/str.cpp
+@@ -178,7 +178,7 @@ string StrUpCase(const string& s)
    ArrayGuard<char> guard( r);
    r[len]=0;
    for(unsigned i=0;i<len;i++)
@@ -9,7 +9,7 @@
    return string(r);
  }
  void StrUpCaseInplace( string& s)
-@@ -191,7 +191,7 @@
+@@ -189,7 +189,7 @@ void StrUpCaseInplace( string& s)
  //   ArrayGuard<char> guard( r);
  //   r[len]=0;
    for(unsigned i=0;i<len;i++)
@@ -18,7 +18,7 @@
  //   return string(r);
  }
  
-@@ -203,7 +203,7 @@
+@@ -201,7 +201,7 @@ string StrLowCase(const string& s)
    ArrayGuard<char> guard( r);
    r[len]=0;
    for(unsigned i=0;i<len;i++)
@@ -27,7 +27,7 @@
    return string(r);
  }
  void StrLowCaseInplace(string& s)
-@@ -211,7 +211,7 @@
+@@ -209,7 +209,7 @@ void StrLowCaseInplace(string& s)
    unsigned len=s.length();
  //   char const *sCStr=s.c_str();
    for(unsigned i=0;i<len;i++)

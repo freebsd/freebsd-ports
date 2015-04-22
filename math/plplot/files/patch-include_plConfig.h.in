@@ -1,0 +1,12 @@
+--- include/plConfig.h.in.orig	2015-04-12 10:08:04 UTC
++++ include/plConfig.h.in
+@@ -43,7 +43,8 @@
+ #ifndef __PLCONFIG_H__
+ #define __PLCONFIG_H__
+ 
+-#ifdef PLPLOT_HAVE_CONFIG_H
++// plplot_config.h won't be installed: don't let it be used by consumers
++#if defined(PLPLOT_HAVE_CONFIG_H) && defined(_IS_BUILDING_PLPLOT_PORT_)
+ #  include <plplot_config.h>
+ #endif
+ 
