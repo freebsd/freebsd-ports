@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
-USES=		perl5 python
+USES=		cpe perl5 python
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
