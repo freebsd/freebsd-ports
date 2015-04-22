@@ -9,7 +9,7 @@
 +	// well-defined C++ code, and Clang will assume that comparison
 +	// below always evaluates to true, resulting in segmentation
 +	// fault.  Use a dirty hack to force Clang to check for null.
-+	volatile int n = (int)&node;
++	volatile intptr_t n = (intptr_t)&node;
 +	if ( n != 0 ) {
  		Nameable* nameable = Node_getNameable( node );
  		if ( nameable != 0 ) {
@@ -19,7 +19,7 @@
  }
  void node_detach_name_changed_callback( scene::Node& node, const NameCallback& callback ){
 -	if ( &node != 0 ) {
-+	volatile int n = (int)&node;	// see the comment on line 650
++	volatile intptr_t n = (intptr_t)&node;	// see the comment on line 650
 +	if ( n != 0 ) {
  		Nameable* nameable = Node_getNameable( node );
  		if ( nameable != 0 ) {
@@ -29,7 +29,7 @@
  
  const char* node_get_name_safe( scene::Node& node ){
 -	if ( &node == 0 ) {
-+	volatile int n = (int)&node;	// see the comment on line 650
++	volatile intptr_t n = (intptr_t)&node;	// see the comment on line 650
 +	if ( n == 0 ) {
  		return "";
  	}
@@ -39,7 +39,7 @@
  
  void node_attach_name_changed_callback( scene::Node& node, const NameCallback& callback ){
 -	if ( &node != 0 ) {
-+	volatile int n = (int)&node;	// see the comment on line 650
++	volatile intptr_t n = (intptr_t)&node;	// see the comment on line 650
 +	if ( n != 0 ) {
  		Nameable* nameable = Node_getNameable( node );
  		if ( nameable != 0 ) {
@@ -49,7 +49,7 @@
  }
  void node_detach_name_changed_callback( scene::Node& node, const NameCallback& callback ){
 -	if ( &node != 0 ) {
-+	volatile int n = (int)&node;	// see the comment on line 650
++	volatile intptr_t n = (intptr_t)&node;	// see the comment on line 650
 +	if ( n != 0 ) {
  		Nameable* nameable = Node_getNameable( node );
  		if ( nameable != 0 ) {
