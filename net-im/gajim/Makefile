@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_PKGNAMEPREFIX}nbxmpp>0:${PORTSDIR}/net-im/py-nbxmpp
 
-USES=		dos2unix gmake pathfix python:2 tar:bzip2
+USES=		cpe dos2unix gmake pathfix python:2 tar:bzip2
 USE_GNOME=	intltool pygtk2
 USE_XORG=	x11 xext xscrnsaver
 
