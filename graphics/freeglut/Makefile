@@ -21,7 +21,7 @@ USE_XORG=	ice xi xxf86vm xrandr
 USE_GL=		glu
 CONFIGURE_ARGS=	--disable-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid
+LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid -lm
 USE_LDCONFIG=	yes
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\
