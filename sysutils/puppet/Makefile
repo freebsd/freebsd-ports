@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
 		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
 
+USES=		cpe
+CPE_VENDOR=	puppetlabs
 CONFLICTS=	puppet-2*
 NO_BUILD=	yes
 USE_RUBY=	yes
