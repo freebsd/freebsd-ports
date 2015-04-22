@@ -101,7 +101,6 @@ OPTIONS_DEFINE=	\
 	SLOWFS_CACHE \
 	SRCACHE \
 	SUPERVISORD \
-	SYSLOG_SUPPORT \
 	TCP_PROXY \
 	UDPLOG \
 	XRID_HEADER \
@@ -191,7 +190,6 @@ SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SRCACHE_DESC=			3rd party srcache module
 SUPERVISORD_DESC=		3rd party supervisord module
-SYSLOG_SUPPORT_DESC=		3rd party syslog support
 TCP_PROXY_DESC=			3rd party tcp_proxy module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
@@ -738,10 +736,6 @@ NGINX_SUPERVISORD_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_VERSION}.tar.gz:supervisord
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
-IGNORE=	SYSLOG: update require
 .endif
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
