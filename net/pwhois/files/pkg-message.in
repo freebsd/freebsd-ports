@@ -21,4 +21,4 @@ pwhoisd_enable="YES"
 service pwhoisd start
 
 6.  To enable daily updates, edit /etc/periodic.conf and add:
-daily_pwhois-updatedb_enable="YES"
+daily_pwhois_updatedb_enable="YES"

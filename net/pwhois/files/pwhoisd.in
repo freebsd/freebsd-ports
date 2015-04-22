@@ -33,8 +33,8 @@ stop_postcmd=pwhoisd_cleanup
 pwhoisd_precmd()
 {
     [ ! -f $pidfile ] && %%TOUCH%% $pidfile && %%CHOWN%% %%USER%%:%%GROUP%% $pidfile
-    [ ! -d $_dbdir ] && %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_dbdir
-    [ ! -d $_logdir ] && %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_logdir
+    %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_dbdir
+    %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_logdir
     return 0
 }
 
