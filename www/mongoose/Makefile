@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongoose
-PORTVERSION=	5.3
+PORTVERSION=	5.6
 CATEGORIES=	www
 
 MAINTAINER=	lytboris@gmail.com
@@ -13,13 +13,13 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	cesanta
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	30a7965
+GH_COMMIT=	632b3a3
 
 USES=		gmake dos2unix
 
-ALL_TARGET=	server
+ALL_TARGET=	web_server
 MAKE_ENV=	LIBS=-lpthread
-BUILD_WRKSRC=	${WRKSRC}/examples
+BUILD_WRKSRC=	${WRKSRC}/examples/web_server
 
 USE_RC_SUBR=	mongoose
 
@@ -83,7 +83,7 @@ MAKE_ENV+=	CFLAGS_EXTRA="-DMONGOOSE_NO_WEBSOCKET ${CFLAGS_EXTRA}"
 PLIST_FILES=	bin/mongoose
 
 do-install:
-	${MV} ${BUILD_WRKSRC}/server ${BUILD_WRKSRC}/mongoose
+	${MV} ${BUILD_WRKSRC}/web_server ${BUILD_WRKSRC}/mongoose
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mongoose ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
