@@ -19,7 +19,9 @@ LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libpurple.so:${PORTSDIR}/net-im/libpurple
 
-USES=		gettext gmake libtool pkgconfig
+USES=		cpe gettext gmake libtool pkgconfig
+CPE_VENDOR=	cypherpunks
+CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
