@@ -382,3 +382,4 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/yahoo-jp-key-custom.scm
 %%DATADIR%%/yahoo-jp.scm
 %%DATADIR%%/zaurus.scm
+@dir %%DATADIR%%/helperdata
