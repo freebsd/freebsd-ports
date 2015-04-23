@@ -14,6 +14,8 @@ COMMENT=	Tool for managing events and logs
 
 LICENSE=	APACHE20
 
+USES=		cpe
+CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 JAVA_EXTRACT=	yes
