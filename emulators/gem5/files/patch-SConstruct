@@ -1,0 +1,12 @@
+--- SConstruct.orig	2015-04-21 17:46:54 UTC
++++ SConstruct
+@@ -534,6 +534,9 @@ Export('MakeAction')
+ main['LTO_CCFLAGS'] = []
+ main['LTO_LDFLAGS'] = []
+ 
++# Add pthread
++main.Append(LIBS=['pthread'])
++
+ # According to the readme, tcmalloc works best if the compiler doesn't
+ # assume that we're using the builtin malloc and friends. These flags
+ # are compiler-specific, so we need to set them after we detect which

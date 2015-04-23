@@ -42,6 +42,7 @@
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils
     SUBDIR += gbe
+    SUBDIR += gem5
     SUBDIR += generator
     SUBDIR += generator-cbiere
     SUBDIR += gens
