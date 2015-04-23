@@ -3,7 +3,7 @@
 
 PORTNAME=	PerlFM
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Dir-Watch>=0.0.0:${PORTSDIR}/devel/p5-Dir-Watch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/pfm
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
