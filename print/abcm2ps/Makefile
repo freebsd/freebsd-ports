@@ -9,6 +9,8 @@ MASTER_SITES=	http://moinejf.free.fr/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
+USES=		cpe
+CPE_VENDOR=	moinejf
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
