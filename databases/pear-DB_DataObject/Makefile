@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.11.3
+PORTVERSION=	1.11.4
 CATEGORIES=	databases pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL Builder, Object Interface to Database Tables
+
+LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/docs/LICENCE.txt
 
 BUILD_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
 		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
 		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	PEAR_MDB2 PEAR_VALIDATE
 
