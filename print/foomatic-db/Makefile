@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	db
-PORTVERSION=	20150214
+PORTVERSION=	20150415
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danilo
@@ -16,8 +16,7 @@ COMMENT=	Database for integrating printer drivers with common spoolers
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gmake
-USE_AUTOTOOLS=	automake:env autoconf
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 
 FOOMATICVER=	4.0
