@@ -9,12 +9,17 @@ MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Web based Syslog browsing and analysis
 
-NO_BUILD=	YES
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe
+CPE_VENDOR=	adiscon
+NO_BUILD=	yes
 ANALYZERDIR?=	www/loganalyzer
 PLIST_SUB+=	ANALYZERDIR=${ANALYZERDIR}
 
 OPTIONS_DEFINE=	PHP_MYSQL PDO_DBLIB PDO_FIREBIRD PDO_MYSQL PDO_ODBC PDO_PGSQL \
-	PDO_SQLITE DOCS
+		PDO_SQLITE DOCS
 PHP_MYSQL_DESC=		MySQL database support (PHP extension)
 PDO_DBLIB_DESC=		Microsoft SQL Server and Sybase PDO driver
 PDO_FIREBIRD_DESC=	Firebird/Interbase PDO driver
