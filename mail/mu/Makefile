@@ -5,7 +5,6 @@ PORTNAME=	mu
 PORTVERSION=	0.9.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
