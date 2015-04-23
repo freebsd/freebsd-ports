@@ -1,0 +1,21 @@
+diff --git fileio.c fileio.c
+index 1ef1978..c10a6d6 100644
+--- fileio.c
++++ fileio.c
+@@ -36,9 +36,14 @@ pkg_fgetline(char *line, size_t size, FILE *stream)
+ 		}
+ 		else if (c == '#')
+ 		{
+-			if (!quoted)
++			if (!quoted) {
++				/* Skip the rest of the line */
++				do {
++					c = getc(stream);
++				} while (c != '\n' && c != EOF);
++				*s++ = c;
+ 				break;
+-
++			}
+ 			quoted = false;
+ 			continue;
+ 		}
