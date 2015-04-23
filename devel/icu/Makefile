@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	53.1
+PORTVERSION=	55.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
