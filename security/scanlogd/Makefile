@@ -3,7 +3,7 @@
 
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://openwall.com/scanlogd/ \
 		ftp://ftp.openwall.com/pub/projects/scanlogd/ \
@@ -14,21 +14,34 @@ COMMENT=	TCP port scan detection tool
 
 USE_RC_SUBR=	${PORTNAME}
 
-.if defined(WITH_LIBNIDS)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
-ALL_TARGET=	libnids
-.else
-ALL_TARGET=	libpcap
-.endif
-
 USERS=		scanlogd
 GROUPS=		scanlogd
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c" LD="${CC}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/scanlogd man/man8/scanlogd.8.gz
+PLIST_FILES=	bin/scanlogd man/man8/scanlogd.8.gz \
+		etc/periodic/security/850.scanlogd
+
+OPTIONS_SINGLE=	PCAP
+OPTIONS_SINGLE_PCAP=	PCAP_BASE NIDS
+
+OPTIONS_DEFAULT=	PCAP_BASE
+
+PCAP_BASE_DESC=	Use pcap from base for packet capture
+NIDS_DESC=	Use net/libnet for packet capture
+
+PCAP_BASE_ALL_TARGET=	libpcap
+
+NIDS_ALL_TARGET=	libnids
+NIDS_BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
+NIDS_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+NIDS_CFLAGS=		-I${LOCALBASE}/include/libnet11
+NIDS_LDFLAGS=		-L${LOCALBASE}/lib/libnet11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/security
+	${INSTALL_SCRIPT} ${FILESDIR}/850.scanlogd \
+		${STAGEDIR}${PREFIX}/etc/periodic/security
 
 .include <bsd.port.mk>
