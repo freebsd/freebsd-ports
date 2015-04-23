@@ -9,6 +9,8 @@ CATEGORIES=	irc
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
 
+LICENSE=	GPLv2
+
 USES=		cmake:outsource shebangfix
 CMAKE_ARGS+=	-DINSTDIR:STRING="${LOCALBASE}/anope"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
