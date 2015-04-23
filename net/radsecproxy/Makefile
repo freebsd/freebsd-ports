@@ -12,7 +12,8 @@ COMMENT=	Radsecproxy is a generic RADIUS proxy
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		tar:xz
+USES=		cpe tar:xz
+CPE_VENDOR=	uninett
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
