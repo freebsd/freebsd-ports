@@ -12,6 +12,8 @@ COMMENT=	Web service, SOA, and SOAP testing tool
 
 LICENSE=	GPLv2
 
+USES=		cpe
+CPE_VENDOR=	smartbear
 USE_JAVA=	1.6+
 WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
