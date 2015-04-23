@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake pathfix pkgconfig tar:xz
+CPE_VENDOR=	david_king
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst
 GNU_CONFIGURE=	yes
@@ -34,6 +35,6 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 NOTIFY_LIBS_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-NOTIFY_CONFIGURE_WITH=	libnotify	
+NOTIFY_CONFIGURE_WITH=	libnotify
 
 .include <bsd.port.mk>
