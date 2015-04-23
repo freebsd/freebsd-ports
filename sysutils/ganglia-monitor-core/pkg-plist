@@ -1,23 +1,17 @@
 bin/ganglia-config
-bin/gstat
 bin/gmetric
-@unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
+bin/gstat
 etc/gmond.conf.d/modpython.conf
-etc/gmond.conf.sample
-%%GMETAD%%@unexec if cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample; then rm -f %D/etc/gmetad.conf; fi
-%%GMETAD%%etc/gmetad.conf.sample
+@sample etc/gmond.conf.sample
+%%GMETAD%%@sample etc/gmetad.conf.sample
 include/ganglia.h
 include/ganglia_gexec.h
 include/gm_file.h
-include/gm_mmn.h
 include/gm_metric.h
+include/gm_mmn.h
 include/gm_msg.h
 include/gm_protocol.h
 include/gm_value.h
-lib/libganglia-%%PORTVERSION%%.so.0
-lib/libganglia-%%PORTVERSION%%.so.0.0.0
-lib/libganglia.a
-lib/libganglia.so
 lib/ganglia/modcpu.so
 lib/ganglia/moddisk.so
 lib/ganglia/modload.so
@@ -27,14 +21,19 @@ lib/ganglia/modnet.so
 lib/ganglia/modproc.so
 lib/ganglia/modpython.so
 lib/ganglia/modsys.so
-man/man1/gmetric.1.gz
+lib/libganglia-%%PORTVERSION%%.so.0
+lib/libganglia-%%PORTVERSION%%.so.0.0.0
+lib/libganglia.a
+lib/libganglia.so
 %%GMETAD%%man/man1/gmetad.1.gz
 %%GMETAD%%man/man1/gmetad.py.1.gz
+man/man1/gmetric.1.gz
 man/man1/gmond.1.gz
 man/man1/gstat.1.gz
 man/man5/gmond.conf.5.gz
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
-@dirrmtry etc/gmond.conf.d
-@dirrm lib/ganglia
+@dir lib/ganglia/python_modules
+@dir(ganglia,ganglia,) /var/db/ganglia/rrds
+@dir(ganglia,ganglia,) /var/db/ganglia

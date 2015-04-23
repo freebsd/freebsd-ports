@@ -1,8 +1,13 @@
---- gmond/modules/conf.d/modpython.conf.in.orig	2012-10-01 18:52:02.000000000 +0000
-+++ gmond/modules/conf.d/modpython.conf.in	2012-10-01 18:52:22.000000000 +0000
-@@ -13,4 +13,4 @@
+--- gmond/modules/conf.d/modpython.conf.in.orig	2013-05-07 09:39:40.000000000 -0500
++++ gmond/modules/conf.d/modpython.conf.in	2014-10-14 15:31:54.000000000 -0500
+@@ -9,8 +9,8 @@
+   module {
+     name = "python_module"
+     path = "modpython.so"
+-    params = "@moduledir@/python_modules"
++    params = "@moduledir@"
    }
  }
  
 -include ("@sysconfdir@/conf.d/*.pyconf")
-+include ("@sysconfdir@/%%GMONDCONFDIR%%/*.pyconf")
++include ("@sysconfdir@/gmond.conf.d/*.pyconf")
