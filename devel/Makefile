@@ -1325,7 +1325,11 @@
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
     SUBDIR += mips-binutils
+    SUBDIR += mips-gcc
+    SUBDIR += mips-xtoolchain-gcc
     SUBDIR += mips64-binutils
+    SUBDIR += mips64-gcc
+    SUBDIR += mips64-xtoolchain-gcc
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
@@ -4522,7 +4526,6 @@
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inflecto
-    SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
@@ -4656,6 +4659,7 @@
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-tasks
+    SUBDIR += rubygem-rubyinline
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-rufus-scheduler

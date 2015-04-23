@@ -10,6 +10,9 @@ MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP based weblog software
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -20,7 +23,8 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 #SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	s9y
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE MAGICK
 OPTIONS_DEFAULT=	MYSQL MAGICK

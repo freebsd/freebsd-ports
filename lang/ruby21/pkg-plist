@@ -1713,6 +1713,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2d/structmethod__entry__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.png

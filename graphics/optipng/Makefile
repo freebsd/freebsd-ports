@@ -1,9 +1,8 @@
-# Created by: Thomas Hurst <freaky@aagh.net>
+# Created by: Thomas Hurst <tom@hur.st>
 # $FreeBSD$
 
 PORTNAME=	optipng
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.7.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
@@ -15,26 +14,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 OPTIONS_DEFINE=	BUNDLED_LIBPNG BUNDLED_ZLIB
 
-BUNDLED_LIBPNG_DESC=	Use bundled libpng
-BUNDLED_ZLIB_DESC=	Use bundled zlib
+BUNDLED_LIBPNG_DESC=		Use bundled libpng
+BUNDLED_LIBPNG_CONFIGURE_OFF=	--with-system-libpng
+BUNDLED_LIBPNG_CONFIGURE_ON=	--without-system-libpng
+BUNDLED_LIBPNG_LIB_DEPENDS_OFF=	libpng.so:${PORTSDIR}/graphics/png
+BUNDLED_LIBPNG_CFLAGS_OFF=	-I${LOCALBASE}/include
+BUNDLED_LIBPNG_LDFLAGS_OFF=	-L${LOCALBASE}/lib
 
+BUNDLED_ZLIB_DESC=		Use bundled zlib
+BUNDLED_ZLIB_CONFIGURE_OFF=	--with-system-zlib
+BUNDLED_ZLIB_CONFIGURE_ON=	--without-system-zlib
+
+USES=	gmake
 HAS_CONFIGURE=	yes
+
 PLIST_FILES=	bin/optipng man/man1/optipng.1.gz
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 		png_optimization.html todo.txt
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MBUNDLED_LIBPNG)
-CONFIGURE_ARGS+=	--with-system-libpng
-CFLAGS+=	"-I${LOCALBASE}/include"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
-.endif
-
-.if empty(PORT_OPTIONS:MBUNDLED_ZLIB)
-CONFIGURE_ARGS+=	--with-system-zlib
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${STAGEDIR}${PREFIX}/bin/

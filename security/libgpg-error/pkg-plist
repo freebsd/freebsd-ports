@@ -4,7 +4,7 @@ include/gpg-error.h
 info/gpgrt.info
 lib/libgpg-error.so
 lib/libgpg-error.so.0
-lib/libgpg-error.so.0.13.0
+lib/libgpg-error.so.0.15.0
 man/man1/gpg-error-config.1.gz
 share/aclocal/gpg-error.m4
 share/common-lisp/source/gpg-error/gpg-error.asd
@@ -20,12 +20,17 @@ share/common-lisp/source/gpg-error/gpg-error-codes.lisp
 %%NLS%%share/locale/de/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/libgpg-error.mo

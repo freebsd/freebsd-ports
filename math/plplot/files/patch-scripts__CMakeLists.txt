@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2012-01-04 16:45:07.000000000 +0100
-+++ scripts/CMakeLists.txt	2013-10-01 23:16:18.000000000 +0200
-@@ -28,7 +28,7 @@
+--- scripts/CMakeLists.txt.orig	2015-04-12 10:08:04 UTC
++++ scripts/CMakeLists.txt
+@@ -28,7 +28,7 @@ if(HAVE_BASH)
      )
    endif(PLD_plmeta)
    if(PLD_pstex)

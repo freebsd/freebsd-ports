@@ -97,6 +97,7 @@ CONFIGURE_ARGS+=	--enable-gdk \
 			--bindir=${PREFIX}/bin \
 			--libdir=${MONETDB_LIBDIR} \
 			--includedir=${MONETDB_INCLUDEDIR} \
+			--localstatedir="${PREFIX}/var" \
 			--docdir=${PREFIX}/${DATADIR}
 
 SPHINXCLIENT_CONFIGURE_WITH=	sphinxclient

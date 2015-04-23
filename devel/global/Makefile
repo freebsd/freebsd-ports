@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
 USES=		libtool perl5
 

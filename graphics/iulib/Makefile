@@ -3,7 +3,7 @@
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -21,7 +21,6 @@ SDL_DESC=	Enable SDL for graphical debugging
 VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
 USES=		autoreconf libtool python:build tar:tgz
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

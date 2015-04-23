@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	2014-05-23 09:12:23.000000000 +0000
+--- docs/Makefile.in.orig	2014-05-23 09:12:23 UTC
 +++ docs/Makefile.in
-@@ -1,6 +1,6 @@
+@@ -1,10 +1,9 @@
  prefix = @prefix@
 -docdir = $(prefix)/share/doc/gps
 -sharedir = $(prefix)/share/gps
@@ -8,8 +8,13 @@
 +sharedir = $(DESTDIR)$(prefix)/share/gps
  
  MKDIR = mkdir -p
- INSTALL = @INSTALL@
-@@ -12,20 +12,20 @@ all: ug tutorial gps_pg relnotes gnatdoc
+-INSTALL = @INSTALL@
+-INSTALL_DATA = @INSTALL_DATA@
++INSTALL_DATA = $(BSD_INSTALL_DATA)
+ CONVERT = convert
+ CP = cp -p
+ 
+@@ -12,20 +11,20 @@ all: ug tutorial gps_pg relnotes gnatdoc
  static:
  
  gps_pg:

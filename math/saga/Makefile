@@ -31,6 +31,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_contrib
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++11
 USE_WX=		3.0+
 USES=		autoreconf compiler:gcc-c++11-lib iconv:wchar_t dos2unix libtool python:2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

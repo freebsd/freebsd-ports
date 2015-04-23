@@ -15,8 +15,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.erlang.org/download
-
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	rubyinlineaccel
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extension to RubyInline
 
-RUN_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
+RUN_DEPENDS=	rubygem-rubyinline>=3.6.3:${PORTSDIR}/devel/rubygem-rubyinline
 
 LICENSE=	GPLv2
 

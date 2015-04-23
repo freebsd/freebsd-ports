@@ -1,4 +1,4 @@
---- cmake/modules/instdirs.cmake.orig	2013-11-11 19:54:54.000000000 -0500
+--- cmake/modules/instdirs.cmake.orig	2015-04-12 10:08:04 UTC
 +++ cmake/modules/instdirs.cmake
 @@ -61,13 +61,13 @@ CACHE PATH "install location for C heade
  
@@ -35,11 +35,11 @@
  # Ada source files (*.adb, *.ads) (following recommendations in
  # http://www.ada-france.org/debian/debian-ada-policy.html
 @@ -101,7 +101,7 @@ set(ADA_INCLUDE_DIR ${CMAKE_INSTALL_DATA
- set(ADA_LIB_DIR ${CMAKE_INSTALL_LIBDIR}/ada/adalib/plplotada${LIB_TAG})
+ set(ADA_LIB_DIR ${CMAKE_INSTALL_LIBDIR}/ada/adalib/plplotada)
  
  # Drivers.
--set(DRV_DIR ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}${PLPLOT_VERSION}/drivers${LIB_TAG})
-+set(DRV_DIR ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}/drivers${LIB_TAG})
+-set(DRV_DIR ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}${PLPLOT_VERSION}/drivers)
++set(DRV_DIR ${CMAKE_INSTALL_LIBDIR}/${PACKAGE}/drivers)
  
  # Documentation.
  set(DOC_DIR ${CMAKE_INSTALL_DATADIR}/doc/${PACKAGE})

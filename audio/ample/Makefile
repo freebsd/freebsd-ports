@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to listen to your own MP3's away from home
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 
 PLIST_FILES=	bin/ample man/man1/ample.1.gz man/man5/ample.conf.5.gz \
 		man/man5/ample.html.5.gz

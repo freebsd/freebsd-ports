@@ -422,6 +422,9 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius-clients.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/README
+%%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/radius-mapping.sh
+%%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/radius.conf
 %%PORTDOCS%%%%DOCSDIR%%/schemas/sql
 %%PORTDOCS%%%%DOCSDIR%%/vendor/ascend
 %%PORTDOCS%%%%DOCSDIR%%/vendor/bay
@@ -449,7 +452,6 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
 %%EXAMPLESDIR%%/raddb/certs/index.txt.old
 %%EXAMPLESDIR%%/raddb/certs/passwords.mk
-%%EXAMPLESDIR%%/raddb/certs/random
 %%EXAMPLESDIR%%/raddb/certs/serial
 %%EXAMPLESDIR%%/raddb/certs/serial.old
 %%EXAMPLESDIR%%/raddb/certs/server.cnf
@@ -644,6 +646,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/abfab-tls
 %%EXAMPLESDIR%%/raddb/sites-available/abfab-tr-idp
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/challenge
 %%EXAMPLESDIR%%/raddb/sites-available/channel_bindings
 %%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
 %%EXAMPLESDIR%%/raddb/sites-available/coa
@@ -822,6 +825,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc7055
 %%DATADIR%%/dictionary.rfc7155
 %%DATADIR%%/dictionary.rfc7268
+%%DATADIR%%/dictionary.rfc7499
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin

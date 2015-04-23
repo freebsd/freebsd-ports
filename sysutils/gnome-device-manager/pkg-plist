@@ -17,8 +17,6 @@ share/icons/hicolor/48x48/apps/gnome-device-manager-device-usb-interface.png
 share/icons/hicolor/48x48/apps/gnome-device-manager-device-usb.png
 share/icons/hicolor/48x48/apps/gnome-device-manager.png
 share/omf/gnome-device-manager/gnome-device-manager-C.omf
-@dirrm share/omf/gnome-device-manager
-@dirrm share/gnome/help/gnome-device-manager/C/figures
-@dirrm share/gnome/help/gnome-device-manager/C
-@dirrm share/gnome/help/gnome-device-manager
-@dirrm include/gnome-device-manager
+@comment @dir share/icons/hicolor/scalable/apps
+@comment @dir share/icons/hicolor/22x22/apps
+@comment @dir share/icons/hicolor/16x16/apps

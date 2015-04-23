@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USES=		python:2
+USES=		cpe python:2
+CPE_VENDOR=	henri_wahl
 USE_PYTHON=	distutils
 USE_GNOME=	pygtk2 librsvg2
 

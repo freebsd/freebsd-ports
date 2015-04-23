@@ -1,6 +1,6 @@
---- bindings/tk/tkMain.c.orig	2013-12-18 20:25:14.000000000 -0500
+--- bindings/tk/tkMain.c.orig	2015-04-12 10:08:04 UTC
 +++ bindings/tk/tkMain.c
-@@ -92,10 +92,6 @@ EXTERN int Tcl_Import _ANSI_ARGS_( ( Tcl
+@@ -90,10 +90,6 @@ EXTERN int Tcl_Import _ANSI_ARGS_( ( Tcl
                                       int allowOverwrite ) );
  #endif
  

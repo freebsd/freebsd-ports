@@ -10,11 +10,12 @@ fi
 
 rc=0
 
-case "${daily_pwhois-updatedb_enable:-YES}" in
+case "${daily_pwhois_updatedb_enable:-YES}" in
 	[Nn][Oo])
 	;;
-	*)
-	[ -x %%PREFIX%%/sbin/pwhois-updatedb ] && %%PREFIX%%/sbin/pwhois-updatedb 1>/dev/null
+	[Yy][Ee][Ss])
+	rm /tmp/.pwhois-updatedb.LCK
+	su -fm pwhois -c 'lockf -t0 /tmp/.pwhois-updatedb.lock %%PREFIX%%/sbin/pwhois-updatedb' 1>/dev/null
 	;;
 esac
 

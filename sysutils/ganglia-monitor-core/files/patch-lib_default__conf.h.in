@@ -1,11 +1,11 @@
---- lib/default_conf.h.in.orig	2012-10-01 19:06:52.000000000 +0000
-+++ lib/default_conf.h.in	2012-10-01 19:08:01.000000000 +0000
-@@ -381,7 +381,7 @@
+--- lib/default_conf.h.in.orig	2013-05-07 09:39:40.000000000 -0500
++++ lib/default_conf.h.in	2014-10-14 15:31:54.000000000 -0500
+@@ -397,7 +397,7 @@
    }\n\
  }\n\
  \n\
 -include (\"" SYSCONFDIR "/conf.d/*.conf\")\n\
-+include (\"" SYSCONFDIR "/%%GMONDCONFDIR%%/*.conf\")\n\
++include (\"" SYSCONFDIR "/gmond.conf.d/*.conf\")\n\
  \n\
  "
  

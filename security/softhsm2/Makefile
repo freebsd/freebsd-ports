@@ -14,11 +14,10 @@ COMMENT=	Software implementation of a Hardware Security Module (HSM)
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE} --localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
 USES=		libtool
 

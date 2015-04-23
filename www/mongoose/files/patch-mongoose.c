@@ -1,10 +1,10 @@
 --- mongoose.c
 +++ mongoose.c
-@@ -1162,19 +1162,6 @@ typedef pid_t process_id_t;
- #define MONGOOSE_IDLE_TIMEOUT_SECONDS 30
+@@ -1162,20 +1162,6 @@ typedef pid_t process_id_t;
+ #define MONGOOSE_IDLE_TIMEOUT_SECONDS 300
  #endif
  
--#ifdef MONGOOSE_NO_SOCKETPAIR
+-#ifdef NS_DISABLE_SOCKETPAIR
 -#define MONGOOSE_NO_CGI
 -#endif
 -
@@ -15,6 +15,7 @@
 -#define MONGOOSE_NO_DIRECTORY_LISTING
 -#define MONGOOSE_NO_LOGGING
 -#define MONGOOSE_NO_SSI
+-#define MONGOOSE_NO_DL
 -#endif
 -
  struct vec {
@@ -22,11 +23,11 @@
    int len;
 --- mongoose.h
 +++ mongoose.h
-@@ -22,6 +22,40 @@
+@@ -22,6 +22,43 @@
  
- #define MONGOOSE_VERSION "5.4"
+ #define MONGOOSE_VERSION "5.6"
 
-+#ifdef MONGOOSE_NO_SOCKETPAIR
++#ifdef NS_DISABLE_SOCKETPAIR
 +#ifndef MONGOOSE_NO_CGI
 +#define MONGOOSE_NO_CGI
 +#endif
@@ -50,6 +51,9 @@
 +#endif
 +#ifndef MONGOOSE_NO_SSI
 +#define MONGOOSE_NO_SSI
++#endif
++#ifndef MONGOOSE_NO_DL
++#define MONGOOSE_NO_DL
 +#endif
 +#endif
 +

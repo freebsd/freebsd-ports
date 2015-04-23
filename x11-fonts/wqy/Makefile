@@ -25,6 +25,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 USE_XORG=	x11
 USES=		fonts perl5
 USE_PERL5=	build
+NO_WRKSUBDIR=	yes
 
 FONTNAME=	wqy
 CONFDDIR=	etc/fonts/conf.d

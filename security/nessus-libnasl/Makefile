@@ -21,6 +21,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libnessus.so:${PORTSDIR}/security/nessus-libraries
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USES=		bison libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

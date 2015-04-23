@@ -9,8 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for removing files based on when they were last accessed
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	redhat
 
 GNU_CONFIGURE=	yes
 

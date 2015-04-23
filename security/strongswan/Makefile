@@ -13,7 +13,7 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		execinfo libtool:keepla tar:bzip2 pkgconfig
+USES=		cpe execinfo libtool:keepla tar:bzip2 pkgconfig
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes

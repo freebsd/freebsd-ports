@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Thunar
-PORTVERSION=	1.6.6
-PORTREVISION=	2
+PORTVERSION=	1.6.7
 CATEGORIES=	x11-fm xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITES=	XFCE/src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -42,7 +41,6 @@ PLUG_TPA_DESC=	Trash Panel Applet plugin
 PLUG_UCA_DESC=	User Customizable Actions plugin
 PLUG_WALL_DESC=	Wallpaper plugin
 
-GVF_USE=	gnome=gvfs
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify

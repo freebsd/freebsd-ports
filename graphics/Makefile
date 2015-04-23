@@ -878,6 +878,7 @@
     SUBDIR += qt5-opengl
     SUBDIR += qt5-pixeltool
     SUBDIR += qt5-svg
+    SUBDIR += qtawesome
     SUBDIR += qtgtl
     SUBDIR += quat
     SUBDIR += quat-gui

@@ -1,0 +1,19 @@
+--- dis/data/create-tables-4.orig	1996-01-04 17:20:34 UTC
++++ dis/data/create-tables-4
+@@ -36,7 +36,7 @@ while (<ENTITIES>) {
+ 	@last_a = @a;
+ 
+ }
+-dbmclose (entities);
++dbmclose (%entities);
+ close (ENTITIES);
+ 
+ open (SITES, "./sites");
+@@ -51,6 +51,6 @@ while (<SITES>) {
+ 	$sites{$key} = $a[1];
+     }
+ }
+-dbmclose (sites);
++dbmclose (%sites);
+ close (ENTITIES);
+ 

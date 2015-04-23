@@ -16,9 +16,10 @@ LIB_DEPENDS+=	libicapapi.so:${PORTSDIR}/www/c-icap
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHAVE_STRNSTR
-USES=		shebangfix libtool
+USES=		cpe shebangfix libtool
 SHEBANG_FILES=	cgi-bin/clwarn.cgi*
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	darold
 
 CONFIGURE_ARGS+=	--enable-shared --enable-static \
 			--sysconfdir="${PREFIX}/etc/c-icap" \

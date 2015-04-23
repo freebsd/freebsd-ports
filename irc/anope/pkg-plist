@@ -176,3 +176,6 @@ libexec/anope/tools/epona2anope
 %%DATADIR%%/modules/viagra.so
 %%DATADIR%%/mydbgen
 %%DATADIR%%/tables.sql
+@dir %%DATADIR%%/modules/runtime
+@dir %%DATADIR%%/logs
+@dir %%DATADIR%%/backups

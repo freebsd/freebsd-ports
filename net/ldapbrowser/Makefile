@@ -5,9 +5,11 @@ PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	3
 CATEGORIES=	net java
-MASTER_SITES=	http://web.talf.org/software/ \
+MASTER_SITES=	http://www.klop.ws/distfiles/ \
 		http://freebsd.nsu.ru/distfiles/ \
-		http://www.klop.ws/distfiles/
+		ftp://ftp.nstu.ru/pub/sources/nettools/ldap/ \
+		ftp://ftp.gtrgrenoble.fr/TpRes/Ldap/ \
+		ftp://ftp.uni-duisburg.de/Unix/networking/LDAP/frontends/
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ronald-lists@klop.ws

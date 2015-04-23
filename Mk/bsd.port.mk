@@ -805,7 +805,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${PREFIX}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
-#				  Default: "--prefix=${GNU_CONFIGURE_PREFIX} --infodir=${PREFIX}/${INFO_PATH}
+#				  Default: "--prefix=${GNU_CONFIGURE_PREFIX}
+#				  --infodir=${PREFIX}/${INFO_PATH} --localstatedir=/var
 #				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
@@ -1017,6 +1018,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
 # NO_DEPENDS	- Don't verify build of dependencies.
+# STRICT_DEPENDS
+#				- Verify dependencies but consider missing dependencies as
+#				  fatal.
 # CHECKSUM_ALGORITHMS
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
@@ -2679,6 +2683,10 @@ HAS_CONFIGURE=		yes
 
 SET_LATE_CONFIGURE_ARGS= \
      _LATE_CONFIGURE_ARGS="" ; \
+	if [ -z "${CONFIGURE_ARGS:M--localstatedir=*:Q}" ] && \
+	   ./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- --localstatedir > /dev/null; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --localstatedir=/var" ; \
+	fi ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${GNU_CONFIGURE_MANPREFIX}/man" ; \
 	fi ; \
@@ -3375,9 +3383,11 @@ do-configure:
 	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
 		| ${XARGS} -n 1 ${DIRNAME}); \
 	for _D in $${CONFIG_GUESS_DIRS}; do \
-		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${RM} $${_D}/config.guess; \
+		${CP} ${TEMPLATES}/config.guess $${_D}/config.guess; \
 		${CHMOD} a+rx $${_D}/config.guess; \
-	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${RM} $${_D}/config.sub; \
+		${CP} ${TEMPLATES}/config.sub $${_D}/config.sub; \
 		${CHMOD} a+rx $${_D}/config.sub; \
 	done
 .endif
@@ -4343,7 +4353,7 @@ _INSTALL_DEPENDS=	\
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 			fi; \
-		else \
+		elif [ -z "${STRICT_DEPENDS}" ]; then \
 			(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 		fi; \
 		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
@@ -4352,7 +4362,7 @@ _INSTALL_DEPENDS=	\
 ${deptype:tl}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
-	@set -e ; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
+	@set -e ; anynotfound=0; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
 		prog=$${i%%:*}; \
 		if [ -z "$$prog" ]; then \
 			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
@@ -4434,6 +4444,7 @@ ${deptype:tl}-depends:
 			fi; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
+			anynotfound=1; \
 			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
@@ -4441,7 +4452,12 @@ ${deptype:tl}-depends:
 				${_INSTALL_DEPENDS} \
 			fi; \
 		fi; \
-	done
+	done; \
+	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
+		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
+		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the ${deptype:tl}-depends phase."; \
+		exit 1; \
+	fi
 .endif
 .else
 	@${DO_NADA}
@@ -4451,7 +4467,7 @@ ${deptype:tl}-depends:
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@set -e ; \
-	for i in ${LIB_DEPENDS}; do \
+	anynotfound=0; for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*} ; \
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
@@ -4459,6 +4475,7 @@ lib-depends:
 		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
 		libfile=`${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}` ; \
 		if [ -z "$${libfile}" ]; then \
+			anynotfound=1; \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
 			if [ ! -d "$$dir" ] ; then \
@@ -4469,7 +4486,12 @@ lib-depends:
 		else \
 			${ECHO_MSG} " - found ($${libfile})"; \
 		fi ; \
-	done
+	done; \
+	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
+		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
+		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the lib-depends phase."; \
+		exit 1; \
+	fi
 .endif
 
 .endif

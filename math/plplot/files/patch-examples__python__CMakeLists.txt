@@ -1,6 +1,6 @@
---- examples/python/CMakeLists.txt.orig
+--- examples/python/CMakeLists.txt.orig	2015-04-12 10:08:04 UTC
 +++ examples/python/CMakeLists.txt
-@@ -241,7 +241,7 @@
+@@ -245,7 +245,7 @@ if(CORE_BUILD)
      @ONLY
      )
  
