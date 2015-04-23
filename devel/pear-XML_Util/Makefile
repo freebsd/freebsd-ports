@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML_Util
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
