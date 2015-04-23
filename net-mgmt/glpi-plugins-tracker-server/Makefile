@@ -14,6 +14,9 @@ COMMENT=	Plugin of glpi to get information of networking devices by SNMP
 
 RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi
 
+DEPRECATED=	superceded by net-mgmt/glpi-plugins-fusioninventory-server
+EXPIRATION_DATE=	2015-05-22
+
 USE_PHP=	zlib
 
 WRKSRC=		${WRKDIR}/tracker
