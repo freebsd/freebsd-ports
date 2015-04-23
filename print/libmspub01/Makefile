@@ -2,6 +2,7 @@
 
 PORTNAME=	libmspub
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01

@@ -129,6 +129,7 @@ include/unicode/reldatefmt.h
 include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
+include/unicode/scientificnumberformatter.h
 include/unicode/search.h
 include/unicode/selfmt.h
 include/unicode/simpletz.h
@@ -175,11 +176,13 @@ include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
 include/unicode/udisplaycontext.h
 include/unicode/uenum.h
+include/unicode/ufieldpositer.h
 include/unicode/uformattable.h
 include/unicode/ugender.h
 include/unicode/uidna.h
 include/unicode/uiter.h
 include/unicode/uldnames.h
+include/unicode/ulistformatter.h
 include/unicode/uloc.h
 include/unicode/ulocdata.h
 include/unicode/umachine.h
