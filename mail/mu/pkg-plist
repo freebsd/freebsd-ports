@@ -56,6 +56,8 @@ man/man5/mu-bookmarks.5.gz
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e.elc
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/org-mu4e.el
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/org-mu4e.elc
+%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/org-old-mu4e.el
+%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/org-old-mu4e.elc
 %%GUILE%%share/guile/site/2.0/mu.scm
 %%GUILE%%share/guile/site/2.0/mu/plot.scm
 %%GUILE%%share/guile/site/2.0/mu/script.scm
