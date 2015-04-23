@@ -1,0 +1,15 @@
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+Anope now installs to %%LOCALBASE%%/anope
+
+If you are upgrading from <2.0.0, you will need
+to migrate your configs to the new format. There
+is also a guide to migrate your databases to the
+new format. Please read the release notes for 2.0.0.
+
+https://www.anope.org/news.php?id=79
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
