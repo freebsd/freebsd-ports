@@ -1,0 +1,19 @@
+NSCA-ng provides a client-server pair which makes the Nagios command file
+accessible to remote systems. This allows for submitting passive check
+results, downtimes, and many other commands to Nagios or compatible
+monitoring solutions. The submitted data is queued by the NSCA-ng
+server if Nagios goes down. Multiple check results or commands can be
+submitted in one go, and multiline plugin output is fully supported.
+NSCA-ng uses TLS encryption and shared-secret authentication with
+per-client passwords, as well as fine-grained authorization control.
+
+This package contains the NSCA-ng server, which is written in C and
+uses an event-driven architecture. Disk I/O is avoided unless the data
+cannot be submitted in one go due to its size (on Linux, the threshold
+is 4kB). In this case, the data is handed over to Nagios via
+asynchronously written files.
+
+NSCA clients cannot talk to NSCA-ng servers (nor vice versa), but NSCA
+and NSCA-ng servers can happily run side by side.
+
+WWW: http://www.nsca-ng.org/
