@@ -308,6 +308,7 @@ spark:*:987:
 emby:*:989:
 oozie:*:990:
 sguil:*:991:
+hive:*:992:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:
