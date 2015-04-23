@@ -16,7 +16,7 @@ CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
-USES=		pathfix shebangfix libtool
+USES=		cpe pathfix shebangfix libtool
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace sbin/update-leap
