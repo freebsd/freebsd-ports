@@ -30,11 +30,9 @@ CONFIGURE_ENV=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501508
-BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.15:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-RUN_DEPENDS+=	p5-ExtUtils-ParseXS>=3.15:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		does not build
 .endif
-
 
 post-configure:
 	@${FIND} ${WRKSRC} -name "Makefile" -type f | ${XARGS} \
