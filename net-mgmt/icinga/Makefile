@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		gmake
+USES=		cpe gmake
 USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	icinga
 
