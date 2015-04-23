@@ -173,6 +173,8 @@
     SUBDIR += nrpe-ssl
     SUBDIR += nsca
     SUBDIR += nsca-client
+    SUBDIR += nsca-ng
+    SUBDIR += nsca-ng-client
     SUBDIR += nsca27
     SUBDIR += nsca27-client
     SUBDIR += nstreams
