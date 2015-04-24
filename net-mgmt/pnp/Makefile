@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pnp
-PORTVERSION=	0.6.21
-PORTREVISION=	1
+PORTVERSION=	0.6.25
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER?=	rea@FreeBSD.org
-COMMENT?=	Nagios performance data collector and grapher
+MAINTAINER?=	lme@FreeBSD.org
+COMMENT?=	Nagios / Icinga performance data collector and grapher
 
 LICENSE=	GPLv2
 
@@ -27,10 +26,11 @@ PDF_DESC=	Use built-in fpdf library to produce PDF views
 
 .include <bsd.port.options.mk>
 
-USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
-
+USE_PHP=	gd iconv json pcre session simplexml sockets xml zlib
 WANT_PHP_WEB=	yes
+
 USE_RC_SUBR=	npcd
+
 DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'
 
 NAGIOSDIR?=	/var/spool/nagios
@@ -42,11 +42,8 @@ PNP_RRDS=	${PNP_STATE}/rrd
 PNP_SPOOL=	${PNP_STATE}/perfspool
 PNP_URL?=	${NAGIOSHTMURL}/pnp
 FPDF_DIR?=	share/fpdf
-SPOOL_DIRS=	${PNP_STATE}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_RRDS}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_SPOOL}:${NAGIOSUSER}:${NAGIOSGROUP}:0750
 
-.if ! ${PORT_OPTIONS:MPDF}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-disable-pdf
-.endif
+PDF_EXTRA_PATCHES_OFF+=	${FILESDIR}/extra-patch-disable-pdf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
@@ -65,15 +62,19 @@ CONFIGURE_ARGS+=	\
 MAKE_ARGS=	INSTALL_OPTS=
 INSTALL_TARGET=	install install-config
 
-PLIST_SUB+=	NAGIOSDIR=${NAGIOSDIR}
-SUB_FILES=	pkg-install \
-		pkg-deinstall \
-		pkg-message
-SUB_LIST=	SPOOL_DIRS=${SPOOL_DIRS} \
-		PNP_RRDS=${PNP_RRDS} \
+PLIST_SUB+=	NAGIOSDIR=${NAGIOSDIR} \
+		NAGIOSUSER=${NAGIOSUSER} \
+		NAGIOSGROUP=${NAGIOSGROUP} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PNP_RRDS=${PNP_RRDS} \
 		PNP_URL=${PNP_URL} \
 		NAGIOSUSER=${NAGIOSUSER} \
 		NAGIOSGROUP=${NAGIOSGROUP}
+
+SAMPLE_CONFIGS=	lighttpd.pnp4nagios.conf nginx.pnp4nagios.conf httpd.conf
 
 .if ${PORT_OPTIONS:MPDF}
 PNP_USE_FPDF=	1
@@ -88,9 +89,18 @@ post-patch:
   -e's|/usr/local/check_mk/|/usr/local/share/check_mk/|g' \
   -e's|/usr/local/nagios/var/rw/live|/${NAGIOSDIR}/rw/live|' \
   "${WRKSRC}/sample-config/pnp/config.php.in"
+.for f in ${SAMPLE_CONFIGS}
+	@${REINPLACE_CMD} -e 's|@BASE_URL@|${PNP_URL}|g' -e 's|@datarootdir@|${WWWDIR}|g' \
+  -e 's|/usr/local/nagios/etc|${PREFIX}/etc/${NAGIOSUSER}|' -e 's|Nagios|${NAGIOSUSER}|' \
+  "${WRKSRC}/sample-config/${f}.in"
+.endfor
 	@${LN} -fs ../en_US/dwnld.html ${WRKSRC}/share/pnp/documents/de_DE/dwnld.html
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for f in ${SAMPLE_CONFIGS}
+	${INSTALL_DATA} ${WRKSRC}/sample-config/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/man/npcd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
