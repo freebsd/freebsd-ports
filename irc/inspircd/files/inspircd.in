@@ -35,7 +35,7 @@ load_rc_config ${name}
 : ${inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"}
 : ${inspircd_user="%%USERS%%"}
 : ${inspircd_group="%%GROUPS%%"}
-: ${inspircd_data="/var/db/inspircd"}
+: ${inspircd_data=/var/db/inspircd}
 : ${inspircd_logfile="%%INSPIRCD_LOG%%"}
 : ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
 
@@ -45,6 +45,7 @@ procname=%%PREFIX%%/bin/inspircd
 pidfile=${inspircd_pidfile}
 required_files=${inspircd_config}
 start_precmd=inspircd_prestart
+extra_commands=reload
 
 inspircd_prestart()
 {
