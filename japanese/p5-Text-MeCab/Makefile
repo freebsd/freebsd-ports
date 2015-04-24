@@ -25,6 +25,9 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
+DEPRECATED=	Does not work with 5.18 or above
+EXPIRATION_DATE=2015-07-31
+
 # dictionary encoding (euc-jp, shift_jis, utf-8)
 ENCODING?=	euc-jp
 
