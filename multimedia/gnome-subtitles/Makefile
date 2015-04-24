@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
-USES=		gmake mono pkgconfig libtool desktop-file-utils
+USES=		cpe gmake mono pkgconfig libtool desktop-file-utils
+CPE_VENDOR=	pedro_castro
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
