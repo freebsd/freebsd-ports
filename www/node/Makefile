@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -17,7 +16,7 @@ USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-* iojs-*
+CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]* node010-[0-9]* iojs-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
@@ -53,7 +52,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
-	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/node.1
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
 	@${ECHO_MSG}
