@@ -57,6 +57,69 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="505904d3-ea95-11e4-beaf-bcaec565249c">
+    <topic>wordpress -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/04/wordpress-4-1-2/">
+	  <p>WordPress 4.1.2 is now available. This is a critical security
+	    release for all previous versions and we strongly encourage you
+	    to update your sites immediately.</p>
+	  <p>WordPress versions 4.1.1 and earlier are affected by a critical
+	    cross-site scripting vulnerability, which could enable anonymous
+	    users to compromise a site. This was reported by Cedric Van
+	    Bockhaven and fixed by Gary Pendergast, Mike Adams, and Andrew
+	    Nacin of the WordPress security team.</p>
+	  <p>We also fixed three other security issues:</p>
+	  <ul>
+	    <li>In WordPress 4.1 and higher, files with invalid or unsafe
+	      names could be uploaded. Discovered by Michael Kapfer and
+	      Sebastian Kraemer of HSASec.</li>
+	    <li>In WordPress 3.9 and higher, a very limited cross-site
+	      scripting vulnerability could be used as part of a social
+	      engineering attack. Discovered by Jakub Zoczek.</li>
+	    <li>Some plugins were vulnerable to an SQL injection
+	      vulnerability. Discovered by Ben Bidner of the WordPress
+	      security team.</li>
+	  </ul>
+	  <p>We also made four hardening changes, discovered by J.D. Grimes,
+	    Divyesh Prajapati, Allan Collins, Marc-Alexandre Montpas and
+	    Jeff Bowen.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/04/wordpress-4-1-2/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-21</discovery>
+      <entry>2015-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="82595123-e8b8-11e4-a008-047d7b492d07">
     <topic>libtasn1 -- stack-based buffer overflow in asn1_der_decoding</topic>
     <affects>
