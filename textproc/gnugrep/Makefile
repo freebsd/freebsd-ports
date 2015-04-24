@@ -3,6 +3,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	2.21
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -11,24 +12,34 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU grep
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	bsd-grep-[0-9]*
 
-USES=		cpe charsetfix tar:xz
+USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		grep
 CPE_VENDOR=	gnu
 
-OPTIONS_DEFINE=	PCRE NLS
-OPTIONS_DEFAULT=PCRE NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		ICONV NLS PCRE
+OPTIONS_DEFAULT=	ICONV NLS PCRE
+OPTIONS_SUB=		yes
+
+ICONV_CONFIGURE_USES=	iconv
+ICONV_CONFIGURE_ON=	--with-libiconv-prefix=${LOCALBASE}
+ICONV_CONFIGURE_OFF=	--without-libiconv-prefix
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--without-libintl-prefix
+
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_CONFIGURE_ENABLE=	perl-regexp
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
+PCRE_CPPFLAGS=		-I${LOCALBASE}/include
+PCRE_LDFLAGS=		-L${LOCALBASE}/lib
+PCRE_CONFIGURE_OFF=	--disable-perl-regexp
 
 .include <bsd.port.options.mk>
 
