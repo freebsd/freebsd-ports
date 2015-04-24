@@ -105,11 +105,13 @@ sbin/icinga2
 %%DATADIR%%/include/nscp
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/plugins-contrib
+%%DATADIR%%/include/plugins-contrib.d/databases.conf
 %%DATADIR%%/include/plugins-contrib.d/ipmi.conf
 %%DATADIR%%/include/plugins-contrib.d/network-components.conf
 %%DATADIR%%/include/plugins-contrib.d/operating-system.conf
 %%DATADIR%%/include/plugins-contrib.d/virtualization.conf
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
+%%DATADIR%%/include/plugins-contrib.d/web.conf
 %%DATADIR%%/include/timeperiod.conf
 @dir %%ETCDIR%%/pki
 @dir /var/cache/icinga2

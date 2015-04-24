@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	icinga2
-DISTVERSION=	2.3.3
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
@@ -15,6 +14,9 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libyajl.so:${PORTSDIR}/devel/yajl \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	icinga
 
 USES=		alias bison cmake
 USE_LDCONFIG=	yes
