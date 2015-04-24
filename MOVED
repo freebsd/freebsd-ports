@@ -7567,3 +7567,4 @@ java/eclipse-emf||2015-04-18|Has expired: evaluation recommendation is to remove
 java/eclipse-pmd||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
 textproc/nltk|textproc/py-nltk|2015-04-19|Renamed for consistency
 devel/rubygem-inline|devel/rubygem-rubyinline|2015-04-21|Rename to match our rubygems naming
+devel/p5-Devel-Profiler|devel/p5-Devel-NYTProf|2015-04-24|Devel::DProf was removed form Perl, use Devel::NYTProf
