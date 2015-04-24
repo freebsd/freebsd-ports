@@ -56,6 +56,11 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+#	undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
+BROKEN=	Does not link
+.endif
+
 .if {PORT_OPTIONS:MDOCS}
 LICENSE+=	GFDL
 LICENSE_COMB=	multi
