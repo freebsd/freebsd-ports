@@ -13,7 +13,7 @@ COMMENT?=	Advanced, highly configurable system monitor for X11
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		gmake iconv pkgconfig tar:bzip2
+USES=		cpe gmake iconv pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
