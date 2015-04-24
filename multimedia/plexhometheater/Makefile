@@ -131,6 +131,15 @@ post-patch:
 		${WRKSRC}/plex/CMakeModules/FindIconv.cmake
 	@${REINPLACE_CMD} 's/COMMAND\ make/COMMAND\ gmake/g' \
 		${WRKSRC}/lib/ffmpeg/CMakeLists.txt
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000024
+	@${REINPLACE_CMD} 's/__builtin_bswap/__bswap/g' \
+		${WRKSRC}/plex/Third-Party/hash-library/crc32.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/keccak.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/md5.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha1.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha256.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha3.cpp
+.endif
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/*.so
