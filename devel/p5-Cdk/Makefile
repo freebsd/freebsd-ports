@@ -23,6 +23,9 @@ INSTALL_TARGET=	pure_install
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+DEPRECATED=	Does not work with 5.18 or above
+EXPIRATION_DATE=2015-07-31
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_VER} >= 5.18

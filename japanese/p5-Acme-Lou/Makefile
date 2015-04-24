@@ -18,4 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+DEPRECATED=	Needs ja-p5-Text-MeCab that does not work with 5.18 or above
+EXPIRATION_DATE=2015-07-31
+
 .include <bsd.port.mk>

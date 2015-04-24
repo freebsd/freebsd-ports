@@ -19,6 +19,9 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CCFLAGS="${CCFLAGS}"
 
+DEPRECATED=	Does not work with 5.18 or above
+EXPIRATION_DATE=2015-07-31
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_VER} >= 5.18

@@ -14,6 +14,9 @@ COMMENT=	Perl extension for GOST Encryption Algorithm
 USES=		perl5
 USE_PERL5=	configure
 
+DEPRECATED=	Does not work with 5.18 or above
+EXPIRATION_DATE=2015-07-31
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_VER} >= 5.18
