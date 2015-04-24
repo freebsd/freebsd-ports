@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keychain
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		GENTOO/distfiles
@@ -17,10 +16,12 @@ USES=		gmake perl5 tar:bzip2
 USE_PERL5=	build
 OPTIONS_DEFINE=	DOCS
 
+NO_BUILD=	yes
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/keychain.1.gz
 
-PORTDOCS=	ChangeLog README.rst
+PORTDOCS=	ChangeLog README.md
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
 RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
