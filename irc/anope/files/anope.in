@@ -19,10 +19,10 @@ rcvar=anope_enable
 
 load_rc_config $name
 
-command=%%PREFIX%%/anope/bin/services
+: ${anope_enable:=NO}
+: ${anope_user:=nobody}
 
-anope_enable=${anope_enable:-"NO"}
-anope_user:=nobody
+command=%%PREFIX%%/anope/bin/services
 pidfile=%%PREFIX%%/anope/data/services.pid
 
 run_rc_command "$1"
