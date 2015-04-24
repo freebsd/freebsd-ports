@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spring
-PORTVERSION=	94.1
-PORTREVISION=	7
+PORTVERSION=	98.0
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/
@@ -18,33 +17,35 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libIL.so:${PORTSDIR}/graphics/devil \
 		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
-BROKEN=		Fails to build
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-05-30
-# XXX: it should be possible to build it on i386, investigate
-# (currently link fails on undefined reference to __sync_fetch_and_add_8)
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
-
-USE_SDL=	sdl
+USE_SDL=	sdl2
 USE_GL=		gl glu glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.h *.hpp *.cpp
 
-USES=		cmake compiler:c++11-lib dos2unix openal:al
+USES=		execinfo cmake compiler:c++11-lib dos2unix openal:al tar:lzma
+USES+=		desktop-file-utils shared-mime-info
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DAI_TYPES:STRING="NATIVE" \
 		-DDOCDIR:STRING="share/doc/${PORTNAME}" \
 		-DCREATE_MAN_PAGES:BOOL=false \
-		-DUNITSYNC_PYTHON_WRAPPER:BOOL=false \
-		-DCUSTOM_CFLAGS:BOOL=true
+		-DUSE_TCMALLOC:BOOL=false \
+		-DUSE_LIBSQUISH:BOOL=false \
+		-DUNITSYNC_PYTHON_WRAPPER:BOOL=false
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+
+.if exists(/usr/lib/libexecinfo.so)
+LEI_PREFIX=	/usr
+.else
+LEI_PREFIX=	${LOCALBASE}
+.endif
+
+# Do not exctract bundled copies of header files for 3rd-party packages:
+EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude ${WRKSRC:T}/include
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -65,8 +66,13 @@ MANPAGES_BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip \
 			bash:${PORTSDIR}/shells/bash
 MANPAGES_DOCS_ON=	-DUSERDOCS_PLAIN:BOOL=true
 MANPAGES_DOCS_OFF=	-DUSERDOCS_PLAIN:BOOL=false
+CXXFLAGS+=	-Wno-deprecated		# Too much noise
 
 PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl
+
+# The check-target fails right now: https://springrts.com/mantis/view.php?id=4736
+check test xregression-test: build
+	${MAKE} -C ${WRKSRC} check
 
 .include <bsd.port.options.mk>
 
@@ -90,7 +96,7 @@ post-patch:
 		${WRKSRC}/rts/System/Sync/FPUCheck.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/rts/build/cmake/*.cmake
-	@${REINPLACE_CMD} -e 's|execinfo|${LOCALBASE}/lib/libexecinfo.so|' \
+	@${REINPLACE_CMD} -e 's|execinfo|${LEI_PREFIX}/lib/libexecinfo.so|' \
 		${WRKSRC}/rts/CMakeLists.txt \
 		${WRKSRC}/rts/builds/dedicated/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
