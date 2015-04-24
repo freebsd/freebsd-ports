@@ -3,6 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	17.5.2
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -47,8 +48,7 @@ OPTIONS_EXCLUDE_DragonFly=	SCTP
 
 ERL_RELEASE=	17.5
 
-USES=		gmake perl5
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf gmake perl5
 USE_PERL5=	build
 USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
