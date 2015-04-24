@@ -1,0 +1,8 @@
+bin/rules-updater.pl
+lib/mod_security2.so
+%%APACHEMODDIR%%/mod_security2.so
+@comment @exec %%APXS%% -e -n unique_id -a %%APACHEMODDIR%%/mod_unique_id.so
+@sample %%ETCDIR%%/modsecurity.conf.sample
+%%ETCDIR%%/unicode.mapping
+%%MLOGC%%bin/mlogc
+%%MLOGC%%bin/mlogc-batch-load.pl
