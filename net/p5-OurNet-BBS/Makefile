@@ -43,7 +43,4 @@ PORTSCOUT=	skipv:1.67
 USES=		perl5
 USE_PERL5=	configure
 
-DEPRECATED=	Needs p5-Crypt-Tea that does not work with 5.18 or above
-EXPIRATION_DATE=2015-07-31
-
 .include <bsd.port.mk>
