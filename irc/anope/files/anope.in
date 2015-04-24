@@ -24,5 +24,6 @@ load_rc_config $name
 
 command=%%PREFIX%%/anope/bin/services
 pidfile=%%PREFIX%%/anope/data/services.pid
+extra_commands=reload
 
 run_rc_command "$1"
