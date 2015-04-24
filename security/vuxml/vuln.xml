@@ -77,7 +77,11 @@ Notes:
 	<range><lt>4.1.2</lt></range>
       </package>
       <package>
-	<name>zh-wordpress</name>
+	<name>zh-wordpress-zh_CN</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
 	<range><lt>4.1.2</lt></range>
       </package>
     </affects>
@@ -117,6 +121,7 @@ Notes:
     <dates>
       <discovery>2015-04-21</discovery>
       <entry>2015-04-24</entry>
+      <modified>2015-04-24</modified>
     </dates>
   </vuln>
 
