@@ -12,4 +12,13 @@ COMMENT=	Nice Highlighting Hack for grep
 
 WRKSRC=		${WRKDIR}/hgrep
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000 && ${ARCH} == amd64
+BROKEN=		does not build on 10.x+ amd64
+.endif
+
+DEPRECATED=	Not needed any more: base grep has coloring support
+EXPIRATION_DATE=	2015-05-31
+
+.include <bsd.port.post.mk>
