@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
+CPE_VENDOR=	entrouvert
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --with-zlib
 USE_GNOME=	glib20 libxml2
