@@ -96,3 +96,6 @@ libdata/pkgconfig/libopensync.pc
 %%DATADIR%%1/schemas/plugin_config.xsd
 %%DATADIR%%1/schemas/syncgroup.xsd
 %%DATADIR%%1/schemas/syncmember.xsd
+@dir include/libopensync1/opensync/archive
+@dir include/libopensync1/opensync/db
+@dir include/libopensync1/opensync/module
