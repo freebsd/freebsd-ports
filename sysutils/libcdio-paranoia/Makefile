@@ -18,6 +18,7 @@ LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 USES=	pathfix tar:bzip2 gmake pkgconfig libtool perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
