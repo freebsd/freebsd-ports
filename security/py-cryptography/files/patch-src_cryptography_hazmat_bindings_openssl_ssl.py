@@ -1,30 +1,17 @@
---- src/cryptography/hazmat/bindings/openssl/ssl.py.orig	2015-01-16 13:26:59 UTC
+From 622409947f6e64fcabbf2b4da2ed086abc06ed85 Mon Sep 17 00:00:00 2001
+From: Bernard Spil <Sp1l@users.noreply.github.com>
+Date: Wed, 15 Apr 2015 11:09:32 +0200
+Subject: [PATCH] LibreSSL added ALPN support in 2.1.3
+Link: https://github.com/pyca/cryptography/pull/1849
+
+--- src/cryptography/hazmat/bindings/openssl/ssl.py.orig	2015-04-24 12:57:06 UTC
 +++ src/cryptography/hazmat/bindings/openssl/ssl.py
-@@ -189,10 +189,6 @@ int SSL_shutdown(SSL *);
- const char *SSL_get_cipher_list(const SSL *, int);
- Cryptography_STACK_OF_SSL_CIPHER *SSL_get_ciphers(const SSL *);
- 
--const COMP_METHOD *SSL_get_current_compression(SSL *);
--const COMP_METHOD *SSL_get_current_expansion(SSL *);
--const char *SSL_COMP_get_name(const COMP_METHOD *);
--
- /*  context */
- void SSL_CTX_free(SSL_CTX *);
- long SSL_CTX_set_timeout(SSL_CTX *, long);
-@@ -415,6 +411,16 @@ static const long Cryptography_HAS_RELEA
- const long SSL_MODE_RELEASE_BUFFERS = 0;
+@@ -526,7 +526,7 @@ static const long Cryptography_HAS_NEXTP
  #endif
  
-+#ifndef OPENSSL_NO_COMP
-+const COMP_METHOD *SSL_get_current_compression(SSL *s);
-+const COMP_METHOD *SSL_get_current_expansion(SSL *s);
-+const char *SSL_COMP_get_name(const COMP_METHOD *comp);
-+#else
-+const void *SSL_get_current_compression(SSL *s);
-+const void *SSL_get_current_expansion(SSL *s);
-+const char *SSL_COMP_get_name(const void *comp);
-+#endif
-+
- #ifdef SSL_OP_NO_COMPRESSION
- static const long Cryptography_HAS_OP_NO_COMPRESSION = 1;
- #else
+ /* ALPN was added in OpenSSL 1.0.2. */
+-#if OPENSSL_VERSION_NUMBER < 0x10002001L
++#if OPENSSL_VERSION_NUMBER < 0x10002001L  && !defined(LIBRESSL_VERSION_NUMBER)
+ int (*SSL_CTX_set_alpn_protos)(SSL_CTX *,
+                                const unsigned char *,
+                                unsigned) = NULL;
