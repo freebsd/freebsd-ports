@@ -1,7 +1,10 @@
 lib/emby-server/BDInfo.dll
 lib/emby-server/DvdLib.dll
+lib/emby-server/Emby.Drawing.dll
+lib/emby-server/Emby.Drawing.dll.mdb
 lib/emby-server/ImageMagickSharp.dll
 lib/emby-server/ImageMagickSharp.dll.config
+lib/emby-server/Interfaces.IO.dll
 lib/emby-server/MediaBrowser.Api.dll
 lib/emby-server/MediaBrowser.Common.Implementations.dll
 lib/emby-server/MediaBrowser.Common.dll
@@ -81,6 +84,7 @@ lib/emby-server/dashboard-ui/css/images/chromecast/ic_media_route_on_holo_light.
 lib/emby-server/dashboard-ui/css/images/chromecast/ic_notification_media_route.png
 lib/emby-server/dashboard-ui/css/images/clients/amazon.png
 lib/emby-server/dashboard-ui/css/images/clients/android.png
+lib/emby-server/dashboard-ui/css/images/clients/androidtv-tile.png
 lib/emby-server/dashboard-ui/css/images/clients/chrome.png
 lib/emby-server/dashboard-ui/css/images/clients/chrome_companion.png
 lib/emby-server/dashboard-ui/css/images/clients/dlna.png
@@ -272,7 +276,6 @@ lib/emby-server/dashboard-ui/metadatasubtitles.html
 lib/emby-server/dashboard-ui/moviegenres.html
 lib/emby-server/dashboard-ui/moviepeople.html
 lib/emby-server/dashboard-ui/movies.html
-lib/emby-server/dashboard-ui/movieslatest.html
 lib/emby-server/dashboard-ui/moviesrecommended.html
 lib/emby-server/dashboard-ui/moviestudios.html
 lib/emby-server/dashboard-ui/movietrailers.html
@@ -292,6 +295,7 @@ lib/emby-server/dashboard-ui/notificationlist.html
 lib/emby-server/dashboard-ui/notificationsetting.html
 lib/emby-server/dashboard-ui/notificationsettings.html
 lib/emby-server/dashboard-ui/nowplaying.html
+lib/emby-server/dashboard-ui/photos.html
 lib/emby-server/dashboard-ui/playbackconfiguration.html
 lib/emby-server/dashboard-ui/playlistedit.html
 lib/emby-server/dashboard-ui/playlists.html
@@ -385,7 +389,6 @@ lib/emby-server/dashboard-ui/scripts/moviecollections.js
 lib/emby-server/dashboard-ui/scripts/moviegenres.js
 lib/emby-server/dashboard-ui/scripts/moviepeople.js
 lib/emby-server/dashboard-ui/scripts/movies.js
-lib/emby-server/dashboard-ui/scripts/movieslatest.js
 lib/emby-server/dashboard-ui/scripts/moviesrecommended.js
 lib/emby-server/dashboard-ui/scripts/moviestudios.js
 lib/emby-server/dashboard-ui/scripts/movietrailers.js
@@ -405,6 +408,7 @@ lib/emby-server/dashboard-ui/scripts/notificationsetting.js
 lib/emby-server/dashboard-ui/scripts/notificationsettings.js
 lib/emby-server/dashboard-ui/scripts/nowplayingbar.js
 lib/emby-server/dashboard-ui/scripts/nowplayingpage.js
+lib/emby-server/dashboard-ui/scripts/photos.js
 lib/emby-server/dashboard-ui/scripts/playbackconfiguration.js
 lib/emby-server/dashboard-ui/scripts/playlistedit.js
 lib/emby-server/dashboard-ui/scripts/playlistmanager.js
@@ -421,6 +425,7 @@ lib/emby-server/dashboard-ui/scripts/selectserver.js
 lib/emby-server/dashboard-ui/scripts/serversecurity.js
 lib/emby-server/dashboard-ui/scripts/site.js
 lib/emby-server/dashboard-ui/scripts/songs.js
+lib/emby-server/dashboard-ui/scripts/streamingsettings.js
 lib/emby-server/dashboard-ui/scripts/supporterkeypage.js
 lib/emby-server/dashboard-ui/scripts/supporterpage.js
 lib/emby-server/dashboard-ui/scripts/sync.js
@@ -451,6 +456,7 @@ lib/emby-server/dashboard-ui/scripts/wizarduserpage.js
 lib/emby-server/dashboard-ui/selectserver.html
 lib/emby-server/dashboard-ui/serversecurity.html
 lib/emby-server/dashboard-ui/songs.html
+lib/emby-server/dashboard-ui/streamingsettings.html
 lib/emby-server/dashboard-ui/support.html
 lib/emby-server/dashboard-ui/supporter.html
 lib/emby-server/dashboard-ui/supporterkey.html
