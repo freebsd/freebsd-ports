@@ -24,9 +24,11 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PERL})
 PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}
 .if ${PERL_THREADED} == ""
 IGNORE=		must be built with a threaded Perl, reinstall Perl with the THREADS option on
+.endif
 .endif
 
 .include <bsd.port.post.mk>
