@@ -14,7 +14,8 @@ COMMENT?=	File archiver with high compression ratio
 LICENSE?=	LGPL21
 
 ALL_TARGET?=	all3
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	7-zip
 MAKEFILE=	makefile
 MAKE_ARGS=	OPTFLAGS="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

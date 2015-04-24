@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	cryptography
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Expose cryptographic recipes and primitives to Python developers
+COMMENT=	Cryptographic recipes and primitives for Python developers
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0.8:${PORTSDIR}/devel/py-cffi \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.1:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}asn1>0:${PORTSDIR}/devel/py-asn1
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}iso8601>0:${PORTSDIR}/devel/py-iso8601

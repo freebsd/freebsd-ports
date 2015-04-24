@@ -5,7 +5,6 @@ PORTNAME=	backuppc
 PORTVERSION=	3.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	BackupPC-${PORTVERSION}
 
 MAINTAINER=	moiseev@mezonplus.ru
@@ -20,7 +19,8 @@ CONFLICTS=	backuppc-devel-[0-9]*
 
 USE_RC_SUBR=	backuppc
 
-USES=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	craig_barratt
 NO_BUILD=	yes
 
 USERS=		backuppc

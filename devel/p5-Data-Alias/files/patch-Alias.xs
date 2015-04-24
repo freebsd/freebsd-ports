@@ -140,17 +140,21 @@
  	tmp = kLISTOP->op_first;
  	if (inside)
  		op_null(tmp);
-@@ -2001,6 +2035,9 @@ STATIC OP *da_ck_entersub(pTHX_ OP *o) {
+@@ -2001,6 +2035,13 @@ STATIC OP *da_ck_entersub(pTHX_ OP *o) {
  	while (kid->op_sibling != last)
  		kid = kid->op_sibling;
  	kid->op_sibling = Nullop;
 +#ifdef op_sibling_splice
++#if (PERL_COMBI_VERSION >= 5021011)
++	kid->op_moresib = 0;
++#else
 +	kid->op_lastsib = 1;
++#endif
 +#endif
  	cLISTOPx(cUNOPo->op_first)->op_last = kid;
  	if (kid->op_type == OP_NULL && inside)
  		kid->op_flags &= ~OPf_SPECIAL;
-@@ -2008,6 +2045,14 @@ STATIC OP *da_ck_entersub(pTHX_ OP *o) {
+@@ -2008,6 +2049,14 @@ STATIC OP *da_ck_entersub(pTHX_ OP *o) {
  	return o;
  }
  
@@ -165,7 +169,7 @@
  
  MODULE = Data::Alias  PACKAGE = Data::Alias
  
-@@ -2025,6 +2070,10 @@ BOOT:
+@@ -2025,6 +2074,10 @@ BOOT:
  		PL_check[OP_RV2CV] = da_ck_rv2cv;
  		da_old_ck_entersub = PL_check[OP_ENTERSUB];
  		PL_check[OP_ENTERSUB] = da_ck_entersub;

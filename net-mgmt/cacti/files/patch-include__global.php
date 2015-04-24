@@ -1,5 +1,5 @@
---- ./include/global.php.orig	2013-08-06 19:31:19.000000000 -0700
-+++ ./include/global.php	2014-08-11 18:37:08.000000000 -0700
+--- include/global.php.bak	2015-03-12 03:07:05.768314249 -0700
++++ include/global.php	2015-03-12 03:08:04.171320391 -0700
 @@ -113,7 +113,7 @@
  	$config["library_path"] = preg_replace("/(.*[\/])include/", "\\1lib", dirname(__FILE__));
  }

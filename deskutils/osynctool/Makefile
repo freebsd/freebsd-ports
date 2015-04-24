@@ -4,7 +4,9 @@
 PORTNAME=	osynctool
 PORTVERSION=	0.39
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
+MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	danilo
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Command line client for the OpenSync framework
@@ -13,7 +15,6 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	msynctool-0.2*
 
-BROKEN=		Unfetchable
 USES=		cmake:outsource pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME} \

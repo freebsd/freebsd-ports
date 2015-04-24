@@ -1,0 +1,9 @@
+
+You have installed ModSecurity.
+To enable ModSecurity in Apache, add the following to your httpd.conf:
+
+  LoadModule security2_module %%APACHEMODDIR%%/mod_security2.so
+  Include etc/modsecurity/*.conf
+
+Most users will use the signatures from the OWASP Core Rule Set (CRS).
+For configuration instructions, see %%DOCSDIR%%/README.

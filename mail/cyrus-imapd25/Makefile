@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.5.1
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -12,7 +12,7 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LICENSE=	BSD4CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
@@ -231,7 +231,7 @@ post-install:
 	@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
+#	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
@@ -248,12 +248,12 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} share/doc/${PORTNAME}/${f} >>${TMPPLIST}
 .endfor
-.for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} \
-		${STAGEDIR}${DOCSDIR}/text
-	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
-.endfor
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
+#.for f in ${DOCS}
+#	@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} \
+#		${STAGEDIR}${DOCSDIR}/text
+#	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
+#.endfor
+#	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif

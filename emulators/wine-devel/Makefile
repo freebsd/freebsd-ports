@@ -141,8 +141,11 @@ COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
 
 EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
-		git:${PORTSDIR}/devel/git
+		git:${PORTSDIR}/devel/git \
+		${AUTOCONF_DEPENDS}
 
+# Fix build on FreeBSD 8.4 and 9.3 (false positive: powl)
+CONFIGURE_ENV+=	ac_cv_have_powl=no
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
 

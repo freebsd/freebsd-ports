@@ -3,6 +3,7 @@
 
 PORTNAME=	ibus-qt
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		http://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/

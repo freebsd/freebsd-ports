@@ -19,9 +19,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_KDE4=	kdeprefix automoc4 kdelibs
 USE_QT4=	corelib gui phonon svg network dbus xml sql \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext gmake
+USES=		cmake cpe gettext gmake
 USE_LDCONFIG=		yes
 USE_XORG=	xscrnsaver
+CPE_VENDOR=	kaffeine
+CPE_PRODUCT=	kaffeine_player
 
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt

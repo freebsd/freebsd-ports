@@ -13,6 +13,8 @@ COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
 
 NO_CDROM=	Non-commercial distribution and use only
 
+USES=		cpe
+CPE_VENDOR=	jetico
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/g:S/-/./}
 GNU_CONFIGURE=  yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
