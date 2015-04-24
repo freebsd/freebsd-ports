@@ -18,6 +18,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm
 
+DEPRECATED=	Unmaintained upstream, preferences dialog broken, use graphics/geeqie fork
+EXPIRATION_DATE=2015-06-08
+
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
