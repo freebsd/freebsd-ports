@@ -100,12 +100,6 @@ PLIST_SUB+=	SIMAKA=""
 PLIST_SUB+=	SIMAKA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MEAPDYNAMIC} || ${PORT_OPTIONS:MEAPAKA3GPP2}
-PLIST_SUB+=	DYNAKA=""
-.else
-PLIST_SUB+=	DYNAKA="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--enable-attr-sql --enable-sql
 PLIST_SUB+=	SQL=""
