@@ -1,22 +1,11 @@
---- Makefile.PL.orig	2014-11-06 23:22:21.312462152 +0900
-+++ Makefile.PL	2014-11-06 23:24:03.092462770 +0900
-@@ -280,6 +280,9 @@
+--- Makefile.PL.orig	2015-04-24 21:40:21 UTC
++++ Makefile.PL
+@@ -2,7 +2,7 @@ use strict;
+ use warnings;
+ use FindBin;
+ use inc::GroongaAPIUtil;
+-use ExtUtils::MakeMaker::CPANfile;
++use ExtUtils::MakeMaker;
  
-     # removed or changed (1.x.x)
-     qw/query_rest query_scan query_snip/,
-+
-+    # workaround
-+    qw/selector_func proc_set_selector text_vprintf/,
-   ); # end of %todo
- 
-   my %inout = (
-@@ -437,6 +440,9 @@
-       print $out $_, "\t", $extra{$_}, "\n";
-     }
-     print $out <<'TYPEMAP';
-+grn_selector_func       T_OPAQUE_
-+unsigned int *  T_OPAQUE_
-+va_list T_OPAQUE_
- 
- INPUT
- T_GRN_CTX
+ my $env = inc::GroongaAPIUtil::check_env() or exit 0; # N/A
+ inc::GroongaAPIUtil::write_files($env);
