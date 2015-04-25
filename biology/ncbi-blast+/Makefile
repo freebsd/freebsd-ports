@@ -5,14 +5,13 @@ PORTNAME=	blast+
 PORTVERSION=	2.2.30
 PORTREVISION=	2
 CATEGORIES=	biology
-MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
+MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
+		http://acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	ncbi-
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
-
-BROKEN=		Unfetchable
 
 LICENSE=	Public_domain
 LICENSE_NAME=	Public Domain
