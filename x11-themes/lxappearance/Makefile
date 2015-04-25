@@ -13,19 +13,19 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--enable-dbus
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-install:
