@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USES=		tar:bzip2 shebangfix
-USE_PERL5=	build
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
