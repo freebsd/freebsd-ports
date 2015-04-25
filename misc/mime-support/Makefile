@@ -10,7 +10,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
 
-USES=		shebangfix
+USES=		cpe shebangfix
+
+CPE_VENDOR=	debian
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.2$//}
 
