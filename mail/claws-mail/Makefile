@@ -12,7 +12,7 @@ LIB_DEPENDS=	libetpan.so:${PORTSDIR}/mail/libetpan \
 RUN_DEPENDS=	mime-support>0:${PORTSDIR}/misc/mime-support
 
 USE_GNOME=	gtk20
-USES=		desktop-file-utils execinfo pathfix shebangfix
+USES=		cpe desktop-file-utils execinfo pathfix shebangfix
 SHEBANG_FILES=	tools/*.pl tools/tb2claws-mail
 INSTALLS_ICONS=	yes
 
