@@ -43,7 +43,7 @@ PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 USERS=		sympa
 GROUPS=		sympa
 # Shebang is corrected by configure script
-USES=		perl5
+USES=		cpe perl5
 GNU_CONFIGURE=	yes
 ICONSDIR?=	www/icons
 CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
