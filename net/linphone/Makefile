@@ -28,7 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig readline:port
+USES=		gettext-tools gmake libtool pathfix pkgconfig readline:port
 USE_GNOME=	gtk20 intltool libxml2
 USE_LDCONFIG=	yes
 
@@ -41,7 +41,7 @@ LDAP_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 LDAP_USE=		OPENLDAP=yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 
 NOTIFY_CONFIGURE_ENABLE=notify
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
