@@ -3,6 +3,7 @@
 
 PORTNAME=	keychain
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		GENTOO/distfiles
@@ -12,11 +13,16 @@ COMMENT=	User-friendly front-end to ssh-agent(1)
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5 tar:bzip2
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
+USES=		tar:bzip2 shebangfix
 USE_PERL5=	build
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
+
+bash_OLD_CMD=	/bin/sh
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/keychain.1.gz
