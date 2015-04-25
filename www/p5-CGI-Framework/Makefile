@@ -3,7 +3,7 @@
 
 PORTNAME=	CGI-Framework
 PORTVERSION=	0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Simple-to-use, lightweight web CGI framework
 
 BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
+		p5-CGI>=0:${PORTSDIR}/www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
