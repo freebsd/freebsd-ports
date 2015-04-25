@@ -3,23 +3,23 @@
 
 PORTNAME=	imc
 PORTVERSION=	4.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.peterverthez.net/projects/imc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Compiler
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
+		p5-CGI>=0:${PORTSDIR}/www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
