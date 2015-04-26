@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rlvm
-PORTVERSION=	0.14.0.20150223
-PORTREVISION=	1
+PORTVERSION=	0.14.0.20150425
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,8 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-font
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
-GH_TAGNAME=	${GH_COMMIT} # release-${PORTVERSION}
-GH_COMMIT=	589e3d2
+GH_TAGNAME=	373a3db # release-${PORTVERSION}
 
 USES=		compiler:c++11-lib pkgconfig scons
 USE_GL=		yes
