@@ -1,9 +1,2 @@
-%%PERL5_MAN3%%/WWW::Mechanize::Shell.3.gz
 %%SITE_PERL%%/WWW/Mechanize/Shell.pm
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banking.postbank.de.mech
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hotmail.signup.mech
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wwwshell.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PERL5_MAN3%%/WWW::Mechanize::Shell.3.gz
