@@ -1,11 +1,11 @@
---- toml.gemspec.orig	2015-01-21 20:38:16.000000000 +0000
-+++ toml.gemspec	2015-01-21 20:38:37.000000000 +0000
-@@ -30,7 +30,7 @@
-       s.add_dependency(%q<rake>, [">= 0"])
-     end
-   else
--    s.add_dependency(%q<parslet>, ["~> 1.5.0"])
-+    s.add_dependency(%q<parslet>, [">= 1.5.0"])
-     s.add_dependency(%q<rake>, [">= 0"])
-   end
- end
+--- toml.gemspec.orig	2015-04-26 12:28:35 UTC
++++ toml.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 2
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<parslet>, ["~> 1.5.0"])
++      s.add_runtime_dependency(%q<parslet>, [">= 1.5.0"])
+       s.add_development_dependency(%q<rake>, [">= 0"])
+     else
+       s.add_dependency(%q<parslet>, ["~> 1.5.0"])
