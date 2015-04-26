@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
-USES=		compiler:c++0x gmake python pkgconfig gettext
+USES=		compiler:c++11-lib gmake python pkgconfig gettext
 USE_GNOME=	glib20
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
