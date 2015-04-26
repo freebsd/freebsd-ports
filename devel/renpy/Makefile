@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION=	6.99.1
+PORTVERSION=	6.99.2
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	2
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
