@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.14
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
@@ -19,8 +19,7 @@ LICENSE=	BSD3CLAUSE
 DIST_SUBDIR=	openblas
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	51ce5ef
+GH_TAGNAME=	d0c51c4
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
@@ -55,6 +54,7 @@ BUILDFLAGS+=	TARGET=${TARGET_CPU_ARCH}
 .endif
 
 MAXTHREADS?=	8
+BUILDFLAGS_THREAD+=	NUM_THREADS=${MAXTHREADS} USE_THREAD=1
 
 .if ${ARCH:M*64} == ""
 BUILDFLAGS+=	BINARY32=1
@@ -76,7 +76,7 @@ BUILDFLAGS+=	INTERFACE64=1
 
 .if ${PORT_OPTIONS:MOPENMP}
 USES+=		compiler:openmp
-BUILDFLAGS+=	USE_OPENMP=1
+BUILDFLAGS_THREAD+=	USE_OPENMP=1
 .endif
 
 .if ${PORT_OPTIONS:MQUAD_PRECISION}
@@ -140,8 +140,8 @@ do-build:
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblas.a
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblas.so.${OPENBLAS_SVER}
 	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
-	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS}
+	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} ${BUILDFLAGS_THREAD} \
+	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
 .if !${PORT_OPTIONS:MDEBUG}
