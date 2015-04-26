@@ -34,7 +34,7 @@
  
  $(BUILDDIR)/libdns_sd.$(LDSUFFIX): $(CLIENTLIBOBJS)
 -	@$(LD) $(LINKOPTS) -o $@ $+
-+	@$(LD) $(LINKOPTS) -soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
++	@$(CC) $(LINKOPTS) -shared -Wl,-soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
  	@$(STRIP) $@
  
 -Clients: setup libdns_sd ../Clients/build/dns-sd
@@ -51,7 +51,7 @@
  
  $(BUILDDIR)/$(NSSLIBFILE): $(CLIENTLIBOBJS) $(OBJDIR)/nss_mdns.c.so.o
 -	@$(LD) $(LINKOPTS) -o $@ $+
-+	@$(LD) $(LINKOPTS) -soname=$(NSSLINKNAME) -o $@ $+
++	@$(CC) $(LINKOPTS) -shared -Wl,-soname=$(NSSLINKNAME) -o $@ $+
  	@$(STRIP) $@
  
  #############################################################################
