@@ -39,4 +39,5 @@ lib/elasticsearch/sigar/%%SIGAR_LIBNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
+@dir lib/elasticsearch/plugins
 @dir %%ETCDIR%%

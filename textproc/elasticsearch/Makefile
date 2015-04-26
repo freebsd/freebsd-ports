@@ -104,6 +104,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${STAGEDIR}${PREFIX}/lib/elasticsearch/
 .endfor
 
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar
 #	${INSTALL_DATA} ${WRKSRC}/lib/sigar/sigar-1.6.4.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar/
 	cd ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar && ${LN} -s ${JAVAJARDIR}/sigar.jar
