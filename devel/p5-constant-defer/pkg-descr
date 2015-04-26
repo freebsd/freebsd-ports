@@ -1,0 +1,15 @@
+constant::defer creates a subroutine which on the first call runs given code to
+calculate its value, and on any subsequent calls just returns that value, like a
+constant. The value code is discarded once run, allowing it to be garbage
+collected.
+
+Deferring a calculation is good if it might take a lot of work or produce a big
+result but is only needed sometimes or only well into a program run. If it's
+never needed then the value code never runs.
+
+A deferred constant is generally not inlined or folded (see "Constant Folding"
+in perlop) since it's not a single scalar value. In the current implementation a
+deferred constant becomes a plain constant after the first use, so may inline
+etc in code compiled after that (see "IMPLEMENTATION" below).
+
+WWW: http://search.cpan.org/dist/constant-defer/

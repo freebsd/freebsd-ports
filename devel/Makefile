@@ -3239,6 +3239,7 @@
     SUBDIR += p5-constant
     SUBDIR += p5-constant-boolean
     SUBDIR += p5-constant-def
+    SUBDIR += p5-constant-defer
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-cpan-listchanges
     SUBDIR += p5-enum
