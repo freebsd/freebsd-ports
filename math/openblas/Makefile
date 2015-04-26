@@ -5,10 +5,8 @@ PORTNAME=	openblas
 PORTVERSION=	0.2.14
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
-		NL:lapack_tmg
-MASTER_SITE_SUBDIR=	lapack/timing/:lapack_tmg
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:${PORTNAME} \
+MASTER_SITES=	GH NL/lapack/timing/:lapack_tmg
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -17,6 +15,7 @@ COMMENT=	Optimized BLAS library based on GotoBLAS2
 LICENSE=	BSD3CLAUSE
 
 DIST_SUBDIR=	openblas
+USE_GITHUB=	yes
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
 GH_TAGNAME=	d0c51c4
@@ -32,8 +31,6 @@ OPENBLAS_LIBS=	libopenblas libopenblasp
 OPENBLAS_SVER=	0
 OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} ${OPENBLAS_LIBS:S|$|.a|}
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
 OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX AVX2
 
