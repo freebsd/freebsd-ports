@@ -1,5 +1,5 @@
---- src/googletest.h.orig	2015-03-11 12:02:27.000000000 +0800
-+++ src/googletest.h	2015-03-22 00:56:38.711647313 +0800
+--- src/googletest.h.orig	2015-03-11 04:02:27 UTC
++++ src/googletest.h
 @@ -58,6 +58,7 @@
  
  #include "base/commandlineflags.h"
