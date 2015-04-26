@@ -30,6 +30,7 @@ lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/mypluglib.so
+lib/mysql/plugin/mysql_no_login.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
