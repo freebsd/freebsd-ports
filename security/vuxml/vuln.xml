@@ -57,6 +57,62 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cb9d2fcd-eb47-11e4-b03e-002590263bf5">
+    <topic>wpa_supplicant -- P2P SSID processing vulnerability</topic>
+    <affects>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-1/wpa_supplicant-p2p-ssid-overflow.txt">
+	  <p>A vulnerability was found in how wpa_supplicant uses SSID information
+	    parsed from management frames that create or update P2P peer entries
+	    (e.g., Probe Response frame or number of P2P Public Action frames). SSID
+	    field has valid length range of 0-32 octets. However, it is transmitted
+	    in an element that has a 8-bit length field and potential maximum
+	    payload length of 255 octets. wpa_supplicant was not sufficiently
+	    verifying the payload length on one of the code paths using the SSID
+	    received from a peer device.</p>
+	  <p>This can result in copying arbitrary data from an attacker to a fixed
+	    length buffer of 32 bytes (i.e., a possible overflow of up to 223
+	    bytes). The SSID buffer is within struct p2p_device that is allocated
+	    from heap. The overflow can override couple of variables in the struct,
+	    including a pointer that gets freed. In addition about 150 bytes (the
+	    exact length depending on architecture) can be written beyond the end of
+	    the heap allocation.</p>
+	  <p>This could result in corrupted state in heap, unexpected program
+	    behavior due to corrupted P2P peer device information, denial of service
+	    due to wpa_supplicant process crash, exposure of memory contents during
+	    GO Negotiation, and potentially arbitrary code execution.</p>
+	  <p>Vulnerable versions/configurations</p>
+	  <p>wpa_supplicant v1.0-v2.4 with CONFIG_P2P build option enabled
+	    (which is not compiled by default).</p>
+	  <p>Attacker (or a system controlled by the attacker) needs to be within
+	    radio range of the vulnerable system to send a suitably constructed
+	    management frame that triggers a P2P peer device information to be
+	    created or updated.</p>
+	  <p>The vulnerability is easiest to exploit while the device has started an
+	    active P2P operation (e.g., has ongoing P2P_FIND or P2P_LISTEN control
+	    interface command in progress). However, it may be possible, though
+	    significantly more difficult, to trigger this even without any active
+	    P2P operation in progress.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1863</cvename>
+      <url>http://w1.fi/security/2015-1/wpa_supplicant-p2p-ssid-overflow.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-04-22</discovery>
+      <entry>2015-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e232a0c-eb57-11e4-b595-4061861086c1">
     <topic>Several vulnerabilities found in PHP</topic>
     <affects>
