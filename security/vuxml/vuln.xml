@@ -57,6 +57,60 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e232a0c-eb57-11e4-b595-4061861086c1">
+    <topic>Several vulnerabilities found in PHP</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.40</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.24</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/archive/2015.php#id2015-04-16-2">
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.4.40. 14 security-related
+	    bugs were fixed in this release, including
+	    CVE-2014-9709, CVE-2015-2301, CVE-2015-2783,
+	    CVE-2015-1352. All PHP 5.4 users are encouraged to
+	    upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.5.24. Several bugs have been
+	    fixed some of them beeing security related, like
+	    CVE-2015-1351 and CVE-2015-1352. All PHP 5.5 users
+	    are encouraged to upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.6.8. Several bugs have been
+	    fixed some of them beeing security related, like
+	    CVE-2015-1351 and CVE-2015-1352. All PHP 5.6 users
+	    are encouraged to upgrade to this version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/archive/2015.php#id2015-04-16-2</url>
+      <cvename>CVE-2014-9709</cvename>
+      <cvename>CVE-2015-2301</cvename>
+      <cvename>CVE-2015-2783</cvename>
+      <cvename>CVE-2015-1351</cvename>
+      <cvename>CVE-2015-1352</cvename>
+      <freebsdpr>ports/198739</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2015-04-16</discovery>
+      <entry>2015-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="505904d3-ea95-11e4-beaf-bcaec565249c">
     <topic>wordpress -- multiple vulnabilities</topic>
     <affects>
