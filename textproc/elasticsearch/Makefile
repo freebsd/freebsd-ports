@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -24,13 +24,14 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	4.10.2
+LUCENEVER=	4.10.4
 CONFIG_FILES=	elasticsearch.yml logging.yml
 JARS=		elasticsearch-${PORTVERSION}.jar \
 		asm-4.1.jar \
-		asm-commons-4.1.jar \
+	 	asm-commons-4.1.jar \
+		apache-log4j-extras-1.2.17.jar \
 		antlr-runtime-3.5.jar \
-		groovy-all-2.3.2.jar \
+		groovy-all-2.4.0.jar \
 		jna-4.1.0.jar \
 		jts-1.13.jar \
 		log4j-1.2.17.jar \
