@@ -1,6 +1,6 @@
---- mDNSPosix/mDNSPosix.c.orig	2012-04-18 07:01:01.000000000 +0800
-+++ mDNSPosix/mDNSPosix.c	2013-08-16 23:04:31.089791517 +0800
-@@ -503,6 +503,7 @@
+--- mDNSPosix/mDNSPosix.c.orig	2015-03-02 19:24:41 UTC
++++ mDNSPosix/mDNSPosix.c
+@@ -516,6 +516,7 @@ mDNSexport int ParseDNSServers(mDNS *m, 
              numOfServers++;
          }
      }
@@ -8,7 +8,7 @@
      return (numOfServers > 0) ? 0 : -1;
  }
  
-@@ -708,7 +709,13 @@
+@@ -740,7 +741,13 @@ mDNSlocal int SetupSocket(struct sockadd
      {
          struct ipv6_mreq imr6;
          struct sockaddr_in6 bindAddr6;
@@ -23,7 +23,7 @@
          if (err == 0)
          {
              err = setsockopt(*sktPtr, IPPROTO_IPV6, IPV6_2292_PKTINFO, &kOn, sizeof(kOn));
-@@ -717,7 +724,13 @@
+@@ -749,7 +756,13 @@ mDNSlocal int SetupSocket(struct sockadd
      #else
          #warning This platform has no way to get the destination interface information for IPv6 -- will only work for single-homed hosts
      #endif
