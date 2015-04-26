@@ -829,6 +829,7 @@ lib/node_modules/npm/node_modules/ini/test/bar.js
 lib/node_modules/npm/node_modules/ini/test/fixtures/foo.ini
 lib/node_modules/npm/node_modules/ini/test/foo.js
 lib/node_modules/npm/node_modules/init-package-json/.npmignore
+lib/node_modules/npm/node_modules/init-package-json/.travis.yml
 lib/node_modules/npm/node_modules/init-package-json/LICENSE
 lib/node_modules/npm/node_modules/init-package-json/README.md
 lib/node_modules/npm/node_modules/init-package-json/default-input.js
@@ -873,7 +874,9 @@ lib/node_modules/npm/node_modules/init-package-json/package.json
 lib/node_modules/npm/node_modules/init-package-json/test/basic.input
 lib/node_modules/npm/node_modules/init-package-json/test/basic.js
 lib/node_modules/npm/node_modules/init-package-json/test/npm-defaults.js
+lib/node_modules/npm/node_modules/init-package-json/test/scope-in-config.js
 lib/node_modules/npm/node_modules/init-package-json/test/scope.js
+lib/node_modules/npm/node_modules/init-package-json/test/yes-defaults.js
 lib/node_modules/npm/node_modules/lockfile/LICENSE
 lib/node_modules/npm/node_modules/lockfile/README.md
 lib/node_modules/npm/node_modules/lockfile/lockfile.js
@@ -889,7 +892,6 @@ lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
-lib/node_modules/npm/node_modules/lru-cache/t.js
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
 lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
@@ -2180,8 +2182,10 @@ lib/node_modules/npm/node_modules/tar/lib/parse.js
 lib/node_modules/npm/node_modules/tar/package.json
 lib/node_modules/npm/node_modules/tar/tar.js
 lib/node_modules/npm/node_modules/tar/test/00-setup-fixtures.js
+lib/node_modules/npm/node_modules/tar/test/cb-never-called-1.0.1.tgz
 lib/node_modules/npm/node_modules/tar/test/dir-normalization.js
 lib/node_modules/npm/node_modules/tar/test/dir-normalization.tar
+lib/node_modules/npm/node_modules/tar/test/error-on-broken.js
 lib/node_modules/npm/node_modules/tar/test/extract-move.js
 lib/node_modules/npm/node_modules/tar/test/extract.js
 lib/node_modules/npm/node_modules/tar/test/fixtures.tgz
