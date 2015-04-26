@@ -36,5 +36,7 @@ do-install:
 .if ${PERL_VER} >= 5.18
 BROKEN=		Does not build with Perl 5.18 or above
 .endif
+DEPRECATED=	Requires an unsupported version of Perl
+EXPIRATION_DATE=	2015-07-31
 
 .include <bsd.port.post.mk>
