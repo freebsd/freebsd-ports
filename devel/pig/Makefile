@@ -18,6 +18,8 @@ COMMENT=	Engine for executing data flows in parallel on Hadoop
 
 LICENSE=	APACHE20
 
+BROKEN=		tries to fetch distfiles during build phase
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
