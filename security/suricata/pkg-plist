@@ -59,6 +59,7 @@ bin/suricata
 @sample %%ETCDIR%%/suricata.yaml.sample
 @sample %%ETCDIR%%/classification.config.sample
 @sample %%ETCDIR%%/reference.config.sample
+@sample %%ETCDIR%%/threshold.config.sample
 %%ETCDIR%%/rules/decoder-events.rules
 %%ETCDIR%%/rules/dns-events.rules
 %%ETCDIR%%/rules/files.rules
