@@ -1,8 +1,8 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
-PORTNAME=	filter_audio
-PORTVERSION=	0.150317
+PORTNAME=	libfilteraudio
+PORTVERSION=	0.150426
 CATEGORIES=	audio
 DIST_SUBDIR=	${PORTNAME}-${GH_COMMIT}
 
@@ -13,9 +13,8 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
-GH_PROJECT=	filter_audio
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2ebc753
+GH_PROJECT=	libfilteraudio
+GH_TAGNAME=	d64d957
 
 USES=		gmake
 USE_LDCONFIG=	yes

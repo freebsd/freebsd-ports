@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	0.150317
+PORTVERSION=	0.150426
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -10,21 +10,18 @@ COMMENT=	Qt 5 based Tox client
 
 LICENSE=	GPLv3
 
-BROKEN=		Fails to build
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx \
-		libfilteraudio.so:${PORTSDIR}/audio/filter_audio \
+		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio \
 		libsodium.so:${PORTSDIR}/security/libsodium \
 		libqrencode.so:${PORTSDIR}/graphics/libqrencode
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
-GH_COMMIT=	de42357
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	25329d3
 
 USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake gmake
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
