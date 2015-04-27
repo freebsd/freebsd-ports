@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -41,12 +40,5 @@ post-patch:
 	@${REINPLACE_CMD} -i .pkgconf.bak -e \
 		'/Libs.private/s|:|& @LIBUSB_LIBS@|' ${WRKSRC}/libmtp.pc.in
 .endif
-	@${REINPLACE_CMD} -e \
-		'/if test/s|==|=| ; \
-		 /endian.h/s|machine|sys|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|Requires|&.private|' ${WRKSRC}/libmtp.pc.in
-	@${REINPLACE_CMD} -e \
-		's|__builtin_bswap|bswap|g' ${WRKSRC}/src/mtpz.c
 
 .include <bsd.port.mk>
