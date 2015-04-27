@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
@@ -25,18 +25,14 @@ BUILD_DEPENDS=	p5-HTML-Display>=0:${PORTSDIR}/www/p5-HTML-Display \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 USES=		perl5
 USE_PERL5=	configure
 
-PORTDOCS=	Changes README
 PORTEXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/bin && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
