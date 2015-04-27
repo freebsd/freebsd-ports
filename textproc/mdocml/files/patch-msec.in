@@ -1,5 +1,5 @@
---- msec.in.orig	2009-07-20 22:05:54.000000000 +0200
-+++ msec.in	2009-07-20 22:07:03.000000000 +0200
+--- msec.in.orig	2014-12-13 14:06:34 UTC
++++ msec.in
 @@ -22,16 +22,16 @@
   * Be sure to escape strings.
   */
@@ -10,8 +10,8 @@
 +LINE("1",		"FreeBSD General Commands Manual")
 +LINE("2",		"FreeBSD System Calls Manual")
 +LINE("3",		"FreeBSD Library Functions Manual")
- LINE("3p",		"Perl Library Functions Manual")
--LINE("4",		"Kernel Interfaces Manual")
+ LINE("3p",		"Perl Library Manual")
+-LINE("4",		"Device Drivers Manual")
 -LINE("5",		"File Formats Manual")
 -LINE("6",		"Games Manual")
 -LINE("7",		"Miscellaneous Information Manual")
