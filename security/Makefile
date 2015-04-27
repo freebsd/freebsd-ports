@@ -666,6 +666,7 @@
     SUBDIR += pamtester
     SUBDIR += paperkey
     SUBDIR += parano
+    SUBDIR += passivedns
     SUBDIR += pbc
     SUBDIR += pbnj
     SUBDIR += pcsc-tools
