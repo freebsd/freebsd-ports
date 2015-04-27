@@ -57,6 +57,83 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b57f690e-ecc9-11e4-876c-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_14.html">
+	  <p>45 new security fixes, including:</p>
+	  <ul>
+	    <li>[456518] High CVE-2015-1235: Cross-origin-bypass in HTML
+	      parser. Credit to anonymous.</li>
+	    <li>[313939] Medium CVE-2015-1236: Cross-origin-bypass in Blink.
+	      Credit to Amitay Dobo.</li>
+	    <li>[461191] High CVE-2015-1237: Use-after-free in IPC. Credit to
+	      Khalil Zhani.</li>
+	    <li>[445808] High CVE-2015-1238: Out-of-bounds write in Skia.
+	      Credit to cloudfuzzer.</li>
+	    <li>[463599] Medium CVE-2015-1240: Out-of-bounds read in WebGL.
+	      Credit to w3bd3vil.</li>
+	    <li>[418402] Medium CVE-2015-1241: Tap-Jacking. Credit to Phillip
+	      Moon and Matt Weston of Sandfield Information Systems.</li>
+	    <li>[460917] High CVE-2015-1242: Type confusion in V8. Credit to
+	      fcole@onshape.com.</li>
+	    <li>[455215] Medium CVE-2015-1244: HSTS bypass in WebSockets.
+	      Credit to Mike Ruddy.</li>
+	    <li>[444957] Medium CVE-2015-1245: Use-after-free in PDFium. Credit
+	      to Khalil Zhani.</li>
+	    <li>[437399] Medium CVE-2015-1246: Out-of-bounds read in Blink.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[429838] Medium CVE-2015-1247: Scheme issues in OpenSearch.
+	      Credit to Jann Horn.</li>
+	    <li>[380663] Medium CVE-2015-1248: SafeBrowsing bypass. Credit to
+	      Vittorio Gambaletta (VittGam).</li>
+	    <li>[476786] CVE-2015-1249: Various fixes from internal audits,
+	      fuzzing and other initiatives. Multiple vulnerabilities in V8
+	      fixed at the tip of the 4.2 branch (currently 4.2.77.14).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_14.html</url>
+      <cvename>CVE-2015-1235</cvename>
+      <cvename>CVE-2015-1236</cvename>
+      <cvename>CVE-2015-1237</cvename>
+      <cvename>CVE-2015-1238</cvename>
+      <cvename>CVE-2015-1240</cvename>
+      <cvename>CVE-2015-1241</cvename>
+      <cvename>CVE-2015-1242</cvename>
+      <cvename>CVE-2015-1244</cvename>
+      <cvename>CVE-2015-1245</cvename>
+      <cvename>CVE-2015-1246</cvename>
+      <cvename>CVE-2015-1247</cvename>
+      <cvename>CVE-2015-1248</cvename>
+      <cvename>CVE-2015-1249</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb9d2fcd-eb47-11e4-b03e-002590263bf5">
     <topic>wpa_supplicant -- P2P SSID processing vulnerability</topic>
     <affects>
