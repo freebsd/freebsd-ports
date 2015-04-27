@@ -32,6 +32,8 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/firewall_udp.xpm
 %%DATADIR%%/pixmaps/firewall_udp_punchable.xpm
 %%DATADIR%%/pixmaps/freeze.xpm
+%%DATADIR%%/pixmaps/go_back.xpm
+%%DATADIR%%/pixmaps/hungup.xpm
 %%DATADIR%%/pixmaps/icon.16x16.xpm
 %%DATADIR%%/pixmaps/icon.48x48.xpm
 %%DATADIR%%/pixmaps/icon.xpm
