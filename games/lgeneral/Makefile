@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -12,55 +12,39 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy engine inspired by Panzer General
 
-LICENSE=	GPLv2 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2
 
-USE_SDL=	sdl
 USES=		gmake
-GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
+USE_SDL=	sdl
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	SOUND NLS DOCS
+BROKEN_powerpc=	Does not install on ${ARCH}
+BROKEN_sparc64=	Does not install on ${ARCH}
+
+OPTIONS_DEFINE=		DOCS NLS SOUND
 OPTIONS_DEFAULT=	SOUND
-SOUND_DESC=	Enable sound support
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSOUND}
-USE_SDL+=	mixer
-.else
-CONFIGURE_ARGS+=--disable-sound
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ENV+=	am_cv_func_iconv=no
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64, powerpc, or sparc64
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ENV_OFF=	am_cv_func_iconv=no
+SOUND_USE=		sdl=mixer
+SOUND_CONFIGURE_ENABLE=	sound
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/icons.*|/pixmaps|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/flags
-	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/units/
-	${MKDIR} ${STAGEDIR}${DATADIR}/gfx/terrain/pg/
-	${STAGEDIR}${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data -d ${STAGEDIR}${DATADIR}
-	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if ${PORT_OPTIONS:MDOCS}
+.for i in flags terrain units
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gfx/${i}
+.endfor
+	(${STAGEDIR}${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data \
+		-d ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.* ${STAGEDIR}${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_DATA} README.* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
