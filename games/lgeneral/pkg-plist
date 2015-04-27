@@ -21,7 +21,6 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/convdata/grid.bmp
 %%DATADIR%%/convdata/guard.bmp
 %%DATADIR%%/convdata/leg.wav
-%%DATADIR%%/convdata/mapnames
 %%DATADIR%%/convdata/move.bmp
 %%DATADIR%%/convdata/reinf
 %%DATADIR%%/convdata/sea.wav
@@ -217,7 +216,7 @@ share/applications/lgeneral.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/pg.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
-share/pixmaps/lgeneral48.png
-@dir %%DATADIR%%/ai_modules
-@dir %%DATADIR%%/music
+share/pixmaps/lgeneral.png
 @dir %%DATADIR%%/terrain
+@dir %%DATADIR%%/music
+@dir %%DATADIR%%/ai_modules
