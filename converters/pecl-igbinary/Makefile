@@ -20,9 +20,4 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USES=		tar:tgz
 
-post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
-
 .include <bsd.port.mk>
