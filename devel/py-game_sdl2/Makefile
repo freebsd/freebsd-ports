@@ -18,6 +18,8 @@ BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
+PORTSCOUT=	skipv:6.99.3 # no changes
+
 USES=		python tar:bz2
 USE_SDL=	image2 mixer2 ttf2
 USE_PYTHON=	autoplist distutils
