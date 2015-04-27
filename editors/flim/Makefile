@@ -3,7 +3,7 @@
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/flim/flim-1.14/

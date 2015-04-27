@@ -3,7 +3,7 @@
 
 PORTNAME=	dinotrace
 PORTVERSION=	9.4c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
 
