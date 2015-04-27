@@ -1,8 +1,8 @@
---- content/gpu/gpu_main.cc.orig	2015-01-21 20:28:16 UTC
-+++ content/gpu/gpu_main.cc
+--- content/gpu/gpu_main.cc.orig	2015-04-19 00:48:39.000000000 +0200
++++ content/gpu/gpu_main.cc	2015-04-19 00:51:41.000000000 +0200
 @@ -73,7 +73,7 @@
-                                const CommandLine& command_line);
- bool WarmUpSandbox(const CommandLine& command_line);
+                                const base::CommandLine& command_line);
+ bool WarmUpSandbox(const base::CommandLine& command_line);
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_FREEBSD) //XXX(rene) added !FreeBSD
@@ -25,16 +25,7 @@
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_DEFAULT);
  #elif defined(OS_MACOSX)
    // This is necessary for CoreAnimation layers hosted in the GPU process to be
-@@ -216,7 +216,7 @@
-   // Temporarily disable DRI3 on desktop Linux.
-   // The GPU process is crashing on DRI3-enabled desktop Linux systems.
-   // TODO(jorgelo): remove this when crbug.com/415681 is fixed.
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   {
-     scoped_ptr<base::Environment> env(base::Environment::Create());
-     env->SetVar("LIBGL_DRI3_DISABLE", "1");
-@@ -279,7 +279,7 @@
+@@ -269,7 +269,7 @@
        // and we already registered them through SetGpuInfo() above.
        base::TimeTicks before_collect_context_graphics_info =
            base::TimeTicks::Now();
@@ -43,7 +34,7 @@
        if (!CollectGraphicsInfo(gpu_info))
          dead_on_arrival = true;
  
-@@ -412,7 +412,7 @@
+@@ -402,7 +402,7 @@
    return true;
  }
  

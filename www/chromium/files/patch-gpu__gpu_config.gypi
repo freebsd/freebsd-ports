@@ -1,6 +1,6 @@
---- gpu/gpu_config.gypi.orig	2014-10-10 08:54:15 UTC
-+++ gpu/gpu_config.gypi
-@@ -70,12 +70,18 @@
+--- gpu/gpu_config.gypi.orig	2015-04-19 16:30:17.000000000 +0200
++++ gpu/gpu_config.gypi	2015-04-19 16:33:04.000000000 +0200
+@@ -70,7 +70,7 @@
          '../build/linux/system.gyp:libpci',
        ],
      }],
@@ -9,7 +9,8 @@
        'dependencies': [
          '../build/linux/system.gyp:x11',
          '../build/linux/system.gyp:xext',
-         '../third_party/libXNVCtrl/libXNVCtrl.gyp:libXNVCtrl',
+@@ -78,5 +78,11 @@
+         '../ui/gfx/x/gfx_x11.gyp:gfx_x11',
        ],
      }],
 +    ['os_bsd==1', {
@@ -17,6 +18,6 @@
 +        'config/gpu_info_collector_linux.cc',
 +        'config/gpu_info_collector_linux.h',
 +      ],
-+    }],
++    }]
    ],
  }
