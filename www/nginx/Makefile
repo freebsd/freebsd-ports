@@ -74,7 +74,6 @@ OPTIONS_DEFINE=	\
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
-	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
@@ -91,7 +90,6 @@ OPTIONS_DEFINE=	\
 	MODSECURITY \
 	NAXSI \
 	PASSENGER \
-	POSTGRES \
 	RDS_CSV \
 	RDS_JSON \
 	REDIS2 \
@@ -100,8 +98,6 @@ OPTIONS_DEFINE=	\
 	SFLOW \
 	SLOWFS_CACHE \
 	SRCACHE \
-	SUPERVISORD \
-	TCP_PROXY \
 	UDPLOG \
 	XRID_HEADER \
 	XSS \
@@ -163,7 +159,6 @@ HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
-HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
@@ -180,7 +175,6 @@ MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY_DESC=		3rd party mod_security module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
-POSTGRES_DESC=			3rd party postgresql module
 RDS_CSV_DESC=			3rd party rds_csv module
 RDS_JSON_DESC=			3rd party rds_json module
 REDIS2_DESC=			3rd party redis2 module
@@ -189,8 +183,6 @@ SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SRCACHE_DESC=			3rd party srcache module
-SUPERVISORD_DESC=		3rd party supervisord module
-TCP_PROXY_DESC=			3rd party tcp_proxy module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
@@ -323,15 +315,6 @@ NGINX_CACHE_PURGE_VERSION=	2.3
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MCTPP2}
-IGNORE=	CTPP2: update require
-LIB_DEPENDS+=	libctpp2.so:${PORTSDIR}/textproc/ctpp2
-NGINX_CTPP2_VERSION=	0.5
-MASTER_SITES+=	http://dl.vbart.ru/ngx-ctpp/:ctpp2
-DISTFILES+=	ngx_ctpp2-${NGINX_CTPP2_VERSION}.tar.gz:ctpp2
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -502,15 +485,6 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_UPLOAD}
-IGNORE=	UPLOAD: update require
-NGINX_UPLOAD_VERSION=	2.2.0
-MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
-DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upload_module.c
-.endif
-
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
 NGINX_UPLOADPROGRESS_VERSION=	0.9.0
 GIT_UPLOADPROGRESS_VERSION=	0-ga788dea
@@ -519,7 +493,7 @@ DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_VERSI
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_VERSION:S/^0-g//}
 .endif
 
-.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR) || !empty(PORT_OPTIONS:MSUPERVISORD)
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
 NGINX_UPSTREAM_FAIR_VERSION=	20090923
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
@@ -655,16 +629,6 @@ CFLAGS+=	-DNDEBUG
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MPOSTGRES}
-IGNORE=	POSTGRES: update require
-USES+=	pgsql
-NGINX_POSTGRES_VERSION=	0.9
-MASTER_SITES+=	http://labs.frickle.com/files/:postgres
-DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_VERSION}.tar.gz:postgres
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
-.endif
-
 .if ${PORT_OPTIONS:MRDS_CSV}
 NGINX_RDS_CSV_VERSION=	0.05
 GIT_RDS_CSV_VERSION=	0-g607e26b
@@ -728,23 +692,6 @@ GIT_SRCACHE_VERSION=	0-gc521830
 MASTER_SITES+=	https://github.com/openresty/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	openresty-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
-.endif
-
-.if ${PORT_OPTIONS:MSUPERVISORD}
-IGNORE=	SUPERVISORD: update require
-NGINX_SUPERVISORD_VERSION=	1.4
-MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
-DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_VERSION}.tar.gz:supervisord
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MTCP_PROXY}
-IGNORE=	TCP_PROXY: update require
-NGINX_TCP_PROXY_VERSION=	0.26
-GIT_TCP_PROXY_VERSION=	0-gb83e5a6
-MASTER_SITES+=	https://github.com/yaoweibin/nginx_tcp_proxy_module/tarball/v${NGINX_TCP_PROXY_VERSION}/:tcp_proxy
-DISTFILES+=	yaoweibin-nginx_tcp_proxy_module-v${NGINX_TCP_PROXY_VERSION}-${GIT_TCP_PROXY_VERSION}.tar.gz:tcp_proxy
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MUDPLOG}
@@ -910,11 +857,6 @@ post-patch:
 		s!-Iext/libeio!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
 .endif
-.if ${PORT_OPTIONS:MPOSTGRES}
-	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_VERSION}/config
-.endif
 .if ${PORT_OPTIONS:MSFLOW}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
@@ -925,19 +867,6 @@ post-patch:
 	@${REINPLACE_CMD} '464d' \
 		${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
 .endif
-.endif
-.if ${PORT_OPTIONS:MSUPERVISORD}
-	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
-		${PATCH} -p0 < \
-			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}/patches/ngx_http_upstream_fair_module.patch )
-	( cd ${WRKSRC} && \
-		${PATCH} -p0 < \
-			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
-.endif
-.if ${PORT_OPTIONS:MTCP_PROXY}
-	( cd ${WRKSRC} && \
-		${PATCH} -p1 < \
-			${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}/tcp.patch )
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
