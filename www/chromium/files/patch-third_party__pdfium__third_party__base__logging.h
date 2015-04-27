@@ -1,5 +1,5 @@
---- third_party/pdfium/third_party/logging.h.orig	2014-10-10 09:15:55 UTC
-+++ third_party/pdfium/third_party/logging.h
+--- third_party/pdfium/third_party/base/logging.h.orig	2015-04-19 17:22:14.000000000 +0200
++++ third_party/pdfium/third_party/base/logging.h	2015-04-19 17:22:28.000000000 +0200
 @@ -10,7 +10,7 @@
  #define CHECK(condition)                                                \
    if (!(condition)) {                                                   \

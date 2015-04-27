@@ -1,5 +1,5 @@
---- base/allocator/allocator_extension.cc	2013-07-03 23:39:54.000000000 -0400
-+++ base/allocator/allocator_extension.cc	2013-07-19 00:39:26.000000000 -0400
+--- base/allocator/allocator_extension.cc	2015-04-15 00:18:47.000000000 +0200
++++ base/allocator/allocator_extension.cc	2015-04-18 21:44:25.000000000 +0200
 @@ -35,20 +35,20 @@
  void SetGetAllocatorWasteSizeFunction(
      thunks::GetAllocatorWasteSizeFunction get_allocator_waste_size_function) {
@@ -24,19 +24,25 @@
    thunks::SetReleaseFreeMemoryFunction(release_free_memory_function);
  }
  
---- base/profiler/alternate_timer.cc	2013-07-03 23:39:54.000000000 -0400
-+++ base/profiler/alternate_timer.cc	2013-07-19 00:41:06.000000000 -0400
-@@ -21,7 +21,7 @@
- // Set an alternate timer function to replace the OS time function when
- // profiling.
- void SetAlternateTimeSource(NowFunction* now_function, TimeSourceType type) {
--  DCHECK_EQ(reinterpret_cast<NowFunction*>(NULL), g_time_function);
-+  DCHECK_EQ(static_cast<NowFunction*>(NULL), g_time_function);
-   g_time_function = now_function;
-   g_time_source_type = type;
- }
---- base/threading/thread_local_storage_unittest.cc.orig	2013-08-30 23:06:21.000000000 +0300
-+++ base/threading/thread_local_storage_unittest.cc	2013-08-30 23:06:50.000000000 +0300
+--- base/strings/safe_sprintf_unittest.cc	2015-04-15 00:18:48.000000000 +0200
++++ base/strings/safe_sprintf_unittest.cc	2015-04-18 22:08:45.000000000 +0200
+@@ -729,12 +729,14 @@
+ #pragma GCC diagnostic push
+ #pragma GCC diagnostic ignored "-Wconversion-null"
+ #endif
++/* Avoid compiler error: http://pastebin.com/1edWUE84
+   EXPECT_EQ(1, SafeSPrintf(buf, "%d", NULL));
+   EXPECT_EQ("0", std::string(buf));
+   EXPECT_EQ(3, SafeSPrintf(buf, "%p", NULL));
+   EXPECT_EQ("0x0", std::string(buf));
+   EXPECT_EQ(6, SafeSPrintf(buf, "%s", NULL));
+   EXPECT_EQ("<NULL>", std::string(buf));
++*/
+ #if defined(__GCC__)
+ #pragma GCC diagnostic pop
+ #endif
+--- base/threading/thread_local_storage_unittest.cc	2015-04-15 00:18:48.000000000 +0200
++++ base/threading/thread_local_storage_unittest.cc	2015-04-18 21:45:40.000000000 +0200
 @@ -60,7 +60,7 @@
  void ThreadLocalStorageCleanup(void *value) {
    int *ptr = reinterpret_cast<int*>(value);
@@ -46,9 +52,9 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- base/tracked_objects.cc	2013-07-03 23:39:54.000000000 -0400
-+++ base/tracked_objects.cc	2013-07-19 00:42:10.000000000 -0400
-@@ -378,7 +378,7 @@
+--- base/tracked_objects.cc	2015-04-15 00:31:20.000000000 +0200
++++ base/tracked_objects.cc	2015-04-18 21:57:33.000000000 +0200
+@@ -393,7 +393,7 @@
    }
    // We must NOT do any allocations during this callback.
    // Using the simple linked lists avoids all allocations.
@@ -57,11 +63,11 @@
    this->next_retired_worker_ = first_retired_worker_;
    first_retired_worker_ = this;
  }
---- base/tracked_objects_unittest.cc.orig	2013-08-30 23:09:01.000000000 +0300
-+++ base/tracked_objects_unittest.cc	2013-08-30 23:10:14.000000000 +0300
-@@ -53,9 +53,9 @@
+--- base/tracked_objects_unittest.cc	2015-04-15 00:31:20.000000000 +0200
++++ base/tracked_objects_unittest.cc	2015-04-18 22:01:28.000000000 +0200
+@@ -58,9 +58,9 @@
      Births* birth = ThreadData::TallyABirthIfActive(location);
-
+ 
      if (ThreadData::status() == ThreadData::DEACTIVATED)
 -      EXPECT_EQ(reinterpret_cast<Births*>(NULL), birth);
 +      EXPECT_EQ(static_cast<Births*>(NULL), birth);
@@ -69,50 +75,66 @@
 -      EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
 +      EXPECT_NE(static_cast<Births*>(NULL), birth);
    }
-
+ 
    // Helper function to verify the most common test expectations.
-@@ -234,7 +234,7 @@
-     return;
-
+@@ -271,7 +271,7 @@
+   }
+ 
    scoped_ptr<DeathData> data(new DeathData());
 -  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
 +  ASSERT_NE(data, static_cast<DeathData*>(NULL));
    EXPECT_EQ(data->run_duration_sum(), 0);
    EXPECT_EQ(data->run_duration_sample(), 0);
    EXPECT_EQ(data->queue_duration_sum(), 0);
-@@ -435,7 +435,7 @@
+@@ -489,7 +489,7 @@
    Location location(kFunction, kFile, kLineNumber, NULL);
    // Do not delete |birth|.  We don't own it.
    Births* birth = ThreadData::TallyABirthIfActive(location);
 -  EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
 +  EXPECT_NE(static_cast<Births*>(NULL), birth);
-
-   const TrackedTime kTimePosted = TrackedTime() + Duration::FromMilliseconds(1);
-   const TrackedTime kStartOfRun = TrackedTime() +
---- chrome/browser/sync/glue/synced_session_tracker.cc	2013-07-03 23:46:07.000000000 -0400
-+++ chrome/browser/sync/glue/synced_session_tracker.cc	2013-07-19 01:50:13.000000000 -0400
+ 
+   const unsigned int kTimePosted = 1;
+   const unsigned int kStartOfRun = 5;
+--- chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-15 00:18:50.000000000 +0200
++++ chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-18 22:02:15.000000000 +0200
 @@ -260,7 +260,7 @@
    }
    DCHECK(window_ptr);
    DCHECK_EQ(window_ptr->window_id.id(), window_id);
--  DCHECK_EQ(reinterpret_cast<SessionWindow*>(NULL),
-+  DCHECK_EQ(static_cast<SessionWindow*>(NULL),
+-  DCHECK_EQ(reinterpret_cast<sessions::SessionWindow*>(NULL),
++  DCHECK_EQ(static_cast<sessions::SessionWindow*>(NULL),
              GetSession(session_tag)->windows[window_id]);
    GetSession(session_tag)->windows[window_id] = window_ptr;
  }
---- media/audio/audio_output_proxy_unittest.cc.orig	2013-08-30 23:23:03.000000000 +0300
-+++ media/audio/audio_output_proxy_unittest.cc	2013-08-30 23:23:54.000000000 +0300
-@@ -392,7 +392,7 @@
+--- content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-15 00:31:22.000000000 +0200
++++ content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-18 22:10:28.000000000 +0200
+@@ -241,11 +241,11 @@
+ 
+ gfx::NativeViewId RenderWidgetHostViewGuest::GetNativeViewId() const {
+   if (!guest_)
+-    return static_cast<gfx::NativeViewId>(NULL);
++    return reinterpret_cast<gfx::NativeViewId>(NULL);
+ 
+   RenderWidgetHostView* rwhv = guest_->GetOwnerRenderWidgetHostView();
+   if (!rwhv)
+-    return static_cast<gfx::NativeViewId>(NULL);
++    return reinterpret_cast<gfx::NativeViewId>(NULL);
+   return rwhv->GetNativeViewId();
+ }
+ 
+--- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
++++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
+@@ -387,7 +387,7 @@
      // |stream| is closed at this point. Start() should reopen it again.
      EXPECT_CALL(manager(), MakeAudioOutputStream(_, _))
          .Times(2)
 -        .WillRepeatedly(Return(reinterpret_cast<AudioOutputStream*>(NULL)));
 +        .WillRepeatedly(Return(static_cast<AudioOutputStream*>(NULL)));
-
+ 
      EXPECT_CALL(callback_, OnError(_))
          .Times(2);
---- media/filters/decrypting_video_decoder_unittest.cc.orig	2014-09-04 02:04:17.000000000 +0200
-+++ media/filters/decrypting_video_decoder_unittest.cc	2014-09-08 20:51:21.000000000 +0200
+--- media/filters/decrypting_video_decoder_unittest.cc	2015-04-15 00:31:22.000000000 +0200
++++ media/filters/decrypting_video_decoder_unittest.cc	2015-04-18 22:03:40.000000000 +0200
 @@ -420,7 +420,7 @@
    // NULL callback to cancel the |decryptor_ready_cb|.
    EXPECT_CALL(*this, RequestDecryptorNotification(IsNullCallback())).WillOnce(
@@ -122,8 +144,8 @@
                            base::Bind(&DecryptingVideoDecoderTest::DecryptorSet,
                                       base::Unretained(this))));
    EXPECT_CALL(*this, DecryptorSet(_)).Times(0);
---- third_party/hunspell/src/hunspell/affentry.hxx	2013-07-03 23:52:32.000000000 -0400
-+++ third_party/hunspell/src/hunspell/affentry.hxx	2013-07-19 01:31:57.000000000 -0400
+--- third_party/hunspell/src/hunspell/affentry.hxx	2015-04-15 00:31:35.000000000 +0200
++++ third_party/hunspell/src/hunspell/affentry.hxx	2015-04-18 22:04:39.000000000 +0200
 @@ -27,7 +27,7 @@
    struct hentry *      checkword(const char * word, int len, char in_compound, 
                              const FLAG needflag = FLAG_NULL);
@@ -142,8 +164,8 @@
  
    char *      check_twosfx_morph(const char * word, int len, int optflags,
                   PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
---- third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2013-07-03 23:54:15.000000000 -0400
-+++ third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2013-07-19 00:44:09.000000000 -0400
+--- third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
++++ third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
 @@ -439,7 +439,7 @@
  }
  
@@ -188,54 +210,9 @@
 +    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id) {
  }
-
---- v8/src/runtime/runtime-i18n.cc.orig	2015-01-25 15:08:31.732972197 +0100
-+++ v8/src/runtime/runtime-i18n.cc	2015-01-25 15:09:04.260951597 +0100
-@@ -626,7 +626,7 @@
  
-   local_object->SetInternalField(0, reinterpret_cast<Smi*>(break_iterator));
-   // Make sure that the pointer to adopted text is NULL.
--  local_object->SetInternalField(1, reinterpret_cast<Smi*>(NULL));
-+  local_object->SetInternalField(1, static_cast<Smi*>(NULL));
- 
-   Factory* factory = isolate->factory();
-   Handle<String> key = factory->NewStringFromStaticChars("breakIterator");
---- base/strings/safe_sprintf_unittest.cc.orig	2013-11-08 07:42:08.000000000 +0100
-+++ base/strings/safe_sprintf_unittest.cc	2013-11-15 15:04:45.000000000 +0100
-@@ -721,12 +721,14 @@
- #pragma GCC diagnostic push
- #pragma GCC diagnostic ignored "-Wconversion-null"
- #endif
-+/* Avoid compiler error: http://pastebin.com/1edWUE84
-   EXPECT_EQ(1, SafeSPrintf(buf, "%d", NULL));
-   EXPECT_EQ("0", std::string(buf));
-   EXPECT_EQ(3, SafeSPrintf(buf, "%p", NULL));
-   EXPECT_EQ("0x0", std::string(buf));
-   EXPECT_EQ(6, SafeSPrintf(buf, "%s", NULL));
-   EXPECT_EQ("<NULL>", std::string(buf));
-+*/
- #if defined(__GCC__)
- #pragma GCC diagnostic pop
- #endif
---- content/browser/frame_host/render_widget_host_view_guest.cc.orig	2014-03-05 22:24:07.000000000 +0100
-+++ content/browser/frame_host/render_widget_host_view_guest.cc	2014-03-09 20:01:20.000000000 +0100
-@@ -258,11 +258,11 @@
- 
- gfx::NativeViewId RenderWidgetHostViewGuest::GetNativeViewId() const {
-   if (!guest_)
--    return static_cast<gfx::NativeViewId>(NULL);
-+    return reinterpret_cast<gfx::NativeViewId>(NULL);
- 
-   RenderWidgetHostView* rwhv = guest_->GetEmbedderRenderWidgetHostView();
-   if (!rwhv)
--    return static_cast<gfx::NativeViewId>(NULL);
-+    return reinterpret_cast<gfx::NativeViewId>(NULL);
-   return rwhv->GetNativeViewId();
- }
- 
--
---- ./third_party/webrtc/base/taskrunner.cc.orig	2014-08-20 21:04:28.000000000 +0200
-+++ ./third_party/webrtc/base/taskrunner.cc	2014-08-22 18:55:46.000000000 +0200
+--- third_party/webrtc/base/taskrunner.cc	2015-04-15 00:32:17.000000000 +0200
++++ third_party/webrtc/base/taskrunner.cc	2015-04-18 22:10:53.000000000 +0200
 @@ -102,7 +102,7 @@
    std::vector<Task *>::iterator it;
    it = std::remove(tasks_.begin(),
@@ -245,20 +222,9 @@
  
    tasks_.erase(it, tasks_.end());
  
---- v8/src/unique.h.orig	2014-10-10 11:16:50.000000000 +0200
-+++ v8/src/unique.h	2014-10-13 18:55:35.000000000 +0200
-@@ -110,7 +110,7 @@
- 
-   // TODO(titzer): this is a hack to migrate to Unique<T> incrementally.
-   static Unique<T> CreateUninitialized(Handle<T> handle) {
--    return Unique<T>(reinterpret_cast<Address>(NULL), handle);
-+    return Unique<T>(static_cast<Address>(NULL), handle);
-   }
- 
-   static Unique<T> CreateImmovable(Handle<T> handle) {
---- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig	2015-01-25 14:52:44 UTC
-+++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc
-@@ -2072,7 +2072,7 @@
+--- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-15 00:32:17.000000000 +0200
++++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-18 22:13:27.000000000 +0200
+@@ -1754,7 +1754,7 @@
  
  const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
    FATAL() << "Not implemented yet.";
@@ -267,7 +233,7 @@
  }
  
  const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -2091,7 +2091,7 @@
+@@ -1773,7 +1773,7 @@
  
  const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
    FATAL() << "Not implemented yet.";
@@ -276,14 +242,25 @@
  }
  
  bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) {
---- v8/src/debug.cc.orig	2015-01-25 14:39:37 UTC
-+++ v8/src/debug.cc
-@@ -565,7 +565,7 @@
+--- v8/src/debug.cc	2015-04-15 00:32:36.000000000 +0200
++++ v8/src/debug.cc	2015-04-18 22:14:03.000000000 +0200
+@@ -573,7 +573,7 @@
    thread_local_.step_out_fp_ = 0;
    // TODO(isolates): frames_are_dropped_?
    base::NoBarrier_Store(&thread_local_.current_debug_scope_,
--                        static_cast<base::AtomicWord>(NULL));
-+                        reinterpret_cast<base::AtomicWord>(NULL));
+-                        static_cast<base::AtomicWord>(0));
++                        reinterpret_cast<base::AtomicWord>(0));
    thread_local_.restarter_frame_function_pointer_ = NULL;
  }
  
+--- v8/src/runtime/runtime-i18n.cc	2015-04-15 00:32:37.000000000 +0200
++++ v8/src/runtime/runtime-i18n.cc	2015-04-18 22:06:17.000000000 +0200
+@@ -627,7 +627,7 @@
+ 
+   local_object->SetInternalField(0, reinterpret_cast<Smi*>(break_iterator));
+   // Make sure that the pointer to adopted text is NULL.
+-  local_object->SetInternalField(1, reinterpret_cast<Smi*>(NULL));
++  local_object->SetInternalField(1, static_cast<Smi*>(NULL));
+ 
+   Factory* factory = isolate->factory();
+   Handle<String> key = factory->NewStringFromStaticChars("breakIterator");

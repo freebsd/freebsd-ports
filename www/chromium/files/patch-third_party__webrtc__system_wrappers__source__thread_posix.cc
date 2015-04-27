@@ -1,7 +1,7 @@
---- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig	2014-10-10 09:16:13 UTC
-+++ third_party/webrtc/system_wrappers/source/thread_posix.cc
-@@ -51,9 +51,11 @@
- #include <string.h>  // strncpy
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig	2015-04-19 17:26:21.000000000 +0200
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	2015-04-19 19:08:15.000000000 +0200
+@@ -15,9 +15,11 @@
+ #include <errno.h>
  #include <unistd.h>
  #ifdef WEBRTC_LINUX
 +#if !defined(WEBRTC_BSD)
@@ -13,47 +13,12 @@
  #include <sys/syscall.h>
  #include <sys/types.h>
  #endif
-@@ -136,12 +138,12 @@
- }
- 
- uint32_t ThreadWrapper::GetThreadId() {
--#if defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)
-+#if (defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)) && !defined(WEBRTC_BSD)
-   return static_cast<uint32_t>(syscall(__NR_gettid));
+@@ -138,7 +140,7 @@
+   if (!name_.empty()) {
+     // Setting the thread name may fail (harmlessly) if running inside a
+     // sandbox. Ignore failures if they happen.
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)
++#if (defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)) && !defined(WEBRTC_BSD)
+     prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name_.c_str()));
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
-   return pthread_mach_thread_np(pthread_self());
- #else
--  return reinterpret_cast<uint32_t>(pthread_self());
-+  return reinterpret_cast<uint64_t>(pthread_self());
- #endif
- }
- 
-@@ -171,7 +173,8 @@
-   delete crit_state_;
- }
- 
--#define HAS_THREAD_ID !defined(WEBRTC_IOS) && !defined(WEBRTC_MAC)
-+#define HAS_THREAD_ID !defined(WEBRTC_IOS) && !defined(WEBRTC_MAC) && \
-+                      !defined(WEBRTC_BSD)
- 
- bool ThreadPosix::Start(unsigned int& thread_id)
- {
-@@ -235,7 +238,8 @@
- 
- // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
- // SetAffinity on Android for now.
--#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
-+#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID) && \
-+    !defined(WEBRTC_BSD)))
- bool ThreadPosix::SetAffinity(const int* processor_numbers,
-                               const unsigned int amount_of_processors) {
-   if (!processor_numbers || (amount_of_processors == 0)) {
-@@ -317,7 +321,7 @@
-   event_->Set();
- 
-   if (set_thread_name_) {
--#ifdef WEBRTC_LINUX
-+#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
-     prctl(PR_SET_NAME, (unsigned long)name_, 0, 0, 0);
- #endif
-     WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+     pthread_setname_np(name_.substr(0, 63).c_str());
