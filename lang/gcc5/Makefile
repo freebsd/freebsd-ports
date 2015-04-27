@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.0.1.s20150421
+PORTVERSION=	5.1.0
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
+MASTER_SITE_SUBDIR=	releases/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -111,10 +111,11 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+# Release tarballs (as opposed to snapshots) always carry this.
+#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
-.endif
+#.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 
