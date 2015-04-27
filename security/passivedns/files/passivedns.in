@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: passivedns
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable passivedns:
+# passivedns_enable (bool):	Set to YES to enable passivedns
+# 				Default: NO
+# passivedns_interface (str):	
+#				Default: none - MUST BE SET
+# passivedns_logdir (str):   	Logging Directory
+#               Default: "/var/log/passivedns"
+# passivedns_fields (str):   	Passive DNS Fields to log
+#               Default: "SMcsCQTAtn"
+# passivedns_flags (str):		Extra flags passed to passivedns (-D is always passed)
+#				Default: none
+
+. /etc/rc.subr
+
+name="passivedns"
+rcvar=passivedns_enable
+
+command="%%PREFIX%%/bin/passivedns"
+
+start_precmd=start_precmd
+
+start_precmd()
+{
+	if [ -z "${passivedns_interface}" ]; then
+		err 1 "passivedns_interface must set."
+	fi
+}
+
+# set some defaults
+load_rc_config $name
+
+: ${passivedns_enable="NO"}
+: ${passivedns_logdir="/var/log/passivedns"}
+: ${passivedns_fields="SMcsCQTAtn"}
+: ${passivedns_flags=""}
+
+command_args="-i ${passivedns_interface} -l ${passivedns_logdir}/passivedns.log -f ${passivedns_fields} ${passivedns_flags} -D"
+
+run_rc_command "$1"
+
