@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	6
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -24,7 +23,7 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		xemacs-devel-mule-[0-9]* \
 		emacs-devel-[0-9]*
 
-EMACS_VER=	24.4
+EMACS_VER=	24.5
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -179,8 +178,11 @@ FILENOTIFY_USE=		GNOME=glib20
 # clang is broken on i386 platform in -O2, due to use of alloca, and stack realignment
 # and %esi as frame pointer register
 # http://llvm.org/bugs/show_bug.cgi?id=18171
+# fixed in r263312 (11-CURRENT), and fixed in r263765 (10-STABLE)
 .if ${ARCH} == "i386"
+.if (${OSVERSION} < 1000706) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100015)
 USE_GCC=		any
+.endif
 .endif
 
 DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:||' -e 's|}.*$$||' || ${TRUE}

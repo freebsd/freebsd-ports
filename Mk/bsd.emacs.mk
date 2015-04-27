@@ -63,27 +63,10 @@ EMACS_PORT_NAME?=	emacs24
 
 EMACS_MASTERDIR_PKGFILES?=	NO
 
-# Emacs-23.x
-.if (${EMACS_PORT_NAME} == "emacs23")
-EMACS_NAME=		emacs
-EMACS_VER=		23.4
-EMACS_MAJOR_VER=	23
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs
-EMACS_COMMON_PORT=	NO
-EMACS_HAS_MULE=		YES
-EMACS_NO_SUBDIRSEL=	NO
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
-DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
-PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
-
 # Emacs-24.x
-.elif (${EMACS_PORT_NAME} == "emacs24")
+.if (${EMACS_PORT_NAME} == "emacs24")
 EMACS_NAME=		emacs
-EMACS_VER=		24.4
+EMACS_VER=		24.5
 EMACS_MAJOR_VER=	24
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
@@ -118,7 +101,7 @@ PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs23 emacs24 emacs-devel"
+	@${ECHO} "	Emacs  family: emacs24 emacs-devel"
 	@${FALSE}
 .endif
 
