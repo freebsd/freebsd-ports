@@ -9,6 +9,8 @@ COMMENT=	Xen Hyvervisor meta port
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCH=	amd64
+
 RUN_DEPENDS=	/boot/xen:${PORTSDIR}/emulators/xen-kernel \
 		xl:${PORTSDIR}/sysutils/xen-tools
 
