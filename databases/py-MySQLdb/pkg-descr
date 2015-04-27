@@ -14,4 +14,4 @@ a) not thread-friendly, b) written for MySQL 3.21, c) apparently
 not actively maintained. No code from that version is used in
 MySQLdb. MySQLdb is free software.
 
-WWW: http://sourceforge.net/projects/mysql-python/
+WWW: https://github.com/farcepest/MySQLdb1
