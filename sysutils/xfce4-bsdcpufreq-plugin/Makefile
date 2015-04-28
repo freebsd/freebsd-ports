@@ -6,7 +6,7 @@ PORTNAME=	xfce4-bsdcpufreq-plugin
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	GHL GHC
+MASTER_SITES=	GHL
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Displays the current CPU clock frequency in the panel
