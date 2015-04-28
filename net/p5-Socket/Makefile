@@ -14,6 +14,8 @@ COMMENT=	Networking constants and support functions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USE_PERL5=	configure
 USES=		perl5
 
