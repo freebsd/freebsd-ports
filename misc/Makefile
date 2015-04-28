@@ -373,7 +373,6 @@
     SUBDIR += pcbsd-meta-vmwareguest
     SUBDIR += pcbsd-meta-window_maker
     SUBDIR += pcbsd-meta-windowlab
-    SUBDIR += pcbsd-meta-xbmc
     SUBDIR += pcbsd-meta-xfce
     SUBDIR += pcbsd-role-artphoto
     SUBDIR += pcbsd-role-avstudio
