@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}	\
 		http://aldan.algebra.com/~mi/:gdbtk
@@ -86,7 +86,7 @@ post-patch:
 		-e 's/^readline/#readline/' \
 		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib ${ICONV_LIB},' \
 		${WRKSRC}/gdb/Makefile.in
-	${ECHO} 'READLINE = -lreadline_p' >> ${WRKSRC}/gdb/Makefile.in
+	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${STAGEDIR}${PREFIX}/bin/gdb${VER}
