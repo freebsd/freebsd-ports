@@ -1,4 +1,3 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt

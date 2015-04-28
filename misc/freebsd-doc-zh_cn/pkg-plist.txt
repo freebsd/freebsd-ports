@@ -1,5 +1,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/article.txt
