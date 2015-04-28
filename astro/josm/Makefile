@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Comprehensive editor for OpenStreetMap.org database
 
+LICENSE=	GPLv2 # or later
+
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
