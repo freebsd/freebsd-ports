@@ -3,7 +3,7 @@
 
 PORTNAME=	libkml
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl \
 		${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	liburiparser.so:${PORTSDIR}/net/uriparser
 
 OPTIONS_DEFINE=	SWIG
 
