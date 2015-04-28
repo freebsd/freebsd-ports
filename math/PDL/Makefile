@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PORTSCOUT=	limit:^[0-9\.]*$$
+PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
 
 USES=		gmake perl5
 USE_PERL5=	configure
