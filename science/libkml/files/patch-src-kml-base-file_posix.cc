@@ -1,4 +1,4 @@
---- src/kml/base/file_posix.cc.orig	2010-01-14 00:16:30.000000000 +0000
+--- src/kml/base/file_posix.cc.orig	2010-02-19 15:52:05 UTC
 +++ src/kml/base/file_posix.cc
 @@ -29,6 +29,7 @@
  #include "kml/base/file.h"
