@@ -1,5 +1,5 @@
---- plugins/view/HistogramView/HistogramStatistics.cpp.orig	2014-04-18 12:05:56.000000000 +0200
-+++ plugins/view/HistogramView/HistogramStatistics.cpp	2014-04-18 12:07:56.000000000 +0200
+--- plugins/view/HistogramView/HistogramStatistics.cpp.orig	2015-04-18 20:15:49 UTC
++++ plugins/view/HistogramView/HistogramStatistics.cpp
 @@ -30,7 +30,7 @@
  #include "HistoStatsConfigWidget.h"
  #include "HistogramView.h"

@@ -1,6 +1,6 @@
---- software/crash_handling/StackWalker.cpp.orig	2014-04-22 16:44:05.000000000 +0200
-+++ software/crash_handling/StackWalker.cpp	2014-04-22 16:46:01.000000000 +0200
-@@ -255,8 +255,13 @@
+--- software/crash_handling/StackWalker.cpp.orig	2015-04-18 20:15:52 UTC
++++ software/crash_handling/StackWalker.cpp
+@@ -255,8 +255,13 @@ void StackWalkerGCC::printCallStack(std:
        char * real_name = abi::__cxa_demangle(mangled_name, 0, 0, &status);
  
        char *end;
