@@ -26,8 +26,6 @@ OPTIONS_SUB=	yes
 QEMU_DESC=	Add qemu-user-static to compile ports for non-x86 architectures
 QEMU_RUN_DEPENDS=	qemu-user-static>0:${PORTSDIR}/emulators/qemu-user-static
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_poudriere \
