@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tracks bandwidth usage by IP address
 
 LICENSE=	GPLv2
