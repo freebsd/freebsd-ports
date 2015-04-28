@@ -1,0 +1,66 @@
+--- third_party/Makefile.am.orig	2010-02-19 15:52:05 UTC
++++ third_party/Makefile.am
+@@ -16,24 +16,24 @@ libminizip_la_SOURCES = \
+ libminizip_la_LDFLAGS = -lz
+ 
+ liburiparser_la_SOURCES = \
+-	$(uriparser)/lib/UriCommon.c \
+-	$(uriparser)/lib/UriCommon.h \
+-	$(uriparser)/lib/UriCompare.c \
+-	$(uriparser)/lib/UriEscape.c \
+-	$(uriparser)/lib/UriFile.c \
+-	$(uriparser)/lib/UriIp4.c \
+-	$(uriparser)/lib/UriIp4Base.c \
+-	$(uriparser)/lib/UriIp4Base.h \
+-	$(uriparser)/lib/UriNormalize.c \
+-	$(uriparser)/lib/UriNormalizeBase.c \
+-	$(uriparser)/lib/UriNormalizeBase.h \
+-	$(uriparser)/lib/UriParse.c \
+-	$(uriparser)/lib/UriParseBase.c \
+-	$(uriparser)/lib/UriParseBase.h \
+-	$(uriparser)/lib/UriQuery.c \
+-	$(uriparser)/lib/UriRecompose.c \
+-	$(uriparser)/lib/UriResolve.c \
+-	$(uriparser)/lib/UriShorten.c
++	uriparser-0.7.5/lib/UriCommon.c \
++	uriparser-0.7.5/lib/UriCommon.h \
++	uriparser-0.7.5/lib/UriCompare.c \
++	uriparser-0.7.5/lib/UriEscape.c \
++	uriparser-0.7.5/lib/UriFile.c \
++	uriparser-0.7.5/lib/UriIp4.c \
++	uriparser-0.7.5/lib/UriIp4Base.c \
++	uriparser-0.7.5/lib/UriIp4Base.h \
++	uriparser-0.7.5/lib/UriNormalize.c \
++	uriparser-0.7.5/lib/UriNormalizeBase.c \
++	uriparser-0.7.5/lib/UriNormalizeBase.h \
++	uriparser-0.7.5/lib/UriParse.c \
++	uriparser-0.7.5/lib/UriParseBase.c \
++	uriparser-0.7.5/lib/UriParseBase.h \
++	uriparser-0.7.5/lib/UriQuery.c \
++	uriparser-0.7.5/lib/UriRecompose.c \
++	uriparser-0.7.5/lib/UriResolve.c \
++	uriparser-0.7.5/lib/UriShorten.c
+ liburiparser_la_LDFLAGS = -version-info 1:5:0
+ 
+ boost_root = boost_1_34_1
+@@ -79,13 +79,13 @@ libboostconfigplatforminclude_HEADERS = 
+ 
+ googletest = googletest-r108
+ libgtest_la_SOURCES = \
+-	$(googletest)/src/gtest.cc \
+-	$(googletest)/src/gtest-death-test.cc \
+-	$(googletest)/src/gtest-filepath.cc \
+-	$(googletest)/src/gtest-internal-inl.h \
+-	$(googletest)/src/gtest-port.cc \
+-	$(googletest)/src/gtest-test-part.cc \
+-	$(googletest)/src/gtest-typed-test.cc
++	googletest-r108/src/gtest.cc \
++	googletest-r108/src/gtest-death-test.cc \
++	googletest-r108/src/gtest-filepath.cc \
++	googletest-r108/src/gtest-internal-inl.h \
++	googletest-r108/src/gtest-port.cc \
++	googletest-r108/src/gtest-test-part.cc \
++	googletest-r108/src/gtest-typed-test.cc
+ 
+ EXTRA_DIST = \
+ 	expat.win32/expat.h \
