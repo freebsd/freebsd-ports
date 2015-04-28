@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="210f80b9-ede4-11e4-81c4-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_28.html">
+	  <p>5 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[453279] High CVE-2015-1243: Use-after-free in DOM. Credit to
+	      Saif El-Sherei.</li>
+	    <li>[481777] CVE-2015-1250: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1243</cvename>
+      <cvename>CVE-2015-1250</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_28.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-28</discovery>
+      <entry>2015-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b57f690e-ecc9-11e4-876c-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
