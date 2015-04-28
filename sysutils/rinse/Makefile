@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinse
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -14,11 +14,9 @@ LICENSE=	ARTPERL10
 RUN_DEPENDS=	p5-Term-Size>0:${PORTSDIR}/devel/p5-Term-Size \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PORTSCOUT=	skipv:3.0.7 # only debian/control changed
-
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
 SHEBANG_FILES=	bin/* tests/*
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" VERSION=${DISTVERSION}
