@@ -242,17 +242,6 @@
  }
  
  bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) {
---- v8/src/debug.cc	2015-04-15 00:32:36.000000000 +0200
-+++ v8/src/debug.cc	2015-04-18 22:14:03.000000000 +0200
-@@ -573,7 +573,7 @@
-   thread_local_.step_out_fp_ = 0;
-   // TODO(isolates): frames_are_dropped_?
-   base::NoBarrier_Store(&thread_local_.current_debug_scope_,
--                        static_cast<base::AtomicWord>(0));
-+                        reinterpret_cast<base::AtomicWord>(0));
-   thread_local_.restarter_frame_function_pointer_ = NULL;
- }
- 
 --- v8/src/runtime/runtime-i18n.cc	2015-04-15 00:32:37.000000000 +0200
 +++ v8/src/runtime/runtime-i18n.cc	2015-04-18 22:06:17.000000000 +0200
 @@ -627,7 +627,7 @@
