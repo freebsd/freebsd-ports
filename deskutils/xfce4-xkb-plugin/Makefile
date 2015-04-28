@@ -3,8 +3,7 @@
 PORTNAME=	xfce4-xkb-plugin
 PORTVERSION=	0.7.1
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for the Xfce panel
