@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.0
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	System dedicated to the visualization of huge graphs
 
 LICENSE=	LGPL3

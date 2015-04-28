@@ -1,6 +1,6 @@
---- software/crash_handling/CrashHandling.cpp.orig	2014-04-18 10:33:31.000000000 +0200
-+++ software/crash_handling/CrashHandling.cpp	2014-04-18 10:34:25.000000000 +0200
-@@ -38,7 +38,7 @@
+--- software/crash_handling/CrashHandling.cpp.orig	2015-04-18 20:15:52 UTC
++++ software/crash_handling/CrashHandling.cpp
+@@ -48,7 +48,7 @@ void setExtraSymbolsSearchPaths(const st
  /*
    Linux/MacOS-specific handling
   */

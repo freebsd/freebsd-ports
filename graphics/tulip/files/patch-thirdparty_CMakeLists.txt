@@ -1,6 +1,6 @@
---- thirdparty/CMakeLists.txt.orig	2014-09-28 22:17:08.000000000 +0200
-+++ thirdparty/CMakeLists.txt	2014-09-30 14:20:28.000000000 +0200
-@@ -3,7 +3,7 @@
+--- thirdparty/CMakeLists.txt.orig	2015-04-18 20:15:20 UTC
++++ thirdparty/CMakeLists.txt
+@@ -3,7 +3,7 @@ DISABLE_COMPILER_WARNINGS()
  ADD_CORE_FILES(CMakeLists.txt)
  
  ADD_SUBDIRECTORY(gzstream)
