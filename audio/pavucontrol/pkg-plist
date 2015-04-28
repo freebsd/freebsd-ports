@@ -1,6 +1,5 @@
 bin/pavucontrol
 share/applications/pavucontrol.desktop
-%%DOCSDIR%%/README
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/style.css
 share/locale/as/LC_MESSAGES/pavucontrol.mo
