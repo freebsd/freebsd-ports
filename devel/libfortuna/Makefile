@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libfortuna
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Fortuna PRNG Library
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	waitman
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	4a52e16
+GH_TAGNAME=	11cbd88
 
 .include <bsd.port.mk>
