@@ -4444,7 +4444,9 @@ ${deptype:tl}-depends:
 			fi; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
-			anynotfound=1; \
+			if [ "$$prog" != "${NONEXISTENT}" ]; then \
+				anynotfound=1; \
+			fi; \
 			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
