@@ -37,6 +37,10 @@ PLIST_SUB=	VER=${VER}
 
 .include <bsd.port.options.mk>
 
+.if !exists(/usr/lib/libreadline.so)
+CFLAGS+=	-Dreadline_echoing_p=_rl_echoing_p
+.endif
+
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
 USES+=		tk
