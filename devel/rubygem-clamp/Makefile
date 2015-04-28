@@ -6,7 +6,7 @@ PORTVERSION=	0.6.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Command-line utility framework for Ruby
 
 LICENSE=	MIT

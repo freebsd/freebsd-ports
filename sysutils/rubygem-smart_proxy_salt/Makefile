@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	SaltStack Plug-In for Foreman's Smart Proxy
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	0.0.4
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	SaltStack integration commands for Hammer CLI
 
 LICENSE=	GPLv3
