@@ -2,16 +2,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-branches.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-organization.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
@@ -21,7 +18,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook.css
