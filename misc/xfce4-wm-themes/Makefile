@@ -5,8 +5,7 @@ PORTNAME=	xfce4-wm-themes
 PORTVERSION=	4.10.0
 PORTREVISION=	1
 CATEGORIES=	misc xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/art/xfwm4-themes/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/art/xfwm4-themes/${PORTVERSION:R}
 DISTNAME=	xfwm4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -15,7 +14,6 @@ COMMENT=	Additional themes for xfwm4
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 USES=	gmake tar:bzip2
 
 .include <bsd.port.mk>
