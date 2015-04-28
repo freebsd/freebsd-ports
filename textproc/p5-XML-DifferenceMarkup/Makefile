@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-DifferenceMarkup
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +13,21 @@ COMMENT=	This module implements an XML diff producing XML output
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
+BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libdiffmark.so:${PORTSDIR}/textproc/diffmark
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${REINPLACE_CMD} '/^\$$CC/s/g++/${CXX}/; s|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/Makefile.PL
+
+# Don't pass any argument to Makefile.PL, it messes up lib detection.
+do-configure:
+	@cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS} \
+		${PERL5} ./${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
