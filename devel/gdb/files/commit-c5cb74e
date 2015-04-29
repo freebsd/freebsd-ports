@@ -1,6 +1,8 @@
---- gdb/amd64fbsd-tdep.c.orig	2010-01-01 02:31:29.000000000 -0500
-+++ gdb/amd64fbsd-tdep.c	2011-01-05 17:27:29.264869000 -0500
-@@ -40,12 +39,16 @@
+diff --git gdb/amd64fbsd-tdep.c gdb/amd64fbsd-tdep.c
+index 2d49cdf..abb0cab 100644
+--- gdb/amd64fbsd-tdep.c
++++ gdb/amd64fbsd-tdep.c
+@@ -37,12 +37,16 @@
  static CORE_ADDR
  amd64fbsd_sigcontext_addr (struct frame_info *this_frame)
  {

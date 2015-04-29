@@ -1,6 +1,8 @@
---- gdb/common/signals.c.orig	2013-01-01 07:32:54.000000000 +0100
-+++ gdb/common/signals.c	2013-11-25 16:12:56.000000000 +0100
-@@ -46,6 +46,12 @@
+diff --git gdb/common/signals.c gdb/common/signals.c
+index d4cf953..019371e 100644
+--- gdb/common/signals.c
++++ gdb/common/signals.c
+@@ -41,6 +41,12 @@ struct gdbarch;
  # endif
  #endif
  
@@ -13,7 +15,7 @@
  /* This table must match in order and size the signals in enum
     gdb_signal.  */
  
-@@ -334,6 +340,11 @@
+@@ -332,6 +338,11 @@ gdb_signal_from_host (int hostsig)
      return GDB_SIGNAL_INFO;
  #endif
  
@@ -25,7 +27,7 @@
  #if defined (REALTIME_LO)
    if (hostsig >= REALTIME_LO && hostsig < REALTIME_HI)
      {
-@@ -591,6 +602,11 @@
+@@ -585,6 +596,11 @@ do_gdb_signal_to_host (enum gdb_signal oursig,
        return SIGINFO;
  #endif
  
@@ -37,9 +39,11 @@
      default:
  #if defined (REALTIME_LO)
        retsig = 0;
---- gdb/infrun.c.orig	2013-08-30 17:58:55.000000000 +0200
-+++ gdb/infrun.c	2013-11-22 16:12:58.000000000 +0100
-@@ -7291,6 +7291,8 @@
+diff --git gdb/infrun.c gdb/infrun.c
+index 11dcc0e..6ec4d0b 100644
+--- gdb/infrun.c
++++ gdb/infrun.c
+@@ -7715,6 +7715,8 @@ leave it stopped or free to run as needed."),
    signal_print[GDB_SIGNAL_WINCH] = 0;
    signal_stop[GDB_SIGNAL_PRIO] = 0;
    signal_print[GDB_SIGNAL_PRIO] = 0;
@@ -48,12 +52,14 @@
  
    /* These signals are used internally by user-level thread
       implementations.  (See signal(5) on Solaris.)  Like the above
---- include/gdb/signals.def.orig	2013-01-01 07:41:30.000000000 +0100
-+++ include/gdb/signals.def	2013-11-25 16:13:42.000000000 +0100
-@@ -197,4 +197,5 @@
+diff --git include/gdb/signals.def include/gdb/signals.def
+index 3f49980..857c69d 100644
+--- include/gdb/signals.def
++++ include/gdb/signals.def
+@@ -197,4 +197,5 @@ SET (GDB_EXC_BREAKPOINT, 150, "EXC_BREAKPOINT", "Breakpoint")
  /* If you are adding a new signal, add it just above this comment.  */
  
  /* Last and unused enum value, for sizing arrays, etc.  */
--SET (GDB_SIGNAL_LAST, 151, NULL, "GDB_SIGNAL_MAGIC")
+-SET (GDB_SIGNAL_LAST, 151, NULL, "GDB_SIGNAL_LAST")
 +SET (GDB_SIGNAL_FBSD_LIBRT, 151, "SIGLIBRT", "GDB_SIGNAL_FBSD_LIBRT")
 +SET (GDB_SIGNAL_LAST, 152, NULL, "GDB_SIGNAL_MAGIC")
