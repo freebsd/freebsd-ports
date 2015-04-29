@@ -4,7 +4,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	3.12.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -106,11 +106,6 @@ CONFIGURE_ARGS+=--disable-contact-maps
 #MAPS_BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 .include <bsd.port.options.mk>
-
-# webkit-gtk3 needs this
-.if ${OSVERSION} < 1000000
-USES+=	compiler:c++11-lib
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
