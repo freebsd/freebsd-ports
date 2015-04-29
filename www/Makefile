@@ -1552,6 +1552,7 @@
     SUBDIR += py-flask-admin
     SUBDIR += py-flask-bootstrap
     SUBDIR += py-flask-cache
+    SUBDIR += py-flask-cors
     SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-oauthlib
     SUBDIR += py-flask-restful
