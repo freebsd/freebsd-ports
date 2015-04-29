@@ -52,6 +52,8 @@ OPTIONS_DEFINE=	\
 	MAIL_SMTP \
 	MAIL_SSL \
 	SPDY \
+	STREAM \
+	STREAM_SSL \
 	THREADS \
 	WWW \
 	CACHE_PURGE \
@@ -136,6 +138,8 @@ MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 SPDY_DESC=			Enable SPDY protocol support (SSL req.)
+STREAM_DESC=			Enable stream module
+STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
@@ -721,6 +725,15 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-xss-nginx-module-${GIT_XSS_VERS
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_spdy_module
+.endif
+
+.if ${PORT_OPTIONS:MSTREAM}
+CONFIGURE_ARGS+=--with-stream
+.if ${PORT_OPTIONS:MSTREAM}
+NGINX_OPENSSL=	yes
+USE_HTTP_SSL=	yes
+CONFIGURE_ARGS+=--with-stream_ssl_module
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
