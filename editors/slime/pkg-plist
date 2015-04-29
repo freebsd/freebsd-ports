@@ -2,6 +2,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/slime-refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/slime-small.pdf
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/ChangeLog
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-autodoc-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-c-p-c-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-cl-indent-test.txt
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-enclosing-context-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-fontifying-fu-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-indentation-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-mdot-fu-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-parse-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-presentations-tests.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-repl-tests.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/bridge.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/inferior-slime.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-asdf.el
@@ -14,8 +24,8 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-editing-commands.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-enclosing-context.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fancy-inspector.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fancy.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fancy-trace.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fancy.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fontifying-fu.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fuzzy.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-highlight-edits.el
@@ -67,16 +77,6 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-sprof.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-trace-dialog.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-util.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-autodoc-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-c-p-c-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-cl-indent-test.txt
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-enclosing-context-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-fontifying-fu-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-indentation-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-mdot-fu-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-parse-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-presentations-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test/slime-repl-tests.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/abcl.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/allegro.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/backend.lisp
@@ -103,6 +103,7 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/start-swank.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank.asd
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/xref.lisp
@@ -110,7 +111,10 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert-x.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/hyperspec.el
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/swank/clasp.lisp
+@dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib
+@dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime
 %%PORTDOCS%%@dir %%DOCSDIR%%
