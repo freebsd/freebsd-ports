@@ -31,6 +31,15 @@
  
  # Gnu cp
  GCP	    = /bin/cp
+@@ -59,7 +59,7 @@
+ CPLEXFLAGS      = -DCPX_PROTOTYPE_ANSI -DPROTOTYPE_MAX
+ CCFLAG_SYS      = -DABACUS_SYS_LINUX -DABACUS_THROW_WITH_INFO
+ CCFLAG_COMPILER = -DABACUS_COMPILER_GCC43 -Wall
+-CCFLAG_DEBOPT   = -O2
++CCFLAG_DEBOPT   = %%CXXFLAGS%%
+ CCFLAG_PARALLEL =
+ 
+ # default parallel flags (to be defined in machine specific makefile).
 @@ -141,7 +141,8 @@
  DEPEND = $(OBJDIR)/Makefile.dep
  
@@ -47,14 +56,14 @@
  # The basic ABACUS library
 -abacus-base:	$(LIBDIR)/stuff/abacus-base.a
 +abacus-base-static:	$(LIBDIR)/stuff/abacus-base.a
-+abacus-base-shared:	$(LIBDIR)/stuff/abacus-base.so
++abacus-base-shared:	$(LIBDIR)/stuff/abacus-base.so.1
  
  $(LIBDIR)/stuff/abacus-base.a: $(ABACUS_O)
  	rm -f $@
  	@$(PRE_ARCHIVE) $(ABACUS_O)
  	$(ARCHIVE) $@ $(ABACUS_O)
  
-+$(LIBDIR)/stuff/abacus-base.so: $(ABACUS_O)
++$(LIBDIR)/stuff/abacus-base.so.1: $(ABACUS_O)
 +	rm -f $@
 +	$(CXX) -shared -o $@ $(ABACUS_O)
 +
@@ -68,7 +77,7 @@
  
  abacus: lib-all
  	cp $(LIBDIR)/stuff/abacus-base.a $(LIBDIR)/libabacus-osi.a
-+	cp $(LIBDIR)/stuff/abacus-base.so $(LIBDIR)/libabacus-osi.so
++	cp $(LIBDIR)/stuff/abacus-base.so.1 $(LIBDIR)/libabacus-osi.so.1
  	mkdir $(LIBDIR)/temp
  	cd $(LIBDIR)/temp; ar x ../stuff/interface-osi.a 
  	find $(LIBDIR)/temp -name \*.o | xargs -n1 ar r $(LIBDIR)/libabacus-osi.a
