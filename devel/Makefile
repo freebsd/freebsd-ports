@@ -3946,6 +3946,7 @@
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-path.py
+    SUBDIR += py-pathlib
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
