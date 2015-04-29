@@ -1,0 +1,13 @@
+Please configure your AWS credentials, either through environment variables or
+~/.boto config file.
+
+For example:
+
+export AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXX
+export AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+or in ~/.boto (make sure you chmod 600 ~/.boto):
+
+[Credentials]
+aws_access_key_id = XXXXXXXXXXXXXX
+aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
