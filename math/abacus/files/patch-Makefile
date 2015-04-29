@@ -27,7 +27,7 @@
  
 +$(LIBDIR)/stuff/abacus-base.so.1: $(ABACUS_O:%.o=%.So)
 +	rm -f $@
-+	$(CXX) -shared -o $@ $(ABACUS_O:%.o=%.So)
++	$(CCC) $(LDFLAGS) -shared -o $@ $(ABACUS_O:%.o=%.So)
 +
  # Build the library distribution directory (lib and lib/stuff)
 -lib-all: subdirs abacus-base lpif interface $(ADDITIONAL_LIB_ALL)
