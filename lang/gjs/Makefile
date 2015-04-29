@@ -4,6 +4,7 @@
 
 PORTNAME=	gjs
 PORTVERSION=	1.42.0
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +15,7 @@ COMMENT=	GNOME Javascript binding
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24
 
-USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig \
+USES=		compiler:c++11-lib gettext gmake libtool pathfix pkgconfig \
 		python:build tar:xz
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
