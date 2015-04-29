@@ -167,7 +167,7 @@ LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
-CONFIGURE_ARGS+=	--disable-glx
+CONFIGURE_ARGS+=	--disable-opengl
 .else
 USE_GL=		yes
 .endif
