@@ -1,0 +1,4 @@
+Flask-Cors is a simple extension to Flask allowing you to support cross-origin
+resource sharing (CORS) using a simple decorator.
+
+WWW: https://github.com/corydolphin/flask-cors
