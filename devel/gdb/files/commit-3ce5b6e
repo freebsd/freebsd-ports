@@ -1,0 +1,21 @@
+diff --git gdb/fbsd-tdep.c gdb/fbsd-tdep.c
+index 5d17f03..9609cd8 100644
+--- gdb/fbsd-tdep.c
++++ gdb/fbsd-tdep.c
+@@ -89,7 +89,7 @@ fbsd_collect_regset_section_cb (const char *sect_name, int size,
+ static char *
+ fbsd_make_corefile_notes (struct gdbarch *gdbarch, bfd *obfd, int *note_size)
+ {
+-  const struct regcache *regcache = get_current_regcache ();
++  struct regcache *regcache = get_current_regcache ();
+   char *note_data;
+   Elf_Internal_Ehdr *i_ehdrp;
+   struct fbsd_collect_regset_section_cb_data data;
+@@ -104,6 +104,7 @@ fbsd_make_corefile_notes (struct gdbarch *gdbarch, bfd *obfd, int *note_size)
+   data.obfd = obfd;
+   data.note_data = NULL;
+   data.note_size = note_size;
++  target_fetch_registers (regcache, -1);
+   gdbarch_iterate_over_regset_sections (gdbarch,
+ 					fbsd_collect_regset_section_cb,
+ 					&data, regcache);
