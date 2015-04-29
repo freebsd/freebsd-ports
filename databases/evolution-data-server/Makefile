@@ -4,6 +4,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.12.11
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,6 +27,11 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:xz
+# Unbreak mail/evolution with webkit-gtk3 on FreeBSD 8 and 9.  Normally
+# this change would be done there, but it is not a C++ application, so it
+# does not link directly to libstdc++ and adding the libstdc++ rpath to
+# the executable does not work at runtime.
+USES+=		compiler:c++11-lib
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
 		libxml2
 USE_OPENLDAP=	yes
