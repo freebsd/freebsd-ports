@@ -40,13 +40,15 @@
  CCFLAG_PARALLEL =
  
  # default parallel flags (to be defined in machine specific makefile).
-@@ -141,7 +141,8 @@
- DEPEND = $(OBJDIR)/Makefile.dep
+@@ -177,6 +177,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cc
+ 	$(CCC)  $(CCFLAGS) $(ADDFLAGS) -c $< -o $@
+ 	$(STRIP) $@
  
- CCFLAGS = $(ABACUS_INCLUDE) $(CCFLAG_SYS) $(CCFLAG_COMPILER) \
--	$(CCFLAG_TEMPLATE) $(CCFLAG_PARALLEL) $(CCFLAG_DEBOPT) 
-+	$(CCFLAG_TEMPLATE) $(CCFLAG_PARALLEL) $(CCFLAG_DEBOPT) \
-+	-fPIC
++# the shared object files
++$(OBJDIR)/%.So: $(SRCDIR)/%.cc
++	$(CCC) -fPIC $(CCFLAGS) $(ADDFLAGS) -c $< -o $@
++	$(STRIP) $@
++
  
  #######################################################################
  #
@@ -63,9 +65,9 @@
  	@$(PRE_ARCHIVE) $(ABACUS_O)
  	$(ARCHIVE) $@ $(ABACUS_O)
  
-+$(LIBDIR)/stuff/abacus-base.so.1: $(ABACUS_O)
++$(LIBDIR)/stuff/abacus-base.so.1: $(ABACUS_O:%.o=%.So)
 +	rm -f $@
-+	$(CXX) -shared -o $@ $(ABACUS_O)
++	$(CXX) -shared -o $@ $(ABACUS_O:%.o=%.So)
 +
  # Build the library distribution directory (lib and lib/stuff)
 -lib-all: subdirs abacus-base lpif interface $(ADDITIONAL_LIB_ALL)
