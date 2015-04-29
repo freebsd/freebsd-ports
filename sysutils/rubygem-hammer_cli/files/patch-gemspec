@@ -1,11 +1,13 @@
---- hammer_cli.gemspec.orig	2015-01-22 02:42:09.000000000 +0000
-+++ hammer_cli.gemspec	2015-01-22 02:42:46.000000000 +0000
-@@ -64,7 +64,7 @@
-     s.add_dependency(%q<json>, [">= 0"])
-     s.add_dependency(%q<rb-readline>, [">= 0"])
-     s.add_dependency(%q<fastercsv>, [">= 0"])
--    s.add_dependency(%q<mime-types>, ["~> 1.0"])
-+    s.add_dependency(%q<mime-types>, [">= 1.0"])
-     s.add_dependency(%q<apipie-bindings>, ["~> 0.0.10"])
-   end
- end
+--- hammer_cli.gemspec.orig	2015-04-24 10:43:18 UTC
++++ hammer_cli.gemspec
+@@ -33,9 +33,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<fast_gettext>, [">= 0"])
+       s.add_runtime_dependency(%q<locale>, [">= 2.0.6"])
+       s.add_runtime_dependency(%q<json>, [">= 0"])
+-      s.add_runtime_dependency(%q<rb-readline>, [">= 0"])
+-      s.add_runtime_dependency(%q<fastercsv>, [">= 0"])
+-      s.add_runtime_dependency(%q<mime-types>, ["~> 1.0"])
++      s.add_runtime_dependency(%q<mime-types>, [">= 1.0"])
+       s.add_runtime_dependency(%q<apipie-bindings>, ["~> 0.0.10"])
+     else
+       s.add_dependency(%q<clamp>, [">= 0"])
