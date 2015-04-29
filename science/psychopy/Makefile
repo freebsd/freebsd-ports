@@ -21,9 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=			python zip
 USE_PYTHON=		autoplist distutils
 
-# needed to avoid polluting /root, since psychopy
-# tries to create some configuration files on import
-# through distutils
-MAKE_ENV+=		HOME=/dev/null
-
 .include <bsd.port.mk>
