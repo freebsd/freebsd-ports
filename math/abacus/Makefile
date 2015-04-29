@@ -20,14 +20,9 @@ USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 ALL_TARGET=	abacus
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|%%CXX%%|${CXX}|' \
-		-e 's|%%PERL5%%|${PERL5}|' \
-		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|' \
-		${WRKSRC}/Makefile
+MAKE_ARGS=	CCC="${CXX}" PERL="${PERL5}" STRIP="${STRIP_CMD} -x" \
+		CCFLAG_DEBOPT="${CXXFLAGS}" \
+		OSI_INCLUDE="${LOCALBASE}/include/coin"
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.a \

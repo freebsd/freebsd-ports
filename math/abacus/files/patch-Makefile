@@ -1,45 +1,5 @@
 --- Makefile.orig	2012-01-06 14:29:04.000000000 +0100
 +++ Makefile	2013-09-05 14:35:52.000000000 +0200
-@@ -7,7 +7,7 @@
- #######################################################################
- 
- # Path to coin-osi header files 
--	OSI_INCLUDE=/usr/include/coin
-+	OSI_INCLUDE=%%LOCALBASE%%/include/coin
- # Path to solver include directories - leave empty if the solver 
- # is not installed
-      CLP_PATH=$(OSI_INCLUDE)
-@@ -40,7 +40,7 @@
- #######################################################################
- 
- # gcc 
--CCC = g++-4.4
-+CCC = %%CXX%%
- 
- # add files to an archive
- ARCHIVE	    = ar rc
-@@ -48,10 +48,10 @@
- # PRE_ARCHIVE is used to instantiate required templates (SGI)
- PRE_ARCHIVE = true
- 
--STRIP       = strip -x
-+STRIP       = true
- 
- AWK	    = awk
--PERL	    = /usr/bin/perl
-+PERL	    = %%PERL5%%
- 
- # Gnu cp
- GCP	    = /bin/cp
-@@ -59,7 +59,7 @@
- CPLEXFLAGS      = -DCPX_PROTOTYPE_ANSI -DPROTOTYPE_MAX
- CCFLAG_SYS      = -DABACUS_SYS_LINUX -DABACUS_THROW_WITH_INFO
- CCFLAG_COMPILER = -DABACUS_COMPILER_GCC43 -Wall
--CCFLAG_DEBOPT   = -O2
-+CCFLAG_DEBOPT   = %%CXXFLAGS%%
- CCFLAG_PARALLEL =
- 
- # default parallel flags (to be defined in machine specific makefile).
 @@ -177,6 +177,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cc
  	$(CCC)  $(CCFLAGS) $(ADDFLAGS) -c $< -o $@
  	$(STRIP) $@
