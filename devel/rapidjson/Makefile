@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rapidjson
-PORTVERSION=	0.150310
+PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@rawbw.com
@@ -15,8 +16,7 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
-GH_COMMIT=	c745c95
-GH_TAGNAME=	${GH_COMMIT}
+GH_PROJECT=	rapidjson
 
 USES=		cmake compiler:c++11-lang gmake
 
