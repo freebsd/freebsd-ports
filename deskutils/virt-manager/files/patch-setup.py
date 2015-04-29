@@ -15,8 +15,12 @@
  class my_install(install):
      """
      Error if we weren't 'configure'd with the correct install prefix
-@@ -605,7 +597,7 @@ setup(
-          ["data/org.virt-manager.virt-manager.gschema.xml"]),
+@@ -601,11 +593,9 @@ setup(
+             "virt-convert",
+             "virt-xml",
+         ]),
+-        ("share/glib-2.0/schemas",
+-         ["data/org.virt-manager.virt-manager.gschema.xml"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  
 -        ("share/man/man1", [
@@ -24,7 +28,7 @@
              "man/virt-manager.1",
              "man/virt-install.1",
              "man/virt-clone.1",
-@@ -627,7 +619,6 @@ setup(
+@@ -627,7 +617,6 @@ setup(
  
          'sdist': my_sdist,
          'install': my_install,
