@@ -27,6 +27,8 @@ _fetch() {
     return 0
 }
 
-_fetch "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz" GeoIP.dat
+GEOIP_DB_SERVER=${GEOIP_DB_SERVER:=geolite.maxmind.com}
 
-_fetch "http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz" GeoIPv6.dat
+_fetch "http://${GEOIP_DB_SERVER}/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz" GeoIP.dat
+
+_fetch "http://${GEOIP_DB_SERVER}/download/geoip/database/GeoIPv6.dat.gz" GeoIPv6.dat
