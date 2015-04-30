@@ -6,7 +6,7 @@ PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
