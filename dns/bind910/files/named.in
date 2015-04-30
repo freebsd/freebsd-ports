@@ -64,6 +64,10 @@ _named_confdir="${named_chrootdir}${_named_confdirroot}"
 _named_program_root="${named_program%/sbin/named}"
 _openssl_engines="%%LOCALBASE%%/lib/engines"
 
+# Needed if named.conf and rndc.conf are moved or if rndc.conf is used
+rndc_conf=${rndc_conf:-"$_named_confdir/rndc.conf"}
+rndc_key=${rndc_key:-"$_named_confdir/rndc.key"}
+
 # If running in a chroot cage, ensure that the appropriate files
 # exist inside the cage, as well as helper symlinks into the cage
 # from outside.
@@ -134,7 +138,7 @@ chroot_autoupdate()
 				"within a jail. Thus a chrooted named cannot " \
 				"be run from within a jail.  Either mount the " \
 				"devfs with null and random from the host, or " \
-				"run named without chrooting it, set" \
+				"run named without chrooting it, set " \
 				"named_chrootdir=\"\" in /etc/rc.conf."
 		fi
 	fi
@@ -188,9 +192,9 @@ named_poststart()
 
 named_reload()
 {
-	# This is a one line function, but ${named_program} is not defined early
+	# This is a one line function, but ${named_program} is not defined early
 	# enough to be there when the reload_cmd variable is defined up there.
-	${_named_program_root}/sbin/rndc reload
+	${_named_program_root}/sbin/rndc ${rndc_flags} reload
 }
 
 find_pidfile()
@@ -216,7 +220,7 @@ named_stop()
 		return 1
 	fi
 	echo 'Stopping named.'
-	if ${_named_program_root}/sbin/rndc stop 2>/dev/null; then
+	if ${_named_program_root}/sbin/rndc ${rndc_flags} stop 2>/dev/null; then
 		wait_for_pids ${rc_pid}
 	else
 		echo -n 'rndc failed, trying kill: '
@@ -265,6 +269,16 @@ named_prestart()
 	fi
 
 	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
+
+	if [ -z "${rndc_flags}" ]; then
+		if [ -s ${rndc_conf} ] ; then
+			rndc_flags="-c ${rndc_conf}"
+		elif [ -s ${rndc_key} ] ; then
+			rndc_flags="-k ${rndc_key}"
+		else
+			rndc_flags=""
+		fi
+	fi
 
 %%NATIVE_PKCS11%%	if [ -z "${named_pkcs11_engine}"]; then
 %%NATIVE_PKCS11%%		err 3 "named_pkcs11_engine has to be set to the PKCS#11 engine's library you want to use"
