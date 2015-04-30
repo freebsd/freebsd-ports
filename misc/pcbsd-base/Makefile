@@ -128,7 +128,8 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		vagrant>=0:${PORTSDIR}/sysutils/vagrant \
 		openntpd>=0:${PORTSDIR}/net/openntpd \
 		socat>=0:${PORTSDIR}/net/socat \
-		tor>=0:${PORTSDIR}/security/tor
+		tor>=0:${PORTSDIR}/security/tor \
+		zsh:${PORTSDIR}/shells/zsh
 
 NO_BUILD=	yes
 
