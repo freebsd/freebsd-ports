@@ -42,7 +42,6 @@ USE_QT5=	core gui network svg linguist multimedia imageformats \
 USES=		qmake tar:bzip2
 USE_GITHUB=     yes
 GH_ACCOUNT=     pcbsd
-GH_COMMIT=      01bfb64
 GH_TAGNAME=     v0.8.4-Release-P1
 
 QMAKE_ARGS=	CONFIG+="configure"
