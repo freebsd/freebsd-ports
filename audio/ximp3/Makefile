@@ -9,6 +9,9 @@ MASTER_SITES=	SUNSITE/apps/sound/players/mp3
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple console MP3 player
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 PORTDOCS=	*
 
