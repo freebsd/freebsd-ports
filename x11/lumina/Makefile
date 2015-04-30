@@ -4,6 +4,7 @@
 PORTNAME=	lumina
 PORTVERSION=	0.8.4
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -39,11 +40,10 @@ USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network svg linguist multimedia imageformats \
 		buildtools x11extras
-USES=		qmake tar:bzip2
-USE_GITHUB=     yes
-GH_ACCOUNT=     pcbsd
-GH_COMMIT=      01bfb64
-GH_TAGNAME=     v0.8.4-Release-P1
+USES=		qmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	pcbsd
+GH_TAGNAME=	v0.8.4-Release-P1
 
 QMAKE_ARGS=	CONFIG+="configure"
 
