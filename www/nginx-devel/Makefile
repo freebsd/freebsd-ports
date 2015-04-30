@@ -727,7 +727,7 @@ CONFIGURE_ARGS+=--with-http_spdy_module
 
 .if ${PORT_OPTIONS:MSTREAM}
 CONFIGURE_ARGS+=--with-stream
-.if ${PORT_OPTIONS:MSTREAM}
+.if ${PORT_OPTIONS:MSTREAM_SSL}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-stream_ssl_module
