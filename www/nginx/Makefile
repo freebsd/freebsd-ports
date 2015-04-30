@@ -55,7 +55,6 @@ OPTIONS_DEFINE=	\
 	THREADS \
 	WWW \
 	CACHE_PURGE \
-	CTPP2 \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
@@ -139,7 +138,6 @@ SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
-CTPP2_DESC=			3rd party CT++ module
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
