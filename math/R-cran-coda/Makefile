@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-DISTVERSION=	0.16-1
-PORTREVISION=	6
+DISTVERSION=	0.17-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Output analysis and diagnostics for MCMC
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USES=	cran:auto-plist
 
