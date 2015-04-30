@@ -16,8 +16,8 @@
 @sample %%ETCDIR%%/e2guardianf1.conf.sample
 %%ETCDIR%%/installation_or_migration_from_dg.sh
 @sample %%ETCDIR%%/lists/addheaderregexplist.sample
-@sample %%ETCDIR%%/lists/authexceptionsitelist.sample
-@sample %%ETCDIR%%/lists/authexceptionurllist.sample
+%%DNS%%@sample %%ETCDIR%%/lists/authexceptionsitelist.sample
+%%DNS%%@sample %%ETCDIR%%/lists/authexceptionurllist.sample
 @sample %%ETCDIR%%/lists/authplugins/ipgroups.sample
 @sample %%ETCDIR%%/lists/authplugins/portgroups.sample
 @sample %%ETCDIR%%/lists/bannedextensionlist.sample

@@ -3,6 +3,7 @@
 
 PORTNAME=	e2guardian
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
 USES=		iconv pkgconfig
+USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
@@ -62,7 +64,7 @@ NTLM_RUN_DEPENDS=		${LOCALBASE}/bin/iconv:${PORTSDIR}/converters/libiconv
 NTLM_USES=			iconv
 DNS_CONFIGURE_ENABLE=		dnsauth
 EMAIL_CONFIGURE_ENABLE=		email
-DEBUG_CONFIGURE_WITH=		dgdebug
+DEBUG_CONFIGURE_ON=		--with-dgdebug=on
 1024_CONFIGURE_ON=		--with-filedescriptors=1024
 2048_CONFIGURE_ON=		--with-filedescriptors=2048
 4096_CONFIGURE_ON=		--with-filedescriptors=4096
@@ -77,6 +79,18 @@ SSL_CFLAGS=			-D__SSLMITM -D__SSLCERT
 PLIST_SUB+=	SCANNERS=""
 .else
 PLIST_SUB+=	SCANNERS="@comment "
+.endif
+
+post-extract:
+.if ${PORT_OPTIONS:M2048} || ${PORT_OPTIONS:M4096} || ${PORT_OPTIONS:M8192}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "######################################################"
+	@${ECHO_MSG} "WARNING! Filedescriptors option higher then 1024."
+	@${ECHO_MSG} "Check/raise FD_SETSIZE in /usr/include/sys/select.h"
+	@${ECHO_MSG} "before preceeding with e2guardian compilation"
+	@${ECHO_MSG} "######################################################"
+	@${ECHO_MSG} ""
+	@sleep 3
 .endif
 
 post-install:
