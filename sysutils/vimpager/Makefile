@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vimpager
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
