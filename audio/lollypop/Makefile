@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lollypop
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.15
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/${PORTVERSION}
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.8:${PORTSDIR}/databases/py-sqlite3 \
 	${PYTHON_PKGNAMEPREFIX}dbus>=1.1.1:${PORTSDIR}/devel/py3-dbus \
 	${PYTHON_PKGNAMEPREFIX}gstreamer1>=1.4.0:${PORTSDIR}/multimedia/py3-gstreamer1
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+	libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
 
 USES=	shebangfix python:3 pkgconfig gettext gmake tar:xz
 GNU_CONFIGURE=	yes
