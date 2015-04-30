@@ -4,7 +4,6 @@
 PORTNAME=	cli53
 PORTVERSION=	0.4.4
 CATEGORIES=	dns
-MASTER_SITES=	GH GHC
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
@@ -17,7 +16,5 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	barnybug
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	0885f8c
 
 .include <bsd.port.mk>
