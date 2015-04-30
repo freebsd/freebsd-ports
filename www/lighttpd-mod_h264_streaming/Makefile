@@ -20,9 +20,8 @@ LICENSE_DISTFILES=	${PATCHFILES}
 LICENSE_PERMS=	dist-mirror pkg-mirror
 
 MASTERDIR=	${.CURDIR}/../lighttpd
-PLIST=		${FILESDIR}/pkg-plist.${PORTNAME}
-DESCR=		${FILESDIR}/pkg-descr.${PORTNAME}
-LATEST_LINK=	lighttpd-${PORTNAME}
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 
 MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 
