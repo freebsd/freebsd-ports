@@ -3,6 +3,7 @@
 
 PORTNAME=	lumina
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -33,7 +34,6 @@ RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins
 
 MAKE_JOBS_UNSAFE=yes
 
-GITVERSION=	1430233908
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
@@ -42,8 +42,8 @@ USE_QT5=	core gui network svg linguist multimedia imageformats \
 USES=		qmake tar:bzip2
 USE_GITHUB=     yes
 GH_ACCOUNT=     pcbsd
-GH_COMMIT=      5ccf46d
-GH_TAGNAME=     v0.8.4-Release
+GH_COMMIT=      01bfb64
+GH_TAGNAME=     v0.8.4-Release-P1
 
 QMAKE_ARGS=	CONFIG+="configure"
 
