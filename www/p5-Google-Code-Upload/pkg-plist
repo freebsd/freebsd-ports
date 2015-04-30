@@ -1,4 +1,0 @@
-bin/googlecode_upload.pl
-%%SITE_PERL%%/Google/Code/Upload.pm
-%%PERL5_MAN3%%/Google::Code::Upload.3.gz
-man/man1/googlecode_upload.pl.1.gz
