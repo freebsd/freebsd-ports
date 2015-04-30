@@ -1,6 +1,6 @@
---- configure.orig	2012-10-14 12:45:02.000000000 +0200
-+++ configure	2012-10-14 12:46:15.000000000 +0200
-@@ -622,6 +622,10 @@
+--- configure.orig	2015-04-25 14:07:07 UTC
++++ configure
+@@ -642,6 +642,10 @@ ltdl_LIBOBJS
  am__EXEEXT_FALSE
  am__EXEEXT_TRUE
  LTLIBOBJS
@@ -11,7 +11,7 @@
  LIBOBJS
  HAVE_SGML_FALSE
  HAVE_SGML_TRUE
-@@ -656,6 +660,9 @@
+@@ -676,6 +680,9 @@ LIBAUTHPGSQL
  PGSQL_LIBS
  PG_CONFIG
  authpgsqlrc
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1519,6 +1526,7 @@
+@@ -1546,6 +1553,7 @@ Optional Packages:
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,7 +29,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2755,7 +2763,7 @@
+@@ -2795,7 +2803,7 @@ else
  fi
  
  fi
@@ -38,7 +38,16 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a thread-safe mkdir -p" >&5
  $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
-@@ -13532,8 +13540,12 @@
+@@ -13456,7 +13464,7 @@ LIBS="$saveLIBS"
+ 
+ 
+ save_LIBS="$LIBS"
+-LIBS="-lcourier-unicode"
++LIBS="-L%%LOCALBASE%%/lib -lcourier-unicode"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -13749,8 +13757,12 @@ fi
  
  if test "$doauthuserdb" = "no"
  then
@@ -51,7 +60,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -13991,6 +14003,20 @@
+@@ -14208,6 +14220,20 @@ else
  fi
  
  
@@ -72,7 +81,7 @@
  
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -14209,6 +14235,256 @@
+@@ -14426,6 +14452,256 @@ fi
  
  
  

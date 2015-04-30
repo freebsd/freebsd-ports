@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.8.1
+PORTVERSION=	5.8.2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	CGI Webmail client for Maildirs
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libunicode.so:${PORTSDIR}/devel/courier-unicode
+		libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
@@ -40,6 +40,8 @@ IMAGEURL?=	${WEBDATASUBDIR}
 RCDIR?=		${PREFIX}/etc/rc.d
 CACHEDIR?=	/var/sqwebmail/cache
 CACHEOWNER?=	bin
+MAILOWN?=	courier
+MAILGRP?=	courier
 
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
@@ -65,19 +67,23 @@ CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 		--with-locking-method=fcntl \
 		--with-libintl-prefix=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG} \
-		--cache-file=${WRKDIR}/sqwebmail.cache
+		--cache-file=${WRKDIR}/sqwebmail.cache \
+		--with-mailuser=${MAILOWN} \
+		--with-mailgroup=${MAILGRP}
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 		CGIBINSUBDIR=${CGIBINSUBDIR} \
 		WEBDATADIR=${WEBDATADIR} \
-		WEBDATASUBDIR=${WEBDATASUBDIR}
+		WEBDATASUBDIR=${WEBDATASUBDIR} \
+		MAILOWN=${MAILOWN} \
+		MAILGRP=${MAILGRP} \
+		CACHEDIR=${CACHEDIR} \
+		CACHEOWN=${CACHEOWNER}
 
 EXTRA_DOCS=	README README.logindomainlist.html README.pam \
 		libs/sqwebmail/ChangeLog \
 		libs/maildir/README.maildirquota.txt \
 		libs/maildir/README.sharedfolders.txt
-
-INSTALL_TARGET=	install-strip install-configure
 
 .include <bsd.port.pre.mk>
 
@@ -195,5 +201,9 @@ post-patch:
 	@${ECHO_MSG} "sqwebmail cache directory gets cleaned up."
 	@${ECHO_MSG} "0 * * * * ${CACHEOWNER} ${PREFIX}/share/sqwebmail/cleancache.pl"
 	@${ECHO_MSG} ""
+
+post-install:
+	@${MV} ${STAGEDIR}/${ETCDIR}/ldapaddressbook.dist ${STAGEDIR}/${ETCDIR}/ldapaddressbook.sample
+	@${MV} ${STAGEDIR}/${ETCDIR}/sqwebmaild.dist ${STAGEDIR}/${ETCDIR}/sqwebmaild.sample
 
 .include <bsd.port.post.mk>
