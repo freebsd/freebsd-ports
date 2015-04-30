@@ -215,7 +215,7 @@ man/man1/spamd.1.gz
 @dir /var/lib/spamassassin
 @dir /var/lib
 @dir /var/db/spamassassin
-@dir(%%USER%%,%%GROUP,) /var/run/spamd
+@dir(%%USER%%,%%GROUP%%,) /var/run/spamd
 @comment ##################################################################
 @unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
