@@ -34,13 +34,6 @@ MAKE_JOBS_UNSAFE=yes
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-opus no-update \
 		bundled-celt no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
 
-.include <bsd.port.pre.mk>
-
-# PCH is broken on GCC
-.if ${COMPILER_TYPE} == gcc
-CONFIG+=	no-pch
-.endif
-
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
 OPTIONS_DEFINE=	DBUS BONJOUR
@@ -59,6 +52,13 @@ USE_QT4+=	dbus
 CONFIG+=	no-bonjour
 .else
 LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+.endif
+
+.include <bsd.port.pre.mk>
+
+# PCH is broken on GCC
+.if ${COMPILER_TYPE} == gcc
+CONFIG+=	no-pch
 .endif
 
 post-patch:
