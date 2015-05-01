@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	remind:${PORTSDIR}/deskutils/remind
 
+BROKEN=		pending introduction of new camlp4 (PR 195773)
+
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 
