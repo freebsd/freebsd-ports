@@ -35,7 +35,7 @@ minecraft_start()
 	else
 		echo "Starting ${name}."
 		cd %%PREFIX%%/minecraft-server
-		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_mem} -Xms${minecraft_mem} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.1.8.1.jar nogui'"
+		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_mem} -Xms${minecraft_mem} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.1.8.4.jar nogui'"
 	fi
 }
 
