@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	certifi
-PORTVERSION=	14.05.14
+PORTVERSION=	2015.04.28
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Mozilla's SSL certificates
 
 LICENSE=	ISCL
 
-USES=	python
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
