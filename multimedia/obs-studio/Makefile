@@ -19,8 +19,8 @@ USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=	x11extras wm
 USE_LDCONFIG=	yes
 USE_GL+=	gl
-USE_QT5=	core gui network svg multimedia imageformats \
-		buildtools x11extras
+USE_QT5=	core dbus gui opengl network svg multimedia \
+		imageformats buildtools qmake x11extras
 CFLAGS+=	-fPIC
 LDFLAGS+=	-lsysinfo
 USES=		cmake compiler:c11
