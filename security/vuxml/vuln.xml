@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="64e6006e-f009-11e4-98c6-000c292ee6b8">
+    <topic>powerdns -- Label decompression bug can cause crashes or CPU spikes</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><lt>3.4.4</lt></range>
+      </package>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>3.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PowerDNS project reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/">
+	  <p>A bug was discovered in our label decompression code, making it
+	    possible for names to refer to themselves, thus causing a loop during
+	    decompression. On some platforms, this bug can be abused to cause
+	    crashes. On all platforms, this bug can be abused to cause
+	    service-affecting CPU spikes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1868</cvename>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-23</discovery>
+      <entry>2015-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="210f80b9-ede4-11e4-81c4-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
