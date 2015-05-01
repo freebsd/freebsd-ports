@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USES=		desktop-file-utils gmake libtool shared-mime-info tar:bzip2
+USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
+		shared-mime-info tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-lbz2 -lz
 USE_GITHUB=	yes
