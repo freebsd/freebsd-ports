@@ -3,9 +3,9 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-18
 
---- lib/url.c.orig	2012-01-23 23:31:30.000000000 +0800
-+++ lib/url.c	2012-02-26 17:52:21.937920303 +0800
-@@ -797,6 +797,10 @@
+--- lib/url.c.orig	2015-04-22 05:55:54 UTC
++++ lib/url.c
+@@ -658,6 +658,10 @@ CURLcode Curl_open(struct SessionHandle 
      data->progress.flags |= PGRS_HIDE;
      data->state.current_speed = -1; /* init to negative == impossible */
  
