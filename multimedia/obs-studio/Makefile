@@ -14,6 +14,7 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=	x11extras wm
