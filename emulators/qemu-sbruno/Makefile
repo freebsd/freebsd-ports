@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.2.50.g20150310
-PORTREVISION=	1
+PORTVERSION=	2.3.50.g20150501
 CATEGORIES=	emulators
-MASTER_SITES=	GHL \
+MASTER_SITES=	GH \
 		LOCAL/nox \
 		LOCAL/nox:dtc \
 		http://people.freebsd.org/~nox/tmp/distfiles/ \
@@ -21,8 +20,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_COMMIT=	6b9c0c2
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	38afafe
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -183,7 +181,7 @@ LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
-CONFIGURE_ARGS+=	--disable-glx
+CONFIGURE_ARGS+=	--disable-opengl
 .else
 USE_GL=		yes
 .endif
