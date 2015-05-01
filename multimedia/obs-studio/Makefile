@@ -25,7 +25,8 @@ USE_QT5=	core dbus gui opengl network svg multimedia \
 CFLAGS+=	-fPIC
 LDFLAGS+=	-lsysinfo
 USES=		cmake compiler:c11
-CMAKE_ARGS+=	-DUNIX_STRUCTURE=1
+CMAKE_ARGS+=	-DUNIX_STRUCTURE=1 \
+		-DOBS_VERSION_OVERRIDE=${PORTVERSION}
 INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	jp9000
