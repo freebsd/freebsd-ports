@@ -5,10 +5,11 @@
 # PROVIDE: ircd-ratbox
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
-name="ircd_ratbox"
+name=ircd_ratbox
 rcvar=ircd_ratbox_enable
 load_rc_config $name
 
@@ -21,17 +22,13 @@ pidfile=%%RUNDIR%%/ircd.pid
 required_files="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
 
 start_precmd=prestart
-stop_precmd=prestop
+stop_precmd="rm -f ${pidfile}"
 
 prestart()
 {
-	touch $pidfile
-	chown $ircd_ratbox_user:$ircd_ratbox_group $pidfile
-}
-
-prestop()
-{
-	rm -f $pidfile
+	for i in %%LOGDIR%% %%DBDIR%% %%RUNDIR%%; do
+		install -d -o ${ircd_ratbox_user} -g ${ircd_ratbox_group} ${i}
+	done
 }
 
 run_rc_command "$1"
