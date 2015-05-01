@@ -1,6 +1,6 @@
---- Makefile.PL-orig	2013-11-02 17:48:46.000000000 +0100
-+++ Makefile.PL	2013-11-02 17:52:26.000000000 +0100
-@@ -28,49 +28,30 @@
+--- Makefile.PL.orig	2015-05-01 16:47:29 UTC
++++ Makefile.PL
+@@ -28,49 +28,30 @@ $opt = { "help" => \&Usage, };
  Getopt::Long::GetOptions(
      $opt,
      "help",
@@ -22,24 +22,24 @@
      'NAME'          => 'DBD::Cego',
      'VERSION_FROM'  => 'Cego.pm',
 -    'PREREQ_PM'     => {DBI => 1.03},
-+    'PREREQ_PM'     => {DBI => 1.628},
++    'PREREQ_PM'     => {DBI => 1.633},
      'OBJECT'        => '$(O_FILES)',
 -    'INC'           => '-I$(DBI_INSTARCH_DIR) -I' . $opt->{'prefix'} . '/include -I' . $opt->{'prefix'} . '/include',
 -    'MYEXTLIB'    => $opt->{'prefix'} . "/lib/libcego.$so* " 
 -	      . $opt->{'prefix'} . "/lib/liblfcxml.$so* " 
 -	      . $opt->{'prefix'} . "/lib/liblfcbase.$so",
--    "CC" => "g++",
--    "LD" => "g++",
+-    "CC" => "c++",
+-    "LD" => "c++",
 -    "XSPROTOARG" => "-noprototypes",
 +    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include',
 +    'MYEXTLIB'      => '-lcego -llfcxml -llfcbase',
 +    'CCFLAGS'       => '-O2 -pipe -fno-strict-aliasing -fpermissive',
 +    'LD'            => '$(CC) -L/usr/local/lib',
-+    'XSPROTOARG'    => '-noprototypes',
      'OPTIMIZE'      => '-O3 -DNDEBUG=1',
 -    'XSOPT'             => '-C++',
 -    'TYPEMAPS'          => ['perlobject.map' ],
 -    'LICENSE'	=> 'gpl3',
++    'XSPROTOARG'    => '-noprototypes',
 +    'XSOPT'         => '-C++',
 +    'TYPEMAPS'      => ['perlobject.map' ],
 +    'LICENSE'       => 'gpl3',
@@ -59,3 +59,4 @@
 +  print STDERR "Usage: perl $0 [options]\n";
    exit 1;
  }
+ 
