@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-04-29 05:35:51 UTC
++++ Makefile.in
+@@ -1175,7 +1175,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ install-exec-hook:
+ 	(cd $(DESTDIR)$(bindir); \
+ 	$(LN) gawk$(EXEEXT) gawk-$(VERSION)$(EXEEXT) 2>/dev/null ; \
+-	if [ ! -f awk$(EXEEXT) ]; \
++	if ! /usr/bin/which -s awk; \
+ 	then	$(LN_S) gawk$(EXEEXT) awk$(EXEEXT); \
+ 	fi; exit 0)
+ 
