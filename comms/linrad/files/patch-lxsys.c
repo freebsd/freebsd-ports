@@ -1,6 +1,15 @@
---- lxsys.c.orig	2014-12-08 03:10:46.000000000 -0800
-+++ lxsys.c	2014-12-08 03:11:39.000000000 -0800
-@@ -120,9 +120,9 @@
+--- lxsys.c.orig	2014-11-04 10:25:00 UTC
++++ lxsys.c
+@@ -63,7 +63,7 @@ int open_USB2LPT(void);
+ 
+ struct termios old_options;
+ #ifdef BSD
+-char serport_name[]="/dev/ttyd....";
++char serport_name[]="/dev/ttyu....";
+ #else
+ char serport_name[]="/dev/ttyS....?";
+ #endif
+@@ -120,9 +120,9 @@ char *fmmx=" mmx";
  char *fsse=" sse";
  char *fht=" ht";
  char *fprocessor="processor";
