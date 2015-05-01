@@ -4,7 +4,8 @@
 PORTNAME=	scalpel
 PORTVERSION=	2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.digitalforensicssolutions.com/Scalpel/
+MASTER_SITES=	http://www.digitalforensicssolutions.com/Scalpel/ \
+		https://fossies.org/linux/misc/
 
 MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Frugal, high performance file carver
