@@ -11,16 +11,21 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Phabricator API Bindings
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-OPTIONS_DEFINE=	PYTEST
-PYTEST_DESC=	Install Python test dependency
+OPTIONS_DEFINE=	TESTS
 
-PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
 
-regression-test: extract
-	${PYTHON_CMD} ${WRKSRC}/${PORTNAME}/tests.py
+TESTS_DESC=		Include test suite requirements
+TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
