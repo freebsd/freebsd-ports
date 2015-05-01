@@ -1,4 +1,3 @@
-bin/mmdb-dump-database
 bin/mmdb-dump-metadata
 bin/mmdb-dump-search-tree
 bin/mmdb-verify-database
