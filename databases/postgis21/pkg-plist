@@ -125,7 +125,7 @@ share/postgresql/contrib/postgis-2.1/uninstall_sfcgal.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.3--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.4--%%PORTVERSION%%.sql
-%%RASTER%%share/postgresql/extension/postgis_tiger_Geocoder--2.0.5--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.5--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.0--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.2--%%PORTVERSION%%.sql
