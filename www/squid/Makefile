@@ -21,7 +21,7 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
 PATCHFILES=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2
