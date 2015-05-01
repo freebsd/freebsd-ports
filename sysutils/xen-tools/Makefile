@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -41,7 +41,6 @@ QEMU_ARGS=	--disable-gtk \
 		--disable-smartcard-nss \
 		--disable-sdl \
 		--disable-vte \
-		--disable-vnc \
 		--disable-glx \
 		--disable-curses \
 		--disable-tools \
