@@ -29,6 +29,10 @@ PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb log_and_apply_ben
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} <= 1000000
+CFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
+
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
