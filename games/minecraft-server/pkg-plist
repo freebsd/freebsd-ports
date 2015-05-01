@@ -1,15 +1,15 @@
-bin/minecraft-server
+%%STANDALONE%%bin/minecraft-server
 @owner mcserver
 @group mcserver
 @dir minecraft-server
 @dir %%ETCDIR%%
-%%ETCDIR%%/java-args.txt
+%%STANDALONE%%%%ETCDIR%%/java-args.txt
 minecraft-server/banned-ips.json
 minecraft-server/banned-players.json
 minecraft-server/debug
 minecraft-server/eula.txt
 minecraft-server/logs
-minecraft-server/minecraft_server.1.8.1.jar
+minecraft-server/minecraft_server.1.8.4.jar
 minecraft-server/ops.json
 minecraft-server/server.properties
 minecraft-server/usercache.json
