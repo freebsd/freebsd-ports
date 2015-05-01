@@ -3,7 +3,7 @@
 PORTNAME=	zfstools
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
