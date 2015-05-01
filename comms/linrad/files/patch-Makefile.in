@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-11-04 02:25:00.000000000 -0800
-+++ Makefile.in	2014-12-08 03:03:40.000000000 -0800
+--- Makefile.in.orig	2014-11-04 10:25:00 UTC
++++ Makefile.in
 @@ -23,7 +23,7 @@
  #
  # -----------     Compilers     ----------------
@@ -9,7 +9,7 @@
  # Name the output files *.ol instead of *.o
  # so we definitely know it is for Linux.
  # (*.o files can be present by mistake)
-@@ -42,7 +42,7 @@
+@@ -42,7 +42,7 @@ WINNASM64 = C:\mingw\bin\nasm -w-orphan-
  # (*.o files can be present by mistake)
  # Always use the same flags.
  # -Wconversion -Wno-sign-conversion -Wunreachable-code
@@ -18,7 +18,7 @@
  -DSHM_INSTALLED=@LIBXEXT32_OK@ -Wimplicit \
  -DALSA_PRESENT=@ALSA32_OK@  -DIA64=0 \
  @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DSERVER=@MAKE_SERVER@ \
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ CFL	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X
  -Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
  -Wundef -fomit-frame-pointer -c -o
  
@@ -27,7 +27,7 @@
  -DCPU=@CPU@ -DSHM_INSTALLED=@LIBXEXT32_OK@ -Wimplicit \
  -DALSA_PRESENT=@ALSA32_OK@ -DIA64=0 \
  @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DSERVER=@MAKE_SERVER@ \
-@@ -58,13 +58,13 @@
+@@ -58,13 +58,13 @@ CFLN	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @
  -Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
  -Wundef -fomit-frame-pointer -c -o
  
@@ -43,7 +43,7 @@
  -DCPU=@CPU@ -DSHM_INSTALLED=@LIBXEXT64_OK@ -DALSA_PRESENT=@ALSA64_OK@ \
  -DIA64=1 @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_64_OK@ -DSERVER=@MAKE_SERVER@ \
  -Wimplicit -Wreturn-type -Wformat -m64 -Wunused -Wcomment \
-@@ -1040,7 +1040,7 @@
+@@ -1040,7 +1040,7 @@ fcdpp.ol hid.ol pcie9842.ol bladerf.ol m
  @SVGA32_LD@ \
  @SVGAGL32_LD@ \
  @LIBUDEV_32_LD@ \
@@ -52,7 +52,7 @@
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1137,7 +1137,7 @@
+@@ -1137,7 +1137,7 @@ fcdpp.ol hid.ol pcie9842.ol bladerf.ol m
  @X11_32_LD@ \
  @ALSA32_LD@ \
  @LIBUDEV_32_LD@ \
@@ -61,7 +61,7 @@
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1210,7 +1210,7 @@
+@@ -1210,7 +1210,7 @@ fcdpp.ol hid.ol pcie9842.ol bladerf.ol m
  @SVGA32_LD@ \
  @SVGAGL32_LD@ \
  @LIBUDEV_32_LD@ \
@@ -70,7 +70,7 @@
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1527,7 +1527,7 @@
+@@ -1527,7 +1527,7 @@ fcdpp.om hid.om pcie9842.om bladerf.om m
  @SVGA64_LD@ \
  @SVGAGL64_LD@ \
  @LIBUDEV_64_LD@ \
@@ -79,7 +79,7 @@
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1612,7 +1612,7 @@
+@@ -1612,7 +1612,7 @@ elektor.om fcdpp.om hid.om pcie9842.om b
  @ALSA64_LD@ \
  @X11_64_LD@ \
  @LIBUDEV_64_LD@ \
@@ -88,7 +88,7 @@
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1686,7 +1686,7 @@
+@@ -1686,7 +1686,7 @@ elektor.om fcdpp.om hid.om pcie9842.om b
  @SVGA64_LD@ \
  @SVGAGL64_LD@ \
  @LIBUDEV_64_LD@ \
