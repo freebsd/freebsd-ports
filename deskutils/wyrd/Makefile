@@ -3,6 +3,7 @@
 
 PORTNAME=	wyrd
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://pessimization.com/software/wyrd/
 
@@ -11,12 +12,11 @@ COMMENT=	Text-based front-end to Remind
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	camlp4o:${PORTSDIR}/devel/ocaml-camlp4
 RUN_DEPENDS=	remind:${PORTSDIR}/deskutils/remind
 
-BROKEN=		pending introduction of new camlp4 (PR 195773)
-
 USES=		gmake ncurses
+USE_OCAML=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wyrd etc/wyrdrc man/man1/wyrd.1.gz man/man5/wyrdrc.5.gz
