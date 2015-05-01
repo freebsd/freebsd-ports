@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lfcbase
-PORTVERSION=	1.5.11
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -12,13 +12,12 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf libtool
 
 post-patch:
 	@${REINPLACE_CMD} 's|-O3||g' ${WRKSRC}/src/Makefile.in
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblfcbase.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblfcbase.so.2
 
 .include <bsd.port.mk>
