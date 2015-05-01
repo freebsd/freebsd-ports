@@ -17,7 +17,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  			return FALSE;
  			}
 +#if __FreeBSD_version >= 1100070
-+		byte = (u_char)cmd.rdata.byte
++		byte = (u_char)cmd.rdata.byte;
 +#endif
  		}
  #endif
