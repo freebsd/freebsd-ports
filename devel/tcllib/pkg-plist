@@ -65,6 +65,8 @@ lib/tcllib/crc/crc32.tcl
 lib/tcllib/crc/crcc.tcl
 lib/tcllib/crc/pkgIndex.tcl
 lib/tcllib/crc/sum.tcl
+lib/tcllib/cron/cron.tcl
+lib/tcllib/cron/pkgIndex.tcl
 lib/tcllib/csv/csv.tcl
 lib/tcllib/csv/pkgIndex.tcl
 lib/tcllib/debug/caller.tcl
@@ -247,7 +249,6 @@ lib/tcllib/json/json_tcl.tcl
 lib/tcllib/json/json_write.tcl
 lib/tcllib/json/jsonc.tcl
 lib/tcllib/json/pkgIndex.tcl
-lib/tcllib/json/test_support.tcl
 lib/tcllib/lambda/lambda.tcl
 lib/tcllib/lambda/pkgIndex.tcl
 lib/tcllib/ldap/ldap.tcl
@@ -322,6 +323,15 @@ lib/tcllib/namespacex/namespacex.tcl
 lib/tcllib/namespacex/pkgIndex.tcl
 lib/tcllib/ncgi/ncgi.tcl
 lib/tcllib/ncgi/pkgIndex.tcl
+lib/tcllib/nettool/available_ports.tcl
+lib/tcllib/nettool/generic.tcl
+lib/tcllib/nettool/locateport.tcl
+lib/tcllib/nettool/nettool.tcl
+lib/tcllib/nettool/pkgIndex.tcl
+lib/tcllib/nettool/platform_unix.tcl
+lib/tcllib/nettool/platform_unix_linux.tcl
+lib/tcllib/nettool/platform_unix_macosx.tcl
+lib/tcllib/nettool/platform_windows.tcl
 lib/tcllib/nmea/nmea.tcl
 lib/tcllib/nmea/pkgIndex.tcl
 lib/tcllib/nns/common.tcl
@@ -333,6 +343,8 @@ lib/tcllib/nntp/nntp.tcl
 lib/tcllib/nntp/pkgIndex.tcl
 lib/tcllib/ntp/pkgIndex.tcl
 lib/tcllib/ntp/time.tcl
+lib/tcllib/oauth/oauth.tcl
+lib/tcllib/oauth/pkgIndex.tcl
 lib/tcllib/ooutil/ooutil.tcl
 lib/tcllib/ooutil/pkgIndex.tcl
 lib/tcllib/otp/otp.tcl
@@ -395,6 +407,8 @@ lib/tcllib/pop3d/pkgIndex.tcl
 lib/tcllib/pop3d/pop3d.tcl
 lib/tcllib/pop3d/pop3d_dbox.tcl
 lib/tcllib/pop3d/pop3d_udb.tcl
+lib/tcllib/processman/pkgIndex.tcl
+lib/tcllib/processman/processman.tcl
 lib/tcllib/profiler/pkgIndex.tcl
 lib/tcllib/profiler/profiler.tcl
 lib/tcllib/pt/char.tcl
@@ -403,6 +417,7 @@ lib/tcllib/pt/paths.tcl
 lib/tcllib/pt/pkgIndex.tcl
 lib/tcllib/pt/pt_astree.tcl
 lib/tcllib/pt/pt_cparam_config_critcl.tcl
+lib/tcllib/pt/pt_cparam_config_tea.tcl
 lib/tcllib/pt/pt_parse_peg.tcl
 lib/tcllib/pt/pt_parse_peg_c.tcl
 lib/tcllib/pt/pt_parse_peg_tcl.tcl
@@ -435,6 +450,24 @@ lib/tcllib/pt/pt_rdengine_oo.tcl
 lib/tcllib/pt/pt_rdengine_tcl.tcl
 lib/tcllib/pt/pt_tclparam_config_snit.tcl
 lib/tcllib/pt/pt_tclparam_config_tcloo.tcl
+lib/tcllib/pt/pt_util.tcl
+lib/tcllib/pt/rde_critcl/m.c
+lib/tcllib/pt/rde_critcl/m.h
+lib/tcllib/pt/rde_critcl/ms.c
+lib/tcllib/pt/rde_critcl/ms.h
+lib/tcllib/pt/rde_critcl/ot.c
+lib/tcllib/pt/rde_critcl/ot.h
+lib/tcllib/pt/rde_critcl/p.c
+lib/tcllib/pt/rde_critcl/p.h
+lib/tcllib/pt/rde_critcl/pInt.h
+lib/tcllib/pt/rde_critcl/param.c
+lib/tcllib/pt/rde_critcl/param.h
+lib/tcllib/pt/rde_critcl/stack.c
+lib/tcllib/pt/rde_critcl/stack.h
+lib/tcllib/pt/rde_critcl/tc.c
+lib/tcllib/pt/rde_critcl/tc.h
+lib/tcllib/pt/rde_critcl/util.c
+lib/tcllib/pt/rde_critcl/util.h
 lib/tcllib/pt/text_write.tcl
 lib/tcllib/rc4/pkgIndex.tcl
 lib/tcllib/rc4/rc4.tcl
@@ -521,7 +554,6 @@ lib/tcllib/struct/tree_c.tcl
 lib/tcllib/struct/tree_tcl.tcl
 lib/tcllib/tar/pkgIndex.tcl
 lib/tcllib/tar/tar.tcl
-lib/tcllib/tar/test-support.tcl
 lib/tcllib/tepam/pkgIndex.tcl
 lib/tcllib/tepam/tepam.tcl
 lib/tcllib/tepam/tepam_doc_gen.tcl
@@ -699,6 +731,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/counter.tcllib.n.gz
 %%MAN%%man/mann/crc16.tcllib.n.gz
 %%MAN%%man/mann/crc32.tcllib.n.gz
+%%MAN%%man/mann/cron.tcllib.n.gz
 %%MAN%%man/mann/csv.tcllib.n.gz
 %%MAN%%man/mann/cvs.tcllib.n.gz
 %%MAN%%man/mann/dacceptor.tcllib.n.gz
@@ -863,6 +896,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/multiplexer.tcllib.n.gz
 %%MAN%%man/mann/namespacex.tcllib.n.gz
 %%MAN%%man/mann/ncgi.tcllib.n.gz
+%%MAN%%man/mann/nettool.tcllib.n.gz
 %%MAN%%man/mann/nmea.tcllib.n.gz
 %%MAN%%man/mann/nns.tcllib.n.gz
 %%MAN%%man/mann/nns_auto.tcllib.n.gz
@@ -880,6 +914,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/null.tcllib.n.gz
 %%MAN%%man/mann/nullzero.tcllib.n.gz
 %%MAN%%man/mann/numtheory.tcllib.n.gz
+%%MAN%%man/mann/oauth.tcllib.n.gz
 %%MAN%%man/mann/observe.tcllib.n.gz
 %%MAN%%man/mann/ooutil.tcllib.n.gz
 %%MAN%%man/mann/optimize.tcllib.n.gz
@@ -907,10 +942,12 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/pop3d_dbox.tcllib.n.gz
 %%MAN%%man/mann/pop3d_udb.tcllib.n.gz
 %%MAN%%man/mann/prioqueue.tcllib.n.gz
+%%MAN%%man/mann/processman.tcllib.n.gz
 %%MAN%%man/mann/profiler.tcllib.n.gz
 %%MAN%%man/mann/pt.tcllib.n.gz
 %%MAN%%man/mann/pt_astree.tcllib.n.gz
 %%MAN%%man/mann/pt_cparam_config_critcl.tcllib.n.gz
+%%MAN%%man/mann/pt_cparam_config_tea.tcllib.n.gz
 %%MAN%%man/mann/pt_from_api.tcllib.n.gz
 %%MAN%%man/mann/pt_introduction.tcllib.n.gz
 %%MAN%%man/mann/pt_json_language.tcllib.n.gz
@@ -948,6 +985,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/pt_tclparam_config_snit.tcllib.n.gz
 %%MAN%%man/mann/pt_tclparam_config_tcloo.tcllib.n.gz
 %%MAN%%man/mann/pt_to_api.tcllib.n.gz
+%%MAN%%man/mann/pt_util.tcllib.n.gz
 %%MAN%%man/mann/qcomplex.tcllib.n.gz
 %%MAN%%man/mann/queue.tcllib.n.gz
 %%MAN%%man/mann/random.tcllib.n.gz
