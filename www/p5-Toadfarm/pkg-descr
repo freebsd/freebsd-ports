@@ -1,0 +1,18 @@
+Toadfarm is a module for configuring and starting your Mojolicious
+applications. You can either combine multiple applications in one
+script, or just use it as a init script.
+
+Core features:
+
+  * Wrapper around hypnotoad that provides an init script.
+
+  * Advanced routing and virtual host configuration. Also support
+    routing from behind another web server, such as nginx. This
+    feature is very much like Mojolicious::Plugin::Mount on steroids.
+
+  * Hijacking log messages to a common log file. There's also plugin,
+    Toadfarm::Plugin::AccessLog, that allows you to log the requests
+    sent to your server.
+
+
+WWW: https://metacpan.org/pod/Toadfarm
