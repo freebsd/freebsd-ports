@@ -376,6 +376,7 @@
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd
     SUBDIR += miredo
+    SUBDIR += miruo
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
