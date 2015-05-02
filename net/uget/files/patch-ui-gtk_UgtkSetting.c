@@ -1,6 +1,6 @@
---- ./uget-gtk/UgSetting.c.orig	2014-01-01 09:39:00.000000000 +0000
-+++ ./uget-gtk/UgSetting.c	2014-07-12 11:51:49.000000000 +0000
-@@ -457,7 +457,7 @@
+--- ui-gtk/UgtkSetting.c.orig	2015-04-30 23:37:53 UTC
++++ ui-gtk/UgtkSetting.c
+@@ -334,7 +334,7 @@ void  ugtk_setting_reset (UgtkSetting* s
  	setting->window.statusbar = TRUE;
  	setting->window.category  = TRUE;
  	setting->window.summary   = TRUE;
