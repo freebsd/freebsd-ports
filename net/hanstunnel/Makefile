@@ -2,30 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	hans
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF/hanstunnel/source
 
 MAINTAINER=	vsityz@gmail.com
 COMMENT=	Hans makes it possible to tunnel IPv4 through ICMP
 
-LICENSE=	FPL GPLv3 # or any later version
-LICENSE_COMB=	multi
-LICENSE_NAME_FPL=Freeware Public License
-LICENSE_FILE_FPL=${WRKSRC}/src/sha1_license.txt
-LICENSE_PERMS_FPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	GPLv3
 
-USES=		dos2unix
-DOS2UNIX_FILES=	${LICENSE_FILE_FPL}
-MAKE_ARGS=	GCC="${CC}" GPP="${CXX}" \
-		CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}" \
-		TUN_DEV_FILE="src/tun_dev_freebsd.c"
+OPTIONS_DEFINE=	CLANG
+
+CLANG_DESC=	Build with Clang instead of GCC
+
+OPTIONS_DEFAULT=	CLANG
+
 PLIST_FILES=	bin/hans
 
-# Remove CRs before ask-license to fix formatting in dialog(1)
-post-extract:	dos2unix
+SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCLANG}
+.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
+CC=		clang
+CXX=		clang++
+.else
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+CC=		clang33
+CXX=		clang++33
+.endif
+.else
+USE_GCC=	any
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hans ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/hans ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>
