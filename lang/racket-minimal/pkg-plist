@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.1.so
+lib/libracket3m-6.1.1.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -749,6 +749,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/match/compiled/struct_rkt.zo
 %%DATADIR%%/collects/racket/match/compiled/stxtime_rkt.dep
 %%DATADIR%%/collects/racket/match/compiled/stxtime_rkt.zo
+%%DATADIR%%/collects/racket/match/compiled/syntax-local-match-introduce_rkt.dep
+%%DATADIR%%/collects/racket/match/compiled/syntax-local-match-introduce_rkt.zo
 %%DATADIR%%/collects/racket/match/compiler.rkt
 %%DATADIR%%/collects/racket/match/define-forms.rkt
 %%DATADIR%%/collects/racket/match/gen-match.rkt
@@ -765,6 +767,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/match/split-rows.rkt
 %%DATADIR%%/collects/racket/match/struct.rkt
 %%DATADIR%%/collects/racket/match/stxtime.rkt
+%%DATADIR%%/collects/racket/match/syntax-local-match-introduce.rkt
 %%DATADIR%%/collects/racket/math.rkt
 %%DATADIR%%/collects/racket/path.rkt
 %%DATADIR%%/collects/racket/performance-hint.rkt
@@ -1194,12 +1197,15 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/setup/private/compiled/cc-struct_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/command-name_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/command-name_rkt.zo
+%%DATADIR%%/collects/setup/private/compiled/dylib_rkt.dep
+%%DATADIR%%/collects/setup/private/compiled/dylib_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/lib-roots_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/lib-roots_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/omitted-paths_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/omitted-paths_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/pkg-deps_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/pkg-deps_rkt.zo
+%%DATADIR%%/collects/setup/private/dylib.rkt
 %%DATADIR%%/collects/setup/private/lib-roots.rkt
 %%DATADIR%%/collects/setup/private/omitted-paths.rkt
 %%DATADIR%%/collects/setup/private/pkg-deps.rkt
@@ -1352,6 +1358,10 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse-aux_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander-prop_rkt.dep
+%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander-prop_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander_rkt.dep
+%%DATADIR%%/collects/syntax/parse/private/compiled/pattern-expander_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-attrs_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-attrs_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-data_rkt.dep
@@ -1384,6 +1394,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/opt.rkt
 %%DATADIR%%/collects/syntax/parse/private/parse-aux.rkt
 %%DATADIR%%/collects/syntax/parse/private/parse.rkt
+%%DATADIR%%/collects/syntax/parse/private/pattern-expander-prop.rkt
+%%DATADIR%%/collects/syntax/parse/private/pattern-expander.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-attrs.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-data.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-patterns.rkt
@@ -1513,3 +1525,4 @@ man/man1/raco.1.gz
 %%DATADIR%%/pkgs/pkgs.rktd
 %%DATADIR%%/pkgs/racket-lib/LICENSE.txt
 %%DATADIR%%/pkgs/racket-lib/info.rkt
+%%PORTDOCS%%@dir %%DOCSDIR%%
