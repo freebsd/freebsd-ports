@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	7.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -15,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 GH_PROJECT=	${PORTNAME}-ocaml
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	0e0196d
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
@@ -30,6 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix"/"share|${STAGEDIR}${PREFIX}/share|' \
 	-e '/datarootdir/s|$$pkg_name|&-ocaml|' \
 		${WRKSRC}/setup.ml
+	@${REINPLACE_CMD} -e 's| safe_string,||' ${WRKSRC}/_tags
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
