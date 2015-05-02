@@ -3,23 +3,22 @@
 
 PORTNAME=	nedit
 PORTVERSION=	5.6
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://people.freebsd.org/~deischen/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.nluug.nl/pub/editors/NEdit/contrib/misc/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-source
-DISTFILES=	nedit-5.6-src.tar.gz nedit.app-defaults
-EXTRACT_ONLY=	nedit-5.6-src.tar.gz
+DISTFILES=	nedit-5.6a-src.tar.gz nedit.app-defaults
+EXTRACT_ONLY=	nedit-5.6a-src.tar.gz
 
 MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
 
-BROKEN=		Unfetchable
 LICENSE=	GPLv1
 
-USES=		motif perl5
+USES=		motif
 USE_XORG=	xpm
-USE_PERL=	build
 ALL_TARGET=	freebsd
 
 PLIST_FILES=	bin/nclient \
