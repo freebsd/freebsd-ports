@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsstv
-PORTVERSION=	8.2.9
+PORTVERSION=	8.2.11
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
@@ -24,17 +24,6 @@ BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 USES=		qmake
 USE_QT4=	gui network xml moc_build rcc_build uic_build
 
-OPTIONS_DEFINE=	DOCS
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-QMAKE_ARGS=	CONFIG+=with_docs
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${STAGEDIR}${DOCSDIR}|g' \
-		${WRKSRC}/qsstv/Documentation/manual/manual.doxy
 
 .include <bsd.port.mk>
