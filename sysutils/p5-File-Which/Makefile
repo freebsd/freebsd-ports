@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	File-Which
-PORTVERSION=	1.09
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Portable implementation of `which' in Perl
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Portable implementation of which(1) in Perl
 
-TEST_DEPENDS=	p5-Test-Script>=1.05:${PORTSDIR}/devel/p5-Test-Script
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
