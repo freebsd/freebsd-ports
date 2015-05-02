@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjt
 VERSION=	9.1
-PORTREVISION=	9
+PORTREVISION=	10
 DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -12,11 +12,10 @@ DISTNAME=	wsjt-r${SVN_REV}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
-BROKEN=		Fails to configure, missing fftw3.h header
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
-LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
