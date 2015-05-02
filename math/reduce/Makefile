@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	reduce
-PORTVERSION=	20110414
-PORTREVISION=	2
+PORTVERSION=	20141130
 CATEGORIES=	math lang
-MASTER_SITES=	SF/${PORTNAME}-algebra/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}-algebra/Snapshot_2014-11-30/
+DISTNAME=	${PORTNAME}-src-2014-11-30
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Portable general-purpose computer algebra system (CSL version)
@@ -18,13 +17,14 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		gmake tar:bzip2
+USES=		autoreconf:build gmake tar:bzip2
 USE_XORG=	xext x11 xft
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
+# Avoid GNU_CONFIGURE because it breaks staging
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-csl
+CONFIGURE_ARGS+=	--with-csl
 ALL_TARGET=
 
 MAKE_JOBS_UNSAFE=	yes
@@ -37,6 +37,9 @@ TARGET_SDIR=	x86_64-unknown-${OPSYS:tl}${OSREL}
 TARGET_SDIR=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 REDUCECSL=	${WRKSRC}/cslbuild/${TARGET_SDIR}/csl
+
+CPPFLAGS+=	`freetype-config --cflags`
+LDFLAGS+=	`freetype-config --libs`
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
