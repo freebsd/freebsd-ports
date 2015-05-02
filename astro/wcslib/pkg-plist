@@ -161,6 +161,8 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/form_72.png
 %%PORTDOCS%%%%DOCSDIR%%/html/form_73.png
 %%PORTDOCS%%%%DOCSDIR%%/html/form_74.png
+%%PORTDOCS%%%%DOCSDIR%%/html/form_75.png
+%%PORTDOCS%%%%DOCSDIR%%/html/form_76.png
 %%PORTDOCS%%%%DOCSDIR%%/html/form_8.png
 %%PORTDOCS%%%%DOCSDIR%%/html/form_9.png
 %%PORTDOCS%%%%DOCSDIR%%/html/formula.repository
@@ -313,6 +315,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/testing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/threads.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vector.html
+%%PORTDOCS%%%%DOCSDIR%%/html/versioning.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcs_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcs_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcserr_8h.html
