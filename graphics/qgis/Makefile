@@ -3,7 +3,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -66,7 +66,6 @@ PLIST_SUB+=	GRASS=""
 .else
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=FALSE
 PLIST_SUB+=	GRASS="@comment "
-INFO+=		lib/qgis/grass/modules/qgis.g.info
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGIS}
