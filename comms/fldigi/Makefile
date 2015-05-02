@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.22.05
+PORTVERSION=	3.22.08
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig compiler:c++11-lib perl5 shebangfix
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
-SHEBANG_FILES=	scripts/fldigi-shell
 
 OPTIONS_DEFINE=	NATIVE_OPT FLARQ OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS DOCS
 
