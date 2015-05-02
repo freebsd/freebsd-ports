@@ -1,15 +1,22 @@
---- include/armadillo_bits/config.hpp.orig	2015-01-09 19:09:21.294357075 -0500
-+++ include/armadillo_bits/config.hpp	2015-01-09 19:12:51.862339555 -0500
-@@ -24,7 +24,7 @@
+--- include/armadillo_bits/config.hpp.orig	2015-04-10 05:54:47 UTC
++++ include/armadillo_bits/config.hpp
+@@ -24,13 +24,13 @@
  #endif
  
  #if !defined(ARMA_USE_ARPACK)
 -// #define ARMA_USE_ARPACK
 +#define ARMA_USE_ARPACK
  //// Uncomment the above line if you have ARPACK or a high-speed replacement for ARPACK.
- //// ARPACK is required for eigendecompositions of sparse matrices, eg. eigs_sym() 
+ //// ARPACK is required for eigendecompositions of sparse matrices, eg. eigs_sym(), svds() 
  #endif
-@@ -54,7 +54,7 @@
+ 
+ #if !defined(ARMA_USE_SUPERLU)
+-// #define ARMA_USE_SUPERLU
++#define ARMA_USE_SUPERLU
+ //// Uncomment the above line if you have SuperLU.
+ //// SuperLU is used for solving sparse linear systems via spsolve()
+ //// Caveat: only SuperLU version 4.3 can be used!
+@@ -68,7 +68,7 @@
  //// Uncomment the above line if you want to use Intel MKL mkl_malloc() and mkl_free() instead of standard malloc() and free()
  
  // #define ARMA_USE_ATLAS
