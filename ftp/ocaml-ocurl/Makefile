@@ -5,7 +5,8 @@ PORTNAME=	ocurl
 PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/1463/
+MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/1463/ \
+		http://ygrek.org.ua/p/release/ocurl/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	johans@FreeBSD.org
