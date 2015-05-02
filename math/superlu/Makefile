@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu
 PORTVERSION=	${P_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -76,7 +76,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/libsuperlu.a
 	${INSTALL_LIB} ${WRKSRC}/libsuperlu_${P_VERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu.so.${P_VER}
-	${LN} -fs libsuperlu.so.${PORTREVISION} \
+	${LN} -fs libsuperlu.so.${P_VER} \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu_${P_VERSION}.so
 	${LN} -fs libsuperlu_${P_VERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/libsuperlu.so
