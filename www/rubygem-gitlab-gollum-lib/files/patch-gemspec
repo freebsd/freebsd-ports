@@ -1,20 +1,13 @@
---- gitlab-gollum-lib.gemspec.orig	2015-01-22 02:57:29.000000000 +0000
-+++ gitlab-gollum-lib.gemspec	2015-01-22 02:57:52.000000000 +0000
-@@ -63,7 +63,7 @@
-     s.add_dependency(%q<github-markup>, ["< 1.0.0", ">= 0.7.5"])
-     s.add_dependency(%q<github-markdown>, ["~> 0.5.3"])
-     s.add_dependency(%q<sanitize>, ["~> 2.0.3"])
--    s.add_dependency(%q<nokogiri>, ["~> 1.5.9"])
-+    s.add_dependency(%q<nokogiri>, [">= 1.5.9"])
-     s.add_dependency(%q<stringex>, ["~> 1.5.1"])
-     s.add_dependency(%q<RedCloth>, ["~> 4.2.9"])
-     s.add_dependency(%q<mocha>, ["~> 0.13.2"])
-@@ -72,7 +72,7 @@
-     s.add_dependency(%q<wikicloth>, ["~> 0.8.0"])
-     s.add_dependency(%q<rake>, ["~> 10.0.3"])
-     s.add_dependency(%q<pry>, ["~> 0.9.12"])
--    s.add_dependency(%q<rb-readline>, ["~> 0.4.2"])
-+    s.add_dependency(%q<rb-readline>, [">= 0.4.2"])
-     s.add_dependency(%q<minitest-reporters>, ["~> 0.14.10"])
-     s.add_dependency(%q<nokogiri-diff>, ["~> 0.1.2"])
-   end
+--- gitlab-gollum-lib.gemspec.orig	2015-05-02 09:40:36 UTC
++++ gitlab-gollum-lib.gemspec
+@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<gitlab-grit>, ["~> 2.6.1"])
+       s.add_runtime_dependency(%q<github-markup>, ["< 1.0.0", ">= 0.7.5"])
+       s.add_runtime_dependency(%q<github-markdown>, ["~> 0.5.3"])
+-      s.add_runtime_dependency(%q<sanitize>, ["~> 2.0.3"])
+-      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.5.9"])
++      s.add_runtime_dependency(%q<sanitize>, [">= 2.0.3"])
++      s.add_runtime_dependency(%q<nokogiri>, [">= 1.5.9"])
+       s.add_runtime_dependency(%q<stringex>, ["~> 1.5.1"])
+       s.add_development_dependency(%q<RedCloth>, ["~> 4.2.9"])
+       s.add_development_dependency(%q<mocha>, ["~> 0.13.2"])
