@@ -11,6 +11,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.py
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyc
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyo
+%%PYTHON_SITELIBDIR%%/hgext/censor.py
+%%PYTHON_SITELIBDIR%%/hgext/censor.pyc
+%%PYTHON_SITELIBDIR%%/hgext/censor.pyo
 %%PYTHON_SITELIBDIR%%/hgext/children.py
 %%PYTHON_SITELIBDIR%%/hgext/children.pyc
 %%PYTHON_SITELIBDIR%%/hgext/children.pyo
@@ -241,6 +244,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/copies.py
 %%PYTHON_SITELIBDIR%%/mercurial/copies.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/copies.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/crecord.py
+%%PYTHON_SITELIBDIR%%/mercurial/crecord.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/crecord.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/dagparser.py
 %%PYTHON_SITELIBDIR%%/mercurial/dagparser.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dagparser.pyo
@@ -565,6 +571,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/summary.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/tags.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/json/changelist.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/json/map
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.bisect
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.changelog
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
