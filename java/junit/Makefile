@@ -2,45 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	junit
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.12
 CATEGORIES=	java devel
-MASTER_SITES=	GHL
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://repo1.maven.org/maven2/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-${PORTVERSION}-sources.jar
+EXTRACT_ONLY=
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Regression testing utility for use with the Java(TM) Language
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	junit-team
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	r${PORTVERSION}
-GH_COMMIT=	c62e2df
+RUN_DEPENDS=	${JAVAJARDIR}/hamcrest.jar:${PORTSDIR}/java/hamcrest
 
-USES=		perl5
 USE_JAVA=	yes
-USE_ANT=	yes
+NO_BUILD=	yes
 
-PORTDOCS=	README.html cpl-v10.html doc javadoc
-PORTEXAMPLES=	*
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_FILES=	%%JAVAJARDIR%%/junit.jar \
 		%%JAVAJARDIR%%/junit4.jar \
 		%%DATADIR%%/src.jar
 
 do-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit-${PORTVERSION}-SNAPSHOT.jar \
+	${INSTALL_DATA} ${DISTDIR}/junit-${PORTVERSION}.jar \
 		 ${STAGEDIR}${JAVAJARDIR}/junit.jar
 	${LN} -sf junit.jar ${STAGEDIR}${JAVAJARDIR}/junit4.jar
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit-${PORTVERSION}-SNAPSHOT-src.jar \
+	${INSTALL_DATA} ${DISTDIR}/junit-${PORTVERSION}-sources.jar \
 		${STAGEDIR}${DATADIR}/src.jar
-	cd ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT/junit/samples \
-		&& ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${INSTALL_WRKSRC} \
-		&& ${FIND} ${PORTDOCS:Njavadoc} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
-		&& ${FIND} ${PORTDOCS:Njavadoc} -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
-	cd ${INSTALL_WRKSRC}/junit${PORTVERSION}-SNAPSHOT \
-		&& ${FIND} javadoc -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
 
 .include <bsd.port.mk>

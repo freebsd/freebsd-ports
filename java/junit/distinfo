@@ -1,2 +1,4 @@
-SHA256 (junit4.11.tar.gz) = a9266060d72c43411c93d1bfae952134ad91f4115bf5769e9a0d17b3d51bd097
-SIZE (junit4.11.tar.gz) = 1974279
+SHA256 (junit-4.12.jar) = 59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a
+SIZE (junit-4.12.jar) = 314932
+SHA256 (junit-4.12-sources.jar) = 9f43fea92033ad82bcad2ae44cec5c82abc9d6ee4b095cab921d11ead98bf2ff
+SIZE (junit-4.12-sources.jar) = 200355
