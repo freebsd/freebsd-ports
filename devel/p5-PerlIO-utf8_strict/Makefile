@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PerlIO-utf8_strict
-PORTVERSION=	0.005
-PORTREVISION=	1
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.mk>
