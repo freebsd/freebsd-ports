@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Lexer generator for Unicode and OCaml
 
+BUILD_DEPENDS=	camlp4:${PORTSDIR}/devel/ocaml-camlp4
+
 USES=		gmake
 USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
