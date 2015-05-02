@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-generate_html
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
