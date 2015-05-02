@@ -550,6 +550,7 @@ lib/libqgis_networkanalysis.so.2.8.1
 lib/qgis/crssync
 %%GRASS%%lib/qgis/grass/bin/qgis.g.browser
 %%GRASS%%lib/qgis/grass/modules/qgis.d.rast
+%%GRASS%%lib/qgis/grass/modules/qgis.g.info
 lib/qgis/plugins/libcoordinatecaptureplugin.so
 lib/qgis/plugins/libdelimitedtextprovider.so
 lib/qgis/plugins/libdxf2shpconverterplugin.so
