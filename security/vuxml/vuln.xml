@@ -87996,7 +87996,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>ifmail</name>
-	<range><le>ifmail-2.15_4</le></range>
+	<range><le>2.15_4</le></range>
       </package>
     </affects>
     <description>
@@ -88013,6 +88013,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-08-23</discovery>
       <entry>2004-10-19</entry>
+      <modified>2015-05-01</modified>
     </dates>
   </vuln>
 
@@ -94085,7 +94086,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>squid</name>
-	<range><lt>squid-2.5.5</lt></range>
+	<range><lt>2.5.5</lt></range>
       </package>
     </affects>
     <description>
@@ -94106,7 +94107,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-02-29</discovery>
       <entry>2004-03-26</entry>
-      <modified>2004-03-30</modified>
+      <modified>2015-05-01</modified>
     </dates>
   </vuln>
 
