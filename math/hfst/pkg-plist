@@ -136,8 +136,8 @@ include/hfst/parsers/pmatch_utils.h
 include/hfst/parsers/xre_utils.h
 lib/libhfst.a
 lib/libhfst.so
-lib/libhfst.so.39
-lib/libhfst.so.39.0.0
+lib/libhfst.so.40
+lib/libhfst.so.40.0.0
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.py
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.pyc
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.pyo
