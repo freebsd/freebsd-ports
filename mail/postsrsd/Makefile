@@ -3,6 +3,7 @@
 
 PORTNAME=	postsrsd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com

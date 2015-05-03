@@ -67,7 +67,7 @@ if [ "x${postsrsd_idle_timeout}" != "x" ];then
     postsrsd_idle_timeout="-t ${postsrsd_idle_timeout}"
 fi
 if [ "x${postsrsd_exclude_domains}" != "x" ];then
-    postsrsd_exclude_domains="-X ${postsrsd_exclude_domains}"
+    postsrsd_exclude_domains="-X${postsrsd_exclude_domains}"
 fi
 
 command_args=" -D ${_uid_prefix} ${postsrsd_uid} -p ${pidfile} ${postsrsd_domain} ${postsrsd_secret} ${postsrsd_forward_port} ${postsrsd_reverse_port} ${postsrsd_idle_timeout} ${postsrsd_exclude_domains} ${postsrsd_flags}"
