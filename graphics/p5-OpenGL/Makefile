@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenGL
 PORTVERSION=	0.66
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHM
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	interface=FREEGLUT
 USES=		perl5 display:configure
 USE_PERL5=	configure
 USE_GL=		glut
+USE_XORG=	x11 xext xmu xi ice
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
