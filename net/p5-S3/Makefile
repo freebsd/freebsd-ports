@@ -3,7 +3,7 @@
 
 PORTNAME=	S3
 PORTVERSION=	20071102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	http://s3.amazonaws.com/doc/s3-example-code/
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USES=		perl5 zip
+USES=		perl5 shebangfix zip
+SHEBANG_FILES=	s3-driver.pl s3-test.pl
 USE_PERL5=	run
 WRKSRC=		${WRKDIR}/s3-example-libraries/perl
 
