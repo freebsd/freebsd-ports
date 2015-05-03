@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper library around git(1)
 
-RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
+LICENSE=	MIT
+
+RUN_DEPENDS=	git>=1.6:${PORTSDIR}/devel/git
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
