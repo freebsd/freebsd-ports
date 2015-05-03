@@ -14,7 +14,8 @@ COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	dhcpcd_project
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	dhcpcd
 
