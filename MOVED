@@ -7577,3 +7577,4 @@ devel/p5-base||2015-04-30|Has expired: this port is outdated and base 2.18+ is a
 security/py-certify|security/py-certifi|2015-05-01|security/py-certify is renamed into security/py-certifi
 devel/rubygem-mini_portile||2015-05-03|Has expired: Unneeded port
 devel/rubygem-mirror|devel/rubygem-rubygems-mirror|2015-05-03|Rename to match our rubygems naming
+graphics/rubygem-graphviz|graphics/rubygem-ruby-graphviz|2015-05-03|Rename to match our rubygems naming
