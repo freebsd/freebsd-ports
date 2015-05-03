@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	gnome2
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.5
 CATEGORIES=	x11 rubygems
 CATEGORIES=	x11 gnome rubygems
-MASTER_SITES=	# none
 PKGNAMEPREFIX=	rubygem-
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Meta port for all Ruby Gnome2 Gems
+
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-clutter-gtk>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-clutter-gtk \
 		rubygem-goocanvas>=2.2.0:${PORTSDIR}/graphics/rubygem-goocanvas \
@@ -23,10 +23,7 @@ RUN_DEPENDS=	rubygem-clutter-gtk>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-cl
 		rubygem-poppler>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-poppler \
 		rubygem-vte>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-vte
 
+USES=		metaport
 USE_RUBY=	yes
-NO_BUILD=	yes
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>
