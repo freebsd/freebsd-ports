@@ -1,3 +1,3 @@
-%%SITE_ARCH%%/auto/B/Generate/Generate.so
 %%SITE_ARCH%%/B/Generate.pm
+%%SITE_ARCH%%/auto/B/Generate/Generate.so
 %%PERL5_MAN3%%/B::Generate.3.gz
