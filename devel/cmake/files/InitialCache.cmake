@@ -4,3 +4,13 @@
 # devel/qt4-corelib is not).
 # See https://mail.kde.org/pipermail/kde-freebsd/2013-July/015703.html
 set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
+
+# Force CMake to look for base's liblzma, otherwise the configuration process
+# will fail if archivers/lzmalib is installed, as CMake will try to use its
+# liblzma.so.
+# Note that this is necessary only for `make configure' to work, as liblzma is
+# only ever used if CMake's bundled libarchive is being used.
+set(LIBLZMA_INCLUDE_DIR "/usr/include" CACHE PATH
+    "Directory where LibLZMA headers are located.")
+set(LIBLZMA_LIBRARY "/usr/lib/liblzma.so" CACHE PATH
+    "LibLZMA library to link against..")
