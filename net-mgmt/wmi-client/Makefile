@@ -20,7 +20,8 @@ USE_AUTOTOOLS=	autoconf:env autoheader:env
 USES=		iconv gmake tar:bzip2
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS+=	ZENHOME="${PREFIX}"
+MAKE_ARGS+=	ZENHOME="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_LIB="${INSTALL_LIB}"
 ALL_TARGET=	build
 
 PROGS=	bin/wmic bin/winexe
@@ -35,12 +36,7 @@ PLIST_SUB+=	PYTHON=""
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON}
-post-install:
-.for x in ${PROGS:S,^,${PREFIX}/,} ${PYTHONPREFIX_SITELIBDIR}/libasync_wmi_lib.so.0.0.2
-	@${STRIP_CMD} ${STAGEDIR}${x}
-.endfor
-.else
+.if !${PORT_OPTIONS:MPYTHON}
 do-install:
 .for x in ${PROGS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/Samba/source/${x} ${STAGEDIR}${PREFIX}/${x}
