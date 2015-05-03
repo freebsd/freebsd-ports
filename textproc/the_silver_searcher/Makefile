@@ -14,7 +14,6 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer
-GH_TAGNAME=	${PORTVERSION}
 
 ACLOCAL_ARGS+=	-I ${ACLOCAL_DIR}
 AUTOMAKE_ARGS+=	--add-missing
