@@ -58,7 +58,7 @@ do-configure:
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//;' Makefile
 
 post-configure:
-	    ${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/auto/RT/Authen/ExternalAuth/.packlist
