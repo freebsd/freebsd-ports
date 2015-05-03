@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	glib2
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GLib2
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-pkg-config>=0:${PORTSDIR}/devel/rubygem-pkg-config
 
