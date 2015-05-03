@@ -1,23 +1,22 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	graphviz
+PORTNAME=	ruby-graphviz
 PORTVERSION=	1.2.1
 CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz \
-		rubygem-treetop>=1.4.2:${PORTSDIR}/devel/rubygem-treetop
+LICENSE=	GPLv2
 
-GEM_NAME=	${DISTNAME}
+RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/ruby2gv bin/gem2gv bin/dot2ruby bin/git2gv bin/xml2gv
+
+PLIST_FILES=	bin/dot2ruby bin/gem2gv bin/git2gv bin/ruby2gv bin/xml2gv
 
 .include <bsd.port.mk>
