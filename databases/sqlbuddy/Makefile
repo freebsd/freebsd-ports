@@ -3,20 +3,21 @@
 
 PORTNAME=	sqlbuddy
 PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases www
-MASTER_SITES=	http://www.sqlbuddy.com/download/
-DISTNAME=	${PORTNAME}_1_3_3
 
 MAINTAINER=	horus.li@gmail.com
 COMMENT=	Web based MySQL administration with a set of PHP scripts
 
-BROKEN=		Unfetchable
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	deliciousbrains
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	b2cdc2b
+
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	ctype pcre session mysql
 WANT_PHP_WEB=	yes
@@ -37,6 +38,6 @@ do-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Installing SQL Buddy under ${WWWDIR}/"
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${CP} -R * ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${CP} -R src/* ${STAGEDIR}${WWWDIR} && ${CP} LICENSE README.md ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
