@@ -261,6 +261,7 @@
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
     SUBDIR += nxtvepg
+    SUBDIR += obs-studio
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
