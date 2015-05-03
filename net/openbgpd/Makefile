@@ -19,7 +19,6 @@ LICENSE_FILE=	${FILESDIR}/COPYING
 CONFLICTS=	zebra-[0-9]* quagga-[0-9]*
 
 WRKSRC=		${WRKDIR}
-MAKE_ARGS=	-DFREEBSDPORTS
 USES=		uidfix
 USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/bgpctl sbin/bgpd man/man5/bgpd.conf.5.gz \
