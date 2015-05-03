@@ -2,7 +2,7 @@
 
 PORTNAME=	SVN-Web
 PORTVERSION=	0.63
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,7 +35,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-HTML-Tidy>=0:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
 		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/svnweb-install
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip_questions
 
