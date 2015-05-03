@@ -34,16 +34,3 @@
  		panto = PAN_TO_TOP;
  		if (app->numberlen > 0)
  			app->pageno += atoi(app->number);
-@@ -1585,6 +1591,12 @@
- 				int isx = (modifiers & (1<<0));
- 				int xstep = isx ? 20 * dir : 0;
- 				int ystep = !isx ? 20 * dir : 0;
-+				if (!isx && dir < 0 && app->pany +
-+				    fz_pixmap_height(app->ctx, app->image) <= app->winh)
-+					pdfapp_onkey(app, 'j');
-+				else if (!isx && dir > 0 && app->pany >= 0)
-+					pdfapp_onkey(app, 'k');
-+				else
- 				pdfapp_panview(app, app->panx + xstep, app->pany + ystep);
- 			}
- 		}
