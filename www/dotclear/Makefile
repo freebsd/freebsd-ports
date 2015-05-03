@@ -10,6 +10,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
+USES=		cpe
 NO_BUILD=	yes
 USE_PHP=	mysql xml simplexml mbstring iconv gd
 USE_MYSQL=	yes
