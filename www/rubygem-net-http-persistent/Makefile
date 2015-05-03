@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-http-persistent
-PORTVERSION=	2.9
+PORTVERSION=	2.9.4
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
