@@ -122,6 +122,7 @@ CONFIGURE_ARGS+=	--with-pcre=no
 .if ${PORT_OPTIONS:MLUA} && !defined(LITE)
 USES+=		lua:51
 CONFIGURE_ARGS+=--with-lua=${PREFIX}
+CFLAGS+=	-I${LUA_INCDIR}
 CPPFLAGS+=	-I${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
