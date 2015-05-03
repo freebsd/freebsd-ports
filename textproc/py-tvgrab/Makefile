@@ -12,11 +12,8 @@ DISTNAME=	pytvgrab-lib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to write grabbers of tv scheduling collections
 
-EXTRACT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil:extract
-
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist
-
 
 PORTDOCS=	README
 
