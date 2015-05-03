@@ -1536,6 +1536,7 @@
     SUBDIR += py-django-tinymce
     SUBDIR += py-django14
     SUBDIR += py-django16
+    SUBDIR += py-django17
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
