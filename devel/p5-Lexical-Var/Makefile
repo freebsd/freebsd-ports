@@ -17,7 +17,13 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	modbuild
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501800
+BROKEN=		does not build with perl < 5.18
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/Lexical::SealRequireHints/d' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Lexical/Var.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
