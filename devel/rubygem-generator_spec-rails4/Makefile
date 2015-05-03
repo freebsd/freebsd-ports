@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	generator_spec
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
