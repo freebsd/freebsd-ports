@@ -1,7 +1,7 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%WWWDIR%%/LICENSE
-%%WWWDIR%%/README
+%%WWWDIR%%/README.md
 %%WWWDIR%%/ajaxcreatetable.php
 %%WWWDIR%%/ajaxfulltext.php
 %%WWWDIR%%/ajaximportfile.php
