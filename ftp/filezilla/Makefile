@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.10.2
+PORTVERSION=	3.10.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
 
 INSTALLS_ICONS=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake pkgconfig tar:bzip2
 USE_SQLITE=	3
 USE_WX=		3.0
 WX_CONF_ARGS=	relative
@@ -47,7 +47,11 @@ CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-USE_GCC=	yes
+# can't count on Clang having lic++ before 10, so compiler uses selects gcc
+.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
+# needed for __atomic_exchange_8, __atmoic_fetch_add_8, __atomic_store_8
+CFLAGS+=	-march=i586
+.endif
 .endif
 
 post-patch:
