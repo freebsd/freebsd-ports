@@ -22,7 +22,6 @@ NO_ARCH=	yes
 
 USES+=		perl5
 USE_PERL5=	configure
-NEED_ROOT=	yes
 
 OPTIONS_SINGLE=                 RTVERSION
 OPTIONS_SINGLE_RTVERSION=       RT40 RT42
@@ -56,6 +55,9 @@ do-configure:
 	    unset PREFIX && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
+post-configure:
+	${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/auto/RT/Extension/LDAPImport/.packlist
