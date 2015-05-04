@@ -1,0 +1,11 @@
+--- src/build-system/configure.orig	2015-04-27 09:51:45.000000000 -0500
++++ src/build-system/configure	2015-04-27 09:52:01.000000000 -0500
+@@ -1606,7 +1606,7 @@
+       | --with-muparser=* | --with-hdf5=* | --with-jni=* | --with-magic=* \
+       | --x-includes=* | --x-libraries=* | --with-3psw=* \
+       | --target=* | --with-runpath=* | --with-relative-runpath=* \
+-      | --help | --no-create | --no-recursion)
++      | --help | --no-create | --no-recursion | --localstatedir=* )
+       ;;
+ 
+       * )

@@ -13,8 +13,6 @@ DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 
-BROKEN=		Fails to configure
-
 LICENSE=	Public_domain
 LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
