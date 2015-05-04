@@ -1,5 +1,5 @@
---- ./sample/sample-config-files/loopback-server.orig	2012-09-10 17:01:08.000000000 +0200
-+++ ./sample/sample-config-files/loopback-server	2013-01-11 21:30:07.000000000 +0100
+--- sample/sample-config-files/loopback-server.orig	2014-11-29 14:59:45 UTC
++++ sample/sample-config-files/loopback-server
 @@ -9,8 +9,8 @@
  #  ./openvpn --config sample-config-files/loopback-client  (In one window) 
  #  ./openvpn --config sample-config-files/loopback-server  (Simultaneously in another window) 
