@@ -64,6 +64,16 @@ DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
 	"Game;" false
 .endif
 
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
+		/^INCLUDES=/s|$$| -I$$(LOCALBASE)/include| ; \
+		s|-I/usr/include || ; \
+		s|sdl-config|$$(SDL_CONFIG)| ; \
+		s|$$(USRLIB)|$$(LOCALBASE)/lib| ; \
+		/^CLIENT_LIBS=/s|$$| -lintl| ; \
+		/^SERVER_LIBS=/s|$$| -L$$(LOCALBASE)/lib|' \
+		${BUILD_WRKSRC}/Makefile
+
 do-install:
 .for f in ${PLIST_FILES:Mbin/*}
 	${INSTALL_SCRIPT} ${WRKDIR}/${f:T} ${STAGEDIR}${PREFIX}/${f}
