@@ -4,7 +4,7 @@
 PORTNAME=	bitchx
 CATEGORIES=	chinese
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zh-tw cursor movement friendly, wrapping clean BitchX
 
 MASTERDIR=	${.CURDIR}/../../irc/bitchx

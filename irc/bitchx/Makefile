@@ -8,7 +8,6 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	dan.mashal@gmail.com
-# Co-maintainer: Chris Petrik <chris@bsdjunk.com> (PR/181627)
 COMMENT=	Feature-rich scriptable IRC client
 
 LICENSE=	BSD3CLAUSE
