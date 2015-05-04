@@ -6,7 +6,7 @@ PORTVERSION=	0.3.11
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP client made in C sharp
 
 GNU_CONFIGURE=	yes
