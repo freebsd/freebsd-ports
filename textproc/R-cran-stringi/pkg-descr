@@ -1,0 +1,7 @@
+stringi (pronounced "stringy") is THE R package for fast, correct,
+consistent and convenient string/text processing in each locale and
+any native character encoding. The use of the ICU library gives R
+users a platform-independent set of functions known to Java, Perl,
+Python, PHP, and Ruby programmers.
+
+WWW: http://www.rexamine.com/resources/stringi/
