@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/193017975/
+MASTER_SITES=	http://launchpadlibrarian.net/196367574/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trociny@FreeBSD.org
