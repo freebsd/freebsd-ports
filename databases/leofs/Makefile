@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
-GH_PROJECT=	leofs
-GH_TAGNAME=	${PORTVERSION}
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
