@@ -13,6 +13,8 @@ COMMENT=	V8 JavaScript for client and server
 
 LICENSE=	MIT
 
+BROKEN=		Uses removed MAP_NORESERVE
+
 USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
