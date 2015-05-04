@@ -5,7 +5,7 @@ PORTVERSION=	0.8.8c${PATCHLEVEL}
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
 LICENSE=	GPLv2

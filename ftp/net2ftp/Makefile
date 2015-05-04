@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based FTP client written in PHP
 
 LICENSE=	GPLv2

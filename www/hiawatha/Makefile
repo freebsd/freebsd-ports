@@ -6,7 +6,7 @@ PORTVERSION=	9.12
 CATEGORIES=	www
 MASTER_SITES=	SF/fbsdports/hiawatha/
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2

@@ -9,7 +9,7 @@ MASTER_SITES=	https://polarssl.org/download/
 PKGNAMESUFFIX=	13
 DISTNAME=	mbedtls-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
