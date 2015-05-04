@@ -1,7 +1,3 @@
+@(,games,2755) bin/xrobots
+@(,games,0664) lib/X11/xrobotscores
 man/man6/xrobots.6.gz
-@mode 2755
-@group games
-bin/xrobots
-@mode 664
-@group games
-lib/X11/xrobotscores
