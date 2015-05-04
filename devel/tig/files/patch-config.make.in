@@ -1,7 +1,7 @@
---- ./config.make.in.orig	2014-05-10 09:51:50.000000000 +0800
-+++ ./config.make.in	2014-05-10 09:53:07.000000000 +0800
-@@ -12,7 +12,7 @@
- CFLAGS = @CFLAGS@
+--- config.make.in.orig	2015-04-09 00:19:11 UTC
++++ config.make.in
+@@ -12,7 +12,7 @@ CC = @CC@
+ CFLAGS = @CFLAGS@ @COVERAGE_CFLAGS@
  CPPFLAGS = @CPPFLAGS@ -DHAVE_CONFIG_H
  LDFLAGS = @LDFLAGS@
 -LDLIBS = @LIBS@ @CURSES_LIB@
