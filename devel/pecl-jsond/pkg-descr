@@ -1,0 +1,3 @@
+This is a drop-in alternative to the standard PHP JSON extension.
+
+WWW: https://pecl.php.net/package/jsond
