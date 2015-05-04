@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.3.6
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
@@ -25,7 +25,10 @@ SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME ENGINEFIX
+# set PLUGIN_LIBDIR so that unqualified plugin paths are found:
+CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
+
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME ENGINEFIX2
 OPTIONS_DEFAULT=	EASYRSA OPENSSL
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
@@ -34,7 +37,7 @@ PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 POLARSSL_DESC=		SSL/TLS support via PolarSSL
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
-ENGINEFIX_DESC=		EXPERIMENTAL patch to fix SSL engine use
+ENGINEFIX2_DESC=	New EXPERIMENTAL patchset for SSL engine use (OpenSSL)
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
@@ -47,15 +50,18 @@ X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MENGINEFIX}
-EXTRA_PATCHES+=		${FILESDIR}/150322-Reload-OpenSSL-engines-after-forking.patch:-p1
+# patches to fix PR 195004, https://community.openvpn.net/openvpn/ticket/480
+.if ${PORT_OPTIONS:MENGINEFIX2}
+EXTRA_PATCHES+=		${FILESDIR}/EF1.patch:-p1 \
+			${FILESDIR}/EF2.patch:-p1 \
+			${FILESDIR}/EF3.patch:-p1
 .endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
 . if ${PORT_OPTIONS:MX509ALTUSERNAME}
 BROKEN=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. Disable X509ALTUSERNAME, or use OpenSSL instead
 . else
-LIB_DEPENDS+=		libpolarssl.so.5:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
 CONFIGURE_ARGS+=	--with-crypto-library=polarssl
 . endif
 .else
@@ -66,7 +72,7 @@ CONFIGURE_ARGS+=	--with-crypto-library=openssl
 USE_RC_SUBR=		openvpn
 USE_LDCONFIG=		${PREFIX}/lib
 
-SUB_FILES=		pkg-message
+SUB_FILES=		pkg-message openvpn-client
 
 .include <bsd.port.pre.mk>
 
@@ -91,6 +97,11 @@ pre-configure:
 	@${ECHO} ""
 .endif
 
+post-configure:
+	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
+	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
+	    ${WRKSRC}/src/plugins/down-root/Makefile
+
 post-build:
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
@@ -101,6 +112,10 @@ post-build:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.up ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.down ${STAGEDIR}${PREFIX}/libexec/openvpn-client.down
+	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
+	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
