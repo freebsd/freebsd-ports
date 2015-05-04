@@ -158,3 +158,4 @@ lib/ocaml/camlp4/camlp4prof.cmx
 lib/ocaml/camlp4/camlp4prof.o
 lib/ocaml/camlp4/camlp4r.cma
 lib/ocaml/camlp4/camlp4rf.cma
+lib/ocaml/camlp4/META
