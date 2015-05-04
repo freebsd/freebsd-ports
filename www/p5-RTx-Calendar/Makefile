@@ -19,7 +19,6 @@ BUILD_DEPENDS=	p5-Date-ICal>0:${PORTSDIR}/devel/p5-Date-ICal      \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-NEED_ROOT=	yes
 
 USES+=		perl5
 USE_PERL5=	configure
@@ -59,6 +58,9 @@ do-configure:
 	    unset PREFIX && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
+post-configure:
+	${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/auto/RTx/Calendar/.packlist
