@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ip2location
-PORTVERSION=	6.0.3
+PORTVERSION=	7.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ip2location.com/downloads/
 DISTNAME=	${PORTNAME}-c-${PORTVERSION}
@@ -12,12 +12,12 @@ COMMENT=	C library to find user\'s location
 
 LICENSE=	LGPL3
 
-USES=		libtool:keepla perl5
+USES=		autoreconf libtool perl5
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-post-configure:
-	(cd ${WRKSRC}/data && ${MAKE} convert)
+post-install:
+	(cd ${WRKSRC}/data && ${MAKE} convert install-data DESTDIR=${STAGEDIR})
 
 .include <bsd.port.mk>
