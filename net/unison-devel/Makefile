@@ -18,10 +18,10 @@ IGNORE=		No devel release available. \
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=yes
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*

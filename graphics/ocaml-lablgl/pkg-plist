@@ -106,8 +106,6 @@ lib/ocaml/stublibs/dlltogl.so
 %%EXAMPLESDIR%%/lablglut/caml-images/OCamlMakefile
 %%EXAMPLESDIR%%/lablglut/caml-images/main.ml
 %%EXAMPLESDIR%%/lablglut/caml-images/ppm.ppm
-%%EXAMPLESDIR%%/lablglut/etc/draw2d.ml
-%%EXAMPLESDIR%%/lablglut/etc/in-progress/scene_graph.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/README
 %%EXAMPLESDIR%%/lablglut/lablGL/checker.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/gears.ml

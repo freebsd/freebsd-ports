@@ -4,6 +4,7 @@
 PORTNAME=	frama-c
 DISTVERSIONPREFIX=	Sodium-
 DISTVERSION=	20150201
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://frama-c.com/download/
 

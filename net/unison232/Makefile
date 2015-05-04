@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -17,10 +17,10 @@ COMMENT=	User-level file synchronization tool
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=yes
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 

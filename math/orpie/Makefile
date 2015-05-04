@@ -16,6 +16,7 @@ LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 USES=		gmake
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
