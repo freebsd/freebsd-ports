@@ -1,0 +1,8 @@
+Objective Caml interface to Tk
+
+LablTk is an interface to the Tcl/Tk GUI framework. It allows to
+develop GUI applications in a speedy and type safe way. A legacy
+Camltk interface is included. The OCamlBrowser library viewer is
+also part of this project.
+
+WWW: https://forge.ocamlcore.org/projects/labltk/
