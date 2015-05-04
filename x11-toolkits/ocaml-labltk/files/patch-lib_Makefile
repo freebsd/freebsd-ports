@@ -1,0 +1,18 @@
+--- lib/Makefile.orig	2014-09-18 04:08:33 UTC
++++ lib/Makefile
+@@ -75,7 +75,7 @@ $(LIBNAME)top$(EXE) : $(LIBNAME).cma ../
+ $(LIBNAME): Makefile
+ 	@echo Generate $@
+ 	@echo "#!/bin/sh" > $@
+-	@echo 'exec $(INSTALLDIR)/$(LIBNAME)top$(EXE) -I $(INSTALLDIR) "$$@"' >> $@
++	@echo 'exec %%SCRIPTBASE%%/$(LIBNAME)top$(EXE) -I %%SCRIPTBASE%% "$$@"' >> $@
+ 
+ install-script: $(LIBNAME)
+ 	cp $(LIBNAME) $(INSTALLBINDIR)
+@@ -114,4 +114,4 @@ installopt:
+ 	cd $(INSTALLDIR); $(RANLIB) $(LIBNAME).$(A)
+ 	chmod 644 $(INSTALLDIR)/$(LIBNAME).cmxa
+ 	chmod 644 $(INSTALLDIR)/$(LIBNAME).$(A)
+-endif
+\ No newline at end of file
++endif

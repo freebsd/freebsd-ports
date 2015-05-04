@@ -122,6 +122,7 @@
     SUBDIR += neXtaw
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2
+    SUBDIR += ocaml-labltk
     SUBDIR += open-motif
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
