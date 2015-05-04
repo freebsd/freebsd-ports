@@ -1,5 +1,5 @@
---- Makefile.orig	2011-04-20 20:46:33.000000000 +0200
-+++ Makefile	2011-04-20 21:22:34.000000000 +0200
+--- Makefile.orig	2011-04-20 18:46:33 UTC
++++ Makefile
 @@ -1,7 +1,7 @@
  #	$OpenBSD: Makefile,v 1.48 2010/10/15 08:44:12 tobias Exp $
  
@@ -9,7 +9,7 @@
  CPPFLAGS+=-I${.CURDIR}
  
  SRCS=	cvs.c add.c admin.c annotate.c atomicio.c commit.c config.c \
-@@ -12,14 +12,14 @@
+@@ -12,14 +12,14 @@ SRCS=	cvs.c add.c admin.c annotate.c ato
  	root.c server.c status.c tag.c trigger.c worklist.c util.c update.c \
  	version.c watch.c xmalloc.c
  
@@ -20,7 +20,7 @@
 -CFLAGS+=-Wsign-compare
 -DEBUG=	-g -ggdb
 -YFLAGS=
-+CFLAGS+=-DSIZE_MAX=ULONG_MAX
++CFLAGS+=-DSIZE_MAX=ULONG_MAX -DHOST_NAME_MAX=_POSIX_HOST_NAME_MAX
 +DPADD+= ${LIBZ}
 +LDADD+= -lz -lmd
  
