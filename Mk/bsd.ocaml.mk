@@ -17,6 +17,10 @@
 # USE_OCAML_FINDLIB	-	Set if your port uses ocamlfind to install
 #				packages. Package direcories will be
 #				automatically deleted.
+# USE_OCAML_CAMLP4	-	Set if your port uses camlp4 to build.
+# USE_OCAML_TK		-	Set if you port needs ocaml-labltk.
+# NO_OCAMLTK_BUILDDEPENDS -	Don't add labltk to BUILD|EXTRACT|PATCH_DEPENDS.
+# NO_OCAMLTK_RUNDEPENDS	-	Don't add labltk to RUN_DEPENDS.
 # USE_OCAML_LDCONFIG	-	Set if your port installs shared libraries
 #				into ocaml site-lib dir. OCaml ld.conf file
 #				will be automatically processed.
@@ -44,6 +48,8 @@ OCAMLC?=		${LOCALBASE}/bin/ocamlc
 OCAMLC_OPT?=		${LOCALBASE}/bin/ocamlc.opt
 OCAMLCP?=		${LOCALBASE}/bin/ocamlcp
 OCAMLFIND?=		${LOCALBASE}/bin/ocamlfind
+CAMLP4?=		${LOCALBASE}/bin/camlp4
+OCAMLTK?=		${LOCALBASE}/bin/labltk
 
 #
 # OCaml library directory
@@ -66,6 +72,18 @@ OCAMLC_DEPEND?=		${OCAMLC}:${OCAMLC_PORT}
 #
 OCAMLFIND_PORT?=	${PORTSDIR}/devel/ocaml-findlib
 OCAMLFIND_DEPEND?=	${OCAMLFIND}:${OCAMLFIND_PORT}
+
+#
+# OCaml camlp4 port dependency
+#
+CAMLP4_PORT?=		${PORTSDIR}/devel/ocaml-camlp4
+CAMLP4_DEPEND?=		${CAMLP4}:${CAMLP4_PORT}
+
+#
+# OCaml TK bindings dependency
+#
+OCAMLTK_PORT?=		${PORTSDIR}/x11-toolkits/ocaml-labltk
+OCAMLTK_DEPENDS?=	${OCAMLTK}:${OCAMLTK_PORT}
 
 #
 # Common OCaml examples and documents location
@@ -133,6 +151,21 @@ ocaml-findlib:
 	@${ECHO_CMD} "@unexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
 		>> ${TMPPLIST}
 .  endfor
+. endif
+.endif
+
+.if defined(USE_OCAML_CAMLP4)
+BUILD_DEPENDS+=		${CAMLP4_DEPEND}
+.endif
+
+.if defined(USE_OCAML_TK)
+. if !defined(NO_OCAMLTK_BUILDDEPENDS)
+EXTRACT_DEPENDS+=	${OCAMLTK_DEPENDS}
+PATCH_DEPENDS+=		${OCAMLTK_DEPENDS}
+BUILD_DEPENDS+=		${OCAMLTK_DEPENDS}
+. endif
+. if !defined(NO_OCAMLTK_RUNDEPENDS)
+RUN_DEPENDS+=		${OCAMLTK_DEPENDS}
 . endif
 .endif
 

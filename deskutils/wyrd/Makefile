@@ -12,11 +12,11 @@ COMMENT=	Text-based front-end to Remind
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	camlp4o:${PORTSDIR}/devel/ocaml-camlp4
 RUN_DEPENDS=	remind:${PORTSDIR}/deskutils/remind
 
 USES=		gmake ncurses
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wyrd etc/wyrdrc man/man1/wyrd.1.gz man/man5/wyrdrc.5.gz

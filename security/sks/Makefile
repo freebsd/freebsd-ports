@@ -9,11 +9,10 @@ MASTER_SITES=	http://cdn.bitbucket.org/skskeyserver/sks-keyserver/downloads/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
-BUILD_DEPENDS=	camlp4:${PORTSDIR}/devel/ocaml-camlp4
-
 PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=yes
 USE_BDB=	5
 USES=		perl5 gmake shebangfix tar:tgz
 USE_PERL5=	build
