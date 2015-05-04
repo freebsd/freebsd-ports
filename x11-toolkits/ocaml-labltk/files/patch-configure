@@ -11,11 +11,12 @@
  while : ; do
    case "$1" in
      "") break;;
-@@ -222,6 +218,7 @@ if test $has_tk = true && test -z "$tk_l
+@@ -222,6 +218,8 @@ if test $has_tk = true && test -z "$tk_l
    esac
    if test -n "$tklibdir"; then
      case "$system" in
 +    freebsd) tk_libs="-L$tklibdir" ;;
++    bsd_elf) tk_libs="-L$tklibdir" ;;
      *bsd*) tk_libs="-R$tklibdir -L$tklibdir" ;;
      *) tk_libs="-L$tklibdir" ;;
      esac
