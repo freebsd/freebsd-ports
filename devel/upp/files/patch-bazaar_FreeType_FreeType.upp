@@ -1,0 +1,8 @@
+--- bazaar/FreeType/FreeType.upp.orig	2015-03-02 00:01:02 UTC
++++ bazaar/FreeType/FreeType.upp
+@@ -1,4 +1,4 @@
+-options(GCC) "-include \"UppFreetype.h\"";
++options(CLANG | GCC) "-include \"UppFreetype.h\"";
+ 
+ options(MSC) "-FI \"UppFreetype.h\"";
+ 

@@ -1,0 +1,11 @@
+--- uppsrc/PostgreSQL/PostgreSQL.upp.orig	2015-03-02 00:01:00 UTC
++++ uppsrc/PostgreSQL/PostgreSQL.upp
+@@ -9,7 +9,7 @@ library(WIN32 !NOPOSTGRESQL MSC) libpq;
+ 
+ library(WIN32 !NOPOSTGRESQL GCC) pq;
+ 
+-library(LINUX !NOPOSTGRESQL) pq;
++library(POSIX !NOPOSTGRESQL) pq;
+ 
+ file
+ 	PostgreSQL.h,
