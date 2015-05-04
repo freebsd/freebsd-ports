@@ -2,18 +2,10 @@ bin/dillo
 bin/dillo-install-hyphenation
 bin/dpid
 bin/dpidc
-@unexec if cmp -s %D/etc/dillo/dillorc.dist %D/etc/dillo/dillorc; then rm -f %D/etc/dillo/dillorc; fi
-etc/dillo/dillorc.dist
-@exec if [ ! -f %B/dillorc ]; then cp -p %D/%F %B/dillorc; fi
-@unexec if cmp -s %D/etc/dillo/domainrc.dist %D/etc/dillo/domainrc; then rm -f %D/etc/dillo/domainrc; fi
-etc/dillo/domainrc.dist
-@exec if [ ! -f %B/domainrc ]; then cp -p %D/%F %B/domainrc; fi
-@unexec if cmp -s %D/etc/dillo/dpidrc.dist %D/etc/dillo/dpidrc; then rm -f %D/etc/dillo/dpidrc; fi
-etc/dillo/dpidrc.dist
-@exec if [ ! -f %B/dpidrc ]; then cp -p %D/%F %B/dpidrc; fi
-@unexec if cmp -s %D/etc/dillo/keysrc.dist %D/etc/dillo/keysrc; then rm -f %D/etc/dillo/keysrc; fi
-etc/dillo/keysrc.dist
-@exec if [ ! -f %B/keysrc ]; then cp -p %D/%F %B/keysrc; fi
+@sample etc/dillo/dillorc.sample
+@sample etc/dillo/domainrc.sample
+@sample etc/dillo/dpidrc.sample
+@sample etc/dillo/keysrc.sample
 libexec/dillo/dpi/bookmarks/bookmarks.dpi
 libexec/dillo/dpi/cookies/cookies.dpi
 libexec/dillo/dpi/datauri/datauri.filter.dpi
@@ -23,18 +15,5 @@ libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
 libexec/dillo/dpi/vsource/vsource.filter.dpi
-libexec/dillo/hyphenation/.keep_me
 man/man1/dillo.1.gz
-@dirrmtry libexec/dillo/hyphenation
-@dirrm libexec/dillo/dpi/https
-@dirrm libexec/dillo/dpi/hello
-@dirrm libexec/dillo/dpi/ftp
-@dirrm libexec/dillo/dpi/file
-@dirrm libexec/dillo/dpi/downloads
-@dirrm libexec/dillo/dpi/datauri
-@dirrm libexec/dillo/dpi/cookies
-@dirrm libexec/dillo/dpi/bookmarks
-@dirrm libexec/dillo/dpi/vsource
-@dirrm libexec/dillo/dpi
-@dirrmtry libexec/dillo
-@dirrmtry etc/dillo
+@dir libexec/dillo/hyphenation
