@@ -1,5 +1,5 @@
---- source/src/master.cpp.orig	2013-10-09 12:27:37.000000000 +0400
-+++ source/src/master.cpp	2013-10-11 02:26:24.000000000 +0400
+--- source/src/master.cpp.orig	2013-10-09 08:27:37 UTC
++++ source/src/master.cpp
 @@ -510,7 +510,7 @@
      authreq &a = c.authreqs.add();
      a.reqtime = servtime;
