@@ -2,6 +2,7 @@
 
 PORTNAME=	epgsql
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -9,8 +10,7 @@ COMMENT=	Erlang PostgreSQL Database Client
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		rebar:${PORTSDIR}/devel/rebar
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
