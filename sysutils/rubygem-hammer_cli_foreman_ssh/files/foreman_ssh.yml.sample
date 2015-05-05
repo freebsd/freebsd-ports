@@ -1,3 +1,0 @@
-:foreman_ssh:
-    :enable_module: true
-    :require: 'foreman'
