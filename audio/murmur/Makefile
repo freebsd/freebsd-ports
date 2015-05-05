@@ -11,12 +11,14 @@ DISTNAME=	mumble-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Murmur is the server component of Mumble
 
+LICENSE=	BSD3CLAUSE
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USES=		qmake
+USES=		compiler qmake
 USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
 
 CONFIG=		no-client
@@ -50,25 +52,31 @@ LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIG+=	no-bonjour
 .endif
 
+.include <bsd.port.pre.mk>
+# PCH is broken on GCC
+.if ${COMPILER_TYPE} == gcc
+CONFIG+=	no-pch
+.endif
+
 post-patch:
 	@${ECHO_CMD} 'QMAKE_LFLAGS += -fstack-protector' >> ${WRKSRC}/src/murmur/murmur.pro
 
 pre-install:
-	@${SED} -i '' -e 's|database=.*|database=/var/db/murmur/murmur.sqlite|' ${WRKSRC}/scripts/murmur.ini
-	@${SED} -i '' -e 's|#pidfile=.*|pidfile=/var/run/murmur/murmur.pid|' ${WRKSRC}/scripts/murmur.ini
-	@${SED} -i '' -e 's|#logfile=.*|logfile=/var/log/murmur/murmur.log|' ${WRKSRC}/scripts/murmur.ini
-	@${SED} -i '' -e 's|#host=.*|host=0.0.0.0|' ${WRKSRC}/scripts/murmur.ini
+	${SED} -i '' -e 's|database=.*|database=/var/db/murmur/murmur.sqlite|' ${WRKSRC}/scripts/murmur.ini
+	${SED} -i '' -e 's|#pidfile=.*|pidfile=/var/run/murmur/murmur.pid|' ${WRKSRC}/scripts/murmur.ini
+	${SED} -i '' -e 's|#logfile=.*|logfile=/var/log/murmur/murmur.log|' ${WRKSRC}/scripts/murmur.ini
+	${SED} -i '' -e 's|#host=.*|host=0.0.0.0|' ${WRKSRC}/scripts/murmur.ini
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/release/murmurd ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${STAGEDIR}${PREFIX}/etc/murmur.ini.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/release/murmurd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${STAGEDIR}${PREFIX}/etc/murmur.ini.sample
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${CP} ${WRKSRC}/man/murmurd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in CHANGES INSTALL LICENSE README README.Linux
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
