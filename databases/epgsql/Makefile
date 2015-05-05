@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	epgsql
-PORTVERSION=	2.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -19,19 +19,12 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	epgsql
 GH_PROJECT=	epgsql
-GH_COMMIT=	c7dfb06
-GH_TAGNAME=	${PORTVERSION}
-
-PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/epgsql.app.src
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/epgsql-${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/epgsql-${PORTVERSION}/ebin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/epgsql-${PORTVERSION}/include
