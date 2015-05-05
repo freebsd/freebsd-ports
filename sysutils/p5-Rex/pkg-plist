@@ -7,6 +7,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Box::VBox.3.gz
 %%PERL5_MAN3%%/Rex::CMDB.3.gz
 %%PERL5_MAN3%%/Rex::Commands.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Augeas.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Box.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Cloud.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Cron.3.gz
@@ -25,6 +26,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Commands::Notify.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Partition.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Pkg.3.gz
+%%PERL5_MAN3%%/Rex::Commands::PkgConf.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Process.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Rsync.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Run.3.gz
@@ -49,6 +51,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
 %%PERL5_MAN3%%/Rex::Logger.3.gz
 %%PERL5_MAN3%%/Rex::Task.3.gz
+%%PERL5_MAN3%%/Rex::Resource::Common.3.gz
 %%PERL5_MAN3%%/Rex::Template.3.gz
 %%PERL5_MAN3%%/Rex::Test::Base.3.gz
 %%PERL5_MAN3%%/Rex::Transaction.3.gz
@@ -77,6 +80,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Cloud/OpenStack.pm
 %%SITE_PERL%%/Rex/Commands.pm
 %%SITE_PERL%%/Rex/Constants.pm
+%%SITE_PERL%%/Rex/Commands/Augeas.pm
 %%SITE_PERL%%/Rex/Commands/Box.pm
 %%SITE_PERL%%/Rex/Commands/Cloud.pm
 %%SITE_PERL%%/Rex/Commands/Cron.pm
@@ -96,6 +100,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Commands/Notify.pm
 %%SITE_PERL%%/Rex/Commands/Partition.pm
 %%SITE_PERL%%/Rex/Commands/Pkg.pm
+%%SITE_PERL%%/Rex/Commands/PkgConf.pm
 %%SITE_PERL%%/Rex/Commands/Process.pm
 %%SITE_PERL%%/Rex/Commands/Rsync.pm
 %%SITE_PERL%%/Rex/Commands/Run.pm
@@ -144,7 +149,6 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/Array.pm
 %%SITE_PERL%%/Rex/Helper/DBI.pm
 %%SITE_PERL%%/Rex/Helper/Encode.pm
-%%SITE_PERL%%/Rex/Helper/Glob.pm
 %%SITE_PERL%%/Rex/Helper/Hash.pm
 %%SITE_PERL%%/Rex/Helper/INI.pm
 %%SITE_PERL%%/Rex/Helper/Path.pm
@@ -198,6 +202,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Interface/Shell/Bash.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Csh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Default.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Idrac.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Ksh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Sh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Tcsh.pm
@@ -234,6 +239,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Output/Base.pm
 %%SITE_PERL%%/Rex/Output/JUnit.pm
 %%SITE_PERL%%/Rex/Pkg.pm
+%%SITE_PERL%%/Rex/PkgConf.pm
 %%SITE_PERL%%/Rex/Pkg/ALT.pm
 %%SITE_PERL%%/Rex/Pkg/Base.pm
 %%SITE_PERL%%/Rex/Pkg/Debian.pm
@@ -249,6 +255,8 @@ bin/rexify
 %%SITE_PERL%%/Rex/Pkg/SunOS/OpenCSW.pm
 %%SITE_PERL%%/Rex/Pkg/SunOS/pkg.pm
 %%SITE_PERL%%/Rex/Pkg/Ubuntu.pm
+%%SITE_PERL%%/Rex/PkgConf/Base.pm
+%%SITE_PERL%%/Rex/PkgConf/Debian.pm
 %%SITE_PERL%%/Rex/Profiler.pm
 %%SITE_PERL%%/Rex/Report.pm
 %%SITE_PERL%%/Rex/Resource.pm
@@ -291,6 +299,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Test.pm
 %%SITE_PERL%%/Rex/Test/Base.pm
 %%SITE_PERL%%/Rex/Test/Base/has_content.pm
+%%SITE_PERL%%/Rex/Test/Base/has_dir.pm
 %%SITE_PERL%%/Rex/Test/Base/has_file.pm
 %%SITE_PERL%%/Rex/Test/Base/has_package.pm
 %%SITE_PERL%%/Rex/Test/Base/has_service_running.pm
@@ -298,6 +307,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Test/Base/has_stat.pm
 %%SITE_PERL%%/Rex/Transaction.pm
 %%SITE_PERL%%/Rex/User.pm
+%%SITE_PERL%%/Rex/User/Base.pm
 %%SITE_PERL%%/Rex/User/FreeBSD.pm
 %%SITE_PERL%%/Rex/User/Linux.pm
 %%SITE_PERL%%/Rex/User/NetBSD.pm
