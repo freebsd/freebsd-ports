@@ -407,6 +407,7 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-msgpack
     SUBDIR += esdl
     SUBDIR += etcd
     SUBDIR += etcdctl
