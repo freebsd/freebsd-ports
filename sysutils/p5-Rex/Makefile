@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	0.57.0
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JFRIED
@@ -13,20 +13,28 @@ COMMENT=	Perl framework for automation and systems administration
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
-	p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2 \
-	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect \
-	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
-	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
 	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+	p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
+	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally \
+	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+	p5-Text-Glob>=0:${PORTSDIR}/textproc/p5-Text-Glob \
+	p5-URI>0:${PORTSDIR}/net/p5-URI \
 	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
+	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect \
+	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
+	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-	p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
+	p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2 \
+	p5-Net-OpenSSH>=0:${PORTSDIR}/net/p5-Net-OpenSSH \
+	p5-Net-SFTP-Foreign>=0:${PORTSDIR}/net/p5-Net-SFTP-Foreign
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
