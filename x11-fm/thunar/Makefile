@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Thunar
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	1.6.8
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -27,15 +26,15 @@ USE_XFCE=	libexo
 USE_XORG=	sm x11
 USES=		desktop-file-utils gmake pathfix perl5 libtool pkgconfig \
 	gettext-tools xfce tar:bzip2
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	NLS NOTIFY STARTUP
+OPTIONS_DEFINE=	NLS NOTIFY
 OPTIONS_GROUP=	PLUGINS
 OPTIONS_GROUP_PLUGINS=	PLUG_APR PLUG_SBR PLUG_TPA PLUG_UCA PLUG_WALL
-OPTIONS_DEFAULT=	NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_TPA PLUG_WALL STARTUP
+OPTIONS_DEFAULT=	NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_TPA PLUG_WALL
 
 # Override NOTIFY_DESC
 NOTIFY_DESC=	Display notifications
-STARTUP_DESC=	Startup notification
 PLUG_APR_DESC=	Advanced Properties plugin
 PLUG_SBR_DESC=	Simple Builtin Renamers plugin
 PLUG_TPA_DESC=	Trash Panel Applet plugin
@@ -46,8 +45,6 @@ NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	notifications
-STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
-STARTUP_CONFIGURE_ENABLE=	startup-notification
 PLUG_APR_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 PLUG_APR_CONFIGURE_ENABLE=	apr-plugin exif
 PLUG_SBR_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
