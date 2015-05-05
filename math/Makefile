@@ -94,6 +94,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += crlibm
+    SUBDIR += cryptominisat
     SUBDIR += cvc3
     SUBDIR += dcdflib
     SUBDIR += diehard
@@ -546,6 +547,7 @@
     SUBDIR += py-basemap-data
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-cryptominisat
     SUBDIR += py-fastcluster
     SUBDIR += py-ffc
     SUBDIR += py-fiat
