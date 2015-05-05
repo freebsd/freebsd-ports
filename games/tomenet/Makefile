@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomenet
-PORTVERSION=	4.5.9
+PORTVERSION=	4.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://tomenet.eu/downloads/
 
