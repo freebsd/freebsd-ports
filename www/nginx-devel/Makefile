@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -512,7 +513,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_XSLT}
-USE_GNOME=	libxml2 libxslt
+USE_GNOME+=	libxml2 libxslt
 CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
@@ -596,7 +597,7 @@ LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
-USE_GNOME=	libxml2
+USE_GNOME+=	libxml2
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
