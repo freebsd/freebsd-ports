@@ -8,6 +8,8 @@ CATEGORIES=	net
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang socket acceptor pool for TCP protocols
 
+LICENSE=	ISCL
+
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
