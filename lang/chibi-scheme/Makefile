@@ -3,6 +3,7 @@
 
 PORTNAME=	chibi-scheme
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	tobias.kortkamp@gmail.com
@@ -11,7 +12,7 @@ COMMENT=	Minimal Scheme implementation for use as a C extension language
 LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	norton
+GH_ACCOUNT=	ashinn
 
 USES=		gmake
 USE_LDCONFIG=	yes
