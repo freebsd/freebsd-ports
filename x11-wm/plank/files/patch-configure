@@ -1,0 +1,20 @@
+--- configure.orig	2015-05-02 15:04:03 UTC
++++ configure
+@@ -797,6 +797,7 @@ PLANK_MICRO_VERSION
+ PLANK_MINOR_VERSION
+ PLANK_MAJOR_VERSION
+ PLANK_MAJOR_MINOR_VERSION
++INSTALL_PREFIX
+ LT_AGE
+ LT_REVISION
+ LT_CURRENT
+@@ -2330,6 +2331,9 @@ cat >>confdefs.h <<_ACEOF
+ #define PACKAGE_URL "$PACKAGE_URL"
+ _ACEOF
+ 
++cat >>confdefs.h <<_ACEOF
++#define INSTALL_PREFIX "${prefix}"
++_ACEOF
+ 
+ # Let the site file select an alternate cache file if it wants to.
+ # Prefer an explicitly selected file to automatically selected ones.
