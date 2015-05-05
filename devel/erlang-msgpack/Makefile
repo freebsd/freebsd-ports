@@ -2,6 +2,7 @@
 
 PORTNAME=	msgpack-erlang
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -25,6 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/msgpack.app.src
+	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
