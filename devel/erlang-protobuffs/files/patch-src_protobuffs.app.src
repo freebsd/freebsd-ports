@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/protobuffs.app.src.orig
++++ src/protobuffs.app.src
+@@ -1,6 +1,6 @@
+ { application, protobuffs,
+   [ { description, "Google protobuffs implementation for Erlang." },
+-    { vsn, git },
++    { vsn, "%%PORTVERSION%%" },
+     { registered, [] },
+     { applications, [kernel,stdlib] },
+     { env, [] }
