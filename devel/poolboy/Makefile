@@ -2,6 +2,7 @@
 
 PORTNAME=	poolboy
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -9,8 +10,7 @@ COMMENT=	Pooling library for Erlang
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		rebar:${PORTSDIR}/devel/rebar
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

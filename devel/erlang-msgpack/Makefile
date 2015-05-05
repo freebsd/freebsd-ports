@@ -2,7 +2,7 @@
 
 PORTNAME=	msgpack
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
@@ -11,8 +11,7 @@ COMMENT=	MessagePack (de)serializer for Erlang
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		rebar:${PORTSDIR}/devel/rebar
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
