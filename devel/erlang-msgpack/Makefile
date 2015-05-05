@@ -1,9 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	msgpack-erlang
+PORTNAME=	msgpack
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
+PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	MessagePack (de)serializer for Erlang
