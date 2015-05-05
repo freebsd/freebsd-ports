@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
-USES=		gmake iconv ncurses pkgconfig tar:xz
+USES=		cpe gmake iconv ncurses pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
