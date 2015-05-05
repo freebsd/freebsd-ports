@@ -40,6 +40,8 @@ JOYSTICK_DESC=	Build with joystick support
 JOYSTICK_CMAKE_ON=	-DUSE_JOYSTICK:BOOL=ON
 JOYSTICK_CMAKE_OFF=	-DUSE_JOYSTICK:BOOL=OFF
 WX3_DESC=	Build with using wxWidgets 3.0+ version (2.8 otherwise)
+WX3_CXXFLAGS=	-std=c++11
+WX3_USES=	compiler:c++11-lib
 WX3_USE=	WX=3.0+
 WX3_USE_OFF=	WX=2.8
 
