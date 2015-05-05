@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spp
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://caia.swin.edu.au/tools/spp/downloads/
 
