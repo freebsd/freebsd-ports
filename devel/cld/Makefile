@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cld
-PORTVERSION=	20150113
+PORTVERSION=	20150505
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	demon
@@ -16,10 +16,10 @@ LICENSE=	APACHE20
 USE_LDCONFIG=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s#g++#${CXX} ${CXXFLAGS}#" ${WRKSRC}/internal/compile_libs.sh
+	${REINPLACE_CMD} -e "s#g++#${CXX}#" ${WRKSRC}/internal/compile_libs.sh
 
 do-build:
-	cd ${WRKSRC}/internal && ./compile_libs.sh
+	cd ${WRKSRC}/internal && ${SETENV} ${MAKE_ENV} ./compile_libs.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/cld/public ${STAGEDIR}${PREFIX}/include/cld/internal
