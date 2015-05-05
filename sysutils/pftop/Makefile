@@ -47,6 +47,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.c
 	@${REINPLACE_CMD} -e 's|#include <net/if_pflog.h>||g' \
 	    ${WRKSRC}/sf-gencode.c
+.if ${OPSYS} == DragonFly || ${OSVERSION} >= 1100070
+	@${REINPLACE_CMD} -e 's|altq/|net/&|' ${WRKSRC}/pftop.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${STAGEDIR}${PREFIX}/sbin
