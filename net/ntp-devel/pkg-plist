@@ -497,4 +497,3 @@ sbin/update-leap
 %%EXAMPLESDIR%%/malarky.conf
 %%EXAMPLESDIR%%/pogo.conf
 %%EXAMPLESDIR%%/rackety.conf
-@dir include/event2
