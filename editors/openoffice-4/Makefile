@@ -26,6 +26,8 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww			\
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser	\
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
 		zip:${PORTSDIR}/archivers/zip				\
 		ant:${PORTSDIR}/devel/apache-ant			\
@@ -89,10 +91,8 @@ NO_LATEST_LINK=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
-USE_GSTREAMER=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	openjdk
@@ -100,26 +100,34 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
-USES=		bison compiler cpe desktop-file-utils gmake perl5 pkgconfig python \
-		tar:bzip2
+USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
+		gmake perl5 pkgconfig python tar:bzip2
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=			CUPS GCONF GNOMEVFS CCACHE
-OPTIONS_DEFAULT=		CUPS GCONF GNOMEVFS
-GNOMEVFS_DESC=			Enable GNOME Virtual File System
-CCACHE_DESC=			Mimimize compile time of C/C++ programs
+OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA CCACHE
+OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA
+GNOME_DESC=		GConf + screensaver presentation control via DBUS
+GNOMEVFS_DESC=		GNOME Virtual File System
+MMEDIA_DESC=		Multimedia backend for impress
+CCACHE_DESC=		Mimimize compile time of C/C++ programs
 
 CUPS_CONFIGURE_ENABLE=		cups
 CUPS_LIB_DEPENDS=		libcups.so:${PORTSDIR}/print/cups-client
 
-GCONF_USE=			GNOME=gconf2
-GCONF_CONFIGURE_ENABLE=		gconf
+GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
+GNOME_LIB_DEPENDS=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+GNOME_USE=			GNOME=gconf2
 
-GNOMEVFS_USE=			GNOME=gnomevfs2
 GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
+GNOMEVFS_CONFIGURE_OFF=		--enable-gio
+GNOMEVFS_CONFIGURE_ON=		--disable-gio
+GNOMEVFS_USE=			GNOME=gnomevfs2
+
+MMEDIA_CONFIGURE_ENABLE=	gstreamer
+MMEDIA_USE=			GSTREAMER=yes
 
 .include <bsd.port.pre.mk>
 
@@ -193,7 +201,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-coinmp				\
 			--with-system-curl				\
 			--enable-crashdump				\
-			--enable-dbus					\
 			--with-system-dicts				\
 			--with-epm=${LOCALBASE}/bin/epm			\
 			--with-system-expat				\
@@ -201,7 +208,7 @@ CONFIGURE_ARGS+=							\
 			--without-fonts					\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--with-gperf=${LOCALBASE}/bin/gperf		\
-			--enable-gstreamer				\
+			--enable-gtk					\
 			--with-system-hunspell				\
 			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 			--with-system-hyphen				\
@@ -209,9 +216,10 @@ CONFIGURE_ARGS+=							\
 			--with-system-jpeg				\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
 			--with-system-libtextcat			\
+			--disable-kde					\
+			--disable-kde4					\
 			--with-system-libxml				\
 			--with-system-libxslt				\
-			--enable-lockdown				\
 			--with-system-lucene				\
 			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
 			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
