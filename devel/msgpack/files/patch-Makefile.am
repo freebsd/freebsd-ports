@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2015-05-07 00:17:43.206572341 +0900
++++ Makefile.am	2015-05-07 00:18:35.853568427 +0900
+@@ -11,7 +11,7 @@
+ EXTRA_DIST = \
+ 		$(DOC_FILES) CMakeLists.txt test/CMakeLists.txt
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = msgpack.pc
+ 
+ doxygen:
