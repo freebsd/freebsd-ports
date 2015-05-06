@@ -52,6 +52,13 @@ USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 PLIST_FILES=	bin/Xvfb \
 		man/man1/Xvfb.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == armv6
+EXTRA_PATCHES+=	${.CURDIR}/../xorg-server/files/extra-arm-patch-hw__xfree86__os-support__bsd__Makefile.in
+EXTRA_PATCHES+=	${.CURDIR}/../xorg-server/files/extra-arm-patch-include__servermd.h
+.endif
+
 do-install:
 	cd ${WRKSRC}/hw/vfb; DESTDIR=${STAGEDIR} ${MAKE} install
 
