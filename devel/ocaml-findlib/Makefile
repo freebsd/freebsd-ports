@@ -3,7 +3,7 @@
 
 PORTNAME=	findlib
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -19,6 +19,7 @@ ALL_TARGET=	all opt
 CONFIGURE_ARGS=	-bindir "${PREFIX}/bin" -mandir "${PREFIX}/man" \
 		-sitelib "${PREFIX}/${OCAML_SITELIBDIR}" \
 		-config "${PREFIX}/etc/findlib.conf"
+USE_OCAML_CAMLP4=yes
 USE_OCAML_FINDLIB=yes
 OCAMLFIND_DEPEND=	# Avoid dependency loop
 
