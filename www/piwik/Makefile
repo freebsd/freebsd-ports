@@ -25,7 +25,7 @@ PHPMYSQLI_USE=	PHP=mysqli
 
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-USES=		shebangfix
+USES=		cpe shebangfix
 SHEBANG_FILES=	misc/log-analytics/import_logs.py
 
 pre-install:
