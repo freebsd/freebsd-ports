@@ -62,4 +62,4 @@ EXTRA_PATCHES+=	${.CURDIR}/../xorg-server/files/extra-arm-patch-include__serverm
 do-install:
 	cd ${WRKSRC}/hw/vfb; DESTDIR=${STAGEDIR} ${MAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
