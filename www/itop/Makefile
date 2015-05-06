@@ -2,6 +2,7 @@
 
 PORTNAME=	itop
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	iTop-${PORTVERSION}-2127
@@ -13,7 +14,7 @@ LICENSE=	AGPLv3
 
 USES=		zip
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline \
-		dom simplexml hash json soap mcrypt filter
+		dom simplexml hash json soap mcrypt filter zip
 
 NO_BUILD=	yes
 
