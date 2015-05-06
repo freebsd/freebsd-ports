@@ -25,8 +25,7 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ralight
 GH_PROJECT=	sqlite3-pcre
-GH_COMMIT=	c98da41
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	c98da41
 
 do-build:
 	@cd ${WRKSRC} && ${GMAKE}

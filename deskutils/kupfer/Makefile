@@ -24,9 +24,7 @@ RUN_DEPENDS=	keybinder>=0:${PORTSDIR}/x11/keybinder \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GNOME
-GH_PROJECT=	kupfer
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	0268e36
+GH_TAGNAME=	0268e36
 
 USES=		desktop-file-utils python shared-mime-info waf
 USE_GNOME=	gvfs intltool pygtk2 pygnomedesktop

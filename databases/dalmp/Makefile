@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dalmp
-PORTVERSION= 	3.0.2
+PORTVERSION=	3.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	nbari@dalmp.com
@@ -16,8 +17,6 @@ BROKEN=		Unfetchable
 USE_GITHUB=	yes
 GH_ACCOUNT=	nbari
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	72abf0c
 
 USES=	tar:bzip2
 

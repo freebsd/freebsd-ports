@@ -23,7 +23,6 @@ OPTIONS_SUB=		yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	geometer
 GH_PROJECT=	FBReader
-GH_COMMIT=	7abc80d
 GH_TAGNAME=	${PORTVERSION}-freebsdport
 
 

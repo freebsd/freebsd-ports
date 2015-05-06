@@ -3,9 +3,10 @@
 
 PORTNAME=	go-json-rest
 PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	GHL \
+MASTER_SITES=	GH \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com
@@ -13,9 +14,6 @@ COMMENT=	Quick and easy way to setup a RESTful JSON API
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ant0ine
-GH_TAGNAME=	v${PORTVERSION}
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	91c5416
 
 GO_PKGNAME=	github.com/ant0ine/go-json-rest
 

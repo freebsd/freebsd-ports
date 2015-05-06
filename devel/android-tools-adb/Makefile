@@ -3,7 +3,6 @@
 PORTNAME=	android-tools-adb
 DISTVERSION=	5.0.0_r7
 CATEGORIES=	devel
-DISTNAME=	android-platform_system_core-${GH_COMMIT}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Android debug bridge command line tool
@@ -14,10 +13,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
 GH_TAGNAME=	android-${DISTVERSION}
-GH_COMMIT=	7223571
 
 USES=		gmake
-WRKSRC=		${WRKDIR}/${DISTNAME}/adb
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/adb
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_JOBS_UNSAFE=	yes
 

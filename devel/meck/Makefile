@@ -3,7 +3,6 @@
 PORTNAME=	meck
 PORTVERSION=	0.8.2
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building mock modules
@@ -19,9 +18,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	eproxus
-GH_PROJECT=	meck
-GH_COMMIT=	3599670
-GH_TAGNAME=	${PORTVERSION}
 
 PORTDOCS=	*
 

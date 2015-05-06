@@ -3,6 +3,7 @@
 
 PORTNAME=	gcalcli
 PORTVERSION=	3.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@thelanman.net
@@ -18,9 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	insanum
-GH_PROJECT=	gcalcli
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3964779
 
 USES=		python
 

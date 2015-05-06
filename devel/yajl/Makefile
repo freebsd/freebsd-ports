@@ -11,7 +11,6 @@ LICENSE=	ISCL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lloyd
-GH_COMMIT=	66cb08c
 
 CFLAGS+=	-g -O0
 

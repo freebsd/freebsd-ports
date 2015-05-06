@@ -15,8 +15,7 @@ LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libimobiledevice
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2f6d9d5
+GH_TAGNAME=	2f6d9d5
 
 USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

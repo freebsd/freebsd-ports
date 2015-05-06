@@ -5,7 +5,6 @@ PORTNAME=	bsdconv
 PORTVERSION=	11.1.0
 CATEGORIES=	converters python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Python wrapper for bsdconv
@@ -16,7 +15,6 @@ LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	075a20e
 GH_PROJECT=	python-${PORTNAME}
 
 USES=		python

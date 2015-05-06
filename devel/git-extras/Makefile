@@ -14,7 +14,6 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tj
-GH_COMMIT=	075d0ce
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	bin/git-squash

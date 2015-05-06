@@ -10,10 +10,9 @@ COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
 
 BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     massemanet
-GH_COMMIT=      ecc8581
-GH_TAGNAME=	${GH_COMMIT}
+USE_GITHUB=	yes
+GH_ACCOUNT=	massemanet
+GH_TAGNAME=	ecc8581
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

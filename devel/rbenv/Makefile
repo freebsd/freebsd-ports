@@ -2,9 +2,9 @@
 
 PORTNAME=	rbenv
 PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel ruby
-MASTER_SITES=	GHL
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Manage multiple versions of ruby
@@ -15,9 +15,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson
-GH_PROJECT=	rbenv
-GH_COMMIT=	9375e99
-GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
 

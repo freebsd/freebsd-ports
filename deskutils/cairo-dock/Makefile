@@ -21,10 +21,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	${PORTNAME}-core
-GH_COMMIT=	18df440
 GH_TAGNAME=	18df440
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-core-${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 librsvg2 libxml2

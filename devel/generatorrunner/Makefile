@@ -24,6 +24,5 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	PySide
 GH_PROJECT=	Generatorrunner
-GH_COMMIT=	bf9ccba
 
 .include <bsd.port.mk>

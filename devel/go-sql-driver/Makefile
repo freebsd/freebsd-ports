@@ -3,8 +3,9 @@
 
 PORTNAME=	go-sql-driver
 PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	GHL \
+MASTER_SITES=	GH \
     		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com
@@ -12,9 +13,7 @@ COMMENT=	Lightweight and fast MySQL driver for go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 GH_PROJECT=	mysql
-GH_COMMIT=	9a7aa36
 
 GO_PKGNAME=	github.com/${PORTNAME}/${GH_PROJECT}
 

@@ -4,7 +4,6 @@
 PORTNAME=	cclib
 PORTVERSION=	1.2
 CATEGORIES=	devel python
-MASTER_SITES=	GHL
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Parsers And Algorithms For Computational Chemistry
@@ -17,8 +16,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cclib
-GH_COMMIT=	4f5cee7
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	4f5cee7
 
 USES=		python
 USE_PYTHON=	autoplist distutils

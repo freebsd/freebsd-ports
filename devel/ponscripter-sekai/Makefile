@@ -2,6 +2,7 @@
 
 PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,8 +19,6 @@ CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
 USE_GITHUB=	yes
 GH_ACCOUNT=	sekaiproject
 GH_PROJECT=	${PORTNAME:S/sekai/fork/}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3a8d107
 
 USES=		compiler:c++11-lang gmake shebangfix
 USE_SDL=	image2 mixer2

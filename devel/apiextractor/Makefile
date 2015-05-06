@@ -16,8 +16,6 @@ BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 USE_GITHUB=	yes
 GH_ACCOUNT=	PySide
 GH_PROJECT=	Apiextractor
-#GH_TAG=		${PORTVERSION}
-GH_COMMIT=	4889efc
 
 USES=		cmake
 USE_GNOME=	libxml2 libxslt

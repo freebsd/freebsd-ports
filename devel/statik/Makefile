@@ -15,9 +15,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rakyll
-GH_PROJECT=	statik
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	4a16c83
+GH_TAGNAME=	4a16c83
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ActiveState
-GH_COMMIT=	57f2bc4
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	57f2bc4
 
 USES=		python
 USE_PYTHON=	distutils autoplist

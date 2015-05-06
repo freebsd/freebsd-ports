@@ -16,9 +16,7 @@ RUN_DEPENDS=	p5-DBD-mysql>1.0:${PORTSDIR}/databases/p5-DBD-mysql \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jzawodn
-GH_PROJECT=	mytop
-GH_COMMIT=	437f2ef
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	437f2ef
 
 NO_ARCH=	yes
 CONFLICTS=	mariadb-scripts-[0-9]*

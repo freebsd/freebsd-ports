@@ -5,10 +5,10 @@ PORTNAME=	gettext
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${GH_COMMIT}/src/lib/lua/gettext/
+MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/gettext/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lua_gettext.c gettext.lua
-DIST_SUBDIR=	lua-${PORTNAME}-${GH_COMMIT}
+DIST_SUBDIR=	lua-${PORTNAME}-${COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext binding for Lua 5
@@ -17,7 +17,7 @@ USES=		gettext lua:51
 
 CVER=		1.15
 LVER=		${PORTVERSION}
-GH_COMMIT=	8323bb9
+COMMIT=		8323bb9
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
 		%%LUA_MODLIBDIR%%/lgettext.so

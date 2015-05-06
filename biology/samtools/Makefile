@@ -15,8 +15,6 @@ BUILD_DEPENDS=	htslib>=1.2:${PORTSDIR}/biology/htslib
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	samtools
-GH_COMMIT=	6af451d
 
 USES=		gmake
 SUB_FILES=	pkg-message
