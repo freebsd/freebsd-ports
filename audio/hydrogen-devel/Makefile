@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
 GH_PROJECT=	hydrogen
 GH_TAGNAME=	0.9.6-RC2
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 MAJORVERSION=	0.9.6
 USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
