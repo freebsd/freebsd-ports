@@ -1,6 +1,6 @@
---- src/google/protobuf/stubs/atomicops.h.orig	2014-08-26 03:52:37.000000000 +0800
-+++ src/google/protobuf/stubs/atomicops.h	2015-02-21 11:45:38.816841509 +0800
-@@ -182,6 +182,8 @@
+--- src/google/protobuf/stubs/atomicops.h.orig	2015-05-06 14:28:24 UTC
++++ src/google/protobuf/stubs/atomicops.h
+@@ -187,6 +187,8 @@ GOOGLE_PROTOBUF_ATOMICOPS_ERROR
  #elif defined(__GNUC__)
  #if defined(GOOGLE_PROTOBUF_ARCH_IA32) || defined(GOOGLE_PROTOBUF_ARCH_X64)
  #include <google/protobuf/stubs/atomicops_internals_x86_gcc.h>
