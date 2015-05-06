@@ -885,6 +885,7 @@
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
+    SUBDIR += serf
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
