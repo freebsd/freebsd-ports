@@ -18,9 +18,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libpolarssl.so.5:${PORTSDIR}/security/polarssl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	dolphin
-GH_COMMIT=	88fabf7
 
 USE_SDL=	sdl
 USE_XORG=	ice xext x11 xrandr xi
