@@ -2,14 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/ILIAS%205.0/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
+
+USE_GITHUB=     yes
+GH_ACCOUNT=     ILIAS-eLearning
+GH_PROJECT=     ILIAS
+GH_TAGNAME=     ${PORTVERSION:S/^/v/}
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		zip:${PORTSDIR}/archivers/zip \
@@ -25,7 +29,7 @@ NO_BUILD=		yes
 PLIST=			${WRKDIR}/plist
 SUB_FILES=		pkg-message
 USE_PHP=		mysql session zlib gd pdf dom xsl pcre
-WRKSRC=			${WRKDIR}/ilias
+WRKSRC=			${WRKDIR}/ILIAS-${PORTVERSION}
 ILIASDIR=		www/ilias
 ILIASDATADIR=		www/iliasdata
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
