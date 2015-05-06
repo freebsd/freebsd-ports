@@ -2,6 +2,10 @@ bin/belvu
 bin/blixem
 bin/blixemh
 bin/dotter
+include/gbtools/gbtools.hpp
+include/gbtools/gbtoolsGUI.hpp
+include/gbtools/gbtoolsUtils.hpp
+lib/libgbtools.a
 %%PORTDOCS%%%%DOCSDIR%%/Belvu_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Blixem_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Dotter_manual.pdf
