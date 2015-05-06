@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	devel python
-MASTER_SITES=	https://protobuf.googlecode.com/svn/rc/ \
-		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-apputils>=0:${PORTSDIR}/devel/py-goog
 USE_PYTHON=	autoplist distutils
 USES=		python tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_PROJECT=	protobuf
+GH_TAGNAME=	v${PORTVERSION}
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/google/protobuf/compiler/
