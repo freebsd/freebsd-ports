@@ -3,6 +3,7 @@
 
 PORTNAME=	ilias
 PORTVERSION=	5.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	wen@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE=	GPLv2
 USE_GITHUB=     yes
 GH_ACCOUNT=     ILIAS-eLearning
 GH_PROJECT=     ILIAS
-GH_TAGNAME=     ${PORTVERSION:S/^/v/}
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		zip:${PORTSDIR}/archivers/zip \
