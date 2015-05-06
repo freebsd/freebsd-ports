@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	hiredis
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.13.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Minimalistic C client library for the Redis database
 
 LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	redis
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	9be3a07
 
 USES=		gmake
 USE_LDCONFIG=	yes
