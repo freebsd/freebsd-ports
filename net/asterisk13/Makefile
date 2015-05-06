@@ -2,7 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -113,7 +113,6 @@ LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
-PJSIP_LIB_DEPENDS=	libpj.so:${PORTSDIR}/net/pjsip
 PJSIP_CONFIGURE_WITH=	pjproject
 PJSIP_USES=		pkgconfig
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
@@ -128,8 +127,12 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
-LIB_DEPENDS+=		libsrtp.so:${PORTSDIR}/net/libsrtp
+.if ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=	libpj.so:${PORTSDIR}/net/pjsip-extsrtp
+.elif ${PORT_OPTIONS:MPJSIP} && ! ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=   libpj.so:${PORTSDIR}/net/pjsip
+.elif ! ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=   libsrtp.so:${PORTSDIR}/net/libsrtp
 .endif
 
 .include <bsd.port.pre.mk>

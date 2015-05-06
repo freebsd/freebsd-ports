@@ -869,6 +869,7 @@
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pjsip
+    SUBDIR += pjsip-extsrtp
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
