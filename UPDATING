@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150506:
+  AFFECTS: users of net/asterisk13 with PJSIP (default on) and SRTP (default off) options enabled
+  AUTHOR: madpilot@FreeBSD.org
+
+  Due to asterisk13 requiring conflicting port options for the net/pjsip
+  dependency when the SRTP option is enabled together with the PJSIP
+  one I have created a new slave port to pjsip to enforce the
+  required option so asterisk can enforce that option with a
+  conditional dependency.
+
+  Users building custom packages with poudriere should have no
+  problems, since pkgng is able to handle the change automatically.
+
+  For users compiling from ports a simple update of asterisk will
+  keep it working because the already installed pjsip port will
+  satisfy the dependency. They anyway should, when convenient,
+  disinstall the pjsip port(this will also disinstall asterisk13)
+  and rebuild asterisk13 to force it to grab the correct dependency
+  to avoid problems with future updates.
+
+  Please check the 20150323 entry in this file which has some
+  background about this problem.
+
 20150501:
   AFFECTS: users of graphics/qgis
   AUTHOR: brd@FreeBSD.org

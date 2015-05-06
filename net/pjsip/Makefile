@@ -2,7 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -13,6 +13,8 @@ COMMENT=	Multimedia communication library written in C language
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+
+CONFLICTS=	pjsip-extsrtp-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
