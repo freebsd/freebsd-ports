@@ -11,12 +11,9 @@ COMMENT=	DB Browser for SQLite is a visual tool to manage SQLite databases
 LICENSE=	MPL GPLv3
 LICENSE_COMB=	dual
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GH_COMMIT}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sqlitebrowser
-GH_COMMIT=	1d12977
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	1d12977
 
 USES=		cmake desktop-file-utils
 USE_QT4=	gui qmake_build linguist_build moc_build uic_build rcc_build

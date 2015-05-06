@@ -8,12 +8,11 @@ CATEGORIES=	comms
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simple Mode S decoder for RTLSDR devices
 
+LICENSE=	BSD3CLAUSE
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	antirez
-GH_COMMIT=	4c53e25
-GH_TAGNAME=	4c53e251439f42135fc80fe000174f7accdb048c
-
-LICENSE=	BSD3CLAUSE
+GH_TAGNAME=	4c53e25
 
 LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
 

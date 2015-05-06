@@ -10,7 +10,6 @@ COMMENT=	Synchronizes the two copy/paste buffers used by X applications
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigmike
-GH_COMMIT=	35388eb
 
 USE_XORG=	x11 xaw xmu
 GNU_CONFIGURE=	yes

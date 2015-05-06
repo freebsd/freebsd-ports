@@ -12,7 +12,6 @@ COMMENT=	Compiled Runtime in Tcl
 USES+=		tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
-GH_COMMIT=	39e4a10
 
 PLIST_SUB+=	VER=${PORTVERSION}
 PORTDOCS=	*

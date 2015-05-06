@@ -3,6 +3,7 @@
 
 PORTNAME=	recode
 PORTVERSION=	3.6
+DISTVERSIONPREFIX=	v
 PORTREVISION=	12
 CATEGORIES=	converters
 
@@ -12,8 +13,6 @@ COMMENT=	Converts files between character sets and usages
 USE_GITHUB=	yes
 GH_ACCOUNT=	pinard
 GH_PROJECT=	Recode
-GH_TAGNAME=	v3.6
-GH_COMMIT=	2127b34
 
 GNU_CONFIGURE=	yes
 USES=		gettext iconv libtool perl5

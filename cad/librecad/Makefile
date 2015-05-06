@@ -17,7 +17,6 @@ USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	LibreCAD
 GH_PROJECT=	LibreCAD
-GH_COMMIT=	8056020
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \

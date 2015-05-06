@@ -24,7 +24,6 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litl
-GH_COMMIT=	b6d92ca
 
 USES=		python
 USE_PYTHON=	distutils autoplist

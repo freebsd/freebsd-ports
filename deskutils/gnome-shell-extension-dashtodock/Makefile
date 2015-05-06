@@ -14,8 +14,6 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/micheleg-dash-to-dock-${GH_COMMIT}
-
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -25,7 +23,6 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
 
 GH_ACCOUNT=	micheleg
 GH_TAGNAME=	8d2ccc7
-GH_COMMIT=	8d2ccc7
 GH_PROJECT=	dash-to-dock
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

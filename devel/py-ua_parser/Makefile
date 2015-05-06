@@ -19,8 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ua_parser/regexes.yaml:${PORTSDIR}/devel/ua_pars
 USE_GITHUB=yes
 GH_ACCOUNT=	ua-parser
 GH_PROJECT=	uap-python
-GH_COMMIT=      90a18d6
-GH_TAGNAME=     ${GH_COMMIT}
+GH_TAGNAME=	90a18d6
 
 USES=		python
 USE_PYTHON=	distutils autoplist

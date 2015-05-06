@@ -2,6 +2,7 @@
 
 PORTNAME=	Pyrseas
 PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,8 +21,6 @@ USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	perseas
-GH_COMMIT=	9b0e3d2
-GH_TAGNAME=	v${PORTVERSION}
 
 # Requires a running PostgreSQL instance
 

@@ -12,8 +12,7 @@ COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CraigCottingham
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	f8d9ced
+GH_TAGNAME=	f8d9ced
 
 USES+=		uidfix tar:bzip2 pgsql
 WANT_PGSQL=	server

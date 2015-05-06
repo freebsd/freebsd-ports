@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${GH_PROJECT}
 GH_PROJECT=	${PORTNAME:S/2$//}
 GH_TAGNAME=	release-${DISTVERSION}-stable
-GH_COMMIT=	d8ceae8
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pathfix

@@ -17,7 +17,6 @@ LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_TAGNAME=	v3.0-latest
-GH_COMMIT=	8998e7b
 
 USES=		autoreconf libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes

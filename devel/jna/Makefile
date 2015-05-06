@@ -3,7 +3,6 @@
 PORTNAME=	jna
 PORTVERSION=	4.1.0
 CATEGORIES=	devel java
-MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
@@ -17,8 +16,6 @@ MAKE_ENV+=      ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	twall
-GH_TAG=		${PORTVERSION}
-GH_COMMIT=	c490fc9
 
 PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 		%%JAVAJARDIR%%/jna.jar

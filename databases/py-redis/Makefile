@@ -24,7 +24,6 @@ USE_PYTHON=	distutils autoplist concurrent
 USE_GITHUB=	yes
 GH_ACCOUNT=	andymccurdy
 GH_PROJECT=	${PORTNAME}-py
-GH_COMMIT=	e7589d7
 
 .include <bsd.port.options.mk>
 

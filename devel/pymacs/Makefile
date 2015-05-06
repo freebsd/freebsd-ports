@@ -3,9 +3,9 @@
 
 PORTNAME=	Pymacs
 PORTVERSION=	0.25
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel editors python elisp
-MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for scripting emacs
@@ -14,8 +14,6 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pinard
-GH_TAGNAME=	${PORTVERSION:S/^/v/}
-GH_COMMIT=	5989046
 
 USES=		python
 USE_EMACS=	yes

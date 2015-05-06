@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	williamh
-GH_COMMIT=	74a57cb
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

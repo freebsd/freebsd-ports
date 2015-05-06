@@ -22,10 +22,7 @@ DATADIR=	${PREFIX}/share/cairo-dock
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	cairo-dock-plug-ins
-GH_COMMIT=	0ade052
 GH_TAGNAME=	0ade052
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-cairo-dock-plug-ins-${GH_COMMIT}
 
 ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes

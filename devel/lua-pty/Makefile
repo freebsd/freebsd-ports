@@ -4,17 +4,17 @@
 PORTNAME=	pty
 PORTVERSION=	1.25
 CATEGORIES=	devel
-MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${GH_COMMIT}/src/lib/lua/pty/
+MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/pty/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua pty.c
-DIST_SUBDIR=	lua-${PORTNAME}-${GH_COMMIT}
+DIST_SUBDIR=	lua-${PORTNAME}-${COMMIT}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
 USES=		lua:51
 
-GH_COMMIT=	8323bb9
+COMMIT=		8323bb9
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	VPATH=${_DISTDIR}
 NO_WRKSUBDIR=	yes

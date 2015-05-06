@@ -12,8 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pathscale
-GH_COMMIT=	2f150a6
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	2f150a6
 
 USES=		cmake compiler:c++11-lang
 CXXFLAGS+=	-nostdlib

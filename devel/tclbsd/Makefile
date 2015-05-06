@@ -3,6 +3,7 @@
 
 PORTNAME=	tclbsd
 PORTVERSION=	1.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -18,8 +19,6 @@ USE_AUTOTOOLS=	autoconf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	1601307
 
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR}

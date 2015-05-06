@@ -16,8 +16,6 @@ LICENSE=	MIT
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	php-fig
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	fe0936e
 GH_PROJECT=	log
 
 PLIST_FILES=	share/pear/Psr/Log/AbstractLogger.php \

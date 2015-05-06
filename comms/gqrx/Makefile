@@ -3,6 +3,7 @@
 
 PORTNAME=	gqrx
 PORTVERSION=	2.3.1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -24,8 +25,6 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
-GH_COMMIT=	4d90b84
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		pkgconfig qmake
 

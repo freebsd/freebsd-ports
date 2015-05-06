@@ -3,6 +3,7 @@
 
 PORTNAME=	pire
 PORTVERSION=	0.0.5
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -11,8 +12,6 @@ COMMENT=	Perl Incompatible Regular Expressions library
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dprokoptsev
-GH_TAGNAME=	release-${PORTVERSION}
-GH_COMMIT=	012bedf
 
 LICENSE=	LGPL3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING

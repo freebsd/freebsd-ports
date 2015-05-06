@@ -2,6 +2,7 @@
 
 PORTNAME=	mysql2pgsql
 PORTVERSION=	0.1.6
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +24,6 @@ USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	philipsoutham
-GH_COMMIT=	250cb1c
 GH_PROJECT=	py-${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

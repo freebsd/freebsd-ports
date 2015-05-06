@@ -21,7 +21,6 @@ DEFAULT_VERSIONS+=	php=56
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolasff
 GH_PROJECT=	phpredis
-GH_COMMIT=	8dac89e
 
 PHP_MODNAME=	redis
 

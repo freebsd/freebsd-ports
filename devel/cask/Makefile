@@ -2,6 +2,7 @@
 
 PORTNAME=	cask
 PORTVERSION=	0.7.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel elisp
 DISTNAME=	cask-v${PORTVERSION}
@@ -12,11 +13,6 @@ COMMENT=	Project management tool for Emacs
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cask
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3c0ca37
-GH_PROJECT=	cask
-
 USE_EMACS=	yes
 USES=		python
 
