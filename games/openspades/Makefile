@@ -3,6 +3,7 @@
 
 PORTNAME=	openspades
 PORTVERSION=	0.0.12
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://yvt.jp/files/programs/osppaks/:data
@@ -20,8 +21,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6a310d8
 
 USES=		compiler:c++11-lib cmake desktop-file-utils
 CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \

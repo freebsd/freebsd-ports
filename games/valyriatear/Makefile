@@ -21,7 +21,6 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bertram25
 GH_PROJECT=	ValyriaTear
-GH_COMMIT=	a324297
 
 USES=		alias cmake iconv lua:51 openal
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF

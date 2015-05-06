@@ -2,6 +2,7 @@
 
 PORTNAME=	openra
 PORTVERSION=	20141029
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	2
 CATEGORIES=	games
 
@@ -14,10 +15,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgdiplus.so:${PORTSDIR}/x11-toolkits/libgdiplus
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${GH_PROJECT}
 GH_PROJECT=	OpenRA
-GH_TAGNAME=	release-${PORTVERSION}
-GH_COMMIT=	e5948ba
 
 NO_ARCH=	yes
 USES=		gmake lua:51,run mono openal:soft

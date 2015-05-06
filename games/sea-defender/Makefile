@@ -21,8 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libglfw.a:${PORTSDIR}/graphics/glfw2
 USE_GITHUB=	yes
 GH_ACCOUNT=	snoutmate
 GH_PROJECT=	Sea-Defender
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	d628051
+GH_TAGNAME=	d628051
 
 USES=		gmake
 USE_SDL=	sdl mixer image ttf

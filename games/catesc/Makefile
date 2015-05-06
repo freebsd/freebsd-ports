@@ -14,7 +14,6 @@ RUN_DEPENDS=	instead:${PORTSDIR}/games/instead
 USE_GITHUB=	yes
 GH_ACCOUNT=	gl00my
 GH_TAGNAME=	d84d277
-GH_COMMIT=	d84d277
 
 NO_BUILD=	yes
 

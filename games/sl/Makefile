@@ -10,7 +10,6 @@ COMMENT=	Steam locomotive runs across the screen if you type "sl" instead of "ls
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mtoyoda
-GH_COMMIT=	5891c2d
 
 PLIST_FILES=bin/${PORTNAME} man/man1/${PORTNAME}.1.gz man/ja/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
