@@ -14,8 +14,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 GH_ACCOUNT=	lfranchi
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	c8e87da
 
 OPTIONS_DEFINE=	TEST
 

@@ -1,11 +1,11 @@
 # Created by: Shane Ambler <FreeBSD@ShaneWare.Biz>
 # $FreeBSD$
 
-PORTNAME=	hydrogen-devel
+PORTNAME=	hydrogen
 PORTVERSION=	0.9.6r2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	GHL
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
 GH_PROJECT=	hydrogen
 GH_TAGNAME=	0.9.6-RC2
-GH_COMMIT=	2ff9010
 
 MAJORVERSION=	0.9.6
 USE_QT4=	corelib gui qmake_build linguist_build moc_build network \

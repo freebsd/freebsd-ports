@@ -9,14 +9,14 @@ PORTNAME=	snappy
 PORTVERSION=	1.0.4.1
 PORTREVISION=	1
 CATEGORIES=	archivers java
-MASTER_SITES=	GITHUB_LEGACY:source1 \
+MASTER_SITES=	GH:source1 \
 		http://snappy.googlecode.com/files/:source2 \
 		LOCAL/jgh/archivers/${PORTNAME}/:source3
 PKGNAMESUFFIX=	java
-DISTFILES+=	snappy-${PORTVERSION}.tar.gz:source1 \
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:source1 \
 		snappy-${PORTVERSION:R}.tar.gz:source2 \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz:source3
-EXTRACT_ONLY=	snappy-${PORTVERSION}.tar.gz \
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz
 
 MAINTAINER=	hsn@sendmail.cz
@@ -26,11 +26,10 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
 GH_TAGNAME=	snappy-java-${PORTVERSION}
-GH_COMMIT=	487f82d
-USE_GITHUB=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
