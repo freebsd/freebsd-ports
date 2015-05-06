@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community Developed Content Management System
 
-USES=		zip
+USES=		cpe zip
 USE_PHP=	mysql pcre session iconv xml gd
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
