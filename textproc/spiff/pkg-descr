@@ -1,0 +1,3 @@
+A declarative YAML templating system tuned for BOSH deployment manifests.
+
+WWW: https://github.com/cloudfoundry-incubator/spiff
