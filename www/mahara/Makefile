@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mahara
-PORTVERSION=	1.9.2
+PORTVERSION=	15.04.0
 CATEGORIES=	www
-MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.9/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source ePortfolio system
 
 LICENSE=	GPLv3
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
 USE_PHP=	session json curl xml xmlrpc openssl simplexml
 
 OPTIONS_DEFINE=	MYSQL PGSQL
