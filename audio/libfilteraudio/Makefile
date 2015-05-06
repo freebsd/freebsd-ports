@@ -4,7 +4,6 @@
 PORTNAME=	libfilteraudio
 PORTVERSION=	0.150426
 CATEGORIES=	audio
-DIST_SUBDIR=	${PORTNAME}-${GH_COMMIT}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Lightweight audio filtering library made from webrtc code

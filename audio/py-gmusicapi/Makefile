@@ -25,8 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:${PORTSDIR}/devel/py-appdirs 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
 GH_PROJECT=	Unofficial-Google-Music-API
-GH_COMMIT=	359b200
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	359b200
 
 USES=		python
 USE_PYTHON=	distutils autoplist

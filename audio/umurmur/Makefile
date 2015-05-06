@@ -10,14 +10,11 @@ COMMENT=	Minimalistic Murmur (Mumble server)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Checksum and size mismatch
-
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fatbob313
-GH_COMMIT=	17daa7e
 
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes

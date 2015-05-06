@@ -3,6 +3,7 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.6.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	audio
 
@@ -12,9 +13,6 @@ COMMENT=	Console-based music player with really cool features
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	76421f1
 
 USES=		gmake pkgconfig iconv ncurses
 HAS_CONFIGURE=	yes

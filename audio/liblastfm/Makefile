@@ -17,7 +17,6 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 GH_ACCOUNT=	lastfm
-GH_COMMIT=	a2416ca
 
 USES=		cmake pkgconfig
 USE_GITHUB=	yes

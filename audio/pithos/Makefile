@@ -5,7 +5,6 @@ PORTNAME=	pithos
 PORTVERSION=	1.0.0
 PORTREVISION=	2
 CATEGORIES=	audio
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	john@pcbsd.org
 COMMENT=	Pandora client for the GNOME desktop
@@ -13,9 +12,6 @@ COMMENT=	Pandora client for the GNOME desktop
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pithos
-GH_PROJECT=	pithos
-GH_COMMIT=	1f5975e
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py3-dbus \

@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	svagner
-GH_COMMIT=	9e22be7
 
 USES=		pkgconfig
 USE_GNOME=	gtk20
