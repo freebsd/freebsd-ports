@@ -64,6 +64,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += cf
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
