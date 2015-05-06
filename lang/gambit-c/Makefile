@@ -3,6 +3,7 @@
 
 PORTNAME=	gambit-c
 DISTVERSION=	v4_7_5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.7/source/
@@ -38,7 +39,7 @@ GCC_DESC=	Build with GCC
 .if ${PORT_OPTIONS:MGCC}
 USE_GCC=	any
 .endif
- 
+
 .if ${COMPILER_TYPE} == gcc
 # This is needed because 4.2 < gcc -v < 4.4 has optimisations that make the
 # build take more than 20Gb of virtual memory.
