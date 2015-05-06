@@ -3,6 +3,7 @@
 
 PORTNAME=	gti
 PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	tota@FreeBSD.org
@@ -15,8 +16,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwos
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	97639f3
 
 PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
 

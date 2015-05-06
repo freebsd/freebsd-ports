@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -22,8 +22,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickg
 GH_PROJECT=	traingame
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	eacfbc3
+GH_TAGNAME=	eacfbc3
 
 USES=		cmake compiler:c++11-lib dos2unix pkgconfig
 DOS2UNIX_GLOB=	*.mtl *.obj

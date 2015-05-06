@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +20,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 USE_GITHUB=	yes
 GH_ACCOUNT=	Keruspe
 GH_PROJECT=	Bomb-her-man
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	8f5aa22
+GH_TAGNAME=	8f5aa22
 
 USES=		gmake pkgconfig
 USE_SDL=	sdl image mixer ttf

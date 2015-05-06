@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openxcom
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -17,8 +18,6 @@ LIB_DEPENDS=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
 USE_GITHUB=	yes
 GH_ACCOUNT=	SupSuper
 GH_PROJECT=	OpenXcom
-GH_TAGNAME=	v1.0
-GH_COMMIT=	b396c74
 
 USES=		compiler:c++11-lang gmake pkgconfig
 USE_SDL=	sdl mixer image gfx

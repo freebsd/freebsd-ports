@@ -23,8 +23,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	knowknowledge
 GH_PROJECT=	Epiar
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	44046e3
+GH_TAGNAME=	44046e3
 
 USES=		autoreconf gmake pkgconfig
 USE_SDL=	image mixer sdl
