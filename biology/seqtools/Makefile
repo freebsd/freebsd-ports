@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqtools
-PORTVERSION=	4.33
+PORTVERSION=	4.34.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
