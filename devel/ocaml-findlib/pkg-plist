@@ -1,7 +1,9 @@
 bin/ocamlfind
+bin/safe_camlp4
 %%ETCDIR%%.conf
 %%OCAML_SITELIBDIR%%/bigarray/META
 %%OCAML_SITELIBDIR%%/bytes/META
+%%OCAML_SITELIBDIR%%/camlp4/META
 %%OCAML_SITELIBDIR%%/compiler-libs/META
 %%OCAML_SITELIBDIR%%/dynlink/META
 %%OCAML_SITELIBDIR%%/findlib/META
