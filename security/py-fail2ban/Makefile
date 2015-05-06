@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	2ab2bd8
+GH_COMMIT=	880e666
 GH_TAGNAME=	${PORTVERSION}
 
 USES=		python
@@ -43,7 +43,6 @@ post-patch:
 		${WRKSRC}/config/jail.conf
 	@${REINPLACE_CMD} -e 's,/var/lib/fail2ban/fail2ban.sqlite3,${FAIL2BAN_DBDIR}/fail2ban.sqlite3,g' \
 		${WRKSRC}/config/fail2ban.conf
-	@${REINPLACE_CMD} -e 's,"/dev/log","/var/run/log",g' ${WRKSRC}/fail2ban/server/server.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
