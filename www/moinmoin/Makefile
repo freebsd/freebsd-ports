@@ -13,7 +13,8 @@ COMMENT=	Python clone of WikiWiki
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	moinmo
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	moin
 
