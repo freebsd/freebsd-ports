@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	3.9.3
+PORTVERSION=	3.10.0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -52,11 +52,6 @@ PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
-
-post-patch:
-	(cd ${WRKSRC} && ${MV} \
-	    ./src/plugins/jingleNodes/src/i18n/jingleNodes_i18n.properties \
-	    ./src/plugins/jingleNodes/src/i18n/jinglenodes_i18n.properties)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
