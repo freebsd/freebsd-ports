@@ -11,13 +11,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}requests>=2:${PORTSDIR}/www/py-requests
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		python:2
+USES=		cpe python:2
+CPE_VENDOR=	bastian_kleineidam
 USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes
 
