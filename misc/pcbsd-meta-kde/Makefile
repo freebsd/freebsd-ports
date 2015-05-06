@@ -19,6 +19,7 @@ RUN_DEPENDS=	kdelibs>=0:${PORTSDIR}/x11/kdelibs4 \
 		kdeadmin>=0:${PORTSDIR}/sysutils/kdeadmin4 \
 		kdeplasma-addons>=0:${PORTSDIR}/deskutils/kdeplasma-addons \
 		kdeutils>=0:${PORTSDIR}/misc/kdeutils4 \
+		kdegraphics>=0:${PORTSDIR}/graphics/kdegraphics4 \
 		ksnapshot>=0:${PORTSDIR}/graphics/ksnapshot \
 		py27-qt4>=0:${PORTSDIR}/devel/py-qt4 \
 		gtk-qt-engine>=0:${PORTSDIR}/x11-themes/gtk-qt4-engine \
