@@ -1,0 +1,6 @@
+direnv is an environment switcher for the shell. It knows how to hook into
+bash, zsh, tcsh and fish shell to load or unload environment variables
+depending on the current directory. This allows to have project-specific
+environment variables and not clutter the "~/.profile" file.
+
+WWW: http://direnv.net/
