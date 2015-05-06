@@ -24,6 +24,7 @@ RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-rbpdf>=0:${PORTSDIR}/print/rubygem-rbpdf \
 		rubygem-request_store>=1.1.0:${PORTSDIR}/devel/rubygem-request_store
 
+USES=		cpe
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes
