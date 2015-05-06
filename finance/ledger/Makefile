@@ -3,6 +3,7 @@
 
 PORTNAME=	ledger
 PORTVERSION=	3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
 MAINTAINER=	woodycarey@hotmail.com
@@ -18,9 +19,6 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ledger
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	9df7fd4
 
 USE_LDCONFIG=	yes
 USES=		cmake compiler:c++11-lib
