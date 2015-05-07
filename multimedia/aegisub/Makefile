@@ -26,7 +26,7 @@ GH_ACCOUNT=	FFMS
 GH_PROJECT=	ffms2
 GH_TAGNAME=	${FFMS_VERSION}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake iconv \
 		pkgconfig tar:xz
