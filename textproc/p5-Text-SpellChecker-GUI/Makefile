@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-SpellChecker-GUI
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
 		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
 		p5-Text-SpellChecker>=0:${PORTSDIR}/textproc/p5-Text-SpellChecker
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/curses-textspellchecker bin/textspellchecker
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
