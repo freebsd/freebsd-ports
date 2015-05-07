@@ -3,10 +3,6 @@ bin/goldfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
-info/find-maint.info
-info/find.info
-info/find.info-1
-info/find.info-2
 libexec/gbigram
 libexec/gcode
 libexec/gfrcode
