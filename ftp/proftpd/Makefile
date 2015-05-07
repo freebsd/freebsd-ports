@@ -48,7 +48,7 @@ PORTDOCS=	*
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
-USES+=		gmake libtool
+USES+=		cpe gmake libtool
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
