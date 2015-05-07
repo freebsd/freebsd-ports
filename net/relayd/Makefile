@@ -16,6 +16,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	relayd
+WRKSRC_SUBDIR=	src/usr.sbin
 
 CFLAGS+=	-Wall
 
