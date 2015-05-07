@@ -11,8 +11,6 @@ COMMENT=	Simple utility to create list of maildirs for mutt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
-GH_TAGNAME=	${DISTNAME}
-GH_COMMIT=	dcfcea9
 
 PLIST_FILES=	bin/${PORTNAME}
 
