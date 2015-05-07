@@ -2,6 +2,7 @@
 
 PORTNAME=	lucene++
 PORTVERSION=	3.0.7
+DISTVERSIONPREFIX=	rel_
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -15,8 +16,6 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus
 GH_PROJECT=	LucenePlusPlus
-GH_TAGNAME=	rel_3.0.7
-GH_COMMIT=	4d28f9f
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 

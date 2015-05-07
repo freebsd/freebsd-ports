@@ -2,6 +2,7 @@
 
 PORTNAME=	cbsd
 PORTVERSION=	10.1.4
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
@@ -18,8 +19,6 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	f68f99f
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
 

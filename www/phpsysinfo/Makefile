@@ -3,8 +3,8 @@
 
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	PHP script for displaying system information
@@ -12,9 +12,6 @@ COMMENT=	PHP script for displaying system information
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	phpsysinfo
-GH_TAGNAME=	v3.2.0
-GH_COMMIT=	5a2d026
 
 NO_BUILD=	yes
 USE_PHP=	dom pcre xml simplexml mbstring

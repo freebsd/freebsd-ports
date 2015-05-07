@@ -12,10 +12,9 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
-GH_COMMIT=	31323f8
 
 USE_PHP=	mysql gd session pcre
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GH_COMMIT}/upload
+WRKSRC_SUBDIR=	upload
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

@@ -3,6 +3,7 @@
 
 PORTNAME=	h2o
 PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	dch@skunkwerks.at
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	h2o
-GH_TAGNAME=	v1.0.1
-GH_COMMIT=	c28f39e
 
 MAKE_JOBS_UNSAFE=	yes
 USES=	cmake:outsource compiler:c11

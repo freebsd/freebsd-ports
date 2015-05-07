@@ -11,7 +11,6 @@ COMMENT=	Cross-browser JavaScript display engine for mathematics
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
-GH_COMMIT=	bd9f6e0
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.

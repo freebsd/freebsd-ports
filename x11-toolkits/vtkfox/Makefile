@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=FOX16
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
-GH_COMMIT=	a1c007a
 
 .include <bsd.port.options.mk>
 

@@ -2,8 +2,8 @@
 
 PORTNAME=	mochiweb
 PORTVERSION=	2.10.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building lightweight HTTP servers
@@ -19,9 +19,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mochi
-GH_PROJECT=	mochiweb
-GH_COMMIT=	8b6fab5
-GH_TAGNAME=	v${PORTVERSION}
 
 PORTDOCS=	*
 

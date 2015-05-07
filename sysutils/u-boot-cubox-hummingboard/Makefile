@@ -4,7 +4,6 @@ PORTNAME=	u-boot
 PORTVERSION=	2013.10
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-cubox-hummingboard
-DISTNAME=	u-boot-${PORTVERSION}-solidrun-imx6
 
 MAINTAINER=	ian@FreeBSD.org
 COMMENT=	Cross-build U-Boot loader for SolidRun Cubox
@@ -16,12 +15,10 @@ BUILD_DEPENDS=  arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
 USE_GITHUB=	yes
 GH_ACCOUNT=	SolidRun
 GH_PROJECT=	u-boot-imx6
-GH_COMMIT=	e4bc4c3
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	e4bc4c3
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 USES=		gmake
 SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
 

@@ -9,8 +9,7 @@ COMMENT=	Utility for adminstrating rc.conf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	skoef
-GH_COMMIT=	7a1bf44
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	7a1bf44
 
 PLIST_FILES=	sbin/${PORTNAME}
 

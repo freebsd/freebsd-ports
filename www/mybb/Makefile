@@ -9,9 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}_1609
-GH_COMMIT=	67cf4c0
 
 NO_BUILD=	yes
 USE_PHP=	xsl mysql iconv gd xml

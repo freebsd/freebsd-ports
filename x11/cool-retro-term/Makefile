@@ -3,9 +3,10 @@
 
 PORTNAME=	cool-retro-term
 PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 MASTER_SITES=	LOCAL/danfe:qtw
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		qmltermwidget-0.1.0${EXTRACT_SUFX}:qtw
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,8 +16,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Swordfish90
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6446f1d
 
 USES=		desktop-file-utils qmake
 USE_QT5=	qmake_build buildtools_build core gui qml quick widgets \

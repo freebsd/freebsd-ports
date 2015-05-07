@@ -11,7 +11,6 @@ COMMENT=	Security-aware parser for the HTTP protocol
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	inliniac
-GH_COMMIT=	0294c27
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

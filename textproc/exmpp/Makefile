@@ -3,6 +3,7 @@
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.9
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	textproc net-im
 
@@ -18,9 +19,6 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
-GH_PROJECT=	exmpp
-GH_COMMIT=	829cdc2
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-static=yes \

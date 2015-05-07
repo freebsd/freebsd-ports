@@ -17,8 +17,7 @@ RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux \
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zolrath
-GH_TAGNAME=	971f8c375263f9dd8853f676e3331782c4fbdfdc
-GH_COMMIT=	971f8c3
+GH_TAGNAME=	971f8c3
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${PORTNAME}

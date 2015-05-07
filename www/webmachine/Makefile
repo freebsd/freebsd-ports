@@ -19,9 +19,6 @@ PLIST_SUB=      VERSION="${PORTVERSION}"
 USES=		gmake
 USE_GITHUB=     yes
 GH_ACCOUNT=     basho
-GH_PROJECT=     webmachine
-GH_COMMIT=      850bf30
-GH_TAGNAME=     ${PORTVERSION}
 
 PORTDOCS=	*
 

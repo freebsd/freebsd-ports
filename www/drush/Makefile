@@ -15,7 +15,6 @@ RUN_DEPENDS=	pear-Console_Table>0:${PORTSDIR}/devel/pear-Console_Table
 NO_BUILD=	yes
 
 GH_ACCOUNT=	${PORTNAME}-ops
-GH_COMMIT=	0a7918a
 USE_GITHUB=	yes
 
 # set php requirements same as drupal itself

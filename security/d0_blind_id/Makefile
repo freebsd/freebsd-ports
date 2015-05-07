@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	divVerent
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ff1ce7e
+GH_TAGNAME=	ff1ce7e
 
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes

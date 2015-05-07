@@ -16,7 +16,6 @@ USE_LDCONFIG=	yes
 USES=		cmake dos2unix
 
 GH_ACCOUNT=	leethomason
-GH_COMMIT=	5321a0e
 
 PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.a \
