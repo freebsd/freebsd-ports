@@ -3,6 +3,7 @@
 
 PORTNAME=	liblouis
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.liblouis.org/downloads/
 
@@ -16,6 +17,7 @@ OPTIONS_DEFINE=	DOCS
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INFO=		liblouis
 
 post-extract:
 	@${REINPLACE_CMD} -e \
