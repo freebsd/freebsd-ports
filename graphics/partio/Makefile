@@ -2,7 +2,7 @@
 
 PORTNAME=	partio
 PORTVERSION=	1.1.0.20140128
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics math
 
 MAINTAINER=	mva@FreeBSD.org
@@ -24,6 +24,8 @@ OPTIONS_DEFAULT=	PYTHON
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 PYTHON_USES=		python:2.7+
 PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
