@@ -17,7 +17,6 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	guyru
 GH_TAGNAME=	cb0de64
-GH_COMMIT=	cb0de64
 
 USES=		cmake
 CFLAGS+=	-I${LOCALBASE}/include

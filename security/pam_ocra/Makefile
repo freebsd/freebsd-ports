@@ -15,8 +15,6 @@ USES=		uidfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	sg2342
-GH_PROJECT=	pam_ocra
-GH_COMMIT=	0e47902
 
 PLIST_FILES=	lib/pam_ocra.so \
 		lib/pam_ocra.so.0 \

@@ -4,7 +4,6 @@
 PORTNAME=	kqoauth
 PORTVERSION=	0.98
 CATEGORIES=	security
-MASTER_SITES=	GHL
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implimentation of OAuth 1.0 in C++ for Qt
@@ -19,7 +18,6 @@ QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 USE_GITHUB=	yes
 GH_ACCOUNT=	kypeli
 GH_PROJECT=	kQOAuth
-GH_COMMIT=	677339c
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|$${target.path}/pkgconfig|$${INSTALL_PREFIX}/libdata/pkgconfig|g' \
