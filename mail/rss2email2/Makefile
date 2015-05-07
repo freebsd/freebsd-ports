@@ -27,6 +27,10 @@ PORTEXAMPLES=	config.py.example
 
 OPTIONS_DEFINE=	EXAMPLES
 
+post-extract:
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
 		${WRKSRC}/r2e
