@@ -3,6 +3,7 @@
 
 PORTNAME=	resynthesizer
 PORTVERSION=	2.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
@@ -16,8 +17,6 @@ LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bootchk
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	28cade5
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lintl

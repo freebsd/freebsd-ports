@@ -5,7 +5,6 @@ PORTNAME=	dcraw-m
 PORTVERSION=	9.22
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Modified Decoder for RAW files from digital cameras
@@ -19,9 +18,7 @@ LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
-GH_PROJECT=	dcraw-m
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	1392579
+GH_TAGNAME=	1392579
 
 USES=		pkgconfig
 

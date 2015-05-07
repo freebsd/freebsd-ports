@@ -2,6 +2,7 @@
 
 PORTNAME=	maim
 PORTVERSION=	3.3.41
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -14,9 +15,6 @@ LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
-GH_PROJECT=	maim
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	178b253
 
 USES=		cmake
 USE_XORG=	x11 xrandr xfixes

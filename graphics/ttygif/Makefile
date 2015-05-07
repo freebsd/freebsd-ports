@@ -11,12 +11,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	icholy
-GH_COMMIT=	ea0b493
 
 USES=		tar:bzip2 gmake
-
-USE_GITHUB=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/concat

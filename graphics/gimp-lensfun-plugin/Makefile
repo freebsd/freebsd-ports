@@ -23,8 +23,7 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	seebk
 GH_PROJECT=	GIMP-Lensfun
-GH_COMMIT=	d0a0bd2
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	d0a0bd2
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	gimp-lensfun

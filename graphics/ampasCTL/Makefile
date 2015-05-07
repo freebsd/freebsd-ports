@@ -22,8 +22,7 @@ LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	CTL
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	57b48a2
+GH_TAGNAME=	57b48a2
 
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes

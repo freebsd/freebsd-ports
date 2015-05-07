@@ -3,6 +3,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.43.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	graphics
 
@@ -17,8 +18,6 @@ LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	log69
-GH_COMMIT=	e566f9b
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USES=		compiler:openmp
