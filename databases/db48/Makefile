@@ -33,6 +33,13 @@ INSTALL_TARGET=	install_include install_lib install_utilities
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "armv6"
+# db48 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
+CONFIGURE_ARGS+=	--enable-posixmutexes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -Ee 's|--mode=install cp -p|--mode=install ${INSTALL} -s|;' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
