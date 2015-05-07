@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b13af778-f4fc-11e4-a95d-ac9e174be3af">
+    <topic>Vulnerablitiy in HWP document filter</topic>
+    <affects>
+      <package>
+	<name>libreoffice</name>
+	<range><lt>4.3.7</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice</name>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.1.1_9</lt></range>
+	<range><lt>4.2.1677190,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1774">
+	  <p>The HWP filter in LibreOffice before 4.3.7 and 4.4.x before
+	    4.4.2 and Apache OpenOffice before 4.1.2 allows remote
+	    attackers to cause a denial of service (crash) or possibly
+	    execute arbitrary code via a crafted HWP document, which
+	    triggers an out-of-bounds write.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1774</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-1774.html</url>
+      <url>https://www.libreoffice.org/about-us/security/advisories/cve-2015-1774/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d86890da-f498-11e4-99aa-bcaec565249c">
     <topic>wordpress -- 2 cross-site scripting vulnerabilities</topic>
     <affects>
