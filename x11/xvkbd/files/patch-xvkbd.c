@@ -1,3 +1,12 @@
+Description: Assorted compilation and usage fixes.
+ - fix a lot of compiler warnings
+ - unbreak the build if XTEST is not selected
+ - use snprintf() instead of sprintf() and strcpy(), just in case
+ - fix the text of an error message
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-06-11
+
 --- xvkbd.c.orig	2012-03-03 01:31:46.000000000 +0100
 +++ xvkbd.c	2012-04-01 10:24:40.225558910 +0200
 @@ -463,8 +463,8 @@
