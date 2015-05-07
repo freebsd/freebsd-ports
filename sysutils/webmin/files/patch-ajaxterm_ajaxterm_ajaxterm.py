@@ -1,7 +1,4 @@
-
-$FreeBSD$
-
---- ajaxterm/ajaxterm/ajaxterm.py.orig
+--- ajaxterm/ajaxterm/ajaxterm.py.orig	2015-03-13 23:52:34 UTC
 +++ ajaxterm/ajaxterm/ajaxterm.py
 @@ -394,7 +394,7 @@
  			if self.cmd:

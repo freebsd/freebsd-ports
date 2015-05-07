@@ -1,7 +1,4 @@
-
-$FreeBSD$
-
---- fail2ban/config.orig
+--- fail2ban/config.orig	2015-03-13 23:52:35 UTC
 +++ fail2ban/config
 @@ -1,4 +1,4 @@
 -config_dir=/etc/fail2ban
