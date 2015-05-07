@@ -2,6 +2,7 @@
 
 PORTNAME=	yara
 PORTVERSION=	3.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,8 +11,6 @@ COMMENT=	Python bindings for yara
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plusvic
-GH_TAGNAME=	v3.3.0
-GH_COMMIT=	85e913e
 
 LIB_DEPENDS=	libyara.so:${PORTSDIR}/security/yara
 
