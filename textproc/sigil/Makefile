@@ -5,8 +5,6 @@ PORTNAME=	sigil
 PORTVERSION=	0.6.0
 PORTREVISION=	5
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	Sigil-${PORTVERSION}-Code
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG ePub editor
@@ -18,8 +16,11 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		cmake desktop-file-utils pkgconfig zip
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	user-none
+GH_PROJECT=	Sigil
+
+USES=		cmake desktop-file-utils pkgconfig
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 
 post-patch:
