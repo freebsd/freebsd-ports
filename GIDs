@@ -178,6 +178,7 @@ condor:*:466:
 netmon:*:467:
 slurm:*:468:
 consul:*:469:
+serf:*:470:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
