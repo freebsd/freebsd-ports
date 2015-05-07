@@ -11,7 +11,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	constabulary
-GH_PROJECT=	gb
 GH_TAGNAME=	400dce5e5172bcbaf609e6a1107988bb5571dc90
 
 PLIST_FILES=	bin/gb bin/gb-env bin/gb-vendor
