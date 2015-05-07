@@ -4,7 +4,6 @@ include/libecap/common/area.h
 include/libecap/common/autoconf.h
 include/libecap/common/body.h
 include/libecap/common/body_size.h
-include/libecap/common/call.h
 include/libecap/common/delay.h
 include/libecap/common/errors.h
 include/libecap/common/forward.h
@@ -23,8 +22,8 @@ include/libecap/host/host.h
 include/libecap/host/xaction.h
 lib/libecap.a
 lib/libecap.so
-lib/libecap.so.2
-lib/libecap.so.2.0.0
+lib/libecap.so.3
+lib/libecap.so.3.0.0
 libdata/pkgconfig/libecap.pc
 @dirrm include/libecap/adapter
 @dirrm include/libecap/common
