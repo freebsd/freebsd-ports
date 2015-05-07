@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fasta3
-PORTVERSION=	36.3.6d
-PORTREVISION=	1
+PORTVERSION=	36.3.7a
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta36/
 DISTNAME=	fasta-${PORTVERSION}
@@ -45,6 +44,7 @@ EXAMPLES=	seq/*.aa seq/*.lc seq/*.seq seq/*.lib
 
 post-patch:
 	@${CP} ${WRKSRC}/make/${MAKEFILE} ${BUILD_WRKSRC}
+	@${RM} ${WRKSRC}/bin/README
 
 post-install:
 	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} * ${STAGEDIR}${PREFIX}/bin)
