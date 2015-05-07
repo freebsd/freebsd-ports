@@ -84,9 +84,6 @@ man/man1/libfm-pref-apps.1.gz
 man/man1/lxshortcut.1.gz
 share/applications/libfm-pref-apps.desktop
 share/applications/lxshortcut.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/archivers.list
 %%DATADIR%%/images/folder.png
 %%DATADIR%%/images/unknown.png
