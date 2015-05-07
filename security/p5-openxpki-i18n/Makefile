@@ -19,5 +19,6 @@ GH_TAGNAME=	5a4c5eb
 ### even to use English language.
 USES=		gettext-runtime gettext-tools gmake perl5
 ALL_TARGET=	scan default
+WRKSRC_SUBDIR=	core/i18n
 
 .include <bsd.port.mk>
