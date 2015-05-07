@@ -57,6 +57,119 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d86890da-f498-11e4-99aa-bcaec565249c">
+    <topic>wordpress -- 2 cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CH</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samuel Sidler reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/05/wordpress-4-2-2/">
+	  <p>The Genericons icon font package, which is used in a number of
+	    popular themes and plugins, contained an HTML file vulnerable to
+	    a cross-site scripting attack. All affected themes and plugins
+	    hosted on WordPress.org (including the Twenty Fifteen default
+	    theme) have been updated today by the WordPress security team
+	    to address this issue by removing this nonessential file. To
+	    help protect other Genericons usage, WordPress 4.2.2
+	    proactively scans the wp-content directory for this HTML
+	    file and removes it. Reported by Robert Abela of Netsparker.</p>
+
+	  <p>WordPress versions 4.2 and earlier are affected by a critical
+	    cross-site scripting vulnerability, which could enable anonymous
+	    users to compromise a site. WordPress 4.2.2 includes a
+	    comprehensive fix for this issue.</p>
+
+	  <p>The release also includes hardening for a potential cross-site
+	    scripting vulnerability when using the visual editor. This issue
+	    was reported by Mahadev Subedi.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/05/wordpress-4-2-2/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-07</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ba4f9b19-ed9d-11e4-9118-bcaec565249c">
+    <topic>wordpress -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.1,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CH</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/04/wordpress-4-2-1/">
+	  <p>WordPress 4.2.1 is now available. This is a critical security
+	    release for all previous versions and we strongly encourage you
+	    to update your sites immediately.</p>
+	  <p>A few hours ago, the WordPress team was made aware of a
+	    cross-site scripting vulnerability, which could enable commenters
+	    to compromise a site. The vulnerability was discovered by Jouko
+	    Pynnöne.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/04/wordpress-4-2-1/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64e6006e-f009-11e4-98c6-000c292ee6b8">
     <topic>powerdns -- Label decompression bug can cause crashes or CPU spikes</topic>
     <affects>
