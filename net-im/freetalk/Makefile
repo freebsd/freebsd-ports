@@ -3,7 +3,7 @@
 
 PORTNAME=	freetalk
 PORTVERSION=	3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	SAVANNAH/freetalk \
 		http://itdev.spb.ru/mirror/
@@ -22,6 +22,7 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+INFO=		freetalk
 
 OPTIONS_SUB=	yes
 
