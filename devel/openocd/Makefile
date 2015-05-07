@@ -3,7 +3,7 @@
 
 PORTNAME=	openocd
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -51,6 +51,7 @@ MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 
 USES=		gmake libtool tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+INFO=		openocd
 
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.
