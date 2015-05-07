@@ -12,7 +12,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zimbatm
-GH_PROJECT=	direnv
 
 PLIST_FILES=	bin/direnv man/man1/direnv.1.gz man/man1/direnv-stdlib.1.gz
 
