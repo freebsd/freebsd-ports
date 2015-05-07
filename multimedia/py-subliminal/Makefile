@@ -27,8 +27,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Diaoul
-GH_COMMIT=	f41fc2b
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	f41fc2b
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

@@ -18,8 +18,6 @@ RUN_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-SieveRules-Managesieve
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	f606c1a
 
 NO_BUILD=	yes
 

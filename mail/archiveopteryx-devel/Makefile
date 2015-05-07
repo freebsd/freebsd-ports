@@ -17,8 +17,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 USE_GITHUB=	yes
 GH_ACCOUNT=	aox
 GH_PROJECT=	aox
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	39bdb8b
+GH_TAGNAME=	39bdb8b
 
 USES=		perl5 tar:bzip2 pgsql:9.1+
 USE_OPENSSL=	yes

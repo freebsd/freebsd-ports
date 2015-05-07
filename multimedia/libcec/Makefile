@@ -3,8 +3,9 @@
 
 PORTNAME=	libcec
 PORTVERSION=	2.2.0
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSIONSUFFIX=	-repack
 CATEGORIES=	multimedia
-MASTER_SITES=	GHL
 
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
@@ -14,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pulse-Eight
-GH_COMMIT=	2a80b46
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}-repack
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf pathfix pkgconfig libtool

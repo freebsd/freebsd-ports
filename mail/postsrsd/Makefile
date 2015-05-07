@@ -17,7 +17,6 @@ RUN_DEPENDS+=	base64:${PORTSDIR}/converters/base64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roehling
-GH_COMMIT=	4a3349d
 
 USES=		cmake pkgconfig
 CMAKE_ARGS+=	--no-warn-unused-cli \

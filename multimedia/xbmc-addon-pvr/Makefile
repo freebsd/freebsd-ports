@@ -12,8 +12,7 @@ RUN_DEPENDS+=	kodi:${PORTSDIR}/multimedia/kodi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opdenkamp
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	4854fbe
+GH_TAGNAME=	4854fbe
 
 USES=		autoreconf libtool pkgconfig
 USE_GL=		gl

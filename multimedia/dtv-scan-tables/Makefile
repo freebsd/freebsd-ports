@@ -12,16 +12,12 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oliv3r
-GH_PROJECT=	dtv-scan-tables
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	14bd6c7
+GH_TAGNAME=	14bd6c7
 
 NO_BUILD=	yes
-
-.include <bsd.port.pre.mk>
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${DATADIR}
 		@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

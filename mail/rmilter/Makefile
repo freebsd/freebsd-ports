@@ -16,9 +16,6 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_PROJECT=	${PORTNAME}
-GH_TAG=		${PORTVERSION}
-GH_COMMIT=	a8d7db5
 
 USE_RC_SUBR=	yes
 USES=		cmake:outsource bison
