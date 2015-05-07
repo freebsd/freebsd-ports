@@ -3,6 +3,7 @@
 
 PORTNAME=	scss
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/
@@ -18,6 +19,7 @@ NO_BUILD=	yes
 
 FILES=	lexer.scm parser.scm scss.scm properties.scm \
 	interface/sdom.scm common.scm
+INFO=	scss
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/guile/scss
