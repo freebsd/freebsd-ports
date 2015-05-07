@@ -32,3 +32,13 @@ share/pixmaps/wcm.png
 %%DATADIR%%/shl/sql.shl
 %%DATADIR%%/shl/undef.shl
 %%DATADIR%%/shl/xml.shl
+%%DATADIR%%/styles/Black.style
+%%DATADIR%%/styles/Default.style
+%%DATADIR%%/styles/README
+%%DATADIR%%/styles/README.solarized
+%%DATADIR%%/styles/Solarized-light.style
+%%DATADIR%%/styles/Solarized.style
+%%DATADIR%%/styles/Solarized.style.src
+%%DATADIR%%/styles/White.style
+%%DATADIR%%/styles/solarize.sh
+%%DATADIR%%/styles/solarized-gen.py

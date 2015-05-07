@@ -34,7 +34,7 @@
     SUBDIR += thunar-vfs
     SUBDIR += twander
     SUBDIR += ultracopier
-    SUBDIR += walcommander
+    SUBDIR += wcmcommander
     SUBDIR += worker
     SUBDIR += xcruise
     SUBDIR += xdiskusage
