@@ -5,10 +5,10 @@ PORTNAME=	syncthing-cli
 PORTVERSION=	0.1.0.2015032001
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
+MASTER_SITES=	GH \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
 		https://codeload.github.com/AudriusButkevicius/cli/legacy.tar.gz/7f561c7?dummy=/:group3
-DISTFILES=	syncthing-cli-${PORTVERSION}${EXTRACT_SUFX}:group1 \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		syncthing-${SYNCTHING_VER}${EXTRACT_SUFX}:group2 \
 		AudriusButkevicius-cli-7f561c7${EXTACT_SUFX}:group3
 
@@ -17,14 +17,12 @@ COMMENT=	Syncthing CLI
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	syncthing-cli
-GH_COMMIT=	144a17a4794470cc61830eeadeb1ad094b90cbde
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	144a17a4794470cc61830eeadeb1ad094b90cbde
 
 SYNCTHING_VER=	0.10.30
-
-WRKSRC=		${WRKDIR}/syncthing-cli-${GH_COMMIT}
 
 PLIST_FILES=	bin/syncthing-cli
 
@@ -53,7 +51,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build
-	@${MV} ${WRKSRC}/syncthing-cli-${GH_COMMIT} ${WRKSRC}/syncthing-cli
+	@${MV} ${WRKSRC}/syncthing-cli-${GH_TAGNAME} ${WRKSRC}/syncthing-cli
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing-cli ${STAGEDIR}${PREFIX}/bin/

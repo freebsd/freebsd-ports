@@ -2,6 +2,8 @@
 
 PORTNAME=	ccnet
 PORTVERSION=	4.0.6
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-server
 PORTREVISION=	5
 CATEGORIES=	net-mgmt devel
 
@@ -23,8 +25,6 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v${PORTVERSION}-server
-GH_COMMIT=	1e1aeae
 
 USES=		autoreconf libtool pkgconfig pathfix python:2
 PATHFIX_MAKEFILEIN=	Makefile.am

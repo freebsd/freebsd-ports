@@ -3,6 +3,7 @@
 
 PORTNAME=	qTox
 PORTVERSION=	0.150426
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -38,7 +39,7 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$$$system(git rev-parse HEAD)|"${GH_COMMIT}"|' \
+	@${REINPLACE_CMD} -e 's|$$$$system(git rev-parse HEAD)|"${GH_TAGNAME}"|' \
 		${WRKSRC}/qtox.pro
 	@${REINPLACE_CMD} -e 's|INCLUDEPATH += "/usr/include|INCLUDEPATH += "/usr/local/include|' \
 		${WRKSRC}/qtox.pro

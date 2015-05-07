@@ -3,7 +3,6 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.1.0
-DISTVERSIONSUFFIX=	-beta+2013071101
 PORTREVISION=	2
 CATEGORIES=	net comms ipv6
 
@@ -18,9 +17,8 @@ USE_LDCONFIG=	yes
 USES=		alias cmake:outsource cpe pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
-GH_PROJECT=	FreeRDP
-GH_COMMIT=	780d451
-GH_TAGNAME=	${GH_COMMIT}
+GH_PROJECT=	${GH_ACCOUNT}
+GH_TAGNAME=	780d451
 
 CPE_VENDOR=	freerdp_project
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	check_ports
 PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-
@@ -12,8 +13,6 @@ COMMENT=	monitor FreeBSD ports for updates or vulnerabilities
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfrederick
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	4e039d7
 
 NO_BUILD=	yes
 

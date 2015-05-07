@@ -6,9 +6,7 @@ PORTVERSION=	0.7.0.b20130912
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	GHL
 PKGNAMESUFFIX=	-devel
-DIST_SUBDIR?=	${PORTNAME}
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
@@ -22,9 +20,7 @@ USE_RC_SUBR=	xrdp
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_PROJECT=	xrdp
-GH_COMMIT=	64e2291
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	64e2291
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-jpeg

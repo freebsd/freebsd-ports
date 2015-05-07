@@ -20,9 +20,7 @@ LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Grive
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	27817e8
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	27817e8
 
 USES=		cmake
 CXXFLAGS+=	-I${LOCALBASE}/include

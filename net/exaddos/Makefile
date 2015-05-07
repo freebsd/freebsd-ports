@@ -4,8 +4,7 @@
 PORTNAME=	exaddos
 PORTVERSION=	0.4.0
 CATEGORIES=	net
-MASTER_SITES=	GHL \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	http://mirrors.rit.edu/zi/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
@@ -18,8 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4-mibs>=0.1.4:${PORTSDIR}/net-mgmt/py-sn
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Exa-Networks
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	4e93fc1
 USES=		python
 SUB_FILES=	pkg-message exaddos.sh exaddos.conf.sample
 SUB_LIST=	PYTHON_LIBDIR=${PYTHON_LIBDIR} PYTHON_CMD=${PYTHON_CMD} \

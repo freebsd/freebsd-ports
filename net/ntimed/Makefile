@@ -16,8 +16,7 @@ USE_RC_SUBR=	ntimed
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdphk
 GH_PROJECT=	Ntimed
-GH_COMMIT=	db0abbb
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	db0abbb
 
 PLIST_FILES=	sbin/ntimed-client
 

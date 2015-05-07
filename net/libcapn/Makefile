@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcapn
-PORTVERSION=	1.0.0.b3
+DISTVERSION=	1.0.0beta3
 PORTREVISION=	2
 CATEGORIES=	net
 
@@ -15,8 +15,6 @@ LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	adobkin
-GH_TAGNAME=	1.0.0beta3
-GH_COMMIT=	050dfd8
 
 USES=		cmake
 USE_LDCONFIG=	yes

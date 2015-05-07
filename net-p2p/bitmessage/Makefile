@@ -3,9 +3,9 @@
 
 PORTNAME=	bitmessage
 PORTVERSION=	0.4.4
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	GHL
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Secure P2P communications client
@@ -19,8 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bitmessage
 GH_PROJECT=	PyBitmessage
-GH_COMMIT=	c9c301a
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		python
 USE_OPENSSL=	yes

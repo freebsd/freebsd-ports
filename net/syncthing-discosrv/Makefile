@@ -5,10 +5,9 @@ PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2015022401
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
-		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
+MASTER_SITES=	https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
 		https://codeload.github.com/golang/groupcache/legacy.tar.gz/${GROUPCACHE_COMMIT}?dummy=/:group3
-DISTFILES=	syncthing-discosrv-${PORTVERSION}.tar.gz:group1 \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		syncthing-${SYNCTHING_VER}${EXTRACT_SUFX}:group2 \
 		golang-groupcache-${GROUPCACHE_COMMIT}${EXTRACT_SUFX}:group3
 
@@ -17,15 +16,13 @@ COMMENT=	Discovery server for syncthing
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	discosrv
-GH_COMMIT=	4e1240a610bcc2ef8772eb2641492822b4ec4f88
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	4e1240a610bcc2ef8772eb2641492822b4ec4f88
 
 SYNCTHING_VER=	0.10.30
 GROUPCACHE_COMMIT=	d2a1805
-
-WRKSRC=		${WRKDIR}/discosrv-${GH_COMMIT}
 
 PLIST_FILES=	bin/syncthing-discosrv
 
@@ -66,7 +63,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build
-	@${MV} ${WRKSRC}/discosrv-${GH_COMMIT} ${WRKSRC}/syncthing-discosrv
+	@${MV} ${WRKSRC}/discosrv-${GH_TAGNAME} ${WRKSRC}/syncthing-discosrv
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing-discosrv ${STAGEDIR}${PREFIX}/bin/

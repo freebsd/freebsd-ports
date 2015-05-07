@@ -2,6 +2,7 @@
 
 PORTNAME=	libjreen
 PORTVERSION=	1.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
 MAINTAINER=	akuz84@gmail.com
@@ -13,9 +14,7 @@ LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
 		libspeex.so:${PORTSDIR}/audio/speex
 
 GH_ACCOUNT=	euroelessar
-GH_COMMIT=	388621f
 GH_PROJECT=	jreen
-GH_TAGNAME=	v${PORTVERSION}
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
