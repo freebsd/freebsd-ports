@@ -19,7 +19,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		gmake pkgconfig perl5 tar:bzip2
+USES=		cpe gmake pkgconfig perl5 tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 WANT_SDL=	yes
