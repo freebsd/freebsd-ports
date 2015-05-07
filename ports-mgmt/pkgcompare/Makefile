@@ -4,8 +4,6 @@
 PORTNAME=	pkgcompare
 PORTVERSION=	1.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	GHL
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Alternate to pkg upgrade
@@ -22,9 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
 GH_PROJECT=	pkg-compare
 GH_TAGNAME=	418295d
-GH_COMMIT=	${GH_TAGNAME}
-
-WRKSRC=		${WRKDIR}/waitman-pkg-compare-${GH_TAGNAME}
 
 BINARY=		pkg-compare
 

@@ -4,7 +4,7 @@
 PORTNAME=	fontforge
 DISTVERSION=	20150228
 CATEGORIES=	print
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -25,7 +25,6 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge
-GH_COMMIT=	53e171b
 
 USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv libtool pkgconfig python shared-mime-info
 USE_XORG=	x11 xi ice xkbui
