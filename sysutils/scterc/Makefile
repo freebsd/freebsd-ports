@@ -13,7 +13,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 GH_PROJECT=	${PORTNAME}-rc.d
-GH_COMMIT=	c8dc8c1
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
