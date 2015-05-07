@@ -20,10 +20,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	user-none
 GH_PROJECT=	Sigil
 
-USES=		cmake desktop-file-utils pkgconfig
+USES=		cmake compiler desktop-file-utils pkgconfig
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt
+.if ${COMPILER_TYPE} == gcc
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+	@${REINPLACE_CMD} -e '/precompiled_header/d' \
+		${WRKSRC}/src/FlightCrew/CMakeLists.txt
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
