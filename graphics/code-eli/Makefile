@@ -4,7 +4,6 @@
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
 CATEGORIES=	graphics
-MASTER_SITES=	GHL
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Library with functionalities for geometries
@@ -17,8 +16,6 @@ BUILD_DEPENDS=	eigen>3:${PORTSDIR}/math/eigen3
 USE_GITHUB=	yes
 GH_PROJECT=	Code-Eli
 GH_ACCOUNT=	ddmarshall
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	2196ee5
 
 USES=		cmake:outsource compiler:c++11-lib
 PORTEXAMPLES=	AirfoilFitExample VSPPodExample test

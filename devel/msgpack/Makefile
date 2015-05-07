@@ -2,6 +2,7 @@
 
 PORTNAME=	msgpack
 PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -10,10 +11,7 @@ COMMENT=	MessagePack implementation for C and C++
 LICENSE=	APACHE20
 
 USE_GITHUB=	yes
-GH_ACCOUNT= msgpack
 GH_PROJECT= msgpack-c
-GH_TAGNAME=	cpp-${PORTVERSION}
-GH_COMMIT= 62be3f1
 
 USES=		libtool:build autoreconf:build
 

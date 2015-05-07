@@ -16,8 +16,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	xsisqox
 GH_PROJECT=	Viewnior
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	fc0f5cb
+GH_TAGNAME=	fc0f5cb
 
 USES=		autoreconf desktop-file-utils gmake libtool pkgconfig
 USE_GNOME=	glib20 gtk20

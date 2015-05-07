@@ -6,7 +6,6 @@ PORTVERSION=	2.6.0
 PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:C/p/P/}-${PORTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
@@ -44,7 +43,6 @@ NO_BUILD=		yes
 
 GH_ACCOUNT=	python-pillow
 GH_PROJECT=	${PORTNAME:C/p/P/}
-GH_COMMIT=	9634e43
 
 CONFLICTS_INSTALL=	py*-imaging-*
 
