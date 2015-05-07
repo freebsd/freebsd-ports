@@ -22,7 +22,8 @@ PORTEXAMPLES=	bitlbee.conf motd.txt
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_RC_SUBR=	bitlbee
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_GNOME=	glib20
+OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES OTR
 
@@ -31,12 +32,13 @@ OPTIONS_SINGLE_EVENTS=	GLIB LIBEVENT
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS NSS
 
 OPTIONS_MULTI=		PROTO
-OPTIONS_MULTI_PROTO=	JABBER LIBPURPLE MSN OSCAR TWITTER YAHOO
+OPTIONS_MULTI_PROTO=	JABBER LIBPURPLE MSN OSCAR SKYPE TWITTER YAHOO
 
 OTR_DESC=		Off-the-Record Messaging support
 LIBPURPLE_DESC=		Use libpurple for protocol support
 MSN_DESC=		Microsoft Messenger support
 OSCAR_DESC=		OSCAR (ICQ, AIM) support
+SKYPE_DESC=		Skype support
 TWITTER_DESC=		Twitter support
 YAHOO_DESC=		Yahoo! Messenger support
 GLIB_DESC=		Use glib as event handler
@@ -46,103 +48,59 @@ OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR TWITTER YAHOO
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
+DEBUG_CONFIGURE_ON=	--debug=1
+GNUTLS_CONFIGURE_ON=	--ssl=gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+JABBER_CONFIGURE_OFF=	--jabber=0
+LIBEVENT_CONFIGURE_ON=	--events=libevent --libevent=${LOCALBASE}
+LIBEVENT_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIBPURPLE_CONFIGURE_ON=	--purple=1
+LIBPURPLE_LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+MSN_CONFIGURE_OFF=	--msn=0
+NSS_CONFIGURE_ON=	--ssl=nss
+NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+OPENSSL_CONFIGURE_ON=	--ssl=openssl
+OSCAR_CONFIGURE_OFF=	--oscar=0
+OTR_CONFIGURE_ON=	--otr=1
+OTR_LIB_DEPENDS=	libotr.so:${PORTSDIR}/security/libotr
+SKYPE_CONFIGURE_ON=	--skype=1
+SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:${PORTSDIR}/net-im/py-skype4py
+SKYPE_USES=		python
+TWITTER_CONFIGURE_OFF=	--twitter=0
+YAHOO_CONFIGURE_OFF=	--yahoo=0
+
 USERS=		bitlbee
 GROUPS=		bitlbee
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--debug=1
-.else
-CONFIGURE_ARGS+=--debug=0
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=--ssl=openssl
-.elif ${PORT_OPTIONS:MNSS}
-CONFIGURE_ARGS+=--ssl=nss
-LIB_DEPENDS+=	libnss3.so:${PORTSDIR}/security/nss
-.elif ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=--ssl=gnutls
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
-.endif
-
-.if ${PORT_OPTIONS:MGLIB}
-CONFIGURE_ARGS+=--events=glib
-USE_GNOME=	glib20
-.elif ${PORT_OPTIONS:MLIBEVENT}
-CONFIGURE_ARGS+=--events=libevent
-LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
-.endif
-
-.if ${PORT_OPTIONS:MOTR}
-CONFIGURE_ARGS+=--otr=1
-LIB_DEPENDS+=	libotr.so:${PORTSDIR}/security/libotr
-.else
-CONFIGURE_ARGS+=--otr=0
-.endif
-
-.if ${PORT_OPTIONS:MMSN}
-CONFIGURE_ARGS+=--msn=1
-.else
-CONFIGURE_ARGS+=--msn=0
-.endif
-
-.if ${PORT_OPTIONS:MJABBER}
-CONFIGURE_ARGS+=--jabber=1
-.else
-CONFIGURE_ARGS+=--jabber=0
-.endif
-
-.if ${PORT_OPTIONS:MOSCAR}
-CONFIGURE_ARGS+=--oscar=1
-.else
-CONFIGURE_ARGS+=--oscar=0
-.endif
-
-.if ${PORT_OPTIONS:MYAHOO}
-CONFIGURE_ARGS+=--yahoo=1
-.else
-CONFIGURE_ARGS+=--yahoo=0
-.endif
-
-.if ${PORT_OPTIONS:MTWITTER}
-CONFIGURE_ARGS+=--twitter=1
-.else
-CONFIGURE_ARGS+=--twitter=0
-.endif
-
-.if ${PORT_OPTIONS:MLIBPURPLE}
-CONFIGURE_ARGS+=--purple=1
-LIB_DEPENDS+=	libpurple.so:${PORTSDIR}/net-im/libpurple
-.else
-CONFIGURE_ARGS+=--purple=0
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} \
-		-e "s|^\(EFLAGS=.*\)|\1 ${LDFLAGS}|" \
+	@${REINPLACE_CMD} -e "s|^\(EFLAGS=.*\)|\1 ${LDFLAGS}|" \
 		${WRKSRC}/configure
-
-	@${REINPLACE_CMD} \
-		-e "s:/etc/bitlbee/motd.txt:${PREFIX}/etc/bitlbee/motd.txt:" \
+	@${REINPLACE_CMD} -e "s:/etc/bitlbee/motd.txt:${ETCDIR}/motd.txt:" \
 		-e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
 		${WRKSRC}/bitlbee.conf
-	@${REINPLACE_CMD} \
-		-e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
+	@${REINPLACE_CMD} -e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
 		${WRKSRC}/doc/bitlbee.8
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bitlbee
-	${MKDIR} ${STAGEDIR}/${PREFIX}/etc/bitlbee
+.if ${PORT_OPTIONS:MSKYPE}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/skyped
+	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
+		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \
+		${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf.sample
+.endif
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${STAGEDIR}/${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}/${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
