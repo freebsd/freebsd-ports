@@ -25,6 +25,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_TAGNAME=	5a5e1cd
 
+WRKSRC_SUBDIR=	${PORTNAME}
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PERL5=	run build
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles

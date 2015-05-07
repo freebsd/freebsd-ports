@@ -24,6 +24,8 @@ GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 GH_TAGNAME=	5a5e1cd
 
+WRKSRC_SUBDIR=	${GH_PROJECT}
+
 ONLY_FOR_ARCHS=	i386 amd64
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
 USES=		gmake libtool pkgconfig
