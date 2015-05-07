@@ -5,8 +5,6 @@ PORTNAME=	chucky
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	GHL
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Port installed version check/report with shar archival
@@ -21,9 +19,7 @@ LIB_DEPENDS=	libpkg.so:${PORTSDIR}/${PKG_ORIGIN} \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
-GH_PROJECT=	chucky
 GH_TAGNAME=	075defe
-GH_COMMIT=	${GH_TAGNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	MAN7PREFIX="${MAN7PREFIX}"

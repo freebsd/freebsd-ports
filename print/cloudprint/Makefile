@@ -15,8 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	armooo
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	d55435a
+GH_TAGNAME=	d55435a
 
 USES=		python:2
 USE_PYTHON=	distutils
