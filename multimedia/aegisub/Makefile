@@ -8,8 +8,8 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp2.aegisub.org/pub/archives/releases/source/:aegisub \
-		GHL
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
+		GH
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform subtitle editor
@@ -25,7 +25,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FFMS
 GH_PROJECT=	ffms2
 GH_TAGNAME=	${FFMS_VERSION}
-GH_COMMIT=	f673b48
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -84,7 +83,7 @@ PULSEAUDIO_CONFIGURE_OFF=\
 FFMS_NAME=	ffms2
 FFMS_VERSION=	2.20
 FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}
-FFMS_DISTFILE=	${FFMS_DISTNAME}.tar.gz
+FFMS_DISTFILE=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}${EXTRACT_SUFX}
 FFMS_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 FFMS_CFLAGS=	-I${FFMS_WRKSRC}/include
 FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
