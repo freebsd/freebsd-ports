@@ -12,7 +12,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudfoundry-incubator
-GH_PROJECT=	spiff
 
 PLIST_FILES=	bin/spiff
 
