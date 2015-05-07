@@ -1,7 +1,4 @@
-
-$FreeBSD$
-
---- setup.sh.orig
+--- setup.sh.orig	2015-02-15 03:16:25 UTC
 +++ setup.sh
 @@ -15,16 +15,8 @@
  srcdir=$wadir
