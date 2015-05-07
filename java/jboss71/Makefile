@@ -7,8 +7,8 @@ PORTVERSION=	7.1.3
 #PORTEPOCH=	0
 CATEGORIES=	java www
 MASTER_SITES=	https://javaz.org/distfiles/
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
-DISTFILES=	m2-${DISTNAME}.tar.xz ${DISTNAME}.tar.gz
+DISTNAME2=	${GH_PROJECT}-${GH_TAGNAME}
+DISTFILES=	m2-${DISTNAME2}.tar.xz ${DISTNAME}.tar.gz
 
 MAINTAINER=	yerenkow@gmail.com
 COMMENT=	JBoss 7.1.3.Final
@@ -17,7 +17,6 @@ USE_GITHUB=	YES
 GH_ACCOUNT=	jbossas
 GH_PROJECT=	jboss-as
 GH_TAGNAME=	7.1.3.Final
-GH_COMMIT=	f1f5122
 
 USE_RC_SUBR=	jboss71
 USE_JAVA=	yes
@@ -28,13 +27,13 @@ VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 DEPLOY_DIR?=	${VAR_DIR}/${PORTNAME}
 PID_FILE=	/var/run/${PORTNAME}.pid
-JBOSSOUTPUT=	${WRKSRC}/build/target/${DISTNAME}
+JBOSSOUTPUT=	${WRKSRC}/build/target/${DISTNAME2}
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \
 		USER=${USER}\
 		PID_FILE=${PID_FILE} \
-		APP_HOME=${PREFIX}/${DISTNAME}
+		APP_HOME=${PREFIX}/${DISTNAME2}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -50,6 +49,6 @@ do-build:
 	cd ${WRKSRC} && ./build.sh -Dmaven.test.skip=true -DskipTests
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${DISTNAME} && cd ${JBOSSOUTPUT} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/${DISTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DISTNAME2} && cd ${JBOSSOUTPUT} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/${DISTNAME2}
 
 .include <bsd.port.mk>
