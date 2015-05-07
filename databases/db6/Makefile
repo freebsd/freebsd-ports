@@ -40,6 +40,11 @@ SQL_DESC=	Enable SQL API (EXPERIMENTAL)
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "armv6"
+# db6 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
+CONFIGURE_ARGS+=	--enable-posixmutexes
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=install_docs
 PORTDOCS=	*
