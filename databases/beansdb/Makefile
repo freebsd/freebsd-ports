@@ -4,12 +4,14 @@
 PORTNAME=	beansdb
 PORTVERSION=	0.5.3
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GOOGLE_CODE \
+		http://mirror.amdmi3.ru/googlecode/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
-BROKEN=		Unfetchable
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
