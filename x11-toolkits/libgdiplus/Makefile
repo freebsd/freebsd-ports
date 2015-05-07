@@ -15,13 +15,14 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		cpe gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	mono-project
 
 PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.la \
