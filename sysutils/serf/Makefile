@@ -2,6 +2,7 @@
 
 PORTNAME=	serf
 PORTVERSION=	0.6.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/armon/circbuf/archive/f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz?dummy=/:group2 \
@@ -40,9 +41,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-GH_TAGNAME=	v${PORTVERSION}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_RC_SUBR=	serf
 
