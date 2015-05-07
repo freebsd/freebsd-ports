@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:${PORTSD
 
 USE_GITHUB=	yes
 
+WRKSRC_SUBDIR=	cmd/peco
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}/cmd/peco
 PLIST_FILES=	bin/peco
 
