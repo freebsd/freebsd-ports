@@ -1,10 +1,3 @@
 bin/shellinaboxd
 man/man1/shellinaboxd.1.gz
-@owner shellinabox
-@group shellinabox
-@mode 700
-@dirrmtry etc/shellinabox
-@mode
-@group wheel
-@owner root
-@exec install -d -o shellinabox -g sellinabox -o 700 %D/etc/shellinabox
+@dir(shellinabox,shellinabox,700) etc/shellinabox
