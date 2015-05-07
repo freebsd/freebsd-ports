@@ -3,6 +3,7 @@
 
 PORTNAME=	toxic
 PORTVERSION=	0.6.0.150401
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -40,7 +41,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD.*$$|${GH_COMMIT}|'	\
+	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD.*$$|${GH_TAGNAME}|'	\
 		${WRKSRC}/cfg/global_vars.mk
 
 post-install:

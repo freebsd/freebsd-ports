@@ -12,13 +12,9 @@ COMMENT=	Alternative Bitcoin peer-to-peer currency client
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libminiupnpc.so:${PORTSDIR}/net/miniupnpc
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	baritus
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	96b098a
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	96b098a
 
 USES=		gmake
 USE_OPENSSL=	yes

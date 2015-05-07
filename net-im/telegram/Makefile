@@ -17,8 +17,6 @@ LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	vysheng
 GH_PROJECT=	tg
-GH_TAGNAME=	1.0.5.1
-GH_COMMIT=	77bbb4c
 
 USES=		execinfo gmake lua:52 ncurses pkgconfig readline
 USE_OPENSSL=	yes

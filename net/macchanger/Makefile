@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	true
 GH_ACCOUNT=	alobbs
-GH_COMMIT=	f4f66e1
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf makeinfo

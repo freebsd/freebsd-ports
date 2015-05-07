@@ -13,9 +13,7 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diegonehab
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v3.0-rc1
-GH_COMMIT=	22cd583
 
 USES=		lua:51 gmake pkgconfig
 

@@ -11,7 +11,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
-GH_COMMIT=	d8bd641
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes

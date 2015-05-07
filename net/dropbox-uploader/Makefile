@@ -18,9 +18,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreafabrizi
-GH_COMMIT=	3e5aef0
 GH_PROJECT=	Dropbox-Uploader
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	3e5aef0
 
 NO_BUILD=	yes
 

@@ -20,8 +20,7 @@ USE_PYTHON=	distutils pythonprefix
 USE_GITHUB=	yes
 GH_ACCOUNT=	allfro
 GH_PROJECT=	pylibnet
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	b2fa552
+GH_TAGNAME=	b2fa552
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

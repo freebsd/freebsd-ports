@@ -2,8 +2,8 @@
 
 PORTNAME=	seafile-gui
 PORTVERSION=	4.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
-DISTNAME=	seafile-client-${PORTVERSION}
 
 MAINTAINER=	yan_jingfeng@yahoo.com
 COMMENT=	Seafile desktop client
@@ -20,8 +20,6 @@ LIB_DEPENDS+=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	74817c4	
 
 USES=		cmake pkgconfig
 USE_QT4=	corelib dbus gui network \
