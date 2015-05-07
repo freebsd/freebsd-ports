@@ -261,7 +261,6 @@ man/man1/%%PKGNAMEPREFIX%%wcmgr.1.gz
 %%WITH_GEOIP%%share/geolizer/za.png
 %%WITH_GEOIP%%share/geolizer/zm.png
 %%WITH_GEOIP%%share/geolizer/zw.png
-%%WITH_GEOIP%%@dirrm share/geolizer
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/DNS.README
@@ -269,8 +268,6 @@ man/man1/%%PKGNAMEPREFIX%%wcmgr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/country-codes.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msfree.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webalizer.png
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
