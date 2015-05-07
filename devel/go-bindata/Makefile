@@ -12,7 +12,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jteeuwen
-GH_PROJECT=	go-bindata
 
 PLIST_FILES=	bin/go-bindata
 
