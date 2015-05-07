@@ -6,7 +6,6 @@ PORTVERSION=	2.0.8
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
-MASTER_SITES=	GHL
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Emacs major mode for editing Caml code
@@ -18,7 +17,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	tuareg
-GH_COMMIT=	62f6854
 
 OPTIONS_DEFINE=	DOCS
 ELISP_FILES=	ocamldebug.el tuareg.el

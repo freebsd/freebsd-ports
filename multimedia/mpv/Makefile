@@ -3,11 +3,12 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.8.3
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	GHL:0 http://ftp.waf.io/pub/release/:1 \
+MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
 		http://www.freehackers.org/~tnagy/release/:1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 waf-${WAF_VERSION}:1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} waf-${WAF_VERSION}:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cpm@fbsd.es
@@ -23,8 +24,6 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	ff4c1cc
 
 WAF_VERSION=	1.8.7
 

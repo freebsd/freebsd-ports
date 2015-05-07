@@ -20,7 +20,6 @@ USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	yascentur
 GH_PROJECT=	Ricty
-GH_COMMIT=	c22daa9
 
 NO_PACKAGE=	redistribution is not allowed
 PKGINSTALL=	${WRKDIR}/pkg-install

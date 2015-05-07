@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	offlineimap
+DISTVERSIONPREFIX=	v
 DISTVERSION=	6.5.5
 CATEGORIES=	mail python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/offlineimap/
@@ -19,14 +20,11 @@ LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 OPTIONS_DEFINE=	HTMLDOCS EXAMPLES
 HTMLDOCS_DESC=	Generate HTML documentation
 
-WRKSRC?=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
 PATCH_STRIP=	-p1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
-GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	8bc2f35
 
 USES=		python
 USE_PYTHON=	distutils

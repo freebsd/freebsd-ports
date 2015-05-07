@@ -18,9 +18,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 RUN_DEPENDS=	dtv-scan-tables>=0:${PORTSDIR}/multimedia/dtv-scan-tables
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	6d19440
+GH_TAGNAME=	6d19440
 
 USES=		execinfo gmake pkgconfig python shebangfix
 GNU_CONFIGURE=	yes
@@ -71,7 +69,7 @@ CFLAGS+=	-Wno-microsoft \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|0.0.0~unknown|${PORTVERSION}-${GH_COMMIT}|' \
+	@${REINPLACE_CMD} 's|0.0.0~unknown|${PORTVERSION}-${GH_TAGNAME}|' \
 		${WRKSRC}/support/version
 	@${REINPLACE_CMD} 's|-g||' \
 		${WRKSRC}/Makefile

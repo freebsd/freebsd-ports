@@ -23,10 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GITHUB=	yes
 GH_ACCOUNT=	nextghost
 GH_PROJECT=	dvbcut-qt4
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	81c31ed
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+GH_TAGNAME=	81c31ed
 
 USES=		qmake desktop-file-utils shared-mime-info
 USE_QT4=	gui linguist  moc_build rcc_build uic_build

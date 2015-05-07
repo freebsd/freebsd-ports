@@ -3,7 +3,6 @@
 PORTNAME=	bsdnt
 PORTVERSION=	1.0
 CATEGORIES=	math
-MASTER_SITES=	GHL
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Bignum Library
@@ -16,9 +15,7 @@ USES=		gmake shebangfix
 SHEBANG_FILES=	configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	72e20a7
-GH_COMMIT=	72e20a7
 
 USE_LDCONFIG=	yes
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	mosesdecoder
 PORTVERSION=	2.1.1
+DISTVERSIONPREFIX=	RELEASE-
 CATEGORIES=	math
 
 MAINTAINER=	demon@FreeBSD.org
@@ -17,8 +18,6 @@ RUN_DEPENDS=	lmplz:${PORTSDIR}/textproc/kenlm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	moses-smt
-GH_TAGNAME=	RELEASE-2.1.1
-GH_COMMIT=	4ea250e
 
 USES=		compiler:c++11-lang
 

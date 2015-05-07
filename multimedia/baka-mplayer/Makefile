@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	baka-mplayer
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.2
 CATEGORIES=	multimedia audio
 
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libmpv.so:${PORTSDIR}/multimedia/mpv
 USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
 GH_PROJECT=	Baka-MPlayer
-GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	ba6dc76
 
 USES=		compiler:c++11-lib pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
