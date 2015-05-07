@@ -10,8 +10,7 @@ COMMENT=	Simple way of maintaining zfs snapshots using the periodic system
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ross
-GH_COMMIT=	9ffa662
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	9ffa662
 
 NO_BUILD=	yes
 

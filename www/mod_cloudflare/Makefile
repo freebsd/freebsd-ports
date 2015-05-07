@@ -4,7 +4,6 @@
 PORTNAME=	mod_cloudflare
 PORTVERSION=	0.0.20140409
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Cloudflare fork of mod_remoteip
@@ -13,9 +12,7 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
-GH_PROJECT=	mod_cloudflare
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	da8436d
+GH_TAGNAME=	da8436d
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -15,8 +15,7 @@ RUN_DEPENDS=	mcollective>=2.2.4:${PORTSDIR}/sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9fb27d5
+GH_TAGNAME=	9fb27d5
 
 PLIST_FILES=	share/mcollective/agent/shell/job.rb \
 		share/mcollective/agent/shell.rb \

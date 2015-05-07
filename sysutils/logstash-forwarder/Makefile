@@ -13,9 +13,7 @@ BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch
-GH_PROJECT=	logstash-forwarder
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9c69a36
+GH_TAGNAME=	9c69a36
 
 USE_RC_SUBR=	logstash-forwarder
 SUB_FILES=	pkg-message

@@ -15,7 +15,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/urxvt:${PORTSDIR}/x11/rxvt-unicode
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	muennich
-GH_COMMIT=	dd6e9d7
 PORTDOCS=	README
 
 INSTDIR_REL=	lib/urxvt/perl

@@ -5,7 +5,6 @@ PORTNAME=	openxpki
 PORTVERSION=	0.27.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter for PKI: universal server building block
@@ -72,8 +71,7 @@ CONFLICTS=	\
 	p5-openxpki-client-html-mason-[0-9]*
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	5a4c5eb
+GH_TAGNAME=	5a4c5eb
 
 USE_OPENSSL=	yes
 USE_PERL5=	configure
@@ -82,7 +80,7 @@ USE_RC_SUBR=	openxpki
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
-WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/core/server
+WRKSRC_SUBDIR=	core/server
 
 USERS=	openxpki
 GROUPS=	openxpki

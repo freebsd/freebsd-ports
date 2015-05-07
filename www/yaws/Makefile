@@ -2,6 +2,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.98
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	www devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -17,9 +18,6 @@ USE_AUTOTOOLS=	autoconf
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	klacke
-GH_PROJECT=	yaws
-GH_COMMIT=	83bdc80
-GH_TAGNAME=	yaws-${PORTVERSION}
 
 APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 

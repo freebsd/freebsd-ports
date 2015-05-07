@@ -3,6 +3,7 @@
 
 PORTNAME=	libsass
 PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	textproc
 
@@ -12,8 +13,6 @@ COMMENT=	C/C++ implementation of a Sass compiler
 LICENSE=	MIT
 
 GH_ACCOUNT=	sass
-GH_COMMIT=	0388a62
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 

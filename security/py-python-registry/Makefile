@@ -4,8 +4,7 @@
 PORTNAME=	python-registry
 PORTVERSION=	1.1.0
 CATEGORIES=	security devel python
-MASTER_SITES=	GHL \
-		LOCAL/antoine
+MASTER_SITES=	LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,7 +14,6 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
-GH_COMMIT=	da9d4d4
 
 USES=		python shebangfix
 USE_PYTHON=	distutils autoplist

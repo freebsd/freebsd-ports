@@ -4,7 +4,6 @@
 PORTNAME=	mcollective-shell-client
 PORTVERSION=	0.0.1
 CATEGORIES=	sysutils
-DISTNAME=	mcollective-shell-agent-${PORTVERSION}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective shell client plugin
@@ -14,12 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	mcollective>=2.2.4:${PORTSDIR}/sysutils/mcollective
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-mcollective-shell-agent-${GH_COMMIT}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9fb27d5
+GH_PROJECT=	mcollective-shell-agent
+GH_TAGNAME=	9fb27d5
 
 PLIST_FILES=	share/mcollective/application/shell/watcher.rb \
 		share/mcollective/application/shell/prefix_stream_buf.rb \

@@ -3,8 +3,8 @@
 
 PORTNAME=	greybird
 PORTVERSION=	1.5.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	GHL
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -14,8 +14,6 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engin
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	c06a60a
 
 USE_GITHUB=	yes
 NO_BUILD=	yes

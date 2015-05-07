@@ -16,7 +16,6 @@ GROUPS=		sd-agent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	serverdensity
-GH_COMMIT=	1bacffa
 
 USES=		python shebangfix
 SHEBANG_FILES=	agent.py

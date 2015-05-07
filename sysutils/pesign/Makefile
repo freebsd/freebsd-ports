@@ -19,7 +19,6 @@ LIB_DEPENDS=	libefivar.so:${PORTSDIR}/devel/efivar \
 USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
-GH_COMMIT=	00288b4
 
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes

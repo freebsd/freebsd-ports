@@ -16,13 +16,12 @@ RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chjj
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	360da12
+GH_TAGNAME=	360da12
 
 USES=		gmake pkgconfig
 USE_XORG=	xcomposite xdamage xrandr xrender xinerama
 
-MAKE_ARGS=	COMPTON_VERSION=git-${PORTVERSION}-${GH_COMMIT} \
+MAKE_ARGS=	COMPTON_VERSION=git-${PORTVERSION}-${GH_TAGNAME} \
 		XDGDIR=${LOCALBASE}/etc/xdg
 ALL_TARGET=	${PORTNAME}
 

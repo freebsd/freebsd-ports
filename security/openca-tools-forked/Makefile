@@ -5,7 +5,6 @@ PORTNAME=	openca-tools-forked
 PORTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	security
-DIST_SUBDIR=	openxpki
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Tools to deal with SCEP and PKCS7 messages
@@ -14,8 +13,7 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	641e43a
+GH_TAGNAME=	641e43a
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5

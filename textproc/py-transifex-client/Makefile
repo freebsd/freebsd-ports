@@ -18,7 +18,6 @@ USES=		python:-2.7
 USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	transifex
-GH_COMMIT=	84c9dcc
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

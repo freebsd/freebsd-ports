@@ -5,7 +5,6 @@ PORTVERSION=	2013.10
 PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-wandboard
-DISTNAME=	u-boot-${PORTVERSION}-technexion-edm
 
 MAINTAINER=	ian@FreeBSD.org
 COMMENT=	Cross-build U-Boot loader for Wandboard (solo, dual, and quad)
@@ -17,11 +16,9 @@ BUILD_DEPENDS=  arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
 USE_GITHUB=	yes
 GH_ACCOUNT=	TechNexion
 GH_PROJECT=	u-boot-edm
-GH_COMMIT=	87f595d
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	87f595d
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 USES=		gmake
 SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	glances
 PORTVERSION=	2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,8 +19,6 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolargo
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	5e2dadb
 
 USES=		python
 USE_PYTHON=	autoplist distutils

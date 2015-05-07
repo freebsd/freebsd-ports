@@ -21,9 +21,7 @@ RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:${PORTSDIR}/devel/luafilesyste
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mason-larobina
-GH_PROGECT=	${PORTNAME}
 GH_TAGNAME=	${PORTVERSION:C/r/-r/}
-GH_COMMIT=	0d5f4ab
 
 USES=		desktop-file-utils gmake lua:51 pkgconfig
 USE_GNOME=	glib20 gtk20

@@ -4,7 +4,6 @@
 PORTNAME=	httpie
 PORTVERSION=	0.8.0
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Command line HTTP client
@@ -17,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jakubroztocil
-GH_COMMIT=	43cc3e7
 
 USES=		python
 USE_PYTHON=	distutils autoplist

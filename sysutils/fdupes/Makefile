@@ -3,6 +3,7 @@
 
 PORTNAME=	fdupes
 PORTVERSION=	1.51
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -12,8 +13,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	adrianlopezroche
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
-GH_COMMIT=	2ad90e5
 
 PLIST_FILES=	bin/fdupes man/man1/fdupes.1.gz
 
