@@ -149,7 +149,3 @@ lib/libneo_cgi.a
 lib/libneo_cs.a
 lib/libneo_utl.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/neo_cgi.so
-@dirrm include/ClearSilver/util
-@dirrm include/ClearSilver/cs
-@dirrm include/ClearSilver/cgi
-@dirrm include/ClearSilver
