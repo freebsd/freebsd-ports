@@ -7579,3 +7579,4 @@ devel/rubygem-mini_portile||2015-05-03|Has expired: Unneeded port
 devel/rubygem-mirror|devel/rubygem-rubygems-mirror|2015-05-03|Rename to match our rubygems naming
 graphics/rubygem-graphviz|graphics/rubygem-ruby-graphviz|2015-05-03|Rename to match our rubygems naming
 x11-fm/walcommander|x11-fm/wcmcommander|2015-05-07|Renamed upstream
+archivers/lz4|archivers/liblz4|20150-05-08|Superseded by archivers/liblz4
