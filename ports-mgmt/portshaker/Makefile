@@ -13,6 +13,7 @@ COMMENT?=	Maintain ports tree using multiple sources
 USES+=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	smortex
+GH_PROJECT=	portshaker
 
 .if ${PORTNAME} == "portshaker"
 OPTIONS_DEFINE=	RSYNC SVN GIT HG
