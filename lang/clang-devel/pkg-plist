@@ -459,9 +459,11 @@ llvm-devel/lib/clang/3.7.0/include/ammintrin.h
 llvm-devel/lib/clang/3.7.0/include/arm_neon.h
 llvm-devel/lib/clang/3.7.0/include/avx2intrin.h
 llvm-devel/lib/clang/3.7.0/include/avx512bwintrin.h
+llvm-devel/lib/clang/3.7.0/include/avx512dqintrin.h
 llvm-devel/lib/clang/3.7.0/include/avx512erintrin.h
 llvm-devel/lib/clang/3.7.0/include/avx512fintrin.h
 llvm-devel/lib/clang/3.7.0/include/avx512vlbwintrin.h
+llvm-devel/lib/clang/3.7.0/include/avx512vldqintrin.h
 llvm-devel/lib/clang/3.7.0/include/avx512vlintrin.h
 llvm-devel/lib/clang/3.7.0/include/avxintrin.h
 llvm-devel/lib/clang/3.7.0/include/bmi2intrin.h
