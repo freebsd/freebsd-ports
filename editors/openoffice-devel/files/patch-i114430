@@ -1,0 +1,31 @@
+Index: sc/source/core/tool/interpr5.cxx
+===================================================================
+--- sc/source/core/tool/interpr5.cxx	(revision 1678278)
++++ sc/source/core/tool/interpr5.cxx	(working copy)
+@@ -1611,7 +1611,7 @@
+             if (bFlag)
+             {   for ( SCSIZE i = 0; i < nCount; i++ )
+                     if (pMat->IsValue(i))
+-                        pResMat->PutDouble(pow(fVal,pMat->GetDouble(i)), i);
++                        pResMat->PutDouble(::rtl::math::powr(fVal,pMat->GetDouble(i)), i);
+                     else
+                         pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
+             }
+@@ -1618,7 +1618,7 @@
+             else
+             {   for ( SCSIZE i = 0; i < nCount; i++ )
+                     if (pMat->IsValue(i))
+-                        pResMat->PutDouble(pow(pMat->GetDouble(i),fVal), i);
++                        pResMat->PutDouble(::rtl::math::powr(pMat->GetDouble(i),fVal), i);
+                     else
+                         pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
+             }
+@@ -1628,7 +1628,7 @@
+             PushIllegalArgument();
+     }
+     else
+-        PushDouble(pow(fVal1,fVal2));
++        PushDouble(::rtl::math::powr(fVal1,fVal2));
+ }
+ 
+ void ScInterpreter::ScSumProduct()
