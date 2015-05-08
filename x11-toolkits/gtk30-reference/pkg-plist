@@ -500,6 +500,7 @@ share/doc/gtk3/gtk3-Standard-Enumerations.html
 share/doc/gtk3/gtk3-Stock-Items.html
 share/doc/gtk3/gtk3-Testing.html
 share/doc/gtk3/gtk3-Themeable-Stock-Images.html
+share/doc/gtk3/gtk3-demo-application.html
 share/doc/gtk3/gtk3-demo.html
 share/doc/gtk3/gtk3-icon-browser.html
 share/doc/gtk3/gtk3-widget-factory.html
