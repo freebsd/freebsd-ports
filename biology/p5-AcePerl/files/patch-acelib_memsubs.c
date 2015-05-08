@@ -1,5 +1,5 @@
---- acelib/memsubs.c.orig	Mon Jan 11 02:01:29 1999
-+++ acelib/memsubs.c	Thu Jul 27 17:18:45 2000
+--- acelib/memsubs.c.orig	2002-11-24 19:24:23 UTC
++++ acelib/memsubs.c
 @@ -21,7 +21,7 @@
  #if defined(NEXT) || defined(HP) || defined(MACINTOSH) 
  extern void* malloc(mysize_t size) ;

@@ -3,7 +3,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.6.924
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -18,7 +18,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:${PORTSDIR}/math/p5-Algorithm-Munkres \
 		p5-Array-Compare>=0:${PORTSDIR}/misc/p5-Array-Compare \
-		p5-Bio-ASN1-EntrezGene>=0:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
 		p5-Class-AutoClass>=0:${PORTSDIR}/devel/p5-Class-AutoClass \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-Convert-Binary-C>=0:${PORTSDIR}/converters/p5-Convert-Binary-C \
