@@ -3,6 +3,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:S/_/-/}
 
@@ -11,7 +12,8 @@ COMMENT=	Finds fastest CVSup server
 
 LICENSE=	BSD
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	fastest_cvsup
 
 PLIST_FILES=	bin/fastest_cvsup man/man7/fastest_cvsup.7.gz
 
