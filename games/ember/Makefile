@@ -27,7 +27,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
 		--program-transform-name= --disable-cppunit --disable-debug \
-		--with-toluaxx=${TOLUAXX_CMD}
+		--with-boost=${LOCALBASE} --with-toluaxx=${TOLUAXX_CMD}
 CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
 		LUA_CFLAGS="-I${LUA_INCDIR}" \
 		TOLUAXX="${TOLUAXX_CMD}"
