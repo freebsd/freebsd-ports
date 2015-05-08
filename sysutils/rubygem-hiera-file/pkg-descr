@@ -1,0 +1,3 @@
+A data backend for Hiera that can return the content of whole files.
+
+WWW: https://github.com/adrienthebo/hiera-file
