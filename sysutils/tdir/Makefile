@@ -3,13 +3,16 @@
 
 PORTNAME=	tdir
 PORTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
 MAINTAINER=	tdir@tundraware.com
 COMMENT=	Advanced file directory display utility
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	tdir
+python_OLD_CMD=	/usr//bin/env python
 
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
