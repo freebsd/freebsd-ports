@@ -610,15 +610,40 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Full Disclosure reports:</p>
-	<blockquote cite="http://seclists.org/fulldisclosure/2015/Apr/31">
-	  <p>use of uninitialized memory when parsing collation sequences</p>
-	  <p>bad free()</p>
-	  <p>stack buffer overflow</p>
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3414">
+	  <p>SQLite before 3.8.9 does not properly implement the
+	    dequoting of collation-sequence names, which allows
+	    context-dependent attackers to cause a denial of service
+	    (uninitialized memory access and application crash) or
+	    possibly have unspecified other impact via a crafted
+	    COLLATE clause, as demonstrated by COLLATE"""""""" at the
+	    end of a SELECT statement.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3415">
+	  <p>The sqlite3VdbeExec function in vdbe.c in SQLite before
+	    3.8.9 does not properly implement comparison operators,
+	    which allows context-dependent attackers to cause a denial
+	    of service (invalid free operation) or possibly have
+	    unspecified other impact via a crafted CHECK clause, as
+	    demonstrated by CHECK(0&amp;O&gt;O) in a CREATE TABLE statement.
+	  </p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3416">
+	  <p>The sqlite3VXPrintf function in printf.c in SQLite before
+	    3.8.9 does not properly handle precision and width values
+	    during floating-point conversions, which allows
+	    context-dependent attackers to cause a denial of service
+	    (integer overflow and stack-based buffer overflow) or
+	    possibly have unspecified other impact via large integers
+	    in a crafted printf function call in a SELECT statement.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-3414</cvename>
+      <cvename>CVE-2015-3415</cvename>
+      <cvename>CVE-2015-3416</cvename>
       <url>https://www.sqlite.org/src/info/eddc05e7bb31fae7</url>
       <url>https://www.sqlite.org/src/info/02e3c88fbf6abdcf</url>
       <url>https://www.sqlite.org/src/info/c494171f77dc2e5e</url>
@@ -627,6 +652,7 @@ Notes:
     <dates>
       <discovery>2015-04-14</discovery>
       <entry>2015-04-18</entry>
+      <modified>2015-05-08</modified>
     </dates>
   </vuln>
 
