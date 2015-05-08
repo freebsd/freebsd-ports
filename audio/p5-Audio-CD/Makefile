@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to libcdaudio (cd + cddb)
 
 LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
