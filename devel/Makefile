@@ -4506,6 +4506,7 @@
     SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-generator_spec-rails4
     SUBDIR += rubygem-georuby
+    SUBDIR += rubygem-get_process_mem
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gh
