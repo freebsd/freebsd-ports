@@ -1,31 +1,36 @@
 # $FreeBSD$
 
 PORTNAME=	yaws
-PORTVERSION=	1.98
-DISTVERSIONPREFIX=	${PORTNAME}-
+PORTVERSION=	1.99
 CATEGORIES=	www devel
+MASTER_SITES=	http://yaws.hyber.org/download/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web server for dynamic content written in Erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-USES=		gmake
-USE_AUTOTOOLS=	autoconf
-USE_GITHUB=	yes
+USES=		autoreconf gmake libtool pathfix
 
-GH_ACCOUNT=	klacke
+OPTIONS_DEFINE=	WWW
+
+WWW_DESC=	Install sample applications
 
 APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
-SUB_FILES=	pkg-message
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ENV=	wwwdir=${WWWDIR} yawsdir=${APPDIR}
+INSTALL_TARGET=	install-strip
+PATHFIX_MAKEFILEIN=Makefile.am
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .empty -delete
@@ -33,39 +38,21 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 \
-		${WRKSRC}/man/yaws.conf.5 \
-		${WRKSRC}/README \
-		${WRKSRC}/scripts/gen-yaws \
-		${WRKSRC}/scripts/gen-yaws-generated
-	@${REINPLACE_CMD} -e 's|!!VERSION!!|${PORTVERSION}|g' \
-		${WRKSRC}/scripts/gen-yaws
+		${WRKSRC}/man/yaws.conf.5
 	@${FIND} ${WRKSRC} \( -name \*.orig -or -name \*.bak \) -delete
 
-do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${FILESDIR}/yaws.conf.sample ${STAGEDIR}${ETCDIR}/yaws.conf.dist
-	@${MKDIR} ${STAGEDIR}${APPDIR}/ebin
-	@${MKDIR} ${STAGEDIR}${APPDIR}/examples
-	@${MKDIR} ${STAGEDIR}${APPDIR}/examples/ebin
-	@${MKDIR} ${STAGEDIR}${APPDIR}/examples/src
-	@${MKDIR} ${STAGEDIR}${APPDIR}/include
-	@${MKDIR} ${STAGEDIR}${APPDIR}/priv
-	@${MKDIR} ${STAGEDIR}${APPDIR}/priv/lib
-	@${MKDIR} ${STAGEDIR}${APPDIR}/src
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/yaws
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${APPDIR}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/examples/ebin/* ${STAGEDIR}${APPDIR}/examples/ebin
-	@${INSTALL_DATA} ${WRKSRC}/examples/src/* ${STAGEDIR}${APPDIR}/examples/src
-.for FILE in envelope.xsd mime.types soap.xsd wsdl.xsd soap-envelope.xsd wsdl11soap12.xsd xml.xsd
-	@${INSTALL_DATA} ${WRKSRC}/priv/${FILE} ${STAGEDIR}${APPDIR}/priv
-.endfor
-	@${INSTALL_PROGRAM} ${WRKSRC}/priv/epam ${STAGEDIR}${APPDIR}/priv
-	@${INSTALL_LIB} ${WRKSRC}/priv/lib/* ${STAGEDIR}${APPDIR}/priv/lib
-	@${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${APPDIR}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/*.?rl ${STAGEDIR}${APPDIR}/src
-	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${STAGEDIR}${WWWDIR})
-	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${STAGEDIR}${MANPREFIX}/man/man5
+post-install:
+.if ${PORT_OPTIONS:MWWW}
+	${MV} ${STAGEDIR}${PREFIX}/www/www/* ${STAGEDIR}${WWWDIR}
+	${RMDIR} ${STAGEDIR}${PREFIX}/www/www
+.else
+	${RM} -r ${STAGEDIR}${PREFIX}/www
+.endif
+	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/yaws-cert.pem \
+		${STAGEDIR}${PREFIX}/etc/yaws/yaws-cert.pem.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/yaws-key.pem \
+		${STAGEDIR}${PREFIX}/etc/yaws/yaws-key.pem.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/yaws.conf.template \
+		${STAGEDIR}${PREFIX}/etc/yaws/yaws.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
