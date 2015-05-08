@@ -12,7 +12,7 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
 USE_SDL=	sdl
-USES=		gmake
+USES=		compiler:features gmake
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	yape
 
@@ -21,12 +21,17 @@ PORTDOCS=	README.SDL
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/Makefile
 
 post-patch:
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} -e "s|-frerun-loop-opt||" ${WRKSRC}/Makefile
+.endif
 	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|TAP::TAP|TAP|" ${WRKSRC}/tape.h
 
@@ -37,4 +42,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.SDL ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
