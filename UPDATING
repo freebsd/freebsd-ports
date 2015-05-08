@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150508:
+  AFFECTS: users of www/iojs
+  AUTHOR: linpct@gmail.com
+
+  iojs has been updated to 2.0.0. The binary modules may need to be
+  rebuilt due to V8 version ABI change.
+
 20150506:
   AFFECTS: users of net/asterisk13 with PJSIP (default on) and SRTP (default off) options enabled
   AUTHOR: madpilot@FreeBSD.org
