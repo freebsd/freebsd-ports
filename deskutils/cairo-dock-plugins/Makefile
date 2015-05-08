@@ -3,15 +3,14 @@
 PORTNAME=	cairo-dock-plugins
 PORTVERSION=	3.4.0
 CATEGORIES=	deskutils
-DISTFILES=	${DISTNAME}.git20141115${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}
+MASTER_SITES=	LOCAL/antoine:icons	# Temporary until maintainer finds a host
+DISTFILES=	${DISTNAME}.git20141115${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}:icons
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Icons unfetchable
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	libgldi.so:${PORTSDIR}/deskutils/cairo-dock
