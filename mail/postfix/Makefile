@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10
