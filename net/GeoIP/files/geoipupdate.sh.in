@@ -4,7 +4,7 @@
 #
 # GEOIP_DB_SERVER: The default download server is geolite.maxmind.com
 # GEOIP_FETCH_CITY: If set (to anything), download the GeoLite City DB
-# GEOIP_FETCH_ASN: If sset, download the GeoIP ASN DB
+# GEOIP_FETCH_ASN: If set, download the GeoIP ASN DB
 
 GEOIP_DB_SERVER=${GEOIP_DB_SERVER:=geolite.maxmind.com}
 GEOIP_FETCH_CITY=${GEOIP_FETCH_CITY:=}
