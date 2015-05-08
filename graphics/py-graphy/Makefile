@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple chart library for Python
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python:run tar:bzip2
 
 PORTDOCS=	README
