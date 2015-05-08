@@ -49,8 +49,8 @@ include/ginac/version.h
 include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
-lib/libginac.so.4
-lib/libginac.so.4.0.0
+lib/libginac.so.5
+lib/libginac.so.5.0.0
 libdata/pkgconfig/ginac.pc
 man/man1/ginsh.1.gz
 man/man1/viewgar.1.gz
