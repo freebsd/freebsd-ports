@@ -1,6 +1,6 @@
---- acelib/wh/mystdlib.h.orig	Mon Jul 16 23:04:45 2001
-+++ acelib/wh/mystdlib.h	Mon Aug 13 12:42:25 2001
-@@ -161,7 +161,8 @@
+--- acelib/wh/mystdlib.h.orig	2002-11-14 20:00:06 UTC
++++ acelib/wh/mystdlib.h
+@@ -161,7 +161,8 @@ char *DosToPosix(char *path) ; /* define
  #endif
  
  #if defined(POSIX) || defined(LINUX) || defined(SOLARIS) || defined(SGI) || \
