@@ -1,0 +1,15 @@
+# $FreeBSD$
+
+PORTNAME=	expression_parser
+PORTVERSION=	0.9.0
+CATEGORIES=	math rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Mathematical expression parser for Ruby
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
