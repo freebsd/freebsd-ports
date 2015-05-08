@@ -11,6 +11,9 @@ DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and intuitive web interface to manage amavisd-new quarantine
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:${PORTSDIR}/security/amavisd-new \
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
