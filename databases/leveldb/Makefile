@@ -3,6 +3,7 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	1.18
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -27,10 +28,8 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 SHLIB_MAJOR=	${PORTVERSION:R}
 SHLIB_MINOR=	${PORTVERSION:E}
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
+USE_GITHUB=	yes
 
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
