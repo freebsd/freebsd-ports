@@ -8,7 +8,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous DNS helper for high volume applications
 
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
