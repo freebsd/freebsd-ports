@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr 20 13:27:46 2006
-+++ configure	Thu Apr 20 13:27:51 2006
-@@ -1728,7 +1728,7 @@
+--- configure.orig	2014-10-26 13:22:06 UTC
++++ configure
+@@ -4047,7 +4047,7 @@ $as_echo "no" >&6; }
  
  SHLIBFORLINK='libadns.so'
  SHLIBSONAME='$(SHLIBFORLINK).$(MAJOR)'
