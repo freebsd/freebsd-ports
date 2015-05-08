@@ -3,6 +3,7 @@
 
 PORTNAME=	rocksdb
 PORTVERSION=	3.10
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -49,7 +50,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/rocksdb/ ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/include/rocksdb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/rocksdb/
-	${INSTALL_LIB} ${WRKSRC}/librocksdb.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/librocksdb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.so ${STAGEDIR}${PREFIX}/lib/librocksdb.so.0
 	${LN} -fs librocksdb.so.0 ${STAGEDIR}${PREFIX}/lib/librocksdb.so
 	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/
