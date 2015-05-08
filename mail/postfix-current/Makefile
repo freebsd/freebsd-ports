@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}-3.0.0
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10
