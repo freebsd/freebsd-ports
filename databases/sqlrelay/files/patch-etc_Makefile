@@ -1,0 +1,23 @@
+--- etc/Makefile.orig	2015-05-07 19:44:34 UTC
++++ etc/Makefile
+@@ -4,13 +4,13 @@ include ../config.mk
+ 
+ install:
+ 	$(MKINSTALLDIRS) $(sysconfdir)
+-	$(MKINSTALLDIRS) $(sysconfdir)/sqlrelay.conf.d
+-	$(CP) sqlrelay.conf.example $(sysconfdir)
+-	$(CHMOD) 644 $(sysconfdir)/sqlrelay.conf.example
+-	$(CP) sqlrelay.dtd $(sysconfdir)
+-	$(CHMOD) 644 $(sysconfdir)/sqlrelay.dtd
+-	$(CP) sqlrelay.xsd $(sysconfdir)
+-	$(CHMOD) 644 $(sysconfdir)/sqlrelay.xsd
++	$(MKINSTALLDIRS) $(sysconfdir)/sqlrelay
++	$(CP) sqlrelay.conf.example $(sysconfdir)//sqlrelay/conf.sample
++	$(CHMOD) 644 $(sysconfdir)/sqlrelay/conf.sample
++	$(CP) sqlrelay.dtd $(sysconfdir)/sqlrelay/
++	$(CHMOD) 644 $(sysconfdir)/sqlrelay/sqlrelay.dtd
++	$(CP) sqlrelay.xsd $(sysconfdir)/sqlrelay/
++	$(CHMOD) 644 $(sysconfdir)/sqlrelay/sqlrelay.xsd
+ 	$(CP) sqlrelay.conf.example $(EXAMPLEDIR)/sqlrelay.conf
+ 	$(CHMOD) 644 $(EXAMPLEDIR)/sqlrelay.conf
+ 

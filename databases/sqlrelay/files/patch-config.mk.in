@@ -1,20 +1,20 @@
---- config.mk.in.orig	2014-12-28 09:10:48.000000000 +0100
-+++ config.mk.in	2014-12-29 20:44:27.000000000 +0100
-@@ -9,7 +9,7 @@
+--- config.mk.in.orig	2015-05-07 19:42:23 UTC
++++ config.mk.in
+@@ -8,7 +8,7 @@ prefix = @prefix@
  exec_prefix= @exec_prefix@
  includedir = @includedir@
  libdir = @libdir@
 -javadir = ${exec_prefix}/java
 +javadir = ${exec_prefix}/share/java/classes
+ dotnetdir = $(libdir)
  libexecdir = @libexecdir@/sqlrelay
  bindir = @bindir@
- localstatedir = @localstatedir@
-@@ -33,7 +33,7 @@
+@@ -59,7 +59,7 @@ OBJ = lo
  TMPDIRCPPFLAG = -DTMP_DIR=\"$(tmpdir)\"
  DEBUGDIRCPPFLAG = -DDEBUG_DIR=\"$(debugdir)\"
  LOGDIRCPPFLAG = -DLOG_DIR=\"$(logdir)\"
 -CONFIGFILECPPFLAG = -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/sqlrelay.conf\" -DDEFAULT_CONFIG_DIR=\"$(sysconfdir)/sqlrelay.conf.d\"
-+CONFIGFILECPPFLAG = -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/sqlrelay/conf\" -DDEFAULT_CONFIG_DIR=\"$(sysconfdir)/sqlrelay\"
++CONFIGFILECPPFLAG = -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/sqlrelay.conf\" -DDEFAULT_CONFIG_DIR=\"$(sysconfdir)/sqlrelay\"
  CACHEDIRCPPFLAG = -DCACHE_DIR=\"$(cachedir)\"
  
- # link flags (-s, -static, -melf, -belf, etc.)
+ 
