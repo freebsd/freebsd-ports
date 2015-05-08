@@ -118,5 +118,3 @@ man/man5/cyrus.conf.5.gz
 man/man5/imapd.conf.5.gz
 man/man5/krb.equiv.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imapd.conf
-@dirrm include/cyrus
-@dirrm cyrus/bin

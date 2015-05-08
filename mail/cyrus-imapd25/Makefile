@@ -229,9 +229,6 @@ post-install:
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/cyrus/man/man8/${f}
 	@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 #	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
@@ -257,9 +254,6 @@ post-install:
 #		${STAGEDIR}${DOCSDIR}/text
 #	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 #.endfor
-#	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
-#	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
@@ -269,8 +263,6 @@ post-install:
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
-		>>${TMPPLIST}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${PREFIX}/cyrus/bin/mkimap
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
