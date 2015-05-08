@@ -3,6 +3,7 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	2.6.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,10 +20,8 @@ USE_PYTHON=	autoplist distutils
 USES=		python tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	protobuf
-GH_TAGNAME=	v${PORTVERSION}
+USE_GITHUB=	yes
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/google/protobuf/compiler/
