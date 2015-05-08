@@ -1326,6 +1326,7 @@
     SUBDIR += rubygem-colored
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-compass-rails
+    SUBDIR += rubygem-creole
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
