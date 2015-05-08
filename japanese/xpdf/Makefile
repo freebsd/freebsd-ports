@@ -18,6 +18,8 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${FONTSDIR}/Ryumin-Light:${PORTSDIR}/japanese/font-std \
 		${FONTSDIR}/GothicBBB-Medium:${PORTSDIR}/japanese/font-std
 
+USES=		cpe
+CPE_VENDOR=	foolabs
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
