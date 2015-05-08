@@ -13,9 +13,10 @@ MAINTAINER=	milki@FreeBSD.org
 COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
-	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
@@ -23,7 +24,9 @@ GH_TAGNAME=	3455375
 
 CONFLICTS=	gitolite-[^3]*
 
-USES=		perl5
+USES=		cpe perl5
+
+CPE_VENDOR=	sitaram_chamarty
 
 SUB_FILES=	pkg-message
 
