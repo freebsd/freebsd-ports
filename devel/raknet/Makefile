@@ -3,7 +3,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
@@ -61,7 +61,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/Lib/DLL/libRakNetDynamic.so \
 		${STAGEDIR}${PREFIX}/lib/libraknet.so.0
 	${LN} -sf ${PREFIX}/lib/libraknet.so.0 ${STAGEDIR}${PREFIX}/lib/libraknet.so
-	${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
+	${INSTALL_DATA} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
 		${STAGEDIR}${PREFIX}/lib/libraknet.a
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Help
 	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/Help)

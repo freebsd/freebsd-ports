@@ -3,6 +3,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.370
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -39,7 +40,8 @@ SHLIB_MINOR_VER=${PORTVERSION:S/0$//}
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
-	cd ${WRKSRC}/ && ${INSTALL_LIB} libcfitsio.a libcfitsio.so.${SHLIB_MAJOR_VER}.${SHLIB_MINOR_VER} ${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} libcfitsio.a ${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/ && ${INSTALL_LIB} libcfitsio.so.${SHLIB_MAJOR_VER}.${SHLIB_MINOR_VER} ${STAGEDIR}${PREFIX}/lib/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} cfitsio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 	${LN} -fs libcfitsio.so.${SHLIB_MAJOR_VER}.${SHLIB_MINOR_VER} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.${SHLIB_MAJOR_VER}
 	${LN} -fs libcfitsio.so.${SHLIB_MAJOR_VER} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so

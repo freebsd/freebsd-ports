@@ -3,7 +3,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	3.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -350,7 +350,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/R/lib
-	@${INSTALL_LIB} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
+	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
 
 .else # LIBR_SLAVEPORT
 

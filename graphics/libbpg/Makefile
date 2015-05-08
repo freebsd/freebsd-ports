@@ -3,6 +3,7 @@
 
 PORTNAME=	libbpg
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://bellard.org/bpg/
 
@@ -50,7 +51,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpgview ${STAGEDIR}${PREFIX}/bin
 .endif
 	${INSTALL_DATA} ${WRKSRC}/libbpg.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libbpg.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libbpg.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libbpg.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

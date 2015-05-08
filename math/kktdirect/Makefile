@@ -3,7 +3,7 @@
 
 PORTNAME=	kktdirect
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.ubc.ca/~rbridson/download/ LOCAL/bf
 DISTNAME=	KKTDirect${PORTVERSION}
@@ -82,8 +82,9 @@ check regression-test test: build
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/kktdirect.h ${STAGEDIR}${PREFIX}/include
-	@cd ${WRKDIR}; ${INSTALL_LIB} libkktdirect.a libkktdirect_pic.a \
-	libkktdirect.so.0 ${STAGEDIR}${PREFIX}/lib
+	@cd ${WRKDIR} && ${INSTALL_DATA} libkktdirect.a libkktdirect_pic.a \
+		${STAGEDIR}${PREFIX}/lib
+	@cd ${WRKDIR} && ${INSTALL_LIB} libkktdirect.so.0 ${STAGEDIR}${PREFIX}/lib
 	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libkktdirect.so.0 libkktdirect.so
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
