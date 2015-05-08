@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iojs
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.0
 CATEGORIES=	www
 
 MAINTAINER=	linpct@gmail.com
@@ -40,7 +40,10 @@ post-patch:
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|python -c|${PYTHON_CMD} -c|" \
+		${WRKSRC}/deps/v8/build/toolchain.gypi
 	@${REINPLACE_CMD} -e "s|'python',|'${PYTHON_CMD}',|" \
+		${WRKSRC}/tools/icu/icu-generic.gyp \
 		${WRKSRC}/deps/v8/build/shim_headers.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/deps/v8/src/d8.gyp
