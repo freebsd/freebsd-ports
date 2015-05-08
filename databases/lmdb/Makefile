@@ -3,6 +3,7 @@
 
 PORTNAME=	lmdb
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/delphij
 #		https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy=
@@ -27,7 +28,7 @@ FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 MDB_APPS=	copy dump load stat
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/liblmdb.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/liblmdb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/liblmdb.so ${STAGEDIR}${PREFIX}/lib/liblmdb.so.0
 	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
 .for f in ${MDB_APPS}

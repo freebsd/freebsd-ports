@@ -3,7 +3,7 @@
 
 PORTNAME=	glui
 PORTVERSION=	2.36
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel graphics
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glui.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/lib/libglui.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libglui.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libglui.so \
 		${STAGEDIR}${PREFIX}/lib/libglui.so.0
 	${LN} -s libglui.so.0 ${STAGEDIR}${PREFIX}/lib/libglui.so

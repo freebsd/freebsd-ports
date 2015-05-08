@@ -3,6 +3,7 @@
 
 PORTNAME=	ftplib
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://nbpfaus.net/~pfau/ftplib/
 
@@ -33,7 +34,8 @@ do-install:
 	${LN} -sf qftp ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/ftplib.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libftp.a ${WRKSRC}/libftp.so.4 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libftp.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libftp.so.4 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libftp.so.4 ${STAGEDIR}${PREFIX}/lib/libftp.so
 
 .include <bsd.port.mk>
