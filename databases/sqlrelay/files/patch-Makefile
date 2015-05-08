@@ -1,15 +1,19 @@
---- Makefile.orig	Thu Aug  5 18:46:10 2004
-+++ Makefile	Mon Feb 14 10:26:16 2005
-@@ -26,9 +26,9 @@
- 	$(MAKE) -C init install
- 	$(MAKE) -C man install
- 	$(MAKE) -C doc install
--	$(MKINSTALLDIRS) $(libdir)/pkgconfig
--	$(INSTALL) -m 0644 sqlrelay-c.pc $(libdir)/pkgconfig/sqlrelay-c.pc
--	$(INSTALL) -m 0644 sqlrelay-c++.pc $(libdir)/pkgconfig/sqlrelay-c++.pc
-+	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
-+	$(INSTALL) -m 0644 sqlrelay-c.pc $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
-+	$(INSTALL) -m 0644 sqlrelay-c++.pc $(prefix)/libdata/pkgconfig/sqlrelay-c++.pc
+--- Makefile.orig	2015-03-31 20:50:58 UTC
++++ Makefile
+@@ -30,11 +30,11 @@ install-doc:
+ 	cd doc $(AND) $(MAKE) install
  
- uninstall:
- 	$(MAKE) -C src uninstall
+ install-pkgconfig:
+-	$(MKINSTALLDIRS) $(libdir)/pkgconfig
+-	$(CP) sqlrelay-c.pc $(libdir)/pkgconfig/sqlrelay-c.pc
+-	$(CHMOD) 0644 $(libdir)/pkgconfig/sqlrelay-c.pc
+-	$(CP) sqlrelay-c++.pc $(libdir)/pkgconfig/sqlrelay-c++.pc
+-	$(CHMOD) 0644 $(libdir)/pkgconfig/sqlrelay-c++.pc
++	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
++	$(CP) sqlrelay-c.pc $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
++	$(CHMOD) 0644 $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
++	$(CP) sqlrelay-c++.pc $(prefix)/libdata/pkgconfig/sqlrelay-c++.pc
++	$(CHMOD) 0644 $(prefix)/libdata/pkgconfig/sqlrelay-c++.pc
+ 
+ uninstall: $(UNINSTALLSUBDIRS)
+ 	$(RMTREE) $(libexecdir)
