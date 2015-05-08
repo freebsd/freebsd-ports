@@ -12,6 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	osho@pcc-software.org
 COMMENT=	Ruby extension library which implements Camellia encryption
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/License.txt
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
@@ -32,10 +35,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.1
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
