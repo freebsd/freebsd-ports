@@ -3,6 +3,7 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	2.6.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,10 +20,8 @@ USE_CSTD=	c99	# for audio/clementine-player support
 USE_LDCONFIG=	yes
 USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	protobuf
-GH_TAGNAME=	v${PORTVERSION}
+USE_GITHUB=	yes
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
