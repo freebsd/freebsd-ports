@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
+GH_PROJECT=	panda-imap
 GH_TAGNAME=	7905901
-
-BROKEN=		Does not fetch, upstream gone
 
 CONFLICTS_INSTALL=	cclient-20*
 
