@@ -7580,3 +7580,5 @@ devel/rubygem-mirror|devel/rubygem-rubygems-mirror|2015-05-03|Rename to match ou
 graphics/rubygem-graphviz|graphics/rubygem-ruby-graphviz|2015-05-03|Rename to match our rubygems naming
 x11-fm/walcommander|x11-fm/wcmcommander|2015-05-07|Renamed upstream
 archivers/lz4|archivers/liblz4|20150-05-08|Superseded by archivers/liblz4
+deskutils/libopensync-plugin-python||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
+deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
