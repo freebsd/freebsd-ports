@@ -81,6 +81,7 @@ include/yaz/unix.h
 include/yaz/url.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
+include/yaz/xml_get.h
 include/yaz/xml_include.h
 include/yaz/xmlquery.h
 include/yaz/xmltypes.h
