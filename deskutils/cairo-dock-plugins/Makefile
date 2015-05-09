@@ -2,9 +2,8 @@
 
 PORTNAME=	cairo-dock-plugins
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	LOCAL/antoine:icons	# Temporary until maintainer finds a host
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}:icons
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
@@ -161,7 +160,6 @@ ZEITGEIST_CMAKE_ON=	-Denable-recent-events:BOOL=TRUE
 ZEITGEIST_CMAKE_OFF=	-Denable-recent-events:BOOL=FALSE
 
 post-patch:
-	@${CP} -R ${WRKDIR}/${ICONS_PACKAGE}/* ${WRKSRC}
 	@${FIND} ${WRKSRC} -type f \( -name "*.c" -o -name "*.conf" \
 		-o -name netspeed -o -name nvidia-config -o -name "*.sh" \
 		-o -name "*.rb" \) | ${XARGS} ${REINPLACE_CMD} -i.orig -e \
