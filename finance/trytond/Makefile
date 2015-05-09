@@ -41,7 +41,8 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 PIDDIR?=	/var/run
 LOGDIR?=	/var/log
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	tryton
 USE_PYTHON=	distutils autoplist
 
 post-patch:
