@@ -272,6 +272,7 @@
     SUBDIR += cowlib
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
+    SUBDIR += cpp-netlib
     SUBDIR += cppcheck
     SUBDIR += cppi
     SUBDIR += cpptest
