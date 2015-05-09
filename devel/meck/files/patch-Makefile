@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.orig
+--- Makefile.orig	2014-05-05 09:33:59 UTC
 +++ Makefile
-@@ -18,7 +18,7 @@
+@@ -18,7 +18,7 @@ DIALYZER_INC=$(shell test -d include && 
  .PHONY: all rebuild compile doc clean test dialyzer typer get-deps clean-deps \
  	shell clean-plt clean-doc distclean
  
