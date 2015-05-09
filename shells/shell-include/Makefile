@@ -3,6 +3,7 @@
 
 PORTNAME=	shell-include
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	shells devel
 MASTER_SITES=	http://vvelox.net/src/shell-include/
 
@@ -11,12 +12,16 @@ COMMENT=	Include system for shell scripts
 
 USES=		perl5
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-USES=		tar:tgz
+USES=		perl5 tar:tgz
+USE_PERL5=	build
 NO_BUILD=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/bin/pod2man|${LOCALBASE}/bin/pod2man|' \
+		${WRKSRC}/install
+
 do-install:
-	cd ${WRKSRC}/ ; ${SH} ${WRKSRC}/install ${STAGEDIR}${PREFIX}
+	cd ${WRKSRC}/ ; ${SETENV} DESTDIR=${STAGEDIR} \
+		${SH} ${WRKSRC}/install ${PREFIX}
 
 .include <bsd.port.mk>
