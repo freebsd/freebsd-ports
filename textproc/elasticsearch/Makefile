@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	java-sigar>=0:${PORTSDIR}/java/sigar
 
+USES=		cpe
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
