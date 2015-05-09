@@ -1,0 +1,11 @@
+--- scripts/gen-yaws-conf.orig	2015-05-09 08:50:11 UTC
++++ scripts/gen-yaws-conf
+@@ -9,7 +9,7 @@ cat yaws.conf.template                  
+     ./Subst %yawsdir% "$YAWSDIR"        | \
+     ./Subst %logdir%  "$LOGDIR"         | \
+     ./Subst %vardir%  "$VARDIR"         | \
+-    ./Subst %host%    `hostname`        | \
++    ./Subst %host%    "example"         | \
+     ./Subst %port%    $PORT             | \
+     ./Subst %docroot% "$DOCROOT"        | \
+     ./Subst %tmpdir%  "${TMPDIR:-/tmp}" | \
