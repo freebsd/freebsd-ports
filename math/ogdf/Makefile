@@ -3,7 +3,7 @@
 
 PORTNAME=	ogdf
 PORTVERSION=	2012.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/gahr \
 		http://people.freebsd.org/~gahr/distfiles/
@@ -12,7 +12,10 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL_v2.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE_GPL_v3.txt
 
 USES=		zip python:build
 USE_LDCONFIG=	yes
@@ -53,7 +56,7 @@ do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} makeMakefile.py
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/_release/libOGDF.so \
+	${INSTALL_LIB} ${WRKSRC}/_release/libOGDF.so \
 		${STAGEDIR}${PREFIX}/lib/libOGDF.so.1
 	${LN} -sf libOGDF.so.1 ${STAGEDIR}${PREFIX}/lib/libOGDF.so
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ogdf ${STAGEDIR}${PREFIX}/include
