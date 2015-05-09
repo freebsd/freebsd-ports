@@ -30,6 +30,7 @@
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-memisc
+    SUBDIR += R-cran-minqa
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-outliers
