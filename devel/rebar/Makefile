@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org
