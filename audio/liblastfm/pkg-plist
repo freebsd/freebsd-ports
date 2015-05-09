@@ -30,7 +30,7 @@ include/lastfm/misc.h
 include/lastfm/ws.h
 lib/liblastfm.so
 lib/liblastfm.so.1
-lib/liblastfm.so.1.0.8
+lib/liblastfm.so.1.0.9
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so.1
-%%FINGERPRINT%%lib/liblastfm_fingerprint.so.1.0.8
+%%FINGERPRINT%%lib/liblastfm_fingerprint.so.1.0.9
