@@ -2,7 +2,6 @@ bin/map
 bin/mirrorMappings
 bin/mkCSGB2312
 bin/mkmapfile
-%%PERL5_MAN3%%/Unicode::Map.3.gz
 %%SITE_ARCH%%/Unicode/Map.pm
 %%SITE_ARCH%%/Unicode/Map/ADOBE/STDENC.map
 %%SITE_ARCH%%/Unicode/Map/ADOBE/SYMBOL.map
@@ -98,5 +97,6 @@ bin/mkmapfile
 %%SITE_ARCH%%/Unicode/Map/NEXT/NEXTSTEP.map
 %%SITE_ARCH%%/Unicode/Map/REGISTRY
 %%SITE_ARCH%%/auto/Unicode/Map/Map.so
+%%PERL5_MAN3%%/Unicode::Map.3.gz
 man/man1/map.1.gz
 man/man1/mkmapfile.1.gz
