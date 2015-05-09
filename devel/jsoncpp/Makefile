@@ -3,6 +3,7 @@
 
 PORTNAME=	jsoncpp
 DISTVERSION=	0.6.0-rc2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/jsoncpp/${DISTVERSION}
 DISTNAME=	jsoncpp-src-${DISTVERSION}
@@ -21,7 +22,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/jsoncpp
 	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} json/ ${STAGEDIR}${PREFIX}/include/jsoncpp/)
 	(cd ${WRKSRC}/libs/linux-gcc-FreeBSD/ &&  \
-		${INSTALL_LIB} libjson_linux-gcc-FreeBSD_libmt.a \
+		${INSTALL_DATA} libjson_linux-gcc-FreeBSD_libmt.a \
 		${STAGEDIR}${PREFIX}/lib/libjsoncpp.a)
 	(cd ${WRKSRC}/libs/linux-gcc-FreeBSD/ && \
 		${INSTALL_LIB} libjson_linux-gcc-FreeBSD_libmt.so \

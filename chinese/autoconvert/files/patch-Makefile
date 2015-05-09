@@ -28,9 +28,9 @@
 -	install -m 644 include/*.h  $(DESTDIR)/usr/include
 -	ln -s autogb $(DESTDIR)/usr/bin/autob5
 +	${BSD_INSTALL_PROGRAM} autogb $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_PROGRAM} lib/libhz.so.0.0 $(DESTDIR)$(PREFIX)/lib
++	${BSD_INSTALL_LIB} lib/libhz.so.0.0 $(DESTDIR)$(PREFIX)/lib
 +	ln -sf libhz.so.0.0 $(DESTDIR)$(PREFIX)/lib/libhz.so.0
 +	ln -sf libhz.so.0.0 $(DESTDIR)$(PREFIX)/lib/libhz.so
-+	${BSD_INSTALL_LIB} lib/libhz.a $(DESTDIR)$(PREFIX)/lib
++	${BSD_INSTALL_DATA} lib/libhz.a $(DESTDIR)$(PREFIX)/lib
 +	${BSD_INSTALL_DATA} include/*.h $(DESTDIR)$(PREFIX)/include
 +	ln -sf autogb $(DESTDIR)$(PREFIX)/bin/autob5

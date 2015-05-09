@@ -3,6 +3,7 @@
 
 PORTNAME=	swe
 PORTVERSION=	2.01.00
+PORTREVISION=	1
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
@@ -21,7 +22,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/swe
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/swe
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

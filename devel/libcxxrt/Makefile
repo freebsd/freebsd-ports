@@ -2,7 +2,7 @@
 
 PORTNAME=	libcxxrt
 PORTVERSION=	20131225
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +19,7 @@ CXXFLAGS+=	-nostdlib
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/libcxxrt.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/lib/libcxxrt.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libcxxrt.a ${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/cxxrt
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include/cxxrt
 

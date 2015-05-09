@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpkg
 PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/luciad/libgpkg/get/ \
 		LOCAL/sunpoet/${PORTNAME}
@@ -29,6 +29,6 @@ GEOS_CMAKE_ON=		-DGPKG_GEOS=ON
 GEOS_LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
 
 post-install:
-	${INSTALL_LIB} ${WRKSRC}/gpkg/libgpkg.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/gpkg/libgpkg.a ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>
