@@ -11,6 +11,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTNAME}_1609
 
+USES=		cpe
 NO_BUILD=	yes
 USE_PHP=	xsl mysql iconv gd xml
 USE_MYSQL=	yes
