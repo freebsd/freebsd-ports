@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Mon Dec 13 15:13:24 2004
-+++ Makefile.PL	Mon Dec 13 15:14:11 2004
-@@ -24,7 +24,7 @@
+--- Makefile.PL.orig	2007-04-30 21:38:56 UTC
++++ Makefile.PL
+@@ -24,7 +24,7 @@ my %driver_methods = (
  );
  
  print "What is the name of the Virtual User?\n";

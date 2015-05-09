@@ -1,6 +1,6 @@
 bin/sql2xml.pl
 bin/xml2sql.pl
-%%PERL5_MAN3%%/DBIx::XML_RDB.3.gz
 %%SITE_PERL%%/DBIx/XML_RDB.pm
 %%SITE_PERL%%/DBIx/sql2xml.pl
 %%SITE_PERL%%/DBIx/xml2sql.pl
+%%PERL5_MAN3%%/DBIx::XML_RDB.3.gz
