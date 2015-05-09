@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://launchpadlibrarian.net/113005346/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LICENSE=	GPLv2
