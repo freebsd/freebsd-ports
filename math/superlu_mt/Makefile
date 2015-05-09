@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu_mt
 PORTVERSION=	2.0.20080115
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -104,7 +104,7 @@ do-build:
 	done
 
 do-install:
-	${INSTALL_LIB} ${WRKDIR}/tmp_static/libsuperlu_mt.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/tmp_static/libsuperlu_mt.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKDIR}/tmp_shared/libsuperlu_mt.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib
 	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s -f libsuperlu_mt.so.${SVERSION} libsuperlu_mt.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
