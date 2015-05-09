@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil 
 
 CONFLICTS=	tryton28-2.8.*
 
-USES=		desktop-file-utils gettext python:2
+USES=		cpe desktop-file-utils gettext python:2
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk20 pygtk2
 
