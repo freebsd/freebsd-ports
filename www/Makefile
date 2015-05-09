@@ -1946,6 +1946,7 @@
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-underscore-rails
     SUBDIR += rubygem-unicorn
+    SUBDIR += rubygem-unicorn-worker-killer
     SUBDIR += rubygem-url-mount
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-wasabi
