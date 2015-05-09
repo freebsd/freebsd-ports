@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.4.1.2014.08.15
+PORTVERSION=	3.4.3.2015.05.09
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
-		http://tijl.fastmail.fm/mirror/
+		http://tijl.fastmail.com/mirror/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-src-20140815-9058
+DISTNAME=	${PORTNAME}-src-20150509-9230
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
