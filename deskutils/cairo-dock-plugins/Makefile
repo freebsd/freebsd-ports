@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cairo-dock-plugins
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/antoine:icons	# Temporary until maintainer finds a host
-DISTFILES=	${DISTNAME}.git20141115${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}:icons
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}:icons
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
@@ -20,7 +20,6 @@ DATADIR=	${PREFIX}/share/cairo-dock
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	cairo-dock-plug-ins
-GH_TAGNAME=	0ade052
 
 ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
