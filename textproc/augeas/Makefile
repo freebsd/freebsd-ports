@@ -16,7 +16,7 @@ TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool pkgconfig readline
+USES=		autoreconf cpe gmake libtool pkgconfig readline
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
