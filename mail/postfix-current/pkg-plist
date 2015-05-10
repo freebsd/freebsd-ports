@@ -1,5 +1,3 @@
-@unexec if cmp -s %D/libexec/postfix/main.cf.proto %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
-@unexec if cmp -s %D/libexec/postfix/master.cf.proto %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
 bin/mailq
 bin/newaliases
 %%TEST%%bin/qmqp-sink
@@ -8,19 +6,19 @@ bin/qshape
 bin/rmail
 %%TEST%%bin/smtp-sink
 %%TEST%%bin/smtp-source
-%%INST_BASE%%@cwd /
-etc/postfix/LICENSE
-etc/postfix/TLS_LICENSE
-etc/postfix/bounce.cf.default
-etc/postfix/main.cf.default
-@cwd %%RESETPREFIX%%
+%%PFETC%%/LICENSE
+%%PFETC%%/TLS_LICENSE
+%%PFETC%%/bounce.cf.default
+%%PFETC%%/main.cf.default
+@sample %%PFETC%%/main.cf.sample
+@sample %%PFETC%%/master.cf.sample
 lib/postfix/libpostfix-dns.so
 lib/postfix/libpostfix-global.so
 lib/postfix/libpostfix-master.so
 lib/postfix/libpostfix-tls.so
 lib/postfix/libpostfix-util.so
 %%CDB%%lib/postfix/postfix-cdb.so
-%%OPENLDAP%%lib/postfix/postfix-ldap.so
+%%LDAP%%lib/postfix/postfix-ldap.so
 %%LMDB%%lib/postfix/postfix-lmdb.so
 %%MYSQL%%lib/postfix/postfix-mysql.so
 %%PCRE%%lib/postfix/postfix-pcre.so
@@ -32,6 +30,13 @@ libexec/postfix/cleanup
 libexec/postfix/discard
 libexec/postfix/dnsblog
 libexec/postfix/dynamicmaps.cf
+%%CDB%%libexec/postfix/dynamicmaps.cf.d/cdb.cf
+%%LDAP%%libexec/postfix/dynamicmaps.cf.d/ldap.cf
+%%LMDB%%libexec/postfix/dynamicmaps.cf.d/lmdb.cf
+%%MYSQL%%libexec/postfix/dynamicmaps.cf.d/mysql.cf
+%%PCRE%%libexec/postfix/dynamicmaps.cf.d/pcre.cf
+%%PGSQL%%libexec/postfix/dynamicmaps.cf.d/pgsql.cf
+%%SQLITE%%libexec/postfix/dynamicmaps.cf.d/sqlite.cf
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -46,6 +51,13 @@ libexec/postfix/pickup
 libexec/postfix/pipe
 libexec/postfix/post-install
 libexec/postfix/postfix-files
+%%CDB%%libexec/postfix/postfix-files.d/cdb-files
+%%LDAP%%libexec/postfix/postfix-files.d/ldap-files
+%%LMDB%%libexec/postfix/postfix-files.d/lmdb-files
+%%MYSQL%%libexec/postfix/postfix-files.d/mysql-files
+%%PCRE%%libexec/postfix/postfix-files.d/pcre-files
+%%PGSQL%%libexec/postfix/postfix-files.d/pgsql-files
+%%SQLITE%%libexec/postfix/postfix-files.d/sqlite-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
