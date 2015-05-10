@@ -413,6 +413,7 @@ lib/node_modules/npm/lib/utils/completion/installed-shallow.js
 lib/node_modules/npm/lib/utils/depr-check.js
 lib/node_modules/npm/lib/utils/error-handler.js
 lib/node_modules/npm/lib/utils/gently-rm.js
+lib/node_modules/npm/lib/utils/get-publish-config.js
 lib/node_modules/npm/lib/utils/git.js
 lib/node_modules/npm/lib/utils/lifecycle.js
 lib/node_modules/npm/lib/utils/link.js
@@ -873,6 +874,9 @@ lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-pa
 lib/node_modules/npm/node_modules/init-package-json/package.json
 lib/node_modules/npm/node_modules/init-package-json/test/basic.input
 lib/node_modules/npm/node_modules/init-package-json/test/basic.js
+lib/node_modules/npm/node_modules/init-package-json/test/lib/common.js
+lib/node_modules/npm/node_modules/init-package-json/test/name-spaces.js
+lib/node_modules/npm/node_modules/init-package-json/test/name-uppercase.js
 lib/node_modules/npm/node_modules/init-package-json/test/npm-defaults.js
 lib/node_modules/npm/node_modules/init-package-json/test/scope-in-config.js
 lib/node_modules/npm/node_modules/init-package-json/test/scope.js
@@ -890,12 +894,13 @@ lib/node_modules/npm/node_modules/lru-cache/.npmignore
 lib/node_modules/npm/node_modules/lru-cache/CONTRIBUTORS
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
+lib/node_modules/npm/node_modules/lru-cache/bar.js
+lib/node_modules/npm/node_modules/lru-cache/foo.js
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
 lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
-lib/node_modules/npm/node_modules/lru-cache/test/timeout.js
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
 lib/node_modules/npm/node_modules/minimatch/browser.js
@@ -2269,6 +2274,10 @@ lib/node_modules/npm/test/fixtures/config/multi-ca
 lib/node_modules/npm/test/fixtures/config/package.json
 lib/node_modules/npm/test/fixtures/config/userconfig
 lib/node_modules/npm/test/fixtures/forked-underscore-1.5.1.tgz
+lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-bar.git.tar.gz
+lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-buzz.git.tar.gz
+lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-foo.git.tar.gz
+lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-npm-git-test.git.tar.gz
 lib/node_modules/npm/test/fixtures/gitignore-and-npmignore-2.tar
 lib/node_modules/npm/test/fixtures/gitignore-and-npmignore.tar
 lib/node_modules/npm/test/fixtures/gitignore-and-npmignore.tgz
@@ -2349,6 +2358,7 @@ lib/node_modules/npm/test/tap/add-remote-git-shrinkwrap.js
 lib/node_modules/npm/test/tap/add-remote-git.js
 lib/node_modules/npm/test/tap/adduser-always-auth.js
 lib/node_modules/npm/test/tap/adduser-legacy-auth.js
+lib/node_modules/npm/test/tap/bin.js
 lib/node_modules/npm/test/tap/bitbucket-https-url-with-creds-package.js
 lib/node_modules/npm/test/tap/bitbucket-https-url-with-creds.js
 lib/node_modules/npm/test/tap/bitbucket-shortcut-package.js
@@ -2388,6 +2398,7 @@ lib/node_modules/npm/test/tap/git-cache-locking.js
 lib/node_modules/npm/test/tap/git-cache-no-hooks.js
 lib/node_modules/npm/test/tap/git-dependency-install-link.js
 lib/node_modules/npm/test/tap/git-npmignore.js
+lib/node_modules/npm/test/tap/git-races.js
 lib/node_modules/npm/test/tap/github-shortcut-package.js
 lib/node_modules/npm/test/tap/github-shortcut.js
 lib/node_modules/npm/test/tap/gitlab-shortcut-package.js
@@ -2404,6 +2415,7 @@ lib/node_modules/npm/test/tap/install-cli-production.js
 lib/node_modules/npm/test/tap/install-cli-unicode.js
 lib/node_modules/npm/test/tap/install-from-local.js
 lib/node_modules/npm/test/tap/install-man.js
+lib/node_modules/npm/test/tap/install-noargs-dev.js
 lib/node_modules/npm/test/tap/install-save-exact.js
 lib/node_modules/npm/test/tap/install-save-local.js
 lib/node_modules/npm/test/tap/install-save-prefix.js
@@ -2436,6 +2448,7 @@ lib/node_modules/npm/test/tap/outdated-depth.js
 lib/node_modules/npm/test/tap/outdated-git.js
 lib/node_modules/npm/test/tap/outdated-include-devdependencies.js
 lib/node_modules/npm/test/tap/outdated-json.js
+lib/node_modules/npm/test/tap/outdated-local.js
 lib/node_modules/npm/test/tap/outdated-long.js
 lib/node_modules/npm/test/tap/outdated-new-versions.js
 lib/node_modules/npm/test/tap/outdated-notarget.js
@@ -2474,10 +2487,12 @@ lib/node_modules/npm/test/tap/sorted-package-json.js
 lib/node_modules/npm/test/tap/spawn-enoent-help.js
 lib/node_modules/npm/test/tap/spawn-enoent.js
 lib/node_modules/npm/test/tap/startstop.js
+lib/node_modules/npm/test/tap/tag-version-prefix.js
 lib/node_modules/npm/test/tap/test-run-ls.js
 lib/node_modules/npm/test/tap/umask-lifecycle.js
 lib/node_modules/npm/test/tap/uninstall-package.js
 lib/node_modules/npm/test/tap/unpack-foreign-tarball.js
+lib/node_modules/npm/test/tap/unpublish-config.js
 lib/node_modules/npm/test/tap/update-examples.js
 lib/node_modules/npm/test/tap/update-index.js
 lib/node_modules/npm/test/tap/update-save.js
