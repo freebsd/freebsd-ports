@@ -35298,10 +35298,10 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>postfix</name>
 	<name>postfix-base</name>
-	<range><ge>2.8.0</ge><lt>2.8.3,1</lt></range>
-	<range><ge>2.7.0</ge><lt>2.7.4,1</lt></range>
-	<range><ge>2.6.0</ge><lt>2.6.10,1</lt></range>
-	<range><ge>2.5.0</ge><lt>2.5.13,2</lt></range>
+	<range><ge>2.8.0,1</ge><lt>2.8.3,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.4,1</lt></range>
+	<range><ge>2.6.0,1</ge><lt>2.6.10,1</lt></range>
+	<range><ge>2.5.0,2</ge><lt>2.5.13,2</lt></range>
 	<range><le>2.4.16,1</le></range>
       </package>
       <package>
@@ -35326,7 +35326,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2011-05-09</discovery>
       <entry>2011-05-09</entry>
-      <modified>2015-05-09</modified>
+      <modified>2015-05-10</modified>
     </dates>
   </vuln>
 
