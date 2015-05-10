@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mysql2
-PORTVERSION=	0.3.16
+PORTVERSION=	0.3.18
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, fast MySQL library for Ruby, binding to libmysql
 
-USE_MYSQL=	yes
+LICENSE=	MIT
 
+USE_MYSQL=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
