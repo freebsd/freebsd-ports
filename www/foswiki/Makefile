@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 		p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-Sort-Maker>=0.06:${PORTSDIR}/devel/p5-Sort-Maker
 
-USES=		perl5 tar:tgz
+USES=		cpe perl5 tar:tgz
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	OPTINT OPTOTH APACHE
