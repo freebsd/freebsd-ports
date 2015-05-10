@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	2014-09-16 20:53:09.681073696 +0600
-+++ doc/Makefile.in	2014-09-16 20:53:24.383067403 +0600
-@@ -254,7 +254,7 @@
+--- doc/Makefile.am.orig	2015-05-10 18:47:04.571197742 +0600
++++ doc/Makefile.am	2015-05-10 18:47:22.212197672 +0600
+@@ -8,7 +8,7 @@
  TXT2MAN = $(srcdir)/txt2man
  DOCDIR = doc/freetds-$(VERSION)
  PRODUCT = FreeTDS
 -TARGET_DOCDIR = $(DESTDIR)$(datadir)/$(DOCDIR)
 +TARGET_DOCDIR = $(DESTDIR)$(datadir)/doc/freetds
- IMAGES = images/important.gif \
+ 
+ IMAGES = 	images/important.gif \
  		images/note.gif \
- 		images/tip.gif \
