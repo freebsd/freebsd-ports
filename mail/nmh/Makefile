@@ -12,7 +12,7 @@ COMMENT=	Cleaned up MH mailer suite
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake iconv shebangfix
+USES=		cpe gmake iconv shebangfix
 SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
