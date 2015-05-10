@@ -1,6 +1,14 @@
---- ./parallel.c.orig	2010-07-06 12:06:47.000000000 -0700
-+++ ./parallel.c	2010-11-17 15:49:57.000000000 -0800
-@@ -87,6 +87,7 @@
+--- moreutils-parallel.c.orig	2015-01-19 18:03:51 UTC
++++ moreutils-parallel.c
+@@ -31,6 +31,7 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
++#include <signal.h>
+ 
+ #ifdef __sun
+ # include <sys/loadavg.h> /* getloadavg() */
+@@ -112,6 +113,7 @@ void exec_child(char **command, char **a
  	return;
  }
  
@@ -8,7 +16,7 @@
  int wait_for_child(int options) {
  	id_t id_ignored = 0;
  	siginfo_t infop;
-@@ -101,6 +102,18 @@
+@@ -126,6 +128,18 @@ int wait_for_child(int options) {
  	}
  	return 1;
  }
@@ -25,5 +33,5 @@
 +#endif
 +
  
- int main(int argc, char **argv) {
- 	int maxjobs = -1;
+ static int pipe_child(int fd, int orig_fd)
+ {
