@@ -1,11 +1,11 @@
---- src/readcalls.c.orig	Wed Apr  5 03:16:50 2006
-+++ src/readcalls.c	Thu Sep 27 19:54:14 2007
-@@ -563,7 +563,7 @@
+--- src/readcalls.c.orig	2014-05-15 21:02:23 UTC
++++ src/readcalls.c
+@@ -492,7 +492,7 @@ int synclog(char *synclogfile)
  
- 	showmsg ("Merging logfiles...\n");
- 	sleep(1);
--	sprintf(wgetcmd, "cat log1 log2 | sort -g -k4,4 | uniq -w79 > %s", logfile);
-+	sprintf(wgetcmd, "cat log1 log2 | sort -g -k4,4 | uniq > %s", logfile);
- 	if (system(wgetcmd) == 0)
- 		showmsg ("Merging logs successfull\n");
- 	else
+     showmsg("Merging logfiles...\n");
+     sleep(1);
+-    sprintf(wgetcmd, "cat log1 log2 | sort -g -k4,4 | uniq -w79 > %s",
++    sprintf(wgetcmd, "cat log1 log2 | sort -g -k4,4 | uniq  > %s",
+ 	    logfile);
+     if (system(wgetcmd) == 0)
+ 	showmsg("Merging logs successfull\n");

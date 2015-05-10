@@ -1,6 +1,6 @@
---- share/logcfg.dat.orig	Mon May  8 14:51:58 2006
-+++ share/logcfg.dat	Mon May  8 14:52:09 2006
-@@ -27,8 +27,8 @@
+--- share/logcfg.dat.orig	2014-05-15 12:02:23 UTC
++++ share/logcfg.dat
+@@ -27,8 +27,8 @@ RULES=cqww
  #                               #
  #################################
  #
