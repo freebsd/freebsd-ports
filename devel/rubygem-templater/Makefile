@@ -9,9 +9,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby code generation framework
 
-RUN_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline \
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		rubygem-extlib>=0.9.5:${PORTSDIR}/devel/rubygem-extlib \
-		rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs
+		rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
