@@ -2,7 +2,6 @@
 
 PORTNAME=	mochiweb
 PORTVERSION=	2.9.0p1
-DISTVERSIONPREFIX=v
 CATEGORIES=	www devel
 PKGNAMESUFFIX=	-basho
 
@@ -21,8 +20,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	basho
 GH_TAGNAME=	ade2a9b	# required
-
-WRKSRC=		${WRKDIR}/basho-${PORTNAME}-${GH_TAGNAME}
 
 .include <bsd.port.options.mk>
 
