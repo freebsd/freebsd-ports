@@ -14,13 +14,11 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase
 
-USES=		autoreconf libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblfcxml.so.1.0.0
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
