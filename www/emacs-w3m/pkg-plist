@@ -371,8 +371,3 @@
 %%LISPDIR%%/w3m.el
 %%PORTDOCS%%share/doc/ja/emacs-w3m/README.ja
 %%PORTDOCS%%share/doc/emacs-w3m/README
-%%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
-%%PORTDOCS%%@dirrm share/doc/emacs-w3m
-@dirrm %%LISPDIR%%
-@dirrm %%ICONDIR%%
-@dirrm %%ETCDIR%%
