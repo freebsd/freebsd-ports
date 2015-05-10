@@ -1,6 +1,6 @@
---- libfreeipmi/driver/ipmi-kcs-driver.c.orig	2012-01-03 03:25:58.000000000 +0800
-+++ libfreeipmi/driver/ipmi-kcs-driver.c	2012-01-06 04:38:31.485000601 +0800
-@@ -491,7 +491,7 @@
+--- libfreeipmi/driver/ipmi-kcs-driver.c.orig	2014-01-03 23:45:22 UTC
++++ libfreeipmi/driver/ipmi-kcs-driver.c
+@@ -491,7 +491,7 @@ ipmi_kcs_ctx_io_init (ipmi_kcs_ctx_t ctx
  #ifdef __FreeBSD__
  #ifdef USE_IOPERM
    /* i386_set_ioperm has known problems on FBSD 5.x (bus errors). */
