@@ -13,6 +13,8 @@ COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
+USES=		cpe
+CPE_VENDOR=	glpi-project
 USE_PHP=	mysqli mbstring pcre session xml json ctype gd
 WANT_PHP_WEB=	yes
 
