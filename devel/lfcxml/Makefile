@@ -14,12 +14,11 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase
 
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:env
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblfcxml.so.1.0.0
