@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b040e24-f751-11e4-b24d-5453ed2e2b49">
+    <topic>libssh -- null pointer dereference</topic>
+    <affects>
+      <package>
+	<name>libssh</name>
+	<range><lt>0.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andreas Schneider reports:</p>
+	<blockquote cite="https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release/">
+	  <p>libssh versions 0.5.1 and above have a logical error in the
+	    handling of a SSH_MSG_NEWKEYS and SSH_MSG_KEXDH_REPLY package. A
+	    detected error did not set the session into the error state
+	    correctly and further processed the packet which leads to a null
+	    pointer dereference. This is the packet after the initial key
+	    exchange and doesn’t require authentication.</p>
+	  <p>This could be used for a Denial of Service (DoS) attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3146</cvename>
+      <url>https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release</url>
+    </references>
+    <dates>
+      <discovery>2015-04-30</discovery>
+      <entry>2015-05-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b13af778-f4fc-11e4-a95d-ac9e174be3af">
     <topic>Vulnerablitiy in HWP document filter</topic>
     <affects>
