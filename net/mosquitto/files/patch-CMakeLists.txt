@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2014-10-08 21:50:07 UTC
++++ CMakeLists.txt
+@@ -8,6 +8,9 @@ cmake_minimum_required(VERSION 2.6)
+ 
+ set (VERSION 1.3.5)
+ 
++include_directories(/usr/local/include)
++link_directories(/usr/local/lib)
++
+ if (WIN32)
+ 	execute_process(COMMAND cmd /c echo %DATE% %TIME% OUTPUT_VARIABLE TIMESTAMP
+ 			OUTPUT_STRIP_TRAILING_WHITESPACE)
+@@ -40,7 +43,7 @@ else (WIN32)
+ 	set (LIBDIR lib${LIB_SUFFIX})
+ 	set (INCLUDEDIR include)
+ 	set (DATAROOTDIR share)
+-	set (MANDIR ${DATAROOTDIR}/man)
++	set (MANDIR man)
+ 	set (SHAREDIR ${DATAROOTDIR}/mosquitto)
+ endif (WIN32)
+ 

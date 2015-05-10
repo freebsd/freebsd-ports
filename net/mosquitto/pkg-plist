@@ -1,28 +1,28 @@
-share/man/man8/mosquitto.8.gz
-share/man/man7/mqtt.7.gz
-share/man/man7/mosquitto-tls.7.gz
-share/man/man5/mosquitto.conf.5.gz
-share/man/man3/libmosquitto.3.gz
-share/man/man1/mosquitto_sub.1.gz
-share/man/man1/mosquitto_pub.1.gz
-share/man/man1/mosquitto_passwd.1.gz
-%%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto.pyc
-%%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto.py
-%%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
-lib/libmosquittopp.so.1
-lib/libmosquittopp.so
-lib/libmosquitto.so.1
-lib/libmosquitto.so
-lib/libmosquitto.so.%%PORTVERSION%%
-lib/libmosquittopp.so.%%PORTVERSION%%
-include/mosquittopp.h
-include/mosquitto_plugin.h
-include/mosquitto.h
-bin/mosquitto_sub
-bin/mosquitto_pub
 bin/mosquitto_passwd
+bin/mosquitto_pub
+bin/mosquitto_sub
+@sample %%ETCDIR%%/aclfile.sample
+@sample %%ETCDIR%%/mosquitto.conf.sample
+@sample %%ETCDIR%%/pskfile.sample
+@sample %%ETCDIR%%/pwfile.sample
+include/mosquitto.h
+include/mosquitto_plugin.h
+include/mosquittopp.h
+lib/libmosquitto.so
+lib/libmosquitto.so.1
+lib/libmosquitto.so.%%PORTVERSION%%
+lib/libmosquittopp.so
+lib/libmosquittopp.so.1
+lib/libmosquittopp.so.%%PORTVERSION%%
+%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
+%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto.py
+%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto.pyc
+man/man1/mosquitto_passwd.1.gz
+man/man1/mosquitto_pub.1.gz
+man/man1/mosquitto_sub.1.gz
+man/man3/libmosquitto.3.gz
+man/man5/mosquitto.conf.5.gz
+man/man7/mosquitto-tls.7.gz
+man/man7/mqtt.7.gz
+man/man8/mosquitto.8.gz
 sbin/mosquitto
-@sample etc/mosquitto/pwfile.sample
-@sample etc/mosquitto/pskfile.sample
-@sample etc/mosquitto/mosquitto.conf.sample
-@sample etc/mosquitto/aclfile.sample
