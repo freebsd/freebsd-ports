@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sql-ledger
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.8
 CATEGORIES=	finance perl5
-MASTER_SITES=	http://www.sql-ledger.com/source/ \
-		http://abacus.sql-ledger.com/source/ \
-		http://pluto.sql-ledger.com/source/
+MASTER_SITES=	http://www.sql-ledger.com/source/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Double entry accounting system
@@ -19,14 +17,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message sql-ledger-httpd.conf
-USES=		shebangfix perl5
+USES=		shebangfix perl5 pgsql
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 
 do-install:
 	cd ${WRKDIR} ; \
 		${TAR} -cf - ${PORTNAME} | ( cd ${STAGEDIR}${PREFIX} ; ${TAR} xf - )
-	cd ${STAGEDIR}${PREFIX}/${PORTNAME} ; \
-		${CHMOD} 711 users templates css spool
 	${INSTALL_DATA} ${WRKDIR}/sql-ledger-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>
