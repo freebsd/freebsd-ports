@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	highline
-PORTVERSION=	1.6.21
+PORTVERSION=	1.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
