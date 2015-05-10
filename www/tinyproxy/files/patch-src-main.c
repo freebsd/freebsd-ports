@@ -1,6 +1,6 @@
---- ./src/main.c.orig	2010-06-21 13:39:34.000000000 -0400
-+++ ./src/main.c	2010-06-21 13:40:20.000000000 -0400
-@@ -407,12 +407,9 @@
+--- src/main.c.orig	2011-08-16 12:14:34 UTC
++++ src/main.c
+@@ -407,12 +407,9 @@ main (int argc, char **argv)
                  exit (EX_OSERR);
          }
  
@@ -16,7 +16,7 @@
  
          /* Create log file after we drop privileges */
          if (setup_logging ()) {
-@@ -427,6 +424,13 @@
+@@ -427,6 +424,13 @@ main (int argc, char **argv)
                          exit (EX_OSERR);
                  }
          }
