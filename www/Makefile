@@ -1915,6 +1915,7 @@
     SUBDIR += rubygem-redis-rack
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redmine_acts_as_taggable_on
+    SUBDIR += rubygem-responders
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
