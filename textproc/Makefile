@@ -1349,6 +1349,7 @@
     SUBDIR += rubygem-gitlab-linguist
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
+    SUBDIR += rubygem-html-pipeline
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
