@@ -1,5 +1,3 @@
-@unexec if cmp -s %D/libexec/postfix/main.cf %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
-@unexec if cmp -s %D/libexec/postfix/master.cf %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
 bin/mailq
 bin/newaliases
 %%TEST%%bin/qmqp-sink
@@ -8,13 +6,13 @@ bin/qshape
 bin/rmail
 %%TEST%%bin/smtp-sink
 %%TEST%%bin/smtp-source
-%%INST_BASE%%@cwd /
-etc/postfix/LICENSE
-etc/postfix/TLS_LICENSE
-etc/postfix/bounce.cf.default
-etc/postfix/main.cf.default
-etc/postfix/makedefs.out
-@cwd %%RESETPREFIX%%
+%%PFETC%%/LICENSE
+%%PFETC%%/TLS_LICENSE
+%%PFETC%%/bounce.cf.default
+%%PFETC%%/main.cf.default
+@sample %%PFETC%%/main.cf.sample
+%%PFETC%%/makedefs.out
+@sample %%PFETC%%/master.cf.sample
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -140,7 +138,7 @@ sbin/postsuper
 sbin/posttls-finger
 sbin/sendmail
 @dir %%PFETC%%
-@dir /var/db/postfix
+@dir(postfix,,700) /var/db/postfix
 @dir(postfix,,700) /var/spool/postfix/active
 @dir(postfix,,700) /var/spool/postfix/bounce
 @dir(postfix,,700) /var/spool/postfix/corrupt

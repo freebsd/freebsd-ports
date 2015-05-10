@@ -57,22 +57,11 @@ yesno() {
 }
 
 if [ "$2" = "POST-INSTALL" ]; then
-	SAMPLES="main.cf master.cf" 
-	for file in $SAMPLES
-	do
-		if [ ! -f ${ETCDIR}/$file ]; then
-                	cp ${DAEMONDIR}/$file ${ETCDIR}/
-		fi
-	done
-
-        cmp ${DAEMONDIR}/main.cf ${ETCDIR}/main.cf >/dev/null 2>&1 \
-	 || POSTARG="upgrade-package"
-
 	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
 	 daemon_directory=${DAEMONDIR} \
 	 html_directory=${READMEDIR} \
 	 readme_directory=${READMEDIR} \
-	 set-permissions ${POSTARG}
+	 upgrade-package
 fi
 
 if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" -a -f "${MC}" ]; then
