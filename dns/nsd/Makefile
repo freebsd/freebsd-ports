@@ -14,6 +14,9 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	nsd-[0-3]* nsd3-[0-9]*
 
+USES=		cpe
+CPE_VENDOR=	nlnetlabs
+
 USE_RC_SUBR=	nsd
 
 NSDUSER?=	nsd
