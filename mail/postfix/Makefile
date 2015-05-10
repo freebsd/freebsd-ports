@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.4
+PORTVERSION=	2.11.5
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -26,7 +26,7 @@ PORTSCOUT=	limit:^2\.11\.
 
 VDAVERSION=	2.10.0
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
-		postfix2?-* postfix21?-* postfix-tls-* \
+		postfix2?-* postfix210-* postfix-3.* \
 		postfix-current-[23].* postfix-current-base-[23].* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
 
@@ -41,36 +41,42 @@ USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP_SASL LMDB MYSQL NIS \
-		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
+OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP LDAP_SASL LMDB MYSQL \
+		NIS PCRE PGSQL SASL SPF SQLITE TEST TLS VDA
 
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
 OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE TLS
 
-PCRE_DESC=	Perl Compatible Regular Expressions
-SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
+BDB_USE=		BDB=yes
+CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+LDAP_USE=		OPENLDAP=yes
+LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+MYSQL_USE=		MYSQL=yes
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PGSQL_USES=		pgsql
+SASLKMIT_LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+SQLITE_USE=		SQLITE=yes
+TLS_USE=		OPENSSL=yes
+
+CDB_DESC=	CDB maps lookups
+INST_BASE_DESC=	Install into /usr and /etc/postfix
+LDAP_DESC=	LDAP maps (uses WITH_OPENLDAP_VER)
+LDAP_SASL_DESC=	LDAP client-to-server SASL auth
+LMDB_DESC=	LMDB maps
+SPF_DESC=	SPF support (via libspf2 1.2.x)
+TEST_DESC=	SMTP/LMTP test server and generator
+VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
+
+RG1_DESC=	Dovecot SASL authentication methods
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
 DOVECOT2_DESC=	Dovecot 2.x SASL authentication method
+RG2_DESC=	Kerberos network authentication protocol type
 SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
 SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
-TLS_DESC=	SSL and TLS support
-BDB_DESC=	Berkeley DB (uses WITH_BDB_VER)
-MYSQL_DESC=	MySQL maps (uses WITH_MYSQL_VER)
-PGSQL_DESC=	PostgreSQL maps (uses DEFAULT_PGSQL_VER)
-SQLITE_DESC=	SQLite maps
-OPENLDAP_DESC=	OpenLDAP maps (uses WITH_OPENLDAP_VER)
-LDAP_SASL_DESC=	OpenLDAP client-to-server SASL auth
-CDB_DESC=	CDB maps lookups
-NIS_DESC=	NIS maps lookups
-VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
-TEST_DESC=	SMTP/LMTP test server and generator
-SPF_DESC=	SPF support (via libspf2 1.2.x)
-INST_BASE_DESC=	Install into /usr and /etc/postfix
-LMDB_DESC=	LMDB maps
-RG1_DESC=	Dovecot SASL authentication methods
-RG2_DESC=	Kerberos network authentication protocol type
 
 .include <bsd.port.options.mk>
 
@@ -139,15 +145,13 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 _REQUIRE=		LOGIN cleanvar
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
 POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
-.if ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+.if ${PORT_OPTIONS:MSASL}
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
@@ -167,12 +171,10 @@ POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
-LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
-USE_OPENSSL=		yes
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .else
@@ -180,7 +182,6 @@ POSTFIX_CCARGS+=	-DNO_TLS
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-LIB_DEPENDS+=		libspf2.so:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
 PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
@@ -190,34 +191,29 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=		yes
 INVALID_BDB_VER=	6
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
 POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
 _REQUIRE+=		mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USES+=			pgsql
 POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=		yes
 POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 .endif
 
-.if ${PORT_OPTIONS:MOPENLDAP}
-USE_OPENLDAP=		yes
+.if ${PORT_OPTIONS:MLDAP}
 . if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 . endif
@@ -225,15 +221,15 @@ POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 . if ${PORT_OPTIONS:MLDAP_SASL}
-.  if ! ${PORT_OPTIONS:MSASL2}
+.  if ! ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .  endif
+WANT_OPENLDAP_SASL=	yes
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
 . endif
 .endif
 
 .if ${PORT_OPTIONS:MCDB}
-LIB_DEPENDS+=		libcdb.so:${PORTSDIR}/databases/tinycdb
 POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
 .endif
@@ -255,7 +251,6 @@ MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
-LIB_DEPENDS+=		liblmdb.so:${PORTSDIR}/databases/lmdb
 POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -llmdb
 .endif
@@ -278,10 +273,10 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
-.if ${PORT_OPTIONS:MSASL2} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
+.if ${PORT_OPTIONS:MSASL} && ! ${PORT_OPTIONS:MMYSQL} && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
-		${ECHO_MSG} "Your SASL2 library it's compiled with MYSQL"; \
+		${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
 		${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
 		${ECHO_MSG} "select MYSQL OPTION in config menu."; \
 		${ECHO_MSG} "# make clean config"; \
@@ -346,8 +341,6 @@ do-install:
 		readme_directory=${READMEDIR} \
 		sendmail_path=${PREFIX}/sbin/sendmail )
 
-# == do not overwrite existing config
-	${RM} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/master.cf
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -356,10 +349,14 @@ do-install:
 	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
 
-post-install:
+post-stage:
+# == do not overwrite existing config
+	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
+
 # Fix compressed man pages and strip executables
-	${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${DAEMONDIR}/postfix-files
-	-@${STRIP_CMD} ${STRIP_LIBEXEC:S|^|${STAGEDIR}${PREFIX}/libexec/postfix/|}
+	${SED} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${DAEMONDIR}/postfix-files
+	-@${STRIP_CMD} ${STRIP_LIBEXEC:S|^|${STAGEDIR}${DAEMONDIR}/|}
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 
 .include <bsd.port.mk>
