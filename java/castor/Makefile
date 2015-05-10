@@ -12,6 +12,7 @@ COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 
 LICENSE=	APACHE20
 
+USES=		cpe
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
