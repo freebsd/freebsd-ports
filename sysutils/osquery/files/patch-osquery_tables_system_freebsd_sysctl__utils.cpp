@@ -1,4 +1,4 @@
---- osquery/tables/system/freebsd/sysctl_utils.cpp.orig	2015-05-08 22:20:24 UTC
+--- osquery/tables/system/freebsd/sysctl_utils.cpp.orig	2015-05-10 20:45:08 UTC
 +++ osquery/tables/system/freebsd/sysctl_utils.cpp
 @@ -0,0 +1,36 @@
 +/*
