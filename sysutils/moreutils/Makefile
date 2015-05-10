@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.53
-PORTREVISION=	1
+PORTVERSION=	0.55
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional Unix utilities
@@ -21,7 +20,7 @@ OPTIONS_SUB=	yes
 
 ALL_TARGET=	errnos.h ${CANNED_MANPAGES:R}
 USES=		perl5 shebangfix
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CANNED_MANPAGES=errno.1 \
 		ifdata.1 \
@@ -42,14 +41,14 @@ PERL_MANPAGES=	chronic.1 \
 SHEBANG_FILES=	${PERL_MANPAGES:R}
 
 post-extract:
-	@${MV} ${WRKSRC}/ts ${WRKSRC}/moreutils-ts
+.for file in parallel.c parallel.docbook ts
+	@${MV} ${WRKSRC}/${file} ${WRKSRC}/moreutils-${file}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|parallel|moreutils-&|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|__APPLE__|__${OPSYS}__|' ${WRKSRC}/ifdata.c
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
-	@${MV} ${WRKSRC}/parallel.c ${WRKSRC}/moreutils-parallel.c
-	@${MV} ${WRKSRC}/parallel.docbook ${WRKSRC}/moreutils-parallel.docbook
 
 post-build:
 .for man in ${PERL_MANPAGES:R}
