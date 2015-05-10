@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Content management system written in PHP
 
+USES=		cpe
+
 USE_PHP=	mysql xml
 WRKSRC=		${WRKDIR}/e107
 
