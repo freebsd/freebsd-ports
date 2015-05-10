@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast replacement for CGI.escape and Rack::Utils.escape
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+LICENSE=	MIT
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
