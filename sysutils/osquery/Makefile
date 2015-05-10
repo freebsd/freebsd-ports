@@ -3,6 +3,7 @@
 
 PORTNAME=	osquery
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GH:ghc \
 		https://codeload.github.com/${PORTNAME}/third-party/tar.gz/${PORTVERSION}?dummy=/:gh
@@ -52,6 +53,12 @@ post-extract:
 	${LN} -sf ${WRKDIR}/third-party-${PORTVERSION} ${WRKSRC}/third-party
 
 post-patch:
+	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
+		${WRKSRC}/osquery/core/init.cpp
+	${REINPLACE_CMD} -e 's|/var/osquery/osquery.em|/var/run/osquery.em|g' \
+		-e 's|/etc/osquery/extensions.load|${PREFIX}/etc/osquery.extensions|g' \
+		-e 's|/etc/osquery/modules.load|${PREFIX}/etc/osquery.modules|g' \
+		${WRKSRC}/osquery/extensions/extensions.cpp
 	${REINPLACE_CMD} -e 's|/var/osquery/osquery.conf|${PREFIX}/etc/osquery.conf|g' \
 		${WRKSRC}/osquery/config/plugins/filesystem.cpp
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \

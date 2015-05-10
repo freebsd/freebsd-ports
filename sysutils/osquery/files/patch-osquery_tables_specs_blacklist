@@ -33,7 +33,7 @@
 +freebsd:routes
 +freebsd:system_controls
 +freebsd:usb_devices
-+freebsd:users
++#freebsd:users
 +freebsd:yara_events
 +freebsd:yara
 +freebsd:system_controls
