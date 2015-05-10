@@ -13,6 +13,8 @@ COMMENT=	PHP-based survey building and runing system
 
 LICENSE=	GPLv2
 
+USES=		cpe
+
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey
 OPTIONS_DEFINE=		PGSQL GD LDAP ZIP
 OPTIONS_DEFAULT=	GD
