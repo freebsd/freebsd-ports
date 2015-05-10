@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	jruby-rack
-PORTVERSION=	1.1.16
+PORTVERSION=	1.1.18
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Java and Ruby library that adapts the Java Servlet API to Rack
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby
 
