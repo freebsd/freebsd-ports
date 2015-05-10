@@ -60,6 +60,7 @@
     SUBDIR += raidtest
     SUBDIR += ramspeed
     SUBDIR += randomio
+    SUBDIR += rubygem-benchmark-ips
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
     SUBDIR += scimark2c
