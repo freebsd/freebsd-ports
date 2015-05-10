@@ -36057,10 +36057,10 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>postfix</name>
 	<name>postfix-base</name>
-	<range><ge>2.7.0</ge><lt>2.7.3,1</lt></range>
-	<range><ge>2.6.0</ge><lt>2.6.9,1</lt></range>
-	<range><ge>2.5.0</ge><lt>2.5.12,2</lt></range>
-	<range><ge>2.4.0</ge><lt>2.4.16,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.3,1</lt></range>
+	<range><ge>2.6.0,1</ge><lt>2.6.9,1</lt></range>
+	<range><ge>2.5.0,2</ge><lt>2.5.12,2</lt></range>
+	<range><ge>2.4.0,1</ge><lt>2.4.16,1</lt></range>
       </package>
       <package>
 	<name>postfix-current</name>
@@ -36086,7 +36086,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2011-03-07</discovery>
       <entry>2011-03-19</entry>
-      <modified>2015-05-09</modified>
+      <modified>2015-05-10</modified>
     </dates>
   </vuln>
 
