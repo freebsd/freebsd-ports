@@ -3,4 +3,4 @@ Commander bridges the gap between other terminal related libraries you know and
 love (OptionParser, HighLine), while providing many new features, and an
 elegant API.
 
-WWW: http://visionmedia.github.io/commander/
+WWW: https://github.com/commander-rb/commander
