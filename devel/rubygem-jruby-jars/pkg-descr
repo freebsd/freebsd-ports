@@ -2,4 +2,4 @@ JRuby is an implementation of the Ruby language atop the Java virtual machine.
 
 This port contains JAR files from the JRuby distribution.
 
-WWW: https://github.com/jruby/jruby/tree/master/gem/
+WWW: https://github.com/jruby/jruby/tree/master/maven/jruby-jars
