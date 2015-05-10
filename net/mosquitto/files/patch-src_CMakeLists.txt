@@ -1,0 +1,18 @@
+--- src/CMakeLists.txt.orig	2014-10-08 21:50:07 UTC
++++ src/CMakeLists.txt
+@@ -79,7 +79,7 @@ if (UNIX)
+ 	if (APPLE)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
+ 	else (APPLE)
+-		set (MOSQ_LIBS ${MOSQ_LIBS} rt dl m)
++		set (MOSQ_LIBS ${MOSQ_LIBS} rt m)
+ 	endif (APPLE)
+ endif (UNIX)
+ 
+@@ -100,6 +100,5 @@ if (${WITH_TLS} STREQUAL ON)
+ endif (${WITH_TLS} STREQUAL ON)
+ 
+ if (UNIX)
+-	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
+ endif (UNIX)
+ 
