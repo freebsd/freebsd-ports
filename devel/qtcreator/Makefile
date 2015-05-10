@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	3.3.1
+DISTVERSION=	3.4.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_QT} 
-MASTER_SITE_SUBDIR=official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}/
+MASTER_SITES=	${MASTER_SITE_QT}
+MASTER_SITE_SUBDIR=official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE
 
@@ -20,6 +20,10 @@ USE_QT5=	buildtools concurrent core declarative designer gui linguist network\
 
 # Enforce installation to ${PREFIX}.
 QMAKE_ARGS+=	QTC_PREFIX=${PREFIX}
+
+# Required for building the port with GCC: the define below is required for
+# std::to_string() to exist. More details in ports/193528.
+QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
