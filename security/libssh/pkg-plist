@@ -1,6 +1,7 @@
 include/libssh/callbacks.h
 include/libssh/legacy.h
 include/libssh/libssh.h
+include/libssh/libsshpp.hpp
 include/libssh/server.h
 include/libssh/sftp.h
 %%SSH1%%include/libssh/ssh1.h
@@ -10,10 +11,10 @@ lib/cmake/libssh/libssh/libssh-config-version.cmake
 %%STATIC%%lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.5.0
+lib/libssh.so.4.5.1
 %%STATIC%%lib/libssh_threads.a
 lib/libssh_threads.so
 lib/libssh_threads.so.4
-lib/libssh_threads.so.4.5.0
+lib/libssh_threads.so.4.5.1
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc

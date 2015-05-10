@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libssh
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	security devel
-MASTER_SITES=	https://red.libssh.org/attachments/download/107/
+MASTER_SITES=	https://red.libssh.org/attachments/download/121/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library implementing the SSH1 and SSH2 protocol
@@ -13,13 +13,12 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	SSH1 STATIC
-# Version 0.6.4 does not build with GCRYPT
-#OPTIONS_RADIO=	CRYPTO
-#OPTIONS_RADIO_CRYPTO=	GCRYPT OPENSSL
-#OPTIONS_DEFAULT=	OPENSSL STATIC
+OPTIONS_RADIO=	CRYPTO
+OPTIONS_RADIO_CRYPTO=	GCRYPT OPENSSL
+OPTIONS_DEFAULT=	OPENSSL STATIC
 OPTIONS_SUB=	yes
 
-USES=		cmake:outsource cpe
+USES=		cmake:outsource cpe tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DWITH_EXAMPLES:BOOL=OFF \
