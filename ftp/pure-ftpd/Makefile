@@ -35,7 +35,7 @@ UPLOADSCRIPT_DESC=	Uploadscript daemon support
 UTF8_DESC=		UTF-8 filenames
 VIRTUALCHROOT_DESC=	Follow symlinks outside a chroot jail
 
-CONFIGURE_ARGS=	--localstatedir=/var --sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-altlog --with-cookie --with-diraliases \
 		--with-everything --with-extauth --with-ftpwho \
 		--with-language=${LANG} --with-paranoidmsg --with-puredb \
