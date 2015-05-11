@@ -148,17 +148,3 @@ bin/getleft
 %%DATADIR%%/scripts/tablelist4.8/tablelist_tile.tcl
 %%DATADIR%%/scripts/tkwizard/pkgIndex.tcl
 %%DATADIR%%/scripts/tkwizard/tkwizard.tcl
-@dirrm %%DATADIR%%/scripts/tkwizard
-@dirrm %%DATADIR%%/scripts/tablelist4.8/scripts
-@dirrm %%DATADIR%%/scripts/tablelist4.8
-@dirrm %%DATADIR%%/scripts/keynav1.0
-@dirrm %%DATADIR%%/scripts/help1.5
-@dirrm %%DATADIR%%/scripts/dialog
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/images/Shortcuts/xdg
-@dirrm %%DATADIR%%/images/Shortcuts
-@dirrm %%DATADIR%%/images/Crystal
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/Languages
-@dirrm %%DATADIR%%
