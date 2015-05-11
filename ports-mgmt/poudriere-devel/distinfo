@@ -1,2 +1,2 @@
-SHA256 (freebsd-poudriere-3.1.99.20150501-3.1.4-71-g652abb7_GH0.tar.gz) = adff02acc4e0b998459b820958c4537675a0ebf2d8f4f999ac526e8051e9dc3e
-SIZE (freebsd-poudriere-3.1.99.20150501-3.1.4-71-g652abb7_GH0.tar.gz) = 2827939
+SHA256 (freebsd-poudriere-3.1.5_GH0.tar.gz) = 43fbd75f2267b67cbcb3601849fbfea4162820d2e77401dd90d551c8e6e276bd
+SIZE (freebsd-poudriere-3.1.5_GH0.tar.gz) = 2827568
