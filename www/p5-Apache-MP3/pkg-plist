@@ -57,4 +57,3 @@
 %%DATADIR%%/playlist.gif
 %%DATADIR%%/right_arrow.gif
 %%DATADIR%%/sound.gif
-@dirrmtry %%DATADIR%%
