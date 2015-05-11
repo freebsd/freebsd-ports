@@ -5,8 +5,7 @@ PORTVERSION=	3.22.08
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shurd
+		LOCAL/shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
@@ -48,8 +47,8 @@ OSS_CONFIGURE_ENABLE=		oss
 SNDFILE_CONFIGURE_WITH=		sndfile
 SNDFILE_LIB_DEPENDS=		libsndfile.so:${PORTSDIR}/audio/libsndfile
 PORTAUDIO_CONFIGURE_WITH=	portaudio
-PORTAUDIO_BUILD_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_RUN_DEPENDS=		libportaudio.so:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_RUN_DEPENDS=		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 HAMLIB_CONFIGURE_WITH=		hamlib

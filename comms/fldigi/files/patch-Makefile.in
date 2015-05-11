@@ -5,7 +5,7 @@
  CFLAGS = @CFLAGS@
  CPP = @CPP@
 -CPPFLAGS = @CPPFLAGS@
-+CPPFLAGS = "-I/usr/local/include/portaudio2 @CPPFLAGS@"
++CPPFLAGS = "-I%%LOCALBASE%%/include/portaudio2 @CPPFLAGS@"
  CXX = @CXX@
  CXXDEPMODE = @CXXDEPMODE@
  CXXFLAGS = @CXXFLAGS@
