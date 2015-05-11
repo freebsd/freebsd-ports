@@ -1,0 +1,9 @@
+libnss-cache is a NSS module for reading directory service information for
+hosts from an indexed, local disk cache of that directory service.
+
+nsswitch.conf services provided:  passwd and group
+
+Add 'nsscache' to the desired service(s) and generate the cache with the
+net/nsscache port.
+
+WWW: https://github.com/google/libnss-cache

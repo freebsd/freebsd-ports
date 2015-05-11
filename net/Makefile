@@ -315,6 +315,7 @@
     SUBDIR += libnfs
     SUBDIR += libnids
     SUBDIR += libnids-libnet11
+    SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
     SUBDIR += liboauth
     SUBDIR += libopennet
