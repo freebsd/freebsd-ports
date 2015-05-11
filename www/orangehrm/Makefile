@@ -10,8 +10,9 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source Human Resource Management
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license/LICENSE.TXT
 
-USES=		zip
+USES=		cpe zip
 USE_PHP=	mysql
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
