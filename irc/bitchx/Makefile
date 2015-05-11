@@ -36,8 +36,6 @@ HEBREW_DESC=	Add support for hebrew language
 TOGGLES_DESC=	Disable away,kick_ops,auto_rejoin
 OPTIONS_DEFAULT=	PLUGINS SSL
 
-MAKE_JOBS_UNSAFE=	yes
-
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 SSL_CONFIGURE_WITH=	ssl
