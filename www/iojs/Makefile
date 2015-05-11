@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iojs
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www
 
 MAINTAINER=	linpct@gmail.com
