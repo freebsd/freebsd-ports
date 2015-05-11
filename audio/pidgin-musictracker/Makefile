@@ -3,7 +3,7 @@
 
 PORTNAME=	musictracker
 PORTVERSION=	0.4.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	pidgin-
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/pidgin/musictracker.so
 
