@@ -22,7 +22,7 @@ PORTSCOUT=	limit:^[0-9\.]*$$
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ftp mysql session zlib
-USES=		perl5 zip
+USES=		cpe perl5 zip
 
 PLIST_SUB=	WWWGRP=${WWWGRP} WWWOWN=${WWWOWN}
 WRKSRC=		${WRKDIR}/msd${PORTVERSION}
