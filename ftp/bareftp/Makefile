@@ -3,17 +3,22 @@
 
 PORTNAME=	bareftp
 PORTVERSION=	0.3.11
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP client made in C sharp
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
 		--libdir="${PREFIX}/lib" \
 		--localedir="${PREFIX}/share/locale" \
 		--includedir="${LOCALBASE}/include"
+INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
 USES=		cpe gettext gmake libtool pkgconfig
