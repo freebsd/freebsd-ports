@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 

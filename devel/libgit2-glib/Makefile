@@ -1,10 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libgit2-glib/Makefile 19962 2014-10-15 14:57:24Z gusi $
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.0.24
-PORTREVISION=	1
+PORTVERSION=	0.22.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
