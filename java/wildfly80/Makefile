@@ -3,7 +3,7 @@
 
 PORTNAME=	wildfly80
 PORTVERSION=	8.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -22,6 +22,7 @@ VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
 WILDFLY_VERSION=8.0.0.Final
+SUB_FILES=	pkg-message
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \
@@ -31,12 +32,18 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		APP_HOME=${PREFIX}/wildfly-${PORTVERSION}
 PLIST_SUB=	APP_HOME=wildfly-${PORTVERSION}
 
+post-patch:
+	${RM} ${WRKSRC}/bin/add-user.sh.orig
+
 do-build:
 	${RM} ${WRKSRC}/bin/*.bat
 	${RM} -rf ${WRKSRC}/bin/service
 	${RM} -rf ${WRKSRC}/bin/init.d
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION} && cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
+	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION})
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/bin/*.sh
+	${RMDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/.installation
 
 .include <bsd.port.mk>

@@ -20,7 +20,8 @@ GROUP=		www
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
-WILDFLY_VERSION=9.0.0.Alpha1
+WILDFLY_VERSION=9.0.0.CR1
+SUB_FILES=	pkg-message
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \
@@ -30,8 +31,12 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		APP_HOME=${PREFIX}/wildfly-${PORTVERSION}
 PLIST_SUB=	APP_HOME=wildfly-${PORTVERSION}
 
+post-patch:
+	${RM} ${WRKSRC}/bin/add-user.sh.orig
+
 do-build:
 	${RM} ${WRKSRC}/bin/*.bat
+	${RM} ${WRKSRC}/bin/*.ps1
 	${RM} -rf ${WRKSRC}/bin/service
 	${RM} -rf ${WRKSRC}/bin/init.d
 
