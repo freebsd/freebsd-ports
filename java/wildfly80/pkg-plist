@@ -1,9 +1,30 @@
 @owner www
 @group www
-%%APP_HOME%%/LICENSE.txt
-%%APP_HOME%%/README.txt
+@mode 644
 %%APP_HOME%%/appclient/configuration/appclient.xml
 %%APP_HOME%%/appclient/configuration/logging.properties
+%%APP_HOME%%/domain/configuration/application-roles.properties
+%%APP_HOME%%/domain/configuration/application-users.properties
+%%APP_HOME%%/domain/configuration/default-server-logging.properties
+%%APP_HOME%%/domain/configuration/domain.xml
+%%APP_HOME%%/domain/configuration/host-master.xml
+%%APP_HOME%%/domain/configuration/host-slave.xml
+%%APP_HOME%%/domain/configuration/host.xml
+%%APP_HOME%%/domain/configuration/logging.properties
+%%APP_HOME%%/domain/configuration/mgmt-groups.properties
+%%APP_HOME%%/domain/configuration/mgmt-users.properties
+%%APP_HOME%%/standalone/configuration/application-roles.properties
+%%APP_HOME%%/standalone/configuration/application-users.properties
+%%APP_HOME%%/standalone/configuration/logging.properties
+%%APP_HOME%%/standalone/configuration/mgmt-groups.properties
+%%APP_HOME%%/standalone/configuration/mgmt-users.properties
+%%APP_HOME%%/standalone/configuration/standalone-full-ha.xml
+%%APP_HOME%%/standalone/configuration/standalone-full.xml
+%%APP_HOME%%/standalone/configuration/standalone-ha.xml
+%%APP_HOME%%/standalone/configuration/standalone.xml
+@mode
+%%APP_HOME%%/LICENSE.txt
+%%APP_HOME%%/README.txt
 %%APP_HOME%%/bin/.jbossclirc
 %%APP_HOME%%/bin/add-user.properties
 %%APP_HOME%%/bin/add-user.sh
@@ -255,16 +276,6 @@
 %%APP_HOME%%/docs/schema/wildfly-rts_1_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-security-manager_1_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-undertow_1_0.xsd
-%%APP_HOME%%/domain/configuration/application-roles.properties
-%%APP_HOME%%/domain/configuration/application-users.properties
-%%APP_HOME%%/domain/configuration/default-server-logging.properties
-%%APP_HOME%%/domain/configuration/domain.xml
-%%APP_HOME%%/domain/configuration/host-master.xml
-%%APP_HOME%%/domain/configuration/host-slave.xml
-%%APP_HOME%%/domain/configuration/host.xml
-%%APP_HOME%%/domain/configuration/logging.properties
-%%APP_HOME%%/domain/configuration/mgmt-groups.properties
-%%APP_HOME%%/domain/configuration/mgmt-users.properties
 %%APP_HOME%%/jboss-modules.jar
 %%APP_HOME%%/modules/system/layers/base/asm/asm/main/asm-3.3.1.jar
 %%APP_HOME%%/modules/system/layers/base/asm/asm/main/module.xml
@@ -994,15 +1005,6 @@
 %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services/java.sql.Driver
 %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services/javax.script.ScriptEngineFactory
-%%APP_HOME%%/standalone/configuration/application-roles.properties
-%%APP_HOME%%/standalone/configuration/application-users.properties
-%%APP_HOME%%/standalone/configuration/logging.properties
-%%APP_HOME%%/standalone/configuration/mgmt-groups.properties
-%%APP_HOME%%/standalone/configuration/mgmt-users.properties
-%%APP_HOME%%/standalone/configuration/standalone-full-ha.xml
-%%APP_HOME%%/standalone/configuration/standalone-full.xml
-%%APP_HOME%%/standalone/configuration/standalone-ha.xml
-%%APP_HOME%%/standalone/configuration/standalone.xml
 %%APP_HOME%%/standalone/deployments/README.txt
 %%APP_HOME%%/welcome-content/bkg.gif
 %%APP_HOME%%/welcome-content/documentation.html
@@ -1808,7 +1810,3 @@
 @dir %%APP_HOME%%/bin
 @dir %%APP_HOME%%/appclient/configuration
 @dir %%APP_HOME%%/appclient
-@dir %%APP_HOME%%/.installation
-@dir %%APP_HOME%%
-@owner
-@group

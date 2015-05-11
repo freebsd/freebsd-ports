@@ -12,4 +12,4 @@ To change JVM args, edit appropriate standalone.conf.
 
 To add the initial admin user:
 
-${PREFIX}/wildfly-8.1.0/bin/add-user.sh
+%%LOCALBASE%%/wildfly-8.1.0/bin/add-user.sh
