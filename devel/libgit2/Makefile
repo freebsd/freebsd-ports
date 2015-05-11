@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgit2
-PORTVERSION=	0.21.1
+PORTVERSION=	0.22.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	wg@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	libgit2
 
-USES=		cmake python:build
+USES=		cmake pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
