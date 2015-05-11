@@ -1,4 +1,5 @@
 %%QT_BINDIR%%/sqlitebrowser
+share/appdata/sqlitebrowser.desktop.appdata.xml
 share/applications/sqlitebrowser.desktop
 share/icons/hicolor/256x256/apps/sqlitebrowser.png
 %%DATADIR%%/translations/sqlb_de.qm
