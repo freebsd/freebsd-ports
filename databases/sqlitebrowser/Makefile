@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 CATEGORIES=	databases
 
 MAINTAINER=	coder@tuxfamily.org
@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sqlitebrowser
-GH_TAGNAME=	1d12977
+GH_TAGNAME=	e703344
 
 USES=		cmake desktop-file-utils
 USE_QT4=	gui qmake_build linguist_build moc_build uic_build rcc_build
