@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 GH_PROJECT=	kmfl-${PORTNAME}
 NO_BUILD=	yes
+WRKSRC_SUBDIR=	kmfl
 
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons
