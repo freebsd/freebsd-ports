@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN/${PORTNAME}/:DEFAULT CPAN/Wx/:wxsc
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WXSC_DISTFILE}:wxsc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Application Development and Refactoring Environment
 
 LICENSE=	ART10 GPLv1

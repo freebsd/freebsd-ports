@@ -7,7 +7,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts numeric values to and from their Japanese string equivalents
 
 LICENSE=	ART10 GPLv1

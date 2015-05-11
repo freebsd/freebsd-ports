@@ -8,7 +8,7 @@ CATEGORIES=	devel security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for passing digitally signed perl5 code between machines
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
