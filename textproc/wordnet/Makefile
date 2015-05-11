@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://wordnetcode.princeton.edu/${PORTVERSION}/:code \
 		http://wordnetcode.princeton.edu/:dict
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:code wn3.1.dict.tar.gz:dict
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:code wn3.1.dict.tar.gz:dict
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers

@@ -3,22 +3,21 @@
 
 PORTNAME=	dixit
 PORTVERSION=	11.11
+DISTVERSIONSUFFIX=	.${QT_VER}
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}_qdb:db \
 		LOCAL/bdrewery/${PORTNAME}/ \
 		LOCAL/bdrewery/${PORTNAME}:db
-DISTFILES=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz \
+DISTFILES=	${DISTNAME}.tgz \
 		${_DB_D}:db
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz
+EXTRACT_ONLY=	${DISTNAME}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romanian dictionaries databases and query application
 
 LICENSE=	GPLv3 # (or later)
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.${QT_VER}
 
 USES=		qmake
 USE_QT4=	corelib gui network moc_build rcc_build

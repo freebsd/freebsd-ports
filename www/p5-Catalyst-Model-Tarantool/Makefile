@@ -3,11 +3,11 @@
 
 PORTNAME=	Catalyst-Model-Tarantool
 PORTVERSION=	0.0.1
+DISTVERSIONSUFFIX=	-1
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Tarantool interface for Catalyst based application

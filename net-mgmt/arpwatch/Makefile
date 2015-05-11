@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a15
+DISTVERSION=	2.1a15
 PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		GENTOO/distfiles
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests

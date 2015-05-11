@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt_Blowfish
-PORTVERSION=	1.1.0.r2
+DISTVERSION=	1.1.0RC2
 CATEGORIES=	security www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption

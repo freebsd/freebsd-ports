@@ -4,10 +4,10 @@ PORTNAME=	deco
 PORTVERSION=	1.6.3
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://hartlich.com/deco/download/:site1 \
+MASTER_SITES=	http://hartlich.com/deco/download/ \
 		http://hartlich.com/deco/archive/download/:site2
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:site1 \
-		${PORTNAME}-archive-1.6.tar.gz:site2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-archive-1.6${EXTRACT_SUFX}:site2
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Program to extract various archive file formats

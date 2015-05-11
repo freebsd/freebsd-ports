@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	jed
-PORTVERSION=	0.99.19
+DISTVERSION=	0.99-19
 PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v${PORTVERSION:R}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	SLang-based text editor

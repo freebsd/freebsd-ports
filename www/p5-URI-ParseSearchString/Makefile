@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	URI-ParseSearchString
-PORTVERSION=	3.51.0
+PORTVERSION=	3.51
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse Apache referer logs and extract search engine query strings

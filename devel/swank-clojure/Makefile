@@ -3,14 +3,13 @@
 PORTNAME=	swank-clojure
 PORTVERSION=	1.2.1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	http://download.github.com/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=olgeni
-DISTNAME=	technomancy-${PORTNAME}-${PORTVERSION}-0-g0af258a
+MASTER_SITES=	LOCAL/olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Swank/SLIME support for Clojure
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	technomancy
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

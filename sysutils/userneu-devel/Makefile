@@ -3,13 +3,13 @@
 
 PORTNAME=	userneu
 PORTVERSION=	1.43
+DISTVERSIONSUFFIX=	b
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btw23.de/johannes/files/userneu/\
 		http://home.arcor.de/fehlner/fbsd_ports/\
 		http://home.arcor.de/teambushido/fbsd_ports/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Account management and creation tool

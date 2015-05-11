@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	etpro
-PORTVERSION=	3.2.6
+DISTVERSION=	3_2_6
 CATEGORIES=	games linux
 MASTER_SITES=	http://bani.anime.net/etpro/ \
 		http://dl.vpclan.de/etpro/ \
@@ -12,7 +12,6 @@ MASTER_SITES=	http://bani.anime.net/etpro/ \
 		http://www.dakteam.org/ \
 		http://www.enemyterritory.cl/files/
 PKGNAMEPREFIX=	linux-enemyterritory-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ET Pro - Enemy Territory Competition Mod
@@ -25,7 +24,7 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 
-PLIST_SUB=	VERSION="${PORTVERSION:S/./_/g}"
+PLIST_SUB=	VERSION="${DISTVERSION}"
 
 do-build:
 .for f in et etded

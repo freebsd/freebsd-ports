@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	kqemu
-PORTVERSION=	1.4.0.p1
+DISTVERSION=	1.4.0pre1
 PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nox
+		LOCAL/nox
 PKGNAMESUFFIX=	-kmod-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
 
 MAINTAINER=	nox@FreeBSD.org

@@ -3,10 +3,10 @@
 
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
+DISTVERSIONSUFFIX=	-1
 PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	FRUGALWARE/games-extra/${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade game that relies on quick reflexes

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	alliance
-PORTVERSION=	5.0.20120515
+DISTVERSION=	5.0-20120515
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.lyx.org/lip6/softs/alliance/distribution/5.0/ \
 		http://ftp.jussieu.fr/lip6/softs/alliance/distribution/5.0/ \
 		http://www-asim.lip6.fr/pub/alliance/distribution/5.0/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete set of CAD tools and libraries for VLSI design

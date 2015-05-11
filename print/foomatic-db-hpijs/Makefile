@@ -3,9 +3,9 @@
 
 PORTNAME=	foomatic-db-hpijs
 PORTVERSION=	1.4
+DISTVERSIONSUFFIX=	-1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/lofi
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic data for the HPIJS printer drivers

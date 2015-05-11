@@ -8,8 +8,8 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+DIST_SUBDIR=	${DISTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mandree@FreeBSD.org
 # Implicit approval for port changes granted to Guido Falsi <madpilot@FreeBSD.org>
@@ -28,8 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 DOCS=		BUGS.txt NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-EXTRA_DOCS=	${PORTNAME}-${PORTVERSION}-manual.html \
-		${PORTNAME}-${PORTVERSION}-manual.pdf ${PORTNAME}-${PORTVERSION}-manual.ps
+EXTRA_DOCS=	${DISTNAME}-manual.html \
+		${DISTNAME}-manual.pdf ${DISTNAME}-manual.ps
 
 OPTIONS_DEFINE=		DOCS X11
 OPTIONS_DEFAULT=	DOCS X11

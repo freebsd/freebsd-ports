@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	jai
-PORTVERSION=	1.1.3
+DISTVERSION=	1_1_3
 PORTREVISION=	1
 CATEGORIES=	java graphics
 MASTER_SITES=	http://download.java.net/media/${PORTNAME}/builds/release/${PORTVERSION:S/./_/g}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-lib
+DISTNAME=	${PORTNAME}-${DISTVERSION}-lib
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
@@ -15,7 +15,7 @@ USES=		cpe zip
 CPE_VENDOR=	oracle
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

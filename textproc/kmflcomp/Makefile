@@ -8,10 +8,10 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION}:1 \
 		SF/kmfl/kmfl/Documentation:2 \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/:1,2
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:1 \
+DISTFILES=	${DISTNAME}.tar.gz:1 \
 		KMFL-Compiler.sxw:2
 DIST_SUBDIR=	kmfl
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Compiler of Keyman KMFL keyboard sources to use with SCIM/IBus

@@ -6,9 +6,8 @@ PORTVERSION=	15.02
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/%SUBDIR%/:deps \
-		${MASTER_SITE_LOCAL:S/$/:deps/}
-MASTER_SITE_SUBDIR=	ashish/:deps
-DISTFILES+=	${PORTNAME}-${PORTVERSION}.tgz:p1 ejabberd-deps-2.tar.xz:deps
+		LOCAL/ashish:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-2.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server

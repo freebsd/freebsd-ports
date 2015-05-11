@@ -4,7 +4,7 @@ PORTNAME=	xmpp-client
 PORTVERSION=	20150208
 CATEGORIES=	net-im
 MASTER_SITES=	http://c-s.li/ports/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xmpp-20150105.tar.gz
 
 MAINTAINER=	cs@FreeBSD.org

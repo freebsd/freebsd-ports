@@ -9,9 +9,9 @@ MASTER_SITES=	http://people.freebsd.org/~sylvio/pydance/ \
 		http://icculus.org/pyddr/ \
 		http://offload1.icculus.org/pyddr/ \
 		http://www.informatik.uni-frankfurt.de/~polzer/distfiles/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SONGS}
 DIST_SUBDIR=	pydance
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dancing simulation game similar to the kind in arcades

@@ -3,11 +3,11 @@
 PORTNAME=	belle-sip
 PORTVERSION=	1.4.0
 CATEGORIES=	net java
-MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/:source1 \
+MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/ \
 		http://www.antlr3.org/download/:source2
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		antlr-3.4-complete.jar:source2
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C

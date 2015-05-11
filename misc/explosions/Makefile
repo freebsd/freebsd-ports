@@ -7,16 +7,15 @@ PORTREVISION=	16
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/^0.//}${EXTRACT_SUFX} \
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION:S/^0.//}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D objects flying around resembling explosions with various effects
 
 LICENSE=	GPLv2
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/^0.//}
 
 USES=		gmake perl5
 USE_PERL5=	build

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rtf2latex2e
-PORTVERSION=	2.2.2
+DISTVERSION=	2-2-2
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/2-2
-DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.|-|g}
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Newer filter that converts RTF (MS Rich Text Format) into LaTeX

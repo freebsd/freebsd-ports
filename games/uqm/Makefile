@@ -6,8 +6,8 @@ PORTVERSION=	0.7.0
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/sc2/UQM/${PORTVERSION:R}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-source.tgz
+DISTFILES=	${DISTNAME}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
+EXTRACT_ONLY=	${DISTNAME}-source.tgz
 
 MAINTAINER=	mail@maxlor.com
 COMMENT=	Port of the original Star Control 2 for 3DO consoles

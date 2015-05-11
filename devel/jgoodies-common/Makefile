@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jgoodies-common
-PORTVERSION=	1.2.1
+DISTVERSION=	1_2_1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/common/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstract and helper classes used by all other JGoodies libs

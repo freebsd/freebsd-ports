@@ -4,10 +4,10 @@
 PORTNAME=	reciteword
 PORTVERSION=	0.8.5
 CATEGORIES=	chinese
-MASTER_SITES=	SF:src \
+MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}-books/${PORTVERSION}:books \
 		SF/${PORTNAME}/${PORTNAME}-dicts/0.8.2:dicts
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:src \
+DISTFILES=	${DISTNAME}.tar.bz2 \
 		${PORTNAME}-books-${PORTVERSION}.tar.bz2:books \
 		${PORTNAME}-dicts-0.8.2.tar.bz2:dicts
 
