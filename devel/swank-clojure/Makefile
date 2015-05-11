@@ -13,8 +13,6 @@ GH_ACCOUNT=	technomancy
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-WRKSRC=		${WRKDIR}/technomancy-swank-clojure-0af258a
-
 PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.1.jar
 
 do-build:
