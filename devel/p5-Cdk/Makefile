@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://dickey.his.com/cdk/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdk-perl-${PORTVERSION:C,^[0-9]\.,,}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
 LICENSE=	BSD4CLAUSE

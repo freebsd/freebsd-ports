@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.muhri.net/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for Imlib2
 
 LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
