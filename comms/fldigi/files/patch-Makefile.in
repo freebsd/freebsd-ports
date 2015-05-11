@@ -1,11 +1,11 @@
---- Makefile.in.orig	2013-02-08 22:19:37.000000000 -0500
-+++ Makefile.in	2013-03-31 19:02:18.000000000 -0500
-@@ -145,7 +145,7 @@
+--- Makefile.in.orig	2015-04-24 12:55:28 UTC
++++ Makefile.in
+@@ -145,7 +145,7 @@ CC = @CC@
  CCDEPMODE = @CCDEPMODE@
  CFLAGS = @CFLAGS@
  CPP = @CPP@
 -CPPFLAGS = @CPPFLAGS@
-+CPPFLAGS = "-I%%LOCALBASE%%/include/portaudio2 @CPPFLAGS@"
++CPPFLAGS = "-I/usr/local/include/portaudio2 @CPPFLAGS@"
  CXX = @CXX@
  CXXDEPMODE = @CXXDEPMODE@
  CXXFLAGS = @CXXFLAGS@
