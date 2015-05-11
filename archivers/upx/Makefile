@@ -6,7 +6,7 @@ PORTVERSION=	3.91
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/\
 		SF/sevenzip/7-Zip/${LZMA_VER}:lzma
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}\
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 		7z${LZMA_VER:S/.//g}${EXTRACT_SUFX}:lzma
 
 MAINTAINER=	fjoe@FreeBSD.org

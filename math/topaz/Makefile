@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	topaz
-PORTVERSION=	3.41
+DISTVERSION=	3_41
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command driven graph plotting system for scientists and engineers

@@ -7,8 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rulesemporium.com/programs/ \
 		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.txt
-EXTRACT_SUFX=
+EXTRACT_SUFX=	.txt
 EXTRACT_ONLY=
 
 MAINTAINER=	alexey@renatasystems.org

@@ -2,10 +2,10 @@
 
 PORTNAME=	rainloop
 PORTVERSION=	1.8.2
+DISTVERSIONSUFFIX=	.${RBUILD}-${RHASH}
 PORTREVISION=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.${RBUILD}-${RHASH}
 
 MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Modern and interactive webmail

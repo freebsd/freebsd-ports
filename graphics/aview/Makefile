@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	aview
-PORTVERSION=	1.3.0.r1
+DISTVERSION=	1.3.0rc1
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/aa-project/${PORTNAME}/1.3.0rc1
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+MASTER_SITES=	SF/aa-project/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for viewing netpbm format on console or X using aalib

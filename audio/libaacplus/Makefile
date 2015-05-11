@@ -5,10 +5,10 @@ PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
 PORTREVISION=	7
 CATEGORIES=	audio
-MASTER_SITES=	http://tipok.org.ua/downloads/media/aacplus/libaacplus/:site1\
-		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
+MASTER_SITES=	http://tipok.org.ua/downloads/media/aacplus/libaacplus/ \
+		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2 \
 		http://www.3gpp.org/ftp/Specs/archive/26_series/26.410/:site2
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:site1\
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SRC26410}:site2
 
 MAINTAINER=	takefu@airport.fm

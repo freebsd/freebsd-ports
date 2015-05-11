@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
 SEABIOSVERSION=	1.8.1
-DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
+DISTFILES+=	${DISTNAME}.tar.gz \
 		seabios-${SEABIOSVERSION}.tar.gz:seabios
 
 WRKSRC=		${WRKDIR}/xen-${PORTVERSION}

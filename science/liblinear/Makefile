@@ -6,7 +6,6 @@ PORTVERSION=	1.94
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Large Linear Classification

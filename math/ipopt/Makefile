@@ -4,12 +4,12 @@
 PORTNAME=	Ipopt
 PORTVERSION=	3.11.10
 CATEGORIES=	math
-MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/:srcs	\
+MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
 		http://mumps.enseeiht.fr/:mumps
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:srcs	\
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		metis-4.0.3.tar.gz:metis MUMPS_4.10.0.tar.gz:mumps
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization

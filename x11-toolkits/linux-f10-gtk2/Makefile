@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
-DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
+DISTFILES=	${DISTNAME}.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.16.1-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		gtk-murrine-engine-0.53.1-3.fc10.${LINUX_RPM_ARCH}.rpm \
 		gtk-nodoka-engine-0.7.2-1.fc10.${LINUX_RPM_ARCH}.rpm \
@@ -34,7 +34,7 @@ BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}0/pkg-descr
-SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.src.rpm \
+SRC_DISTFILES=	${DISTNAME}.src.rpm \
 		${PORTNAME}-engines-2.16.1-1.fc10.src.rpm \
 		gtk-murrine-engine-0.53.1-3.fc10.src.rpm \
 		gtk-nodoka-engine-0.7.2-1.fc10.src.rpm \

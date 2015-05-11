@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	wikicalc
-PORTVERSION=	1.0
+DISTVERSION=	1-0
 CATEGORIES=	www math
 MASTER_SITES=	http://www.peapodcast.com/sgi/downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,-,}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Open Source Wiki-Spreadsheet

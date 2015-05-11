@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jaf
-PORTVERSION=	1.1.1
+DISTVERSION=	1_1_1
 CATEGORIES=	java devel
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaBeansTM Activation Framework

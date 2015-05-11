@@ -4,8 +4,7 @@
 PORTNAME=	tomcat-native
 PORTVERSION=	1.1.32
 CATEGORIES=	www java
-MASTER_SITES=	APACHE
-MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
+MASTER_SITES=	APACHE/tomcat/tomcat-connectors/native/${PORTVERSION}/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org

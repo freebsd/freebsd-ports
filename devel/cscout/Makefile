@@ -7,15 +7,14 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-neutral${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-fbsd-${ARCH}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-neutral${EXTRACT_SUFX} \
+		${DISTNAME}-fbsd-${ARCH}${EXTRACT_SUFX}
 
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
 
 LIB_DEPENDS+=	libc.so.6:${PORTSDIR}/misc/compat6x
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries

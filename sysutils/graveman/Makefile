@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	graveman
-PORTVERSION=	0.3.12.5
+DISTVERSION=	0.3.12-5
 PORTREVISION=	11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd, and sox

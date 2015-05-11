@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bsh
-PORTVERSION=	2.0.b5
+DISTVERSION=	2.0b5
 CATEGORIES=	lang java
 MASTER_SITES=	http://svn.codespot.com/a/apache-extras.org/beanshell/src_releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java scripting language
@@ -28,7 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		bin/${PORTNAME}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION:S/.b/b/}.jar \
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${DISTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}

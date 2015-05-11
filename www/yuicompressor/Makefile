@@ -6,10 +6,9 @@ PORTVERSION=	2.4.8
 PORTREVISION=	1
 CATEGORIES=	www java
 #MASTER_SITES=	http://tml.github.io/yui/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	az
-DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
-EXTRACT_SUFX=	# empty
+MASTER_SITES+=	LOCAL/az
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	citrin@citrin.ru
@@ -25,7 +24,7 @@ PLIST_FILES=	bin/yuicompressor %%JAVAJARDIR%%/yuicompressor.jar
 SUB_FILES=	yuicompressor
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}/yuicompressor.jar
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/yuicompressor.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/yuicompressor ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

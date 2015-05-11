@@ -5,8 +5,8 @@ PORTNAME=	vera++
 PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/verateam/vera/downloads/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-${PORTVERSION}-doc.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-doc${EXTRACT_SUFX}
 
 MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Tool for verification of C++ source code

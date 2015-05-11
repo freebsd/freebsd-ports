@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GH:ghc \
 		https://codeload.github.com/${PORTNAME}/third-party/tar.gz/${PORTVERSION}?dummy=/:gh
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:ghc \
+DISTFILES=	${DISTNAME}.tar.gz:ghc \
 		third-party-${PORTVERSION}.tar.gz:gh
 
 MAINTAINER=	zi@FreeBSD.org

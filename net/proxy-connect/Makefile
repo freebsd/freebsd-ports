@@ -6,7 +6,6 @@ PORTVERSION=	100
 CATEGORIES=	net
 MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/ \
 				http://www.atarininja.org/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Command to make network connections via SOCKS and HTTPS proxies

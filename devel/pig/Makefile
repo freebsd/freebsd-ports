@@ -4,14 +4,13 @@
 PORTNAME=	pig
 PORTVERSION=	0.14.0
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE} \
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:ant \
 		http://people.freebsd.org/~demon/:ant \
 		http://central.maven.org/maven2/org/apache/ivy/ivy/2.2.0/:ivy
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-ant-repository.tar.gz:ant ivy-2.2.0.jar:ivy
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-ant-repository.tar.gz:ant ivy-2.2.0.jar:ivy
 DIST_SUBDIR=	hadoop
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-ant-repository.tar.gz
+EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-ant-repository.tar.gz
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Engine for executing data flows in parallel on Hadoop

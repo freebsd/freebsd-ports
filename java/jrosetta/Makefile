@@ -25,7 +25,7 @@ COMPILE_DESC=	Download and compile source instead of binaries
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPILE}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-sources.jar:source
+DISTFILES=	${DISTNAME}-sources.jar:source
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
 JAVA_BUILD=	yes

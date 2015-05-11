@@ -6,7 +6,6 @@ PORTVERSION=	0.5.1
 PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Steganography tool to hide data in binary files

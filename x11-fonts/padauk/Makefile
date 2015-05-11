@@ -3,10 +3,10 @@
 
 PORTNAME=	padauk
 PORTVERSION=	2.8
+DISTVERSIONSUFFIX=	0
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=Mh_Padauk_zip&filename=/
-DISTNAME=	${PORTNAME}-${PORTVERSION}0
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Unicode font supporting all the Myanmar characters

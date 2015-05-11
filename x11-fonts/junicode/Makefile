@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	junicode
-PORTVERSION=	0.7.6
+DISTVERSION=	0-7-6
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S|.|-|g} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Unicode/MUFI OpenType font for medievalists (Latin, IPA, Runic, Greek)

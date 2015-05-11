@@ -5,10 +5,9 @@ PORTNAME=	gdb
 PORTVERSION=	6.6
 PORTREVISION?=	3
 CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}	\
+MASTER_SITES=   GNU/gdb/ \
 		http://aldan.algebra.com/~mi/:gdbtk
-MASTER_SITE_SUBDIR=gdb/:gdb
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	blockade
-PORTVERSION=	1.00
+DISTVERSION=	1_00
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-linux
+DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of the `blockade' Macintosh game

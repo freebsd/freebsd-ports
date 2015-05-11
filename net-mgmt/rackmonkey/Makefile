@@ -3,12 +3,12 @@
 
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
+DISTVERSIONSUFFIX=	-1
 PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF \
 		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Web-based tool for managing racks of equipment
@@ -24,7 +24,6 @@ OPTIONS_DEFAULT=	SQLITE INIT_DB SAMPLE
 INIT_DB_DESC=	Initialize DB at installation (SQLite Only)
 SAMPLE_DESC=	Install sample data (SQLite Only)
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 NO_BUILD=	YES
 
 USES=		perl5

@@ -8,10 +8,10 @@ PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/nemysisfreebsdp/security/:icons
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
+DISTFILES=	${DISTNAME}.tgz \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
+EXTRACT_ONLY=	${DISTNAME}.tgz
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities

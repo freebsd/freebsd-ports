@@ -4,17 +4,16 @@
 PORTNAME=	khmer
 PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/buganini/kmfl-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	kmfl-
-DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	KMFL SCIM IMEngine keyboard for Khmer language
 
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-GITVERSION=	a20cc89
-WRKSRC=		${WRKDIR}/buganini-kmfl-${PORTNAME}-${GITVERSION}/kmfl
+USE_GITHUB=	yes
+GH_ACCOUNT=	buganini
+GH_PROJECT=	kmfl-${PORTNAME}
 NO_BUILD=	yes
 
 KMFL_DIR=	share/kmfl
