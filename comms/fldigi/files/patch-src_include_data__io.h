@@ -1,5 +1,5 @@
---- src/include/data_io.h.orig	2014-11-27 01:39:00.000000000 -0800
-+++ src/include/data_io.h	2014-11-27 01:39:29.000000000 -0800
+--- src/include/data_io.h.orig	2015-04-18 13:26:19 UTC
++++ src/include/data_io.h
 @@ -27,6 +27,8 @@
  #ifndef fldigi_data_io_h
  #define fldigi_data_io_h

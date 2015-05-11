@@ -1,6 +1,6 @@
---- src/qrunner/qrunner.cxx.orig	2014-10-14 21:19:37.000000000 -0400
-+++ src/qrunner/qrunner.cxx	2014-10-24 14:39:00.000000000 -0400
-@@ -103,7 +103,7 @@
+--- src/qrunner/qrunner.cxx.orig	2015-03-21 00:29:04 UTC
++++ src/qrunner/qrunner.cxx
+@@ -103,7 +103,7 @@ void qrunner::execute(int fd, void *arg)
  		return;
  	qr->inprog = true;
  

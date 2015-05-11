@@ -1,6 +1,6 @@
---- src/dominoex/dominoex.cxx.orig	2014-03-21 11:25:57.000000000 -0500
-+++ src/dominoex/dominoex.cxx	2014-03-21 18:19:42.000000000 -0500
-@@ -63,7 +63,7 @@
+--- src/dominoex/dominoex.cxx.orig	2015-04-22 15:17:06 UTC
++++ src/dominoex/dominoex.cxx
+@@ -63,7 +63,7 @@ void dominoex::tx_init(SoundBase *sc)
  
  	strSecXmtText = progdefaults.secText;
  	if (strSecXmtText.length() == 0)
