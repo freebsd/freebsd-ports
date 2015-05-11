@@ -12,6 +12,8 @@ COMMENT=	Open Source eLearning and eWorking platform
 
 LICENSE=	GPLv2
 
+USES=		cpe
+
 NO_BUILD=	yes
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/${DISTNAME}
