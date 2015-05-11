@@ -7,7 +7,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
