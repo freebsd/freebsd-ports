@@ -18,7 +18,7 @@ pidfile=%%HIVE_RUNDIR%%/${name}.pid
 
 load_rc_config "${name}"
 
-: ${hiveserver2enable:=NO}
+: ${hiveserver2_enable:=NO}
 hiveserver2_user=%%HIVE_USER%%
 
 start_cmd="hiveserver2_start"

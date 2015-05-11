@@ -666,6 +666,7 @@
     SUBDIR += pamtester
     SUBDIR += paperkey
     SUBDIR += parano
+    SUBDIR += passivedns
     SUBDIR += pbc
     SUBDIR += pbnj
     SUBDIR += pcsc-tools
@@ -774,7 +775,7 @@
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
-    SUBDIR += py-certify
+    SUBDIR += py-certifi
     SUBDIR += py-clamav
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
@@ -897,6 +898,7 @@
     SUBDIR += ruby-tcpwrap
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
+    SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
@@ -916,6 +918,10 @@
     SUBDIR += rubygem-net-ssh27
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-omniauth
+    SUBDIR += rubygem-omniauth-bitbucket
+    SUBDIR += rubygem-omniauth-gitlab
+    SUBDIR += rubygem-omniauth-multipassword
+    SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-razorback-scriptNugget

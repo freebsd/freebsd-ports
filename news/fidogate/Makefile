@@ -10,7 +10,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
 
 MAKE_JOBS_UNSAFE=	yes
-NEED_ROOT=	yes
 
 USES=		gmake perl5
 
@@ -24,6 +23,8 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		gatebau/msgid.tex gatebau/msgid.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+GID!=		id -g
+MAKE_ARGS=	OWNER=${UID} GROUP=${GID}
 
 .include <bsd.port.options.mk>
 

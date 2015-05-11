@@ -15,7 +15,6 @@ USES=		mono
 USE_GITHUB=	yes
 GH_ACCOUNT=	JamesNK
 GH_PROJECT=	Newtonsoft.Json
-GH_COMMIT=	d463fce
 
 SUB_FILES=	Newtonsoft.Json.pc
 

@@ -2,29 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	gpsmanshp
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics tcl geography
-MASTER_SITES=	http://www.ncc.up.pt/gpsmanshp/
+MASTER_SITES=	SF/${PORTNAME}/distr
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
-BROKEN=		No public distfiles
+LICENSE=	GPLv3 # (or later)
 
+LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
-LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib \
-		libtcl${TCLVERSION:S/.//}.so:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
 
-TCLVERSION?=	8.4
-PLIST_SUB=	TCLVERSION=${TCLVERSION} PORTVERSION=${PORTVERSION}
+USES=		tar:tgz tcl
+MAKE_ENV=	TCLVERSION="${TCL_VER}"
+PLIST_SUB=	TCLVERSION="${TCL_VER}" PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
+		. ${STAGEDIR}${DOCSDIR} \
+		"! -name gpl-3_0.txt")
 
 .include <bsd.port.mk>

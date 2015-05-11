@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar
 
 BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \

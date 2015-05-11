@@ -1,0 +1,12 @@
+--- doc/nc.man.orig	Thu Nov 20 18:40:13 2003
++++ doc/nc.man	Sat Feb  7 14:54:18 2004
+@@ -285,6 +285,9 @@
+ .PP
+ For more information see NEdit's online help, or \fInedit.doc\fR in the NEdit
+ distribution kit.
++.PP
++In FreeBSD, \fInc\fR is installed as \fInclient\fR so it does not
++conflict with the \fInetcat\fR port which also installs an \fInc\fR.
+ .SH "SEE ALSO"
+ .IX Header "SEE ALSO"
+ \&\fInedit\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)

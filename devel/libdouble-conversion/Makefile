@@ -5,7 +5,6 @@ PORTNAME=	libdouble-conversion
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
@@ -19,7 +18,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	e9b9e5a
+GH_TAGNAME=	e9b9e5a
 
 .include <bsd.port.mk>

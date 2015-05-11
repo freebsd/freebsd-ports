@@ -3,7 +3,7 @@
 
 PORTNAME=	cblas
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	NL/blas/blast-forum/ LOCAL/bf
 DISTFILES=	cblas.tgz
@@ -123,15 +123,15 @@ test-${o:tl}: build-${o:tl}
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 .if ${PORT_OPTIONS:MSTATIC}
-	@${INSTALL_LIB} ${WRKSRC}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib
 .endif
 .if ${PORT_OPTIONS:MSHARED}
-	@${INSTALL_LIB} ${WRKSRC_SHARED}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_pic.a
+	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_pic.a
 	@${INSTALL_LIB} ${WRKSRC_SHARED}/lib/libcblas.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf libcblas.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libcblas.so
 .endif
 .if ${PORT_OPTIONS:MPROFILE}
-	@${INSTALL_LIB} ${WRKSRC_PROFILE}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_p.a
+	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_p.a
 .endif
 
 .include <bsd.port.mk>

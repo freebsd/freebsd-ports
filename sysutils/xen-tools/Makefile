@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
 		libpixman-1.so:${PORTSDIR}/x11/pixman
 BUILD_DEPENDS=	dev86>0:${PORTSDIR}/devel/dev86
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386"
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
 SEABIOSVERSION=	1.8.1
 DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz \
@@ -37,6 +37,16 @@ CONFIGURE_ENV=	HOSTCC="${CC}" CC="${CC}" \
 		ac_cv_path_BASH=${TRUE} \
 		ac_cv_path_XGETTEXT=${TRUE}
 MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}" GCC="${GCC}" cc="${GCC}"
+QEMU_ARGS=	--disable-gtk \
+		--disable-smartcard-nss \
+		--disable-sdl \
+		--disable-vte \
+		--disable-glx \
+		--disable-curses \
+		--disable-tools \
+		--disable-curl \
+		--cxx=c++
+CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/misc/xen-ringwatch
 USE_GCC=	yes
@@ -62,5 +72,7 @@ post-patch:
 		${WRKSRC}/tools/qemu-xen-traditional/i386-dm/helper2.c \
 		${WRKSRC}/docs/man/*
 
+post-install:
+	${MKDIR} ${STAGEDIR}/var/run/xen
+
 .include <bsd.port.mk>
-RUN_DEPENDS:=	${RUN_DEPENDS:N*gcc*}

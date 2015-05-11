@@ -3,7 +3,7 @@
 
 PORTNAME=	ois
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/wgois/Source%20Release/1.2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,5 +22,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOIS.so
 
 .include <bsd.port.mk>

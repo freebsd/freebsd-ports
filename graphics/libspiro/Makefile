@@ -11,7 +11,6 @@ COMMENT=	Library to convert clothoid splines into Bezier splines
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge
-GH_COMMIT=	d12f7f7
 
 USES=		gmake libtool autoreconf
 GNU_CONFIGURE=	yes

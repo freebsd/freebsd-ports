@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	juandelperal
 GH_PROJECT=	Alegreya-Sans
 GH_TAGNAME=	2d2a4b0
-GH_COMMIT=	2d2a4b0
 
 NO_BUILD=	yes
 

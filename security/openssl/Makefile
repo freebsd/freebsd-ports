@@ -147,10 +147,10 @@ EXTRACONFIGURE+=	no-rc5
 .if ${PORT_OPTIONS:MPADLOCK}
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
-PATCHFILES+=	0009-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-		0010-backport-changes-from-upstream-padlock-module.patch:padlock \
-		0011-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-		0012-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+PATCHFILES+=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
+		1002-backport-changes-from-upstream-padlock-module.patch:padlock \
+		1003-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		1004-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}

@@ -14,8 +14,9 @@ bin/elasticsearch-plugin
 lib/elasticsearch/antlr-runtime-3.5.jar
 lib/elasticsearch/asm-4.1.jar
 lib/elasticsearch/asm-commons-4.1.jar
+lib/elasticsearch/apache-log4j-extras-1.2.17.jar
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
-lib/elasticsearch/groovy-all-2.3.2.jar
+lib/elasticsearch/groovy-all-2.4.0.jar
 lib/elasticsearch/jna-4.1.0.jar
 lib/elasticsearch/jts-1.13.jar
 lib/elasticsearch/log4j-1.2.17.jar
@@ -38,4 +39,5 @@ lib/elasticsearch/sigar/%%SIGAR_LIBNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
+@dir lib/elasticsearch/plugins
 @dir %%ETCDIR%%

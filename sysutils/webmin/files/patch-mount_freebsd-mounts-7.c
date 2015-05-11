@@ -1,7 +1,4 @@
-
-$FreeBSD$
-
---- mount/freebsd-mounts-7.c.orig
+--- mount/freebsd-mounts-7.c.orig	2015-03-13 23:51:39 UTC
 +++ mount/freebsd-mounts-7.c
 @@ -1,3 +1,5 @@
 +#include <stdlib.h>

@@ -28,11 +28,11 @@ lib/erlang/lib/webmachine-%%VERSION%%/include/wm_reqstate.hrl
 lib/erlang/lib/webmachine-%%VERSION%%/include/wm_resource.hrl
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/Makefile
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/README
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/priv/dispatch.conf
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/rebar.config
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.app.src
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.erl
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_app.erl
+lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_config.erl
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_resource.erl
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_sup.erl
 lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/start.sh
@@ -64,6 +64,7 @@ lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_sup.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_util.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/wmtrace_resource.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/wrq.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.org
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/priv/dispatch.conf
@@ -74,4 +75,7 @@ lib/erlang/lib/webmachine-%%VERSION%%/src/wrq.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_fs_resource.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_resource.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_sup.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_upload_resource.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/start.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/form.dtl
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/priv/www/uploads

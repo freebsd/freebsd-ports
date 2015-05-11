@@ -3,16 +3,17 @@
 
 PORTNAME=	trickle
 PORTVERSION=	1.07
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USES=		libtool
 GNU_CONFIGURE=	yes
@@ -26,8 +27,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/trickled.conf ${STAGEDIR}${PREFIX}/etc/trickled.conf.default
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/trickle/trickle-overload.so
+	${INSTALL_DATA} ${FILESDIR}/trickled.conf ${STAGEDIR}${PREFIX}/etc/trickled.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

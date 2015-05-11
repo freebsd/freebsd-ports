@@ -3,6 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		http://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -54,7 +55,7 @@ ISOCODES_CONFIGURE_OFF=	--disable-iso-codes-check
 
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
-NLS_CONFIGURE_WITH=	nls
+NLS_CONFIGURE_ENABLE=	nls
 
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_ENABLE=	gtk2

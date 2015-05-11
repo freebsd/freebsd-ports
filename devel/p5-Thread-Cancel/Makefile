@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cancel (i.e., kill) threads
 
 RUN_DEPENDS=	p5-threads>=1.34:${PORTSDIR}/devel/p5-threads

@@ -2,8 +2,8 @@
 
 PORTNAME=	bottle-cork
 PORTVERSION=	0.10
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-MASTER_SITES=	GHL
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olivier@cochard.me
@@ -16,9 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>0:${PORTSDIR}/www/py-bottle \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FedericoCeratto
-GH_PROJECT=	bottle-cork
-GH_COMMIT=	c881fae
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

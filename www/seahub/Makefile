@@ -2,9 +2,10 @@
 
 PORTNAME=	seahub
 PORTVERSION=	4.0.5
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www
-MASTER_SITES=	GHL:seahub \
-		https://pypi.python.org/packages/source/p/pip/:pip \
+MASTER_SITES=	https://pypi.python.org/packages/source/p/pip/:pip \
 		https://pypi.python.org/packages/source/p/pbr/:pbr \
 		https://pypi.python.org/packages/source/l/lockfile/:lockfile \
 		https://pypi.python.org/packages/source/s/six/:six \
@@ -16,7 +17,7 @@ MASTER_SITES=	GHL:seahub \
 		https://pypi.python.org/packages/source/P/Pillow/:Pillow \
 		https://pypi.python.org/packages/source/D/Django/:Django \
 		http://downloads.reviewboard.org/releases/Djblets/0.6/:Djblets
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:${PORTNAME} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pip-1.5.6.tar.gz:pip \
 		pbr-0.10.0.tar.gz:pbr \
 		lockfile-0.10.2.tar.gz:lockfile \
@@ -42,8 +43,6 @@ RUN_DEPENDS=	${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:${PO
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v${PORTVERSION}-pro
-GH_COMMIT=	921c6ce
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	*.sh *.template

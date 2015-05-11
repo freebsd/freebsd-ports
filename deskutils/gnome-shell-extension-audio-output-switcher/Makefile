@@ -15,8 +15,6 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/anduchs-audio-output-switcher-${GH_COMMIT}
-
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -25,7 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GH_ACCOUNT=	anduchs
 GH_TAGNAME=	2bec66d
-GH_COMMIT=	2bec66d
 GH_PROJECT=	audio-output-switcher
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

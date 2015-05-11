@@ -15,6 +15,7 @@
     SUBDIR += bundy
     SUBDIR += c-ares
     SUBDIR += checkdns
+    SUBDIR += cli53
     SUBDIR += credns
     SUBDIR += crossip
     SUBDIR += curvedns

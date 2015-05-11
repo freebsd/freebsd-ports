@@ -1,6 +1,8 @@
---- gdb/amd64bsd-nat.c.orig	2013-04-09 16:45:15.000000000 +0200
-+++ gdb/amd64bsd-nat.c	2013-04-09 18:53:22.000000000 +0200
-@@ -29,6 +29,7 @@
+diff --git gdb/amd64bsd-nat.c gdb/amd64bsd-nat.c
+index 66d4289..b1d4a0e 100644
+--- gdb/amd64bsd-nat.c
++++ gdb/amd64bsd-nat.c
+@@ -28,6 +28,7 @@
  #include <sys/types.h>
  #include <sys/ptrace.h>
  #include <machine/reg.h>
@@ -8,7 +10,7 @@
  
  #include "amd64-tdep.h"
  #include "amd64-nat.h"
-@@ -81,14 +82,24 @@
+@@ -98,14 +99,24 @@ amd64bsd_store_inferior_registers (struct target_ops *ops,
  
    if (regnum == -1 || amd64_native_gregset_supplies_p (gdbarch, regnum))
      {

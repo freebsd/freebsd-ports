@@ -55,6 +55,7 @@ libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
+%%PORTDOCS%%@comment @dir %%DOCSDIR%%/api
 share/xml/opensaml/saml20-catalog.xml
 share/xml/opensaml/saml10-catalog.xml
 share/xml/opensaml/saml11-catalog.xml

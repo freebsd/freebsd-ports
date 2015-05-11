@@ -1646,8 +1646,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/warnings.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lock.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/crisp.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/crisp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/cua-base.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/cua-base.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/cua-gmrk.el.gz
@@ -1666,16 +1664,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/edt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/keypad.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/keypad.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-edt.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-edt.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-extras.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-extras.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-mapper.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/tpu-mapper.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/vi.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/vi.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/vip.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/vip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper-cmd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper-cmd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper-ex.el.gz
@@ -1692,8 +1680,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emulation/viper.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/ws-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emulation/ws-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/env.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/env.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-dired.el.gz
@@ -2268,6 +2254,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/ucs-normalize.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/ucs-normalize.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-bidi.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-brackets.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-category.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-combining.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-comment.el
@@ -2848,10 +2835,14 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/awk-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/awk-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/complete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/complete.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.el.gz
@@ -2930,8 +2921,20 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sym-comp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-edt.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-edt.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-extras.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-extras.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mcvs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/xesam.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/xesam.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.el.gz
@@ -3251,8 +3254,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-bytecomp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-cmds.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-cmds.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-compat.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-defs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-defs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-engine.el.gz
@@ -4041,3 +4042,4 @@ share/icons/hicolor/32x32/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs.png
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
+@dir %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-parallel

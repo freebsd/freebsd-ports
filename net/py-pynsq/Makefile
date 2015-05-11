@@ -3,6 +3,7 @@
 
 PORTNAME=	pynsq
 PORTVERSION=	0.5.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +26,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitly
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	b64f3f3
 
 .include <bsd.port.options.mk>
 

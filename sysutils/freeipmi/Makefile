@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	DEBUG DOCS IOPERM
 IOPERM_DESC=	Use i386_set_ioperm
 
 CONFIGURE_ARGS=	--disable-init-scripts \
-		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 		--with-ipmiseld-cache-dir=${CACHE_DIR}/ipmiseld \

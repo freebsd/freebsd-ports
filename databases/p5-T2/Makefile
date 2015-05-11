@@ -9,16 +9,16 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SAMV
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object Relational mapping system
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
+BUILD_DEPENDS=	p5-Class-Tangram>=0:${PORTSDIR}/devel/p5-Class-Tangram \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Tangram>=0:${PORTSDIR}/databases/p5-Tangram \
-		p5-Class-Tangram>=0:${PORTSDIR}/devel/p5-Class-Tangram
+		p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
+		p5-Tangram>=0:${PORTSDIR}/databases/p5-Tangram
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

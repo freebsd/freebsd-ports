@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.6.8
-PORTREVISION=	4
+PORTVERSION=	0.7.0
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
@@ -20,6 +19,7 @@ WX_COMPS=	python
 
 DESKTOP_ENTRIES="wxGlade" "" "${PYTHON_SITELIBDIR}/wxglade/icons/icon.xpm" \
 		"${PORTNAME}" "" true
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 

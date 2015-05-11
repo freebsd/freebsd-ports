@@ -26,8 +26,6 @@ SHEBANG_FILES=	testing/*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simoncadman
-GH_COMMIT=	f287aed
 GH_PROJECT=	CUPS-Cloud-Print
-GH_TAGNAME=	${PORTVERSION}
 
 .include <bsd.port.mk>

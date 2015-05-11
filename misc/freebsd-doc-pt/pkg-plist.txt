@@ -1,5 +1,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
@@ -9,7 +8,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt

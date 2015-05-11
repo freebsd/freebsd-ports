@@ -24,7 +24,7 @@
  
  shpopen.o:	shpopen.c shapefil.h
  	$(CC) $(CFLAGS) -c shpopen.c
-@@ -98,16 +101,20 @@
+@@ -98,16 +101,21 @@
  
  
  lib:	libshp.a
@@ -37,7 +37,8 @@
 -	cp libshp.a $(PREFIX)/lib
 -	cp shapefil.h $(PREFIX)/include
 +	$(BSD_INSTALL_DATA) shapefil.h $(DESTDIR)$(PREFIX)/include/
-+	$(BSD_INSTALL_LIB) libshp.a libshp.so.1 $(DESTDIR)$(PREFIX)/lib/
++	$(BSD_INSTALL_DATA) libshp.a $(DESTDIR)$(PREFIX)/lib/
++	$(BSD_INSTALL_LIB) libshp.so.1 $(DESTDIR)$(PREFIX)/lib/
  
  bin_install:	$(SHPBIN)
 -	cp $(SHPBIN) $(PREFIX)/bin

@@ -3,21 +3,16 @@
 
 PORTNAME=	mongo-c-driver
 PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	C Driver for MongoDB
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
-GH_PROJECT=	mongo-c-driver
-GH_TAGNAME=	v0.7.1
-GH_COMMIT=	g98826a
 
-WRKSRC=		${WRKDIR}/mongodb-mongo-c-driver-17ff925
 USES=		gmake
 
 USE_LDCONFIG=	yes

@@ -13,6 +13,8 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Port of the GTK+ AquaLightBlue theme to GTK+ 2.0
 
 BROKEN=		No public distfiles
+DEPRECATED=	Upstream disappeared
+EXPIRATION_DATE=2015-06-01
 
 WRKSRC=		${WRKDIR}/AquaLightBlue
 

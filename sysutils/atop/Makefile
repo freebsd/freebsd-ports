@@ -14,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samm-git
 GH_PROJECT=	atop-freebsd
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
-GH_COMMIT=	840de1c
 
 USES=		ncurses
 MAKEFILE=	BSDmakefile

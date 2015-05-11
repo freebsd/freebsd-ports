@@ -2,6 +2,7 @@
 
 PORTNAME=	python-augeas
 PORTVERSION=	0.5.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,8 +19,6 @@ USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	hercules-team
-GH_COMMIT=	dcb4a60
-GH_TAGNAME=	v0.5.0
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${WRKSRC}/test/test_augeas.py

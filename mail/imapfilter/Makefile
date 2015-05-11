@@ -3,10 +3,10 @@
 
 PORTNAME=	imapfilter
 PORTVERSION=	2.5.6
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.gegenunendlich.de/distfiles/ \
-		GHL
+MASTER_SITES=	GH http://www.gegenunendlich.de/distfiles/
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
@@ -22,8 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lefcha
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	e3c8279
 
 PORTDOCS=	LICENSE NEWS README
 PLIST_FILES=	bin/imapfilter \

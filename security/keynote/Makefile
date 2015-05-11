@@ -3,7 +3,7 @@
 
 PORTNAME=	keynote
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www1.cs.columbia.edu/~angelos/Code/
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trust-Management System
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKWRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake		# required to support parallel (-jX) builds
 USE_OPENSSL=	yes
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/keynote.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libkeynote.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libkeynote.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.3 ${STAGEDIR}${MANPREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.4 \

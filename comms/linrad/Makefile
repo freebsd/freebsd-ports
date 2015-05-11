@@ -1,9 +1,8 @@
-# Created by: db
 # $FreeBSD$
 
 PORTNAME=	linrad
 PORTVERSION=	4.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
@@ -32,8 +31,6 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_MORSE_DECODING.txt z_MOUSE.txt z_NETWORK.txt \
 			z_PARALLEL_PORT.txt z_SETTINGS.txt \
 			z_USERS_EXTRA.txt z_USERS_HWARE.txt
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
@@ -66,11 +63,9 @@ do-install:
 # Some day we may want the svga version as well.
 #	${INSTALL_PROGRAM} -m0555 ${WRKSRC}/${PORTNAME} $(STAGEDIR}${PREFIX}/bin/${PORTNAME}.svga
 	${INSTALL_PROGRAM} -m0555 ${WRKSRC}/${BINFILE} ${STAGEDIR}${PREFIX}/bin/x${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${LINRAD_DOCFILES}
 	@${INSTALL_DATA}  ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/$f
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

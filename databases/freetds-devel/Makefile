@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.92.1003
+PORTVERSION=	0.96.3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/current/
@@ -16,9 +16,8 @@ LICENSE=	LGPL20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
 TDS_VER?=	7.2
-USES=		gmake iconv libtool:keepla pkgconfig tar:bzip2
+USES=		autoreconf gmake iconv libtool:keepla pkgconfig tar:bzip2
 GNU_GONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -66,13 +65,13 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|g' \
 		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/pool.conf|/pool.conf.sample|g ; \
 		 s| common.h||g ; \
 		 s|%%DOCSDIR%%|${STAGEDIR}${DOCSDIR}|g ; \
 		 s|%%ICONV_LIB%%|${ICONV_LIB}|'
 	@${REINPLACE_CMD} -e 's|/freetds.conf|/freetds.conf.sample|g ; \
-		 s|/locales.conf|/locales.conf.sample|g' ${WRKSRC}/Makefile.in
+		 s|/locales.conf|/locales.conf.sample|g' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$ODBC_INC/isql.h|$$ODBC_INC/libiodbc/isql.h|g ; \
 		s|$$ODBC_INC/isqlext.h|$$ODBC_INC/libiodbc/isqlext.h|g' ${WRKSRC}/configure
 
@@ -81,13 +80,12 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/userguide
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/reference
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 	@${FIND} ${WRKSRC}/doc/userguide \( -type f -o -type l \) \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/userguide ';'
 	@${FIND} ${WRKSRC}/doc/reference \( -type f -o -type l \) \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/reference ';'
-	@${FIND} ${WRKSRC}/doc/images -name \*.gif \
-		-exec  ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/images/ ';'
+	@cd ${WRKSRC}/doc && \
+		${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR}
 
 .endif
 

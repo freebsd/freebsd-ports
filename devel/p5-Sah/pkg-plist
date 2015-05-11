@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Sah.pm
+%%SITE_PERL%%/Sah.pod
+%%SITE_PERL%%/Sah/Examples.pod
+%%SITE_PERL%%/Sah/FAQ.pod
+%%SITE_PERL%%/Sah/Schema/Sah.pm
+%%SITE_PERL%%/Sah/Type.pod
+%%SITE_PERL%%/auto/share/dist/Sah/shared-files.tar.gz
+%%PERL5_MAN3%%/Sah.3.gz
+%%PERL5_MAN3%%/Sah::Examples.3.gz
+%%PERL5_MAN3%%/Sah::FAQ.3.gz
+%%PERL5_MAN3%%/Sah::Schema::Sah.3.gz
+%%PERL5_MAN3%%/Sah::Type.3.gz

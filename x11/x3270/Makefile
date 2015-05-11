@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 # Conflict due to x3270if
 CONFLICTS=	c3270-*
 
-USES=		iconv fonts imake:env
+USES=		cpe iconv fonts imake:env
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${FONTSDIR} \
@@ -37,6 +37,8 @@ MAKE_ARGS+=	COMPRESSMANCMD="${DO_NADA}" \
 		INSTBINFLAGS="-m ${BINMODE}" \
 		INSTDATFLAGS="-m ${SHAREMODE}" \
 		INSTMANFLAGS="-m ${MANMODE}"
+
+CPE_VENDOR=	paul_mattes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 

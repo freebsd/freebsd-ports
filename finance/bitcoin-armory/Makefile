@@ -3,6 +3,7 @@
 
 PORTNAME=	BitcoinArmory
 PORTVERSION=	0.92.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@rawbw.com
@@ -21,9 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:${PORTSDIR}/devel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	etotheipi
-GH_PROJECT=	BitcoinArmory
-GH_COMMIT=	2aa5449
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake python
 USE_GCC=	yes

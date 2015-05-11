@@ -13,6 +13,7 @@ include/rudiments/device.h
 include/rudiments/dictionary.h
 include/rudiments/directory.h
 include/rudiments/dtd.h
+include/rudiments/dynamicarray.h
 include/rudiments/dynamiclib.h
 include/rudiments/environment.h
 include/rudiments/error.h
@@ -63,6 +64,9 @@ include/rudiments/private/directoryincludes.h
 include/rudiments/private/dll.h
 include/rudiments/private/dtd.h
 include/rudiments/private/dtdincludes.h
+include/rudiments/private/dynamicarray.h
+include/rudiments/private/dynamicarrayincludes.h
+include/rudiments/private/dynamicarrayinlines.h
 include/rudiments/private/dynamiclib.h
 include/rudiments/private/dynamiclibincludes.h
 include/rudiments/private/environment.h
@@ -107,6 +111,7 @@ include/rudiments/private/modemclientincludes.h
 include/rudiments/private/modemserver.h
 include/rudiments/private/modemserverincludes.h
 include/rudiments/private/modemutil.h
+include/rudiments/private/new.h
 include/rudiments/private/parameterstring.h
 include/rudiments/private/parameterstringincludes.h
 include/rudiments/private/permissions.h
@@ -148,7 +153,10 @@ include/rudiments/private/socketclient.h
 include/rudiments/private/socketclientincludes.h
 include/rudiments/private/socketserver.h
 include/rudiments/private/socketserverincludes.h
+include/rudiments/private/staticarray.h
+include/rudiments/private/staticarrayinlines.h
 include/rudiments/private/stderrdestination.h
+include/rudiments/private/stdio.h
 include/rudiments/private/stdoutdestination.h
 include/rudiments/private/stringbuffer.h
 include/rudiments/private/stringbufferincludes.h
@@ -191,6 +199,7 @@ include/rudiments/singlylinkedlist.h
 include/rudiments/snooze.h
 include/rudiments/socketclient.h
 include/rudiments/socketserver.h
+include/rudiments/staticarray.h
 include/rudiments/stdio.h
 include/rudiments/stringbuffer.h
 include/rudiments/sys.h

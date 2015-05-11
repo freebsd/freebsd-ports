@@ -21,6 +21,8 @@ SNAPSHOT=	2007.04.26
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 BROKEN=		Does not work with current django
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-05-26
 NO_BUILD=	yes
 USES=		gettext python tar:bzip2
 SUB_FILES=	pkg-message

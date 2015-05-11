@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform audio loop slicer
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \

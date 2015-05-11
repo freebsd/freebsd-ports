@@ -15,14 +15,13 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
-		texi2html:${PORTSDIR}/textproc/texi2html
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		gmake pkgconfig perl5 tar:bzip2
+USES=		cpe gmake pkgconfig perl5 tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
 WANT_SDL=	yes
@@ -281,8 +280,13 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 		README.md RELEASE_NOTES
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges *.txt *.html
+DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
+
+.if ${PORT_OPTIONS:MDOCS}
+DOC_DOCFILES+=	*.html
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--disable-stripping

@@ -1,6 +1,6 @@
---- elektor.c.orig	2014-12-08 03:00:20.000000000 -0800
-+++ elektor.c	2014-12-08 03:00:29.000000000 -0800
-@@ -1020,7 +1020,7 @@
+--- elektor.c.orig	2014-11-04 10:25:00 UTC
++++ elektor.c
+@@ -1018,7 +1018,7 @@ void update_elektor_rx_frequency()
  
  //fprintf( stderr,"update-freq() cntrfreq=%f, hwfreq=%f\n",fg.passband_center,hwfreq);
    // This routine is called from the screen thread.

@@ -1,12 +1,15 @@
 bin/electrum
-share/app-install/icons/electrum.png
 share/applications/electrum.desktop
+share/pixmaps/electrum.png
 %%PYTHON_SITELIBDIR%%/electrum/__init__.py
 %%PYTHON_SITELIBDIR%%/electrum/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum/__init__.pyo
 %%PYTHON_SITELIBDIR%%/electrum/account.py
 %%PYTHON_SITELIBDIR%%/electrum/account.pyc
 %%PYTHON_SITELIBDIR%%/electrum/account.pyo
+%%PYTHON_SITELIBDIR%%/electrum/asn1tinydecoder.py
+%%PYTHON_SITELIBDIR%%/electrum/asn1tinydecoder.pyc
+%%PYTHON_SITELIBDIR%%/electrum/asn1tinydecoder.pyo
 %%PYTHON_SITELIBDIR%%/electrum/bitcoin.py
 %%PYTHON_SITELIBDIR%%/electrum/bitcoin.pyc
 %%PYTHON_SITELIBDIR%%/electrum/bitcoin.pyo
@@ -29,6 +32,7 @@ share/applications/electrum.desktop
 %%PYTHON_SITELIBDIR%%/electrum/interface.pyc
 %%PYTHON_SITELIBDIR%%/electrum/interface.pyo
 %%PYTHON_SITELIBDIR%%/electrum/locale/ar_SA/LC_MESSAGES/electrum.mo
+%%PYTHON_SITELIBDIR%%/electrum/locale/bg_BG/LC_MESSAGES/electrum.mo
 %%PYTHON_SITELIBDIR%%/electrum/locale/cs_CZ/LC_MESSAGES/electrum.mo
 %%PYTHON_SITELIBDIR%%/electrum/locale/da_DK/LC_MESSAGES/electrum.mo
 %%PYTHON_SITELIBDIR%%/electrum/locale/de_DE/LC_MESSAGES/electrum.mo
@@ -131,6 +135,9 @@ share/applications/electrum.desktop
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/address_dialog.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/address_dialog.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/address_dialog.pyo
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.pyo
@@ -140,6 +147,9 @@ share/applications/electrum.desktop
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget_lite.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget_lite.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget_lite.pyo
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.pyo
@@ -206,9 +216,6 @@ share/applications/electrum.desktop
 %%PYTHON_SITELIBDIR%%/electrum_plugins/btchipwallet.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/btchipwallet.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/btchipwallet.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.py
-%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.pyc
-%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.pyo
 %%PYTHON_SITELIBDIR%%/electrum_plugins/cosigner_pool.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/cosigner_pool.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/cosigner_pool.pyo

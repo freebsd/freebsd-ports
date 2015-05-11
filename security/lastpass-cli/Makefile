@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lastpass-cli
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	security
 
 MAINTAINER=	tom@hur.st

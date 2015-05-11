@@ -2,7 +2,7 @@
 
 PORTNAME=	sirc
 PORTVERSION=	2.211
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME} \
 		http://www.iagora.com/~espel/sirc/ \
@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client
+
+RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:${PORTSDIR}/devel/p5-Perl4-CoreLibs
 
 USES=		perl5
 

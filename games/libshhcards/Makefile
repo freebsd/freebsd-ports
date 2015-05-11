@@ -3,7 +3,7 @@
 
 PORTNAME=	libshhcards
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhcards-${PORTVERSION}
@@ -19,7 +19,7 @@ MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/libshhcards.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libshhcards.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libshhcards.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libshhcards.so.1 ${STAGEDIR}${PREFIX}/lib
 	${INSTALL} ${WRKSRC}/shhcards.h ${STAGEDIR}${PREFIX}/include

@@ -13,8 +13,7 @@ LICENSE_COMB=		multi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	utzig
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	1cfd813
+GH_TAGNAME=	1cfd813
 
 USES=		gmake
 

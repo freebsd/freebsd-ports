@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.14
 PORTEPOCH=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
-		NL:lapack_tmg
-MASTER_SITE_SUBDIR=	lapack/timing/:lapack_tmg
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:${PORTNAME} \
+MASTER_SITES=	GH NL/lapack/timing/:lapack_tmg
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -17,10 +16,9 @@ COMMENT=	Optimized BLAS library based on GotoBLAS2
 LICENSE=	BSD3CLAUSE
 
 DIST_SUBDIR=	openblas
+USE_GITHUB=	yes
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	51ce5ef
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
@@ -33,8 +31,6 @@ OPENBLAS_LIBS=	libopenblas libopenblasp
 OPENBLAS_SVER=	0
 OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} ${OPENBLAS_LIBS:S|$|.a|}
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
 OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX AVX2
 
@@ -55,6 +51,7 @@ BUILDFLAGS+=	TARGET=${TARGET_CPU_ARCH}
 .endif
 
 MAXTHREADS?=	8
+BUILDFLAGS_THREAD+=	NUM_THREADS=${MAXTHREADS} USE_THREAD=1
 
 .if ${ARCH:M*64} == ""
 BUILDFLAGS+=	BINARY32=1
@@ -76,7 +73,7 @@ BUILDFLAGS+=	INTERFACE64=1
 
 .if ${PORT_OPTIONS:MOPENMP}
 USES+=		compiler:openmp
-BUILDFLAGS+=	USE_OPENMP=1
+BUILDFLAGS_THREAD+=	USE_OPENMP=1
 .endif
 
 .if ${PORT_OPTIONS:MQUAD_PRECISION}
@@ -140,8 +137,8 @@ do-build:
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblas.a
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblas.so.${OPENBLAS_SVER}
 	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
-	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS}
+	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} ${BUILDFLAGS_THREAD} \
+	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
 .if !${PORT_OPTIONS:MDEBUG}

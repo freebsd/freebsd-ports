@@ -1,0 +1,8 @@
+include/cld/internal/generated_language.h
+include/cld/internal/generated_ulscript.h
+include/cld/internal/integral_types.h
+include/cld/internal/lang_script.h
+include/cld/public/compact_lang_det.h
+include/cld/public/encodings.h
+lib/libcld2.so
+lib/libcld2_full.so

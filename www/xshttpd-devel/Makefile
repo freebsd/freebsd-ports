@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b32
+DISTVERSION=	3.7b34
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
-RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	xshttpd-[0-9]* publicfile-[0-9]*
@@ -24,22 +23,24 @@ USE_RC_SUBR=	xshttpd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-hier=bsd --with-userid=${WWWOWN}:${WWWGRP}
 
-OPTIONS_DEFINE=		LDAP CURL M4 PERL BDB
-OPTIONS_DEFAULT=	CURL M4 BDB
+OPTIONS_DEFINE=		BDB CURL LDAP M4 NETPBM PERL
+OPTIONS_DEFAULT=	BDB CURL M4 NETPBM
 OPTIONS_SUB=		yes
-LDAP_USE=		openldap
-LDAP_CONFIGURE_WITH=	ldap
-M4_DESC=		Enable configuration preprocessor (m4)
-M4_CONFIGURE_WITH=	preprocessor
-PERL_DESC=		Enable persistent Perl interpreter
-PERL_USES=		perl5
-PERL_CONFIGURE_WITH=	perl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-CURL_CONFIGURE_WITH=	curl
 BDB_USE=		BDB=5+
 BDB_CONFIGURE_ON=	--with-db-libdir=${BDB_LIB_DIR} \
 			--with-db-include-dir=${BDB_INCLUDE_DIR}
 BDB_CONFIGURE_WITH=	db
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_WITH=	curl
+LDAP_USE=		openldap
+LDAP_CONFIGURE_WITH=	ldap
+M4_DESC=		Enable configuration preprocessor (m4)
+M4_CONFIGURE_WITH=	preprocessor
+NETPBM_DESC=		Enable NETPBM (for graphical counters)
+NETPBM_RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+PERL_DESC=		Enable persistent Perl interpreter
+PERL_USES=		perl5
+PERL_CONFIGURE_WITH=	perl
 
 PORTDOCS=	README ChangeLog
 

@@ -1316,8 +1316,14 @@ _SUF2=	,${PORTEPOCH}
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DISTVERSIONFULL=	${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
-.if defined(USE_GITHUB) && defined(GH_TAGNAME) && !defined(GH_COMMIT)
+.if defined(USE_GITHUB) && !defined(GH_COMMIT) && empty(MASTER_SITES:MGHC)
+# Only add in DISTVERSIONFULL if GH_TAGNAME if set by port. Otherwise
+# GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice.
+.  if defined(GH_TAGNAME)
 DISTNAME?=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
+.  else
+DISTNAME?=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
+.  endif
 .else
 DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
 .endif
@@ -1552,11 +1558,7 @@ WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .  if defined(GH_COMMIT)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 .  else
-.    if defined(GH_TAGNAME)
 WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
-.    else
-WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
-.    endif
 .  endif
 .endif
 .if defined(NO_WRKSUBDIR)
@@ -2140,32 +2142,15 @@ MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 READLINK_CMD?=	/usr/bin/readlink
 
-# Determine whether or not we can use rootly owner/group functions.
-.if ${UID} == 0
-_BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
-_SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
-_MANOWNGRP=	-o ${MANOWN} -g ${MANGRP}
-.else
-_BINOWNGRP=
-_SHROWNGRP=
-_MANOWNGRP=
-.endif
-
 _SHAREMODE?=	0644
 
 # A few aliases for *-install targets
-INSTALL_PROGRAM= \
-	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_KLD= \
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_LIB= \
-	${INSTALL} ${COPY} ${STRIP} ${_SHROWNGRP} -m ${SHAREMODE}
-INSTALL_SCRIPT= \
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_DATA= \
-	${INSTALL} ${COPY} ${_SHROWNGRP} -m ${_SHAREMODE}
-INSTALL_MAN= \
-	${INSTALL} ${COPY} ${_MANOWNGRP} -m ${MANMODE}
+INSTALL_PROGRAM=	${INSTALL} ${COPY} ${STRIP} -m ${BINMODE}
+INSTALL_KLD=	${INSTALL} ${COPY} -m ${BINMODE}
+INSTALL_LIB=	${INSTALL} ${COPY} ${STRIP} -m ${SHAREMODE}
+INSTALL_SCRIPT=	${INSTALL} ${COPY} -m ${BINMODE}
+INSTALL_DATA=	${INSTALL} ${COPY} -m ${_SHAREMODE}
+INSTALL_MAN=	${INSTALL} ${COPY} -m ${MANMODE}
 
 INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_LIB="${INSTALL_LIB}" \
@@ -3397,7 +3382,7 @@ do-configure:
 		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
-	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL="/usr/bin/install -c" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_LIB="${INSTALL_LIB}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -4444,7 +4429,9 @@ ${deptype:tl}-depends:
 			fi; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
-			anynotfound=1; \
+			if [ "$$prog" != "${NONEXISTENT}" ]; then \
+				anynotfound=1; \
+			fi; \
 			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \

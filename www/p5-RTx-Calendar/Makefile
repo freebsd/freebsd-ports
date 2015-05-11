@@ -59,6 +59,9 @@ do-configure:
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
+post-configure:
+	${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/auto/RTx/Calendar/.packlist
 	${RMDIR} -p ${STAGEDIR}${PREFIX}/man/auto/RTx/Calendar 2>/dev/null || :

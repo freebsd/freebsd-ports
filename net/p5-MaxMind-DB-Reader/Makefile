@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Reader
-PORTVERSION=	1.000003
+PORTVERSION=	1.000004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -18,18 +18,18 @@ BUILD_DEPENDS=	p5-Data-IEEE754>=0:${PORTSDIR}/devel/p5-Data-IEEE754 \
 		p5-Data-Validate-IP>=0.16:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
-		p5-Math-Int128>=0:${PORTSDIR}/math/p5-Math-Int128 \
-		p5-MaxMind-DB-Common>=0.031.000:${PORTSDIR}/net/p5-MaxMind-DB-Common \
+		p5-MaxMind-DB-Common>=0.040000:${PORTSDIR}/net/p5-MaxMind-DB-Common \
 		p5-Module-Implementation>=0:${PORTSDIR}/devel/p5-Module-Implementation \
 		p5-Moo>=1.003000:${PORTSDIR}/devel/p5-Moo \
 		p5-MooX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooX-StrictConstructor \
-		p5-Net-Works>=0:${PORTSDIR}/net/p5-Net-Works \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Role-Tiny>=0:${PORTSDIR}/devel/p5-Role-Tiny \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits \
+TEST_DEPENDS=	p5-Math-Int128>=0:${PORTSDIR}/math/p5-Math-Int128 \
+		p5-Net-Works>=0:${PORTSDIR}/net/p5-Net-Works \
+		p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 

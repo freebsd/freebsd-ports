@@ -19,12 +19,8 @@ USES=		python
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	xelerance
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	3378f7d
 
 PY_FILES=	sshfp dane
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
 
 post-patch:
 .for f in ${PY_FILES} daneldnsx.py

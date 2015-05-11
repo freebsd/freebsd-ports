@@ -9,6 +9,8 @@ MASTER_SITES=	GH
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	gem5 Simulator System
 
+BROKEN=		Uses removed MAP_NORESERVE
+
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 		scons:${PORTSDIR}/devel/scons
 

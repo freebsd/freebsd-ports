@@ -2,6 +2,7 @@
 
 PORTNAME=	etcd
 PORTVERSION=	0.4.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
@@ -14,8 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	a381ff0
 
 PLIST_FILES=	bin/bench \
 		bin/etcd

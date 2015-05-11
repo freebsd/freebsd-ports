@@ -5,7 +5,6 @@ PORTNAME=	opencc
 PORTVERSION=	11.1
 CATEGORIES=	chinese converters
 PKGNAMEPREFIX=	bsdconv-
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	OpenCC conversion module for bsdconv
@@ -19,6 +18,5 @@ LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
-GH_COMMIT=	c48c74c
 
 .include <bsd.port.mk>

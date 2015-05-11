@@ -7,7 +7,7 @@ install:
 	mkdir -p ${DESTDIR}${PREFIX}/lib/gnat \
 		 ${DESTDIR}${PREFIX}/lib/plplotada \
 		 ${DESTDIR}${PREFIX}/include/plplotada
-	${BSD_INSTALL_LIB} ada/build/lib/libplplotada.a \
+	${BSD_INSTALL_DATA} ada/build/lib/libplplotada.a \
 		${DESTDIR}${PREFIX}/lib/plplotada
 	${BSD_INSTALL_DATA} ada/build/lib/*.ali \
 		${DESTDIR}${PREFIX}/lib/plplotada

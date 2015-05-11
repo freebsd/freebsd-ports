@@ -3,6 +3,7 @@
 
 PORTNAME=	dogecoin
 PORTVERSION=	1.8.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	swills@FreeBSD.org
@@ -22,9 +23,6 @@ UPNP_DESC=	Build with UPNP support
 QRCODES_DESC=	Build with QR code display
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	c4209a3
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake compiler:c++11-lib pkgconfig autoreconf
 GNU_CONFIGURE=	yes

@@ -15,9 +15,7 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ellzey
-GH_PROJECT=	libevhtp
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	3886506
+GH_TAGNAME=	3886506
 
 USES=		cmake:outsource
 USE_LDCONFIG=	YES

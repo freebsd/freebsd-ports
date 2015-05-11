@@ -1,0 +1,12 @@
+This plugin is intended to replace the setuidgid functionality of Mojo::Server.
+It should be loaded in application startup and it will change the user and
+group credentials of the process when Mojo::IOLoop is started, which occurs in
+each worker process of a Mojo::Server::Prefork daemon like hypnotoad.
+
+This allows an application to be started as root so it can bind to privileged
+ports such as port 80 or 443, but run worker processes as unprivileged users.
+However, if the application is not started as root, it will most likely fail to
+change credentials. So, you should only set the user/group when the application
+is started as root.
+
+https://metacpan.org/pod/Mojolicious::Plugin::SetUserGroup

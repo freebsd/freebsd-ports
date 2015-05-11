@@ -12,6 +12,7 @@ MAINTAINER=	olivier@cochard.me
 COMMENT=	Graphical Cisco network simulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
@@ -20,16 +21,16 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 		dynagen:${PORTSDIR}/emulators/dynagen \
 		xdotool:${PORTSDIR}/x11/xdotool
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-legacy-GNS3-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-legacy-GNS3-${PORTVERSION}
 
-USES=		python
+USES=		cpe python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	GNS3
 
 DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator;" true
 
 PLIST_SUB=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
-			VERSION=${PORTVERSION}
+		VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

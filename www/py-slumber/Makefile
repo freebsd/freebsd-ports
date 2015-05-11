@@ -3,6 +3,7 @@
 
 PORTNAME=	slumber
 PORTVERSION=	0.6.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,8 +31,6 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samgiles
-GH_COMMIT=	d53a9ec
-GH_TAGNAME=	v${DISTVERSION}
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

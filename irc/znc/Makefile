@@ -4,7 +4,8 @@
 PORTNAME=	znc
 PORTVERSION=	1.6.0
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://znc.in/releases/
+MASTER_SITES=	http://znc.in/releases/ \
+		http://znc.in/releases/archive/
 
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Advanced IRC bouncer
@@ -13,7 +14,7 @@ LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
-USES=		pkgconfig iconv gmake compiler:c++11-lib
+USES=		compiler:c++11-lib cpe gmake iconv pkgconfig
 
 NO_OPTIONS_SORT=	yes
 

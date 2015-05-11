@@ -3,7 +3,7 @@
 
 PORTNAME=	torque
 PORTVERSION=	2.5.13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
@@ -20,6 +20,7 @@ MAKE_ENV=	DESTDIR=${STAGEDIR}/${PREFIX}
 USE_RC_SUBR=	pbs_server pbs_sched pbs_mom
 SUB_FILES=	pkg-message torque-config
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	qstat-[0-9]* zh-qterm-[0-9]*
 
@@ -28,8 +29,8 @@ OPTIONS_DEFINE=	EXAMPLES
 .include <bsd.port.options.mk>
 
 pre-configure:
-	${REINPLACE_CMD} -E 's|ps[ \t]+-ef|ps -ax|g' ${WRKSRC}/torque.setup
-	${REINPLACE_CMD} -E 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E 's|ps[ \t]+-ef|ps -ax|g' ${WRKSRC}/torque.setup
+	@${REINPLACE_CMD} -E 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/torque-config ${STAGEDIR}${PREFIX}/bin

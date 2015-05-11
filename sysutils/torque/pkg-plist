@@ -138,7 +138,7 @@ man/man8/qstop.8.gz
 man/man8/qterm.8.gz
 sbin/momctl
 sbin/pbs_demux
-sbin/pbs_iff
+@(root,wheel,4755) sbin/pbs_iff
 sbin/pbs_mom
 sbin/pbs_sched
 sbin/pbs_server
@@ -153,31 +153,24 @@ sbin/qserverd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/sched_priv/sched_config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/server_name
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/server_priv/nodes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/spool
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/credentials
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_logs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_logs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_logs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/job_logs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/checkpoint
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/aux
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/undelivered
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/spool
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/credentials
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/server_logs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/sched_logs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/mom_logs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/job_logs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/checkpoint
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/var/spool/torque/aux

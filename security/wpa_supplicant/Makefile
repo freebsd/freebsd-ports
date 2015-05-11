@@ -2,13 +2,14 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.4
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://w1.fi/releases/
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
-USES=		gmake readline
+USES=		cpe gmake readline
 USE_OPENSSL=	yes
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src

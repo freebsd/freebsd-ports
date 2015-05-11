@@ -14,6 +14,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setgid=games
 USE_XORG=	x11
 
+post-extract:
+	@${CHMOD} -R u+w ${WRKSRC}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^hiscoredir.*,hiscoredir=${DATADIR},' \
 		${WRKSRC}/Makefile.in

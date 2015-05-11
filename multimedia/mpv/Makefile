@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	GHL:0 http://ftp.waf.io/pub/release/:1 \
+MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
 		http://www.freehackers.org/~tnagy/release/:1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 waf-${WAF_VERSION}:1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} waf-${WAF_VERSION}:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec26.so:${PORTSDIR}/multimedia/ffmpeg26 \
 		libass.so:${PORTSDIR}/multimedia/libass \
 		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
 		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
@@ -23,10 +24,8 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	ff4c1cc
 
-WAF_VERSION=	1.8.7
+WAF_VERSION=	1.8.9
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
 USE_XORG=	x11 xv xxf86vm
@@ -42,11 +41,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-debug-build \
 		--disable-optimize \
 		--enable-libmpv-shared \
-		--disable-mpg123 \
 		--disable-alsa \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
+CONFLICTS_BUILD=	ffmpeg
+
+OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L YTDL SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
@@ -76,9 +76,6 @@ LCMS2_CONFIGURE_ENABLE=		lcms2
 
 LIBGUESS_LIB_DEPENDS=		libguess.so:${PORTSDIR}/textproc/libguess
 LIBGUESS_CONFIGURE_ENABLE=	libguess
-
-LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
-LIRC_CONFIGURE_ENABLE=		lirc
 
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUAJIT_USES_OFF=		lua

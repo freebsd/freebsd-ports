@@ -22,7 +22,7 @@
        #  Run the unpacking command.
        #
        my $cmd =
--        "rpm2cpio $file | (cd $CONFIG{'directory'} ; cpio --extract --make-directories --no-absolute-filenames --preserve-modification-time) 2>/dev/null >/dev/null";
+-        "rpm2cpio $file | (cd $CONFIG{'directory'} ; cpio --extract --extract-over-symlinks --make-directories --no-absolute-filenames --preserve-modification-time) 2>/dev/null >/dev/null";
 +        "bsdtar xPf $file --chroot -C $CONFIG{'directory'}";
        if ( $file =~ /(fedora|centos|redhat|mandriva)-release-/ ) {
          my $rpmname = basename($file);

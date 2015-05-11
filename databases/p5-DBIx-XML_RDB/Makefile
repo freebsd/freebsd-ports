@@ -8,11 +8,11 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for creating XML from existing DBI datasources
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

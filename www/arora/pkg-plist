@@ -43,15 +43,3 @@ share/icons/hicolor/16x16/apps/arora.png
 share/icons/hicolor/32x32/apps/arora.png
 share/icons/hicolor/scalable/apps/arora.svg
 share/pixmaps/arora.xpm
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%NLS%%@dirrm share/arora/locale
-%%NLS%%@dirrm share/arora

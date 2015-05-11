@@ -3,6 +3,7 @@
 
 PORTNAME=	twitter
 PORTVERSION=	1.15.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-tools
@@ -20,8 +21,6 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	sixohsix
-GH_TAGNAME=	${DISTNAME}
-GH_COMMIT=	bb26b5d
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

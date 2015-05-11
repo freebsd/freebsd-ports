@@ -13,8 +13,6 @@ COMMENT=	Extension to require core and ticket custom fields on status changes
 
 LICENSE=	GPLv2
 
-NEED_ROOT=	yes
-
 OPTIONS_SINGLE=                 RTVERSION
 OPTIONS_SINGLE_RTVERSION=       RT40 RT42
 RT40_DESC=                      Install for rt-4.0.x (www/rt40)
@@ -50,6 +48,9 @@ do-configure:
 		unset PREFIX && \
 		${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
+post-configure:
+	${REINPLACE_CMD} "/RTxPlugin/d" ${WRKSRC}/Makefile
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/auto/RT/Extension/MandatoryOnTransition/.packlist

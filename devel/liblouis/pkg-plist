@@ -258,7 +258,6 @@ bin/lou_trace
 bin/lou_translate
 include/liblouis/liblouis.h
 include/liblouis/louis.h
-info/liblouis.info
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.2

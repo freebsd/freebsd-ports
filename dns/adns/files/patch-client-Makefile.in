@@ -1,6 +1,6 @@
---- client/Makefile.in.orig	2006-05-10 12:58:02.000000000 +0200
-+++ client/Makefile.in	2013-10-09 10:56:22.929654486 +0200
-@@ -58,9 +58,9 @@
+--- client/Makefile.in.orig	2014-10-19 23:07:01 UTC
++++ client/Makefile.in
+@@ -58,9 +58,9 @@ ALL_OBJS=	$(ADH_OBJS) $(TARG_OBJS)
  all:		$(TARGETS)
  
  install:	$(TARG_INSTALL)

@@ -12,6 +12,7 @@ COMMENT=	Implementation of Ruby Interpreter in Pure Java
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USES=		cpe
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

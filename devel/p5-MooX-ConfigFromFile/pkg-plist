@@ -1,4 +1,6 @@
 %%SITE_PERL%%/MooX/ConfigFromFile.pm
 %%SITE_PERL%%/MooX/ConfigFromFile/Role.pm
+%%SITE_PERL%%/MooX/ConfigFromFile/Role/HashMergeLoaded.pm
 %%PERL5_MAN3%%/MooX::ConfigFromFile.3.gz
 %%PERL5_MAN3%%/MooX::ConfigFromFile::Role.3.gz
+%%PERL5_MAN3%%/MooX::ConfigFromFile::Role::HashMergeLoaded.3.gz

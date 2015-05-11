@@ -35,7 +35,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	benoitc
-GH_COMMIT=	24fe380
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

@@ -3,6 +3,7 @@
 
 PORTNAME=	mysac
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.arpalert.org/src/ \
 		http://xz.cx/downloads/mysac/
@@ -28,7 +29,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libmysac.so \
 		${STAGEDIR}${PREFIX}/lib/libmysac.so
 	${LN} -sf libmysac.so ${STAGEDIR}${PREFIX}/lib/libmysac.so.0
-	${INSTALL_LIB} ${WRKSRC}/libmysac-static.a ${STAGEDIR}${PREFIX}/lib/libmysac-static.a
+	${INSTALL_DATA} ${WRKSRC}/libmysac-static.a ${STAGEDIR}${PREFIX}/lib/libmysac-static.a
 	${INSTALL_DATA} ${WRKSRC}/mysac.h ${STAGEDIR}${PREFIX}/include/mysac.h
 
 .include <bsd.port.pre.mk>

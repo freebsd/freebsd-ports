@@ -32,4 +32,3 @@ man/man1/antiword.1.gz
 %%DATADIR%%/koi8-r.txt
 %%DATADIR%%/koi8-u.txt
 %%DATADIR%%/roman.txt
-@dirrmtry %%DATADIR%%

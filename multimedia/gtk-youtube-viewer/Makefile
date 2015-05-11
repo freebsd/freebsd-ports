@@ -38,7 +38,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
 GH_PROJECT=	youtube-viewer
-GH_COMMIT=	e3d45f7
 
 WRKSRC_SUBDIR=	WWW-YoutubeViewer
 

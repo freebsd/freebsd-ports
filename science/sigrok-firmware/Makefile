@@ -15,8 +15,7 @@ RUN_DEPENDS=	parseelf.py:${PORTSDIR}/science/sigrok-firmware-utils \
 USE_GITHUB=	yes
 GH_ACCOUNT=	uffejakobsen
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2632d74
+GH_TAGNAME=	2632d74
 
 GNU_CONFIGURE=yes
 

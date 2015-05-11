@@ -14,7 +14,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
 
-USES=		desthack libtool
+USES=		cpe desthack libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared

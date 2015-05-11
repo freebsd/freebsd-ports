@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smf
-PORTVERSION=	0.15.12
+PORTVERSION=	0.15.15
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -10,6 +10,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to handle Standard MIDI Files
+
+LICENSE=	BSD2CLAUSE
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -20,7 +22,7 @@ DOCS_EN=	MANUAL.en MANUAL.en.html MANUAL.en.rd README.en
 DOCS_JA=	MANUAL MANUAL.html MANUAL.rd README
 EXAMPLES=	sample/*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/en
@@ -30,10 +32,4 @@ post-install:
 	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/en/
 	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

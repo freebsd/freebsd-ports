@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-atwho-rails
-PORTVERSION=	0.5.1
+PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	jQuery plugin that implements Github-like mentions
+COMMENT=	jQuery plugin that implements GitHub-like mentions
 
 LICENSE=	MIT
 

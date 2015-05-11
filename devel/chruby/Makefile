@@ -3,8 +3,8 @@
 
 PORTNAME=	chruby
 PORTVERSION=	0.3.8
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
-MASTER_SITES=	GHL
 
 MAINTAINER=	ross@rosstimson.com
 COMMENT=	Changes the current Ruby
@@ -20,8 +20,6 @@ SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	postmodern
-GH_COMMIT=	b529bf2
-GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
 

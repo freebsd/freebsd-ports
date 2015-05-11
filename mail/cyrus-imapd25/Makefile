@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -59,13 +59,11 @@ CLAMAV_LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
 DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-# XXX: Does not install vzic for now.
-# Only vzic depends upon glib.
 HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 			libical.so:${PORTSDIR}/devel/libical
-HTTP_USE=		GNOME=libxml2,glib20
+HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
@@ -92,11 +90,16 @@ SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
+UNAMER!=	uname -r
+OSMAJOR=	${UNAMER:C/[.-].*//}
+
 OPTIONS_RADIO=			GSSAPI
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 .if exists(/usr/lib/libkrb5.a)
 OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
+.if ${OSMAJOR} >= 9
 OPTIONS_DEFAULT+=		GSSAPI_BASE
+.endif
 .endif
 GSSAPI_BASE_DESC=		Use Heimdal in base
 GSSAPI_BASE_USES=		gssapi
@@ -226,11 +229,9 @@ post-install:
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/cyrus/man/man8/${f}
 	@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+#	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
 #	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${STAGEDIR}${DOCSDIR}
@@ -253,9 +254,6 @@ post-install:
 #		${STAGEDIR}${DOCSDIR}/text
 #	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 #.endfor
-#	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
@@ -265,8 +263,6 @@ post-install:
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
-		>>${TMPPLIST}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${PREFIX}/cyrus/bin/mkimap
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \

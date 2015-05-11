@@ -6,9 +6,9 @@ PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Old-school bomb-dropping Deathmatch
@@ -25,8 +25,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
 GH_PROJECT=	3omns
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	84f4b60
+GH_TAGNAME=	84f4b60
 
 USES=		autoreconf compiler:c++11-lang gmake pkgconfig lua:52
 USE_SDL=	image2 sdl2 ttf2

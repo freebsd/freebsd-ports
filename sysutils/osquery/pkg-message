@@ -1,0 +1,11 @@
+This is the initial release of the FreeBSD port for osquery.
+
+We aren't anywhere near 100% feature parity when compared to
+Linux, however, we are actively working to get there.
+
+osqueryd does not yet have the required functionality to run,
+however, osqueryi (the interactive CLI version) can perform
+basic tasks.
+
+Please submit patches as pull requests here:
+https://github.com/facebook/osquery

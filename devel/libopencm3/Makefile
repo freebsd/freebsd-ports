@@ -14,8 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-n
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libopencm3
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ef97de2
+GH_TAGNAME=	ef97de2
 
 USES=		gmake python:2,build
 

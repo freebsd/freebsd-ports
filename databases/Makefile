@@ -51,6 +51,7 @@
     SUBDIR += dbview
     SUBDIR += emma
     SUBDIR += epgsql
+    SUBDIR += eredis
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
@@ -741,6 +742,7 @@
     SUBDIR += py-postgresql
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
+    SUBDIR += py-psycogreen
     SUBDIR += py-pyPgSQL
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc

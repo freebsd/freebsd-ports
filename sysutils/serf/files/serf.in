@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: serf
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# serf_enable (bool):	Set to NO by default.
+#				Set it to YES to enable serf.
+# serf_user (user):        Set user to run serf.
+#                               Default is "serf".
+# serf_group (group):      Set group to run serf.
+#                               Default is "serf".
+
+. /etc/rc.subr
+
+name=serf
+rcvar=serf_enable
+
+load_rc_config $name
+
+: ${serf_enable:="NO"}
+: ${serf_user:="serf"}
+: ${serf_group:="serf"}
+: ${serf_dir:="/var/tmp/serf"}
+
+pidfile=/var/run/serf.pid
+procname="%%PREFIX%%/bin/serf"
+command="/usr/sbin/daemon"
+command_args="agent"
+command_args="-f -p ${pidfile} ${procname} agent ${serf_args}"
+
+start_precmd=serf_startprecmd
+
+serf_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${serf_user} -g ${serf_group} /dev/null ${pidfile};
+        fi  
+}
+
+run_rc_command "$1"

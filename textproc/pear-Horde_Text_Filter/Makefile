@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Text_Filter
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org

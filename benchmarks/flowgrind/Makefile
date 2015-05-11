@@ -17,9 +17,7 @@ LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap \
 		libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
-GH_COMMIT=	14b0578
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes

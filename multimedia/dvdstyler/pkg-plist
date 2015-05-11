@@ -25,6 +25,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/backgrounds/40_swans.jpg
 %%DATADIR%%/backgrounds/45_nevado.jpg
 %%DATADIR%%/backgrounds/46_paisaje.jpg
+%%DATADIR%%/backgrounds/Cake.jpg
 %%DATADIR%%/backgrounds/blue_treetops.jpg
 %%DATADIR%%/backgrounds/dark_wedding.jpg
 %%DATADIR%%/backgrounds/frosty_forest.jpg
@@ -128,6 +129,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/add.png
 %%DATADIR%%/rc/addVideo.png
 %%DATADIR%%/rc/dvdstyler.png
+%%DATADIR%%/rc/error.png
 %%DATADIR%%/rc/files.png
 %%DATADIR%%/rc/help.png
 %%DATADIR%%/rc/justifyCenter.png
@@ -144,9 +146,11 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/new.png
 %%DATADIR%%/rc/noaudio.png
 %%DATADIR%%/rc/nwse.cur
+%%DATADIR%%/rc/ok.png
 %%DATADIR%%/rc/open.png
 %%DATADIR%%/rc/plus.png
 %%DATADIR%%/rc/preferences.png
+%%DATADIR%%/rc/refresh.png
 %%DATADIR%%/rc/remove.png
 %%DATADIR%%/rc/rotate.cur
 %%DATADIR%%/rc/run.png

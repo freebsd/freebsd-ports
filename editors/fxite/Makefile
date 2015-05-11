@@ -22,7 +22,6 @@ OPTIONS_DEFAULT=	FOX16
 USE_GITHUB=	yes
 GH_ACCOUNT=	yetanothergeek
 GH_TAGNAME=	FXITE-0_91
-GH_COMMIT=	c2ecac3
 
 USES=		gmake pkgconfig lua:51 desktop-file-utils
 USE_AUTOTOOLS=	aclocal autoconf automake

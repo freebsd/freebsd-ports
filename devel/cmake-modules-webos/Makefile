@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeWebOS
 GH_TAGNAME=	submissions/19
-GH_COMMIT=	5b5c38c
 
 USES=		cmake:outsource
 INSTALL_TARGET=	install

@@ -65,6 +65,6 @@ sbin/gdnsd
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_geoip_test.txt
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.pod
 %%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.txt
-@exec mkdir -p %%ETCDIR%%/geoip
-@exec mkdir -p %%ETCDIR%%/zones
-@unexec rmdir "/var/run/gdnsd" >/dev/null 2>&1 || :
+@dir %%ETCDIR%%/geoip
+@dir %%ETCDIR%%/zones
+@dir /var/run/gdnsd

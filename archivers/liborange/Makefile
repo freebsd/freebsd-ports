@@ -3,7 +3,7 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
@@ -28,6 +28,7 @@ USES=		iconv libtool pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lgsf-1
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=		--with-libgsf
 

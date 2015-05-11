@@ -3,7 +3,7 @@
 
 PORTNAME=	zgv
 PORTVERSION=	5.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	SDL DOCS
 
 USES=		gmake makeinfo
 ALL_TARGET=	zgv info
+INFO=		zgvrc
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

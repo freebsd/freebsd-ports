@@ -4,7 +4,6 @@
 PORTNAME=	bsdconv
 PORTVERSION=	11.1
 CATEGORIES=	converters
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library
@@ -13,7 +12,6 @@ LICENSE=	ISCL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	8ccd7e3
 
 OPTIONS_DEFINE=	CHINESE EBCDIC
 CHINESE_DESC=	Extra Chinese codecs

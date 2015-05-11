@@ -13,10 +13,9 @@ COMMENT=	Websocket API and client for Spotify
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_COMMIT=	d397ed2
 GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	d397ed2
 
 USES=		shebangfix python
 SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}

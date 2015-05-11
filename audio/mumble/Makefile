@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USES=		gmake pkgconfig qmake
+USES=		compiler gmake pkgconfig qmake
 USE_LDCONFIG=	yes
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
@@ -33,6 +33,7 @@ MAKE_JOBS_UNSAFE=yes
 
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-opus no-update \
 		bundled-celt no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
+
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
 OPTIONS_DEFINE=	DBUS BONJOUR
@@ -51,6 +52,13 @@ USE_QT4+=	dbus
 CONFIG+=	no-bonjour
 .else
 LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+.endif
+
+.include <bsd.port.pre.mk>
+
+# PCH is broken on GCC
+.if ${COMPILER_TYPE} == gcc
+CONFIG+=	no-pch
 .endif
 
 post-patch:
@@ -74,4 +82,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${STAGEDIR}${MANPREFIX}/man/man1/mumble.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

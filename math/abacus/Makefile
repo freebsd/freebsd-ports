@@ -3,36 +3,35 @@
 
 PORTNAME=	abacus
 DISTVERSION=	3.2betaU1
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Branch-And-CUt System
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21 # (or later)
 
 LIB_DEPENDS=	libClp.so:${PORTSDIR}/math/coinmp
 
-USE_GCC=	yes
+NO_WRKSUBDIR=	yes
+
 USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 ALL_TARGET=	abacus
-
-WRKSRC=		${WRKDIR}
-
-post-patch:
-	${REINPLACE_CMD} -e '\
-	    s|%%LOCALBASE%%|${LOCALBASE}|g; \
-	    s|%%CXX%%|${CXX}|g; \
-	    s|%%PERL5%%|${PERL5}|g' \
-	    ${WRKSRC}/Makefile
+MAKE_ARGS=	CCC="${CXX}" PERL="${PERL5}" STRIP="${STRIP_CMD} -x" \
+		ARCHIVE="${AR} ${ARFLAGS}" CCFLAG_DEBOPT="${CXXFLAGS}" \
+		OSI_INCLUDE="${LOCALBASE}/include/coin"
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.a ${STAGEDIR}${PREFIX}/lib/libabacus-osi.a
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.so ${STAGEDIR}${PREFIX}/lib/libabacus-osi.so.1
-	${LN} -sf libabacus-osi.so.1 ${STAGEDIR}${PREFIX}/lib/libabacus-osi.so
-	cd ${WRKSRC}/Include && ${COPYTREE_SHARE} abacus ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.a \
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.so.1 \
+		${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libabacus-osi.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libabacus-osi.so
+	(cd ${WRKSRC}/Include && ${COPYTREE_SHARE} abacus \
+		${STAGEDIR}${PREFIX}/include)
 
 .include <bsd.port.mk>

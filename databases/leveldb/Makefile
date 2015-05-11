@@ -3,6 +3,8 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	1.18
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -26,10 +28,8 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 SHLIB_MAJOR=	${PORTVERSION:R}
 SHLIB_MINOR=	${PORTVERSION:E}
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
+USE_GITHUB=	yes
 
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
@@ -55,9 +55,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/leveldb/ ${STAGEDIR}${PREFIX}/include/memenv/ ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${STAGEDIR}${PREFIX}/include/leveldb/
 	${INSTALL_DATA} ${WRKSRC}/helpers/memenv/memenv.h ${STAGEDIR}${PREFIX}/include/memenv/
-	${INSTALL_LIB} ${WRKSRC}/libleveldb.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libleveldb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libmemenv.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libmemenv.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/
 	${LN} -fs libleveldb.so.${SHLIB_MAJOR} ${STAGEDIR}${PREFIX}/lib/libleveldb.so
 	${LN} -fs libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}

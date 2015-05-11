@@ -30,7 +30,7 @@ SQLITE3_DESC=	Use SQLite 3.x
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
+USES=		cpe gmake libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/mnogosearch \

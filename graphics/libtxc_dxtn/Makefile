@@ -15,8 +15,7 @@ BUILD_DEPENDS=	libGL>=9.1.7:${PORTSDIR}/graphics/libGL
 USE_GITHUB=	yes
 GH_ACCOUNT=	divVerent
 GH_PROJECT=	s2tc
-GH_COMMIT=	3d644da
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	3d644da
 
 USES=		autoreconf libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am

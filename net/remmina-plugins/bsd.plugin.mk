@@ -14,7 +14,6 @@ INSTALLS_ICONS=	yes
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include -fPIC
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Remmina-${GH_COMMIT}
 
 # disable appindicator as it is new feature of gnome 3
 CMAKE_ARGS+=    -DWITH_APPINDICATOR=OFF

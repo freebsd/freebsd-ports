@@ -13,8 +13,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sialan-labs
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ce3fb15
+GH_TAGNAME=	ce3fb15
 
 USE_OPENSSL=	yes
 USE_QT5=	core gui network opengl xml widgets buildtools_build graphicaleffects \

@@ -18,7 +18,6 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
-GH_COMMIT=	51f54b6
 
 USES=		autoreconf gmake libtool lua pgsql tar:bzip2
 GNU_CONFIGURE=	yes

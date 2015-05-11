@@ -1,6 +1,6 @@
---- src/thor/thor.cxx.orig	2013-11-16 11:12:26.140977946 -0500
-+++ src/thor/thor.cxx	2013-11-16 11:13:27.127067530 -0500
-@@ -63,7 +63,7 @@
+--- src/thor/thor.cxx.orig	2015-04-22 15:17:06 UTC
++++ src/thor/thor.cxx
+@@ -63,7 +63,7 @@ void thor::tx_init(SoundBase *sc)
  	videoText();
  	strSecXmtText = progdefaults.THORsecText;
  	if (strSecXmtText.length() == 0)

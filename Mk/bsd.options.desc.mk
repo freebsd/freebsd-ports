@@ -487,6 +487,7 @@ WEBSERVER_DESC?=	Build and/or install internal web server
 WEBUI_DESC?=		Build and/or install web user interface
 WMA_DESC?=		Windows Media Audio audio format support
 WMF_DESC?=		Windows Metafile image format support
+WOLFSSL_DESC?=		SSL/TLS support via wolfSSL
 WXGTK_DESC?=		wxGTK GUI toolkit support
 X11_DESC?=		X11 (graphics) support
 X264_DESC?=		H.264 video codec support via x264

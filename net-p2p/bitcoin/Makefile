@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf compiler:c++0x gmake libtool pkgconfig
 USE_GITHUB=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -34,7 +34,7 @@ TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_bitcoin-qt \
 .endif
 
 OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET
-OPTIONS_DEFAULT?=	HARDENING QRCODES TESTS WALLET
+OPTIONS_DEFAULT?=	HARDENING QRCODES WALLET
 OPTIONS_SUB=		yes
 
 HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
@@ -69,8 +69,6 @@ WALLET_LIBS=			-L${BDB_LIB_DIR}
 WALLET_USE=			BDB=48
 
 GH_ACCOUNT=	bitcoin
-GH_COMMIT=	58810d2
-GH_TAGNAME=	v${PORTVERSION}
 
 CONFIGURE_ARGS?=	--without-daemon \
 			--with-gui \

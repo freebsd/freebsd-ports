@@ -4,7 +4,6 @@
 PORTNAME=	actor-framework
 PORTVERSION=	0.13
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	vallentin@icir.org
 COMMENT=	C++ actor framework
@@ -17,8 +16,6 @@ LDFLAGS+=	-pthread
 USES=		compiler:c++11-lang cmake:outsource
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	4b1b1ad
 
 OPTIONS_DEFINE=	DEBUG TEST STATIC
 OPTIONS_RADIO=	LOG_LEVEL

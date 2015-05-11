@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/fbsdports/gnake
 DISTNAME=	Gnake.${PORTVERSION}
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nibbles clone for GNU/Linux and *BSD
 
 LICENSE=	GPLv2

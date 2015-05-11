@@ -23,7 +23,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	karlheyes
 GH_PROJECT=	icecast-kh
 GH_TAGNAME=	icecast-${ICVERSION}-kh${KH}
-GH_COMMIT=	dde3bc0
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

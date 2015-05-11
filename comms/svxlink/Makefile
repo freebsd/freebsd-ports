@@ -24,7 +24,6 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf \
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
-GH_COMMIT=	cf22c70
 
 USES=		cmake tcl
 CMAKE_SOURCE_PATH=	${WRKSRC}/src

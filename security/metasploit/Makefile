@@ -4,7 +4,6 @@
 PORTNAME=	metasploit
 PORTVERSION=	4.11.1
 CATEGORIES=	security
-MASTER_SITES=	GHL
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
@@ -38,7 +37,6 @@ SCRIPTS=	msfbinscan msfcli msfconsole msfd msfelfscan msfencode \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
-GH_COMMIT=	1cb58d8
 
 USES=		ncurses:port
 USE_RUBY=	yes

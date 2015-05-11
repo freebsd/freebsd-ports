@@ -14,6 +14,8 @@ COMMENT=	Perl interface to the NetBSD editline library
 USES=		perl5
 USE_PERL5=	configure
 
+PORTSCOUT=	skipv:0.06,0.07 # no functional change
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Term/EditLine/EditLine.so
 

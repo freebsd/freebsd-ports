@@ -3,6 +3,7 @@
 
 PORTNAME=	tornado
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:${PORTSDIR}/security/py-certify
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:${PORTSDIR}/security/py-certifi
 
 USES=		python
 USE_PYTHON=	distutils autoplist

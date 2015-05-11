@@ -386,11 +386,3 @@ bin/analog
 %%IMGDIR%%/sq9.png
 %%IMGDIR%%/sqg.png
 man/man1/analog.1.gz
-@dirrmtry %%IMGDIR%%
-@dirrmtry www/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/css/jreeves
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/css
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%

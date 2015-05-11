@@ -56,11 +56,9 @@ MANJADATE=	20050813
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
-NO_LATEST_LINK=	yes
-USES=		gmake iconv shebangfix
+USES=		gmake iconv shebangfix autoreconf fakeroot
 SHEBANG_FILES=	smime_keys.pl contrib/smime_keys_test.pl
-USE_AUTOTOOLS=	automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib -ltinfow
@@ -83,7 +81,6 @@ CYRUS_SASL2_DESC=	SASL2 authentication
 IMAP_HEADER_CACHE_DESC=	imap header cache
 MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 
-NEED_ROOT=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -126,7 +123,7 @@ CONFIGURE_ARGS+=	--disable-hcache
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
-pre-configure:
+post-patch:
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
@@ -134,7 +131,6 @@ pre-configure:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-	(cd ${WRKSRC}; ${ACLOCAL} -I m4; ${AUTOHEADER})
 
 post-configure:
 	@${REINPLACE_CMD} -E "\

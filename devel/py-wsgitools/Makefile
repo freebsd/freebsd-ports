@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wsgitools
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://subdivi.de/~helmut/darcs/${PORTNAME}/dist/
+MASTER_SITES=	http://subdivi.de/~helmut/${PORTNAME}/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Useful middlewares and filters for wsgi as well as scgi servers

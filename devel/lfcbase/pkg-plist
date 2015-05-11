@@ -34,5 +34,5 @@ include/lfcbase/Tokenizer.h
 include/lfcbase/TreeT.h
 lib/liblfcbase.a
 lib/liblfcbase.so
-lib/liblfcbase.so.1
-lib/liblfcbase.so.1.0.0
+lib/liblfcbase.so.2
+lib/liblfcbase.so.2.0.0

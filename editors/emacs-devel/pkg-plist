@@ -3636,6 +3636,8 @@ share/appdata/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-generic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-preloaded.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-preloaded.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cursor-sensor.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cursor-sensor.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.el

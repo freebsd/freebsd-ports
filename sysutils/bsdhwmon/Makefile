@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdhwmon
-PORTVERSION=	20120702
+PORTVERSION=	20150429
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsdhwmon.koitsu.org/dist/
 

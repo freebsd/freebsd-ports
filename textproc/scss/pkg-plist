@@ -1,4 +1,3 @@
-info/scss.info
 share/guile/scss/common.scm
 share/guile/scss/lexer.scm
 share/guile/scss/parser.scm

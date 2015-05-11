@@ -3,8 +3,8 @@
 
 PORTNAME=	pg_activity
 PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
-MASTER_SITES=	GHL
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Htop like application for PostgreSQL server activity monitoring
@@ -18,8 +18,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	3b6b371
 
 USES=		python:2.6+
 USE_PYTHON=	autoplist distutils noegginfo

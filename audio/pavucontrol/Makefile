@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pavucontrol
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -31,17 +31,6 @@ GTK2_CONFIGURE_ON=	--disable-gtk3
 
 GTK3_USE=	GNOME=gtkmm30
 GTK3_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-support-gtkmm-24.patch
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-support-gtkmm-30.patch \
-	${FILESDIR}/extra-patch-src_pavucontrol.glade
-.endif
 
 post-patch:
 # Install locales files in right place

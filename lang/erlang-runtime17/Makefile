@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.2
-PORTREVISION=	2
+PORTVERSION=	17.5.3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -186,6 +185,10 @@ post-install:
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.4/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.4.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.4
+
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6/* \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.7
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6
@@ -193,6 +196,22 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2/* \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2.2
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.10/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.10.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.10
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/diameter-1.9/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/diameter-1.9.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/diameter-1.9
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/snmp-5.1.1/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/snmp-5.1.2
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/snmp-5.1.1
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/test_server-3.8/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/test_server-3.8.1 
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/test_server-3.8
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/

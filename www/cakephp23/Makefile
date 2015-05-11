@@ -11,8 +11,6 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	MIT
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	b81c198
 
 PORTDOCS=	README.md
 

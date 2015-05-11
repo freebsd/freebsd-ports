@@ -13,9 +13,7 @@ OPTIONS_DEFINE=	DOCCOMM DOCS EXAMPLES
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	42067ac
+GH_TAGNAME=	42067ac
 
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
 DOCCOMM_CONFIGURE_WITH=	eaccelerator-doc-comment-inclusion

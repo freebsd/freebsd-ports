@@ -3,8 +3,8 @@
 
 PORTNAME=	phpmustache
 PORTVERSION=	2.6.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	steve.polyack@intermedix.com
 COMMENT=	PHP5 code for Mustache
@@ -14,8 +14,6 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	bobthecow
 GH_PROJECT=	mustache.php
-GH_TAGNAME=	v2.6.0
-GH_COMMIT=	152c315
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

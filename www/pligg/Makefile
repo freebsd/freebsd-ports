@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pligg
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -15,10 +14,13 @@ LICENSE_NAME=	Creative Commons Attribution 3.0 Unported Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		cpe
+CPE_PRODUCT=	pligg_cms
+CPE_VENDOR=	pligg
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pligg
 GH_PROJECT=	pligg-cms
-GH_COMMIT=	1d72393
 
 USE_PHP=	mysql
 

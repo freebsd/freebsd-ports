@@ -20,7 +20,6 @@ USES=		python:2
 USE_GITHUB=	yes
 GH_ACCOUNT=	Azure
 GH_PROJECT=	WALinuxAgent
-GH_COMMIT=	70294c4
 GH_TAGNAME=	2.0
 
 PLIST_FILES=	sbin/waagent

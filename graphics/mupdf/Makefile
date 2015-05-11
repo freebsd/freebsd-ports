@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE \
-		http://www.mupdf.com/download/
+MASTER_SITES=	http://www.mupdf.com/download/
 EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	udvzsolt@gmail.com

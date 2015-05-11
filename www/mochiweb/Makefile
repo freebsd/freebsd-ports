@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	mochiweb
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building lightweight HTTP servers
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	mochiweb-basho-[0-9]*
 
@@ -19,25 +19,26 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mochi
-GH_PROJECT=	mochiweb
-GH_COMMIT=	8b6fab5
-GH_TAGNAME=	v${PORTVERSION}
 
-PORTDOCS=	*
+.include <bsd.port.options.mk>
 
 do-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for FILE in CHANGES.md README; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${STAGEDIR}${DOCSDIR}; \
 	done
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
-	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
-	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
-	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
+.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/include
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
 
 .include <bsd.port.mk>

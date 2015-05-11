@@ -3,6 +3,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -28,7 +29,7 @@ INSTALL_TARGET=		install-strip
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NSS PORTS_PCAP PRELUDE SC TESTS
-OPTIONS_DEFAULT=	HTP_PORT IPFW PRELUDE
+OPTIONS_DEFAULT=	HTP_PORT IPFW JSON PRELUDE
 OPTIONS_RADIO=		SCRIPTS
 OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
 OPTIONS_SUB=		yes
@@ -108,7 +109,7 @@ CONFIGURE_ARGS+=--enable-gccprotect \
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CONFIG_DIR?=	${ETCDIR}
-CONFIG_FILES=	suricata.yaml classification.config reference.config
+CONFIG_FILES=	suricata.yaml classification.config reference.config threshold.config
 RULES_DIR=	${CONFIG_DIR}/rules
 RULES_FILES=	decoder-events.rules dns-events.rules files.rules http-events.rules smtp-events.rules stream-events.rules tls-events.rules
 LOGS_DIR?=	/var/log/${PORTNAME}

@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.8.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -12,7 +12,7 @@ COMMENT=	SQL database engine in a C library
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig readline
-USE_LDCONFIG=	YES
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-hints=freebsd.hints
 
@@ -78,6 +78,8 @@ post-build:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsqlite.so
 .if ${PORT_OPTIONS:MTCL}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/sqlite

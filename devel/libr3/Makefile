@@ -21,8 +21,6 @@ INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	c9s
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	ad8faeb
 GH_PROJECT=	r3
 
 post-patch:

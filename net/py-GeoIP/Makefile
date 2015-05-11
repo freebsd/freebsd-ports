@@ -3,10 +3,10 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.2.8
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-Python-${PORTVERSION}
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
@@ -18,8 +18,6 @@ LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-python
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	993f63c
 
 USES=		python
 USE_PYTHON=	distutils

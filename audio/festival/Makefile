@@ -10,23 +10,21 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	${DISTNAME}-release.tar.gz 	\
 		speech_tools-${PORTVERSION}-release.tar.gz
 
-PATCHFILES=	src_modules_diphone_diphone.h.diff:debian	\
-		src_modules_diphone_di_io.cc.diff:debian	\
-		src_modules_diphone_diphone.cc.diff:debian	\
-		src_modules_donovan_t2s.h.diff:debian		\
-		src_modules_UniSyn_diphone_UniSyn_diphone.cc.diff:debian \
-		festival_el_utf8.diff:debian	\
-		lintianspellpatch.diff:debian	\
-		hts21compat.diff:debian	\
-		languagespatch.diff:debian \
+PATCHFILES=	src_modules_diphone_diphone.h.diff?id=b58a836:debian	\
+		src_modules_diphone_di_io.cc.diff?id=b58a836:debian	\
+		src_modules_diphone_diphone.cc.diff?id=b58a836:debian	\
+		src_modules_donovan_t2s.h.diff?id=b58a836:debian		\
+		src_modules_UniSyn_diphone_UniSyn_diphone.cc.diff?id=b58a836:debian \
+		festival_el_utf8.diff?id=b58a836:debian	\
+		lintianspellpatch.diff?id=b58a836:debian	\
+		hts21compat.diff?id=b58a836:debian	\
+		languagespatch.diff?id=b58a836:debian \
 		${SPT_PATCHES:C/.*/patch-speech__tools_\0:netbsd/}
 PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patches/:netbsd	\
-		http://patch-tracker.debian.org/patch/series/dl/festival/1:2.1~release-5.1/:debian
+		http://anonscm.debian.org/cgit/tts/festival.git/plain/debian/patches/:debian
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
-
-BROKEN=		debian patches fails to fetch
 
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD

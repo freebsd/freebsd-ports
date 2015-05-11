@@ -10,6 +10,11 @@ DISTNAME=	${PORTNAME}_14Aug2014
 MAINTAINER=	user@unknown.nu
 COMMENT=	Extremely small web server
 
+LICENSE=	BSD2CLAUSE
+
+USES=		cpe
+CPE_VENDOR=	acme
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/micro_httpd man/man8/micro_httpd.8.gz
 

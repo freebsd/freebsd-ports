@@ -4,7 +4,6 @@
 PORTNAME=	n98-magerun
 PORTVERSION=	1.90.0
 CATEGORIES=	sysutils www
-MASTER_SITES=	GITHUB_LEGACY
 
 MAINTAINER=	melvyn@magemana.nl
 COMMENT=	CLI tool for inspection and control of Magento installations
@@ -14,8 +13,6 @@ USE_MYSQL=	client
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	netz98
-GH_PROJECT=	n98-magerun
-GH_COMMIT=	15d5a6e
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/n98-magerun

@@ -7,8 +7,6 @@ bin/fasty%%VER%%
 bin/ggsearch%%VER%%
 bin/glsearch%%VER%%
 bin/lalign%%VER%%
-bin/lav2ps
-bin/lav2svg
 bin/map_db
 bin/ssearch%%VER%%
 bin/tfastf%%VER%%
@@ -118,3 +116,10 @@ man/man1/tfasty35.1.gz
 %%DATADIR%%/pam250.mat
 %%DATADIR%%/rna.mat
 %%DATADIR%%/vtml160.mat
+%%DATADIR%%/VTML_10.mat
+%%DATADIR%%/VTML_120.mat
+%%DATADIR%%/VTML_160.mat
+%%DATADIR%%/VTML_20.mat
+%%DATADIR%%/VTML_200.mat
+%%DATADIR%%/VTML_40.mat
+%%DATADIR%%/VTML_80.mat

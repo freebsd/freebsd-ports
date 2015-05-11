@@ -11,9 +11,7 @@ COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
 
-GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}-cms
-GH_COMMIT=	4752848
 
 NO_BUILD=	yes
 

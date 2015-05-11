@@ -3,12 +3,15 @@
 
 PORTNAME=	liblrdf
 PORTVERSION=	0.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
@@ -22,6 +25,7 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
+INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}

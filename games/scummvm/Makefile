@@ -58,6 +58,10 @@ MT32EMU_CONFIGURE_OFF=	--disable-mt32emu
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
+.if ${ARCH} == "armv6"
+CONFIGURE_ENV+=	ASFLAGS=-meabi=5
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^mandir=/s/datarootdir/prefix/' ${WRKSRC}/configure
 

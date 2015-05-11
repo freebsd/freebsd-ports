@@ -7,6 +7,3 @@ bin/csso
 %%DATADIR%%/lib/gonzales.cssp.node.js
 %%DATADIR%%/lib/translator.js
 %%DATADIR%%/lib/util.js
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

@@ -18,7 +18,6 @@ RUN_DEPENDS=	ezjail-admin:${PORTSDIR}/sysutils/ezjail \
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomster
 GH_PROJECT=	ezjail-remote
-GH_COMMIT=	9ee5f8b
 
 USES=		python
 USE_PYTHON=	distutils autoplist

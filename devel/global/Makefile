@@ -3,6 +3,7 @@
 
 PORTNAME=	global
 PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -14,7 +15,6 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
 USES=		libtool perl5
 

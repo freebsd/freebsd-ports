@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/exaile/exaile/releases/download/${PORTVERSION}/
 

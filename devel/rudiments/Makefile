@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.50
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -29,16 +28,6 @@ SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_ENABLE=	ssl
 SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
 			--with-ssl-libs=-L${OPENSSLLIB}
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
-		'/pkgconfig/s| $$(libdir)/| $${DESTDIR}$$(prefix)/libdata/| ; \
-		 /INSTALL/s| $$(bindir)| $${DESTDIR}$$(bindir)| ; \
-		 /INSTALL/s| $$(docdir)| $${DESTDIR}$$(docdir)| ; \
-		 /INSTALL/s| $$(includedir)| $${DESTDIR}$$(includedir)| ; \
-		 /INSTALL/s| $$(mandir)| $${DESTDIR}$$(mandir)| ; \
-		 /INSTALL/s| $$(libdir)| $${DESTDIR}$$(libdir)| ; \
-		 /finish/s| $$(libdir)| $${DESTDIR}$$(libdir)|'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-${PORTVERSION}.so.1

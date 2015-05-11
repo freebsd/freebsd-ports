@@ -11,8 +11,7 @@ RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ee29242
+GH_TAGNAME=	ee29242
 
 PLIST_FILES=	share/mcollective/agent/nrpe.ddl \
 		share/mcollective/agent/nrpe.rb \

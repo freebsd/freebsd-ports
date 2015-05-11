@@ -17,7 +17,8 @@ COMMENT?=	XML parser library for GNOME
 .if !defined(REFERENCE_PORT)
 
 GNU_CONFIGURE=	yes
-USES+=		gmake iconv libtool pathfix pkgconfig shebangfix
+USES+=		cpe gmake iconv libtool pathfix pkgconfig shebangfix
+CPE_VENDOR=	xmlsoft
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \

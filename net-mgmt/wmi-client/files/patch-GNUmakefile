@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2011-12-23 22:58:36.000000000 +0900
-+++ GNUmakefile	2014-08-21 13:05:52.000000000 +0900
-@@ -36,7 +36,7 @@
+--- GNUmakefile.orig	2011-12-23 13:58:36 UTC
++++ GNUmakefile
+@@ -36,7 +36,7 @@ endif
  # Install dir for libasync_wmi_lib.so.* and pysamba wrapper code.
  # e.g., Samba/source/bin/shared/libasync_wmi_lib.so.0.0.1 --> $(PY_LIBDIR)
  #
@@ -9,7 +9,7 @@
  
  #-------------------------------------------------------------------------#
  # A key deliverable of this build process is the libasync_wmi shared      #
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ PATHED_LIBASYNC_WMI_LIB     := $(SAMBA_S
  #-------------------------------------------------------------------------#
  # Comment out the next line to disable google-breakpad dependency.
  ifneq ($(shell uname), Darwin)
@@ -18,7 +18,7 @@
  endif
  
  ifneq ($(USE_BREAKPAD),)
-@@ -124,7 +124,7 @@
+@@ -124,7 +124,7 @@ ifneq ($(USE_BREAKPAD),)
  endif
  	@touch $@
  
@@ -27,7 +27,7 @@
  	@echo
  	@echo "Checking prequisites for installing WMI"
  	$(call check,directory,$(ZENHOME),"ZENHOME")
-@@ -157,12 +157,12 @@
+@@ -158,27 +158,27 @@ endif
  $(SAMBA_SRCDIR)/Makefile: $(SAMBA_SRCDIR)/autogen.sh
  	cd $(SAMBA_SRCDIR) ;\
  	./autogen.sh ;\
@@ -43,3 +43,21 @@
  endif
  	cd $(SAMBA_SRCDIR);\
  	$(MAKE) $(WMI_BUILD_TARGETS) ;\
+ 	touch $@
+ 
+ pywmi-installed: install-prereqs $(DESTDIR)$(PY_LIBDIR) $(DESTDIR)$(ZENOSS_BINDIR) $(SAMBA_SRCDIR)/bin/wmic $(SAMBA_SRCDIR)/bin/winexe $(PATHED_LIBASYNC_WMI_LIB)
+-	cp $(SAMBA_SRCDIR)/bin/wmic   $(DESTDIR)$(ZENOSS_BINDIR)
+-	cp $(SAMBA_SRCDIR)/bin/winexe $(DESTDIR)$(ZENOSS_BINDIR)
++	$(INSTALL_PROGRAM) $(SAMBA_SRCDIR)/bin/wmic   $(DESTDIR)$(ZENOSS_BINDIR)
++	$(INSTALL_PROGRAM) $(SAMBA_SRCDIR)/bin/winexe $(DESTDIR)$(ZENOSS_BINDIR)
+ ifeq ($(shell uname), Darwin)
+ 	-(cd $(DESTDIR)$(PY_LIBDIR) && rm -f $(LIBASYNC_WMI_LIB_BASENAME)*)
+ 	cp $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)/$(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib
+ 	(cd $(DESTDIR)$(PY_LIBDIR) && ln -sf $(LIBASYNC_WMI_LIB_BASENAME).$(LIBASYNC_WMI_LIB_VERSION_nnn).dylib $(LIBASYNC_WMI_LIB_BASENAME).dylib)
+ else
+ 	-(cd $(DESTDIR)$(PY_LIBDIR) && rm -f $(LIBASYNC_WMI_LIB_BASENAME)*)
+-	cp $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)
++	$(INSTALL_LIB) $(PATHED_LIBASYNC_WMI_LIB) $(DESTDIR)$(PY_LIBDIR)
+ 	(cd $(DESTDIR)$(PY_LIBDIR) && ln -sf $(LIBASYNC_WMI_LIB) $(LIBASYNC_WMI_LIB_SO_N))
+ endif
+ 	rm -rf $(DESTDIR)$(PY_LIBDIR)/pysamba

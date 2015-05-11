@@ -57,6 +57,8 @@ bin/tomenet.server
 %%DATADIR%%/lib/scpt/meta.lua
 %%DATADIR%%/lib/scpt/mikaelh.lua
 %%DATADIR%%/lib/scpt/moltor.lua
+%%DATADIR%%/lib/scpt/o_shadow.lua
+%%DATADIR%%/lib/scpt/o_spirit.lua
 %%DATADIR%%/lib/scpt/p_curing.lua
 %%DATADIR%%/lib/scpt/p_defense.lua
 %%DATADIR%%/lib/scpt/p_offense.lua

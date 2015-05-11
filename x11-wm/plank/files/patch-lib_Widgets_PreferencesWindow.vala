@@ -5,10 +5,10 @@
  		construct
  		{
 +			GLib.Intl.setlocale (LocaleCategory.ALL, "");
-+			string langpack_dir = GLib.Path.build_filename ("%%PREFIX%%", "share", "locale");
-+			GLib.Intl.bindtextdomain ("plank", langpack_dir);
-+			GLib.Intl.bind_textdomain_codeset ("plank", "UTF-8");
-+			GLib.Intl.textdomain ("plank");
++			string langpack_dir = GLib.Path.build_filename (Build.INSTALL_PREFIX, "share", "locale");
++			GLib.Intl.bindtextdomain (Build.GETTEXT_PACKAGE, langpack_dir);
++			GLib.Intl.bind_textdomain_codeset (Build.GETTEXT_PACKAGE, "UTF-8");
++			GLib.Intl.textdomain (Build.GETTEXT_PACKAGE);
 +			
  			skip_pager_hint = true;
  			skip_taskbar_hint = true;

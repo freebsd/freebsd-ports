@@ -1,9 +1,20 @@
-Net::OAuth is an implementation of the OAuth protocol.
+Net::OAuth provides a low-level API for reading and writing OAuth messages.
 
-OAuth is:
+OAuth is an open protocol to allow secure API authentication in a simple and
+standard method from desktop and web applications. In practical terms, OAuth is
+a mechanism for a Consumer to request protected resources from a Service
+Provider on behalf of a user.
 
-An open protocol to allow secure API authentication in a simple and standard
-method from desktop and web applications.
+Net::OAuth provides:
+- classes that encapsulate OAuth messages (requests and responses).
+- message signing
+- message serialization and parsing.
+- 2-legged requests (aka. tokenless requests, aka. consumer requests), see
+  "CONSUMER REQUESTS"
 
-WWW: http://oauth.net/
+Net::OAuth does not provide:
+- Consumer or Service Provider encapsulation
+- token/nonce/key storage/management
+
 WWW: http://search.cpan.org/dist/Net-OAuth/
+WWW: http://oauth.net/

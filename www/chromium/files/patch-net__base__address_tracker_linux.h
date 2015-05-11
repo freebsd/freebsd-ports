@@ -1,5 +1,5 @@
---- net/base/address_tracker_linux.h.orig	2014-10-10 09:15:31 UTC
-+++ net/base/address_tracker_linux.h
+--- net/base/address_tracker_linux.h.orig	2015-04-15 00:18:56.000000000 +0200
++++ net/base/address_tracker_linux.h	2015-04-19 20:29:29.000000000 +0200
 @@ -6,10 +6,12 @@
  #define NET_BASE_ADDRESS_TRACKER_LINUX_H_
  
@@ -13,3 +13,15 @@
  
  #include <map>
  
+@@ -32,7 +34,11 @@
+ class NET_EXPORT_PRIVATE AddressTrackerLinux :
+     public base::MessageLoopForIO::Watcher {
+  public:
++#if !defined(OS_FREEBSD)
+   typedef std::map<IPAddressNumber, struct ifaddrmsg> AddressMap;
++#else
++  typedef void* AddressMap;
++#endif
+ 
+   // Non-tracking version constructor: it takes a snapshot of the
+   // current system configuration. Once Init() returns, the

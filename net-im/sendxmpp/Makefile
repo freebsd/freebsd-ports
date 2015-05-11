@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sendxmpp
-PORTVERSION=	1.24.0
+PORTVERSION=	1.24
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im perl5
 
 MAINTAINER=	mek@mek.uz.ua
@@ -15,8 +16,6 @@ RUN_DEPENDS=	p5-Getopt-Long>0.0:${PORTSDIR}/devel/p5-Getopt-Long
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lhost
-GH_TAGNAME=	v1.24
-GH_COMMIT=	f596346
 
 USES=		perl5
 USE_PERL5=	configure

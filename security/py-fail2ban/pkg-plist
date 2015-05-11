@@ -17,7 +17,9 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/complain.conf
 %%ETCDIR%%/action.d/dshield.conf
 %%ETCDIR%%/action.d/dummy.conf
+%%ETCDIR%%/action.d/firewallcmd-allports.conf
 %%ETCDIR%%/action.d/firewallcmd-ipset.conf
+%%ETCDIR%%/action.d/firewallcmd-multiport.conf
 %%ETCDIR%%/action.d/firewallcmd-new.conf
 %%ETCDIR%%/action.d/hostsdeny.conf
 %%ETCDIR%%/action.d/ipfilter.conf
@@ -37,12 +39,14 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/mail-whois.conf
 %%ETCDIR%%/action.d/mail.conf
 %%ETCDIR%%/action.d/mynetwatchman.conf
+%%ETCDIR%%/action.d/nsupdate.conf
 %%ETCDIR%%/action.d/osx-afctl.conf
 %%ETCDIR%%/action.d/osx-ipfw.conf
 %%ETCDIR%%/action.d/pf.conf
 %%ETCDIR%%/action.d/route.conf
 %%ETCDIR%%/action.d/sendmail-buffered.conf
 %%ETCDIR%%/action.d/sendmail-common.conf
+%%ETCDIR%%/action.d/sendmail-geoip-lines.conf
 %%ETCDIR%%/action.d/sendmail-whois-ipjailmatches.conf
 %%ETCDIR%%/action.d/sendmail-whois-ipmatches.conf
 %%ETCDIR%%/action.d/sendmail-whois-lines.conf
@@ -59,6 +63,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/apache-badbots.conf
 %%ETCDIR%%/filter.d/apache-botsearch.conf
 %%ETCDIR%%/filter.d/apache-common.conf
+%%ETCDIR%%/filter.d/apache-fakegooglebot.conf
 %%ETCDIR%%/filter.d/apache-modsecurity.conf
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
@@ -66,6 +71,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/apache-shellshock.conf
 %%ETCDIR%%/filter.d/assp.conf
 %%ETCDIR%%/filter.d/asterisk.conf
+%%ETCDIR%%/filter.d/botsearch-common.conf
 %%ETCDIR%%/filter.d/bsd-sendmail.conf
 %%ETCDIR%%/filter.d/bsd-sshd.conf
 %%ETCDIR%%/filter.d/bsdftp.conf
@@ -77,6 +83,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/directadmin.conf
 %%ETCDIR%%/filter.d/dovecot.conf
 %%ETCDIR%%/filter.d/dropbear.conf
+%%ETCDIR%%/filter.d/drupal-auth.conf
 %%ETCDIR%%/filter.d/ejabberd-auth.conf
 %%ETCDIR%%/filter.d/exim-common.conf
 %%ETCDIR%%/filter.d/exim-spam.conf
@@ -92,6 +99,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/mysqld-auth.conf
 %%ETCDIR%%/filter.d/nagios.conf
 %%ETCDIR%%/filter.d/named-refused.conf
+%%ETCDIR%%/filter.d/nginx-botsearch.conf
 %%ETCDIR%%/filter.d/nginx-http-auth.conf
 %%ETCDIR%%/filter.d/nsd.conf
 %%ETCDIR%%/filter.d/openwebmail.conf
@@ -100,8 +108,9 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/perdition.conf
 %%ETCDIR%%/filter.d/php-url-fopen.conf
 %%ETCDIR%%/filter.d/portsentry.conf
-%%ETCDIR%%/filter.d/postfix-sasl.conf
 %%ETCDIR%%/filter.d/postfix.conf
+%%ETCDIR%%/filter.d/postfix-sasl.conf
+%%ETCDIR%%/filter.d/postfix-rbl.conf
 %%ETCDIR%%/filter.d/proftpd.conf
 %%ETCDIR%%/filter.d/pure-ftpd.conf
 %%ETCDIR%%/filter.d/qmail.conf
@@ -126,6 +135,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/webmin-auth.conf
 %%ETCDIR%%/filter.d/wuftpd.conf
 %%ETCDIR%%/filter.d/xinetd-fail.conf
+%%ETCDIR%%/filter.d/ignorecommands/apache-fakegooglebot
 %%PYTHON_SITELIBDIR%%/fail2ban/__init__.py
 %%PYTHON_SITELIBDIR%%/fail2ban/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fail2ban/exceptions.py
@@ -215,6 +225,7 @@ man/man5/fail2ban-jail.conf.5.gz
 @dir %%PYTHON_SITELIBDIR%%/fail2ban/client
 @dir %%PYTHON_SITELIBDIR%%/fail2ban
 @dir %%ETCDIR%%/jail.d
+@dir %%ETCDIR%%/filter.d/ignorecommands
 @dir %%ETCDIR%%/filter.d
 @dir %%ETCDIR%%/fail2ban.d
 @dir %%ETCDIR%%/action.d

@@ -58,10 +58,8 @@ pre-install:
 	${ECHO} "@exec ${XMLCAT_ADD}" >> ${PLIST}
 	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
 	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
 	${ECHO} '@unexec rmdir %D/share/xml/dtd 2>/dev/null || true' >> \
 	    ${PLIST}
-	${ECHO} "@dirrm ${dir_DOC}" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}

@@ -8,7 +8,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class that converts strings to/from 2-byte Unicode UCS2 format
 
 USES=		perl5

@@ -5,7 +5,6 @@ PORTNAME=	obfsclient
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	security
-DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Tor-managed pluggable transport client
@@ -15,8 +14,7 @@ LIB_DEPENDS=	liballium-1.0.so:${PORTSDIR}/devel/liballium \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning
-GH_COMMIT=	3c551c5
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	3c551c5
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c++11-lib pkgconfig tar:bzip2

@@ -2,6 +2,7 @@
 
 PORTNAME=	beanstalkd
 PORTVERSION=	1.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -15,8 +16,6 @@ USE_RC_SUBR=	beanstalkd
 
 GH_ACCOUNT=	kr
 GH_PROJECT=	beanstalkd
-GH_COMMIT=	f40e005
-GH_TAGNAME=	v${PORTVERSION}
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 

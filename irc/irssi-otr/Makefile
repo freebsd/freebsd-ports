@@ -3,9 +3,9 @@
 
 PORTNAME=	irssi-otr
 PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	4
 CATEGORIES=	irc
-MASTER_SITES=	GHL
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Plugin for irssi for Off-the-Record (OTR) messaging
@@ -24,9 +24,6 @@ USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	cryptodotis
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	f4ecd19
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libotr-inc-prefix=${LOCALBASE}/include

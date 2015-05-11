@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-tools
 
 CPE_PRODUCT=	gettext
-CPE_VENDOR=	gun
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	DOCS
 

@@ -1,5 +1,5 @@
---- components/storage_monitor/storage_monitor_freebsd.cc.orig	2014-10-13 17:11:08 UTC
-+++ components/storage_monitor/storage_monitor_freebsd.cc
+--- components/storage_monitor/storage_monitor_freebsd.cc.orig	1970-01-01 01:00:00.000000000 +0100
++++ components/storage_monitor/storage_monitor_freebsd.cc	2015-04-19 19:38:05.000000000 +0200
 @@ -0,0 +1,102 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -56,15 +56,15 @@
 +  command.push_back(path.value());
 +
 +  base::LaunchOptions options;
-+  base::ProcessHandle handle;
-+  if (!base::LaunchProcess(command, options, &handle))
++  base::Process process = base::LaunchProcess(command, options);
++  if (!process.IsValid())
 +    return StorageMonitor::EJECT_FAILURE;
 +
 +  int exit_code = -1;
-+  if (!base::WaitForExitCodeWithTimeout(handle, &exit_code,
-+      base::TimeDelta::FromMilliseconds(3000))) {
-+    base::KillProcess(handle, -1, false);
-+    base::EnsureProcessTerminated(handle);
++  if (!process.WaitForExitWithTimeout(base::TimeDelta::FromMilliseconds(3000),
++                                      &exit_code)) {
++    base::KillProcess(process.Handle(), -1, false);
++    base::EnsureProcessTerminated(process.Pass());
 +    return StorageMonitor::EJECT_FAILURE;
 +  }
 +

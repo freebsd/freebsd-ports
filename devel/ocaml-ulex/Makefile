@@ -14,6 +14,7 @@ COMMENT=	Lexer generator for Unicode and OCaml
 USES=		gmake
 USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
+USE_OCAML_CAMLP4=	true
 USE_OCAML_LDCONFIG=	true
 USE_OCAMLFIND_PLIST=	yes
 

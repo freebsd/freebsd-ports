@@ -1,9 +1,5 @@
-@unexec if cmp %D/%%ETCDIR%%/ldapaddressbook %D/%%ETCDIR%%/ldapaddressbook.dist ; then rm -vf %D/%%ETCDIR%%/ldapaddressbook ; fi
-%%ETCDIR%%/ldapaddressbook.dist
-@exec [ -f %D/%%ETCDIR%%/ldapaddressbook ] || cp -v %D/%%ETCDIR%%/ldapaddressbook.dist %D/%%ETCDIR%%/ldapaddressbook
-@unexec if cmp %D/%%ETCDIR%%/sqwebmaild %D/%%ETCDIR%%/sqwebmaild.dist ; then rm -vf %D/%%ETCDIR%%/sqwebmaild ; fi
-%%ETCDIR%%/sqwebmaild.dist
-@exec [ -f %D/%%ETCDIR%%/sqwebmaild ] || cp -v %D/%%ETCDIR%%/sqwebmaild.dist %D/%%ETCDIR%%/sqwebmaild
+@sample %%ETCDIR%%/ldapaddressbook.sample
+@sample %%ETCDIR%%/sqwebmaild.sample
 @unexec [ -f /var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
 libexec/sqwebmail/deliverquota
 libexec/sqwebmail/maildirmake
@@ -11,7 +7,7 @@ libexec/sqwebmail/makemime
 libexec/sqwebmail/pcpd
 libexec/sqwebmail/reformime
 libexec/sqwebmail/sqwebmaild
-libexec/sqwebmail/sqwebpasswd
+@(%%MAILOWN%%,%%MAILGRP%%,2755) libexec/sqwebmail/sqwebpasswd
 libexec/sqwebmaild.rc
 man/man1/maildirmake.1.gz
 man/man8/deliverquota.8.gz
@@ -81,7 +77,7 @@ share/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%@dir %%DOCSDIR%%
 @dir etc/sqwebmail
-%%CACHE%%@dir /var/sqwebmail/cache
+%%CACHE%%@dir(%%CACHEOWN%%,,) %%CACHEDIR%%
 @dir /var/sqwebmail/calendar/public
 @dir /var/sqwebmail/calendar/private
 @dir /var/sqwebmail/calendar/localcache

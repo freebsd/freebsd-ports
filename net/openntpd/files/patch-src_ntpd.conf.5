@@ -1,0 +1,13 @@
+--- src/ntpd.conf.5.orig	2015-03-18 16:25:53 UTC
++++ src/ntpd.conf.5
+@@ -222,8 +222,8 @@ constraints from "https://www.google.com
+ .Ed
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/ntpd.confXXX" -compact
+-.It Pa /etc/ntpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ntpd.confXXX" -compact
++.It Pa %%PREFIX%%/etc/ntpd.conf
+ default
+ .Xr ntpd 8
+ configuration file

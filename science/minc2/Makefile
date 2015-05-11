@@ -3,10 +3,10 @@
 
 PORTNAME=	minc
 PORTVERSION=	2.2.00
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science biology
-MASTER_SITES=	GHL
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +20,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BIC-MNI
-GH_TAGNAME=	release-${PORTVERSION}
-GH_COMMIT=	6f2f5b9
 
 USES=		autoreconf bison gmake libtool perl5 shebangfix
 SHEBANG_FILES=	progs/mincview/mincview

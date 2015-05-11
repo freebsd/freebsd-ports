@@ -24,7 +24,6 @@ bin/freetalk
 %%DATADIR%%/extensions/state.scm
 %%DATADIR%%/extensions/url.scm
 %%DATADIR%%/extensions/utils.scm
-share/locale/en@boldquot/LC_MESSAGES/freetalk.mo
-share/locale/en@quot/LC_MESSAGES/freetalk.mo
-info/freetalk.info
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/freetalk.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/freetalk.mo
 man/man1/freetalk.1.gz

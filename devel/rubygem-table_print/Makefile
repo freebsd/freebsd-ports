@@ -6,7 +6,7 @@ PORTVERSION=	1.5.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Turn objects into formatted columns
 
 LICENSE=	MIT

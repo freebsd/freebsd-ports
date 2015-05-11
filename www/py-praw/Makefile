@@ -3,6 +3,7 @@
 
 PORTNAME=	praw
 PORTVERSION=	2.1.11
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +22,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	praw-dev
-GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	a36c3f1
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

@@ -3,7 +3,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 
@@ -17,34 +17,16 @@ USE_LDCONFIG=	yes
 USES=		fortran tar:tgz uidfix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
+OPTIONS_SINGLE=	BLASLIB
+OPTIONS_DEFAULT=	NETLIB
+OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
 PROFILE_DESC=	Build a profiling library
 
+ATLAS_USES=	blaslapack:atlas
+NETLIB_USES=	blaslapack:netlib
+OPENBLAS_USES=	blaslapack:openblas
+
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libgoto2p.so)
-WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas.so)
-WITH_BLAS?=	atlas
-.else
-WITH_BLAS?=	reference
-.endif
-
-.if ${WITH_BLAS} == "reference"
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.elif ${WITH_BLAS} == "gotoblas"
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
-BLAS=		-lgoto2p
-LAPACK=		-lgoto2p
-.elif ${WITH_BLAS} == "atlas"
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas
-LAPACK=		-lalapack -lptcblas
-.endif
 
 PORTDOCS=	README.txt
 PORTEXAMPLES=	lmdemo.c Makefile.demo
@@ -73,8 +55,8 @@ post-extract:
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g' \
 		-e 's+%%CFLAGS%%+${CFLAGS} -I${LOCALBASE}/include+g' \
 		-e 's+%%LDFLAGS%%+${LDFLAGS}+g' \
-		-e 's+%%BLAS%%+${BLAS}+g' \
-		-e 's+%%LAPACK%%+${LAPACK}+g' \
+		-e 's+%%BLAS%%+${BLASLIB}+g' \
+		-e 's+%%LAPACK%%+${LAPACKLIB}+g' \
 			${WRKSRC}/Makefile.demo
 
 post-install:

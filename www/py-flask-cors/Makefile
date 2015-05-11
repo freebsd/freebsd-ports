@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	Flask-Cors
+PORTVERSION=	2.0.0
+CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	stiginge@pvv.org
+COMMENT=	Cross-origin resource sharing (CORS) for Flask
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:${PORTSDIR}/www/py-flask \
+		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>

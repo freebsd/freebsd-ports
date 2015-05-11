@@ -22,7 +22,6 @@ XHEADER_DESC=		X-Tinyproxy header
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--disable-silent-rules \
-		--localstatedir=/var \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -39,16 +38,6 @@ post-patch:
 		${WRKSRC}/docs/man8/tinyproxy.txt.in \
 		${WRKSRC}/etc/tinyproxy.conf.in
 	@${REINPLACE_CMD} -e '/\/usr\/share\/tinyproxy/d' ${WRKSRC}/etc/tinyproxy.conf.in
-#	@${REINPLACE_CMD} \
-#		-e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
-#		-e 's|/var/log/tinyproxy/tinyproxy.log|/var/log/tinyproxy.log|' \
-#		's|/var/run/tinyproxy/tinyproxy.pid|/var/run/tinyproxy.pid|' \
-#			${WRKSRC}/docs/man5/tinyproxy.conf.txt.in ${WRKSRC}/docs/man8/tinyproxy.txt.in
-#	@${REINPLACE_CMD} \
-#		-e 's|/log/tinyproxy/|/log/|' \
-#		-e 's|/run/tinyproxy/|/run/|' \
-#		-e 's|/usr/share/tinyproxy|${DATADIR}|' \
-#			${WRKSRC}/etc/tinyproxy.conf.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/tinyproxy.conf ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf.sample

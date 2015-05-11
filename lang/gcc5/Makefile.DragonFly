@@ -1,9 +1,0 @@
-# $FreeBSD$
-
-# The following modification to CXXFLAGS is needed in the case of DragonFly
-# 4.1+ building lang/gcc5 with the gcc50 base compiler when the system
-# libraries were built by the gcc47 base compiler.  The sys.mk file
-# automatically adds -D_GLIBCXX_USE_CXX11_ABI=0 to CXXFLAGS in that case,
-# which will break the build.
-
-CXXFLAGS:=	${CXXFLAGS:N-D_GLIBCXX_USE_CXX11_ABI*}

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Seamlessly integrate Net::DBus into AnyEvent
 
 BUILD_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \

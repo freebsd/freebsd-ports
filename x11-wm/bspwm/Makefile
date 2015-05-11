@@ -16,7 +16,6 @@ RUN_DEPENDS=	sxhkd:${PORTSDIR}/x11/sxhkd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
-GH_COMMIT=	f181f0c
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	contrib/freedesktop/bspwm-session

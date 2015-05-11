@@ -1,13 +1,11 @@
---- libfind1.c.orig	2014-03-20 18:05:17.000000000 -0700
-+++ libfind1.c	2014-06-27 21:45:49.000000000 -0700
-@@ -38,7 +38,9 @@
-               "/usr/lib64/lib",
+--- libfind1.c.orig	2014-11-04 10:25:00 UTC
++++ libfind1.c
+@@ -39,6 +39,8 @@ char *dirs[]={"/lib/i386-linux-gnu",
                "/usr/lib32",
                "/usr/lib64",
--              "/usr/local/lib",
-+              "%%LOCALBASE%%lib",
-+              "%%LOCALBASE%%lib/portaudio2",
-+              "%%LOCALBASE%%lib32",
+               "/usr/local/lib",
++              "/usr/local/lib/portaudio2",
++              "/usr/local/lib32",
                "/usr/local/lib64",
                "/usr/local32/lib",
                "/usr/lib",

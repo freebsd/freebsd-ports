@@ -4,7 +4,6 @@ PORTNAME=	relayd
 PORTVERSION=	5.5.20140810
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	GHL
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenBSD relay daemon
@@ -12,13 +11,12 @@ COMMENT=	OpenBSD relay daemon
 LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
-GH_COMMIT=	49d1afd
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/src/usr.sbin
 USES=		uidfix
 USE_GITHUB=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	relayd
+WRKSRC_SUBDIR=	src/usr.sbin
 
 CFLAGS+=	-Wall
 

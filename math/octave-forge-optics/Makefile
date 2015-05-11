@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-optics
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		octave-${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 

@@ -25,6 +25,7 @@
     SUBDIR += eclipse-pydev
     SUBDIR += eclipse-shelled
     SUBDIR += eclipse-windowbuilder
+    SUBDIR += hamcrest
     SUBDIR += icedtea-web
     SUBDIR += infobus
     SUBDIR += jad

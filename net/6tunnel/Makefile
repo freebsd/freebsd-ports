@@ -4,7 +4,7 @@
 PORTNAME=	6tunnel
 DISTVERSION=	0.11rc2.20130525
 CATEGORIES=	net ipv6
-MASTER_SITES=	GHL \
+MASTER_SITES=	GH \
 		LOCAL/bdrewery/${PORTNAME}/
 
 MAINTAINER=	bdrewery@FreeBSD.org
@@ -18,9 +18,7 @@ ALL_TARGET=	default
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojtekka
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	2d33461
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	2d33461
 
 PLIST_FILES=	bin/6tunnel \
 		man/man1/6tunnel.1.gz

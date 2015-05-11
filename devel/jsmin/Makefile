@@ -11,8 +11,7 @@ COMMENT=	The JavaScript Minifier
 USE_GITHUB=	yes
 GH_ACCOUNT=	douglascrockford
 GH_PROJECT=	JSMin
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	1bf6ce5
+GH_TAGNAME=	1bf6ce5
 
 PLIST_FILES=	bin/jsmin
 PORTDOCS=	README

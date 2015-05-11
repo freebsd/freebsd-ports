@@ -3,8 +3,8 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	1.2.104
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and flexible web server
@@ -12,12 +12,9 @@ COMMENT=	Fast and flexible web server
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	webserver
-GH_TAGNAME=	${PORTVERSION:S/^/v/}
-GH_COMMIT=	e5583c6
 
-USES=		autoreconf gettext gmake libtool pathfix pkgconfig \
+USES=		autoreconf cpe gettext gmake libtool pathfix pkgconfig \
 		python:2,build shebangfix
 SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 		admin/upgrade_config.py cherokee/cherokee-admin-launcher \
@@ -41,6 +38,8 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	cherokee-project
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread

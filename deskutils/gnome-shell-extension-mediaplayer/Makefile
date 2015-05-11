@@ -14,8 +14,6 @@ BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/eonpatapon-gnome-shell-extensions-mediaplayer-${GH_COMMIT}
-
 USES=		autoreconf:build gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	glib20 intltool
 USE_GITHUB=	yes
@@ -28,7 +26,6 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.mediaplayer.gschema.xml
 GH_ACCOUNT=	eonpatapon
 GH_PROJECT=	gnome-shell-extensions-mediaplayer
 GH_TAGNAME=	a236a01
-GH_COMMIT=	a236a01
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

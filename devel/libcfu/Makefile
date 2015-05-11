@@ -4,7 +4,6 @@ PORTNAME=	libcfu
 DISTVERSION=	0.04a
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	GHL
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Simple library of tools for developing multithreaded software
@@ -13,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crees
-GH_COMMIT=	947dba4
 GH_TAGNAME=	947dba4
 
 USES=		autoreconf makeinfo pkgconfig pathfix libtool

@@ -424,7 +424,7 @@ sdlimage_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-sdl_image
 sdlimage_DEPENDS=	jpeg png sdl12 tiff
 
 sdlmixer_f10_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.2.6
-sdlmixer_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.10.1
+sdlmixer_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.12.0
 sdlmixer_DETECT=	${sdlmixer${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdlmixer_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-sdl_mixer
 sdlmixer_DEPENDS=	sdl12

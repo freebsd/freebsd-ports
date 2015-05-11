@@ -4,8 +4,7 @@
 PORTNAME=	xfce4-smartbookmark-plugin
 PORTVERSION=	0.4.6
 CATEGORIES=	www xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

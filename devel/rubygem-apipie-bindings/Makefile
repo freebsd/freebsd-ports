@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	apipie-bindings
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Ruby bindings for API calls that are documented with Apipie
 
 LICENSE=	MIT

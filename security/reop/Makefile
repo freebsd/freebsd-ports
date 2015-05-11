@@ -13,7 +13,6 @@ LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tedu
-GH_COMMIT=	f2948f6
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	CPPFLAGS="-D_NSIG=NSIG" \

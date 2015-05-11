@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heredoc_unindent
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

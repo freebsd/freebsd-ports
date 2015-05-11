@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	46230
+PORTVERSION=	46616
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -80,7 +81,11 @@ PLIST_FORMATS+=	html-common
 PLIST_FORMATS+=	extras common
 
 pre-build:
-	${CAT} ${PLIST_FORMATS:S,^,${.CURDIR}/pkg-plist.,} > ${PLIST}
+.for i in ${PLIST_FORMATS:S,^,${.CURDIR}/pkg-plist.,}
+	if ${TEST} -f ${i}; then \
+		${CAT} ${i} >> ${PLIST}; \
+	fi
+.endfor
 
 # For HTML files, images links are hardcoded during the build
 # with absolute pathnames.  Make these pathnames relative.

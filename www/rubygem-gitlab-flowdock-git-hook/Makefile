@@ -11,7 +11,7 @@ COMMENT=	GitLab's patched Git Post-Receive hook for Flowdock
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-gitlab-grit>=2.6.5:${PORTSDIR}/textproc/rubygem-gitlab-grit \
+RUN_DEPENDS=	rubygem-gitlab-grit>=2.4.1:${PORTSDIR}/textproc/rubygem-gitlab-grit \
 		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json
 
 USE_RUBY=	yes

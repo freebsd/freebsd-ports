@@ -14,8 +14,7 @@ LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phatina
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	76be403
+GH_TAGNAME=	76be403
 
 USES=		autoreconf compiler:c++11-lib fuse pkgconfig
 GNU_CONFIGURE=	yes

@@ -4,7 +4,6 @@
 PORTNAME=	xsp
 PORTVERSION=	3.0.11
 CATEGORIES=	www
-MASTER_SITES=	GITHUB_LEGACY
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono based web server
@@ -17,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	mono
-GH_COMMIT=	4587438
 USE_GITHUB=	yes
 USE_SQLITE=	3
 USES=		gmake mono pathfix pkgconfig tar:bzip2

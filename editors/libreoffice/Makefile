@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Full integrated office productivity suite
 
@@ -250,7 +250,8 @@ JAVA_CONFIGURE_ON=	--enable-ext-wiki-publisher \
 			--enable-report-builder \
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-jdk-home="${JAVA_HOME}" \
-			--with-junit=${JAVAJARDIR}/junit.jar
+			--with-junit=${JAVAJARDIR}/junit.jar \
+			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar
 JAVA_CONFIGURE_OFF=	--without-java
 JAVA_BUILD=	yes
 JAVA_USE=	JAVA=yes

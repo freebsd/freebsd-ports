@@ -5,4 +5,4 @@ allowing multiple VMs to run simultaneously in different OS threads.
 
 The default language is the R7RS (scheme base) library.
 
-WWW: https://github.com/norton/chibi-scheme
+WWW: https://github.com/ashinn/chibi-scheme

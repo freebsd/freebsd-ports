@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Lightweight logging library for Ruby
 
 LICENSE=	APACHE20

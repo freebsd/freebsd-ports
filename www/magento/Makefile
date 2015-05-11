@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/${PORTVERSION}/
 MAINTAINER=	melvyn@magemana.nl
 COMMENT=	Feature-rich eCommerce platform
 
+USES=		cpe
+CPE_VENDDOR=	magentocommerce
 USE_PHP=	pdo_mysql hash gd iconv curl dom soap simplexml mcrypt mysql \
 		ctype zlib json
 WRKSRC=		${WRKDIR}/magento

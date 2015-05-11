@@ -1,0 +1,4 @@
+Ruby gem that implements an OmniAuth strategy that allows to
+authenticate against different password strategies at once.
+
+WWW: https://github.com/jgraichen/omniauth-multipassword

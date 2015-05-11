@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web log rotation utility that provides datestamp filenames
 
 LICENSE=	GPLv2

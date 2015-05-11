@@ -6,12 +6,16 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
+
+LICENSE=	LGPL21 # or any later version
+
+PORTSCOUT=	limit:^0\.2\.
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -22,7 +26,7 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 CFLAGS+=	-mmmx
 .endif
 

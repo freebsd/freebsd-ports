@@ -15,88 +15,12 @@ bin/spamd
 @sample %%ETCDIR%%/v320.pre.sample
 @sample %%ETCDIR%%/v330.pre.sample
 @sample %%ETCDIR%%/v340.pre.sample
+@sample %%ETCDIR%%/v341.pre.sample
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
 %%SSL%%lib/libsslspamc.so
 %%SSL%%lib/libsslspamc.so.0
-%%PERL5_MAN3%%/Mail::SpamAssassin.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::AICache.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::ArchiveIterator.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::AsyncLoop.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::AutoWhitelist.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Bayes.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::BDB.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::MySQL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::PgSQL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::Redis.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::SQL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Client.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Conf.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::LDAP.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::Parser.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::SQL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::DnsResolver.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Logger.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::File.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::Stderr.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::Syslog.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Message.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Message::Metadata.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Message::Node.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::PerMsgLearner.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::PerMsgStatus.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::PersistentAddrList.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ASN.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AWL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AccessDB.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AntiVirus.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AskDNS.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Bayes.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Check.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DCC.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DKIM.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Hashcash.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PhishTag.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Pyzor.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Razor2.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::RelayCountry.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ReplaceTags.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Reuse.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Rule2XSBody.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::SPF.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Shortcircuit.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::SpamCop.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Test.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::TextCat.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDNSBL.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDetail.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::VBounce.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WhiteListSubject.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::PluginHandler.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::SQLBasedAddrList.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::SubProcBackChannel.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Timeout.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Util.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Util::DependencyInfo.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Util::Progress.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Util::RegistrarBoundaries.3.gz
-%%PERL5_MAN3%%/spamassassin-run.3.gz
-man/man1/sa-awl.1.gz
-man/man1/sa-compile.1.gz
-man/man1/sa-learn.1.gz
-man/man1/sa-update.1.gz
-man/man1/spamassassin-run.1.gz
-man/man1/spamassassin.1.gz
-man/man1/spamc.1.gz
-man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AICache.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
@@ -164,6 +88,7 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEHeader.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/PDFInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/PhishTag.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Pyzor.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Razor2.pm
@@ -177,13 +102,16 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/SpamCop.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Test.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/TextCat.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/TxRep.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIDNSBL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIDetail.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIEval.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/URILocalBL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/VBounce.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WLBLEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PluginHandler.pm
+%%SITE_PERL%%/Mail/SpamAssassin/RegistryBoundaries.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SQLBasedAddrList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SpamdForkScaling.pm
@@ -197,24 +125,101 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TieOneStringHash.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TinyRedis.pm
 %%SITE_PERL%%/spamassassin-run.pod
+%%PERL5_MAN3%%/Mail::SpamAssassin.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::AICache.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::ArchiveIterator.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::AsyncLoop.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::AutoWhitelist.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Bayes.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::BDB.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::MySQL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::PgSQL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::Redis.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::SQL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Client.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Conf.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::LDAP.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::Parser.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Conf::SQL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::DnsResolver.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Logger.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::File.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::Stderr.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Logger::Syslog.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Message.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Message::Metadata.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Message::Node.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::PerMsgLearner.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::PerMsgStatus.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::PersistentAddrList.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ASN.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AWL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AccessDB.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AntiVirus.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AskDNS.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Bayes.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Check.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DCC.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DKIM.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Hashcash.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEEval.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PDFInfo.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PhishTag.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Pyzor.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Razor2.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::RelayCountry.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ReplaceTags.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Reuse.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Rule2XSBody.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::SPF.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Shortcircuit.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::SpamCop.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Test.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::TextCat.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::TxRep.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDNSBL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDetail.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URILocalBL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::VBounce.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WhiteListSubject.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::PluginHandler.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::RegistryBoundaries.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::SQLBasedAddrList.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::SubProcBackChannel.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Timeout.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Util.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Util::DependencyInfo.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Util::Progress.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Util::RegistrarBoundaries.3.gz
+%%PERL5_MAN3%%/spamassassin-run.3.gz
+man/man1/sa-awl.1.gz
+man/man1/sa-compile.1.gz
+man/man1/sa-learn.1.gz
+man/man1/sa-update.1.gz
+man/man1/spamassassin-run.1.gz
+man/man1/spamassassin.1.gz
+man/man1/spamc.1.gz
+man/man1/spamd.1.gz
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
-
+@comment ##################################################################
 @unexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
 @dir /var/lib/spamassassin
 @dir /var/lib
 @dir /var/db/spamassassin
-
+@dir(%%USER%%,%%GROUP%%,) /var/run/spamd
+@comment ##################################################################
 @unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
-
-@owner %%USER%%
-@group %%GROUP%%
-@dir /var/run/spamd
-@group
-@owner
-
+@comment ##################################################################
 @exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Downloading SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-update || true; fi
 @exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Compiling SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-compile || true; fi

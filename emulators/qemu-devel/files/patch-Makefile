@@ -1,6 +1,6 @@
---- Makefile.orig	2013-11-27 23:15:55.000000000 +0100
-+++ Makefile	2014-01-19 15:35:48.000000000 +0100
-@@ -72,7 +72,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -83,7 +83,11 @@ LIBS+=-lz $(LIBS_TOOLS)
  HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
@@ -9,10 +9,10 @@
 +else
  DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8 qmp-commands.txt
 +endif
- ifdef CONFIG_VIRTFS
- DOCS+=fsdev/virtfs-proxy-helper.1
+ ifdef CONFIG_LINUX
+ DOCS+=kvm_stat.1
  endif
-@@ -311,8 +315,10 @@
+@@ -362,8 +366,10 @@ endif
  
  install-doc: $(DOCS)
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"

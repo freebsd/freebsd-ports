@@ -3,6 +3,7 @@
 
 PORTNAME=	ninja-ide
 PORTVERSION=	2.3
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -23,7 +24,5 @@ USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ninja-ide
-GH_COMMIT=	85027df
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

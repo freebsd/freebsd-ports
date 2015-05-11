@@ -16,7 +16,7 @@ LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2
+USES=		alias autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

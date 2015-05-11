@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxo
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.3
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://github.com/Juniper/${PORTNAME}/releases/download/${PORTVERSION}/
 

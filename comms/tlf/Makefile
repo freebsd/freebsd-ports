@@ -2,38 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	tlf
-PORTVERSION=	0.9.31
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
-DISTNAME=	tlf-0.9.31-2
+MASTER_SITES=	http://www.hs-mittweida.de/tb/ \
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_AUTOTOOLS=	autoconf aclocal automake
-USES=		libtool
-AUTOMAKE_ARGS=	--add-missing
+LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
+
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	HAMLIB
-HAMLIB_DESC=	Use hamlib
+HAMLIB_DESC=	Support rig control via hamlib
 OPTION_DEFAULT=	HAMLIB
 
-.include <bsd.port.pre.mk>
+HAMLIB_LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+HAMLIB_CONFIGURE_ENABLE=hamlib
 
-.if ${PORT_OPTIONS:MHAMLIB}
-LIB_DEPENDS+=	libhamlib.so:${PORTSDIR}/comms/hamlib
-CONFIGURE_ARGS+=	--enable-hamlib
-.else
-CONFIGURE_ARGS+=	--disable-hamlib
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

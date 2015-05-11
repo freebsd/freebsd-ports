@@ -14,7 +14,6 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	algernon
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
-GH_COMMIT=	ff123ed # should be 9cbb488, but does not
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig gmake pathfix

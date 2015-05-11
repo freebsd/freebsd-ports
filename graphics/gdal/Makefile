@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -144,7 +145,7 @@ post-patch:
 	@${RM} -fr ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 post-install:
-	${INSTALL_LIB} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libopencc.so:${PORTSDIR}/chinese/opencc \
 		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
 
-USES=		cmake compiler:c++11-lang pkgconfig gettext perl5
+USES=		cmake compiler:c++11-lib pkgconfig gettext perl5
 USE_PERL5=	build patch
 USE_LDCONFIG=	yes
 USE_XORG=	xproto

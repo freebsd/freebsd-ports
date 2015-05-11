@@ -85,8 +85,5 @@ add-plist-ttf:
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry ${XFONTSDIR}" >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} "@dirrmtry ${FONTSDIR}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry share/fonts" >> ${TMPPLIST}
 

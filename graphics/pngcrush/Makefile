@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pngcrush
-PORTVERSION=	1.7.84
+PORTVERSION=	1.7.85
 CATEGORIES=	graphics
 MASTER_SITES=	SF/pmt/${PORTNAME}/${PORTVERSION}/ \
 		SF/pmt/${PORTNAME}/old-versions/1.7/${PORTVERSION}/

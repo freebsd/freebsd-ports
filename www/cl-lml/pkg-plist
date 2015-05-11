@@ -9,4 +9,3 @@ lib/common-lisp/lml/utils.lisp
 lib/common-lisp/lml/tests.lisp
 lib/common-lisp/lml/lml.asd
 lib/common-lisp/system-registry/lml.asd
-@dirrmtry lib/common-lisp/lml

@@ -1,7 +1,7 @@
---- src/Makefile.in.orig	2006-05-10 12:58:03.000000000 +0200
-+++ src/Makefile.in	2013-10-09 10:46:18.314690101 +0200
-@@ -28,10 +28,10 @@
- include		adns.make
+--- src/Makefile.in.orig	2014-10-19 23:07:03 UTC
++++ src/Makefile.in
+@@ -30,10 +30,10 @@ include		$(srcdir)/adns.make
+ DIRCFLAGS=	-I. -I$(srcdir)
  
  install:
 -		mkdir -p $(libdir) $(includedir)

@@ -379,6 +379,10 @@ INSTALL_TARGET=	install-strip
 USE_GHOSTSCRIPT_BUILD=yes
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+EXTRA_PATCHES+=	${FILESDIR}/extra-magick_locale.c
+.endif
+
 post-patch:
 # strip library name of variable parts that can change due to
 # the HDRI and Q16 option

@@ -10,9 +10,7 @@ COMMENT=	eGalax touch screen input driver for X.Org
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glebius
-GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	7f1e4ac
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	7f1e4ac
 DIST_SUBDIR=	xorg/driver
 
 LICENSE=	BSD2CLAUSE

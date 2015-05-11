@@ -1,7 +1,4 @@
 bin/openocd
-info/openocd.info
-info/openocd.info-1
-info/openocd.info-2
 lib/libopenocd.a
 lib/openocd/OpenULINK/ulink_firmware.hex
 share/openocd/contrib/libdcc/README

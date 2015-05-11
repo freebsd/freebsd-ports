@@ -12,6 +12,8 @@ MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	Bibliographic reference database
 
 BROKEN=		Fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-05-26
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libbtparse.so:${PORTSDIR}/textproc/btparse \

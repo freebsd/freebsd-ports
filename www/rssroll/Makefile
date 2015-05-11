@@ -3,7 +3,6 @@
 PORTNAME=	rssroll
 PORTVERSION=	0.4.1
 CATEGORIES=	www
-MASTER_SITES=	GHL
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C
@@ -16,8 +15,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue
-GH_COMMIT=	bd71bc8
-GH_PROJECT=	rssroll
 
 GNU_CONFIGURE=	yes
 

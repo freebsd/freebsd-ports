@@ -16,9 +16,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdolan
-GH_PROJECT=	pymp
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	bea99d9
+GH_TAGNAME=	bea99d9
 
 USES=		shebangfix python tar:bzip2
 SHEBANG_FILES=	*.py

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 CATEGORIES=	japanese
-MASTER_SITES=	GHL \
-n		${MASTER_SITE_LOCAL:S/%SUBDIR%\/$/nobutaka\/:skkdic/}
+MASTER_SITES=	LOCAL/nobutaka:skkdic
 PKGNAMESUFFIX=	-dict
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SKKDIC_FILE}:skkdic

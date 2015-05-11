@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
 		p5-Unicode-String>0:${PORTSDIR}/converters/p5-Unicode-String \
 		p5-File-Copy-Recursive>0:${PORTSDIR}/devel/p5-File-Copy-Recursive
 
-USES=		perl5 tar:tgz
+USES=		cpe perl5 tar:tgz
+CPE_VENDOR=	gilles_lamiral
 NO_BUILD=	yes
 
 PORTSCOUT=	limit:^1\.(\d\.){3}

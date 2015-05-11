@@ -7,8 +7,12 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web content management system
+
+LICENSE=	GPLv2 # or later
+
+USES=		cpe
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
@@ -23,8 +27,8 @@ do-install:
 	@(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR} "! -name db-config.php \
 			-or -name siteconfig.php")
-	@${INSTALL_DATA} ${WRKSRC}/db-config.php ${STAGEDIR}${WWWDIR}/db-config.php.sample; 
-	@${INSTALL_DATA} ${WRKSRC}/public_html/siteconfig.php \
+	${INSTALL_DATA} ${WRKSRC}/db-config.php ${STAGEDIR}${WWWDIR}/db-config.php.sample
+	${INSTALL_DATA} ${WRKSRC}/public_html/siteconfig.php \
 			${STAGEDIR}${WWWDIR}/public_html/siteconfig.php.sample
 	@${RM} ${STAGEDIR}${WWWDIR}/public_html/siteconfig.php
 .for i in db-config.php error.log siteconfig.php geeklog.rss

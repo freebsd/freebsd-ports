@@ -3,10 +3,10 @@
 
 PORTNAME=	litecoin
 PORTVERSION=	0.8.6.2
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	LOCAL/swills \
-		GHL
+MASTER_SITES=	LOCAL/swills
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Software
@@ -15,8 +15,6 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	fa2cfea
-GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
 USE_BDB=	yes

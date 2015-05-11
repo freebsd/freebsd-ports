@@ -2,6 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -13,20 +14,22 @@ COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
 NEED_ROOT=	yes
 
+USES=		cpe
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
+		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
+PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
+PKGMESSAGE=	${WRKSRC}/pkg-message
+
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
-DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
-		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
 LMAN1=		mailq.1 newaliases.1 vacation.1
 LMAN5=		aliases.5
 LMAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8 editmap.8
 SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
-PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
-PKGMESSAGE=	${WRKSRC}/pkg-message
 MILTER_SOVER?=	6
 
 OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER MILTER_SHARED MILTER_POOL TLSEXT_PADDING DOCS

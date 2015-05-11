@@ -25,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/debug_batch_directory/s:'.*':'/var/log/cleanfeed':" ${WRKSRC}/etc/cleanfeed.local
 
 do-install:
-	@${INSTALL} ${_SHROWNGRP} -d ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
 .for f in bad_adult_paths bad_body bad_cancel_paths bad_from bad_groups \
 		bad_hosts bad_paths bad_subject bad_url
 	@${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc

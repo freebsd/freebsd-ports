@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.7
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 
-MAINTAINER=	trevor@bitba.se
+MAINTAINER=	harrison.grundy@astrodoggroup.com
 COMMENT=	Geographic objects support for PostgreSQL databases
 
 LICENSE=	GPLv2

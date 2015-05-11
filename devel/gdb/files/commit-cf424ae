@@ -1,0 +1,348 @@
+diff --git gdb/amd64fbsd-nat.c gdb/amd64fbsd-nat.c
+index 1c396e2..b1b261c 100644
+--- gdb/amd64fbsd-nat.c
++++ gdb/amd64fbsd-nat.c
+@@ -26,6 +26,7 @@
+ #include <sys/types.h>
+ #include <sys/ptrace.h>
+ #include <sys/sysctl.h>
++#include <sys/user.h>
+ #include <machine/reg.h>
+ 
+ #include "fbsd-nat.h"
+@@ -244,24 +245,31 @@ Please report this to <bug-gdb@gnu.org>."),
+ 
+   SC_RBP_OFFSET = offset;
+ 
+-  /* FreeBSD provides a kern.ps_strings sysctl that we can use to
+-     locate the sigtramp.  That way we can still recognize a sigtramp
+-     if its location is changed in a new kernel.  Of course this is
+-     still based on the assumption that the sigtramp is placed
+-     directly under the location where the program arguments and
+-     environment can be found.  */
++#ifdef KERN_PROC_SIGTRAMP
++  /* Normally signal frames are detected via amd64fbsd_sigtramp_p.
++     However, FreeBSD 9.2 through 10.1 do not include the page holding
++     the signal code in core dumps.  These releases do provide a
++     kern.proc.sigtramp.<pid> sysctl that returns the location of the
++     signal trampoline for a running process.  We fetch the location
++     of the current (gdb) process and use this to identify signal
++     frames in core dumps from these releases.  Note that this only
++     works for core dumps of 64-bit (FreeBSD/amd64) processes and does
++     not handle core dumps of 32-bit (FreeBSD/i386) processes.  */
+   {
+-    int mib[2];
+-    long ps_strings;
++    int mib[4];
++    struct kinfo_sigtramp kst;
+     size_t len;
+ 
+     mib[0] = CTL_KERN;
+-    mib[1] = KERN_PS_STRINGS;
+-    len = sizeof (ps_strings);
+-    if (sysctl (mib, 2, &ps_strings, &len, NULL, 0) == 0)
++    mib[1] = KERN_PROC;
++    mib[2] = KERN_PROC_SIGTRAMP;
++    mib[3] = getpid ();
++    len = sizeof (kst);
++    if (sysctl (mib, 4, &kst, &len, NULL, 0) == 0)
+       {
+-	amd64fbsd_sigtramp_start_addr = ps_strings - 32;
+-	amd64fbsd_sigtramp_end_addr = ps_strings;
++	amd64fbsd_sigtramp_start_addr = (uintptr_t) kst.ksigtramp_start;
++	amd64fbsd_sigtramp_end_addr = (uintptr_t) kst.ksigtramp_end;
+       }
+   }
++#endif
+ }
+diff --git gdb/amd64fbsd-tdep.c gdb/amd64fbsd-tdep.c
+index abb0cab..e11b0f3 100644
+--- gdb/amd64fbsd-tdep.c
++++ gdb/amd64fbsd-tdep.c
+@@ -31,6 +31,33 @@
+ 
+ /* Support for signal handlers.  */
+ 
++/* Return whether THIS_FRAME corresponds to a FreeBSD sigtramp
++   routine.  */
++
++static const gdb_byte amd64fbsd_sigtramp_code[] =
++{
++  0x48, 0x8d, 0x7c, 0x24, 0x10, /* lea     SIGF_UC(%rsp),%rdi */
++  0x6a, 0x00,			/* pushq   $0 */
++  0x48, 0xc7, 0xc0, 0xa1, 0x01, 0x00, 0x00,
++				/* movq    $SYS_sigreturn,%rax */
++  0x0f, 0x05                    /* syscall */
++};
++
++static int
++amd64fbsd_sigtramp_p (struct frame_info *this_frame)
++{
++  CORE_ADDR pc = get_frame_pc (this_frame);
++  gdb_byte buf[sizeof amd64fbsd_sigtramp_code];
++
++  if (!safe_frame_unwind_memory (this_frame, pc, buf, sizeof buf))
++    return 0;
++  if (memcmp (buf, amd64fbsd_sigtramp_code, sizeof amd64fbsd_sigtramp_code) !=
++      0)
++    return 0;
++
++  return 1;
++}
++
+ /* Assuming THIS_FRAME is for a BSD sigtramp routine, return the
+    address of the associated sigcontext structure.  */
+ 
+@@ -88,8 +115,8 @@ static int amd64fbsd_r_reg_offset[] =
+ };
+ 
+ /* Location of the signal trampoline.  */
+-CORE_ADDR amd64fbsd_sigtramp_start_addr = 0x7fffffffffc0ULL;
+-CORE_ADDR amd64fbsd_sigtramp_end_addr = 0x7fffffffffe0ULL;
++CORE_ADDR amd64fbsd_sigtramp_start_addr;
++CORE_ADDR amd64fbsd_sigtramp_end_addr;
+ 
+ /* From <machine/signal.h>.  */
+ int amd64fbsd_sc_reg_offset[] =
+@@ -199,6 +226,7 @@ amd64fbsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
+ 
+   amd64_init_abi (info, gdbarch);
+ 
++  tdep->sigtramp_p = amd64fbsd_sigtramp_p;
+   tdep->sigtramp_start = amd64fbsd_sigtramp_start_addr;
+   tdep->sigtramp_end = amd64fbsd_sigtramp_end_addr;
+   tdep->sigcontext_addr = amd64fbsd_sigcontext_addr;
+diff --git gdb/i386fbsd-nat.c gdb/i386fbsd-nat.c
+index f4951d1..ad439e3 100644
+--- gdb/i386fbsd-nat.c
++++ gdb/i386fbsd-nat.c
+@@ -25,6 +25,7 @@
+ #include <sys/types.h>
+ #include <sys/ptrace.h>
+ #include <sys/sysctl.h>
++#include <sys/user.h>
+ 
+ #include "fbsd-nat.h"
+ #include "i386-tdep.h"
+@@ -148,25 +149,28 @@ _initialize_i386fbsd_nat (void)
+   /* Support debugging kernel virtual memory images.  */
+   bsd_kvm_add_target (i386fbsd_supply_pcb);
+ 
+-  /* FreeBSD provides a kern.ps_strings sysctl that we can use to
+-     locate the sigtramp.  That way we can still recognize a sigtramp
+-     if its location is changed in a new kernel.  Of course this is
+-     still based on the assumption that the sigtramp is placed
+-     directly under the location where the program arguments and
+-     environment can be found.  */
+-#ifdef KERN_PS_STRINGS
++#ifdef KERN_PROC_SIGTRAMP
++  /* Normally signal frames are detected via i386fbsd_sigtramp_p.
++     However, FreeBSD 9.2 through 10.1 do not include the page holding
++     the signal code in core dumps.  These releases do provide a
++     kern.proc.sigtramp.<pid> sysctl that returns the location of the
++     signal trampoline for a running process.  We fetch the location
++     of the current (gdb) process and use this to identify signal
++     frames in core dumps from these releases.  */
+   {
+-    int mib[2];
+-    u_long ps_strings;
++    int mib[4];
++    struct kinfo_sigtramp kst;
+     size_t len;
+ 
+     mib[0] = CTL_KERN;
+-    mib[1] = KERN_PS_STRINGS;
+-    len = sizeof (ps_strings);
+-    if (sysctl (mib, 2, &ps_strings, &len, NULL, 0) == 0)
++    mib[1] = KERN_PROC;
++    mib[2] = KERN_PROC_SIGTRAMP;
++    mib[3] = getpid ();
++    len = sizeof (kst);
++    if (sysctl (mib, 4, &kst, &len, NULL, 0) == 0)
+       {
+-	i386fbsd_sigtramp_start_addr = ps_strings - 128;
+-	i386fbsd_sigtramp_end_addr = ps_strings;
++	i386fbsd_sigtramp_start_addr = (uintptr_t) kst.ksigtramp_start;
++	i386fbsd_sigtramp_end_addr = (uintptr_t) kst.ksigtramp_end;
+       }
+   }
+ #endif
+diff --git gdb/i386fbsd-tdep.c gdb/i386fbsd-tdep.c
+index 8d237f0..d4516ee 100644
+--- gdb/i386fbsd-tdep.c
++++ gdb/i386fbsd-tdep.c
+@@ -29,6 +29,154 @@
+ #include "fbsd-tdep.h"
+ #include "solib-svr4.h"
+ 
++/* Support for signal handlers.  */
++
++/* Return whether THIS_FRAME corresponds to a FreeBSD sigtramp
++   routine.  */
++
++/* FreeBSD/i386 supports three different signal trampolines, one for
++   versions before 4.0, a second for 4.x, and a third for 5.0 and
++   later.  To complicate matters, FreeBSD/i386 binaries running under
++   an amd64 kernel use a different set of trampolines.  These
++   trampolines differ from the i386 kernel trampolines in that they
++   omit a middle section that conditionally restores %gs.  */
++
++static const gdb_byte i386fbsd_sigtramp_start[] =
++{
++  0x8d, 0x44, 0x24, 0x20,       /* lea     SIGF_UC(%esp),%eax */
++  0x50				/* pushl   %eax */
++};
++
++static const gdb_byte i386fbsd_sigtramp_middle[] =
++{
++  0xf7, 0x40, 0x54, 0x00, 0x00, 0x02, 0x00,
++				/* testl   $PSL_VM,UC_EFLAGS(%eax) */
++  0x75, 0x03,			/* jne	   +3 */
++  0x8e, 0x68, 0x14		/* mov	   UC_GS(%eax),%gs */
++};
++
++static const gdb_byte i386fbsd_sigtramp_end[] =
++{
++  0xb8, 0xa1, 0x01, 0x00, 0x00, /* movl   $SYS_sigreturn,%eax */
++  0x50,			/* pushl   %eax */
++  0xcd, 0x80			/* int	   $0x80 */
++};
++
++static const gdb_byte i386fbsd_freebsd4_sigtramp_start[] =
++{
++  0x8d, 0x44, 0x24, 0x14,	/* lea	   SIGF_UC4(%esp),%eax */
++  0x50				/* pushl   %eax */
++};
++
++static const gdb_byte i386fbsd_freebsd4_sigtramp_middle[] =
++{
++  0xf7, 0x40, 0x54, 0x00, 0x00, 0x02, 0x00,
++				/* testl   $PSL_VM,UC4_EFLAGS(%eax) */
++  0x75, 0x03,			/* jne	   +3 */
++  0x8e, 0x68, 0x14		/* mov	   UC4_GS(%eax),%gs */
++};
++
++static const gdb_byte i386fbsd_freebsd4_sigtramp_end[] =
++{
++  0xb8, 0x58, 0x01, 0x00, 0x00, /* movl    $344,%eax */
++  0x50,			/* pushl   %eax */
++  0xcd, 0x80			/* int	   $0x80 */
++};
++
++static const gdb_byte i386fbsd_osigtramp_start[] =
++{
++  0x8d, 0x44, 0x24, 0x14,	/* lea	   SIGF_SC(%esp),%eax */
++  0x50				/* pushl   %eax */
++};
++
++static const gdb_byte i386fbsd_osigtramp_middle[] =
++{
++  0xf7, 0x40, 0x18, 0x00, 0x00, 0x02, 0x00,
++				/* testl   $PSL_VM,SC_PS(%eax) */
++  0x75, 0x03,			/* jne	   +3 */
++  0x8e, 0x68, 0x44		/* mov	   SC_GS(%eax),%gs */
++};
++
++static const gdb_byte i386fbsd_osigtramp_end[] =
++{
++  0xb8, 0x67, 0x00, 0x00, 0x00, /* movl    $103,%eax */
++  0x50,			/* pushl   %eax */
++  0xcd, 0x80			/* int	   $0x80 */
++};
++
++/* The three different trampolines are all the same size.  */
++gdb_static_assert (sizeof i386fbsd_sigtramp_start ==
++		   sizeof i386fbsd_freebsd4_sigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_start ==
++		   sizeof i386fbsd_osigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle ==
++		   sizeof i386fbsd_freebsd4_sigtramp_middle);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle ==
++		   sizeof i386fbsd_osigtramp_middle);
++gdb_static_assert (sizeof i386fbsd_sigtramp_end ==
++		   sizeof i386fbsd_freebsd4_sigtramp_end);
++gdb_static_assert (sizeof i386fbsd_sigtramp_end ==
++		   sizeof i386fbsd_osigtramp_end);
++
++/* We assume that the middle is the largest chunk below.  */
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle >
++		   sizeof i386fbsd_sigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle >
++		   sizeof i386fbsd_sigtramp_end);
++
++static int
++i386fbsd_sigtramp_p (struct frame_info *this_frame)
++{
++  CORE_ADDR pc = get_frame_pc (this_frame);
++  gdb_byte buf[sizeof i386fbsd_sigtramp_middle];
++  const gdb_byte *middle, *end;
++
++  /* Look for a matching start.  */
++  if (!safe_frame_unwind_memory (this_frame, pc, buf,
++				 sizeof i386fbsd_sigtramp_start))
++    return 0;
++  if (memcmp (buf, i386fbsd_sigtramp_start, sizeof i386fbsd_sigtramp_start) ==
++      0) {
++    middle = i386fbsd_sigtramp_middle;
++    end = i386fbsd_sigtramp_end;
++  } else if (memcmp (buf, i386fbsd_freebsd4_sigtramp_start,
++		     sizeof i386fbsd_freebsd4_sigtramp_start) == 0) {
++    middle = i386fbsd_freebsd4_sigtramp_middle;
++    end = i386fbsd_freebsd4_sigtramp_end;
++  } else if (memcmp (buf, i386fbsd_osigtramp_start,
++		     sizeof i386fbsd_osigtramp_start) == 0) {
++    middle = i386fbsd_osigtramp_middle;
++    end = i386fbsd_osigtramp_end;
++  } else
++    return 0;
++
++  /* Since the end is shorter than the middle, check for a matching end
++     next.  */
++  pc += sizeof i386fbsd_sigtramp_start;
++  if (!safe_frame_unwind_memory (this_frame, pc, buf,
++				 sizeof i386fbsd_sigtramp_end))
++    return 0;
++  if (memcmp (buf, end, sizeof i386fbsd_sigtramp_end) == 0)
++    return 1;
++
++  /* If the end didn't match, check for a matching middle.  */
++  if (!safe_frame_unwind_memory (this_frame, pc, buf,
++				 sizeof i386fbsd_sigtramp_middle))
++    return 0;
++  if (memcmp (buf, middle, sizeof i386fbsd_sigtramp_middle) != 0)
++    return 0;
++
++  /* The middle matched, check for a matching end.  */
++  pc += sizeof i386fbsd_sigtramp_middle;
++  if (!safe_frame_unwind_memory (this_frame, pc, buf,
++				 sizeof i386fbsd_sigtramp_end))
++    return 0;
++  if (memcmp (buf, end, sizeof i386fbsd_sigtramp_end) != 0)
++    return 0;
++
++  return 1;
++}
++
+ /* FreeBSD 3.0-RELEASE or later.  */
+ 
+ /* From <machine/reg.h>.  */
+@@ -43,8 +191,8 @@ static int i386fbsd_r_reg_offset[] =
+ };
+ 
+ /* Sigtramp routine location.  */
+-CORE_ADDR i386fbsd_sigtramp_start_addr = 0xbfbfdf20;
+-CORE_ADDR i386fbsd_sigtramp_end_addr = 0xbfbfdff0;
++CORE_ADDR i386fbsd_sigtramp_start_addr;
++CORE_ADDR i386fbsd_sigtramp_end_addr;
+ 
+ /* From <machine/signal.h>.  */
+ int i386fbsd_sc_reg_offset[] =
+@@ -139,6 +287,8 @@ i386fbsdaout_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
+   /* FreeBSD uses -freg-struct-return by default.  */
+   tdep->struct_return = reg_struct_return;
+ 
++  tdep->sigtramp_p = i386fbsd_sigtramp_p;
++
+   /* FreeBSD uses a different memory layout.  */
+   tdep->sigtramp_start = i386fbsd_sigtramp_start_addr;
+   tdep->sigtramp_end = i386fbsd_sigtramp_end_addr;

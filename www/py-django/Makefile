@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.7.7
+PORTVERSION=	1.8.1
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
 		CHEESESHOP
@@ -31,8 +31,7 @@ OPTIONS_GROUP=	DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
-PLIST_FILES=	man/man1/django-admin.1.gz \
-		man/man1/gather_profile_stats.1.gz
+PLIST_FILES=	man/man1/django-admin.1.gz
 
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb

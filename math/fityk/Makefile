@@ -3,7 +3,7 @@
 
 PORTNAME=	fityk
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	GHC SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
@@ -19,11 +19,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USES=		desktop-file-utils gmake libtool shared-mime-info tar:bzip2
+USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
+		shared-mime-info tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-lbz2 -lz
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojdyr
+USE_CXXSTD=	c++11
 USE_GNOME=	gtk20
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute

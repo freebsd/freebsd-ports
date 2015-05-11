@@ -64,6 +64,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += cf
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
@@ -314,6 +315,7 @@
     SUBDIR += libnfs
     SUBDIR += libnids
     SUBDIR += libnids-libnet11
+    SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
     SUBDIR += liboauth
     SUBDIR += libopennet
@@ -376,6 +378,7 @@
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd
     SUBDIR += miredo
+    SUBDIR += miruo
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
@@ -428,6 +431,7 @@
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
+    SUBDIR += nsscache
     SUBDIR += nstxd
     SUBDIR += ntimed
     SUBDIR += ntlmaps
@@ -435,7 +439,6 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
-    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -868,6 +871,7 @@
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pjsip
+    SUBDIR += pjsip-extsrtp
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
@@ -1044,6 +1048,7 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-ecloud
+    SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks

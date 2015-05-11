@@ -1,0 +1,5 @@
+The Intel OpenMP* runtime is the part of the OpenMP*
+implementation that your code is linked against, and that manages the
+multiple threads in an OpenMP* program while it is executing.
+
+WWW: http://openmp.llvm.org

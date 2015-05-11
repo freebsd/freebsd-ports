@@ -3,6 +3,7 @@
 
 PORTNAME=	cgrep
 PORTVERSION=	6.4.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -23,8 +24,6 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awgn
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	0ade66d
 
 USES=	gmake
 

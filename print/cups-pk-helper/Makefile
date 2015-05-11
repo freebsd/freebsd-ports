@@ -14,7 +14,8 @@ LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 USE_GNOME=	glib20 intltool
-USES=		gettext gmake pkgconfig tar:xz
+USES=		cpe gettext gmake pkgconfig tar:xz
+CPE_VENDOR=	cups-pk-helper_project
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

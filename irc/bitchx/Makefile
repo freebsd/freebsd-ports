@@ -8,7 +8,6 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	dan.mashal@gmail.com
-# Co-maintainer: Chris Petrik <chris@bsdjunk.com> (PR/181627)
 COMMENT=	Feature-rich scriptable IRC client
 
 LICENSE=	BSD3CLAUSE
@@ -36,8 +35,6 @@ PLUGINS_DESC=	Build a handful of BitchX plugins
 HEBREW_DESC=	Add support for hebrew language
 TOGGLES_DESC=	Disable away,kick_ops,auto_rejoin
 OPTIONS_DEFAULT=	PLUGINS SSL
-
-MAKE_JOBS_UNSAFE=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

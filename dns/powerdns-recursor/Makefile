@@ -1,11 +1,12 @@
 # Created by: sten@blinkenlights.nl
 # $FreeBSD$
 
-PORTNAME=	powerdns-recursor
-PORTVERSION=	3.7.1
+PORTNAME=	recursor
+PORTVERSION=	3.7.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
-DISTNAME=	pdns-recursor-${PORTVERSION}
+PKGNAMEPREFIX=	powerdns-
+DISTNAME=	pdns-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
@@ -15,8 +16,10 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake tar:bzip2
+USES=		cpe gmake tar:bzip2
 GNU_CONFIGURE=	YES
+
+CPE_VENDOR=	powerdns
 
 OPTIONS_DEFINE=	SETUID LUA STATIC
 OPTIONS_DEFAULT=	SETUID

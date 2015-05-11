@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	B-Flags
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
@@ -16,11 +16,10 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	yes
-
-#pre-install:	test
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/B/Flags/Flags.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/B/Flags/Flags.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/B/Flags/Flags.so
 
 .include <bsd.port.mk>

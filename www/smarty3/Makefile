@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	smarty3
-PORTVERSION=	3.1.19
+PORTVERSION=	3.1.21
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/files/
 DISTNAME=	Smarty-${PORTVERSION}
 
 MAINTAINER=	ports@michael-fausten.de
 COMMENT=	PHP compiling template engine
+
+LICENSE=	LGPL3
 
 WRKSRC=		${WRKDIR}/Smarty-${PORTVERSION}
 

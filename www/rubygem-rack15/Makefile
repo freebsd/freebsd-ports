@@ -4,11 +4,11 @@
 # XXX: preferably, the full rubygem-* tree.  rack version requirements are specified with ~>
 # XXX: which requires *EXACTLY* that version.
 #
-# 	www/rubygem-actionpack
+# 	www/rubygem-actionpack4
 # 	www/rubygem-innate
 
 PORTNAME=	rack
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 PORTEPOCH=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG

@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:${PORTSDIR}/devel/gnu-efi \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mjg59
-GH_COMMIT=	6f4d516
 
 USES=		gmake
 USE_GCC=	yes

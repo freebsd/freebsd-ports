@@ -6,7 +6,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Leightweight Chef API client
 
 LICENSE=	APACHE20

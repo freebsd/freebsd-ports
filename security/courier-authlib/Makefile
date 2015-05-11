@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.66.1
+PORTVERSION=	0.66.2
 PORTREVISION?=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
@@ -31,7 +31,8 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
 
 USES=		iconv gmake libtool perl5 tar:bzip2
 GNU_CONFIGURE=	yes
@@ -167,7 +168,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g;  \
-		s|mysql_connect|mysql_real_connect|g' \
+		s|mysql_connect|mysql_real_connect|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/*/configure \
 		${WRKSRC}/configure
 .for subdir in ${REMOVE_SUBDIRS}
@@ -186,10 +188,12 @@ pre-configure:
 	fi
 
 post-install:
+.if !empty(DOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 
 .endif	# !defined(PKGNAMESUFFIX)
 

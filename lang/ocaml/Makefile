@@ -1,20 +1,17 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
+
 PORTNAME=	ocaml
-PORTVERSION=	4.01.0
-PORTREVISION=	4
+PORTVERSION=	4.02.1
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ \
-		${MASTER_SITE_GENTOO}
+MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
+		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	michipili@gmail.com
-COMMENT=	The Objective Caml compiler and programming environment
+COMMENT=	Objective Caml compiler and programming environment
 
 LICENSE=		QPL10 LGPL20
 LICENSE_COMB=		multi
@@ -22,7 +19,8 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake tar:bzip2
+USES=		cpe gmake tar:xz
+CPE_VENDOR=	inria
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
@@ -37,9 +35,8 @@ CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-aspp "${CC} -c" \
 		-partialld "${LD} -r"
 
-OPTIONS_DEFINE= X11 TK THREADS DOCS EXAMPLES
-OPTIONS_DEFAULT=X11 TK THREADS
-TK_DESC=	LablTk library (requires X11 support)
+OPTIONS_DEFINE= X11 THREADS DOCS EXAMPLES
+OPTIONS_DEFAULT=X11 THREADS
 CMP_LIB_DESC=	Install compiler libraries
 PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz \
 		${DOCSDISTNAME}-refman.pdf
@@ -53,10 +50,12 @@ CONFLICTS=	metaocaml-[0-9]*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${DOCSDISTNAME}-refman-html.tar.gz \
-		${DOCSDISTNAME}-refman.ps.gz \
-		${DOCSDISTNAME}-refman.pdf
-EXTRACT_ONLY+=	${DOCSDISTNAME}-refman-html.tar.gz
+DISTFILES:=	${DISTNAME}${EXTRACT_SUFX} \
+		${DOCSDISTNAME}-refman-html.tar.gz:docs \
+		${DOCSDISTNAME}-refman.ps.gz:docs \
+		${DOCSDISTNAME}-refman.pdf:docs
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX} \
+		${DOCSDISTNAME}-refman-html.tar.gz
 PLIST_SUB+=	DOC=""
 PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz ${DOCSDISTNAME}-refman.pdf
 .else
@@ -90,30 +89,12 @@ CONFLICTS+=	ocaml-[0-9]*
 CONFIGURE_ARGS+=-no-graph
 .endif
 
-.if ${PORT_OPTIONS:MTK}
-. if ${PORT_OPTIONS:MEXAMPLES}
-PORTEXAMPLES=	examples_camltk examples_labltk
-.endif
-. if ! ${PORT_OPTIONS:MX11}
-IGNORE=requires X11 support to build TK bindings
-. endif
-USES+=		tk:84+
-PLIST_SUB+=	TK=""
-CONFIGURE_ARGS+=	-tkdefs \
-			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
-			-tklibs "-L${LOCALBASE}/lib -ltk${TK_VER:S|.||} \
-			-ltcl${TCL_VER:S|.||} ${THR_LD}"
-.else
-PLIST_SUB+=	TK="@comment "
-CONFIGURE_ARGS+=-no-tk
-.endif
-
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manfiles"
 
 OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
-.if defined(NO_PROFILE) || ${OCAML_ARCH} == power
+.if defined(NO_PROFILE) || ${OCAML_ARCH} == power || ${OCAML_ARCH} == amd64
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""
@@ -143,16 +124,6 @@ post-patch:
 		-e 's|-lbfd -ldl|-lbfd $$dllib|' \
 		${WRKSRC}/configure
 # don't hardcode gcc for depend target
-# be aware of staging
-	@${REINPLACE_CMD} -E \
-		-e 's|gcc|$$(CC)|' \
-		-e '/^install/,/^$$/s@\$$\(((INSTALL_)?(BIN|LIB|STUBLIB|COMPLIB|MANO?|INSTALL|INSTALL_CUSTOM)DIR)\)@$$(STAGEDIR)$$(\1)@g' \
-		`find ${WRKSRC} -name 'Makefile*'`
-	@${REINPLACE_CMD} -E -e 's/^DIR=/DIR=$$(STAGEDIR)/' ${WRKSRC}/man/Makefile
-.if ${PORT_OPTIONS:MTK}
-	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|' \
-		${WRKSRC}/otherlibs/labltk/examples_labltk/hello.tcl
-.endif
 
 post-configure:
 # CFLAGS safeness
@@ -172,23 +143,13 @@ post-configure:
 		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \4,' \
 		-e 's,(${PATTERN}+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
 
-check test: install
+check-test: do-install
 	@cd ${WRKSRC}/testsuite; ${RM} -f _log; for d in tests/* ; do \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} one DIR=$${d} \
 	2>&1 | tee -a _log || ${TRUE} ; done ; \
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} report
 
 post-install:
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ocaml/ocamldoc/custom
-	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/lib/ocaml/expunge
-.if ${PORT_OPTIONS:MTK}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/otherlibs/labltk && \
-		${COPYTREE_SHARE} examples_labltk ${STAGEDIR}${EXAMPLESDIR} \
-		"! -name .ignore" && \
-		${COPYTREE_SHARE} examples_camltk ${STAGEDIR}${EXAMPLESDIR} \
-		"! -name .ignore")
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})

@@ -4,7 +4,6 @@
 PORTNAME=	hydrogen
 PORTVERSION=	0.9.6.1
 CATEGORIES=	audio
-MASTER_SITES=	GHL
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
@@ -17,9 +16,6 @@ CONFLICTS=	hydrogen-devel-0.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
-GH_PROJECT=	hydrogen
-GH_TAGNAME=	0.9.6.1
-GH_COMMIT=	71ec7c5
 
 USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
 		qt3support rcc_build sql uic_build xml

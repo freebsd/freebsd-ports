@@ -16,7 +16,5 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	fritzy
 GH_PROJECT=	SleekXMPP
-GH_TAGNAME=	1.3.1
-GH_COMMIT=	e558269
 
 .include <bsd.port.mk>

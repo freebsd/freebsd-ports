@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	logstash-contrib
+DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2
-CATEGORIES=	sysutils
 PORTREVISION=	3
+CATEGORIES=	sysutils
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Standard plugins contributed to the Logstash project
@@ -13,8 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/logstash/bin/logstash:${PORTSDIR}/sysutils/logstash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch
-GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	efd53ef
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -146,7 +146,7 @@ stripped() {
 	    while read f; do
 		    read output
 		case "${output}" in
-			ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
+			*ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|*ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
 				warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
 				;;
 		esac

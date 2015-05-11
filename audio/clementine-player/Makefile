@@ -10,8 +10,6 @@ PKGNAMESUFFIX=	-player
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
 GH_PROJECT=	Clementine
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	c189ee5
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4

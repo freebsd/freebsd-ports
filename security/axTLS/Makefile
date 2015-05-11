@@ -3,7 +3,7 @@
 
 PORTNAME=	axTLS
 PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTVERSION}
@@ -102,7 +102,7 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_LIB} ${STAGE}/libaxtls.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${STAGE}/libaxtls.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${STAGE}/libaxtls.so.1.2 ${STAGEDIR}${PREFIX}/lib
 	${LN} -s libaxtls.so.1.2 ${STAGEDIR}${PREFIX}/lib/libaxtls.so.1
 	${LN} -fs libaxtls.so.1 ${STAGEDIR}${PREFIX}/lib/libaxtls.so

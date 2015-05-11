@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.2
+PORTVERSION=	17.5.3
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -26,8 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 ERL_RELEASE=	17.5
 
-USES=		gmake
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 

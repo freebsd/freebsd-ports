@@ -12,3 +12,5 @@ sbin/credns-notify
 sbin/credns-patch
 sbin/credns-xfer
 sbin/crednsc
+@dir(%%CREDNSUSER%%,%%CREDNSGROUP%%,755) %%CREDNSRUNDIR%%
+@dir(%%CREDNSUSER%%,%%CREDNSGROUP%%,755) %%CREDNSDBDIR%%
