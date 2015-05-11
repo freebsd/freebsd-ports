@@ -44,7 +44,5 @@ post-install:
 .endfor
 	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} "s,^${STAGEDIR}${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
