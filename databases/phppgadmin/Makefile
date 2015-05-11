@@ -12,7 +12,8 @@ COMMENT=	Web Based Postgres Administration
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
+CPE_VENDOR=	phppgadmin_project
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
 .endif
