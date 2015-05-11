@@ -59,10 +59,13 @@ MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" \
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
+post-patch:
 # We need to teach symon about mbstat changes/removal in r253351 and r253361.
 .if ${OSVERSION} > 1000000
-post-patch:
 	@${RM} ${WRKSRC}/platform/FreeBSD/sm_mbuf.c
+.endif
+.if ${OSVERSION} >= 1100070
+	@${REINPLACE_CMD} 's|altq/|net/&|' ${WRKSRC}/platform/FreeBSD/sm_pfq.c
 .endif
 
 .include <bsd.port.post.mk>
