@@ -15,6 +15,8 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
 		libcblas.so:${PORTSDIR}/math/cblas
 
+BROKEN=		Installation has unresolved issues
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
