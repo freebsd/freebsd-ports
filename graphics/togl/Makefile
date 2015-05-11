@@ -3,13 +3,16 @@
 
 PORTNAME=	togl
 PORTVERSION=	1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF/${PORTNAME}/Togl/${PORTVERSION}
 DISTNAME=	Togl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk OpenGL widget
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES+=		gmake tk
 USE_XORG=	x11 xt xmu
@@ -36,9 +39,10 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${TOGL_INSTDIR}
-.for i in togl.h togl_ws.h libTogl1.7.so pkgIndex.tcl
+.for i in togl.h togl_ws.h pkgIndex.tcl
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${TOGL_INSTDIR}
 .endfor
+	${INSTALL_LIB} ${WRKSRC}/libTogl1.7.so ${STAGEDIR}${TOGL_INSTDIR}
 	${LN} -s libTogl1.7.so  ${STAGEDIR}${TOGL_INSTDIR}/libtogl.so.1
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so.1
