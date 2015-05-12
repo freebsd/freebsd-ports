@@ -10,7 +10,7 @@
 +#define SHA1Init SHA1_Init
 +#define SHA1Update SHA1_Update
 +#define SHA1Final SHA1_Final
-+#include <sha.h>
++#include <openssl/sha.h>
 +#else
  #include <sha1.h>
  #endif
