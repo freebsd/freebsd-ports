@@ -372,6 +372,7 @@
     SUBDIR += greed
     SUBDIR += gretools
     SUBDIR += grhino
+    SUBDIR += griels-quest
     SUBDIR += gru
     SUBDIR += grubik
     SUBDIR += gshisen
