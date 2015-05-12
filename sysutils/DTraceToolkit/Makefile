@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.brendangregg.com/DTraceToolkit/
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
-USES=	shebangfix
+USES=		shebangfix
 sh_OLD_CMD=	/usr/bin/sh
-sh_CMD=	${SH}
+sh_CMD=		${SH}
 SHEBANG_LANG+=	sh
 
 SHEBANG_FILES=	hotkernel procsystime opensnoop Apps/shellsnoop
