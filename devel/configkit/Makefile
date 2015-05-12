@@ -4,13 +4,11 @@
 PORTNAME=	configkit
 PORTVERSION=	0.4.20080902
 CATEGORIES=	devel
-MASTER_SITES=	http://phk.freebsd.dk/phkrel/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=mat
+MASTER_SITES=	http://phk.freebsd.dk/phkrel/
 DISTNAME=	ConfigKit.${PORTVERSION:C/0.4.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Somewhat prototypical facility for generating CLI interfaces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:${PORTSDIR}/devel/libphk
