@@ -57,6 +57,110 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9b43004-f5fd-4807-b1d7-dbf66455b244">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>38.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>38.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.35</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.35</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.7.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA-2015-46 Miscellaneous memory safety hazards (rv:38.0
+	    / rv:31.7)</p>
+	  <p>MFSA-2015-47 Buffer overflow parsing H.264 video with
+	    Linux Gstreamer</p>
+	  <p>MFSA-2015-48 Buffer overflow with SVG content and CSS</p>
+	  <p>MFSA-2015-49 Referrer policy ignored when links opened by
+	    middle-click and context menu</p>
+	  <p>MFSA-2015-50 Out-of-bounds read and write in asm.js validation</p>
+	  <p>MFSA-2015-51 Use-after-free during text processing with
+	    vertical text enabled</p>
+	  <p>MFSA-2015-52 Sensitive URL encoded information written to
+	    Android logcat</p>
+	  <p>MFSA-2015-53 Use-after-free due to Media Decoder Thread creation
+	    during shutdown</p>
+	  <p>MFSA-2015-54 Buffer overflow when parsing compressed XML</p>
+	  <p>MFSA-2015-55 Buffer overflow and out-of-bounds read while
+	    parsing MP4 video metadata</p>
+	  <p>MFSA-2015-56 Untrusted site hosting trusted page can
+	    intercept webchannel responses</p>
+	  <p>MFSA-2015-57 Privilege escalation through IPC channel messages</p>
+	  <p>MFSA-2015-58 Mozilla Windows updater can be run outside
+	    of application directory</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3079</cvename>
+      <cvename>CVE-2015-0797</cvename>
+      <cvename>CVE-2015-0833</cvename>
+      <cvename>CVE-2015-2708</cvename>
+      <cvename>CVE-2015-2709</cvename>
+      <cvename>CVE-2015-2710</cvename>
+      <cvename>CVE-2015-2711</cvename>
+      <cvename>CVE-2015-2712</cvename>
+      <cvename>CVE-2015-2713</cvename>
+      <cvename>CVE-2015-2714</cvename>
+      <cvename>CVE-2015-2715</cvename>
+      <cvename>CVE-2015-2716</cvename>
+      <cvename>CVE-2015-2717</cvename>
+      <cvename>CVE-2015-2718</cvename>
+      <cvename>CVE-2015-2720</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-46/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-47/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-48/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-49/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-50/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-51/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-52/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-53/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-54/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-55/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-56/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-57/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-58/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-12</discovery>
+      <entry>2015-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe910ed6-f88d-11e4-9ae3-0050562a4d7b">
     <topic>suricata -- TLS/DER Parser Bug (DoS)</topic>
     <affects>
