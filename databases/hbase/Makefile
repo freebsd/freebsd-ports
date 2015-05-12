@@ -4,11 +4,10 @@
 PORTNAME=	hbase
 PORTVERSION=	0.98.9
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_APACHE} \
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org

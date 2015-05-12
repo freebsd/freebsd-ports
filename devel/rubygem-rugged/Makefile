@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rugged
-PORTVERSION=	0.21.0
+PORTVERSION=	0.22.1b1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Rugged is a Ruby binding to the libgit2 linkable library
 LICENSE=	MIT
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake \
-		libgit2>=${PORTVERSION}:${PORTSDIR}/devel/libgit2
+		libgit2>=0.22:${PORTSDIR}/devel/libgit2
 LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
 
 USE_RUBY=	yes

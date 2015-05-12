@@ -8,7 +8,6 @@ PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	http://portland.freedesktop.org/download/
 MASTER_SITES=	LOCAL/kwm
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to allow all applications to integrate with the free desktop

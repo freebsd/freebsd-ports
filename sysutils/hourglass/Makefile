@@ -2,9 +2,9 @@
 
 PORTNAME=	hourglass
 PORTVERSION=	1.0.1
+DISTVERSIONSUFFIX=	b
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
-DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Real-time application to learn how CPU scheduling works

@@ -13,7 +13,7 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
+WRKSRC_SUBDIR=		src
 
 PLIST_FILES=	bin/ucon64 lib/libdiscmage.so
 

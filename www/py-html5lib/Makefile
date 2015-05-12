@@ -25,8 +25,8 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MTEST)
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:master \
-		${PORTNAME}-${PORTVERSION}-testdata${EXTRACT_SUFX}:test
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:master \
+		${DISTNAME}-testdata${EXTRACT_SUFX}:test
 BUILD_DEPENDS+=	${TEST_DEPENDS}
 .endif
 

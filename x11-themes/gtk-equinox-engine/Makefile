@@ -8,7 +8,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	gtk-
 PKGNAMESUFFIX=	-engine
-DISTFILES=	121881-${PORTNAME}-${PORTVERSION}.tar.gz \
+DISTFILES=	121881-${DISTNAME}.tar.gz \
 		140449-${PORTNAME}-themes-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

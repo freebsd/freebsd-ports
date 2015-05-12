@@ -4,7 +4,6 @@
 PORTNAME=	treesheets
 PORTVERSION=	0.0.20150405
 CATEGORIES=	deskutils
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Free form data organizer

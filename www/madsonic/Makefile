@@ -5,8 +5,8 @@ PORTNAME=	madsonic
 PORTVERSION=	5.1.5200
 CATEGORIES=	www java
 MASTER_SITES=	http://www.madsonic.org/download/5.1/
-DISTFILES=	${DISTDATE}_${PORTNAME}-${PORTVERSION}-war-tomcat.zip \
-	${DISTDATE}_${PORTNAME}-${PORTVERSION}-war-jspc.zip
+DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
+	${DISTDATE}_${DISTNAME}-war-jspc.zip
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Madsonic streaming media server

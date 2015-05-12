@@ -7,8 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.python.jp/doc/contrib/mailman/_static/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	tota/${PORTNAME}
+		LOCAL/tota/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.j/+j/}
 DIST_SUBDIR=	mailman
 

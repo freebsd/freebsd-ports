@@ -145,9 +145,9 @@
 %%DRUPAL_BASE%%/misc/tableheader.js
 %%DRUPAL_BASE%%/misc/tableselect.js
 %%DRUPAL_BASE%%/misc/textarea.js
-%%DRUPAL_BASE%%/misc/throbber.gif
 %%DRUPAL_BASE%%/misc/throbber-active.gif
 %%DRUPAL_BASE%%/misc/throbber-inactive.png
+%%DRUPAL_BASE%%/misc/throbber.gif
 %%DRUPAL_BASE%%/misc/timezone.js
 %%DRUPAL_BASE%%/misc/tree-bottom.png
 %%DRUPAL_BASE%%/misc/tree.png
@@ -572,6 +572,8 @@
 %%DRUPAL_BASE%%/modules/search/tests/search_embedded_form.module
 %%DRUPAL_BASE%%/modules/search/tests/search_extra_type.info
 %%DRUPAL_BASE%%/modules/search/tests/search_extra_type.module
+%%DRUPAL_BASE%%/modules/search/tests/search_node_tags.info
+%%DRUPAL_BASE%%/modules/search/tests/search_node_tags.module
 %%DRUPAL_BASE%%/modules/shortcut/shortcut-rtl.css
 %%DRUPAL_BASE%%/modules/shortcut/shortcut.admin.css
 %%DRUPAL_BASE%%/modules/shortcut/shortcut.admin.inc
@@ -585,9 +587,6 @@
 %%DRUPAL_BASE%%/modules/shortcut/shortcut.test
 %%DRUPAL_BASE%%/modules/simpletest/drupal_web_test_case.php
 %%DRUPAL_BASE%%/modules/simpletest/files/README.txt
-%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css
-%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.optimized.css
-%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.unoptimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css.optimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css.unoptimized.css
@@ -597,12 +596,16 @@
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_input_without_import.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_input_without_import.css.optimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_input_without_import.css.unoptimized.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.optimized.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.unoptimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/import1.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/import2.css
 %%DRUPAL_BASE%%/modules/simpletest/files/html-1.txt
 %%DRUPAL_BASE%%/modules/simpletest/files/html-2.html
 %%DRUPAL_BASE%%/modules/simpletest/files/image-1.png
 %%DRUPAL_BASE%%/modules/simpletest/files/image-2.jpg
+%%DRUPAL_BASE%%/modules/simpletest/files/image-test-transparent-out-of-range.gif
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.gif
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.jpg
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.png
@@ -621,6 +624,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/simpletest.module
 %%DRUPAL_BASE%%/modules/simpletest/simpletest.pages.inc
 %%DRUPAL_BASE%%/modules/simpletest/simpletest.test
+%%DRUPAL_BASE%%/modules/simpletest/src/Tests/PSR4WebTest.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/actions.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/actions_loop_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/actions_loop_test.install
@@ -648,6 +652,10 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/database_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/database_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/database_test.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_class.inc
+%%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_interface.inc
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.info
@@ -656,10 +664,10 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_cache_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_cache_test_dependency.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_cache_test_dependency.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.test
-%%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.module
@@ -701,6 +709,10 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/Nested/NestedExampleTest.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/psr_0_test/psr_0_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/psr_0_test/psr_0_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/psr_4_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/psr_4_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/src/Tests/ExampleTest.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/src/Tests/Nested/NestedExampleTest.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/registry.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.install
@@ -798,12 +810,12 @@
 %%DRUPAL_BASE%%/modules/statistics/statistics.admin.inc
 %%DRUPAL_BASE%%/modules/statistics/statistics.info
 %%DRUPAL_BASE%%/modules/statistics/statistics.install
+%%DRUPAL_BASE%%/modules/statistics/statistics.js
 %%DRUPAL_BASE%%/modules/statistics/statistics.module
 %%DRUPAL_BASE%%/modules/statistics/statistics.pages.inc
+%%DRUPAL_BASE%%/modules/statistics/statistics.php
 %%DRUPAL_BASE%%/modules/statistics/statistics.test
 %%DRUPAL_BASE%%/modules/statistics/statistics.tokens.inc
-%%DRUPAL_BASE%%/modules/statistics/statistics.js
-%%DRUPAL_BASE%%/modules/statistics/statistics.php
 %%DRUPAL_BASE%%/modules/syslog/syslog.info
 %%DRUPAL_BASE%%/modules/syslog/syslog.install
 %%DRUPAL_BASE%%/modules/syslog/syslog.module
@@ -840,9 +852,9 @@
 %%DRUPAL_BASE%%/modules/system/system.theme.css
 %%DRUPAL_BASE%%/modules/system/system.tokens.inc
 %%DRUPAL_BASE%%/modules/system/system.updater.inc
-%%DRUPAL_BASE%%/modules/system/theme.api.php
 %%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.info
 %%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.module
+%%DRUPAL_BASE%%/modules/system/theme.api.php
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy-term.tpl.php
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy.admin.inc
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy.api.php
@@ -961,6 +973,7 @@
 %%DRUPAL_BASE%%/scripts/password-hash.sh
 %%DRUPAL_BASE%%/scripts/run-tests.sh
 %%DRUPAL_BASE%%/scripts/test.script
+%%DRUPAL_BASE%%/sites/all/libraries/README.txt
 %%DRUPAL_BASE%%/sites/all/modules/README.txt
 %%DRUPAL_BASE%%/sites/all/themes/README.txt
 @sample %%DRUPAL_BASE%%/sites/default/default.settings.php.sample

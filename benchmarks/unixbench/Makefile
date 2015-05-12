@@ -5,13 +5,12 @@ PORTNAME=	unixbench
 PORTVERSION=	4.1.0
 PORTREVISION=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.tux.org/pub/tux/benchmarks/System/unixbench/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 
-BROKEN=		Unfetchable
+USES=		tar:tgz
 SUB_FILES=	unixbench
 MAKE_JOBS_UNSAFE=	yes
 

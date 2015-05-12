@@ -4,7 +4,7 @@ PORTNAME=	testdisk
 PORTVERSION=	6.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions

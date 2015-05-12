@@ -4,7 +4,7 @@ PORTNAME=	serf
 PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
+MASTER_SITES=	GH \
 		https://github.com/armon/circbuf/archive/f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz?dummy=/:group2 \
 		https://github.com/armon/go-metrics/archive/eb0af217e5e9747e41dd5303755356b62d28e3ec.tar.gz?dummy=/:group3 \
 		https://github.com/hashicorp/go-msgpack/archive/71c2886f5a673a35f909803f38ece5810165097b.tar.gz?dummy=/:group4 \
@@ -18,7 +18,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAM
 		https://github.com/miekg/dns/archive/b65f52f3f0dd1afa25cbbf63f8e7eb15fb5c0641.tar.gz?dummy=/:group12 \
 		https://github.com/hashicorp/go.net/archive/cbad13bf000d0cbdbc71506b26e94bcc72bbe74d.tar.gz?dummy=/:group13
 PKGNAMEPREFIX=	hashicorp-
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:group1 \
+DISTFILES=	${DISTNAME}.tar.gz \
 		armon_circbuf_f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz:group2 \
 		armon_go-metrics_eb0af217e5e9747e41dd5303755356b62d28e3ec.tar.gz:group3 \
 		hashicorp_go-msgpack_71c2886f5a673a35f909803f38ece5810165097b.tar.gz:group4 \

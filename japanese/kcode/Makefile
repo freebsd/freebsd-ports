@@ -5,8 +5,7 @@ PORTNAME=	kcode
 PORTVERSION=	1.0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.irori.org/dl/tool/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.gz
-EXTRACT_ONLY=	${DISTFILES}
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handy utility to show codepoint information of given characters

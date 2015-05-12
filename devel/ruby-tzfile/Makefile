@@ -5,7 +5,7 @@ PORTNAME=	tzfile
 PORTVERSION=	0.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.a-k-r.org/ruby-tzfile/
-DISTFILES=	ruby-${PORTNAME}-${PORTVERSION}.tar.gz
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TZFile handling library for Ruby

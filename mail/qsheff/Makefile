@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	qsheff-II
-PORTVERSION=	2.1.r3
+DISTVERSION=	2.1-r3
 PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 		SF/qsheff/qsheff/II-2.1-r3
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail-queue replacement to filter mail traffic

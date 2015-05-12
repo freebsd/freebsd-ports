@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tinylaf
-PORTVERSION=	1.4.0
+DISTVERSION=	1_4_0
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Pluggable Look and Feel for Java

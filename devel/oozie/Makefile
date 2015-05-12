@@ -4,15 +4,14 @@
 PORTNAME=	oozie
 PORTVERSION=	4.1.0
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE} \
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
 		LOCAL/demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		http://extjs.com/deploy/:libext \
 		http://central.maven.org/maven2/org/apache/hadoop/hadoop-client/${HADOOP_VERSION}/:hadoopclient
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat ext-2.2.zip:libext hadoop-client-${HADOOP_VERSION}.jar:hadoopclient
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat ext-2.2.zip:libext hadoop-client-${HADOOP_VERSION}.jar:hadoopclient
 DIST_SUBDIR=	hadoop
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Workflow scheduler for Hadoop

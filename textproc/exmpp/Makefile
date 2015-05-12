@@ -32,7 +32,8 @@ CONFIGURE_ARGS+=--enable-static=yes \
 		--enable-escaping-using-cdata
 GNU_CONFIGURE_PREFIX=	"${PREFIX}/lib/erlang/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf cpe libtool pkgconfig
+CPE_VENDOR=	process-one
 USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>

@@ -3,7 +3,7 @@
 #   $MCom: ports/branches/GNOME_3_12/devel/gitg/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gitg
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 

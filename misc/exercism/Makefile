@@ -3,10 +3,11 @@
 
 PORTNAME=	exercism
 PORTVERSION=	1.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
-MASTER_SITES=	https://github.com/${PORTNAME}/cli/archive/v${PORTVERSION}.tar.gz?dummy=/:group1 \
+MASTER_SITES=	\
 		https://codeload.github.com/codegangsta/cli/legacy.tar.gz/f7ebb76?dummy=/:group2
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:group1 \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		codegansta-cli-f7ebb76${EXTRACT_SUFX}:group2
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,6 +16,8 @@ COMMENT=	CLI client for exercism.io
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 WRKSRC=		${WRKDIR}/cli-${PORTVERSION}
+USE_GITHUB=	yes
+GH_PROJECT=	cli
 
 PLIST_FILES=	bin/exercism
 

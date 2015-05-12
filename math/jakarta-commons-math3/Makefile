@@ -4,20 +4,18 @@
 PORTNAME=	commons-math3
 PORTVERSION=	3.3
 CATEGORIES=	math java
-MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}/:source1 \
+MASTER_SITES=	APACHE_COMMONS_SOURCE \
 		http://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
-MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-math3,math,}/:source1
 PKGNAMEPREFIX=	jakarta-
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz:source1 \
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		junit-4.8.2.jar:source2
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java library of self-contained mathematics and statistics components
 
 LICENSE=	APACHE20
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

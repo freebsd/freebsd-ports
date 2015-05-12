@@ -1,5 +1,5 @@
-SHA256 (serf-0.6.4.tar.gz) = 452540c9a475b45cacb4a883108f41aab3198b8e9b41ba0ba957325c1d1fded8
-SIZE (serf-0.6.4.tar.gz) = 571489
+SHA256 (hashicorp-serf-v0.6.4_GH0.tar.gz) = 452540c9a475b45cacb4a883108f41aab3198b8e9b41ba0ba957325c1d1fded8
+SIZE (hashicorp-serf-v0.6.4_GH0.tar.gz) = 571489
 SHA256 (armon_circbuf_f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz) = b67d2ffc0a725b6844895680d52ba4a63757987637c8dabbb2c3e4d836512d52
 SIZE (armon_circbuf_f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz) = 2748
 SHA256 (armon_go-metrics_eb0af217e5e9747e41dd5303755356b62d28e3ec.tar.gz) = fd94820df854d11839891e6d7e8b63e816061d33f8bf45349486ef73482190db

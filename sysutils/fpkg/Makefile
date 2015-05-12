@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.shimazu.org/fpkg/
-DISTFILES=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	y.shimazu@nifty.com

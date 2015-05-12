@@ -3,14 +3,13 @@
 
 PORTNAME=	libsectok
 PORTVERSION=	20030619
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API Library
 
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/sectok.h lib/libsectok.a lib/libsectok.so \

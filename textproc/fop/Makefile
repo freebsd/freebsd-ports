@@ -4,9 +4,8 @@
 PORTNAME=	fop
 PORTVERSION=	1.1
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:fop/} \
+MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
 		SF/offo/offo-hyphenation/2.0:hyph
-MASTER_SITE_SUBDIR=	xmlgraphics/fop/source/:fop
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation_v2.0.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz

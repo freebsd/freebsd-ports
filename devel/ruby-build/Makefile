@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20150303
+PORTVERSION=	20150506
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
@@ -9,6 +9,7 @@ MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	autoconf>0:${PORTSDIR}/devel/autoconf \
 		curl:${PORTSDIR}/ftp/curl \

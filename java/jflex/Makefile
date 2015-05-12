@@ -6,10 +6,10 @@ PORTVERSION=	1.4.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.jflex.de/:jflexde \
 		http://jflex.sourceforge.net/jar/devel/:jflexsf
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:jflexde \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jflexde \
 		JFlex.jar:jflexsf \
 		java_cup.jar:jflexsf
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	The Fast Lexical Analyser Generator for Java[tm]

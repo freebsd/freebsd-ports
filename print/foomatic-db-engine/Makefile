@@ -6,8 +6,8 @@ PORTVERSION=	4.0.12
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
-		${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S,$,acm/foomatic/,}
+		GOOGLE_CODE \
+		LOCAL/acm/foomatic
 PKGNAMEPREFIX=	foomatic-db-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	foomatic

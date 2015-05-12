@@ -7,8 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rulesemporium.com/programs/ \
 		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.txt
-EXTRACT_SUFX=
+EXTRACT_SUFX=	.txt
 EXTRACT_ONLY=
 
 MAINTAINER=	alexey@renatasystems.org
@@ -24,10 +23,10 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/sa-stats
 
 post-extract:
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTFILES} \
 		${STAGEDIR}${PREFIX}/bin/sa-stats
 
 .include <bsd.port.mk>

@@ -3,13 +3,12 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+DISTVERSIONSUFFIX=	.${GIT_REV}
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ashish
+MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
+		LOCAL/ashish
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}.${GIT_REV}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros

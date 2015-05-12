@@ -2,11 +2,10 @@
 # $FreeBSD: head/mail/mulberry/Makefile 349208 2014-03-26 01:51:58Z swills $
 
 PORTNAME=	mulberry
-PORTVERSION=	4.0.8
+DISTVERSION=	4_0_8
 PORTREVISION=	2
 CATEGORIES=	mail linux
-MASTER_SITES=	http://www.mulberrymail.com/downloads/Mulberry/%SUBDIR%/
-MASTER_SITE_SUBDIR=v${PORTVERSION:S/./_/g}
+MASTER_SITES=	http://www.mulberrymail.com/downloads/Mulberry/v${DISTVERSION:S/./_/g}/
 DISTNAME=	Mulberry
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}

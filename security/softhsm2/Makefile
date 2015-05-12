@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	2.0.0.b1
+DISTVERSION=	2.0.0b3
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/
 PKGNAMESUFFIX=	2
-DISTNAME=	softhsm-2.0.0b1
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Software implementation of a Hardware Security Module (HSM)
@@ -35,6 +34,10 @@ CRYP_BOTAN_DESC=	Build with Botan crypto library
 OPTIONS_DEFAULT=	CRYP_OPEN
 
 CRYP_BOTAN_CONFIGURE_WITH=	crypto-backend=botan
+
+.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+CONFIGURE_ARGS+=	--disable-gost
+.endif
 
 .include <bsd.port.options.mk>
 

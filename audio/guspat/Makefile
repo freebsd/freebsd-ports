@@ -7,8 +7,8 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://plamo.linet.gr.jp/pub/Plamo-src/contrib/Sound/timidity/ \
 		LOCAL/nork
-DISTFILES=	${PORTNAME}-${PORTVERSION}-required${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-optional${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-required${EXTRACT_SUFX} \
+		${DISTNAME}-optional${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Izumo collection of Gravis Ultrasound MIDI patches

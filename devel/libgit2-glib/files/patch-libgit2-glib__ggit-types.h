@@ -1,17 +1,6 @@
---- libgit2-glib/ggit-types.h.orig	2014-10-19 13:55:09.000000000 +0400
-+++ libgit2-glib/ggit-types.h	2015-01-15 14:12:33.000000000 +0300
-@@ -963,9 +963,7 @@
- 	GGIT_STATUS_OPTION_RENAMES_INDEX_TO_WORKDIR = (1 << 8),
- 	GGIT_STATUS_OPTION_SORT_CASE_SENSITIVELY    = (1 << 9),
- 	GGIT_STATUS_OPTION_SORT_CASE_INSENSITIVELY  = (1 << 10),
--	GGIT_STATUS_OPTION_DEFAULT                  = GGIT_STATUS_OPTION_INCLUDE_IGNORED |
--	                                              GGIT_STATUS_OPTION_INCLUDE_UNTRACKED |
--	                                              GGIT_STATUS_OPTION_RECURSE_UNTRACKED_DIRS
-+	GGIT_STATUS_OPTION_DEFAULT                  = GGIT_STATUS_OPTION_INCLUDE_IGNORED | GGIT_STATUS_OPTION_INCLUDE_UNTRACKED | GGIT_STATUS_OPTION_RECURSE_UNTRACKED_DIRS
- } GgitStatusOption;
- 
- /**
-@@ -1059,8 +1057,7 @@
+--- libgit2-glib/ggit-types.h.orig	2015-01-23 16:20:26.456073499 +0100
++++ libgit2-glib/ggit-types.h	2015-01-23 16:20:00.476074798 +0100
+@@ -1064,8 +1064,7 @@
  	GGIT_DIFF_FIND_COPIES_FROM_UNMODIFIED     = (1u << 3),
  	GGIT_DIFF_FIND_REWRITES                   = (1u << 4),
  	GGIT_DIFF_BREAK_REWRITES                  = (1u << 5),

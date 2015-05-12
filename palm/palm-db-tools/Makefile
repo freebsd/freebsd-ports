@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	palm-db-tools
-PORTVERSION=	0.3.6
+DISTVERSION=	0_3_6
 CATEGORIES=	palm
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for the PalmOS flat-file database programs

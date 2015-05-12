@@ -17,7 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libimobiledevice
 GH_TAGNAME=	2f6d9d5
 
-USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf cpe libtool pathfix pkgconfig tar:bzip2
+CPE_VENDOR=	nikias_bassen
+CPE_VERSION=	${DISTVERSION:C/-.*//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd \
 		libusb_CFLAGS="-I/usr/include" \

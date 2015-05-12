@@ -5,11 +5,10 @@ PORTNAME=	wingzpro
 PORTVERSION=	311
 PORTREVISION=	3
 CATEGORIES=	math linux
-MASTER_SITES=	${MASTER_SITE_SUNSITE}:wingz	\
+MASTER_SITES=	SUNSITE/apps/financial/spreadsheet:wingz	\
 		${MASTER_SITE_FEDORA_LINUX:M*rpmfind.net/*:S|/fedora/core||}:l
-MASTER_SITE_SUBDIR=apps/financial/spreadsheet:wingz	\
-		redhat-archive/6.2/en/os/i386/RedHat/RPMS/:l
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:wingz \
+MASTER_SITE_SUBDIR= redhat-archive/6.2/en/os/i386/RedHat/RPMS/:l
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wingz \
 		ld.so-1.9.5-13.i386.rpm:l	\
 		libc-5.3.12-31.i386.rpm:l
 EXTRACT_ONLY=
