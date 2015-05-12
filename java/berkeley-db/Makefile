@@ -26,11 +26,11 @@ PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-regression-test check test:
+regression-test check test: build
 	#
 	# Running the vendor-provided self-tests. This may take a while
 	#
-	if ! (cd ${BUILD_WRKSRC} ; ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${.TARGET}) ; \
+	if ! (cd ${BUILD_WRKSRC} ; ${MAKE_ENV} ${ANT} ${MAKE_ARGS} test) ; \
 	then	\
 		${ECHO_MSG} Please, review test failures and consider \
 			reporting them via \
