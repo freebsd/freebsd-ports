@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clang-cheri
-PORTVERSION=	3.6.d20150126
+PORTVERSION=	3.7.d20150512
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -40,7 +40,7 @@ COMMANDS=	\
 		bugpoint \
 		clang \
 		clang++ \
-		clang-3.6 \
+		clang-3.7 \
 		clang-check \
 		clang-cl \
 		clang-cpp \
