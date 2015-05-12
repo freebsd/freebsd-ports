@@ -6,6 +6,4 @@ the DNS-server answers to a log file. PassiveDNS can cache/aggregate duplicate
 DNS answers in-memory, limiting the amount of data in the logfile without
 losing the essense in the DNS answer.
 
-(c)2011-2012  -  Edward Bjarte Fjellskal
-
 WWW: https://github.com/gamelinux/passivedns
