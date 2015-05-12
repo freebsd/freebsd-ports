@@ -2,6 +2,7 @@
 
 PORTNAME=	passivedns
 DISTVERSION=	1.1.3-60
+DISTVERSIONSUFFIX=	-ga6c7e26
 CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
@@ -13,7 +14,6 @@ LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gamelinux
-GH_TAGNAME=	a6c7e26
 
 SUB_FILES=	pkg-message
 
