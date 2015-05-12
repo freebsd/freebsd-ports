@@ -83,4 +83,3 @@ man/man1/flickrdf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
