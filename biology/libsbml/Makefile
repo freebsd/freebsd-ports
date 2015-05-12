@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsbml
-PORTVERSION=	5.11.0
+PORTVERSION=	5.11.4
 CATEGORIES=	biology devel
 MASTER_SITES=	SF/sbml/${PORTNAME}/${PORTVERSION}/stable
 DISTNAME=	libSBML-${PORTVERSION}-core-src
@@ -39,6 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/include|${LOCALBASE}/include| ; \
 		s|/usr/local/lib|${LOCALBASE}/lib| ; \
+		s|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig| ; \
 		/$${DOCUMENTATION_FILES}/s|^|#|' ${WRKSRC}/CMakeLists.txt
 
 post-install:
