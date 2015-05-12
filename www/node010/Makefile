@@ -3,6 +3,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.10.38
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	010
@@ -12,8 +13,6 @@ MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
 
 LICENSE=	MIT
-
-BROKEN=		Uses removed MAP_NORESERVE
 
 USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
