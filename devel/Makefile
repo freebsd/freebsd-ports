@@ -410,6 +410,7 @@
     SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-msgpack
+    SUBDIR += erlang-mustache
     SUBDIR += erlang-protobuffs
     SUBDIR += esdl
     SUBDIR += etcd
