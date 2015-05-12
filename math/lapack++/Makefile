@@ -16,15 +16,14 @@ COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 USES=		fortran gmake pathfix libtool
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_RADIO=	BLAS
-OPTIONS_RADIO_BLAS=	REFERENCE OBLAS
-OPTIONS_DEFAULT=	REFERENCE
 
-REFERENCE_DESC=	Blas / Lapack
-REFERENCE_USES=	blaslapack:netlib
+OPTIONS_RADIO=  BLAS
+OPTIONS_RADIO_BLAS=     OPENBLAS NETLIB ATLAS
+OPTIONS_DEFAULT=        OPENBLAS
 
-OBLAS_DESC=	Openblas
-OBLAS_USES=	blaslapack:openblas
+OPENBLAS_USES=  blaslapack:openblas
+NETLIB_USES=    blaslapack:netlib
+ATLAS_USES=     blaslapack:atlas
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
