@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USES=		gmake pkgconfig qmake
+USES=		compiler gmake pkgconfig qmake
 USE_LDCONFIG=	yes
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
@@ -53,6 +53,13 @@ CONFIG+=	no-bonjour
 LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 .endif
 
+.include <bsd.port.pre.mk>
+
+# PCH is broken on GCC
+.if ${COMPILER_TYPE} == gcc
+CONFIG+=	no-pch
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
 
@@ -74,4 +81,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${STAGEDIR}${MANPREFIX}/man/man1/mumble.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
