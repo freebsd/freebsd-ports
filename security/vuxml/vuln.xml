@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe910ed6-f88d-11e4-9ae3-0050562a4d7b">
+    <topic>suricata -- TLS/DER Parser Bug (DoS)</topic>
+    <affects>
+      <package>
+	<name>suricata</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OISF Development Team reports:</p>
+	<blockquote cite="https://lists.openinfosecfoundation.org/pipermail/oisf-devel/2015-May/003406.html">
+	  <p>The OISF development team is pleased to announce Suricata 2.0.8.
+	   This release fixes a number of issues in the 2.0 series.</p>
+
+	  <p>The most important issue is a bug in the DER parser which is used to
+	   decode SSL/TLS certificates could crash Suricata. This issue was
+	   reported by Kostya Kortchinsky of the Google Security Team and was fixed
+	   by Pierre Chifflier of ANSSI.</p>
+
+	  <p>Those processing large numbers of (untrusted) pcap files need to update
+	   as a malformed pcap could crash Suricata. Again, credits go to Kostya
+	   Kortchinsky.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0971</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0971</url>
+      <url>https://github.com/inliniac/suricata/commit/fa73a0bb8f312fd0a95cc70f6b3ee4e4997bdba7</url>
+    </references>
+    <dates>
+      <discovery>2015-05-06</discovery>
+      <entry>2015-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b040e24-f751-11e4-b24d-5453ed2e2b49">
     <topic>libssh -- null pointer dereference</topic>
     <affects>
