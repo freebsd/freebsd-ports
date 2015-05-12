@@ -1,6 +1,5 @@
 This is a pure-Java implementation of Berkeley DB by SleepyCat (now
-Oracle). Java-1.5 is required for building, although the result should
-be usable with 1.4 too. From the
+Oracle). Java-1.7 is required for building. From the
 
 WWW: http://www.oracle.com/technetwork/database/berkeleydb/
 

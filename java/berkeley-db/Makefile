@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	je
-PORTVERSION=	6.1.5
+PORTVERSION=	6.2.31
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
@@ -20,15 +20,13 @@ JAVA_VERSION=	1.7+
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar
-USES=		dos2unix
-DOS2UNIX_FILES=	build.xml
 
 PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-test:
+regression-test check test:
 	#
 	# Running the vendor-provided self-tests. This may take a while
 	#
