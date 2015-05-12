@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:${PORTSDIR}/devel/o
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAML_CAMLP4=yes
 OCAML_PKGDIRS=	# This port uses ocaml-findlib but doesn't install one
 
 OCAMLLEX?=	${LOCALBASE}/bin/ocamllex

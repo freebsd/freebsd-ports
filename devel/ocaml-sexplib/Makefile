@@ -19,6 +19,7 @@ RUN_DEPENDS=	ocaml-type-conv>0:${PORTSDIR}/devel/ocaml-typeconv
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+USE_OCAML_CAMLP4=yes
 USE_OCAMLFIND_PLIST=yes
 OCAML_PKGDIRS=	${PORTNAME} ${PORTNAME}_num ${PORTNAME}_unix
 
