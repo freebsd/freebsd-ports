@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	2.0.0.b3
+DISTVERSION=	2.0.0b3
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/
 PKGNAMESUFFIX=	2
-DISTNAME=	softhsm-2.0.0b3
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Software implementation of a Hardware Security Module (HSM)
