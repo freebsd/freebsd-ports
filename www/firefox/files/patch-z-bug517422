@@ -4,7 +4,7 @@ diff --git config/Makefile.in config/Makefile.in
 index 5383399..0410004 100644
 --- config/Makefile.in
 +++ config/Makefile.in
-@@ -77,6 +77,13 @@ export:: $(export-preqs)
+@@ -77,6 +77,14 @@ export:: $(export-preqs)
  		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
  		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
  		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
@@ -12,6 +12,7 @@ index 5383399..0410004 100644
 +		-DMOZ_NATIVE_THEORA=$(MOZ_NATIVE_THEORA) \
 +		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
 +		-DMOZ_NATIVE_TREMOR=$(MOZ_NATIVE_TREMOR) \
++		-DMOZ_NATIVE_CELT=$(MOZ_NATIVE_CELT) \
 +		-DMOZ_NATIVE_OPUS=$(MOZ_NATIVE_OPUS) \
 +		-DMOZ_NATIVE_SPEEX=$(MOZ_NATIVE_SPEEX) \
 +		-DMOZ_NATIVE_SOUNDTOUCH=$(MOZ_NATIVE_SOUNDTOUCH) \
@@ -30,7 +31,7 @@ index f67c5c7..eb909ce 100644
 +if not CONFIG['MOZ_NATIVE_OGG']:
 +    external_dirs += ['media/libogg']
 +
-+if not CONFIG['MOZ_NATIVE_OPUS']:
++if not CONFIG['MOZ_NATIVE_CELT'] or not CONFIG['MOZ_NATIVE_OPUS']:
 +    external_dirs += ['media/libopus']
 +
 +if not CONFIG['MOZ_NATIVE_THEORA']:
@@ -86,7 +87,7 @@ index bef567c..9807c29 100644
  ogg/ogg.h
  ogg/os_types.h
  nestegg/nestegg.h
-@@ -1365,3 +1365,29 @@ graphite2/Segment.h
+@@ -1365,3 +1365,35 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
@@ -104,6 +105,12 @@ index bef567c..9807c29 100644
 +#if MOZ_NATIVE_TREMOR==1
 +tremor/ivorbiscodec.h
 +#endif
++#if MOZ_NATIVE_CELT==1
++celt.h
++celt_header.h
++celt/celt.h
++celt/celt_header.h
++#endif
 +#if MOZ_NATIVE_OPUS==1
 +opus.h
 +opus_multistream.h
@@ -120,7 +127,7 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- configure.in
 +++ configure.in
-@@ -5223,6 +5223,140 @@ if test "${ac_cv_c_attribute_aligned}" !
+@@ -5223,6 +5223,157 @@ if test "${ac_cv_c_attribute_aligned}" !
  fi
  
  dnl ========================================================
@@ -173,6 +180,23 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_TREMOR)
++
++dnl ========================================================
++dnl Check for libcelt
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-celt,
++[  --with-system-celt      Use system libcelt (located with pkgconfig)],
++MOZ_NATIVE_CELT=1,
++MOZ_NATIVE_CELT=)
++
++if test -n "$MOZ_NATIVE_CELT"; then
++    PKG_CHECK_MODULES(MOZ_CELT, celt)
++else
++    MOZ_CELT_CFLAGS='-I$(topsrcdir)/media/libopus'
++fi
++
++AC_SUBST(MOZ_NATIVE_CELT)
 +
 +dnl ========================================================
 +dnl Check for libopus
@@ -442,24 +466,62 @@ diff --git media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi 
 index 00e77e7..55f48ab 100644
 --- media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
 +++ media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
-@@ -17,9 +17,9 @@
+@@ -17,18 +17,11 @@
        'conditions': [
          ['build_with_mozilla==1', {
            # Mozilla provides its own build of the opus library.
 -          'include_dirs': [
 -            '/media/libopus/include',
--           ]
+-            '/media/libopus/src',
+-            '/media/libopus/celt',
 +          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
 +            '$(MOZ_OPUS_CFLAGS)',
-+          ],
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '/media/libopus/include',
+-              '/media/libopus/src',
+-              '/media/libopus/celt',
+-            ],
+-          },
          }, {
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
+diff --git media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+index 00e77e7..55f48ab 100644
+--- media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
++++ media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+@@ -84,19 +84,11 @@
+           ],
+ 	}],
+         ['build_with_mozilla==1', {
+-          'include_dirs': [
+-            # Need Opus header files for the audio classifier.
+-            '<(DEPTH)/../../../media/opus/celt',
+-#            '<(DEPTH)/third_party/opus/src/src',
++          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
++            '$(MOZ_OPUS_CFLAGS)',
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '../../../../../../media/opus/celt',
+-              # Need Opus header files for the audio classifier.
+-              '<(DEPTH)/../../../media/opus/celt',
+-#              '<(DEPTH)/third_party/opus/src/src',
+-            ],
+-          },
+         }],
+       ],
+       'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index d42137a..695e75a8 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -178,6 +178,27 @@ if CONFIG['MOZ_NATIVE_PNG']:
+@@ -178,6 +178,30 @@ if CONFIG['MOZ_NATIVE_PNG']:
  if CONFIG['MOZ_NATIVE_HUNSPELL']:
      OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
@@ -474,6 +536,9 @@ index d42137a..695e75a8 100644
 +
 +if CONFIG['MOZ_NATIVE_TREMOR']:
 +    OS_LIBS += CONFIG['MOZ_TREMOR_LIBS']
++
++if CONFIG['MOZ_NATIVE_CELT']:
++    OS_LIBS += CONFIG['MOZ_CELT_LIBS']
 +
 +if CONFIG['MOZ_NATIVE_OPUS']:
 +    OS_LIBS += CONFIG['MOZ_OPUS_LIBS']
