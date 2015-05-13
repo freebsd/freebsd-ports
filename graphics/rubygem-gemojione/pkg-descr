@@ -1,0 +1,5 @@
+This gem contains the EmojiOne unicode/image assets and also APIs for
+lookup of emoji names, their unicode characters or image assets and
+conversion between emoji representations.
+
+WWW: https://github.com/jonathanwiesel/gemojione
