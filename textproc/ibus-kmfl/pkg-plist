@@ -3,5 +3,3 @@ libexec/ibus-engine-kmfl
 share/ibus/component/kmfl.xml
 share/kmfl/icons/default-kmfl.png
 share/kmfl/icons/ibus-kmfl.svg
-@dirrmtry share/kmfl/icons
-@dirrmtry share/kmfl
