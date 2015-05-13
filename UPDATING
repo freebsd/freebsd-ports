@@ -24,6 +24,12 @@ you update your ports collection, before attempting any port upgrades.
 
 	portmaster -f `pkg shlib -R libperl.so.5.18|tail +2`
 
+  NOTE:
+    Perl has been removed from base more than ten years ago, so it was way past
+    time for the /usr/bin/perl symlink to be removed from the port.  If for
+    some strange reason, you still need it, you will have to create it
+    manually.
+
   IMPORTANT:
     In case you have not updated your system in a while, and specifically,
     followed the 20141126 instructions regarding the new Perl layout, you
