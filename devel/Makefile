@@ -4821,6 +4821,7 @@
     SUBDIR += spark
     SUBDIR += spatialindex
     SUBDIR += spdict
+    SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += splint
     SUBDIR += srecord
