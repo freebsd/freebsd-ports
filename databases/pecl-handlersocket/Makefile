@@ -12,6 +12,8 @@ DISTFILES=	php-handelrsocket-0.3.1${EXTRACT_SUFX}
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	PECL extension for HandlerSocket
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	libhsclient>0:${PORTSDIR}/databases/libhsclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

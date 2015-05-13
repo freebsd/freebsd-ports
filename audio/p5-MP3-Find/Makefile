@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search and sort MP3 files based on their ID3 tags
 
 LICENSE=	ART10 GPLv1
@@ -19,5 +19,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+
+OPTIONS_DEFINE=	DB
+DB_DESC=	Use database backend
+
+DB_BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+			p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+			p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract
+DB_RUN_DEPENDS=		${DB_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

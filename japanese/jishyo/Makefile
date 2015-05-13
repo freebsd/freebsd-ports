@@ -16,6 +16,4 @@ LICENSE=	GPLv2
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
-
 .include <bsd.port.mk>

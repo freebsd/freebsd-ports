@@ -458,7 +458,6 @@
     SUBDIR += pfqueue
     SUBDIR += pgpsendmail
     SUBDIR += php5-imap
-    SUBDIR += php53-imap
     SUBDIR += php55-imap
     SUBDIR += php56-imap
     SUBDIR += phplist
@@ -502,6 +501,7 @@
     SUBDIR += py-apolicy
     SUBDIR += py-authres
     SUBDIR += py-cyruslib
+    SUBDIR += py-dkimpy
     SUBDIR += py-libgmail
     SUBDIR += py-milter
     SUBDIR += py-ppolicy

@@ -1,0 +1,83 @@
+Configuring ModSecurity on FreeBSD
+----------------------------------
+
+To enable ModSecurity in Apache, add the following to your httpd.conf:
+
+  LoadModule security2_module %%APACHEMODDIR%%/mod_security2.so
+  Include etc/modsecurity/*.conf
+
+Getting the Core Rule Set
+-------------------------
+
+ModSecurity requires firewall rule definitions. Most people use the
+OWASP ModSecurity Core Rule Set (CRS). The easiest way to track the
+OWASP CRS repository right now is to use Git. Let's make a directory
+for all our ModSecurity related stuff, and clone the CRS repository
+under it.
+
+  pkg install git
+  cd /usr/local/etc/modsecurity
+  git clone https://github.com/SpiderLabs/owasp-modsecurity-crs
+  cp owasp-modsecurity-crs/modsecurity_crs_10_setup.conf.example \
+    crs.conf
+
+To activate the CRS base rules, add the following to your httpd.conf:
+
+  Include etc/modsecurity/owasp-modsecurity-crs/base_rules/*.conf
+
+You can also add custom configuration and CRS exceptions here.
+For instance, you might want to disable rules that generate false
+positives. Example:
+
+  SecRuleRemoveById 960015
+
+Starting ModSecurity
+--------------------
+
+When the configuration is all set, simply restart Apache and confirm
+that ModSecurity is loaded by checking Apache's log file:
+
+  apachectl restart
+  tail /var/log/httpd-error.log
+
+Configuring blocking mode
+-------------------------
+
+Now that ModSecurity is active, try making a suspicious request to
+your web server, for instance browse to a URL:
+http://www.example.com/?foo=/etc/passwd. The CRS has a rule against
+this type of request. After browsing to the URL, you should now see
+the request logged in /var/log/modsec_audit.log.
+
+You'll notice that the request succeeds, and the response is sent to
+the browser normally. The reason is that ModSecurity runs in
+"DetectionOnly" mode by default, in order to prevent downtime from
+misconfiguration or heavy-handed blocking. You can enable blocking
+mode simply by editing modsecurity.conf and changing the following
+line:
+
+  SecRuleEngine On
+
+Again, restart Apache. Now, make the same suspicious request to your
+web server. You should now see a "403 Forbidden" error!
+
+In practice, it's probably best to keep SecRuleEngine DetectionOnly
+for some time, while your users exercise the web applications.
+Meanwhile, you should keep an eye on /var/log/modsec_audit.log to see
+what is being blocked. If there are any false positives, you need to
+mitigate this by writing custom exceptions.
+
+Maintenance
+-----------
+
+An essential resource for working with ModSecurity is the ModSecurity
+Handbook by Ivan Ristic. ModSecurity exposes quite some internals, and
+it's good to scan this book before you start writing custom rules and
+exceptions.
+
+You probably want to keep the CRS updated from time to time. You can
+do this with Git:
+
+  cd /usr/local/etc/modsecurity/owasp-modsecurity-crs
+  git pull
+  apachectl restart

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Set of themes for the e16 window manager
 
 DATADIR=	${PREFIX}/share/e16

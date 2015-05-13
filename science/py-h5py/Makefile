@@ -19,8 +19,6 @@ RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	h5py
-GH_COMMIT=	c614d61
 
 USES=		python
 USE_PYTHON=	autoplist distutils

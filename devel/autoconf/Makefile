@@ -22,7 +22,7 @@ USES=		gmake makeinfo perl5 tar:xz
 INFO=		autoconf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4 AWK=${AWK} \
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4 AWK=${AWK} \
 		ac_cv_prog_TEST_EMACS=no
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION} --without-lispdir
 

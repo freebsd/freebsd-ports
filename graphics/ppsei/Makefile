@@ -5,8 +5,7 @@ PORTNAME=	ppsei
 PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	PowerPoint images extractor

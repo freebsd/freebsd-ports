@@ -8,9 +8,4 @@ man/man3/mod_auth_tkt.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/tkt.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/02_auth_tkt.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/auth_tkt_cgi.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi/Apache
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec egrep -v 'LoadModule +auth_tkt_module +%%APACHEMODDIR%%/mod_auth_tkt.so' %D/%%APACHEETCDIR%%/httpd.conf > /tmp/httpd.$$; mv /tmp/httpd.$$ %D/%%APACHEETCDIR%%/httpd.conf

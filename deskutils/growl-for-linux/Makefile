@@ -15,12 +15,9 @@ BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-AUTOMAKE_ARGS=	-a -c -f
-
 CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 GH_ACCOUNT=	mattn
-GH_COMMIT=	f81dea9
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
@@ -34,8 +31,7 @@ OPTIONS_DEFINE=	LIBNOTIFY
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
-USES=		compiler:nestedfct libtool pkgconfig
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize
+USES=		autoreconf compiler:nestedfct libtool pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes

@@ -38,8 +38,8 @@ OPTPHP_DESC=	Install optional PHP dependencies
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-manual-en${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-manual-en${EXTRACT_SUFX}
 .endif
 
 INSTALL_DIRS=	library extras/library externals/dojo/dijit \

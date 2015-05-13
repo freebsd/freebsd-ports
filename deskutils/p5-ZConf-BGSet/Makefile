@@ -3,7 +3,7 @@
 
 PORTNAME=	ZConf-BGSet
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Image-Size-FillFullSelect>=0.1.0:${PORTSDIR}/graphics/p5-Image
 		p5-String-ShellQuote>=1.04:${PORTSDIR}/textproc/p5-String-ShellQuote
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/zbgset-admin bin/zbgset bin/zbgset-pt
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

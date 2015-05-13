@@ -21,8 +21,6 @@ PERLTHREADS!=	${PERL} -V::usethreads
 .if ${PERLTHREADS} != "'define';"
 IGNORE=	requires perl to be built with -DWITH_THREADS
 .endif
-.else
-IGNORE=	requires an existing installation of perl, built with -DWITH_THREADS
 .endif
 
 .include <bsd.port.post.mk>

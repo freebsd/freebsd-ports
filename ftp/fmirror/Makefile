@@ -5,13 +5,12 @@ PORTNAME=	fmirror
 PORTVERSION=	0.8.4
 PORTREVISION=	4
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/
+MASTER_SITES=	http://BSDforge.com/projects/source/ftp/fmirror/
 
 MAINTAINER=	kiwi@oav.net
-COMMENT=	Program for mirroring files and directories from a remote FTP server
+COMMENT=	Program for mirroring files and directories from FTP server
 
-BROKEN=		No public distfiles
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 

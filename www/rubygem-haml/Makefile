@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-tilt>=0:${PORTSDIR}/devel/rubygem-tilt
 
-USE_RAKE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

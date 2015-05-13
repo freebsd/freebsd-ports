@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnucap
-PORTVERSION=	2009.12.07
+DISTVERSION=	2009-12-07
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.gnucap.org/devel/archive/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Circuit Analysis Package

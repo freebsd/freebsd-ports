@@ -3,6 +3,7 @@
 
 PORTNAME=	davical
 PORTVERSION=	1.1.2
+DISTVERSIONPREFIX=	r
 PORTREVISION=	1
 CATEGORIES?=	www
 
@@ -21,8 +22,6 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DAViCal
-GH_TAGNAME=	r${DISTVERSION}
-GH_COMMIT=	cc8e6a0
 
 NO_BUILD=	yes
 USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml calendar

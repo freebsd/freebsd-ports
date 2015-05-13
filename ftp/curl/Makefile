@@ -1,8 +1,8 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD: head/ftp/curl/Makefile 380032 2015-02-26 17:45:45Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.41.0
+PORTVERSION=	7.42.1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -16,20 +16,20 @@ OPTIONS_DEFINE=	CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES HTTP2 IDN IPV6 
 OPTIONS_RADIO=	RESOLV SSL
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_RADIO_RESOLV=	CARES THREADED_RESOLVER
-OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL
+OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL WOLFSSL
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-OPTIONS_DEFAULT=CA_BUNDLE COOKIES GSSAPI_BASE IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER SSL TLS_SRP
-CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
-COOKIES_DESC=	Cookies support
-CURL_DEBUG_DESC=cURL debug memory tracking
-GSSAPI_BASE_DESC=	GSSAPI support via base system
+OPTIONS_DEFAULT=	CA_BUNDLE COOKIES GSSAPI_BASE IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
+CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
+COOKIES_DESC=		Cookies support
+CURL_DEBUG_DESC=	cURL debug memory tracking
+GSSAPI_BASE_DESC=	GSSAPI support via base system (Kerberos required)
 GSSAPI_HEIMDAL_DESC=	GSSAPI support via security/heimdal
 GSSAPI_MIT_DESC=	GSSAPI support via security/krb5
 GSSAPI_NONE_DESC=	Disable GSSAPI support
-LIBSSH2_DESC=	SCP/SFTP support via libssh2
-RESOLV_DESC=	DNS resolving options
+LIBSSH2_DESC=		SCP/SFTP support via libssh2
+RESOLV_DESC=		DNS resolving options
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
-TLS_SRP_DESC=	TLS-SRP (Secure Remote Password) support
+TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
 CONFIGURE_ARGS+=--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
@@ -126,7 +126,7 @@ OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 OPENSSL_USE=		OPENSSL=yes
 POLARSSL_CONFIGURE_OFF=	--without-polarssl
 POLARSSL_CONFIGURE_ON=	--with-polarssl=${LOCALBASE}
-POLARSSL_LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl
+POLARSSL_LIB_DEPENDS=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
 PROXY_CONFIGURE_OFF=	--disable-proxy
 PROXY_CONFIGURE_ON=	--enable-proxy
 RTMP_CONFIGURE_OFF=	--without-librtmp
@@ -136,6 +136,9 @@ THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
 THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
 TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
 TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
+WOLFSSL_CONFIGURE_OFF=	--without-cyassl	 
+WOLFSSL_CONFIGURE_ON=	--with-cyassl=${LOCALBASE}	 
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
 
 .include <bsd.port.options.mk>
 
@@ -147,15 +150,11 @@ IGNORE=		only supports CA bundle with OpenSSL
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 .endif
 
-.if ${PORT_OPTIONS:MTLS_SRP} && "${OPENSSL_PORT:tl}" == "security/libressl"
-IGNORE=         TLS-SRP not supported in LibreSSL
-.endif
-
 .if !${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAPS}
 IGNORE=		only supports LDAPS with LDAP
 .endif
 
-.if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL}
+.if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL} && !${PORT_OTIONS:MWOLFSSL}
 IGNORE=		only supports LDAPS with SSL
 .endif
 
@@ -170,10 +169,6 @@ IGNORE=		with GSSAPI_BASE, configure failed to detect OpenSSL/LibreSSL from port
 .if ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		unsupported TLS-SRP in LibreSSL
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && "${OPENSSL_PORT:tl}" == "security/libressl"
-IGNORE=		Base GSS-API conflicts with LibreSSL
 .endif
 
 post-patch:

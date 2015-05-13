@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-DISTVERSION=	3.1.99.20150409
+DISTVERSION=	3.1.99.20150511
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
@@ -18,7 +18,8 @@ CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	3.1.3-7-g07740a0
+GH_TAGNAME=	3.1.6
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
@@ -28,8 +29,6 @@ OPTIONS_SUB=	yes
 
 QEMU_DESC=	Add qemu-user-static to compile ports for non-x86 architectures
 QEMU_RUN_DEPENDS=	qemu-user-static>0:${PORTSDIR}/emulators/qemu-user-static
-
-.include <bsd.port.options.mk>
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/

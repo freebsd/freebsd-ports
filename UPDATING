@@ -5,6 +5,87 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150510:
+  AFFECTS: users of mail/postfix mail/postfix-current
+  AUTHOR: ohauer@FreeBSD.org
+
+  The following OPTIONS where renamed to match the default used in most all other ports
+  - SASL2 -> SASL
+  - OPENLDAP -> LDAP
+
+  If any of the old OPTIONS was enabled before, please re-run "make config".
+
+20150508:
+  AFFECTS: users of www/iojs
+  AUTHOR: linpct@gmail.com
+
+  iojs has been updated to 2.0.0. The binary modules may need to be
+  rebuilt due to V8 version ABI change.
+
+20150506:
+  AFFECTS: users of net/asterisk13 with PJSIP (default on) and SRTP (default off) options enabled
+  AUTHOR: madpilot@FreeBSD.org
+
+  This applies ONLY TO USERS COMPILING FROM PORTS:
+  To avoid dependency problems, you must remove the pjsip port
+  before upgrading asterisk13.
+
+    # pkg delete pjsip
+    # portmaster -a
+
+  These steps are unnecessary for those using binary packages.
+
+  Please see the 20150323 entry for background about this problem.
+
+20150501:
+  AFFECTS: users of graphics/qgis
+  AUTHOR: brd@FreeBSD.org
+
+  Following OPTIONS have been renamed in 2.8.1_1 to match upstream:
+
+  - MAPSERVER to SERVER
+
+20150427:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  Following OPTIONS are being removed in 5.4.5p1:
+
+  - LDAP
+  - SQLITE
+  - MYSQL
+  - PGSQL
+  - REDIS 
+ 
+  They are disabled/removed in upstream since 5.4.4p1, but did not get removed
+  from port.
+
+20150420:
+  AFFECTS: users of devel/icu
+  AUTHOR: bapt@FreeBSD.org
+
+  icu has been updated to 55.1. Please rebuild all ports that depends on it
+
+  If you use portmaster:
+        portmaster -w -r icu
+  If you use portupgrade:
+        portupgrade -fr devel/icu
+
+20150419
+  AFFECTS: Users of emulators/wine-devel
+  AUTHOR: gerald@FreeBSD.org
+
+
+  The COMPHOLIO option in emulators/wine-devel has been renamed to
+  STAGING to align with the upstream evolution of that project.
+
+20150417:
+  AFFECTS: Users of audio/bcg729
+  AUTHOR: tijl@FreeBSD.org
+
+  The Mediastreamer plugin included in this package has been separated into
+  a new port audio/msbcg729.
+
 20150409:
   AFFECTS: User of security/sguil
   AUTHOR: feld@FreeBSD.org
@@ -75,17 +156,25 @@ AUTHOR: ohauer@FreeBSD.org
   Due to conflicts between base OpenSSL and ports provided OpenSSL
   library, which is required by net/libsrtp, the srtp support has
   to be removed from the default asterisk13 port configuration,
-  otherwise a a not working binary would be generated.
+  otherwise a not working binary would be generated.
 
-  To get SRTP support working in the asterisk ports it is needed
-  to build all other required ports with WITH_OPENSSL_PORT=yes. For
-  asterisk13 it is also needed to enable the EXTSRTP option in the
-  pjsip port.
+  To get SRTP support working in the asterisk ports make sure all
+  dependencies are linked against the same SSL library implementation
+  to avoid runtime conflicts. On 10.1 everything will work fine
+  unless ports SSL libraries are explicitly installed. On older OS
+  versions(10.0 and earlier) you will need to compile all ports
+  with WITH_OPENSSL_PORT=yes.
+
+  To get working SRTP support in asterisk13 with the pjsip backend
+  it is also needed to enable the EXTSRTP option in the pjsip port.
 
   If the CURL option is enabled also make sure the ftp/curl port
-  is using one of the HEIMDAL_PORT or KRB5_PORT options, otherwise
-  the curl module will cause asterisk to fail on startup due to
-  mixing calls to OpenSSL from base and from ports.
+  is using a GSSAPI implementation linking to the same SSL
+  implementation the other ports are using (BASE or NONE if you're
+  using base OpenSSL, GSSAPI_HEIMDAL GSSAPI_MIT otherwise). If an
+  incompatible option is being used the curl module will cause
+  asterisk to fail on startup due to mixing calls to OpenSSL from
+  base and from ports.
 
 20150322:
   AFFECTS: Users of security/openssh-portable
@@ -11675,5 +11764,7 @@ or
   The default installation is now configured for running bitlbee as user
   'nobody' by default.  Make sure any existing configuration files are
   readable by that user.
+
+
 
 $FreeBSD$

@@ -4,18 +4,29 @@
 PORTNAME=	serialoverip
 PORTVERSION=	1.0
 CATEGORIES=	comms net
-MASTER_SITES=	CSME
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Transport of serial interfaces over UDP/IP
 
-BROKEN=		No public distfiles
+LICENSE=	GPLv2
+
+USES=		tar:tgz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PLIST_FILES=	sbin/${PORTNAME}
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
-	@cd ${WRKSRC}; ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

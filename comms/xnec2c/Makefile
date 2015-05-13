@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xnec2c
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/5b4az/pkg/nec2/xnec2c/ \
 		${MASTER_SITE_LOCAL}

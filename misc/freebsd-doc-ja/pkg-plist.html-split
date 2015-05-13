@@ -13,15 +13,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-committers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/files.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/limitations.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/prerequisites.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage1.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage2.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage3.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/why.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/additional-questions.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/convert-truetype.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/font-formats.html
@@ -241,6 +232,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-finding-applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-nextsteps.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-overview.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-poudriere.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ppp-and-slip.html

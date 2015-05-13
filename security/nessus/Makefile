@@ -30,6 +30,7 @@ GTK2_USE=	GNOME=gtk20
 OPENSSL_USE=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	nessusd.conf
 USE_RC_SUBR=	nessusd

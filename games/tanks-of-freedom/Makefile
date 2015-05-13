@@ -16,8 +16,7 @@ RUN_DEPENDS=	godot:${PORTSDIR}/devel/godot
 USE_GITHUB=	yes
 GH_ACCOUNT=	w84death
 GH_PROJECT=	Tanks-of-Freedom
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	56699f4
+GH_TAGNAME=	56699f4
 
 DESKTOP_ENTRIES="Tanks of Freedom" \
 		"" \

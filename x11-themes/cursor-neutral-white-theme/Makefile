@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	108143-Neutral++_White-${DISTVERSION}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	White cursor theme based on neutral
 
 USES=	tar:bzip2

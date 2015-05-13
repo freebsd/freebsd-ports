@@ -285,7 +285,14 @@ $FreeBSD$
      DTRACE_INVOKE_RETURN(FILE_FADVISE);
  }
  
-@@ -1906,6 +1968,7 @@
+@@ -1901,11 +1963,14 @@
+ 	d->result_ok = 1;
+ 	if (d->c.sendfile.nbytes != 0)
+ 	  d->c.sendfile.nbytes -= nbytes;
++      } else if (nbytes == 0 && d->c.sendfile.nbytes == 0) {
++	d->result_ok = 1;
+       } else
+ 	d->result_ok = 0;
      } else {
  	d->result_ok = -1;
      }
@@ -293,7 +300,7 @@ $FreeBSD$
  }
  
  static void free_sendfile(void *data) {
-@@ -2023,6 +2086,21 @@
+@@ -2023,6 +2088,21 @@
  	return;
      TRACE_F(("x%i", (int) d->command));
      d->again = sys_info.async_threads == 0;
@@ -315,7 +322,7 @@ $FreeBSD$
      DRIVER_ASYNC(d->level, desc, d->invoke, void_ptr=d, d->free);
  }
  
-@@ -2247,6 +2325,8 @@
+@@ -2247,6 +2327,8 @@
  	return;
      }
  
@@ -324,7 +331,7 @@ $FreeBSD$
      switch (d->command)
      {
      case FILE_READ:
-@@ -2375,6 +2455,10 @@
+@@ -2375,6 +2457,10 @@
  	} else {
  	    desc->fd = d->fd;
  	    desc->flags = d->flags;

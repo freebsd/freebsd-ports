@@ -3,9 +3,9 @@
 
 PORTNAME=	namecoin
 PORTVERSION=	Q.3.72
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	net-p2p dns
-MASTER_SITES=	GHL
 
 MAINTAINER=	milios@ccsys.com
 COMMENT=	Decentralized, open DNS system and general purpose key/value store
@@ -21,8 +21,6 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	namecoinq
 GH_PROJECT=	namecoinq
-GH_COMMIT=	cdf052b
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake compiler:c++11-lib
 USE_OPENSSL=	yes

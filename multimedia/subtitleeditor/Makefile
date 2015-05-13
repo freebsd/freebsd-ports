@@ -2,55 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.41.0
-PORTREVISION=	3
+PORTVERSION=	0.41.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
-		LOCAL/ehaupt
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Subtitle editor
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	iso-codes>0:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgstreamermm-0.10.so:${PORTSDIR}/multimedia/gstreamermm \
-		libenchant.so:${PORTSDIR}/textproc/enchant \
-		libpcre.so:${PORTSDIR}/devel/pcre
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libenchant.so:${PORTSDIR}/textproc/enchant
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake libtool pkgconfig
-USE_GCC=	yes
+USES=		desktop-file-utils gettext gmake libtool pkgconfig
 USE_GNOME=	gtkmm24
-USE_GSTREAMER=	good
-INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
+USE_GSTREAMER=	good mm
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
+OPTIONS_DEFINE=	NLS OPENGL
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	NLS
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Does not compile on FreeBSD 10.0 and later
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPENGL_LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
+OPENGL_USE=		gl=glu
+OPENGL_CONFIGURE_ENABLE=gl
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
+	@${REINPLACE_CMD} -e \
+		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -7,7 +7,6 @@ CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://junkfilter.zer0.org/pkg/${PORTVERSION}/
 
-DISTNAME=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gsutter@zer0.org
@@ -18,6 +17,7 @@ PORTSCOUT=	limit:^20
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 BINDIR=		${PREFIX}/etc/${PORTNAME}
 
 JFFILES=	LICENSE Makefile README TODO addresses bodychk dialups \

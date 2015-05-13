@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -77,7 +77,7 @@ FPING_DESC=	Build/install fping for ping checks
 IPMI_DESC=	Support for IPMI checks
 JABBER_DESC=	Support for Jabber media type
 LDAP_DESC=	Support for LDAP server checks
-NMAP_DESC=	Build/install nmap for o/s detection
+NMAP_DESC=	Build/install Nmap for OS detection
 SSH_DESC=	Support for SSH-based checks
 ODBC_DESC=	Support for database checks via ODBC
 JAVAGW_DESC=	Support for Java gateway

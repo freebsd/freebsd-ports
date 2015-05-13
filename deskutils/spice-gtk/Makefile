@@ -15,7 +15,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	pixman
 USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
-USES=		gmake libtool pkgconfig tar:bzip2 pathfix
+USES=		cpe gmake libtool pkgconfig tar:bzip2 pathfix
+CPE_VENDOR=	redhat
 
 .if defined(SPICE_SLAVE)
 CATEGORIES+=	python

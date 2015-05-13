@@ -1,17 +1,17 @@
---- Makefile.orig	2015-01-13 14:39:12 UTC
+--- Makefile.orig	2015-05-06 04:16:57 UTC
 +++ Makefile
-@@ -69,12 +69,12 @@ linux: config.make
+@@ -71,12 +71,12 @@ linux: config.make
  
  .PHONY: prebuilt32
  prebuilt32: config.make pluginloader-$(git_commit).tar.gz pluginloader-$(git_commit).tar.gz.sig
 -	$(gpg_exec) --batch --no-default-keyring --keyring "share/sig-pluginloader.gpg" --verify "pluginloader-$(git_commit).tar.gz.sig"
 +	$(gpg_exec) --batch --no-default-keyring --keyring "share/sig-pluginloader.gpg" --verify "pluginloader-$(git_commit).tar.gz.sig" pluginloader-$(git_commit).tar.gz
- 	tar -xvf "pluginloader-$(git_commit).tar.gz" src/windows/pluginloader.exe src/winecheck/winecheck.exe
+ 	tar -xvf "pluginloader-$(git_commit).tar.gz" src/windows/pluginloader/pluginloader.exe src/windows/winecheck/winecheck.exe
  
  .PHONY: prebuilt64
  prebuilt64: config.make pluginloader-$(git_commit).tar.gz pluginloader-$(git_commit).tar.gz.sig
 -	$(gpg_exec) --batch --no-default-keyring --keyring "share/sig-pluginloader.gpg" --verify "pluginloader-$(git_commit).tar.gz.sig"
 +	$(gpg_exec) --batch --no-default-keyring --keyring "share/sig-pluginloader.gpg" --verify "pluginloader-$(git_commit).tar.gz.sig" pluginloader-$(git_commit).tar.gz
- 	tar -xvf "pluginloader-$(git_commit).tar.gz" src/windows/pluginloader64.exe src/winecheck/winecheck64.exe
+ 	tar -xvf "pluginloader-$(git_commit).tar.gz" src/windows/pluginloader/pluginloader64.exe src/windows/winecheck/winecheck64.exe
  
- .PHONY: pluginloader32
+ .PHONY: windows32

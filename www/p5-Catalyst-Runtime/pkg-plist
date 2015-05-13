@@ -5,12 +5,14 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/ActionContainer.pm
 %%SITE_PERL%%/Catalyst/ActionRole/ConsumesContent.pm
 %%SITE_PERL%%/Catalyst/ActionRole/HTTPMethods.pm
+%%SITE_PERL%%/Catalyst/ActionRole/QueryMatching.pm
 %%SITE_PERL%%/Catalyst/ActionRole/Scheme.pm
 %%SITE_PERL%%/Catalyst/Base.pm
 %%SITE_PERL%%/Catalyst/ClassData.pm
 %%SITE_PERL%%/Catalyst/Component.pm
 %%SITE_PERL%%/Catalyst/Component/ApplicationAttribute.pm
 %%SITE_PERL%%/Catalyst/Component/ContextClosure.pm
+%%SITE_PERL%%/Catalyst/Contributing.pod
 %%SITE_PERL%%/Catalyst/Controller.pm
 %%SITE_PERL%%/Catalyst/Delta.pod
 %%SITE_PERL%%/Catalyst/DispatchType.pm
@@ -37,6 +39,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
 %%SITE_PERL%%/Catalyst/Response/Writer.pm
+%%SITE_PERL%%/Catalyst/RouteMatching.pod
 %%SITE_PERL%%/Catalyst/Runtime.pm
 %%SITE_PERL%%/Catalyst/Script/CGI.pm
 %%SITE_PERL%%/Catalyst/Script/Create.pm
@@ -57,12 +60,14 @@ bin/catalyst.pl
 %%PERL5_MAN3%%/Catalyst::ActionContainer.3.gz
 %%PERL5_MAN3%%/Catalyst::ActionRole::ConsumesContent.3.gz
 %%PERL5_MAN3%%/Catalyst::ActionRole::HTTPMethods.3.gz
+%%PERL5_MAN3%%/Catalyst::ActionRole::QueryMatching.3.gz
 %%PERL5_MAN3%%/Catalyst::ActionRole::Scheme.3.gz
 %%PERL5_MAN3%%/Catalyst::Base.3.gz
 %%PERL5_MAN3%%/Catalyst::ClassData.3.gz
 %%PERL5_MAN3%%/Catalyst::Component.3.gz
 %%PERL5_MAN3%%/Catalyst::Component::ApplicationAttribute.3.gz
 %%PERL5_MAN3%%/Catalyst::Component::ContextClosure.3.gz
+%%PERL5_MAN3%%/Catalyst::Contributing.3.gz
 %%PERL5_MAN3%%/Catalyst::Controller.3.gz
 %%PERL5_MAN3%%/Catalyst::Delta.3.gz
 %%PERL5_MAN3%%/Catalyst::DispatchType.3.gz
@@ -89,6 +94,7 @@ bin/catalyst.pl
 %%PERL5_MAN3%%/Catalyst::Request::Upload.3.gz
 %%PERL5_MAN3%%/Catalyst::Response.3.gz
 %%PERL5_MAN3%%/Catalyst::Response::Writer.3.gz
+%%PERL5_MAN3%%/Catalyst::RouteMatching.3.gz
 %%PERL5_MAN3%%/Catalyst::Runtime.3.gz
 %%PERL5_MAN3%%/Catalyst::Script::CGI.3.gz
 %%PERL5_MAN3%%/Catalyst::Script::Create.3.gz

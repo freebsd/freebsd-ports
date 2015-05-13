@@ -122,7 +122,7 @@ elasticsearch_check_pidfile() {
 		debug "pid file ($_pidfile): no pid in file."
 		return
 	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid org.elasticsearch.bootstrap.Elasticsearch\$"`" ]; then
+	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid"`" ]; then
 		echo -n $_pid
 	fi
 }

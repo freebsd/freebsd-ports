@@ -57,6 +57,1040 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9b43004-f5fd-4807-b1d7-dbf66455b244">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>38.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>38.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.35</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.35</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.7.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.7.0</lt></range>
+	<range><ge>32.0</ge><lt>38.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA-2015-46 Miscellaneous memory safety hazards (rv:38.0
+	    / rv:31.7)</p>
+	  <p>MFSA-2015-47 Buffer overflow parsing H.264 video with
+	    Linux Gstreamer</p>
+	  <p>MFSA-2015-48 Buffer overflow with SVG content and CSS</p>
+	  <p>MFSA-2015-49 Referrer policy ignored when links opened by
+	    middle-click and context menu</p>
+	  <p>MFSA-2015-50 Out-of-bounds read and write in asm.js validation</p>
+	  <p>MFSA-2015-51 Use-after-free during text processing with
+	    vertical text enabled</p>
+	  <p>MFSA-2015-52 Sensitive URL encoded information written to
+	    Android logcat</p>
+	  <p>MFSA-2015-53 Use-after-free due to Media Decoder Thread creation
+	    during shutdown</p>
+	  <p>MFSA-2015-54 Buffer overflow when parsing compressed XML</p>
+	  <p>MFSA-2015-55 Buffer overflow and out-of-bounds read while
+	    parsing MP4 video metadata</p>
+	  <p>MFSA-2015-56 Untrusted site hosting trusted page can
+	    intercept webchannel responses</p>
+	  <p>MFSA-2015-57 Privilege escalation through IPC channel messages</p>
+	  <p>MFSA-2015-58 Mozilla Windows updater can be run outside
+	    of application directory</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3079</cvename>
+      <cvename>CVE-2015-0797</cvename>
+      <cvename>CVE-2015-0833</cvename>
+      <cvename>CVE-2015-2708</cvename>
+      <cvename>CVE-2015-2709</cvename>
+      <cvename>CVE-2015-2710</cvename>
+      <cvename>CVE-2015-2711</cvename>
+      <cvename>CVE-2015-2712</cvename>
+      <cvename>CVE-2015-2713</cvename>
+      <cvename>CVE-2015-2714</cvename>
+      <cvename>CVE-2015-2715</cvename>
+      <cvename>CVE-2015-2716</cvename>
+      <cvename>CVE-2015-2717</cvename>
+      <cvename>CVE-2015-2718</cvename>
+      <cvename>CVE-2015-2720</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-46/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-47/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-48/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-49/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-50/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-51/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-52/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-53/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-54/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-55/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-56/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-57/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-58/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-12</discovery>
+      <entry>2015-05-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fe910ed6-f88d-11e4-9ae3-0050562a4d7b">
+    <topic>suricata -- TLS/DER Parser Bug (DoS)</topic>
+    <affects>
+      <package>
+	<name>suricata</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OISF Development Team reports:</p>
+	<blockquote cite="https://lists.openinfosecfoundation.org/pipermail/oisf-devel/2015-May/003406.html">
+	  <p>The OISF development team is pleased to announce Suricata 2.0.8.
+	   This release fixes a number of issues in the 2.0 series.</p>
+
+	  <p>The most important issue is a bug in the DER parser which is used to
+	   decode SSL/TLS certificates could crash Suricata. This issue was
+	   reported by Kostya Kortchinsky of the Google Security Team and was fixed
+	   by Pierre Chifflier of ANSSI.</p>
+
+	  <p>Those processing large numbers of (untrusted) pcap files need to update
+	   as a malformed pcap could crash Suricata. Again, credits go to Kostya
+	   Kortchinsky.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0971</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0971</url>
+      <url>https://github.com/inliniac/suricata/commit/fa73a0bb8f312fd0a95cc70f6b3ee4e4997bdba7</url>
+    </references>
+    <dates>
+      <discovery>2015-05-06</discovery>
+      <entry>2015-05-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0b040e24-f751-11e4-b24d-5453ed2e2b49">
+    <topic>libssh -- null pointer dereference</topic>
+    <affects>
+      <package>
+	<name>libssh</name>
+	<range><lt>0.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andreas Schneider reports:</p>
+	<blockquote cite="https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release/">
+	  <p>libssh versions 0.5.1 and above have a logical error in the
+	    handling of a SSH_MSG_NEWKEYS and SSH_MSG_KEXDH_REPLY package. A
+	    detected error did not set the session into the error state
+	    correctly and further processed the packet which leads to a null
+	    pointer dereference. This is the packet after the initial key
+	    exchange and doesn’t require authentication.</p>
+	  <p>This could be used for a Denial of Service (DoS) attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3146</cvename>
+      <url>https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release</url>
+    </references>
+    <dates>
+      <discovery>2015-04-30</discovery>
+      <entry>2015-05-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b13af778-f4fc-11e4-a95d-ac9e174be3af">
+    <topic>Vulnerablitiy in HWP document filter</topic>
+    <affects>
+      <package>
+	<name>libreoffice</name>
+	<range><lt>4.3.7</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice</name>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.1.1_9</lt></range>
+	<range><lt>4.2.1677190,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1774">
+	  <p>The HWP filter in LibreOffice before 4.3.7 and 4.4.x before
+	    4.4.2 and Apache OpenOffice before 4.1.2 allows remote
+	    attackers to cause a denial of service (crash) or possibly
+	    execute arbitrary code via a crafted HWP document, which
+	    triggers an out-of-bounds write.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1774</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-1774.html</url>
+      <url>https://www.libreoffice.org/about-us/security/advisories/cve-2015-1774/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d86890da-f498-11e4-99aa-bcaec565249c">
+    <topic>wordpress -- 2 cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CH</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samuel Sidler reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/05/wordpress-4-2-2/">
+	  <p>The Genericons icon font package, which is used in a number of
+	    popular themes and plugins, contained an HTML file vulnerable to
+	    a cross-site scripting attack. All affected themes and plugins
+	    hosted on WordPress.org (including the Twenty Fifteen default
+	    theme) have been updated today by the WordPress security team
+	    to address this issue by removing this nonessential file. To
+	    help protect other Genericons usage, WordPress 4.2.2
+	    proactively scans the wp-content directory for this HTML
+	    file and removes it. Reported by Robert Abela of Netsparker.</p>
+
+	  <p>WordPress versions 4.2 and earlier are affected by a critical
+	    cross-site scripting vulnerability, which could enable anonymous
+	    users to compromise a site. WordPress 4.2.2 includes a
+	    comprehensive fix for this issue.</p>
+
+	  <p>The release also includes hardening for a potential cross-site
+	    scripting vulnerability when using the visual editor. This issue
+	    was reported by Mahadev Subedi.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/05/wordpress-4-2-2/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-07</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ba4f9b19-ed9d-11e4-9118-bcaec565249c">
+    <topic>wordpress -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.1,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CH</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/04/wordpress-4-2-1/">
+	  <p>WordPress 4.2.1 is now available. This is a critical security
+	    release for all previous versions and we strongly encourage you
+	    to update your sites immediately.</p>
+	  <p>A few hours ago, the WordPress team was made aware of a
+	    cross-site scripting vulnerability, which could enable commenters
+	    to compromise a site. The vulnerability was discovered by Jouko
+	    Pynnöne.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/04/wordpress-4-2-1/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-05-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="64e6006e-f009-11e4-98c6-000c292ee6b8">
+    <topic>powerdns -- Label decompression bug can cause crashes or CPU spikes</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><lt>3.4.4</lt></range>
+      </package>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>3.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PowerDNS project reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/">
+	  <p>A bug was discovered in our label decompression code, making it
+	    possible for names to refer to themselves, thus causing a loop during
+	    decompression. On some platforms, this bug can be abused to cause
+	    crashes. On all platforms, this bug can be abused to cause
+	    service-affecting CPU spikes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1868</cvename>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-23</discovery>
+      <entry>2015-05-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="210f80b9-ede4-11e4-81c4-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>42.0.2311.135</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_28.html">
+	  <p>5 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[453279] High CVE-2015-1243: Use-after-free in DOM. Credit to
+	      Saif El-Sherei.</li>
+	    <li>[481777] CVE-2015-1250: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1243</cvename>
+      <cvename>CVE-2015-1250</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_28.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-28</discovery>
+      <entry>2015-04-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b57f690e-ecc9-11e4-876c-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>42.0.2311.90</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_14.html">
+	  <p>45 new security fixes, including:</p>
+	  <ul>
+	    <li>[456518] High CVE-2015-1235: Cross-origin-bypass in HTML
+	      parser. Credit to anonymous.</li>
+	    <li>[313939] Medium CVE-2015-1236: Cross-origin-bypass in Blink.
+	      Credit to Amitay Dobo.</li>
+	    <li>[461191] High CVE-2015-1237: Use-after-free in IPC. Credit to
+	      Khalil Zhani.</li>
+	    <li>[445808] High CVE-2015-1238: Out-of-bounds write in Skia.
+	      Credit to cloudfuzzer.</li>
+	    <li>[463599] Medium CVE-2015-1240: Out-of-bounds read in WebGL.
+	      Credit to w3bd3vil.</li>
+	    <li>[418402] Medium CVE-2015-1241: Tap-Jacking. Credit to Phillip
+	      Moon and Matt Weston of Sandfield Information Systems.</li>
+	    <li>[460917] High CVE-2015-1242: Type confusion in V8. Credit to
+	      fcole@onshape.com.</li>
+	    <li>[455215] Medium CVE-2015-1244: HSTS bypass in WebSockets.
+	      Credit to Mike Ruddy.</li>
+	    <li>[444957] Medium CVE-2015-1245: Use-after-free in PDFium. Credit
+	      to Khalil Zhani.</li>
+	    <li>[437399] Medium CVE-2015-1246: Out-of-bounds read in Blink.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[429838] Medium CVE-2015-1247: Scheme issues in OpenSearch.
+	      Credit to Jann Horn.</li>
+	    <li>[380663] Medium CVE-2015-1248: SafeBrowsing bypass. Credit to
+	      Vittorio Gambaletta (VittGam).</li>
+	    <li>[476786] CVE-2015-1249: Various fixes from internal audits,
+	      fuzzing and other initiatives. Multiple vulnerabilities in V8
+	      fixed at the tip of the 4.2 branch (currently 4.2.77.14).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://googlechromereleases.blogspot.nl/2015/04/stable-channel-update_14.html</url>
+      <cvename>CVE-2015-1235</cvename>
+      <cvename>CVE-2015-1236</cvename>
+      <cvename>CVE-2015-1237</cvename>
+      <cvename>CVE-2015-1238</cvename>
+      <cvename>CVE-2015-1240</cvename>
+      <cvename>CVE-2015-1241</cvename>
+      <cvename>CVE-2015-1242</cvename>
+      <cvename>CVE-2015-1244</cvename>
+      <cvename>CVE-2015-1245</cvename>
+      <cvename>CVE-2015-1246</cvename>
+      <cvename>CVE-2015-1247</cvename>
+      <cvename>CVE-2015-1248</cvename>
+      <cvename>CVE-2015-1249</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cb9d2fcd-eb47-11e4-b03e-002590263bf5">
+    <topic>wpa_supplicant -- P2P SSID processing vulnerability</topic>
+    <affects>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-1/wpa_supplicant-p2p-ssid-overflow.txt">
+	  <p>A vulnerability was found in how wpa_supplicant uses SSID information
+	    parsed from management frames that create or update P2P peer entries
+	    (e.g., Probe Response frame or number of P2P Public Action frames). SSID
+	    field has valid length range of 0-32 octets. However, it is transmitted
+	    in an element that has a 8-bit length field and potential maximum
+	    payload length of 255 octets. wpa_supplicant was not sufficiently
+	    verifying the payload length on one of the code paths using the SSID
+	    received from a peer device.</p>
+	  <p>This can result in copying arbitrary data from an attacker to a fixed
+	    length buffer of 32 bytes (i.e., a possible overflow of up to 223
+	    bytes). The SSID buffer is within struct p2p_device that is allocated
+	    from heap. The overflow can override couple of variables in the struct,
+	    including a pointer that gets freed. In addition about 150 bytes (the
+	    exact length depending on architecture) can be written beyond the end of
+	    the heap allocation.</p>
+	  <p>This could result in corrupted state in heap, unexpected program
+	    behavior due to corrupted P2P peer device information, denial of service
+	    due to wpa_supplicant process crash, exposure of memory contents during
+	    GO Negotiation, and potentially arbitrary code execution.</p>
+	  <p>Vulnerable versions/configurations</p>
+	  <p>wpa_supplicant v1.0-v2.4 with CONFIG_P2P build option enabled
+	    (which is not compiled by default).</p>
+	  <p>Attacker (or a system controlled by the attacker) needs to be within
+	    radio range of the vulnerable system to send a suitably constructed
+	    management frame that triggers a P2P peer device information to be
+	    created or updated.</p>
+	  <p>The vulnerability is easiest to exploit while the device has started an
+	    active P2P operation (e.g., has ongoing P2P_FIND or P2P_LISTEN control
+	    interface command in progress). However, it may be possible, though
+	    significantly more difficult, to trigger this even without any active
+	    P2P operation in progress.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1863</cvename>
+      <url>http://w1.fi/security/2015-1/wpa_supplicant-p2p-ssid-overflow.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-04-22</discovery>
+      <entry>2015-04-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1e232a0c-eb57-11e4-b595-4061861086c1">
+    <topic>Several vulnerabilities found in PHP</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.40</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.24</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/archive/2015.php#id2015-04-16-2">
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.4.40. 14 security-related
+	    bugs were fixed in this release, including
+	    CVE-2014-9709, CVE-2015-2301, CVE-2015-2783,
+	    CVE-2015-1352. All PHP 5.4 users are encouraged to
+	    upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.5.24. Several bugs have been
+	    fixed some of them beeing security related, like
+	    CVE-2015-1351 and CVE-2015-1352. All PHP 5.5 users
+	    are encouraged to upgrade to this version.</p>
+	  <p>The PHP development team announces the immediate
+	    availability of PHP 5.6.8. Several bugs have been
+	    fixed some of them beeing security related, like
+	    CVE-2015-1351 and CVE-2015-1352. All PHP 5.6 users
+	    are encouraged to upgrade to this version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/archive/2015.php#id2015-04-16-2</url>
+      <cvename>CVE-2014-9709</cvename>
+      <cvename>CVE-2015-2301</cvename>
+      <cvename>CVE-2015-2783</cvename>
+      <cvename>CVE-2015-1351</cvename>
+      <cvename>CVE-2015-1352</cvename>
+      <freebsdpr>ports/198739</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2015-04-16</discovery>
+      <entry>2015-04-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="505904d3-ea95-11e4-beaf-bcaec565249c">
+    <topic>wordpress -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>ja-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>ru-wordpress</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CN</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/04/wordpress-4-1-2/">
+	  <p>WordPress 4.1.2 is now available. This is a critical security
+	    release for all previous versions and we strongly encourage you
+	    to update your sites immediately.</p>
+	  <p>WordPress versions 4.1.1 and earlier are affected by a critical
+	    cross-site scripting vulnerability, which could enable anonymous
+	    users to compromise a site. This was reported by Cedric Van
+	    Bockhaven and fixed by Gary Pendergast, Mike Adams, and Andrew
+	    Nacin of the WordPress security team.</p>
+	  <p>We also fixed three other security issues:</p>
+	  <ul>
+	    <li>In WordPress 4.1 and higher, files with invalid or unsafe
+	      names could be uploaded. Discovered by Michael Kapfer and
+	      Sebastian Kraemer of HSASec.</li>
+	    <li>In WordPress 3.9 and higher, a very limited cross-site
+	      scripting vulnerability could be used as part of a social
+	      engineering attack. Discovered by Jakub Zoczek.</li>
+	    <li>Some plugins were vulnerable to an SQL injection
+	      vulnerability. Discovered by Ben Bidner of the WordPress
+	      security team.</li>
+	  </ul>
+	  <p>We also made four hardening changes, discovered by J.D. Grimes,
+	    Divyesh Prajapati, Allan Collins, Marc-Alexandre Montpas and
+	    Jeff Bowen.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/04/wordpress-4-1-2/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-21</discovery>
+      <entry>2015-04-24</entry>
+      <modified>2015-04-24</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="82595123-e8b8-11e4-a008-047d7b492d07">
+    <topic>libtasn1 -- stack-based buffer overflow in asn1_der_decoding</topic>
+    <affects>
+      <package>
+	<name>libtasn1</name>
+	<range><lt>4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="https://www.debian.org/security/2015/dsa-3220.en.html">
+	  <p>Hanno Boeck discovered a stack-based buffer overflow in
+	    the asn1_der_decoding function in Libtasn1, a library to
+	    manage ASN.1 structures. A remote attacker could take advantage
+	    of this flaw to cause an application using the Libtasn1 library
+	    to crash, or potentially to execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2806</cvename>
+      <url>https://www.debian.org/security/2015/dsa-3220.en.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-04-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="738fc80d-5f13-4ccb-aa9a-7965699e5a10">
+    <topic>mozilla -- use after free</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>37.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>37.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/">
+	  <p>MFSA 2015-45 Memory corruption during failed plugin
+	    initialization</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2706</cvename>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-45/</url>
+    </references>
+    <dates>
+      <discovery>2015-04-20</discovery>
+      <entry>2015-04-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dec3164f-3121-45ef-af18-bb113ac5082f">
+    <topic>sqlite -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.8.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3414">
+	  <p>SQLite before 3.8.9 does not properly implement the
+	    dequoting of collation-sequence names, which allows
+	    context-dependent attackers to cause a denial of service
+	    (uninitialized memory access and application crash) or
+	    possibly have unspecified other impact via a crafted
+	    COLLATE clause, as demonstrated by COLLATE"""""""" at the
+	    end of a SELECT statement.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3415">
+	  <p>The sqlite3VdbeExec function in vdbe.c in SQLite before
+	    3.8.9 does not properly implement comparison operators,
+	    which allows context-dependent attackers to cause a denial
+	    of service (invalid free operation) or possibly have
+	    unspecified other impact via a crafted CHECK clause, as
+	    demonstrated by CHECK(0&amp;O&gt;O) in a CREATE TABLE statement.
+	  </p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3416">
+	  <p>The sqlite3VXPrintf function in printf.c in SQLite before
+	    3.8.9 does not properly handle precision and width values
+	    during floating-point conversions, which allows
+	    context-dependent attackers to cause a denial of service
+	    (integer overflow and stack-based buffer overflow) or
+	    possibly have unspecified other impact via large integers
+	    in a crafted printf function call in a SELECT statement.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3414</cvename>
+      <cvename>CVE-2015-3415</cvename>
+      <cvename>CVE-2015-3416</cvename>
+      <url>https://www.sqlite.org/src/info/eddc05e7bb31fae7</url>
+      <url>https://www.sqlite.org/src/info/02e3c88fbf6abdcf</url>
+      <url>https://www.sqlite.org/src/info/c494171f77dc2e5e</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Apr/31</mlist>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-18</entry>
+      <modified>2015-05-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c4571ca8-053d-44c9-ab3c-89b1372ad0a5">
+    <topic>chrony -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chrony</name>
+	<range><lt>1.31.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrony News reports:</p>
+	<blockquote cite="http://chrony.tuxfamily.org/News.html">
+	  <p>CVE-2015-1853: DoS attack on authenticated symmetric NTP
+	    associations</p>
+	  <p>CVE-2015-1821: Heap-based buffer overflow in access
+	    configuration</p>
+	  <p>CVE-2015-1822: Use of uninitialized pointer in command
+	    processing</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://chrony.tuxfamily.org/News.html</url>
+      <cvename>CVE-2015-1821</cvename>
+      <cvename>CVE-2015-1822</cvename>
+      <cvename>CVE-2015-1853</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-17</discovery>
+      <entry>2015-04-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e426eda9-dae1-11e4-8107-94de806b0af9">
+    <topic>Dulwich -- Remote code execution</topic>
+    <affects>
+      <package>
+	<name>py27-dulwich</name>
+	<range><lt>0.9.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0838">
+	  <p>Buffer overflow in the C implementation of the apply_delta
+	    function in _pack.c in Dulwich before 0.9.9 allows remote
+	    attackers to execute arbitrary code via a crafted pack file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0838</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-07</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3364d497-e4e6-11e4-a265-c485083ca99c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><le>11.2r202.451</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><le>11.2r202.451</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-06.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux.  These updates address vulnerabilities
+	    that could potentially allow an attacker to take control of the
+	    affected system. Adobe is aware of a report that an exploit for
+	    CVE-2015-3043 exists in the wild, and recommends users update their
+	    product installations to the latest versions.
+	  </p>
+	  <ul>
+	  <li>
+	    These updates resolve memory corruption vulnerabilities that could
+	    lead to code execution (CVE-2015-0347, CVE-2015-0350, CVE-2015-0352,
+	    CVE-2015-0353, CVE-2015-0354, CVE-2015-0355, CVE-2015-0360,
+	    CVE-2015-3038, CVE-2015-3041, CVE-2015-3042, CVE-2015-3043).
+	  </li>
+	  <li>
+	    These updates resolve a type confusion vulnerability that could lead
+	    to code execution (CVE-2015-0356).
+	  </li>
+	  <li>
+	    These updates resolve a buffer overflow vulnerability that could
+	    lead to code execution (CVE-2015-0348).
+	  </li>
+	  <li>
+	    These updates resolve use-after-free vulnerabilities that could lead
+	    to code execution (CVE-2015-0349, CVE-2015-0351, CVE-2015-0358,
+	    CVE-2015-3039).
+	  </li>
+	  <li>
+	    These updates resolve double-free vulnerabilities that could lead to
+	    code execution (CVE-2015-0346, CVE-2015-0359).
+	  </li>
+	  <li>
+	    These updates resolve memory leak vulnerabilities that could be used
+	    to bypass ASLR (CVE-2015-0357, CVE-2015-3040).
+	  </li>
+	  <li>
+	    These updates resolve a security bypass vulnerability that could
+	    lead to information disclosure (CVE-2015-3044).
+	  </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-06.html</url>
+      <cvename>CVE-2015-3038</cvename>
+      <cvename>CVE-2015-3039</cvename>
+      <cvename>CVE-2015-3040</cvename>
+      <cvename>CVE-2015-3041</cvename>
+      <cvename>CVE-2015-3042</cvename>
+      <cvename>CVE-2015-3043</cvename>
+      <cvename>CVE-2015-3044</cvename>
+      <cvename>CVE-2015-0346</cvename>
+      <cvename>CVE-2015-0347</cvename>
+      <cvename>CVE-2015-0348</cvename>
+      <cvename>CVE-2015-0349</cvename>
+      <cvename>CVE-2015-0350</cvename>
+      <cvename>CVE-2015-0351</cvename>
+      <cvename>CVE-2015-0352</cvename>
+      <cvename>CVE-2015-0353</cvename>
+      <cvename>CVE-2015-0354</cvename>
+      <cvename>CVE-2015-0355</cvename>
+      <cvename>CVE-2015-0356</cvename>
+      <cvename>CVE-2015-0357</cvename>
+      <cvename>CVE-2015-0358</cvename>
+      <cvename>CVE-2015-0359</cvename>
+      <cvename>CVE-2015-0360</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ba326a36-5f02-452d-a215-31e7b06d5edf">
+    <topic>Wesnoth -- Remote information disclosure</topic>
+    <affects>
+      <package>
+	<name>wesnoth</name>
+	<name>wesnoth-devel</name>
+	<range><ge>1.7.0</ge><lt>1.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0844">
+	  <p>The WML/Lua API in Battle for Wesnoth 1.7.x through
+	    1.11.x and 1.12.x before 1.12.2 allows remote attackers to
+	    read arbitrary files via a crafted (1) campaign or (2) map
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0844</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-04-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5713bfda-e27d-11e4-b2ce-5453ed2e2b49">
+    <topic>qt4-imageformats, qt4-gui, qt5-gui -- Multiple Vulnerabilities in Qt Image Format Handling</topic>
+    <affects>
+      <package>
+	<name>qt4-imageformats</name>
+	<range><lt>4.8.6_3</lt></range>
+      </package>
+      <package>
+	<name>qt4-gui</name>
+	<range><lt>4.8.6_5</lt></range>
+      </package>
+      <package>
+	<name>qt5-gui</name>
+	<range><lt>5.4.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2015-April/000067.html">
+	  <p>Due to two recent vulnerabilities identified in the built-in image
+	  format handling code, it was decided that this area required further
+	  testing to determine if further issues remained. Fuzzing using
+	  afl-fuzz located a number of issues in the handling of BMP, ICO and
+	  GIF files. The issues exposed included denial of service and buffer
+	  overflows leading to heap corruption. It is possible the latter could
+	  be used to perform remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://lists.qt-project.org/pipermail/announce/2015-April/000067.html</mlist>
+      <cvename>CVE-2015-1858</cvename>
+      <cvename>CVE-2015-1859</cvename>
+      <cvename>CVE-2015-1860</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-12</discovery>
+      <entry>2015-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d4379f59-3e9b-49eb-933b-61de4d0b0fdb">
+    <topic>Ruby -- OpenSSL Hostname Verification Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby20</name>
+	<range><lt>2.0.0.645,1</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><lt>2.1.6,1</lt></range>
+      </package>
+      <package>
+	<name>ruby22</name>
+	<range><lt>2.2.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Developers report:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2015/04/13/ruby-openssl-hostname-matching-vulnerability/">
+	  <p>After reviewing RFC 6125 and RFC 5280, we found multiple violations
+	    of matching hostnames and particularly wildcard certificates.</p>
+	  <p>Ruby’s OpenSSL extension will now provide a string-based matching
+	    algorithm which follows more strict behavior, as recommended by
+	    these RFCs. In particular, matching of more than one wildcard per
+	    subject/SAN is no-longer allowed. As well, comparison of these
+	    values are now case-insensitive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.ruby-lang.org/en/news/2015/04/13/ruby-openssl-hostname-matching-vulnerability/</url>
+      <cvename>CVE-2015-1855</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-13</discovery>
+      <entry>2015-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5f160fa-deee-11e4-99f8-080027ef73ec">
     <topic>mailman -- path traversal vulnerability</topic>
     <affects>
@@ -87311,7 +88345,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>ifmail</name>
-	<range><le>ifmail-2.15_4</le></range>
+	<range><le>2.15_4</le></range>
       </package>
     </affects>
     <description>
@@ -87328,6 +88362,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-08-23</discovery>
       <entry>2004-10-19</entry>
+      <modified>2015-05-01</modified>
     </dates>
   </vuln>
 
@@ -93400,7 +94435,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>squid</name>
-	<range><lt>squid-2.5.5</lt></range>
+	<range><lt>2.5.5</lt></range>
       </package>
     </affects>
     <description>
@@ -93421,7 +94456,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-02-29</discovery>
       <entry>2004-03-26</entry>
-      <modified>2004-03-30</modified>
+      <modified>2015-05-01</modified>
     </dates>
   </vuln>
 

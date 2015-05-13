@@ -87,4 +87,4 @@ share/gtags/script/less-global
 share/gtags/script/pygments_parser.py
 share/gtags/style.css.tmpl
 share/gtags/vim74-gtags-cscope.patch
-@dir var/gtags
+@dir /var/gtags

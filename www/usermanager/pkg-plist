@@ -175,11 +175,3 @@
 %%INSTALLDIR%%/includes/files.php
 %%INSTALLDIR%%/includes/login.php
 %%INSTALLDIR%%/includes/wz_tooltip.php
-@dirrm %%INSTALLDIR%%/extra
-@dirrm %%INSTALLDIR%%/images/icons
-@dirrm %%INSTALLDIR%%/images
-@dirrm %%INSTALLDIR%%/language
-@dirrm %%INSTALLDIR%%/style
-@dirrm %%INSTALLDIR%%/includes
-@dirrm %%INSTALLDIR%%
-@dirrmtry www/data

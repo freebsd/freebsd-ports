@@ -15,6 +15,8 @@ COMMENT=	UPnP IGD implementation which uses pf/ipf
 SUB_FILES=	miniupnpd.conf.sample
 SUB_LIST=	UUID=${UUID}
 
+USES=		cpe
+CPE_VENDOR=	miniupnp_project
 UUID!=		uuidgen
 PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd \
 		man/man8/miniupnpd.8.gz

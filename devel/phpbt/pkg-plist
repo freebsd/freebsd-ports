@@ -194,3 +194,4 @@
 %%PHPBT%%/user.php
 @owner root
 @group wheel
+@dir %%PHPBT%%/jpgimages

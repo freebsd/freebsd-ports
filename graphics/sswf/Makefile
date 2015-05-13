@@ -3,7 +3,7 @@
 
 PORTNAME=	sswf
 PORTVERSION=	1.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -29,15 +29,15 @@ LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--disable-debug --disable-yydebug
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} 's|ICONV_INPUT_CAST||' \
-		${WRKSRC}/src/lib/libsswf_tag_header.c++ \
-		${WRKSRC}/src/sswf/sswf_lexical.c++
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_libiconv_open=no \
+		ac_cv_lib_iconv_iconv_open=no
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

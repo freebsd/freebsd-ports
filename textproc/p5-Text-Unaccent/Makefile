@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-Unaccent
 PORTVERSION=	1.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 USES=		iconv perl5
 USE_PERL5=	configure
-CFLAGS+=	-DICONV_CONST=const
+
+post-patch:
+	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

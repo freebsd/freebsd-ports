@@ -4,7 +4,7 @@
 PORTNAME=	apache-ant
 PORTVERSION=	1.9.4
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
+MASTER_SITES=	APACHE/ant/binaries/:bin \
 		LOCAL/hq:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man

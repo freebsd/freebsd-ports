@@ -24,8 +24,7 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	aliles
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	b24df9f
+GH_TAGNAME=	b24df9f
 
 .include <bsd.port.pre.mk>
 

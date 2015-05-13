@@ -1,5 +1,5 @@
---- CegoXS.h.orig	2010-11-21 09:25:27.000000000 +0800
-+++ CegoXS.h	2011-05-29 21:11:15.361979766 +0800
+--- CegoXS.h.orig	2010-11-21 01:25:27 UTC
++++ CegoXS.h
 @@ -9,4 +9,16 @@
  #include "dbdimp.h"
  #include <dbd_xsh.h>

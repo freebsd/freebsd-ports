@@ -3,6 +3,7 @@
 
 PORTNAME=	speedtables
 PORTVERSION=	1.9.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,8 +25,6 @@ USES=		tcl
 USE_AUTOTOOLS=	autoconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	26b4b13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \

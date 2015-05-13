@@ -2,32 +2,107 @@
 # $FreeBSD$
 
 PORTNAME=	anope
-PORTVERSION=	1.8.9
+PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-legacy/Anope%20${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
 
-USES=		perl5 gmake desthack
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" \
-		--includedir="${LOCALBASE}/include" \
-		--with-bindir=\$${${DESTDIRNAME}}${PREFIX}/libexec/anope \
-		--with-datadir=\$${${DESTDIRNAME}}${DATADIR}
+LICENSE=	GPLv2
 
-PORTDOCS=	BUGS COPYING DEFCON EVENTS \
-		FAQ INSTALL IRCD MODULES MYSQL \
-		NEWS PROXY README
+USES=		cmake:outsource shebangfix
+CMAKE_ARGS+=	-DINSTDIR:STRING="${LOCALBASE}/anope"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	anope
+GH_PROJECT=	anope
+GH_TAGNAME=	${PORTVERSION}
 
 USE_RC_SUBR=	anope
 
-OPTIONS_DEFINE=	MYSQL
-OPTIONS_DEFAULT=	MYSQL
+SUB_FILES=	pkg-message
 
-MYSQL_USE= mysql=yes
-MYSQL_CONFIGURE_WITH=	mysql
+OPTIONS_DEFINE=	GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX SASL SQLITE STATS TRE
+OPTIONS_DEFAULT=	MYSQL OPENSSL POSIX
+POSIX_DESC=	POSIX Regex Module
+STATS_DESC=	Channel Statistics Module
+TRE_DESC=	Tre Regex Module
+
+NLS_USES=	gettext
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
+PLIST_SUB+=	GNUTLS=""
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+.else
+PLIST_SUB+=	GNUTLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+PLIST_SUB+=	LDAP=""
+USE_OPENLDAP=	yes
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+PLIST_SUB+=	MYSQL=""
+USE_MYSQL=	yes
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
+PLIST_SUB+=	OPENSSL=""
+OPENSSL_USE=	openssl=yes
+.else
+PLIST_SUB+=	OPENSSL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPCRE}
+PLIST_SUB+=	PCRE=""
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+.else
+PLIST_SUB+=	PCRE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPOSIX}
+PLIST_SUB+=	POSIX=""
+.else
+PLIST_SUB+=	POSIX="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSASL}
+PLIST_SUB+=	SASL=""
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+.else
+PLIST_SUB+=	SASL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+PLIST_SUB+=	SQLITE=""
+USE_SQLITE=	yes
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSTATS}
+PLIST_SUB+=	STATS=""
+.else
+PLIST_SUB+=	STATS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTRE}
+PLIST_SUB+=	TRE=""
+LIB_DEPENDS+=	libtre.so:${PORTSDIR}/textproc/libtre
+.else
+PLIST_SUB+=	TRE="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -37,15 +112,45 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ja_utf8|ja|g' ${WRKSRC}/lang/Makefile
-	${MV} ${WRKSRC}/lang/ja_utf8.l ${WRKSRC}/lang/ja.l
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/anope
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MGNUTLS}
+	${LN} -s ${WRKSRC}/modules/extra/m_ssl_gnutls.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MLDAP}
+	${LN} -s ${WRKSRC}/modules/extra/m_ldap.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_ldap_authentication.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_ldap_oper.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MMYSQL}
+	${LN} -s ${WRKSRC}/modules/extra/m_mysql.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_sql_authentication.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_sql_log.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_sql_oper.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MOPENSSL}
+	${LN} -s ${WRKSRC}/modules/extra/m_ssl_openssl.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MSQLITE}
+	${LN} -s ${WRKSRC}/modules/extra/m_sqlite.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MPCRE}
+	${LN} -s ${WRKSRC}/modules/extra/m_regex_pcre.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MPOSIX}
+	${LN} -s ${WRKSRC}/modules/extra/m_regex_posix.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MSASL}
+	${LN} -s ${WRKSRC}/modules/extra/m_sasl_dh-aes.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_sasl_dh-blowfish.cpp ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MSTATS}
+	${LN} -s ${WRKSRC}/modules/extra/stats ${WRKSRC}/modules/
+.endif
+.if ${PORT_OPTIONS:MTRE}
+	${LN} -s ${WRKSRC}/modules/extra/m_regex_tre.cpp ${WRKSRC}/modules/
+.endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${LOCALBASE}/anope/data/backups
+	${MKDIR} ${STAGEDIR}/${LOCALBASE}/anope/logs
 
 .include <bsd.port.post.mk>

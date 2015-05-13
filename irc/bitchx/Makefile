@@ -8,10 +8,12 @@ CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	dan.mashal@gmail.com
-# Co-maintainer: Chris Petrik <chris@bsdjunk.com> (PR/181627)
 COMMENT=	Feature-rich scriptable IRC client
 
-USES=		gmake
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USES=		cpe gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
@@ -33,8 +35,6 @@ PLUGINS_DESC=	Build a handful of BitchX plugins
 HEBREW_DESC=	Add support for hebrew language
 TOGGLES_DESC=	Disable away,kick_ops,auto_rejoin
 OPTIONS_DEFAULT=	PLUGINS SSL
-
-MAKE_JOBS_UNSAFE=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

@@ -29,10 +29,6 @@ PYTHON_LDFLAGS=	-L${PYTHON_LIBDIR}
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
 
-post-patch:
-	@${REINPLACE_CMD} -E -e 's,(objformat=).*,\1elf,' \
-		${WRKSRC}/configure
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}

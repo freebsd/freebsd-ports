@@ -3,8 +3,7 @@
 #
 
 PORTNAME=	kamailio
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src

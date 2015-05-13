@@ -5,8 +5,7 @@ PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
 PORTREVISION=	11
 CATEGORIES=	x11-fm xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/archive/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/archive/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -44,8 +43,5 @@ STARTUP_CONFIGURE_ENABLE=	startup-notification
 GCONF_USE=	gnome=gconf2
 GCONF_CONFIGURE_ENABLE=	gnome-thumbnailers
 OPTIONS_SUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

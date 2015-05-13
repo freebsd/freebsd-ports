@@ -18,7 +18,8 @@ OPTIONS_DEFINE=	DOCS
 REINPLACE_ARGS=	-i ''
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	denyhosts
-USES=		python:2 shebangfix
+USES=		cpe python:2 shebangfix
+CPE_VENDOR=	phil_schwartz
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 SUB_FILES=	pkg-message

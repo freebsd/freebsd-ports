@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://aphyr.com/${PORTNAME}/
 

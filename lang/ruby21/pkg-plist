@@ -759,6 +759,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
@@ -1711,6 +1713,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d21/psych__to__ruby_8h__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d2d/structmethod__entry__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d26/sha2ossl_8h__incl.png

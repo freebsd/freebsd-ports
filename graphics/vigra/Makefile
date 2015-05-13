@@ -5,7 +5,6 @@ PORTNAME=	vigra
 DISTVERSION=	1.10.0
 PORTREVISION=	5
 CATEGORIES=	graphics
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src-with-docu
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
@@ -14,11 +13,7 @@ LICENSE=	MIT
 
 USE_GITHUB=
 GH_ACCOUNT=     ukoethe
-GH_COMMIT=      e6c21f3
-GH_TAGNAME=     ${GH_COMMIT}
-FETCH_ARGS?=    -Fpr
-
-WRKSRC=		${WRKDIR}/ukoethe-${PORTNAME}-${GH_COMMIT}
+GH_TAGNAME=     e6c21f3
 
 USES=		cmake
 CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \

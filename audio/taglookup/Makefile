@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.kamaz.org.uk/taglookup/
 MAINTAINER=	alex@kamaz.org.uk
 COMMENT=	Utility for tagging groups of audio files using CDDB
 
-BROKEN=		Unfetchable
 LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
 		libtag.so:${PORTSDIR}/audio/taglib
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -12,7 +13,7 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		execinfo libtool:keepla tar:bzip2 pkgconfig
+USES=		cpe execinfo libtool:keepla tar:bzip2 pkgconfig
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
@@ -97,12 +98,6 @@ XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 PLIST_SUB+=	SIMAKA=""
 .else
 PLIST_SUB+=	SIMAKA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEAPDYNAMIC} || ${PORT_OPTIONS:MEAPAKA3GPP2}
-PLIST_SUB+=	DYNAKA=""
-.else
-PLIST_SUB+=	DYNAKA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}

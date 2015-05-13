@@ -44,7 +44,6 @@ DELAY_UNITS=	seconds
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,echo aout,echo elf,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I..\2,' \
 		${WRKSRC}/src/libxosd/Makefile.in \
 		${WRKSRC}/src/xmms_plugin/Makefile.in

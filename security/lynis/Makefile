@@ -11,6 +11,8 @@ COMMENT=	Security and system auditing tool
 
 LICENSE=	GPLv3
 
+USES=		cpe
+CPE_VENDOR=	cisofy
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

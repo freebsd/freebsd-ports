@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.4.12
+PORTVERSION=	3.5.3
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -20,13 +21,11 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
 PATCHFILES=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-CONFLICTS_INSTALL=	squid33-*
 
 USES=		compiler cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache
@@ -44,16 +43,16 @@ PORTEXAMPLES=	*
 SUB_FILES+=	pkg-install pkg-message
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
-		AUTH_SQL CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
+OPTIONS_DEFINE=	ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
+		AUTH_SQL CACHE_DIGESTS DEBUG DELAY_POOLS ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 \
 		KQUEUE LARGEFILE NETTLE SNMP SSL SSL_CRTD STACKTRACES LAX_HTTP \
 		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 DOCS EXAMPLES
 
-# Note: FS_FCOSS was removed from OPTIONS, it is broken and only experimental
-#OPTIONS_DEFINE+=	FS_COSS
+OPTIONS_SINGLE=	GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-OPTIONS_DEFAULT=AUTH_KERB AUTH_NIS FS_AUFS FS_DISKD HTCP IDENT KQUEUE SNMP \
+OPTIONS_DEFAULT=GSSAPI_BASE AUTH_NIS FS_AUFS FS_DISKD HTCP IDENT KQUEUE SNMP \
 		WCCP WCCPV2
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
@@ -70,7 +69,6 @@ AUTH_SQL_RUN_DEPENDS=		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 AUTH_SQL_USE=			MYSQL=yes
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
-DNS_HELPER_CONFIGURE_ON=	--disable-internal-dns
 ECAP_CFLAGS=			-I${LOCALBASE}/include
 ECAP_CONFIGURE_ENABLE=		ecap
 ECAP_LDFLAGS=			-L${LOCALBASE}/lib
@@ -106,11 +104,28 @@ VIA_DB_CONFIGURE_ENABLE=	forw-via-db
 WCCPV2_CONFIGURE_ENABLE=	wccpv2
 WCCP_CONFIGURE_ENABLE=		wccp
 
+GSSAPI_NONE_CONFIGURE_ON=	--without-heimdal-krb5 \
+				--without-mit-krb5 \
+				--without-gss
+
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+
 # TODO:
 # add an option for external_acl/session (requires some kind of external
 # Berkeley DB support, unsure which one)
 ARP_ACL_DESC=		ARP/MAC/EUI based authentification
-AUTH_KERB_DESC=		Install Kerberos authentication helpers
+GSSAPI_DESC=		Install Kerberos authentication helpers
+GSSAPI_NONE_DESC=	Build without Kerberos support
+GSSAPI_BASE_DESC=	Build with Kerberos support from base
+GSSAPI_HEIMDAL_DESC=	Build with Kerberos support from security/heimdal
+GSSAPI_MIT_DESC=	Build with Kerberos support from security/krb5
 AUTH_LDAP_DESC=		Install LDAP authentication helpers
 AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
@@ -119,14 +134,12 @@ AUTH_SQL_DESC=		Install SQL based auth (uses MySQL)
 CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
-DNS_HELPER_DESC=	Use external dnsserver processes for DNS
 ECAP_DESC=		Loadable content adaptation modules
 ESI_DESC=		ESI support
 FOLLOW_XFF_DESC=	Support for the X-Following-For header
 FS_AUFS_DESC=		AUFS (threaded-io) support
-FS_COSS_DESC=		COSS (not stable yet)
 FS_DISKD_DESC=		DISKD storage engine controlled by separate service
-FS_ROCK_DESC=		ROCK (unstable)
+FS_ROCK_DESC=		ROCK storage engine
 HTCP_DESC=		HTCP support
 ICAP_DESC=		the ICAP client
 ICMP_DESC=		ICMP pinging and network measurement
@@ -151,12 +164,12 @@ change_files=	ChangeLog \
 		contrib/nextstep/post_install \
 		errors/Makefile.am \
 		errors/Makefile.in \
-		helpers/basic_auth/MSNT/Makefile.am \
-		helpers/basic_auth/MSNT/Makefile.in \
+		helpers/basic_auth/SMB_LM/README.html \
 		src/Makefile.am \
 		src/Makefile.in \
 		src/cf_gen.cc \
 		src/squid.8.in \
+		test-suite/Makefile.in \
 		tools/Makefile.am \
 		tools/Makefile.in
 
@@ -177,6 +190,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--with-logdir=/var/log/squid \
 		--with-pidfile=/var/run/squid/squid.pid \
 		--with-swapdir=/var/squid/cache \
+		--without-gnutls \
 		--enable-auth \
 		--enable-build-info \
 		--enable-loadable-modules \
@@ -191,7 +205,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 # Authentication methods and modules:
 
-basic_auth=	DB MSNT MSNT-multi-domain NCSA PAM POP3 RADIUS fake getpwnam
+basic_auth=	DB SMB_LM MSNT-multi-domain NCSA PAM POP3 RADIUS fake getpwnam
 digest_auth=	file
 external_acl=	file_userip time_quota unix_group
 ntlm_auth=	fake smb_lm
@@ -220,18 +234,21 @@ basic_auth+=	NIS
 .endif
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
-.if ${PORT_OPTIONS:MAUTH_KERB} && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
-negotiate_auth=	kerberos wrapper
-. if ${OPSYS} == DragonFly
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
-CFLAGS+=	-I${LOCALBASE}/include
-. endif
-# the kerberos_ldap_group external helper also depends on LDAP and SASL:
+.if ${PORT_OPTIONS:MGSSAPI_NONE} || defined(NO_KERBEROS) || defined(WITHOUT_KERBEROS)
+negotiate_auth=	none
+PLIST_SUB+=	AUTH_KERB="@comment "
+.else
+# The kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
 . endif
-.else
-negotiate_auth=	none
+negotiate_auth=	kerberos wrapper
+PLIST_SUB+=	AUTH_KERB=""
+.endif
+
+# Make it build on FreeBSD < 10
+.if ${PORT_OPTIONS:MGSSAPI_BASE}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-build-8-9
 .endif
 
 CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
@@ -239,6 +256,10 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-auth-negotiate="${negotiate_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
+
+.if ${PORT_OPTIONS:MECAP}
+BROKEN=			It needs eCAP 1.0 lib, which isn't in ports tree now
+.endif
 
 # Storage schemes:
 storage_schemes=	ufs
@@ -252,11 +273,6 @@ diskio_modules+=	DiskThreads
 LDFLAGS+=		-pthread
 .else
 CONFIGURE_ARGS+=	--without-pthreads
-.endif
-
-.if ${PORT_OPTIONS:MFS_COSS}
-BROKEN=			FS_COSS does not compile
-storage_schemes+=	coss
 .endif
 
 .if ${PORT_OPTIONS:MFS_DISKD}
@@ -290,7 +306,7 @@ CONFIGURE_ARGS+=	--enable-storeid-rewrite-helpers="${storeid_rewrite_helpers}"
 # works when it is defined before bsd.port{.pre}.mk is .included.
 # This makes it currently impossible to combine this macro with OPTIONS to
 # conditionally include OpenSSL support.
-# XXX: is this still true with OptionsNG as of 2014-09?
+# XXX: is this still true with OptionsNG as of 2015-03?
 #.include "${.CURDIR}/../../Mk/bsd.openssl.mk"
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
@@ -320,8 +336,6 @@ post-patch:
 		-e 's|\.conf\.default|.conf.sample|' \
 		-e 's|)\.default|).sample|' \
 		${change_files})
-	@(cd ${WRKSRC} && ${MV} helpers/basic_auth/MSNT/msntauth.conf.default \
-		helpers/basic_auth/MSNT/msntauth.conf.sample)
 	@(cd ${WRKSRC} && ${MV} src/mime.conf.default src/mime.conf.sample)
 
 .if !${PORT_OPTIONS:MIPV6}
@@ -346,7 +360,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-unused-private-field
+#CXXFLAGS+=	-Wno-unused-private-field
 .if ${COMPILER_VERSION} >= 35
 CXXFLAGS+=	-Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-dynamic-class-memaccess
 .endif

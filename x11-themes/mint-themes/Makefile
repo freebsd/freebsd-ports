@@ -12,11 +12,7 @@ COMMENT=	Themes for the cinnamon desktop
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GH_PROJECT=	mint-themes
-GH_COMMIT=	41cf70d
-GH_TAGNAME=	${GH_COMMIT}
-
-WRKSRC=		${WRKDIR}/linuxmint-${PORTNAME}-41cf70d
+GH_TAGNAME=	41cf70d
 
 NO_CONFIGURE=	yes
 NO_BUILD=	yes

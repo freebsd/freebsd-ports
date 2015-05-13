@@ -44,13 +44,17 @@ case "$backup_duply_enable" in
 	eval sleep $(jot -r 1 0 ${backup_duply_random})
 	echo
         echo "Duply Backup:"
-        eval duply ${backup_duply_profile} ${backup_duply_command} ${backup_duply_opt}
-        if [ $? -gt 0 ]
-        then
-            echo "Errors were reported during backup."
-            rc=3
-        fi
-        ;;
+        for duply_profile in ${backup_duply_profile}
+	do
+	  eval duply ${duply_profile} ${backup_duply_command} ${backup_duply_opt}
+	  if [ $? -gt 0 ]
+	  then
+	    echo "Errors were reported during backup."
+	    rc=3
+	    break
+	  fi
+	done
+	;;
 esac
 
 exit $rc

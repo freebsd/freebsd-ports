@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	imwheel
-PORTVERSION=	1.0.0.p12
+DISTVERSION=	1.0.0pre12
 PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
-		SF/${PORTNAME}/${PORTNAME}-source/1.0.0pre12
-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p12/pre12/}
+		SF/${PORTNAME}/${PORTNAME}-source/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.24
+PORTVERSION=	1.17.25
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool perl5 pkgconfig tar:xz shebangfix
+USES=		gmake iconv libtool perl5 pkgconfig shebangfix tar:xz
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
 		dselect/methods/ftp/setup
@@ -37,7 +37,7 @@ CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 post-patch:

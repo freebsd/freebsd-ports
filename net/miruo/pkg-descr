@@ -1,0 +1,4 @@
+Network monitor/analyzer which prints packets on terminal in neat style.
+Packet data can also be read from a file saved by tcpdump(1).
+
+WWW: https://github.com/KLab/miruo

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mucommander
-PORTVERSION=	0.9.0
+DISTVERSION=	0_9_0
 CATEGORIES=	x11-fm java
 MASTER_SITES=	http://www.mucommander.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface

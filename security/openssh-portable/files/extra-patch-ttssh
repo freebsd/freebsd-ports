@@ -1,17 +1,30 @@
-Workaround TTSSH client crash with hostkeys-00@openssh.com messages in
-OpenSSH 6.8p1.
+commit d8f391caef62378463a0e6b36f940170dadfe605
+Author: dtucker@openbsd.org <dtucker@openbsd.org>
+Date:   Fri Apr 10 05:16:50 2015 +0000
 
-  http://en.sourceforge.jp/ticket/browse.php?group_id=1412&tid=35010
-  http://en.sourceforge.jp/projects/ttssh2/scm/svn/commits/5829
+    upstream commit
+    
+    Don't send hostkey advertisments
+     (hostkeys-00@openssh.com) to current versions of Tera Term as they can't
+     handle them.  Newer versions should be OK.  Patch from Bryan Drewery and
+     IWAMOTO Kouichi, ok djm@
 
---- compat.c.orig	2015-03-17 00:49:20.000000000 -0500
-+++ compat.c	2015-04-09 15:13:35.061239000 -0500
+diff --git compat.c compat.c
+index 2498168..0934de9 100644
+--- compat.c
++++ compat.c
+@@ -1,4 +1,4 @@
+-/* $OpenBSD: compat.c,v 1.88 2015/04/07 23:00:42 djm Exp $ */
++/* $OpenBSD: compat.c,v 1.89 2015/04/10 05:16:50 dtucker Exp $ */
+ /*
+  * Copyright (c) 1999, 2000, 2001, 2002 Markus Friedl.  All rights reserved.
+  *
 @@ -167,6 +167,17 @@ compat_datafellows(const char *version)
  					SSH_BUG_SCANNER },
  		{ "Probe-*",
  					SSH_BUG_PROBE },
-+		{ "TTSSH/1.5.*,"
-+		  "TeraTerm SSH*,"
++		{ "TeraTerm SSH*,"
++		  "TTSSH/1.5.*,"
 +		  "TTSSH/2.1*,"
 +		  "TTSSH/2.2*,"
 +		  "TTSSH/2.3*,"
@@ -24,8 +37,16 @@ OpenSSH 6.8p1.
  		{ NULL,			0 }
  	};
  
---- compat.h.orig	2015-04-08 21:02:42.865971000 -0500
-+++ compat.h	2015-04-08 21:04:06.865029000 -0500
+diff --git compat.h compat.h
+index af2f007..83507f0 100644
+--- compat.h
++++ compat.h
+@@ -1,4 +1,4 @@
+-/* $OpenBSD: compat.h,v 1.46 2015/01/19 20:20:20 markus Exp $ */
++/* $OpenBSD: compat.h,v 1.47 2015/04/10 05:16:50 dtucker Exp $ */
+ 
+ /*
+  * Copyright (c) 1999, 2000, 2001 Markus Friedl.  All rights reserved.
 @@ -60,6 +60,7 @@
  #define SSH_NEW_OPENSSH		0x04000000
  #define SSH_BUG_DYNAMIC_RPORT	0x08000000
@@ -34,14 +55,24 @@ OpenSSH 6.8p1.
  
  void     enable_compat13(void);
  void     enable_compat20(void);
---- sshd.c.orig	2015-04-08 21:01:02.944936000 -0500
-+++ sshd.c	2015-04-08 21:03:55.086137000 -0500
-@@ -2321,7 +2321,7 @@
- 	    options.client_alive_count_max);
+diff --git sshd.c sshd.c
+index 6aa17fa..60b0cd4 100644
+--- sshd.c
++++ sshd.c
+@@ -1,4 +1,4 @@
+-/* $OpenBSD: sshd.c,v 1.445 2015/03/31 22:55:24 djm Exp $ */
++/* $OpenBSD: sshd.c,v 1.446 2015/04/10 05:16:50 dtucker Exp $ */
+ /*
+  * Author: Tatu Ylonen <ylo@cs.hut.fi>
+  * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+@@ -928,6 +928,10 @@ notify_hostkeys(struct ssh *ssh)
+ 	int i, nkeys, r;
+ 	char *fp;
  
- 	/* Try to send all our hostkeys to the client */
--	if (compat20)
-+	if (compat20 && (datafellows & SSH_BUG_HOSTKEYS) == 0)
- 		notify_hostkeys(active_state);
- 
- 	/* Start session. */
++	/* Some clients cannot cope with the hostkeys message, skip those. */
++	if (datafellows & SSH_BUG_HOSTKEYS)
++		return;
++
+ 	if ((buf = sshbuf_new()) == NULL)
+ 		fatal("%s: sshbuf_new", __func__);
+ 	for (i = nkeys = 0; i < options.num_host_key_files; i++) {

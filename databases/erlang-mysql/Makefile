@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Native MySQL driver for Erlang
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

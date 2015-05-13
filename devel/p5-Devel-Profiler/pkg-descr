@@ -1,8 +1,0 @@
-This module implements a Perl profiler that outputs profiling data in a
-format compatible with dprofpp, Devel::DProf's profile analysis tool.
-It is meant to be a drop-in replacement for Devel::DProf.
-
-NOTE: If Devel::DProf works for your application then there is no reason
-to use this module.
-
-WWW: http://search.cpan.org/dist/Devel-Profiler/

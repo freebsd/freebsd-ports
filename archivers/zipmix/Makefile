@@ -4,23 +4,20 @@
 PORTNAME=	zipmix
 DISTVERSION=	20070221
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.advsys.net/ken/util/
+MASTER_SITES=	http://www.advsys.net/ken/util/ \
+		http://BSDforge.com/projects/source/archivers/zipmix/
 DISTNAME=	${PORTNAME}_src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
-
-BROKEN=		Checksum and size mismatch
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Produce .ZIP file from two other ones with the best compressed files
 
 USES=		dos2unix zip
+MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-pre-build:
-	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

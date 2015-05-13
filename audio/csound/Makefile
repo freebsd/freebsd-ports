@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME:S/c/C/}${PORTVERSION}${EXTRACT_SUFX} \
 		${CSOUND_DOCS:S/$/:manual/}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LICENSE=	LGPL21

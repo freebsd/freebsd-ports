@@ -5,7 +5,7 @@ PORTVERSION=	0.4.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Entities - a simple Facade to use with your models and API
 
 LICENSE=	MIT

@@ -1,6 +1,21 @@
---- Makefile.in.orig	2014-09-01 14:50:09.000000000 +0200
-+++ Makefile.in	2014-09-02 00:46:38.638094906 +0200
-@@ -376,7 +376,7 @@
+--- Makefile.in.orig	2015-04-25 13:56:37 UTC
++++ Makefile.in
+@@ -83,10 +83,10 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@HAVE_DBLIBRARY_TRUE@am__append_1 = makedat.html
+-@HAVE_DBLIBRARY_TRUE@am__append_2 = makedat.1
+-@HAVE_DBLIBRARY_FALSE@am__append_3 = makedat.html
+-@HAVE_DBLIBRARY_FALSE@am__append_4 = makedat.1
++@HAVE_DBLIBRARY_TRUE@am__append_1 = 
++@HAVE_DBLIBRARY_TRUE@am__append_2 = 
++@HAVE_DBLIBRARY_FALSE@am__append_3 = 
++@HAVE_DBLIBRARY_FALSE@am__append_4 = 
+ subdir = .
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/configure $(am__configure_deps) \
+@@ -376,7 +376,7 @@ host_alias = @host_alias@
  host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
@@ -9,7 +24,7 @@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
-@@ -411,15 +411,15 @@
+@@ -412,15 +412,15 @@ EXTRA_DIST = README.html INSTALL.html UP
  	maildroptips.txt COPYING.GPL manpage.css $(HTMLWWW)
  
  scriptdir = $(pkgdatadir)/scripts
@@ -29,7 +44,7 @@
  	maildropex.7 maildir.5 maildropfilter.7 maildropgdbm.7 \
  	makemime.1 reformail.1 reformime.1 $(am__append_2)
  EXTRA_LTLIBRARIES = librfc822.la librfc2045.la
-@@ -1257,21 +1257,21 @@
+@@ -1265,21 +1265,21 @@ uninstall-man: uninstall-man1 uninstall-
  
  install-deliverquota:
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
@@ -57,7 +72,7 @@
  
  #  In maildrop 0.74, maildirmake was installed as bindir/maildrop.maildirmake
  #  and a soft link was created from maildirmake to maildrop.maildirmake
-@@ -1289,7 +1289,7 @@
+@@ -1297,18 +1297,18 @@ install-maildrop:
  		$(INSTALL_PROGRAM) libs/maildrop/$$f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	$(INSTALL_PROGRAM) libs/liblock/lockmail $(DESTDIR)$(bindir)/lockmail
@@ -65,8 +80,15 @@
 +	$(INSTALL_PROGRAM) libs/maildir/maildirmake $(DESTDIR)$(bindir)/maildrop-maildirmake
  	$(INSTALL_PROGRAM) libs/rfc2045/reformime $(DESTDIR)$(bindir)/reformime
  	$(INSTALL_PROGRAM) libs/rfc2045/makemime $(DESTDIR)$(bindir)/makemime
- 	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1300,7 +1300,7 @@
+-	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
+-		$(INSTALL_PROGRAM) libs/makedat/makedatprog $(DESTDIR)$(bindir)/makedatprog
+-	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
+-		$(INSTALL_SCRIPT)  libs/makedat/makedat     $(DESTDIR)$(bindir)/makedat
++#	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
++#		$(INSTALL_PROGRAM) libs/makedat/makedatprog $(DESTDIR)$(bindir)/makedatprog
++#	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
++#		$(INSTALL_SCRIPT)  libs/makedat/makedat     $(DESTDIR)$(bindir)/makedat
+ 	. libs/maildrop/uidgid ; test -z "$$gid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chgrp $$gid maildrop lockmail
  	. libs/maildrop/uidgid ; test -z "$$uid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chown $$uid maildrop lockmail && chmod 755 maildrop lockmail
  
  uninstall-maildrop:
@@ -75,7 +97,7 @@
  		rm -f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1354,11 +1354,11 @@
+@@ -1362,11 +1362,11 @@ maildiracl.html: libs/maildir/maildiracl
  maildirkw.html: libs/maildir/maildirkw.html
  	cp -f $(srcdir)/libs/maildir/maildirkw.html maildirkw.html
  

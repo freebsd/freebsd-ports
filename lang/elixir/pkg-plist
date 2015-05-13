@@ -185,6 +185,7 @@ lib/elixir/lib/elixir/ebin/elixir_bootstrap.beam
 lib/elixir/lib/elixir/ebin/elixir_clauses.beam
 lib/elixir/lib/elixir/ebin/elixir_code_server.beam
 lib/elixir/lib/elixir/ebin/elixir_compiler.beam
+lib/elixir/lib/elixir/ebin/elixir_config.beam
 lib/elixir/lib/elixir/ebin/elixir_counter.beam
 lib/elixir/lib/elixir/ebin/elixir_def.beam
 lib/elixir/lib/elixir/ebin/elixir_def_defaults.beam
@@ -232,6 +233,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TestCase.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TimeoutError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.beam
 lib/elixir/lib/ex_unit/ebin/ex_unit.app
+lib/elixir/lib/iex/ebin/Elixir.IEx.App.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Autocomplete.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.CLI.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Config.beam
@@ -241,6 +243,7 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.History.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Introspection.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Remsh.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Server.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.beam
 lib/elixir/lib/iex/ebin/iex.app
 lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
@@ -282,6 +285,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.SCM.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.IO.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Start.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Build.beam
@@ -290,6 +294,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Uninstall.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Clean.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Cmd.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.All.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.App.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Elixir.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Erlang.beam

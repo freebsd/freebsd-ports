@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 .include <bsd.port.options.mk>
 

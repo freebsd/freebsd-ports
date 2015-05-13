@@ -2,7 +2,8 @@
 
 PORTNAME=	tagutil
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	alex@kaworu.ch
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
-GH_TAGNAME=	v3.0.1
-GH_COMMIT=	b7ce91f
 
 USES=		pkgconfig cmake iconv
 PLIST_FILES=	bin/tagutil \

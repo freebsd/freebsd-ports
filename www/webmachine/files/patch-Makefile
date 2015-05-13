@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-05-07 14:58:47 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ all: deps compile
+ compile: deps
+ 	./rebar compile
+ 
+-deps: DEV_MODE
++deps:
+ 	@(./rebar get-deps)
+ 
+ clean:

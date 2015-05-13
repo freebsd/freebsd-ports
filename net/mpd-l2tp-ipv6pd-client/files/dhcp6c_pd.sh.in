@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2007-2014 Hajimu UMEMOTO <ume@mahoroba.org>
+# Copyright (c) 2007-2015 Hajimu UMEMOTO <ume@mahoroba.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -47,7 +47,7 @@ getpid()
 		read pid junk < ${pidfile}
 		echo ${pid}
 	else
-		/bin/pgrep -f "dhcp6c -p ${pidfile}"
+		pgrep -f "dhcp6c -p ${pidfile}"
 	fi
 }
 

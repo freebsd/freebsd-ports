@@ -68,7 +68,6 @@ PLIST_SUB+=	WITH_GEODB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-WEBALIZER_SUFFIX=	-geoip
 CONFLICTS+=	${PKGNAMEPREFIX}webalizer-2*
 CONFIGURE_ARGS+=	--enable-geoip \
 			--with-geoip-lib=${LOCALBASE}/lib \

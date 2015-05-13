@@ -1,9 +1,9 @@
-# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
+# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	Data-SpreadPagination
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,15 +11,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Page numbering and spread pagination
 
-BUILD_DEPENDS=	\
-	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
-	p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
-
-test:
-	cd ${WRKSRC} && ${MAKE} test
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

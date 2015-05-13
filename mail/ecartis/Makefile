@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ecartis
-PORTVERSION=	1.0.0.s20060813
+DISTVERSION=	1.0.0-snap20060813
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.net/pub/ecartis/ \
 		http://rodrigo.osorio.free.fr/freebsd/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 
 MAINTAINER=	jtrigg@spamcop.net
 COMMENT=	The Ecartis Listserver / Mailing List Manager

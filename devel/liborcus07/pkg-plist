@@ -1,7 +1,3 @@
-bin/orcus-detect
-bin/orcus-mso-encryption
-bin/orcus-xml-dump
-bin/orcus-zip-dump
 include/liborcus-0.8/orcus/base64.hpp
 include/liborcus-0.8/orcus/cell_buffer.hpp
 include/liborcus-0.8/orcus/css_parser.hpp

@@ -21,5 +21,6 @@ RUN_DEPENDS=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https
 USES=		perl5
 USE_PERL5=	configure
 USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--no-live-tests
 
 .include <bsd.port.mk>

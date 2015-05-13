@@ -1,7 +1,6 @@
 include/IP2Loc_DBInterface.h
 include/IP2Location.h
 lib/libIP2Location.a
-lib/libIP2Location.la
 lib/libIP2Location.so
 lib/libIP2Location.so.1
 lib/libIP2Location.so.1.0.0

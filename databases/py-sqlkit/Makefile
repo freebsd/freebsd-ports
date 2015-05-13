@@ -13,6 +13,8 @@ COMMENT=	Standalone program to browse and edit data
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:${PORTSDIR}/devel/py-babel

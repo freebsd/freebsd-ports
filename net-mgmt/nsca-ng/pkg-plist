@@ -1,0 +1,4 @@
+@sample(,,0750) etc/nsca-ng.cfg.sample
+man/man5/nsca-ng.cfg.5.gz
+man/man8/nsca-ng.8.gz
+sbin/nsca-ng

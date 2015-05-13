@@ -3,7 +3,7 @@
 
 PORTNAME=	xview-clients
 PORTVERSION=	3.2.1.4.19c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.physionet.org/physiotools/xview/src/ \
 		http://komquats.com/distfiles/ \
@@ -51,7 +51,7 @@ pre-configure:
 	s|^/\*\*/#*|XCOMM |'
 
 do-install:
-	@cd ${WRKSRC}/clients; ${MAKE} install install.man
+	@cd ${WRKSRC}/clients; ${MAKE} DESTDIR=${STAGEDIR} install install.man
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/help
 	@${INSTALL_DATA} ${WRKSRC}/misc/support/textedit.info ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 

@@ -51,7 +51,7 @@ sub_status()
 	if [ -f /var/run/sympa/$1.pid ] ; then
 		pid=`head -1 /var/run/sympa/$1.pid | tr -s ' ' '|'`
 		if [ "$pid" != "" ] ; then
-			running=`ps -A | egrep "$pid"`
+			running=`ps -axw | grep "^[[:space:]]*$pid[[:space:]]"`
 			if [ "$running" != "" ]; then
 				echo "$1 (pid(s) $pid) is active..."
 				return 0
@@ -115,7 +115,7 @@ sub_stop()
 	if [ "$pids" != "" ]; then
 	    for pid in $pids; do
 		killcount=0
-		running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		running=`ps -axw | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
 		while [ "$running" != "" ]; do
 		    if [ $killcount -gt 10 ]; then
 			echo 'failure'
@@ -123,13 +123,13 @@ sub_stop()
 		    fi
 
 		    kill -TERM $pid >/dev/null 2>&1
-		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		    running=`ps -axw | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
 		    if [ "$running" = "" ]; then
 			runcount=`expr $runcount + 1`
 			break
 		    fi
 		    sleep 2
-		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
+		    running=`ps -axw | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
 		    if [ "$running" = "" ]; then
 			runcount=`expr $runcount + 1`
 			break

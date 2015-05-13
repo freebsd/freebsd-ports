@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	horde
-PORTVERSION=	5.2.4
+PORTVERSION=	5.2.5
 CATEGORIES=	www pear
 PKGNAMEPREFIX=
 
@@ -18,7 +18,7 @@ ICONV_DESC=	Depend on PHP iconv extension
 TWITTER_DESC=	Support connections to Twitter
 WEATHER_DESC=	Support weather forecast display
 
-USES=	horde
+USES=	horde cpe
 USE_PHP=	filter gettext hash
 
 USE_HORDE_BUILD=	Horde_Role

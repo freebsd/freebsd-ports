@@ -3,7 +3,7 @@
 
 PORTNAME=	libvmime
 PORTVERSION=	0.9.2.s20140721
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 USE_GITHUB=	yes
 GH_ACCOUNT=	kisli
 GH_PROJECT=	vmime
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	03a0e36
+GH_TAGNAME=	03a0e36
 
 USES=		cmake:outsource compiler:c++11-lib iconv pkgconfig
 USE_LDCONFIG=	yes

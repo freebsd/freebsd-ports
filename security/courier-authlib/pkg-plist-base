@@ -15,7 +15,7 @@ lib/courier-authlib/libauthpipe.so
 libexec/courier-authlib/authdaemond
 libexec/courier-authlib/authsystem.passwd
 man/man1/authtest.1.gz
-man/man1/%%MAILOWN%%logger.1.gz
+man/man1/courierlogger.1.gz
 man/man3/auth_enumerate.3.gz
 man/man3/auth_generic.3.gz
 man/man3/auth_getoption.3.gz

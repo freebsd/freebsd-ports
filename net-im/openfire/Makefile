@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	3.9.3
+PORTVERSION=	3.10.0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -19,12 +19,14 @@ OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
 PLUGINS_DESC=	Install bundled plugins
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
 DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7
+
+CPE_VENDOR=	igniterealtime
 
 ALL_TARGET=	openfire
 USE_RC_SUBR=	openfire
@@ -50,11 +52,6 @@ PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
-
-post-patch:
-	(cd ${WRKSRC} && ${MV} \
-	    ./src/plugins/jingleNodes/src/i18n/jingleNodes_i18n.properties \
-	    ./src/plugins/jingleNodes/src/i18n/jinglenodes_i18n.properties)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib

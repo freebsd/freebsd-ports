@@ -24,6 +24,7 @@ PLIST_REINPLACE+=	winelib
 PLIST_REINPLACE_WINELIB=	s!lib/!lib32/!g
 WINE_SLAVE_BUILD=	yes
 USE_LDCONFIG32=	${WINELIBDIR} ${WINELIBDIR}/wine
+BUNDLE_LIBS=	yes
 
 .if !defined(WINE_CROSS_BUILD)
 IGNORE=		This port is not for consumption on FreeBSD/i386.  To cross-build for FreeBSD/amd64: make -DWINE_CROSS_BUILD

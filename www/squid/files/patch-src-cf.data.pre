@@ -1,6 +1,6 @@
---- src/cf.data.pre.orig	2013-03-12 11:17:07.000000000 +0100
-+++ src/cf.data.pre	2013-04-09 11:43:01.000000000 +0200
-@@ -3849,6 +3849,10 @@
+--- src/cf.data.pre.orig	2015-02-26 17:56:12.817890613 +0300
++++ src/cf.data.pre	2015-02-26 17:56:41.556917775 +0300
+@@ -4461,6 +4461,10 @@
  LOC: Config.pidFilename
  DOC_START
  	A filename to write the process-id to.  To disable, enter "none".
@@ -10,4 +10,4 @@
 +	%%PREFIX%%/etc/rc.d/squid for details.
  DOC_END
  
- NAME: log_fqdn
+ NAME: client_netmask

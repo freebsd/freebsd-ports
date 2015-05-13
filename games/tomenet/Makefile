@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomenet
-PORTVERSION=	4.5.9
+PORTVERSION=	4.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://tomenet.eu/downloads/
 
@@ -12,8 +12,10 @@ COMMENT=	Online multiplayer rogue-like role-playing game
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
-USES=		gmake ncurses tar:bzip2
-CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\""
+USES=		execinfo gmake ncurses tar:bzip2
+CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\"" \
+		${EXECINFO_CPPFLAGS}
+LDFLAGS+=	${EXECINFO_LDFLAGS}
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message

@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFPlacefulWorkflow>=0:${PORTSDIR}/
 OPTIONS_DEFINE=		LDAP
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.ldap>=1.2.6:${PORTSDIR}/www/py-plone.app.ldap
 
-USES=		python zip
+USES=		cpe python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

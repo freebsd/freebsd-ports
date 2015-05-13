@@ -14,8 +14,6 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/mlutfy-hidetopbar-${GH_COMMIT}
-
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -24,9 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.hidetopbar.gschema.xml
 
 GH_ACCOUNT=	mlutfy
-GH_TAGNAME=	033a2e5
-GH_COMMIT=	033a2e5
 GH_PROJECT=	hidetopbar
+GH_TAGNAME=	033a2e5
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2009-09-15 13:23:11.000000000 -0300
-+++ Makefile.PL	2009-09-15 13:23:16.000000000 -0300
-@@ -13,5 +13,5 @@
+--- Makefile.PL.orig	2009-06-14 17:01:15 UTC
++++ Makefile.PL
+@@ -13,5 +13,5 @@ requires 'DBIx::Class';
  
  test_requires 'Test::More';
  

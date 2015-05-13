@@ -15,6 +15,8 @@ COMMENT=	Alternative FastCGI module for Apache2
 LICENSE=	APACHE20
 
 USE_APACHE=	22+
+USES=		cpe
+CPE_VENDOR=	apache
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.apxs

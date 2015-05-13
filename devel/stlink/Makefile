@@ -16,8 +16,7 @@ GTK3_USE=		GNOME=gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	texane
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	873fb35
+GH_TAGNAME=	873fb35
 
 USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf automake

@@ -1,6 +1,6 @@
---- src/gsl_fun.cpp.orig	2014-10-09 22:55:52.000000000 +0200
-+++ src/gsl_fun.cpp	2014-10-09 22:55:52.000000000 +0200
-@@ -3183,7 +3183,7 @@
+--- src/gsl_fun.cpp.orig	2015-04-22 19:37:22 UTC
++++ src/gsl_fun.cpp
+@@ -3183,7 +3183,7 @@ namespace lib {
        e->AssureScalarPar<DStringGDL>(0, tmpname);    
        name.reserve(tmpname.length());
        for (string::iterator it = tmpname.begin(); it < tmpname.end(); it++) 

@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=	usr-apps
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep example applications
 
+BROKEN=		Not converted to USES=gnustep
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

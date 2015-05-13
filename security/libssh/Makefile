@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libssh
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.5
 CATEGORIES=	security devel
-MASTER_SITES=	https://red.libssh.org/attachments/download/87/
+MASTER_SITES=	https://red.libssh.org/attachments/download/121/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library implementing the SSH1 and SSH2 protocol
 
 LICENSE=	LGPL21

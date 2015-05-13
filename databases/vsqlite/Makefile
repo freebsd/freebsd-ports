@@ -15,8 +15,6 @@ LIB_DEPENDS=	libboost_random.so:${PORTSDIR}/devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	vinzenz
 GH_PROJECT=	vsqlite--
-GH_TAGNAME=	1bc5a98
-GH_COMMIT=	1bc5a98
 
 USES=		autoreconf compiler:c++0x libtool
 GNU_CONFIGURE=	yes

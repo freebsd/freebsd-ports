@@ -14,6 +14,7 @@ COMMENT=	Attractively formatting Project Gutenberg texts
 WRKSRC=		${WRKDIR}/GutenMark-source
 
 USES=		compiler:c++11-lib gmake
+USE_CXXSTD=	c++11
 USE_WX=		3.0
 WX_UNICODE=	yes
 ALL_TARGET=	default
@@ -27,7 +28,7 @@ post-patch:
 		 /strip /d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-Wall|${CFLAGS} -Wall|g ; \
 		 /strip /d' ${WRKSRC}/GutenUtilities/Makefile
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|g ; \
+	@${REINPLACE_CMD} -e 's|g++|${CXX} ${CXXFLAGS}|g ; \
 		 s|`wx-config|`${WX_CONFIG}|g ; \
 		 /strip /d' ${WRKSRC}/GUItenMark/Makefile
 	@${REINPLACE_CMD} -e 's|\./convert.jpg|${DATADIR}/convert.jpg|g ; \

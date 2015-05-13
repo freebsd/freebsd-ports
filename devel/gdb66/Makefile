@@ -3,12 +3,11 @@
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}	\
+MASTER_SITES=   GNU/gdb/ \
 		http://aldan.algebra.com/~mi/:gdbtk
-MASTER_SITE_SUBDIR=gdb/:gdb
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
@@ -36,6 +35,10 @@ VER=		${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
 
 .include <bsd.port.options.mk>
+
+.if !exists(/usr/lib/libreadline.so)
+CFLAGS+=	-Dreadline_echoing_p=_rl_echoing_p
+.endif
 
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
@@ -86,7 +89,7 @@ post-patch:
 		-e 's/^readline/#readline/' \
 		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib ${ICONV_LIB},' \
 		${WRKSRC}/gdb/Makefile.in
-	${ECHO} 'READLINE = -lreadline_p' >> ${WRKSRC}/gdb/Makefile.in
+	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${STAGEDIR}${PREFIX}/bin/gdb${VER}

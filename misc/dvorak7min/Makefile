@@ -3,10 +3,11 @@
 
 PORTNAME=	dvorak7min
 PORTVERSION=	1.6.1
+DISTVERSIONSUFFIX=%2Brepack
 PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTVERSIONSUFFIX}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based Dvorak typing tutor
@@ -21,9 +22,6 @@ post-patch:
 		 /^CFLAGS/s|\([[:space:]]\)=|\1+=| ; \
 		 s|^\(LDFLAGS\)|#\1| ; \
 		 s|-lncurses|-lcurses|' ${WRKSRC}/Makefile
-
-pre-build:
-	@${RM} -f ${WRKSRC}/*.o
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} dvorak7min \

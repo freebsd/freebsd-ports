@@ -3,7 +3,6 @@
 PORTNAME=	ua
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	GITHUB_LEGACY
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
@@ -12,8 +11,7 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	euedge
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7a35148
+GH_TAGNAME=	7a35148
 
 USE_AUTOTOOLS=	autoconf aclocal automake autoheader
 AUTOMAKE_ARGS+=	--add-missing

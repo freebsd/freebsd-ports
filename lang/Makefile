@@ -22,6 +22,7 @@
     SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
+    SUBDIR += c
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
@@ -89,6 +90,8 @@
     SUBDIR += gcc49
     SUBDIR += gcc5
     SUBDIR += gcc5-aux
+    SUBDIR += gcc5-devel
+    SUBDIR += gcc6-devel
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
@@ -215,6 +218,7 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += pecl-perl
+    SUBDIR += perl5-devel
     SUBDIR += perl5.16
     SUBDIR += perl5.18
     SUBDIR += perl5.20
@@ -226,8 +230,6 @@
     SUBDIR += php-mode.el
     SUBDIR += php5
     SUBDIR += php5-extensions
-    SUBDIR += php53
-    SUBDIR += php53-extensions
     SUBDIR += php55
     SUBDIR += php55-extensions
     SUBDIR += php56
@@ -308,6 +310,7 @@
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl
+    SUBDIR += tcbasic
     SUBDIR += tcc
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper

@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-lib install-headers --install-sandbox=${STAGEDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsunpinyin.so.3.0
-	${ENV} PATH=${WRKSRC}/src:$${PATH} ${GMAKE} -C ${WRKDIR} \
+	${SETENV} PATH=${WRKSRC}/src:$${PATH} ${GMAKE} -C ${WRKDIR} \
 		-f ${WRKSRC}/src/sunpinyin-dictgen.mk STAGEDIR=${STAGEDIR}
 	${INSTALL} -d ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/lm_sc.t3g ${WRKDIR}/pydict_sc.bin \

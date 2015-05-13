@@ -16,8 +16,7 @@ LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfe
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	10c5691
+GH_TAGNAME=	10c5691
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

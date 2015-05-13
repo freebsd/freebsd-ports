@@ -18,7 +18,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgd.so:${PORTSDIR}/${GD_PORT}
 
-USES=		gmake bison libtool:keepla pkgconfig pathfix shebangfix
+USES=		cpe gmake bison libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

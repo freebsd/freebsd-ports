@@ -12,6 +12,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate random Latin looking text
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

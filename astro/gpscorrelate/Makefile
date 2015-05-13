@@ -5,8 +5,6 @@ PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1
 PORTREVISION=	3
 CATEGORIES=	astro geography
-MASTER_SITES=	GHL
-DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
@@ -21,7 +19,6 @@ USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freefoote
-GH_COMMIT=	a36646b
 
 PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui \
 		man/man1/gpscorrelate.1.gz man/man1/gpscorrelate-gui.1.gz

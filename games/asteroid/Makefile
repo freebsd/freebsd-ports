@@ -14,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
-GH_PROJECT=	asteroid
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ffeb0fd
+GH_TAGNAME=	ffeb0fd
 
 USES=		cmake
 USE_GL=		glut

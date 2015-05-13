@@ -5,7 +5,6 @@ PORTNAME=	nekobee
 PORTVERSION=	0.1.8
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	GHL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
@@ -19,7 +18,6 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
-GH_COMMIT=	3f4737f
 
 USES=		pkgconfig waf
 USE_GNOME=	gtk20

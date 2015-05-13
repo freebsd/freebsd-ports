@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.40
+DISTVERSION=	1.7.42
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -52,11 +52,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDATA=	l_intl.nls wine.inf
 
-OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL STAGING V4L WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
-COMPHOLIO_DESC=	Include the Compholio patchset, needed for Pipelight support
+STAGING_DESC=	Include the Wine Staging patchset
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 LIBXSLT_DESC=	Use libxslt (only used by msxml3.dll)
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
@@ -135,18 +135,21 @@ post-patch:
 PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MCOMPHOLIO}
+.if ${PORT_OPTIONS:MSTAGING}
 MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
-		git:${PORTSDIR}/devel/git
+EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
+		git:${PORTSDIR}/devel/git \
+		${AUTOCONF_DEPENDS}
 
+# Fix build on FreeBSD 8.4 and 9.3 (false positive: powl)
+CONFIGURE_ENV+=	ac_cv_have_powl=no
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
 
-post-extract:
+post-extract: fix-shebang
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 .endif

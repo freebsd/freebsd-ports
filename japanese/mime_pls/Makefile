@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	nork
 PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Library for MIME encode/decode
 
 USES=		perl5 shebangfix tar:tgz

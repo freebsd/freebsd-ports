@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxPython
-PORTVERSION=	3.0.0.0
-PORTREVISION=	1
+PORTVERSION=	3.0.2.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ DIST_SUBDIR=	python
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
-USES=		python tar:bzip2
+USES=		compiler:c++11-lib python tar:bzip2
 
 .if defined(WITH_WXVERSION_ONLY)
 
@@ -41,7 +40,7 @@ WX_PYTHON_DIR=	wx-${WX_VERSION}-${WXPORT}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython-common>0:${PORTSDIR}/x11-toolkits/py-wxPython-common
 
 USES+=		gettext pkgconfig
-USE_WX=	3.0
+USE_WX=		3.0
 WANT_UNICODE=	yes
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	WX_CONFIG="${WX_CONFIG}" \

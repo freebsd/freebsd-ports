@@ -16,8 +16,6 @@ NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	frogatto
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	58bd7c6
 
 USES=		gmake pkgconfig
 ALL_TARGET=	game server

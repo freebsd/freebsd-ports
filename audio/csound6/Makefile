@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	6
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LICENSE=	LGPL21

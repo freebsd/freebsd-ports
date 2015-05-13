@@ -13,8 +13,7 @@ LICENSE=	MIT
 USE_GITHUB=     yes
 GH_ACCOUNT=     robm
 GH_PROJECT=     dzen
-GH_COMMIT=      488ab66
-GH_TAGNAME=	488ab66019
+GH_TAGNAME=	488ab66
 
 USES=		pkgconfig
 USE_XORG=	x11

@@ -27,7 +27,7 @@ DESKTOP_ENTRIES="Paintown" "Fighting game similar to Streets of Rage and TMNT" \
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${ENV} DESTDIR=${STAGEDIR} ./install.sh -d ${DATADIR} -b ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ./install.sh -d ${DATADIR} -b ${PREFIX}/bin)
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/icons/hicolor/32x32/apps
 	${INSTALL_DATA} ${WRKSRC}/misc/icon.png \
 		${STAGEDIR}${LOCALBASE}/share/icons/hicolor/32x32/apps/paintown.png

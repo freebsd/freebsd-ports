@@ -12,7 +12,7 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/gnu-efi \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:${PORTSDIR}/devel/gnu-efi \
 		help2man:${PORTSDIR}/misc/help2man
 LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 

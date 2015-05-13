@@ -3,7 +3,7 @@
 
 PORTNAME=	pwhois
 PORTVERSION=	2.2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/ \
 		http://mirrors.rit.edu/zi/
@@ -51,12 +51,14 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/512.pwhois-updatedb \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily/
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwhoisd ${STAGEDIR}${PREFIX}/sbin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/pwhois-pwdump ${STAGEDIR}${PREFIX}/bin/
 	@${INSTALL_SCRIPT} ${WRKSRC}/pwhois-updatedb ${STAGEDIR}${PREFIX}/sbin/
 	@${INSTALL_DATA} ${WRKSRC}/pwhoisd.conf \
 	    	${STAGEDIR}${ETCDIR}/pwhoisd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/mysql/createdb.sql ${STAGEDIR}${DATADIR}/
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/var/db/pwhois ${STAGEDIR}/var/log/pwhois
+	@${INSTALL} -d -o 512 -g 512 ${STAGEDIR}/var/db/pwhois
+	@${INSTALL} -d -o 512 -g 512 ${STAGEDIR}/var/log/pwhois
 
 .include <bsd.port.mk>

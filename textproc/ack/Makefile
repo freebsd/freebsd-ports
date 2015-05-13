@@ -22,7 +22,8 @@ CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
+CPE_VENDOR=	beyondgrep
 
 .include <bsd.port.mk>

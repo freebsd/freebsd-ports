@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cdk
-PORTVERSION=	5.0.20120323
+DISTVERSION=	5.0-20120323
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cdk/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs

@@ -6,7 +6,6 @@ PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	Django-${SNAPSHOTDATE}
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -20,9 +19,7 @@ USES=		cpe gettext python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-GH_ACCOUNT=	${PORTNAME}
 GH_TAGNAME=	3e64f3d
-GH_COMMIT=	${GH_TAGNAME}
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
 CPE_VENDOR=	djangoproject

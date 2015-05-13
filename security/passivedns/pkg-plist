@@ -1,0 +1,2 @@
+bin/passivedns
+@dir(root,wheel,750) /var/log/passivedns

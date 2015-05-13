@@ -1,6 +1,6 @@
---- include/sswf/libsswf.h.orig	Sat Aug 12 23:59:53 2006
-+++ include/sswf/libsswf.h	Sun Aug 13 00:00:44 2006
-@@ -60,16 +60,6 @@
+--- include/sswf/libsswf.h.orig	2009-03-08 04:04:03 UTC
++++ include/sswf/libsswf.h
+@@ -68,16 +68,6 @@ SOFTWARE.
  
  #include	"sswf/libsswf-config.h"
  
@@ -17,3 +17,12 @@
  #ifndef	M_PI
  #define	M_PI		3.14159265358979323846
  #endif
+@@ -88,7 +78,7 @@ typedef unsigned int	wint_t;
+ #define	rint(x)		((double) (long) floor(x + 0.5))
+ #endif
+ 
+-#ifdef _LIBICONV_H
++#if defined(_LIBICONV_VERSION) && _LIBICONV_VERSION < 0x010B
+ #define	ICONV_INPUT_CAST
+ #else
+ /* older versions of iconv() were broken in regard to the

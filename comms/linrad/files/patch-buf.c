@@ -1,6 +1,6 @@
---- buf.c.orig	2014-06-27 18:11:24.000000000 -0700
-+++ buf.c	2014-06-27 18:11:33.000000000 -0700
-@@ -1292,7 +1292,7 @@
+--- buf.c.orig	2014-11-04 10:25:00 UTC
++++ buf.c
+@@ -1328,7 +1328,7 @@ if( (ui.network_flag & NET_RXIN_FFT1) ==
  memset(fft1_char,0,fft1_bytes);
  memset(liminfo,0,2*fft1_size*sizeof(float));
  memset(liminfo_wait,0,fft1_size*sizeof(unsigned char));

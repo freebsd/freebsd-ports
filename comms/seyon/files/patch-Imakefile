@@ -1,7 +1,7 @@
---- Imakefile.orig	Mon Mar 29 13:40:32 1999
-+++ Imakefile	Mon Mar 29 13:40:41 1999
-@@ -46,13 +46,6 @@
- InstallAppDefaultsLong(Seyon-co,Seyon-color)
+--- Imakefile.orig	1999-05-09 20:51:54 UTC
++++ Imakefile
+@@ -47,13 +47,6 @@ InstallAppDefaultsLong(Seyon-co,Seyon-co
+ InstallAppDefaultsLong(Seyon,Seyon)
  InstallNonExecFile(seyon.help,$(LIBDIR))
  
 -install::
@@ -13,3 +13,12 @@
 -
  clean::
  	rm -f version.h y.tab.* SeParse.c
+ 
+@@ -73,5 +66,5 @@ SeScan.o: y.tab.h
+ y.tab.h y.tab.c: SeParse.y
+ 	$(YACC) -d SeParse.y
+ 
+-SeParse.c: SeParse.y
+-	$(MV) y.tab.c SeParse.c
++SeParse.c: y.tab.c
++	$(CP) y.tab.c SeParse.c

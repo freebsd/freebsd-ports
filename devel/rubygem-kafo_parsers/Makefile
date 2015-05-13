@@ -6,7 +6,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	kvedulv@kvedulv.de
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Parser for puppet modules
 
 LICENSE=	GPLv3

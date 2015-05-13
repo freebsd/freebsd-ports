@@ -5,7 +5,6 @@ include/rapidjson/encodings.h
 include/rapidjson/error/en.h
 include/rapidjson/error/error.h
 include/rapidjson/filereadstream.h
-include/rapidjson/filestream.h
 include/rapidjson/filewritestream.h
 include/rapidjson/internal/biginteger.h
 include/rapidjson/internal/diyfp.h
@@ -31,9 +30,7 @@ lib/cmake/RapidJSON/RapidJSONConfigVersion.cmake
 libdata/pkgconfig/RapidJSON.pc
 %%DOCS%%share/doc/RapidJSON/readme.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize/capitalize.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cmake_install.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/condense/condense.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/messagereader/messagereader.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pretty/pretty.cpp

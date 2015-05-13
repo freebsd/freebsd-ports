@@ -24,6 +24,8 @@ bin/backupchecker
 %%PYTHON_SITELIBDIR%%/backupchecker/__pycache__/listtype.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/backupchecker/__pycache__/main.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/backupchecker/__pycache__/main.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/backupchecker/__pycache__/placeholder.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/backupchecker/__pycache__/placeholder.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/backupchecker/applogger.py
 %%PYTHON_SITELIBDIR%%/backupchecker/archiveinfomsg.py
 %%PYTHON_SITELIBDIR%%/backupchecker/checkbackups/__init__.py
@@ -86,6 +88,7 @@ bin/backupchecker
 %%PYTHON_SITELIBDIR%%/backupchecker/identifylimitations.py
 %%PYTHON_SITELIBDIR%%/backupchecker/listtype.py
 %%PYTHON_SITELIBDIR%%/backupchecker/main.py
+%%PYTHON_SITELIBDIR%%/backupchecker/placeholder.py
 man/man1/backupchecker.1.gz
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt

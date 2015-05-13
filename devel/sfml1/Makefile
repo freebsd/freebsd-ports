@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \

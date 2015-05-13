@@ -3,7 +3,7 @@
 
 PORTNAME=	kbibtex
 DISTVERSION=	0.4.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	databases kde
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C,(^[[:digit:]]\.[[:digit:]]).*,\1,}/
 
@@ -12,7 +12,7 @@ COMMENT=	Bibliography editor for KDE
 
 LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 
-USES=		cmake shared-mime-info tar:bzip2
+USES=		cmake iconv shared-mime-info tar:bzip2
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \

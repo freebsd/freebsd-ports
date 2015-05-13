@@ -5,14 +5,13 @@ PORTNAME=	jsdr
 PORTVERSION=	4.1
 PORTREVISION=	2
 CATEGORIES=	comms audio hamradio
-MASTER_SITES=	http://www.sdr-j.tk/
+MASTER_SITES=	http://www.sdr-j.tk/ \
+		LOCAL/nox/
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	SDR tools for RTL2832-based USB sticks
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \

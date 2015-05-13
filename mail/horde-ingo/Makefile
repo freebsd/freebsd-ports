@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ingo
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
@@ -11,7 +11,7 @@ COMMENT=	Horde email filter rules manager
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	horde
+USES=	horde cpe
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

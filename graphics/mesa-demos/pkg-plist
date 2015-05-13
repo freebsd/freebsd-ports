@@ -86,6 +86,7 @@ bin/glxpixmap
 bin/glxsnoop
 bin/glxswapcontrol
 bin/gs-tri
+bin/gsraytrace
 bin/identity
 bin/ipers
 bin/isosurf
@@ -99,8 +100,8 @@ bin/line-userclip
 bin/line-userclip-clip
 bin/line-userclip-nop
 bin/line-userclip-nop-clip
-bin/line-xor
 bin/line-wide
+bin/line-xor
 bin/lineloop
 bin/lineloop-clip
 bin/lineloop-elts
@@ -233,9 +234,10 @@ bin/tri-logicop-xor
 bin/tri-mask-tri
 bin/tri-multitex-vbo
 bin/tri-orig
-bin/tri-query
 bin/tri-point-line-clipped
+bin/tri-query
 bin/tri-repeat
+bin/tri-rotate
 bin/tri-scissor-tri
 bin/tri-square
 bin/tri-stencil
@@ -280,9 +282,9 @@ bin/vbo-drawarrays-2101010
 bin/vbo-drawelements
 bin/vbo-drawrange
 bin/vbo-noninterleaved
+bin/vbo-tri
 bin/vert-or-frag-only
 bin/vert-tex
-bin/vbo-tri
 bin/vertexrate
 bin/vp-array
 bin/vp-array-hf

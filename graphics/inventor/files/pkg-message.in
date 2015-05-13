@@ -3,7 +3,7 @@
 
 Please set the environment variable FL_FONT_PATH to the directory where your
 TrueType fonts are installed. If you do not set this variable, Open Inventor(TM)
-will use %%PREFIX%%/lib/X11/fonts/TTF as default.
+will use %%PREFIX%%/share/fonts/TTF as default.
 
 Open Inventor (TM) needs the following TrueType fonts:
 

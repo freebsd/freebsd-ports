@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdocml
-PORTVERSION=	1.13.1
+PORTVERSION=	1.13.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		${MASTER_SITE_LOCAL}
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 EXAMPLESDIR=	${PREFIX}/share/examples/mandoc
 
+HAS_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -33,6 +33,7 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -177,43 +177,6 @@ bin/gtkradiant
 %%DATADIR%%/wolf.game/main/default_shaderlist.txt
 %%DATADIR%%/wolf.game/main/wolf_entities.def
 %%DATADIR%%/wolf.game/main/wolf_entities.ent
-@dirrm %%DATADIR%%/wolf.game/main
-@dirrm %%DATADIR%%/wolf.game
-@dirrm %%DATADIR%%/stvef.game/baseEF
-@dirrm %%DATADIR%%/stvef.game
-@dirrm %%DATADIR%%/sof2.game/base
-@dirrm %%DATADIR%%/sof2.game
-@dirrm %%DATADIR%%/q4.game/q4base
-@dirrm %%DATADIR%%/q4.game
-@dirrm %%DATADIR%%/q3bp.game/baseq3
-@dirrm %%DATADIR%%/q3bp.game
-@dirrm %%DATADIR%%/q3.game/missionpack
-@dirrm %%DATADIR%%/q3.game/baseq3
-@dirrm %%DATADIR%%/q3.game
-@dirrm %%DATADIR%%/q2.game/baseq2
-@dirrm %%DATADIR%%/q2.game
-@dirrm %%DATADIR%%/q1.game/id1
-@dirrm %%DATADIR%%/q1.game
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/jk2.game/base
-@dirrm %%DATADIR%%/jk2.game
-@dirrm %%DATADIR%%/jabp.game
-@dirrm %%DATADIR%%/ja.game/base
-@dirrm %%DATADIR%%/ja.game
-@dirrm %%DATADIR%%/hlcs.game
-@dirrm %%DATADIR%%/hl.game/valve
-@dirrm %%DATADIR%%/hl.game/cstrike
-@dirrm %%DATADIR%%/hl.game
-@dirrm %%DATADIR%%/heretic2.game/base
-@dirrm %%DATADIR%%/heretic2.game
-@dirrm %%DATADIR%%/heretic2
-@dirrm %%DATADIR%%/gl
-@dirrm %%DATADIR%%/games
-@dirrm %%DATADIR%%/et.game/etmain
-@dirrm %%DATADIR%%/et.game/bitmaps
-@dirrm %%DATADIR%%/et.game
-@dirrm %%DATADIR%%/doom3.game/base
-@dirrm %%DATADIR%%/doom3.game
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/hlcs.game
+@dir %%DATADIR%%/jabp.game
+@dir %%DATADIR%%/plugins

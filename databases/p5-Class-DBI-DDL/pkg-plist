@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Class::DBI::DDL.3.gz
-%%PERL5_MAN3%%/Class::DBI::DDL::Pg.3.gz
-%%SITE_PERL%%/Class/DBI/DDL.pm
 %%SITE_PERL%%/Class/DBI/DDL/Pg.pm
+%%SITE_PERL%%/Class/DBI/DDL.pm
+%%PERL5_MAN3%%/Class::DBI::DDL::Pg.3.gz
+%%PERL5_MAN3%%/Class::DBI::DDL.3.gz

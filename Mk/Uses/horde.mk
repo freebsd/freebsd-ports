@@ -19,6 +19,8 @@ HORDE_DIR?=	www/horde
 
 CONFLICTS+=	horde3-*.[0-9]*
 
+CPE_VENDOR?=	horde
+
 DIST_SUBDIR=	Horde
 PEAR_CHANNEL=	horde
 

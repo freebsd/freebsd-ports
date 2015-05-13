@@ -1,0 +1,22 @@
+--- configure.orig	2014-09-18 04:08:33 UTC
++++ configure
+@@ -44,10 +44,6 @@ exec 3>&1
+ 
+ # Parse command-line arguments
+ 
+-if echo "$configure_options" | grep -q -e '--\?[a-zA-Z0-9-]\+='; then
+-  err "Arguments to this script look like '-libdir /foo/bar', not '-libdir=/foo/bar' (note the '=')."
+-fi
+-
+ while : ; do
+   case "$1" in
+     "") break;;
+@@ -222,6 +218,8 @@ if test $has_tk = true && test -z "$tk_l
+   esac
+   if test -n "$tklibdir"; then
+     case "$system" in
++    freebsd) tk_libs="-L$tklibdir" ;;
++    bsd_elf) tk_libs="-L$tklibdir" ;;
+     *bsd*) tk_libs="-R$tklibdir -L$tklibdir" ;;
+     *) tk_libs="-L$tklibdir" ;;
+     esac

@@ -3,6 +3,7 @@
 
 PORTNAME=	anyremote
 PORTVERSION=	6.3.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -10,6 +11,7 @@ MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		alias iconv pkgconfig
 USE_GNOME=	glib20

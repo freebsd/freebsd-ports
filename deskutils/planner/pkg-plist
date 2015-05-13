@@ -259,3 +259,4 @@ share/planner/ui/sql-plugin.ui
 share/planner/ui/task-view.ui
 share/planner/ui/time-table-view.ui
 share/planner/ui/xml-planner-plugin.ui
+@comment @dir share/doc/libplanner

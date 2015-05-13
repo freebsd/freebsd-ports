@@ -2,9 +2,10 @@
 
 PORTNAME=	rainloop
 PORTVERSION=	1.8.2
+DISTVERSIONSUFFIX=	.${RBUILD}-${RHASH}
+PORTREVISION=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.${RBUILD}-${RHASH}
 
 MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Modern and interactive webmail
@@ -26,9 +27,9 @@ USE_PHP=	curl iconv json xml dom openssl pcre spl zlib
 RVER=		${PORTVERSION}.${RBUILD}
 PLIST_SUB=	VER="${RVER}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_RADIO=		DB
+OPTIONS_RADIO_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
 
 .include <bsd.port.options.mk>
 

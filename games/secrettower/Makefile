@@ -18,11 +18,10 @@ RUN_DEPENDS=	${PYGAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	dusty141
 GH_PROJECT=	TheSecretTower
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	ecf13e4
+GH_TAGNAME=	ecf13e4
 
 USES=		python:2 shebangfix
-SHEBANG_FILES= 	TheSecretTower.py server.py
+SHEBANG_FILES=	TheSecretTower.py server.py
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS

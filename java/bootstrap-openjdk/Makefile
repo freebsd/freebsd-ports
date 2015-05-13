@@ -2,6 +2,7 @@
 
 PORTNAME=	${JDK_NAME}
 PORTVERSION=	${DISTVERSION_${ARCH}}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkim
@@ -14,6 +15,7 @@ COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
+BUNDLE_LIBS=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 

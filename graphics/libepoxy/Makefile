@@ -2,6 +2,7 @@
 
 PORTNAME=	libepoxy
 PORTVERSION=	1.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,8 +12,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anholt
-GH_COMMIT=	7422de5
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		autoreconf libtool pathfix pkgconfig python:3,build
 USE_XORG=	xorg-macros x11

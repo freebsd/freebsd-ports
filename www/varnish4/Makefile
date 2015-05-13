@@ -17,7 +17,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 CONFLICTS=	varnish-2.* varnish-3.*
 
-USES=		autoreconf gmake libtool readline pkgconfig python:build
+USES=		autoreconf cpe gmake libtool pkgconfig python:build readline
+CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests

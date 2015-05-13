@@ -8,7 +8,7 @@ CATEGORIES=	audio net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Last.fm and AudioScrobbler
 
 LICENSE=	ART10 GPLv1

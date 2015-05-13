@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Generate
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl5 module to simplify creating class hierarchies
+COMMENT=	Simplify the creation of class hierarchies
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Text-Soundex>=0:${PORTSDIR}/textproc/p5-Text-Soundex
 
 USES=		perl5
 USE_PERL5=	modbuild

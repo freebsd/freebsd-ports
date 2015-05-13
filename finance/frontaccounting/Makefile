@@ -4,8 +4,7 @@
 PORTNAME=	frontaccounting
 DISTVERSION=	2.3.22
 CATEGORIES=	finance www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
 MAINTAINER=	ek@purplehat.org
 COMMENT=	Simple, powerful system for the entire ERP chain
@@ -13,7 +12,7 @@ COMMENT=	Simple, powerful system for the entire ERP chain
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-USES=		gettext
+USES=		cpe gettext
 USE_MYSQL=	yes
 USE_PHP+=	mysql mysqli openssl session
 

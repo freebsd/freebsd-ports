@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Weaken>=3.004000:${PORTSDIR}/devel/p5-Test-Weaken
 
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 USES=		perl5
 
 .include <bsd.port.mk>

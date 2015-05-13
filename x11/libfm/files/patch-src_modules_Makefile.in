@@ -1,0 +1,21 @@
+--- src/modules/Makefile.in.orig	2014-10-14 16:46:21 UTC
++++ src/modules/Makefile.in
+@@ -172,8 +172,7 @@ gtk_menu_trash_la_LINK = $(LIBTOOL) $(AM
+ 	$(gtk_menu_trash_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ @ENABLE_GTK_TRUE@am_gtk_menu_trash_la_rpath = -rpath $(pkglibdir)
+-vfs_menu_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/src/libfm-extra.la
++vfs_menu_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ vfs_menu_la_SOURCES = vfs-menu.c
+ vfs_menu_la_OBJECTS = vfs_menu_la-vfs-menu.lo
+ vfs_menu_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -447,7 +446,7 @@ PLUGINS_INSTALLED = $(pkglib_LTLIBRARIES
+ 
+ # module-specific parameters
+ vfs_menu_la_CFLAGS = $(MENU_CACHE_CFLAGS) -I$(top_srcdir)/src/extra
+-vfs_menu_la_LIBADD = $(MENU_CACHE_LIBS) $(top_builddir)/src/libfm-extra.la
++vfs_menu_la_LIBADD = $(MENU_CACHE_LIBS) -lfm-extra
+ gtk_fileprop_x_desktop_la_CFLAGS = $(GTK_CFLAGS) -I$(top_srcdir)/src/gtk
+ gtk_fileprop_x_desktop_la_LIBADD = $(GTK_LIBS)
+ gtk_fileprop_x_shortcut_la_CFLAGS = $(GTK_CFLAGS) -I$(top_srcdir)/src/gtk

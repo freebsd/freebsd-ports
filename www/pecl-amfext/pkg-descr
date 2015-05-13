@@ -6,4 +6,4 @@ The native encoding and decoding is extremely fast and memory efficient
 respect existing PHP implementation, and the flexibility has been
 provided using callbacks to the PHP code.
 
-WWW: http://www.teslacore.it/wiki/index.php?title=AMFEXT
+WWW: https://pecl.php.net/package/amfext

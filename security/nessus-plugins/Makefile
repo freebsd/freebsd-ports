@@ -24,7 +24,7 @@ USES=		libtool
 WRKSRC=		${WRKDIR}/nessus-plugins
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fetchcmd=wget
+CONFIGURE_ARGS=	--with-fetchcmd=wget --localstatedir="${PREFIX}/var"
 
 post-patch:
 	@${REINPLACE_CMD} 's/-o $$(installuser)//' ${WRKSRC}/Makefile

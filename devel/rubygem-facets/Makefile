@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	facets
-PORTVERSION=	2.9.3
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RubyGem port of the single most extensive additions and extensions
+
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

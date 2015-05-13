@@ -13,6 +13,6 @@ COMMENT=	Perl extension for liblo Lightweight OSC library
 LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
 
 USES=		pkgconfig perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

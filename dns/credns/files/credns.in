@@ -35,7 +35,6 @@ stop_cmd="credns_stop"
 
 credns_precmd()
 {
-	/usr/bin/install -d -o %%CREDNSUSER%% -g %%CREDNSGROUP%% %%CREDNSDBDIR%% %%CREDNSRUNDIR%%
 	db=`%%PREFIX%%/sbin/credns-checkconf -o database %%PREFIX%%/etc/credns/credns.conf`
 	if [ ! -f "$db" ]; then
 		${command} rebuild

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	katawa-shoujo
-PORTVERSION=	1.2
-DISTVERSIONSUFFIX=-[linux-x86][8F3BA490]
+PORTVERSION=	1.3
+DISTVERSIONSUFFIX=-[linux-x86][FCF758CC]
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
 		GENTOO/distfiles:icon
@@ -25,7 +25,7 @@ USES=		tar:bz2
 NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
-WRKSRC=		${WRKDIR}/Katawa\ Shoujo-linux-x86
+WRKSRC=		${WRKDIR}/Katawa\ Shoujo-${PORTVERSION}-linux
 PORTDATA=	*
 PORTDOCS=	*.pdf
 PLIST_FILES=	bin/${PORTNAME} \
@@ -40,8 +40,6 @@ DESKTOP_ENTRIES="Katawa Shoujo" \
 		""
 
 OPTIONS_DEFINE=	DOCS
-
-MANUAL_PACKAGE_BUILD=	huge (470MiB)
 
 pre-install:
 	${PRINTF} '#! /bin/sh\nrenpy ${DATADIR} "$$@"\n' \

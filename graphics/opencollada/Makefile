@@ -15,10 +15,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	OpenCOLLADA
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	345a2a7
-
-WRKSRC=		${WRKDIR}/KhronosGroup-OpenCOLLADA-${GH_COMMIT}
+GH_TAGNAME=	345a2a7
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/opencollada

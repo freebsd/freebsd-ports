@@ -1,0 +1,13 @@
+--- corec/tools/coremake/gcc_linux_arm.build.orig	2012-12-16 11:29:34.000000000 +0100
++++ corec/tools/coremake/gcc_linux_arm.build	2015-04-11 19:30:30.119705652 +0200
+@@ -19,8 +19,8 @@
+ 
+ #define GLIBC
+ 
+-#define CCFLAGS -DARM -Wno-multichar -O3 -mno-apcs-frame -fomit-frame-pointer -fsigned-char -march=armv4t -mtune=xscale -fvisibility=hidden -DRESOURCE_COREC
+-#define SFLAGS -DARM -Wno-multichar -O3 -mno-apcs-frame -fomit-frame-pointer -fsigned-char -mcpu=iwmmxt -mtune=xscale -D_HIDDEN
++#define CCFLAGS -DARM -Wno-multichar -O3 -fomit-frame-pointer -DRESOURCE_COREC
++#define SFLAGS -DARM -Wno-multichar -O3 -fomit-frame-pointer -D_HIDDEN
+ #define SHFLAGS -shared -Wl,--strip-all
+ 
+ #include "gcc.inc"

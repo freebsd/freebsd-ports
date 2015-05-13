@@ -11,7 +11,6 @@ COMMENT=	FreeBSD specific volume manager
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uffejakobsen
-GH_COMMIT=	c420cd5
 
 USE_RC_SUBR=	volmand
 VM_SUB_FILES=	vmount volmand

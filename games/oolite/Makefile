@@ -12,6 +12,8 @@ DIST_SUBDIR=		oolite
 MAINTAINER=		avg@icyb.net.ua
 COMMENT=		Trade and combat space simulator, clone of Elite
 
+BROKEN=			Not converted to USES=gnustep
+
 LICENSE=		CCBYNCSAv3 GPLv2 ZLIB
 LICENSE_COMB=		multi
 LICENSE_NAME_CCBYNCSAv3=	Creative Commons Attribution-NonCommercial-ShareAlike License version 3.0

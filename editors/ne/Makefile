@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ne
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
@@ -28,27 +28,41 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
 		%%DATADIR%%/default.keys %%DATADIR%%/default.menus \
 		%%DATADIR%%/syntax/4gl.jsf %%DATADIR%%/syntax/ada.jsf \
+		%%DATADIR%%/syntax/ant.jsf %%DATADIR%%/syntax/batch.jsf \
 		%%DATADIR%%/syntax/asm.jsf %%DATADIR%%/syntax/awk.jsf \
 		%%DATADIR%%/syntax/c.jsf %%DATADIR%%/syntax/cobol.jsf \
+		%%DATADIR%%/syntax/classic_pascal.jsf \
+		%%DATADIR%%/syntax/comment_todo.jsf \
 		%%DATADIR%%/syntax/conf.jsf %%DATADIR%%/syntax/csh.jsf \
+		%%DATADIR%%/syntax/csharp.jsf %%DATADIR%%/syntax/debian.jsf \
 		%%DATADIR%%/syntax/css.jsf %%DATADIR%%/syntax/diff.jsf \
+		%%DATADIR%%/syntax/elixir.jsf %%DATADIR%%/syntax/erb.jsf \
+		%%DATADIR%%/syntax/erlang.jsf %%DATADIR%%/syntax/git-commit.jsf \
 		%%DATADIR%%/syntax/fortran.jsf %%DATADIR%%/syntax/haskell.jsf \
+		%%DATADIR%%/syntax/go.jsf %%DATADIR%%/syntax/haml.jsf \
 		%%DATADIR%%/syntax/html.jsf %%DATADIR%%/syntax/java.jsf \
+		%%DATADIR%%/syntax/htmlerb.jsf %%DATADIR%%/syntax/ini.jsf \
+		%%DATADIR%%/syntax/iptables.jsf %%DATADIR%%/syntax/js.jsf \
 		%%DATADIR%%/syntax/joerc.jsf %%DATADIR%%/syntax/jsf.jsf \
 		%%DATADIR%%/syntax/jsf_check.jsf %%DATADIR%%/syntax/lisp.jsf \
+		%%DATADIR%%/syntax/json.jsf %%DATADIR%%/syntax/md.jsf \
 		%%DATADIR%%/syntax/lua.jsf %%DATADIR%%/syntax/m4.jsf \
 		%%DATADIR%%/syntax/mail.jsf %%DATADIR%%/syntax/mason.jsf \
 		%%DATADIR%%/syntax/matlab.jsf %%DATADIR%%/syntax/ocaml.jsf \
 		%%DATADIR%%/syntax/pascal.jsf %%DATADIR%%/syntax/perl.jsf \
 		%%DATADIR%%/syntax/php.jsf %%DATADIR%%/syntax/ps.jsf \
+		%%DATADIR%%/syntax/powershell.jsf %%DATADIR%%/syntax/prolog.jsf \
+		%%DATADIR%%/syntax/properties.jsf %%DATADIR%%/syntax/puppet.jsf \
 		%%DATADIR%%/syntax/python.jsf %%DATADIR%%/syntax/rexx.jsf \
 		%%DATADIR%%/syntax/ruby.jsf %%DATADIR%%/syntax/sed.jsf \
 		%%DATADIR%%/syntax/sh.jsf %%DATADIR%%/syntax/skill.jsf \
+		%%DATADIR%%/syntax/sieve.jsf %%DATADIR%%/syntax/typescript.jsf \
 		%%DATADIR%%/syntax/sml.jsf %%DATADIR%%/syntax/spec.jsf \
 		%%DATADIR%%/syntax/sql.jsf %%DATADIR%%/syntax/tabs.jsf \
 		%%DATADIR%%/syntax/tcl.jsf %%DATADIR%%/syntax/tex.jsf \
 		%%DATADIR%%/syntax/texinfo.jsf %%DATADIR%%/syntax/troff.jsf \
 		%%DATADIR%%/syntax/txt2tags.jsf %%DATADIR%%/syntax/verilog.jsf \
+		%%DATADIR%%/syntax/whitespace.jsf %%DATADIR%%/syntax/yaml.jsf \
 		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
 
 OPTIONS_DEFINE=	DEBUG DOCS

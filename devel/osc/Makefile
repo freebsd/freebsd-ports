@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command Line Interface to work with an openSUSE Build Service
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \

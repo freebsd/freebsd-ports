@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JAMESR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automated site map for the Dancer web framework
 
 LICENSE=	ART10 GPLv1

@@ -13,6 +13,5 @@ USES=		python
 USE_PYTHON=	distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	matimatik
-GH_COMMIT=	b6259ab
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ BUILD_DEPENDS=	ldns>=1.6.16:${PORTSDIR}/dns/ldns
 LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
 USES=		perl5

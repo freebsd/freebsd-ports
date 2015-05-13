@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
     SUBDIR += ack
@@ -458,7 +459,6 @@
     SUBDIR += nl-hunspell
     SUBDIR += nl-hyphen
     SUBDIR += nl-mythes
-    SUBDIR += nltk
     SUBDIR += nn-aspell
     SUBDIR += no-hunspell
     SUBDIR += nunnimcax
@@ -1131,15 +1131,6 @@
     SUBDIR += php5-xmlreader
     SUBDIR += php5-xmlwriter
     SUBDIR += php5-xsl
-    SUBDIR += php53-ctype
-    SUBDIR += php53-dom
-    SUBDIR += php53-pspell
-    SUBDIR += php53-simplexml
-    SUBDIR += php53-wddx
-    SUBDIR += php53-xml
-    SUBDIR += php53-xmlreader
-    SUBDIR += php53-xmlwriter
-    SUBDIR += php53-xsl
     SUBDIR += php55-ctype
     SUBDIR += php55-dom
     SUBDIR += php55-pspell
@@ -1204,6 +1195,7 @@
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
     SUBDIR += py-mistune
+    SUBDIR += py-nltk
     SUBDIR += py-openpyxl
     SUBDIR += py-openpyxl1
     SUBDIR += py-paragrep
@@ -1334,6 +1326,7 @@
     SUBDIR += rubygem-colored
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-compass-rails
+    SUBDIR += rubygem-creole
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
@@ -1356,6 +1349,7 @@
     SUBDIR += rubygem-gitlab-linguist
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
+    SUBDIR += rubygem-html-pipeline
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
@@ -1391,6 +1385,7 @@
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-rubypants
+    SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
@@ -1405,9 +1400,11 @@
     SUBDIR += rubygem-terminal-table
     SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy
+    SUBDIR += rubygem-twitter-text
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext
     SUBDIR += rubygem-version_sorter
+    SUBDIR += rubygem-wikicloth
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-xslt
     SUBDIR += rubygem-ya2yaml
@@ -1467,6 +1464,7 @@
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += spellutils
+    SUBDIR += spiff
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
     SUBDIR += sq-hunspell

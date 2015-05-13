@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig libtool
+USES=		cpe pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC

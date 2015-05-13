@@ -22,8 +22,7 @@ NLS_USES=	gettext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfc1036
-GH_COMMIT=	d346ca6
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	d346ca6
 
 .include <bsd.port.options.mk>
 

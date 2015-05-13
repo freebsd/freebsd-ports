@@ -1,0 +1,24 @@
+Ruby Inline is an analog to Perl's Inline::C. Out of the box, it allows you to
+embed C/++ external module code in your ruby script directly. By writing
+simple builder classes, you can teach how to cope with new languages (fortran,
+perl, whatever). The code is compiled and run on the fly when needed.
+
+Using the package_inline tool Inline now allows you to package up your
+inlined object code for distribution to systems without a compiler
+(read: windows)!
+
+FEATURES/PROBLEMS:
+   * Quick and easy inlining of your C or C++ code embedded in your ruby
+     script.
+   * Extendable to work with other languages.
+   * Automatic conversion between ruby and C basic types
+        o char, unsigned, unsigned int, char *, int, long, unsigned long
+   * inline_c_raw exists for when the automatic conversion isn't
+     sufficient.
+   * Only recompiles if the inlined code has changed.
+   * Pretends to be secure.
+   * Only requires standard ruby libraries, nothing extra to download.
+   * Can generate a basic Rakefile and package up built extensions for
+     distribution.
+
+WWW: http://www.zenspider.com/ZSS/Products/RubyInline/

@@ -3,13 +3,15 @@
 
 PORTNAME=	arts++
 PORTVERSION=	1.1.a13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.caida.org/tools/utilities/arts/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network data storage and analysis library from CAIDA
+
+LICENSE=	LGPL21
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
@@ -31,6 +33,7 @@ post-patch:
 		${WRKSRC}/classes/*/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libArts.so
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ChangeLog INSTALL WishList

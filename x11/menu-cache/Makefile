@@ -2,23 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	menu-cache
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	x11
-MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20$${PORTVERSION:R}.x/
+MASTER_SITES=	SF/lxde/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	horia@racoviceanu.com
-COMMENT=	The menu-cache portion of LXDE
+COMMENT=	Library used to read freedesktop.org menus
 
-USES=		fam gmake pathfix pkgconfig libtool
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libfm-extra.so:${PORTSDIR}/x11/libfm-extra
+
+USES=		gmake pathfix pkgconfig libtool tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmenu-cache.so.3
+CONFIGURE_ARGS=--disable-static
 
 .include <bsd.port.mk>

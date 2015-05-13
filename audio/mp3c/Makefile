@@ -6,9 +6,9 @@ PORTVERSION=	0.31
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.wspse.de/linux/wspse/:src
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		cdrip.sh
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joris@vandalon.nl
 COMMENT=	CD to mp3c converter with a console frontend

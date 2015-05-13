@@ -3,7 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-javascript-api --enable-debug=no
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' \

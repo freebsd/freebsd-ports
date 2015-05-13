@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 USE_GITHUB=	yes
 GH_ACCOUNT=	georgmartius
 GH_TAGNAME=	release-0.98b
-GH_COMMIT=	3b35b4d
 
 USES=		cmake
 USE_LDCONFIG=	yes

@@ -15,12 +15,12 @@ WARNING+=	"WITH_NEW_XORG and WITHOUT_NEW_XORG knobs were removed and have no eff
 WARNING+=	"WITH_KMS was removed and has no effect"
 .endif
 
-.if ${.CURDIR:M${PORTSDIR}*}
+.if exists(${.CURDIR}/../../Mk/bsd.port.mk)
 .if ${.CURDIR:H:T} != ${PKGCATEGORY}
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
 .endif
 .else
-WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
+DEV_WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
 .endif
 
 #.if defined(WITHOUT_X11)
@@ -156,8 +156,9 @@ SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		INSTALLS_SHLIB USE_PYDISTUTILS PYTHON_CONCURRENT_INSTALL \
 		PYDISTUTILS_AUTOPLIST PYTHON_PY3K_PLIST_HACK PYDISTUTILS_NOEGGINFO \
 		USE_PYTHON_PREFIX USE_BZIP2 USE_XZ USE_PGSQL
-SANITY_DEPRECATED=	PYTHON_PKGNAMESUFFIX
+SANITY_DEPRECATED=	PYTHON_PKGNAMESUFFIX USE_AUTOTOOLS NEED_ROOT
 
+USE_AUTOTOOLS_ALT=	USES=autoreconf and GNU_CONFIGURE=yes
 USE_OPENAL_ALT=		USES=openal
 USE_FAM_ALT=		USES=fam
 USE_MAKESELF_ALT=	USES=makeself
@@ -181,6 +182,7 @@ USE_DRUPAL_ALT=		USES=drupal
 USE_PYDISTUTILS_ALT=		USE_PYTHON=distutils
 USE_PGSQL_ALT=		USES=pgsql
 INSTALLS_SHLIB_ALT=	USE_LDCONFIG
+NEED_ROOT_ALT=		USES=fakeroot or USES=uidfix
 PYTHON_CONCURRENT_INSTALL_ALT=	USE_PYTHON=concurrent
 PYDISTUTILS_AUTOPLIST_ALT=	USE_PYTHON=autoplist
 PYTHON_PY3K_PLIST_HACK_ALT=	USE_PYTHON=py3kplist

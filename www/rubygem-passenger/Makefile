@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -36,10 +36,17 @@ USE_APACHE=	22+
 
 .if ${PORT_OPTIONS:MNGINX}
 NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null; ${ECHO_CMD}
+NGXPASSENGER!=	nginx -V 2>&1 | sed 's/.*passenger-\(.*\)\/ext.*/\1/g' | tail -1
 .if empty(NGINXVERSION)
 BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .else
 BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
+.endif
+.if empty(NGXPASSENGER)
+IGNORE=	rebuild nginx with latest passenger module
+.endif
+.if (${NGXPASSENGER} != ${PORTVERSION})
+IGNORE=	rebuild nginx with third-party ${PORTVERSION} module, current verion is ${NGXPASSENGER}
 .endif
 .endif
 

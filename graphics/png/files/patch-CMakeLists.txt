@@ -1,6 +1,6 @@
---- CMakeLists.txt~	2013-07-07 13:31:51.000000000 +0300
-+++ CMakeLists.txt	2013-07-07 13:32:01.000000000 +0300
-@@ -59,9 +59,6 @@
+--- CMakeLists.txt.orig	2015-03-26 13:06:23 UTC
++++ CMakeLists.txt
+@@ -50,9 +50,6 @@ option(PNGARG        "Disable ANSI-C pro
  # SET LIBNAME
  set(PNG_LIB_NAME png${PNGLIB_MAJOR}${PNGLIB_MINOR})
  

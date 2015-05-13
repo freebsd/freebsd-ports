@@ -36,7 +36,6 @@ MOTIF_DESC=	Motif widget set
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Xylemon
-GH_COMMIT=	da84384
 
 USES=		pkgconfig
 

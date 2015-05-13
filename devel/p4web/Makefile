@@ -5,16 +5,13 @@ PORTNAME=	p4web
 PORTVERSION=	2012.1.732581
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
-		http://filehost.perforce.com/perforce/r${P4VERSION}/bin.${PLATFORM}/
+MASTER_SITES=	http://swarm.workshop.perforce.com/download/guest/perforce_software/p4web/bin/${P4VERSION}/bin.${PLATFORM}/
 DISTNAME=	p4web
 EXTRACT_SUFX=
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
-
-BROKEN=		No public distfiles
 
 ONLY_FOR_ARCHS=	amd64 i386
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
+PORTREVISION=	1
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -17,17 +18,13 @@ USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
-# workaround for installed autoconf/automake
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib ${ICONV_LIB} -Wl,--export-dynamic
-CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-Wl,--export-dynamic -DGTEST_USE_OWN_TR1_TUPLE
+CXXFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 
-OPTIONS_DEFINE=	OPENSSL
+OPTIONS_DEFINE=	NLS OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
 OPENSSL_USE=	OPENSSL=yes
-OPENSSL_CONFIGURE_ON=	--with-openssl-inc=${OPENSSLINC} --with-openssl-lib=${OPENSSLLIB}
 
 .include <bsd.port.options.mk>
 

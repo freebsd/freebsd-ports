@@ -3,6 +3,7 @@
 
 PORTNAME=	godot
 PORTVERSION=	1.0
+DISTVERSIONSUFFIX=	-stable
 PORTREVISION=	1
 CATEGORIES=	devel games
 
@@ -16,9 +17,6 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	okamstudio
-GH_PROJECT=	godot
-GH_TAGNAME=	${PORTVERSION}-stable
-GH_COMMIT=	7eb5d04
 
 USES=		scons pkgconfig compiler
 USE_XORG=	x11 xcursor

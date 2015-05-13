@@ -64,12 +64,6 @@ pre-install:
 	${ECHO} "@exec ${XMLCAT_ADD}" >> ${PLIST}
 	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
 	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
-	${ECHO} '@dirrmtry share/xml/dtd' >> ${PLIST}
-	${ECHO} "@dirrm ${dir_DOC}/images" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_DOC}" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_TEMPLATES}" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_EXAMPLES}" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}

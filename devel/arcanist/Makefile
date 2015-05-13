@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcanist
-PORTVERSION=	20140828
+PORTVERSION=	20150423
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -18,8 +18,7 @@ USE_PHP=	curl json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2c3268f
+GH_TAGNAME=	9ddf37b
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}

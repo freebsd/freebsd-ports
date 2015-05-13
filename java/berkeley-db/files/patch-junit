@@ -1,31 +1,39 @@
---- build.xml	Wed Sep 20 18:10:10 2006
-+++ build.xml	2014-09-29 14:22:48.000000000 -0400
-@@ -135,6 +135,8 @@
+--- build.xml	2014-12-17 02:30:51 UTC
++++ build.xml	2015-05-12 12:14:56 -0400
+@@ -132,6 +132,9 @@
      </path>
  
 +    <property environment="env"/>
      <path id="unittest.classpath">
        <path refid="class.path"/>
 +      <pathelement location="${env.JAVALIBDIR}/junit.jar"/>
++      <pathelement location="${env.JAVALIBDIR}/hamcrest.jar"/>
        <pathelement location="${unittest.destdir}"/>
-     </path>
-@@ -469,4 +471,5 @@
-           <property name="destdir" value="${unittest.testevolvedir}"/>
+       <pathelement path="${junit.jarfile}"/>
+@@ -872,5 +875,5 @@
+     </target>
+ 
+-    <target name="compile-unittest" depends="compile-src, get-junit-jar">
++    <target name="compile-unittest" depends="compile-src">
+       <ant antfile="ant/compile.xml" dir="." inheritall="false">
+         <property name="srcdir" value="${unittest.srcdir}"/>
+@@ -917,4 +920,5 @@
+           <property name="destdir" value="${unittest.testserialdir}"/>
            <reference refid="class.path" torefid="compile.classpath"/>
 +          <reference refid="unittest.classpath" torefid="compile.classpath"/>
        </ant>
-     </target>
-@@ -1224,5 +1227,4 @@
+ 
+@@ -2127,5 +2131,4 @@
        <mkdir dir="${installdir}"/>
        <mkdir dir="${installdir}/docs"/>
 -      <mkdir dir="${installdir}/bin"/>
        <mkdir dir="${installdir}/lib"/>
        <copy todir="${installdir}/docs">
-@@ -1233,7 +1235,4 @@
-       <copy todir="${installdir}/lib">
+@@ -2137,7 +2140,4 @@
  	 <fileset dir="lib"/>
--      </copy>
+       </copy>
 -      <copy todir="${installdir}/bin">
 -	 <fileset dir="bin"/>
-       </copy>
+-      </copy>
      </target>
+ 

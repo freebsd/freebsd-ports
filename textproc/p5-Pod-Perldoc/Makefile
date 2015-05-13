@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Perldoc
-PORTVERSION=	3.21
+PORTVERSION=	3.25
 PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -13,5 +13,7 @@ COMMENT=	Look up Perl documentation in Pod format
 
 USES=		perl5
 USE_PERL5=	configure
+
+CONFIGURE_ENV=	PERL_CORE=1
 
 .include <bsd.port.mk>

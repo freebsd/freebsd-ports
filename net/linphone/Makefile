@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	linphone
-PORTVERSION=	3.7.0
-PORTREVISION=	3
+PORTVERSION=	3.8.1
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	SAVANNAH/linphone/3.7.x/sources
+MASTER_SITES=	SAVANNAH/linphone/3.8.x/sources
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
@@ -13,30 +12,36 @@ COMMENT=	SIP client supporting voice/video calls and text messaging
 LIB_DEPENDS=	libbellesip.so:${PORTSDIR}/net/belle-sip \
 		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
 		libortp.so:${PORTSDIR}/net/ortp \
+		libpolarssl.so.8:${PORTSDIR}/security/polarssl13 \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-deplibs-link --disable-speex --disable-strict \
-		--disable-tutorials \
+CONFIGURE_ARGS=	--disable-deplibs-link --disable-silent-rules \
+		--disable-speex --disable-strict --disable-tutorials \
 		--enable-external-mediastreamer --enable-external-ortp \
+		--enable-lime --with-polarssl=${LOCALBASE} \
 		--with-readline=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig readline:port
+USES=		gettext-tools gmake libtool pathfix pkgconfig readline:port
 USE_GNOME=	gtk20 intltool libxml2
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	IPV6 NLS NOTIFY UPNP VIDEO
+OPTIONS_DEFINE=	LDAP NLS NOTIFY UPNP VIDEO
 OPTIONS_DEFAULT=NOTIFY UPNP VIDEO
 OPTIONS_SUB=	yes
 
-IPV6_CONFIGURE_ENABLE=	ipv6
+LDAP_CONFIGURE_ENABLE=	ldap
+LDAP_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LDAP_USE=		OPENLDAP=yes
+
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 
 NOTIFY_CONFIGURE_ENABLE=notify
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
@@ -51,10 +56,6 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} '/linphonec_LDADD =/s/=/= $$(MEDIASTREAMER_LIBS)/' \
-		${WRKSRC}/console/Makefile.in
-	@${REINPLACE_CMD} '/linphone_LDADD =/s/=/= $$(MEDIASTREAMER_LIBS)/' \
-		${WRKSRC}/gtk/Makefile.in
 .for l in C fr it ja
 	@${REINPLACE_CMD} '/^install-data-local:/,/^$$/d' \
 		${WRKSRC}/share/$l/Makefile.in

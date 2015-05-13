@@ -20,7 +20,6 @@ USE_PERL5=	build # pod2man
 SHEBANG_FILES=	commit-patch
 
 GH_ACCOUNT=	caldwell
-GH_COMMIT=	1ce5893
 
 PLIST_FILES=	bin/commit-partial bin/commit-patch \
 		share/emacs/site-lisp/commit-patch-buffer.el \

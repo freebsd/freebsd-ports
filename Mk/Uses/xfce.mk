@@ -20,7 +20,7 @@ _USES_POST+=	xfce
 
 _USE_XFCE_ALL=	garcon libexo libgui libmenu libutil panel thunar xfconf
 
-MASTER_SITE_SUBDIR?=	xfce/4.12/src
+XFCE_MASTER_SITE_VER=	4.12
 
 xfce_ARGS?=	# empty
 

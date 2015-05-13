@@ -5,9 +5,9 @@ PORTNAME=	pyspatialite
 PORTVERSION=	3.0.1
 PORTREVISION=	5
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP:pyspatialite
+MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-0${EXTRACT_SUFX}:pyspatialite
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha-0
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
@@ -23,7 +23,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha-0
 USES=		iconv python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pyspatialite
-
 
 .include <bsd.port.pre.mk>
 

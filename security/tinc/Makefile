@@ -15,7 +15,8 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 LICENSE=	GPLv3
 
-USES=		makeinfo
+USES=		cpe makeinfo
+CPE_VENDOR=	tinc-vpn
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

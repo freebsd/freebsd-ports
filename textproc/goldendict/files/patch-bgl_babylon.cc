@@ -8,17 +8,3 @@
  #include<iconv.h>
  #include <QTextDocument>
  
-@@ -648,13 +648,8 @@
- 
-   inbufbytes = s.size();
-   outbufbytes = s.size() * 6;
--#ifdef _WIN32
-   const char *inbuf;
-   inbuf = s.data();
--#else
--  char *inbuf;
--  inbuf = (char *)s.data();
--#endif
-   outbuf = (char*)malloc( outbufbytes + 1 );
-   memset( outbuf, '\0', outbufbytes + 1 );
-   defbuf = outbuf;

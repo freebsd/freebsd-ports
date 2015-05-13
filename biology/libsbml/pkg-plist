@@ -201,7 +201,8 @@ include/sbml/xml/XercesTranscode.h
 lib/libsbml-static.a
 lib/libsbml.so
 lib/libsbml.so.5
-lib/libsbml.so.5.11.0
+lib/libsbml.so.5.11.4
+libdata/pkgconfig/libsbml.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/libsbml.py
@@ -331,6 +332,7 @@ lib/libsbml.so.5.11.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/getAllElementsWithNotes.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/inlineInitialAssignments.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/CMakeLists.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/SimpleLayoutConverter.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1_L3.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printAnnotation.java
@@ -402,6 +404,9 @@ lib/libsbml.so.5.11.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/unsetAnnotation.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/unsetNotes.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/validateSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/php/createExampleSBML.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/php/echoSBML.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/php/validateSBML.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addCVTerms.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addCustomValidator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addModelHistory.py

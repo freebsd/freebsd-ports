@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	font-util
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 MASTER_SITES=	XORG/individual/font
+
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

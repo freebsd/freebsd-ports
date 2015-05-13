@@ -3,7 +3,7 @@
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTNAME=	AssaultCube_v${PORTVERSION}
@@ -24,11 +24,8 @@ LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake tar:bzip2
-GNU_CONFIGURE=	yes
-ALL_TARGET=	libenet
+ALL_TARGET=	# empty
 WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
-CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
-CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
 
@@ -36,7 +33,7 @@ PORTDATA=	config packages scripts
 PORTDOCS=	*
 PLIST_DIRS=	%%DATADIR%%/packages/maps/servermaps/incoming
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS PORT_ENET
 OPTIONS_MULTI=	BUILD
 OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
 OPTIONS_DEFAULT=	CLIENT DEDICATED
@@ -55,6 +52,7 @@ DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
 MASTER_DESC=	Build master server
 MASTER_ALL_TARGET=	master
 MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
+PORT_ENET_DESC=	Use libenet from net/enet
 
 .include <bsd.port.options.mk>
 
@@ -62,6 +60,31 @@ MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
 DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
 	"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}_client" \
 	"Game;" false
+.endif
+
+.if ${PORT_OPTIONS:MPORT_ENET}
+LIB_DEPENDS+=	libenet.so:${PORTSDIR}/net/enet
+.else
+ALL_TARGET+=	libenet
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--enable-shared=no --enable-static=yes
+CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
+.endif
+
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
+		/^INCLUDES=/s|$$| -I$$(LOCALBASE)/include| ; \
+		s|-I/usr/include || ; \
+		s|sdl-config|$$(SDL_CONFIG)| ; \
+		s|$$(USRLIB)|$$(LOCALBASE)/lib| ; \
+		/^CLIENT_LIBS=/s|$$| -lintl| ; \
+		/^SERVER_LIBS=/s|$$| -L$$(LOCALBASE)/lib|' \
+		${BUILD_WRKSRC}/Makefile
+.if ${PORT_OPTIONS:MPORT_ENET}
+	${SED} -i '.port_enet.bak' -e 's/libenet // ; \
+		s|-I\.\./enet/include|| ; \
+		s|-L\.\./enet/\.libs||' \
+		${BUILD_WRKSRC}/Makefile
 .endif
 
 do-install:

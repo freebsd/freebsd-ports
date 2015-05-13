@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Intermedix
-GH_COMMIT=	d112a6c
 
 PLIST_FILES=	"@(,,4751) sbin/jailme"
 

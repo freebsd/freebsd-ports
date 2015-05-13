@@ -26,7 +26,7 @@ USE_OPENSSL=	yes
 USE_PERL5=	build
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
-USES=		cmake gettext perl5 tar:bzip2
+USES=		cmake cpe gettext perl5 tar:bzip2
 CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes

@@ -68,6 +68,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${PINENTRY_GUI} == "qt4"
+USES+=		compiler:c++11-lib
+USE_CXXSTD=	c++11
 . if exists(/usr/lib/libc++.so)
 IGNORE=		does not compile with libc++
 . endif

@@ -2,7 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -13,6 +13,8 @@ COMMENT=	Multimedia communication library written in C language
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+
+CONFLICTS=	pjsip-extsrtp-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
@@ -40,7 +42,7 @@ SHARED_DESC=	Build shared libraries (other ports may depend on this)
 SPEEXAEC_DESC=	Speex Acoustic Echo Canceller/AEC
 V4L_DESC=	Video4Linux2 support
 YUV_DESC=	Libyuv support
-EXTSRTP_DESC=	Use libsrtp port (needs all ports compiled with WITH_OPENSSL_PORT=yes)
+EXTSRTP_DESC=	Use libsrtp port (needed to get SRTP support in asterisk13 pjsip backend)
 
 OPTIONS_SUB=	yes
 

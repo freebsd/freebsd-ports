@@ -14,8 +14,6 @@ BUILD_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	20a9d20
 
 USES=		gmake mono pkgconfig
 USE_AUTOTOOLS=	autoconf

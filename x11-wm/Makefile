@@ -52,6 +52,7 @@
     SUBDIR += emerald
     SUBDIR += enlightenment
     SUBDIR += epplets
+    SUBDIR += euclid-wm
     SUBDIR += evilwm
     SUBDIR += fbcmd
     SUBDIR += fluxbox

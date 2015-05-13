@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.zlib.net/pigz/ \
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel GZIP
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	zlib
 MAKE_FLAGS+=	ZOPFLI=zopfli/src/zopfli/
 
 PLIST_FILES=	bin/pigz bin/pigzn bin/pigzt bin/unpigz

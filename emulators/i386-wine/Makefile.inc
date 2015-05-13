@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 PORTVERSION=	1.6.2
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -40,6 +40,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
 USES=		tar:xz
+BUNDLE_LIBS=	yes
 
 GECKO_RUN_DEPENDS=   ${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
 MONO_RUN_DEPENDS=   ${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono

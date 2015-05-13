@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}soappy>=0:${PORTSDIR}/net/py-soappy \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}fpconst>0:${PORTSDIR}/math/py-fpconst \
-		nltk>0:${PORTSDIR}/textproc/nltk \
+		${PYTHON_PKGNAMEPREFIX}nltk>0:${PORTSDIR}/textproc/py-nltk \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pdf>0:${PORTSDIR}/print/py-pdf \
 		scapy>0:${PORTSDIR}/net/scapy \

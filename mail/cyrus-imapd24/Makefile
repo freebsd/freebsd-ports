@@ -82,6 +82,25 @@ SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_USE=		SQLITE=yes
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
+OPTIONS_RADIO=			GSSAPI
+OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
+.if exists(/usr/lib/libkrb5.a)
+OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
+OPTIONS_DEFAULT+=		GSSAPI_BASE
+.endif
+GSSAPI_BASE_DESC=		Use Heimdal in base
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_HEIMDAL_DESC=		Use Heimdal from ports
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_MIT_DESC=		Use MIT Kerberos V5
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=mit
+
 .include <bsd.port.pre.mk>
 
 # Autocreate Inbox and Autosieve patches from UoA
@@ -116,14 +135,15 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 USE_AUTOTOOLS=	autoconf autoheader
 .endif
 
+.if !${PORT_OPTIONS:MGSSAPI_BASE} && !${PORT_OPTIONS:MGSSAPI_HEIMDAL} && \
+    !${PORT_OPTIONS:MGSSAPI_MIT}
+CONFIGURE_ARGS+=--disable-gssapi
+.endif
+
 .if ${OSVERSION} >= 900022
 PLIST_SUB+=	MANCONF=""
 .else
 PLIST_SUB+=	MANCONF="@comment "
-.endif
-
-.if !exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
 CYRUS_USER?=	cyrus
@@ -196,9 +216,6 @@ post-install:
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/cyrus/man/man8/${f}
 	@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
@@ -223,9 +240,6 @@ post-install:
 		${STAGEDIR}${DOCSDIR}/text
 	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
@@ -235,8 +249,6 @@ post-install:
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
-		>>${TMPPLIST}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${PREFIX}/cyrus/bin/mkimap
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \

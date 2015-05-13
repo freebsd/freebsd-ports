@@ -3,7 +3,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Window Manager designed for speed, usability and consistency
 
 LICENSE=	GPLv2
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv:translit pkgconfig
 USE_XORG=	ice sm x11 xext
 USE_GNOME=	gdkpixbuf2
 GNU_CONFIGURE=	yes

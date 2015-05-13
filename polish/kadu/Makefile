@@ -9,9 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
 		GOOGLE_CODE:kadu \
 		http://download.kadu.im/stable/:kadu \
 		http://download.kadu.im/additions/:additions
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:kadu
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kadu
 DIST_SUBDIR=	kadu
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP

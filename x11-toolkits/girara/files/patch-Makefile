@@ -1,11 +1,11 @@
---- Makefile.orig	2014-06-25 09:58:52 UTC
+--- Makefile.orig	2015-04-13 20:49:26 UTC
 +++ Makefile
-@@ -171,7 +171,7 @@
+@@ -245,7 +245,7 @@ install-static: static
  install-shared: shared
  	$(call colorecho,INSTALL,"Install shared library")
  	$(QUIET)mkdir -m 755 -p ${DESTDIR}${LIBDIR}
--	$(QUIET)install -m 644 lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
-+	$(QUIET)install ${SFLAGS} -m 644 lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
+-	$(QUIET)install -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
++	$(QUIET)install ${SFLAGS} -m 644 ${BUILDDIR_RELEASE}/${BINDIR}/lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
  	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} || \
  		echo "Failed to create lib${PROJECT}.so.${SOMAJOR}. Please check if it exists and points to the correct version of lib${PROJECT}.so."
  	$(QUIET)ln -sf lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so || \

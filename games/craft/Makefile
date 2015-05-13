@@ -5,7 +5,6 @@ PORTNAME=	craft
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	GHL
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple Minecraft clone written in C using modern OpenGL
@@ -16,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daniloegea
 GH_PROJECT=	Craft
 GH_TAGNAME=	v1.0fbsd
-GH_COMMIT=	fdf801f
 
 OPTIONS_DEFINE=		SERVER
 SERVER_DESC=		Install the craft server

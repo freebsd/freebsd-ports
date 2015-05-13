@@ -1,9 +1,6 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt

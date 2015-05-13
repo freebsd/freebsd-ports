@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	platon
-PORTVERSION=	2015.03.05
+PORTVERSION=	2015.03.30
 CATEGORIES=	biology
-MASTER_SITES=	http://www.cryst.chem.uu.nl/spek/xraysoft/unix/	\
-		http://www.platonsoft.nl/spek/xraysoft/
+MASTER_SITES=	http://www.cryst.chem.uu.nl/xraysoft/unix/
 DISTNAME=	platon
+DIST_SUBDIR=	platon/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for viewing molecular/crystallographic structures
@@ -16,7 +16,6 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # There is a charge of US$ 5000 for commercial users.
 NO_CDROM=	free for academic, US$ 5000 for commercial users
 
-BROKEN=		Unfetchable
 USES=		fortran
 USE_XORG=	x11
 

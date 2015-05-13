@@ -45,10 +45,6 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

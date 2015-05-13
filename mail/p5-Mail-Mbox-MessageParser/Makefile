@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-Mbox-MessageParser
-PORTVERSION=	1.5100
+PORTVERSION=	1.5105
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-FileHandle-Unget>=0:${PORTSDIR}/devel/p5-FileHandle-Unget
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 TEST_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 
 USES=		perl5
 USE_PERL5=	configure
-
-post-patch:
-	# If upstream adds a =cut in a future release, this patch will break configure
-	@${REINPLACE_CMD} -e '/=encoding utf-8/d' ${WRKSRC}/inc/Sort/Versions.pm
 
 .include <bsd.port.mk>

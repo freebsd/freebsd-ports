@@ -1,5 +1,5 @@
---- makefile.orig	2014-11-28 00:47:24.000000000 +0400
-+++ makefile	2014-12-04 14:28:51.000000000 +0400
+--- makefile.orig	2014-11-27 20:47:24 UTC
++++ makefile
 @@ -7,14 +7,6 @@
  # Also works with ming32-make on Windows.
  

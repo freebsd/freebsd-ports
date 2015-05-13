@@ -5,10 +5,9 @@ PORTNAME=	hadoop
 PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE} \
+MASTER_SITES=	APACHE/${PORTNAME}/core/${PORTNAME}-${PORTVERSION} \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
-MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
@@ -22,7 +21,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS_INSTALL=	hadoop2-2*
 
-USES=		libtool
+USES=		cpe libtool
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes

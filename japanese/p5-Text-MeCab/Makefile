@@ -40,8 +40,4 @@ post-configure:
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
-.if ${PERL_VER} >= 5.18
-BROKEN=		Does not build with Perl 5.18 or above
-.endif
-
 .include <bsd.port.post.mk>

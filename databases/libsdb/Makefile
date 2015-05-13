@@ -4,8 +4,7 @@
 PORTNAME=	libsdb
 PORTVERSION=	0.10.0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
-		http://siag.nu/pub/libsdb/
+MASTER_SITES=	http://siag.nu/pub/libsdb/
 DISTNAME=	sdb-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

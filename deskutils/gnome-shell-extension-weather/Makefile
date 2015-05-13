@@ -12,8 +12,6 @@ COMMENT=	Weather extension for the GNOME3 shell
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell
 
-WRKSRC=		${WRKDIR}/Neroth-gnome-shell-extension-weather-${GH_COMMIT}
-
 USES=		autoreconf:build gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack
 USE_GITHUB=	yes
@@ -24,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GH_ACCOUNT=	Neroth
 GH_TAGNAME=	329139f
-GH_COMMIT=	329139f
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

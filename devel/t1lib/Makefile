@@ -14,7 +14,7 @@ COMMENT=	Type 1 font rasterization library for Unix/X11
 
 LICENSE=	LGPL20
 
-USES=		gmake libtool
+USES=		cpe gmake libtool
 GNU_CONFIGURE=	yes
 ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes

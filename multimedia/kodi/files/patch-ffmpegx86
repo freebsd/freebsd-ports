@@ -1,5 +1,5 @@
---- tools/depends/target/ffmpeg/ffmpeg-2.4.4-Helix/libavutil/x86/asm.h.orig	2014-12-25 13:59:22.000000000 +0100
-+++ tools/depends/target/ffmpeg/ffmpeg-2.4.4-Helix/libavutil/x86/asm.h	2014-12-25 14:00:04.000000000 +0100
+--- tools/depends/target/ffmpeg/ffmpeg-2.4.6-Helix/libavutil/x86/asm.h.orig	2014-12-25 13:59:22.000000000 +0100
++++ tools/depends/target/ffmpeg/ffmpeg-2.4.6-Helix/libavutil/x86/asm.h	2014-12-25 14:00:04.000000000 +0100
 @@ -71,7 +71,7 @@
  typedef int x86_reg;
  #endif

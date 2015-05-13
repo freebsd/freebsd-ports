@@ -4,7 +4,6 @@
 PORTNAME=	cakephp
 PORTVERSION=	2.1.5
 CATEGORIES=	www
-MASTER_SITES=	GHL
 PKGNAMESUFFIX=	21
 
 MAINTAINER=	theis@gmx.at
@@ -13,8 +12,6 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	MIT
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	0bcf34c
 
 PORTDOCS=	README
 

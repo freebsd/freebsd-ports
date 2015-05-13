@@ -1,0 +1,11 @@
+--- src/actions/Makefile.in.orig	2014-10-14 16:46:21 UTC
++++ src/actions/Makefile.in
+@@ -424,7 +424,7 @@ AM_VALAFLAGS = \
+     --header fm-actions.h \
+ 	$(NULL)
+ 
+-libfmactionsincludedir = $(includedir)/@PACKAGE@-@FMLIBVER@
++libfmactionsincludedir = $(includedir)/@PACKAGE@
+ libfmactionsinclude_HEADERS = \
+ 	fm-actions.h \
+ 	$(NULL)

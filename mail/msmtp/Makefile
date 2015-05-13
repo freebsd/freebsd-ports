@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.32
-PORTREVISION=	3
+PORTVERSION=	1.6.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -13,7 +12,7 @@ COMMENT=	SMTP plugin for MUAs
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		makeinfo pkgconfig tar:bzip2
+USES=		gmake makeinfo pkgconfig tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=	msmtp
@@ -75,6 +74,10 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|/etc/ssl/certs/ca\\-certificates.crt|${LOCALBASE}/share/certs/ca\\-root\\-nss.crt|' \
+		${WRKSRC}/doc/msmtp.1
 
 .if ${PORT_OPTIONS:MMSMTPQ}
 PLIST_SUB+=	MSMTPQ=""

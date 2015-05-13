@@ -14,10 +14,6 @@ USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libicq.so
 

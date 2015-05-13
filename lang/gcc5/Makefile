@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.0.s20150405
+PORTVERSION=	5.1.0
 CATEGORIES=	lang java
-MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
+MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -30,10 +29,10 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
-# Y.2.s20140817 results in values of Y-20140817, Y.2.0, and Y
+# Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
 DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1.0/}
+GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64 arm armv6 armv6hf
 USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
@@ -111,10 +110,11 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+# Release tarballs (as opposed to snapshots) always carry this.
+#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
-.endif
+#.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 

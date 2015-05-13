@@ -1,33 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	tilda
-PORTVERSION=	0.9.6
-PORTREVISION=	7
+PORTVERSION=	1.2.2
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://github.com/lanoxx/${PORTNAME}/archive/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Drop down x11 terminal with transparency support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libvte2_90.so:${PORTSDIR}/x11-toolkits/vte290
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libglade2 vte
-USES=		gmake gettext pkgconfig
+CONFIGURE_ARGS=	--disable-rpath
+USE_GNOME=	gtk30
+USES=		gmake gettext pkgconfig autoreconf pathfix libtool
+INSTALL_TARGET=	install-strip
 
-DOCS=		AUTHORS ChangeLog README TODO
+DOCS=		AUTHORS ChangeLog HACKING.md README.md TODO.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|ps -C tilda -o pid=|pgrep tilda|' \
-		${WRKSRC}/src/tilda.c
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/src/tomboykeybinder.h
-	@${REINPLACE_CMD} -e 's|-R$$found_dir|-Wl,-rpath,$$found_dir|g' \
-		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

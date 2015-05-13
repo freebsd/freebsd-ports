@@ -5,16 +5,13 @@ PORTNAME?=	remmina-plugins
 PORTVERSION=	1.0.0
 PORTREVISION?=	4
 CATEGORIES=	net gnome
-USE_GITHUB=	yes
-GH_ACCOUNT=	FreeRDP
-GH_PROJECT=	remmina
-GH_COMMIT=	356c033
-GH_TAGNAME=	${PORTVERSION}
-DISTNAME=	remmina-${PORTVERSION}
-
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Remmina plugin system
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeRDP
+GH_PROJECT=	Remmina
 
 .if defined(PKGNAMESUFFIX)
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"

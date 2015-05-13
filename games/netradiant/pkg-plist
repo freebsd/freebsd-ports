@@ -171,25 +171,3 @@ man/man6/q3map2.6.gz
 %%DATADIR%%/xonotic.game/data/entities.ent
 %%DATADIR%%/xonotic.game/default_build_menu.xml
 %%DATADIR%%/xonotic.game/game.xlink
-@dirrm %%DATADIR%%/xonotic.game/data
-@dirrm %%DATADIR%%/xonotic.game
-@dirrm %%DATADIR%%/warsow.game/basewsw
-@dirrm %%DATADIR%%/warsow.game
-@dirrm %%DATADIR%%/q1.game/id1
-@dirrm %%DATADIR%%/q1.game
-@dirrm %%DATADIR%%/plugins/bt
-@dirrm %%DATADIR%%/plugins/bitmaps
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/osirion.game/base
-@dirrm %%DATADIR%%/osirion.game
-@dirrm %%DATADIR%%/nexuiz.game/data
-@dirrm %%DATADIR%%/nexuiz.game
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/heretic2
-@dirrm %%DATADIR%%/gl
-@dirrm %%DATADIR%%/games
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/darkplaces.game/id1
-@dirrm %%DATADIR%%/darkplaces.game
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%

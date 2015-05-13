@@ -173,6 +173,8 @@
     SUBDIR += nrpe-ssl
     SUBDIR += nsca
     SUBDIR += nsca-client
+    SUBDIR += nsca-ng
+    SUBDIR += nsca-ng-client
     SUBDIR += nsca27
     SUBDIR += nsca27-client
     SUBDIR += nstreams
@@ -246,7 +248,6 @@
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
     SUBDIR += php5-snmp
-    SUBDIR += php53-snmp
     SUBDIR += php55-snmp
     SUBDIR += php56-snmp
     SUBDIR += phpip

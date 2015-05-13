@@ -11,11 +11,6 @@
 # Add the following line to /etc/rc.conf to enable anope:
 # anope_enable=YES
 #
-# Also, to prevent running anope as root You may use
-# anope_user="nobody"
-# and
-# anope_chdir="%%PREFIX%%/share/anope"
-#
 
 . /etc/rc.subr
 
@@ -24,8 +19,11 @@ rcvar=anope_enable
 
 load_rc_config $name
 
-command=%%PREFIX%%/libexec/anope/services
+: ${anope_enable:=NO}
+: ${anope_user:=nobody}
 
-anope_enable=${anope_enable:-"NO"}
+command=%%PREFIX%%/anope/bin/services
+pidfile=%%PREFIX%%/anope/data/services.pid
+extra_commands=reload
 
 run_rc_command "$1"

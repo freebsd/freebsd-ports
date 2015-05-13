@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Rpc
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org

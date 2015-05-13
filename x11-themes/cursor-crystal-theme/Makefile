@@ -32,7 +32,7 @@ post-patch:
 		${WRKSRC}/white_src/Makefile
 
 pre-build:
-	@(cd ${WRKSRC}; ${ENV} ${MAKE_ENV} ${MAKE_CMD} clean ${MAKE_ARGS})
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clean ${MAKE_ARGS})
 
 pre-install:
 	@${REINPLACE_CMD} \

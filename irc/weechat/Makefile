@@ -3,6 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \

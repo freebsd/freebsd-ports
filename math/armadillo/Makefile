@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	armadillo
-PORTVERSION=	4.650.4
+PORTVERSION=	5.100.1
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -12,7 +12,8 @@ LICENSE=	MPL
 
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libarpack.so:${PORTSDIR}/math/arpack \
-		libhdf5.so:${PORTSDIR}/science/hdf5
+		libhdf5.so:${PORTSDIR}/science/hdf5 \
+		libsuperlu.so:${PORTSDIR}/math/superlu
 
 USES=		cmake blaslapack
 USE_LDCONFIG=	yes

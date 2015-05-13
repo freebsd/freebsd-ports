@@ -11,7 +11,8 @@ COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 LICENSE=	LGPL21
 
-USES=		gettext libtool pathfix pkgconfig
+USES=		cpe gettext libtool pathfix pkgconfig
+CPE_VENDOR=	libmms_project
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

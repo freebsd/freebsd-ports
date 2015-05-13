@@ -272,6 +272,9 @@ libexec/process_perfdata.pl
 libexec/rrd_convert.pl
 libexec/rrd_modify.pl
 man/man8/npcd.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lighttpd.pnp4nagios.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.pnp4nagios.conf
 %%WWWDIR%%/application/config/config.php
 %%WWWDIR%%/application/config/locale.php
 %%WWWDIR%%/application/config/routes.php
@@ -320,6 +323,9 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW.php
 %%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW_FPDI.php
 %%WWWDIR%%/application/vendor/fpdf/font/courier.php
+%%WWWDIR%%/application/vendor/fpdf/font/courierb.php
+%%WWWDIR%%/application/vendor/fpdf/font/courierbi.php
+%%WWWDIR%%/application/vendor/fpdf/font/courieri.php
 %%WWWDIR%%/application/vendor/fpdf/font/helvetica.php
 %%WWWDIR%%/application/vendor/fpdf/font/helveticab.php
 %%WWWDIR%%/application/vendor/fpdf/font/helveticabi.php
@@ -346,6 +352,7 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/application/views/graph.php
 %%WWWDIR%%/application/views/graph_content.php
 %%WWWDIR%%/application/views/graph_content_special.php
+%%WWWDIR%%/application/views/graph_tiny.php
 %%WWWDIR%%/application/views/header.php
 %%WWWDIR%%/application/views/host_box.php
 %%WWWDIR%%/application/views/icon_box.php

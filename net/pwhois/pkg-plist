@@ -1,3 +1,4 @@
+bin/pwhois-pwdump
 etc/periodic/daily/512.pwhois-updatedb
 sbin/pwhois-updatedb
 sbin/pwhoisd

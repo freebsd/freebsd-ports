@@ -58,6 +58,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/1024-CMS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/360-web-manager.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/3COM-NBX.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/3dcart.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/4D.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/4images.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/68-Classifieds-Script.rb
@@ -129,6 +130,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-CouchDB.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-Forrest.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-Struts.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-Tomcat.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-Traffic-Server.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Apache-Wicket.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/AppServ.rb
@@ -199,6 +201,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/BoonEx-Dolphin.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/BosClassifieds.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/BrewBlogger.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Brightcove.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/BroadWin-WebAccess.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/BrowserCMS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Buddy-Zone.rb
@@ -279,6 +282,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/ConfTool.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Connect2.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Constructr-CMS.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Content-Language.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Content-Security-Policy.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/ContentXXL.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Contentteller-CMS.rb
@@ -288,6 +292,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Cougar.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Covalent-Enterprise-Ready-Server.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/CoyotePoint-Load-Balancer.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/CrazyEgg.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/CreateLive-Cms.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/CrushFTP.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/CubeCart.rb
@@ -435,6 +440,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Gitorious.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Gitweb.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/GoServe.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Google-Analytics.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Google-Maps.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Google-Search-Appliance.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Google-Talk-Chatback.rb
@@ -530,7 +536,9 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Internet-Cluster-Manager.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Internet-Rimon-Filter.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Intoto-Router.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Intrasrv.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Intraxxion-CMS.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Intrinsyc-deviceWEB.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/InverseFlow-Help-Desk-System.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Ionize-CMS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Ipswitch-IMail.rb
@@ -552,6 +560,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/KSS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/KSearch.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/KaZaA.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Kabana.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/KaiBB.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Kajona.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Kampyle.rb
@@ -588,6 +597,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/LanRTC.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/LandShop.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Lantronix-Device.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/LaserWash.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Lasernet-CMS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Lasso-Web-Data-Engine.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/LetoDMS.rb
@@ -838,7 +848,6 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Phorum.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/PhotoPost-PHP.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/PhotoStore.rb
-%%RUBY_SITELIBDIR%%/whatweb/plugins/Phusion_Passenger.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Pi3Web.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/PieCrust.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/PithCMS.rb
@@ -1199,6 +1208,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Web-Publishing-Wizard.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Web-Wiz-Rich-Text-Editor.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Web2.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/Web2py.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WebAsyst-Shop-Script.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WebDAV.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WebHare-Application-Portal.rb
@@ -1236,6 +1246,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Wiseguy.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WoW-Server-Status.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WooFramework.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/WordFusion.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WordPress-Mobile-Pack.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/WordPress-Stats.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/Worldgroup-Server.rb
@@ -1347,6 +1358,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/censura.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/cgi-backdoor.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/cgiproxy.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/cgit.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/chillyCMS.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/cisco-vpn-3000-concentrator.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/citrix-metaframe.rb
@@ -1392,6 +1404,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/dugallery.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/dvr-webclient.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/dwr.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/eBuilding.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/eDirectory.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/eFront.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/eGroupWare.rb
@@ -1557,8 +1570,8 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/open-auto-classifieds.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/open-blog.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/open-freeway.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/open-graph-protocol.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/openEngine.rb
-%%RUBY_SITELIBDIR%%/whatweb/plugins/open_graph_protocol.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/open_search.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/opencms.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/openid.rb
@@ -1570,6 +1583,7 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/pageup-people.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/panasonic-network-camera.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/parked-domain.rb
+%%RUBY_SITELIBDIR%%/whatweb/plugins/passenger.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/password_field.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/pcextreme.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/phPhotoAlbum.rb
@@ -1700,7 +1714,6 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/thttpd.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/title.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/tomatoCMS.rb
-%%RUBY_SITELIBDIR%%/whatweb/plugins/tomcat.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/toner-cart.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/toshiba-network-camera.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/toshiba-printer.rb

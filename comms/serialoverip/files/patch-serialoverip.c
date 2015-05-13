@@ -1,6 +1,14 @@
---- serialoverip.c	Sun Sep  3 16:04:54 2006
-+++ serialoverip.c	Sun Sep  3 16:06:34 2006
-@@ -42,20 +42,19 @@
+--- serialoverip.c.orig	2002-03-08 22:37:09 UTC
++++ serialoverip.c
+@@ -34,6 +34,7 @@
+ #include <fcntl.h>
+ #include <termios.h>
+ #include <signal.h>
++#include <strings.h>
+ 
+ #define MAXMESG 2048
+ 
+@@ -42,20 +43,19 @@ char*pname;
  int s[2],st[2];
  
  void help(){

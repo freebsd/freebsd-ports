@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	duply
-PORTVERSION=	1.7.4
+PORTVERSION=	1.9.1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.7.x/
+MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.9.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 RUN_DEPENDS=	duplicity:${PORTSDIR}/sysutils/duplicity \
 		bash:${PORTSDIR}/shells/bash
 
+USES=		python
+
 NO_BUILD=	yes
 
 PORTDOCS=	INSTALL.txt gpl-2.0.txt
@@ -27,6 +29,7 @@ SUB_FILES=	pkg-message periodic_duply
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
+	${REINPLACE_CMD} -e "s,(python,(${PYTHON_CMD},g" ${WRKSRC}/duply
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/duply ${STAGEDIR}${PREFIX}/bin/duply

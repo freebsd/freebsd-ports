@@ -26,6 +26,5 @@ post-patch:
 	    -e 's|-Werror||g'
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

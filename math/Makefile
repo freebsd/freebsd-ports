@@ -30,6 +30,7 @@
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-memisc
+    SUBDIR += R-cran-minqa
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-outliers
@@ -94,6 +95,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += crlibm
+    SUBDIR += cryptominisat
     SUBDIR += cvc3
     SUBDIR += dcdflib
     SUBDIR += diehard
@@ -523,8 +525,6 @@
     SUBDIR += pecl-trader
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
-    SUBDIR += php53-bcmath
-    SUBDIR += php53-gmp
     SUBDIR += php55-bcmath
     SUBDIR += php55-gmp
     SUBDIR += php56-bcmath
@@ -548,6 +548,7 @@
     SUBDIR += py-basemap-data
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-cryptominisat
     SUBDIR += py-fastcluster
     SUBDIR += py-ffc
     SUBDIR += py-fiat
@@ -605,6 +606,7 @@
     SUBDIR += rpy
     SUBDIR += rpy2
     SUBDIR += ruby-algebra
+    SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-narray
     SUBDIR += rubygem-narray_miss

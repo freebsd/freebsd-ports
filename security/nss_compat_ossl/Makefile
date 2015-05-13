@@ -14,8 +14,7 @@ USES=		pkgconfig libtool
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/nss/libssl3.so:${PORTSDIR}/security/nss
-RUN_DEPENDS=	${LOCALBASE}/lib/nss/libssl3.so:${PORTSDIR}/security/nss
-LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
+		libnss3.so:${PORTSDIR}/security/nss
 
 .include <bsd.port.mk>

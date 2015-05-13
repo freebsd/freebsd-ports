@@ -18,7 +18,9 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-USES=		zip
+USES=		cpe zip
+CPE_PRODUCT=	xml_security_for_java
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}

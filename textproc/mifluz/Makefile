@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 USES=		bison iconv libtool makeinfo pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-posixmutexes \
+		--localstatedir="${PREFIX}/var" \
 		--without-unac
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

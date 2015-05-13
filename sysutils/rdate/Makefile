@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rdate
-PORTVERSION=	20140220
+PORTVERSION=	20150501
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	ftp://ftp.stack.nl/pub/users/%SUBDIR%/rdate/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	johans
 
 MAINTAINER=	johans@FreeBSD.org
@@ -14,11 +15,19 @@ CFLAGS+=	-DNO_UTIL -D__dead= -D'SA_LEN(x)=(x)->sa_len'
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/rdate man/man8/${PORTNAME}.8.gz
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/right,,' ${WRKSRC}/rdate.8
+.if ${OSVERSION} < 1100072
+	${REINPLACE_CMD} -e '/^SRCS/s/$$/ reallocarray.c/' ${WRKSRC}/Makefile
+	${ECHO} 'void *reallocarray(void *optr, size_t nmemb, size_t size);' \
+		>> ${WRKSRC}/ntpleaps.h
+	${CP} ${FILESDIR}/*.c ${WRKSRC}/
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdate ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/rdate.8 ${STAGEDIR}${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

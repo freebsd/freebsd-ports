@@ -6,8 +6,6 @@ PORTVERSION=	0.6.1
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	GHL
-DIST_SUBDIR?=	${PORTNAME}
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
@@ -23,9 +21,7 @@ USE_XORG=	x11 xfixes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_PROJECT=	xrdp
-GH_COMMIT=	5d53758
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	5d53758
 
 CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include

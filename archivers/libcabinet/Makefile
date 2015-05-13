@@ -3,7 +3,7 @@
 
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
@@ -18,7 +18,7 @@ PROGFILE=	${SRCFILE:S/.cpp$//}
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 post-build:
-	${CXX} ${CXXFLAGS} -o ${PROGFILE} ${SRCFILE} -L${WRKSRC} -lcabinet
+	${CXX} ${CXXFLAGS} -o ${PROGFILE} ${SRCFILE} -L${WRKSRC} -lcabinet -lz
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/cabinet

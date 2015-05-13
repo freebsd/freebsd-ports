@@ -2,7 +2,7 @@
 
 PORTNAME=	charybdis
 PORTVERSION=	3.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -25,17 +25,15 @@ MASTER_SITES:=	${MASTER_SITES} \
 
 PORTDOCS=	charybdis-oper-guide.pdf
 
-USE_AUTOTOOLS=	autoconf
 USES=		libtool pathfix
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 USERS=		ircd
 GROUPS=		ircd
-CONFIGURE_ARGS=	--with-confdir=${ETCDIR} \
-		--with-helpdir=${DATADIR}/help \
-		--with-logdir=/var/log/${PORTNAME} \
-		--with-moduledir=${DATADIR}/modules \
+CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
+		--with-rundir=/var/run \
+		--enable-fhs-paths \
 		--enable-kqueue
 
 OPTIONS_DEFINE=	DOCS

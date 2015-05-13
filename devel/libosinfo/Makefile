@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosinfo
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.11
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
 

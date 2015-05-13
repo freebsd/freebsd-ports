@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 # with ``Could not open any NTP socket'' message on startup :(
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake makeinfo readline
+USES=		cpe gmake makeinfo readline
+CPE_VENDOR=	tuxfamily
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
 		--datarootdir=${DATADIR} --docdir=${DOCSDIR}

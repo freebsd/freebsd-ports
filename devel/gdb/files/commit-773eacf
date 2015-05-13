@@ -1,0 +1,99 @@
+diff --git gdb/amd64fbsd-tdep.c gdb/amd64fbsd-tdep.c
+index e11b0f3..62dcb83 100644
+--- gdb/amd64fbsd-tdep.c
++++ gdb/amd64fbsd-tdep.c
+@@ -51,8 +51,8 @@ amd64fbsd_sigtramp_p (struct frame_info *this_frame)
+ 
+   if (!safe_frame_unwind_memory (this_frame, pc, buf, sizeof buf))
+     return 0;
+-  if (memcmp (buf, amd64fbsd_sigtramp_code, sizeof amd64fbsd_sigtramp_code) !=
+-      0)
++  if (memcmp (buf, amd64fbsd_sigtramp_code, sizeof amd64fbsd_sigtramp_code)
++      != 0)
+     return 0;
+ 
+   return 1;
+diff --git gdb/i386fbsd-tdep.c gdb/i386fbsd-tdep.c
+index d4516ee..ed41706 100644
+--- gdb/i386fbsd-tdep.c
++++ gdb/i386fbsd-tdep.c
+@@ -105,24 +105,24 @@ static const gdb_byte i386fbsd_osigtramp_end[] =
+ };
+ 
+ /* The three different trampolines are all the same size.  */
+-gdb_static_assert (sizeof i386fbsd_sigtramp_start ==
+-		   sizeof i386fbsd_freebsd4_sigtramp_start);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_start ==
+-		   sizeof i386fbsd_osigtramp_start);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_middle ==
+-		   sizeof i386fbsd_freebsd4_sigtramp_middle);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_middle ==
+-		   sizeof i386fbsd_osigtramp_middle);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_end ==
+-		   sizeof i386fbsd_freebsd4_sigtramp_end);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_end ==
+-		   sizeof i386fbsd_osigtramp_end);
++gdb_static_assert (sizeof i386fbsd_sigtramp_start
++		   == sizeof i386fbsd_freebsd4_sigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_start
++		   == sizeof i386fbsd_osigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle
++		   == sizeof i386fbsd_freebsd4_sigtramp_middle);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle
++		   == sizeof i386fbsd_osigtramp_middle);
++gdb_static_assert (sizeof i386fbsd_sigtramp_end
++		   == sizeof i386fbsd_freebsd4_sigtramp_end);
++gdb_static_assert (sizeof i386fbsd_sigtramp_end
++		   == sizeof i386fbsd_osigtramp_end);
+ 
+ /* We assume that the middle is the largest chunk below.  */
+-gdb_static_assert (sizeof i386fbsd_sigtramp_middle >
+-		   sizeof i386fbsd_sigtramp_start);
+-gdb_static_assert (sizeof i386fbsd_sigtramp_middle >
+-		   sizeof i386fbsd_sigtramp_end);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle
++		   > sizeof i386fbsd_sigtramp_start);
++gdb_static_assert (sizeof i386fbsd_sigtramp_middle
++		   > sizeof i386fbsd_sigtramp_end);
+ 
+ static int
+ i386fbsd_sigtramp_p (struct frame_info *this_frame)
+@@ -135,19 +135,25 @@ i386fbsd_sigtramp_p (struct frame_info *this_frame)
+   if (!safe_frame_unwind_memory (this_frame, pc, buf,
+ 				 sizeof i386fbsd_sigtramp_start))
+     return 0;
+-  if (memcmp (buf, i386fbsd_sigtramp_start, sizeof i386fbsd_sigtramp_start) ==
+-      0) {
+-    middle = i386fbsd_sigtramp_middle;
+-    end = i386fbsd_sigtramp_end;
+-  } else if (memcmp (buf, i386fbsd_freebsd4_sigtramp_start,
+-		     sizeof i386fbsd_freebsd4_sigtramp_start) == 0) {
+-    middle = i386fbsd_freebsd4_sigtramp_middle;
+-    end = i386fbsd_freebsd4_sigtramp_end;
+-  } else if (memcmp (buf, i386fbsd_osigtramp_start,
+-		     sizeof i386fbsd_osigtramp_start) == 0) {
+-    middle = i386fbsd_osigtramp_middle;
+-    end = i386fbsd_osigtramp_end;
+-  } else
++  if (memcmp (buf, i386fbsd_sigtramp_start, sizeof i386fbsd_sigtramp_start)
++      == 0)
++    {
++      middle = i386fbsd_sigtramp_middle;
++      end = i386fbsd_sigtramp_end;
++    }
++  else if (memcmp (buf, i386fbsd_freebsd4_sigtramp_start,
++		   sizeof i386fbsd_freebsd4_sigtramp_start) == 0)
++    {
++      middle = i386fbsd_freebsd4_sigtramp_middle;
++      end = i386fbsd_freebsd4_sigtramp_end;
++    }
++  else if (memcmp (buf, i386fbsd_osigtramp_start,
++		   sizeof i386fbsd_osigtramp_start) == 0)
++    {
++      middle = i386fbsd_osigtramp_middle;
++      end = i386fbsd_osigtramp_end;
++    }
++  else
+     return 0;
+ 
+   /* Since the end is shorter than the middle, check for a matching end

@@ -1,20 +1,11 @@
---- src/core/linux/convhelper.cpp.orig	2008-01-20 13:32:07.000000000 +0100
-+++ src/core/linux/convhelper.cpp	2008-01-20 12:56:03.000000000 +0100
-@@ -39,7 +39,7 @@
- #ifdef __APPLE__
- 	const char *inbuf = inStr.data();
- #else
--	char *inbuf = const_cast<char *>(inStr.data());
-+	const char *inbuf = const_cast<char *>(inStr.data());
+--- src/core/linux/convhelper.cpp.orig	2014-01-10 21:18:20 UTC
++++ src/core/linux/convhelper.cpp
+@@ -36,7 +36,7 @@
+ #error This file is not for Windows.
  #endif
  
- 	const size_t c_outsize = insize * 6; // max size of utf-8 char is 6 per input char
-@@ -74,7 +74,7 @@
- #ifdef __APPLE__
- 	const char *inbuf = inStr.data();
- #else
--	char *inbuf = const_cast<char *>(inStr.data());
-+	const char *inbuf = const_cast<char *>(inStr.data());
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__NetBSD__)
+ #define HAVE_ICONV_CONST
  #endif
  
- 	const size_t c_outsize = insize;

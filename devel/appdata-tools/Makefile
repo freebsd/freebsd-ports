@@ -8,8 +8,6 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DIST_SUBDIR=	gnome3
 
-WRKSRC=		${WRKDIR}/hughsie-appdata-tools-${GH_COMMIT}
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	AppData is a subset of AppStream
 
@@ -17,9 +15,7 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libappstream-glib.so:${PORTSDIR}/devel/appstream-glib
 
 GH_ACCOUNT=	hughsie
-GH_PROJECT=	appdata-tools
-GH_COMMIT=      c1238e3
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	c1238e3
 
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am

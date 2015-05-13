@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	1.5
-PORTREVISION=	12
+PORTVERSION=	1.6.0
+PORTREVISION=	0
 CATEGORIES=	security
-MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
+MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
 
-USES=		tar:bzip2
+USES=		autoreconf tar:xz
 
 PLIST_FILES=	sbin/sshguard man/man8/sshguard.8.gz
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	credns
 PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/credns/
 
@@ -11,6 +11,7 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Verifier performing validation in the DNS notify/transfer-chain
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RC_SUBR=	credns
 
@@ -27,11 +28,9 @@ CONFIGURE_ARGS=	--with-user=${CREDNSUSER} \
 		--with-dbfile=${CREDNSDBDIR}/nsd.db \
 		--with-pidfile=${CREDNSRUNDIR}/nsd.pid
 
-SUB_LIST=	CREDNSUSER=${USERS} \
+PLIST_SUB=	CREDNSUSER=${USERS} \
 		CREDNSGROUP=${GROUPS} \
 		CREDNSDBDIR=${CREDNSDBDIR} \
-		CREDNSRUNDIR=${CREDNSRUNDIR}
-PLIST_SUB=	CREDNSDBDIR=${CREDNSDBDIR} \
 		CREDNSRUNDIR=${CREDNSRUNDIR}
 
 USE_OPENSSL=	yes
@@ -52,6 +51,9 @@ MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 
 post-install:
+.for f in credns credns-checkconf credns-notify credns-patch credns-xfer
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/credns.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/credns/credns.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

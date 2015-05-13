@@ -148,7 +148,6 @@
     SUBDIR += festvox-rab16
     SUBDIR += festvox-rab8
     SUBDIR += festvox-russian
-    SUBDIR += filter_audio
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
@@ -356,6 +355,7 @@
     SUBDIR += libdssialsacompat
     SUBDIR += libebur128
     SUBDIR += libechonest
+    SUBDIR += libfilteraudio
     SUBDIR += libfishsound
     SUBDIR += libgig
     SUBDIR += libgme
@@ -498,6 +498,7 @@
     SUBDIR += mpg321
     SUBDIR += mpiosh
     SUBDIR += mps
+    SUBDIR += msbcg729
     SUBDIR += msilbc
     SUBDIR += mumble
     SUBDIR += murmur
@@ -680,6 +681,7 @@
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += siren
+    SUBDIR += skype-call-recorder
     SUBDIR += slv2
     SUBDIR += smasher
     SUBDIR += snack

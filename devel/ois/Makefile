@@ -3,7 +3,7 @@
 
 PORTNAME=	ois
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/wgois/Source%20Release/1.2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,10 +13,8 @@ COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		pathfix gmake libtool
+USES=		autoreconf gmake libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 
@@ -24,5 +22,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOIS.so
 
 .include <bsd.port.mk>

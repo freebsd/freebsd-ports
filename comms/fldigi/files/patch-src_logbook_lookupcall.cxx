@@ -1,6 +1,6 @@
---- src/logbook/lookupcall.cxx.orig	2014-03-21 11:25:57.000000000 -0500
-+++ src/logbook/lookupcall.cxx	2014-03-21 18:19:53.000000000 -0500
-@@ -1188,7 +1188,7 @@
+--- src/logbook/lookupcall.cxx.orig	2015-04-23 11:39:24 UTC
++++ src/logbook/lookupcall.cxx
+@@ -1188,7 +1188,7 @@ static void *EQSL_loop(void *args)
  			return NULL;
  
  		size_t p;

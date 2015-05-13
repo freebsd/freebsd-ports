@@ -7,7 +7,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/content_resources.pak
 %%DATADIR%%/keyboard_resources.pak
 %%DATADIR%%/libffmpegsumo.so
-%%DATADIR%%/libpdf.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
 %%DATADIR%%/locales/bg.pak
@@ -65,7 +64,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
-%%DATADIR%%/resources/inspector/Images/back.png
 %%DATADIR%%/resources/inspector/Images/breakpoint.png
 %%DATADIR%%/resources/inspector/Images/breakpointConditional.png
 %%DATADIR%%/resources/inspector/Images/breakpointConditional_2x.png
@@ -97,6 +95,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/navigationControls.png
 %%DATADIR%%/resources/inspector/Images/navigationControls_2x.png
 %%DATADIR%%/resources/inspector/Images/paneAddButtons.png
+%%DATADIR%%/resources/inspector/Images/paneAnimationsButtons.png
 %%DATADIR%%/resources/inspector/Images/paneElementStateButtons.png
 %%DATADIR%%/resources/inspector/Images/paneFilterButtons.png
 %%DATADIR%%/resources/inspector/Images/paneRefreshButtons.png
@@ -133,20 +132,21 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/toolbarItemSelected.png
 %%DATADIR%%/resources/inspector/Images/touchCursor.png
 %%DATADIR%%/resources/inspector/Images/touchCursor_2x.png
-%%DATADIR%%/resources/inspector/Images/transformControls.png
-%%DATADIR%%/resources/inspector/Images/transformControls_2x.png
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
 %%DATADIR%%/resources/inspector/audits_module.js
+%%DATADIR%%/resources/inspector/components_lazy_module.js
 %%DATADIR%%/resources/inspector/console_module.js
 %%DATADIR%%/resources/inspector/devices_module.js
 %%DATADIR%%/resources/inspector/devtools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/resources/inspector/devtools.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
-%%DATADIR%%/resources/inspector/documentation_module.js
 %%DATADIR%%/resources/inspector/elements_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker_module.js
+%%DATADIR%%/resources/inspector/inspector.css
+%%DATADIR%%/resources/inspector/inspector.html
+%%DATADIR%%/resources/inspector/inspector.js
 %%DATADIR%%/resources/inspector/layers_module.js
 %%DATADIR%%/resources/inspector/network_module.js
 %%DATADIR%%/resources/inspector/profiler_module.js
@@ -161,6 +161,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/toolbox.css
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
+%%DATADIR%%/resources/inspector/ui_lazy_module.js
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png

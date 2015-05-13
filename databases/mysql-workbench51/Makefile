@@ -21,13 +21,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	PYTHON
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	-a -c -f --foreign
 USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
-SUBDIRS=	ext/yassl/taocrypt ext/yassl ext/ctemplate/ctemplate-src .
 
-USES=		dos2unix libtool lua:51
+USES=		autoreconf dos2unix libtool lua:51
 DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
 USE_GL=		gl
 USE_GNOME=	cairo gtkmm24 libglade2 libgnome libsigc++20 libxml2
@@ -63,34 +59,8 @@ post-patch:
 		${WRKSRC}/plugins/wb.printing/backend/stdafx.h \
 		${WRKSRC}/plugins/db.mysql/backend/db_plugin_be.cpp
 
-run-autotools-libtoolize:
-.for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} ${LIBTOOLIZE_ARGS})
-.endfor
-
-run-autotools-aclocal:
-.for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} ${ACLOCAL_ARGS})
-.endfor
-
-run-autotools-autoheader:
-.for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} ${AUTOHEADER_ARGS})
-.endfor
-
-run-autotools-automake:
-.for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
-.endfor
-
-run-autotools-autoconf:
-.for dir in ${SUBDIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS})
-.endfor
+pre-configure:
+	(cd ${WRKSRC}/ext/yassl/taocrypt && ${LOCALBASE}/bin/autoreconf -f -i)
+	(cd ${WRKSRC}/ext/yassl && ${LOCALBASE}/bin/autoreconf -f -i)
 
 .include <bsd.port.mk>

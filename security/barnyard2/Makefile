@@ -2,6 +2,7 @@
 
 PORTNAME=	barnyard2
 PORTVERSION=	1.13
+DISTVERSIONPREFIX=	v2-
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,8 +12,6 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firnsy
-GH_TAGNAME=	v2-${PORTVERSION}
-GH_COMMIT=	272eaf7
 
 OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS PORT_PCAP DOCS EXAMPLES
 OPTIONS_RADIO=	DATABASE
@@ -32,10 +31,7 @@ OPTIONS_DESC=	Enable tcl support for sguil
 OPTIONS_DEFAULT+=	TCL
 .endif
 
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
-ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
-
+USES=		autoreconf libtool
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
 

@@ -3,7 +3,6 @@ lib/sushi/girepository-1.0/Sushi-1.0.typelib
 lib/sushi/libsushi-1.0.so
 libexec/sushi-start
 share/dbus-1/services/org.gnome.Sushi.service
-share/glib-2.0/schemas/org.gnome.sushi.gschema.xml
 share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo
 share/locale/as/LC_MESSAGES/sushi.mo

@@ -12,7 +12,6 @@ LICENSE=	PostgreSQL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	2ndquadrant-it
-GH_COMMIT=	5715bb9
 
 USES=		gmake pgsql:9.2+
 WANT_PGSQL=	server

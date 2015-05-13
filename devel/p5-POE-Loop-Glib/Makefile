@@ -18,9 +18,8 @@ BUILD_DEPENDS=	p5-POE>=1.288:${PORTSDIR}/devel/p5-POE \
 		p5-Glib2>=1.222:${PORTSDIR}/devel/p5-Glib2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 OPTIONS_DEFINE=	EXAMPLES
 

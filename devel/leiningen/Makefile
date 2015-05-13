@@ -3,11 +3,11 @@
 PORTNAME=	leiningen
 PORTVERSION=	2.5.1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	GITHUB_LEGACY:source1 \
+MASTER_SITES=	GH:source1 \
 		https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:source2
-DISTFILES=	leiningen-${PORTVERSION}.tar.gz:source1 \
+DISTFILES=	${DISTNAME}.tar.gz:source1 \
 		leiningen-${PORTVERSION}-standalone.zip:source2
-EXTRACT_ONLY=	leiningen-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Automate Clojure projects
@@ -16,8 +16,6 @@ LICENSE=	EPL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	7228d5a
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

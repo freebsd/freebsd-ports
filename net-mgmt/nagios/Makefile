@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 
 PORTSCOUT=	limit:^3.
 
-USES=		iconv perl5 cpe
+USES=		cpe perl5
 USE_PERL5=	build
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--localstatedir=${NAGIOSDIR} \
 		--with-httpd-conf=${PREFIX}/etc \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
-		--disable-statuswrl
+		--disable-statuswrl \
+		ac_cv_lib_iconv_main=no
 CONFIGURE_ENV=	PERL=${PERL}
 
 CPPFLAGS+=	-I${LOCALBASE}/include

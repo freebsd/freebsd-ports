@@ -1,0 +1,80 @@
+--- configure.in.orig	2012-03-23 06:10:54 UTC
++++ configure.in
+@@ -21,7 +21,7 @@ dnl
+ RELEASE_NUM=$BUILD_NUM
+ GENERATION_SHORT=$(echo $GENERATION | sed 's/\.//')
+ 
+-AC_DEFINE_UNQUOTED(BUILD_NUM, "$BUILD_NUM")
++AC_DEFINE_UNQUOTED(BUILD_NUM, "$BUILD_NUM", [desc])
+ AC_SUBST(BUILD_NUM)
+ AC_SUBST(RELEASE_NUM)
+ 
+@@ -36,7 +36,7 @@ AC_SUBST(GENERATION_SHORT)
+ dnl AC_SUBST(LIBFWBUILDER_VERSION)
+ AC_SUBST(FWBUILDER_XML_VERSION)
+ 
+-AC_DEFINE_UNQUOTED(FWBUILDER_XML_VERSION, "$FWBUILDER_XML_VERSION")
++AC_DEFINE_UNQUOTED(FWBUILDER_XML_VERSION, "$FWBUILDER_XML_VERSION", [desc])
+ 
+ echo "Creating VERSION.h file..."
+ 
+@@ -90,8 +90,8 @@ AC_ARG_WITH(docdir,      [  --with-docdi
+ AC_ARG_WITH(datadir,     [  --with-datadir=DIR      Specify directory path for fwbuilder 
+                           data files  ])
+ 
+-AC_C_BIGENDIAN(AC_DEFINE(WORDS_BIGENDIAN),
+-               AC_DEFINE(WORDS_LITTLEENDIAN),
++AC_C_BIGENDIAN(AC_DEFINE(WORDS_BIGENDIAN, 1, [desc]),
++               AC_DEFINE(WORDS_LITTLEENDIAN, 1, [desc]),
+                AC_MSG_ERROR(Failed to determine endianness!!))
+ 
+ LIBFWBUILDER_LIBDIR='-L${libdir}'
+@@ -206,7 +206,7 @@ AC_SUBST(LIBS) 
+ AC_LANG([C++])
+ 
+ AM_PATH_CPPUNIT(1.12.0, [HAVE_CPPUNIT="1"])
+-AC_DEFINE_UNQUOTED(HAVE_CPPUNIT, $HAVE_CPPUNIT)
++AC_DEFINE_UNQUOTED(HAVE_CPPUNIT, $HAVE_CPPUNIT, [desc])
+ AC_SUBST(HAVE_CPPUNIT)
+ AC_SUBST(CPPUNIT_CFLAGS)
+ AC_SUBST(CPPUNIT_LIBS)
+@@ -381,13 +381,13 @@ dnl
+     AC_CHECK_LIB(netsnmp, init_snmp,
+     [
+       HAVE_LIBSNMP="1"
+-      AC_DEFINE(HAVE_LIBSNMP)
++      AC_DEFINE(HAVE_LIBSNMP, 1, [desc])
+       NET_SNMP="1"
+-      AC_DEFINE(NET_SNMP)
++      AC_DEFINE(NET_SNMP, 1, [desc])
+       LIBSNMP_LIBS=$ac_LIBSNMP_LIBS
+       LIBSNMP_CFLAGS=$ac_LIBSNMP_CFLAGS
+       AC_CHECK_LIB(netsnmp, snprint_objid, [
+-        AC_DEFINE(HAVE_SNPRINT_OBJID)
++        AC_DEFINE(HAVE_SNPRINT_OBJID, 1, [desc])
+       ], ,$ac_LIBSNMP_LIBS)
+     ], ,$ac_LIBSNMP_LIBS)
+   else
+@@ -396,11 +396,11 @@ dnl
+         AC_CHECK_LIBSNMP( snmp )
+         if test "Z$HAVE_LIBSNMP" != "Z"; then
+           UCD_SNMP="1"
+-          AC_DEFINE(UCD_SNMP)
++          AC_DEFINE(UCD_SNMP, 1, [desc])
+           save_LIBS=$LIBS
+           LIBS="$LIBSNMP_LIBS $LIBS"
+           AC_CHECK_LIB(snmp, snprint_objid, [
+-            AC_DEFINE(HAVE_SNPRINT_OBJID)
++            AC_DEFINE(HAVE_SNPRINT_OBJID, 1, [desc])
+           ])
+           LIBS=$save_LIBS
+         fi
+@@ -592,7 +592,7 @@ dnl   "install" Makefile targets will us
+ dnl   path
+ 
+ TEMPLATE_DIR=$RES_DIR
+-AC_DEFINE_UNQUOTED(LIBFWBUILDER_TEMPLATE_DIR, "${TEMPLATE_DIR}")
++AC_DEFINE_UNQUOTED(LIBFWBUILDER_TEMPLATE_DIR, "${TEMPLATE_DIR}", [desc])
+ AC_SUBST(TEMPLATE_DIR)
+ 
+ 

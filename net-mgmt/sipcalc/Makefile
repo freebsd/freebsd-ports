@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP subnet calculator with IPv6 support
 
+LICENSE=	BSD3CLAUSE
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	*

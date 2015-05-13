@@ -15,8 +15,7 @@ RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective \
 USE_RUBY=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	nullDowntimeLtd
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	3f9942c
+GH_TAGNAME=	3f9942c
 
 USE_RC_SUBR=	mnrpes_receiver \
 		mnrpes_scheduler

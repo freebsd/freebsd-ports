@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	looks
-PORTVERSION=	2.5.2
+DISTVERSION=	2_5_2
 PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
-DISTNAME=	jgoodies-${PORTNAME}-${PORTVERSION:S|.|_|g}
+DISTNAME=	jgoodies-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	JGoodies Looks improve the appearance of your Java applications

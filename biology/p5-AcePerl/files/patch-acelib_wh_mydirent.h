@@ -1,5 +1,5 @@
---- acelib/wh/mydirent.h.orig	Mon Jul 16 23:04:45 2001
-+++ acelib/wh/mydirent.h	Mon Aug 13 12:41:59 2001
+--- acelib/wh/mydirent.h.orig	2002-11-14 20:00:06 UTC
++++ acelib/wh/mydirent.h
 @@ -55,7 +55,7 @@
  extern char *getwd(char *pathname) ;
  #endif /* HP || SOLARIS || WIN32 */

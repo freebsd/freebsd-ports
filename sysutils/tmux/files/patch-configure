@@ -1,6 +1,6 @@
---- configure.bak	2014-02-22 15:56:15.000000000 -0500
-+++ configure	2014-09-16 12:14:41.103867989 -0400
-@@ -4975,7 +4975,7 @@
+--- configure.orig	2015-05-06 22:49:42 UTC
++++ configure
+@@ -5002,7 +5002,7 @@ return setupterm ();
    return 0;
  }
  _ACEOF
@@ -9,7 +9,7 @@
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
-@@ -5692,6 +5692,28 @@
+@@ -5755,6 +5755,28 @@ $as_echo "yes" >&6; }
  	fi
  fi
  if test "x$found_strnvis" = xyes; then

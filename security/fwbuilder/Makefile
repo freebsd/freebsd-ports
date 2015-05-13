@@ -48,8 +48,8 @@ USE_QT4=	corelib \
 QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
-USES=		gmake libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf
+USES=		autoreconf:build gmake libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		INSTALL_ROOT=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -64,12 +64,22 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if  ${OSVERSION} >= 1000055
 # IMPORTANT: Newer versions of rcs will NOT work with fwbuilder.
 RUN_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
 .endif
+
+.if empty(PORT_OPTIONS:MDOCS)
+BROKEN=		DOCS must be enabled in this port
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} '/^\.\/configure/d' ${WRKSRC}/autogen.sh
+
+pre-configure:
+	(cd ${WRKSRC} && ./autogen.sh)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fwbuilder
@@ -77,7 +87,4 @@ post-install:
 	@${ECHO} please make sure to backup your fwbuilder database files
 	@${ECHO} prior to invoking fwbuilder for the first time.
 
-.if empty(PORT_OPTIONS:MDOCS)
-BROKEN=		DOCS must be enabled in this port
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

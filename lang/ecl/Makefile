@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ecl
-PORTVERSION=	15.2.21
-PORTREVISION=	1
+PORTVERSION=	15.3.7
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.2/
+MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.3/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
+
+LICENSE=	LGPL20
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
@@ -77,5 +78,8 @@ LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' ${WRKSRC}/src/configure
 .endif
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/include/ecl/gc/private
 
 .include <bsd.port.post.mk>

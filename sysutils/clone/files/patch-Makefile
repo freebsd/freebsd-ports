@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.orig
+--- Makefile.orig	2015-05-01 19:21:45 UTC
 +++ Makefile
-@@ -60,5 +60,5 @@
+@@ -60,5 +60,5 @@ clean:
  update: clean all
  
  install: $(TOOL)

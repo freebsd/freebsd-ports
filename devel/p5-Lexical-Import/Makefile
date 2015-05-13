@@ -18,7 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 USES=		perl5
 
 .include <bsd.port.mk>

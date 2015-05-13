@@ -6,5 +6,5 @@
  
 -Libs: -L${libdir} -lsrtp @LIBS@
 +Libs: -L${libdir} -lsrtp
-+Requires.private: libcrypto
++Libs.private: -lcrypto
  Cflags: -I${includedir}

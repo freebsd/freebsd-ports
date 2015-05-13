@@ -3,6 +3,7 @@
 
 PORTNAME=	e2guardian
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -16,11 +17,9 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_TAGNAME=	${PORTVERSION:S/^/v/}
-USES=		pkgconfig iconv
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --copy --foreign
+USES=		iconv pkgconfig
+USE_RC_SUBR=	e2guardian
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run \
@@ -65,7 +64,7 @@ NTLM_RUN_DEPENDS=		${LOCALBASE}/bin/iconv:${PORTSDIR}/converters/libiconv
 NTLM_USES=			iconv
 DNS_CONFIGURE_ENABLE=		dnsauth
 EMAIL_CONFIGURE_ENABLE=		email
-DEBUG_CONFIGURE_WITH=		dgdebug
+DEBUG_CONFIGURE_ON=		--with-dgdebug=on
 1024_CONFIGURE_ON=		--with-filedescriptors=1024
 2048_CONFIGURE_ON=		--with-filedescriptors=2048
 4096_CONFIGURE_ON=		--with-filedescriptors=4096
@@ -73,17 +72,25 @@ DEBUG_CONFIGURE_WITH=		dgdebug
 SSL_LDFLAGS=			-lssl -lcrypto
 SSL_CFLAGS=			-D__SSLMITM -D__SSLCERT
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|.lresolv||g' \
-		${WRKSRC}/configure.ac
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLAMD} || ${PORT_OPTIONS:MICAP} || \
     ${PORT_OPTIONS:MKAV} || ${PORT_OPTIONS:MCLISCAN}
 PLIST_SUB+=	SCANNERS=""
 .else
 PLIST_SUB+=	SCANNERS="@comment "
+.endif
+
+post-extract:
+.if ${PORT_OPTIONS:M2048} || ${PORT_OPTIONS:M4096} || ${PORT_OPTIONS:M8192}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "######################################################"
+	@${ECHO_MSG} "WARNING! Filedescriptors option higher then 1024."
+	@${ECHO_MSG} "Check/raise FD_SETSIZE in /usr/include/sys/select.h"
+	@${ECHO_MSG} "before preceeding with e2guardian compilation"
+	@${ECHO_MSG} "######################################################"
+	@${ECHO_MSG} ""
+	@sleep 3
 .endif
 
 post-install:
@@ -96,4 +103,4 @@ post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/bannedrooms/default \
 		${STAGEDIR}${ETCDIR}/lists/bannedrooms/default.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,12 +1,12 @@
---- help.c.orig	2014-03-20 18:05:17.000000000 -0700
-+++ help.c	2014-06-27 21:52:48.000000000 -0700
-@@ -584,7 +584,10 @@
+--- help.c.orig	2014-11-04 10:25:00 UTC
++++ help.c
+@@ -583,7 +583,10 @@ void write_from_msg_file(int *line, int 
  char s[512];
  char chr;
  int i,j,k;
 -msg_file=fopen(msg_filename, "r");
 +char *fn;
-+asprintf(&fn, "%s/%s", "%%DATADIR%%", msg_filename);
++asprintf(&fn, "%s/%s", "/usr/local/share/linrad/", msg_filename);
 +msg_file=fopen(fn, "r");
 +free(fn);
  if(msg_file == NULL)

@@ -12,11 +12,13 @@ COMMENT=	C/C++ library with common data structures and functions
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		libtool tar:xz
+USES=		cpe libtool tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	jan_engelhardt
 
 OPTIONS_DEFINE=	DOCS
 

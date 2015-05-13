@@ -146,7 +146,7 @@ stripped() {
 	    while read f; do
 		    read output
 		case "${output}" in
-			ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
+			*ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|*ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
 				warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
 				;;
 		esac
@@ -255,7 +255,13 @@ libperl() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl"
+prefixvar() {
+	if test -d ${STAGEDIR}${PREFIX}/var; then
+		warn "port uses ${PREFIX}/var instead of /var"
+	fi
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar"
 
 ret=0
 cd ${STAGEDIR}

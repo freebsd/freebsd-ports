@@ -4,7 +4,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	a
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -22,7 +22,7 @@ COMMENT=	SSL and crypto library
 CONFLICTS?=	libressl-*
 
 OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS
-OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM SCTP SSL2 SSL3 MD2
+OPTIONS_DEFAULT=SHARED THREADS SSE2 SCTP SSL2 SSL3 MD2
 .for a in amd64 ia64
 OPTIONS_DEFINE_${a}=	EC
 OPTIONS_DEFAULT_${a}=	EC
@@ -147,10 +147,10 @@ EXTRACONFIGURE+=	no-rc5
 .if ${PORT_OPTIONS:MPADLOCK}
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
-PATCHFILES+=	0009-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-		0010-backport-changes-from-upstream-padlock-module.patch:padlock \
-		0011-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-		0012-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+PATCHFILES+=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
+		1002-backport-changes-from-upstream-padlock-module.patch:padlock \
+		1003-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		1004-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}

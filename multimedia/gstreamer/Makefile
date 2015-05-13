@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 
@@ -31,17 +31,16 @@ INSTALL_TARGET=	install-strip
 GST_VERSION=	0.10
 
 OPTIONS_DEFINE=	LIBCHECK NLS
+OPTIONS_SUB=	yes
 LIBCHECK_DESC=	Unit tests support
 
-.include <bsd.port.pre.mk>
+LIBCHECK_LIB_DEPENDS=	libcheck.so:${PORTSDIR}/devel/libcheck
+LIBCHECK_CONFIGURE_OFF=	--disable-check
 
-.if ${PORT_OPTIONS:MLIBCHECK}
-LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
-PLIST_SUB+=	CHECK=""
-.else
-CONFIGURE_ARGS+=--disable-check
-PLIST_SUB+=	CHECK="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
+
+.include <bsd.port.pre.mk>
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840
 .if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
@@ -52,14 +51,6 @@ USE_GCC=	any
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:

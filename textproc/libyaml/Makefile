@@ -16,7 +16,8 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
+CPE_VENDOR=	pyyaml
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

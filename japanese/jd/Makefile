@@ -3,11 +3,10 @@
 
 PORTNAME=	jd
 PORTVERSION=	2.8.8
-PORTREVISION=	4
+DISTVERSIONSUFFIX=	-140601
+PORTREVISION=	5
 CATEGORIES=	japanese www
-MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	jd4linux/61281
-DISTNAME=	${PORTNAME}-${PORTVERSION}-140601
+MASTER_SITES=	SFJP/jd4linux/61281
 
 MAINTAINER=	townwear@gmail.com
 COMMENT=	2ch browser
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		autoreconf iconv libtool tar:tgz
+USES=		autoreconf iconv:translit libtool tar:tgz
 USE_GNOME=	gtk20 gtkmm24 libgnomeui
 
 GNU_CONFIGURE=	yes

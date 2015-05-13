@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTVERSION=	3.0.4.1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
 		TEX_CTAN:hyphen
@@ -56,14 +55,14 @@ PORTDOCS=	*
 .if ${PORT_OPTIONS:MHYPHENATION}
 ALL_HYPHENATION_LANGS=	af as bg bn ca cop cs cy da de-1901 de-1996 \
 de-ch-1901 el-monoton el-polyton en-gb en-us eo es et eu fi fr fur ga \
-gl grc gu hi hr hsb hu hy ia id is it kmr kn la lt lv ml mn-cyrl mr \
+gl grc gu hi hr hsb hu hy ia id is it ka kmr kn la la-x-classic lt lv ml mn-cyrl mr \
 mul-ethi nb nl nn or pa pl pms pt rm ro ru sa sh-cyrl sh-latn sk sl \
-sr-cyrl sv ta te tk tr uk zh-latn-pinyin
+sr-cyrl sv ta te th tk tr uk zh-latn-pinyin
 .if defined(MAINTAINER_MODE) || make(makesum)
 HYPHENATION_LANGS?=	${ALL_HYPHENATION_LANGS}
 .else
 HYPHENATION_LANGS?=	\
-	${ALL_HYPHENATION_LANGS:N*-1901:N*-latn:N*-gb:N*-monoton}
+	${ALL_HYPHENATION_LANGS:N*-1901:N*-classic:N*-latn:N*-gb:N*-monoton}
 .endif
 .for _l in ${HYPHENATION_LANGS}
 .if !${ALL_HYPHENATION_LANGS:M${_l}}
@@ -95,14 +94,14 @@ CONFIGURE_ARGS+=	--disable-threaded-dns
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.dist
-	@${MV} ${WRKSRC}/dpid/dpidrc.in ${WRKSRC}/dpid/dpidrc.dist.in
-	@${MV} ${WRKSRC}/src/domainrc ${WRKSRC}/src/domainrc.dist
-	@${MV} ${WRKSRC}/src/keysrc ${WRKSRC}/src/keysrc.dist
+	@${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
+	@${MV} ${WRKSRC}/dpid/dpidrc.in ${WRKSRC}/dpid/dpidrc.sample.in
+	@${MV} ${WRKSRC}/src/domainrc ${WRKSRC}/src/domainrc.sample
+	@${MV} ${WRKSRC}/src/keysrc ${WRKSRC}/src/keysrc.sample
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|dillorc|dillorc.dist|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.dist|g" ${WRKSRC}/dpid/Makefile.in
-	@${REINPLACE_CMD} -E "s/(domain|keys)rc/&.dist/g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|dillorc|dillorc.sample|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.sample|g" ${WRKSRC}/dpid/Makefile.in
+	@${REINPLACE_CMD} -E "s/(domain|keys)rc/&.sample/g" ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e "s|/lib/dillo|/libexec/dillo|" \
 		${WRKSRC}/dillo-install-hyphenation \
 		${WRKSRC}/doc/dillo.1.in \
@@ -113,20 +112,14 @@ post-patch:
 .endif
 
 post-install:
-.for f in dillorc domainrc dpidrc keysrc
-. if !exists(${PREFIX}/etc/dillo/${f})
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/dillo/${f}.dist ${STAGEDIR}${PREFIX}/etc/dillo/${f}
-. endif
-.endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation
-	@${TOUCH} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation/.keep_me
 .if ${PORT_OPTIONS:MHYPHENATION}
 .for _l in ${HYPHENATION_LANGS}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/hyph-${_l}.pat.txt \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/hyph-${_l}.pat.txt \
 	${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
 .endfor
 .endif

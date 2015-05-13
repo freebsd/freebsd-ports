@@ -1,0 +1,186 @@
+diff --git gdb/config.in gdb/config.in
+index 3ccac37..8a27df0 100644
+--- gdb/config.in
++++ gdb/config.in
+@@ -213,6 +213,9 @@
+ /* Define to 1 if you have the <inttypes.h> header file. */
+ #undef HAVE_INTTYPES_H
+ 
++/* Define to 1 if your system has the kinfo_getvmmap function. */
++#undef HAVE_KINFO_GETVMMAP
++
+ /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
+ #undef HAVE_LANGINFO_CODESET
+ 
+diff --git gdb/configure gdb/configure
+index cca0aeb..78d206b 100755
+--- gdb/configure
++++ gdb/configure
+@@ -7159,6 +7159,66 @@ if test "$ac_res" != no; then :
+ fi
+ 
+ 
++# On FreeBSD we may need libutil for kinfo_getvmmap (used by fbsd-nat.c).
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kinfo_getvmmap" >&5
++$as_echo_n "checking for library containing kinfo_getvmmap... " >&6; }
++if test "${ac_cv_search_kinfo_getvmmap+set}" = set; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kinfo_getvmmap ();
++int
++main ()
++{
++return kinfo_getvmmap ();
++  ;
++  return 0;
++}
++_ACEOF
++for ac_lib in '' util; do
++  if test -z "$ac_lib"; then
++    ac_res="none required"
++  else
++    ac_res=-l$ac_lib
++    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  fi
++  if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_search_kinfo_getvmmap=$ac_res
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext
++  if test "${ac_cv_search_kinfo_getvmmap+set}" = set; then :
++  break
++fi
++done
++if test "${ac_cv_search_kinfo_getvmmap+set}" = set; then :
++
++else
++  ac_cv_search_kinfo_getvmmap=no
++fi
++rm conftest.$ac_ext
++LIBS=$ac_func_search_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_kinfo_getvmmap" >&5
++$as_echo "$ac_cv_search_kinfo_getvmmap" >&6; }
++ac_res=$ac_cv_search_kinfo_getvmmap
++if test "$ac_res" != no; then :
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++
++$as_echo "#define HAVE_KINFO_GETVMMAP 1" >>confdefs.h
++
++fi
++
++
+ 
+ 
+ 
+diff --git gdb/configure.ac gdb/configure.ac
+index 4a0b6a3..38747e8 100644
+--- gdb/configure.ac
++++ gdb/configure.ac
+@@ -537,6 +537,11 @@ AM_ZLIB
+ # On HP/UX we may need libxpdl for dlgetmodinfo (used by solib-pa64.c).
+ AC_SEARCH_LIBS(dlgetmodinfo, [dl xpdl])
+ 
++# On FreeBSD we may need libutil for kinfo_getvmmap (used by fbsd-nat.c).
++AC_SEARCH_LIBS(kinfo_getvmmap, util,
++  [AC_DEFINE(HAVE_KINFO_GETVMMAP, 1,
++            [Define to 1 if your system has the kinfo_getvmmap function. ])])
++
+ AM_ICONV
+ 
+ # GDB may fork/exec the iconv program to get the list of supported character
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index 062eede..1ce197d 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -26,6 +26,10 @@
+ #include <sys/types.h>
+ #include <sys/procfs.h>
+ #include <sys/sysctl.h>
++#ifdef HAVE_KINFO_GETVMMAP
++#include <sys/user.h>
++#include <libutil.h>
++#endif
+ 
+ #include "elf-bfd.h"
+ #include "fbsd-nat.h"
+@@ -62,6 +66,64 @@ fbsd_pid_to_exec_file (struct target_ops *self, int pid)
+   return NULL;
+ }
+ 
++#ifdef HAVE_KINFO_GETVMMAP
++/* Iterate over all the memory regions in the current inferior,
++   calling FUNC for each memory region.  OBFD is passed as the last
++   argument to FUNC.  */
++
++int
++fbsd_find_memory_regions (struct target_ops *self,
++			  find_memory_region_ftype func, void *obfd)
++{
++  pid_t pid = ptid_get_pid (inferior_ptid);
++  struct kinfo_vmentry *vmentl, *kve;
++  uint64_t size;
++  struct cleanup *cleanup;
++  int i, nitems;
++
++  vmentl = kinfo_getvmmap (pid, &nitems);
++  if (vmentl == NULL)
++    perror_with_name (_("Couldn't fetch VM map entries."));
++  cleanup = make_cleanup (free, vmentl);
++
++  for (i = 0; i < nitems; i++)
++    {
++      kve = &vmentl[i];
++
++      /* Skip unreadable segments and those where MAP_NOCORE has been set.  */
++      if (!(kve->kve_protection & KVME_PROT_READ)
++	  || kve->kve_flags & KVME_FLAG_NOCOREDUMP)
++	continue;
++
++      /* Skip segments with an invalid type.  */
++      if (kve->kve_type != KVME_TYPE_DEFAULT
++	  && kve->kve_type != KVME_TYPE_VNODE
++	  && kve->kve_type != KVME_TYPE_SWAP
++	  && kve->kve_type != KVME_TYPE_PHYS)
++	continue;
++
++      size = kve->kve_end - kve->kve_start;
++      if (info_verbose)
++	{
++	  fprintf_filtered (gdb_stdout, 
++			    "Save segment, %ld bytes at %s (%c%c%c)\n",
++			    (long) size,
++			    paddress (target_gdbarch (), kve->kve_start),
++			    kve->kve_protection & KVME_PROT_READ ? 'r' : '-',
++			    kve->kve_protection & KVME_PROT_WRITE ? 'w' : '-',
++			    kve->kve_protection & KVME_PROT_EXEC ? 'x' : '-');
++	}
++
++      /* Invoke the callback function to create the corefile segment.
++	 Pass MODIFIED as true, we do not know the real modification state.  */
++      func (kve->kve_start, size, kve->kve_protection & KVME_PROT_READ,
++	    kve->kve_protection & KVME_PROT_WRITE,
++	    kve->kve_protection & KVME_PROT_EXEC, 1, obfd);
++    }
++  do_cleanups (cleanup);
++  return 0;
++}
++#else
+ static int
+ fbsd_read_mapping (FILE *mapfile, unsigned long *start, unsigned long *end,
+ 		   char *protection)
+@@ -137,3 +199,4 @@ fbsd_find_memory_regions (struct target_ops *self,
+   do_cleanups (cleanup);
+   return 0;
+ }
++#endif

@@ -23,6 +23,11 @@ X11_MAKE_ARGS_OFF=	-DNO_X
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000012
+# files/extra-patch-cwd.c will fix this, see inside
+BROKEN=		does not build (accesses field of opaque structure)
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1

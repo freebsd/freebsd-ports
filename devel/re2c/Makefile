@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	re2c
-PORTVERSION=	0.13.6
+PORTVERSION=	0.14.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -20,8 +20,8 @@ PORTEXAMPLES=	*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 
 .include <bsd.port.mk>

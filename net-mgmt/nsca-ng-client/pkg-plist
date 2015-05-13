@@ -1,0 +1,5 @@
+@sample(,,0750) etc/send_nsca.cfg.sample
+libexec/nagios/send_nsca
+man/man5/send_nsca.cfg.5.gz
+man/man8/send_nsca.8.gz
+sbin/send_nsca

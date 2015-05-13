@@ -4,7 +4,6 @@ PORTNAME=	lysdr
 PORTVERSION=	0.0.6
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	GHL
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Lysdr SDR program for Unix
@@ -14,10 +13,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libjack.so:${PORTSDIR}/audio/jack
 
-WRKSRC=		${WRKDIR}/gordonjcp-lysdr-46d31fe
 USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
-GH_COMMIT=	46d31fe
 GH_TAGNAME=	stable-0
 
 USES=		pkgconfig

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/extra/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple viewer for .edj files
 
 LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \

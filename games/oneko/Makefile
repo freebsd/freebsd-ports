@@ -33,7 +33,6 @@ MAKE_ARGS=	MANSUFFIX=6 \
 EXTRA_PATCHES=	${WRKDIR}/oneko-2.0b-pop1.1.patch:-p1 \
 		${WRKSRC}/oneko-2.0b-tip1.7.patch:-p1 \
 		${WRKDIR}/oneko-2.0b-sender0.5.patch:-p1 \
-		${WRKDIR}/oneko-2.0b-bsd0.2.patch:-p1 \
-		${FILESDIR}/extrapatch-Makefile.in
+		${WRKDIR}/oneko-2.0b-bsd0.2.patch:-p1
 
 .include <bsd.port.mk>

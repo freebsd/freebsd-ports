@@ -1,20 +1,20 @@
---- Makefile.PL.orig	Fri Sep 28 16:13:04 2001
-+++ Makefile.PL	Fri Jan 25 14:11:26 2002
-@@ -2,7 +2,7 @@
- use ExtUtils::MakeMaker qw(prompt WriteMakefile);
+--- Makefile.PL.orig	2006-01-04 15:18:10 UTC
++++ Makefile.PL
+@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker qw(prompt WriteM
  use File::Path;
+ require 5.8.0;
  
 -my $choice;
 +my $choice = 3;
  while (!$choice) {
    $reply = prompt(
  		  "\nWhat do you want to build?\n\n" .
-@@ -22,8 +22,6 @@
+@@ -23,8 +23,6 @@ my @extlib = ();
  push @extlib,'Freesubs' if $choice >= 2;
  push @extlib,'RPC'      if $choice >= 3;
  
 -print "\n";
 -setup_sitedefs() if prompt("Do you want to install Ace::Browser? ","n") =~ /[yY]/;
  
- my $headers  = "./ace/wh";
+ my $headers  = "./acelib/wh";
  WriteMakefile(

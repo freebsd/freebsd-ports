@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -13,7 +14,7 @@ LICENSE=	MPL
 
 # see Bugzilla/Install/Requirements.pm
 RUN_DEPENDS=	\
-		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
+		p5-CGI>=3.51:${PORTSDIR}/www/p5-CGI \
 		p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI \
 		p5-DateTime-TimeZone>=1.64:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-DateTime>=0.75:${PORTSDIR}/devel/p5-DateTime \

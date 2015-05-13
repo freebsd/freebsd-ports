@@ -2,45 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	libfm
-PORTVERSION=	1.2.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	x11
-MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
+MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
 MAINTAINER=	horia@racoviceanu.com
-COMMENT=	LibFM backend library to PCManFM
+COMMENT=	Core library of PCManFM file manager
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		desktop-file-utils fam gmake libtool pathfix pkgconfig \
-		shared-mime-info tar:xz
-USE_GNOME=	gtk20
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig \
+		shared-mime-info gettext-tools tar:xz
+USE_GNOME=	glib20 gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --disable-static \
+	--with-gtk=2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README
 
-OPTIONS_DEFINE=	DOCS NLS STATIC
+OPTIONS_DEFINE=	DOCS NLS
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=		nls
-STATIC_CONFIGURE_ENABLE=	static
-
-PLIST_SUB+=	MAJORVER=1.0
-PLIST_SUB+=	VER=4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||' \
-		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|DATA = libfm-extra.pc|DATA =|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/xdg/libfm/libfm.conf \

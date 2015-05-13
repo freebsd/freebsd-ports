@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/msgpack.app.src.orig
++++ src/msgpack.app.src
+@@ -1,6 +1,6 @@
+ {application, msgpack,
+  [{description, "MessagePack serializer/deserializer"},
+-  {vsn, git},
++  {vsn, "%%PORTVERSION%%"},
+   {modules, 
+    [msgpack]
+   },

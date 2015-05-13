@@ -96,11 +96,9 @@ PLIST_SUB+=		SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
 PORTDOCS+=		README.ldap LICENSE.ldap
 LDAP_SCRIPT=		${WRKDIR}/${LDAPPATCHDIST}/dhcpd-conf-to-ldap
 LDAP_SCHEMA=		${WRKDIR}/${LDAPPATCHDIST}/dhcp.schema
-USES+=			perl5
+USES+=			autoreconf perl5
 USE_PERL5=		run
 USE_OPENLDAP=		yes
-USE_AUTOTOOLS=		aclocal libtoolize autoconf autoheader automake
-AUTOMAKE_ARGS=		--foreign --add-missing --copy
 CPPFLAGS+=		-I${LOCALBASE}/include
 LIBS+=			-L${LOCALBASE}/lib
 LDFLAGS+=		-L${LOCALBASE}/lib

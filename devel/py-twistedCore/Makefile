@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedCore
-PORTVERSION=	15.0.0
-PORTREVISION=	1
+PORTVERSION=	15.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/ \
 		LOCAL/sunpoet

@@ -3,7 +3,7 @@
 
 PORTNAME=	appkonference
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -12,6 +12,9 @@ COMMENT=	High-performance Asterisk voice/video conferencing plugin
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_CSTD=	gnu89
 USES=		compiler:features gmake
@@ -28,5 +31,8 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 post-patch:
 	@${REINPLACE_CMD} -e 's|-fsingle-precision-constant||' ${WRKSRC}/Makefile
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/asterisk/modules/app_konference.so
 
 .include <bsd.port.post.mk>

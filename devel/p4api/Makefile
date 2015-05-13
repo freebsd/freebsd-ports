@@ -1,40 +1,35 @@
 # $FreeBSD$
 
 PORTNAME=	p4api
-PORTVERSION=	${VERSION}
+PORTVERSION=	2014.2.978861
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}${PLATFORM_SUFX}/:tar \
-		http://www.perforce.com/perforce/doc.${DOCVER}/manuals/p4api/:pdf
+MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/:tar \
+		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf
 
 EXTRACT_SUFX=
 DISTFILES=	${TAR_FILES}:tar p4api.pdf:pdf
-DIST_SUBDIR=	perforce/${VERSION}/${ARCH}-${PLATFORM}
+DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 EXTRACT_ONLY=	${TAR_FILES}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/p4api-2008.1.158777
+ONLY_FOR_ARCHS=	amd64 i386
 
-PLATFORM=	freebsd60
-VERSION=	08.1
+RESTRICTED=	Restricted distribution
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-PLATFORM_SUFX=	x86
-.elif ${ARCH} == amd64
-PLATFORM_SUFX=	x86_64
-.else
-IGNORE=		Unsupported platform, sorry.
-.endif
+.include "${.CURDIR}/../p4/Makefile.inc"
 
 TAR_FILES=	p4api.tgz
-
-DOCVER=		${VERSION:S/.//}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/perforce

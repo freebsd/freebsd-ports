@@ -14,9 +14,6 @@ USE_GITHUB=	yes
 USES=		kmod uidfix
 
 GH_ACCOUNT=	vstakhov
-GH_PROJECT=	ng_ipacct
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	68ff97c
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin"
 

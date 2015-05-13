@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	plexhometheater
-PORTVERSION=	1.2.2
-PORTREVISION=	7
+PORTVERSION=	1.3.6
+DISTVERSIONPREFIX=v
+DISTVERSIONSUFFIX=.441-309e72d1
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -14,7 +15,6 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		gawk:${PORTSDIR}/lang/gawk \
 		gperf:${PORTSDIR}/devel/gperf \
 		cmake:${PORTSDIR}/devel/cmake \
-		gmake:${PORTSDIR}/devel/gmake \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm \
@@ -55,8 +55,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libvdpau.so:${PORTSDIR}/multimedia/libvdpau \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libyajl.so:${PORTSDIR}/devel/yajl \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libyajl.so:${PORTSDIR}/devel/yajl
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
@@ -66,11 +65,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
-GH_COMMIT=	2d6426d
-GH_TAGNAME=	pht-v1.2.2
 BUNDLE_LIBS=	yes
 
-USES=		cmake:outsource iconv:wchar_t pkgconfig python:2
+USES=		cmake:outsource execinfo gmake iconv:wchar_t pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
 CMAKE_ARGS+=	-DENABLE_DUMP_SYMBOLS:BOOL=false
 CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=false
@@ -84,6 +81,8 @@ USE_GL=		glu
 USE_SDL=	image sdl mixer
 INSTALLS_ICONS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
+
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
 
 SUB_FILES=	${PORTNAME}.sh pkg-message
 
@@ -118,7 +117,7 @@ PLIST_SUB+=	ARCH="x86_64"
 .endif
 
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+USE_BINUTILS=	yes
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
@@ -130,8 +129,20 @@ post-patch:
 		${WRKSRC}/lib/ffmpeg/libavcodec/Makefile
 	@${REINPLACE_CMD} 's/iconv_open/libiconv_open/' \
 		${WRKSRC}/plex/CMakeModules/FindIconv.cmake
+	@${REINPLACE_CMD} 's/COMMAND\ make/COMMAND\ gmake/g' \
+		${WRKSRC}/lib/ffmpeg/CMakeLists.txt
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000024
+	@${REINPLACE_CMD} 's/__builtin_bswap/__bswap/g' \
+		${WRKSRC}/plex/Third-Party/hash-library/crc32.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/keccak.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/md5.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha1.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha256.cpp \
+		${WRKSRC}/plex/Third-Party/hash-library/sha3.cpp
+.endif
 
 post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/*.so
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

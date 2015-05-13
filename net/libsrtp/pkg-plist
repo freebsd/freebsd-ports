@@ -37,5 +37,5 @@ include/srtp/ut_sim.h
 include/srtp/xfm.h
 lib/libsrtp.a
 lib/libsrtp.so
-lib/libsrtp.so.0
+lib/libsrtp.so.1
 libdata/pkgconfig/libsrtp.pc

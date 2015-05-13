@@ -9,11 +9,13 @@ MASTER_SITES=	GNU
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv
+USES=		cpe gmake iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+CPE_VENDOR=	unrtf_project
 
 PLIST_FILES=	bin/unrtf \
 		%%DATADIR%%/SYMBOL.charmap \

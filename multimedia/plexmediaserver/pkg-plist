@@ -62,6 +62,7 @@
 %%DATADIR%%/Resources/LICENSE
 %%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Transcoder
+%%DATADIR%%/Resources/PlexDevicesHighAssuranceCA.crt
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Info.plist
@@ -1172,11 +1173,28 @@
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/PersonalMedia.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Code/Artist.py
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Code/Utils.py
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Code/__init__.py
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/DefaultPrefs.json
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Info.plist
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Resources/attribution.png
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/Resources/icon-default.png
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/PlexMusic.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/README.md
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Code/__init__.py
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/DefaultPrefs.json
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Info.plist
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Resources/attribution.png
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Resources/icon-default.jpg
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Services/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/Services/URL/VEVO/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/PlexVevo.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/AudioFiles.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/Filter.py
@@ -1227,6 +1245,7 @@
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Movies/Plex Movie Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Movies/Plex Video Files Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Music/Plex Music Scanner.py
+%%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Music/Plex Premium Music Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Music/Plex iTunes Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Photos/Plex Photo Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Series/Plex Series Scanner.py
@@ -1439,7 +1458,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pinkbike/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pinkbike/URL/Pinkbike/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/URL/Pitchfork MusicVideos/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/URL/Pitchfork TV YouTube/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pitchforktv/URL/Pitchfork TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pixelcorps/ServiceInfo.plist
@@ -1502,8 +1520,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tested/URL/Tested/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/URL/The Berrics/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecolbertreport/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecolbertreport/URL/The Colbert Report/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/URL/The CW/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thedailyshow/ServiceInfo.plist
@@ -1524,8 +1540,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.triplem/URL/TripleM/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tubitv/URL/Tubi TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tudou/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tudou/URL/Tudou/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/Shared Code/tv4play.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServiceCode.pys
@@ -1566,8 +1580,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videobash/URL/Videobash/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videojug/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videojug/URL/VideoJug/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videomega/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videomega/URL/Videomega/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/URL/Videostrip/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/ServiceInfo.plist
@@ -1737,6 +1749,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-icon-server.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-logo.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-server.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-server@2x.png
@@ -1748,6 +1761,8 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps-ie.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/email-links.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/vendor-logos/gracenote.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/vendor-logos/vevo.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/index.html
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js/plex.js
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/setup.html
@@ -1982,6 +1997,7 @@
 %%DATADIR%%/Resources/Profiles/Chromecast.xml
 %%DATADIR%%/Resources/Profiles/Firefox.xml
 %%DATADIR%%/Resources/Profiles/Generic.xml
+%%DATADIR%%/Resources/Profiles/HTML TV App.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
 %%DATADIR%%/Resources/Profiles/Mystery 3.xml
 %%DATADIR%%/Resources/Profiles/Mystery 4.xml
@@ -1990,7 +2006,9 @@
 %%DATADIR%%/Resources/Profiles/Opera TV App.xml
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
+%%DATADIR%%/Resources/Profiles/PlayStation 3 App.xml
 %%DATADIR%%/Resources/Profiles/PlayStation 3.xml
+%%DATADIR%%/Resources/Profiles/PlayStation 4 App.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater-RaspberryPi.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
 %%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
@@ -2895,24 +2913,29 @@
 %%DATADIR%%/Resources/none-combiner-artists.xml
 %%DATADIR%%/Resources/none-combiner-movies.xml
 %%DATADIR%%/Resources/none-combiner-shows.xml
+%%DATADIR%%/Resources/plexmusic-combiner-albums.xml
+%%DATADIR%%/Resources/plexmusic-combiner-artists.xml
 %%DATADIR%%/Resources/rootCA.pem
 %%DATADIR%%/Resources/rsync
 %%DATADIR%%/Resources/server.crt
 %%DATADIR%%/Resources/server.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
+%%DATADIR%%/Resources/vevo-thumb.png
+%%DATADIR%%/Resources/vevo.png
 %%DATADIR%%/libavcodec.so.56
 %%DATADIR%%/libavformat.so.56
 %%DATADIR%%/libavutil.so.54
-%%DATADIR%%/libboost_chrono.so.1.56.0
-%%DATADIR%%/libboost_filesystem.so.1.56.0
-%%DATADIR%%/libboost_iostreams.so.1.56.0
-%%DATADIR%%/libboost_locale.so.1.56.0
-%%DATADIR%%/libboost_program_options.so.1.56.0
-%%DATADIR%%/libboost_regex.so.1.56.0
-%%DATADIR%%/libboost_signals.so.1.56.0
-%%DATADIR%%/libboost_system.so.1.56.0
-%%DATADIR%%/libboost_thread.so.1.56.0
+%%DATADIR%%/libboost_chrono.so.1.57.0
+%%DATADIR%%/libboost_filesystem.so.1.57.0
+%%DATADIR%%/libboost_iostreams.so.1.57.0
+%%DATADIR%%/libboost_locale.so.1.57.0
+%%DATADIR%%/libboost_program_options.so.1.57.0
+%%DATADIR%%/libboost_regex.so.1.57.0
+%%DATADIR%%/libboost_signals.so.1.57.0
+%%DATADIR%%/libboost_system.so.1.57.0
+%%DATADIR%%/libboost_thread.so.1.57.0
+%%DATADIR%%/libboost_timer.so.1.57.0
 %%DATADIR%%/libcrypto.so.1.0.0
 %%DATADIR%%/libcurl.so.7
 %%DATADIR%%/libexpat.so.6
@@ -2953,7 +2976,9 @@
 @dir %%DATADIR%%/Resources/locale/fr/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/he/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/hr_HR/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/hu_HU/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/it/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/ko/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/lt/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/nl/LC_MESSAGES
 @dir %%DATADIR%%/Resources/locale/nl_BE/LC_MESSAGES

@@ -1,0 +1,15 @@
+
+Pulseaudio doesn't know about the hw.snd.default_unit=3 sysctl for the
+FreeBSD OSS driver that is used to select the active input/output. So
+for Pulseaudio we also need to tell it which input/output to use. The
+difference is that Pulseaudio has separate input and output configure lines.
+
+To change the default sink (output):
+# pacmd set-default-sink 3
+To change the default source (input):
+# pacmd set-default-source 3
+
+This can also be set in %%ETCDIR%%/pulse/default.pa
+
+Replace the number '3' with the new default your want to set.
+

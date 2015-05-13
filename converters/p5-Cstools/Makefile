@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.adelton.com/perl/Cstools/ \
 MASTER_SITE_SUBDIR=	Cz
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tools for dealing with Czech encodings in Perl
 
 USES=		perl5

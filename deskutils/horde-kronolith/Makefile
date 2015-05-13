@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kronolith
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -18,7 +18,7 @@ DATE_HOLIDAYS_DESC=	Depend on PEAR Date_Holidays
 TIMEOBJECTS_DESC=	Depenbd on Horde timeobjects
 XMLWRITER_DESC=		Depend on PHP xmlwriter extension
 
-USES=	horde
+USES=	horde cpe
 USE_PHP=	gettext json simplexml
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

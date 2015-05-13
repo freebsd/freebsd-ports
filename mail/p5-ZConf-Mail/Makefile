@@ -3,7 +3,7 @@
 
 PORTNAME=	ZConf-Mail
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -28,7 +28,8 @@ BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/zcgetmail bin/zcmailaccount
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

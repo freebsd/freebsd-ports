@@ -320,7 +320,7 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL} ${_DOCOWNGRP} -d ${STAGEDIR}${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

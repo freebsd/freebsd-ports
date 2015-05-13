@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/extra/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Utility for taking screenshots for E17
 
 LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl

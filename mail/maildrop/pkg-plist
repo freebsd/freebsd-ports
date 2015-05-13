@@ -9,8 +9,6 @@ bin/maildrop
 bin/maildrop-deliverquota
 bin/mailbot
 bin/maildrop-maildirmake
-bin/makedat
-bin/makedatprog
 bin/makemime
 bin/reformail
 bin/reformime
@@ -19,7 +17,6 @@ man/man1/lockmail.1.gz
 man/man1/mailbot.1.gz
 man/man1/maildrop-maildirmake.1.gz
 man/man1/maildrop.1.gz
-man/man1/makedat.1.gz
 man/man1/makemime.1.gz
 man/man1/reformail.1.gz
 man/man1/reformime.1.gz
@@ -56,7 +53,6 @@ man/man8/maildrop-deliverquota.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/maildropfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/maildropgdbm.html
 %%PORTDOCS%%%%DOCSDIR%%/maildroptips.txt
-%%PORTDOCS%%%%DOCSDIR%%/makedat.html
 %%PORTDOCS%%%%DOCSDIR%%/makemime.html
 %%PORTDOCS%%%%DOCSDIR%%/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/reformail.html

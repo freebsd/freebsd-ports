@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	201449
+DISTVERSION=	201516
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -28,7 +28,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA LZO SNAPPY DOCS EXAMPLES
-OPTIONS_DEFAULT=	EASYRSA OPENSSL
+OPTIONS_DEFAULT=	EASYRSA OPENSSL LZO SNAPPY
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
 PW_SAVE_DESC=		Interactive passwords may be read from a file
@@ -48,7 +48,7 @@ PW_SAVE_CONFIGURE_ENABLE=	password-save
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	libpolarssl.so:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
 CONFIGURE_ARGS+=--with-crypto-library=polarssl
 .else
 USE_OPENSSL=	yes

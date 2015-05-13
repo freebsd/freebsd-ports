@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	3.14.0
+PORTREVISION=	1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,6 +31,8 @@ CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+GLIB_SCHEMAS=	org.gnome.desktop.file-sharing.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/${APACHEMODDIR}|g' \

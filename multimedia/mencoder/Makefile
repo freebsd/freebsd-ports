@@ -3,6 +3,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
+PORTREVISION=	1
 
 COMMENT=	Convenient video file and movie encoder
 

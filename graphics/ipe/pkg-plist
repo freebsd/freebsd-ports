@@ -36,13 +36,12 @@ include/ipesnap.h
 include/ipestyle.h
 include/ipetext.h
 include/ipetool.h
+include/ipetoolbase.h
 include/ipeutils.h
 include/ipexml.h
 lib/ipe/%%VERSION%%/ipelets/align.lua
 lib/ipe/%%VERSION%%/ipelets/euclid.lua
 lib/ipe/%%VERSION%%/ipelets/goodies.lua
-lib/ipe/%%VERSION%%/ipelets/image.lua
-lib/ipe/%%VERSION%%/ipelets/image.so
 lib/ipe/%%VERSION%%/ipelets/move.lua
 lib/ipe/%%VERSION%%/ipelets/search-replace.lua
 lib/ipe/%%VERSION%%/ipelets/symbols.lua
@@ -101,9 +100,11 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/icons/snapangle.png
 %%DATADIR%%/%%VERSION%%/icons/snapauto.png
 %%DATADIR%%/%%VERSION%%/icons/snapbd.png
+%%DATADIR%%/%%VERSION%%/icons/snapctl.png
 %%DATADIR%%/%%VERSION%%/icons/snapgrid.png
 %%DATADIR%%/%%VERSION%%/icons/snapint.png
 %%DATADIR%%/%%VERSION%%/icons/snapvtx.png
+%%DATADIR%%/%%VERSION%%/icons/stop.png
 %%DATADIR%%/%%VERSION%%/icons/undo.png
 %%DATADIR%%/%%VERSION%%/icons/zoom_in.png
 %%DATADIR%%/%%VERSION%%/icons/zoom_out.png

@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
-				http://redundancy.redundancy.org/mirror/
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Simple extensible XMPP server written in Lua
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
 		${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
@@ -30,7 +31,7 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 .include <bsd.port.options.mk>
 
-USES=	gmake lua:51 shebangfix
+USES=		cpe gmake lua:51 shebangfix
 SHEBANG_LANG=	lua
 SHEBANG_FILES=	prosody prosodyctl
 lua_OLD_CMD=	${SETENV} lua

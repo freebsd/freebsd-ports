@@ -3,10 +3,10 @@
 
 PORTNAME=	wmtictactoe
 PORTVERSION=	1.1
+DISTVERSIONSUFFIX=	-1
 PORTREVISION=	3
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	LOCAL/jim
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable TicTacToe game for WindowMaker and AfterStep

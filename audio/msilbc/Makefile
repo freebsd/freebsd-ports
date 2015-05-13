@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msilbc
-PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTVERSION=	2.1.1
 CATEGORIES=	audio net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 

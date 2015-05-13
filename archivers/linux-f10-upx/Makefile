@@ -6,7 +6,6 @@ PORTVERSION=		3.03
 CATEGORIES=		archivers linux
 MASTER_SITES=		LOCAL/ehaupt/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=		linux-f10-
-DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		UPX, a high-performance executable packer (Linux Fedora 10)

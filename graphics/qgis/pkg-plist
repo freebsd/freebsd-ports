@@ -1,6 +1,10 @@
+%%QGIS_SERVER%%bin/admin.sld
 bin/qbrowser
 bin/qgis
 bin/qgis_bench
+%%QGIS_SERVER%%bin/qgis_mapserv.fcgi
+%%QGIS_SERVER%%bin/schemaExtension.xsd
+%%QGIS_SERVER%%bin/wms_metadata.xml
 include/qgis/Bezier3D.h
 include/qgis/CloughTocherInterpolator.h
 include/qgis/DualEdgeTriangulation.h
@@ -537,6 +541,8 @@ lib/libqgis_gui.so
 lib/libqgis_gui.so.2.8.1
 lib/libqgis_networkanalysis.so
 lib/libqgis_networkanalysis.so.2.8.1
+%%QGIS_SERVER%%lib/libqgis_server.so
+%%QGIS_SERVER%%lib/libqgis_server.so.2.8.1
 %%GRASS%%lib/libqgisgrass.so
 %%GRASS%%lib/libqgisgrass.so.2.8.1
 %%QGIS_PYTHON%%lib/libqgispython.so
@@ -4232,11 +4238,13 @@ man/man1/qgis.1.gz
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/_core.so
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/_gui.so
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/_networkanalysis.so
+%%QGIS_SERVER%%%%QGIS_PYTHON%%%%DATADIR%%/python/qgis/_server.so
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/analysis/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/core/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/core/contextmanagers.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/gui/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/networkanalysis/__init__.py
+%%QGIS_SERVER%%%%QGIS_PYTHON%%%%DATADIR%%/python/qgis/server/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/user.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/utils.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qsci_apis/OSGeo_GDAL-OGR-1.10.0.api

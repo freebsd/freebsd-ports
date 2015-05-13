@@ -5,7 +5,6 @@ PORTNAME=	bsdconv
 PORTVERSION=	11.1.0
 CATEGORIES=	converters
 PKGNAMEPREFIX=	php5-
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
@@ -16,7 +15,6 @@ LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	daf6890
 GH_PROJECT=	php-${PORTNAME}
 
 USE_PHP=	yes

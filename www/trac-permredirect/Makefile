@@ -10,7 +10,7 @@ MASTER_SITES=	http://trac-hacks.org/changeset/${REV}/${PORTNAME}plugin/tags/${PO
 PKGNAMEPREFIX=	trac-
 DIST_SUBDIR=	trac
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirect users to the login screen on PermissionError
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac

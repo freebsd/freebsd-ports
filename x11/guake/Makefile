@@ -24,8 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 GCONF_SCHEMAS=	guake.schemas
 GH_ACCOUNT=	Guake
-GH_COMMIT=	aaa3e45
-GH_TAGNAME=	${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
@@ -42,8 +40,8 @@ OPTIONS_SUB=	NLS
 
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
 
-USES=		desktop-file-utils gettext gmake libtool pkgconfig python:2
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
+USES=		autoreconf:build desktop-file-utils gettext gmake libtool \
+		pkgconfig python:2
 USE_GITHUB=	yes
 USE_GNOME=	gtk20 pygnome2
 

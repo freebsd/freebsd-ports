@@ -6,7 +6,6 @@ PORTVERSION=	11.1.0
 PORTREVISION=	1
 CATEGORIES=	converters perl5
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Perl wrapper for bsdconv
@@ -17,7 +16,6 @@ LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	75fa7e2
 GH_PROJECT=	perl-${PORTNAME}
 
 USES=		perl5

@@ -3,6 +3,7 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.10.9
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
@@ -15,21 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-WRKSRC=			${WRKDIR}/libwbxml-${PORTVERSION}
-CONFIGURE_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}/build
-BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
-
-USES=		cmake iconv tar:bzip2
-CMAKE_SOURCE_PATH=	..
+USES=		cmake:outsource iconv tar:bzip2
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/libwbxml-${PORTVERSION}
 
 DOCSDIR=	${PREFIX}/share/doc/libwbxml
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

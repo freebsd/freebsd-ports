@@ -13,6 +13,7 @@ COMMENT=	Command line client to FreeNet Network
 
 USES=		tar:bzip2
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=yes
 ALL_TARGET=	all opt
 MAKE_JOBS_UNSAFE=yes
 

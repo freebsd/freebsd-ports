@@ -14,8 +14,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
-USE_XORG=	x11
-GNU_CONFIGURE=	yes
+USE_XORG=	x11 xext
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=	ac_cv_lib_Xm_XmCreateBulletinBoard=no \
 		ac_cv_lib_gdbm_dbm_fetch=no
 USE_PERL5=	build

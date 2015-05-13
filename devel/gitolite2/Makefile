@@ -4,11 +4,10 @@ PORTNAME=	gitolite
 PORTVERSION=	2.3.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GHL \
+MASTER_SITES=	GH \
 		LOCAL/milki \
 		LOCAL/tdb
 PKGNAMESUFFIX=	2
-DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	milki@FreeBSD.org
 COMMENT=	Access control layer on top of git
@@ -19,8 +18,7 @@ RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
-GH_COMMIT=	912a8bd
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	912a8bd
 
 CONFLICTS=	gitolite-[^2]*
 
@@ -70,7 +68,7 @@ post-patch:
 	@${ECHO} -e "${GLSETUP}" > ${WRKDIR}/setup
 
 do-build:
-	echo "v${PORTVERSION}-0-g${GH_COMMIT}" > ${WRKSRC}/conf/VERSION
+	echo "v${PORTVERSION}-0-g${GH_TAGNAME}" > ${WRKSRC}/conf/VERSION
 	-@${RM} ${WRKSRC}/src/gl-system-install
 	@${REINPLACE_CMD} \
 		-E 's%^GL_PACKAGE_CONF=.*%GL_PACKAGE_CONF=${DATADIR}/conf;%' \

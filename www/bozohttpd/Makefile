@@ -18,7 +18,8 @@ USE_RC_SUBR=	bozohttpd
 OPTIONS_DEFINE=		HTPASSWD SSL CGI
 OPTIONS_DEFAULT=	SSL CGI
 
-USES=		uidfix tar:bzip2
+USES=		cpe uidfix tar:bzip2
+CPE_VENDOR=	eterna
 
 HTPASSWD_DESC=		Enable htpassword support
 SSL_DESC=		Enable SSL support

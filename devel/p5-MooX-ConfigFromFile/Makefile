@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooX-ConfigFromFile
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Moo>=1.003000:${PORTSDIR}/devel/p5-Moo \
 		p5-MooX-File-ConfigDir>=0.002:${PORTSDIR}/devel/p5-MooX-File-ConfigDir
 RUN_DEPENDS:=	${BUILD_DEPENDS}

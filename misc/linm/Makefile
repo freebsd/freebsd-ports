@@ -1,4 +1,4 @@
-# Created by: cjh@FreeBSD.org
+# Created by: CHOI Junho <cjh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	linm
@@ -14,14 +14,14 @@ COMMENT=	Clone of Mdir, mc-style terminal file manager
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*//}
-
 USES=		gettext pkgconfig gmake libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}"
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -39,11 +39,8 @@ PLIST_SUB+=	SMB="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|configpath|cfgpath|g ; \
-		 /LIBS=/s|-lpthread|-pthread|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/^AM_CFLAGS/s|=.*|= -fPIC -std=gnu89|' \
+	@${REINPLACE_CMD} -e 's|configpath|cfgpath|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s|=.*|= -fPIC -std=gnu89|' \
 		${WRKSRC}/panel/vfs/libssh2/Makefile.in
 
 post-install:

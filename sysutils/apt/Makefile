@@ -34,6 +34,12 @@ DPKGDIR?=	/var/db/dpkg
 APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		does not build
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/https.cc ${FILESDIR}/https.h ${WRKSRC}/methods/
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \
@@ -118,4 +124,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
---- cegui/src/CMakeLists.txt.orig	2013-12-07 13:37:08.000000000 +0400
-+++ cegui/src/CMakeLists.txt	2014-05-13 02:26:12.794972513 +0400
-@@ -91,6 +91,10 @@
-     target_link_libraries(${CEGUI_TARGET_NAME} ${CMAKE_DL_LIBS})
+--- cegui/src/CMakeLists.txt.orig	2014-07-07 07:06:18 UTC
++++ cegui/src/CMakeLists.txt
+@@ -93,6 +93,10 @@ elseif (MINGW)
+     cegui_target_link_libraries(${CEGUI_TARGET_NAME} ${CMAKE_DL_LIBS})
  endif()
  
 +if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")

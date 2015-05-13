@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.10.1
-#PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.handbrake.fr/releases/${PORTVERSION}/ \
 		http://download.handbrake.fr/handbrake/contrib/:contrib \
@@ -14,7 +14,6 @@ DISTFILES=	HandBrake-${PORTVERSION}.tar.bz2 \
 		faad2-2.7.tar.gz:contrib \
 		fdk-aac-v0.1.1-6-gbae4553.tar.bz2:contrib \
 		libav-v10.1.tar.bz2:contrib \
-		lame-3.98.tar.gz:contrib \
 		libbluray-0.5.0.tar.bz2:contrib \
 		libdca-r81-strapped.tar.gz:contrib \
 		libdvdnav-5.0.1-0-gaa3659d.tar.gz:contrib \
@@ -29,9 +28,8 @@ COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 
-BROKEN=		Fails to build
-
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
+		cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
@@ -43,8 +41,10 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libtheoradec.so:${PORTSDIR}/multimedia/libtheora \
 		libtheoraenc.so:${PORTSDIR}/multimedia/libtheora \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx \
-		libx264.so:${PORTSDIR}/multimedia/libx264
+		libx264.so:${PORTSDIR}/multimedia/libx264 \
+		libmp3lame.so:${PORTSDIR}/audio/lame
+CONFLICTS_BUILD=	x265
+
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
 LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
@@ -67,7 +67,7 @@ MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 
 OPTIONS_DEFINE=	X11
-X11_DESC=	Build GTK+2 based GUI program
+X11_DESC=	Build GTK+3 based GUI program
 OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
@@ -78,6 +78,7 @@ OPTIONS_DEFAULT=	X11
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 .endif
 CC!=/usr/bin/which ${CC}
 MAKE_ENV+=ACLOCAL=${LOCALBASE}/bin/aclocal
@@ -106,7 +107,7 @@ LDFLAGS+=	-lstdc++
 # considered good in FreeBSD.  Instead, we will prepare everything manually.
 post-extract: .SILENT
 # Unversioned directories can be copied in a loop
-.for d in a52dec lame libdca x264
+.for d in a52dec libdca x264
 	${MKDIR} ${BUILD_WRKSRC}/contrib/${d}
 	${MV} ${WRKDIR}/${d} ${BUILD_WRKSRC}/contrib/${d}
 .endfor
@@ -130,7 +131,6 @@ post-extract: .SILENT
 	${TOUCH} ${BUILD_WRKSRC}/contrib/faad2/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/fdkaac/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/ffmpeg/.stamp.extract
-	${TOUCH} ${BUILD_WRKSRC}/contrib/lame/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libbluray/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libdca/.stamp.extract
 	${TOUCH} ${BUILD_WRKSRC}/contrib/libdvdnav/.stamp.extract
@@ -151,6 +151,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/GHB_PACKAGES=/s/gthread-2.0/& gmodule-2.0/' \
 		-e 's/-lhb/& ${ICONV_LIB}/' \
+		-e 's/-lhandbrake/& ${ICONV_LIB}/' \
 		-e 's:-lxml2:& ../../contrib/lib/libx265.a ../../contrib/lib/libfdk-aac.a:g' \
 		${WRKSRC}/gtk/configure.ac
 	@${REINPLACE_CMD} -e 's|<malloc|<stdlib|' ${WRKSRC}/libhb/fifo.c
@@ -159,6 +160,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|ToolProbe( 'GCC.gcc',   'gcc',|ToolProbe( 'GCC.gcc',   '${CC}',|" \
 		${WRKSRC}/make/configure.py
 	@${REINPLACE_CMD} -e 's|avcodec avformat avutil avresample|avformat avcodec avresample avutil|' \
+		-e 's|TEST.libs = $$(LIBHB.a)|& ${ICONV_LIB}|' \
 		${WRKSRC}/libhb/module.defs ${WRKSRC}/test/module.defs
 	@${TR} -d '\r' < ${WRKSRC}/contrib/ffmpeg/A06-frame-threading-state.patch > ${WRKDIR}/A06-frame-threading-state.patch
 	@${MV} ${WRKDIR}/A06-frame-threading-state.patch ${WRKSRC}/contrib/ffmpeg/
@@ -171,6 +173,11 @@ post-patch:
 		-e 's|%%REP_ARCHS%%|${CPUTYPE}|g' \
 		-e 's|%%REP_ICONV%%|${ICONV_LIB:S/-l//}|g' \
 		${WRKSRC}/custom.defs
+.if !${PORT_OPTIONS:MX11}
+	@${REINPLACE_CMD} -e 's:--enable-libvpx:--disable-libvpx:' ${WRKSRC}/contrib/ffmpeg/module.defs
+	@${REINPLACE_CMD} -e 's| vpx | |' \
+		${WRKSRC}/libhb/module.defs ${WRKSRC}/test/module.defs
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/HandBrakeCLI ${STAGEDIR}${PREFIX}/bin

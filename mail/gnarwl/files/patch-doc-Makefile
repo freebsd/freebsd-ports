@@ -1,6 +1,14 @@
 --- doc/Makefile.orig	2005-03-13 14:30:53 UTC
 +++ doc/Makefile
-@@ -8,24 +8,22 @@ clean: 
+@@ -1,31 +1,29 @@
+ catch:
+ 	$(MAKE) -C .. all
+ 
+-all: clean manpage
++all: manpage
+ 
+ clean: 
+ 	rm -f *~ $(BIN).$(MAN_SEC)* $(SBIN).$(MAN_SEC)* DEADJOE
  
  manpage:
  	@echo Generating manpage...

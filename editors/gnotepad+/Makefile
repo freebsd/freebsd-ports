@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	editors www gnome
 MASTER_SITES=	SF/gnotepad/gnotepad-stable/${PORTVERSION} \
 		SF/gnotepad/gnotepad%20User_s%20Manual/${DOCVERSION}:doc
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK-based text/HTML editor

@@ -1,0 +1,54 @@
+#!/bin/sh -
+#
+# Show possible port scans detected by scanlogd.
+#
+# If you want to enable this script, place the following
+# into /etc/periodic.conf:
+#
+# security_status_scanlogd_enable="YES"
+# security_status_scanlogd_period="daily"
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+: ${security_status_scanlogd_period="daily"}
+
+security_daily_compat_var security_status_logdir
+security_daily_compat_var security_status_scanlogd_enable
+
+logdir="${security_status_logdir}"
+
+yesterday=`env LC_TIME=C date -v-1d "+%b %e "`
+
+catmsgs() {
+	local logdir logfile mtime
+	logdir="$1"
+	logfile="$2"
+	mtime="$3"
+
+	find "$logdir" \( -name "$logfile" -o -name "$logfile.*" \) -mtime "$mtime" -print0 |
+		xargs -0 ls -1tr |
+		while read f; do
+			case "$f" in
+				*.gz)   zcat -f "$f" ;;
+				*.bz2)  bzcat -f "$f" ;;
+				*)      cat "$f" ;;
+			esac
+		done
+}
+
+rc=0
+
+if check_yesno_period security_status_scanlogd_enable; then
+	echo ""
+	echo "${host} possible port scans:"
+	n=$(catmsgs "$logdir" messages "-2" | egrep -ia "^$yesterday.*scanlogd:" | tee /dev/stderr | wc -l)
+	[ $n -gt 0 ] && rc=1 || rc=0
+fi
+
+exit $rc

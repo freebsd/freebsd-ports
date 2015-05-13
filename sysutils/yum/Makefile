@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Installer/updater for rpm
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		msgfmt:${PORTSDIR}/devel/gettext \
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm4 \
 		${PYTHON_PKGNAMEPREFIX}iniparse>0:${PORTSDIR}/devel/py-iniparse \
 		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:${PORTSDIR}/www/py-urlgrabber
 
-USES=		gettext gmake python
+USES=		cpe gettext gmake python
+CPE_VENDOR=	baseurl
 
 MAKE_ARGS=	MAKE=${MAKE_CMD} PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc

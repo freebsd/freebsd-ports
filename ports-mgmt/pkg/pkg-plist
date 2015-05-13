@@ -4,7 +4,7 @@ etc/periodic/daily/490.status-pkg-changes
 etc/periodic/security/410.pkg-audit
 etc/periodic/security/460.pkg-checksum
 etc/periodic/weekly/400.status-pkg
-etc/pkg.conf.sample
+@sample etc/pkg.conf.sample
 include/pkg.h
 lib/libpkg.a
 lib/libpkg.so
@@ -16,6 +16,7 @@ man/man3/pkg_repos.3.gz
 man/man5/pkg-repository.5.gz
 man/man5/pkg.conf.5.gz
 man/man8/pkg-add.8.gz
+man/man8/pkg-alias.8.gz
 man/man8/pkg-annotate.8.gz
 man/man8/pkg-audit.8.gz
 man/man8/pkg-autoremove.8.gz

@@ -32,6 +32,7 @@ HISPEED_DESC=	Set COM1 serial console speed to 115200
 
 ISO_PLIST_FILES=	${DATADIR}/mt${PORTVERSION:C/\.//}.iso
 BOOT_PLIST_FILES=	${BOOT_DIR}/memtest86+
+BOOT_PLIST_DIRS=	${BOOT_DIR}
 
 .include <bsd.port.options.mk>
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	telldus-core
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://download.telldus.se/TellStick/Software/telldus-core/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi \
 		libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libargp.so:${PORTSDIR}/devel/argp-standalone
 
-USES= 		iconv cmake compiler:c++11-lang
+USES= 		cmake compiler:c++11-lang iconv:wchar_t
 
 #CMAKE_VERBOSE=yes
 CMAKE_ARGS+=-DGENERATE_MAN=TRUE

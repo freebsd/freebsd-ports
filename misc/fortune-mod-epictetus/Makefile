@@ -3,8 +3,8 @@
 
 PORTNAME=	fortune-mod-epictetus
 PORTVERSION=	0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
-MASTER_SITES=	GHL
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Quotes from Epictetus
@@ -14,9 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	akosela
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	5550bf8
 
 PLIST_FILES=	share/games/fortune/epictetus \
 		share/games/fortune/epictetus.dat

@@ -37,8 +37,10 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		compiler gmake iconv libtool:keepla pathfix perl5 pkgconfig \
-		execinfo tar:xz
+USES=		compiler cpe gmake iconv libtool:keepla pathfix perl5 \
+			pkgconfig execinfo tar:xz
+CPE_PRODUCT =	xine-lib
+CPE_VENDOR=	xine
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xv xinerama xext sm ice
 USE_GL=		gl glu

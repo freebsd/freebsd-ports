@@ -12,6 +12,7 @@ COMMENT=	Function derivation library
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
+USE_OCAML_CAMLP4=	yes
 USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
 

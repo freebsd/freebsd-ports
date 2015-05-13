@@ -11,7 +11,6 @@ DISTNAME=	sphinx2-0.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
-BROKEN=		Unfetchable
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -28,8 +27,6 @@ post-patch:
 		${WRKSRC}/src/libsphinx2/hash.c	\
 		${WRKSRC}/src/libsphinx2/list.c	\
 		${WRKSRC}/src/libsphinx2/salloc.c
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-		${WRKSRC}/configure
 
 post-build:
 	${ECHO_CMD} "*** WARNING ***"				 > ${PKGMESSAGE}

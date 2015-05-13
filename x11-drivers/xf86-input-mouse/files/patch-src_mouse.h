@@ -1,6 +1,6 @@
---- src/mouse.h.orig	2012-07-27 08:10:56.000000000 +0200
-+++ src/mouse.h	2012-07-30 00:41:02.000000000 +0200
-@@ -217,10 +217,13 @@
+--- src/mouse.h.orig	2014-08-12 06:36:34 UTC
++++ src/mouse.h
+@@ -220,10 +220,13 @@ typedef struct _MouseDevRec {
      Bool                emulate3ButtonsSoft;
      int                 emulate3Timeout;/* Timeout for 3 button emulation */
      Bool                chordMiddle;
@@ -14,7 +14,7 @@
      int                 negativeZ;      /* button mask */
      int                 positiveZ;      /* button mask */
      int                 negativeW;      /* button mask */
-@@ -259,6 +262,8 @@
+@@ -262,6 +265,8 @@ typedef struct _MouseDevRec {
      int                 doubleClickOldSourceState;
      int                 lastMappedButtons;
      int                 buttonMap[MSE_MAXBUTTONS];

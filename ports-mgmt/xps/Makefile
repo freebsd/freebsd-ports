@@ -12,7 +12,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	serpent7776
-GH_COMMIT=	719165b
 
 USES=		python
 NO_BUILD=	yes

@@ -15,8 +15,6 @@ RUN_DEPENDS=	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sd2k9
-GH_COMMIT=	5ab24c4
-GH_TAGNAME=	${PORTVERSION}
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	gpx2map

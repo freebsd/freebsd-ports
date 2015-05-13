@@ -5,15 +5,13 @@ PORTNAME=	aeskulap
 PORTVERSION=	0.2.1
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.bms-austria.com/%7Epipelka/${PORTNAME}/
+MASTER_SITES=	http://www.sourcefiles.org/Home_and_Education/Health/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical image viewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		No public distfiles
 
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
 

@@ -36,6 +36,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
 CONFIGURE_ARGS+=	\
 		--sysconfdir=${ETCDIR} \
+		--localstatedir="${PREFIX}/var" \
 		--with-htdocs-dir=${PREFIX}/smokeping/htdocs \
 		--libdir=${PREFIX}/smokeping/lib
 HTDOCSDIR=	${PREFIX}/smokeping/htdocs
@@ -88,6 +89,11 @@ RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502100
+BUILD_DEPENDS+=	p5-CGI-Fast>=0:${PORTSDIR}/www/p5-CGI-Fast
+RUN_DEPENDS+=	p5-CGI-Fast>=0:${PORTSDIR}/www/p5-CGI-Fast
+.endif
 
 # We will take these from CPAN instead
 post-extract:

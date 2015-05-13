@@ -4,9 +4,7 @@ PORTNAME=	phantomjs
 PORTVERSION=	1.9.8
 #PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		https://bitbucket.org/ariya/phantomjs/downloads/
-MASTER_SITE_SUBDIR=	kuriyama
+MASTER_SITES=	https://bitbucket.org/ariya/phantomjs/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -25,7 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/phantomjs
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm
+	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm \
+		--qt-config '-no-pch'
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/

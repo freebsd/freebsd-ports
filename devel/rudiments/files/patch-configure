@@ -1,6 +1,42 @@
---- configure.orig	2014-06-21 04:23:02 UTC
+--- configure.orig	2015-04-11 01:05:36 UTC
 +++ configure
-@@ -15765,6 +15765,9 @@
+@@ -9216,7 +9216,7 @@ $as_echo_n "checking whether the $compil
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -10913,7 +10913,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+       ;;
+@@ -12248,7 +12248,7 @@ hardcode_automatic_CXX=no
+ inherit_rpath_CXX=no
+ module_cmds_CXX=
+ module_expsym_cmds_CXX=
+-link_all_deplibs_CXX=unknown
++link_all_deplibs_CXX=no
+ old_archive_cmds_CXX=$old_archive_cmds
+ reload_flag_CXX=$reload_flag
+ reload_cmds_CXX=$reload_cmds
+@@ -14748,7 +14748,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+       ;;
+@@ -15767,6 +15767,9 @@ case $host_os in
  	*mingw32* )
  		WERROR=""
  		;;
@@ -10,7 +46,7 @@
  	*)
  		;;
  esac
-@@ -30750,47 +30747,47 @@
+@@ -31537,47 +31540,47 @@ fi
  # prepend DESTDIR where appropriate
  if ( test "`echo $ac_default_prefix | cut -c1`" = "/" )
  then

@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	psiconv
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	converters devel
-MASTER_SITES=	http://software.frodo.looijaard.name/psiconv/files/
+MASTER_SITES=	http://www.frodo.looijaard.name/system/files/software/psiconv/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Conversion utility to convert Psion 5(MX) files into other formats
 
-BROKEN=		Unfetchable
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool
 USE_LDCONFIG=	yes

@@ -16,9 +16,7 @@ LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack		\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-GH_PROJECT=	elmerfem
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	0300707
+GH_TAGNAME=	0300707
 
 USES=		cmake fortran gmake tcl
 

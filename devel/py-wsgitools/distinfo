@@ -1,2 +1,4 @@
-SHA256 (wsgitools-0.2.4.tar.gz) = 0472dde4d7a8e78c7dec7db8d1d93451d832e80654d3e2f575678ed44b71e614
-SIZE (wsgitools-0.2.4.tar.gz) = 28444
+SHA256 (wsgitools-0.3.tar.gz) = 9c2e2b120749db0dda190f681be3165d4dae800f9b8dd621bc01971cb3556029
+SIZE (wsgitools-0.3.tar.gz) = 28671
+SHA256 (wsgitools-0.3.tar.gz.asc) = 22807c8b50132f43f5dc579de51f6fe4d99a7ee4b7a725fbb219976ff22b7280
+SIZE (wsgitools-0.3.tar.gz.asc) = 181

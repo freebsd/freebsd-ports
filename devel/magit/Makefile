@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	magit
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
-MASTER_SITES=	https://github.com/magit/magit/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -13,19 +13,27 @@ COMMENT=	Interface to Git for Emacs
 LICENSE=	GFDL GPLv3
 LICENSE_COMB=	multi
 
-USES=		gmake
+BUILD_DEPENDS=	git-modes-${EMACS_PORT_NAME}>0:${PORTSDIR}/devel/git-modes
+RUN_DEPENDS=	git-modes-${EMACS_PORT_NAME}>0:${PORTSDIR}/devel/git-modes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_TAGNAME=	1.4.0
+
+USES=		gmake makeinfo
 USE_EMACS=	YES
 INFO=		magit
+PORTDOCS=	AUTHORS.md
+
+OPTIONS_DEFINE=			DOCS
+
+.include <bsd.port.pre.mk>
 
 ELISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-
-MAKE_ENV+=	ELISPDIR=${STAGEDIR}${PREFIX}/${ELISPDIR} \
-		INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH}
+MAKE_ENV+=	EFLAGS="-L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/git-modes" \
+		lispdir=${PREFIX}/${ELISPDIR} \
+		infodir=${PREFIX}/${INFO_PATH} \
+		docdir=${DOCSDIR}
 PLIST_SUB+=	ELISPDIR=${ELISPDIR}
 
-OPTIONS_DEFINE=		GIT_SUBVERSION
-GIT_SUBVERSION_DESC=	Use devel/git-subversion as backend
-GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:${PORTSDIR}/devel/git-subversion
-GIT_SUBVERSION_RUN_DEPENDS_OFF=	git>0:${PORTSDIR}/devel/git
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	faup
 PORTVERSION=	1.4.20150118
 CATEGORIES=	www devel
-MASTER_SITES=	GHL LOCAL/antoine
+MASTER_SITES=	LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Fast URL decoder library
@@ -17,7 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	stricaud
 GH_TAGNAME=	af9e5db
-GH_COMMIT=	af9e5db
 
 USES=		cmake:outsource lua
 USE_LDCONFIG=	yes

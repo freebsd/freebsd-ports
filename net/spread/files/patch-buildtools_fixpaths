@@ -1,0 +1,20 @@
+--- buildtools/fixpaths.orig	2002-09-16 16:59:08 UTC
++++ buildtools/fixpaths
+@@ -5,7 +5,7 @@
+ 
+ $usage = "Usage: $0 [-Dstring=replacement] [[infile] ...]\n";
+ 
+-if (!defined(@ARGV)) { die ("$usage"); }
++if (!@ARGV) { die ("$usage"); }
+ 
+ # read in the command line and get some definitions
+ while ($_=$ARGV[0], /^-/) {
+@@ -23,7 +23,7 @@ while ($_=$ARGV[0], /^-/) {
+   }
+ } # while parsing arguments
+ 
+-if (!defined(%def)) {
++if (!%def) {
+   die ("$0: nothing to do - no substitutions listed!\n");
+ }
+ 

@@ -3,6 +3,7 @@
 
 PORTNAME=	sassc
 PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	textproc
 
@@ -13,19 +14,14 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libsass.so:${PORTSDIR}/textproc/libsass
 
-AUTOMAKE_ARGS=	--add-missing
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-
+USE_GITHUB=	yes
 GH_ACCOUNT=	sass
-GH_COMMIT=	9451dd7
-GH_TAGNAME=	v${PORTVERSION}
 
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		autoreconf libtool
 
 PLIST_FILES=	bin/sassc
-
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>

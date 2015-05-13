@@ -1,7 +1,6 @@
 include/gtkspell-3.0/gtkspell/gtkspell.h
 lib/girepository-1.0/GtkSpell-3.0.typelib
 lib/libgtkspell3-3.a
-lib/libgtkspell3-3.la
 lib/libgtkspell3-3.so
 lib/libgtkspell3-3.so.0
 lib/libgtkspell3-3.so.0.1.0

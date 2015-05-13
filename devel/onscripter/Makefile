@@ -46,6 +46,8 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/Makefile.onscripter
+	@${REINPLACE_CMD} -e 's/luaL_checkint/(int)&eger/' \
+		${WRKSRC}/LUAHandler.cpp
 
 .if !target(do-install)
 do-install:

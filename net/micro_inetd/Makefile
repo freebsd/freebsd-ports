@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	micro_inetd
-PORTVERSION=	2005.06.29
+PORTVERSION=	2014.08.14
 CATEGORIES=	net
 MASTER_SITES=	http://www.acme.com/software/micro_inetd/
-DISTNAME=	${PORTNAME}_29jun2005
+DISTNAME=	${PORTNAME}_14Aug2014
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	inetd-like program intended for temporarily usage
+
+LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/micro_inetd man/man1/micro_inetd.1.gz

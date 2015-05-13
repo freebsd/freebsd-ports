@@ -17,8 +17,6 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	the-tcpdump-group
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2837b72
+GH_TAGNAME=	2837b72
 
 .include <bsd.port.mk>

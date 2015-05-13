@@ -1,5 +1,5 @@
---- src/findlib/Makefile.orig	2014-06-25 12:23:06.000000000 +0200
-+++ src/findlib/Makefile	2014-06-29 13:48:58.000000000 +0200
+--- src/findlib/Makefile.orig	2014-10-23 10:08:26 UTC
++++ src/findlib/Makefile
 @@ -19,6 +19,7 @@ OCAMLDEP = ocamldep
  OCAMLLEX = ocamllex
  #CAMLP4O =  camlp4 pa_o.cmo pa_op.cmo pr_o.cmo --
@@ -8,8 +8,8 @@
  
  
  OBJECTS        = findlib_config.cmo fl_split.cmo fl_metatoken.cmo fl_meta.cmo \
-@@ -87,23 +88,23 @@ clean:
- 	#rm -f ocaml_args.ml
+@@ -97,23 +98,23 @@ clean:
+ 	  ocamlfind$(EXEC_SUFFIX) ocamlfind_opt$(EXEC_SUFFIX)
  
  install: all
 -	mkdir -p "$(prefix)$(OCAML_SITELIB)/$(NAME)"

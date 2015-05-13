@@ -3,6 +3,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		iconv gmake
+USES=		cpe gmake
 USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	icinga
 
@@ -51,7 +52,8 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-log-dir=${ICINGALOGDIR} \
 		--with-httpd-conf=${EXAMPLESDIR}/apache22 \
 		--enable-event-broker \
-		--enable-nanosleep
+		--enable-nanosleep \
+		ac_cv_lib_iconv_main=no
 
 CONFIGURE_ENV=	PERL=${PERL} \
 		HOME=${WRKDIR} # prevent creation of .rnd file

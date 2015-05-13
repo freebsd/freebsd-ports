@@ -96,10 +96,3 @@ share/applications/keepassx.desktop
 share/mime/packages/keepassx.xml
 share/mimelnk/application/x-keepass.desktop
 share/pixmaps/keepassx.xpm
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/mime/packages
-@dirrmtry share/mime

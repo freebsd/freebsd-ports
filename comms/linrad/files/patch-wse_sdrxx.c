@@ -1,6 +1,6 @@
---- wse_sdrxx.c.orig	2014-11-04 02:25:00.000000000 -0800
-+++ wse_sdrxx.c	2014-12-08 03:15:31.000000000 -0800
-@@ -219,9 +219,9 @@
+--- wse_sdrxx.c.orig	2014-11-04 10:25:00 UTC
++++ wse_sdrxx.c
+@@ -219,9 +219,9 @@ if(ui.rx_addev_no == RTL2832_DEVICE_CODE
      m=10000;
      for(i=0; i<no_of_rtl2832_gains; i++)
        {
@@ -12,7 +12,7 @@
          j=i;
          }
        }
-@@ -265,9 +265,9 @@
+@@ -265,9 +265,9 @@ if(ui.rx_addev_no == MIRISDR_DEVICE_CODE
      m=10000;
      for(i=0; i<no_of_mirics_gains; i++)
        {

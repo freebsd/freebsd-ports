@@ -1,3 +1,4 @@
 %%PYTHON_SITELIBDIR%%/libproxy.py
 %%PYTHON_SITELIBDIR%%/libproxy.pyc
 %%PYTHON_SITELIBDIR%%/libproxy.pyo
+@dir lib/libproxy/%%VERSION%%/modules

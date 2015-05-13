@@ -1,8 +1,8 @@
 Origin: https://github.com/xbmc/xbmc/pull/5610
 
---- system/peripherals.xml.orig	2014-08-25 20:29:00.000000000 +0800
-+++ system/peripherals.xml	2014-12-31 07:15:34.972922137 +0800
-@@ -28,7 +28,7 @@
+--- plex/Resources/system/peripherals.xml.orig	2015-04-09 12:51:14 UTC
++++ plex/Resources/system/peripherals.xml
+@@ -30,7 +30,7 @@
      <setting key="device_type" type="int" value="1" configurable="0" />
      <setting key="wake_devices_advanced" type="string" value="" configurable="0" />
      <setting key="standby_devices_advanced" type="string" value="" configurable="0" />

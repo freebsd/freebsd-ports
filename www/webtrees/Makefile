@@ -3,6 +3,7 @@
 
 PORTNAME=	webtrees
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/${PORTVERSION}/+download/
 
@@ -13,7 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USES=		zip:infozip
-USE_PHP=	calendar dom gd pcre session xml pdo_mysql
+USE_PHP=	calendar dom filter gd pcre pdo_mysql session simplexml xml
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall

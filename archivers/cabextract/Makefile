@@ -10,7 +10,9 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Program to extract Microsoft cabinet (.CAB) files
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/cabextract \

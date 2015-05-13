@@ -13,6 +13,8 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Port of the Flat GTK+ engine to GTK+ 2.0
 
 BROKEN=		No public distfiles
+DEPRECATED=	Upstream disappeared
+EXPIRATION_DATE=2015-06-01
 
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 

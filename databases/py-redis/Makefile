@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTVERSION=	2.10.3
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +23,6 @@ USE_PYTHON=	distutils autoplist concurrent
 USE_GITHUB=	yes
 GH_ACCOUNT=	andymccurdy
 GH_PROJECT=	${PORTNAME}-py
-GH_COMMIT=	e7589d7
 
 .include <bsd.port.options.mk>
 

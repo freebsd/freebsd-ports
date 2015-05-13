@@ -2,7 +2,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -26,9 +25,10 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 
-USES=		compiler:features dos2unix gmake iconv pkgconfig shebangfix
-USE_AUTOTOOLS=	autoconf
+USES=		compiler:features dos2unix gmake iconv pkgconfig \
+		shebangfix
 USE_XORG=	x11 xext xi xrender xt xtst
+GNU_CONFIGURE=	yes
 
 .if !exists(/usr/bin/unzip)
 BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
@@ -92,8 +92,8 @@ NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	40
-JDK_BUILD_NUMBER=	25
+JDK_UPDATE_VERSION=	45
+JDK_BUILD_NUMBER=	14
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -190,6 +190,11 @@ MAKE_ENV+=	USE_CLANG=true
 .if ${COMPILER_FEATURES:Mlibc++}
 CONFIGURE_ENV=	LIBCXX="-lc++"
 .endif
+.endif
+
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
 .endif
 
 .if empty(ICONV_LIB)

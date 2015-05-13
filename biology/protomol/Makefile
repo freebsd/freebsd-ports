@@ -6,8 +6,7 @@ PORTVERSION=	2.0.3
 PORTREVISION=	11
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-tar.gz
-EXTRACT_SUFX=	# empty
+DISTFILES=	${DISTNAME}-tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations

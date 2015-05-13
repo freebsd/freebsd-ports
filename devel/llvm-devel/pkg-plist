@@ -172,6 +172,7 @@ llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/Interval.h
 llvm-devel/include/llvm/Analysis/IntervalIterator.h
 llvm-devel/include/llvm/Analysis/IntervalPartition.h
+llvm-devel/include/llvm/Analysis/IteratedDominanceFrontier.h
 llvm-devel/include/llvm/Analysis/JumpInstrTableInfo.h
 llvm-devel/include/llvm/Analysis/LazyCallGraph.h
 llvm-devel/include/llvm/Analysis/LazyValueInfo.h
@@ -312,7 +313,7 @@ llvm-devel/include/llvm/Config/Disassemblers.def
 llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/config.h
 llvm-devel/include/llvm/Config/llvm-config.h
-llvm-devel/include/llvm/DebugInfo/DWARF/DIContext.h
+llvm-devel/include/llvm/DebugInfo/DIContext.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAbbreviationDeclaration.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAcceleratorTable.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFCompileUnit.h
@@ -348,6 +349,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/IPDBRawSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSession.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSourceFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDB.h
+llvm-devel/include/llvm/DebugInfo/PDB/PDBContext.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBExtras.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymDumper.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbol.h
@@ -392,11 +394,11 @@ llvm-devel/include/llvm/ExecutionEngine/MCJIT.h
 llvm-devel/include/llvm/ExecutionEngine/OProfileWrapper.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectCache.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectMemoryBuffer.h
-llvm-devel/include/llvm/ExecutionEngine/Orc/CloneSubModule.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileOnDemandLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ExecutionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IRCompileLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/IRTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IndirectionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/JITSymbol.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LambdaResolver.h
@@ -616,6 +618,7 @@ llvm-devel/include/llvm/Support/BlockFrequency.h
 llvm-devel/include/llvm/Support/BranchProbability.h
 llvm-devel/include/llvm/Support/CBindingWrapping.h
 llvm-devel/include/llvm/Support/COFF.h
+llvm-devel/include/llvm/Support/COM.h
 llvm-devel/include/llvm/Support/Capacity.h
 llvm-devel/include/llvm/Support/Casting.h
 llvm-devel/include/llvm/Support/CodeGen.h
@@ -671,6 +674,7 @@ llvm-devel/include/llvm/Support/MathExtras.h
 llvm-devel/include/llvm/Support/Memory.h
 llvm-devel/include/llvm/Support/MemoryBuffer.h
 llvm-devel/include/llvm/Support/MemoryObject.h
+llvm-devel/include/llvm/Support/MipsABIFlags.h
 llvm-devel/include/llvm/Support/Mutex.h
 llvm-devel/include/llvm/Support/MutexGuard.h
 llvm-devel/include/llvm/Support/OnDiskHashTable.h

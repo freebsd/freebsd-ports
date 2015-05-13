@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	lua@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small sysctl(3) interface for lua
 
 USE_GITHUB=	yes
@@ -16,7 +16,6 @@ PLIST_FILES=	%%LUA_MODSHAREDIR%%/sysctl.lua \
 
 GH_ACCOUNT=	kAworu
 GH_PROJECT=	lua-${PORTNAME}
-GH_COMMIT=	345dc69
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" ${WRKSRC}/Makefile

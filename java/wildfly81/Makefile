@@ -3,6 +3,7 @@
 
 PORTNAME=	wildfly81
 PORTVERSION=	8.1.0
+PORTREVISION=	1
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -21,6 +22,7 @@ VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
 WILDFLY_VERSION=8.1.0.Final
+SUB_FILES=	pkg-message
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \
@@ -29,6 +31,9 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		PID_FILE=${PID_FILE} \
 		APP_HOME=${PREFIX}/wildfly-${PORTVERSION}
 PLIST_SUB=	APP_HOME=wildfly-${PORTVERSION}
+
+post-patch:
+	${RM} ${WRKSRC}/bin/add-user.sh.orig
 
 do-build:
 	${RM} ${WRKSRC}/bin/*.bat

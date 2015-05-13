@@ -1,0 +1,38 @@
+--- pwhois-updatedb.orig	2013-10-08 18:59:42 UTC
++++ pwhois-updatedb
+@@ -975,7 +975,7 @@ sub connect
+ 	my $passwd = shift;
+ 
+ 
+-	my $session = Net::Telnet->new(timeout => 10,
++	my $session = Net::Telnet->new(timeout => 300,
+ 				       telnetmode=>0,
+ 				       cmd_remove_mode => 1
+ 				       );
+@@ -3133,7 +3133,7 @@ sub readMRTdump
+ 
+     @st = stat($fd);
+ 
+-    if(!defined(@st))
++    if(!@st)
+     {
+         $errcode = -2;
+     }
+@@ -3763,7 +3763,7 @@ sub parseOrganisationObject
+ 
+         #printMap(%obj);
+ 
+-        return -$numlines if(!(defined($orgId) && defined($orgName) && defined(@addrs)));
++        return -$numlines if(!(defined($orgId) && defined($orgName) && (@addrs)));
+ 
+         $country = "" if(!defined($country));
+         $country = substr(normalizeValue($country), 0, $fields_length{'organization.country'});
+@@ -4035,7 +4035,7 @@ sub parsePersonObject
+         #printMap(%obj);
+ 
+         $source = 0 if(!defined($source));
+-        return -$numlines if(!(defined($person) && defined(@addrs) && defined($officePhone) &&
++        return -$numlines if(!(defined($person) && (@addrs) && defined($officePhone) &&
+                                defined($mailbox) && defined($pocHandle) && defined($source)));
+ 
+         for($j1 = 0; $j1 < 6; $j1++){

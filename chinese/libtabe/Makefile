@@ -3,13 +3,16 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_DEBIAN:C|(/%SUBDIR%/)|/pool/main/libt/libtabe/|}
+MASTER_SITES=	DEBIAN/pool/main/libt/libtabe/
 DISTNAME=	libtabe_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool
 USE_LDCONFIG=	yes
@@ -51,6 +54,7 @@ post-patch:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtabe.so
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tsi-src/README \

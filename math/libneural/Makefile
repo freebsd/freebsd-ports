@@ -16,8 +16,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|iostream.h|iostream|; s|fstream.h|fstream|; s|iomanip.h|iomanip|; \
 		s|endl|std::&|g; s|cerr|std::&|g; s|cout|std::&|g; s|cin|std::&|g; s|[oi]fstream |std::&|g' \
 		${WRKSRC}/lib/neuron.cc ${WRKSRC}/lib/nnwork.cc ${WRKSRC}/examples/*.cc

@@ -1,0 +1,8 @@
+Reliable Asynchronous Event Transport protocol
+
+RAET is designed to provide secure reliable scalable asynchronous message/event
+transport over the internet in a micro-threaded multi-process application
+framework that uses UDP for interhost communication and LibSodium for
+authentication, encryption and the CurveCP handshake for secure bootstrap.
+
+WWW: https://github.com/saltstack/raet

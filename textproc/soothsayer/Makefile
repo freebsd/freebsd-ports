@@ -22,7 +22,7 @@ CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_SWIG=no \
 		ac_cv_prog_HAVE_DOT=no \
 		ac_cv_prog_HAVE_DOXYGEN=no
-CONFIGURE_ARGS=	--disable-python-binding
+CONFIGURE_ARGS=	--disable-python-binding --localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

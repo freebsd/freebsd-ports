@@ -2,45 +2,19 @@
 %%WWWDIR%%/application/cache/.htaccess
 %%WWWDIR%%/application/cache/index.html
 %%WWWDIR%%/application/config/index.html
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php ]; then cp -p %D/%F %B/autoload.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php ]; then cp -p %D/%F %B/config.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php ]; then cp -p %D/%F %B/constants.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php ]; then cp -p %D/%F %B/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php ]; then cp -p %D/%F %B/doctypes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php ]; then cp -p %D/%F %B/foreign_chars.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php ]; then cp -p %D/%F %B/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php ]; then cp -p %D/%F %B/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php ]; then cp -p %D/%F %B/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php ]; then cp -p %D/%F %B/profiler.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php ]; then cp -p %D/%F %B/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php ]; then cp -p %D/%F %B/smileys.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php ]; then cp -p %D/%F %B/user_agents.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php has not been overwritten"; fi
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/constants.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/doctypes.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/foreign_chars.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/profiler.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/routes.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php.sample
+@sample %%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample
 %%WWWDIR%%/application/controllers/index.html
 %%WWWDIR%%/application/controllers/welcome.php
 %%WWWDIR%%/application/core/index.html
@@ -206,41 +180,4 @@
 %%WWWDIR%%/system/libraries/Zip.php
 %%WWWDIR%%/system/libraries/index.html
 %%WWWDIR%%/system/libraries/javascript/Jquery.php
-@dirrm %%WWWDIR%%/system/libraries/javascript
-@dirrm %%WWWDIR%%/system/libraries/Cache/drivers
-@dirrm %%WWWDIR%%/system/libraries/Cache
-@dirrm %%WWWDIR%%/system/libraries
-@dirrm %%WWWDIR%%/system/language/english
-@dirrm %%WWWDIR%%/system/language
-@dirrm %%WWWDIR%%/system/helpers
-@dirrm %%WWWDIR%%/system/fonts
-@dirrm %%WWWDIR%%/system/database/drivers/sqlsrv
-@dirrm %%WWWDIR%%/system/database/drivers/sqlite
-@dirrm %%WWWDIR%%/system/database/drivers/postgre
-@dirrm %%WWWDIR%%/system/database/drivers/odbc
-@dirrm %%WWWDIR%%/system/database/drivers/pdo
-@dirrm %%WWWDIR%%/system/database/drivers/oci8
-@dirrm %%WWWDIR%%/system/database/drivers/mysqli
-@dirrm %%WWWDIR%%/system/database/drivers/mysql
-@dirrm %%WWWDIR%%/system/database/drivers/mssql
-@dirrm %%WWWDIR%%/system/database/drivers/cubrid
-@dirrm %%WWWDIR%%/system/database/drivers
-@dirrm %%WWWDIR%%/system/database
-@dirrm %%WWWDIR%%/system/core
-@dirrm %%WWWDIR%%/system
-@dirrm %%WWWDIR%%/application/views
-@dirrm %%WWWDIR%%/application/third_party
-@dirrm %%WWWDIR%%/application/models
-@dirrm %%WWWDIR%%/application/logs
-@dirrm %%WWWDIR%%/application/libraries
-@dirrm %%WWWDIR%%/application/language/english
-@dirrm %%WWWDIR%%/application/language
-@dirrm %%WWWDIR%%/application/hooks
-@dirrm %%WWWDIR%%/application/helpers
-@dirrm %%WWWDIR%%/application/errors
-@dirrm %%WWWDIR%%/application/core
-@dirrm %%WWWDIR%%/application/controllers
-@dirrmtry %%WWWDIR%%/application/config
-@dirrm %%WWWDIR%%/application/cache
-@dirrmtry %%WWWDIR%%/application
-@dirrmtry %%WWWDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/application/cache

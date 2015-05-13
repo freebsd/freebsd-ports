@@ -5,11 +5,11 @@
  
  # Building binaries
 -CC = gcc
-+CC ?= gcc
++CC = @CC@
  INC = -I. -I../.. -I$(HOME)/include -I/usr/local/include
  OPTIMIZE = -O2
 -LD = gcc
-+LD ?= gcc
++LD = @CC@
  LIBS = -L../.. -I$(HOME)/lib -L/usr/local/lib -lqdbm @LIBS@
  RUNENV = LD_LIBRARY_PATH=.:..:../..:/usr/local/lib:$(HOME)/lib
  

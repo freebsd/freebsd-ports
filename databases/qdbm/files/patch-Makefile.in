@@ -1,30 +1,11 @@
---- Makefile.in.orig	2010-08-04 20:14:34.000000000 +0300
-+++ Makefile.in	2014-05-03 18:41:01.000000000 +0300
-@@ -46,7 +46,7 @@
- MYMAN1DIR = @mandir@/man1
- MYMAN3DIR = @mandir@/man3
- MYDATADIR = @datadir@/$(PACKAGE)
--MYPCDIR = @libdir@/pkgconfig
-+MYPCDIR = /usr/local/libdata/pkgconfig
- DESTDIR =
- 
- # Building binaries
-@@ -56,7 +56,6 @@
+--- Makefile.in.orig	2010-08-04 17:14:34 UTC
++++ Makefile.in
+@@ -56,7 +56,7 @@ CPPFLAGS = @CPPFLAGS@ -I$(srcdir) -I$(MY
    -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
    -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 -DNDEBUG
 -CFLAGS = -Wall -pedantic -fPIC -fsigned-char -O3 -fomit-frame-pointer -fforce-addr @MYOPTS@
++CFLAGS = @CFLAGS@ -Wall -pedantic -fPIC -fsigned-char
  LD = @LD@
  LIBS = -lqdbm @LIBS@
  LIBLDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @LIBS@
-@@ -170,8 +169,10 @@
- 	cd $(srcdir)/man && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
- 	mkdir -p $(DESTDIR)$(MYMAN3DIR)
- 	cd $(srcdir)/man && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
-+.if $(MYDOCS) != ""
- 	mkdir -p $(DESTDIR)$(MYDATADIR)
- 	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
-+.endif
- 	mkdir -p $(DESTDIR)$(MYPCDIR)
- 	cd $(srcdir) && cp -Rf $(MYPCS) $(DESTDIR)$(MYPCDIR)
- 	@printf '\n'

@@ -1,14 +1,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel2.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/greek-language-support/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
@@ -18,7 +15,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng4.png

@@ -3,8 +3,8 @@
 
 PORTNAME=	qxmpp
 PORTVERSION=	0.8.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
-MASTER_SITES=	GHL
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	QXmpp is an xmpp client library based on Qt & C++
@@ -17,8 +17,6 @@ USE_QT4=	gui network qtestlib xml uic_build moc_build \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	cc09061
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|g' \

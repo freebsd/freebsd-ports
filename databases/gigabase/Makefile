@@ -14,16 +14,10 @@ LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix gmake libtool
-DOS2UNIX_FILES=	Makefile.in *.cpp *.h
+GNU_CONFIGURE=	yes
+USES=		autoreconf dos2unix gmake libtool
+DOS2UNIX_FILES=	Makefile.in configure.in *.cpp *.h
 USE_GCC=	any
-USE_AUTOTOOLS=	libtoolize aclocal autoconf
 USE_LDCONFIG=	yes
-
-LDFLAGS+=	-pthread
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|-pthread|' ${WRKSRC}/GiST/Makefile
 
 .include <bsd.port.mk>

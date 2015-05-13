@@ -36,7 +36,7 @@ lib/kodi/addons/visualization.projectm/projectM.vis
 lib/kodi/addons/visualization.waveform/Waveform.vis
 lib/kodi/addoptions.cmake
 lib/kodi/kodi-config.cmake
-%%XRANDR%%lib/kodi/kodi-xrandr
+lib/kodi/kodi-xrandr
 lib/kodi/kodi.bin
 lib/kodi/prepare-env.cmake
 lib/kodi/system/ImageLib-%%ARCH%%-freebsd.so
@@ -440,7 +440,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Albanian/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Amharic/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Asturian/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Basque/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Belarusian/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Bulgarian/strings.po
@@ -771,6 +770,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/language/Swedish/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Tajik/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Tamil (India)/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Tatar/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Telugu/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Thai/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Turkish/strings.po

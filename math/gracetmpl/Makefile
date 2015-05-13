@@ -3,6 +3,7 @@
 
 PORTNAME=	gracetmpl
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	math print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,6 +12,9 @@ COMMENT=	Provide an easy way to use existing grace-files as a template
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake python tar:bzip2
 MAKE_ARGS=	PREFIX="${PREFIX}" \
@@ -25,6 +29,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		PYTHON="${PYTHON_CMD}"
 ALL_TARGET=	all pythonwrap
 INSTALL_TARGET=	install
+USE_GCC=	yes
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
@@ -36,7 +41,8 @@ post-patch:
 
 post-install:
 	@(cd ${INSTALL_WRKSRC}/python; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py \
-		install --root=${STAGEDIR} --prefix=${LOCALBASE} -c -O1)
+		install --root=${STAGEDIR} --prefix=${PREFIX} -c -O1)
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/graceTMPL/graceTMPL.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
 

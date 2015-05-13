@@ -1,0 +1,4 @@
+This module implements a very thin layer around the getgroups(2) and
+setgroups(2) syscalls.
+
+WWW: https://metacpan.org/pod/Unix::Groups

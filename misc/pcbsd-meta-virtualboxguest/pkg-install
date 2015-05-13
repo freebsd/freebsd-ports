@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+# Enable loading the vboxguest binary driver
+grep '^drm_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
+if [ $? -ne 0 ] ; then
+        echo 'drm_load="YES"' >>/boot/loader.conf
+fi
+# Enable loading the vboxguest binary driver
+grep '^vboxguest_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
+if [ $? -ne 0 ] ; then
+        echo 'vboxguest_load="YES"' >>/boot/loader.conf
+fi
+# Enable loading the vboxvideo binary driver
+grep '^vboxvideo_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
+if [ $? -ne 0 ] ; then
+        echo 'vboxvideo_load="YES"' >>/boot/loader.conf
+fi
+
+exit 0

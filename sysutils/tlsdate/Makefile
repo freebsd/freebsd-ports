@@ -2,6 +2,7 @@
 
 PORTNAME=	tlsdate
 PORTVERSION=	0.0.12
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,9 +23,6 @@ PORTDOCS=	*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ioerror
-GH_COMMIT=	cc2e251
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/195786947/ \
+MASTER_SITES=	https://launchpadlibrarian.net/205431962/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -25,6 +25,7 @@ CFLAGS+=	-Wno-return-type
 USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3
 USE_XORG=	x11 xfixes xi
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	NLS DBUSMENU
@@ -36,6 +37,7 @@ CONFIGURE_ARGS=	--enable-gee-0.8 \
 	--disable-apport
 
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 
 DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu

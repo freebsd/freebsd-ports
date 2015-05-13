@@ -1,0 +1,20 @@
+--- configure.ac.orig	2014-11-14 14:48:11 UTC
++++ configure.ac
+@@ -212,7 +212,7 @@ AC_CACHE_CHECK(for pty/tty type, ptyttyl
+     AC_CHECK_HEADERS([pty.h])    
+  else if test x$ac_cv_func__getpty = xyes; then
+     ptyttylib_cv_ptys=SGI4
+- else if test -c /dev/ttyp20 -a ! -c /dev/ptmx; then 
++ else if test -c /dev/ttyp20 -a ! -c /nonexistent; then 
+    ptyttylib_cv_ptys=SCO
+  else if test -c /dev/ptym/clone; then
+     ptyttylib_cv_ptys=HPUX
+@@ -222,7 +222,7 @@ AC_CACHE_CHECK(for pty/tty type, ptyttyl
+     ptyttylib_cv_ptys=PTC
+  else if test -c /dev/ptc -a -d /dev/pts; then
+     ptyttylib_cv_ptys=PTC
+- else if test -c /dev/ptmx -a -c /dev/pts/0; then
++ else if test -c /nonexistent -a -c /dev/pts/0; then
+     ptyttylib_cv_ptys=STREAMS
+  else case "$host_os" in
+          *cygwin*) ptyttylib_cv_ptys=STREAMS ;;

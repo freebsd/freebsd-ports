@@ -1,8 +1,8 @@
-# Created by: roam@FreeBSD.org
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gecode
-PORTVERSION=	4.3.3
+PORTVERSION=	4.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-mpfr-lib=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-SHLIB=		37
+PLIST_SUB=	SHLIB_VERSION=41
 
 OPTIONS_DEFINE=	GIST
 OPTIONS_SUB=	yes
@@ -44,7 +44,6 @@ GIST_DESC=	Interactive Search Tool (requires Qt)
 GIST_USE=	QT4=corelib,gui,moc_build,qmake_build
 GIST_CONFIGURE_ON=	--enable-gist --enable-qt
 GIST_CONFIGURE_OFF=	--disable-gist --disable-qt
-PLIST_SUB=	SHLIB="${SHLIB}"
 
 .include <bsd.port.options.mk>
 

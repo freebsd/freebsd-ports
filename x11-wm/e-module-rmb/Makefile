@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e-module-
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment module to emulate right mouse button
 
 LICENSE=	GPLv3

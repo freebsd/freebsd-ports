@@ -3,9 +3,9 @@
 
 PORTNAME?=	portshaker
 PORTVERSION=	1.0.10
+DISTVERSIONPREFIX=	v
 PORTREVISION?=	1
 CATEGORIES?=	ports-mgmt
-DISTNAME=	portshaker-${PORTVERSION}
 
 MAINTAINER?=	romain@FreeBSD.org
 COMMENT?=	Maintain ports tree using multiple sources
@@ -14,8 +14,6 @@ USES+=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	smortex
 GH_PROJECT=	portshaker
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	b88edd7
 
 .if ${PORTNAME} == "portshaker"
 OPTIONS_DEFINE=	RSYNC SVN GIT HG

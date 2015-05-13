@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vimpager
-PORTVERSION=	1.8.9
+PORTVERSION=	2.02
 CATEGORIES=	sysutils
-MASTER_SITES=	http://github.com/rkitover/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Use ViM as a pager
@@ -12,6 +11,9 @@ COMMENT=	Use ViM as a pager
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rkitover
 
 OPTIONS_DEFINE=		VIMCAT
 OPTIONS_DEFAULT=	VIMCAT

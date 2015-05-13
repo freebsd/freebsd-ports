@@ -71,7 +71,7 @@ include/cairo-dock/implementations/cairo-dock-progressbar.h
 lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
-lib/libgldi.so.3.4.0
+lib/libgldi.so.3.4.1
 libdata/pkgconfig/gldi.pc
 man/man1/cairo-dock.1.gz
 share/applications/cairo-dock-cairo.desktop

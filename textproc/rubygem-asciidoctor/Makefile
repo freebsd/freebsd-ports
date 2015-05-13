@@ -1,18 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoctor
-PORTVERSION=	0.1.4
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, open source text processor and publishing toolchain
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/asciidoctor bin/asciidoctor-safe
-
 
 .include <bsd.port.mk>

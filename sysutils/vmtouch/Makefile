@@ -3,6 +3,7 @@
 
 PORTNAME=	vmtouch
 PORTVERSION=	0.8.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -10,9 +11,6 @@ COMMENT=	Virtual Memory Toucher
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoytech
-GH_PROJECT=	vmtouch
-GH_TAGNAME=	vmtouch-0.8.0 
-GH_COMMIT=	a54935b
 
 PLIST_FILES=	bin/vmtouch \
 		man/man8/vmtouch.8.gz

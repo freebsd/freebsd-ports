@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	EFL DBUS connectivity library
 
 LICENSE=	BSD2CLAUSE

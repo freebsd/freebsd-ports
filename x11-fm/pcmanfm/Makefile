@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -13,25 +13,28 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
 
-USES=		desktop-file-utils fam gmake pathfix pkgconfig tar:xz libtool
-USE_GNOME=	gtk20
-USE_AUTOTOOLS=	aclocal automake
+USES=		desktop-file-utils gmake pkgconfig gettext-tools libtool \
+	autoreconf tar:xz
+GNU_CONFIGURE=	yes
+USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_XORG=	x11
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=--with-gtk=2
 
 PORTDOCS=	AUTHORS NEWS
 
-OPTIONS_DEFINE=	DEBUG DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-
-DEBUG_CONFIGURE_ENABLE=	debug
-
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pcmanfm.conf/ d' ${WRKSRC}/data/Makefile.am
+
+post-configure:
+# Replace locales files in right place
+	${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
+		${WRKSRC}/po/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/

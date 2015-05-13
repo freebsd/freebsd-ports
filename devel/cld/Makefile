@@ -2,29 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	cld
-PORTVERSION=	20150113
+PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	demon
-PKGNAMESUFFIX=	2
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	chromium-compact-language-detector
+DISTNAME=	compact-language-detector-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Compact language detector library
+COMMENT=	Chromium compact language detector library
 
-LICENSE=	APACHE20
-
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e "s#g++#${CXX} ${CXXFLAGS}#" ${WRKSRC}/internal/compile_libs.sh
-
-do-build:
-	cd ${WRKSRC}/internal && ./compile_libs.sh
-
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/cld/public ${STAGEDIR}${PREFIX}/include/cld/internal
-	${INSTALL_DATA} ${WRKSRC}/public/encodings.h ${WRKSRC}/public/compact_lang_det.h ${STAGEDIR}${PREFIX}/include/cld/public/
-	${INSTALL_DATA} ${WRKSRC}/internal/lang_script.h ${WRKSRC}/internal/integral_types.h ${WRKSRC}/internal/generated_language.h ${WRKSRC}/internal/generated_ulscript.h ${STAGEDIR}${PREFIX}/include/cld/internal/
-	${INSTALL_LIB} ${WRKSRC}/internal/libcld2.so ${WRKSRC}/internal/libcld2_full.so ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>

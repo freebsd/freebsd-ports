@@ -27,11 +27,6 @@ PKGNAMESUFFIX=	4
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
-		-e 's|freebsd1|freebsd1.|' \
-		${WRKSRC}/configure
-
 post-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/onig-config > ${WRKSRC}/onig-config

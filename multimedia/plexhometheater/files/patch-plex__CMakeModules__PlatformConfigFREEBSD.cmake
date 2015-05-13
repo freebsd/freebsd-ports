@@ -123,7 +123,7 @@
 +endif()
 +
 +#### default lircdevice
-+set(LIRC_DEVICE "/dev/lircd")
++set(LIRC_DEVICE "/var/run/lirc/lircd")
 +
 +#### on freebsd we want to use a "easy" name
 +set(EXECUTABLE_NAME "plexhometheater")

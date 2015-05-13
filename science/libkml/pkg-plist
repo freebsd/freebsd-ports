@@ -178,8 +178,3 @@ lib/libminizip.a
 lib/libminizip.so
 lib/libminizip.so.0
 lib/libminizip.so.0.0.0
-lib/liburiparser.a
-lib/liburiparser.so
-lib/liburiparser.so.1
-lib/liburiparser.so.1.0.5
-@dir lib/libkml

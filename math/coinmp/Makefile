@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CoinMP
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 
@@ -62,7 +62,7 @@ post-install:
 .endfor
 
 check regression-test test: build
-	@(cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test)
+	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} test -C ${WRKSRC}
 
 .include <bsd.port.mk>

@@ -43,7 +43,7 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		shebangfix perl5 tar:bzip2
+USES=		cpe shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	bin/cgi-bin/*.pl bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/auto_build/*.pl scripts/tools/*.pl scripts/*.pl
 

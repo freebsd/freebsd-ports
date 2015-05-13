@@ -3,3 +3,4 @@
 %%PYTHON_SITELIBDIR%%/ldns.py
 %%PYTHON_SITELIBDIR%%/_ldns.so
 %%PYTHON_SITELIBDIR%%/_ldns.a
+@dir %%PYTHON_SITELIBDIR%%/ldns

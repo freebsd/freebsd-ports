@@ -1,6 +1,6 @@
---- config.mk.orig	2014-05-07 17:09:56.000000000 -0700
-+++ config.mk	2014-05-07 17:10:31.000000000 -0700
-@@ -213,6 +213,6 @@
+--- config.mk.orig	2014-10-08 21:50:07 UTC
++++ config.mk
+@@ -213,7 +213,7 @@ endif
  
  
  INSTALL?=install
@@ -10,3 +10,4 @@
 +prefix=${PREFIX}
 +mandir=${PREFIX}/share/man
 +localedir=${PREFIX}/share/locale
+ STRIP?=strip

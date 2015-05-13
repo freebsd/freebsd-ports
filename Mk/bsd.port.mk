@@ -511,10 +511,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				    - PREFIX can't have a trailing slash.
 #
 # BUNDLE_LIBS	  Teach pkg(8) to not automatically add all shared libraries
-# 				  installed by a port as a "provided" shared libraries provided
-# 				  for other packages (prevent them from being exposed in the
-# 				  solver). This has to be used for ports that bundle third
-# 				  party libraries for internal usage.
+# 				  installed by a port as shared libraries "provided" for
+#				  other packages (i.e., do not expose them in the solver).
+#				  This has to be used for ports that bundle third party
+#				  libraries for internal usage.
 # MASTERDIR		- Where the port finds patches, package files, etc.  Define
 #				  this is you have two or more ports that share most of the
 #				  files.
@@ -805,7 +805,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${PREFIX}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
-#				  Default: "--prefix=${GNU_CONFIGURE_PREFIX} --infodir=${PREFIX}/${INFO_PATH}
+#				  Default: "--prefix=${GNU_CONFIGURE_PREFIX}
+#				  --infodir=${PREFIX}/${INFO_PATH} --localstatedir=/var
 #				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
@@ -1017,6 +1018,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
 # NO_DEPENDS	- Don't verify build of dependencies.
+# STRICT_DEPENDS
+#				- Verify dependencies but consider missing dependencies as
+#				  fatal.
 # CHECKSUM_ALGORITHMS
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
@@ -1176,10 +1180,13 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 # Convert OSVERSION to major release number
 _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Sanity checks for chroot/jail building.
+# Skip if OSVERSION specified on cmdline for testing. Only works for bmake.
+.if !defined(.MAKEOVERRIDES) || !${.MAKEOVERRIDES:MOSVERSION}
 .if ${_OSVERSION_MAJOR} != ${UNAMER:R}
 .error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .elif ${_OSVERSION_MAJOR} != ${OSREL:R}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.endif
 .endif
 
 # Only define tools here (for transition period with between pkg tools)
@@ -1309,8 +1316,14 @@ _SUF2=	,${PORTEPOCH}
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DISTVERSIONFULL=	${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
-.if defined(USE_GITHUB) && defined(GH_TAGNAME) && !defined(GH_COMMIT)
+.if defined(USE_GITHUB) && !defined(GH_COMMIT) && empty(MASTER_SITES:MGHC)
+# Only add in DISTVERSIONFULL if GH_TAGNAME if set by port. Otherwise
+# GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice.
+.  if defined(GH_TAGNAME)
 DISTNAME?=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
+.  else
+DISTNAME?=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
+.  endif
 .else
 DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
 .endif
@@ -1545,11 +1558,7 @@ WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .  if defined(GH_COMMIT)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 .  else
-.    if defined(GH_TAGNAME)
 WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
-.    else
-WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${DISTVERSION}
-.    endif
 .  endif
 .endif
 .if defined(NO_WRKSUBDIR)
@@ -2133,32 +2142,15 @@ MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 READLINK_CMD?=	/usr/bin/readlink
 
-# Determine whether or not we can use rootly owner/group functions.
-.if ${UID} == 0
-_BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
-_SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
-_MANOWNGRP=	-o ${MANOWN} -g ${MANGRP}
-.else
-_BINOWNGRP=
-_SHROWNGRP=
-_MANOWNGRP=
-.endif
-
 _SHAREMODE?=	0644
 
 # A few aliases for *-install targets
-INSTALL_PROGRAM= \
-	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_KLD= \
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_LIB= \
-	${INSTALL} ${COPY} ${STRIP} ${_SHROWNGRP} -m ${SHAREMODE}
-INSTALL_SCRIPT= \
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
-INSTALL_DATA= \
-	${INSTALL} ${COPY} ${_SHROWNGRP} -m ${_SHAREMODE}
-INSTALL_MAN= \
-	${INSTALL} ${COPY} ${_MANOWNGRP} -m ${MANMODE}
+INSTALL_PROGRAM=	${INSTALL} ${COPY} ${STRIP} -m ${BINMODE}
+INSTALL_KLD=	${INSTALL} ${COPY} -m ${BINMODE}
+INSTALL_LIB=	${INSTALL} ${COPY} ${STRIP} -m ${SHAREMODE}
+INSTALL_SCRIPT=	${INSTALL} ${COPY} -m ${BINMODE}
+INSTALL_DATA=	${INSTALL} ${COPY} -m ${_SHAREMODE}
+INSTALL_MAN=	${INSTALL} ${COPY} -m ${MANMODE}
 
 INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_LIB="${INSTALL_LIB}" \
@@ -2642,6 +2634,7 @@ PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .endif
+WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
@@ -2675,6 +2668,10 @@ HAS_CONFIGURE=		yes
 
 SET_LATE_CONFIGURE_ARGS= \
      _LATE_CONFIGURE_ARGS="" ; \
+	if [ -z "${CONFIGURE_ARGS:M--localstatedir=*:Q}" ] && \
+	   ./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- --localstatedir > /dev/null; then \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --localstatedir=/var" ; \
+	fi ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${GNU_CONFIGURE_MANPREFIX}/man" ; \
 	fi ; \
@@ -3371,9 +3368,11 @@ do-configure:
 	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
 		| ${XARGS} -n 1 ${DIRNAME}); \
 	for _D in $${CONFIG_GUESS_DIRS}; do \
-		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${RM} $${_D}/config.guess; \
+		${CP} ${TEMPLATES}/config.guess $${_D}/config.guess; \
 		${CHMOD} a+rx $${_D}/config.guess; \
-	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${RM} $${_D}/config.sub; \
+		${CP} ${TEMPLATES}/config.sub $${_D}/config.sub; \
 		${CHMOD} a+rx $${_D}/config.sub; \
 	done
 .endif
@@ -3383,7 +3382,7 @@ do-configure:
 		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
-	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL="/usr/bin/install -c" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_LIB="${INSTALL_LIB}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -3535,8 +3534,8 @@ do-package: ${TMPPLIST}
 	@${MKDIR} ${WRKDIR}/pkg
 	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -f ${PKG_SUFX:S/.//} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
-				|| ${CP} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+			${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}; \
 			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
@@ -3558,7 +3557,7 @@ do-package: ${TMPPLIST}
 delete-package:
 	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
 # When staging, the package may only be in the workdir if not root
-	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
+	@${RM} -f ${PKGFILE} ${WRKDIR_PKGFILE} 2>/dev/null || :
 .endif
 
 .if !target(delete-package-list)
@@ -3577,7 +3576,7 @@ _INSTALL_PKG_ARGS+=	-A
 .endif
 install-package:
 	@if [ -f "${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}" ]; then \
-	    _pkgfile="${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}"; \
+	    _pkgfile="${WRKDIR_PKGFILE}"; \
 	else \
 	    _pkgfile="${PKGFILE}"; \
 	fi; \
@@ -4339,7 +4338,7 @@ _INSTALL_DEPENDS=	\
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 			fi; \
-		else \
+		elif [ -z "${STRICT_DEPENDS}" ]; then \
 			(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 		fi; \
 		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
@@ -4348,7 +4347,7 @@ _INSTALL_DEPENDS=	\
 ${deptype:tl}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
-	@set -e ; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
+	@set -e ; anynotfound=0; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
 		prog=$${i%%:*}; \
 		if [ -z "$$prog" ]; then \
 			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
@@ -4430,6 +4429,9 @@ ${deptype:tl}-depends:
 			fi; \
 		fi; \
 		if [ $$notfound != 0 ]; then \
+			if [ "$$prog" != "${NONEXISTENT}" ]; then \
+				anynotfound=1; \
+			fi; \
 			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
@@ -4437,7 +4439,12 @@ ${deptype:tl}-depends:
 				${_INSTALL_DEPENDS} \
 			fi; \
 		fi; \
-	done
+	done; \
+	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
+		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
+		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the ${deptype:tl}-depends phase."; \
+		exit 1; \
+	fi
 .endif
 .else
 	@${DO_NADA}
@@ -4447,7 +4454,7 @@ ${deptype:tl}-depends:
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@set -e ; \
-	for i in ${LIB_DEPENDS}; do \
+	anynotfound=0; for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*} ; \
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
@@ -4455,6 +4462,7 @@ lib-depends:
 		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
 		libfile=`${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}` ; \
 		if [ -z "$${libfile}" ]; then \
+			anynotfound=1; \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
 			if [ ! -d "$$dir" ] ; then \
@@ -4465,7 +4473,12 @@ lib-depends:
 		else \
 			${ECHO_MSG} " - found ($${libfile})"; \
 		fi ; \
-	done
+	done; \
+	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
+		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
+		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the lib-depends phase."; \
+		exit 1; \
+	fi
 .endif
 
 .endif

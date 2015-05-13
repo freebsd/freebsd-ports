@@ -1,7 +1,7 @@
---- gmetad.orig/Makefile.in	2012-10-01 18:24:48.000000000 +0000
-+++ gmetad/Makefile.in	2012-10-01 18:38:55.000000000 +0000
-@@ -591,8 +591,6 @@
- 	$(FIXCONFIG) gmetad.conf.in
+--- gmetad/Makefile.in.orig	2013-05-07 09:39:40.000000000 -0500
++++ gmetad/Makefile.in	2014-10-14 15:31:54.000000000 -0500
+@@ -659,8 +659,6 @@
+ 	$(FIXCONFIG) gmetad.service.in
  
  install-data-hook:	gmetad.conf
 -	mkdir -p $(DESTDIR)$(sysconfdir) && \

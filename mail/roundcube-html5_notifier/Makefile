@@ -3,6 +3,7 @@
 
 PORTNAME=	html5_notifier
 PORTVERSION=	0.5.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
@@ -17,8 +18,6 @@ BUILD_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
 USE_GITHUB=	yes
 GH_ACCOUNT=	kitist
 GH_PROJECT=	html5_notifier
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	968f570
 
 NO_BUILD=	yes
 

@@ -4,6 +4,8 @@ bin/imapd
 bin/maildiracl
 bin/maildirkw
 bin/maildirmake
+bin/makedat
+bin/makeimapaccess
 bin/pop3d
 @unexec if cmp -s %D/%%CONFDIR%%/imapd-ssl.dist %D/%%CONFDIR%%/imapd-ssl; then rm -f %D/%%CONFDIR%%/imapd-ssl; fi
 %%CONFDIR%%/imapd-ssl.dist
@@ -36,6 +38,7 @@ man/man8/deliverquota.8.gz
 man/man8/imapd.8.gz
 man/man8/mkdhparams.8.gz
 man/man8/mkimapdcert.8.gz
+man/man8/makeimapaccess.8.gz
 man/man8/mkpop3dcert.8.gz
 sbin/imaplogin
 sbin/mkdhparams
@@ -58,12 +61,7 @@ share/courier-imap/mkpop3dcert
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.couriertls
-@exec mkdir -p -m 755 %D/%%CONFDIR%%/shared %D/%%CONFDIR%%/shared
-@exec mkdir -p -m 755 %D/%%CONFDIR%%/shared %D/%%CONFDIR%%/shared.tmp
-@dirrmtry var
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/courier-imap
-@dirrm %%LIBEXECDIR%%
-@dirrm %%CONFDIR%%/shared
-@dirrm %%CONFDIR%%/shared.tmp
-@dirrmtry %%CONFDIR%%
+@dir %%ETCDIR%%/imapaccess
+@dir var
+@dir %%CONFDIR%%/shared
+@dir %%CONFDIR%%/shared.tmp

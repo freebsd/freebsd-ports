@@ -3,7 +3,7 @@
 
 PORTNAME=	delaboratory
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,16 +12,17 @@ COMMENT=	Unique image postprocessing application
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		compiler:c++11-lib gmake
 MAKE_ARGS=	CXX="${CXX}" WXCONFIG="${WX_CONFIG}"
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_UNICODE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-Ofast.*},${CXXFLAGS}, ; \
-		s,CXXFLAGS_WX +=,& ${CXXFLAGS} -I${LOCALBASE}/include,' \
+	@${REINPLACE_CMD} -e 's|-Ofast.*}|${CXXFLAGS}| ; \
+		s|CXXFLAGS_WX +=|& ${CXXFLAGS} -I${LOCALBASE}/include|' \
 			${WRKSRC}/${MAKEFILE}
 
 do-install:

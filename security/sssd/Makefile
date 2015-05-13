@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.11.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -12,6 +12,7 @@ MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libtalloc.so:${PORTSDIR}/devel/talloc \
@@ -25,7 +26,6 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libunistring.so:${PORTSDIR}/devel/libunistring \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libkrb5.so:${PORTSDIR}/security/krb5 \
 		libinotify.so:${PORTSDIR}/devel/libinotify
 BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
 		docbook-xsl>=1:${PORTSDIR}/textproc/docbook-xsl \
@@ -53,10 +53,11 @@ SUB_FILES=	pkg-message
 
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
-USES=		autoreconf gettext gmake iconv libtool pathfix pkgconfig \
-		python:2 shebangfix
+USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
+		python:2 shebangfix gssapi:mit
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	fedoraproject
 
 python_CMD=   ${SETENV} python2
 SHEBANG_FILES=	src/tools/sss_obfuscate \

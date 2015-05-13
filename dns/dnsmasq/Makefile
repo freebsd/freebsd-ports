@@ -3,6 +3,7 @@
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.72
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -33,9 +34,10 @@ NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
-USES=		shebangfix tar:xz
+USES=		cpe shebangfix tar:xz
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
+CPE_VENDOR=	thekelleys
 
 .include <bsd.port.options.mk>
 

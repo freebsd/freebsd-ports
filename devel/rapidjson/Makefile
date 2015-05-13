@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rapidjson
-PORTVERSION=	0.150310
+PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@rawbw.com
@@ -15,8 +16,7 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
-GH_COMMIT=	c745c95
-GH_TAGNAME=	${GH_COMMIT}
+GH_PROJECT=	rapidjson
 
 USES=		cmake compiler:c++11-lang gmake
 
@@ -27,6 +27,8 @@ OPTIONS_SUB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIB_INSTALL_DIR}/pkgconfig"|CMAKE_INSTALL_PREFIX}/libdata/pkgconfig"|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|DOC_INSTALL_DIR}/examples"|CMAKE_INSTALL_PREFIX}/share/examples/${PORTNAME}"|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/example/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/test/unittest/CMakeLists.txt
 
 post-stage:
 	@${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/CMakeFiles

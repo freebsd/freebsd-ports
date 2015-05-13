@@ -10,6 +10,7 @@ MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	High-performance, platform-neutral implementation of VNC
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-servers/xorg-server:patch
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:${PORTSDIR}/graphics/dri \
@@ -23,9 +24,8 @@ CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		cmake gmake libtool pkgconfig python
+USES=		autoreconf:build cmake cpe gmake libtool pkgconfig python
 USE_GL=		gl
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
@@ -131,7 +131,7 @@ post-patch:
 	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver${TIGERVNC_XORG_PATCH_VER}.patch
 
 post-configure:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${AUTORECONF} -fiv
+	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/autoreconf -fiv
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:

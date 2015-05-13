@@ -52,10 +52,10 @@ index d317766..ddb13da 100644
   * http://stackoverflow.com/questions/20498142/visual-studio-2013-explicit-keyword-bug
   */
 +#  define MOZ_HAVE_CXX11_ALIGNAS
- #  define MOZ_HAVE_CXX11_FINAL         final
- #  define MOZ_HAVE_CXX11_OVERRIDE
  #  define MOZ_HAVE_NEVER_INLINE          __declspec(noinline)
-@@ -74,6 +75,9 @@
+ #  define MOZ_HAVE_NORETURN              __declspec(noreturn)
+ #  ifdef __clang__
+@@ -70,6 +71,9 @@
  #  ifndef __has_extension
  #    define __has_extension __has_feature /* compatibility, for older versions of clang */
  #  endif
@@ -65,13 +65,13 @@ index d317766..ddb13da 100644
  #  if __has_extension(cxx_constexpr)
  #    define MOZ_HAVE_CXX11_CONSTEXPR
  #  endif
-@@ -95,6 +99,9 @@
+@@ -84,6 +88,9 @@
  #  endif
  #elif defined(__GNUC__)
  #  if defined(__GXX_EXPERIMENTAL_CXX0X__) || __cplusplus >= 201103L
 +#    if MOZ_GCC_VERSION_AT_LEAST(4, 8, 0)
 +#      define MOZ_HAVE_CXX11_ALIGNAS
 +#    endif
- #    if MOZ_GCC_VERSION_AT_LEAST(4, 7, 0)
- #      define MOZ_HAVE_CXX11_OVERRIDE
- #      define MOZ_HAVE_CXX11_FINAL       final
+ #      define MOZ_HAVE_CXX11_CONSTEXPR
+ #      define MOZ_HAVE_EXPLICIT_CONVERSION
+ #  endif

@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.3.2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -44,7 +45,8 @@ CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
-		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX
+		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX \
+		SYSINFO
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
 		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX
 
@@ -58,11 +60,12 @@ OPTIONS_DEFAULT_sparc64=	DAHDI
 
 EXCHANGE_DESC?=	Exchange calendar support
 NEWG711_DESC?=	New G711 Codec
-SRTP_DESC?=	SecureRTP support (Needs all ports build with WITH_OPENSSL_PORT=yes)
+SRTP_DESC?=	SecureRTP support
 OOH323_DESC?=	ooh323 support
 DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
 PJSIP_DESC?=	Build the PJSIP based SIP channel
+SYSINFO_DESC?=	Use devel/libsysinfo to get system information
 
 OPTIONS_SUB=	yes
 OOH323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
@@ -110,11 +113,11 @@ LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
-PJSIP_LIB_DEPENDS=	libpj.so:${PORTSDIR}/net/pjsip
 PJSIP_CONFIGURE_WITH=	pjproject
 PJSIP_USES=		pkgconfig
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_WITH=	speex
+SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -124,11 +127,20 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
-LIB_DEPENDS+=		libsrtp.so:${PORTSDIR}/net/libsrtp
+.if ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=	libpj.so:${PORTSDIR}/net/pjsip-extsrtp
+.elif ${PORT_OPTIONS:MPJSIP} && ! ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=   libpj.so:${PORTSDIR}/net/pjsip
+.elif ! ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
+LIB_DEPENDS+=   libsrtp.so:${PORTSDIR}/net/libsrtp
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
+		ac_cv_lib_iconv_libiconv_open=no
+.endif
 
 .if ${PREFIX} == ${LOCALBASE}
 VARDIR=/var
@@ -142,10 +154,16 @@ PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 PLIST_SUB+=	VARDIR=${VARDIR}
 
 post-extract:
-	${FIND} ${WRKSRC} -name '*.d' -delete
+	@${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
+	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
+.if ${PORT_OPTIONS:MSYSINFO}
+	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
+.else
+	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
+.endif
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts

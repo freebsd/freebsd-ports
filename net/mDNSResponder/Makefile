@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	561.1.1
+PORTVERSION=	567
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
@@ -30,15 +30,7 @@ EXTRA_MAN1=	dns-sd.1
 EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:C/^(...).*/\1/} == "arm"
-MAKE_ARGS+=	LD="${CC} -shared"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/	cc / s|cc|$${CC}|' ${WRKSRC}/Clients/Makefile
-	@${REINPLACE_CMD} -e 's|mDNSResponder.8|mDNSResponderPosix.8|g' ${WRKSRC}/mDNSPosix/Makefile
 	@${REINPLACE_CMD} -e 's|\(#define IPV6_2292_PKTINFO \).*|\1IPV6_PKTINFO|; s|\(#define IPV6_2292_HOPLIMIT \).*|\1IPV6_HOPLIMIT|' ${WRKSRC}/mDNSPosix/mDNSUNP.h
 	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 ${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 
@@ -51,4 +43,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1 ${STAGEDIR}${PREFIX}/sbin/*
 	${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1 ${STAGEDIR}${PREFIX}/sbin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

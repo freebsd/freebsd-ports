@@ -1,0 +1,75 @@
+--- configure.orig	2011-02-26 21:05:08 UTC
++++ configure
+@@ -13600,7 +13600,7 @@ for TESTFLAG in -O; do
+       #the [e]grep option -v will not give a failure exit status on the atari
+     else
+       if eval $tcomp; then
+-        CFLAGS=$TESTFLAG
++        LCFLAGS=$TESTFLAG
+         break
+       fi
+     fi
+@@ -13608,10 +13608,9 @@ for TESTFLAG in -O; do
+ done
+ for TESTFLAG in -g; do
+   if eval $tcomp; then
+-    CFLAGS="$CFLAGS $TESTFLAG"
++    LCFLAGS="$LCFLAGS $TESTFLAG"
+   fi
+ done
+-LCFLAGS=$CFLAGS
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LCFLAGS" >&5
+ $as_echo "$LCFLAGS" >&6; }
+ 
+@@ -13624,7 +13623,7 @@ for TESTFLAG in -O2 -O; do
+       #the [e]grep option -v will not give a failure exit status on the atari
+     else
+       if eval $tcomp; then
+-        CFLAGS=$TESTFLAG
++        MCFLAGS=$TESTFLAG
+         break
+       fi
+     fi
+@@ -13633,10 +13632,9 @@ done
+ for TESTFLAG in -g; do
+   if eval $tcomp; then
+     OPTFLAGS="$OPTFLAGS $TESTFLAG"
+-    CFLAGS="$CFLAGS $TESTFLAG"
++    MCFLAGS="$MCFLAGS $TESTFLAG"
+   fi
+ done
+-MCFLAGS=$CFLAGS
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MCFLAGS" >&5
+ $as_echo "$MCFLAGS" >&6; }
+ 
+@@ -13649,7 +13647,7 @@ for TESTFLAG in -O4 -O3 -O2 -O; do
+       #the [e]grep option -v will not give a failure exit status on the atari
+     else
+       if eval $tcomp; then
+-        CFLAGS=$TESTFLAG
++        OCFLAGS=$TESTFLAG
+         break
+       fi
+     fi
+@@ -13663,7 +13661,7 @@ if test "$ac_cv_c_compiler_gnu" = "no"; 
+         #the [e]grep option -v will not give a failure exit status on the atari
+       else
+         if eval $tcomp; then
+-          CFLAGS="$CFLAGS $TESTFLAG"
++          OCFLAGS="$OCFLAGS $TESTFLAG"
+           break
+         fi
+       fi
+@@ -13673,10 +13671,10 @@ fi
+ # -funroll-all-loops causes some versions of gcc to produce buggy code
+ for TESTFLAG in -fomit-frame-pointer; do
+   if eval $tcomp; then
+-    CFLAGS="$CFLAGS $TESTFLAG"
++    OCFLAGS="$OCFLAGS $TESTFLAG"
+   fi
+ done
+-OCFLAGS="$CFLAGS $OPTFLAGS"
++OCFLAGS="$OCFLAGS $OPTFLAGS"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $OCFLAGS" >&5
+ $as_echo "$OCFLAGS" >&6; }
+ if ${CC-cc} -g -c conftest.c ; then

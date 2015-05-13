@@ -10,10 +10,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of tools for doing computation in game theory
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib
 USE_GNOME=	gtk20
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes

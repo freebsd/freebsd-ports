@@ -7,7 +7,8 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
 		http://laurentconstantin.free.fr/common/netw/${PORTNAME}/download/v5/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}.tgz ${DISTNAME:S/src/doc_html/}.tgz
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Graphical front end for netwox
@@ -20,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
+WRKSRC_SUBDIR=	src
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}

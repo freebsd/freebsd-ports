@@ -3,7 +3,7 @@
 
 PORTNAME=	monotone-viz
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
@@ -20,6 +20,7 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 
 USES=		gmake
 USE_OCAML=	yes
+USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-local-lablgtk
 

@@ -1,0 +1,9 @@
+bin/cryptominisat
+include/cryptominisat4/cryptominisat.h
+include/cryptominisat4/solverconf.h
+include/cryptominisat4/solvertypesmini.h
+lib/cmake/cryptominisat4/cryptominisat4Config.cmake
+lib/cmake/cryptominisat4/cryptominisat4Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cryptominisat4/cryptominisat4Targets.cmake
+lib/libcryptominisat4.so
+lib/libcryptominisat4.so.0

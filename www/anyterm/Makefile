@@ -3,6 +3,7 @@
 
 PORTNAME=	anyterm
 PORTVERSION=	1.1.29
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://anyterm.org/download/ \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
@@ -23,12 +24,21 @@ ALL_TARGET=	default_target
 PLIST_FILES=	man/man1/anytermd.1.gz \
 		sbin/anytermd
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/private/etc/apache2|${FILESDIR}|' \
 		${WRKSRC}/scripts/mimetype.sh
-	@${REINPLACE_CMD} -e 's|^CPP_FLAGS=|&-I${LOCALBASE}/include |' \
-		-e 's|^LINK_FLAGS=|&-L${ICONV_PREFIX}/lib ${ICONV_LIB} |' ${WRKSRC}/common.mk
-	@${REINPLACE_CMD} -e 's|^COMPILE_FLAGS=|&-I${LOCALBASE}/include |' \
+	@${REINPLACE_CMD} \
+		-e 's|$$(CPP_FLAGS)|& ${CPPFLAGS} |' \
+		-e '/^COMPILE_FLAGS=/s|$$| ${CXXFLAGS}|' \
+		-e 's|$${OPTIMISE_FLAGS}||' \
+		-e 's|$$(LINK_FLAGS)|& -L${ICONV_PREFIX}/lib ${ICONV_LIB} |' \
+		${WRKSRC}/common.mk
+	@${REINPLACE_CMD} \
+		-e '/^COMPILE_FLAGS=/s|$$| ${CXXFLAGS}|' \
+		-e 's|$$(INC_FLAGS)|& ${CPPFLAGS} |' \
+		-e 's|$$(CXXFLAGS)||' -e 's|$$(OPTIMISE_FLAGS)||' \
 		${WRKSRC}/libpbe/common.mk
 
 do-install:

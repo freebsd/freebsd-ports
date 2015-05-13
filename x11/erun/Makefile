@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple epplet for launching arbitrary programs
 
 LIB_DEPENDS=	libepplet.so:${PORTSDIR}/x11-wm/epplets \

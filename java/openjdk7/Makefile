@@ -3,7 +3,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -26,7 +25,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix iconv gmake zip
+USES=		compiler dos2unix iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_ARGS=	CC=${CC:Q} CXX=${CXX:Q} HOST_CC=${CC:Q}
 
@@ -36,8 +35,8 @@ DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
-PORT_MINOR_VERSION=	76
-PORT_BUILD_NUMBER=	13
+PORT_MINOR_VERSION=	80
+PORT_BUILD_NUMBER=	15
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
 JDK_BUILD_NUMBER=	43
@@ -124,6 +123,11 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 .endif
 
 .include <bsd.port.pre.mk>
+
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+MAKE_ENV+=	USE_PRECOMPILED_HEADER=0
+.endif
 
 .if empty(ICONV_LIB)
 MAKE_ENV+=	EXTRA_CFLAGS=-DLIBICONV_PLUG

@@ -14,10 +14,4 @@ COMMENT=	Perl extension to Tiny Encryption Algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_VER} >= 5.18
-BROKEN=		Does not build with Perl 5.18 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

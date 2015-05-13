@@ -582,8 +582,8 @@ sbin/start-stop-daemon
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
-@dir man/hu/man8
-@dir man/hu/man1
+%%NLS%%@dir man/hu/man8
+%%NLS%%@dir man/hu/man1
 @dir etc/dpkg/dselect.cfg.d
 @dir etc/dpkg/dpkg.cfg.d
 @dir %%DPKGDIR%%/updates

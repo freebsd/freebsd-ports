@@ -45,9 +45,3 @@ man/man1/swish-e.1.gz
 %%DATADIR%%/templates/common_footer
 %%DATADIR%%/templates/style.css
 %%DATADIR%%/templates/markup.css
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-@dirrm lib/swish-e/perl/SWISH/Filters
-@dirrm lib/swish-e/perl/SWISH
-@dirrm lib/swish-e/perl
-@dirrm lib/swish-e

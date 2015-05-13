@@ -3,6 +3,7 @@
 
 PORTNAME=	f3
 PORTVERSION=	4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	uffe@uffe.org
@@ -12,8 +13,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AltraMayor
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	55d2017
 
 USES=		gmake pathfix shebangfix
 

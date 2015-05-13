@@ -8,13 +8,19 @@ COMMENT=	Husky FTN configuration library
 
 LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
 
-USES+=		perl5 shebangfix makeinfo
+USES+=		perl5 shebangfix
 SHEBANG_FILES=	util/fconf2areasbbs.pl util/fconf2na.pl util/sq2fc.pl
 USE_LDCONFIG=   yes
 INSTALL_TARGET=	install install-man
 
 MASTERDIR=      ${.CURDIR}/../husky
 COMPONENT_SUBDIR=       fidoconf
+
+# Settings below are required to handle texi output (html, INFO page)
+USES+=		makeinfo
+PORTDOCS=	fidoconfig.html
+DOCSDIR=	${PREFIX}/share/doc/husky
+INFO=		fidoconfig
 
 post-patch:
 	${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \

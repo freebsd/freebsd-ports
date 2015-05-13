@@ -3,7 +3,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	1.01
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS/enigma-game
 DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
@@ -13,8 +13,8 @@ COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
-BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
+		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++ \
+		libenet.so:${PORTSDIR}/net/enet
 
 USES=		gettext gmake lua:51
 USE_SDL=	image mixer sdl ttf

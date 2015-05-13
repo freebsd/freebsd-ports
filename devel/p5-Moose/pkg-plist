@@ -300,6 +300,7 @@ bin/moose-outdated
 %%SITE_ARCH%%/Moose/Manual/MOP.pod
 %%SITE_ARCH%%/Moose/Manual/MethodModifiers.pod
 %%SITE_ARCH%%/Moose/Manual/MooseX.pod
+%%SITE_ARCH%%/Moose/Manual/Resources.pod
 %%SITE_ARCH%%/Moose/Manual/Roles.pod
 %%SITE_ARCH%%/Moose/Manual/Support.pod
 %%SITE_ARCH%%/Moose/Manual/Types.pod
@@ -509,6 +510,7 @@ bin/moose-outdated
 %%PERL5_MAN3%%/Moose::Manual::MOP.3.gz
 %%PERL5_MAN3%%/Moose::Manual::MethodModifiers.3.gz
 %%PERL5_MAN3%%/Moose::Manual::MooseX.3.gz
+%%PERL5_MAN3%%/Moose::Manual::Resources.3.gz
 %%PERL5_MAN3%%/Moose::Manual::Roles.3.gz
 %%PERL5_MAN3%%/Moose::Manual::Support.3.gz
 %%PERL5_MAN3%%/Moose::Manual::Types.3.gz

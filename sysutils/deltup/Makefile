@@ -9,7 +9,7 @@ MASTER_SITES=	http://deltup.org/e107_files/downloads/ \
 		LOCAL/rafan \
 		http://www.bzip.org/${BZIP2_102}/:bzip2102src \
 		http://www.bzip.org/${BZIP2_103}/:bzip2103src
-DISTFILES+=	${PORTNAME}-${PORTVERSION}.tar.gz ${BZIP2_102_SOURCE}:bzip2102src ${BZIP2_103_SOURCE}:bzip2103src
+DISTFILES+=	${DISTNAME}.tar.gz ${BZIP2_102_SOURCE}:bzip2102src ${BZIP2_103_SOURCE}:bzip2103src
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Source delta update program

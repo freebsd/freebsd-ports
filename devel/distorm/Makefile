@@ -3,7 +3,7 @@
 
 PORTNAME?=	distorm
 DISTVERSION=	20121220-r230
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
@@ -85,7 +85,7 @@ check regression-test test: build
 	@cd ${BUILD_WRKSRC}; ./disasm disasm
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${INSTALL_LIB} libdistorm3.a ${STAGEDIR}${PREFIX}/lib; \
+	@(cd ${BUILD_WRKSRC}; ${INSTALL_DATA} libdistorm3.a ${STAGEDIR}${PREFIX}/lib; \
 	${INSTALL_LIB} libdistorm3.so ${STAGEDIR}${PREFIX}/lib/libdistorm3.so.1; \
 	${LN} -sf libdistorm3.so.1 ${STAGEDIR}${PREFIX}/lib/libdistorm3.so; \
 	${INSTALL_PROGRAM} disasm ${STAGEDIR}${PREFIX}/bin)

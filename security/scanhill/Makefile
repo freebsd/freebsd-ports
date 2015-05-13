@@ -2,6 +2,7 @@
 
 PORTNAME=	scanhill
 DISTVERSION=	0.5-p1
+PORTREVISION=	1
 CATEGORIES=	security net-im
 MASTER_SITES=	http://www.enderunix.org/scanhill/ \
 		http://www.sourcefiles.org/Networking/Security/Sniffers/ \
@@ -23,7 +24,8 @@ MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' \
+		-e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanhill ${STAGEDIR}${PREFIX}/bin

@@ -1,4 +1,3 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
@@ -7,8 +6,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/5.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
@@ -183,13 +180,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-encap-pkt.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-network.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-out-pkt.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-concat.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-mirrored-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-raid10-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-raid5-org.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-simple-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-striped-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-striped.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd10.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd11.png

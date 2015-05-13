@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder_nss
-PORTVERSION=	561.1.1
+PORTVERSION=	567
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 DISTNAME=	${PORTNAME:S/_nss//}-${PORTVERSION}

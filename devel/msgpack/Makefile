@@ -1,15 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
-MASTER_SITES=	http://msgpack.org/releases/cpp/
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Binary-based efficient data interchange format focused on performance
+COMMENT=	MessagePack implementation for C and C++
 
-USES=		libtool
+LICENSE=	APACHE20
+
+USE_GITHUB=	yes
+GH_PROJECT= msgpack-c
+
+USES=		libtool:build autoreconf:build
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -24,5 +29,8 @@ USE_GCC=	yes
 # Mayby not working on i386/i486/i586...
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
 .endif
+
+pre-configure:
+	cd ${WRKSRC} && ./bootstrap
 
 .include <bsd.port.post.mk>

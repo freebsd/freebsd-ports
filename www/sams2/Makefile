@@ -14,8 +14,7 @@ LICENSE=	BSD4CLAUSE
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 
-USES=		gmake libtool tar:bzip2
-USE_AUTOTOOLS=	aclocal libtoolize
+USES=		autoreconf gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_PHP=	gd mysql zlib
 USE_MYSQL=	yes
@@ -47,10 +46,8 @@ AP24=		""
 .  endif
 .endif
 
-do-configure:
-	(cd ${WRKSRC} && make -f Makefile.cvs)
-	(cd ${WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
+post-patch:
+	@${MV} ${WRKSRC}/m4/acinclude.m4 ${WRKSRC}
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/sams2 ${STAGEDIR}${PREFIX}/etc/rc.d/

@@ -1,26 +1,26 @@
---- Makefile.orig	2015-03-08 21:59:37.000000000 +0200
-+++ Makefile	2015-03-08 22:41:28.269531000 +0200
-@@ -16,10 +16,6 @@
- 	DEPS += libv4lconvert
+--- Makefile.orig	2015-04-19 07:13:44 UTC
++++ Makefile
+@@ -16,10 +16,6 @@ ifeq ($(V4LCONVERT), 1)
+     DEPS += libv4lconvert
  endif
  
 -ifeq ($(FILTER_AUDIO), 1)
--	DEPS += filteraudio
+-    DEPS += filteraudio
 -endif
 -
  ifeq ($(UNITY), 1)
- 	DEPS += messaging-menu unity
+     DEPS += messaging-menu unity
  endif
-@@ -41,6 +37,7 @@
+@@ -41,6 +37,7 @@ endif
  
  ifeq ($(FILTER_AUDIO), 1)
- 	CFLAGS += -DAUDIO_FILTERING
-+	LDFLAGS += -lfilteraudio
+     CFLAGS += -DAUDIO_FILTERING
++    LDFLAGS += -lfilteraudio
  endif
  
  ifeq ($(UNITY), 1)
-@@ -100,7 +97,7 @@
- 
+@@ -100,7 +97,7 @@ install: utox
+ 	
  	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
  	install -m 644 utox.desktop $(DESTDIR)$(PREFIX)/share/applications/utox.desktop
 -	if [ "$UNITY" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi

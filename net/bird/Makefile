@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	bird
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -16,12 +16,10 @@ LICENSE=	GPLv2
 USES=		bison gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
-USE_CSTD=	gnu89
 
-OPTIONS_DEFINE?=	FIREWALL AGG EXP
+OPTIONS_DEFINE?=	FIREWALL AGG
 FIREWALL_DESC=	Enable firewall protocol
 AGG_DESC=	Enable aggregation protocol (EXPERIMENTAL)
-EXP_DESC=	Enable some experimental patches
 NO_OPTIONS_SORT=	yes
 
 MAKE_JOBS_UNSAFE=	yes
@@ -34,7 +32,6 @@ PLIST_SUB?=	VER=""
 
 FIREWALL_EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
 AGG_EXTRA_PATCHES+=	${FILESDIR}/agg_support.patch
-EXP_EXTRA_PATCHES+=	${FILESDIR}/exp-templates.patch ${FILESDIR}/exp-ll.patch ${FILESDIR}/exp-locks.patch
 
 .include <bsd.port.options.mk>
 

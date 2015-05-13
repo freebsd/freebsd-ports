@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.enlightenment.org/rel/bindings/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-efl-${PORTVERSION}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Python bindings for EFL and Elementary
 
 LICENSE=	GPLv3 LGPL3

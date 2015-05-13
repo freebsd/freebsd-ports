@@ -254,11 +254,14 @@
     SUBDIR += mps-youtube
     SUBDIR += mpv
     SUBDIR += msdl
+    SUBDIR += msopenh264
+    SUBDIR += msx264
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
     SUBDIR += nxtvepg
+    SUBDIR += obs-studio
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools

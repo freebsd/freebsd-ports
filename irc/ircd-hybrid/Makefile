@@ -12,7 +12,7 @@ COMMENT=	Fast irc daemon with a number of new features
 INSTALL_IGNORES=	ircu-* ircd-rat* charby*
 
 # :keepla because port uses lt_dlopen
-USES=		gmake libtool:keepla tar:tgz
+USES=		cpe gmake libtool:keepla tar:tgz
 GNU_CONFIGURE=	yes
 
 USERS=		ircd

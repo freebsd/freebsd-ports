@@ -1,6 +1,6 @@
---- src/basic_fun.cpp.orig	2014-10-10 23:18:05.000000000 +0200
-+++ src/basic_fun.cpp	2014-10-10 23:21:54.000000000 +0200
-@@ -6483,7 +6483,7 @@
+--- src/basic_fun.cpp.orig	2015-04-22 19:37:22 UTC
++++ src/basic_fun.cpp
+@@ -6483,7 +6483,7 @@ BaseGDL* strtok_fun(EnvT* e) {
        while (p < e) 
        {
          // scheme = 1*[ lowalpha | digit | "+" | "-" | "." ]
@@ -9,7 +9,7 @@
          {
            if (e + 1 < ue) goto parse_port;
            else goto just_path;
-@@ -6501,7 +6501,7 @@
+@@ -6501,7 +6501,7 @@ BaseGDL* strtok_fun(EnvT* e) {
        {
          // check if the data we get is a port this allows us to correctly parse things like a.com:80
          p = e + 1;

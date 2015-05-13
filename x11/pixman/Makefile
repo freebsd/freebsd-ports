@@ -2,12 +2,16 @@
 
 PORTNAME=	pixman
 PORTVERSION=	0.32.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Low-level pixel manipulation library
 
-USES=		perl5
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe perl5
 USE_PERL5=	build
 XORG_CAT=	lib
 CONFIGURE_ARGS=	--disable-gtk

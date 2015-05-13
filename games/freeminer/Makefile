@@ -16,8 +16,6 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	900587a
 
 USES=		compiler:c++11-lib cmake
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \

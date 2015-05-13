@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	aalib
-PORTVERSION=	1.4.r5
+DISTVERSION=	1.4rc5
 PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII art library
@@ -38,8 +37,7 @@ post-extract:
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g ; \
-		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
+		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 		-e 's|AC_DEFUN(AM_PATH_AALIB|AC_DEFUN([AM_PATH_AALIB]|g' \

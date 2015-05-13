@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	soapui
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	devel java www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
@@ -12,6 +12,8 @@ COMMENT=	Web service, SOA, and SOAP testing tool
 
 LICENSE=	GPLv2
 
+USES=		cpe
+CPE_VENDOR=	smartbear
 USE_JAVA=	1.6+
 WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''

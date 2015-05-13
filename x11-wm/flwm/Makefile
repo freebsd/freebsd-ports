@@ -19,8 +19,6 @@ USE_XORG=	x11 xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbidulock
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	460c8db
 
 CXXFLAGS+=	-DFL_LIBRARY -I${LOCALBASE}/include/fltk-devel
 

@@ -222,8 +222,8 @@ man/man8/charon-cmd.8.gz
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
-%%DYNAKA%%%%DATADIR%%/templates/config/plugins/gmp.conf
-%%DYNAKA%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.a
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so

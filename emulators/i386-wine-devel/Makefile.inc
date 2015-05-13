@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.39
+PORTVERSION=	1.7.41
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -40,6 +40,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
 USES=		tar:xz
+BUNDLE_LIBS=	yes
 
 GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.36-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono-devel
@@ -64,8 +65,8 @@ PLIST_SUB+=	OSREL${osrel}-COMPHOLIO="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1000510 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100048 && ${OSVERSION} < 1200000))
-IGNORE=		binaries compiled for FreeBSD 8.4+, 9.1+, 10.0+ and -current only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 900000) && !(${OSVERSION} >= 903000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100070 && ${OSVERSION} < 1200000))
+IGNORE=		binaries compiled for FreeBSD 8.4+, 9.3+, 10.1+ and -current only
 DISTFILES=
 .endif
 

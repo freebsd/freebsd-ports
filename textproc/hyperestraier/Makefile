@@ -4,7 +4,7 @@
 
 PORTNAME=	hyperestraier
 PORTVERSION=	1.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	LZO MECAB
@@ -39,8 +39,10 @@ MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japa
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		-e 's/@MYCFLAGS@/@CFLAGS@ -Wall -fPIC -fsigned-char/' \
 		${WRKSRC}/Makefile.in
-	${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
+	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
+	@${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libestraier.so

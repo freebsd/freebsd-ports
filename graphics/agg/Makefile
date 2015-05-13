@@ -16,12 +16,10 @@ LICENSE_FILE=	${WRKSRC}/copying
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_XORG=	x11
-USES=		gmake libtool pathfix pkgconfig
 USE_SDL=	sdl
-USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize automake
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--foreign --add-missing --ignore-deps
 MAKE_ENV=	C="${CC}" AGGCXXFLAGS="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

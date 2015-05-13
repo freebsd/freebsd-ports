@@ -30,7 +30,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	bartTC
-GH_COMMIT=	590645f
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

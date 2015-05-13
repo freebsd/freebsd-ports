@@ -32,7 +32,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 CONFLICTS_INSTALL=	hadoop-1*
 
-USES=		shebangfix
+USES=		cpe shebangfix
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes

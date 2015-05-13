@@ -9,6 +9,15 @@
  "so"
  #elif defined (__APPLE__)
  "dylib"
+@@ -2849,7 +2849,7 @@
+ 
+ #if !defined(WIN32)
+   {
+-    GdkPixbuf* pixbuf = pixbuf_new_from_file_with_mask("icon.bmp");
++    GdkPixbuf* pixbuf = pixbuf_new_from_file_with_mask("bitmaps/icon.bmp");
+     if(pixbuf != 0)
+     {
+       gtk_window_set_icon(window, pixbuf);
 @@ -3479,7 +3479,7 @@
      const char* ENGINEPATH_ATTRIBUTE =
  #if defined(WIN32)

@@ -3,6 +3,9 @@
 include/dpdk
 lib/dpdk
 %%DATADIR%%/examples/Makefile
+%%DATADIR%%/examples/bond/Makefile
+%%DATADIR%%/examples/bond/main.c
+%%DATADIR%%/examples/bond/main.h
 %%DATADIR%%/examples/cmdline/Makefile
 %%DATADIR%%/examples/cmdline/commands.c
 %%DATADIR%%/examples/cmdline/commands.h
@@ -53,6 +56,8 @@ lib/dpdk
 %%DATADIR%%/examples/l2fwd-ivshmem/host/Makefile
 %%DATADIR%%/examples/l2fwd-ivshmem/host/host.c
 %%DATADIR%%/examples/l2fwd-ivshmem/include/common.h
+%%DATADIR%%/examples/l2fwd-jobstats/Makefile
+%%DATADIR%%/examples/l2fwd-jobstats/main.c
 %%DATADIR%%/examples/l2fwd/Makefile
 %%DATADIR%%/examples/l2fwd/main.c
 %%DATADIR%%/examples/l3fwd-acl/Makefile
@@ -99,6 +104,8 @@ lib/dpdk
 %%DATADIR%%/examples/netmap_compat/lib/compat_netmap.h
 %%DATADIR%%/examples/netmap_compat/netmap/netmap.h
 %%DATADIR%%/examples/netmap_compat/netmap/netmap_user.h
+%%DATADIR%%/examples/packet_ordering/Makefile
+%%DATADIR%%/examples/packet_ordering/main.c
 %%DATADIR%%/examples/qos_meter/Makefile
 %%DATADIR%%/examples/qos_meter/main.c
 %%DATADIR%%/examples/qos_meter/main.h
@@ -130,6 +137,8 @@ lib/dpdk
 %%DATADIR%%/examples/quota_watermark/qwctl/commands.h
 %%DATADIR%%/examples/quota_watermark/qwctl/qwctl.c
 %%DATADIR%%/examples/quota_watermark/qwctl/qwctl.h
+%%DATADIR%%/examples/rxtx_callbacks/Makefile
+%%DATADIR%%/examples/rxtx_callbacks/main.c
 %%DATADIR%%/examples/skeleton/Makefile
 %%DATADIR%%/examples/skeleton/basicfwd.c
 %%DATADIR%%/examples/timer/Makefile
@@ -165,6 +174,7 @@ lib/dpdk
 %%DATADIR%%/mk/arch/i686/rte.vars.mk
 %%DATADIR%%/mk/arch/ppc_64/rte.vars.mk
 %%DATADIR%%/mk/arch/x86_64/rte.vars.mk
+%%DATADIR%%/mk/arch/x86_x32/rte.vars.mk
 %%DATADIR%%/mk/exec-env/bsdapp/rte.app.mk
 %%DATADIR%%/mk/exec-env/bsdapp/rte.vars.mk
 %%DATADIR%%/mk/exec-env/linuxapp/rte.app.mk
@@ -177,6 +187,7 @@ lib/dpdk
 %%DATADIR%%/mk/internal/rte.compile-pre.mk
 %%DATADIR%%/mk/internal/rte.depdirs-post.mk
 %%DATADIR%%/mk/internal/rte.depdirs-pre.mk
+%%DATADIR%%/mk/internal/rte.extvars.mk
 %%DATADIR%%/mk/internal/rte.install-post.mk
 %%DATADIR%%/mk/internal/rte.install-pre.mk
 %%DATADIR%%/mk/machine/atm/rte.vars.mk
@@ -196,7 +207,6 @@ lib/dpdk
 %%DATADIR%%/mk/rte.extobj.mk
 %%DATADIR%%/mk/rte.extshared.mk
 %%DATADIR%%/mk/rte.extsubdir.mk
-%%DATADIR%%/mk/rte.extvars.mk
 %%DATADIR%%/mk/rte.gnuconfigure.mk
 %%DATADIR%%/mk/rte.hostapp.mk
 %%DATADIR%%/mk/rte.hostlib.mk
@@ -229,7 +239,7 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/.config
 %%DATADIR%%/x86_64-native-bsdapp-clang/app/cmdline_test
 %%DATADIR%%/x86_64-native-bsdapp-clang/app/test
-%%DATADIR%%/x86_64-native-bsdapp-clang/app/testhost
+%%DATADIR%%/x86_64-native-bsdapp-clang/app/testacl
 %%DATADIR%%/x86_64-native-bsdapp-clang/app/testpipeline
 %%DATADIR%%/x86_64-native-bsdapp-clang/app/testpmd
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/generic/rte_atomic.h
@@ -266,7 +276,7 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_byteorder_64.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_cfgfile.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_common.h
-%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_common_vect.h
+%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_compat.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_config.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_cpuflags.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_cycles.h
@@ -292,6 +302,7 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_ip.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_ip_frag.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_jhash.h
+%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_jobstats.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_kvargs.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_launch.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_lcore.h
@@ -323,6 +334,7 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_prefetch.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_random.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_red.h
+%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_reorder.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_ring.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_rwlock.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_sched.h
@@ -338,10 +350,10 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_table_lpm_ipv6.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_table_stub.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_tailq.h
-%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_tailq_elem.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_tcp.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_timer.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_udp.h
+%%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_vect.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/include/rte_version.h
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/libethdev.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_acl.a
@@ -351,6 +363,7 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_eal.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_hash.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_ip_frag.a
+%%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_jobstats.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_kvargs.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_lpm.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_malloc.a
@@ -361,13 +374,16 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_bond.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_e1000.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_enic.a
+%%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_fm10k.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_i40e.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_ixgbe.a
+%%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_null.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_pcap.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_ring.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_virtio_uio.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_pmd_vmxnet3_uio.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_port.a
+%%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_reorder.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_ring.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_sched.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_table.a

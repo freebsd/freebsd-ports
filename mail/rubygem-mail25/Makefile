@@ -3,6 +3,7 @@
 
 PORTNAME=	mail
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
@@ -13,7 +14,7 @@ COMMENT=	Ruby email handler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mime-types1>=1.25.1:${PORTSDIR}/misc/rubygem-mime-types1 \
+RUN_DEPENDS=	rubygem-mime-types1>=1.16:${PORTSDIR}/misc/rubygem-mime-types1 \
 		rubygem-treetop>=1.4.8:${PORTSDIR}/devel/rubygem-treetop
 
 USE_RUBY=	yes

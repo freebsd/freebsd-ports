@@ -1,0 +1,11 @@
+The magrittr package offers a set of operators which promote semantics
+that will improve your code by
+
+* structuring sequences of data operations left-to-right (as
+  opposed to from the inside and out),
+* avoiding nested function calls,
+* minimizing the need for local variables and function
+  definitions, and
+* making it easy to add steps anywhere in the sequence of operations.
+
+WWW: http://cran.r-project.org/web/magrittr/

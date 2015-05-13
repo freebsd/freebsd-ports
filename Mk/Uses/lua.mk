@@ -1,8 +1,8 @@
 # $FreeBSD$
 #
 # Provide support for lua
-# 
-# MAINTAINER: lua@FreeBSD.org
+#
+# MAINTAINER: ports@FreeBSD.org
 # Usage:
 #
 # USES+=	lua:[version]

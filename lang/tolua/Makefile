@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.tecgraf.puc-rio.br/~celes/tolua/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/
 
-MAINTAINER=	lua@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	toLua: accessing C/C++ code from Lua
 
 USES=		gmake lua

@@ -5,7 +5,6 @@ PORTNAME=	curvedns
 PORTVERSION=	0.88.b
 PORTREVISION=	9
 CATEGORIES=	dns
-DISTNAME=	curvedns-0.88-unstable
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Forwarder adding DNSCurve to an authoritative nameserver
@@ -18,7 +17,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_TAGNAME=	0.87
-GH_COMMIT=	a88e27e
 
 ALL_TARGET=	targets
 

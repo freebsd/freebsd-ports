@@ -86,10 +86,3 @@ bin/tclwebtest
 %%EXAMPLESDIR%%/selftest/simple_form.test
 %%EXAMPLESDIR%%/selftest/strip_comments.test
 %%EXAMPLESDIR%%/selftest/url_anchor.test
-@dirrm %%EXAMPLESDIR%%/selftest
-@dirrm %%EXAMPLESDIR%%/openacs4tests/calendar
-@dirrm %%EXAMPLESDIR%%/openacs4tests
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%LIBDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

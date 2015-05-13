@@ -26,10 +26,11 @@ BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
-USES=		gmake iconv tar:bzip2
+USES=		cpe gmake iconv tar:bzip2
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
 CONFLICTS=	gnupg-2.1.*
+CPE_VENDOR=	gnupg
 
 OPTIONS_DEFINE=		LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
 LDAP_DESC=		LDAP keyserver interface

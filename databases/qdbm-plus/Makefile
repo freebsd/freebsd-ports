@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	2
 PKGNAMESUFFIX=	-plus
 
 COMMENT=	C++ API for QDBM

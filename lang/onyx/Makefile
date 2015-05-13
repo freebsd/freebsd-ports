@@ -3,7 +3,7 @@
 
 PORTNAME=	onyx
 PORTVERSION=	5.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -40,7 +40,7 @@ do-install:
 	${LN} -sf bin/onyx_config ${STAGEDIR}${PREFIX}/bin/${PORTNAME}_config-${PORTVERSION}
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/libonyx
 	${INSTALL_DATA} ${WRKSRC}/lib/libonyx/include/libonyx/*.h ${STAGEDIR}${PREFIX}/include/libonyx
-	${INSTALL_LIB} ${WRKSRC}/lib/libonyx/lib/libonyx.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libonyx/lib/libonyx.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libonyx/lib/libonyx.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libonyx/lib/libonyx.so.13 ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${DATADIR}/nx/modclopt

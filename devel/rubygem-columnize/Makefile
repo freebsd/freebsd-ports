@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	columnize
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

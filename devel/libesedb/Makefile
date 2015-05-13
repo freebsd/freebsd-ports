@@ -3,10 +3,9 @@
 
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20141110
+DISTVERSION=	experimental-20150409
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSN082cmxsbHB0anc/ \
-		https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
+MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,8 +14,8 @@ COMMENT=	Library and tools to access the ESEDB format
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		gettext iconv libtool pathfix python:2
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
+USES=		gettext libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}

@@ -1,22 +1,20 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/libquvi/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	libquvi
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
+PORTREVISION=	4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
 
-LICENSE=	AGPLv3
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	libquvi-scripts>=0.9:${PORTSDIR}/multimedia/libquvi-scripts
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libproxy.so:${PORTSDIR}/net/libproxy \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS LUAJIT
@@ -29,12 +27,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20
-CPPFLAGS+=	-I${LOCALBASE}/include
-INSTALL_TARGET=	install-strip
-
-QUVI_VER=	0.9
-PLIST_SUB+=	VERSION=${QUVI_VER}
 
 PORTDOCS=	*
 
@@ -49,5 +41,9 @@ post-patch:
 .else
 	@${REINPLACE_CMD} 's|lua-5.1|lua-${LUA_VER}|g' ${WRKSRC}/configure
 .endif
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/doc/nd/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

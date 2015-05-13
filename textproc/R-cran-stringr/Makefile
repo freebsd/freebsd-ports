@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stringr
-PORTVERSION=	0.6.2
-PORTREVISION=	7
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,8 @@ COMMENT=	Make it easier to work with strings
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr
+RUN_DEPENDS=	R-cran-stringi>=0.4.1:${PORTSDIR}/textproc/R-cran-stringi \
+		R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr
 
 USES=	cran:auto-plist
 

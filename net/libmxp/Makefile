@@ -12,8 +12,4 @@ COMMENT=	Parser for the MUD eXtension protocol
 USES=		cmake
 USE_LDCONFIG=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e 's|objformat=.*|objformat=elf|g' \
-		${WRKSRC}/configure
-
 .include <bsd.port.mk>

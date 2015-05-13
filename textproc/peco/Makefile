@@ -3,6 +3,7 @@
 
 PORTNAME=	peco
 PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	knu@FreeBSD.org
@@ -15,12 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:${PORTSD
 		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:${PORTSDIR}/devel/go-termbox
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	peco
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	22fc3a4
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}/cmd/peco
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/peco
+WRKSRC_SUBDIR=	cmd/peco
+GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}/cmd/peco
 PLIST_FILES=	bin/peco
 
 post-extract:

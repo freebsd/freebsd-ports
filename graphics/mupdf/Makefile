@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE \
-		http://www.mupdf.com/download/
+MASTER_SITES=	http://www.mupdf.com/download/
 EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	udvzsolt@gmail.com
@@ -22,8 +21,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
-USES=		compiler:c++11-lang pkgconfig gmake
+USES=		cpe compiler:c++11-lang pkgconfig gmake
 USE_XORG=	x11 xext
+
+CPE_VENDOR=	artifex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 

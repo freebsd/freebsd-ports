@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2015-04-25 17:20:16 UTC
++++ CMakeLists.txt
+@@ -183,9 +183,9 @@ if (UNIX)
+         ## also could use `manpath` command output to determine target install path
+         message(STATUS "*** Generating man ***")
+         set(TIDY_MANFILE ${LIB_NAME}.1)
+-        set(TIDY1XSL ../documentation/tidy1.xsl)
+-        set(TIDYHELP ${CMAKE_BINARY_DIR}/tidy-help.xml)
+-        set(TIDYCONFIG ${CMAKE_BINARY_DIR}/tidy-config.xml)
++        set(TIDY1XSL build/documentation/tidy1.xsl)
++        set(TIDYHELP ./tidy-help.xml)
++        set(TIDYCONFIG ./tidy-config.xml)
+         add_custom_target(man ALL DEPENDS "${CMAKE_BINARY_DIR}/${LIB_NAME}")
+  
+         # run built EXE to generate xml output 
+@@ -213,7 +213,7 @@ if (UNIX)
+             VERBATIM
+         )
+ 
+-        install(FILES ${CMAKE_BINARY_DIR}/${TIDY_MANFILE} DESTINATION share/man/man1)
++        install(FILES ${CMAKE_BINARY_DIR}/${TIDY_MANFILE} DESTINATION man/man1)
+     endif ()
+ endif ()
+ 

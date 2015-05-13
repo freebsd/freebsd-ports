@@ -9,26 +9,7 @@
  
  #define MACHINE_WORD_FORMAT	DGL_LITTLE_ENDIAN
  #define MACHINE_FLOAT_FORMAT	DGL_NON_IEEE
-@@ -152,6 +152,18 @@
- 
- 
- /*
-+ * Alpha under FreeBSD
-+ */
-+
-+#if __alpha__ && __FreeBSD__
-+
-+#define MACHINE_WORD_FORMAT	DGL_LITTLE_ENDIAN
-+#define MACHINE_FLOAT_FORMAT	DGL_NON_IEEE
-+
-+#endif /* __alpha__ && __FreeBSD__ */
-+
-+
-+/*
-  * Apple Darwin (Mac OS X) machine dependent setup
-  */
- 
-@@ -321,7 +333,7 @@
+@@ -321,7 +321,7 @@
   */
  
  #if MACHINE_FLOAT_FORMAT == DGL_NON_IEEE

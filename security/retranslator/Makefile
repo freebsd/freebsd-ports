@@ -3,10 +3,10 @@
 
 PORTNAME=	retranslator
 PORTVERSION=	5.0.0
+DISTVERSIONSUFFIX=	-7
 CATEGORIES=	security
 MASTER_SITES=	http://utils.kaspersky.com/updater/retranslator_5.0.0.7/FreeBSD_6.3/ \
 		LOCAL/vg
-DISTNAME=	${PORTNAME}-${PORTVERSION}-7
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	The update utility for Kaspersky applications

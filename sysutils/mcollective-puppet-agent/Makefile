@@ -12,9 +12,6 @@ RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	6e565cb
 
 NO_BUILD=	yes
 

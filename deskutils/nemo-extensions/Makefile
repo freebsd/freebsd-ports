@@ -35,9 +35,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GH_PROJECT=	nemo-extensions
-GH_COMMIT=	6c8ec3a
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	6c8ec3a
 
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \
 		introspection:build libxml2 pygtk2

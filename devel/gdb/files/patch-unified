@@ -1,6 +1,9 @@
---- gdb/gdb.c	Thu Feb 13 13:07:24 2003
-+++ gdb/gdb.c	Wed May 17 00:24:39 2006
-@@ -31,5 +32,11 @@
+diff --git gdb/gdb.c gdb/gdb.c
+index e554015..dcb9925 100644
+--- gdb/gdb.c
++++ gdb/gdb.c
+@@ -28,6 +28,12 @@ main (int argc, char **argv)
+   memset (&args, 0, sizeof args);
    args.argc = argc;
    args.argv = argv;
 -  args.interpreter_p = INTERP_CONSOLE;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,7 @@ RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}Flask-Sockets>=0:${PORTSDIR}/www/py-flask-sockets \
 		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.1:${PORTSDIR}/devel/py-gevent \
 		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0.9.3:${PORTSDIR}/www/py-gevent-websocket \
+		${PYTHON_PKGNAMEPREFIX}intervaltree>=2.0.4:${PORTSDIR}/devel/py-intervaltree \
 		${PYTHON_PKGNAMEPREFIX}ipython>=2.0.0:${PORTSDIR}/devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.3.1:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.22:${PORTSDIR}/devel/py-pyelftools \
@@ -39,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${CHMOD} -R a+rX ${WRKSRC}
-	@${REINPLACE_CMD} '/argparse/d ; /ipython/s/3.0.0/2.0.0/ ; /DateTime/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} '/argparse/d ; /ipython/s/3.0.0/2.0.0/' ${WRKSRC}/setup.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

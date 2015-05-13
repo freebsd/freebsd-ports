@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libecap
-PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 

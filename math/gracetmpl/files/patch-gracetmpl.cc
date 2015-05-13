@@ -1,6 +1,11 @@
---- gracetmpl.cpp.bak	Fri Sep 24 21:56:02 2004
-+++ gracetmpl.cpp	Sat Jun 18 00:18:52 2005
-@@ -24,7 +24,7 @@
+--- gracetmpl.cpp.orig	2004-09-24 16:56:02.000000000 +0400
++++ gracetmpl.cpp
+@@ -21,10 +21,12 @@
+ #include <vector>
+ #include <map>
+ #include <iostream>
++#include <cstring>
++#include <cstdlib>
  
  extern "C" {
  #include <math.h>
@@ -9,7 +14,7 @@
  #include <ctype.h>
  #include <time.h>
  #include <sys/time.h>
-@@ -981,7 +981,7 @@
+@@ -981,7 +983,7 @@ string time2string (const string &format
    gettimeofday(&tv,0);
  
    size= (tm==0) ? 

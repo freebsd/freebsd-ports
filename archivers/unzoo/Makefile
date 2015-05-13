@@ -15,6 +15,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ZOO archive extractor
 
+USES=		cpe
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
 PLIST_FILES=	bin/unzoo man/man1/unzoo.1.gz

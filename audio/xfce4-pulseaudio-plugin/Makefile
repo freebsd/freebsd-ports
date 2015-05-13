@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-pulseaudio-plugin
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}

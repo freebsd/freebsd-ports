@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.98.6
+PORTVERSION=	0.98.7
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -49,7 +49,7 @@ DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool
+USES=		cpe gmake libtool
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 

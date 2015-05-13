@@ -13,7 +13,7 @@ COMMENT=	Mailing list managing made joyful
 
 LICENSE=	MIT
 
-USES=	gmake tar:bzip2
+USES=		cpe gmake tar:bzip2
 
 .if defined(WITH_PHP_WEBINTERFACE)
 USE_PHP=	yes

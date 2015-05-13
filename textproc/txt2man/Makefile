@@ -9,11 +9,16 @@ MASTER_SITES=	http://mvertes.free.fr/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts flat ASCII text to man page format
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake
+USES=		cpe gmake
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX}
+
+CPE_VENDER=	marc_vertes
 
 PLIST_FILES=	bin/bookman bin/src2man bin/txt2man \
 		man/man1/bookman.1.gz man/man1/src2man.1.gz man/man1/txt2man.1.gz

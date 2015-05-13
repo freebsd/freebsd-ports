@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Any
-PORTVERSION=	0.24
-PORTREVISION=	3
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +13,16 @@ COMMENT=	Load class configuration data from a number of file formats
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-General>=2.47:${PORTSDIR}/devel/p5-Config-General
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+OPTIONS_DEFINE=	GENERAL INI JSON XML YAML
+OPTIONS_DEFAULT=GENERAL INI JSON XML YAML
 
-OPTIONS_DEFINE=	INI JSON XML YAML
-OPTIONS_DEFAULT=INI JSON XML YAML
+GENERAL_DESC=	Generic Config format support
 
 USES=		perl5
 USE_PERL5=	configure
 
+GENERAL_BUILD_DEPENDS=	p5-Config-General>=2.47:${PORTSDIR}/devel/p5-Config-General
+GENERAL_RUN_DEPENDS=	p5-Config-General>=2.47:${PORTSDIR}/devel/p5-Config-General
 INI_BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny
 INI_RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny
 JSON_BUILD_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS

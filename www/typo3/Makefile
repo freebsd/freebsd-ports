@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.1.0
+PORTVERSION=	7.2.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -10,8 +10,6 @@ MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
 
 LICENSE=	GPLv2
-
-PORTSCOUT=	limit:^7\.1\.
 
 NO_BUILD=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml

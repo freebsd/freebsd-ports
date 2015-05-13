@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.15
-PORTREVISION=	2
+PORTVERSION=	4.16.1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -12,7 +11,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
+		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool
+LIB_DEPENDS=	libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
 
 USES=		gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes
@@ -24,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
 MAKE_ENV:=	${CONFIGURE_ENV}
+ALL_TARGET=	all makeimapaccess makedat
 
 #
 # options available:
@@ -49,6 +51,7 @@ PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
+		--localstatedir="${PREFIX}/var" \
 		--datadir=${DATADIR} \
 		--libexecdir=${LIBEXECDIR} \
 		--enable-workarounds-for-imap-client-bugs \
@@ -121,6 +124,8 @@ post-patch:
 		${WRKSRC}/libs/imap/imapd-ssl.dist.in
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/makeimapaccess ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/makedat ${STAGEDIR}${PREFIX}/bin/
 .for i in imapd pop3d
 	${INSTALL_DATA} ${WRKSRC}/libs/imap/${i}.cnf ${STAGEDIR}${CONFDIR}/${i}.cnf.dist
 .endfor
@@ -128,9 +133,6 @@ post-install:
 .for a in ${EXTRA_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-	cd ${WRKSRC} && ( ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
-		install-configure ; cd - )
 
 	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
 	@${ECHO_MSG} "in your /etc/pam.d/imap"

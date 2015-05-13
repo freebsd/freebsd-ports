@@ -18,6 +18,8 @@ JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+BROKEN=	is interactive
+
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${DISTNAME}.jar
 

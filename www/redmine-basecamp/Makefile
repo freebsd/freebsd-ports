@@ -14,8 +14,7 @@ RUN_DEPENDS=	redmine>=0.9:${PORTSDIR}/www/redmine
 USE_GITHUB=	yes
 GH_ACCOUNT=	theill
 GH_PROJECT=	redmine-basecamp-theme
-GH_TAGNAME=     ${GH_COMMIT}
-GH_COMMIT=	6812d61
+GH_TAGNAME=     6812d61
 
 NO_BUILD=	yes
 

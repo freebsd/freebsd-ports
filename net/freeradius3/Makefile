@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -92,7 +92,7 @@ LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5 --enable-pthread-support
 .else
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
 .if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
@@ -221,7 +221,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREST}
-LIB_DEPENDS+=	libjson.so:${PORTSDIR}/devel/json-c \
+LIB_DEPENDS+=	libjson-c.so:${PORTSDIR}/devel/json-c \
     		libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
 		--with-libcurl=${LOCALBASE} \

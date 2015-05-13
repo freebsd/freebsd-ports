@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -14,8 +14,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -45,8 +43,7 @@ OPTIONS_EXCLUDE_DragonFly=	SCTP
 
 ERL_RELEASE=	R${PORTVERSION:S/.//g:tu:S/1$/-1/}
 
-USES=		gmake perl5
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

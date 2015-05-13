@@ -6,7 +6,7 @@ PORTVERSION=	1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.nta-monitor.com/files/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	ARP scanning and fingerprinting tool
 
 LICENSE=	GPLv3

@@ -11,8 +11,7 @@ COMMENT=	Full-featured asynchronous I/O library for C
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	e1a62ab
+GH_TAGNAME=	e1a62ab
 USES=		alias autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

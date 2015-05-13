@@ -20,7 +20,7 @@ CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-ICU_PATCHFILE?=	pg-928-icu-2014-06-09.diff.gz
+ICU_PATCHFILE?=	pg-929-icu-2015-04-18.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
@@ -61,6 +61,7 @@ BUILD_DIRS?=	src/port ${INSTALL_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
+PORTREVISION=	1
 COMPONENT=	-server
 USE_RC_SUBR=	postgresql
 USES+=		pgsql:${DISTVERSION:C/([0-9][0-9]*\.[0-9][0-9]*).*/\1/g}

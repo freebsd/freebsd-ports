@@ -9,6 +9,7 @@
 # Add the following line to /etc/rc.conf to enable vnstat:
 #
 # vnstat_enable="YES"
+# vnstat_additional_ifaces="em1"
 
 . /etc/rc.subr
 
@@ -26,11 +27,23 @@ load_rc_config $name
 command="%%PREFIX%%/sbin/vnstatd"
 command_args="-p ${vnstat_pidfile} --config ${vnstat_config}"
 pidfile="${vnstat_pidfile}"
+user_cmd="%%PREFIX%%/bin/vnstat"
 
 start_precmd=vnstat_startprecmd
 
+create_iface_database()
+{
+	local iface="$1"
+	local descr="$2"
+	su -m ${vnstat_user} -c "${user_cmd} --create --iface $iface" >/dev/null 2>&1 ||
+	  ! echo "$name: Failed to create database for the $descr interface $iface" || return 1
+	echo "$name: Created the database for the $descr interface $iface"
+}
+
 vnstat_startprecmd()
 {
+	local dbdir iface
+
 	if [ ! -e ${pidfile%/*} ]; then
 		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*};
 	fi
@@ -38,6 +51,18 @@ vnstat_startprecmd()
 	dbdir=$(grep "^DatabaseDir" ${vnstat_config} | awk 'BEGIN{FS="\042"}{print $2}')
 	if [ ! -d ${dbdir} ]; then
 		install -d -o ${vnstat_user} -g ${vnstat_group} ${dbdir};
+	fi
+
+	iface=$(grep "^Interface" ${vnstat_config} | head -1 | awk 'BEGIN{FS="\042"}{print $2}')
+	if [ -n "${iface}" -a ! -f ${dbdir}/${iface} ]; then
+		create_iface_database $iface "default" || return 1
+	fi
+	if [ -n "${vnstat_additional_ifaces}" ]; then
+		for iface in ${vnstat_additional_ifaces}; do 
+			if [ ! -f ${dbdir}/${iface} ]; then
+				create_iface_database $iface "additional" || return 1
+			fi
+		done
 	fi
 
 	if [ ! -d "/var/run/vnstat" ]; then

@@ -1,10 +1,21 @@
---- CMakeLists.txt.orig        2014-11-01 22:44:51.000000000 +0100
-+++ CMakeLists.txt     2014-11-17 16:36:54.938559771 +0100
-@@ -54,6 +54,7 @@
- set(CMAKE_AUTOMOC ON)
+--- CMakeLists.txt.orig	2015-04-01 19:43:12 UTC
++++ CMakeLists.txt
+@@ -71,9 +71,9 @@ endif (MSVC)
+ option(EnableQtwebengine "Enable QtWebEngine backend (requires Qt 5.4)" OFF)
  
- find_package(Qt5Core REQUIRED)
-+find_package(Qt5Concurrent REQUIRED)
- find_package(Qt5Network REQUIRED)
- find_package(Qt5PrintSupport REQUIRED)
- find_package(Qt5Script REQUIRED)
+ if (${EnableQtwebengine})
+-	find_package(Qt5 5.4.0 REQUIRED COMPONENTS Core Gui Multimedia Network PrintSupport Script Sql WebEngine WebEngineWidgets WebKit WebKitWidgets Widgets)
++	find_package(Qt5 5.4.0 REQUIRED COMPONENTS Concurrent Core Gui Multimedia Network PrintSupport Script Sql WebEngine WebEngineWidgets WebKit WebKitWidgets Widgets)
+ else (${EnableQtwebengine})
+-	find_package(Qt5 5.2.0 REQUIRED COMPONENTS Core Gui Multimedia Network PrintSupport Script Sql WebKit WebKitWidgets Widgets)
++	find_package(Qt5 5.2.0 REQUIRED COMPONENTS Concurrent Core Gui Multimedia Network PrintSupport Script Sql WebKit WebKitWidgets Widgets)
+ endif (${EnableQtwebengine})
+ 
+ set(otter_src
+@@ -311,5 +311,5 @@ install(FILES resources/icons/otter-brow
+ install(FILES resources/icons/otter-browser-128.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/ RENAME otter-browser.png)
+ install(FILES resources/icons/otter-browser-256.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps/ RENAME otter-browser.png)
+ install(FILES otter-browser.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+-install(FILES man/otter-browser.1 DESTINATION share/man/man1/)
++install(FILES man/otter-browser.1 DESTINATION man/man1/)
+ install(TARGETS otter-browser DESTINATION bin/)

@@ -59,8 +59,4 @@ lib/lighttpd/mod_webdav.so
 man/man8/lighttpd.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
-@dirrm lib/lighttpd
-@dirrmtry etc/lighttpd/vhosts.d
-@dirrmtry etc/lighttpd/conf.d
-@dirrmtry etc/lighttpd
-@dirrmtry(%%USER%%,%%GROUP%%,700) %%LOGROOT%%
+@dir(%%USER%%,%%GROUP%%,700) %%LOGROOT%%

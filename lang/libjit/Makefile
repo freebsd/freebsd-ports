@@ -29,6 +29,8 @@ BROKEN=		Segfault during build
 BROKEN=		Fails to compile: invokes i386 asm
 .elif ${ARCH} == "sparc64"
 BROKEN=		Fails to compile: internal gcc error
+.elif ${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		Segfault during build
 .endif
 
 post-patch:

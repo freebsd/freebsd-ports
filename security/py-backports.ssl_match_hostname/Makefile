@@ -7,8 +7,11 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backport of ssl.match_hostname() function
+
+DEPRECATED=	Function match_hostname() is in standard library since Python 2.7.9
+EXPIRATION_DATE=	2015-06-02
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

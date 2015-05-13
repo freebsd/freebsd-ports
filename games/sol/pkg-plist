@@ -1,16 +1,6 @@
+@(games,games,6755) bin/sol
 man/man6/sol.6.gz
-@owner games
-@group games
-@mode 6755
-bin/sol
-@owner
-@group
-@mode
-%%PORTDOCS%%share/doc/sol/CREDITS
-%%PORTDOCS%%share/doc/sol/README
-@owner games
-@group games
-@mode 660
-share/sol/sol.score
-%%PORTDOCS%%@dirrm share/doc/sol
-@dirrm share/sol
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@(games,games,0660) share/sol/sol.score
+@dir(games,games,0770) share/sol

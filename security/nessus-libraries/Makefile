@@ -21,7 +21,7 @@ COMMENT=	Libraries for Nessus, the security scanner
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cipher
+CONFIGURE_ARGS=	--enable-cipher --localstatedir="${PREFIX}/var"
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif

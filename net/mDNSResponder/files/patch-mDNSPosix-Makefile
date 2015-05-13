@@ -1,6 +1,6 @@
---- mDNSPosix/Makefile.orig	2012-10-18 06:11:12.000000000 +0800
-+++ mDNSPosix/Makefile	2014-01-04 11:50:07.945929359 +0800
-@@ -54,8 +54,8 @@
+--- mDNSPosix/Makefile.orig	2015-03-04 03:09:18 UTC
++++ mDNSPosix/Makefile
+@@ -54,8 +54,8 @@ COREDIR = ../mDNSCore
  SHAREDDIR ?= ../mDNSShared
  JDK = /usr/jdk
  
@@ -9,9 +9,9 @@
 +CC ?= @cc
 +BISON = @yacc
  FLEX = @flex
+ ST = @strip
  LD = ld -shared
- CP = cp
-@@ -122,7 +122,7 @@
+@@ -123,7 +123,7 @@ ifeq ($(os),freebsd)
  # If not already defined, set LOCALBASE to /usr/local
  LOCALBASE?=/usr/local
  INSTBASE=$(LOCALBASE)
@@ -20,7 +20,7 @@
  # FreeBSD 4 requires threaded code to be compiled and linked using the "-pthread" option,
  # and requires that the "-lpthread" link option NOT be used
  # This appies only to FreeBSD -- "man cc" on FreeBSD says:
-@@ -216,7 +216,7 @@
+@@ -217,7 +217,7 @@ CFLAGS = $(CFLAGS_COMMON) $(CFLAGS_OS) $
  
  all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder Identify NetMonitor dnsextd $(OPTIONALTARG)
  
@@ -29,8 +29,12 @@
  
  # 'setup' sets up the build directory structure the way we want
  setup:
-@@ -259,10 +259,10 @@
- 	@$(LD) $(LINKOPTS) -o $@ $+
+@@ -257,13 +257,13 @@ libdns_sd: setup $(BUILDDIR)/libdns_sd.$
+ CLIENTLIBOBJS = $(OBJDIR)/dnssd_clientlib.c.so.o $(OBJDIR)/dnssd_clientstub.c.so.o $(OBJDIR)/dnssd_ipc.c.so.o
+ 
+ $(BUILDDIR)/libdns_sd.$(LDSUFFIX): $(CLIENTLIBOBJS)
+-	@$(LD) $(LINKOPTS) -o $@ $+
++	@$(CC) $(LINKOPTS) -shared -Wl,-soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
  	@$(STRIP) $@
  
 -Clients: setup libdns_sd ../Clients/build/dns-sd
@@ -42,7 +46,14 @@
  	@$(MAKE) -C ../Clients
  
  # nss_mdns target builds the Name Service Switch module
-@@ -276,43 +276,43 @@
+@@ -271,49 +271,49 @@ nss_mdns: setup $(BUILDDIR)/$(NSSLIBFILE
+ 	@echo "Name Service Switch module done"
+ 
+ $(BUILDDIR)/$(NSSLIBFILE): $(CLIENTLIBOBJS) $(OBJDIR)/nss_mdns.c.so.o
+-	@$(LD) $(LINKOPTS) -o $@ $+
++	@$(CC) $(LINKOPTS) -shared -Wl,-soname=$(NSSLINKNAME) -o $@ $+
+ 	@$(STRIP) $@
+ 
  #############################################################################
  
  # The Install targets place built stuff in their proper places
@@ -97,7 +108,7 @@
  	$(CP) $< $@
  	chmod ugo+x $@
  	$@ start
-@@ -329,26 +329,26 @@
+@@ -330,26 +330,26 @@ else
  endif
  endif
  
@@ -112,7 +123,7 @@
  	chmod 444 $@
  
 -$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponder.8
-+$(DESTDIR)$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponder.8
++$(DESTDIR)$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponderPosix.8
  	cp $< $@
  	chmod 444 $@
  
@@ -130,7 +141,7 @@
  	$(CP) $< $@
  	chmod 444 $@
  
-@@ -490,6 +490,8 @@
+@@ -491,6 +491,8 @@ $(OBJDIR)/NetMonitor.c.o:            $(C
  $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
  	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
  

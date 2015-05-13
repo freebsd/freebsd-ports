@@ -9,6 +9,7 @@ COMMENT=	Husky FTN tosser
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf \
 		libareafix.so:${PORTSDIR}/news/husky-areafix
 
+USES+=		makeinfo
 ALL_TARGET=	all doc
 INSTALL_TARGET=	install install-doc
 INFO=		hpt

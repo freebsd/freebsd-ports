@@ -15,7 +15,7 @@
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -38,7 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS=	courier-0.65* libunicode-[0-9]*
 
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libunicode.so:${PORTSDIR}/devel/courier-unicode
+		libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 
@@ -48,7 +48,7 @@ FIXDOCPATH=	libs/liblock/lockmail.1 libs/maildir/deliverquota.8.in \
 		libs/maildir/maildirquota.7 libs/maildrop/mailbot.1 \
 		libs/maildrop/maildrop.1.in libs/maildrop/maildropex.7 \
 		libs/maildrop/maildropfilter.7.in libs/maildrop/maildropgdbm.7 \
-		libs/maildrop/makedat.1 libs/maildrop/reformail.1 \
+		libs/maildrop/reformail.1 \
 		libs/rfc2045/makemime.1 libs/rfc2045/reformime.1 \
 		libs/rfc2045/rfc2045.3 libs/rfc822/rfc822.3
 

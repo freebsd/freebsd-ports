@@ -1,16 +1,3 @@
-diff --git lib/cpluff/autogen.sh lib/cpluff/autogen.sh
-index ee0a418..efd5291 100755
---- lib/cpluff/autogen.sh
-+++ lib/cpluff/autogen.sh
-@@ -15,7 +15,7 @@ fi
- 
- # Generate files in top level directory
- cd "$basedir"
--autopoint
-+#autopoint
- rm -f ABOUT-NLS
- test -d auxliary || mkdir auxliary
- libtoolize --automake -f
 diff --git tools/depends/target/ffmpeg/Makefile tools/depends/target/ffmpeg/Makefile
 index 0e08dcf..e94d78f 100644
 --- tools/depends/target/ffmpeg/Makefile

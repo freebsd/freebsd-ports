@@ -2,6 +2,8 @@
 
 PORTNAME=	seafile
 PORTVERSION=	4.0.6
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -25,8 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	v${PORTVERSION}-server
-GH_COMMIT=	adf9a87
 
 USES=		autoreconf iconv libtool pathfix pkgconfig python:2 shebangfix
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh

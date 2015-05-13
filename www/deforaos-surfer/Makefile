@@ -13,7 +13,7 @@ COMMENT=	DeforaOS desktop web browser
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	xsltproc>=0:${PORTSDIR}/textproc/libxslt \
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
 		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \

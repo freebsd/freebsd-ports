@@ -1,9 +1,9 @@
 See ports/180350: if archivers/libzip is installed there's a conflict because
 /usr/local/include ends up being included before the minizip directory inside
 the port.
---- src/Sigil/CMakeLists.txt.orig	2012-10-27 20:24:40.000000000 +0300
-+++ src/Sigil/CMakeLists.txt	2014-01-18 19:08:50.000000000 +0200
-@@ -594,11 +594,11 @@
+--- src/Sigil/CMakeLists.txt.orig	2015-04-12 15:08:13 UTC
++++ src/Sigil/CMakeLists.txt
+@@ -606,11 +606,11 @@ include_directories( BEFORE
                       ${HUNSPELL_INCLUDE_DIRS}
                       ${PCRE_INCLUDE_DIRS}
                       ${tidyLib_SOURCE_DIR}

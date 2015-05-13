@@ -22,3 +22,4 @@ lib/erlang/lib/meck-%%VERSION%%/src/meck_matcher.erl
 lib/erlang/lib/meck-%%VERSION%%/src/meck_proc.erl
 lib/erlang/lib/meck-%%VERSION%%/src/meck_ret_spec.erl
 lib/erlang/lib/meck-%%VERSION%%/src/meck_util.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md

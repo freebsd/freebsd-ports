@@ -6,18 +6,19 @@ PORTVERSION=	1.740
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for system administration for Unix
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
-USES=		perl5 python
+USES=		cpe perl5 python
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
@@ -55,7 +56,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.pyc" -delete
 
 .for module in ldap-server ldap-client ldap-useradmin logrotate status time webalizer
-	@${RM} ${WRKSRC}/${module}/config-\*-linux 
+	@${RM} ${WRKSRC}/${module}/config-\*-linux
 .endfor
 
 	@${PRINTF} "g/^FreeBSD/m0\nwq\n" | ex ${WRKSRC}/os_list.txt

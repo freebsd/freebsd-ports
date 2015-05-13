@@ -4,7 +4,6 @@
 PORTNAME=	ibus-chewing
 PORTVERSION=	1.4.14
 CATEGORIES=	chinese
-DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Chewing engine for IBus

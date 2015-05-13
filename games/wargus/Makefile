@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/59493162/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
 LICENSE=	GPLv2 # or later

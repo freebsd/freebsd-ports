@@ -4,13 +4,9 @@ PORTNAME=	u-boot
 PORTVERSION=	2013.01
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GHL:uboot \
-		http://distcache.FreeBSD.org/local-distfiles/ian/:bootfiles \
-		http://distcache.us-east.FreeBSD.org/local-distfiles/ian/:bootfiles \
-		http://distcache.eu.FreeBSD.org/local-distfiles/ian/:bootfiles \
-		http://distcache.us-west.FreeBSD.org/local-distfiles/ian/:bootfiles
+MASTER_SITES=	LOCAL/ian/:bootfiles
 PKGNAMESUFFIX=	-rpi
-DISTFILES=	u-boot-${PORTVERSION}-${GH_ACCOUNT}-${GH_PROJECT}.tar.gz:uboot \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		rpi-boot-files-2014.10_2.tar.bz2:bootfiles
 
 MAINTAINER=	ian@FreeBSD.org
@@ -24,12 +20,10 @@ BUILD_DEPENDS=  arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc \
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	u-boot-pi
-GH_COMMIT=	6709570
-GH_TAGNAME=	${GH_COMMIT}
+GH_TAGNAME=	6709570
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 USES=		gmake
 SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
 
