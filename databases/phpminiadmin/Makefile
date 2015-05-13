@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpminiadmin
-PORTVERSION=	1.9.140405
+PORTVERSION=	1.9.150108
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
@@ -18,12 +18,9 @@ LICENSE_COMB=	dual
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_PHP=	mysql pcre session
 
 PLIST_FILES=	${WWWDIR_REL}/phpminiadmin.php
-
-.if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	mysql session pcre
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
