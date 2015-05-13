@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 
-The Wargus tool has been installed to "%%DATADIR%%".
+The Wargus tool has been installed to "%%PREFIX%%/bin/wartool".
 
 You can now use this tool to extract Warcraft 2 data for use with the
 Stratagus engine from the following CDs:
@@ -13,10 +13,14 @@ Stratagus engine from the following CDs:
 * German Expansion
 * Spanish Original
 
-If you have one of the above CDs mounted on /cdrom, 'su' to root, change to
-the "%%DATADIR%%" directory and try executing:
+If you have one of the above CDs mounted on /mnt, 'su' to root, and try
+executing:
 
-$ ./build.sh -p /cdrom
+# wartool /mnt %%DATADIR%%
+
+or
+
+# wartool /mnt/data %%DATADIR%%
 
 After your Warcraft 2 data has been successfully extracted, run 'wargus' as
 the user you intend to play the game with.
