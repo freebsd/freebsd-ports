@@ -3,6 +3,7 @@
 
 PORTNAME=	acts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 
 MAINTAINER=	feld@FreeBSD.org
@@ -14,6 +15,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alexjurkiewicz
 
 NO_BUILD=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's|ionice -c3 ||' ${WRKSRC}/acts.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/acts ${STAGEDIR}/${PREFIX}/bin/acts
