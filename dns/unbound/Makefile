@@ -10,10 +10,11 @@ MASTER_SITES=	http://unbound.net/downloads/
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Validating, recursive, and caching DNS resolver
 
-LICENSE=	BSD4CLAUSE
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		gmake libtool
+USES+=		cpe gmake libtool
+CPE_VENDOR=	nlnetlabs
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
