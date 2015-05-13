@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c6e31869-f99f-11e4-9f91-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSRF and man-in-the-middle vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2015-2.php">
+	  <p>XSRF/CSRF vulnerability in phpMyAdmin setup.</p>
+	  <p>By deceiving a user to click on a crafted URL, it is
+	    possible to alter the configuration file being generated
+	    with phpMyAdmin setup.</p>
+	  <p>This vulnerability only affects the configuration file
+	    generation process and does not affect the effective
+	    configuration file. Moreover, the configuration file being
+	    generated is at risk only during the period when it's
+	    writable.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2015-3.php">
+	  <p> Vulnerability allowing man-in-the-middle attack on API
+	    call to GitHub.</p>
+	  <p>A vulnerability in the API call to GitHub can be
+	    exploited to perform a man-in-the-middle attack.</p>
+	  <p>We consider this vulnerability to be serious.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2015-2.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2015-3.php</url>
+      <cvename>CVE-2015-3902</cvename>
+      <cvename>CVE-2015-3903</cvename>
+    </references>
+    <dates>
+      <discovery>2015-05-13</discovery>
+      <entry>2015-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e206df57-f97b-11e4-b799-c485083ca99c">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
