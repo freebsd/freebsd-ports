@@ -58,11 +58,5 @@ share/locale/pt_BR/LC_MESSAGES/hotssh.mo
 share/locale/sl/LC_MESSAGES/hotssh.mo
 share/locale/sv/LC_MESSAGES/hotssh.mo
 share/locale/zh_CN/LC_MESSAGES/hotssh.mo
-@dirrm share/doc/hotssh-0.2.7
-@dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotvte
-@dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib_ui
-@dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib
-@dirrm %%PYTHON_SITELIBDIR%%/hotssh
-@dirrmtry %%PYTHON_SITELIBDIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
