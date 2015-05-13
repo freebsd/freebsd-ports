@@ -15,6 +15,7 @@
     SUBDIR += accountsservice
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
+    SUBDIR += acts
     SUBDIR += adtool
     SUBDIR += afbinit
     SUBDIR += afflib
