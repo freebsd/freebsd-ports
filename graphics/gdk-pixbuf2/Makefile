@@ -13,8 +13,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graphic library for GTK+
 
+LICENSE=	LGPL20 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_XORG=	xt xi x11
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gmake libtool pathfix pkgconfig tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME+=	glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
