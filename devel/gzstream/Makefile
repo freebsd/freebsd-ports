@@ -3,7 +3,7 @@
 
 PORTNAME=	gzstream
 DISTVERSION=	1.5
-PORTREVISION=	
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
