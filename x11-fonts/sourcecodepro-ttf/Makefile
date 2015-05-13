@@ -3,6 +3,7 @@
 
 PORTNAME=	sourcecodepro-ttf
 PORTVERSION=	1.017
+DISTVERSIONSUFFIX=	R
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
@@ -20,7 +21,6 @@ SUB_FILES=	pkg-message
 
 GH_ACCOUNT=	adobe-fonts
 GH_PROJECT=	source-code-pro
-GH_TAGNAME=	${PORTVERSION}R
 USE_GITHUB=	yes
 
 do-install:
