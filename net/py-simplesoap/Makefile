@@ -17,7 +17,6 @@ USES=		python
 
 GH_ACCOUNT=	py${PORTNAME}
 GH_PROJECT=	py${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
