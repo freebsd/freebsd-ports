@@ -43,7 +43,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_frontend_socket.be
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_hooks.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http_bind.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http_poll.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http_ws.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_listener.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_local.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_logger.beam
@@ -57,11 +57,15 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_regexp.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_riak.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_riak_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_router.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_router_multicast.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s_in.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s_out.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_service.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm_mnesia.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm_odbc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm_redis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_socket.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_stun.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sup.beam
@@ -69,6 +73,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_system_monitor.bea
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_tmp_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_update.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_websocket.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_xmlrpc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
@@ -96,6 +101,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/esip_transport.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/esip_udp_sup.beam
 %%LAGER%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/error_logger_lager_h.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/extauth.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ext_mod.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ezlib.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ezlib_app.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ezlib_sup.beam
@@ -157,6 +163,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jlib.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_ret_spec.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_util.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_adhoc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_admin_extra.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_announce.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_blocking.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_caps.beam
@@ -174,8 +181,10 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc_connection.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_last.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_log.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_room.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_multicast.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_offline.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_ping.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_pres_counter.beam
@@ -187,7 +196,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_proxy65_service.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_proxy65_sm.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_proxy65_stream.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_pubsub.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_pubsub_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_register.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_register_web.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_roster.beam
@@ -284,6 +292,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_util.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xmlrpc_codec.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_db_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_index.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_migrate.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
@@ -320,6 +329,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_commands.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_config.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_ctl.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_http.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_sm.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_web_admin.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/eldap.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/esip.hrl
@@ -345,6 +355,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/stun.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/xml.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/xml_gen.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/captcha.sh
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/joincluster
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/leavecluster
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/esip_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/expat_erl.so
