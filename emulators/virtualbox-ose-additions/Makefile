@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.26
+DISTVERSION=	4.3.28
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -111,6 +111,14 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Config.kmk \
 .if ${COMPILER_FEATURES:Mlibc++}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
 .endif
+.endif
+
+.if ${OSVERSION} < 1001514
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk.dri
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-freebsd-drm-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-freebsd-drm-Makefile.kmk
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk.dri2
 .endif
 
 SUB_LIST+=	KMODDIR=${KMODDIR}
