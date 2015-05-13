@@ -101,11 +101,11 @@ pre-fetch:
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+SVN?=	svnlite
 
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
+	${SVN} export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKDIR}/${CLANG_NAME}
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 .if ${USER} == brooks || ${USER} == bed22
