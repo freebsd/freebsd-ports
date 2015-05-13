@@ -1,6 +1,6 @@
---- fontft1.c-orig	2014-07-30 12:45:44.000000000 +0200
-+++ fontft1.c	2014-07-30 12:46:05.000000000 +0200
-@@ -46,6 +46,9 @@
+--- fontft1.c.orig	2014-01-10 09:46:40 UTC
++++ fontft1.c
+@@ -46,6 +46,9 @@ Some of these functions are internal.
  
     We need a compilation probe in Makefile.PL
  */
