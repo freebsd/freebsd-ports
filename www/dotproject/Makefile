@@ -9,7 +9,9 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open Source Project Management tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
