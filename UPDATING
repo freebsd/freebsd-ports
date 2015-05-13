@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150513:
+  AFFECTS: users of lang/perl5*
+  AUTHOR: mat@FreeBSD.org
+
+  The default Perl version has been switched to Perl 5.20.  If you are using
+  binary packages to upgrade your system, you do not have anything to do, pkg
+  upgrade will do the right thing.  For the other people, assuming you are
+  migrating from 5.18 to 5.20, do:
+
+  Portupgrade users:
+	portupgrade -o lang/perl5.20 -f lang/perl5.18
+
+	portupgrade -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  Portmaster users:
+	portmaster -o lang/perl5.20 lang/perl5.18
+
+	portmaster -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  IMPORTANT:
+    In case you have not updated your system in a while, and specifically,
+    followed the 20141126 instructions regarding the new Perl layout, you
+    should follow those more extensive instructions rather than the
+    conservative presented here.
+
 20150510:
   AFFECTS: users of mail/postfix mail/postfix-current
   AUTHOR: ohauer@FreeBSD.org
