@@ -3,6 +3,7 @@
 
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.5beta7
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,8 +21,6 @@ USES=		gmake
 PORTDOCS=	*
 
 GH_ACCOUNT=	mct
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
