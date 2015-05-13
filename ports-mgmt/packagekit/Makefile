@@ -1,19 +1,20 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/ports-mgmt/packagekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.26 2010/10/10 15:49:51 marcus Exp $
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
 PORTREVISION?=	7
 CATEGORIES=	ports-mgmt sysutils
-MASTER_SITES=	http://www.freedesktop.org/software/PackageKit/releases/
-DISTNAME=	PackageKit-${PORTVERSION}
+MASTER_SITES=	http://www.packagekit.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A DBUS packaging abstraction layer
+COMMENT?=	DBUS packaging abstraction layer
 
-BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils
-LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USES=		execinfo gettext gmake iconv libtool pathfix pkgconfig \
@@ -21,22 +22,26 @@ USES=		execinfo gettext gmake iconv libtool pathfix pkgconfig \
 USE_GNOME=	glib20 intltool introspection
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
-USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-INSTALL_TARGET=	install-strip
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
+		--disable-static \
 		--disable-gtk-doc \
+		--disable-managed \
 		--disable-browser-plugin \
 		--disable-gstreamer-plugin \
 		--disable-networkmanager \
-		--disable-systemd \
-		--disable-bash-completion \
 		--disable-connman
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	MANPAGES
+MAKE_JOBS_UNSAFE=yes
+
+.if !defined(SLAVEPORT)
+OPTIONS_DEFINE=	PORTS MANPAGES
+OPTIONS_DEFAULT=PORTS
+PORTS_DESC=Use portupgrade for management, dummy if disabled
 
 .include <bsd.port.options.mk>
 
@@ -44,34 +49,51 @@ OPTIONS_DEFINE=	MANPAGES
 BUILD_DEPENDS+=	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-USE_GNOME+=	libxslt:build
-PLIST_SUB+=	MAN=""
-.else
+PLIST_SUB+=	MAN=''
+. else
 CONFIGURE_ARGS+=--disable-man-pages
-PLIST_SUB+=	MAN="@comment "
-.endif
+PLIST_SUB+=	MAN='@comment '
+. endif
 
-# IMO we should just enable the new (not writted pkgng backend) on systems
-# where pkgng is enabled.
-
-#.if ${PORT_OPTIONS:MPORTS_BACKEND}
-#LIB_DEPENDS+=	pkg:${PORTSDIR}/ports-mgmt/pkg
-#CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
-#PLIST_SUB+=	PORTS=""
-#.else
+. if ${PORT_OPTIONS:MPORTS}
+RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
+USE_RUBY=	yes
+CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
+PLIST_SUB+=	PORTS=""
+. else
 CONFIGURE_ARGS+=--disable-ports --with-default-backend=dummy
 PLIST_SUB+=	PORTS="@comment "
-#.endif
+. endif
 
-# gtk+3 module
 CONFIGURE_ARGS+=--disable-gtk-module
 PLIST_SUB+=	GTK="@comment "
 
+CONFIGURE_ARGS+=--disable-qt
+
+.elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
+LIB_DEPENDS+=	libpackagekit-glib2.so:${PORTSDIR}/ports-mgmt/packagekit
+
+CONFIGURE_ARGS+=--enable-qt
+LIB_DEPENDS+=	libcppunit.so:${PORTSDIR}/devel/cppunit
+USE_QT4+=	dbus gui xml sql moc_build
+#.include "${PORTSDIR}/Mk/bsd.qt.mk"
+.endif
+
 post-patch:
+	@${REINPLACE_CMD} -E -e 's/.*WARNINGFLAGS_CPP.*-Werror/#$$&/' \
+		-e 's|-DG_DISABLE_DEPRECATED||g' \
+		-e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/plugins/pk-lsof.c
+		${WRKSRC}/src/pk-lsof.c
+	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
+		${WRKSRC}/lib/packagekit-glib2/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+	    	'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/var/cache/PackageKit/downloads
+.if !defined(SLAVEPORT)
+	@${INSTALL_DATA} ${WRKSRC}/data/transactions.db \
+	    	${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
+.endif
 
 .include <bsd.port.mk>
