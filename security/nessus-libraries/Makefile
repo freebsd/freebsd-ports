@@ -1,5 +1,5 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
+# $FreeBSD: head/security/nessus-libraries/Makefile 361049 2014-07-07 10:29:17Z tijl $
 
 # Define NESSUS_CLIENT_ONLY if you only want to build this for the nessus
 # client.
@@ -21,13 +21,17 @@ COMMENT=	Libraries for Nessus, the security scanner
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cipher --localstatedir="${PREFIX}/var"
+CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
 USES=		bison libtool
 USE_LDCONFIG=	YES
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/nessus-libraries
+
+.include <bsd.port.pre.mk>
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if ! defined(NESSUS_CLIENT_ONLY)
 pre-everything::
@@ -45,4 +49,4 @@ pre-everything::
 	fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
