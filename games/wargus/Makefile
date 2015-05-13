@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wargus
-PORTVERSION=	2.2.5.5
-PORTREVISION=	3
+PORTVERSION=	2.3.0
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/59493162/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.orig.tar.gz
+MASTER_SITES=	http://launchpadlibrarian.net/200671642/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
@@ -15,29 +13,32 @@ COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus \
+		ffmpeg2theora:${PORTSDIR}/multimedia/ffmpeg2theora \
+		cdparanoia:${PORTSDIR}/audio/cdparanoia
+BUILD_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
-NOT_FOR_ARCHS=	sparc64
-USES=		pathfix gmake pkgconfig
+USES=		cmake pkgconfig
+CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
+		-DSHAREDIR:STRING="${DATADIR_REL}"
+USE_X11=	x11
 USE_GNOME=	gtk20
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-SUB_FILES=	${PORTNAME} pkg-message
+SUB_FILES=	pkg-message
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/^CFLAGS/s|-O2|${CPPFLAGS} ${CFLAGS}|' \
-		-e '/^CXXFLAGS/s|$$| ${CXXFLAGS}|' \
-		-e '/^LDFLAGS/s|$$| ${LDFLAGS}|' \
-		-e '/^GTKFLAGS/s/gtk+-2.0/& x11/' \
-		${WRKSRC}/Makefile
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "campaigns contrib maps scripts" ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${STAGEDIR}${DATADIR}
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+BROKEN=		does not build
+.endif
+
+post-install:
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.post.mk>
