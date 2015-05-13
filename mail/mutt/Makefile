@@ -45,7 +45,7 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--enable-external-dotlock --enable-pop --enable-imap \
 		--disable-warnings
 
-USES+=		shebangfix
+USES+=		cpe shebangfix
 SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
 
 .if defined(MUTT_CONFIGURE_ARGS)
