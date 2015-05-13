@@ -3,6 +3,7 @@
 
 PORTNAME=	leofs
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -15,7 +16,7 @@ EXTRACT_ONLY=	leofs-${PORTVERSION}.tar.gz
 
 DIST_SUBDIR=	${PORTNAME}
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtime16 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:${PORTSDIR}/lang/erlang-runtime17 \
 		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
 		${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 
@@ -63,7 +64,7 @@ DOS2UNIX_FILES=	deps/leo_*/snmp/snmpa_*/leo_*_snmp.config
 
 ALL_TARGET=	release
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang17/bin:${PATH}
 
 LEOFS_DEPS=	\
 	leo-project/leo_gateway=${PORTVERSION}?bf3c4fd:leo_gateway \
