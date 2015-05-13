@@ -1,6 +1,6 @@
---- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2013-11-29 14:20:43.000000000 -0500
-+++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2013-12-16 13:47:34.000000000 -0500
-@@ -27,6 +27,9 @@
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2015-03-16 13:00:34.000000000 -0400
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2015-03-30 02:29:37.842678000 -0400
+@@ -20,6 +20,9 @@
  
  vboxvideo_70_DEFS := \
  	IN_MODULE XORG_7X RENDER=1 IN_RT_STATIC
