@@ -3,7 +3,7 @@
 
 PORTNAME=	acts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils archivers
 
 MAINTAINER=	feld@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	alexjurkiewicz
 NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} 's|ionice -c3 ||' ${WRKSRC}/acts.conf
+	${REINPLACE_CMD} 's|ionice -c3 tarsnap|${LOCALBASE}/bin/tarsnap|' ${WRKSRC}/acts.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/acts ${STAGEDIR}/${PREFIX}/bin/acts
