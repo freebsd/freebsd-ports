@@ -19,4 +19,10 @@ USES=			cmake:outsource
 CMAKE_ARGS+=		-DCPP-NETLIB_BUILD_EXAMPLES=OFF
 USE_GITHUB=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+IGNORE=			requires FreeBSD 9.x or higher
+.endif
+
+.include <bsd.port.post.mk>
