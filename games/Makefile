@@ -1048,6 +1048,7 @@
     SUBDIR += wtf
     SUBDIR += wxlauncher
     SUBDIR += wyrmgus
+    SUBDIR += wyrmsun
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx
