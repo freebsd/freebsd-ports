@@ -1714,5 +1714,6 @@ www/truc/user_edit_my_account_action.php
 www/truc/user_edit_my_account_page.php
 www/truc/user_edit_page.php
 www/truc/user_manage_page.php
+@dir %%WWWDIR%%/file_upload
 @owner root
 @owner wheel
