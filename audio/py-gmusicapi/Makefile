@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmusicapi
-PORTVERSION=	4.0.0.20150104
+PORTVERSION=	5.0.0.20150322
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:${PORTSDIR}/devel/py-appdirs 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
 GH_PROJECT=	Unofficial-Google-Music-API
-GH_TAGNAME=	359b200
+GH_TAGNAME=	cb4dc1f
 
 USES=		python
 USE_PYTHON=	distutils autoplist
