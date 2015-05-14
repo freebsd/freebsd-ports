@@ -1,5 +1,5 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD: head/www/chromium/Makefile 366965 2014-09-01 21:58:53Z rene $
+# $FreeBSD$
 
 PORTNAME=	chromium
 PORTVERSION=	42.0.2311.135
