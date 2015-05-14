@@ -9,6 +9,11 @@ MASTER_SITES=	http://downloads.hercules-390.eu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System/370, ESA/390, and z/Architecture Emulator
 
+LICENSE=	QPL
+LICENSE_NAME=	Q PUBLIC LICENSE version 1.0
+LICENSE_TEXT=	Please refer to: http://www.hercules-390.org/herclic.html for details
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 # :keepla because port uses lt_dlopen
 USES=		iconv libtool:keepla perl5 shebangfix
 SHEBANG_FILES=	util/bldlvlck
@@ -17,8 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimization
 
 OPTIONS_DEFINE=		DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
