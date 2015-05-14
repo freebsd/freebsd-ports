@@ -22,7 +22,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Geometry/Planar/GPC/PolygonXS/PolygonXS.so
 	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Geometry/Planar/GPC/PolygonXS/PolygonXS.so
 
-regression-test test: build
-	@cd ${WRKSRC} && ${MAKE} test
-
 .include <bsd.port.mk>
