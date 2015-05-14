@@ -36,10 +36,7 @@ post-extract:
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKDIR}/base && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/base/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/base" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST}
 
 do-install:
 	cd ${WRKDIR}/base && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DATADIR}/base
