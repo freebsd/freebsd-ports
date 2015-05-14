@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lftp
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://lftp.yar.ru/ftp/ \
 		http://lftp.yar.ru/ftp/old/ \
@@ -49,6 +49,15 @@ OPENSSL_USE=	OPENSSL=yes
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_USES=	pkgconfig
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL}
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
+WITH_OPENSSL_PORT=	yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+. endif
+.endif
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
