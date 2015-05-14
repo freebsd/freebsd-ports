@@ -23,8 +23,8 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libamd.so:${PORTSDIR}/math/suitesparse
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		desktop-file-utils fortran gettext gmake iconv libtool \
-		pathfix pkgconfig shared-mime-info
+USES=		cpe desktop-file-utils fortran gettext gmake iconv \
+		libtool pathfix pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
