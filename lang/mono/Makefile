@@ -18,7 +18,7 @@ COMMENT=	Open source implementation of .NET Development Framework
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		bison compiler:c11 gettext gmake iconv libtool pathfix perl5 tar:bzip2
+USES=		bison compiler:c11 cpe gettext gmake iconv libtool pathfix perl5 tar:bzip2
 USE_GNOME=	glib20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
