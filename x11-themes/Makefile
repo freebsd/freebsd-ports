@@ -84,7 +84,6 @@
     SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt4-engine
-    SUBDIR += gtk-theme-engine-clearlooks
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
     SUBDIR += gtk3-unico-engine

@@ -19,7 +19,6 @@ include/znc/SHA256.h
 include/znc/SSLVerifyHost.h
 include/znc/Server.h
 include/znc/Socket.h
-include/znc/SSLVerifyHost.h
 include/znc/Template.h
 include/znc/Threads.h
 include/znc/User.h
