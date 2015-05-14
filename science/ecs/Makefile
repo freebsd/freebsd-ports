@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecs
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	science
 MASTER_SITES=	http://code-saturne.org/releases/
 
