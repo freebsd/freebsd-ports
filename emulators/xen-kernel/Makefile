@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCH=	amd64
 
-USES=		gmake python:build
+USES=		cpe gmake python:build
 MAKE_ARGS=	HOSTCC="${CC}" CC="${CC}" PYTHON=${PYTHON_CMD} \
 		NM="${NM}" LD="${LD}"
 USE_GCC=	yes
