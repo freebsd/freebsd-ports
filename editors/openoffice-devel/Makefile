@@ -192,13 +192,8 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
-BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
 SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
-
-.if defined(DISABLE_MAKE_JOBS)
-MAKE_JOBS_NUMBER=	4
-.endif
 
 CONFIGURE_ARGS+=							\
 			--with-system-apache-commons=yes		\
@@ -312,7 +307,42 @@ do-build:
 	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
 	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
 	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" FBSD_LDFLAGS="${LDFLAGS}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	#
+	# numproc controls the number of parallel makes.
+	#
+	# dmproc is passed to dmake and controls parallelization at that
+	# level.
+	#
+	# dmproc > numproc seems to give shorter build times than
+	# numproc > dmproc.
+	#
+	# Select values for numproc and dmproc such that:
+	#  * numproc*dmproc >= MAKE_JOBS_NUMBER
+	#  * minimize numproc*dmproc-MAKE_JOBS_NUMBER
+	#  * dmproc >= numproc
+	#  * dmproc <= 2*numproc if MAKE_JOBS_NUMBER <= 3
+	#
+	cd ${WRKSRC} ; . ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ;  \
+	 export LANG=C LC_ALL=C FBSD_LDFLAGS="${LDFLAGS}" ;		  \
+	 if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then			  \
+	  numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	 else								  \
+	  a=1 ;								  \
+	  while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do \
+	   a=$$(( $${a} + 1 )) ;					  \
+	  done ;							  \
+	  b=$$(( $${a} + 1 )) ;						  \
+	  ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
+	  ap=$$(( $${a} * $${ad} )) ;					  \
+	  bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
+	  bp=$$(( $${b} * $${bd} )) ;					  \
+	  if [ $${ap} -le $${bp} ]; then				  \
+	   numproc=$${a} ; dmproc=$${ad} ;				  \
+	  else								  \
+	   numproc=$${b} ; dmproc=$${bd} ;				  \
+	  fi ;								  \
+	 fi ;								  \
+	 build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
