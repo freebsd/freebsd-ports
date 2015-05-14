@@ -5,8 +5,7 @@ PORTNAME=	glm
 PORTVERSION=	0.9.6.3
 PORTEPOCH=	1
 CATEGORIES=	math graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ogl-math/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/ogl-math/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ mathematics library for software based on the OpenGL GLSL

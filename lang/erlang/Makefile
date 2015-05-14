@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/doc/:erlangse			\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
-		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
+		LOCAL/olgeni:local
 DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg

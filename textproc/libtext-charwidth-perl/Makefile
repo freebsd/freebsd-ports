@@ -5,8 +5,7 @@ PORTNAME=	libtext-charwidth-perl
 PORTVERSION=	0.04
 PORTREVISION=	1
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/libt/libtext-charwidth-perl
+MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org

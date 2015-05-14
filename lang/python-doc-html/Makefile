@@ -4,9 +4,8 @@
 PORTNAME=	python-doc-${DOCFORMAT}
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python
-MASTER_SITES=	PYTHON
-MASTER_SITE_SUBDIR=	ftp/python/doc/${PORTVERSION} \
-			ftp/python/doc/current
+MASTER_SITES=	PYTHON/ftp/python/doc/${PORTVERSION} \
+		PYTHON/ftp/python/doc/current
 DISTNAME=	python-${PORTVERSION}-docs-${DOCFORMAT}
 DIST_SUBDIR=	python
 

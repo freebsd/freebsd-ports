@@ -6,16 +6,13 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
+MASTER_SITES=		APACHE/thrift/${PORTVERSION
+DISTNAME=		thrift-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
 PKGNAMESUFFIX=	-c_glib
-
-MASTER_SITES=		APACHE
-MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION
-DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
-DISTNAME=		thrift-${PORTVERSION}
 
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
@@ -25,10 +22,12 @@ USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --copy
 
+DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
+
 USES=		pkgconfig gmake libtool
-GNU_CONFIGURE=  yes
-USE_LDCONFIG=   yes
-MAKE_JOBS_UNSAFE= yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include "../thrift/bsd.thrift.mk"
 

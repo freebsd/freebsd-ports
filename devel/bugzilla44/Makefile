@@ -4,8 +4,7 @@ PORTNAME=	bugzilla
 PORTVERSION=	4.4.8
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	BUGZILLA
-MASTER_SITE_SUBDIR=	webtools webtools/archived
+MASTER_SITES=	BUGZILLA/webtools BUGZILLA/webtools/archived
 
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project

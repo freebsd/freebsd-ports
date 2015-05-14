@@ -6,8 +6,7 @@ PORTNAME=	libaudiofile
 PORTVERSION=	0.3.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/lib//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME/sources/${PORTNAME:S/lib//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	audiofile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org

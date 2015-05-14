@@ -5,8 +5,7 @@ PORTNAME=	wwl
 PORTVERSION=	1.3
 CATEGORIES=	comms hamradio astro geography
 MASTER_SITES=	http://www.db.net/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 DISTNAME=	${PORTNAME}+db-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org

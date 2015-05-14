@@ -5,10 +5,8 @@ PORTNAME=	DBIx-Ease
 PORTVERSION=	0.07
 PORTREVISION=	1
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
-MASTER_SITE_SUBDIR=	mat/:local DBIx/:cpan
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:local,cpan
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Less-code DBI interactions for all drivers

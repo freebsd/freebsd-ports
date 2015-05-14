@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.thundercache.com.br/dist/ \
 		http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
-		${MASTER_SITE_LOCAL}/jmelo
+		LOCAL/jmelo
 DISTNAME=	thundercache-6.1.201104260900-${BITS}-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br

@@ -5,8 +5,7 @@ PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}	# get these from bsd.thrift.mk. any upgrade needs to check ALL dependencies
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	APACHE
-MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
+MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Framework for scalable cross-language services development

@@ -5,8 +5,7 @@ PORTNAME=	dynagen
 PORTVERSION=	0.11.0
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Text-based front end for Dynamips development version

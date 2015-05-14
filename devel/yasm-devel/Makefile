@@ -5,8 +5,7 @@ PORTNAME=		yasm
 PORTVERSION=		1.2.0.29
 DISTVERSIONSUFFIX=	.g87c0
 CATEGORIES=		devel lang
-MASTER_SITES=		http://www.tortall.net/projects/yasm/snapshots/%SUBDIR%/
-MASTER_SITE_SUBDIR=	v${DISTVERSION}${DISTVERSIONSUFFIX}
+MASTER_SITES=		http://www.tortall.net/projects/yasm/snapshots/v${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=		-devel
 
 MAINTAINER=	koobs@FreeBSD.org

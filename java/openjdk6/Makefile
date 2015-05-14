@@ -6,11 +6,10 @@ PORTVERSION=	b34
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
+MASTER_SITES=	APACHE/ant/binaries/:ant \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
 		https://java.net/downloads/openjdk6/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	jkim
+		LOCAL/jkim
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${ANTFILE}:ant \
 		${DISTNAME}${EXTRACT_SUFX}

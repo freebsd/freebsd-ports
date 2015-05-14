@@ -4,8 +4,7 @@
 PORTNAME=	elftoaout
 PORTVERSION=	2.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=pool/main/s/sparc-utils
+MASTER_SITES=	DEBIAN/pool/main/s/sparc-utils
 DISTNAME=	sparc-utils_1.9.orig
 
 MAINTAINER=	ports@FreeBSD.org

@@ -5,8 +5,7 @@ PORTVERSION=	1.650
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
-		${MASTER_SITE_LOCAL:S/$/:up/}
-MASTER_SITE_SUBDIR=	olgeni/:up
+		LOCAL/olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

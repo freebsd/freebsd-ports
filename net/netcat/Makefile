@@ -10,8 +10,7 @@ DISTNAME=	nc${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 #PATCH_SITES=	ftp://sith.mimuw.edu.pl/pub/users/baggins/IPv6/
-PATCH_SITES=	${MASTER_SITE_GENTOO}
-PATCH_SITE_SUBDIR=	distfiles
+PATCH_SITES=	GENTOO
 PATCHFILES=	nc-v6-20000918.patch.gz
 PATCH_DIST_STRIP=	-p1
 

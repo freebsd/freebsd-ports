@@ -5,8 +5,7 @@ PORTVERSION=	2010.01.16
 PORTREVISION=	2
 CATEGORIES=	converters lisp
 PKGNAMEPREFIX=	cl-
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	olgeni
+MASTER_SITES=	LOCAL/olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Charset encoding/decoding library written in Common Lisp

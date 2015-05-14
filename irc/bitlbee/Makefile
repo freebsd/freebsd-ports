@@ -4,8 +4,7 @@ PORTNAME=	bitlbee
 PORTVERSION=	3.4
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brix
+		LOCAL/brix
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IRC to other chat networks gateway

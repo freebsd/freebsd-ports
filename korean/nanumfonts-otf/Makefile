@@ -5,8 +5,7 @@ PORTVERSION=	3.1
 PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://cdn.naver.com/naver/NanumFont/fontfiles/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	jkim
+		LOCAL/jkim
 PKGNAMESUFFIX=	-${FONTTYPE}
 DISTFILES=	NanumFont_${FONTTYPE:tu}_ALL${EXTRACT_SUFX} \
 		NanumFontSetup_${FONTTYPE:tu}_GOTHICECO${EXTRACT_SUFX} \

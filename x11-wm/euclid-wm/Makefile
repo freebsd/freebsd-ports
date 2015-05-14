@@ -4,7 +4,7 @@ PORTNAME=	euclid-wm
 PORTVERSION=	0.4.3
 CATEGORIES=	x11-wm
 #MASTER_SITES=	http://euclid-wm.googlecode.com/files/
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	anastmag@gmail.com
 COMMENT=	Minimalist, tiling window manager for X11

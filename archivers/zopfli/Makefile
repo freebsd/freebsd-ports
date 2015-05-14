@@ -4,7 +4,7 @@
 PORTNAME=	zopfli
 PORTVERSION=	1.0.0
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Zopfli Compression Algorithm

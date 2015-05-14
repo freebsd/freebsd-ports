@@ -4,8 +4,7 @@ PORTNAME=	plopfolio
 PORTVERSION=	0.1.0
 PORTREVISION=	4
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	usr-apps
+MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free clone of KlipFolio for GNUstep

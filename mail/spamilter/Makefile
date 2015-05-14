@@ -5,7 +5,6 @@ PORTVERSION=	0.60
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
-MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail LibMilter filter to block spam

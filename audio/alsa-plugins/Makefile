@@ -5,7 +5,7 @@ PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.29
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins

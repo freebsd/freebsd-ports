@@ -5,8 +5,7 @@ PORTNAME=	xkbctrl
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	unsupported/test/Xkb/programs
+MASTER_SITES=	XORG/unsupported/test/Xkb/programs
 DISTFILES=	Imakefile xkbctrl.c
 
 MAINTAINER=	sanpei@FreeBSD.org

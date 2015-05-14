@@ -4,7 +4,7 @@
 PORTNAME=	pulledpork
 PORTVERSION=	0.7.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules

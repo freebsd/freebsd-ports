@@ -5,7 +5,7 @@ PORTVERSION=	6.99.2
 DISTVERSIONSUFFIX=-source
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games

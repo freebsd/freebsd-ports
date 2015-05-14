@@ -5,7 +5,7 @@ PORTNAME=	supertux
 PORTVERSION=	0.1.3
 PORTREVISION=	12
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers

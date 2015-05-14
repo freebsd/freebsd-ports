@@ -3,19 +3,20 @@
 PORTNAME=	rtgui
 PORTVERSION=	0.2.81
 CATEGORIES=	net-p2p www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web based front end for rTorrent
+
+BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
+
+USES=		tar:tgz
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 
 OPTIONS_RADIO=	HTTP
 OPTIONS_RADIO_HTTP=	APACHE LIGHTTPD
 OPTIONS_DEFAULTS=	APACHE
-
-BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 
 .include <bsd.port.options.mk>
 

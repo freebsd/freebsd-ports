@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://ftp.osuosl.org/pub/blfs/svn/l/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for posting electronic mail

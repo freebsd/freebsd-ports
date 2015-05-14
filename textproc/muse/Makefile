@@ -6,9 +6,8 @@ PORTVERSION=	3.20
 PORTREVISION=	10
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
-		${MASTER_SITE_LOCAL} \
+		LOCAL/dryice \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -6,8 +6,7 @@ PORTVERSION?=	2.5.4
 PORTREVISION?=	2
 CATEGORIES=	news ipv6
 # Master distribution broken
-MASTER_SITES?=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR?=	${PORTNAME}
+MASTER_SITES?=	ISC/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews

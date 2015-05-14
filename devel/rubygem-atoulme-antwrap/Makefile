@@ -4,7 +4,7 @@
 PORTNAME=	atoulme-Antwrap
 PORTVERSION=	0.7.5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_RUBYGEMS}
+MASTER_SITES=	RG
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Ruby wrapper for Apache Ant

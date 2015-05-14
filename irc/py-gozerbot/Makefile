@@ -6,7 +6,7 @@ PORTVERSION=	0.8.1.1
 PORTREVISION=	2
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
-		${MASTER_SITE_GOOGLE_CODE}
+		GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sten@blinkenlights.nl

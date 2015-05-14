@@ -5,8 +5,7 @@ PORTNAME=	source-highlight
 PORTVERSION=	3.1.6
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	src-highlite
+MASTER_SITES=	GNU/src-highlite
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter

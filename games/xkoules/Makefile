@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.ucw.cz/~hubicka/koules/packages/ \
-		GENTOO/distfiles \
+		GENTOO \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME:S/x//}${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME:S/x//}.png:icons

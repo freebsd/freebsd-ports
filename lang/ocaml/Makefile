@@ -7,7 +7,6 @@ PORTVERSION=	4.02.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
-MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER=	michipili@gmail.com

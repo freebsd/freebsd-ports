@@ -5,8 +5,7 @@ PORTNAME=	jpgtn
 PORTVERSION=	2.06
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/misc
+MASTER_SITES=	SUNSITE/apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates thumbnails of JPEG images

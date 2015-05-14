@@ -3,8 +3,7 @@
 
 CATEGORIES=	chinese
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	chinsan/patch
+PATCH_SITES=	LOCAL/chinsan/patch
 PATCHFILES=	zh-joe-3.7.diff
 PATCH_DIST_STRIP=	-p1
 

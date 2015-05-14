@@ -5,8 +5,7 @@ PORTNAME=	festvox
 PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	SF/festlang.berlios/ \
-		${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	festlang
+		BERLIOS/festlang
 PKGNAMESUFFIX=	-russian
 DISTNAME=	msu_ru_nsh_clunits-${PORTVERSION}
 DIST_SUBDIR=	festival

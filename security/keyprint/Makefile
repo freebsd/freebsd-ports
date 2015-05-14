@@ -4,8 +4,7 @@
 PORTNAME=	keyprint
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mharo
+MASTER_SITES=	LOCAL/mharo
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print S/Key keys on a piece of paper, twice the size of a credit card

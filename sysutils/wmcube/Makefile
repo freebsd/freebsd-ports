@@ -5,10 +5,9 @@ PORTNAME=	wmcube
 PORTVERSION=	0.98
 PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	${MASTER_SITE_TUCOWS} \
+MASTER_SITES=	TUCOWS/x11/dock \
 		http://dockapps.org/download.php/id/222/ \
 		http://freebsd.unixfreunde.de/sources/
-MASTER_SITE_SUBDIR=	x11/dock
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3D object

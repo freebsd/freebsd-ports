@@ -7,7 +7,6 @@ PORTREVISION?=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
-MASTER_SITE_SUBDIR=	courier
 .else
 MASTER_SITES=	# empty
 DISTFILES=	# empty

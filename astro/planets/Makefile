@@ -5,7 +5,7 @@ PORTNAME=	planets
 PORTVERSION=	0.1.13
 PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	GENTOO/distfiles \
+MASTER_SITES=	GENTOO \
 		http://planets.homedns.org/dist/
 
 MAINTAINER=	ports@FreeBSD.org

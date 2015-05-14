@@ -5,9 +5,8 @@ PORTNAME=	ntraceroute
 PORTVERSION=	6.4.2
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_NETBSD} \
+MASTER_SITES=	NETBSD/traceroute-nanog \
 		http://mirrors.rit.edu/zi/
-MASTER_SITE_SUBDIR=	traceroute-nanog
 DISTNAME=	traceroute.c
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}

@@ -4,8 +4,7 @@ PORTNAME=	libcdio-paranoia
 PORTVERSION=	10.2+0.90+1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	libcdio
+MASTER_SITES=	GNU/libcdio
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Read audio from the CDROM directly as data

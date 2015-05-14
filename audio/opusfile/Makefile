@@ -5,8 +5,7 @@ PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		${MASTER_SITE_MOZILLA_EXTENDED}
-MASTER_SITE_SUBDIR=	opus
+		MOZILLA_EXTENDED/opus
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Opus playback library

@@ -4,7 +4,7 @@ PORTNAME=	dk
 PORTVERSION=	0.54
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_QMAIL}
+MASTER_SITES=	QMAIL
 PKGNAMEPREFIX=	qmail-
 DISTFILES=	qmail-1.03.tar.gz
 DIST_SUBDIR=	qmail
@@ -14,7 +14,7 @@ COMMENT=	DomainKeys implementation for qmail
 
 LIB_DEPENDS+=	libdomainkeys.so:${PORTSDIR}/mail/libdomainkeys
 
-PATCH_SITES=	${MASTER_SITE_QMAIL}
+PATCH_SITES=	QMAIL
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
 USES=		qmail

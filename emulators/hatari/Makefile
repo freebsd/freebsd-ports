@@ -5,8 +5,7 @@ PORTNAME=	hatari
 PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator

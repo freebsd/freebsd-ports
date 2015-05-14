@@ -4,8 +4,7 @@
 PORTNAME=	x-unikey
 PORTVERSION=	1.0.4
 CATEGORIES=	vietnamese textproc
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	unikey/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/unikey/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese input method for X

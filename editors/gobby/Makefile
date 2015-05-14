@@ -5,7 +5,7 @@ PORTVERSION=	0.4.13
 PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
-		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
+		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Free collaborative editor

@@ -6,8 +6,7 @@ PORTNAME=	guile
 PORTVERSION=	1.8.8
 PORTREVISION=	2
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	guile
+MASTER_SITES=	GNU
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension

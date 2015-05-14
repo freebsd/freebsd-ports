@@ -4,7 +4,7 @@
 PORTNAME=	hatop
 PORTVERSION=	0.7.7
 CATEGORIES=	sysutils net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket

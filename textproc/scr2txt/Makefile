@@ -4,14 +4,12 @@
 PORTNAME=	scr2txt
 PORTVERSION=	1.2
 CATEGORIES=	textproc
-
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= nik
-NO_WRKSUBDIR=	yes
+MASTER_SITES=	LOCAL/nik
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to text
 
+NO_WRKSUBDIR=	yes
 USES=		uidfix
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 

@@ -5,8 +5,7 @@ PORTNAME=	f77flow
 PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SUNSITE
-MASTER_SITE_SUBDIR=	devel/lang/fortran
+MASTER_SITES=	SUNSITE/devel/lang/fortran
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze the structure of a fortran77 program

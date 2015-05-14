@@ -5,10 +5,9 @@ PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:freebsd/} \
-		http://www.irq.org/:original
-MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
-DISTFILES=	bofh-fortune-mod${PORTVERSION}${EXTRACT_SUFX}:original,freebsd
+MASTER_SITES=	LOCAL/flz/${PORTNAME} \
+		http://www.irq.org/
+DISTFILES=	bofh-fortune-mod${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"

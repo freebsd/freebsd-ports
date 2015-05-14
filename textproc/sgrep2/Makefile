@@ -5,8 +5,7 @@ PORTNAME=	sgrep2
 PORTVERSION=	1.94a
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkoshy
+		LOCAL/jkoshy
 DISTNAME=	sgrep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

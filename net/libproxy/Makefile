@@ -6,7 +6,7 @@ PORTNAME=	libproxy
 PORTVERSION=	0.4.6
 PORTREVISION?=	0
 CATEGORIES?=	net devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management

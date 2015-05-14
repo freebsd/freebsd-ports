@@ -2,8 +2,7 @@
 # EPLASER - additional driver for ESC/Page printers, by EPSON AVASYS Corp.
 # http://www.avasys.jp/english/linux_e/index.html
 
-MASTER_SITES+=	${MASTER_SITE_LOCAL}:eplaser
-MASTER_SITE_SUBDIR+=	arved/:eplaser
+MASTER_SITES+=	LOCAL/arved/:eplaser
 DISTFILES+=	eplaser-3.1.4-705.tgz:eplaser
 EXTRADEVMKFILE+=	${WRKSRC}/eplaser/gdevescv7.mak	\
 			${WRKSRC}/eplaser/gdevesmv7.mak

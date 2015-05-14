@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source web framework running on Google App Engine

@@ -6,8 +6,7 @@ PORTNAME=	gtkspell
 PORTVERSION=	2.0.16
 PORTREVISION?=	5
 CATEGORIES=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	marcus
+MASTER_SITES=	LOCAL/marcus
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ 2 spell checking component

@@ -5,7 +5,7 @@ PORTNAME=	tinypy
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	lang python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Minimalist implementation of python in 64k of code

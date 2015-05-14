@@ -4,8 +4,7 @@
 PORTNAME=	xshogi
 PORTVERSION=	1.4.2
 CATEGORIES=	games
-MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	gnushogi
+MASTER_SITES=	GNU/gnushogi
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Japanese chess-like game for X Window System

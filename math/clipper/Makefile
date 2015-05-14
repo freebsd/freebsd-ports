@@ -4,8 +4,7 @@
 PORTNAME=	clipperlib
 PORTVERSION=	6.0.0
 CATEGORIES=	math
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	polyclipping
+MASTER_SITES=	SF/polyclipping
 DISTNAME=	clipper_ver${PORTVERSION}
 
 MAINTAINER=	martin.dieringer@gmx.de

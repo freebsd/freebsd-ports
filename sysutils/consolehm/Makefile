@@ -5,8 +5,7 @@ PORTNAME=	consolehm
 PORTVERSION=	1.31
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fenner
+MASTER_SITES=	LOCAL/fenner
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based hardware monitor for FreeBSD

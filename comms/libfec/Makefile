@@ -6,8 +6,7 @@ PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 DISTNAME=	fec-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org

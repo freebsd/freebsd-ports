@@ -4,8 +4,7 @@
 PORTNAME=	sexplib
 PORTVERSION=	111.03.00
 CATEGORIES=	devel
-MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}/individual
+MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/${PORTVERSION}/individual/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org

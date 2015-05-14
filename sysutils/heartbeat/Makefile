@@ -6,8 +6,7 @@ PORTVERSION=	2.1.4
 PORTREVISION=	24
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama/heartbeat
+MASTER_SITES=	LOCAL/kuriyama/heartbeat
 DISTNAME=	STABLE-${PORTVERSION}
 DIST_SUBDIR=	heartbeat
 

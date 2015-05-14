@@ -8,7 +8,7 @@ MASTER_SITES=	http://dists.lovepeers.org/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-doc-j0.9.5.6-0.tar.gz
 
-PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
+PATCH_SITES=	PORTS_JP \
 		http://dists.lovepeers.org/distfiles/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1

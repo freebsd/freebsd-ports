@@ -4,13 +4,10 @@ PORTNAME=	kterm
 PORTVERSION=	6.2.0
 PORTREVISION=	13
 CATEGORIES=	japanese x11
-MASTER_SITES=	${MASTER_SITE_PORTS_JP:S/$/:wp_jp/} \
-		${MASTER_SITE_XCONTRIB} \
-		${MASTER_SITE_LOCAL:S/$/:wp_local,pcemu/}
-MASTER_SITE_SUBDIR= applications \
-		kterm/:wp_jp \
-		shige/kterm/:wp_local \
-		hrs/:pcemu
+MASTER_SITES=	PORTS_JP/kterm/:wp_jp \
+		XCONTRIB/applications \
+		LOCAL/shige/kterm/:wp_local \
+		LOCAL/hrs/:pcemu
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		README.wallpaper.ja:wp_local,wp_jp \
 		pcemu1.01alpha.tar.gz:pcemu
@@ -20,10 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/:nfs \
 		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/:wpi \
 		http://dists.lovepeers.org/distfiles/:termios \
-		${MASTER_SITE_LOCAL:S/$/:color16,termios,utf/}
-PATCH_SITE_SUBDIR=	shige/kterm/:color16 \
-			nork/:termios \
-			hrs/:utf
+		LOCAL/shige/kterm/:color16 \
+		LOCAL/nork/:termios \
+		LOCAL/hrs/:utf
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-wpi.patch.gz:wpi \
 		${DISTNAME}-color16.patch.gz:color16 \

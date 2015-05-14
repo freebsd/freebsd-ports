@@ -5,9 +5,8 @@ PORTNAME=	xless
 PORTVERSION=	1.7
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+MASTER_SITES=	XCONTRIB/applications \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/
-MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based viewer for text files

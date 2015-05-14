@@ -5,8 +5,7 @@ PORTNAME=		liblug
 PORTVERSION=		1.0.6
 PORTREVISION=		5
 CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/graphics
+MASTER_SITES=		SUNSITE/libs/graphics
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multi-format graphics manipulation library

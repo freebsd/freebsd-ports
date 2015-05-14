@@ -4,14 +4,13 @@
 PORTNAME=	laspack
 PORTVERSION=	1.12.2
 CATEGORIES=	math
-MASTER_SITES=	NL
-MASTER_SITE_SUBDIR=	linalg
+MASTER_SITES=	NL/linalg
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 MAKE_ARGS=	HOME=${STAGEDIR}${PREFIX}

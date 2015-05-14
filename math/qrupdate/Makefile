@@ -5,8 +5,7 @@ PORTNAME=	qrupdate
 PORTVERSION=	1.1.2
 PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qrupdate/qrupdate/1.2
+MASTER_SITES=	SOURCEFORGE/qrupdate/qrupdate/1.2
 
 MAINTAINER=	robertjenssen@ozemail.com.au
 COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition

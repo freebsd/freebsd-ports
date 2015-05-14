@@ -4,7 +4,7 @@
 PORTNAME=	streamhtmlparser
 PORTVERSION=	0.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	itechbear@gmail.com
 COMMENT=	C/C++/Python streaming HTML parser library from Google
