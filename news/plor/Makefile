@@ -5,8 +5,7 @@ PORTNAME=	plor
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= system/bbs/mail
+MASTER_SITES=	SUNSITE/system/bbs/mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alpha-release reader for reading SOUP and QWK packets

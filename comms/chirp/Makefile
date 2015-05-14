@@ -5,8 +5,7 @@ PORTVERSION=	0.4.1
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://chirp.danplanet.com/download/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Chirp is a free, open-source tool for programming your amateur radio

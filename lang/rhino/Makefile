@@ -6,8 +6,7 @@ DISTVERSION=	1_7R4
 CATEGORIES=	lang java
 MASTER_SITES=	http://cloud.github.com/downloads/mozilla/rhino/:rhino \
 		LOCAL/nivit/${PORTNAME}/:swingex \
-		${MASTER_SITE_APACHE}:xmlbeans
-MASTER_SITE_SUBDIR=	xmlbeans/binaries/:xmlbeans
+		APACHE/xmlbeans/binaries/:xmlbeans
 DISTFILES=	${PORTNAME}${DISTVERSION}.zip:rhino \
 		src.zip:swingex \
 		xmlbeans-2.5.0.zip:xmlbeans

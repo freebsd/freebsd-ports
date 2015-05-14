@@ -5,10 +5,9 @@ PORTNAME=	subversion
 PORTVERSION=	1.7.20
 PORTREVISION?=	0
 CATEGORIES+=	devel
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	APACHE/subversion
 DIST_SUBDIR=	subversion17
 PKGNAMESUFFIX=	17
-MASTER_SITE_SUBDIR=	subversion
 
 USE_KDE4=	# Used below if KWallet support is enabled
 GNU_CONFIGURE=	yes

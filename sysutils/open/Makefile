@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.hs-niederrhein.de/pub/linux/src/ \
 		ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/utils/console/ \
-		${MASTER_SITE_LOCAL:S^$^fjoe/^}
+		LOCAL/fjoe
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Open opens a new vt and runs a command on it

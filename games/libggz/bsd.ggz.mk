@@ -5,9 +5,8 @@
 GGZ_VERSION=	0.0.14.1
 
 MASTER_SITES=	\
-	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
-	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+	http://mirrors.dotsrc.org/ggzgamingzone/ggz/${PORTVERSION}/ \
+	http://ftp.ggzgamingzone.org/pub/ggz/${PORTVERSION}/
 DIST_SUBDIR=	ggz
 
 # components section

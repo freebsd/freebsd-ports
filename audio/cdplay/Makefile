@@ -5,8 +5,7 @@ PORTNAME=	cdplay
 PORTVERSION=	0.92
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dannyboy
+MASTER_SITES=	LOCAL/dannyboy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD-player with text-based user interface

@@ -5,8 +5,7 @@ PORTNAME=	isnprober
 PORTVERSION=	1.02
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.ubizen.com/tools/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/scanners
+		PACKETSTORM/UNIX/scanners
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	PenTest tool for TCP Initial Sequence Numbers research

@@ -5,7 +5,7 @@ PORTNAME=	font-manager
 PORTVERSION=	0.5.7
 PORTREVISION=	5
 CATEGORIES=	x11-fonts gnome
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Font management application for the GNOME desktop

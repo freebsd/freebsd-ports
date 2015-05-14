@@ -5,7 +5,7 @@ PORTNAME=	honggfuzz
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	General-purpose fuzzer with simple, command-line interface

@@ -5,8 +5,7 @@ PORTNAME=	tvdownloader
 PORTVERSION=	0.7.2
 PORTREVISION=	5
 CATEGORIES=	french multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-MASTER_SITE_SUBDIR=
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Download podcasts and videos from French websites

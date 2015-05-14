@@ -4,8 +4,8 @@
 PORTNAME=	foo2zjs
 PORTVERSION=	20140417
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S,$,bsam/${PORTNAME}/,}  \
+MASTER_SITES=	GOOGLE_CODE \
+		LOCAL/bsam/${PORTNAME}  \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org

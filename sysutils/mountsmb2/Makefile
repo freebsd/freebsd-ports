@@ -4,8 +4,7 @@
 PORTNAME=	mountsmb2
 PORTVERSION=	0.90.2
 CATEGORIES=	sysutils net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	lippe
+MASTER_SITES=	LOCAL/lippe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login

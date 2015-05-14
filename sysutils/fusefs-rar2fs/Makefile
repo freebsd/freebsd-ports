@@ -5,7 +5,7 @@ PORTNAME=	rar2fs
 PORTVERSION=	1.15.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:rar2fs http://www.rarlab.com/rar/:unrarsrc
+MASTER_SITES=	GOOGLE_CODE:rar2fs http://www.rarlab.com/rar/:unrarsrc
 PKGNAMEPREFIX=	fusefs-
 DISTFILES=	rar2fs-1.15.1.tar.gz:rar2fs unrarsrc-4.2.4.tar.gz:unrarsrc
 

@@ -6,8 +6,7 @@ PORTVERSION=	0.11
 PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	uqs
+		LOCAL/uqs
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	uqs@FreeBSD.org

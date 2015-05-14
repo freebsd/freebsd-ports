@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www1.at.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www.eu.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www1.jp.squid-cache.org/Versions/v3/${PORTVERSION:R}/
-MASTER_SITE_SUBDIR=	squid
 DIST_SUBDIR=	squid${PORTVERSION:R}
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \

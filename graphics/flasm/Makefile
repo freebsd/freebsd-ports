@@ -3,9 +3,8 @@
 PORTNAME=	flasm
 PORTVERSION=	1.62
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/kuriyama \
 		http://www.nowrap.de/download/
-MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	flasm16src
 
 MAINTAINER=	kuriyama@FreeBSD.org

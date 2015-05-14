@@ -5,7 +5,7 @@ PORTNAME=	iksemel
 PORTVERSION=	1.4
 PORTREVISION=	6
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	rhaamo@gruik.at
 COMMENT=	XML parser library mainly designed for Jabber applications

@@ -4,8 +4,7 @@
 PORTNAME=	clambc
 DISTVERSION=	0.98.5rc1
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	clamav/${PORTNAME:tl}
+MASTER_SITES=	SF/clamav/${PORTNAME:tl}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Bytecode signature compiler for ClamAV

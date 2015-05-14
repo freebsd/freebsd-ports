@@ -5,8 +5,7 @@ PORTNAME=	pic2fig
 PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	XCONTRIB/utilities
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pic format to fig format converter

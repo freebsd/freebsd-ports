@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Mirror/mirror/ \
 		http://komquats.com/distfiles/ \
-		${MASTER_SITE_LOCAL}/cy/
+		LOCAL/cy
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch

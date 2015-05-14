@@ -5,7 +5,7 @@ PORTNAME=	ldapenter
 PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	sysutils editors net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add/Modify LDAP entries using template forms

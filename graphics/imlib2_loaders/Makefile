@@ -6,8 +6,7 @@ PORTVERSION=	1.4.6
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment/imlib2-src/${PORTVERSION}
+MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2

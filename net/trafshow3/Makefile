@@ -6,10 +6,8 @@ PORTVERSION=	3.1
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sem
+MASTER_SITES=	LOCAL/sem
 PKGNAMESUFFIX=	3
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic (an ancient version)
@@ -21,6 +19,7 @@ CONFLICTS=	trafshow-[45].*
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 .endif
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

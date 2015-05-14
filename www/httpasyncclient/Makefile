@@ -4,8 +4,7 @@
 PORTNAME=	httpasyncclient
 DISTVERSION=	4.0.2
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
+MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/binary
 DISTNAME=	httpcomponents-asyncclient-${DISTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org

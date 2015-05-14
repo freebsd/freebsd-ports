@@ -8,9 +8,8 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	sniffit.0.3.7.beta
 
-PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL} \
-		http://www.mavetju.org/download/adopted/:patches
-PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz:patches
+PATCH_SITES=	http://www.mavetju.org/download/adopted/
+PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	edwin@mavetju.org

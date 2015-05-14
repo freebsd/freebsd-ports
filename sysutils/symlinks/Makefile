@@ -4,8 +4,7 @@
 PORTNAME=	symlinks
 PORTVERSION=	1.4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file
+MASTER_SITES=	SUNSITE/utils/file
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Symbolic link maintenance utility

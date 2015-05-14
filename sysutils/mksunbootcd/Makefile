@@ -5,7 +5,7 @@ PORTNAME=	mksunbootcd
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITES=	NETBSD
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes ISO images suitable to boot on sparc systems

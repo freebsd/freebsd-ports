@@ -6,7 +6,7 @@ PORTVERSION=	1.45
 PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/a2ps|}
+		LOCAL/tota/a2ps
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=	# empty
 

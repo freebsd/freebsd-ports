@@ -4,9 +4,8 @@
 PORTNAME=	superiotool
 DISTVERSION=	20121019
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/avg \
 		http://www.icyb.net.ua/~avg/distfiles/
-MASTER_SITE_SUBDIR=avg
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Helper tool for Super I/O chip detection and analysis

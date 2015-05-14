@@ -6,15 +6,13 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
+PKGNAMESUFFIX=	-cpp
+MASTER_SITES=		APACHE/thrift/${PORTVERSION}
+DISTNAME=		thrift-${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	C++ interface to Thrift
 
-PKGNAMESUFFIX=	-cpp
-
-MASTER_SITES=		APACHE
-MASTER_SITE_SUBDIR=	thrift/${PORTVERSION}
-DISTNAME=		thrift-${PORTVERSION}
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \

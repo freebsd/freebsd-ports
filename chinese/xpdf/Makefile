@@ -6,9 +6,8 @@ PORTVERSION=	3.03
 PORTEPOCH=	2
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
-		${MASTER_SITE_TEX_CTAN} \
+		TEX_CTAN/support/xpdf \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	support/xpdf
 PKGNAMESUFFIX=	-zhfont
 DISTFILES=	xpdf-chinese-simplified-2011-sep-02${EXTRACT_SUFX} \
 		xpdf-chinese-traditional-2011-sep-02${EXTRACT_SUFX}

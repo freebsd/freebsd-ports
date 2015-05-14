@@ -6,7 +6,7 @@ PORTVERSION=	0.4.4
 PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support

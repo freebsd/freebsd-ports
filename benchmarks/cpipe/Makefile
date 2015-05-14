@@ -4,8 +4,7 @@
 PORTNAME=	cpipe
 PORTVERSION=	3.0.2
 CATEGORIES=	benchmarks
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	cpipe.berlios
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	chris@uminac.com
 COMMENT=	Benchmarking tool for pipes

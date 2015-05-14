@@ -4,7 +4,7 @@ PORTNAME=	keybinder
 PORTVERSION=	0.3.0
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts

@@ -6,8 +6,7 @@ PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	${MAIN_PR}
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		LOCAL/marino:boot ${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	${MS_SUBDIR}
+		LOCAL/marino:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.bz2
 
 MAINTAINER=	marino@FreeBSD.org

@@ -4,8 +4,7 @@
 PORTNAME=	mplex
 PORTVERSION=	1.1
 CATEGORIES=	multimedia
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	sanpei
+MASTER_SITES=	LOCAL/sanpei
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Multiplexes MPEG component streams into system layers

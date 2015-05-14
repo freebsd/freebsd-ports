@@ -4,8 +4,7 @@
 PORTNAME=	iconv-extra
 PORTVERSION=	2.0
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	bland
+MASTER_SITES=	LOCAL/bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Additional charsets for the iconv library (those from the Unicode site)

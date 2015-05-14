@@ -5,9 +5,8 @@ PORTNAME=	ejabberd
 PORTVERSION=	15.04
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
-		http://distfiles.pirateparty.in/%SUBDIR%/:deps \
-		LOCAL:deps
-MASTER_SITE_SUBDIR=	ashish/:deps
+		http://distfiles.pirateparty.in/ashish/:deps \
+		LOCAL/ashish:deps
 DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-2.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org

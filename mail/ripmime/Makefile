@@ -5,8 +5,7 @@ PORTNAME=	ripmime
 PORTVERSION=	1.4.0.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package

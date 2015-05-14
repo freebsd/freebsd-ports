@@ -7,8 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \
-		${MASTER_SITE_LOCAL:S/$/:mandocs/}
-MASTER_SITE_SUBDIR=	jase/weechat/:mandocs
+		LOCAL/jase/weechat/:mandocs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jase@FreeBSD.org

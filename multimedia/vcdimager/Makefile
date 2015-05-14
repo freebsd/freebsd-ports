@@ -5,8 +5,7 @@ PORTNAME=	vcdimager
 PORTVERSION=	0.7.24
 PORTREVISION=	6
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	vcdimager
+MASTER_SITES=	GNU
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool

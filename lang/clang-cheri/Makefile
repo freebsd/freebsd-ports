@@ -3,8 +3,7 @@
 PORTNAME=	clang-cheri
 PORTVERSION=	3.7.d20150512
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITES=	LOCAL/brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler with CHERI CPU support

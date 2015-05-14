@@ -5,8 +5,7 @@ PORTNAME=	gmake
 PORTVERSION=	4.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	make
+MASTER_SITES=	GNU/make
 DISTNAME=	make-${PORTVERSION}
 
 # note: before committing to this port, contact portmgr to arrange for an

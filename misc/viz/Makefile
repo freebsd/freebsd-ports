@@ -4,8 +4,7 @@
 PORTNAME=	viz
 PORTVERSION=	1.1.1
 CATEGORIES=	misc
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	fenner
+MASTER_SITES=	LOCAL/fenner
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert invisible (binary) characters to a visible form

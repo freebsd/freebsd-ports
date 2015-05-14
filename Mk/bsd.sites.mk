@@ -1345,13 +1345,16 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			FARSIGHT:${PORTNAME} \
+			FESTIVAL:${PORTVERSION} \
 			GCC:releases/${DISTNAME} \
+			GENTOO:distfiles \
+			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
 			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
-			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \
+			GNUPG:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LIBREOFFICE_DEV:${PORTNAME} \
@@ -1359,6 +1362,8 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
+			QT:archive/qt/${PORTVERSION:R} \
+			SAMBA:${PORTNAME} \
 			SAVANNAH:${PORTNAME:tl} \
 			SOURCEFORGE:${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION} \
 			XFCE:xfce/${XFCE_MASTER_SITE_VER}/src
@@ -1385,11 +1390,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
@@ -1426,11 +1433,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 PATCH_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}

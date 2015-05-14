@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dradis
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME:tl}/${PORTNAME:tl}/v${PORTVERSION}
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/v${PORTVERSION}
 
 MAINTAINER=	semprix@gmx.com
 COMMENT=	Opensource framework to enable effective information gathering

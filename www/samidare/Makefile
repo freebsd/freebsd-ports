@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.a-k-r.org/${PORTNAME}/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/samidare|}
+		LOCAL/tota/samidare
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Web page update checker written in Ruby

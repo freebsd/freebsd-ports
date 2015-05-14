@@ -6,14 +6,14 @@ PORTVERSION=	0.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://adm.freelsd.net/pub/ADM/ \
 		http://adm.freelsd.net/ADM/ \
-		${MASTER_SITE_PACKETSTORM:=groups/ADM/}
+		PACKETSTORM/groups/ADM
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	SNMP audit scanner
 
 WRKSRC=		${WRKDIR}/ADMsnmp
+USES=		tar:tgz
 
 do-build:
 	${CC} ${CFLAGS} -DPORTSHAREDIR="${PREFIX}/share/ADMsnmp" \

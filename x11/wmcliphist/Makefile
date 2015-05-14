@@ -6,8 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	uqs
+		LOCAL/uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker

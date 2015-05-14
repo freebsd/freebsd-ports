@@ -5,8 +5,7 @@ PORTNAME=	quilt
 PORTVERSION=	0.61
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	quilt
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	doj@cubic.org
 COMMENT=	Collection of bash scripts to ease working with patch files

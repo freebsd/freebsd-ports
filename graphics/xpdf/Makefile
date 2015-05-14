@@ -6,9 +6,8 @@ PORTREVISION=	4
 CATEGORIES=	graphics print
 MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://ftp.foolabs.com/pub/xpdf/ \
-		${MASTER_SITE_TEX_CTAN} \
+		TEX_CTAN/support/xpdf \
 		http://komquats.com/distfiles/
-MASTER_SITE_SUBDIR=	support/xpdf
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats

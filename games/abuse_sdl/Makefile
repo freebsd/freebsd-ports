@@ -5,7 +5,7 @@ PORTNAME=	abuse_sdl
 PORTVERSION=	0.8
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	GENTOO/distfiles \
+MASTER_SITES=	GENTOO \
 		http://abuse.zoy.org/raw-attachment/wiki/download/
 DISTNAME=	abuse-${DISTVERSION}
 

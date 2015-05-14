@@ -5,8 +5,7 @@ PORTNAME=	scr2png
 PORTVERSION=	1.2
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nik
+MASTER_SITES=	LOCAL/nik
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG

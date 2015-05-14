@@ -6,7 +6,6 @@ DISTVERSION=	1.7.0
 PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games

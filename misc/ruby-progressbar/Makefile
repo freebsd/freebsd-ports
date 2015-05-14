@@ -5,7 +5,7 @@ PORTNAME=	progressbar
 PORTVERSION=	0.9
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://0xcc.net/ruby-progressbar/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/progressbar|}
+		LOCAL/tota/progressbar
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 

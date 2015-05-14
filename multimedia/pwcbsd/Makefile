@@ -7,8 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+		LOCAL/miwi
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD

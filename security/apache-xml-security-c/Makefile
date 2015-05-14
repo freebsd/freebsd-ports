@@ -5,8 +5,7 @@ PORTNAME=	xml-security-c
 PORTVERSION=	1.7.2
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=santuario/c-library
+MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-
 
 MAINTAINER=	girgen@FreeBSD.org

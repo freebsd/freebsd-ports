@@ -25,9 +25,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITES+=	LOCAL/mm
 PATCHFILES+=	lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
-PATCH_SITE_SUBDIR+=	mm
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la

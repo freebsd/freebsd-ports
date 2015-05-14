@@ -6,8 +6,7 @@ PORTVERSION=	2.0b1
 PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trasz
+		LOCAL/trasz
 DISTNAME=	dtcyber20b1
 
 MAINTAINER=	ports@FreeBSD.org

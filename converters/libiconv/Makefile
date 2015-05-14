@@ -34,8 +34,7 @@ CONFIGURE_ARGS+=	--enable-extra-encodings
 
 .if ${PORT_OPTIONS:MPATCHES}
 PATCH_SITES+=	http://apolloron.org/software/libiconv-1.14-ja/
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR+=	kwm
+PATCH_SITES+=	LOCAL/kwm
 PATCHFILES+=	${DISTNAME}-ja-1.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif

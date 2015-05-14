@@ -4,8 +4,7 @@
 PORTNAME=	tinytinyhttpd
 PORTVERSION=	0.0.11
 CATEGORIES=	www
-MASTER_SITES=	http://cloud.github.com/downloads/mattn/tinytinyhttpd/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://cloud.github.com/downloads/mattn/tinytinyhttpd/
 
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	Tiny tiny httpd

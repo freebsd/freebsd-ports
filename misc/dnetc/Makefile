@@ -6,9 +6,8 @@ PORTVERSION=	${VERSION}
 PORTREVISION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://http.distributed.net/pub/dcti/%SUBDIR%/ \
-		ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
+MASTER_SITES=	http://http.distributed.net/pub/dcti/v${PORTVERSION:R}/ \
+		ftp://ftp.distributed.net/pub/dcti/v${PORTVERSION:R}/
 # This is architecture dependent
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 

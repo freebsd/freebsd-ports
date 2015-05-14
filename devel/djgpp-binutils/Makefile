@@ -4,8 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.17
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	binutils/releases
+MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	djgpp-
 
 MAINTAINER=	johnson.peter@gmail.com

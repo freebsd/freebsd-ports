@@ -4,7 +4,7 @@
 PORTNAME=	jdbm
 PORTVERSION=	2.4
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fast, simple, and transactional Java persistence engine

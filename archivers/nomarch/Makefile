@@ -4,8 +4,7 @@
 PORTNAME=	nomarch
 PORTVERSION=	1.4
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/compress
+MASTER_SITES=	SUNSITE/utils/compress
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Extracts files from the old '.arc' archive format

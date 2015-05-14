@@ -6,7 +6,6 @@ PORTVERSION=	0.2.7
 PORTREVISION=	5
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	HotSSH is an interface to Secure Shell, for GNOME and OpenSSH

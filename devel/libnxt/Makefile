@@ -4,7 +4,7 @@
 PORTNAME=	libnxt
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+MASTER_SITES=	GOOGLE_CODE \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net

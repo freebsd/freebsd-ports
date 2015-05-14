@@ -4,8 +4,7 @@
 PORTNAME=	cegui
 PORTVERSION=	0.8.4
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	crayzedsgui/CEGUI%20Mk-2/0.8
+MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library providing windowing and widgets for graphics APIs

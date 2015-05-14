@@ -5,7 +5,7 @@ PORTNAME=	escape
 PORTVERSION=	0.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.a-k-r.org/${PORTNAME}/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/ruby-escape|}
+		LOCAL/tota/ruby-escape
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 

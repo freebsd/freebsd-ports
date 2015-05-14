@@ -6,11 +6,9 @@ PORTVERSION=	6.3${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
+PATCH_SITES=	GNU/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library for editing command lines as they are typed

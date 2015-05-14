@@ -5,11 +5,9 @@ PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=		${MASTER_SITE_GCC:S/$/:gcc/} \
-			${MASTER_SITE_GNU:S/$/:gas/} \
+MASTER_SITES=		GCC/snapshots/4.1-20060728:gcc \
+			GNU/binutils:gas \
 			http://tigcc.ticalc.org/linux/:tigcc
-MASTER_SITE_SUBDIR=	snapshots/4.1-20060728/:gcc \
-			binutils/:gas
 DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
 			binutils-2.16.1.tar.bz2:gas \
 			tigcc_src.tar.bz2:tigcc

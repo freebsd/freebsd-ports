@@ -5,9 +5,8 @@ PORTNAME=		opendkim
 PORTVERSION=		2.9.2
 PORTREVISION=		6
 CATEGORIES=		mail security
-MASTER_SITES=		SF
-MASTER_SITE_SUBDIR=	${PORTNAME} \
-			${PORTNAME}/Previous%20Releases
+MASTER_SITES=		SF/${PORTNAME} \
+			SF/${PORTNAME}/Previous%20Releases
 
 MAINTAINER=		umq@ueo.co.jp
 COMMENT=		DKIM library and milter implementation

@@ -5,7 +5,7 @@ PORTNAME=	libjbigi
 PORTVERSION=	0.8.7
 CATEGORIES=	math java
 MASTER_SITES=	http://mirror.i2p2.de/ \
-		${MASTER_SITE_GOOGLE_CODE}
+		GOOGLE_CODE
 DISTNAME=	i2psource_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

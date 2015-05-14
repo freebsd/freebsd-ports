@@ -3,8 +3,7 @@
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.3
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNUPG
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	General purpose crypto library based on code used in GnuPG

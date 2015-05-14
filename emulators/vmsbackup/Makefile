@@ -6,7 +6,7 @@ PORTVERSION=	4.1.1
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://dl.droso.net/FreeBSD/distfiles/ \
 		http://freebsd.t-hosting.hu/vmsbackup/ \
-		${MASTER_SITE_LOCAL:S/$/erwin\//}
+		LOCAL/erwin
 DISTNAME=	VMSBACKUP4-1-1
 EXTRACT_SUFX=	.ZIP
 

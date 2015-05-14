@@ -4,8 +4,7 @@
 PORTNAME=	gnuit
 PORTVERSION=	4.9.5
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems

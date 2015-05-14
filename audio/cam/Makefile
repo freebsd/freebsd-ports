@@ -4,8 +4,7 @@
 PORTNAME=	cam
 PORTVERSION=	1.02
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/mixers
+MASTER_SITES=	SUNSITE/apps/sound/mixers
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cpu's Audio Mixer [curses based]

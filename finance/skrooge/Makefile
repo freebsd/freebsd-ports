@@ -3,8 +3,7 @@
 PORTNAME=	skrooge
 PORTVERSION=	1.10.0
 CATEGORIES=	finance kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}
+MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 personal finance manager

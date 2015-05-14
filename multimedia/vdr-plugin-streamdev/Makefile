@@ -5,8 +5,7 @@ PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.6.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1580/:release \
-		LOCAL:snapshot
-MASTER_SITE_SUBDIR=	nox/:snapshot
+		LOCAL/nox:snapshot
 DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
 
 MAINTAINER=	nox@FreeBSD.org

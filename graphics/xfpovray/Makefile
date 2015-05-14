@@ -6,8 +6,7 @@ PORTVERSION=	1.3.1
 PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
+		SUNSITE/apps/graphics/rays/pov
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray

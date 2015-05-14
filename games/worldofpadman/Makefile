@@ -6,7 +6,7 @@ PORTVERSION=	1.2.20080621
 PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/worldofpadman/linux/:full,update \
-		${MASTER_SITE_LOCAL:S|$|alepulver/:source|}
+		LOCAL/alepulver/:source
 DISTFILES=	worldofpadman.run:full \
 		wop_patch_1_2.run:update \
 		${SRC_FILE}.tar.bz2:source

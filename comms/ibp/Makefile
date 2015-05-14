@@ -6,8 +6,7 @@ PORTVERSION=	0.21
 PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Little program for monitoring amateur radio beacons

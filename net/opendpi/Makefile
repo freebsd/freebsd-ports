@@ -5,7 +5,7 @@ PORTNAME=	opendpi
 PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	fernando@netfilter.com.br
 COMMENT=	Open source deep packet inspection engine

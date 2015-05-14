@@ -4,8 +4,7 @@ PORTNAME=	ifmail
 PORTVERSION=	2.15
 PORTREVISION=	5
 CATEGORIES=	news comms
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/fido
+MASTER_SITES=	SUNSITE/system/fido
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FidoNet(tm) support package for UN*X platform

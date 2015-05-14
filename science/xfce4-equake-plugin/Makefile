@@ -4,8 +4,7 @@
 PORTNAME=	xfce4-equake-plugin
 PORTVERSION=	1.3.7
 CATEGORIES=	science xfce
-MASTER_SITES=	XFCE
-MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

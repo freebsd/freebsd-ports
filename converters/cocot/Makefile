@@ -5,8 +5,7 @@ PORTNAME=	cocot
 PORTVERSION=	20120313
 CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+		LOCAL/knu
 DISTNAME=	${PORTNAME}-1.1-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
