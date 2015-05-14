@@ -13,10 +13,8 @@ COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2
 
-USES+=	cpe
+USES=		cpe gnustep
 CPE_VENDOR=	gnu
-
-USES=		gnustep
 USE_GNUSTEP=	back build
 LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime \
 		libAddresses.so:${PORTSDIR}/mail/addresses
