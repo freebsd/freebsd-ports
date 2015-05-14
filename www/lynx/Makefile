@@ -3,6 +3,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
