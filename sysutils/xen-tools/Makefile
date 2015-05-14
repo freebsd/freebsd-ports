@@ -30,7 +30,7 @@ DISTFILES+=	${DISTNAME}.tar.gz \
 
 WRKSRC=		${WRKDIR}/xen-${PORTVERSION}
 
-USES=		gmake perl5 python shebangfix libtool pkgconfig
+USES=		cpe gmake perl5 python shebangfix libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	HOSTCC="${CC}" CC="${CC}" \
