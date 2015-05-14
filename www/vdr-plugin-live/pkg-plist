@@ -1,4 +1,6 @@
 lib/vdr/libvdr-live.so.%%APIVERSION%%
+@owner %%VDR_USER%%
+@group %%VDR_GROUP%%
 etc/vdr/plugins/live/css/DatePicker.css
 etc/vdr/plugins/live/css/siteprefs.css
 etc/vdr/plugins/live/img/active.png
@@ -150,26 +152,27 @@ etc/vdr/plugins/live/themes/veltliner/img/logo.png
 etc/vdr/plugins/live/themes/veltliner/img/logo_login.png
 etc/vdr/plugins/live/themes/veltliner/img/menu_line_bg.png
 etc/vdr/plugins/live/themes/veltliner/img/zap.png
-@exec chown -R %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr/plugins/live
-@dirrm etc/vdr/plugins/live/css
-@dirrm etc/vdr/plugins/live/img
-@dirrm etc/vdr/plugins/live/js/live
-@dirrm etc/vdr/plugins/live/js/mootools
-@dirrm etc/vdr/plugins/live/js
-@dirrm etc/vdr/plugins/live/themes/marine/css
-@dirrm etc/vdr/plugins/live/themes/marine/img
-@dirrm etc/vdr/plugins/live/themes/marine
-@dirrm etc/vdr/plugins/live/themes/veltliner/css
-@dirrm etc/vdr/plugins/live/themes/veltliner/img
-@dirrm etc/vdr/plugins/live/themes/veltliner
-@dirrm etc/vdr/plugins/live/themes/orange-blue/css
-@dirrm etc/vdr/plugins/live/themes/orange-blue/img
-@dirrm etc/vdr/plugins/live/themes/orange-blue
-@dirrm etc/vdr/plugins/live/themes/redwine/css
-@dirrm etc/vdr/plugins/live/themes/redwine/img
-@dirrm etc/vdr/plugins/live/themes/redwine
-@dirrm etc/vdr/plugins/live/themes
-@dirrmtry etc/vdr/plugins/live
+@dir etc/vdr/plugins/live/css
+@dir etc/vdr/plugins/live/img
+@dir etc/vdr/plugins/live/js/live
+@dir etc/vdr/plugins/live/js/mootools
+@dir etc/vdr/plugins/live/js
+@dir etc/vdr/plugins/live/themes/marine/css
+@dir etc/vdr/plugins/live/themes/marine/img
+@dir etc/vdr/plugins/live/themes/marine
+@dir etc/vdr/plugins/live/themes/veltliner/css
+@dir etc/vdr/plugins/live/themes/veltliner/img
+@dir etc/vdr/plugins/live/themes/veltliner
+@dir etc/vdr/plugins/live/themes/orange-blue/css
+@dir etc/vdr/plugins/live/themes/orange-blue/img
+@dir etc/vdr/plugins/live/themes/orange-blue
+@dir etc/vdr/plugins/live/themes/redwine/css
+@dir etc/vdr/plugins/live/themes/redwine/img
+@dir etc/vdr/plugins/live/themes/redwine
+@dir etc/vdr/plugins/live/themes
+@dir etc/vdr/plugins/live
+@owner
+@group
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-live.mo
 %%NLS%%share/locale/sl_SI/LC_MESSAGES/vdr-live.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/vdr-live.mo
