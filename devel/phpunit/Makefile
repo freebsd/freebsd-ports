@@ -15,6 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	pear-PHPUnit-[123]*
 
+USES=		cpe
+CPE_VENDOR=	phpunit_project
 USE_PHP=	dom json spl pcre phar
 
 NO_BUILD=	yes
