@@ -18,11 +18,18 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		cmake desktop-file-utils pkgconfig zip
+USES=		cmake compiler desktop-file-utils pkgconfig zip
 NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt
+.if ${COMPILER_TYPE} == gcc
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+	@${REINPLACE_CMD} -e '/precompiled_header/d' \
+		${WRKSRC}/src/FlightCrew/CMakeLists.txt
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
