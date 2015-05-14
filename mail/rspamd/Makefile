@@ -13,7 +13,8 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
+		libhiredis.so:${PORTSDIR}/databases/hiredis
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
