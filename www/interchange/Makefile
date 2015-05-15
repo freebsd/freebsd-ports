@@ -10,6 +10,9 @@ MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat's database-enabled e-commerce server
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.810:${PORTSDIR}/www/p5-libwww \
@@ -56,8 +59,7 @@ post-install:
 # This directory has to be created here for check-plist to pass, otherwise it
 # complains the @dirrmtry /var/run/interchange entry does not have a matching
 # directory in the stage tree.
-# Its ownership and mode are properly set in the @exec call when the package is
-# installed.
+# Its ownership and mode are properly set in the @dir plist entry
 	${MKDIR} ${STAGEDIR}/var/run/interchange
 
 .include <bsd.port.mk>

@@ -1782,5 +1782,4 @@ man/man1/update.1.gz
 %%PERL5_MAN3%%/Vend::Table::Editor.3.gz
 %%PERL5_MAN3%%/Vend::UserControl.3.gz
 %%PERL5_MAN3%%/Vend::UserDB.3.gz
-@exec install -d -o interch -g interch -m 770 /var/run/interchange
-@dir /var/run/interchange
+@dir(interch,interch,770) /var/run/interchange
