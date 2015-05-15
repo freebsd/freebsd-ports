@@ -18,8 +18,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
-USES=		shebangfix perl5
-USE_AUTOTOOLS=  autoconf aclocal automake
+USES=		shebangfix perl5 autoreconf
+GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS+= --add-missing
 INFO=		webmagick
 MAKE_ARGS+=	ICON_INSTALL_DIR=${STAGEDIR}${PREFIX}/www/data/webmagick \
