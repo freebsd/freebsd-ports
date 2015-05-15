@@ -98,7 +98,7 @@ OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.s
 .endif
 .if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
 OPENSSL_PORT=		${OPENSSL_INSTALLED}
-OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`${PKG_QUERY} "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
+OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | ${GREP} "^`${PKG_QUERY} "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .else
 # PKG_DBDIR was not found
