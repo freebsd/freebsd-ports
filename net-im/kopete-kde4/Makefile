@@ -2,6 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -13,24 +14,17 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libotr.so.5:${PORTSDIR}/security/libotr \
 		libgadu.so:${PORTSDIR}/polish/libgadu \
-		libortp.so:${PORTSDIR}/net/ortp \
-		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libkleo.so:${PORTSDIR}/deskutils/kdepim4 \
 		libmeanwhile.so:${PORTSDIR}/net-im/meanwhile \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
-RUN_DEPENDS=	${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
 USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
-USE_OPENSSL=	yes
 USE_QT4=	corelib gui network qt3support sql xml \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	yes
@@ -51,7 +45,7 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 CMAKE_ARGS+=	-DMOZPLUGIN_INSTALL_DIR:PATH="${WEBPLUGIN_DIR}"
 
 # Forcefully disable net-im/libmsn which was deprecated on 2013-07-27.
-CMAKE_ARGS+=	-DHAVE_LIBMSN:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_wlm:BOOL=OFF
 
 # Fix build with fresh multimedia/v4l_compat installed.
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1

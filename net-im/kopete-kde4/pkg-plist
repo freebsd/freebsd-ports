@@ -78,6 +78,7 @@ lib/kde4/kcm_kopete_autoreplace.so
 lib/kde4/kcm_kopete_avdeviceconfig.so
 lib/kde4/kcm_kopete_behaviorconfig.so
 lib/kde4/kcm_kopete_chatwindowconfig.so
+lib/kde4/kcm_kopete_cryptography.so
 lib/kde4/kcm_kopete_highlight.so
 lib/kde4/kcm_kopete_history.so
 lib/kde4/kcm_kopete_history2.so
@@ -98,6 +99,7 @@ lib/kde4/kopete_autoreplace.so
 lib/kde4/kopete_bonjour.so
 lib/kde4/kopete_chatwindow.so
 lib/kde4/kopete_contactnotes.so
+lib/kde4/kopete_cryptography.so
 lib/kde4/kopete_emailwindow.so
 lib/kde4/kopete_gadu.so
 lib/kde4/kopete_groupwise.so
@@ -588,6 +590,8 @@ share/apps/kopete/webpresence/webpresence_html_images.xsl
 share/apps/kopete/webpresence/webpresence_xhtml.xsl
 share/apps/kopete/webpresence/webpresence_xhtml_images.xsl
 share/apps/kopete_contactnotes/contactnotesui.rc
+share/apps/kopete_cryptography/cryptographychatui.rc
+share/apps/kopete_cryptography/cryptographyui.rc
 share/apps/kopete_groupwise/gwchatui.rc
 share/apps/kopete_history/historychatui.rc
 share/apps/kopete_history/historyui.rc
@@ -745,6 +749,7 @@ share/kde4/services/chatwindow.desktop
 share/kde4/services/emailwindow.desktop
 share/kde4/services/kconfiguredialog/kopete_addbookmarks_config.desktop
 share/kde4/services/kconfiguredialog/kopete_autoreplace_config.desktop
+share/kde4/services/kconfiguredialog/kopete_cryptography_config.desktop
 share/kde4/services/kconfiguredialog/kopete_highlight_config.desktop
 share/kde4/services/kconfiguredialog/kopete_history2_config.desktop
 share/kde4/services/kconfiguredialog/kopete_history_config.desktop
@@ -767,6 +772,7 @@ share/kde4/services/kopete_behaviorconfig.desktop
 share/kde4/services/kopete_bonjour.desktop
 share/kde4/services/kopete_chatwindowconfig.desktop
 share/kde4/services/kopete_contactnotes.desktop
+share/kde4/services/kopete_cryptography.desktop
 share/kde4/services/kopete_gadu.desktop
 share/kde4/services/kopete_groupwise.desktop
 share/kde4/services/kopete_highlight.desktop
