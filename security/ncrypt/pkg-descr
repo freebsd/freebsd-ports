@@ -1,7 +1,12 @@
-NCrypt is intended to give you security in an insecure environment.
-If you are wanting to encrypt files (particularly on a multi-user
-system where you don't have root), wishing to hide your activites
-from prying eyes, and want to "cover your tracks", then NCrypt is
-for you.
+NCrypt is intended to give you security in an insecure environment. If you are
+wanting to encrypt files (particularly on a multi-user system where you don't
+have root), wishing to hide your activites from prying eyes, and want to "cover
+your tracks", then NCrypt is for you. It is a symmetrical file
+encryptor/decryptor that gives you the choice of the top three candidates for
+AES as the encryption algorithm (Rijndael, Serpent, Twofish), tries to minimize
+exposure of the plaintext password in memory, and can safely erase the plaintext
+version from the hard drive. It compiles without any extra crypto libraries,
+making it ideal for systems where you just have a compiler and basic libraries
+(such as an ISP's shell server).
 
 WWW: http://ncrypt.sourceforge.net/
