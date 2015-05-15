@@ -24,7 +24,7 @@ DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6 1.7
+JAVA_VERSION=	1.7 # some plugins not available with later java, needs special handling
 
 CPE_VENDOR=	igniterealtime
 
