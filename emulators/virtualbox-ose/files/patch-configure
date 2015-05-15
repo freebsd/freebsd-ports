@@ -1,6 +1,6 @@
---- configure.orig	2012-03-16 10:34:01.000000000 +0100
-+++ configure	2012-03-24 18:52:57.271018829 +0100
-@@ -135,6 +135,8 @@
+--- configure.orig	2015-05-13 11:08:57.000000000 -0400
++++ configure	2015-05-15 14:16:05.988372000 -0400
+@@ -140,6 +140,8 @@
    LIBPULSE="-L/usr/local/lib"
    INCPNG="-I/usr/local/include"
    LIBPNG="-L/usr/local/lib -lpng"
@@ -9,7 +9,7 @@
  else
    INCCURL=""
    LIBCURL="-lcurl"
-@@ -1837,8 +1839,8 @@
+@@ -1947,8 +1949,8 @@
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -20,3 +20,12 @@
          if [ $? -eq 0 ]; then
            found=1
            break
+@@ -2357,7 +2359,7 @@
+     --with-openssl-dir=*)
+       OPENSSLDIR=`echo $option | cut -d'=' -f2`
+       INCCRYPTO="-I${OPENSSLDIR}/include"
+-      LIBCRYPTO="${OPENSSLDIR}/lib/libcrypto.a ${OPENSSLDIR}/lib/libssl.a"
++      LIBCRYPTO="-L${OPENSSLDIR}/lib -lcrypto -lssl"
+       ;;
+     --with-ow-dir=*)
+       WATCOM=`echo $option | cut -d'=' -f2`
