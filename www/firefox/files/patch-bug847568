@@ -216,9 +216,9 @@ diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 0b0717a..2e665c9 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -63,3 +63,6 @@ GENERATED_FILES = [
+@@ -64,3 +64,6 @@ GENERATED_FILES = [
  LOCAL_INCLUDES += [
-     '../base/src',
+     '/netwerk/base',
  ]
 +
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:

@@ -162,7 +162,7 @@ index 5aacc23..aed45ca 100644
      if (!sourceObject)
 -        return nullptr;
 +        return false;
-     ScriptSource *ss = sourceObject->source();
+     ScriptSource* ss = sourceObject->source();
  
      SourceCompressionTask sct(cx);
 diff --git js/xpconnect/wrappers/XrayWrapper.cpp js/xpconnect/wrappers/XrayWrapper.cpp

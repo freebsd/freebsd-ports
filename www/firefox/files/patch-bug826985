@@ -145,26 +145,26 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -46,6 +49,19 @@
-                 'linux/video_capture_linux.cc',
-                 'linux/video_capture_linux.h',
-               ],
-+              'conditions': [
-+                ['use_libv4l2==1', {
-+                  'defines': [
-+                    'HAVE_LIBV4L2',
-+                  ],
-+                  'cflags_mozilla': [
-+                    '$(MOZ_LIBV4L2_CFLAGS)',
-+                  ],
-+                  'libraries': [
-+                    '-lv4l2',
-+                  ],
-+                }],
+@@ -69,6 +72,19 @@
+             'linux/video_capture_linux.cc',
+             'linux/video_capture_linux.h',
+           ],
++          'conditions': [
++            ['use_libv4l2==1', {
++              'defines': [
++                'HAVE_LIBV4L2',
 +              ],
-             }],  # linux
-             ['OS=="mac"', {
-               'sources': [
++              'cflags_mozilla': [
++                '$(MOZ_LIBV4L2_CFLAGS)',
++              ],
++              'libraries': [
++                '-lv4l2',
++              ],
++            }],
++          ],
+         }],  # linux
+         ['OS=="mac"', {
+           'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 9c16ffa..1db3794 100644
 --- toolkit/library/moz.build
