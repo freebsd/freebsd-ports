@@ -1,6 +1,16 @@
---- ./dcraw.cc.orig	2013-03-20 03:31:38.000000000 +0100
-+++ ./dcraw.cc	2014-02-05 22:11:28.000000000 +0100
-@@ -9269,7 +9269,7 @@
+--- dcraw.cc.orig	2015-01-30 15:15:16.000000000 +0000
++++ dcraw.cc	2015-05-14 19:29:47.000000000 +0000
+@@ -934,7 +934,8 @@
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000];
+   const uchar *dp;
+ 
+@@ -9715,7 +9716,7 @@
    strncpy (th->desc, desc, 512);
    strncpy (th->make, make, 64);
    strncpy (th->model, model, 64);
