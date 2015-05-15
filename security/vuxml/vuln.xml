@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c368155a-fa83-11e4-bc58-001e67150279">
+    <topic>rubygem-redcarpet -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-redcarpet</name>
+	<range><lt>3.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel LeCheminant reports:</p>
+	<blockquote cite="https://hackerone.com/reports/46916">
+	  <p>When markdown is being presented as HTML, there seems to be a
+	    strange interaction between _ and @ that lets an attacker insert
+	    malicious tags.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2015/04/07/11</mlist>
+      <url>https://hackerone.com/reports/46916</url>
+      <url>http://danlec.com/blog/bug-in-sundown-and-redcarpet</url>
+    </references>
+    <dates>
+      <discovery>2015-04-07</discovery>
+      <entry>2015-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
     <topic>ufraw -- integer overflow condition</topic>
     <affects>
