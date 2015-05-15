@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pomap
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/pomap/downloads/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,8 @@ COMMENT=	OCaml library to maintain a list of partially ordered elements
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -29,19 +30,15 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>
