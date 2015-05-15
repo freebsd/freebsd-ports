@@ -124,13 +124,3 @@
 %%PYTHON_LIBDIR%%/site-packages/tests/tests/utils.py
 %%PYTHON_LIBDIR%%/site-packages/tests/tests/utils.pyc
 %%PYTHON_LIBDIR%%/site-packages/tests/tests/utils.pyo
-@dirrm %%PYTHON_LIBDIR%%/site-packages/tests/tests
-@dirrm %%PYTHON_LIBDIR%%/site-packages/tests
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/templatetags
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/templates/pipeline
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/templates
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/jinja2
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/conf
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/compressors
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline/compilers
-@dirrm %%PYTHON_LIBDIR%%/site-packages/pipeline
