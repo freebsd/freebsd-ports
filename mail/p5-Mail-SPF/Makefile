@@ -3,11 +3,11 @@
 
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.9.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-oriented implementation of Sender Policy Framework
@@ -35,17 +35,13 @@ PORTDOCS=	CHANGES README TODO
 
 SHEBANG_FILES=	bin/spfquery sbin/spfd
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${MV} ${WRKSRC}/sbin/spfd ${WRKSRC}/sbin/spfd.pl
 	@${MV} ${WRKSRC}/bin/spfquery ${WRKSRC}/bin/spfquery.pl
 	@${REINPLACE_CMD} -e 's|spfd|&.pl|; s|spfquery|&.pl|' ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST ${WRKSRC}/README
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
