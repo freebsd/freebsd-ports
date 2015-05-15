@@ -9,6 +9,8 @@ lib/cmake/gflags/gflags-export.cmake
 lib/libgflags.a
 lib/libgflags.so
 lib/libgflags.so.2
+lib/libgflags.so.2.1.2
 lib/libgflags_nothreads.a
 lib/libgflags_nothreads.so
 lib/libgflags_nothreads.so.2
+lib/libgflags_nothreads.so.2.1.2
