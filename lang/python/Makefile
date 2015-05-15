@@ -15,7 +15,6 @@ COMMENT=	The "meta-port" for the default version of Python interpreter
 
 USES=			python:run
 NO_BUILD=		yes
-PYTHON_NO_DEPENDS=	yes
 
 PLIST_FILES=	bin/2to3 \
 		bin/idle \
