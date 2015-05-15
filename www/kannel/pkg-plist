@@ -71,6 +71,7 @@ include/kannel/gwlib/fdset.h
 include/kannel/gwlib/gw-getopt.h
 include/kannel/gwlib/gw-prioqueue.h
 include/kannel/gwlib/gw-rwlock.h
+include/kannel/gwlib/gw-timer.h
 include/kannel/gwlib/gw_uuid.h
 include/kannel/gwlib/gw_uuid_types.h
 include/kannel/gwlib/gwassert.h
@@ -139,6 +140,7 @@ include/kannel/wap/wtp_tid.h
 lib/kannel/libgw.a
 lib/kannel/libgwlib.a
 lib/kannel/libwap.a
+lib/kannel/libwmlscript.a
 man/man1/mtbatch.1.gz
 man/man1/seewbmp.1.gz
 man/man1/wmlsc.1.gz
@@ -149,3 +151,9 @@ sbin/bearerbox
 sbin/run_kannel_box
 sbin/smsbox
 sbin/wapbox
+@owner kannel
+@group kannel
+@dir /var/log/kannel
+@dir /var/run/kannel
+@group
+@owner
