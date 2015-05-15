@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
+DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	State-of-the-art semantic personal publishing platform
