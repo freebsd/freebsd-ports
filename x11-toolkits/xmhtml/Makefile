@@ -3,7 +3,7 @@
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	SF/${PORTNAME:tl}
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif widget set for displaying HTML 3.2 documents
 
 LICENSE=	LGPL20 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
@@ -27,6 +28,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	(cd ${WRKSRC}/lib && ${LIBTOOL} --mode=install ${INSTALL_DATA} \
 		libXmHTML.la ${STAGEDIR}${PREFIX}/lib)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXmHTML.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/XmHTML
 	(cd ${WRKSRC}/include/XmHTML && ${INSTALL_DATA} *.h \
 		${STAGEDIR}${PREFIX}/include/XmHTML)
