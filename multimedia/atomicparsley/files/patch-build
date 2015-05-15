@@ -1,10 +1,10 @@
---- ./build.orig	2006-09-10 17:02:58.000000000 +0200
-+++ ./build	2008-04-08 14:30:11.000000000 +0200
-@@ -93,6 +94,8 @@
+--- build.orig	2006-09-10 15:02:58 UTC
++++ build
+@@ -93,6 +93,8 @@ elif test $OS = Linux ; then
  elif test $OS = CYGWIN ; then
    g++ -g -O2 -Wall -o AtomicParsley.exe obj_files/APar_sha1.o obj_files/APar_uuid.o  obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o -lgcc 
  
-+elif test $OS = FreeBSD; then
++elif test $OS = FreeBSD || test $OS = DragonflyBSD ; then
 +  g++ -g -O2 -Wall -o AtomicParsley obj_files/APar_sha1.o obj_files/APar_uuid.o obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o
  else
    g++ -g -O2 -Wall -o AtomicParsley.exe obj_files/APar_sha1.o obj_files/APar_uuid.o obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o

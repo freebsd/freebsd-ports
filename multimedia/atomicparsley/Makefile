@@ -2,7 +2,7 @@
 
 PORTNAME=	AtomicParsley
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		zip
 
@@ -23,6 +24,6 @@ do-build:
 	cd ${WRKSRC} && ./build
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/AtomicParsley ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/AtomicParsley ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
