@@ -310,6 +310,7 @@ emby:*:989:
 oozie:*:990:
 sguil:*:991:
 hive:*:992:
+kannel:*:993:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:
