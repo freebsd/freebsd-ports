@@ -13,8 +13,8 @@ COMMENT=	MaxMind GeoIP2 Python API
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
-LIB_DEPENDS=	libmaxminddb.so:${PORTSDIR}/net/libmaxminddb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}maxminddb>0:${PORTSDIR}/net/py-maxminddb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
