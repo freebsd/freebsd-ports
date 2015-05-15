@@ -1638,7 +1638,6 @@ share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%man/it/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/it/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/ja/man6/wesnothd.6.gz
-%%NLS%%man/lt/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/lt/man6/wesnothd.6.gz
 man/man6/wesnoth.6.gz
 %%SERVER%%man/man6/wesnothd.6.gz
