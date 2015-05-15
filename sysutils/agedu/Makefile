@@ -3,10 +3,10 @@
 
 PORTNAME=	agedu
 PORTVERSION=	10126
+DISTVERSIONPREFIX=	r
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sunpoet \
 		http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
-DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix utility for tracking down wasted disk space
