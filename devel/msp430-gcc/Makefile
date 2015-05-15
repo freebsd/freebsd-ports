@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${LTSVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}/releases/${PORTNAME}-${GCCVERSION} \
@@ -85,6 +85,7 @@ post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/${PKGNAMEPREFIX:S/-$//}/${GCCVERSION}/liblto_plugin.so.0.0.0
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin
 .for F in ${BINARIES}
 	@${LN} -f ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}$F \

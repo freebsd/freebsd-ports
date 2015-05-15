@@ -3,10 +3,11 @@
 
 PORTNAME=	gdb
 PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU SF/mspgcc/mspgcc:mspgcc
 PKGNAMEPREFIX=	msp430-
-DISTNAME=	${PORTNAME}-${GDBVERSION}
+DISTNAME=	${PORTNAME}-${GDBVERSION}a
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mspgcc-${LTSVERSION}${EXTRACT_SUFX}:mspgcc
 
@@ -21,10 +22,13 @@ PATCHVERSION=	20110103
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GDBVERSION}
 
-USES=		tar:bzip2 gmake
+USES=		tar:bzip2 gmake iconv
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror --disable-nls
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--disable-werror \
+		--disable-nls
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GDB_TARG=${PKGNAMEPREFIX:S/-$//} \
