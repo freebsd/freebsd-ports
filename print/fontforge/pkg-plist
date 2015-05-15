@@ -152,6 +152,7 @@ share/applications/fontforge.desktop
 %%DATADIR%%/pixmaps/choosermacttf.png
 %%DATADIR%%/pixmaps/choosernobookmark.png
 %%DATADIR%%/pixmaps/chooserobject.png
+%%DATADIR%%/pixmaps/choosersfdir.png
 %%DATADIR%%/pixmaps/choosertar.png
 %%DATADIR%%/pixmaps/choosertextbdf.png
 %%DATADIR%%/pixmaps/choosertextc.png

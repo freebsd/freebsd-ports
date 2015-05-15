@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-DISTVERSION=	20150228
+DISTVERSION=	20150430
 CATEGORIES=	print
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,9 +24,9 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	fontforge
 
-USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv libtool pkgconfig python shared-mime-info
+USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv \
+		libtool pkgconfig python shared-mime-info
 USE_XORG=	x11 xi ice xkbui
 USE_GNOME=	glib20 gtk20 libxml2 pango
 
@@ -73,7 +73,7 @@ pre-configure:
 	(cd ${WRKSRC} && \
 		${SH} -c '. ./bootstrap.conf ; \
 		${LOCALBASE}/bin/libtoolize -i -c -q ; \
-		gnulib-tool --aux-dir=config --m4-base=m4 --libtool --symlink --import $${gnulib_modules}' ; \
+		${LOCALBASE}/bin/gnulib-tool --aux-dir=config --m4-base=m4 --libtool --symlink --import $${gnulib_modules}' ; \
 		export LIBTOOLIZE=true ; ${LOCALBASE}/bin/autoreconf -s -i)
 
 .include <bsd.port.mk>
