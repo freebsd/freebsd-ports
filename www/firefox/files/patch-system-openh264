@@ -67,14 +67,6 @@ diff --git toolkit/modules/GMPInstallManager.jsm toolkit/modules/GMPInstallManag
 index 9593492..470384b 100644
 --- toolkit/modules/GMPInstallManager.jsm
 +++ toolkit/modules/GMPInstallManager.jsm
-@@ -107,6 +107,7 @@
-    */
-   KEY_LOG_ENABLED: "media.gmp-manager.log",
-   KEY_ADDON_LAST_UPDATE: "media.{0}.lastUpdate",
-+  KEY_ADDON_PATH: "media.{0}.path",
-   KEY_ADDON_VERSION: "media.{0}.version",
-   KEY_ADDON_AUTOUPDATE: "media.{0}.autoupdate",
-   KEY_URL: "media.gmp-manager.url",
 @@ -888,9 +889,7 @@
        let gmpAddon = this._gmpAddon;
        let installToDirPath = Cc["@mozilla.org/file/local;1"].
@@ -86,75 +78,91 @@ index 9593492..470384b 100644
        installToDirPath.initWithPath(path);
        log.info("install to directory path: " + installToDirPath.path);
        let gmpInstaller = new GMPExtractor(zipPath, installToDirPath.path);
-@@ -899,10 +898,12 @@
+@@ -885,10 +883,12 @@
          // Success, set the prefs
          let now = Math.round(Date.now() / 1000);
-         GMPPrefs.set(GMPPrefs.KEY_ADDON_LAST_UPDATE, now, gmpAddon.id);
+         GMPPrefs.set(GMPPrefs.KEY_PLUGIN_LAST_UPDATE, now, gmpAddon.id);
 -        // Setting the version pref signals installation completion to consumers,
 -        // if you need to set other prefs etc. do it before this.
 +        // Setting the path pref signals installation completion to consumers,
 +        // so set the version and potential other information they use first.
-         GMPPrefs.set(GMPPrefs.KEY_ADDON_VERSION, gmpAddon.version,
+         GMPPrefs.set(GMPPrefs.KEY_PLUGIN_VERSION, gmpAddon.version,
                       gmpAddon.id);
-+        GMPPrefs.set(GMPPrefs.KEY_ADDON_PATH,
++        GMPPrefs.set(GMPPrefs.KEY_PLUGIN_PATH,
 +                     installToDirPath.path, gmpAddon.id);
          this._deferred.resolve(extractedPaths);
        }, err => {
          this._deferred.reject(err);
+diff --git toolkit/modules/GMPUtils.jsm toolkit/modules/GMPUtils.jsm
+index 1f3a0b1..93517be 100644
+--- toolkit/modules/GMPUtils.jsm
++++ toolkit/modules/GMPUtils.jsm
+@@ -70,6 +70,7 @@ this.GMPPrefs = {
+   KEY_EME_ENABLED:              "media.eme.enabled",
+   KEY_PLUGIN_ENABLED:           "media.{0}.enabled",
+   KEY_PLUGIN_LAST_UPDATE:       "media.{0}.lastUpdate",
++  KEY_PLUGIN_PATH:              "media.{0}.path",
+   KEY_PLUGIN_VERSION:           "media.{0}.version",
+   KEY_PLUGIN_AUTOUPDATE:        "media.{0}.autoupdate",
+   KEY_PLUGIN_FORCEVISIBLE:      "media.{0}.forcevisible",
 diff --git toolkit/mozapps/extensions/internal/GMPProvider.jsm toolkit/mozapps/extensions/internal/GMPProvider.jsm
 index 1f3a0b1..93517be 100644
 --- toolkit/mozapps/extensions/internal/GMPProvider.jsm
 +++ toolkit/mozapps/extensions/internal/GMPProvider.jsm
-@@ -40,6 +40,7 @@ const KEY_LOGGING_LEVEL      = KEY_LOG_B
- const KEY_LOGGING_DUMP       = KEY_LOG_BASE + "dump";
- const KEY_EME_ENABLED        = "media.eme.enabled"; // Global pref to enable/disable all EME plugins
- const KEY_PLUGIN_ENABLED     = "media.{0}.enabled";
-+const KEY_PLUGIN_PATH        = "media.{0}.path";
- const KEY_PLUGIN_LAST_UPDATE = "media.{0}.lastUpdate";
- const KEY_PLUGIN_VERSION     = "media.{0}.version";
- const KEY_PLUGIN_AUTOUPDATE  = "media.{0}.autoupdate";
-@@ -165,8 +166,8 @@ function GMPWrapper(aPluginInfo) {
+@@ -100,12 +100,11 @@
+     Log.repository.getLoggerWithMessagePrefix("Toolkit.GMP",
+                                               "GMPWrapper(" +
                                                this._plugin.id + ") ");
-   Preferences.observe(GMPPrefs.getPrefKey(KEY_PLUGIN_ENABLED, this._plugin.id),
+-  Preferences.observe(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_ENABLED,
+-                                          this._plugin.id),
++  Preferences.observe(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_ENABLED, this._plugin.id),
                        this.onPrefEnabledChanged, this);
--  Preferences.observe(GMPPrefs.getPrefKey(KEY_PLUGIN_VERSION, this._plugin.id),
+-  Preferences.observe(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_VERSION,
++  Preferences.observe(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_PATH,
+                                           this._plugin.id),
 -                      this.onPrefVersionChanged, this);
-+  Preferences.observe(GMPPrefs.getPrefKey(KEY_PLUGIN_PATH, this._plugin.id),
 +                      this.onPrefPathChanged, this);
    if (this._plugin.isEME) {
-     Preferences.observe(GMPPrefs.getPrefKey(KEY_EME_ENABLED, this._plugin.id),
-                         this.onPrefEnabledChanged, this);
-@@ -183,11 +184,8 @@ GMPWrapper.prototype = {
+     Preferences.observe(GMPPrefs.KEY_EME_ENABLED,
+                         this.onPrefEMEGlobalEnabledChanged, this);
+@@ -120,17 +119,14 @@
+   optionsType: AddonManager.OPTIONS_TYPE_INLINE,
+   get optionsURL() { return this._plugin.optionsURL; },
  
++
    set gmpPath(aPath) { this._gmpPath = aPath; },
    get gmpPath() {
 -    if (!this._gmpPath && this.isInstalled) {
 -      this._gmpPath = OS.Path.join(OS.Constants.Path.profileDir,
 -                                   this._plugin.id,
--                                   GMPPrefs.get(KEY_PLUGIN_VERSION, null,
--                                                this._plugin.id));
+-                                   GMPPrefs.get(GMPPrefs.KEY_PLUGIN_VERSION,
+-                                                null, this._plugin.id));
 +    if (!this._gmpPath) {
-+      this._gmpPath = GMPPrefs.get(KEY_PLUGIN_PATH, null, this._plugin.id);
++      this._gmpPath = GMPPrefs.get(GMPPrefs.KEY_PLUGIN_PATH, null, this._plugin.id);
      }
      return this._gmpPath;
    },
-@@ -202,8 +200,13 @@ GMPWrapper.prototype = {
+-
+   get id() { return this._plugin.id; },
+   get type() { return "plugin"; },
+   get isGMPlugin() { return true; },
+@@ -141,8 +137,13 @@
    get description() { return this._plugin.description; },
    get fullDescription() { return this._plugin.fullDescription; },
  
--  get version() { return GMPPrefs.get(KEY_PLUGIN_VERSION, null,
+-  get version() { return GMPPrefs.get(GMPPrefs.KEY_PLUGIN_VERSION, null,
 -                                      this._plugin.id); },
 +  get version() { 
 +    if (this.isInstalled) {
-+        return GMPPrefs.get(KEY_PLUGIN_VERSION, null,
++        return GMPPrefs.get(GMPPrefs.KEY_PLUGIN_VERSION, null,
 +                                    this._plugin.id);
 +    }
 +    return null;
 +  },
  
-   get isActive() { return !this.userDisabled; },
-   get appDisabled() { return false; },
-@@ -346,24 +349,17 @@ GMPWrapper.prototype = {
+   get isActive() { return !this.appDisabled && !this.userDisabled; },
+   get appDisabled() {
+@@ -289,24 +290,17 @@
  
    get pluginMimeTypes() { return []; },
    get pluginLibraries() {
@@ -163,7 +171,7 @@ index 1f3a0b1..93517be 100644
 -      return [path];
 -    }
 -    return [];
-+    let path = GMPPrefs.get(KEY_PLUGIN_PATH, null, this._plugin.id);
++    let path = GMPPrefs.get(GMPPrefs.KEY_PLUGIN_PATH, null, this._plugin.id);
 +    return path && path.length ? [OS.Path.basename(path)] : [];
    },
    get pluginFullpath() {
@@ -174,19 +182,19 @@ index 1f3a0b1..93517be 100644
 -      return [path];
 -    }
 -    return [];
-+    let path = GMPPrefs.get(KEY_PLUGIN_PATH, null, this._plugin.id);
++    let path = GMPPrefs.get(GMPPrefs.KEY_PLUGIN_PATH, null, this._plugin.id);
 +    return path && path.length ? [path] : [];
    },
  
    get isInstalled() {
 -    return this.version && this.version.length > 0;
-+    let path = GMPPrefs.get(KEY_PLUGIN_PATH, null, this._plugin.id);
++    let path = GMPPrefs.get(GMPPrefs.KEY_PLUGIN_PATH, null, this._plugin.id);
 +    return path && path.length > 0;
    },
  
-   onPrefEnabledChanged: function() {
-@@ -386,10 +382,10 @@ GMPWrapper.prototype = {
-                                            this);
+   _handleEnabledChanged: function() {
+@@ -362,10 +356,10 @@
+     }
    },
  
 -  onPrefVersionChanged: function() {
@@ -198,32 +206,34 @@ index 1f3a0b1..93517be 100644
                       this._gmpPath);
        gmpService.removePluginDirectory(this._gmpPath);
      }
-@@ -397,15 +393,9 @@ GMPWrapper.prototype = {
- 
+@@ -374,15 +368,10 @@
      AddonManagerPrivate.callInstallListeners("onExternalInstall", null, this,
                                               null, false);
+     AddonManagerPrivate.callAddonListeners("onInstalling", this, false);
 -    this._gmpPath = null;
 -    if (this.isInstalled) {
 -      this._gmpPath = OS.Path.join(OS.Constants.Path.profileDir,
 -                                   this._plugin.id,
--                                   GMPPrefs.get(KEY_PLUGIN_VERSION, null,
--                                                this._plugin.id));
+-                                   GMPPrefs.get(GMPPrefs.KEY_PLUGIN_VERSION,
+-                                                null, this._plugin.id));
 -    }
-+    this._gmpPath = GMPPrefs.get(KEY_PLUGIN_PATH, null, this._plugin.id);
++    this._gmpPath = GMPPrefs.get(GMPPrefs.KEY_PLUGIN_PATH,
++                                 null, this._plugin.id);
      if (this._gmpPath && this.isActive) {
 -      this._log.info("onPrefVersionChanged() - registering gmp directory " +
 +      this._log.info("onPrefPathChanged() - registering gmp directory " +
                       this._gmpPath);
        gmpService.addPluginDirectory(this._gmpPath);
      }
-@@ -415,8 +405,8 @@ GMPWrapper.prototype = {
-   shutdown: function() {
-     Preferences.ignore(GMPPrefs.getPrefKey(KEY_PLUGIN_ENABLED, this._plugin.id),
+@@ -393,9 +382,9 @@
+     Preferences.ignore(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_ENABLED,
+                                            this._plugin.id),
                         this.onPrefEnabledChanged, this);
--    Preferences.ignore(GMPPrefs.getPrefKey(KEY_PLUGIN_VERSION, this._plugin.id),
+-    Preferences.ignore(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_VERSION,
++    Preferences.ignore(GMPPrefs.getPrefKey(GMPPrefs.KEY_PLUGIN_PATH,
+                                            this._plugin.id),
 -                       this.onPrefVersionChanged, this);
-+    Preferences.ignore(GMPPrefs.getPrefKey(KEY_PLUGIN_PATH, this._plugin.id),
 +                       this.onPrefPathChanged, this);
-     if (this._isEME) {
-       Preferences.ignore(GMPPrefs.getPrefKey(KEY_EME_ENABLED, this._plugin.id),
-                          this.onPrefEnabledChanged, this);
+     if (this._plugin.isEME) {
+       Preferences.ignore(GMPPrefs.KEY_EME_ENABLED,
+                          this.onPrefEMEGlobalEnabledChanged, this);
