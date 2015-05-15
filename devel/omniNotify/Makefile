@@ -4,6 +4,7 @@
 PORTNAME=	omniNotify
 PORTVERSION=	2.1.01
 #It' snapshot of development version actually
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTNAME=	omniNotify-2-latest
@@ -11,7 +12,8 @@ DISTNAME=	omniNotify-2-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB-4.1
 # parts of omniORB4-4.1 source tree is required to build
@@ -42,7 +44,8 @@ pre-configure:
 	cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notifd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notifd \
+		${STAGEDIR}${PREFIX}/lib/lib*.so
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! ( -name \.cvsignore -o -name *\.orig )"
