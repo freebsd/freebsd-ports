@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	heirloom-doctools
-PORTVERSION=	0.0.080407
-PORTREVISION=	1
+PORTVERSION=	0.0.150406
+DISTVERSION=	${PORTVERSION:S,0.0.,,}
 CATEGORIES=	textproc
-MASTER_SITES=	SF/heirloom/${PORTNAME}/080407
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
@@ -14,9 +12,12 @@ LICENSE=	CDDL
 
 CONFLICTS=	libotf-[0-9]*
 
-USES=	gmake tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	n-t-roff
+
+USES=	gmake
 ALL_TARGET=	#empty
-MAKE_ENV+=	INSTALL=${INSTALL} \
+MAKE_ARGS+=	INSTALL=${INSTALL} \
 		BINDIR=${BINDIR} \
 		LIBDIR=${LIBDIR} \
 		PUBDIR=${PUBDIR} \
