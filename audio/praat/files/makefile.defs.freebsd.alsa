@@ -10,7 +10,7 @@ CXX ?= g++
 
 CFLAGS = -std=gnu99 -DUNIX -Dlinux -DALSA `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1
 
-CXXFLAGS = -Wshadow -DUNIX -Dlinux -DALSA `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%LOCALBASE%%/include
+CXXFLAGS = -std=gnu++11 -Wshadow -DUNIX -Dlinux -DALSA `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
 
 LINK ?= $(CXX)
 
