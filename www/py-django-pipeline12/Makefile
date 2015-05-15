@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	12
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>0:${PORTSDIR}/www/py-django14
 
 CONFLICTS=	py[23][0-9]-django-pipeline-[0-9]*
