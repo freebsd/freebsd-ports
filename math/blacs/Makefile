@@ -3,7 +3,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	math
 MASTER_SITES=	NETLIB/blacs
 DISTNAME=	BLACS
@@ -20,6 +20,10 @@ USES=		fortran gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+BROKEN=		does not build on 8.x
+.endif
 
 .if ! ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
@@ -99,13 +103,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a ${STAGEDIR}${PREFIX}/lib/libblacsf77.a
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a ${STAGEDIR}${PREFIX}/lib/libblacs.a
 
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so.${SVERSION}   ${STAGEDIR}${PREFIX}/lib/libblacsc.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libblacsf77.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so.${SVERSION}    ${STAGEDIR}${PREFIX}/lib/libblacs.so.${SVERSION}
-
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so   ${STAGEDIR}${PREFIX}/lib/libblacsc.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so ${STAGEDIR}${PREFIX}/lib/libblacsf77.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so    ${STAGEDIR}${PREFIX}/lib/libblacs.so
+.for lib in libblacsc libblacsf77 libblacs
+	${INSTALL_LIB} ${WRKDIR}/tmp_shared/${lib}.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/${lib}.so.${SVERSION}
+	${LN} -s ${lib}.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/${lib}.so
+.endfor
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/BLACS/TESTING
 	( cd ${WRKSRC_SHARED}/TESTING/EXE ; \
