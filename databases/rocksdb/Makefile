@@ -3,6 +3,7 @@
 
 PORTNAME=	rocksdb
 PORTVERSION=	3.10
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -22,8 +23,6 @@ USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gmake
 
 GH_ACCOUNT=	facebook
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 USE_GITHUB=	yes
 
 PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb log_and_apply_bench signal_test sst_dump table_reader_bench
@@ -43,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
 .if defined(WITHOUT_PROFILE)
-	@${REINPLACE_CMD} -e 's| -pg||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile
 .endif
 
 do-install:
