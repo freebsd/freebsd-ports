@@ -3,12 +3,15 @@
 
 PORTNAME=	aubio
 PORTVERSION=	0.3.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for audio labelling
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
@@ -22,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-complex
 USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lm
