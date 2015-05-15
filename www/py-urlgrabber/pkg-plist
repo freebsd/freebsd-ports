@@ -18,5 +18,3 @@ bin/urlgrabber
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/urlgrabber
