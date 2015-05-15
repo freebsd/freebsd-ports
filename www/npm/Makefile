@@ -26,6 +26,8 @@ USES=		cpe python:2 tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
+ONLY_FOR_ARCHS=	amd64
+
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
 
