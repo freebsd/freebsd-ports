@@ -3,9 +3,9 @@
 
 PORTNAME=	maxminddb
 PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-Python-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	Python module for reading MaxMind DB file
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libmaxminddb.so:${PORTSDIR}/net/libmaxminddb
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-python
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
