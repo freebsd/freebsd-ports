@@ -82,87 +82,87 @@ ALL_BUILD=	build-binutils \
 all: ${PREREQUISITES} ${ALL_BUILD}
 
 expat:
-	@${ECHO_MSG} "====>  Build expat (log file: ${WRKDIR}/expat.log)"
-	@${RM} -rf ${BUILD_PREFIX}/expat > ${WRKDIR}/expat.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/expat >> ${WRKDIR}/expat.log 2>&1
+	@${ECHO_MSG} "====>  Build expat"
+	@${RM} -rf ${BUILD_PREFIX}/expat
+	@${MKDIR} ${BUILD_PREFIX}/expat
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/expat && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/expat-${BUNDLED_VERSION_EXPAT}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/expat.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/expat all ${MAKE_ARGS} >> ${WRKDIR}/expat.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/expat all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/expat install ${MAKE_ARGS} >> ${WRKDIR}/expat.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/expat install ${MAKE_ARGS}
 
 zlib:
-	@${ECHO_MSG} "====>  Build zlib (log file: ${WRKDIR}/zlib.log)"
-	@${RM} -rf ${BUILD_PREFIX}/zlib > ${WRKDIR}/zlib.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/zlib >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "====>  Build zlib"
+	@${RM} -rf ${BUILD_PREFIX}/zlib
+	@${MKDIR} ${BUILD_PREFIX}/zlib
 	@${ECHO_MSG} "=====>  Copy to build dir"
-	@${TAR} -cf - -C ${SRC_DIR}/zlib-${BUNDLED_VERSION_ZLIB} . | ${TAR} -xf - -C ${BUILD_PREFIX}/zlib >> ${WRKDIR}/zlib.log 2>&1
+	@${TAR} -cf - -C ${SRC_DIR}/zlib-${BUNDLED_VERSION_ZLIB} . | ${TAR} -xf - -C ${BUILD_PREFIX}/zlib
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/zlib && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ./configure \
 	 --static \
-	 --prefix=${INTERIM_WORLD} >> ${WRKDIR}/zlib.log 2>&1
+	 --prefix=${INTERIM_WORLD}
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib ${MAKE_ARGS} >> ${WRKDIR}/zlib.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib install ${MAKE_ARGS} >> ${WRKDIR}/zlib.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib install ${MAKE_ARGS}
 
 libelf:
-	@${ECHO_MSG} "====>  Build libelf (log file: ${WRKDIR}/libelf.log)"
-	@${RM} -rf ${BUILD_PREFIX}/libelf > ${WRKDIR}/libelf.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/libelf >> ${WRKDIR}/libelf.log 2>&1
+	@${ECHO_MSG} "====>  Build libelf"
+	@${RM} -rf ${BUILD_PREFIX}/libelf
+	@${MKDIR} ${BUILD_PREFIX}/libelf
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/libelf && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libelf-${BUNDLED_VERSION_LIBELF}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/libelf.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/libelf all ${MAKE_ARGS} >> ${WRKDIR}/libelf.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/libelf all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/libelf install ${MAKE_ARGS} >> ${WRKDIR}/libelf.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/libelf install ${MAKE_ARGS}
 
 gmp:
-	@${ECHO_MSG} "====>  Build gmp (log file: ${WRKDIR}/gmp.log)"
-	@${RM} -rf ${BUILD_PREFIX}/gmp > ${WRKDIR}/gmp.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/gmp >> ${WRKDIR}/gmp.log 2>&1
+	@${ECHO_MSG} "====>  Build gmp"
+	@${RM} -rf ${BUILD_PREFIX}/gmp
+	@${MKDIR} ${BUILD_PREFIX}/gmp
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gmp && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gmp-${BUNDLED_VERSION_GMP}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --enable-cxx \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/gmp.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gmp all ${MAKE_ARGS} >> ${WRKDIR}/gmp.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gmp all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gmp install ${MAKE_ARGS} >> ${WRKDIR}/gmp.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gmp install ${MAKE_ARGS}
 
 mpfr:
-	@${ECHO_MSG} "====>  Build mpfr (log file: ${WRKDIR}/mpfr.log)"
-	@${RM} -rf ${BUILD_PREFIX}/mpfr > ${WRKDIR}/mpfr.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/mpfr >> ${WRKDIR}/mpfr.log 2>&1
+	@${ECHO_MSG} "====>  Build mpfr"
+	@${RM} -rf ${BUILD_PREFIX}/mpfr
+	@${MKDIR} ${BUILD_PREFIX}/mpfr
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/mpfr && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpfr-${BUNDLED_VERSION_MPFR}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --with-gmp=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/mpfr.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpfr all ${MAKE_ARGS} >> ${WRKDIR}/mpfr.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpfr all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpfr install ${MAKE_ARGS} >> ${WRKDIR}/mpfr.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpfr install ${MAKE_ARGS}
 
 mpc:
-	@${ECHO_MSG} "====>  Build mpc (log file: ${WRKDIR}/mpc.log)"
-	@${RM} -rf ${BUILD_PREFIX}/mpc > ${WRKDIR}/mpc.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/mpc >> ${WRKDIR}/mpc.log 2>&1
+	@${ECHO_MSG} "====>  Build mpc"
+	@${RM} -rf ${BUILD_PREFIX}/mpc
+	@${MKDIR} ${BUILD_PREFIX}/mpc
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/mpc && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpc-${BUNDLED_VERSION_MPC}/configure \
@@ -170,32 +170,32 @@ mpc:
 	 --with-gmp=${INTERIM_WORLD} \
 	 --with-mpfr=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/mpc.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpc all ${MAKE_ARGS} >> ${WRKDIR}/mpc.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpc all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpc install ${MAKE_ARGS} >> ${WRKDIR}/mpc.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpc install ${MAKE_ARGS}
 
 isl:
-	@${ECHO_MSG} "====>  Build isl (log file: ${WRKDIR}/isl.log)"
-	@${RM} -rf ${BUILD_PREFIX}/isl > ${WRKDIR}/isl.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/isl >> ${WRKDIR}/isl.log 2>&1
+	@${ECHO_MSG} "====>  Build isl"
+	@${RM} -rf ${BUILD_PREFIX}/isl
+	@${MKDIR} ${BUILD_PREFIX}/isl
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/isl && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/isl-${BUNDLED_VERSION_ISL}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --with-gmp-prefix=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/isl.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/isl all ${MAKE_ARGS} >> ${WRKDIR}/isl.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/isl all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/isl install ${MAKE_ARGS} >> ${WRKDIR}/isl.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/isl install ${MAKE_ARGS}
 
 cloog:
-	@${ECHO_MSG} "====>  Build cloog (log file: ${WRKDIR}/cloog.log)"
-	@${RM} -rf ${BUILD_PREFIX}/cloog > ${WRKDIR}/cloog.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/cloog >> ${WRKDIR}/cloog.log 2>&1
+	@${ECHO_MSG} "====>  Build cloog"
+	@${RM} -rf ${BUILD_PREFIX}/cloog
+	@${MKDIR} ${BUILD_PREFIX}/cloog
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/cloog && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/cloog-${BUNDLED_VERSION_CLOOG}/configure \
@@ -204,16 +204,16 @@ cloog:
 	 --with-gmp-prefix=${INTERIM_WORLD} \
 	 --with-isl-prefix=${INTERIM_WORLD} \
 	 --disable-shared \
-	 --disable-nls >> ${WRKDIR}/cloog.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/cloog all ${MAKE_ARGS} >> ${WRKDIR}/cloog.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/cloog all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/cloog install ${MAKE_ARGS} >> ${WRKDIR}/cloog.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/cloog install ${MAKE_ARGS}
 
 build-binutils:
-	@${ECHO_MSG} "====>  Build binutils (log file: ${WRKDIR}/binutils.log)"
-	@${RM} -rf ${BUILD_PREFIX}/binutils > ${WRKDIR}/binutils.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/binutils >> ${WRKDIR}/binutils.log 2>&1
+	@${ECHO_MSG} "====>  Build binutils"
+	@${RM} -rf ${BUILD_PREFIX}/binutils
+	@${MKDIR} ${BUILD_PREFIX}/binutils
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/binutils && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/binutils/configure \
@@ -227,33 +227,33 @@ build-binutils:
 	 --enable-interwork \
 	 --enable-plugins \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
-	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/binutils.log 2>&1
+	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/binutils all ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/binutils all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Prepare working area for library builds"
-	@${MKDIR} ${BUILD_PREFIX}/target-libs >> ${WRKDIR}/binutils.log 2>&1
-	@${TAR} -cf - -C ${INTERIM_PREFIX} . | ${TAR} -xf - -C ${BUILD_PREFIX}/target-libs >> ${WRKDIR}/binutils.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/target-libs
+	@${TAR} -cf - -C ${INTERIM_PREFIX} . | ${TAR} -xf - -C ${BUILD_PREFIX}/target-libs
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils html ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils html ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-html ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-html ${MAKE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils pdf ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils pdf ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-pdf ${MAKE_ARGS} >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-pdf ${MAKE_ARGS}
 .endif
 	@${ECHO_MSG} "=====>  Cleanup installation"
-	@${RM} -rf ${INTERIM_PREFIX}/lib >> ${WRKDIR}/binutils.log 2>&1
+	@${RM} -rf ${INTERIM_PREFIX}/lib
 
 build-gcc-first:
-	@${ECHO_MSG} "====>  Build preliminary gcc (log file: ${WRKDIR}/gcc-first.log)"
-	@${RM} -rf ${BUILD_PREFIX}/gcc-first > ${WRKDIR}/gcc-first.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/gcc-first >> ${WRKDIR}/gcc-first.log 2>&1
+	@${ECHO_MSG} "====>  Build preliminary gcc"
+	@${RM} -rf ${BUILD_PREFIX}/gcc-first
+	@${MKDIR} ${BUILD_PREFIX}/gcc-first
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gcc-first && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gcc/configure \
@@ -290,19 +290,19 @@ build-gcc-first:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
-	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-first.log 2>&1
+	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all ${MAKE_ARGS} >> ${WRKDIR}/gcc-first.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-first install-gcc ${MAKE_ARGS} >> ${WRKDIR}/gcc-first.log 2>&1
-	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug >> ${WRKDIR}/gcc-first.log 2>&1
-	@${RM} -f ${INTERIM_PREFIX}/lib/libiberty.a >> ${WRKDIR}/gcc-first.log 2>&1
-	@${RM} -rf ${INTERIM_PREFIX}/include >> ${WRKDIR}/gcc-first.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-first install-gcc ${MAKE_ARGS}
+	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug
+	@${RM} -f ${INTERIM_PREFIX}/lib/libiberty.a
+	@${RM} -rf ${INTERIM_PREFIX}/include
 
 build-newlib:
-	@${ECHO_MSG} "====>  Build newlib (log file: ${WRKDIR}/newlib.log)"
-	@${RM} -rf ${BUILD_PREFIX}/newlib > ${WRKDIR}/newlib.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/newlib >> ${WRKDIR}/newlib.log 2>&1
+	@${ECHO_MSG} "====>  Build newlib"
+	@${RM} -rf ${BUILD_PREFIX}/newlib
+	@${MKDIR} ${BUILD_PREFIX}/newlib
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/newlib && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" CFLAGS_FOR_TARGET="-g -O2 -ffunction-sections -fdata-sections" \
@@ -316,33 +316,33 @@ build-newlib:
 	 --enable-newlib-io-long-long \
 	 --enable-newlib-register-fini \
 	 --disable-newlib-supplied-syscalls \
-	 --disable-nls >> ${WRKDIR}/newlib.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib all >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib all
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib install >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib install
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib html ${MAKE_ARGS} >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib html ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MKDIR} ${DOC_PREFIX}/html/libc >> ${WRKDIR}/newlib.log 2>&1
-	@${TAR} -cf - -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.html . | ${TAR} -xf - -C ${DOC_PREFIX}/html/libc >> ${WRKDIR}/newlib.log 2>&1
-	@${MKDIR} ${DOC_PREFIX}/html/libm >> ${WRKDIR}/newlib.log 2>&1
-	@${TAR} -cf - -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm/libm.html . | ${TAR} -xf - -C ${DOC_PREFIX}/html/libm >> ${WRKDIR}/newlib.log 2>&1
+	@${MKDIR} ${DOC_PREFIX}/html/libc
+	@${TAR} -cf - -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.html . | ${TAR} -xf - -C ${DOC_PREFIX}/html/libc
+	@${MKDIR} ${DOC_PREFIX}/html/libm
+	@${TAR} -cf - -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm/libm.html . | ${TAR} -xf - -C ${DOC_PREFIX}/html/libm
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation (ignore errors)"
-	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc pdf ${MAKE_ARGS} >> ${WRKDIR}/newlib.log 2>&1
-	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm pdf ${MAKE_ARGS} >> ${WRKDIR}/newlib.log 2>&1
+	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc pdf ${MAKE_ARGS}
+	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm pdf ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.pdf ${DOC_PREFIX}/pdf/libc.pdf >> ${WRKDIR}/newlib.log 2>&1
-	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm/libm.pdf ${DOC_PREFIX}/pdf/libm.pdf >> ${WRKDIR}/newlib.log 2>&1
+	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.pdf ${DOC_PREFIX}/pdf/libc.pdf
+	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm/libm.pdf ${DOC_PREFIX}/pdf/libm.pdf
 .endif
 
 build-newlib-nano:
-	@${ECHO_MSG} "====>  Build newlib-nano (log file: ${WRKDIR}/newlib-nano.log)"
-	@${RM} -rf ${BUILD_PREFIX}/newlib-nano > ${WRKDIR}/newlib-nano.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/newlib-nano >> ${WRKDIR}/newlib-nano.log 2>&1
+	@${ECHO_MSG} "====>  Build newlib-nano"
+	@${RM} -rf ${BUILD_PREFIX}/newlib-nano
+	@${MKDIR} ${BUILD_PREFIX}/newlib-nano
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/newlib-nano && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" CFLAGS_FOR_TARGET="-g -Os -ffunction-sections -fdata-sections" \
@@ -363,18 +363,18 @@ build-newlib-nano:
 	 --enable-lite-exit                    \
 	 --enable-newlib-global-atexit         \
 	 --enable-newlib-nano-formatted-io     \
-	 --disable-nls >> ${WRKDIR}/newlib-nano.log 2>&1
+	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib-nano all >> ${WRKDIR}/newlib-nano.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib-nano all
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib-nano install >> ${WRKDIR}/newlib-nano.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib-nano install
 
 build-gcc-final:
-	@${ECHO_MSG} "====>  Build final gcc and g++ (log file: ${WRKDIR}/gcc-final.log)"
-	@${RM} -f ${INTERIM_PREFIX}/${TARGET}/usr > ${WRKDIR}/gcc-final.log 2>&1
-	@${LN} -s . ${INTERIM_PREFIX}/${TARGET}/usr >> ${WRKDIR}/gcc-final.log 2>&1
-	@${RM} -rf ${BUILD_PREFIX}/gcc-final >> ${WRKDIR}/gcc-final.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/gcc-final >> ${WRKDIR}/gcc-final.log 2>&1
+	@${ECHO_MSG} "====>  Build final gcc and g++"
+	@${RM} -f ${INTERIM_PREFIX}/${TARGET}/usr
+	@${LN} -s . ${INTERIM_PREFIX}/${TARGET}/usr
+	@${RM} -rf ${BUILD_PREFIX}/gcc-final
+	@${MKDIR} ${BUILD_PREFIX}/gcc-final
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gcc-final && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gcc/configure \
@@ -412,36 +412,36 @@ build-gcc-final:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
-	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-final.log 2>&1
+	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-final INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0" all ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-final INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0" all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install ${MAKE_ARGS}
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final html ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final html ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-html ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-html ${MAKE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final pdf ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final pdf ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-pdf ${MAKE_ARGS} >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-pdf ${MAKE_ARGS}
 .endif
 	@${ECHO_MSG} "=====>  Cleanup installation"
-	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug >> ${WRKDIR}/gcc-final.log 2>&1
-	@${FIND} ${INTERIM_PREFIX}/${TARGET}/lib -name libiberty.a -delete >> ${WRKDIR}/gcc-final.log 2>&1
-	@${RM} -f ${INTERIM_PREFIX}/lib/libiberty.a >> ${WRKDIR}/gcc-final.log 2>&1
-	@${RM} -rf ${INTERIM_PREFIX}/include >> ${WRKDIR}/gcc-final.log 2>&1
-	@${RM} -f ${INTERIM_PREFIX}/${TARGET}/usr >> ${WRKDIR}/gcc-final.log 2>&1
+	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug
+	@${FIND} ${INTERIM_PREFIX}/${TARGET}/lib -name libiberty.a -delete
+	@${RM} -f ${INTERIM_PREFIX}/lib/libiberty.a
+	@${RM} -rf ${INTERIM_PREFIX}/include
+	@${RM} -f ${INTERIM_PREFIX}/${TARGET}/usr
 
 build-libstdcxx:
-	@${ECHO_MSG} "====>  Build size-optimized C++ runtime (log file: ${WRKDIR}/gcc-size-libstdcxx.log)"
-	@${RM} -f ${BUILD_PREFIX}/target-libs/${TARGET}/usr > ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
-	@${LN} -s . ${BUILD_PREFIX}/target-libs/${TARGET}/usr >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
-	@${RM} -rf ${BUILD_PREFIX}/gcc-size-libstdcxx >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/gcc-size-libstdcxx >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	@${ECHO_MSG} "====>  Build size-optimized C++ runtime"
+	@${RM} -f ${BUILD_PREFIX}/target-libs/${TARGET}/usr
+	@${LN} -s . ${BUILD_PREFIX}/target-libs/${TARGET}/usr
+	@${RM} -rf ${BUILD_PREFIX}/gcc-size-libstdcxx
+	@${MKDIR} ${BUILD_PREFIX}/gcc-size-libstdcxx
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gcc-size-libstdcxx && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gcc/configure \
@@ -477,12 +477,12 @@ build-libstdcxx:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${BUILD_PREFIX}/target-libs/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
-	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
 	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-size-libstdcxx \
-	 CXXFLAGS_FOR_TARGET="-g -Os -ffunction-sections -fdata-sections -fno-exceptions" all-target-libstdc++-v3 ${MAKE_ARGS} >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	 CXXFLAGS_FOR_TARGET="-g -Os -ffunction-sections -fdata-sections -fno-exceptions" all-target-libstdc++-v3 ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-size-libstdcxx install-target-libstdc++-v3 ${MAKE_ARGS} >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-size-libstdcxx install-target-libstdc++-v3 ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Copy all target libraries into stage directory"
 	@for multilib in $$(${INTERIM_PREFIX}/bin/${TARGET}-gcc -print-multi-lib) ; do \
 	  multilib_dir=$${multilib%%;*} ; \
@@ -491,61 +491,61 @@ build-libstdcxx:
 	    ${CP} -f ${BUILD_PREFIX}/target-libs/${TARGET}/lib/$${multilib_dir}/$${srclib} ${INTERIM_PREFIX}/${TARGET}/lib/$${multilib_dir}/$${dstlib} ; \
 	  done ; \
 	  ${CP} -f ${BUILD_PREFIX}/target-libs/${TARGET}/lib/$${multilib_dir}/*crt0.o  ${INTERIM_PREFIX}/${TARGET}/lib/$${multilib_dir}/ ; \
-	 done >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	 done
 
 build-gdb:
-	@${ECHO_MSG} "====>  Build gdb (log file: ${WRKDIR}/gdb.log)"
-	@${RM} -rf ${BUILD_PREFIX}/gdb > ${WRKDIR}/gdb.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/gdb >> ${WRKDIR}/gdb.log 2>&1
+	@${ECHO_MSG} "====>  Build gdb"
+	@${RM} -rf ${BUILD_PREFIX}/gdb
+	@${MKDIR} ${BUILD_PREFIX}/gdb
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gdb && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gdb/configure \
 	 ${COMMON_GDB_CONFIGURE_ARGS} \
-	 --with-python=no >> ${WRKDIR}/gdb.log 2>&1
+	 --with-python=no
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gdb all ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gdb all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install ${MAKE_ARGS}
 	@${RM} -rf ${INTERIM_PREFIX}/include
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb html ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb html ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-html ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-html ${MAKE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb pdf ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb pdf ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-pdf ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-pdf ${MAKE_ARGS}
 .endif
 
 build-pygdb:
-	@${ECHO_MSG} "====>  Build py-gdb (log file: ${WRKDIR}/py-gdb.log)"
-	@${RM} -rf ${BUILD_PREFIX}/py-gdb > ${WRKDIR}/py-gdb.log 2>&1
-	@${MKDIR} ${BUILD_PREFIX}/py-gdb >> ${WRKDIR}/py-gdb.log 2>&1
+	@${ECHO_MSG} "====>  Build py-gdb"
+	@${RM} -rf ${BUILD_PREFIX}/py-gdb
+	@${MKDIR} ${BUILD_PREFIX}/py-gdb
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/py-gdb && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gdb/configure \
 	 ${COMMON_GDB_CONFIGURE_ARGS} \
 	 --with-python=${PYTHON_CMD} \
-	 --program-prefix=${TARGET}- --program-suffix=-py >> ${WRKDIR}/py-gdb.log 2>&1
+	 --program-prefix=${TARGET}- --program-suffix=-py
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/py-gdb all ${MAKE_ARGS} >> ${WRKDIR}/py-gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/py-gdb all ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/py-gdb install ${MAKE_ARGS} >> ${WRKDIR}/py-gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/py-gdb install ${MAKE_ARGS}
 	@${RM} -rf ${INTERIM_PREFIX}/include
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb html ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb html ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-html ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-html ${MAKE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb pdf ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb pdf ${MAKE_ARGS}
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-pdf ${MAKE_ARGS} >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-pdf ${MAKE_ARGS}
 .endif
 
 install-samples:
