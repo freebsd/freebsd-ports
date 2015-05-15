@@ -1,0 +1,36 @@
+--- ifstat.pod.orig	2003-11-21 19:27:51.000000000 -0600
++++ ifstat.pod	2015-05-14 19:32:13.000000000 -0500
+@@ -4,15 +4,13 @@
+ 
+ exit 0;
+ 
+-=cut
+-
+ =head1 NAME
+ 
+ ifstat - Report InterFace STATistics
+ 
+ =head1 SYNOPSIS
+ 
+-B<ifstat> [B<-a>] [B<-l>] [B<-z>] [B<-n>] [B<-v>] [B<-h>] [B<-t>] [B<-i> if0,if1,...] [B<-d> drv[:opt]] [B<-s> [comm@][#]host[/nn]] [B<-T>] [B<-A>] [B<-w>] [B<-W>] [B<-S>] [B<-b>] [B<-q>] [delay[/delay] [count]]
++B<ifstat> [B<-a>] [B<-l>] [B<-z>] [B<-n>] [B<-v>] [B<-h>] [B<-t>] [B<-i> if0,if1,...] [B<-d> drv[:opt]] [B<-s> [comm@][#]host[/nn]] [B<-T>] [B<-A>] [B<-w>] [B<-W>] [B<-S>] [B<-b>] [B<-m>] [B<-q>] [delay[/delay] [count]]
+ 
+ =head1 DESCRIPTION
+ 
+@@ -80,6 +78,10 @@
+ 
+ Reports bandwith in kbits/sec instead of kbytes/sec.
+ 
++=item B<-m>
++
++Reports bandwidth in mbytes/s or mbits/s, when used with -b.
++
+ =item B<-q>
+ 
+ Quiet mode, warnings are not printed.
+@@ -157,4 +159,4 @@
+ 
+ =head1 AUTHOR
+ 
+-Gaël Roualland, <gael.roualland@dial.oleane.com>
++Gael Roualland, <gael.roualland@dial.oleane.com>

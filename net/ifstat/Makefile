@@ -3,7 +3,7 @@
 
 PORTNAME=	ifstat
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://gael.roualland.free.fr/${PORTNAME}/
 
