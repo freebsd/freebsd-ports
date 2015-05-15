@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
+    <topic>ufraw -- integer overflow condition</topic>
+    <affects>
+      <package>
+	<name>ufraw</name>
+	<range><lt>0.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ocert reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-006.html">
+	  <p>The dcraw tool, as well as several other projects re-using its
+	     code, suffers from an integer overflow condition which lead to a
+	     buffer overflow.</p>
+	  <p>The vulnerability concerns the 'len' variable, parsed without
+	     validation from opened images, used in the ljpeg_start()
+	     function.</p>
+	  <p>A maliciously crafted raw image file can be used to trigger the
+	     vulnerability, causing a Denial of Service condition.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3885</url>
+    </references>
+    <dates>
+      <discovery>2015-04-24</discovery>
+      <entry>2015-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6e31869-f99f-11e4-9f91-6805ca0b3d42">
     <topic>phpMyAdmin -- XSRF and man-in-the-middle vulnerabilities</topic>
     <affects>
