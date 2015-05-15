@@ -437,8 +437,10 @@ Notes:
       </package>
       <package>
 	<name>apache-openoffice</name>
-	<name>apache-openoffice-devel</name>
 	<range><lt>4.1.1_9</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice-devel</name>
 	<range><lt>4.2.1677190,3</lt></range>
       </package>
     </affects>
