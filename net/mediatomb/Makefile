@@ -15,6 +15,7 @@ BROKEN=		Fails to configure, does not use USERS/GROUPS
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
 CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 		--disable-inotify
