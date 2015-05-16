@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	camlp5
-PORTVERSION=	6.11
+PORTVERSION=	6.12
 CATEGORIES=	devel
-MASTER_SITES=	http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
+MASTER_SITES=	http://camlp5.gforge.inria.fr/distrib/src/ \
+		http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/
 PKGNAMEPREFIX=	ocaml-
 DIST_SUBDIR=	${UNIQUENAME}
 
 PATCH_SITES=	${MASTER_SITES}
 
-MAINTAINER=	umq@ueo.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
 
 LICENSE=	INRIA
@@ -35,7 +36,7 @@ OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES DEVEL ICHANGES INSTALL MODE README UPGRADING
 
-MAKE_JOBS_UNSAFE= yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -55,5 +56,6 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/etc/META \
 		${STAGEDIR}${PREFIX}/lib/ocaml/camlp5
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/camlp5*.opt
 
 .include <bsd.port.mk>
