@@ -6,7 +6,7 @@ PORTVERSION=	2.4.8
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@stack.nl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Cooperative threading library for OCaml
 
 USE_GITHUB=	yes
