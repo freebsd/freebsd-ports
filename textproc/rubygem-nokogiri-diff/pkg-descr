@@ -1,0 +1,11 @@
+nokogiri-diff adds the ability to calculate the differences (added or removed
+nodes) between two XML/HTML documents.
+
+Features:
+- Performs a breadth-first comparison between children nodes.
+- Compares XML/HTML Elements, Attributes, Text nodes and DTD nodes.
+- Allows calculating differences between documents, or just enumerating the
+  added or removed nodes.
+
+WWW: https://github.com/postmodern/nokogiri-diff
+RG:  https://rubygems.org/gems/nokogiri-diff
