@@ -1,0 +1,95 @@
+# HG changeset patch
+# User Kevin McCarthy <kevin@8t8.us>
+# Date 1422238196 28800
+# Node ID df55f14f45858193a4cc506065ae2c6989138c2e
+# Parent  a0a5e505463e9db9b365e244452eab7301c1827c
+Remove GPG_AGENT_INFO check for GnuPG 2.1 compatibility.  (closes #3715)
+
+GnuPG version 2.1 stops exporting the GPG_AGENT_INFO environment
+variable, so mutt can't check for the presence of that to ensure the
+agent is running.
+
+For GPGME, we can check for the OpenPGP protocol being present.  For
+classic pgp, we have to trust the user setting.
+
+This patch is based on the patches sent by CustaiCo and muffins.  Thank
+you both for reporting the problem and creating a patch.
+
+diff -r a0a5e505463e -r df55f14f4585 crypt-gpgme.c
+--- crypt-gpgme.c	Tue Jan 27 00:52:02 2015 +0100
++++ crypt-gpgme.c	Sun Jan 25 18:09:56 2015 -0800
+@@ -4548,27 +4548,36 @@
+   }
+ }
+ 
+-/* Initialization.  */
+-static void init_gpgme (void)
++static void init_pgp (void)
+ {
+-  /* Make sure that gpg-agent is running.  */
+-  if (! getenv ("GPG_AGENT_INFO"))
+-    {
+-      mutt_error (_("\nUsing GPGME backend, although no gpg-agent is running"));
+-      if (mutt_any_key_to_continue (NULL) == -1)
+-	mutt_exit(1);
+-    }
++  if (gpgme_engine_check_version (GPGME_PROTOCOL_OpenPGP) != GPG_ERR_NO_ERROR)
++  {
++    mutt_error (_("GPGME: OpenPGP protocol not available"));
++    if (mutt_any_key_to_continue (NULL) == -1)
++      mutt_exit(1);
++  }
++}
++
++static void init_smime (void)
++{
++  if (gpgme_engine_check_version (GPGME_PROTOCOL_CMS) != GPG_ERR_NO_ERROR)
++  {
++    mutt_error (_("GPGME: CMS protocol not available"));
++    if (mutt_any_key_to_continue (NULL) == -1)
++      mutt_exit(1);
++  }
+ }
+ 
+ void pgp_gpgme_init (void)
+ {
+-  init_common();
+-  init_gpgme ();
++  init_common ();
++  init_pgp ();
+ }
+ 
+ void smime_gpgme_init (void)
+ {
+-  init_common();
++  init_common ();
++  init_smime ();
+ }
+ 
+ static int gpgme_send_menu (HEADER *msg, int *redraw, int is_smime)
+diff -r a0a5e505463e -r df55f14f4585 init.h
+--- init.h	Tue Jan 27 00:52:02 2015 +0100
++++ init.h	Sun Jan 25 18:09:56 2015 -0800
+@@ -1970,6 +1970,8 @@
+   /*
+   ** .pp
+   ** If \fIset\fP, mutt will use a possibly-running \fCgpg-agent(1)\fP process.
++  ** Note that as of version 2.1, GnuPG no longer exports GPG_AGENT_INFO, so
++  ** mutt no longer verifies if the agent is running.
+   ** (PGP only)
+   */
+   { "pgp_verify_command", 	DT_STR, R_NONE, UL &PgpVerifyCommand, 0},
+diff -r a0a5e505463e -r df55f14f4585 pgp.c
+--- pgp.c	Tue Jan 27 00:52:02 2015 +0100
++++ pgp.c	Sun Jan 25 18:09:56 2015 -0800
+@@ -108,7 +108,8 @@
+ {
+   char *tty;
+ 
+-  if (!option (OPTUSEGPGAGENT) || !getenv ("GPG_AGENT_INFO"))
++  /* GnuPG 2.1 no longer exports GPG_AGENT_INFO */
++  if (!option (OPTUSEGPGAGENT))
+     return 0;
+ 
+   if ((tty = ttyname(0)))
+
