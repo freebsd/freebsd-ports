@@ -241,6 +241,7 @@
     SUBDIR += john
     SUBDIR += kc
     SUBDIR += kedpm
+    SUBDIR += keepass
     SUBDIR += keepassx
     SUBDIR += keepassx2
     SUBDIR += keybase
