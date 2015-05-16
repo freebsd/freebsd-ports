@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -95,6 +95,8 @@ post-patch:
 		${WRKSRC}/rtgui/icmpanel.h
 	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
 		${WRKSRC}/CMakeLists.txt
+	${RM} ${WRKSRC}/rtengine/dcraw.patch \
+		${WRKSRC}/rtengine/dcraw.c
 
 # paranoia: run rawtherapee --help to be sure it finds all its
 # shared libraries (this hinges on proper RPATH setting and propagation)
