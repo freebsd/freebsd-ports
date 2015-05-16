@@ -1,0 +1,7 @@
+This gem provides implementations of attr_required and attr_optional
+(like attr_accessor) for Ruby.
+
+This can help RFC library developers to define which attributes
+are REQUIRED and which are OPTIONAL.
+
+WWW: https://github.com/nov/attr_required
