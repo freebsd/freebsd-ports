@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/Docs/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
 
-USES=		gmake shebangfix perl5
+USES=		cpe gmake shebangfix perl5
+CPE_VENDOR=	antiword_project
 USE_PERL5=	build
 SHEBANG_FILES=	kantiword Unix-only/fontinfo.pl
 MAKE_JOBS_UNSAFE=yes
