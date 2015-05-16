@@ -10,10 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Ping-like program that uses TCP and/or HTTP
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libidn.so:${PORTSDIR}/dns/libidn
 
-USES=	libtool
+USES=		cpe libtool
+CPE_VENDOR=	echoping_project
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
