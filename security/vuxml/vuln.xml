@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="49d9c28c-fbad-11e4-b0fb-00269ee29e57">
+    <topic>Quassel IRC -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>quassel</name>
+	<range><lt>0.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Quassel IRC developers report:</p>
+	<blockquote cite="http://www.quassel-irc.org/node/127">
+	  <p>Restarting a PostgreSQL database while Quassel Core is running
+	    would not properly re-initialize the database session inside Quassel,
+	    bringing back an old security issue (CVE-2013-4422).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/quassel/quassel/commit/6605882f41331c80f7ac3a6992650a702ec71283</url>
+      <cvename>CVE-2015-3427</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-23</discovery>
+      <entry>2015-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c368155a-fa83-11e4-bc58-001e67150279">
     <topic>rubygem-redcarpet -- XSS vulnerability</topic>
     <affects>
