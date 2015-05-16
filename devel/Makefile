@@ -2685,6 +2685,7 @@
     SUBDIR += p5-Parse-CPAN-Packages-Fast
     SUBDIR += p5-Parse-ErrorString-Perl
     SUBDIR += p5-Parse-ExuberantCTags
+    SUBDIR += p5-Parse-LocalDistribution
     SUBDIR += p5-Parse-Method-Signatures
     SUBDIR += p5-Parse-PMFile
     SUBDIR += p5-Parse-PerlConfig
