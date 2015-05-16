@@ -3,7 +3,7 @@
 
 PORTNAME=	lwt
 PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -32,6 +32,7 @@ USE_OCAML_LDCONFIG=	yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--prefix "${PREFIX}" \
+			--enable-camlp4 \
 			--enable-ssl \
 			--enable-react \
 			--disable-libev \
