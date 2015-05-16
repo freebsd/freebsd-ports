@@ -24,7 +24,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 MAKE_JOBS_UNSAFE=YES
-USES=		compiler:c++11-lib libtool pathfix pkgconfig shebangfix tar:xz
+USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig shebangfix tar:xz
+CPE_VENDOR=	linuxfoundation
 SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20
 USE_GHOSTSCRIPT=	yes
