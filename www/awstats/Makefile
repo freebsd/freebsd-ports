@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
-USES=		dos2unix perl5 shebangfix
+USES=		dos2unix cpe perl5 shebangfix
+CPE_VENDOR=	laurent_destailleur
 
 SHEBANG_FILES=	tools/*.pl wwwroot/cgi-bin/*.pl wwwroot/cgi-bin/plugins/*.pm
 
