@@ -22,7 +22,7 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 do-install:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${PERL5} Install.PL -no_modules
