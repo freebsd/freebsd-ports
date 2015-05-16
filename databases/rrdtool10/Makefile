@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.0.50
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.0.x/
 PKGNAMESUFFIX=	10
@@ -11,7 +11,8 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_ENV=	PERL=${PERL}
 
@@ -36,10 +37,15 @@ LATIN2_CONFIGURE_ENABLE=	latin2
 
 post-patch:
 # fix perl5.18+ pod2x tool
-	${REINPLACE_CMD} -e 's|IMG<|IMG ... E<|' \
+	@${REINPLACE_CMD} -e 's|IMG<|IMG ... E<|' \
 		${WRKSRC}/doc/rrdcgi.pod
-	${REINPLACE_CMD} -e 's|rrdtutorial.es.pod||' \
+	@${REINPLACE_CMD} -e 's|rrdtutorial.es.pod||' \
 		${WRKSRC}/doc/Makefile.am \
 		${WRKSRC}/doc/Makefile.in
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
 
 .include <bsd.port.mk>
