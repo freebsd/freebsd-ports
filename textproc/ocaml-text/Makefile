@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/937/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library for dealing with text
 
 USES=		gmake

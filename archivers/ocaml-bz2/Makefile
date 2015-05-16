@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/72/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library to manipulate bz2 files
 
 DESTDIRNAME=	DONTUSEIT

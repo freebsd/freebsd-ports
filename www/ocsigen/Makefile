@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://ocsigen.org/download/
 DISTNAME=	ocsigenserver-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web programming framework for OCaml
 
 LICENSE=	LGPL21_SSLEX

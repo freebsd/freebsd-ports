@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/915/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Date and time library for OCaml
 
 GNU_CONFIGURE=	yes
