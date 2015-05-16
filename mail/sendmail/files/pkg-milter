@@ -3,7 +3,6 @@ include/libmilter/mfdef.h
 lib/libmilter.a
 %%MILTER_SHARED%%lib/libmilter.so.%%MILTER_SOVER%%
 %%MILTER_SHARED%%lib/libmilter.so
-@dirrm include/libmilter
 %%PORTDOCS%%share/doc/sendmail/MILTER
 %%PORTDOCS%%share/doc/sendmail/libmilter/api.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/design.html
@@ -56,4 +55,3 @@ lib/libmilter.a
 %%PORTDOCS%%share/doc/sendmail/libmilter/xxfi_helo.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/xxfi_negotiate.html
 %%PORTDOCS%%share/doc/sendmail/libmilter/xxfi_unknown.html
-%%PORTDOCS%%@dirrm share/doc/sendmail/libmilter
