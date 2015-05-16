@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	lwt
-PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTVERSION=	2.4.8
 CATEGORIES=	devel
-MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Cooperative threading library for OCaml
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ocsigen
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
-RUN_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+BUILD_DEPENDS=		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+RUN_DEPENDS=		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -31,27 +30,16 @@ HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--prefix "${PREFIX}" \
 			--enable-ssl \
-			--enable-react \
+			--disable-react \
 			--disable-libev \
 			--disable-glib
 
 DOCSDIR=		${PREFIX}/share/doc/ocaml/${PORTNAME}
 SA_DIR=         	${PREFIX}/${OCAML_SITELIBDIR}
 
-OPTIONS_DEFINE=		TOPLEVEL DOCS
-OPTIONS_DEFAULT=	TOPLEVEL
-TOPLEVEL_DESC=		Include enhanced OCaml toplevel
+OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTOPLEVEL}
-CONFIGURE_ARGS+=	--enable-toplevel --enable-text
-BUILD_DEPENDS+=		${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
-RUN_DEPENDS+=		${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
-PLIST_FILES=		bin/lwt-toplevel
-.else
-CONFIGURE_ARGS+=	--disable-toplevel --disable-text
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-docs --docdir ${STAGEDIR}${DOCSDIR}
@@ -67,15 +55,15 @@ post-patch:
 		${WRKSRC}/setup.ml
 
 do-configure:
-	(cd ${WRKSRC}; ocaml setup.ml -configure ${CONFIGURE_ARGS})
+	cd ${WRKSRC}; ocaml setup.ml -configure ${CONFIGURE_ARGS}
 	@${REINPLACE_CMD} -e 's%"-lev"%"-lev -L${PREFIX}/lib/ev -Wl,-R${PREFIX}/lib/ev"%' \
 		${WRKSRC}/setup.data
 
 do-build:
-	(cd ${WRKSRC}; ocaml setup.ml -build)
+	cd ${WRKSRC}; ocaml setup.ml -build
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SA_DIR}
-	(cd ${WRKSRC}; ocaml setup.ml -install)
+	cd ${WRKSRC}; ocaml setup.ml -install
 
 .include <bsd.port.mk>
