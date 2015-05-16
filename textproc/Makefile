@@ -1370,6 +1370,7 @@
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
+    SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-opml
