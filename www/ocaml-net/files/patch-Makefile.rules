@@ -1,9 +1,6 @@
-$NetBSD: patch-Makefile.rules,v 1.1 2012/07/06 09:29:14 wiz Exp $
-
-make package work with DESTDIR support
---- Makefile.rules.orig	2012-02-29 18:02:51.000000000 +0000
+--- Makefile.rules.orig	2015-04-26 23:27:28 UTC
 +++ Makefile.rules
-@@ -148,7 +148,8 @@ realuninstall: $(UNINSTOTHER) uninstall-
+@@ -155,7 +155,8 @@ realuninstall: $(UNINSTOTHER) uninstall-
  .PHONY: install-findlib
  install-findlib: META
  	files=`$(COLLECT_FILES) *.mli *.cmi *.cma *.cmxa *.a dll* META $(INSTALL_EXTRA)` && \
