@@ -12,7 +12,8 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-USES=		pathfix pkgconfig python scons
+USES=		cpe pathfix pkgconfig python scons
+CPE_VENDOR=	gpsd_project
 USE_RC_SUBR=	gpsd
 
 MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
