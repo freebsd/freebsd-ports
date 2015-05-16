@@ -18,7 +18,8 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool perl5 pkgconfig shebangfix tar:xz
+USES=		cpe gmake iconv libtool perl5 pkgconfig shebangfix tar:xz
+CPE_VENDOR=	debian
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
 		dselect/methods/ftp/setup
