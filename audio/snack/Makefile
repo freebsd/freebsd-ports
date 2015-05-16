@@ -3,7 +3,7 @@
 
 PORTNAME=	snack
 PORTVERSION=	2.2.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio tcl tk
 MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -36,6 +36,7 @@ ALL_TARGET=	all libsnackogg.so
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/snack${PORTVERSION:R}/*.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
