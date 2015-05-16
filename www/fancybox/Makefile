@@ -9,6 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript library for image/html/multimedia content display
 
+USES=		cpe
+CPE_VENDOR=	fancybox_project
 NO_BUILD=	yes
 
 GH_ACCOUNT=	fancyapps
