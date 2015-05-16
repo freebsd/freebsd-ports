@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml XML typing library
 
 LICENSE=	LGPL21_SSLEX

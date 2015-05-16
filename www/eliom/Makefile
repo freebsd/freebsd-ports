@@ -6,7 +6,7 @@ PORTVERSION=	3.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://ocsigen.org/download/
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ocaml dynamic webpage generation library
 
 LICENSE=	LGPL21_SSLEX

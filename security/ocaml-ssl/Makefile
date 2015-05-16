@@ -8,7 +8,7 @@ MASTER_SITES=	SF/savonet/ocaml-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
 
 USES=		gmake

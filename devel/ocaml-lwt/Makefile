@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cooperative threading library for OCaml
 
 LICENSE=	LGPL21

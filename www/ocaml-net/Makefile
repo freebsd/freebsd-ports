@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml modules for Internet applications
 
 LICENSE=	GPLv2

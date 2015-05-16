@@ -6,7 +6,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	lang
 MASTER_SITES=	http://ocsigen.org/download/
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml to JavaScript compiler
 
 BUILD_DEPENDS=	ocaml-lwt>=2.3.0:${PORTSDIR}/devel/ocaml-lwt \
