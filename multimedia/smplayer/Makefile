@@ -24,7 +24,8 @@ ALL_TARGET=	src/smplayer
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS+=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
 
-USES=		desktop-file-utils dos2unix gmake qmake tar:bzip2
+USES=		cpe desktop-file-utils dos2unix gmake qmake tar:bzip2
+CPE_VENDOR=	ricardo_villalba
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 INSTALLS_ICONS=	yes
 
