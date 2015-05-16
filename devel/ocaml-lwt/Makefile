@@ -3,6 +3,7 @@
 
 PORTNAME=	lwt
 PORTVERSION=	2.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -14,8 +15,10 @@ GH_ACCOUNT=	ocsigen
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
-RUN_DEPENDS=		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+BUILD_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
+			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+RUN_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
+			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,7 +33,7 @@ HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--prefix "${PREFIX}" \
 			--enable-ssl \
-			--disable-react \
+			--enable-react \
 			--disable-libev \
 			--disable-glib
 
