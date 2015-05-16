@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_build18016_community
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Elearning and Human Capital Development platform
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	efrontlearning
 USE_PHP=	mbstring zip iconv zlib spl ldap
 EFRONT_FILES=	CHANGELOG.txt index.php INSTALL.txt \
 		LICENSE.txt  README.txt
