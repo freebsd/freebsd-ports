@@ -14,7 +14,8 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
 MAKE_ARGS=	OS=freebsd ARCH="${ARCH:S/amd64/x86_64/}" \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
