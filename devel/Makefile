@@ -4351,6 +4351,7 @@
     SUBDIR += rebar3
     SUBDIR += regexx
     SUBDIR += regexxer
+    SUBDIR += relx
     SUBDIR += remake
     SUBDIR += renpy
     SUBDIR += replay
