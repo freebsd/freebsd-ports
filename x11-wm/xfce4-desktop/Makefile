@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.12.1
+PORTVERSION=	4.12.2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfdesktop/${PORTVERSION:R}/
 DISTNAME=	xfdesktop-${PORTVERSION}
