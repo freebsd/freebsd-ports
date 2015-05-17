@@ -11,7 +11,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
-USES+=		cmake
+USES+=		cmake cpe
+CPE_VENDOR=	libproxy_project
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
