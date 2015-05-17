@@ -3,6 +3,7 @@
 
 PORTNAME=	simlib
 PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.fit.vutbr.cz/~peringer/SIMLIB/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20111030
@@ -30,5 +31,8 @@ post-patch:
 	@${MV} ${WRKSRC}/src/Makefile.FreeBSD-i386 ${WRKSRC}/src/Makefile
 	@${MV} ${WRKSRC}/examples/Makefile.FreeBSD-i386 ${WRKSRC}/examples/Makefile
 	@${MV} ${WRKSRC}/tests/Makefile.FreeBSD-i386 ${WRKSRC}/tests/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsimlib.so
 
 .include <bsd.port.mk>
