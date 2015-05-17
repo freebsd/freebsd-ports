@@ -10,7 +10,11 @@ MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
-USES=		gmake libtool pathfix
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe gmake libtool pathfix
+CPE_VENDOR=	opus-codec
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
