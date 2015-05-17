@@ -8,7 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	nbari@dalmp.com
 COMMENT=	Git extensions to provide high-level repository operations
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
 
