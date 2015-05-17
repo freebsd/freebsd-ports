@@ -21,7 +21,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
-USES=		tar:bzip2 cmake compiler openal:al,alut
+USES=		cmake compiler cpe openal:al,alut tar:bzip2
 
 .include <bsd.port.pre.mk>
 
