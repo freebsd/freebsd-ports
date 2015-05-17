@@ -1405,6 +1405,7 @@
     SUBDIR += ocaml-equeue
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
+    SUBDIR += ocaml-ipaddr
     SUBDIR += ocaml-lacaml
     SUBDIR += ocaml-lwt
     SUBDIR += ocaml-magic
