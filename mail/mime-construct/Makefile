@@ -5,8 +5,7 @@ PORTNAME=	mime-construct
 PORTVERSION=	1.11
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.argon.org/~roderick/ \
-		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.argon.org/~roderick/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Construct and optionally send MIME messages from command line
