@@ -14,6 +14,8 @@ COMMENT?=		Advanced fork of nss_ldap
 LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
+USES=			cpe
+CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
