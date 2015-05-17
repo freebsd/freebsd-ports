@@ -13,6 +13,10 @@ COMMENT=	Utility to check for traffic shapers
 
 LICENSE=	GPLv2
 
+BROKEN=		due to changes at M-Labs; author is non-responsive
+DEPRECATED=	broken with no known fix (PR 197327)
+EXPIRATION_DATE=	2015-06-05
+
 USES=		tar:tgz
 
 MAKEFILE=	Makefile.osx
