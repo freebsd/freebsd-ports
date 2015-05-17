@@ -1400,6 +1400,7 @@
     SUBDIR += ocaml-camomile-examples
     SUBDIR += ocaml-cfg
     SUBDIR += ocaml-classes
+    SUBDIR += ocaml-cmdliner
     SUBDIR += ocaml-cppo
     SUBDIR += ocaml-deriving-ocsigen
     SUBDIR += ocaml-equeue
