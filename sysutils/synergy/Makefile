@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
