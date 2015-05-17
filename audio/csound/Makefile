@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig13>0:${PORTSDIR}/devel/swig13 \
 		eigen>0:${PORTSDIR}/math/eigen3 \
@@ -40,7 +41,8 @@ CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison gettext scons compiler:openmp python
+USES=		bison cpe gettext scons compiler:openmp python
+CPE_VENDOR=	csounds
 MAKE_ARGS=	instdir="${STAGEDIR}" prefix="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
 		buildCsoundAC=0 buildCsoundVST=0 buildInterfaces=1 \
