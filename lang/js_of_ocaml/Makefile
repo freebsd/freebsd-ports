@@ -11,10 +11,10 @@ COMMENT=	OCaml to JavaScript compiler
 BUILD_DEPENDS=	ocaml-lwt>=2.3.0:${PORTSDIR}/devel/ocaml-lwt \
 		menhir:${PORTSDIR}/devel/menhir \
 		${SA_DIR}/deriving-ocsigen/deriving.a:${PORTSDIR}/devel/ocaml-deriving-ocsigen \
-		${SA_DIR}/cmdliner/cmdliner.a:${PORTSDIR}/devel/cmdliner
+		${SA_DIR}/cmdliner/cmdliner.a:${PORTSDIR}/devel/ocaml-cmdliner
 RUN_DEPENDS=	ocaml-lwt>=2.3.0:${PORTSDIR}/devel/ocaml-lwt \
 		${SA_DIR}/deriving-ocsigen/deriving.a:${PORTSDIR}/devel/ocaml-deriving-ocsigen \
-		${SA_DIR}/cmdliner/cmdliner.a:${PORTSDIR}/devel/cmdliner
+		${SA_DIR}/cmdliner/cmdliner.a:${PORTSDIR}/devel/ocaml-cmdliner
 
 SA_DIR=		${PREFIX}/${OCAML_SITELIBDIR}
 
