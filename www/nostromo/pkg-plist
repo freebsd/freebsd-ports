@@ -8,9 +8,4 @@ sbin/nhttpd
 %%NOSTROMODIR%%/htdocs/cgi-bin/printenv
 %%NOSTROMODIR%%/icons/dir.gif
 %%NOSTROMODIR%%/icons/file.gif
-@dirrmtry %%NOSTROMODIR%%/conf
-@dirrmtry %%NOSTROMODIR%%/htdocs/cgi-bin
-@dirrmtry %%NOSTROMODIR%%/htdocs
-@dirrmtry %%NOSTROMODIR%%/icons
-@dirrmtry %%NOSTROMODIR%%/logs
-@dirrmtry %%NOSTROMODIR%%
+@dir(,,775) %%NOSTROMOLOGDIR%%
