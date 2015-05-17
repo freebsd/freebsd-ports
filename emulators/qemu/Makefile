@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH \
 		http://bellard.org/qemu/
