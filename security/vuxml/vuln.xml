@@ -57,6 +57,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0089e18-fc9e-11e4-bc58-001e67150279">
+    <topic>rubygems -- request hijacking vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby20-gems</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+      <package>
+	<name>ruby21-gems</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+      <package>
+	<name>ruby22-gems</name>
+	<range><lt>2.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jonathan Claudius reports:</p>
+	<blockquote cite="http://blog.rubygems.org/2015/05/14/CVE-2015-3900.html">
+	  <p>RubyGems provides the ability of a domain to direct clients to a
+	    separate host that is used to fetch gems and make API calls against.
+	    This mechanism is implemented via DNS, specificly a SRV record
+	    _rubygems._tcp under the original requested domain.</p>
+	  <p>RubyGems did not validate the hostname returned in the SRV record
+	    before sending requests to it. This left clients open to a DNS
+	    hijack attack, whereby an attacker could return a SRV of their
+	    choosing and get the client to use it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/200264</freebsdpr>
+      <cvename>CVE-2015-3900</cvename>
+      <url>http://blog.rubygems.org/2015/05/14/CVE-2015-3900.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-14</discovery>
+      <entry>2015-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2780e442-fc59-11e4-b18b-6805ca1d3bb1">
     <topic>qemu -- possible VM escape and code execution ("VENOM")</topic>
     <affects>
