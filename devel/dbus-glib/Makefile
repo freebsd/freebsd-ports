@@ -12,7 +12,8 @@ COMMENT=	GLib bindings for the D-BUS messaging system
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		cpe gettext gmake libtool pathfix pkgconfig
+CPE_VENDOR=	freedesktop
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
