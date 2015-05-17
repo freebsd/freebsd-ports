@@ -2,6 +2,5 @@ Alias /pandora_console %%WWWDIR%%
 
 <Location /pandora_console>
     DirectoryIndex index.php
-    Order deny,allow
-    Allow from all
+    Require all granted
 </Location>
