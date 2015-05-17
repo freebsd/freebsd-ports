@@ -4348,6 +4348,7 @@
     SUBDIR += re2c
     SUBDIR += readline
     SUBDIR += rebar
+    SUBDIR += rebar3
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += remake
