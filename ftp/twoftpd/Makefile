@@ -5,7 +5,7 @@ PORTNAME=	twoftpd
 PORTVERSION=	1.42
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/
+MASTER_SITES=	http://untroubled.org/archive/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, secure, efficient FTP server
