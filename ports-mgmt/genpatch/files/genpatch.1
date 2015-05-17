@@ -1,0 +1,87 @@
+.Dd 17 May, 2015
+.Dt GENPATCH 1      
+.Os
+.Sh NAME
+.Nm genpatch
+.Nd generate patch quickly in standard FreeBSD ports format
+.Sh SYNOPSIS             
+.Nm
+.Ar newfile
+.Nm
+.Ar oldfile
+.Ar newfile
+.Sh DESCRIPTION    
+This utility is always called by
+.Xr portfix 1 ,
+but quite often it is useful in its own right.
+
+It creates patches using the standard FreeBSD ports format defined by the "make makepatch"
+ports utility, but there are different operational modes.
+
+If
+.Nm
+is called when the current working directory is a subdirectory of WRKDIRPREFIX if defined
+or PORTSDIR if not, then a patch will be saved in the current directory using the naming
+standard used by "make makepatch".  Note that the utility assumes that it has been executed
+in the WRKSRC directory, the standard location for applying ports patches.
+
+If
+.Nm
+is executed outside of WRKDIRPREFIX (or PORTSDIR), then a patch will not be created.  The 
+contents of the patch will be send to stdout, so the user will have to direct it to a
+file manually as desired.
+
+If only one argument is given,
+.Nm
+will search for a file named "<newfile>.intermediate" and if found, it will generated diff
+output between it and
+.Op newfile .
+If that file doesn't exist, it will search for "<newfile>.orig" and attempt to create diff
+output between it and
+.Op newfile .
+.Pp
+.Sh ERRORS
+.Nm
+will abort if no arguments or more than 2 arguments are given.  If only one argument (
+.Op newfile
+) is given, then a regular file called "<newfile>.orig" or "<newfile>.intermediate"
+must exist otherwise
+.Nm
+will abort.  If two arguments are given, both must be existing regular files.
+.Pp
+.Sh ENVIRONMENT
+.Bl -tag -width "PORTEDITOR" -indent 
+.It Ev WORKTREE
+Overrides hardcoded WRKDIRPREFIX (or PORTSDIR).  This is useful for ports outside of the tree
+or when
+.Nm
+was installed via binary packages and WRKDIRPREFIX is defined (or PORTSDIR is non-standard)
+.Pp
+.Sh NOTES
+.Bl -enum -compact
+.It 
+FreeBSD does not set WRKDIRPREFIX by default
+.It
+The default PORTSDIR for FreeBSD is
+.Pa /usr/ports
+so on standard FreeBSD systems
+.Nm
+will generate a patch file in the current directory if executed on any subdirectory of
+.Pa /usr/ports .
+.It
+Dragonfly sets WRKDIRPREFIX to
+.Pa /usr/obj/dports
+by default, so on standard systems patch
+files are generated automatically if
+.Nm
+is executed from a subdirectory of
+.Pa /usr/obj/dports . 
+.It
+The root directory used for this calculation is permanently set when
+.Nm
+is built, but it can be overridden with the WORKTREE environment variable.
+.El
+.Pp
+.Sh SEE ALSO 
+.Xr dupe 1 , 
+.Xr portfix 1 

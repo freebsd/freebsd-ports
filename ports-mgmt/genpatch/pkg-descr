@@ -1,0 +1,11 @@
+This is a set of three simple tools written in sh(1) for generating single
+patches for use in Ports.  This set is ideal for creating a new patch when
+it is inconvenient or undesirable to use the "make makepatch" utility.
+
+The first tool is "dupe" which is a quick copy utility.  The second tool
+is "genpatch" which creates patches in the standards diff format and
+using the standard file name conventions.  The last tool is "portfix"
+which runs "dupe", an editor of choice, and "genpatch" serially as a
+macro as a convenient and quick way to create port patches.
+
+Please see the dupe, genpatch, and portfix man pages for details.
