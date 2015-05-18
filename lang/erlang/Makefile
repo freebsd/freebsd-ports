@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.3
+PORTVERSION=	17.5.4
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -54,6 +54,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 EI_VSN=		3.7.20
+SNMP_VSN=	5.1.2
 TOOLS_VSN=	2.7.2
 
 .include <bsd.port.options.mk>
@@ -211,11 +212,11 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.4
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.7
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.8
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2.2
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.10/* \
@@ -241,7 +242,6 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
-
 .if ! ${PORT_OPTIONS:MGS}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
 .endif
@@ -259,6 +259,8 @@ post-install:
 .if ! ${PORT_OPTIONS:MWX}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 .endif
+
+	${LN} -s ../lib/erlang/lib/snmp-${SNMP_VSN}/bin/snmpc ${STAGEDIR}${PREFIX}/bin/snmpc
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
 		| ${SORT} \
