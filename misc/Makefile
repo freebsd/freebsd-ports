@@ -364,6 +364,7 @@
     SUBDIR += pcbsd-meta-mate
     SUBDIR += pcbsd-meta-nvidia
     SUBDIR += pcbsd-meta-nvidia-304
+    SUBDIR += pcbsd-meta-nvidia-340
     SUBDIR += pcbsd-meta-openbox
     SUBDIR += pcbsd-meta-ratpoison
     SUBDIR += pcbsd-meta-rekonq
