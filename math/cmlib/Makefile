@@ -4,8 +4,7 @@
 PORTNAME=	cmlib
 PORTVERSION=	3.0
 CATEGORIES=	math
-MASTER_SITES=	NL:blas ftp://ftp.nist.gov/pub/cmlib/
-MASTER_SITE_SUBDIR=blas/:blas
+MASTER_SITES=	NL/blas:blas ftp://ftp.nist.gov/pub/cmlib/
 # Get d1mach.f, i1mach.f, r1mach.f from BLAS, rather than from CMLIB.
 # See Netlib FAQ #2.17: http://netlib.org/misc/faq.html#2.17
 DISTFILES=	src.tar.Z d1mach.f:blas i1mach.f:blas r1mach.f:blas
