@@ -70,6 +70,7 @@
     SUBDIR += ipcheck
     SUBDIR += ironsides
     SUBDIR += knot
+    SUBDIR += knot2
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += ldnsm
