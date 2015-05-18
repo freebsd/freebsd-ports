@@ -170,7 +170,7 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
-CONFIGURE_ARGS+==	--without-gost
+CONFIGURE_ARGS+=	--without-gost
 .endif
 
 .if !${PORT_OPTIONS:MLINKS}
