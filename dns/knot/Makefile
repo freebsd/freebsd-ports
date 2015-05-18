@@ -3,6 +3,7 @@
 
 PORTNAME=	knot
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -12,10 +13,10 @@ COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
-CONFLICTS=	knot-devel-1.*
-
 BUILD_DEPENDS=	flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
+
+CONFLICTS=	knot-2.*
 
 USES=		alias bison libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -41,7 +42,7 @@ SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
-OPTIONS_DEFINE=	DNSTAP FASTPARSER GOST IDN LMDB
+OPTIONS_DEFINE=	DNSTAP FASTPARSER IDN LMDB
 
 DNSTAP_DESC=		dnstap support (see dnstap.info)
 FASTPARSER_DESC=	Fast zone parser (demanding compilation)
@@ -61,10 +62,6 @@ LMDB_CONFIGURE_ENABLE=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGOST} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
-IGNORE=	cannot use both LibreSSL and GOST (not installing correctly); either don't use GOST or do use OpenSSL
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
