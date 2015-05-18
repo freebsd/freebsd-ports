@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
 
-MAINTAINER=	pormaster@bsdforge.com
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Free and open source enterprise wiki
 
 LICENSE=	GPLv2
