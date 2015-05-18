@@ -2,6 +2,7 @@
 
 PORTNAME=	mpich
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -26,7 +27,7 @@ OPTIONS_GROUP=		PM
 OPTIONS_GROUP_PM=	GFORKER HYDRA
 OPTIONS_RADIO=		DEFAULTPM
 OPTIONS_RADIO_DEFAULTPM=DGFORKER DHYDRA
-OPTIONS_DEFAULT=	HYDRA DHYDRA
+OPTIONS_DEFAULT=	FORTRAN GFORKER HYDRA DHYDRA
 OPTIONS_SUB=		yes
 
 FORTRAN_USES=			fortran
@@ -35,8 +36,10 @@ FORTRAN_CONFIGURE_ON=		\
 	MPICH_LDFLAGS="-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 		       -L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin"
 
+PM_DESC=	Process managers
 GFORKER_DESC=	Simple local process manager
 HYDRA_DESC=	Parallel process manager
+DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
