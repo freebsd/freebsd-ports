@@ -25,6 +25,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
+USES=		cpe
 NO_BUILD=		yes
 PLIST=			${WRKDIR}/plist
 SUB_FILES=		pkg-message
