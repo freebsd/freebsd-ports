@@ -11,6 +11,7 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Authoritative only non-recursive name server
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	nsd-[0-3]* nsd3-[0-9]*
 
@@ -29,7 +30,7 @@ NSDMAX_IPS?=	512
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--with-user=${NSDUSER} \
-		--with-configdir=${PREFIX}/etc/nsd \
+		--with-configdir=${ETCDIR} \
 		--localstatedir=${NSDLSDIR} \
 		--with-dbfile=${NSDDBDIR}/nsd.db \
 		--with-pidfile=${NSDRUNDIR}/nsd.pid
@@ -50,8 +51,9 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
-		MINRESPSIZE NSEC3 MMAP MAXIPS DOCS RRL ZONE_STATS
+		MINRESPSIZE NSEC3 MMAP MAXIPS DOCS RRL ZONE_STATS MUNIN_PLUGIN
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 MINRESPSIZE RRL
+OPTIONS_SUB=	yes
 
 ROOT_SERVER_DESC=	Configure as a root server
 LARGEFILE_DESC=		Largefile support
@@ -63,6 +65,7 @@ MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 ZONE_STATS_DESC=	Separate statistics for each zone
+MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
 
 LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 
@@ -78,6 +81,18 @@ MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
 ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 
+.include <bsd.port.options.mk>
+
+post-build:
+.if ${PORT_OPTIONS:MMUNIN_PLUGIN}
+	${REINPLACE_CMD} \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/usr/local/etc/nsd.conf|${ETCDIR}/nsd.conf|g' \
+		-e 's|/usr/local/var/munin/plugin-state|/var/munin/plugin-state/root|g' \
+		-e '90s|/var/munin/plugin-state/root|$${MUNIN_PLUGSTATE}|' \
+		${WRKSRC}/contrib/nsd_munin_
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
@@ -87,5 +102,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/sbin/nsd-checkconf \
 		${STAGEDIR}${PREFIX}/sbin/nsd-checkzone \
 		${STAGEDIR}${PREFIX}/sbin/nsd-control
+.if ${PORT_OPTIONS:MMUNIN_PLUGIN}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/nsd_munin_ \
+		${STAGEDIR}${PREFIX}/share/munin/plugins
+.endif
 
 .include <bsd.port.mk>
