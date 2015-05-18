@@ -80,34 +80,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitespace/whitespace.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitespace/whitespace.txt
 %%DATADIR%%/mustache.php
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/child_context
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/comments
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/complex
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/delimiters
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dot_notation
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/double_section
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/escaped
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/grand_parent_context
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/i18n
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/implicit_iterator
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/inverted_double_section
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/inverted_section
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/nested_partials/partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/nested_partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/partials/partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/recursive_partials/partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/recursive_partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/section_iterator_objects
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/section_magic_objects
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/section_objects
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/sections
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/sections_nested
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/simple
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/unescaped
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/utf8
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/utf8_unescaped
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/whitespace/partials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/whitespace
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%
