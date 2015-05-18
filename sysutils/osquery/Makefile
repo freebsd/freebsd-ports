@@ -3,7 +3,7 @@
 
 PORTNAME=	osquery
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GH:ghc \
 		https://codeload.github.com/${PORTNAME}/third-party/tar.gz/${PORTVERSION}?dummy=/:gh
