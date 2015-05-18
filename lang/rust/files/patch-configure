@@ -1,15 +1,15 @@
---- configure.orig	2014-01-20 12:44:20.637789551 +0800
-+++ configure	2014-01-20 12:45:23.726260411 +0800
-@@ -424,7 +424,6 @@
+--- configure.orig	2015-05-13 20:03:52 UTC
++++ configure
+@@ -678,7 +678,6 @@ putvar CFG_BOOTSTRAP_KEY
+ 
  step_msg "looking for build programs"
  
- probe_need CFG_PERL        perl
 -probe_need CFG_CURLORWGET  curl wget
  probe_need CFG_PYTHON      python2.7 python2.6 python2 python
  
  python_version=$($CFG_PYTHON -V 2>&1)
-@@ -547,14 +546,6 @@
-     fi
+@@ -805,13 +804,6 @@ then
+     putvar CFG_LOCAL_RUST_ROOT
  fi
  
 -# Force freebsd to build with clang; gcc doesn't like us there
@@ -17,9 +17,8 @@
 -then
 -    step_msg "on FreeBSD, forcing use of clang"
 -    CFG_ENABLE_CLANG=1
--    putvar CFG_ENABLE_CLANG
 -fi
 -
- if [ -z "$CFG_ENABLE_CLANG" -a -z "$CFG_GCC" ]
+ # Force bitrig to build with clang; gcc doesn't like us there
+ if [ $CFG_OSTYPE = unknown-bitrig ]
  then
-     err "either clang or gcc is required"
