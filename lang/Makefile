@@ -244,7 +244,6 @@
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += pypy
-    SUBDIR += pypy-devel
     SUBDIR += pypy3-devel
     SUBDIR += python
     SUBDIR += python-doc-html

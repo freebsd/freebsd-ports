@@ -24,8 +24,11 @@
 %%PYPY_INCLUDEDIR%%/methodobject.h
 %%PYPY_INCLUDEDIR%%/missing.h
 %%PYPY_INCLUDEDIR%%/modsupport.h
+%%PYPY_INCLUDEDIR%%/numpy/__multiarray_api.h
 %%PYPY_INCLUDEDIR%%/numpy/arrayobject.h
+%%PYPY_INCLUDEDIR%%/numpy/ndarraytypes.h
 %%PYPY_INCLUDEDIR%%/numpy/npy_3kcompat.h
+%%PYPY_INCLUDEDIR%%/numpy/npy_common.h
 %%PYPY_INCLUDEDIR%%/numpy/old_defines.h
 %%PYPY_INCLUDEDIR%%/object.h
 %%PYPY_INCLUDEDIR%%/patchlevel.h
@@ -953,6 +956,14 @@
 %%PYPY_LIBDIR%%/encodings/uu_codec.pyc
 %%PYPY_LIBDIR%%/encodings/zlib_codec.py
 %%PYPY_LIBDIR%%/encodings/zlib_codec.pyc
+%%PYPY_LIBDIR%%/ensurepip/__init__.py
+%%PYPY_LIBDIR%%/ensurepip/__init__.pyc
+%%PYPY_LIBDIR%%/ensurepip/__main__.py
+%%PYPY_LIBDIR%%/ensurepip/__main__.pyc
+%%PYPY_LIBDIR%%/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
+%%PYPY_LIBDIR%%/ensurepip/_bundled/setuptools-7.0-py2.py3-none-any.whl
+%%PYPY_LIBDIR%%/ensurepip/_uninstall.py
+%%PYPY_LIBDIR%%/ensurepip/_uninstall.pyc
 %%PYPY_LIBDIR%%/filecmp.py
 %%PYPY_LIBDIR%%/filecmp.pyc
 %%PYPY_LIBDIR%%/fileinput.py
@@ -1148,6 +1159,8 @@
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_calltips.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_config_name.py
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_config_name.pyc
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_configdialog.py
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_configdialog.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_delegator.py
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_delegator.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_formatparagraph.py
@@ -1164,6 +1177,8 @@
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_pathbrowser.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_rstrip.py
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_rstrip.pyc
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_searchdialogbase.py
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_searchdialogbase.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_searchengine.py
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_searchengine.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_text.py
@@ -1172,6 +1187,8 @@
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_textview.pyc
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_warning.py
 %%PYPY_LIBDIR%%/idlelib/idle_test/test_warning.pyc
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_widgetredir.py
+%%PYPY_LIBDIR%%/idlelib/idle_test/test_widgetredir.pyc
 %%PYPY_LIBDIR%%/idlelib/idlever.py
 %%PYPY_LIBDIR%%/idlelib/idlever.pyc
 %%PYPY_LIBDIR%%/idlelib/keybindingDialog.py
@@ -1275,6 +1292,8 @@
 %%PYPY_LIBDIR%%/lib-tk/test/runtktests.pyc
 %%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/__init__.py
 %%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/__init__.pyc
+%%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/test_font.py
+%%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/test_font.pyc
 %%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/test_geometry_managers.py
 %%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/test_geometry_managers.pyc
 %%PYPY_LIBDIR%%/lib-tk/test/test_tkinter/test_images.py
@@ -1335,6 +1354,8 @@
 %%PYPY_LIBDIR%%/lib2to3/fixes/__init__.pyc
 %%PYPY_LIBDIR%%/lib2to3/fixes/fix_apply.py
 %%PYPY_LIBDIR%%/lib2to3/fixes/fix_apply.pyc
+%%PYPY_LIBDIR%%/lib2to3/fixes/fix_asserts.py
+%%PYPY_LIBDIR%%/lib2to3/fixes/fix_asserts.pyc
 %%PYPY_LIBDIR%%/lib2to3/fixes/fix_basestring.py
 %%PYPY_LIBDIR%%/lib2to3/fixes/fix_basestring.pyc
 %%PYPY_LIBDIR%%/lib2to3/fixes/fix_buffer.py
@@ -1520,6 +1541,7 @@
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g29b85a97xace1544d.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g5ebcbb41x576c1bb2.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g82f9edffx359e5476.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gc44ee2dbx4b91c023.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_hk.py
@@ -2493,6 +2515,8 @@
 %%PYPY_LIBDIR%%/test/Sine-1000Hz-300ms.aif
 %%PYPY_LIBDIR%%/test/__init__.py
 %%PYPY_LIBDIR%%/test/__init__.pyc
+%%PYPY_LIBDIR%%/test/_mock_backport.py
+%%PYPY_LIBDIR%%/test/_mock_backport.pyc
 %%PYPY_LIBDIR%%/test/audiodata/pluck-pcm16.aiff
 %%PYPY_LIBDIR%%/test/audiodata/pluck-pcm16.au
 %%PYPY_LIBDIR%%/test/audiodata/pluck-pcm16.wav
@@ -2526,6 +2550,10 @@
 %%PYPY_LIBDIR%%/test/badsyntax_nocaret.py
 %%PYPY_LIBDIR%%/test/buffer_tests.py
 %%PYPY_LIBDIR%%/test/buffer_tests.pyc
+%%PYPY_LIBDIR%%/test/capath/4e1295a3.0
+%%PYPY_LIBDIR%%/test/capath/5ed36f99.0
+%%PYPY_LIBDIR%%/test/capath/6e88d7b8.0
+%%PYPY_LIBDIR%%/test/capath/99d0fa06.0
 %%PYPY_LIBDIR%%/test/cfgparser.1
 %%PYPY_LIBDIR%%/test/check_soundcard.vbs
 %%PYPY_LIBDIR%%/test/cjkencodings/big5-utf8.txt
@@ -2734,6 +2762,7 @@
 %%PYPY_LIBDIR%%/test/decimaltestdata/tointegral.decTest
 %%PYPY_LIBDIR%%/test/decimaltestdata/tointegralx.decTest
 %%PYPY_LIBDIR%%/test/decimaltestdata/xor.decTest
+%%PYPY_LIBDIR%%/test/dh512.pem
 %%PYPY_LIBDIR%%/test/doctest_aliases.py
 %%PYPY_LIBDIR%%/test/doctest_aliases.pyc
 %%PYPY_LIBDIR%%/test/double_const.py
@@ -2766,7 +2795,11 @@
 %%PYPY_LIBDIR%%/test/inspect_fodder.pyc
 %%PYPY_LIBDIR%%/test/inspect_fodder2.py
 %%PYPY_LIBDIR%%/test/inspect_fodder2.pyc
+%%PYPY_LIBDIR%%/test/keycert.passwd.pem
 %%PYPY_LIBDIR%%/test/keycert.pem
+%%PYPY_LIBDIR%%/test/keycert2.pem
+%%PYPY_LIBDIR%%/test/keycert3.pem
+%%PYPY_LIBDIR%%/test/keycert4.pem
 %%PYPY_LIBDIR%%/test/leakers/README.txt
 %%PYPY_LIBDIR%%/test/leakers/__init__.py
 %%PYPY_LIBDIR%%/test/leakers/__init__.pyc
@@ -2782,6 +2815,8 @@
 %%PYPY_LIBDIR%%/test/list_tests.pyc
 %%PYPY_LIBDIR%%/test/lock_tests.py
 %%PYPY_LIBDIR%%/test/lock_tests.pyc
+%%PYPY_LIBDIR%%/test/make_ssl_certs.py
+%%PYPY_LIBDIR%%/test/make_ssl_certs.pyc
 %%PYPY_LIBDIR%%/test/mapping_tests.py
 %%PYPY_LIBDIR%%/test/mapping_tests.pyc
 %%PYPY_LIBDIR%%/test/math_testcases.txt
@@ -2796,6 +2831,7 @@
 %%PYPY_LIBDIR%%/test/pickletester.pyc
 %%PYPY_LIBDIR%%/test/profilee.py
 %%PYPY_LIBDIR%%/test/profilee.pyc
+%%PYPY_LIBDIR%%/test/pycacert.pem
 %%PYPY_LIBDIR%%/test/pyclbr_input.py
 %%PYPY_LIBDIR%%/test/pyclbr_input.pyc
 %%PYPY_LIBDIR%%/test/pydoc_mod.py
@@ -2815,6 +2851,7 @@
 %%PYPY_LIBDIR%%/test/relimport.pyc
 %%PYPY_LIBDIR%%/test/reperf.py
 %%PYPY_LIBDIR%%/test/reperf.pyc
+%%PYPY_LIBDIR%%/test/revocation.crl
 %%PYPY_LIBDIR%%/test/sample_doctest.py
 %%PYPY_LIBDIR%%/test/sample_doctest.pyc
 %%PYPY_LIBDIR%%/test/sample_doctest_no_docstrings.py
@@ -2823,12 +2860,18 @@
 %%PYPY_LIBDIR%%/test/sample_doctest_no_doctests.pyc
 %%PYPY_LIBDIR%%/test/script_helper.py
 %%PYPY_LIBDIR%%/test/script_helper.pyc
+%%PYPY_LIBDIR%%/test/selfsigned_pythontestdotnet.pem
 %%PYPY_LIBDIR%%/test/seq_tests.py
 %%PYPY_LIBDIR%%/test/seq_tests.pyc
 %%PYPY_LIBDIR%%/test/sgml_input.html
 %%PYPY_LIBDIR%%/test/sha256.pem
 %%PYPY_LIBDIR%%/test/sortperf.py
 %%PYPY_LIBDIR%%/test/sortperf.pyc
+%%PYPY_LIBDIR%%/test/ssl_cert.pem
+%%PYPY_LIBDIR%%/test/ssl_key.passwd.pem
+%%PYPY_LIBDIR%%/test/ssl_key.pem
+%%PYPY_LIBDIR%%/test/ssl_servers.py
+%%PYPY_LIBDIR%%/test/ssl_servers.pyc
 %%PYPY_LIBDIR%%/test/string_tests.py
 %%PYPY_LIBDIR%%/test/string_tests.pyc
 %%PYPY_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
@@ -3072,6 +3115,8 @@
 %%PYPY_LIBDIR%%/test/test_email_codecs.pyc
 %%PYPY_LIBDIR%%/test/test_email_renamed.py
 %%PYPY_LIBDIR%%/test/test_email_renamed.pyc
+%%PYPY_LIBDIR%%/test/test_ensurepip.py
+%%PYPY_LIBDIR%%/test/test_ensurepip.pyc
 %%PYPY_LIBDIR%%/test/test_enumerate.py
 %%PYPY_LIBDIR%%/test/test_enumerate.pyc
 %%PYPY_LIBDIR%%/test/test_eof.py
@@ -3834,3 +3879,4 @@
 %%PYPY_LIBDIR%%/xmlrpclib.pyc
 %%PYPY_LIBDIR%%/zipfile.py
 %%PYPY_LIBDIR%%/zipfile.pyc
+lib/libpypy-c.so

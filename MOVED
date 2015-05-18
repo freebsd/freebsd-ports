@@ -7582,3 +7582,4 @@ archivers/lz4|archivers/liblz4|2015-05-08|Superseded by archivers/liblz4
 deskutils/libopensync-plugin-python||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
 deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
 devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
+lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
