@@ -1,0 +1,10 @@
+--- scripts/freebsd/yaws.orig	2015-05-17 19:30:12 UTC
++++ scripts/freebsd/yaws
+@@ -73,4 +73,7 @@ yaws_reload() {
+ }
+ 
+ load_rc_config $name
++
++: ${yaws_enable:=NO}
++
+ run_rc_command "$1"
