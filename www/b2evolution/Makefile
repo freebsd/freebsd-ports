@@ -13,7 +13,7 @@ COMMENT=	Multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
 
 B2EVO_DATE?=	stable-2011-03-23
 USE_PHP=	mysql pcre session xml
