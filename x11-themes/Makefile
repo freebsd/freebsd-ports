@@ -150,9 +150,12 @@
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
+    SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde4
     SUBDIR += qtcurve-qt4
+    SUBDIR += qtcurve-qt5
+    SUBDIR += qtcurve-utils
     SUBDIR += rezlooks
     SUBDIR += sawfish-themes
     SUBDIR += slim-themes
