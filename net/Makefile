@@ -331,6 +331,7 @@
     SUBDIR += libproxy-webkit
     SUBDIR += librouteros
     SUBDIR += librsync
+    SUBDIR += librsync1
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
     SUBDIR += libsrtp
