@@ -3,6 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.11.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -24,7 +25,7 @@ CONFIGURE_ARGS=	--disable-alsa --disable-matroska --disable-pulseaudio \
 		--disable-silent-rules --disable-strict \
 		--with-gsm=${LOCALBASE} --with-srtp=${LOCALBASE} \
 		--with-polarssl=${LOCALBASE} xxd_found=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_ARC4RANDOM
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gettext-tools gmake libtool pathfix pkgconfig
