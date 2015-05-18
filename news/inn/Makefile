@@ -21,7 +21,8 @@ SUB_FILES=	pkg-install
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		gmake perl5 uidfix
+USES=		cpe gmake perl5 uidfix
+CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
