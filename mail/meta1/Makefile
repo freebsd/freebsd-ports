@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0b.0.0
+PORTVERSION=	1.1.0a.1.0
 PORTREVISION=	2
-DISTVERSION=	1.0.Beta0.0
+DISTVERSION=	1.1.Alpha1.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.beta/proto/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/authpar/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -15,7 +15,7 @@ NOT_FOR_ARCHS=	ia64
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
 NEED_ROOT=	yes
-USES=		libtool
+MANUAL_PACKAGE_BUILD=	needs hostname
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -24,8 +24,7 @@ IGNORE=		your system does not support sysvipc
 .endif
 .endif
 
-MANUAL_PACKAGE_BUILD=	needs hostname
-
+USES=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
@@ -99,7 +98,7 @@ SASL_SUFFIX?=	-nosasl
 
 .if ${PORT_OPTIONS:MSASL2AUTHD}
 .if empty(PORT_OPTIONS:MSASL2)
-IGNORE=		Option SASL2AUTHD needs option SASL2
+IGNORE=		option SASL2AUTHD needs option SASL2
 .endif
 .endif
 
