@@ -1,5 +1,5 @@
---- make/Makefile.orig	2014-12-16 05:18:02.000000000 +0200
-+++ make/Makefile	2014-12-30 10:29:50.000000000 +0200
+--- make/Makefile.orig	2015-05-18 16:58:50.748044000 +0800
++++ make/Makefile	2015-05-18 17:07:06.767545000 +0800
 @@ -33,9 +33,9 @@
  ##  BINDIR       Hard Copies of TINKER Executables
  ##  LINKDIR      Linked Copies of TINKER Executables
@@ -13,7 +13,7 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -46,26 +46,26 @@ LINKDIR = /usr/local/bin
+@@ -46,26 +46,26 @@
  ##  CPU Type: Intel x86 Compatible
  ##  Compiler: GNU gfortran
  
@@ -27,8 +27,8 @@
 +F77 = ${FC}
 +LIBS =
 +F77FLAGS = -c ${FFLAGS}
-+OPTFLAGS = 
-+LIBFLAGS = -rcuv
++OPTFLAGS =
++LIBFLAGS = -crusv
 +RANLIB = ranlib
 +LINKFLAGS = ${LDFLAGS}
  
@@ -54,7 +54,7 @@
  
  ##  Machine:  Generic Linux
  ##  CPU Type: Intel x86 Compatible (also AMD)
-@@ -106,7 +106,7 @@ LINKFLAGS = $(OPTFLAGS) -static-libgcc
+@@ -106,7 +106,7 @@
  #LIBFLAGS = -crusv
  #RANLIB = ranlib -c
  #LINKFLAGS = $(OPTFLAGS) -static-intel -mmacosx-version-min=10.6 \
@@ -63,31 +63,29 @@
  
  ##  Machine:  Macintosh
  ##  CPU Type: Intel Xeon
-@@ -710,93 +710,88 @@ EXEFILES = alchemy.x \
+@@ -710,92 +710,88 @@
             xyzpdb.x \
             xyzsybyl.x
  
 -%.o: %.f
 -	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
--
++.SUFFIXES: .x
+ 
 -%.o: %.c
 -	${CC} ${CFLAGS} ${INCLUDEDIR} ${OPTFLAGS} $<
-+.SUFFIXES: .x
++.f.o:
++	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@
  
 -%.x: %.o libtinker.a
 -	${F77} ${LINKFLAGS} -o $@ $^ ${LIBS}; strip $@
-+.f.o:
-+	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
- 
--all:
--	${EXEFILES}
 +.o.x: libtinker.a
 +	${F77} ${LINKFLAGS} -o $@ $< libtinker.a ${LIBS}
  
+ all:	${EXEFILES}
+ 
 -install:
 -	rename
-+all:	${EXEFILES}
- 
+-
  clean:
  	rm -f *.o *.mod *.a *.x
  
@@ -226,7 +224,7 @@
  	rm -f $(LINKDIR)/anneal
  	rm -f $(LINKDIR)/archive
  	rm -f $(LINKDIR)/bar
-@@ -859,7 +854,7 @@ remove_links:
+@@ -858,7 +854,7 @@
  
  create_links:
  	ln -s $(BINDIR)/alchemy    $(LINKDIR)/alchemy
