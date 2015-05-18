@@ -5,7 +5,8 @@ PORTNAME=	unixbench
 PORTVERSION=	4.1.0
 PORTREVISION=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/
+MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/ \
+		http://www.tux.org/pub/tux/niemi/unixbench/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
