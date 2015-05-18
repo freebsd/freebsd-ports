@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack tablature editor and player
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
@@ -29,7 +30,8 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		cpe desktop-file-utils gmake pkgconfig
+CPE_VENDOR=	herac
 USE_JAVA=	yes
 USE_ANT=	yes
 WITH_GECKO=	libxul
