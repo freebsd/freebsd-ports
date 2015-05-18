@@ -35,9 +35,7 @@ IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text,
 
 pre-install:
 	@cd ${WRKSRC} && \
-		(${FIND} . -type f | ${SED} -e 's|^\./|%%DOCSDIR%%/|' | ${SORT}; \
-		${FIND} * -type d | ${SED} -e 's|^|@dirrm %%DOCSDIR%%/|' | ${SORT} -r; \
-		${ECHO_CMD} "@dirrmtry %%DOCSDIR%%") > ${PLIST}
+		(${FIND} . -type f | ${SED} -e 's|^\./|%%DOCSDIR%%/|' | ${SORT}) > ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
