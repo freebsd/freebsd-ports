@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal-grass
-PORTVERSION=	1.4.3
-PORTREVISION=	17
+PORTVERSION=	1.11.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/
 
@@ -17,18 +16,21 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libgrass_gis.so:${PORTSDIR}/databases/grass
 RUN_DEPENDS=	grass>=6:${PORTSDIR}/databases/grass
 
-ALL_TARGET=	# empty
+USES=		gmake
+USE_GCC=	yes	# from databases/grass
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-autoload=${PREFIX}/lib/gdalplugins \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-grass=${LOCALBASE}/${GRASS_INST_DIR}
-GNU_CONFIGURE=	yes
-USE_GCC=	yes	# from databases/grass
-USES=		gmake
+ALL_TARGET=	default
 
 GRASS_INST_DIR!=${MAKE} -C ${.CURDIR}/../../databases/grass/ -V GRASS_INST_DIR
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gdalplugins/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/gdal/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gdalplugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gdal
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gdalplugins/*_GRASS.so
 
 .include <bsd.port.mk>
