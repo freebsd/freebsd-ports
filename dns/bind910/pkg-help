@@ -1,3 +1,4 @@
+                       NATIVE_PKCS11
 When using the NATIVE_PKCS11 option, BIND will use the PKCS#11
 engine specified by the named_pkcss11_engine variable in
 /etc/rc.conf for *all* crypto operations.
@@ -5,19 +6,19 @@ engine specified by the named_pkcss11_engine variable in
 This is primarily intended to be used in an authoritative
 case.
 
-If BIND will also be operating as a validating resolver,
+If BIND is also operating as a validating resolver,
 NATIVE_PKCS11 should not be used, because the HSM will be
-used for DNSSEC validations, and the HSM is likely to be
-slower than the CPU for this purpose.  Additionally, the HSM
-might not support all of the PKCS#11 API functions needed
-for signature verification.
+used for all crypto, including DNSSEC validations, and the
+HSM is likely to be slower than the CPU for this purpose.
+Additionally, the HSM might not support all of the PKCS#11
+API functions needed for signature verification.
 
 
-                              GOST
-If using a chrooted instance of BIND, the OpenSSL engines
-need to be accessible from within the chroot.  If BIND
-is chrooted in /var/named, this can be achieved by either
-copying content of /usr/local/lib/engines into
-/var/named/usr/local/lib/engines, or by creating that
-directory and adding this line to /etc/fstab:
+                            GOST
+If using a chrooted instance of BIND on FreeBSD 8.x and 9.x,
+the OpenSSL engines MUST be accessible from within the chroot.
+If BIND is chrooted in /var/named, this can be achieved by
+either copying content of /usr/local/lib/engines into
+/var/named/usr/local/lib/engines, or by creating that directory
+and adding this line to /etc/fstab:
 /usr/local/lib/engines  /var/named/usr/local/lib/engines nullfs ro 0 0

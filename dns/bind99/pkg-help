@@ -1,9 +1,8 @@
-
-                              GOST
-If using a chrooted instance of BIND, the OpenSSL engines
-need to be accessible from within the chroot.  If BIND
-is chrooted in /var/named, this can be achieved by either
-copying content of /usr/local/lib/engines into
-/var/named/usr/local/lib/engines, or by creating that
-directory and adding this line to /etc/fstab:
+                            GOST
+If using a chrooted instance of BIND on FreeBSD 8.x and 9.x,
+the OpenSSL engines MUST be accessible from within the chroot.
+If BIND is chrooted in /var/named, this can be achieved by
+either copying content of /usr/local/lib/engines into
+/var/named/usr/local/lib/engines, or by creating that directory
+and adding this line to /etc/fstab:
 /usr/local/lib/engines  /var/named/usr/local/lib/engines nullfs ro 0 0
