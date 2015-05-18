@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	life-preserver
-PORTVERSION=	1422974289
+PORTVERSION=	1431457302
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -10,9 +10,10 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Life Preserver Utility
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh
+RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
+		stunnel:${PORTSDIR}/security/stunnel
 
 WRKSRC=		${WRKDIR}/lpreserver
 USES=		pkgconfig tar:xz
