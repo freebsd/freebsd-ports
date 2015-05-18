@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-appweb
-PORTVERSION=	1422974666
+PORTVERSION=	1431522786
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Web Interface
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \

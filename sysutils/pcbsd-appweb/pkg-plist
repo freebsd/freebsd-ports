@@ -9,6 +9,8 @@ share/appcafe/mime.types
 share/appcafe/nginx.conf
 share/appcafe/nginx.conf.ssl
 share/appcafe/nginx.conf.temp
+share/appcafe/php-fpm.conf
+share/appcafe/php.ini
 share/appcafe/html/index.php
 share/appcafe/html/css/_reset.css
 share/appcafe/html/css/cssmenu.css
@@ -16,6 +18,7 @@ share/appcafe/html/css/main.css
 share/appcafe/html/css/popbox.css
 share/appcafe/html/css/tabs.css
 share/appcafe/html/css/lightbox.css
+share/appcafe/html/images/.directory
 share/appcafe/html/images/add.png
 share/appcafe/html/images/appcafe.png
 share/appcafe/html/images/application-exit.png
@@ -65,6 +68,7 @@ share/appcafe/html/pages/appcafe-search.php
 share/appcafe/html/pages/appinfo.php
 share/appcafe/html/pages/dispatcher.php
 share/appcafe/html/pages/error.php
+share/appcafe/html/pages/exportpbis.php
 share/appcafe/html/pages/jails.php
 share/appcafe/html/pages/jailcreate.php
 share/appcafe/html/pages/jailinfo.php
@@ -76,9 +80,10 @@ share/appcafe/html/js/cssmenu.js
 share/appcafe/html/js/doubletaptogo.js
 share/appcafe/html/js/jquery.ba-hashchange.min.js
 share/appcafe/html/js/jquery.easytabs.min.js
-share/appcafe/html/js/jquery.jscroll.min.js
-share/appcafe/html/js/jquery.timer.js
 share/appcafe/html/js/jquery.min.js
+share/appcafe/html/js/jquery.jscroll.min.js
+share/appcafe/html/js/jquery.simplemodal.1.4.4.min.js
+share/appcafe/html/js/jquery.timer.js
 share/appcafe/html/js/lightbox.min.js
 share/appcafe/html/js/main.js
 share/appcafe/html/js/popbox.min.js
