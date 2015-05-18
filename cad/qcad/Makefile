@@ -3,11 +3,9 @@
 
 PORTNAME=	qcad
 PORTVERSION=	3.7.5.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	cad
-MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
-		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
-DISTNAME=	v${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
@@ -18,10 +16,10 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 
 USES=		execinfo gmake qmake
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 		designer gui help imageformats moc_build network opengl rcc_build script \

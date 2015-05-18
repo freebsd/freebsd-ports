@@ -2,10 +2,8 @@
 
 PORTNAME=	fixc
 PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
-MASTER_SITES=	http://github.com/blttll/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
-DISTFILES=	v${PORTVERSION}.tar.gz
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	blttll@gmail.com
 COMMENT=	Simple Financial Information eXchange (FIX) protocol console client
@@ -13,6 +11,8 @@ COMMENT=	Simple Financial Information eXchange (FIX) protocol console client
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 PLIST_FILES=	bin/fixc
+USE_GITHUB=	yes
+GH_ACCOUNT=	blttll
 
 do-build:
 	cd ${WRKSRC} && \

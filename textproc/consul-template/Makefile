@@ -3,9 +3,9 @@
 
 PORTNAME=	consul-template
 PORTVERSION=	0.8.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
-		https://codeload.github.com/armon/consul-api/legacy.tar.gz/0e644b8?dummy=/:group2 \
+MASTER_SITES=	https://codeload.github.com/armon/consul-api/legacy.tar.gz/0e644b8?dummy=/:group2 \
 		https://codeload.github.com/hashicorp/hcl/legacy.tar.gz/2c88e7e?dummy=/:group3 \
 		https://codeload.github.com/hashicorp/logutils/legacy.tar.gz/23b0af5?dummy=/:group4 \
 		https://codeload.github.com/hashicorp/terraform/legacy.tar.gz/d87fa90?dummy=/:group5 \
@@ -13,7 +13,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAM
 		https://github.com/hashicorp/go-multierror/archive/fcdddc395df1ddf4247c69bd436e84cfa0733f7e.tar.gz?dummy=/:group7 \
 		https://github.com/hashicorp/go-syslog/archive/42a2b573b664dbf281bd48c3cc12c086b17a39ba.tar.gz?dummy=/:group8 \
 		https://github.com/hashicorp/consul/archive/v0.5.0.tar.gz?dummy=/:group9
-DISTFILES=	consul-template-${PORTVERSION}.tar.gz:group1 \
+DISTFILES=	${DISTNAME}.tar.gz \
 		armon-consul-api-0e644b8.tar.gz:group2 \
 		hashicorp-hcl-2c88e7e.tar.gz:group3 \
 		hashicorp-logutils-23b0af5.tar.gz:group4 \
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-GH_TAGNAME=	v${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

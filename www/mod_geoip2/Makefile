@@ -5,9 +5,6 @@ PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.9
 PORTREVISION=	1
 CATEGORIES=	www geography
-MASTER_SITES=	https://github.com/maxmind/geoip-api-mod_geoip2/archive/
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=    mod_geoip2
 
 MAINTAINER=	jau@iki.fi
 COMMENT=	Apache module that provides the country code of the client IP
@@ -17,6 +14,9 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	maxmind
+GH_PROJECT=	geoip-api-mod_geoip2
 USE_APACHE=	22+
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes

@@ -3,10 +3,8 @@
 
 PORTNAME=	iiview
 PORTVERSION=	0.31
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/archive/
-DISTNAME=	v${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	martin.sugioarto@udo.edu
 COMMENT=	Thumb viewer application
@@ -19,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 
 USE_XORG=	xpm x11
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	nakal
 WRKSRC=		${WRKDIR}/iiview-${PORTVERSION}
 

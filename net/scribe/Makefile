@@ -5,8 +5,6 @@ PORTNAME=	scribe
 DISTVERSION=	2.2.2013.04.15
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/facebookarchive/scribe/tarball/${GITVERSION}/
-DISTNAME=	facebook-scribe-${GITVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aggregating log data streamed in real time
@@ -22,8 +20,10 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
 		${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift
 
-GITVERSION=	7359a09
-WRKSRC=		${WRKDIR}/facebookarchive-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	facebookarchive
+
+GH_TAGNAME=	7359a09
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a

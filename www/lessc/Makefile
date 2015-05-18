@@ -3,9 +3,8 @@
 
 PORTNAME=	lessc
 PORTVERSION=	2.5.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-MASTER_SITES=	http://github.com/less/less.js/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Javascript CSS pre-processor
@@ -16,7 +15,9 @@ BUILD_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
 RUN_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/less.js-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	less
+GH_PROJECT=	less.js
 
 do-install:
 	(cd ${STAGEDIR}${PREFIX}/lib ; ${SETENV} HOME=${WRKDIR} npm install ${WRKSRC})

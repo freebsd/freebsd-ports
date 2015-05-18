@@ -4,7 +4,6 @@
 PORTNAME=	pioneer
 PORTVERSION=	0.0.${GH_TAGNAME}
 CATEGORIES=	games
-MASTER_SITES=	http://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Space adventure game set in the Milky Way galaxy
@@ -37,11 +36,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libassimp.so:${PORTSDIR}/multimedia/assimp
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	20150314
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 USES=		autoreconf gmake pkgconfig
 USE_GL=		gl

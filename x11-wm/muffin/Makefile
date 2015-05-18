@@ -4,7 +4,6 @@
 PORTNAME=	muffin
 PORTVERSION=	2.4.4
 CATEGORIES=	x11-wm gnome
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,6 +20,8 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity
 
 USES=		autoreconf:build execinfo gettext libtool gmake \
 		pathfix pkgconfig python:2
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk30 \
 		intlhack introspection:build
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm

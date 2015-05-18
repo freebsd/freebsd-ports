@@ -5,7 +5,6 @@ PORTNAME=	carbon
 PORTVERSION=	0.9.12
 PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://github.com/graphite-project/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
@@ -19,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:${PORTSDIR}/net/py-txamqp \
 
 USE_PYTHON=	distutils
 USES=		python:2 twisted:run
-FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 USE_RC_SUBR=	carbon
+USE_GITHUB=	yes
+GH_ACCOUNT=	graphite-project
 
 .include <bsd.port.mk>
