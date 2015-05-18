@@ -4,7 +4,6 @@
 PORTNAME=	cinnamon-session
 PORTVERSION=	2.4.3
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,6 +19,8 @@ RUN_DEPENDS=	console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 
 USES=		autoreconf:build execinfo gettext gmake libtool \
 		pathfix pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl

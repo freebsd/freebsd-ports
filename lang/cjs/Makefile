@@ -4,7 +4,6 @@
 PORTNAME=	cjs
 PORTVERSION=	2.4.1
 CATEGORIES=	lang gnome
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,6 +19,8 @@ USES=		autoreconf:build compiler:c11 gettext libtool gmake \
 		pathfix pkgconfig python:build shebangfix
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes

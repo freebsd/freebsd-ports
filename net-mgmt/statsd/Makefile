@@ -2,8 +2,8 @@
 
 PORTNAME=	statsd
 PORTVERSION=	0.7.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/etsy/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	kimor79@yahoo.com
 COMMENT=	Simple daemon for easy stats aggregation
@@ -17,6 +17,8 @@ GROUPS=		statsd
 USE_RC_SUBR=	statsd
 SUB_FILES+=	statsd
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
+USE_GITHUB=	yes
+GH_ACCOUNT=	etsy
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -1,5 +1,5 @@
-SHA256 (consul-template-0.8.0.tar.gz) = ac12bdde35e88184d5e3f2201c2f46e2dd7b301d4f31b51945905d1b2c456064
-SIZE (consul-template-0.8.0.tar.gz) = 63281
+SHA256 (hashicorp-consul-template-v0.8.0_GH0.tar.gz) = ac12bdde35e88184d5e3f2201c2f46e2dd7b301d4f31b51945905d1b2c456064
+SIZE (hashicorp-consul-template-v0.8.0_GH0.tar.gz) = 63281
 SHA256 (armon-consul-api-0e644b8.tar.gz) = 98ced8eb879ad2aec426e8821973e476ad76d5e91aa467362aaac98b7ae639b0
 SIZE (armon-consul-api-0e644b8.tar.gz) = 17558
 SHA256 (hashicorp-hcl-2c88e7e.tar.gz) = 2f3dc2241a1716b8e9c7bd331d8113b9b780a1233bf2dcf73bb77c68ebe17d0e

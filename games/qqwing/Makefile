@@ -2,8 +2,8 @@
 
 PORTNAME=	qqwing
 PORTVERSION=	1.3.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games gnome
-MASTER_SITES=	http://github.com/stephenostermiller/${PORTNAME}/archive/v${PORTVERSION}.zip?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,6 +15,8 @@ BUILD_DEPENDS=	automake>=0:${PORTSDIR}/devel/automake \
 
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 introspection:build
+USE_GITHUB=	yes
+GH_ACCOUNT=	stephenostermiller
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CC=cc CXX=c++ CPP=cpp
 

@@ -5,8 +5,6 @@ PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/tony2001/pinba_engine/tarball/${GITVERSION}/
-DISTNAME=	tony2001-pinba_engine-${GITVERSION}
 
 MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
@@ -20,9 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/dev
 		cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
-GITVERSION=	3a0cb51
+USE_GITHUB=	yes
+GH_ACCOUNT=	tony2001
+GH_TAGNAME=	3a0cb51
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	50
 

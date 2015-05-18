@@ -3,8 +3,6 @@
 PORTNAME=	synergy
 PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
@@ -12,10 +10,10 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 USES=		cmake cpe
 CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm
+USE_GITHUB=	yes
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 

@@ -3,8 +3,8 @@
 
 PORTNAME=	tiled
 PORTVERSION=	0.11.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
-MASTER_SITES=	https://github.com/bjorn/tiled/archive/v${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose tile map editor
@@ -13,6 +13,8 @@ USES=		desktop-file-utils shared-mime-info qmake
 USE_QT4=	corelib gui opengl \
 		linguisttools_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	bjorn
 
 PORTDOCS=	*
 

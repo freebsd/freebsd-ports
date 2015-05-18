@@ -3,11 +3,9 @@
 
 PORTNAME=	ppx-tools
 PORTVERSION=	0.99.2
+DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/alainfrisch/${PORTNAME:C/-/_/}/archive/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME:C/-/_/}_${PORTVERSION}
-DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Tools for authors of ppx rewriters
@@ -18,7 +16,9 @@ USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 MAKE_JOBS_UNSAFE=yes
-WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTNAME:C/-/_/}_${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	alainfrisch
+GH_PROJECT=	${PORTNAME:C/-/_/}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/ppx_tools/ppx_tools.cmxs

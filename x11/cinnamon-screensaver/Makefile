@@ -3,7 +3,6 @@
 
 PORTNAME=	cinnamon-screensaver
 PORTVERSION=	2.4.1
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -20,6 +19,8 @@ RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
 		gnome-keyring>=0:${PORTSDIR}/security/gnome-keyring
 
 USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
