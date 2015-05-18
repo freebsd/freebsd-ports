@@ -10,8 +10,9 @@ MASTER_SITES=	http://textpattern.com/file_download/57/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
-NO_BUILD=	YES
-WANT_PHP_WEB=	YES
+USES=		cpe
+NO_BUILD=	yes
+WANT_PHP_WEB=	yes
 USE_PHP=	mbstring xml mysql pcre
 
 SUB_FILES=	pkg-message
