@@ -90,6 +90,7 @@
     SUBDIR += cloog
     SUBDIR += clp
     SUBDIR += cminpack
+    SUBDIR += cmlib
     SUBDIR += coinmp
     SUBDIR += concorde
     SUBDIR += convertall
