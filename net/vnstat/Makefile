@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vnstat
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.14
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
@@ -22,6 +22,11 @@ USE_RC_SUBR=	vnstat
 USES=	gmake
 USERS=	vnstat
 GROUPS=	vnstat
+
+BIN_BSD=	${PREFIX}/bin
+SBIN_BSD=	${PREFIX}/sbin
+MAN_BSD=	${MANDIRS}
+ETC_BSD=	${PREFIX}/etc
 
 PORTDOCS=	README INSTALL_BSD UPGRADE
 SUB_FILES=	pkg-message
