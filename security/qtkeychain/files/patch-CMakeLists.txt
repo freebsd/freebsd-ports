@@ -1,0 +1,70 @@
+--- CMakeLists.txt.orig	2013-01-16 18:02:17 UTC
++++ CMakeLists.txt
+@@ -11,32 +11,32 @@ set(QTKEYCHAIN_SOVERSION 0)
+ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${PROJECT_SOURCE_DIR}/cmake/Modules")
+ include(GNUInstallDirs)
+ 
+-# try Qt5 first, and prefer that if found
+-find_package(Qt5Core QUIET)
+-if (Qt5Core_FOUND)
+-  if(UNIX AND NOT APPLE)
+-    find_package(Qt5DBus REQUIRED)
+-    include_directories(${Qt5DBus_INCLUDE_DIRS})
+-    set(QTDBUS_LIBRARIES ${Qt5DBus_LIBRARIES})
+-    macro(qt_add_dbus_interface)
+-      qt5_add_dbus_interface(${ARGN})
+-    endmacro()
+-  endif()
+-  macro(qt_wrap_cpp)
+-    qt5_wrap_cpp(${ARGN})
+-  endmacro()
+-
+-  set(QTCORE_LIBRARIES ${Qt5Core_LIBRARIES})
+-  include_directories(${Qt5Core_INCLUDE_DIRS})
+-
+-  if (Qt5_POSITION_INDEPENDENT_CODE)
+-    if (CMAKE_VERSION VERSION_LESS 2.8.9) # TODO remove once we increase the cmake requirement
+-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+-    else()
+-      set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+-    endif()
+-  endif()
+-else()
++# Force Qt4
++#find_package(Qt5Core QUIET)
++#if (Qt5Core_FOUND)
++#  if(UNIX AND NOT APPLE)
++#    find_package(Qt5DBus REQUIRED)
++#    include_directories(${Qt5DBus_INCLUDE_DIRS})
++#    set(QTDBUS_LIBRARIES ${Qt5DBus_LIBRARIES})
++#    macro(qt_add_dbus_interface)
++#      qt5_add_dbus_interface(${ARGN})
++#    endmacro()
++#  endif()
++#  macro(qt_wrap_cpp)
++#    qt5_wrap_cpp(${ARGN})
++#  endmacro()
++#
++#  set(QTCORE_LIBRARIES ${Qt5Core_LIBRARIES})
++#  include_directories(${Qt5Core_INCLUDE_DIRS})
++#
++#  if (Qt5_POSITION_INDEPENDENT_CODE)
++#    if (CMAKE_VERSION VERSION_LESS 2.8.9) # TODO remove once we increase the cmake requirement
++#      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
++#    else()
++#      set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++#    endif()
++#  endif()
++#else()
+   if(UNIX AND NOT APPLE)
+     find_package(Qt4 COMPONENTS QtCore QtDBus REQUIRED)
+     macro(qt_add_dbus_interface)
+@@ -51,7 +51,7 @@ else()
+   endif()
+   include_directories(${QT_INCLUDES})
+   set(QTCORE_LIBRARIES ${QT_QTCORE_LIBRARY})
+-endif()
++#endif()
+ 
+ 
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
