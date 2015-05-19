@@ -9,7 +9,3 @@
 %%PLUGINDIR%%/veximaccountadmin.css
 %%PLUGINDIR%%/veximaccountadmin.js
 %%PLUGINDIR%%/veximaccountadmin.php
-@dirrmtry %%PLUGINDIR%%/localization
-@dirrmtry %%PLUGINDIR%%
-@dirrmtry %%WWWDIR%%/plugins
-@dirrmtry %%WWWDIR%%
