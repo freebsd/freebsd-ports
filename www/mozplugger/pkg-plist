@@ -5,4 +5,3 @@ bin/mozplugger-update
 etc/mozpluggerrc
 man/man7/mozplugger.7.gz
 %%WEBPLUGIN_DIR%%/mozplugger.so
-@dirrm %%WEBPLUGIN_DIR%%
