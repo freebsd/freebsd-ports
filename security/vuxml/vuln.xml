@@ -57,6 +57,90 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a9d456b4-fe4c-11e4-ad15-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>43.0.2357.65</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>43.0.2357.65</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>43.0.2357.65</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/05/stable-channel-update_19.html">
+	  <p>37 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[474029] High CVE-2015-1252: Sandbox escape in Chrome. Credit
+	      to anonymous.</li>
+	    <li>[464552] High CVE-2015-1253: Cross-origin bypass in DOM. Credit
+	      to anonymous.</li>
+	    <li>[444927] High CVE-2015-1254: Cross-origin bypass in Editing.
+	      Credit to armin@rawsec.net.</li>
+	    <li>[473253] High CVE-2015-1255: Use-after-free in WebAudio. Credit
+	      to Khalil Zhani.</li>
+	    <li>[478549] High CVE-2015-1256: Use-after-free in SVG. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[481015] High CVE-2015-1251: Use-after-free in Speech. Credit
+	      to SkyLined working with HP's Zero Day Initiative.</li>
+	    <li>[468519] Medium CVE-2015-1257: Container-overflow in SVG.
+	      Credit to miaubiz.</li>
+	    <li>[450939] Medium CVE-2015-1258: Negative-size parameter in
+	      libvpx. Credit to cloudfuzzer</li>
+	    <li>[468167] Medium CVE-2015-1259: Uninitialized value in PDFium.
+	      Credit to Atte Kettunen of OUSPG</li>
+	    <li>[474370] Medium CVE-2015-1260: Use-after-free in WebRTC. Credit
+	      to Khalil Zhani.</li>
+	    <li>[466351] Medium CVE-2015-1261: URL bar spoofing. Credit to Juho
+	      Nurminen.</li>
+	    <li>[476647] Medium CVE-2015-1262: Uninitialized value in Blink.
+	      Credit to miaubiz.</li>
+	    <li>[479162] Low CVE-2015-1263: Insecure download of spellcheck
+	      dictionary. Credit to Mike Ruddy.</li>
+	    <li>[481015] Low CVE-2015-1264: Cross-site scripting in bookmarks.
+	      Credit to K0r3Ph1L.</li>
+	    <li>[489518] CVE-2015-1265: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.3
+	      branch (currently 4.3.61.21).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://googlechromereleases.blogspot.nl/2015/05/stable-channel-update_19.html</url>
+      <cvename>CVE-2015-1251</cvename>
+      <cvename>CVE-2015-1252</cvename>
+      <cvename>CVE-2015-1253</cvename>
+      <cvename>CVE-2015-1254</cvename>
+      <cvename>CVE-2015-1255</cvename>
+      <cvename>CVE-2015-1256</cvename>
+      <cvename>CVE-2015-1257</cvename>
+      <cvename>CVE-2015-1258</cvename>
+      <cvename>CVE-2015-1259</cvename>
+      <cvename>CVE-2015-1260</cvename>
+      <cvename>CVE-2015-1261</cvename>
+      <cvename>CVE-2015-1262</cvename>
+      <cvename>CVE-2015-1263</cvename>
+      <cvename>CVE-2015-1264</cvename>
+      <cvename>CVE-2015-1265</cvename>
+    </references>
+    <dates>
+      <discovery>2015-05-19</discovery>
+      <entry>2015-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d0428b2-fdfb-11e4-894f-d050996490d0">
     <topic>clamav -- multiple vulnerabilities</topic>
     <affects>
