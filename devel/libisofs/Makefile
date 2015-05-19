@@ -16,7 +16,7 @@ LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn
 
 GNU_CONFIGURE=	yes
 USES=		iconv libtool
-#USE_LDCONFIG=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 post-patch:
