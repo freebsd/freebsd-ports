@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	enet
-PORTVERSION=	1.3.12
-PORTREVISION=	2
+PORTVERSION=	1.3.13
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
+#http://enet.bespin.org/download/enet-1.3.13.tar.gz
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple and robust communication library based on UDP
