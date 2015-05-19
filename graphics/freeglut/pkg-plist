@@ -3,7 +3,6 @@ include/GL/freeglut_ext.h
 include/GL/freeglut_std.h
 include/GL/glut.h
 lib/libglut.a
-lib/libglut.la
 lib/libglut.so
 lib/libglut.so.3
 lib/libglut.so.3.9.0
