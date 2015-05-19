@@ -15,6 +15,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	mochiweb-basho-[0-9]*
 
+USES=		cpe
+CPE_VENDOR=	mochiweb_project
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_GITHUB=	yes
