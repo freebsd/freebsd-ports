@@ -13,7 +13,3 @@
 %%WWWDIR%%/localization/ja_JP.inc
 %%WWWDIR%%/localization/nl_NL.inc
 %%WWWDIR%%/localization/sk_SK.inc
-@dirrm %%WWWDIR%%/localization
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%
