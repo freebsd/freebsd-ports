@@ -14,7 +14,8 @@ PATCH_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
 
-USES=		zip:infozip
+USES=		cpe zip:infozip
+CPE_VENDOR=	simon_brown
 
 NO_BUILD=	yes
 
