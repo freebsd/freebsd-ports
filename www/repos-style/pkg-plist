@@ -57,16 +57,3 @@
 %%WWWDIR%%/style/rowbackground.png
 %%WWWDIR%%/view/log.xsl
 %%WWWDIR%%/view/repos.xsl
-@dirrmtry %%WWWDIR%%/view
-@dirrmtry %%WWWDIR%%/style/repository/filetypes/16x16
-@dirrmtry %%WWWDIR%%/style/repository/filetypes
-@dirrmtry %%WWWDIR%%/style/repository/16x16
-@dirrmtry %%WWWDIR%%/style/repository
-@dirrmtry %%WWWDIR%%/style/log/16x16
-@dirrmtry %%WWWDIR%%/style/log
-@dirrmtry %%WWWDIR%%/style/commands/16x16
-@dirrmtry %%WWWDIR%%/style/commands
-@dirrmtry %%WWWDIR%%/style
-@dirrmtry %%WWWDIR%%/open/log
-@dirrmtry %%WWWDIR%%/open
-@dirrmtry %%WWWDIR%%/
