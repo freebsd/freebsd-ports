@@ -4,13 +4,15 @@
 PORTNAME=	pathload
 PORTVERSION=	1.3.2
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/
+MASTER_SITES=	http://www.cc.gatech.edu/~dovrolis/bw-est/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measurement tool for network path available bandwidth estimation
 
-BROKEN=		Unfetchable
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 
@@ -25,8 +27,7 @@ post-patch:
 		${WRKSRC}/pathload_rcv.c
 
 do-install:
-.for f in pathload_rcv pathload_snd
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pathload_rcv pathload_snd \
+		${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
