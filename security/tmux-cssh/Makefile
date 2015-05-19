@@ -21,7 +21,6 @@ GH_TAGNAME=	94ecc012c8
 PLIST_FILES=	bin/tmux-cssh %%PORTDOCS%%%%DOCSDIR%%/README.md
 
 do-install:
-	@cd ${WRKSRC} && \
 	${INSTALL_SCRIPT} ${WRKSRC}/tmux-cssh ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
