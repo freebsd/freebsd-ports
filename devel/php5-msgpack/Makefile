@@ -5,13 +5,13 @@ PORTNAME=	msgpack
 PORTVERSION=	2012.05.05
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
-DISTNAME=	msgpack-msgpack-${GITVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP extension for interfacing with MessagePack
 
 USE_GITHUB=	yes
 GH_TAGNAME=	980a652
+WRKSRC_SUBDIR=	php
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes
