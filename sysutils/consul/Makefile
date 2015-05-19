@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/armon/circbuf/archive/f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz?dummy=/:group2 \
