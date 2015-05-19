@@ -29,7 +29,7 @@ USE_PERL5=	modbuild
 
 .if ${PERL_LEVEL} < 502105
 BUILD_DEPENDS+=	p5-CPAN-Meta>=2.142060:${PORTSDIR}/devel/p5-CPAN-Meta
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	p5-CPAN-Meta>=2.142060:${PORTSDIR}/devel/p5-CPAN-Meta
 .endif
 
 post-patch:
