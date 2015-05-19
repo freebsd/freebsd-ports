@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.0:${PORTSDIR}/net/py-ldap2 \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
-USES=		python
+USES=		cpe python
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*
