@@ -6101,7 +6101,7 @@
      # Solaris still uses OPENWIN_LIB ..
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR) -lX11 -lXext $(LIBM) -lpthread
 +  else ifeq ($(OPENJDK_TARGET_OS), bsd)
-+    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM)  -pthread
++    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -liconv -pthread
    else	# .. all other Unixes can use X_LIBS
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif
@@ -7514,48 +7514,6 @@
 +        return new KQueueSelectorImpl(this);
 +    }
 +}
---- ./jdk/src/bsd/doc/man/javah.1	Tue Mar 17 00:09:12 2015 +0300
-+++ ./jdk/src/bsd/doc/man/javah.1	Tue May 05 18:07:05 2015 -0700
-@@ -110,7 +110,7 @@
- 
- \&.:\fIyour-path\fR
- 
--Example: \f3\&.:/home/avh/classes:/usr/local/java/classes\fR
-+Example: \f3\&.:/home/avh/classes:/usr/local/share/java/classes\fR
- 
- \fIWindows\fR:
- 
---- ./jdk/src/bsd/doc/man/rmic.1	Tue Mar 17 00:09:12 2015 +0300
-+++ ./jdk/src/bsd/doc/man/rmic.1	Tue May 05 18:07:05 2015 -0700
-@@ -93,7 +93,7 @@
- .TP
- -classpath path
- .br
--Specifies the path the \f3rmic\fR command uses to look up classes\&. This option overrides the default or the \f3CLASSPATH\fR environment variable when it is set\&. Directories are separated by colons\&. The general format for path is: \f3\&.:<your_path>\fR, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Specifies the path the \f3rmic\fR command uses to look up classes\&. This option overrides the default or the \f3CLASSPATH\fR environment variable when it is set\&. Directories are separated by colons\&. The general format for path is: \f3\&.:<your_path>\fR, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .TP
- -d \fIdirectory\fR
- .br
-@@ -207,7 +207,7 @@
- .SH ENVIRONMENT\ VARIABLES    
- .TP     
- CLASSPATH
--Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .SH SEE\ ALSO    
- .TP 0.2i    
- \(bu
---- ./jdk/src/bsd/doc/man/rmid.1	Tue Mar 17 00:09:12 2015 +0300
-+++ ./jdk/src/bsd/doc/man/rmid.1	Tue May 05 18:07:05 2015 -0700
-@@ -301,7 +301,7 @@
- .SH ENVIRONMENT\ VARIABLES    
- .TP     
- CLASSPATH
--Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/java/classes\fR\&.
-+Used to provide the system a path to user-defined classes\&. Directories are separated by colons, for example: \f3\&.:/usr/local/share/java/classes\fR\&.
- .SH SEE\ ALSO    
- .TP 0.2i    
- \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
 +++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Tue May 05 18:07:05 2015 -0700
 @@ -0,0 +1,171 @@

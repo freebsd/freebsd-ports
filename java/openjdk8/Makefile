@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -27,6 +28,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 USES=		compiler:features dos2unix gmake iconv pkgconfig \
 		shebangfix
+USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11 xext xi xrender xt xtst
 GNU_CONFIGURE=	yes
 
@@ -116,6 +118,7 @@ CONFIGURE_ARGS+=	--disable-ccache \
 			--with-giflib=system \
 			--with-jobs=${MAKE_JOBS_NUMBER} \
 			--with-milestone=fcs \
+			--with-package-path=${LOCALBASE} \
 			--with-zlib=system
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
@@ -182,6 +185,11 @@ BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk7
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/openjdk7
 .endif
 
+# PR193009: work around the rtld bug
+#.if ${OSVERSION} < 1001511
+CONFIGURE_ARGS+=	--enable-static-libjli
+#.endif
+
 .if ${COMPILER_TYPE} == clang
 .if ${COMPILER_VERSION} >= 35
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
@@ -237,6 +245,9 @@ post-patch:
 	    ${WRKSRC}/jdk/make/lib/CoreLibraries.gmk \
 	    ${WRKSRC}/jdk/make/lib/ServiceabilityLibraries.gmk
 	@${CHMOD} 755 ${WRKSRC}/configure
+
+run-autotools-autoconf:
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} bash autogen.sh
 
 post-build:
 .if !defined(BUILD_JRE)
