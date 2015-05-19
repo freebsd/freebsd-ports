@@ -1,0 +1,121 @@
+--- common/autoconf/jdk-options.m4
++++ common/autoconf/jdk-options.m4
+@@ -407,6 +407,20 @@
+ 
+   ###############################################################################
+   #
++  # Enable or disable static linking of libjli on bsd only
++  #
++  AC_ARG_ENABLE(static-libjli, [AS_HELP_STRING([--enable-static-libjli],
++      [Enable staticly linking libjli on bsd @<:@disabled@:>@])],,
++      [enable_static_libjli=no])
++  if test "x$OPENJDK_TARGET_OS" = "xbsd" && test "x$enable_static_libjli" = "xyes"; then
++    BSD_STATIC_LIBJLI=bsd
++  else
++    BSD_STATIC_LIBJLI=
++  fi
++  AC_SUBST(BSD_STATIC_LIBJLI)
++
++  ###############################################################################
++  #
+   # Enable or disable the elliptic curve crypto implementation
+   #
+   AC_DEFUN_ONCE([JDKOPT_DETECT_INTREE_EC],
+--- common/autoconf/spec.gmk.in
++++ common/autoconf/spec.gmk.in
+@@ -283,6 +283,9 @@
+ # Enable unlimited crypto policy
+ UNLIMITED_CRYPTO=@UNLIMITED_CRYPTO@
+ 
++# Build static libjli on bsd
++BSD_STATIC_LIBJLI=@BSD_STATIC_LIBJLI@
++
+ # Necessary additional compiler flags to compile X11
+ X_CFLAGS:=@X_CFLAGS@
+ X_LIBS:=@X_LIBS@
+--- jdk/make/CompileLaunchers.gmk
++++ jdk/make/CompileLaunchers.gmk
+@@ -49,7 +49,7 @@
+   ORIGIN_ROOT := /..
+ endif
+ 
+-ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
++ifneq ($(findstring $(OPENJDK_TARGET_OS), $(BSD_STATIC_LIBJLI) macosx), )
+   ORIGIN_ARG := $(call SET_EXECUTABLE_ORIGIN)
+ else
+   ORIGIN_ARG := $(call SET_EXECUTABLE_ORIGIN,$(ORIGIN_ROOT)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli)
+@@ -90,9 +90,15 @@
+   $1_LDFLAGS := $3
+   $1_LDFLAGS_SUFFIX :=
+   ifeq ($(OPENJDK_TARGET_OS), bsd)
+-    $1_LDFLAGS += -Wl,--whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
+-        -Wl,--no-whole-archive
+-    $1_LDFLAGS_SUFFIX += -pthread
++    ifeq ($(BSD_STATIC_LIBJLI), bsd)
++      $1_LDFLAGS += -Wl,--whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
++          -Wl,--no-whole-archive
++      $1_LDFLAGS_SUFFIX += -pthread
++    else
++      $1_LDFLAGS += \
++          $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX))
++      $1_LDFLAGS_SUFFIX += -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -pthread
++    endif
+   endif
+ 
+   ifeq ($(OPENJDK_TARGET_OS), macosx)
+@@ -203,7 +209,7 @@
+ 
+   BUILD_LAUNCHERS += $$(BUILD_LAUNCHER_$1)
+ 
+-  ifneq (,$(filter $(OPENJDK_TARGET_OS), bsd macosx aix))
++  ifneq (,$(filter $(OPENJDK_TARGET_OS), $(BSD_STATIC_LIBJLI) macosx aix))
+     $$(BUILD_LAUNCHER_$1): $(JDK_OUTPUTDIR)/objs/libjli_static.a
+   endif
+ 
+--- jdk/make/lib/CoreLibraries.gmk
++++ jdk/make/lib/CoreLibraries.gmk
+@@ -466,7 +466,7 @@
+ 
+   BUILD_LIBRARIES += $(BUILD_LIBJLI_STATIC)
+ 
+-else ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
++else ifneq ($(findstring $(OPENJDK_TARGET_OS), $(BSD_STATIC_LIBJLI) macosx), )
+   #
+   # On BSD they do partial (incremental) linking of libjli_static.a
+   # code it here...rather than add support to NativeCompilation
+--- jdk/make/lib/ServiceabilityLibraries.gmk
++++ jdk/make/lib/ServiceabilityLibraries.gmk
+@@ -246,6 +246,15 @@
+   LIBINSTRUMENT_CFLAGS += -Dstrcasecmp=stricmp
+ endif
+ 
++ifeq ($(OPENJDK_TARGET_OS), bsd)
++  ifeq ($(BSD_STATIC_LIBJLI), bsd)
++    LIBINSTRUMENT_LDFLAGS += -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
++        -Xlinker --no-whole-archive 
++  else
++    LIBINSTRUMENT_LDFLAGS += $(call SET_SHARED_LIBRARY_ORIGIN,/jli)
++  endif
++endif
++
+ $(eval $(call SetupNativeCompilation,BUILD_LIBINSTRUMENT, \
+     LIBRARY := instrument, \
+     OUTPUT_DIR := $(INSTALL_LIBRARIES_HERE), \
+@@ -263,8 +272,6 @@
+         $(LIBINSTRUMENT_LDFLAGS), \
+     LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
+     LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
+-    LDFLAGS_bsd := -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
+-        -Xlinker --no-whole-archive, \
+     LDFLAGS_macosx := -Xlinker -all_load $(JDK_OUTPUTDIR)/objs/libjli_static.a \
+         -framework Cocoa -framework Security -framework ApplicationServices, \
+     LDFLAGS_SUFFIX := $(LIBINSTRUMENT_LDFLAGS_SUFFIX), \
+@@ -281,7 +288,7 @@
+     OBJECT_DIR := $(LIBINSTRUMENT_DIR), \
+     DEBUG_SYMBOLS := true))
+ 
+-ifneq (, $(findstring $(OPENJDK_TARGET_OS), bsd macosx windows aix))
++ifneq (, $(findstring $(OPENJDK_TARGET_OS), $(BSD_STATIC_LIBJLI) macosx windows aix))
+   $(BUILD_LIBINSTRUMENT): $(JDK_OUTPUTDIR)/objs/$(LIBRARY_PREFIX)jli_static$(STATIC_LIBRARY_SUFFIX)
+ else
+   $(BUILD_LIBINSTRUMENT): $(INSTALL_LIBRARIES_HERE)/jli/$(LIBRARY_PREFIX)jli$(SHARED_LIBRARY_SUFFIX)
