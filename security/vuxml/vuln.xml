@@ -57,6 +57,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35431f79-fe3e-11e4-ba63-000c292ee6b8">
+    <topic>ipsec-tools -- Memory leak leading to denial of service</topic>
+    <affects>
+      <package>
+	<name>ipsec-tools</name>
+	<range><lt>0.8.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javantea reports:</p>
+	<blockquote cite="https://www.altsci.com/ipsec/">
+	  <p>It is a null dereference crash, leading to denial of
+	    service against the IKE daemon.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.altsci.com/ipsec/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-18</discovery>
+      <entry>2015-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9d456b4-fe4c-11e4-ad15-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
