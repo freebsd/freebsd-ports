@@ -86,7 +86,6 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bitlbee
 .if ${PORT_OPTIONS:MSKYPE}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/skyped
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \
