@@ -12,6 +12,8 @@ COMMENT=	Web based test management and test execution system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+CPE_VENDOR=	teamst
 USE_PHP=	gd iconv mbstring session xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
