@@ -186,9 +186,9 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/openjdk7
 .endif
 
 # PR193009: work around the rtld bug
-#.if ${OSVERSION} < 1001511
+.if ${OSVERSION} < 1001511
 CONFIGURE_ARGS+=	--enable-static-libjli
-#.endif
+.endif
 
 .if ${COMPILER_TYPE} == clang
 .if ${COMPILER_VERSION} >= 35
