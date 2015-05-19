@@ -1,0 +1,7 @@
+cegobridge is a tool to import/export database dumps into Cego, a
+Relational Database Management System (RDBMS). Currently it supports
+MySQL, other database systems to import/export can be added.
+
+Many more details are available at:
+
+WWW: http://www.lemke-it.com/
