@@ -11,6 +11,8 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Gnome Specimen is a simple tool to preview and compare installed fonts
 
 BROKEN=		Uses unknown GNOME component pygnomedesktop
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop

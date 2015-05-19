@@ -13,6 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Time management applet for the GNOME Desktop
 
 BROKEN=		Uses unknown GNOME components pygnomedesktop and gnomecontrolcenter2
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \

@@ -13,6 +13,8 @@ COMMENT=	Timer applet for the GNOME panel
 LICENSE=	GPLv2 # (or later)
 
 BROKEN=		Uses unknown GNOME component pygnomedesktop
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 RUN_DEPENDS=	gnome-audio>0:${PORTSDIR}/audio/gnome-audio \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \

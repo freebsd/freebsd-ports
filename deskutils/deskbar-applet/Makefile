@@ -13,6 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Omnipresent versatile search interface
 
 BROKEN=		Uses unknown GNOME components pygnomedesktop and evolutiondataserver
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
