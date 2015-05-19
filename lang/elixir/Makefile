@@ -20,5 +20,6 @@ GH_TAGNAME=	v${PORTVERSION}
 USES=	gmake
 
 ALL_TARGET=	#empty
+WITH_CHARSET=   utf8
 
 .include <bsd.port.mk>
