@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.150426
+PORTVERSION=	0.150519
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	6a1efc3
+GH_TAGNAME=	8760aba
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests
