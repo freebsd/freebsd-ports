@@ -2525,6 +2525,16 @@
  #endif // PRODUCT
      } else {
        assert(_real_start_word == NULL && _real_end_word == NULL, "invariant");
+--- hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.inline.hpp
++++ hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.inline.hpp
+@@ -25,6 +25,7 @@
+ #ifndef SHARE_VM_GC_IMPLEMENTATION_PARALLELSCAVENGE_PSPROMOTIONMANAGER_INLINE_HPP
+ #define SHARE_VM_GC_IMPLEMENTATION_PARALLELSCAVENGE_PSPROMOTIONMANAGER_INLINE_HPP
+ 
++#include "gc_implementation/parallelScavenge/psOldGen.hpp"
+ #include "gc_implementation/parallelScavenge/psPromotionManager.hpp"
+ #include "gc_implementation/parallelScavenge/psScavenge.hpp"
+ 
 --- hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 +++ hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 @@ -144,9 +144,9 @@
