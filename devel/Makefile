@@ -970,6 +970,7 @@
     SUBDIR += kimwitu
     SUBDIR += kyra
     SUBDIR += kyua
+    SUBDIR += lager
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
