@@ -2,7 +2,9 @@
 
 PORTNAME=	cuttlefish
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
+PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Configuration library for Erlang
