@@ -17,17 +17,11 @@ LICENSE=	GPLv3
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 
-pre-install:
-	cd ${WRKSRC} && ${FIND} * -type d ! -empty \
-		! -path 'stage*' \
-		-exec ${MKDIR} -m 0755 \
-		${STAGEDIR}${PREFIX}/share/icons/elementary/"{}" \;
-
 do-install:
-	cd ${WRKSRC} && ${FIND} * ! -type d ! -name 'plist' ! -name '*.bak' \
-		! -name '${LICENSE}' \
-		! -path 'stage/*' \
-		-exec ${INSTALL_DATA} ${WRKSRC}/"{}" \
-		${STAGEDIR}${PREFIX}/share/icons/elementary/"{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/elementary/ \
+		"! -name 'plist' ! -name '*.bak' ! -name '${LICENSE}' ! -path 'stage/*' "
+	${FIND} ${STAGEDIR}${PREFIX}/share/icons/elementary/ -depth 2 \
+		-type d -empty | \
+		${XARGS} ${RMDIR}
 
 .include <bsd.port.mk>
