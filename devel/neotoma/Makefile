@@ -2,6 +2,7 @@
 
 PORTNAME=	neotoma
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -11,6 +12,10 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+SUB_FILES+=	neotoma
+SUB_LIST+=	PORTNAME=${PORTNAME} \
+		PORTVERSION=${PORTVERSION}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -30,8 +35,12 @@ do-install:
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
 	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/priv/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv
 	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
+	${INSTALL_SCRIPT} ${WRKSRC}/neotoma ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
+	${INSTALL_SCRIPT} ${WRKDIR}/neotoma ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
