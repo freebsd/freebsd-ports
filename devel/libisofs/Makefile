@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libisofs
-PORTVERSION=	1.3.8
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
