@@ -122,12 +122,6 @@ man/man1/lynx.1.gz
 %%PORTDOCS%%share/lynx_help/lynx-dev.html.gz
 %%PORTDOCS%%share/lynx_help/lynx_help_main.html.gz
 %%PORTDOCS%%share/lynx_help/lynx_url_support.html.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/lynx_help/keystrokes
-%%PORTDOCS%%@dirrm share/lynx_help
 %%NLS%%share/locale/da/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lynx.mo
