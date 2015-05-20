@@ -3,6 +3,7 @@
 
 PORTNAME=	thttpd
 PORTVERSION=	2.26
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/
 
