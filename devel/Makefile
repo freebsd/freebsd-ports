@@ -617,6 +617,7 @@
     SUBDIR += godot
     SUBDIR += goffice
     SUBDIR += goffice010
+    SUBDIR += goldrush
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
