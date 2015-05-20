@@ -57,7 +57,8 @@ shebang() {
 	# Use heredoc to avoid losing rc from find|while subshell
 	done <<-EOF
 	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-	    ${STAGEDIR}${PREFIX}/libexec -type f -perm +111 2>/dev/null)
+	    ${STAGEDIR}${PREFIX}/libexec ${STAGEDIR}${PREFIX}/www \
+	    -type f -perm +111 2>/dev/null)
 	EOF
 
 	# Split stat(1) result into 2 lines and read each line separately to
@@ -77,8 +78,8 @@ shebang() {
 	# Use heredoc to avoid losing rc from find|while subshell
 	done <<-EOF
 	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-	    ${STAGEDIR}${PREFIX}/libexec -type l \
-	    -exec stat -f "%N${LF}%Y" {} + 2>/dev/null)
+	    ${STAGEDIR}${PREFIX}/libexec ${STAGEDIR}${PREFIX}/www \
+	    -type l -exec stat -f "%N${LF}%Y" {} + 2>/dev/null)
 	EOF
 
 	return ${rc}
