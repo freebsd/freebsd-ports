@@ -19,9 +19,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
 # Maintainter targets below this point
 
 # Retrieve the latest version from SVN and package in a tarball.

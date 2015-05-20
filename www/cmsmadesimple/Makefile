@@ -58,6 +58,4 @@ post-install:
 	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
 
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

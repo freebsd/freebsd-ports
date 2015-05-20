@@ -98,6 +98,5 @@ post-install:
 		${INSTALL_DATA} ${STAGEDIR}${WWWDIR}/config/settings.yml-dist	\
 			${STAGEDIR}${WWWDIR}/config/settings.yml;		\
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

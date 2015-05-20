@@ -45,6 +45,5 @@ do-install:
 		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${WWWDIR}
 	${FIND} ${STAGEDIR}${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
