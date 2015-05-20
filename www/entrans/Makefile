@@ -41,7 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

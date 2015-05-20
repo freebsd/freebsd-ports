@@ -77,7 +77,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
