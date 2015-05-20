@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rodent
-PORTVERSION=	5.2.9
-PORTREVISION=	2
+PORTVERSION=	5.3.14.6
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/xffm/rodent/
+MASTER_SITES=	SF/xffm/${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fast, small and powerful file manager
