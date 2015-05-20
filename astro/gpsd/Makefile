@@ -3,6 +3,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.14
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -78,117 +79,117 @@ USB_DESC=		libusb support for USB devices
 
 # Options related to GPS protocols
 .if ! ${PORT_OPTIONS:MNMEA0183}
-SCONS_ARGS+=	nmea0183=no
+MAKE_ARGS+=	nmea0183=no
 .endif
 
 .if ! ${PORT_OPTIONS:MASHTECH}
-SCONS_ARGS+=	ashtech=no
+MAKE_ARGS+=	ashtech=no
 .endif
 
 .if ! ${PORT_OPTIONS:MEARTHMATE}
-SCONS_ARGS+=	earthmate=no
+MAKE_ARGS+=	earthmate=no
 .endif
 
 .if ! ${PORT_OPTIONS:MEVERMORE}
-SCONS_ARGS+=	evermore=no
+MAKE_ARGS+=	evermore=no
 .endif
 
 .if ! ${PORT_OPTIONS:MFURY}
-SCONS_ARGS+=	fury=no
+MAKE_ARGS+=	fury=no
 .endif
 
 .if ! ${PORT_OPTIONS:MFV18}
-SCONS_ARGS+=	fv18=no
+MAKE_ARGS+=	fv18=no
 .endif
 
 .if ! ${PORT_OPTIONS:MGARMIN}
-SCONS_ARGS+=	garmin=no
+MAKE_ARGS+=	garmin=no
 .endif
 
 .if ! ${PORT_OPTIONS:MGARMINTXT}
-SCONS_ARGS+=	garmintxt=no
+MAKE_ARGS+=	garmintxt=no
 .endif
 
 .if ! ${PORT_OPTIONS:MGEOSTAR}
-SCONS_ARGS+=	geostar=no
+MAKE_ARGS+=	geostar=no
 .endif
 
 .if ! ${PORT_OPTIONS:MITRAX}
-SCONS_ARGS+=	itrax=no
+MAKE_ARGS+=	itrax=no
 .endif
 
 .if ! ${PORT_OPTIONS:MMTK}
-SCONS_ARGS+=	mtk3301=no
+MAKE_ARGS+=	mtk3301=no
 .endif
 
 .if ! ${PORT_OPTIONS:MNAVCOM}
-SCONS_ARGS+=	navcom=no
+MAKE_ARGS+=	navcom=no
 .endif
 
 .if ! ${PORT_OPTIONS:MONCORE}
-SCONS_ARGS+=	oncore=no
+MAKE_ARGS+=	oncore=no
 .endif
 
 .if ! ${PORT_OPTIONS:MSIRF}
-SCONS_ARGS+=	sirf=no
+MAKE_ARGS+=	sirf=no
 .endif
 
 .if ! ${PORT_OPTIONS:MSUPERSTARII}
-SCONS_ARGS+=	superstar2=no
+MAKE_ARGS+=	superstar2=no
 .endif
 
 .if ! ${PORT_OPTIONS:MTNT}
-SCONS_ARGS+=	tnt=no
+MAKE_ARGS+=	tnt=no
 .endif
 
 .if ! ${PORT_OPTIONS:MTRIPMATE}
-SCONS_ARGS+=	tripmate=no
+MAKE_ARGS+=	tripmate=no
 .endif
 
 .if ! ${PORT_OPTIONS:MTSIP}
-SCONS_ARGS+=	tsip=no
+MAKE_ARGS+=	tsip=no
 .endif
 
 .if ! ${PORT_OPTIONS:MUBLOX}
-SCONS_ARGS+=	ublox=no
+MAKE_ARGS+=	ublox=no
 .endif
 
 # Options related to Non-GPS protocols
 .if ! ${PORT_OPTIONS:MAIVDM}
-SCONS_ARGS+=	aivdm=no
+MAKE_ARGS+=	aivdm=no
 .endif
 
 .if ! ${PORT_OPTIONS:MGPSCLOCK}
-SCONS_ARGS+=	gpsclock=no
+MAKE_ARGS+=	gpsclock=no
 .endif
 
 .if ! ${PORT_OPTIONS:MNTRIP}
-SCONS_ARGS+=	ntrip=no
+MAKE_ARGS+=	ntrip=no
 .endif
 
 .if ! ${PORT_OPTIONS:MOCEANSERVER}
-SCONS_ARGS+=	oceanserver=no
+MAKE_ARGS+=	oceanserver=no
 .endif
 
 .if ! ${PORT_OPTIONS:MRTCM104V2}
-SCONS_ARGS+=	rtcm104v2=no
+MAKE_ARGS+=	rtcm104v2=no
 .endif
 
 .if ! ${PORT_OPTIONS:MRTCM104V3}
-SCONS_ARGS+=	rtcm104v3=no
+MAKE_ARGS+=	rtcm104v3=no
 .endif
 
 # Time service
 .if ! ${PORT_OPTIONS:MNTP}
-SCONS_ARGS+=	ntp=no
+MAKE_ARGS+=	ntp=no
 .endif
 
 .if ! ${PORT_OPTIONS:MNTPSHM}
-SCONS_ARGS+=	ntpshm=no
+MAKE_ARGS+=	ntpshm=no
 .endif
 
 .if ! ${PORT_OPTIONS:MPPS}
-SCONS_ARGS+=	pps=no
+MAKE_ARGS+=	pps=no
 .else
 .	if ! ${PORT_OPTIONS:MNTPSHM}
 IGNORE=		PPS requires NTPSHM
@@ -197,65 +198,65 @@ IGNORE=		PPS requires NTPSHM
 
 # Export methods
 .if ! ${PORT_OPTIONS:MSOCKEXPORT}
-SCONS_ARGS+=	socket_export=no
+MAKE_ARGS+=	socket_export=no
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-SCONS_ARGS+=	dbus_export=yes
+MAKE_ARGS+=	dbus_export=yes
 .endif
 
 .if ! ${PORT_OPTIONS:MSHMEXPORT}
-SCONS_ARGS+=	shm_export=no
+MAKE_ARGS+=	shm_export=no
 .endif
 
 # Communication
 .if ! ${PORT_OPTIONS:MUSB}
-SCONS_ARGS+=	usb=no
+MAKE_ARGS+=	usb=no
 .endif
 
 .if ! ${PORT_OPTIONS:MIPV6}
-SCONS_ARGS+=	ipv6=no
+MAKE_ARGS+=	ipv6=no
 .endif
 
 .if ! ${PORT_OPTIONS:MNETFEED}
-SCONS_ARGS+=	netfeed=no
+MAKE_ARGS+=	netfeed=no
 .endif
 
 .if ! ${PORT_OPTIONS:MPASSTHROUGH}
-SCONS_ARGS+=	passthrough=no
+MAKE_ARGS+=	passthrough=no
 .endif
 
 # Other daemon options
 .if ! ${PORT_OPTIONS:MTIMING}
-SCONS_ARGS+=	timing=no
+MAKE_ARGS+=	timing=no
 .endif
 
 # Client-side options
 .if ! ${PORT_OPTIONS:MNCURSES}
-SCONS_ARGS+=	ncurses=no
+MAKE_ARGS+=	ncurses=no
 .endif
 
 .if ${PORT_OPTIONS:MQTBIND}
 USE_QT4=	network
-SCONS_ARGS+=	qt=yes
+MAKE_ARGS+=	qt=yes
 PLIST_SUB+=	QTBIND=""
 .else
-SCONS_ARGS+=	qt=no
+MAKE_ARGS+=	qt=no
 PLIST_SUB+=	QTBIND="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MRECONFIGURE}
-SCONS_ARGS+=	reconfigure=no
+MAKE_ARGS+=	reconfigure=no
 .endif
 
 .if ! ${PORT_OPTIONS:MCPPBIND}
-SCONS_ARGS+=	libgpsmm=no
+MAKE_ARGS+=	libgpsmm=no
 .endif
 
 # Build control
 .if ${PORT_OPTIONS:MPROFILING}
-SCONS_ARGS+=	profiling=yes
+MAKE_ARGS+=	profiling=yes
 .endif
 
 # generates .py[co] files for installed modules
