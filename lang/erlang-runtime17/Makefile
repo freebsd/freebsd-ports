@@ -151,6 +151,10 @@ CONFIGURE_ARGS+=--disable-smp-support
 MAKE_ARGS+=	ARCH=x86
 .endif
 
+.if ${ARCH} == armv6
+MAKE_ARGS+=	ARCH=arm
+.endif 
+
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
 # Erlang man pages are more of internal documentation using the man format than
