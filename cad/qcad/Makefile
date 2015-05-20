@@ -4,7 +4,7 @@
 PORTNAME=	qcad
 PORTVERSION=	3.7.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -67,7 +67,7 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
-	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .for dir in ${SHRDIR}
