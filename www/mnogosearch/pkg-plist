@@ -78,5 +78,4 @@ lib/libmnogosearch.a
 lib/libmnogosearch.so
 man/man1/indexer.1.gz
 man/man5/indexer.conf.5.gz
-@unexec rmdir "/var/mnogosearch" >/dev/null 2>&1 || :
-@dirrmtry %%ETCDIR%%
+@dir /var/mnogosearch
