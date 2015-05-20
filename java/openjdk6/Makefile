@@ -186,6 +186,18 @@ COPYFILES=	\
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == clang
+.if ${COMPILER_VERSION} >= 35
+MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
+.endif
+MAKE_ENV+=	USE_CLANG=true
+.endif
+
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+MAKE_ENV+=	USE_PRECOMPILED_HEADER=0
+.endif
+
 .if empty(ICONV_LIB)
 ICONV_CPPFLAGS=	-DLIBICONV_PLUG
 .else
@@ -193,13 +205,6 @@ ICONV_CPPFLAGS=	-I${LOCALBASE}/include
 ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 ZLIB_LDFLAGS?=	-lz
-
-.if ${COMPILER_TYPE} == "clang"
-.if ${COMPILER_VERSION} >= 35
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
-.endif
-MAKE_ENV+=	USE_CLANG=true
-.endif
 
 post-extract:
 	@for d in ${COPYDIRS}; do \
