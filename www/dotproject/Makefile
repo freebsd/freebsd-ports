@@ -2,6 +2,7 @@
 
 PORTNAME=	dotproject
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/dotProject%20Version%20${PORTVERSION}
 
@@ -11,7 +12,8 @@ COMMENT=	Open Source Project Management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
+USES=		cpe shebangfix
+SHEBANG_FILES=	misc/cvs2cl/cvs2cl.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
