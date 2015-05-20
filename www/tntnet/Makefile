@@ -13,7 +13,7 @@ COMMENT=	Webapplicationserver for C++
 LIB_DEPENDS=	libcxxtools.so:${PORTSDIR}/devel/cxxtools
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		iconv libtool pathfix pkgconfig
+USES=		cpe iconv libtool pathfix pkgconfig
 USE_CSTD=	gnu89
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
