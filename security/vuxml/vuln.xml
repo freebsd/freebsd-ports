@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d0034536-ff24-11e4-a072-d050996490d0">
+    <topic>proftpd -- arbitrary code execution vulnerability with chroot</topic>
+    <affects>
+      <package>
+	<name>proftpd</name>
+	<range><lt>1.3.5_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ProFTPd development team reports:</p>
+	<blockquote cite="http://bugs.proftpd.org/show_bug.cgi?id=4169">
+	  <p>Vadim Melihow reported a critical issue with proftpd
+	    installations that use the mod_copy module's SITE CPFR/SITE
+	    CPTO commands; mod_copy allows these commands to be used by
+	    *unauthenticated clients*.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3306</cvename>
+      <url>http://bugs.proftpd.org/show_bug.cgi?id=4169</url>
+    </references>
+    <dates>
+      <discovery>2015-04-15</discovery>
+      <entry>2015-05-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35431f79-fe3e-11e4-ba63-000c292ee6b8">
     <topic>ipsec-tools -- Memory leak leading to denial of service</topic>
     <affects>
