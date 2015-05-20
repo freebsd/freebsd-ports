@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2015-05-20 17:11:37 UTC
++++ src/Makefile.in
+@@ -193,7 +193,7 @@ tagtool_CFLAGS = -Wall -Wno-pointer-sign
+ 	${vorbis_cflags} -DDATADIR='"$(datadir)/${PACKAGE_NAME}"'
+ 
+ 
+-tagtool_LDFLAGS = -export-dynamic
++tagtool_LDFLAGS = -export-dynamic -rdynamic
+ tagtool_LDADD = $(GTK_LIBS)
+ 
+ tagtool_SOURCES = file_list.c file_list.h file_util.c file_util.h	\
