@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 MASTER_SITES=	http://files.opencascade.com/OCCT/OCC_${PORTVERSION}_release/
 
