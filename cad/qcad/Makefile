@@ -3,7 +3,7 @@
 
 PORTNAME=	qcad
 PORTVERSION=	3.7.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
 		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
@@ -69,7 +69,7 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
-	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .for dir in ${SHRDIR}
