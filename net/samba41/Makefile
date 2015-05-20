@@ -17,7 +17,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.1.17
+SAMBA4_VERSION=		4.1.18
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -59,8 +59,8 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 # Flags
 CONFIGURE_ENV+=		PTHREAD_LDFLAGS="-lpthread"
 
-USES=			compiler cpe execinfo iconv perl5 pkgconfig \
-			python:2 readline shebangfix waf
+USES=			cpe compiler waf fakeroot pkgconfig perl5 python:2 \
+			execinfo readline iconv shebangfix
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_CMD=		buildtools/bin/waf
@@ -89,8 +89,8 @@ BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnsp
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
 PLIST_SUB+=		PY_DNSPYTHON="@comment "
 # talloc
-BUILD_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
-RUN_DEPENDS+=		talloc>=2.1.0:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.2:${PORTSDIR}/devel/talloc
+RUN_DEPENDS+=		talloc>=2.1.2:${PORTSDIR}/devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
 BUILD_DEPENDS+=		tevent>=0.9.18:${PORTSDIR}/devel/tevent
@@ -176,13 +176,16 @@ SUB_LIST+=		NSUPDATE=""
 .if ${PORT_OPTIONS:MDEBUG}
 WITH_DEBUG=		yes
 CONFIGURE_ARGS+=	--verbose
-_MAKE_JOBS+=		--verbose
+MAKE_ARGS+=		--verbose
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
 .if ${PORT_OPTIONS:MDEVELOPER}
-GDB_CMD?=		gdb78
+#GDB_CMD?=		gdb79
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
+# XXX: Still may break, if the link isn't installed - blame devel/gdb maintainer then.
+GDB_CMD?=		${LOCALBASE}/bin/gdb
 BUILD_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 RUN_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
@@ -217,7 +220,7 @@ WANT_EXP_MODULES=	auth_samba4 auth_script auth_skel auth_unix auth_wbc \
 
 .if ${PORT_OPTIONS:MEXP_MODULES}
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
-WANT_EXP_MODULES=	idmap_ad vfs_cacheprime gpext_scripts gpext_security gpext_registry
+WANT_EXP_MODULES=	vfs_cacheprime gpext_scripts gpext_security gpext_registry
 .	endif
 .endif
 
@@ -240,6 +243,9 @@ PLIST_SUB+=		AD_DC=""
 .if ${PORT_OPTIONS:MADS}
 SAMBA4_WANT_ADS=	yes
 SAMBA4_WANT_LDAP=	yes
+# List of extra modules taken from RHEL build
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197320
+SAMBA4_MODULES+=	idmap_rid idmap_ad idmap_hash idmap_adex idmap_tdb2
 .endif
 
 .if ${PORT_OPTIONS:MAIO_SUPPORT}
@@ -353,9 +359,11 @@ CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=	${WANT_EXP_MODULES}
-CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
+.if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)
+CONFIGURE_ARGS+=	--with-shared-modules="${SAMBA4_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
+.endif
 # XXX: Dirty
 .for module in	auth_samba4 auth_skel auth_unix auth_wbc gpext_registry gpext_scripts \
 		gpext_security idmap_ad idmap_ldap idmap_nss idmap_passdb idmap_tdb \
@@ -425,7 +433,7 @@ SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			vfs_audit.8 vfs_cacheprime.8 vfs_cap.8 vfs_catia.8 \
 			vfs_commit.8 vfs_crossrename.8 vfs_default_quota.8 \
 			vfs_dirsort.8 vfs_extd_audit.8 vfs_fake_perms.8 vfs_fileid.8 \
-			vfs_full_audit.8 vfs_gpfs.8 vfs_media_harmony.8 \
+			vfs_full_audit.8 vfs_glusterfs.8 vfs_gpfs.8 vfs_media_harmony.8 \
 			vfs_netatalk.8 vfs_notify_fam.8 vfs_prealloc.8 \
 			vfs_preopen.8 vfs_readahead.8 vfs_readonly.8 \
 			vfs_recycle.8 vfs_scannedonly.8 vfs_shadow_copy.8 \
@@ -500,9 +508,10 @@ post-install:
 .	endfor
 .endif
 # Run post-install script
-.for dir in ${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR} ${SAMBA4_PRIVATEDIR}
-			@${MKDIR} "${STAGEDIR}${dir}"
+.for dir in ${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR}
+			@${INSTALL} -d -m 0755 "${STAGEDIR}${dir}"
 .endfor
+			@${INSTALL} -d -m 0700 "${STAGEDIR}${SAMBA4_PRIVATEDIR}"
 .for dir in auth bind9 gensec gpext idmap ldb nss_info pdb perfcount process_model service vfs
 			@${MKDIR} "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
 .endfor
