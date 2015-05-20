@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -33,7 +33,7 @@ USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I.. -I${LOCALBASE}/include
+CPPFLAGS+=	-I.. -I${LOCALBASE}/include/ffmpeg26 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -44,8 +44,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-libmpv-shared \
 		--disable-alsa \
 		--disable-pdf
-
-CONFLICTS_BUILD=	ffmpeg
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
