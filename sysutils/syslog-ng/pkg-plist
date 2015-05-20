@@ -222,30 +222,4 @@ share/syslog-ng/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/syslog-ng/xsd
-@dirrm share/syslog-ng/tools
-@dirrm share/syslog-ng/include/scl/graphite
-@dirrm share/syslog-ng/include/scl/nodejs
-@dirrm share/syslog-ng/include/scl/system
-@dirrm share/syslog-ng/include/scl/syslogconf
-@dirrm share/syslog-ng/include/scl/pacct
-@dirrm share/syslog-ng/include/scl/rewrite
-@dirrm share/syslog-ng/include/scl
-@dirrm share/syslog-ng/include
-@dirrm share/syslog-ng
-@dirrm lib/syslog-ng/libtest
-@dirrm lib/syslog-ng
-@dirrm include/syslog-ng/compat
-@dirrm include/syslog-ng/control
-@dirrm include/syslog-ng/filter
-@dirrm include/syslog-ng/ivykis
-@dirrm include/syslog-ng/libtest
-@dirrm include/syslog-ng/logproto
-@dirrm include/syslog-ng/parser
-@dirrm include/syslog-ng/rewrite
-@dirrm include/syslog-ng/stats
-@dirrm include/syslog-ng/template
-@dirrm include/syslog-ng/transport
-@dirrm include/syslog-ng
-@dirrm etc/patterndb.d
+@dir etc/patterndb.d
