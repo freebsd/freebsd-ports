@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	tinymce-[0-24-9]*
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		zip
+USES=		cpe zip
 
 post-extract:
 	@cd ${WRKSRC}/ && ${FIND} -s * -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme
