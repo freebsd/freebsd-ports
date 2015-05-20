@@ -68,7 +68,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
-SHEBANG_FILES=	src/quotes/gnc-fq-dump
+SHEBANG_FILES=	src/gnc-test-env.pl src/quotes/gnc-fq-dump
 
 GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 		org.gnucash.dialogs.checkprinting.gschema.xml \
