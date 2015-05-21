@@ -18,6 +18,7 @@ ALL_TARGET=	shared_lib all
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-DOS_FREEBSD
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gmake
 
@@ -39,7 +40,6 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 post-patch:
 	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
-	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile
 .endif
