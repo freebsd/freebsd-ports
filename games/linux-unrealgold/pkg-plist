@@ -421,12 +421,3 @@ bin/unrealgold
 %%UT%%%%DATADIR%%/System/libSDL-1.1.so.0
 %%UT%%%%DATADIR%%/System/libmikmod.so.2
 %%UT%%%%DATADIR%%/System/libopenal-0.0.so
-@dirrm %%DATADIR%%/Help
-@dirrm %%DATADIR%%/Maps/UPak
-@dirrm %%DATADIR%%/Maps
-@dirrm %%DATADIR%%/Music
-@dirrm %%DATADIR%%/Sounds/int
-@dirrm %%DATADIR%%/Sounds
-@dirrm %%DATADIR%%/System
-@dirrm %%DATADIR%%/Textures
-@dirrm %%DATADIR%%
