@@ -12,6 +12,7 @@ COMMENT=	Simpler web photo gallery
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USES=		cpe
 NO_BUILD=	yes
 USE_PHP=	gd gettext json mbstring mysql pcre session
 WANT_PHP_WEB=	yes
