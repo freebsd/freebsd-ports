@@ -2,7 +2,6 @@ bin/asn1Coding
 bin/asn1Decoding
 bin/asn1Parser
 include/libtasn1.h
-info/libtasn1.info
 lib/libtasn1.a
 lib/libtasn1.so
 lib/libtasn1.so.6
