@@ -5,7 +5,5 @@ bin/omindex
 bin/scriptindex
 man/man1/omindex.1.gz
 man/man1/scriptindex.1.gz
-%%DATADIR%%/omega/htdig2omega.script
-%%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/omega
 %%WWWDIR%%/cgi-bin/outlookmsg2html
