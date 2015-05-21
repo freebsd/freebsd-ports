@@ -15,7 +15,6 @@ COMMENT=	PC-BSD / TrueOS Command-Line Utilities
 
 RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
 		${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
-		syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		lpreserver:${PORTSDIR}/sysutils/life-preserver \
 		warden:${PORTSDIR}/sysutils/warden \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
@@ -34,8 +33,7 @@ RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
 		anacron:${PORTSDIR}/sysutils/anacron \
 		grub-mkconfig:${PORTSDIR}/sysutils/grub2-pcbsd \
 		grub2-efi>=0:${PORTSDIR}/sysutils/grub2-efi \
-		openntpd>=0:${PORTSDIR}/net/openntpd \
-		vim>=0:${PORTSDIR}/editors/vim
+		openntpd>=0:${PORTSDIR}/net/openntpd
 
 NO_BUILD=	yes
 
