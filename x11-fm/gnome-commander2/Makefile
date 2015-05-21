@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/gnome-commander/1.4
