@@ -26,7 +26,7 @@ SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
+OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DIRTY
 
 GCC_DESC=	Use current GCC
 HIPE_DESC=	Build native HiPE compiler
@@ -36,6 +36,7 @@ SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 GS_DESC=	Enable GS application (deprecated)
 DTRACE_DESC=	Enable DTrace support
+DIRTY_DESC=	Enable Dirty schedulers (experimental)
 
 OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
 OPTIONS_EXCLUDE_DragonFly=	SCTP
@@ -145,6 +146,10 @@ CONFIGURE_ARGS+=--disable-sctp
 CONFIGURE_ARGS+=--enable-smp-support
 .else
 CONFIGURE_ARGS+=--disable-smp-support
+.endif
+
+.if ${PORT_OPTIONS:DIRTY}
+CONFIGURE_ARGS+=--enable-dirty-schedulers
 .endif
 
 .if ${ARCH} == i386
