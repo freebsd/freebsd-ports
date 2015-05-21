@@ -5,5 +5,5 @@ include/tidy.h
 include/tidyenum.h
 lib/libtidy5.so
 lib/libtidy5.so.4
-lib/libtidy5.so.4.9.26
+lib/libtidy5.so.%%VER%%
 man/man1/tidy5.1.gz
