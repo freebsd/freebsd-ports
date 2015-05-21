@@ -11,6 +11,9 @@ COMMENT=	Qt client for the X2Go system
 
 LICENSE=	GPLv2
 
+# http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=870
+BROKEN=		does not build with new libssh: undefined reference to `ssh_forward_listen'
+
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
