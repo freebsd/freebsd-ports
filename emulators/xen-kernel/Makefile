@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
 PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
@@ -24,7 +24,8 @@ PLIST_FILES=	/boot/xen \
 ALL_TARGET=	build
 STRIP=		#
 WRKSRC_SUBDIR=	xen
-EXTRA_PATCHES=	${FILESDIR}/iommu_share_p2m_table.patch:-p2
+EXTRA_PATCHES=	${FILESDIR}/iommu_share_p2m_table.patch:-p2 \
+		${FILESDIR}/0001-x86-pvh-disable-posted-interrupts.patch:-p2
 
 .include <bsd.port.options.mk>
 
