@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pen
-PORTVERSION=	0.27.5
+PORTVERSION=	0.28.0
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
