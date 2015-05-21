@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=--enable-smp-support
 CONFIGURE_ARGS+=--disable-smp-support
 .endif
 
-.if ${PORT_OPTIONS:DIRTY}
+.if ${PORT_OPTIONS:MDIRTY}
 CONFIGURE_ARGS+=--enable-dirty-schedulers
 .endif
 
