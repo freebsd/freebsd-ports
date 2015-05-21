@@ -1,7 +1,6 @@
-Clang fix; initializer is not needed anyway, array is copied in ctor body
---- src/armyproto.cpp.orig	2011-02-12 22:13:14.000000000 +0300
-+++ src/armyproto.cpp	2014-05-16 19:24:16.982231310 +0400
-@@ -36,7 +36,7 @@
+--- src/armyproto.cpp.orig	2011-02-12 19:13:14 UTC
++++ src/armyproto.cpp
+@@ -36,7 +36,7 @@ std::string ArmyProto::d_tag = "armyprot
  ArmyProto::ArmyProto(const ArmyProto& a)
      :ArmyProtoBase(a),
       d_defends_ruins(a.d_defends_ruins), 
