@@ -39,7 +39,4 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

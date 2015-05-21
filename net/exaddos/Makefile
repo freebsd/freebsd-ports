@@ -37,7 +37,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/exaddos.conf.sample \
 		${STAGEDIR}${ETCDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

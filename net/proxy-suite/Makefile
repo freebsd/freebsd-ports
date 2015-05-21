@@ -67,7 +67,4 @@ post-configure:
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>
