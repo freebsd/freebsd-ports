@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argus
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.8.1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -16,6 +16,8 @@ CONFLICTS=	argus-2* argus-sasl-2* argus-clients-2*
 
 OPTIONS_DEFINE=	SASL
 OPTIONS_DEFAULT=SASL
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 
 USE_RC_SUBR=	argus
 
@@ -26,8 +28,11 @@ GNU_CONFIGURE=	yes
 
 .if ${PORT_OPTIONS:MSASL}
 PKGNAMESUFFIX+=	-sasl
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.endif
+
+.if ${OSVERSION} < 900000
+BUILD_DEPENDS+=	${LOCALBASE}/include/pcap.h:${PORTSDIR}/net/libpcap
+CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
 .endif
 
 post-patch:
