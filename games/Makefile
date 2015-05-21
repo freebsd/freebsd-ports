@@ -12,6 +12,7 @@
     SUBDIR += 3omns
     SUBDIR += 4stattack
     SUBDIR += 54321
+    SUBDIR += 7kaa
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
