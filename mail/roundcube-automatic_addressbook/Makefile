@@ -28,6 +28,5 @@ SUB_LIST=	RCDIR=${RCDIR} PLUGINDIR=${WWWDIR}
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
