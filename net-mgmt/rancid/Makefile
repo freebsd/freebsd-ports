@@ -57,11 +57,6 @@ post-patch:
 post-install:
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-cvs ${STAGEDIR}${PREFIX}/bin
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-run ${STAGEDIR}${PREFIX}/bin
-.if !defined(BATCH)
-	@ ${ECHO}
-	@ ${CAT} ${PKGMESSAGE}
-	@ ${ECHO}
-.endif
 .for file in ${NEWCONFIG_FILES}
 	@ if [ -f ${PREFIX}/etc/${PORTNAME}/${file} ] ; then \
 	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.sample"; \

@@ -77,7 +77,7 @@ post-patch:
 
 .if !target(post-install)
 post-install:
-	@if [ -f ${PKGMESSAGE} ] ; then ${CAT} ${PKGMESSAGE} ; fi
+	@${DO_NADA}
 .endif
 
 .include <bsd.port.mk>
