@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-odepkg
-PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTVERSION=	0.8.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -12,11 +11,13 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch
+
 MAKE_JOBS_UNSAFE=	yes
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
