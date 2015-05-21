@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
+MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
@@ -80,8 +80,6 @@ USE_GNOME+=	gconf2
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^appdata_DATA/s|hexchat.appdata.xml||' \
-		${WRKSRC}/data/misc/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
 		${WRKSRC}/src/common/server.c
 
