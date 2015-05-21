@@ -94,6 +94,5 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} sql ${STAGEDIR}${WWWDIR}/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${WWWDIR}/
 	${CHOWN} -R 80:80 ${STAGEDIR}${WWWDIR}
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -110,8 +110,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/img
 	${MKDIR} ${STAGEDIR}/${PREFIX}/var/smokeping
 
-.if !defined(BATCH)
-	${CAT} ${PKGMESSAGE}
-.endif
-
 .include <bsd.port.post.mk>

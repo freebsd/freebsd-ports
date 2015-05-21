@@ -62,6 +62,5 @@ post-install:
 .if ${PORT_OPTIONS:MPGSQL}
 	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
