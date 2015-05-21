@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	beansdb
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirror.amdmi3.ru/googlecode/
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
@@ -13,11 +13,12 @@ COMMENT=	Yet another distributed key-value storage system from Douban Inc
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USE_CSTD=	gnu89
-LDFLAGS+=	-lpthread
+USE_GITHUB=	yes
+GH_ACCOUNT=	douban
 
-PLIST_FILES=	bin/beansdb \
-		man/man1/beansdb.1.gz
+USES=		autoreconf
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/beansdb man/man1/beansdb.1.gz
 
 .include <bsd.port.mk>
