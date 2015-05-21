@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150521:
+AUTHOR: mat@FreeBSD.org
+
+  GH_COMMIT support has been removed, see the 20150319 for more informations.
+
 20150419:
 AUTHOR: tijl@FreeBSD.org
 
