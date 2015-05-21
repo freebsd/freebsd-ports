@@ -1,0 +1,10 @@
+--- libgps.pc.in.orig	2015-01-25 12:09:01.000000000 +0000
++++ libgps.pc.in	2015-05-21 02:11:05.192169497 +0000
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=@libdir@
++libdir=${prefix}/@libdir@
+ includedir=${prefix}/include
+ 
+ Name: GPSD
