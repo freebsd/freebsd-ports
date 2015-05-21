@@ -3,6 +3,7 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -30,6 +31,7 @@ PLIST_SUB=	NLS="@comment "
 .endif
 
 DOCS=		AUTHORS ChangeLog NEWS README
+INFO=		gpgrt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
