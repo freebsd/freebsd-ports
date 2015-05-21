@@ -1289,6 +1289,7 @@
     SUBDIR += lpc21isp
     SUBDIR += lrmi
     SUBDIR += lua-alien
+    SUBDIR += lua-bitop
     SUBDIR += lua-bitlib
     SUBDIR += lua-cjson
     SUBDIR += lua-gettext
