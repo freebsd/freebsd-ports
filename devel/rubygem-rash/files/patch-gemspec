@@ -1,0 +1,11 @@
+--- rash.gemspec.orig	2015-05-21 19:21:02 UTC
++++ rash.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 3
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<hashie>, ["~> 2.0.0"])
++      s.add_runtime_dependency(%q<hashie>, [">= 2.0.0"])
+       s.add_development_dependency(%q<rake>, ["~> 0.9"])
+       s.add_development_dependency(%q<rdoc>, ["~> 3.9"])
+       s.add_development_dependency(%q<rspec>, ["~> 2.5"])
