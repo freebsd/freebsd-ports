@@ -78,7 +78,6 @@ libdata/pkgconfig/libupsclient.pc
 %%NUT_SERIAL%%libexec/nut/metasys
 %%NUT_SERIAL%%libexec/nut/mge-utalk
 %%NUT_SERIAL%%libexec/nut/microdowell
-%%NUT_NEON%%libexec/nut/netxml-ups
 %%NUT_SERIAL%%libexec/nut/mge-shut
 %%NUT_SERIAL%%libexec/nut/oldmge-shut
 %%NUT_SERIAL%%libexec/nut/oneac
@@ -238,7 +237,6 @@ man/man8/upssched.8.gz
 %%NUT_USB%%man/man8/tripplite_usb.8.gz
 %%NUT_USB%%man/man8/usbhid-ups.8.gz
 %%NUT_SNMP%%man/man8/snmp-ups.8.gz
-%%NUT_NEON%%man/man8/netxml-ups.8.gz
 %%NUT_IPMIPSU%%man/man8/nut-ipmipsu.8.gz
 %%NUT_PDU%%man/man8/powerman-pdu.8.gz
 sbin/upsd
