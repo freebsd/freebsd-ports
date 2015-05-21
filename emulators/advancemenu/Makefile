@@ -36,6 +36,8 @@ ASM_CONFIGURE_ENABLE=	asm
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread|' ${WRKSRC}/configure

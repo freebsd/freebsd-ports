@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -32,7 +33,7 @@ USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I.. -I${LOCALBASE}/include
+CPPFLAGS+=	-I.. -I${LOCALBASE}/include/ffmpeg26 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -43,8 +44,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-libmpv-shared \
 		--disable-alsa \
 		--disable-pdf
-
-CONFLICTS_BUILD=	ffmpeg
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
@@ -96,7 +95,7 @@ V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedi
 V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 V4L_CONFIGURE_ENABLE=		tv-v4l2
 
-YTDL_RUN_DEPENDS=		youtube-dl:${PORTSDIR}/www/youtube_dl
+YTDL_BUILD_DEPENDS=		${LOCALBASE}/bin/youtube-dl:${PORTSDIR}/www/youtube_dl
 
 SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_ENABLE=		libsmbclient
@@ -122,6 +121,13 @@ JACK_CONFIGURE_ENABLE=		jack
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+
+.include <bsd.port.options.mk>
+
+# Fix crash on i386
+.if ${ARCH} == "i386"
+CFLAGS:=	${CFLAGS:N-O*} -O0
+.endif
 
 post-extract:
 	${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf

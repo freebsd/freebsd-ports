@@ -5,7 +5,7 @@ PORTNAME=	ultragetopt
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://kevinlocke.name/programs/ ${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://kevinlocke.name/programs/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Versatile and customizable implementation of getopt()

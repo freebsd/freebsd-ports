@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	usermin
-PORTVERSION=	1.650
+PORTVERSION=	1.660
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
-		${MASTER_SITE_LOCAL:S/$/:up/}
-MASTER_SITE_SUBDIR=	olgeni/:up
+		LOCAL/olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,7 +23,7 @@ NO_BUILD=	yes
 USES=		cpe perl5
 CPE_VENDOR=	webmin
 USE_RC_SUBR=	usermin
-SUB_LIST=	PERL5=${PERL}
+SUB_LIST=	PERL=${PERL}
 SUB_FILES=	pkg-message
 
 USERMIN_MODULES=
@@ -48,17 +47,10 @@ post-patch:
 		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
 		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
 
-	@${FIND} ${WRKSRC} -name "*.cgi" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.cgi" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.pl" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.pl" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
+	@${FIND} ${WRKSRC} \( -name "*.cgi" -or -name "*.pl" -or -name "*.sh" \) -exec \
+		${REINPLACE_CMD} -e "s@%%PERL%%@${PERL}@g; s@#!/usr/bin/perl@#!${PERL}@; s@#!/usr/local/bin/perl@#!${PERL}@" {} \;
 
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" -or -name "*.pyc" \) -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/usermin

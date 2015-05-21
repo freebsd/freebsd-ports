@@ -9,8 +9,7 @@ MASTER_SITES=	http://ricomp.de/vdr/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a45/a/}${DISTVERSIONSUFFIX}
 
 PATCH_SITES=	http://ppa.launchpad.net/the-vdr-team/unstable-plugins/ubuntu/pool/main/v/vdr-plugin-control/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	nox/
+		LOCAL/nox
 PATCHFILES=	${PORTNAME}_${PORTVERSION:S/a45/a-45/}yavdr1.diff.gz
 
 MAINTAINER=	nox@FreeBSD.org

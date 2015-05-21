@@ -5,16 +5,12 @@ PORTNAME=	rogue_s
 PORTVERSION=	1.3a
 PORTREVISION=	2
 CATEGORIES=	japanese games
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		${MASTER_SITE_PORTS_JP:S,/%SUBDIR%/,/,}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	LOCAL/knu PORTS_JP
 DISTFILES=	rogue_s.tar.z rogue_s.patch02.z rogue_s.patch03.z \
 		rogue_s.message.z
 EXTRACT_ONLY=	rogue_s.tar.z
 
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		${MASTER_SITE_PORTS_JP:S,/%SUBDIR%/,/,}
-PATCH_SITE_SUBDIR=	knu
+PATCH_SITES=	LOCAL/knu PORTS_JP
 PATCHFILES=	rogue_s.patch04
 
 MAINTAINER=	ports@FreeBSD.org

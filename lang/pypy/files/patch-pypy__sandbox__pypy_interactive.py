@@ -18,7 +18,7 @@
 @@ -56,10 +59,10 @@
          return Dir({
              'bin': Dir({
-                 'pypy-c': RealFile(self.executable),
+                 'pypy-c': RealFile(self.executable, mode=0111),
 -                'lib-python': RealDir(os.path.join(libroot, 'lib-python'),
 -                                      exclude=exclude), 
 -                'lib_pypy': RealDir(os.path.join(libroot, 'lib_pypy'),

@@ -3,6 +3,7 @@
 
 PORTNAME=	omniORB
 PORTVERSION=	4.1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	41
@@ -10,7 +11,8 @@ PKGNAMESUFFIX=	41
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	omniORB-4.2.*
 
@@ -40,6 +42,8 @@ pre-configure:
 	       	${WRKSRC}/contrib/pkgconfig/GNUmakefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/_omniidlmodule.so
 	${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl')"
 	${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be')"
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} *.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

@@ -1,6 +1,6 @@
---- config/devd.c.orig	2014-12-16 23:03:10 UTC
+--- config/devd.c.orig	2015-05-19 19:41:49 UTC
 +++ config/devd.c
-@@ -0,0 +1,530 @@
+@@ -0,0 +1,531 @@
 +/*
 + * Copyright (c) 2012 Baptiste Daroussin
 + * Copyright (c) 2013, 2014 Alex Kozlov
@@ -79,6 +79,7 @@
 +	{ "sysmouse", ATTR_POINTER, "mouse" },
 +	{ "ums", ATTR_POINTER, "mouse" },
 +	{ "psm", ATTR_POINTER, "mouse" },
++	{ "vboxguest", ATTR_POINTER, "vboxmouse" },
 +	{ "joy", ATTR_JOYSTICK, NULL },
 +	{ "atp", ATTR_TOUCHPAD, NULL },
 +	{ "uep", ATTR_TOUCHSCREEN, NULL },

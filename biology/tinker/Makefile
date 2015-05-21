@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	7.1.2
+PORTVERSION=	7.1.3
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 

@@ -6,8 +6,7 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/IDS
+		PACKETSTORM/UNIX/IDS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays information in real time about users currently logged on

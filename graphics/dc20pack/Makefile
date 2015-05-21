@@ -4,8 +4,7 @@
 PORTNAME=		dc20pack
 PORTVERSION=		1.0
 CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/capture
+MASTER_SITES=		SUNSITE/apps/graphics/capture
 
 MAINTAINER=		maurice@castro.aus.net
 COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera

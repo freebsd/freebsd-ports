@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		cpe gmake libtool
+CPE_VENDOR=	nlnetlabs
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

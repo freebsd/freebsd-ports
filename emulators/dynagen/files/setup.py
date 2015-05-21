@@ -14,7 +14,7 @@ setup( # Distribution meta-data
     url = "http://sourceforge.net/projects/dyna-gen",
     license = "GPLv2",
     long_description = """Dynagen is a utility for use with the dynamips Cisco router simulator. It allows you to quickly provision and manage virtual networks using an INI like configuration file.""",
-    py_modules = ['confConsole','console','dynamips_lib','pemu_lib', 'pemubin', 'pemuwrapper']
+    py_modules = ['confConsole','console','dynamips_lib','pemu_lib','pemubin','pemuwrapper']
 )
 
 print "If you have installed the modules, copy dynagen to some "

@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	deskutils
 # MASTER_SITES=	http://matt.sixxgate.com/files/
-MASTER_SITES=	${MASTER_SITE_FREEBSD}
+MASTER_SITES=	FREEBSD
 
 MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Application / program launcher for Motif

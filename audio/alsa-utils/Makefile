@@ -5,7 +5,7 @@ PORTNAME=	alsa-utils
 PORTVERSION=	1.0.29
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/utils \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility utils

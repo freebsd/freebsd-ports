@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -24,9 +23,9 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	ddccf8e
+GH_TAGNAME=	1b929ef
 
-USES=		bison cmake fortran gmake python
+USES=		cpe bison cmake fortran gmake python
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build

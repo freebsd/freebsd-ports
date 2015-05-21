@@ -5,7 +5,7 @@ PORTNAME=	netselect
 PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://apenwarr.ca/netselect/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultrafast implementation of ping

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	3.2.5.7
+PORTVERSION=	4.4.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/:prog \
 		http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
@@ -22,7 +22,7 @@ CONFLICTS=	libevent-1.*
 
 SUB_FILES=	pkg-message
 
-MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
+MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_stunclient.1 turnutils_uclient.1 coturn.1
 
 USE_OPENSSL=	YES
 
@@ -30,25 +30,28 @@ USE_RC_SUBR=	turnserver
 
 HAS_CONFIGURE=	YES
 
-OPTIONS_DEFINE=	MYSQL PGSQL REDIS DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL PGSQL REDIS SQLITE
 
 SHEBANG_FILES=	examples/scripts/restapi/shared_secret_maintainer.pl
 USES=		perl5 shebangfix
 
-MYSQL_DESC=	MySQL support for users database
-PGSQL_DESC=	PostgreSQL support for users database
+MYSQL_DESC=	MySQL database support
+PGSQL_DESC=	PostgreSQL database support
 REDIS_DESC=	Redis support for user database and for status and statistics reporting
+SQLITE_DESC=	SQLite database support
 
-OPTIONS_DEFAULT=	MYSQL PGSQL REDIS
+OPTIONS_DEFAULT=	MYSQL PGSQL REDIS SQLITE
 
-DOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf
+OPTIONS_SUB=	yes
+
+DOCS=	html TurnNetworks.pdf
 PORTREADMEDOCS=	LICENSE README.turnserver README.turnadmin README.turnutils INSTALL
-PORTDOCS=	${DOCS} ${PORTREADMEDOCS} postinstall.txt schema.sql \
+PORTDOCS=	${DOCS} ${PORTREADMEDOCS} postinstall.txt schema.sql schema.mongo.sh \
 		schema.userdb.redis schema.stats.redis
 
 _BIN_UTILS=	peer stunclient uclient
 
-_ETC_EXAMPLES=	turnserver.conf turnuserdb.conf turn_client_cert.pem \
+_ETC_EXAMPLES=	turnserver.conf turn_client_cert.pem \
 		turn_client_pkey.pem turn_server_cert.pem turn_server_pkey.pem
 _SCRIPT_EXAMPLES=	peer.sh	\
 	basic/relay.sh basic/dos_attack.sh \
@@ -62,24 +65,37 @@ _SCRIPT_EXAMPLES=	peer.sh	\
 	longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_client.sh \
 	longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
 	longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
-	longtermsecure/secure_dos_attack.sh longtermsecure/secure_udp_client.sh \
-	longtermsecuredb/secure_relay_with_db_psql.sh longtermsecuredb/secure_relay_with_db_mysql.sh \
+	longtermsecure/secure_sctp_client.sh \
+	longtermsecure/secure_dos_attack.sh \
+	longtermsecuredb/secure_relay_with_db_psql.sh \
+	longtermsecuredb/secure_relay_with_db_mysql.sh \
 	longtermsecuredb/secure_relay_with_db_mysql_ssl.sh \
+	longtermsecuredb/secure_relay_with_db_mongo.sh \
 	longtermsecuredb/secure_relay_with_db_redis.sh \
-	restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
-	restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
+	longtermsecuredb/secure_relay_with_db_sqlite.sh \
+	restapi/secure_relay_secret.sh \
+	restapi/secure_relay_secret_with_db_mysql.sh \
+	restapi/secure_relay_secret_with_db_psql.sh \
+	restapi/secure_relay_secret_with_db_redis.sh \
+	restapi/secure_relay_secret_with_db_mongo.sh \
+	restapi/secure_relay_secret_with_db_sqlite.sh \
 	restapi/secure_udp_client_with_secret.sh \
 	restapi/secure_relay_secret_with_db_psql.sh \
 	restapi/shared_secret_maintainer.pl \
-	shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh \
-	shorttermsecure/secure_udp_client_short_term.sh \
-	shorttermsecure/secure_relay_short_term_mech.sh \
 	selfloadbalance/secure_dos_attack.sh \
 	selfloadbalance/secure_relay.sh
 
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
+# MongoDB support is disabled until devel/mongo-c-driver is updated
+CONFIGURE_ENG+=	TURN_NO_MONGO=1
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	yes
+.else
+CONFIGURE_ENV+=	TURN_NO_SQLITE=1
+.endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
@@ -108,14 +124,19 @@ do-install:
 .for f in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${PREFIX}/man/man1/${f}
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/var/db
+.if ${PORT_OPTIONS:MSQLITE}
+	${INSTALL_DATA} ${WRKSRC}/sqlite/turndb ${STAGEDIR}${PREFIX}/var/db/turndb
+.endif
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.sql ${STAGEDIR}${DATADIR}/schema.sql
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.userdb.redis ${STAGEDIR}${DATADIR}/schema.userdb.redis
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.stats.redis ${STAGEDIR}${DATADIR}/schema.stats.redis
 	${INSTALL_SCRIPT} ${WRKSRC}/turndb/testredisdbsetup.sh ${STAGEDIR}${DATADIR}/testredisdbsetup.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/turndb/schema.mongo.sh ${STAGEDIR}${DATADIR}/schema.mongo.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/turndb/testmongosetup.sh ${STAGEDIR}${DATADIR}/testmongosetup.sh
 	${INSTALL_DATA} ${WRKSRC}/lib/libturnclient.a ${STAGEDIR}${PREFIX}/lib/libturnclient.a
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnserver.conf ${STAGEDIR}${PREFIX}/etc/turnserver.conf.default
-	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnuserdb.conf ${STAGEDIR}${PREFIX}/etc/turnuserdb.conf.default
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/turn
 	(cd ${WRKSRC}/include/turn/ && ${COPYTREE_SHARE} client ${STAGEDIR}${PREFIX}/include/turn/)
 	(cd ${WRKSRC}/include/turn/ && ${COPYTREE_SHARE} ns_turn_defs.h ${STAGEDIR}${PREFIX}/include/turn/)
@@ -126,7 +147,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/longtermsecure
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/longtermsecuredb
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/restapi
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/shorttermsecure
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts/selfloadbalance
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/etc
 	${INSTALL_MAN} ${WRKSRC}/examples/scripts/readme.txt ${STAGEDIR}${EXAMPLESDIR}/scripts
@@ -147,6 +167,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/postinstall.txt
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.sql ${STAGEDIR}${DOCSDIR}/schema.sql
+	${INSTALL_DATA} ${WRKSRC}/turndb/schema.mongo.sh ${STAGEDIR}${DOCSDIR}/schema.mongo.sh
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.userdb.redis ${STAGEDIR}${DOCSDIR}/schema.userdb.redis
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.stats.redis ${STAGEDIR}${DOCSDIR}/schema.stats.redis
 .endif

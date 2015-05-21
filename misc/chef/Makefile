@@ -4,16 +4,15 @@ PORTNAME=	chef
 PORTVERSION=	19930426
 CATEGORIES=	misc
 MASTER_SITES=	http://mysite.verizon.net/ebrowne72/chef/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+		LOCAL/brooks
 DISTNAME=	bork
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Feelter thet cunferts Ingleesh text tu Muck Cheenese-a
 
 CONFLICTS=	filters-* talkfilters-*
 PLIST_FILES=	bin/chef
+USES=		tar:Z
 
 WRKSRC=		${WRKDIR}/bork
 

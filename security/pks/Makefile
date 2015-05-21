@@ -5,9 +5,8 @@ PORTNAME=		pks
 PORTVERSION=		0.9.6.20040312
 PORTREVISION=		1
 CATEGORIES=		security www
-MASTER_SITES=		http://pks.sourceforge.net/:sf ${MASTER_SITE_LOCAL}:local
-MASTER_SITE_SUBDIR=	.:sf mandree:local
-DISTFILES=		pks-current.tgz:sf,local
+MASTER_SITES=		http://pks.sourceforge.net/ LOCAL/mandree
+DISTFILES=		pks-current.tgz
 
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PGP Public Key Server

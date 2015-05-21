@@ -4,8 +4,7 @@
 PORTNAME=	tstools
 DISTVERSION=	1_11
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}.berlios
-MASTER_SITE_SUBDIR=	tstools
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	MPEG transport, program, and elementary stream tools

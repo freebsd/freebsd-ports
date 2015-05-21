@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	belle-sip
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net java
 MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/ \
 		http://www.antlr3.org/download/:source2

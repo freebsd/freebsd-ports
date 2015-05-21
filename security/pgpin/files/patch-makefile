@@ -1,5 +1,5 @@
 --- makefile.orig	2001-03-23 11:44:58.000000000 +0100
-+++ makefile	2011-06-24 19:39:57.000000000 +0200
++++ makefile	2015-05-16 19:59:11.000000000 +0200
 @@ -50,15 +50,15 @@
  # -DUSE_SELECT to use select() system call
  # -DUSE_NBIO   to use non-blocking read()
@@ -27,11 +27,11 @@
  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
 -	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
 +	@echo "	dgux, djgpp, encore, hpux-68k(*), hpux-68k-ansi,"
-+	@echo "	freebsd-{alpha,i386,sparc64,ia64,amd64,powerpc},"
++	@echo "	freebsd-{alpha,i386,sparc64,ia64,amd64,powerpc,armv6},"
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -175,9 +176,32 @@
+@@ -175,9 +176,36 @@
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -61,6 +61,10 @@
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
 +	-DMAX_NAMELEN=255"
 +freebsd-powerpc:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
++	-DMAX_NAMELEN=255"
++freebsd-armv6:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
  	-DMAX_NAMELEN=255"

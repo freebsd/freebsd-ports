@@ -4,10 +4,7 @@
 PORTNAME=	api-sanity-checker
 PORTVERSION=	1.98.4
 CATEGORIES=	devel perl5
-MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
-		LOCAL/bf/${DIST_SUBDIR}
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
@@ -19,6 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-co
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}.pl
+USE_GITHUB=	yes
+GH_ACCOUNT=	lvc
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker

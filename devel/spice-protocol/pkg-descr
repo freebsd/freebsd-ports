@@ -1,0 +1,7 @@
+Spice protocol defines a set of protocol messages for accessing,
+controlling, and receiving inputs from remote computing devices
+(e.g., keyboard, video, mouse) across networks, and sending output
+to them. A controlled device can reside on either side, client
+and/or server.
+
+WWW: http://www.spice-space.org

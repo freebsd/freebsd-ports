@@ -4,9 +4,8 @@
 PORTNAME=	html2text
 PORTVERSION=	1.3.2a
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/apps/www/converters \
 		http://www.mbayer.de/html2text/downloads/
-MASTER_SITE_SUBDIR=	apps/www/converters
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text

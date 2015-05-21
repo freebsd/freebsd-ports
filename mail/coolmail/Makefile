@@ -5,9 +5,7 @@ PORTNAME=	coolmail
 PORTVERSION=	1.3
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=system/mail/biffs
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SUNSITE/system/mail/biffs
 
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Xbiff like mail tool with animated 3D graphics
@@ -15,6 +13,7 @@ COMMENT=	Xbiff like mail tool with animated 3D graphics
 PLIST_FILES=	bin/coolmail \
 		man/man1/coolmail.1.gz
 
+USES=		tar:tgz
 USE_XORG=	x11 xext xmu xi
 PATCH_STRIP=	-p1
 

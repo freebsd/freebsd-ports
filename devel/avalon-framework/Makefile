@@ -5,8 +5,7 @@ PORTNAME=	avalon-framework
 PORTVERSION=	4.2.0
 PORTREVISION=	2
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	avalon/${PORTNAME}/binaries/
+MASTER_SITES=	APACHE/avalon/${PORTNAME}/binaries
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming

@@ -8,15 +8,15 @@
 PORTNAME=	hadoop
 PORTVERSION=	2.6.0
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE} \
+MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
 		LOCAL/demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
-MASTER_SITE_SUBDIR=${PORTNAME}/common/stable
 PKGNAMESUFFIX=	2
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz jetty-6.1.14.zip
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz jetty-6.1.14.zip
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
@@ -39,7 +39,6 @@ JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh hadoop-common-project/hadoop-kms/src/main/sbin/kms.sh hadoop-common-project/hadoop-kms/src/main/libexec/kms-config.sh
 MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin/protoc
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES

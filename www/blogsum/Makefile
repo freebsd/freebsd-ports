@@ -39,9 +39,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/
 	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
-
 .include <bsd.port.post.mk>

@@ -5,8 +5,7 @@ PORTNAME=	aleefonts
 PORTVERSION=	12
 PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	DEBIAN
-MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
+MASTER_SITES=	DEBIAN/pool/main/t/ttf-alee
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	ttf-alee_${PORTVERSION}
 

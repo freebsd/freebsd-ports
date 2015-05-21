@@ -4,18 +4,18 @@
 PORTNAME=	pdal
 PORTVERSION=	0.9.8
 CATEGORIES=	math databases graphics
-MASTER_SITES=	http://github.com/PDAL/PDAL/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library for translating and manipulating point cloud data
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=	${WRKDIR}/PDAL-${PORTVERSION}
-
 USES=	cmake compiler
 compiler_ARGS=	c++11-lang
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME:tu}
+GH_PROJECT=	${GH_ACCOUNT}
 
 OPTIONS_DEFINE=	GDAL GEOTIFF LIBXML2 EMBED_BOOST
 OPTIONS_DEFAULT=	GDAL GEOTIFF LIBXML2

@@ -10,6 +10,7 @@
     SUBDIR += distilator
     SUBDIR += fastest_sites
     SUBDIR += fbsdmon
+    SUBDIR += genpatch
     SUBDIR += genplist
     SUBDIR += gnome-packagekit
     SUBDIR += hs-porte

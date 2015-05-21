@@ -1,5 +1,0 @@
-bin/drood
-man/man8/drood.8.gz
-etc/rc.d/drood
-etc/drood/types.tab
-etc/drood/types.tab.dist

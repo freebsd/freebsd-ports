@@ -5,6 +5,48 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150519:
+  AFFECTS: users of sysutils/webmin and sysutils/usermin
+  AUTHOR: olgeni@FreeBSD.org
+
+  After upgrading to Perl 5.20 the /usr/bin/perl link will no longer
+  be available. You will have to check your perl-path files and
+  change the path of the Perl interpreter to "/usr/local/bin/perl":
+
+    /usr/local/etc/webmin/perl-path
+    /usr/local/etc/usermin/perl-path
+
+20150513:
+  AFFECTS: users of lang/perl5*
+  AUTHOR: mat@FreeBSD.org
+
+  The default Perl version has been switched to Perl 5.20.  If you are using
+  binary packages to upgrade your system, you do not have anything to do, pkg
+  upgrade will do the right thing.  For the other people, assuming you are
+  migrating from 5.18 to 5.20, do:
+
+  Portupgrade users:
+	portupgrade -o lang/perl5.20 -f lang/perl5.18
+
+	portupgrade -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  Portmaster users:
+	portmaster -o lang/perl5.20 lang/perl5.18
+
+	portmaster -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  NOTE:
+    Perl has been removed from base more than ten years ago, so it was way past
+    time for the /usr/bin/perl symlink to be removed from the port.  If for
+    some strange reason, you still need it, you will have to create it
+    manually.
+
+  IMPORTANT:
+    In case you have not updated your system in a while, and specifically,
+    followed the 20141126 instructions regarding the new Perl layout, you
+    should follow those more extensive instructions rather than the
+    conservative presented here.
+
 20150510:
   AFFECTS: users of mail/postfix mail/postfix-current
   AUTHOR: ohauer@FreeBSD.org

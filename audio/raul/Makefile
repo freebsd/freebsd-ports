@@ -3,7 +3,7 @@
 
 PORTNAME=	raul
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -24,6 +24,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS=	--verbose
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libraul.so
 
 post-patch:
 	@${REINPLACE_CMD} -e \

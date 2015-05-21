@@ -3,7 +3,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	3.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -22,8 +22,7 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
 
-PATCH_SITES=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	bf
+PATCH_SITES=		LOCAL/bf
 PATCHFILES=		R-patched-20131112-r64207.diff.bz2
 
 MAINTAINER=	bf@FreeBSD.org

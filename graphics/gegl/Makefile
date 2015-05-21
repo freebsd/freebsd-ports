@@ -10,6 +10,9 @@ MASTER_SITES=	GIMP
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
 
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
+
 LIB_DEPENDS=	libbabl-0.1.so:${PORTSDIR}/x11/babl
 
 OPTIONS_DEFINE=	CAIRO ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER JPEG \
@@ -22,7 +25,7 @@ ENSCRIPT_DESC=	Enscript support
 SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
+USES=		cpe gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes

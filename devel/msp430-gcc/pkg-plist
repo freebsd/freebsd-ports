@@ -196,3 +196,5 @@ man/man1/%%GCC_TARG%%-cpp.1.gz
 man/man1/%%GCC_TARG%%-g++.1.gz
 man/man1/%%GCC_TARG%%-gcc.1.gz
 man/man1/%%GCC_TARG%%-gcov.1.gz
+@dir %%GCC_TARG%%/lib/mcpu-430x/mmpy-16
+@dir %%GCC_TARG%%/lib/mmpy-16

@@ -1,0 +1,306 @@
+diff --git OTP_VERSION OTP_VERSION
+index f32d20d..64b493c 100644
+--- OTP_VERSION
++++ OTP_VERSION
+@@ -1 +1 @@
+-17.5.3
++17.5.4
+diff --git lib/inets/doc/src/notes.xml lib/inets/doc/src/notes.xml
+index 12bbc2b..bae8e32 100644
+--- lib/inets/doc/src/notes.xml
++++ lib/inets/doc/src/notes.xml
+@@ -32,7 +32,22 @@
+     <file>notes.xml</file>
+   </header>
+   
+-  <section><title>Inets 5.10.7</title>
++  <section><title>Inets 5.10.8</title>
++
++    <section><title>Fixed Bugs and Malfunctions</title>
++      <list>
++        <item>
++          <p>
++	    Reject messages with a Content-Length less than 0</p>
++          <p>
++	    Own Id: OTP-12739 Aux Id: seq12860 </p>
++        </item>
++      </list>
++    </section>
++
++</section>
++
++<section><title>Inets 5.10.7</title>
+ 
+     <section><title>Improvements and New Features</title>
+       <list>
+diff --git lib/inets/src/http_server/httpd_request.erl lib/inets/src/http_server/httpd_request.erl
+index 6985065..3ff0761 100644
+--- lib/inets/src/http_server/httpd_request.erl
++++ lib/inets/src/http_server/httpd_request.erl
+@@ -417,8 +417,12 @@ check_header({"content-length", Value}, Maxsizes) ->
+     case length(Value) =< MaxLen of
+ 	true ->
+ 	    try 
+-		_ = list_to_integer(Value),
+-		ok
++		list_to_integer(Value)
++	    of
++		I when I>= 0 ->
++		    ok;
++		_ ->
++		    {error, {size_error, Max, 411, "negative content-length"}}
+ 	    catch _:_ ->
+ 		    {error, {size_error, Max, 411, "content-length not an integer"}}
+ 	    end;
+diff --git lib/inets/vsn.mk lib/inets/vsn.mk
+index e9ecb26..ecb84e4 100644
+--- lib/inets/vsn.mk
++++ lib/inets/vsn.mk
+@@ -18,6 +18,6 @@
+ # %CopyrightEnd%
+ 
+ APPLICATION = inets
+-INETS_VSN   = 5.10.7
++INETS_VSN   = 5.10.8
+ PRE_VSN     =
+ APP_VSN     = "$(APPLICATION)-$(INETS_VSN)$(PRE_VSN)"
+diff --git lib/ssh/doc/src/notes.xml lib/ssh/doc/src/notes.xml
+index 41885c6..579a3ae 100644
+--- lib/ssh/doc/src/notes.xml
++++ lib/ssh/doc/src/notes.xml
+@@ -29,6 +29,25 @@
+     <file>notes.xml</file>
+   </header>
+ 
++<section><title>Ssh 3.2.3</title>
++
++    <section><title>Fixed Bugs and Malfunctions</title>
++      <list>
++        <item>
++          <p>
++	    A new option for handling the SSH_MSG_DEBUG message's
++	    printouts. A fun could be given in the options that will
++	    be called whenever the SSH_MSG_DEBUG message arrives.
++	    This enables the user to format the printout or just
++	    discard it.</p>
++          <p>
++	    Own Id: OTP-12738 Aux Id: seq12860 </p>
++        </item>
++      </list>
++    </section>
++
++</section>
++
+ <section><title>Ssh 3.2.2</title>
+ 
+     <section><title>Improvements and New Features</title>
+diff --git lib/ssh/doc/src/ssh.xml lib/ssh/doc/src/ssh.xml
+index 72dafc0..501668c 100644
+--- lib/ssh/doc/src/ssh.xml
++++ lib/ssh/doc/src/ssh.xml
+@@ -201,6 +201,14 @@
+ 	  <tag><c><![CDATA[{idle_time, integer()}]]></c></tag>
+ 	  <item>
+  	  <p>Sets a timeout on connection when no channels are active, default is infinity</p></item>
++
++	  <tag><c><![CDATA[{ssh_msg_debug_fun, fun(ConnectionRef::ssh_connection_ref(), AlwaysDisplay::boolean(), Msg::binary(), LanguageTag::binary()) -> _}]]></c></tag>
++	  <item>
++	    <p>Provide a fun to implement your own logging of the SSH message SSH_MSG_DEBUG. The last three parameters are from the message, see RFC4253, section 11.3. The <c>ConnectionRef</c> is the reference to the connection on which the message arrived. The return value from the fun is not checked.</p>
++	    <p>The default behaviour is ignore the message.
++	    To get a printout for each message with <c>AlwaysDisplay = true</c>, use for example <c>{ssh_msg_debug_fun, fun(_,true,M,_)-> io:format("DEBUG: ~p~n", [M]) end}</c></p>
++	  </item>
++
+ 	</taglist>
+       </desc>   
+     </func>
+@@ -383,8 +391,16 @@
+ 	  <item>
+ 	    <p>Provide a fun to implement your own logging when a user disconnects from the server.</p>
+ 	  </item>
+-        </taglist>
+-      </desc>
++
++	  <tag><c><![CDATA[{ssh_msg_debug_fun, fun(ConnectionRef::ssh_connection_ref(), AlwaysDisplay::boolean(), Msg::binary(), LanguageTag::binary()) -> _}]]></c></tag>
++	  <item>
++	    <p>Provide a fun to implement your own logging of the SSH message SSH_MSG_DEBUG. The last three parameters are from the message, see RFC4253, section 11.3. The <c>ConnectionRef</c> is the reference to the connection on which the message arrived. The return value from the fun is not checked.</p>
++	    <p>The default behaviour is ignore the message.
++	    To get a printout for each message with <c>AlwaysDisplay = true</c>, use for example <c>{ssh_msg_debug_fun, fun(_,true,M,_)-> io:format("DEBUG: ~p~n", [M]) end}</c></p>
++	  </item>
++
++	</taglist>
++      </desc>   
+     </func>
+ 
+ 
+diff --git lib/ssh/src/ssh.erl lib/ssh/src/ssh.erl
+index d4b02a0..71e7d77 100644
+--- lib/ssh/src/ssh.erl
++++ lib/ssh/src/ssh.erl
+@@ -312,6 +312,8 @@ handle_option([{disconnectfun, _} = Opt | Rest], SocketOptions, SshOptions) ->
+     handle_option(Rest, SocketOptions, [handle_ssh_option(Opt) | SshOptions]);
+ handle_option([{failfun, _} = Opt | Rest],  SocketOptions, SshOptions) ->
+     handle_option(Rest, SocketOptions, [handle_ssh_option(Opt) | SshOptions]);
++handle_option([{ssh_msg_debug_fun, _} = Opt | Rest],  SocketOptions, SshOptions) ->
++    handle_option(Rest, SocketOptions, [handle_ssh_option(Opt) | SshOptions]);
+ %%Backwards compatibility should not be underscore between ip and v6 in API
+ handle_option([{ip_v6_disabled, Value} | Rest], SocketOptions, SshOptions) ->
+     handle_option(Rest, SocketOptions, [handle_ssh_option({ipv6_disabled, Value}) | SshOptions]);
+@@ -417,6 +419,8 @@ handle_ssh_option({disconnectfun , Value} = Opt) when is_function(Value) ->
+     Opt;
+ handle_ssh_option({failfun, Value} = Opt) when is_function(Value) ->
+     Opt;
++handle_ssh_option({ssh_msg_debug_fun, Value} = Opt) when is_function(Value,4) ->
++    Opt;
+ 
+ handle_ssh_option({ipv6_disabled, Value} = Opt) when is_boolean(Value) ->
+     throw({error, {{ipv6_disabled, Opt}, option_no_longer_valid_use_inet_option_instead}});
+diff --git lib/ssh/src/ssh_connection_handler.erl lib/ssh/src/ssh_connection_handler.erl
+index e1f2e05..0f6162d 100644
+--- lib/ssh/src/ssh_connection_handler.erl
++++ lib/ssh/src/ssh_connection_handler.erl
+@@ -580,12 +580,12 @@ handle_event(#ssh_msg_disconnect{description = Desc} = DisconnectMsg, _StateName
+ handle_event(#ssh_msg_ignore{}, StateName, State) ->
+     {next_state, StateName, next_packet(State)};
+ 
+-handle_event(#ssh_msg_debug{always_display = true, message = DbgMsg}, 
+-	     StateName, State) ->
+-    io:format("DEBUG: ~p\n", [DbgMsg]),
+-    {next_state, StateName, next_packet(State)};
+-
+-handle_event(#ssh_msg_debug{}, StateName, State) ->
++handle_event(#ssh_msg_debug{always_display = Display, message = DbgMsg, language=Lang}, 
++	     StateName, #state{opts = Opts} = State) ->
++    F = proplists:get_value(ssh_msg_debug_fun, Opts, 
++			    fun(_ConnRef, _AlwaysDisplay, _Msg, _Language) -> ok end
++			   ),
++    catch F(self(), Display, DbgMsg, Lang),
+     {next_state, StateName, next_packet(State)};
+ 
+ handle_event(#ssh_msg_unimplemented{}, StateName, State) ->
+diff --git lib/ssh/test/ssh_basic_SUITE.erl lib/ssh/test/ssh_basic_SUITE.erl
+index f5f8991..fa7b426 100644
+--- lib/ssh/test/ssh_basic_SUITE.erl
++++ lib/ssh/test/ssh_basic_SUITE.erl
+@@ -52,6 +52,8 @@ all() ->
+      ssh_connect_arg4_timeout,
+      packet_size_zero,
+      ssh_daemon_minimal_remote_max_packet_size_option,
++     ssh_msg_debug_fun_option_client,
++     ssh_msg_debug_fun_option_server,
+      id_string_no_opt_client,
+      id_string_own_string_client,
+      id_string_random_client,
+@@ -494,6 +496,94 @@ server_userpassword_option(Config) when is_list(Config) ->
+     ssh:stop_daemon(Pid).
+ 
+ %%--------------------------------------------------------------------
++ssh_msg_debug_fun_option_client() ->
++    [{doc, "validate client that uses the 'ssh_msg_debug_fun' option"}].
++ssh_msg_debug_fun_option_client(Config) ->
++    PrivDir = ?config(priv_dir, Config),
++    UserDir = filename:join(PrivDir, nopubkey), % to make sure we don't use public-key-auth
++    file:make_dir(UserDir),
++    SysDir = ?config(data_dir, Config),
++
++    {Pid, Host, Port} = ssh_test_lib:daemon([{system_dir, SysDir},
++					     {user_dir, UserDir},
++					     {password, "morot"},
++					     {failfun, fun ssh_test_lib:failfun/2}]),
++    Parent = self(),
++    DbgFun = fun(ConnRef,Displ,Msg,Lang) -> Parent ! {msg_dbg,{ConnRef,Displ,Msg,Lang}} end,
++		
++    ConnectionRef =
++	ssh_test_lib:connect(Host, Port, [{silently_accept_hosts, true},
++					  {user, "foo"},
++					  {password, "morot"},
++					  {user_dir, UserDir},
++					  {user_interaction, false},
++					  {ssh_msg_debug_fun,DbgFun}]),
++    %% Beware, implementation knowledge:
++    gen_fsm:send_all_state_event(ConnectionRef,{ssh_msg_debug,false,<<"Hello">>,<<>>}),
++    receive
++	{msg_dbg,X={ConnectionRef,false,<<"Hello">>,<<>>}} ->
++	    ct:log("Got expected dbg msg ~p",[X]),
++	    ssh:stop_daemon(Pid);
++	{msg_dbg,X={_,false,<<"Hello">>,<<>>}} ->
++	    ct:log("Got dbg msg but bad ConnectionRef (~p expected) ~p",[ConnectionRef,X]),
++	    ssh:stop_daemon(Pid),
++	    {fail, "Bad ConnectionRef received"};
++	{msg_dbg,X} ->
++	    ct:log("Got bad dbg msg ~p",[X]),
++	    ssh:stop_daemon(Pid),
++	    {fail,"Bad msg received"}
++    after 1000 ->
++	    ssh:stop_daemon(Pid),
++	    {fail,timeout}
++    end.
++
++%%--------------------------------------------------------------------
++ssh_msg_debug_fun_option_server() ->
++    [{doc, "validate client that uses the 'ssh_msg_debug_fun' option"}].
++ssh_msg_debug_fun_option_server(Config) ->
++    PrivDir = ?config(priv_dir, Config),
++    UserDir = filename:join(PrivDir, nopubkey), % to make sure we don't use public-key-auth
++    file:make_dir(UserDir),
++    SysDir = ?config(data_dir, Config),
++
++    Parent = self(),
++    DbgFun = fun(ConnRef,Displ,Msg,Lang) -> Parent ! {msg_dbg,{ConnRef,Displ,Msg,Lang}} end,
++    ConnFun = fun(_,_,_) -> Parent ! {connection_pid,self()} end,
++
++    {Pid, Host, Port} = ssh_test_lib:daemon([{system_dir, SysDir},
++					     {user_dir, UserDir},
++					     {password, "morot"},
++					     {failfun, fun ssh_test_lib:failfun/2},
++					     {connectfun, ConnFun},
++					     {ssh_msg_debug_fun, DbgFun}]),
++    _ConnectionRef =
++	ssh_test_lib:connect(Host, Port, [{silently_accept_hosts, true},
++					  {user, "foo"},
++					  {password, "morot"},
++					  {user_dir, UserDir},
++					  {user_interaction, false}]),
++    receive
++	{connection_pid,Server} ->
++	    %% Beware, implementation knowledge:
++	    gen_fsm:send_all_state_event(Server,{ssh_msg_debug,false,<<"Hello">>,<<>>}),
++	    receive
++		{msg_dbg,X={_,false,<<"Hello">>,<<>>}} ->
++		    ct:log("Got expected dbg msg ~p",[X]),
++		    ssh:stop_daemon(Pid);
++		{msg_dbg,X} ->
++		    ct:log("Got bad dbg msg ~p",[X]),
++		    ssh:stop_daemon(Pid),
++		    {fail,"Bad msg received"}
++	    after 3000 ->
++		    ssh:stop_daemon(Pid),
++		    {fail,timeout2}
++	    end
++    after 3000 ->
++	    ssh:stop_daemon(Pid),
++	    {fail,timeout1}
++    end.
++
++%%--------------------------------------------------------------------
+ known_hosts() ->
+     [{doc, "check that known_hosts is updated correctly"}].
+ known_hosts(Config) when is_list(Config) ->
+diff --git lib/ssh/vsn.mk lib/ssh/vsn.mk
+index b2b85a7..40bda0c 100644
+--- lib/ssh/vsn.mk
++++ lib/ssh/vsn.mk
+@@ -1,4 +1,4 @@
+ #-*-makefile-*-   ; force emacs to enter makefile-mode
+ 
+-SSH_VSN = 3.2.2
++SSH_VSN = 3.2.3
+ APP_VSN    = "ssh-$(SSH_VSN)"
+diff --git otp_versions.table otp_versions.table
+index 12790c8..fbed2ce 100644
+--- otp_versions.table
++++ otp_versions.table
+@@ -1,3 +1,4 @@
++OTP-17.5.4 : inets-5.10.8 ssh-3.2.3 # asn1-3.0.4 common_test-1.10.1 compiler-5.0.4 cosEvent-2.1.15 cosEventDomain-1.1.14 cosFileTransfer-1.1.16 cosNotification-1.1.21 cosProperty-1.1.17 cosTime-1.1.14 cosTransactions-1.2.14 crypto-3.5 debugger-4.0.3 dialyzer-2.7.4 diameter-1.9.1 edoc-0.7.16 eldap-1.1.1 erl_docgen-0.3.7 erl_interface-3.7.20 erts-6.4.1 et-1.5 eunit-2.2.9 gs-1.5.16 hipe-3.11.3 ic-4.3.6 jinterface-1.5.12 kernel-3.2 megaco-3.17.3 mnesia-4.12.5 observer-2.0.4 odbc-2.10.22 orber-3.7.1 os_mon-2.3.1 ose-1.0.2 otp_mibs-1.0.10 parsetools-2.0.12 percept-0.8.10 public_key-0.23 reltool-0.6.6 runtime_tools-1.8.16 sasl-2.4.1 snmp-5.1.2 ssl-6.0 stdlib-2.4 syntax_tools-1.6.18 test_server-3.8.1 tools-2.7.2 typer-0.9.8 webtool-0.8.10 wx-1.3.3 xmerl-1.3.7 :
+ OTP-17.5.3 : common_test-1.10.1 diameter-1.9.1 erts-6.4.1 snmp-5.1.2 test_server-3.8.1 # asn1-3.0.4 compiler-5.0.4 cosEvent-2.1.15 cosEventDomain-1.1.14 cosFileTransfer-1.1.16 cosNotification-1.1.21 cosProperty-1.1.17 cosTime-1.1.14 cosTransactions-1.2.14 crypto-3.5 debugger-4.0.3 dialyzer-2.7.4 edoc-0.7.16 eldap-1.1.1 erl_docgen-0.3.7 erl_interface-3.7.20 et-1.5 eunit-2.2.9 gs-1.5.16 hipe-3.11.3 ic-4.3.6 inets-5.10.7 jinterface-1.5.12 kernel-3.2 megaco-3.17.3 mnesia-4.12.5 observer-2.0.4 odbc-2.10.22 orber-3.7.1 os_mon-2.3.1 ose-1.0.2 otp_mibs-1.0.10 parsetools-2.0.12 percept-0.8.10 public_key-0.23 reltool-0.6.6 runtime_tools-1.8.16 sasl-2.4.1 ssh-3.2.2 ssl-6.0 stdlib-2.4 syntax_tools-1.6.18 tools-2.7.2 typer-0.9.8 webtool-0.8.10 wx-1.3.3 xmerl-1.3.7 :
+ OTP-17.5.2 : inets-5.10.7 ssh-3.2.2 # asn1-3.0.4 common_test-1.10 compiler-5.0.4 cosEvent-2.1.15 cosEventDomain-1.1.14 cosFileTransfer-1.1.16 cosNotification-1.1.21 cosProperty-1.1.17 cosTime-1.1.14 cosTransactions-1.2.14 crypto-3.5 debugger-4.0.3 dialyzer-2.7.4 diameter-1.9 edoc-0.7.16 eldap-1.1.1 erl_docgen-0.3.7 erl_interface-3.7.20 erts-6.4 et-1.5 eunit-2.2.9 gs-1.5.16 hipe-3.11.3 ic-4.3.6 jinterface-1.5.12 kernel-3.2 megaco-3.17.3 mnesia-4.12.5 observer-2.0.4 odbc-2.10.22 orber-3.7.1 os_mon-2.3.1 ose-1.0.2 otp_mibs-1.0.10 parsetools-2.0.12 percept-0.8.10 public_key-0.23 reltool-0.6.6 runtime_tools-1.8.16 sasl-2.4.1 snmp-5.1.1 ssl-6.0 stdlib-2.4 syntax_tools-1.6.18 test_server-3.8 tools-2.7.2 typer-0.9.8 webtool-0.8.10 wx-1.3.3 xmerl-1.3.7 :
+ OTP-17.5.1 : ssh-3.2.1 # asn1-3.0.4 common_test-1.10 compiler-5.0.4 cosEvent-2.1.15 cosEventDomain-1.1.14 cosFileTransfer-1.1.16 cosNotification-1.1.21 cosProperty-1.1.17 cosTime-1.1.14 cosTransactions-1.2.14 crypto-3.5 debugger-4.0.3 dialyzer-2.7.4 diameter-1.9 edoc-0.7.16 eldap-1.1.1 erl_docgen-0.3.7 erl_interface-3.7.20 erts-6.4 et-1.5 eunit-2.2.9 gs-1.5.16 hipe-3.11.3 ic-4.3.6 inets-5.10.6 jinterface-1.5.12 kernel-3.2 megaco-3.17.3 mnesia-4.12.5 observer-2.0.4 odbc-2.10.22 orber-3.7.1 os_mon-2.3.1 ose-1.0.2 otp_mibs-1.0.10 parsetools-2.0.12 percept-0.8.10 public_key-0.23 reltool-0.6.6 runtime_tools-1.8.16 sasl-2.4.1 snmp-5.1.1 ssl-6.0 stdlib-2.4 syntax_tools-1.6.18 test_server-3.8 tools-2.7.2 typer-0.9.8 webtool-0.8.10 wx-1.3.3 xmerl-1.3.7 :

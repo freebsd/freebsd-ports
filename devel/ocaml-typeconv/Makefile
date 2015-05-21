@@ -4,8 +4,7 @@
 PORTNAME=	type-conv
 PORTVERSION=	109.60.01
 CATEGORIES=	devel
-MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}.00/individual
+MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/${PORTVERSION:R}.00/individual/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME:S,-,_,}-${PORTVERSION}
 

@@ -4,8 +4,7 @@
 PORTNAME=	pyvmomi
 DISTVERSION=	5.5.0-2014.1.1
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
-MASTER_SITE_SUBDIR=	source/p/${PORTNAME}
+MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python SDK for the VMware vSphere API of ESX, ESXi, and vCenter

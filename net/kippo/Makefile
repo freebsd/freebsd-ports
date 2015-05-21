@@ -4,7 +4,7 @@
 PORTNAME=	kippo
 PORTVERSION=	0.8
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Medium interaction ssh honeypot
@@ -35,8 +35,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
 	@(cd ${WRKSRC}/${d}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${d})
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

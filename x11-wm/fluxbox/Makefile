@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if ${PORT_OPTIONS:MDOCHTML}
 # http://fluxbox.org/docbook/en/tarballs/
-MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:html \
+MASTER_SITES+=		LOCAL/mezz:html \
 			http://people.freebsd.org/~mezz/distfiles/:html
 DISTFILES+=		fb-doc-mfhtml-${DOCSVERSION}.tgz:html
 EXTRACT_ONLY+=		fb-doc-mfhtml-${DOCSVERSION}.tgz
@@ -55,7 +55,7 @@ PLIST_SUB+=		DOCHTML="@comment "
 
 .if ${PORT_OPTIONS:MPDFDOCS}
 # http://fluxbox.org/docbook/en/pdf/
-MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:pdf \
+MASTER_SITES+=		LOCAL/mezz:pdf \
 			http://people.freebsd.org/~mezz/distfiles/:pdf
 DISTFILES+=		fluxbook-${DOCSVERSION}.pdf:pdf
 PLIST_SUB+=		DOCPDF=""

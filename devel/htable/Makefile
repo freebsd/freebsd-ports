@@ -4,8 +4,7 @@
 PORTNAME=	htable
 PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	culot
+MASTER_SITES=	LOCAL/culot
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Lightweight implementation of hash tables in C

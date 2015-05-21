@@ -136,29 +136,3 @@ share/doc/reportmagic/siteindex.html
 share/doc/reportmagic/thanks.html
 share/doc/reportmagic/whatsnew.html
 share/doc/reportmagic/zlib.txt
-@dirrm share/doc/reportmagic/images
-@dirrm share/doc/reportmagic
-@dirrm reportmagic/wadg/rm/Report
-@dirrm reportmagic/wadg/rm
-@dirrm reportmagic/wadg
-@dirrm reportmagic/samples/images
-@dirrm reportmagic/samples
-@dirrm reportmagic/lang/zh
-@dirrm reportmagic/lang/sv
-@dirrm reportmagic/lang/ru
-@dirrm reportmagic/lang/pt-BR
-@dirrm reportmagic/lang/pt
-@dirrm reportmagic/lang/pl
-@dirrm reportmagic/lang/no
-@dirrm reportmagic/lang/ja
-@dirrm reportmagic/lang/it
-@dirrm reportmagic/lang/hu
-@dirrm reportmagic/lang/fr
-@dirrm reportmagic/lang/fi
-@dirrm reportmagic/lang/es
-@dirrm reportmagic/lang/en
-@dirrm reportmagic/lang/de
-@dirrm reportmagic/lang/ca
-@dirrm reportmagic/lang/.root
-@dirrm reportmagic/lang
-@dirrm reportmagic

@@ -5,9 +5,7 @@ PORTNAME=	cvsweb
 PORTVERSION=	3.0.6
 PORTREVISION=	4
 CATEGORIES=	devel www
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~scop/cvsweb/
-MASTER_SITE_SUBDIR=	scop
+MASTER_SITES=	LOCAL/scop http://people.FreeBSD.org/~scop/cvsweb/
 PKGNAMESUFFIX=	3
 
 # For issues that are not specific to this port/package, please consult

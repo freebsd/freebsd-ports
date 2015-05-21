@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpegoptim
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/ \
 		LOCAL/ehaupt

@@ -5,8 +5,7 @@ PORTNAME=	xpyb
 PORTVERSION=	1.3.1
 PORTREVISION=	2
 CATEGORIES=	x11 python
-MASTER_SITES=	http://xcb.freedesktop.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	dist
+MASTER_SITES=	http://xcb.freedesktop.org/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ashish@FreeBSD.org

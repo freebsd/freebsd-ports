@@ -6,8 +6,7 @@ PORTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
-    		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+    		SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for CVSd pserver user administration

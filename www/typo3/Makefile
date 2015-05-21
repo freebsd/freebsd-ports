@@ -11,6 +11,7 @@ COMMENT=	Typo3 content management system
 
 LICENSE=	GPLv2
 
+USES=		cpe
 NO_BUILD=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
 WANT_PHP_WEB=	yes

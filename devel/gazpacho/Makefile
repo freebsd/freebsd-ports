@@ -5,8 +5,7 @@ PORTNAME=	gazpacho
 PORTVERSION=	0.7.2
 PORTREVISION=	4
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gazpacho/0.7
+MASTER_SITES=	GNOME/sources/gazpacho/0.7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for the GTK+ toolkit

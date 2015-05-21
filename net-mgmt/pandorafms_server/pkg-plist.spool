@@ -1,18 +1,8 @@
-@owner pandora
-@group wheel
-%%USE_LOGDIR%%@mode 770
-%%USE_LOGDIR%%@dir %%LOGDIR%%
-%%USE_SPOOL_OUT%%@mode 700
-%%USE_SPOOL_OUT%%@dir %%SPOOLDIR%%/data_out
-@mode 770
-@group www
-%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/collections
-%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/conf
-%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/md5
-%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/netflow
-%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in
-@dir %%SPOOLDIR%%
-@comment unset mode/owner/group
-@mode
-@owner
-@group
+%%USE_LOGDIR%%@dir(pandora,wheel,770) %%LOGDIR%%
+%%USE_SPOOL_OUT%%@dir(pandora,wheel,700) %%SPOOLDIR%%/data_out
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/collections
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/conf
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/md5
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/netflow
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in
+@dir(pandora,www,770) %%SPOOLDIR%%

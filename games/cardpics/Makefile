@@ -4,8 +4,7 @@
 PORTNAME=		cardpics
 PORTVERSION=		0.4
 CATEGORIES=		games devel
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SAVANNAH
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Free cards for your free card games!

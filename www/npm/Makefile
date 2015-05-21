@@ -34,6 +34,13 @@ NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_RUN_DEPENDS=	node>=0.8.0:${PORTSDIR}/www/node
 NODE010_RUN_DEPENDS=	node010>=0.8.0:${PORTSDIR}/www/node010
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+# Workaround for kernel bug 178881
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bug-178881
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
 	@${ECHO_CMD} 'MANPATH ${PREFIX}/lib/node_modules/npm/man' > ${WRKDIR}/npm.conf
@@ -79,4 +86,4 @@ maketar: do-clean
 	@sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	@cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

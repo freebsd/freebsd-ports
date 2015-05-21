@@ -1,0 +1,41 @@
+From 29debf629b50536343eaa9d6c0779f63721f6f59 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Thu, 21 May 2015 14:12:46 +0200
+Subject: [PATCH] x86/pvh: disable posted interrupts
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Enabling posted interrupts requires the virtual interrupt delivery feature,
+which is disabled for PVH guests, so make sure posted interrupts are also
+disabled or else vmlaunch will fail.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reported-and-Tested-by: Lars Eggert <lars@netapp.com>
+Cc: Jun Nakajima <jun.nakajima@intel.com>
+Cc: Eddie Dong <eddie.dong@intel.com>
+Cc: Kevin Tian <kevin.tian@intel.com>
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+ xen/arch/x86/hvm/vmx/vmcs.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/xen/arch/x86/hvm/vmx/vmcs.c b/xen/arch/x86/hvm/vmx/vmcs.c
+index a714549..9827a8e 100644
+--- a/xen/arch/x86/hvm/vmx/vmcs.c
++++ b/xen/arch/x86/hvm/vmx/vmcs.c
+@@ -980,6 +980,10 @@ static int construct_vmcs(struct vcpu *v)
+         v->arch.hvm_vmx.secondary_exec_control &=
+             ~SECONDARY_EXEC_UNRESTRICTED_GUEST;
+ 
++        /* Disable posted interrupts */
++        __vmwrite(PIN_BASED_VM_EXEC_CONTROL,
++            vmx_pin_based_exec_control & ~PIN_BASED_POSTED_INTERRUPT);
++
+         /* Start in 64-bit mode. PVH 32bitfixme. */
+         vmentry_ctl |= VM_ENTRY_IA32E_MODE;       /* GUEST_EFER.LME/LMA ignored */
+ 
+-- 
+1.9.5 (Apple Git-50.3)
+

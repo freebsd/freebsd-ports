@@ -53,13 +53,13 @@ CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .if defined(WITH_STATUSCOLORS)
 PATCHFILES+=	nh343-statuscolors.fixed.patch
 PATCH_SITES+=	http://jdc.koitsu.org/nethack/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|wxs|}
+		LOCAL/wxs
 PATCH_DIST_STRIP=	-p1
 .endif
 .if defined(WITH_HPMON)
 PATCHFILES+=	hpmon.diff
 PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|wxs|}
+		LOCAL/wxs
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DHPMON
 .endif

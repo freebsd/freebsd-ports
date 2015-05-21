@@ -5,8 +5,7 @@ PORTNAME=	msend
 PORTVERSION=	3.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	markp
+MASTER_SITES=	LOCAL/markp
 
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Client and server for the RFC1312 message protocol

@@ -5,11 +5,10 @@ PORTNAME=	wmicons
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	graphics windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/wmicons|} \
-		${MASTER_SITE_WINDOWMAKER} \
-		${MASTER_SITE_PORTS_JP} \
+MASTER_SITES=	LOCAL/kiri/wmicons \
+		WINDOWMAKER/contrib/old/icons \
+		PORTS_JP \
 		http://www.itlb.te.noda.tus.ac.jp/~manome/wmaker/archive/
-MASTER_SITE_SUBDIR=	. contrib/old/icons
 DISTFILES=	${EXTRACT_ONLY} isiconpack4.tgz
 EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \

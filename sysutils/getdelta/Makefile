@@ -5,11 +5,10 @@ PORTNAME=	getdelta
 PORTVERSION=	0.7.8
 PORTREVISION=	5
 CATEGORIES=	sysutils ports-mgmt
-MASTER_SITES=	${MASTER_SITE_GENTOO} \
+MASTER_SITES=	GENTOO \
 		http://132.207.4.160/distfiles/ \
 		http://distfiles.gentoo.org/distfiles/ \
 		http://linux01.gwdg.de/~nlissne/
-MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	astatutov@gmail.com
 COMMENT=	Script for reducing bandwidth load while upgrading ports disfiles

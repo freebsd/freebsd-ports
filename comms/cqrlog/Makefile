@@ -6,8 +6,7 @@ PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.cqrlog.com/files/cqrlog_${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shurd
+		LOCAL/shurd
 DISTNAME=	${PORTNAME}_${PORTVERSION}.src
 
 MAINTAINER=	hamradio@FreeBSD.org

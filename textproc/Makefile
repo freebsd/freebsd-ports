@@ -1183,6 +1183,7 @@
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
     SUBDIR += py-gettext
+    SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-jaxml
@@ -1350,6 +1351,7 @@
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
+    SUBDIR += rubygem-html-pipeline-gitlab
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
@@ -1368,6 +1370,7 @@
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
+    SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-opml

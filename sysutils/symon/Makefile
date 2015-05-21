@@ -6,8 +6,7 @@ PORTVERSION=	2.86
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	uqs
+		LOCAL/uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool

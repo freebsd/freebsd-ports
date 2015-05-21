@@ -4,9 +4,7 @@
 PORTNAME=	ratpoison
 PORTVERSION=	1.4.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://mirror.4bit.ws/
-MASTER_SITE_SUBDIR=	ratpoison
+MASTER_SITES=	SAVANNAH http://mirror.4bit.ws/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Simple window manager with no fat library dependencies

@@ -4,7 +4,7 @@
 PORTNAME=	nhocr
 PORTVERSION=	0.21
 CATEGORIES=	japanese graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	OCR engine for Japanese language

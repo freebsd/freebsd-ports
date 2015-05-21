@@ -5,8 +5,7 @@
 PORTNAME=	mysql-connector-java
 PORTVERSION=	5.1.35
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	Connector-J
+MASTER_SITES=	MYSQL/Connector-J
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL

@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/pypy/Makefile 377034 2015-01-14 18:28:28Z dbn $
 
 PORTNAME=	pypy
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -16,7 +16,8 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libffi.so:${PORTSDIR}/devel/libffi \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
@@ -44,7 +45,7 @@ USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-c6ad44ecf5d8
+WRKSRC=		${WRKDIR}/pypy-pypy-e3d046c43451
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -237,8 +238,8 @@ do-configure:
 
 post-build:
 # UPDATING: check pypy/tool/release/package.py for list of cffi modules
-.for mod in _sqlite3 _curses syslog
-	${SETENV} ${MAKE_ENV} ${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
+.for mod in _sqlite3 _curses syslog gdbm
+	${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKDIR}:${LD_LIBRARY_PATH} ${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
 	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy-${PYPY_VER:C/\.//}.so
 .for _path in ${PYPYDIRS}
@@ -255,7 +256,7 @@ post-build:
 
 do-install:
 .for _path in ${PYPYDIRS}
-	${RM} -f ${STAGEDIR}${PREFIX}/${_path:C/.*://}
+	${RM} -r ${STAGEDIR}${PREFIX}/${_path:C/.*://}
 	(cd ${WRKSRC}/${_path:C/:.*//}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${_path:C/.*://})
 .endfor
 .for name in ${PYPY_NAMES:O}
@@ -263,6 +264,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${STAGEDIR}${PREFIX}/bin/${name}-${PYPY_VER}
 	${ECHO} bin/${name}-${PYPY_VER} >> ${TMPPLIST}
 .endfor
+	${INSTALL_LIB} ${WRKDIR}/libpypy-c.so ${STAGEDIR}${PREFIX}/lib/
 
 test: patch
 .for inst in ${PYPY_INST}
@@ -271,10 +273,11 @@ test: patch
 .endfor
 
 pkg-plist: build
-	${RM} -f ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
+	${RM} ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
 .for path in ${PYPYDIRS}
 	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type f >> ${WRKDIR}/.plist-files-gen
 .endfor
+	${ECHO} lib/libpypy-c.so >> ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
 		-e 's|${PYPY_ARCH}|%%PYPY_ARCH%%|g' \

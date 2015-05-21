@@ -5,10 +5,9 @@ PORTNAME=	netembryo
 PORTVERSION=	0.1.1
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
+MASTER_SITES=		LOCAL/rakuco \
 			http://pkgs.fedoraproject.org/repo/pkgs/netembryo/netembryo-0.1.1.tar.bz2/d5a3c96b37fe3e4fb1c49df1f7a4a16f/ \
 			http://lscube.org/files/downloads/netembryo/
-MASTER_SITE_SUBDIR=	rakuco
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network abstraction library

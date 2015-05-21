@@ -6,9 +6,8 @@ PORTVERSION=	1.21.2
 PORTREVISION=	3
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.com/ftp/ \
-		${MASTER_SITE_LOCAL:S/$/:accel/} \
+		LOCAL/erwin/:accel \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/:accel
-MASTER_SITE_SUBDIR=	erwin/:accel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	1
 DISTFILES=	reportlab-${PORTVERSION}.tar.gz \

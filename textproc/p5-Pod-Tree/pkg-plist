@@ -14,6 +14,8 @@ bin/podtree2html
 %%PERL5_MAN3%%/Pod::Tree::PerlTop.3.gz
 %%PERL5_MAN3%%/Pod::Tree::Pod.3.gz
 %%SITE_PERL%%/Pod/Tree.pm
+%%SITE_PERL%%/Pod/Tree/BitBucket.pm
+%%SITE_PERL%%/Pod/Tree/HTML/PerlTop.pm
 %%SITE_PERL%%/Pod/Tree/HTML.pm
 %%SITE_PERL%%/Pod/Tree/Node.pm
 %%SITE_PERL%%/Pod/Tree/PerlBin.pm
@@ -25,6 +27,8 @@ bin/podtree2html
 %%SITE_PERL%%/Pod/Tree/PerlTop.pm
 %%SITE_PERL%%/Pod/Tree/PerlUtil.pm
 %%SITE_PERL%%/Pod/Tree/Pod.pm
+%%SITE_PERL%%/Pod/Tree/StrStream.pm
+%%SITE_PERL%%/Pod/Tree/Stream.pm
 man/man1/mod2html.1.gz
 man/man1/perl2html.1.gz
 man/man1/pods2html.1.gz

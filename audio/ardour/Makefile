@@ -10,6 +10,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multichannel digital audio workstation
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
 		liblrdf.so:${PORTSDIR}/textproc/liblrdf \
@@ -18,7 +19,7 @@ LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
 		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26
 
-USES=		gettext scons pkgconfig tar:bzip2
+USES=		cpe gettext scons pkgconfig tar:bzip2
 MAKE_ARGS+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	libxslt

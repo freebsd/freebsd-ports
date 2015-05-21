@@ -3,13 +3,13 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0.20120114
+DISTVERSIONPREFIX=	php-
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	php5-
-DISTNAME=	${PORTNAME}-php-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	The ffmpeg shared extension for php
+COMMENT=	FFmpeg shared extension for php
 
 LICENSE=	GPLv2
 

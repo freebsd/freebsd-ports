@@ -423,6 +423,8 @@ include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
 include/wine/windows/inputscope.h
 include/wine/windows/inputscope.idl
+include/wine/windows/inseng.h
+include/wine/windows/inseng.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h

@@ -5,8 +5,7 @@ PORTNAME=	libotf
 PORTVERSION=	0.9.13
 PORTREVISION=	2
 CATEGORIES=	print devel textproc
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}:m17n
-MASTER_SITE_SUBDIR=	m17n
+MASTER_SITES=	SAVANNAH/m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Library for handling OpenType fonts

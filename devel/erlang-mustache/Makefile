@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mustache
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -23,9 +23,15 @@ ALL_TARGET=	compile
 
 .include <bsd.port.options.mk>
 
+post-extract:
+	@${RM} ${WRKSRC}/rebar.lock
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/mustache.app.src
 	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+
+post-build:
+	${LN} -s ${WRKSRC}/_build/default/lib/mustache/ebin ${WRKSRC}
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}

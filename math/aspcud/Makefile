@@ -5,8 +5,7 @@ PORTNAME=	aspcud
 PORTVERSION=	1.9.0
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	math ports-mgmt sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	potassco/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Advanced solver for package dependencies

@@ -120,3 +120,4 @@ share/locale/vi/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
+@comment @dir %%DOCSDIR%%/reference/html

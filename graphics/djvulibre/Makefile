@@ -10,7 +10,8 @@ MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION:R}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
@@ -21,7 +22,8 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-USES=		iconv libtool pathfix
+USES=		cpe iconv libtool pathfix
+CPE_VENDOR=	djvulibre_project
 USE_LDCONFIG=	yes
 CONFLICTS=	djvulibre-nox11-3*
 WRKSRC=		${WRKDIR}/${DISTNAME:R}

@@ -5,9 +5,8 @@ PORTNAME=	dahdi-kmod
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
 PORTREVISION=	7
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}\
+MASTER_SITES=	LOCAL/fjoe \
 		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware
-MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	dahdi-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}\
 		oslec-linux-${OSLEC_VERSION}${EXTRACT_SUFX}\

@@ -5,8 +5,7 @@ PORTNAME=	dmtx-utils
 PORTVERSION=	0.7.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=libdmtx/libdmtx/${PORTVERSION}
+MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes

@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -13,6 +13,9 @@ COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
 NEED_ROOT=	yes
+
+USERS=		smmsp
+GROUPS=		smmsp
 
 USES=		cpe
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -211,14 +214,8 @@ pre-install:
 .if ${PORT_OPTIONS:MMILTER}
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
-	if ! pw groupshow smmsp; then pw groupadd smmsp -g 25; fi
-	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 25 \
-		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 	@cd ${WRKSRC} && ${FIND} cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
-	@cd ${WRKSRC} && ${FIND} -d cf -type d | \
-	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
-	@${ECHO_CMD} "@dirrm share/sendmail" >>${PLIST}
 .if ${PORT_OPTIONS:MDOCS}
 .for i in ${DOCS}
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
@@ -227,7 +224,6 @@ pre-install:
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
 	@${ECHO_CMD} "share/doc/sendmail/CYRUS_LOOKUP" >>${PLIST}
 .endif
-	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
 .endif
 
 # We want mail.local and rmail for our system.
@@ -279,11 +275,17 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/libmilter
 	${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR}/libmilter -xf -
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
 .endif
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
 	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${STAGEDIR}${DOCSDIR}/CYRUS_LOOKUP
 .endif
 .endif
+	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/*
 
 mailer.base:
 	@${SED} \

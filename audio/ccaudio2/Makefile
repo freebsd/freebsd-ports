@@ -4,8 +4,7 @@
 PORTNAME=	ccaudio2
 PORTVERSION=	2.1.3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=ccaudio
+MASTER_SITES=	GNU/ccaudio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files

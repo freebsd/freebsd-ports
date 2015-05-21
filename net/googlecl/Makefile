@@ -4,7 +4,7 @@
 PORTNAME=	googlecl
 PORTVERSION=	0.9.14
 CATEGORIES=	net www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Command line tools for the Google Data APIs

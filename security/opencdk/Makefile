@@ -7,7 +7,6 @@ PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/
-MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit

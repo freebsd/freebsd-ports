@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-0
 PORTREVISION?=	0
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
-		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|}
+		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	freebsd-fpc@FreeBSD.org

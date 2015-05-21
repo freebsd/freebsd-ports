@@ -5,8 +5,8 @@ PORTNAME=	wxmupen64plus
 PORTVERSION=	0.3
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,} \
+MASTER_SITES=	GOOGLE_CODE \
+		LOCAL/acm/${PORTNAME} \
 		http://cdn.bitbucket.org/auria/wxmupen64plus/downloads/
 DIST_SUBDIR=	${PORTNAME:S/wx//}
 

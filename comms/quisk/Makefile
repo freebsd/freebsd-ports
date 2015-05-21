@@ -5,8 +5,7 @@ PORTNAME=	quisk
 PORTVERSION=	3.6.22
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=shurd
+		LOCAL/shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Software Defined Radio (SDR)

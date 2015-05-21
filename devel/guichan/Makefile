@@ -5,7 +5,7 @@ PORTNAME=	guichan
 PORTVERSION=	0.8.2
 PORTREVISION=	10
 CATEGORIES=	devel games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Small, efficient C++ GUI library designed for games

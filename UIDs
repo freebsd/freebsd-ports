@@ -319,5 +319,6 @@ emby:*:989:989::0:0:Emby:/nonexistent:/usr/sbin/nologin
 oozie:*:990:990::0:0:Apache Oozie user:/nonexistent:/usr/sbin/nologin
 sguil:*:991:991::0:0:Sguil:/nonexistent:/usr/sbin/nologin
 hive:*:992:992::0:0:Apache Hive user:/nonexistent:/usr/sbin/nologin
+kannel:*:993:993::0:0:Kannel User:/nonexistent:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

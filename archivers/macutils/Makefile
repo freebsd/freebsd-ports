@@ -4,8 +4,7 @@
 PORTNAME=	macutils
 PORTVERSION=	2.0b3
 CATEGORIES=	archivers emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/compress
+MASTER_SITES=	SUNSITE/utils/compress
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org

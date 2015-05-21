@@ -5,8 +5,6 @@ PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
 PORTREVISION=	3
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/brianb/mdbtools/archive/
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
@@ -19,6 +17,8 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 USES=		autoreconf bison iconv libtool pathfix pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	brianb
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20

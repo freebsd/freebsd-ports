@@ -3,6 +3,7 @@
 
 PORTNAME=	numexpr
 PORTVERSION=	2.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,8 +19,6 @@ USE_PYTHON=	autoplist distutils
 USES=		python
 
 GH_ACCOUNT=	pydata
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>

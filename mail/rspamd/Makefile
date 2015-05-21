@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.4
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -12,7 +12,9 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
-		libevent.so:${PORTSDIR}/devel/libevent2
+		libevent.so:${PORTSDIR}/devel/libevent2 \
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
+		libhiredis.so:${PORTSDIR}/databases/hiredis
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -23,17 +25,17 @@ USE_RC_SUBR=	rspamd
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
-				-DLOGDIR=/var/log/rspamd \
-				-DDBDIR=/var/db/rspamd \
-				-DRUNDIR=/var/run/rspamd \
-				-DMANDIR=${MANPREFIX}/man \
-				-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-				-DBUILD_PORT=yes \
-				-DFORCE_GMIME24=yes \
-				-DLIBDIR=${PREFIX}/lib \
-				-DNO_SHARED=ON
+		-DLOGDIR=/var/log/rspamd \
+		-DDBDIR=/var/db/rspamd \
+		-DRUNDIR=/var/run/rspamd \
+		-DMANDIR=${MANPREFIX}/man \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+		-DBUILD_PORT=yes \
+		-DFORCE_GMIME24=yes \
+		-DLIBDIR=${PREFIX}/lib/rspamd \
+		-DNO_SHARED=ON
 
-USES=		cmake:outsource gettext iconv pkgconfig lua:51+ tar:xz perl5
+USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
@@ -69,7 +71,7 @@ USE_SQLITE=	yes
  PLIST_SUB+=		REDIRECTOR="@comment "
 .endif
 
-post-install:
+post-stage:
 	${INSTALL} -d \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \

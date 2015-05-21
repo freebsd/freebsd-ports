@@ -1,20 +1,28 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	cpp-netlib
+PORTNAME=		cpp-netlib
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.11.1
+DISTVERSION=		0.11.1
 DISTVERSIONSUFFIX=	-final
-CATEGORIES=	devel
+PORTREVISION=		1
+CATEGORIES=		devel
 
-MAINTAINER=	zi@FreeBSD.org
-COMMENT=	Cross-platform, standards compliant networking library
+MAINTAINER=		zi@FreeBSD.org
+COMMENT=		Cross-platform, standards compliant networking library
 
-LICENSE=	BSL
+LICENSE=		BSL
 
-BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=		boost-libs>0:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake:outsource
-USE_GITHUB=	yes
+USES=			cmake:outsource
+CMAKE_ARGS+=		-DCPP-NETLIB_BUILD_EXAMPLES=OFF
+USE_GITHUB=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+IGNORE=			requires FreeBSD 9.x or higher
+.endif
+
+.include <bsd.port.post.mk>

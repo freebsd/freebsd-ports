@@ -44,7 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

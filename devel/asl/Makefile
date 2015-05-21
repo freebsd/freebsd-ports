@@ -4,9 +4,8 @@
 PORTNAME=	asl
 PORTVERSION=	1.41r8
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/devel/lang/assemblers \
 		ftp://john.ccac.rwth-aachen.de/pub/as/source/c_version/
-MASTER_SITE_SUBDIR=	devel/lang/assemblers
 
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Assembler for a variety of microcontrollers/-processors

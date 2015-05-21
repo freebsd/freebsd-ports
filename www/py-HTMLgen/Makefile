@@ -4,10 +4,9 @@
 PORTNAME=	HTMLgen
 PORTVERSION=	2.2.2
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/dryice \
 		http://dryice.name/computer/FreeBSD/distfiles/ \
 		http://starship.python.net/crew/friedrich/
-MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	HTMLgen
 

@@ -7,8 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
-		${MASTER_SITE_LOCAL:S/$/:pic_small/}
-MASTER_SITE_SUBDIR=	tg/:pic_small
+		LOCAL/tg:pic_small
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wdm \
 		beastie.xpm:pic_small \
 		daemon1-HQ-1280x960.jpg:pic_large

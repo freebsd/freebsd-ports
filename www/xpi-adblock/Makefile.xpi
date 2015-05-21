@@ -13,9 +13,10 @@
 #				- These should all be set manually for port to be functional. See
 #				  ${PORTSDIR}/Mk/bsd.port.mk for details.
 # MASTER_SITES	- This should be set if port is unavailable at the default site.
-#				  Default (defined below): ${MASTER_SITE_MOZILLA_ADDONS}
-# MASTER_SITE_SUBDIR
-#				- Default: extensions/${PORTNAME}
+#				  Default (defined below):
+#				  MOZILLA_ADDONS/addons/${XPI_NUM}
+#				  or
+#				  MOZILLA_ADDONS/extensions/${XPI_DISTNAME}
 # LATEST_LINK	- Default: ${PKGBASE:S/_//g}
 # XPI_LIBDIR	- Name of the directory to install extensions in.
 #				  Default: ${PREFIX}/lib/xpi
@@ -61,11 +62,11 @@
 MASTER_SITE_MOZILLA_ADDONS=	http://addons.cdn.mozilla.net/user-media/%SUBDIR%/
 
 .ifndef MASTER_SITES
-MASTER_SITES?=	MOZILLA_ADDONS
 .ifdef XPI_NUM
-MASTER_SITE_SUBDIR?=	addons/${XPI_NUM}
+MASTER_SITES?=	MOZILLA_ADDONS/addons/${XPI_NUM}
+.else
+MASTER_SITES?=	MOZILLA_ADDONS/extensions/${XPI_DISTNAME}
 .endif
-MASTER_SITE_SUBDIR?=	extensions/${XPI_DISTNAME}
 .endif
 PKGNAMEPREFIX?=	xpi-
 EXTRACT_SUFX?=	.xpi

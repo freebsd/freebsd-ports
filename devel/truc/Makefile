@@ -14,6 +14,8 @@ COMMENT=	Web-based tool for requirement and use case tracking
 NO_BUILD=	yes
 USE_PHP=	mysql gd
 
+USES=		cpe
+CPE_VENDOR=	jan_schutze
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_LIST=	"PKGNAME=${PKGNAME}"
 SUB_FILES=	pkg-message

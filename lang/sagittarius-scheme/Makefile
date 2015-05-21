@@ -4,9 +4,8 @@
 PORTNAME=	sagittarius
 PORTVERSION=	0.6.3
 CATEGORIES=	lang
-MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ashish
+MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
+		LOCAL/ashish
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	ashish@FreeBSD.org

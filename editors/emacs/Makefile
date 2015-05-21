@@ -5,8 +5,7 @@ PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 PKGNAMESUFFIX?= 24
 
 PATCH_SITE_SUBDIR+=	ashish
@@ -86,7 +85,7 @@ OPTIONS_SUB=		SOURCES
 CANNA_CONFIGURE_ON=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
-CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ ${MASTER_SITE_LOCAL}
+CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ LOCAL
 CANNA_PATCHFILES=	emacs24.4canna-20141030.diff.gz
 CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 

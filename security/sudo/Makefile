@@ -4,7 +4,7 @@
 PORTNAME=	sudo
 DISTVERSION=	1.8.13
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SUDO}
+MASTER_SITES=	SUDO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Allow others to run commands as root

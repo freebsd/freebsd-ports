@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: bearerbox
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# kannel_bearerbox_enable (bool):	Set to NO by default.
+#				Set it to YES to enable kannel_bearerbox.
+# kannel_bearerbox_config (path):	Set to %%PREFIX%%/etc/kannel.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=kannel_bearerbox
+rcvar=${name}_enable
+kannel_piddir="/var/run/kannel"
+
+load_rc_config $name
+
+: ${kannel_bearerbox_enable:="NO"}
+: ${kannel_bearerbox_config="%%PREFIX%%/etc/kannel.conf"}
+: ${kannel_bearerbox_user:="kannel"}
+: ${kannel_bearerbox_group:="kannel"}
+
+command="%%PREFIX%%/sbin/run_kannel_box"
+start_precmd="${name}_prestart"
+extra_commands="reload"
+sig_reload=SIGUSR1
+
+pidfile="${kannel_piddir}/${name}.pid"
+
+command_args="--pidfile ${pidfile} %%PREFIX%%/sbin/bearerbox ${kannel_bearerbox_flags} ${kannel_bearerbox_config}"
+
+kannel_bearerbox_prestart()
+{
+	if [ ! -d "${kannel_piddir}" ]; then
+		install -d -o $kannel_bearerbox_user -g $kannel_bearerbox_group $kannel_piddir
+	fi
+	kannel_bearerbox_checkconfig
+}
+
+kannel_bearerbox_checkconfig() {
+	# Config file is required
+	if [ ! -r ${kannel_bearerbox_config} ]; then
+		warn "${kannel_bearerbox_config} is not readable."
+		exit 1
+	fi
+}
+
+run_rc_command "$1"

@@ -4,7 +4,7 @@
 
 PORTNAME=	tagtool
 PORTVERSION=	0.12.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -24,9 +24,5 @@ INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -logg -lm
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | \
-		${XARGS} ${REINPLACE_CMD} -e 's|-Wno-pointer-sign||g'
 
 .include <bsd.port.mk>

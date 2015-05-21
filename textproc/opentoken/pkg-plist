@@ -14,6 +14,12 @@ include/opentoken/opentoken-production-list-print.adb
 include/opentoken/opentoken-production-list-print.ads
 include/opentoken/opentoken-production-list.adb
 include/opentoken/opentoken-production-list.ads
+include/opentoken/opentoken-production-parser-lalr-generator.adb
+include/opentoken/opentoken-production-parser-lalr-generator.ads
+include/opentoken/opentoken-production-parser-lalr-parser.adb
+include/opentoken/opentoken-production-parser-lalr-parser.ads
+include/opentoken/opentoken-production-parser-lalr-parser_lists.adb
+include/opentoken/opentoken-production-parser-lalr-parser_lists.ads
 include/opentoken/opentoken-production-parser-lalr.adb
 include/opentoken/opentoken-production-parser-lalr.ads
 include/opentoken/opentoken-production-parser-lrk_item.adb
@@ -30,6 +36,8 @@ include/opentoken/opentoken-recognizer-based_integer_ada_style.adb
 include/opentoken/opentoken-recognizer-based_integer_ada_style.ads
 include/opentoken/opentoken-recognizer-based_integer_java_style.adb
 include/opentoken/opentoken-recognizer-based_integer_java_style.ads
+include/opentoken/opentoken-recognizer-based_integer_real_ada.adb
+include/opentoken/opentoken-recognizer-based_integer_real_ada.ads
 include/opentoken/opentoken-recognizer-based_real_ada_style.adb
 include/opentoken/opentoken-recognizer-based_real_ada_style.ads
 include/opentoken/opentoken-recognizer-bracketed_comment.adb
@@ -67,6 +75,8 @@ include/opentoken/opentoken-recognizer-separator.ads
 include/opentoken/opentoken-recognizer-string.adb
 include/opentoken/opentoken-recognizer-string.ads
 include/opentoken/opentoken-recognizer.ads
+include/opentoken/opentoken-text_feeder-counted_gnat_os_lib.adb
+include/opentoken/opentoken-text_feeder-counted_gnat_os_lib.ads
 include/opentoken/opentoken-text_feeder-string.adb
 include/opentoken/opentoken-text_feeder-string.ads
 include/opentoken/opentoken-text_feeder-text_io.adb
@@ -78,8 +88,6 @@ include/opentoken/opentoken-token-enumerated-identifier.adb
 include/opentoken/opentoken-token-enumerated-identifier.ads
 include/opentoken/opentoken-token-enumerated-integer.adb
 include/opentoken/opentoken-token-enumerated-integer.ads
-include/opentoken/opentoken-token-enumerated-list-print.adb
-include/opentoken/opentoken-token-enumerated-list-print.ads
 include/opentoken/opentoken-token-enumerated-list.adb
 include/opentoken/opentoken-token-enumerated-list.ads
 include/opentoken/opentoken-token-enumerated-nonterminal.adb
@@ -105,6 +113,7 @@ include/opentoken/opentoken-token.adb
 include/opentoken/opentoken-token.ads
 include/opentoken/opentoken.adb
 include/opentoken/opentoken.ads
+include/opentoken/run_ada_lexer.adb
 lib/gnat/opentoken.gpr
 lib/opentoken/ada_lexer.ali
 lib/opentoken/html_lexer-basic.ali
@@ -118,6 +127,9 @@ lib/opentoken/libopentoken.so.%%OTLIBVER%%
 lib/opentoken/m3_lexer.ali
 lib/opentoken/opentoken-production-list-print.ali
 lib/opentoken/opentoken-production-list.ali
+lib/opentoken/opentoken-production-parser-lalr-generator.ali
+lib/opentoken/opentoken-production-parser-lalr-parser.ali
+lib/opentoken/opentoken-production-parser-lalr-parser_lists.ali
 lib/opentoken/opentoken-production-parser-lalr.ali
 lib/opentoken/opentoken-production-parser-lrk_item.ali
 lib/opentoken/opentoken-production-parser.ali
@@ -126,6 +138,7 @@ lib/opentoken/opentoken-production.ali
 lib/opentoken/opentoken-recognizer-based_integer.ali
 lib/opentoken/opentoken-recognizer-based_integer_ada_style.ali
 lib/opentoken/opentoken-recognizer-based_integer_java_style.ali
+lib/opentoken/opentoken-recognizer-based_integer_real_ada.ali
 lib/opentoken/opentoken-recognizer-based_real_ada_style.ali
 lib/opentoken/opentoken-recognizer-bracketed_comment.ali
 lib/opentoken/opentoken-recognizer-character_set.ali
@@ -145,13 +158,13 @@ lib/opentoken/opentoken-recognizer-real.ali
 lib/opentoken/opentoken-recognizer-separator.ali
 lib/opentoken/opentoken-recognizer-string.ali
 lib/opentoken/opentoken-recognizer.ali
+lib/opentoken/opentoken-text_feeder-counted_gnat_os_lib.ali
 lib/opentoken/opentoken-text_feeder-string.ali
 lib/opentoken/opentoken-text_feeder-text_io.ali
 lib/opentoken/opentoken-text_feeder.ali
 lib/opentoken/opentoken-token-enumerated-analyzer.ali
 lib/opentoken/opentoken-token-enumerated-identifier.ali
 lib/opentoken/opentoken-token-enumerated-integer.ali
-lib/opentoken/opentoken-token-enumerated-list-print.ali
 lib/opentoken/opentoken-token-enumerated-list.ali
 lib/opentoken/opentoken-token-enumerated-nonterminal.ali
 lib/opentoken/opentoken-token-enumerated-real.ali
@@ -166,3 +179,4 @@ lib/opentoken/opentoken-token-sequence.ali
 lib/opentoken/opentoken-token-sequence_mixin.ali
 lib/opentoken/opentoken-token.ali
 lib/opentoken/opentoken.ali
+lib/opentoken/run_ada_lexer.ali

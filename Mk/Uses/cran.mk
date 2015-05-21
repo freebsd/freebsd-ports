@@ -74,8 +74,6 @@ do-install:
 post-install-script:
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 .endif
 .endif
 

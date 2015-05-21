@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.10
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ COMMENT=	Simple Ruby DSL for making HTTP requests
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-http-cookie>=1.0:${PORTSDIR}/www/rubygem-http-cookie \
 		rubygem-http-form_data>=1.0.1:${PORTSDIR}/www/rubygem-http-form_data \
 		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb
 

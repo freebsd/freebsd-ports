@@ -6,8 +6,7 @@ PORTNAME=	abiword
 PORTVERSION=	2.8.6
 PORTREVISION=	10
 CATEGORIES=	editors
-MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
-MASTER_SITE_SUBDIR=	abiword
+MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
 
 MAINTAINER=	gnome@FreeBSD.org

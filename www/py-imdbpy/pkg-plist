@@ -40,5 +40,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico16x16.ico
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico32x32.ico
 %%PORTDOCS%%%%DOCSDIR%%/imdbpywin.bmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/goodies
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

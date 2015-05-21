@@ -6,8 +6,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkim
+		LOCAL/jkim
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Application for executing video card BIOS code

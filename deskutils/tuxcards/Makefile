@@ -5,8 +5,7 @@ PORTNAME=	tuxcards
 PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.tuxcards.de/src/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.tuxcards.de/src/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree

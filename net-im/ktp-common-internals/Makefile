@@ -3,8 +3,7 @@
 PORTNAME=	ktp-common-internals
 PORTVERSION=	${KTP_VERSION}
 CATEGORIES=	net-im kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Telepathy internal library

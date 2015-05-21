@@ -129,8 +129,3 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/version.py
 %%PYTHON_SITELIBDIR%%/stem/version.pyc
 %%PYTHON_SITELIBDIR%%/stem/version.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/stem/descriptor
-@dirrmtry %%PYTHON_SITELIBDIR%%/stem/interpreter
-@dirrmtry %%PYTHON_SITELIBDIR%%/stem/response
-@dirrmtry %%PYTHON_SITELIBDIR%%/stem/util
-@dirrmtry %%PYTHON_SITELIBDIR%%/stem

@@ -8,7 +8,6 @@ CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
 		http://treeline.bellz.org/plugins/:plugins \
 		http://depot.fsck.ch/mirror/distfiles/:treeline,plugins
-MASTER_SITE_SUBDIR=treeline/:treeline
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

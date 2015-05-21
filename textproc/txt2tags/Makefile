@@ -4,13 +4,12 @@
 PORTNAME=	txt2tags
 PORTVERSION=	2.6
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
-USES=		python:2
+USES=		python:2 tar:tgz
 NO_BUILD=	yes
 
 PORTDOCS=	ChangeLog README userguide.pdf

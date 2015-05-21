@@ -13,7 +13,7 @@ COMMENT=	Online genealogy viewer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		zip:infozip
+USES=		cpe zip:infozip
 USE_PHP=	calendar dom filter gd pcre pdo_mysql session simplexml xml
 NO_BUILD=	yes
 

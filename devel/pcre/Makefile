@@ -6,10 +6,9 @@ PORTVERSION=	8.35
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
-		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
-		ftp://ftp.tin.org/pub/libs/%SUBDIR%/
-MASTER_SITE_SUBDIR=${PORTNAME}
+		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
+		ftp://ftp.fu-berlin.de/unix/misc/${PORTNAME}/ \
+		ftp://ftp.tin.org/pub/libs/${PORTNAME}/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library

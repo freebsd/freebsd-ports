@@ -5,7 +5,6 @@ PORTNAME=	wmnd
 PORTVERSION=	0.4.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
-MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)

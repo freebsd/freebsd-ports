@@ -9,8 +9,7 @@ PORTNAME=	stylish
 PORTVERSION=	20030129
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Stylish
 
 MAINTAINER=	ports@FreeBSD.org

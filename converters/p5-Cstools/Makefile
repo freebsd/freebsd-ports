@@ -6,8 +6,7 @@ PORTVERSION=	3.42
 PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://www.adelton.com/perl/Cstools/ \
-		CPAN
-MASTER_SITE_SUBDIR=	Cz
+		CPAN/Cz
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

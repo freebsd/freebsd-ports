@@ -34,22 +34,6 @@ RUBYGEM_AUTOPLIST=	yes
 USE_APACHE=	22+
 .endif
 
-.if ${PORT_OPTIONS:MNGINX}
-NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null; ${ECHO_CMD}
-NGXPASSENGER!=	nginx -V 2>&1 | sed 's/.*passenger-\(.*\)\/ext.*/\1/g' | tail -1
-.if empty(NGINXVERSION)
-BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
-.else
-BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
-.endif
-.if empty(NGXPASSENGER)
-IGNORE=	rebuild nginx with latest passenger module
-.endif
-.if (${NGXPASSENGER} != ${PORTVERSION})
-IGNORE=	rebuild nginx with third-party ${PORTVERSION} module, current verion is ${NGXPASSENGER}
-.endif
-.endif
-
 LIB_DEPENDS+=	libeio.so:${PORTSDIR}/devel/libeio \
 		libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \

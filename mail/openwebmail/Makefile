@@ -5,9 +5,8 @@ PORTNAME=	openwebmail
 PORTVERSION=	2.53
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
-		http://openwebmail.org/openwebmail/download/%SUBDIR%/
-MASTER_SITE_SUBDIR?=	release
+MASTER_SITES=	http://openwebmail.acatysmoof.com/download/release/ \
+		http://openwebmail.org/openwebmail/download/release/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Webmail system designed to manage big mail folder files efficiently

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.26
+DISTVERSION=	4.3.28
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -36,6 +36,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		compiler cpe iconv pkgconfig tar:bzip2
 USE_GNOME=	libidl
 USE_LDCONFIG=	${VBOX_DIR}
+USE_OPENSSL=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-java --passive-mesa
@@ -204,6 +205,10 @@ PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:${PORTSDIR}/devel/kBuil
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk \
 		${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk
+.endif
+
+.if !defined(WITH_OPENSSL_BASE)
+CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 .endif
 
 pre-everything::

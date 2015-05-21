@@ -6,7 +6,7 @@ DISTVERSION=	2.1a15
 PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests

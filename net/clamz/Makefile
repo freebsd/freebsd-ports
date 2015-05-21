@@ -5,7 +5,7 @@ PORTNAME=	clamz
 PORTVERSION=	0.5
 PORTREVISION=	4
 CATEGORIES=	net audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	glathe.helko@googlemail.com
 COMMENT=	Command-line program to download MP3 files from Amazon's music store

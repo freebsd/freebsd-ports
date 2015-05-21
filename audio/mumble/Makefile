@@ -11,6 +11,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
@@ -21,7 +22,7 @@ LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USES=		compiler gmake pkgconfig qmake
+USES=		compiler cpe gmake pkgconfig qmake
 USE_LDCONFIG=	yes
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \

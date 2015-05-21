@@ -4,8 +4,7 @@
 PORTNAME=	icmpinfo
 PORTVERSION=	1.11
 CATEGORIES=	net sysutils
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/network/admin
+MASTER_SITES=	SUNSITE/system/network/admin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Looks at the icmp messages received by the host

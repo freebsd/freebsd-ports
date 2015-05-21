@@ -5,7 +5,7 @@ PORTNAME=	ocropus
 PORTVERSION=	0.4
 PORTREVISION=	14
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system

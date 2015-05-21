@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.3
+PORTVERSION=	17.5.4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -26,7 +26,7 @@ SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
+OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DIRTY
 
 GCC_DESC=	Use current GCC
 HIPE_DESC=	Build native HiPE compiler
@@ -36,6 +36,7 @@ SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 GS_DESC=	Enable GS application (deprecated)
 DTRACE_DESC=	Enable DTrace support
+DIRTY_DESC=	Enable Dirty schedulers (experimental)
 
 OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
 OPTIONS_EXCLUDE_DragonFly=	SCTP
@@ -147,9 +148,17 @@ CONFIGURE_ARGS+=--enable-smp-support
 CONFIGURE_ARGS+=--disable-smp-support
 .endif
 
+.if ${PORT_OPTIONS:MDIRTY}
+CONFIGURE_ARGS+=--enable-dirty-schedulers
+.endif
+
 .if ${ARCH} == i386
 MAKE_ARGS+=	ARCH=x86
 .endif
+
+.if ${ARCH} == armv6
+MAKE_ARGS+=	ARCH=arm
+.endif 
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
@@ -190,11 +199,11 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-6.4
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.7
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.8
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-5.10.6
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2.2
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-3.2
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.10/* \
@@ -216,7 +225,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 .endif
-
 .if ! ${PORT_OPTIONS:MGS}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
 .endif

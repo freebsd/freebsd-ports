@@ -5,8 +5,7 @@ PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://dev.naver.com/frs/download.php/441/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	jkim
+		LOCAL/jkim
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	NanumGothicCoding-${PORTVERSION}
 

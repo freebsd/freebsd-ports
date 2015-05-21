@@ -5,8 +5,7 @@ PORTNAME=	mlmmj
 PORTVERSION=	1.2.17.1
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brix
+		LOCAL/brix
 
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful

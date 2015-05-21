@@ -4,7 +4,7 @@
 PORTNAME=	pwauth
 PORTVERSION=	2.3.11
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+MASTER_SITES=	GOOGLE_CODE \
 		http://www.unixpapa.com/software/
 
 MAINTAINER=	eg@fbsd.lt

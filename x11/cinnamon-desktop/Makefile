@@ -4,7 +4,6 @@
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.4.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,6 +18,8 @@ RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 USE_XORG=	x11 xrandr xext
 USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
 		shebangfix tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 SHEBANG_FILES=	files/usr/bin/cinnamon-desktop-migrate-mediakeys
 USE_LDCONFIG=	yes

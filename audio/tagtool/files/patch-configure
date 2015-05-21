@@ -1,6 +1,6 @@
---- configure.orig	2007-02-28 05:34:14.000000000 +0900
-+++ configure	2009-03-09 02:12:05.000000000 +0900
-@@ -9044,8 +9044,10 @@
+--- configure.orig	2015-05-20 17:11:37 UTC
++++ configure
+@@ -9044,8 +9044,10 @@ echo "${ECHO_T}$LINGUAS" >&6; }
  
  glib_save_prefix="$prefix"
  glib_save_exec_prefix="$exec_prefix"
@@ -11,7 +11,7 @@
  if test "x$CATOBJEXT" = "x.mo" ; then
    localedir=`eval echo "${libdir}/locale"`
  else
-@@ -9053,6 +9055,7 @@
+@@ -9053,6 +9055,7 @@ else
  fi
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"

@@ -4,8 +4,7 @@
 PORTNAME=	dtmfdial
 PORTVERSION=	0.2
 CATEGORIES=	audio comms
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/misc
+MASTER_SITES=	SUNSITE/apps/sound/misc
 DISTNAME=	dtmf-dial-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

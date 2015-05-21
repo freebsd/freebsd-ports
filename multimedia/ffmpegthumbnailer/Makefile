@@ -5,8 +5,7 @@ PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.9
 PORTREVISION=	1
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	riggs/${PORTNAME}
+MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
 MAINTAINER=	clutton@zoho.com
 COMMENT=	Lightweight video thumbnailer that can be used by file managers

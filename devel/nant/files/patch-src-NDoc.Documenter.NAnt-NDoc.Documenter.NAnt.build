@@ -1,0 +1,14 @@
+Reference:	https://github.com/nant/nant/issues/91
+Obtained from:	https://github.com/nant/nant/commit/69c8ee96493c5d953212397c8ca06c2392372ca4
+		https://github.com/nant/nant/commit/4ad065d009b043996d4ce2d25ce5031d81c6ce60
+
+--- src/NDoc.Documenter.NAnt/NDoc.Documenter.NAnt.build.orig	2012-06-09 14:05:55 UTC
++++ src/NDoc.Documenter.NAnt/NDoc.Documenter.NAnt.build
+@@ -11,6 +11,7 @@
+         <!-- build main assembly -->
+         <csc target="library" define="${current.build.defines}" warnaserror="${build.warnaserror}" debug="${build.debug}" output="${build.dir}/bin/${project::get-name()}.dll" doc="${build.dir}/bin/${project::get-name()}.xml">
+             <nowarn>
++                <warning number="0612" />
+                 <warning number="0618" />
+                 <warning number="1591" />
+                 <warning number="1572" />

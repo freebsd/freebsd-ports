@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ssl
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	security devel
-MASTER_SITES=	SF/savonet/ocaml-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
 
-USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	savonet
+GH_PROJECT=	ocaml-ssl
+
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 MAKE_ENV=	OCAMLFIND_INSTFLAGS="-ldconf ignore"

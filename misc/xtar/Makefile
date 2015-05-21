@@ -5,7 +5,7 @@ PORTNAME=	xtar
 PORTVERSION=	1.4
 PORTREVISION=	4
 CATEGORIES=	misc
-MASTER_SITES=	MASTER_SITE_XCONTRIB/utilities
+MASTER_SITES=	XCONTRIB/utilities
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file

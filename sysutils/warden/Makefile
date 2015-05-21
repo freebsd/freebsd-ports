@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	warden
-PORTVERSION=	1422974289
-PORTREVISION=	1
+PORTVERSION=	1431457302
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -11,9 +10,10 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Warden jail management system utility
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
+		debootstrap:${PORTSDIR}/sysutils/debootstrap \
 		jailme:${PORTSDIR}/sysutils/jailme
 
 WRKSRC=		${WRKDIR}/warden

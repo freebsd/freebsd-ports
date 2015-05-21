@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfburn
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -26,10 +26,16 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=--disable-gudev
 
 OPTIONS_DEFINE=	GSTREAMER NLS
+OPTIONS_DEFAULT=	GSTREAMER NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-GSTREAMER_USE=	gstreamer=yes
+GSTREAMER_USE=	gstreamer1=yes,faac,flac,lame,vorbis,wavpack
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
+
+post-patch:
+	${REINPLACE_CMD} -e 's|media-cdrom|media-optical|g' \
+		${WRKSRC}/desktop-integration/thunar-sendto-xfburn.desktop.in \
+		${WRKSRC}/xfburn.desktop.in
 
 .include <bsd.port.mk>

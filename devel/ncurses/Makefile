@@ -5,7 +5,6 @@ PORTNAME=	ncurses
 DISTVERSION=	${RELEASE}-20150214
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
-MASTER_SITE_SUBDIR=	${PORTNAME}/current
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bapt@FreeBSD.org

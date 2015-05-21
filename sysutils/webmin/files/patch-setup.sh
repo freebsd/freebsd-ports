@@ -60,8 +60,8 @@
  	echo "Perl 5 interpreter on your system."
  	echo ""
 -	if [ -x /usr/bin/perl ]; then
-+	if [ -x %%PERL5%% ]; then
-+		perldef=%%PERL5%%
++	if [ -x %%PERL%% ]; then
++		perldef=%%PERL%%
 +	elif [ -x /usr/bin/perl ]; then
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then

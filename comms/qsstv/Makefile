@@ -5,8 +5,7 @@ PORTVERSION=	8.2.11
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shurd
+		LOCAL/shurd
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org

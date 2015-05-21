@@ -4,7 +4,7 @@
 PORTNAME=	ltxml
 PORTVERSION=	1.2.9
 CATEGORIES=	textproc
-MASTER_SITES=	GENTOO/distfiles \
+MASTER_SITES=	GENTOO \
 		ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
 MAINTAINER=	ports@FreeBSD.org

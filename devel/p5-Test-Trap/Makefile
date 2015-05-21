@@ -3,10 +3,10 @@
 
 PORTNAME=	Test-Trap
 PORTVERSION=	0.3.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Trap exit codes, exceptions, output, etc

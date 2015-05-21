@@ -14,26 +14,16 @@ GH_ACCOUNT=	mono
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake
-ACLOCAL_ARGS=	-I .
-AUTOMAKE_ARGS+=	--gnu --add-missing
-USES=		gmake mono pkgconfig
+USES=		autoreconf gmake mono pkgconfig
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	GTK2
 OPTIONS_DEFAULT=GTK2
 
+GTK2_USE=	GNOME=gtksharp20
+GTK2_CONFIGURE_ENABLE=	gui
+OPTIONS_SUB=	yes
+
 PLIST_SUB+=	VER=1.0.0
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtksharp20
-CONFIGURE_ARGS+=	--enable-gui
-PLIST_SUB+=	OPT_GTK2=""
-.else
-CONFIGURE_ARGS+=	--disable-gui
-PLIST_SUB+=	OPT_GTK2="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

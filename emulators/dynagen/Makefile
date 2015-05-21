@@ -3,10 +3,9 @@
 
 PORTNAME=	dynagen
 PORTVERSION=	0.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Text-based front end for Dynamips development version
@@ -16,26 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.4.0:${PORTSDIR}/devel/py-configobj \
 		dynamips:${PORTSDIR}/emulators/dynamips-community
 
-PLIST_FILES=	bin/dynagen \
-		"@sample etc/dynagen.ini.sample" \
-		%%PYTHON_SITELIBDIR%%/confConsole.py \
-		%%PYTHON_SITELIBDIR%%/confConsole.pyc \
-		%%PYTHON_SITELIBDIR%%/confConsole.pyo \
-		%%PYTHON_SITELIBDIR%%/console.py \
-		%%PYTHON_SITELIBDIR%%/console.pyc \
-		%%PYTHON_SITELIBDIR%%/console.pyo \
-		%%PYTHON_SITELIBDIR%%/dynamips_lib.py \
-		%%PYTHON_SITELIBDIR%%/dynamips_lib.pyc \
-		%%PYTHON_SITELIBDIR%%/dynamips_lib.pyo \
-		%%PYTHON_SITELIBDIR%%/pemu_lib.py \
-		%%PYTHON_SITELIBDIR%%/pemu_lib.pyc \
-		%%PYTHON_SITELIBDIR%%/pemu_lib.pyo \
-		%%PYTHON_SITELIBDIR%%/pemubin.py \
-		%%PYTHON_SITELIBDIR%%/pemubin.pyc \
-		%%PYTHON_SITELIBDIR%%/pemubin.pyo \
-		%%PYTHON_SITELIBDIR%%/pemuwrapper.py \
-		%%PYTHON_SITELIBDIR%%/pemuwrapper.pyc \
-		%%PYTHON_SITELIBDIR%%/pemuwrapper.pyo
+PLIST_FILES=	bin/dynagen "@sample etc/dynagen.ini.sample"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -54,11 +34,21 @@ python_bol_CMD=|;9s|^python|${PYTHON_CMD}
 python_cnf_OLD_CMD=the an incredible combination
 python_cnf_CMD=|;s|^CONFIGSPECPATH.*|CONFIGSPECPATH = ['${PREFIX}/share/dynagen']
 
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 ALL_TARGET=	# empty
+
+.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
+
+post-patch:
+.if ${PYTHON_MAJOR_VER} >= 3
+	@${ECHO_MSG} "===>   Converting to python${PYTHON_MAJOR_VER}"
+	${PYTHONBASE}/bin/2to3-${PYTHON_VER} --no-diffs --write ${WRKSRC} ${WRKSRC}/dynagen
+	@${ECHO_MSG} "===>   end of converting"
+.endif
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${STAGEDIR}${PREFIX}/bin
@@ -88,4 +78,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample_labs/simple2/simple2.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/simple2
 	${INSTALL_DATA} ${WRKSRC}/sample_labs/all_config_options.txt ${STAGEDIR}${EXAMPLESDIR}/sample_labs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

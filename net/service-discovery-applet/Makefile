@@ -12,6 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME applet that shows available network services using mDNS
 
 BROKEN=		Uses unknown GNOME component pygnomedesktop
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi

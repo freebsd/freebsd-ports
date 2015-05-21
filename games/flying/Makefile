@@ -5,8 +5,7 @@ PORTNAME=	flying
 PORTVERSION=	6.20
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/arcade
+MASTER_SITES=	SUNSITE/games/arcade
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pool/snooker/billiards/carrom/etc game

@@ -48,7 +48,7 @@ BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, SRV and D
 .endif
 
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/dns/djbdns/:jumbo \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%\//roam\/dns\/djbdns\/:jumbo/}
+		LOCAL/roam/dns/djbdns:jumbo
 PATCHFILES+=	jumbo-p13.patch.gz:jumbo
 PATCH_DIST_STRIP=	-p1
 .if ${PORT_OPTIONS:MDUMPCACHE}

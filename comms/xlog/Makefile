@@ -5,7 +5,6 @@ PORTNAME=	xlog
 PORTVERSION=	2.0.13
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
-MASTER_SITE_SUBDIR=	xlog
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Amateur Radio logging application

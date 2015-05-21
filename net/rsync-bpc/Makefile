@@ -4,8 +4,7 @@
 PORTNAME=	rsync-bpc
 PORTVERSION=	3.0.9.3
 CATEGORIES=	net
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	backuppc/backuppc-beta/4.0.0alpha3
+MASTER_SITES=	SF/backuppc/backuppc-beta/4.0.0alpha3
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Modified rsync that used as part of BackupPC

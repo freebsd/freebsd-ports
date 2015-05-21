@@ -20,7 +20,7 @@
 +freebsd:kernel_info
 +freebsd:last
 +#freebsd:listening_ports
-+freebsd:mounts
++#freebsd:mounts
 +freebsd:opera_extensions
 +freebsd:os_version
 +freebsd:passwd_changes

@@ -3,7 +3,7 @@
 PORTNAME=	libmpsse
 PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Open source library for SPI/I2C control via FTDI chips

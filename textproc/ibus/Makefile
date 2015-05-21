@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 OPTIONS_SUB=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-tests
+CONFIGURE_ARGS=	--disable-tests --with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
@@ -82,7 +82,6 @@ DCONF_USE=		GNOME=dconf,gconf2
 DCONF_CONFIGURE_ENABLE=	dconf
 
 DOCS_CONFIGURE_ENABLE=	gtk-doc-html
-DOCS_CONFIGURE_ON=	--with-html-dir=${PREFIX}/share/doc
 
 XIM_CONFIGURE_ENABLE=	xim
 

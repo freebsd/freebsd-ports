@@ -6,8 +6,7 @@ PORTVERSION=	1.32
 PORTREVISION=	1
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser

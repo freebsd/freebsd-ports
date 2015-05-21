@@ -16,7 +16,8 @@ RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
 .if !exists(/usr/lib/libmilter.so)
 LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
-LDFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\"" \

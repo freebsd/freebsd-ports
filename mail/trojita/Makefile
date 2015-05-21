@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 
 USE_LDCONFIG=	yes
 
-USES=		cmake compiler:c++11-lib desktop-file-utils tar:bzip2
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils tar:bzip2
+CPE_PROJECT=	trojita_project
 CMAKE_ARGS+=	-DCMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make \
 		-DWITH_CLEARTEXT_PLUGIN:STRING=OFF -DWITH_DBUS:STRING=ON \
 		-DWITH_DESKTOP:STRING=ON -DWITH_HARMATTAN:STRING=OFF \

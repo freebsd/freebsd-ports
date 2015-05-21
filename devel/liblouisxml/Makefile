@@ -5,7 +5,7 @@ PORTNAME=	liblouisxml
 PORTVERSION=	2.4.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library Provide Complete Braille Transcription Services

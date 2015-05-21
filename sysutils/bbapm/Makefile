@@ -7,8 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/bbtools\/${PORTNAME}\/bbapm-0.0.1-freebsd-patch/}
-PATCH_SITE_SUBDIR=	bbtools
+PATCH_SITES=	SF/bbtools/${PORTNAME}/bbapm-0.0.1-freebsd-patch
 PATCHFILES=	bbapm-0.0.1-freebsd-patch-2.diff
 PATCH_DIST_STRIP=	-p1
 

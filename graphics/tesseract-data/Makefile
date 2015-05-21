@@ -5,7 +5,7 @@ PORTNAME=	tesseract-data
 PORTVERSION=	3.02
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
 		${TESSERACT_LANGS_301:O:u:S|^|tesseract-ocr-3.01.|:S|$|.tar.gz|} \
 		${TESSERACT_LANGS_302:O:u:S|^|tesseract-ocr-3.02.|:S|$|.tar.gz|}

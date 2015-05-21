@@ -2,16 +2,16 @@ bin/lynx
 @sample etc/lynx.cfg.sample
 @sample etc/lynx.lss.sample
 man/man1/lynx.1.gz
-@exec mkdir -p %D/%%PORTDOCS%%/share/lynx_help
+%%PORTDOCS%%@exec mkdir -p %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER.asc
-@exec ln -sf %D/%F %D/%%PORTDOCS%%/share/lynx_help
-@unexec rm -f %D/%%PORTDOCS%%/share/lynx_help/COPYHEADER.asc
+%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
+%%PORTDOCS%%@unexec rm -f %D/share/lynx_help/COPYHEADER.asc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.asc
-@exec ln -sf %D/%F %D/%%PORTDOCS%%/share/lynx_help
-@unexec rm -f %D/%%PORTDOCS%%/share/lynx_help/COPYING.asc
+%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
+%%PORTDOCS%%@unexec rm -f %D/share/lynx_help/COPYING.asc
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.3.gz
@@ -122,12 +122,6 @@ man/man1/lynx.1.gz
 %%PORTDOCS%%share/lynx_help/lynx-dev.html.gz
 %%PORTDOCS%%share/lynx_help/lynx_help_main.html.gz
 %%PORTDOCS%%share/lynx_help/lynx_url_support.html.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/lynx_help/keystrokes
-%%PORTDOCS%%@dirrm share/lynx_help
 %%NLS%%share/locale/da/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lynx.mo

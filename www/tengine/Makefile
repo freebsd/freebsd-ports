@@ -272,8 +272,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/giom-nginx_accept_language_module-${GIT_A
 
 .if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
 NGINX_ACCESSKEY_VERSION=	2.0.3
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:accesskey/}
-MASTER_SITE_SUBDIR+=	osa/:accesskey
+MASTER_SITES+=	LOCAL/osa:accesskey
 DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_VERSION}.tar.gz:accesskey
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}
 .endif
@@ -363,8 +362,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_V
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
 NGINX_FANCYINDEX_VERSION=	0.3.1
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
-MASTER_SITE_SUBDIR+=	osa/:fancyindex
+MASTER_SITES+=	LOCAL/osa:fancyindex
 DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
 .endif
@@ -415,8 +413,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 
 .if ${PORT_OPTIONS:MHTTP_REDIS}
 NGINX_REDIS_VERSION=	0.3.7
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
-MASTER_SITE_SUBDIR+=	osa/:redis
+MASTER_SITES+=	LOCAL/osa:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_VERSION}.tar.gz:redis
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_VERSION}
 .endif
@@ -449,8 +446,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${
 
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR) || !empty(PORT_OPTIONS:MSUPERVISORD)
 NGINX_UPSTREAM_FAIR_VERSION=	20090923
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
-MASTER_SITE_SUBDIR+=	osa/:upstreamfair
+MASTER_SITES+=	LOCAL/osa:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .endif

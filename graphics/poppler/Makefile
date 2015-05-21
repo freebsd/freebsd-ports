@@ -22,7 +22,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gmake libtool pathfix pkgconfig tar:xz
+CPE_VENDOR=	freedesktop
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

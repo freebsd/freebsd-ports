@@ -5,8 +5,7 @@ PORTNAME=	BackupPC-XS
 PORTVERSION=	0.30
 PORTREVISION=	1
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	backuppc/backuppc-beta/4.0.0alpha3
+MASTER_SITES=	SF/backuppc/backuppc-beta/4.0.0alpha3
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	moiseev@mezonplus.ru

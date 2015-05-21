@@ -11,8 +11,8 @@ COMMENT=	MessagePack (de)serializer for Erlang
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

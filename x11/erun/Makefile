@@ -5,8 +5,7 @@ PORTNAME=	E-Run
 PORTVERSION=	1.2
 PORTREVISION=	13
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kbyanc
+MASTER_SITES=	LOCAL/kbyanc
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple epplet for launching arbitrary programs

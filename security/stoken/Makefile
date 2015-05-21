@@ -4,8 +4,7 @@
 PORTNAME=	stoken
 PORTVERSION=	0.6
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=stoken
+MASTER_SITES=	SF/stoken
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Software Token for UNIX compatible with RSA SecurID

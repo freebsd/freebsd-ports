@@ -5,8 +5,7 @@ PORTNAME=	ifstat
 PORTVERSION=	1.1
 PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	http://gael.roualland.free.fr/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://gael.roualland.free.fr/${PORTNAME}/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Network interface statistics monitoring tool

@@ -7,7 +7,6 @@ PORTVERSION=	4.02.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
-MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER=	michipili@gmail.com
@@ -94,7 +93,7 @@ CONFIGURE_ARGS+=-no-graph
 
 OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
-.if defined(NO_PROFILE) || ${OCAML_ARCH} == power || ${OCAML_ARCH} == amd64
+.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64}
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""

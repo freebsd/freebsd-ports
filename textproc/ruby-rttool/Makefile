@@ -5,7 +5,7 @@ PORTNAME=	rttool
 PORTVERSION=	1.0.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubyist.net/~rubikitch/archive/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/ruby-rttool|}
+		LOCAL/tota/ruby-rttool
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 

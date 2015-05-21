@@ -1,0 +1,14 @@
+This is a sister module of Parse::PMFile.  This module parses local
+.pm files (and a META file if any) in a specific (current if not
+specified) directory, and returns a hash reference that represents
+"provides" information (with some extra meta data).  This is almost
+the same as Module::Metadata does (which has been in Perl core since
+Perl 5.13.9).  The main difference is the most of the code of this
+module is directly taken from the PAUSE code as of June 2013.  If you
+need better compatibility to PAUSE, try this.  If you need better
+performance, safety, or portability in general, Module::Metadata may
+be a better and handier option (Parse::PMFile (and thus
+Parse::LocalDistribution) actually evaluates code in the $VERSION line
+(in a Safe compartment), which may be problematic in some cases).
+
+WWW: http://search.cpan.org/dist/Parse-LocalDistribution/

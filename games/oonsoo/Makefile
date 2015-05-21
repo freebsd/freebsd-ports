@@ -5,9 +5,8 @@ PORTNAME=	oonsoo
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/games/solitaires \
 		http://www4.ncsu.edu/~bwmott/www/oonsoo/distributions/
-MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

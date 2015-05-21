@@ -3,9 +3,8 @@
 
 PORTNAME=	librime
 PORTVERSION=	1.1
+DISTVERSIONPREFIX=	rime-
 CATEGORIES=	chinese textproc
-MASTER_SITES=	http://github.com/rime/${PORTNAME}/archive/rime-${PORTVERSION}.tar.gz?dummy=/
-DISTNAME=	${PORTNAME}-rime-${DISTVERSION}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Rime Input Method Engine, the core library
@@ -23,6 +22,8 @@ USE_PERL5=	build patch
 USE_LDCONFIG=	yes
 USE_XORG=	xproto
 LDFLAGS+=	-lintl
+USE_GITHUB=	yes
+GH_ACCOUNT=	rime
 
 PLIST_SUB=	VER=${PORTVERSION}.0
 

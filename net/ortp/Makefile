@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ortp
-PORTVERSION=	0.24.1
+PORTVERSION=	0.24.2
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/ortp/sources
 

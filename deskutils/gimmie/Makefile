@@ -12,6 +12,8 @@ MAINTAINER=	pneumann@gmail.com
 COMMENT=	Gnome desktop organizer
 
 BROKEN=		Uses unknown GNOME components pygnomedesktop and pygnomeextras
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libgnomecups-1.0.a:${PORTSDIR}/print/libgnomecups \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \

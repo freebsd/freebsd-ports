@@ -7570,7 +7570,6 @@ devel/rubygem-inline|devel/rubygem-rubyinline|2015-04-21|Rename to match our rub
 devel/p5-Devel-Profiler|devel/p5-Devel-NYTProf|2015-04-24|Devel::DProf was removed form Perl, use Devel::NYTProf
 audio/filter_audio|audio/libfilteraudio|2015-04-27|audio/filter-audio is renamed into audio/libfilteraudio
 www/p5-Google-Code-Upload||2015-04-30|Has expired: Google Code will be shutting down (http://google-opensource.blogspot.tw/2015/03/farewell-to-google-code.html)
-net/ntp-rc||2015-04-30|Has expired: Upline no longer has RC branch
 games/wmfortune||2015-04-30|Has expired: Broken for more than 6 months
 games/springlobby||2015-04-30|Has expired: Depends on expiring games/spring
 devel/p5-base||2015-04-30|Has expired: this port is outdated and base 2.18+ is already in all supported Perl releases
@@ -7583,3 +7582,5 @@ archivers/lz4|archivers/liblz4|2015-05-08|Superseded by archivers/liblz4
 deskutils/libopensync-plugin-python||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
 deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
 devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
+lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
+databases/my2cego|databases/cegobridge|2015-05-19|Superseded by databases/cegobridge

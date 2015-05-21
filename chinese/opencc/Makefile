@@ -4,7 +4,7 @@
 PORTNAME=	opencc
 PORTVERSION=	0.4.3
 CATEGORIES=	chinese converters
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities

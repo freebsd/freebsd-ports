@@ -4,8 +4,7 @@
 PORTNAME=	libaura
 PORTVERSION=	3.1.20051222
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	philip
+MASTER_SITES=	LOCAL/philip
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library of Assorted Useful Reusable Abstractions

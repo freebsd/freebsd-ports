@@ -83,8 +83,6 @@ do-install:
 post-install:
 	${FIND} -s ${WRKSRC}/samples -not -type d | \
 		${SED} -ne 's,^${WRKSRC}/samples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
-	${FIND} -s -d ${WRKSRC}/samples -type d | \
-		${SED} -ne 's,^${WRKSRC}/samples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	poco
-# New version 1.4.6p4 is available; please use DISTVERSION upon updating
-PORTVERSION=	1.4.3
+DISTVERSION=	1.6.0
 CATEGORIES=	devel net
-MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}p1
+MASTER_SITES=	http://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ libraries with a network/internet focus

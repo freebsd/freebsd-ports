@@ -7,8 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.selasky.org/hans_petter/video4bsd/releases/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kwm
+		LOCAL/kwm
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	The Video4Linux PWC webcam viewer

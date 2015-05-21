@@ -6,11 +6,8 @@ bin/vdr-sxfe
 %%XINE_PLUGINSDIR%%/post/xineplug_post_audiochannel.so
 lib/vdr/libvdr-xineliboutput.so.%%APIVERSION%%
 lib/vdr/libxineliboutput-sxfe.so.1.0.90-cvs
-@unexec if cmp -s %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf.sample %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf; then rm -f %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf; fi
-etc/vdr/plugins/xineliboutput/allowed_hosts.conf.sample
-@exec if [ ! -f %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf ] ; then cp -p %D/%F %B/allowed_hosts.conf; fi
-@exec chown %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr/plugins/xineliboutput
-@dirrmtry etc/vdr/plugins/xineliboutput
+@sample etc/vdr/plugins/xineliboutput/allowed_hosts.conf.sample
+@dir(%%VDR_USER%%,%%VDR_GROUP%%) etc/vdr/plugins/xineliboutput
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/vdr-xineliboutput.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-xineliboutput.mo
 %%NLS%%share/locale/et_EE/LC_MESSAGES/vdr-xineliboutput.mo

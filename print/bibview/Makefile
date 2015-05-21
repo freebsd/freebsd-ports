@@ -5,8 +5,7 @@ PORTNAME=	bibview
 PORTVERSION=	2.2
 PORTREVISION=	2
 CATEGORIES=	print databases
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
+MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils/bibview-2.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for manipulating BibTeX bibliography databases

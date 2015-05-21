@@ -5,8 +5,8 @@ PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
 PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|} \
-		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
+MASTER_SITES=	IDSOFTWARE/et/:patch \
+		IDSOFTWARE/et/linux/:full
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60b.x86
 DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch

@@ -26,10 +26,3 @@
 %%PLUGINDIR_REL%%/skins/larry/thunderbird_32.png
 %%PLUGINDIR_REL%%/tb_label.js
 %%PLUGINDIR_REL%%/thunderbird_labels.php
-@dirrm %%PLUGINDIR_REL%%/localization
-@dirrm %%PLUGINDIR_REL%%/skins/classic/default
-@dirrm %%PLUGINDIR_REL%%/skins/classic
-@dirrm %%PLUGINDIR_REL%%/skins/default
-@dirrm %%PLUGINDIR_REL%%/skins/larry
-@dirrm %%PLUGINDIR_REL%%/skins
-@dirrmtry %%PLUGINDIR_REL%%

@@ -5,8 +5,7 @@ PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
 PORTREVISION=	11
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_MOZDEV}
-MASTER_SITE_SUBDIR=	dictionaries
+MASTER_SITES=	MOZDEV/dictionaries
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	thunderbird
 

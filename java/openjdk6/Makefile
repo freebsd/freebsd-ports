@@ -6,11 +6,10 @@ PORTVERSION=	b34
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
+MASTER_SITES=	APACHE/ant/binaries/:ant \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
 		https://java.net/downloads/openjdk6/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	jkim
+		LOCAL/jkim
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${ANTFILE}:ant \
 		${DISTNAME}${EXTRACT_SUFX}
@@ -186,6 +185,18 @@ COPYFILES=	\
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == clang
+.if ${COMPILER_VERSION} >= 35
+MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
+.endif
+MAKE_ENV+=	USE_CLANG=true
+.endif
+
+# GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+.if ${COMPILER_TYPE} == gcc
+MAKE_ENV+=	USE_PRECOMPILED_HEADER=0
+.endif
+
 .if empty(ICONV_LIB)
 ICONV_CPPFLAGS=	-DLIBICONV_PLUG
 .else
@@ -193,13 +204,6 @@ ICONV_CPPFLAGS=	-I${LOCALBASE}/include
 ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 ZLIB_LDFLAGS?=	-lz
-
-.if ${COMPILER_TYPE} == "clang"
-.if ${COMPILER_VERSION} >= 35
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
-.endif
-MAKE_ENV+=	USE_CLANG=true
-.endif
 
 post-extract:
 	@for d in ${COPYDIRS}; do \

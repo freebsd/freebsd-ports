@@ -4,7 +4,7 @@
 PORTNAME=	libhash
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	GENTOO
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for manipulating hash tables

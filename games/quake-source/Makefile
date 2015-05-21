@@ -26,7 +26,7 @@ QUAKEWORLD_DESC=	Install QuakeWorld game source
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQUAKEWORLD}
-MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
+MASTER_SITES+=	IDSOFTWARE/quakeworld/unix/:qw
 DISTFILES+=	qwsv-2.30-glibc-i386-unknown-linux2.0${EXTRACT_SUFX}:qw
 COMMENT:=	${COMMENT:S/Quake/& and QuakeWorld/}
 PLIST_SUB+=	QUAKEWORLD=""

@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- apg.c.orig
+--- apg.c.orig	2003-08-07 15:40:39 UTC
 +++ apg.c
-@@ -709,7 +709,7 @@
+@@ -709,7 +709,7 @@ print_help (void)
  */
  char * crypt_passstring (const char *p)
  {

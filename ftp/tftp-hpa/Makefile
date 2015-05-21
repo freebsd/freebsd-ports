@@ -3,8 +3,7 @@
 PORTNAME=	tftp-hpa
 PORTVERSION=	5.2
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	software/network/tftp/tftp-hpa
+MASTER_SITES=	KERNEL_ORG/software/network/tftp/tftp-hpa
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Advanced tftp server

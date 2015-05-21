@@ -1234,37 +1234,6 @@ MASTER_SITE_TUCOWS+= \
 	http://iinets.linux.tucows.com/files/%SUBDIR%/
 .endif
 
-# List:		http://www.vim.org/mirrors.php
-# Updated:	2015-01-03
-# Please make sure mirrors end in /unix/
-.if !defined(IGNORE_MASTER_SITE_VIM)
-MASTER_SITE_VIM+= \
-	http://mirrors-usa.go-parts.com/pub/vim/unix/ \
-	http://ftp2.uk.vim.org/pub/vim/unix/ \
-	http://ftp.vim.ossmirror.de/pub/vim/unix/ \
-	http://ftp.stust.edu.tw/vim/unix/ \
-	http://vim.cybermirror.org/unix/ \
-	http://www.netgull.com/vim/unix/ \
-	http://ftp2.jp.vim.org/pub/vim/unix/ \
-	http://mirrors.go-parts.com/pub/vim/unix/ \
-	http://artfiles.org/vim.org/unix/ \
-	http://ftp2.kr.vim.org/pub/vim/unix/ \
-	http://mirror.netinch.com/pub/vim/unix/ \
-	http://ftp.es.vim.org/pub/vim/unix/ \
-	http://ftp.gr.vim.org/pub/vim/unix/ \
-	http://tweedo.com/mirror/ftp.vim.org/unix/ \
-	http://mirrors-br.go-parts.com/pub/vim/unix/ \
-	http://ftp2.tw.vim.org/pub/vim/unix/ \
-	http://mirrors-au.go-parts.com/pub/vim/unix/ \
-	http://mirrors-uk.go-parts.com/pub/vim/unix/ \
-	http://ftp.tw.vim.org/pub/vim/unix/ \
-	http://funnyshare.org/mirrors/vim/unix/ \
-	http://mirrors-ru.go-parts.com/pub/vim/unix/ \
-	http://servingzone.com/mirrors/vim/unix/ \
-	http://ftp.ro.vim.org/mirrors/ftp.vim.org/unix/ \
-	http://vim.mirror.fr/unix/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.info/pub/%SUBDIR%/ \
@@ -1335,9 +1304,9 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GHL:GITHUB_LEGACY \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
+			RG:RUBYGEMS \
 			SF:SOURCEFORGE \
-			SFJP:SOURCEFORGE_JP \
-			RG:RUBYGEMS
+			SFJP:SOURCEFORGE_JP
 MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			APACHE_COMMONS_SOURCE:${PORTNAME:S,commons-,,} \
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
@@ -1345,13 +1314,16 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			FARSIGHT:${PORTNAME} \
+			FESTIVAL:${PORTVERSION} \
 			GCC:releases/${DISTNAME} \
+			GENTOO:distfiles \
+			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
 			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
-			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \
+			GNUPG:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LIBREOFFICE_DEV:${PORTNAME} \
@@ -1359,6 +1331,8 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
+			QT:archive/qt/${PORTVERSION:R} \
+			SAMBA:${PORTNAME} \
 			SAVANNAH:${PORTNAME:tl} \
 			SOURCEFORGE:${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION} \
 			XFCE:xfce/${XFCE_MASTER_SITE_VER}/src
@@ -1385,11 +1359,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
@@ -1426,11 +1402,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 PATCH_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}

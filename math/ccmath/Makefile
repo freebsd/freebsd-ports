@@ -5,8 +5,7 @@ PORTNAME=	ccmath
 PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs
+MASTER_SITES=	SUNSITE/libs
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Mathematics library with many different functions

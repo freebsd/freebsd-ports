@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2015022401
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
 		https://codeload.github.com/golang/groupcache/legacy.tar.gz/${GROUPCACHE_COMMIT}?dummy=/:group3
@@ -21,7 +21,7 @@ GH_ACCOUNT=	syncthing
 GH_PROJECT=	discosrv
 GH_TAGNAME=	4e1240a610bcc2ef8772eb2641492822b4ec4f88
 
-SYNCTHING_VER=	0.11.2
+SYNCTHING_VER=	0.11.4
 GROUPCACHE_COMMIT=	d2a1805
 
 PLIST_FILES=	bin/syncthing-discosrv

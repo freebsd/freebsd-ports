@@ -3,16 +3,14 @@
 
 PORTNAME=	mime-construct
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.argon.org/~roderick/ \
-		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.argon.org/~roderick/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Construct and optionally send MIME messages from command line
 
-BUILD_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
-		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+BUILD_DEPENDS=	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Proc-WaitStat>=0:${PORTSDIR}/devel/p5-Proc-WaitStat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

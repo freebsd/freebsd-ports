@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.3.50.g20150501
+PORTVERSION=	2.3.50.g20150517
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox \
@@ -20,7 +20,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	38afafe
+GH_TAGNAME=	c65473e
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--smbd=${LOCALBASE}/sbin/smbd \
 	--enable-debug \
 	--enable-debug-info \
-	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
+	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .if empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=	--disable-sdl

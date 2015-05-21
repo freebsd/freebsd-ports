@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-TempDir
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 DEPRECATED=	Use devel/p5-Test-TempDir-Tiny instead
+EXPIRATION_DATE=2015-06-30
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

@@ -4,12 +4,12 @@
 PORTNAME=	fuzzdb
 PORTVERSION=	1.09
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive set of fuzzing patterns
 
+USES=		tar:tgz
 NO_BUILD=	yes
 EXTRACT_AFTER_ARGS=	--exclude .svn
 PORTDOCS=	_copyright.txt _readme.txt

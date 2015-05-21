@@ -57,6 +57,7 @@ lib/emby-server/dashboard-ui/channelslatest.html
 lib/emby-server/dashboard-ui/cinemamodeconfiguration.html
 lib/emby-server/dashboard-ui/collections.html
 lib/emby-server/dashboard-ui/connectlogin.html
+lib/emby-server/dashboard-ui/cordovaindex.html
 lib/emby-server/dashboard-ui/css/card.css
 lib/emby-server/dashboard-ui/css/chromecast.css
 lib/emby-server/dashboard-ui/css/detailtable.css
@@ -109,6 +110,7 @@ lib/emby-server/dashboard-ui/css/images/editor/missingbackdrop.png
 lib/emby-server/dashboard-ui/css/images/editor/missinglogo.png
 lib/emby-server/dashboard-ui/css/images/editor/missingprimaryimage.png
 lib/emby-server/dashboard-ui/css/images/editor/missingtrailer.png
+lib/emby-server/dashboard-ui/css/images/empty.png
 lib/emby-server/dashboard-ui/css/images/favicon.ico
 lib/emby-server/dashboard-ui/css/images/fresh.png
 lib/emby-server/dashboard-ui/css/images/icons/audiocd.png
@@ -126,7 +128,6 @@ lib/emby-server/dashboard-ui/css/images/icons/stop.png
 lib/emby-server/dashboard-ui/css/images/icons/subtitles.png
 lib/emby-server/dashboard-ui/css/images/icons/volumedown.png
 lib/emby-server/dashboard-ui/css/images/icons/volumeup.png
-lib/emby-server/dashboard-ui/css/images/icons/wireless.png
 lib/emby-server/dashboard-ui/css/images/iossplash.png
 lib/emby-server/dashboard-ui/css/images/items/detail/audio.png
 lib/emby-server/dashboard-ui/css/images/items/detail/game.png
@@ -149,6 +150,7 @@ lib/emby-server/dashboard-ui/css/images/items/searchhintsv2/person.png
 lib/emby-server/dashboard-ui/css/images/items/searchhintsv2/tv.png
 lib/emby-server/dashboard-ui/css/images/kids/bg.jpg
 lib/emby-server/dashboard-ui/css/images/logindefault.png
+lib/emby-server/dashboard-ui/css/images/logo536.png
 lib/emby-server/dashboard-ui/css/images/mblogoicon.png
 lib/emby-server/dashboard-ui/css/images/media/chapterflyout.png
 lib/emby-server/dashboard-ui/css/images/media/pause.png
@@ -160,7 +162,6 @@ lib/emby-server/dashboard-ui/css/images/notifications/error.png
 lib/emby-server/dashboard-ui/css/images/notifications/info.png
 lib/emby-server/dashboard-ui/css/images/rightarrow.png
 lib/emby-server/dashboard-ui/css/images/rotten.png
-lib/emby-server/dashboard-ui/css/images/server.png
 lib/emby-server/dashboard-ui/css/images/splash.jpg
 lib/emby-server/dashboard-ui/css/images/stars.png
 lib/emby-server/dashboard-ui/css/images/supporter/nonsupporterbadge.png
@@ -483,13 +484,19 @@ lib/emby-server/dashboard-ui/thirdparty/apiclient/sha1.js
 lib/emby-server/dashboard-ui/thirdparty/apiclient/store.js
 lib/emby-server/dashboard-ui/thirdparty/browser.js
 lib/emby-server/dashboard-ui/thirdparty/cast_sender.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/remotecontrols.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/serverdiscovery.js
+lib/emby-server/dashboard-ui/thirdparty/fastclick.js
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/css/font-awesome.css
+lib/emby-server/dashboard-ui/thirdparty/fontawesome/css/font-awesome.css.map
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/css/font-awesome.min.css
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/FontAwesome.otf
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.eot
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.svg
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.ttf
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.woff
+lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.woff2
+lib/emby-server/dashboard-ui/thirdparty/headroom.js
 lib/emby-server/dashboard-ui/thirdparty/jquery-2.1.1.min.js
 lib/emby-server/dashboard-ui/thirdparty/jquery.unveil-custom.js
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/images/ajax-loader.gif
@@ -708,6 +715,9 @@ lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/40px.png
 lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/style.css
 lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/style.min.css
 lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/throbber.gif
+lib/emby-server/dashboard-ui/thirdparty/masonry.pkgd.min.js
+lib/emby-server/dashboard-ui/thirdparty/require.js
+lib/emby-server/dashboard-ui/thirdparty/requirecss.js
 lib/emby-server/dashboard-ui/thirdparty/swipebox-master/css/swipebox.css
 lib/emby-server/dashboard-ui/thirdparty/swipebox-master/css/swipebox.min.css
 lib/emby-server/dashboard-ui/thirdparty/swipebox-master/img/icons.png

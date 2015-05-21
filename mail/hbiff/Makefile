@@ -6,8 +6,7 @@ PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
-		LOCAL
-MASTER_SITE_SUBDIR=	obrien
+		LOCAL/obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Replacement for xbiff that handles popup window with mail headers

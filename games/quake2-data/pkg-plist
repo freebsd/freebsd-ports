@@ -326,12 +326,4 @@
 %%MANUAL%%%%DOCSDIR%%/manual/top_nav_imagemap.gif
 %%MANUAL%%%%DOCSDIR%%/manual/unit_exit_door.jpg
 %%MANUAL%%%%DOCSDIR%%/manual/water.jpg
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual
-%%MANUAL%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/baseq2/players/male
-@dirrm %%DATADIR%%/baseq2/players/female
-@dirrm %%DATADIR%%/baseq2/players/cyborg
-@dirrm %%DATADIR%%/baseq2/players/crakhor
-@dirrm %%DATADIR%%/baseq2/players
-@dirrmtry %%DATADIR%%/baseq2
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt

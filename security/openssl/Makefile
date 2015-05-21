@@ -6,10 +6,9 @@ PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	a
 PORTREVISION=	1
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
-		ftp://ftp.openssl.org/%SUBDIR%/ \
-		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
-MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	http://www.openssl.org/source/ \
+		ftp://ftp.openssl.org/source/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dinoex@FreeBSD.org

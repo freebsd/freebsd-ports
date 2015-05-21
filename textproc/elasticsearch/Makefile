@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
@@ -30,7 +30,7 @@ LUCENEVER=	4.10.4
 CONFIG_FILES=	elasticsearch.yml logging.yml
 JARS=		elasticsearch-${PORTVERSION}.jar \
 		asm-4.1.jar \
-	 	asm-commons-4.1.jar \
+		asm-commons-4.1.jar \
 		apache-log4j-extras-1.2.17.jar \
 		antlr-runtime-3.5.jar \
 		groovy-all-2.4.0.jar \

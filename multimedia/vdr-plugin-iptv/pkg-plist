@@ -1,25 +1,11 @@
 lib/vdr/libvdr-iptv.so.%%APIVERSION%%
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/image.sh.sample %D/etc/vdr/plugins/iptv/image.sh; then rm -f %D/etc/vdr/plugins/iptv/image.sh; fi
-etc/vdr/plugins/iptv/image.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/image.sh ] ; then cp -p %D/%F %B/image.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/internetradio.sh.sample %D/etc/vdr/plugins/iptv/internetradio.sh; then rm -f %D/etc/vdr/plugins/iptv/internetradio.sh; fi
-etc/vdr/plugins/iptv/internetradio.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/internetradio.sh ] ; then cp -p %D/%F %B/internetradio.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/iptvstream-notrap.sh.sample %D/etc/vdr/plugins/iptv/iptvstream-notrap.sh; then rm -f %D/etc/vdr/plugins/iptv/iptvstream-notrap.sh; fi
-etc/vdr/plugins/iptv/iptvstream-notrap.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/iptvstream-notrap.sh ] ; then cp -p %D/%F %B/iptvstream-notrap.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/iptvstream.sh.sample %D/etc/vdr/plugins/iptv/iptvstream.sh; then rm -f %D/etc/vdr/plugins/iptv/iptvstream.sh; fi
-etc/vdr/plugins/iptv/iptvstream.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/iptvstream.sh ] ; then cp -p %D/%F %B/iptvstream.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/linein.sh.sample %D/etc/vdr/plugins/iptv/linein.sh; then rm -f %D/etc/vdr/plugins/iptv/linein.sh; fi
-etc/vdr/plugins/iptv/linein.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/linein.sh ] ; then cp -p %D/%F %B/linein.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/vlc2iptv.sample %D/etc/vdr/plugins/iptv/vlc2iptv; then rm -f %D/etc/vdr/plugins/iptv/vlc2iptv; fi
-etc/vdr/plugins/iptv/vlc2iptv.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/vlc2iptv ] ; then cp -p %D/%F %B/vlc2iptv; fi
-@unexec if cmp -s %D/etc/vdr/plugins/iptv/webcam.sh.sample %D/etc/vdr/plugins/iptv/webcam.sh; then rm -f %D/etc/vdr/plugins/iptv/webcam.sh; fi
-etc/vdr/plugins/iptv/webcam.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/iptv/webcam.sh ] ; then cp -p %D/%F %B/webcam.sh; fi
+@sample etc/vdr/plugins/iptv/image.sh.sample
+@sample etc/vdr/plugins/iptv/internetradio.sh.sample
+@sample etc/vdr/plugins/iptv/iptvstream-notrap.sh.sample
+@sample etc/vdr/plugins/iptv/iptvstream.sh.sample
+@sample etc/vdr/plugins/iptv/linein.sh.sample
+@sample etc/vdr/plugins/iptv/vlc2iptv.sample
+@sample etc/vdr/plugins/iptv/webcam.sh.sample
 etc/vdr/plugins/iptv/vlcinput/3Sat.conf
 etc/vdr/plugins/iptv/vlcinput/BBC-radio1.conf
 etc/vdr/plugins/iptv/vlcinput/BBC-radio1xtra.conf
@@ -38,8 +24,6 @@ etc/vdr/plugins/iptv/vlcinput/NASA-500-Kbit.conf
 etc/vdr/plugins/iptv/vlcinput/NASA.conf
 etc/vdr/plugins/iptv/vlcinput/Sky-News.conf
 etc/vdr/plugins/iptv/vlcinput/THE_VOICE.conf
-@dirrmtry etc/vdr/plugins/iptv/vlcinput
-@dirrmtry etc/vdr/plugins/iptv
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-iptv.mo
 %%NLS%%share/locale/fi_FI/LC_MESSAGES/vdr-iptv.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/vdr-iptv.mo

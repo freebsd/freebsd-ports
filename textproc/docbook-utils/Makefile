@@ -5,8 +5,7 @@ PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
 PORTREVISION=	13
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
+MASTER_SITES=	SOURCEWARE/docbook-tools/new-trials/SOURCES
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents

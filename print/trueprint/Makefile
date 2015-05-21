@@ -4,8 +4,7 @@
 PORTNAME=	trueprint
 PORTVERSION=	5.4
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	trueprint
+MASTER_SITES=	GNU
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Print program listings on postscript printer

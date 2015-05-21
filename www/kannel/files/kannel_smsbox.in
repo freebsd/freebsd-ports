@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: smsbox
+# REQUIRE: LOGIN bearerbox
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# kannel_smsbox_enable (bool):	Set to NO by default.
+#				Set it to YES to enable kannel_smsbox.
+# kannel_smsbox_config (path):	Set to %%PREFIX%%/etc/kannel.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=kannel_smsbox
+rcvar=${name}_enable
+kannel_piddir="/var/run/kannel"
+
+load_rc_config $name
+
+: ${kannel_smsbox_enable:="NO"}
+: ${kannel_smsbox_config="%%PREFIX%%/etc/kannel.conf"}
+: ${kannel_smsbox_user:="kannel"}
+: ${kannel_smsbox_group:="kannel"}
+
+command="%%PREFIX%%/sbin/run_kannel_box"
+start_precmd="${name}_prestart"
+extra_commands="reload"
+sig_reload=SIGUSR1
+
+pidfile="${kannel_piddir}/${name}.pid"
+bearerbox_pidfile="${kannel_piddir}/kannel_bearerbox.pid"
+
+command_args="--pidfile ${pidfile} %%PREFIX%%/sbin/smsbox ${kannel_smsbox_flags} ${kannel_smsbox_config}"
+
+kannel_smsbox_prestart()
+{
+	if [ ! -d "${kannel_piddir}" ]; then
+		install -d -o $kannel_smsbox_user -g $kannel_smsbox_group $kannel_piddir
+	fi
+	kannel_smsbox_checkconfig
+	kannel_bearerbox_checkpid
+}
+
+kannel_smsbox_checkconfig() {
+	# Config file is required
+	if [ ! -r ${kannel_smsbox_config} ]; then
+		warn "${kannel_smsbox_config} is not readable."
+		exit 1
+	fi
+}
+
+kannel_bearerbox_checkpid() {
+	# Check if kannel bearerbox is running
+	if [ ! -e "${bearerbox_pidfile}" ]; then
+		warn "In order to run ${name} you need to run first kannel_bearerbox."
+		exit 1
+	fi
+}
+
+run_rc_command "$1"

@@ -1,6 +1,7 @@
 bin/gdk-pixbuf-config
 etc/gdk_pixbufConf.sh
 etc/gdk_pixbuf_xlibConf.sh
+etc/gnomecanvaspixbufConf.sh
 include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-features.h
 include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-loader.h
 include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-xlib.h

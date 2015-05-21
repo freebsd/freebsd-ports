@@ -3,8 +3,8 @@
 
 PORTNAME=	MySQLdb
 DISTVERSION=	1.2.5
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	databases python
-MASTER_SITES=	https://github.com/farcepest/${PORTNAME}1/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -13,6 +13,9 @@ COMMENT=	Access a MySQL database through Python
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 USE_MYSQL=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	farcepest
+GH_PROJECT=	${PORTNAME}1
 
 CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]*
 

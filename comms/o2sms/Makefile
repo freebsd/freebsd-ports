@@ -5,9 +5,8 @@ PORTNAME=	o2sms
 PORTVERSION=	3.36
 PORTREVISION=	1
 CATEGORIES=	comms perl5
-MASTER_SITES=	CPAN \
+MASTER_SITES=	CPAN/WWW/MACKERS \
 		http://www.mackers.com/projects/o2sms/releases/
-MASTER_SITE_SUBDIR=	WWW/MACKERS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send SMS messages via the websites of Irish mobile operators

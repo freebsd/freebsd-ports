@@ -1,0 +1,5 @@
+TDiff calculates the differences between two tree-like structures. Similar to
+Rubys built-in TSort module.
+
+WWW: https://github.com/postmodern/tdiff#readme
+RG:  https://rubygems.org/gems/tdiff

@@ -4,8 +4,7 @@
 PORTNAME=	mscompress
 PORTVERSION=	0.3
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/compress
+MASTER_SITES=	SUNSITE/utils/compress
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor

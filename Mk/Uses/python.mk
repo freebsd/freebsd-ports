@@ -28,7 +28,7 @@
 #		it as RUN_DEPENDS.
 #
 # If build and run are omitted, Python will be added as BUILD_DEPENDS and
-# RUN_DEPENDS.
+# RUN_DEPENDS. PYTHON_NO_DEPENDS can be set to not add any dependencies.
 #
 # Variables, which can be set by a user:
 #
@@ -243,7 +243,8 @@ _PYTHON_ARGS:=		${_PYTHON_ARGS:Nrun}
 
 # The port does not specify a build or run dependency, assume both are
 # required.
-.if !defined(_PYTHON_BUILD_DEP) && !defined(_PYTHON_RUN_DEP)
+.if !defined(_PYTHON_BUILD_DEP) && !defined(_PYTHON_RUN_DEP) && \
+    !defined(PYTHON_NO_DEPENDS)
 _PYTHON_BUILD_DEP=	yes
 _PYTHON_RUN_DEP=	yes
 .endif

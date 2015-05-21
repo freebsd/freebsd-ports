@@ -4,9 +4,8 @@
 PORTNAME=	doc
 PORTVERSION=	2.2.3
 CATEGORIES=	dns
-MASTER_SITES=   ${MASTER_SITE_LOCAL} \
+MASTER_SITES=   LOCAL/sanpei \
 		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
-MASTER_SITE_SUBDIR=	sanpei
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Diagnose unhealthy DNS domains

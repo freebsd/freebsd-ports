@@ -12,6 +12,7 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Python controller library for Tor
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils

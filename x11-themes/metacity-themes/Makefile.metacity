@@ -1,6 +1,5 @@
 PKGNAMEPREFIX=	metacity-theme-
-MASTER_SITES?=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR?=	teams/art.gnome.org/themes/metacity
+MASTER_SITES?=	GNOME/teams/art.gnome.org/themes/metacity
 DIST_SUBDIR=	gnome2
 
 NO_BUILD=	yes

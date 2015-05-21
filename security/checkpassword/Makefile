@@ -5,8 +5,7 @@ PORTNAME=	checkpassword
 PORTVERSION=	0.90
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/checkpwd/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple password-checking interface

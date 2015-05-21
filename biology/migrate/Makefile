@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.6.7
+PORTVERSION=	3.6.9
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to estimate population sizes and migration rates
-
-BROKEN=		unfetchable
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"

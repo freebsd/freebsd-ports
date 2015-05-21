@@ -6,8 +6,7 @@ PORTVERSION=	10.35.94
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
-		${MASTER_SITE_LOCAL:S/$/:man/}
-MASTER_SITE_SUBDIR=	dinoex/:man
+		LOCAL/dinoex/:man
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats

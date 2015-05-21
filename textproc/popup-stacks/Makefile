@@ -4,7 +4,6 @@ PORTNAME=	popup
 PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://popup.sourceforge.net/files/cstack/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-stacks${PKGNAMESUFFIX2}
 DISTFILES=	English-German.cstack.gz German-French.cstack.gz
 

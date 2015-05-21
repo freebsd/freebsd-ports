@@ -4,8 +4,7 @@
 PORTNAME=	clang
 PORTVERSION=	3.7.r${SVN_REV}
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITES=	LOCAL/brooks
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${CLANG_SOURCE} \
 		${LLVM_SOURCE}
@@ -101,11 +100,11 @@ pre-fetch:
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+SVN?=	svnlite
 
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
+	${SVN} export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKDIR}/${CLANG_NAME}
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 .if ${USER} == brooks || ${USER} == bed22
@@ -141,10 +140,11 @@ pre-build:
 	    ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
-	cd ${WRKSRC}/utils/unittest && ${MAKE_CMD}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/utils/unittest
 
 post-build:
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} man html ps
+	${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} -C ${WRKSRC}/tools/clang/docs/tools man html ps
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so

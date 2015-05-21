@@ -5,8 +5,7 @@ PORTNAME=		gnomoradio
 PORTVERSION=		0.15.1
 PORTREVISION=	18
 CATEGORIES=		audio net
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SAVANNAH
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Program for finding and playing free music from the Internet

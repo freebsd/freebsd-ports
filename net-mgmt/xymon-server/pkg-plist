@@ -295,6 +295,7 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/www/gifs/favicon-red.ico
 %%WWWDIR%%/server/www/gifs/favicon-unknown.ico
 %%WWWDIR%%/server/www/gifs/favicon-yellow.ico
+%%WWWDIR%%/server/www/gifs/green-ack.gif
 %%WWWDIR%%/server/www/gifs/green-recent.gif
 %%WWWDIR%%/server/www/gifs/green.gif
 %%WWWDIR%%/server/www/gifs/purple-ack.gif

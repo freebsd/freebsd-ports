@@ -70,15 +70,4 @@
 %%WWWDIR%%/templates/wikiss.html
 @owner
 @group
-@dirrm %%WWWDIR%%/var
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/plugins/Menu
-@dirrm %%WWWDIR%%/plugins/LatexImg
-@dirrm %%WWWDIR%%/plugins/InlineDiff
-@dirrm %%WWWDIR%%/plugins/Comments
-@dirrm %%WWWDIR%%/plugins/Captcha
-@dirrm %%WWWDIR%%/plugins/BetterEditor
-@dirrm %%WWWDIR%%/plugins/AjaxEditing
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/lang
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/var

@@ -4,9 +4,8 @@
 PORTNAME=	statgrab
 PORTVERSION=	0.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
-MASTER_SITE_SUBDIR=	py${PORTNAME}
+MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/py${PORTNAME}/ \
+		http://ftp.i-scream.org/pub/i-scream/py${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 

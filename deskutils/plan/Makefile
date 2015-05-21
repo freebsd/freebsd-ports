@@ -7,7 +7,6 @@ PORTNAME=	plan
 PORTVERSION=	1.10.1
 CATEGORIES+=	deskutils
 MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
-MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Motif schedule planner with calendar

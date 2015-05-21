@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.160000
+PORTVERSION=	0.160001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,15 +36,16 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-Template-Tiny>=0:${PORTSDIR}/textproc/p5-Template-Tiny \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-YAML>=0.71:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML>=0.86:${PORTSDIR}/textproc/p5-YAML \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime \
-		p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
+TEST_DEPENDS=	p5-LWP-Protocol-PSGI>=0.06:${PORTSDIR}/www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-LWP-Protocol-PSGI>=0.06:${PORTSDIR}/www/p5-LWP-Protocol-PSGI
+		p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime \
+		p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
+		${XS_BUILD_DEPENDS}
 
 OPTIONS_DEFINE=		XS
 

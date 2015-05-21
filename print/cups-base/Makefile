@@ -19,7 +19,8 @@ CONFLICTS=	LPRng-[0-9]*
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES+=		gmake pkgconfig tar:bzip2
+USES+=		cpe gmake pkgconfig tar:bzip2
+CPE_VENDOR=	apple
 DESTDIRNAME=	DSTROOT
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

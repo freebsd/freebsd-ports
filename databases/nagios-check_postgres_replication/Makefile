@@ -4,8 +4,7 @@ PORTNAME=	check_postgres_replication
 PORTVERSION=	2010.12.16
 CATEGORIES=	databases python
 MASTER_SITES=	https://gist.github.com/raw/743942/4b9454d6aaf919fe77d15ecea09c7a001ae83b59/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+		LOCAL/brooks
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	check_postgres_replication.py
 EXTRACT_SUFX=

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zsd
-PORTVERSION=	0.0.2014.09.09
+PORTVERSION=	0.0.2014.12.07
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fabiankeil.de/sourcecode/zfs-snapshot-destroyer/
-DISTNAME=	${PORTNAME}-2014-09-09-c2d3662
+DISTNAME=	${PORTNAME}-2014-12-07-c2d3662
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Destroys ZFS snapshots

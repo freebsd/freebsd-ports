@@ -46,10 +46,3 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/sqlite-update-14-6.sql
 %%DATADIR%%/classic/sqlite-update-14-7.sql
 %%DATADIR%%/classic/sqlite.sql
-@dirrm %%DATADIR%%/classic
-@dirrm %%DATADIR%%
-@dirrmtry lib/libpreludedb/plugins/sql
-@dirrm lib/libpreludedb/plugins/formats
-@dirrm lib/libpreludedb/plugins
-@dirrm lib/libpreludedb
-@dirrm include/libpreludedb

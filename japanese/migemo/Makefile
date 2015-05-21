@@ -7,8 +7,7 @@ PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://0xcc.net/migemo/ \
-		${MASTER_SITE_LOCAL:S/$/:skkdic/}
-MASTER_SITE_SUBDIR=	nobutaka/:skkdic
+		LOCAL/nobutaka/:skkdic
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKKDIC_FILE}.bz2:skkdic
 DIST_SUBDIR=	migemo
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/891/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variety of cryptographic primitives for Objective Caml
 
 DESTDIRNAME=	destdir

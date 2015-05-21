@@ -5,7 +5,7 @@ PORTNAME=	dotconf
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, powerful configuration-file parser

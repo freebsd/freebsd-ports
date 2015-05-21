@@ -6,8 +6,7 @@ PORTVERSION?=	2.5.4
 PORTREVISION?=	2
 CATEGORIES=	news ipv6
 # Master distribution broken
-MASTER_SITES?=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR?=	${PORTNAME}
+MASTER_SITES?=	ISC/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
@@ -22,7 +21,8 @@ SUB_FILES=	pkg-install
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		gmake perl5 uidfix
+USES=		cpe gmake perl5 uidfix
+CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 

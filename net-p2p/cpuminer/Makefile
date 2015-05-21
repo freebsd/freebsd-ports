@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjansson.so:${PORTSDIR}/devel/jansson
 
+USES=		cpe
+CPE_VENDOR=	cpuminer_project
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--gnu --add-missing --copy

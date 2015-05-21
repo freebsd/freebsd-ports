@@ -1,0 +1,10 @@
+--- Makefile.orig	2015-05-12 14:40:03 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ APPLICATION := getopt
+ 
+-REBAR=$(shell which rebar || echo ./rebar)
++REBAR=./rebar
+ ERL := erl
+ EPATH := -pa ebin
+ 

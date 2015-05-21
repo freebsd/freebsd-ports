@@ -5,8 +5,7 @@ PORTNAME=	xwpick
 PORTVERSION=	2.20
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=applications
+MASTER_SITES=	XCONTRIB/applications
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image pick up utility for X Window System

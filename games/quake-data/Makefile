@@ -38,7 +38,7 @@ PLIST_FILES+=	%%DATADIR%%/id1/pak1.pak
 .endif
 
 .if ${PORT_OPTIONS:MQW_DATA} || ${PORT_OPTIONS:MQW_SKINS}
-MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
+MASTER_SITES+=	IDSOFTWARE/quakeworld/unix/:qw
 DISTFILES+=	${PROGFILE}:qw
 EXTRACT_ONLY+=	${PROGFILE}
 COMMENT:=	${COMMENT:S,Quake,& and &World,}
@@ -48,7 +48,7 @@ PLIST_SUB+=	QUAKEWORLD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQW_SKINS}
-MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/skins/:skins|}
+MASTER_SITES+=	IDSOFTWARE/quakeworld/skins/:skins
 DISTFILES+=	${SKINFILES:S/$/:skins/}
 PLIST_SUB+=	QUAKEWORLD_SKINS=""
 COMMENT+=	and skins

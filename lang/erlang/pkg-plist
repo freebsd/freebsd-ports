@@ -6,6 +6,7 @@ bin/erl_call
 bin/erlc
 bin/escript
 bin/run_erl
+bin/snmpc
 bin/to_erl
 bin/typer
 etc/man.d/erlang.conf

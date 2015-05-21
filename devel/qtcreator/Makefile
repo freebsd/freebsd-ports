@@ -4,8 +4,7 @@
 PORTNAME=	qtcreator
 DISTVERSION=	3.4.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_QT}
-MASTER_SITE_SUBDIR=official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
+MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE
 

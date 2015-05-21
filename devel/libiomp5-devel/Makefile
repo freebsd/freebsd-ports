@@ -4,8 +4,7 @@
 PORTNAME=	libiomp5
 PORTVERSION=	3.7.r${SVN_REV}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITES=	LOCAL/brooks
 PKGNAMESUFFIX=	-devel
 DISTNAME=	openmp-${PORTVERSION}
 
@@ -42,11 +41,10 @@ BROKEN=		Only builds on amd64, arm, aarch64, powerpc64, and i386.
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
-
+SVN?=	svnlite
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
+	${SVN} export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/openmp/trunk ${WRKDIR}/${DISTNAME}
 	cd ${WRKDIR}; tar cvfJ ${DISTDIR}/${DISTNAME}.tar.xz ${DISTNAME}
 .if ${USER} == brooks || ${USER} == bed22

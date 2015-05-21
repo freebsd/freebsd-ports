@@ -5,7 +5,7 @@ PORTNAME=	nxt-python
 PORTVERSION=	2.2.2
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Python interface for the Lego Mindstorms NXT robot

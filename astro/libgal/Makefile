@@ -6,8 +6,7 @@ PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	astro hamradio
 MASTER_SITES=	http://homepage.mac.com/pclwillmott/GAL/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	General Astrodynamics Library

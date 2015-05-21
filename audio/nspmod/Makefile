@@ -4,8 +4,7 @@
 PORTNAME=	nspmod
 PORTVERSION=	0.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/players
+MASTER_SITES=	SUNSITE/apps/sound/players
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M/MTM tracker that does its own DSP, uses VoxWare v2.90+

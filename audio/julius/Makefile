@@ -5,8 +5,7 @@ PORTNAME=	julius
 PORTVERSION=	4.1.2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	julius/37582
+MASTER_SITES=	SFJP/julius/37582
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Large Vocabulary Continuous Speech Recognition Engine

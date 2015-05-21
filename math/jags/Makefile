@@ -5,11 +5,10 @@ PORTNAME=	mcmc-jags
 PORTVERSION=	3.4.0
 PORTREVISION=	4
 CATEGORIES=	math
-MASTER_SITES=	SF:1,2,3,4
-MASTER_SITE_SUBDIR=	mcmc-jags/JAGS/${S}.x/Source/:1 \
-		mcmc-jags/Examples/${S}.x/:2 \
-		mcmc-jags/Manuals/2.x/:3 \
-		mcmc-jags/Manuals/${S}.x/:4
+MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
+		SF/mcmc-jags/Examples/${S}.x/:2 \
+		SF/mcmc-jags/Manuals/2.x/:3 \
+		SF/mcmc-jags/Manuals/${S}.x/:4
 DISTFILES=	JAGS-${PORTVERSION}${EXTRACT_SUFX}:1
 EXTRACT_ONLY=	${DISTFILES:M*[12]:C|:.*||}
 

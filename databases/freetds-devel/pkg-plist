@@ -1,5 +1,4 @@
 bin/bsqldb
-bin/collations
 bin/datacopy
 bin/defncopy
 bin/fisql

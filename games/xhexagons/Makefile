@@ -5,8 +5,7 @@ PORTNAME=	xhexagons
 PORTVERSION=	5.5.2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/xpuzzles
+MASTER_SITES=	XCONTRIB/games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System

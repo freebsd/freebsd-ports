@@ -5,9 +5,7 @@ PORTNAME=	ffcall
 PORTVERSION=	1.10
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.santafe.edu/pub/gnu/
-MASTER_SITES+=	${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	libs
+MASTER_SITES=	ftp://ftp.santafe.edu/pub/gnu/ GNUSTEP/libs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign function call libraries

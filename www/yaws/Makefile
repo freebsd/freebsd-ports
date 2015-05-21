@@ -2,7 +2,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	http://yaws.hyber.org/download/
 

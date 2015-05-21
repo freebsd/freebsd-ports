@@ -43,7 +43,4 @@ post-patch:
 pre-install:
 	@${RM} -f ${WRKSRC}/install.rdf.bak
 
-post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
-
 .include <bsd.port.mk>

@@ -11,13 +11,14 @@ MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-minsrc-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info \
+USES=		cpe desktop-file-utils gettext gmake pkgconfig shared-mime-info \
 		tar:xz
 USE_WX=		2.8
 WX_UNICODE=	yes

@@ -5,15 +5,16 @@ PORTNAME=	eventum
 PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	eventum
+MASTER_SITES=	MYSQL/eventum
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
-NO_BUILD=	YES
+USES=		cpe
+CPE_VENDOR=	mysql
+NO_BUILD=	yes
 USE_PHP=	pcre session mysql gd gettext
-WANT_PHP_WEB=	YES
+WANT_PHP_WEB=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 pre-install:

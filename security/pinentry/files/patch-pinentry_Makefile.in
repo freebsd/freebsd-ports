@@ -1,0 +1,13 @@
+# Rearrange includes to prevent picking up libassuan headers from LOCALBASE
+
+--- pinentry/Makefile.in.orig	2015-05-11 13:32:13 UTC
++++ pinentry/Makefile.in
+@@ -311,7 +311,7 @@ EXTRA_DIST = 
+ @BUILD_LIBPINENTRY_CURSES_TRUE@pinentry_curses = libpinentry-curses.a
+ noinst_LIBRARIES = libpinentry.a $(pinentry_curses)
+ LDADD = $(COMMON_LIBS)
+-AM_CPPFLAGS = $(COMMON_CFLAGS) -I$(top_srcdir)/assuan -I$(top_srcdir)/secmem
++AM_CPPFLAGS = -I$(top_srcdir)/assuan -I$(top_srcdir)/secmem $(COMMON_CFLAGS)
+ libpinentry_a_SOURCES = pinentry.h pinentry.c argparse.c argparse.h \
+ 	password-cache.h password-cache.c
+ 

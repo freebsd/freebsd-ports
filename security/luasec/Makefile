@@ -3,15 +3,15 @@
 
 PORTNAME=	luasec
 PORTVERSION=	0.5
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/brunoos/${PORTNAME}/archive/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
-FETCH_ARGS=	-Fpr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	brunoos
 
 ALL_TARGET=	bsd
 LIBDIR=		-L${LUA_LIBDIR} -L${WRKSRC}/src/luasocket

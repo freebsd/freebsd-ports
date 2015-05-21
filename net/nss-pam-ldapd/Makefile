@@ -14,6 +14,8 @@ COMMENT?=		Advanced fork of nss_ldap
 LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
+USES=			cpe
+CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
@@ -109,10 +111,7 @@ post-extract:
 post-configure:
 	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
 
-show-pkgmessage::
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE} | ${FMT} 75 79; ${ECHO_CMD}
-
-post-install: show-pkgmessage
+post-install:
 .if ${PORT_OPTIONS:MNSS}
 	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${STAGEDIR}${PREFIX}/lib/nss_ldap.so
 .endif

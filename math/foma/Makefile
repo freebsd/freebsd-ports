@@ -5,7 +5,7 @@ PORTNAME=	foma
 PORTVERSION=	0.9.17
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Toolkit for constructing finite-state automata and transducers

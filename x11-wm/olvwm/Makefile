@@ -6,12 +6,9 @@ PORTVERSION=	4.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		${MASTER_SITE_XCONTRIB} \
+		XCONTRIB/window_managers \
 		http://komquats.com/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     cy
-		
-MASTER_SITE_SUBDIR=	window_managers
+		LOCAL/cy
 DISTNAME=	${PORTNAME}4
 
 PATCH_SITES=	${MASTER_SITES}

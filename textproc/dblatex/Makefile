@@ -3,11 +3,11 @@
 
 PORTNAME=	dblatex
 PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	johnson.peter@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook to LaTeX/ConTeXt Publishing
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:${PORTSDIR}/print/texlive-texmf
@@ -18,19 +18,21 @@ USES=		tar:bzip2 python:2
 USE_PYTHON=	distutils autoplist
 USE_TEX=	tex
 
+PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/pdfdocs),/d' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e '/htmldoc)/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/pdfdocs),/d ; /htmldoc)/d' ${WRKSRC}/setup.py
 .endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
-.include <bsd.port.pre.mk>
+post-install:
+	# shebangfix can't be used because dblatex is built from scratch
+	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PREFIX}/bin/python2|' \
+		${STAGEDIR}${PREFIX}/bin/dblatex
 
-PYDISTUTILS_INSTALLARGS+=	--catalogs=${PREFIX}/share/xml/catalog.ports
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

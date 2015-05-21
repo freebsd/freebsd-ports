@@ -3,6 +3,7 @@
 
 PORTNAME=	mahara
 PORTVERSION=	15.04.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -10,9 +11,10 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source ePortfolio system
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USES=		cpe tar:bzip2
-USE_PHP=	session json curl xml xmlrpc openssl simplexml
+USE_PHP=	dom gd session json curl xml xmlrpc openssl simplexml
 
 OPTIONS_DEFINE=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
@@ -30,16 +32,11 @@ MAHARADIR?=	www/mahara
 MAHARADATADIR?=	www/maharadata
 
 pre-install:
-	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MAHARADIR}?g" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MAHARADIR}?g" >> ${PLIST}
-	@${ECHO} @dirrmtry ${MAHARADATADIR} >> ${PLIST}
-	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
+	@${ECHO_CMD} "@dir(${WWWOWN},${WWWGRP},755) ${MAHARADATADIR}" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${INSTALL} -d ${STAGEDIR}${PREFIX}/${MAHARADATADIR}
-	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
-	@${CHMOD} -R a+w ${STAGEDIR}${PREFIX}/${MAHARADATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MAHARADATADIR}
 
 .include <bsd.port.mk>

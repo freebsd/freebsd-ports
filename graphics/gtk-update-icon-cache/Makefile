@@ -4,8 +4,7 @@
 PORTNAME=	gtk-update-icon-cache
 PORTVERSION=	2.24.27
 CATEGORIES=	graphics
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

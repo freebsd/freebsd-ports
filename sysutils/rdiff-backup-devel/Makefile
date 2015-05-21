@@ -5,12 +5,9 @@ PORTNAME=	rdiff-backup
 PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:savannah \
-		vd/${PORTNAME}${PKGNAMESUFFIX}/:local
+MASTER_SITES=	SAVANNAH \
+		LOCAL/vd/${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-devel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup

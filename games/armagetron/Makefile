@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	armagetron
-PORTVERSION=	0.2.8.3.2
-PORTREVISION=	5
+PORTVERSION=	0.2.8.3.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}ad/stable/${PORTVERSION}/
 DISTNAME=	armagetronad-${PORTVERSION}
@@ -11,6 +10,9 @@ EXTRACT_SUFX=	.src.tar.bz2
 
 MAINTAINER=	ianthetechie@gmail.com
 COMMENT=	Multiplayer networked Tron clone in 3D
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes

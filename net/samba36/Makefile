@@ -4,8 +4,7 @@ PORTNAME=		${SAMBA_BASENAME}36
 PORTVERSION=		3.6.25
 PORTREVISION?=		0
 CATEGORIES?=		net
-MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	samba samba/stable samba/pre
+MASTER_SITES=		SAMBA/samba SAMBA/samba/stable SAMBA/samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 MAINTAINER?=		timur@FreeBSD.org

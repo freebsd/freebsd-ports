@@ -4,8 +4,7 @@ PORTNAME=	bsmtp
 PORTVERSION=	1.02
 PORTREVISION=	5
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	naddy
+MASTER_SITES=	LOCAL/naddy
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Batch SMTP support for sendmail, incoming and outgoing

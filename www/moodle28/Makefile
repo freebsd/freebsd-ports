@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.8.5
+PORTVERSION=	2.8.6
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable28/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle26-2.6.[0-9]* moodle27-2.7.[0-9]*
+CONFLICTS=	moodle27-2.7.[0-9]* moodle29-2.9
 
 USES=		tar:tgz
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
@@ -76,8 +76,5 @@ do-install:
 	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi \
 		${STAGEDIR}${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

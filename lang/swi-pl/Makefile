@@ -41,7 +41,7 @@ PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386" || ${ARCH} == "powerpc")
+.if (${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "armv6")
 PLIST_SUB+=	BITS=32
 .else
 PLIST_SUB+=	BITS=64

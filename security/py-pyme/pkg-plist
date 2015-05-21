@@ -65,8 +65,3 @@
 %%PYTHON_SITELIBDIR%%/pyme/version.py
 %%PYTHON_SITELIBDIR%%/pyme/version.pyc
 %%PYTHON_SITELIBDIR%%/pyme/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyme/constants/data
-@dirrm %%PYTHON_SITELIBDIR%%/pyme/constants/keylist
-@dirrm %%PYTHON_SITELIBDIR%%/pyme/constants/sig
-@dirrm %%PYTHON_SITELIBDIR%%/pyme/constants
-@dirrm %%PYTHON_SITELIBDIR%%/pyme

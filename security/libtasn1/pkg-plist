@@ -58,4 +58,3 @@ man/man3/asn1_write_value.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.html
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

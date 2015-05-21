@@ -3,7 +3,7 @@
 PORTNAME=	wy60
 PORTVERSION=	2.0.9
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Curses-based emulator for the Wyse 60 terminal

@@ -5,8 +5,7 @@ PORTNAME=	crafty-open-large
 PORTVERSION=	20070909
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dd/crafty
+MASTER_SITES=	LOCAL/dd/crafty
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
 MAINTAINER=	ports@FreeBSD.org

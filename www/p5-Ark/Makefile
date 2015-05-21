@@ -5,8 +5,7 @@ PORTVERSION=	0.1.r1
 PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://cloud.github.com/downloads/typester/ark-perl/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama
+		LOCAL/kuriyama
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Ark-0.001000_001
 

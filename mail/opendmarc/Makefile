@@ -4,9 +4,8 @@
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.1
 CATEGORIES=	mail security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME} \
-			${PORTNAME}/Previous%20Releases
+MASTER_SITES=	SF/${PORTNAME} \
+		SF/${PORTNAME}/Previous%20Releases
 
 MAINTAINER=	freebsd@gushi.org
 COMMENT=	DMARC library and milter implementation

@@ -5,8 +5,7 @@ PORTNAME=	xmms-mailnotify
 PORTVERSION=	0.2.0
 PORTREVISION=	9
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	LOCAL/arved
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	XMMS plugin, that plays a sound on incoming mail and opens the MUA

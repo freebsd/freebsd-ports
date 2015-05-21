@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.354 2015/04/13 04:48:55 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.361 2015/05/17 21:39:49 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 3;
+my $micro = 4;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -212,6 +212,12 @@ while (<IN>) {
 }
 
 close(IN);
+
+open(MK, 'Makefile') || die "Makefile: $!";
+my @muses = grep($_ = /^USES[?+]?=\s*(.*)/ && $1, <MK>);
+foreach my $muse (@muses) {
+	$makevar{USES} .= " " . $muse;
+}
 
 #
 # check for files.
@@ -1275,6 +1281,16 @@ sub checkmakefile {
 	}
 
 	#
+	# checking for use of ${ENV}
+	#
+	print "OK: checking for use of \${ENV} instead of \${SETENV}.\n" if ($verbose);
+	if ($whole =~ /\$\{ENV}/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "most uses of \${ENV} should really ".
+			"be \${SETENV} to avoid strange behaviors in sh(1).");
+	}
+
+	#
 	# whole file: use of :LU variable expansion modifiers
 	#
 	print "OK: checking for use of :LU variable expansion modifiers.\n" if ($verbose);
@@ -1696,10 +1712,12 @@ sub checkmakefile {
 	}
 	if ($sharedocused && $whole !~ /defined\s*\(?NOPORTDOCS\)?/
 		&& $whole !~ /def\s*\(?NOPORTDOCS\)?/) {
-		if ($docsused == 0
+		if ($docsused == 1
 			&& $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc/#) {
-			&perror("WARN", $file, -1, "use \".if \${PORT_OPTIONS:MDOCS}\" to wrap ".
-				"installation of files into $localbase/share/doc.");
+			&perror("WARN", $file, -1, "you should only use \".if \${PORT_OPTIONS:MDOCS}\" to wrap ".
+				"installation of files into $localbase/share/doc if the".
+				" collection of files is large and it takes considerable time".
+				" to copy.");
 		}
 	} else {
 		$docsused++;
@@ -1992,7 +2010,7 @@ xargs xmkmf
 	if ($j =~ m'\${STAGEDIR}\${SITE_ARCH}') {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "\${STAGEDIR}\${SITE_ARCH} should be ".
-			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_BASE_REL}.");
+			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_ARCH_REL}.");
 	}
 
 	#
@@ -2672,9 +2690,10 @@ DIST_SUBDIR EXTRACT_ONLY
 	}
 
 	push(@varnames, qw(
-PORTNAME PORTVERSION PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES
-PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX
-DISTFILES EXTRACT_ONLY
+PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
+PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+DIST_SUBDIR EXTRACT_ONLY
 	));
 
 	#
@@ -3255,7 +3274,7 @@ work		\${WRKDIR} instead
 EOF
 		foreach my $i (keys %cmdnames) {
 			# use (?![\w-]) instead of \b to exclude pkg-*
-			if ($s =~ /^[^#]*(\.\/|\$[\{\(]\.CURDIR[\}\)]\/|[ \t])(\b$i)(?![\w-])/
+			if ($file =~ /^[^#]*(\.\/|\$[\{\(]\.CURDIR[\}\)]\/|[ \t])(\b$i)(?![\w-])/
 			    && $s !~ /^COMMENT(.)?=[^\n]+$i/m
 				&& $s !~ /^IGNORE(.)?=[^\n]+$i/m
 				&& $s !~ /^BROKEN(.)?=[^\n]+$i/m

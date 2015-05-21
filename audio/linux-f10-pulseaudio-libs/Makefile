@@ -4,8 +4,7 @@
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.14
 CATEGORIES=	audio linux
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
+MASTER_SITES=	LOCAL/netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux Fedora 10)

@@ -6,8 +6,7 @@ PORTVERSION=	5.6
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jase
+		LOCAL/jase
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library

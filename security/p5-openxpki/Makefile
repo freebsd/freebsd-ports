@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	0.27.0.1
+PORTVERSION=	0.28.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -12,6 +13,7 @@ COMMENT=	Perl based trustcenter for PKI: universal server building block
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
+	p5-Net-DNS>0.83:${PORTSDIR}/dns/p5-Net-DNS \
 	p5-Math-BigInt>=1.9993:${PORTSDIR}/math/p5-Math-BigInt \
 	p5-Test-Prereq>=0:${PORTSDIR}/devel/p5-Test-Prereq \
 	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike \
@@ -71,8 +73,6 @@ CONFLICTS=	\
 	p5-openxpki-client-html-mason-[0-9]*
 
 USE_GITHUB=	yes
-GH_TAGNAME=	5a4c5eb
-
 USE_OPENSSL=	yes
 USE_PERL5=	configure
 USES=		gmake perl5
@@ -92,7 +92,7 @@ GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 			${LOCALBASE}/bin/imgsize:${PORTSDIR}/graphics/p5-Image-Size
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|..vergen --format version.|"${PORTVERSION:R}"|g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|..vergen --format version.|"${PORTVERSION}"|g' ${WRKSRC}/Makefile.PL
 	@${RM} -f ${WRKSRC}/Makefile.PL.bak
 	@( \
 	cd ${WRKSRC}/../..; \
@@ -106,17 +106,22 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
 post-stage:
-	@${MKDIR} ${STAGEDIR}/var/openxpki
 	@${MKDIR} ${STAGEDIR}/var/openxpki/session
 	@${MKDIR} ${STAGEDIR}/var/log/openxpki
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
 
-#pre-install:	test
-
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_OPENSSL_PORT) && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+IGNORE=	this version of OpenXPKI is not fully functional with LibreSSL library, use OpenSSL instead
+.endif
+
+OXLIB=	${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OpenXPKI/OpenXPKI.so
+
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OpenXPKI/OpenXPKI.so
+	${CHMOD} u+w ${OXLIB}
+	${STRIP_CMD} ${OXLIB}
+	${CHMOD} u-w ${OXLIB}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/../../config && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .	if ${PORT_OPTIONS:MDOCS}

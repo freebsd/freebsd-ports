@@ -4,8 +4,7 @@
 PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cy
+MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported

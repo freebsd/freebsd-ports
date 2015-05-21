@@ -331,6 +331,7 @@
     SUBDIR += libproxy-webkit
     SUBDIR += librouteros
     SUBDIR += librsync
+    SUBDIR += librsync1
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
     SUBDIR += libsrtp
@@ -439,6 +440,7 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
+    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -896,6 +898,7 @@
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
     SUBDIR += py-GeoIP
+    SUBDIR += py-GeoIP2
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
     SUBDIR += py-avahi
@@ -917,6 +920,7 @@
     SUBDIR += py-libcloud
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
+    SUBDIR += py-maxminddb
     SUBDIR += py-medusa
     SUBDIR += py-miniupnpc
     SUBDIR += py-msrplib

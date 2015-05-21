@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fluxbox utility to create and manage icons on the desktop

@@ -5,7 +5,7 @@ PORTNAME=	carve
 PORTVERSION=	1.4.0
 PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, robust constructive solid geometry library

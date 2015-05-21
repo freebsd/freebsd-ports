@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=${MEDIA_ID}&filename=/ \
 		LOCAL/bf
-MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Charis SIL TrueType font collection

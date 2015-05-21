@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xymon
-PORTVERSION=	4.3.19
+PORTVERSION=	4.3.20
 PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
@@ -51,7 +51,7 @@ FIXME1=		alerts.cfg hosts.cfg xymon-apache-open xymon-apache-secure
 FIXME2=		analysis.cfg combo.cfg holidays.cfg rrddefinitions.cfg \
 		snmpmibs.cfg xymonmenu.cfg xymonserver-migration.cfg
 
-OPTIONS_DEFINE=LDAP NETSNMP
+OPTIONS_DEFINE=DEBUG LDAP NETSNMP
 NETSNMP_DESC=Enable Net-SNMP support
 
 .include <bsd.port.options.mk>

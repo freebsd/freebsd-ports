@@ -5,7 +5,6 @@ PORTNAME=	graphite-web
 PORTVERSION=	0.9.12
 PORTREVISION=	2
 CATEGORIES=	www python
-MASTER_SITES=	http://github.com/graphite-project/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swills@FreeBSD.org
@@ -21,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:${PORTSDIR}/graphics/py-cairo 
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 USES=		python:2
+USE_GITHUB=	yes
+GH_ACCOUNT=	graphite-project
 USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} WWWOWN=${WWWOWN} \

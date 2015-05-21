@@ -6,7 +6,6 @@ PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-MASTER_SITE_SUBDIR=	apps/sound/editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively select and save sections of an audio file

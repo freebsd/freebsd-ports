@@ -17,7 +17,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 DEPRECATED=	Unsupported, please upgrade to a more recent version of Perl
-EXPIRATION_DATE=2015-07-31
+EXPIRATION_DATE=2015-12-31
 
 CONFLICTS_INSTALL=	perl5.*-*
 

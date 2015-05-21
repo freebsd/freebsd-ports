@@ -12,6 +12,8 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Easy to use multimedia transcoder for the GNOME Desktop
 
 BROKEN=		Uses unknown GNOME component pygnomedesktop
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 USES=		desktop-file-utils gettext python
 USE_GSTREAMER=	faac x264 lame mpeg2enc

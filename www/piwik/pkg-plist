@@ -6,11 +6,11 @@
 %%WWWDIR%%/bower.json
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
-%%WWWDIR%%/config/environment/dev.php
-%%WWWDIR%%/config/environment/test.php
-%%WWWDIR%%/config/global.ini.php
-%%WWWDIR%%/config/global.php
-%%WWWDIR%%/config/manifest.inc.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/environment/dev.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/environment/test.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.ini.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/manifest.inc.php
 %%WWWDIR%%/console
 %%WWWDIR%%/core/API/ApiRenderer.php
 %%WWWDIR%%/core/API/CORSHandler.php
@@ -412,6 +412,7 @@
 %%WWWDIR%%/core/Updates/2.11.0-b5.php
 %%WWWDIR%%/core/Updates/2.11.1-b4.php
 %%WWWDIR%%/core/Updates/2.13.0-b3.php
+%%WWWDIR%%/core/Updates/2.13.1.php
 %%WWWDIR%%/core/Updates/2.2.0-b15.php
 %%WWWDIR%%/core/Updates/2.2.3-b6.php
 %%WWWDIR%%/core/Updates/2.3.0-rc2.php
@@ -6802,6 +6803,5 @@
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/TokenStream.php
 %%WWWDIR%%/vendor/twig/twig/phpunit.xml.dist
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
-@dir %%WWWDIR%%/tmp
-@exec install -m 755 -o %%WWWOWN%% -g %%WWWGRP%% -d %D/%%WWWDIR%%/tmp
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/config
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config

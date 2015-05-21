@@ -23,27 +23,6 @@ diff -Naur src/gcc.orig/gcc/graphite-interchange.c src/gcc/gcc/graphite-intercha
  #include <cloog/cloog.h>
  #include <cloog/isl/domain.h>
  #endif
-diff -Naur src/gcc.orig/gcc/graphite-optimize-isl.c src/gcc/gcc/graphite-optimize-isl.c
---- src/gcc.orig/gcc/graphite-optimize-isl.c	2014-01-03 08:23:26.000000000 +1000
-+++ src/gcc/gcc/graphite-optimize-isl.c	2014-06-25 15:16:57.038386166 +1000
-@@ -28,6 +28,8 @@
- #include <isl/band.h>
- #include <isl/aff.h>
- #include <isl/options.h>
-+#include <isl/deprecated/int.h>
-+#include <isl/deprecated/aff_int.h>
- #endif
- 
- #include "system.h"
-@@ -373,7 +375,7 @@
- 	{
- 	  for (i = ScheduleDimensions - 1 ;  i >= 0 ; i--)
- 	    {
--	      if (isl_band_member_is_zero_distance (Band, i))
-+	      if (isl_band_member_is_coincident (Band, i))
- 		{
- 		  isl_map *TileMap;
- 		  isl_union_map *TileUMap;
 diff -Naur src/gcc.orig/gcc/graphite-poly.c src/gcc/gcc/graphite-poly.c
 --- src/gcc.orig/gcc/graphite-poly.c	2014-01-03 08:23:26.000000000 +1000
 +++ src/gcc/gcc/graphite-poly.c	2014-06-25 15:18:01.207157796 +1000

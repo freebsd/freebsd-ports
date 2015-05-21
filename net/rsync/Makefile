@@ -5,13 +5,12 @@ PORTNAME=	rsync
 PORTVERSION=	3.1.1
 PORTREVISION=	3
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
-		ftp://ftp.samba.org/pub/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
-		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
+MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
+		ftp://ftp.samba.org/pub/rsync/ \
+		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
+		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
 		LOCAL/ehaupt/rsync
-MASTER_SITE_SUBDIR=	rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ehaupt@FreeBSD.org

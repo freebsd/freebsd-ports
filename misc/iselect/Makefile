@@ -4,8 +4,7 @@
 PORTNAME=	iselect
 PORTVERSION=	1.4.0
 CATEGORIES=	misc
-MASTER_SITES=	OSSP
-MASTER_SITE_SUBDIR=	tool/iselect
+MASTER_SITES=	OSSP/tool/iselect
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool

@@ -4,8 +4,7 @@
 PORTNAME=	mod_rivet
 PORTVERSION=	2.2.2
 CATEGORIES=	www tcl
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	tcl/rivet
+MASTER_SITES=	APACHE/tcl/rivet
 DISTNAME=	rivet-${PORTVERSION}
 
 MAINTAINER=	jeff.lawson@flightaware.com

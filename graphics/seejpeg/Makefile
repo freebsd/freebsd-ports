@@ -5,8 +5,7 @@ PORTNAME=	seejpeg
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
+MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console graphics viewer using the svga console graphics library

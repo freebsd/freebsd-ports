@@ -1,7 +1,4 @@
 lib/vdr/libvdr-eepg.so.%%APIVERSION%%
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %D/etc/vdr/plugins/eepg
 etc/vdr/plugins/eepg/eepg.equiv.IT
-@unexec if cmp -s %D/etc/vdr/plugins/eepg/eepg.equiv.sample %D/etc/vdr/plugins/eepg/eepg.equiv; then rm -f %D/etc/vdr/plugins/eepg/eepg.equiv; fi
-etc/vdr/plugins/eepg/eepg.equiv.sample
-@exec if [ ! -f %D/etc/vdr/plugins/eepg/eepg.equiv ] ; then cp -p %D/%F %B/eepg.equiv; fi
-@dirrmtry etc/vdr/plugins/eepg
+@sample etc/vdr/plugins/eepg/eepg.equiv.sample
+@dir(%%VDR_USER%%,%%VDR_GROUP%%) etc/vdr/plugins/eepg

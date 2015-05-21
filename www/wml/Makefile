@@ -6,8 +6,7 @@ PORTVERSION=	2.0.12
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www lang
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=thewml
+MASTER_SITES=	SF/thewml
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation

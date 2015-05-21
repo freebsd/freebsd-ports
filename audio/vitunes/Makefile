@@ -7,8 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dhn
+		LOCAL/dhn
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Curses-based media player with vim-like keybinds

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opentoken
-PORTVERSION=	5.0a
+PORTVERSION=	6.0b
 CATEGORIES=	textproc
 MASTER_SITES=	http://stephe-leake.org/ada/
 

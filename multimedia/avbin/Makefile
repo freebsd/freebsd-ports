@@ -5,8 +5,7 @@ PORTNAME=	avbin
 PORTVERSION=	7
 PORTREVISION=	7
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	GOOGLE_CODE http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

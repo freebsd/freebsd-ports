@@ -5,9 +5,8 @@ PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
 PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
-		NL:lapack,lapack_tmg
-MASTER_SITE_SUBDIR=	lapack/:lapack lapack/timing/:lapack_tmg
+MASTER_SITES=	LOCAL/maho/gotoblas \
+		NL/lapack:lapack NL/lapack/timing:lapack_tmg
 DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 		lapack-${LAPACKVER}.tgz:lapack \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg

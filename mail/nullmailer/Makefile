@@ -8,7 +8,6 @@ PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		http://untroubled.org/nullmailer/archive/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	uffe@uffe.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays

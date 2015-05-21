@@ -29,6 +29,7 @@
     SUBDIR += cassandra2
     SUBDIR += cdb
     SUBDIR += cego
+    SUBDIR += cegobridge
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
@@ -179,7 +180,6 @@
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtop
-    SUBDIR += my2cego
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
     SUBDIR += mysac

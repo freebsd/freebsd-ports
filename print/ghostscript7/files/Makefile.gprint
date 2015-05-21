@@ -9,8 +9,7 @@
 #
 # For that reason, integration of stp driver is disabled by default.
 
-MASTER_SITES+=		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/gimp-print/:S/$/:gprint/} \
-MASTER_SITE_SUBDIR=	gimp-print/:gprint
+MASTER_SITES+=		SOURCEFORGE/gimp-print/:gprint
 DISTFILES+=		gimp-print-4.2.7.tar.gz:gprint
 EXTRADEVMKFILE+=	${FILESDIR}/stp.contrib.mak
 

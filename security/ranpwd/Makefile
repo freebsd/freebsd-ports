@@ -6,11 +6,10 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	security
 #MASTER_SITES=	KERNEL_ORG
-MASTER_SITES=	http://artfiles.org/kernel.org/pub/%SUBDIR%/ \
-		http://debian.securedservers.com/kernel/pub/%SUBDIR%/ \
-		http://ftp.cc.uoc.gr/pub/%SUBDIR%/ \
-		http://ftp.naist.jp/pub/Linux/kernel.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	software/utils/admin/ranpwd
+MASTER_SITES=	http://artfiles.org/kernel.org/pub/software/utils/admin/ranpwd/ \
+		http://debian.securedservers.com/kernel/pub/software/utils/admin/ranpwd/ \
+		http://ftp.cc.uoc.gr/pub/software/utils/admin/ranpwd/ \
+		http://ftp.naist.jp/pub/Linux/kernel.org/software/utils/admin/ranpwd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate random passwords

@@ -4,8 +4,7 @@
 PORTNAME=	freedink-data
 PORTVERSION=	1.08.${PORTVER}
 CATEGORIES=	games
-MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	freedink
+MASTER_SITES=	GNU/freedink
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Game data for games/freedink (Dink Smallwood)

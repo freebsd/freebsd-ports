@@ -5,8 +5,7 @@ PORTVERSION=	8.04
 PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 DISTFILES=	kb_src-${PORTVERSION}.tar.gz kb_inst-${PORTVERSION}.tar.gz
 
 MAINTAINER=	hamradio@FreeBSD.org

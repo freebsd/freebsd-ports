@@ -5,9 +5,8 @@ PORTNAME=	geg
 PORTVERSION=	1.0.2
 PORTREVISION=	8
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/science/visualization/plotting \
 		http://www.infolaunch.com/~daveb/
-MASTER_SITE_SUBDIR=	science/visualization/plotting
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualise multiple 2D-functions of one variable

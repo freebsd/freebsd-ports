@@ -4,7 +4,6 @@
 PORTNAME=	ipv6gen
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://github.com/vladak/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	vlada@devnull.cz
 COMMENT=	IPv6 prefix generator
@@ -16,6 +15,8 @@ USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	ipv6gen.pl check-overlap.pl
 PLIST_FILES=	bin/ipv6gen bin/check-overlap man/man1/ipv6gen.1.gz
+USE_GITHUB=	yes
+GH_ACCOUNT=	vladak
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ipv6gen.pl ${STAGEDIR}${PREFIX}/bin/ipv6gen

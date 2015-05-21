@@ -5,9 +5,7 @@ PORTNAME=	pdo_cassandra
 PORTVERSION=	0.2.1
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/${GITHUB_USER}/php-${PORTNAME}/tarball/${GITREVISION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	${GITHUB_USER}-php-${PORTNAME}-${GITTAG}-14-g${GITREVISION}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PDO driver for Apache Cassandra
@@ -16,10 +14,10 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
-GITREVISION=	7debd5b
-GITTAG=		0.8-support
-GITHUB_USER=	mkoppanen
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-php-${PORTNAME}-${GITREVISION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	mkoppanen
+GH_PROJECT=	php-${PORTNAME}
+GH_TAGNAME=	7debd5b
 
 USES=		pkgconfig
 USE_PHP_BUILD=	yes

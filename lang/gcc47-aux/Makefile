@@ -6,8 +6,7 @@ PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
+		GCC/releases/gcc-${GCC_VERSION}
 DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 
 MAINTAINER=	marino@FreeBSD.org

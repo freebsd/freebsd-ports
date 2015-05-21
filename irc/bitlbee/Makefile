@@ -4,8 +4,7 @@ PORTNAME=	bitlbee
 PORTVERSION=	3.4
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brix
+		LOCAL/brix
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	IRC to other chat networks gateway
@@ -87,7 +86,6 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bitlbee
 .if ${PORT_OPTIONS:MSKYPE}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/skyped
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \

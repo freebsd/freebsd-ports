@@ -3,11 +3,11 @@
 
 PORTNAME=	Mozilla-PublicSuffix
 PORTVERSION=	0.1.19
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List

@@ -12,6 +12,8 @@ COMMENT=	Convenient command and access tool
 LICENSE=	GPLv3
 
 BROKEN=		Uses unknown GNOME component pygnomedesktop
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=	2015-06-02
 
 BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		xml2po:${PORTSDIR}/textproc/gnome-doc-utils \

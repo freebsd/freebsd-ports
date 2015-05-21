@@ -7,8 +7,7 @@ PORTREVISION=	32
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video

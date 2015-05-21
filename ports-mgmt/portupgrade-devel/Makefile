@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	portupgrade
-PORTVERSION=	20141006
-PORTREVISION=	2
+PORTVERSION=	20150514
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
-		http://mirror.shatow.net/freebsd/pkgtools/
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		LOCAL/bdrewery/${PORTNAME}/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	bdrewery@FreeBSD.org
@@ -21,8 +22,7 @@ USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_PROJECT=	portupgrade
-GH_TAGNAME=	2161660
+GH_TAGNAME=	2.4.13-7-g47dfa22
 
 DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes

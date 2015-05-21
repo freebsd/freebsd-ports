@@ -5,8 +5,7 @@ PORTNAME=	morse
 PORTVERSION=	2.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.catb.org/~esr/morse/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Morse Code Trainer

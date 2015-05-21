@@ -2,21 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTVERSION=	1.4.4
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	WAP/SMS gateway
+
+LICENSE=	The_Kannel_Software_License
+LICENSE_NAME=	The Kannel Software License, Version 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		tar:bzip2 gmake
+USERS=		kannel
+GROUPS=		kannel
+
+USES=		tar:bzip2 gmake bison
+USE_GCC=	yes
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}_bearerbox ${PORTNAME}_smsbox ${PORTNAME}_wapbox
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
 		--enable-pcre=yes --enable-docs=no --with-malloc=native \
@@ -42,11 +51,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gw/${filename} \
 		${STAGEDIR}${PREFIX}/etc/${filename}.sample
 .endfor
-.for filename in mtbatch seewbmp wmlsc wmlsdasm
+.for filename in mtbatch seewbmp wmlsc wmlsdasm decode_emimsg
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${filename}
 .endfor
 .for filename in bearerbox run_kannel_box smsbox wapbox
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${filename}
 .endfor
+	@${MKDIR} ${STAGEDIR}/var/log/kannel
+	@${MKDIR} ${STAGEDIR}/var/run/kannel
 
 .include <bsd.port.mk>

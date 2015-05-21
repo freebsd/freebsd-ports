@@ -1,4 +1,5 @@
 # $FreeBSD$
+# pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
@@ -58,7 +59,7 @@ LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
-GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
+GOST_DESC=		Enable GOST ciphers, needs SSL (see help on 8 and 9)
 PYTHON_DESC=		Build with Python utilities
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}

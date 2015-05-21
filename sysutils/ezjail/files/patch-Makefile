@@ -1,0 +1,14 @@
+--- Makefile.orig	2015-05-18 17:08:50 UTC
++++ Makefile
+@@ -9,10 +9,10 @@ all:
+ 
+ install:
+ 	mkdir -p ${DST}/etc/ezjail/ ${DST}/man/man5/ ${DST}/man/man7 ${DST}/man/man8 ${DST}/etc/rc.d/ ${DST}/bin/ ${DST}/share/examples/ezjail ${DST}/share/zsh/site-functions
+-	cp ezjail.conf.sample ${DST}/etc/
+ 	cp -R examples/example ${DST}/share/examples/ezjail/
+ 	cp -R examples/nullmailer-example ${DST}/share/examples/ezjail/
+ 	cp -R share/zsh/site-functions/ ${DST}/share/zsh/site-functions/
++	sed s:EZJAIL_PREFIX:${PREFIX}: ezjail.conf.sample > ${DST}/etc/ezjail.conf.sample
+ 	sed s:EZJAIL_PREFIX:${PREFIX}: ezjail.sh > ${DST}/etc/rc.d/ezjail
+ 	sed s:EZJAIL_PREFIX:${PREFIX}: ezjail-admin > ${DST}/bin/ezjail-admin
+ 	sed s:EZJAIL_PREFIX:${PREFIX}: man8/ezjail-admin.8 > ${DST}/man/man8/ezjail-admin.8

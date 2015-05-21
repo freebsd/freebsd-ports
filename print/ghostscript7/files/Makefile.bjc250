@@ -2,8 +2,7 @@
 # BJC250 - additional driver for Canon BJC-210/240/250/265/1000
 # http://bjc250gs.sourceforge.net/
 
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:bjc250/}
-MASTER_SITE_SUBDIR+=	bjc250gs/:bjc250
+MASTER_SITES+=	SOURCEFORGE/bjc250gs/:bjc250
 DISTFILES+=	gs7.05-bjc250-v0.756.diff.gz:bjc250
 EXTRADEVMKFILE+=	${FILESDIR}/bjc250.contrib.mak
 

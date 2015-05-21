@@ -4,8 +4,7 @@
 PORTNAME=	jgroups
 PORTVERSION=	2.12.0
 CATEGORIES=	net java
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ale
+MASTER_SITES=	LOCAL/ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java toolkit for reliable multicast communication

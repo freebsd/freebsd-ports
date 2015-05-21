@@ -173,6 +173,7 @@
     SUBDIR += hackbot
     SUBDIR += hamachi
     SUBDIR += heimdal
+    SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += honggfuzz
@@ -241,6 +242,7 @@
     SUBDIR += john
     SUBDIR += kc
     SUBDIR += kedpm
+    SUBDIR += keepass
     SUBDIR += keepassx
     SUBDIR += keepassx2
     SUBDIR += keybase
@@ -1022,6 +1024,7 @@
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tlswrap
+    SUBDIR += tmux-cssh
     SUBDIR += tor
     SUBDIR += tor-devel
     SUBDIR += tpm-tools

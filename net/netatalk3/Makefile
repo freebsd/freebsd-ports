@@ -7,7 +7,6 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
-#MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -156,6 +155,5 @@ post-install:
 		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/afp.conf.dist ${STAGEDIR}${PREFIX}/etc/afp.conf
 	[ -f ${STAGEDIR}${PREFIX}/etc/extmap.conf ] || \
 		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/extmap.conf.dist ${STAGEDIR}${PREFIX}/etc/extmap.conf
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

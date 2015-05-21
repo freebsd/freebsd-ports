@@ -6,8 +6,7 @@ PORTVERSION=	201108.r1
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brix
+		LOCAL/brix
 DISTNAME=	spectools-2011-08-R1
 
 MAINTAINER=	brix@FreeBSD.org
@@ -65,6 +64,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}/${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

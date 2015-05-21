@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
+DISTNAME=	${PORTNAME}c-${PORTVERSION}
 DISTFILES=	${RUST_SOURCE}:src \
 		${RUST_BOOT}:bootstrap
 EXTRACT_ONLY=	${RUST_SOURCE}
@@ -23,9 +23,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE \
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
+RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2014-10-04-749ff5e-freebsd-x86_64-f39d94487d29b3d48217b1295ad2cda8c941e694
+RUST_BOOT_SIG=	2015-03-27-5520801-freebsd-x86_64-0910bbad35e213f679d0433884fd51398eb3bc8d
 
 USES=		gmake perl5 python:2
 HAS_CONFIGURE=	yes
@@ -59,8 +59,12 @@ post-extract:
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
 
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 	@${STRIP_CMD} `${GREP} -v -e '^@dir' -e '^man' -e 'rlib$$' \
-		-e '^.*\.a$$' ${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:'`
+		-e '^.*\.a$$' -e '^.*\.py$$' -e '^%' -e '^.*/rust-gdb$$' \
+		-e '^.*rustlib/components$$' -e '^.*/rust-installer-version$$' \
+		${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:'`
 
 .include <bsd.port.post.mk>

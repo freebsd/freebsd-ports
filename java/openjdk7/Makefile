@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MIN
 		http://icedtea.classpath.org/download/drops/:jaxws \
 		https://java.net/downloads/jax-ws/JDK7/:jaf \
 		http://icedtea.classpath.org/download/drops/:jaf \
-		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
+		APACHE/ant/binaries/:ant
 DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
 EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
