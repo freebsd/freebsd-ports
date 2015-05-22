@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Collection of Rack middleware to protect against opportunistic attack
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
