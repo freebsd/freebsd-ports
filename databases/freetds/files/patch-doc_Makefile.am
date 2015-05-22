@@ -1,6 +1,6 @@
---- doc/Makefile.am.orig	2015-05-10 18:47:04.571197742 +0600
-+++ doc/Makefile.am	2015-05-10 18:47:22.212197672 +0600
-@@ -8,7 +8,7 @@
+--- doc/Makefile.am.orig	2015-01-29 00:40:17 UTC
++++ doc/Makefile.am
+@@ -8,7 +8,7 @@ SHELL = /bin/sh
  TXT2MAN = $(srcdir)/txt2man
  DOCDIR = doc/freetds-$(VERSION)
  PRODUCT = FreeTDS
