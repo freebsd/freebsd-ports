@@ -12,6 +12,7 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	\
