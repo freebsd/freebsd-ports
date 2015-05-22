@@ -1189,11 +1189,12 @@ Notes:
       <cvename>CVE-2015-2783</cvename>
       <cvename>CVE-2015-1351</cvename>
       <cvename>CVE-2015-1352</cvename>
-      <freebsdpr>ports/198739</freebsdpr>
+      <freebsdpr>ports/199585</freebsdpr>
     </references>
     <dates>
       <discovery>2015-04-16</discovery>
       <entry>2015-04-25</entry>
+      <modified>2015-05-22</modified>
     </dates>
   </vuln>
 
