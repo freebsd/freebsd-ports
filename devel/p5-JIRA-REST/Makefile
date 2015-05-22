@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	JIRA-REST
-PORTVERSION=	0.010
+PORTVERSION=	0.011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Extended interface to JIRA's REST API
+COMMENT=	Extended interface to JIRA REST API
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Util>=0:${PORTSDIR}/devel/p5-Data-Util \
 		p5-HTML-TreeBuilder-LibXML>=0:${PORTSDIR}/www/p5-HTML-TreeBuilder-LibXML \
