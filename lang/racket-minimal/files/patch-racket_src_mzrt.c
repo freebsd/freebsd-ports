@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- racket/src/mzrt.c.orig
 +++ racket/src/mzrt.c
 @@ -267,7 +267,7 @@

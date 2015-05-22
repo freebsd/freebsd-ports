@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- build/unix/Makefile.orig
 +++ build/unix/Makefile
 @@ -1,13 +1,15 @@

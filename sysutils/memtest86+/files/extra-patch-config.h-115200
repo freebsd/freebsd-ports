@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- config.h.orig
 +++ config.h
 @@ -13,13 +13,13 @@

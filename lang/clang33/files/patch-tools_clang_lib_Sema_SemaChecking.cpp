@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
 +++ tools/clang/lib/Sema/SemaChecking.cpp
 @@ -1511,6 +1511,39 @@

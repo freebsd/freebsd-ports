@@ -1,9 +1,8 @@
 --- Makefile.inc.orig	2008-12-12 15:10:18.000000000 +0100
 +++ Makefile.inc	2008-12-12 15:12:13.000000000 +0100
-@@ -1,26 +1,27 @@
+@@ -1,26 +1,26 @@
 -# ARPACK++ v1.2 2/18/2000
 +# ARPACK++ v1.2 2/20/2000
-+# $FreeBSD$
  # c++ interface to ARPACK code.
  # This file contains some definitions used to compile arpack++ examples
 -# with the g++ compiler under Sun Solaris.

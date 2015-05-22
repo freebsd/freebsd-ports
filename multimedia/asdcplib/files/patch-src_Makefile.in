@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/Makefile.in.orig
 +++ src/Makefile.in
 @@ -480,7 +480,7 @@

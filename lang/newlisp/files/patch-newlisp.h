@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- newlisp.h.orig
 +++ newlisp.h
 @@ -36,6 +36,10 @@

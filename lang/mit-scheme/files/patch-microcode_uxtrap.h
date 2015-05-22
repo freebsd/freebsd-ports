@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- microcode/uxtrap.h.orig
 +++ microcode/uxtrap.h
 @@ -413,6 +413,14 @@

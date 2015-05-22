@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/glyph.h.orig	Sat Nov 30 02:01:40 2002
 +++ src/glyph.h	Sat Nov 30 02:06:16 2002
 @@ -20,7 +20,7 @@

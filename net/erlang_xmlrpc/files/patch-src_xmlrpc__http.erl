@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/xmlrpc_http.erl.orig	Wed Apr 23 21:06:45 2003
 +++ src/xmlrpc_http.erl	Fri May 23 11:59:38 2003
 @@ -142,7 +142,14 @@

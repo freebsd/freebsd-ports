@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/rpcSource.c
 +++ src/rpcSource.c
 @@ -61,7 +61,7 @@

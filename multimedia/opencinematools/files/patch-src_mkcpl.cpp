@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/mkcpl.cpp.orig
 +++ src/mkcpl.cpp
 @@ -589,7 +589,7 @@

@@ -1,4 +1,3 @@
-$FreeBSD$
 diff -ur unix/shapeUnixImpl.c unix/shapeUnixImpl.c.new
 --- unix/shapeUnixImpl.c	Mon Sep 11 16:27:28 2000
 +++ unix/shapeUnixImpl.c	Sat Mar 13 11:25:54 2004

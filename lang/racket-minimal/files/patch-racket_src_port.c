@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- racket/src/port.c.orig
 +++ racket/src/port.c
 @@ -10996,7 +10996,7 @@

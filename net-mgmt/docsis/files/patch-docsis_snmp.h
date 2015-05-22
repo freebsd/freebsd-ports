@@ -1,4 +1,3 @@
-# $FreeBSD$
 --- src/docsis_snmp.h.orig	Wed Mar 17 08:01:37 2004
 +++ src/docsis_snmp.h	Sun Jun 10 18:27:16 2007
 @@ -24,11 +24,19 @@

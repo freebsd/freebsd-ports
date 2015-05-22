@@ -1,4 +1,3 @@
-$FreeBSD$
 diff -ur unix/configure unix/configure.new
 --- unix/configure	Thu Sep 14 12:15:35 2000
 +++ unix/configure.new	Sat Mar 13 11:15:06 2004

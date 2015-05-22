@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- erts/etc/unix/run_erl.c.orig
 +++ erts/etc/unix/run_erl.c
 @@ -69,9 +69,6 @@

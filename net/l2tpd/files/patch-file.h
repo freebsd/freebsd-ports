@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- file.h.orig	Wed Apr 10 23:09:33 2002
 +++ file.h	Wed Apr 16 16:07:19 2003
 @@ -49,10 +49,10 @@

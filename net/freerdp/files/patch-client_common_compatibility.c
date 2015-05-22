@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- client/common/compatibility.c.orig
 +++ client/common/compatibility.c
 @@ -515,7 +515,7 @@

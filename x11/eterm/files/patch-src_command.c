@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/command.c.orig
 +++ src/command.c
 @@ -1561,7 +1561,7 @@
