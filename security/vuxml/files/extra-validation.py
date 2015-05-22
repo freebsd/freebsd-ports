@@ -5,7 +5,11 @@ import datetime
 import xml.etree.ElementTree as ET
 import sys
 
-tree = ET.parse('vuln.xml')
+if len(sys.argv) != 2:
+    print "Usage: %s vuln.xml" % (sys.argv[0])
+    sys.exit(1)
+
+tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
 namespace = "{http://www.vuxml.org/apps/vuxml-1}"
