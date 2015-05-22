@@ -1,6 +1,6 @@
---- gsoap/wsdl/Makefile.in.orig	2014-10-09 00:09:14.631256099 +0600
-+++ gsoap/wsdl/Makefile.in	2014-10-09 00:09:33.119255143 +0600
-@@ -303,7 +303,7 @@
+--- gsoap/wsdl/Makefile.in.orig	2015-05-22 05:52:33 UTC
++++ gsoap/wsdl/Makefile.in
+@@ -303,7 +303,7 @@ SOAP_FLAGS = -SC -pwsdl -I$(srcdir) -I$(
  BUILT_SOURCES = $(SOAP_CPP_SRC)
  wsdl2h_CFLAGS = $(C_DEBUG_FLAGS) $(WSDL2H_EXTRA_FLAGS)
  wsdl2h_CXXFLAGS = $(C_DEBUG_FLAGS) $(WSDL2H_EXTRA_FLAGS) $(WSDL2H_IMPORTPATH)
