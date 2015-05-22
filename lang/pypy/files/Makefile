@@ -1,5 +1,5 @@
 # Build Makefile for lang/pypy
-# $FreeBSD: head/lang/pypy/files/Makefile 372531 2014-11-13 17:33:29Z dbn $
+# $FreeBSD$
 
 # Required environment variables
 # - DISTVERSION

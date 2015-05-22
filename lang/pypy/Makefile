@@ -1,5 +1,5 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
-# $FreeBSD: head/lang/pypy/Makefile 377034 2015-01-14 18:28:28Z dbn $
+# $FreeBSD$
 
 PORTNAME=	pypy
 DISTVERSION=	2.5.1

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: head/lang/pypy/files/use.pypy 324198 2013-08-03 16:18:49Z dbn $
+# $FreeBSD$
 
 PREFIX=%%PREFIX%%
 PYPY_NAMES="%%PYPY_NAMES%%"
