@@ -1,25 +1,13 @@
---- Makefile.in.orig	2015-02-09 14:46:54.000000000 -0500
-+++ Makefile.in	2015-02-10 10:46:38.752897727 -0500
-@@ -61,12 +61,16 @@
- 
- .PHONY: install
+--- Makefile.in.orig	2015-05-22 17:14:41 UTC
++++ Makefile.in
+@@ -65,8 +65,8 @@ strip: $(PRPL_LIBNAME)
  install: $(PRPL_LIBNAME)
--	mkdir -p $(DESTDIR)/etc/telegram-purple
--	install -Dm 0755 $(PRPL_LIBNAME) $(DESTDIR)$(PLUGIN_DIR_PURPLE)/$(PRPL_NAME)
--	install -Dm 0644 tg-server.pub $(DESTDIR)/etc/telegram-purple/server.pub
--	install -Dm 0644 imgs/telegram16.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/16/telegram.png
--	install -Dm 0644 imgs/telegram22.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/22/telegram.png
--	install -Dm 0644 imgs/telegram48.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/48/telegram.png
-+	mkdir -p $(DESTDIR)$(PREFIX)/etc/telegram-purple
-+	mkdir -p $(DESTDIR)$(PLUGIN_DIR_PURPLE)
-+	mkdir -p $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/16
-+	mkdir -p $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/22
-+	mkdir -p $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/48
-+	install -m 0755 $(PRPL_LIBNAME) $(DESTDIR)$(PLUGIN_DIR_PURPLE)/$(PRPL_NAME)
-+	install -m 0644 tg-server.pub $(DESTDIR)$(PREFIX)/etc/telegram-purple/server.pub
-+	install -m 0644 imgs/telegram16.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/16/telegram.png
-+	install -m 0644 imgs/telegram22.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/22/telegram.png
-+	install -m 0644 imgs/telegram48.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/48/telegram.png
- 
- .PHONY: local_install
- local_install:
+ 	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(PLUGIN_DIR_PURPLE)
+ 	install -m $(FILE_PERM) $(PRPL_LIBNAME) $(DESTDIR)$(PLUGIN_DIR_PURPLE)/$(PRPL_NAME)
+-	mkdir -m $(DIR_PERM) -p $(DESTDIR)/etc/telegram-purple
+-	install -m $(FILE_PERM) tg-server.pub $(DESTDIR)/etc/telegram-purple/server.pub
++	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(PREFIX)/etc/telegram-purple
++	install -m $(FILE_PERM) tg-server.pub $(DESTDIR)$(PREFIX)/etc/telegram-purple/server.pub
+ 	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/16
+ 	install -m $(FILE_PERM) imgs/telegram16.png $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/16/telegram.png
+ 	mkdir -m $(DIR_PERM) -p $(DESTDIR)$(DATA_ROOT_DIR_PURPLE)/pixmaps/pidgin/protocols/22
