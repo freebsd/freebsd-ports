@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- make/lib.mak
 +++ make/lib.mak
 @@ -130,12 +127,18 @@

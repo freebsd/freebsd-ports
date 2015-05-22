@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Add ${JAVA_HOME}/lib/tools.jar to the CLASSPATH.
 
 NOTE: JAVA_HOME is overridable but the default value is selected by bsd.java.mk

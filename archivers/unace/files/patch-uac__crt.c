@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- uac_crt.c.orig
 +++ uac_crt.c
 @@ -33,12 +33,15 @@

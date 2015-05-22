@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/smpp_param.hrl.orig
 +++ src/smpp_param.hrl
 @@ -159,7 +159,7 @@

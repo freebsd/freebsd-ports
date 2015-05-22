@@ -1,5 +1,4 @@
 
-$FreeBSD$
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-al,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- shuffle.c.orig	Tue Jan 12 19:59:38 1993

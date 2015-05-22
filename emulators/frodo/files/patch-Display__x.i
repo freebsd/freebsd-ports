@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Display_x.i.orig	Sat Nov 30 01:11:07 2002
 +++ Display_x.i	Sat Nov 30 01:11:41 2002
 @@ -525,7 +525,7 @@

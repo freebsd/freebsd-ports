@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Shape.xs.orig	Tue Mar  4 14:18:00 2003
 +++ Shape.xs	Mon Aug 23 16:42:18 2004
 @@ -2,7 +2,7 @@

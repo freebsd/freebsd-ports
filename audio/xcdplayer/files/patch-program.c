@@ -1,5 +1,4 @@
 
-$FreeBSD$
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ak,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- program.c.orig	Tue Jan 12 19:59:49 1993

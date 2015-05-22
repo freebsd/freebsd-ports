@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- opening.c.orig
 +++ opening.c
 @@ -95,10 +95,10 @@

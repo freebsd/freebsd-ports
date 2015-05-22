@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/manual.py.orig
 +++ src/manual.py
 @@ -69,7 +69,7 @@

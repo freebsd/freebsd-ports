@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/Padre/Wx.pm.orig
 +++ lib/Padre/Wx.pm
 @@ -67,6 +67,7 @@

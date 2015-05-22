@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- GNUmakefile.orig
 +++ GNUmakefile
 @@ -58,10 +58,10 @@

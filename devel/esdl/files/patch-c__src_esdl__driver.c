@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- c_src/esdl_driver.c.orig
 +++ c_src/esdl_driver.c
 @@ -34,11 +34,16 @@

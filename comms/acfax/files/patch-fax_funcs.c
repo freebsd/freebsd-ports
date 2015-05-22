@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- fax_funcs.c.orig	Sat Jun  8 00:39:02 2002
 +++ fax_funcs.c	Sat Jun  8 00:39:08 2002
 @@ -37,6 +37,8 @@

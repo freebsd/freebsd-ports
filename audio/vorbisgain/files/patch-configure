@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- configure.orig	Mon Oct 13 17:05:18 2003
 +++ configure	Mon Oct 13 17:05:36 2003
 @@ -2450,7 +2450,7 @@

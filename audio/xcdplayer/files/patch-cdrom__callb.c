@@ -1,5 +1,4 @@
 
-$FreeBSD$
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ae,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- cdrom_callb.c.orig	Tue Jan 12 19:59:48 1993

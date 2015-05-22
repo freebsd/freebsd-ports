@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- top_setup.c.orig	Tue Jan 12 19:59:40 1993
 +++ top_setup.c	Mon Aug 25 00:38:35 2003
 @@ -26,18 +26,8 @@

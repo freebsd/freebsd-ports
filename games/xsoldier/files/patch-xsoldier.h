@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- xsoldier.h.orig
 +++ xsoldier.h
 @@ -33,8 +33,8 @@

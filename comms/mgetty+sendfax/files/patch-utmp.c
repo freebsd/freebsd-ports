@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- utmp.c.orig
 +++ utmp.c
 @@ -1,4 +1,4 @@

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/phpsh.py.orig
 +++ src/phpsh.py
 @@ -274,7 +274,7 @@
