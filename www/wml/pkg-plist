@@ -177,3 +177,4 @@ man/man7/wml_std_wai10.7.gz
 man/man7/wml_std_xhtml10.7.gz
 man/man7/wml_tags.7.gz
 man/man7/wml_tutorial.7.gz
+@dir lib/wml/perl
