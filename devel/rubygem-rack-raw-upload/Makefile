@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Converts mimetype of application/octet-stream into normal form input
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json
 
 USE_RUBY=	yes
