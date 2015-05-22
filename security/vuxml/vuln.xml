@@ -57,6 +57,59 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc38cd83-00b3-11e5-8ebd-0026551a22dc">
+    <topic>PostgreSQL -- minor security problems.</topic>
+    <affects>
+      <package>
+	<name>postgresql90-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1587/">
+	  <p>
+		This update fixes three security vulnerabilities reported in
+		PostgreSQL over the past few months. Nether of these issues is seen as
+		particularly urgent. However, users should examine them in case their
+		installations are vulnerable:.
+	  </p>
+	  <ul>
+	    <li>CVE-2015-3165 Double "free" after authentication timeout.</li>
+	    <li>CVE-2015-3166 Unanticipated errors from the standard library.</li>
+	    <li>CVE-2015-3167 pgcrypto has multiple error messages for decryption with an incorrect key.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3165</cvename>
+      <cvename>CVE-2015-3166</cvename>
+      <cvename>CVE-2015-3167</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-10</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d0034536-ff24-11e4-a072-d050996490d0">
     <topic>proftpd -- arbitrary code execution vulnerability with chroot</topic>
     <affects>
