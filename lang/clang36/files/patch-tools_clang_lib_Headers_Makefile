@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Headers/Makefile.orig
 +++ tools/clang/lib/Headers/Makefile
 @@ -19,7 +19,7 @@

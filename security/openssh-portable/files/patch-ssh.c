@@ -1,5 +1,3 @@
-$FreeBSD$
-
 r99054 | des | 2002-06-29 05:57:53 -0500 (Sat, 29 Jun 2002) | 4 lines
 Changed paths:
    M /head/crypto/openssh/ssh.c

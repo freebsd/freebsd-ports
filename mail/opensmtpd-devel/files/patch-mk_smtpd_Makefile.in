@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- mk/smtpd/Makefile.in.orig
 +++ mk/smtpd/Makefile.in
 @@ -1796,11 +1796,7 @@

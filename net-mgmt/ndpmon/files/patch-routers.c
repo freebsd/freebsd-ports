@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- routers.c.orig
 +++ routers.c
 @@ -261,9 +261,11 @@

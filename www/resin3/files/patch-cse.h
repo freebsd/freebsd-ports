@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- modules/c/src/common/cse.h.orig	Thu May 12 12:54:14 2005
 +++ modules/c/src/common/cse.h	Thu May 12 12:55:30 2005
 @@ -339,6 +339,9 @@

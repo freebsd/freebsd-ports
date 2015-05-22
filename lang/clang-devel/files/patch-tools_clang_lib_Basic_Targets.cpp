@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Basic/Targets.cpp.orig
 +++ tools/clang/lib/Basic/Targets.cpp
 @@ -5723,6 +5723,7 @@

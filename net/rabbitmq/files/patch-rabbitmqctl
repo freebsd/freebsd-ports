@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- scripts/rabbitmqctl.orig
 +++ scripts/rabbitmqctl
 @@ -27,6 +27,7 @@

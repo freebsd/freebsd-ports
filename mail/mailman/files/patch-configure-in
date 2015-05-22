@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 Mailman tests for existence of users during configure -- unfortunately
 this creates a problem; we create the users just before install.
 

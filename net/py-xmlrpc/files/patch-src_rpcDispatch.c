@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/rpcDispatch.c
 +++ src/rpcDispatch.c
 @@ -68,7 +68,7 @@

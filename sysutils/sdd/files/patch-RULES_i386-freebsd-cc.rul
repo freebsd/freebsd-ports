@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- RULES/i386-freebsd-cc.rul.orig	Sun Jul 21 02:46:53 2002
 +++ RULES/i386-freebsd-cc.rul	Sun Jul 21 02:48:18 2002
 @@ -30,7 +30,7 @@

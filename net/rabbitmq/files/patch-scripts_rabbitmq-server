@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- scripts/rabbitmq-server.orig
 +++ scripts/rabbitmq-server
 @@ -82,6 +82,7 @@

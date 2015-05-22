@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- haup_remote.c.orig
 +++ haup_remote.c
 @@ -38,9 +38,16 @@

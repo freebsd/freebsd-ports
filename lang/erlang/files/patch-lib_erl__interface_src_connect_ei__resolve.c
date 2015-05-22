@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/erl_interface/src/connect/ei_resolve.c.orig
 +++ lib/erl_interface/src/connect/ei_resolve.c
 @@ -621,7 +621,8 @@

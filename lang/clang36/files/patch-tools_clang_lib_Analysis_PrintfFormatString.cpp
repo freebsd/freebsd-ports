@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Analysis/PrintfFormatString.cpp.orig
 +++ tools/clang/lib/Analysis/PrintfFormatString.cpp
 @@ -208,7 +208,7 @@

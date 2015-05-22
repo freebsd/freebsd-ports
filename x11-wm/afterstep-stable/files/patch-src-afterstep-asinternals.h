@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/afterstep/asinternals.h.orig	2014-04-12 12:29:08.000000000 -0700
 +++ src/afterstep/asinternals.h	2014-04-12 12:28:35.000000000 -0700
 @@ -689,8 +689,8 @@

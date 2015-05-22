@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterBase/asvector.c.orig	2013-05-01 06:34:11.000000000 -0700
 +++ libAfterBase/asvector.c	2014-04-12 12:22:48.000000000 -0700
 @@ -126,7 +126,7 @@

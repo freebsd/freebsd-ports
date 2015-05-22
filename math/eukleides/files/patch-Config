@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Config.orig
 +++ Config
 @@ -2,13 +2,13 @@

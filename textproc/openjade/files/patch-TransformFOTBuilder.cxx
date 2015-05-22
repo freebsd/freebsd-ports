@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- jade/TransformFOTBuilder.cxx.orig	2011-09-24 14:20:28.000000000 +0000
 +++ jade/TransformFOTBuilder.cxx	2011-09-24 14:22:32.000000000 +0000
 @@ -41,6 +41,7 @@

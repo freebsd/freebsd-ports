@@ -1,4 +1,3 @@
-$FreeBSD$
 --- tools/ant/bin/ant	Tue Apr 10 18:18:14 2007
 +++ tools/ant/bin/ant.port	Mon Apr 16 14:27:19 2007
 @@ -78,6 +78,7 @@

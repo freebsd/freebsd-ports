@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/init/initmodule.c.orig
 +++ src/init/initmodule.c
 @@ -83,7 +83,7 @@
