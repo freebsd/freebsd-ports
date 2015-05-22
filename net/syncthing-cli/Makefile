@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-cli
 PORTVERSION=	0.1.0.2015050601
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GH \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -22,7 +22,7 @@ GH_ACCOUNT=	syncthing
 GH_PROJECT=	syncthing-cli
 GH_TAGNAME=	51ec7bb30c3ccb92a3c4616ef00be3b3db739afe
 
-SYNCTHING_VER=	0.11.4
+SYNCTHING_VER=	0.11.5
 
 PLIST_FILES=	bin/syncthing-cli
 
