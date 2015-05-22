@@ -12,6 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Amazon's Web Services
 
+DEPRECATED=	Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
+EXPIRATION_DATE=2015-06-30
+
 CONFLICTS=	ruby-aws-[0-9]*
 
 USE_RUBY=	yes
