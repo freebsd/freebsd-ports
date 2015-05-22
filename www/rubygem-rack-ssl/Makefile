@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	rack-ssl
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack middleware to force SSL/TLS
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
