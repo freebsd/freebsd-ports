@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack middleware to enable HTTP caching
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-rack>=0.4:${PORTSDIR}/www/rubygem-rack
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
