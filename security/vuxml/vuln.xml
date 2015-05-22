@@ -57,6 +57,106 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a88e3ed-00d3-11e5-a072-d050996490d0">
+    <topic>pcre -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><lt>8.37</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.41</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.25</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PCRE development team reports:</p>
+	<blockquote cite="http://www.pcre.org/original/changelog.txt">
+	  <p>A pattern such as "((?2){0,1999}())?", which has a group
+	    containing a forward reference repeated a large (but limited)
+	    number of times within a repeated outer group that has a zero
+	    minimum quantifier, caused incorrect code to be compiled,
+	    leading to the error "internal error: previously-checked
+	    referenced subpattern not found" when an incorrect memory
+	    address was read. This bug was reported as "heap overflow",
+	    discovered by Kai Lu of Fortinet's FortiGuard Labs and given
+	    the CVE number CVE-2015-2325.</p>
+	  <p>A pattern such as "((?+1)(\1))/" containing a forward
+	    reference subroutine call within a group that also contained
+	    a recursive back reference caused incorrect code to be
+	    compiled. This bug was reported as "heap overflow",
+	    discovered by Kai Lu of Fortinet's FortiGuard Labs,
+	    and given the CVE number CVE-2015-2326.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2325</cvename>
+      <cvename>CVE-2015-2326</cvename>
+      <url>http://www.pcre.org/original/changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-04-28</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="31de2e13-00d2-11e5-a072-d050996490d0">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.41</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.25</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP development team reports:</p>
+	<blockquote cite="https://php.net/ChangeLog-5.php#5.6.9">
+	  <p>Fixed bug #69364 (PHP Multipart/form-data remote DoS
+	    Vulnerability). (CVE-2015-4024)</p>
+	  <p>Fixed bug #69418 (CVE-2006-7243 fix regressions in
+	    5.4+). (CVE-2015-4025)</p>
+	  <p>Fixed bug #69545 (Integer overflow in ftp_genlist()
+	    resulting in heap overflow). (CVE-2015-4022)</p>
+	  <p>Fixed bug #68598 (pcntl_exec() should not allow null
+	    char). (CVE-2015-4026)</p>
+	  <p>Fixed bug #69453 (Memory Corruption in phar_parse_tarfile
+	    when entry filename starts with null). (CVE-2015-4021)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4021</cvename>
+      <cvename>CVE-2015-4022</cvename>
+      <cvename>CVE-2015-4024</cvename>
+      <cvename>CVE-2015-4025</cvename>
+      <cvename>CVE-2015-4026</cvename>
+      <url>https://php.net/ChangeLog-5.php#5.6.9</url>
+    </references>
+    <dates>
+      <discovery>2015-05-14</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc38cd83-00b3-11e5-8ebd-0026551a22dc">
     <topic>PostgreSQL -- minor security problems.</topic>
     <affects>
