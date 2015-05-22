@@ -1,4 +1,5 @@
 /* $FreeBSD$ */
+/* $NetBSD: pkgsrc/audio/xcdplayer/files/cdrom_freebsd.c,v 1.6 2005/12/11 20:48:46 joerg Exp $ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *
@@ -22,10 +23,6 @@ static int c;
 # include <sys/param.h>
 # include <sys/stat.h>
 # include <string.h>
-# if __FreeBSD_version >= 500003
-# include <sys/bio.h>
-# endif
-# include <sys/buf.h>
 # include <sys/time.h>
 
 #include <sys/ioctl.h>
@@ -36,8 +33,13 @@ static int c;
 # include "cdrom_freebsd.h"
 # include "app.h"
 
+#ifdef __NetBSD__
+static char     cdrom[] =       "/dev/rcd0d";
+static char     cdrom1[] =      "/dev/rmcd0d";
+#else
 static char     cdrom[] =       "/dev/cd0c";
 static char     cdrom1[] =      "/dev/mcd0c";
+#endif
 
 cdrom_info	cdi;
 char		info_filename[256];
