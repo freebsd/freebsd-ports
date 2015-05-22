@@ -5,7 +5,7 @@
    BoolVariable('crossmingw', 'Set to 1 for crosscompile with mingw', 0)
  )
 -env = Environment(options = opts)
-+env = Environment(options = opts, CC = Split(os.environ['CC']))
++env = Environment(options = opts, ENV=os.environ, CC = Split(os.environ['CC']))
  Help(opts.GenerateHelpText(env))
  
  pkg_flags="--cflags --libs"
