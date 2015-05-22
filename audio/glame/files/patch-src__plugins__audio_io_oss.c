@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/plugins/audio_io_oss.c	2003/07/01 12:26:28	1.1
 +++ src/plugins/audio_io_oss.c	2003/07/01 12:26:41
 @@ -26,9 +26,9 @@

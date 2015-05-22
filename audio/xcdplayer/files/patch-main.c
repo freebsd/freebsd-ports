@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- main.c.orig	Tue Jan 12 19:59:36 1993
 +++ main.c	Wed May 30 19:19:53 2007
 @@ -23,12 +23,15 @@

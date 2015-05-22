@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- network.c.orig
 +++ network.c
 @@ -225,7 +225,8 @@

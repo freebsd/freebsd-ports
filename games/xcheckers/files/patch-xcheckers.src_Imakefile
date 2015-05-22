@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- xcheckers.src/Imakefile.orig	Sun Dec  9 19:43:13 2001
 +++ xcheckers.src/Imakefile	Wed Jul 30 20:46:21 2003
 @@ -3,7 +3,6 @@

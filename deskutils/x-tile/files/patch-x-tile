@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Fix ctypes warning, by Ruslan Mahmatkhanov <cvs-src@yandex.ru>
 
 --- x-tile.orig	2011-07-04 01:41:29.000000000 +0400

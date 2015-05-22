@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- readxpm.C.orig	Sun Jul  7 01:34:47 2002
 +++ readxpm.C	Thu Sep 15 13:56:38 2005
 @@ -12,7 +12,7 @@

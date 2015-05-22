@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- sys/dev/virtio/virtio.h.orig	2012-08-22 09:25:24.732287379 +0900
 +++ sys/dev/virtio/virtio.h	2012-08-22 09:27:32.411327803 +0900
 @@ -150,4 +150,8 @@

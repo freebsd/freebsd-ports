@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- elisp/erl-service.el.orig
 +++ elisp/erl-service.el
 @@ -783,11 +783,11 @@

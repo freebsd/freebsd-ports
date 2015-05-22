@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- povchem.c.orig	Fri Jul 11 11:49:07 2003
 +++ povchem.c	Fri Jul 11 11:59:23 2003
 @@ -482,7 +482,7 @@

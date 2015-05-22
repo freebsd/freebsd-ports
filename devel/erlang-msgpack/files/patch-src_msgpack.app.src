@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/msgpack.app.src.orig
 +++ src/msgpack.app.src
 @@ -1,6 +1,6 @@

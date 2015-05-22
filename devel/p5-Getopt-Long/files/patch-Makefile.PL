@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- Makefile.PL.orig	Fri May 24 17:51:36 2002
 +++ Makefile.PL	Fri May 24 17:52:52 2002
 @@ -5,6 +5,7 @@

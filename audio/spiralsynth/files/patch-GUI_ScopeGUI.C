@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- GUI/ScopeGUI.C.orig	Sun Nov 26 15:52:39 2000
 +++ GUI/ScopeGUI.C	Mon Feb  9 12:14:00 2004
 @@ -22,8 +22,8 @@

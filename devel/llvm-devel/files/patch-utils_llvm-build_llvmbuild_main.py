@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- utils/llvm-build/llvmbuild/main.py.orig
 +++ utils/llvm-build/llvmbuild/main.py
 @@ -660,7 +660,17 @@

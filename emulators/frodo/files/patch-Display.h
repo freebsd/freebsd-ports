@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Display.h.orig	Sat Nov 30 01:14:14 2002
 +++ Display.h	Sat Nov 30 01:14:37 2002
 @@ -112,7 +112,7 @@

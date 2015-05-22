@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- listener.c.orig
 +++ listener.c
 @@ -189,10 +189,6 @@

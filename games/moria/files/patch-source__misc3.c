@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- source/misc3.c.orig	Fri Jul 22 11:47:30 1994
 +++ source/misc3.c	Sat Oct 16 16:59:14 1999
 @@ -283,7 +283,7 @@

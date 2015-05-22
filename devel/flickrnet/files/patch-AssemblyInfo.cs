@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- AssemblyInfo.cs.orig
 +++ AssemblyInfo.cs
 @@ -61,10 +61,10 @@

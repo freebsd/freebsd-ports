@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- fax/Makefile.orig
 +++ fax/Makefile
 @@ -56,20 +56,16 @@

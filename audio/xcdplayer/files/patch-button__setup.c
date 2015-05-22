@@ -1,5 +1,4 @@
 
-$FreeBSD$
 $NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ad,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- button_setup.c.orig	Tue Jan 12 19:59:47 1993
