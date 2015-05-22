@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.2.21
+PORTVERSION=	3.3.15
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/gnutls/v3.2
+MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -15,6 +15,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle \
 		libtasn1.so:${PORTSDIR}/security/libtasn1
+BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USES=		cpe gmake iconv libtool makeinfo pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
