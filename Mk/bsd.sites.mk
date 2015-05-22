@@ -509,13 +509,6 @@ MASTER_SITE_GENTOO+= \
 #                 possible to do GH_TAGNAME= GIT_HASH to do a snapshot.
 #                 default: ${DISTVERSION}
 #
-# GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
-#                 (man git-describe(1))
-#                 if this is not set, archive corresponding to tag is fetched
-#                 default: not set
-#                 This is a deprecated option. Just set the hash in GH_TAGNAME
-#                 instead.
-#
 .if defined(USE_GITHUB)
 .  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
@@ -526,32 +519,20 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 # comment #15 for explanation as to why and how to deal with it if it breaks.
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
-MASTER_SITE_GITHUB_LEGACY+=	https://codeload.github.com/%SUBDIR%
 
-.  if defined(GH_COMMIT)
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGHL}
-MASTER_SITES+=	GHL
-.    endif
-.  else
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
+.  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
 MASTER_SITES+=	GH
-.    endif
 .  endif
 GH_ACCOUNT?=	${PORTNAME}
 GH_PROJECT?=	${PORTNAME}
-.  if defined(GH_COMMIT)
-# Use the old style for safety for now.
-GH_TAGNAME?=	${DISTVERSION}
-.  else
 # Use full PREFIX/SUFFIX and converted DISTVERSION
 GH_TAGNAME?=	${DISTVERSIONFULL}
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
 # which has happened before.
 _GITHUB_REV=	0
-.    if ${MASTER_SITES:MGH}
+.  if ${MASTER_SITES:MGH}
 DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
-.    endif
 .  endif
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
@@ -1301,7 +1282,6 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
-			GHL:GITHUB_LEGACY \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			RG:RUBYGEMS \
@@ -1320,7 +1300,6 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
-			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GNU:${PORTNAME} \
 			GNUPG:${PORTNAME} \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +25,8 @@ USE_PERL5=	configure
 
 # conflict with pod2html in perl 5.6 or above
 post-patch:
-	${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
-	${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST
-	${RM} ${WRKSRC}/t/pod2html.t
+	@${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST
+	@${RM} ${WRKSRC}/t/pod2html.t
 
 .include <bsd.port.mk>

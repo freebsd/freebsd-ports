@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Hack to disable shared library detection, so configure won't try
 to link with "/usr/local/lib/libiconv.so -static".
 

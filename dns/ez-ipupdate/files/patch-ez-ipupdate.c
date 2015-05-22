@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ez-ipupdate.c.orig
 +++ ez-ipupdate.c
 @@ -798,7 +798,7 @@

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- common/ac/time.h.orig	Fri Nov 29 23:15:13 2002
 +++ common/ac/time.h	Fri Nov 29 23:15:27 2002
 @@ -29,7 +29,7 @@

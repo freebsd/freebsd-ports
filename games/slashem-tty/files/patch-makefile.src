@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- sys/unix/Makefile.src.good	Thu Nov 23 00:24:58 2000
 +++ sys/unix/Makefile.src	Thu Nov 23 00:26:13 2000
 @@ -144,8 +144,8 @@

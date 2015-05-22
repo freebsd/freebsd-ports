@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/audio/au_sun.c.orig
 +++ src/audio/au_sun.c
 @@ -45,6 +45,7 @@

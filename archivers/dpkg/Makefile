@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.25
+PORTVERSION=	1.18.0
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -18,11 +18,9 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake iconv libtool perl5 pkgconfig shebangfix tar:xz
+USES=		cpe gmake iconv libtool perl5 pkgconfig tar:xz
 CPE_VENDOR=	debian
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
-SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
-		dselect/methods/ftp/setup
 
 DPKGDIR?=	/var/db/dpkg
 PLIST_SUB+=	DPKGDIR=${DPKGDIR}

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/addins/MonoDevelop.Autotools/SolutionDeployer.cs.orig
 +++ src/addins/MonoDevelop.Autotools/SolutionDeployer.cs
 @@ -171,7 +171,7 @@

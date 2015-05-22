@@ -1289,6 +1289,7 @@
     SUBDIR += lpc21isp
     SUBDIR += lrmi
     SUBDIR += lua-alien
+    SUBDIR += lua-bitop
     SUBDIR += lua-bitlib
     SUBDIR += lua-cjson
     SUBDIR += lua-gettext
@@ -4028,6 +4029,7 @@
     SUBDIR += py-pytemplate
     SUBDIR += py-pytest
     SUBDIR += py-pytest-runner
+    SUBDIR += py-pytest-timeout
     SUBDIR += py-python-statsd
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytrie

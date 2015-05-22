@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- convert.c.orig	Sun Nov 18 16:44:25 2001
 +++ convert.c	Sun Nov 18 16:44:54 2001
 @@ -28,6 +28,7 @@

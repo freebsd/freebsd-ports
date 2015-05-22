@@ -12,6 +12,6 @@ COMMENT=	Simple Protocol for Independent Computing Environments
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig tar:bzip2
+USES=	gmake pathfix pkgconfig tar:bzip2
 
 .include <bsd.port.mk>

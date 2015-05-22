@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ad,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- button_setup.c.orig	Tue Jan 12 19:59:47 1993
 +++ button_setup.c	Mon Aug 25 00:38:35 2003
@@ -7,7 +7,7 @@ $FreeBSD$
  # include <X11/Xaw/Toggle.h>
  
  # include "cdrom_globs.h"
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
 +# include "cdrom_freebsd.h"
 +#endif
  #ifdef sun

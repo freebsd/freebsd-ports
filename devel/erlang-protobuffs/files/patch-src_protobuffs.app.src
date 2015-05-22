@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/protobuffs.app.src.orig
 +++ src/protobuffs.app.src
 @@ -1,6 +1,6 @@

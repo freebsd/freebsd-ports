@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	amq-protocol
-PORTVERSION=	1.6.0
+PORTVERSION=	1.9.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AMQP serialization library for Ruby
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

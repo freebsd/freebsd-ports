@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Disable debug; runs into cryptic errors on 9+/amd64
 
 --- plugins/plugins.pri.orig	2013-06-04 10:06:48.955586932 -0500

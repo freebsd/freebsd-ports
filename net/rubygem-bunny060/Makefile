@@ -11,6 +11,9 @@ COMMENT=	Another synchronous Ruby AMQP client
 
 RUN_DEPENDS=	rubygem-amq-protocol>=1.6.0:${PORTSDIR}/net/rubygem-amq-protocol
 
+DEPRECATED=	Use net/rubygem-bunny instead
+EXPIRATION_DATE=2015-06-30
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

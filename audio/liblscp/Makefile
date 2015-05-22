@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblscp
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
@@ -11,11 +10,16 @@ MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the LSCP network protocol
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pathfix libtool
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

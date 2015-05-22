@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/color_win.c.orig	Wed Feb 26 01:22:19 2003
 +++ src/color_win.c	Fri May 23 18:26:18 2003
 @@ -579,12 +579,12 @@

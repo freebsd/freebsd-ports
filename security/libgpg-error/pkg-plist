@@ -1,7 +1,6 @@
 bin/gpg-error
 bin/gpg-error-config
 include/gpg-error.h
-info/gpgrt.info
 lib/libgpg-error.so
 lib/libgpg-error.so.0
 lib/libgpg-error.so.0.15.0

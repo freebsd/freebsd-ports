@@ -1,7 +1,7 @@
 --- include/my_tcpd.h.orig	Sun Jan  9 13:33:51 2005
 +++ include/my_tcpd.h	Sun Jan  9 13:41:42 2005
 @@ -6,6 +6,25 @@
-   * $FreeBSD$
+   * $FreeBSD: releng/10.1/contrib/tcp_wrappers/tcpd.h 56977 2000-02-03 10:27:03Z shin $
    */
  
 +#ifndef _TCPWRAPPERS_TCPD_H

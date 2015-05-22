@@ -1,8 +1,8 @@
---- include/tdsodbc.h.orig	2006-02-24 21:14:21.000000000 +0000
+--- include/tdsodbc.h.orig	2015-01-29 00:40:17 UTC
 +++ include/tdsodbc.h
-@@ -31,8 +31,8 @@
- #include <sql.h>
- #include <sqlext.h>
+@@ -30,8 +30,8 @@
+ #include <odbcinst.h>
+ #endif
  #else /* IODBC */
 -#include <isql.h>
 -#include <isqlext.h>

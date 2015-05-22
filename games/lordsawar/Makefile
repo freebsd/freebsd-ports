@@ -29,10 +29,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

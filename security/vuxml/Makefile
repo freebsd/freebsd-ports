@@ -83,7 +83,7 @@ validate: tidy
 		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
 		return 1; \
 	fi
-	${PYTHON_CMD} ${FILESDIR}/extra-validation.py
+	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FILE}
 
 tidy: vuln.xml
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \

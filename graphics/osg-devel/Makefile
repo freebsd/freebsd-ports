@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,15 +29,15 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=117 \
+		OSG_SHLIBVER=118 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
 PORTSCOUT=	limitw:1,odd
 
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA INVENTOR \
-		JASPER LIBLAS LUA NVTT OPENEXR PDF PYTHON QT4 SDL \
-		SVG V8 VNC XINE XRANDR
+		JASPER LIBLAS LUA NVTT OPENEXR PDF QT4 SDL \
+		SVG VNC XINE XRANDR
 OPTIONS_DEFAULT=FREETYPE GIF FFMPEG XRANDR
 
 LIBLAS_DESC=	liblas support
@@ -48,8 +48,6 @@ VNC_DESC=	LibVNCServer support
 SDL_DESC=	Use SDL (joystick support in present3d)
 NVTT_DESC=	Use NVidia texture tools
 LUA_DESC=	Lua script engine support
-V8_DESC=	V8 script engine support
-PYTHON_DESC=	Python script engine support
 
 OPTIONS_SUB=	yes
 
@@ -76,8 +74,6 @@ QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
 QT4_CMAKE_ON=		-DOSG_USE_QT=ON
 QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
 LUA_USES=		lua:52
-V8_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
-PYTHON_USES=		python:2
 
 .include <bsd.port.options.mk>
 
@@ -171,18 +167,6 @@ FORCE_IGNORE+=	NVTT
 FORCE_REQUIRE+=	Lua51
 .else
 FORCE_IGNORE+=	Lua51
-.endif
-
-.if ${PORT_OPTIONS:MV8}
-FORCE_REQUIRE+=	V8
-.else
-FORCE_IGNORE+=	V8
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-FORCE_REQUIRE+=	PythonLibs
-.else
-FORCE_IGNORE+=	PythonLibs
 .endif
 
 # options that affect PKG_CHECK_MODULES

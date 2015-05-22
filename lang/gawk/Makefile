@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-readline=${LOCALBASE} \
 		AWK=${AWK}
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 

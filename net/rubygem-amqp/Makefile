@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
 
-RUN_DEPENDS=	rubygem-amq-client>=0.9.4:${PORTSDIR}/net/rubygem-amq-client \
-		rubygem-amq-protocol>=0.9.4:${PORTSDIR}/net/rubygem-amq-protocol \
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-amq-protocol>=1.9.2:${PORTSDIR}/net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine
 
 USE_RUBY=	yes

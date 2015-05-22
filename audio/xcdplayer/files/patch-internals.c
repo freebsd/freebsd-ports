@@ -1,10 +1,13 @@
+
+$NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ah,v 1.4 2005/12/11 20:48:46 joerg Exp $
+
 --- internals.c.orig	Tue Jan 12 19:59:45 1993
 +++ internals.c	Wed May 30 19:20:48 2007
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
  # include "cdrom_globs.h"
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
 +# include "cdrom_freebsd.h"
 +#endif
  #ifdef sun

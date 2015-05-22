@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ae,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- cdrom_callb.c.orig	Tue Jan 12 19:59:48 1993
 +++ cdrom_callb.c	Mon Aug 25 00:38:35 2003
@@ -7,7 +7,7 @@ $FreeBSD$
  
  # include "debug.h"
  # include "cdrom_globs.h"
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
 +# include "cdrom_freebsd.h"
 +#endif
  #ifdef sun

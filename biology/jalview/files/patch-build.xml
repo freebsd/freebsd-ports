@@ -1,5 +1,3 @@
-$FreeBSD$
-
 This patch removes the webstart support.
 
 --- build.xml.orig	Mon Dec 12 14:57:02 2005

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ./cdplay.h.orig	Mon May 19 15:44:41 2003
 +++ ./cdplay.h	Mon May 19 15:55:12 2003
 @@ -71,8 +71,9 @@

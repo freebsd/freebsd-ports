@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.7.12
+PORTVERSION=	0.7.15
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -42,7 +42,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig tar:xz
 
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
@@ -57,8 +57,8 @@ HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-BROKEN=		Does not build
+.if ${OSVERSION} <= 1000000
+CPPFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
