@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Merb plugin containing view helpers
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-merb-core>=1.1.3:${PORTSDIR}/www/rubygem-merb-core
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
