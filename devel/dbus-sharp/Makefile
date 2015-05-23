@@ -14,6 +14,7 @@ COMMENT=	Mono interface to the D-BUS messaging system
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
 USES=		gmake mono pathfix pkgconfig
 
 .include <bsd.port.options.mk>
