@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
+PORTSCOUT=	skipv:3.441,3.442
+
 USES=		perl5
 USE_PERL5=	configure
 
