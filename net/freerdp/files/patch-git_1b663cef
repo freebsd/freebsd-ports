@@ -55,16 +55,3 @@ Tested with 3.1.0-rc3
 -set(THIRD_PARTY_INCLUDES ${THIRD_PARTY_INCLUDES} PARENT_SCOPE)
 \ No newline at end of file
 +set(THIRD_PARTY_INCLUDES ${THIRD_PARTY_INCLUDES} PARENT_SCOPE)
---- winpr/libwinpr/CMakeLists.txt
-+++ winpr/libwinpr/CMakeLists.txt
-@@ -32,8 +32,8 @@
- file(GLOB FILEPATHS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*/${FILENAME}")
- 
- foreach(FILEPATH ${FILEPATHS})
--	if(${FILEPATH} MATCHES "^([^/]*)//${FILENAME}")
--		string(REGEX REPLACE "^([^/]*)//${FILENAME}" "\\1" ${MODULE_PREFIX}_SUBMODULE ${FILEPATH})
-+	if(${FILEPATH} MATCHES "^([^/]*)/+${FILENAME}")
-+		string(REGEX REPLACE "^([^/]*)/+${FILENAME}" "\\1" ${MODULE_PREFIX}_SUBMODULE ${FILEPATH})
- 		set(${MODULE_PREFIX}_SUBMODULES ${${MODULE_PREFIX}_SUBMODULES} ${${MODULE_PREFIX}_SUBMODULE})
- 	endif()
- endforeach(FILEPATH)
