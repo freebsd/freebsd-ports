@@ -8,10 +8,12 @@ MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Provides a rails generator for jquery
+COMMENT=	Provides a Rails generator for jQuery
 
-RUN_DEPENDS+=	rubygem-railties4>=4.1.6:${PORTSDIR}/www/rubygem-railties4 \
-		rubygem-thor>=0.16:${PORTSDIR}/devel/rubygem-thor
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-railties4>=4.1.6:${PORTSDIR}/www/rubygem-railties4 \
+		rubygem-thor>=0.14:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
