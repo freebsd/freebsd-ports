@@ -15,9 +15,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-NO_ARCH=	yes
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
