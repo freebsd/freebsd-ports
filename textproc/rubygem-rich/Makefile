@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-jquery-rails>=0:${PORTSDIR}/www/rubygem-jquery-rails \
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
