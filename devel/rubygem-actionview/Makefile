@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-builder32>=3.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis
