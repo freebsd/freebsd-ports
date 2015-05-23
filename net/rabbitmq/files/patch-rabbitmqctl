@@ -1,6 +1,6 @@
---- scripts/rabbitmqctl.orig
+--- scripts/rabbitmqctl.orig	2015-05-22 10:15:37 UTC
 +++ scripts/rabbitmqctl
-@@ -27,6 +27,7 @@
+@@ -23,6 +23,7 @@
  # (e.g. forget_cluster_node --offline) require us to impersonate the
  # real node.
  RABBITMQ_USE_LONGNAME=${RABBITMQ_USE_LONGNAME} \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -36,7 +36,7 @@ GROUPS=		rabbitmq
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 CPE_VENDOR=	pivotal_software
- 
+
 SCRIPTS_DIR=	${WRKSRC}/scripts/
 MAKE_ARGS+=	PYTHON=${PYTHON_CMD}
 MAKE_ENV+=	TARGET_DIR="${STAGEDIR}${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" \
