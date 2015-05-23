@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pusher-client
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ COMMENT=	Client for consuming WebSockets from http://pusher.com
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-websocket>=1.0:${PORTSDIR}/www/rubygem-websocket \
-		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
+		rubygem-websocket>=1.0:${PORTSDIR}/www/rubygem-websocket
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
