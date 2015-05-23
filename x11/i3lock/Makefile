@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3lock
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
@@ -29,7 +29,7 @@ LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xproto xext
 USES=		gmake iconv pkgconfig tar:bzip2
 
-PORTDOCS=	CHANGELOG README
+PORTDOCS=	CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS
 
