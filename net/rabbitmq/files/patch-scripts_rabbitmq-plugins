@@ -1,4 +1,4 @@
---- scripts/rabbitmq-plugins.orig
+--- scripts/rabbitmq-plugins.orig	2015-05-22 10:15:37 UTC
 +++ scripts/rabbitmq-plugins
 @@ -20,6 +20,7 @@
  . `dirname $0`/rabbitmq-env
