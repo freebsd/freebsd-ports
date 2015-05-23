@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- logging.c
 +++ logging.c
 @@ -138,8 +138,6 @@

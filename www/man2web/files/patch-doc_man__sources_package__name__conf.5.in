@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- doc/man_sources/package_name_conf.5.in.orig	Sat Apr 19 14:18:37 2003
 +++ doc/man_sources/package_name_conf.5.in	Sat Apr 19 14:19:06 2003
 @@ -152,7 +152,7 @@

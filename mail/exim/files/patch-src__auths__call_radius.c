@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/auths/call_radius.c
 +++ src/auths/call_radius.c
 @@ -38,7 +38,11 @@

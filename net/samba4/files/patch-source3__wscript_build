@@ -1,20 +1,6 @@
---- source3/wscript_build.orig	2014-12-08 07:46:38.000000000 +0000
-+++ source3/wscript_build	2015-01-16 00:11:55.966511894 +0000
-@@ -653,13 +653,6 @@
-                     vnum='0',
-                     vars=locals())
- 
--bld.SAMBA3_LIBRARY('nss_wins',
--                  source=WINBIND_WINS_NSS_SRC,
--                  deps='''param libsmb LIBTSOCKET''',
--                  realname='libnss_wins.so.2',
--                  soname='libnss_wins.so',
--                  vnum='2')
--
- bld.SAMBA3_LIBRARY('gse',
-                    source='librpc/crypto/gse_krb5.c librpc/crypto/gse.c',
-                    deps='krb5samba gensec param KRBCLIENT secrets3',
-@@ -975,10 +968,12 @@
+--- source3/wscript_build.orig	2015-05-06 19:07:37.000000000 +0000
++++ source3/wscript_build	2015-05-21 22:03:55.321652920 +0000
+@@ -968,10 +968,12 @@
                      LIBAFS_SETTOKEN
                      RPC_SERVER
                      NDR_SMBXSRV
@@ -28,7 +14,7 @@
                      ''' + bld.env['dmapi_lib'],
                      private_library=True,
                      vars=locals())
-@@ -1284,6 +1279,7 @@
+@@ -1277,6 +1279,7 @@
                   libsmb
                   msrpc3
                   RPC_NDR_SRVSVC
@@ -36,7 +22,7 @@
                   cli_smb_common''')
  
  bld.SAMBA3_BINARY('net',
-@@ -1636,7 +1632,7 @@
+@@ -1629,7 +1632,7 @@
  
  bld.SAMBA3_PYTHON('pylibsmb',
                    source='libsmb/pylibsmb.c',

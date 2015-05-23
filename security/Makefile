@@ -781,6 +781,7 @@
     SUBDIR += py-clamav
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
+    SUBDIR += py-crits
     SUBDIR += py-cryptkit
     SUBDIR += py-cryptography
     SUBDIR += py-cybox
@@ -909,8 +910,8 @@
     SUBDIR += rubygem-metasploit-concern
     SUBDIR += rubygem-metasploit-credential
     SUBDIR += rubygem-metasploit-model
+    SUBDIR += rubygem-metasploit-payloads
     SUBDIR += rubygem-metasploit_data_models
-    SUBDIR += rubygem-meterpreter_bins
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-scp11
     SUBDIR += rubygem-net-sftp

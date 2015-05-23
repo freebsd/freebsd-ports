@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- util.cpp.orig	Fri Feb 21 03:47:33 2003
 +++ util.cpp	Fri Feb 21 03:47:46 2003
 @@ -18,6 +18,9 @@

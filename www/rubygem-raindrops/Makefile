@@ -10,10 +10,13 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Real-time stats toolkit to show statistics for Rack HTTP servers
 
-USES=		shebangfix
-SHEBANG_FILES=	examples/linux-listener-stats.rb
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	examples/linux-listener-stats.rb
 
 .include <bsd.port.mk>

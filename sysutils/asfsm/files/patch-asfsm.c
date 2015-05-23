@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- asfsm.c.orig	Sun Oct 18 12:02:09 1998
 +++ asfsm.c	Thu Aug 15 23:19:02 2002
 @@ -2,10 +2,10 @@

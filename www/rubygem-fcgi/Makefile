@@ -8,10 +8,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FastCGI library for Ruby
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Stackable dynamic tree based Rack router
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes

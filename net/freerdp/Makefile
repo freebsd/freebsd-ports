@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freerdp
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,16 +13,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		alias cmake:outsource cpe pkgconfig compiler:c++11-lib
+USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TAGNAME=	780d451
+GH_TAGNAME=	f5ff6e1
 
 CPE_VENDOR=	freerdp_project
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/include -I${WRKSRC}/winpr/include -I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		ALSA CUPS DIRECTFB FFMPEG GSTREAMER PULSEAUDIO SSE X11
 OPTIONS_DEFAULT=	CUPS GSTREAMER X11
@@ -50,9 +49,9 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 FFMPEG_CMAKE_ON=	-DWITH_FFMPEG=ON
 FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG=OFF
 
-GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER=ON
-GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER=OFF
-GSTREAMER_USE=		gstreamer=yes xorg=x11,xextproto,xext,xrandr
+GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER_1_0=ON -DWITH_GSTREAMER_0_10=OFF
+GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER_1_0=OFF -DWITH_GSTREAMER_0_10=OFF
+GSTREAMER_USE=		gstreamer1=yes xorg=x11,xextproto,xext,xrandr
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DWITH_PULSE=ON
@@ -65,7 +64,7 @@ X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 X11_CMAKE_ON=		-DWITH_X11=ON
 X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi
+X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi,xfixes
 
 .include <bsd.port.options.mk>
 
@@ -75,11 +74,8 @@ post-extract:
 		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
 		${WRKSRC}/client/X11/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|HW_AVAILCPU|HW_NCPU|' \
-		${WRKSRC}/winpr/libwinpr/sysinfo/sysinfo.c
 	${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
 		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
 	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/winpr/libwinpr/crt/alignment.c \
 		${WRKSRC}/channels/drive/client/statvfs.c
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- configure.orig	2015-04-28 11:17:21 UTC
++++ configure
+@@ -14090,8 +14090,8 @@ striplib=
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
+-  test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null ||
++   test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "elftoolchain" >/dev/null; then
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterBase/configure.orig	Thu Jul 12 15:39:55 2007
 +++ libAfterBase/configure	Sun Oct 28 20:22:55 2007
 @@ -6381,6 +6381,8 @@

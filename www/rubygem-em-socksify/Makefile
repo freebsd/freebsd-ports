@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	EventMachine SOCKSify shim: adds SOCKS support to any protocol
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-eventmachine>=1.0.0:${PORTSDIR}/devel/rubygem-eventmachine
 
 USE_RUBY=	yes

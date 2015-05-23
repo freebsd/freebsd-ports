@@ -24,7 +24,7 @@ QT5_RUN_DEPENDS=	qt5-style-qtcurve>=1.8.18:${PORTSDIR}/x11-themes/qtcurve-qt5
 USE_GITHUB=	yes
 GH_ACCOUNT=	QtCurve
 
-USES=		compiler:c++0x cmake execinfo pkgconfig
+USES=		compiler:c++11-lib cmake execinfo pkgconfig
 USE_XORG=	x11 xcb
 
 .for i in gtk2 kde4 qt4 qt5

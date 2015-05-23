@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/include/clang/Analysis/Analyses/FormatString.h.orig
 +++ tools/clang/include/clang/Analysis/Analyses/FormatString.h
 @@ -122,9 +122,10 @@

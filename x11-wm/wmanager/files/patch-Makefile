@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
 --- ../vendor/wmanager/Makefile	2007-12-11 12:42:04.000000000 +0200
 +++ ./Makefile	2008-05-21 18:21:47.000000000 +0300

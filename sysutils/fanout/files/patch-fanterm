@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- fanterm.orig
 +++ fanterm
 @@ -1,4 +1,4 @@

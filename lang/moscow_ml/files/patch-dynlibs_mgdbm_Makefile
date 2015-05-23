@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- dynlibs/mgdbm/Makefile.orig
 +++ dynlibs/mgdbm/Makefile
 @@ -5,8 +5,8 @@

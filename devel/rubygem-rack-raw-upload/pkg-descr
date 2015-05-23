@@ -2,4 +2,4 @@ Middleware that converts files uploaded with mimetype application/octet-stream
 into normal form input, so Rack applications can read these as normal, rather
 than as raw input.
 
-WWW: https://rubygems.org/gems/rack-raw-upload
+WWW: https://github.com/New-Bamboo/rack-raw-upload

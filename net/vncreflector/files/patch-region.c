@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- region.c.orig
 +++ region.c
 @@ -70,6 +70,7 @@

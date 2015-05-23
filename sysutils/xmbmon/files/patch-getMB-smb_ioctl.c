@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- getMB-smb_ioctl.c.orig	Sat Jul  5 18:15:24 2003
 +++ getMB-smb_ioctl.c	Sat May 2 00:35:54 2015
 @@ -5,6 +5,7 @@

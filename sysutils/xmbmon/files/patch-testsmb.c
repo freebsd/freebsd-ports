@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- testsmb.c	Thu Aug 12 07:34:48 2004
 +++ testsmb.c	Fri Dec 30 23:11:29 2005
 @@ -105,8 +105,9 @@

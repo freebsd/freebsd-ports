@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -128,6 +127,16 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 .if ${ARCH} == "i386"
 CFLAGS:=	${CFLAGS:N-O*} -O0
 .endif
+
+show-info:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} "Only for i386"
+	@${ECHO_MSG} "Make sure you have multimedia/libass build with the ASM option OFF"
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} ""
+
+pre-everything::show-info
 
 post-extract:
 	${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf

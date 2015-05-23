@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- racket/include/scheme.h.orig
 +++ racket/include/scheme.h
 @@ -63,10 +63,12 @@

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.in.orig	Sun Jun  1 21:51:10 2003
 +++ Makefile.in	Fri Sep  3 14:27:33 2004
 @@ -42,20 +42,20 @@

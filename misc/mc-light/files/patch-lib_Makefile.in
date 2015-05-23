@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/Makefile.in.orig	Mon May 25 12:16:05 1998
 +++ lib/Makefile.in	Fri Sep  3 14:52:08 2004
 @@ -34,10 +34,10 @@

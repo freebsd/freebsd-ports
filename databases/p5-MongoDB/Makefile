@@ -33,7 +33,7 @@ TEST_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PORTSCOUT=	limit:^v*[0-9\.]*$$
+PORTSCOUT=	skipv:0.999.998.5
 
 CFLAGS+=	-DBSON_COMPILATION
 MAKE_JOBS_UNSAFE=	yes
