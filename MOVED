@@ -7584,3 +7584,4 @@ deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produc
 devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
 lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
 databases/my2cego|databases/cegobridge|2015-05-19|Superseded by databases/cegobridge
+devel/rubygem-bioruby|devel/rubygem-bio|2015-05-23|Rename to match our rubygems naming
