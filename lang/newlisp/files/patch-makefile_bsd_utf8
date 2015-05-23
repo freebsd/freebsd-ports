@@ -1,15 +1,15 @@
---- makefile_bsd_utf8.orig
+--- makefile_bsd_utf8.orig	2015-01-19 17:10:12 UTC
 +++ makefile_bsd_utf8
 @@ -4,14 +4,12 @@
  OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
- 	nl-sock.o nl-import.o nl-xml.o nl-web.o nl-matrix.o nl-debug.o nl-utf8.o pcre.o
+ 	nl-sock.o nl-import.o nl-xml-json.o nl-web.o nl-matrix.o nl-debug.o nl-utf8.o pcre.o
  
 -CFLAGS = -m32 -Wall -Wno-uninitialized -fno-strict-aliasing -O2 -c -g -DREADLINE -D_BSD -DSUPPORT_UTF8
 +CFLAGS += -m32 -c -DREADLINE -D_BSD -DSUPPORT_UTF8 -DFFI
  # or without readline lib
  #CFLAGS = -m32 -Wall -Wno-uninitialized -fno-strict-aliasing -O2 -c -g -D_BSD -DSUPPORT_UTF8
  
--CC = gcc
+-CC = cc
 -
  default: $(OBJS)
 -	$(CC) $(OBJS) -m32 -g -lm -lreadline -lncurses -o newlisp
