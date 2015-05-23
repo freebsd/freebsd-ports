@@ -8,6 +8,6 @@ include/amqp_framing.h
 include/amqp_ssl_socket.h
 include/amqp_tcp_socket.h
 lib/librabbitmq.so
-lib/librabbitmq.so.1
-lib/librabbitmq.so.1.2.2
+lib/librabbitmq.so.4
+lib/librabbitmq.so.4.0.0
 libdata/pkgconfig/librabbitmq.pc
