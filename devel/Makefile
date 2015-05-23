@@ -4432,7 +4432,7 @@
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
-    SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-bio
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones
