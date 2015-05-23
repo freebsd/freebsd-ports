@@ -57,6 +57,71 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7927165a-0126-11e5-9d98-080027ef73ec">
+    <topic>dnsmasq -- remotely exploitable buffer overflow in release candidate</topic>
+    <affects>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><ge>2.73rc6</ge><lt>2.73rc8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html">
+	  <p>Anyone running 2.[73]rc6 or 2.[73]rc7 should be aware that there's a
+	    remotely exploitable buffer overflow in those trees. I just tagged
+	    2.[73]rc8, which includes the fix.
+	  </p>
+	</blockquote>
+	<p>(Corrections from second URL.)</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html</url>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009535.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-15</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="37569eb7-0125-11e5-9d98-080027ef73ec">
+    <topic>dnsmasq -- data exposure and denial of service</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.72_1</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><lt>2.73rc4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nick Sampanis reported a potential memory exposure and denial of service vulnerability against dnsmasq 2.72. The CVE entry summarizes this as:
+	</p>
+	<blockquote cite="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3294"><p>The tcp_request function in Dnsmasq before 2.73rc4
+	  does not properly handle the return value of the setup_reply function,
+	  which allows remote attackers to read process memory and cause a
+	  denial of service (out-of-bounds read and crash) via a malformed DNS
+	  request."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009382.html</url>
+      <cvename>CVE-2015-3294</cvename>
+      <url>http://thekelleys.org.uk/gitweb/?p=dnsmasq.git;a=commitdiff;h=ad4a8ff7d9097008d7623df8543df435bfddeac8</url>
+    </references>
+    <dates>
+      <discovery>2015-04-07</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a88e3ed-00d3-11e5-a072-d050996490d0">
     <topic>pcre -- multiple vulnerabilities</topic>
     <affects>
