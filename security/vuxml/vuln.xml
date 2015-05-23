@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="384fc0b2-0144-11e5-8fda-002590263bf5">
+    <topic>davmail -- fix potential CVE-2014-3566 vulnerability (POODLE)</topic>
+    <affects>
+      <package>
+	<name>davmail</name>
+	<range><lt>4.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mickaël Guessant reports:</p>
+	<blockquote cite="http://sourceforge.net/p/davmail/mailman/message/33279118/">
+	  <p>DavMail 4.6.0 released</p>
+	  <p>Enhancements: Fix potential CVE-2014-3566 vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/p/davmail/mailman/message/33279118/</url>
+      <url>http://sourceforge.net/p/davmail/code/2322/</url>
+      <cvename>CVE-2014-3566</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-27</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7927165a-0126-11e5-9d98-080027ef73ec">
     <topic>dnsmasq -- remotely exploitable buffer overflow in release candidate</topic>
     <affects>
