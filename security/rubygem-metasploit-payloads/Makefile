@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	meterpreter_bins
-PORTVERSION=	0.0.13
+PORTNAME=	metasploit-payloads
+PORTVERSION=	0.0.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
