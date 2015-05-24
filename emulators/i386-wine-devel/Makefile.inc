@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.42
+PORTVERSION=	1.7.43
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -44,6 +44,13 @@ BUNDLE_LIBS=	yes
 
 GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.36-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono-devel
+
+.if ${PKGNAMESUFFIX} == -staging
+DISTNAME=	i386-wine-compholio-1.7.43,1
+.if ${PORTVERSION} != 1.7.43
+BROKEN=		Temporary fix for compholio->staging rename.  Needs to be undone for 1.7.44 update cycle
+.endif
+.endif
 
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
