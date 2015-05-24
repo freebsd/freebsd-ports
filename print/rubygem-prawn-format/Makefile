@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension of Prawn that allows inline formatting
 
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	rubygem-prawn-core>=0:${PORTSDIR}/print/rubygem-prawn-core
 
 USE_RUBY=	yes
