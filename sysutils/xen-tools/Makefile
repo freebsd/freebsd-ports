@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
