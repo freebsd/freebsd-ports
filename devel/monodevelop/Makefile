@@ -3,6 +3,7 @@
 
 PORTNAME=	monodevelop
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 DISTFILES=	${DISTNAME}-0${EXTRACT_SUFX}
@@ -17,6 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 
 USE_GNOME=	gtksharp20 gnomesharp20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-update-mimedb --disable-update-desktopdb
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		desktop-file-utils gettext gmake mono pathfix shared-mime-info tar:bzip2
 INSTALLS_ICONS=	yes
 
