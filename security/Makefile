@@ -928,10 +928,10 @@
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-razorback-scriptNugget
-    SUBDIR += rubygem-rc4
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
+    SUBDIR += rubygem-ruby-rc4
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkit

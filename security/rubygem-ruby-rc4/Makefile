@@ -1,16 +1,16 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	rc4
+PORTNAME=	ruby-rc4
 PORTVERSION=	0.1.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby implementation of the RC4 algorithm
 
-GEM_NAME=	${DISTNAME}
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
