@@ -3,7 +3,7 @@
 
 PORTNAME=	hdf-java
 PORTVERSION=	2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science java
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdf-java-${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
