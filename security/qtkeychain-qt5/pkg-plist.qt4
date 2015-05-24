@@ -6,7 +6,6 @@ lib/cmake/QtKeychain/QtKeychainLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QtKeychain/QtKeychainLibraryDepends.cmake
 lib/libqtkeychain.so
 lib/libqtkeychain.so.0
-lib/libqtkeychain.so.0.1.0
-@dirrm lib/cmake/QtKeychain
-@dirrmtry lib/cmake
-@dirrm include/qtkeychain
+lib/libqtkeychain.so.%%VERSION%%
+%%QT_L10NDIR%%/qtkeychain_de.qm
+%%QT_L10NDIR%%/qtkeychain_ro.qm
