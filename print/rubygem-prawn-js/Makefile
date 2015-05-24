@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simplifies embedding JavaScript in your PDF files
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-prawn-core>=0.6.1:${PORTSDIR}/print/rubygem-prawn-core
 
 USE_RUBY=	yes
