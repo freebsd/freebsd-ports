@@ -7533,7 +7533,6 @@ devel/php53-pcntl||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 archivers/php53-bz2||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 net/php53-sockets||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 lang/php53||2015-04-17|Has expired: security EOL reached 14 Aug 2014
-devel/pecl-uuid||2015-04-17|Has expired: requires php53, security EOL reached 14 Aug 2014
 lang/php53-extensions||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 german/pecl-konto_check||2015-04-17|Has expired: requires php53, security EOL reached 14 Aug 2014
 www/moodle26|www/moodle27|2015-04-17|Has expired: Deprecated by upstream, use www/moodle2{7,8} instead
