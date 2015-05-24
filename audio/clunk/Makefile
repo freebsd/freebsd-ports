@@ -9,6 +9,9 @@ MASTER_SITES=	SF/clunk
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Real-time 3D sound generation library
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		tar:bzip2 cmake
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
