@@ -975,6 +975,7 @@
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += lager
+    SUBDIR += lager_syslog
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
