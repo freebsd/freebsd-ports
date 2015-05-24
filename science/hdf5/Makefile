@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.14
-PORTREVISION=	1
+PORTVERSION=	1.8.15
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
@@ -19,6 +18,7 @@ LICENSE=	BSD4CLAUSE
 CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
+OPTIONS_DEFAULT=SZIP
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--enable-cxx \
