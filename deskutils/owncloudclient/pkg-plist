@@ -1,7 +1,6 @@
 bin/owncloud
 bin/owncloudcmd
 @sample etc/ownCloud/sync-exclude.lst.sample
-include/httpbf.h
 include/owncloudsync/creds/abstractcredentials.h
 include/owncloudsync/creds/httpcredentials.h
 include/owncloudsync/mirall/account.h
@@ -12,10 +11,9 @@ include/owncloudsync/mirall/syncengine.h
 include/owncloudsync/mirall/syncfileitem.h
 include/owncloudsync/mirall/syncjournaldb.h
 include/owncloudsync/mirall/syncresult.h
-lib/libhttpbf.a
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.1.8.0
+lib/libowncloudsync.so.%%VERSION%%
 lib/owncloud/libocsync.so
 lib/owncloud/libocsync.so.0
 lib/owncloud/libocsync.so.0.2.1

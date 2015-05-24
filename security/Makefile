@@ -858,7 +858,8 @@
     SUBDIR += py-zope.security
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
-    SUBDIR += qtkeychain
+    SUBDIR += qtkeychain-qt4
+    SUBDIR += qtkeychain-qt5
     SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
