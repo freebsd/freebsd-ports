@@ -45,6 +45,7 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
