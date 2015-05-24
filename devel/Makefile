@@ -3086,6 +3086,7 @@
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Reporter-Transport-Metabase
     SUBDIR += p5-Test-Requires
+    SUBDIR += p5-Test-RequiresInternet
     SUBDIR += p5-Test-Script
     SUBDIR += p5-Test-Script-Run
     SUBDIR += p5-Test-SharedFork
