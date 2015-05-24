@@ -1327,6 +1327,7 @@
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-compass-rails
     SUBDIR += rubygem-creole
+    SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
