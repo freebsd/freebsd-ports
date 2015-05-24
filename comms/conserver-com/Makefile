@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-com
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
-CONFLICTS_INSTALL=	conserver-[0-9]* rubygem-gitlab-grack-[0-9]*
+CONFLICTS_INSTALL=	conserver-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
