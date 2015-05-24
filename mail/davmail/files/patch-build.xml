@@ -9,14 +9,3 @@
      </target>
  
      <target name="init" depends="check-encoding, check-java6, svnrelease, defaultrelease">
-@@ -138,8 +138,8 @@
-                 toFile="dist/davmail.desktop"
-                 name="DavMail"
-                 comment="DavMail POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway"
--                exec="davmail"
--                icon="/usr/share/davmail/davmail.png"
-+                exec="/usr/local/bin/davmail"
-+                icon="/usr/local/share/java/davmail/davmail.png"
-                 categories="Network;"
-                 genericname="DavMail POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway"
-                 />
