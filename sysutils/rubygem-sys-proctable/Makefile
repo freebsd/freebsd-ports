@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	sys-proctable
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.8
+DISTVERSIONSUFFIX=	-universal-freebsd
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd-7
-EXTRACT_SUFX=	# none
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for getting process information
 
-GEM_NAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd-7
+LICENSE=	ART20
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+RUN_DEPENDS=	rubygem-ffi>=0:${PORTSDIR}/devel/rubygem-ffi
+
+GEM_NAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
