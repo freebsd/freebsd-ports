@@ -11,7 +11,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch
+USES+=		dos2unix
+DOS2UNIX_GLOB=	*.diff
 
 MAKE_JOBS_UNSAFE=	yes
 
