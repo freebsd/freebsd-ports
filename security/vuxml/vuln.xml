@@ -57,6 +57,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="865863af-fb5e-11e4-8fda-002590263bf5">
+    <topic>py-salt -- potential shell injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colton Myers reports:</p>
+	<blockquote cite="http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html">
+	  <p>In order to fix potential shell injection vulnerabilities in salt
+	     modules, a change has been made to the various cmd module functions.
+	     These functions now default to python_shell=False, which means that
+	     the commands will not be sent to an actual shell.</p>
+	  <p>The largest side effect of this change is that "shellisms", such as
+	     pipes, will not work by default. The modules shipped with salt have
+	     been audited to fix any issues that might have arisen from this
+	     change. Additionally, the cmd state module has been unaffected, and
+	     use of cmd.run in jinja is also unaffected. cmd.run calls on the
+	     CLI will also allow shellisms.</p>
+	  <p>However, custom execution modules which use shellisms in cmd calls
+	     will break, unless you pass python_shell=True to these calls.</p>
+	  <p>As a temporary workaround, you can set cmd_safe: False in your
+	     minion and master configs. This will revert the default, but is
+	     also less secure, as it will allow shell injection vulnerabilities
+	     to be written in custom code. We recommend you only set this
+	     setting for as long as it takes to resolve these issues in your
+	     custom code, then remove the override.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-11</discovery>
+      <entry>2015-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="384fc0b2-0144-11e5-8fda-002590263bf5">
     <topic>davmail -- fix potential CVE-2014-3566 vulnerability (POODLE)</topic>
     <affects>
