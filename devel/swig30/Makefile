@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:R} \
-		--with-lua=${LUA_BINDIR}/lua \
+		--with-lua=${LOCALBASE}/bin/${LUA_CMD} \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
