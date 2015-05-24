@@ -16,7 +16,7 @@ COMMENT=	Manage remote serial consoles via TCP/IP
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-CONFLICTS_INSTALL=	conserver-com-[0-9]* rubygem-gitlab-grack-[0-9]*
+CONFLICTS_INSTALL=	conserver-com-[0-9]*
 
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
