@@ -1,0 +1,11 @@
+PPSSPP is a HLE ("high level emulation") emulator, it simulates the
+PSP OS as seen by the game rather than the full hardware. A program
+running on the PSP OS can send raw display lists to the graphics
+chips, but can't access the flash controller or the Media Engine
+directly, instead it has to go through libraries and the PSP OS
+kernel. We simply simulate these. This is a lot of work though, the
+PSP OS is large and has plenty of functionality so achieving 100%
+compatibility is difficult bordering on the impossible. We can get
+close though.
+
+WWW: http://www.ppsspp.org/
