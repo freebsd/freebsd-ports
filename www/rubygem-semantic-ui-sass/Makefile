@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	semantic-ui-sass
-PORTVERSION=	0.16.1.0
+PORTVERSION=	1.11.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sass>=3.2:${PORTSDIR}/textproc/rubygem-sass
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
