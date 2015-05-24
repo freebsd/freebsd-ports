@@ -109,6 +109,7 @@
     SUBDIR += pcsxr
     SUBDIR += pearpc
     SUBDIR += pipelight
+    SUBDIR += ppsspp
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
