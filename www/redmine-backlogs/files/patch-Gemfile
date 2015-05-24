@@ -1,6 +1,6 @@
---- Gemfile.orig	2013-10-20 20:14:01.000000000 +0000
-+++ Gemfile	2014-08-24 02:33:40.871164956 +0000
-@@ -8,64 +8,11 @@
+--- Gemfile.orig	2013-10-20 20:14:01 UTC
++++ Gemfile
+@@ -8,64 +8,11 @@ deps = Hash.new
  rails3 = Gem::Dependency.new('rails', '~>3.0')
  RAILS_VERSION_IS_3 = rails3 =~ deps['rails']
  
