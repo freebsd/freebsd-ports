@@ -3,7 +3,7 @@
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
@@ -20,7 +20,13 @@ RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5 tar:bzip2
+USES=		perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	dist/src/compile.pl \
+		dist/src/cpan_local_install \
+		dist/src/mod_perl_tlink.pl \
+		dist/src/testcgi \
+		dist/src/tlink.pl \
+		dist/src/vlink.pl
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=		MYSQL PGSQL
