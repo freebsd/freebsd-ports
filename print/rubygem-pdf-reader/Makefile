@@ -10,6 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PDF parser conforming as much as possible to the PDF specification
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-afm>=0.2.0:${PORTSDIR}/print/rubygem-afm \
 		rubygem-ascii85>=1.0.0:${PORTSDIR}/devel/rubygem-ascii85 \
 		rubygem-hashery>=2.0:${PORTSDIR}/devel/rubygem-hashery \
