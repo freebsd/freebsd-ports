@@ -3,6 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.7.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -14,7 +15,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
 RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
+		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-ruby-augeas \
 		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
 
 USES=		cpe
