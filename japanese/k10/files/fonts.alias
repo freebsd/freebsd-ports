@@ -1,18 +1,3 @@
-#!/bin/sh
-
-if [ "$2" != "DEINSTALL" ]; then
-	exit 0
-fi
-
-FONTDIR=${PKG_PREFIX}/share/fonts/kanji
-
-grepv() {
-	awk -v SRC=$1 'BEGIN{while (getline < SRC) {ENTRY[$0]=1}} (ENTRY[$0] != 1) {print}' $2
-}
-
-# font alias entry here!
-TMPFILE=/tmp/install-fonts-alias-$$
-cat << EOF > ${TMPFILE}
 k10  -misc-fixed-medium-r-normal--10-90-75-75-c-100-jisx0208.1983-0
 k10i -misc-fixed-medium-i-normal--10-90-75-75-c-100-jisx0208.1983-0
 k10b -misc-fixed-bold-r-normal--10-90-75-75-c-100-jisx0208.1983-0
@@ -25,19 +10,3 @@ r10  -misc-fixed-medium-r-normal--10-90-75-75-c-50-jisx0201.1976-0
 r10b -misc-fixed-bold-r-normal--10-90-75-75-c-50-jisx0201.1976-0
 r10i -misc-fixed-medium-i-normal--10-90-75-75-c-50-jisx0201.1976-0
 r10bi -misc-fixed-bold-i-normal--10-90-75-75-c-50-jisx0201.1976-0
-EOF
-
-echo "Updating ${FONTDIR}/fonts.alias"
-cd ${FONTDIR}
-touch fonts.alias
-cp fonts.alias fonts.alias.orig
-grepv ${TMPFILE} fonts.alias.orig > fonts.alias
-if [ ! -s fonts.alias ]; then rm -f fonts.alias; fi
-rm -f fonts.alias.orig ${TMPFILE}
-
-echo "**********************************************************"
-echo "You should restart X server or do 'xset fp rehash' command"
-echo "to enable this update."
-echo "**********************************************************"
-
-exit 0
