@@ -57,6 +57,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="607f4d44-0158-11e5-8fda-002590263bf5">
+    <topic>cassandra -- remote execution of arbitrary code</topic>
+    <affects>
+      <package>
+	<name>cassandra</name>
+	<range><ge>1.2.0</ge><le>1.2.19</le></range>
+      </package>
+      <package>
+	<name>cassandra2</name>
+	<range><ge>2.0.0</ge><lt>2.0.14</lt></range>
+	<range><ge>2.1.0</ge><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jake Luciani reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/">
+	  <p>Under its default configuration, Cassandra binds an unauthenticated
+	    JMX/RMI interface to all network interfaces.  As RMI is an API for the
+	    transport and remote execution of serialized Java, anyone with access
+	    to this interface can execute arbitrary code as the running user.</p>
+	  <p>Mitigation:</p>
+	  <p>1.2.x has reached EOL, so users of &lt;= 1.2.x are recommended to upgrade
+	    to a supported version of Cassandra, or manually configure encryption
+	    and authentication of JMX,
+	    (see https://wiki.apache.org/cassandra/JmxSecurity).</p>
+	  <p>2.0.x users should upgrade to 2.0.14</p>
+	  <p>2.1.x users should upgrade to 2.1.4</p>
+	  <p>Alternately, users of any version not wishing to upgrade can
+	    reconfigure JMX/RMI to enable encryption and authentication according
+	    to https://wiki.apache.org/cassandra/JmxSecurityor
+	    http://docs.oracle.com/javase/7/docs/technotes/guides/management/agent.html</p>
+	  <p>Credit:</p>
+	  <p>This issue was discovered by Georgi Geshev of MWR InfoSecurity</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/</url>
+      <cvename>CVE-2015-0225</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-01</discovery>
+      <entry>2015-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="865863af-fb5e-11e4-8fda-002590263bf5">
     <topic>py-salt -- potential shell injection vulnerabilities</topic>
     <affects>
