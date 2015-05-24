@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Large scale deploys using BitTorrent
 
+LICENSE=	APACHE20
+
 USES=		python
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
