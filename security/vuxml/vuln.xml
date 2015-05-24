@@ -574,7 +574,7 @@ Notes:
   </vuln>
 
   <vuln vid="2780e442-fc59-11e4-b18b-6805ca1d3bb1">
-    <topic>qemu -- possible VM escape and code execution ("VENOM")</topic>
+    <topic>qemu, xen and VirtualBox OSE -- possible VM escape and code execution ("VENOM")</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -585,6 +585,14 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<range><lt>2.3.50.g20150501_1</lt></range>
+      </package>
+      <package>
+	<name>virtualbox-ose</name>
+	<range><lt>4.3.28</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><gt>4.5.0</gt><lt>4.5.0_5</lt></range>
       </package>
     </affects>
     <description>
@@ -610,10 +618,13 @@ Notes:
       <freebsdpr>200256</freebsdpr>
       <freebsdpr>200257</freebsdpr>
       <url>http://venom.crowdstrike.com/</url>
+      <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2015-3456-2542656.html</url>
+      <url>http://xenbits.xen.org/xsa/advisory-133.html</url>
     </references>
     <dates>
       <discovery>2015-04-29</discovery>
       <entry>2015-05-17</entry>
+      <modified>2015-05-23</modified>
     </dates>
   </vuln>
 
