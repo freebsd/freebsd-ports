@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	GECKO MONO
 GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
-CONFLICTS_INSTALL?=	wine-[0-9]* wine-compholio-[0-9]* wine-devel-[0-9]* \
-                        i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL?=	wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
+                        i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
