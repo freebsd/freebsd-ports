@@ -592,7 +592,7 @@ Notes:
       </package>
       <package>
 	<name>xen-tools</name>
-	<range><gt>4.5.0</gt><lt>4.5.0_5</lt></range>
+	<range><ge>4.5.0</ge><lt>4.5.0_5</lt></range>
       </package>
     </affects>
     <description>
