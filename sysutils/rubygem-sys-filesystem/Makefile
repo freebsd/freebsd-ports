@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	sys-filesystem
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface for getting filesystem information
 
-RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi
+LICENSE=	ART20
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+RUN_DEPENDS=	rubygem-ffi>=0:${PORTSDIR}/devel/rubygem-ffi
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
