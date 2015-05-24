@@ -3,6 +3,7 @@
 
 PORTNAME=	h2o
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -13,7 +14,8 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 shebangfix
+SHEBANG_FILES=	share/h2o/start_server
 
 PORTDOCS=	README.md
 
