@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper library to bring Unicode Normalization Form support
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS=	rubygem-unf_ext>=0:${PORTSDIR}/textproc/rubygem-unf_ext
 
 USE_RUBY=	yes
