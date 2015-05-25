@@ -7594,3 +7594,5 @@ science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match ou
 security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygems naming
 print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygems naming
 security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
+wine-compholio|wine-staging|2015-05-24|Renamed
+i386-wine-compholio|i386-wine-staging|2015-05-24|Renamed
