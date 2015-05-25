@@ -41,6 +41,8 @@
 %%PERL5_MAN3%%/Crypt::Digest::SHA256.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::SHA384.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::SHA512.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::SHA512_224.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::SHA512_256.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::Tiger192.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::Whirlpool.3.gz
 %%PERL5_MAN3%%/Crypt::KeyDerivation.3.gz
@@ -111,6 +113,8 @@
 %%SITE_ARCH%%/Crypt/Digest/SHA256.pm
 %%SITE_ARCH%%/Crypt/Digest/SHA384.pm
 %%SITE_ARCH%%/Crypt/Digest/SHA512.pm
+%%SITE_ARCH%%/Crypt/Digest/SHA512_224.pm
+%%SITE_ARCH%%/Crypt/Digest/SHA512_256.pm
 %%SITE_ARCH%%/Crypt/Digest/Tiger192.pm
 %%SITE_ARCH%%/Crypt/Digest/Whirlpool.pm
 %%SITE_ARCH%%/Crypt/KeyDerivation.pm
