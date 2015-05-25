@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- kernellib/include/config.h	2009-05-21 05:59:08.000000000 -0700
 +++ kernellib/include/config.h	2010-04-03 11:19:13.000000000 -0700
 @@ -4,3 +4,10 @@

@@ -21,8 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		prelink:${PORTSDIR}/sysutils/prelink
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	wine-[0-9]* wine-compholio-[0-9]* i386-wine-[0-9]* \
-			i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-[0-9]* wine-staging-[0-9]* i386-wine-[0-9]* \
+			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -3,7 +3,7 @@
 
 PORTNAME=	h5utils
 PORTVERSION=	1.12.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 

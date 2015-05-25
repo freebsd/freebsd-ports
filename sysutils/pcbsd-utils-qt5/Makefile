@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils-qt5
-PORTVERSION=	1431700504
+PORTVERSION=	1432320409
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/

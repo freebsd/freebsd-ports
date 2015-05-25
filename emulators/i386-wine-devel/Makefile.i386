@@ -14,8 +14,8 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 RUN_DEPENDS=	dri>0:${PORTSDIR}/graphics/dri
 
-CONFLICTS_INSTALL?=	wine-[0-9]* wine-compholio-[0-9]* wine-devel-[0-9]* \
-			i386-wine-[0-9]* i386-wine-compholio-[0-9]*
+CONFLICTS_INSTALL?=	wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
+			i386-wine-[0-9]* i386-wine-staging-[0-9]*
 
 ACTUAL-PACKAGE-DEPENDS=	${DO_NADA}
 WINELIBDIR=	${PREFIX}/lib32

@@ -1,4 +1,3 @@
-$FreeBSD$
 --- demos/dragger.tcl	Mon Sep 11 12:01:58 2000
 +++ demos/dragger.tcl.new	Sun Mar 14 14:36:20 2004
 @@ -32,9 +32,9 @@

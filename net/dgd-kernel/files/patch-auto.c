@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- kernellib/kernel/lib/auto.c.orig	2011-07-30 14:18:12.000000000 -0700
 +++ kernellib/kernel/lib/auto.c	2011-07-30 14:19:44.000000000 -0700
 @@ -765,11 +765,11 @@

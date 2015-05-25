@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 
+LICENSE=	BSD3CLAUSE
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

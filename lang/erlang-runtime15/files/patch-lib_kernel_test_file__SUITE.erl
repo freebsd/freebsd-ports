@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/kernel/test/file_SUITE.erl.orig
 +++ lib/kernel/test/file_SUITE.erl
 @@ -60,7 +60,8 @@

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 *** 2.4.5/room/south/sforst19.c	Sun Nov 11 21:45:36 1990
 --- 2.4.5/room/south/sforst19.c	Mon Sep 12 21:57:54 1994
 ***************

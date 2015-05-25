@@ -1,4 +1,4 @@
---- doc/Makefile.in.orig	2015-05-20 09:01:31 UTC
+--- doc/Makefile.in.orig	2015-05-24 09:01:30 UTC
 +++ doc/Makefile.in
 @@ -749,16 +749,7 @@ $(INSTALLDIRS) $(DOCDIR):
  

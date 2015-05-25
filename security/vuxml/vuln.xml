@@ -57,6 +57,341 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="607f4d44-0158-11e5-8fda-002590263bf5">
+    <topic>cassandra -- remote execution of arbitrary code</topic>
+    <affects>
+      <package>
+	<name>cassandra</name>
+	<range><ge>1.2.0</ge><le>1.2.19</le></range>
+      </package>
+      <package>
+	<name>cassandra2</name>
+	<range><ge>2.0.0</ge><lt>2.0.14</lt></range>
+	<range><ge>2.1.0</ge><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jake Luciani reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/">
+	  <p>Under its default configuration, Cassandra binds an unauthenticated
+	    JMX/RMI interface to all network interfaces.  As RMI is an API for the
+	    transport and remote execution of serialized Java, anyone with access
+	    to this interface can execute arbitrary code as the running user.</p>
+	  <p>Mitigation:</p>
+	  <p>1.2.x has reached EOL, so users of &lt;= 1.2.x are recommended to upgrade
+	    to a supported version of Cassandra, or manually configure encryption
+	    and authentication of JMX,
+	    (see https://wiki.apache.org/cassandra/JmxSecurity).</p>
+	  <p>2.0.x users should upgrade to 2.0.14</p>
+	  <p>2.1.x users should upgrade to 2.1.4</p>
+	  <p>Alternately, users of any version not wishing to upgrade can
+	    reconfigure JMX/RMI to enable encryption and authentication according
+	    to https://wiki.apache.org/cassandra/JmxSecurityor
+	    http://docs.oracle.com/javase/7/docs/technotes/guides/management/agent.html</p>
+	  <p>Credit:</p>
+	  <p>This issue was discovered by Georgi Geshev of MWR InfoSecurity</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/</url>
+      <cvename>CVE-2015-0225</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-01</discovery>
+      <entry>2015-05-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="865863af-fb5e-11e4-8fda-002590263bf5">
+    <topic>py-salt -- potential shell injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colton Myers reports:</p>
+	<blockquote cite="http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html">
+	  <p>In order to fix potential shell injection vulnerabilities in salt
+	     modules, a change has been made to the various cmd module functions.
+	     These functions now default to python_shell=False, which means that
+	     the commands will not be sent to an actual shell.</p>
+	  <p>The largest side effect of this change is that "shellisms", such as
+	     pipes, will not work by default. The modules shipped with salt have
+	     been audited to fix any issues that might have arisen from this
+	     change. Additionally, the cmd state module has been unaffected, and
+	     use of cmd.run in jinja is also unaffected. cmd.run calls on the
+	     CLI will also allow shellisms.</p>
+	  <p>However, custom execution modules which use shellisms in cmd calls
+	     will break, unless you pass python_shell=True to these calls.</p>
+	  <p>As a temporary workaround, you can set cmd_safe: False in your
+	     minion and master configs. This will revert the default, but is
+	     also less secure, as it will allow shell injection vulnerabilities
+	     to be written in custom code. We recommend you only set this
+	     setting for as long as it takes to resolve these issues in your
+	     custom code, then remove the override.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-11</discovery>
+      <entry>2015-05-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="384fc0b2-0144-11e5-8fda-002590263bf5">
+    <topic>davmail -- fix potential CVE-2014-3566 vulnerability (POODLE)</topic>
+    <affects>
+      <package>
+	<name>davmail</name>
+	<range><lt>4.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mickaël Guessant reports:</p>
+	<blockquote cite="http://sourceforge.net/p/davmail/mailman/message/33279118/">
+	  <p>DavMail 4.6.0 released</p>
+	  <p>Enhancements: Fix potential CVE-2014-3566 vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/p/davmail/mailman/message/33279118/</url>
+      <url>http://sourceforge.net/p/davmail/code/2322/</url>
+      <cvename>CVE-2014-3566</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-27</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7927165a-0126-11e5-9d98-080027ef73ec">
+    <topic>dnsmasq -- remotely exploitable buffer overflow in release candidate</topic>
+    <affects>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><ge>2.73rc6</ge><lt>2.73rc8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html">
+	  <p>Anyone running 2.[73]rc6 or 2.[73]rc7 should be aware that there's a
+	    remotely exploitable buffer overflow in those trees. I just tagged
+	    2.[73]rc8, which includes the fix.
+	  </p>
+	</blockquote>
+	<p>(Corrections from second URL.)</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html</url>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009535.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-15</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="37569eb7-0125-11e5-9d98-080027ef73ec">
+    <topic>dnsmasq -- data exposure and denial of service</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.72_1</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><lt>2.73rc4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nick Sampanis reported a potential memory exposure and denial of service vulnerability against dnsmasq 2.72. The CVE entry summarizes this as:
+	</p>
+	<blockquote cite="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3294"><p>The tcp_request function in Dnsmasq before 2.73rc4
+	  does not properly handle the return value of the setup_reply function,
+	  which allows remote attackers to read process memory and cause a
+	  denial of service (out-of-bounds read and crash) via a malformed DNS
+	  request."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009382.html</url>
+      <cvename>CVE-2015-3294</cvename>
+      <url>http://thekelleys.org.uk/gitweb/?p=dnsmasq.git;a=commitdiff;h=ad4a8ff7d9097008d7623df8543df435bfddeac8</url>
+    </references>
+    <dates>
+      <discovery>2015-04-07</discovery>
+      <entry>2015-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4a88e3ed-00d3-11e5-a072-d050996490d0">
+    <topic>pcre -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><lt>8.37</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.41</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.25</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PCRE development team reports:</p>
+	<blockquote cite="http://www.pcre.org/original/changelog.txt">
+	  <p>A pattern such as "((?2){0,1999}())?", which has a group
+	    containing a forward reference repeated a large (but limited)
+	    number of times within a repeated outer group that has a zero
+	    minimum quantifier, caused incorrect code to be compiled,
+	    leading to the error "internal error: previously-checked
+	    referenced subpattern not found" when an incorrect memory
+	    address was read. This bug was reported as "heap overflow",
+	    discovered by Kai Lu of Fortinet's FortiGuard Labs and given
+	    the CVE number CVE-2015-2325.</p>
+	  <p>A pattern such as "((?+1)(\1))/" containing a forward
+	    reference subroutine call within a group that also contained
+	    a recursive back reference caused incorrect code to be
+	    compiled. This bug was reported as "heap overflow",
+	    discovered by Kai Lu of Fortinet's FortiGuard Labs,
+	    and given the CVE number CVE-2015-2326.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2325</cvename>
+      <cvename>CVE-2015-2326</cvename>
+      <url>http://www.pcre.org/original/changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-04-28</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="31de2e13-00d2-11e5-a072-d050996490d0">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.41</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.25</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP development team reports:</p>
+	<blockquote cite="https://php.net/ChangeLog-5.php#5.6.9">
+	  <p>Fixed bug #69364 (PHP Multipart/form-data remote DoS
+	    Vulnerability). (CVE-2015-4024)</p>
+	  <p>Fixed bug #69418 (CVE-2006-7243 fix regressions in
+	    5.4+). (CVE-2015-4025)</p>
+	  <p>Fixed bug #69545 (Integer overflow in ftp_genlist()
+	    resulting in heap overflow). (CVE-2015-4022)</p>
+	  <p>Fixed bug #68598 (pcntl_exec() should not allow null
+	    char). (CVE-2015-4026)</p>
+	  <p>Fixed bug #69453 (Memory Corruption in phar_parse_tarfile
+	    when entry filename starts with null). (CVE-2015-4021)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4021</cvename>
+      <cvename>CVE-2015-4022</cvename>
+      <cvename>CVE-2015-4024</cvename>
+      <cvename>CVE-2015-4025</cvename>
+      <cvename>CVE-2015-4026</cvename>
+      <url>https://php.net/ChangeLog-5.php#5.6.9</url>
+    </references>
+    <dates>
+      <discovery>2015-05-14</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc38cd83-00b3-11e5-8ebd-0026551a22dc">
+    <topic>PostgreSQL -- minor security problems.</topic>
+    <affects>
+      <package>
+	<name>postgresql90-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1587/">
+	  <p>
+		This update fixes three security vulnerabilities reported in
+		PostgreSQL over the past few months. Nether of these issues is seen as
+		particularly urgent. However, users should examine them in case their
+		installations are vulnerable:.
+	  </p>
+	  <ul>
+	    <li>CVE-2015-3165 Double "free" after authentication timeout.</li>
+	    <li>CVE-2015-3166 Unanticipated errors from the standard library.</li>
+	    <li>CVE-2015-3167 pgcrypto has multiple error messages for decryption with an incorrect key.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3165</cvename>
+      <cvename>CVE-2015-3166</cvename>
+      <cvename>CVE-2015-3167</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-10</discovery>
+      <entry>2015-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d0034536-ff24-11e4-a072-d050996490d0">
     <topic>proftpd -- arbitrary code execution vulnerability with chroot</topic>
     <affects>
@@ -286,7 +621,7 @@ Notes:
   </vuln>
 
   <vuln vid="2780e442-fc59-11e4-b18b-6805ca1d3bb1">
-    <topic>qemu -- possible VM escape and code execution ("VENOM")</topic>
+    <topic>qemu, xen and VirtualBox OSE -- possible VM escape and code execution ("VENOM")</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -297,6 +632,14 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<range><lt>2.3.50.g20150501_1</lt></range>
+      </package>
+      <package>
+	<name>virtualbox-ose</name>
+	<range><lt>4.3.28</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.5.0</ge><lt>4.5.0_5</lt></range>
       </package>
     </affects>
     <description>
@@ -322,10 +665,13 @@ Notes:
       <freebsdpr>200256</freebsdpr>
       <freebsdpr>200257</freebsdpr>
       <url>http://venom.crowdstrike.com/</url>
+      <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2015-3456-2542656.html</url>
+      <url>http://xenbits.xen.org/xsa/advisory-133.html</url>
     </references>
     <dates>
       <discovery>2015-04-29</discovery>
       <entry>2015-05-17</entry>
+      <modified>2015-05-23</modified>
     </dates>
   </vuln>
 
@@ -1136,11 +1482,12 @@ Notes:
       <cvename>CVE-2015-2783</cvename>
       <cvename>CVE-2015-1351</cvename>
       <cvename>CVE-2015-1352</cvename>
-      <freebsdpr>ports/198739</freebsdpr>
+      <freebsdpr>ports/199585</freebsdpr>
     </references>
     <dates>
       <discovery>2015-04-16</discovery>
       <entry>2015-04-25</entry>
+      <modified>2015-05-22</modified>
     </dates>
   </vuln>
 

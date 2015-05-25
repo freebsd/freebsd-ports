@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- freebsd/rtpproxy.in.orig
 +++ freebsd/rtpproxy.in
 @@ -25,7 +25,10 @@

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/btlist.c.orig
 +++ src/btlist.c
 @@ -13,6 +13,7 @@

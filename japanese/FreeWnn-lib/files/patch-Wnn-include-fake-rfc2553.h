@@ -4,9 +4,8 @@ RCS file: Wnn/include/fake-rfc2553.h
 diff -N Wnn/include/fake-rfc2553.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
 +++ Wnn/include/fake-rfc2553.h	2 Jan 2009 21:09:34 -0000	1.1
-@@ -0,0 +1,173 @@
+@@ -0,0 +1,172 @@
 +/* $Id: fake-rfc2553.h,v 1.13 2006/07/24 03:51:52 djm Exp $ */
-+/* $FreeBSD$ */
 +
 +/*
 + * Copyright (C) 2000-2003 Damien Miller.  All rights reserved.

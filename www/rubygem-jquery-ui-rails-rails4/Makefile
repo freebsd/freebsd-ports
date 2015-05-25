@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-ui-rails
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	jQuery UI's JavaScript, CSS, and image files packaged for Rails
+COMMENT=	Packaged JavaScript, CSS and image files of jQuery UI for Rails
 
 LICENSE=	MIT
 

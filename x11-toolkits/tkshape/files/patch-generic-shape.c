@@ -1,4 +1,3 @@
-$FreeBSD$
 diff -ur generic/shape.c shape0.4.new/generic/shape.c.new
 --- generic/shape.c	Mon Sep 11 17:16:31 2000
 +++ generic/shape.c.new	Fri Jan 30 15:20:15 2004

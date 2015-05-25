@@ -1787,6 +1787,7 @@
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
+    SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
     SUBDIR += rubygem-addressable
@@ -1942,7 +1943,6 @@
     SUBDIR += rubygem-sinatra-contrib
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
-    SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom
     SUBDIR += rubygem-tinymce-rails

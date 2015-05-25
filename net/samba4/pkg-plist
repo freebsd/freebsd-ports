@@ -525,86 +525,6 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/drs_utils.py
 %%PYTHON_SITELIBDIR%%/samba/dsdb.so
 %%PYTHON_SITELIBDIR%%/samba/external/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/dnssec.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/e164.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/edns.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/entropy.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/exception.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/flags.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/hash.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/inet.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/ipv4.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/ipv6.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/message.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/name.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/namedict.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/node.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/opcode.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/query.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rcode.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdata.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdataclass.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdataset.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdatatype.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/AFSDB.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/CERT.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/CNAME.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/DLV.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/DNAME.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/DNSKEY.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/DS.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/GPOS.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/HINFO.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/HIP.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/ISDN.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/LOC.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/MX.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/NS.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/NSEC.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/NSEC3.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/NSEC3PARAM.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/PTR.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/RP.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/RRSIG.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/RT.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/SOA.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/SPF.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/SSHFP.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/TXT.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/X25.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/A.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/AAAA.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/APL.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/DHCID.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/IPSECKEY.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/KX.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/NAPTR.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/NSAP.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/NSAP_PTR.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/PX.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/SRV.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/WKS.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/dsbase.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/mxbase.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/nsbase.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/txtbase.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/renderer.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/resolver.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/reversename.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/rrset.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/set.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/tokenizer.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/tsig.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/tsigkeyring.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/ttl.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/update.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/version.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/wiredata.py
-%%PYTHON_SITELIBDIR%%/samba/external/dns/zone.py
 %%PYTHON_SITELIBDIR%%/samba/external/subunit/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/external/subunit/chunked.py
 %%PYTHON_SITELIBDIR%%/samba/external/subunit/details.py
@@ -792,10 +712,6 @@ libdata/pkgconfig/wbclient.pc
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external/subunit/tests
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external/subunit
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external
 @dirrm %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dirrm %%PYTHON_SITELIBDIR%%/samba

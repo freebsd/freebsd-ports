@@ -13,5 +13,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-1.0.pc:${PORTSDIR}/devel/
 
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
 
 .include <bsd.port.mk>

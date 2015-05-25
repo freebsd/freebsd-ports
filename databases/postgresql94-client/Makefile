@@ -3,7 +3,7 @@
 
 PORTNAME=	postgresql
 COMMENT=	PostgreSQL database (client)
-PORTREVISION=	1
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../postgresql94-server
 

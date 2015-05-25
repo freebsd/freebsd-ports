@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- common/file.c.orig	Sat Aug 17 00:39:41 1996
 +++ common/file.c	Mon Aug 23 16:36:03 2004
 @@ -44,6 +44,7 @@

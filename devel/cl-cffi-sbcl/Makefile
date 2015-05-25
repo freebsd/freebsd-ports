@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	0.11.0
-PORTREVISION=	3
+PORTVERSION=	0.14.0
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -10,14 +9,11 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cffi/cffi.asd:${PORTSDIR}/devel/cl-cffi \
-		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
-		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
-		${LOCALBASE}/${CL_LIBDIR_REL}/babel/sbclfasl/src/enc-ascii.fasl:${PORTSDIR}/converters/cl-babel-sbcl
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cffi/cffi.asd:${PORTSDIR}/devel/cl-cffi \
-		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-sbcl \
-		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:${PORTSDIR}/devel/cl-trivial-features-sbcl \
-		${LOCALBASE}/${CL_LIBDIR_REL}/babel/sbclfasl/src/enc-ascii.fasl:${PORTSDIR}/converters/cl-babel-sbcl
+BUILD_DEPENDS=	cl-cffi>=0:${PORTSDIR}/devel/cl-cffi \
+		cl-alexandria-sbcl>=0:${PORTSDIR}/devel/cl-alexandria-sbcl \
+		cl-trivial-features-sbcl>=0:${PORTSDIR}/devel/cl-trivial-features-sbcl \
+		cl-babel-sbcl>=0:${PORTSDIR}/converters/cl-babel-sbcl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

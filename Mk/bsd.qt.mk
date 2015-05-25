@@ -146,6 +146,9 @@ CONFIGURE_ARGS+=-nomake examples -nomake tests \
 				-qmldir ${PREFIX}/${QT_QMLDIR_REL} \
 				-examplesdir ${PREFIX}/${QT_EXAMPLEDIR_REL} \
 				-testsdir ${PREFIX}/${QT_TESTDIR_REL}
+.  if ${ARCH} == i386 && empty(MACHINE_CPU:Msse2)
+CONFIGURE_ARGS+=-no-sse2
+.  endif
 . endif
 
 . if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)

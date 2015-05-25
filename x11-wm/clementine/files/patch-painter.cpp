@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- painter.cpp.orig	Sat Mar 23 03:23:17 2002
 +++ painter.cpp	Tue May 27 19:25:40 2003
 @@ -9,6 +9,7 @@

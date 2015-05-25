@@ -1,6 +1,6 @@
---- build.xml.orig	2013-04-23 16:50:41.883412959 +0200
-+++ build.xml	2013-04-23 16:51:32.230415374 +0200
-@@ -58,7 +58,7 @@
+--- build.xml.orig	2015-05-23 02:27:12 UTC
++++ build.xml
+@@ -59,7 +59,7 @@
      </target>
  
      <target name="defaultrelease" unless="is.svn">

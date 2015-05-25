@@ -15,13 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gio-sharp-2.0.pc:${PORTSDIR}/devel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
+CONFIGURE_ENV=	ac_cv_path_CSC=${LOCALBASE}/bin/mcs
+USES=		gmake pathfix pkgconfig tar:bzip2
 MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
-	    ${WRKSRC}/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

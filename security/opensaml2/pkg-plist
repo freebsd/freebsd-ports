@@ -49,13 +49,13 @@ include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
 lib/libsaml.so
 lib/libsaml.so.8
-lib/libsaml.so.8.0.3
+lib/libsaml.so.8.0.4
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
-%%PORTDOCS%%@comment @dir %%DOCSDIR%%/api
+%%PORTDOCS%%@dir %%DOCSDIR%%/api
 share/xml/opensaml/saml20-catalog.xml
 share/xml/opensaml/saml10-catalog.xml
 share/xml/opensaml/saml11-catalog.xml

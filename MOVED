@@ -7533,7 +7533,6 @@ devel/php53-pcntl||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 archivers/php53-bz2||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 net/php53-sockets||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 lang/php53||2015-04-17|Has expired: security EOL reached 14 Aug 2014
-devel/pecl-uuid||2015-04-17|Has expired: requires php53, security EOL reached 14 Aug 2014
 lang/php53-extensions||2015-04-17|Has expired: security EOL reached 14 Aug 2014
 german/pecl-konto_check||2015-04-17|Has expired: requires php53, security EOL reached 14 Aug 2014
 www/moodle26|www/moodle27|2015-04-17|Has expired: Deprecated by upstream, use www/moodle2{7,8} instead
@@ -7584,3 +7583,16 @@ deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produc
 devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
 lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
 databases/my2cego|databases/cegobridge|2015-05-19|Superseded by databases/cegobridge
+devel/rubygem-bioruby|devel/rubygem-bio|2015-05-23|Rename to match our rubygems naming
+www/rubygem-taggable|www/rubygem-acts_as_taggable|2015-05-23|Rename to match our rubygems naming
+security/rubygem-meterpreter_bins|security/rubygem-metasploit-payloads|2015-05-23|Renamed upstream
+textproc/rubygem-augeas|textproc/rubygem-ruby-augeas|2015-05-23|Rename to match our rubygems naming
+textproc/rubygem-xslt|textproc/rubygem-ruby-xslt|2015-05-24|Rename to match our rubygems naming
+net-mgmt/glpi-plugins-tracker-agent|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superceded by net-mgmt/glpi-plugins-fusioninventory-server
+net-mgmt/glpi-plugins-tracker-server|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superceded by net-mgmt/glpi-plugins-fusioninventory-server
+science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match our rubygems naming
+security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygems naming
+print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygems naming
+security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
+emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
+emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed

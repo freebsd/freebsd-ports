@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rifiuti2
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/abelcheung/rifiuti2/releases/download/${PORTVERSION}/
 

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- alclib/linux_ssm.h.orig	Fri Jul 30 14:15:54 2004
 +++ alclib/linux_ssm.h	Mon Aug  2 11:50:48 2004
 @@ -33,12 +33,12 @@

@@ -34,4 +34,4 @@
 %%WWWDIR%%/jquery.flot.time.min.js
 %%JQUERY%%%%WWWDIR%%/jquery.js
 %%JQUERY%%%%WWWDIR%%/jquery.min.js
-@dirrmtry %%WWWDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/gauge

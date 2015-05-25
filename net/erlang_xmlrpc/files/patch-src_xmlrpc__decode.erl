@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/xmlrpc_decode.erl.orig	Tue Oct 12 21:02:55 2004
 +++ src/xmlrpc_decode.erl	Tue Oct 12 21:03:43 2004
 @@ -28,7 +28,7 @@

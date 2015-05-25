@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- config_ndpmon.xml.orig
 +++ config_ndpmon.xml
 @@ -1,6 +1,6 @@

@@ -10,6 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API
 
+LICENSE=	BSD4CLAUSE
+
 RUN_DEPENDS=	rubygem-hpricot>=0.6.0:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-mocha>=0.5.3:${PORTSDIR}/devel/rubygem-mocha
 

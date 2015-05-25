@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- microcode/config.h.in.orig
 +++ microcode/config.h.in
 @@ -86,7 +86,7 @@

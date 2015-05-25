@@ -58,6 +58,7 @@ etc/shibboleth/protocols.xml.dist
 @unexec if cmp -s %D/etc/shibboleth/security-policy.xml.dist %D/etc/shibboleth/security-policy.xml; then rm -f %D/etc/shibboleth/security-policy.xml; fi
 etc/shibboleth/security-policy.xml.dist
 @exec if [ ! -f %D/etc/shibboleth/security-policy.xml ] ; then cp -p %D/etc/shibboleth/security-policy.xml.dist %D/etc/shibboleth/security-policy.xml; fi
+etc/shibboleth/shibd-amazon
 etc/shibboleth/shibd-redhat
 etc/shibboleth/shibd-debian
 etc/shibboleth/shibd-suse
@@ -135,6 +136,7 @@ include/shibsp/util/PropertySet.h
 include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
+lib/libshibsp.so.6.0.4
 lib/libshibsp.so.6
 lib/libshibsp.so
 lib/shibboleth/adfs.so
@@ -144,6 +146,7 @@ lib/shibboleth/plugins-lite.so
 lib/shibboleth/plugins.so
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
 %%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
+lib/libshibsp-lite.so.6.0.4
 lib/libshibsp-lite.so.6
 lib/libshibsp-lite.so
 sbin/shibd
@@ -167,29 +170,30 @@ share/doc/shibboleth/OPENSSL.LICENSE
 share/doc/shibboleth/README.txt
 share/doc/shibboleth/RELEASE.txt
 share/doc/shibboleth/main.css
-@dirrmtry share/doc/shibboleth/api
-@dirrmtry share/doc/shibboleth
-@dirrmtry lib/shibboleth
-@dirrmtry share/xml/shibboleth
-@dirrmtry include/shibsp/util
-@dirrmtry include/shibsp/security
-@dirrmtry include/shibsp/remoting
-@dirrmtry include/shibsp/metadata
-@dirrmtry include/shibsp/lite
-@dirrmtry include/shibsp/handler
-@dirrmtry include/shibsp/binding
-@dirrmtry include/shibsp/attribute/resolver
-@dirrmtry include/shibsp/attribute/filtering
-@dirrmtry include/shibsp/attribute
-@dirrmtry include/shibsp
-@dirrmtry etc/shibboleth
+@dir share/doc/shibboleth/api
+@dir share/doc/shibboleth
+@dir lib/shibboleth
+@dir share/xml/shibboleth
+@dir include/shibsp/util
+@dir include/shibsp/security
+@dir include/shibsp/remoting
+@dir include/shibsp/metadata
+@dir include/shibsp/lite
+@dir include/shibsp/handler
+@dir include/shibsp/binding
+@dir include/shibsp/attribute/resolver
+@dir include/shibsp/attribute/filtering
+@dir include/shibsp/attribute
+@dir include/shibsp
+@dir etc/shibboleth
+@dir /var/log/shibboleth-www
 @exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/log/shibboleth
 @exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/cache/shibboleth
 @exec install -d -o %%SHIBD_USER%% -g %%WWWGRP%% -m 750 /var/run/shibboleth
 @owner %%SHIBD_USER%%
 @group %%SHIBD_GROUP%%
-@dirrmtry /var/log/shibboleth
-@dirrmtry /var/cache/shibboleth
+@dir /var/log/shibboleth
+@dir /var/cache/shibboleth
 @mode 750
 @group %%WWWGRP%%
-@dirrmtry /var/run/shibboleth
+@dir /var/run/shibboleth

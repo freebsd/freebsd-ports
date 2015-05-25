@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action caching for Action Pack (removed from core in Rails 4.0)
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-actionpack4>=4.0:${PORTSDIR}/www/rubygem-actionpack4
 
 USE_RUBY=	yes

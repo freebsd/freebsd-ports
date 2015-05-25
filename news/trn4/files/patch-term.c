@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- term.c.orig
 +++ term.c
 @@ -662,9 +662,9 @@

@@ -57,7 +57,7 @@
     SUBDIR += hugo
     SUBDIR += hyperv-is
     SUBDIR += i386-wine
-    SUBDIR += i386-wine-compholio
+    SUBDIR += i386-wine-staging
     SUBDIR += i386-wine-devel
     SUBDIR += ia64sim
     SUBDIR += ines
@@ -109,6 +109,7 @@
     SUBDIR += pcsxr
     SUBDIR += pearpc
     SUBDIR += pipelight
+    SUBDIR += ppsspp
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
@@ -153,7 +154,7 @@
     SUBDIR += vmw
     SUBDIR += vxtools
     SUBDIR += wine
-    SUBDIR += wine-compholio
+    SUBDIR += wine-staging
     SUBDIR += wine-devel
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel

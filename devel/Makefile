@@ -415,6 +415,7 @@
     SUBDIR += erlang-msgpack
     SUBDIR += erlang-mustache
     SUBDIR += erlang-protobuffs
+    SUBDIR += erlang-syslog
     SUBDIR += esdl
     SUBDIR += etcd
     SUBDIR += etcdctl
@@ -974,6 +975,7 @@
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += lager
+    SUBDIR += lager_syslog
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
@@ -3086,6 +3088,7 @@
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Reporter-Transport-Metabase
     SUBDIR += p5-Test-Requires
+    SUBDIR += p5-Test-RequiresInternet
     SUBDIR += p5-Test-Script
     SUBDIR += p5-Test-Script-Run
     SUBDIR += p5-Test-SharedFork
@@ -3823,6 +3826,7 @@
     SUBDIR += py-dirspec
     SUBDIR += py-distorm
     SUBDIR += py-distutils-extra
+    SUBDIR += py-django-tastypie-mongoengine
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-dogpile.core
@@ -4431,7 +4435,7 @@
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
-    SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-bio
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones

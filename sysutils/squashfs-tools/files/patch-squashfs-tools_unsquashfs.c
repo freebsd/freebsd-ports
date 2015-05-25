@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- unsquashfs.c.orig
 +++ unsquashfs.c
 @@ -31,7 +31,14 @@

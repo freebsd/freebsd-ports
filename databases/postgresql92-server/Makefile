@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.2.10
+DISTVERSION?=	9.2.11
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
@@ -57,10 +57,10 @@ INSTALL_DIRS?=	src/timezone src/backend \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
 		src/bin/pg_basebackup
 BUILD_DIRS?=	src/port ${INSTALL_DIRS}
+INSTALL_TARGET?=install-strip
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
-PORTREVISION=	1
 COMPONENT=	-server
 USE_RC_SUBR=	postgresql
 USES+=		pgsql:${DISTVERSION:C/([0-9][0-9]*\.[0-9][0-9]*).*/\1/g}
@@ -199,8 +199,6 @@ CFLAGS+=	-O3 -funroll-loops
 .  if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 INSTALL_TARGET=	install
-.  else
-INSTALL_TARGET=	install-strip
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}

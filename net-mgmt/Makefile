@@ -65,8 +65,6 @@
     SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += glpi-plugins-fusioninventory-server
-    SUBDIR += glpi-plugins-tracker-agent
-    SUBDIR += glpi-plugins-tracker-server
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += gsnmp

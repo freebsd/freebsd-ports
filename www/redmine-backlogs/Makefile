@@ -8,6 +8,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Agile plugin for Redmine
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	rubygem-holidays>=1.0.3:${PORTSDIR}/devel/rubygem-holidays \
 		rubygem-icalendar>=0.4.2:${PORTSDIR}/devel/rubygem-icalendar \
 		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \

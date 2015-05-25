@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- plugins/mac_resolv/make-manuf.orig
 +++ plugins/mac_resolv/make-manuf
 @@ -27,7 +27,7 @@

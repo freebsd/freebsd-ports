@@ -7,7 +7,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	SyslogLogger is a Logger replacement that logs to syslog
+COMMENT=	Logger replacement that logs to syslog
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

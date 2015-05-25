@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.42
+PORTVERSION=	1.7.43
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	GECKO MONO
 GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
-CONFLICTS_INSTALL?=     wine-[0-9]* wine-compholio-[0-9]* wine-devel-[0-9]* \
-                        i386-wine-[0-9]* i386-wine-compholio-[0-9]*
+CONFLICTS_INSTALL?=     wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
+                        i386-wine-[0-9]* i386-wine-staging-[0-9]*
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
@@ -44,6 +44,13 @@ BUNDLE_LIBS=	yes
 
 GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.36-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono-devel
+
+.if ${PKGNAMESUFFIX} == -staging
+DISTNAME=	i386-wine-compholio-1.7.43,1
+.if ${PORTVERSION} != 1.7.43
+BROKEN=		Temporary fix for compholio->staging rename.  Needs to be undone for 1.7.44 update cycle
+.endif
+.endif
 
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
@@ -84,7 +91,7 @@ ${PLIST}: fetch
 port-update:
 	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 .for osrel in 8 9 10 11
-.for suffix in -devel -compholio
+.for suffix in -devel -staging
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
 	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~

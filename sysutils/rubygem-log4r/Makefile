@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flexible logging library for use in Ruby programs
 
+LICENSE=	LGPL3
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

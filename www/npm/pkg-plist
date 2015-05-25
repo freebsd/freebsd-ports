@@ -903,8 +903,6 @@ lib/node_modules/npm/node_modules/lru-cache/.npmignore
 lib/node_modules/npm/node_modules/lru-cache/CONTRIBUTORS
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
-lib/node_modules/npm/node_modules/lru-cache/bar.js
-lib/node_modules/npm/node_modules/lru-cache/foo.js
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
@@ -948,7 +946,6 @@ lib/node_modules/npm/node_modules/minimatch/node_modules/brace-expansion/test/pa
 lib/node_modules/npm/node_modules/minimatch/node_modules/brace-expansion/test/same-type.js
 lib/node_modules/npm/node_modules/minimatch/node_modules/brace-expansion/test/sequence.js
 lib/node_modules/npm/node_modules/minimatch/package.json
-lib/node_modules/npm/node_modules/mkdirp/.npmignore
 lib/node_modules/npm/node_modules/mkdirp/.travis.yml
 lib/node_modules/npm/node_modules/mkdirp/LICENSE
 lib/node_modules/npm/node_modules/mkdirp/README.markdown
@@ -2250,7 +2247,16 @@ lib/node_modules/npm/node_modules/umask/test/simple.js
 lib/node_modules/npm/node_modules/which/LICENSE
 lib/node_modules/npm/node_modules/which/README.md
 lib/node_modules/npm/node_modules/which/bin/which
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/LICENSE
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/README.md
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/index.js
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/node_modules/is-relative/LICENSE-MIT
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/node_modules/is-relative/README.md
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/node_modules/is-relative/index.js
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/node_modules/is-relative/package.json
+lib/node_modules/npm/node_modules/which/node_modules/is-absolute/package.json
 lib/node_modules/npm/node_modules/which/package.json
+lib/node_modules/npm/node_modules/which/test/basic.js
 lib/node_modules/npm/node_modules/which/which.js
 lib/node_modules/npm/node_modules/wrappy/LICENSE
 lib/node_modules/npm/node_modules/wrappy/README.md
@@ -2370,6 +2376,8 @@ lib/node_modules/npm/test/tap/00-config-setup.js
 lib/node_modules/npm/test/tap/00-verify-bundle-deps.js
 lib/node_modules/npm/test/tap/00-verify-ls-ok.js
 lib/node_modules/npm/test/tap/404-parent.js
+lib/node_modules/npm/test/tap/404-private-registry-scoped.js
+lib/node_modules/npm/test/tap/404-private-registry.js
 lib/node_modules/npm/test/tap/access.js
 lib/node_modules/npm/test/tap/add-remote-git-fake-windows.js
 lib/node_modules/npm/test/tap/add-remote-git-file.js

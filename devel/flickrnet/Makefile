@@ -11,11 +11,11 @@ DISTNAME=	FlickrNet${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}-Src-48055
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flickr .Net API Library
 
-USES=		gmake zip mono
+USES=		mono zip
 WRKSRC=		${WRKDIR}/FlickrNet
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gmcs -t:library -out:FlickrNet.dll -r:System.Data -r:System.Web -r:System.Drawing *.cs
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mcs -t:library -out:FlickrNet.dll -r:System.Data -r:System.Web -r:System.Drawing *.cs
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mono/flickrnet

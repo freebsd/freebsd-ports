@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- compat/gai-errnos.h.orig	Fri Mar 12 07:29:36 2004
 +++ compat/gai-errnos.h	Fri Mar 12 07:29:52 2004
 @@ -10,5 +10,7 @@

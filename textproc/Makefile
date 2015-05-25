@@ -1319,7 +1319,6 @@
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
-    SUBDIR += rubygem-augeas
     SUBDIR += rubygem-autoprefixer-rails
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-coderay
@@ -1328,6 +1327,7 @@
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-compass-rails
     SUBDIR += rubygem-creole
+    SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
@@ -1387,6 +1387,8 @@
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
+    SUBDIR += rubygem-ruby-augeas
+    SUBDIR += rubygem-ruby-xslt
     SUBDIR += rubygem-rubypants
     SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
@@ -1409,7 +1411,6 @@
     SUBDIR += rubygem-version_sorter
     SUBDIR += rubygem-wikicloth
     SUBDIR += rubygem-xml-simple
-    SUBDIR += rubygem-xslt
     SUBDIR += rubygem-ya2yaml
     SUBDIR += rubygem-yard
     SUBDIR += rubygem-yard-chef

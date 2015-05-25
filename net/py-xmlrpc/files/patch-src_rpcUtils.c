@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/rpcUtils.c.orig
 +++ src/rpcUtils.c
 @@ -276,7 +280,7 @@

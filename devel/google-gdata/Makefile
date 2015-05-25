@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:${PORTSDIR}/dev
 
 USES=		dos2unix gmake mono
 DOS2UNIX_FILES=	Makefile misc/gdata-sharp-core.pc.in
+MAKE_ARGS=	CSC=${LOCALBASE}/bin/mcs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile

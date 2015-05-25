@@ -10,6 +10,8 @@ DISTNAME=	ocsigenserver-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web programming framework for OCaml
 
+BROKEN=		Fails to build with ocaml 4.02
+
 LICENSE=	LGPL21_SSLEX
 LICENSE_NAME=	Lesser GPL 2.1 with a special OpenSSL exception clause
 LICENSE_FILE=	${WRKSRC}/COPYING

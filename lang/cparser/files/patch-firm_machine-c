@@ -1,5 +1,3 @@
-$FreeBSD$
-
 By rdivacky@, enables cparser to work out of the box on amd64
 
 --- driver/firm_machine.c	2011-04-14 16:51:46.000000000 +0200

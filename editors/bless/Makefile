@@ -10,9 +10,12 @@ MASTER_SITES=	http://download.gna.org/bless/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	High quality, full featured hex editor
 
+BROKEN=		Fails to build with mono 4
+
 USES=		gmake mono pathfix pkgconfig
 USE_GNOME=	gnomeprefix gnomedocutils gtksharp20
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 INSTALLS_OMF=	yes
 OPTIONS_DEFINE=	DOCS
 

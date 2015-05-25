@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bacon is a small RSpec clone
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/bacon
 
 .include <bsd.port.mk>

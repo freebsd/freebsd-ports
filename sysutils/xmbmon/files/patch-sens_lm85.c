@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- sens_lm85.c	Mon Oct 13 10:12:58 2003
 +++ sens_lm85.c	Wed Dec 21 15:37:56 2005
 @@ -53,7 +53,6 @@

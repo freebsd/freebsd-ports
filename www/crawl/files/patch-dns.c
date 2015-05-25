@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- dns.c.orig	Sun May 18 10:21:33 2003
 +++ dns.c	Mon May 30 16:20:14 2005
 @@ -562,8 +562,13 @@

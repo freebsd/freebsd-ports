@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- stun.cxx
 +++ stun.cxx
 @@ -648,55 +648,13 @@
