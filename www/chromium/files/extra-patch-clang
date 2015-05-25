@@ -86,15 +86,6 @@
    EXPECT_EQ(data->run_duration_sum(), 0);
    EXPECT_EQ(data->run_duration_sample(), 0);
    EXPECT_EQ(data->queue_duration_sum(), 0);
-@@ -489,7 +489,7 @@
-   Location location(kFunction, kFile, kLineNumber, NULL);
-   // Do not delete |birth|.  We don't own it.
-   Births* birth = ThreadData::TallyABirthIfActive(location);
--  EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
-+  EXPECT_NE(static_cast<Births*>(NULL), birth);
- 
-   const unsigned int kTimePosted = 1;
-   const unsigned int kStartOfRun = 5;
 --- chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-15 00:18:50.000000000 +0200
 +++ chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-18 22:02:15.000000000 +0200
 @@ -260,7 +260,7 @@
@@ -224,7 +215,7 @@
  
 --- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-15 00:32:17.000000000 +0200
 +++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-18 22:13:27.000000000 +0200
-@@ -1754,7 +1754,7 @@
+@@ -961,7 +961,7 @@
  
  const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
    FATAL() << "Not implemented yet.";
@@ -233,7 +224,7 @@
  }
  
  const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -1773,7 +1773,7 @@
+@@ -980,7 +980,7 @@
  
  const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
    FATAL() << "Not implemented yet.";
