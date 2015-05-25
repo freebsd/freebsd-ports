@@ -3,6 +3,7 @@
 
 PORTNAME=	tinyatom
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Small and easy to use ruby Atom feed generator
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
+RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-public_suffix>=0:${PORTSDIR}/dns/rubygem-public_suffix
 
 USE_RUBY=	yes
