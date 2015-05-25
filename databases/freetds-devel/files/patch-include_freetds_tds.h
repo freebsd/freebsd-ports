@@ -1,4 +1,4 @@
---- include/freetds/tds.h.orig	2015-05-16 09:00:33 UTC
+--- include/freetds/tds.h.orig	2015-05-21 09:00:35 UTC
 +++ include/freetds/tds.h
 @@ -144,7 +144,10 @@ typedef struct
  	TDS_INT      date;	/**< date, 0 = 1900-01-01 */
