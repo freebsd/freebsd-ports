@@ -100,7 +100,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/paneFilterButtons.png
 %%DATADIR%%/resources/inspector/Images/paneRefreshButtons.png
 %%DATADIR%%/resources/inspector/Images/popoverArrows.png
-%%DATADIR%%/resources/inspector/Images/popoverBackground.png
 %%DATADIR%%/resources/inspector/Images/profileGroupIcon.png
 %%DATADIR%%/resources/inspector/Images/profileIcon.png
 %%DATADIR%%/resources/inspector/Images/profileSmallIcon.png
@@ -116,9 +115,12 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/responsiveDesign_2x.png
 %%DATADIR%%/resources/inspector/Images/searchNext.png
 %%DATADIR%%/resources/inspector/Images/searchPrev.png
+%%DATADIR%%/resources/inspector/Images/serviceWorker.svg
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
+%%DATADIR%%/resources/inspector/Images/speech.png
+%%DATADIR%%/resources/inspector/Images/spinner.svg
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs_2x.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
@@ -134,10 +136,10 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/touchCursor_2x.png
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
+%%DATADIR%%/resources/inspector/accessibility_module.js
 %%DATADIR%%/resources/inspector/audits_module.js
 %%DATADIR%%/resources/inspector/components_lazy_module.js
 %%DATADIR%%/resources/inspector/console_module.js
-%%DATADIR%%/resources/inspector/devices_module.js
 %%DATADIR%%/resources/inspector/devtools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/resources/inspector/devtools.js
@@ -152,8 +154,10 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/profiler_module.js
 %%DATADIR%%/resources/inspector/promises_module.js
 %%DATADIR%%/resources/inspector/resources_module.js
+%%DATADIR%%/resources/inspector/screencast_module.js
 %%DATADIR%%/resources/inspector/script_formatter_worker_module.js
 %%DATADIR%%/resources/inspector/settings_module.js
+%%DATADIR%%/resources/inspector/snippets_module.js
 %%DATADIR%%/resources/inspector/source_frame_module.js
 %%DATADIR%%/resources/inspector/sources_module.js
 %%DATADIR%%/resources/inspector/temp_storage_shared_worker_module.js
