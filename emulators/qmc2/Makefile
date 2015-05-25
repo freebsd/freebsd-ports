@@ -23,7 +23,7 @@ USE_QT4=	gui opengl phonon qtestlib webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_SDL=	sdl
 
-CXXFLAGS+=	-I${PREFIX}/include/SDL/
+CXXFLAGS+=	-I${LOCALBASE}/include/SDL/
 MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
 		CC_FLAGS="${CFLAGS} -DUSE_FILE32API" \
