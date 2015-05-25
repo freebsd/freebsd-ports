@@ -69,7 +69,7 @@ LDAP_SASL_DESC=	LDAP client-to-server SASL auth
 LMDB_DESC=	LMDB maps
 SPF_DESC=	SPF support (via libspf2 1.2.x)
 TEST_DESC=	SMTP/LMTP test server and generator
-VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
+VDA_DESC=	VDA (Virtual Delivery Agent)
 
 RG1_DESC=	Dovecot SASL authentication methods
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
