@@ -9,27 +9,27 @@ writeconfig               0
 #
 # CORE SEARCH PATH OPTIONS
 #
-rompath                   $HOME/.mame/roms
-hashpath                  $HOME/.mame/hash;/usr/local/share/mame/hash/
-samplepath                $HOME/.mame/samples
-artpath                   $HOME/.mame/artwork;/usr/local/share/mame/artwork/
-ctrlrpath                 $HOME/.mame/ctrlr
-inipath                   $HOME/.mame;.;ini
-fontpath                  $HOME/.mame/font;/usr/local/share/mame/
-cheatpath                 $HOME/.mame/cheat
-crosshairpath             $HOME/.mame/crosshair
+rompath                   $HOME/.%%MTARGET%%/roms
+hashpath                  $HOME/.%%MTARGET%%/hash;/usr/local/share/%%MTARGET%%/hash/
+samplepath                $HOME/.%%MTARGET%%/samples
+artpath                   $HOME/.%%MTARGET%%/artwork;/usr/local/share/%%MTARGET%%/artwork/
+ctrlrpath                 $HOME/.%%MTARGET%%/ctrlr
+inipath                   $HOME/.%%MTARGET%%;.;ini
+fontpath                  $HOME/.%%MTARGET%%/font;/usr/local/share/%%MTARGET%%/
+cheatpath                 $HOME/.%%MTARGET%%/cheat
+crosshairpath             $HOME/.%%MTARGET%%/crosshair
 
 #
 # CORE OUTPUT DIRECTORY OPTIONS
 #
-cfg_directory             $HOME/.mame/cfg
-nvram_directory           $HOME/.mame/nvram
-memcard_directory         $HOME/.mame/memcard
-input_directory           $HOME/.mame/inp
-state_directory           $HOME/.mame/sta
-snapshot_directory        $HOME/.mame/snap
-diff_directory            $HOME/.mame/diff
-comment_directory         $HOME/.mame/comments
+cfg_directory             $HOME/.%%MTARGET%%/cfg
+nvram_directory           $HOME/.%%MTARGET%%/nvram
+memcard_directory         $HOME/.%%MTARGET%%/memcard
+input_directory           $HOME/.%%MTARGET%%/inp
+state_directory           $HOME/.%%MTARGET%%/sta
+snapshot_directory        $HOME/.%%MTARGET%%/snap
+diff_directory            $HOME/.%%MTARGET%%/diff
+comment_directory         $HOME/.%%MTARGET%%/comments
 
 #
 # CORE STATE/PLAYBACK OPTIONS
@@ -193,16 +193,16 @@ gl_vbo                    1
 gl_pbo                    1
 gl_glsl                   0
 gl_glsl_filter            1
-glsl_shader_mame0         none
-glsl_shader_mame1         none
-glsl_shader_mame2         none
-glsl_shader_mame3         none
-glsl_shader_mame4         none
-glsl_shader_mame5         none
-glsl_shader_mame6         none
-glsl_shader_mame7         none
-glsl_shader_mame8         none
-glsl_shader_mame9         none
+glsl_shader.%%MTARGET%%0         none
+glsl_shader.%%MTARGET%%1         none
+glsl_shader.%%MTARGET%%2         none
+glsl_shader.%%MTARGET%%3         none
+glsl_shader.%%MTARGET%%4         none
+glsl_shader.%%MTARGET%%5         none
+glsl_shader.%%MTARGET%%6         none
+glsl_shader.%%MTARGET%%7         none
+glsl_shader.%%MTARGET%%8         none
+glsl_shader.%%MTARGET%%9         none
 glsl_shader_screen0       none
 glsl_shader_screen1       none
 glsl_shader_screen2       none
