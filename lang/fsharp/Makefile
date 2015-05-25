@@ -10,6 +10,8 @@ COMMENT=	Functional and object-oriented language for the .NET platform
 
 LICENSE=	APACHE20
 
+BROKEN=		Fails to build with mono 4
+
 BUILD_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 
