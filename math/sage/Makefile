@@ -37,7 +37,7 @@ pre-extract:
 
 PLIST_FILES=	bin/sage
 USE_TEX=	latex:build
-USES=		gmake iconv tk
+USES=		gmake iconv tk perl5
 MAKE_JOBS_SAFE=	yes
 
 # Optimization flags will be defined by the source
@@ -47,7 +47,8 @@ FFLAGS:=	${CFLAGS:C/^-O.*$//}
 MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib \
 		DOT_SAGE=${WRKSRC}/tmp/.sage \
-		SAGE_FAT_BINARY=yes
+		SAGE_FAT_BINARY=yes \
+		PERL=${PERL}
 
 LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 
