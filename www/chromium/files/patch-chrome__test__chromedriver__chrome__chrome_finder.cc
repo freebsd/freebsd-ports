@@ -5,16 +5,16 @@
    }
  }
 -#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_FREEBSD)
++#elif defined(OS_LINUX) || defined(OS_BSD)
  void GetApplicationDirs(std::vector<base::FilePath>* locations) {
    locations->push_back(base::FilePath("/opt/google/chrome"));
    locations->push_back(base::FilePath("/usr/local/bin"));
-@@ -91,7 +91,7 @@
+@@ -92,7 +92,7 @@
+ #elif defined(OS_MACOSX)
        base::FilePath("Google Chrome.app/Contents/MacOS/Google Chrome"),
        base::FilePath("Chromium.app/Contents/MacOS/Chromium")
-   };
 -#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_FREEBSD)
-   base::FilePath browser_exes_array[] = {
++#elif defined(OS_LINUX) || defined(OS_BSD)
        base::FilePath("google-chrome"),
        base::FilePath("chrome"),
+       base::FilePath("chromium"),
