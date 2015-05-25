@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of Ruby Interpreter in Pure Java
 
+LICENSE=	EPL GPLv2 LGPL21
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		cpe
