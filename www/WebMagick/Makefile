@@ -4,6 +4,7 @@
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p26
 DISTVERSION=	2.03pre26
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}-beta/${DISTVERSION}
@@ -12,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
@@ -48,5 +50,9 @@ pre-configure:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/webmagickrc.dist \
+		${STAGEDIR}${PREFIX}/etc/webmagickrc.sample
 
 .include <bsd.port.post.mk>
