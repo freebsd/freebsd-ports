@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	20150517
+PORTVERSION=	20150525
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
@@ -20,22 +20,18 @@ OPTIONS_DEFINE=	BASH ZSH
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
-GH_TAGNAME=	9ad3025
+GH_TAGNAME=	fe181f9
 
 PLIST_FILES=	bin/${PORTNAME}
 
+BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
+ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH}
-PLIST_FILES+=	share/bash-completion/completions/rebar3
-.endif
-
-.if ${PORT_OPTIONS:MZSH}
-PLIST_FILES+=	share/zsh/site-functions/_rebar3
-.endif
 
 post-extract:
 	@${CP} -R ${WRKDIR}/_build ${WRKSRC}/
+	@${RM} ${WRKSRC}/rebar.lock
 
 do-build:
 	@cd ${WRKSRC} && ./bootstrap
