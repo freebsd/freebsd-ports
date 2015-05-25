@@ -1,3 +1,6 @@
-libexo is a support library used in the Xfce desktop environment.
+Exo is an Xfce library targeted at application development. It contains
+various custom widgets and APIs extending the functionality of GLib and
+GTK+. It also ships utilities for defining preferred applications,
+mounting storage devices and more.
 
-WWW: http://docs.xfce.org/xfce/exo/start
+WWW: http://www.xfce.org/
