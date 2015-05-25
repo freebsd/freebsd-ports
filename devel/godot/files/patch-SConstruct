@@ -1,6 +1,6 @@
---- SConstruct.orig	2014-12-15 21:49:18.000000000 +0300
-+++ SConstruct	2015-03-03 08:24:01.000000000 +0300
-@@ -60,7 +60,7 @@
+--- SConstruct.orig	2015-05-21 18:03:21 UTC
++++ SConstruct
+@@ -60,7 +60,7 @@ elif (os.name=="nt"):
      if (os.getenv("VSINSTALLDIR")==None):
  	custom_tools=['mingw']
  
@@ -9,7 +9,7 @@
  #env_base=Environment(tools=custom_tools);
  env_base.global_defaults=global_defaults
  env_base.android_source_modules=[]
-@@ -110,7 +110,8 @@
+@@ -115,7 +115,8 @@ opts.Add('etc1','etc1 Texture compressio
  opts.Add('builtin_zlib','Use built-in zlib (yes/no)','yes')
  opts.Add('openssl','Use OpenSSL (yes/no/builtin)','no')
  opts.Add('musepack','Musepack Audio (yes/no)','yes')
@@ -19,26 +19,25 @@
  opts.Add("CCFLAGS", "Custom flags for the C++ compiler");
  opts.Add("CFLAGS", "Custom flags for the C compiler");
  opts.Add("LINKFLAGS", "Custom flags for the linker");
-@@ -172,15 +173,17 @@
- 
- 	env.extra_suffix=""
+@@ -202,15 +203,17 @@ if selected_platform in platform_list:
+ 	if env["extra_suffix"] != '' :
+ 		env.extra_suffix += '.'+env["extra_suffix"]
  
 -	CCFLAGS = env.get('CCFLAGS', '')
 -	env['CCFLAGS'] = ''
 -
 -	env.Append(CCFLAGS=string.split(str(CCFLAGS)))
--
--	CFLAGS = env.get('CFLAGS', '')
--	env['CFLAGS'] = ''
 +	env['CC'] = os.environ['CC']
 +	
 +	env['CXX'] = os.environ['CXX']
  
--	env.Append(CFLAGS=string.split(str(CFLAGS)))
+-	CFLAGS = env.get('CFLAGS', '')
+-	env['CFLAGS'] = ''
 +	CFLAGS = os.environ['CFLAGS']
 +	env['CFLAGS'] = []
 +	env.Append(CFLAGS=string.split(CFLAGS))
-+
+ 
+-	env.Append(CFLAGS=string.split(str(CFLAGS)))
 +	CCFLAGS = os.environ['CXXFLAGS']
 +	env['CCFLAGS'] = []
 +	env.Append(CCFLAGS=string.split(CCFLAGS))
