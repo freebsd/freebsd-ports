@@ -54,9 +54,7 @@
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bblog.css
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cache/favorites.xml
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/compiled_templates/this_file_is_here_so_the_directory_is_extracted
-@unexec if cmp -s %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php.sample; then rm -f %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php; fi
-%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php.sample
-@exec cp -n %D/%F %B/config.php
+@sample %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php.sample
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cp.css
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs/LICENCE.txt
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs/README.txt
@@ -282,31 +280,33 @@
 %%WWWDOCROOT%%/%%BBLOGURL%%/rss.php
 %%WWWDOCROOT%%/%%BBLOGURL%%/search.php
 %%WWWDOCROOT%%/%%BBLOGURL%%/section
-@dirrmtry %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/cache
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/library/extlib
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/library
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cache
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/compiled_templates
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/images
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates/common
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates/plugins
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates
-@dirrmtry %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/bBlog_templates
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/install/cleanurltest
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/install
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/libs/core
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/libs
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script/xlib/javascript
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script/xlib
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/smarty_plugins
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/style
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates/dmig
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates/lines
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%/bblog
-@dirrm %%WWWDOCROOT%%/%%BBLOGURL%%
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/cache
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/library/extlib
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss/library
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/rss
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cache
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/compiled_templates
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/images
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates/common
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates/plugins
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/admin_templates
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc/bBlog_templates
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/inc
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/install/cleanurltest
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/install
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/libs/core
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/libs
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script/xlib/javascript
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script/xlib
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/script
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/smarty_plugins
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/style
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates/dmig
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates/lines
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/templates
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%/bblog
+@dir %%WWWDOCROOT%%/%%BBLOGURL%%
+@owner
+@group
