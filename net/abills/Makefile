@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing system for dialup, VPN, and VoIP management
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2 \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
