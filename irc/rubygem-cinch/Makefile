@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	cinch
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.5
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	The IRC Bot Building Framework
+COMMENT=	IRC Bot Building Framework
 
 LICENSE=	MIT
 
