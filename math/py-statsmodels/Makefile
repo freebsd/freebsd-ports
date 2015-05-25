@@ -13,6 +13,7 @@ COMMENT=	Complement to SciPy for statistical computations
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
+		cython:${PORTSDIR}/lang/cython \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:${PORTSDIR}/math/py-pandas \
 		${PYTHON_PKGNAMEPREFIX}patsy>0:${PORTSDIR}/math/py-patsy
@@ -27,6 +28,9 @@ USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 USE_GITHUB=	yes
 GH_TAGNAME=	8e812cd
+
+PORTEXAMPLES=	*
+PORTDOCS=	README.rst README_l1.txt
 
 .include <bsd.port.options.mk>
 
