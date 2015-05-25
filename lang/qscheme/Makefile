@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall \
 		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 LIB_DEPENDS=	libgetline.so:${PORTSDIR}/devel/libgetline
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 USE_PERL5=	build
+SHEBANG_FILES=	mkoptable
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
