@@ -3,6 +3,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -14,8 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
-		gpatch:${PORTSDIR}/devel/patch \
-		gmd5sum:${PORTSDIR}/sysutils/coreutils
+		gpatch:${PORTSDIR}/devel/patch
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake iconv libtool perl5 pkgconfig tar:xz
@@ -30,7 +30,7 @@ SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--program-transform-name="" --with-libintl-prefix=${LOCALBASE} \
-		--disable-compiler-warnings --with-logdir=/var/log
+		--with-logdir=/var/log
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 OPTIONS_DEFINE=	NLS
@@ -40,14 +40,8 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 post-patch:
-	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
-		${WRKSRC}/scripts/Dpkg/Checksums.pm
-	@${REINPLACE_CMD} -e 's/cp -p $$(DEST/mv $$(DEST/g; s/rm $$(/rm -f $$(/g' \
-		${WRKSRC}/scripts/mk/Makefile.in \
-		${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} 's/{^MATCH}/\&/' ${WRKSRC}/dselect/mkcurkeys.pl
+	@${REINPLACE_CMD} '/^LDFLAGS/ s|$$| -lmd|' \
+		${WRKSRC}/lib/dpkg/Makefile.in
 
 post-install:
 	(cd ${STAGEDIR}${DPKGDIR} && ${MKDIR} available diversions \
