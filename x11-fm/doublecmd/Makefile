@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -22,7 +22,6 @@ PORTDOCS=	*
 
 USES=		dos2unix
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
-USE_FPC=	yes
 WANT_GNOME=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
@@ -76,31 +75,23 @@ OPTIONS_DEFAULT=	GTK2 \
 			WFX_SAMBA \
 			DSX_LOCATE
 
-.include <bsd.port.pre.mk>
+GTK2_USE=		fpc=gtk2 gnome=gtk20
+GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+
+QT4_USE=		fpc=yes
+QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
+WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+WLX_MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_FPC+=	gtk2
-USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+.elif ${PORT_OPTIONS:MQT4}
 LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
-.endif
-
-.if ${PORT_OPTIONS:MWCX_UNRAR}
-LIB_DEPENDS+=	libunrar.so:${PORTSDIR}/archivers/libunrar
-.endif
-
-.if ${PORT_OPTIONS:MWFX_SAMBA}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-.endif
-
-.if ${PORT_OPTIONS:MWLX_MPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -372,4 +363,4 @@ post-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
