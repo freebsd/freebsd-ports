@@ -1,6 +1,6 @@
---- ./manual/yo/manual.yo.orig	2013-11-27 11:59:12.000000000 +0100
-+++ ./manual/yo/manual.yo	2013-11-27 12:06:02.000000000 +0100
-@@ -4,7 +4,7 @@
+--- manual/yo/manual.yo.orig	2015-01-02 12:46:44 UTC
++++ manual/yo/manual.yo
+@@ -4,7 +4,7 @@ latexpackage()(a4,epsf)
  
  whenlatex(\
      SETSYMBOL(XXusexlatin)
