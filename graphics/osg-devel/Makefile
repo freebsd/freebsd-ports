@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,7 +29,7 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=118 \
+		OSG_SHLIBVER=120 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
