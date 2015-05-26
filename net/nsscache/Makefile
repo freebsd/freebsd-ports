@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsscache
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	net python
 
 MAINTAINER=	k@kev009.com
@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
-		${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/net/py-ldap2 \
-		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
+		${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/net/py-ldap2
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
