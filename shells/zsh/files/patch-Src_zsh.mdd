@@ -11,8 +11,8 @@
  signames.c: signames1.awk signames2.awk ../config.h @SIGNAL_H@
  	$(AWK) -f $(sdir)/signames1.awk @SIGNAL_H@ >sigtmp.c
 -	$(CPP) sigtmp.c >sigtmp.out
-+	case "$(CPP)" in \
-+	gcc*) \
++	case "`$(CPP) --version </dev/null 2>&1`" in \
++	*"Free Software Foundation"*) \
 +	$(CPP) -P sigtmp.c >sigtmp.out;; \
 +	*) \
 +	$(CPP) sigtmp.c >sigtmp.out;; \
