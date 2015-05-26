@@ -6,7 +6,7 @@
  P = $$_PRO_FILE_PWD_/..
 -INCLUDEPATH += $$P/ext/zlib $$P/Common
 +INCLUDEPATH += $$P/Common
-+contains(QT_CONFIG, no-zlib): INCLUDEPATH += $$P/ext/zlib
++win32|contains(QT_CONFIG, no-zlib): INCLUDEPATH += $$P/ext/zlib
  
  # Work out arch name
  include(Platform/ArchDetection.pri)
