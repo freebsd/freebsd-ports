@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.13.0
+PORTVERSION=	1.12.2
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/ \
 		http://ports.toco-domains.de/
 
@@ -19,9 +20,11 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
+LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango
-USES=		compiler:features cmake cpe pkgconfig tar:bzip2
+USES=		cmake cpe pkgconfig tar:bzip2
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
@@ -38,6 +41,7 @@ ANA_DESC=	Asynchronous Network API (WIP)
 ANA_CMAKE_ON=	-DUSE_ANA_NETWORK=on
 CAMPAIGN_DESC=	Campaign server
 CAMPAIGN_CMAKE_ON=-DENABLE_CAMPAIGN_SERVER=on
+DOCS_CMAKE_OFF=	-DDOCDIR=none
 FRIBIDI_DESC=	Bidirectional support
 FRIBIDI_LIB_DEPENDS=libfribidi.so:${PORTSDIR}/converters/fribidi
 FRIBIDI_CMAKE_OFF=-DENABLE_FRIBIDI=off
@@ -60,11 +64,7 @@ TEST_CMAKE_ON=	-DENABLE_TESTS=on
 TOOLS_DESC=	Extra tools for artists and translators
 TOOLS_CMAKE_ON=	-DENABLE_TOOLS=on
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-USE_GCC=	yes
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
 BROKEN=	compilation fails with OpenMP
@@ -77,4 +77,4 @@ BROKEN=	compilations fails with enabled TEST option
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
