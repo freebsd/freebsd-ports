@@ -3,7 +3,7 @@
 
 PORTNAME=	audiere
 PORTVERSION=	1.9.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -11,13 +11,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		autoreconf gmake libtool
 WANT_WX=	yes
-USE_AUTOTOOLS=	autoconf
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CPPFLAGS+=	-I${LOCALBASE}/include/speex -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -75,6 +73,7 @@ post-patch:
 		${WRKSRC}/configure.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudiere.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
