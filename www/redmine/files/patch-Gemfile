@@ -1,6 +1,6 @@
 --- Gemfile.orig	2015-05-25 16:10:44 UTC
 +++ Gemfile
-@@ -1,15 +1,15 @@
+@@ -1,24 +1,24 @@
  source 'https://rubygems.org'
  
 -gem "rails", "3.2.21"
@@ -19,7 +19,9 @@
  
  # Optional gem for LDAP authentication
  group :ldap do
-@@ -21,7 +21,7 @@ gem "thin", "~> 1.6.2"
+-  gem "net-ldap", "~> 0.3.1"
++  gem "net-ldap", ">= 0.3.1"
+ end
  
  # Optional gem for OpenID authentication
  group :openid do
@@ -28,7 +30,7 @@
    gem "rack-openid"
  end
  
-@@ -37,7 +37,7 @@ platforms :mri, :mingw do
+@@ -34,7 +34,7 @@ platforms :mri, :mingw do
    # Optional Markdown support, not for JRuby
    group :markdown do
      # TODO: upgrade to redcarpet 3.x when ruby1.8 support is dropped
@@ -37,7 +39,7 @@
    end
  end
  
-@@ -84,23 +84,6 @@ else
+@@ -81,23 +81,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
