@@ -3,7 +3,7 @@
 
 PORTNAME=	biggles
 PORTVERSION=	1.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
@@ -11,7 +11,8 @@ DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create publication-quality 2D scientific plots
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
@@ -33,9 +34,13 @@ pre-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/biggles/libplot
-	(cd ${WRKSRC}/src && ${INSTALL_DATA} *.ini *.so *.py *.pyc *.pyo \
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} *.ini *.py *.pyc *.pyo \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles)
-	(cd ${WRKSRC}/src/libplot/ && ${INSTALL_DATA} *.so *.py *.pyc *.pyo \
+	(cd ${WRKSRC}/src && ${INSTALL_LIB} *.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles)
+	(cd ${WRKSRC}/src/libplot/ && ${INSTALL_DATA} *.py *.pyc *.pyo \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles/libplot)
+	(cd ${WRKSRC}/src/libplot/ && ${INSTALL_LIB} *.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles/libplot)
 
 .include <bsd.port.mk>
