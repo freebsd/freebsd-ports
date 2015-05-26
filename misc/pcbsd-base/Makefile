@@ -19,6 +19,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		lpreserver:${PORTSDIR}/sysutils/life-preserver \
 		warden:${PORTSDIR}/sysutils/warden \
+		iocage:${PORTSDIR}/sysutils/iocage \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
 		appcafe-setpass:${PORTSDIR}/sysutils/pcbsd-appweb \
 		git:${PORTSDIR}/devel/git \
