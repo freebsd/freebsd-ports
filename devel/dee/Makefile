@@ -31,7 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 USE_GNOME+=	py3gobject3
 .else
 USE_GNOME+=	pygobject3

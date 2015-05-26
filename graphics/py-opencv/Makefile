@@ -12,7 +12,7 @@ OCV_PYTHON=	yes
 MASTERDIR=	${.CURDIR:H}/opencv
 PLIST=		${.CURDIR}/pkg-plist
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} >= 320
+.if defined(PYTHON_REL) && ${PYTHON_REL} >= 3200
 PLIST_SUB+=	PYTHON3="" \
 		PYTHON2="@comment " \
 		PYTHON_SUFFIX="${PYTHON_SUFFIX}"

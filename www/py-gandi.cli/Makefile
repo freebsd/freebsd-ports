@@ -30,7 +30,7 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 330
+.if ${PYTHON_REL} < 3300
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 .endif
 

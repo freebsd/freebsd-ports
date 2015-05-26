@@ -22,7 +22,7 @@ SHEBANG_FILES=	spf.py
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 300
+.if ${PYTHON_REL} < 3000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dns>=0:${PORTSDIR}/dns/py-dns
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dns3>=0:${PORTSDIR}/dns/py-dns3

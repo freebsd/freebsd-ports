@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150526:
+AUTHOR: antoine@FreeBSD.org
+
+  PYTHON_REL has been switched from a 3 digits number to a 4 digits number to
+  handle python 2.7.10.  Ports checking for python 2.7.9 should compare
+  PYTHON_REL against 2709 and ports checking for python 2.7.10 should compare
+  PYTHON_REL against 2710.
+
 20150521:
 AUTHOR: mat@FreeBSD.org
 

@@ -40,12 +40,12 @@ TWISTED_USES=			twisted:run
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MTWISTED} && ${PYTHON_REL} >= 300
+.if ${PORT_OPTIONS:MTWISTED} && ${PYTHON_REL} >= 3000
 BROKEN=	Twisted currently only supports Python 2.x. Disable the TWISTED option and use ASYNCIO instead
 .endif
 
-.if ${PORT_OPTIONS:MASYNCIO} && ${PYTHON_REL} <= 340
-.if ${PYTHON_REL} >= 330
+.if ${PORT_OPTIONS:MASYNCIO} && ${PYTHON_REL} <= 3400
+.if ${PYTHON_REL} >= 3300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>=0.2.1:${PORTSDIR}/devel/py-asyncio
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trollius>=0.1.2:${PORTSDIR}/devel/py-trollius \

@@ -34,7 +34,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} == 271 || ${PYTHON_REL} == 320
+.if ${PYTHON_REL} == 2701 || ${PYTHON_REL} == 3200
 IGNORE=	does not work with ${PYTHON_VERSION} (see http://goo.gl/SZpDN)
 .endif
 
