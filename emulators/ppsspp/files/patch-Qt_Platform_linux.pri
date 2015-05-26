@@ -5,8 +5,8 @@
  
  	# Executable
 -	LIBS += -ldl -lrt
-+	LIBS += $$QMAKE_LIBS_DYNLOAD
-+	linux-*|hpux-*|solaris-*: LIBS += -lrt
++	LIBS += $$QMAKE_LIBS_DYNLOAD # dlopen
++	linux-*|hpux-*|solaris-*: LIBS += -lrt # clock_gettime
  
  	# Packaging
  	icon16.files = $$P/assets/unix-icons/hicolor/16x16/apps/ppsspp.png

@@ -5,7 +5,7 @@
  #pragma warning (disable:4244)
  #include <malloc.h>
 -#elif !defined(__SYMBIAN32__)
-+#elif !defined(__SYMBIAN32__) && !defined(__DragonFly__) && \
++#elif !defined(__SYMBIAN32__) && !defined(__Bitrig__) && !defined(__DragonFly__) && \
 +      !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
  #include <alloca.h>
  #endif
