@@ -57,6 +57,113 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="27f742f6-03f4-11e5-aab1-d050996490d0">
+    <topic>cURL -- sensitive HTTP server headers also sent to proxies</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.42.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150429.html">
+	  <p>libcurl provides applications a way to set custom HTTP
+	    headers to be sent to the server by using CURLOPT_HTTPHEADER.
+	    A similar option is available for the curl command-line
+	    tool with the '--header' option.</p>
+	  <p>When the connection passes through an HTTP proxy the
+	    same set of headers is sent to the proxy as well by default.
+	    While this is by design, it has not necessarily been clear
+	    nor understood by application programmers.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3153</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150429.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-29</discovery>
+      <entry>2015-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6294f75f-03f2-11e5-aab1-d050996490d0">
+    <topic>cURL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.42.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422A.html">
+	  <p>libcurl keeps a pool of its last few connections around
+	    after use to fascilitate easy, conventient and completely
+	    transparent connection re-use for applications.</p>
+	  <p>When doing HTTP requests NTLM authenticated, the entire
+	    connnection becomes authenticated and not just the
+	    specific HTTP request which is otherwise how HTTP works.
+	    This makes NTLM special and a subject for special
+	    treatment in the code. With NTLM, once the connection is
+	    authenticated, no further authentication is necessary until
+	    the connection gets closed.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422B.html">
+	  <p>When doing HTTP requests Negotiate authenticated, the
+	    entire connnection may become authenticated and not just
+	    the specific HTTP request which is otherwise how HTTP
+	    works, as Negotiate can basically use NTLM under the hood.
+	    curl was not adhering to this fact but would assume that
+	    such requests would also be authenticated per request.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422C.html">
+	  <p>libcurl supports HTTP "cookies" as documented in RFC 6265.
+	    Together with each individual cookie there are several
+	    different properties, but for this vulnerability we
+	    focus on the associated "path" element. It tells
+	    information about for which path on a given host the
+	    cookies is valid.</p>
+	  <p>The internal libcurl function called sanitize_cookie_path()
+	    that cleans up the path element as given to it from a
+	    remote site or when read from a file, did not properly
+	    validate the input. If given a path that consisted of a
+	    single double-quote, libcurl would index a newly
+	    allocated memory area with index -1 and assign a zero
+	    to it, thus destroying heap memory it wasn't supposed to.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422D.html">
+	  <p>There is a private function in libcurl called fix_hostname()
+	    that removes a trailing dot from the host name if there is
+	    one. The function is called after the host name has been
+	    extracted from the URL libcurl has been told to act on.</p>
+	  <p>If a URL is given with a zero-length host name, like in
+	    "http://:80" or just ":80", fix_hostname() will index the
+	    host name pointer with a -1 offset (as it blindly assumes
+	    a non-zero length) and both read and assign that address.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://curl.haxx.se/docs/adv_20150422A.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422B.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422C.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422D.html</url>
+      <cvename>CVE-2014-3143</cvename>
+      <cvename>CVE-2014-3144</cvename>
+      <cvename>CVE-2014-3145</cvename>
+      <cvename>CVE-2014-3148</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-22</discovery>
+      <entry>2015-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="607f4d44-0158-11e5-8fda-002590263bf5">
     <topic>cassandra -- remote execution of arbitrary code</topic>
     <affects>
