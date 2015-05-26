@@ -20,7 +20,7 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-Darch=${OPENMP_ARCH}
 
-USES=		cmake ninja tar:xz
+USES=		cmake compiler:c++11-lang ninja tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/runtime
 
