@@ -3,6 +3,7 @@
 
 PORTNAME=	mandelbulber
 DISTVERSION=	1.13-1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -11,8 +12,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D Mandelbrot fractal renderer
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	glib20 gtk20
 BUILD_WRKSRC=	${WRKSRC}/makefiles
 MAKEFILE=	makefile
