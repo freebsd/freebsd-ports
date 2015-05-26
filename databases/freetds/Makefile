@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-PORTSCOUT=	skipv:0.92.79,0.92.405
+PORTSCOUT=	skipv:0.92.63,0.92.79,0.92.405
 TDS_VER?=	5.0
 
 USES=		autoreconf iconv gmake pkgconfig libtool:keepla tar:bzip2
