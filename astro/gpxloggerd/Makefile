@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxloggerd
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	astro
 USE_GITHUB=	yes
 GH_ACCOUNT=	glebius
