@@ -27,7 +27,7 @@ python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 320
+.if ${PYTHON_REL} < 3200
 PYCACHE_DIR=	# empty
 PYCACHE_FILE=	${PORTNAME}
 .else

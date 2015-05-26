@@ -37,7 +37,7 @@ UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 320
+.if ${PYTHON_REL} < 3200
 SCRIPT_FILES+=	logmerge
 python_OLD_CMD=	/usr/bin/env python
 .else

@@ -31,7 +31,7 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${PYTHON_REL} < 300
+.if ${PYTHON_REL} < 3000
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
 .else
 	@${CP} ${FILESDIR}/setup3.py ${WRKSRC}/setup.py

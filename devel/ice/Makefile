@@ -77,7 +77,7 @@ MAKE_ENV+=		NOICEDOCS=yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} >= 320
+.if defined(PYTHON_REL) && ${PYTHON_REL} >= 3200
 PLIST_SUB+=	PYTHON32=""
 PLIST_SUB+=	PYTHONPRE32="@comment "
 .else

@@ -30,7 +30,7 @@ MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 IGNORE=	bsddb package was removed from core standard library since 3.0, use databases/py-bsddb3 instead
 .endif
 
