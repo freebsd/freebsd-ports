@@ -1193,6 +1193,7 @@
     SUBDIR += syncthing
     SUBDIR += syncthing-cli
     SUBDIR += syncthing-discosrv
+    SUBDIR += syncthing-inotify
     SUBDIR += tableutil
     SUBDIR += tac_plus4
     SUBDIR += tapidbus
