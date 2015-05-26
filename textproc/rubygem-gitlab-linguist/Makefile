@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-linguist
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
