@@ -12,6 +12,8 @@ COMMENT=	Full featured text editor written in assembler
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+BROKEN=		does not fetch (certificate verification failed)
+
 USES=		gmake tar:tgz
 MAKE_ARGS=	OS=FREEBSD
 ONLY_FOR_ARCHS=	i386
