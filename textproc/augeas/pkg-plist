@@ -6,7 +6,7 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.18.0
+lib/libaugeas.so.0.19.0
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
@@ -38,9 +38,11 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/cgconfig.aug
 %%DATADIR%%/lenses/dist/cgrules.aug
 %%DATADIR%%/lenses/dist/channels.aug
+%%DATADIR%%/lenses/dist/chrony.aug
 %%DATADIR%%/lenses/dist/cobblermodules.aug
 %%DATADIR%%/lenses/dist/cobblersettings.aug
 %%DATADIR%%/lenses/dist/collectd.aug
+%%DATADIR%%/lenses/dist/cpanel.aug
 %%DATADIR%%/lenses/dist/cron.aug
 %%DATADIR%%/lenses/dist/crypttab.aug
 %%DATADIR%%/lenses/dist/cups.aug
@@ -65,6 +67,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/gdm.aug
 %%DATADIR%%/lenses/dist/group.aug
 %%DATADIR%%/lenses/dist/grub.aug
+%%DATADIR%%/lenses/dist/gshadow.aug
 %%DATADIR%%/lenses/dist/gtkbookmarks.aug
 %%DATADIR%%/lenses/dist/host_conf.aug
 %%DATADIR%%/lenses/dist/hostname.aug
@@ -86,6 +89,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/json.aug
 %%DATADIR%%/lenses/dist/kdump.aug
 %%DATADIR%%/lenses/dist/keepalived.aug
+%%DATADIR%%/lenses/dist/known_hosts.aug
 %%DATADIR%%/lenses/dist/koji.aug
 %%DATADIR%%/lenses/dist/krb5.aug
 %%DATADIR%%/lenses/dist/ldif.aug
@@ -123,6 +127,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/openshift_http.aug
 %%DATADIR%%/lenses/dist/openshift_quickstarts.aug
 %%DATADIR%%/lenses/dist/openvpn.aug
+%%DATADIR%%/lenses/dist/pagekite.aug
 %%DATADIR%%/lenses/dist/pam.aug
 %%DATADIR%%/lenses/dist/pamconf.aug
 %%DATADIR%%/lenses/dist/passwd.aug
@@ -148,6 +153,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/redis.aug
 %%DATADIR%%/lenses/dist/reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/resolv.aug
+%%DATADIR%%/lenses/dist/rmt.aug
 %%DATADIR%%/lenses/dist/rsyncd.aug
 %%DATADIR%%/lenses/dist/rsyslog.aug
 %%DATADIR%%/lenses/dist/rx.aug
@@ -156,6 +162,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/securetty.aug
 %%DATADIR%%/lenses/dist/sep.aug
 %%DATADIR%%/lenses/dist/services.aug
+%%DATADIR%%/lenses/dist/shadow.aug
 %%DATADIR%%/lenses/dist/shells.aug
 %%DATADIR%%/lenses/dist/shellvars.aug
 %%DATADIR%%/lenses/dist/shellvars_list.aug
@@ -204,9 +211,11 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_cgconfig.aug
 %%DATADIR%%/lenses/dist/tests/test_cgrules.aug
 %%DATADIR%%/lenses/dist/tests/test_channels.aug
+%%DATADIR%%/lenses/dist/tests/test_chrony.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblermodules.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblersettings.aug
 %%DATADIR%%/lenses/dist/tests/test_collectd.aug
+%%DATADIR%%/lenses/dist/tests/test_cpanel.aug
 %%DATADIR%%/lenses/dist/tests/test_cron.aug
 %%DATADIR%%/lenses/dist/tests/test_crypttab.aug
 %%DATADIR%%/lenses/dist/tests/test_cups.aug
@@ -231,6 +240,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_gdm.aug
 %%DATADIR%%/lenses/dist/tests/test_group.aug
 %%DATADIR%%/lenses/dist/tests/test_grub.aug
+%%DATADIR%%/lenses/dist/tests/test_gshadow.aug
 %%DATADIR%%/lenses/dist/tests/test_gtkbookmarks.aug
 %%DATADIR%%/lenses/dist/tests/test_host_conf.aug
 %%DATADIR%%/lenses/dist/tests/test_hostname.aug
@@ -252,6 +262,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_json.aug
 %%DATADIR%%/lenses/dist/tests/test_kdump.aug
 %%DATADIR%%/lenses/dist/tests/test_keepalived.aug
+%%DATADIR%%/lenses/dist/tests/test_known_hosts.aug
 %%DATADIR%%/lenses/dist/tests/test_koji.aug
 %%DATADIR%%/lenses/dist/tests/test_krb5.aug
 %%DATADIR%%/lenses/dist/tests/test_ldap.aug
@@ -290,6 +301,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_openshift_http.aug
 %%DATADIR%%/lenses/dist/tests/test_openshift_quickstarts.aug
 %%DATADIR%%/lenses/dist/tests/test_openvpn.aug
+%%DATADIR%%/lenses/dist/tests/test_pagekite.aug
 %%DATADIR%%/lenses/dist/tests/test_pam.aug
 %%DATADIR%%/lenses/dist/tests/test_pamconf.aug
 %%DATADIR%%/lenses/dist/tests/test_passwd.aug
@@ -315,6 +327,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_redis.aug
 %%DATADIR%%/lenses/dist/tests/test_reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/tests/test_resolv.aug
+%%DATADIR%%/lenses/dist/tests/test_rmt.aug
 %%DATADIR%%/lenses/dist/tests/test_rsyncd.aug
 %%DATADIR%%/lenses/dist/tests/test_rsyslog.aug
 %%DATADIR%%/lenses/dist/tests/test_rx.aug
@@ -322,6 +335,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_schroot.aug
 %%DATADIR%%/lenses/dist/tests/test_securetty.aug
 %%DATADIR%%/lenses/dist/tests/test_services.aug
+%%DATADIR%%/lenses/dist/tests/test_shadow.aug
 %%DATADIR%%/lenses/dist/tests/test_shells.aug
 %%DATADIR%%/lenses/dist/tests/test_shellvars.aug
 %%DATADIR%%/lenses/dist/tests/test_shellvars_list.aug
@@ -347,7 +361,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_syslog.aug
 %%DATADIR%%/lenses/dist/tests/test_systemd.aug
 %%DATADIR%%/lenses/dist/tests/test_thttpd.aug
+%%DATADIR%%/lenses/dist/tests/test_tuned.aug
 %%DATADIR%%/lenses/dist/tests/test_up2date.aug
+%%DATADIR%%/lenses/dist/tests/test_updatedb.aug
 %%DATADIR%%/lenses/dist/tests/test_util.aug
 %%DATADIR%%/lenses/dist/tests/test_vfstab.aug
 %%DATADIR%%/lenses/dist/tests/test_vmware_config.aug
@@ -362,7 +378,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_xymon_alerting.aug
 %%DATADIR%%/lenses/dist/tests/test_yum.aug
 %%DATADIR%%/lenses/dist/thttpd.aug
+%%DATADIR%%/lenses/dist/tuned.aug
 %%DATADIR%%/lenses/dist/up2date.aug
+%%DATADIR%%/lenses/dist/updatedb.aug
 %%DATADIR%%/lenses/dist/util.aug
 %%DATADIR%%/lenses/dist/vfstab.aug
 %%DATADIR%%/lenses/dist/vmware_config.aug
