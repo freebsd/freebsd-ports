@@ -4,7 +4,7 @@
 PORTNAME=	javatari
 PORTVERSION=	4.1
 CATEGORIES=	emulators java
-MASTER_SITES=	http://javatari.org/files/
+MASTER_SITES=	http://javatari.org/java/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
