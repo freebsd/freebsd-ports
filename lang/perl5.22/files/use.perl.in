@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+: ${OSVERSION:=`/sbin/sysctl -n kern.osreldate`};
+PERL_VERSION="%%PERL_VERSION%%"
+banner="# added by use.perl $(/bin/date +'%F %T')"
+
+do_cleanup_manpath()
+{
+	if [ -f /etc/manpath.config ] ; then
+		/bin/cp -p /etc/manpath.config /etc/manpath.config.new
+		/usr/bin/awk 's=0;
+			/^#.*use.perl/ { s=1; mode=1 }
+			/^#/ { s=1; if (mode != 1) { mode=0 } }
+			/^OPTIONAL_MANPATH.*perl5/ { s=1; if (mode == 1) { mode=2 } }
+			/^$/ { s=1; if (mode != 2) { mode = 0 } }
+			{ if (s != 1) { mode = 0 } if (mode == 0) print }' /etc/manpath.config >/etc/manpath.config.new
+		/bin/mv /etc/manpath.config /etc/manpath.config.bak
+		/bin/mv /etc/manpath.config.new /etc/manpath.config
+		/bin/rm /etc/manpath.config.bak
+	fi
+}
+
+do_spam_manpath()
+{
+	if [ -f /etc/manpath.config ] ; then
+		echo "${banner}" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/%%SITEMAN3PREFIX%%/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/%%MAN3PREFIX%%/man" >>/etc/manpath.config
+	fi
+}
+
+
+if [ "$2" = "POST-INSTALL" ] ; then
+	do_cleanup_manpath
+	do_spam_manpath
+elif [ "$2" = "POST-DEINSTALL" ] ; then
+	do_cleanup_manpath
+fi
+
+exit 0
