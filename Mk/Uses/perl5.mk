@@ -57,6 +57,8 @@ PERL_VERSION=	5.18.4
 PERL_VERSION=	5.20.2
 .elif ${PERL5_DEFAULT} == 5.21 || ${PERL5_DEFAULT} == devel
 PERL_VERSION=	5.22.0
+# Force PERL_PORT here in case two identical PERL_VERSION.
+PERL_PORT?=	perl5-devel
 .else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .endif

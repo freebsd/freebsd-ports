@@ -27,7 +27,7 @@ CONFLICTS_INSTALL=	perl5.*-*
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.22.0-RC1
+GH_TAGNAME=	v5.22.0-RC2-1-gdfd03a6
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -163,11 +163,15 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
-.if ${PERL_VER} == ${PERL5_DEFAULT}
-PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
+.if ${PERL_VER} == ${PERL5_DEFAULT} || ${PERL5_DEFAULT} == devel # XXX
+PKGNAMESUFFIX=	5
 .else
 # make PKGNAME unique among other lang/perl5.x
+.if defined(GH_TAGNAME) # XXX
+PKGNAMESUFFIX=	5-devel
+.else
 PKGNAMESUFFIX=	${PERL_VER}
+.endif
 # always add default perl5 pkgname to conflicts
 CONFLICTS_INSTALL+=	perl5-*
 .endif
@@ -232,6 +236,9 @@ post-install:
 	${LN} -sf libperl.so.${PERL_VERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
 	${LN} -sf libperl.so.${PERL_VERSION} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
+	# XXX Force PERL_PORT in case the devel has the same version as the
+	# latest release
+	${ECHO_CMD} "PERL_PORT=	perl5-devel" >> ${WRKDIR}/perl5_version
 	${INSTALL_DATA} ${WRKDIR}/perl5_version ${STAGEDIR}${PREFIX}/etc
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
