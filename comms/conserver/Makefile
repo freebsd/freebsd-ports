@@ -59,6 +59,5 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/man/man8/autologin.8  \
 	    ${STAGEDIR}${PREFIX}/man/man8/conserver.8  \
 	    ${STAGEDIR}${PREFIX}/man/man8/console.8
-	@#	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

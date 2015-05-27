@@ -133,6 +133,5 @@ post-install:
 	@${CAT} ${FILESDIR}/pkg-message.gstreamer >> ${PKGMESSAGE}
 .endif
 	@${HEAD} -1 ${PKGMESSAGE} >> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

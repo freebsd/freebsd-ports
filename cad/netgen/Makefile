@@ -67,6 +67,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/include
 	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${STAGEDIR}${PREFIX}
 	${LN} ${STAGEDIR}${PREFIX}/lib/libnglib.so ${STAGEDIR}${PREFIX}/lib/libnglib.so.1
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

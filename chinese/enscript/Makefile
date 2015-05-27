@@ -22,6 +22,5 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${.CURDIR}/files/README.BIG5 ${STAGEDIR}${PREFIX}/share/enscript
-	@${CAT} ${PKGMESSAGE}
 
 .include "${MASTERDIR}/Makefile"
