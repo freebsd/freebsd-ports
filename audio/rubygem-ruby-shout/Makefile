@@ -1,28 +1,22 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	shout
+PORTNAME=	ruby-shout
 PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding to the libshout library
 
+LICENSE=	BSD3CLAUSE
+
 LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 
+CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include"
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-CONFIGURE_ARGS=		--with-opt-include="${LOCALBASE}/include"
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
