@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.14.11.6000
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	mibs/process.pl html/js/makemini.pl \
 		scripts/watchmaillog/watchmaillog.pl \
 		scripts/agent-local/postgresql.pl \
@@ -34,19 +34,21 @@ RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		${LOCALBASE}/share/pear/Net/IPv6.php:${PORTSDIR}/net/pear-Net_IPv6 \
 		snmpget:${PORTSDIR}/net-mgmt/net-snmp
 
-OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP SVN WMIC
-OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP SVN WMIC
+OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SVN WMIC
+OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SVN WMIC
 APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
 MYSQLD_DESC=	Use local MySQL server
 WMIC_DESC=	Enable support for WMI polling
+PYPOLLER_DESC=	Enable Python Poller Wrapper
 
 FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
 IPMITOOL_RUN_DEPENDS=	ipmitool:${PORTSDIR}/sysutils/ipmitool
 LIBVIRT_RUN_DEPENDS=	virsh:${PORTSDIR}/devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
 SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 WMIC_RUN_DEPENDS=	wmic:${PORTSDIR}/net-mgmt/wmi-client
 
