@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Class diagrams generator for Ruby on Rails applications
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	YES
+RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/railroad
 
