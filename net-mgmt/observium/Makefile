@@ -80,6 +80,9 @@ USE_MYSQL=	server
 USE_MYSQL=	client
 .endif
 
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
+
 do-install:
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${ROOT_DIRS}
