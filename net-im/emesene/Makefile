@@ -3,7 +3,7 @@
 
 PORTNAME=	emesene
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im python
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	LOCAL/acm/${PORTNAME} \
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PROJECTHOST=	bsdistfiles
-USES=		gettext desktop-file-utils python
+USES=		gettext python
 USE_GNOME=	pygtk2
 USE_GSTREAMER=	python
 INSTALLS_ICONS=	yes
@@ -65,6 +65,7 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/libmimic.so
 	${INSTALL_SCRIPT} ${WRKDIR}/run.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKDIR}/misc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
