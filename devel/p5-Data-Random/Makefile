@@ -13,7 +13,8 @@ COMMENT=	Perl module for generating random data
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny
+BUILD_DEPENDS=	p5-Time-Piece>=1.16:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny
 RUN_DEPENDS=	p5-Time-Piece>=1.16:${PORTSDIR}/devel/p5-Time-Piece
 
 OPTIONS_DEFINE=	GD
