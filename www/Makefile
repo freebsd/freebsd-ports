@@ -1868,7 +1868,7 @@
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kensa
-    SUBDIR += rubygem-layout-yullio
+    SUBDIR += rubygem-layout_yullio_generator
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
     SUBDIR += rubygem-maruku
