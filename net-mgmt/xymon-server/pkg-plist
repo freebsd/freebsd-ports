@@ -30,7 +30,6 @@ man/man1/xymongrep.1
 man/man1/xymonnet-again.sh.1
 man/man1/xymonnet.1
 man/man1/xymonpage.cgi.1
-man/man1/xymonping.1
 man/man5/alerts.cfg.5
 man/man5/analysis.cfg.5
 man/man5/cgioptions.cfg.5
@@ -367,7 +366,6 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/www/help/manpages/man1/xymonnet-again.sh.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/xymonnet.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/xymonpage.cgi.1.html
-%%WWWDIR%%/server/www/help/manpages/man1/xymonping.1.html
 %%WWWDIR%%/server/www/help/manpages/man5/alerts.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/analysis.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/client-local.cfg.5.html
