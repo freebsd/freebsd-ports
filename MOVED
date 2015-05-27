@@ -4305,6 +4305,7 @@ x11-toolkits/linux-openmotif||2013-05-30|Has expired: Only used on FreeBSD 7, wh
 x11-toolkits/linux-pango||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 x11-toolkits/linux-qt33||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 irc/bitchx-devel|irc/bitchx|2013-05-31|Release finally cut
+www/rubygem-selnium-webdriver|www/rubygem-selenium-webdriver|2013-06-01|Fix typo in port name
 mail/p5-vpopmail||2013-06-03|Has expired: Broken for more than 6 month
 mail/vodmr||2013-06-03|Has expired: depends on expired mail/p5-vpopmail
 devel/libzrtp||2013-06-03|Has expired: No more public distfiles
