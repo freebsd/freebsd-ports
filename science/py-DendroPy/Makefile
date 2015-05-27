@@ -16,7 +16,4 @@ LICENSE=	BSD3CLAUSE
 USES=		python
 USE_PYTHON=	distutils
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
