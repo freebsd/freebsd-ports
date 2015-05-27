@@ -37,18 +37,17 @@
 
 . /etc/rc.subr
 
-name="varnishncsa"
+name=varnishncsa
 rcvar=varnishncsa_enable
 
-command="%%PREFIX%%/bin/${name}"
-
-# read configuration and set defaults
 load_rc_config ${name}
-: ${varnishncsa_enable:="NO"}
-: ${varnishncsa_pidfile:="/var/run/${name}.pid"}
-: ${varnishncsa_file:="/var/log/${name}.log"}
-: ${varnishncsa_logformat:=""}
-: ${varnishncsa_flags:="-P ${varnishncsa_pidfile} -D -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
 
+: ${varnishncsa_enable:=NO}
+: ${varnishncsa_pidfile=/var/run/${name}.pid}
+: ${varnishncsa_file=/var/log/${name}.log}
+: ${varnishncsa_flags="-P ${varnishncsa_pidfile} -D -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
+
+command="%%PREFIX%%/bin/${name}"
 pidfile=${varnishncsa_pidfile}
+
 run_rc_command "$1"
