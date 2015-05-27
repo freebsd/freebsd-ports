@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for performing validations on DM models and pure Ruby object
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
 
 USE_RUBY=	yes
