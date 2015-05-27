@@ -3,7 +3,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
 		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
@@ -17,12 +17,14 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../../gpl.txt
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 MANUAL_PACKAGE_BUILD=	huge (880MiB)
 
-USES=		zip:infozip
-WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
+USES=		shebangfix zip:infozip
+SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
+WRKSRC=		${WRKDIR}/Nexuiz
+BUILD_WRKSRC=	${WRKSRC}/sources/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
 		DP_PRELOAD_DEPENDENCIES=yes DP_LINK_TO_LIBJPEG=yes \
@@ -96,31 +98,31 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
-		${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
+		${BUILD_WRKSRC}/${MAKEFILE} ${BUILD_WRKSRC}/makefile.inc
 	@${REINPLACE_CMD} -e '/LDFLAGS_BSDSV/s,$$,-L${LOCALBASE}/lib,' \
-		${WRKSRC}/makefile.inc
+		${BUILD_WRKSRC}/makefile.inc
 # Fix for libpng 1.4
 	@${REINPLACE_CMD} -e 's,gray_1_2_4_to_8,expand_&,g' \
-		${WRKSRC}/image_png.c
+		${BUILD_WRKSRC}/image_png.c
 
 do-install:
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-glx
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-glx
 .endif
 .if ${PORT_OPTIONS:MSDL_CLIENT}
-	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-sdl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-sdl
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-sdl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-sdl
 .endif
 .if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL_CLIENT}
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/sources/darkplaces/nexuiz.ico ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${BUILD_WRKSRC}/nexuiz.ico ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 .if ${PORT_OPTIONS:MDEDICATED}
-	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
-	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} "server" ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "server" ${STAGEDIR}${DATADIR}
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${STAGEDIR}${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
 .endif
-	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} "data havoc" ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "data havoc" ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MMAPPACK}
 	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${STAGEDIR}${DATADIR}/data
 .endif
