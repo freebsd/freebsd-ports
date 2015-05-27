@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dragonfly
-PORTVERSION=	0.9.15
+PORTVERSION=	1.0.10
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	On-the-fly Rack-based image handling framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+		rubygem-rack15>=1.3.0:${PORTSDIR}/www/rubygem-rack15
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
