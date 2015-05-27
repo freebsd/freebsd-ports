@@ -1,6 +1,6 @@
---- lib/dbi/row.rb.orig	2014-10-17 15:50:24.000000000 +0200
-+++ lib/dbi/row.rb	2014-10-17 15:54:47.000000000 +0200
-@@ -209,7 +209,6 @@
+--- lib/dbi/row.rb.orig	2015-05-27 17:33:53 UTC
++++ lib/dbi/row.rb
+@@ -209,7 +209,6 @@ module DBI
          end
  
  
@@ -8,7 +8,7 @@
              def __getobj__
                  @arr
              end
-@@ -217,28 +216,6 @@
+@@ -217,28 +216,6 @@ module DBI
              def __setobj__(obj)
                  @delegate_dc_obj = @arr = obj
              end
