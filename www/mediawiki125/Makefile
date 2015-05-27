@@ -2,22 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.24.2
-PORTREVISION=	1
+PORTVERSION=	1.25.1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
-PKGNAMESUFFIX=	124
+PKGNAMESUFFIX=	125
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki12[35]-[0-9]*
+CONFLICTS=	mediawiki119-[0-9]* mediawiki12[34]-[0-9]*
 
 USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
-		maintenance/hiphop/run-server
+		maintenance/hiphop/run-server \
+		vendor/leafo/lessphp/lessify \
+		maintenance/postgres/*.pl \
+		maintenance/storage/make-blobs \
+		includes/limit.sh
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
@@ -76,12 +79,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcac
 .endif
 
 pre-install:
-	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
-	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/handlebars" >> ${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/mustache" >> ${PLIST}
 	@${ECHO} @dir ${MEDIAWIKIDIR} >> ${PLIST}
-	@${ECHO_CMD} "@group" >> ${PLIST}
-	@${ECHO_CMD} "@owner" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
