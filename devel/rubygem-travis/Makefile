@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	travis
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
