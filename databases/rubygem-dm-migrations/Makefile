@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin for writing and specifying migrations
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
 
 USE_RUBY=	yes
