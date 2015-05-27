@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.9.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.cqrlog.com/files/cqrlog_${PORTVERSION}/ \
-		LOCAL/shurd
-DISTNAME=	${PORTNAME}_${PORTVERSION}.src
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio logging application
@@ -18,31 +15,27 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_FPC=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	ok2cqr
+
 WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
-LAZARUS_VER=    1.2.6
-LAZARUS_DIR=    ${LOCALBASE}/share/lazarus-${LAZARUS_VER}
+LAZARUS_VER=	1.2.6
+LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK2 QT4
 OPTIONS_DEFAULT=	GTK2
 
-.include <bsd.port.pre.mk>
+GTK2_USE=	fpc=gtk2 gnome=gtk20
+GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/gtk2/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+GTK2_MAKE_ARGS=	PLATFORM=gtk2
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_FPC+=	gtk2
-USE_GNOME=	gtk20
-LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
-LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
-.endif
+QT4_USE=	fpc=yes
+QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/qt/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+QT4_MAKE_ARGS=	PLATFORM=qt
 
 post-patch:
 	@${SED} -e s!%%LOCALBASE%%!${LOCALBASE}!g \
@@ -58,7 +51,6 @@ post-patch:
 	${REINPLACE_CMD} -e s!%%PREFIX%%!${PREFIX}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
-		-e s!%%LCL_PLATFORM%%!${LCL_PLATFORM}!g \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

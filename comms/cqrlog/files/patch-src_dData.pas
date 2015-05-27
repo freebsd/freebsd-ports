@@ -1,6 +1,6 @@
---- src/dData.pas.orig	2014-04-13 05:14:38.000000000 -0700
-+++ src/dData.pas	2014-07-01 00:20:19.000000000 -0700
-@@ -850,22 +850,22 @@
+--- src/dData.pas.orig	2015-03-04 15:17:21 UTC
++++ src/dData.pas
+@@ -911,22 +911,22 @@ begin
    if DirectoryExistsUTF8(fHomeDir+'members') then
      fMembersDir := fHomeDir+'members'+PathDelim
    else
@@ -27,7 +27,7 @@
                 PathDelim);
  
    if not DirectoryExistsUTF8(fHomeDir + 'lotw') then
-@@ -888,7 +888,7 @@
+@@ -949,7 +949,7 @@ procedure TdmData.PrepareCtyData;
  var
    s,d : String;
  begin
@@ -36,7 +36,7 @@
    d := fHomeDir+'ctyfiles'+PathDelim;
  
    if not FileExistsUTF8(fHomeDir+'ctyfiles'+PathDelim+'AreaOK1RR.tbl') then
-@@ -952,7 +952,7 @@
+@@ -1013,7 +1013,7 @@ procedure TdmData.PrepareXplanetDir;
  var
    s,d : String;
  begin
@@ -45,7 +45,7 @@
    d := fHomeDir+'xplanet'+PathDelim;
    if not FileExistsUTF8(d+'geoconfig') then
      CopyFile(s+'geoconfig',d+'geoconfig')
-@@ -962,7 +962,7 @@
+@@ -1023,7 +1023,7 @@ procedure TdmData.PrepareVoice_keyerDir;
  var
    s,d : String;
  begin
@@ -54,7 +54,7 @@
    d := fHomeDir+'voice_keyer'+PathDelim;
    if not FileExistsUTF8(d+'voice_keyer.sh') then
      CopyFile(s+'voice_keyer.sh',d+'voice_keyer.sh')
-@@ -1061,7 +1061,7 @@
+@@ -1122,7 +1122,7 @@ begin
    if lib <> '' then
      fDLLUtilName := lib;
  
