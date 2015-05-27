@@ -9,11 +9,13 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenID strategy for OmniAuth
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-omniauth>=1.0:${PORTSDIR}/security/rubygem-omniauth \
 		rubygem-rack-openid>=1.3.1:${PORTSDIR}/www/rubygem-rack-openid
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
