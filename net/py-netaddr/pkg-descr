@@ -1,17 +1,24 @@
-netaddr is a Python library for the manipulation of various common
-network address notations and representations.
+A pure Python network address representation and manipulation library.
 
-It takes the hassle out of fiddling with innumerable variations of
-network addresses, presenting a consistent, extensible, easy-to-use
-and (above all) Pythonic API.
+netaddr provides a Pythonic way of working with:
 
-With it you can validate, convert, categorise, iterate, generate,
-slice (and dice):
+  - IPv4 and IPv6 addresses and subnets
+  - MAC addresses, OUI and IAB identifiers, IEEE EUI-64 identifiers
+  - Arbitrary (non-aligned) IP address ranges and IP address sets
+  - Various non-CIDR IP range formats such as nmap and glob-style formats
 
-    * IP version 4
-    * IP version 6
-    * CIDR (Classless Inter-Domain Routing)
-    * MAC (Media Access Control)
-    * IEEE EUI-48 and EUI-64
+Included are routines for:
 
-WWW: https://github.com/drkjam/netaddr
+  - Generating, sorting and summarizing IP addresses and networks
+  - Performing easy conversions between address notations and formats
+  - Detecting, parsing and formatting network address representations
+  - Performing set-based operations on groups of IP addresses and subnets
+  - Working with arbitrary IP address ranges and formats
+  - Accessing OUI and IAB organisational information published by IEEE
+  - Accessing IP address and block information published by IANA
+
+API documentation for the latest release is available here:
+
+  https://pythonhosted.org/netaddr/
+
+WWW: https://github.com/drkjam/netaddr/

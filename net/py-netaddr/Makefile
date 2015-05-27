@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.13
+PORTVERSION=	0.7.14
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,21 +13,18 @@ COMMENT=	Manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+USES=		python
+USE_PYTHON=	autoplist distutils uniquefiles:dirs
 
 PORTDOCS=	AUTHORS CHANGELOG README
-TESTFILES=	__init__.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-regression-test:
-.for f in ${TESTFILES}
-	(cd ${WRKSRC}/netaddr/tests && ${PYTHON_CMD} $f)
-.endfor
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
