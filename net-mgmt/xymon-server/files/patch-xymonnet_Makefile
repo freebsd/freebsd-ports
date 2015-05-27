@@ -1,0 +1,11 @@
+--- xymonnet/Makefile.orig	2015-05-27 15:59:55 UTC
++++ xymonnet/Makefile
+@@ -14,7 +14,7 @@ ifeq ($(SYSTEMCARES),no)
+ 	LOCALCARES = libcares.a
+ endif
+ 
+-PROGRAMS = xymonnet xymonping beastat
++PROGRAMS = xymonnet beastat
+ EXTENSIONS = xymonnet-again.sh
+ SNMPPROGRAMS = xymon-snmpcollect
+ DBGTOOLS = contest
