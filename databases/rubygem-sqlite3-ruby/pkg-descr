@@ -5,4 +5,4 @@ so you can do things that would otherwise be more difficult via DBI.
 If you want portability between backends, use DBI.  If you want ease
 of use with SQLite, use this.
 
-WWW: https://github.com/luislavena/sqlite3-ruby
+WWW: https://github.com/sparklemotion/sqlite3-ruby
