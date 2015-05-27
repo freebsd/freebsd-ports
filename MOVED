@@ -7597,3 +7597,8 @@ security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate suppo
 emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
 emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed
 www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygems naming
+net/rubygem-rightaws|net/rubygem-right_aws|2015-05-27|Rename to match our rubygems naming
+net/rubygem-rightflexiscale|net/rubygem-right_flexiscale|2015-05-27|Rename to match our rubygems naming
+net/rubygem-rightgogrid|net/rubygem-right_gogrid|2015-05-27|Rename to match our rubygems naming
+net/rubygem-righthttpconnection|net/rubygem-right_http_connection|2015-05-27|Rename to match our rubygems naming
+net/rubygem-rightslicehost|net/rubygem-right_slicehost|2015-05-27|Rename to match our rubygems naming

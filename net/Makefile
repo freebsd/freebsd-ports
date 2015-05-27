@@ -1095,11 +1095,11 @@
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rbvmomi
-    SUBDIR += rubygem-rightaws
-    SUBDIR += rubygem-rightflexiscale
-    SUBDIR += rubygem-rightgogrid
-    SUBDIR += rubygem-righthttpconnection
-    SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-right_aws
+    SUBDIR += rubygem-right_flexiscale
+    SUBDIR += rubygem-right_gogrid
+    SUBDIR += rubygem-right_http_connection
+    SUBDIR += rubygem-right_slicehost
     SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-rubyntlm
