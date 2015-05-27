@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to help CSS style sheets creation and maintenance
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		dos2unix gettext pathfix pkgconfig
 DOS2UNIX_FILES=	scintilla/gtk/ScintillaGTK.cxx
 USE_GNOME=	gtk20 libxml2
