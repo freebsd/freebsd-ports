@@ -3,6 +3,7 @@
 PORTNAME=	ppsspp
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	emulators
 .ifndef GITHUB_GROUPS
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${PORTNAME}-lang/tar.gz/52c757e?dummy=/:lang \
@@ -23,6 +24,7 @@ COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 LICENSE=	GPLv2 # or any later version
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GITHUB=	yes
 .ifndef GITHUB_GROUPS

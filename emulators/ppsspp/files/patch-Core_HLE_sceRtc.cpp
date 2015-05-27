@@ -5,7 +5,7 @@
  		u64 srcTick = Memory::Read_U64(tickLocalPtr);
  		// TODO : Let the user select his timezone / daylight saving instead of taking system param ?
 -#if defined(__GLIBC__) || defined(BLACKBERRY) || defined(__SYMBIAN32__)
-+#ifndef _MSC_VER
++#if !defined(_MSC_VER) && !defined(_AIX) && !defined(__sgi) && !defined(__hpux)
  		time_t timezone = 0;
  		tm *time = localtime(&timezone);
  		srcTick -= time->tm_gmtoff*1000000ULL;
@@ -19,7 +19,7 @@
  		u64 srcTick = Memory::Read_U64(tickUTCPtr);
  		// TODO : Let the user select his timezone / daylight saving instead of taking system param ?
 -#if defined(__GLIBC__) || defined(BLACKBERRY) || defined(__SYMBIAN32__)
-+#ifndef _MSC_VER
++#if !defined(_MSC_VER) && !defined(_AIX) && !defined(__sgi) && !defined(__hpux)
  		time_t timezone = 0;
  		tm *time = localtime(&timezone);
  		srcTick += time->tm_gmtoff*1000000ULL;
@@ -33,7 +33,7 @@
  
  	int tz_seconds;
 -#if defined(__GLIBC__) || defined(BLACKBERRY) || defined(__SYMBIAN32__)
-+#ifndef _MSC_VER
++#if !defined(_MSC_VER) && !defined(_AIX) && !defined(__sgi) && !defined(__hpux)
  		time_t timezone = 0;
  		tm *time = localtime(&timezone);
  		tz_seconds = time->tm_gmtoff;
@@ -47,7 +47,7 @@
  
  	int tz_seconds;
 -#if defined(__GLIBC__) || defined(BLACKBERRY) || defined(__SYMBIAN32__)
-+#ifndef _MSC_VER
++#if !defined(_MSC_VER) && !defined(_AIX) && !defined(__sgi) && !defined(__hpux)
  		time_t timezone = 0;
  		tm *time = localtime(&timezone);
  		tz_seconds = time->tm_gmtoff;

@@ -12,16 +12,12 @@
  #endif
  	void JitAt() {
  		jit->Compile(currentMIPS->pc);
-@@ -95,10 +97,12 @@ const char *ppsspp_resolver(struct ud*,
- 		*offset = addr - (uint64_t)MIPSComp::jit->GetBasePtr();
- 		return "jitcode";
- 	}
-+#if defined(_M_IX86) || defined(_M_X64) || defined(MIPS)
- 	if (MIPSComp::jit->Asm().IsInSpace((u8 *)(intptr_t)addr)) {
- 		*offset = addr - (uint64_t)MIPSComp::jit->Asm().GetBasePtr();
- 		return "dispatcher";
- 	}
-+#endif
- 
- 	return NULL;
+@@ -76,7 +78,7 @@ std::vector<std::string> DisassembleArm2
+ 	return lines;
  }
+ 
+-#ifndef ARM
++#if defined(_M_IX86) || defined(_M_X64)
+ 
+ const char *ppsspp_resolver(struct ud*,
+ 	uint64_t addr,
