@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-railties>=3.0:${PORTSDIR}/www/rubygem-railties \
 		rubygem-thor>=0.14:${PORTSDIR}/devel/rubygem-thor
 
+PORTSCOUT=	limit:^3.*
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
