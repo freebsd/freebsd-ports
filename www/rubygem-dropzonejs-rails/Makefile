@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropzonejs-rails
-PORTVERSION=	0.5.1
+PORTVERSION=	0.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
