@@ -3,15 +3,15 @@
 
 PORTNAME=	clearsilver
 PORTVERSION=	0.10.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, powerful, and language-neutral template system
 
-GNU_CONFIGURE=	yes
 USES=		gmake
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-apache --disable-perl --disable-ruby \
 		--disable-java --disable-csharp
 
@@ -38,5 +38,8 @@ post-patch:
 	@# Create the features.h files that are needed to build
 	@${ECHO_CMD} "/* Dummy file */" > ${WRKSRC}/features.h
 	@${ECHO_CMD} "/* Dummy file */" > ${WRKSRC}/cgi/features.h
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cs*
 
 .include <bsd.port.mk>
