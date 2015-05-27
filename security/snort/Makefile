@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.7.2
+PORTVERSION=	2.9.7.3
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
+		https://snort.org/downloads/snort/ \
 		http://mirrors.rit.edu/zi/
 
 PATCH_DIST_STRIP=	-p1
