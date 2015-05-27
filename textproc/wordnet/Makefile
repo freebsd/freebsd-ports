@@ -34,6 +34,5 @@ post-install:
 	    --strip-components 1	\
 	    -f ${_DISTDIR}${DISTFILES:M*dict:S/:dict//}	\
 	    `${SED} -n -e '/\.xbm/d' -e 's,^%%DATADIR%%/,dict/,p' ${PLIST}`
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

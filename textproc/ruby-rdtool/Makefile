@@ -39,6 +39,5 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

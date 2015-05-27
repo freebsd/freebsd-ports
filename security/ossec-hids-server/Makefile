@@ -116,6 +116,4 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

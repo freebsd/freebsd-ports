@@ -22,7 +22,4 @@ PLIST_FILES=	%%EMACS_SITE_LISPDIR%%/puppet-mode.el
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/puppet-mode.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
