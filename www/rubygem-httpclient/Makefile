@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
