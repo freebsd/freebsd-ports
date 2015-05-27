@@ -1,10 +1,12 @@
---- php_http_url.c.orig	2015-02-08 20:13:52.746791000 +0800
-+++ php_http_url.c	2015-02-08 20:14:36.050339000 +0800
-@@ -25,6 +25,8 @@
+--- php_http_url.c.orig	2015-04-08 10:14:19 UTC
++++ php_http_url.c
+@@ -27,6 +27,10 @@
  #	include <arpa/inet.h>
  #endif
  
++#if defined(__FreeBSD__) || defined(__DragonFly__)
 +#include <stddef.h>
++#endif
 +
  #include "php_http_utf8.h"
  
