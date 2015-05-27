@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.88.0
+PORTVERSION=	0.89.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,10 +16,11 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		tar:bzip2 perl5 pkgconfig
+USES=		compiler:features perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
+WANT_GNOME=	yes
 
 BUILD_ARGS=	continue=no
 
@@ -37,7 +38,11 @@ OPTIONS_DEFAULT=XINE RSVG PDF
 RSVG_DESC=	SVG support through librsvg
 PDF_DESC=	PDF support through poppler-glib
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+USE_GCC=	yes
+.endif
 
 .if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
@@ -75,6 +80,8 @@ post-patch:
 .if ! ${PORT_OPTIONS:MPDF}
 	@${RM} -f ${WRKSRC}/makers/emPdf.maker.pm
 .endif
+	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} \
+		${REINPLACE_CMD} -e '1s|${perl_OLD_CMD}|${perl_CMD}|'
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -98,4 +105,4 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emPdf/emPdfServerProc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
