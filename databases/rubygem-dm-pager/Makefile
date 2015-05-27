@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper Pagination
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-dm-aggregates>=0.10.1:${PORTSDIR}/databases/rubygem-dm-aggregates \
 		rubygem-dm-core>=0.10.1:${PORTSDIR}/databases/rubygem-dm-core
 
