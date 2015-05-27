@@ -1,6 +1,6 @@
---- ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2014-08-03 13:59:08.000000000 +0200
-+++ ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java	2014-08-03 15:16:26.000000000 +0200
-@@ -54,77 +54,26 @@
+--- src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2015-05-21 23:38:24 UTC
++++ src/com/eteks/sweethome3d/SweetHome3DBootstrap.java
+@@ -53,77 +53,26 @@ public class SweetHome3DBootstrap {
      String operatingSystemName = System.getProperty("os.name");
      String javaVersion = System.getProperty("java.version");
      String java7Prefix = "1.7.0_";
@@ -87,17 +87,17 @@
 -          "windows/i386/j3dcore-ogl.dll",
 -          "windows/i386/j3dcore-ogl-cg.dll",
 -          "windows/i386/j3dcore-ogl-chk.dll"}));
-+        String message = "Your combination of JDK version and\n" 
++        String message = "Your combination of JDK version and\n"
 +            + "hardware architecture is not supported.\n"
 +            + "If you think that this is an error, please\n"
 +            + "contact the port maintainer.";
-+            
++
 +        JOptionPane.showMessageDialog(null, message);
 +        System.exit(1);
      }
      
      String [] applicationPackages = {
-@@ -163,4 +112,4 @@
+@@ -162,4 +111,4 @@ public class SweetHome3DBootstrap {
      // Call application class main method with reflection
      applicationClassMain.invoke(null, new Object [] {args});
    }
