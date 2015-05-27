@@ -1,6 +1,6 @@
 --- UI/NativeApp.cpp.orig	2015-02-26 20:05:06 UTC
 +++ UI/NativeApp.cpp
-@@ -295,7 +295,7 @@ void NativeInit(int argc, const char *ar
+@@ -291,7 +291,7 @@ void NativeInit(int argc, const char *ar
  #elif defined(BLACKBERRY) || defined(IOS)
  	// Packed assets are included in app
  	VFSRegister("", new DirectoryAssetReader(external_directory));
