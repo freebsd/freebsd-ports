@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rkelly-remix
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
