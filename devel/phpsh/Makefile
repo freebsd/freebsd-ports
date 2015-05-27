@@ -37,7 +37,4 @@ post-patch:
 	@${GREP} -Rl '%%ETCDIR%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%ETCDIR%%,${ETCDIR},g'
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
