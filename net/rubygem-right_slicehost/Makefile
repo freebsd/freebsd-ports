@@ -1,21 +1,19 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	rightslicehost
+PORTNAME=	right_slicehost
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
-DISTNAME=	right_slicehost-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides Ruby access to the Slicehost API
 
-RUN_DEPENDS=	rubygem-righthttpconnection>=1.2.4:${PORTSDIR}/net/rubygem-righthttpconnection
+RUN_DEPENDS=	rubygem-right_http_connection>=1.2.4:${PORTSDIR}/net/rubygem-right_http_connection
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-UNIQUENAME=	${PORTNAME}
 
 .include <bsd.port.mk>
