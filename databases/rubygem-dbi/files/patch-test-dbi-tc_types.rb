@@ -1,6 +1,6 @@
---- test/dbi/tc_types.rb.orig	2014-10-17 15:44:22.000000000 +0200
-+++ test/dbi/tc_types.rb	2014-10-17 15:48:58.000000000 +0200
-@@ -114,11 +114,7 @@
+--- test/dbi/tc_types.rb.orig	2015-05-27 17:33:53 UTC
++++ test/dbi/tc_types.rb
+@@ -114,11 +114,7 @@ class TC_DBI_Type < Test::Unit::TestCase
          d = Date.today
          assert_equal(DateTime.parse(d.to_s).to_s, klass.parse(d).to_s)
  
