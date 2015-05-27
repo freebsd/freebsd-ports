@@ -7595,3 +7595,4 @@ print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match ou
 security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
 emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
 emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed
+www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygems naming
