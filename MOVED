@@ -7570,7 +7570,6 @@ devel/p5-Devel-Profiler|devel/p5-Devel-NYTProf|2015-04-24|Devel::DProf was remov
 audio/filter_audio|audio/libfilteraudio|2015-04-27|audio/filter-audio is renamed into audio/libfilteraudio
 www/p5-Google-Code-Upload||2015-04-30|Has expired: Google Code will be shutting down (http://google-opensource.blogspot.tw/2015/03/farewell-to-google-code.html)
 games/wmfortune||2015-04-30|Has expired: Broken for more than 6 months
-games/springlobby||2015-04-30|Has expired: Depends on expiring games/spring
 devel/p5-base||2015-04-30|Has expired: this port is outdated and base 2.18+ is already in all supported Perl releases
 security/py-certify|security/py-certifi|2015-05-01|security/py-certify is renamed into security/py-certifi
 devel/rubygem-mini_portile||2015-05-03|Has expired: Unneeded port
