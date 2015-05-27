@@ -1,5 +1,5 @@
---- bson.gemspec.orig	2014-11-29 13:32:55.000000000 +0000
-+++ bson.gemspec	2014-11-29 13:33:02.000000000 +0000
+--- bson.gemspec.orig	2014-11-29 13:32:55 UTC
++++ bson.gemspec
 @@ -12,7 +12,6 @@
    s.date = "2014-09-15"
    s.description = "A Ruby BSON implementation for MongoDB. For more information about Mongo, see http://www.mongodb.org. For more information on BSON, see http://www.bsonspec.org."
