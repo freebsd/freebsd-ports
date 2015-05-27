@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-grit
 PORTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
