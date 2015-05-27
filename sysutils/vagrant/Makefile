@@ -79,10 +79,4 @@ do-build:
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc
 
-.include <bsd.port.pre.mk>
-
-.if (${RUBY_VER} == "1.9")
-IGNORE=		not supported with Ruby 1.9, Ruby 2.0 or 2.1 is needed
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
