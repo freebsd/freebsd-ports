@@ -7,4 +7,3 @@ www/cgi-bin/cgiwrap
 %%NPH%%%%DEBUG%%www/cgi-bin/nph-cgiwrapd
 @mode
 @group
-@dirrmtry www/cgi-bin
