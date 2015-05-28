@@ -15,6 +15,9 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	nsd-[0-2]* nsd-4*
 
+DEPRECATED=		NSD 3 is EOL, please upgrade to NSD 4 in dns/nsd
+EXPIRATION_DATE=	2016-05-20
+
 USE_RC_SUBR=	nsd
 
 NSDUSER?=	bind
