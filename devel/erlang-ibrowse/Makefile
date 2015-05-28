@@ -20,8 +20,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmullaparthi
 
-.include <bsd.port.options.mk>
-
 do-build:
 	@cd ${WRKSRC} && ./rebar compile
 
