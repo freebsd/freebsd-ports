@@ -34,7 +34,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/exact.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/exact.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
-MAN5=		exact.conf.5
-MAN8=		exact.8
-
 .include <bsd.port.mk>
