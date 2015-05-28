@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.3/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
 LICENSE=	GPLv2
