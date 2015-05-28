@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	distfiles
 DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 		fastforward-${FF_VER}.tar.gz
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Contributed programs for qmail
 
 OPTIONS_DEFINE=	DOCS

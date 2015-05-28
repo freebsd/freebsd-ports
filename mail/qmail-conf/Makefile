@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${DJBDNS_DIST}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
 USES=		qmail:run
