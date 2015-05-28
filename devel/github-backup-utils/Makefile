@@ -3,6 +3,7 @@
 
 PORTNAME=	github-backup-utils
 PORTVERSION=	2.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
@@ -14,7 +15,6 @@ RUN_DEPENDS=	git>0:${PORTSDIR}/devel/git \
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
 GH_PROJECT=	backup-utils
-GH_TAGNAME=	v${PORTVERSION}
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 
