@@ -3,8 +3,8 @@
 
 PORTNAME=	3proxy
 PORTVERSION=	0.7.1.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	http://github.com/z3APA3A/3proxy/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
@@ -17,6 +17,8 @@ OPTIONS_DEFINE=	DOCS
 MAKEFILE=	Makefile.unix
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_RC_SUBR=	3proxy
+USE_GITHUB=	yes
+GH_ACCOUNT=	z3APA3A
 
 PORTDOCS=	README
 
