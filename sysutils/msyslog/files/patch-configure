@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 11 23:07:44 2003
-+++ configure	Wed Sep 14 16:39:00 2005
-@@ -2941,7 +2941,7 @@
+--- configure.orig	2003-04-11 19:07:44 UTC
++++ configure
+@@ -2941,7 +2941,7 @@ fi
  echo "$as_me:2941: result: $ac_cv_lib_dl_dlopen" >&5
  echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
  if test $ac_cv_lib_dl_dlopen = yes; then
@@ -9,7 +9,7 @@
  fi
  
  echo "$as_me:2947: checking for connect in -lsocket" >&5
-@@ -3573,9 +3573,9 @@
+@@ -3573,9 +3573,9 @@ cat >>confdefs.h <<EOF
  #define MSYSLOG_VERSION_STR "$MSYSLOG_VERSION"
  EOF
  
@@ -21,7 +21,7 @@
  cat >>confdefs.h <<EOF
  #define MLIBNAME_STR "$MLIBNAME"
  EOF
-@@ -3587,7 +3587,7 @@
+@@ -3587,7 +3587,7 @@ then
  	prefix=$ac_default_prefix
  fi
  cat >>confdefs.h <<EOF
@@ -30,7 +30,7 @@
  EOF
  
  echo "$as_me:3593: checking wheter optreset is needed" >&5
-@@ -3644,14 +3644,6 @@
+@@ -3644,14 +3644,6 @@ cat >>confdefs.h <<EOF
  #define PID_DIR "$dir"
  EOF
  
@@ -45,7 +45,7 @@
  echo "$as_me:3655: checking wether netdb.h requires _USE_IRS" >&5
  echo $ECHO_N "checking wether netdb.h requires _USE_IRS... $ECHO_C" >&6
  if grep _USE_IRS /usr/include/netdb.h >/dev/null ;then
-@@ -3736,6 +3728,15 @@
+@@ -3736,6 +3728,15 @@ EOF
  
  	SHARED_PARAMS="-Bshareable"
  	DCCFLAGS="-fPIC"

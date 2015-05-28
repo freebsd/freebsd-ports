@@ -30,7 +30,7 @@ USE_RC_SUBR=	msyslogd
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
 
-PORTSCOUT=	skipv:1.09d
+PORTSCOUT=	skipv:1.09a,1.09c,1.09d
 
 .include <bsd.port.options.mk>
 
