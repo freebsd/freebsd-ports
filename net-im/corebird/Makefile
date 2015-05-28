@@ -19,8 +19,6 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
 GH_ACCOUNT=	baedert
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
 
 USE_GITHUB=	yes
 USES=		autoreconf gettext gmake libtool pkgconfig
