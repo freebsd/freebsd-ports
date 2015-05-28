@@ -536,7 +536,8 @@ _GITHUB_GROUPS= DEFAULT
 _S_TEMP=	${_A:S/^${_A:C@:[^/:]+$@@}//:S/^://}
 .  if !empty(_S_TEMP)
 .    for _group in ${_S_TEMP:S/,/ /g}
-.      if ${_group} == all || ${_group} == ALL || ${_group} == default
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_ACCOUNT"
@@ -555,8 +556,8 @@ _GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
 _S_TEMP=	${_P:S/^${_P:C@:[^/:]+$@@}//:S/^://}
 .  if !empty(_S_TEMP)
 .    for _group in ${_S_TEMP:S/,/ /g}
-.      if ${_group} == all || ${_group} == ALL || ${_group} == default
-check-makevars::
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_PROJECT"
 		@${FALSE}
@@ -574,7 +575,8 @@ _GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
 _S_TEMP=	${_T:S/^${_T:C@:[^/:]+$@@}//:S/^://}
 .  if !empty(_S_TEMP)
 .    for _group in ${_S_TEMP:S/,/ /g}
-.      if ${_group} == all || ${_group} == ALL || ${_group} == default
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_TAGNAME"
@@ -625,9 +627,25 @@ DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
 .  for _group in ${_GITHUB_GROUPS:NDEFAULT}
-_a_tmp=	${_GH_ACCOUNT_${_group}:U${_GH_ACCOUNT_DEFAULT}}
-_p_tmp=	${_GH_PROJECT_${_group}:U${_GH_PROJECT_DEFAULT}}
-_t_tmp=	${_GH_TAGNAME_${_group}:U${_GH_TAGNAME_DEFAULT}}
+.if defined(_GH_ACCOUNT_${_group})
+_a_tmp=	${_GH_ACCOUNT_${_group}}
+.else
+_a_tmp=	${_GH_ACCOUNT_DEFAULT}
+.endif
+.if defined(_GH_PROJECT_${_group})
+_p_tmp=	${_GH_PROJECT_${_group}}
+.else
+_p_tmp=	${_GH_PROJECT_DEFAULT}
+.endif
+.if defined(_GH_TAGNAME_${_group})
+_t_tmp=	${_GH_TAGNAME_${_group}}
+.else
+_t_tmp=	${_GH_TAGNAME_DEFAULT}
+.endif
+# starting with 10+:
+#_a_tmp=	${_GH_ACCOUNT_${_group}:U${_GH_ACCOUNT_DEFAULT}}
+#_p_tmp=	${_GH_PROJECT_${_group}:U${_GH_PROJECT_DEFAULT}}
+#_t_tmp=	${_GH_TAGNAME_${_group}:U${_GH_TAGNAME_DEFAULT}}
 _t_tmp_s=	${_t_tmp:S,/,-,}
 _t_tmp_e=	${_t_tmp_s:C/^[vV]([0-9])/\1/}
 DISTNAME_${_group}:=	${_a_tmp}-${_p_tmp}-${_t_tmp_s}
