@@ -10,6 +10,35 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150528:
+AUTHOR: mat@FreeBSD.org
+  
+  USE_GITHUB can now fetch multiple distfiles.  It uses a grouping feature
+  similar to MASTER_SITES/PATCH_SITES.
+  
+  Some helpful variables are provided: WRKSRC_<group> for putting things in the
+  right place in post-extract, and DISTNAME_<group>/DISTFILE_<group> for use
+  with EXTRACT_ONLY.
+
+  A simple example:
+
+    PORTNAME=     bar
+    PORTVERSION=  1.0
+    USE_GITHUB= yes
+    GH_ACCOUNT= foo
+    GH_PROJECT= ${PORTNAME}-images:images
+
+    post-extract:
+	    @${MV} ${WRKSRC_images} ${WRKSRC}/images
+
+  It will fetch those two distfiles:
+
+    $ make fetch-urlall-list
+    https://codeload.github.com/foo/bar/tar.gz/1.0?dummy=/foo-bar-1.0_GH0.tar.gz
+    https://codeload.github.com/foo/bar-images/tar.gz/1.0?dummy=/foo-bar-images-1.0-1.0.tar.gz
+
+  It will then extract them to ${WRKDIR} in their respectives directories.
+
 20150526:
 AUTHOR: antoine@FreeBSD.org
 
