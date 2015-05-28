@@ -1446,7 +1446,9 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/Scenarios/find_sequences.uwl
 %%DATADIR%%/workflow_samples/Scenarios/gene_by_gene_report.uwl
 %%DATADIR%%/workflow_samples/Scenarios/group_primers_pairs.uwl
+%%DATADIR%%/workflow_samples/Scenarios/intersect_annotations.uwl
 %%DATADIR%%/workflow_samples/Scenarios/merge_sequence_annotation.uwl
+%%DATADIR%%/workflow_samples/Scenarios/pcr.uwl
 %%DATADIR%%/workflow_samples/Scenarios/remote_blasting.uwl
 %%DATADIR%%/workflow_samples/Scenarios/translate_seq_and_compl.uwl
 %%DATADIR%%/workflow_samples/Transcriptomics/SearchTFBS.uwl
