@@ -104,7 +104,7 @@ do-install:
 	${RM} ${WRKSRC}/modules/tcllibc/license.terms
 	${CP} -Rp ${WRKSRC}/modules/tcllibc ${STAGEDIR}${PREFIX}/lib/tcllib/
 
-test check xregression-test: build
+test check regression-test: build
 	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test
 
 .include <bsd.port.mk>
