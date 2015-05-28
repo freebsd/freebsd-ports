@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.netmeridian.com/e-huss/ \
 		GENTOO
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 USES=		qmail:run
