@@ -12,9 +12,9 @@ included in archive and supports installation as NT/2K/XP service.
 Currently 3proxy is tested to work under Windows 98/NT/2000/2003/XP,
 FreeBSD/i386, Linux/i386, Linux/Alpha. See Release Notes and Changes for
 features list.
-3proxy is FreeWare. It can be used under terms of GNU/GPL or under it own
+3proxy is FreeWare. It can be used under terms of GNU/GPL or under its own
 license (please read License Agreement).
 
-For licensing or commercial support please e-mail to 3proxy@security.nnov.ru
+For licensing or commercial support please e-mail to 3proxy@3proxy.ru
 
-WWW: http://www.security.nnov.ru/soft/3proxy/
+WWW: http://3proxy.ru/
