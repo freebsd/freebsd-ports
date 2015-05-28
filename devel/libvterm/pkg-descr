@@ -1,0 +1,8 @@
+Abstract C99 library which implements a VT220 or xterm-like terminal
+emulator. It doesn't use any particular graphics toolkit or output
+system, instead it invokes callback function pointers that its
+embedding program should provide it to draw on its behalf. It
+avoids calling malloc() during normal running state, allowing it
+to be used in embedded kernel situations.
+
+WWW: http://www.leonerd.org.uk/code/libvterm/
