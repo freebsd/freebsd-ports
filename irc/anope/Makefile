@@ -18,9 +18,6 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	anope
-GH_PROJECT=	anope
-GH_TAGNAME=	${PORTVERSION}
 
 USE_RC_SUBR=	anope
 
