@@ -3,6 +3,7 @@
 
 PORTNAME=	SVG
 PORTVERSION=	2.63
+PORTREVISION=	1
 CATEGORIES=	textproc graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +16,10 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		perl5 dos2unix
+USES=		dos2unix perl5 shebangfix
+SHEBANG_FILES=	examples/*.pl examples/*.cgi examples/*.psgi
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 PORTEXAMPLES=	*
 
