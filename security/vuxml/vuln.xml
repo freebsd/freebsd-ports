@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="406636fe-055d-11e5-aab1-d050996490d0">
+    <topic>krb5 -- requires_preauth bypass in PKINIT-enabled KDC</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.13.2</lt></range>
+      </package>
+      <package>
+	<name>krb5-112</name>
+	<range><lt>1.12.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MIT reports:</p>
+	<blockquote cite="http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160">
+	  <p>In MIT krb5 1.12 and later, when the KDC is configured
+	    with PKINIT support, an unauthenticated remote attacker
+	    can bypass the requires_preauth flag on a client principal
+	    and obtain a ciphertext encrypted in the principal's
+	    long-term key.  This ciphertext could be used to conduct
+	    an off-line dictionary attack against the user's password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2694</cvename>
+      <url>http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160</url>
+    </references>
+    <dates>
+      <discovery>2015-05-25</discovery>
+      <entry>2015-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27f742f6-03f4-11e5-aab1-d050996490d0">
     <topic>cURL -- sensitive HTTP server headers also sent to proxies</topic>
     <affects>
