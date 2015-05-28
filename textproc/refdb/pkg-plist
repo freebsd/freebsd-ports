@@ -174,6 +174,7 @@ man/man8/refdb.sh.8.gz
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-html/tei-refdb-html.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib.xsl
+@dir %%DATADIR%%/db
 @dir var/lib/refdb/db
 @dir var/log
 @dir var/run
