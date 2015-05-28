@@ -3,18 +3,22 @@
 
 PORTNAME=	scim-array
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese
 MASTER_SITES=	http://of.openfoundry.org/download/scimarray/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Array 30 SCIM IMEngine module
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv libtool:keepla pkgconfig
+INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
