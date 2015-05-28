@@ -17,8 +17,6 @@ BUILD_DEPENDS=	git-modes-${EMACS_PORT_NAME}>0:${PORTSDIR}/devel/git-modes
 RUN_DEPENDS=	git-modes-${EMACS_PORT_NAME}>0:${PORTSDIR}/devel/git-modes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	1.4.0
 
 USES=		gmake makeinfo
 USE_EMACS=	YES
