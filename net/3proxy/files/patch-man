@@ -1,0 +1,95 @@
+diff -urN man/3proxy.8 man-bin/3proxy.8
+--- man/3proxy.8	2015-02-17 16:09:13.000000000 +0300
++++ man-bin/3proxy.8	2015-05-28 11:58:00.543952000 +0300
+@@ -25,18 +25,7 @@
+ It can establish multiple
+ gateways with HTTP and HTTPS proxy with FTP over HTTP support, SOCKS v4,
+ v4.5 and v5, POP3 proxy, UDP and TCP portmappers. Each gateway is started
+-from configuration file like independant service 
+-.BR proxy (8)
+-.BR socks (8)
+-.BR pop3p (8)
+-.BR tcppm (8)
+-.BR udppm (8)
+-.BR ftppr (8)
+-.BR dnspr
+-but
+-.BR 3proxy
+-is not a kind of wrapper or superserver for this daemons. It just has same
+-code compiled in, but provides much more functionality. SOCKSv5
++from configuration file like independant service. SOCKSv5
+ implementatation allows to use 3proxy with any UDP or TCP based client
+ applications designed without
+ proxy support (with
+@@ -84,7 +73,7 @@
+ configuration from stdin. It makes it possible to use 3proxy.cfg file as
+ executable script just by setting +x mode and adding
+ .br
+-#!/usr/local/3proxy/3proxy
++#!/usr/local/bin/3proxy
+ .br
+ as a first line in 3proxy.cfg
+ .TP
+@@ -133,14 +122,14 @@
+ wget to automate this task.
+ .SH FILES
+ .TP
+-.I "/usr/local/3proxy/3proxy.cfg (3proxy.cfg)"
++.I "/usr/local/etc/3proxy.cfg (3proxy.cfg)"
+ .BR 3proxy
+ configuration file
+ .SH BUGS
+ Report all bugs to
+-.BR 3proxy@security.nnov.ru
++.BR 3proxy@3proxy.ru
+ .SH SEE ALSO
+-3proxy.cfg(3), proxy(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8),
++3proxy.cfg(3),
+ kill(1), syslogd(8),
+ .br
+ http://3proxy.ru/
+@@ -148,6 +137,6 @@
+ 3APA3A is pronounced as \`\`zaraza\'\'.
+ .SH AUTHORS
+ 3proxy is designed by 3APA3A
+-.RI ( 3APA3A@security.nnov.ru ),
++.RI ( 3APA3A@3proxy.ru ),
+ Vladimir Dubrovin
+-.RI ( vlad@sandy.ru )
++.RI ( vlad@securityvulns.ru )
+diff -urN man/3proxy.cfg.3 man-bin/3proxy.cfg.3
+--- man/3proxy.cfg.3	2015-02-17 16:09:13.000000000 +0300
++++ man-bin/3proxy.cfg.3	2015-05-28 11:55:28.565596000 +0300
+@@ -113,15 +113,6 @@
+ .B -a1
+ (for proxy) - anonymous proxy (random client information reported)
+ .br
+- Also, all options mentioned for 
+-.BR proxy (8)
+-.BR socks (8)
+-.BR pop3p (8)
+-.BR tcppm (8)
+-.BR udppm (8)
+-.BR ftppr (8)
+- are also supported.
+-.br
+  Portmapping services listen at SRCPORT and connect to DSTADDR:DSTPORT
+ HTTP and SOCKS proxies are standard. 
+ .br
+@@ -884,13 +875,13 @@
+ 
+ 
+ .SH SEE ALSO
+-3proxy(8), proxy(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8), syslogd(8),
++3proxy(8), syslogd(8),
+ .br
+ http://3proxy.ru/
+ .SH TRIVIA
+ 3APA3A is pronounced as \`\`zaraza\'\'.
+ .SH AUTHORS
+ 3proxy is designed by 3APA3A
+-.RI ( 3APA3A@security.nnov.ru ),
++.RI ( 3APA3A@3proxy.ru ),
+ Vladimir Dubrovin
+-.RI ( vlad@sandy.ru )
++.RI ( vlad@securityvulns.ru )
