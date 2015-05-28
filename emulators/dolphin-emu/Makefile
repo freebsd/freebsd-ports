@@ -10,6 +10,7 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -67,6 +68,10 @@ NLS_CMAKE_ON=	-DDISABLE_NLS:BOOL=OFF
 NLS_CMAKE_OFF=	-DDISABLE_NLS:BOOL=ON
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+BROKEN=		does not build: absence of xlocale.h
+.endif
 
 # XXX Temporary workaround for ports/184540
 .if ${PORT_OPTIONS:MDEBUG}
