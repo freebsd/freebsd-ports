@@ -558,6 +558,7 @@ _S_TEMP=	${_P:S/^${_P:C@:[^/:]+$@@}//:S/^://}
 .    for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
 .      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_PROJECT"
 		@${FALSE}
