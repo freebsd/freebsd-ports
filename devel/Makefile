@@ -4953,6 +4953,7 @@
     SUBDIR += umbrello
     SUBDIR += umem
     SUBDIR += umlgraph
+    SUBDIR += unibilium
     SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp

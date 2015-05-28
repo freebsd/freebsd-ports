@@ -1,0 +1,5 @@
+Unibilium is a very basic terminfo library. It doesn't depend on curses or any
+other library. It also doesn't use global variables, so it should be
+thread-safe.
+
+WWW: https://github.com/mauke/unibilium
