@@ -11,13 +11,13 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/chpp/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-intrusive full-featured text preprocessor
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
-USES=		gmake makeinfo
-USE_AUTOTOOLS=	autoheader aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+USES=		autoreconf gmake makeinfo
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
