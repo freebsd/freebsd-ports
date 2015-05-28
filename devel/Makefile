@@ -412,6 +412,7 @@
     SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-getopt
+    SUBDIR += erlang-ibrowse
     SUBDIR += erlang-msgpack
     SUBDIR += erlang-mustache
     SUBDIR += erlang-protobuffs
