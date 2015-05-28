@@ -57,6 +57,72 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a13500d0-0570-11e5-aab1-d050996490d0">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.5.html">
+	  <p>The following vulnerabilities have been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-12</p>
+	      <p>The LBMR dissector could go into an infinite loop.
+		(Bug 11036) CVE-2015-3808, CVE-2015-3809</p></li>
+	    <li><p>wnpa-sec-2015-13</p>
+	      <p>The WebSocket dissector could recurse excessively.
+		(Bug 10989) CVE-2015-3810</p></li>
+	    <li><p>wnpa-sec-2015-14</p>
+	      <p>The WCP dissector could crash while decompressing data.
+		(Bug 10978) CVE-2015-3811</p></li>
+	    <li><p>wnpa-sec-2015-15</p>
+	      <p>The X11 dissector could leak memory. (Bug 11088)
+		CVE-2015-3812</p></li>
+	    <li><p>wnpa-sec-2015-16</p>
+	      <p>The packet reassembly code could leak memory.
+		(Bug 11129) CVE-2015-3813</p></li>
+	    <li><p>wnpa-sec-2015-17</p>
+	      <p>The IEEE 802.11 dissector could go into an infinite loop.
+		(Bug 11110) CVE-2015-3814</p></li>
+	    <li><p>wnpa-sec-2015-18</p>
+	      <p>The Android Logcat file parser could crash. Discovered by
+		Hanno Böck. (Bug 11188) CVE-2015-3815</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3808</cvename>
+      <cvename>CVE-2015-3809</cvename>
+      <cvename>CVE-2015-3810</cvename>
+      <cvename>CVE-2015-3811</cvename>
+      <cvename>CVE-2015-3812</cvename>
+      <cvename>CVE-2015-3813</cvename>
+      <cvename>CVE-2015-3814</cvename>
+      <cvename>CVE-2015-3815</cvename>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.5.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-12.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-13.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-14.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-15.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-16.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-17.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-18.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-12</discovery>
+      <entry>2015-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="406636fe-055d-11e5-aab1-d050996490d0">
     <topic>krb5 -- requires_preauth bypass in PKINIT-enabled KDC</topic>
     <affects>
