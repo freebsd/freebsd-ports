@@ -3,6 +3,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	robak@FreeBSD.org
@@ -14,10 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
 
-PLIST_FILES=	etc/rc.d/iocage \
-		sbin/iocage \
-		man/man8/iocage.8.gz
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 900044
@@ -26,9 +23,16 @@ BROKEN=		This port works only on FreeBSD 9 and newer
 
 NO_BUILD=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|/usr/local/lib/iocage|${PREFIX}/lib/iocage|g" ${WRKSRC}/iocage
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/iocage
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/iocage ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/iocage ${STAGEDIR}${PREFIX}/sbin
+	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/iocage)
 	${INSTALL_MAN} ${WRKSRC}/iocage.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.post.mk>
