@@ -3,6 +3,7 @@
 
 PORTNAME=	mem
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LAWALSH
@@ -15,7 +16,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	lib/mem.pm
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
