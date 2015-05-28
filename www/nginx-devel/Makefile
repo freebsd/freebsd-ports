@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -529,7 +528,8 @@ GIT_DRIZZLE_VERSION=	0-gfba80cf
 MASTER_SITES+=	https://github.com/openresty/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
+		${PATCHDIR}/extra-patch-ngx_http_drizzle_util.c
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -637,7 +637,8 @@ GIT_NGINX_POSTGRES_VERSION=	1-g49855a0
 MASTER_SITES+=	https://github.com/FRiCKLE/ngx_postgres/tarball/${GIT_NGINX_POSTGRES_VERSION:S/^1-g//}/:postgres
 DISTFILES+=	FRiCKLE-ngx_postgres-${NGINX_POSTGRES_VERSION}-${GIT_NGINX_POSTGRES_VERSION}.tar.gz:postgres
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/FRiCKLE-ngx_postgres-${GIT_NGINX_POSTGRES_VERSION:S/^1-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config \
+		${PATCHDIR}/extra-patch-ngx_postgres_util.c
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
