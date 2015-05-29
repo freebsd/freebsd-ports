@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.1
 CATEGORIES=	net
+MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Foreman Proxy Agent
@@ -20,9 +21,7 @@ OPTIONS_DEFINE=	BMC PUPPET
 BMC_DESC=	Depend on rubyipmi for BMC support
 PUPPET_DESC=	Depend on Puppet
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	theforeman
-GH_PROJECT=	smart-proxy
+USES=		tar:bzip2
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RC_SUBR=	foreman-proxy
