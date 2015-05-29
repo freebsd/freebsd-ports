@@ -1316,7 +1316,7 @@ _SUF2=	,${PORTEPOCH}
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DISTVERSIONFULL=	${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
-.if defined(USE_GITHUB) && empty(MASTER_SITES:MGHC) && empty(DISTNAME)
+.if defined(USE_GITHUB) && empty(MASTER_SITES:MGHC) && empty(DISTNAME) && empty(USE_GITHUB:Mnodefault)
 _GITHUB_MUST_SET_DISTNAME=		yes
 .else
 DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
@@ -5376,7 +5376,7 @@ _CHECK_CONFIG_ERROR=	true
 
 .if !target(check-config)
 check-config: _check-config
-.if !empty(_CHECK_CONFIG_ERROR)
+.if !empty(_CHECK_CONFIG_ERROR) && !defined(IGNORE_INVALID_CONFIG)
 	@${FALSE}
 .endif
 .endif # check-config

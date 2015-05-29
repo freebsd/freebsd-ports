@@ -520,7 +520,7 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
 
-.  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
+.  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
 .  endif
 _GH_ACCOUNT_DEFAULT=	${PORTNAME}
@@ -603,6 +603,7 @@ GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # and extraction directory.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/}
 .  endif 
+_GITHUB_REV=	0
 .  if defined(_GITHUB_MUST_SET_DISTNAME)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
 .    if ${GH_TAGNAME} != ${DISTVERSIONFULL}
@@ -610,20 +611,21 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
 .    else
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
 .    endif
-.  endif
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
 # which has happened before.
-_GITHUB_REV=	0
 .  if ${MASTER_SITES:MGH}
 DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
+.  endif
 .  endif
 .endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
 # If there are non default groups
 .if !empty(_GITHUB_GROUPS:NDEFAULT)
 # Put the DEFAULT distfile first
+.if !${USE_GITHUB:Mnodefault}
 DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
+.endif
 # Then for each of the remaining groups, add DISTFILES and MASTER_SITES
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
