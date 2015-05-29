@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9471ec47-05a2-11e5-8fda-002590263bf5">
+    <topic>proxychains-ng -- current path as the first directory for the library search path</topic>
+    <affects>
+      <package>
+	<name>proxychains-ng</name>
+	<range><lt>4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mamoru TASAKA reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/430">
+	  <p>proxychains4 sets LD_PRELOAD to dlopen libproxychains4.so
+	    and execvp() the arbitrary command user has specified.
+	    proxychains4 sets the current directory as the first path
+	    to search libproxychains4.so</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2015/05/12/6</mlist>
+      <mlist>http://seclists.org/oss-sec/2015/q2/430</mlist>
+      <cvename>CVE-2015-3887</cvename>
+    </references>
+    <dates>
+      <discovery>2015-05-11</discovery>
+      <entry>2015-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a13500d0-0570-11e5-aab1-d050996490d0">
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
