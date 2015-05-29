@@ -16,6 +16,8 @@ LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 BROKEN=		needs update to support pulseaudio 5.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-06-29
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11

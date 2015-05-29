@@ -12,6 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	PackageKit client programs for the GNOME desktop
 
 BROKEN=		Uses unknown GNOME component gnomemenus
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-06-29
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
