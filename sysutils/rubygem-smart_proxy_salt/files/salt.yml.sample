@@ -1,4 +1,0 @@
----
-:enabled: true
-:autosign_file: /usr/local/etc/salt/autosign.conf
-:salt_command_user: root
