@@ -1,6 +1,6 @@
---- rapt.gemspec.orig	2014-11-30 03:53:13.000000000 +0000
-+++ rapt.gemspec	2014-11-30 03:53:38.000000000 +0000
-@@ -12,7 +12,7 @@
+--- rapt.gemspec.orig	2014-11-30 03:53:13 UTC
++++ rapt.gemspec
+@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
    s.description = "Install, remove, and discover new plugins for your Ruby on Rails app."
    s.email = "boss@topfunky.com"
    s.executables = ["rapt"]
