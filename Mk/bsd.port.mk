@@ -5376,7 +5376,7 @@ _CHECK_CONFIG_ERROR=	true
 
 .if !target(check-config)
 check-config: _check-config
-.if !empty(_CHECK_CONFIG_ERROR) && !defined(IGNORE_INVALID_CONFIG)
+.if !empty(_CHECK_CONFIG_ERROR)
 	@${FALSE}
 .endif
 .endif # check-config
