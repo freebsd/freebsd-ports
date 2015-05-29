@@ -10,12 +10,12 @@ MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
-USES=		perl5 pkgconfig
-USE_AUTOTOOLS=	autoheader
+USES=		autoreconf perl5 pkgconfig
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
