@@ -14,15 +14,7 @@ COMMENT=	Internationalization library for Perl
 
 LICENSE=	LGPL21
 
-USES=		gettext perl5 shebangfix
-SHEBANG_FILES=	lib/Locale/Messages.pm \
-		lib/Locale/TextDomain.pm \
-		lib/Locale/gettext_dumb.pm \
-		lib/Locale/gettext_pp.pm \
-		lib/Locale/gettext_xs.pod
-SHEBANG_LANG=	false
-false_OLD_CMD=	/bin/false
-false_CMD=	/usr/bin/false
+USES=		gettext perl5
 USE_PERL5=	configure
 
 post-install:
