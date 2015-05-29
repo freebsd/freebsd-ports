@@ -18,6 +18,10 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
+BROKEN_mips64=	No ASM support
+BROKEN_mips=	No ASM support
+
 USES=		cpe gmake tar:xz
 CPE_VENDOR=	inria
 REINPLACE_ARGS=	-i ""
@@ -97,10 +101,6 @@ OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""
-.endif
-
-.if ${OCAML_ARCH} == sparc64
-BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
 .endif
 
 post-extract:
