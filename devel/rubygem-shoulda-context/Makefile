@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Context framework extracted from Shoulda
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES+=	bin/convert_to_should_syntax
+
+PLIST_FILES=	bin/convert_to_should_syntax
 
 .include <bsd.port.mk>
