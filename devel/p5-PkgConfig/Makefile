@@ -3,6 +3,7 @@
 
 PORTNAME=	PkgConfig
 PORTVERSION=	0.09026
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PLICEASE
@@ -17,6 +18,8 @@ LICENSE_COMB=	dual
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 USE_PERL5=	configure
-USES=		perl5 pkgconfig
+USES=		perl5 pkgconfig shebangfix
+SHEBANG_FILES=	lib/PkgConfig.pm
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
