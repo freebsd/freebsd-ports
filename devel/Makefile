@@ -571,9 +571,9 @@
     SUBDIR += git-review
     SUBDIR += git-subversion
     SUBDIR += gitflow
-    SUBDIR += github-backup-utils
     SUBDIR += gitg
     SUBDIR += gitg0
+    SUBDIR += github-backup-utils
     SUBDIR += gitinspector
     SUBDIR += gitolite
     SUBDIR += gitolite2
