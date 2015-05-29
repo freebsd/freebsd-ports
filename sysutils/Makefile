@@ -51,6 +51,7 @@
     SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += azure-agent
+    SUBDIR += b2sum
     SUBDIR += b43-fwcutter
     SUBDIR += backupchecker
     SUBDIR += backuppc
