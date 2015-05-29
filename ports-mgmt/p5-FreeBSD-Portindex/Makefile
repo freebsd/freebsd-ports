@@ -3,7 +3,7 @@
 
 PORTNAME=	FreeBSD-Portindex
 PORTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -16,20 +16,9 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	p5-BerkeleyDB>0:${PORTSDIR}/databases/p5-BerkeleyDB
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_ARCH=	yes
-
-# GraphViz not required for portindex to run or generate GraphViz
-# format output: this is only needed to render the output on the same
-# machine.
-OPTIONS_DEFINE=	GRAPHVIZ
-GRAPHVIS_DESCR=	Add GraphViz run-time dependency
-
-.include <bsd.port.options.mk>
-
-GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-
-USES+=		perl5 tar:xz
+USES=		perl5 tar:xz
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 CACHE_DIR?=	/var/db/portindex
 CACHE_OWNER?=	root
@@ -38,16 +27,20 @@ CACHE_MODE?=	0775
 
 CFG_FILE=	portindex.cfg
 
-SUB_FILES+=	pkg-install pkg-deinstall
-SUB_LIST+=	CACHE_DIR=${CACHE_DIR} \
+PLIST_SUB+=	CACHE_DIR=${CACHE_DIR} \
 		CACHE_OWNER=${CACHE_OWNER} \
 		CACHE_GROUP=${CACHE_GROUP} \
 		CACHE_MODE=${CACHE_MODE}
 
-post-install:	install-conf
+# GraphViz not required for portindex to run or generate GraphViz
+# format output: this is only needed to render the output on the same
+# machine.
+OPTIONS_DEFINE=	GRAPHVIZ
+GRAPHVIZ_DESC=	Add GraphViz run-time dependency
+GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-install-conf:
-	cd ${WRKSRC} ; \
-	${INSTALL_DATA} ${CFG_FILE}.sample ${STAGEDIR}${PREFIX}/etc/${CFG_FILE}.sample
+post-install:
+	${MKDIR} ${STAGEDIR}${CACHE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${CFG_FILE}.sample ${STAGEDIR}${PREFIX}/etc/${CFG_FILE}.sample
 
 .include <bsd.port.mk>
