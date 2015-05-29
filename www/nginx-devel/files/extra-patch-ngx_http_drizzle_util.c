@@ -1,5 +1,5 @@
---- ../openresty-drizzle-nginx-module-fba80cf/src/ngx_http_drizzle_util.c.orig	2015-05-28 02:39:19.661703000 +0300
-+++ ../openresty-drizzle-nginx-module-fba80cf/src/ngx_http_drizzle_util.c	2015-05-28 02:41:12.655554000 +0300
+--- ../drizzle-nginx-module-0.1.8/src/ngx_http_drizzle_util.c.orig	2015-05-28 02:39:19.661703000 +0300
++++ ../drizzle-nginx-module-0.1.8/src/ngx_http_drizzle_util.c	2015-05-28 02:41:12.655554000 +0300
 @@ -114,10 +114,8 @@
          u->resolved->ctx = NULL;
      }

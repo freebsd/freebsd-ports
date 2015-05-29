@@ -265,9 +265,10 @@ CONFIGURE_ARGS+=--dso-path=${ETCDIR}/modules \
 
 .if ${PORT_OPTIONS:MHTTP_ACCEPT_LANGUAGE}
 GIT_ACCEPT_LANGUAGE_VERSION=	2f69842
-MASTER_SITES+=	https://github.com/giom/nginx_accept_language_module/tarball/master/:accept_language
-DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}.tar.gz:accept_language
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}
+GH_ACCOUNT+=	giom:accept_language
+GH_PROJECT+=	nginx_accept_language_module:accept_language
+GH_TAGNAME+=	${GIT_ACCEPT_LANGUAGE_VERSION}:accept_language
+CONFIGURE_ARGS+=--add-module=${WRKSRC_accept_language}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
@@ -279,9 +280,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
 GIT_AUTH_DIGEST_VERSION=	bd1c86a
-MASTER_SITES+=	https://github.com/samizdatco/nginx-http-auth-digest/tarball/master/:auth_digest
-DISTFILES+=	samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}.tar.gz:auth_digest
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}
+GH_ACCOUNT+=	samizdatco:auth_digest
+GH_PROJECT+=	nginx-http-auth-digest:auth_digest
+GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
@@ -324,18 +326,18 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSI
 
 .if ${PORT_OPTIONS:MECHO}
 NGINX_ECHO_VERSION=	0.50
-GIT_ECHO_VERSION=	0-gf827a4f
-MASTER_SITES+=	https://github.com/openresty/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
-DISTFILES+=	openresty-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:echo
+GH_PROJECT+=	echo-nginx-module:echo
+GH_TAGNAME+=	v${NGINX_ECHO_VERSION}:echo
+CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
 NGINX_HEADERS_MORE_VERSION=	0.24
-GIT_HEADERS_MORE_VERSION=	0-g7a6fd11
-MASTER_SITES+=	https://github.com/openresty/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
-DISTFILES+=	openresty-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:headers_more
+GH_PROJECT+=	headers-more-nginx-module:headers_more
+GH_TAGNAME+=	v${NGINX_HEADERS_MORE_VERSION}:headers_more
+CONFIGURE_ARGS+=--add-module=${WRKSRC_headers_more}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV}
@@ -345,19 +347,19 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 NGINX_DAV_EXT_VERSION=	0.0.2
-GIT_DAV_EXT_VERSION=	0-g0e07a3e
-MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_VERSION}/:dav_ext
-DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_VERSION}-${GIT_DAV_EXT_VERSION}.tar.gz:dav_ext
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_VERSION:S/^0-g//} \
+GH_ACCOUNT+=	arut:dav_ext
+GH_PROJECT+=	nginx-dav-ext-module:dav_ext
+GH_TAGNAME+=	v${NGINX_DAV_EXT_VERSION}:dav_ext
+CONFIGURE_ARGS+=--add-module=${WRKSRC_dav_ext} \
 		--with-http_dav_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_EVAL}
 NGINX_EVAL_VERSION=	1.0.3
-GIT_EVAL_VERSION=	0-g125fa2e
-MASTER_SITES+=	https://github.com/vkholodkov/nginx-eval-module/tarball/${NGINX_EVAL_VERSION}/:eval
-DISTFILES+=	vkholodkov-nginx-eval-module-${NGINX_EVAL_VERSION}-${GIT_EVAL_VERSION}.tar.gz:eval
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_VERSION:S/^0-g//}
+GH_ACCOUNT+=	vkholodkov:eval
+GH_PROJECT+=	nginx-eval-module:eval
+GH_TAGNAME+=	${NGINX_EVAL_VERSION}:eval
+CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
@@ -379,10 +381,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_VE
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_NOTICE}
-GIT_NOTICE_VERSION=	0-g3c95966
-MASTER_SITES+=	https://github.com/kr/nginx-notice/tarball/master/:notice
-DISTFILES+=	kr-nginx-notice-${GIT_NOTICE_VERSION}.tar.gz:notice
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/kr-nginx-notice-${GIT_NOTICE_VERSION:S/^0-g//}
+GIT_NOTICE_VERSION=	3c95966
+GH_ACCOUNT+=	kr:notice
+GH_PROJECT+=	nginx-notice:notice
+GH_TAGNAME+=	${GIT_NOTICE_VERSION}:notice
+CONFIGURE_ARGS+=--add-module=${WRKSRC_notice}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
 
@@ -401,10 +404,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_VERSI
 
 .if ${PORT_OPTIONS:MHTTP_PUSH_STREAM}
 NGINX_PUSH_STREAM_VERSION=	0.3.5
-GIT_PUSH_STREAM_VERSION=	0-gb6a8c46
-MASTER_SITES+=	https://github.com/wandenberg/nginx-push-stream-module/tarball/${NGINX_PUSH_STREAM_VERSION}/:pushstream
-DISTFILES+=	wandenberg-nginx-push-stream-module-${NGINX_PUSH_STREAM_VERSION}-${GIT_PUSH_STREAM_VERSION}.tar.gz:pushstream
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/wandenberg-nginx-push-stream-module-${GIT_PUSH_STREAM_VERSION:S/^0-g//}
+GH_ACCOUNT+=	wandenberg:pushstream
+GH_PROJECT+=	nginx-push-stream-module:pushstream
+GH_TAGNAME+=	${NGINX_PUSH_STREAM_VERSION}:pushstream
+CONFIGURE_ARGS+=--add-module=${WRKSRC_pushstream}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REALIP}
@@ -438,10 +441,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSIO
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
 NGINX_UPLOADPROGRESS_VERSION=	0.9.0
-GIT_UPLOADPROGRESS_VERSION=	0-ga788dea
-MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_VERSION}/:uploadprogress
-DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_VERSION}-${GIT_UPLOADPROGRESS_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_VERSION:S/^0-g//}
+GH_ACCOUNT+=	masterzen:uploadprogress
+GH_PROJECT+=	nginx-upload-progress-module:uploadprogress
+GH_TAGNAME+=	v${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKSRC_uploadprogress}
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR) || !empty(PORT_OPTIONS:MSUPERVISORD)
@@ -459,10 +462,10 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
 			libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.2.0
-GIT_VIDEO_THUMBEXTRACTOR_VERSION=	0-g9406457
-MASTER_SITES+=	https://github.com/wandenberg/nginx-video-thumbextractor-module/tarball/${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}/:videothumbextractor
-DISTFILES+=	wandenberg-nginx-video-thumbextractor-module-${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}-${GIT_VIDEO_THUMBEXTRACTOR_VERSION}.tar.gz:videothumbextractor
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/wandenberg-nginx-video-thumbextractor-module-${GIT_VIDEO_THUMBEXTRACTOR_VERSION:S/^0-g//} \
+GH_ACCOUNT+=	wandenberg:videothumbextractor
+GH_PROJECT+=	nginx-video-thumbextractor-module:videothumbextractor
+GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:videothumbextractor
+CONFIGURE_ARGS+=--add-module=${WRKSRC_videothumbextractor} \
 			--with-cc-opt="-I ${LOCALBASE}/include -I ${LOCALBASE}/include/ImageMagick"
 .endif
 
@@ -476,56 +479,53 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.6
-GIT_DRIZZLE_VERSION=	0-ge6937ba
-MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
-DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
+GH_ACCOUNT+=	chaoslawful:drizzle
+GH_PROJECT+=	drizzle-nginx-module:drizzle
+GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
+CONFIGURE_ARGS+=--add-module=${WRKSRC_drizzle}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MSET_MISC}
 WITH_HTTP_REWRITE=	yes
 NGINX_DEVEL_KIT_VERSION=	0.2.19
-GIT_DEVEL_KIT_VERSION=	0-g8dd0df5
-MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
-DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
+GH_ACCOUNT+=	simpl:devel_kit
+GH_PROJECT+=	ngx_devel_kit:devel_kit
+GH_TAGNAME+=	v${NGINX_DEVEL_KIT_VERSION}:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKSRC_devel_kit}
 .endif
 
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
 NGINX_ENCRYPTSESSION_VERSION=	0.03
-GIT_ENCRYPTSESSION_VERSION=	0-g49d741b
-MASTER_SITES+=	https://github.com/openresty/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_VERSION}/:encryptsession
-DISTFILES+=	openresty-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_VERSION}-${GIT_ENCRYPTSESSION_VERSION}.tar.gz:encryptsession
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:encryptsession
+GH_PROJECT+=	encrypted-session-nginx-module:encryptsession
+GH_TAGNAME+=	v${NGINX_ENCRYPTSESSION_VERSION}:encryptsession
+CONFIGURE_ARGS+=--add-module=${WRKSRC_encryptsession}
 .endif
 
 .if ${PORT_OPTIONS:MGRIDFS}
 NGINX_GRIDFS_VERSION=	0.8
-GIT_GRIDFS_VERSION=	0-gb5f8113
 MONGO_C_DRIVER_VERSION=		0.3.1
-GIT_MONGO_C_DRIVER_VERSION=	0-g9b4b232
-MASTER_SITES+=	https://github.com/mdirolf/nginx-gridfs/tarball/v${NGINX_GRIDFS_VERSION}/:gridfs
-MASTER_SITES+=	https://github.com/mongodb/mongo-c-driver/tarball/v${MONGO_C_DRIVER_VERSION}/:mongo_c
-DISTFILES+=	mdirolf-nginx-gridfs-v${NGINX_GRIDFS_VERSION}-${GIT_GRIDFS_VERSION}.tar.gz:gridfs
-DISTFILES+=	mongodb-mongo-c-driver-v${MONGO_C_DRIVER_VERSION}-${GIT_MONGO_C_DRIVER_VERSION}.tar.gz:mongo_c
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}
+GH_ACCOUNT+=	mdirolf:gridfs mongodb:mongo_c
+GH_PROJECT+=	nginx-gridfs:gridfs mongo-c-driver:mongo_c
+GH_TAGNAME+=	v${NGINX_GRIDFS_VERSION}:gridfs v${MONGO_C_DRIVER_VERSION}:mongo_c
+CONFIGURE_ARGS+=--add-module=${WRKSRC_gridfs}
 .endif
 
 .if ${PORT_OPTIONS:MLET}
 NGINX_LET_VERSION=	0.0.4
-GIT_LET_VERSION=	0-ga5e1dc5
-MASTER_SITES+=	https://github.com/arut/nginx-let-module/tarball/v${NGINX_LET_VERSION}/:let
-DISTFILES+=	arut-nginx-let-module-v${NGINX_LET_VERSION}-${GIT_LET_VERSION}.tar.gz:let
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S/^0-g//}
+GH_ACCOUNT+=	arut:let
+GH_PROJECT+=	nginx-let-module:let
+GH_TAGNAME+=	v${NGINX_LET_VERSION}:let
+CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
 NGINX_MEMC_VERSION=	0.14
-GIT_MEMC_VERSION=	0-gde4cf86
-MASTER_SITES+=	https://github.com/openresty/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
-DISTFILES+=	openresty-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:memc
+GH_PROJECT+=	memc-nginx-module:memc
+GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
+CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -556,41 +556,42 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
 
 .if ${PORT_OPTIONS:MRDS_CSV}
 NGINX_RDS_CSV_VERSION=	0.05
-GIT_RDS_CSV_VERSION=	0-g607e26b
-MASTER_SITES+=	https://github.com/openresty/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_VERSION}/:rdscsv
-DISTFILES+=	openresty-rds-csv-nginx-module-v${NGINX_RDS_CSV_VERSION}-${GIT_RDS_CSV_VERSION}.tar.gz:rdscsv
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-csv-nginx-module-${GIT_RDS_CSV_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:rdscsv
+GH_PROJECT+=	rds-csv-nginx-module:rdscsv
+GH_TAGNAME+=	v${NGINX_RDS_CSV_VERSION}:rdscsv
+CONFIGURE_ARGS+=--add-module=${WRKSRC_rdscsv}
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
 NGINX_RDS_JSON_VERSION=	0.13
-GIT_RDS_JSON_VERSION=	0-g8292070
-MASTER_SITES+=	https://github.com/openresty/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
-DISTFILES+=	openresty-rds-json-nginx-module-v${NGINX_RDS_JSON_VERSION}-${GIT_RDS_JSON_VERSION}.tar.gz:rdsjson
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-json-nginx-module-${GIT_RDS_JSON_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:rdsjson
+GH_PROJECT+=	rds-json-nginx-module:rdsjson
+GH_TAGNAME+=	v${NGINX_RDS_JSON_VERSION}:rdsjson
+CONFIGURE_ARGS+=--add-module=${WRKSRC_rdsjson}
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
 NGINX_REDIS2_VERSION=	0.10
-GIT_REDIS2_VERSION=	0-g78a7622
-MASTER_SITES+=	https://github.com/openresty/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
-DISTFILES+=	openresty-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS2_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:redis2
+GH_PROJECT+=	redis2-nginx-module:redis2
+GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
+CONFIGURE_ARGS+=--add-module=${WRKSRC_redis2}
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
 NGINX_RTMP_VERSION=	1.0.8
-MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
-DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
+GH_ACCOUNT+=	arut:rtmp
+GH_PROJECT+=	nginx-rtmp-module:rtmp
+GH_TAGNAME+=	v${NGINX_RTMP_VERSION}:rtmp
+CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
 NGINX_SET_MISC_VERSION=	0.23
-GIT_SET_MISC_VERSION=	0-g6ce586e
-MASTER_SITES+=	https://github.com/openresty/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
-DISTFILES+=	openresty-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:setmisc
+GH_PROJECT+=	set-misc-nginx-module:setmisc
+GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
+CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .endif
 
@@ -612,10 +613,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 
 .if ${PORT_OPTIONS:MSRCACHE}
 NGINX_SRCACHE_VERSION=	0.24
-GIT_SRCACHE_VERSION=	0-g33f0f29
-MASTER_SITES+=	https://github.com/openresty/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
-DISTFILES+=	openresty-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:srcache
+GH_PROJECT+=	srcache-nginx-module:srcache
+GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
+CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
 .endif
 
 .if ${PORT_OPTIONS:MSUPERVISORD}
@@ -627,25 +628,26 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
 NGINX_TCP_PROXY_VERSION=	0.26
-GIT_TCP_PROXY_VERSION=	0-gb83e5a6
-MASTER_SITES+=	https://github.com/yaoweibin/nginx_tcp_proxy_module/tarball/v${NGINX_TCP_PROXY_VERSION}/:tcp_proxy
-DISTFILES+=	yaoweibin-nginx_tcp_proxy_module-v${NGINX_TCP_PROXY_VERSION}-${GIT_TCP_PROXY_VERSION}.tar.gz:tcp_proxy
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}
+GH_ACCOUNT+=	yaoweibin:tcp_proxy
+GH_PROJECT+=	nginx_tcp_proxy_module:tcp_proxy
+GH_TAGNAME+=	v${NGINX_TCP_PROXY_VERSION}:tcp_proxy
+CONFIGURE_ARGS+=--add-module=${WRKSRC_tcp_proxy}
 .endif
 
 .if ${PORT_OPTIONS:MXRID_HEADER}
 GIT_XRID_VERSION=	0daa3cc
-MASTER_SITES+=	https://github.com/gabor/nginx-x-rid-header/tarball/master/:xrid
-DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_VERSION}.tar.gz:xrid
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_VERSION}
+GH_ACCOUNT+=	gabor:xrid
+GH_PROJECT+=	nginx-x-rid-header:xrid
+GH_TAGNAME+=	master:xrid
+CONFIGURE_ARGS+=--add-module=${WRKSRC_xrid}
 .endif
 
 .if ${PORT_OPTIONS:MXSS}
 NGINX_XSS_VERSION=	0.04
-GIT_XSS_VERSION=	0-g7e37038
-MASTER_SITES+=	https://github.com/openresty/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
-DISTFILES+=	openresty-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.tar.gz:xss
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:xss
+GH_PROJECT+=	xss-nginx-module:xss
+GH_TAGNAME+=	v${NGINX_XSS_VERSION}:xss
+CONFIGURE_ARGS+=--add-module=${WRKSRC_xss}
 .endif
 
 .if ${PORT_OPTIONS:MSPDY}
@@ -692,27 +694,27 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 
 .if ${PORT_OPTIONS:MARRAYVAR}
 NGINX_ARRAYVAR_VERSION=	0.03
-GIT_ARRAYVAR_VERSION=	0-g4676747
-MASTER_SITES+=	https://github.com/openresty/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_VERSION}/:arrayvar
-DISTFILES+=	openresty-array-var-nginx-module-v${NGINX_ARRAYVAR_VERSION}-${GIT_ARRAYVAR_VERSION}.tar.gz:arrayvar
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-array-var-nginx-module-${GIT_ARRAYVAR_VERSION:S/^0-g//}
+GH_ACCOUNT+=	openresty:arrayvar
+GH_PROJECT+=	array-var-nginx-module:arrayvar
+GH_TAGNAME+=	v${NGINX_ARRAYVAR_VERSION}:arrayvar
+CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
 NGINX_FORMINPUT_VERSION=	0.07
-GIT_FORMINPUT_VERSION=		0-g78de845
-MASTER_SITES+=	https://github.com/calio/form-input-nginx-module/tarball/v${NGINX_FORMINPUT_VERSION}/:forminput
-DISTFILES+=	calio-form-input-nginx-module-v${NGINX_FORMINPUT_VERSION}-${GIT_FORMINPUT_VERSION}.tar.gz:forminput
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMINPUT_VERSION:S/^0-g//}
+GH_ACCOUNT+=	calio:forminput
+GH_PROJECT+=	form-input-nginx-module:forminput
+GH_TAGNAME+=	v${NGINX_FORMINPUT_VERSION}:forminput
+CONFIGURE_ARGS+=--add-module=${WRKSRC_forminput}
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
 NGINX_ICONV_VERSION=	0.10
-GIT_ICONV_VERSION=	0-gb37efb5
-MASTER_SITES+=	https://github.com/calio/iconv-nginx-module/tarball/v${NGINX_ICONV_VERSION}/:iconv
-DISTFILES+=	calio-iconv-nginx-module-v${NGINX_ICONV_VERSION}-${GIT_ICONV_VERSION}.tar.gz:iconv
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}
+GH_ACCOUNT+=	calio:iconv
+GH_PROJECT+=	iconv-nginx-module:iconv
+GH_TAGNAME+=	v${NGINX_ICONV_VERSION}:iconv
+CONFIGURE_ARGS+=--add-module=${WRKSRC_iconv}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 .endif
 
@@ -755,10 +757,8 @@ pre-everything::
 
 post-extract:
 .if ${PORT_OPTIONS:MGRIDFS}
-	@${RMDIR} ${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/mongo-c-driver/
-	@${MV} \
-	${WRKDIR}/mongodb-mongo-c-driver-${GIT_MONGO_C_DRIVER_VERSION:S/^0-g//}/ \
-	${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/mongo-c-driver/
+	@${RMDIR} ${WRKSRC_gridfs}/mongo-c-driver/
+	@${MV} ${WRKSRC_mongo_c} ${WRKSRC_gridfs}/mongo-c-driver/
 .endif
 
 post-patch:
@@ -779,13 +779,13 @@ post-patch:
 .if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
+		${WRKSRC_drizzle}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}
 	@${REINPLACE_CMD} \
 		's!--std=c99!-DMONGO_HAVE_STDINT!' \
-		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
+		${WRKSRC_gridfs}/config
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \
@@ -800,7 +800,7 @@ post-patch:
 .if ${PORT_OPTIONS:MSPDY}
 .if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} '584d' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+		${WRKSRC_drizzle}/src/ngx_http_drizzle_util.c
 .endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
@@ -814,12 +814,12 @@ post-patch:
 .if ${PORT_OPTIONS:MTCP_PROXY}
 	( cd ${WRKSRC} && \
 		${PATCH} -p1 < \
-			${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}/tcp.patch )
+			${WRKSRC_tcp_proxy}/tcp.patch )
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}/config
+		${WRKSRC_iconv}/config
 .endif
 .if ${PORT_OPTIONS:MMODSECURITY}
 	@${REINPLACE_CMD} \
