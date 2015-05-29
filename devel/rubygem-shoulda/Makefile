@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Making tests easy on the fingers and eyes
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-shoulda-context>=1.0.1:${PORTSDIR}/devel/rubygem-shoulda-context \
 		rubygem-shoulda-matchers>=1.4.1:${PORTSDIR}/devel/rubygem-shoulda-matchers
 
