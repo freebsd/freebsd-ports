@@ -1,0 +1,9 @@
+--- Makefile.orig	2003-02-06 23:20:14 UTC
++++ Makefile
+@@ -13,5 +13,4 @@ CC = gcc
+ all: pfbtopfa
+ 
+ pfbtopfa: pfbtopfa.c
+-	CC ${CFLAGS} pfbtopfa.c -o pfbtopfa
+-	strip pfbtopfa
++	${CC} ${CFLAGS} pfbtopfa.c -o pfbtopfa
