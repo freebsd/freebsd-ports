@@ -9,11 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generalized version number library for Ruby
 
-BUILD_DEPENDS=	rubygem-blockenspiel>=0.4.5:${PORTSDIR}/devel/rubygem-blockenspiel
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	BSD3CLAUSE
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+RUN_DEPENDS=	rubygem-blockenspiel>=0.4.5:${PORTSDIR}/devel/rubygem-blockenspiel
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
