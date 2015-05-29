@@ -12,6 +12,8 @@ COMMENT=	Exposes the fundamental aspects of Salt control to external sources
 LICENSE=	APACHE20
 
 BROKEN=		Conflicts with py27-salt-2014.7.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-06-29
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
