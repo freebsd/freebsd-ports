@@ -3,7 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.99.1
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO/distfiles
@@ -62,7 +62,7 @@ PORTDATA+=	the_question tutorial
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
-		${WRKSRC}/launcher/game/project.rpy
+		${WRKSRC}/launcher/game/choose_directory.rpy
 # Avoid having to add -I/usr/include -L/usr/lib
 	@${REINPLACE_CMD} '/library("z")/d' ${BUILD_WRKSRC}/${PYSETUP}
 
