@@ -12,6 +12,8 @@ COMMENT=	fast secure hashing
 
 USES=		zip
 
+ONLY_FOR_ARCH=	amd64
+
 CFLAGS+=	-I../sse
 WRKSRC_SUBDIR=	b2sum
 MAKEFILE=	makefile
