@@ -1,4 +1,4 @@
 rbtrace shows you method calls happening inside another ruby process in real
 time.
 
-WWW: http://github.com/tmm1/rbtrace
+WWW: https://github.com/tmm1/rbtrace
