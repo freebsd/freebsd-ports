@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150529:
+AUTHOR: mat@FreeBSD.org
+
+  Extend the multiple distfiles USE_GITHUB framework by allowing it to fetch
+  only additional distfiles, but not the main one.  Set USE_GITHUB=nodefault
+  and use the GH_* variables with groups as usual.
+
 20150528:
 AUTHOR: mat@FreeBSD.org
   
