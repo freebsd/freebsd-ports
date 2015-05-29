@@ -620,6 +620,9 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-unix-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-windows-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/animate.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/css/bootstrap.min.css
+%%PORTDOCS%%%%DOCSDIR%%-6/www/css/magick.css
+%%PORTDOCS%%%%DOCSDIR%%-6/www/js/bootstrap.min.js
 %%PORTDOCS%%%%DOCSDIR%%-6/www/openmp.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/webp.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/distribute-pixel-cache.html
@@ -1467,7 +1470,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/type-windows.xml
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/type.xml
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/wand.c
-%%PORTDOCS%%%%DOCSDIR%%-6/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/t-shirt.html
