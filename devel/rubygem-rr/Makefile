@@ -6,7 +6,9 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	RR is a double framework with lots of double techniques and terse syntax
+COMMENT=	Double framework with lots of double techniques and terse syntax
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
