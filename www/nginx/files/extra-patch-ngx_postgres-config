@@ -1,5 +1,5 @@
---- ../FRiCKLE-ngx_postgres-49855a0/config.orig	2015-05-26 20:52:25.649166000 +0300
-+++ ../FRiCKLE-ngx_postgres-49855a0/config	2015-05-26 20:53:10.331122000 +0300
+--- ../ngx_postgres-1.0rc5-1-g49855a0/config.orig	2015-05-26 20:52:25.649166000 +0300
++++ ../ngx_postgres-1.0rc5-1-g49855a0/config	2015-05-26 20:53:10.331122000 +0300
 @@ -48,12 +48,12 @@
  
      if [ $ngx_found = no ]; then
