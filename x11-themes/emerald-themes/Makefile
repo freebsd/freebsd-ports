@@ -10,15 +10,11 @@ COMMENT=	Themes for the Emerald Window Decorator
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:bzip2
-USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+USES=		autoreconf gmake shebangfix tar:bzip2
 SHEBANG_FILES=	themes/import.sh
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-pre-configure:
-	@cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>
