@@ -5,9 +5,11 @@ PKGNAMESUFFIX=	-rdp
 
 COMMENT=	Remmina plugin for RDP protocol
 
-LIB_DEPENDS=	libfreerdp-core.so:${PORTSDIR}/net/freerdp
+LIB_DEPENDS=	libfreerdp.so:${PORTSDIR}/net/freerdp
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
+
+BROKEN=		version 1.0.0 is incompatible with freerdp 1.2.x
 
 PLIST_SUB+=	ICONS="" SSH=""
 
