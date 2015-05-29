@@ -10,12 +10,13 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Game-development extension and library for the ruby language
 
+LICENSE=	LGPL21
+
 RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.1.0:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
 
-USE_SDL=		gfx image mixer ttf
-USE_RUBY=		yes
-USE_RAKE=		yes
+USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USE_SDL=	gfx image mixer ttf
 
 .include <bsd.port.mk>
