@@ -603,7 +603,6 @@ GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # and extraction directory.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/}
 .  endif 
-_GITHUB_REV=	0
 .  if defined(_GITHUB_MUST_SET_DISTNAME)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
 .    if ${GH_TAGNAME} != ${DISTVERSIONFULL}
@@ -611,12 +610,13 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
 .    else
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
 .    endif
+.  endif
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
 # which has happened before.
+_GITHUB_REV=	0
 .  if ${MASTER_SITES:MGH}
 DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
-.  endif
 .  endif
 .endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
