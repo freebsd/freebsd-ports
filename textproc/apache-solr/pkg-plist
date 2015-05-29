@@ -27,3 +27,7 @@
 %%JAVAJARDIR%%/test-framework/lib/junit4-ant-2.1.6.jar
 %%JAVAJARDIR%%/test-framework/lib/randomizedtesting-runner-2.1.6.jar
 %%JAVAJARDIR%%/test-framework/lucene-libs/lucene-test-framework-%%PORTVERSION%%.jar
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/example-DIH/solr/mail/lib
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/logs
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/solr/bin
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/solr-webapp
