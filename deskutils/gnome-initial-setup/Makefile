@@ -33,8 +33,9 @@ OPTIONS_DEFAULT=KERBEROS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 900000
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-initial-setup_pages_account_um-utils.c
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900007
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gnome-initial-setup_pages_account_um-utils.c \
+		${FILESDIR}/extra-patch-gnome-initial-setup_pages_password_um-utils.c
 .endif
 
 .if !${PORT_OPTIONS:MKERBEROS}
