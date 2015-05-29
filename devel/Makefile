@@ -4040,6 +4040,7 @@
     SUBDIR += py-pytest
     SUBDIR += py-pytest-runner
     SUBDIR += py-pytest-timeout
+    SUBDIR += py-python-jenkins
     SUBDIR += py-python-statsd
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytrie
