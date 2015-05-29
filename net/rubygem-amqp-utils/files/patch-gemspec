@@ -1,8 +1,11 @@
 --- amqp-utils.gemspec.orig	2015-05-10 16:41:06 UTC
 +++ amqp-utils.gemspec
-@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+@@ -24,9 +24,9 @@ Gem::Specification.new do |s|
+     s.specification_version = 3
+ 
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<amqp>, ["~> 0.7.1"])
+-      s.add_runtime_dependency(%q<amqp>, ["~> 0.7.1"])
++      s.add_runtime_dependency(%q<amqp>, [">= 0.7.1"])
        s.add_runtime_dependency(%q<trollop>, ["~> 1.16.2"])
 -      s.add_runtime_dependency(%q<facets>, ["~> 2.9"])
 +      s.add_runtime_dependency(%q<facets>, [">= 2.9"])
