@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby one-shot and periodic timers
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-hitimes>=1.2.1:${PORTSDIR}/devel/rubygem-hitimes
 
 USE_RUBY=	yes
