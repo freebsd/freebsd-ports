@@ -1294,6 +1294,7 @@
     SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
+    SUBDIR += lua-MessagePack
     SUBDIR += lua-alien
     SUBDIR += lua-bitlib
     SUBDIR += lua-bitop
