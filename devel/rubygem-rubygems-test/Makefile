@@ -1,19 +1,21 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	test
+PORTNAME=	rubygems-test
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-DISTNAME=	${GEM_NAME}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Run automated tests
 
-USE_RUBY=		yes
-USE_RAKE=		yes
-USE_RUBYGEMS=		yes
-GEM_NAME=		rubygems-test-${PORTVERSION}
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
