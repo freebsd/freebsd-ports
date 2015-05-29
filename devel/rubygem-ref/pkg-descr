@@ -3,4 +3,4 @@ work across multiple runtimes (MRI, REE, YARV, Jruby, Rubinius, and
 IronRuby). Also includes implementation of maps/hashes that use references 
 and a reference queue.
 
-WWW: http://github.com/bdurand/ref
+WWW: https://github.com/ruby-concurrency/ref
