@@ -12,9 +12,7 @@ COMMENT=	Sendmail LibMilter filter to block spam
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEED_ROOT=	yes
-
-USES=		tar:tgz shebangfix
+USES=		tar:tgz shebangfix fakeroot
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
