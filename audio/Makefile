@@ -592,7 +592,6 @@
     SUBDIR += pms
     SUBDIR += pocketsphinx
     SUBDIR += portaudio
-    SUBDIR += portaudio2
     SUBDIR += praat
     SUBDIR += puddletag
     SUBDIR += pulseaudio

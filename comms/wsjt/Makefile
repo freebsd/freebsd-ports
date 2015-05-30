@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjt
 VERSION=	9.1
-PORTREVISION=	10
+PORTREVISION=	11
 DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	LOCAL/db
@@ -15,17 +15,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libportaudio.so:${PORTSDIR}/audio/portaudio
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
-		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
 USE_GCC=	yes
 USES=		fortran gmake python tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${STAGEDIR}${LOCALBASE} \
-		--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
-		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
+		--with-portaudio-include-dir=${LOCALBASE}/include/ \
+		--with-portaudio-lib-dir=${LOCALBASE}/lib/
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 # Adding this breaks configure

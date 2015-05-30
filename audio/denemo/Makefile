@@ -3,6 +3,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
 		libjack.so:${PORTSDIR}/audio/jack \
 		libsmf.so:${PORTSDIR}/audio/libsmf \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		librubberband.so:${PORTSDIR}/audio/rubberband \
 		libguile-2.0.so:${PORTSDIR}/lang/guile2 \
 		libfftw3.so:${PORTSDIR}/math/fftw3
@@ -32,10 +33,8 @@ CONFIGURE_ARGS=	--enable-jack \
 		--disable-gtk-doc-html \
 		--disable-gtk-doc-pdf
 
-CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
-		-I${LOCALBASE}/include
-LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so \
-		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
