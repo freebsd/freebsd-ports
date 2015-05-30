@@ -1,6 +1,6 @@
---- build/config/FreeBSD.orig	2014-04-29 20:44:44.000000000 -0700
-+++ build/config/FreeBSD	2014-04-29 20:50:10.000000000 -0700
-@@ -15,57 +15,57 @@
+--- build/config/FreeBSD.orig	2014-12-21 23:06:53 UTC
++++ build/config/FreeBSD
+@@ -15,57 +15,57 @@ LINKMODE ?= SHARED
  #
  # Define Tools
  #
@@ -94,5 +94,5 @@
  #
  # System Specific Libraries
  #
--SYSLIBS  ?= -lpthread -L /usr/local/lib
+-SYSLIBS  = -lpthread 
 +SYSLIBS  ?= -lpthread -L/usr/local/lib

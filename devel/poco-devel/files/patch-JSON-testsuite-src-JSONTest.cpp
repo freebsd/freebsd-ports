@@ -1,6 +1,6 @@
---- JSON/testsuite/src/JSONTest.cpp.orig	2014-07-08 09:22:19.000000000 -0700
-+++ JSON/testsuite/src/JSONTest.cpp	2014-07-08 09:23:15.000000000 -0700
-@@ -269,23 +269,23 @@
+--- JSON/testsuite/src/JSONTest.cpp.orig	2014-12-21 23:06:53 UTC
++++ JSON/testsuite/src/JSONTest.cpp
+@@ -232,23 +232,23 @@ void JSONTest::testNumber64Property()
  	Var test = object.get("test");
  	assert(test.isInteger());
  	Poco::Int64 value = test;

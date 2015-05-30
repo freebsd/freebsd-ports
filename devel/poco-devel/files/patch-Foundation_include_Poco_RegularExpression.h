@@ -1,5 +1,5 @@
---- Foundation/include/Poco/RegularExpression.h.orig	2014-10-17 13:48:55.000000000 -0700
-+++ Foundation/include/Poco/RegularExpression.h	2014-10-17 13:49:30.000000000 -0700
+--- Foundation/include/Poco/RegularExpression.h.orig	2014-12-21 23:06:53 UTC
++++ Foundation/include/Poco/RegularExpression.h
 @@ -34,7 +34,7 @@
  extern "C"
  {
