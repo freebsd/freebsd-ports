@@ -7,11 +7,13 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Mustache is a framework-agnostic way to render logic-free views
+COMMENT=	Framework-agnostic way to render logic-free views
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/mustache
 
