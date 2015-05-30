@@ -60,8 +60,6 @@ lib/jack/jack_net.la
 lib/jack/jack_net.so
 lib/jack/jack_oss.la
 lib/jack/jack_oss.so
-lib/jack/jack_portaudio.la
-lib/jack/jack_portaudio.so
 lib/libjack.la
 lib/libjack.so
 lib/libjack.so.0
