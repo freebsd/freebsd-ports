@@ -1102,6 +1102,7 @@
     SUBDIR += rubygem-right_slicehost
     SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-ruby-openid
+    SUBDIR += rubygem-ruby-yadis
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
@@ -1116,7 +1117,6 @@
     SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
-    SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
