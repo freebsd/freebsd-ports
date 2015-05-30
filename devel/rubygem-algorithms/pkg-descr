@@ -1,0 +1,14 @@
+algorithms started as a Google Summer of Code 2008 project.
+
+The original proposal is as follows:
+Using the right data structure or algorithm for the situation is an important
+aspect of programming. In computer science literature, many data structures and
+algorithms have been researched and extensively documented. However, there is
+still no standard library in Ruby implementing useful structures and algorithms
+like Red/Black Trees, tries, different sorting algorithms, etc. This project
+will create such a library with documentation on when to use a particular
+structure/algorithm. It will also come with a benchmark suite to compare
+performance in different situations.
+
+WWW: https://github.com/kanwei/algorithms
+RG:  https://rubygems.org/gems/algorithms
