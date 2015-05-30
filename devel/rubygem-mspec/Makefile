@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Specialized Ruby testing framework
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+LICENSE=	MIT
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/mspec bin/mkspec bin/mspec-ci bin/mspec-run bin/mspec-tag
+PLIST_FILES=	bin/mkspec bin/mspec bin/mspec-ci bin/mspec-run bin/mspec-tag
 
 .include <bsd.port.mk>
