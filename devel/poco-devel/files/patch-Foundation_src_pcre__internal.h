@@ -1,6 +1,6 @@
---- Foundation/src/pcre_internal.h.orig	2014-10-16 05:16:40.000000000 -0700
-+++ Foundation/src/pcre_internal.h	2014-10-17 13:20:20.000000000 -0700
-@@ -2636,6 +2636,16 @@
+--- Foundation/src/pcre_internal.h.orig	2014-12-21 23:06:53 UTC
++++ Foundation/src/pcre_internal.h
+@@ -2636,6 +2636,16 @@ typedef struct {
  } ucp_type_table;
  
  
@@ -17,7 +17,7 @@
  /* Internal shared data tables. These are tables that are used by more than one
  of the exported public functions. They have to be "external" in the C sense,
  but are not part of the PCRE public API. The data for these tables is in the
-@@ -2749,6 +2759,11 @@
+@@ -2749,6 +2759,11 @@ typedef struct {
    pcre_int32 other_case; /* offset to other case, or zero if none */
  } ucd_record;
  
