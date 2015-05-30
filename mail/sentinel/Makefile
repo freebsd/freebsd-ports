@@ -12,8 +12,6 @@ COMMENT=	Sendmail milter API implementation
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-NEED_ROOT=	yes
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -35,7 +33,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${STAGEDIR}${PREFIX}/sbin/
 	@${MKDIR} ${STAGEDIR}/var/spool/sentinel
-	${CHOWN} smmsp:smmsp ${STAGEDIR}/var/spool/sentinel
 	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${STAGEDIR}${PREFIX}/etc/rc.d/sentinel.sh-dist
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${STAGEDIR}${PREFIX}/etc/sentinel.cf.dist
 .if ${PORT_OPTIONS:MDOCS}
