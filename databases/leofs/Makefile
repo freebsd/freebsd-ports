@@ -124,7 +124,7 @@ post-extract:
 .for tagname in ${dep:C,^[^=]+=([^\?]+)\?.*$,\1,}
 .for label in ${dep:C,^.*:,,}
 	@${MKDIR} ${WRKSRC}/deps
-	@${LN} -s ${WRKSRC_${label}} ${WRKSRC}/deps/${label}
+	@${MV} ${WRKSRC_${label}} ${WRKSRC}/deps/${label}
 	@if [ -f "${WRKSRC}/deps/${label}/src/${label}.app.src" ]; then \
 	    ${REINPLACE_CMD} -e "s|{vsn, *git}|{vsn, \"${tagname}\"}|" \
 		"${WRKSRC}/deps/${label}/src/${label}.app.src"; \
