@@ -3,7 +3,7 @@
 
 PORTNAME=	Test-Unit
 PORTVERSION=	0.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,9 @@ BUILD_DEPENDS=	p5-Class-Inner>=0:${PORTSDIR}/devel/p5-Class-Inner \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	TestLister.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
