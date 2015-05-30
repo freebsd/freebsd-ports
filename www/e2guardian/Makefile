@@ -3,9 +3,9 @@
 
 PORTNAME=	e2guardian
 PORTVERSION=	3.0.4
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	GH
 
 MAINTAINER=	marcellocoutinho@gmail.com
 COMMENT=	Dansguardian fork with many improvements and bug fixes
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTVERSION:S/^/v/}
 USES=		iconv pkgconfig
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes

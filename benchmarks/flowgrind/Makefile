@@ -3,6 +3,7 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap \
 		libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes

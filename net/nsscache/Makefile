@@ -3,6 +3,7 @@
 
 PORTNAME=	nsscache
 PORTVERSION=	0.30
+DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
 MAINTAINER=	k@kev009.com
@@ -18,7 +19,6 @@ USES=		python:2
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	version/${DISTVERSION}
 
 PLIST_FILES=	'@sample etc/nsscache.conf.sample' '@dir /var/db/nsscache' \
 		man/man1/nsscache.1.gz man/man5/nsscache.conf.5.gz

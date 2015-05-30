@@ -3,6 +3,7 @@
 
 PORTNAME=	libmongo-client
 PORTVERSION=	0.1.6.3
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -13,7 +14,6 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	algernon
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig gmake pathfix

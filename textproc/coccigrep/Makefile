@@ -3,6 +3,7 @@
 
 PORTNAME=	coccigrep
 PORTVERSION=	1.13
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -14,7 +15,6 @@ RUN_DEPENDS=	spatch:${PORTSDIR}/devel/coccinelle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	regit
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

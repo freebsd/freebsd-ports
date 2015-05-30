@@ -3,6 +3,7 @@
 
 PORTNAME=	iojs
 PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	linpct@gmail.com
@@ -10,9 +11,7 @@ COMMENT=	V8 JavaScript for client and server
 
 USES=		execinfo gmake python:2
 USE_GITHUB=	yes
-GH_ACCOUNT=	iojs
 GH_PROJECT=	io.js
-GH_TAGNAME=	v${PORTVERSION}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
