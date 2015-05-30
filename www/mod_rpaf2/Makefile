@@ -5,11 +5,14 @@ PORTNAME=	mod_rpaf
 PORTVERSION=	0.6
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/ohauer
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnif
+GH_TAGNAME=	bc7a495
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
