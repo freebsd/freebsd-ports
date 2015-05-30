@@ -1,12 +1,12 @@
---- Makefile.orig	Fri Dec 12 17:04:17 2003
-+++ Makefile	Fri Dec 12 17:07:04 2003
+--- Makefile.orig	2001-03-16 13:24:00 UTC
++++ Makefile
 @@ -2,16 +2,16 @@
  # vol@inter7.com
  #
  
 -VDIR = /home/vpopmail
-+VDIR?= /home/vpopmail
 -CC = gcc
++VDIR?= /home/vpopmail
 +CC ?= gcc
  BIN = vqregister
 -DEFS = -I$(VDIR)/include -I/usr/local/mysql/include
@@ -22,3 +22,12 @@
  INSTALL_BIN = vqregister.cgi
  INSTALL_UID = vpopmail
  INSTALL_GID = vchkpw
+@@ -54,8 +54,6 @@ install: $(BIN)
+ 	cp html/* $(INSTALL_DIR)/html
+ 	cp vqregister.email $(INSTALL_DIR)
+ 	cp vqregister.conf $(INSTALL_DIR)
+-	chown -R $(INSTALL_UID) $(INSTALL_DIR)
+-	chgrp -R $(INSTALL_GID) $(INSTALL_DIR)
+ 	chmod u+s $(INSTALL_DIR)/$(INSTALL_BIN)
+ 
+ clean:

@@ -13,13 +13,12 @@ COMMENT=	Admin-configurable email user signup CGI
 BUILD_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
 
+USES=		fakeroot
 USE_APACHE_RUN=	22+
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
 USE_MYSQL=	yes
 MAKE_ENV=	VDIR=${VPOPMAIL_DIR} WWWDIR=${STAGEDIR}${WWWDIR}
-
-NEED_ROOT=	yes
 
 DOCS=		CONFIG CONTRIBUTORS FORM HISTORY TEMPLATE
 
