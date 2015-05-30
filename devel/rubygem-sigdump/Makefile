@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sigdump
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
