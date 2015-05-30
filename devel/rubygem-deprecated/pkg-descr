@@ -3,4 +3,4 @@ with deprecated code. The idea comes from the 'D' programming language,
 where developers can mark certain code as deprecated, and then
 allow/disallow the ability to execute deprecated code.
 
-WWW: http://rubygems.org/gems/deprecated/
+WWW: https://github.com/erikh/deprecated
