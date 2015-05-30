@@ -18,17 +18,13 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
-USES=		qmail:vars
+USES=		qmail:vars fakeroot
 PREFIX?=	${QMAIL_PREFIX}
 PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:1.04
-
-# Need root for build for now due to all of the users/dirs/chmod. Can cleanup
-# once pkg_install is EOL.
-NEED_ROOT=	yes
 
 USERS=		alias
 .for usersuffix in d l p q r s
@@ -838,7 +834,7 @@ do-install:
 	fi
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/configure
-	@cd ${WRKSRC} ; ./install
+	@cd ${WRKSRC} ; ${FAKEROOT} ./install
 .for f in ${CONFIGUREPROGRAMS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/configure
 .endfor
