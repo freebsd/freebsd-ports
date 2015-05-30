@@ -3,6 +3,7 @@
 
 PORTNAME=	lnav
 PORTVERSION=	0.7.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
@@ -14,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
-GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf execinfo ncurses python readline

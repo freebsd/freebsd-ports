@@ -3,9 +3,9 @@
 
 PORTNAME=	wxlauncher
 PORTVERSION=	0.9.6
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	2
 CATEGORIES=	games
-DISTNAME=	${PORTNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Multi-platform launcher for the Freespace 2 Source Code Project
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-markdow
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxLauncher
-GH_TAGNAME=	release-${PORTVERSION}
 
 USES=		cmake:outsource openal python:2,build
 USE_SDL=	sdl
