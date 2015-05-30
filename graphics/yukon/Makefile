@@ -3,6 +3,7 @@
 
 PORTNAME=	yukon
 PORTVERSION=	2010011201
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/bms
 
@@ -10,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time capture tool for OpenGL applications
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libseom.so:${PORTSDIR}/graphics/seom
 
@@ -49,6 +51,8 @@ post-patch:
 	    ${WRKSRC}/src/core/conf.c ${WRKSRC}/src/scripts/yukon
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yukon/lib*.so.[0-9]* \
+		${STAGEDIR}${PREFIX}/lib/yukon/yukon-core-lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/yukon/system
 	@${PRINTF} 'LDPATH="%s"\n' ${PREFIX}/lib/yukon \
 		>> ${WRKSRC}/yukon-system-conf
