@@ -38,6 +38,7 @@
     SUBDIR += geda-symcheck
     SUBDIR += geda-utils
     SUBDIR += gerbv
+    SUBDIR += ghdl
     SUBDIR += gmsh
     SUBDIR += gmsh-occ
     SUBDIR += gnucap
