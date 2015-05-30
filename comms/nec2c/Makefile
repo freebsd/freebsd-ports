@@ -3,7 +3,7 @@
 
 PORTNAME=	nec2c
 PORTVERSION=	.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://nec-archives.pa3kj.com/ \
 		LOCAL/db
