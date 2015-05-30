@@ -9,6 +9,10 @@ MASTER_SITES=	http://launchpad.net/gweled/trunk/${PORTVERSION}/+download/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME version of the game called "Bejeweled" or "Diamond Mine"
 
+BROKEN=		Does not work
+DEPRECATED=	Broken since update to gnome3
+EXPIRATION_DATE=2015-06-09
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
