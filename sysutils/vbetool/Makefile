@@ -3,7 +3,7 @@
 
 PORTNAME=	vbetool
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
 		LOCAL/jkim
