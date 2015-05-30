@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mocking Hash library for Ruby
 
+DEPRECATED=	Deprecated by upstream. Use devel/rubygem-hashie instead
+EXPIRATION_DATE=2015-06-30
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
