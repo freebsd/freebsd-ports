@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Holder for data returned from PostGIS and the Spatial Extensions of MySql	
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
