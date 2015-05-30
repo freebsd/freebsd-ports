@@ -12,6 +12,8 @@ COMMENT=	Build tool for Erlang
 
 LICENSE=	APACHE20
 
+BROKEN=		Checksum and size mismatch
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
 RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang

@@ -12,6 +12,8 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
