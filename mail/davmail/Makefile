@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	davmail
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.1
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -14,11 +14,12 @@ LICENSE=	GPLv2
 
 USES=		dos2unix tar:tgz
 DOS2UNIX_FILES=	build.xml
+NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 ALL_TARGET=	release
-REVISION=	2303
+REVISION=	2343
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
@@ -46,9 +47,9 @@ do-install:
 		-not -name "*.rpm" \
 		-not -name "*.desktop" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}${DATADIR}/\{} \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${STAGEDIR}${PREFIX}/bin/davmail
-	@${INSTALL_DATA} ${WRKSRC}/src/etc/davmail.properties \
+	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${STAGEDIR}${PREFIX}/bin/davmail
+	${INSTALL_DATA} ${WRKSRC}/src/etc/davmail.properties \
 		${STAGEDIR}${PREFIX}/etc/davmail.properties.sample
-	@${INSTALL_DATA} ${WRKSRC}/dist/davmail.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/dist/davmail.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
