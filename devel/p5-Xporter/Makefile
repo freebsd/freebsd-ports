@@ -3,7 +3,7 @@
 
 PORTNAME=	Xporter
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LAWALSH
@@ -19,9 +19,8 @@ BUILD_DEPENDS=	p5-mem>=0.4.5:${PORTSDIR}/devel/p5-mem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-SHEBANG_FILES=	lib/Xporter.pm
 USE_PERL5=	configure
-USES=		perl5 shebangfix
+USES=		perl5
 
 .include <bsd.port.pre.mk>
 
