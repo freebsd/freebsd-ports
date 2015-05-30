@@ -3,6 +3,7 @@
 
 PORTNAME=	pyaudio
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://people.csail.mit.edu/hubert/pyaudio/packages/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Portaudio toolkit bindings for Python
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -3,7 +3,7 @@
 
 PORTNAME=	fluidsynth
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -22,9 +22,6 @@ CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
-
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_OFF=		-Denable-jack:BOOL=FALSE
 
@@ -41,8 +38,7 @@ LADSPA_CMAKE_ON=	-Denable-ladspa:BOOL=TRUE
 LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
 LASH_CMAKE_OFF=		-Denable-lash:BOOL=FALSE
 
-PORTAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_RUN_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 PORTAUDIO_CMAKE_ON=	-Denable-portaudio:BOOL=TRUE
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio

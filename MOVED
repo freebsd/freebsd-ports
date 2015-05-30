@@ -7605,3 +7605,4 @@ net/rubygem-rightslicehost|net/rubygem-right_slicehost|2015-05-27|Rename to matc
 audio/rubygem-shout|audio/rubygem-ruby-shout|2015-05-27|Rename to match our rubygems naming
 devel/rubygem-test|devel/rubygem-rubygems-test|2015-05-29|Rename to match our rubygems naming
 devel/rubygem-deeptest|devel/rubygem-deep_test|2015-05-30|Rename to match our rubygems naming
+audio/portaudio2|audio/portaudio|2015-05-30|Merged into the main port

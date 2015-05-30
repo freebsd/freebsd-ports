@@ -3,7 +3,7 @@
 
 PORTNAME=	hatari
 PORTVERSION=	1.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
@@ -12,22 +12,17 @@ COMMENT=	Atari ST emulator
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libpng.so:${PORTSDIR}/graphics/png
 
 USES=		cmake readline tar:bzip2
 USE_GNOME=	pygtk2
 USE_SDL=	sdl
-CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \
-		-DPORTAUDIO_LIBRARY:STRING="${PA2_LIBRARY}" \
-		-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
+CMAKE_ARGS=	-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
 		-DETCDIR:STRING="${PREFIX}/etc" \
 		-DMANDIR:STRING="man/man1"
 
 OPTIONS_DEFINE=	DOCS
-
-PA2_INCLUDE_DIR=${LOCALBASE}/include/portaudio2
-PA2_LIBRARY=	${LOCALBASE}/lib/portaudio2/libportaudio.so
 
 post-patch:
 .for i in doc/hatari.1 doc/fr/hatari.1 tools/hconsole/hconsole.1

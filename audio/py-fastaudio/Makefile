@@ -3,7 +3,7 @@
 
 PORTNAME=	fastaudio
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://freenet.mcnabhosting.com/python/pyPortAudio/:site1 \
 		http://www.portaudio.com/archives/:site2
@@ -15,8 +15,10 @@ DIST_SUBDIR=	python
 MAINTAINER=	ninjin@kth.se
 COMMENT=	Python bindings for the PortAudio multi-platform audio library
 
+BROKEN=		Does not work with portaudio v19
+
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio \
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fastaudio.so

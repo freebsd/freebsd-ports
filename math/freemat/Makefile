@@ -4,7 +4,7 @@
 PORTNAME=	FreeMat
 PORTVERSION=	4.2
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science
 MASTER_SITES=	SF/freemat/FreeMat4
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack			\
 		libfftw3.so:${PORTSDIR}/math/fftw3			\
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float		\
 		libpcre.so:${PORTSDIR}/devel/pcre			\
-		libportaudio.so.0:${PORTSDIR}/audio/portaudio		\
+		libportaudio.so:${PORTSDIR}/audio/portaudio		\
 		libumfpack.so:${PORTSDIR}/math/suitesparse
 
 USES=		blaslapack cmake:outsource dos2unix fortran pkgconfig python:build

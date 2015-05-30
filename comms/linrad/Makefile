@@ -2,7 +2,7 @@
 
 PORTNAME=	linrad
 PORTVERSION=	4.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
@@ -14,7 +14,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DSP utility (SDR)
 
 LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libftdi.so:${PORTSDIR}/devel/libftdi
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
