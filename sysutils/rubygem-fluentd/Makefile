@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Fluent event collector
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	\
 	rubygem-cool.io>=1.1.1:${PORTSDIR}/devel/rubygem-cool.io \
 	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
