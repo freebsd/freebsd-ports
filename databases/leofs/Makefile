@@ -4,15 +4,12 @@
 PORTNAME=	leofs
 PORTVERSION=	1.2.10
 CATEGORIES=	databases
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
-
-DISTFILES=	leofs-${PORTVERSION}.tar.gz
-
-DIST_SUBDIR=	${PORTNAME}
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:${PORTSDIR}/lang/erlang-runtime17 \
 		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
