@@ -3,7 +3,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
@@ -21,9 +21,10 @@ HOWL_DESC=	Zeroconf support via Howl
 
 OPTIONS_SUB=	yes
 
+USES=		autoreconf gettext-tools libtool pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour
-USES=		autoreconf gettext-tools libtool pkgconfig
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	wzdftpd
