@@ -12,6 +12,3 @@ lib/security/pam_orthrus.so
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/security
-@dirrm include/orthrus-0
