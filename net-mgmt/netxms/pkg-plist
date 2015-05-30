@@ -24,6 +24,9 @@
 lib/libnetxms.so
 lib/libnetxms.so.1
 lib/libnetxms.so.1.0.0
+lib/libnxexpat.so
+lib/libnxexpat.so.1
+lib/libnxexpat.so.1.0.0
 %%CLIENT%%lib/libnxtre.so
 %%CLIENT%%lib/libnxtre.so.5
 %%NXCP%%lib/libnxsqlite.so
@@ -114,6 +117,7 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%lib/netxms/ndd/dell-pwc.ndd
 %%SERVER%%lib/netxms/ndd/dlink.ndd
 %%SERVER%%lib/netxms/ndd/ers8000.ndd
+%%SERVER%%lib/netxms/ndd/h3c.ndd
 %%SERVER%%lib/netxms/ndd/mikrotik.ndd
 %%SERVER%%lib/netxms/ndd/netscreen.ndd
 %%SERVER%%lib/netxms/ndd/ntws.ndd
@@ -137,6 +141,23 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/images/bacde727-b183-4e6c-8dca-ab024c88b999
 %%SERVER%%%%DATADIR%%/images/f5214d16-1ab1-4577-bb21-063cfd45d7af
 %%SERVER%%%%DATADIR%%/images/f9105c54-8dcf-483a-b387-b4587dfd3cba
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-COMMON-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-CONFIG-MAN-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-DEVICE-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-ENTITY-EXT-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-ENTITY-VENDORTYPE-OID-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-IF-EXT-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-IP-ADDRESS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-IP-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-IPV6-ADDRESS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-OBJECT-INFO-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-OID-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-SSH-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-STACK-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-SYS-MAN-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-SYSLOG-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3COM-HUAWEI-TRAP-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/A3Com-products-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/AAC-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/ACLMGMT-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/AGENT-GENERAL-MIB.txt
@@ -233,6 +254,8 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/DES3200-52P-L2MGMT-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DES3200-52P-L3MGMT-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DHCP-RELAY-MGMT-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/DIFFSERV-DSCP-TC.txt
+%%SERVER%%%%DATADIR%%/mibs/DIFFSERV-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DIGIUM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DISMAN-PING-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/DISMAN-TRACEROUTE-MIB.txt
@@ -270,6 +293,19 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/FOUNDRY-SN-TRAP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/FOUNDRY-SN-VSRP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/FROGFOOT-RESOURCES-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-COMMON-SYSTEM-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-CONFIG-MAN-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-ENTITY-EXT-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-ENTITY-VENDORTYPE-OID-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-IF-EXT-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-IP-ADDRESS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-IPV6-ADDRESS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-OBJECT-INFO-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-SSH-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-STACK-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-SYS-MAN-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-SYSLOG-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/H3C-TRAP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/HCNUM-TC.txt
 %%SERVER%%%%DATADIR%%/mibs/HOST-RESOURCES-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/HOST-RESOURCES-TYPES.txt
@@ -307,6 +343,8 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/HP-SwitchStack-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/HP-VLAN.txt
 %%SERVER%%%%DATADIR%%/mibs/HpicfHighAvailability-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/HUAWEI-3COM-OID-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/HUAWEI-VLAN-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IANA-LANGUAGE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IANA-RTPROTO-MIB.txt
@@ -321,6 +359,7 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/IF-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IGMP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/INET-ADDRESS-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/INTEGRATED-SERVICES-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IP-FORWARD-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IP-MAC-BIND-MIB.txt
@@ -337,6 +376,7 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/LANNET-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-EXT-DOT1-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-EXT-DOT3-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/LLDP-EXT-MED-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-V2-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-V2-TC-MIB.txt
@@ -555,13 +595,3 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/sql/dbschema_oracle.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_pgsql.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_sqlite.sql
-%%SERVER%%@dirrmtry %%DATADIR%%/sql
-%%SERVER%%@dirrmtry %%DATADIR%%/mibs
-%%SERVER%%@dirrmtry %%DATADIR%%/images
-%%SERVER%%@dirrmtry %%DATADIR%%/backgrounds
-%%SERVER%%@dirrmtry %%DATADIR%%
-@owner root
-@group wheel
-%%SERVER%%@dirrm lib/netxms/ndd
-%%SERVER%%@dirrm lib/netxms/dbdrv
-%%NXCP%%@dirrm lib/netxms
