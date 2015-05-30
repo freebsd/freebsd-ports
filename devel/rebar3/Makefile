@@ -1,18 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	20150525
+PORTVERSION=	20150530
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} rebar3-deps-1.tar.gz:deps
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} rebar3-deps-2.tar.gz:deps
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
 
 LICENSE=	APACHE20
-
-BROKEN=		Checksum and size mismatch
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
@@ -22,7 +20,7 @@ OPTIONS_DEFINE=	BASH ZSH
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
-GH_TAGNAME=	fe181f9
+GH_TAGNAME=	a11c009
 
 PLIST_FILES=	bin/${PORTNAME}
 
