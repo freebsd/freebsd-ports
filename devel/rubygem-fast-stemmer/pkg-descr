@@ -1,8 +1,9 @@
-Fast-stemmer is simply a wrapping around multithreaded Porter stemming algorithm.
+Fast-stemmer is simply a wrapping around multithreaded Porter stemming
+algorithm.
 
-This gem adds a String#stem method, and it conflicts with the stemmer gem. 
-It's in order of magnitude faster (and uses much less memory) than the latter.
+This gem adds a String#stem method, and it conflicts with the stemmer gem.  It's
+in order of magnitude faster (and uses much less memory) than the latter.
 
-For the original work please see: tartarus.org/~martin/PorterStemmer/ 
+For the original work please see: tartarus.org/~martin/PorterStemmer/
 
 WWW: https://github.com/romanbsd/fast-stemmer
