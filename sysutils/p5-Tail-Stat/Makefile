@@ -3,7 +3,7 @@
 
 PORTNAME=	Tail-Stat
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LONERR
@@ -27,8 +27,12 @@ TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 USE_RC_SUBR=	tstatd
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/db/tstatd ${STAGEDIR}/var/run/tstatd
 
 .include <bsd.port.mk>
