@@ -3,6 +3,7 @@
 
 PORTNAME=	superiotool
 DISTVERSION=	20121019
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/avg \
 		http://www.icyb.net.ua/~avg/distfiles/
