@@ -13,6 +13,8 @@ COMMENT=	.NET build tool inspired by Ant
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN=		Fails to build with mono 4
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install destdir=${STAGEDIR} prefix=${PREFIX}
