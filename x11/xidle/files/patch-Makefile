@@ -1,0 +1,16 @@
+--- Makefile.orig	2015-05-26 16:46:37 UTC
++++ Makefile
+@@ -1,5 +1,4 @@
+ # $OpenBSD: Makefile,v 1.7 2011/06/23 22:48:59 naddy Exp $
+-.include <bsd.xconf.mk>
+ 
+ PROG=	xidle
+ 
+@@ -9,7 +8,4 @@ LDADD+=	-L${X11BASE}/lib -lXss -lXext -l
+ 
+ MANDIR=	${X11BASE}/man/man
+ 
+-obj: _xenocara_obj
+-
+ .include <bsd.prog.mk>
+-.include <bsd.xorg.mk>
