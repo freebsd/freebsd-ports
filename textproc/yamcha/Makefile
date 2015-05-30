@@ -3,7 +3,7 @@
 
 PORTNAME=	yamcha
 PORTVERSION=	0.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc science
 MASTER_SITES=	http://chasen.org/~taku/software/yamcha/src/
 
@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool perl5
 USE_PERL5=	build
+INSTALL_TARGET=	install-strip
 PORTDOCS=	feature.png feature2.png feature3.png \
 		feature4.png feature5.png index.html \
 		yamcha.html yamcha.css
