@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	structured_warnings
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
