@@ -1,0 +1,5 @@
+sbin/smfsav
+etc/smfsav.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/readme
+@dir(smfs,smfs,700) /var/run/smfsav
