@@ -1,8 +1,11 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
+#
+# NOTE: This port must be updated at the same time as textproc/rubygem-elasticsearch-api
+# and textproc/rubygem-elasticsearch-transport
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.11
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,14 +14,11 @@ COMMENT=	Ruby integrations for Elasticsearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-elasticsearch-api=1.0.7:${PORTSDIR}/textproc/rubygem-elasticsearch-api \
-		rubygem-elasticsearch-transport=1.0.7:${PORTSDIR}/textproc/rubygem-elasticsearch-transport
+RUN_DEPENDS=	rubygem-elasticsearch-api=${PORTVERSION}:${PORTSDIR}/textproc/rubygem-elasticsearch-api \
+		rubygem-elasticsearch-transport=${PORTVERSION}:${PORTSDIR}/textproc/rubygem-elasticsearch-transport
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-# NOTE: This port must be updated at the same time as textproc/rubygem-elasticsearch-api
-# and textproc/rubygem-elasticsearch-transport
 
 .include <bsd.port.mk>
