@@ -252,6 +252,7 @@
     SUBDIR += phpipam
     SUBDIR += phpweathermap
     SUBDIR += pixilate
+    SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp
     SUBDIR += pnp-icinga
