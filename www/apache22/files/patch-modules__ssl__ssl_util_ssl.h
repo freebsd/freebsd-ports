@@ -1,6 +1,6 @@
---- modules/ssl/ssl_util_ssl.h.orig	2012-08-17 19:30:46.000000000 +0200
-+++ modules/ssl/ssl_util_ssl.h	2015-02-28 10:33:07.042671521 +0100
-@@ -89,7 +89,11 @@
+--- modules/ssl/ssl_util_ssl.h.orig	2012-08-17 17:30:46 UTC
++++ modules/ssl/ssl_util_ssl.h
+@@ -89,7 +89,11 @@ char       *SSL_X509_NAME_to_string(apr_
  BOOL        SSL_X509_getCN(apr_pool_t *, X509 *, char **);
  BOOL        SSL_X509_INFO_load_file(apr_pool_t *, STACK_OF(X509_INFO) *, const char *);
  BOOL        SSL_X509_INFO_load_path(apr_pool_t *, STACK_OF(X509_INFO) *, const char *);

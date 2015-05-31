@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.29
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -95,11 +95,12 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-apr=${APR_CONFIG} \
 		--with-apr-util=${APU_CONFIG}
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
+		LOCALBASE="${LOCALBASE}"
 
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}" \
-		EXAMPLESDIR=${EXAMPLESDIR}
+		DATADIR=${DATADIR}
 
 #=====================================================
 # CONFIGURE_ARGS will be handled in Makefile.modules,
@@ -131,7 +132,7 @@ post-extract:
 # remove possible leftover .svn directories in the sources
 	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
 # limit grep results ...
-	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' \) -delete
+	${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' -o -name '*.vbs' -o -name '*.wsf' \) -delete
 
 # make qa script happy, it complains on empty dirs even 'PORTDOCS=*' is set
 # use RMDIR in case upstream ever place some files into this dirs
@@ -184,8 +185,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 # place for 3rd party module configuration
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${ETCDIR}/modules.d/
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${EXAMPLESDIR}/modules.d
 # strip returns an error for non binary files, but we have a big mix
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* 2>/dev/null
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/apache22/mod_*.so
