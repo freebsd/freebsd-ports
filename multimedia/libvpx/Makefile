@@ -3,6 +3,7 @@
 
 PORTNAME=	libvpx
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm
 
-USES=		cpe gmake perl5 tar:bzip2
+USES=		cpe gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
@@ -47,6 +48,8 @@ POSTPROC_CONFIGURE_ON=	--enable-postproc
 RUNTIME_CONFIGURE_ON=	--enable-runtime-cpu-detect
 THREADS_CONFIGURE_OFF=	--disable-multithread
 SHARED_CONFIGURE_ON=	--enable-shared
+
+SHEBANG_FILES=	build/make/ads2gas.pl
 
 .include <bsd.port.options.mk>
 
