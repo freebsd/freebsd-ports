@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rchardet
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
