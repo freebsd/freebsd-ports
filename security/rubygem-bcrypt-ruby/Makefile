@@ -11,7 +11,7 @@ COMMENT=	Sophisticated and secure hash algorithm for passwords
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-bcrypt>=0:${PORTSDIR}/security/rubygem-bcrypt
+RUN_DEPENDS=	rubygem-bcrypt>=3.1.3:${PORTSDIR}/security/rubygem-bcrypt
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
