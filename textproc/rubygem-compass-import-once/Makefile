@@ -1,0 +1,20 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	compass-import-once
+PORTVERSION=	1.0.5
+CATEGORIES=	textproc ruby
+MASTER_SITES=	RG
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Compass core stylesheet library and minimum required ruby extensions
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-sass>=3.2:${PORTSDIR}/textproc/rubygem-sass
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
