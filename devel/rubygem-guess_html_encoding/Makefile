@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guess_html_encoding
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
