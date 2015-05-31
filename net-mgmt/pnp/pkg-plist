@@ -668,7 +668,7 @@ man/man8/npcd.8.gz
 @dir %%WWWDIR%%/templates
 @dir /var/log/kohana
 @dir /var/log/stats
-@dir %%NAGIOSDIR%%/pnp/perfspool
-@dir %%NAGIOSDIR%%/pnp/rrd
-@dir %%NAGIOSDIR%%/pnp
-@dir %%NAGIOSDIR%%
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) %%NAGIOSDIR%%/pnp/perfspool
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) %%NAGIOSDIR%%/pnp/rrd
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) %%NAGIOSDIR%%/pnp
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%
