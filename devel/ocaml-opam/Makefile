@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opam
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/ \
 		http://github.com/ocaml/opam/releases/download/${DISTVERSION}/
@@ -13,6 +13,9 @@ MAINTAINER=	joris@giovannangeli.fr
 COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
+
+# Temporary hack since the directory is named opam-full-1.2.2-rc2
+WRKSRC=		 ${WRKDIR}/${DISTNAME}-rc2
 
 USES=		gmake
 USE_OCAML=	yes
