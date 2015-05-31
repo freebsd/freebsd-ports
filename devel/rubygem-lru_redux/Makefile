@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lru_redux
-PORTVERSION=	0.8.3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
