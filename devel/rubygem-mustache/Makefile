@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mustache
-PORTVERSION=	0.99.6
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
