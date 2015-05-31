@@ -971,8 +971,12 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>ufraw -- integer overflow condition</topic>
+    <topic>rawstudio and ufraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>rawstudio</name>
+	<range><lt>2.0_11</lt></range>
+      </package>
       <package>
 	<name>ufraw</name>
 	<range><lt>0.21</lt></range>
@@ -994,12 +998,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-3885</cvename>
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
-      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3885</url>
+      <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
+      <modified>2015-05-31</modified>
     </dates>
   </vuln>
 
