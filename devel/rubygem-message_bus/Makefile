@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	message_bus
-PORTVERSION=	0.9.6
+PORTVERSION=	1.0.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ COMMENT=	Message bus for rack
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-rack>=1.1.3:${PORTSDIR}/www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack15>=1.1.3:${PORTSDIR}/www/rubygem-rack15 \
 		rubygem-redis>=0:${PORTSDIR}/databases/rubygem-redis
 
 USE_RUBY=	yes
