@@ -3,9 +3,9 @@ http://lists.freebsd.org/pipermail/freebsd-apache/2012-August/002836.html
 https://issues.apache.org/bugzilla/show_bug.cgi?id=53823
 
 ==================================================================
---- ./server/config.c.orig	2010-10-07 18:56:54.000000000 +0200
-+++ ./server/config.c	2012-09-05 08:39:18.000000000 +0200
-@@ -1979,6 +1979,11 @@
+--- server/config.c.orig	2010-10-07 16:56:54 UTC
++++ server/config.c
+@@ -1979,6 +1979,11 @@ static server_rec *init_server_config(pr
      /* NOT virtual host; don't match any real network interface */
      rv = apr_sockaddr_info_get(&s->addrs->host_addr,
                                 NULL, APR_INET, 0, 0, p);
