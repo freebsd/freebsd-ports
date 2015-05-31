@@ -3,7 +3,7 @@
 
 PORTNAME=	XML-Bare
 PORTVERSION=	0.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,5 +19,10 @@ USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} '/LDDLFLAGS/d' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/Bare/Bare.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/Bare/Bare.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/Bare/Bare.so
 
 .include <bsd.port.mk>
