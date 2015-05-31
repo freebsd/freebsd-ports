@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nprogress-rails
-PORTVERSION=	0.1.6.3
+PORTVERSION=	0.1.6.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ COMMENT=	Rails implementation of nprogress progress bars library
 LICENSE=	MIT
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
