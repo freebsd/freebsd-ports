@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	game_sdl2
-PORTVERSION=	6.99.2
+PORTVERSION=	6.99.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
-PORTSCOUT=	skipv:6.99.3 # no changes
+# Upstream tends to reroll distfiles before moving under /release/
+PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
 USES=		python tar:bz2
 USE_SDL=	image2 mixer2 ttf2

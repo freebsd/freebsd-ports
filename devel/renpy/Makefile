@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION=	6.99.2
+PORTVERSION=	6.99.4
 DISTVERSIONSUFFIX=-source
-PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO
@@ -26,7 +25,8 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:${PORTSDIR}/devel/py-game_sdl2
 
-PORTSCOUT=	skipv:6.99.3 # only version bump
+# Upstream tends to reroll distfiles before moving under /release/
+PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
 USES=		python:2.7 shebangfix tar:bz2
 USE_PYTHON=	autoplist distutils
@@ -78,6 +78,12 @@ post-build:
 		${PYTHON_CMD} ${WRKSRC}/renpy.py $$d compile; \
 	done)
 
+add-plist-post: add-empty-dirs
+add-empty-dirs:
+# Keep images directory in templates, see renpy@d81ea29
+	${FIND} ${WRKSRC}/templates -type d ! -name "saves" -empty | \
+		${SED} 's,^${WRKSRC},@dir ${DATADIR},' >>${TMPPLIST}
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \
 		-exec ${STRIP_CMD} {} +
@@ -85,7 +91,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR} \
-		"! -name *.orig ! -name *.bak ! -name saves")
+		"! -name *.orig ! -name *.bak \
+		 ! -name saves ! -name log.txt")
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/renpy.py
 	${CHMOD} -R u+w ${STAGEDIR}${DATADIR}/templates
 .if ${PORT_OPTIONS:MDOCS}
