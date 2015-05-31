@@ -2,4 +2,4 @@ Jekyll plugin, that allows you to write javascript/css assets in other
 languages such as CoffeeScript, Sass, Less and ERB, concatenate them,
 respecting dependencies, minify and many more.
 
-WWW: https://rubygems.org/gems/jekyll-assets/
+WWW: http://jekyll-assets.github.io/jekyll-assets/
