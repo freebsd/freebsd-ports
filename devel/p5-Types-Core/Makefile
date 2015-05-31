@@ -20,6 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

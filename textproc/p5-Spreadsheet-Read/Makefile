@@ -25,5 +25,6 @@ TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

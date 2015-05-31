@@ -13,5 +13,6 @@ COMMENT=	Perl module that provides decimal math without floating point errors
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
