@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiredis
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
