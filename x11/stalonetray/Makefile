@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stalonetray
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	STAnd-aLONE system tray
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \
