@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-graphviz
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
 
