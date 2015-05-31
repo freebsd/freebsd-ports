@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.6
+PORTVERSION=	4.4.9
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.4/ \
 		LOCAL/tota/bugzilla-ja
@@ -22,7 +22,7 @@ LANGDIR=	${WWWDIR}/template/ja
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${LANGDIR}/default
-	@cd ${WRKDIR}/default; ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR}/default
+	(cd ${WRKDIR}/default && ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR}/default)
 
 # Maintainer
 plist: patch
