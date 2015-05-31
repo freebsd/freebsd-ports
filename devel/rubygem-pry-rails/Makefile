@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pry-rails
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
