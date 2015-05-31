@@ -47,12 +47,12 @@ PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 THREADS_CONFIGURE_ON=	--enable-weak-threads
 THREADS_CONFIGURE_OFF=	--enable-threads=no
 
+.include <bsd.port.options.mk>
+
 # For all Bigendian systems, set CPPFLAGS so that icu compiles and checks correctly
 .if ${ARCH} == "mips" || ${ARCH} == "mips64" || ${ARCH} == "sparc64" || ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
 CPPFLAGS+=	-DU_IS_BIG_ENDIAN=1
 .endif
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/CXXFLAGS=/s/-ansi//' \
