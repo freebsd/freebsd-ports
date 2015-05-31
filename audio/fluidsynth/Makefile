@@ -22,6 +22,8 @@ CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
+LDFLAGS+=	-lpthread
+
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_OFF=		-Denable-jack:BOOL=FALSE
 
@@ -45,7 +47,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-SNDFILE_CMAKe_OFF=	-Denable-libsndfile:BOOL=FALSE
+SNDFILE_CMAKE_OFF=	-Denable-libsndfile:BOOL=FALSE
 
 post-patch:
 	@${REINPLACE_CMD} -e \
