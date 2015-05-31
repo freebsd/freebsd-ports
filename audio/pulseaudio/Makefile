@@ -6,6 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -84,6 +85,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/daemon/default.pa.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		-e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
 		${WRKSRC}/configure
 
 post-install:
