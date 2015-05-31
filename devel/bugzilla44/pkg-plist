@@ -341,6 +341,7 @@
 %%WWWDIR%%/Bugzilla/Whine.pm
 %%WWWDIR%%/Bugzilla/Whine/Query.pm
 %%WWWDIR%%/Bugzilla/Whine/Schedule.pm
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
 %%WWWDIR%%/admin.cgi
 %%WWWDIR%%/attachment.cgi

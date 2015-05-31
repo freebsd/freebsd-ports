@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	44
 
 CONFLICTS_INSTALL=	\
 		bugzilla4[^4].* \
-		bugzilla-4.[^4].*
+		bugzilla5*
 
 PORTSCOUT=	limitw:1,even
 
