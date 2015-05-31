@@ -57,7 +57,6 @@ lib/emby-server/dashboard-ui/channelslatest.html
 lib/emby-server/dashboard-ui/cinemamodeconfiguration.html
 lib/emby-server/dashboard-ui/collections.html
 lib/emby-server/dashboard-ui/connectlogin.html
-lib/emby-server/dashboard-ui/cordovaindex.html
 lib/emby-server/dashboard-ui/css/card.css
 lib/emby-server/dashboard-ui/css/chromecast.css
 lib/emby-server/dashboard-ui/css/detailtable.css
@@ -361,6 +360,7 @@ lib/emby-server/dashboard-ui/scripts/librarypathmapping.js
 lib/emby-server/dashboard-ui/scripts/librarysettings.js
 lib/emby-server/dashboard-ui/scripts/livetvchannel.js
 lib/emby-server/dashboard-ui/scripts/livetvchannels.js
+lib/emby-server/dashboard-ui/scripts/livetvcomponents.js
 lib/emby-server/dashboard-ui/scripts/livetvguide.js
 lib/emby-server/dashboard-ui/scripts/livetvitems.js
 lib/emby-server/dashboard-ui/scripts/livetvnewrecording.js
@@ -416,7 +416,9 @@ lib/emby-server/dashboard-ui/scripts/playlistmanager.js
 lib/emby-server/dashboard-ui/scripts/playlists.js
 lib/emby-server/dashboard-ui/scripts/plugincatalogpage.js
 lib/emby-server/dashboard-ui/scripts/pluginspage.js
+lib/emby-server/dashboard-ui/scripts/queryfilters.js
 lib/emby-server/dashboard-ui/scripts/ratingdialog.js
+lib/emby-server/dashboard-ui/scripts/registrationservices.js
 lib/emby-server/dashboard-ui/scripts/remotecontrol.js
 lib/emby-server/dashboard-ui/scripts/reports.js
 lib/emby-server/dashboard-ui/scripts/scheduledtaskpage.js
@@ -484,6 +486,11 @@ lib/emby-server/dashboard-ui/thirdparty/apiclient/sha1.js
 lib/emby-server/dashboard-ui/thirdparty/apiclient/store.js
 lib/emby-server/dashboard-ui/thirdparty/browser.js
 lib/emby-server/dashboard-ui/thirdparty/cast_sender.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/chromecast.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/connectsdk.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/externalplayer.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/imagestore.js
+lib/emby-server/dashboard-ui/thirdparty/cordova/registrationservices.js
 lib/emby-server/dashboard-ui/thirdparty/cordova/remotecontrols.js
 lib/emby-server/dashboard-ui/thirdparty/cordova/serverdiscovery.js
 lib/emby-server/dashboard-ui/thirdparty/fastclick.js
