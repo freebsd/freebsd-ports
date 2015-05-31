@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 		rubygem-activemodel4>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel4 \
 		rubygem-activerecord4>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-bundler>=1.3.0:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-railties4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties4 \
 		rubygem-activeresource4>=4.0.0:${PORTSDIR}/www/rubygem-activeresource4 \
 		rubygem-builder32>=3.2.2:${PORTSDIR}/devel/rubygem-builder32 \
@@ -43,14 +43,12 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 USES=		cpe
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
 OPTIONS_DEFINE=	PASSENGER MEMCACHE_CLIENT
-MONGRELCLUSTER_DESC=	Mongrel Cluster backend
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
