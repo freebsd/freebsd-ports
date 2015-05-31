@@ -13,5 +13,6 @@ COMMENT=	Perl module implementing the Triple-DES cipher
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
