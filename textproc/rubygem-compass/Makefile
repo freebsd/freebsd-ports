@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	compass
-PORTVERSION=	0.12.4
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -12,8 +12,11 @@ COMMENT=	Provides an open-source CSS authoring framework
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png \
-		rubygem-fssm>=0.2.7:${PORTSDIR}/sysutils/rubygem-fssm \
-		rubygem-sass32>=3.1:${PORTSDIR}/textproc/rubygem-sass32
+		rubygem-compass-core>=1.0.2:${PORTSDIR}/textproc/rubygem-compass-core \
+		rubygem-compass-import-once>=1.0.5:${PORTSDIR}/textproc/rubygem-compass-import-once \
+		rubygem-rb-fsevent>=0.9.3:${PORTSDIR}/devel/rubygem-rb-fsevent \
+		rubygem-rb-inotify>=0.9:${PORTSDIR}/devel/rubygem-rb-inotify \
+		rubygem-sass>=3.3.13:${PORTSDIR}/textproc/rubygem-sass
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
