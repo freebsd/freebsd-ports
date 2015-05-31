@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA/webtools BUGZILLA/webtools/archived
 
@@ -176,11 +177,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/opt/bugzilla|${WWWDIR}|' ${WRKSRC}/importxml.pl \
 		${WRKSRC}/docs/en/html/api/importxml.html
 	${FIND} ${WRKSRC} -type f \( -name \*.cgi -o -name \*.html -o -name \*.pl -o -name \*.pm -o -name \*.t -o -name \*.txt -o -name \*.xml \) \
-		-exec ${SED} -i '' -e "s!/usr/lib/sendmail.exe!/usr/sbin/sendmail!g; \
-			s=/usr/bin/perl=${PERL}=g; \
+		-exec ${SED} -i '' -e "s=/usr/bin/perl=${PERL}=g; \
+			s!/usr/lib/sendmail!/usr/sbin/sendmail!g; \
 			s!/var/www/html/bugzilla!${WWWDIR}!" {} \+
 .if ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMYSQL}
-	${REINPLACE_CMD} -e 's/mysql/Pg/' ${WRKSRC}/Bugzilla/Install/Localconfig.pm
+	${REINPLACE_CMD} -e "s/'mysql'/'Pg'/" ${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif
 
 pre-install:
