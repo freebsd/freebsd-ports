@@ -66,7 +66,7 @@ PLIST_SUB+=	DOC="@comment "
 .endif
 
 .if ${ARCH} == armv6
-CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS} -mfpu=softvfp -meabi=5"
+CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS} -meabi=5"
 .else
 CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS}"
 .endif
@@ -97,7 +97,8 @@ CONFIGURE_ARGS+=-no-graph
 
 OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
-.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64}
+.if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64} \
+	|| ${OCAML_ARCH:Marm}
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""
