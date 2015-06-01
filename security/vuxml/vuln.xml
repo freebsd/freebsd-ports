@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="022255be-0895-11e5-a242-5404a68ad561">
+    <topic>avidemux26 -- multiple vulnerabilities in bundled FFmpeg</topic>
+    <affects>
+      <package>
+	<name>avidemux2</name>
+	<range><lt>2.6.8</lt></range>
+      </package>
+      <package>
+	<name>avidemux26</name>
+	<range><lt>2.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mageia project reports:</p>
+	<blockquote cite="http://advisories.mageia.org/MGASA-2015-0233.html">
+	  <p>Avidemux is built with a bundled set of FFmpeg libraries.
+	    The bundled FFmpeg version has been updated from 1.2.10
+	    to 1.2.12 to fix these security issues and other bugs
+	    fixed upstream in FFmpeg.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9316</cvename>
+      <cvename>CVE-2014-9317</cvename>
+      <cvename>CVE-2014-9603</cvename>
+      <cvename>CVE-2014-9604</cvename>
+      <cvename>CVE-2015-1872</cvename>
+      <cvename>CVE-2015-3417</cvename>
+      <freebsdpr>200507</freebsdpr>
+      <url>http://advisories.mageia.org/MGASA-2015-0233.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-18</discovery>
+      <entry>2015-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ffe2d86c-07d9-11e5-9a28-001e67150279">
     <topic>rest-client -- plaintext password disclosure</topic>
     <affects>
