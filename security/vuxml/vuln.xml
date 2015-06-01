@@ -82,7 +82,7 @@ Notes:
     </references>
     <dates>
       <discovery>2015-02-18</discovery>
-      <entry>2015-05-30</entry>
+      <entry>2015-05-31</entry>
     </dates>
   </vuln>
 
@@ -118,7 +118,7 @@ Notes:
     </references>
     <dates>
       <discovery>2014-12-11</discovery>
-      <entry>2015-05-30</entry>
+      <entry>2015-05-31</entry>
     </dates>
   </vuln>
 
@@ -1103,8 +1103,12 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>rawstudio and ufraw -- integer overflow condition</topic>
+    <topic>kodi, rawstudio, and ufraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>kodi</name>
+	<range><lt>14.2_1</lt></range>
+      </package>
       <package>
 	<name>rawstudio</name>
 	<range><lt>2.0_11</lt></range>
@@ -1137,7 +1141,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-05-31</modified>
+      <modified>2015-06-01</modified>
     </dates>
   </vuln>
 
