@@ -3,12 +3,15 @@
 
 PORTNAME=	openvas-libnasl
 PORTVERSION=	2.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/561/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NASL libraries for OpenVAS
+
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
@@ -25,5 +28,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lgcrypt
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openvas-nasl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenvasnasl.so
 
 .include <bsd.port.mk>
