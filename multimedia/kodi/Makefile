@@ -3,6 +3,7 @@
 PORTNAME=	kodi
 DISTVERSION=	14.0
 PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.kodi.tv/releases/source/ \
 		GHL:ffmpeg
