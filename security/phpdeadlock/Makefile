@@ -11,7 +11,8 @@ DISTNAME=	Deadlock-${PORTVERSION}-Stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based user authentication/password protection system
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 WRKSRC=		${WRKDIR}/Deadlock-1.01
 DLURL?=		${PORTNAME}
