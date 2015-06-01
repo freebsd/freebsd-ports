@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
 
 GNU_CONFIGURE=	yes
