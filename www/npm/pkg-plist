@@ -585,6 +585,7 @@ lib/node_modules/npm/node_modules/archy/test/multi_line.js
 lib/node_modules/npm/node_modules/archy/test/non_unicode.js
 lib/node_modules/npm/node_modules/async-some/.eslintrc
 lib/node_modules/npm/node_modules/async-some/.npmignore
+lib/node_modules/npm/node_modules/async-some/LICENSE
 lib/node_modules/npm/node_modules/async-some/README.md
 lib/node_modules/npm/node_modules/async-some/package.json
 lib/node_modules/npm/node_modules/async-some/some.js
@@ -592,6 +593,7 @@ lib/node_modules/npm/node_modules/async-some/test/base-case.js
 lib/node_modules/npm/node_modules/async-some/test/parameters.js
 lib/node_modules/npm/node_modules/async-some/test/simple.js
 lib/node_modules/npm/node_modules/block-stream/LICENCE
+lib/node_modules/npm/node_modules/block-stream/LICENSE
 lib/node_modules/npm/node_modules/block-stream/README.md
 lib/node_modules/npm/node_modules/block-stream/bench/block-stream-pause.js
 lib/node_modules/npm/node_modules/block-stream/bench/block-stream.js
@@ -617,9 +619,12 @@ lib/node_modules/npm/node_modules/chmodr/package.json
 lib/node_modules/npm/node_modules/chmodr/test/basic.js
 lib/node_modules/npm/node_modules/chmodr/test/sync.js
 lib/node_modules/npm/node_modules/chownr/LICENCE
+lib/node_modules/npm/node_modules/chownr/LICENSE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
+lib/node_modules/npm/node_modules/chownr/test/basic.js
+lib/node_modules/npm/node_modules/chownr/test/sync.js
 lib/node_modules/npm/node_modules/cmd-shim/.npmignore
 lib/node_modules/npm/node_modules/cmd-shim/.travis.yml
 lib/node_modules/npm/node_modules/cmd-shim/LICENSE
@@ -677,6 +682,7 @@ lib/node_modules/npm/node_modules/config-chain/test/get.js
 lib/node_modules/npm/node_modules/config-chain/test/ignore-unfound-file.js
 lib/node_modules/npm/node_modules/config-chain/test/ini.js
 lib/node_modules/npm/node_modules/config-chain/test/save.js
+lib/node_modules/npm/node_modules/dezalgo/LICENSE
 lib/node_modules/npm/node_modules/dezalgo/README.md
 lib/node_modules/npm/node_modules/dezalgo/dezalgo.js
 lib/node_modules/npm/node_modules/dezalgo/node_modules/asap/LICENSE.md
@@ -693,6 +699,7 @@ lib/node_modules/npm/node_modules/editor/index.js
 lib/node_modules/npm/node_modules/editor/package.json
 lib/node_modules/npm/node_modules/fs-vacuum/.eslintrc
 lib/node_modules/npm/node_modules/fs-vacuum/.npmignore
+lib/node_modules/npm/node_modules/fs-vacuum/LICENSE
 lib/node_modules/npm/node_modules/fs-vacuum/README.md
 lib/node_modules/npm/node_modules/fs-vacuum/package.json
 lib/node_modules/npm/node_modules/fs-vacuum/test/arguments.js
@@ -709,6 +716,7 @@ lib/node_modules/npm/node_modules/fs-write-stream-atomic/README.md
 lib/node_modules/npm/node_modules/fs-write-stream-atomic/index.js
 lib/node_modules/npm/node_modules/fs-write-stream-atomic/package.json
 lib/node_modules/npm/node_modules/fs-write-stream-atomic/test/basic.js
+lib/node_modules/npm/node_modules/fs-write-stream-atomic/test/toolong.js
 lib/node_modules/npm/node_modules/fstream-npm/.npmignore
 lib/node_modules/npm/node_modules/fstream-npm/LICENSE
 lib/node_modules/npm/node_modules/fstream-npm/README.md
@@ -797,6 +805,7 @@ lib/node_modules/npm/node_modules/graceful-fs/test/readdir-sort.js
 lib/node_modules/npm/node_modules/graceful-fs/test/write-then-read.js
 lib/node_modules/npm/node_modules/hosted-git-info/.npmignore
 lib/node_modules/npm/node_modules/hosted-git-info/.travis.yml
+lib/node_modules/npm/node_modules/hosted-git-info/LICENSE
 lib/node_modules/npm/node_modules/hosted-git-info/README.md
 lib/node_modules/npm/node_modules/hosted-git-info/git-host-info.js
 lib/node_modules/npm/node_modules/hosted-git-info/git-host.js
@@ -869,16 +878,6 @@ lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-pa
 lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-license/node_modules/spdx-correct/package.json
 lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-license/node_modules/spdx-correct/spdx-correct.js
 lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-license/package.json
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/.npmignore
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/README.md
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/index.js
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/node_modules/builtins/.travis.yml
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/node_modules/builtins/History.md
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/node_modules/builtins/Readme.md
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/node_modules/builtins/builtins.json
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/node_modules/builtins/package.json
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/package.json
-lib/node_modules/npm/node_modules/init-package-json/node_modules/validate-npm-package-name/test/index.js
 lib/node_modules/npm/node_modules/init-package-json/package.json
 lib/node_modules/npm/node_modules/init-package-json/test/basic.input
 lib/node_modules/npm/node_modules/init-package-json/test/basic.js
@@ -1167,6 +1166,7 @@ lib/node_modules/npm/node_modules/nopt/package.json
 lib/node_modules/npm/node_modules/nopt/test/basic.js
 lib/node_modules/npm/node_modules/normalize-git-url/.npmignore
 lib/node_modules/npm/node_modules/normalize-git-url/CHANGELOG.md
+lib/node_modules/npm/node_modules/normalize-git-url/LICENSE
 lib/node_modules/npm/node_modules/normalize-git-url/README.md
 lib/node_modules/npm/node_modules/normalize-git-url/normalize-git-url.js
 lib/node_modules/npm/node_modules/normalize-git-url/package.json
@@ -1200,6 +1200,7 @@ lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/read-pack
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/request.json
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/underscore.json
 lib/node_modules/npm/node_modules/normalize-package-data/test/github-urls.js
+lib/node_modules/npm/node_modules/normalize-package-data/test/mixedcase-names.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/normalize.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/scoped.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/strict.js
@@ -1332,6 +1333,8 @@ lib/node_modules/npm/node_modules/npm-registry-client/test/logout.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-again-scoped.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-again.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-failed-no-message.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/publish-mixcase-name.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/publish-new-mixcase-name.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-scoped-auth-token.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-scoped.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish.js
@@ -1407,12 +1410,10 @@ lib/node_modules/npm/node_modules/npmlog/node_modules/are-we-there-yet/test/trac
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/.npmignore
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/LICENSE
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/README.md
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/README.md~
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/example.png
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/.npmignore
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/LICENSE
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/README.md
-lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/README.md~
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/index.js
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/package.json
 lib/node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/test/index.js
@@ -1455,6 +1456,7 @@ lib/node_modules/npm/node_modules/opener/LICENSE.txt
 lib/node_modules/npm/node_modules/opener/README.md
 lib/node_modules/npm/node_modules/opener/opener.js
 lib/node_modules/npm/node_modules/opener/package.json
+lib/node_modules/npm/node_modules/osenv/.npmignore
 lib/node_modules/npm/node_modules/osenv/LICENSE
 lib/node_modules/npm/node_modules/osenv/README.md
 lib/node_modules/npm/node_modules/osenv/osenv.js
@@ -1573,6 +1575,7 @@ lib/node_modules/npm/node_modules/read-package-json/test/non-json.js
 lib/node_modules/npm/node_modules/read-package-json/test/readmes.js
 lib/node_modules/npm/node_modules/read/.npmignore
 lib/node_modules/npm/node_modules/read/LICENCE
+lib/node_modules/npm/node_modules/read/LICENSE
 lib/node_modules/npm/node_modules/read/README.md
 lib/node_modules/npm/node_modules/read/example/example.js
 lib/node_modules/npm/node_modules/read/lib/read.js
@@ -1616,6 +1619,7 @@ lib/node_modules/npm/node_modules/readable-stream/readable.js
 lib/node_modules/npm/node_modules/readable-stream/transform.js
 lib/node_modules/npm/node_modules/readable-stream/writable.js
 lib/node_modules/npm/node_modules/realize-package-specifier/.npmignore
+lib/node_modules/npm/node_modules/realize-package-specifier/LICENSE
 lib/node_modules/npm/node_modules/realize-package-specifier/README.md
 lib/node_modules/npm/node_modules/realize-package-specifier/index.js
 lib/node_modules/npm/node_modules/realize-package-specifier/package.json
@@ -2244,6 +2248,16 @@ lib/node_modules/npm/node_modules/umask/README.md
 lib/node_modules/npm/node_modules/umask/index.js
 lib/node_modules/npm/node_modules/umask/package.json
 lib/node_modules/npm/node_modules/umask/test/simple.js
+lib/node_modules/npm/node_modules/validate-npm-package-name/.npmignore
+lib/node_modules/npm/node_modules/validate-npm-package-name/README.md
+lib/node_modules/npm/node_modules/validate-npm-package-name/index.js
+lib/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/.travis.yml
+lib/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/History.md
+lib/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/Readme.md
+lib/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/builtins.json
+lib/node_modules/npm/node_modules/validate-npm-package-name/node_modules/builtins/package.json
+lib/node_modules/npm/node_modules/validate-npm-package-name/package.json
+lib/node_modules/npm/node_modules/validate-npm-package-name/test/index.js
 lib/node_modules/npm/node_modules/which/LICENSE
 lib/node_modules/npm/node_modules/which/README.md
 lib/node_modules/npm/node_modules/which/bin/which
@@ -2264,6 +2278,7 @@ lib/node_modules/npm/node_modules/wrappy/package.json
 lib/node_modules/npm/node_modules/wrappy/test/basic.js
 lib/node_modules/npm/node_modules/wrappy/wrappy.js
 lib/node_modules/npm/node_modules/write-file-atomic/.npmignore
+lib/node_modules/npm/node_modules/write-file-atomic/LICENSE
 lib/node_modules/npm/node_modules/write-file-atomic/README.md
 lib/node_modules/npm/node_modules/write-file-atomic/index.js
 lib/node_modules/npm/node_modules/write-file-atomic/package.json
