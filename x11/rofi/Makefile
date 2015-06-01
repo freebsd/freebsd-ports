@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-PORTVERSION=	0.15.2
+PORTVERSION=	0.15.5
 CATEGORIES=	x11
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DaveDavenport
