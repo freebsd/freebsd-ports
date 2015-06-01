@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cabextract
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/
 
