@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-client
 PORTVERSION=	2.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/595/
 
@@ -41,8 +41,11 @@ post-patch:
 post-build:
 	@(cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/OpenVAS-Client
+.if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
