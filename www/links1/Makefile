@@ -16,4 +16,6 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFLICTS=	links-2*
 
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+
 .include <bsd.port.mk>
