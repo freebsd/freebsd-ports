@@ -2,7 +2,7 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	LOCAL/db
 DISTNAME=	wspr-r${SVN_REV}
@@ -15,11 +15,11 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_LIBDIR}/tkinter:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
-		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
+		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libportaudio.so:${PORTSDIR}/audio/portaudio
 
 DISABLE_MAKE_JOBS=	yes
 USE_AUTOTOOLS=	autoconf

@@ -142,7 +142,7 @@
 # PYTHON_PORTSDIR	- The port directory of the chosen Python interpreter
 #
 # PYTHON_REL		- The release number of the chosen Python interpreter
-#			  without dots, e.g. 276, 341, ...
+#			  without dots, e.g. 2706, 3401, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
 #			  interpreter without dots, e.g. 27, 34, ...
@@ -383,7 +383,7 @@ PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
 PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 PYTHON_PORTVERSION!=	${MAKE} -V PORTVERSION -C ${PYTHON_PORTSDIR}
-PYTHON_REL=		${PYTHON_PORTVERSION:S/.//g}
+PYTHON_REL=		${PYTHON_PORTVERSION:C/\.([0-9]+)$/.0\1/:C/\.0?([0-9][0-9])$/.\1/:S/.//g}
 
 # Might be overridden by calling ports
 PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
@@ -500,7 +500,7 @@ add-plist-pymod:
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 
 .else
-.if ${PYTHON_REL} >= 320 && defined(_PYTHON_FEATURE_PY3KPLIST)
+.if ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
 # When Python version is 3.2+ we rewrite all the filenames
 # of TMPPLIST that end with .py[co], so that they conform
 # to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
@@ -515,7 +515,7 @@ add-plist-post:
 		pc="__pycache__" mt="$$(${PYMAGICTAG})" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
-.endif # ${PYTHON_REL} >= 320 && defined(_PYTHON_FEATURE_PY3KPLIST)
+.endif # ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
 .endif # defined(_PYTHON_FEATURE_AUTOPLIST) && defined(_PYTHON_FEATURE_DISTUTILS)
 
 # Fix for programs that build python from a GNU auto* environment

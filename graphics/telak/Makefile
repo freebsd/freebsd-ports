@@ -27,9 +27,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 install-user:
 	@${SH} ${FILESDIR}/install-user
 

@@ -1,4 +1,4 @@
 Ruby wrapper for hiredis (protocol serialization/deserialization and blocking
 I/O)
 
-WWW: http://github.com/redis/hiredis-rb
+WWW: https://github.com/redis/hiredis-rb

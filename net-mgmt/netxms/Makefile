@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netxms
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.17
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/ \
 		http://www.netxms.org/download/archive/
@@ -13,9 +13,7 @@ COMMENT=	Network monitoring system
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN=		Fails to package
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-05-26
+PORTSCOUT=	limit:^1\.
 
 OPTIONS_DEFINE=	SERVER CLIENT AGENT
 OPTIONS_DEFAULT=	CLIENT AGENT
@@ -23,9 +21,21 @@ SERVER_ENABLED_MODULES=	MYSQL
 SERVER_DISABLED_MODULES=	PGSQL SQLITE ODBC
 OPTIONS_SINGLE=	SERVER
 OPTIONS_SINGLE_SERVER=	${SERVER_ENABLED_MODULES} ${SERVER_DISABLED_MODULES}
+OPTIONS_SUB=	yes
 SERVER_DESC=	Install NetXMS server & agent
 CLIENT_DESC=	Install NetXMS client
 AGENT_DESC=	Install NetXMS agent
+CLIENT_CONFIGURE_ON=	--with-client
+AGENT_CONFIGURE_ON=	--with-agent
+SERVER_CONFIGURE_ON=	--with-server
+MYSQL_CONFIGURE_ON=	--with-mysql
+MYSQL_USE=		MYSQL=yes
+PGSQL_CONFIGURE_ON=	--with-pgsql
+PGSQL_USES=		pgsql
+SQLITE_CONFIGURE_ON=	--with-sqlite
+SQLITE_USE=		SQLITE=yes
+ODBC_CONFIGURE_ON=	--with-odbc
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 USE_OPENSSL=	yes
 USES=		gmake iconv libtool perl5

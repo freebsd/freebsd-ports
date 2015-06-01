@@ -32,12 +32,15 @@ include/groonga/groonga/normalizer.h
 include/groonga/groonga/obj.h
 include/groonga/groonga/output.h
 include/groonga/groonga/plugin.h
+include/groonga/groonga/portability.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/scorer.h
 include/groonga/groonga/token.h
 include/groonga/groonga/token_filter.h
 include/groonga/groonga/tokenizer.h
 include/groonga/groonga/util.h
+lib/groonga/plugins/functions/vector.a
+lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
 lib/groonga/plugins/suggest/suggest.a

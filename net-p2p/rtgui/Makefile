@@ -47,7 +47,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -r ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
 %%PERL5_MAN3%%/XML::Atom::SimpleFeed.3.gz
 %%SITE_PERL%%/XML/Atom/SimpleFeed.pm
+@comment %%SITE_PERL%%/XML/Atom/t.pl
+@comment %%SITE_PERL%%/XML/Atom/x.pl

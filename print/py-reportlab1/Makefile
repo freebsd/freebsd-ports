@@ -43,6 +43,5 @@ post-install:
 .for i in ${PORTDOCS}
 	${CP} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

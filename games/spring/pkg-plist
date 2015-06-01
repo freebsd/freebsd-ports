@@ -11,5 +11,3 @@ share/applications/spring.desktop
 share/mime/packages/spring.xml
 share/pixmaps/application-x-spring-demo.png
 share/pixmaps/spring.png
-@dirrmtry share/mime/packages
-@dirrmtry share/mime

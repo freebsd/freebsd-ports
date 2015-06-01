@@ -4,16 +4,12 @@
 PORTNAME=	leofs
 PORTVERSION=	1.2.10
 CATEGORIES=	databases
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
-
-DISTFILES=	leofs-${PORTVERSION}.tar.gz
-EXTRACT_ONLY=	leofs-${PORTVERSION}.tar.gz
-
-DIST_SUBDIR=	${PORTNAME}
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:${PORTSDIR}/lang/erlang-runtime17 \
 		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
@@ -66,82 +62,70 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang17/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?5396417:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?bf32076:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?42e8f25:leo_storage \
-	DeadZen/goldrush=0.1.6?71e6321:goldrush \
-	basho/bitcask=2.0.0?c74d0c4:bitcask \
-	basho/cuttlefish=2.0.1?c92c832:cuttlefish \
-	basho/eleveldb=2.1.0?a36dbd6:eleveldb \
-	basho/lager=2.0.3?b6b6ceb:lager \
-	basho/leveldb=2.0.0?d1a95db:leveldb \
-	davisp/jiffy=0.13.3?137d3d9:jiffy \
-	eproxus/meck=0.8.2?dde7590:meck \
-	extend/cowlib=1.0.0?d544a49:cowlib \
-	extend/ranch=1.0.0?adf1822:ranch \
-	ferd/recon=2.2.1?3578fa8:recon \
-	jcomellas/getopt=v0.4.3?659a28f:getopt \
-	leo-project/bear=0.8.2-for-leofs?7344c93:bear \
-	leo-project/elarm=d237636?d237636:elarm \
-	leo-project/erlang-lz4=0.2.2?80a5777:lz4 \
-	leo-project/erpcgen=0.2.3?b35d6b8:erpcgen \
-	leo-project/folsom=0.8.2-for-leofs?26a935b:folsom \
-	leo-project/leo_backend_db=1.1.8?1cef70a:leo_backend_db \
-	leo-project/leo_cache=0.6.3?c0f4edc:leo_cache \
-	leo-project/leo_commons=1.1.1?aac81f7:leo_commons \
-	leo-project/leo_dcerl=0.2.12?c0a7da2:leo_dcerl \
-	leo-project/leo_logger=1.1.5?80a4688:leo_logger \
-	leo-project/leo_mcerl=0.4.1?addcda0:leo_mcerl \
-	leo-project/leo_mq=1.3.9?a1aecec:leo_mq \
-	leo-project/leo_object_storage=1.2.7?516a9ea:leo_object_storage \
-	leo-project/leo_ordning_reda=1.0.0?e4ad331:leo_ordning_reda \
-	leo-project/leo_pod=0.6.3?898e544:leo_pod \
-	leo-project/leo_redundant_manager=1.9.13?06f0837:leo_redundant_manager \
-	leo-project/leo_rpc=0.10.1?10a43d4:leo_rpc \
-	leo-project/leo_s3_libs=1.1.7?0cf4f99:leo_s3_libs \
-	leo-project/leo_statistics=1.1.4?bfe20d6:leo_statistics \
-	leo-project/leo_watchdog=0.8.0?be74dfb:leo_watchdog \
-	leo-project/libcutil=0.4.3?36b02d9:libcutil \
-	leo-project/nfs_rpc_server=0.2.3?9451e87:nfs_rpc_server \
-	leo-project/savanna_agent=0.4.7?23306e9:savanna_agent \
-	leo-project/savanna_commons=0.8.10?173d346:savanna_commons \
-	manopapad/proper=7d535ac?7d535ac:proper \
-	ninenines/cowboy=1.0.0?021f4f6:cowboy \
-	project-fifo/fifo_utils=0.1.8?a0b5786:fifo_utils \
-	seancribbs/neotoma=1.7.2?760928e:neotoma \
+	leo-project/leo_gateway=${PORTVERSION}:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}:leo_storage \
+	DeadZen/goldrush=0.1.6:goldrush \
+	basho/bitcask=2.0.0:bitcask \
+	basho/cuttlefish=2.0.1:cuttlefish \
+	basho/eleveldb=2.1.0:eleveldb \
+	basho/lager=2.0.3:lager \
+	basho/leveldb=2.0.0:leveldb \
+	davisp/jiffy=0.13.3:jiffy \
+	eproxus/meck=0.8.2:meck \
+	extend/cowlib=1.0.0:cowlib \
+	extend/ranch=1.0.0:ranch \
+	ferd/recon=2.2.1:recon \
+	jcomellas/getopt=v0.4.3:getopt \
+	leo-project/bear=0.8.2-for-leofs:bear \
+	leo-project/elarm=d237636:elarm \
+	leo-project/erlang-lz4=0.2.2:lz4 \
+	leo-project/erpcgen=0.2.3:erpcgen \
+	leo-project/folsom=0.8.2-for-leofs:folsom \
+	leo-project/leo_backend_db=1.1.8:leo_backend_db \
+	leo-project/leo_cache=0.6.3:leo_cache \
+	leo-project/leo_commons=1.1.1:leo_commons \
+	leo-project/leo_dcerl=0.2.12:leo_dcerl \
+	leo-project/leo_logger=1.1.5:leo_logger \
+	leo-project/leo_mcerl=0.4.1:leo_mcerl \
+	leo-project/leo_mq=1.3.9:leo_mq \
+	leo-project/leo_object_storage=1.2.7:leo_object_storage \
+	leo-project/leo_ordning_reda=1.0.0:leo_ordning_reda \
+	leo-project/leo_pod=0.6.3:leo_pod \
+	leo-project/leo_redundant_manager=1.9.13:leo_redundant_manager \
+	leo-project/leo_rpc=0.10.1:leo_rpc \
+	leo-project/leo_s3_libs=1.1.7:leo_s3_libs \
+	leo-project/leo_statistics=1.1.4:leo_statistics \
+	leo-project/leo_watchdog=0.8.0:leo_watchdog \
+	leo-project/libcutil=0.4.3:libcutil \
+	leo-project/nfs_rpc_server=0.2.3:nfs_rpc_server \
+	leo-project/savanna_agent=0.4.7:savanna_agent \
+	leo-project/savanna_commons=0.8.10:savanna_commons \
+	manopapad/proper=7d535ac:proper \
+	ninenines/cowboy=1.0.0:cowboy \
+	project-fifo/fifo_utils=0.1.8:fifo_utils \
+	seancribbs/neotoma=1.7.2:neotoma \
 
 .for dep in ${LEOFS_DEPS}
-.for account in ${dep:C,/.*$,,}
-.for project in ${dep:C,^[^/]+/([^=]+)=.*$,\1,}
-.for tagname in ${dep:C,^[^=]+=([^\?]+)\?.*$,\1,}
-.for commit in ${dep:C,^[^\?]+\?([^:]+):.*$,\1,}
-.for label in ${dep:C,^.*:,,}
-MASTER_SITES+=	https://codeload.github.com/${account}/${project}/legacy.tar.gz/${commit}?dummy=/:${label}
-DISTFILES+=	${project}-${tagname}.tar.gz:${label}
-.endfor
-.endfor
-.endfor
-.endfor
-.endfor
+account=	${dep:C,/.*$,,}
+project=	${dep:C,^[^/]+/([^=]+)=.*$,\1,}
+tagname=	${dep:C,^[^=]+=([^:]+):.*$,\1,}
+label=		${dep:C,^.*:,,}
+GH_ACCOUNT:=	${GH_ACCOUNT} ${account}:${label}
+GH_PROJECT:=	${GH_PROJECT} ${project}:${label}
+GH_TAGNAME:=	${GH_TAGNAME} ${tagname}:${label}
 .endfor
 
 post-extract:
 .for dep in ${LEOFS_DEPS}
-.for account in ${dep:C,/.*$,,}
-.for project in ${dep:C,^[^/]+/([^=]+)=.*$,\1,}
 .for tagname in ${dep:C,^[^=]+=([^\?]+)\?.*$,\1,}
-.for commit in ${dep:C,^[^\?]+\?([^:]+):.*$,\1,}
 .for label in ${dep:C,^.*:,,}
-	@${MKDIR} ${WRKSRC}/deps/${label}
-	@${TAR} -C ${WRKSRC}/deps/${label} --strip-components 1 \
-		-xzf ${DISTDIR}/${DIST_SUBDIR}/${project}-${tagname}.tar.gz
+	@${MKDIR} ${WRKSRC}/deps
+	@${MV} ${WRKSRC_${label}} ${WRKSRC}/deps/${label}
 	@if [ -f "${WRKSRC}/deps/${label}/src/${label}.app.src" ]; then \
 	    ${REINPLACE_CMD} -e "s|{vsn, *git}|{vsn, \"${tagname}\"}|" \
 		"${WRKSRC}/deps/${label}/src/${label}.app.src"; \
 	fi
-.endfor
-.endfor
-.endfor
 .endfor
 .endfor
 .endfor

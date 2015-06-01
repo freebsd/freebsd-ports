@@ -67,6 +67,5 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/olwm.info
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/props.info
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/textedit.info
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

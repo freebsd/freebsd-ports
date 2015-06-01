@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -19,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	okamstudio
 
 USES=		scons pkgconfig compiler
-USE_XORG=	x11 xcursor
+USE_XORG=	x11 xcursor xinerama
 USE_GL=		glu
 USE_OPENSSL=	yes
 
@@ -41,7 +40,7 @@ BITSUF=	.64
 BITSUF=	.32
 .endif
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 .if ${OSVERSION} < 900000
 BROKEN=	clang fails to link on 8.x
 .endif

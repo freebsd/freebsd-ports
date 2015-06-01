@@ -3,7 +3,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
@@ -38,5 +38,8 @@ post-patch:
 		${WRKSRC}/nsdejavu/Makefile.in ${WRKSRC}/nsdejavu/nsdejavu.1.in
 	@${REINPLACE_CMD} -e 's,@NSDEJAVU_LIBS@,@NSDEJAVU_LIBS@ -lXt -lXext,g' \
 		${WRKSRC}/nsdejavu/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/djview4/plugins/nsdejavu.so
 
 .include <bsd.port.mk>

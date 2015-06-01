@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	myrurema
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	japanese rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool which helps searching/browsing/writing the Japanese Ruby docs
 
-RUN_DEPENDS=	rubygem-launchy>=2.0.5:${PORTSDIR}/devel/rubygem-launchy
+RUN_DEPENDS=	rubygem-launchy>=2.3:${PORTSDIR}/devel/rubygem-launchy
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/rurema
 
 .include <bsd.port.pre.mk>

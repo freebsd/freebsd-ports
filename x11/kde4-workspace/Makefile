@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -133,6 +133,5 @@ post-install:
 	@${CAT} ${FILESDIR}/pkg-message.gstreamer >> ${PKGMESSAGE}
 .endif
 	@${HEAD} -1 ${PKGMESSAGE} >> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.16.1
+DISTVERSION=	1.16.2
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \

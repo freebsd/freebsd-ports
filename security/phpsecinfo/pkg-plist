@@ -139,14 +139,16 @@
 %%WWWDIR%%/docs/packages.html
 %%WWWDIR%%/docs/todolist.html
 %%WWWDIR%%/index.php
-@dirrm %%WWWDIR%%/PhpSecInfo/Test/CGI
-@dirrm %%WWWDIR%%/PhpSecInfo/Test/Core
-@dirrm %%WWWDIR%%/PhpSecInfo/Test/Curl
-@dirrm %%WWWDIR%%/PhpSecInfo/Test/Session
-@dirrm %%WWWDIR%%/PhpSecInfo/Test
-@dirrm %%WWWDIR%%/PhpSecInfo
-@dirrm %%WWWDIR%%/docs/media
-@dirrm %%WWWDIR%%/docs/PhpSecInfo
-@dirrm %%WWWDIR%%/docs/__filesource
-@dirrm %%WWWDIR%%/docs
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/PhpSecInfo/Test/CGI
+@dir %%WWWDIR%%/PhpSecInfo/Test/Core
+@dir %%WWWDIR%%/PhpSecInfo/Test/Curl
+@dir %%WWWDIR%%/PhpSecInfo/Test/Session
+@dir %%WWWDIR%%/PhpSecInfo/Test
+@dir %%WWWDIR%%/PhpSecInfo
+@dir %%WWWDIR%%/docs/media
+@dir %%WWWDIR%%/docs/PhpSecInfo
+@dir %%WWWDIR%%/docs/__filesource
+@dir %%WWWDIR%%/docs
+@dir %%WWWDIR%%
+@owner
+@group

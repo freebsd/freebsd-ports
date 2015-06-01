@@ -11,5 +11,3 @@ bin/wsmake
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%man/man1/wsmake.1.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

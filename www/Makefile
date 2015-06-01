@@ -407,6 +407,7 @@
     SUBDIR += mediawiki119
     SUBDIR += mediawiki123
     SUBDIR += mediawiki124
+    SUBDIR += mediawiki125
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -1800,6 +1801,7 @@
     SUBDIR += rubygem-bootstrap-sass
     SUBDIR += rubygem-browser
     SUBDIR += rubygem-cal-heatmap-rails
+    SUBDIR += rubygem-cal-heatmap-rails-rails4
     SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
@@ -1870,7 +1872,7 @@
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kensa
-    SUBDIR += rubygem-layout-yullio
+    SUBDIR += rubygem-layout_yullio_generator
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
     SUBDIR += rubygem-maruku
@@ -1922,6 +1924,7 @@
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
+    SUBDIR += rubygem-responders-rails3
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder

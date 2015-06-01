@@ -60,6 +60,5 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	@${FIND} ${STAGEDIR}${WWWDIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
 	@${FIND} ${STAGEDIR}${WWWDIR} -name '*.xml.sample' -exec ${CHMOD} 664 {} \;
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

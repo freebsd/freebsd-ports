@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -18,14 +18,14 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
 GNU_CONFIGURE=	yes
-USES=		gettext pkgconfig gmake libtool xfce tar:bzip2
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USES=		gettext pkgconfig gmake libtool xfce:gtk3 tar:bzip2
+USE_GNOME=	glib20 gtk30 intltool intlhack
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes
 USE_XORG=	xrandr x11 xext xtst xscrnsaver
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit \
-		--enable-xfce4panel \
-		--disable-lxdepanel
+		--enable-xfce4panel
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

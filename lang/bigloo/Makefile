@@ -3,7 +3,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	4.1a.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/indes/fp/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION:E}
@@ -86,6 +86,8 @@ post-patch:
 		${REINPLACE_CMD} -e '/LDFLAGS=/s|export|true|g'
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/bigloo/4.1a/*.so \
+		${STAGEDIR}${PREFIX}/lib/bigloo/4.1a/bmem/bmem.so
 .for i in bglafile bgldepend bgljfile bglmake bglmco bglpp bglprof bgltags \
 	bigloo
 	(cd ${WRKSRC}/manuals && ${INSTALL_MAN} ${i}.man \

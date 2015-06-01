@@ -1,6 +1,6 @@
---- src/fTRXControl.pas.orig	2014-06-30 23:40:59.000000000 -0700
-+++ src/fTRXControl.pas	2014-06-30 23:41:05.000000000 -0700
-@@ -658,7 +658,7 @@
+--- src/fTRXControl.pas.orig	2015-03-04 15:17:21 UTC
++++ src/fTRXControl.pas
+@@ -660,7 +660,7 @@ begin
    else
      radio.RigId := id;
    //Writeln('huu4');

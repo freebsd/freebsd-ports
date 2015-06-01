@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Helpers to construct database queries with ActiveRecord and Arel
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activerecord>=3.1.0:${PORTSDIR}/databases/rubygem-activerecord
 
 USE_RUBY=	yes

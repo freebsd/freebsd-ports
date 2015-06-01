@@ -6,9 +6,9 @@
  
 +if sys.platform.startswith('dragonfly') or \
 +   sys.platform.startswith('freebsd'):
-+    include_dirs = ['%%LOCALBASE%%/include/portaudio2']
++    include_dirs = ['%%LOCALBASE%%/include/']
 +    external_libraries = []
-+    extra_link_args = ['%%LOCALBASE%%/lib/portaudio2/libportaudio.so']
++    extra_link_args = ['%%LOCALBASE%%/lib/libportaudio.so']
 +
  if sys.platform == 'darwin':
      defines += [('MACOSX', '1')]

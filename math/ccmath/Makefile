@@ -3,7 +3,7 @@
 
 PORTNAME=	ccmath
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/libs
 
@@ -38,13 +38,16 @@ do-build:
 .endfor
 	(cd ${WRKSRC}/matrix; ${CC} ${COPT} -c qrb*.c)
 	${MV} ${WRKSRC}/matrix/*.o ${WRKSRC}/tmp
-	(cd ${WRKSRC}/tmp; ${AR} r libccm.a *.o; ${CC} -shared -o libccm.so *.o)
+	(cd ${WRKSRC}/tmp; \
+		${AR} r libccm.a *.o; \
+		${RANLIB} libccm.a; \
+		${CC} -shared -Wl,-soname=libccm.so.1 -o libccm.so.1 *.o)
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ccmath.h ${STAGEDIR}${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/tmp/libccm.a ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_PROGRAM} ${WRKSRC}/tmp/libccm.so ${STAGEDIR}${PREFIX}/lib
-	@${LN} -s libccm.so ${STAGEDIR}${PREFIX}/lib/libccm.so.1
+	@${INSTALL_LIB} ${WRKSRC}/tmp/libccm.so.1 ${STAGEDIR}${PREFIX}/lib
+	@${LN} -s libccm.so.1 ${STAGEDIR}${PREFIX}/lib/libccm.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ccmath
 	@${INSTALL_DATA} ${WRKSRC}/manual/* ${STAGEDIR}${PREFIX}/share/doc/ccmath
 

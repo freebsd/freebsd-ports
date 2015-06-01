@@ -20,6 +20,5 @@ CONFIGURE_ARGS=	--with-O2tools=${LOCALBASE} --datadir=${DATADIR}
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/ocropus/scripts
 	${INSTALL_DATA} ${WRKSRC}/ocropus/rec-nhocr-0.3.lua ${STAGEDIR}${PREFIX}/share/ocropus/scripts/rec-nhocr.lua
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

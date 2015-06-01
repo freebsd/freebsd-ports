@@ -3,7 +3,7 @@
 
 PORTNAME=	Math-Random
 PORTVERSION=	0.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Random number generators
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	example.pl
 USE_PERL5=	configure
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Random/Random.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Random/Random.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Random/Random.so
 
 .include <bsd.port.mk>

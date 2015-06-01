@@ -1,6 +1,6 @@
---- src/fRotControl.pas.orig	2014-06-30 23:40:26.000000000 -0700
-+++ src/fRotControl.pas	2014-06-30 23:40:33.000000000 -0700
-@@ -130,7 +130,7 @@
+--- src/fRotControl.pas.orig	2015-03-04 15:17:21 UTC
++++ src/fRotControl.pas
+@@ -137,7 +137,7 @@ begin
      rotor.RotId := 1
    else
      rotor.RotId := id;

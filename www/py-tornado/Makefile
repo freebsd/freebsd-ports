@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tornado
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 300
+.if ${PYTHON_REL} < 3000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.ssl_match_hostname>0:${PORTSDIR}/security/py-backports.ssl_match_hostname \
 		${PYTHON_PKGNAMEPREFIX}futures>0:${PORTSDIR}/devel/py-futures
 .endif

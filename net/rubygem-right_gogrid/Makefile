@@ -1,0 +1,21 @@
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	right_gogrid
+PORTVERSION=	0.1.0
+PORTREVISION=	1
+CATEGORIES=	net rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Provides Ruby access to the GoGrid API
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-right_http_connection>=1.2.4:${PORTSDIR}/net/rubygem-right_http_connection
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

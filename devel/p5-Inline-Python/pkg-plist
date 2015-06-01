@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Inline/Python.pm
+%%SITE_ARCH%%/Inline/Python.pod
+%%SITE_ARCH%%/auto/Inline/Python/Python.so
+%%PERL5_MAN3%%/Inline::Python.3.gz

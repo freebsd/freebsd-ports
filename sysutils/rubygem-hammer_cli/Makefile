@@ -3,7 +3,7 @@
 
 PORTNAME=	hammer_cli
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.10:${PORTSDIR}/devel/rubygem-apipie-bi
 		rubygem-fast_gettext>=0.8.1:${PORTSDIR}/devel/rubygem-fast_gettext \
 		rubygem-highline>=1.6.20:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-locale=2.0.8:${PORTSDIR}/devel/rubygem-locale \
+		rubygem-locale>=2.0.6:${PORTSDIR}/devel/rubygem-locale \
 		rubygem-logging>=1.8.1:${PORTSDIR}/devel/rubygem-logging \
 		rubygem-mime-types>=1.0:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-rest-client>=1.6.7:${PORTSDIR}/www/rubygem-rest-client \

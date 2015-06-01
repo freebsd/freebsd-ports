@@ -1,5 +1,5 @@
---- src/agent/subagents/freebsd/net.cpp.orig	2014-10-02 16:54:48.000000000 +0400
-+++ src/agent/subagents/freebsd/net.cpp	2014-10-02 17:19:53.000000000 +0400
+--- src/agent/subagents/freebsd/net.cpp.orig	2013-12-25 15:01:05 UTC
++++ src/agent/subagents/freebsd/net.cpp
 @@ -32,7 +32,6 @@
  #include <net/if_media.h>
  #include <net/if_dl.h>
@@ -18,7 +18,7 @@
  
  #include "net.h"
  
-@@ -60,14 +58,6 @@
+@@ -60,14 +58,6 @@ typedef struct t_IfList
  	int index;
  } IFLIST;
  
@@ -33,7 +33,7 @@
  LONG H_NetIpForwarding(const TCHAR *pszParam, const TCHAR *pArg, TCHAR *pValue)
  {
  	int nVer = CAST_FROM_POINTER(pArg, int);
-@@ -568,94 +558,66 @@
+@@ -568,94 +558,66 @@ LONG H_NetIfList(const TCHAR *pszParam, 
  	return nRet;
  }
  

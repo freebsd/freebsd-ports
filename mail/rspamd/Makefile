@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -35,7 +35,8 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DNO_SHARED=ON
 
-USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5
+USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
+		compiler:c11
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

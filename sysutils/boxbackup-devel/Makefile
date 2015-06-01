@@ -141,7 +141,6 @@ post-install:
 .if ${PORT_OPTIONS:MSERVER}
 	@${MKDIR} -m 0700 ${STAGEDIR}${PREFIX}/etc/box/bbstored
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 test:
 	 @${ECHO_CMD} "===> Running tests"

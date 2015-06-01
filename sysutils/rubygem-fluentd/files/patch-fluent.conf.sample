@@ -1,5 +1,5 @@
---- ./fluent.conf.sample.orig	2014-08-25 20:24:20.865112521 +0000
-+++ ./fluent.conf.sample	2014-08-25 20:23:48.360114719 +0000
+--- ./fluent.conf.sample.orig	2014-08-25 20:24:21 UTC
++++ ./fluent.conf.sample
 @@ -0,0 +1,100 @@
 +
 +## built-in TCP input

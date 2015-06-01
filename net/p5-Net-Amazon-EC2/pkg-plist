@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeInstanceAttributeResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeKeyPairsResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeSubnetResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeTags.pm
 %%SITE_PERL%%/Net/Amazon/EC2/Details.pm
 %%SITE_PERL%%/Net/Amazon/EC2/EbsBlockDevice.pm
@@ -32,6 +33,7 @@
 %%SITE_PERL%%/Net/Amazon/EC2/LaunchPermission.pm
 %%SITE_PERL%%/Net/Amazon/EC2/LaunchPermissionOperation.pm
 %%SITE_PERL%%/Net/Amazon/EC2/MonitoredInstance.pm
+%%SITE_PERL%%/Net/Amazon/EC2/NetworkInterfaceSet.pm
 %%SITE_PERL%%/Net/Amazon/EC2/PlacementResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ProductCode.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ProductInstanceResponse.pm
@@ -63,6 +65,7 @@
 %%PERL5_MAN3%%/Net::Amazon::EC2::DescribeImagesResponse.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::DescribeInstanceAttributeResponse.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::DescribeKeyPairsResponse.3.gz
+%%PERL5_MAN3%%/Net::Amazon::EC2::DescribeSubnetResponse.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::DescribeTags.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::Details.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::EbsBlockDevice.3.gz
@@ -83,6 +86,7 @@
 %%PERL5_MAN3%%/Net::Amazon::EC2::LaunchPermission.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::LaunchPermissionOperation.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::MonitoredInstance.3.gz
+%%PERL5_MAN3%%/Net::Amazon::EC2::NetworkInterfaceSet.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::PlacementResponse.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::ProductCode.3.gz
 %%PERL5_MAN3%%/Net::Amazon::EC2::ProductInstanceResponse.3.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	lastpass-cli
 PORTVERSION=	0.5.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	tom@hur.st
@@ -19,8 +20,6 @@ USE_OPENSSL=	yes
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	lastpass
-GH_PROJECT=	lastpass-cli
-GH_TAGNAME=	v${PORTVERSION}
 
 PLIST_FILES=	bin/lpass
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man

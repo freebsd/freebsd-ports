@@ -2,14 +2,17 @@
 
 PORTNAME=	dbd-sqlite3
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SQLite3 driver for DBI-for-Ruby
 
-RUN_DEPENDS=	rubygem-dbi>=0:${PORTSDIR}/databases/rubygem-dbi \
-		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	rubygem-dbi>=0.4.0:${PORTSDIR}/databases/rubygem-dbi \
+		rubygem-sqlite3-ruby>=0:${PORTSDIR}/databases/rubygem-sqlite3-ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

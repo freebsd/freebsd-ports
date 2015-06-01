@@ -16,10 +16,14 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus
 GH_PROJECT=	LucenePlusPlus
-USES=		cmake:outsource
+USES=		cmake:outsource compiler
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
+.endif
 
 post-install:
 	cd ${WRKSRC}/include &&${INSTALL_DATA} *.h \

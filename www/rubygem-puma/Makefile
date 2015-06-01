@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puma
-PORTVERSION=	2.9.1
-PORTREVISION=	1
+PORTVERSION=	2.11.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +11,14 @@ COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack15>=1.1:${PORTSDIR}/www/rubygem-rack15
 
-USES=		shebangfix
-SHEBANG_FILES=	tools/jungle/init.d/run-puma
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	tools/jungle/init.d/run-puma
+
 PLIST_FILES=	bin/puma bin/pumactl
 
 .include <bsd.port.mk>

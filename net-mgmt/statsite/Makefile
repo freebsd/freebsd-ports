@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsite
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -9,6 +9,7 @@ MAINTAINER=	rbarabas@rbarabas.info
 COMMENT=	C implementation of statsd
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		scons
 USE_GITHUB=	yes

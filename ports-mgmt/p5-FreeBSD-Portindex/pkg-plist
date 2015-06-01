@@ -10,9 +10,7 @@ man/man1/find-updated.1.gz
 man/man1/make-readmes.1.gz
 man/man1/portdepends.1.gz
 man/man1/portindex.1.gz
-@unexec if cmp -s %D/etc/portindex.cfg.sample %D/etc/portindex.cfg ; then rm -f %D/etc/portindex.cfg ; fi
-etc/portindex.cfg.sample
-@exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
+@sample etc/portindex.cfg.sample
 %%SITE_PERL%%/FreeBSD/Portindex/Category.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Config.pm
 %%SITE_PERL%%/FreeBSD/Portindex/FileObject.pm
@@ -23,3 +21,4 @@ etc/portindex.cfg.sample
 %%SITE_PERL%%/FreeBSD/Portindex/PortsTreeObject.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Tree.pm
 %%SITE_PERL%%/FreeBSD/Portindex/TreeObject.pm
+@dir(%%CACHE_OWNER%%,%%CACHE_GROUP%%,%%CACHE_MODE%%) %%CACHE_DIR%%

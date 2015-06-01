@@ -11,11 +11,13 @@ DISTNAME=	ZenTest-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Unit Testing Utility
 
-GEM_NAME=	${DISTNAME}
+LICENSE=	MIT
 
+GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/autotest \
 		bin/multigem \
 		bin/multiruby \

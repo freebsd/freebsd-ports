@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.2.7
+PORTVERSION=	2.4.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ 
 
@@ -87,10 +87,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \
 		${WRKSRC}/lives-plugins/weed-plugins/gdk/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
-	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; s|lseek64|lseek|g' \
-		${WRKSRC}/src/audio.c \
-		${WRKSRC}/lives-plugins/plugins/decoders/dv_decoder.c \
-		${WRKSRC}/lives-plugins/plugins/decoders/ogg_decoder.h
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
 	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \

@@ -62,7 +62,6 @@
 %%DATADIR%%/Resources/LICENSE
 %%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Transcoder
-%%DATADIR%%/Resources/PlexDevicesHighAssuranceCA.crt
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Info.plist
@@ -448,6 +447,7 @@
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/localmedia.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/subtitlehelpers.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/videohelpers.py
+%%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Libraries/Shared/ID3.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Libraries/Shared/ID3v2.py
@@ -628,6 +628,7 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/artisan_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/aspen_film_society.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/atom_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/audience_network.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/australian_film_commission.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avalanche_studios.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avnet_kerner.png
@@ -1141,6 +1142,7 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/270.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/360.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/432.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/468.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/480.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/480i.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/4k.png
@@ -1999,6 +2001,7 @@
 %%DATADIR%%/Resources/Profiles/Generic.xml
 %%DATADIR%%/Resources/Profiles/HTML TV App.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
+%%DATADIR%%/Resources/Profiles/Konvergo.xml
 %%DATADIR%%/Resources/Profiles/Mystery 3.xml
 %%DATADIR%%/Resources/Profiles/Mystery 4.xml
 %%DATADIR%%/Resources/Profiles/Mystery 5.xml

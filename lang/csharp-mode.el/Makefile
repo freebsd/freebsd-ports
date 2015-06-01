@@ -32,7 +32,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* \
 		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

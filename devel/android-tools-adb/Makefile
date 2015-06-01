@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	android-tools-adb
+DISTVERSIONPREFIX=	android-
 DISTVERSION=	5.0.0_r7
 CATEGORIES=	devel
 
@@ -12,10 +13,9 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
-GH_TAGNAME=	android-${DISTVERSION}
 
 USES=		gmake
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/adb
+WRKSRC_SUBDIR=	adb
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_JOBS_UNSAFE=	yes
 

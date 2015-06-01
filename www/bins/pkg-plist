@@ -412,18 +412,3 @@ share/locale/nl/LC_MESSAGES/bins.mo
 share/locale/pl/LC_MESSAGES/bins.mo
 share/locale/ru/LC_MESSAGES/bins.mo
 share/locale/zh_TW/LC_MESSAGES/bins.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/templates.swigs
-@dirrm %%DATADIR%%/templates.satyap/static
-@dirrm %%DATADIR%%/templates.satyap
-@dirrm %%DATADIR%%/templates.petrus/static
-@dirrm %%DATADIR%%/templates.petrus
-@dirrm %%DATADIR%%/templates.mwolson/static
-@dirrm %%DATADIR%%/templates.mwolson
-@dirrm %%DATADIR%%/templates.martin/static
-@dirrm %%DATADIR%%/templates.martin
-@dirrm %%DATADIR%%/templates.marc/static
-@dirrm %%DATADIR%%/templates.marc
-@dirrm %%DATADIR%%/templates.joi/static
-@dirrm %%DATADIR%%/templates.joi
-@dirrm %%DATADIR%%

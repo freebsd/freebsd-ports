@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	runit
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/

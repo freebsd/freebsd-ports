@@ -1,4 +1,2 @@
 sbin/cocoonctl
 cocoon/cocoon.sh
-@dirrm cocoon/tools
-@dirrm cocoon

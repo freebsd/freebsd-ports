@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dashboard
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/apps/xfdashboard/${PORTVERSION:R}/
 PKGNAMEPREFIX=	xfce4-

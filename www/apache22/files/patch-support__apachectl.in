@@ -1,5 +1,5 @@
---- ./support/apachectl.in.orig	2006-07-11 23:38:44.000000000 -0400
-+++ ./support/apachectl.in	2010-05-06 19:37:54.265730461 -0400
+--- support/apachectl.in.orig	2006-07-12 03:38:44 UTC
++++ support/apachectl.in
 @@ -35,6 +35,7 @@
  # When multiple arguments are given, only the error from the _last_
  # one is reported.  Run "apachectl help" for usage info
@@ -8,7 +8,7 @@
  ARGV="$@"
  #
  # |||||||||||||||||||| START CONFIGURATION SECTION  ||||||||||||||||||||
-@@ -42,6 +43,7 @@
+@@ -42,6 +43,7 @@ ARGV="$@"
  # 
  # the path to your httpd binary, including options if necessary
  HTTPD='@exp_sbindir@/@progname@'
@@ -16,7 +16,7 @@
  #
  # pick up any necessary environment variables
  if test -f @exp_sbindir@/envvars; then
-@@ -65,19 +67,21 @@
+@@ -65,19 +67,21 @@ ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
  
@@ -43,7 +43,7 @@
      ERROR=$?
      ;;
  startssl|sslstart|start-SSL)
-@@ -87,17 +91,19 @@
+@@ -87,17 +91,19 @@ startssl|sslstart|start-SSL)
      ERROR=2
      ;;
  configtest)

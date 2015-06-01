@@ -599,6 +599,7 @@
     SUBDIR += simscan
     SUBDIR += slapd-cyrus
     SUBDIR += sma
+    SUBDIR += smfsav
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
     SUBDIR += smtpfeed

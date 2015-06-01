@@ -1,6 +1,6 @@
---- Makefile.orig	2004-05-28 00:59:27.000000000 +0800
-+++ Makefile	2014-06-13 22:45:30.432113271 +0800
-@@ -51,11 +51,11 @@ debug: crfile.c
+--- Makefile.orig	2004-05-27 16:59:27 UTC
++++ Makefile
+@@ -51,11 +51,12 @@ debug: crfile.c
  	$(CC) $(DEBUG_FLAGS) -o crfile crfile.c
  
  install: crfile sesslog
@@ -10,9 +10,10 @@
 -	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(BINDIR)
 -	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(MANDIR)
 -	cp autobench.conf $(ETCDIR)
-+	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(DESTDIR)$(BINDIR)
-+	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(DESTDIR)$(MANDIR)
-+	cp autobench.conf $(DESTDIR)$(ETCDIR)/autobench.conf.sample
++	${BSD_INSTALL_PROGRAM} crfile sesslog $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_SCRIPT} autobench autobenchd autobench_admin bench2graph $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(DESTDIR)$(MANDIR)
++	${BSD_INSTALL_DATA} autobench.conf $(DESTDIR)$(ETCDIR)/autobench.conf.sample
  
  clean: 
  	rm -f crfile sesslog

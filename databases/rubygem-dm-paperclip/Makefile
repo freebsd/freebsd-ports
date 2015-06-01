@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	File attachments as attributes for DataMapper
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core \
 		rubygem-dm-migrations>=1.2.0:${PORTSDIR}/databases/rubygem-dm-migrations \
 		rubygem-dm-validations>=1.2.0:${PORTSDIR}/databases/rubygem-dm-validations \

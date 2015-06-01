@@ -53,7 +53,6 @@ CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
 OPTIONS_DEFINE=	PASSENGER MEMCACHE_CLIENT
-MONGRELCLUSTER_DESC=	Mongrel Cluster backend
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options

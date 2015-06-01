@@ -33,7 +33,7 @@ CLAMAV_RUN_DEPENDS=	clamscan:${PORTSDIR}/security/clamav
 GEOIP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GeoIP>0:${PORTSDIR}/net/py-GeoIP
 GTK2_USE=		gnome=pygtk2
 LOGIN_DESC=		Login form submission
-LOGIN_RUN_DEPENDS=	twill:${PORTSDIR}/www/twill
+LOGIN_RUN_DEPENDS=	twill>=0:${PORTSDIR}/www/twill
 NLS_USES=		gettext
 QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
 QT4_RUN_DEPENDS=\

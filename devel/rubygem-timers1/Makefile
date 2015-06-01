@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby one-shot and periodic timers
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

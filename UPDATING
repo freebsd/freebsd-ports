@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150527:
+  AFFECTS: users of sysutils/xfce4-power-manager
+  AUTHOR: olivierd@FreeBSD.org
+
+  Before upgrading, you must stop xfce4-power-manager daemon:
+
+    xfce4-power-manager --quit
+
 20150519:
   AFFECTS: users of sysutils/webmin and sysutils/usermin
   AUTHOR: olgeni@FreeBSD.org

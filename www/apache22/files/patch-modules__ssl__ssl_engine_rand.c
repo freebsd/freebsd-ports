@@ -1,6 +1,6 @@
---- modules/ssl/ssl_engine_rand.c.orig	2006-07-12 05:38:44.000000000 +0200
-+++ modules/ssl/ssl_engine_rand.c	2015-02-28 10:47:35.481607754 +0100
-@@ -83,17 +83,6 @@
+--- modules/ssl/ssl_engine_rand.c.orig	2006-07-12 03:38:44 UTC
++++ modules/ssl/ssl_engine_rand.c
+@@ -83,17 +83,6 @@ int ssl_rand_seed(server_rec *s, apr_poo
                  nDone += ssl_rand_feedfp(p, fp, pRandSeed->nBytes);
                  ssl_util_ppclose(s, p, fp);
              }

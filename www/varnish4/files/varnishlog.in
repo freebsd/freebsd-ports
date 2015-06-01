@@ -33,17 +33,16 @@
 
 . /etc/rc.subr
 
-name="varnishlog"
+name=varnishlog
 rcvar=varnishlog_enable
 
-command="%%PREFIX%%/bin/${name}"
-
-# read configuration and set defaults
 load_rc_config ${name}
-: ${varnishlog_enable:="NO"}
-: ${varnishlog_pidfile:="/var/run/${name}.pid"}
-: ${varnishlog_file:="/var/log/varnish.log"}
-: ${varnishlog_flags:="-P ${varnishlog_pidfile} -D -a -w ${varnishlog_file}"}
+: ${varnishlog_enable:=NO}
+: ${varnishlog_pidfile=/var/run/${name}.pid}
+: ${varnishlog_file=/var/log/varnish.log}
+: ${varnishlog_flags="-P ${varnishlog_pidfile} -D -a -w ${varnishlog_file}"}
 
+command="%%PREFIX%%/bin/${name}"
 pidfile=${varnishlog_pidfile}
+
 run_rc_command "$1"

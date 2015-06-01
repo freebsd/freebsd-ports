@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-watch
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

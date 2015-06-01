@@ -3,7 +3,7 @@
 
 PORTNAME=	calf
 PORTVERSION=	0.0.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -23,6 +23,7 @@ USES=		gmake pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -70,6 +71,8 @@ pre-build:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calf/calf.so \
+		${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
 .if ${PORT_OPTIONS:MLV2}
 	@(cd ${WRKDIR}/calfmakerdf/src && ./calfmakerdf -m ttl \
 		-p ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2)

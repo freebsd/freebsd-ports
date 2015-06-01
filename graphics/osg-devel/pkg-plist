@@ -685,6 +685,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_dxf.so
 %%FREETYPE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_freetype.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gdal.so
 %%GIF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gif.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_gles.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_glsl.so
 %%GSTREAMER%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gstreamer.so
 %%GTA%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gta.so
@@ -710,6 +711,7 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_openflight.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osc.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osga.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgjs.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgshadow.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgterrain.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgtgz.so

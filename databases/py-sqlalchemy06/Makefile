@@ -40,7 +40,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MCEXTENSIONS} && ${PYTHON_REL} < 300
+.if ${PORT_OPTIONS:MCEXTENSIONS} && ${PYTHON_REL} < 3000
 PLIST_SUB+=	SPEEDUPS=""
 .else
 PLIST_SUB+=	SPEEDUPS="@comment "
@@ -55,7 +55,7 @@ AL_PORTDOCS_SUBDIR=	core dialects orm
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL} && ${PYTHON_REL} < 300
+.if ${PORT_OPTIONS:MMYSQL} && ${PYTHON_REL} < 3000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
@@ -76,7 +76,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 .endif
 
 post-patch:
-.if ${PORT_OPTIONS:MCEXTENSIONS} && ${PYTHON_REL} < 300
+.if ${PORT_OPTIONS:MCEXTENSIONS} && ${PYTHON_REL} < 3000
 	@${REINPLACE_CMD} -e 's|BUILD_CEXTENSIONS = False|BUILD_CEXTENSIONS = True|' \
 		${WRKSRC}/setup.py
 .endif

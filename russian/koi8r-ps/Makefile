@@ -72,6 +72,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Fontmap.diff ${STAGEDIR}${CPS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${STAGEDIR}${CPS_DIR}
 	${LN} -s fonts.dir ${STAGEDIR}${CPS_DIR}/fonts.scale
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

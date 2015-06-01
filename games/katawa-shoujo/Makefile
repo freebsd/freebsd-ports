@@ -6,10 +6,10 @@ DISTVERSIONSUFFIX=-[linux-x86][FCF758CC]
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
 		GENTOO:icon
-DISTFILES=	[4ls]_${PORTNAME:S|-|_|}_${PORTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:game \
+DISTFILES=	[4ls]_${DISTNAME:S|-|_|:S|-|_|}${EXTRACT_SUFX}:game \
 		${PORTNAME}-48.png:icon \
 		${PORTNAME}-256.png:icon
-EXTRACT_ONLY=	[4ls]_${PORTNAME:S|-|_|}_${PORTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
+EXTRACT_ONLY=	[4ls]_${DISTNAME:S|-|_|:S|-|_|}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bishoujo-style visual novel about disabled adolescents

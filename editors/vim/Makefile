@@ -111,7 +111,7 @@ CTAGS_CMD=	${FIND} . -type f \\| ${XARGS} ctags
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-.if ${PYTHON_REL} < 300
+.if ${PYTHON_REL} < 3000
 MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp --disable-python3interp"
 .else
 MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"

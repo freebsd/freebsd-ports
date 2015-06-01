@@ -177,4 +177,10 @@ build-plist:
 			-e 's|${STAGEDIR}${DOCSDIR}|%%DOCSDIR%%|' \
 			-e 's|^|@dirrm |' >> ${PLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+BROKEN=		does not build: absence of strtoll(3)
+.endif
+
+.include <bsd.port.post.mk>

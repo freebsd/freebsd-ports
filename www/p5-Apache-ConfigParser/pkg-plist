@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Apache::ConfigParser.3.gz
-%%PERL5_MAN3%%/Apache::ConfigParser::Directive.3.gz
 %%SITE_PERL%%/Apache/ConfigParser.pm
 %%SITE_PERL%%/Apache/ConfigParser.pod
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pm
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pod
+%%PERL5_MAN3%%/Apache::ConfigParser.3.gz
+%%PERL5_MAN3%%/Apache::ConfigParser::Directive.3.gz

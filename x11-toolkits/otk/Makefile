@@ -7,15 +7,15 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20 # or later
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lib
 
+USES=		tar:tgz
 USE_XORG=	xmu xext x11
 USE_GL=		glut glu gl
 USE_LDCONFIG=	yes
@@ -31,7 +31,7 @@ do-build:
 		-o libotk.so.0 ${LDFLAGS}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libotk.so.0 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libotk.so.0 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libotk.so.0 ${STAGEDIR}${PREFIX}/lib/libotk.so
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include
 

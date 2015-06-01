@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
+BROKEN=		Fails to configure, HDF5 library needs SZIP, SZIP not defined
+
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 

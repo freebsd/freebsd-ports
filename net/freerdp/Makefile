@@ -3,6 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
+PORTREVISION=	2
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	ports@FreeBSD.org

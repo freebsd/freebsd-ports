@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jasonish
 GH_TAGNAME=	e59831a
 
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
+USES=		autoreconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-libdnet=${LOCALBASE}
 
 PLIST_FILES=	bin/arpscan

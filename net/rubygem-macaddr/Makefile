@@ -9,10 +9,13 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Cross Platform Mac Address Determination for Ruby
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	rubygem-systemu>=2.6.2:${PORTSDIR}/devel/rubygem-systemu
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

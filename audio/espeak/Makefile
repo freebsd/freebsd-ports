@@ -3,7 +3,7 @@
 
 PORTNAME=	espeak
 PORTVERSION=	1.48.04
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -19,7 +19,7 @@ OPTIONS_RADIO=	AUDIO_SYSTEM
 OPTIONS_RADIO_AUDIO_SYSTEM=	PORTAUDIO PULSEAUDIO RUNTIME
 RUNTIME_DESC=	Sound interface selected at runtime
 
-PORTAUDIOLIB=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
+PORTAUDIOLIB=	libportaudio.so:${PORTSDIR}/audio/portaudio
 PULSEAUDIOLIB=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 PORTAUDIO_LIB_DEPENDS=	${PORTAUDIOLIB}
@@ -49,8 +49,13 @@ REINPLACE_ARGS=	-i.bak -e "s|%%DATADIR%%|${DATADIR}|g"
 
 BROKEN_sparc64=	Does not compile on sparc64
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_FILES}
+.if ${PORT_OPTIONS:MPORTAUDIO}
+	${MV} ${WRKSRC}/src/portaudio19.h ${WRKSRC}/src/portaudio.h
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
---- ./rltiles/tool/tile_list_processor.cc.orig	2013-09-30 20:32:00.000000000 +0200
-+++ ./rltiles/tool/tile_list_processor.cc	2013-10-11 22:07:08.181888672 +0200
-@@ -52,7 +52,7 @@
+--- rltiles/tool/tile_list_processor.cc.orig	2015-03-04 04:53:29 UTC
++++ rltiles/tool/tile_list_processor.cc
+@@ -52,7 +52,7 @@ bool tile_list_processor::load_image(til
          ""
      };
  

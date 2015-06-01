@@ -633,6 +633,7 @@
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
+    SUBDIR += p5-Session-Token
     SUBDIR += p5-Snort-Rule
     SUBDIR += p5-String-MkPasswd
     SUBDIR += p5-Sudo
@@ -928,6 +929,7 @@
     SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
+    SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-roauth

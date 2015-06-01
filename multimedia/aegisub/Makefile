@@ -3,7 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
@@ -69,11 +69,7 @@ HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 HUNSPELL_CONFIGURE_OFF=	--without-hunspell
 OPENAL_USES=		openal
 OPENAL_CONFIGURE_OFF=	--without-openal
-PORTAUDIO_BUILD_DEPENDS=\
-			portaudio2>0:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_CFLAGS=	-isystem ${LOCALBASE}/include/portaudio2
-PORTAUDIO_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 PORTAUDIO_CONFIGURE_OFF=\
 			--without-portaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio

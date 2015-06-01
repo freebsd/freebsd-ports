@@ -1,4 +1,4 @@
 SHA256 (gnupg-2.0.27.tar.bz2) = 57646d3e4b919fa1e5c8f1c0cf5fe1215333041c493a5ebc4b8f2978dbe930f2
 SIZE (gnupg-2.0.27.tar.bz2) = 4424679
-SHA256 (gnupg-2.0.27.tar.bz2.sig) = f0b61eea0df2a3cf3198960966d4e5bc4d5c3e50dd1bdfab0aaa217e5f4f4a5a
-SIZE (gnupg-2.0.27.tar.bz2.sig) = 287
+SHA256 (gnupg-2.0.27.tar.bz2.sig) = 653a2d57194d69d160d77bd767246252ba7cab1ea02e108e1b0c5af4cfc6cd9b
+SIZE (gnupg-2.0.27.tar.bz2.sig) = 574

@@ -8,7 +8,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/ \
 		http://www.rename-it.nl/dovecot/${PORTVERSION:R}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 LICENSE=	LGPL21 MIT

@@ -1,6 +1,6 @@
---- modules/ssl/ssl_engine_init.c.orig	2014-07-16 08:04:38.000000000 +0200
-+++ modules/ssl/ssl_engine_init.c	2015-02-28 10:52:11.571641334 +0100
-@@ -406,9 +406,11 @@
+--- modules/ssl/ssl_engine_init.c.orig	2014-07-16 06:04:38 UTC
++++ modules/ssl/ssl_engine_init.c
+@@ -406,9 +406,11 @@ void ssl_init_Engine(server_rec *s, apr_
              ssl_die();
          }
  
@@ -12,7 +12,7 @@
  
          if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
              ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
-@@ -584,6 +586,10 @@
+@@ -584,6 +586,10 @@ static void ssl_init_ctx_protocol(server
  #endif
  
  
@@ -23,7 +23,7 @@
  #ifndef OPENSSL_NO_COMP
      if (sc->compression != TRUE) {
  #ifdef SSL_OP_NO_COMPRESSION
-@@ -831,7 +837,11 @@
+@@ -831,7 +837,11 @@ static void ssl_init_ctx_cert_chain(serv
          }
      }
  

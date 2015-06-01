@@ -7,6 +7,7 @@
 
 PORTNAME=	snappy
 PORTVERSION=	1.0.4.1
+DISTVERSIONPREFIX=	snappy-java-
 PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	GH:source1 \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
-GH_TAGNAME=	snappy-java-${PORTVERSION}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	clhep
-PORTVERSION=	2.2.0.5
+PORTVERSION=	2.2.0.6
 CATEGORIES=	science
 MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 LICENSE=	GPLv3 LGPL3

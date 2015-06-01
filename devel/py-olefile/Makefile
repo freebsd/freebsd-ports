@@ -20,7 +20,7 @@ USE_PYTHON=	distutils autoplist
 
 # Remove files not python 3 ready and allow compile again
 post-patch:
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 	${RM} ${WRKSRC}/olefile/olefile2.py
 .endif
 	${REINPLACE_CMD} "/install' in sys.argv:/,+1d" ${WRKSRC}/setup.py

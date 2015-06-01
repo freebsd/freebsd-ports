@@ -57,6 +57,376 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cfb12f02-06e1-11e5-8fda-002590263bf5">
+    <topic>cabextract -- directory traversal with UTF-8 symbols in filenames</topic>
+    <affects>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cabextract ChangeLog reports:</p>
+	<blockquote cite="http://www.cabextract.org.uk/#changes">
+	  <p>It was possible for cabinet files to extract to absolute file
+	    locations, and it was possible on Cygwin to get around cabextract's
+	    absolute and relative path protections by using backslashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.cabextract.org.uk/#changes</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/02/18/3</mlist>
+      <cvename>CVE-2015-2060</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc7548ef-06e1-11e5-8fda-002590263bf5">
+    <topic>libmspack -- frame_end overflow which could cause infinite loop</topic>
+    <affects>
+      <package>
+	<name>libmspack</name>
+	<range><lt>0.5</lt></range>
+      </package>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a denial of service vulnerability in libmspack.  The
+	  libmspack code is built into cabextract, so it is also
+	  vulnerable.</p>
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9556">
+	  <p>Integer overflow in the qtmd_decompress function in libmspack 0.4
+	    allows remote attackers to cause a denial of service (hang) via a
+	    crafted CAB file, which triggers an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9556</cvename>
+      <url>https://bugs.debian.org/773041</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/01/07/2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-12-11</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="48504af7-07ad-11e5-879c-00e0814cab4e">
+    <topic>django -- Fixed session flushing in the cached_db backend</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.8</ge><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.8</ge><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.8</ge><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.8</ge><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150531,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150531,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150531,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150531,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/may/20/security-release/">
+	  <p>A change to session.flush() in the cached_db session backend in
+	    Django 1.8 mistakenly sets the session key to an empty string
+	    rather than None. An empty string is treated as a valid session key
+	    and the session cookie is set accordingly. Any users with an empty
+	    string in their session cookie will use the same session store.
+	    session.flush() is called by django.contrib.auth.logout() and, more
+	    seriously, by django.contrib.auth.login() when a user switches accounts.
+	    If a user is logged in and logs in again to a different account
+	    (without logging out) the session is flushed to avoid reuse.
+	    After the session is flushed (and its session key becomes '') the
+	    account details are set on the session and the session is saved.
+	    Any users with an empty string in their session cookie will now be
+	    logged into that account.</p>
+	  <p>Thanks to Sam Cooke for reporting the issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/may/20/security-release/</url>
+      <cvename>CVE-2015-3982</cvename>
+    </references>
+    <dates>
+      <discovery>2015-05-20</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9471ec47-05a2-11e5-8fda-002590263bf5">
+    <topic>proxychains-ng -- current path as the first directory for the library search path</topic>
+    <affects>
+      <package>
+	<name>proxychains-ng</name>
+	<range><lt>4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mamoru TASAKA reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/430">
+	  <p>proxychains4 sets LD_PRELOAD to dlopen libproxychains4.so
+	    and execvp() the arbitrary command user has specified.
+	    proxychains4 sets the current directory as the first path
+	    to search libproxychains4.so</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2015/05/12/6</mlist>
+      <mlist>http://seclists.org/oss-sec/2015/q2/430</mlist>
+      <cvename>CVE-2015-3887</cvename>
+    </references>
+    <dates>
+      <discovery>2015-05-11</discovery>
+      <entry>2015-05-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a13500d0-0570-11e5-aab1-d050996490d0">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.5.html">
+	  <p>The following vulnerabilities have been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-12</p>
+	      <p>The LBMR dissector could go into an infinite loop.
+		(Bug 11036) CVE-2015-3808, CVE-2015-3809</p></li>
+	    <li><p>wnpa-sec-2015-13</p>
+	      <p>The WebSocket dissector could recurse excessively.
+		(Bug 10989) CVE-2015-3810</p></li>
+	    <li><p>wnpa-sec-2015-14</p>
+	      <p>The WCP dissector could crash while decompressing data.
+		(Bug 10978) CVE-2015-3811</p></li>
+	    <li><p>wnpa-sec-2015-15</p>
+	      <p>The X11 dissector could leak memory. (Bug 11088)
+		CVE-2015-3812</p></li>
+	    <li><p>wnpa-sec-2015-16</p>
+	      <p>The packet reassembly code could leak memory.
+		(Bug 11129) CVE-2015-3813</p></li>
+	    <li><p>wnpa-sec-2015-17</p>
+	      <p>The IEEE 802.11 dissector could go into an infinite loop.
+		(Bug 11110) CVE-2015-3814</p></li>
+	    <li><p>wnpa-sec-2015-18</p>
+	      <p>The Android Logcat file parser could crash. Discovered by
+		Hanno Böck. (Bug 11188) CVE-2015-3815</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3808</cvename>
+      <cvename>CVE-2015-3809</cvename>
+      <cvename>CVE-2015-3810</cvename>
+      <cvename>CVE-2015-3811</cvename>
+      <cvename>CVE-2015-3812</cvename>
+      <cvename>CVE-2015-3813</cvename>
+      <cvename>CVE-2015-3814</cvename>
+      <cvename>CVE-2015-3815</cvename>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.5.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-12.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-13.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-14.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-15.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-16.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-17.html</url>
+      <url>https://www.wireshark.org/security/wnpa-sec-2015-18.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-12</discovery>
+      <entry>2015-05-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="406636fe-055d-11e5-aab1-d050996490d0">
+    <topic>krb5 -- requires_preauth bypass in PKINIT-enabled KDC</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.13.2</lt></range>
+      </package>
+      <package>
+	<name>krb5-112</name>
+	<range><lt>1.12.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MIT reports:</p>
+	<blockquote cite="http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160">
+	  <p>In MIT krb5 1.12 and later, when the KDC is configured
+	    with PKINIT support, an unauthenticated remote attacker
+	    can bypass the requires_preauth flag on a client principal
+	    and obtain a ciphertext encrypted in the principal's
+	    long-term key.  This ciphertext could be used to conduct
+	    an off-line dictionary attack against the user's password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2694</cvename>
+      <url>http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160</url>
+    </references>
+    <dates>
+      <discovery>2015-05-25</discovery>
+      <entry>2015-05-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="27f742f6-03f4-11e5-aab1-d050996490d0">
+    <topic>cURL -- sensitive HTTP server headers also sent to proxies</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.42.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150429.html">
+	  <p>libcurl provides applications a way to set custom HTTP
+	    headers to be sent to the server by using CURLOPT_HTTPHEADER.
+	    A similar option is available for the curl command-line
+	    tool with the '--header' option.</p>
+	  <p>When the connection passes through an HTTP proxy the
+	    same set of headers is sent to the proxy as well by default.
+	    While this is by design, it has not necessarily been clear
+	    nor understood by application programmers.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3153</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150429.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-29</discovery>
+      <entry>2015-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6294f75f-03f2-11e5-aab1-d050996490d0">
+    <topic>cURL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.42.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422A.html">
+	  <p>libcurl keeps a pool of its last few connections around
+	    after use to fascilitate easy, conventient and completely
+	    transparent connection re-use for applications.</p>
+	  <p>When doing HTTP requests NTLM authenticated, the entire
+	    connnection becomes authenticated and not just the
+	    specific HTTP request which is otherwise how HTTP works.
+	    This makes NTLM special and a subject for special
+	    treatment in the code. With NTLM, once the connection is
+	    authenticated, no further authentication is necessary until
+	    the connection gets closed.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422B.html">
+	  <p>When doing HTTP requests Negotiate authenticated, the
+	    entire connnection may become authenticated and not just
+	    the specific HTTP request which is otherwise how HTTP
+	    works, as Negotiate can basically use NTLM under the hood.
+	    curl was not adhering to this fact but would assume that
+	    such requests would also be authenticated per request.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422C.html">
+	  <p>libcurl supports HTTP "cookies" as documented in RFC 6265.
+	    Together with each individual cookie there are several
+	    different properties, but for this vulnerability we
+	    focus on the associated "path" element. It tells
+	    information about for which path on a given host the
+	    cookies is valid.</p>
+	  <p>The internal libcurl function called sanitize_cookie_path()
+	    that cleans up the path element as given to it from a
+	    remote site or when read from a file, did not properly
+	    validate the input. If given a path that consisted of a
+	    single double-quote, libcurl would index a newly
+	    allocated memory area with index -1 and assign a zero
+	    to it, thus destroying heap memory it wasn't supposed to.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150422D.html">
+	  <p>There is a private function in libcurl called fix_hostname()
+	    that removes a trailing dot from the host name if there is
+	    one. The function is called after the host name has been
+	    extracted from the URL libcurl has been told to act on.</p>
+	  <p>If a URL is given with a zero-length host name, like in
+	    "http://:80" or just ":80", fix_hostname() will index the
+	    host name pointer with a -1 offset (as it blindly assumes
+	    a non-zero length) and both read and assign that address.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://curl.haxx.se/docs/adv_20150422A.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422B.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422C.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150422D.html</url>
+      <cvename>CVE-2014-3143</cvename>
+      <cvename>CVE-2014-3144</cvename>
+      <cvename>CVE-2014-3145</cvename>
+      <cvename>CVE-2014-3148</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-22</discovery>
+      <entry>2015-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="607f4d44-0158-11e5-8fda-002590263bf5">
     <topic>cassandra -- remote execution of arbitrary code</topic>
     <affects>
@@ -733,8 +1103,16 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>ufraw -- integer overflow condition</topic>
+    <topic>kodi, rawstudio, and ufraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>kodi</name>
+	<range><lt>14.2_1</lt></range>
+      </package>
+      <package>
+	<name>rawstudio</name>
+	<range><lt>2.0_11</lt></range>
+      </package>
       <package>
 	<name>ufraw</name>
 	<range><lt>0.21</lt></range>
@@ -756,12 +1134,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-3885</cvename>
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
-      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3885</url>
+      <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
+      <modified>2015-06-01</modified>
     </dates>
   </vuln>
 

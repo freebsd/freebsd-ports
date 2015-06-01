@@ -3,6 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	6.04
+PORTREVISION=	1
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}6/${PORTNAME:S/c/C/}${PORTVERSION}
 PKGNAMESUFFIX=	6
@@ -86,10 +87,8 @@ PNG_DESC=		Build Image opcodes
 PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 PNG_CMAKE_OFF=		-DBUILD_IMAGE_OPCODES:BOOL=OFF
 PORTAUDIO_DESC=		Build PortAudio I/O module
-PORTAUDIO_BUILD_DEPENDS=portaudio2>0:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
-PORTAUDIO_CMAKE_ON=	-DPORTAUDIO_INCLUDE_PATH:STRING="${LOCALBASE}/include/portaudio2" \
-			-DPORTAUDIO_LIBRARY:STRING="${LOCALBASE}/lib/portaudio2/libportaudio.so"
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_CMAKE_ON=	-DUSE_PORTAUDIO:BOOL=ON
 PORTAUDIO_CMAKE_OFF=	-DUSE_PORTAUDIO:BOOL=OFF
 PULSEAUDIO_DESC=	Build PulseAudio I/O module
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
@@ -119,9 +118,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/InOut/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		's|<portaudio.h>|<portaudio2/portaudio.h>|' \
-		${WRKSRC}/InOut/rtpa.c
 	@${REINPLACE_CMD} -e \
 		's|/usr/include/Python2.7|${PYTHON_INCLUDEDIR}| ; \
 		 s|/usr/local|${LOCALBASE}| ; \

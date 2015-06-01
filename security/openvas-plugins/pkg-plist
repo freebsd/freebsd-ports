@@ -11349,5 +11349,3 @@ lib/openvas/plugins/zope_path_disclosure.nasl
 lib/openvas/plugins/zope_zclass.nasl
 lib/openvas/plugins/zyxel_http_pwd.nasl
 lib/openvas/plugins/zyxel_pwd.nasl
-@dirrmtry lib/openvas/plugins
-@dirrmtry lib/openvas

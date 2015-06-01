@@ -1,0 +1,10 @@
+--- Makefile.orig	2000-05-13 16:12:00 UTC
++++ Makefile
+@@ -13,6 +13,5 @@ CC = gcc
+ all: felis
+ 
+ felis: felis.c
+-	CC ${CFLAGS} felis.c -o felis
+-	strip felis
++	${CC} ${CFLAGS} felis.c -o felis
+ 

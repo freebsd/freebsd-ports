@@ -1095,13 +1095,14 @@
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rbvmomi
-    SUBDIR += rubygem-rightaws
-    SUBDIR += rubygem-rightflexiscale
-    SUBDIR += rubygem-rightgogrid
-    SUBDIR += rubygem-righthttpconnection
-    SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-right_aws
+    SUBDIR += rubygem-right_flexiscale
+    SUBDIR += rubygem-right_gogrid
+    SUBDIR += rubygem-right_http_connection
+    SUBDIR += rubygem-right_slicehost
     SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-ruby-openid
+    SUBDIR += rubygem-ruby-yadis
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
@@ -1116,7 +1117,6 @@
     SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
-    SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
@@ -1193,6 +1193,7 @@
     SUBDIR += syncthing
     SUBDIR += syncthing-cli
     SUBDIR += syncthing-discosrv
+    SUBDIR += syncthing-inotify
     SUBDIR += tableutil
     SUBDIR += tac_plus4
     SUBDIR += tapidbus

@@ -64,18 +64,18 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 .endif
 .endif
 
-.if ${PYTHON_REL} < 330
+.if ${PYTHON_REL} < 3300
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
 .endif
 
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 pre-build:
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/lib
 .endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
 .endif
 
@@ -88,13 +88,13 @@ post-install:
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
 .endif
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 regression-test: build
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/test
 .endif
 	@cd ${WRKSRC} && ${PYTHON_CMD} sqla_nose.py

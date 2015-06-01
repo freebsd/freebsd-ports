@@ -4,7 +4,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
@@ -16,7 +16,7 @@ LICENSE=	GPLv2 # (or later)
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libmad.so:${PORTSDIR}/audio/libmad \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libtag.so:${PORTSDIR}/audio/taglib \

@@ -44,8 +44,8 @@ pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|${B2EVO_DIR}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${B2EVO_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
+		${SED} -e 's|^|@dir ${B2EVO_DIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dir ${B2EVO_DIR} >> ${PLIST}
 	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 
 do-install:

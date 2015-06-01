@@ -51,6 +51,7 @@
     SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += azure-agent
+    SUBDIR += b2sum
     SUBDIR += b43-fwcutter
     SUBDIR += backupchecker
     SUBDIR += backuppc
@@ -739,6 +740,7 @@
     SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
+    SUBDIR += py-croniter
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
@@ -851,6 +853,7 @@
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-shellany
+    SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_salt
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu

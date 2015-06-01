@@ -41,6 +41,7 @@
     SUBDIR += v7sh
     SUBDIR += viewglob
     SUBDIR += vshnu
+    SUBDIR += wcd
     SUBDIR += zsh
 
 .include <bsd.port.subdir.mk>

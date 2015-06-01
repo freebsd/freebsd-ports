@@ -20,5 +20,6 @@ CONFIGURE_ARGS=	</dev/null
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

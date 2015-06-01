@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.1-2
+DISTVERSION=	6.9.1-3
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -377,10 +377,6 @@ INSTALL_TARGET=	install-strip
 
 .if ${PORT_OPTIONS:MTESTS}
 USE_GHOSTSCRIPT_BUILD=yes
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${FILESDIR}/extra-magick_locale.c
 .endif
 
 post-patch:
