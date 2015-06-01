@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	20150530
+PORTVERSION=	20150601
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	BASH ZSH
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
-GH_TAGNAME=	a11c009
+GH_TAGNAME=	e09be18
 
 PLIST_FILES=	bin/${PORTNAME}
 
