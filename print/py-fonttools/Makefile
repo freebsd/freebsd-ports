@@ -3,6 +3,7 @@
 
 PORTNAME=	fonttools
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,14 +13,11 @@ COMMENT=	Open source library for manipulating fonts, written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYXML}
-RUN_DEPENDS=	${PYXML}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	behdad
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-fonttools
