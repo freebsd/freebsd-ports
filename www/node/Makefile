@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
@@ -50,10 +50,6 @@ post-patch:
 		${WRKSRC}/deps/v8/src/d8.gyp
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
-	@${ECHO_MSG}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
 .include <bsd.port.post.mk>
