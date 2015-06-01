@@ -46,11 +46,3 @@ bin/paros
 %%DATADIR%%/xml/session.xml
 %%DATADIR%%/xml/test.xml
 %%DATADIR%%/xml/untitledsession.xml
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%/filter
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/log
-@dirrm %%DATADIR%%/plugin
-@dirrm %%DATADIR%%/session
-@dirrm %%DATADIR%%/xml
-@dirrm %%DATADIR%%
