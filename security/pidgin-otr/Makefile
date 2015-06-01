@@ -2,7 +2,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	4.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
@@ -24,6 +24,7 @@ CPE_VENDOR=	cypherpunks
 CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
