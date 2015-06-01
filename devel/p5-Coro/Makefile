@@ -38,4 +38,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/cede-vs-schedule ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+BROKEN=		does not build with perl >= 5.22
+.endif
+
+.include <bsd.port.post.mk>
