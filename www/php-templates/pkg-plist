@@ -1,2 +1,1 @@
 lib/php/%%PHP_EXT_DIR%%/templates.so
-@dirrmtry lib/php/%%PHP_EXT_DIR%%

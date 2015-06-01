@@ -3,6 +3,7 @@
 
 PORTNAME=	php-templates
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.7:ext \
 		SF/${PORTNAME}/${PORTNAME}-doc/html:doc
@@ -27,7 +28,7 @@ PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
-	${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
+	${INSTALL_LIB} ${WRKSRC}/modules/templates.so \
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}-doc/* ${STAGEDIR}${DOCSDIR}
