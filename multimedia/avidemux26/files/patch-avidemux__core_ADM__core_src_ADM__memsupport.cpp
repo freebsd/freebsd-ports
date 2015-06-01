@@ -1,4 +1,4 @@
---- avidemux_core/ADM_core/src/ADM_memsupport.cpp.orig
+--- avidemux_core/ADM_core/src/ADM_memsupport.cpp.orig	2015-05-15 09:19:29 UTC
 +++ avidemux_core/ADM_core/src/ADM_memsupport.cpp
 @@ -23,7 +23,7 @@
   *   (at your option) any later version.                                   *
