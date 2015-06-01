@@ -3,6 +3,7 @@
 
 PORTNAME=	links
 PORTVERSION=	1.03
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
