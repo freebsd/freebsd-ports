@@ -3,11 +3,11 @@
 
 PORTNAME=	node
 PORTVERSION=	0.10.38
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	010
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
@@ -52,11 +52,6 @@ post-patch:
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
-	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/node.1
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
-	@${ECHO_MSG}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
 .include <bsd.port.post.mk>
