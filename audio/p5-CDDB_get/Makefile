@@ -14,7 +14,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	High-level interface to the Compact Disc Database
 
 LICENSE=	GPLv2
-LICENSE=	${WRKSRC}/Copying
+LICENSE_FILE=	${WRKSRC}/Copying
 
 PORTSCOUT=	skipv:2.28.1
 
