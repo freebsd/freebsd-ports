@@ -23,4 +23,4 @@
 %%LIBTURBOJPEG%%lib/libturbojpeg.a
 %%LIBTURBOJPEG%%lib/libturbojpeg.so
 %%LIBTURBOJPEG%%lib/libturbojpeg.so.0
-%%LIBTURBOJPEG%%lib/libturbojpeg.so.0.0.0
+%%LIBTURBOJPEG%%lib/libturbojpeg.so.0.1.0
