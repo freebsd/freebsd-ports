@@ -1,0 +1,5 @@
+collective.templateengines is an template engine abstraction layer for Python.
+It defines generic Zope interfaces for communicating with various Python
+template engines to achieve higher code reuse value.
+
+WWW: https://pypi.python.org/pypi/collective.templateengines/
