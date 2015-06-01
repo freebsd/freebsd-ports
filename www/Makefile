@@ -1671,6 +1671,7 @@
     SUBDIR += py-postmarkup
     SUBDIR += py-praw
     SUBDIR += py-prewikka
+    SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
     SUBDIR += py-pyjwt
     SUBDIR += py-pylons
