@@ -1,9 +1,10 @@
+# Created by: Ben Woods <woodsb02@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	plexhometheater
-PORTVERSION=	1.3.6
+PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=v
-DISTVERSIONSUFFIX=.441-309e72d1
+DISTVERSIONSUFFIX=.469-47a90f01
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
