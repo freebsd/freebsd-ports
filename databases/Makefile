@@ -747,6 +747,7 @@
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
     SUBDIR += py-pymysql
+    SUBDIR += py-pypuppetdb
     SUBDIR += py-pytc
     SUBDIR += py-python-rrdtool
     SUBDIR += py-qt4-sql
