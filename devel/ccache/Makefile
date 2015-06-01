@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccache
-PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTVERSION=	3.2.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
