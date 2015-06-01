@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.0
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -44,7 +44,7 @@ USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-e3d046c43451
+WRKSRC=		${WRKDIR}/pypy-pypy-295ee98b6928
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -236,11 +236,8 @@ do-configure:
 	${CP} ${WRKDIR}/use.pypy ${PKGDEINSTALL}
 
 post-build:
-# UPDATING: check pypy/tool/release/package.py for list of cffi modules
-.for mod in _sqlite3 _curses syslog gdbm
-	${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKDIR}:${LD_LIBRARY_PATH} ${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
-.endfor
-	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy-${PYPY_VER:C/\.//}.so
+	${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKDIR}:${LD_LIBRARY_PATH} ${WRKDIR}/${PYPY_PRIMARY} ${FILESDIR}/compile_cffi.py 
+	${FIND} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/ -name "*.pypy-${PYPY_VER:C/\.//}.so" | ${XARGS} ${STRIP_CMD}
 .for _path in ${PYPYDIRS}
 	-${FIND} ${WRKDIR}/${_path:C/.*://}/ -type d | \
 		${XARGS} -n1 ${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
