@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC2
+DISTVERSION=	${PERL_VERSION}
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN/../../src/5.0
+MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/R/RJ/RJBS
 DIST_SUBDIR=	perl
 
 MAINTAINER=	perl@FreeBSD.org
