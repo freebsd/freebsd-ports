@@ -57,6 +57,71 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cfb12f02-06e1-11e5-8fda-002590263bf5">
+    <topic>cabextract -- directory traversal with UTF-8 symbols in filenames</topic>
+    <affects>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cabextract ChangeLog reports:</p>
+	<blockquote cite="http://www.cabextract.org.uk/#changes">
+	  <p>It was possible for cabinet files to extract to absolute file
+	    locations, and it was possible on Cygwin to get around cabextract's
+	    absolute and relative path protections by using backslashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.cabextract.org.uk/#changes</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/02/18/3</mlist>
+      <cvename>CVE-2015-2060</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-18</discovery>
+      <entry>2015-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc7548ef-06e1-11e5-8fda-002590263bf5">
+    <topic>libmspack -- frame_end overflow which could cause infinite loop</topic>
+    <affects>
+      <package>
+	<name>libmspack</name>
+	<range><lt>0.5</lt></range>
+      </package>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a denial of service vulnerability in libmspack.  The
+	  libmspack code is built into cabextract, so it is also
+	  vulnerable.</p>
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9556">
+	  <p>Integer overflow in the qtmd_decompress function in libmspack 0.4
+	    allows remote attackers to cause a denial of service (hang) via a
+	    crafted CAB file, which triggers an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9556</cvename>
+      <url>https://bugs.debian.org/773041</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/01/07/2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-12-11</discovery>
+      <entry>2015-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48504af7-07ad-11e5-879c-00e0814cab4e">
     <topic>django -- Fixed session flushing in the cached_db backend</topic>
     <affects>
