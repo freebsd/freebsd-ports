@@ -92,6 +92,3 @@ www/openscep/scepxid.1.html
 www/openscep/title.html
 www/openscep/updatecrl.8.html
 www/openscep/welcome.html
-@dirrm www/cgi-bin/openscep
-@dirrm www/openscep
-@dirrmtry etc/openscep
