@@ -1,0 +1,15 @@
+librsb is a library for sparse matrix computations featuring the Recursive
+Sparse Blocks (RSB) matrix format. This format allows cache efficient and
+multi-threaded (that is, shared memory parallel) operations on large sparse
+matrices. The most common operations necessary to iterative solvers are
+available, e.g.: matrix-vector multiplication, triangular solution,
+rows/columns scaling, diagonal extraction / setting, blocks extraction, norm
+computation, formats conversion. The RSB format is especially well suited
+for symmetric and transposed multiplication variants. Most numerical kernels
+code is auto generated, and the supported numerical types can be chosen by
+the user at build time.
+
+librsb implements the Sparse BLAS standard, as specified in the BLAS Forum
+documents.
+
+WWW: http://librsb.sourceforge.net/
