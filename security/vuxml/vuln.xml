@@ -57,6 +57,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ffe2d86c-07d9-11e5-9a28-001e67150279">
+    <topic>rest-client -- plaintext password disclosure</topic>
+    <affects>
+      <package>
+	<name>rubygem-rest-client</name>
+	<range><lt>1.6.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The open sourced vulnerability database reports:</p>
+	<blockquote cite="http://osvdb.org/show/osvdb/117461">
+	  <p>REST Client for Ruby contains a flaw that is due to the application
+	    logging password information in plaintext. This may allow a local
+	    attacker to gain access to password information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3448</cvename>
+      <freebsdpr>200504</freebsdpr>
+      <url>https://github.com/rest-client/rest-client/issues/349</url>
+      <url>http://osvdb.org/show/osvdb/117461</url>
+    </references>
+    <dates>
+      <discovery>2015-01-12</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83a7a720-07d8-11e5-9a28-001e67150279">
+    <topic>rest-client -- session fixation vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-rest-client</name>
+	<range><lt>1.6.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Brody reports:</p>
+	<blockquote cite="https://github.com/rest-client/rest-client/issues/369">
+	  <p>When Ruby rest-client processes an HTTP redirection response,
+	    it blindly passes along the values from any Set-Cookie headers to the
+	    redirection target, regardless of domain, path, or expiration.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1820</cvename>
+      <freebsdpr>200504</freebsdpr>
+      <url>https://github.com/rest-client/rest-client/issues/369</url>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cfb12f02-06e1-11e5-8fda-002590263bf5">
     <topic>cabextract -- directory traversal with UTF-8 symbols in filenames</topic>
     <affects>
