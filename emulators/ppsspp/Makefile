@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.0.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://projects.archlinux.org/svntogit/community.git/plain/trunk/
