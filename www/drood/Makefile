@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	5.0
+PORTVERSION=	5.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -12,9 +12,21 @@ COMMENT=	Lightweight kqueue-based http/1.1 server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libserver.so:${PORTSDIR}/devel/libserver
+
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
+
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}" \
+		MKDIR="${MKDIR}"
+
 PLIST_FILES=	bin/drood \
+		bin/humdinger \
 		man/man8/drood.8.gz \
+		man/man8/humdinger.8.gz \
 		etc/rc.d/drood \
+		etc/rc.d/humdinger \
 		etc/drood/types.tab \
 		etc/drood/types.tab.dist
 
