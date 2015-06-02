@@ -1,6 +1,6 @@
---- libguile/gc_os_dep.c.orig	2008-02-16 19:50:24.000000000 +0100
-+++ libguile/gc_os_dep.c	2008-03-06 16:21:40.000000000 +0100
-@@ -115,6 +115,12 @@
+--- libguile/gc_os_dep.c.orig	2010-12-13 17:25:01 UTC
++++ libguile/gc_os_dep.c
+@@ -115,6 +115,12 @@ typedef int GC_bool;
  #    define NETBSD
  #    define mach_type_known
  # endif
@@ -13,7 +13,7 @@
  # if defined(__NetBSD__) && defined(__powerpc__)
  #    define POWERPC
  #    define NETBSD
-@@ -249,7 +255,21 @@
+@@ -249,7 +255,21 @@ typedef int GC_bool;
  #    define ARM32
  #    define mach_type_known
  # endif
@@ -36,7 +36,7 @@
  #   define ALPHA
  #   if !defined(LINUX) && !defined (NETBSD)
  #     define OSF1	/* a.k.a Digital Unix */
-@@ -701,8 +721,6 @@
+@@ -701,8 +721,6 @@ scm_get_stack_base ()
  
  # ifdef SPARC
  #   define MACH_TYPE "SPARC"
@@ -45,7 +45,7 @@
      extern int etext;
  #   ifdef SUNOS5
  #	define OS_TYPE "SUNOS5"
-@@ -750,7 +768,6 @@
+@@ -757,7 +775,6 @@ scm_get_stack_base ()
  # 	define DYNAMIC_LOADING
  #   endif
  #   ifdef DRSNX
@@ -53,7 +53,7 @@
  #	define OS_TYPE "DRSNX"
  	extern char * GC_SysVGetDataStart();
  	extern int etext;
-@@ -1159,6 +1176,13 @@
+@@ -1172,6 +1189,13 @@ scm_get_stack_base ()
  #   endif
  # endif
  
@@ -67,7 +67,7 @@
  # ifdef IA64
  #   define MACH_TYPE "IA64"
  #   define ALIGN_DOUBLE
-@@ -1504,8 +1528,15 @@
+@@ -1517,8 +1541,15 @@ scm_get_stack_base ()
  #   include <setjmp.h>
  #endif
  
@@ -84,7 +84,7 @@
  #endif
  
  #ifdef AMIGA
-@@ -1537,7 +1568,7 @@
+@@ -1550,7 +1581,7 @@ scm_get_stack_base ()
  #endif
  
  #ifdef SUNOS5SIGS
@@ -93,7 +93,7 @@
  # undef setjmp
  # undef longjmp
  # define setjmp(env) sigsetjmp(env, 1)
-@@ -1716,11 +1747,13 @@
+@@ -1729,11 +1760,13 @@ void *scm_get_stack_base()
      /* static */ jmp_buf GC_jmp_buf;
  
      /*ARGSUSED*/
@@ -107,7 +107,7 @@
  
  #   ifdef __STDC__
  	typedef void (*handler)(int);
-@@ -1728,6 +1761,7 @@
+@@ -1741,6 +1774,7 @@ void *scm_get_stack_base()
  	typedef void (*handler)();
  #   endif
  
@@ -115,7 +115,7 @@
  #   if defined(SUNOS5SIGS) || defined(IRIX5) || defined(OSF1)
  	static struct sigaction old_segv_act;
  #	if defined(_sigargs) || defined(HPUX) /* !Irix6.x */
-@@ -1736,7 +1770,9 @@
+@@ -1749,7 +1783,9 @@ void *scm_get_stack_base()
  #   else
          static handler old_segv_handler, old_bus_handler;
  #   endif
@@ -125,7 +125,7 @@
      static void GC_setup_temporary_fault_handler()
      {
  #	if defined(SUNOS5SIGS) || defined(IRIX5) || defined(OSF1)
-@@ -1773,7 +1809,9 @@
+@@ -1786,7 +1822,9 @@ void *scm_get_stack_base()
  #	  endif
  #	endif
      }
@@ -135,7 +135,7 @@
      static void GC_reset_fault_handler()
      {
  #       if defined(SUNOS5SIGS) || defined(IRIX5) || defined(OSF1)
-@@ -1789,8 +1827,10 @@
+@@ -1802,8 +1840,10 @@ void *scm_get_stack_base()
  #	  endif
  #       endif
      }
@@ -146,7 +146,7 @@
      static void
      GC_noop1(x)
      word x;
-@@ -1798,9 +1838,11 @@
+@@ -1811,9 +1851,11 @@ void *scm_get_stack_base()
        static VOLATILE word sink;
        sink = x;
      }
@@ -158,7 +158,7 @@
      static ptr_t GC_find_limit(p, up)
      ptr_t p;
      GC_bool up;
-@@ -1831,6 +1873,7 @@
+@@ -1844,6 +1886,7 @@ void *scm_get_stack_base()
   	}
  	return(result);
      }

@@ -1,6 +1,6 @@
---- ./doc/ref/gh.texi.orig	2010-12-13 18:24:39.000000000 +0100
-+++ ./doc/ref/gh.texi	2014-06-25 22:53:50.371137099 +0200
-@@ -995,8 +995,6 @@
+--- doc/ref/gh.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/ref/gh.texi
+@@ -995,8 +995,6 @@ These correspond to the Scheme @code{(co
  
  @deftypefun SCM gh_car (SCM @var{obj})
  @deftypefunx SCM gh_cdr (SCM @var{obj})
