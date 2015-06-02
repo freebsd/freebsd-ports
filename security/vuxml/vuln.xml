@@ -57,6 +57,131 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65b14d39-d01f-419c-b0b8-5df60b929973">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<name>ffmpeg0</name>
+	<range><lt>0.7.17,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD and Vigilance report:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-5150">
+	  <p>Use-after-free vulnerability in Google Chrome before
+	    24.0.1312.52 allows remote attackers to cause a denial of
+	    service or possibly have unspecified other impact via vectors
+	    involving seek operations on video data.</p>
+	</blockquote>
+	<blockquote cite="http://vigilance.fr/vulnerability/Libav-integer-overflow-of-av-lzo1x-decode-14944">
+	  <p> An attacker can generate an integer overflow in the
+	    av_lzo1x_decode() function of Libav, in order to trigger a
+	    denial of service, and possibly to execute code.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8541">
+	  <p>libavcodec/mjpegdec.c in FFmpeg before 2.4.2 considers only
+	    dimension differences, and not bits-per-pixel differences, when
+	    determining whether an image size has changed, which allows
+	    remote attackers to cause a denial of service (out-of-bounds
+	    access) or possibly have unspecified other impact via crafted
+	    MJPEG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8542">
+	  <p>libavcodec/utils.c in FFmpeg before 2.4.2 omits a certain
+	    codec ID during enforcement of alignment, which allows remote
+	    attackers to cause a denial of service (out-of-bounds access) or
+	    possibly have unspecified other impact via crafted JV data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8543">
+	  <p>libavcodec/mmvideo.c in FFmpeg before 2.4.2 does not consider
+	    all lines of HHV Intra blocks during validation of image height,
+	    which allows remote attackers to cause a denial of service
+	    (out-of-bounds access) or possibly have unspecified other impact
+	    via crafted MM video data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8545">
+	  <p>libavcodec/pngdec.c in FFmpeg before 2.4.2 accepts the
+	    monochrome-black format without verifying that the
+	    bits-per-pixel value is 1, which allows remote attackers to
+	    cause a denial of service (out-of-bounds access) or possibly
+	    have unspecified other impact via crafted PNG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8547">
+	  <p>libavcodec/gifdec.c in FFmpeg before 2.4.2 does not properly
+	    compute image heights, which allows remote attackers to cause a
+	    denial of service (out-of-bounds access) or possibly have
+	    unspecified other impact via crafted GIF data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8548">
+	  <p>Off-by-one error in libavcodec/smc.c in FFmpeg before 2.4.2
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds access) or possibly have unspecified other impact
+	    via crafted Quicktime Graphics (aka SMC) video data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9316">
+	  <p>The mjpeg_decode_app function in libavcodec/mjpegdec.c in
+	    FFMpeg before 2.1.6, 2.2.x through 2.3.x, and 2.4.x before 2.4.4
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap access) and possibly have other unspecified
+	    impact via vectors related to LJIF tags in an MJPEG file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9317">
+	  <p>The decode_ihdr_chunk function in libavcodec/pngdec.c in
+	    FFMpeg before 2.1.6, 2.2.x through 2.3.x, and 2.4.x before 2.4.4
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap access) and possibly have other unspecified
+	    impact via an IDAT before an IHDR in a PNG file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9603">
+	  <p>The vmd_decode function in libavcodec/vmdvideo.c in FFmpeg
+	    before 2.5.2 does not validate the relationship between a
+	    certain length value and the frame width, which allows remote
+	    attackers to cause a denial of service (out-of-bounds array
+	    access) or possibly have unspecified other impact via crafted
+	    Sierra VMD video data.</p>
+	</blockquote>
+	<blockquote cite="http://vigilance.fr/vulnerability/FFmpeg-unreachable-memory-reading-via-mjpegdec-c-16213">
+	  <p>An attacker can force a read at an invalid address in
+	    mjpegdec.c of FFmpeg, in order to trigger a denial of
+	    service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5150</cvename>
+      <cvename>CVE-2014-4609</cvename>
+      <cvename>CVE-2014-8541</cvename>
+      <cvename>CVE-2014-8542</cvename>
+      <cvename>CVE-2014-8543</cvename>
+      <cvename>CVE-2014-8545</cvename>
+      <cvename>CVE-2014-8547</cvename>
+      <cvename>CVE-2014-8548</cvename>
+      <cvename>CVE-2014-9316</cvename>
+      <cvename>CVE-2014-9317</cvename>
+      <cvename>CVE-2014-9603</cvename>
+      <cvename>CVE-2015-1872</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=c3ece52decafc4923aebe7fd74b274e9ebb1962e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=1b291e0466308b341bc2e8c2a49d44862400f014</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=b5e661bcd2bb4fe771cb2c1e21215c68e6a17665</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=cd3c4d8c55222337b0b59af4ea1fecfb46606e5e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=73962e677d871fa0dde5385ee04ea07c048d8864</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=7a5590ef4282e19d48d70cba0bc4628c13ec6fd8</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=ef32bc8dde52439afd13988f56012a9f4dd55a83</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=5b2097626d0e4ccb432d7d8ab040aa8dbde9eb3a</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=30e8a375901f8802853fd6d478b77a127d208bd6</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=cb1db92cca98f963e91f421ee0c84f8866325a73</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=fac6f744d8170585f05e098ce9c9f27eeffa818e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=75b0cfcf105c8720a47a2ee80a70ba16799d71b7</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-12</discovery>
+      <entry>2015-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="022255be-0895-11e5-a242-5404a68ad561">
     <topic>avidemux26 -- multiple vulnerabilities in bundled FFmpeg</topic>
     <affects>
