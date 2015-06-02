@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wyrmgus
-PORTVERSION=	git20150514
+PORTVERSION=	git20150601
 CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 USE_GITHUB=     yes
 GH_ACCOUNT=     Andrettin
 GH_PROJECT=     Wyrmgus
-GH_TAGNAME=     bc2d9703d3
+GH_TAGNAME=     80c76abcc6
 
 USE_GL=		gl glu
 USE_SDL=	sdl
