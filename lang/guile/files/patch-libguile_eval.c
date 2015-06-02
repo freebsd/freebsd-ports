@@ -1,6 +1,6 @@
---- libguile/eval.c	2008-07-09 14:44:29.000000000 +0800
-+++ libguile/eval.c	2008-07-09 14:45:45.000000000 +0800
-@@ -42,6 +42,8 @@
+--- libguile/eval.c.orig	2010-12-13 17:24:39 UTC
++++ libguile/eval.c
+@@ -40,6 +40,8 @@
  #ifndef alloca
  # if HAVE_ALLOCA_H
  #  include <alloca.h>

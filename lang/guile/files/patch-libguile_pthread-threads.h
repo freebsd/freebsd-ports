@@ -1,5 +1,5 @@
---- libguile/pthread-threads.h	2008-02-27 10:31:41.564950412 -0600
-+++ libguile/pthread-threads.h	2008-02-27 10:36:08.383652510 -0600
+--- libguile/pthread-threads.h.orig	2010-12-13 17:24:40 UTC
++++ libguile/pthread-threads.h
 @@ -26,6 +26,9 @@
  */
  

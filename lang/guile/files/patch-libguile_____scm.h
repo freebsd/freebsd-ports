@@ -1,6 +1,6 @@
---- libguile/__scm.h	2008-02-23 18:14:28.106264450 -0600
-+++ libguile/__scm.h	2008-02-23 18:15:41.306005478 -0600
-@@ -411,7 +411,8 @@
+--- libguile/__scm.h.orig	2010-12-13 17:25:01 UTC
++++ libguile/__scm.h
+@@ -434,7 +434,8 @@
   * that all the state of the process is contained in the stack.
   */
  
