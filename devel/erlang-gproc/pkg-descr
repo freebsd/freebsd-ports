@@ -1,0 +1,4 @@
+Gproc is a process dictionary for Erlang, which provides a number of useful
+features beyond what the built-in dictionary has.
+
+WWW: https://github.com/uwiger/gproc
