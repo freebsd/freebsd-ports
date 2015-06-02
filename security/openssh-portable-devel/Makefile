@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.8p1
-PORTREVISION=	7
-PORTEPOCH=	1
+DISTVERSION=	20150602
+PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	OPENBSD/OpenSSH/portable
-PKGNAMESUFFIX?=	-portable
+MASTER_SITES=	http://www.mindrot.org/openssh_snap/ \
+		OPENBSD/OpenSSH/portable
+PKGNAMESUFFIX?=	-portable-devel
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	The portable version of OpenBSD's OpenSSH
+COMMENT=	The portable version of OpenBSD's OpenSSH (snapshot)
 
 #LICENSE=      BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
 #LICENSE_FILE= ${WRKSRC}/LICENCE
 
-CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
+DISTNAME=	${PORTNAME}-SNAP-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-SNAP
+
+CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-*
 
 USES=			alias
 USE_AUTOTOOLS=		autoconf autoheader
@@ -47,7 +50,6 @@ NONECIPHER_DESC=	NONE Cipher support
 
 OPTIONS_SUB=		yes
 
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-ttssh
 TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
 LDNS_CONFIGURE_WITH=	ldns
@@ -189,6 +191,9 @@ CONFIGURE_ARGS+=	--with-xauth=${LOCALBASE}/bin/xauth
 
 RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
+
+post-extract:
+	@mv ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
