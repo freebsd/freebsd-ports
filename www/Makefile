@@ -113,7 +113,6 @@
     SUBDIR += demoroniser
     SUBDIR += dfileserver
     SUBDIR += dhttpd
-    SUBDIR += diamanda
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe

@@ -218,7 +218,6 @@
     SUBDIR += gv-aspell
     SUBDIR += heirloom-doctools
     SUBDIR += hevea
-    SUBDIR += hgrep
     SUBDIR += hhm
     SUBDIR += hi-aspell
     SUBDIR += highlight
