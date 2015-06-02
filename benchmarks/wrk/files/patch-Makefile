@@ -1,5 +1,5 @@
 --- Makefile.orig	2015-03-24 13:03:52.000000000 +0300
-+++ Makefile	2015-05-31 22:58:26.276469000 +0300
++++ Makefile	2015-06-02 22:37:10.831330000 +0300
 @@ -1,5 +1,5 @@
 -CFLAGS  := -std=c99 -Wall -O2 -D_REENTRANT
 -LIBS    := -lpthread -lm -lcrypto -lssl
@@ -38,7 +38,7 @@
  $(ODIR)/bytecode.o: src/wrk.lua
  	@echo LUAJIT $<
 -	@$(SHELL) -c 'cd $(LDIR) && ./luajit -b $(CURDIR)/$< $(CURDIR)/$@'
-+	$(SHELL) -c 'cd $(LDIR) && ${PREFIX}/bin/luajit -b $(CURDIR)/$< $(CURDIR)/$@'
++	$(SHELL) -c '${PREFIX}/bin/luajit -b $(CURDIR)/$< $(CURDIR)/$@'
  
  $(ODIR)/%.o : %.c
  	@echo CC $<
