@@ -1,5 +1,5 @@
---- smf-sav.c.orig	2006-10-25 20:15:10 UTC
-+++ smf-sav.c
+--- smf-sav.c.orig	2006-10-26 05:15:10.000000000 +0900
++++ smf-sav.c	2015-06-02 13:30:44.250725000 +0900
 @@ -20,11 +20,7 @@
  #endif
  
@@ -38,20 +38,7 @@
  #define hash_mask(x)		(hash_size(x) - 1)
  
 -#define CONFIG_FILE		"/etc/mail/smfs/smf-sav.conf"
-+#define CONFIG_FILE		"/usr/local/etc/smfsav.conf"
++#define CONFIG_FILE		"%%PREFIX%%/etc/smf-sav.conf"
  #define PUBLIC_NAME		"yourhost.yourdomain.tld"
  #define SAFE_CALLBACK		"postmaster@yourdomain.tld"
  #define SYSLOG_FACILITY		LOG_MAIL
-@@ -81,9 +69,9 @@
- #define TO_PASS_TTL		3600
- #define TO_TEMPFAIL_TTL		300
- #define TO_FAIL_TTL		3600
--#define WORK_SPACE		"/var/run/smfs"
--#define OCONN			"unix:" WORK_SPACE "/smf-sav.sock"
--#define USER			"smfs"
-+#define WORK_SPACE		"/var/run/smfsav"
-+#define OCONN			"unix:" WORK_SPACE "/smfsav.sock"
-+#define USER			"smfsav"
- 
- #define DNS_RETRANS		7
- #define DNS_RETRY		4
