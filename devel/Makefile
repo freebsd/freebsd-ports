@@ -419,6 +419,7 @@
     SUBDIR += erlang-msgpack
     SUBDIR += erlang-mustache
     SUBDIR += erlang-protobuffs
+    SUBDIR += erlang-recon
     SUBDIR += erlang-syslog
     SUBDIR += esdl
     SUBDIR += etcd
