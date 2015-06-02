@@ -3,7 +3,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
@@ -75,6 +75,9 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/so.* \
+		${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/squeakvm \
+		${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/ckformat
 	${GUNZIP_CMD} -c ${_DISTDIR}/${SQUEAK_SRC}.gz > \
 		${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/${SQUEAK_SRC}
 	${UNZIP_NATIVE_CMD} -u ${_DISTDIR}/Squeak${IMAGE_VERSION}.zip \
