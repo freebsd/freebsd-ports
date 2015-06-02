@@ -3,7 +3,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
@@ -52,6 +52,7 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ssvnc/*.so
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .for man in ssvnc.1 ssvncviewer.1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} \
