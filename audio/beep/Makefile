@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/garga/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
 
 LICENSE=	BSD4CLAUSE
