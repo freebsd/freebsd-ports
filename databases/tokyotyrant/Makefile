@@ -3,7 +3,7 @@
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
@@ -35,5 +35,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g' ${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
