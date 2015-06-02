@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tcllib
-DISTVERSIONPREFIX=	${PORTNAME}_
 DISTVERSION=	1_17
 PORTREVISION=	1
 CATEGORIES=	devel tcl
+MASTER_SITES=	http://aldan.algebra.com/~mi/port-stuff/
+DISTFILES=	tcltk-tcllib-${PORTVERSION}-tcllib_${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
@@ -19,9 +20,7 @@ BUILD_DEPENDS=	critcl:${PORTSDIR}/devel/critcl
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	tcltk
-
+WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
