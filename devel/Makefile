@@ -411,6 +411,7 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-gen_leader
     SUBDIR += erlang-gen_smtp
     SUBDIR += erlang-getopt
     SUBDIR += erlang-ibrowse
