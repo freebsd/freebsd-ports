@@ -7605,3 +7605,6 @@ devel/rubygem-test|devel/rubygem-rubygems-test|2015-05-29|Rename to match our ru
 devel/rubygem-deeptest|devel/rubygem-deep_test|2015-05-30|Rename to match our rubygems naming
 audio/portaudio2|audio/portaudio|2015-05-30|Merged into the main port
 net/rubygem-yadis|net/rubygem-ruby-yadis|2015-05-30|Rename to match our rubygems naming
+ports-mgmt/porteasy||2015-06-01|Has expired: Does not support pkgng
+textproc/hgrep||2015-06-01|Has expired: Not needed any more, base grep has coloring support
+www/diamanda||2015-06-01|Has expired: Broken for more than 6 months

@@ -42,7 +42,6 @@
     SUBDIR += port-maintenance-tools
     SUBDIR += portconf
     SUBDIR += portdowngrade
-    SUBDIR += porteasy
     SUBDIR += portell
     SUBDIR += portfind
     SUBDIR += portless
