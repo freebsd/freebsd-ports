@@ -9,7 +9,7 @@
 
 PORTNAME=	rack
 PORTVERSION=	1.5.2
-PORTEPOCH=	3
+PORTEPOCH=	4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	15
@@ -18,7 +18,13 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		shebangfix
+SHEBANG_FILES=	test/cgi/test.ru
+SHEBANG_LANG=	rackup
+rackup_OLD_CMD=	../../bin/rackup
+rackup_CMD=	${LOCALBASE}/bin/rackup
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
