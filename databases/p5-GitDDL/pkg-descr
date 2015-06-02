@@ -1,0 +1,8 @@
+This is database migration helper module for users who manage database
+schema version by single .sql file in git repository.
+
+By using this module, you can deploy .sql to database, check sql
+version between database and .sql file, make diff between them, and
+apply alter table to database.
+
+WWW: http://search.cpan.org/dist/GitDDL/
