@@ -1,7 +1,7 @@
---- docs/Makefile.in.orig	2008-01-03 09:05:09.000000000 -0200
-+++ docs/Makefile.in	2008-01-03 09:05:21.000000000 -0200
-@@ -193,7 +193,7 @@
- target_alias = @target_alias@
+--- docs/Makefile.in.orig	2015-06-02 10:27:29 UTC
++++ docs/Makefile.in
+@@ -229,7 +229,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = reference tutorial
