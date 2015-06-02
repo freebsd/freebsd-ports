@@ -3,7 +3,7 @@
 
 PORTNAME=	HTML-Seamstress
 PORTVERSION=	5.0h
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,9 @@ BUILD_DEPENDS=	p5-Class-Prototyped>=0:${PORTSDIR}/devel/p5-Class-Prototyped \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	lib/HTML/Seamstress/tt.pl \
+		sbase.pl spkg.pl
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
