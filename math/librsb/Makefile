@@ -14,7 +14,8 @@ COMMENT=	Sparse matrix library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
+		bash:${PORTSDIR}/shells/bash
 
 USES=		fortran compiler:openmp gmake shebangfix
 GNU_CONFIGURE=	yes
