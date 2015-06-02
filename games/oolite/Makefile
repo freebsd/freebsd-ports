@@ -9,7 +9,7 @@ MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.80b/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
-MAINTAINER=		avg@icyb.net.ua
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
 
 BROKEN=			Not converted to USES=gnustep

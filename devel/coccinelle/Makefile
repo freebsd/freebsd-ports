@@ -6,7 +6,7 @@ DISTVERSION=	1.0.0-rc22
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
-MAINTAINER=	avg@icyb.net.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program matching and transformation engine
 
 LICENSE=	GPLv2
