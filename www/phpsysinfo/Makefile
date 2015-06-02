@@ -3,6 +3,7 @@
 
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GHL
 
@@ -10,12 +11,15 @@ MAINTAINER=	walt@relnor.com
 COMMENT=	PHP script for displaying system information
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phpsysinfo
 GH_TAGNAME=	v3.2.0
 GH_COMMIT=	5a2d026
 
+USES=		shebangfix
+SHEBANG_FILES=	tools/check.sh
 NO_BUILD=	yes
 USE_PHP=	dom pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
