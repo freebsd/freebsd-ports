@@ -15,7 +15,7 @@ LICENSE=	PostgreSQL
 BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 IGNORE_WITH_PGSQL=	8.2 8.3 8.4
-USES=		gettext gmake #pgsql:9.0+
+USES=		gettext gmake pgsql #:9.0+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-version=${USE_WX} --enable-databasedesigner
 USE_GNOME=	libxml2 libxslt
