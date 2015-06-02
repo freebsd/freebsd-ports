@@ -232,6 +232,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_chrt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cryptsetup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_docker
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_docker
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ethtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_values
@@ -263,6 +264,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_wakeup_capable_devices
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_wpa_cli
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_yast
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_yast
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Mandriva.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Mandriva/_rebootin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Mandriva/_urpmi
@@ -280,12 +282,14 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_flowadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_fmadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_gcore
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_gcore
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_inetadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_ipadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_netstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_pfexec
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_pkg5
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_prstat
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_ps
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_ps
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_ptree
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_savecore
@@ -784,6 +788,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_SUSEconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_hwinfo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_osc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_yast2
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_yast2
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_zypper
 %%DATADIR%%/%%ZSH_VER%%/functions/Exceptions.zwc
