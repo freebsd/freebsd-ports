@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imgsizer
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.catb.org/~esr/imgsizer/ \
 		http://www.c-s.li/ports/
