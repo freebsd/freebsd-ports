@@ -93,7 +93,7 @@ EXTRA_CONFIG+=	--with-as=${AS_COMMAND}
 
 .if ${PORT_OPTIONS:MGCC}
 GCCDISTFILE=	gcc-${GCCVER}.tar.bz2
-USES+=		iconv libtool perl5
+USES+=		iconv libtool makeinfo perl5
 USE_PERL5=	build
 INFO=		ghdl
 PLIST_SUB+=	GLEX=ghdl/libexec/gcc/${BLD_TARGET}/${GCCVER} \
