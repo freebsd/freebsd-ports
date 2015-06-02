@@ -3,6 +3,9 @@ bin/guake-prefs
 %%PYTHON_SITELIBDIR%%/guake/__init__.py
 %%PYTHON_SITELIBDIR%%/guake/__init__.pyc
 %%PYTHON_SITELIBDIR%%/guake/__init__.pyo
+%%PYTHON_SITELIBDIR%%/guake/__main__.py
+%%PYTHON_SITELIBDIR%%/guake/__main__.pyc
+%%PYTHON_SITELIBDIR%%/guake/__main__.pyo
 %%PYTHON_SITELIBDIR%%/guake/about.py
 %%PYTHON_SITELIBDIR%%/guake/about.pyc
 %%PYTHON_SITELIBDIR%%/guake/about.pyo
@@ -23,12 +26,18 @@ bin/guake-prefs
 %%PYTHON_SITELIBDIR%%/guake/guake_app.py
 %%PYTHON_SITELIBDIR%%/guake/guake_app.pyc
 %%PYTHON_SITELIBDIR%%/guake/guake_app.pyo
+%%PYTHON_SITELIBDIR%%/guake/guake_notebook.py
+%%PYTHON_SITELIBDIR%%/guake/guake_notebook.pyc
+%%PYTHON_SITELIBDIR%%/guake/guake_notebook.pyo
 %%PYTHON_SITELIBDIR%%/guake/main.py
 %%PYTHON_SITELIBDIR%%/guake/main.pyc
 %%PYTHON_SITELIBDIR%%/guake/main.pyo
 %%PYTHON_SITELIBDIR%%/guake/notifier.py
 %%PYTHON_SITELIBDIR%%/guake/notifier.pyc
 %%PYTHON_SITELIBDIR%%/guake/notifier.pyo
+%%PYTHON_SITELIBDIR%%/guake/palettes.py
+%%PYTHON_SITELIBDIR%%/guake/palettes.pyc
+%%PYTHON_SITELIBDIR%%/guake/palettes.pyo
 %%PYTHON_SITELIBDIR%%/guake/prefs.py
 %%PYTHON_SITELIBDIR%%/guake/prefs.pyc
 %%PYTHON_SITELIBDIR%%/guake/prefs.pyo
@@ -57,7 +66,7 @@ share/icons/hicolor/32x32/apps/guake.png
 share/icons/hicolor/48x48/apps/guake-prefs.png
 share/icons/hicolor/48x48/apps/guake.png
 %%NLS%%share/locale/ca/LC_MESSAGES/guake.mo
-%%NLS%%share/locale/cs_CZ/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/de/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/el/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/es/LC_MESSAGES/guake.mo
@@ -69,7 +78,8 @@ share/icons/hicolor/48x48/apps/guake.png
 %%NLS%%share/locale/id/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/it/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/guake.mo
-%%NLS%%share/locale/nb_NO/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/guake.mo
@@ -77,7 +87,7 @@ share/icons/hicolor/48x48/apps/guake.png
 %%NLS%%share/locale/ru/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/guake.mo
-%%NLS%%share/locale/uk_UA/LC_MESSAGES/guake.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/guake.mo
 share/pixmaps/guake/add_tab.png
 share/pixmaps/guake/guake-notification.png
