@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	5.20150420
+PORTVERSION=	5.20150520
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	See what modules shipped with versions of Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
