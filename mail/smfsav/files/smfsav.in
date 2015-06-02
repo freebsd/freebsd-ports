@@ -17,7 +17,11 @@
 
 name="smfsav"
 rcvar=smfsav_enable
-command="%%PREFIX%%/sbin/smfsav"
 
 load_rc_config ${name}
+
+required_files=${smfsav_config:="%%PREFIX%%/etc/smf-sav.conf"}
+command="%%PREFIX%%/sbin/smf-sav"
+command_args="-c ${required_files}"
+
 run_rc_command "$1"
