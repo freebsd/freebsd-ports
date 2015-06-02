@@ -409,6 +409,7 @@
     SUBDIR += p5-GDBM
     SUBDIR += p5-Genezzo
     SUBDIR += p5-GitDDL
+    SUBDIR += p5-GitDDL-Migrator
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-HTML-FormHandler-Model-DBIC
     SUBDIR += p5-Ima-DBI
