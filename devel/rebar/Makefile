@@ -5,7 +5,7 @@ PORTNAME=	rebar
 PORTVERSION=	2.5.1
 CATEGORIES=	devel
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build-tool for Erlang that follows OTP principles
 
 LICENSE=	APACHE20
