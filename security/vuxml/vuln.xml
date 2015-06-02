@@ -57,6 +57,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bbc0db92-084c-11e5-bb90-002590263bf5">
+    <topic>hostapd and wpa_supplicant -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>hostapd</name>
+	<range><lt>2.4_1</lt></range>
+      </package>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-2/wps-upnp-http-chunked-transfer-encoding.txt">
+	  <p>WPS UPnP vulnerability with HTTP chunked transfer encoding. (2015-2
+	    - CVE-2015-4141)</p>
+	</blockquote>
+	<blockquote cite="http://w1.fi/security/2015-3/integer-underflow-in-ap-mode-wmm-action-frame.txt">
+	  <p>Integer underflow in AP mode WMM Action frame processing. (2015-3 -
+	    CVE-2015-4142)</p>
+	</blockquote>
+	<blockquote cite="http://w1.fi/security/2015-4/eap-pwd-missing-payload-length-validation.txt">
+	  <p>EAP-pwd missing payload length validation. (2015-4 - CVE-2015-4143,
+	    CVE-2015-4144, CVE-2015-4145, CVE-2015-4146)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://w1.fi/security/2015-2/wps-upnp-http-chunked-transfer-encoding.txt</url>
+      <url>http://w1.fi/security/2015-3/integer-underflow-in-ap-mode-wmm-action-frame.txt</url>
+      <url>http://w1.fi/security/2015-4/eap-pwd-missing-payload-length-validation.txt</url>
+      <cvename>CVE-2015-4141</cvename>
+      <cvename>CVE-2015-4142</cvename>
+      <cvename>CVE-2015-4143</cvename>
+      <cvename>CVE-2015-4144</cvename>
+      <cvename>CVE-2015-4145</cvename>
+      <cvename>CVE-2015-4146</cvename>
+      <mlist>http://openwall.com/lists/oss-security/2015/05/31/6</mlist>
+    </references>
+    <dates>
+      <discovery>2015-05-04</discovery>
+      <entry>2015-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65b14d39-d01f-419c-b0b8-5df60b929973">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
