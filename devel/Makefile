@@ -3738,7 +3738,6 @@
     SUBDIR += py-Products.validation
     SUBDIR += py-RPyC
     SUBDIR += py-Record
-    SUBDIR += py-ScriptTest
     SUBDIR += py-SymbolType
     SUBDIR += py-TGScheduler
     SUBDIR += py-ToscaWidgets
@@ -4091,6 +4090,7 @@
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sanetime
+    SUBDIR += py-scripttest
     SUBDIR += py-sdl2
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
