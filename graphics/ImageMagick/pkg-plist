@@ -1398,7 +1398,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/version.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/wand-view.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/api/magick++-classes.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/architecture.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/binary-releases.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/changelog.html
