@@ -19,12 +19,9 @@ OPTIONS_DEFAULT=	JPEG V4L
 MPEG4_DESC=	MPEG4 encoding support
 V4L_DESC=	V4L input support
 
-USES=		tar:bzip2 gmake
+USES=		autoreconf tar:bzip2 gmake
 USE_CSTD=	gnu89
-
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal automake
-AUTOMAKE_ARGS=	--add-missing
 
 SUB_FILES=	pkg-message
 
