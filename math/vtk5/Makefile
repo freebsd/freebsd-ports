@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -253,11 +254,12 @@ LIBS_TOFIX=	vtkNetCDF_cxx vtkhdf5 vtkhdf5_hl
 LIBDIR=		${PREFIX}/lib/vtk-${PORTVERSION:R}/
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
 # Ports system wants us to conform to lib.so.x format, but VTK5
 # only installs lib.so.x.y and lib.so.x.y.z.
 .if ${PORT_OPTIONS:MSHARED}
 	@for lib in ${LIBS_TOFIX}; do \
-		${CP} ${STAGEDIR}${LIBDIR}/lib$$lib.so ${STAGEDIR}${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
+		${INSTALL_LIB} ${STAGEDIR}${LIBDIR}/lib$$lib.so ${STAGEDIR}${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
 		${LN} -sf lib$$lib.so.${PORTVERSION} ${STAGEDIR}${LIBDIR}/lib$$lib.so.${PORTVERSION:R}; \
 	done
 	@cd ${STAGEDIR}${LIBDIR}; \
