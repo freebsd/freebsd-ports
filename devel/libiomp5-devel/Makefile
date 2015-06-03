@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/runtime
 
 .if ${ARCH} == "i386"
 OPENMP_ARCH=	32
+BROKEN_FreeBSD_9=	doesn't compile with base clang
 .elif ${ARCH} == "amd64"
 OPENMP_ARCH=	32e
 .elif ${ARCH} == "powerpc64"
