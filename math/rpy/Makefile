@@ -3,7 +3,7 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -30,5 +30,8 @@ pre-configure:
 	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
 	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
 	exit 1; fi)
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_rpy3002.so
 
 .include <bsd.port.mk>
