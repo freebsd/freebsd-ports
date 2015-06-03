@@ -55,13 +55,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/event.txt
 %%PORTDOCS%%%%DOCSDIR%%/flash.txt
 %%PORTDOCS%%%%DOCSDIR%%/sessions.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssreset
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssgrids
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssfonts
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css/cssbase
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/css
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/interface
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities/django-middleware
-@dirrm %%PYTHON_SITELIBDIR%%/appengine_utilities
