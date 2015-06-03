@@ -52,5 +52,6 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/iojs
+	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/iojs.1
 
 .include <bsd.port.mk>
