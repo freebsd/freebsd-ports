@@ -1,5 +1,5 @@
---- genrand.c~	1998-07-25 09:50:16.000000000 +0200
-+++ genrand.c	2011-12-20 19:16:38.086174883 +0100
+--- src/genrand.c.orig	1998-07-25 07:50:16 UTC
++++ src/genrand.c
 @@ -31,7 +31,7 @@
  #include <sys/stat.h>
  #include "sysdep.h"
@@ -9,7 +9,7 @@
  main(const int argc, char* argv[])
  {
      FILE* file;
-@@ -70,4 +70,5 @@
+@@ -70,4 +70,5 @@ main(const int argc, char* argv[])
      }
  
      fclose(file);

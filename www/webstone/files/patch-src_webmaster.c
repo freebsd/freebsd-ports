@@ -1,6 +1,6 @@
---- webmaster.c.orig	1998-07-25 09:50:18.000000000 +0200
-+++ webmaster.c	2011-12-20 19:14:07.911175579 +0100
-@@ -88,7 +88,7 @@
+--- src/webmaster.c.orig	1998-07-25 07:50:18 UTC
++++ src/webmaster.c
+@@ -88,7 +88,7 @@ int	    num_rexecs = 0;
  SOCKET	    socknum[MAXCLIENTS];
  SOCKET	    sockIO[MAXTOTALPROCS];
  SOCKET	    sockErr[MAXTOTALPROCS];
@@ -9,7 +9,7 @@
  
  struct hostent  *master_phe;   /* IP addresses for webmaster */
  
-@@ -1343,7 +1343,7 @@
+@@ -1343,7 +1343,7 @@ sock_cleanup(void) 
  }
  #endif /* WIN32 */
  
@@ -18,7 +18,7 @@
  main(const int argc, char *argv[])
  {
  
-@@ -1385,6 +1385,7 @@
+@@ -1385,6 +1385,7 @@ main(const int argc, char *argv[])
  
      /* Initalization of variables. */
      /* debugfile = stdout; */
