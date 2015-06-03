@@ -1,6 +1,6 @@
---- include/grub/gpt_partition.h.orig	2014-12-02 14:32:40.000000000 +0800
-+++ include/grub/gpt_partition.h	2014-12-02 14:35:03.000000000 +0800
-@@ -43,6 +43,14 @@
+--- include/grub/gpt_partition.h.orig	2014-03-03 16:00:26 UTC
++++ include/grub/gpt_partition.h
+@@ -43,6 +43,14 @@ typedef struct grub_gpt_part_type grub_g
      { 0x74, 0x4e, 0x65, 0x65, 0x64, 0x45, 0x46, 0x49 } \
    }
  

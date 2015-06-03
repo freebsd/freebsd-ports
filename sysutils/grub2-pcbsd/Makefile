@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	grub2-pcbsd
-PORTVERSION=	2.02p
-PORTREVISION=	26
+PORTVERSION=	2.02q
 CATEGORIES=	sysutils
-MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
+MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
-DISTNAME=	grub-2.02_5
+DISTNAME=	grub-2.02_6
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Multiboot boot loader
@@ -22,10 +21,9 @@ WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub-0* grub2-2*
 SSP_UNSAFE=	yes
 USE_GCC=	yes
-USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison cpe gettext gmake makeinfo python tar:xz
+USES=		autoreconf bison cpe gettext gmake makeinfo python tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
@@ -86,14 +84,14 @@ post-configure:
 	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/charset.alias
-	@${INSTALL_SCRIPT} ${WRKDIR}/00_header ${STAGEDIR}${PREFIX}/etc/grub.d/
-	@${INSTALL_SCRIPT} ${WRKDIR}/10_kfreebsd ${STAGEDIR}${PREFIX}/etc/grub.d/
-	@${INSTALL_SCRIPT} ${WRKDIR}/10_ktrueos ${STAGEDIR}${PREFIX}/etc/grub.d/
-	@${INSTALL_SCRIPT} ${WRKDIR}/30_os-prober ${STAGEDIR}${PREFIX}/etc/grub.d/
-	@${INSTALL_SCRIPT} ${WRKDIR}/50_otherbe ${STAGEDIR}${PREFIX}/etc/grub.d/
-	@${MV} ${STAGEDIR}${PREFIX}/etc/grub.d/40_custom ${STAGEDIR}/${PREFIX}/etc/grub.d/40_custom.dist
-
-.include <bsd.port.post.mk>
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/charset.alias
+	${INSTALL_SCRIPT} ${WRKDIR}/00_header ${STAGEDIR}${PREFIX}/etc/grub.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/10_kfreebsd ${STAGEDIR}${PREFIX}/etc/grub.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/10_ktrueos ${STAGEDIR}${PREFIX}/etc/grub.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/30_os-prober ${STAGEDIR}${PREFIX}/etc/grub.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/50_otherbe ${STAGEDIR}${PREFIX}/etc/grub.d/
+	${MV} ${STAGEDIR}${PREFIX}/etc/grub.d/40_custom ${STAGEDIR}/${PREFIX}/etc/grub.d/40_custom.dist
 
 RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
+
+.include <bsd.port.post.mk>

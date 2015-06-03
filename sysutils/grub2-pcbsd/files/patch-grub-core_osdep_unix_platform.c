@@ -1,6 +1,6 @@
---- grub-core/osdep/unix/platform.c.orig	2014-10-21 10:55:38.203922144 -0400
-+++ grub-core/osdep/unix/platform.c	2014-10-21 10:56:54.300915974 -0400
-@@ -81,52 +81,8 @@
+--- grub-core/osdep/unix/platform.c.orig	2014-03-03 16:00:26 UTC
++++ grub-core/osdep/unix/platform.c
+@@ -81,52 +81,8 @@ get_ofpathname (const char *dev)
  static void
  grub_install_remove_efi_entries_by_distributor (const char *efi_distributor)
  {
@@ -55,7 +55,7 @@
  }
  
  void
-@@ -134,40 +90,8 @@
+@@ -134,40 +90,8 @@ grub_install_register_efi (grub_device_t
  			   const char *efifile_path,
  			   const char *efi_distributor)
  {
