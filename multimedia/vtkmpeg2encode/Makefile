@@ -3,6 +3,7 @@
 
 PORTNAME=	vtkmpeg2encode
 PORTVERSION=	${VTK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia math
 MASTER_SITES=	http://www.vtk.org/files/support/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -41,7 +42,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/vtk-${VTK_VERSION:R}
-	${INSTALL_DATA} ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 	${LN} -s ${MPEGLIB}.so.${PORTVERSION} \
 			${STAGEDIR}${PREFIX}/lib/${MPEGLIB}.so.${VTK_VERSION:R}
 	${LN} -s ${MPEGLIB}.so.${PORTVERSION} \
