@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Sep  4 18:52:21 2000
-+++ Makefile.in	Mon Sep  4 18:52:45 2000
-@@ -64,9 +64,9 @@
+--- src/Makefile.in.orig	1998-07-25 07:50:19 UTC
++++ src/Makefile.in
+@@ -64,9 +64,9 @@ TARGETS = $(EXECUTABLE1) $(EXECUTABLE2) 
  .SUFFIXES:
  .SUFFIXES: .c .o
  
