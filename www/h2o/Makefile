@@ -3,6 +3,7 @@
 
 PORTNAME=	h2o
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dch@skunkwerks.at
@@ -18,7 +19,8 @@ GH_TAGNAME=	v1.0.1
 GH_COMMIT=	c28f39e
 
 MAKE_JOBS_UNSAFE=	yes
-USES=	cmake:outsource compiler:c11
+USES=		cmake:outsource compiler:c11 shebangfix
+SHEBANG_FILES=	share/h2o/start_server
 
 USE_OPENSSL=	yes
 
