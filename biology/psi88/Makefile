@@ -3,7 +3,7 @@
 
 PORTNAME=	psi88
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/psi88/
 DISTNAME=	${PORTNAME}
@@ -26,6 +26,7 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/P*
 	${LN} -s PSI2PS ${STAGEDIR}${PREFIX}/bin/PSI2
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/preplot ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/rpsi1 ${STAGEDIR}${PREFIX}/bin
