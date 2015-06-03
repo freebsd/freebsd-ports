@@ -4045,6 +4045,7 @@
     SUBDIR += py-pytest-capturelog
     SUBDIR += py-pytest-runner
     SUBDIR += py-pytest-timeout
+    SUBDIR += py-pytest-xdist
     SUBDIR += py-python-jenkins
     SUBDIR += py-python-statsd
     SUBDIR += py-pythonbrew
