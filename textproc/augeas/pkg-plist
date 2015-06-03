@@ -6,17 +6,18 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.19.0
+lib/libaugeas.so.0.20.0
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
-lib/libfa.so.1.4.0
+lib/libfa.so.1.4.1
 libdata/pkgconfig/augeas.pc
 man/man1/augparse.1.gz
 man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/access.aug
 %%DATADIR%%/lenses/dist/activemq_conf.aug
 %%DATADIR%%/lenses/dist/activemq_xml.aug
+%%DATADIR%%/lenses/dist/afs_cellalias.aug
 %%DATADIR%%/lenses/dist/aliases.aug
 %%DATADIR%%/lenses/dist/anacron.aug
 %%DATADIR%%/lenses/dist/approx.aug
@@ -39,6 +40,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/cgrules.aug
 %%DATADIR%%/lenses/dist/channels.aug
 %%DATADIR%%/lenses/dist/chrony.aug
+%%DATADIR%%/lenses/dist/clamav.aug
 %%DATADIR%%/lenses/dist/cobblermodules.aug
 %%DATADIR%%/lenses/dist/cobblersettings.aug
 %%DATADIR%%/lenses/dist/collectd.aug
@@ -53,6 +55,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/device_map.aug
 %%DATADIR%%/lenses/dist/dhclient.aug
 %%DATADIR%%/lenses/dist/dhcpd.aug
+%%DATADIR%%/lenses/dist/dns_zone.aug
 %%DATADIR%%/lenses/dist/dnsmasq.aug
 %%DATADIR%%/lenses/dist/dovecot.aug
 %%DATADIR%%/lenses/dist/dpkg.aug
@@ -82,6 +85,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/interfaces.aug
 %%DATADIR%%/lenses/dist/iproute2.aug
 %%DATADIR%%/lenses/dist/iptables.aug
+%%DATADIR%%/lenses/dist/iscsid.aug
 %%DATADIR%%/lenses/dist/jaas.aug
 %%DATADIR%%/lenses/dist/jettyrealm.aug
 %%DATADIR%%/lenses/dist/jmxaccess.aug
@@ -101,6 +105,8 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/logwatch.aug
 %%DATADIR%%/lenses/dist/lokkit.aug
 %%DATADIR%%/lenses/dist/lvm.aug
+%%DATADIR%%/lenses/dist/mailscanner.aug
+%%DATADIR%%/lenses/dist/mailscanner_rules.aug
 %%DATADIR%%/lenses/dist/mcollective.aug
 %%DATADIR%%/lenses/dist/mdadm_conf.aug
 %%DATADIR%%/lenses/dist/memcached.aug
@@ -133,11 +139,13 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/passwd.aug
 %%DATADIR%%/lenses/dist/pbuilder.aug
 %%DATADIR%%/lenses/dist/pg_hba.aug
+%%DATADIR%%/lenses/dist/pgbouncer.aug
 %%DATADIR%%/lenses/dist/php.aug
 %%DATADIR%%/lenses/dist/phpvars.aug
 %%DATADIR%%/lenses/dist/postfix_access.aug
 %%DATADIR%%/lenses/dist/postfix_main.aug
 %%DATADIR%%/lenses/dist/postfix_master.aug
+%%DATADIR%%/lenses/dist/postfix_sasl_smtpd.aug
 %%DATADIR%%/lenses/dist/postfix_transport.aug
 %%DATADIR%%/lenses/dist/postfix_virtual.aug
 %%DATADIR%%/lenses/dist/postgresql.aug
@@ -145,7 +153,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/protocols.aug
 %%DATADIR%%/lenses/dist/puppet.aug
 %%DATADIR%%/lenses/dist/puppet_auth.aug
+%%DATADIR%%/lenses/dist/puppetfile.aug
 %%DATADIR%%/lenses/dist/puppetfileserver.aug
+%%DATADIR%%/lenses/dist/pylonspaste.aug
 %%DATADIR%%/lenses/dist/pythonpaste.aug
 %%DATADIR%%/lenses/dist/qpid.aug
 %%DATADIR%%/lenses/dist/quote.aug
@@ -190,6 +200,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_access.aug
 %%DATADIR%%/lenses/dist/tests/test_activemq_conf.aug
 %%DATADIR%%/lenses/dist/tests/test_activemq_xml.aug
+%%DATADIR%%/lenses/dist/tests/test_afs_cellalias.aug
 %%DATADIR%%/lenses/dist/tests/test_aliases.aug
 %%DATADIR%%/lenses/dist/tests/test_anacron.aug
 %%DATADIR%%/lenses/dist/tests/test_approx.aug
@@ -212,6 +223,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_cgrules.aug
 %%DATADIR%%/lenses/dist/tests/test_channels.aug
 %%DATADIR%%/lenses/dist/tests/test_chrony.aug
+%%DATADIR%%/lenses/dist/tests/test_clamav.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblermodules.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblersettings.aug
 %%DATADIR%%/lenses/dist/tests/test_collectd.aug
@@ -226,6 +238,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_device_map.aug
 %%DATADIR%%/lenses/dist/tests/test_dhclient.aug
 %%DATADIR%%/lenses/dist/tests/test_dhcpd.aug
+%%DATADIR%%/lenses/dist/tests/test_dns_zone.aug
 %%DATADIR%%/lenses/dist/tests/test_dnsmasq.aug
 %%DATADIR%%/lenses/dist/tests/test_dovecot.aug
 %%DATADIR%%/lenses/dist/tests/test_dpkg.aug
@@ -255,6 +268,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_interfaces.aug
 %%DATADIR%%/lenses/dist/tests/test_iproute2.aug
 %%DATADIR%%/lenses/dist/tests/test_iptables.aug
+%%DATADIR%%/lenses/dist/tests/test_iscsid.aug
 %%DATADIR%%/lenses/dist/tests/test_jaas.aug
 %%DATADIR%%/lenses/dist/tests/test_jettyrealm.aug
 %%DATADIR%%/lenses/dist/tests/test_jmxaccess.aug
@@ -275,6 +289,8 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_logwatch.aug
 %%DATADIR%%/lenses/dist/tests/test_lokkit.aug
 %%DATADIR%%/lenses/dist/tests/test_lvm.aug
+%%DATADIR%%/lenses/dist/tests/test_mailscanner.aug
+%%DATADIR%%/lenses/dist/tests/test_mailscanner_rules.aug
 %%DATADIR%%/lenses/dist/tests/test_mcollective.aug
 %%DATADIR%%/lenses/dist/tests/test_mdadm_conf.aug
 %%DATADIR%%/lenses/dist/tests/test_memcached.aug
@@ -307,11 +323,13 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_passwd.aug
 %%DATADIR%%/lenses/dist/tests/test_pbuilder.aug
 %%DATADIR%%/lenses/dist/tests/test_pg_hba.aug
+%%DATADIR%%/lenses/dist/tests/test_pgbouncer.aug
 %%DATADIR%%/lenses/dist/tests/test_php.aug
 %%DATADIR%%/lenses/dist/tests/test_phpvars.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_access.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_main.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_master.aug
+%%DATADIR%%/lenses/dist/tests/test_postfix_sasl_smtpd.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_transport.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_virtual.aug
 %%DATADIR%%/lenses/dist/tests/test_postgresql.aug
@@ -319,7 +337,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_protocols.aug
 %%DATADIR%%/lenses/dist/tests/test_puppet.aug
 %%DATADIR%%/lenses/dist/tests/test_puppet_auth.aug
+%%DATADIR%%/lenses/dist/tests/test_puppetfile.aug
 %%DATADIR%%/lenses/dist/tests/test_puppetfileserver.aug
+%%DATADIR%%/lenses/dist/tests/test_pylonspaste.aug
 %%DATADIR%%/lenses/dist/tests/test_pythonpaste.aug
 %%DATADIR%%/lenses/dist/tests/test_qpid.aug
 %%DATADIR%%/lenses/dist/tests/test_quote.aug
