@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-openvanilla
 PORTVERSION=	0.7.2.20070514
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/rafan
 DISTNAME=	openvanilla-${PORTVERSION}
@@ -22,6 +22,7 @@ USES=		pkgconfig gettext iconv gmake libtool:keepla
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	OV_MODULEDIR=${PREFIX}/lib/openvanilla/
 CPPFLAGS+=	-I${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.a	\
 		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.la	\
