@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-pinyin
 PORTVERSION=	0.5.92
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
@@ -13,24 +13,20 @@ COMMENT=	SCIM Chinese Smart Pinyin input method
 BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool:keepla pathfix pkgconfig
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake iconv libtool:keepla pathfix pkgconfig
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-skim-support
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
