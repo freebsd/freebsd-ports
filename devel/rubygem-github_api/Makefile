@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-nokogiri>=1.6.3:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-oauth2>=0:${PORTSDIR}/net/rubygem-oauth2
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
