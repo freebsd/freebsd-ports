@@ -3,20 +3,24 @@
 
 PORTNAME=	vdesk
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line utility for setting up and using virtual desktops
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf
+GNU_CONFIGURE=	yes
+USE_XORG=	x11
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/vdesk
 
-USE_AUTOTOOLS=	autoconf
-USE_XORG=	x11
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vdesk ${STAGEDIR}${PREFIX}/bin
