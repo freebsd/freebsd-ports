@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	1.8.04
-PORTREVISION=	3
+PORTVERSION=	1.8.06
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +21,8 @@ MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^cc_optimize_flags/ s| -Werror||' ${WRKSRC}/Makefile.PL
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Crypt/OpenSSL/X509/X509.so
 
 .include <bsd.port.mk>
