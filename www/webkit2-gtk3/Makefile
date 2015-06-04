@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTVERSION=	2.6.6
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 #add		libicu
 RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue 
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	^${PORTVERSION:R:S|.|\.|}\.*$$
 
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xext ice
