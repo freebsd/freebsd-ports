@@ -23,19 +23,27 @@ shebangonefile() {
 
 	f="$@"
 	rc=0
+
+	# blacklist of files which are not intended to be runnable
+	case "${f##*/}" in
+	*.pm|*.pod|*.txt)
+		return 0
+		;;
+	esac
+
 	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "$f")
 	case "$interp" in
 	"") ;;
-	/usr/bin/env) ;;
 	${LINUXBASE}/*) ;;
 	${LOCALBASE}/*) ;;
 	${PREFIX}/*) ;;
-	/usr/bin/awk) ;;
-	/usr/bin/sed) ;;
-	/usr/bin/nawk) ;;
 	/bin/csh) ;;
 	/bin/sh) ;;
 	/bin/tcsh) ;;
+	/usr/bin/awk) ;;
+	/usr/bin/env) ;;
+	/usr/bin/nawk) ;;
+	/usr/bin/sed) ;;
 	*)
 		err "'${interp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
 		rc=1
