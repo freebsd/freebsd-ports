@@ -1,0 +1,18 @@
+--- configure.ac.orig	2015-06-04 10:43:01 UTC
++++ configure.ac
+@@ -7,6 +7,7 @@ dnl
+ AC_INIT
+ AC_CONFIG_SRCDIR([src/setup.h]) 
+ AC_CONFIG_HEADERS(include/config.h)
++AC_CONFIG_MACRO_DIRS([m4])
+ 
+ dnl
+ dnl Define the utils directory
+@@ -44,7 +45,6 @@ dnl
+ dnl Program support
+ dnl
+ AC_PATH_PROG( PERL, perl, false )
+-AC_PROG_SHELL
+ AC_PROG_MAKE_SET
+ AC_PROG_INSTALL
+ case "$host_os" in
