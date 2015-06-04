@@ -2,52 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	modula3
-PORTVERSION=	5.8.6
-PORTREVISION=	4
+PORTVERSION=	5.10.0
 CATEGORIES=	lang
-MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
-		http://downloads.dragonlace.net/m3/ \
-		http://downloads.dragonlace.net/m3/:boot
+MASTER_SITES=	http://downloads.dragonlace.net/m3/:boot
 DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Critical Mass Modula-3 compiler
 
 LICENSE=	DECM3
-LICENSE_FILE=	${WRKSRC}/COM_LICENSE
 LICENSE_NAME=	CM3 License defined by DEC and Critical Mass copyrights
+LICENSE_FILE=	${WRKSRC}/COM_LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 NEWBOOTDIR=	${WRKDIR}/new-bootstrap/bootstrap
-SRCDISTFILE=	cm3-src-all-${PORTVERSION}-REL.tgz
+SRCDISTFILE=	modula3-cm3-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
 DST1=		m3-bootstrap.AMD64.FREEBSD.92.tar.bz2:boot
 DST2=		m3-bootstrap.x86_64.DRAGONFLY.36.tar.bz2:boot
 
 ONLY_FOR_ARCHS=		amd64
 CONFLICTS_INSTALL=	binary-cvsup-*
 
-USES=		gmake pgsql
+USE_GITHUB=	yes
+GH_ACCOUNT=	modula3
+GH_PROJECT=	cm3
+GH_TAGNAME=	1f5ad30
+
+USES=		gmake pgsql python:build
 USE_XORG=	xaw xmu xext xt sm ice x11
 USE_GL=		gl glu
-USE_GCC=	any
+USE_GCC=	yes
 NO_MTREE=	yes
 
-MAKE_ENV+=	CM3_INSTALL="${STAGEDIR}${PREFIX}" \
-		CM3_DEBUG=yes \
+MAKE_ENV=	CM3_DEBUG=yes \
 		M3_PORTABLE_RUN_PATH=yes
+INTERMED=	${WRKDIR}/intermediate
 BOOTCM3=	CM3="${WRKDIR}/bootstrap/bin/cm3"
-BUILTCM3=	CM3="${STAGEDIR}${PREFIX}/bin/cm3"
-BSCONTENTS=	bin/cm3 bin/cm3cg bin/m3bundle bin/mklib etc/modula3 \
-		lib/libm3core.* lib/libm3.* lib/libsysutils.* \
-		lib/libpatternmatching.* pkg/m3core pkg/libm3 pkg/sysutils \
-		pkg/patternmatching pkg/m3middle pkg/m3objfile pkg/m3linker \
-		pkg/m3back pkg/m3front pkg/m3quake pkg/cm3 pkg/mklib
+STRIPPKG=	m3back cm3 libdump cmpfp formsview vorun PklFonts dummy test
+PORTDOCS=	www license
 
 .include <bsd.port.pre.mk>
 
-M3MAKE_ENV=	${MAKE_ENV:C/^LDFLAGS=.*//:C/^CPPFLAGS=.*//}
+M3BOOT_ENV=	${MAKE_ENV:C/^LDFLAGS=.*//:C/^CPPFLAGS=.*//} \
+		${BOOTCM3} STAGE=${INTERMED:Q}
 
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
 .if defined(PLUS_BOOTSTRAPS)
@@ -70,96 +69,57 @@ MARCH=		x86_64
 
 NEWBOOTNAME=	m3-bootstrap.${MARCH}.${OPSYS:tu}.${OSREL:S/.//}.tar.bz2
 M3TARGET=	${MARCH}_${OPSYS:tu}
+PLIST_SUB=	T=${M3TARGET} P=cm3/pkg B=cm3/bin L=cm3/lib
 .endif
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@(cd ${WRKSRC} && tar -xf ${DISTDIR}/${SRCDISTFILE})
-	@(cd ${WRKDIR} && tar -xf ${DISTDIR}/${BOOTDIST:C/:[^:]+$//})
+post-extract:
 	@(cd ${WRKSRC} && ${CAT} COPYRIGHT-DEC COPYRIGHT-CMASS > COM_LICENSE)
 
 post-patch:
-# Use sed -i instead of ${REINPLACE_CMD} because we don't want .bak files
-# installed in the final product which comes from config-no-install dir.
-	@${SED} -i "" -e 's|/usr/local|${PREFIX}|g' \
-	    -e 's|\\\\$$ORIGIN"|${PREFIX}/lib"|' \
-	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/FreeBSD.common
-	@${SED} -i "" -e 's|/usr/X11R6|${PREFIX}|g' \
-	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/Unix.common
-	@${SED} -i "" -e 's/^SYSTEM_CC = ".* -gs/SYSTEM_CC = "${CC} -gs/' \
-	    ${WRKDIR}/bootstrap/etc/modula3/AMD64_FREEBSD \
-	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/AMD64_FREEBSD
+	@${REINPLACE_CMD} -i "" -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/m3-sys/cminstall/src/config-no-install/FreeBSD.common
+	@${REINPLACE_CMD} -i "" \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/m3-sys/cminstall/src/config-no-install/Unix.common
+	@${REINPLACE_CMD} -i "" \
+		-e 's/^SYSTEM_CC = ".* -gs/SYSTEM_CC = "${CC} -gs/' \
+		-e 's|as -64|${AS} -64|' \
+		${WRKDIR}/bootstrap/etc/modula3/AMD64_FREEBSD \
+		${WRKSRC}/m3-sys/cminstall/src/config-no-install/AMD64_FREEBSD
+	@${REINPLACE_CMD} -e 's|m3cc, bin|bin|' \
+		${WRKDIR}/bootstrap/etc/modula3/cm3cfg.common
+	@${GREP} -rl 'bin/env python' ${WRKSRC}/m3-sys ${WRKSRC}/scripts | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|/usr/bin/env python|${PYTHON_CMD}|'
 
-do-bootstrap:
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BOOTCM3} SHIP=${TRUE} \
-		${SH} scripts/boot-cm3-with-m3.sh onlybuild)
-	@${FIND} ${WRKSRC} -name \.M3SHIP -print | ${XARGS} ${SED} -i -e \
-		's|/bootstrap/|/stage${PREFIX}/|g'
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BOOTCM3} \
-		${SH} scripts/boot-cm3-with-m3.sh ship)
-	(cd ${WRKSRC}/m3-sys/cminstall/src/config-no-install && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc/modula3)
-	${INSTALL_PROGRAM} ${WRKSRC}/m3-sys/cm3/${M3TARGET}/cm3 \
-		${STAGEDIR}${PREFIX}/bin
-	${ECHO} "INSTALL_ROOT = \"${STAGEDIR}${PREFIX}\"" > \
-		${STAGEDIR}${PREFIX}/bin/cm3.cfg
-	${ECHO} "include(\"${STAGEDIR}${PREFIX}/etc/modula3/${M3TARGET}\")" >> \
-		${STAGEDIR}${PREFIX}/bin/cm3.cfg
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BOOTCM3} \
-		${SH} scripts/boot-cm3-with-m3.sh cleanglobal)
-	@${ECHO} "======================================"
-	@${ECHO} "=====  M3 compiler bootstrapped  ====="
-	@${ECHO} "======================================"
-	@${ECHO}
-
-do-build: do-bootstrap
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BUILTCM3} \
-		${SH} scripts/do-cm3-min.sh buildship)
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BUILTCM3} \
-		${SH} scripts/do-cm3-std.sh buildship)
-	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BUILTCM3} \
-		${SH} scripts/do-cm3-caltech-parser.sh buildship)
+do-build:
+	(cd ${WRKSRC} && ${SETENV} ${M3BOOT_ENV} \
+		${PYTHON_CMD} scripts/python/make-dist.py)
 
 do-install:
-	${FIND} ${STAGEDIR}${PREFIX}/pkg -type f -perm +111 -not -name cm3 | \
-		${XARGS} ${CHMOD} -x
-	${ECHO} "INSTALL_ROOT = \"${PREFIX}\"" > \
-		${STAGEDIR}${PREFIX}/bin/cm3.cfg
-	${ECHO} "include(\"${PREFIX}/etc/modula3/${M3TARGET}\")" >> \
-		${STAGEDIR}${PREFIX}/bin/cm3.cfg
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/bin \
-	         ${STAGEDIR}${PREFIX}/share/doc
-	${MV} ${STAGEDIR}${PREFIX}/examples \
-		${STAGEDIR}${PREFIX}/share/examples/modula3
-	${MV} ${STAGEDIR}${PREFIX}/www ${STAGEDIR}${PREFIX}/share/doc/modula3
-	${MV} ${STAGEDIR}${PREFIX}/bin/Cube \
-		${STAGEDIR}${PREFIX}/bin/Calculator \
-		${STAGEDIR}${PREFIX}/bin/fisheye \
-		${STAGEDIR}${PREFIX}/share/examples/bin
-
-# The pkg-plist is well over 6000 entries, so let's just autogen it instead
-post-install:
-	cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} | ${SED} -e 's/^man\/man[1578]\/.*[1578]$$/&.gz/' \
-	   > ${TMPPLIST}
-	@echo ${PLIST_FILES} | awk '{print $$1}' RS=' ' >> ${TMPPLIST}
-
-# to create a new bootstrap, invoke "make stage NEW_BOOTSTRAP=1"
-.if defined(NEW_BOOTSTRAP)
-post-stage:
-	@${RM} -rf ${NEWBOOTDIR}
-	@${MKDIR} ${NEWBOOTDIR}/bin ${NEWBOOTDIR}/lib \
-	          ${NEWBOOTDIR}/pkg ${NEWBOOTDIR}/etc
-.for X in ${BSCONTENTS}
-	@${CP} -a ${STAGEDIR}${PREFIX}/${X} ${NEWBOOTDIR}/${X:H}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${INTERMED}/all-dist ${STAGEDIR}${PREFIX}/cm3
+	${MV} ${STAGEDIR}${PREFIX}/cm3/man ${STAGEDIR}${PREFIX}/
+	${MV} ${STAGEDIR}${PREFIX}/cm3/www ${STAGEDIR}${DOCSDIR}/
+	${MV} ${STAGEDIR}${PREFIX}/cm3/license ${STAGEDIR}${DOCSDIR}/
+	${FIND} ${STAGEDIR}${PREFIX}/cm3/pkg -type f -perm +111 \
+		-not -name cm3 | ${XARGS} ${CHMOD} -x
+	(cd ${STAGEDIR}${PREFIX}/cm3/bin && ${FIND} * -type f -perm +111 | \
+		${SED} -E '/^(obliq|obliqsrv|recordheap)$$/d' | \
+		${XARGS} ${STRIP_CMD})
+	${FIND} ${STAGEDIR}${PREFIX}/cm3/lib -type f -perm +111 | \
+		${XARGS} ${STRIP_CMD}
+.for PACKAGE in ${STRIPPKG}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/cm3/pkg/*/${M3TARGET}/${PACKAGE}
 .endfor
-	${ECHO} "INSTALL_ROOT = path() & \"/..\"" \
-		>  ${NEWBOOTDIR}/bin/cm3.cfg
-	${ECHO} "include(path() & \"/../etc/modula3/${M3TARGET}\")" \
-		>> ${NEWBOOTDIR}/bin/cm3.cfg
-	@${FIND} ${NEWBOOTDIR} -type f -perm +111 | ${XARGS} ${STRIP_CMD}
+
+new-bootstrap:
+	@${RM} -rf ${NEWBOOTDIR}
+	@${MKDIR} ${NEWBOOTDIR:H}
+	${CP} -a ${INTERMED}/min-dist ${NEWBOOTDIR}
+	@${FIND} ${NEWBOOTDIR} -type f -perm +111 | \
+		${SED} -E '/Csetjmp.i3$$/d' | ${XARGS} ${STRIP_CMD}
 	(cd ${NEWBOOTDIR}/.. ; tar -cyf ${NEWBOOTNAME} bootstrap)
-.endif
 
 .include <bsd.port.post.mk>
