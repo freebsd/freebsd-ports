@@ -159,6 +159,7 @@ backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
 smfs:*:326:
+orthanc:*:330:
 daapd:*:337:
 murmur:*:338:
 wildfire:*:340:
