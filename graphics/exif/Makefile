@@ -18,8 +18,9 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 CONFIGURE_ENV=	POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
+CPE_VENDOR=	curtis_galloway
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		cpe gmake pkgconfig
 
 NLS_CONFIGURE_ON=	--enable-nls ${ICONV_CONFIGURE_ARG}
 NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix
