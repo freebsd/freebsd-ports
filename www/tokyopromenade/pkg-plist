@@ -27,6 +27,3 @@ man/man1/prommgr.1.gz
 %%DATADIR%%/passwd.txt
 %%DATADIR%%/promenade.css
 %%DATADIR%%/promenade.tmpl
-@dirrmtry %%DATADIR%%/misc
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%
