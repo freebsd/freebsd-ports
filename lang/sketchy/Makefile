@@ -3,6 +3,7 @@
 
 PORTNAME=	sketchy
 PORTVERSION=	20070218
+PORTREVISION=	1
 CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/files/
 
@@ -23,7 +24,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-	@${LN} -s ${MANPREFIX}/man/man1/sketchy.1.gz \
+	cd ${STAGEDIR} && ${FIND} . -not -type d -exec ls -ld {} \;
+	${LN} -sf libsketchy.so.31 ${STAGEDIR}${PREFIX}/lib/libsketchy.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsketchy.so
+	${LN} -s ${MANPREFIX}/man/man1/sketchy.1.gz \
 		${STAGEDIR}${MANPREFIX}/man/man1/sk.1.gz
 
 .include <bsd.port.mk>
