@@ -147,9 +147,16 @@ MASTER_SITE_SUBDIR+=	${MASTER_SITE_SRC_SUBDIR}
 ALWAYS_KEEP_DISTFILES=	yes
 .	endif
 
+.if !defined(USE_LINUX_RPM_BAD_PERMS)
 EXTRACT_CMD?=			${TAR}
-EXTRACT_BEFORE_ARGS?=	-xf
+EXTRACT_BEFORE_ARGS?=	--no-same-permissions --no-same-owner -xf
 EXTRACT_AFTER_ARGS?=
+.else
+EXTRACT_DEPENDS+=	rpm2archive:${PORTSDIR}/archivers/rpm4
+EXTRACT_CMD?=	rpm2archive
+EXTRACT_BEFORE_ARGS?=	<
+EXTRACT_AFTER_ARGS?=	| ${TAR} xf - --no-same-permissions --no-same-owner
+.endif
 
 DISTINFO_FILE?=				${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 
