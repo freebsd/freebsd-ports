@@ -14,7 +14,6 @@ COMMENT=	Secure and efficient mail gateway
 NOT_FOR_ARCHS=	ia64
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
-NEED_ROOT=	yes
 MANUAL_PACKAGE_BUILD=	needs hostname
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
@@ -36,16 +35,15 @@ PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 PLIST_SUB+=	NOLOGIN=${NOLOGIN_CMD}
 EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 		libmta/t-hostname checks/t-getgroup
-# GROUPS/USERS does not work from package
-#GROUPS=	meta1s meta1q meta1c meta1m meta1
-#USERS=		meta1s meta1q meta1c meta1m meta1
+GROUPS=		meta1s meta1q meta1c meta1m meta1
+USERS=		meta1s meta1q meta1c meta1m meta1
 
 # default config:
 META1CONFDIR?=	${PREFIX}/etc/meta1
 NOLOGIN_CMD?=	/usr/sbin/nologin
 
-OPTIONS_DEFINE=	BDB PMILTER DKIM MSP SASL2 SASL2AUTHD TLS DOCS
-OPTIONS_DEFAULT=	PMILTER DKIM SASL2 TLS
+OPTIONS_DEFINE=	IPV6 BDB PMILTER DKIM MSP SASL2 SASL2AUTHD TLS DOCS
+OPTIONS_DEFAULT=	IPV6 PMILTER DKIM SASL2 TLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
@@ -67,6 +65,10 @@ SASL2AUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-s
 TLS_CONFIGURE_ENABLE=	TLS
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPV6}
+MAKE_ENV+=	MTA_NETINET6=1
+.endif
 
 .if ${PORT_OPTIONS:MBDB}
 BROKEN=		port version of Berkeley DB is not compatible
@@ -116,45 +118,20 @@ post-configure:
 		-e 's|$${SD}/checks|${PREFIX}/sbin|' \
 		${WRKDIR}/sm.check.sh
 	@${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
-		-e 's|[.]/misc|${PREFIX}/bin|' \
+		-e 's|$${S}/misc|${PREFIX}/bin|' \
 		-e 's|$${S}/libconf|${PREFIX}/sbin|' \
-		-e 's|[.]/libmta|${PREFIX}/sbin|' \
-		-e 's|[.]/checks|${PREFIX}/sbin|' \
+		-e 's|$${S}/libmta|${PREFIX}/sbin|' \
+		-e 's|$${S}/checks|${PREFIX}/sbin|' \
 		-e 's|=mcp.sh|=${PREFIX}/etc/rc.d/meta1-mcp.sh|' \
 		${WRKDIR}/sm.setup.sh
+	@${REINPLACE_CMD} -e "/install-data-hook/d" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^TESTS =.*|TESTS = $$(TESTP)|' \
+		${WRKSRC}/libdkim/Makefile.in
+	${CP} ${WRKSRC}/libdns/common.sh ${WRKSRC}/
 
-test:
+test:	build
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
-
-#fails on bento
-#regression-test:	test
-
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
-.if ${UID} != 0
-post-build:	test
-.endif
-
-pre-install:
-	if ! pw groupshow meta1s; then pw groupadd meta1s -g 260; fi
-	if ! pw groupshow meta1q; then pw groupadd meta1q -g 261; fi
-	if ! pw groupshow meta1c; then pw groupadd meta1c -g 262; fi
-	if ! pw groupshow meta1m; then pw groupadd meta1m -g 263; fi
-	if ! pw groupshow meta1; then pw groupadd meta1 -g 264; fi
-	if ! pw usershow meta1s; then pw useradd meta1s -g meta1s -u 260 \
-		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 SMTPS"; fi
-	if ! pw usershow meta1q; then pw useradd meta1q -g meta1q -u 261 \
-		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 QMGR"; fi
-	if ! pw usershow meta1c; then pw useradd meta1c -g meta1c -u 262 \
-		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 SMTPC"; fi
-	if ! pw usershow meta1m; then pw useradd meta1m -g meta1m -u 263 \
-		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 misc"; fi
-	if ! pw usershow meta1; then pw useradd meta1 -g meta1 -u 264 \
-		-h - -d ${NONEXISTENT} -s ${NOLOGIN_CMD} -c "MeTA1 other"; fi
-	pw groupmod meta1c -m meta1s
-	pw groupmod meta1m -m meta1s,meta1q
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/sm.check.sh ${STAGEDIR}${PREFIX}/sbin/
