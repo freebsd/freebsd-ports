@@ -5,4 +5,3 @@ man/man1/qmail-rblchk.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-qmail-storeip
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rbllist.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spam-report.sh
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
