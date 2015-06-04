@@ -30,14 +30,13 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		autoreconf compiler:c++11-lib gettext gmake pkgconfig tar:bzip2
+USE_CXXSTD=	gnu++11
 USE_WX=		3.0
+GNU_CONFIGURE=	yes
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
-USE_AUTOTOOLS=	aclocal automake autoconf
-ACLOCAL_ARGS=	-I ${WRKSRC}
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
-CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH=""
+CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -46,8 +45,6 @@ OPTIONS_DEFINE=	DOCS GNOME
 
 GNOME_USE=		GNOME=libgnomeui
 GNOME_CONFIGURE_WITH=	gnome
-
-.include <bsd.port.options.mk>
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -62,9 +59,6 @@ pre-everything::
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
-
-post-extract:
-	@${ECHO_CMD} -n > ${WRKSRC}/NEWS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/doc_DATA/s|COPYING||' \
