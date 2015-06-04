@@ -57,6 +57,55 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e69af246-0ae2-11e5-90e4-d050996490d0">
+    <topic>pcre -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1636">
+	  <p>PCRE library is prone to a vulnerability which leads
+	    to Heap Overflow. During the compilation of a malformed
+	    regular expression, more data is written on the malloced
+	    block than the expected size output by compile_regex.</p>
+	</blockquote>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1638">
+	  <p>PCRE library is prone to a vulnerability which leads to
+	    Stack Overflow. Without enough bound checking inside
+	    match(), the stack memory could be overflowed via a
+	    crafted regular expression.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3210</cvename>
+      <cvename>CVE-2015-3217</cvename>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1636</url>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1638</url>
+    </references>
+    <dates>
+      <discovery>2015-05-29</discovery>
+      <entry>2015-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bbc0db92-084c-11e5-bb90-002590263bf5">
     <topic>hostapd and wpa_supplicant -- multiple vulnerabilities</topic>
     <affects>
