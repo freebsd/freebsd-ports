@@ -13,7 +13,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
-USES=		gmake perl5 compiler:features
+USES=		cpe gmake perl5 compiler:features
 USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
