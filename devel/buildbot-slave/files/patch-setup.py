@@ -1,6 +1,6 @@
---- ./setup.py.orig	2014-01-28 19:18:29.885753132 +1100
-+++ ./setup.py	2014-01-28 19:18:53.182782954 +1100
-@@ -96,9 +96,6 @@
+--- setup.py.orig	2014-04-20 08:52:42 UTC
++++ setup.py
+@@ -99,9 +99,6 @@ setup_args = {
          "buildslave.test.unit",
      ],
      'scripts': scripts,
