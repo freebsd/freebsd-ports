@@ -18,6 +18,7 @@ man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/command/type_printers.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/command/xmethods.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/__init__.py
+%%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/caller_is.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/strfns.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/printer/__init__.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/printer/bound_registers.py
