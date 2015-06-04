@@ -3,7 +3,7 @@
 
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/spiralmodular/spiralmodular/${PORTVERSION}%20%28Latest%20Version%29
 DISTNAME=	spiralmodular-${PORTVERSION}
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-
 CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -60,5 +59,9 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; \
 		/^#include "FL/s|.h"$$|.H"|; \
 		s|fl_file_chooser.H|Fl_File_Chooser.H|g'
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/SpiralPlugins/*.so
 
 .include <bsd.port.mk>
