@@ -3,7 +3,7 @@
 
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/qdbm/
 
@@ -16,6 +16,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(SLAVEPORT)
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES+=		iconv
 CONFIGURE_ARGS=	--enable-bzip --enable-lzo --enable-zlib \
 		--enable-iconv \
@@ -40,6 +43,8 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .else
 
