@@ -255,10 +255,10 @@ lib/girepository-1.0/JavaScriptCore-1.0.typelib
 lib/girepository-1.0/WebKit-1.0.typelib
 lib/libjavascriptcoregtk-1.0.so
 lib/libjavascriptcoregtk-1.0.so.0
-lib/libjavascriptcoregtk-1.0.so.0.16.16
+lib/libjavascriptcoregtk-1.0.so.0.16.17
 lib/libwebkitgtk-1.0.so
 lib/libwebkitgtk-1.0.so.0
-lib/libwebkitgtk-1.0.so.0.22.14
+lib/libwebkitgtk-1.0.so.0.22.15
 libdata/pkgconfig/javascriptcoregtk-1.0.pc
 libdata/pkgconfig/webkit-1.0.pc
 share/gir-1.0/JavaScriptCore-1.0.gir
