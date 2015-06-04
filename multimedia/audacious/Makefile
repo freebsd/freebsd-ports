@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmcs.so:${PORTSDIR}/devel/libmcs \
 		libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake tar:bzip2 desktop-file-utils gettext-tools
+USES=		pkgconfig gmake tar:bzip2 desktop-file-utils gettext-tools compiler:c++11-lib
 USE_XORG=	x11 sm
 USE_GNOME=	gtk30 libxml2
 USE_LDCONFIG=	yes
@@ -73,9 +73,9 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audacious
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.2.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.2.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudtag.so.1.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.3.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.3.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudtag.so.2.0.0
 .if ${PORT_OPTIONS:MDBUS}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audtool
 .endif
