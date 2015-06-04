@@ -13,6 +13,7 @@ lib/audacious/Effect/echo.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/mixer.so
 %%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
+lib/audacious/Effect/silence-removal.so
 %%SPEEDPITCHPLUGIN%%lib/audacious/Effect/speed-pitch.so
 lib/audacious/Effect/stereo.so
 lib/audacious/Effect/voice_removal.so
@@ -26,14 +27,15 @@ lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 %%LIRC%%lib/audacious/General/lirc.so
 lib/audacious/General/lyricwiki.so
+%%MPRIS%%lib/audacious/General/mpris2.so
 %%NOTIFY%%lib/audacious/General/notify.so
+lib/audacious/General/playlist-manager.so
 %%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
 lib/audacious/General/search-tool.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
 %%AACPLUGIN%%lib/audacious/Input/aac-raw.so
-%%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 %%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
@@ -53,7 +55,7 @@ lib/audacious/Input/xsf.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
 %%ALSAPLUGIN%%lib/audacious/Output/alsa.so
 lib/audacious/Output/filewriter.so
-%%JACKPLUGIN%%lib/audacious/Output/jackout.so
+%%JACKPLUGIN%%lib/audacious/Output/jack-ng.so
 %%OSS4PLUGIN%%lib/audacious/Output/oss4.so
 %%PULSE%%lib/audacious/Output/pulse_audio.so
 %%SDL%%lib/audacious/Output/sdlout.so
