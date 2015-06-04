@@ -1373,11 +1373,15 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>kodi, rawstudio, and ufraw -- integer overflow condition</topic>
+    <topic>kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
     <affects>
       <package>
 	<name>kodi</name>
 	<range><lt>14.2_1</lt></range>
+      </package>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.16.1</lt></range>
       </package>
       <package>
 	<name>rawstudio</name>
@@ -1407,11 +1411,12 @@ Notes:
       <cvename>CVE-2015-3885</cvename>
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
       <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/4606c28f494a750892c5c1ac7903e62dd1c6fdb5</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-01</modified>
+      <modified>2015-06-04</modified>
     </dates>
   </vuln>
 
