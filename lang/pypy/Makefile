@@ -3,6 +3,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	2.6.0
+PPORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -35,6 +36,9 @@ OPTIONS_SINGLE=	TRANS
 OPTIONS_SINGLE_TRANS=	PYTHON PYPY PYPY_MINMEM
 OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
+
+# Disable CFFI compilation and shared libraries temporarily
+PLIST_SUB+=	CFFI="@comment"
 
 CONFLICTS_INSTALL=	pypy-[0-9]*
 
@@ -236,8 +240,9 @@ do-configure:
 	${CP} ${WRKDIR}/use.pypy ${PKGDEINSTALL}
 
 post-build:
-	${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKDIR}:${LD_LIBRARY_PATH} ${WRKDIR}/${PYPY_PRIMARY} ${FILESDIR}/compile_cffi.py 
-	${FIND} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/ -name "*.pypy-${PYPY_VER:C/\.//}.so" | ${XARGS} ${STRIP_CMD}
+# Disable CFFI compilation and shared libraries temporarily
+#	${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKDIR}:${LD_LIBRARY_PATH} ${WRKDIR}/${PYPY_PRIMARY} ${FILESDIR}/compile_cffi.py 
+#	${FIND} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/ -name "*.pypy-${PYPY_VER:C/\.//}.so" | ${XARGS} ${STRIP_CMD}
 .for _path in ${PYPYDIRS}
 	-${FIND} ${WRKDIR}/${_path:C/.*://}/ -type d | \
 		${XARGS} -n1 ${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
