@@ -62,4 +62,10 @@ pre-configure:
 	(cd ${WRKSRC}/ext/yassl/taocrypt && ${LOCALBASE}/bin/autoreconf -f -i)
 	(cd ${WRKSRC}/ext/yassl && ${LOCALBASE}/bin/autoreconf -f -i)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
