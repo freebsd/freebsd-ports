@@ -3,7 +3,7 @@
 
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.ox.ac.uk/people/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/
@@ -38,8 +38,9 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} rexx rxque rxstack \
 		${STAGEDIR}${PREFIX}/bin)
 	${INSTALL_DATA} ${WRKSRC}/rexxsaa.h ${STAGEDIR}${PREFIX}/include
-	(cd ${WRKSRC} && ${INSTALL_DATA} librexx.so.2 rxmathfn.rxfn \
-		rxmathfn.rxlib ${STAGEDIR}${PREFIX}/lib)
+	${INSTALL_LIB} ${WRKSRC}/librexx.so.2 ${WRKSRC}/rxmathfn.rxfn \
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/rxmathfn.rxlib ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf librexx.so.2 ${STAGEDIR}${PREFIX}/lib/librexx.so
 	(cd ${WRKSRC} && ${INSTALL_MAN} rexx.1 rxstack.1 rxque.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1)
