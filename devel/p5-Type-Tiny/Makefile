@@ -48,11 +48,4 @@ USES=		perl5
 XS_BUILD_DEPENDS=	p5-Type-Tiny-XS>=0.010:${PORTSDIR}/devel/p5-Type-Tiny-XS
 XS_RUN_DEPENDS=		p5-Type-Tiny-XS>=0.010:${PORTSDIR}/devel/p5-Type-Tiny-XS
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
-RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

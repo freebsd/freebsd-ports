@@ -24,17 +24,7 @@ CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501600
-PLIST_SUB+=	EXE_FILES="@comment "
-.else
-PLIST_SUB+=	EXE_FILES=""
-.endif
-
 post-patch:
-.if ${PERL_LEVEL} >= 501600
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

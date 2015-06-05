@@ -12,6 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
 BUILD_DEPENDS=	gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
+		p5-Switch>0:${PORTSDIR}/lang/p5-Switch \
 		geoclue>=0:${PORTSDIR}/net/geoclue
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
@@ -84,10 +85,6 @@ CFLAGS+=	-mminimal-toc
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501400
-BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
-.endif
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex

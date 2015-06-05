@@ -18,10 +18,4 @@ BUILD_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 USES=		perl5
 USE_PERL5=	modbuild
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501301
-BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=2.22.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
