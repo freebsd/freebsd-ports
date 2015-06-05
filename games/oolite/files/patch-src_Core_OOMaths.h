@@ -1,5 +1,5 @@
---- src/Core/OOMaths.h.orig	2014-06-30 12:50:36.000000000 +0400
-+++ src/Core/OOMaths.h	2014-10-14 07:20:31.000000000 +0400
+--- src/Core/OOMaths.h.orig	2014-06-30 08:50:36 UTC
++++ src/Core/OOMaths.h
 @@ -48,7 +48,8 @@
  #endif
  

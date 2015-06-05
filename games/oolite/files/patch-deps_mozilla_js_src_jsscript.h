@@ -5,8 +5,8 @@
 # Parent  284ebc48b2cb8e35dc04482ede700e717d8d214f
 Bug 662962 - Silence the clang warnings issued because of alignment requirements increase when compiling jsscript.h; r=Waldo
 
---- deps/mozilla/js/src/jsscript.h.orig	2011-04-01 06:08:36.000000000 +1100
-+++ deps/mozilla/js/src/jsscript.h	2013-05-26 00:23:16.202260566 +1000
+--- deps/mozilla/js/src/jsscript.h.orig	2011-03-31 19:08:36 UTC
++++ deps/mozilla/js/src/jsscript.h
 @@ -496,32 +496,32 @@
  
      JSObjectArray *objects() {
