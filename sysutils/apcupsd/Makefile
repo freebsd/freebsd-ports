@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-serial-dev=/dev/usv
 
 CONFIGURE_ENV+=	LD="${CXX}" \
-		ac_cv_path_SHUTDOWN="/sbin/shtdown"
+		ac_cv_path_SHUTDOWN="/sbin/shutdown"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
