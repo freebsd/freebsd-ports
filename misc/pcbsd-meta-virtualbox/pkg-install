@@ -11,6 +11,14 @@ grep '^drm_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
 if [ $? -ne 0 ] ; then
         echo 'drm_load="YES"' >>/boot/loader.conf
 fi
+grep '^drm2_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
+if [ $? -ne 0 ] ; then
+        echo 'drm2_load="YES"' >>/boot/loader.conf
+fi
+grep '^iisbus_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
+if [ $? -ne 0 ] ; then
+        echo 'iicbus_load="YES"' >>/boot/loader.conf
+fi
 grep '^vboxdrv_load="YES"' /boot/loader.conf >/dev/null 2>/dev/null
 if [ $? -ne 0 ] ; then
         echo 'vboxdrv_load="YES"' >>/boot/loader.conf
