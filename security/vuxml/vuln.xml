@@ -62,19 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>pcre</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
-	<name>php5</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
-	<name>php55</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
-	<name>php56</name>
-	<range><gt>0</gt></range>
+	<range><le>8.37</le></range>
       </package>
     </affects>
     <description>
@@ -103,6 +91,7 @@ Notes:
     <dates>
       <discovery>2015-05-29</discovery>
       <entry>2015-06-04</entry>
+      <modified>2015-06-05</modified>
     </dates>
   </vuln>
 
