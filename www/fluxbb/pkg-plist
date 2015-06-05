@@ -1,5 +1,5 @@
 %%WWWDIR%%/COPYING
-%%WWWDIR%%/README
+%%WWWDIR%%/addons/index.html
 %%WWWDIR%%/admin_bans.php
 %%WWWDIR%%/admin_categories.php
 %%WWWDIR%%/admin_censoring.php
@@ -10,12 +10,12 @@
 %%WWWDIR%%/admin_maintenance.php
 %%WWWDIR%%/admin_options.php
 %%WWWDIR%%/admin_permissions.php
-%%WWWDIR%%/admin_prune.php
-%%WWWDIR%%/admin_ranks.php
 %%WWWDIR%%/admin_reports.php
+%%WWWDIR%%/admin_statistics.php
 %%WWWDIR%%/admin_users.php
 %%WWWDIR%%/cache/.htaccess
 %%WWWDIR%%/cache/index.html
+%%WWWDIR%%/common.js
 %%WWWDIR%%/db_update.php
 %%WWWDIR%%/delete.php
 %%WWWDIR%%/edit.php
@@ -39,6 +39,7 @@
 %%WWWDIR%%/img/smilies/wink.png
 %%WWWDIR%%/img/smilies/yikes.png
 %%WWWDIR%%/img/test.png
+%%WWWDIR%%/include/addons.php
 %%WWWDIR%%/include/cache.php
 %%WWWDIR%%/include/common.php
 %%WWWDIR%%/include/common_admin.php
@@ -55,12 +56,14 @@
 %%WWWDIR%%/include/index.html
 %%WWWDIR%%/include/parser.php
 %%WWWDIR%%/include/search_idx.php
+%%WWWDIR%%/include/srand.php
 %%WWWDIR%%/include/template/admin.tpl
 %%WWWDIR%%/include/template/help.tpl
 %%WWWDIR%%/include/template/index.html
 %%WWWDIR%%/include/template/main.tpl
 %%WWWDIR%%/include/template/maintenance.tpl
 %%WWWDIR%%/include/template/redirect.tpl
+%%WWWDIR%%/include/user/index.html
 %%WWWDIR%%/include/utf8/index.html
 %%WWWDIR%%/include/utf8/mbstring/core.php
 %%WWWDIR%%/include/utf8/mbstring/index.html
@@ -100,8 +103,6 @@
 %%WWWDIR%%/lang/English/admin_maintenance.php
 %%WWWDIR%%/lang/English/admin_options.php
 %%WWWDIR%%/lang/English/admin_permissions.php
-%%WWWDIR%%/lang/English/admin_prune.php
-%%WWWDIR%%/lang/English/admin_ranks.php
 %%WWWDIR%%/lang/English/admin_reports.php
 %%WWWDIR%%/lang/English/admin_users.php
 %%WWWDIR%%/lang/English/common.php
@@ -114,12 +115,19 @@
 %%WWWDIR%%/lang/English/login.php
 %%WWWDIR%%/lang/English/mail_templates/activate_email.tpl
 %%WWWDIR%%/lang/English/mail_templates/activate_password.tpl
+%%WWWDIR%%/lang/English/mail_templates/banned_email_change.tpl
+%%WWWDIR%%/lang/English/mail_templates/banned_email_post.tpl
+%%WWWDIR%%/lang/English/mail_templates/banned_email_register.tpl
+%%WWWDIR%%/lang/English/mail_templates/dupe_email_change.tpl
+%%WWWDIR%%/lang/English/mail_templates/dupe_email_register.tpl
 %%WWWDIR%%/lang/English/mail_templates/form_email.tpl
 %%WWWDIR%%/lang/English/mail_templates/index.html
 %%WWWDIR%%/lang/English/mail_templates/new_reply.tpl
 %%WWWDIR%%/lang/English/mail_templates/new_reply_full.tpl
+%%WWWDIR%%/lang/English/mail_templates/new_report.tpl
 %%WWWDIR%%/lang/English/mail_templates/new_topic.tpl
 %%WWWDIR%%/lang/English/mail_templates/new_topic_full.tpl
+%%WWWDIR%%/lang/English/mail_templates/new_user.tpl
 %%WWWDIR%%/lang/English/mail_templates/rename.tpl
 %%WWWDIR%%/lang/English/mail_templates/welcome.tpl
 %%WWWDIR%%/lang/English/misc.php
@@ -130,8 +138,8 @@
 %%WWWDIR%%/lang/English/search.php
 %%WWWDIR%%/lang/English/stopwords.txt
 %%WWWDIR%%/lang/English/topic.php
-%%WWWDIR%%/lang/English/userlist.php
 %%WWWDIR%%/lang/English/update.php
+%%WWWDIR%%/lang/English/userlist.php
 %%WWWDIR%%/lang/index.html
 %%WWWDIR%%/login.php
 %%WWWDIR%%/misc.php
@@ -139,8 +147,10 @@
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/post.php
 %%WWWDIR%%/profile.php
+%%WWWDIR%%/readme.md
 %%WWWDIR%%/register.php
 %%WWWDIR%%/search.php
+%%WWWDIR%%/style/Air.css
 %%WWWDIR%%/style/Air/base_admin.css
 %%WWWDIR%%/style/Air/img/asterisk.png
 %%WWWDIR%%/style/Air/img/bull.png
@@ -150,11 +160,9 @@
 %%WWWDIR%%/style/Air/img/feed.png
 %%WWWDIR%%/style/Air/img/help.png
 %%WWWDIR%%/style/Air/img/index.html
-%%WWWDIR%%/style/Air/img/main_end.png
-%%WWWDIR%%/style/Air/img/main_top.png
 %%WWWDIR%%/style/Air/index.html
-%%WWWDIR%%/style/Air.css
 %%WWWDIR%%/style/Cobalt.css
+%%WWWDIR%%/style/Earth.css
 %%WWWDIR%%/style/Earth/base_admin.css
 %%WWWDIR%%/style/Earth/img/asterisk.png
 %%WWWDIR%%/style/Earth/img/bull.png
@@ -164,10 +172,8 @@
 %%WWWDIR%%/style/Earth/img/feed.png
 %%WWWDIR%%/style/Earth/img/help.png
 %%WWWDIR%%/style/Earth/img/index.html
-%%WWWDIR%%/style/Earth/img/main_end.png
-%%WWWDIR%%/style/Earth/img/main_top.png
 %%WWWDIR%%/style/Earth/index.html
-%%WWWDIR%%/style/Earth.css
+%%WWWDIR%%/style/Fire.css
 %%WWWDIR%%/style/Fire/base_admin.css
 %%WWWDIR%%/style/Fire/img/asterisk.png
 %%WWWDIR%%/style/Fire/img/bull.png
@@ -177,15 +183,13 @@
 %%WWWDIR%%/style/Fire/img/feed.png
 %%WWWDIR%%/style/Fire/img/help.png
 %%WWWDIR%%/style/Fire/img/index.html
-%%WWWDIR%%/style/Fire/img/main_end.png
-%%WWWDIR%%/style/Fire/img/main_top.png
 %%WWWDIR%%/style/Fire/index.html
-%%WWWDIR%%/style/Fire.css
 %%WWWDIR%%/style/Lithium.css
 %%WWWDIR%%/style/Mercury.css
 %%WWWDIR%%/style/Oxygen.css
 %%WWWDIR%%/style/Radium.css
 %%WWWDIR%%/style/Sulfur.css
+%%WWWDIR%%/style/Technetium.css
 %%WWWDIR%%/style/Technetium/bg.png
 %%WWWDIR%%/style/Technetium/dark-shade.png
 %%WWWDIR%%/style/Technetium/darker-shade.png
@@ -200,36 +204,13 @@
 %%WWWDIR%%/style/Technetium/index.html
 %%WWWDIR%%/style/Technetium/inv-shade.png
 %%WWWDIR%%/style/Technetium/light-shade.png
-%%WWWDIR%%/style/Technetium.css
 %%WWWDIR%%/style/imports/base_admin.css
 %%WWWDIR%%/style/imports/index.html
-%%WWWDIR%%/style/imports/minmax.js
 %%WWWDIR%%/style/index.html
 %%WWWDIR%%/userlist.php
 %%WWWDIR%%/viewforum.php
 %%WWWDIR%%/viewtopic.php
-@dirrm %%WWWDIR%%/cache
-@dirrm %%WWWDIR%%/img/avatars
-@dirrm %%WWWDIR%%/img/smilies
-@dirrm %%WWWDIR%%/img
-@dirrm %%WWWDIR%%/include/dblayer
-@dirrm %%WWWDIR%%/include/template
-@dirrm %%WWWDIR%%/include/utf8/mbstring
-@dirrm %%WWWDIR%%/include/utf8/native
-@dirrm %%WWWDIR%%/include/utf8/utils
-@dirrm %%WWWDIR%%/include/utf8
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/lang/English/mail_templates
-@dirrm %%WWWDIR%%/lang/English
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/style/Air/img
-@dirrm %%WWWDIR%%/style/Air
-@dirrm %%WWWDIR%%/style/Earth/img
-@dirrm %%WWWDIR%%/style/Earth
-@dirrm %%WWWDIR%%/style/Fire/img
-@dirrm %%WWWDIR%%/style/Fire
-@dirrm %%WWWDIR%%/style/Technetium
-@dirrm %%WWWDIR%%/style/imports
-@dirrm %%WWWDIR%%/style
-@dirrm %%WWWDIR%%
+@mode 777
+@dir %%WWWDIR%%/cache
+@dir %%WWWDIR%%/img/avatars
+@mode
