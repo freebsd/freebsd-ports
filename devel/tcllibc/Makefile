@@ -6,11 +6,13 @@ PKGNAMESUFFIX=	c
 COMMENT=	Compiled implementations of some of the modules of Tcllib
 
 BUILD_DEPENDS=	critcl:${PORTSDIR}/devel/critcl
+RUN_DEPENDS=	${PREFIX}/lib/tcllib/pkgIndex.tcl:${MASTERDIR}	# PREFIX, not LOCALBASE
 
 MASTERDIR=	${.CURDIR:H}/tcllib
 TMPPLIST=		${WRKDIR}/PLIST
 DESCR=		${.CURDIR}/pkg-descr
 ALL_TARGET=	critcl
+OPTIONS_DEFINE=
 
 post-patch:
 	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
