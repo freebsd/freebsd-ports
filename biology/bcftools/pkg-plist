@@ -1,0 +1,4 @@
+bin/bcftools
+bin/samtools_misc/plot-vcfstats
+bin/samtools_misc/vcfutils.pl
+man/man1/bcftools.1.gz

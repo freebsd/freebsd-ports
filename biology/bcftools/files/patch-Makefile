@@ -1,0 +1,84 @@
+--- Makefile.orig	2015-02-02 15:40:17 UTC
++++ Makefile
+@@ -29,14 +29,13 @@ TEST_PROG=  test/test-rbuf
+ all: $(PROG) $(TEST_PROG)
+ 
+ # Adjust $(HTSDIR) to point to your top-level htslib directory
+-HTSDIR = ../htslib
+-include $(HTSDIR)/htslib.mk
+-HTSLIB = $(HTSDIR)/libhts.a
++HTSDIR = $(prefix)/include
++HTSLIB = -lhts
+ BGZIP  = $(HTSDIR)/bgzip
+ TABIX  = $(HTSDIR)/tabix
+ 
+-CC       = gcc
+-CFLAGS   = -g -Wall -Wc++-compat -O2
++CC      ?= cc
++CFLAGS  += -Wall
+ DFLAGS   =
+ OBJS     = main.o vcfindex.o tabix.o \
+            vcfstats.o vcfisec.o vcfmerge.o vcfquery.o vcffilter.o filter.o vcfsom.o \
+@@ -52,22 +51,15 @@ INCLUDES = -I. -I$(HTSDIR)
+ ifdef USE_GPL
+     CFLAGS += -DUSE_GPL
+     OBJS   += polysomy.o
+-    LDLIBS  = -lgsl -lcblas
++    LDLIBS += -lgsl -lgslcblas
+ endif
+ 
+-prefix      = /usr/local
++prefix      = ${STAGEDIR}${PREFIX}
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+-mandir      = $(prefix)/share/man
++mandir      = $(prefix)/man
+ man1dir     = $(mandir)/man1
+ 
+-MKDIR_P = mkdir -p
+-INSTALL = install -p
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_DATA    = $(INSTALL) -m 644
+-INSTALL_DIR     = $(MKDIR_P) -m 755
+-
+-
+ all:$(PROG) plugins
+ 
+ # See htslib/Makefile
+@@ -102,8 +94,8 @@ PLUGINC = $(foreach dir, plugins, $(wild
+ PLUGINS = $(PLUGINC:.c=.so)
+ PLUGINM = $(PLUGINC:.c=.mk)
+ 
+-%.so: %.c version.h version.c $(HTSDIR)/libhts.so
+-	$(CC) $(CFLAGS) $(INCLUDES) -fPIC -shared -o $@ version.c $< -L$(HTSDIR) -lhts
++%.so: %.c version.h version.c
++	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -fPIC -shared -o $@ version.c $<  -lhts
+ 
+ -include $(PLUGINM)
+ 
+@@ -156,10 +148,10 @@ version.o: version.h version.c
+ test/test-rbuf.o: test/test-rbuf.c rbuf.h
+ 
+ test/test-rbuf: test/test-rbuf.o
+-	$(CC) $(CFLAGS) -o $@ -lm -ldl $<
++	$(CC) $(CFLAGS) -o $@ -lm $<
+ 
+-bcftools: $(HTSLIB) $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(HTSLIB) -lpthread -lz -lm -ldl $(LDLIBS)
++bcftools: $(OBJS)
++	$(CC) -pthread $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(HTSLIB)  -lz -lm $(LDLIBS)
+ 
+ doc/bcftools.1: doc/bcftools.txt
+ 	cd doc && a2x -adate="$(DOC_DATE)" -aversion=$(DOC_VERSION) --doctype manpage --format manpage bcftools.txt
+@@ -170,8 +162,9 @@ doc/bcftools.html: doc/bcftools.txt
+ docs: doc/bcftools.1 doc/bcftools.html
+ 
+ install: $(PROG) doc/bcftools.1
+-	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
+-	$(INSTALL_PROGRAM) $(PROG) plot-vcfstats vcfutils.pl $(DESTDIR)$(bindir)
++	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)/samtools_misc $(DESTDIR)$(man1dir)
++	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(bindir)
++	$(INSTALL_SCRIPT) plot-vcfstats vcfutils.pl $(DESTDIR)$(bindir)/samtools_misc
+ 	$(INSTALL_DATA) doc/bcftools.1 $(DESTDIR)$(man1dir)
+ 
+ clean: testclean clean-plugins
