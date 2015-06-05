@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.3.2
-PORTREVISION=	3
+PORTVERSION=	13.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -23,7 +22,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -46,9 +44,11 @@ CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX \
-		SYSINFO
+		SYSINFO PORTAUDIO
+OPTIONS_SINGLE=	COMPILER
+OPTIONS_SINGLE_COMPILER=	GCC BASE
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
-		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX
+		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX PORTAUDIO GCC
 
 OPTIONS_DEFINE_i386=	DAHDI
 OPTIONS_DEFINE_amd64=	DAHDI
@@ -66,6 +66,8 @@ DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
 PJSIP_DESC?=	Build the PJSIP based SIP channel
 SYSINFO_DESC?=	Use devel/libsysinfo to get system information
+GCC_DESC=	Use gcc from ports
+BASE_DESC=	Use base compiler (experimental)
 
 OPTIONS_SUB=	yes
 OOH323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
@@ -115,9 +117,12 @@ LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 PJSIP_CONFIGURE_WITH=	pjproject
 PJSIP_USES=		pkgconfig
+PORTAUDIO_CONFIGURE_WITH=	portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_WITH=	speex
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+GCC_USE=		GCC=yes
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk

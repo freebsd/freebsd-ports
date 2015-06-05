@@ -212,6 +212,7 @@ include/asterisk/localtime.h
 include/asterisk/lock.h
 include/asterisk/logger.h
 include/asterisk/manager.h
+include/asterisk/max_forwards.h
 include/asterisk/md5.h
 include/asterisk/media_index.h
 include/asterisk/message.h
@@ -333,6 +334,7 @@ lib/asterisk/modules/bridge_softmix.so
 %%ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
 %%XMPP%%lib/asterisk/modules/chan_motif.so
 lib/asterisk/modules/chan_bridge_media.so
+%%PORTAUDIO%%lib/asterisk/modules/chan_console.so
 lib/asterisk/modules/chan_mgcp.so
 %%OOH323%%lib/asterisk/modules/chan_ooh323.so
 %%PJSIP%%lib/asterisk/modules/chan_pjsip.so
@@ -380,7 +382,6 @@ lib/asterisk/modules/res_ari_channels.so
 lib/asterisk/modules/res_ari_device_states.so
 lib/asterisk/modules/res_ari_endpoints.so
 lib/asterisk/modules/res_ari_events.so
-lib/asterisk/modules/res_ari_mailboxes.so
 lib/asterisk/modules/res_ari_model.so
 lib/asterisk/modules/res_ari_playbacks.so
 lib/asterisk/modules/res_ari_recordings.so
@@ -411,6 +412,7 @@ lib/asterisk/modules/res_phoneprov.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_caller_id.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_dialog_info_body_generator.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_diversion.so
+%%PJSIP%%lib/asterisk/modules/res_pjsip_dlg_options.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_dtmf_info.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_endpoint_identifier_anonymous.so
 %%PJSIP%%lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
@@ -664,11 +666,12 @@ sbin/safe_asterisk
 %%DATADIR%%/rest-api/recordings.json
 %%DATADIR%%/rest-api/resources.json
 %%DATADIR%%/rest-api/sounds.json
-%%DATADIR%%/sounds/en/.asterisk-core-sounds-en-gsm-1.4.26
-%%DATADIR%%/sounds/en/CHANGES-asterisk-core-en-1.4.26
-%%DATADIR%%/sounds/en/CREDITS-asterisk-core-en-1.4.26
-%%DATADIR%%/sounds/en/LICENSE-asterisk-core-en-1.4.26
+%%DATADIR%%/sounds/en/.asterisk-core-sounds-en-gsm-1.4.27
+%%DATADIR%%/sounds/en/CHANGES-asterisk-core-en-1.4.27
+%%DATADIR%%/sounds/en/CREDITS-asterisk-core-en-1.4.27
+%%DATADIR%%/sounds/en/LICENSE-asterisk-core-en-1.4.27
 %%DATADIR%%/sounds/en/ascending-2tone.gsm
+%%DATADIR%%/sounds/en/basic-pbx-ivr-main.gsm
 %%DATADIR%%/sounds/en/conf-adminmenu-162.gsm
 %%DATADIR%%/sounds/en/conf-adminmenu-18.gsm
 %%DATADIR%%/sounds/en/conf-adminmenu-menu8.gsm
