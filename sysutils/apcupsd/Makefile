@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${ETCDIR} \
 		--with-serial-dev=/dev/usv
 
-CONFIGURE_ENV+=	LD="${CXX}" LIBS="-lstdc++"
+CONFIGURE_ENV+=	LD="${CXX}" \
+		ac_cv_path_SHUTDOWN="/sbin/shtdown"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
