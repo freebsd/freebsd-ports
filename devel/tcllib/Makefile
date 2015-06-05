@@ -35,7 +35,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if !empty(${PORT_OPTIONS:MMANPAGES}) && !(defined(ALL_TARGET) && ${ALL_TARGET:Mcritcl})
+.if !empty(${PORT_OPTIONS:MMANPAGES}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
 PLIST_SUB+=	MAN=""
@@ -47,7 +47,7 @@ PLIST_SUB+=	MAN="@comment "
 #
 # HTML documentation
 #
-.if !empty(${PORT_OPTIONS:MDOCS}) && !(defined(ALL_TARGET) && ${ALL_TARGET:Mcritcl})
+.if !empty(${PORT_OPTIONS:MDOCS}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
