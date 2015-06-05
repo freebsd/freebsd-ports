@@ -33,11 +33,8 @@ PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb sst_dump table_re
 CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
-.if ${COMPILER_TYPE} == clang
-#CXXFLAGS+=	-Wno-shift-count-overflow
-.if ${COMPILER_VERSION} >= 36
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-inconsistent-missing-override
-.endif
 .endif
 
 post-patch:
@@ -46,8 +43,9 @@ post-patch:
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile
 .endif
-.if !defined(MACHINE_CPU:Msse42)
-#	@${REINPLACE_CMD} -e 's| -msse4.2||' ${WRKSRC}/build_tools/build_detect_platform
+# Disable SSE4.2 on i386 architecture to fix i386 builds on FreeBSD package building cluster
+.if ${ARCH} == i386
+	@${REINPLACE_CMD} -e 's|#ifdef __SSE4_2__|&DISABLED__|' ${WRKSRC}/util/crc32c.cc
 .endif
 
 do-install:
