@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcal
-PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTVERSION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU
 
@@ -18,16 +17,9 @@ SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 INFO=		gcal
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 GCAL_SCRIPTS=	daily/daily ddiff/ddiff ddiff/ddiffdrv dst/dst gcalltx/gcalltx \
 		gcalltx/gcalltxp moon/moon mrms/mrms srss/srss wloc/wlocdrv
