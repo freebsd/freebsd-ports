@@ -4918,6 +4918,7 @@
     SUBDIR += tclgetopts
     SUBDIR += tcllauncher
     SUBDIR += tcllib
+    SUBDIR += tcllibc
     SUBDIR += tclmore
     SUBDIR += tcloo
     SUBDIR += tclreadline

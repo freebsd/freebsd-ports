@@ -1,0 +1,5 @@
+Some of the modules in Tcllib have C-implementations, which are
+considerably faster than the pure-Tcl ones.
+
+This port adds tcllibc, which contains all such available C-versions
+of Tcllib's modules.

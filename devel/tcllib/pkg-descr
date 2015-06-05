@@ -9,4 +9,8 @@ documentation at
 
 to get the idea.
 
+This port installs pure-Tcl versions of the modules only.
+C-implementations -- for some of the modules -- can be added by
+installing devel/tcllibc port.
+
 WWW: http://tcllib.sourceforge.net/

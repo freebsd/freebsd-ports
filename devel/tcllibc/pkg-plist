@@ -1,0 +1,4 @@
+lib/tcllib/tcllibc/critcl-rt.tcl
+lib/tcllib/tcllibc/%%PLATFORM%%/tcllibc.so
+lib/tcllib/tcllibc/pkgIndex.tcl
+lib/tcllib/tcllibc/teapot.txt
