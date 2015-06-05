@@ -12,7 +12,7 @@ lib/php/libphutil/resources/ssl/README
 lib/php/libphutil/resources/ssl/default.pem
 lib/php/libphutil/resources/test/diverse_symbols.php.example
 lib/php/libphutil/scripts/__init_script__.php
-lib/php/libphutil/scripts/build_xhpast.sh
+lib/php/libphutil/scripts/build_xhpast.php
 lib/php/libphutil/scripts/daemon/exec/exec_daemon.php
 lib/php/libphutil/scripts/daemon/launch_daemon.php
 lib/php/libphutil/scripts/daemon/torture/resist-death.php
@@ -59,7 +59,6 @@ lib/php/libphutil/src/aphront/storage/exception/AphrontRecoverableQueryException
 lib/php/libphutil/src/aphront/storage/exception/AphrontSchemaQueryException.php
 lib/php/libphutil/src/aphront/writeguard/AphrontScopedUnguardedWriteCapability.php
 lib/php/libphutil/src/aphront/writeguard/AphrontWriteGuard.php
-lib/php/libphutil/src/aphront/writeguard/event/AphrontWriteGuardExitEventListener.php
 lib/php/libphutil/src/auth/PhutilAmazonAuthAdapter.php
 lib/php/libphutil/src/auth/PhutilAsanaAuthAdapter.php
 lib/php/libphutil/src/auth/PhutilAuthAdapter.php
@@ -163,6 +162,8 @@ lib/php/libphutil/src/events/PhutilEventEngine.php
 lib/php/libphutil/src/events/PhutilEventListener.php
 lib/php/libphutil/src/events/constant/PhutilEventConstants.php
 lib/php/libphutil/src/events/constant/PhutilEventType.php
+lib/php/libphutil/src/exception/PhutilInvalidStateException.php
+lib/php/libphutil/src/exception/__tests__/PhutilInvalidStateExceptionTestCase.php
 lib/php/libphutil/src/extensions/README
 lib/php/libphutil/src/filesystem/FileFinder.php
 lib/php/libphutil/src/filesystem/FileList.php
@@ -232,7 +233,6 @@ lib/php/libphutil/src/grammar/code/PhutilCLikeCodeSnippetContextFreeGrammar.php
 lib/php/libphutil/src/grammar/code/PhutilCodeSnippetContextFreeGrammar.php
 lib/php/libphutil/src/grammar/code/PhutilJavaCodeSnippetContextFreeGrammar.php
 lib/php/libphutil/src/grammar/code/PhutilPHPCodeSnippetContextFreeGrammar.php
-lib/php/libphutil/src/infrastructure/testing/PhutilTestCase.php
 lib/php/libphutil/src/internationalization/PhutilLocale.php
 lib/php/libphutil/src/internationalization/PhutilNumber.php
 lib/php/libphutil/src/internationalization/PhutilPerson.php
@@ -423,6 +423,7 @@ lib/php/libphutil/src/object/__tests__/PhutilPhobjectTestCase.php
 lib/php/libphutil/src/object/__tests__/PhutilTestPhobject.php
 lib/php/libphutil/src/parser/PhutilBugtraqParser.php
 lib/php/libphutil/src/parser/PhutilDocblockParser.php
+lib/php/libphutil/src/parser/PhutilEditorConfig.php
 lib/php/libphutil/src/parser/PhutilEmailAddress.php
 lib/php/libphutil/src/parser/PhutilGitURI.php
 lib/php/libphutil/src/parser/PhutilJSON.php
@@ -435,6 +436,7 @@ lib/php/libphutil/src/parser/PhutilTypeSpec.php
 lib/php/libphutil/src/parser/PhutilURI.php
 lib/php/libphutil/src/parser/__tests__/PhutilBugtraqParserTestCase.php
 lib/php/libphutil/src/parser/__tests__/PhutilDocblockParserTestCase.php
+lib/php/libphutil/src/parser/__tests__/PhutilEditorConfigTestCase.php
 lib/php/libphutil/src/parser/__tests__/PhutilEmailAddressTestCase.php
 lib/php/libphutil/src/parser/__tests__/PhutilGitURITestCase.php
 lib/php/libphutil/src/parser/__tests__/PhutilJSONParserTestCase.php
@@ -455,6 +457,10 @@ lib/php/libphutil/src/parser/__tests__/docblock/multi-specials.docblock
 lib/php/libphutil/src/parser/__tests__/docblock/multiline-special.docblock
 lib/php/libphutil/src/parser/__tests__/docblock/specials-with-hyphen.docblock
 lib/php/libphutil/src/parser/__tests__/docblock/specials.docblock
+lib/php/libphutil/src/parser/__tests__/editorconfig/.editorconfig
+lib/php/libphutil/src/parser/__tests__/editorconfig/empty/.editorconfig
+lib/php/libphutil/src/parser/__tests__/editorconfig/externals/.editorconfig
+lib/php/libphutil/src/parser/__tests__/editorconfig/subdir/.editorconfig
 lib/php/libphutil/src/parser/__tests__/json/base64.data
 lib/php/libphutil/src/parser/__tests__/json/base64.json
 lib/php/libphutil/src/parser/__tests__/languageguesser/bash.shebang
@@ -590,8 +596,10 @@ lib/php/libphutil/src/utils/utils.php
 lib/php/libphutil/src/utils/viewutils.php
 lib/php/libphutil/src/xsprintf/PhutilCommandString.php
 lib/php/libphutil/src/xsprintf/PhutilQsprintfInterface.php
+lib/php/libphutil/src/xsprintf/PhutilTerminalString.php
 lib/php/libphutil/src/xsprintf/__tests__/PhutilCsprintfTestCase.php
 lib/php/libphutil/src/xsprintf/__tests__/PhutilHgsprintfTestCase.php
+lib/php/libphutil/src/xsprintf/__tests__/PhutilTsprintfTestCase.php
 lib/php/libphutil/src/xsprintf/__tests__/PhutilUrisprintfTestCase.php
 lib/php/libphutil/src/xsprintf/csprintf.php
 lib/php/libphutil/src/xsprintf/exception/XsprintfUnknownConversionException.php
@@ -600,6 +608,7 @@ lib/php/libphutil/src/xsprintf/jsprintf.php
 lib/php/libphutil/src/xsprintf/ldapsprintf.php
 lib/php/libphutil/src/xsprintf/qsprintf.php
 lib/php/libphutil/src/xsprintf/queryfx.php
+lib/php/libphutil/src/xsprintf/tsprintf.php
 lib/php/libphutil/src/xsprintf/urisprintf.php
 lib/php/libphutil/src/xsprintf/xsprintf.php
 lib/php/libphutil/support/parser/generate-type-parser.php

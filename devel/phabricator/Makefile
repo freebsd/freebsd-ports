@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20150423
+PORTVERSION=	20150602
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Open source software development platform
+COMMENT=	Open source, software engineering platform
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PHP_DESTDIR=	lib/php/phabricator
 RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
 		php5-arcanist>0:${PORTSDIR}/devel/arcanist \
 		git:${PORTSDIR}/devel/git
@@ -32,7 +32,7 @@ USE_PHP+=	opcache
 RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:${PORTSDIR}/devel/pecl-APCu
 .	else
 USE_PHP+=	apc
-.	endif	
+.	endif
 .endif
 
 USE_GITHUB=	yes
@@ -40,7 +40,9 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	cf154ae
+GH_TAGNAME=	55c73b2
+
+PHP_DESTDIR=	lib/php/phabricator
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
