@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Any/Daemon.pm
+%%SITE_PERL%%/Any/Daemon.pod
+%%PERL5_MAN3%%/Any::Daemon.3.gz
