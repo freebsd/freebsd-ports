@@ -4,9 +4,9 @@ lib/wolfpack/emp_server
 lib/wolfpack/empdump
 lib/wolfpack/empire
 lib/wolfpack/empsched
-lib/wolfpack/pconfig
-lib/wolfpack/files
 lib/wolfpack/fairland
+lib/wolfpack/files
+lib/wolfpack/pconfig
 man/man6/empire.6.gz
 man/man6/emp_server.6.gz
 man/man6/empdump.6.gz
@@ -27,8 +27,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/builtin/sect.config
 %%DATADIR%%/builtin/ship.config
 %%DATADIR%%/info.nr/Attacking
-%%DATADIR%%/info.nr/Autofish
-%%DATADIR%%/info.nr/Autonav
 %%DATADIR%%/info.nr/BTU
 %%DATADIR%%/info.nr/Basics
 %%DATADIR%%/info.nr/Bridges
@@ -165,7 +163,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/flash
 %%DATADIR%%/info.nr/fleetadd
 %%DATADIR%%/info.nr/fly
-%%DATADIR%%/info.nr/follow
 %%DATADIR%%/info.nr/force
 %%DATADIR%%/info.nr/fortify
 %%DATADIR%%/info.nr/give
@@ -204,7 +201,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/morale
 %%DATADIR%%/info.nr/motd
 %%DATADIR%%/info.nr/move
-%%DATADIR%%/info.nr/mquota
 %%DATADIR%%/info.nr/name
 %%DATADIR%%/info.nr/nation
 %%DATADIR%%/info.nr/navigate
@@ -216,7 +212,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/nmap
 %%DATADIR%%/info.nr/nuke
 %%DATADIR%%/info.nr/offer
-%%DATADIR%%/info.nr/order
 %%DATADIR%%/info.nr/origin
 %%DATADIR%%/info.nr/paradrop
 %%DATADIR%%/info.nr/path
@@ -232,7 +227,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/pray
 %%DATADIR%%/info.nr/production
 %%DATADIR%%/info.nr/pstat
-%%DATADIR%%/info.nr/qorder
 %%DATADIR%%/info.nr/quit
 %%DATADIR%%/info.nr/radar
 %%DATADIR%%/info.nr/range
@@ -249,7 +243,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/retreat
 %%DATADIR%%/info.nr/route
 %%DATADIR%%/info.nr/sabotage
-%%DATADIR%%/info.nr/sail
 %%DATADIR%%/info.nr/satellite
 %%DATADIR%%/info.nr/sbmap
 %%DATADIR%%/info.nr/scrap
@@ -270,11 +263,11 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/skywatch
 %%DATADIR%%/info.nr/smap
 %%DATADIR%%/info.nr/sonar
-%%DATADIR%%/info.nr/sorder
 %%DATADIR%%/info.nr/spy
 %%DATADIR%%/info.nr/sstat
 %%DATADIR%%/info.nr/start
 %%DATADIR%%/info.nr/starvation
+%%DATADIR%%/info.nr/stockpile
 %%DATADIR%%/info.nr/stop
 %%DATADIR%%/info.nr/strength
 %%DATADIR%%/info.nr/supply
@@ -290,10 +283,8 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/torpedo
 %%DATADIR%%/info.nr/trade
 %%DATADIR%%/info.nr/transport
-%%DATADIR%%/info.nr/treaty
 %%DATADIR%%/info.nr/turn
 %%DATADIR%%/info.nr/unload
-%%DATADIR%%/info.nr/unsail
 %%DATADIR%%/info.nr/update
 %%DATADIR%%/info.nr/upgrade
 %%DATADIR%%/info.nr/version
@@ -316,5 +307,4 @@ etc/wolfpack/econfig.orig
 @dirrm lib/wolfpack
 @mode 750
 @dirrmtry etc/wolfpack
-@dirrmtry var/wolfpack
-@dirrmtry var
+@dirrmtry /var/wolfpack
