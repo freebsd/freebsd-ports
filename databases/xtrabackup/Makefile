@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	databases
-MASTER_SITES=	http://www.percona.com/downloads/XtraBackup/XtraBackup-${PORTVERSION}/source/tarball/
+MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	percona-xtrabackup-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	percona-xtrabackup-${PORTVERSION}.tar.gz
