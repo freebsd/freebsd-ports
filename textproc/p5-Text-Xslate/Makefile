@@ -24,13 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/Xslate/Xslate.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

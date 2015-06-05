@@ -18,11 +18,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
-.endif
-
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
