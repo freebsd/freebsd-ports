@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,8 +17,8 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>0:${PORTSDIR}/devel/gsettings-desktop-s
 		itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	gsettings-desktop-schemas>0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake libtool pathfix \
-		pkgconfig tar:xz
+USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake \
+		libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
@@ -30,11 +29,10 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CFLAGS+=	-Wno-error=return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	GTHUMB_VER="3.3"
+PLIST_SUB=	GTHUMB_VER="3.4"
 
 GLIB_SCHEMAS=	org.gnome.gthumb.change-date.gschema.xml \
 		org.gnome.gthumb.comments.gschema.xml \
@@ -95,7 +93,9 @@ YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^[[:blank:]]zlib/d ; \
-		 s|-Wl,--as-needed||' ${WRKSRC}/configure
+		's|"GNU strip"|"strip"| ; \
+		 s|-Wl,--as-needed|| ; \
+		 /^[[:blank:]]zlib/d ; \
+		 /webkit2gtk/s|-4.0|-3.0|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
