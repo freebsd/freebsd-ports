@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Spelling>0.12:${PORTSDIR}/devel/p5-Test-Spelling
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
