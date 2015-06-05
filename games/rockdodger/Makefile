@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rockdodger
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE \
+MASTER_SITES=	https://bitbucket.org/rpkrawczyk/rockdodger/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:addons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_music${EXTRACT_SUFX}:addons \
