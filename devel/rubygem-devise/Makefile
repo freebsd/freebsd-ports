@@ -26,6 +26,8 @@ OPTIONS_DEFAULT=	RAILS3
 RAILS3_DESC=		Use Rails 3 as backend
 RAILS4_DESC=		Use Rails 4 as backend
 
+.include <bsd.port.options.mk>
+
 RAILS3_RUN_DEPENDS=	rubygem-railties>=3.2.6:${PORTSDIR}/www/rubygem-railties \
 			rubygem-responders-rails3>=0:${PORTSDIR}/www/rubygem-responders-rails3
 RAILS4_RUN_DEPENDS=	rubygem-railties4>=4.1.1:${PORTSDIR}/www/rubygem-railties4 \
