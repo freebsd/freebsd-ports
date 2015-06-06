@@ -38,7 +38,7 @@ OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
 
 # Disable CFFI compilation and shared libraries temporarily
-PLIST_SUB+=	CFFI="@comment"
+PLIST_SUB+=	CFFI="@comment "
 
 CONFLICTS_INSTALL=	pypy-[0-9]*
 
