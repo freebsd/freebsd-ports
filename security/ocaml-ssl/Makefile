@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssl
-PORTVERSION=	0.4.7
+PORTVERSION=	0.5.1
 CATEGORIES=	security devel
 PKGNAMEPREFIX=	ocaml-
 

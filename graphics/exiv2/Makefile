@@ -12,11 +12,12 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Exif, IPTC, and XMP metadata manipulation library and tools
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv libtool
+USES=		cpe gettext gmake iconv libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 

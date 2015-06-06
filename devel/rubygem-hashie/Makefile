@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashie
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ COMMENT=	Hashie is a simple collection of useful Hash extensions
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

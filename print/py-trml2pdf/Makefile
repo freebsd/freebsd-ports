@@ -3,7 +3,7 @@
 
 PORTNAME=	trml2pdf
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print python
 MASTER_SITES=	SF/kraft/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
+SHEBANG_FILES=	trml2pdf/trml2pdf.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

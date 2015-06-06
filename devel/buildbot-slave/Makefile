@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.12
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -14,17 +14,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		trial:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_PKGNAMEPREFIX}mock>=0.8.0:${PORTSDIR}/devel/py-mock
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 OPTIONS_DEFINE=	TESTS
-TESTS_DESC=	Install py-mock for test suite
 
+TESTS_DESC=		Install test suite requirements
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
 USES=		python twisted:run,runner
-USE_PYTHON=	distutils autoplist
-
-MAKE_ENV+=		NO_INSTALL_REQS=1
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>
 

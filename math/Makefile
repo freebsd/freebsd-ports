@@ -226,6 +226,7 @@
     SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
+    SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += linpack

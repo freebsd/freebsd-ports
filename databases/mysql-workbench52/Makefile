@@ -15,6 +15,8 @@ COMMENT=	Visual database design tool
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		does not build
+
 LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \

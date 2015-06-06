@@ -290,10 +290,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
 # WWW: https://github.com/kvspb/nginx-auth-ldap
-GIT_HTTP_AUTH_LDAP_VERSION=	c4dc7c9153
-MASTER_SITES+=	LOCAL/rm:http_auth_ldap
-DISTFILES+=	http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}.tar.gz:http_auth_ldap
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}
+GIT_HTTP_AUTH_LDAP_VERSION=	928856aa95
+GH_ACCOUNT+=	kvspb:http_auth_ldap
+GH_PROJECT+=	nginx-auth-ldap:http_auth_ldap
+GH_TAGNAME+=	${GIT_HTTP_AUTH_LDAP_VERSION}:http_auth_ldap
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-auth-ldap-${GIT_HTTP_AUTH_LDAP_VERSION}
 USE_OPENLDAP=	yes
 .endif
 
@@ -616,7 +617,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.8
+PASSENGER_VERSION=	5.0.9
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx

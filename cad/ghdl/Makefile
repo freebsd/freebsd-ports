@@ -3,6 +3,7 @@
 
 PORTNAME=	ghdl
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	cad
 DISTFILES=	${SRCDISTFILE} ${GCCDISTFILE}
 
@@ -20,7 +21,7 @@ USES=		ada gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	hanzer
 GH_PROJECT=	GHDL
-GH_TAGNAME=	a88ac1c
+GH_TAGNAME=	47ee186
 
 GNU_CONFIGURE=	yes
 GCCVER=		4.9.2
@@ -93,7 +94,7 @@ EXTRA_CONFIG+=	--with-as=${AS_COMMAND}
 
 .if ${PORT_OPTIONS:MGCC}
 GCCDISTFILE=	gcc-${GCCVER}.tar.bz2
-USES+=		iconv libtool perl5
+USES+=		iconv libtool makeinfo perl5
 USE_PERL5=	build
 INFO=		ghdl
 PLIST_SUB+=	GLEX=ghdl/libexec/gcc/${BLD_TARGET}/${GCCVER} \
@@ -110,7 +111,6 @@ BUILD_DEPENDS+=	llvm-config${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER} \
 RUN_DEPENDS+=	llc${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER}
 PLIST=		${.CURDIR}/llvm-plist
 PLIST_SUB+=	GLIB=ghdl/lib/ghdl/
-MAKE_JOBS_UNSAFE=	yes
 .endif
 
 post-patch:

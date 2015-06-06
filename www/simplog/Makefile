@@ -3,7 +3,7 @@
 
 PORTNAME=	simplog
 PORTVERSION=	0.9.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.3.2:src
 DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
@@ -13,14 +13,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete and powerful blogging tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 WRKSRC?=	${WRKDIR}/simplog
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-post-extract:
-	${RMDIR} ${WRKSRC}/cache
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

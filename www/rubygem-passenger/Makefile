@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.8
+PORTVERSION=	5.0.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -34,7 +34,7 @@ RUBYGEM_AUTOPLIST=	yes
 USE_APACHE=	22+
 .endif
 
-LIB_DEPENDS+=	libeio.so:${PORTSDIR}/devel/libeio \
+LIB_DEPENDS+=	libuv.so:${PORTSDIR}/devel/libuv \
 		libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
@@ -73,18 +73,13 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		212s!true!false!' \
+		215s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${WRKSRC}/build/basics.rb
 .endif
-	@${REINPLACE_CMD} \
-		's!-Iext/libeio!!; \
-		s!/usr/include/libeio!${LOCALBASE}/include!; \
-		s!-leio!-L${LOCALBASE}/lib -leio!' \
-		${WRKSRC}/build/common_library.rb
 
 post-build:
 .if ${PORT_OPTIONS:MAPACHE22}

@@ -1,0 +1,15 @@
+The pytest-xdist plugin extends py.test with some unique test execution modes:
+
+  * Test run parallelization: if you have multiple CPUs or hosts you can use
+    those for a combined test run. This allows to speed up development or to
+    use special resources of remote machines.
+  * --boxed: (not available on Windows) run each test in a boxed subprocess
+    to survive SEGFAULTS or otherwise dying processes
+  * --looponfail: run your tests repeatedly in a subprocess. After each run
+    py.test waits until a file in your project changes and then re-runs the
+    previously failing tests. This is repeated until all tests pass after
+    which again a full run is performed.
+  * Multi-Platform coverage: you can specify different Python interpreters
+    or different platforms and run tests in parallel on all of them.
+
+WWW: http://bitbucket.org/hpk42/pytest-xdist

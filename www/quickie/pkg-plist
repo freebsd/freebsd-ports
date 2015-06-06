@@ -57,7 +57,9 @@ man/man1/quickie_svt.1.gz
 %%DATADIR%%/square_brackets.referred_to_by
 %%DATADIR%%/square_brackets.unlink_on_create
 %%CGI%%www/cgi-bin/quickie
-%%CGI%%@dirrmtry www/cgi-bin
-@dirrm %%DATADIR%%/manual
-@dirrm %%DATADIR%%/admin
-@dirrm %%DATADIR%%
+%%CGI%%@dir www/cgi-bin
+@dir %%DATADIR%%/manual
+@dir %%DATADIR%%/admin
+@dir %%DATADIR%%
+@owner
+@group

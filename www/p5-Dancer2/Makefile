@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.160001
+PORTVERSION=	0.160002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Lightweight yet powerful web application framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
+BUILD_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Crypt-URandom>0:${PORTSDIR}/security/p5-Crypt-URandom \
@@ -38,7 +38,7 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-YAML>=0.86:${PORTSDIR}/textproc/p5-YAML \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-LWP-Protocol-PSGI>=0.06:${PORTSDIR}/www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
@@ -55,6 +55,7 @@ XS_BUILD_DEPENDS=	p5-CGI-Deurl-XS>=0:${PORTSDIR}/www/p5-CGI-Deurl-XS \
 			p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
 XS_RUN_DEPENDS=		${XS_BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

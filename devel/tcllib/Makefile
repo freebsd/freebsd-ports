@@ -16,19 +16,15 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	critcl:${PORTSDIR}/devel/critcl
-
-OPTIONS_DEFINE=	DOCS MANPAGES
+OPTIONS_DEFINE?=DOCS MANPAGES
 
 WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
-ALL_TARGET=	critcl
 MAKE_ENV+=	LANG=C
 PORTDOCS=	*
 REINPLACE_ARGS=	-i'""'
-PLIST_SUB+=	BINARCH=${OPSYS:tl}-${ARCH:S/i386/ix86/}
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 		-apps -app-path ${STAGEDIR}${PREFIX}/bin \
@@ -39,7 +35,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if ${PORT_OPTIONS:MMANPAGES}
+.if !empty(${PORT_OPTIONS:MMANPAGES}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
 PLIST_SUB+=	MAN=""
@@ -51,13 +47,14 @@ PLIST_SUB+=	MAN="@comment "
 #
 # HTML documentation
 #
-.if ${PORT_OPTIONS:MDOCS}
+.if !empty(${PORT_OPTIONS:MDOCS}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
 INSTALL_ARGS+=	-no-html
 .endif
 
+.if !target(post-patch)
 post-patch:
 #
 # 	Ensure, the detailed output of vendors' self-tests is
@@ -96,12 +93,12 @@ post-patch:
 	for man in `${FIND} . -name "*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
-	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
+.endif
 
+.if !target(do-install)
 do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
-	${RM} ${WRKSRC}/modules/tcllibc/license.terms
-	${CP} -Rp ${WRKSRC}/modules/tcllibc ${STAGEDIR}${PREFIX}/lib/tcllib/
+.endif
 
 test check regression-test: build
 	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test

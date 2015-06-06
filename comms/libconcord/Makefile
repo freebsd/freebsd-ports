@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libconcord
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	comms
 MASTER_SITES=	SF/concordance/concordance/${PORTVERSION}
 DISTNAME=	concordance-${PORTVERSION}

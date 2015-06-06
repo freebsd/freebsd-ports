@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asyncio
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	3.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,12 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Reference implementation of PEP 3156 (Asynchronous IO)
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python:3.3+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 regression-test: build
-	@cd ${WRKSRC} && ${MAKE} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

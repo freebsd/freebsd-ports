@@ -3,12 +3,15 @@
 
 PORTNAME=	log4cpp
 DISTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28new%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
@@ -35,5 +38,8 @@ CONFIGURE_ARGS+=	--disable-doxygen
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 
 .include <bsd.port.mk>

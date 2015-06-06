@@ -15,7 +15,7 @@ COMMENT=	The portable version of OpenBSD's OpenSSH
 #LICENSE=      BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
 #LICENSE_FILE= ${WRKSRC}/LICENCE
 
-CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
+CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
 
 USES=			alias
 USE_AUTOTOOLS=		autoconf autoheader

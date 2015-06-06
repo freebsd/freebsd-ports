@@ -2,6 +2,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -12,6 +13,8 @@ COMMENT=	Root certificate bundle from the Mozilla Project
 LICENSE=	MPL
 
 OPTIONS_DEFINE=		ETCSYMLINK
+OPTIONS_DEFAULT=	ETCSYMLINK
+
 OPTIONS_SUB=		yes
 
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
@@ -30,8 +33,8 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.19
-#NSS_SUFFIX=	.with.ckbi.1.93
+VERSION_NSS=	3.19.1
+#NSS_SUFFIX=	.with.ckbi.1.98
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 

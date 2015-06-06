@@ -20,6 +20,7 @@ RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-rack-mount>=0:${PORTSDIR}/www/rubygem-rack-mount\
 		rubygem-virtus>=1.0.0:${PORTSDIR}/devel/rubygem-virtus
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

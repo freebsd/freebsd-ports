@@ -2,7 +2,7 @@
 
 PORTNAME=	baka-mplayer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +19,7 @@ GH_PROJECT=	Baka-MPlayer
 USES=		compiler:c++11-lib pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
 QMAKE_SOURCE_PATH=${WRKSRC}/src
-QMAKE_ARGS=	lupdate="${LUPDATE}" lrelease="${LRELEASE}" \
-		MEDIADIR="${PREFIX}/share/icons/hicolor/scalable/apps"
+QMAKE_ARGS=	lupdate="${LUPDATE}" lrelease="${LRELEASE}"
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS NLS NOTO

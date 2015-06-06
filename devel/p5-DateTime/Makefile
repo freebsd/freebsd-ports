@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -22,16 +22,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Warnings>=0.005:${PORTSDIR}/devel/p5-Test-Warnings
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-PORTDOCS=	CREDITS Changes TODO
-
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/DateTime.so
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/DateTime.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/DateTime.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/DateTime.so
 
 .include <bsd.port.mk>

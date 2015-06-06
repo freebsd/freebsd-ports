@@ -57,6 +57,326 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e69af246-0ae2-11e5-90e4-d050996490d0">
+    <topic>pcre -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><lt>8.38</lt></range>
+      </package>
+       <package>
+	<name>php5</name>
+	<range><lt>5.4.42</lt></range>
+       </package>
+       <package>
+	<name>php55</name>
+	<range><lt>5.5.26</lt></range>
+       </package>
+       <package>
+	<name>php56</name>
+	<range><lt>5.6.9</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1636">
+	  <p>PCRE library is prone to a vulnerability which leads
+	    to Heap Overflow. During the compilation of a malformed
+	    regular expression, more data is written on the malloced
+	    block than the expected size output by compile_regex.</p>
+	</blockquote>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1638">
+	  <p>PCRE library is prone to a vulnerability which leads to
+	    Stack Overflow. Without enough bound checking inside
+	    match(), the stack memory could be overflowed via a
+	    crafted regular expression.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3210</cvename>
+      <cvename>CVE-2015-3217</cvename>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1636</url>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1638</url>
+    </references>
+    <dates>
+      <discovery>2015-05-29</discovery>
+      <entry>2015-06-04</entry>
+      <modified>2015-06-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="bbc0db92-084c-11e5-bb90-002590263bf5">
+    <topic>hostapd and wpa_supplicant -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>hostapd</name>
+	<range><lt>2.4_1</lt></range>
+      </package>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-2/wps-upnp-http-chunked-transfer-encoding.txt">
+	  <p>WPS UPnP vulnerability with HTTP chunked transfer encoding. (2015-2
+	    - CVE-2015-4141)</p>
+	</blockquote>
+	<blockquote cite="http://w1.fi/security/2015-3/integer-underflow-in-ap-mode-wmm-action-frame.txt">
+	  <p>Integer underflow in AP mode WMM Action frame processing. (2015-3 -
+	    CVE-2015-4142)</p>
+	</blockquote>
+	<blockquote cite="http://w1.fi/security/2015-4/eap-pwd-missing-payload-length-validation.txt">
+	  <p>EAP-pwd missing payload length validation. (2015-4 - CVE-2015-4143,
+	    CVE-2015-4144, CVE-2015-4145, CVE-2015-4146)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://w1.fi/security/2015-2/wps-upnp-http-chunked-transfer-encoding.txt</url>
+      <url>http://w1.fi/security/2015-3/integer-underflow-in-ap-mode-wmm-action-frame.txt</url>
+      <url>http://w1.fi/security/2015-4/eap-pwd-missing-payload-length-validation.txt</url>
+      <cvename>CVE-2015-4141</cvename>
+      <cvename>CVE-2015-4142</cvename>
+      <cvename>CVE-2015-4143</cvename>
+      <cvename>CVE-2015-4144</cvename>
+      <cvename>CVE-2015-4145</cvename>
+      <cvename>CVE-2015-4146</cvename>
+      <mlist>http://openwall.com/lists/oss-security/2015/05/31/6</mlist>
+    </references>
+    <dates>
+      <discovery>2015-05-04</discovery>
+      <entry>2015-06-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="65b14d39-d01f-419c-b0b8-5df60b929973">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<name>ffmpeg0</name>
+	<range><lt>0.7.17,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD and Vigilance report:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-5150">
+	  <p>Use-after-free vulnerability in Google Chrome before
+	    24.0.1312.52 allows remote attackers to cause a denial of
+	    service or possibly have unspecified other impact via vectors
+	    involving seek operations on video data.</p>
+	</blockquote>
+	<blockquote cite="http://vigilance.fr/vulnerability/Libav-integer-overflow-of-av-lzo1x-decode-14944">
+	  <p> An attacker can generate an integer overflow in the
+	    av_lzo1x_decode() function of Libav, in order to trigger a
+	    denial of service, and possibly to execute code.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8541">
+	  <p>libavcodec/mjpegdec.c in FFmpeg before 2.4.2 considers only
+	    dimension differences, and not bits-per-pixel differences, when
+	    determining whether an image size has changed, which allows
+	    remote attackers to cause a denial of service (out-of-bounds
+	    access) or possibly have unspecified other impact via crafted
+	    MJPEG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8542">
+	  <p>libavcodec/utils.c in FFmpeg before 2.4.2 omits a certain
+	    codec ID during enforcement of alignment, which allows remote
+	    attackers to cause a denial of service (out-of-bounds access) or
+	    possibly have unspecified other impact via crafted JV data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8543">
+	  <p>libavcodec/mmvideo.c in FFmpeg before 2.4.2 does not consider
+	    all lines of HHV Intra blocks during validation of image height,
+	    which allows remote attackers to cause a denial of service
+	    (out-of-bounds access) or possibly have unspecified other impact
+	    via crafted MM video data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8545">
+	  <p>libavcodec/pngdec.c in FFmpeg before 2.4.2 accepts the
+	    monochrome-black format without verifying that the
+	    bits-per-pixel value is 1, which allows remote attackers to
+	    cause a denial of service (out-of-bounds access) or possibly
+	    have unspecified other impact via crafted PNG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8547">
+	  <p>libavcodec/gifdec.c in FFmpeg before 2.4.2 does not properly
+	    compute image heights, which allows remote attackers to cause a
+	    denial of service (out-of-bounds access) or possibly have
+	    unspecified other impact via crafted GIF data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8548">
+	  <p>Off-by-one error in libavcodec/smc.c in FFmpeg before 2.4.2
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds access) or possibly have unspecified other impact
+	    via crafted Quicktime Graphics (aka SMC) video data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9316">
+	  <p>The mjpeg_decode_app function in libavcodec/mjpegdec.c in
+	    FFMpeg before 2.1.6, 2.2.x through 2.3.x, and 2.4.x before 2.4.4
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap access) and possibly have other unspecified
+	    impact via vectors related to LJIF tags in an MJPEG file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9317">
+	  <p>The decode_ihdr_chunk function in libavcodec/pngdec.c in
+	    FFMpeg before 2.1.6, 2.2.x through 2.3.x, and 2.4.x before 2.4.4
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap access) and possibly have other unspecified
+	    impact via an IDAT before an IHDR in a PNG file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9603">
+	  <p>The vmd_decode function in libavcodec/vmdvideo.c in FFmpeg
+	    before 2.5.2 does not validate the relationship between a
+	    certain length value and the frame width, which allows remote
+	    attackers to cause a denial of service (out-of-bounds array
+	    access) or possibly have unspecified other impact via crafted
+	    Sierra VMD video data.</p>
+	</blockquote>
+	<blockquote cite="http://vigilance.fr/vulnerability/FFmpeg-unreachable-memory-reading-via-mjpegdec-c-16213">
+	  <p>An attacker can force a read at an invalid address in
+	    mjpegdec.c of FFmpeg, in order to trigger a denial of
+	    service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5150</cvename>
+      <cvename>CVE-2014-4609</cvename>
+      <cvename>CVE-2014-8541</cvename>
+      <cvename>CVE-2014-8542</cvename>
+      <cvename>CVE-2014-8543</cvename>
+      <cvename>CVE-2014-8545</cvename>
+      <cvename>CVE-2014-8547</cvename>
+      <cvename>CVE-2014-8548</cvename>
+      <cvename>CVE-2014-9316</cvename>
+      <cvename>CVE-2014-9317</cvename>
+      <cvename>CVE-2014-9603</cvename>
+      <cvename>CVE-2015-1872</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=c3ece52decafc4923aebe7fd74b274e9ebb1962e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=1b291e0466308b341bc2e8c2a49d44862400f014</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=b5e661bcd2bb4fe771cb2c1e21215c68e6a17665</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=cd3c4d8c55222337b0b59af4ea1fecfb46606e5e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=73962e677d871fa0dde5385ee04ea07c048d8864</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=7a5590ef4282e19d48d70cba0bc4628c13ec6fd8</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=ef32bc8dde52439afd13988f56012a9f4dd55a83</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=5b2097626d0e4ccb432d7d8ab040aa8dbde9eb3a</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=30e8a375901f8802853fd6d478b77a127d208bd6</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=cb1db92cca98f963e91f421ee0c84f8866325a73</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=fac6f744d8170585f05e098ce9c9f27eeffa818e</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=75b0cfcf105c8720a47a2ee80a70ba16799d71b7</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-12</discovery>
+      <entry>2015-06-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="022255be-0895-11e5-a242-5404a68ad561">
+    <topic>avidemux26 -- multiple vulnerabilities in bundled FFmpeg</topic>
+    <affects>
+      <package>
+	<name>avidemux2</name>
+	<range><lt>2.6.8</lt></range>
+      </package>
+      <package>
+	<name>avidemux26</name>
+	<range><lt>2.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mageia project reports:</p>
+	<blockquote cite="http://advisories.mageia.org/MGASA-2015-0233.html">
+	  <p>Avidemux is built with a bundled set of FFmpeg libraries.
+	    The bundled FFmpeg version has been updated from 1.2.10
+	    to 1.2.12 to fix these security issues and other bugs
+	    fixed upstream in FFmpeg.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9316</cvename>
+      <cvename>CVE-2014-9317</cvename>
+      <cvename>CVE-2014-9603</cvename>
+      <cvename>CVE-2014-9604</cvename>
+      <cvename>CVE-2015-1872</cvename>
+      <cvename>CVE-2015-3417</cvename>
+      <freebsdpr>200507</freebsdpr>
+      <url>http://advisories.mageia.org/MGASA-2015-0233.html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-18</discovery>
+      <entry>2015-06-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ffe2d86c-07d9-11e5-9a28-001e67150279">
+    <topic>rest-client -- plaintext password disclosure</topic>
+    <affects>
+      <package>
+	<name>rubygem-rest-client</name>
+	<range><lt>1.6.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The open sourced vulnerability database reports:</p>
+	<blockquote cite="http://osvdb.org/show/osvdb/117461">
+	  <p>REST Client for Ruby contains a flaw that is due to the application
+	    logging password information in plaintext. This may allow a local
+	    attacker to gain access to password information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3448</cvename>
+      <freebsdpr>200504</freebsdpr>
+      <url>https://github.com/rest-client/rest-client/issues/349</url>
+      <url>http://osvdb.org/show/osvdb/117461</url>
+    </references>
+    <dates>
+      <discovery>2015-01-12</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83a7a720-07d8-11e5-9a28-001e67150279">
+    <topic>rest-client -- session fixation vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-rest-client</name>
+	<range><lt>1.6.7_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Brody reports:</p>
+	<blockquote cite="https://github.com/rest-client/rest-client/issues/369">
+	  <p>When Ruby rest-client processes an HTTP redirection response,
+	    it blindly passes along the values from any Set-Cookie headers to the
+	    redirection target, regardless of domain, path, or expiration.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1820</cvename>
+      <freebsdpr>200504</freebsdpr>
+      <url>https://github.com/rest-client/rest-client/issues/369</url>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cfb12f02-06e1-11e5-8fda-002590263bf5">
     <topic>cabextract -- directory traversal with UTF-8 symbols in filenames</topic>
     <affects>
@@ -1103,11 +1423,15 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>kodi, rawstudio, and ufraw -- integer overflow condition</topic>
+    <topic>kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
     <affects>
       <package>
 	<name>kodi</name>
 	<range><lt>14.2_1</lt></range>
+      </package>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.16.1</lt></range>
       </package>
       <package>
 	<name>rawstudio</name>
@@ -1137,11 +1461,12 @@ Notes:
       <cvename>CVE-2015-3885</cvename>
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
       <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/4606c28f494a750892c5c1ac7903e62dd1c6fdb5</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-01</modified>
+      <modified>2015-06-04</modified>
     </dates>
   </vuln>
 

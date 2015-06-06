@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uuid
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-macaddr>=1.0:${PORTSDIR}/net/rubygem-macaddr
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

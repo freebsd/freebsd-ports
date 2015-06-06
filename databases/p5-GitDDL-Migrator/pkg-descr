@@ -1,0 +1,11 @@
+GitDDL::Migrator is database migration utility extended GitDDL.
+
+Extended features are:
+
+- save migration history
+- rollback to previous version
+- specify version
+- specify SQL (sometimes SQL::Translator's output is wrong)
+- check differences from versioned SQL and real database
+
+WWW: http://search.cpan.org/dist/GitDDL-Migrator/

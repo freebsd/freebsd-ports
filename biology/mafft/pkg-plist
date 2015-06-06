@@ -41,6 +41,7 @@ libexec/mafft/regtable2seq
 libexec/mafft/replaceu
 libexec/mafft/restoreu
 libexec/mafft/score
+libexec/mafft/seekquencer_premafft.pl
 libexec/mafft/seq2regtable
 libexec/mafft/setcore
 libexec/mafft/setdirection
@@ -53,13 +54,11 @@ man/man1/mafft.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.allowshift
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.dpparttree
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.fftns2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.fftnsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.gins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi.allowshift
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.lins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.linsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.parttree

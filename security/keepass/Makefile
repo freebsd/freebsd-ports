@@ -20,7 +20,7 @@ RUN_DEPENDS=	xdotool:${PORTSDIR}/x11/xdotool \
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
-USES=		dos2unix mono zip
+USES=		cpe dos2unix mono zip
 DOS2UNIX_GLOB=	*.csproj *.sln
 INSTALLS_ICONS=	yes
 SUB_FILES=	${PORTNAME}.sh

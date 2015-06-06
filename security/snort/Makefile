@@ -46,7 +46,7 @@ FILEINSPECT_DESC=	Build with extended file inspection features (EXPERIMENTAL)
 ADDONS_DESC=		Depend on 3rd party addons
 BARNYARD_DESC=		Depend on barnyard2 (supports also snortsam)
 PULLEDPORK_DESC=	Depend on pulledpork
-DEV_DESC=		Developper options
+DEV_DESC=		Developer options
 DBGSNORT_DESC=		Enable debugging symbols+core dumps
 
 DBGSNORT_CONFIGURE_ENABLE=	corefiles debug

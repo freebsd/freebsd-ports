@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	augeas
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.augeas.net/
 

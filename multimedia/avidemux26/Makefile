@@ -6,7 +6,6 @@
 
 PORTNAME=	avidemux26
 PORTVERSION=	${AVIDEMUX2_VERSION}
-PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -24,7 +23,6 @@ PLIST_FILES+=	${DESKTOPDIR}/${PORTNAME}.desktop
 .if ${PORT_OPTIONS:MQT4}
 PLIST_FILES+=	${DESKTOPDIR}/${PORTNAME}_qt4.desktop
 .endif
-
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/avidemux_core
 

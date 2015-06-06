@@ -1,6 +1,6 @@
---- deps/v8/src/platform-freebsd.cc.orig	2015-05-09 09:01:07.000000000 +0800
-+++ deps/v8/src/platform-freebsd.cc	2015-05-09 09:02:25.000000000 +0800
-@@ -343,7 +343,7 @@
+--- deps/v8/src/platform-freebsd.cc.orig	2015-03-23 19:23:33 UTC
++++ deps/v8/src/platform-freebsd.cc
+@@ -343,7 +343,7 @@ VirtualMemory::VirtualMemory(size_t size
    void* reservation = mmap(OS::GetRandomMmapAddr(),
                             request_size,
                             PROT_NONE,
@@ -9,7 +9,7 @@
                             kMmapFd,
                             kMmapFdOffset);
    if (reservation == MAP_FAILED) return;
-@@ -415,7 +415,7 @@
+@@ -415,7 +415,7 @@ void* VirtualMemory::ReserveRegion(size_
    void* result = mmap(OS::GetRandomMmapAddr(),
                        size,
                        PROT_NONE,
@@ -18,7 +18,7 @@
                        kMmapFd,
                        kMmapFdOffset);
  
-@@ -445,7 +445,7 @@
+@@ -445,7 +445,7 @@ bool VirtualMemory::UncommitRegion(void*
    return mmap(base,
                size,
                PROT_NONE,

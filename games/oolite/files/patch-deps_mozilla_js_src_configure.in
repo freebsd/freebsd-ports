@@ -1,5 +1,5 @@
---- deps/mozilla/js/src/configure.in.orig	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/configure.in	2014-09-23 08:13:19.000000000 +0400
+--- deps/mozilla/js/src/configure.in.orig	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/configure.in
 @@ -3378,7 +3378,8 @@
                         rm -f conftest.{c,S}
                         ])

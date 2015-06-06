@@ -3,7 +3,7 @@
 
 PORTNAME=	mwlib
 PORTVERSION=	0.15.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:${PORTSDIR}/devel/py-apipkg \
 		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:${PORTSDIR}/devel/py-timelib \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob
 
-USES=		python:2 zip
+USES=		python:2 shebangfix zip
+SHEBANG_FILES=	mwlib/EasyTimeline.pl
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	mwqserve nserve nslave postman
 

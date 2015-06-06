@@ -1,6 +1,6 @@
---- ./doc/tutorial/guile-tut.texi.orig	2010-12-13 18:24:39.000000000 +0100
-+++ ./doc/tutorial/guile-tut.texi	2014-06-25 22:55:00.775514198 +0200
-@@ -446,7 +446,7 @@
+--- doc/tutorial/guile-tut.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/tutorial/guile-tut.texi
+@@ -446,7 +446,7 @@ get started, look at the books @cite{Sim
  Schemer} from that list.}
  
  
@@ -9,7 +9,7 @@
  @cindex hello world
  
  Our first program is the typical Scheme "hello world" program.  Put the
-@@ -535,12 +535,12 @@
+@@ -535,12 +535,12 @@ guile> @kbd{(memq 4 ls)}
  guile> @kbd{(if (memq 4 ls)
             (display "hey, it's true!\n")
             (display "dude, it's false\n"))}
@@ -24,7 +24,7 @@
         @result{}
  guile> @kbd{(memq 4 (reverse ls))}
         @result{} (4 3 2 1)
-@@ -656,9 +656,9 @@
+@@ -656,9 +656,9 @@ And then invoke it with
  (represent-matrix m
                    (lambda (x) (begin (display x) (display " ")))
                    (lambda (l) (begin (display "\n"))))

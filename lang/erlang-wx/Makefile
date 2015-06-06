@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.4
+PORTVERSION=	17.5.6
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -12,8 +12,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
+		LOCAL/olgeni
+PATCHFILES=	patch-otp-17.5.1 patch-otp-17.5.2 patch-otp-17.5.3 \
+		patch-otp-17.5.4 patch-otp-17.5.5 patch-otp-17.5.6
+
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang bindings for wxWindows
+
+RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 

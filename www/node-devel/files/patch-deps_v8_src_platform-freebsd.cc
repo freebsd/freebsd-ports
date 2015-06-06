@@ -1,6 +1,6 @@
---- ./deps/v8/src/base/platform/platform-freebsd.cc.orig	2015-02-07 04:04:23.000000000 +0800
-+++ ./deps/v8/src/base/platform/platform-freebsd.cc	2015-02-10 10:53:45.000000000 +0800
-@@ -131,23 +131,23 @@
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2015-01-30 06:13:10 UTC
++++ deps/v8/src/base/platform/platform-freebsd.cc
+@@ -131,23 +131,23 @@ std::vector<OS::SharedLibraryAddress> OS
      addr_buffer[0] = '0';
      addr_buffer[1] = 'x';
      addr_buffer[10] = 0;
@@ -33,7 +33,7 @@
      } while (buffer[bytes_read] != '\n');
      buffer[bytes_read] = 0;
      // Ignore mappings that are not executable.
-@@ -182,13 +182,13 @@
+@@ -182,13 +182,13 @@ VirtualMemory::VirtualMemory(size_t size
  
  VirtualMemory::VirtualMemory(size_t size, size_t alignment)
      : address_(NULL), size_(0) {
@@ -49,7 +49,7 @@
                             kMmapFd,
                             kMmapFdOffset);
    if (reservation == MAP_FAILED) return;
-@@ -260,7 +260,7 @@
+@@ -260,7 +260,7 @@ void* VirtualMemory::ReserveRegion(size_
    void* result = mmap(OS::GetRandomMmapAddr(),
                        size,
                        PROT_NONE,
@@ -58,7 +58,7 @@
                        kMmapFd,
                        kMmapFdOffset);
  
-@@ -288,7 +288,7 @@
+@@ -288,7 +288,7 @@ bool VirtualMemory::UncommitRegion(void*
    return mmap(base,
                size,
                PROT_NONE,

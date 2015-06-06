@@ -1,8 +1,13 @@
 bin/baka-mplayer
 man/man1/baka-mplayer.1.gz
 share/applications/baka-mplayer.desktop
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_de.qm
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_es.qm
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_fr.qm
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_hr.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_it.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_ko.qm
+%%NLS%%%%DATADIR%%/translations/baka-mplayer_nl.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_pt.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_ru.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_zh_CN.qm
@@ -17,3 +22,4 @@ share/icons/hicolor/512x512/apps/baka-mplayer.png
 share/icons/hicolor/64x64/apps/baka-mplayer.png
 share/icons/hicolor/96x96/apps/baka-mplayer.png
 share/icons/hicolor/scalable/apps/baka-mplayer.svg
+share/pixmaps/baka-mplayer.svg

@@ -1,6 +1,6 @@
---- lib/dns.js.orig	2015-02-13 23:42:28.000000000 +0800
-+++ lib/dns.js	2015-02-13 23:46:39.000000000 +0800
-@@ -125,6 +125,11 @@
+--- lib/dns.js.orig	2015-01-30 06:13:10 UTC
++++ lib/dns.js
+@@ -125,6 +125,11 @@ exports.lookup = function lookup(hostnam
          hints !== (exports.ADDRCONFIG | exports.V4MAPPED)) {
        throw new TypeError('invalid argument: hints must use valid flags');
      }

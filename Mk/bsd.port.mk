@@ -175,9 +175,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # BROKEN		- Port is believed to be broken.  Package builds can
 # 				  still be attempted using TRYBROKEN to test this
 #				  assumption.
-# BROKEN_${ARCH}  Port is believed to be broken on ${ARCH}. Package builds
-#				  can still be attempted using TRYBROKEN to test this
-#				  assumption.
+# BROKEN_${ARCH} - Port is believed to be broken on ${ARCH}. Package builds
+#				  can still be attempted using TRYBROKEN to
+#				  test this assumption.
+# BROKEN_${OPSYS} - Port is believed to be broken on ${OPSYS}. Package builds
+#				  can still be attempted using TRYBROKEN to
+#				  test this assumption.
+# BROKEN_${OPSYS}_${OSREL:R} -  Port is believed to be broken on a single
+#				  release of ${OPSYS}, e.g BROKEN_FreeBSD_8
+#				  would affect all point releases of FreeBSD 8
+#				  unless TRYBROKEN is also set.
 # DEPRECATED	- Port is deprecated to install. Advisory only.
 # EXPIRATION_DATE
 #				- If DEPRECATED is set, determines a date when
@@ -2820,6 +2827,14 @@ IGNORE=		is marked as broken: ${BROKEN}
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .endif
+.elif defined(BROKEN_${OPSYS}_${OSREL:R})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${OPSYS} ${OSREL}: ${BROKEN_${OPSYS}_${OSREL:R}}
+.endif
+.elif defined(BROKEN_${OPSYS})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${OPSYS}: ${BROKEN_${OPSYS}}
+.endif
 .elif defined(FORBIDDEN)
 IGNORE=		is forbidden: ${FORBIDDEN}
 .endif
@@ -3906,12 +3921,6 @@ deinstall-all:
 
 .if !target(do-clean)
 do-clean:
-.if defined(NEED_ROOT) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
-	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
-	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${.TARGET}"
-	@${ECHO_MSG} "===>  Returning to user credentials"
-.else
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
 			${RM} -rf ${WRKDIR}; \
@@ -3919,7 +3928,6 @@ do-clean:
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
-.endif
 .endif
 
 .if !target(clean)
@@ -5908,19 +5916,6 @@ _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
 # ${POST_PLIST} must be after anything that modifies TMPPLIST
-.if defined(NEED_ROOT)
-_STAGE_SUSEQ=	create-users-groups do-install \
-				kmod-post-install fix-perl-things \
-				webplugin-post-install post-install post-install-script \
-				move-uniquefiles patch-lafiles post-stage compress-man \
-				install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs \
-				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist ${POST_PLIST}
-.if defined(DEVELOPER)
-_STAGE_SUSEQ+=	stage-qa
-.endif
-.else
 _STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install fix-perl-things \
 				webplugin-post-install post-install post-install-script \
@@ -5931,7 +5926,6 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				move-uniquefiles-plist ${POST_PLIST}
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
-.endif
 .endif
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed

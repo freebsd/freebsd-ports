@@ -854,6 +854,7 @@ lib/wine/api-ms-win-core-localization-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
 lib/wine/api-ms-win-core-memory-l1-1-0.dll.so
 lib/wine/api-ms-win-core-memory-l1-1-1.dll.so
+lib/wine/api-ms-win-core-misc-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-2-0.dll.so
 lib/wine/api-ms-win-core-processenvironment-l1-1-0.dll.so
@@ -1092,6 +1093,7 @@ lib/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-memory-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
+lib/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-processenvironment-l1-1-0.dll
@@ -1382,6 +1384,7 @@ lib/wine/fakedlls/mscat32.dll
 lib/wine/fakedlls/mscms.dll
 lib/wine/fakedlls/mscoree.dll
 lib/wine/fakedlls/msctf.dll
+lib/wine/fakedlls/msctfp.dll
 lib/wine/fakedlls/msdaps.dll
 lib/wine/fakedlls/msdmo.dll
 lib/wine/fakedlls/msftedit.dll
@@ -1456,7 +1459,6 @@ lib/wine/fakedlls/ntdll.dll
 lib/wine/fakedlls/ntdsapi.dll
 lib/wine/fakedlls/ntoskrnl.exe
 lib/wine/fakedlls/ntprint.dll
-%%STAGING%%lib/wine/fakedlls/null.sys
 %%WINE32%%%%STAGING%%lib/wine/fakedlls/nvapi.dll
 %%WINE64%%%%STAGING%%lib/wine/fakedlls/nvapi64.dll
 %%STAGING%%lib/wine/fakedlls/nvcuda.dll
@@ -1980,6 +1982,7 @@ lib/wine/mscat32.dll.so
 lib/wine/mscms.dll.so
 lib/wine/mscoree.dll.so
 lib/wine/msctf.dll.so
+lib/wine/msctfp.dll.so
 lib/wine/msdaps.dll.so
 lib/wine/msdmo.dll.so
 lib/wine/msftedit.dll.so
@@ -2054,7 +2057,6 @@ lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
 lib/wine/ntoskrnl.exe.so
 lib/wine/ntprint.dll.so
-%%STAGING%%lib/wine/null.sys.so
 %%WINE32%%%%STAGING%%lib/wine/nvapi.dll.so
 %%WINE64%%%%STAGING%%lib/wine/nvapi64.dll.so
 %%STAGING%%lib/wine/nvcuda.dll.so

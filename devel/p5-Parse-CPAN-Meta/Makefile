@@ -22,11 +22,4 @@ RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.011:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

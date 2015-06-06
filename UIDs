@@ -165,6 +165,7 @@ backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
+orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin
 murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin

@@ -57,8 +57,8 @@ PERL_VERSION=	5.18.4
 PERL_VERSION=	5.20.2
 .elif ${PERL5_DEFAULT} == 5.22
 PERL_VERSION=	5.22.0
-.elif ${PERL5_DEFAULT} == 5.21 || ${PERL5_DEFAULT} == devel
-PERL_VERSION=	5.22.0
+.elif ${PERL5_DEFAULT} == devel
+PERL_VERSION=	5.23.0
 # Force PERL_PORT here in case two identical PERL_VERSION.
 PERL_PORT?=	perl5-devel
 .else
@@ -87,7 +87,8 @@ PERL_LEVEL=0
 PERL_ARCH?=	mach
 
 # there must always be a default to prevent dependency failures such
-# as "ports/lang: not found"
+# as "ports/lang: not found".  Also, perl5-devel is taken care in the
+# perl5_default file, or up there in the default versions selection.
 .if   ${PERL_LEVEL} >= 502200
 PERL_PORT?=	perl5.22
 .elif   ${PERL_LEVEL} >= 502000

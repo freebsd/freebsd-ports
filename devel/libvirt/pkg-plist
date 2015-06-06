@@ -19,6 +19,7 @@ etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
 etc/logrotate.d/libvirtd.uml
+etc/logrotate.d/libvirtd.libxl
 include/libvirt/libvirt-lxc.h
 include/libvirt/libvirt-qemu.h
 include/libvirt/libvirt-host.h

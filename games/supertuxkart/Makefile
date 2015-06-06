@@ -19,6 +19,9 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+BROKEN_powerpc=		does not configure on powerpc
+BROKEN_FreeBSD_8=	does not build on 8.x
+
 USES=           alias cmake compiler:c++11-lib dos2unix gettext \
 		gmake openal:al pkgconfig tar:xz
 USE_GL=		gl glu
@@ -50,18 +53,10 @@ XRANDR_CMAKE_OFF=	-DUSE_XRANDR=NO
 XRANDR_USE=		XORG=xrandr
 XRANDR_USE_OFF=		XORG=xxf86vm
 
-powerpc_BROKEN=		Does not configure on powerpc
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/include|${LOCALBASE}/include|' \
 		${WRKSRC}/lib/irrlicht/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|Icon=.*|Icon=${PREFIX}/share/icons/hicolor/128x128/apps/supertuxkart.png|' \
 		${WRKSRC}/data/${PORTNAME}.desktop
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

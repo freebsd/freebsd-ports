@@ -5,12 +5,8 @@ bin/surfraw
 bin/surfraw-update-path
 bin/uzbl_load_url_from_surfraw
 etc/bash_completion.d/surfraw
-@unexec if cmp -s %D/etc/surfraw.bookmarks.sample %D/etc/surfraw.bookmarks; then rm -f %D/etc/surfraw.bookmarks; fi
-etc/surfraw.bookmarks.sample
-@exec if [ ! -f %B/surfraw.bookmarks ]; then cp -p %D/%F %B/surfraw.bookmarks; fi
-@unexec if cmp -s %D/etc/surfraw.conf.sample %D/etc/surfraw.conf; then rm -f %D/etc/surfraw.conf; fi
-etc/surfraw.conf.sample
-@exec if [ ! -f %B/surfraw.conf ]; then cp -p %D/%F %B/surfraw.conf; fi
+@sample etc/surfraw.bookmarks.sample
+@sample etc/surfraw.conf.sample
 lib/surfraw/W
 lib/surfraw/acronym
 lib/surfraw/ads
@@ -257,5 +253,3 @@ man/man1/yahoo.1sr.gz
 man/man1/yandex.1sr.gz
 man/man1/youtube.1sr.gz
 man/man1/yubnub.1sr.gz
-@dirrmtry etc/bash_completion.d
-@dirrm lib/surfraw

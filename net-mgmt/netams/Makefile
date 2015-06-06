@@ -137,4 +137,10 @@ do-install:
 .endif
 	${INSTALL_MAN} ${MAN_8:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		does not build on 10.x+
+.endif
+
+.include <bsd.port.post.mk>

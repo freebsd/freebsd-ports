@@ -104,7 +104,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Moncton.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Monterrey.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Montevideo.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Montreal.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nassau.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/New_York.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nipigon.pm

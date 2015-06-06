@@ -14,6 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-hashie>=2.0.0:${PORTSDIR}/devel/rubygem-hashie
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

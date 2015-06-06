@@ -2,6 +2,7 @@
 
 PORTNAME=	acpica
 PORTVERSION=	20150515
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim
@@ -29,7 +30,7 @@ MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" MACROPROC="${LOCALBASE}/bin/gm4"
 MAKE_ARGS+=	YACC="${LOCALBASE}/bin/bison"
 
 do-install:
-	@${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${WRKSRC}/bin/,} \
+	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${WRKSRC}/bin/,} \
 	    ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

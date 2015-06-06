@@ -3,6 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	4.11.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -54,6 +55,7 @@ DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-active
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
+		/jsobfu/s/~> 0.2.0/>= 0.2.0/ ; \
 		/packetfu/s/1.1.9/>= 1.1.9/ ; \
 		/rb-readline/d' ${WRKSRC}/metasploit-framework.gemspec
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${DISTVERSION}/ \

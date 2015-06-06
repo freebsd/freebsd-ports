@@ -8,6 +8,4 @@ Paraphrasing the original (2.0) website:
   an implementation of the SOAP 1.1 specification. Simple client and server
   support are also provided.
 
-  ZSI requires Python 2.3 or later and PyXML version 0.8.3 or later.
-
 WWW: http://pywebsvcs.sourceforge.net/

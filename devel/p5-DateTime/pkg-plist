@@ -3,8 +3,8 @@
 %%SITE_ARCH%%/DateTime/Helpers.pm
 %%SITE_ARCH%%/DateTime/Infinite.pm
 %%SITE_ARCH%%/DateTime/LeapSecond.pm
-%%SITE_ARCH%%/DateTimePP.pm
-%%SITE_ARCH%%/DateTimePPExtra.pm
+%%SITE_ARCH%%/DateTime/PP.pm
+%%SITE_ARCH%%/DateTime/PPExtra.pm
 %%SITE_ARCH%%/auto/DateTime/DateTime.so
 %%PERL5_MAN3%%/DateTime.3.gz
 %%PERL5_MAN3%%/DateTime::Duration.3.gz

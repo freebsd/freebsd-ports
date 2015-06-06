@@ -10,15 +10,17 @@ MASTER_SITES=	LOCAL/bf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to view, search, print, and convert PostScript and PDF documents
 
-USE_GNOME=		gtk12
-USE_GHOSTSCRIPT=	yes
-
-OPTIONS_DEFINE=	DOCS
+LICENSE=	AFPL
+LICENSE_NAME=	Aladdin Free Public Licence
+LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 RUN_DEPENDS+=	epstool:${PORTSDIR}/graphics/epstool \
 		pstotext:${PORTSDIR}/print/pstotext
 
-NO_CDROM=	Can only be distributed for free
+USES=		cpe
+USE_GNOME=	gtk12
+USE_GHOSTSCRIPT=yes
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -31,13 +33,15 @@ PORTDOCS=	gsview.css cdorder.txt regorder.txt Readme.htm LICENCE \
 		gvxit.htm gvxnl.htm gvxru.htm gvxse.htm gvxsk.htm
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${CP} ${WRKSRC}/srcunx/unx.mak ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's;malloc\.h;stdlib\.h;g' \
-	${WRKSRC}/src/doc2html.c ${WRKSRC}/src/doc2ipf.c \
-	${WRKSRC}/src/doc2xml.c
+		${WRKSRC}/src/doc2html.c ${WRKSRC}/src/doc2ipf.c \
+		${WRKSRC}/src/doc2xml.c
 	${REINPLACE_CMD} -e 's;mozilla;firefox3;g' \
-	${WRKSRC}/srcunx/gvxhelp.txt
+		${WRKSRC}/srcunx/gvxhelp.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gsview ${STAGEDIR}${PREFIX}/bin

@@ -5599,7 +5599,6 @@ audio/fmio||2014-03-08|Has expired: No more public distfiles
 audio/libmtp|multimedia/libmtp|2014-03-09|Moved from audio to multimedia
 mail/p5-Mail-SpamAssassin-Alt|mail/p5-Mail-SpamAssassin|2014-03-09|Retired; please use mail/p5-Mail-SpamAssassin
 mail/fetchyahoo||2014-03-10|Has expired: Yahoo classic mail interface is discontinued, so this port is permanently broken
-audio/beep||2014-03-10|Has expired: No more public distfiles
 audio/p5-Audio-Beep||2014-03-10|Has expired: Depends on expiring audio/beep
 multimedia/beep-media-player|multimedia/audacious|2014-03-10|Has expired: Abandonware, please consider using multimedia/audacious instead
 graphics/jumpgis-postgis||2014-03-10|Has expired: Depends on expiring graphics/jumpgis
@@ -7581,6 +7580,8 @@ deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produc
 devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
 lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
 databases/my2cego|databases/cegobridge|2015-05-19|Superseded by databases/cegobridge
+emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
+emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed
 devel/rubygem-bioruby|devel/rubygem-bio|2015-05-23|Rename to match our rubygems naming
 www/rubygem-taggable|www/rubygem-acts_as_taggable|2015-05-23|Rename to match our rubygems naming
 security/rubygem-meterpreter_bins|security/rubygem-metasploit-payloads|2015-05-23|Renamed upstream
@@ -7592,8 +7593,6 @@ science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match ou
 security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygems naming
 print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygems naming
 security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
-emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
-emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed
 www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygems naming
 net/rubygem-rightaws|net/rubygem-right_aws|2015-05-27|Rename to match our rubygems naming
 net/rubygem-rightflexiscale|net/rubygem-right_flexiscale|2015-05-27|Rename to match our rubygems naming
@@ -7605,3 +7604,7 @@ devel/rubygem-test|devel/rubygem-rubygems-test|2015-05-29|Rename to match our ru
 devel/rubygem-deeptest|devel/rubygem-deep_test|2015-05-30|Rename to match our rubygems naming
 audio/portaudio2|audio/portaudio|2015-05-30|Merged into the main port
 net/rubygem-yadis|net/rubygem-ruby-yadis|2015-05-30|Rename to match our rubygems naming
+ports-mgmt/porteasy||2015-06-01|Has expired: Does not support pkgng
+textproc/hgrep||2015-06-01|Has expired: Not needed any more, base grep has coloring support
+www/diamanda||2015-06-01|Has expired: Broken for more than 6 months
+devel/py-ScriptTest|devel/py-scripttest|2015-06-01|Renamed upstream

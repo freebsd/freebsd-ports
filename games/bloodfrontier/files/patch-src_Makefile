@@ -1,0 +1,28 @@
+--- src/Makefile.orig	2009-11-25 11:52:58 UTC
++++ src/Makefile
+@@ -1,5 +1,4 @@
+ #CXXFLAGS= -ggdb3
+-CXXFLAGS= -O3 -fomit-frame-pointer
+ override CXXFLAGS+= -Wall -fsigned-char
+ 
+ PLATFORM= $(shell uname -s)
+@@ -21,8 +20,8 @@ WINDRES= windres
+ CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -Iinclude
+ CLIENT_LIBS= -mwindows -lmingw32 -Llib -lSDLmain -lSDL -lSDL_image -lSDL_mixer -lzdll -lopengl32 -lenet -lws2_32 -lwinmm
+ else
+-CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
++CLIENT_LIBS= -Lenet -lenet -L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lGL -lX11
+ endif
+ ifeq ($(PLATFORM),Linux)
+ CLIENT_LIBS+= -lrt
+@@ -82,8 +81,6 @@ CLIENT_OBJS= \
+ 	game/server.o \
+ 	game/stf.o \
+ 	game/weapons.o
+-	
+-CLIENT_PCH= shared/cube.h.gch engine/engine.h.gch game/game.h.gch
+ 
+ ifneq (,$(findstring MINGW,$(PLATFORM)))
+ SERVER_INCLUDES= -DSTANDALONE -DMASTERSERVER -DIRC $(INCLUDES) -Iinclude

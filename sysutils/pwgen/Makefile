@@ -10,8 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	andrey@hm.perm.ru
 COMMENT=	Small, powerful, GPL'ed password generator
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
-USES=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	pwgen_project
 USE_PERL5=	build
 
 PLIST_FILES=	bin/pwgen \

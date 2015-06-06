@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-IDN-Nameprep
-PORTVERSION=	1.101
-PORTREVISION=	1
+PORTVERSION=	1.102
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +16,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

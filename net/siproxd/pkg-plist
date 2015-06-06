@@ -8,6 +8,12 @@ lib/siproxd/plugin_fix_bogus_via.la
 lib/siproxd/plugin_fix_bogus_via.so
 lib/siproxd/plugin_logcall.la
 lib/siproxd/plugin_logcall.so
+lib/siproxd/plugin_prefix.la
+lib/siproxd/plugin_prefix.so
+lib/siproxd/plugin_regex.la
+lib/siproxd/plugin_regex.so
 lib/siproxd/plugin_shortdial.la
 lib/siproxd/plugin_shortdial.so
+lib/siproxd/plugin_stun.la
+lib/siproxd/plugin_stun.so
 sbin/siproxd

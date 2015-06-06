@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.17.1
-PORTREVISION=	1
+PORTVERSION=	11.18.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -23,7 +22,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 CFLAGS+=	-I${LOCALBASE}/include
-USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -44,8 +42,10 @@ CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-13*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 UUID SYSINFO
+OPTIONS_SINGLE=	COMPILER
+OPTIONS_SINGLE_COMPILER=	GCC BASE
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
-		XMPP GSM SQLITE CURL LUA UUID
+		XMPP GSM SQLITE CURL LUA UUID GCC
 
 OPTIONS_DEFINE_i386=	DAHDI
 OPTIONS_DEFINE_amd64=	DAHDI
@@ -63,6 +63,8 @@ DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
 UUID_DESC?=	libuuid support (required for ICE and TURN in RTP)
 SYSINFO_DESC?=	Use devel/libsysinfo to get system information
+GCC_DESC=	Use gcc from ports
+BASE_DESC=	Use base compiler (experimental)
 
 OPTIONS_SUB=	yes
 OOH323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
@@ -116,6 +118,7 @@ UUID_CONFIGURE_ON=	--with-uuid=${LOCALBASE}
 UUID_CONFIGURE_OFF=	--disable-uuid
 UUID_CONFLICTS=		ossp-uuid-[0-9]*
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+GCC_USE=		GCC=yes
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -164,6 +167,10 @@ post-configure:
 .if ${PORT_OPTIONS:MNEWG711}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
 .endif
+
+pre-build:
+	@${MKDIR} ${WRKSRC}/res/pjproject/pjnath/lib ${WRKSRC}/res/pjproject/pjlib-util/lib \
+		${WRKSRC}/res/pjproject/pjlib/lib
 
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua

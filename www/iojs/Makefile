@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	iojs
-PORTVERSION=	2.0.1
+PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
 
+LICENSE=	MIT
+
 USES=		execinfo gmake python:2
 USE_GITHUB=	yes
+GH_ACCOUNT=	nodejs
 GH_PROJECT=	io.js
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -48,11 +51,6 @@ post-patch:
 		${WRKSRC}/deps/v8/src/d8.gyp
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
-	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/iojs.1
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
-	@${ECHO_MSG}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/iojs
 
 .include <bsd.port.mk>

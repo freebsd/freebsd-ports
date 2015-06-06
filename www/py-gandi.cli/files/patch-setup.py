@@ -1,4 +1,4 @@
---- setup.py.orig	2015-01-08 09:26:15 UTC
+--- setup.py.orig	2015-04-01 08:43:36 UTC
 +++ setup.py
 @@ -6,10 +6,11 @@ import os
  import sys
@@ -14,7 +14,16 @@
  
  
  with open(os.path.join(here, 'gandi', 'cli', '__init__.py')) as v_file:
-@@ -49,6 +50,7 @@ setup(name='gandi.cli',
+@@ -18,7 +19,7 @@ with open(os.path.join(here, 'gandi', 'c
+ 
+ requires = ['setuptools', 'pyyaml', 'click<=4.0', 'requests', 'IPy']
+ 
+-tests_require = ['nose', 'coverage', 'tox', 'httpretty==0.8.6']
++tests_require = ['nose', 'httpretty==0.8.6' ]
+ if sys.version_info < (2, 7):
+     tests_require += ['unittest2', 'importlib']
+ 
+@@ -52,6 +53,7 @@ setup(name='gandi.cli',
        zip_safe=False,
        install_requires=requires,
        tests_require=tests_require,

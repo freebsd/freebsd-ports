@@ -35,6 +35,5 @@ include/node/v8-util.h
 include/node/v8.h
 include/node/v8config.h
 include/node/v8stdint.h
-lib/node_modules/.keepme
-man/man1/node.1.gz
+@(,,444) man/man1/node.1.gz
 share/systemtap/tapset/node.stp
