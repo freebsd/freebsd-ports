@@ -3,6 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.10.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/m3/:boot
 DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
@@ -39,8 +40,15 @@ MAKE_ENV=	CM3_DEBUG=yes \
 		M3_PORTABLE_RUN_PATH=yes
 INTERMED=	${WRKDIR}/intermediate
 BOOTCM3=	CM3="${WRKDIR}/bootstrap/bin/cm3"
-STRIPPKG=	m3back cm3 libdump cmpfp formsview vorun PklFonts dummy test
 PORTDOCS=	www license
+STRIPPKG=	m3staloneback/m3back \
+		libdump/libdump \
+		cmpfp/cmpfp \
+		formsview/formsview \
+		vorun/vorun \
+		pkl-fonts/PklFonts \
+		hack/dummy \
+		test/test
 
 .include <bsd.port.pre.mk>
 
@@ -102,16 +110,21 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/cm3/man ${STAGEDIR}${PREFIX}/
 	${MV} ${STAGEDIR}${PREFIX}/cm3/www ${STAGEDIR}${DOCSDIR}/
 	${MV} ${STAGEDIR}${PREFIX}/cm3/license ${STAGEDIR}${DOCSDIR}/
-	${FIND} ${STAGEDIR}${PREFIX}/cm3/pkg -type f -perm +111 \
-		-not -name cm3 | ${XARGS} ${CHMOD} -x
+	${CHMOD} -x ${STAGEDIR}${PREFIX}/cm3/pkg/m3back/src/M3C.i3 \
+		${STAGEDIR}${PREFIX}/cm3/pkg/m3core/src/C/Common/Csetjmp.i3
 	(cd ${STAGEDIR}${PREFIX}/cm3/bin && ${FIND} * -type f -perm +111 | \
 		${SED} -E '/^(obliq|obliqsrv|recordheap)$$/d' | \
 		${XARGS} ${STRIP_CMD})
 	${FIND} ${STAGEDIR}${PREFIX}/cm3/lib -type f -perm +111 | \
 		${XARGS} ${STRIP_CMD}
 .for PACKAGE in ${STRIPPKG}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/cm3/pkg/*/${M3TARGET}/${PACKAGE}
+	(cd ${STAGEDIR}${PREFIX}/cm3/pkg/${PACKAGE:H}/${M3TARGET} && \
+		${STRIP_CMD} ${PACKAGE:T} && \
+		${MV} ${PACKAGE:T} ../../../bin/ && \
+		${LN} -s ../../../bin/${PACKAGE:T} .)
 .endfor
+	(cd ${STAGEDIR}${PREFIX}/cm3/pkg/cm3/${M3TARGET} && \
+		${RM} cm3 && ${LN} -s ../../../bin/cm3 .)
 
 new-bootstrap:
 	@${RM} -rf ${NEWBOOTDIR}
