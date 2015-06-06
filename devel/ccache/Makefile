@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -22,6 +22,7 @@ SUB_FILES=	${HOWTO} world-ccache pkg-message ccache-update-links.sh
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
 OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX
+OPTIONS_DEFAULT=CLANGLINK LLVMLINK
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
@@ -91,11 +92,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${STAGEDIR}${DOCSDIR}
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MCLANGLINK}
-	@${CAT} ${FILESDIR}/pkg-message-clang >> ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
