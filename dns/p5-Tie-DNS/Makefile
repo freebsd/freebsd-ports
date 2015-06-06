@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Tie-DNS
-PORTVERSION=	1.133260
+PORTVERSION=	1.151560
 PORTEPOCH=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
@@ -18,11 +18,11 @@ BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Tie-Cache>=0:${PORTSDIR}/devel/p5-Tie-Cache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-CheckManifest>=0:${PORTSDIR}/devel/p5-Test-CheckManifest \
-		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
-		p5-Test-PerlTidy>=0:${PORTSDIR}/devel/p5-Test-PerlTidy
+		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 shebangfix
 
