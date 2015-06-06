@@ -2,6 +2,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -12,6 +13,8 @@ COMMENT=	Root certificate bundle from the Mozilla Project
 LICENSE=	MPL
 
 OPTIONS_DEFINE=		ETCSYMLINK
+OPTIONS_DEFAULT=	ETCSYMLINK
+
 OPTIONS_SUB=		yes
 
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
