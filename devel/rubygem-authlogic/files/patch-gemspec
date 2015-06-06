@@ -1,6 +1,6 @@
---- authlogic.gemspec.orig	2015-03-29 21:40:25.479751000 +0000
-+++ authlogic.gemspec	2015-03-29 21:40:47.969488000 +0000
-@@ -25,7 +25,7 @@
+--- authlogic.gemspec.orig	2015-03-29 21:40:25 UTC
++++ authlogic.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<activerecord>, [">= 3.2"])
        s.add_runtime_dependency(%q<activesupport>, [">= 3.2"])
        s.add_runtime_dependency(%q<request_store>, ["~> 1.0"])
