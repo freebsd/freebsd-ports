@@ -6,7 +6,7 @@ PORTVERSION=	2.02q
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
-DISTNAME=	grub-2.02_6
+DISTNAME=	grub-2.02_7
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Multiboot boot loader
