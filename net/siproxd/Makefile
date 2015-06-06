@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	siproxd
-PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -26,25 +25,23 @@ PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g ; 24600d ; 23998s,doc/Makefile ,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
-	${WRKSRC}/doc/siproxd.conf.example
-	${REINPLACE_CMD} -e '22s,doc ,,' ${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -e '212s,doc ,,' ${WRKSRC}/Makefile.in
+BROKEN_FreeBSD_8=	Problem with libosip2 during configure
 
 post-extract:
 .for docs in ${PORTDOCS2}
 	${CP} ${WRKSRC}/doc/${docs} ${WRKSRC}
 .endfor
 
+post-patch:
+	${REINPLACE_CMD} -e 's,siproxd\.conf\.example,siproxd.conf.sample,g' \
+		${WRKSRC}/doc/Makefile.in
+	${MV} ${WRKSRC}/doc/siproxd.conf.example ${WRKSRC}/doc/siproxd.conf.sample
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/siproxd.conf.example \
-		${STAGEDIR}${PREFIX}/etc/siproxd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/siproxd_passwd.cfg \
 		${STAGEDIR}${PREFIX}/etc/siproxd_passwd.cfg.sample
 
