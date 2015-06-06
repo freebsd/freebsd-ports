@@ -39,4 +39,10 @@ do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --prefix=${PREFIX} --destdir=${STAGEDIR}
 	@${RM} ${STAGEDIR}${PREFIX}/share/icons/hicolor/icon-theme.cache
 
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+BROKEN=	Does not build on FreeBSD < 10.X
+.endif
+
 .include <bsd.port.mk>
