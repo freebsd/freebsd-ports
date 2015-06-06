@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concordance
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ COMMENT=	Command-line Logitech Harmony configuration tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libconcord.so:${PORTSDIR}/comms/libconcord
+LIB_DEPENDS=	libconcord.so.${PORTVERSION}:${PORTSDIR}/comms/libconcord
 
 USES=		tar:bzip2
 WRKSRC_SUBDIR=	${PORTNAME}
