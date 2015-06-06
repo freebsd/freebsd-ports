@@ -1423,8 +1423,12 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
+    <topic>dcraw, kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>dcraw</name>
+	<range><ge>7.00</ge><lt>9.26</lt></range>
+      </package>
       <package>
 	<name>kodi</name>
 	<range><lt>14.2_1</lt></range>
@@ -1466,7 +1470,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-04</modified>
+      <modified>2015-06-06</modified>
     </dates>
   </vuln>
 
