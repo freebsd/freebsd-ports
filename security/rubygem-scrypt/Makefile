@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scrypt
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
