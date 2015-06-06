@@ -62,7 +62,6 @@
 %%DATADIR%%/Resources/LICENSE
 %%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Transcoder
-%%DATADIR%%/Resources/PlexDevicesHighAssuranceCA.crt
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/Fanart-tv.bundle/Contents/Info.plist
@@ -448,6 +447,7 @@
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/localmedia.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/subtitlehelpers.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Code/videohelpers.py
+%%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Libraries/Shared/ID3.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Libraries/Shared/ID3v2.py
@@ -628,6 +628,7 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/artisan_entertainment.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/aspen_film_society.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/atom_films.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/audience_network.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/australian_film_commission.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avalanche_studios.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Studio/avnet_kerner.png
@@ -1141,6 +1142,7 @@
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/270.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/360.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/432.png
+%%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/468.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/480.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/480i.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Video Resolution/4k.png
@@ -1432,6 +1434,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/URL/NDTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newsy/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newsy/URL/Newsy/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newyorker/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.newyorker/URL/The New Yorker/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/URL/NME/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/ServiceInfo.plist
@@ -1682,10 +1686,12 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.ttf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.woff2
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.eot
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.ttf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff2
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.eot
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.ttf
@@ -1785,6 +1791,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/et.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fa.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fi.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fr-CA.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fr.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/he.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/hr.json
@@ -1999,6 +2006,7 @@
 %%DATADIR%%/Resources/Profiles/Generic.xml
 %%DATADIR%%/Resources/Profiles/HTML TV App.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
+%%DATADIR%%/Resources/Profiles/Konvergo.xml
 %%DATADIR%%/Resources/Profiles/Mystery 3.xml
 %%DATADIR%%/Resources/Profiles/Mystery 4.xml
 %%DATADIR%%/Resources/Profiles/Mystery 5.xml
@@ -2905,6 +2913,26 @@
 %%DATADIR%%/Resources/imdb-combiner-movies.xml
 %%DATADIR%%/Resources/lastfm-combiner-albums.xml
 %%DATADIR%%/Resources/lastfm-combiner-artists.xml
+%%DATADIR%%/Resources/locale/ar/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/cs_CZ/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/da/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/de/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/en/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/es/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/fr/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/he/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/hr_HR/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/hu_HU/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/it/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/ko/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/lt/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/nl/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/nl_BE/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/no/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/pt_BR/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/sr/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/sv/LC_MESSAGES/plex.mo
+%%DATADIR%%/Resources/locale/zh_CN/LC_MESSAGES/plex.mo
 %%DATADIR%%/Resources/localmedia-combiner-albums.xml
 %%DATADIR%%/Resources/localmedia-combiner-artists.xml
 %%DATADIR%%/Resources/localmedia-combiner-movies.xml
@@ -2955,6 +2983,8 @@
 %%DATADIR%%/libsqlite3.so.8
 %%DATADIR%%/libssl.so.1.0.0
 %%DATADIR%%/libswscale.so.3
+%%DATADIR%%/libtag.so.1
+%%DATADIR%%/libtag_c.so.0
 %%DATADIR%%/libvo-aacenc.so.0
 %%DATADIR%%/libxml2.so.9
 %%DATADIR%%/libxslt.so.2
@@ -2967,23 +2997,3 @@
 @dir %%DATADIR%%/Resources/Python/lib/python2.7/idlelib
 @dir %%DATADIR%%/Resources/Python/lib/python2.7/lib-tk
 @dir %%DATADIR%%/Resources/Python/lib/python2.7/test
-@dir %%DATADIR%%/Resources/locale/ar/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/cs_CZ/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/da/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/de/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/en/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/es/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/fr/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/he/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/hr_HR/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/hu_HU/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/it/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/ko/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/lt/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/nl/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/nl_BE/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/no/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/pt_BR/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/sr/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/sv/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/zh_CN/LC_MESSAGES
