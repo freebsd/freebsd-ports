@@ -12,28 +12,29 @@ COMMENT=	Flexible project management web application
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
-		rubygem-i18n>=0.7.0:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
+RUN_DEPENDS=	rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-rails>=3.2.16:${PORTSDIR}/www/rubygem-rails \
-		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
-		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-redcarpet>0:${PORTSDIR}/textproc/rubygem-redcarpet \
+		rubygem-i18n>=0.7.0:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap \
+		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
+		rubygem-rails>=3.2.16:${PORTSDIR}/www/rubygem-rails \
+		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rbpdf>=0:${PORTSDIR}/print/rubygem-rbpdf \
-		rubygem-request_store>=1.1.0:${PORTSDIR}/devel/rubygem-request_store
+		rubygem-redcarpet>0:${PORTSDIR}/textproc/rubygem-redcarpet \
+		rubygem-request_store>=1.1.0:${PORTSDIR}/devel/rubygem-request_store \
+		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree
 
-USES=		cpe
-USE_RUBY=	yes
-#USE_RAKE=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
+USE_RUBY=	yes
+USES=		cpe
+
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+SUB_LIST=	RUBY_NAME=${RUBY_NAME}
 
 OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER
 OPTIONS_DEFAULT=MYSQL2 RMAGIC WWWSERVER THIN
@@ -46,25 +47,13 @@ PASSENGER_DESC=	Use Apache/Nginx WEB server
 MYSQL2_DESC=	MySQL database support (via mysql2 rubygem)
 NO_OPTIONS_SORT=yes
 
+MYSQL_RUN_DEPENDS=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
+MYSQL2_RUN_DEPENDS=	rubygem-mysql2>=0:${PORTSDIR}/databases/rubygem-mysql2
+POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
+RMAGIC_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile
+RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL2}
-RUN_DEPENDS+=	rubygem-mysql2>=0:${PORTSDIR}/databases/rubygem-mysql2
-.endif
-
-.if ${PORT_OPTIONS:MPOSTGRESQL}
-RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
-.endif
-
-.if ${PORT_OPTIONS:MRMAGIC}
-RUN_DEPENDS+=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Gemfile
-.endif
 
 .if ${PORT_OPTIONS:MWWWSERVER}
 .if ${PORT_OPTIONS:MTHIN}
