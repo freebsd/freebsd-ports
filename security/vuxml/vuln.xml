@@ -62,7 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>pcre</name>
-	<range><lt>8.38</lt></range>
+	<range><lt>8.37_1</lt></range
       </package>
        <package>
 	<name>php5</name>
@@ -103,7 +103,7 @@ Notes:
     <dates>
       <discovery>2015-05-29</discovery>
       <entry>2015-06-04</entry>
-      <modified>2015-06-05</modified>
+      <modified>2015-06-07</modified>
     </dates>
   </vuln>
 
