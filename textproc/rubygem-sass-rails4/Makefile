@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-railties4>=4.0.0:${PORTSDIR}/www/rubygem-railties4 \
 		rubygem-sprockets>=2.12.3:${PORTSDIR}/devel/rubygem-sprockets \
 		rubygem-sprockets-rails>=2.0:${PORTSDIR}/devel/rubygem-sprockets-rails
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
