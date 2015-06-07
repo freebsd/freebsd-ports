@@ -1,4 +1,4 @@
---- grub-core/loader/i386/bsd.c.orig	2015-06-06 17:47:01 UTC
+--- grub-core/loader/i386/bsd.c.orig	2015-01-30 16:34:55 UTC
 +++ grub-core/loader/i386/bsd.c
 @@ -42,12 +42,14 @@
  GRUB_MOD_LICENSE ("GPLv3+");
@@ -11,11 +11,11 @@
  #ifdef GRUB_MACHINE_EFI
  #include <grub/efi/efi.h>
  #define NETBSD_DEFAULT_VIDEO_MODE "800x600"
-+#define FREEBSD_DEFAULT_VIDEO_MODE "800x600"
++#define FREEBSD_DEFAULT_VIDEO_MODE "auto"
  #else
  #define NETBSD_DEFAULT_VIDEO_MODE "text"
  #include <grub/i386/pc/vbe.h>
-@@ -588,6 +590,72 @@ freebsd_get_zfs (void)
+@@ -585,6 +587,72 @@ freebsd_get_zfs (void)
    grub_free (uuid);
  }
  
@@ -88,7 +88,7 @@
  static grub_err_t
  grub_freebsd_boot (void)
  {
-@@ -606,6 +674,55 @@ grub_freebsd_boot (void)
+@@ -603,6 +671,55 @@ grub_freebsd_boot (void)
  
    bi.boot_device = freebsd_biosdev;
  
@@ -144,7 +144,7 @@
    p_size = 0;
    FOR_SORTED_ENV (var)
      if ((grub_memcmp (var->name, "kFreeBSD.", sizeof("kFreeBSD.") - 1) == 0) && (var->name[sizeof("kFreeBSD.") - 1]))
-@@ -691,6 +808,10 @@ grub_freebsd_boot (void)
+@@ -688,6 +805,10 @@ grub_freebsd_boot (void)
  		*(grub_uint32_t *) p_tag = bootflags;
  	      break;
  
@@ -155,7 +155,7 @@
  	    case FREEBSD_MODINFO_METADATA | FREEBSD_MODINFOMD_ENVP:
  	      if (is_64bit)
  		*(grub_uint64_t *) p_tag = bi.environment;
-@@ -720,7 +841,10 @@ grub_freebsd_boot (void)
+@@ -717,7 +838,10 @@ grub_freebsd_boot (void)
  
    bi.kern_end = kern_end;
  
@@ -166,7 +166,7 @@
  
    if (is_64bit)
      {
-@@ -1564,6 +1688,16 @@ grub_cmd_freebsd (grub_extcmd_context_t 
+@@ -1561,6 +1685,16 @@ grub_cmd_freebsd (grub_extcmd_context_t 
  				   FREEBSD_MODINFOMD_KERNEND, &data, len);
  	  if (err)
  	    return err;

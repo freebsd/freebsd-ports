@@ -1,4 +1,4 @@
---- include/grub/i386/freebsd_bootinfo.h.orig	2015-06-06 17:47:01 UTC
+--- include/grub/i386/freebsd_bootinfo.h.orig	2015-06-07 21:44:01 UTC
 +++ include/grub/i386/freebsd_bootinfo.h
 @@ -0,0 +1,33 @@
 +/*
