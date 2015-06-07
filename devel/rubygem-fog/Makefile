@@ -34,6 +34,7 @@ RUN_DEPENDS=	rubygem-fog-atmos>=0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-ipaddress>=0.5:${PORTSDIR}/net/rubygem-ipaddress \
 		rubygem-nokogiri>=1.5.11:${PORTSDIR}/textproc/rubygem-nokogiri
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
