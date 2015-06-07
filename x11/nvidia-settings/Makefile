@@ -22,7 +22,6 @@ USE_XORG=	xv xext
 
 PLIST_FILES=	bin/nvidia-settings \
 		lib/libnvidia-gtk2.so.346.47 \
-		lib/libnvidia-gtk3.so.346.47 \
 		man/man1/nvidia-settings.1.gz
 
 LDFLAGS+=	-Wl,--as-needed
