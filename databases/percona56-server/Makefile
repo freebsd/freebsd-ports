@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.22-72.0
+DISTVERSION=	5.6.24-72.2
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
@@ -13,7 +13,7 @@ MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona56-client
-USES=		bison cmake shebangfix
+USES=		bison cmake perl5 shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED
 OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED
