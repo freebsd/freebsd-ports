@@ -25,8 +25,7 @@ CONFIGURE_ARGS=	--enable-cxx \
 		--enable-hl \
 		--enable-instrument \
 		--enable-strict-format-checks \
-		--with-pthread=/usr \
-		--with-zlib=/usr
+		--with-pthread=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
