@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.11.0
+PORTVERSION=	2.11.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -20,6 +20,7 @@ NODE_DEVEL_DESC=Use www/node-devel as backend
 NODE010_DESC=	Use www/node010 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
+NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 USES=		cpe python:2 tar:xz
