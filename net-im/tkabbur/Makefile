@@ -14,6 +14,9 @@ RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
 		tcltls>0:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
+DEPRECATED=	Upstream development ceased since 2008
+EXPIRATION_DATE=	2015-07-07
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USES=		tar:bzip2 tk:run
 NO_BUILD=	yes
