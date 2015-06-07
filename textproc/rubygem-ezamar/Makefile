@@ -6,11 +6,13 @@ PORTVERSION=	2009.06
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Lightweight and simple templating engine for Ruby
 
-USE_RUBY=	yes
+LICENSE=	MIT
 
+NO_ARCH=	yes
+USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
