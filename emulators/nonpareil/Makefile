@@ -3,7 +3,7 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.79
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
@@ -57,11 +57,8 @@ post-patch:
 		's|<stdint.h>|<inttypes.h>|g' ${WRKSRC}/src/*.[cly]
 
 post-install:
+	${STRIP_CMD} ${PLIST_EXECS:S|^|${STAGEDIR}${PREFIX}/|}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	-${CHOWN} ${BINOWN}:${BINGRP} ${PLIST_FILES:S|^|${STAGEDIR}${PREFIX}/|}
-	-${TOUCH} ${PLIST_FILES:S|^|${STAGEDIR}${PREFIX}/|}
-	-${CHMOD} ${SHAREMODE} ${PLIST_DATA:S|^|${STAGEDIR}${PREFIX}/|}
-	-${CHMOD} ${BINMODE} ${PLIST_EXECS:S|^|${STAGEDIR}${PREFIX}/|}
 
 .include <bsd.port.mk>
