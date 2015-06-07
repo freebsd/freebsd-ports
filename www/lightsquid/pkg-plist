@@ -1,15 +1,7 @@
-@unexec if cmp -s %D/%%ETCDIR%%/group.cfg %D/%%ETCDIR%%/group.cfg.dist; then rm -f %D/%%ETCDIR%%/group.cfg; fi
-@unexec if cmp -s %D/%%ETCDIR%%/realname.cfg %D/%%ETCDIR%%/realname.cfg.dist; then rm -f %D/%%ETCDIR%%/realname.cfg; fi
-@unexec if cmp -s %D/%%ETCDIR%%/skipuser.cfg %D/%%ETCDIR%%/skipuser.cfg.dist; then rm -f %D/%%ETCDIR%%/skipuser.cfg; fi
-@unexec if cmp -s %D/%%ETCDIR%%/lightsquid.cfg %D/%%ETCDIR%%/lightsquid.cfg.dist; then rm -f %D/%%ETCDIR%%/lightsquid.cfg; fi
-%%ETCDIR%%/group.cfg.dist
-@exec [ -f %B/group.cfg ] || cp %B/%f %B/group.cfg
-%%ETCDIR%%/lightsquid.cfg.dist
-@exec [ -f %B/lightsquid.cfg ] || cp %B/%f %B/lightsquid.cfg
-%%ETCDIR%%/realname.cfg.dist
-@exec [ -f %B/realname.cfg ] || cp %B/%f %B/realname.cfg
-%%ETCDIR%%/skipuser.cfg.dist
-@exec [ -f %B/skipuser.cfg ] || cp %B/%f %B/skipuser.cfg
+@sample %%ETCDIR%%/group.cfg.sample
+@sample %%ETCDIR%%/lightsquid.cfg.sample
+@sample %%ETCDIR%%/realname.cfg.sample
+@sample %%ETCDIR%%/skipuser.cfg.sample
 libexec/lightsquid/ip2name.abils
 libexec/lightsquid/ip2name.demo
 libexec/lightsquid/ip2name.dhcp
@@ -34,10 +26,26 @@ libexec/lightsquid/ip2name.squidlist2
 %%DATADIR%%/lang/ua.lng
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/bigfiles.cgi
+%%WWWDIR%%/check-setup.pl
+%%WWWDIR%%/common.pl
+%%WWWDIR%%/day_detail.cgi
+%%WWWDIR%%/get.cgi
+%%WWWDIR%%/graph.cgi
+%%WWWDIR%%/group_detail.cgi
+%%WWWDIR%%/index.cgi
+%%WWWDIR%%/lightparser.pl
+%%WWWDIR%%/month_detail.cgi
+%%WWWDIR%%/topsites.cgi
 %%WWWDIR%%/tpl/base/bigfiles.html
 %%WWWDIR%%/tpl/base/day_detail.html
 %%WWWDIR%%/tpl/base/graph.html
 %%WWWDIR%%/tpl/base/group_detail.html
+%%WWWDIR%%/tpl/base/images/datetime.png
+%%WWWDIR%%/tpl/base/images/flag_red.png
+%%WWWDIR%%/tpl/base/images/graph.png
+%%WWWDIR%%/tpl/base/images/printer.png
 %%WWWDIR%%/tpl/base/index.html
 %%WWWDIR%%/tpl/base/month_detail.html
 %%WWWDIR%%/tpl/base/topsites.html
@@ -45,45 +53,24 @@ libexec/lightsquid/ip2name.squidlist2
 %%WWWDIR%%/tpl/base/user_month.html
 %%WWWDIR%%/tpl/base/user_time.html
 %%WWWDIR%%/tpl/base/whousesite.html
-%%WWWDIR%%/tpl/base/images/datetime.png
-%%WWWDIR%%/tpl/base/images/flag_red.png
-%%WWWDIR%%/tpl/base/images/graph.png
-%%WWWDIR%%/tpl/base/images/printer.png
 %%WWWDIR%%/tpl/text/bigfiles.html
-%%WWWDIR%%/tpl/text/user_detail.html
-%%WWWDIR%%/tpl/text/index.html
+%%WWWDIR%%/tpl/text/day_detail.html
 %%WWWDIR%%/tpl/text/group_detail.html
+%%WWWDIR%%/tpl/text/index.html
+%%WWWDIR%%/tpl/text/month_detail.html
+%%WWWDIR%%/tpl/text/topsites.html
+%%WWWDIR%%/tpl/text/user_detail.html
 %%WWWDIR%%/tpl/text/user_month.html
 %%WWWDIR%%/tpl/text/whousesite.html
-%%WWWDIR%%/tpl/text/topsites.html
-%%WWWDIR%%/tpl/text/month_detail.html
-%%WWWDIR%%/tpl/text/day_detail.html
-%%WWWDIR%%/bigfiles.cgi
-%%WWWDIR%%/day_detail.cgi
-%%WWWDIR%%/get.cgi
-%%WWWDIR%%/graph.cgi
-%%WWWDIR%%/group_detail.cgi
-%%WWWDIR%%/index.cgi
-%%WWWDIR%%/month_detail.cgi
-%%WWWDIR%%/topsites.cgi
 %%WWWDIR%%/user_detail.cgi
 %%WWWDIR%%/user_month.cgi
 %%WWWDIR%%/user_time.cgi
 %%WWWDIR%%/whousesite.cgi
-%%WWWDIR%%/.htaccess
-%%WWWDIR%%/check-setup.pl
-%%WWWDIR%%/common.pl
-%%WWWDIR%%/lightparser.pl
-@exec %%CHOWN%% -R %%WWWOWN%%:%%WWWGRP%% %%WWWDIR%%
-@dirrmtry %%WWWDIR%%/tpl/base/images
-@dirrmtry %%WWWDIR%%/tpl/base
-@dirrmtry %%WWWDIR%%/tpl/text
-@dirrmtry %%WWWDIR%%/tpl
-@dirrmtry %%WWWDIR%%/report
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/tpl/base/images
+@dir %%WWWDIR%%/tpl/base
+@dir %%WWWDIR%%/tpl/text
+@dir %%WWWDIR%%/tpl
+@dir %%WWWDIR%%/report
+@dir %%WWWDIR%%
 @group
 @owner
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%
-@dirrmtry libexec/lightsquid
-@dirrmtry %%ETCDIR%%
