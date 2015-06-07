@@ -3,6 +3,7 @@
 
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -35,11 +36,11 @@ PLIST_FILES+=	libexec/gkrellm2/plugins/gkrelltop.so
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
-	(cd ${WRKSRC} && ${INSTALL_DATA} gkrelltopd.so \
+	(cd ${WRKSRC} && ${INSTALL_LIB} gkrelltopd.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins-gkrellmd)
 .if !defined(GKRELLM_SERVER_ONLY)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
-	(cd ${WRKSRC} && ${INSTALL_DATA} gkrelltop.so \
+	(cd ${WRKSRC} && ${INSTALL_LIB} gkrelltop.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins)
 .endif
 
