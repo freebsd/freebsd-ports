@@ -1,6 +1,6 @@
---- configure.ac.orig	2014-03-03 11:00:26.000000000 -0500
-+++ configure.ac	2014-06-05 13:24:29.290891223 -0400
-@@ -1389,7 +1389,7 @@
+--- configure.ac.orig	2015-06-03 14:54:01 UTC
++++ configure.ac
+@@ -1459,7 +1459,7 @@ fi
  
  if test x"$starfield_excuse" = x; then
     for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
@@ -9,7 +9,7 @@
          if test -f "$dir/DejaVuSans.$ext"; then
            DJVU_FONT_SOURCE="$dir/DejaVuSans.$ext"
            break 2
-@@ -1411,7 +1411,7 @@
+@@ -1481,7 +1481,7 @@ AC_SUBST([DJVU_FONT_SOURCE])
  FONT_SOURCE=
  
  for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do

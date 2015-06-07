@@ -9,3 +9,12 @@ menuentry "FreeBSD" {
 }
 Or use grub-mkconfig to create the config file.
 #############################################################
+
+This version of grub includes support for PC-BSD style boot
+environments. For it to properly detect / populate your
+BE menus you must have your root zpool setup in the following
+manner:
+
+<tank>/ROOT/<be>
+
+Where <tank> is your zpool, and <be> is your '/' mountpoint.
