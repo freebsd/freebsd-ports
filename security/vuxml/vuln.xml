@@ -62,20 +62,8 @@ Notes:
     <affects>
       <package>
 	<name>pcre</name>
-	<range><lt>8.37_1</lt></range
+	<range><lt>8.37_1</lt></range>
       </package>
-       <package>
-	<name>php5</name>
-	<range><lt>5.4.42</lt></range>
-       </package>
-       <package>
-	<name>php55</name>
-	<range><lt>5.5.26</lt></range>
-       </package>
-       <package>
-	<name>php56</name>
-	<range><lt>5.6.9</lt></range>
-       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -936,18 +924,6 @@ Notes:
 	<name>pcre</name>
 	<range><lt>8.37</lt></range>
       </package>
-      <package>
-	<name>php5</name>
-	<range><lt>5.4.41</lt></range>
-      </package>
-      <package>
-	<name>php55</name>
-	<range><lt>5.5.25</lt></range>
-      </package>
-      <package>
-	<name>php56</name>
-	<range><lt>5.6.9</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -979,6 +955,7 @@ Notes:
     <dates>
       <discovery>2015-04-28</discovery>
       <entry>2015-05-22</entry>
+      <modified>2015-06-07</modified>
     </dates>
   </vuln>
 
