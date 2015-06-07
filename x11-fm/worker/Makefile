@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -16,12 +16,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USES=		compiler:c++11-lib pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xinerama
-# From version 3.7.0 worker automatically detects proper pthread flags
-# which should be passed to compiler, for FreeBSD it properly sets
-# PTHREAD_CFLAGS to '-pthread', but leaves PTHREAD_LIBS variable empty,
-# making linker scream and fail about unresolved pthread_* functions.
-# This hack helps to pass proper flags to the linker.
-CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
 
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/xeditor
