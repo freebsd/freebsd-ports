@@ -1270,6 +1270,7 @@
 %%WWWDIR%%/sitemap.xml.php
 %%WWWDIR%%/translate.php
 %%WWWDIR%%/ucp.php
+%%WWWDIR%%/web.config
 %%WWWDIR%%/writecomment.php
 @dir(www,www,) %%WWWDIR%%/xml
 @dir(www,www,) %%WWWDIR%%/pdf
