@@ -1100,6 +1100,7 @@
     SUBDIR += rubygem-right_gogrid
     SUBDIR += rubygem-right_http_connection
     SUBDIR += rubygem-right_slicehost
+    SUBDIR += rubygem-rsync
     SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-ruby-yadis
