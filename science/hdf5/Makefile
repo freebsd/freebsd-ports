@@ -3,12 +3,14 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.15
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
 		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/ \
 		LOCAL/sunpoet
+DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
