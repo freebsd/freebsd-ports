@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
 LICENSE=	BSD3CLAUSE

@@ -1,5 +1,5 @@
---- choparp.c.orig	2002-11-08 07:36:03.000000000 +0900
-+++ choparp.c	2010-05-04 20:39:28.279310506 +0900
+--- choparp.c.orig	2002-11-07 22:36:03 UTC
++++ choparp.c
 @@ -42,6 +42,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -8,7 +8,7 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
  #include <net/bpf.h>
-@@ -75,6 +76,7 @@
+@@ -75,6 +76,7 @@ struct cidr {
  
  struct cidr *targets = NULL, *excludes = NULL;
  u_char	target_mac[ETHER_ADDR_LEN];	/* target MAC address */
@@ -16,7 +16,7 @@
  
  /*
     ARP filter program
-@@ -239,6 +241,16 @@
+@@ -239,6 +241,16 @@ checkarp(char *arpbuf){
  	fprintf(stderr,"checkarp: WARNING: received unknown type ARP request.\n");
  	return(0);
      }
@@ -33,7 +33,7 @@
      target_ip = ntohl(*(u_int32_t *)(arp->arp_tpa));
      return match(target_ip, targets) && !match(target_ip, excludes);
  }
-@@ -280,13 +292,22 @@
+@@ -280,13 +292,22 @@ loop(int fd, char *buf, size_t buflen){
      char    *rframe;
      char    *sframe;
      size_t  frame_len;
@@ -60,7 +60,7 @@
  
          if (r < 0) {
              if (errno == EINTR)
-@@ -295,7 +316,7 @@
+@@ -295,7 +316,7 @@ loop(int fd, char *buf, size_t buflen){
              return;
          }
  
@@ -69,7 +69,7 @@
          if (rlen < 0) {
              if (errno == EINTR)
                  continue;
-@@ -307,7 +328,7 @@
+@@ -307,7 +328,7 @@ loop(int fd, char *buf, size_t buflen){
  	while((rframe = getarp(p, rlen, &nextp, &nextlen)) != NULL){
  	    if (checkarp(rframe)){
  		sframe = gen_arpreply(rframe, &frame_len);
@@ -78,7 +78,7 @@
  	    }
  	    p = nextp;
  	    rlen = nextlen;
-@@ -362,13 +383,13 @@
+@@ -362,13 +383,13 @@ atoip(char *buf, u_int32_t *ip_addr){
  
  void
  usage(void){
@@ -94,7 +94,7 @@
      char *buf, *ifname;
      struct cidr **targets_tail = &targets, **excludes_tail = &excludes;
  #define APPEND(LIST,ADDR,MASK) \
-@@ -381,13 +402,24 @@
+@@ -381,13 +402,24 @@ main(int argc, char **argv){
      } while (0)
      size_t buflen;
  
@@ -123,7 +123,7 @@
  
      while (argc > 0) {
  	u_int32_t addr, mask = ~0;
-@@ -437,6 +469,9 @@
+@@ -437,6 +469,9 @@ main(int argc, char **argv){
  #endif
      if ((fd = openbpf(ifname, &buf, &buflen)) < 0)
  	return(-1);
