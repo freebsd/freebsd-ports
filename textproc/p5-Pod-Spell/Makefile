@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Spell
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ COMMENT=	Formatter for spellchecking Pod
 LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-Class-Tiny>=0:${PORTSDIR}/devel/p5-Class-Tiny \
-		p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir-Install \
+		p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDir-Install \
 		p5-File-ShareDir-ProjectDistDir>=1.000:${PORTSDIR}/devel/p5-File-ShareDir-ProjectDistDir \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Lingua-EN-Inflect>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
