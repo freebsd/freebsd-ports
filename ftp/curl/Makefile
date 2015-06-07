@@ -136,8 +136,8 @@ THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
 THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
 TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
 TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
-WOLFSSL_CONFIGURE_OFF=	--without-cyassl	 
-WOLFSSL_CONFIGURE_ON=	--with-cyassl=${LOCALBASE}	 
+WOLFSSL_CONFIGURE_OFF=	--without-cyassl
+WOLFSSL_CONFIGURE_ON=	--with-cyassl=${LOCALBASE}
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
 
 .include <bsd.port.options.mk>
