@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/v2/
@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer algebra system by Bernard Parisse
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
@@ -40,6 +41,7 @@ PORTDOCS=	*
 DATADIR=	${PREFIX}/share/giac
 PORTDATA=	*
 SHEBANG_FILES=	src/pgiac
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	X_LIBS=-lX11
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
