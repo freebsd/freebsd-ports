@@ -1,5 +1,5 @@
---- choparp.8.orig	2002-11-08 07:36:03.000000000 +0900
-+++ choparp.8	2010-05-04 20:39:28.291199414 +0900
+--- choparp.8.orig	2002-11-07 22:36:03 UTC
++++ choparp.8
 @@ -34,7 +34,8 @@
  .Nm choparp
  .Nd cheap and omitted proxy ARP
@@ -19,7 +19,7 @@
  It watches ARP request packets visible on the interface specified by argument
  .Ar if_name ,
  and sends proxy ARP reply to the sender if the ARP request queries the
-@@ -52,7 +53,7 @@
+@@ -52,7 +53,7 @@ for the network specified by
  .Ar net_addr Ns / Ar net_mask .
  .Pp
  .Ar mac_addr
@@ -28,7 +28,7 @@
  It is normally the address of
  .Ar if_name .
  The format of
-@@ -72,7 +73,7 @@
+@@ -72,7 +73,7 @@ or be a 32 bit hexadecimal value startin
  .Dq 0x
  .Pq for example Ad 0x858a0186 .
  .Ar net_mask
@@ -37,7 +37,7 @@
  or alternatively as a mask length. The following address specifications
  are therefore equivalent:
  .Bl -item -offset indent
-@@ -89,6 +90,16 @@
+@@ -89,6 +90,16 @@ Addresses can be
  .Em excluded
  by preceding them with
  .Fl
