@@ -12,6 +12,8 @@ COMMENT=	Graphical audio file editor
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure with gcc, fails to link with clang
+
 LIB_DEPENDS=	libFOX-1.4.so:${PORTSDIR}/x11-toolkits/fox14
 
 USES=		bison
