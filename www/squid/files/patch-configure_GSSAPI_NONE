@@ -1,0 +1,11 @@
+--- configure.orig	2015-05-28 21:06:54.111809946 +0300
++++ configure	2015-05-28 21:07:20.776834346 +0300
+@@ -23549,7 +23549,7 @@
+ 
+ if test $ac_with_krb5_count -gt 1 ; then
+   as_fn_error $? "Please choose only one Kerberos library." "$LINENO" 5
+-elif test $ac_with_krb5_count -eq 0 ; then
++elif test $ac_with_krb5_count -eq 100 ; then
+   # find installed libs via pkg-config or krb5-config
+   if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gssapi-krb5 krb5\""; } >&5

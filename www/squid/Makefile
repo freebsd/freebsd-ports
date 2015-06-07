@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTVERSION=	3.5.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -257,7 +256,9 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
 
 .if ${PORT_OPTIONS:MECAP}
-BROKEN=			It needs eCAP 1.0 lib, which isn't in ports tree now
+. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=			Squid with eCAP enabled can't be compiled by clang
+. endif
 .endif
 
 # Storage schemes:
