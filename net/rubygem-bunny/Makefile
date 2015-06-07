@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bunny
-PORTVERSION=	0.10.8
+PORTVERSION=	1.7.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Another synchronous Ruby AMQP client
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-amq-protocol>=1.6.0:${PORTSDIR}/net/rubygem-amq-protocol
+RUN_DEPENDS=	rubygem-amq-protocol>=1.9.2:${PORTSDIR}/net/rubygem-amq-protocol
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
