@@ -1,6 +1,6 @@
 Liquibase is an open source (Apache 2.0 Licensed), database-independent
-library for tracking, managing and applying database changes. It is built on
-a simple premise: All database changes are stored in a human readable yet
-trackable form and checked into source control.
+library for tracking, managing and applying database changes. It is
+built on a simple premise: All database changes are stored in a human
+readable yet trackable form and checked into source control.
 
 WWW: http://www.liquibase.org/
