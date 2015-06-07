@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic screen + input class
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
