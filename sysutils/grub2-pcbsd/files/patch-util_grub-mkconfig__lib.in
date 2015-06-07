@@ -1,6 +1,6 @@
---- util/grub-mkconfig_lib.in.orig	2014-03-03 11:00:26.000000000 -0500
-+++ util/grub-mkconfig_lib.in	2014-06-05 12:45:58.532199020 -0400
-@@ -139,7 +139,17 @@
+--- util/grub-mkconfig_lib.in.orig	2015-06-03 14:54:01 UTC
++++ util/grub-mkconfig_lib.in
+@@ -139,7 +139,17 @@ prepare_grub_to_access_device ()
      echo "insmod ${module}"
    done
  
