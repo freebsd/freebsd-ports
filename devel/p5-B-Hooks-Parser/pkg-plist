@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/B::Hooks::Parser.3.gz
 %%SITE_ARCH%%/B/Hooks/Parser.pm
 %%SITE_ARCH%%/B/Hooks/Parser/Install/hook_parser.h
 %%SITE_ARCH%%/auto/B/Hooks/Parser/Parser.so
+%%PERL5_MAN3%%/B::Hooks::Parser.3.gz
