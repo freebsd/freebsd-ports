@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_perl
 DISTVERSION=	2.0.9-rc2
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 #MASTER_SITES=	APACHE/perl
@@ -33,11 +34,28 @@ PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_VER} == 5.22
+BROKEN=		PERL ${PERL_VER} is not supported by upstream,\
+		see http://svn.apache.org/viewvc/perl/modperl/trunk/README?view=markup
+.endif
+
 # Provider is build iff apache24 is in use
 .if ${APACHE_VERSION:M22}
 PLIST_SUB+=	AP22="@comment "
 .else
 PLIST_SUB+=	AP22=""
+.endif
+
+# PR 15750
+# Test whether the system uses a multithreaded perl
+HAS_ITHREADS!=	${PERL} -e 'use Config; print $$Config{useithreads} ? 1 : 0'
+.if ${HAS_ITHREADS:M1}
+PLIST_SUB+=	ITHREADS=""
+.else
+. if !${APACHE_VERSION:M22}
+IGNORE=		requires PERL with "THREADS=on", please rebuild PERL and all depending ports
+. endif
+PLIST_SUB+=	ITHREADS="@comment "
 .endif
 
 CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} \
