@@ -1,5 +1,5 @@
---- get.c.orig	2000-06-21 19:15:41 UTC
-+++ get.c
+--- src/get.c.orig	2000-06-21 19:15:41 UTC
++++ src/get.c
 @@ -169,27 +169,33 @@ get(char *loc, NETPORT port, char *url, 
        OpenSSL_add_all_algorithms();
        OpenSSL_add_ssl_algorithms();
