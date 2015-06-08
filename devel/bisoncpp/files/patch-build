@@ -1,6 +1,6 @@
---- ./build.orig	2013-11-27 18:04:34.000000000 +0100
-+++ ./build	2013-11-27 18:04:34.000000000 +0100
-@@ -40,7 +40,10 @@
+--- build.orig	2015-05-25 15:47:08 UTC
++++ build
+@@ -40,7 +40,10 @@ void main(int argc, list argv)
          manpage();
  
      if (option == "manual")
