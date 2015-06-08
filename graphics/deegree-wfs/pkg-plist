@@ -187,4 +187,6 @@
 %%TOMCATDIR%%/webapps/deegree-wfs/wfs_main.html
 %%TOMCATDIR%%/webapps/deegree-wfs/wfs_navi.jsp
 %%TOMCATDIR%%/webapps/deegree-wfs/wfs_transaction.html
+@dir %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/LockFeature/kvp
+@dir %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/sql
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wfs
