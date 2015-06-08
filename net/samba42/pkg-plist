@@ -427,7 +427,6 @@ lib/shared-modules/vfs/scannedonly.so
 lib/shared-modules/vfs/shadow_copy.so
 lib/shared-modules/vfs/shadow_copy2.so
 lib/shared-modules/vfs/smb_traffic_analyzer.so
-lib/shared-modules/vfs/snapper.so
 lib/shared-modules/vfs/streams_depot.so
 lib/shared-modules/vfs/streams_xattr.so
 lib/shared-modules/vfs/syncops.so
