@@ -1,28 +1,3 @@
---- gcc/ada/a-exetim-posix.adb.orig
-+++ gcc/ada/a-exetim-posix.adb
-@@ -105,11 +105,11 @@
-       --  Time is equal to Duration (although it is a private type) and
-       --  CPU_Time is equal to Time.
- 
--      function clock_gettime
-+      function clock_gettime_int
-         (clock_id : Interfaces.C.int;
-          tp       : access timespec)
-          return int;
--      pragma Import (C, clock_gettime, "clock_gettime");
-+      pragma Import (C, clock_gettime_int, "clock_gettime");
-       --  Function from the POSIX.1b Realtime Extensions library
- 
-    begin
-@@ -117,7 +117,7 @@
-          raise Program_Error;
-       end if;
- 
--      Result := clock_gettime
-+      Result := clock_gettime_int
-         (clock_id => CLOCK_THREAD_CPUTIME_ID, tp => TS'Unchecked_Access);
-       pragma Assert (Result = 0);
- 
 --- /dev/null
 +++ gcc/ada/a-intnam-dragonfly.ads
 @@ -0,0 +1,136 @@
@@ -764,16 +739,21 @@
  
 --- gcc/ada/gsocket.h.orig
 +++ gcc/ada/gsocket.h
-@@ -209,6 +209,8 @@
+@@ -208,7 +208,13 @@
+ #include <sys/select.h>
  #endif
  
++#ifdef __NetBSD__
++#include <sys/select.h>
++#endif
++
  #if defined (_AIX) || defined (__FreeBSD__) || defined (__hpux__) || \
 +    defined (__DragonFly__) || \
 +    defined (__NetBSD__) || defined (__OpenBSD__) || \
      defined (_WIN32) || defined (__APPLE__) || defined (__ANDROID__)
  # define HAVE_THREAD_SAFE_GETxxxBYyyy 1
  
-@@ -241,7 +243,13 @@
+@@ -241,7 +247,13 @@
  # endif
  #endif
  
@@ -808,7 +788,26 @@
  {
    struct sigaction act;
  
-@@ -2496,9 +2496,13 @@
+@@ -2070,6 +2070,18 @@
+ 
+ #include <signal.h>
+ #include <unistd.h>
++#include <time.h>
++
++#define netbsd_sigaction	sigaction
++#define netbsd_sigaddset	sigaddset
++#define netbsd_sigdelset	sigdelset
++#define netbsd_sigemptyset	sigemptyset
++#define netbsd_sigfillset	sigfillset
++#define netbsd_sigismember	sigismember
++#define netbsd_sigaltstack	sigaltstack
++#define netbsd_nanosleep	nanosleep
++#define netbsd_clock_gettime	clock_gettime
++#define netbsd_gettimeofday	gettimeofday
+ 
+ static void
+ __gnat_error_handler (int sig)
+@@ -2496,9 +2508,13 @@
     initialization of the FP processor.  This version is used under INTERIX
     and WIN32.  */
  
@@ -930,8 +929,12 @@
     Non_Empty_Node : constant Project_Node_Id := 1;
 --- gcc/ada/s-osinte-android.ads.orig
 +++ gcc/ada/s-osinte-android.ads
-@@ -600,8 +600,8 @@
-    type time_t is new long;
+@@ -597,11 +597,11 @@
+ 
+    type pid_t is new int;
+ 
+-   type time_t is new long;
++   type time_t is new Long_Long_Integer;
  
     type timespec is record
 -      tv_sec  : time_t;
@@ -1737,390 +1740,6 @@
  
     ------------------
 --- /dev/null
-+++ gcc/ada/s-osprim-bsd32.adb
-@@ -0,0 +1,186 @@
-+------------------------------------------------------------------------------
-+--                                                                          --
-+--                 GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                 --
-+--                                                                          --
-+--                  S Y S T E M . O S _ P R I M I T I V E S                 --
-+--                                                                          --
-+--                                  B o d y                                 --
-+--                                                                          --
-+--          Copyright (C) 1998-2009, Free Software Foundation, Inc.         --
-+--                                                                          --
-+-- GNARL is free software; you can  redistribute it  and/or modify it under --
-+-- terms of the  GNU General Public License as published  by the Free Soft- --
-+-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
-+-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
-+-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
-+-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
-+--                                                                          --
-+-- As a special exception under Section 7 of GPL version 3, you are granted --
-+-- additional permissions described in the GCC Runtime Library Exception,   --
-+-- version 3.1, as published by the Free Software Foundation.               --
-+--                                                                          --
-+-- You should have received a copy of the GNU General Public License and    --
-+-- a copy of the GCC Runtime Library Exception along with this program;     --
-+-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
-+-- <http://www.gnu.org/licenses/>.                                          --
-+--                                                                          --
-+-- GNARL was developed by the GNARL team at Florida State University.       --
-+-- Extensive contributions were provided by Ada Core Technologies, Inc.     --
-+--                                                                          --
-+-- Copyright (C) 2010, 2011 John Marino <www.dragonlace.net>                --
-+------------------------------------------------------------------------------
-+
-+--  This version is for BSD operating systems using 32-bit time types.
-+
-+with Interfaces.C;
-+
-+package body System.OS_Primitives is
-+
-+   --  ??? These definitions are duplicated from System.OS_Interface
-+   --  because we don't want to depend on any package. Consider removing
-+   --  these declarations in System.OS_Interface and move these ones in
-+   --  the spec.
-+
-+   subtype int  is Interfaces.C.int;
-+   subtype long is Interfaces.C.long;
-+
-+   type time_t is new int;
-+
-+   type timespec is record
-+      tv_sec  : time_t;
-+      tv_nsec : long;
-+   end record;
-+   pragma Convention (C, timespec);
-+
-+   type timezone is record
-+      tz_minuteswest : int;
-+      tz_dsttime     : int;
-+   end record;
-+   pragma Convention (C, timezone);
-+
-+   function nanosleep (rqtp, rmtp : access timespec)  return int;
-+   pragma Import (C, nanosleep, "nanosleep");
-+
-+   -----------
-+   -- Clock --
-+   -----------
-+
-+   function Clock return Duration is
-+      type timeval is array (1 .. 2) of Long_Integer;
-+      tzresult : aliased timezone;
-+
-+      procedure timeval_to_duration
-+        (T    : not null access timeval;
-+         sec  : not null access Long_Integer;
-+         usec : not null access Long_Integer);
-+      pragma Import (C, timeval_to_duration, "__gnat_timeval_to_duration");
-+
-+      Micro  : constant := 10**6;
-+      sec    : aliased Long_Integer;
-+      usec   : aliased Long_Integer;
-+      TV     : aliased timeval;
-+      Result : int;
-+
-+      function gettimeofday
-+        (Tv : access timeval;
-+         Tz : access timezone) return int;
-+      pragma Import (C, gettimeofday, "gettimeofday");
-+
-+      pragma Unreferenced (Result);
-+   begin
-+      --  The return codes for gettimeofday are as follows (from man pages):
-+      --    EPERM  settimeofday is called by someone other than the superuser
-+      --    EINVAL Timezone (or something else) is invalid
-+      --    EFAULT One of tv or tz pointed outside accessible address space
-+
-+      --  None of these codes signal a potential clock skew, hence the return
-+      --  value is never checked.
-+
-+      Result := gettimeofday (TV'Access, tzresult'Access);
-+      timeval_to_duration (TV'Access, sec'Access, usec'Access);
-+      return Duration (sec) + Duration (usec) / Micro;
-+   end Clock;
-+
-+   ---------------------
-+   -- Monotonic_Clock --
-+   ---------------------
-+
-+   function Monotonic_Clock return Duration renames Clock;
-+
-+   -----------------
-+   -- To_Timespec --
-+   -----------------
-+
-+   function To_Timespec (D : Duration) return timespec;
-+
-+   function To_Timespec (D : Duration) return timespec is
-+      S : time_t;
-+      F : Duration;
-+
-+   begin
-+      S := time_t (Long_Long_Integer (D));
-+      F := D - Duration (S);
-+
-+      --  If F has negative value due to a round-up, adjust for positive F
-+      --  value.
-+
-+      if F < 0.0 then
-+         S := S - 1;
-+         F := F + 1.0;
-+      end if;
-+
-+      return
-+        timespec'(tv_sec  => S,
-+                  tv_nsec => long (Long_Long_Integer (F * 10#1#E9)));
-+   end To_Timespec;
-+
-+   -----------------
-+   -- Timed_Delay --
-+   -----------------
-+
-+   procedure Timed_Delay
-+     (Time : Duration;
-+      Mode : Integer)
-+   is
-+      Request    : aliased timespec;
-+      Remaind    : aliased timespec;
-+      Rel_Time   : Duration;
-+      Abs_Time   : Duration;
-+      Base_Time  : constant Duration := Clock;
-+      Check_Time : Duration := Base_Time;
-+
-+      Result     : int;
-+      pragma Unreferenced (Result);
-+
-+   begin
-+      if Mode = Relative then
-+         Rel_Time := Time;
-+         Abs_Time := Time + Check_Time;
-+      else
-+         Rel_Time := Time - Check_Time;
-+         Abs_Time := Time;
-+      end if;
-+
-+      if Rel_Time > 0.0 then
-+         loop
-+            Request := To_Timespec (Rel_Time);
-+            Result := nanosleep (Request'Access, Remaind'Access);
-+            Check_Time := Clock;
-+
-+            exit when Abs_Time <= Check_Time or else Check_Time < Base_Time;
-+
-+            Rel_Time := Abs_Time - Check_Time;
-+         end loop;
-+      end if;
-+   end Timed_Delay;
-+
-+   ----------------
-+   -- Initialize --
-+   ----------------
-+
-+   procedure Initialize is
-+   begin
-+      null;
-+   end Initialize;
-+
-+end System.OS_Primitives;
---- /dev/null
-+++ gcc/ada/s-osprim-bsd64.adb
-@@ -0,0 +1,192 @@
-+------------------------------------------------------------------------------
-+--                                                                          --
-+--                 GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                 --
-+--                                                                          --
-+--                  S Y S T E M . O S _ P R I M I T I V E S                 --
-+--                                                                          --
-+--                                  B o d y                                 --
-+--                                                                          --
-+--          Copyright (C) 1998-2009, Free Software Foundation, Inc.         --
-+--                                                                          --
-+-- GNARL is free software; you can  redistribute it  and/or modify it under --
-+-- terms of the  GNU General Public License as published  by the Free Soft- --
-+-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
-+-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
-+-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
-+-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
-+--                                                                          --
-+-- As a special exception under Section 7 of GPL version 3, you are granted --
-+-- additional permissions described in the GCC Runtime Library Exception,   --
-+-- version 3.1, as published by the Free Software Foundation.               --
-+--                                                                          --
-+-- You should have received a copy of the GNU General Public License and    --
-+-- a copy of the GCC Runtime Library Exception along with this program;     --
-+-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
-+-- <http://www.gnu.org/licenses/>.                                          --
-+--                                                                          --
-+-- GNARL was developed by the GNARL team at Florida State University.       --
-+-- Extensive contributions were provided by Ada Core Technologies, Inc.     --
-+--                                                                          --
-+-- Copyright (C) 2010, 2011 John Marino <www.dragonlace.net>                --
-+------------------------------------------------------------------------------
-+
-+--  This version is for BSD operating systems using 64-bit time types.
-+
-+with Interfaces.C;
-+
-+package body System.OS_Primitives is
-+
-+   --  ??? These definitions are duplicated from System.OS_Interface
-+   --  because we don't want to depend on any package. Consider removing
-+   --  these declarations in System.OS_Interface and move these ones in
-+   --  the spec.
-+
-+   subtype int     is Interfaces.C.int;
-+   subtype long    is Interfaces.C.long;
-+   subtype int64_t is Interfaces.Integer_64;
-+
-+   type time_t is new int64_t;
-+
-+   type timespec is record
-+      tv_sec  : time_t;
-+      tv_nsec : long;
-+   end record;
-+   pragma Convention (C, timespec);
-+
-+   type timezone is record
-+      tz_minuteswest : int;
-+      tz_dsttime     : int;
-+   end record;
-+   pragma Convention (C, timezone);
-+
-+   type timeval is record
-+      tv_sec  : time_t;
-+      tv_usec : long;   --  Not for NetBSD! FreeBSD/DragonFly
-+   end record;
-+   pragma Convention (C, timeval);
-+
-+   function nanosleep (rqtp, rmtp : access timespec)  return int;
-+   pragma Import (C, nanosleep, "nanosleep");
-+
-+   -----------
-+   -- Clock --
-+   -----------
-+
-+   function Clock return Duration is
-+
-+      procedure timeval_to_duration
-+        (T    : not null access timeval;
-+         sec  : not null access Long_Integer;
-+         usec : not null access Long_Integer);
-+      pragma Import (C, timeval_to_duration, "__gnat_timeval_to_duration");
-+
-+      Micro    : constant := 10**6;
-+      sec      : aliased Long_Integer;
-+      usec     : aliased Long_Integer;
-+      TV       : aliased timeval;
-+      tzresult : aliased timezone;
-+      Result   : int;
-+
-+      function gettimeofday
-+        (Tv : access timeval;
-+         Tz : access timezone) return int;
-+      pragma Import (C, gettimeofday, "gettimeofday");
-+
-+      pragma Unreferenced (Result);
-+   begin
-+      --  The return codes for gettimeofday are as follows (from man pages):
-+      --    EPERM  settimeofday is called by someone other than the superuser
-+      --    EINVAL Timezone (or something else) is invalid
-+      --    EFAULT One of tv or tz pointed outside accessible address space
-+
-+      --  None of these codes signal a potential clock skew, hence the return
-+      --  value is never checked.
-+
-+      Result := gettimeofday (TV'Access, tzresult'Access);
-+      timeval_to_duration (TV'Access, sec'Access, usec'Access);
-+      return Duration (sec) + Duration (usec) / Micro;
-+   end Clock;
-+
-+   ---------------------
-+   -- Monotonic_Clock --
-+   ---------------------
-+
-+   function Monotonic_Clock return Duration renames Clock;
-+
-+   -----------------
-+   -- To_Timespec --
-+   -----------------
-+
-+   function To_Timespec (D : Duration) return timespec;
-+
-+   function To_Timespec (D : Duration) return timespec is
-+      S : time_t;
-+      F : Duration;
-+
-+   begin
-+      S := time_t (Long_Long_Integer (D));
-+      F := D - Duration (S);
-+
-+      --  If F has negative value due to a round-up, adjust for positive F
-+      --  value.
-+
-+      if F < 0.0 then
-+         S := S - 1;
-+         F := F + 1.0;
-+      end if;
-+
-+      return
-+        timespec'(tv_sec  => S,
-+                  tv_nsec => long (Long_Long_Integer (F * 10#1#E9)));
-+   end To_Timespec;
-+
-+   -----------------
-+   -- Timed_Delay --
-+   -----------------
-+
-+   procedure Timed_Delay
-+     (Time : Duration;
-+      Mode : Integer)
-+   is
-+      Request    : aliased timespec;
-+      Remaind    : aliased timespec;
-+      Rel_Time   : Duration;
-+      Abs_Time   : Duration;
-+      Base_Time  : constant Duration := Clock;
-+      Check_Time : Duration := Base_Time;
-+
-+      Result     : int;
-+      pragma Unreferenced (Result);
-+
-+   begin
-+      if Mode = Relative then
-+         Rel_Time := Time;
-+         Abs_Time := Time + Check_Time;
-+      else
-+         Rel_Time := Time - Check_Time;
-+         Abs_Time := Time;
-+      end if;
-+
-+      if Rel_Time > 0.0 then
-+         loop
-+            Request := To_Timespec (Rel_Time);
-+            Result := nanosleep (Request'Access, Remaind'Access);
-+            Check_Time := Clock;
-+
-+            exit when Abs_Time <= Check_Time or else Check_Time < Base_Time;
-+
-+            Rel_Time := Abs_Time - Check_Time;
-+         end loop;
-+      end if;
-+   end Timed_Delay;
-+
-+   ----------------
-+   -- Initialize --
-+   ----------------
-+
-+   procedure Initialize is
-+   begin
-+      null;
-+   end Initialize;
-+
-+end System.OS_Primitives;
---- /dev/null
 +++ gcc/ada/s-trasym-bsd.adb
 @@ -0,0 +1,151 @@
 +------------------------------------------------------------------------------
@@ -2323,153 +1942,6 @@
    || defined (__GLIBC__)
  {
    localtime_r (timer, &tp);
---- /dev/null
-+++ gcc/ada/system-dragonfly-x86.ads
-@@ -0,0 +1,144 @@
-+------------------------------------------------------------------------------
-+--                                                                          --
-+--                        GNAT RUN-TIME COMPONENTS                          --
-+--                                                                          --
-+--                               S Y S T E M                                --
-+--                                                                          --
-+--                                 S p e c                                  --
-+--                       (DragonFly BSD/x86 Version)                        --
-+--                                                                          --
-+--          Copyright (C) 1992-2011, Free Software Foundation, Inc.         --
-+--                                                                          --
-+-- This specification is derived from the Ada Reference Manual for use with --
-+-- GNAT. The copyright notice above, and the license provisions that follow --
-+-- apply solely to the  contents of the part following the private keyword. --
-+--                                                                          --
-+-- GNAT is free software;  you can  redistribute it  and/or modify it under --
-+-- terms of the  GNU General Public License as published  by the Free Soft- --
-+-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
-+-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
-+-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
-+-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
-+--                                                                          --
-+-- As a special exception under Section 7 of GPL version 3, you are granted --
-+-- additional permissions described in the GCC Runtime Library Exception,   --
-+-- version 3.1, as published by the Free Software Foundation.               --
-+--                                                                          --
-+-- You should have received a copy of the GNU General Public License and    --
-+-- a copy of the GCC Runtime Library Exception along with this program;     --
-+-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
-+-- <http://www.gnu.org/licenses/>.                                          --
-+--                                                                          --
-+-- GNAT was originally developed  by the GNAT team at  New York University. --
-+-- Extensive contributions were provided by Ada Core Technologies Inc.      --
-+--                                                                          --
-+------------------------------------------------------------------------------
-+
-+package System is
-+   pragma Pure;
-+   --  Note that we take advantage of the implementation permission to make
-+   --  this unit Pure instead of Preelaborable; see RM 13.7.1(15). In Ada
-+   --  2005, this is Pure in any case (AI-362).
-+
-+   type Name is (SYSTEM_NAME_GNAT);
-+   System_Name : constant Name := SYSTEM_NAME_GNAT;
-+
-+   --  System-Dependent Named Numbers
-+
-+   Min_Int               : constant := Long_Long_Integer'First;
-+   Max_Int               : constant := Long_Long_Integer'Last;
-+
-+   Max_Binary_Modulus    : constant := 2 ** Long_Long_Integer'Size;
-+   Max_Nonbinary_Modulus : constant := 2 ** Integer'Size - 1;
-+
-+   Max_Base_Digits       : constant := Long_Long_Float'Digits;
-+   Max_Digits            : constant := Long_Long_Float'Digits;
-+
-+   Max_Mantissa          : constant := 63;
-+   Fine_Delta            : constant := 2.0 ** (-Max_Mantissa);
-+
-+   Tick                  : constant := 0.000_001;
-+
-+   --  Storage-related Declarations
-+
-+   type Address is private;
-+   pragma Preelaborable_Initialization (Address);
-+   Null_Address : constant Address;
-+
-+   Storage_Unit : constant := 8;
-+   Word_Size    : constant := 32;
-+   Memory_Size  : constant := 2 ** 32;
-+
-+   --  Address comparison
-+
-+   function "<"  (Left, Right : Address) return Boolean;
-+   function "<=" (Left, Right : Address) return Boolean;
-+   function ">"  (Left, Right : Address) return Boolean;
-+   function ">=" (Left, Right : Address) return Boolean;
-+   function "="  (Left, Right : Address) return Boolean;
-+
-+   pragma Import (Intrinsic, "<");
-+   pragma Import (Intrinsic, "<=");
-+   pragma Import (Intrinsic, ">");
-+   pragma Import (Intrinsic, ">=");
-+   pragma Import (Intrinsic, "=");
-+
-+   --  Other System-Dependent Declarations
-+
-+   type Bit_Order is (High_Order_First, Low_Order_First);
-+   Default_Bit_Order : constant Bit_Order := Low_Order_First;
-+   pragma Warnings (Off, Default_Bit_Order); -- kill constant condition warning
-+
-+   --  Priority-related Declarations (RM D.1)
-+
-+   Max_Priority           : constant Positive := 30;
-+   Max_Interrupt_Priority : constant Positive := 31;
-+
-+   subtype Any_Priority       is Integer      range  0 .. 31;
-+   subtype Priority           is Any_Priority range  0 .. 30;
-+   subtype Interrupt_Priority is Any_Priority range 31 .. 31;
-+
-+   Default_Priority : constant Priority := 15;
-+
-+private
-+
-+   type Address is mod Memory_Size;
-+   Null_Address : constant Address := 0;
-+
-+   --------------------------------------
-+   -- System Implementation Parameters --
-+   --------------------------------------
-+
-+   --  These parameters provide information about the target that is used
-+   --  by the compiler. They are in the private part of System, where they
-+   --  can be accessed using the special circuitry in the Targparm unit
-+   --  whose source should be consulted for more detailed descriptions
-+   --  of the individual switch values.
-+
-+   Backend_Divide_Checks     : constant Boolean := False;
-+   Backend_Overflow_Checks   : constant Boolean := True;
-+   Command_Line_Args         : constant Boolean := True;
-+   Configurable_Run_Time     : constant Boolean := False;
-+   Denorm                    : constant Boolean := True;
-+   Duration_32_Bits          : constant Boolean := False;
-+   Exit_Status_Supported     : constant Boolean := True;
-+   Fractional_Fixed_Ops      : constant Boolean := False;
-+   Frontend_Layout           : constant Boolean := False;
-+   Machine_Overflows         : constant Boolean := False;
-+   Machine_Rounds            : constant Boolean := True;
-+   Preallocated_Stacks       : constant Boolean := False;
-+   Signed_Zeros              : constant Boolean := True;
-+   Stack_Check_Default       : constant Boolean := False;
-+   Stack_Check_Probes        : constant Boolean := True;
-+   Stack_Check_Limits        : constant Boolean := False;
-+   Support_Aggregates        : constant Boolean := True;
-+   Support_Atomic_Primitives : constant Boolean := True;
-+   Support_Composite_Assign  : constant Boolean := True;
-+   Support_Composite_Compare : constant Boolean := True;
-+   Support_Long_Shifts       : constant Boolean := True;
-+   Always_Compatible_Rep     : constant Boolean := False;
-+   Suppress_Standard_Library : constant Boolean := False;
-+   Use_Ada_Main_Program_Name : constant Boolean := False;
-+   ZCX_By_Default            : constant Boolean := True;
-+
-+end System;
 --- /dev/null
 +++ gcc/ada/system-dragonfly-x86_64.ads
 @@ -0,0 +1,144 @@
@@ -2891,18 +2363,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-android.adb \
    s-linux.ads<s-linux-android.ads \
-@@ -1149,10 +1150,6 @@
-   a-exexpr.adb<a-exexpr-gcc.adb \
-   s-excmac.ads<s-excmac-arm.ads
- 
--  TOOLS_TARGET_PAIRS =  \
--    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
--    indepsw.adb<indepsw-gnu.adb
--
-   EXTRA_GNATRTL_TASKING_OBJS=s-linux.o
-   EXTRA_LIBGNAT_OBJS+=raise-gcc.o sigtramp-armdroid.o
-   EXTRA_GNATRTL_NONTASKING_OBJS+=g-cppexc.o s-excmac.o
-@@ -1166,6 +1163,7 @@
+@@ -1166,6 +1167,7 @@
  ifeq ($(strip $(filter-out sparc% sun solaris%,$(target_cpu) $(target_vendor) $(target_os))),)
    LIBGNAT_TARGET_PAIRS_COMMON = \
    a-intnam.ads<a-intnam-solaris.ads \
@@ -2910,7 +2371,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-solaris.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1208,6 +1206,8 @@
+@@ -1208,6 +1210,8 @@
    TOOLS_TARGET_PAIRS=mlib-tgt-specific.adb<mlib-tgt-specific-solaris.adb
  
    EH_MECHANISM=-gcc
@@ -2919,12 +2380,9 @@
    THREADSLIB = -lposix4 -lthread
    MISCLIB = -lposix4 -lnsl -lsocket
    SO_OPTS = -Wl,-h,
-@@ -1419,12 +1419,17 @@
- # x86 FreeBSD
+@@ -1420,8 +1424,11 @@
  ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
    a-intnam.ads<a-intnam-freebsd.ads \
 +  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
@@ -2933,32 +2391,19 @@
 +  s-mudido.adb<s-mudido-affinity.adb \
    s-osinte.adb<s-osinte-freebsd.adb \
    s-osinte.ads<s-osinte-freebsd.ads \
--  s-osprim.adb<s-osprim-posix.adb \
-+  s-osprim.adb<s-osprim-bsd32.adb \
-   s-taprop.adb<s-taprop-posix.adb \
-   s-taspri.ads<s-taspri-posix.ads \
-   s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1432,11 +1437,12 @@
-   $(X86_TARGET_PAIRS) \
-   system.ads<system-freebsd-x86.ads
- 
--  TOOLS_TARGET_PAIRS = \
--  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
+   s-osprim.adb<s-osprim-posix.adb \
+@@ -1436,6 +1443,8 @@
+   mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
  
    EH_MECHANISM=-gcc
-   THREADSLIB= -lpthread
-@@ -1448,12 +1454,17 @@
- # x86-64 FreeBSD
+@@ -1449,8 +1458,11 @@
  ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
    a-intnam.ads<a-intnam-freebsd.ads \
 +  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
@@ -2967,58 +2412,14 @@
 +  s-mudido.adb<s-mudido-affinity.adb \
    s-osinte.adb<s-osinte-freebsd.adb \
    s-osinte.ads<s-osinte-freebsd.ads \
--  s-osprim.adb<s-osprim-posix.adb \
-+  s-osprim.adb<s-osprim-bsd64.adb \
-   s-taprop.adb<s-taprop-posix.adb \
-   s-taspri.ads<s-taspri-posix.ads \
-   s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1461,11 +1472,240 @@
-   $(X86_64_TARGET_PAIRS) \
-   system.ads<system-freebsd-x86_64.ads
- 
--  TOOLS_TARGET_PAIRS = \
--  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
+   s-osprim.adb<s-osprim-posix.adb \
+@@ -1465,7 +1477,113 @@
+   mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
-+
-+  EH_MECHANISM=-gcc
-+  THREADSLIB= -lpthread
-+  GMEM_LIB = gmemlib
-+  LIBRARY_VERSION := $(LIB_VERSION)
-+  MISCLIB = -lutil
-+endif
-+
-+# x86 DragonFly
-+ifeq ($(strip $(filter-out %86 dragonfly%,$(target_cpu) $(target_os))),)
-+  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
-+  a-intnam.ads<a-intnam-dragonfly.ads \
-+  g-socthi.adb<g-socthi-bsd.adb \
-+  s-trasym.adb<s-trasym-bsd.adb \
-+  s-inmaop.adb<s-inmaop-posix.adb \
-+  s-intman.adb<s-intman-posix.adb \
-+  s-mudido.adb<s-mudido-affinity.adb \
-+  s-osinte.adb<s-osinte-dragonfly.adb \
-+  s-osinte.ads<s-osinte-dragonfly.ads \
-+  s-osprim.adb<s-osprim-posix.adb \
-+  s-taprop.adb<s-taprop-posix.adb \
-+  s-taspri.ads<s-taspri-posix.ads \
-+  s-tpopsp.adb<s-tpopsp-posix.adb \
-+  $(ATOMICS_TARGET_PAIRS) \
-+  $(X86_TARGET_PAIRS) \
-+  system.ads<system-dragonfly-x86.ads
-+
-+  GNATLIB_SHARED = gnatlib-shared-dual
-+
-+  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
-+  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
-+  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
 +  EH_MECHANISM=-gcc
 +  THREADSLIB= -lpthread
@@ -3030,8 +2431,6 @@
 +# x86_64 DragonFly
 +ifeq ($(strip $(filter-out x86_64 dragonfly%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
 +  a-intnam.ads<a-intnam-dragonfly.ads \
 +  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
@@ -3048,12 +2447,13 @@
 +  $(X86_64_TARGET_PAIRS) \
 +  system.ads<system-dragonfly-x86_64.ads
 +
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
 +  EH_MECHANISM=-gcc
 +  THREADSLIB= -lpthread
@@ -3062,88 +2462,20 @@
 +  MISCLIB = -lutil
 +endif
 +
-+# x86 OpenBSD
-+ifeq ($(strip $(filter-out %86 openbsd%,$(target_cpu) $(target_os))),)
-+  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
-+  a-intnam.ads<a-intnam-openbsd.ads \
-+  g-socthi.adb<g-socthi-bsd.adb \
-+  s-trasym.adb<s-trasym-bsd.adb \
-+  s-inmaop.adb<s-inmaop-posix.adb \
-+  s-intman.adb<s-intman-posix.adb \
-+  s-mudido.adb<s-mudido-affinity.adb \
-+  s-osinte.adb<s-osinte-openbsd.adb \
-+  s-osinte.ads<s-osinte-openbsd.ads \
-+  s-osprim.adb<s-osprim-bsd32.adb \
-+  s-taprop.adb<s-taprop-posix.adb \
-+  s-taspri.ads<s-taspri-posix.ads \
-+  s-tpopsp.adb<s-tpopsp-posix.adb \
-+  $(ATOMICS_TARGET_PAIRS) \
-+  $(X86_TARGET_PAIRS) \
-+  system.ads<system-openbsd-x86.ads
-+
-+  GNATLIB_SHARED = gnatlib-shared-dual
-+
-+  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
-+  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
-+  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
-+
-+  EH_MECHANISM=
-+  THREADSLIB= -lpthread
-+  GMEM_LIB = gmemlib
-+  LIBRARY_VERSION := $(LIB_VERSION)
-+  MISCLIB = -lutil
-+endif
-+
-+# x86_64 OpenBSD
-+ifeq ($(strip $(filter-out x86_64 openbsd%,$(target_cpu) $(target_os))),)
-+  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
-+  a-intnam.ads<a-intnam-openbsd.ads \
-+  g-socthi.adb<g-socthi-bsd.adb \
-+  s-trasym.adb<s-trasym-bsd.adb \
-+  s-inmaop.adb<s-inmaop-posix.adb \
-+  s-intman.adb<s-intman-posix.adb \
-+  s-mudido.adb<s-mudido-affinity.adb \
-+  s-osinte.adb<s-osinte-openbsd.adb \
-+  s-osinte.ads<s-osinte-openbsd.ads \
-+  s-osprim.adb<s-osprim-bsd32.adb \
-+  s-taprop.adb<s-taprop-posix.adb \
-+  s-taspri.ads<s-taspri-posix.ads \
-+  s-tpopsp.adb<s-tpopsp-posix.adb \
-+  $(ATOMICS_TARGET_PAIRS) \
-+  $(X86_64_TARGET_PAIRS) \
-+  system.ads<system-openbsd-x86_64.ads
-+
-+  GNATLIB_SHARED = gnatlib-shared-dual
-+
-+  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
-+  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
-+  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
-+
-+  EH_MECHANISM=
-+  THREADSLIB= -lpthread
-+  GMEM_LIB = gmemlib
-+  LIBRARY_VERSION := $(LIB_VERSION)
-+  MISCLIB = -lutil
-+endif
-+
-+# x86 NetBSD (5+ only)
++# x86 NetBSD
 +ifeq ($(strip $(filter-out %86 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
 +  a-intnam.ads<a-intnam-netbsd.ads \
-+  g-socthi.adb<g-socthi-netbsd.adb \
++  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
 +  s-inmaop.adb<s-inmaop-posix.adb \
 +  s-intman.adb<s-intman-posix.adb \
 +  s-mudido.adb<s-mudido-affinity.adb \
 +  s-osinte.adb<s-osinte-netbsd.adb \
++  s-osinte.ads<s-osinte-netbsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
 +  s-taprop.adb<s-taprop-posix.adb \
 +  s-taspri.ads<s-taspri-posix.ads \
 +  s-tpopsp.adb<s-tpopsp-posix.adb \
@@ -3151,17 +2483,6 @@
 +  $(X86_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86.ads
 +
-+  ifeq ($(strip $(filter-out %86 netbsdelf5%,$(target_cpu) $(target_os))),)
-+    LIBGNAT_TARGET_PAIRS+= \
-+    s-osinte.ads<s-osinte-netbsd.ads \
-+    s-osprim.adb<s-osprim-bsd32.adb
-+  else
-+    LIBGNAT_TARGET_PAIRS+= \
-+    g-socthi.ads<g-socthi-netbsd6.ads \
-+    s-osinte.ads<s-osinte-netbsd6.ads \
-+    s-osprim.adb<s-osprim-bsdn6.adb
-+  endif
-+
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
@@ -3176,35 +2497,26 @@
 +  MISCLIB = -lutil
 +endif
 +
-+# x86_64 NetBSD (5+ only)
++# x86_64 NetBSD
 +ifeq ($(strip $(filter-out x86_64 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-exetim.adb<a-exetim-posix.adb \
 +  a-exetim.ads<a-exetim-default.ads \
 +  a-intnam.ads<a-intnam-netbsd.ads \
-+  g-socthi.adb<g-socthi-netbsd.adb \
++  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
 +  s-inmaop.adb<s-inmaop-posix.adb \
 +  s-intman.adb<s-intman-posix.adb \
 +  s-mudido.adb<s-mudido-affinity.adb \
 +  s-osinte.adb<s-osinte-netbsd.adb \
++  s-osinte.ads<s-osinte-netbsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
 +  s-taprop.adb<s-taprop-posix.adb \
 +  s-taspri.ads<s-taspri-posix.ads \
 +  s-tpopsp.adb<s-tpopsp-posix.adb \
 +  $(ATOMICS_TARGET_PAIRS) \
 +  $(X86_64_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86_64.ads
-+
-+  ifeq ($(strip $(filter-out x86_64 netbsd5%,$(target_cpu) $(target_os))),)
-+    LIBGNAT_TARGET_PAIRS+= \
-+    s-osinte.ads<s-osinte-netbsd.ads \
-+    s-osprim.adb<s-osprim-bsd32.adb
-+  else
-+    LIBGNAT_TARGET_PAIRS+= \
-+    g-socthi.ads<g-socthi-netbsd6.ads \
-+    s-osinte.ads<s-osinte-netbsd6.ads \
-+    s-osprim.adb<s-osprim-bsdn6.adb
-+  endif
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
