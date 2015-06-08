@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.5.6
+PORTVERSION=	2.5.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	GH http://www.gegenunendlich.de/distfiles/
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
 LICENSE=	MIT
