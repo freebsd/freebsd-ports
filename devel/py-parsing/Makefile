@@ -8,12 +8,12 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyparsing-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General parsing module for Python
 
 LICENSE=	MIT
 
-USES=		python
 USE_PYTHON=	autoplist distutils
+USES=		python
 
 .include <bsd.port.mk>
