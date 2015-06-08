@@ -36,8 +36,4 @@ OPENGL_LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
 OPENGL_USE=		gl=glu
 OPENGL_CONFIGURE_ENABLE=gl
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

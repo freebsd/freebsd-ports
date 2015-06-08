@@ -33,6 +33,7 @@ patch-libtool:
 		-e '/gcc_ver=\\`/s/gcc /$$CC /'				\
 		-e '/link_all_deplibs[0-9A-Z_]*=/s/=unknown/=no/'	\
 		-e '/objformat=/s/echo aout/echo elf/'			\
+		-e '/STRIP -V/s/"GNU strip"/"strip"/'			\
 		-e "/freebsd-elf\\*)/,/;;/ {				\
 		    /deplibs_check_method=/s/=.*/=pass_all/;		\
 		    /library_names_spec=.*\\.so/			\
