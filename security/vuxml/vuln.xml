@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="838fa84a-0e25-11e5-90e4-d050996490d0">
+    <topic>redis -- EVAL Lua Sandbox Escape</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<name>redis-devel</name>
+	<range><ge>2.6.0</ge><lt>2.8.21</lt></range>
+	<range><ge>3.0</ge><lt>3.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ben Murphy reports:</p>
+	<blockquote cite="http://benmmurphy.github.io/blog/2015/06/04/redis-eval-lua-sandbox-escape/">
+	  <p>It is possible to break out of the Lua sandbox in
+	    Redis and execute arbitrary code.</p>
+	  <p>This shouldn’t pose a threat to users under the
+	    trusted Redis security model where only trusted
+	    users can connect to the database. However, in real
+	    deployments there could be databases that can be
+	    accessed by untrusted users. The main deployments
+	    that are vulnerable are developers machines, places
+	    where redis servers can be reached via SSRF attacks
+	    and cloud hosting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4335</cvename>
+      <url>http://benmmurphy.github.io/blog/2015/06/04/redis-eval-lua-sandbox-escape/</url>
+    </references>
+    <dates>
+      <discovery>2015-06-04</discovery>
+      <entry>2015-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd1ab7a5-0e01-11e5-9976-a0f3c100ae18">
     <topic>tidy -- heap-buffer-overflow</topic>
     <affects>
