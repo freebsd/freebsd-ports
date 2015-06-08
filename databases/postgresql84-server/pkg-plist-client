@@ -459,54 +459,17 @@ include/postgresql/server/utils/uuid.h
 include/postgresql/server/utils/varbit.h
 include/postgresql/server/utils/xml.h
 include/postgresql/server/windowapi.h
-@dirrm include/postgresql/server/utils
-@dirrm include/postgresql/server/tsearch/dicts
-@dirrm include/postgresql/server/tsearch
-@dirrm include/postgresql/server/tcop
-@dirrm include/postgresql/server/storage
-@dirrm include/postgresql/server/snowball/libstemmer
-@dirrm include/postgresql/server/snowball
-@dirrm include/postgresql/server/rewrite
-@dirrm include/postgresql/server/regex
-@dirrm include/postgresql/server/postmaster
-@dirrm include/postgresql/server/portability
-@dirrm include/postgresql/server/port/win32_msvc/sys
-@dirrm include/postgresql/server/port/win32_msvc
-@dirrm include/postgresql/server/port/win32/sys
-@dirrm include/postgresql/server/port/win32/netinet
-@dirrm include/postgresql/server/port/win32/arpa
-@dirrm include/postgresql/server/port/win32
-@dirrm include/postgresql/server/port
-@dirrm include/postgresql/server/parser
-@dirrm include/postgresql/server/optimizer
-@dirrm include/postgresql/server/nodes
-@dirrm include/postgresql/server/mb
-@dirrm include/postgresql/server/libpq
-@dirrm include/postgresql/server/lib
-@dirrm include/postgresql/server/foreign
-@dirrm include/postgresql/server/executor
-@dirrm include/postgresql/server/commands
-@dirrm include/postgresql/server/catalog
-@dirrm include/postgresql/server/bootstrap
-@dirrm include/postgresql/server/access
-@dirrm include/postgresql/server
 include/libpq/libpq-fs.h
-@dirrm include/libpq
 include/postgresql/internal/libpq/pqcomm.h
-@dirrm include/postgresql/internal/libpq
 include/postgresql/informix/esql/datetime.h
 include/postgresql/informix/esql/decimal.h
 include/postgresql/informix/esql/sqlda.h
 include/postgresql/informix/esql/sqltypes.h
-@dirrm include/postgresql/informix/esql
-@dirrm include/postgresql/informix
 include/postgresql/internal/c.h
 include/postgresql/internal/libpq-int.h
 include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/port.h
 include/postgresql/internal/pqexpbuffer.h
-@dirrm include/postgresql/internal
-@dirrm include/postgresql
 include/ecpg_informix.h
 include/ecpgerrno.h
 include/ecpglib.h
@@ -543,11 +506,6 @@ lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/nls-global.mk
-@dirrm lib/postgresql/pgxs/src/makefiles
-@dirrm lib/postgresql/pgxs/config
-@dirrm lib/postgresql/pgxs/src
-@dirrm lib/postgresql/pgxs
-@dirrm lib/postgresql
 man/man1/clusterdb.1.gz
 man/man1/createdb.1.gz
 man/man1/createlang.1.gz
@@ -710,10 +668,8 @@ man/man7/vacuum.7.gz
 man/man7/values.7.gz
 man/man7/with.7.gz
 %%DOCSDIR%%/README-client
-@dirrmtry %%DOCSDIR%%
 share/postgresql/pg_service.conf.sample
 share/postgresql/psqlrc.sample
-@dirrmtry share/postgresql
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq5-8.4.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pgscripts-8.4.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/psql-8.4.mo
