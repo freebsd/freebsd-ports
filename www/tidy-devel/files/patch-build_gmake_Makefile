@@ -1,6 +1,6 @@
---- build/gmake/Makefile.orig	2008-03-22 22:13:38.000000000 +0100
-+++ build/gmake/Makefile	2008-06-21 15:52:41.000000000 +0200
-@@ -58,8 +58,8 @@
+--- build/gmake/Makefile.orig	2008-03-22 21:13:38 UTC
++++ build/gmake/Makefile
+@@ -58,8 +58,8 @@ SHELL=/bin/sh
  PROJECT=tidy
  
  # Installation variables.  Spaces OK, only dir create and file copy operations.
@@ -11,7 +11,7 @@
  
  bininst = ${runinst_prefix}/bin
  libinst = ${devinst_prefix}/lib
-@@ -67,7 +67,7 @@
+@@ -67,7 +67,7 @@ incinst = ${devinst_prefix}/include/$(PR
  maninst = ${devinst_prefix}/man
  
  # Internal variables. - No spaces allowed: libtool chokes on spaces in directory names.
@@ -20,7 +20,7 @@
  INCDIR = ${TOPDIR}/include
  APPDIR = ${TOPDIR}/console
  SRCDIR = ${TOPDIR}/src
-@@ -90,8 +90,8 @@
+@@ -90,8 +90,8 @@ DOCDIR = ${TOPDIR}/htmldoc
  # CFLAGS etc..
  # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
  # disabled.
