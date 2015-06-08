@@ -10,7 +10,9 @@ bin/eric6_plugininstall
 bin/eric6_pluginrepository
 bin/eric6_pluginuninstall
 bin/eric6_qregexp
+bin/eric6_qregularexpression
 bin/eric6_re
+bin/eric6_snap
 bin/eric6_sqlbrowser
 bin/eric6_tray
 bin/eric6_trpreviewer
@@ -24,8 +26,15 @@ lib/python2.7/site-packages/eric6plugins/__init__.py
 share/applications/eric6.desktop
 share/pixmaps/eric6.png
 share/qt4/qsci/api/python/eric6.api
+share/qt4/qsci/api/python/eric6.bas
 share/qt4/qsci/api/python/zope-2.10.7.api
 share/qt4/qsci/api/python/zope-2.11.2.api
 share/qt4/qsci/api/python/zope-3.3.1.api
+share/qt4/qsci/api/qss/qss.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.api
+share/qt4/qsci/api/ruby/Ruby-1.8.7.bas
+share/qt4/qsci/api/ruby/Ruby-1.9.1.api
+share/qt4/qsci/api/ruby/Ruby-1.9.1.bas
 share/qt4/qsci/api/ruby/eric6.api
+share/qt4/qsci/api/ruby/eric6.bas
+@dir %%DATADIR%%/i18n
