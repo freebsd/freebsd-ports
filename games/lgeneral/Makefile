@@ -3,6 +3,7 @@
 
 PORTNAME=	lgeneral
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -33,7 +34,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ENV_OFF=	am_cv_func_iconv=no
 SOUND_USE=		sdl=mixer
-SOUND_CONFIGURE_ENABLE=	sound
+SOUND_CONFIGURE_OFF=	--disable-sound
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/icons.*|/pixmaps|' ${WRKSRC}/Makefile.in
