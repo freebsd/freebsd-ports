@@ -17,4 +17,10 @@ LICENSE_COMB=	dual
 USE_PERL5=	5.16+ configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+BROKEN=		Fails to build with Perl >= 5.22
+.endif
+
+.include <bsd.port.post.mk>
