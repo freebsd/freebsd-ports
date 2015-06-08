@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Jun 16 05:49:19 2000
-+++ Makefile.in	Tue Mar 13 04:51:41 2001
-@@ -29,7 +29,7 @@
+--- src/Makefile.in.orig	2000-06-15 20:49:19 UTC
++++ src/Makefile.in
+@@ -29,7 +29,7 @@ PRODUCT = @PRODUCT@
  VERSION = @VERSION@
  
  CC		= @CC@
@@ -9,7 +9,7 @@
  LDFLAGS         = @LDFLAGS@
  INCLUDES	= 
  CFLAGS		= @CFLAGS@ -DSTONE_SSL
-@@ -47,11 +47,11 @@
+@@ -47,11 +47,11 @@ EXECUTABLE3	= genrand
  MAIN3		= genrand.c
  
  MASTERSRCS	= timefunc.c bench.c parse_file_list.c statistics.c \
@@ -23,7 +23,7 @@
  
  COMPILE         = $(CC) $(CFLAGS) $(DEFS) $(INCLUDES)
  
-@@ -64,9 +64,9 @@
+@@ -64,9 +64,9 @@ TARGETS = $(EXECUTABLE1) $(EXECUTABLE2) 
  .SUFFIXES:
  .SUFFIXES: .c .o
  
