@@ -9,12 +9,3 @@
  ac_ext=cpp
  ac_cpp='$CXXCPP $CPPFLAGS'
  ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -11215,7 +11215,7 @@ striplib=
- old_striplib=
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
- $as_echo_n "checking whether stripping libraries is possible... " >&6; }
--if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
-+if test -n "$STRIP" && $STRIP -V 2>&1 | $EGREP "GNU|elftoolchain" >/dev/null; then
-   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
-   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5

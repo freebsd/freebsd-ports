@@ -49,8 +49,6 @@ UNIQUE_CONFIGURE_WITH=	unique
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
 		's|thumbnailer \\|thumbnailer| ; \
 		 s|devel-docs$$||' ${WRKSRC}/Makefile.in
 

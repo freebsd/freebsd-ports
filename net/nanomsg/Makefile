@@ -25,10 +25,6 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,GREP "GNU strip",EGREP "GNU|elftoolchain",' \
-		${WRKSRC}/configure
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
