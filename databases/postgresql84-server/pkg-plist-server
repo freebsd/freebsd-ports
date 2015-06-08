@@ -34,7 +34,6 @@ lib/postgresql/utf8_and_sjis.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
 %%DOCSDIR%%/README-server
-@dirrmtry %%DOCSDIR%%
 share/postgresql/conversion_create.sql
 share/postgresql/information_schema.sql
 share/postgresql/pg_hba.conf.sample
@@ -723,28 +722,6 @@ share/postgresql/timezonesets/Europe.txt
 share/postgresql/timezonesets/India
 share/postgresql/timezonesets/Indian.txt
 share/postgresql/timezonesets/Pacific.txt
-%%TZDATA%%@dirrm share/postgresql/timezone/Africa
-%%TZDATA%%@dirrm share/postgresql/timezone/America/Argentina
-%%TZDATA%%@dirrm share/postgresql/timezone/America/Indiana
-%%TZDATA%%@dirrm share/postgresql/timezone/America/Kentucky
-%%TZDATA%%@dirrm share/postgresql/timezone/America/North_Dakota
-%%TZDATA%%@dirrm share/postgresql/timezone/America
-%%TZDATA%%@dirrm share/postgresql/timezone/Antarctica
-%%TZDATA%%@dirrm share/postgresql/timezone/Arctic
-%%TZDATA%%@dirrm share/postgresql/timezone/Asia
-%%TZDATA%%@dirrm share/postgresql/timezone/Atlantic
-%%TZDATA%%@dirrm share/postgresql/timezone/Australia
-%%TZDATA%%@dirrm share/postgresql/timezone/Brazil
-%%TZDATA%%@dirrm share/postgresql/timezone/Canada
-%%TZDATA%%@dirrm share/postgresql/timezone/Chile
-%%TZDATA%%@dirrm share/postgresql/timezone/Etc
-%%TZDATA%%@dirrm share/postgresql/timezone/Europe
-%%TZDATA%%@dirrm share/postgresql/timezone/Indian
-%%TZDATA%%@dirrm share/postgresql/timezone/Mexico
-%%TZDATA%%@dirrm share/postgresql/timezone/Pacific
-%%TZDATA%%@dirrm share/postgresql/timezone/US
-%%TZDATA%%@dirrm share/postgresql/timezone
-@dirrm share/postgresql/timezonesets
 share/postgresql/tsearch_data/danish.stop
 share/postgresql/tsearch_data/dutch.stop
 share/postgresql/tsearch_data/english.stop
@@ -764,11 +741,4 @@ share/postgresql/tsearch_data/ispell_sample.affix
 share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
-@exec /bin/mkdir -p %%PREFIX%%/%%PG_USER%% || /usr/bin/true
-@exec /usr/sbin/chown %%PG_USER%%:%%PG_GROUP%% %%PREFIX%%/%%PG_USER%% || /usr/bin/true
-@dirrmtry share/postgresql/tsearch_data
-@dirrmtry share/postgresql
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
-@dirrmtry lib/postgresql
-@dirrmtry %%PG_USER%%
+@dir(%%PG_USER%%,%%PG_GROUP%%) %%PG_USER%%
