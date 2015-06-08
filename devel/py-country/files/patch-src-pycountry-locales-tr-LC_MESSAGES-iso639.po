@@ -1,0 +1,20 @@
+--- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.bak	2015-06-08 10:50:43.014479000 +0300
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2015-06-08 10:51:52.485665000 +0300
+@@ -908,7 +908,7 @@
+ 
+ #. name for kaz, kk
+ msgid "Kazakh"
+-msgstr "Kazak Dili"
++msgstr "Kazakça"
+ 
+ #. name for kbd
+ msgid "Kabardian"
+@@ -940,7 +940,7 @@
+ 
+ #. name for kir, ky
+ msgid "Kirghiz; Kyrgyz"
+-msgstr "Kirghiz; Kyrgyz"
++msgstr "Kırgızca"
+ 
+ #. name for kmb
+ msgid "Kimbundu"
