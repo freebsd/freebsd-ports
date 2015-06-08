@@ -35,7 +35,7 @@ RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
 .if ${PERL_LEVEL} >= 502200
-tROKEN=		Fails to build with Perl >= 5.22
+BROKEN=		Fails to build with Perl >= 5.22
 .endif
 
 post-install:
