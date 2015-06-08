@@ -180,8 +180,6 @@ lib/grub/i386-pc/echo.mod
 lib/grub/i386-pc/echo.module
 lib/grub/i386-pc/efiemu.mod
 lib/grub/i386-pc/efiemu.module
-lib/grub/i386-pc/efiemu32.o
-lib/grub/i386-pc/efiemu64.o
 lib/grub/i386-pc/ehci.mod
 lib/grub/i386-pc/ehci.module
 lib/grub/i386-pc/elf.mod
