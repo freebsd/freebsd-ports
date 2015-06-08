@@ -347,6 +347,7 @@
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
+    SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
     SUBDIR += kdewebdev4
     SUBDIR += kpartsplugin
