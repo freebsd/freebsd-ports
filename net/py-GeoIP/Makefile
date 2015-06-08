@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
 LICENSE=	GPLv2
