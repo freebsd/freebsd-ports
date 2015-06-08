@@ -11,7 +11,7 @@ COMMENT=	Command-line Logitech Harmony configuration tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libconcord.so.${PORTVERSION}:${PORTSDIR}/comms/libconcord
+LIB_DEPENDS=	libconcord.so:${PORTSDIR}/comms/libconcord
 
 USES=		tar:bzip2
 WRKSRC_SUBDIR=	${PORTNAME}

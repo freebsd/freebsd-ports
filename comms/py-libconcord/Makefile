@@ -13,7 +13,7 @@ COMMENT=	Python bindings for Logitech Harmony library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libconcord.so.${PORTVERSION}:${PORTSDIR}/comms/libconcord
+LIB_DEPENDS=	libconcord.so:${PORTSDIR}/comms/libconcord
 
 USE_LDCONFIG=	yes
 USES=		python:2.7+ tar:bzip2
