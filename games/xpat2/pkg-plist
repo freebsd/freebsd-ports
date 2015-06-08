@@ -1,8 +1,4 @@
-@group games
-@mode 2555
-bin/xpat2
-@mode
-@group
+@(,games,2555) bin/xpat2
 man/man6/xpat2.6.gz
 lib/X11/app-defaults/XPat
 lib/X11/de_DE/app-defaults/XPat
@@ -156,33 +152,4 @@ lib/X11/russian/app-defaults/XPat
 %%DATADIR%%/de_DE
 %%DATADIR%%/fr_FR
 %%DATADIR%%/it_IT
-
-@dirrm %%DATADIR%%/russian
-@dirrm %%DATADIR%%/italian
-@dirrm %%DATADIR%%/german
-@dirrm %%DATADIR%%/french
-@dirrm %%DATADIR%%/fallback
-@dirrm %%DATADIR%%/default
-@dirrm %%DATADIR%%/audio
-@dirrm %%DATADIR%%/PySol-small
-@dirrm %%DATADIR%%/PySol-medium
-@dirrm %%DATADIR%%/PySol-large
-@dirrm %%DATADIR%%
-@dirrm lib/X11/russian/app-defaults
-@dirrm lib/X11/russian
-@dirrm lib/X11/italian/app-defaults
-@dirrm lib/X11/italian
-@dirrm lib/X11/it_IT/app-defaults
-@dirrm lib/X11/it_IT
-@dirrm lib/X11/german/app-defaults
-@dirrm lib/X11/german
-@dirrm lib/X11/french/app-defaults
-@dirrm lib/X11/french
-@dirrm lib/X11/fr_FR/app-defaults
-@dirrm lib/X11/fr_FR
-@dirrm lib/X11/de_DE/app-defaults
-@dirrm lib/X11/de_DE
-@unexec if [ ! -s /var/games/xpat.log ]; then rm -f /var/games/xpat.log; fi
-@exec if [ -d /var/games ]; then touch /var/games/xpat.log; fi
-@exec if [ -e /var/games/xpat.log ]; then chgrp games /var/games/xpat.log; fi
-@exec if [ -e /var/games/xpat.log ]; then chmod 664 /var/games/xpat.log; fi
+@sample(,games,664) /var/games/xpat.log.sample
