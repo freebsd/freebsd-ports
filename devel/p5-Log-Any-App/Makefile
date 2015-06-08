@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Any-App
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
