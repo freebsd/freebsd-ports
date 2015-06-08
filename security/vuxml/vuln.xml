@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bd1ab7a5-0e01-11e5-9976-a0f3c100ae18">
+    <topic>tidy -- heap-buffer-overflow</topic>
+    <affects>
+      <package>
+	<name>tidy4</name>
+	<range><le>20000804_3</le></range>
+      </package>
+      <package>
+	<name>tidy-devel</name>
+	<range><le>090315.c_2</le></range>
+      </package>
+      <package>
+	<name>tidy-lib</name>
+	<range><le>090315.c_2</le></range>
+      </package>
+      <package>
+	<name>tidy-html5</name>
+	<range><lt>4.9.31</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Geoff McLane reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/633">
+	  <p>tidy is affected by a write out of bounds when processing malformed html files.</p>
+	  <p>This issue could be abused on server side applications that use php-tidy extension with user input.</p>
+	  <p>The issue was confirmed, analysed and fixed by the tidy5 maintainer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/htacg/tidy-html5/issues/217</url>
+      <url>http://seclists.org/oss-sec/2015/q2/633</url>
+    </references>
+    <dates>
+      <discovery>2015-06-03</discovery>
+      <entry>2015-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e69af246-0ae2-11e5-90e4-d050996490d0">
     <topic>pcre -- multiple vulnerabilities</topic>
     <affects>
