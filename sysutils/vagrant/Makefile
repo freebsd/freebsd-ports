@@ -3,7 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.6.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -13,11 +13,11 @@ COMMENT=	Vagrant Virtual Machine Manager
 LICENSE=	MIT
 
 BUILD_DEPENDS=	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-bundler17>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler17 \
 		rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main
 RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-akami>=1.0.0:${PORTSDIR}/www/rubygem-akami \
-		rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-bundler17>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler17 \
 		rubygem-ffi>=1.9.3:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-childprocess>=0.5.1:${PORTSDIR}/devel/rubygem-childprocess \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
