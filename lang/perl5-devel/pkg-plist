@@ -267,7 +267,6 @@ etc/perl5_version
 %%PRIV_LIB%%/Locale/Codes/API.pod
 %%PRIV_LIB%%/Locale/Codes/Changes.pod
 %%PRIV_LIB%%/Locale/Codes/Constants.pm
-%%PRIV_LIB%%/Locale/Codes/Constants.pod
 %%PRIV_LIB%%/Locale/Codes/Country.pm
 %%PRIV_LIB%%/Locale/Codes/Country.pod
 %%PRIV_LIB%%/Locale/Codes/Country_Codes.pm
@@ -1127,12 +1126,10 @@ etc/perl5_version
 %%MAN3%%/Locale::Codes.3.gz
 %%MAN3%%/Locale::Codes::API.3.gz
 %%MAN3%%/Locale::Codes::Changes.3.gz
-%%MAN3%%/Locale::Codes::Constants.3.gz
 %%MAN3%%/Locale::Codes::Country.3.gz
 %%MAN3%%/Locale::Codes::Currency.3.gz
 %%MAN3%%/Locale::Codes::LangExt.3.gz
 %%MAN3%%/Locale::Codes::LangFam.3.gz
-%%MAN3%%/Locale::Codes::LangFam_Retired.3.gz
 %%MAN3%%/Locale::Codes::LangVar.3.gz
 %%MAN3%%/Locale::Codes::Language.3.gz
 %%MAN3%%/Locale::Codes::Script.3.gz
