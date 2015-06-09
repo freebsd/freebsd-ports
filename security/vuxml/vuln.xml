@@ -57,6 +57,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55363e65-0e71-11e5-8027-00167671dd1d">
+    <topic>strongswan -- Denial-of-service and potential remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>5.2.2</ge><lt>5.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>trongSwan Project reports</p>
+	<blockquote cite="https://www.strongswan.org/blog/2015/06/01/strongswan-vulnerability-(cve-2015-3991).html">
+	  <p>A denial-of-service and potential remote code execution vulnerability
+	    triggered by crafted IKE messages was discovered in strongSwan. Versions
+	    5.2.2 and 5.3.0 are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3991</cvename>
+      <url>https://www.strongswan.org/blog/2015/06/01/strongswan-vulnerability-(cve-2015-3991).html</url>
+    </references>
+    <dates>
+      <discovery>2015-05-15</discovery>
+      <entry>2015-06-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10d14955-0e45-11e5-b6a8-002590263bf5">
+    <topic>strongswan -- Information Leak Vulnerability</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>4.3.0</ge><lt>5.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan Project reports:</p>
+	<blockquote cite="http://www.strongswan.org/blog/2015/06/08/strongswan-5.3.2-released.html">
+	  <p>An information leak vulnerability was fixed that, in certain IKEv2
+	    setups, allowed rogue servers with a valid certificate accepted by
+	    the client to trick it into disclosing user credentials (even plain
+	    passwords if the client accepts EAP-GTC). This was caused because
+	    constraints against the server's authentication were enforced too
+	    late. All versions since 4.3.0 are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4171</cvename>
+      <url>http://www.strongswan.org/blog/2015/06/08/strongswan-5.3.2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-08</discovery>
+      <entry>2015-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="838fa84a-0e25-11e5-90e4-d050996490d0">
     <topic>redis -- EVAL Lua Sandbox Escape</topic>
     <affects>
