@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	9.12
+PORTVERSION=	9.13
 CATEGORIES=	www
-MASTER_SITES=	SF/fbsdports/hiawatha/
+MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
