@@ -46,16 +46,18 @@ PLIST_SUB+=	AP22="@comment "
 PLIST_SUB+=	AP22=""
 .endif
 
-# PR 15750
+# PR 200697
 # Test whether the system uses a multithreaded perl
 HAS_ITHREADS!=	${PERL} -e 'use Config; print $$Config{useithreads} ? 1 : 0'
 .if ${HAS_ITHREADS:M1}
 PLIST_SUB+=	ITHREADS=""
 .else
-. if !${APACHE_VERSION:M22}
-IGNORE=		requires PERL with "THREADS=on", please rebuild PERL and all depending ports
-. endif
-PLIST_SUB+=	ITHREADS="@comment "
+#. if !${APACHE_VERSION:M22}
+#XXX build is correct, but this test fails in poudriere.
+#    Let it fail in configure until we find a working condition
+#IGNORE=		requires PERL with "THREADS=on", please rebuild PERL and all depending ports
+#. endif
+#PLIST_SUB+=	ITHREADS="@comment "
 .endif
 
 CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} \
