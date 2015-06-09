@@ -33,7 +33,7 @@ IGNORE=		requires geom(4) support
 
 post-extract:
 # base r279437 renamed libnvpair symbols
-.if ${OSVERSION} > 1100062
+.if ${OSVERSION} > 1100062 && ${OSVERSION} < 1100077
 	${CP} ${_DISTDIR}/${DISTFILES:M*\:nvpair:C/:.*//} \
 		${WRKSRC}/zfs/v28/sys/cddl/compat/opensolaris/sys/nvpair.h
 .endif
