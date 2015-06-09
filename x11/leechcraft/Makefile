@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -395,5 +395,9 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 PORT_OPTIONS:=	${PORT_OPTIONS:NBITTORRENT}
 USE_GCC=	yes
 .endif
+
+post-install:
+	@${FIND} -d ${STAGEDIR}${PREFIX}/include/leechcraft \
+		-type d -empty -exec ${RMDIR} {} \;
 
 .include <bsd.port.mk>
