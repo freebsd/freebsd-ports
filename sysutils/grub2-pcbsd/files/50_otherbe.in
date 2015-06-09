@@ -27,6 +27,9 @@
 # Script to detect TrueOS / PC-BSD disk installations and create grub
 # entries for them
 
+# Check if we have beadm installed, if not skip this file
+if [ ! -e "/usr/local/sbin/beadm" ] ; then exit 0; fi
+
 ROOTFS=`mount | awk '/ \/ / {print $1}'`
 BEDS="$( echo ${ROOTFS} | awk -F '/' '{print $2}' )"
 if [ "$BEDS" = "dev" ] ; then BEDS="ROOT"; fi
