@@ -2,7 +2,7 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.20120905
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler
 
@@ -16,7 +16,12 @@ OPTIONS_DEFAULT=KERBEROS
 
 KERBEROS_MAKE_ARGS=	KERBEROS_SUPPORT=yes
 
-USES=		makeinfo tar:xz uidfix
+USES=		makeinfo shebangfix tar:xz uidfix
+SHEBANG_FILES=	contrib/clmerge contrib/cln_hist \
+		contrib/commit_prep contrib/cvs_acls \
+		contrib/easy-import contrib/log \
+		contrib/log_accum contrib/mfpipe \
+		contrib/rcslock
 WRKSRC=		${WRKDIR}/call/cvs-build
 INFO=		cvs cvsclient
 
