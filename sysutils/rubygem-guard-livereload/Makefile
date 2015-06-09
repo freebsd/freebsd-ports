@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-em-websocket>=0.5:${PORTSDIR}/www/rubygem-em-websocket \
 		rubygem-guard>=2.8:${PORTSDIR}/sysutils/rubygem-guard \
 		rubygem-multi_json>=1.8:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
