@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	meck
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,10 +21,8 @@ GH_ACCOUNT=	eproxus
 .include <bsd.port.options.mk>
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
