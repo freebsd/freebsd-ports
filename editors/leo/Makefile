@@ -3,6 +3,7 @@
 
 PORTNAME=	leo
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
 DISTNAME=	Leo-${PORTVERSION}-final
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 NO_ARCH=	yes
 
 USES=		python shebangfix zip
-SHEBANG_FILES=	leo/doc/html/fixup.pl
+SHEBANG_FILES=	leo/doc/html/fixup.pl leo/external/saveleo
 USE_PYTHON=	autoplist distutils
 
 DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
