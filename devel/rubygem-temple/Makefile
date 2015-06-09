@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	temple
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ COMMENT=	Template compilation framework in Ruby
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
