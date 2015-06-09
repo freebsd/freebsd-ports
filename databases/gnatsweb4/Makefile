@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases devel www
 MASTER_SITES=	GNU
 
@@ -17,9 +17,11 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_APACHE_RUN=	22+
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	gnatsweb.pl
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 CGI_DIR?=	${WWWDIR}/cgi-bin
 
@@ -40,12 +42,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gnatsweb.pl ${STAGEDIR}${CGI_DIR}
 	${LN} -s  ${ETCDIR}/gnatsweb-site.pl ${STAGEDIR}${CGI_DIR}
 	${INSTALL_DATA} ${WRKSRC}/gnatsweb.html ${STAGEDIR}${CGI_DIR}
-	for doc in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${doc} ${STAGEDIR}${DOCSDIR}; \
-	done
-	for example in ${PORTEXAMPLES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${example} \
-			${STAGEDIR}${EXAMPLESDIR}; \
-	done
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
+.for example in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${example} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
