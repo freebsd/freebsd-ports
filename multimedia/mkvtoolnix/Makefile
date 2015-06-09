@@ -58,6 +58,10 @@ MAKE_ENV+=	V=1
 INSTALLS_ICONS=	yes
 .endif
 
+.if ${OSVERSION} < 1000000
+BROKEN=	does not compile on FreeBSD < 10.0-RELEASE
+.endif
+
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} ./drake ${_MAKE_JOBS})
 
