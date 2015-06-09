@@ -43,8 +43,6 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-threads=yes \
 		--without-libtool
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE} -lpthread
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
@@ -84,6 +82,7 @@ HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
 HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ICONV_CPPFLAGS=		-I${LOCALBASE}/include
 ICONV_LDFLAGS=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 ICONV_USES=		iconv
 JASPER_CONFIGURE_OFF=	--with-jasper=no
