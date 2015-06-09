@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a40ec970-0efa-11e5-90e4-d050996490d0">
+    <topic>cups -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CUPS development team reports:</p>
+	<blockquote cite="https://cups.org/blog.php?L1082">
+	  <p>The new release addresses two security vulnerabilities,
+	    add localizations for German and Russian, and includes
+	    several general bug fixes. Changes include:</p>
+	  <p>Security: Fixed CERT VU #810572/CVE-2015-1158/CVE-2015-1159
+	    exploiting the dynamic linker (STR #4609)</p>
+	  <p>Security: The scheduler could hang with malformed
+	    gzip data (STR #4602)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1158</cvename>
+      <cvename>CVE-2015-1159</cvename>
+      <url>https://cups.org/blog.php?L1082</url>
+      <url>https://www.kb.cert.org/vuls/id/810572</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55363e65-0e71-11e5-8027-00167671dd1d">
     <topic>strongswan -- Denial-of-service and potential remote code execution vulnerability</topic>
     <affects>
