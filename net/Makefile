@@ -462,7 +462,6 @@
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
     SUBDIR += openmpi
-    SUBDIR += openmpi-devel
     SUBDIR += openmq
     SUBDIR += openmq-client
     SUBDIR += openntpd
