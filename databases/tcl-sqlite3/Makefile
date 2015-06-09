@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.10.1
+PORTVERSION=	3.8.10.2
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
 PKGNAMEPREFIX=	tcl-
