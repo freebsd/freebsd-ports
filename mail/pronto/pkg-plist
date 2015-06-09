@@ -3,6 +3,7 @@ bin/pronto
 bin/pronto-main
 bin/prontobrowser
 bin/prontoget
+@comment The line below is broken: scripts cannot be setuid/setgid
 @(,mail,2755) bin/prontolock
 bin/prontosend
 lib/pronto/HtmlStripper.pm

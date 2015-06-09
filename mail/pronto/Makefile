@@ -3,15 +3,14 @@
 
 PORTNAME=	pronto
 PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail client for Gnome/Gtk written in Perl
 
-BUILD_DEPENDS=\
-		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk \
+BUILD_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-CSV>=0:${PORTSDIR}/databases/p5-DBD-CSV \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
@@ -21,16 +20,16 @@ BUILD_DEPENDS=\
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Lingua-Ispell>=0:${PORTSDIR}/textproc/p5-Lingua-Ispell
-
-.if defined(WITH_MYSQL)
-BUILD_DEPENDS+=	p5-Mysql>=0:${PORTSDIR}/databases/p5-Mysql
-.endif
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	cpronto.pl pronto pronto-main prontobrowser prontolock \
-		prontosend prontoget
+		prontosend prontoget migration-scripts/*
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	MYSQL
+MYSQL_DESC=	Enable optional dependency on p5-Mysql
+MYSQL_BUILD_DEPENDS=	p5-Mysql>=0:${PORTSDIR}/databases/p5-Mysql
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(BIN|LIB)DIR),DESTDIR)$$(&,g' \
