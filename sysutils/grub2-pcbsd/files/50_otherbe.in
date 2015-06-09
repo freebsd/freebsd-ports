@@ -45,13 +45,6 @@ for x in ${GRUB_TERMINAL_OUTPUT}; do
     fi
 done
 
-# Set the default output as dual console / serial
-# This is so we can run properly in bhyve and other serial use cases
-# If the user manually sets GRUB_TERMINAL, we will ignore this default
-if [ -z "$GRUB_TERMINAL" ] ; then
-  out="-D -h"
-fi
-
 if [ "x$serial" = "x1" ]; then
     if [ "x$console" = "x1" ]; then
         out="-Dh"
