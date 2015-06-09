@@ -3,7 +3,7 @@
 
 PORTNAME=	aqsis
 PORTVERSION=	1.8.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -18,11 +18,15 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libtiff.so:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource desktop-file-utils shared-mime-info
+USES=		cmake:outsource desktop-file-utils shared-mime-info shebangfix
+SHEBANG_FILES=	examples/*/*/*.sh \
+		tools/neqsus/houdini/post.sh \
+		distribution/linux/*.sh
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
 PLIST_SUB+=	LIBVERS=${PORTVERSION:R}
 
