@@ -1,6 +1,6 @@
---- ./configure.orig	2014-05-27 14:33:29.000000000 -0400
-+++ ./configure	2014-07-01 13:49:23.000000000 -0400
-@@ -566,6 +566,7 @@
+--- configure.orig	2015-02-09 19:38:35 UTC
++++ configure
+@@ -586,6 +586,7 @@ ac_unique_file="cups/cups.h"
  # Factoring default headers for most tests.
  ac_includes_default="\
  #include <stdio.h>
@@ -8,16 +8,7 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
  #endif
-@@ -5238,7 +5239,7 @@
- 
- 
- if test "x$PKGCONFIG" != x; then
--	if test x$enable_libusb = xyes -o $uname != Darwin; then
-+	if test x$enable_libusb = xyes; then
- 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libusb-1.0" >&5
- $as_echo_n "checking for libusb-1.0... " >&6; }
- 		if $PKGCONFIG --exists libusb-1.0; then
-@@ -5249,6 +5250,13 @@
+@@ -5382,6 +5383,13 @@ $as_echo "yes" >&6; }
  			CFLAGS="$CFLAGS `$PKGCONFIG --cflags libusb-1.0`"
  			LIBUSB="`$PKGCONFIG --libs libusb-1.0`"
  			USBQUIRKS="\$(DATADIR)/usb"
@@ -31,7 +22,7 @@
  		else
  			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
  $as_echo "no" >&6; }
-@@ -5527,7 +5535,7 @@
+@@ -5663,7 +5671,7 @@ $as_echo "yes" >&6; }
  		CFLAGS="$CFLAGS `$PKGCONFIG --cflags dbus-1` -DDBUS_API_SUBJECT_TO_CHANGE"
  		SERVERLIBS="$SERVERLIBS `$PKGCONFIG --libs dbus-1`"
  		DBUS_NOTIFIER="dbus"
@@ -40,3 +31,21 @@
  		SAVELIBS="$LIBS"
  		LIBS="$LIBS $DBUS_NOTIFIERLIBS"
  		ac_fn_c_check_func "$LINENO" "dbus_message_iter_init_append" "ac_cv_func_dbus_message_iter_init_append"
+@@ -8646,7 +8654,7 @@ fi
+ 		fi
+ 
+ 		# Find the PAM configuration directory, if any...
+-		for dir in /private/etc/pam.d /etc/pam.d; do
++		for dir in /usr/local/etc/pam.d /etc/pam.d; do
+ 			if test -d $dir; then
+ 				PAMDIR=$dir
+ 				break;
+@@ -8899,7 +8907,7 @@ fi
+ 
+ LARGEFILE=""
+ if test x$enable_largefile != xno; then
+-	LARGEFILE="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE"
++	LARGEFILE="-D_LARGEFILE_SOURCE "
+ 
+ 	if test x$ac_cv_sys_large_files = x1; then
+ 		LARGEFILE="$LARGEFILE -D_LARGE_FILES"
