@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paperclip
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-activemodel>=3.0.0:${PORTSDIR}/databases/rubygem-activemode
     		rubygem-cocaine>=0.5.3:${PORTSDIR}/devel/rubygem-cocaine \
     		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
