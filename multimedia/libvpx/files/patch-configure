@@ -1,9 +1,9 @@
 --- configure.orig
 +++ configure
-@@ -149,6 +149,7 @@
- all_platforms="${all_platforms} universal-darwin11-gcc"
+@@ -164,6 +164,7 @@ all_platforms="${all_platforms} universa
  all_platforms="${all_platforms} universal-darwin12-gcc"
  all_platforms="${all_platforms} universal-darwin13-gcc"
+ all_platforms="${all_platforms} universal-darwin14-gcc"
 +all_platforms="${all_platforms} ia64-linux-gcc"
  all_platforms="${all_platforms} generic-gnu"
  
