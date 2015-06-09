@@ -59,7 +59,27 @@ INSTALLS_ICONS=	yes
 .endif
 
 .if ${OSVERSION} < 1000000
-BROKEN=	does not compile on FreeBSD < 10.0-RELEASE
+post-patch:
+	@${REINPLACE_CMD} -e 's|std::llround|llround|g' \
+		${WRKSRC}/src/common/hevc.cpp \
+		${WRKSRC}/src/common/mpeg4_p10.cpp \
+		${WRKSRC}/src/common/theora.cpp \
+		${WRKSRC}/src/extract/cuesheets.cpp \
+		${WRKSRC}/src/extract/xtr_avi.cpp \
+		${WRKSRC}/src/info/mkvinfo.cpp \
+		${WRKSRC}/src/input/r_avi.cpp \
+		${WRKSRC}/src/input/r_matroska.cpp \
+		${WRKSRC}/src/input/r_ogm.cpp \
+		${WRKSRC}/src/input/r_tta.cpp \
+		${WRKSRC}/src/merge/cluster_helper.h \
+		${WRKSRC}/src/merge/generic_packetizer.cpp \
+		${WRKSRC}/src/merge/output_control.cpp \
+		${WRKSRC}/src/merge/timecode_factory.h \
+		${WRKSRC}/src/output/p_dirac.cpp \
+		${WRKSRC}/src/output/p_hevc.cpp \
+		${WRKSRC}/src/output/p_mpeg4_p10.cpp \
+		${WRKSRC}/src/output/p_tta.cpp \
+		${WRKSRC}/src/output/p_wavpack.cpp
 .endif
 
 do-build:
