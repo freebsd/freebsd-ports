@@ -4,6 +4,7 @@
 
 PORTNAME=	solfege
 PORTVERSION=	3.22.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 PKGNAMESUFFIX=	-nosound
@@ -12,17 +13,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		txt2man:${PORTSDIR}/textproc/txt2man
 
-USES=		display gettext gmake makeinfo pathfix pkgconfig python
+USES=		display gettext gmake makeinfo pathfix pkgconfig python \
+		shebangfix
+SHEBANG_FILES=	exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
 MAKE_ARGS=	nopycompile=YES skipmanual=yes
+NO_ARCH=	yes
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
