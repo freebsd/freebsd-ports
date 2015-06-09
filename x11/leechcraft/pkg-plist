@@ -1992,35 +1992,3 @@ share/man/man1/leechcraft.1.gz
 %%XTAZY%%%%DATADIR%%/settings/xtazysettings.xml
 %%XTAZY%%%%DATADIR%%/translations/leechcraft_xtazy_en.qm
 %%XTAZY%%%%DATADIR%%/translations/leechcraft_xtazy_ru_RU.qm
-@dir include/leechcraft/util/CMakeFiles/leechcraft-util.dir
-@dir include/leechcraft/util/CMakeFiles/leechcraft-util_automoc.dir
-@dir include/leechcraft/util/cmake
-@dir include/leechcraft/util/db/CMakeFiles/leechcraft-util-db.dir
-@dir include/leechcraft/util/db/CMakeFiles/leechcraft-util-db_automoc.dir
-@dir include/leechcraft/util/gui/CMakeFiles/leechcraft-util-gui.dir
-@dir include/leechcraft/util/gui/CMakeFiles/leechcraft-util-gui_automoc.dir
-@dir include/leechcraft/util/models/CMakeFiles/leechcraft-util-models.dir
-@dir include/leechcraft/util/models/CMakeFiles/leechcraft-util-models_automoc.dir
-@dir include/leechcraft/util/network/CMakeFiles/leechcraft-util-network.dir
-@dir include/leechcraft/util/network/CMakeFiles/leechcraft-util-network_automoc.dir
-@dir include/leechcraft/util/qml/CMakeFiles/leechcraft-util-qml.dir
-@dir include/leechcraft/util/qml/CMakeFiles/leechcraft-util-qml_automoc.dir
-@dir include/leechcraft/util/shortcuts/CMakeFiles/leechcraft-util-shortcuts.dir
-@dir include/leechcraft/util/shortcuts/CMakeFiles/leechcraft-util-shortcuts_automoc.dir
-@dir include/leechcraft/util/sll/CMakeFiles/leechcraft-util-sll.dir
-@dir include/leechcraft/util/sll/CMakeFiles/leechcraft-util-sll_automoc.dir
-@dir include/leechcraft/util/sll/cmake
-@dir include/leechcraft/util/svcauth/CMakeFiles/leechcraft-util-svcauth.dir
-@dir include/leechcraft/util/svcauth/CMakeFiles/leechcraft-util-svcauth_automoc.dir
-@dir include/leechcraft/util/sys/CMakeFiles/leechcraft-util-sys.dir
-@dir include/leechcraft/util/sys/CMakeFiles/leechcraft-util-sys_automoc.dir
-@dir include/leechcraft/util/tags/CMakeFiles/leechcraft-util-tags.dir
-@dir include/leechcraft/util/tags/CMakeFiles/leechcraft-util-tags_automoc.dir
-@dir include/leechcraft/util/x11/CMakeFiles/leechcraft-util-x11.dir
-@dir include/leechcraft/util/x11/CMakeFiles/leechcraft-util-x11_automoc.dir
-@dir include/leechcraft/util/xdg/CMakeFiles/leechcraft-util-xdg.dir
-@dir include/leechcraft/util/xdg/CMakeFiles/leechcraft-util-xdg_automoc.dir
-@dir include/leechcraft/util/xpc/CMakeFiles/leechcraft-util-xpc.dir
-@dir include/leechcraft/util/xpc/CMakeFiles/leechcraft-util-xpc_automoc.dir
-@dir include/leechcraft/util/xsd/CMakeFiles/leechcraft-util-xsd.dir
-@dir include/leechcraft/util/xsd/CMakeFiles/leechcraft-util-xsd_automoc.dir
