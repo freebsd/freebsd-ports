@@ -1,6 +1,6 @@
---- data/Makefile.orig	2013-05-29 15:51:34.000000000 +0400
-+++ data/Makefile	2013-12-11 17:17:05.670284926 +0400
-@@ -86,14 +86,14 @@
+--- data/Makefile.orig	2013-05-29 11:51:34 UTC
++++ data/Makefile
+@@ -86,14 +86,14 @@ install:	all install-data install-header
  #
  
  install-data:
