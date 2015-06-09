@@ -24,17 +24,20 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+# Check if we have beadm installed, if not skip this file
+if [ ! -e "/usr/local/sbin/beadm" ] ; then exit 0; fi
+
 # Script to detect other NON BSD OS's and add to grub.cfg
 
 check_ntfs_part()
 {
    local disk="$1"
-   fs_label=`grub-probe --device /dev/${disk} --target=fs_label`
+   fs_label=`grub-probe --device /dev/${disk} --target=fs_label 2>/dev/null`
 
    # Check for common windows NTFS labels for bootable partitions
    if [ "$fs_label" != "System Reserved" -a "$fs_label" != "SYSTEM RESERVED" -a "$fs_label" != "eMachines" -a "$fs_label" != "OS" -a "$fs_label" != "SYSTEM" -a "$fs_label" != "SYSTEM_DRV" ] ; then return; fi
 
-   fs_uuid=`grub-probe --device /dev/${disk} --target=fs_uuid`
+   fs_uuid=`grub-probe --device /dev/${disk} --target=fs_uuid 2>/dev/null`
    if [ -z "$fs_uuid" ] ; then
       echo "Warning: Could not get fs_uuid for $disk"
       return
@@ -72,7 +75,7 @@ do
   if [ ! -e "/dev/$disk" ] ; then continue ; fi
 
   # Get the parent disk name
-  parentdisk=`grub-probe --target=disk --device /dev/$disk`
+  parentdisk=`grub-probe --target=disk --device /dev/$disk 2>/dev/null`
   parentdisk="`echo $parentdisk | sed 's|/dev/||g'`"
   if [ ! -e "/dev/$parentdisk" ] ; then continue ; fi
 
@@ -107,7 +110,7 @@ do
   fi
 
   # Add UEFI chainloader
-  if [ "`grub-probe --device -t fs $fp`" = "fat" ] ; then
+  if [ "`grub-probe --device -t fs $fp 2>/dev/null`" = "fat" ] ; then
 
     # Lets mount the FAT partition and look for UEFI boots
     uefimnt="/tmp/.grub-uefi.$$"
