@@ -2,7 +2,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.1/${PORTVERSION}/+download/
@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lspci:${PORTSDIR}/sysutils/pciutils \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
@@ -21,12 +22,14 @@ RUN_DEPENDS=	lspci:${PORTSDIR}/sysutils/pciutils \
 		dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	postinst.pl
 USE_PERL5=	configure
 CONFIGURE_ENV=	PERL_AUTOINSTALL=1
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 SUB_FILES=	pkg-message
 SUB_LIST=	SITE_PERL=${PREFIX}/${SITE_PERL_REL}
+NO_ARCH=	yes
 
 # define options
 OPTIONS_DEFINE=	DAEMON IPMI SSL PRINTER SNMP
