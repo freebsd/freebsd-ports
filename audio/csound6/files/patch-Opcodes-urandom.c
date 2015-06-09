@@ -1,5 +1,5 @@
---- Opcodes/urandom.c.old	2011-01-30 02:14:59.000000000 -0600
-+++ Opcodes/urandom.c	2011-01-30 02:15:08.000000000 -0600
+--- Opcodes/urandom.c.orig	2015-04-25 19:06:23 UTC
++++ Opcodes/urandom.c
 @@ -22,7 +22,6 @@
  */
  
