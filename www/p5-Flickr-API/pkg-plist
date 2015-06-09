@@ -1,6 +1,14 @@
+bin/flickr_dump_stored_config.pl
+bin/flickr_make_stored_config.pl
+bin/flickr_method_test_echo.pl
+bin/flickr_method_test_login.pl
+bin/flickr_oauth_authentication.pl
 %%SITE_PERL%%/Flickr/API.pm
 %%SITE_PERL%%/Flickr/API/Request.pm
 %%SITE_PERL%%/Flickr/API/Response.pm
 %%PERL5_MAN3%%/Flickr::API.3.gz
 %%PERL5_MAN3%%/Flickr::API::Request.3.gz
 %%PERL5_MAN3%%/Flickr::API::Response.3.gz
+man/man1/flickr_method_test_echo.pl.1.gz
+man/man1/flickr_method_test_login.pl.1.gz
+man/man1/flickr_oauth_authentication.pl.1.gz
