@@ -2,6 +2,7 @@
 
 PORTNAME=	uTox
 DISTVERSION=	0.2.s.20150514
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
