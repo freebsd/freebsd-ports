@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flickr-API
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +13,16 @@ COMMENT=	Perl interface to the Flickr API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-Parser-Lite-Tree>=0:${PORTSDIR}/textproc/p5-XML-Parser-Lite-Tree
+BUILD_DEPENDS=	p5-HTTP-Message>=1.56:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-Net-OAuth>=0:${PORTSDIR}/net/p5-Net-OAuth \
+		p5-URI>=1.18:${PORTSDIR}/net/p5-URI \
+		p5-XML-Parser-Lite-Tree>=0.06:${PORTSDIR}/textproc/p5-XML-Parser-Lite-Tree \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
