@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-guard-compat>=1.2:${PORTSDIR}/sysutils/rubygem-guard-compat \
 		rubygem-minitest>=3:${PORTSDIR}/devel/rubygem-minitest
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
