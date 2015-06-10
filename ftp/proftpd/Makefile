@@ -5,7 +5,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	7
+PORTREVISION?=	0
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.5
+PROFTPD_VERSION=	1.3.5a
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
