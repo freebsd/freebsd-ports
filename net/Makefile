@@ -1141,11 +1141,9 @@
     SUBDIR += sendsms
     SUBDIR += sendsnpp
     SUBDIR += serveez
-    SUBDIR += service-discovery-applet
     SUBDIR += serviio
     SUBDIR += sflowtool
     SUBDIR += shadowsocks-libev
-    SUBDIR += shaperprobe
     SUBDIR += shelldap
     SUBDIR += shmux
     SUBDIR += sie-nmsg
