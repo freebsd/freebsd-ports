@@ -7,8 +7,8 @@ From Alan L. Cox on FreeBSD-current:
     answer that question.
 
 [1] http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2014-02-25 12:09:32.000000000 -0500
-+++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2014-03-17 13:57:00.000000000 -0400
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2015-05-13 11:12:38.000000000 -0400
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2015-06-10 16:42:33.632228000 -0400
 @@ -168,14 +168,19 @@
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
  #endif
@@ -113,3 +113,17 @@ From Alan L. Cox on FreeBSD-current:
              }
  #if __FreeBSD_version >= 1000030
              VM_OBJECT_WUNLOCK(pObject);
+@@ -743,7 +747,12 @@
+     {
+         /** @todo: is this needed?. */
+         PROC_LOCK(pProc);
+-        AddrR3 = round_page((vm_offset_t)pProc->p_vmspace->vm_daddr + lim_max(pProc, RLIMIT_DATA));
++        AddrR3 = round_page((vm_offset_t)pProc->p_vmspace->vm_daddr +
++#if __FreeBSD_version >= 1100077
++                            lim_max_proc(pProc, RLIMIT_DATA));
++#else
++                            lim_max(pProc, RLIMIT_DATA));
++#endif
+         PROC_UNLOCK(pProc);
+     }
+     else
