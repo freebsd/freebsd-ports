@@ -42,7 +42,9 @@ lib/libcupsmime.so.1
 lib/libcupsppdc.so
 lib/libcupsppdc.so.1
 libexec/cups/backend/http
+libexec/cups/backend/https
 libexec/cups/backend/ipp
+libexec/cups/backend/ipps
 libexec/cups/backend/lpd
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
