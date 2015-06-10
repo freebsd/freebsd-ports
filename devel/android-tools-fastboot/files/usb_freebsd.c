@@ -195,3 +195,10 @@ usb_open(ifc_match_func callback)
 {
 	return (enumerate(callback));
 }
+
+int
+usb_wait_for_disconnect(usb_handle * h)
+{
+	/* TODO: Punt for now */
+	return 0;
+}

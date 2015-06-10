@@ -7,7 +7,9 @@ BINDIR?=/usr/bin
 SRCS+=	bootimg.c
 SRCS+=	engine.c
 SRCS+=	fastboot.c
+SRCS+=	fs.c
 SRCS+=	protocol.c
+SRCS+=	util.c
 
 .PATH:	${FILESDIR}
 SRCS+=	usb_freebsd.c
@@ -17,6 +19,7 @@ SRCS+=	util_freebsd.c
 SRCS+=	allocate.c
 SRCS+=	contents.c
 SRCS+=	crc16.c
+SRCS+=	ext4_sb.c
 SRCS+=	ext4_utils.c
 SRCS+=	ext4fixup.c
 SRCS+=	extent.c
@@ -47,16 +50,18 @@ SRCS+=	sparse_read.c
 SRCS+=	centraldir.c
 SRCS+=	zipfile.c
 
+CFLAGS+=-D_FILE_OFFSET_BITS=64 # utils/Compat.h
 CFLAGS+=-D__APPLE__ -D__MACH__ # off64_t
 CFLAGS+=-DDARWIN # statfs
 CFLAGS+=-I${.CURDIR}
 CFLAGS+=-I${.CURDIR}/../include
 CFLAGS+=-I${.CURDIR}/../mkbootimg
 CFLAGS+=-I${.CURDIR}/../ext4_utils
+CFLAGS+=-I${.CURDIR}/../f2fs_utils
 CFLAGS+=-I${.CURDIR}/../libselinux/include
 CFLAGS+=-I${.CURDIR}/../libsparse/include
 
-LDADD+=	-lusb -lz
-DPADD+=	${LIBUSB} ${LIBZ}
+LDADD+=	-lpcre -lusb -lz
+DPADD+=	${LIBPCRE} ${LIBUSB} ${LIBZ}
 
 .include <bsd.prog.mk>
