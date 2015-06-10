@@ -14,7 +14,7 @@ COMMENT=	Runner has process management, including an inetd replacement
 
 LICENSE=	MIT
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted
 
 .include <bsd.port.mk>
