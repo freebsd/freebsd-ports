@@ -6,7 +6,7 @@
 # Usage:	USES=		pgsql[:version]
 #
 #		Maintainer can set version required.  Minimum and maximum
-#		versions can be specified; e.g. 9.0-, 8.4+
+#		versions can be specified; e.g. 9.0-, 9.2+
 #
 #		WANT_PGSQL=	server[:fetch] pltcl plperl
 #
@@ -31,7 +31,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 #	to add dependencies; use WANT_PGSQL as explained above
 #
 
-VALID_PGSQL_VER=	8.4 9.0 9.1 9.2 9.3 9.4
+VALID_PGSQL_VER=	9.0 9.1 9.2 9.3 9.4
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6
