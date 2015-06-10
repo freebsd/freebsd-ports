@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-fog-core>=1.0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-multi_json>=1.10:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
