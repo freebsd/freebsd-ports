@@ -14,7 +14,8 @@ COMMENT=	SMTP, IMAP, and POP protocol implementation with clients and servers
 
 LICENSE=	MIT
 
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted:names
 
 .include <bsd.port.mk>
