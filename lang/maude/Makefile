@@ -20,9 +20,7 @@ LIB_DEPENDS=	libbdd.so:${PORTSDIR}/science/buddy \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 
-USES=		bison
-USE_AUTOTOOLS=	aclocal autoheader automake
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf bison
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
