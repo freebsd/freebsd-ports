@@ -3,7 +3,7 @@
 
 PORTNAME=	ithought
 PORTVERSION=	a5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-alpha
 
@@ -14,6 +14,8 @@ USES=		libtool
 USE_GNOME=	gtk12 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
-INSTALL_TARGET=	install-strip
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/ithought/module_actions/*.so
 
 .include <bsd.port.mk>
