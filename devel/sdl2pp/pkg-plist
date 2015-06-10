@@ -21,5 +21,6 @@ include/SDL2pp/Window.hh
 include/SDL2pp/external/libcpp_optional.hh
 lib/libSDL2pp.so
 lib/libSDL2pp.so.4
-lib/libSDL2pp.so.4.0.0
+lib/libSDL2pp.so.4.1.0
 libdata/pkgconfig/sdl2pp.pc
+share/cmake/Modules/FindSDL2PP.cmake
