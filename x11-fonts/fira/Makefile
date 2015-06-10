@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	3.111
-PORTREVISION=	1
+PORTVERSION=	4.102
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
-		SF/horia/${CATEGORIES}/${PORTNAME}/
-DISTNAME=	${PORTNAME:S|f|F|}Fonts${PORTVERSION:S|.||}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX} \
-		${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX} \
-		Version_Report.rtf
-EXTRACT_ONLY=	${DISTFILES:C|Version.*||}
+MASTER_SITES=	http://www.carrois.com/downloads/%SUBDIR%/:sans,mono \
+		SF/horia/${CATEGORIES}/${PORTNAME}/%SUBDIR%/:sans,mono
+MASTER_SITE_SUBDIR=	${PORTNAME}_4_1/:sans ${PORTNAME}_mono_3_2/:mono
+DISTNAME=	${PORTNAME:S|f|F|}
+DISTFILES=	${DISTNAME}Fonts${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+		${DISTNAME}MonoFonts${MINOR_VERSION}${EXTRACT_SUFX}:mono
+EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*${EXTRACT_SUFX}}
 
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Sans-serif and monospaced typeface for small screens
@@ -21,29 +19,44 @@ LICENSE=	OFL11
 
 USES=		fonts zip
 USE_XORG=	x11
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	Version_Report.rtf \
-		${PORTNAME:S|f|F|}*.pdf
-
+PORTDOCS=	*.pdf *.rtf
 PORTEXAMPLES=	*
+
+MINOR_VERSION=	3202
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	UFO source files
 
+DOCS_DISTFILES=	${DISTNAME}_4_1_Version_Report.rtf:sans \
+		${DISTNAME}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+		${DISTNAME}MonoPDF${MINOR_VERSION}${EXTRACT_SUFX}:mono
+EXAMPLES_DISTFILES=	${DISTNAME}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+			${DISTNAME}MonoUFO_beta${MINOR_VERSION}${EXTRACT_SUFX}:mono
+
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME:S|f|F|}*${PORTVERSION:S|.||}/OTF/${PORTNAME:S|f|F|}*.otf \
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}*Fonts*/OTF/*.otf \
 		${STAGEDIR}${FONTSDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
-	${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${CP} ${DISTDIR}/${DISTNAME}_4_1_Version_Report.rtf ${WRKSRC}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|:M*.rtf} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}*PDF*/|:M*.pdf} \
+		${STAGEDIR}${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKDIR}/${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+. for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
+	(cd ${WRKDIR}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+. endfor
+.endif
 
 .include <bsd.port.mk>
