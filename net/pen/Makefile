@@ -39,7 +39,8 @@ DEBUG_CONFIGURE_ENABLE=	debugging
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 901000
+# DSR needs a newer version of the netmap's API
+.if ${OSVERSION} < 903000 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1001000)
 CONFIGURE_ARGS+=	--without-dsr
 .endif
 
