@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	android-tools-fastboot
+DISTVERSIONPREFIX=	${GH_ACCOUNT}-
 DISTVERSION=	4.0.4_r2.1
 CATEGORIES=	devel
 
@@ -13,7 +14,6 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
-GH_TAGNAME=	${GH_ACCOUNT}-${DISTVERSION}
 
 USES=		uidfix
 WRKSRC_SUBDIR=	fastboot
