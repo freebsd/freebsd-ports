@@ -83,7 +83,7 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.1 \
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
 		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
