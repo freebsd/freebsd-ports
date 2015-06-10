@@ -40,10 +40,3 @@ lib/libmatrixssl.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleCerts/privkeySrv2048.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleCerts/privkeySrv512.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleCerts/privkeySrv512.pem
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sampleCerts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/matrixssl/crypto
-@dirrm include/matrixssl/core
-@dirrm include/matrixssl
