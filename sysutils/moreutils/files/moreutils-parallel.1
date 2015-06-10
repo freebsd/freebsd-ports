@@ -82,6 +82,9 @@ This runs three independent commands in parallel\&.
 Its exit status is the combination of the exit statuses of each command ran, ORed together\&. (Thus, if any one command exits nonzero,
 \fBparallel\fR
 as a whole will exit nonzero\&.)
+.SH "NOTES"
+.PP
+All output to stdout and stderr is serialised through a corresponding internal pipe, in order to prevent annoying concurrent output behaviour\&. Note that serialisation is not done on any other file descriptors and file position based access to a nonstandard file descriptor might have unexpected results\&.
 .SH "AUTHOR"
 .PP
 Tollef Fog Heen
