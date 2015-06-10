@@ -6,23 +6,23 @@ PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring daemon
 
+USES=		tar:tgz
 USE_RC_SUBR=	nefu
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-CONFIGURE_ENV=		YACC=${YACC} \
-			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-CPPFLAGS+=		-I${LOCALBASE}/include
-LIBS+=			-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} \
-			--without-sasl \
-			--without-zlib \
-			--without-shelltests
+CONFIGURE_ENV=	YACC=${YACC} \
+		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
+		--without-sasl \
+		--without-zlib \
+		--without-shelltests
 
 USERS=		nefu
 GROUPS=		nefu
