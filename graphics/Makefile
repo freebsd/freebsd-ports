@@ -282,7 +282,6 @@
     SUBDIR += gpicview
     SUBDIR += gplot
     SUBDIR += gpsmanshp
-    SUBDIR += gqview
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
