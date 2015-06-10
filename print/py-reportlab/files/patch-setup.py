@@ -1,6 +1,6 @@
---- setup.py.orig	2014-02-14 23:22:37.000000000 +0900
-+++ setup.py	2014-02-16 00:48:02.000000000 +0900
-@@ -241,11 +241,7 @@
+--- setup.py.orig	2014-02-14 14:22:37 UTC
++++ setup.py
+@@ -241,11 +241,7 @@ reportlab_files= [
          ]
  
  def get_fonts(PACKAGE_DIR, reportlab_files):
@@ -13,7 +13,7 @@
      rl_dir = PACKAGE_DIR['reportlab']
      if not [x for x in reportlab_files if not os.path.isfile(pjoin(rl_dir,x))]:
          infoline("Standard T1 font curves already downloaded")
-@@ -254,12 +250,7 @@
+@@ -254,12 +250,7 @@ def get_fonts(PACKAGE_DIR, reportlab_fil
          infoline('not downloading T1 font curve files')
          return
      try:
