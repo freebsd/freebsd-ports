@@ -4448,6 +4448,7 @@
     SUBDIR += rubygem-attr_required
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-awesome_print
+    SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-axiom-types
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
