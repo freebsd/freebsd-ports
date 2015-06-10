@@ -161,6 +161,7 @@
     SUBDIR += pxz
     SUBDIR += py-liblzma
     SUBDIR += py-librtfcomp
+    SUBDIR += py-lz4
     SUBDIR += py-lzma
     SUBDIR += py-python-snappy
     SUBDIR += qpress
