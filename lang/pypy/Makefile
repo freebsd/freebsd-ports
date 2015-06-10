@@ -3,7 +3,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	2.6.0
-PPORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
