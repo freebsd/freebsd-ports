@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	4.1.6
-PORTREVISION=	2
+PORTVERSION=	4.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -16,6 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actionmailer4 \
 		rubygem-actionpack4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-actionview>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-actionview \
+		rubygem-activejob>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activejob \
 		rubygem-activemodel4>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel4 \
 		rubygem-activerecord4>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
@@ -28,17 +28,19 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 		rubygem-sqlite3>=1.3.9:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-execjs>=2.2.1:${PORTSDIR}/devel/rubygem-execjs \
 		rubygem-coffee-rails4>=4.0.1:${PORTSDIR}/devel/rubygem-coffee-rails4 \
-		rubygem-sass-rails4>=4.0.3:${PORTSDIR}/textproc/rubygem-sass-rails4 \
+		rubygem-sass-rails5>=5.0.3:${PORTSDIR}/textproc/rubygem-sass-rails5 \
 		rubygem-spring>=1.1.3:${PORTSDIR}/devel/rubygem-spring \
 		rubygem-jquery-rails4>=3.1.2:${PORTSDIR}/www/rubygem-jquery-rails4 \
 		rubygem-jbuilder>=2.1.3:${PORTSDIR}/devel/rubygem-jbuilder \
 		rubygem-uglifier>=2.5.0:${PORTSDIR}/www/rubygem-uglifier \
-		rubygem-sprockets>=2.12.3:${PORTSDIR}/devel/rubygem-sprockets \
+		rubygem-sprockets3>=3.0.3:${PORTSDIR}/devel/rubygem-sprockets3 \
 		rubygem-thread_safe>=0.3.4:${PORTSDIR}/devel/rubygem-thread_safe \
 		rubygem-turbolinks>=2.3.0:${PORTSDIR}/www/rubygem-turbolinks \
 		rubygem-sass>=3.4.1:${PORTSDIR}/textproc/rubygem-sass \
 		rubygem-sdoc>=0.4.1:${PORTSDIR}/devel/rubygem-sdoc \
-		rubygem-rdoc>=4.0.2:${PORTSDIR}/devel/rubygem-rdoc
+		rubygem-rdoc>=4.0.2:${PORTSDIR}/devel/rubygem-rdoc \
+		rubygem-byebug>=5.0.0:${PORTSDIR}/devel/rubygem-byebug \
+		rubygem-web-console>=2.1.2:${PORTSDIR}/devel/rubygem-web-console
 
 NO_ARCH=	yes
 USE_RUBY=	yes
