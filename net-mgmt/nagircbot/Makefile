@@ -3,7 +3,7 @@
 
 PORTNAME=	nagircbot
 PORTVERSION=	0.0.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt irc
 MASTER_SITES=	http://www.vanheusden.com/nagircbot/
 
@@ -15,5 +15,8 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	nagircbot
 
 PLIST_FILES=	bin/nagircbot
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nagircbot
 
 .include <bsd.port.mk>
