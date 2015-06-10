@@ -15,6 +15,9 @@ COMMENT=	Common UNIX Printing System: ${COMMENT2}
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+
 CONFLICTS=	LPRng-[0-9]*
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
@@ -37,7 +40,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-domainsocket=${CUPS_SOCKET}	\
 			--with-cachedir=${CUPS_CACHEDIR}	\
 			--with-pam-module="unix"		\
-			--enable-ssl
+			--enable-gnutls
 
 CUPS_CACHEDIR?=	/var/db/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -51,23 +54,20 @@ GROUPS=	cups
 USERS=		cups
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SUB=		yes
 .if defined(CUPS_CLIENT)
-PORTREVISION=	0
+PORTREVISION=	1
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_RADIO=		ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT+=	MDNSRESPONDER
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-base
 # No DOCS option.  Files are needed by web interface.
 OPTIONS_DEFINE=		DBUS ICONS LIBPAPER LIBUSB PAM XDG_OPEN
@@ -126,17 +126,6 @@ CONFIGURE_ARGS+=	--with-printcap=/etc/printcap
 .else
 PLIST_SUB+=		OVERWRITE="@comment "
 CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
-LIB_DEPENDS+=		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libgnutls.so:${PORTSDIR}/security/gnutls
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .endif
 
 # Don't use CONFIGURE_ARGS+=--without-* to disable web interpreters because it
